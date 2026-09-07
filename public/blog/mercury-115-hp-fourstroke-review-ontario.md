@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-115-hp-fourstroke-review-ontario.md
-last_updated: 2026-09-06
+last_updated: 2026-09-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury 115 FourStroke Review 2026: Fit, Features and Performance"
 description: "An honest Mercury 115 outboard review for Ontario: 4 stroke vs Pro XS, Command Thrust, weights, performance examples and propeller advice."
 category: "Mercury Buying Guides"
 date_published: 2026-05-10
-date_modified: 2026-09-06
+date_modified: 2026-09-07
 keywords: ["mercury 115 hp review","mercury 115 fourstroke review","mercury 115 pro xs review","mercury 115 command thrust","mercury 115 standard vs pro xs","mercury 115 real world performance","mercury 115 owner reviews","mercury 115 hp ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,10 +23,10 @@ revenue_driver: repower
 
 > An honest Mercury 115 outboard review for Ontario: 4 stroke vs Pro XS, Command Thrust, weights, performance examples and propeller advice.
 
-**Category:** Mercury Buying Guides  
-**Published:** 2026-05-10  
-**Last reviewed:** 2026-09-06  
-**Read time:** 18 min read  
+**Category:** Mercury Buying Guides
+**Published:** 2026-05-10
+**Last reviewed:** 2026-09-07
+**Read time:** 18 min read
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-115-hp-fourstroke-review-ontario
 
 > **Quick answer:** Mercury's current 115 HP FourStroke is a quiet, relatively light 2.1-litre inline-four that works very well when the boat, gearcase and propeller match. Choose the standard gearcase for a recreational V-hull, Command Thrust for a pontoon or specific heavy workboat, and Pro XS when the hull and owner can use its higher operating range.
@@ -164,7 +164,7 @@ Don't buy it as a generic upgrade for a recreational V-hull. The larger case can
 
 ![Two anglers fishing from a Ranger aluminum boat powered by a Mercury 115 Pro XS on fresh water.](/lovable-uploads/inline/mercury-115-pro-xs-freshwater-ranger-full.webp)
 
-*Official Mercury freshwater photography. The 115 Pro XS shown here uses the standard gearcase.*
+*Official Mercury freshwater photography: the 115 Pro XS is shown here for comparison. It is a different model from the standard 115 FourStroke reviewed in this article; this photo does not establish the gearcase fitted to your boat.*
 
 ## The Propeller Can Change the Whole Review
 
@@ -420,4 +420,3 @@ CT stands for Command Thrust. A 115 CT uses a larger gearcase with a lower 2.38:
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-

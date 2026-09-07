@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/cheapest-mercury-outboard-canada-2026.md
-last_updated: 2026-09-06
+last_updated: 2026-09-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Cheapest Mercury Outboards in Canada (2026)"
 description: "The cheapest Mercury outboards in Canada for 2026: real CAD prices from 2.5 HP up, what each budget tier gets you, and where the value sweet spot sits."
 category: "Buying Guide"
 date_published: 2026-04-23
-date_modified: 2026-09-06
+date_modified: 2026-09-07
 keywords: ["cheapest mercury outboard canada","mercury 2.5hp price","small mercury outboard cad"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,10 +23,10 @@ revenue_driver: repower
 
 > The cheapest Mercury outboards in Canada for 2026: real CAD prices from 2.5 HP up, what each budget tier gets you, and where the value sweet spot sits.
 
-**Category:** Buying Guide  
-**Published:** 2026-04-23  
-**Last reviewed:** 2026-09-06  
-**Read time:** 12 min read  
+**Category:** Buying Guide
+**Published:** 2026-04-23
+**Last reviewed:** 2026-09-07
+**Read time:** 12 min read
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/cheapest-mercury-outboard-canada-2026
 
 ## Quick Answer
@@ -42,7 +42,7 @@ For an installed remote-control repower, also itemize compatible controls, steer
 
 ---
 
-![Bar chart of Mercury outboard 2026 dealer prices in CAD from $1,298 (2.5 HP) to $22,242 (150 HP).](/lovable-uploads/inline/mercury-price-ladder.svg)
+**Use current prices for your comparison.** Open the [motor pricing reference](/pricing-reference), then [build a quote](/quote/motor-selection) with the controls, propeller, rigging and installation your boat needs. Compare the same purchase scope rather than an old price chart.
 
 ## Full Article
 
@@ -197,4 +197,3 @@ The cost depends on the hull rating, load, exact motor, controls, and installati
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-

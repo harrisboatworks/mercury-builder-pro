@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-propeller-selection-guide.md
-last_updated: 2026-09-06
+last_updated: 2026-09-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Propeller Selection Guide 2026"
 description: "Mercury propeller selection guide: hull-type to prop-family matching, 3-blade vs 4-blade, aluminum vs stainless, and the WOT RPM test to confirm."
 category: "Technical Reference"
 date_published: 2026-05-27
-date_modified: 2026-09-06
+date_modified: 2026-09-07
 keywords: ["mercury propeller","mercury prop selection","wot rpm test","command thrust prop","aluminum vs stainless prop","3 blade vs 4 blade","ontario mercury dealer"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,11 +23,13 @@ revenue_driver: repower
 
 > Mercury propeller selection guide: hull-type to prop-family matching, 3-blade vs 4-blade, aluminum vs stainless, and the WOT RPM test to confirm.
 
-**Category:** Technical Reference  
-**Published:** 2026-05-27  
-**Last reviewed:** 2026-09-06  
-**Read time:** ~8 min read  
+**Category:** Technical Reference
+**Published:** 2026-05-27
+**Last reviewed:** 2026-09-07
+**Read time:** ~8 min read
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-propeller-selection-guide
+
+*Hero image: AI-generated editorial scene comparing propeller forms. These are unbranded illustrations, not identified Mercury propeller models or an HBW workshop photograph.*
 
 ## Quick Answer
 
@@ -95,7 +97,14 @@ The big-picture matching table. Specific pitch depends on horsepower and how the
 
 This table is a starting point, not a final answer. Final prop selection depends on the WOT RPM test described below. A boat that is loaded heavier (full fuel, passengers, gear) than the dealer demo run will need a different pitch than the manufacturer-default prop ships with.
 
-![Mercury prop by hull type matrix: 7 Ontario hull types matched to gearcase, blade count, material, and Mercury prop family](/lovable-uploads/prop-selection-by-hull-matrix.svg)
+### Match the propeller to the complete setup
+
+- **Engine and gearcase:** confirm the exact model, shaft and compatible hub or mounting system.
+- **Boat and load:** account for hull design, passengers, fuel, equipment and normal use.
+- **Performance goal:** discuss planing, handling, cruising and towing needs with the installer.
+- **Verification:** compare the proposed propeller with the manufacturer's guidance and appropriate on-water test results.
+
+A boat-length table cannot establish propeller fit. Command Thrust does not by itself select a blade count, and a pitch change does not guarantee a fixed RPM change. Use the model-specific specifications and confirm compatibility with HBW.
 
 ## How to Confirm Prop Selection: The WOT RPM Test
 
@@ -213,4 +222,3 @@ Over-pitched: WOT RPM is below the manufacturer's spec range. The motor cannot r
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-

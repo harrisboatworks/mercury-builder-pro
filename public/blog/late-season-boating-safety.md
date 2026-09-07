@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/late-season-boating-safety.md
-last_updated: 2026-09-06
+last_updated: 2026-09-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Cold-Water Boating Safety in Ontario: What to Know"
 description: "Cold-water boating safety for Ontario waters. Risks, essential gear, weather awareness, and emergency procedures for spring, fall."
 category: "Tips"
 date_published: 2026-05-05
-date_modified: 2026-09-06
+date_modified: 2026-09-07
 keywords: ["cold water boating safety","ontario boating safety","hypothermia prevention","spring boating safety","fall boating safety","pfd cold water"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,10 +23,10 @@ revenue_driver: repower
 
 > Cold-water boating safety for Ontario waters. Risks, essential gear, weather awareness, and emergency procedures for spring, fall.
 
-**Category:** Tips  
-**Published:** 2026-05-05  
-**Last reviewed:** 2026-09-06  
-**Read time:** 9 min read  
+**Category:** Tips
+**Published:** 2026-05-05
+**Last reviewed:** 2026-09-07
+**Read time:** 9 min read
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/late-season-boating-safety
 
 > **Quick answer:** In Ontario shoulder seasons, spring and fall, the biggest boating risk is the water temperature, not the air temperature. Dress for water temperature, not air temperature. Wear your PFD. File a float plan. Carry a charged VHF radio on Channel 16. Cold-water immersion below 15°C can cause incapacitation within minutes. See [Transport Canada](https://tc.canada.ca/en)'s cold-water survival guidance (TP 13822) for full detail.
@@ -151,8 +151,8 @@ Complete [hbw.wiki/service](https://hbw.wiki/service), then drop off anytime, in
 - [Transport Canada - Safe Boating Guide (TP 511)](https://tc.canada.ca/en/marine-transportation/marine-safety/transport-canada-boating-safety-guide-tp-511) - Cold-water immersion guidance, mandatory safety equipment, and required operator competencies.
 - [Transport Canada - Boating Safety](https://tc.canada.ca/en/marine-transportation/marine-safety/boating-safety) - Late-season operating recommendations.
 
-**End the season right.** Proper winterization in October means a ready boat in May. 
-[Book fall service at hbw.wiki/service](https://hbw.wiki/service), or call 905-342-2153. 
+**End the season right.** Proper winterization in October means a ready boat in May.
+[Book fall service at hbw.wiki/service](https://hbw.wiki/service), or call 905-342-2153.
 Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
 
 ---
@@ -196,4 +196,3 @@ Absolutely. Cold water shock can incapacitate you in seconds. You may not have t
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-

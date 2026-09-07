@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/ontario-cottage-boat-motor-repower-guide.md
-last_updated: 2026-09-06
+last_updated: 2026-09-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Ontario Cottage Boat Motor Repower Guide (2026)"
 description: "Ontario cottage repower guide: capacity-plate-first horsepower selection, Mercury fitment, drop-off logistics, and when repowering can make sense."
 category: "Repowering"
 date_published: 2026-02-02
-date_modified: 2026-09-06
+date_modified: 2026-09-07
 keywords: ["repower cottage boat","replace outboard motor","cottage boat motor","boat repower ontario","when to replace outboard"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,11 +23,13 @@ revenue_driver: repower
 
 > Ontario cottage repower guide: capacity-plate-first horsepower selection, Mercury fitment, drop-off logistics, and when repowering can make sense.
 
-**Category:** Repowering  
-**Published:** 2026-02-02  
-**Last reviewed:** 2026-09-06  
-**Read time:** 10 min read  
+**Category:** Repowering
+**Published:** 2026-02-02
+**Last reviewed:** 2026-09-07
+**Read time:** 10 min read
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ontario-cottage-boat-motor-repower-guide
+
+*Hero graphic: a process guide, not a photograph or evidence of a completed HBW customer test.*
 
 ## Ontario Cottage Owner Guide: Is It Time to Repower Your Boat?
 
@@ -191,4 +193,3 @@ We can generally arrange boat pickup. Ask us about availability for your boat an
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-

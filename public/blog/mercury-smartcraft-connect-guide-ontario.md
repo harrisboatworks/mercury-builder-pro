@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-smartcraft-connect-guide-ontario.md
-last_updated: 2026-08-31
+last_updated: 2026-09-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury SmartCraft Connect: Features, App & Installation"
 description: "See what SmartCraft Connect shows in the Mercury Marine app, how the module is installed, and how it differs from helm-display integrations."
 category: "Mercury Outboards"
 date_published: 2026-05-09
-date_modified: 2026-08-31
+date_modified: 2026-09-07
 keywords: ["Mercury SmartCraft Connect","Mercury Marine app setup","SmartCraft Connect compatibility","VesselView Mobile vs SmartCraft Connect","SmartCraft Connect Mobile install"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,10 +23,10 @@ revenue_driver: service
 
 > See what SmartCraft Connect shows in the Mercury Marine app, how the module is installed, and how it differs from helm-display integrations.
 
-**Category:** Mercury Outboards  
-**Published:** 2026-05-09  
-**Last reviewed:** 2026-08-31  
-**Read time:** ~11 min read  
+**Category:** Mercury Outboards
+**Published:** 2026-05-09
+**Last reviewed:** 2026-09-07
+**Read time:** ~11 min read
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-smartcraft-connect-guide-ontario
 
 ### Quick Answer
@@ -160,7 +160,20 @@ For most Ontario freshwater boaters with a Mercury 60-115 HP and a basic fishfin
 
 ---
 
-![Mercury SmartCraft Connect display and VesselView Mobile app at helm](/lovable-uploads/inline/inline-smartcraft-connect-dashboard.png)
+**What the module actually puts on your phone**
+
+| Reading | Notes |
+|---|---|
+| Engine RPM | Live. |
+| Fuel rate and total fuel used | Litres per hour, plus a session total. |
+| Engine temperature and coolant pressure | Live. |
+| Battery voltage | Live. |
+| Engine hours | Lifetime and per trip. |
+| Fault codes | With plain-English descriptions when they occur. |
+| Boost upgrade eligibility | Compatible models only. |
+| Maintenance reminders | Based on accumulated hours. |
+
+There is no dash display in this product. SmartCraft Connect Mobile is a module about the size of a deck of cards, and the phone is the screen.
 
 ## Install: DIY vs. HBW
 
@@ -214,9 +227,9 @@ For Rice Lake walleye trolling, engine-hour tracking on the kicker is the practi
 
 Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW is a Mercury Marine Premier Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. [Read Jay's full bio](/about/jay-harris).
 
-**Add SmartCraft Connect to your repower quote.** 
-[mercuryrepower.ca](https://www.mercuryrepower.ca). For install booking, submit a service request at [hbw.wiki/service](https://hbw.wiki/service) with your motor's serial number. 
-Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. 
+**Add SmartCraft Connect to your repower quote.**
+[mercuryrepower.ca](https://www.mercuryrepower.ca). For install booking, submit a service request at [hbw.wiki/service](https://hbw.wiki/service) with your motor's serial number.
+Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
 Mercury Premier dealer. Est. 1947.
 
 ---
@@ -259,7 +272,7 @@ The Mercury Marine app shows eligibility once SmartCraft Connect is paired. Harr
 ## Related guides
 
 - [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide), choosing the right propeller
-- [Mercury SmartCraft Alarm Codes Ontario](/blog/mercury-smartcraft-alarm-codes-encyclopedia), SmartCraft alarm code reference
+- [Mercury Alarm Codes List Ontario](/blog/mercury-smartcraft-alarm-codes-encyclopedia), SmartCraft alarm code reference
 - [Mercury Outboard Beep & Alarm Codes: What Each Means](/blog/mercury-outboard-beeping-codes-guide), beeping code guide
 - [Mercury Outboard Won't Start (Ontario Dealer Guide, 2026)](/blog/mercury-outboard-wont-start-troubleshooting), won't-start troubleshooting
 - [Mercury Overheat Alarm Decoder: Beep Meanings](/blog/mercury-outboard-overheat-alarm-decoder), overheat alarm decoder
@@ -277,4 +290,3 @@ The Mercury Marine app shows eligibility once SmartCraft Connect is paired. Harr
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-

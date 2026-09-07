@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-beeping-codes-guide.md
-last_updated: 2026-09-06
+last_updated: 2026-09-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Outboard Beep & Alarm Codes: What Each Means"
 description: "Continuous beep, 4 beeps every 2 minutes, or a key-on alarm on your Mercury outboard: what each pattern means, what to check first, and when to stop the motor."
 category: "Service & Troubleshooting"
 date_published: 2026-05-11
-date_modified: 2026-09-06
+date_modified: 2026-09-07
 keywords: ["mercury outboard beeping codes","mercury warning horn beeps","mercury continuous beep","mercury four beeps every two minutes","mercury alarm ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,10 +23,10 @@ revenue_driver: service
 
 > Continuous beep, 4 beeps every 2 minutes, or a key-on alarm on your Mercury outboard: what each pattern means, what to check first, and when to stop the motor.
 
-**Category:** Service & Troubleshooting  
-**Published:** 2026-05-11  
-**Last reviewed:** 2026-09-06  
-**Read time:** 6 min  
+**Category:** Service & Troubleshooting
+**Published:** 2026-05-11
+**Last reviewed:** 2026-09-07
+**Read time:** 6 min
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-beeping-codes-guide
 
 ---
@@ -95,9 +95,14 @@ The exact meaning of the four-beep pattern varies by motor year and rigging, alw
 
 Different Mercury motors use different beep patterns, and what four beeps means on a 2010 EFI FourStroke is not necessarily what four beeps means on a current Verado. This guide covers the common patterns you'll encounter, what they typically indicate, and how to gather the information a technician needs to help you.
 
-![Mercury outboard alarm and beep code quick reference card: pattern, meaning, and immediate action](/lovable-uploads/mercury-alarm-beep-codes-quick-reference-card.png)
+### Information to capture when an alarm occurs
 
-*Quick-reference card: each row pairs a Mercury alarm pattern (single beep at key-on, continuous alarm at cruise, continuous alarm plus power reduction / Guardian mode, repeating four-beep advisory, intermittent beeping, alarm at WOT only, and brief alarm after shutdown / heat soak) with its likely meaning and the immediate action to take. Always cross-reference your specific motor's operator manual.*
+- Exact engine model and serial number
+- The displayed warning or fault message, if available
+- When the alarm occurred and any change in engine behaviour
+- The response specified in that engine's operator manual
+
+A beep pattern alone is not a diagnosis. Follow the engine-specific instructions and have unresolved warnings assessed by a qualified technician.
 
 ---
 
@@ -128,8 +133,6 @@ The distinction matters because beep patterns are how Mercury's engine managemen
 Getting the pattern right before calling a dealer or booking service helps narrow the diagnostic significantly.
 
 ---
-
-![Laminated reference card for Mercury outboard alarm codes, showing meanings for continuous and intermittent beeps.](/lovable-uploads/mercury-outboard-beep-codes-action-card.png)
 
 ## Common Beep Patterns and What They Indicate
 
@@ -207,7 +210,7 @@ If the diagnosis later shows the engine is not worth repairing, compare a writte
 
 ---
 
-**Alarm that came back, or one you can't explain?** 
+**Alarm that came back, or one you can't explain?**
 [Book a Mercury diagnostic at hbw.wiki/service](https://hbw.wiki/service).
 ---
 
@@ -274,4 +277,3 @@ A short, repeating 4-beep pattern is a warning alarm, not a shut-down. It usuall
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-

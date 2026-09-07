@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-overheat-high-speed.md
-last_updated: 2026-09-06
+last_updated: 2026-09-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Outboard Overheating at High Speed: What to Check"
 description: "Mercury overheating at high speed? Learn which cooling-system faults a technician checks, how to respond to the warning, and when to stop for service."
 category: "Service"
 date_published: 2026-06-29
-date_modified: 2026-09-06
+date_modified: 2026-09-07
 keywords: ["Mercury outboard overheating at high speed","Mercury overheat alarm high RPM","poppet valve Mercury overheating","outboard overheats at speed not idle","Mercury water pump impeller"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,11 +23,13 @@ revenue_driver: service
 
 > Mercury overheating at high speed? Learn which cooling-system faults a technician checks, how to respond to the warning, and when to stop for service.
 
-**Category:** Service  
-**Published:** 2026-06-29  
-**Last reviewed:** 2026-09-06  
-**Read time:** ~7 min read  
+**Category:** Service
+**Published:** 2026-06-29
+**Last reviewed:** 2026-09-07
+**Read time:** ~7 min read
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-overheat-high-speed
+
+*Hero image: Mercury-powered boat underway. This is boating context, not evidence that the pictured engine has overheated.*
 
 > **Quick answer:** If an overheat warning appears at speed, reduce load and follow the warning response in the manual for your engine and serial number. Do not run it back up to speed to reproduce the fault. Intake restrictions, pump condition and other model-specific cooling components are diagnostic possibilities, not a diagnosis from RPM alone.
 
@@ -136,4 +138,3 @@ Treat it as an urgent warning. Follow the engine's warning response, stop when d
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-

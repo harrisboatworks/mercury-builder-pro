@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-overheat-alarm-decoder.md
-last_updated: 2026-08-19
+last_updated: 2026-09-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Overheat Alarm Decoder: Beep Meanings"
 description: "Mercury overheat alarm? Decode every pattern, what triggers Guardian mode vs. limp home. Ontario dealer guide to troubleshooting overheat alarms on Mercury."
 category: "Service & Troubleshooting"
 date_published: 2026-05-27
-date_modified: 2026-08-19
+date_modified: 2026-09-07
 keywords: ["mercury overheat alarm","mercury outboard overheating","mercury guardian mode","smartcraft alarm codes","mercury alarm patterns","mercury tell-tale stream","ontario mercury dealer"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,10 +23,10 @@ revenue_driver: service
 
 > Mercury overheat alarm? Decode every pattern, what triggers Guardian mode vs. limp home. Ontario dealer guide to troubleshooting overheat alarms on Mercury.
 
-**Category:** Service & Troubleshooting  
-**Published:** 2026-05-27  
-**Last reviewed:** 2026-08-19  
-**Read time:** ~9 min read  
+**Category:** Service & Troubleshooting
+**Published:** 2026-05-27
+**Last reviewed:** 2026-09-07
+**Read time:** ~9 min read
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-overheat-alarm-decoder
 
 ## Quick answer
@@ -66,9 +66,7 @@ Work through this in order. Most alarms fall into one of these patterns:
 
 Important: alarm patterns and what they indicate vary by motor model, year, rigging, and whether the boat is SmartCraft-equipped. The patterns above describe what HBW techs see most often on Ontario Mercury motors from the EFI FourStroke and Verado families. Always confirm against your specific motor's operator's manual and any SmartCraft or VesselView display message.
 
-![Mercury overheat alarm decision flow: check the telltale, then check for a power drop, leading to engine-protection guidance or a shutdown response.](/lovable-uploads/overheat-alarm-decision-flow-v2.svg)
-
-*Work top to bottom. Every branch ends on an action card; a strong telltale does not rule out overheating.*
+**Follow the warning for the exact engine.** Read the operator manual and any SmartCraft or VesselView message. A strong telltale does not rule out overheating, and a beep pattern is not a diagnosis. Have the serial number and displayed message ready when contacting a qualified technician.
 
 ## The On-Water Emergency Protocol
 
@@ -201,4 +199,3 @@ No. Alarm behaviour varies by motor model, year, and whether the boat is SmartCr
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dts-retrofit-eligibility-2026.md
-last_updated: 2026-09-06
+last_updated: 2026-09-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury DTS Retrofit Eligibility 2026"
 description: "Check if your Mercury outboard supports DTS retrofit. Covers Verado, Pro XS, FourStroke, multi-engine joystick eligibility, and motors needing repower."
 category: "Mercury Technology"
 date_published: 2026-05-28
-date_modified: 2026-09-06
+date_modified: 2026-09-07
 keywords: ["mercury dts retrofit eligibility","mercury digital throttle shift","dts compatibility mercury","joystick piloting eligibility","mercury fly-by-wire","dts retrofit cost"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,11 +23,13 @@ revenue_driver: repower
 
 > Check if your Mercury outboard supports DTS retrofit. Covers Verado, Pro XS, FourStroke, multi-engine joystick eligibility, and motors needing repower.
 
-**Category:** Mercury Technology  
-**Published:** 2026-05-28  
-**Last reviewed:** 2026-09-06  
-**Read time:** 10 min  
+**Category:** Mercury Technology
+**Published:** 2026-05-28
+**Last reviewed:** 2026-09-07
+**Read time:** 10 min
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dts-retrofit-eligibility-2026
+
+*Hero image: Mercury digital-control example. The pictured control does not establish retrofit eligibility; confirm the engine serial number, control part number and complete rigging package.*
 
 > **Quick answer:** Most current Mercury motors built with DTS already have it (all Verado, Pro XS 150 HP and up, FourStroke 200 HP and up since the model was DTS-equipped). True retrofit of a mechanical Mercury to DTS is rarely cost-effective. The honest eligibility path for most boaters is: repower into a DTS-equipped motor. Email your motor serial number to info@harrisboatworks.ca for an eligibility check.
 
@@ -50,8 +52,8 @@ This post is the eligibility decision tree. It covers what DTS actually is, how 
 
 If your boat doesn't slot neatly into one of these, email a photo of your motor cowl plate plus your boat year and make to info@harrisboatworks.ca. We'll review eligibility and explain what information is still needed for a written estimate.
 
-![Side-by-side comparison: Mercury mechanical binnacle control with visible cables vs Mercury DTS control with sealed harness](/lovable-uploads/dts-vs-mechanical-control-inline.png)
-*Mechanical Mercury control (left) with two visible push-pull cables vs Mercury DTS control (right) with a sealed wiring harness. The five-second visual check at the helm.*
+![Quicksilver mechanical helm control example](/lovable-uploads/inline/inline-mechanical-controls-cables.png "Mechanical control example. A photograph of the control alone does not identify every cable, harness or engine requirement.")
+*Mechanical control example. The photograph does not show the complete cables, harness or engine installation; confirm compatibility from the exact components.*
 
 ## What DTS actually is (and isn't)
 
@@ -253,7 +255,7 @@ No. Current Verado V8/V10/V12 (250-600 HP) are naturally aspirated, not supercha
 
 - [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide), choosing the right propeller
 - [Mercury SmartCraft Connect: Features, App & Installation](/blog/mercury-smartcraft-connect-guide-ontario), SmartCraft Connect walkthrough
-- [Mercury SmartCraft Alarm Codes Ontario](/blog/mercury-smartcraft-alarm-codes-encyclopedia), SmartCraft alarm code reference
+- [Mercury Alarm Codes List Ontario](/blog/mercury-smartcraft-alarm-codes-encyclopedia), SmartCraft alarm code reference
 - [Mercury Outboard Beep & Alarm Codes: What Each Means](/blog/mercury-outboard-beeping-codes-guide), beeping code guide
 - [Mercury Outboard Fault Codes: Legacy VesselView and Modern UFC Lookup](/blog/mercury-outboard-fault-codes-lookup)
 
@@ -270,4 +272,3 @@ No. Current Verado V8/V10/V12 (250-600 HP) are naturally aspirated, not supercha
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-200-hp-fourstroke-pro-xs-review-ontario.md
-last_updated: 2026-09-06
+last_updated: 2026-09-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury 200 HP Review: FourStroke vs Pro XS"
 description: "An honest Mercury 200 HP review for Ontario, comparing the current 3.4 L V6 FourStroke and 4.6 L V8 Pro XS with freshwater tests and candid buyer advice."
 category: "Mercury Buying Guides"
 date_published: 2026-07-27
-date_modified: 2026-09-06
+date_modified: 2026-09-07
 keywords: ["mercury 200 hp review","mercury 200 fourstroke review","mercury 200 pro xs review","mercury 200 fourstroke vs pro xs","mercury 200 real world performance","mercury 200 owner reviews","mercury 200 hp ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,10 +23,10 @@ revenue_driver: repower
 
 > An honest Mercury 200 HP review for Ontario, comparing the current 3.4 L V6 FourStroke and 4.6 L V8 Pro XS with freshwater tests and candid buyer advice.
 
-**Category:** Mercury Buying Guides  
-**Published:** 2026-07-27  
-**Last reviewed:** 2026-09-06  
-**Read time:** 18 min read  
+**Category:** Mercury Buying Guides
+**Published:** 2026-07-27
+**Last reviewed:** 2026-09-07
+**Read time:** 18 min read
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-200-hp-fourstroke-pro-xs-review-ontario
 
 > **Quick answer:** The Mercury 200 FourStroke is a 3.4-litre V6; the 200 Pro XS is a 4.6-litre V8. Both are rated at 200 HP. The lighter V6 is usually the cleaner family-boat choice. The V8 Pro XS earns a serious look when a responsive fishing or performance hull can use its higher operating range and gearcase options.
@@ -59,9 +59,9 @@ For the current Canadian range checked in July 2026:
 
 Mercury publishes the lightest 200 FourStroke around 215 kg (475 lb) and the lightest 200 Pro XS around 232 kg (511 lb). Those are useful class comparisons, not a promise that every model weighs exactly the same. A 20-inch mechanical motor and a 25-inch DTS motor are not identical packages.
 
-![Current Mercury 200 FourStroke and 200 Pro XS shown side by side in official studio photography.](/lovable-uploads/inline/mercury-200-fourstroke-vs-pro-xs-official.webp)
+![Official Mercury product photographs of the 200 FourStroke and 200 Pro XS, with the outdated specification panels cropped from view.](/lovable-uploads/inline/mercury-200-fourstroke-vs-pro-xs-official.webp)
 
-*Official Mercury Marine product photography of the current 200 FourStroke and 200 Pro XS. The side-by-side design is an HBW comparison graphic. Exact gearcase, shaft length, finish and propeller depend on the ordered model and boat.*
+*Official Mercury product photographs in an HBW comparison layout. The website crops the older weight labels from view. If your reader displays the full archived image, use the configuration-qualified table below: the Pro XS brochure lists 232 kg (511 lb), not the older 505 lb label.*
 
 ## FourStroke vs Pro XS: The Differences That Matter
 
@@ -76,6 +76,8 @@ Mercury publishes the lightest 200 FourStroke around 215 kg (475 lb) and the lig
 | Gearcase | Standard recreational configurations | Standard and performance-oriented choices vary by model | Exact ratio and gearcase must be checked, not guessed from the family name |
 | Charging | 85 amp with idle charge management | 85 amp with idle charge management | Both are well suited to electronics-heavy modern boats |
 | Best fit | Family, cruising and load-carrying use | Performance fishing and responsive hulls | Application matters more than the badge |
+
+*Weight-source note: Mercury FourStroke brochure 8M0189529 (May 2022), PDF page 10, lists 215 kg (475 lb) for the lightest 175/200 model. This is a manufacturer reference figure, not a promise for every current configuration. Confirm the exact ordered motor. [Read the manufacturer brochure](https://www.parker.com.pl/wp-content/uploads/2024/08/8M0189529_MercFourStroke_175-300_VF_Web.pdf).*
 
 ### Choose the 200 FourStroke when
 
@@ -464,4 +466,3 @@ Price varies by FourStroke or Pro XS, shaft length, controls, gearcase, rigging 
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-

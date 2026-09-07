@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/outboard-shaft-length-guide.md
-last_updated: 2026-09-06
+last_updated: 2026-09-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Outboard Shaft Length Guide: 15, 20, 25 Inch (2026)"
 description: "Outboard shaft length chart for 15, 20, and 25 inch shafts. Measure transom height, match the Mercury shaft code, and avoid cavitation. Ontario dealer guide."
 category: "Buying Guide"
 date_published: 2026-05-05
-date_modified: 2026-09-06
+date_modified: 2026-09-07
 keywords: ["outboard shaft length","mercury shaft length guide","20 inch shaft outboard","25 inch shaft outboard","transom height measurement"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,11 +23,13 @@ revenue_driver: repower
 
 > Outboard shaft length chart for 15, 20, and 25 inch shafts. Measure transom height, match the Mercury shaft code, and avoid cavitation. Ontario dealer guide.
 
-**Category:** Buying Guide  
-**Published:** 2026-05-05  
-**Last reviewed:** 2026-09-06  
-**Read time:** 10 min read  
+**Category:** Buying Guide
+**Published:** 2026-05-05
+**Last reviewed:** 2026-09-07
+**Read time:** 10 min read
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/outboard-shaft-length-guide
+
+*Hero graphic: common nominal shaft-length labels, not installation measurements. Use the exact motor and hull instructions to confirm fit.*
 
 ## Outboard Shaft Length Guide: Short, Long, and Extra Long, How to Get It Right
 
@@ -68,7 +70,7 @@ Get the measurement right before you order. It takes five minutes.
 - Best for: Sailboat auxiliaries and deep-transom commercial applications
 - Less common in Ontario freshwater. Special order on most models.
 
-![Outboard shaft length diagram showing how to measure transom height and match short, long, and extra-long shaft motors](/lovable-uploads/outboard-shaft-length-transom-measurement-diagram.png)
+**Confirm the measurement before choosing a motor.** Use the installation instructions for the exact engine and the boat manufacturer's guidance. Have a qualified installer confirm the transom measurement, shaft configuration and mounting position. A generic illustration is not an installation specification.
 
 ## How to measure your transom height
 
@@ -230,4 +232,3 @@ A transom measuring 24 to 26 inches takes a 25-inch extra long shaft, Mercury co
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-

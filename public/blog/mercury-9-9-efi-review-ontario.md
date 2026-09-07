@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-9-9-efi-review-ontario.md
-last_updated: 2026-09-06
+last_updated: 2026-09-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury 9.9 EFI Review Ontario"
 description: "The Mercury 9.9 MH EFI brings battery-free fuel injection to a simple portable outboard. Here's what Ontario boaters should know before buying."
 category: "Mercury Buying Guides"
 date_published: 2026-05-10
-date_modified: 2026-09-06
+date_modified: 2026-09-07
 keywords: ["mercury 9.9 efi review","mercury 9.9 mh efi","mercury 9.9 fuel injected outboard","mercury 9.9 efi ontario","mercury 9.9 outboard price ontario","mercury 9.9 efi vs prokicker"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,10 +23,10 @@ revenue_driver: repower
 
 > The Mercury 9.9 MH EFI brings battery-free fuel injection to a simple portable outboard. Here's what Ontario boaters should know before buying.
 
-**Category:** Mercury Buying Guides  
-**Published:** 2026-05-10  
-**Last reviewed:** 2026-09-06  
-**Read time:** 10 min read  
+**Category:** Mercury Buying Guides
+**Published:** 2026-05-10
+**Last reviewed:** 2026-09-07
+**Read time:** 10 min read
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-9-9-efi-review-ontario
 
 ### Quick Answer
@@ -108,7 +108,7 @@ _Prices here are planning figures as of September 2026. For live Mercury motor p
 
 ---
 
-![Mercury 9.9 EFI ProKicker kicker alongside main outboard on fishing boat transom](/lovable-uploads/inline/inline-mercury-9-9-prokicker.png)
+![Mercury 9.9 roles: standard FourStroke for suitable small-boat propulsion, ProKicker for auxiliary control; confirm the exact configuration.](/lovable-uploads/blog-visuals-2026-09/9-9-role-comparison.svg)
 
 ## Our Honest Take
 
@@ -150,10 +150,10 @@ The 5-amp alternator option is the one upgrade we always recommend -- charges th
 
 Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW is a Mercury Marine Premier Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. [Read Jay's full bio](/about/jay-harris).
 
-**See the current price on the Mercury 9.9 MH EFI.** 
-[mercuryrepower.ca](https://www.mercuryrepower.ca), live CAD pricing, full configuration. 
-Or call 905-342-2153. 
-Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. 
+**See the current price on the Mercury 9.9 MH EFI.**
+[mercuryrepower.ca](https://www.mercuryrepower.ca), live CAD pricing, full configuration.
+Or call 905-342-2153.
+Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
 Mercury Premier dealer. Est. 1947.
 
 ---
@@ -213,4 +213,3 @@ Compare the exact model, shaft length, starting system, included tank and hose, 
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-

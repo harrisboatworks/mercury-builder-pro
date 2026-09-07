@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/how-to-read-boat-capacity-plate-ontario.md
-last_updated: 2026-09-06
+last_updated: 2026-09-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "How to Read a Boat Capacity Plate in Ontario"
 description: "Decode a Canadian compliance notice: maximum recommended safe horsepower, people and load limits, where to find it, and what to do if it is missing."
 category: "Buying Guides"
 date_published: 2026-05-16
-date_modified: 2026-09-06
+date_modified: 2026-09-07
 keywords: ["boat capacity plate","capacity plate ontario","transport canada compliance notice","boat maximum horsepower","boat capacity decoder","boat hin number","used boat inspection ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,10 +23,10 @@ revenue_driver: repower
 
 > Decode a Canadian compliance notice: maximum recommended safe horsepower, people and load limits, where to find it, and what to do if it is missing.
 
-**Category:** Buying Guides  
-**Published:** 2026-05-16  
-**Last reviewed:** 2026-09-06  
-**Read time:** 8 min read  
+**Category:** Buying Guides
+**Published:** 2026-05-16
+**Last reviewed:** 2026-09-07
+**Read time:** 8 min read
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/how-to-read-boat-capacity-plate-ontario
 
 ## Quick answer
@@ -87,7 +87,17 @@ Transport Canada's 2026 guide says most powered pleasure craft under 24 metres r
 
 For a boat built after April 29, 2010, contact the manufacturer or importer and ask for the missing notice. For an older boat, contact them first; if they are no longer in business or cannot provide one, Transport Canada recommends a naval architect's assessment of the boat's safe operating limits. Do not substitute an internet formula or a plate from a similar model.
 
-![Macro close-up of a Transport Canada Compliance Notice showing max persons, horsepower, and load fields](/lovable-uploads/inline/inline-capacity-plate-macro.png)
+**What the notice actually carries, field by field**
+
+| Field on the notice | What it tells you |
+|---|---|
+| Maximum number of persons | The largest number of people included in the manufacturer's recommended safe limits. It is a count, separate from the weight limit, and capacity is reached when either the people limit or the weight limit is reached, whichever comes first. |
+| Maximum recommended engine power | The highest motor power the hull was designed and tested to handle safely. It is a limit to respect, not a shopping target. |
+| Maximum gross load | The total weight the boat can safely carry: people, fuel, gear, motor, batteries, and everything that is not the empty hull. Usually shown in both kilograms and pounds. |
+| Manufacturer or importer, and model | Who built or imported the hull and which model it is. This is what you quote when you ask for a replacement notice. |
+| Declaration of compliance | The statement that the product complied with the applicable Canadian construction requirements when it was built or imported. |
+
+Recommended maximum safe limits appear on notices for pleasure craft up to 6 metres, as described above. Format and samples: [Transport Canada, compliance notices for pleasure and non-pleasure craft](https://tc.canada.ca/en/marine-transportation/marine-safety/compliance-notices-pleasure-non-pleasure-craft).
 
 ## What this means for engine repowering
 
@@ -155,4 +165,3 @@ The persons figure limits headcount, while the load figure accounts for the comb
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-

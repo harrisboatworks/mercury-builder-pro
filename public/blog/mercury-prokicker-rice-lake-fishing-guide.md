@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-prokicker-rice-lake-fishing-guide.md
-last_updated: 2026-09-06
+last_updated: 2026-09-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury ProKicker for Rice Lake Walleye"
 description: "Why the Mercury 9.9 ProKicker is the standard kicker for Rice Lake walleye trolling: what it is, which version to buy, install tips."
 category: "Fishing"
 date_published: 2026-02-06
-date_modified: 2026-09-06
+date_modified: 2026-09-07
 keywords: ["Mercury 9.9 ProKicker Rice Lake","Mercury ProKicker Ontario","9.9 kicker motor walleye trolling","Mercury 9.9 ProKicker vs standard 9.9","ProKicker EFI guide","kicker motor Rice Lake"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,11 +23,13 @@ revenue_driver: repower
 
 > Why the Mercury 9.9 ProKicker is the standard kicker for Rice Lake walleye trolling: what it is, which version to buy, install tips.
 
-**Category:** Fishing  
-**Published:** 2026-02-06  
-**Last reviewed:** 2026-09-06  
-**Read time:** 10 min read  
+**Category:** Fishing
+**Published:** 2026-02-06
+**Last reviewed:** 2026-09-07
+**Read time:** 10 min read
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-prokicker-rice-lake-fishing-guide
+
+*Hero image: AI-generated editorial fishing scene. It illustrates boating context, not an exact ProKicker configuration, location or completed HBW customer installation.*
 
 > **Quick answer:** For Rice Lake walleye fishing, a Mercury 9.9 ProKicker is the standard kicker motor, and for good reason. It trolls cleanly at the 1 to 2 mph walleye demand, runs all day on very little fuel, and doubles as your get-home motor on a 32 km lake. The current EFI ProKicker comes with a Command Thrust gearcase and a high-thrust prop. Build a quote at mercuryrepower.ca or see our [Rice Lake Mercury repower page](/locations/rice-lake-mercury-repower) for local details.
 
@@ -60,7 +62,7 @@ The standard 9.9 is a primary motor for small boats. It is not purpose-built to 
 
 ---
 
-![Side-by-side comparison of Mercury 9.9 ProKicker and standard 9.9 FourStroke: ProKicker best for trolling, standard for small boats.](/lovable-uploads/inline/prokicker-vs-standard-99.svg)
+![Mercury 9.9 roles: standard FourStroke for suitable small-boat propulsion, ProKicker for auxiliary control; confirm the exact configuration.](/lovable-uploads/blog-visuals-2026-09/9-9-role-comparison.svg)
 
 ## Why a Kicker Matters on Rice Lake Specifically
 
@@ -84,7 +86,7 @@ When you want sustained slow trolling plus a get-home motor, the ProKicker is th
 
 Most serious Rice Lake walleye rigs we see run a kicker, and many also run a bow-mount. That is a use-case recommendation, not a rule that the main motor can never troll.
 
-![Mercury main outboard and 9.9 ProKicker on an aluminum boat transom, ideal for trolling Rice Lake walleye.](/lovable-uploads/inline/inline-prokicker-trolling-setup.png)
+![Kicker setup planning: bracket and clearance, fuel and electrical connections, controls and acceptance checks.](/lovable-uploads/blog-visuals-2026-09/kicker-installation-planning.svg)
 
 It also happens to be your backup motor when the main decides not to cooperate at the far end of the lake. On a 32 km lake with the afternoon west wind building, a second motor that can get you home is worth thinking about. For more on how that wind shapes a day on this water, see our [Rice Lake fishing guide](/blog/best-mercury-outboard-rice-lake-fishing).
 
@@ -270,4 +272,3 @@ Yes. It is used for trolling on the connecting lakes and as a backup motor on cr
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-

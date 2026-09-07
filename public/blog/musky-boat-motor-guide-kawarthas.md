@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/musky-boat-motor-guide-kawarthas.md
-last_updated: 2026-09-06
+last_updated: 2026-09-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Best Motors for Kawartha Musky Fishing"
 description: "Choose the right Mercury outboard for musky fishing in Ontario's Kawartha Lakes. Power recommendations and setup tips from local musky anglers."
 category: "Buying Guide"
 date_published: 2026-04-06
-date_modified: 2026-09-06
+date_modified: 2026-09-07
 keywords: ["musky boat motor","kawartha musky fishing","musky boat setup","mercury for musky","musky fishing boat"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,10 +23,10 @@ revenue_driver: repower
 
 > Choose the right Mercury outboard for musky fishing in Ontario's Kawartha Lakes. Power recommendations and setup tips from local musky anglers.
 
-**Category:** Buying Guide  
-**Published:** 2026-04-06  
-**Last reviewed:** 2026-09-06  
-**Read time:** 9 min read  
+**Category:** Buying Guide
+**Published:** 2026-04-06
+**Last reviewed:** 2026-09-07
+**Read time:** 9 min read
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/musky-boat-motor-guide-kawarthas
 
 > **Quick answer:** For musky in the Kawarthas, a Mercury 90-150 FourStroke main with a 9.9 ProKicker is an 18-21 ft example for slow trolling big baits. Heavier 19-21 ft boats and dedicated 21 ft+ rigs suit the different example bands below. Boat-control beats top speed on Stoney, Buckhorn, and Pigeon. Stay inside the capacity plate. We package main-plus-kicker setups regularly; quote at mercuryrepower.ca.
@@ -98,7 +98,9 @@ Many musky anglers add a kicker motor:
 - Mercury 15HP
 - Mercury 20HP
 
-![Anglers holding a musky in a boat with a Mercury 150 Pro XS outboard, illustrating motor setups for Kawartha fishing.](/lovable-uploads/Musky_Boat_Motor_Kawarthas_Guide.png)
+![AI-generated editorial scene of two anglers wearing flotation vests in an aluminum fishing boat with a Mercury outboard.](/lovable-uploads/blog-photos-2026-09/mercury-fishing-editorial.webp)
+
+*AI-generated editorial scene illustrating a fishing outing. The pictured setup is not a horsepower recommendation or a documented HBW customer boat.*
 
 ### Trolling Motor Integration
 
@@ -165,4 +167,3 @@ Command Thrust fit is model- and application-specific. On a typical planing musk
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-

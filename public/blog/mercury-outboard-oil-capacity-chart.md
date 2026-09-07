@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-oil-capacity-chart.md
-last_updated: 2026-09-06
+last_updated: 2026-09-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Outboard Oil Capacity Chart: Model and Year Lookup"
 description: "Search Mercury FourStroke crankcase and gearcase capacities by horsepower, year, displacement, serial break and engine family, from 2.5 to 600 HP."
 category: "Service & Maintenance"
 date_published: 2026-07-24
-date_modified: 2026-09-06
+date_modified: 2026-09-07
 keywords: ["Mercury outboard oil capacity chart","Mercury FourStroke oil capacity","Mercury gearcase oil capacity","Mercury outboard oil filter chart","Mercury 90 oil capacity","Mercury 60 gear oil capacity","Mercury outboard oil lookup"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,10 +23,10 @@ revenue_driver: service
 
 > Search Mercury FourStroke crankcase and gearcase capacities by horsepower, year, displacement, serial break and engine family, from 2.5 to 600 HP.
 
-**Category:** Service & Maintenance  
-**Published:** 2026-07-24  
-**Last reviewed:** 2026-09-06  
-**Read time:** 12 min read  
+**Category:** Service & Maintenance
+**Published:** 2026-07-24
+**Last reviewed:** 2026-09-07
+**Read time:** 12 min read
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-oil-capacity-chart
 
 > **Quick answer:** Mercury FourStroke oil capacity is not determined by horsepower alone. A 90 HP can take 4.54 L (4.8 US qt), 5 L (5.28 US qt) or 5.2 L (5.5 US qt) depending on year, engine family and serial break. Use the lookup below to match horsepower, year, displacement, gearcase and serial number, then confirm the final level on the dipstick and in the manual for that engine.
@@ -36,6 +36,10 @@ The label on the cowl gets you into the right neighbourhood. It does not always 
 That is why this lookup keeps similar-horsepower engines on separate rows. It is based on Mercury Marine's 2026 Capacity Guide, publication 8M0243459, pages 24 through 27.
 
 Here, 2026 is the guide's publication year. It is not a claim that every row is a 2026 or current-model-year engine.
+
+**How to read the source:** Gearcase millilitres are conversions from the guide's US fluid ounces, rounded to the nearest 5 mL. Oil grades follow the printed recommendation column; the guide allows different grades for certain temperatures and applications, so the serial-number owner's manual controls.
+
+**Ambiguous entries:** The guide lists two 2001+ 40 HP 996 cc rows (14.9 and 24 US fl oz) without distinguishing their gearcases. Do not select either by horsepower alone. The 2006+ 90 HP serial range also overlaps the later 2.1 L row; identify the powerhead first. The 2018 150 Pro XS row is reproduced as printed, but its filter and gearcase must be confirmed by serial number before ordering or servicing.
 
 ## Search the Mercury FourStroke Capacity Chart
 
@@ -61,15 +65,15 @@ Type a horsepower, family, displacement or serial break. Examples: **9.9**, **2B
 | 25 HP | 2006+ | 492 cc EFI, standard gearcase | 1.8 L (1.9 US qt) | 350 mL (11.8 US fl oz) | Mercury 10W-30 | 8M0162832 |
 | 25 HP | 2006+ | 492 cc EFI, BigFoot gearcase | 1.8 L (1.9 US qt) | 440 mL (14.9 US fl oz) | Mercury 10W-30 | 8M0162832 |
 | 25 HP | 2022+ | 500 cc | 1.4 L (1.5 US qt) | 460 mL (15.6 US fl oz) | Mercury 10W-30 | 8M0162832 |
-| 30 HP | 1999-2005 | 747 cc, standard gearcase | 3 L (3.17 US qt) | 440 mL (14.9 US fl oz) | Mercury 10W-30 | 8M0162830 |
-| 30 HP | 1999-2005 | 747 cc, BigFoot gearcase | 3 L (3.17 US qt) | 665 mL (22.5 US fl oz) | Mercury 10W-30 | 8M0162830 |
-| 30 HP | 2006+ | 492 cc EFI | 1.8 L (1.9 US qt) | 350 mL (11.8 US fl oz) | Mercury 10W-30 | 8M0162832 |
-| 30 HP | 2022+ | 500 cc | 1.4 L (1.5 US qt) | 460 mL (15.6 US fl oz) | Mercury 10W-30 | 8M0162832 |
+| 30 HP | 1999-2005 | 747 cc, standard gearcase | 3 L (3.17 US qt) | 440 mL (14.9 US fl oz) | Mercury 25W-40 | 8M0162830 |
+| 30 HP | 1999-2005 | 747 cc, BigFoot gearcase | 3 L (3.17 US qt) | 665 mL (22.5 US fl oz) | Mercury 25W-40 | 8M0162830 |
+| 30 HP | 2006+ | 492 cc EFI | 1.8 L (1.9 US qt) | 350 mL (11.8 US fl oz) | Mercury 25W-40 | 8M0162832 |
+| 30 HP | 2022+ | 500 cc | 1.4 L (1.5 US qt) | 460 mL (15.6 US fl oz) | Mercury 25W-40 | 8M0162832 |
 | 35 HP | 2017 | Jet | 2.84 L (3 US qt) | None | Mercury 25W-40 | 8M0162830 |
 | 40 HP | 1999+ | 747 cc, 3-cylinder, standard gearcase | 3 L (3.17 US qt) | 440 mL (14.9 US fl oz) | Mercury 25W-40 | 8M0162830 |
 | 40 HP | 1999+ | 747 cc, 3-cylinder, BigFoot gearcase | 3 L (3.17 US qt) | 665 mL (22.5 US fl oz) | Mercury 25W-40 | 8M0162830 |
-| 40 HP | 2001+ | 996 cc, 4-cylinder, standard gearcase | 3 L (3.17 US qt) | 440 mL (14.9 US fl oz) | Mercury 25W-40 | 8M0162830 |
-| 40 HP | 2001+ | 996 cc, 4-cylinder, BigFoot or Command Thrust gearcase | 3 L (3.17 US qt) | 710 mL (24 US fl oz) | Mercury 25W-40 | 8M0162830 |
+| 40 HP | 2001+ | 996 cc, 4-cylinder; 14.9 oz guide entry, gearcase unspecified | 3 L (3.17 US qt) | 440 mL (14.9 US fl oz) | Mercury 25W-40 | 8M0162830 |
+| 40 HP | 2001+ | 996 cc, 4-cylinder; 24 oz guide entry, gearcase unspecified | 3 L (3.17 US qt) | 710 mL (24 US fl oz) | Mercury 25W-40 | 8M0162830 |
 | 50 HP | 1995-2000 | 935 cc, 4-cylinder, standard gearcase | 3 L (3.17 US qt) | 440 mL (14.9 US fl oz) | Mercury 25W-40 | 8M0162830 |
 | 50 HP | 1995-2000 | 935 cc, 4-cylinder, BigFoot gearcase | 3 L (3.17 US qt) | 665 mL (22.5 US fl oz) | Mercury 25W-40 | 8M0162830 |
 | 50 HP | 2001+ | 996 cc, 4-cylinder, standard gearcase | 3 L (3.17 US qt) | 340 mL (11.5 US fl oz) | Mercury 25W-40 | 8M0162830 |
@@ -92,7 +96,7 @@ Type a horsepower, family, displacement or serial break. Examples: **9.9**, **2B
 | 200-300 HP Pro XS | 2018 | 4.6 L V8 | 6.62 L (7 US qt) | Not listed | Mercury 10W-30 Synthetic Blend | 8M0176312 |
 | 200-300 HP FourStroke | 2018 | 4.6 L V8 | 6.62 L (7 US qt) | 720 mL (24.4 US fl oz) | Mercury 10W-30 Synthetic Blend | 8M0176312 |
 | 135 HP Verado | 2006+ | 4-cylinder | 6 L (6.34 US qt) | 970 mL (32.8 US fl oz) | Mercury 25W-40 | 877767Q01 |
-| 150 HP Pro XS | 2018 | Inline 4-cylinder | 6 L (6.34 US qt) | 970 mL (32.8 US fl oz) | Mercury 25W-40 | 877767Q01 |
+| 150 HP Pro XS | 2018 | Pro XS; confirm filter and gearcase by serial number | 6 L (6.34 US qt) | 970 mL (32.8 US fl oz) | Mercury 25W-40 | 877767Q01 |
 | 150 HP Verado | 2006+ | 4-cylinder | 6 L (6.34 US qt) | 970 mL (32.8 US fl oz) | Mercury 25W-40 | 877767Q01 |
 | 175 HP Verado | 2006+ | 4-cylinder | 6 L (6.34 US qt) | 970 mL (32.8 US fl oz) | Mercury 25W-40 | 877767Q01 |
 | 200 HP Verado | 2007+ | 4-cylinder | 6 L (6.34 US qt) | 970 mL (32.8 US fl oz) | Mercury 25W-40 | 877767Q01 |
@@ -101,7 +105,7 @@ Type a horsepower, family, displacement or serial break. Examples: **9.9**, **2B
 | 225 HP Verado | 2005+ | 6-cylinder | 7 L (7.4 US qt) | 970 mL (32.8 US fl oz) | Mercury 25W-40 | 877769Q01 |
 | 250 HP Verado | 2005+ | 6-cylinder | 7 L (7.4 US qt) | 970 mL (32.8 US fl oz) | Mercury 25W-40 | 877769Q01 |
 | 275 HP Verado | 2005+ | 6-cylinder | 7 L (7.4 US qt) | 970 mL (32.8 US fl oz) | Mercury 25W-40 | 877769Q01 |
-| 300 HP Verado | 2007+ | 6-cylinder | 7 L (7.4 US qt) | 970 mL (32.8 US fl oz) | Mercury 25W-40 | 877769Q01 |
+| 300 HP Verado | 2007+ | 6-cylinder | 7 L (7.4 US qt) | 970 mL (32.8 US fl oz) | Mercury 25W-40 Synthetic Blend | 877769Q01 |
 | 350 HP Verado | 2015+ | 6-cylinder | 7 L (7.4 US qt) | 850 mL (28.7 US fl oz) | Mercury 25W-40 Synthetic Blend | 877769Q01 |
 | 400 HP Verado | 2019+ | 6-cylinder | 7 L (7.4 US qt) | 850 mL (28.7 US fl oz) | Mercury 25W-40 Synthetic Blend | 877769Q01 |
 | 350 HP Verado | 2022+ | V10; left-hand gearcase 46.7 oz, right-hand 53.4 oz | 9.5 L (10 US qt) | 1380 / 1580 mL (46.7 / 53.4 US fl oz) | Mercury 25W-40 Synthetic Blend | 8M0205849 |
@@ -167,8 +171,8 @@ The capacity guide groups oils by engine family, not by one universal rule.
 
 | Engine group in the guide | Listed oil family |
 |---|---|
-| Most 2.5-30 HP FourStrokes | Mercury 10W-30 |
-| Most 40-60 HP FourStrokes and legacy 1.7 L 75/90/115 | Mercury 25W-40 |
+| 2.5-25 HP rows on guide page 24 | Mercury 10W-30 |
+| 30-60 HP rows and legacy 1.7 L 75/90/115 | Mercury 25W-40 |
 | 2.1 L 75/90/115, 150 EFI and current 3.4 L V6 / 4.6 L V8 | Mercury 10W-30 Synthetic Blend |
 | Legacy 4- and 6-cylinder Verado families | Mercury 25W-40 |
 | 2022+ V10 350/400 Verado | Mercury 25W-40 Synthetic Blend |
@@ -246,7 +250,7 @@ Use the chart as a reference, not a blind pour target. Drain and replace the fil
 
 ### Is 10W-30 or 25W-40 correct for my Mercury outboard?
 
-Both are correct for different Mercury families. The 2026 capacity guide lists 10W-30 for many 2.5-30 HP and current V6/V8 families, while 25W-40 appears on 40-60 HP, legacy 1.7 L 75/90/115 and several Verado families. Use the exact model and serial-number manual.
+Both are correct for different Mercury families. The 2026 capacity guide lists 10W-30 for the 2.5-25 HP rows and listed V6/V8 families, while 25W-40 appears on 30-60 HP, legacy 1.7 L 75/90/115 and several Verado families. Use the exact model and serial-number manual.
 
 ### What gear lube does a Mercury outboard use?
 
@@ -273,4 +277,3 @@ The 2026 capacity chart generally lists Mercury 80W-90 Premium below 75 HP, SAE 
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-

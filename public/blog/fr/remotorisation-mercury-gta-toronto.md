@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/remotorisation-mercury-gta-toronto.md
-last_updated: 2026-09-06
+last_updated: 2026-09-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Remotorisation Mercury dans la GTA : comment un plaisancier de Toronto r
 description: "Un parcours étape par étape sur la façon dont un plaisancier de la GTA remotorise un bateau chez Harris Boat Works : logistique, prix, échéancier et transport."
 category: "Guide d'achat"
 date_published: 2026-05-13
-date_modified: 2026-09-06
+date_modified: 2026-09-07
 keywords: ["remotorisation Mercury GTA","remotorisation Mercury Toronto","remotorisation Mercury Mississauga","coût remotorisation bateau GTA","concessionnaire Mercury Premier Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Catégorie :** Guide d'achat\
 **Publié le :** 2026-05-13\
-**Dernière révision :** 2026-09-06\
+**Dernière révision :** 2026-09-07\
 **Temps de lecture :** 12 min\
 **URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/remotorisation-mercury-gta-toronto
 
@@ -39,9 +39,15 @@ Vous avez décidé de remotoriser. Peut-être que votre vieux moteur est à bout
 
 C'est la version du parcours que nous donnerions à un plaisancier de Toronto, Mississauga, Markham ou Hamilton qui appelle pour une remotorisation. **Nous ne sommes pas situés dans la GTA. Nous sommes à Gores Landing, en Ontario, sur le lac Rice, à environ 90 minutes à l'est du centre-ville de Toronto.** Les plaisanciers de la GTA viennent nous voir régulièrement parce que nous sommes un concessionnaire [Mercury Marine](https://www.mercurymarine.com/ca/en) certifié Premier avec des prix d'installation transparents. La logistique est rodée; voici comment ça se passe.
 
-![Map showing Harris Boat Works in Gores Landing and the 1-2 hour drive radius for GTA boaters seeking Mercury repowers.](/lovable-uploads/diagram-hbw-service-area-map.png)
+### Itinéraire vers Harris Boat Works
 
-*D'où viennent nos clients. Le rayon de conduite de 90 minutes couvre la plus grande partie de l'est de la GTA, les Kawarthas, Northumberland, Durham et la baie de Quinte.*
+**Adresse :** 5369 Harris Boat Works Rd, Gores Landing, Ontario, K0K 2E0.
+
+[Obtenir un itinéraire routier vers HBW](https://www.google.com/maps/dir/?api=1&destination=5369%20Harris%20Boat%20Works%20Rd%2C%20Gores%20Landing%2C%20ON%20K0K%202E0).
+
+Le temps de trajet varie selon votre point de départ, la circulation et les conditions routières. HBW se trouve à Gores Landing; cette adresse ne désigne pas une zone de service à domicile.
+
+Pour un dépôt de bateau, remplissez d'abord la [demande de service](https://hbw.wiki/service). Vous pouvez ensuite déposer le bateau à tout moment, y compris en dehors des heures d'ouverture.
 
 ---
 
@@ -256,4 +262,3 @@ Très variable. Un Mercury 150 de 5 ans à faible heures s'échange pour 5 500 $
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-

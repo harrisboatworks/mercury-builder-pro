@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/bilge-pump-troubleshooting-guide.md
-last_updated: 2026-09-06
+last_updated: 2026-09-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "The Complete Guide to Boat Bilge Pumps: How They Work, Why They Fail, an
 description: "The complete guide to boat bilge pumps: how the pump, float switch, and wiring work together, why they really fail, how to size and test one, and when to call HBW."
 category: "Service & Troubleshooting"
 date_published: 2026-07-03
-date_modified: 2026-09-06
+date_modified: 2026-09-07
 keywords: ["bilge pump troubleshooting","float switch not working","bilge pump won't turn on","how to size a bilge pump","bilge pump wiring corrosion"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,11 +23,13 @@ revenue_driver: service
 
 > The complete guide to boat bilge pumps: how the pump, float switch, and wiring work together, why they really fail, how to size and test one, and when to call HBW.
 
-**Category:** Service & Troubleshooting  
-**Published:** 2026-07-03  
-**Last reviewed:** 2026-09-06  
-**Read time:** ~11 min read  
+**Category:** Service & Troubleshooting
+**Published:** 2026-07-03
+**Last reviewed:** 2026-09-07
+**Read time:** ~11 min read
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/bilge-pump-troubleshooting-guide
+
+*Hero image: AI-generated editorial illustration of generic bilge-pump components. This is not an installation diagram or an HBW service photograph.*
 
 > **Quick answer:** A bilge pump system has three failure points: the pump, the float switch, and the wiring between them. Most "dead pump" calls come down to a stuck float switch or a corroded connector, not the motor. Test the manual override first, then the float switch, then check every connector for corrosion. Still not sure? Put in a request at [hbw.wiki/service](https://hbw.wiki/service) and we'll check all three.
 
@@ -198,7 +200,15 @@ You don't need to pull the boat to check this. From the dock, in order:
 
 ## Step-by-Step Troubleshooting Flowchart
 
-![Bilge pump troubleshooting flowchart: manual override test, float switch test, and next steps](/lovable-uploads/bilge-pump-troubleshooting-flowchart.png)
+**Start here: the pump will not run.**
+
+| Step | Test | If yes | If no |
+|---|---|---|---|
+| 1 | Flip the helm switch to manual. Does the pump run? | Go to step 2. The pump and its direct wiring are good. | Check the fuse or breaker, then the battery terminals, then test for 12V at the pump terminals. |
+| 2 | Set the helm switch to auto and lift the float arm by hand. Does the pump kick on? | Go to step 3. The switch circuit works, so the fault is intermittent. | Check the float switch wiring for corrosion, then check the bilge for debris jamming the arm. Replace the switch if the arm moves freely and the pump still will not trigger. |
+| 3 | The pump runs on both manual and auto, but you still had a failure. | Look for the intermittent cause: a chafed harness, a corroded connector, a float mounted too high for the bilge, or a blocked discharge. | Not applicable. |
+
+Do not stop at step 3 and call the system healthy. A pump that ran on the bench and failed on the water has a fault you have not found yet.
 
 **Pump won't run at all, manual or auto:**
 1. Check the fuse or breaker. Blown? Replace it.
@@ -304,17 +314,13 @@ The good news: freshwater bilge systems don't need the aggressive anti-corrosion
 
 ---
 
-## Legend Boats and the 6-Year WOWranty: What It Covers
+## Legend Boats: Check the Warranty for Your Boat
 
-Legend Boats equips some fishing boats and deck boats with factory-installed Attwood Tsunami bilge pumps (1,900-3,000 L/h; 500-800 GPH). Verify the exact hull's factory specification and compliance notice, and confirm current WOWranty component coverage with Legend before you buy.
+Identify the installed bilge pump and keep the boat's model year, hull identification number, purchase documents and service records handy. Factory equipment and warranty terms can differ between models and years; a promotional warranty headline does not establish coverage for a particular pump or switch.
 
-Where most manufacturers cover non-structural components for one to three years, Legend covers most other components for six full years. On the Q-Series LE and Q-Series pontoons, that coverage extends to ten years. Other Legend models, including the LE Series and Halo, carry the standard 6-Year WOWranty.
+HBW can diagnose the fault, check the applicable written warranty and submit an eligible claim. Legend or the component manufacturer determines whether the cause of failure and the component qualify, including any exclusions and limits. Do not assume that a pump failure guarantees a no-charge repair.
 
-**What this means for bilge pump coverage:** if your Legend boat develops a factory bilge pump or float switch issue within the warranty window, that's a warranty claim, not a repair bill. It covers the pump, its switch, and related factory-installed electrical components as part of the boat's overall coverage.
-
-**The catch:** warranty covers manufacturing defects and premature failure, not neglect. A connector that corroded because it was never inspected, or a pump jammed by debris that was never cleared, falls outside warranty coverage. The WOWranty is most valuable when it's backed by basic maintenance: annual inspection, a clean bilge, and testing the system every spring.
-
-HBW is an [authorized Legend dealer](/blog/legend-boats-mercury-power-package-guide-ontario). If your Legend boat has a bilge pump issue inside the warranty window, bring it to us. We'll diagnose it, document it, and handle the warranty claim so you're not chasing it yourself.
+Complete the [service request](https://hbw.wiki/service), then drop off anytime, including after hours. Diagnosis, work approval and claim assessment are separate from drop-off. Keep inspecting and testing the bilge system using the installed equipment manufacturer's instructions.
 
 ---
 
@@ -394,7 +400,7 @@ For an Ontario recreational boat, start with the boat manufacturer's specificati
 
 ### Does my Legend Boats warranty cover the bilge pump?
 
-Yes. Legend's 6-Year WOWranty covers most components, including factory-installed bilge pumps and related electrical parts, for six years from purchase. On the Q-Series LE and Q-Series pontoons, that stretches to ten years. Bring your Legend to HBW. We're an authorized dealer and can handle the warranty claim directly.
+Coverage depends on your boat's model year, original warranty terms, the installed component and the cause of failure. HBW can diagnose the fault, check the applicable written terms and submit an eligible claim. Legend or the component manufacturer determines coverage; a failed pump is not automatically a no-charge repair.
 
 ## Related guides
 
@@ -421,4 +427,3 @@ Yes. Legend's 6-Year WOWranty covers most components, including factory-installe
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-vesselview-smartcraft-plain-english-guide.md
-last_updated: 2026-09-06
+last_updated: 2026-09-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury VesselView vs SmartCraft Explained (Ontario)"
 description: "What Mercury VesselView shows, how it differs from SmartCraft, how to check engine hours, and how to connect the Mercury Marine App. From Harris Boat Works on Rice Lake."
 category: "Tech & Features"
 date_published: 2026-05-15
-date_modified: 2026-09-06
+date_modified: 2026-09-07
 keywords: ["Mercury VesselView SmartCraft guide","Mercury Marine App","SmartCraft Connect installation","Active Trim Mercury","Digital Throttle and Shift","VesselView Mobile replacement"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,10 +23,10 @@ revenue_driver: repower
 
 > What Mercury VesselView shows, how it differs from SmartCraft, how to check engine hours, and how to connect the Mercury Marine App. From Harris Boat Works on Rice Lake.
 
-**Category:** Tech & Features  
-**Published:** 2026-05-15  
-**Last reviewed:** 2026-09-06  
-**Read time:** 9 min read  
+**Category:** Tech & Features
+**Published:** 2026-05-15
+**Last reviewed:** 2026-09-07
+**Read time:** 9 min read
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-vesselview-smartcraft-plain-english-guide
 
 ## Mercury VesselView, SmartCraft, and the New [Mercury Marine](https://www.mercurymarine.com/ca/en) App. A Plain-English Guide
@@ -43,7 +43,19 @@ Harris Boat Works is a family-owned marina in Gores Landing on Rice Lake, establ
 
 ---
 
-![Diagram explaining how Mercury VesselView, SmartCraft, Active Trim, and the Mercury Marine App connect](/lovable-uploads/mercury-vesselview-smartcraft-app-ecosystem.png)
+**How the pieces actually connect**
+
+SmartCraft is the hub. Everything else plugs into it separately. Nothing routes through anything else.
+
+| Piece | What it is | How it attaches to SmartCraft |
+|---|---|---|
+| Engine sensors | The source of the data | Built into the motor |
+| SmartCraft | The engine data network | This is the hub |
+| VesselView display | A dash screen that reads the network | Wired to the SmartCraft network |
+| Active Trim | A hands-free trim feature | Enabled through DTS controls, a VesselView display, or a standalone dash pad |
+| Mercury Marine App | Your phone, over Bluetooth | Through a SmartCraft Connect Mobile module, not through the display |
+
+Active Trim is a feature that sits on the network. It is not a step your engine data passes through on its way to your phone.
 
 ## SmartCraft Is the Engine's Computer. Everything Else Plugs Into It.
 
@@ -207,7 +219,7 @@ Most Mercury outboards from 2004 or newer at 40 HP and up are SmartCraft-capable
 ## Related guides
 
 - [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide), choosing the right propeller
-- [Mercury SmartCraft Alarm Codes Ontario](/blog/mercury-smartcraft-alarm-codes-encyclopedia), SmartCraft alarm code reference
+- [Mercury Alarm Codes List Ontario](/blog/mercury-smartcraft-alarm-codes-encyclopedia), SmartCraft alarm code reference
 - [Mercury Outboard Beep & Alarm Codes: What Each Means](/blog/mercury-outboard-beeping-codes-guide), beeping code guide
 - [Mercury Outboard Fault Codes: Legacy VesselView and Modern UFC Lookup](/blog/mercury-outboard-fault-codes-lookup)
 - [Mercury Outboard Won't Start (Ontario Dealer Guide, 2026)](/blog/mercury-outboard-wont-start-troubleshooting), won't-start troubleshooting
@@ -225,4 +237,3 @@ Most Mercury outboards from 2004 or newer at 40 HP and up are SmartCraft-capable
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-

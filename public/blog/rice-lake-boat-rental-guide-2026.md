@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/rice-lake-boat-rental-guide-2026.md
-last_updated: 2026-09-06
+last_updated: 2026-09-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Rice Lake Boat Rentals: Fleet, Costs, and How It Works (2026)"
 description: "Rice Lake boat rentals from Harris Boat Works in Gores Landing. The current pontoon and fishing-boat lineup, what's included, fuel planning, licence rules, and online..."
 category: "Boating Lifestyle"
 date_published: 2026-07-02
-date_modified: 2026-09-06
+date_modified: 2026-09-07
 keywords: ["rice lake boat rentals","pontoon rental rice lake","boat rental gores landing","fishing boat rental kawarthas","rent a boat rice lake ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,10 +23,10 @@ revenue_driver: rentals
 
 > Rice Lake boat rentals from Harris Boat Works in Gores Landing. The current pontoon and fishing-boat lineup, what's included, fuel planning, licence rules, and online...
 
-**Category:** Boating Lifestyle  
-**Published:** 2026-07-02  
-**Last reviewed:** 2026-09-06  
-**Read time:** ~9 min read  
+**Category:** Boating Lifestyle
+**Published:** 2026-07-02
+**Last reviewed:** 2026-09-07
+**Read time:** ~9 min read
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/rice-lake-boat-rental-guide-2026
 
 > **Quick answer:** Harris Boat Works rents pontoons and fishing boats on Rice Lake. The current online lineup includes 20 Transporter, 23 Cruise, 24 Transporter, the Halo pontoon, and 16 ProSport boats. Everything books online with live availability, life jackets and safety gear included. You need photo ID and proof of operator competency. Book at harrisboatworks.ca/rentals.
@@ -63,7 +63,9 @@ Capacity is per boat and it's a hard limit. [If your group is bigger, book two b
 
 **Check-in.** Show photo ID and a boat operator's card (permanent or temporary) for whoever's driving. We process a $1,000 damage deposit hold on a credit card; it's an authorization, not a charge. Staff fit life jackets for everyone, then the driver gets [a boat orientation and a lake map](/blog/first-time-boat-rental-rice-lake-guide).
 
-![Life jackets fitted and laid out on a pontoon at the Harris Boat Works rental dock](/lovable-uploads/inline-rental-lifejackets-checkin.webp)
+![AI-generated editorial scene of life jackets laid out on a pontoon during a rental check-in](/lovable-uploads/inline-rental-lifejackets-checkin.webp)
+
+*AI-generated editorial scene illustrating a rental check-in. It is not a photo of our dock, our staff or our customers.*
 
 **Return.** Back at the dock, unloaded, by your contracted return time. Staff refuel and inspect the boat, settle the fuel used, and finalize the damage-deposit hold. Late charges follow the current signed rental terms.
 
@@ -221,4 +223,3 @@ Yes, multi-day rentals can stay at your cottage dock for the duration, and you c
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-rigging-costs-ontario.md
-last_updated: 2026-09-06
+last_updated: 2026-09-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Outboard Rigging Costs Explained (Ontario 2026)"
 description: "Mercury rigging costs: throttle, steering, harness, gauges, hose, cables, prop. Typical repower with post-2010 controls: $500-$1,500 CAD."
 category: "Repower"
 date_published: 2026-05-05
-date_modified: 2026-09-06
+date_modified: 2026-09-07
 keywords: ["mercury rigging cost","outboard rigging ontario","boat repower rigging","hydraulic steering upgrade","mercury install cost"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,10 +23,10 @@ revenue_driver: repower
 
 > Mercury rigging costs: throttle, steering, harness, gauges, hose, cables, prop. Typical repower with post-2010 controls: $500-$1,500 CAD.
 
-**Category:** Repower  
-**Published:** 2026-05-05  
-**Last reviewed:** 2026-09-06  
-**Read time:** 10 min read  
+**Category:** Repower
+**Published:** 2026-05-05
+**Last reviewed:** 2026-09-07
+**Read time:** 10 min read
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-rigging-costs-ontario
 
 ## Quick Answer
@@ -99,27 +99,27 @@ Here's what rigging actually is, what goes into the cost, and what you can do to
 
 Mercury rigging is everything between the motor and the boat: throttle and shift controls, steering, wiring harness, gauges, fuel hose, battery cables, and prop. The list is longer than most customers expect.
 
-**Throttle and shift control** 
+**Throttle and shift control**
 Console-mounted lever on most boats. Mercury Digital Throttle and Shift (DTS) on higher-HP configurations. For Mercury-to-Mercury repowers with post-2010 controls in good shape, often kept. Older or non-Mercury controls are typically replaced.
 
-**Steering** 
+**Steering**
 Three types: cable steering (standard under 90 HP, simple, inexpensive), hydraulic steering (standard at 90 HP and up, more comfortable, less maintenance), and power-assist (premium on bigger motors). Cable-to-hydraulic upgrades are common during repowers and are worth doing while the dash is open.
 
 Hydraulic steering conversion costs $1,650 to $3,500 CAD depending on motor HP and helm complexity.
 
-**Wiring harness** 
+**Wiring harness**
 Connects motor to controls, gauges, and battery. In our shop experience, Mercury has used common harness connectors across motor families for a number of years, so Mercury-to-Mercury repowers usually keep the harness if it's in good condition. Brand conversions need a new harness.
 
-**Gauges and displays** 
+**Gauges and displays**
 Older analog gauges (tach, fuel, water temp) often don't fully support modern Mercury motor data outputs. Mercury SmartCraft digital displays integrate engine data cleanly. Third-party multifunction displays (Garmin, Lowrance, Raymarine) integrate via NMEA 2000. Keeping compatible existing displays is free; adding a SmartCraft Connect Mobile adds several hundred dollars depending on screen size.
 
-**Battery cables and switches** 
+**Battery cables and switches**
 Heavier cable for higher-HP motors. Battery switch and dual-battery selectors replaced as needed.
 
-**Fuel hose and connections** 
+**Fuel hose and connections**
 Fuel line, primer bulb, fuel filter. Typically replaced during a repower regardless of apparent condition, fuel system age affects new motor reliability, and these parts are cheap insurance.
 
-**Propeller** 
+**Propeller**
 Aluminum 3-blade props are a common starting point for many motors up to 115 HP. Stainless 3- or 4-blade options may suit some 150 HP and larger applications. Current prop pricing and fit depend on the exact model. When safe seasonal conditions allow, an on-water check can verify WOT RPM; any prop change still requires customer approval under the work order.
 
 ### 2026 Rigging Cost Ranges by Scenario
@@ -271,4 +271,3 @@ In order of frequency: fuel hoses (degrade with age and ethanol), throttle/shift
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-

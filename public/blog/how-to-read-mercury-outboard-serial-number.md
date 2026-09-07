@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/how-to-read-mercury-outboard-serial-number.md
-last_updated: 2026-09-06
+last_updated: 2026-09-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Read Mercury Outboard Serial Number"
 description: "A practical guide to finding, reading, and decoding your Mercury outboard's serial number, model year, shaft length, features."
 category: "Buying Guide"
 date_published: 2026-05-17
-date_modified: 2026-09-06
+date_modified: 2026-09-07
 keywords: ["how to read Mercury serial number","decode Mercury outboard model number","Mercury outboard year by serial number","Mercury serial number lookup Ontario","find Mercury outboard model code"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,10 +23,10 @@ revenue_driver: repower
 
 > A practical guide to finding, reading, and decoding your Mercury outboard's serial number, model year, shaft length, features.
 
-**Category:** Buying Guide  
-**Published:** 2026-05-17  
-**Last reviewed:** 2026-09-06  
-**Read time:** 8 min read  
+**Category:** Buying Guide
+**Published:** 2026-05-17
+**Last reviewed:** 2026-09-07
+**Read time:** 8 min read
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/how-to-read-mercury-outboard-serial-number
 
 ## How to Read a Mercury Outboard Serial Number. Year, Specs, and Service History
@@ -64,7 +64,7 @@ If you want a quick check, send us your serial number through mercuryrepower.ca 
 
 The Mercury Model Number is the spec code, and unlike the serial, this one IS decodable. Newer Mercury motors carry a full SKU string like `1F60413GZ`. Older motors use a shorter human-readable code like `90ELPT` or `25EXLHGA`.
 
-![Infographic explaining how to decode a Mercury outboard model number, including country, horsepower, and year codes.](/lovable-uploads/diagram-mercury-model-number-decoder.png)
+**Record both identifiers.** Photograph the complete serial number and model information. Use the serial number in Mercury's official parts or service lookup, or ask HBW to confirm the exact engine. Do not infer a year or parts fit from an unverified character-position chart.
 
 *The model number encodes product spec. Use it together with the serial number when ordering parts, planning a repower, or registering warranty.*
 
@@ -287,4 +287,3 @@ No. The **model number** is the configuration (115ELPT). The **serial number** i
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-

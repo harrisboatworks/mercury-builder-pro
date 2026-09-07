@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-warranty-canada-2026.md
-last_updated: 2026-09-06
+last_updated: 2026-09-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Outboard Warranty Canada 2026"
 description: "A plain-English guide to Mercury outboard warranty in Canada: coverage, exclusions, maintenance records, registration, and Product Protection."
 category: "Buying Guide"
 date_published: 2026-05-23
-date_modified: 2026-09-06
+date_modified: 2026-09-07
 keywords: ["Mercury outboard warranty Canada","Mercury 3 year warranty","Mercury Product Protection MPP","Mercury corrosion warranty","Mercury warranty transfer used motor","Mercury warranty Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,10 +23,10 @@ revenue_driver: service
 
 > A plain-English guide to Mercury outboard warranty in Canada: coverage, exclusions, maintenance records, registration, and Product Protection.
 
-**Category:** Buying Guide  
-**Published:** 2026-05-23  
-**Last reviewed:** 2026-09-06  
-**Read time:** 10 min read  
+**Category:** Buying Guide
+**Published:** 2026-05-23
+**Last reviewed:** 2026-09-07
+**Read time:** 10 min read
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-warranty-canada-2026
 
 ## Mercury Outboard Warranty in Canada (2026): What's Covered, What's Not, and What's Worth Buying
@@ -39,7 +39,7 @@ We're a Mercury dealer in Ontario since 1965. We do warranty work in our shop ev
 
 ---
 
-![Mercury outboard warranty in Canada: 3-year standard factory coverage, extended Product Protection, and how to keep it valid](/blog-visuals/mercury-warranty-canada-explained.png)
+![Warranty checklist: confirm eligibility, check coverage and dates, and keep service records.](/lovable-uploads/blog-visuals-2026-09/warranty-checklist.svg)
 
 ## The Two Standard Warranties (Eligible Pleasure-Use Models)
 
@@ -253,4 +253,3 @@ No. Mercury's current guidance permits gasoline containing up to 10% ethanol. Fu
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-

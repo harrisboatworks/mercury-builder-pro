@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-40-vs-60-hp-outboard-ontario.md
-last_updated: 2026-09-06
+last_updated: 2026-09-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury 40 vs 60 HP Ontario Guide"
 description: "Mercury 40 vs 60 HP for Ontario boats. Real CAD prices, weight, fuel economy, Command Thrust availability, and which one your boat actually needs."
 category: "Mercury Outboards"
 date_published: 2026-05-09
-date_modified: 2026-09-06
+date_modified: 2026-09-07
 keywords: ["Mercury 40 vs 60 HP","Mercury 40 vs 60 HP comparison","best outboard for 16 ft aluminum boat Ontario","Mercury 40 ELPT vs 60 ELPT","Mercury 60 Command Thrust pontoon"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,10 +23,10 @@ revenue_driver: repower
 
 > Mercury 40 vs 60 HP for Ontario boats. Real CAD prices, weight, fuel economy, Command Thrust availability, and which one your boat actually needs.
 
-**Category:** Mercury Outboards  
-**Published:** 2026-05-09  
-**Last reviewed:** 2026-09-06  
-**Read time:** ~10 min read  
+**Category:** Mercury Outboards
+**Published:** 2026-05-09
+**Last reviewed:** 2026-09-07
+**Read time:** ~10 min read
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-40-vs-60-hp-outboard-ontario
 
 > **Quick answer:** For a 15 or 16 ft aluminum fishing boat with two adults, the Mercury 40 HP is enough. The 60 is the smarter long-term pick if you add a third person, tow a tube, or want loaded headroom, and the price gap is about $2,602. On pontoons under 20 ft, most customers land on the 60 Command Thrust. Build a quote at mercuryrepower.ca.
@@ -91,7 +91,7 @@ That said: the capacity plate is the ceiling. If your boat is rated for 40 HP ma
 
 ## Specs Side-by-Side
 
-![Side-by-side comparison: Mercury 40 HP (3-cylinder, 103 kg (227 lb)) vs 60 HP (4-cylinder, 113 kg (250 lb)) with best-boat and load recommendations; current pricing at mercuryrepower.ca.](/lovable-uploads/inline/40-vs-60-hp.svg)
+**Compare the exact configuration.** Use the specifications below alongside your boat's capacity plate, loaded use and compatible rigging. Check [current motor pricing](/pricing-reference) and [build a quote](/quote/motor-selection) for the options you need.
 
 | | Mercury 40 ELPT FourStroke | Mercury 60 ELPT FourStroke |
 |---|---|---|
@@ -249,4 +249,3 @@ Both motors will run 1,500-2,500+ hours with normal Ontario seasonal use (50-150
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-

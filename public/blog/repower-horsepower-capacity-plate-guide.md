@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/repower-horsepower-capacity-plate-guide.md
-last_updated: 2026-09-06
+last_updated: 2026-09-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "How to Choose Repower Horsepower From Your Capacity Plate"
 description: "Use the boat manufacturer's power limit, motor weight, transom condition, load, steering, and use to choose repower horsepower without guessing."
 category: "Repower"
 date_published: 2026-06-06
-date_modified: 2026-09-06
+date_modified: 2026-09-07
 keywords: ["boat capacity plate","maximum horsepower boat","repower horsepower guide","transport canada capacity plate","mercury repower ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,11 +23,13 @@ revenue_driver: repower
 
 > Use the boat manufacturer's power limit, motor weight, transom condition, load, steering, and use to choose repower horsepower without guessing.
 
-**Category:** Repower  
-**Published:** 2026-06-06  
-**Last reviewed:** 2026-09-06  
-**Read time:** 4 min read  
+**Category:** Repower
+**Published:** 2026-06-06
+**Last reviewed:** 2026-09-07
+**Read time:** 4 min read
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/repower-horsepower-capacity-plate-guide
+
+*Hero graphic: a planning checklist, not a reproduction of a regulatory capacity label.*
 
 ## Quick answer
 
@@ -45,9 +47,14 @@ For a field-by-field explanation, start with [how to read a Canadian boat capaci
 
 Most powered pleasure craft under 24 metres require a visible Canadian compliance notice, subject to the exceptions in the Small Vessel Regulations. On an outboard-powered pleasure craft up to 6 metres, the notice also shows recommended maximum safe engine power, people, and load limits.
 
-![Labelled examples of a Canadian capacity plate and compliance notice showing maximum horsepower, load, and persons capacity](/lovable-uploads/canadian-capacity-plate-compliance-notice.jpg)
+**The two formats you will see**
 
-*Two common formats: the Coast Guard capacity plate (left) and the Canadian Compliance Notice (right). Yours will look like one of these.*
+| Format | What it carries |
+|---|---|
+| Coast Guard capacity plate | The older Canadian format. Maximum recommended safe engine power, maximum load, and maximum number of people. |
+| Canadian Compliance Notice | The current bilingual format. The same recommended maximum safe limits on an outboard-powered pleasure craft up to 6 metres, plus the manufacturer or importer block and the declaration of compliance. |
+
+Yours will look like one of these. Read the numbers on your own hull, and never copy a limit from a similar model. Format and samples: [Transport Canada, compliance notices for pleasure and non-pleasure craft](https://tc.canada.ca/en/marine-transportation/marine-safety/compliance-notices-pleasure-non-pleasure-craft).
 
 The plate lists three things relevant to this conversation:
 
@@ -157,4 +164,3 @@ No. The listed maximum is a limit, not a target. Motor weight, transom condition
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-

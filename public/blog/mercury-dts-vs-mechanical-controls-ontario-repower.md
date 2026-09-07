@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dts-vs-mechanical-controls-ontario-repower.md
-last_updated: 2026-09-06
+last_updated: 2026-09-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury DTS vs Mechanical Ontario"
 description: "Mercury DTS vs mechanical controls: how digital throttle and shift feels on the water, what it costs and which boats qualify - from Harris Boat Works."
 category: "Buying Guides"
 date_published: 2026-05-17
-date_modified: 2026-09-06
+date_modified: 2026-09-07
 keywords: ["mercury dts vs mechanical controls ontario repower","mercury dts vs mechanical controls ontario repower ontario","harris boat works","mercury outboard","rice lake"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,11 +23,13 @@ revenue_driver: repower
 
 > Mercury DTS vs mechanical controls: how digital throttle and shift feels on the water, what it costs and which boats qualify - from Harris Boat Works.
 
-**Category:** Buying Guides  
-**Published:** 2026-05-17  
-**Last reviewed:** 2026-09-06  
-**Read time:** 7 min read  
+**Category:** Buying Guides
+**Published:** 2026-05-17
+**Last reviewed:** 2026-09-07
+**Read time:** 7 min read
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dts-vs-mechanical-controls-ontario-repower
+
+*Hero image: Mercury digital-control example. Control configuration and compatibility vary by engine and rigging package.*
 
 ## Mercury DTS vs Mechanical Controls, What Ontario Repower Buyers Should Know
 
@@ -106,7 +108,7 @@ The mechanical decision usually wins when at least two of these are true:
 
 Customers we steer toward mechanical: repowers on 16-18 foot aluminum fishing boats, owners who flip boats every 3-5 years, and any project where the $600 saved buys a better trailer or fishfinder.
 
-![Traditional mechanical Mercury throttle and shift control with cables routed at boat helm](/lovable-uploads/inline/inline-mechanical-controls-cables.png)
+![Quicksilver mechanical helm control beside an ignition switch](/lovable-uploads/inline/inline-mechanical-controls-cables.png "Mechanical control example. The cables are not visible in this photograph.")
 
 ## When DTS is the right answer
 
@@ -183,4 +185,3 @@ Marginal in theory, irrelevant in practice. DTS allows slightly more precise thr
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-

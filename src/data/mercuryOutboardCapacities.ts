@@ -40,15 +40,15 @@ export const mercuryOutboardCapacities: MercuryOutboardCapacityRow[] = [
   { model: '25 HP', year: '2006+', notes: '492 cc EFI, BigFoot gearcase', crankcaseQt: '1.9', crankcaseL: '1.8', gearcaseOz: '14.9', crankcaseOil: 'Mercury 10W-30', gearLube: PREMIUM_GEAR_LUBE, oilFilter: '8M0162832', sourcePage: 24 },
   { model: '25 HP', year: '2022+', notes: '500 cc', crankcaseQt: '1.5', crankcaseL: '1.4', gearcaseOz: '15.6', crankcaseOil: 'Mercury 10W-30', gearLube: PREMIUM_GEAR_LUBE, oilFilter: '8M0162832', sourcePage: 24 },
 
-  { model: '30 HP', year: '1999-2005', notes: '747 cc, standard gearcase', crankcaseQt: '3.17', crankcaseL: '3', gearcaseOz: '14.9', crankcaseOil: 'Mercury 10W-30', gearLube: PREMIUM_GEAR_LUBE, oilFilter: '8M0162830', sourcePage: 25 },
-  { model: '30 HP', year: '1999-2005', notes: '747 cc, BigFoot gearcase', crankcaseQt: '3.17', crankcaseL: '3', gearcaseOz: '22.5', crankcaseOil: 'Mercury 10W-30', gearLube: PREMIUM_GEAR_LUBE, oilFilter: '8M0162830', sourcePage: 25 },
-  { model: '30 HP', year: '2006+', notes: '492 cc EFI', crankcaseQt: '1.9', crankcaseL: '1.8', gearcaseOz: '11.8', crankcaseOil: 'Mercury 10W-30', gearLube: PREMIUM_GEAR_LUBE, oilFilter: '8M0162832', sourcePage: 25 },
-  { model: '30 HP', year: '2022+', notes: '500 cc', crankcaseQt: '1.5', crankcaseL: '1.4', gearcaseOz: '15.6', crankcaseOil: 'Mercury 10W-30', gearLube: PREMIUM_GEAR_LUBE, oilFilter: '8M0162832', sourcePage: 25 },
+  { model: '30 HP', year: '1999-2005', notes: '747 cc, standard gearcase', crankcaseQt: '3.17', crankcaseL: '3', gearcaseOz: '14.9', crankcaseOil: 'Mercury 25W-40', gearLube: PREMIUM_GEAR_LUBE, oilFilter: '8M0162830', sourcePage: 25 },
+  { model: '30 HP', year: '1999-2005', notes: '747 cc, BigFoot gearcase', crankcaseQt: '3.17', crankcaseL: '3', gearcaseOz: '22.5', crankcaseOil: 'Mercury 25W-40', gearLube: PREMIUM_GEAR_LUBE, oilFilter: '8M0162830', sourcePage: 25 },
+  { model: '30 HP', year: '2006+', notes: '492 cc EFI', crankcaseQt: '1.9', crankcaseL: '1.8', gearcaseOz: '11.8', crankcaseOil: 'Mercury 25W-40', gearLube: PREMIUM_GEAR_LUBE, oilFilter: '8M0162832', sourcePage: 25 },
+  { model: '30 HP', year: '2022+', notes: '500 cc', crankcaseQt: '1.5', crankcaseL: '1.4', gearcaseOz: '15.6', crankcaseOil: 'Mercury 25W-40', gearLube: PREMIUM_GEAR_LUBE, oilFilter: '8M0162832', sourcePage: 25 },
   { model: '35 HP', year: '2017', notes: 'Jet', crankcaseQt: '3', crankcaseL: '2.84', gearcaseOz: 'None', crankcaseOil: 'Mercury 25W-40', gearLube: 'Not applicable', oilFilter: '8M0162830', sourcePage: 25 },
   { model: '40 HP', year: '1999+', notes: '747 cc, 3-cylinder, standard gearcase', crankcaseQt: '3.17', crankcaseL: '3', gearcaseOz: '14.9', crankcaseOil: 'Mercury 25W-40', gearLube: PREMIUM_GEAR_LUBE, oilFilter: '8M0162830', sourcePage: 25 },
   { model: '40 HP', year: '1999+', notes: '747 cc, 3-cylinder, BigFoot gearcase', crankcaseQt: '3.17', crankcaseL: '3', gearcaseOz: '22.5', crankcaseOil: 'Mercury 25W-40', gearLube: PREMIUM_GEAR_LUBE, oilFilter: '8M0162830', sourcePage: 25 },
-  { model: '40 HP', year: '2001+', notes: '996 cc, 4-cylinder, standard gearcase', crankcaseQt: '3.17', crankcaseL: '3', gearcaseOz: '14.9', crankcaseOil: 'Mercury 25W-40', gearLube: PREMIUM_GEAR_LUBE, oilFilter: '8M0162830', sourcePage: 25 },
-  { model: '40 HP', year: '2001+', notes: '996 cc, 4-cylinder, BigFoot or Command Thrust gearcase', crankcaseQt: '3.17', crankcaseL: '3', gearcaseOz: '24', crankcaseOil: 'Mercury 25W-40', gearLube: PREMIUM_GEAR_LUBE, oilFilter: '8M0162830', sourcePage: 25 },
+  { model: '40 HP', year: '2001+', notes: '996 cc, 4-cylinder; 14.9 oz guide entry, gearcase unspecified', crankcaseQt: '3.17', crankcaseL: '3', gearcaseOz: '14.9', crankcaseOil: 'Mercury 25W-40', gearLube: PREMIUM_GEAR_LUBE, oilFilter: '8M0162830', sourcePage: 25 },
+  { model: '40 HP', year: '2001+', notes: '996 cc, 4-cylinder; 24 oz guide entry, gearcase unspecified', crankcaseQt: '3.17', crankcaseL: '3', gearcaseOz: '24', crankcaseOil: 'Mercury 25W-40', gearLube: PREMIUM_GEAR_LUBE, oilFilter: '8M0162830', sourcePage: 25 },
   { model: '50 HP', year: '1995-2000', notes: '935 cc, 4-cylinder, standard gearcase', crankcaseQt: '3.17', crankcaseL: '3', gearcaseOz: '14.9', crankcaseOil: 'Mercury 25W-40', gearLube: PREMIUM_GEAR_LUBE, oilFilter: '8M0162830', sourcePage: 25 },
   { model: '50 HP', year: '1995-2000', notes: '935 cc, 4-cylinder, BigFoot gearcase', crankcaseQt: '3.17', crankcaseL: '3', gearcaseOz: '22.5', crankcaseOil: 'Mercury 25W-40', gearLube: PREMIUM_GEAR_LUBE, oilFilter: '8M0162830', sourcePage: 25 },
   { model: '50 HP', year: '2001+', notes: '996 cc, 4-cylinder, standard gearcase', crankcaseQt: '3.17', crankcaseL: '3', gearcaseOz: '11.5', crankcaseOil: 'Mercury 25W-40', gearLube: PREMIUM_GEAR_LUBE, oilFilter: '8M0162830', sourcePage: 25 },
@@ -72,7 +72,7 @@ export const mercuryOutboardCapacities: MercuryOutboardCapacityRow[] = [
   { model: '200-300 HP Pro XS', year: '2018', notes: '4.6 L V8', crankcaseQt: '7', crankcaseL: '6.62', gearcaseOz: 'Not listed', crankcaseOil: 'Mercury 10W-30 Synthetic Blend', gearLube: HIGH_PERFORMANCE_GEAR_LUBE, oilFilter: '8M0176312', sourcePage: 26 },
   { model: '200-300 HP FourStroke', year: '2018', notes: '4.6 L V8', crankcaseQt: '7', crankcaseL: '6.62', gearcaseOz: '24.4', crankcaseOil: 'Mercury 10W-30 Synthetic Blend', gearLube: HIGH_PERFORMANCE_GEAR_LUBE, oilFilter: '8M0176312', sourcePage: 26 },
   { model: '135 HP Verado', year: '2006+', notes: '4-cylinder', crankcaseQt: '6.34', crankcaseL: '6', gearcaseOz: '32.8', crankcaseOil: 'Mercury 25W-40', gearLube: HIGH_PERFORMANCE_GEAR_LUBE, oilFilter: '877767Q01', sourcePage: 26 },
-  { model: '150 HP Pro XS', year: '2018', notes: 'Inline 4-cylinder', crankcaseQt: '6.34', crankcaseL: '6', gearcaseOz: '32.8', crankcaseOil: 'Mercury 25W-40', gearLube: HIGH_PERFORMANCE_GEAR_LUBE, oilFilter: '877767Q01', sourcePage: 26 },
+  { model: '150 HP Pro XS', year: '2018', notes: 'Pro XS; confirm filter and gearcase by serial number', crankcaseQt: '6.34', crankcaseL: '6', gearcaseOz: '32.8', crankcaseOil: 'Mercury 25W-40', gearLube: HIGH_PERFORMANCE_GEAR_LUBE, oilFilter: '877767Q01', sourcePage: 26 },
   { model: '150 HP Verado', year: '2006+', notes: '4-cylinder', crankcaseQt: '6.34', crankcaseL: '6', gearcaseOz: '32.8', crankcaseOil: 'Mercury 25W-40', gearLube: HIGH_PERFORMANCE_GEAR_LUBE, oilFilter: '877767Q01', sourcePage: 26 },
   { model: '175 HP Verado', year: '2006+', notes: '4-cylinder', crankcaseQt: '6.34', crankcaseL: '6', gearcaseOz: '32.8', crankcaseOil: 'Mercury 25W-40', gearLube: HIGH_PERFORMANCE_GEAR_LUBE, oilFilter: '877767Q01', sourcePage: 26 },
   { model: '200 HP Verado', year: '2007+', notes: '4-cylinder', crankcaseQt: '6.34', crankcaseL: '6', gearcaseOz: '32.8', crankcaseOil: 'Mercury 25W-40', gearLube: HIGH_PERFORMANCE_GEAR_LUBE, oilFilter: '877767Q01', sourcePage: 26 },
@@ -82,7 +82,7 @@ export const mercuryOutboardCapacities: MercuryOutboardCapacityRow[] = [
   { model: '225 HP Verado', year: '2005+', notes: '6-cylinder', crankcaseQt: '7.4', crankcaseL: '7', gearcaseOz: '32.8', crankcaseOil: 'Mercury 25W-40', gearLube: HIGH_PERFORMANCE_GEAR_LUBE, oilFilter: '877769Q01', sourcePage: 27 },
   { model: '250 HP Verado', year: '2005+', notes: '6-cylinder', crankcaseQt: '7.4', crankcaseL: '7', gearcaseOz: '32.8', crankcaseOil: 'Mercury 25W-40', gearLube: HIGH_PERFORMANCE_GEAR_LUBE, oilFilter: '877769Q01', sourcePage: 27 },
   { model: '275 HP Verado', year: '2005+', notes: '6-cylinder', crankcaseQt: '7.4', crankcaseL: '7', gearcaseOz: '32.8', crankcaseOil: 'Mercury 25W-40', gearLube: HIGH_PERFORMANCE_GEAR_LUBE, oilFilter: '877769Q01', sourcePage: 27 },
-  { model: '300 HP Verado', year: '2007+', notes: '6-cylinder', crankcaseQt: '7.4', crankcaseL: '7', gearcaseOz: '32.8', crankcaseOil: 'Mercury 25W-40', gearLube: HIGH_PERFORMANCE_GEAR_LUBE, oilFilter: '877769Q01', sourcePage: 27 },
+  { model: '300 HP Verado', year: '2007+', notes: '6-cylinder', crankcaseQt: '7.4', crankcaseL: '7', gearcaseOz: '32.8', crankcaseOil: 'Mercury 25W-40 Synthetic Blend', gearLube: HIGH_PERFORMANCE_GEAR_LUBE, oilFilter: '877769Q01', sourcePage: 27 },
   { model: '350 HP Verado', year: '2015+', notes: '6-cylinder', crankcaseQt: '7.4', crankcaseL: '7', gearcaseOz: '28.7', crankcaseOil: 'Mercury 25W-40 Synthetic Blend', gearLube: HIGH_PERFORMANCE_GEAR_LUBE, oilFilter: '877769Q01', sourcePage: 27 },
   { model: '400 HP Verado', year: '2019+', notes: '6-cylinder', crankcaseQt: '7.4', crankcaseL: '7', gearcaseOz: '28.7', crankcaseOil: 'Mercury 25W-40 Synthetic Blend', gearLube: HIGH_PERFORMANCE_GEAR_LUBE, oilFilter: '877769Q01', sourcePage: 27 },
   { model: '350 HP Verado', year: '2022+', notes: 'V10; left-hand gearcase 46.7 oz, right-hand 53.4 oz', crankcaseQt: '10', crankcaseL: '9.5', gearcaseOz: '46.7 / 53.4', crankcaseOil: 'Mercury 25W-40 Synthetic Blend', gearLube: EXTREME_PERFORMANCE_GEAR_LUBE, oilFilter: '8M0205849', sourcePage: 27 },
@@ -140,3 +140,21 @@ export const mercuryCapacityTableMarkdown = [
     `| ${escapeCell(row.model)} | ${escapeCell(row.year)} | ${escapeCell(row.notes)} | ${formatCrankcaseCapacity(row)} | ${formatGearcaseCapacity(row)} | ${escapeCell(row.crankcaseOil)} | ${escapeCell(row.oilFilter)} |`,
   ),
 ].join('\n');
+
+/** Search engine identity fields; a leading horsepower must not match oil or filter digits. */
+export function matchesCapacityQuery(row: MercuryOutboardCapacityRow, query: string): boolean {
+  const tokens = query.trim().toLowerCase().split(/\s+/).filter(Boolean);
+  if (!tokens.length) return true;
+  const hpToken = tokens[0].match(/^(\d+(?:\.\d+)?)(?:hp)?$/);
+  const hp = hpToken ? Number(hpToken[1]) : null;
+  const isDisplacement = /^(?:cc|l|litre|liter)$/.test(tokens[1] ?? '');
+  if (hp !== null && hp >= 2.5 && hp <= 600 && !isDisplacement) {
+    const range = row.model.match(/(\d+(?:\.\d+)?)\s*-\s*(\d+(?:\.\d+)?)/);
+    const models = row.model.match(/\d+(?:\.\d+)?/g)?.map(Number) ?? [];
+    if (!(range ? hp >= Number(range[1]) && hp <= Number(range[2]) : models.includes(hp))) return false;
+    tokens.shift();
+    if (tokens[0] === 'hp') tokens.shift();
+  }
+  const identity = [row.model, row.year, row.notes, row.oilFilter].join(' ').toLowerCase();
+  return tokens.every((token) => identity.includes(token));
+}

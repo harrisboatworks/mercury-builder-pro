@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fourstroke-vs-pro-xs.md
-last_updated: 2026-09-06
+last_updated: 2026-09-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Pro XS vs Verado vs FourStroke Compared"
 description: "Mercury Pro XS, Verado, or FourStroke: what's actually different, which is a four-stroke, and which fits your boat. A Rice Lake Mercury Premier dealer explains."
 category: "Mercury Motors"
 date_published: 2026-05-26
-date_modified: 2026-09-06
+date_modified: 2026-09-07
 keywords: ["Mercury Pro XS vs FourStroke","Mercury FourStroke vs Pro XS vs Verado","which Mercury outboard should I buy","Mercury Verado worth it","Mercury outboard families explained"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,10 +23,10 @@ revenue_driver: repower
 
 > Mercury Pro XS, Verado, or FourStroke: what's actually different, which is a four-stroke, and which fits your boat. A Rice Lake Mercury Premier dealer explains.
 
-**Category:** Mercury Motors  
-**Published:** 2026-05-26  
-**Last reviewed:** 2026-09-06  
-**Read time:** ~9 min read  
+**Category:** Mercury Motors
+**Published:** 2026-05-26
+**Last reviewed:** 2026-09-07
+**Read time:** ~9 min read
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/fourstroke-vs-pro-xs
 
 ## Quick answer
@@ -41,7 +41,14 @@ Here's the thing most people miss: at the same horsepower, FourStroke, Pro XS, a
 
 We're a third-generation family shop, on this dock since 1947 and a Mercury dealer since 1965. We sell FourStroke and Pro XS, and we service all three. So we don't have a dog in the "talk you into the expensive one" fight. Let's sort out which one actually belongs on your transom.
 
-![Mercury FourStroke vs Pro XS vs Verado outboard family comparison: HP range, best use, and edge for each](/blog-visuals/mercury-fourstroke-proxs-verado-families.png)
+| Family | Mercury HP range | Best for | The edge |
+|---|---|---|---|
+| FourStroke | 2.5 to 300 HP | Pontoons, aluminum fishing boats, runabouts, and most repowers | Best value and fuel economy |
+| Pro XS | 115 to 300 HP | Bass and walleye rigs, tournament use | Fastest hole shot |
+| Verado | 250 to 600 HP | Big offshore boats, large tritoons, luxury cruisers | Quietest and smoothest; naturally aspirated V8, V10 and V12 |
+| SeaPro | Commercial duty | Guides, charter, work and rental fleets | Built for high-hour commercial service |
+
+Ranges are Mercury's published Canadian families, accessed 7 September 2026: [FourStroke](https://www.mercurymarine.com/ca/en/engines/outboard/fourstroke), [Pro XS](https://www.mercurymarine.com/ca/en/engines/outboard/pro-xs), [Verado](https://www.mercurymarine.com/ca/en/engines/outboard/verado), [SeaPro](https://www.mercurymarine.com/ca/en/engines/outboard/seapro). Verado is special-order at HBW.
 
 > Same block, different attitude. The Pro XS just wants to run.
 >
@@ -212,4 +219,3 @@ Same core block, different tuning. FourStroke is built for efficiency, quiet run
 - Verado is special-order only, not in default inventory and not actively promoted.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - For programmatic quotes, use the Public Quote API: https://www.mercuryrepower.ca/api/agents/quote
-
