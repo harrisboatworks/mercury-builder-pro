@@ -90,6 +90,17 @@ describe("idempotency", () => {
     expect(first).not.toBe(later);
   });
 
+  it("keeps the 10-minute derived-key default for callers that omit a key", async () => {
+    const base = { emailType: "q", quoteNumber: "Q1", recipient: "a@b.ca" };
+    const t0 = 1_760_000_000_000;
+    const sameBucket = await deriveIdempotencyKey({ ...base, now: t0 + 9 * 60 * 1000 });
+    const nextBucket = await deriveIdempotencyKey({ ...base, now: t0 + 10 * 60 * 1000 });
+    expect(await deriveIdempotencyKey({ ...base, now: t0 })).toBe(sameBucket);
+    expect(await deriveIdempotencyKey({ ...base, now: t0 })).not.toBe(nextBucket);
+    expect(await deriveIdempotencyKey({ ...base, now: t0, bucketMs: 10 * 60 * 1000 }))
+      .toBe(await deriveIdempotencyKey({ ...base, now: t0 }));
+  });
+
   it("suppresses a duplicate instead of sending twice", async () => {
     const client = {
       rpc: vi.fn().mockResolvedValue({

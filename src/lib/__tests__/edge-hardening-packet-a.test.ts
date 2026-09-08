@@ -250,6 +250,9 @@ describe("Packet A edge hardening", () => {
     expect(migration).toContain("TO service_role");
     expect(adminQuoteSender).not.toContain("pdfUrl:");
     expect(adminQuoteSender).toContain("quotePageUrl: `${SITE_URL}/quote/saved/${quoteId}`");
+    expect(adminQuoteSender).toContain("idempotencyKey:");
+    expect(adminQuoteSender).toContain("mintAdminQuoteEmailIdempotencyKey");
+    expect(adminQuoteSender).toContain("Send again");
   });
 
   it("records verified delivery through the quote_email_deliveries lease instead of quote notes", () => {
