@@ -1,0 +1,35 @@
+name: Supabase deploy-required report
+
+# Git-derived report of edge functions and migrations this push made undeployed.
+# No credentials. Does not deploy, apply migrations, or call the Supabase API.
+# Advisory only: the job must not fail the build.
+
+on:
+  push:
+    branches: [main]
+
+concurrency:
+  group: supabase-deploy-required-${{ github.sha }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      # No npm install — script uses only Node built-ins.
+      - name: Report undeployed functions and added migrations
+        continue-on-error: true
+        run: node scripts/report-supabase-deploy-required.mjs
+        env:
+          DEPLOY_REQUIRED_FROM: ${{ github.event.before }}
+          DEPLOY_REQUIRED_TO: ${{ github.sha }}
