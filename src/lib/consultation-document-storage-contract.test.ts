@@ -122,7 +122,8 @@ describe('private consultation document storage contract', () => {
     expect(mailer).toContain('assertResolvedConsultationTemplate');
     expect(mailer).toContain('buildQuoteEmailDestinations');
     expect(mailer).toContain('CONSULTATION_DOCUMENTS_BUCKET');
-    expect(mailer).toContain('canonicalConsultationDocumentPath(documentId)');
+    expect(mailer).toContain('assertConsultationDocumentBytes');
+    expect(mailer).toContain('matchesAdminAttachmentQuote');
     expect(mailer).toContain('Consultation document unavailable');
     expect(mailer).not.toContain("console.log('Fetching PDF from:', emailData.pdfUrl)");
     expect(mailer).not.toContain('bcc: isAdminNotification ? undefined : [GROK_BOT_AGENTMAIL]');

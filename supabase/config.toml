@@ -245,3 +245,6 @@ verify_jwt = false
 
 [functions.consultation-document-retention]
 verify_jwt = false
+
+[functions.admin-consultation-document]
+verify_jwt = false
