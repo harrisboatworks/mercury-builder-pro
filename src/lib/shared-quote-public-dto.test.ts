@@ -225,11 +225,86 @@ describe('public shared quote DTO', () => {
       quote_data: {
         motor: { id: 'motor-1', model: '115 Pro XS' },
         customerNotes: 'Embedded note',
+        isConsultationSubmitted: false,
       },
       customer_name: 'Customer Name',
       customer_notes: 'Column note',
     });
     expect(response).not.toHaveProperty('is_admin_quote');
+  });
+
+  it('marks consultation receipts without re-widening source, identity, or receipt-only keys', () => {
+    const result = buildPublicQuoteData({
+      source: 'consultation-submit',
+      isConsultationSubmitted: false,
+      quoteNumber: 'HBW-150193',
+      customerQuoteId: 'bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb',
+      validUntil: '2026-10-05',
+      includedCoverageYears: 3,
+      customer: { name: 'Alex Rivera', email: 'alex@example.com', phone: '+19055550193' },
+      customerNotes: 'Keep the existing gauges.',
+      motor: { model: 'Mercury 150 FourStroke', hp: 150, modelYear: 2026 },
+      pricing: {
+        msrp: 19000,
+        discount: 1000,
+        motorSubtotal: 18000,
+        subtotal: 16100,
+        hst: 2093,
+        totalPrice: 18193,
+      },
+      accessories: [
+        { name: 'Stainless steering kit', price: 600, description: 'Installed with the repower', category: 'equipment' },
+      ],
+      tradeIn: { value: 2500, year: 2018, brand: 'Mercury', model: '90 ELPT' },
+      financing: { monthlyPayment: 329, amountFinanced: 18193, dealerFee: 349, rate: 5.99 },
+    });
+
+    expect(result.isConsultationSubmitted).toBe(true);
+    expect(result).toMatchObject({
+      customerNotes: 'Keep the existing gauges.',
+      motor: { model: 'Mercury 150 FourStroke', hp: 150, modelYear: 2026 },
+      pricing: {
+        msrp: 19000,
+        discount: 1000,
+        motorSubtotal: 18000,
+        subtotal: 16100,
+        hst: 2093,
+        totalCashPrice: 18193,
+      },
+      accessoryBreakdown: [
+        { name: 'Stainless steering kit', price: 600, description: 'Installed with the repower', category: 'equipment' },
+      ],
+      tradeIn: { estimatedValue: 2500, year: 2018, brand: 'Mercury', model: '90 ELPT' },
+      financing: { monthlyPayment: 329, amountFinanced: 18193, dealerFee: 349, rate: 5.99 },
+    });
+
+    const publicKeys = [...collectKeys(result)];
+    for (const forbidden of [
+      'source', 'quoteNumber', 'customer', 'customerQuoteId', 'accessories',
+      'totalPrice', 'value', 'validUntil', 'includedCoverageYears',
+      'email', 'phone',
+    ]) {
+      expect(publicKeys).not.toContain(forbidden);
+    }
+    const serialized = JSON.stringify(result);
+    expect(serialized).not.toContain('Alex Rivera');
+    expect(serialized).not.toContain('alex@example.com');
+    expect(serialized).not.toContain('+19055550193');
+    expect(serialized).not.toContain('HBW-150193');
+  });
+
+  it('derives isConsultationSubmitted from the raw source and ignores a caller flag', () => {
+    expect(buildPublicQuoteData({
+      source: 'consultation-submit',
+      isConsultationSubmitted: false,
+    }).isConsultationSubmitted).toBe(true);
+    expect(buildPublicQuoteData({
+      source: 'saved',
+      isConsultationSubmitted: true,
+    }).isConsultationSubmitted).toBe(false);
+    expect(buildPublicQuoteData({
+      isConsultationSubmitted: true,
+    }).isConsultationSubmitted).toBe(false);
   });
 });
 
@@ -276,6 +351,8 @@ describe('shared quote boundary source contract', () => {
 
     expect(pageSource).not.toContain("type: 'SET_ADMIN_MODE'");
     expect(pageSource).not.toContain('quote.is_admin_quote');
+    expect(pageSource).toContain('isPublicConsultationSubmittedQuote');
+    expect(pageSource).not.toContain('isConsultationSubmittedQuote(quoteData)');
     expect(pageSource).toContain("customerEmail: ''");
     expect(pageSource).toContain("customerPhone: ''");
     expect(pageSource).toContain('isAdminQuote: false');

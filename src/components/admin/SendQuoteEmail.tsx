@@ -1,3 +1,4 @@
+import { adminConsultationDocument } from '@/lib/consultation-document-client';
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import {
@@ -18,6 +19,7 @@ import { SITE_URL } from '@/lib/site';
 import { adminQuoteEmailRef, mintAdminQuoteEmailIdempotencyKey } from '@/lib/admin-quote-email';
 
 interface Props {
+  isSubmitted?: boolean;
   quoteId: string;
   customerName: string;
   customerEmail: string;
@@ -32,6 +34,7 @@ const SendQuoteEmail = ({
   customerEmail,
   motorModel,
   totalPrice,
+  isSubmitted,
   onDeliverySettled,
 }: Props) => {
   const [sending, setSending] = useState(false);
@@ -41,39 +44,43 @@ const SendQuoteEmail = ({
   const handleSend = async (intent: 'send' | 'resend') => {
     setSending(true);
     try {
-      const { data, error } = await supabase.functions.invoke('send-quote-email', {
-        body: {
-          customerEmail,
-          customerName,
-          quoteNumber: adminQuoteEmailRef(quoteId),
-          motorModel,
-          totalPrice,
-          quotePageUrl: `${SITE_URL}/quote/saved/${quoteId}`,
-          emailType: 'quote_delivery',
-          leadData: {
-            quoteId,
-          },
-          idempotencyKey: mintAdminQuoteEmailIdempotencyKey({
-            quoteId,
+      if (isSubmitted) {
+        await adminConsultationDocument(quoteId, 'admin-email');
+      } else {
+        const { data, error } = await supabase.functions.invoke('send-quote-email', {
+          body: {
+            customerEmail,
+            customerName,
+            quoteNumber: adminQuoteEmailRef(quoteId),
+            motorModel,
+            totalPrice,
+            quotePageUrl: `${SITE_URL}/quote/saved/${quoteId}`,
             emailType: 'quote_delivery',
-            intent,
-          }),
-        },
-      });
-      if (error) throw error;
-      const result = data as { success?: boolean; duplicate?: boolean; error?: string } | null;
-      if (result?.success === false) {
-        throw new Error(result.error || 'Could not send email.');
-      }
-      if (intent === 'send' && result?.duplicate) {
-        setSent(true);
-        toast({
-          title: 'Already sent',
-          description: 'This quote was already emailed. Use Send again to deliver another copy to the customer.',
+            leadData: {
+              quoteId,
+            },
+            idempotencyKey: mintAdminQuoteEmailIdempotencyKey({
+              quoteId,
+              emailType: 'quote_delivery',
+              intent,
+            }),
+          },
         });
-        setTimeout(() => setSent(false), 5000);
-        onDeliverySettled?.();
-        return;
+        if (error) throw error;
+        const result = data as { success?: boolean; duplicate?: boolean; error?: string } | null;
+        if (result?.success === false) {
+          throw new Error(result.error || 'Could not send email.');
+        }
+        if (intent === 'send' && result?.duplicate) {
+          setSent(true);
+          toast({
+            title: 'Already sent',
+            description: 'This quote was already emailed. Use Send again to deliver another copy to the customer.',
+          });
+          setTimeout(() => setSent(false), 5000);
+          onDeliverySettled?.();
+          return;
+        }
       }
       setSent(true);
       toast({

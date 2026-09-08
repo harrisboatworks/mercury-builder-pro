@@ -1,7 +1,7 @@
 import { readFileSync } from 'node:fs';
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 import { composeVoiceSystemPrompt, VOICE_SYSTEM_PROMPT } from '../../../supabase/functions/_shared/voice-system-prompt';
-import type { CustomerKnowledge } from '../../../supabase/functions/_shared/customer-knowledge-context';
+import { fetchPublishedBusinessProfile, type CustomerKnowledge } from '../../../supabase/functions/_shared/customer-knowledge-context';
 
 const knowledge: CustomerKnowledge = {
   business: {
@@ -23,12 +23,62 @@ describe('voice session policy and current knowledge', () => {
     expect(result).toContain('This is not evidence that no offer is active');
   });
 
+  it('retains stable policies after a real profile-fetch failure without changing cached hours', async () => {
+    const fetcher = vi.fn<typeof fetch>().mockResolvedValue(new Response(null, { status: 503 }));
+    const errorLog = vi.spyOn(console, 'error').mockImplementation(() => {});
+    try {
+      const { profile, published } = await fetchPublishedBusinessProfile(fetcher);
+      expect(fetcher).toHaveBeenCalledOnce();
+      expect(published).toBe(false);
+      const before = structuredClone(profile);
+      const result = composeVoiceSystemPrompt({ ...knowledge, business: profile, businessPublished: published });
+      expect(result).toContain('FALLBACK BUSINESS PROFILE');
+      expect(result).toContain('BUSINESS HOURS UNAVAILABLE');
+      expect(result).not.toContain('PUBLISHED BUSINESS PROFILE');
+      expect(result).toContain('pickup_only');
+      expect(result).toContain('buyer in person with valid government photo ID');
+      expect(result).toContain('We do not ship or deliver motors');
+      expect(result).toContain('Mercury factory service and repairs');
+      expect(result).toContain('Marine parts and accessories');
+      expect(result).toContain('5369 Harris Boat Works Rd');
+      expect(result).toContain('(905) 342-2153');
+      expect(result).toContain('info@harrisboatworks.ca');
+      expect(profile.contact?.hours).toBeDefined();
+      for (const hours of Object.values(profile.contact!.hours!)) {
+        expect(hours).toBeTruthy();
+        expect(result).not.toContain(hours);
+      }
+      expect(profile).toEqual(before);
+      const cached = await fetchPublishedBusinessProfile(fetcher);
+      expect(cached.profile).toBe(profile);
+      expect(fetcher).toHaveBeenCalledOnce();
+      expect(cached.profile).toEqual(before);
+    } finally {
+      errorLog.mockRestore();
+    }
+  });
+
+  it('permits the confirmed customer name while binding quote details to a successful receipt', () => {
+    const result = composeVoiceSystemPrompt(knowledge);
+    expect(result).toContain('Only after create_customer_quote returns success and a valid customer share_url');
+    expect(result).toContain('For customer_name, reuse the previously confirmed name for this customer');
+    expect(result).toContain('Populate motor and price fields from that same receipt');
+    expect(result).toContain('pass optional payment, credit or warranty fields only when returned');
+    expect(result).not.toContain('Populate its name, motor and price fields from that same receipt');
+    expect(result).toContain('Wait for delivery-tool success before saying the link is on screen');
+    expect(result).toContain('Never expose admin_url');
+  });
+
   it('takes published hours and financing terms from the supplied facts, not fixed prompt defaults', () => {
     const result = composeVoiceSystemPrompt({
       ...knowledge, businessPublished: true,
       business: { contact: { hours: { monSat: '10:00-14:00', sun: 'By confirmation', note: 'Synthetic schedule' } } },
       financing: [{ name: 'Synthetic offer', rate: 6.25, term_months: 48, min_amount: 4321 }],
     });
+    expect(result).toContain('PUBLISHED BUSINESS PROFILE');
+    expect(result).not.toContain('FALLBACK BUSINESS PROFILE');
+    expect(result).not.toContain('BUSINESS HOURS UNAVAILABLE');
+    expect(result).toContain('Synthetic schedule');
     expect(result).toContain('10:00-14:00');
     expect(result).toContain('By confirmation');
     expect(result).toContain('6.25% APR');
