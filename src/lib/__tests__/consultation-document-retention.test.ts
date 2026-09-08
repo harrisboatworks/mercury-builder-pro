@@ -199,7 +199,9 @@ describe('consultation document retention', () => {
     expect(api).not.toContain('consultation-document-retention');
     expect(api).not.toContain('consultation_document_jobs');
     expect(submit).toContain('markConsultationDocumentJobEmailed');
-    expect(submit).not.toContain('documentId');
+    // Internal attachments use a server-minted ID; public callers cannot select or receive it.
+    expect(submit).not.toMatch(/(?:p|raw)\.documentId/);
+    expect(submit).not.toContain('success: true, documentId');
     expect(migration).toContain('consultation_document_jobs');
     expect(migration).not.toMatch(/bucket_id\s*=\s*'spec-sheets'/);
     expect(migration).not.toMatch(/UPDATE\s+storage\.buckets/i);

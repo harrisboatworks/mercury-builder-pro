@@ -1,3 +1,5 @@
+import { assertResendAccepted } from "../_shared/consultation-submit-delivery.ts";
+import { isAuthorizedAdminAttachment, matchesAdminAttachmentQuote } from "../_shared/consultation-admin-attachment.ts";
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
 import { Resend } from "npm:resend@2.0.0";
@@ -9,12 +11,8 @@ import { requireAdmin } from "../_shared/admin-auth.ts";
 import {
   CONSULTATION_DOCUMENTS_BUCKET,
   ConsultationDocumentRequestError,
-  ConsultationDocumentUnavailableError,
+  assertConsultationDocumentBytes,
   assertConsultationStoredDocument,
-  canonicalConsultationDocumentPath,
-  constantTimeEqual,
-  sha256Hex,
-  validateQuotePdf,
 } from "../_shared/consultation-document-policy.ts";
 import {
   CONSULTATION_ATTACHMENT_STATEMENT,
@@ -73,6 +71,7 @@ const quoteEmailSchema = z.object({
   pdfUrl: z.string().url().max(2000).optional(),
   quotePageUrl: z.string().url().max(2000).optional(),
   documentId: z.string().uuid().optional(),
+  adminDocumentId: z.string().uuid().optional(),
   documentAccessUrl: z.string().url().max(2000).optional(),
   emailType: z.enum(['quote_delivery', 'follow_up', 'reminder', 'admin_quote_notification']),
   leadData: leadDataSchema,
@@ -269,6 +268,17 @@ serve(async (req) => {
     const parsedEmailData = validationResult.data;
     let emailData: QuoteEmailRequest = parsedEmailData;
     const isConsultationPath = Boolean(emailData.documentId);
+    // An internal attachment must not switch the staff notification into the
+    // customer delivery template or change its established recipients.
+    if (emailData.adminDocumentId && !isAuthorizedAdminAttachment({
+      internal: internalRequest, emailType: emailData.emailType,
+      quoteId: emailData.leadData?.quoteId,
+      documentId: emailData.documentId, pdfUrl: emailData.pdfUrl,
+    })) {
+      return new Response(JSON.stringify({ success: false, error: 'Forbidden' }), {
+        status: 403, headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
+    }
 
     if (isConsultationPath) {
       if (!internalRequest) {
@@ -471,14 +481,16 @@ serve(async (req) => {
       emailOptions.attachments = [legacyPdfAttachment];
     }
 
-    if (isConsultationPath) {
-      const documentId = assertConsultationDocumentId(emailData.documentId);
+    if (isConsultationPath || emailData.adminDocumentId) {
+      const documentId = assertConsultationDocumentId(emailData.adminDocumentId || emailData.documentId);
       const { data: documentRow, error: documentError } = await supabase
         .from("consultation_documents")
-        .select("id, storage_key, sha256, byte_size, content_type, quote_number")
+        .select("id, customer_quote_id, storage_key, sha256, byte_size, content_type, quote_number")
         .eq("id", documentId)
         .maybeSingle();
-      if (documentError || !documentRow) {
+      if (documentError || !documentRow || ((emailData.adminDocumentId || emailData.leadData?.quoteId) && !matchesAdminAttachmentQuote(
+        documentRow, emailData.leadData?.quoteId, emailData.quoteNumber,
+      ))) {
         return new Response(JSON.stringify({ success: false, error: "Consultation document unavailable" }), {
           status: 404,
           headers: { ...corsHeaders, "Content-Type": "application/json" },
@@ -510,15 +522,12 @@ serve(async (req) => {
       }
       const pdfBytes = new Uint8Array(await object.arrayBuffer());
       try {
-        validateQuotePdf(pdfBytes, object.type || documentRow.content_type || "application/pdf");
-        const digest = await sha256Hex(pdfBytes);
-        if (
-          pdfBytes.byteLength !== documentRow.byte_size
-          || !constantTimeEqual(digest, binding.sha256)
-          || binding.path !== canonicalConsultationDocumentPath(documentId)
-        ) {
-          throw new ConsultationDocumentUnavailableError();
-        }
+        await assertConsultationDocumentBytes({
+          bytes: pdfBytes,
+          byteSize: documentRow.byte_size,
+          binding,
+          documentId,
+        });
       } catch {
         return new Response(JSON.stringify({ success: false, error: "Consultation document unavailable" }), {
           status: 404,
@@ -534,6 +543,7 @@ serve(async (req) => {
 
     // Send email via Resend
     const emailResponse = await resend.emails.send(emailOptions);
+    assertResendAccepted(emailResponse);
 
     console.log('Email sent successfully:', emailResponse);
 

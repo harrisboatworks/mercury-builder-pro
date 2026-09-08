@@ -230,6 +230,10 @@ describe("send-quote-email source contracts", () => {
       join(process.cwd(), "supabase/functions/send-quote-email/index.ts"),
       "utf8",
     );
+    const policy = readFileSync(
+      join(process.cwd(), "supabase/functions/_shared/consultation-document-policy.ts"),
+      "utf8",
+    );
 
     expect(mailer).toContain("rejectConsultationCallerPdfUrl(emailData.pdfUrl)");
     expect(mailer).toContain("Consultation email cannot accept a caller quote page URL");
@@ -237,11 +241,22 @@ describe("send-quote-email source contracts", () => {
     expect(mailer).toContain("buildQuoteEmailDestinations({");
     expect(mailer).toContain("GROK_BOT_AGENTMAIL");
     expect(mailer).toContain("CONSULTATION_DOCUMENTS_BUCKET");
-    expect(mailer).toContain("canonicalConsultationDocumentPath(documentId)");
-    expect(mailer).toContain("constantTimeEqual(digest, binding.sha256)");
+    expect(mailer).toContain("await assertConsultationDocumentBytes({");
+    expect(mailer).toContain("if (isConsultationPath || emailData.adminDocumentId)");
     expect(mailer).toContain("if (legacyPdfAttachment)");
     expect(mailer.indexOf("if (legacyPdfAttachment)")).toBeLessThan(
-      mailer.indexOf("if (isConsultationPath) {", mailer.indexOf("if (legacyPdfAttachment)")),
+      mailer.indexOf(
+        "if (isConsultationPath || emailData.adminDocumentId)",
+        mailer.indexOf("if (legacyPdfAttachment)"),
+      ),
     );
+
+    const bytesGuardStart = policy.indexOf("export async function assertConsultationDocumentBytes");
+    const bytesGuardEnd = policy.indexOf("export function authorizeConsultationRedemption");
+    expect(bytesGuardStart).toBeGreaterThan(-1);
+    expect(bytesGuardEnd).toBeGreaterThan(bytesGuardStart);
+    const bytesGuard = policy.slice(bytesGuardStart, bytesGuardEnd);
+    expect(bytesGuard).toContain("canonicalConsultationDocumentPath(options.documentId)");
+    expect(bytesGuard).toContain("constantTimeEqual(digest, options.binding.sha256)");
   });
 });

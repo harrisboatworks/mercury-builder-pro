@@ -117,12 +117,12 @@ const AdminQuotes = () => {
     const motor = qs.motor || {};
     const isAnonymous = sq.email === 'anonymous@soft-lead.local' || sq.email === 'pdf-download@placeholder.com';
     const isSoftLead = sq.is_soft_lead === true;
-    const customerName = qs.customerName || (isAnonymous ? 'Anonymous Visitor' : sq.email?.split('@')[0] || 'Unknown');
+    const customerName = qs.customer?.name || qs.customerName || (isAnonymous ? 'Anonymous Visitor' : sq.email?.split('@')[0] || 'Unknown');
     const motorInfo = motor.model
       ? `${motor.hp || ''}HP ${motor.model || ''}`
       : qs.motorModel || '';
 
-    let sourceLabel = 'Saved Quote';
+    let sourceLabel = qs.source === 'consultation-submit' ? 'Submitted Quote' : 'Saved Quote';
     if (isSoftLead || sq.email === 'anonymous@soft-lead.local') sourceLabel = 'Anonymous';
     if (sq.email === 'pdf-download@placeholder.com') sourceLabel = 'PDF Download';
     if (sq.deposit_status === 'paid') sourceLabel = 'Deposit Paid';
@@ -132,14 +132,14 @@ const AdminQuotes = () => {
       created_at: sq.created_at,
       customer_name: customerName,
       customer_email: isAnonymous ? '' : sq.email,
-      customer_phone: qs.customerPhone || null,
-      base_price: qs.basePrice || motor.price || 0,
-      final_price: qs.finalPrice || qs.frozenPricing?.total || 0,
+      customer_phone: qs.customer?.phone || qs.customerPhone || null,
+      base_price: qs.pricing?.subtotal ?? qs.basePrice ?? motor.price ?? 0,
+      final_price: qs.pricing?.totalPrice ?? qs.finalPrice ?? qs.frozenPricing?.total ?? 0,
       deposit_amount: sq.deposit_amount || 0,
       loan_amount: 0,
       monthly_payment: 0,
       term_months: 0,
-      total_cost: qs.finalPrice || qs.frozenPricing?.total || 0,
+      total_cost: qs.pricing?.totalPrice ?? qs.finalPrice ?? qs.frozenPricing?.total ?? 0,
       tradein_value_pre_penalty: qs.tradeInInfo?.estimatedValue || null,
       tradein_value_final: qs.tradeInInfo?.finalValue || null,
       penalty_applied: false,
@@ -190,13 +190,19 @@ const AdminQuotes = () => {
       ...r,
       _source: 'customer_quotes' as const,
       _source_label: 'Lead',
-      _motor_info: '',
+      _motor_info: r.quote_data?.motor?.model ? `${r.quote_data.motor.hp || ''}HP ${r.quote_data.motor.model}` : '',
       _deposit_status: null,
       _is_soft_lead: false,
-      _reference_number: null,
+      _reference_number: r.quote_data?.quoteNumber || null,
     }));
 
-    const sqRows: UnifiedQuoteRow[] = (sqResult.data || []).map(normalizeSavedQuote);
+    // Submission receipts mirror the lead; list the actionable lead once.
+    const leadIds = new Set(cqRows.map(row => row.id));
+    const sqRows: UnifiedQuoteRow[] = (sqResult.data || [])
+      .filter((row: any) => row.quote_state?.source !== 'consultation-submit'
+        || row.deposit_status === 'paid'
+        || !leadIds.has(row.quote_state?.customerQuoteId))
+      .map(normalizeSavedQuote);
 
     setCustomerQuoteRows(cqRows);
     setSavedQuoteRows(sqRows);

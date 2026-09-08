@@ -392,7 +392,7 @@ serve(async (req) => {
     }
 
     try {
-      await fetch(`${supabaseUrl}/functions/v1/send-quote-email`, {
+      const adminResponse = await fetch(`${supabaseUrl}/functions/v1/send-quote-email`, {
         method: "POST",
         headers: {
           Authorization: `Bearer ${serviceKey}`,
@@ -405,6 +405,7 @@ serve(async (req) => {
           motorModel,
           totalPrice: Number(data.final_price),
           emailType: "admin_quote_notification",
+          ...(minted ? { adminDocumentId: minted.documentId } : {}),
           leadData: {
             customerName: p.customer_name,
             customerEmail: String(data.customer_email),
@@ -415,6 +416,10 @@ serve(async (req) => {
           },
         }),
       });
+      const adminResult = await adminResponse.json();
+      if (!adminResponse.ok || adminResult?.success !== true) {
+        throw new Error("AdminNotificationDeliveryFailed");
+      }
     } catch (adminError) {
       console.error("[submit-quote-lead] admin email failed", adminError instanceof Error ? adminError.name : "unknown");
     }
