@@ -12,6 +12,8 @@ import {
   isDefaultQuotedMotor,
   resolveCustomerSellingPrice,
 } from "../_shared/customer-knowledge-context.ts";
+import { fetchCanonicalHbwValuation, HbwValuationError } from "../_shared/hbw-valuation.ts";
+import { mapVoiceTradeCondition, resolveVoiceArchitecture } from "../_shared/voice-trade-in-input.ts";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -94,7 +96,7 @@ const TOOLS = [
   },
   {
     name: "estimate_trade_value",
-    description: "Estimate trade-in value for a used motor. Use when customers want to trade in their current motor.",
+    description: "Estimate trade-in value for a used motor using the live Harris Boat Works valuation. Ask for condition and engine type when they are missing. Do not invent a number.",
     inputSchema: {
       type: "object",
       properties: {
@@ -103,12 +105,18 @@ const TOOLS = [
         horsepower: { type: "number", description: "Motor horsepower" },
         condition: { 
           type: "string", 
-          enum: ["excellent", "good", "fair", "poor"],
-          description: "Overall condition" 
+          enum: ["excellent", "good", "fair", "poor", "rough"],
+          description: "Overall condition. Rough is valued as poor. Ask if missing."
         },
-        hours: { type: "number", description: "Engine hours (optional)" }
+        engine_type: {
+          type: "string",
+          enum: ["4-stroke", "2-stroke", "proxs", "optimax", "etec"],
+          description: "Engine architecture. Ask if unknown; do not assume four-stroke."
+        },
+        model: { type: "string", description: "Model text that may identify architecture" },
+        hours: { type: "number", description: "Engine hours, including explicit zero" }
       },
-      required: ["brand", "year", "horsepower", "condition"]
+      required: ["brand", "year", "horsepower"]
     }
   },
   {
@@ -426,37 +434,68 @@ async function executeTool(toolName: string, args: Record<string, unknown>): Pro
     }
     
     case "estimate_trade_value": {
-      const year = args.year as number;
-      const hp = args.horsepower as number;
-      const condition = args.condition as string;
-      const currentYear = new Date().getFullYear();
-      const age = currentYear - year;
-      
-      let baseValue = hp * 50;
-      const ageDepreciation = Math.min(age * 0.10, 0.70);
-      baseValue *= (1 - ageDepreciation);
-      
-      const conditionMultipliers: Record<string, number> = {
-        excellent: 1.2,
-        good: 1.0,
-        fair: 0.75,
-        poor: 0.5
-      };
-      baseValue *= conditionMultipliers[condition] || 1.0;
-      
-      if ((args.brand as string)?.toLowerCase().includes("mercury")) {
-        baseValue *= 1.15;
+      const brand = String(args.brand || "").trim();
+      const year = Number(args.year);
+      const hp = Number(args.horsepower);
+      const condition = mapVoiceTradeCondition(args.condition as string | undefined);
+      if (!condition) {
+        return {
+          content: [{
+            type: "text",
+            text: "I need the motor condition before I can value a trade-in. Is it excellent, good, fair, or poor? Rough condition is valued as poor.",
+          }],
+        };
       }
-      
-      const lowEstimate = Math.round(baseValue * 0.85 / 100) * 100;
-      const highEstimate = Math.round(baseValue * 1.15 / 100) * 100;
-      
-      return { 
-        content: [{ 
-          type: "text", 
-          text: `Estimated trade-in value for your ${year} ${args.brand} ${hp}HP (${condition} condition): $${lowEstimate} - $${highEstimate} CAD. This is a rough estimate - the final value depends on an in-person inspection. Mercury motors typically hold value better.` 
-        }]
-      };
+      const architecture = resolveVoiceArchitecture({
+        engine_type: args.engine_type as string | undefined,
+        model: args.model as string | undefined,
+      });
+      if (!architecture && (args.engine_type || !args.model)) {
+        return {
+          content: [{
+            type: "text",
+            text: "I need the engine type before I can value that trade-in. Is it a 4-stroke, 2-stroke, OptiMax, Pro XS, or E-TEC?",
+          }],
+        };
+      }
+      if (!brand || !Number.isInteger(year) || year < 1950 || year > new Date().getFullYear() || !Number.isFinite(hp) || hp <= 0 || hp > 1000) {
+        return {
+          content: [{
+            type: "text",
+            text: "I need the brand, year, and horsepower before I can request a trade-in value.",
+          }],
+        };
+      }
+      const rawHours = args.hours ?? args.engine_hours;
+      const hours = rawHours === undefined || rawHours === null || rawHours === '' ? undefined : typeof rawHours === 'number' || typeof rawHours === 'string' ? Number(rawHours) : NaN;
+      if (hours !== undefined && (!Number.isFinite(hours) || hours < 0 || hours > 100000)) return {content:[{type:'text',text:'Engine hours must be a number from 0 to 100000.'}]};
+      try {
+        const value = await fetchCanonicalHbwValuation({
+          brand,
+          year,
+          hp,
+          condition,
+          stroke: architecture ?? undefined,
+          hours: hours !== undefined && Number.isFinite(hours) ? hours : undefined,
+          model: typeof args.model === "string" ? args.model : undefined,
+        });
+        return {
+          content: [{
+            type: "text",
+            text: `Live Harris Boat Works valuation for a ${year} ${brand} ${hp}HP ${value.effectiveInputs?.stroke || architecture || 'confirmed engine'} in ${condition} condition: $${value.wholesale} wholesale, range $${value.rangeLow}–$${value.rangeHigh}. Final value requires in-person inspection.`,
+          }],
+        };
+      } catch (error) {
+        const reason = error instanceof HbwValuationError ? error.code : "unavailable";
+        return {
+          content: [{
+            type: "text",
+            text: reason === "rate_limited"
+              ? "The valuation service asked us to wait a few minutes before another estimate."
+              : "The live trade-in valuation is unavailable or rejected those details.",
+          }],
+        };
+      }
     }
     
     case "recommend_motor": {
@@ -652,7 +691,7 @@ ${motor1.horsepower > motor2.horsepower ? `The ${motor1.model_display} has more 
         await resend.emails.send({
           from: "Harris Boat Works <quotes@mercuryrepower.ca>",
           to: [customerEmail],
-          replyTo: "info@harrisboatworks.ca",
+          reply_to: "info@harrisboatworks.ca",
           subject: `Mercury ${modelLabel} details`,
           html: emailHtml,
         });
@@ -807,7 +846,7 @@ ${motor1.horsepower > motor2.horsepower ? `The ${motor1.model_display} has more 
       
       let query = supabase
         .from("motor_models")
-        .select("model_display, model, horsepower, msrp, dealer_price, sale_price, base_price, manual_overrides, availability, family, in_stock")
+        .select("model_display, model, horsepower, msrp, dealer_price, sale_price, base_price, manual_overrides, availability, family, in_stock, stock_quantity")
         .or(`model_display.ilike.%${searchModel}%,model.ilike.%${searchModel}%,family.ilike.%${searchModel}%`);
       
       if (hp) query = query.eq("horsepower", hp);

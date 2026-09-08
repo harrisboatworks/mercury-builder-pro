@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-150-300hp-pro-xs-performance-guide.md
-last_updated: 2026-09-06
+last_updated: 2026-09-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Pro XS 150–300 HP: What Runs Best on Ontario Boats"
 description: "Mercury's 150 to 300 Pro XS lineup from the dealer who rigs them: inline-4 vs V6 vs V8, which hulls each one suits, and the honest pricing paths."
 category: "Buying Guide"
 date_published: 2026-05-13
-date_modified: 2026-09-06
+date_modified: 2026-09-07
 keywords: ["mercury 150 pro xs","mercury 175 pro xs","mercury 200 pro xs","mercury 225 pro xs","mercury 250 pro xs","mercury 300 pro xs","mercury v6 vs v8","mercury pro xs comparison ontario","mercury 150-300 hp guide"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,9 +25,11 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-05-13  
-**Last reviewed:** 2026-09-06  
+**Last reviewed:** 2026-09-07  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-150-300hp-pro-xs-performance-guide
+
+*Hero graphic: the powerhead families compared in this guide. It does not depict an identified physical motor.*
 
 > **Quick answer:** The current Mercury 150 Pro XS is a 3.0L inline-4, the 175 Pro XS is a 3.4L V6, and the 200, 225, 250, and 300 Pro XS models are 4.6L V8 outboards. The right choice depends on the capacity plate, hull, load, use, controls, and complete written quote.
 

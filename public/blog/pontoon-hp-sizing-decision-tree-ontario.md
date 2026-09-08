@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/pontoon-hp-sizing-decision-tree-ontario.md
-last_updated: 2026-09-06
+last_updated: 2026-09-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Pontoon HP Sizing: The Rice Lake Decision Tree by Length"
 description: "Pontoon HP by load, use, and the boat's documented limits. 25 HP through 300-plus bands are examples to compare, not an HP-per-foot or length chart."
 category: "Mercury Outboards"
 date_published: 2026-03-26
-date_modified: 2026-09-06
+date_modified: 2026-09-07
 keywords: ["pontoon hp","horsepower sizing","mercury","command thrust","tritoon"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,9 +25,11 @@ revenue_driver: repower
 
 **Category:** Mercury Outboards  
 **Published:** 2026-03-26  
-**Last reviewed:** 2026-09-06  
+**Last reviewed:** 2026-09-07  
 **Read time:** ~12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/pontoon-hp-sizing-decision-tree-ontario
+
+*Hero image: AI-generated editorial scene with a Mercury-powered pontoon. It is not a customer boat, model specification, horsepower recommendation or documented performance test.*
 
 ## Pontoon HP Sizing: The Decision Tree Every Ontario Buyer Should Use
 
@@ -98,7 +100,7 @@ Calm, protected bays have different demands than open lake conditions. Rice Lake
 
 ---
 
-![Reference table of Mercury outboard HP for pontoons by length and use, from 25–40 HP (16–18 ft) to 300–400+ HP (26+ ft).](/lovable-uploads/inline/pontoon-hp-sizing.svg)
+**Start with the capacity plate and loaded boat.** Boat length alone does not select horsepower. Consider passengers, equipment, hull design, intended activities and compatible rigging, then confirm the configuration against the boat and engine manufacturers' requirements.
 
 ## The Decision Tree: HP by Boat Length and Use Case
 

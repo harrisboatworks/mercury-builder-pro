@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/how-to-choose-right-horsepower-boat.md
-last_updated: 2026-09-06
+last_updated: 2026-09-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "How to Choose the Right Boat Horsepower"
 description: "Choose outboard horsepower for your boat's limits, hull, usual and heaviest planned loads, and intended use. A fixed percentage cannot decide the right fit."
 category: "Buying Guide"
 date_published: 2024-06-15
-date_modified: 2026-09-06
+date_modified: 2026-09-07
 keywords: ["boat motor horsepower","how to choose outboard motor","mercury motor sizing","boat hp guide","outboard motor selection"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2024-06-15  
-**Last reviewed:** 2026-09-06  
+**Last reviewed:** 2026-09-07  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/how-to-choose-right-horsepower-boat
 
@@ -107,7 +107,7 @@ Underpowered boats are the #1 complaint we hear. Step up before you step down. R
 
 ---
 
-![Table of Mercury outboard HP recommendations by boat type, from 9.9 HP (12-14 ft aluminum) to 200 HP (18-22 ft runabout)](/lovable-uploads/inline/how-to-choose-horsepower.svg)
+![Four checks for choosing horsepower: boat limits, real load, complete setup and confirmed fit](/lovable-uploads/blog-visuals-2026-09/horsepower-selection-checklist.svg "Boat length alone cannot select a motor. Use the documented boat limits, load, intended use and complete rigging requirements.")
 
 ## HP recommendations by boat type
 

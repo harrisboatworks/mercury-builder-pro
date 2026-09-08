@@ -62,7 +62,7 @@ Three patterns come up most often at Harris Boat Works:
 | 175 HP V6 (FourStroke or Pro XS) | Confirm mechanical or DTS for the exact engine | Hydraulic or power-assist per the package | VesselView only if that display is part of the order | Dual battery + ACR when the boat needs it | $4,500 to $6,500 typical, quote the boat |
 | 200-225 FourStroke V6 or 200-225 Pro XS V8 | Do not infer DTS from HP. Build from the engine and control option | Power-assist hydraulic is common on these boats, not proven by cylinder count | VesselView 7 or 9 only when specified | Dual battery + ACR, switch panel when the boat needs it | $4,500 to $7,500 typical, quote the boat |
 
-_Prices here are planning figures as of August 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are planning figures as of September 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 These are typical configurations. Specific boat, helm, console, and budget change the numbers.
 
@@ -281,7 +281,7 @@ Yes. If your old Mercury is in workable condition we'll value it at trade-in tim
 - [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide), choosing the right propeller
 - [Mercury SmartCraft Connect: Features, App & Installation](/blog/mercury-smartcraft-connect-guide-ontario), SmartCraft Connect walkthrough
 - [Mercury VesselView vs SmartCraft Explained (Ontario)](/blog/mercury-vesselview-smartcraft-plain-english-guide), VesselView and SmartCraft explained
-- [Mercury SmartCraft Alarm Codes Ontario](/blog/mercury-smartcraft-alarm-codes-encyclopedia), SmartCraft alarm code reference
+- [Mercury Alarm Codes List Ontario](/blog/mercury-smartcraft-alarm-codes-encyclopedia), SmartCraft alarm code reference
 - [Mercury Outboard Beep & Alarm Codes: What Each Means](/blog/mercury-outboard-beeping-codes-guide), beeping code guide
 
 ## Next steps

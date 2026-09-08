@@ -9,7 +9,7 @@
 //   - get_motor            : fetch one motor by id or slug
 //   - estimate_trade_in    : ballpark trade value
 //   - build_quote          : itemized CAD quote with deep-link
-//   - get_brand_rules      : authoritative source-of-truth (no Verado, CAD only, etc.)
+//   - get_brand_rules      : authoritative source-of-truth (special-order Verado, CAD only, etc.)
 //
 // Public, no-auth, CORS-open. Wraps the existing public-quote-api + public-motors-api
 // so external agents have one canonical MCP endpoint.
@@ -30,9 +30,24 @@ import {
   motorSlug,
 } from "../_shared/motor-slug.ts";
 import {
+  isPublicCatalogMotor,
+  PUBLIC_CATALOG_AVAILABILITY_OR,
   PUBLIC_SITE_URL,
+  resolvePublicSellingPrice,
   toPublicImageUrl,
 } from "../_shared/public-motor-contract.ts";
+import {
+  fetchActiveFinancing,
+  fetchActivePromotions,
+} from "../_shared/customer-knowledge-context.ts";
+import {
+  mcpToolResult,
+  mcpUpstreamErrorResult,
+  parseMcpJsonRpc,
+  parseMcpToolArguments,
+  presentPublicAgentBrandRules,
+  McpInvalidParamsError,
+} from "../_shared/public-agent-mcp.ts";
 
 const SITE_URL = PUBLIC_SITE_URL;
 const QUOTE_API = `${Deno.env.get("SUPABASE_URL")}/functions/v1/public-quote-api`;
@@ -73,21 +88,22 @@ const TOOLS = [
   {
     name: "estimate_trade_in",
     description:
-      "Estimate the trade-in value (CAD) of a customer's current outboard. Brand penalties apply (Mercury preferred, Yamaha/Honda neutral, Evinrude/Johnson/Force/Chrysler discounted).",
+      "Estimate the trade-in value (CAD) of a customer's current outboard using the live Harris Boat Works valuation. Horsepower may be omitted when the model infers a single validated HP.",
     inputSchema: {
       type: "object",
       properties: {
         brand: { type: "string" },
-        year: { type: "number" },
+        year: { type: "integer", minimum: 1950, maximum: new Date().getFullYear() },
         horsepower: { type: "number" },
+        model: { type: "string" },
         condition: {
           type: "string",
           enum: ["excellent", "good", "fair", "poor"],
         },
-        engine_type: { type: "string", enum: ["4-stroke", "2-stroke"] },
+        engine_type: { type: "string", enum: ["4-stroke", "2-stroke", "proxs", "optimax", "etec"] },
         engine_hours: { type: "number" },
       },
-      required: ["brand", "year", "horsepower"],
+      required: ["brand", "year"],
     },
   },
   {
@@ -105,6 +121,7 @@ const TOOLS = [
           enum: ["installed", "loose"],
           default: "installed",
         },
+        customer_has_propeller: { type: "boolean" },
         boat_info: {
           type: "object",
           properties: { make: { type: "string" }, model: { type: "string" } },
@@ -151,7 +168,10 @@ async function callPublicApi(action: string, params: Record<string, unknown>) {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ action, ...params }),
   });
-  return await resp.json();
+  let payload: unknown;
+  try { payload = await resp.json(); } catch { return { error: "Quote service returned an unreadable response." }; }
+  if (!resp.ok) return { error: "Quote service request failed.", status: resp.status, details: payload };
+  return payload;
 }
 
 async function searchMotors(supabase: any, args: any) {
@@ -160,9 +180,9 @@ async function searchMotors(supabase: any, args: any) {
   let q = supabase
     .from("motor_models")
     .select(
-      "id, model, model_display, model_number, family, horsepower, shaft_code, control_type, msrp, sale_price, dealer_price, manual_overrides, availability, in_stock, hero_image_url, image_url"
+      "id, model, model_display, model_number, family, horsepower, shaft_code, control_type, msrp, sale_price, dealer_price, base_price, manual_overrides, availability, in_stock, stock_quantity, hero_image_url, image_url"
     )
-    .or("availability.is.null,availability.neq.Exclude")
+    .or(PUBLIC_CATALOG_AVAILABILITY_OR)
     .order("horsepower", { ascending: true })
     .limit(500);
 
@@ -176,7 +196,7 @@ async function searchMotors(supabase: any, args: any) {
 
   return (data || [])
     .map((sourceMotor: any) => applyMotorPresentationOverrides(sourceMotor))
-    .filter((m: any) => !(m.model_display || "").toLowerCase().includes("verado"))
+    .filter((m: any) => isPublicCatalogMotor(m))
     .filter((m: any) =>
       wantFamilyKey ? familyKey(m.family) === wantFamilyKey : true
     )
@@ -190,11 +210,7 @@ async function searchMotors(supabase: any, args: any) {
         family: m.family || "FourStroke",
         horsepower: m.horsepower,
         shaftLength: m.shaft_code,
-        sellingPrice:
-          m.manual_overrides?.sale_price ??
-          m.sale_price ??
-          m.dealer_price ??
-          m.msrp,
+        sellingPrice: resolvePublicSellingPrice(m),
         currency: "CAD",
         availability: m.availability || (m.in_stock ? "In Stock" : "Special Order"),
         imageUrl: toPublicImageUrl(m.hero_image_url || m.image_url),
@@ -209,9 +225,9 @@ async function getMotor(supabase: any, args: any) {
   let q = supabase
     .from("motor_models")
     .select(
-      "id, model, model_display, model_number, family, motor_type, horsepower, shaft_code, control_type, msrp, sale_price, dealer_price, manual_overrides, availability, in_stock, hero_image_url, image_url, description, features"
+      "id, model, model_display, model_number, family, motor_type, horsepower, shaft_code, control_type, msrp, sale_price, dealer_price, base_price, manual_overrides, availability, in_stock, stock_quantity, hero_image_url, image_url, description, features"
     )
-    .or("availability.is.null,availability.neq.Exclude");
+    .or(PUBLIC_CATALOG_AVAILABILITY_OR);
   if (args.id) q = q.eq("id", args.id).limit(1);
   const { data, error } = await q;
   if (error) throw new Error(error.message);
@@ -221,11 +237,12 @@ async function getMotor(supabase: any, args: any) {
   } else if (args.slug) {
     const wanted = String(args.slug).toLowerCase();
     m = (data || [])
-      .filter((r: any) => !(r.model_display || "").toLowerCase().includes("verado"))
-      .find((r: any) => motorSlug(r) === wanted) ?? null;
+      .map((r: any) => applyMotorPresentationOverrides(r))
+      .find((r: any) => isPublicCatalogMotor(r) && motorSlug(r) === wanted) ?? null;
   }
   if (!m) return null;
   m = applyMotorPresentationOverrides(m);
+  if (!isPublicCatalogMotor(m)) return null;
 
   const slug = motorSlug(m);
   return {
@@ -236,11 +253,7 @@ async function getMotor(supabase: any, args: any) {
     horsepower: m.horsepower,
     shaftLength: m.shaft_code,
     controlType: m.control_type,
-    sellingPrice:
-      m.manual_overrides?.sale_price ??
-      m.sale_price ??
-      m.dealer_price ??
-      m.msrp,
+    sellingPrice: resolvePublicSellingPrice(m),
     msrp: m.msrp,
     currency: "CAD",
     availability: m.availability || (m.in_stock ? "In Stock" : "Special Order"),
@@ -252,61 +265,48 @@ async function getMotor(supabase: any, args: any) {
   };
 }
 
-function brandRules() {
-  return {
-    business: "Harris Boat Works",
-    location: "Gores Landing, Rice Lake, Ontario, Canada",
-    phone: "+1-905-342-2153",
-    family_owned_since: 1947,
-    mercury_dealer_since: 1965,
-    currency: "CAD",
-    geography: "Ontario, primary radius ~150km from Rice Lake",
-    pickup_only: true,
-    delivery: false,
-    pickup_policy:
-      "Motor purchases are pickup only at Gores Landing, Ontario. The buyer must pick up in person with valid government photo ID. We cannot release a motor to a courier, shipping company, or any other third party.",
-    no_verado: true,
-    financing_minimum_cad: 5000,
-    financing_rates: {
-      under_10k: "8.99% APR",
-      "10k_plus": "7.99% APR",
-      max_term_months: 144,
-    },
-    deposits_cad: { under_75hp: 200, "75_to_199hp": 500, "200hp_plus": 1000 },
-    warranty: "Standard 3-year Mercury (promo bonuses revert to 3y if promo ends)",
-    voice: "Warm, local, family-owned. No hype. Plainspoken expertise.",
-    docs: `${SITE_URL}/agents`,
-    brand_json: `${SITE_URL}/.well-known/brand.json`,
-  };
+async function brandRules(supabase: any) {
+  try {
+    const [financing, promotions] = await Promise.all([
+      fetchActiveFinancing(supabase),
+      fetchActivePromotions(supabase),
+    ]);
+    return presentPublicAgentBrandRules({ financing, promotions });
+  } catch (_error) {
+    return presentPublicAgentBrandRules({
+      financing: [],
+      promotions: [],
+      available: false,
+      reason: "Current financing terms are unavailable; no stale fallback rate was applied",
+    });
+  }
 }
 
-async function handleToolCall(supabase: any, name: string, args: any) {
+async function handleToolCall(supabase: any, name: string, rawArgs: unknown) {
+  const args = parseMcpToolArguments(name, rawArgs);
   switch (name) {
     case "search_motors": {
-      const motors = await searchMotors(supabase, args || {});
-      return {
-        content: [
-          { type: "text", text: JSON.stringify({ count: motors.length, motors }, null, 2) },
-        ],
-      };
+      const motors = await searchMotors(supabase, args);
+      return mcpToolResult({ count: motors.length, motors });
     }
     case "get_motor": {
-      const motor = await getMotor(supabase, args || {});
-      return { content: [{ type: "text", text: JSON.stringify(motor, null, 2) }] };
+      const motor = await getMotor(supabase, args);
+      if (!motor) return mcpToolResult({ error: "Motor not found" }, true);
+      return mcpToolResult(motor);
     }
     case "estimate_trade_in": {
-      const result = await callPublicApi("estimate_trade_in", args || {});
-      return { content: [{ type: "text", text: JSON.stringify(result, null, 2) }] };
+      const result = await callPublicApi("estimate_trade_in", args);
+      return mcpUpstreamErrorResult(result);
     }
     case "build_quote": {
-      const result = await callPublicApi("build_quote", args || {});
-      return { content: [{ type: "text", text: JSON.stringify(result, null, 2) }] };
+      const result = await callPublicApi("build_quote", args);
+      return mcpUpstreamErrorResult(result);
     }
     case "get_brand_rules": {
-      return { content: [{ type: "text", text: JSON.stringify(brandRules(), null, 2) }] };
+      return mcpToolResult(await brandRules(supabase));
     }
     default:
-      throw new Error(`Unknown tool: ${name}`);
+      throw new McpInvalidParamsError(`Unknown tool: ${name}`);
   }
 }
 
@@ -362,15 +362,15 @@ Deno.serve(async (req) => {
     });
   }
 
-  const { id = null, method, params = {} } = payload;
-
-  const methodKey = typeof method === "string" ? method.replace(/[^a-z0-9_/-]/gi, "_") : "unknown";
-  const toolName = method === "tools/call" && typeof params?.name === "string"
-    ? params.name.replace(/[^a-z0-9_-]/gi, "_")
+  const rawMethod = payload && typeof payload === "object" ? (payload as any).method : "unknown";
+  const rawParams = payload && typeof payload === "object" ? (payload as any).params : {};
+  const methodKey = typeof rawMethod === "string" ? rawMethod.replace(/[^a-z0-9_/-]/gi, "_") : "unknown";
+  const toolName = rawMethod === "tools/call" && rawParams && typeof rawParams.name === "string"
+    ? rawParams.name.replace(/[^a-z0-9_-]/gi, "_")
     : null;
   const limit =
     toolName === "build_quote" ? { maxAttempts: 40, windowMinutes: 10 } :
-    method === "tools/call" ? { maxAttempts: 80, windowMinutes: 10 } :
+    rawMethod === "tools/call" ? { maxAttempts: 80, windowMinutes: 10 } :
     { maxAttempts: 180, windowMinutes: 10 };
   const allowed = await checkRateLimit(req, {
     action: `agent_mcp_${toolName || methodKey}`.slice(0, 128),
@@ -382,6 +382,15 @@ Deno.serve(async (req) => {
     Deno.env.get("SUPABASE_URL")!,
     Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!
   );
+
+  let envelope: { id: string | number | null; method: string; params: Record<string, unknown> };
+  try {
+    envelope = parseMcpJsonRpc(payload);
+  } catch (err: any) {
+    const code = typeof err?.code === "number" ? err.code : -32600;
+    return jsonResp(rpcError(null, code, err?.message || "Invalid Request"), 400);
+  }
+  const { id, method, params } = envelope;
 
   try {
     if (method === "initialize") {
@@ -400,8 +409,8 @@ Deno.serve(async (req) => {
 
     if (method === "tools/call") {
       const { name, arguments: args } = params;
-      if (!name) {
-        return jsonResp(rpcError(id, -32602, "Missing tool name"));
+      if (typeof name !== "string" || !name.trim()) {
+        return jsonResp(rpcError(id, -32602, "Tool name must be a non-empty string"));
       }
       const result = await handleToolCall(supabase, name, args);
       return jsonResp(rpcResult(id, result));
@@ -409,6 +418,9 @@ Deno.serve(async (req) => {
 
     return jsonResp(rpcError(id, -32601, `Method not found: ${method}`));
   } catch (err: any) {
+    if (err instanceof McpInvalidParamsError) {
+      return jsonResp(rpcError(id, err.code, err.message), 400);
+    }
     console.error("[agent-mcp-server] error:", err);
     return jsonResp(rpcError(id, -32603, err?.message || "Internal error"));
   }

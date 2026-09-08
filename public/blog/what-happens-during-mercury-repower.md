@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/what-happens-during-mercury-repower.md
-last_updated: 2026-09-06
+last_updated: 2026-09-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "What Happens During a Mercury Repower (Step-by-Step Process)"
 description: "What happens during a Mercury repower at Harris Boat Works: the step-by-step process, timeline, rigging, water test, and what you do before drop-off."
 category: "Repower"
 date_published: 2026-05-05
-date_modified: 2026-09-06
+date_modified: 2026-09-07
 keywords: ["mercury repower process","what happens during repower","boat repower steps","mercury install process","repower timeline ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,13 +25,22 @@ revenue_driver: repower
 
 **Category:** Repower  
 **Published:** 2026-05-05  
-**Last reviewed:** 2026-09-06  
+**Last reviewed:** 2026-09-07  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/what-happens-during-mercury-repower
 
 ---
 
-![What happens during a Mercury repower at Harris Boat Works: six steps: quote, deposit, drop-off, rigging, on-water lake test, pickup](/blog-visuals/mercury-repower-6-step-timeline.png)
+### From request to handover
+
+1. **Share the boat details.** Use the [quote builder](/quote/motor-selection) to explore a repower and submit the [service request](https://hbw.wiki/service) before dropping off the boat.
+2. **Confirm fit and scope.** HBW reviews the hull, intended use, compatible equipment and work required.
+3. **Review the written quote.** Confirm the configuration, included work, availability, payment terms and scheduling with HBW.
+4. **Drop off when convenient.** Once the service request is complete, drop off anytime, including after hours.
+5. **Installation and checks.** HBW completes the approved work and confirms the testing appropriate to the boat and conditions.
+6. **Handover.** Review the completed work, documentation and owner instructions before taking the boat home.
+
+Timing depends on the boat, approved work, parts availability and testing conditions. Confirm your schedule with HBW.
 
 ## Quick Answer
 

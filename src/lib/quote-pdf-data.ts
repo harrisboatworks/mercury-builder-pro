@@ -1,4 +1,5 @@
 import { buildAccessoryBreakdown, type AccessoryBreakdownItem } from '@/lib/build-accessory-breakdown';
+import { applyTradeCredit, resolveAppliedTradeValue } from '@/lib/trade-credit';
 
 export const QUOTE_PDF_SNAPSHOT_VERSION = 1 as const;
 export const FINANCING_CONTRACT_TERM_MONTHS = 60;
@@ -255,6 +256,7 @@ export function isQuotePdfSnapshot(value: unknown): value is QuotePdfSnapshot {
 
 export function frozenPricingFromPdfSnapshot(snapshot: QuotePdfSnapshot) {
   return {
+    appliedTradeCredit: snapshot.tradeInValue || 0,
     motorMSRP: snapshot.pricing.msrp,
     motorDiscount: snapshot.pricing.discount,
     adminDiscount: snapshot.pricing.adminDiscount || 0,
@@ -350,8 +352,13 @@ export function buildLegacyQuotePdfSnapshot(state: any, createdAt?: string): Quo
     },
     accessoryBreakdown,
     purchasePath: state?.purchasePath === 'installed' ? 'installed' : 'loose',
-    ...(state?.tradeInInfo?.hasTradeIn && state.tradeInInfo.estimatedValue > 0 ? {
-      tradeInValue: Number(state.tradeInInfo.estimatedValue),
+    ...(state?.tradeInInfo?.hasTradeIn && resolveAppliedTradeValue(state.tradeInInfo) > 0 ? {
+      tradeInValue: applyTradeCredit({
+        preTradeSubtotal: (persisted?.motorSubtotal ?? (msrp - discount - adminDiscount - promoValue))
+          + accessoryBreakdown.reduce((sum: number, item: { price?: number }) => sum + Number(item.price || 0), 0),
+        estimatedValue: state.tradeInInfo.estimatedValue,
+        hasTradeIn: true,
+      }).credit,
       tradeInInfo: {
         brand: state.tradeInInfo.brand || 'Trade-in',
         year: Number(state.tradeInInfo.year || 0),

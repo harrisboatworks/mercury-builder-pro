@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/new-vs-used-pontoon-boats-ontario.md
-last_updated: 2026-08-04
+last_updated: 2026-09-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "New vs. Used Pontoon Boats in Ontario: What Actually Determines Value"
 description: "Compare new and used pontoon boats in Ontario by condition, motor history, documentation, tax, warranty and total ownership risk before you buy."
 category: "Buying Guide"
 date_published: 2026-08-04
-date_modified: 2026-08-04
+date_modified: 2026-09-07
 keywords: ["new vs used pontoon boat Ontario","used pontoon boat inspection","pontoon boat value","buying a pontoon in Ontario","pontoon boat ownership cost"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,11 +25,13 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-08-04  
-**Last reviewed:** 2026-08-04  
+**Last reviewed:** 2026-09-07  
 **Read time:** 13 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/new-vs-used-pontoon-boats-ontario
 
 > **Quick answer:** A used pontoon is good value when its lower price survives a proper comparison of structure, motor condition, records, ownership documents, tax, trailer and immediate repairs. A new pontoon buys certainty, current features and warranty, but not automatically a better fit. Compare the complete, water-ready package over your first three seasons, then choose the risk you can inspect and afford.
+
+*Photo: [Legend Boats media library](https://media.legendboats.com/pontoon-boats/e-series/e-series-21-cruise/), E-Series 21 Cruise gallery. Archive photography illustrates pontoon use; it is not an HBW inventory listing or a current-equipment specification.*
 
 Two pontoon ads can look nearly identical on a phone. Same length. Similar seating. Black outboard on the back. One is new and costs more. The other is used and appears to have already absorbed the expensive part of depreciation.
 

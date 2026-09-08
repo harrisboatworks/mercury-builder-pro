@@ -29,6 +29,7 @@ export default function TradeInPage() {
   const [tradeInInfo, setTradeInInfo] = useState<TradeInInfo>(() => (
     buildInitialTradeInInfo(state.tradeInInfo, state.boatInfo)
   ));
+  const latestTradeInInfo = useRef(tradeInInfo);
   
   // Track unsaved changes
   const [isDirty, setIsDirty] = useState(false);
@@ -48,7 +49,9 @@ export default function TradeInPage() {
         year: state.boatInfo?.currentMotorYear,
         hp: state.boatInfo?.currentHp
       });
-      setTradeInInfo(buildInitialTradeInInfo(state.tradeInInfo, state.boatInfo));
+      const initialTradeInInfo = buildInitialTradeInInfo(state.tradeInInfo, state.boatInfo);
+      latestTradeInInfo.current = initialTradeInInfo;
+      setTradeInInfo(initialTradeInInfo);
 
       document.title = 'Trade-In Valuation | Harris Boat Works';
       
@@ -75,6 +78,7 @@ export default function TradeInPage() {
       estimatedValue: updatedTradeInInfo.estimatedValue
     });
     
+    latestTradeInInfo.current = updatedTradeInInfo;
     setTradeInInfo(updatedTradeInInfo);
     
     // Mark as dirty if user has selected "Yes" and filled any fields
@@ -92,6 +96,9 @@ export default function TradeInPage() {
   };
 
   const handleComplete = () => {
+    // The No trade-in button changes details and advances in the same event.
+    // React has not rendered the new state yet, so use the latest change.
+    const tradeInInfo = latestTradeInInfo.current;
     console.log('🔄 TradeInPage handleComplete - tradeInInfo:', tradeInInfo);
     
     // If no trade-in, ensure clean state

@@ -42,7 +42,7 @@ export const MobileQuoteDrawer: React.FC<MobileQuoteDrawerProps> = ({ isOpen, on
   const isPreview = !!state.previewMotor;
 
   // Centralized running total (single source of truth)
-  const { subtotal, hst, total, lineItems } = useQuoteRunningTotal(displayMotor);
+  const { subtotal, hst, total, lineItems, taxSaving } = useQuoteRunningTotal(displayMotor);
 
   // Calculate financing details
   const pricing = useMemo(() => {
@@ -56,13 +56,14 @@ export const MobileQuoteDrawer: React.FC<MobileQuoteDrawerProps> = ({ isOpen, on
       lineItems,
       subtotal,
       hst,
+      taxSaving,
       total,
       monthly,
       termMonths,
       rate,
       financingUnavailable: total < FINANCING_MINIMUM,
     };
-  }, [displayMotor, total, subtotal, hst, lineItems, financingPromo]);
+  }, [displayMotor, total, subtotal, hst, taxSaving, lineItems, financingPromo]);
 
   // Get package info - dynamically based on promo years
   const packageInfo = useMemo(() => {
@@ -154,6 +155,12 @@ export const MobileQuoteDrawer: React.FC<MobileQuoteDrawerProps> = ({ isOpen, on
                   <span className="text-muted-foreground">HST (13%)</span>
                   <span>{money(pricing.hst)}</span>
                 </div>
+                {pricing.taxSaving > 0 && (
+                  <div className="flex justify-between text-sm">
+                    <span className="text-muted-foreground">HST saved on trade</span>
+                    <span className="text-repower-gold font-medium">-{money(pricing.taxSaving)}</span>
+                  </div>
+                )}
 
                 <Separator className="my-2" />
 

@@ -26,7 +26,7 @@ describe('canonical valuation routing contract', () => {
 
     expect(adapter).toContain('invalid_stroke');
     expect(adapter).toContain('stroke_model_conflict');
-    expect(adapter).toContain('compact === "2stroke"');
+    expect(source('supabase/functions/_shared/hbw-valuation-response.ts')).toContain('compact === "2stroke"');
     expect(adapter).not.toContain('return "4-stroke"; // default');
     expect(decoder).not.toContain('year >= 2007');
     expect(decoder).not.toContain("result.stroke = '4-Stroke';\n      result.strokeConfidence = 'medium'");

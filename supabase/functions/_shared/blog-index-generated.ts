@@ -108,7 +108,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Is 10W-30 or 25W-40 correct for my Mercury outboard?",
-        "a": "Both are correct for different Mercury families. The 2026 capacity guide lists 10W-30 for many 2.5-30 HP and current V6/V8 families, while 25W-40 appears on 40-60 HP, legacy 1.7 L 75/90/115 and several Verado families. Use the exact model and serial-number manual."
+        "a": "Both are correct for different Mercury families. The 2026 capacity guide lists 10W-30 for the 2.5-25 HP rows and listed V6/V8 families, while 25W-40 appears on 30-60 HP, legacy 1.7 L 75/90/115 and several Verado families. Use the exact model and serial-number manual."
       }
     ]
   },
@@ -2783,7 +2783,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "What should I budget for service after buying used?",
-        "a": "Plan on a round of first-year work no matter what: water pump impeller, gearcase oil, spark plugs, fuel filter, and a fuel-system clean-up. If the seller did not do it, you will. Budget for it as part of the purchase."
+        "a": "Use the service records, applicable maintenance schedule and inspection findings to identify what is due. Request an itemized estimate for overdue maintenance and required repairs instead of assuming every used motor needs the same parts replaced."
       },
       {
         "q": "Is a 2-stroke worth buying in 2026?",
@@ -2791,7 +2791,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Can I trust the hour meter?",
-        "a": "Mostly, on Mercurys built after about 2005, unless the meter itself was replaced. Mercury's SmartCraft system stores hours in the engine ECU independently, so a dealer with a diagnostic tool can verify true engine hours regardless of what the dashboard shows. We check this on every inspection."
+        "a": "Treat the displayed hours as one piece of evidence. Ask whether that exact engine supports an electronic hours report, and compare the available report with the meter, service records and any ECU or meter replacement history. Confirm what the dealer can verify for that motor."
       }
     ]
   },
@@ -3155,8 +3155,8 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   },
   {
     "slug": "mercury-smartcraft-alarm-codes-encyclopedia",
-    "title": "Mercury SmartCraft Alarm Codes Ontario",
-    "description": "Mercury SmartCraft alarm code reference from an Ontario Premier dealer. Top 10 codes by service frequency, spring first-start patterns.",
+    "title": "Mercury Alarm Codes List Ontario",
+    "description": "Mercury alarm codes explained: SmartCraft SYS FAULT, warning horns, the correct owner's manual, and why dismissing an alarm doesn't fix its cause.",
     "category": "Troubleshooting",
     "publishDate": "2026-02-06",
     "keywords": [
@@ -3839,7 +3839,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   {
     "slug": "outboard-trade-in-value-ontario-hbw",
     "title": "Outboard Trade-In Value in Ontario (2026)",
-    "description": "Outboard trade-in values in Ontario (2026): how HBW evaluates trades, what helps and hurts value, ranges by HP class, and how trade credit saves you HST.",
+    "description": "How HBW evaluates outboard trades in Ontario: appraisal factors, records to gather, and how to compare a trade with a private sale using your actual quote.",
     "category": "Buying Guide",
     "publishDate": "2026-05-09",
     "keywords": [
@@ -5607,7 +5607,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "How much does a Mercury 250 weigh?",
-        "a": "Depends on the family: the 250 Pro XS V8 is 229 kg (505 lb) dry, while the 250 FourStroke V8 is 239 kg (527 lb), both in their lightest configurations."
+        "a": "Depends on the family: the 250 Pro XS V8 is 232 kg (511 lb) dry, while the 250 FourStroke V8 is 239 kg (527 lb), using the brochure's listed configurations; confirm the exact model and shaft before ordering."
       }
     ]
   },
@@ -5775,7 +5775,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   {
     "slug": "legend-boats-warranty-canada-wowranty-guide-2026",
     "title": "Legend Boats Warranty in Canada: What the WOWranty Actually Covers (2026)",
-    "description": "Legend Boats warranty explained: 6-year WOWranty, Leakproof for Life, pontoon 5 | 10 | Lifetime, plus motor, trailer and electronics coverage.",
+    "description": "Check the written Legend warranty for your exact boat, identify each equipment provider and prepare the records needed for a warranty claim.",
     "category": "Buying Guide",
     "publishDate": "2026-07-27",
     "keywords": [
@@ -5787,20 +5787,20 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     ],
     "faqs": [
       {
-        "q": "Does the Legend 6-year WOWranty cover every component for six years?",
-        "a": "No. It covers most qualifying non-structural components that Legend manufactured or installed when a factory defect causes the failure. The motor, trailer, trolling motor, electronics, batteries, dealer-added accessories, consumables and wear items may follow separate terms."
+        "q": "Does one warranty cover the entire Legend boat package?",
+        "a": "Do not assume one warranty covers every part. Identify the boat, motor, trailer and accessory providers, then check the written terms issued for the exact model year and equipment."
       },
       {
-        "q": "What does Leakproof for Life cover?",
-        "a": "For an eligible all-welded Legend, it covers qualifying leaks through the hull structure caused by defects in factory material or workmanship for as long as the original purchaser owns the boat. Impact, corrosion, misuse, poor trailer support and unauthorized modifications are not factory defects."
+        "q": "Does a WOWranty headline establish coverage for my boat?",
+        "a": "No. Use the warranty issued with your boat and confirm the HIN, model year, delivery date, owner eligibility, covered component, parts and labour terms, and exclusions."
       },
       {
-        "q": "Can a Legend hull warranty transfer to a second owner?",
-        "a": "Qualifying structural protection may transfer once for up to 10 years from the first owner's original purchase date. Transfer normally requires a timely application, dealer inspection, condition photographs, a fee and Legend approval. Confirm the exact boat and current fee before completing the sale."
+        "q": "Can warranty coverage transfer to a second owner?",
+        "a": "Ask the warranty provider to confirm eligibility, remaining term, application deadline, inspection requirements and any fee for the exact boat before relying on a transfer."
       },
       {
-        "q": "Do current Legend pontoons use the 6-year WOWranty?",
-        "a": "Current pontoons use a separate 5 | 10 | Lifetime structure. Legend publishes lifetime structural parts with up to 10 years of labour, 10 years on qualifying canvas and upholstery, and 5 years on factory-installed tech, electronics and structural fibreglass."
+        "q": "Do pontoons and fishing boats have the same warranty?",
+        "a": "Do not assume that they do. Ask for the written schedule for the exact model and year, including separate terms for structure, upholstery, canvas, electronics and other components."
       }
     ]
   },

@@ -33,6 +33,8 @@ import { AdminQuoteControls } from '@/components/admin/AdminQuoteControls';
 import { Bookmark, CreditCard, Download } from 'lucide-react';
 import { computeTotals, calculateMonthlyPayment, getFinancingTerm, DEALERPLAN_FEE, FINANCING_MINIMUM } from '@/lib/finance';
 import { calculateQuotePricing, getFinanceableAmount, promoEndOfDay } from '@/lib/quote-utils';
+import { resolveAppliedTradeValue } from '@/lib/trade-credit';
+import { calculateFinancingPurchase, FINANCING_PRICE_BASIS_ALL_IN_AFTER_TRADE } from '@/lib/financing-purchase';
 import { supabase } from '@/integrations/supabase/client';
 import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
@@ -359,10 +361,10 @@ export default function QuoteSummaryPage() {
       accessoryTotal,
       warrantyPrice: 0,
       promotionalSavings: promoSavings,
-      tradeInValue: state.tradeInInfo?.estimatedValue || 0,
+      tradeInValue: resolveAppliedTradeValue(state.tradeInInfo),
       taxRate: 0.13
     });
-  }, [motorMSRP, motorDiscount, state.adminDiscount, accessoryBreakdown, promoSavings, state.tradeInInfo?.estimatedValue]);
+  }, [motorMSRP, motorDiscount, state.adminDiscount, accessoryBreakdown, promoSavings, state.tradeInInfo]);
 
   // When frozenPricing exists with full totals, use those for display
   // to guarantee PDF ↔ web parity. Live recalc is only for stale-quote comparison.
@@ -370,6 +372,7 @@ export default function QuoteSummaryPage() {
     if (state.frozenPricing?.subtotal != null && state.frozenPricing?.total != null) {
       return {
         ...packageSpecificTotals,
+        appliedTradeCredit: state.frozenPricing.appliedTradeCredit ?? packageSpecificTotals.appliedTradeCredit,
         subtotal: state.frozenPricing.subtotal,
         tax: state.frozenPricing.hst ?? Math.round(state.frozenPricing.subtotal * 0.13 * 100) / 100,
         total: state.frozenPricing.total,
@@ -393,11 +396,11 @@ export default function QuoteSummaryPage() {
       accessoryTotal,
       warrantyPrice: 0,
       promotionalSavings: livePromoSavings,
-      tradeInValue: state.tradeInInfo?.estimatedValue || 0,
+      tradeInValue: resolveAppliedTradeValue(state.tradeInInfo),
       taxRate: 0.13
     });
     return result.total;
-  }, [state.frozenPricing, liveMotorMSRP, livePromoSavings, accessoryBreakdown, state.adminDiscount, state.tradeInInfo?.estimatedValue, quoteData.motor]);
+  }, [state.frozenPricing, liveMotorMSRP, livePromoSavings, accessoryBreakdown, state.adminDiscount, state.tradeInInfo, quoteData.motor]);
 
 
   // Note: calculateRunningTotal doesn't model promotion-level discounts (discount_fixed_amount,
@@ -436,7 +439,8 @@ export default function QuoteSummaryPage() {
           batteryCost: state.looseMotorBattery?.batteryCost,
           warrantyPrice: state.warrantyConfig?.warrantyPrice || 0,
           warrantyTotalYears: state.warrantyConfig?.totalYears,
-          tradeInValue: state.tradeInInfo?.estimatedValue,
+          tradeInValue: resolveAppliedTradeValue(state.tradeInInfo),
+          hasTradeIn: state.tradeInInfo?.hasTradeIn,
           adminCustomItems: state.adminCustomItems,
           adminDiscount: state.adminDiscount,
           selectedPromoOption: state.selectedPromoOption,
@@ -518,8 +522,8 @@ export default function QuoteSummaryPage() {
       },
       accessoryBreakdown,
       purchasePath: state.purchasePath === 'installed' ? 'installed' : 'loose',
-      ...(state.tradeInInfo?.hasTradeIn && state.tradeInInfo?.estimatedValue > 0 && state.tradeInInfo?.brand ? {
-        tradeInValue: state.tradeInInfo.estimatedValue,
+      ...(state.tradeInInfo?.hasTradeIn && resolveAppliedTradeValue(state.tradeInInfo) > 0 && state.tradeInInfo?.brand ? {
+        tradeInValue: displayPricing.appliedTradeCredit ?? resolveAppliedTradeValue(state.tradeInInfo),
         tradeInInfo: {
           brand: state.tradeInInfo.brand,
           year: Number(state.tradeInInfo.year),
@@ -620,7 +624,7 @@ export default function QuoteSummaryPage() {
       trackAgentEvent({
         event_type: 'quote_generated',
         motor_model: quoteStateSnapshot.motor?.model || null,
-        motor_hp: quoteStateSnapshot.motor?.hp ?? quoteStateSnapshot.motor?.horsepower ?? null,
+        motor_hp: quoteStateSnapshot.motor?.hp ?? null,
         motor_id: quoteStateSnapshot.motor?.id ?? null,
       });
     }
@@ -796,23 +800,26 @@ export default function QuoteSummaryPage() {
   };
 
   const handleApplyForFinancing = () => {
-    const tradeInValue = state.tradeInInfo?.estimatedValue || 0;
-    
-    // Use the pre-trade-in subtotal so the financing form handles the single subtraction
-    // packageSpecificTotals.subtotal already has trade-in deducted, so add it back
-    const preTradeInSubtotal = displayPricing.subtotal + tradeInValue;
-    const subtotalWithTax = preTradeInSubtotal * 1.13;
-    const totalWithFees = subtotalWithTax + DEALERPLAN_FEE;
+    const purchase = calculateFinancingPurchase({
+      afterTradeSubtotal: displayPricing.subtotal,
+      preTradeSubtotal: displayPricing.subtotal + (displayPricing.appliedTradeCredit ?? 0),
+      estimatedValue: state.tradeInInfo?.estimatedValue,
+      hasTradeIn: state.tradeInInfo?.hasTradeIn,
+      dealerFee: DEALERPLAN_FEE,
+    });
     const financingData = {
       ...state,
       financingAmount: {
         packageSubtotal: displayPricing.subtotal,
-        hst: displayPricing.subtotal * 0.13,
+        hst: purchase.tax,
         financingFee: DEALERPLAN_FEE,
-        totalWithFees: totalWithFees,
+        totalWithFees: purchase.motorPrice,
         motorModel: quoteData.motor?.model || motorName,
         packageName: selectedPackageLabel,
-        tradeInValue: tradeInValue,
+        tradeInValue: purchase.tradeInValue,
+        includedTradeInValue: purchase.includedTradeInValue,
+        preTradeSubtotal: purchase.preTradeSubtotal,
+        priceBasis: FINANCING_PRICE_BASIS_ALL_IN_AFTER_TRADE,
         // Include promo details for financing application
         promoOption: state.selectedPromoOption,
         promoRate: state.selectedPromoRate,
@@ -1102,7 +1109,7 @@ export default function QuoteSummaryPage() {
                     pricing={displayPricing}
                     motorName={quoteData.motor?.model || 'Mercury Motor'}
                     accessoryBreakdown={accessoryBreakdown}
-                    tradeInValue={state.tradeInInfo?.estimatedValue || 0}
+                    tradeInValue={displayPricing.appliedTradeCredit ?? resolveAppliedTradeValue(state.tradeInInfo)}
                     tradeInInfo={state.tradeInInfo?.hasTradeIn ? {
                       brand: state.tradeInInfo.brand,
                       year: state.tradeInInfo.year,

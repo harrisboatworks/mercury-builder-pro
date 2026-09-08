@@ -1,0 +1,13 @@
+import React from 'react';
+import {render,screen,fireEvent,cleanup,waitFor} from '@testing-library/react';
+import {it,expect,vi,afterEach} from 'vitest';
+import {PurchaseDetailsStep} from '@/components/financing/PurchaseDetailsStep';
+const fixture=vi.hoisted(()=>({purchase:{motorModel:'Synthetic 90 FourStroke',motorPrice:9660.20,downPayment:0,tradeInValue:4125,amountToFinance:9660.20,priceBasis:'all_in_after_trade',includedTradeInValue:4125,preTradeSubtotal:12365},dispatch:vi.fn()}));
+vi.mock('@/contexts/FinancingContext',()=>({useFinancing:()=>({state:{purchaseDetails:fixture.purchase},dispatch:fixture.dispatch})}));
+vi.mock('@/hooks/useActivePromotions',()=>({useActivePromotions:()=>({loading:false,getPromotionOptions:()=>[]})}));
+vi.mock('@/components/financing/MobileFormNavigation',()=>({MobileFormNavigation:()=>null}));
+afterEach(cleanup);
+const amount=()=>screen.getByText('Amount to Finance').parentElement?.textContent;
+it('retains the after-trade financing total without subtracting trade twice',()=>{render(<PurchaseDetailsStep/>);expect(amount()).toContain('9,660')});
+it('changing trade by $1000 changes principal by $1130, including HST saving',async()=>{render(<PurchaseDetailsStep/>);fireEvent.change(screen.getByLabelText('Trade-In Value (Optional)'),{target:{value:'3125'}});await waitFor(()=>expect(amount()).toContain('10,790'))});
+it('removing a trade restores the full pre-trade total and keeps the field editable',async()=>{render(<PurchaseDetailsStep/>);fireEvent.change(screen.getByLabelText('Trade-In Value (Optional)'),{target:{value:'0'}});await waitFor(()=>expect(amount()).toContain('14,321'));expect(screen.getByLabelText('Trade-In Value (Optional)')).toBeInTheDocument()});

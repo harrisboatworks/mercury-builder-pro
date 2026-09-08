@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/toronto-to-rice-lake-drive-in-process.md
-last_updated: 2026-09-06
+last_updated: 2026-09-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Toronto to Rice Lake: How HBW Drive-In Service Works"
 description: "Step-by-step guide to bringing a GTA boat to Harris Boat Works on Rice Lake, including drive-in drop-off and generally available boat-pickup arrangements."
 category: "Service & Maintenance"
 date_published: 2026-05-15
-date_modified: 2026-09-06
+date_modified: 2026-09-07
 keywords: ["GTA boat service","tow boat to Rice Lake","Mercury service Toronto","Harris Boat Works drive in","boat trailer GTA to Kawarthas","Mercury Premier dealer GTA east","boat storage drop off GTA","repower Ontario drive in"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Category:** Service & Maintenance  
 **Published:** 2026-05-15  
-**Last reviewed:** 2026-09-06  
+**Last reviewed:** 2026-09-07  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/toronto-to-rice-lake-drive-in-process
 
@@ -51,6 +51,10 @@ Submit a request at [hbw.wiki/service](https://hbw.wiki/service) with:
 - Your preferred timing
 
 Once the service request is completed, you can drop off your boat anytime, including after hours. You do not need to wait for a confirmed drop-off window. HBW reviews the requested work and contacts you about any missing information, approvals, or scheduling.
+
+![Illustration of an owner checking a service request beside a trailered boat with a Mercury outboard at dusk.](/lovable-uploads/blog-illustrations-2026-09/service-dropoff-mercury.webp)
+
+*Illustration of the drop-off process. Use the directions below for the actual HBW location.*
 
 ---
 

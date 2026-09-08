@@ -4,8 +4,13 @@ import {
   type CanonicalHbwValuation,
   fetchCanonicalHbwValuation,
   HbwValuationError,
-  normalizeHbwStroke,
 } from "../_shared/hbw-valuation.ts";
+import { applyTradeCredit } from "../_shared/trade-credit.ts";
+import {
+  isPresentTradeIn,
+  resolveTradeInInput,
+  TradeInInputError,
+} from "../_shared/trade-in-input.ts";
 
 const DEALERPLAN_FEE = 349;
 const HST_RATE = 0.13;
@@ -77,6 +82,9 @@ Deno.serve(async (req) => {
     }
   } catch (err: any) {
     console.error("agent-quote-api error:", err);
+    if (err instanceof TradeInInputError) {
+      return json({ error: err.message, code: err.code }, 400);
+    }
     if (err instanceof HbwValuationError) {
       return json(
         { error: err.message, code: err.code },
@@ -135,9 +143,13 @@ function calcPricing(opts: {
   } = opts;
 
   const subtotal = motorPrice + customItemsTotal + warrantyCost + accessoryCost;
-  const tradeInCredit = Math.min(tradeInValue, subtotal); // can't exceed subtotal
-  const rebateCredit = Math.min(rebateAmount, subtotal - tradeInCredit);
-  const adjustedSubtotal = subtotal - tradeInCredit - rebateCredit;
+  const rebateCredit = Math.min(Math.max(0, Number.isFinite(rebateAmount) ? rebateAmount : 0), Math.max(0, subtotal));
+  const tradeInCredit = applyTradeCredit({
+    preTradeSubtotal: subtotal - rebateCredit,
+    estimatedValue: tradeInValue,
+    hasTradeIn: true,
+  }).credit;
+  const adjustedSubtotal = Math.max(0, subtotal - tradeInCredit - rebateCredit);
   const hst = adjustedSubtotal * HST_RATE;
   const totalBeforeDiscount = adjustedSubtotal + hst;
   const finalPrice = Math.max(0, totalBeforeDiscount - adminDiscount);
@@ -153,6 +165,59 @@ function calcPricing(opts: {
     totalBeforeDiscount,
     adminDiscount,
     finalPrice,
+  };
+}
+
+async function valueAgentTradeIn(raw: unknown) {
+  const resolved = resolveTradeInInput(raw, { allowOverride: true });
+  const overrideValue = resolved.overrideValue ?? null;
+  let estimate: CanonicalHbwValuation | null = null;
+  try {
+    estimate = await fetchCanonicalHbwValuation({
+      brand: resolved.brand,
+      year: resolved.year,
+      hp: resolved.horsepower,
+      condition: resolved.condition,
+      stroke: resolved.engineType,
+      hours: resolved.engineHours,
+      model: resolved.model,
+    });
+  } catch (error) {
+    if (
+      overrideValue === null ||
+      !(error instanceof HbwValuationError) ||
+      error.status < 500
+    ) throw error;
+    console.warn("Canonical valuation unavailable; preserving explicit agent override", error);
+  }
+  const formulaEstimate = estimate?.wholesale ?? null;
+  const tradeInValue = overrideValue ?? formulaEstimate!;
+  return {
+    tradeInValue,
+    tradeInData: {
+      brand: resolved.brand,
+      year: resolved.year,
+      horsepower: resolved.horsepower,
+      condition: resolved.condition,
+      engine_type: resolved.engineType ?? null,
+      engine_hours: resolved.engineHours ?? null,
+      model: resolved.model || "",
+      serialNumber: resolved.serialNumber || "",
+      estimatedValue: tradeInValue,
+      originalEstimate: formulaEstimate,
+      overrideValue: overrideValue ?? undefined,
+      confidence: estimate?.confidence ?? "manual",
+      rangeLow: estimate?.rangeLow,
+      rangeHigh: estimate?.rangeHigh,
+      listingValue: estimate?.listing,
+      hstSavings: estimate?.hstSavings,
+      valuationReportUrl: estimate?.reportUrl,
+      valuationSource: estimate
+        ? "HBW Motor Valuation API (canonical)"
+        : "Explicit agent override",
+      valuationStatus: estimate ? "canonical" : "manual_override_without_canonical_readback",
+      hasTradeIn: true,
+    },
   };
 }
 
@@ -358,33 +423,26 @@ async function listPromotions(supabase: any) {
 }
 
 async function estimateTradeIn(_supabase: any, body: any) {
-  const { brand, year, horsepower, condition, engine_type, engine_hours } = body;
-  if (!brand) throw new Error("brand is required (e.g. 'Mercury', 'Yamaha')");
-  if (!year) throw new Error("year is required (e.g. 2018)");
-  if (!horsepower) throw new Error("horsepower is required (e.g. 115)");
-  const validConditions = ["excellent", "good", "fair", "poor"];
-  const cond = (condition || "good").toLowerCase();
-  if (!validConditions.includes(cond)) throw new Error(`condition must be one of: ${validConditions.join(", ")}`);
-
-  const stroke = normalizeHbwStroke(engine_type);
+  const resolved = resolveTradeInInput(body);
   const estimate = await fetchCanonicalHbwValuation({
-    brand: String(brand).trim(),
-    year: Number(year),
-    hp: Number(horsepower),
-    condition: cond,
-    stroke,
-    hours: typeof engine_hours === "number" ? engine_hours : undefined,
-    model: typeof body.model === "string" && body.model.trim()
-      ? body.model.trim()
-      : undefined,
+    brand: resolved.brand,
+    year: resolved.year,
+    hp: resolved.horsepower,
+    condition: resolved.condition,
+    stroke: resolved.engineType,
+    hours: resolved.engineHours,
+    model: resolved.model,
   });
 
   return json({
     ok: true,
     trade_in: {
-      brand, year, horsepower, condition: cond,
-      engine_type: stroke ?? null,
-      engine_hours: engine_hours ?? null,
+      brand: resolved.brand,
+      year: resolved.year,
+      horsepower: resolved.horsepower,
+      condition: resolved.condition,
+      engine_type: resolved.engineType ?? null,
+      engine_hours: resolved.engineHours ?? null,
       estimated_value: estimate.wholesale,
       range_low: estimate.rangeLow,
       range_high: estimate.rangeHigh,
@@ -726,62 +784,10 @@ async function createQuote(supabase: any, body: any) {
   // --- Trade-in handling ---
   let tradeInValue = 0;
   let tradeInData: any = null;
-  if (body.trade_in && body.trade_in.brand && body.trade_in.year && body.trade_in.horsepower) {
-    const ti = body.trade_in;
-    const cond = (ti.condition || "good").toLowerCase();
-    const stroke = normalizeHbwStroke(ti.engine_type);
-    const overrideValue = ti.override_value != null &&
-        typeof ti.override_value === "number" && ti.override_value > 0
-      ? ti.override_value
-      : null;
-    let estimate: CanonicalHbwValuation | null = null;
-    try {
-      estimate = await fetchCanonicalHbwValuation({
-        brand: String(ti.brand).trim(),
-        year: Number(ti.year),
-        hp: Number(ti.horsepower),
-        condition: cond,
-        stroke,
-        hours: typeof ti.engine_hours === "number" ? ti.engine_hours : undefined,
-        model: typeof ti.model === "string" && ti.model.trim()
-          ? ti.model.trim()
-          : undefined,
-      });
-    } catch (error) {
-      if (
-        overrideValue === null ||
-        !(error instanceof HbwValuationError) ||
-        error.status < 500
-      ) throw error;
-      console.warn("Canonical valuation unavailable; preserving explicit agent override", error);
-    }
-    const formulaEstimate = estimate?.wholesale ?? null;
-    tradeInValue = overrideValue ?? formulaEstimate!;
-
-    tradeInData = {
-      brand: ti.brand,
-      year: ti.year,
-      horsepower: ti.horsepower,
-      condition: cond,
-      engine_type: stroke ?? null,
-      engine_hours: ti.engine_hours ?? null,
-      model: ti.model || "",
-      serialNumber: ti.serial_number || "",
-      estimatedValue: tradeInValue,
-      originalEstimate: formulaEstimate,
-      overrideValue: overrideValue ?? undefined,
-      confidence: estimate?.confidence ?? "manual",
-      rangeLow: estimate?.rangeLow,
-      rangeHigh: estimate?.rangeHigh,
-      listingValue: estimate?.listing,
-      hstSavings: estimate?.hstSavings,
-      valuationReportUrl: estimate?.reportUrl,
-      valuationSource: estimate
-        ? "HBW Motor Valuation API (canonical)"
-        : "Explicit agent override",
-      valuationStatus: estimate ? "canonical" : "manual_override_without_canonical_readback",
-      hasTradeIn: true,
-    };
+  if (isPresentTradeIn(body.trade_in)) {
+    const valued = await valueAgentTradeIn(body.trade_in);
+    tradeInValue = valued.tradeInValue;
+    tradeInData = valued.tradeInData;
   }
 
   // --- Warranty handling ---
@@ -1168,56 +1174,11 @@ async function updateQuote(supabase: any, body: any) {
       quoteData.tradeIn = null;
       quoteData.tradeInInfo = null;
       updates.tradein_value_final = null;
-    } else if (body.trade_in.brand && body.trade_in.year && body.trade_in.horsepower) {
-      const ti = body.trade_in;
-      const cond = (ti.condition || "good").toLowerCase();
-      const stroke = normalizeHbwStroke(ti.engine_type);
-      const overrideValue = ti.override_value != null &&
-          typeof ti.override_value === "number" && ti.override_value > 0
-        ? ti.override_value
-        : null;
-      let estimate: CanonicalHbwValuation | null = null;
-      try {
-        estimate = await fetchCanonicalHbwValuation({
-          brand: String(ti.brand).trim(),
-          year: Number(ti.year),
-          hp: Number(ti.horsepower),
-          condition: cond,
-          stroke,
-          hours: typeof ti.engine_hours === "number" ? ti.engine_hours : undefined,
-          model: typeof ti.model === "string" && ti.model.trim()
-            ? ti.model.trim()
-            : undefined,
-        });
-      } catch (error) {
-        if (
-          overrideValue === null ||
-          !(error instanceof HbwValuationError) ||
-          error.status < 500
-        ) throw error;
-        console.warn("Canonical valuation unavailable; preserving explicit agent override", error);
-      }
-      const formulaEstimate = estimate?.wholesale ?? null;
-      const finalTradeIn = overrideValue ?? formulaEstimate!;
-      const tradeInObj = {
-        brand: ti.brand, year: ti.year, horsepower: ti.horsepower,
-        condition: cond, engine_type: stroke ?? null, engine_hours: ti.engine_hours ?? null,
-        model: ti.model || "", serialNumber: ti.serial_number || "",
-        estimatedValue: finalTradeIn, originalEstimate: formulaEstimate,
-        overrideValue: overrideValue ?? undefined,
-        confidence: estimate?.confidence ?? "manual",
-        rangeLow: estimate?.rangeLow, rangeHigh: estimate?.rangeHigh,
-        listingValue: estimate?.listing, hstSavings: estimate?.hstSavings,
-        valuationReportUrl: estimate?.reportUrl,
-        valuationSource: estimate
-          ? "HBW Motor Valuation API (canonical)"
-          : "Explicit agent override",
-        valuationStatus: estimate ? "canonical" : "manual_override_without_canonical_readback",
-        hasTradeIn: true,
-      };
-      quoteData.tradeIn = tradeInObj;
-      quoteData.tradeInInfo = tradeInObj;
-      updates.tradein_value_final = finalTradeIn;
+    } else if (isPresentTradeIn(body.trade_in)) {
+      const valued = await valueAgentTradeIn(body.trade_in);
+      quoteData.tradeIn = valued.tradeInData;
+      quoteData.tradeInInfo = valued.tradeInData;
+      updates.tradein_value_final = valued.tradeInValue;
     }
   }
 
