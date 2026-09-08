@@ -17070,7 +17070,6 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
   {
     slug: 'outboard-shaft-length-guide',
     title: 'Outboard Shaft Length Guide: 15, 20, 25 Inch (2026)',
-    seoTitle: 'Outboard Shaft Length Chart: 15, 20, 25 Inch | Ontario',
     description: 'Outboard shaft length chart for 15, 20, and 25 inch shafts. Measure transom height, match the Mercury shaft code, and avoid cavitation. Ontario dealer guide.',
     image: "/lovable-uploads/blog-visuals-2026-09/shaft-length-labels.svg",
     imageAlt: "Common nominal outboard shaft lengths: short 15 inches, long 20 inches, extra long 25 inches. Confirm the exact motor and hull.",
