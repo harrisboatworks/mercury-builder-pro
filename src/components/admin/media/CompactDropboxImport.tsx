@@ -29,7 +29,6 @@ export function CompactDropboxImport({ motorId, onUploadComplete }: CompactDropb
   const [dropboxReady, setDropboxReady] = useState(false);
   const [configLoading, setConfigLoading] = useState(true);
   const [appKeyError, setAppKeyError] = useState<string | null>(null);
-  const [accessToken, setAccessToken] = useState<string>('');
   const { toast } = useToast();
 
   useEffect(() => {
@@ -49,11 +48,6 @@ export function CompactDropboxImport({ motorId, onUploadComplete }: CompactDropb
         if (!data?.appKey) {
           setAppKeyError('Dropbox App Key not configured');
           return;
-        }
-
-        // Set access token if available
-        if (data.accessToken) {
-          setAccessToken(data.accessToken);
         }
 
         // Dynamically load Dropbox Chooser script
@@ -115,7 +109,6 @@ export function CompactDropboxImport({ motorId, onUploadComplete }: CompactDropb
                   fileUrl: file.link,
                   fileName: file.name,
                   motorId: motorId,
-                  accessToken: accessToken || null
                 }
               });
 

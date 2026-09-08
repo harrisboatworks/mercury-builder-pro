@@ -4,6 +4,7 @@ import {
   mercuryOutboardCapacities,
   formatCrankcaseCapacity,
   formatGearcaseCapacity,
+  matchesCapacityQuery,
 } from '@/data/mercuryOutboardCapacities';
 
 type HorsepowerBand = 'all' | 'portable' | 'midrange' | 'high';
@@ -12,7 +13,7 @@ const bands: Array<{ value: HorsepowerBand; label: string }> = [
   { value: 'all', label: 'All horsepower' },
   { value: 'portable', label: '2.5-30 HP' },
   { value: 'midrange', label: '35-115 HP' },
-  { value: 'high', label: '150-600 HP' },
+  { value: 'high', label: '135-600 HP' },
 ];
 
 function firstHorsepower(model: string): number {
@@ -38,17 +39,7 @@ export function MercuryCapacityLookup() {
     return mercuryOutboardCapacities.filter((row) => {
       if (!matchesBand(row.model, band)) return false;
       if (!needle) return true;
-      return [
-        row.model,
-        row.year,
-        row.notes,
-        row.crankcaseQt,
-        row.crankcaseL,
-        row.gearcaseOz,
-        row.crankcaseOil,
-        row.gearLube,
-        row.oilFilter,
-      ].some((value) => value.toLowerCase().includes(needle));
+      return matchesCapacityQuery(row, needle);
     });
   }, [band, query]);
 

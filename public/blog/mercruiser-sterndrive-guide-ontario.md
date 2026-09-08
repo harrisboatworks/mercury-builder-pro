@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercruiser-sterndrive-guide-ontario.md
-last_updated: 2026-09-06
+last_updated: 2026-09-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "MerCruiser Sterndrive Ontario Guide"
 description: "Ontario guide to MerCruiser sterndrive maintenance, winterization, repairs, and repower options from Harris Boat Works."
 category: "Service & Maintenance"
 date_published: 2026-05-14
-date_modified: 2026-09-06
+date_modified: 2026-09-07
 keywords: ["MerCruiser sterndrive Ontario","MerCruiser bellows replacement Ontario","sterndrive winterization Ontario","MerCruiser repower cost","sterndrive to outboard conversion","MerCruiser Alpha Bravo maintenance"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,9 +25,11 @@ revenue_driver: service
 
 **Category:** Service & Maintenance  
 **Published:** 2026-05-14  
-**Last reviewed:** 2026-09-06  
+**Last reviewed:** 2026-09-07  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercruiser-sterndrive-guide-ontario
+
+*Hero graphic: service-planning topics, not a component-location or installation diagram.*
 
 ## The Ontario Boater's Guide to MerCruiser Sterndrives. Maintenance, Repairs, and Repower
 
@@ -63,7 +65,17 @@ If you don't know which drive you have, the data plate on the upper drive housin
 
 ---
 
-![MerCruiser sterndrive failure-points diagram showing bellows, water intrusion, manifolds, risers, winterization, and drive service](/lovable-uploads/mercruiser-sterndrive-ontario-failure-points.png)
+**The five failure points on a MerCruiser sterndrive**
+
+| Where | What goes wrong |
+|---|---|
+| Bellows at the gimbal housing | The rubber sleeves crack at the folds and let water in through the transom. This is the boat-sinker. |
+| Gimbal bearing | Growls on hard low-speed turns, then takes out the U-joint, the bellows and the engine coupler. |
+| Drive seals | Milky gear lube means water has passed the prop shaft seal or the upper drive shaft seal. |
+| Raw water pump and impeller | The drive is raw-water cooled, so a worn impeller overheats the engine the same way it does on an outboard. |
+| Engine block and manifolds | An incomplete fall drain cracks the block. A sterndrive does not self-drain the way a tilted outboard does. |
+
+Alpha One and Bravo share these failure points. The difference between them is gearcase size and duty rating.
 
 ## What Actually Kills MerCruiser Boats
 
@@ -93,7 +105,7 @@ The **gimbal bearing** is the support bearing that lets the drive pivot for stee
 
 Replacement is straightforward when the drive is already off the boat for bellows work, that's why we do them together. As a standalone job, $500-$800 in parts plus labour. Catching it early is cheap; ignoring it eats the U-joint, then the bellows, then the engine coupler, then the engine itself.
 
-_Prices here are planning figures as of August 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are planning figures as of September 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 ### 3. Milky gear lube (water in the drive)
 

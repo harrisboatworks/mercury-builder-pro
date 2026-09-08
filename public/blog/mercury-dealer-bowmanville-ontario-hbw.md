@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-bowmanville-ontario-hbw.md
-last_updated: 2026-09-06
+last_updated: 2026-09-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Dealer for Bowmanville: 35 Minutes to Rice Lake"
 description: "Mercury Premier dealer for Bowmanville: Harris Boat Works on Rice Lake, 35 minutes via 401 and 115. Repower, sales, parts, winter storage practically next door."
 category: "Dealer Locations"
 date_published: 2026-05-11
-date_modified: 2026-09-06
+date_modified: 2026-09-07
 keywords: ["mercury dealer bowmanville","mercury repower bowmanville","mercury outboard bowmanville ontario","boat motor service clarington"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Dealer Locations  
 **Published:** 2026-05-11  
-**Last reviewed:** 2026-09-06  
+**Last reviewed:** 2026-09-07  
 **Read time:** 4 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dealer-bowmanville-ontario-hbw
 
@@ -35,7 +35,15 @@ See [why boaters across Ontario choose Harris Boat Works](/blog/best-mercury-dea
 
 ---
 
-![Why Bowmanville boaters drive to Harris Boat Works: about 35 minutes to Gores Landing on Rice Lake for Mercury repower and service](/blog-visuals/mercury-dealer-bowmanville-worth-the-drive.png)
+![Editorial illustration of an owner checking a service request beside a trailered boat with a Mercury outboard.](/lovable-uploads/blog-illustrations-2026-09/service-dropoff-mercury.webp "Editorial illustration; this does not depict the actual HBW entrance.")
+
+### Plan Your Service Drop-Off
+
+1. **Complete the request:** use [hbw.wiki/service](https://hbw.wiki/service) and describe the boat, motor and work needed.
+2. **Drop off anytime:** after completing the request, bring the boat to **5369 Harris Boat Works Rd, Gores Landing**, including after hours.
+3. **Confirm the work:** agree on scope and cost with HBW. A repower quote uses the [Mercury quote builder](/quote/motor-selection).
+
+Check your route before leaving; travel time varies with your starting point, traffic and towing conditions.
 
 ## Mercury Dealer for Bowmanville: You're Basically Our Neighbour
 

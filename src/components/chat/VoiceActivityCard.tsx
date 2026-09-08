@@ -7,6 +7,7 @@ import { useToast } from '@/hooks/use-toast';
 import { cn } from '@/lib/utils';
 import { money } from '@/lib/money';
 import type { VoiceActivityEvent, VoiceActivityAction } from '@/lib/voiceActivityFeed';
+import { buildPromoteTradeInFromVoiceCard, isUsableVoiceTradeInCard, type VoiceTradeInCard } from '@/lib/voice-trade-in';
 import { 
   Search, Navigation, Check, Info, Tag, 
   DollarSign, Phone, Scale, Star, PartyPopper, FileText 
@@ -71,31 +72,24 @@ export const VoiceActivityCard: React.FC<VoiceActivityCardProps> = ({
 
     // Handle custom actions
     if (action.action === 'apply_trade_in' && action.actionData) {
-      const data = action.actionData as {
-        brand: string;
-        year: number;
-        horsepower: number;
-        estimatedValue: number;
-      };
-      
+      const data = action.actionData as Partial<VoiceTradeInCard>;
+      if (!isUsableVoiceTradeInCard(data)) {
+        toast({
+          title: 'Trade-in not applied',
+          description: 'That estimate is stale or no longer matches the live valuation.',
+          variant: 'destructive',
+        });
+        return;
+      }
+
       dispatch({
-        type: 'SET_TRADE_IN_INFO',
-        payload: {
-          hasTradeIn: true,
-          brand: data.brand,
-          year: data.year,
-          horsepower: data.horsepower,
-          model: '',
-          serialNumber: '',
-          condition: 'good',
-          estimatedValue: data.estimatedValue,
-          confidenceLevel: 'medium',
-        },
+        type: 'PROMOTE_TRADE_IN',
+        payload: buildPromoteTradeInFromVoiceCard(data),
       });
       
       toast({
         title: 'Trade-in applied',
-        description: `${money(data.estimatedValue)} added to your quote`,
+        description: `${money(data.wholesale)} added to your quote`,
       });
       return;
     }

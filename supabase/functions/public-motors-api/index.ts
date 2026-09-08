@@ -7,7 +7,16 @@ import {
   detectFamily,
   motorSlug,
 } from '../_shared/motor-slug.ts';
-import { PUBLIC_SITE_URL, toPublicImageUrl } from '../_shared/public-motor-contract.ts';
+import {
+  isPublicCatalogMotor,
+  isPublicMotorInStock,
+  parseOptionalBooleanFlag,
+  PUBLIC_CATALOG_AVAILABILITY_OR,
+  PUBLIC_SITE_URL,
+  publicStockQuantity,
+  resolvePublicSellingPrice,
+  toPublicImageUrl,
+} from '../_shared/public-motor-contract.ts';
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -16,23 +25,6 @@ const corsHeaders = {
 };
 
 const SITE_URL = PUBLIC_SITE_URL;
-
-function resolveSellingPrice(motor: any): number | null {
-  const overrides = motor.manual_overrides || {};
-  const candidates = [
-    overrides.sale_price,
-    overrides.base_price,
-    motor.sale_price,
-    motor.dealer_price,
-    motor.msrp,
-    motor.base_price,
-  ];
-  for (const v of candidates) {
-    const n = typeof v === 'string' ? parseFloat(v) : v;
-    if (typeof n === 'number' && !isNaN(n) && n > 0) return n;
-  }
-  return null;
-}
 
 Deno.serve(async (req) => {
   if (req.method === 'OPTIONS') {
@@ -60,7 +52,7 @@ Deno.serve(async (req) => {
       )
       // PostgreSQL comparisons do not match NULL. Treat NULL as an active,
       // orderable record while still excluding the explicit Exclude status.
-      .or('availability.is.null,availability.neq.Exclude')
+      .or(PUBLIC_CATALOG_AVAILABILITY_OR)
       .order('horsepower', { ascending: true })
       .limit(500);
 
@@ -72,25 +64,21 @@ Deno.serve(async (req) => {
       });
     }
 
+    const url = new URL(req.url);
+    const inStockOnly = parseOptionalBooleanFlag(url.searchParams.get('in_stock_only'));
     const now = new Date();
     const validUntil = new Date(now.getTime() + 24 * 60 * 60 * 1000);
 
     const motors = (data || [])
-      .filter((m) => {
-        // Exclude Verado per company policy
-        const display = (m.model_display || m.model || '').toLowerCase();
-        if (display.includes('verado')) return false;
-        return true;
-      })
       .map((sourceMotor) => {
         const m = applyMotorPresentationOverrides(sourceMotor);
+        if (!isPublicCatalogMotor(m)) return null;
         const family = detectFamily(m.model_display || m.model, m.motor_type, m.family);
-        const sellingPrice = resolveSellingPrice(m);
+        const sellingPrice = resolvePublicSellingPrice(m);
         const slug = motorSlug(m);
-        const quantity = m.stock_quantity == null ? null : Math.max(0, Number(m.stock_quantity) || 0);
-        const inStock = quantity == null
-          ? !!m.in_stock || (m.availability || '').trim().toLowerCase() === 'in stock'
-          : quantity > 0;
+        const quantity = publicStockQuantity(m);
+        const inStock = isPublicMotorInStock(m);
+        if (inStockOnly && !inStock) return null;
         return {
           id: m.id,
           slug,
@@ -110,7 +98,8 @@ Deno.serve(async (req) => {
           imageUrl: toPublicImageUrl(m.hero_image_url || m.image_url),
           url: `${SITE_URL}/motors/${slug}`,
         };
-      });
+      })
+      .filter((motor): motor is NonNullable<typeof motor> => motor !== null);
 
     const body = {
       site: 'mercuryrepower.ca',

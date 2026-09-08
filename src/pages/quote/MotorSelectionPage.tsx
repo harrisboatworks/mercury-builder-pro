@@ -1,3 +1,4 @@
+import { resolvePublicSellingPrice } from '../../../supabase/functions/_shared/public-motor-contract';
 import { useEffect, useState, useMemo, useCallback, useRef } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 
@@ -76,6 +77,11 @@ import {
   writeMotorSelectionUrlState,
   type MotorSelectionUrlState,
 } from '@/lib/motor-selection-url-state';
+import {
+  parseAgentQuoteHandoff,
+  useAgentQuoteHandoff,
+  UCP_CHECKOUT_REF_FLAG,
+} from '@/lib/agent-quote-handoff';
 
 // Refined navy promo strip, single-line on desktop, 2-line on mobile, dismissible
 const PROMO_DISMISS_KEY = 'repower_promo_dismissed_v1';
@@ -469,6 +475,12 @@ function MotorSelectionContent() {
   }
   const initialUrlState = initialUrlStateRef.current;
   const { state, dispatch } = useQuote();
+  useAgentQuoteHandoff({
+    searchParams,
+    setSearchParams,
+    state,
+    dispatch,
+  });
   const { toast } = useToast();
   
   
@@ -835,7 +847,7 @@ if (event.type === 'filter_motors') {
 
   // Convert DB motor to Motor type and apply promotions (same logic as original)
   const processedMotors = useMemo(() => {
-    return motors.map(dbMotor => {
+    return motors.filter(dbMotor => resolvePublicSellingPrice(dbMotor) !== null).map(dbMotor => {
       // Apply promotions - prioritize manual overrides, then msrp
       const manualOverrides = dbMotor.manual_overrides || {};
       const basePrice = manualOverrides.base_price || dbMotor.msrp || dbMotor.base_price || 0;
@@ -844,10 +856,7 @@ if (event.type === 'filter_motors') {
       const salePriceExpires = manualOverrides.sale_price_expires;
       const isManualSaleExpired = salePriceExpires && new Date(salePriceExpires) < new Date();
       
-      const salePrice = (!isManualSaleExpired && manualOverrides.sale_price) || 
-                       dbMotor.sale_price || 
-                       (dbMotor.dealer_price && dbMotor.dealer_price < (dbMotor.msrp || basePrice) ? dbMotor.dealer_price : null);
-      let effectivePrice = salePrice || basePrice;
+      let effectivePrice = resolvePublicSellingPrice(dbMotor) ?? 0;
       let promoTexts: string[] = [];
       
       // Find applicable promotions
@@ -939,7 +948,7 @@ if (event.type === 'filter_motors') {
         type: motorFamily,
         specs: `${dbMotor.horsepower}HP ${dbMotor.motor_type || 'FourStroke'}`,
         basePrice: basePrice,
-        salePrice: salePrice,
+        salePrice: effectivePrice < basePrice ? effectivePrice : null,
         msrp: dbMotor.msrp || basePrice, // Preserve original MSRP from database
         originalPrice: basePrice, // Use calculated basePrice with msrp fallback
         savings: Math.max(0, basePrice - effectivePrice), // Ensure savings is never negative
@@ -1137,6 +1146,13 @@ if (event.type === 'filter_motors') {
           source: 'mercury_9_9_mh_sale',
         });
         dispatch({ type: 'START_MOTOR_ONLY_QUOTE', payload: targetMotor });
+        const { ucpCheckoutRef } = parseAgentQuoteHandoff(searchParams);
+        if (ucpCheckoutRef) {
+          dispatch({
+            type: 'SET_UI_FLAG',
+            payload: { key: UCP_CHECKOUT_REF_FLAG, value: ucpCheckoutRef },
+          });
+        }
         navigate('/quote/summary?intent=motor-only', { replace: true });
         return true;
       }
@@ -1276,6 +1292,10 @@ if (event.type === 'filter_motors') {
 
     // Add motor to quote context
     dispatch({ type: 'SET_MOTOR', payload: motor });
+    const ucpCheckoutRef = parseAgentQuoteHandoff(searchParams).ucpCheckoutRef ?? state.uiFlags?.[UCP_CHECKOUT_REF_FLAG];
+    if (typeof ucpCheckoutRef === 'string') {
+      dispatch({ type: 'SET_UI_FLAG', payload: { key: UCP_CHECKOUT_REF_FLAG, value: ucpCheckoutRef } });
+    }
     
     // Auto-navigate to options step
     setTimeout(() => {

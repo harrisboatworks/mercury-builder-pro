@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-avator-vs-torqeedo.md
-last_updated: 2026-09-06
+last_updated: 2026-09-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Avator vs Torqeedo Ontario"
 description: "Mercury Avator vs Torqeedo compared for Ontario boaters: power, batteries, charging, service and CAD pricing from Harris Boat Works on Rice Lake."
 category: "Electric Boating"
 date_published: 2026-05-17
-date_modified: 2026-09-06
+date_modified: 2026-09-07
 keywords: ["mercury avator vs torqeedo","electric outboard comparison ontario","avator torqeedo","electric outboard dealer ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,9 +25,11 @@ revenue_driver: repower
 
 **Category:** Electric Boating  
 **Published:** 2026-05-17  
-**Last reviewed:** 2026-09-06  
+**Last reviewed:** 2026-09-07  
 **Read time:** 7 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-avator-vs-torqeedo
+
+*Hero image: Mercury Avator 7.5e on a small boat. The photograph illustrates the Mercury system; it is not a side-by-side Torqeedo test or a range comparison.*
 
 > **Now at HBW:** Mercury Avator is joining our lineup. See the [Avator landing page](/electric/mercury-avator) for the lineup, use cases, and to get on the pricing list.
 ## Quick Answer

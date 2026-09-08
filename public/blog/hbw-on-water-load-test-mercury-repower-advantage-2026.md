@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/hbw-on-water-load-test-mercury-repower-advantage-2026.md
-last_updated: 2026-09-06
+last_updated: 2026-09-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "HBW On-Water Load Test: Mercury Repower"
 description: "What an on-water Mercury repower check can verify at HBW, how seasonal conditions affect testing, and what the handoff should document."
 category: "HBW Process"
 date_published: 2026-05-28
-date_modified: 2026-09-06
+date_modified: 2026-09-07
 keywords: ["Mercury repower water test","Mercury outboard sea trial","on-water dealer test","Mercury repower quality check","HBW Rice Lake water test","Mercury dealer verification process","Mercury Premier dealer Rice Lake","Mercury prop selection WOT RPM"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,9 +25,11 @@ revenue_driver: repower
 
 **Category:** HBW Process  
 **Published:** 2026-05-28  
-**Last reviewed:** 2026-09-06  
+**Last reviewed:** 2026-09-07  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/hbw-on-water-load-test-mercury-repower-advantage-2026
+
+*Hero graphic: a process guide, not a photograph or evidence of a completed HBW customer test.*
 
 > **Quick answer:** HBW's standard repower handoff includes an on-water test on Rice Lake before pickup when safe seasonal conditions allow. The test scope follows the specific motor, hull, rigging, load, and Mercury documentation. Any alternate acceptance plan is documented with the customer.
 

@@ -3,6 +3,7 @@ import {
   type AccessoryBreakdownItem,
   type BuildAccessoryBreakdownParams,
 } from '@/lib/build-accessory-breakdown';
+import { resolveAppliedTradeValue } from '@/lib/trade-credit';
 import { calculateQuotePricing, getFinanceableAmount, type PricingBreakdown } from '@/lib/quote-utils';
 
 export interface QuoteFinancingEstimateParams extends BuildAccessoryBreakdownParams {
@@ -43,7 +44,7 @@ export function calculateQuoteFinancingEstimate({
   const motorDiscount = motorDiscountOverride ?? (motorMSRP - motorSalePrice);
   const accessoryBreakdown = buildAccessoryBreakdown(accessoryInputs);
   const accessoryTotal = accessoryBreakdown.reduce((sum, item) => sum + item.price, 0);
-  const tradeInValue = accessoryInputs.tradeInInfo?.estimatedValue || 0;
+  const tradeInValue = resolveAppliedTradeValue(accessoryInputs.tradeInInfo);
 
   const pricing = calculateQuotePricing({
     motorMSRP,

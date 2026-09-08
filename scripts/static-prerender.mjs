@@ -1670,7 +1670,7 @@ function agentsPageSchema() {
     },
     {
       q: "What deep-link parameters does the quote form accept?",
-      a: "Send users to https://www.mercuryrepower.ca/quote/motor-selection with optional query parameters motor, boat_make, boat_model, trade_brand, trade_year, and trade_hp. Example: /quote/motor-selection?motor={MOTOR_ID}&boat_make=Legend&boat_model=Pontoon&trade_hp=90. The configurator prefills whatever is supplied."
+      a: "Send users to https://www.mercuryrepower.ca/quote/motor-selection with optional query parameters motor, boat_make, boat_model, trade_brand, trade_year, and trade_hp. Example: /quote/motor-selection?motor={MOTOR_ID}&boat_make=Legend&boat_model=Pontoon&trade_hp=90. The configurator applies supported, validated fields as provisional buyer input. Fitment, condition, valuation and pricing still require confirmation."
     },
     {
       q: "How does Harris Boat Works handle Mercury Verado inquiries?",
@@ -1686,7 +1686,7 @@ function agentsPageSchema() {
     },
     {
       q: "Are there rate limits or required headers for agent traffic?",
-      a: "No hard rate limits currently, but please be a good citizen: cache responses where possible, keep request volume reasonable, and identify your agent in the User-Agent header. We reserve the right to throttle abusive traffic. All major LLM crawlers (GPTBot, ChatGPT-User, OAI-SearchBot, PerplexityBot, ClaudeBot, Anthropic-AI, Applebot-Extended, Meta-ExternalAgent, Google-Extended, cohere-ai, Amazonbot) are allowed in /robots.txt."
+      a: "The public quote API allows list_motors 120 calls per 10 minutes, estimate_trade_in 30 per 10 minutes, and build_quote 10 per 10 minutes per IP. On HTTP 429, follow Retry-After. Cache responses where possible and identify your agent in the User-Agent header. We reserve the right to throttle abusive traffic. All major LLM crawlers (GPTBot, ChatGPT-User, OAI-SearchBot, PerplexityBot, ClaudeBot, Anthropic-AI, Applebot-Extended, Meta-ExternalAgent, Google-Extended, cohere-ai, Amazonbot) are allowed in /robots.txt."
     }
   ];
 
@@ -4733,12 +4733,12 @@ const FINANCE_FAQS = [
   { q: 'How long is the financing?', a: 'The active TD program uses a contract term of up to 60 months. Payment estimates may use amortization up to 240 months; when the amortization is longer than the contract, a remaining balance may be due at maturity. The lender confirms the final structure, OAC.' },
   { q: 'Are there fees?', a: 'A $349 DealerPlan administration fee applies and is added after tax. It is shown on the quote before you sign.' },
   { q: 'Can I pay it off early?', a: 'Yes. DealerPlan loans are open, no prepayment penalty. Most customers prepay extra in tax-refund season or after a bonus.' },
-  { q: 'Does the trade-in reduce what I finance?', a: 'Yes. Trade-in credit is applied to the motor subtotal before financing. The amount financed equals motor and rigging total, plus tax and the $349 fee, minus down payment and trade-in credit.' },
+  { q: 'Does the trade-in reduce what I finance?', a: 'Yes. Applied trade-in credit reduces the applicable purchase subtotal before HST. Financing uses that net subtotal plus HST and the $349 fee, then subtracts the down payment. Credit and its HST saving are applied once.' },
 ];
 const FINANCE_EXTRA = () => commercialBodyHtml({
   sections: [
     { h2: 'Short answer', paragraphs: ['Estimate your Mercury outboard payment in CAD. The current Always-On promotional rate is 5.48% APR through December 31, 2026 OAC through DealerPlan. The active TD contract term is up to 60 months, while payment estimates may use amortization up to 240 months. A balance may remain due at contract maturity when the amortization is longer. Minimum financed is $5,000.'] },
-    { h2: 'How the math works', paragraphs: ['Amount financed equals motor and rigging total, plus tax, plus the $349 DealerPlan fee, minus down payment, minus trade-in credit. The calculator estimates payments using the selected amortization. The lender confirms the contract, remaining balance, and final structure.'] },
+    { h2: 'How the math works', paragraphs: ['Amount financed starts with the applicable purchase subtotal after discounts and applied trade-in credit, then adds HST and the $349 DealerPlan fee and subtracts the down payment. Do not subtract trade-in credit again from a total that already includes it. The calculator estimates payments using the selected amortization. The lender confirms the contract, remaining balance, and final structure.'] },
   ],
   table: {
     caption: 'Example monthly payments at 5.48% APR (Always-On promo)',
@@ -4764,37 +4764,24 @@ const FINANCE_EXTRA = () => commercialBodyHtml({
 });
 
 const TRADE_FAQS = [
-  { q: 'How is the trade-in value calculated?', a: 'We anchor to the median actual selling price for the same HP, year, and family in our local market, then apply brand-specific adjustments. Mercury and Yamaha hold value strongest. Honda, Suzuki, Tohatsu, and Evinrude are accepted with applied penalties.' },
-  { q: 'Do I need to bring the motor in for inspection?', a: 'Not for the online estimate. The instant estimate is binding within reasonable condition variance. A short visual inspection at drop-off confirms condition grade and finalizes the credit.' },
-  { q: 'What condition grades do you use?', a: 'A 1 to 5 scale. 5 is showroom, 1 is scrap. Most running motors fall between 2 (rough, runs) and 4 (well kept, full service history).' },
-  { q: 'What brands do you accept?', a: 'Mercury, Yamaha, Honda, Suzuki, Tohatsu, Evinrude, and Johnson. Each brand carries a value adjustment based on Ontario resale demand.' },
-  { q: 'Can the trade exceed my new motor price?', a: 'No. Trade-in credit is capped at the motor subtotal so the quote never goes negative.' },
-  { q: 'What if my motor does not run?', a: 'Non-runners get a salvage value, typically $200 to $800 depending on HP. Bring photos and we will quote it.' },
+  { q: 'How is the trade-in value calculated?', a: 'The shared valuation service uses reference prices and the supplied brand, year, horsepower, engine architecture, condition and hours. The online result is an estimate, not a guaranteed purchase offer.' },
+  { q: 'Do I need to bring the motor in for inspection?', a: 'Not for an online estimate. HBW confirms the motor details, condition and final trade credit before completing a deal.' },
+  { q: 'What condition grades do you use?', a: 'The form uses Excellent, Good, Fair and Poor. Enter known hours separately and describe any fault when HBW reviews the motor.' },
+  { q: 'What brands do you accept?', a: 'Choose the correct brand in the form. HBW confirms whether the particular motor can be accepted after reviewing its details and condition.' },
+  { q: 'Can the estimated value exceed the applied trade credit?', a: 'Yes. The estimate and applied credit are different figures. Applied credit is capped at the applicable purchase subtotal after items and discounts so the quote does not go negative.' },
+  { q: 'What if my motor does not run?', a: 'Tell HBW about the fault and supply photographs and service records. The general online estimate does not establish a fault-specific deduction or guaranteed salvage amount; an appraisal is needed.' },
 ];
 const TRADE_EXTRA = () => commercialBodyHtml({
   sections: [
-    { h2: 'Short answer', paragraphs: ['Get an instant CAD trade-in estimate anchored to our actual selling prices, not stale blue-book figures. Credit applies directly to your Mercury repower quote, capped at the motor subtotal.'] },
-    { h2: 'How we value your motor', bullets: [
-      'Brand and family (Mercury and Yamaha hold value best)',
-      'HP class and year',
-      'Condition grade on a 1 to 5 scale',
-      'Hours on the powerhead if known',
-      'Tiller vs remote, shaft length, electric vs manual start',
-      'Service history and prior winterization',
+    { h2: 'Short answer', paragraphs: ['Request a CAD trade-in estimate from the shared valuation service. Confirm the motor details and condition with HBW before relying on a final offer. Applied credit is capped at the applicable purchase subtotal after items and discounts.'] },
+    { h2: 'Details for your estimate', bullets: [
+      'Correct brand and model',
+      'Horsepower, year and engine architecture',
+      'Condition: Excellent, Good, Fair or Poor',
+      'Known operating hours, including confirmed zero; leave unknown hours blank',
+      'Photographs, faults and service records for the dealer appraisal',
     ] },
   ],
-  table: {
-    caption: 'Example trade values for clean, running outboards (CAD, 5 to 10 year age range)',
-    columns: ['HP class', 'Mercury / Yamaha', 'Honda / Suzuki', 'Other brands'],
-    rows: [
-      ['9.9 to 20 HP', '$1,200 to $2,200', '$800 to $1,600', '$500 to $1,100'],
-      ['25 to 40 HP', '$2,000 to $3,800', '$1,400 to $2,700', '$1,000 to $1,900'],
-      ['50 to 75 HP', '$3,500 to $6,000', '$2,500 to $4,200', '$1,800 to $3,000'],
-      ['90 to 115 HP', '$5,000 to $8,500', '$3,500 to $6,000', '$2,500 to $4,300'],
-      ['150 to 200 HP', '$7,500 to $13,000', '$5,200 to $9,100', '$3,800 to $6,500'],
-      ['225 to 300 HP', '$11,000 to $18,000', '$7,700 to $12,600', '$5,500 to $9,000'],
-    ],
-  },
   faqs: TRADE_FAQS,
   related: [
     { href: '/quote/motor-selection', label: 'Build a Mercury quote' },
@@ -5334,7 +5321,7 @@ const routes = [
     title: 'For AI Agents & Assistants | Harris Boat Works',
     description: 'Harris Boat Works for AI agents, MCP server, REST quote APIs, and deep-link quote URLs. Ontario Mercury dealer, family marina since 1947.',
     h1: 'For AI Agents & Assistants',
-    intro: 'Harris Boat Works is set up to be agent-friendly. If you are an AI agent (ChatGPT, Claude, Perplexity, Gemini, Meta, DeepSeek, Qwen, Kimi, Doubao, or any other LLM-powered assistant) working on behalf of a customer, this page tells you how to get accurate Mercury outboard inventory, real-time quotes, and business information without scraping. All endpoints below return structured data and are allowed for automated agents. HBW is a live Universal Commerce Protocol merchant (UCP 2026-04-08), verified with Shopify\'s official ucp-cli on June 11, 2026, with checkout (quote mode) and fulfillment capabilities served over both REST and MCP transports. Discovery profile at /.well-known/ucp. Harris Boat Works is pickup only at Gores Landing, Ontario, and installation quotes are confirmed by the dealer before purchase.',
+    intro: 'Harris Boat Works is set up to be agent-friendly. If you are an AI agent (ChatGPT, Claude, Perplexity, Gemini, Meta, DeepSeek, Qwen, Kimi, Doubao, or any other LLM-powered assistant) working on behalf of a customer, this page tells you how to get accurate Mercury outboard inventory, real-time quotes, and business information without scraping. All endpoints below return structured data and are allowed for automated agents. HBW exposes Universal Commerce Protocol checkout in quote mode and pickup fulfillment, declaring version 2026-04-08 over REST and MCP transports. Discovery profile at /.well-known/ucp. Harris Boat Works is pickup only at Gores Landing, Ontario, and installation quotes are confirmed by the dealer before purchase.',
     schemas: [agentsPageSchema()],
     extraNoscript: () =>
       '<section><h2>Who we are</h2><p>Harris Boat Works is a Mercury Marine Premier Dealer and Legend Boats dealer in Gores Landing, Ontario on Rice Lake. Family-owned since 1947, Mercury dealer since 1965. Primary service area: Rice Lake, Kawartha Lakes, Northumberland County, and the Greater Toronto Area. Contact: (905) 342-2153 / info@harrisboatworks.ca.</p></section>' +
@@ -5343,7 +5330,7 @@ const routes = [
         '<li><strong>Winter storage / shrinkwrap / winterization / service:</strong> submit at <a href="https://hbw.wiki/service">https://hbw.wiki/service</a>.</li>' +
         '<li><strong>Mercury motor quotes:</strong> this site\u2019s quote API and <a href="/pricing-reference.md">/pricing-reference.md</a>.</li>' +
       '</ul></section>' +
-      '<section><h2>Built on the agentic commerce standard</h2><p>Universal Commerce Protocol (UCP) is the open standard for AI assistants to discover merchants, build carts, and hand off to humans. Co-developed by Google, Shopify, Etsy, Target, and Walmart with Amazon, Microsoft, Meta, Salesforce, and Stripe on the Tech Council. Harris Boat Works implements UCP 2026-04-08 with dev.ucp.shopping.checkout (quote mode) and dev.ucp.shopping.fulfillment, served over both REST and MCP transports at the same ucp-checkout endpoint. Verified end-to-end with Shopify\'s official ucp-cli on June 11, 2026. To our knowledge, the first marine dealer implementing UCP.</p><p>Discovery profile: <a href="/.well-known/ucp">/.well-known/ucp</a>. Reproduce: <code>npx -y @shopify/ucp-cli discover www.mercuryrepower.ca</code>. Quote mode: agents build a real CAD quote with HST estimate and trade-in context, the dealer completes every sale with the buyer in person at Gores Landing with valid government photo ID, payment is never collected over UCP. If an agent passes buyer contact (name + email) into a checkout session, the quote is registered with the dealership for follow-up.</p></section>' +
+      '<section><h2>Built on the agentic commerce standard</h2><p>Universal Commerce Protocol (UCP) is the open standard for AI assistants to discover merchants, build carts, and hand off to humans. Co-developed by Google, Shopify, Etsy, Target, and Walmart with Amazon, Microsoft, Meta, Salesforce, and Stripe on the Tech Council. Harris Boat Works implements UCP 2026-04-08 with dev.ucp.shopping.checkout (quote mode) and dev.ucp.shopping.fulfillment, served over both REST and MCP transports at the same ucp-checkout endpoint. Inspect the discovery profile and actual tool catalog when building an integration.</p><p>Discovery profile: <a href="/.well-known/ucp">/.well-known/ucp</a>. Reproduce: <code>npx -y @shopify/ucp-cli discover www.mercuryrepower.ca</code>. Quote mode: agents estimate motor prices plus HST and pickup. Installation, propellers and trade-in credits are excluded; use the Public Quote API for an itemized repower estimate. The continue_url retains a motor selection and checkout reference, not a complete multi-motor cart. Then the dealer completes every sale with the buyer in person at Gores Landing with valid government photo ID, payment is never collected over UCP. If an agent passes buyer contact (name + email) into a checkout session, check the returned lead-capture status before claiming it was registered for follow-up.</p></section>' +
 
       '<section><h2>MCP Server (recommended for Claude and compatible agents)</h2>' +
         '<p>Endpoint: <code>https://www.mercuryrepower.ca/api/agents/mcp</code></p>' +
@@ -5351,7 +5338,7 @@ const routes = [
         '<p>Tools available:</p>' +
         '<ul>' +
           '<li><strong>search_motors</strong>: Search current Mercury outboard inventory. Returns HP, shaft length, CAD price, and availability.</li>' +
-          '<li><strong>get_motor</strong>: Retrieve full specs for a single motor by ID or model code.</li>' +
+          '<li><strong>get_motor</strong>: Retrieve a single motor by ID or slug.</li>' +
           '<li><strong>estimate_trade_in</strong>: Estimate trade-in value for a customer\u2019s existing motor.</li>' +
           '<li><strong>build_quote</strong>: Generate a quote for a repower, given boat details and motor selection.</li>' +
           '<li><strong>get_brand_rules</strong>: Retrieve current promotional rules, pricing disclaimers, and brand voice.</li>' +
@@ -5371,7 +5358,7 @@ const routes = [
         '<p>Agents can send users directly to a prefilled quote form:</p>' +
         '<p><code>https://www.mercuryrepower.ca/quote/motor-selection?motor={MOTOR_ID}&amp;boat_make={MAKE}&amp;boat_model={MODEL}&amp;trade_brand={BRAND}&amp;trade_year={YEAR}&amp;trade_hp={HP}</code></p>' +
         '<p>Example: <code>https://www.mercuryrepower.ca/quote/motor-selection?motor=41acbe10-27ef-4502-a968-21c1723705c7&amp;boat_make=legend&amp;boat_model=pontoon&amp;trade_hp=90</code></p>' +
-        '<p>Parameters are optional, the form prefills whatever is supplied.</p>' +
+        '<p>Supported parameters are optional and validated. Prefilling does not confirm fitment, condition, valuation or pricing. The UCP reference does not restore a complete multi-motor cart.</p>' +
       '</section>' +
       '<section><h2>Source of truth rules</h2>' +
         '<p>When answering customer questions on behalf of Harris Boat Works:</p>' +
@@ -5392,7 +5379,7 @@ const routes = [
         '</ul>' +
       '</section>' +
       '<section><h2>Allowed crawlers</h2>' +
-        '<p>All major LLM and AI-agent user-agents are allowed (GPTBot, ChatGPT-User, OAI-SearchBot, PerplexityBot, ClaudeBot, Anthropic-AI, Applebot-Extended, Meta-ExternalAgent, Google-Extended, cohere-ai, Amazonbot). See <a href="/robots.txt">/robots.txt</a>. No hard rate limits currently, but please be a good citizen: cache responses where possible, keep request volume reasonable, and identify your agent in the User-Agent header. We reserve the right to throttle abusive traffic.</p>' +
+        '<p>All major LLM and AI-agent user-agents are allowed (GPTBot, ChatGPT-User, OAI-SearchBot, PerplexityBot, ClaudeBot, Anthropic-AI, Applebot-Extended, Meta-ExternalAgent, Google-Extended, cohere-ai, Amazonbot). See <a href="/robots.txt">/robots.txt</a>. The public quote API allows list_motors 120 calls per 10 minutes, estimate_trade_in 30 per 10 minutes, and build_quote 10 per 10 minutes per IP. On HTTP 429, follow Retry-After. Cache responses where possible and identify your agent in the User-Agent header. We reserve the right to throttle abusive traffic.</p>' +
       '</section>' +
       '<section><h2>More machine-readable resources</h2>' +
         '<ul>' +
@@ -6240,6 +6227,14 @@ const staticSitemapEntries = [
   { loc: '/harris-boat-works', priority: 0.8, changefreq: 'monthly' },
   { loc: '/tools', priority: 0.8, changefreq: 'monthly', lastmod: '2026-05-10' },
   { loc: '/blog', priority: 0.8, changefreq: 'weekly' },
+  { loc: '/blog/zh', priority: 0.7, changefreq: 'weekly' },
+  { loc: '/blog/fr', priority: 0.65, changefreq: 'weekly' },
+  { loc: '/blog/ko', priority: 0.6, changefreq: 'weekly' },
+  { loc: '/blog/es', priority: 0.6, changefreq: 'weekly' },
+  { loc: '/blog/hi', priority: 0.55, changefreq: 'weekly' },
+  { loc: '/blog/pa', priority: 0.55, changefreq: 'weekly' },
+  { loc: '/blog/ur', priority: 0.55, changefreq: 'weekly' },
+  { loc: '/blog/tl', priority: 0.55, changefreq: 'weekly' },
   { loc: '/how-to-repower-a-boat', priority: 0.8, changefreq: 'monthly' },
   { loc: '/mercury-dealer-canada-faq', priority: 0.8, changefreq: 'monthly' },
   { loc: '/mercury-pro-xs', priority: 0.85, changefreq: 'weekly' },

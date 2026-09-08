@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/ontario-cottage-boat-motor-repower-guide.md
-last_updated: 2026-09-06
+last_updated: 2026-09-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Ontario Cottage Boat Motor Repower Guide (2026)"
 description: "Ontario cottage repower guide: capacity-plate-first horsepower selection, Mercury fitment, drop-off logistics, and when repowering can make sense."
 category: "Repowering"
 date_published: 2026-02-02
-date_modified: 2026-09-06
+date_modified: 2026-09-07
 keywords: ["repower cottage boat","replace outboard motor","cottage boat motor","boat repower ontario","when to replace outboard"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,9 +25,11 @@ revenue_driver: repower
 
 **Category:** Repowering  
 **Published:** 2026-02-02  
-**Last reviewed:** 2026-09-06  
+**Last reviewed:** 2026-09-07  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ontario-cottage-boat-motor-repower-guide
+
+*Hero graphic: a process guide, not a photograph or evidence of a completed HBW customer test.*
 
 ## Ontario Cottage Owner Guide: Is It Time to Repower Your Boat?
 

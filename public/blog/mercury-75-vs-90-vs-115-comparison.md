@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-75-vs-90-vs-115-comparison.md
-last_updated: 2026-09-06
+last_updated: 2026-09-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury 90 vs 115 vs 75 HP: Which Outboard to Pick (2026)"
 description: "Compare Mercury 75, 90 and 115 FourStroke outboards by boat fit, loading, tiller and Command Thrust availability, pricing and performance tradeoffs."
 category: "Comparison"
 date_published: 2026-01-26
-date_modified: 2026-09-06
+date_modified: 2026-09-07
 keywords: ["90 hp mercury motor","mercury 75 vs 90","mercury 90 vs 115","best mercury hp","mercury 75hp review","mercury 115 fourstroke"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Comparison  
 **Published:** 2026-01-26  
-**Last reviewed:** 2026-09-06  
+**Last reviewed:** 2026-09-07  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-75-vs-90-vs-115-comparison
 
@@ -83,8 +83,6 @@ For typical Ontario use on 16 to 18 ft aluminum console boats:
 | Best fit | 14 to 16 ft light aluminum | 16 to 18 ft aluminum console | 17 to 19 ft aluminum or light fiberglass |
 | Use case | Solo or two-person | Family of three or four | Family of four or five with gear |
 | Tournament use | No | Marginal | Yes (FourStroke) or step to Pro XS |
-
-![Visual matrix showing which Mercury (75/90/115) fits which boat type and use case](/lovable-uploads/mercury-75-90-115-best-fit-matrix.png)
 
 Note: top-speed numbers vary by hull design, prop selection, and loading. These are typical Kawartha-area lake-test results for representative aluminum console hulls. For your specific boat, lake-test numbers from HBW will be more accurate.
 

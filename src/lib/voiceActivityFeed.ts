@@ -57,13 +57,21 @@ export function showTradeInEstimate(data: {
   horsepower: number;
   condition: string;
   estimatedValue: number;
-  valueRange?: { low: number; high: number };
+  wholesale: number;
+  valueRange: { low: number; high: number };
+  architecture: string;
+  valuedAt: number;
+  valuationReportUrl?: string;
+  engineType: string;
+  model?: string;
+  engineHours?: number;
+  confidenceLevel: string;
 }): void {
   dispatchVoiceActivity({
     type: 'info',
     icon: '💰',
     title: 'Trade-In Estimate',
-    description: `${data.year} ${data.brand} ${data.horsepower}HP (${data.condition}): $${data.estimatedValue.toLocaleString()}`,
+    description: `${data.year} ${data.brand} ${data.horsepower}HP ${data.architecture} (${data.condition}): $${data.wholesale.toLocaleString()} wholesale`,
     data,
     actions: [
       { label: 'Apply to Quote', action: 'apply_trade_in', actionData: data, variant: 'primary' },

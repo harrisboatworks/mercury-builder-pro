@@ -40,11 +40,11 @@ describe('quoteReducer SET_MOTOR', () => {
         isIncluded: false,
       }],
       selectedPackage: { id: 'complete', label: 'Complete', priceBeforeTax: 700 },
-      selectedPromoOption: 'cash_rebate',
+      selectedPromoOption: 'special_financing',
       selectedPromoRate: 2.99,
       selectedPromoTerm: 36,
-      selectedPromoValue: '$750',
-      selectedPaymentMethod: 'cash_purchase',
+      selectedPromoValue: '2.99% APR for 36 months',
+      selectedPaymentMethod: 'special_financing',
       completedSteps: [1, 2, 3, 4, 5],
       currentStep: 9,
       adminDiscount: 500,
@@ -80,7 +80,10 @@ describe('quoteReducer SET_MOTOR', () => {
     expect(result.selectedOptions).toEqual([]);
     expect(result.warrantyConfig).toBeNull();
     expect(result.selectedPromoOption).toBeNull();
-    expect(result.selectedPaymentMethod).toBe('cash_purchase');
+    expect(result.selectedPromoRate).toBeNull();
+    expect(result.selectedPromoTerm).toBeNull();
+    expect(result.selectedPromoValue).toBeNull();
+    expect(result.selectedPaymentMethod).toBeNull();
     expect(result.frozenPricing).toBeUndefined();
     expect(result.pdfSnapshot).toBeUndefined();
     expect(result.adminDiscount).toBe(0);
@@ -110,6 +113,7 @@ describe('quoteReducer SET_MOTOR', () => {
         assignmentType: 'available',
         isIncluded: false,
       }],
+      selectedPaymentMethod: 'standard_financing',
       frozenPricing: {
         motorMSRP: 13000,
         motorDiscount: 1000,
@@ -127,6 +131,7 @@ describe('quoteReducer SET_MOTOR', () => {
     expect(result.motor?.price).toBe(11750);
     expect(result.purchasePath).toBe('installed');
     expect(result.selectedOptions).toHaveLength(1);
+    expect(result.selectedPaymentMethod).toBe('standard_financing');
     expect(result.frozenPricing?.total).toBe(13560);
   });
 });

@@ -33,6 +33,8 @@ import { AdminQuoteControls } from '@/components/admin/AdminQuoteControls';
 import { Bookmark, CreditCard, Download } from 'lucide-react';
 import { computeTotals, calculateMonthlyPayment, getFinancingTerm, DEALERPLAN_FEE, FINANCING_MINIMUM } from '@/lib/finance';
 import { calculateQuotePricing, getFinanceableAmount, promoEndOfDay } from '@/lib/quote-utils';
+import { resolveAppliedTradeValue } from '@/lib/trade-credit';
+import { calculateFinancingPurchase, FINANCING_PRICE_BASIS_ALL_IN_AFTER_TRADE } from '@/lib/financing-purchase';
 import { supabase } from '@/integrations/supabase/client';
 import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
@@ -44,6 +46,7 @@ import { hasIdentifiedPdfCustomer } from '@/lib/pdf-lead-tracking';
 import { QuoteSummaryPageSEO } from '@/components/seo/QuoteSummaryPageSEO';
 import { trackAgentEvent } from '@/lib/agentEvents';
 import { trackEvent } from '@/lib/analytics';
+import { buildSoftLeadSnapshotKey, softLeadSaveCoordinator } from '@/lib/soft-lead-save';
 import {
   reconcileWarrantyConfig,
   type QuoteWarrantyConfig,
@@ -53,6 +56,7 @@ import {
   buildQuotePdfFinancing,
   calculateProtectionMonthlyDelta,
   frozenPricingFromPdfSnapshot,
+  isQuotePdfSnapshot,
   QUOTE_PDF_SNAPSHOT_VERSION,
   resolveQuoteMotorImage,
   type QuotePdfSnapshot,
@@ -115,83 +119,9 @@ export default function QuoteSummaryPage() {
   // Auto-save quote when returning from Google OAuth
   useAutoSaveQuoteOnAuth();
 
-  // Silent soft-lead save, auto-persist quote snapshot for anonymous visitors
-  const latestQuoteStateRef = useRef(state);
+  // The session-scoped soft-lead coordinator survives page remounts and keeps
+  // all anonymous snapshot writes in one ordered queue.
   const softLeadAnalyticsTrackedRef = useRef(false);
-  useEffect(() => {
-    latestQuoteStateRef.current = state;
-  }, [state]);
-  const softLeadSnapshotRef = useRef<string | null>(null);
-  useEffect(() => {
-    if (state.isLoading || !state.motor) return;
-    const snapshotKey = [
-      state.motor.id,
-      state.warrantyConfig?.extendedYears ?? 0,
-      state.warrantyConfig?.warrantyPrice ?? 0,
-      state.warrantyConfig?.totalYears ?? currentCoverageYears,
-      state.pdfSnapshot?.createdAt ?? 'snapshot-pending',
-    ].join(':');
-    if (softLeadSnapshotRef.current === snapshotKey) return;
-    softLeadSnapshotRef.current = snapshotKey;
-    const quoteStateSnapshot = latestQuoteStateRef.current;
-
-    // Analytics: count the viewed quote once. Warranty changes still refresh
-    // the saved snapshot below without inflating quote-generated reporting.
-    if (!softLeadAnalyticsTrackedRef.current) {
-      softLeadAnalyticsTrackedRef.current = true;
-      trackAgentEvent({
-        event_type: 'quote_generated',
-        motor_model: quoteStateSnapshot.motor?.model || null,
-        motor_hp: (quoteStateSnapshot.motor as any)?.hp ?? (quoteStateSnapshot.motor as any)?.horsepower ?? null,
-        motor_id: quoteStateSnapshot.motor?.id ?? null,
-      });
-    }
-
-    const sessionId = getOrCreateSessionId();
-    (async () => {
-      try {
-        // Check if a soft-lead already exists for this session
-        const { data: existing } = await (supabase as any)
-          .from('saved_quotes')
-          .select('id')
-          .eq('session_id', sessionId)
-          .eq('is_soft_lead', true)
-          .maybeSingle();
-
-        if (existing) {
-          // Update the existing soft lead with latest state
-          await (supabase as any)
-            .from('saved_quotes')
-            .update({ quote_state: quoteStateSnapshot as any, updated_at: new Date().toISOString() })
-            .eq('id', existing.id);
-        } else {
-          // Create new soft-lead record
-          await (supabase as any)
-            .from('saved_quotes')
-            .insert({
-              email: 'anonymous@soft-lead.local',
-              resume_token: `sl_${crypto.randomUUID().replace(/-/g, '').slice(0, 24)}`,
-              quote_state: quoteStateSnapshot as any,
-              user_id: user?.id || null,
-              session_id: sessionId,
-              is_soft_lead: true,
-              expires_at: new Date(Date.now() + 90 * 24 * 60 * 60 * 1000).toISOString(),
-            } as any);
-        }
-      } catch {
-        // Silently fail, analytics should never break the app
-      }
-    })();
-  }, [
-    state.isLoading,
-    state.motor,
-    state.warrantyConfig?.extendedYears,
-    state.warrantyConfig?.warrantyPrice,
-    state.warrantyConfig?.totalYears,
-    state.pdfSnapshot?.createdAt,
-    currentCoverageYears,
-    user?.id,
-  ]);
 
   // Listen for quote-saved-via-auth event to show phone capture
   useEffect(() => {
@@ -431,10 +361,10 @@ export default function QuoteSummaryPage() {
       accessoryTotal,
       warrantyPrice: 0,
       promotionalSavings: promoSavings,
-      tradeInValue: state.tradeInInfo?.estimatedValue || 0,
+      tradeInValue: resolveAppliedTradeValue(state.tradeInInfo),
       taxRate: 0.13
     });
-  }, [motorMSRP, motorDiscount, state.adminDiscount, accessoryBreakdown, promoSavings, state.tradeInInfo?.estimatedValue]);
+  }, [motorMSRP, motorDiscount, state.adminDiscount, accessoryBreakdown, promoSavings, state.tradeInInfo]);
 
   // When frozenPricing exists with full totals, use those for display
   // to guarantee PDF ↔ web parity. Live recalc is only for stale-quote comparison.
@@ -442,6 +372,7 @@ export default function QuoteSummaryPage() {
     if (state.frozenPricing?.subtotal != null && state.frozenPricing?.total != null) {
       return {
         ...packageSpecificTotals,
+        appliedTradeCredit: state.frozenPricing.appliedTradeCredit ?? packageSpecificTotals.appliedTradeCredit,
         subtotal: state.frozenPricing.subtotal,
         tax: state.frozenPricing.hst ?? Math.round(state.frozenPricing.subtotal * 0.13 * 100) / 100,
         total: state.frozenPricing.total,
@@ -465,11 +396,11 @@ export default function QuoteSummaryPage() {
       accessoryTotal,
       warrantyPrice: 0,
       promotionalSavings: livePromoSavings,
-      tradeInValue: state.tradeInInfo?.estimatedValue || 0,
+      tradeInValue: resolveAppliedTradeValue(state.tradeInInfo),
       taxRate: 0.13
     });
     return result.total;
-  }, [state.frozenPricing, liveMotorMSRP, livePromoSavings, accessoryBreakdown, state.adminDiscount, state.tradeInInfo?.estimatedValue, quoteData.motor]);
+  }, [state.frozenPricing, liveMotorMSRP, livePromoSavings, accessoryBreakdown, state.adminDiscount, state.tradeInInfo, quoteData.motor]);
 
 
   // Note: calculateRunningTotal doesn't model promotion-level discounts (discount_fixed_amount,
@@ -508,7 +439,8 @@ export default function QuoteSummaryPage() {
           batteryCost: state.looseMotorBattery?.batteryCost,
           warrantyPrice: state.warrantyConfig?.warrantyPrice || 0,
           warrantyTotalYears: state.warrantyConfig?.totalYears,
-          tradeInValue: state.tradeInInfo?.estimatedValue,
+          tradeInValue: resolveAppliedTradeValue(state.tradeInInfo),
+          hasTradeIn: state.tradeInInfo?.hasTradeIn,
           adminCustomItems: state.adminCustomItems,
           adminDiscount: state.adminDiscount,
           selectedPromoOption: state.selectedPromoOption,
@@ -590,8 +522,8 @@ export default function QuoteSummaryPage() {
       },
       accessoryBreakdown,
       purchasePath: state.purchasePath === 'installed' ? 'installed' : 'loose',
-      ...(state.tradeInInfo?.hasTradeIn && state.tradeInInfo?.estimatedValue > 0 && state.tradeInInfo?.brand ? {
-        tradeInValue: state.tradeInInfo.estimatedValue,
+      ...(state.tradeInInfo?.hasTradeIn && resolveAppliedTradeValue(state.tradeInInfo) > 0 && state.tradeInInfo?.brand ? {
+        tradeInValue: displayPricing.appliedTradeCredit ?? resolveAppliedTradeValue(state.tradeInInfo),
         tradeInInfo: {
           brand: state.tradeInInfo.brand,
           year: Number(state.tradeInInfo.year),
@@ -673,6 +605,36 @@ export default function QuoteSummaryPage() {
       dispatch({ type: 'SET_PDF_SNAPSHOT', payload: pdfSnapshot });
     }
   }, [dispatch, pdfSnapshot, state.pdfSnapshot]);
+
+  // Persist only the synchronized anonymous quote state through the atomic RPC.
+  useEffect(() => {
+    if (state.isLoading || !state.motor || !isQuotePdfSnapshot(state.pdfSnapshot)) return;
+
+    // Wait until QuoteContext contains the exact derived snapshot rendered on
+    // this page. Persisting before SET_PDF_SNAPSHOT lands can save stale totals.
+    if (buildSoftLeadSnapshotKey(state.pdfSnapshot) !== buildSoftLeadSnapshotKey(pdfSnapshot)) return;
+
+    const quoteStateSnapshot = state;
+    const snapshotKey = buildSoftLeadSnapshotKey(quoteStateSnapshot);
+
+    // Analytics: count the viewed quote once. Subsequent quote changes refresh
+    // the saved snapshot without inflating quote-generated reporting.
+    if (!softLeadAnalyticsTrackedRef.current) {
+      softLeadAnalyticsTrackedRef.current = true;
+      trackAgentEvent({
+        event_type: 'quote_generated',
+        motor_model: quoteStateSnapshot.motor?.model || null,
+        motor_hp: quoteStateSnapshot.motor?.hp ?? null,
+        motor_id: quoteStateSnapshot.motor?.id ?? null,
+      });
+    }
+
+    void softLeadSaveCoordinator.enqueue({
+      sessionId: getOrCreateSessionId(),
+      quoteState: quoteStateSnapshot,
+      snapshotKey,
+    });
+  }, [pdfSnapshot, state]);
 
   // CTA handlers
   const noMotorSelected = !state.motor;
@@ -838,23 +800,26 @@ export default function QuoteSummaryPage() {
   };
 
   const handleApplyForFinancing = () => {
-    const tradeInValue = state.tradeInInfo?.estimatedValue || 0;
-    
-    // Use the pre-trade-in subtotal so the financing form handles the single subtraction
-    // packageSpecificTotals.subtotal already has trade-in deducted, so add it back
-    const preTradeInSubtotal = displayPricing.subtotal + tradeInValue;
-    const subtotalWithTax = preTradeInSubtotal * 1.13;
-    const totalWithFees = subtotalWithTax + DEALERPLAN_FEE;
+    const purchase = calculateFinancingPurchase({
+      afterTradeSubtotal: displayPricing.subtotal,
+      preTradeSubtotal: displayPricing.subtotal + (displayPricing.appliedTradeCredit ?? 0),
+      estimatedValue: state.tradeInInfo?.estimatedValue,
+      hasTradeIn: state.tradeInInfo?.hasTradeIn,
+      dealerFee: DEALERPLAN_FEE,
+    });
     const financingData = {
       ...state,
       financingAmount: {
         packageSubtotal: displayPricing.subtotal,
-        hst: displayPricing.subtotal * 0.13,
+        hst: purchase.tax,
         financingFee: DEALERPLAN_FEE,
-        totalWithFees: totalWithFees,
+        totalWithFees: purchase.motorPrice,
         motorModel: quoteData.motor?.model || motorName,
         packageName: selectedPackageLabel,
-        tradeInValue: tradeInValue,
+        tradeInValue: purchase.tradeInValue,
+        includedTradeInValue: purchase.includedTradeInValue,
+        preTradeSubtotal: purchase.preTradeSubtotal,
+        priceBasis: FINANCING_PRICE_BASIS_ALL_IN_AFTER_TRADE,
         // Include promo details for financing application
         promoOption: state.selectedPromoOption,
         promoRate: state.selectedPromoRate,
@@ -1144,7 +1109,7 @@ export default function QuoteSummaryPage() {
                     pricing={displayPricing}
                     motorName={quoteData.motor?.model || 'Mercury Motor'}
                     accessoryBreakdown={accessoryBreakdown}
-                    tradeInValue={state.tradeInInfo?.estimatedValue || 0}
+                    tradeInValue={displayPricing.appliedTradeCredit ?? resolveAppliedTradeValue(state.tradeInInfo)}
                     tradeInInfo={state.tradeInInfo?.hasTradeIn ? {
                       brand: state.tradeInInfo.brand,
                       year: state.tradeInInfo.year,

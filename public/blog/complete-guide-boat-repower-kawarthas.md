@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/complete-guide-boat-repower-kawarthas.md
-last_updated: 2026-09-06
+last_updated: 2026-09-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Boat Repower in the Kawarthas: Complete Guide"
 description: "A step-by-step guide to repowering your boat in the Kawarthas: is your hull worth it, picking the motor, what the install involves."
 category: "Repowering"
 date_published: 2026-02-23
-date_modified: 2026-09-06
+date_modified: 2026-09-07
 keywords: ["boat repower Kawarthas","repower boat Ontario","Mercury repower process","repower vs buy new boat","Kawartha lakes repower","boat repower steps"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Repowering  
 **Published:** 2026-02-23  
-**Last reviewed:** 2026-09-06  
+**Last reviewed:** 2026-09-07  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/complete-guide-boat-repower-kawarthas
 
@@ -57,7 +57,16 @@ The boaters who regret a repower are almost always the ones who put a new motor 
 
 ---
 
-![Timeline: 6-step Mercury repower process at HBW, from hull walk-around to lake test.](/lovable-uploads/inline/repower-process-timeline.svg)
+### From request to handover
+
+1. **Share the boat details.** Use the [quote builder](/quote/motor-selection) to explore a repower and submit the [service request](https://hbw.wiki/service) before dropping off the boat.
+2. **Confirm fit and scope.** HBW reviews the hull, intended use, compatible equipment and work required.
+3. **Review the written quote.** Confirm the configuration, included work, availability, payment terms and scheduling with HBW.
+4. **Drop off when convenient.** Once the service request is complete, drop off anytime, including after hours.
+5. **Installation and checks.** HBW completes the approved work and confirms the testing appropriate to the boat and conditions.
+6. **Handover.** Review the completed work, documentation and owner instructions before taking the boat home.
+
+Timing depends on the boat, approved work, parts availability and testing conditions. Confirm your schedule with HBW.
 
 ## Step 1: Is Your Hull Worth Repowering?
 
@@ -165,7 +174,9 @@ The schedule depends on the hull, current controls, rigging, parts, and any issu
 9. On-water checks on Rice Lake when safe seasonal conditions allow, with the scope matched to the motor, hull, rigging, and work order
 10. Customer receives the information needed to confirm any required Pleasure Craft Licence update
 
-![Mercury repower mid-install in the HBW service bay](/lovable-uploads/inline/inline-repower-shop.png)
+![A Harris Boat Works technician working beside an uncowled Mercury outboard suspended on the shop hoist](/lovable-uploads/blog-heroes-2026-07/hero-mercury-spring-run-up-hbw-service-2026-07.webp)
+
+*Photographed in our Gores Landing shop. It shows our own service work, not the specific job described above.*
 
 Before pickup, HBW documents the acceptance checks completed for the specific job. When safe seasonal conditions allow, that can include an on-water check on Rice Lake; otherwise, the alternate acceptance plan is documented with the customer. Transport Canada says licence information must be updated within 30 days when listed information changes. The boat owner remains responsible for the licence, and a dealer needs the owner's authorization to apply on their behalf. See our [Pleasure Craft Licence update guide](/blog/pleasure-craft-licence-update-repower-ontario) and confirm the current requirement for your boat.
 
@@ -251,7 +262,7 @@ Or call **905-342-2153**. We will start with the hull walk-around, work through 
 ## Sources
 
 - Transport Canada, Pleasure Craft Licence: tc.canada.ca/en/marine-transportation/pleasure-craft-licensing
-- Mercury Marine, FourStroke and Pro XS outboard ranges: mercurymarine.com/us/en/engines/outboard
+- [Mercury Marine: FourStroke and Pro XS outboard ranges](https://www.mercurymarine.com/us/en/engines/outboard)
 - Mercury Marine, owner's resources and maintenance schedules: mercurymarine.com/us/en/service-and-support/owners-resources
 - Parks Canada, Trent-Severn Waterway operating season: parks.canada.ca/lhn-nhs/on/trentsevern
 

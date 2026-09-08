@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-mercury-outboard-rice-lake-fishing.md
-last_updated: 2026-09-06
+last_updated: 2026-09-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Best Mercury Outboard Setup for Rice Lake Fishing"
 description: "Choose a Mercury main motor and kicker for Rice Lake fishing based on hull rating, load, trolling speed, weeds, wind, and how you fish."
 category: "Buying Guide"
 date_published: 2026-02-09
-date_modified: 2026-09-06
+date_modified: 2026-09-07
 keywords: ["best mercury outboard rice lake","rice lake fishing boat setup","mercury 9.9 prokicker walleye","rice lake repower","outboard and kicker setup","rice lake fishing motor"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-02-09  
-**Last reviewed:** 2026-09-06  
+**Last reviewed:** 2026-09-07  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-mercury-outboard-rice-lake-fishing
 
@@ -45,7 +45,7 @@ A Rice Lake fishing boat needs low-speed control for walleye trolling, enough re
 
 Walleye trolling is why the [Mercury 9.9 ProKicker](/blog/mercury-prokicker-rice-lake-fishing-guide) shows up on so many local rigs. Bass work often wants a bow-mount electric instead. Muskie days run heavier hulls and longer water. None of that overrides the capacity plate.
 
-![Table of Mercury outboard recommendations for five Rice Lake fishing setups, listing main HP ranges and auxiliary motors: Walleye 60-90 HP + ProKicker, Bass 90-115 HP + trolling motor, etc.](/lovable-uploads/inline/rice-lake-fishing-setup.svg)
+**Choose equipment for the actual fishing job.** Start with the hull limits, normal people and gear, desired trolling speed, steering control and charging needs. Ask HBW to review the exact main and auxiliary motor configurations rather than selecting from a universal species-to-horsepower table.
 
 ## What the season changes on the boat
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-wont-start-troubleshooting.md
-last_updated: 2026-09-06
+last_updated: 2026-09-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Outboard Won't Start (Ontario Dealer Guide, 2026)"
 description: "Mercury outboard won't start? Ontario dealer's honest diagnostic ladder: battery, fuel, ignition, EFI. Ethanol-free fuel available at HBW."
 category: "Troubleshooting"
 date_published: 2026-04-27
-date_modified: 2026-09-06
+date_modified: 2026-09-07
 keywords: ["mercury outboard wont start","outboard troubleshooting","mercury starting problems"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,15 +25,22 @@ revenue_driver: service
 
 **Category:** Troubleshooting  
 **Published:** 2026-04-27  
-**Last reviewed:** 2026-09-06  
+**Last reviewed:** 2026-09-07  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-wont-start-troubleshooting
 
 ## Quick answer
 
-Most Mercury no-start calls come down to battery and power (weak battery, switch off, bad ground), fuel (stale gas, clogged filter), or ignition (fouled plugs). First, check the kill switch, shifter in neutral, and battery switch. If those are fine and the motor cranks but won't fire, it's fuel or ignition. Put in a service request at hbw.wiki/service.
+Start with the operator checks in the manual for your exact Mercury, including the controls and power supply. Note whether the motor does not crank, cranks slowly, cranks without starting, or starts and stops. That symptom helps the service team choose the next test; it does not identify the failed part by itself. For help, complete a service request at [hbw.wiki/service](https://hbw.wiki/service).
 
-![Mercury outboard won't start: dockside diagnostic checklist: battery, kill switch, fuel, filter, spark, then book service at Harris Boat Works](/blog-visuals/mercury-wont-start-dockside-check.png)
+## What to Record Before Calling
+
+- **Starting behaviour:** no crank, slow crank, cranks without starting, or starts and stops.
+- **Identification:** engine serial number and model information.
+- **Warnings:** exact displayed message or observed horn pattern.
+- **Recent changes:** last successful run, storage history and recent work.
+
+Use the starting checks in the exact engine manual. Do not bypass a safety interlock or open the fuel system to follow a generic picture. If the issue remains unresolved, complete a [service request](https://hbw.wiki/service).
 
 It happens at the worst time. Your Mercury sat all winter. The dock is clear, the family is in the truck, you turn the key, and you get a slow grinding click. Or it cranks beautifully but won't catch. Or it fires for two seconds and dies.
 

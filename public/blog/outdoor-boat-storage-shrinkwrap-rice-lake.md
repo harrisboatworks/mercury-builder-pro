@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/outdoor-boat-storage-shrinkwrap-rice-lake.md
-last_updated: 2026-09-06
+last_updated: 2026-09-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "HBW Outdoor Winter Boat Storage & Shrinkwrap"
 description: "Outdoor winter boat storage and shrinkwrap at Harris Boat Works, Gores Landing on Rice Lake. What's included, what's not, and how to prep for an Ontario winter."
 category: "Service & Maintenance"
 date_published: 2026-05-10
-date_modified: 2026-09-06
+date_modified: 2026-09-07
 keywords: ["outdoor boat storage rice lake","boat shrinkwrap kawarthas","gores landing winter storage","harris boat works winter storage","boat winterization rice lake","kawartha shrinkwrap"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Category:** Service & Maintenance  
 **Published:** 2026-05-10  
-**Last reviewed:** 2026-09-06  
+**Last reviewed:** 2026-09-07  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/outdoor-boat-storage-shrinkwrap-rice-lake
 
@@ -39,7 +39,15 @@ See the [current HBW 2026–27 rate card](https://www.harrisboatworks.ca/winter-
 
 ---
 
-![Comparison of outdoor shrinkwrap vs indoor boat storage at Harris Boat Works, Gores Landing, Ontario](/lovable-uploads/inline/outdoor-vs-indoor-storage.svg)
+### Compare the storage plan, not a price multiplier
+
+| Question | Outdoor storage with shrinkwrap | Indoor heated storage |
+|---|---|---|
+| Where is the boat stored? | Outdoors under the agreed cover and support plan | Inside a building with the stated temperature controls |
+| What needs confirmation? | Covering, ventilation, support, winterization and access | Building conditions, winterization requirements and access |
+| How should costs be compared? | Use the written quote and included services | Use a written quote with the same scope |
+
+Choose the plan for your boat and equipment. Confirm the storage location and services with the provider; no fixed indoor-to-outdoor price ratio applies to every boat.
 
 ## What HBW Actually Offers
 

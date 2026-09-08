@@ -16,6 +16,14 @@ import mercuryLogo from '@/assets/mercury-logo-white.png';
 import { TDAlwaysOnBanner } from '@/components/promotions/TDAlwaysOnOffer';
 import { useNoIndex } from '@/hooks/useNoIndex';
 import { DEALERPLAN_FEE } from '@/lib/finance';
+import { calculateQuoteFinancingEstimate } from '@/lib/quote-financing-estimate';
+import {
+  calculateFinancingPurchase,
+  financingPurchaseFromQuote,
+  financingPurchaseFromLink,
+  financingAmountToFinance,
+  FINANCING_PRICE_BASIS_ALL_IN_AFTER_TRADE,
+} from '@/lib/financing-purchase';
 import { getFinancingFunnelStep, trackClarityFunnelStep } from '@/lib/analytics';
 import { clearFinancingStorage, stripLocalSensitiveFields } from '@/lib/financingApplicationApi';
 import { Helmet } from '@/lib/helmet';
@@ -184,82 +192,27 @@ export default function FinancingApplication() {
     if (savedQuoteIdParam && restoredQuoteState) {
       console.log('Restoring full quote state from database:', restoredQuoteState);
 
-      // Handle both 'motor' and 'selectedMotor' keys (consistent with SavedQuotePage.tsx)
       const motorData = restoredQuoteState.motor || restoredQuoteState.selectedMotor;
+      const purchase = financingPurchaseFromQuote(restoredQuoteState, DEALERPLAN_FEE);
 
-      // Calculate accurate total from saved state - handle multiple field name variations
-      const motorMSRP = parseFloat(motorData?.msrp) || parseFloat(motorData?.basePrice) || 0;
-      const motorDiscount = parseFloat(motorData?.dealer_discount) ||
-                            (motorMSRP - (parseFloat(motorData?.salePrice) || parseFloat(motorData?.price) || motorMSRP));
-
-      // Get package-specific pricing
-      let packageTotal = motorMSRP - motorDiscount;
-
-      // Subtract admin discount (special pricing from admin)
-      const adminDiscount = parseFloat(restoredQuoteState.adminDiscount) || 0;
-      packageTotal -= adminDiscount;
-
-      // Subtract promo rebate if cash_rebate option selected
-      let promoRebate = 0;
-      if (restoredQuoteState.selectedPromoOption === 'cash_rebate' &&
-          restoredQuoteState.selectedPromoValue) {
-        // Parse "$250 rebate" -> 250
-        const match = restoredQuoteState.selectedPromoValue.match(/\$?([\d,]+)/);
-        if (match) {
-          promoRebate = parseFloat(match[1].replace(',', '')) || 0;
-        }
-      }
-      packageTotal -= promoRebate;
-
-      // Add accessories based on package
       const packageKey = restoredQuoteState.selectedPackage?.key || restoredQuoteState.selectedPackage;
-      if (packageKey === 'better' || packageKey === 'best') {
-        packageTotal += 180; // Battery
-      }
-
-      // Add warranty if selected
-      const restoredWarrantyPrice =
-        restoredQuoteState.warrantyConfig?.warrantyPrice ??
-        restoredQuoteState.warranty?.warrantyPrice;
-      if (restoredWarrantyPrice) {
-        packageTotal += Number(restoredWarrantyPrice);
-      }
-
-      // Add installation costs
-      if (restoredQuoteState.installConfig?.installationType === 'professional') {
-        packageTotal += 450; // Professional installation
-      }
-
-      // Add controls/rigging
-      if (restoredQuoteState.boatInfo?.controlsType === 'new') {
-        packageTotal += 1200;
-      } else if (restoredQuoteState.boatInfo?.controlsType === 'adapter') {
-        packageTotal += 125;
-      }
-
-      // Subtract trade-in
-      const tradeInValue = parseFloat(restoredQuoteState.tradeInInfo?.estimatedValue) || 0;
-
-      // Add tax and fees (do NOT subtract trade-in here, the financing form handles that)
-      const withTax = packageTotal * 1.13;
-      const totalWithFees = withTax + DEALERPLAN_FEE;
-
-      // Build motor model display with package info
       const packageLabel = restoredQuoteState.selectedPackage?.label ||
-                           (packageKey ? packageKey.charAt(0).toUpperCase() + packageKey.slice(1) : '');
+                           (typeof packageKey === 'string' ? packageKey.charAt(0).toUpperCase() + packageKey.slice(1) : '');
       const motorModel = packageLabel
         ? `${motorData?.model || 'Motor'} (${packageLabel})`
         : motorData?.model || 'Motor';
 
-      // Dispatch to financing form
       financingDispatch({
         type: 'SET_PURCHASE_DETAILS',
         payload: {
           motorModel: motorModel,
-          motorPrice: Math.round(totalWithFees * 100) / 100,
+          motorPrice: purchase.motorPrice,
           downPayment: 0,
-          tradeInValue: tradeInValue,
-          amountToFinance: Math.round(totalWithFees * 100) / 100,
+          tradeInValue: purchase.tradeInValue,
+          amountToFinance: purchase.amountToFinance,
+          priceBasis: purchase.priceBasis,
+          includedTradeInValue: purchase.includedTradeInValue,
+          preTradeSubtotal: purchase.preTradeSubtotal,
         }
       });
 
@@ -286,23 +239,19 @@ export default function FinancingApplication() {
 
     // Pre-fill from URL parameters if available (takes precedence over quote context)
     if (motorModel && motorPrice) {
-      const parsedPrice = parseFloat(motorPrice);
-      // Legacy direct links used `price` for the pre-tax motor price. Modern
-      // `motorPrice` links carry the all-in total so it is never taxed twice.
-      const allInPrice = explicitAllInPrice
-        ? parsedPrice
-        : Math.round((parsedPrice * 1.13 + DEALERPLAN_FEE) * 100) / 100;
-
-      financingDispatch({
-        type: 'SET_PURCHASE_DETAILS',
-        payload: {
-          motorModel: packageName ? `${motorModel} (${packageName})` : motorModel,
-          motorPrice: allInPrice,
-          downPayment: parseFloat(downPayment || '0'),
-          tradeInValue: parseFloat(tradeInValue || '0'),
-          amountToFinance: Math.max(0, allInPrice - parseFloat(downPayment || '0') - parseFloat(tradeInValue || '0')),
-        }
-      });
+      const purchase = financingPurchaseFromLink({
+        price: Number(motorPrice), allInPrice: Boolean(explicitAllInPrice),
+        priceBasis: searchParams.get('priceBasis'), tradeInValue: Number(tradeInValue || 0),
+        downPayment: Number(downPayment || 0),
+        includedTradeInValue: searchParams.has('includedTradeInValue') ? Number(searchParams.get('includedTradeInValue')) : undefined,
+        preTradeSubtotal: searchParams.has('preTradeSubtotal') ? Number(searchParams.get('preTradeSubtotal')) : undefined,
+      }, DEALERPLAN_FEE);
+      financingDispatch({type:'SET_PURCHASE_DETAILS',payload:{
+        motorModel:packageName ? `${motorModel} (${packageName})` : motorModel,
+        motorPrice:purchase.motorPrice,downPayment:purchase.downPayment,tradeInValue:purchase.tradeInValue,
+        amountToFinance:purchase.amountToFinance,priceBasis:purchase.priceBasis,
+        includedTradeInValue:purchase.includedTradeInValue,preTradeSubtotal:purchase.preTradeSubtotal,
+      }});
 
       // Show confirmation toast if user came from QR code
       if (fromQr) {
@@ -342,10 +291,10 @@ export default function FinancingApplication() {
       }
 
       // Use totalWithFees (includes package subtotal + HST + Dealerplan fee)
-      const totalWithFees = (quoteData as any).financingAmount?.totalWithFees;
-      const motorPrice = totalWithFees || quoteData.motor.salePrice || quoteData.motor.price || 0;
-      const tradeInValue = (quoteData as any).financingAmount?.tradeInValue || quoteData.tradeInInfo?.estimatedValue || 0;
-      const downPayment = 0; // Will be set by user
+      const financingAmount = (quoteData as any).financingAmount;
+      const purchase = financingPurchaseFromQuote(quoteData, DEALERPLAN_FEE);
+      const {motorPrice,tradeInValue,priceBasis} = purchase;
+      const downPayment = 0;
 
       // Build motor model display with package info
       const motorModel = (quoteData as any).financingAmount?.packageName
@@ -375,7 +324,10 @@ export default function FinancingApplication() {
           motorPrice: motorPrice,
           downPayment: downPayment,
           tradeInValue: tradeInValue,
-          amountToFinance: Math.max(0, motorPrice - downPayment - tradeInValue),
+          amountToFinance: purchase.amountToFinance,
+          includedTradeInValue: purchase.includedTradeInValue,
+          preTradeSubtotal: purchase.preTradeSubtotal,
+          priceBasis,
           // Include promo details
           promoOption: promoOption,
           promoRate: promoRate,

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/is-a-pontoon-right-for-your-family-rice-lake.md
-last_updated: 2026-09-06
+last_updated: 2026-09-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Is a Pontoon Right for Your Family?"
 description: "Is a pontoon right for your family on Rice Lake? Honest look at what pontoons do well, where they fall short, tubing power, and tritoon vs pontoon."
 category: "Buying Guide"
 date_published: 2026-06-19
-date_modified: 2026-09-06
+date_modified: 2026-09-07
 keywords: ["is a pontoon boat right for my family","pontoon boat for family with kids","can you tube behind a pontoon","pontoon vs tritoon for family","how much horsepower pontoon tubing"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-06-19  
-**Last reviewed:** 2026-09-06  
+**Last reviewed:** 2026-09-07  
 **Read time:** ~9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/is-a-pontoon-right-for-your-family-rice-lake
 
@@ -52,6 +52,10 @@ This is where pontoons earn their reputation, and it is not hype.
 **Swimming and lounging.** A boarding ladder off the back, a wide deck to towel off on, and shade if you add a bimini. For a family that mostly wants to anchor in a bay, swim, and have lunch, nothing beats it.
 
 **It handles the everyday stuff.** Cottage errands, sunset cruises, a few rods over the side for the kids. A pontoon does the calm, social 80 percent of family boating better than any other boat on the lake.
+
+![Angler wearing flotation and fishing from the stern of a Legend pontoon beside a Mercury outboard.](/lovable-uploads/blog-photos-2026-09/legend-mercury-fishing-detail.webp)
+
+*Official [Legend Boats archive photography](https://media.legendboats.com/pontoon-boats/e-series/e-series-21-cruise/). A real example of casual pontoon fishing; the location is not identified as Rice Lake.*
 
 ## Where a pontoon falls short (the honest part)
 
@@ -113,7 +117,7 @@ A pontoon (two-tube if you are budget-minded and cruise-focused, tritoon if wate
 
 Most families who come in worried a pontoon will be "boring" leave wishing they had bought one years ago. The space and the safety win them over fast. The families who do regret a pontoon almost always made one of two mistakes: they bought too little horsepower to tube the way their kids wanted, or they were genuinely watersports-first and should have bought a tritoon or a V-hull from the start.
 
-We carry **Legend** pontoons, a Canadian company headquartered in Whitefish, Ontario, near Sudbury, that designs its boats for Canadian water and backs them with a 6-Year WOWranty and All-In Pricing. The lineup sorts cleanly by family: the **LE Series** is the value pick for cruising families, the **Q Series** steps up to premium comfort, and the **Halo** brings modern 360-degree seating for families who want the newer look. Every one comes paired with Mercury power, rigged and serviced right here.
+We carry **Legend** pontoons, a Canadian company headquartered in Whitefish, Ontario, near Sudbury, that designs its boats for Canadian water. Ask for the exact model-year warranty and an itemized package quote before buying. The lineup sorts cleanly by family: the **LE Series** is the value pick for cruising families, the **Q Series** steps up to premium comfort, and the **Halo** brings modern 360-degree seating for families who want the newer look. Every one comes paired with Mercury power, rigged and serviced right here.
 
 ## Common mistakes
 

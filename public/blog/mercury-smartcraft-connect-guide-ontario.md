@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-smartcraft-connect-guide-ontario.md
-last_updated: 2026-08-31
+last_updated: 2026-09-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury SmartCraft Connect: Features, App & Installation"
 description: "See what SmartCraft Connect shows in the Mercury Marine app, how the module is installed, and how it differs from helm-display integrations."
 category: "Mercury Outboards"
 date_published: 2026-05-09
-date_modified: 2026-08-31
+date_modified: 2026-09-07
 keywords: ["Mercury SmartCraft Connect","Mercury Marine app setup","SmartCraft Connect compatibility","VesselView Mobile vs SmartCraft Connect","SmartCraft Connect Mobile install"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Category:** Mercury Outboards  
 **Published:** 2026-05-09  
-**Last reviewed:** 2026-08-31  
+**Last reviewed:** 2026-09-07  
 **Read time:** ~11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-smartcraft-connect-guide-ontario
 
@@ -160,7 +160,20 @@ For most Ontario freshwater boaters with a Mercury 60-115 HP and a basic fishfin
 
 ---
 
-![Mercury SmartCraft Connect display and VesselView Mobile app at helm](/lovable-uploads/inline/inline-smartcraft-connect-dashboard.png)
+**What the module actually puts on your phone**
+
+| Reading | Notes |
+|---|---|
+| Engine RPM | Live. |
+| Fuel rate and total fuel used | Litres per hour, plus a session total. |
+| Engine temperature and coolant pressure | Live. |
+| Battery voltage | Live. |
+| Engine hours | Lifetime and per trip. |
+| Fault codes | With plain-English descriptions when they occur. |
+| Boost upgrade eligibility | Compatible models only. |
+| Maintenance reminders | Based on accumulated hours. |
+
+There is no dash display in this product. SmartCraft Connect Mobile is a module about the size of a deck of cards, and the phone is the screen.
 
 ## Install: DIY vs. HBW
 
@@ -259,7 +272,7 @@ The Mercury Marine app shows eligibility once SmartCraft Connect is paired. Harr
 ## Related guides
 
 - [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide), choosing the right propeller
-- [Mercury SmartCraft Alarm Codes Ontario](/blog/mercury-smartcraft-alarm-codes-encyclopedia), SmartCraft alarm code reference
+- [Mercury Alarm Codes List Ontario](/blog/mercury-smartcraft-alarm-codes-encyclopedia), SmartCraft alarm code reference
 - [Mercury Outboard Beep & Alarm Codes: What Each Means](/blog/mercury-outboard-beeping-codes-guide), beeping code guide
 - [Mercury Outboard Won't Start (Ontario Dealer Guide, 2026)](/blog/mercury-outboard-wont-start-troubleshooting), won't-start troubleshooting
 - [Mercury Overheat Alarm Decoder: Beep Meanings](/blog/mercury-outboard-overheat-alarm-decoder), overheat alarm decoder

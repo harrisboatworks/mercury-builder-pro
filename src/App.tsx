@@ -76,6 +76,7 @@ const AdminAbandonedQuoteAnalytics = lazy(() => import("./pages/AdminAbandonedQu
 const AdminPayments = lazy(() => import("./pages/AdminPayments"));
 const AdminSMS = lazy(() => import("./pages/AdminSMS"));
 const AdminInventory = lazy(() => import("./pages/AdminInventory"));
+const AdminDropbox = lazy(() => import("./pages/AdminDropbox"));
 const AdminAgentFunnel = lazy(() => import("./pages/admin/AgentFunnel"));
 const AdminStockSync = lazy(() => import("./pages/AdminStockSync"));
 const AdminConnectors = lazy(() => import("./pages/AdminConnectors"));
@@ -417,6 +418,14 @@ function AnimatedRoutes() {
           }
         />
         <Route
+          path="/admin/motor-images"
+          element={
+            <SecureRoute requireAdmin={true}>
+              <AdminDropbox />
+            </SecureRoute>
+          }
+        />
+        <Route
           path="/admin/agent-funnel"
           element={
             <SecureRoute requireAdmin={true}>
@@ -643,7 +652,7 @@ function AnimatedRoutes() {
         <Route path="/blog/:slug" element={<BlogArticle />} />
         <Route path="/blog/unsubscribe" element={<BlogUnsubscribe />} />
         <Route path="/rss.xml" element={<RssFeed />} />
-        <Route path="/admin/blog" element={<SecureRoute><AdminBlog /></SecureRoute>} />
+        <Route path="/admin/blog" element={<SecureRoute requireAdmin={true}><AdminBlog /></SecureRoute>} />
 
         {/* Case Studies */}
         <Route path="/case-studies" element={<CaseStudies />} />

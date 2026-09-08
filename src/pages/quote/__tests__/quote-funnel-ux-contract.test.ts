@@ -13,6 +13,13 @@ describe('quote funnel UX contract', () => {
     expect(tradeInSource).toContain('data-testid="trade-in-continue"');
   });
 
+  it('uses the canonical TradeInValuation form on the tools estimator', () => {
+    const estimatorSource = read('src/components/tools/TradeInValueEstimator.tsx');
+    expect(estimatorSource).toContain('TradeInValuation');
+    expect(estimatorSource).toContain('PROMOTE_TRADE_IN');
+    expect(estimatorSource).not.toContain('HP_TABLE');
+  });
+
   it('gives mobile customers the same reservation path as desktop', () => {
     const summarySource = read('src/pages/quote/QuoteSummaryPage.tsx');
 
@@ -85,7 +92,8 @@ describe('quote funnel UX contract', () => {
     expect(paymentSource).toContain('action: z.literal("verify")');
     expect(paymentSource).toContain('phone: z.string().trim().min(7)');
     expect(webhookSource).toContain('session.payment_status !== "paid"');
-    expect(webhookSource).toContain('savedQuoteId === boundSavedQuoteId');
+    expect(webhookSource).toContain('validateDepositBeforeClaim(depositPreclaimInput)');
+    expect(webhookSource).toContain('sessionAmountTotal: session.amount_total');
     expect(webhookSource).toContain('.contains("quote_data", { payment_status: "pending" })');
     expect(webhookSource).toContain('Bound deposit record lookup failed');
     expect(webhookSource).toContain('Bound quote record lookup failed');

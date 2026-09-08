@@ -1,4 +1,10 @@
-import { optimizeImage, buildSrcSet } from '@/lib/optimizeImage';
+import { cn } from '@/lib/utils';
+import {
+  optimizeImage,
+  buildSrcSet,
+  isSvgImageSrc,
+  stripForcedImageCropClasses,
+} from '@/lib/optimizeImage';
 import { getResponsiveWebpSrcSet } from '@/lib/responsiveImageVariants';
 
 interface BlogCardImageProps {
@@ -25,23 +31,27 @@ export function BlogCardImage({
   onError,
 }: BlogCardImageProps) {
   const image = normalizeImageSrc(src);
-  const webpSrcSet = getResponsiveWebpSrcSet(image);
+  const isSvg = isSvgImageSrc(image);
+  const webpSrcSet = isSvg ? null : getResponsiveWebpSrcSet(image);
+  const resolvedClassName = isSvg
+    ? cn(stripForcedImageCropClasses(className), 'w-full h-full object-contain')
+    : className;
 
   const img = (
     <img
-      src={optimizeImage(image, 640, 70)}
-      srcSet={buildSrcSet(image, [320, 480, 640, 768, 1024], 70)}
-      sizes={sizes}
+      src={isSvg ? image : optimizeImage(image, 640, 70)}
+      srcSet={isSvg ? undefined : buildSrcSet(image, [320, 480, 640, 768, 1024], 70)}
+      sizes={isSvg ? undefined : sizes}
       alt={alt}
       loading="lazy"
       decoding="async"
       fetchPriority="low"
-      className={className}
+      className={resolvedClassName}
       onError={onError}
     />
   );
 
-  if (!webpSrcSet) return img;
+  if (isSvg || !webpSrcSet) return img;
 
   return (
     <picture>

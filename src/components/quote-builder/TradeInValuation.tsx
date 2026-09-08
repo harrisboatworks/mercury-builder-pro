@@ -12,10 +12,10 @@ import { Loader2, DollarSign, ArrowRight, CheckCircle2, CircleCheck, AlertCircle
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import { decodeTradeInModel, decodeTradeInModelFields, type Confidence, type DecodeResult } from './tradeInModelDecoder';
-import { medianRoundedTo25, getBrandPenaltyFactor, fetchHBWValuation, buildHBWReportUrl, type TradeValueEstimate, type TradeInInfo, type HBWValuationResult, type HBWValuationFailure } from '@/lib/trade-valuation';
+import { fetchHBWValuation, buildHBWReportUrl, type TradeValueEstimate, type TradeInInfo, type HBWValuationResult, type HBWValuationFailure } from '@/lib/trade-valuation';
 import { AnimatedPrice } from '@/components/ui/AnimatedPrice';
 import { useHapticFeedback } from '@/hooks/useHapticFeedback';
-import { clearTradeInValuation, isSupportedTradeInYear, TRADE_IN_MIN_YEAR } from '@/lib/trade-in-state';
+import { clearTradeInValuation, isSupportedTradeInYear, TRADE_IN_MIN_YEAR, TRADE_IN_VALUATION_FRESH_MS } from '@/lib/trade-in-state';
 
 
 
@@ -44,8 +44,17 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
   const [showValidation, setShowValidation] = useState(false);
   const [moreDetailsOpen, setMoreDetailsOpen] = useState(false);
   const formRef = useRef<HTMLDivElement>(null);
+  const requestIdRef = useRef(0);
+  const mountedRef = useRef(true);
   const { triggerHaptic } = useHapticFeedback();
   const autoEstimateTriggered = useRef(false);
+
+  useEffect(() => {
+    mountedRef.current = true;
+    return () => {
+      mountedRef.current = false;
+    };
+  }, []);
 
   // Manual overrides for the decoded HP / Stroke chips. `undefined` means
   // "no override, use parser value". `null` clears a parser value.
@@ -56,10 +65,14 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
   const [hpOverrideInput, setHpOverrideInput] = useState<string>('');
 
   const updateValuationInput = (changes: Partial<TradeInInfo>) => {
+    requestIdRef.current += 1;
+    setEstimate(null);
+    setIsLoading(false);
+    setApiUnavailable(false);
     onTradeInChange(clearTradeInValuation(tradeInInfo, changes));
   };
 
-  // Fetch trade valuation data from Supabase (with fallback to hardcoded values)
+  // Request the canonical valuation through the shared browser adapter.
 
   // Shared writer for the model input + suggestion clicks.
   const applyModelText = (raw: string) => {
@@ -90,9 +103,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
     setEstimate(null);
     autoEstimateTriggered.current = false;
     setDecodeOverride((prev) => ({ ...prev, hp: n }));
-    if (n !== null) {
-      updateValuationInput({ horsepower: n });
-    }
+    updateValuationInput({ horsepower: n ?? 0 });
   };
 
   const commitStrokeOverride = (s: '4-Stroke' | '2-Stroke' | 'OptiMax' | null) => {
@@ -104,6 +115,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
   };
 
   const clearHpOverride = () => {
+    updateValuationInput({ horsepower: decodeTradeInModelFields(tradeInInfo.model || '', {brand: tradeInInfo.brand, year: tradeInInfo.year}).horsepower });
     setEstimate(null);
     setDecodeOverride((prev) => {
       const { hp, ...rest } = prev;
@@ -147,15 +159,6 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
     }
   }, [tradeInInfo.brand, hasValidYear, hasModelOrHp, tradeInInfo.condition, showValidation]);
 
-  // Reset estimate when fields change so button is shown again
-  useEffect(() => {
-    if (estimate) {
-      setEstimate(null);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [tradeInInfo.brand, tradeInInfo.year, tradeInInfo.horsepower, tradeInInfo.model, tradeInInfo.condition, tradeInInfo.engineType, tradeInInfo.engineHours]);
-
-
   // Check if required fields are missing
   const missingFields = {
     brand: !tradeInInfo.brand,
@@ -174,8 +177,22 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
   const effectiveDecodedStroke = decodeOverride.stroke !== undefined
     ? decodeOverride.stroke
     : currentDecodedModel.stroke as '4-Stroke' | '2-Stroke' | 'OptiMax' | null;
-  const effectiveEngineType = strokeToEngineType(effectiveDecodedStroke);
+  const effectiveEngineType = decodeOverride.stroke !== undefined
+    ? strokeToEngineType(decodeOverride.stroke)
+    : tradeInInfo.engineType || strokeToEngineType(effectiveDecodedStroke);
   const requiresStrokeConfirmation = hasModelOrHp && !effectiveEngineType;
+
+  const valuationInputKey = JSON.stringify([tradeInInfo.hasTradeIn, tradeInInfo.brand, tradeInInfo.year, tradeInInfo.horsepower, tradeInInfo.model, tradeInInfo.condition, effectiveEngineType, tradeInInfo.engineHours]);
+  const inputKeyRef = useRef(valuationInputKey);
+  if (inputKeyRef.current !== valuationInputKey) {
+    inputKeyRef.current = valuationInputKey;
+    requestIdRef.current += 1;
+  }
+  useEffect(() => {
+    setEstimate(null);
+    setIsLoading(false);
+    setApiUnavailable(false);
+  }, [valuationInputKey]);
 
   const brandOptions = [
     'Mercury', 'Yamaha', 'Honda', 'Suzuki', 'Tohatsu', 'Evinrude', 'Johnson', 'OMC', 'Mariner', 'Force', 'Other'
@@ -196,6 +213,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
       return;
     }
 
+    const requestId = ++requestIdRef.current;
     setIsLoading(true);
     setApiUnavailable(false);
 
@@ -211,6 +229,9 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
       model: tradeInInfo.model,
       stroke: effectiveEngineType,
     });
+
+    if (!mountedRef.current || requestId !== requestIdRef.current) return;
+    if (!standalone && !tradeInInfo.hasTradeIn) return;
 
     let tradeEstimate: TradeValueEstimate & { listingValue?: number; hstSavings?: number; fromHBW?: boolean };
 
@@ -231,13 +252,11 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
     }
 
     setEstimate(tradeEstimate);
-    
-    // Update the trade-in info with the rounded median value ($25 increments)
+
     const finalValue = hbwResult.value.average;
-    // Build the report URL with the same confirmed architecture used for the
-    // estimate so the detailed report cannot silently recalculate a new value.
+    const valuedAt = Date.now();
     const reportUrl = (tradeEstimate as HBWValuationResult).fromHBW
-      ? buildHBWReportUrl({
+      ? tradeEstimate.reportUrl || buildHBWReportUrl({
           brand: tradeInInfo.brand,
           year: tradeInInfo.year,
           hp: tradeInInfo.horsepower,
@@ -253,17 +272,13 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
       engineType: effectiveEngineType,
       estimatedValue: finalValue,
       confidenceLevel: tradeEstimate.confidence,
-      rangePrePenaltyLow: tradeEstimate.prePenaltyLow,
-      rangePrePenaltyHigh: tradeEstimate.prePenaltyHigh,
       rangeFinalLow: tradeEstimate.low,
       rangeFinalHigh: tradeEstimate.high,
-      tradeinValuePrePenalty: (tradeEstimate.prePenaltyLow !== undefined && tradeEstimate.prePenaltyHigh !== undefined)
-        ? medianRoundedTo25(tradeEstimate.prePenaltyLow, tradeEstimate.prePenaltyHigh)
-        : finalValue,
       tradeinValueFinal: finalValue,
-      penaltyApplied: getBrandPenaltyFactor(tradeInInfo.brand) < 1,
-      penaltyFactor: getBrandPenaltyFactor(tradeInInfo.brand),
       valuationReportUrl: reportUrl,
+      valuedAt,
+      engineVersion: tradeEstimate.engineVersion,
+      referenceVersion: tradeEstimate.referenceVersion,
     });
     
     setIsLoading(false);
@@ -318,15 +333,11 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                       condition: 'good' as const,
                       estimatedValue: 0,
                       confidenceLevel: 'medium' as const,
-                      // Clear audit fields
-                      rangePrePenaltyLow: undefined,
-                      rangePrePenaltyHigh: undefined,
                       rangeFinalLow: undefined,
                       rangeFinalHigh: undefined,
-                      tradeinValuePrePenalty: undefined,
                       tradeinValueFinal: undefined,
-                      penaltyApplied: undefined,
-                      penaltyFactor: undefined
+                      valuationReportUrl: undefined,
+                      valuedAt: undefined,
                     };
                     onTradeInChange(cleanTradeInInfo);
                     console.log('✅ onTradeInChange called with clean state:', cleanTradeInInfo);
@@ -860,8 +871,18 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                       <Input
                         id="trade-hours"
                         type="number"
-                        value={tradeInInfo.engineHours || ''}
-                        onChange={(e) => updateValuationInput({ engineHours: parseFloat(e.target.value) || undefined })}
+                        value={tradeInInfo.engineHours ?? ''}
+                        onChange={(e) => {
+                          const raw = e.target.value;
+                          if (raw === '') {
+                            updateValuationInput({ engineHours: undefined });
+                            return;
+                          }
+                          const hours = parseFloat(raw);
+                          updateValuationInput({
+                            engineHours: Number.isFinite(hours) ? hours : undefined,
+                          });
+                        }}
                         placeholder="e.g., 250"
                         min="0"
                         max="20000"
@@ -885,6 +906,16 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                   </div>
                 </CollapsibleContent>
               </Collapsible>
+
+              {!estimate && !apiUnavailable && !isLoading && tradeInInfo.hasTradeIn &&
+                Number.isFinite(tradeInInfo.estimatedValue) && tradeInInfo.estimatedValue > 0 &&
+                typeof tradeInInfo.valuedAt === 'number' && Date.now() >= tradeInInfo.valuedAt &&
+                Date.now() - tradeInInfo.valuedAt <= TRADE_IN_VALUATION_FRESH_MS && (
+                <div role="status" className="rounded-sm border border-repower-gold/30 bg-repower-paper p-4 font-sans text-sm">
+                  Saved trade-in estimate: <strong>${tradeInInfo.estimatedValue.toLocaleString()}</strong>.
+                  {' '}You can use this estimate or refresh it below. Final value is confirmed after inspection.
+                </div>
+              )}
 
               {/* Get Estimate button */}
               {!estimate && !isLoading && !hasMissingFields && !requiresStrokeConfirmation && (
