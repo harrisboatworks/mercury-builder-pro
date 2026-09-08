@@ -1,14 +1,11 @@
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2.53.1";
+import { checkRateLimit } from "../_shared/rate-limit.ts";
 import { invokeAggregateTool, TOOLS } from "./core.ts";
-import { authorize, SlidingWindowRateLimiter } from "./security.ts";
+import { authorize } from "./security.ts";
 
 const MAX_REQUEST_BYTES = 32 * 1024;
-const rateLimiter = new SlidingWindowRateLimiter(60, 10 * 60 * 1000);
 
 const responseHeaders = {
-  "Access-Control-Allow-Origin": "*",
-  "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
-  "Access-Control-Allow-Headers": "authorization, content-type, mcp-session-id",
   "Cache-Control": "no-store",
   "Content-Type": "application/json",
   "Vary": "Authorization",
@@ -54,7 +51,18 @@ async function readJson(req: Request) {
 }
 
 Deno.serve(async (req) => {
-  if (req.method === "OPTIONS") return new Response(null, { headers: responseHeaders });
+  if (!await checkRateLimit(req, {
+    identifier: requestIdentifier(req),
+    action: "grok_supabase_read",
+    maxAttempts: 60,
+    windowMinutes: 10,
+  })) {
+    return jsonResponse(
+      { error: "Rate limit exceeded" },
+      429,
+      { "Retry-After": "60" },
+    );
+  }
 
   const auth = await authorize(
     req.headers.get("authorization"),
@@ -72,14 +80,6 @@ Deno.serve(async (req) => {
     );
   }
 
-  if (!rateLimiter.allow(requestIdentifier(req))) {
-    return jsonResponse(
-      { error: "Rate limit exceeded" },
-      429,
-      { "Retry-After": "60" },
-    );
-  }
-
   if (req.method === "GET") {
     return jsonResponse({
       server: SERVER_INFO,
@@ -90,7 +90,7 @@ Deno.serve(async (req) => {
   }
 
   if (req.method !== "POST") {
-    return jsonResponse({ error: "Method not allowed" }, 405, { Allow: "GET, POST, OPTIONS" });
+    return jsonResponse({ error: "Method not allowed" }, 405, { Allow: "GET, POST" });
   }
 
   let payload: any;

@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
 import test from "node:test";
 
 import {
@@ -96,4 +97,30 @@ test("in-memory limiter blocks the configured excess request", () => {
   assert.equal(limiter.allow("grok", 10_100), true);
   assert.equal(limiter.allow("grok", 10_200), false);
   assert.equal(limiter.allow("grok", 11_100), true);
+});
+
+test("read handler throttles before auth, drops CORS, and uses the durable limiter", () => {
+  const source = readFileSync("supabase/functions/grok-supabase-read/index.ts", "utf8");
+
+  const rateLimitAt = source.indexOf("await checkRateLimit");
+  const authorizeAt = source.indexOf("await authorize(");
+  assert.ok(rateLimitAt > -1);
+  assert.ok(authorizeAt > rateLimitAt);
+
+  assert.equal(source.includes("Access-Control-Allow-Origin"), false);
+  assert.equal(source.includes("Access-Control-Allow-Methods"), false);
+  assert.equal(source.includes("Access-Control-Allow-Headers"), false);
+  assert.equal(source.includes('req.method === "OPTIONS"'), false);
+
+  assert.match(source, /from "\.\.\/_shared\/rate-limit\.ts"/);
+  assert.match(source, /identifier:\s*requestIdentifier\(req\)/);
+  assert.match(source, /action:\s*"grok_supabase_read"/);
+  assert.match(source, /maxAttempts:\s*60/);
+  assert.match(source, /windowMinutes:\s*10/);
+  assert.equal(source.includes("failClosed"), false);
+  assert.equal(source.includes("SlidingWindowRateLimiter"), false);
+  assert.match(source, /error:\s*"Rate limit exceeded"/);
+  assert.match(source, /error:\s*"Unauthorized"/);
+  assert.match(source, /"WWW-Authenticate":\s*"Bearer"/);
+  assert.match(source, /"Retry-After":\s*"60"/);
 });
