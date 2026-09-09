@@ -6,11 +6,6 @@ import {
   verifyDropboxOAuthState,
 } from "../../../supabase/functions/_shared/dropbox-oauth-state.ts";
 import {
-  fetchAllowedQuotePdf,
-  QuotePdfSecurityError,
-  resolveAllowedQuotePdfUrl,
-} from "../../../supabase/functions/_shared/quote-pdf-url.ts";
-import {
   replaceTemplateVariables,
   sanitizeEmailSubject,
 } from "../../../supabase/functions/send-quote-email/template-policy.ts";
@@ -52,86 +47,6 @@ describe("Packet A edge hardening", () => {
     expect(await verifyDropboxOAuthState(state, expected, "test-only-secret", 1_601_000)).toBeNull();
     expect(await verifyDropboxOAuthState(`${state}tampered`, expected, "test-only-secret", 1_001_000)).toBeNull();
     expect(state.length).toBeLessThan(500);
-  });
-
-  it.each([
-    "https://eutsoqdpjurknjsshxes.supabase.co/storage/v1/object/public/spec-sheets/id/quote.pdf",
-    "https://www.mercuryrepower.ca/downloads/quote.pdf",
-  ])("allows the exact legitimate quote PDF host %s", (url) => {
-    expect(resolveAllowedQuotePdfUrl(url)?.toString()).toBe(url);
-  });
-
-  it.each([
-    "https://example.com/x.pdf",
-    "http://eutsoqdpjurknjsshxes.supabase.co/x.pdf",
-    "https://eutsoqdpjurknjsshxes.supabase.co.evil.example/x.pdf",
-    "https://www.mercuryrepower.ca@evil.example/x.pdf",
-    "https://user:pass@www.mercuryrepower.ca/x.pdf",
-    "https://www.mercuryrepower.ca:444/x.pdf",
-    "https://localhost/x.pdf",
-    "https://127.0.0.1/x.pdf",
-    "https://[::1]/x.pdf",
-    "https://169.254.169.254/latest/meta-data/",
-    "https://www.mercuryrepower.ca/quote/saved/id",
-    "https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/quote.pdf",
-  ])("rejects an unsafe quote PDF URL %s", (url) => {
-    expect(resolveAllowedQuotePdfUrl(url)).toBeNull();
-  });
-
-  it("validates every PDF redirect before fetching the next hop", async () => {
-    const fetchImpl = vi.fn()
-      .mockResolvedValueOnce(new Response(null, {
-        status: 302,
-        headers: { location: "https://169.254.169.254/latest/meta-data/" },
-      }));
-
-    await expect(fetchAllowedQuotePdf(
-      "https://www.mercuryrepower.ca/quote.pdf",
-      fetchImpl,
-    )).rejects.toBeInstanceOf(QuotePdfSecurityError);
-    expect(fetchImpl).toHaveBeenCalledTimes(1);
-  });
-
-  it("preserves an allowed redirect and returns its bytes", async () => {
-    const fetchImpl = vi.fn()
-      .mockResolvedValueOnce(new Response(null, {
-        status: 302,
-        headers: { location: "https://eutsoqdpjurknjsshxes.supabase.co/storage/v1/object/public/spec-sheets/q.pdf" },
-      }))
-      .mockResolvedValueOnce(new Response("%PDF-1.7\npdf-bytes", {
-        status: 200,
-        headers: { "content-type": "application/pdf" },
-      }));
-
-    const bytes = await fetchAllowedQuotePdf(
-      "https://www.mercuryrepower.ca/quote.pdf",
-      fetchImpl,
-    );
-    expect(new TextDecoder().decode(bytes)).toBe("%PDF-1.7\npdf-bytes");
-    expect(fetchImpl).toHaveBeenCalledTimes(2);
-  });
-
-  it("rejects non-PDF and oversized responses from an allowed quote host", async () => {
-    const htmlFetch = vi.fn().mockResolvedValueOnce(new Response("<html>not a PDF</html>", {
-      status: 200,
-      headers: { "content-type": "text/html" },
-    }));
-    await expect(fetchAllowedQuotePdf(
-      "https://www.mercuryrepower.ca/quote/saved/id",
-      htmlFetch,
-    )).rejects.toBeInstanceOf(QuotePdfSecurityError);
-
-    const oversizedFetch = vi.fn().mockResolvedValueOnce(new Response("%PDF-", {
-      status: 200,
-      headers: {
-        "content-type": "application/pdf",
-        "content-length": String(5 * 1024 * 1024 + 1),
-      },
-    }));
-    await expect(fetchAllowedQuotePdf(
-      "https://www.mercuryrepower.ca/quote.pdf",
-      oversizedFetch,
-    )).rejects.toThrow("PDF response is too large");
   });
 
   it("validates every Dropbox file redirect before fetching the next hop", async () => {

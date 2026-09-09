@@ -6,10 +6,15 @@ import {
   extractFunctionRefs,
   extractMigrationObjects,
   extractRelativeImports,
+  formatDeployedTimestamp,
   formatDeployRequiredMarkdown,
+  formatDriftMarkdown,
   formatSecretsMissingNotice,
+  formatTimeBehind,
   isCommitNewerThanDeploy,
   isMigrationApplied,
+  MIGRATION_WATCH_MIN_VERSION,
+  migrationNameFromFilename,
   ORDERING_UNKNOWN,
   parseNameStatusZ,
   resolveImportPath,
@@ -379,14 +384,133 @@ describe('drift comparison helpers', () => {
         { slug: 'public-quote-api', version: 12, updated_at: '2026-09-08T12:00:00Z' },
         { slug: 'capture-chat-lead', version: 4, updated_at: '2026-09-07T00:00:00Z' },
       ],
-      localMigrations: [MIG_RPC, MIG_TABLE],
-      appliedVersions: [{ version: '20260101000000' }],
+      localMigrations: [
+        'supabase/migrations/20260901000000_create_lead_rpc.sql',
+        'supabase/migrations/20260901000001_create_leads.sql',
+      ],
+      appliedVersions: [{ version: '20260901000000' }],
     });
     expect(report.empty).toBe(false);
     expect(report.staleFunctions.map((fn) => fn.slug)).toEqual(['brand-new', 'public-quote-api']);
     expect(report.staleFunctions.find((fn) => fn.slug === 'brand-new')?.status).toBe('not_deployed');
     expect(report.staleFunctions.find((fn) => fn.slug === 'public-quote-api')?.status).toBe('stale');
-    expect(report.unappliedMigrations.map((item) => item.version)).toEqual(['20260101000001']);
+    expect(report.unappliedMigrations.map((item) => item.version)).toEqual(['20260901000001']);
+  });
+});
+
+describe('drift migration matching rule', () => {
+  const appliedYesterday = [
+    { version: '20260908201000', name: 'upsert_soft_lead_quote' },
+    { version: '20260908201100', name: 'atomic_saved_quote_access' },
+  ];
+  const localRecent = [
+    'supabase/migrations/20250807132831_3c625049-13f9-4186-b88f-43cefc41c4db.sql',
+    'supabase/migrations/20250807231346_ea06f993-2f10-46fb-936a-30becf67e630.sql',
+    'supabase/migrations/20260830211200_atomic_saved_quote_access.sql',
+    'supabase/migrations/20260830214400_upsert_soft_lead_quote.sql',
+    'supabase/migrations/20260909000000_brand_new_unapplied.sql',
+  ];
+
+  it('reads the filename suffix after the 14-digit version', () => {
+    expect(migrationNameFromFilename('supabase/migrations/20260830214400_upsert_soft_lead_quote.sql')).toBe(
+      'upsert_soft_lead_quote',
+    );
+    expect(migrationNameFromFilename('supabase/migrations/20260830211200_atomic_saved_quote_access.sql')).toBe(
+      'atomic_saved_quote_access',
+    );
+  });
+
+  it('treats a migration as applied when the recorded name matches the filename suffix', () => {
+    const applied = appliedVersionSet(appliedYesterday);
+    expect(isMigrationApplied('supabase/migrations/20260830214400_upsert_soft_lead_quote.sql', applied)).toBe(true);
+    expect(isMigrationApplied('supabase/migrations/20260830211200_atomic_saved_quote_access.sql', applied)).toBe(true);
+    expect(isMigrationApplied('supabase/migrations/20260909000000_brand_new_unapplied.sql', applied)).toBe(false);
+  });
+
+  it('does not report name-matched files or historical versions below the baseline', () => {
+    const report = buildDriftReport({
+      localMigrations: localRecent,
+      appliedVersions: appliedYesterday,
+    });
+    expect(report.migrationWatchMinVersion).toBe(MIGRATION_WATCH_MIN_VERSION);
+    expect(report.migrationSkippedHistoricalCount).toBe(2);
+    expect(report.migrationInScopeCount).toBe(3);
+    expect(report.unappliedMigrations.map((item) => item.path)).toEqual([
+      'supabase/migrations/20260909000000_brand_new_unapplied.sql',
+    ]);
+    expect(report.unappliedMigrations.some((item) => item.path.includes('upsert_soft_lead_quote'))).toBe(false);
+    expect(report.unappliedMigrations.some((item) => item.path.includes('atomic_saved_quote_access'))).toBe(false);
+    expect(report.unappliedMigrations.some((item) => item.version === '20250807132831')).toBe(false);
+    expect(report.unappliedMigrations.some((item) => item.version === '20250807231346')).toBe(false);
+  });
+
+  it('reports a genuinely new in-scope file that matches neither version nor name', () => {
+    const report = buildDriftReport({
+      localMigrations: ['supabase/migrations/20260909000000_brand_new_unapplied.sql'],
+      appliedVersions: appliedYesterday,
+    });
+    expect(report.empty).toBe(false);
+    expect(report.unappliedMigrations).toEqual([
+      {
+        path: 'supabase/migrations/20260909000000_brand_new_unapplied.sql',
+        version: '20260909000000',
+        status: 'unapplied',
+      },
+    ]);
+  });
+
+  it('states the matching rule and the historical cutoff in the job output', () => {
+    const report = buildDriftReport({
+      localMigrations: localRecent,
+      appliedVersions: appliedYesterday,
+    });
+    const markdown = formatDriftMarkdown(report);
+    expect(markdown).toContain('### Migration matching rule');
+    expect(markdown).toContain(MIGRATION_WATCH_MIN_VERSION);
+    expect(markdown).toContain('name suffix');
+    expect(markdown).toContain('will not be reconciled retroactively');
+    expect(markdown).toContain('This run checked 3 in-scope migration files for absence and did not report 2 older files.');
+    expect(markdown).toContain('20260909000000_brand_new_unapplied.sql');
+    expect(markdown).toContain('has no matching applied version or name');
+    expect(markdown).not.toContain('upsert_soft_lead_quote.sql');
+    expect(markdown).not.toContain('atomic_saved_quote_access.sql');
+    expect(markdown).not.toContain('20250807132831');
+  });
+
+  it('states the matching rule even when there is no drift', () => {
+    const report = buildDriftReport({
+      localMigrations: ['supabase/migrations/20260830214400_upsert_soft_lead_quote.sql'],
+      appliedVersions: [{ version: '20260908201000', name: 'upsert_soft_lead_quote' }],
+    });
+    expect(report.empty).toBe(true);
+    const markdown = formatDriftMarkdown(report);
+    expect(markdown).toContain('No stale functions or unapplied migrations relative to `main`.');
+    expect(markdown).toContain('### Migration matching rule');
+    expect(markdown).toContain(MIGRATION_WATCH_MIN_VERSION);
+    expect(markdown).toContain('This run checked 1 in-scope migration file for absence and did not report 0 older files.');
+  });
+});
+
+describe('drift timestamp rendering', () => {
+  it('renders epoch-millisecond deployed times as ISO and states how far behind', () => {
+    expect(formatDeployedTimestamp(1787749616915)).toBe('2026-08-26T13:06:56.915Z');
+    expect(formatDeployedTimestamp('1787749616915')).toBe('2026-08-26T13:06:56.915Z');
+    expect(formatTimeBehind('2026-09-08T19:13:09-04:00', 1787749616915)).toBe('13 days behind');
+  });
+
+  it('prints ISO deployed time, day lag, and commit lag on stale function lines', () => {
+    const report = buildDriftReport({
+      localFunctions: [{ slug: 'ai-chatbot', latestCommitAt: '2026-09-08T19:13:09-04:00' }],
+      deployedFunctions: [{ slug: 'ai-chatbot', version: 737, updated_at: 1787749616915 }],
+      localMigrations: [],
+      appliedVersions: [],
+    });
+    report.staleFunctions[0].commitsBehind = 3;
+    const markdown = formatDriftMarkdown(report);
+    expect(markdown).toContain(
+      '`ai-chatbot` — main commit 2026-09-08T19:13:09-04:00 is newer than deployed 2026-08-26T13:06:56.915Z (13 days behind, 3 commits behind, version 737)',
+    );
+    expect(markdown).not.toContain('1787749616915');
   });
 });
 
