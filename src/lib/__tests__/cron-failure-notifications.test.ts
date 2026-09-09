@@ -37,8 +37,8 @@ async function invoke(input: {
 } = {}) {
   const env = { ...DEFAULT_ENV, ...input.env };
   const deno = { env: { get: (name: string) => env[name] } };
-  const insert = vi.fn(async () => ({ error: null }));
-  const sendEmail = vi.fn(async () => ({ data: { id: 'email-1' }, error: null }));
+  const insert = vi.fn(async (_row: Record<string, unknown>) => ({ error: null }));
+  const sendEmail = vi.fn(async (_payload: Record<string, unknown>) => ({ data: { id: 'email-1' }, error: null }));
   const createClient = vi.fn(() => ({
     from: () => ({ insert }),
     auth: {
