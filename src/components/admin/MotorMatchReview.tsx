@@ -62,7 +62,7 @@ export function MotorMatchReview({ isOpen, onClose, onReviewComplete }: MotorMat
     try {
       const currentMatch = pendingMatches[currentMatchIndex];
       
-      await supabase
+      const { error: reviewError } = await supabase
         .from('pending_motor_matches')
         .update({
           selected_match_id: selectedMotorId,
@@ -70,11 +70,12 @@ export function MotorMatchReview({ isOpen, onClose, onReviewComplete }: MotorMat
           reviewed_at: new Date().toISOString()
         })
         .eq('id', currentMatch.id);
+      if (reviewError) throw reviewError;
 
       if (selectedMotorId) {
         // Transfer stock data from scraped motor to brochure motor
         const scrapedData = currentMatch.scraped_motor_data;
-        await supabase
+        const { error: motorError } = await supabase
           .from('motor_models')
           .update({ 
             in_stock: true, 
@@ -83,6 +84,7 @@ export function MotorMatchReview({ isOpen, onClose, onReviewComplete }: MotorMat
             stock_quantity: 1 // Default to 1, could be enhanced with actual quantity later
           })
           .eq('id', selectedMotorId);
+        if (motorError) throw motorError;
       }
 
       if (currentMatchIndex < pendingMatches.length - 1) {

@@ -134,6 +134,11 @@ export function useAutoSaveQuoteOnAuth() {
 
       } catch (err) {
         console.error('Auto-save quote failed:', err);
+        toast({
+          title: 'Could not save quote',
+          description: 'Please try again or use "Email Me This Quote".',
+          variant: 'destructive',
+        });
       }
     })();
   }, [authLoading, user, state.motor]);

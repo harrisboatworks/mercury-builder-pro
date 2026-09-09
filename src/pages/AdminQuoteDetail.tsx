@@ -370,14 +370,21 @@ const AdminQuoteDetail = () => {
       // Log the changes if any
       if (Object.keys(changes).length > 0 && user?.id) {
         const changeType = changes.admin_discount ? 'discount' : 'notes';
-        await supabase.from('quote_change_log').insert({
+        const { error: changeLogError } = await supabase.from('quote_change_log').insert({
           quote_id: q.id,
           changed_by: user.id,
           change_type: changeType,
           changes
         });
-        // Refresh the change log
-        setChangeLogKey(prev => prev + 1);
+        if (changeLogError) {
+          toast({
+            title: 'Change log not saved',
+            description: 'The quote was updated, but the change history row was not. Refresh and confirm the values before editing again.',
+            variant: 'destructive',
+          });
+        } else {
+          setChangeLogKey(prev => prev + 1);
+        }
       }
       
       // Update local state

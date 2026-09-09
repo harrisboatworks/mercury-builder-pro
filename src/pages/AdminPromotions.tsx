@@ -219,14 +219,16 @@ const AdminPromotions = () => {
     }
   };
 
-  const updatePromotion = async (id: string, patch: Partial<Promotion>) => {
+  const updatePromotion = async (id: string, patch: Partial<Promotion>): Promise<boolean> => {
     try {
       const { error } = await supabase.from('promotions').update(patch).eq('id', id);
       if (error) throw error;
       await loadAll();
+      return true;
     } catch (e) {
       console.error(e);
       toast({ title: 'Error', description: 'Failed to update promotion', variant: 'destructive' });
+      return false;
     }
   };
 
@@ -256,12 +258,13 @@ const AdminPromotions = () => {
     const endDate = new Date(today);
     endDate.setDate(today.getDate() + days);
     
-    await updatePromotion(id, {
+    const saved = await updatePromotion(id, {
       start_date: today.toISOString().split('T')[0],
       end_date: endDate.toISOString().split('T')[0],
       is_active: true
     });
-    
+    if (!saved) return;
+
     toast({ title: 'Promotion Extended', description: `Extended for ${days} days` });
   };
 
@@ -270,12 +273,13 @@ const AdminPromotions = () => {
     const endDate = new Date(today);
     endDate.setDate(today.getDate() + 90); // Default 90 days
     
-    await updatePromotion(id, {
+    const saved = await updatePromotion(id, {
       start_date: today.toISOString().split('T')[0],
       end_date: endDate.toISOString().split('T')[0],
       is_active: true
     });
-    
+    if (!saved) return;
+
     toast({ title: 'Promotion Renewed', description: 'Renewed for 90 days from today' });
   };
 
@@ -284,11 +288,12 @@ const AdminPromotions = () => {
     const dates = editingDates[id];
     if (!dates) return;
     
-    await updatePromotion(id, {
+    const saved = await updatePromotion(id, {
       start_date: dates.start_date || null,
       end_date: dates.end_date || null
     });
-    
+    if (!saved) return;
+
     // Clear editing state
     const newEditing = { ...editingDates };
     delete newEditing[id];
