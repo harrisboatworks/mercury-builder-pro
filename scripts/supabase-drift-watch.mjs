@@ -2,8 +2,11 @@
 /**
  * Scheduled comparison of main vs deployed Supabase functions/migrations.
  *
- * Uses SUPABASE_ACCESS_TOKEN + SUPABASE_PROJECT_REF when both are set.
- * If either is missing, prints a notice and exits 0. Never fails the build.
+ * Uses SUPABASE_ACCESS_TOKEN when that secret is set. Project ref is
+ * SUPABASE_PROJECT_REF when set, otherwise supabase/config.toml project_id
+ * (same resolution as deploy-supabase-functions.mjs).
+ * If the access token is missing, prints a notice and exits 0. Never fails
+ * the build.
  *
  * Drift is written to $GITHUB_STEP_SUMMARY. When GITHUB_TOKEN can write
  * issues, a single issue titled "Supabase deploy drift" is opened or updated
@@ -30,6 +33,7 @@ import {
   sourceFilesForFunction,
   toPosix,
 } from './lib/supabase-deploy-required.mjs';
+import { resolveProjectRef } from './lib/supabase-project-ref.mjs';
 
 const ROOT = process.cwd();
 const ISSUE_TITLE = 'Supabase deploy drift';
@@ -221,7 +225,7 @@ async function main() {
   }
 
   const token = String(process.env.SUPABASE_ACCESS_TOKEN).trim();
-  const ref = String(process.env.SUPABASE_PROJECT_REF).trim();
+  const ref = resolveProjectRef(process.env, { root: ROOT });
   const headers = {
     Authorization: `Bearer ${token}`,
     Accept: 'application/json',

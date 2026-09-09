@@ -49,6 +49,9 @@ import {
   requiredMigrationsForSlug,
   toPosix,
 } from './lib/supabase-deploy-required.mjs';
+import { projectRefFromConfig, resolveProjectRef } from './lib/supabase-project-ref.mjs';
+
+export { projectRefFromConfig, resolveProjectRef };
 
 const ROOT = process.cwd();
 const SLUG_RE = /^[A-Za-z][A-Za-z0-9_-]*$/;
@@ -60,11 +63,6 @@ export function redactSecrets(message, env = process.env) {
     if (typeof value === 'string' && value.length > 0) text = text.split(value).join('[redacted]');
   }
   return text;
-}
-
-export function projectRefFromConfig(toml) {
-  const match = String(toml).match(/^\s*project_id\s*=\s*"([^"]+)"/m);
-  return match ? match[1].trim() : '';
 }
 
 export function isSafeFunctionSlug(slug) {
@@ -548,18 +546,6 @@ function writeSummary(markdown, env = process.env) {
   }
 }
 
-function resolveProjectRef(env = process.env) {
-  const fromEnv = typeof env.SUPABASE_PROJECT_REF === 'string' ? env.SUPABASE_PROJECT_REF.trim() : '';
-  if (fromEnv) return fromEnv;
-  const configPath = join(ROOT, 'supabase/config.toml');
-  if (!existsSync(configPath)) return '';
-  try {
-    return projectRefFromConfig(readFileSync(configPath, 'utf8'));
-  } catch {
-    return '';
-  }
-}
-
 function defaultDeployOne(slug, { cli, projectRef, env }) {
   const cliEnv = { ...env };
   if (!String(cliEnv.SUPABASE_PROJECT_REF || '').trim()) {
@@ -651,7 +637,7 @@ export async function runDeploy({ env = process.env, deployOne, listAppliedVersi
     ...loadTextTree('supabase/migrations'),
   };
   const forcedRaw = env.DEPLOY_FUNCTION || '';
-  const projectRef = resolveProjectRef(env);
+  const projectRef = resolveProjectRef(env, { root: ROOT });
 
   if (!projectRef) {
     writeSummary(

@@ -12,9 +12,15 @@ import {
   readAppliedMigrationsWithFallback,
   redactSecrets,
   resolveForcedSlug,
+  resolveProjectRef,
+  runDeploy,
 } from '../../scripts/deploy-supabase-functions.mjs';
 import { listAppliedMigrationsFromManagementApi } from '../../scripts/lib/supabase-management-api.mjs';
 import { isMigrationApplied, appliedVersionSet } from '../../scripts/lib/supabase-deploy-required.mjs';
+import {
+  projectRefFromConfig as sharedProjectRefFromConfig,
+  resolveProjectRef as sharedResolveProjectRef,
+} from '../../scripts/lib/supabase-project-ref.mjs';
 
 const files = {
   'supabase/functions/send-sms/index.ts': 'export {}',
@@ -44,6 +50,29 @@ describe('project ref and secret redaction', () => {
   it('reads project_id from config.toml text', () => {
     expect(projectRefFromConfig('project_id = "eutsoqdpjurknjsshxes"\n')).toBe('eutsoqdpjurknjsshxes');
     expect(projectRefFromConfig('[functions.send-sms]\nverify_jwt = false\n')).toBe('');
+  });
+
+  it('re-exports the shared project-ref helpers without a second implementation', () => {
+    expect(projectRefFromConfig).toBe(sharedProjectRefFromConfig);
+    expect(resolveProjectRef).toBe(sharedResolveProjectRef);
+  });
+
+  it('still deploys when SUPABASE_PROJECT_REF is unset because config.toml has project_id', async () => {
+    const seen: string[] = [];
+    const code = await runDeploy({
+      env: {
+        DEPLOY_FUNCTION: 'send-sms',
+        DEPLOY_FROM: 'HEAD',
+        DEPLOY_TO: 'HEAD',
+      },
+      deployOne: (slug: string) => {
+        seen.push(slug);
+        return { ok: true, detail: 'ok' };
+      },
+      listAppliedVersions: () => [],
+    });
+    expect(code).toBe(0);
+    expect(seen).toEqual(['send-sms']);
   });
 
   it('redacts token values copied from the environment', () => {
