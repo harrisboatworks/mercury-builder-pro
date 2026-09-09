@@ -37,9 +37,12 @@ npm run verify:api
 
 # One or more changed Supabase Edge Function entry points
 npm run typecheck:edge -- supabase/functions/<function-name>/index.ts
+
+# Every function entry point (CI)
+npm run typecheck:edge -- --all
 ```
 
-The Edge command fails when no entry point is supplied, rejects paths outside `supabase/functions`, pins Deno 2.9.5, accepts multiple changed TypeScript paths, disables local `node_modules` materialization, and checks the dedicated tracked `supabase/functions/deno.lock` in frozen mode. A dependency change therefore fails until its reviewed lockfile update is committed. Pair each scoped checker with the relevant focused tests. Running `npm run test:integration:financing` is itself the per-run write opt-in and requires separate authorization, an approved target, and both test credentials in the invoking environment or ignored `.env.local`; the runner loads that local file before its credential preflight and fails before Vitest if either value is absent. It is never implied by `npm test` or `verify:small`.
+The Edge command fails when no entry point is supplied, rejects paths outside `supabase/functions`, pins Deno 2.9.5, accepts multiple changed TypeScript paths or `--all`, disables local `node_modules` materialization, and checks the dedicated tracked `supabase/functions/deno.lock` in frozen mode. Runtime resolution still uses `supabase/functions/deno.json`; typecheck adds `--import-map supabase/functions/deno.check.json` and `--no-remote` so HTTPS `esm.sh` / `deno.land` specifiers resolve to locked `npm:` packages or the small local `serve` / `xhr` stand-ins. A new HTTPS import without a remap, a remap that still points at the network, or a remote that slips past the import map, fails instead of being skipped. A dependency change therefore fails until its reviewed lockfile update is committed. Pair each scoped checker with the relevant focused tests. Running `npm run test:integration:financing` is itself the per-run write opt-in and requires separate authorization, an approved target, and both test credentials in the invoking environment or ignored `.env.local`; the runner loads that local file before its credential preflight and fails before Vitest if either value is absent. It is never implied by `npm test` or `verify:small`.
 
 To run one unit test file directly:
 
