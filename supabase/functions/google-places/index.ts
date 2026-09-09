@@ -87,6 +87,13 @@ serve(async (req) => {
       return await proxyPlacePhoto(req, requestedPhoto);
     }
 
+    const allowed = await checkRateLimit(req, {
+      action: 'google_places',
+      maxAttempts: 60,
+      windowMinutes: 10,
+    });
+    if (!allowed) return rateLimitedResponse(corsHeaders, 60);
+
     const apiKey = Deno.env.get('GOOGLE_API_KEY');
     if (!apiKey) {
       throw new Error('GOOGLE_API_KEY not configured');

@@ -2,6 +2,8 @@ import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { Resend } from "npm:resend@2.0.0";
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
 import { GROK_BOT_AGENTMAIL } from "../_shared/grok-email-routing.ts";
+import { forbiddenOriginResponse, isAllowedOrigin } from "../_shared/origin-check.ts";
+import { checkRateLimit, rateLimitedResponse } from "../_shared/rate-limit.ts";
 
 const resend = new Resend(Deno.env.get("RESEND_API_KEY"));
 const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
@@ -35,6 +37,18 @@ serve(async (req: Request): Promise<Response> => {
   if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
   }
+
+  if (!isAllowedOrigin(req)) {
+    return forbiddenOriginResponse(corsHeaders);
+  }
+
+  const allowed = await checkRateLimit(req, {
+    action: "send_repower_guide_email",
+    maxAttempts: 8,
+    windowMinutes: 60,
+    failClosed: true,
+  });
+  if (!allowed) return rateLimitedResponse(corsHeaders, 300);
 
   try {
     const { email, name, phone, hasBoatToRepower }: RequestBody = await req.json();
