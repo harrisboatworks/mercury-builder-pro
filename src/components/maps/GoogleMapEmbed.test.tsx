@@ -1,6 +1,6 @@
 import { renderToStaticMarkup } from 'react-dom/server';
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import { buildGoogleMapEmbedUrl } from '@/lib/google-maps-embed';
+import { buildGoogleMapEmbedUrl, buildGoogleMapsFallbackHref } from '@/lib/google-maps-embed';
 import { GoogleMapEmbed } from './GoogleMapEmbed';
 
 const TEST_EMBED_KEY = 'test-maps-embed-key';
@@ -71,8 +71,17 @@ describe('GoogleMapEmbed', () => {
     expect(html).toContain('5369 Harris Boat Works Rd');
     expect(html).toContain('Gores Landing, ON K0K 2E0');
     expect(html).toContain('View on Google Maps');
+    // renderToStaticMarkup escapes & as &amp; inside the href. That is correct
+    // HTML and browsers read it back as '&', so assert the rendered form here
+    // and the unescaped URL through the builder below.
     expect(html).toContain(
-      'https://www.google.com/maps/search/?api=1&query=44.121684,-78.241502',
+      'https://www.google.com/maps/search/?api=1&amp;query=44.121684,-78.241502',
+    );
+    expect(
+      buildGoogleMapsFallbackHref({ latitude: 44.121684, longitude: -78.241502 }),
+    ).toBe('https://www.google.com/maps/search/?api=1&query=44.121684,-78.241502');
+    expect(buildGoogleMapsFallbackHref()).toBe(
+      'https://www.google.com/maps/search/?api=1&query=Harris+Boat+Works,Gores+Landing,ON',
     );
   });
 });
