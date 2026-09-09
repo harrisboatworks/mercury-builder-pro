@@ -44,7 +44,9 @@ const FollowUpReminder = ({ quoteId, currentDate, onUpdate }: Props) => {
       .from('customer_quotes')
       .update({ follow_up_date: null } as any)
       .eq('id', quoteId);
-    if (!error) {
+    if (error) {
+      toast({ title: 'Error', description: 'Failed to clear reminder.', variant: 'destructive' });
+    } else {
       onUpdate(null);
       setIsEditing(false);
       toast({ title: 'Reminder Cleared' });

@@ -144,6 +144,9 @@ export default function MotorOptionsManager() {
       queryClient.invalidateQueries({ queryKey: ['motor-option-assignments'] });
       toast.success('Option updated');
     },
+    onError: (error) => {
+      toast.error('Failed to update option: ' + error.message);
+    },
   });
 
   const selectedMotor = motors.find((m: any) => m.id === selectedMotorId);
