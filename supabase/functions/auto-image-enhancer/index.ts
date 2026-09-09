@@ -143,12 +143,13 @@ serve(async (req) => {
 
       } catch (error) {
         failed++
-        console.error(`✗ Failed to enhance ${motor.model}: ${error.message}`)
+        const errorMessage = error instanceof Error ? error.message : String(error)
+        console.error(`✗ Failed to enhance ${motor.model}: ${errorMessage}`)
         results.push({
           id: motor.id,
           model: motor.model,
           status: 'failed',
-          error: error.message
+          error: errorMessage
         })
       }
     }
@@ -172,7 +173,7 @@ serve(async (req) => {
     console.error('Image enhancement error:', error)
     return new Response(JSON.stringify({
       success: false,
-      error: error.message
+      error: error instanceof Error ? error.message : String(error)
     }), {
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
       status: 500,

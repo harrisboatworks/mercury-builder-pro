@@ -63,6 +63,7 @@ import {
 import {
   buildVerifiedHbwAuthorityAnswer,
 } from '../_shared/verified-hbw-authority-facts.ts';
+import { nearbyAvailableHorsepowers } from '../_shared/nearby-horsepowers.ts';
 
 // OpenAI chat model for the site assistant.
 // gpt-5.6-luna replaced gpt-4o-mini on 2026-09-04. Note the 5.6+ API contract:
@@ -2004,10 +2005,10 @@ Provide a helpful, balanced comparison covering: power difference, price differe
       } else {
         // Find nearest available HP options
         const allMotors = await getCurrentMotorInventory();
-        const availableHPs = [...new Set(allMotors.map(m => m.horsepower))].sort((a, b) => a - b);
-        const nearbyHPs = availableHPs
-          .filter(hp => Math.abs(hp - detectedHP) <= 15)
-          .slice(0, 4);
+        const nearbyHPs = nearbyAvailableHorsepowers(
+          allMotors.map(m => m.horsepower),
+          detectedHP,
+        );
         hpSpecificContext = `\n\n## NO ${detectedHP}HP MOTORS AVAILABLE\nSuggest these nearby options instead: ${nearbyHPs.map(hp => `${hp}HP`).join(', ')}`;
       }
     }

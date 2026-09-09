@@ -215,7 +215,8 @@ serve(async (req) => {
 
         } catch (error) {
           attempts++;
-          console.error(`✗ Attempt ${attempts} failed for ${motor.model}: ${error.message}`)
+          const errorMessage = error instanceof Error ? error.message : String(error)
+          console.error(`✗ Attempt ${attempts} failed for ${motor.model}: ${errorMessage}`)
           
           if (attempts >= maxAttempts) {
             failed++;
@@ -223,7 +224,7 @@ serve(async (req) => {
               id: motor.id,
               model: motor.model,
               status: 'failed',
-              error: error.message,
+              error: errorMessage,
               attempts
             })
           } else {
@@ -252,7 +253,7 @@ serve(async (req) => {
     console.error('Migration error:', error)
     return new Response(JSON.stringify({
       success: false,
-      error: error.message
+      error: error instanceof Error ? error.message : String(error)
     }), {
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
       status: 500,
