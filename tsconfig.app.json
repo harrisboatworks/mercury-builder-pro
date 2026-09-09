@@ -19,6 +19,12 @@
     "paths": {
       "@/*": [
         "./src/*"
+      ],
+      "#edge-deno/origin-check": [
+        "./typecheck-shims/origin-check.d.ts"
+      ],
+      "#edge-deno/notification-webhook-handler": [
+        "./typecheck-shims/notification-webhook-handler.d.ts"
       ]
     },
     "resolveJsonModule": true,

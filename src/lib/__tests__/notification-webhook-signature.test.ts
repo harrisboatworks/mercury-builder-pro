@@ -1,6 +1,6 @@
 import { readFileSync } from 'node:fs';
 import { describe, expect, it, vi } from 'vitest';
-import { handleNotificationWebhook } from '../../../supabase/functions/_shared/notification-webhook-handler.ts';
+import { handleNotificationWebhook } from '#edge-deno/notification-webhook-handler';
 import {
   computeTwilioSignature,
   parseTwilioFormBody,
