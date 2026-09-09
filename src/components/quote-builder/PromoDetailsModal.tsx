@@ -3,6 +3,7 @@ import { Dialog, DialogContent } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { CheckCircle, Calendar, Info, Shield, Sparkles } from 'lucide-react';
 import mercuryLogo from '@/assets/mercury-logo.png';
+import { formatPromoCalendarDate } from '@/lib/quote-utils';
 
 export interface PromoDetailsModalProps {
   promo: {
@@ -80,7 +81,7 @@ export const PromoDetailsModal: React.FC<PromoDetailsModalProps> = ({ promo, ope
                 <h3 className="font-semibold mb-2 text-foreground">Important Dates</h3>
                 <p className="text-muted-foreground">
                   {promo?.end_date ? (
-                    <>Offer valid through {new Date(promo.end_date as string).toLocaleDateString()}</>
+                    <>Offer valid through {formatPromoCalendarDate(promo.end_date as string)}</>
                   ) : (
                     expiryNote
                   )}

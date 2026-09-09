@@ -17,6 +17,7 @@ import {
 } from '@/components/ui/drawer';
 import { formatMotorTitle } from '@/lib/card-title';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
+import { formatPromoCalendarDate } from '@/lib/quote-utils';
 import { useQuote } from '@/contexts/QuoteContext';
 import {
   calculatePaymentWithFrequency,
@@ -249,7 +250,7 @@ export function FinanceCalculatorDrawer({ open, onOpenChange, motor }: FinanceCa
                 </div>
                 {promotions?.[0]?.end_date && (
                   <div className="text-muted-foreground mt-0.5">
-                    Offer ends {new Date(promotions[0].end_date).toLocaleDateString()}
+                    Offer ends {formatPromoCalendarDate(promotions[0].end_date)}
                   </div>
                 )}
               </div>

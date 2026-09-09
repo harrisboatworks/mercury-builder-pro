@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { Shield, Calendar, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { CountdownTimer } from '@/components/ui/countdown-timer';
+import { formatPromoCalendarDate } from '@/lib/quote-utils';
 import mercuryLogo from '@/assets/mercury-logo.png';
 
 interface PromotionHeroProps {
@@ -14,9 +15,7 @@ interface PromotionHeroProps {
 }
 
 export function PromotionHero({ endDate, bonusTitle, bonusDescription, termsUrl, imageUrl, hasOfferDetails = false }: PromotionHeroProps) {
-  const formattedEndDate = endDate
-    ? new Date(endDate).toLocaleDateString('en-CA', { month: 'long', day: 'numeric', year: 'numeric' })
-    : null;
+  const formattedEndDate = endDate ? formatPromoCalendarDate(endDate) : null;
   const safeImageUrl = imageUrl && !/(?:7[-_ ]?year|get[-_ ]?7)/i.test(imageUrl) ? imageUrl : null;
   const detailsHref = termsUrl || (hasOfferDetails ? '#offer-details' : null);
 

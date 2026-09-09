@@ -2,6 +2,7 @@ import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Clock, Gift, Shield } from 'lucide-react';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
+import { daysUntil, formatPromoDaysLeft } from '@/lib/quote-utils';
 import { getAppliedPromotion, getAppliedWarrantyExtraYears } from '@/lib/warranty-display';
 
 interface PromoPanelProps {
@@ -27,15 +28,6 @@ export function PromoPanel({ motorHp }: PromoPanelProps) {
     return null;
   }
 
-  // Calculate days left until promo ends
-  const daysLeft = (endDate: string | null | undefined): number => {
-    if (!endDate) return 0;
-    const end = new Date(endDate);
-    const now = new Date();
-    const diff = Math.ceil((end.getTime() - now.getTime()) / (1000 * 60 * 60 * 24));
-    return Math.max(0, diff);
-  };
-
   const appliedPromotion = getAppliedPromotion(promotions);
   const warrantyYears = getAppliedWarrantyExtraYears(appliedPromotion);
   const totalWarranty = 3 + warrantyYears;
@@ -52,7 +44,7 @@ export function PromoPanel({ motorHp }: PromoPanelProps) {
             {promo.end_date && (
               <Badge variant="outline" className="text-xs">
                 <Clock className="w-3 h-3 mr-1" />
-                {daysLeft(promo.end_date)} days left
+                {formatPromoDaysLeft(daysUntil(promo.end_date))}
               </Badge>
             )}
           </div>

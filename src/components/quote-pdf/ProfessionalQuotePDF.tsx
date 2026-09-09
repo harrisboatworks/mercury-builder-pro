@@ -10,6 +10,7 @@ import {
 } from '@react-pdf/renderer';
 import type { ComponentType } from 'react';
 import { parseMercuryRigCodes } from '@/lib/mercury-codes';
+import { formatPromoCalendarDate, promoEndOfDay } from '@/lib/quote-utils';
 import { getRecommendedDeposit } from '@/lib/deposit';
 import { resolveFinancingContractTermMonths } from '@/lib/quote-pdf-data';
 import harrisLogoBlack from '@/assets/harris-logo.png?inline';
@@ -318,11 +319,12 @@ export interface QuotePDFProps {
 }
 
 function dateAtEndOfDay(value: string): Date {
-  return /^\d{4}-\d{2}-\d{2}$/.test(value) ? new Date(`${value}T23:59:59`) : new Date(value);
+  return promoEndOfDay(value);
 }
 
 function formattedDate(value: string): string {
-  return dateAtEndOfDay(value).toLocaleDateString('en-CA', { year: 'numeric', month: 'long', day: 'numeric' });
+  return formatPromoCalendarDate(value)
+    || dateAtEndOfDay(value).toLocaleDateString('en-CA', { year: 'numeric', month: 'long', day: 'numeric' });
 }
 
 function validUntilText(quoteDate: string, validUntil?: string, promoEndDate?: string): string {

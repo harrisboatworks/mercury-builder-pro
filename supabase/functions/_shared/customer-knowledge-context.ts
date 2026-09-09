@@ -7,6 +7,7 @@ import {
   type PromotionRecord,
 } from "./promotion-context.ts";
 import { MERCURY_TECHNICAL_FACTS_VERSION } from "./verified-mercury-technical-facts.ts";
+import { activePromotionDateOrFilters, dealerToday } from "./promo-dates.ts";
 
 export const CUSTOMER_MOTOR_SELECT = [
   "id",
@@ -363,13 +364,13 @@ export async function fetchCustomerMotors(supabase: SupabaseLike): Promise<Custo
 }
 
 export async function fetchActivePromotions(supabase: SupabaseLike): Promise<PromotionRecord[]> {
-  const today = new Date().toISOString().slice(0, 10);
+  const { startOr, endOr } = activePromotionDateOrFilters();
   const { data, error } = await supabase
     .from("promotions")
     .select(ACTIVE_PROMOTION_SELECT)
     .eq("is_active", true)
-    .or(`start_date.is.null,start_date.lte.${today}`)
-    .or(`end_date.is.null,end_date.gte.${today}`)
+    .or(startOr)
+    .or(endOr)
     .order("priority", { ascending: false })
     .limit(10);
   if (error) throw new Error(`promotions query failed: ${error.message || error}`);
@@ -377,7 +378,7 @@ export async function fetchActivePromotions(supabase: SupabaseLike): Promise<Pro
 }
 
 export async function fetchActiveFinancing(supabase: SupabaseLike): Promise<FinancingRecord[]> {
-  const today = new Date().toISOString().slice(0, 10);
+  const today = dealerToday();
   const { data, error } = await supabase
     .from("financing_options")
     .select(ACTIVE_FINANCING_SELECT)
