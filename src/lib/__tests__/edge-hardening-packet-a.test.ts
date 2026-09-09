@@ -165,17 +165,26 @@ describe("Packet A edge hardening", () => {
     expect(migration).toContain("TO service_role");
     expect(adminQuoteSender).not.toContain("pdfUrl:");
     expect(adminQuoteSender).toContain("quotePageUrl: `${SITE_URL}/quote/saved/${quoteId}`");
+    expect(adminQuoteSender).toContain("mintAdminQuoteEmailIdempotencyKey");
+    expect(adminQuoteSender).toContain("idempotencyKey:");
+    expect(adminQuoteSender).toContain("handleSend('send')");
+    expect(adminQuoteSender).toContain("handleSend('resend')");
   });
 
-  it("requires admin auth for quote-note writes and targets the quote id", () => {
+  it("records verified delivery through the quote_email_deliveries lease instead of quote notes", () => {
     const source = read("supabase/functions/send-quote-email/index.ts");
-    const noteWrite = source.indexOf(".from('customer_quotes')");
-    const adminGuard = source.lastIndexOf("requireAdmin(req, corsHeaders)", noteWrite);
+    const claimAt = source.indexOf("claimQuoteEmailDelivery");
+    const sendAt = source.indexOf("resend.emails.send(emailOptions)");
+    const verifyAt = source.indexOf("verifyResendResult(emailResponse)");
 
-    expect(adminGuard).toBeGreaterThan(-1);
-    expect(adminGuard).toBeLessThan(noteWrite);
+    expect(claimAt).toBeGreaterThan(-1);
+    expect(sendAt).toBeGreaterThan(claimAt);
+    expect(verifyAt).toBeGreaterThan(sendAt);
+    expect(source).toContain("completeQuoteEmailDelivery");
+    expect(source).toContain("deriveIdempotencyKey");
+    expect(source).toContain("idempotencyKey: z.string().trim().min(8).max(200).optional()");
     expect(source).toContain("emailData.leadData?.quoteId");
-    expect(source).toContain(".eq('id', emailData.leadData.quoteId)");
+    expect(source).not.toContain(".from('customer_quotes')");
     expect(source).not.toContain(".eq('quote_number', emailData.quoteNumber)");
     expect(source).toContain("normalizeQuoteUrls({");
     expect(source).toContain("fetchValidatedQuotePdf({");

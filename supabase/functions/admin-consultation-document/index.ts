@@ -44,7 +44,7 @@ function notFound(req: Request): Response {
 
 async function sendPersistedConsultationQuoteEmail(
   payload: AdminConsultationQuoteEmailPayload,
-): Promise<boolean> {
+): Promise<{ success: boolean; duplicate?: boolean }> {
   const result = await fetch(`${Deno.env.get('SUPABASE_URL')}/functions/v1/send-quote-email`, {
     method: 'POST',
     headers: {
@@ -55,9 +55,10 @@ async function sendPersistedConsultationQuoteEmail(
   });
   try {
     const sent = await result.json();
-    return result.ok && sent?.success === true;
+    if (!result.ok || sent?.success !== true) return { success: false };
+    return { success: true, ...(sent?.duplicate === true ? { duplicate: true } : {}) };
   } catch {
-    return false;
+    return { success: false };
   }
 }
 

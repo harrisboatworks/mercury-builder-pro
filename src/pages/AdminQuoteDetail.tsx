@@ -23,6 +23,7 @@ import QuoteHistoryTimeline from '@/components/admin/QuoteHistoryTimeline';
 import ContactLog from '@/components/admin/ContactLog';
 import FollowUpReminder from '@/components/admin/FollowUpReminder';
 import SendQuoteEmail from '@/components/admin/SendQuoteEmail';
+import QuoteEmailDeliveryHistory from '@/components/admin/QuoteEmailDeliveryHistory';
 
 interface QuoteDetail {
   id: string;
@@ -61,6 +62,7 @@ const AdminQuoteDetail = () => {
   const { toast } = useToast();
   const { user } = useAuth();
   const [changeLogKey, setChangeLogKey] = useState(0);
+  const [emailHistoryKey, setEmailHistoryKey] = useState(0);
   
   const [q, setQ] = useState<QuoteDetail | null>(null);
   const [loadState, setLoadState] = useState<'loading' | 'loaded' | 'notfound'>('loading');
@@ -867,12 +869,19 @@ const AdminQuoteDetail = () => {
                 customerEmail={q.customer_email}
                 motorModel={q.quote_data?.motor?.model || 'Mercury Motor'}
                 totalPrice={q.final_price}
+                onDeliverySettled={() => setEmailHistoryKey((key) => key + 1)}
               />
               <div className="text-xs text-muted-foreground bg-muted/50 p-2 rounded font-mono truncate">
                 {isSubmitted ? (privateShareUrl || 'Copy Link creates a private link to the original PDF, valid for 30 days.') : `${SITE_URL}/quote/saved/${q?.id?.slice(0, 8)}...`}
               </div>
             </div>
           </Card>
+
+          <QuoteEmailDeliveryHistory
+            quoteId={q.id}
+            customerEmail={q.customer_email}
+            refreshKey={emailHistoryKey}
+          />
 
           {/* Change Log */}
           <QuoteChangeLog key={changeLogKey} quoteId={q.id} />

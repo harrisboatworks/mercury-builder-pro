@@ -13,6 +13,7 @@ import {
   createConsultationAccessToken,
   parseConsultationDocumentId,
 } from "./consultation-document-policy.ts";
+import { mintAdminQuoteEmailIdempotencyKey } from "./quote-email-delivery.ts";
 
 export const ADMIN_CONSULTATION_DOCUMENT_ACTIONS = [
   "admin-download",
@@ -67,10 +68,14 @@ export interface AdminConsultationQuoteEmailPayload {
   documentId: string;
   documentAccessUrl: string;
   leadData: { quoteId: string };
+  idempotencyKey: string;
 }
 
 export interface AdminConsultationDocumentMailer {
-  sendQuoteEmail(payload: AdminConsultationQuoteEmailPayload): Promise<boolean>;
+  sendQuoteEmail(payload: AdminConsultationQuoteEmailPayload): Promise<{
+    success: boolean;
+    duplicate?: boolean;
+  }>;
 }
 
 export interface AdminConsultationDocumentAccess {
@@ -90,6 +95,7 @@ function isAdminConsultationDocumentAction(
 export function parseAdminConsultationDocumentRequest(body: unknown): {
   action: AdminConsultationDocumentAction;
   quoteId: string;
+  emailIntent: "send" | "resend";
 } {
   if (!isRecord(body) || !isAdminConsultationDocumentAction(body.action)) {
     throw new ConsultationDocumentRequestError();
@@ -97,6 +103,7 @@ export function parseAdminConsultationDocumentRequest(body: unknown): {
   return {
     action: body.action,
     quoteId: parseConsultationDocumentId(body.quoteId),
+    emailIntent: body.emailIntent === "resend" ? "resend" : "send",
   };
 }
 
@@ -139,6 +146,8 @@ export function buildAdminConsultationQuoteEmailPayload(input: {
   document: StoredAdminConsultationDocument;
   documentAccessUrl: string;
   quoteId: string;
+  emailIntent?: "send" | "resend";
+  resendNonce?: string;
 }): AdminConsultationQuoteEmailPayload {
   return {
     customerEmail: input.snapshot.customerEmail,
@@ -150,6 +159,12 @@ export function buildAdminConsultationQuoteEmailPayload(input: {
     documentId: input.document.id,
     documentAccessUrl: input.documentAccessUrl,
     leadData: { quoteId: input.quoteId },
+    idempotencyKey: mintAdminQuoteEmailIdempotencyKey({
+      quoteId: input.quoteId,
+      emailType: "quote_delivery",
+      intent: input.emailIntent ?? "send",
+      resendNonce: input.resendNonce,
+    }),
   };
 }
 
@@ -232,14 +247,15 @@ export async function handleAdminConsultationDocument(options: {
     document,
     documentAccessUrl,
     quoteId,
+    emailIntent: request.emailIntent,
   });
-  let sent = false;
+  let sendResult: { success: boolean; duplicate?: boolean } = { success: false };
   try {
-    sent = await options.mailer.sendQuoteEmail(payload);
+    sendResult = await options.mailer.sendQuoteEmail(payload);
   } catch {
-    sent = false;
+    sendResult = { success: false };
   }
-  if (!sent) {
+  if (!sendResult.success) {
     try {
       await options.store.revokeCapability(tokenHash);
     } catch {
@@ -247,7 +263,10 @@ export async function handleAdminConsultationDocument(options: {
     }
     return options.jsonResponse({ error: "Quote email could not be sent" }, 502);
   }
-  return options.jsonResponse({ success: true });
+  return options.jsonResponse({
+    success: true,
+    ...(sendResult.duplicate ? { duplicate: true } : {}),
+  });
 }
 
 export function createSupabaseAdminConsultationDocumentStore(service: {
