@@ -1,0 +1,85 @@
+name: Deploy Supabase edge functions
+
+# Deploys edge functions that this merge (or a manual dispatch) made stale.
+# Detection uses scripts/lib/supabase-deploy-required.mjs — the same mapping
+# as the advisory supabase-deploy-required report, including _shared/ fan-out.
+#
+# NEVER add `supabase db push`, `supabase migration up`, or any other
+# migration-apply step here. That omission is intentional. A migration can
+# be destructive and irreversible, and this repo has one production project
+# with no staging. Drift watch reports unapplied migrations; humans apply them.
+#
+# Inert until repository secret SUPABASE_ACCESS_TOKEN exists. A missing
+# secret skips cleanly (green). A real CLI/deploy failure fails the job
+# after every targeted function has been attempted.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      function_name:
+        description: Optional single function slug to deploy (leave empty to deploy functions changed in HEAD^..HEAD)
+        required: false
+        type: string
+
+# Queue, do not cancel. Two merges in quick succession must not interleave
+# deploys. Cancelling an in-flight run would leave an unknown subset updated
+# and the next SHA would start mid-stream. Later queued runs still win for
+# overlapping slugs, in merge order.
+concurrency:
+  group: supabase-functions-deploy
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Check for Supabase access token
+        id: creds
+        env:
+          SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+        run: |
+          if [ -n "$SUPABASE_ACCESS_TOKEN" ]; then
+            echo "configured=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "configured=false" >> "$GITHUB_OUTPUT"
+            echo "::notice title=Supabase function deploy skipped::Set the SUPABASE_ACCESS_TOKEN repository secret to deploy changed edge functions on merge to main."
+            if [ -n "$GITHUB_STEP_SUMMARY" ]; then
+              {
+                echo "## Supabase edge function deploy"
+                echo ""
+                echo "Skipped: repository secret \`SUPABASE_ACCESS_TOKEN\` is not configured."
+                echo "This job is a no-op until that secret exists. It never applies migrations."
+              } >> "$GITHUB_STEP_SUMMARY"
+            fi
+          fi
+
+      - uses: actions/setup-node@v4
+        if: steps.creds.outputs.configured == 'true'
+        with:
+          node-version: '22'
+
+      # Pin the CLI version. Do not use `latest`.
+      - uses: supabase/setup-cli@v3
+        if: steps.creds.outputs.configured == 'true'
+        with:
+          version: 2.117.0
+
+      - name: Deploy changed edge functions
+        if: steps.creds.outputs.configured == 'true'
+        env:
+          SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+          SUPABASE_PROJECT_REF: ${{ secrets.SUPABASE_PROJECT_REF }}
+          DEPLOY_FROM: ${{ github.event.before }}
+          DEPLOY_TO: ${{ github.sha }}
+          DEPLOY_FUNCTION: ${{ github.event.inputs.function_name }}
+        run: node scripts/deploy-supabase-functions.mjs

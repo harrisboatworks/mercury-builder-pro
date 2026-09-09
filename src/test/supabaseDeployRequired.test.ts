@@ -3,7 +3,9 @@ import {
   appliedVersionSet,
   buildDeployRequiredReport,
   buildDriftReport,
+  deployTargetsFromDiff,
   extractFunctionRefs,
+  functionSlugFromPath,
   extractMigrationObjects,
   extractRelativeImports,
   formatDeployedTimestamp,
@@ -158,6 +160,90 @@ describe('git-diff-to-report: functions and _shared', () => {
     expect(reachable).toContain(SHARED_KB);
     expect(reachable).toContain(SHARED_BLOG);
     expect(reachable).not.toContain(SHARED_CORS);
+  });
+});
+
+describe('deploy targets from changed paths', () => {
+  const tree = files({
+    [SHARED_CORS]: 'export const corsHeaders = {};',
+    [SHARED_RATE]: `
+      import { corsHeaders } from "./cors.ts";
+      export async function checkRateLimit(client) {
+        return client.rpc("check_rate_limit", {});
+      }
+    `,
+    [SHARED_BLOG]: 'export const BLOG = [];',
+    [SHARED_KB]: `
+      import { BLOG } from "./blog-knowledge.ts";
+      export function formatKb() { return BLOG; }
+    `,
+    [A_FN]: `
+      import { corsHeaders } from "../_shared/cors.ts";
+      import { checkRateLimit } from "../_shared/rate-limit.ts";
+      await supabase.from("chat_leads").insert({});
+    `,
+    [B_FN]: `
+      import { formatKb } from "../_shared/format-kb-documents.ts";
+      await supabase.rpc("public_quote_stats", {});
+    `,
+    [C_FN]: `
+      Deno.serve(() => new Response("ok"));
+    `,
+    'supabase/functions/also-cors/index.ts': `
+      import { corsHeaders } from "../_shared/cors.ts";
+    `,
+  });
+
+  it('maps a function file path to that function name only', () => {
+    expect(functionSlugFromPath(A_FN)).toBe('capture-chat-lead');
+    const targets = deployTargetsFromDiff({
+      diffEntries: [{ status: 'M', path: A_FN }],
+      files: tree,
+    });
+    expect(targets.functions.map((fn) => fn.slug)).toEqual(['capture-chat-lead']);
+    expect(targets.removed).toEqual([]);
+  });
+
+  it('fans a _shared change out to every importer and not to _shared itself', () => {
+    expect(functionSlugFromPath(SHARED_CORS)).toBe('_shared');
+    const targets = deployTargetsFromDiff({
+      diffEntries: [{ status: 'M', path: SHARED_CORS }],
+      files: tree,
+    });
+    expect(targets.functions.map((fn) => fn.slug).sort()).toEqual(['also-cors', 'capture-chat-lead']);
+    expect(targets.functions.every((fn) => fn.slug !== '_shared')).toBe(true);
+    expect(targets.functions.every((fn) => fn.reasons.some((reason) => reason.includes('imports changed _shared')))).toBe(
+      true,
+    );
+  });
+
+  it('maps a config.toml-only change to no deploy targets', () => {
+    expect(functionSlugFromPath('supabase/config.toml')).toBeNull();
+    const targets = deployTargetsFromDiff({
+      diffEntries: [{ status: 'M', path: 'supabase/config.toml' }],
+      files: tree,
+    });
+    expect(targets.functions).toEqual([]);
+    expect(targets.removed).toEqual([]);
+    expect(targets.migrations).toEqual([]);
+  });
+
+  it('does not treat an added migration as a function to deploy', () => {
+    const targets = deployTargetsFromDiff({
+      diffEntries: [{ status: 'A', path: MIG_RPC }],
+      files: { ...tree, [MIG_RPC]: 'SELECT 1;' },
+    });
+    expect(targets.functions).toEqual([]);
+    expect(targets.migrations).toEqual([MIG_RPC]);
+  });
+
+  it('lists a removed function as removed instead of deploying it', () => {
+    const targets = deployTargetsFromDiff({
+      diffEntries: [{ status: 'D', path: C_FN }],
+      files: tree,
+    });
+    expect(targets.functions.map((fn) => fn.slug)).not.toContain('unrelated');
+    expect(targets.removed).toEqual(['unrelated']);
   });
 });
 
