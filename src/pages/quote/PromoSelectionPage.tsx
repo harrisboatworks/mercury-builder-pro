@@ -12,7 +12,7 @@ import mercuryLogo from '@/assets/mercury-logo.png';
 import { PageTransition } from '@/components/ui/page-transition';
 import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
 import { QuotePageShell } from '@/components/quote-builder/redesign/QuotePageShell';
-import { calculateMonthly, DEALERPLAN_FEE, FINANCING_MINIMUM } from '@/lib/finance';
+import { calculateMonthly, DEALERPLAN_FEE, FINANCING_MINIMUM, isUsableFinancingRate } from '@/lib/finance';
 import { promoEndOfDay } from '@/lib/quote-utils';
 import { calculateQuoteFinancingEstimate } from '@/lib/quote-financing-estimate';
 import { reconcileWarrantyConfig } from '@/lib/quote-product-protection';
@@ -49,7 +49,9 @@ export default function PromoSelectionPage() {
     return null;
   });
   const [selectedRate, setSelectedRate] = useState<FinancingRate | null>(
-    state.selectedPromoRate && state.selectedPromoTerm
+    isUsableFinancingRate(state.selectedPromoRate) &&
+    state.selectedPromoTerm != null &&
+    Number.isFinite(state.selectedPromoTerm)
       ? { rate: state.selectedPromoRate, months: state.selectedPromoTerm }
       : null
   );
@@ -72,7 +74,9 @@ export default function PromoSelectionPage() {
     () => getSpecialFinancingRates() || [],
     [getSpecialFinancingRates],
   );
-  const lowestRate = financingRates?.[0]?.rate || 2.99;
+  const lowestRate = isUsableFinancingRate(financingRates?.[0]?.rate)
+    ? financingRates[0].rate
+    : 2.99;
   const shortestPromoTerm = financingRates.length > 0
     ? financingRates.reduce((min, r) => (r.months < min.months ? r : min), financingRates[0])
     : null;
@@ -220,7 +224,7 @@ export default function PromoSelectionPage() {
   // summary line items. Idempotent: no-op if the same option is already set.
   useEffect(() => {
     if (!state.motor || !activePromo || rebateAmount <= 0) return;
-    if (state.selectedPromoOption === 'special_financing' && state.selectedPromoRate) return;
+    if (state.selectedPromoOption === 'special_financing' && isUsableFinancingRate(state.selectedPromoRate)) return;
     if (state.selectedPromoOption === 'cash_rebate') return;
     dispatch({
       type: 'SET_PROMO_DETAILS',

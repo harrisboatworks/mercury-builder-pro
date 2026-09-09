@@ -1,5 +1,5 @@
 import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
-import { getFinancingDisplay } from '@/lib/finance';
+import { getFinancingDisplay, isUsableFinancingRate } from '@/lib/finance';
 
 interface OptimizedMonthlyPaymentDisplayProps {
   motorPrice: number;
@@ -10,7 +10,7 @@ export function OptimizedMonthlyPaymentDisplay({ motorPrice }: OptimizedMonthlyP
   
   if (motorPrice <= 0) return null;
   
-  const displayText = getFinancingDisplay(motorPrice * 1.13, promo?.rate || null);
+  const displayText = getFinancingDisplay(motorPrice * 1.13, isUsableFinancingRate(promo?.rate) ? promo.rate : null);
   
   return (
     <div className="mt-0 mb-1 text-center">

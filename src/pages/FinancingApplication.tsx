@@ -15,7 +15,7 @@ import harrisLogo from '@/assets/harris-logo-white.png';
 import mercuryLogo from '@/assets/mercury-logo-white.png';
 import { TDAlwaysOnBanner } from '@/components/promotions/TDAlwaysOnOffer';
 import { useNoIndex } from '@/hooks/useNoIndex';
-import { DEALERPLAN_FEE } from '@/lib/finance';
+import { DEALERPLAN_FEE, firstUsableFinancingRate } from '@/lib/finance';
 import { calculateQuoteFinancingEstimate } from '@/lib/quote-financing-estimate';
 import {
   calculateFinancingPurchase,
@@ -304,8 +304,10 @@ export default function FinancingApplication() {
       // Extract promo details from financing amount or state
       const promoOption = (quoteData as any).financingAmount?.promoOption ||
                           (quoteData as any).selectedPromoOption || null;
-      const promoRate = (quoteData as any).financingAmount?.promoRate ||
-                        (quoteData as any).selectedPromoRate || null;
+      const promoRate = firstUsableFinancingRate(
+        (quoteData as any).financingAmount?.promoRate,
+        (quoteData as any).selectedPromoRate,
+      );
       const promoTerm = (quoteData as any).financingAmount?.promoTerm ||
                         (quoteData as any).selectedPromoTerm || null;
       const promoValue = (quoteData as any).financingAmount?.promoValue ||

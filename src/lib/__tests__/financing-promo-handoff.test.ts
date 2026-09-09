@@ -28,4 +28,22 @@ describe('financing promotion handoff', () => {
       promoCombinationMode: 'layered',
     });
   });
+
+  it('preserves a genuine 0% promotional rate', () => {
+    const purchaseDetails = purchaseDetailsSchema.parse({
+      motorModel: '150 FourStroke',
+      motorPrice: 20112.7,
+      downPayment: 0,
+      tradeInValue: 0,
+      amountToFinance: 20112.7,
+      preferredTerm: '60',
+      promoOption: 'special_financing',
+      promoRate: 0,
+      promoTerm: 60,
+      promoValue: '0% APR for 60 months',
+    });
+
+    expect(purchaseDetails.promoRate).toBe(0);
+    expect(purchaseDetails.promoTerm).toBe(60);
+  });
 });

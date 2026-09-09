@@ -1,5 +1,5 @@
 import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
-import { calculateMonthlyPayment, DEALERPLAN_FEE, FINANCING_MINIMUM } from '@/lib/finance';
+import { calculateMonthlyPayment, DEALERPLAN_FEE, FINANCING_MINIMUM, isUsableFinancingRate } from '@/lib/finance';
 import { useMemo } from 'react';
 
 interface FinancingCalloutProps {
@@ -23,7 +23,7 @@ export function FinancingCallout({ totalPrice, onApplyForFinancing, financingTer
     const amountToFinance = totalPrice + DEALERPLAN_FEE;
     
     // Use existing calculation logic with promotional rate
-    const promoRate = promo?.rate || null;
+    const promoRate = isUsableFinancingRate(promo?.rate) ? promo.rate : null;
     const { payment, termMonths, rate } = calculateMonthlyPayment(amountToFinance, promoRate);
     
     return { payment, termMonths, rate, isPromotional: !!promo };
