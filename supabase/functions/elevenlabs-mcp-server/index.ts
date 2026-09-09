@@ -14,6 +14,7 @@ import {
 } from "../_shared/customer-knowledge-context.ts";
 import { fetchCanonicalHbwValuation, HbwValuationError } from "../_shared/hbw-valuation.ts";
 import { mapVoiceTradeCondition, resolveVoiceArchitecture } from "../_shared/voice-trade-in-input.ts";
+import { checkRateLimit } from "../_shared/rate-limit.ts";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -389,8 +390,113 @@ function getSupabase() {
   return createClient(url, key);
 }
 
+function mcpText(text: string): { content: { type: string; text: string }[] } {
+  return { content: [{ type: "text", text }] };
+}
+
+function digitsOnly(value: unknown): string {
+  return String(value ?? "").replace(/\D/g, "");
+}
+
+function lastTenPhoneDigits(value: unknown): string {
+  const digits = digitsOnly(value);
+  return digits.length >= 10 ? digits.slice(-10) : "";
+}
+
+function phoneLookupCandidates(value: unknown): string[] {
+  const trimmed = String(value ?? "").trim();
+  const last10 = lastTenPhoneDigits(trimmed);
+  if (!last10) return [];
+  const area = last10.slice(0, 3);
+  const mid = last10.slice(3, 6);
+  const rest = last10.slice(6);
+  const digits = digitsOnly(trimmed);
+  return [...new Set([
+    trimmed,
+    digits,
+    last10,
+    `1${last10}`,
+    `+1${last10}`,
+    `(${area}) ${mid}-${rest}`,
+    `(${area})${mid}-${rest}`,
+    `${area}-${mid}-${rest}`,
+    `${area}.${mid}.${rest}`,
+    `${area} ${mid} ${rest}`,
+    `+1 (${area}) ${mid}-${rest}`,
+    `+1 ${area}-${mid}-${rest}`,
+    `1-${area}-${mid}-${rest}`,
+  ].filter((candidate) => candidate.length > 0))];
+}
+
+function normalizeEmail(value: unknown): string {
+  return String(value ?? "").trim().toLowerCase();
+}
+
+function escapeIlikeExact(value: string): string {
+  return value.replace(/\\/g, "\\\\").replace(/%/g, "\\%").replace(/_/g, "\\_");
+}
+
+const RELAY_UNKNOWN_PHONE =
+  "I can only text a number we already have on file. Could you confirm the phone number we have for you, or I can have someone from Harris Boat Works follow up?";
+const RELAY_UNKNOWN_EMAIL =
+  "I can only email an address we already have on file. Could you confirm the email we have for you, or I can have someone from Harris Boat Works follow up?";
+const RELAY_RATE_LIMITED =
+  "I've already sent a few messages your way. Please give us a few minutes, or I can have someone from the team follow up.";
+
+async function isKnownCustomerPhone(
+  supabase: { from: (table: string) => any },
+  phone: unknown,
+): Promise<boolean> {
+  const candidates = phoneLookupCandidates(phone);
+  if (!candidates.length) return false;
+  const { data, error } = await supabase
+    .from("customer_quotes")
+    .select("id")
+    .in("customer_phone", candidates)
+    .limit(1);
+  return !error && Array.isArray(data) && data.length > 0;
+}
+
+async function isKnownCustomerEmail(
+  supabase: { from: (table: string) => any },
+  email: unknown,
+): Promise<boolean> {
+  const key = normalizeEmail(email);
+  if (!key || !key.includes("@")) return false;
+  const { data, error } = await supabase
+    .from("customer_quotes")
+    .select("id")
+    .ilike("customer_email", escapeIlikeExact(key))
+    .limit(1);
+  return !error && Array.isArray(data) && data.length > 0;
+}
+
+async function allowRelay(
+  req: Request,
+  opts: { actionPrefix: string; identifier: string; recipientMax: number; ipMax: number },
+): Promise<boolean> {
+  const ipOk = await checkRateLimit(req, {
+    action: `${opts.actionPrefix}_ip`,
+    maxAttempts: opts.ipMax,
+    windowMinutes: 60,
+    failClosed: true,
+  });
+  if (!ipOk) return false;
+  return await checkRateLimit(req, {
+    identifier: opts.identifier,
+    action: `${opts.actionPrefix}_recipient`,
+    maxAttempts: opts.recipientMax,
+    windowMinutes: 60,
+    failClosed: true,
+  });
+}
+
 // Tool execution handlers
-async function executeTool(toolName: string, args: Record<string, unknown>): Promise<{ content: { type: string; text: string }[] }> {
+async function executeTool(
+  toolName: string,
+  args: Record<string, unknown>,
+  req: Request,
+): Promise<{ content: { type: string; text: string }[] }> {
   const supabase = getSupabase();
   
   switch (toolName) {
@@ -577,6 +683,17 @@ ${motor1.horsepower > motor2.horsepower ? `The ${motor1.model_display} has more 
     }
     
     case "send_motor_photos": {
+      const photosAllowed = await allowRelay(req, {
+        actionPrefix: "elevenlabs_mcp_send_motor_photos",
+        identifier: lastTenPhoneDigits(args.customer_phone) || "unknown",
+        recipientMax: 6,
+        ipMax: 60,
+      });
+      if (!photosAllowed) return mcpText(RELAY_RATE_LIMITED);
+      if (!await isKnownCustomerPhone(supabase, args.customer_phone)) {
+        return mcpText(RELAY_UNKNOWN_PHONE);
+      }
+
       // Check if SMS is configured before attempting
       const twilioSid = Deno.env.get("TWILIO_ACCOUNT_SID");
       const twilioToken = Deno.env.get("TWILIO_AUTH_TOKEN");
@@ -623,6 +740,17 @@ ${motor1.horsepower > motor2.horsepower ? `The ${motor1.model_display} has more 
     }
     
     case "send_motor_info_email": {
+      const emailAllowed = await allowRelay(req, {
+        actionPrefix: "elevenlabs_mcp_send_motor_info_email",
+        identifier: normalizeEmail(args.customer_email) || "unknown",
+        recipientMax: 8,
+        ipMax: 30,
+      });
+      if (!emailAllowed) return mcpText(RELAY_RATE_LIMITED);
+      if (!await isKnownCustomerEmail(supabase, args.customer_email)) {
+        return mcpText(RELAY_UNKNOWN_EMAIL);
+      }
+
       const customerEmail = args.customer_email as string;
       const customerName = (args.customer_name as string) || "Customer";
       const motorModel = args.motor_model as string;
@@ -1176,9 +1304,12 @@ function handleToolsList() {
   return { tools: TOOLS };
 }
 
-async function handleToolCall(params: { name: string; arguments?: Record<string, unknown> }): Promise<{ content: { type: string; text: string }[] }> {
+async function handleToolCall(
+  params: { name: string; arguments?: Record<string, unknown> },
+  req: Request,
+): Promise<{ content: { type: string; text: string }[] }> {
   console.log(`[MCP] Executing tool: ${params.name}`, params.arguments);
-  return await executeTool(params.name, params.arguments || {});
+  return await executeTool(params.name, params.arguments || {}, req);
 }
 
 serve(async (req) => {
@@ -1208,7 +1339,7 @@ serve(async (req) => {
           break;
 
         case "tools/call":
-          result = await handleToolCall(body.params);
+          result = await handleToolCall(body.params, req);
           break;
 
         case "ping":
