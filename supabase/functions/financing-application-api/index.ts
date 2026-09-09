@@ -6,6 +6,7 @@ import { corsHeaders } from '../_shared/cors.ts';
 import { buildEmail, detailsCard, esc } from '../_shared/email-layout.ts';
 import { isAllowedOrigin, forbiddenOriginResponse } from '../_shared/origin-check.ts';
 import { checkRateLimit, rateLimitedResponse } from '../_shared/rate-limit.ts';
+import { buildPublicApplication } from './public-application.ts';
 import {
   isMatchingSubmittedApplication,
   preserveFinancingOwner,
@@ -192,11 +193,7 @@ serve(async (req: Request): Promise<Response> => {
       }
 
       return json({
-        application: {
-          ...data,
-          applicant_data: stripSin(data.applicant_data as Record<string, unknown>),
-          co_applicant_data: stripSin(data.co_applicant_data as Record<string, unknown> | null),
-        },
+        application: buildPublicApplication(data),
       });
     }
 
