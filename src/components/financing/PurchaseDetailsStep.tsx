@@ -15,6 +15,8 @@ import {
   getFinancingTermOptions,
   getMotorCalculatorApr,
   FINANCING_MINIMUM,
+  isUsableFinancingRate,
+  formatSpecialFinancingLabel,
 } from '@/lib/finance';
 import { FormErrorMessage, FieldValidationIndicator } from './FormErrorMessage';
 import { MobileFormNavigation } from './MobileFormNavigation';
@@ -45,7 +47,9 @@ export function PurchaseDetailsStep() {
       amountToFinance: state.purchaseDetails?.amountToFinance || 0,
       preferredTerm: state.purchaseDetails?.preferredTerm || String(getFinancingTermOptions(state.purchaseDetails?.motorPrice || 0)[1]) as '24' | '36' | '48' | '60' | '72' | '84' | '120' | '180' | '240',
       promoOption: state.purchaseDetails?.promoOption || null,
-      promoRate: state.purchaseDetails?.promoRate || null,
+      promoRate: isUsableFinancingRate(state.purchaseDetails?.promoRate)
+        ? state.purchaseDetails.promoRate
+        : null,
       promoTerm: state.purchaseDetails?.promoTerm || null,
       promoValue: state.purchaseDetails?.promoValue || null,
       promoName: state.purchaseDetails?.promoName || null,
@@ -128,7 +132,7 @@ export function PurchaseDetailsStep() {
 
   // Check if special financing is still eligible
   const isEligibleForSpecialFinancing = amountToFinance >= FINANCING_MINIMUM;
-  const hasSpecialFinancing = isPromoStillActive && promoOption === 'special_financing' && promoRate;
+  const hasSpecialFinancing = isPromoStillActive && promoOption === 'special_financing' && isUsableFinancingRate(promoRate);
 
   // Sync local state with form
   useEffect(() => {
@@ -250,7 +254,7 @@ export function PurchaseDetailsStep() {
       )}
 
       {/* Promo Status Banners */}
-      {isPromoStillActive && promoOption === 'special_financing' && promoRate && (
+      {hasSpecialFinancing && (
         <div className={`rounded-lg p-4 flex items-start gap-3 ${
           isEligibleForSpecialFinancing
             ? 'bg-green-50 border border-green-200'
@@ -263,7 +267,7 @@ export function PurchaseDetailsStep() {
             {isEligibleForSpecialFinancing ? (
               <>
                 <p className="text-sm font-semibold text-green-800">
-                  Special Financing: {promoRate}% APR for {promoTerm} months
+                  Special Financing: {formatSpecialFinancingLabel(Number(promoRate), promoTerm)}
                 </p>
                 <p className="text-xs text-green-700 mt-0.5">
                   Locked in from your Mercury promotion selection

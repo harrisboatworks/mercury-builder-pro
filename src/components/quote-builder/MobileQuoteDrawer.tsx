@@ -6,7 +6,7 @@ import { useQuote } from '@/contexts/QuoteContext';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { useQuoteRunningTotal } from '@/hooks/useQuoteRunningTotal';
-import { calculateMonthlyPayment, DEALERPLAN_FEE, FINANCING_MINIMUM } from '@/lib/finance';
+import { calculateMonthlyPayment, DEALERPLAN_FEE, FINANCING_MINIMUM, isUsableFinancingRate } from '@/lib/finance';
 import { money } from '@/lib/money';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
@@ -49,7 +49,7 @@ export const MobileQuoteDrawer: React.FC<MobileQuoteDrawerProps> = ({ isOpen, on
     if (!displayMotor || total === 0) return null;
 
     const totalWithFee = total + DEALERPLAN_FEE;
-    const promoRate = financingPromo?.rate || null;
+    const promoRate = isUsableFinancingRate(financingPromo?.rate) ? financingPromo.rate : null;
     const { payment: monthly, termMonths, rate } = calculateMonthlyPayment(totalWithFee, promoRate);
 
     return {

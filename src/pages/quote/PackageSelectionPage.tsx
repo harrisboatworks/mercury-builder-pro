@@ -12,7 +12,7 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/comp
 import { useQuote } from '@/contexts/QuoteContext';
 import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
-import { calculateMonthlyPayment, DEALERPLAN_FEE } from '@/lib/finance';
+import { calculateMonthlyPayment, DEALERPLAN_FEE, isUsableFinancingRate } from '@/lib/finance';
 import { calculateQuotePricing, promoEndOfDay } from '@/lib/quote-utils';
 import { resolveAppliedTradeValue } from '@/lib/trade-credit';
 import {
@@ -79,9 +79,9 @@ export default function PackageSelectionPage() {
   const effectivePromoRate = useMemo(() => {
     if (state.selectedPromoOption === 'special_financing') {
       const rates = getSpecialFinancingRates();
-      return rates?.[0]?.rate || null;
+      return isUsableFinancingRate(rates?.[0]?.rate) ? rates[0].rate : null;
     }
-    return promo?.rate || null;
+    return isUsableFinancingRate(promo?.rate) ? promo.rate : null;
   }, [state.selectedPromoOption, getSpecialFinancingRates, promo?.rate]);
 
   // Create promo message for nudge bars
@@ -89,7 +89,7 @@ export default function PackageSelectionPage() {
     switch (state.selectedPromoOption) {
       case 'special_financing': {
         const rates = getSpecialFinancingRates();
-        return `Keeps ${rates?.[0]?.rate || 2.99}% APR`;
+        return `Keeps ${isUsableFinancingRate(rates?.[0]?.rate) ? rates[0].rate : 2.99}% APR`;
       }
       case 'no_payments':
         return 'Keeps 6 Mo. No Payments';
@@ -515,7 +515,7 @@ export default function PackageSelectionPage() {
                   options={packages}
                   selectedId={selectedPackage}
                   onSelect={handlePackageSelect}
-                  promoRate={promo?.rate || null}
+                  promoRate={isUsableFinancingRate(promo?.rate) ? promo.rate : null}
                   showUpgradeDeltas={true}
                   revealComplete={true}
                   variant="dark"

@@ -5,6 +5,7 @@ import { CountdownTimer } from '@/components/ui/countdown-timer';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { getAppliedPromotion, getWarrantyDisplayFromAppliedPromotion } from '@/lib/warranty-display';
 import { cn } from '@/lib/utils';
+import { isUsableFinancingRate } from '@/lib/finance';
 import mercuryLogo from '@/assets/mercury-logo.png';
 
 type PromoOptionType = 'no_payments' | 'special_financing' | 'cash_rebate' | null;
@@ -57,7 +58,7 @@ export function PromoSelectionBadge({
         return 'Buy Now, Pay Later';
       case 'special_financing':
         const rates = getSpecialFinancingRates();
-        const lowestRate = rates?.[0]?.rate || 2.99;
+        const lowestRate = isUsableFinancingRate(rates?.[0]?.rate) ? rates[0].rate : 2.99;
         return `${lowestRate}% APR`;
       case 'cash_rebate':
         const rebate = getRebateForHP(motorHP) || 250;

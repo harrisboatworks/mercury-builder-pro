@@ -22,6 +22,7 @@ import { SuccessConfetti } from './SuccessConfetti';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { trackClaritySubmission } from '@/lib/analytics';
 import { submitFinancingApplication } from '@/lib/financingApplicationApi';
+import { formatSpecialFinancingLabel, isUsableFinancingRate } from '@/lib/finance';
 
 export function ReviewSubmitStep() {
   const { state, dispatch, clearStoredData } = useFinancing();
@@ -327,7 +328,8 @@ export function ReviewSubmitStep() {
                           <>${state.purchaseDetails.promoSavings?.toLocaleString('en-CA')} CAD factory rebate<br /></>}
                         {state.purchaseDetails.promoOption === 'no_payments' && noPaymentsSummary}
                         {state.purchaseDetails.promoOption === 'special_financing' &&
-                          `${state.purchaseDetails.promoRate}% APR for ${state.purchaseDetails.promoTerm} months`}
+                          isUsableFinancingRate(state.purchaseDetails.promoRate) &&
+                          formatSpecialFinancingLabel(state.purchaseDetails.promoRate, state.purchaseDetails.promoTerm)}
                         {state.purchaseDetails.promoOption === 'cash_rebate' &&
                           `${state.purchaseDetails.promoValue}`}
                       </span>

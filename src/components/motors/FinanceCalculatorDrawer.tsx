@@ -22,6 +22,7 @@ import {
   calculatePaymentWithFrequency,
   DEALERPLAN_FEE,
   getMotorCalculatorApr,
+  isUsableFinancingRate,
   type PaymentFrequency,
 } from '@/lib/finance';
 import { DollarSign, Calculator, Sparkles } from 'lucide-react';
@@ -53,7 +54,7 @@ export function FinanceCalculatorDrawer({ open, onOpenChange, motor }: FinanceCa
   const effectivePromoRate = useMemo(() => {
     if (state.selectedPromoOption === 'special_financing') {
       const rates = getSpecialFinancingRates();
-      return rates?.[0]?.rate || null;
+      return isUsableFinancingRate(rates?.[0]?.rate) ? rates[0].rate : null;
     }
     return null; // Use the current standing Mercury rate below
   }, [state.selectedPromoOption, getSpecialFinancingRates]);
@@ -237,7 +238,7 @@ export function FinanceCalculatorDrawer({ open, onOpenChange, motor }: FinanceCa
             </div>
 
             {/* Promo Alert - Shows based on selected promo option */}
-            {state.selectedPromoOption === 'special_financing' && effectivePromoRate && (
+            {state.selectedPromoOption === 'special_financing' && isUsableFinancingRate(effectivePromoRate) && (
               <div className="p-3 bg-primary/10 rounded-lg text-sm border border-primary/20">
                 <div className="flex items-center gap-2 font-medium">
                   <Sparkles className="w-4 h-4 text-primary" />

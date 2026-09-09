@@ -129,6 +129,34 @@ export const formatFinancingRatePercent = (rate?: number): string => {
   return `${r.toFixed(2)}%`;
 };
 
+/**
+ * True for a real APR, including a genuine 0% promotional rate.
+ * Truthiness checks treat 0 as missing and silently fall back to the standing rate.
+ */
+export const isUsableFinancingRate = (
+  rate: number | null | undefined,
+): rate is number =>
+  typeof rate === 'number' && Number.isFinite(rate) && rate >= 0;
+
+export const firstUsableFinancingRate = (
+  ...candidates: Array<number | null | undefined>
+): number | null => {
+  for (const candidate of candidates) {
+    if (isUsableFinancingRate(candidate)) return candidate;
+  }
+  return null;
+};
+
+export const formatSpecialFinancingLabel = (
+  rate: number,
+  termMonths?: number | null,
+): string => {
+  const apr = `${rate}% APR`;
+  return typeof termMonths === 'number' && Number.isFinite(termMonths)
+    ? `${apr} for ${termMonths} months`
+    : apr;
+};
+
 const PRICING_ASOF_MONTHS = [
   'January', 'February', 'March', 'April', 'May', 'June',
   'July', 'August', 'September', 'October', 'November', 'December',

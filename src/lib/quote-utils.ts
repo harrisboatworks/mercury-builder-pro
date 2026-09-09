@@ -49,7 +49,11 @@ export function calculateMonthly(
   termMonths: number = 60
 ): MonthlyPayment {
   const monthlyRate = rate / 100 / 12;
-  const monthlyPayment = amount * (monthlyRate * Math.pow(1 + monthlyRate, termMonths)) / (Math.pow(1 + monthlyRate, termMonths) - 1);
+  // Same convention as finance.calculatePaymentWithFrequency: a 0% period
+  // rate is principal / periods. The amortization formula is 0/0 at 0%.
+  const monthlyPayment = monthlyRate === 0
+    ? amount / termMonths
+    : amount * (monthlyRate * Math.pow(1 + monthlyRate, termMonths)) / (Math.pow(1 + monthlyRate, termMonths) - 1);
   const totalAmount = monthlyPayment * termMonths;
   const totalInterest = totalAmount - amount;
   
