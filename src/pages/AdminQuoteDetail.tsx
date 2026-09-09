@@ -199,31 +199,56 @@ const AdminQuoteDetail = () => {
         changes.trade_in_override = { old: tradeIn.overrideValue || null, new: overrideVal };
       }
 
-      const { error } = await supabase
-        .from('customer_quotes')
-        .update({
-          tradein_value_final: finalTradeValue,
-          final_price: newFinalPrice,
-          quote_data: updatedQuoteData,
-          last_modified_at: new Date().toISOString(),
-          last_modified_by: user.id,
-        })
-        .eq('id', q.id);
-      if (error) throw error;
+      if (q._source === 'saved_quotes') {
+        const { error } = await supabase
+          .from('saved_quotes')
+          .update({ quote_state: updatedQuoteData })
+          .eq('id', q.id);
+        if (error) throw error;
+      } else {
+        const { error } = await supabase
+          .from('customer_quotes')
+          .update({
+            tradein_value_final: finalTradeValue,
+            final_price: newFinalPrice,
+            quote_data: updatedQuoteData,
+            last_modified_at: new Date().toISOString(),
+            last_modified_by: user.id,
+          })
+          .eq('id', q.id);
+        if (error) throw error;
 
-      // Log change
-      await supabase.from('quote_change_log').insert({
-        quote_id: q.id,
-        changed_by: user.id,
-        change_type: clearOverride ? 'trade_in_clear' : 'trade_in_override',
-        changes,
-        notes: clearOverride ? 'Cleared trade-in override, reverted to formula estimate' : `Trade-in overridden to $${overrideVal?.toLocaleString()}`,
-      });
+        // quote_change_log.quote_id references customer_quotes only.
+        const { error: changeLogError } = await supabase.from('quote_change_log').insert({
+          quote_id: q.id,
+          changed_by: user.id,
+          change_type: clearOverride ? 'trade_in_clear' : 'trade_in_override',
+          changes,
+          notes: clearOverride ? 'Cleared trade-in override, reverted to formula estimate' : `Trade-in overridden to $${overrideVal?.toLocaleString()}`,
+        });
+        if (changeLogError) {
+          toast({
+            title: 'Change log not saved',
+            description: 'The trade-in was updated, but the change history row was not. Refresh and confirm the value before editing again.',
+            variant: 'destructive',
+          });
+        }
 
-      // Dual-write to saved_quotes if exists (best-effort)
-      try {
-        await (supabase as any).from('saved_quotes').update({ quote_data: updatedQuoteData }).eq('customer_quote_id', q.id);
-      } catch { /* ignore if saved_quotes doesn't have this record */ }
+        // Dual-write is best-effort: many leads have no saved_quotes copy.
+        // saved_quotes stores quote_state (not quote_data) and links via
+        // quote_state.customerQuoteId (there is no customer_quote_id column).
+        const { error: savedQuoteError } = await supabase
+          .from('saved_quotes')
+          .update({ quote_state: updatedQuoteData })
+          .contains('quote_state', { customerQuoteId: q.id });
+        if (savedQuoteError) {
+          toast({
+            title: 'Saved quote copy not updated',
+            description: 'The lead was saved, but the saved-quote copy was not. Refresh this page and try again, or open the saved quote directly.',
+            variant: 'destructive',
+          });
+        }
+      }
 
       // Update local state
       setQ(prev => prev ? {

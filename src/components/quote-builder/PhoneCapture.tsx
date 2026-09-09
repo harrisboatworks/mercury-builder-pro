@@ -16,6 +16,19 @@ interface PhoneCaptureProps {
   savedQuoteId?: string;
 }
 
+const PHONE_SAVE_FAILED = {
+  title: 'Could not save phone number',
+  description: 'We could not save your phone number. Please try again, or call us at (905) 342-2153.',
+  variant: 'destructive' as const,
+};
+
+function asQuoteState(value: unknown): Record<string, unknown> {
+  if (value && typeof value === 'object' && !Array.isArray(value)) {
+    return value as Record<string, unknown>;
+  }
+  return {};
+}
+
 export function PhoneCapture({ open, onOpenChange, savedQuoteId }: PhoneCaptureProps) {
   const [phone, setPhone] = useState('');
   const [saving, setSaving] = useState(false);
@@ -31,47 +44,71 @@ export function PhoneCapture({ open, onOpenChange, savedQuoteId }: PhoneCaptureP
 
     try {
       const cleanPhone = phone.replace(/\D/g, '');
+      let persisted = false;
 
-      // Update saved_quotes if we have an ID
       if (savedQuoteId) {
-        await supabase
-          .from('saved_quotes')
-          .update({ quote_state: supabase.rpc ? undefined : undefined })
-          .eq('id', savedQuoteId);
-        
-        // Actually update via raw, just store phone in the quote_state jsonb
-        const { data: existing } = await (supabase as any)
+        const { data: existing, error: loadError } = await supabase
           .from('saved_quotes')
           .select('quote_state')
           .eq('id', savedQuoteId)
-          .single();
-        
-        if (existing?.quote_state) {
-          const updatedState = { ...existing.quote_state, customerPhone: cleanPhone };
-          await (supabase as any)
-            .from('saved_quotes')
-            .update({ quote_state: updatedState })
-            .eq('id', savedQuoteId);
+          .maybeSingle();
+
+        if (loadError || !existing) {
+          toast(PHONE_SAVE_FAILED);
+          return;
         }
+
+        const { error: quoteError } = await supabase
+          .from('saved_quotes')
+          .update({
+            quote_state: { ...asQuoteState(existing.quote_state), customerPhone: cleanPhone },
+          })
+          .eq('id', savedQuoteId);
+
+        if (quoteError) {
+          toast(PHONE_SAVE_FAILED);
+          return;
+        }
+        persisted = true;
       }
 
-      // Update profile phone
       if (user) {
-        await supabase
+        const { error: profileError } = await supabase
           .from('profiles')
           .update({ phone: cleanPhone })
           .eq('user_id', user.id);
+
+        if (profileError) {
+          toast({
+            title: PHONE_SAVE_FAILED.title,
+            description: persisted
+              ? 'Your quote was updated, but we could not save the number to your profile. Please try again, or call us at (905) 342-2153.'
+              : PHONE_SAVE_FAILED.description,
+            variant: 'destructive',
+          });
+          return;
+        }
+        persisted = true;
       }
 
-      // Notify admin
-      const userName = user?.user_metadata?.full_name || user?.user_metadata?.name || 'Customer';
-      supabase.functions.invoke('send-sms', {
+      if (!persisted) {
+        toast(PHONE_SAVE_FAILED);
+        return;
+      }
+
+      // Admin SMS is best-effort. The customer write already succeeded; a
+      // notify failure must not look like the save failed, and must not be
+      // swallowed without a record.
+      const { error: smsError } = await supabase.functions.invoke('send-sms', {
         body: {
           to: 'admin',
-          message: `📱 PHONE CAPTURED!\n\n${userName} added their phone: ${cleanPhone}\nEmail: ${user?.email || 'N/A'}\n\n- Harris Boat Works`,
+          message: `📱 PHONE CAPTURED!\n\n${user?.user_metadata?.full_name || user?.user_metadata?.name || 'Customer'} added their phone: ${cleanPhone}\nEmail: ${user?.email || 'N/A'}\n\n- Harris Boat Works`,
           messageType: 'phone_capture_alert',
         },
-      }).catch(() => {});
+      });
+      if (smsError) {
+        console.error('Phone capture admin SMS failed:', smsError);
+      }
 
       toast({
         title: '✓ Phone saved',
@@ -80,6 +117,7 @@ export function PhoneCapture({ open, onOpenChange, savedQuoteId }: PhoneCaptureP
       onOpenChange(false);
     } catch (err) {
       console.error('Phone capture error:', err);
+      toast(PHONE_SAVE_FAILED);
     } finally {
       setSaving(false);
     }

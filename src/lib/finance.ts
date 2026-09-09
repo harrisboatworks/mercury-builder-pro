@@ -347,11 +347,7 @@ export const calculateMonthly = (amount: number, rate?: number, termMonths = 60)
   return (amount * r) / (1 - Math.pow(1 + r, -termMonths));
 };
 
-export const daysUntil = (iso: string | Date) => {
-  const now = new Date();
-  const end = new Date(iso);
-  return Math.max(0, Math.ceil((end.getTime() - now.getTime()) / (1000 * 60 * 60 * 24)));
-};
+export { daysUntil } from './quote-utils';
 
 export type QuoteData = {
   msrp: number;
