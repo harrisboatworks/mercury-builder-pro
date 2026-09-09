@@ -9,17 +9,17 @@ name: Deploy Supabase edge functions
 # be destructive and irreversible, and this repo has one production project
 # with no staging. Drift watch reports unapplied migrations; humans apply them.
 #
-# Before each deploy, the job READs applied migrations (`supabase migration
-# list --linked`, preferring --output-format json, using the existing token
-# and the project ref from SUPABASE_PROJECT_REF or supabase/config.toml).
-# A function is skipped when a newly required migration matches neither an
-# applied version nor an applied name. MCP apply stamps its own ledger
-# version, so name is the durable match. The pinned CLI list does not emit
-# names; DEPLOY_TREAT_APPLIED is the versions-only escape hatch so a
-# function cannot stay undeployable after a successful MCP apply. Other
-# functions in the same run still deploy. If the applied list cannot be
-# read, functions WITH required migrations are skipped, functions WITHOUT
-# them still deploy, and the job fails if anything was skipped.
+# Before each deploy, the job READs applied migrations from the Management
+# API (`GET /v1/projects/{ref}/database/migrations`) with SUPABASE_ACCESS_TOKEN
+# and the project ref from SUPABASE_PROJECT_REF or supabase/config.toml.
+# That listing includes names. A function is skipped when a newly required
+# migration matches neither an applied version nor an applied name. MCP
+# apply stamps its own ledger version, so name is the durable match. If
+# the Management API call fails, the pinned CLI list is the fallback
+# (versions only): migration-dependent functions skip because a name match
+# is impossible. Other functions in the same run still deploy. If neither
+# source answers, functions WITH required migrations are skipped, functions
+# WITHOUT them still deploy, and the job fails if anything was skipped.
 #
 # Inert until repository secret SUPABASE_ACCESS_TOKEN exists. A missing
 # secret skips cleanly (green). A real CLI/deploy failure fails the job
@@ -32,10 +32,6 @@ on:
     inputs:
       function_name:
         description: Optional single function slug to deploy (leave empty to deploy functions changed in HEAD^..HEAD)
-        required: false
-        type: string
-      treat_applied:
-        description: Comma-separated migration names (filename after the timestamp) to treat as applied. Use after an MCP apply, whose ledger version does not match the filename.
         required: false
         type: string
 
@@ -98,5 +94,4 @@ jobs:
           DEPLOY_FROM: ${{ github.event.before }}
           DEPLOY_TO: ${{ github.sha }}
           DEPLOY_FUNCTION: ${{ github.event.inputs.function_name }}
-          DEPLOY_TREAT_APPLIED: ${{ github.event.inputs.treat_applied }}
         run: node scripts/deploy-supabase-functions.mjs

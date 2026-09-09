@@ -7,17 +7,17 @@
  * Deploys each slug with the Supabase CLI, continues after individual
  * failures, then exits 1 if any failed.
  *
- * Before deploy, reads applied migrations (`supabase migration list
- * --linked`, preferring `--output-format json` / `-o json`, falling back
- * to the table). A function is skipped when a newly required migration
- * matches neither an applied version nor an applied name. MCP apply
- * stamps its own ledger version, so name is the durable match. The
- * pinned CLI list does not emit names; `DEPLOY_TREAT_APPLIED` is the
- * versions-only escape hatch so a function cannot stay undeployable
- * after a successful MCP apply. That skip fails the job. If the applied
- * list cannot be read, only functions that require migrations are
- * skipped; functions with an empty requiredMigrations list still deploy.
- * The job fails if anything was skipped.
+ * Before deploy, reads applied migrations from the Management API
+ * (`GET /v1/projects/{ref}/database/migrations`) — the same endpoint
+ * drift-watch uses. That listing includes names. A function is skipped
+ * when a newly required migration matches neither an applied version
+ * nor an applied name. MCP apply stamps its own ledger version, so name
+ * is the durable match. If the Management API call fails, the pinned
+ * CLI list is the fallback (JSON, then table). That listing has versions
+ * only, so a name match is impossible and migration-dependent functions
+ * are skipped. If neither source answers, only functions that require
+ * migrations are skipped; functions with an empty requiredMigrations
+ * list still deploy. The job fails if anything was skipped.
  *
  * Never applies migrations. Never prints secret values.
  *
@@ -36,6 +36,7 @@ import { execFileSync } from 'node:child_process';
 import { existsSync, readdirSync, readFileSync, realpathSync, statSync, writeFileSync } from 'node:fs';
 import { join, relative, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { listAppliedMigrationsFromManagementApi } from './lib/supabase-management-api.mjs';
 import {
   SHARED_SLUG,
   appliedRowsHaveNames,
@@ -44,7 +45,6 @@ import {
   deployTargetsFromDiff,
   filesByFunctionSlug,
   isZeroSha,
-  mergeTreatAppliedRows,
   parseNameStatusZ,
   requiredMigrationsForSlug,
   toPosix,
@@ -275,12 +275,48 @@ function appliedRowVersion(row) {
   return '';
 }
 
-export function formatAppliedMigrationsReadLine(appliedRows) {
+export function formatAppliedMigrationsReadLine(appliedRows, source) {
   const versions = (Array.isArray(appliedRows) ? appliedRows : [])
     .map(appliedRowVersion)
     .filter(Boolean);
   const latest = versions.length ? versions.reduce((a, b) => (a > b ? a : b)) : 'none';
-  return `applied migrations read: ${versions.length} versions (latest ${latest})`;
+  const base = `applied migrations read: ${versions.length} versions (latest ${latest})`;
+  if (source === 'management-api') return `${base} via Management API`;
+  if (source === 'cli-fallback') return `${base} via CLI fallback`;
+  return base;
+}
+
+export async function readAppliedMigrationsWithFallback({
+  listFromManagementApi,
+  listFromCli,
+} = {}) {
+  if (typeof listFromManagementApi !== 'function') {
+    throw new Error('Management API applied-migrations reader is missing');
+  }
+  try {
+    const rows = await listFromManagementApi();
+    if (!Array.isArray(rows)) {
+      throw new Error('Management API listing was not an array');
+    }
+    return { rows, source: 'management-api' };
+  } catch (managementError) {
+    if (typeof listFromCli !== 'function') {
+      throw managementError;
+    }
+    try {
+      const rows = await listFromCli();
+      if (!Array.isArray(rows)) {
+        throw new Error('CLI listing was not an array');
+      }
+      return { rows, source: 'cli-fallback' };
+    } catch (cliError) {
+      const managementDetail = managementError instanceof Error ? managementError.message : String(managementError);
+      const cliDetail = cliError instanceof Error ? cliError.message : String(cliError);
+      throw new Error(
+        `could not read applied migrations from Management API (${managementDetail}) or CLI (${cliDetail})`,
+      );
+    }
+  }
 }
 
 function appliedSetFromLookup(appliedRows) {
@@ -297,9 +333,12 @@ function lookupFailureSkipReason(slug, detail, env) {
   );
 }
 
-export function deployWithMigrationGate({
+export async function deployWithMigrationGate({
   functions = [],
   listAppliedVersions,
+  listFromManagementApi,
+  listFromCli,
+  appliedSource,
   deployOne,
   env = process.env,
   log,
@@ -324,32 +363,50 @@ export function deployWithMigrationGate({
         return lookupFailureSkipReason(slug, detail, env);
       }),
       appliedLookupFailed: true,
+      appliedSource: null,
     };
   };
 
   let appliedRows;
+  let source = appliedSource || null;
   try {
-    appliedRows = listAppliedVersions();
+    if (typeof listFromManagementApi === 'function') {
+      const lookup = await readAppliedMigrationsWithFallback({
+        listFromManagementApi,
+        listFromCli,
+      });
+      appliedRows = lookup.rows;
+      source = lookup.source;
+    } else {
+      appliedRows = await listAppliedVersions();
+    }
   } catch (error) {
     return degradeOnUnreadableList(error);
   }
 
   let appliedSet;
   try {
-    appliedSet = appliedSetFromLookup(mergeTreatAppliedRows(appliedRows, env.DEPLOY_TREAT_APPLIED));
+    appliedSet = appliedSetFromLookup(appliedRows);
   } catch (error) {
     return degradeOnUnreadableList(error);
   }
 
-  writeDeployLog(redactSecrets(formatAppliedMigrationsReadLine(appliedRows), env), log);
-  const versionsOnly = !appliedRowsHaveNames(appliedRows);
+  if (!source) {
+    source = appliedRowsHaveNames(appliedRows) ? 'management-api' : null;
+  }
+
+  writeDeployLog(redactSecrets(formatAppliedMigrationsReadLine(appliedRows, source), env), log);
 
   return {
     ...deployTargets((slug) => {
       const target = targets.find((item) => item.slug === slug);
-      return blockedDeployReason(slug, target?.requiredMigrations, appliedSet, { versionsOnly });
+      if (source === 'cli-fallback' && target?.requiredMigrations?.length) {
+        return blockedDeployReason(slug, target.requiredMigrations, new Set(), { source });
+      }
+      return blockedDeployReason(slug, target?.requiredMigrations, appliedSet, { source });
     }),
     appliedLookupFailed: false,
+    appliedSource: source,
   };
 }
 
@@ -588,7 +645,7 @@ function readRangeTargets(files, from, to) {
   }
 }
 
-export function runDeploy({ env = process.env, deployOne, listAppliedVersions } = {}) {
+export async function runDeploy({ env = process.env, deployOne, listAppliedVersions } = {}) {
   const files = {
     ...loadTextTree('supabase/functions'),
     ...loadTextTree('supabase/migrations'),
@@ -695,10 +752,18 @@ export function runDeploy({ env = process.env, deployOne, listAppliedVersions } 
       }
     });
 
-  const { succeeded, failed } = deployWithMigrationGate({
+  const { succeeded, failed } = await deployWithMigrationGate({
     functions: targets.functions,
-    listAppliedVersions:
-      listAppliedVersions || (() => defaultListAppliedVersions({ cli, projectRef, env })),
+    ...(listAppliedVersions
+      ? { listAppliedVersions }
+      : {
+          listFromManagementApi: () =>
+            listAppliedMigrationsFromManagementApi({
+              token: env.SUPABASE_ACCESS_TOKEN,
+              projectRef,
+            }),
+          listFromCli: () => defaultListAppliedVersions({ cli, projectRef, env }),
+        }),
     deployOne: runOne,
     env,
   });

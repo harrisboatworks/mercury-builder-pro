@@ -14,6 +14,13 @@ import { execFileSync } from 'node:child_process';
 import { existsSync, readdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';
 import { join, relative } from 'node:path';
 import {
+  MANAGEMENT_API,
+  MANAGEMENT_API_TIMEOUT_MS,
+  fetchJson,
+  pickFunctionRows,
+  pickMigrationRows,
+} from './lib/supabase-management-api.mjs';
+import {
   buildDriftReport,
   filesByFunctionSlug,
   formatDriftMarkdown,
@@ -25,10 +32,9 @@ import {
 } from './lib/supabase-deploy-required.mjs';
 
 const ROOT = process.cwd();
-const MANAGEMENT_API = 'https://api.supabase.com/v1';
 const ISSUE_TITLE = 'Supabase deploy drift';
 const ISSUE_MARKER = '<!-- supabase-drift-watch -->';
-const TIMEOUT_MS = Number(process.env.SUPABASE_DRIFT_TIMEOUT_MS || 20_000);
+const TIMEOUT_MS = MANAGEMENT_API_TIMEOUT_MS;
 
 function git(args) {
   return execFileSync('git', args, {
@@ -75,62 +81,6 @@ function writeSummary(markdown) {
   if (process.env.GITHUB_STEP_SUMMARY) {
     writeFileSync(process.env.GITHUB_STEP_SUMMARY, text, { flag: 'a' });
   }
-}
-
-async function fetchJson(url, headers) {
-  const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), TIMEOUT_MS);
-  try {
-    const response = await fetch(url, { headers, signal: controller.signal });
-    const text = await response.text();
-    if (!response.ok) {
-      return { ok: false, status: response.status, data: null };
-    }
-    let data = null;
-    try {
-      data = JSON.parse(text);
-    } catch {
-      return { ok: false, status: response.status, data: null };
-    }
-    return { ok: true, status: response.status, data };
-  } catch {
-    return { ok: false, status: 0, data: null };
-  } finally {
-    clearTimeout(timer);
-  }
-}
-
-function pickFunctionRows(data) {
-  const rows = Array.isArray(data) ? data : Array.isArray(data?.functions) ? data.functions : null;
-  if (!rows) return null;
-  const out = [];
-  for (const row of rows) {
-    if (!row || typeof row !== 'object') continue;
-    const slug = typeof row.slug === 'string' && row.slug ? row.slug : typeof row.name === 'string' ? row.name : null;
-    if (!slug) continue;
-    out.push({
-      slug,
-      version: row.version ?? null,
-      updated_at: row.updated_at ?? row.updatedAt ?? null,
-    });
-  }
-  return out;
-}
-
-function pickMigrationRows(data) {
-  const rows = Array.isArray(data) ? data : Array.isArray(data?.migrations) ? data.migrations : null;
-  if (!rows) return null;
-  const out = [];
-  for (const row of rows) {
-    if (typeof row === 'string' && row) {
-      out.push(row);
-      continue;
-    }
-    if (row && typeof row === 'object' && typeof row.version === 'string' && row.version) {
-      out.push({ version: row.version, name: typeof row.name === 'string' ? row.name : undefined });
-    }
-  }
-  return out;
 }
 
 function latestCommitAt(paths) {

@@ -17,11 +17,9 @@ import {
   formatTimeBehind,
   isCommitNewerThanDeploy,
   isMigrationApplied,
-  mergeTreatAppliedRows,
   MIGRATION_WATCH_MIN_VERSION,
   migrationNameFromFilename,
   ORDERING_UNKNOWN,
-  parseTreatAppliedMigrations,
   parseNameStatusZ,
   requiredMigrationsForSlug,
   resolveImportPath,
@@ -565,10 +563,7 @@ describe('drift migration matching rule', () => {
     );
   });
 
-  it('parses treat-applied override tokens without treating a newer latest version as applied', () => {
-    expect(parseTreatAppliedMigrations('serialize_quote_email_delivery_failed_retry_claim')).toEqual([
-      'serialize_quote_email_delivery_failed_retry_claim',
-    ]);
+  it('does not treat a newer latest version as applied when the listing has versions only', () => {
     const versionsOnly = appliedVersionSet(['20260909164256', '20260909194905']);
     expect(
       isMigrationApplied(
@@ -576,18 +571,6 @@ describe('drift migration matching rule', () => {
         versionsOnly,
       ),
     ).toBe(false);
-    const withOverride = appliedVersionSet(
-      mergeTreatAppliedRows(
-        ['20260909164256', '20260909194905'],
-        'serialize_quote_email_delivery_failed_retry_claim',
-      ),
-    );
-    expect(
-      isMigrationApplied(
-        'supabase/migrations/20260909193000_serialize_quote_email_delivery_failed_retry_claim.sql',
-        withOverride,
-      ),
-    ).toBe(true);
   });
 
   it('does not report name-matched files or historical versions below the baseline', () => {

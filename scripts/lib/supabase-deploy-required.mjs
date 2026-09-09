@@ -574,30 +574,10 @@ export function appliedVersionSet(applied) {
   return set;
 }
 
-/**
- * Comma/whitespace-separated migration names, stems, or versions that
- * count as applied. Used when the CLI list has versions only: MCP apply
- * stamps a different ledger version than the filename, so a versions-only
- * match stays false after a successful apply.
- */
-export function parseTreatAppliedMigrations(raw) {
-  if (raw == null) return [];
-  return String(raw)
-    .split(/[,|\s]+/)
-    .map((part) => part.trim())
-    .filter(Boolean);
-}
-
 export function appliedRowsHaveNames(appliedRows) {
   return (Array.isArray(appliedRows) ? appliedRows : []).some(
     (row) => row && typeof row === 'object' && String(row.name || '').trim(),
   );
-}
-
-export function mergeTreatAppliedRows(appliedRows, treatAppliedRaw) {
-  const extra = parseTreatAppliedMigrations(treatAppliedRaw);
-  if (!extra.length) return Array.isArray(appliedRows) ? appliedRows : [];
-  return [...(Array.isArray(appliedRows) ? appliedRows : []), ...extra];
 }
 
 export function isMigrationApplied(filePath, appliedSet) {
@@ -637,10 +617,9 @@ export function blockedDeployReason(slug, requiredMigrations, appliedSet, option
   const noun = missing.length === 1 ? 'migration' : 'migrations';
   const verb = missing.length === 1 ? 'is' : 'are';
   let reason = `skipped: newly required ${noun} ${listed} ${verb} not applied in production. This job never applies migrations. Deploying \`${slug}\` would call schema that does not exist yet.`;
-  if (options.versionsOnly) {
-    const names = missing.map((item) => migrationNameFromFilename(item.path)).filter(Boolean);
-    const named = names.length ? names.map((name) => `\`${name}\``).join(', ') : 'the filename stem after the timestamp';
-    reason += ` The applied list has versions only (no names). MCP apply stamps its own ledger version, so a versions-only match can stay false after apply. After you apply the migration, re-run with \`DEPLOY_TREAT_APPLIED\` set to ${named}.`;
+  if (options.source === 'cli-fallback') {
+    reason +=
+      ' This job fell back to the CLI applied list and therefore could not match by name.';
   }
   return reason;
 }
