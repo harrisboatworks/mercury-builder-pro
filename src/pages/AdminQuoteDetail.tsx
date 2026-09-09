@@ -879,7 +879,6 @@ const AdminQuoteDetail = () => {
 
           <QuoteEmailDeliveryHistory
             quoteId={q.id}
-            customerEmail={q.customer_email}
             refreshKey={emailHistoryKey}
           />
 

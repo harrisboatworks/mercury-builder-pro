@@ -1,6 +1,9 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
+import {
+  QUOTE_EMAIL_DELIVERY_READ_RPC,
+} from "../admin-quote-email";
 
 const read = (path: string) => readFileSync(join(process.cwd(), path), "utf8");
 
@@ -16,11 +19,16 @@ describe("admin quote email sender contracts", () => {
     expect(sender).toContain("another copy");
     expect(sender).toContain("quoteNumber: adminQuoteEmailRef(quoteId)");
     expect(sender).toContain("quotePageUrl: `${SITE_URL}/quote/saved/${quoteId}`");
-    expect(sender).toContain("adminConsultationDocument(quoteId, 'admin-email', intent)");
+    expect(sender).toContain("interpretAdminQuoteEmailSendResult(invokeResult)");
+    expect(sender).toContain("describeAdminQuoteEmailSendVerdict(verdict, intent)");
+    expect(sender).toContain("functions.invoke('admin-consultation-document'");
+    expect(sender).toContain("emailIntent: intent");
     expect(sender).not.toContain("pdfUrl:");
     expect(sender).not.toContain("bucketMs");
     expect(sender).not.toContain("Date.now");
     expect(sender).not.toContain("Math.floor");
+    expect(sender).not.toContain("result?.success === false");
+    expect(sender).not.toContain("result?.duplicate");
   });
 
   it("keeps Email Quote as the primary action and Send again behind a confirm", () => {
@@ -39,7 +47,7 @@ describe("admin quote email sender contracts", () => {
 });
 
 describe("admin quote email history contracts", () => {
-  it("reads deliveries by full quote_id and fails closed in the strip", () => {
+  it("reads deliveries by full quote_id through the admin RPC and fails closed in the strip", () => {
     const history = read("src/components/admin/QuoteEmailDeliveryHistory.tsx");
     const page = read("src/pages/AdminQuoteDetail.tsx");
     const migration = read("supabase/migrations/20260815160000_quote_email_delivery_audit.sql");
@@ -48,29 +56,34 @@ describe("admin quote email history contracts", () => {
 
     expect(migration).toContain("CREATE OR REPLACE FUNCTION public.get_quote_email_deliveries_v1(_quote_id uuid)");
     expect(migration).toContain("WHERE quote_id = _quote_id");
+    expect(migration).toContain("AND public.has_role(auth.uid(), 'admin'::public.app_role)");
+    expect(migration).toContain("REVOKE ALL ON TABLE public.quote_email_deliveries FROM PUBLIC, anon, authenticated");
     expect(migration).toContain("ORDER BY created_at DESC");
     expect(migration).not.toContain("WHERE quote_number = _quote_number");
     expect(migration).not.toContain("get_quote_email_deliveries_v1(_quote_number text)");
 
-    expect(history).toContain("get_quote_email_deliveries_v1");
-    expect(history).toContain("_quote_id: quoteId");
-    expect(history).not.toContain("adminQuoteEmailRef(quoteId)");
-    expect(history).not.toContain("_quote_number");
-    expect(history).toContain("no emails sent yet");
-    expect(history).toContain("Email history is unavailable right now. The rest of this quote is still usable.");
+    expect(history).toContain("fetchAdminQuoteEmailDeliveries");
+    expect(history).toContain("ADMIN_QUOTE_EMAIL_HISTORY_SCOPE");
+    expect(history).toContain("ADMIN_QUOTE_EMAIL_HISTORY_EMPTY");
+    expect(history).toContain("ADMIN_QUOTE_EMAIL_HISTORY_UNAVAILABLE");
     expect(history).toContain("sortQuoteEmailDeliveriesNewestFirst(rows)");
-    expect(history).toContain("presentQuoteEmailDelivery(row, customerEmail)");
-    expect(history).toContain("resolveQuoteEmailDisplayRecipient(customerEmail)");
+    expect(history).toContain("presentQuoteEmailDelivery");
+    expect(history).not.toContain("customerEmail");
+    expect(history).not.toContain("To:");
+    expect(history).not.toContain("no emails sent yet");
     expect(history).not.toContain("recipient_sha256");
     expect(history).not.toContain(".from('quote_email_deliveries')");
     expect(history).not.toContain("customer_quotes");
+    expect(history).not.toContain("resolveQuoteEmailDisplayRecipient");
 
     expect(helper).toContain("return quoteId.slice(0, 8).toUpperCase()");
+    expect(helper).toContain(`export const QUOTE_EMAIL_DELIVERY_READ_RPC = "${QUOTE_EMAIL_DELIVERY_READ_RPC}"`);
+    expect(helper).toContain("Do not select the table.");
     expect(delivery).toContain("`${ADMIN_QUOTE_EMAIL_IDEMPOTENCY_PREFIX}:${quoteId}:${emailType}`");
     expect(delivery).toContain("`${ADMIN_QUOTE_EMAIL_IDEMPOTENCY_PREFIX}:${quoteId}:${emailType}:resend:");
 
     expect(page).toContain("<QuoteEmailDeliveryHistory");
-    expect(page).toContain("customerEmail={q.customer_email}");
+    expect(page).toContain("quoteId={q.id}");
     expect(page).toContain("onDeliverySettled");
     expect(page).not.toContain("notes: `Email sent:");
   });

@@ -4,19 +4,21 @@ import { Badge } from '@/components/ui/badge';
 import { Mail } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
 import {
+  ADMIN_QUOTE_EMAIL_HISTORY_EMPTY,
+  ADMIN_QUOTE_EMAIL_HISTORY_SCOPE,
+  ADMIN_QUOTE_EMAIL_HISTORY_UNAVAILABLE,
+  fetchAdminQuoteEmailDeliveries,
   presentQuoteEmailDelivery,
-  resolveQuoteEmailDisplayRecipient,
   sortQuoteEmailDeliveriesNewestFirst,
   type QuoteEmailDeliveryRecord,
 } from '@/lib/admin-quote-email';
 
 interface Props {
   quoteId: string;
-  customerEmail: string;
   refreshKey?: number;
 }
 
-const QuoteEmailDeliveryHistory = ({ quoteId, customerEmail, refreshKey = 0 }: Props) => {
+const QuoteEmailDeliveryHistory = ({ quoteId, refreshKey = 0 }: Props) => {
   const [rows, setRows] = useState<QuoteEmailDeliveryRecord[]>([]);
   const [loadState, setLoadState] = useState<'loading' | 'ready' | 'error'>('loading');
 
@@ -24,24 +26,17 @@ const QuoteEmailDeliveryHistory = ({ quoteId, customerEmail, refreshKey = 0 }: P
     let cancelled = false;
     const load = async () => {
       setLoadState('loading');
-      try {
-        const { data, error } = await supabase.rpc(
-          'get_quote_email_deliveries_v1' as never,
-          { _quote_id: quoteId } as never,
-        );
-        if (cancelled) return;
-        if (error) {
-          setRows([]);
-          setLoadState('error');
-          return;
-        }
-        setRows((Array.isArray(data) ? data : []) as QuoteEmailDeliveryRecord[]);
-        setLoadState('ready');
-      } catch {
-        if (cancelled) return;
+      const result = await fetchAdminQuoteEmailDeliveries(quoteId, (name, args) =>
+        supabase.rpc(name as never, args as never),
+      );
+      if (cancelled) return;
+      if (!result.ok) {
         setRows([]);
         setLoadState('error');
+        return;
       }
+      setRows(result.rows);
+      setLoadState('ready');
     };
     load();
     return () => {
@@ -49,8 +44,7 @@ const QuoteEmailDeliveryHistory = ({ quoteId, customerEmail, refreshKey = 0 }: P
     };
   }, [quoteId, refreshKey]);
 
-  const presented = sortQuoteEmailDeliveriesNewestFirst(rows)
-    .map((row) => presentQuoteEmailDelivery(row, customerEmail));
+  const presented = sortQuoteEmailDeliveriesNewestFirst(rows).map(presentQuoteEmailDelivery);
 
   return (
     <Card className="p-4">
@@ -59,16 +53,16 @@ const QuoteEmailDeliveryHistory = ({ quoteId, customerEmail, refreshKey = 0 }: P
         Email history
       </h2>
       <p className="text-xs text-muted-foreground mb-3">
-        To: {resolveQuoteEmailDisplayRecipient(customerEmail)}
+        {ADMIN_QUOTE_EMAIL_HISTORY_SCOPE}
       </p>
       {loadState === 'loading' ? (
         <p className="text-sm text-muted-foreground">Loading email history…</p>
       ) : loadState === 'error' ? (
         <p className="text-sm text-muted-foreground">
-          Email history is unavailable right now. The rest of this quote is still usable.
+          {ADMIN_QUOTE_EMAIL_HISTORY_UNAVAILABLE}
         </p>
       ) : presented.length === 0 ? (
-        <p className="text-sm text-muted-foreground italic">no emails sent yet</p>
+        <p className="text-sm text-muted-foreground italic">{ADMIN_QUOTE_EMAIL_HISTORY_EMPTY}</p>
       ) : (
         <div className="space-y-2">
           {presented.map((entry) => (
