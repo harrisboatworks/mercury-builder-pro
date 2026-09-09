@@ -5,13 +5,18 @@ import {
   formatAppliedMigrationsReadLine,
   formatFunctionsDeployMarkdown,
   isSafeFunctionSlug,
+  isUnsupportedMigrationListOutputFlag,
   parseAppliedVersionsFromMigrationList,
   projectRefFromConfig,
+  readAppliedMigrationsFromCli,
+  readAppliedMigrationsWithFallback,
   redactSecrets,
   resolveForcedSlug,
   resolveProjectRef,
   runDeploy,
 } from '../../scripts/deploy-supabase-functions.mjs';
+import { listAppliedMigrationsFromManagementApi } from '../../scripts/lib/supabase-management-api.mjs';
+import { isMigrationApplied, appliedVersionSet } from '../../scripts/lib/supabase-deploy-required.mjs';
 import {
   projectRefFromConfig as sharedProjectRefFromConfig,
   resolveProjectRef as sharedResolveProjectRef,
@@ -52,9 +57,9 @@ describe('project ref and secret redaction', () => {
     expect(resolveProjectRef).toBe(sharedResolveProjectRef);
   });
 
-  it('still deploys when SUPABASE_PROJECT_REF is unset because config.toml has project_id', () => {
+  it('still deploys when SUPABASE_PROJECT_REF is unset because config.toml has project_id', async () => {
     const seen: string[] = [];
-    const code = runDeploy({
+    const code = await runDeploy({
       env: {
         DEPLOY_FUNCTION: 'send-sms',
         DEPLOY_FROM: 'HEAD',
@@ -112,11 +117,45 @@ describe('deploy batch', () => {
 
 const QUOTE_EMAIL_MIGRATION =
   'supabase/migrations/20260909193000_serialize_quote_email_delivery_failed_retry_claim.sql';
+const QUOTE_EMAIL_AUDIT_MIGRATION =
+  'supabase/migrations/20260815160000_quote_email_delivery_audit.sql';
+
+const MCP_LEDGER_ROWS = [
+  { version: '20260909194905', name: 'serialize_quote_email_delivery_failed_retry_claim' },
+  { version: '20260909164256', name: 'quote_email_delivery_audit' },
+] as const;
+
+const CLI_TABLE_WITHOUT_NAMES = [
+  '        LOCAL      │     REMOTE     │     TIME (UTC)',
+  '  ─────────────────┼────────────────┼──────────────────────',
+  '    20260815160000 │                │ 2026-08-15 16:00:00',
+  '                   │ 20260909164256 │ 2026-09-09 16:42:56',
+  '    20260909193000 │                │ 2026-09-09 19:30:00',
+  '                   │ 20260909194905 │ 2026-09-09 19:49:05',
+].join('\n');
+
+const CLI_JSON_WITH_NAMES = JSON.stringify({
+  message: 'Migrations listed',
+  migrations: [
+    { version: '20260909194905', name: 'serialize_quote_email_delivery_failed_retry_claim' },
+    { remote: '20260909164256', name: 'quote_email_delivery_audit' },
+  ],
+});
+
+const CLI_JSON_VERSIONS_ONLY = JSON.stringify({
+  message: 'Migrations listed',
+  migrations: [
+    { local: '20260815160000', remote: '', time: '2026-08-15 16:00:00' },
+    { local: '', remote: '20260909164256', time: '2026-09-09 16:42:56' },
+    { local: '20260909193000', remote: '', time: '2026-09-09 19:30:00' },
+    { local: '', remote: '20260909194905', time: '2026-09-09 19:49:05' },
+  ],
+});
 
 describe('migration apply-order gate', () => {
-  it('deploys when the required migration is applied', () => {
+  it('deploys when the required migration is applied', async () => {
     const seen: string[] = [];
-    const { succeeded, failed } = deployWithMigrationGate({
+    const { succeeded, failed } = await deployWithMigrationGate({
       functions: [
         {
           slug: 'send-quote-email',
@@ -134,9 +173,9 @@ describe('migration apply-order gate', () => {
     expect(failed).toEqual([]);
   });
 
-  it('skips a function whose required migration is not applied and fails the run', () => {
+  it('skips a function whose required migration is not applied and fails the run', async () => {
     const seen: string[] = [];
-    const { succeeded, failed } = deployWithMigrationGate({
+    const { succeeded, failed } = await deployWithMigrationGate({
       functions: [
         {
           slug: 'send-quote-email',
@@ -158,9 +197,9 @@ describe('migration apply-order gate', () => {
     expect(failed[0].detail).toContain('send-quote-email');
   });
 
-  it('deploys a function with no migration dependency regardless of applied versions', () => {
+  it('deploys a function with no migration dependency regardless of applied versions', async () => {
     const seen: string[] = [];
-    const { succeeded, failed } = deployWithMigrationGate({
+    const { succeeded, failed } = await deployWithMigrationGate({
       functions: [{ slug: 'send-sms', requiredMigrations: [] }],
       listAppliedVersions: () => [],
       deployOne: (slug: string) => {
@@ -173,11 +212,11 @@ describe('migration apply-order gate', () => {
     expect(failed).toEqual([]);
   });
 
-  it('skips a migration-dependent function when the applied-versions lookup throws', () => {
+  it('skips a migration-dependent function when the applied-versions lookup throws', async () => {
     const seen: string[] = [];
     const lines: string[] = [];
     const env = { SUPABASE_ACCESS_TOKEN: 'sbp_secret_value' };
-    const { succeeded, failed, appliedLookupFailed } = deployWithMigrationGate({
+    const { succeeded, failed, appliedLookupFailed } = await deployWithMigrationGate({
       functions: [
         {
           slug: 'send-quote-email',
@@ -210,9 +249,9 @@ describe('migration apply-order gate', () => {
     expect(lines.join('\n')).not.toContain('sbp_secret_value');
   });
 
-  it('deploys a migration-independent function when the applied-versions lookup throws', () => {
+  it('deploys a migration-independent function when the applied-versions lookup throws', async () => {
     const seen: string[] = [];
-    const { succeeded, failed, appliedLookupFailed } = deployWithMigrationGate({
+    const { succeeded, failed, appliedLookupFailed } = await deployWithMigrationGate({
       functions: [{ slug: 'send-sms', requiredMigrations: [] }],
       listAppliedVersions: () => {
         throw new Error('network down');
@@ -228,9 +267,9 @@ describe('migration apply-order gate', () => {
     expect(failed).toEqual([]);
   });
 
-  it('deploys only migration-independent functions when the applied-versions lookup throws', () => {
+  it('deploys only migration-independent functions when the applied-versions lookup throws', async () => {
     const seen: string[] = [];
-    const { succeeded, failed, appliedLookupFailed } = deployWithMigrationGate({
+    const { succeeded, failed, appliedLookupFailed } = await deployWithMigrationGate({
       functions: [
         { slug: 'send-sms', requiredMigrations: [] },
         {
@@ -256,9 +295,9 @@ describe('migration apply-order gate', () => {
     expect(failed.length).toBeGreaterThan(0);
   });
 
-  it('treats empty CLI output as a lookup failure, not an empty applied set', () => {
+  it('treats empty CLI output as a lookup failure, not an empty applied set', async () => {
     const seen: string[] = [];
-    const { failed, appliedLookupFailed } = deployWithMigrationGate({
+    const { failed, appliedLookupFailed } = await deployWithMigrationGate({
       functions: [
         {
           slug: 'send-quote-email',
@@ -278,9 +317,9 @@ describe('migration apply-order gate', () => {
     expect(failed[0].detail).not.toContain('not applied in production');
   });
 
-  it('treats a successful empty applied-versions list as a real answer, not a lookup failure', () => {
+  it('treats a successful empty applied-versions list as a real answer, not a lookup failure', async () => {
     const seen: string[] = [];
-    const { succeeded, failed, appliedLookupFailed } = deployWithMigrationGate({
+    const { succeeded, failed, appliedLookupFailed } = await deployWithMigrationGate({
       functions: [
         {
           slug: 'send-quote-email',
@@ -302,35 +341,46 @@ describe('migration apply-order gate', () => {
     expect(failed[0].detail).not.toContain('could not read applied migrations');
   });
 
-  it('logs applied migration count and latest version without secret material', () => {
+  it('logs applied migration count, latest version, and source without secret material', async () => {
     const lines: string[] = [];
     const env = {
       SUPABASE_ACCESS_TOKEN: 'sbp_secret_value',
       SUPABASE_PROJECT_REF: 'eutsoqdpjurknjsshxes',
     };
-    deployWithMigrationGate({
+    await deployWithMigrationGate({
       functions: [{ slug: 'send-sms', requiredMigrations: [] }],
-      listAppliedVersions: () => [
+      listFromManagementApi: async () => [
         { version: '20260815160000' },
         { version: '20260909193000' },
       ],
+      listFromCli: () => {
+        throw new Error('cli should not run');
+      },
       deployOne: () => ({ ok: true, detail: 'Deployed' }),
       env,
       log: (line: string) => {
         lines.push(line);
       },
     });
-    expect(lines.join('')).toContain('applied migrations read: 2 versions (latest 20260909193000)');
-    expect(formatAppliedMigrationsReadLine([{ version: '20260815160000' }, { version: '20260909193000' }])).toBe(
-      'applied migrations read: 2 versions (latest 20260909193000)',
+    expect(lines.join('')).toContain(
+      'applied migrations read: 2 versions (latest 20260909193000) via Management API',
+    );
+    expect(
+      formatAppliedMigrationsReadLine(
+        [{ version: '20260815160000' }, { version: '20260909193000' }],
+        'management-api',
+      ),
+    ).toBe('applied migrations read: 2 versions (latest 20260909193000) via Management API');
+    expect(formatAppliedMigrationsReadLine([{ version: '20260909194905' }], 'cli-fallback')).toBe(
+      'applied migrations read: 1 versions (latest 20260909194905) via CLI fallback',
     );
     expect(lines.join('\n')).not.toContain('sbp_secret_value');
     expect(lines.join('\n')).not.toContain('eutsoqdpjurknjsshxes');
   });
 
-  it('deploys the unblocked function in a mixed batch and skips the blocked one', () => {
+  it('deploys the unblocked function in a mixed batch and skips the blocked one', async () => {
     const seen: string[] = [];
-    const { succeeded, failed } = deployWithMigrationGate({
+    const { succeeded, failed } = await deployWithMigrationGate({
       functions: [
         { slug: 'send-sms', requiredMigrations: [] },
         {
@@ -349,6 +399,246 @@ describe('migration apply-order gate', () => {
     expect(succeeded.map((item) => item.slug)).toEqual(['send-sms', 'ai-chatbot']);
     expect(failed.map((item) => item.slug)).toEqual(['send-quote-email']);
     expect(failed[0].detail).toContain('20260909193000_serialize_quote_email_delivery_failed_retry_claim.sql');
+  });
+
+  it('treats a migration applied under a different version but the same name as applied', () => {
+    const applied = appliedVersionSet([...MCP_LEDGER_ROWS]);
+    expect(isMigrationApplied(QUOTE_EMAIL_MIGRATION, applied)).toBe(true);
+    expect(isMigrationApplied(QUOTE_EMAIL_AUDIT_MIGRATION, applied)).toBe(true);
+  });
+
+  it('still treats a genuinely absent migration as unapplied', () => {
+    const applied = appliedVersionSet([...MCP_LEDGER_ROWS]);
+    expect(isMigrationApplied('supabase/migrations/20260909199999_absent_from_ledger.sql', applied)).toBe(
+      false,
+    );
+  });
+
+  it('treats a migration applied under a different Management API version but the same name as applied', async () => {
+    const seen: string[] = [];
+    const { succeeded, failed, appliedSource } = await deployWithMigrationGate({
+      functions: [
+        {
+          slug: 'send-quote-email',
+          requiredMigrations: [
+            { path: QUOTE_EMAIL_MIGRATION, version: '20260909193000' },
+            { path: QUOTE_EMAIL_AUDIT_MIGRATION, version: '20260815160000' },
+          ],
+        },
+      ],
+      listFromManagementApi: async () => [...MCP_LEDGER_ROWS],
+      listFromCli: () => {
+        throw new Error('cli should not run');
+      },
+      deployOne: (slug: string) => {
+        seen.push(slug);
+        return { ok: true, detail: 'Deployed' };
+      },
+    });
+    expect(appliedSource).toBe('management-api');
+    expect(seen).toEqual(['send-quote-email']);
+    expect(succeeded.map((item) => item.slug)).toEqual(['send-quote-email']);
+    expect(failed).toEqual([]);
+  });
+
+  it('still treats a genuinely absent Management API ledger row as unapplied', async () => {
+    const seen: string[] = [];
+    const { succeeded, failed } = await deployWithMigrationGate({
+      functions: [
+        {
+          slug: 'send-quote-email',
+          requiredMigrations: [
+            { path: 'supabase/migrations/20260909199999_absent_from_ledger.sql', version: '20260909199999' },
+          ],
+        },
+      ],
+      listFromManagementApi: async () => [...MCP_LEDGER_ROWS],
+      listFromCli: () => {
+        throw new Error('cli should not run');
+      },
+      deployOne: (slug: string) => {
+        seen.push(slug);
+        return { ok: true, detail: 'Deployed' };
+      },
+    });
+    expect(seen).toEqual([]);
+    expect(succeeded).toEqual([]);
+    expect(failed).toHaveLength(1);
+    expect(failed[0].detail).toContain('20260909199999_absent_from_ledger.sql');
+    expect(failed[0].detail).toContain('not applied in production');
+    expect(failed[0].detail).not.toContain('fell back to the CLI');
+    expect(failed[0].detail).not.toContain('DEPLOY_TREAT_APPLIED');
+    expect(failed[0].detail).not.toContain('treat_applied');
+  });
+
+  it('does not treat a newer ledger latest version as applied on a versions-only listing', async () => {
+    const seen: string[] = [];
+    const { succeeded, failed } = await deployWithMigrationGate({
+      functions: [
+        {
+          slug: 'send-quote-email',
+          requiredMigrations: [{ path: QUOTE_EMAIL_MIGRATION, version: '20260909193000' }],
+        },
+      ],
+      listAppliedVersions: () => parseAppliedVersionsFromMigrationList(CLI_TABLE_WITHOUT_NAMES),
+      appliedSource: 'cli-fallback',
+      deployOne: (slug: string) => {
+        seen.push(slug);
+        return { ok: true, detail: 'Deployed' };
+      },
+    });
+    expect(seen).toEqual([]);
+    expect(succeeded).toEqual([]);
+    expect(failed).toHaveLength(1);
+    expect(failed[0].detail).toContain('not applied in production');
+    expect(failed[0].detail).toContain('fell back to the CLI');
+    expect(failed[0].detail).toContain('could not match by name');
+    expect(failed[0].detail).not.toContain('DEPLOY_TREAT_APPLIED');
+    expect(failed[0].detail).not.toContain('treat_applied');
+  });
+
+  it('falls back to the CLI when the Management API fails and skips migration-dependent functions', async () => {
+    const seen: string[] = [];
+    const lines: string[] = [];
+    let cliCalled = false;
+    const { succeeded, failed, appliedLookupFailed, appliedSource } = await deployWithMigrationGate({
+      functions: [
+        { slug: 'send-sms', requiredMigrations: [] },
+        {
+          slug: 'send-quote-email',
+          requiredMigrations: [{ path: QUOTE_EMAIL_MIGRATION, version: '20260909193000' }],
+        },
+      ],
+      listFromManagementApi: async () => {
+        throw new Error('HTTP 401');
+      },
+      listFromCli: () => {
+        cliCalled = true;
+        return parseAppliedVersionsFromMigrationList(CLI_JSON_VERSIONS_ONLY);
+      },
+      deployOne: (slug: string) => {
+        seen.push(slug);
+        return { ok: true, detail: 'Deployed' };
+      },
+      log: (line: string) => {
+        lines.push(line);
+      },
+    });
+    expect(cliCalled).toBe(true);
+    expect(appliedLookupFailed).toBe(false);
+    expect(appliedSource).toBe('cli-fallback');
+    expect(seen).toEqual(['send-sms']);
+    expect(succeeded.map((item) => item.slug)).toEqual(['send-sms']);
+    expect(failed.map((item) => item.slug)).toEqual(['send-quote-email']);
+    expect(failed[0].detail).toContain('not applied in production');
+    expect(failed[0].detail).toContain('fell back to the CLI');
+    expect(failed[0].detail).toContain('could not match by name');
+    expect(failed[0].detail).not.toContain('DEPLOY_TREAT_APPLIED');
+    expect(failed[0].detail).not.toContain('treat_applied');
+    expect(lines.join('')).toContain('via CLI fallback');
+  });
+
+  it('degrades like an unreadable list when Management API and CLI both fail', async () => {
+    const seen: string[] = [];
+    const { succeeded, failed, appliedLookupFailed } = await deployWithMigrationGate({
+      functions: [
+        { slug: 'send-sms', requiredMigrations: [] },
+        {
+          slug: 'send-quote-email',
+          requiredMigrations: [{ path: QUOTE_EMAIL_MIGRATION, version: '20260909193000' }],
+        },
+      ],
+      listFromManagementApi: async () => {
+        throw new Error('HTTP 500');
+      },
+      listFromCli: () => {
+        throw new Error('could not connect to remote database');
+      },
+      deployOne: (slug: string) => {
+        seen.push(slug);
+        return { ok: true, detail: 'Deployed' };
+      },
+    });
+    expect(appliedLookupFailed).toBe(true);
+    expect(seen).toEqual(['send-sms']);
+    expect(succeeded.map((item) => item.slug)).toEqual(['send-sms']);
+    expect(failed.map((item) => item.slug)).toEqual(['send-quote-email']);
+    expect(failed[0].detail).toContain('could not read applied migrations');
+    expect(failed[0].detail).toContain('unreadable list');
+    expect(failed[0].detail).not.toContain('not applied in production');
+    expect(failed.length).toBeGreaterThan(0);
+  });
+
+  it('cannot deadlock after MCP apply: Management API name match deploys on rerun', async () => {
+    const target = {
+      slug: 'send-quote-email',
+      requiredMigrations: [{ path: QUOTE_EMAIL_MIGRATION, version: '20260909193000' }],
+    };
+    const seen: string[] = [];
+    const deployOne = (slug: string) => {
+      seen.push(slug);
+      return { ok: true, detail: 'Deployed' };
+    };
+
+    const firstPush = await deployWithMigrationGate({
+      functions: [target],
+      listFromManagementApi: async () => [
+        { version: '20260909164256', name: 'quote_email_delivery_audit' },
+      ],
+      listFromCli: () => {
+        throw new Error('cli should not run');
+      },
+      deployOne,
+    });
+    expect(firstPush.failed.map((item) => item.slug)).toEqual(['send-quote-email']);
+    expect(firstPush.failed[0].detail).not.toContain('DEPLOY_TREAT_APPLIED');
+    expect(firstPush.failed[0].detail).not.toContain('treat_applied');
+    expect(seen).toEqual([]);
+
+    const rerun = await deployWithMigrationGate({
+      functions: [target],
+      listFromManagementApi: async () => [...MCP_LEDGER_ROWS],
+      listFromCli: () => {
+        throw new Error('cli should not run');
+      },
+      deployOne,
+    });
+    expect(rerun.failed).toEqual([]);
+    expect(rerun.succeeded.map((item) => item.slug)).toEqual(['send-quote-email']);
+    expect(rerun.appliedSource).toBe('management-api');
+    expect(seen).toEqual(['send-quote-email']);
+  });
+});
+
+describe('Management API applied-migrations read', () => {
+  it('feeds Management API {version, name} rows and does not call the CLI', async () => {
+    let cliCalled = false;
+    const lookup = await readAppliedMigrationsWithFallback({
+      listFromManagementApi: async () => [...MCP_LEDGER_ROWS],
+      listFromCli: () => {
+        cliCalled = true;
+        return parseAppliedVersionsFromMigrationList(CLI_JSON_VERSIONS_ONLY);
+      },
+    });
+    expect(cliCalled).toBe(false);
+    expect(lookup.source).toBe('management-api');
+    expect(lookup.rows).toEqual([...MCP_LEDGER_ROWS]);
+  });
+
+  it('reads version and name from the Management API payload used by drift-watch', async () => {
+    const rows = await listAppliedMigrationsFromManagementApi({
+      token: 'sbp_test',
+      projectRef: 'eutsoqdpjurknjsshxes',
+      fetchJsonImpl: async (url: string, headers: Record<string, string>) => {
+        expect(url).toBe('https://api.supabase.com/v1/projects/eutsoqdpjurknjsshxes/database/migrations');
+        expect(headers.Authorization).toBe('Bearer sbp_test');
+        return { ok: true, status: 200, data: [...MCP_LEDGER_ROWS] };
+      },
+    });
+    expect(rows).toEqual([
+      { version: '20260909194905', name: 'serialize_quote_email_delivery_failed_retry_claim' },
+      { version: '20260909164256', name: 'quote_email_delivery_audit' },
+    ]);
   });
 });
 
@@ -381,6 +671,66 @@ describe('applied migration list parse', () => {
         }),
       ),
     ).toEqual(['20240101000000']);
+  });
+
+  it('reads version and name from JSON-with-names output', () => {
+    expect(parseAppliedVersionsFromMigrationList(CLI_JSON_WITH_NAMES)).toEqual([
+      { version: '20260909194905', name: 'serialize_quote_email_delivery_failed_retry_claim' },
+      { version: '20260909164256', name: 'quote_email_delivery_audit' },
+    ]);
+  });
+
+  it('reads versions only from the pinned CLI table and from JSON without names', () => {
+    expect(parseAppliedVersionsFromMigrationList(CLI_TABLE_WITHOUT_NAMES)).toEqual([
+      '20260909164256',
+      '20260909194905',
+    ]);
+    expect(parseAppliedVersionsFromMigrationList(CLI_JSON_VERSIONS_ONLY)).toEqual([
+      '20260909164256',
+      '20260909194905',
+    ]);
+  });
+
+  it('reads a name column from a table when one is present', () => {
+    const table = [
+      'LOCAL | REMOTE | NAME | TIME (UTC)',
+      ' | 20260909194905 | serialize_quote_email_delivery_failed_retry_claim | 2026-09-09 19:49:05',
+    ].join('\n');
+    expect(parseAppliedVersionsFromMigrationList(table)).toEqual([
+      { version: '20260909194905', name: 'serialize_quote_email_delivery_failed_retry_claim' },
+    ]);
+  });
+
+  it('requests JSON output and falls back to the table when the flag is unsupported', () => {
+    const seen: string[][] = [];
+    const rows = readAppliedMigrationsFromCli((extra) => {
+      seen.push(extra);
+      if (extra.length) {
+        const error = new Error(`unknown flag: ${extra[0]}`);
+        throw error;
+      }
+      return CLI_TABLE_WITHOUT_NAMES;
+    });
+    expect(seen[0]).toEqual(['--output-format', 'json']);
+    expect(seen[1]).toEqual(['--output', 'json']);
+    expect(seen[2]).toEqual(['-o', 'json']);
+    expect(seen[3]).toEqual([]);
+    expect(rows).toEqual(['20260909164256', '20260909194905']);
+  });
+
+  it('does not fall back when JSON listing fails for a reason other than an unsupported flag', () => {
+    expect(() =>
+      readAppliedMigrationsFromCli(() => {
+        throw new Error('network down');
+      }),
+    ).toThrow(/network down/);
+  });
+
+  it('recognizes unsupported output flags and ignores unrelated CLI failures', () => {
+    expect(isUnsupportedMigrationListOutputFlag(new Error('unknown flag: --output-format'))).toBe(true);
+    expect(isUnsupportedMigrationListOutputFlag(new Error('could not connect to remote database'))).toBe(
+      false,
+    );
   });
 
   it('fails closed on empty or unrecognized CLI output', () => {

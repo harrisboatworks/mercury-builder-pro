@@ -9,14 +9,17 @@ name: Deploy Supabase edge functions
 # be destructive and irreversible, and this repo has one production project
 # with no staging. Drift watch reports unapplied migrations; humans apply them.
 #
-# Before each deploy, the job READs applied versions (`supabase migration
-# list --linked`, using the existing token and the project ref from
-# SUPABASE_PROJECT_REF or supabase/config.toml). A function whose newly
-# required migrations (same mapping as the advisory report) are not yet
-# applied is skipped; the job then fails and names the function, the
-# migration filename(s), and why. Other functions in the same run still
-# deploy. If that applied list cannot be read, the job fails closed and
-# deploys nothing.
+# Before each deploy, the job READs applied migrations from the Management
+# API (`GET /v1/projects/{ref}/database/migrations`) with SUPABASE_ACCESS_TOKEN
+# and the project ref from SUPABASE_PROJECT_REF or supabase/config.toml.
+# That listing includes names. A function is skipped when a newly required
+# migration matches neither an applied version nor an applied name. MCP
+# apply stamps its own ledger version, so name is the durable match. If
+# the Management API call fails, the pinned CLI list is the fallback
+# (versions only): migration-dependent functions skip because a name match
+# is impossible. Other functions in the same run still deploy. If neither
+# source answers, functions WITH required migrations are skipped, functions
+# WITHOUT them still deploy, and the job fails if anything was skipped.
 #
 # Inert until repository secret SUPABASE_ACCESS_TOKEN exists. A missing
 # secret skips cleanly (green). A real CLI/deploy failure fails the job

@@ -574,6 +574,12 @@ export function appliedVersionSet(applied) {
   return set;
 }
 
+export function appliedRowsHaveNames(appliedRows) {
+  return (Array.isArray(appliedRows) ? appliedRows : []).some(
+    (row) => row && typeof row === 'object' && String(row.name || '').trim(),
+  );
+}
+
 export function isMigrationApplied(filePath, appliedSet) {
   const version = migrationVersionFromFilename(filePath);
   const stem = migrationStem(filePath);
@@ -604,13 +610,18 @@ export function unappliedRequiredMigrations(requiredMigrations, appliedSet) {
   return (requiredMigrations || []).filter((item) => !isMigrationApplied(item.path, appliedSet));
 }
 
-export function blockedDeployReason(slug, requiredMigrations, appliedSet) {
+export function blockedDeployReason(slug, requiredMigrations, appliedSet, options = {}) {
   const missing = unappliedRequiredMigrations(requiredMigrations, appliedSet);
   if (!missing.length) return null;
   const listed = missing.map((item) => `\`${posix.basename(item.path)}\``).join(', ');
   const noun = missing.length === 1 ? 'migration' : 'migrations';
   const verb = missing.length === 1 ? 'is' : 'are';
-  return `skipped: newly required ${noun} ${listed} ${verb} not applied in production. This job never applies migrations. Deploying \`${slug}\` would call schema that does not exist yet.`;
+  let reason = `skipped: newly required ${noun} ${listed} ${verb} not applied in production. This job never applies migrations. Deploying \`${slug}\` would call schema that does not exist yet.`;
+  if (options.source === 'cli-fallback') {
+    reason +=
+      ' This job fell back to the CLI applied list and therefore could not match by name.';
+  }
+  return reason;
 }
 
 export function formatDeployedTimestamp(updatedAt) {

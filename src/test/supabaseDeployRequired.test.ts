@@ -544,6 +544,35 @@ describe('drift migration matching rule', () => {
     expect(isMigrationApplied('supabase/migrations/20260909000000_brand_new_unapplied.sql', applied)).toBe(false);
   });
 
+  it('matches production MCP-stamped rows by name when the ledger version differs', () => {
+    const applied = appliedVersionSet([
+      { version: '20260909194905', name: 'serialize_quote_email_delivery_failed_retry_claim' },
+      { version: '20260909164256', name: 'quote_email_delivery_audit' },
+    ]);
+    expect(
+      isMigrationApplied(
+        'supabase/migrations/20260909193000_serialize_quote_email_delivery_failed_retry_claim.sql',
+        applied,
+      ),
+    ).toBe(true);
+    expect(
+      isMigrationApplied('supabase/migrations/20260815160000_quote_email_delivery_audit.sql', applied),
+    ).toBe(true);
+    expect(isMigrationApplied('supabase/migrations/20260909199999_absent_from_ledger.sql', applied)).toBe(
+      false,
+    );
+  });
+
+  it('does not treat a newer latest version as applied when the listing has versions only', () => {
+    const versionsOnly = appliedVersionSet(['20260909164256', '20260909194905']);
+    expect(
+      isMigrationApplied(
+        'supabase/migrations/20260909193000_serialize_quote_email_delivery_failed_retry_claim.sql',
+        versionsOnly,
+      ),
+    ).toBe(false);
+  });
+
   it('does not report name-matched files or historical versions below the baseline', () => {
     const report = buildDriftReport({
       localMigrations: localRecent,
