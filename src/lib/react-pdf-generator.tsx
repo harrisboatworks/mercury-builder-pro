@@ -1,6 +1,5 @@
-// Simplified PDF generator - Quote PDFs still use this
-// Motor spec sheets now use server-side generation via edge function
-import { supabase } from '@/integrations/supabase/client';
+// Quote PDFs use @react-pdf/renderer. The live motor spec-sheet button is
+// SpecSheetPDFDownload / CleanSpecSheetPDF, not this module.
 import {
   resolveFinancingContractTermMonths,
   resolveQuoteMotorImage,
@@ -250,36 +249,6 @@ export function buildProfessionalQuotePdfData(data: ReactPdfQuoteData) {
     customerNotes: snapshot?.customerNotes ?? data.customerNotes,
     depositInfo: data.depositInfo,
   };
-}
-
-/**
- * Generate a motor spec sheet PDF using the edge function
- */
-export async function generateMotorSpecSheet(data: ReactPdfQuoteData): Promise<string> {
-  try {
-    console.log('Generating motor spec sheet for quote:', data.quoteNumber);
-
-    const { data: result, error } = await supabase.functions.invoke('generate-motor-spec-sheet', {
-      body: {
-        quoteData: data,
-        format: 'pdf'
-      }
-    });
-
-    if (error) {
-      console.error('Error generating spec sheet:', error);
-      throw error;
-    }
-
-    // The edge function returns HTML that should be converted to PDF
-    // Return the HTML as a data URL for now
-    const htmlContent = result.html || '';
-    const dataUrl = `data:text/html;charset=utf-8,${encodeURIComponent(htmlContent)}`;
-    return dataUrl;
-  } catch (error) {
-    console.error('Failed to generate spec sheet:', error);
-    throw error;
-  }
 }
 
 /**

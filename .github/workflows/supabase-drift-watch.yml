@@ -1,0 +1,46 @@
+name: Supabase drift watch
+
+# Compares main to deployed edge functions and applied migrations via the
+# Supabase Management API. Advisory only: never fails the build, never deploys.
+# Migration absence is only reported for filename versions on/after
+# 20260731000000; older files are historical and matched by name when present.
+#
+# Requires repository secrets SUPABASE_ACCESS_TOKEN and SUPABASE_PROJECT_REF.
+# If either is unset the job writes a notice and passes.
+# Prefers one GitHub issue titled "Supabase deploy drift" (opened or updated)
+# plus the job summary. If issues:write is unavailable, the summary is enough.
+
+on:
+  schedule:
+    # 12:27 UTC daily, off-peak minute.
+    - cron: '27 12 * * *'
+  workflow_dispatch: {}
+
+concurrency:
+  group: supabase-drift-watch
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      # No npm install — script uses only Node built-ins.
+      - name: Compare main to deployed Supabase
+        continue-on-error: true
+        run: node scripts/supabase-drift-watch.mjs
+        env:
+          SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+          SUPABASE_PROJECT_REF: ${{ secrets.SUPABASE_PROJECT_REF }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,4 +1,3 @@
-import { useQuery } from '@tanstack/react-query';
 import { supabase } from '@/integrations/supabase/client';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -17,15 +16,8 @@ interface SecurityFinding {
 }
 
 export const SecurityDashboard = () => {
-  // Fetch RLS status for critical tables
-  const { data: rlsStatus } = useQuery({
-    queryKey: ['rls-status'],
-    queryFn: async () => {
-      const { data, error } = await supabase.rpc('get_table_schema' as any);
-      if (error) throw error;
-      return data;
-    },
-  });
+  // get_table_schema was never created and its result was never rendered.
+  // RLS status below is a static checklist, not a live schema read.
 
   // Test SIN encryption
   const testSINEncryption = async () => {

@@ -378,10 +378,11 @@ interface OptionsSectionProps {
 }
 
 function OptionsSection({ title, badge, children }: OptionsSectionProps) {
+  const headingId = `options-${title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
   return (
-    <section>
+    <section aria-labelledby={headingId}>
       <div className="flex items-center gap-3 mb-4">
-        <h2 className="font-sans text-[12px] font-semibold uppercase tracking-[0.14em] text-repower-navy-900/70">
+        <h2 id={headingId} className="font-sans text-[12px] font-semibold uppercase tracking-[0.14em] text-repower-navy-900/70">
           {title}
         </h2>
         {badge}
@@ -421,6 +422,8 @@ function OptionTile({ option, isSelected, onToggle, onViewDetails, disabled }: O
           onCheckedChange={() => !disabled && onToggle()}
           onClick={(e) => e.stopPropagation()}
           disabled={disabled}
+          aria-hidden="true"
+          tabIndex={-1}
         />
       }
       label={option.name}

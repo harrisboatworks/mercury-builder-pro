@@ -187,7 +187,11 @@ export function EmploymentStep() {
                   value={timeAtJob}
                   onValueChange={(value) => setValue('timeAtJob', value as any, { shouldValidate: true })}
                 >
-                  <SelectTrigger>
+                  <SelectTrigger
+                    id="timeAtJob"
+                    aria-invalid={Boolean(errors.timeAtJob)}
+                    aria-describedby={errors.timeAtJob ? 'timeAtJob-error' : undefined}
+                  >
                     <SelectValue placeholder="Select duration" />
                   </SelectTrigger>
                   <SelectContent>
@@ -199,7 +203,7 @@ export function EmploymentStep() {
                   </SelectContent>
                 </Select>
                 {errors.timeAtJob && (
-                  <p className="text-sm text-destructive font-normal">{errors.timeAtJob.message}</p>
+                  <p id="timeAtJob-error" role="alert" className="text-sm text-destructive font-normal">{errors.timeAtJob.message}</p>
                 )}
               </div>
             </div>

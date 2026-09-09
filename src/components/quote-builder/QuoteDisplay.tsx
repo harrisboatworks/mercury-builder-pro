@@ -19,7 +19,6 @@ import { buildEnhancedPdfData } from '@/lib/pdf-helpers';
 import { motion } from 'framer-motion';
 import { xpActions } from '@/config/xpActions';
 import { xpRewards, getCurrentReward, getNextReward } from '@/config/xpRewards';
-import { format } from 'date-fns';
 import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
 import {
@@ -34,7 +33,7 @@ import { createQuote } from '@/lib/quotesApi';
 import { PaymentMethodBadges } from '@/components/payments/PaymentMethodBadges';
 import { useQuote } from '@/contexts/QuoteContext';
 import { PromoOptionSelector, PromoOptionType } from './PromoOptionSelector';
-import { promoEndOfDay } from '@/lib/quote-utils';
+import { formatPromoCalendarDate } from '@/lib/quote-utils';
 import { getAppliedPromotion, getAppliedWarrantyExtraYears } from '@/lib/warranty-display';
 
 interface QuoteDisplayProps {
@@ -569,7 +568,7 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
                         )}
                         {promo.end_date && (
                           <div className="text-xs text-repower-mercury-red font-medium">
-                            Expires: {format(promoEndOfDay(promo.end_date), 'MMM d, yyyy')}
+                            Expires: {formatPromoCalendarDate(promo.end_date, { month: 'short', day: 'numeric', year: 'numeric' })}
                           </div>
                         )}
                       </div>

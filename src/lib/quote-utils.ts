@@ -5,6 +5,27 @@
 
 import { calculateMercuryPlatinumExtensionCost } from '@/data/mercuryProductProtection';
 import { applyTradeCredit } from '@/lib/trade-credit';
+import {
+  activePromotionDateOrFilters,
+  daysUntil,
+  dealerToday,
+  formatPromoCalendarDate,
+  formatPromoDaysLeft,
+  isPromotionLive,
+  promoEndOfDay,
+  promoStartOfDay,
+} from '../../supabase/functions/_shared/promo-dates';
+
+export {
+  activePromotionDateOrFilters,
+  daysUntil,
+  dealerToday,
+  formatPromoCalendarDate,
+  formatPromoDaysLeft,
+  isPromotionLive,
+  promoEndOfDay,
+  promoStartOfDay,
+};
 
 export interface PricingBreakdown {
   msrp: number;
@@ -49,7 +70,11 @@ export function calculateMonthly(
   termMonths: number = 60
 ): MonthlyPayment {
   const monthlyRate = rate / 100 / 12;
-  const monthlyPayment = amount * (monthlyRate * Math.pow(1 + monthlyRate, termMonths)) / (Math.pow(1 + monthlyRate, termMonths) - 1);
+  // Same convention as finance.calculatePaymentWithFrequency: a 0% period
+  // rate is principal / periods. The amortization formula is 0/0 at 0%.
+  const monthlyPayment = monthlyRate === 0
+    ? amount / termMonths
+    : amount * (monthlyRate * Math.pow(1 + monthlyRate, termMonths)) / (Math.pow(1 + monthlyRate, termMonths) - 1);
   const totalAmount = monthlyPayment * termMonths;
   const totalInterest = totalAmount - amount;
   
@@ -60,17 +85,6 @@ export function calculateMonthly(
     totalAmount: Math.round(totalAmount),
     totalInterest: Math.round(totalInterest)
   };
-}
-
-/**
- * Calculate days until a date
- */
-export function daysUntil(date: Date | string): number {
-  const targetDate = new Date(date);
-  const today = new Date();
-  const diffTime = targetDate.getTime() - today.getTime();
-  const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-  return Math.max(0, diffDays);
 }
 
 /**
@@ -169,31 +183,8 @@ export function calculateQuotePricing(data: {
 }
 
 /**
- * Treat a date-only string as valid through end of that day (23:59:59.999).
- * Use everywhere a promo end_date is compared against "now".
- */
-export function promoEndOfDay(dateStr: string): Date {
-  const dateOnlyMatch = /^(\d{4})-(\d{2})-(\d{2})$/.exec(dateStr);
-  if (dateOnlyMatch) {
-    const [, year, month, day] = dateOnlyMatch;
-    return new Date(
-      Number(year),
-      Number(month) - 1,
-      Number(day),
-      23,
-      59,
-      59,
-      999,
-    );
-  }
-
-  const d = new Date(dateStr);
-  d.setHours(23, 59, 59, 999);
-  return d;
-}
-
-/**
- * Format expiry countdown message
+ * Format expiry countdown message. 0 remaining days means the last
+ * America/Toronto calendar day — still live, not expired.
  */
 export function formatExpiry(endDate: Date | string): string {
   const days = daysUntil(endDate);
@@ -201,7 +192,7 @@ export function formatExpiry(endDate: Date | string): string {
   if (days === 1) return 'Expires tomorrow';
   if (days <= 7) return `Expires in ${days} days`;
   if (days <= 30) return `Expires in ${Math.ceil(days / 7)} weeks`;
-  return `Expires ${new Date(endDate).toLocaleDateString()}`;
+  return `Expires ${formatPromoCalendarDate(endDate)}`;
 }
 
 /**

@@ -6,6 +6,7 @@ import { corsHeaders } from '../_shared/cors.ts';
 import { buildEmail, detailsCard, esc } from '../_shared/email-layout.ts';
 import { isAllowedOrigin, forbiddenOriginResponse } from '../_shared/origin-check.ts';
 import { checkRateLimit, rateLimitedResponse } from '../_shared/rate-limit.ts';
+import { buildPublicApplication } from './public-application.ts';
 import {
   isMatchingSubmittedApplication,
   preserveFinancingOwner,
@@ -102,8 +103,8 @@ async function sendResumeEmail(params: {
     <p style="margin:0 0 14px 0;">Hi${params.applicantName ? ` ${esc(params.applicantName)}` : ''},</p>
     <p style="margin:0 0 14px 0;">Your financing application is saved. You can pick it up where you left off whenever you have a few minutes.</p>
     ${detailsCard([
-      { label: 'Progress', value: `${params.completedSteps} of ${TOTAL_STEPS} steps (${progress}%)` },
-      { label: 'Saved for', value: '30 days' },
+      { label: 'Progress', valueHtml: `${params.completedSteps} of ${TOTAL_STEPS} steps (${progress}%)` },
+      { label: 'Saved for', valueHtml: '30 days' },
     ])}
     <p style="margin:18px 0 0 0;">For your security, your SIN is not stored in the saved draft and must be entered again when you return.</p>
     <p style="margin:18px 0 0 0;">Need a hand? Reply to this email or call <a href="tel:9053422153" style="color:#0f2a43;font-weight:600;">(905) 342-2153</a>.</p>
@@ -120,7 +121,7 @@ async function sendResumeEmail(params: {
 
   const response = await new Resend(resendKey).emails.send({
     from: 'Harris Boat Works <noreply@mercuryrepower.ca>',
-    replyTo: 'info@harrisboatworks.ca',
+    reply_to: 'info@harrisboatworks.ca',
     to: [params.email],
     subject: 'Resume your financing application | Harris Boat Works',
     html,
@@ -192,11 +193,7 @@ serve(async (req: Request): Promise<Response> => {
       }
 
       return json({
-        application: {
-          ...data,
-          applicant_data: stripSin(data.applicant_data as Record<string, unknown>),
-          co_applicant_data: stripSin(data.co_applicant_data as Record<string, unknown> | null),
-        },
+        application: buildPublicApplication(data),
       });
     }
 

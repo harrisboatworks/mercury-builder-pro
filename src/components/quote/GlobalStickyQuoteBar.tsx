@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { useQuote } from '@/contexts/QuoteContext';
 import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { useIsMobile } from '@/hooks/use-mobile';
-import { calculateMonthlyPayment, DEALERPLAN_FEE, FINANCING_MINIMUM } from '@/lib/finance';
+import { calculateMonthlyPayment, DEALERPLAN_FEE, FINANCING_MINIMUM, isUsableFinancingRate } from '@/lib/finance';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { useQuoteRunningTotal } from '@/hooks/useQuoteRunningTotal';
 import StickyQuoteBar from './StickyQuoteBar';
@@ -64,7 +64,7 @@ export function GlobalStickyQuoteBar() {
     const priceWithFee = runningTotal + DEALERPLAN_FEE;
 
     // Use active promo rate or default
-    const promoRate = promo?.rate || null;
+    const promoRate = isUsableFinancingRate(promo?.rate) ? promo.rate : null;
     const { payment } = calculateMonthlyPayment(priceWithFee, promoRate);
 
     return payment;

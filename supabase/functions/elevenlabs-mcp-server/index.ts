@@ -660,13 +660,13 @@ ${motor1.horsepower > motor2.horsepower ? `The ${motor1.model_display} has more 
       const modelLabel = motor.model_display || motor.model;
 
       const rows = [
-        { label: "Motor", value: esc(modelLabel) },
-        { label: "Horsepower", value: `${motor.horsepower} HP` },
-        { label: "Family", value: esc(motor.family || "FourStroke") },
-        { label: "Shaft length", value: esc(motor.shaft || "Standard") },
-        { label: "Availability", value: motor.in_stock ? "In stock" : "Available to order (7 to 14 days)" },
+        { label: "Motor", valueHtml: esc(modelLabel) },
+        { label: "Horsepower", valueHtml: `${motor.horsepower} HP` },
+        { label: "Family", valueHtml: esc(motor.family || "FourStroke") },
+        { label: "Shaft length", valueHtml: esc(motor.shaft || "Standard") },
+        { label: "Availability", valueHtml: motor.in_stock ? "In stock" : "Available to order (7 to 14 days)" },
       ];
-      if (priceLine) rows.push({ label: "Price", value: priceLine });
+      if (priceLine) rows.push({ label: "Price", valueHtml: priceLine });
 
       const body = `
         <p style="margin:0 0 14px 0;">Hi ${esc(customerName)},</p>
@@ -1132,9 +1132,9 @@ ${motor1.horsepower > motor2.horsepower ? `The ${motor1.model_display} has more 
           };
         }
         
-        const partName = result.name || partDescription || "Mercury Part";
-        const partDesc = result.description || "";
-        const priceInfo = result.cadPrice ? `$${result.cadPrice.toLocaleString()} CAD` : "Contact us for pricing";
+        const partName = result.data?.name || partDescription || "Mercury Part";
+        const partDesc = result.data?.description || "";
+        const priceInfo = result.data?.cadPrice ? `$${result.data.cadPrice.toLocaleString()} CAD` : "Contact us for pricing";
         
         return { 
           content: [{ 

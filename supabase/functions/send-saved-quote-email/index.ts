@@ -65,9 +65,9 @@ const handler = async (req: Request): Promise<Response> => {
       : "";
 
     const rows = [
-      { label: "Reference", value: esc(refNumber) },
-      { label: "Motor", value: esc(motorModel) },
-      { label: "Total", value: `${formattedPrice} CAD` },
+      { label: "Reference", valueHtml: esc(refNumber) },
+      { label: "Motor", valueHtml: esc(motorModel) },
+      { label: "Total", valueHtml: `${formattedPrice} CAD` },
     ];
 
     const body = `
@@ -90,7 +90,7 @@ const handler = async (req: Request): Promise<Response> => {
 
     const emailResponse = await resend.emails.send({
       from: "Harris Boat Works <quotes@mercuryrepower.ca>",
-      replyTo: "info@harrisboatworks.ca",
+      reply_to: "info@harrisboatworks.ca",
       to: [customerEmail],
       bcc: [GROK_BOT_AGENTMAIL],
       subject: `Your Mercury ${motorModel} quote is saved | Harris Boat Works`,

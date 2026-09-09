@@ -255,23 +255,30 @@ export default function Settings() {
     }
   };
 
-  const handleThemeChange = (newTheme: string) => {
+  const handleThemeChange = async (newTheme: string) => {
     setTheme(newTheme);
-    // Save theme preference to profile
-    if (user) {
-      supabase
-        .from('profiles')
-        .upsert({
-          user_id: user.id,
-          theme: newTheme,
-        })
-        .then(() => {
-          toast({
-            title: "Theme updated",
-            description: `Switched to ${newTheme} mode.`,
-          });
-        });
+    if (!user) return;
+
+    const { error } = await supabase
+      .from('profiles')
+      .upsert({
+        user_id: user.id,
+        theme: newTheme,
+      });
+
+    if (error) {
+      toast({
+        title: "Could not save theme",
+        description: "Your display changed on this device, but we could not save the preference. Please try again, or call us at (905) 342-2153.",
+        variant: "destructive",
+      });
+      return;
     }
+
+    toast({
+      title: "Theme updated",
+      description: `Switched to ${newTheme} mode.`,
+    });
   };
 
   const isGoogleUser = user?.app_metadata?.provider === 'google';

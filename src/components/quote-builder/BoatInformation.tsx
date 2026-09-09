@@ -488,12 +488,12 @@ export const BoatInformation = ({
                   <p className="font-sans text-sm text-repower-navy-900/65">Buying a motor without a boat? We'll confirm specs at consultation.</p>
 
                   <div className="space-y-2">
-                    <Label className={`${quoteFieldLabelClass} flex items-center gap-2`}>Shaft Length (if known)</Label>
+                    <Label htmlFor="boat-shaft-length" className={`${quoteFieldLabelClass} flex items-center gap-2`}>Shaft Length (if known)</Label>
                     <Select value={boatInfo.shaftLength} onValueChange={value => setBoatInfo(prev => ({
                   ...prev,
                   shaftLength: value
                 }))}>
-                      <SelectTrigger className={quoteFieldControlClass}>
+                      <SelectTrigger id="boat-shaft-length" className={quoteFieldControlClass}>
                         <SelectValue placeholder="Select shaft length" />
                       </SelectTrigger>
                       <SelectContent>
@@ -673,15 +673,15 @@ export const BoatInformation = ({
                            
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                               <div className="space-y-2">
-                                <Label className={quoteFieldLabelClass}>Boat Make</Label>
-                               <Input value={boatInfo.make} onChange={e => setBoatInfo(prev => ({
+                                <Label htmlFor="boat-make" className={quoteFieldLabelClass}>Boat Make</Label>
+                               <Input id="boat-make" value={boatInfo.make} onChange={e => setBoatInfo(prev => ({
                           ...prev,
                           make: e.target.value
                         }))} placeholder="e.g., Harris, Ranger, Boston Whaler" className={`${quoteFieldControlClass} w-full px-4 py-3 text-base`} />
                               </div>
                               <div className="space-y-2">
-                                <Label className={quoteFieldLabelClass}>Boat Model</Label>
-                               <Input value={boatInfo.model} onChange={e => setBoatInfo(prev => ({
+                                <Label htmlFor="boat-model" className={quoteFieldLabelClass}>Boat Model</Label>
+                               <Input id="boat-model" value={boatInfo.model} onChange={e => setBoatInfo(prev => ({
                           ...prev,
                           model: e.target.value
                         }))} placeholder="e.g., Solstice 230, Z520L" className={`${quoteFieldControlClass} w-full px-4 py-3 text-base`} />
@@ -697,7 +697,7 @@ export const BoatInformation = ({
                            </div>
                            
                             <div className="slider-container">
-                             <Slider value={[lengthFeet]} min={14} max={30} step={1} onValueChange={handleLengthChange} className="w-full" />
+                             <Slider value={[lengthFeet]} min={14} max={30} step={1} onValueChange={handleLengthChange} className="w-full" aria-label="Boat length in feet" aria-valuetext={`${lengthFeet} feet`} />
                              <div className="flex justify-between items-center mt-3">
                                <span className="text-sm text-protected-subtle">14 ft</span>
                                <span className="text-2xl font-bold text-protected-primary">
@@ -721,19 +721,19 @@ export const BoatInformation = ({
                   </div>
 
                   <div className={`grid grid-cols-1 gap-3 ${hp >= 40 ? 'md:grid-cols-2' : 'md:grid-cols-3'}`}>
-                    {hp < 40 && <Button type="button" variant={boatInfo.shaftLength === '15' ? "default" : "outline"} onClick={() => setBoatInfo(prev => ({
+                    {hp < 40 && <Button type="button" aria-pressed={boatInfo.shaftLength === '15'} variant={boatInfo.shaftLength === '15' ? "default" : "outline"} onClick={() => setBoatInfo(prev => ({
                   ...prev,
                   shaftLength: '15'
                 }))} className="h-auto py-4 px-6 justify-center text-center">
                         <div className="text-lg font-semibold">15" (Short)</div>
                       </Button>}
-                    <Button type="button" variant={boatInfo.shaftLength === '20' ? "default" : "outline"} onClick={() => setBoatInfo(prev => ({
+                    <Button type="button" aria-pressed={boatInfo.shaftLength === '20'} variant={boatInfo.shaftLength === '20' ? "default" : "outline"} onClick={() => setBoatInfo(prev => ({
                   ...prev,
                   shaftLength: '20'
                 }))} className="h-auto py-4 px-6 justify-center text-center">
                       <div className="text-lg font-semibold">20" (Long)</div>
                     </Button>
-                    <Button type="button" variant={boatInfo.shaftLength === '25' ? "default" : "outline"} onClick={() => setBoatInfo(prev => ({
+                    <Button type="button" aria-pressed={boatInfo.shaftLength === '25'} variant={boatInfo.shaftLength === '25' ? "default" : "outline"} onClick={() => setBoatInfo(prev => ({
                   ...prev,
                   shaftLength: '25'
                 }))} className="h-auto py-4 px-6 justify-center text-center">
@@ -771,14 +771,14 @@ export const BoatInformation = ({
                 <div className="space-y-6">
                   <div className="space-y-4">
                     <div className="space-y-2">
-                      <Label className={quoteFieldLabelClass}>Current Motor Brand</Label>
+                      <Label htmlFor="current-motor-brand" className={quoteFieldLabelClass}>Current Motor Brand</Label>
                       <Select value={boatInfo.currentMotorBrand} onValueChange={value => setBoatInfo(prev => ({
                     ...prev,
                     currentMotorBrand: value,
                     currentHp: value === 'No Current Motor' ? 0 : prev.currentHp,
                     controlsOption: value !== 'Mercury' && value !== 'No Current Motor' ? 'none' : prev.controlsOption
                   }))}>
-                        <SelectTrigger className={quoteFieldControlClass}>
+                        <SelectTrigger id="current-motor-brand" className={quoteFieldControlClass}>
                           <SelectValue placeholder="Select current motor brand" />
                         </SelectTrigger>
                         <SelectContent>
@@ -795,12 +795,12 @@ export const BoatInformation = ({
 
                     {boatInfo.currentMotorBrand && boatInfo.currentMotorBrand !== 'No Current Motor' && <>
                         <div className="space-y-2">
-                          <Label className={quoteFieldLabelClass}>Current Motor Horsepower (HP)</Label>
-                          <Input type="number" inputMode="decimal" min={1} max={600} step="0.1" placeholder="e.g., 9.9 or 115" value={boatInfo.currentHp || ''} onChange={e => setBoatInfo(prev => ({
+                          <Label htmlFor="current-motor-hp" className={quoteFieldLabelClass}>Current Motor Horsepower (HP)</Label>
+                          <Input id="current-motor-hp" type="number" inputMode="decimal" min={1} max={600} step="0.1" placeholder="e.g., 9.9 or 115" value={boatInfo.currentHp || ''} onChange={e => setBoatInfo(prev => ({
                       ...prev,
                       currentHp: parseMotorHorsepowerInput(e.target.value)
-                    }))} className={quoteFieldControlClass} />
-                         <p className="text-xs text-protected-subtle">Helps us provide more accurate rigging and trade-in estimates if needed.</p>
+                    }))} aria-describedby="current-motor-hp-help" className={quoteFieldControlClass} />
+                         <p id="current-motor-hp-help" className="text-xs text-protected-subtle">Helps us provide more accurate rigging and trade-in estimates if needed.</p>
                        </div>
 
                        <div className="space-y-2">
@@ -817,9 +817,10 @@ export const BoatInformation = ({
                              ...prev,
                              currentMotorYear: parseInt(event.target.value, 10) || undefined
                            }))}
+                           aria-describedby="current-motor-year-help"
                            className={quoteFieldControlClass}
                          />
-                         <p className="text-xs text-protected-subtle">Helps us provide more accurate trade-in estimates.</p>
+                         <p id="current-motor-year-help" className="text-xs text-protected-subtle">Helps us provide more accurate trade-in estimates.</p>
                        </div>
                       </>}
 
@@ -839,12 +840,12 @@ export const BoatInformation = ({
                           <strong className="heading-protected">Tiller Motor Selected:</strong> Your {selectedMotor?.model} is a tiller motor that's steered by hand. No remote controls are needed or applicable.
                         </AlertDescription>
                       </Alert> : <div className="space-y-2">
-                        <Label className={quoteFieldLabelClass}>Control Type</Label>
+                        <Label htmlFor="boat-control-type" className={quoteFieldLabelClass}>Control Type</Label>
                         <Select value={boatInfo.controlType} onValueChange={value => setBoatInfo(prev => ({
                     ...prev,
                     controlType: value
                   }))}>
-                          <SelectTrigger className={quoteFieldControlClass}>
+                          <SelectTrigger id="boat-control-type" className={quoteFieldControlClass} aria-required="true">
                             <SelectValue placeholder="Select control type" />
                           </SelectTrigger>
                           <SelectContent>

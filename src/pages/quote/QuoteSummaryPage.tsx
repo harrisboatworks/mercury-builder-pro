@@ -31,7 +31,7 @@ import { useQuote } from '@/contexts/QuoteContext';
 import { useAuth } from '@/components/auth/AuthProvider';
 import { AdminQuoteControls } from '@/components/admin/AdminQuoteControls';
 import { Bookmark, CreditCard, Download } from 'lucide-react';
-import { computeTotals, calculateMonthlyPayment, getFinancingTerm, DEALERPLAN_FEE, FINANCING_MINIMUM } from '@/lib/finance';
+import { computeTotals, calculateMonthlyPayment, getFinancingTerm, DEALERPLAN_FEE, FINANCING_MINIMUM, isUsableFinancingRate } from '@/lib/finance';
 import { calculateQuotePricing, getFinanceableAmount, promoEndOfDay } from '@/lib/quote-utils';
 import { resolveAppliedTradeValue } from '@/lib/trade-credit';
 import { calculateFinancingPurchase, FINANCING_PRICE_BASIS_ALL_IN_AFTER_TRADE } from '@/lib/financing-purchase';
@@ -470,7 +470,7 @@ export default function QuoteSummaryPage() {
     state.selectedPromoOption === 'special_financing' &&
     state.selectedPromoRate != null &&
     state.selectedPromoTerm != null;
-  const effectiveRate = usePromoFinancing ? state.selectedPromoRate : (promo?.rate || null);
+  const effectiveRate = usePromoFinancing ? state.selectedPromoRate : (isUsableFinancingRate(promo?.rate) ? promo.rate : null);
   const effectiveTerm = usePromoFinancing ? state.selectedPromoTerm : null;
   const { payment: monthlyPayment, termMonths, rate: financingRate } = calculateMonthlyPayment(amountToFinance, effectiveRate, effectiveTerm);
 

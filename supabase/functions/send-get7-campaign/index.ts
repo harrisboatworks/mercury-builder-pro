@@ -1,6 +1,7 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
 import { buildEmail, detailsCard, esc } from "../_shared/email-layout.ts";
+import { requireAdmin } from "../_shared/admin-auth.ts";
 
 
 const corsHeaders = {
@@ -37,15 +38,15 @@ const generateGet7EmailHtml = (data: {
 }) => {
   const { customerName, motorModel, motorHp, rebateAmount, expiryDate, promoUrl } = data;
 
-  const rows: Array<{ label: string; value: string }> = [
-    { label: "Warranty", value: "7-Year Factory Warranty (3 + 4 bonus years)" },
-    { label: "Choose one", value: "6 months no payments, special financing from 2.99%, or up to $1,500 cash back" },
+  const rows: Array<{ label: string; valueHtml: string }> = [
+    { label: "Warranty", valueHtml: "7-Year Factory Warranty (3 + 4 bonus years)" },
+    { label: "Choose one", valueHtml: "6 months no payments, special financing from 2.99%, or up to $1,500 cash back" },
   ];
-  if (motorModel) rows.push({ label: "Your motor", value: esc(motorModel) });
+  if (motorModel) rows.push({ label: "Your motor", valueHtml: esc(motorModel) });
   if (rebateAmount && motorHp) {
-    rows.push({ label: "Your rebate", value: `$${rebateAmount.toLocaleString()} on your ${motorHp}HP` });
+    rows.push({ label: "Your rebate", valueHtml: `$${rebateAmount.toLocaleString()} on your ${motorHp}HP` });
   }
-  rows.push({ label: "Offer ends", value: esc(expiryDate) });
+  rows.push({ label: "Offer ends", valueHtml: esc(expiryDate) });
 
   const body = `
     <p style="margin:0 0 14px 0;">${customerName ? `Hi ${esc(customerName)},` : "Hi there,"}</p>
@@ -149,6 +150,13 @@ const handler = async (req: Request): Promise<Response> => {
   if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
   }
+
+  // verify_jwt = true only proves the caller holds *a* valid JWT, and the anon
+  // key is one — it ships in the public browser bundle. Without this check any
+  // visitor could POST { targetType: "all", sendSms: true } and blast the whole
+  // customer list over Resend and Twilio on the dealership's account.
+  const authResult = await requireAdmin(req, corsHeaders);
+  if (authResult instanceof Response) return authResult;
 
   try {
     const supabaseUrl = Deno.env.get("SUPABASE_URL")!;

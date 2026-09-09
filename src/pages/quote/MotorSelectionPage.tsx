@@ -24,6 +24,7 @@ import {
   isMercuryPromoActive,
   MERCURY_PROMO_APR,
 } from '@/lib/finance';
+import { formatPromoCalendarDate } from '@/lib/quote-utils';
 import { Clock } from 'lucide-react';
 import { X } from 'lucide-react';
 // useScrollDirection removed - search bar scrolls naturally now
@@ -249,7 +250,7 @@ function PromoBannerConditional() {
   }
 
   const endLabel = promo.end_date
-    ? `Ends ${new Date(promo.end_date).toLocaleDateString('en-CA', { month: 'long', day: 'numeric', year: 'numeric' })}`
+    ? `Ends ${formatPromoCalendarDate(promo.end_date)}`
     : 'Ends May 17, 2026';
   const title = promo.bonus_title || promo.name || 'Current Mercury Promotion';
   return (
@@ -1700,12 +1701,15 @@ if (event.type === 'filter_motors') {
                 * Monthly payment estimates use the recommended amortization at {financingRateLabel} with $0 down,
                 including 13% HST and the ${DEALERPLAN_FEE} DealerPlan fee. Contract term up to {FINANCING_CONTRACT_TERM_MONTHS} months;
                 amortization up to {FINANCING_MAXIMUM_AMORTIZATION_MONTHS} months may leave a balance due at maturity. Terms vary by purchase amount. OAC.
-                {financingPromo?.promo_end_date && (
-                  <span className="ml-2 inline-flex items-center gap-1 text-repower-gold font-medium">
-                    <Clock className="h-3 w-3" />
-                    Promo rate ends in {daysUntil(financingPromo.promo_end_date)} days
-                  </span>
-                )}
+                {financingPromo?.promo_end_date && (() => {
+                  const left = daysUntil(financingPromo.promo_end_date);
+                  return (
+                    <span className="ml-2 inline-flex items-center gap-1 text-repower-gold font-medium">
+                      <Clock className="h-3 w-3" />
+                      Promo rate {left === 0 ? 'ends today' : `ends in ${left} days`}
+                    </span>
+                  );
+                })()}
               </p>
             </div>
           )}

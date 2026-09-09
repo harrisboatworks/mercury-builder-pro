@@ -283,10 +283,13 @@ export function SaveQuoteDialog({
             setNameError("");
           }}
           disabled={isLoading}
+          aria-required="true"
+          aria-invalid={Boolean(nameError)}
+          aria-describedby={nameError ? "save-quote-name-error" : undefined}
           className={nameError ? "border-destructive" : ""}
         />
         {nameError && (
-          <p className="text-sm text-destructive">{nameError}</p>
+          <p id="save-quote-name-error" role="alert" className="text-sm text-destructive">{nameError}</p>
         )}
       </div>
       
@@ -302,10 +305,13 @@ export function SaveQuoteDialog({
             setEmailError("");
           }}
           disabled={isLoading}
+          aria-required="true"
+          aria-invalid={Boolean(emailError)}
+          aria-describedby={emailError ? "save-quote-email-error" : undefined}
           className={emailError ? "border-destructive" : ""}
         />
         {emailError && (
-          <p className="text-sm text-destructive">{emailError}</p>
+          <p id="save-quote-email-error" role="alert" className="text-sm text-destructive">{emailError}</p>
         )}
       </div>
       
@@ -321,10 +327,13 @@ export function SaveQuoteDialog({
             setPhoneError("");
           }}
           disabled={isLoading}
+          aria-required="true"
+          aria-invalid={Boolean(phoneError)}
+          aria-describedby={phoneError ? "save-quote-phone-error" : undefined}
           className={phoneError ? "border-destructive" : ""}
         />
         {phoneError && (
-          <p className="text-sm text-destructive">{phoneError}</p>
+          <p id="save-quote-phone-error" role="alert" className="text-sm text-destructive">{phoneError}</p>
         )}
       </div>
       
@@ -363,6 +372,10 @@ export function SaveQuoteDialog({
       return (
         <Drawer open={open} onOpenChange={handleClose}>
           <DrawerContent className="px-4 pb-8">
+            <DrawerTitle className="sr-only">Quote saved</DrawerTitle>
+            <DrawerDescription className="sr-only">
+              We've saved your configuration and sent details to {email}.
+            </DrawerDescription>
             {successContent}
           </DrawerContent>
         </Drawer>
@@ -392,6 +405,10 @@ export function SaveQuoteDialog({
     return (
       <Dialog open={open} onOpenChange={handleClose}>
         <DialogContent className="sm:max-w-[425px]">
+          <DialogTitle className="sr-only">Quote saved</DialogTitle>
+          <DialogDescription className="sr-only">
+            We've saved your configuration and sent details to {email}.
+          </DialogDescription>
           {successContent}
         </DialogContent>
       </Dialog>

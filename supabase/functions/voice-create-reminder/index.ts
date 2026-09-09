@@ -1,5 +1,7 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
+import { forbiddenOriginResponse, isAllowedOrigin, isServiceRoleBearer } from "../_shared/origin-check.ts";
+import { checkRateLimit, rateLimitedResponse } from "../_shared/rate-limit.ts";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -78,6 +80,20 @@ serve(async (req) => {
   if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
   }
+
+  const serviceRole = isServiceRoleBearer(req);
+  if (!isAllowedOrigin(req) && !serviceRole) {
+    return forbiddenOriginResponse(corsHeaders);
+  }
+
+  const allowed = await checkRateLimit(req, {
+    action: "voice_create_reminder",
+    maxAttempts: serviceRole ? 60 : 10,
+    windowMinutes: 10,
+    failClosed: true,
+    ...(serviceRole ? { identifier: "service_role" } : {}),
+  });
+  if (!allowed) return rateLimitedResponse(corsHeaders, 60);
 
   try {
     const { 

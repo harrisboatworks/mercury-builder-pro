@@ -5,6 +5,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import { supabase } from '@/integrations/supabase/client';
 import { formatMotorTitle } from '@/lib/card-title';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
+import { formatPromoCalendarDate } from '@/lib/quote-utils';
 import { findMotorSpecs } from '@/lib/data/mercury-motors';
 import {
   calculatePaymentWithFrequency,
@@ -325,7 +326,7 @@ export default function FinanceCalculator() {
                   <span className="bg-white px-3 py-1 border border-repower-navy-900/10">{financingPromoData.noPaymentsOption.title}</span>
                 )}
                 {financingPromoData.parentPromo.end_date && (
-                  <span>Ends {new Date(financingPromoData.parentPromo.end_date).toLocaleDateString()}</span>
+                  <span>Ends {formatPromoCalendarDate(financingPromoData.parentPromo.end_date)}</span>
                 )}
               </div>
               <p className="mx-auto mb-5 max-w-2xl font-sans text-[12px] leading-relaxed text-repower-navy-900/60">

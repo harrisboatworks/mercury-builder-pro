@@ -11,7 +11,7 @@ interface MiscategorizedMedia {
   motor_id: string;
   title: string;
   media_type: string;
-  category: string;
+  media_category: string;
   media_url: string;
 }
 
@@ -27,9 +27,9 @@ export function MediaCategoryFixer() {
       // Find PDFs categorized as 'gallery' (incorrect)
       const { data, error } = await supabase
         .from('motor_media')
-        .select('id, motor_id, title, media_type, category, media_url')
+        .select('id, motor_id, title, media_type, media_category, media_url')
         .eq('media_type', 'pdf')
-        .eq('category', 'gallery')
+        .eq('media_category', 'gallery')
         .eq('is_active', true);
 
       if (error) throw error;
@@ -66,26 +66,45 @@ export function MediaCategoryFixer() {
     setFixing(true);
     try {
       let fixedCount = 0;
+      const remaining: MiscategorizedMedia[] = [];
       
       for (const issue of issues) {
-        // Update PDFs from 'gallery' to 'specs' category
         const { error } = await supabase
           .from('motor_media')
-          .update({ category: 'specs' })
+          .update({ media_category: 'specs' })
           .eq('id', issue.id);
 
-        if (!error) {
+        if (error) {
+          remaining.push(issue);
+        } else {
           fixedCount++;
         }
       }
 
+      setIssues(remaining);
+
+      if (fixedCount === 0) {
+        toast({
+          title: "Fix failed",
+          description: "Could not update media categories. Please try again.",
+          variant: "destructive",
+        });
+        return;
+      }
+
+      if (remaining.length > 0) {
+        toast({
+          title: "Partially fixed",
+          description: `Updated ${fixedCount} of ${fixedCount + remaining.length} items. The rest still need attention.`,
+          variant: "destructive",
+        });
+        return;
+      }
+
       toast({
         title: "Issues Fixed",
-        description: `Successfully fixed ${fixedCount} of ${issues.length} categorization issues.`,
+        description: `Successfully fixed ${fixedCount} categorization issues.`,
       });
-
-      // Clear the issues list since they've been fixed
-      setIssues([]);
     } catch (error) {
       console.error('Error fixing issues:', error);
       toast({
@@ -143,7 +162,7 @@ export function MediaCategoryFixer() {
                     </div>
                     <div className="flex gap-1">
                       <Badge variant="outline">{issue.media_type.toUpperCase()}</Badge>
-                      <Badge variant="destructive">{issue.category}</Badge>
+                      <Badge variant="destructive">{issue.media_category}</Badge>
                     </div>
                   </div>
                 </div>

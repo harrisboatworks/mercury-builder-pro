@@ -498,9 +498,16 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
               A real person at Harris Boat Works reviews every request. This does not place an order or take payment. We usually confirm everything within 1 business day.
             </div>
             <div className="space-y-2">
-              <div ref={turnstileHostRef} data-testid="consultation-turnstile" />
+              <div
+                ref={turnstileHostRef}
+                data-testid="consultation-turnstile"
+                role="group"
+                aria-label="Verification"
+                aria-invalid={errors.turnstile ? true : undefined}
+                aria-describedby={errors.turnstile ? 'turnstile-error' : undefined}
+              />
               {errors.turnstile && (
-                <p role="alert" className="text-sm text-destructive font-light">{errors.turnstile}</p>
+                <p id="turnstile-error" role="alert" className="text-sm text-destructive font-light">{errors.turnstile}</p>
               )}
             </div>
             <button

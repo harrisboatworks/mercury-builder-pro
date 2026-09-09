@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Shield, CalendarOff, Percent, Banknote, Check, ChevronRight, Clock } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { isUsableFinancingRate } from '@/lib/finance';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { getAppliedPromotion, getWarrantyDisplayFromAppliedPromotion } from '@/lib/warranty-display';
 import mercuryLogo from '@/assets/mercury-logo.png';
@@ -43,7 +44,7 @@ export function PromoSummaryCard({
   
   const rebateAmount = getRebateForHP?.(motorHP) || 0;
   const financingRates = getSpecialFinancingRates?.();
-  const lowestRate = financingRates?.[0]?.rate || 2.99;
+  const lowestRate = isUsableFinancingRate(financingRates?.[0]?.rate) ? financingRates[0].rate : 2.99;
   
   const options = [
     {

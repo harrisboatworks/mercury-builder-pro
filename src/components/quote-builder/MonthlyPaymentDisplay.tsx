@@ -1,6 +1,6 @@
 
 import { useMotorMonthlyPayment } from '@/hooks/useMotorMonthlyPayment';
-import { getFinancingDisplay } from '@/lib/finance';
+import { getFinancingDisplay, isUsableFinancingRate } from '@/lib/finance';
 import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 
 interface MonthlyPaymentDisplayProps {
@@ -13,7 +13,7 @@ export function MonthlyPaymentDisplay({ motorPrice }: MonthlyPaymentDisplayProps
   
   if (!monthlyPayment) return null;
   
-  const displayText = getFinancingDisplay(motorPrice * 1.13, promo?.rate || null);
+  const displayText = getFinancingDisplay(motorPrice * 1.13, isUsableFinancingRate(promo?.rate) ? promo.rate : null);
   
   return (
     <div className="mt-0 mb-1 text-center">

@@ -26,6 +26,7 @@ import { RebateCalculator } from '@/components/promotions/RebateCalculator';
 import { TDAlwaysOnCard, isTDAlwaysOnActive } from '@/components/promotions/TDAlwaysOnOffer';
 import { TDFinancingHero } from '@/components/promotions/TDFinancingHero';
 import { SummerSavingsRebateHero } from '@/components/promotions/SummerSavingsRebateHero';
+import { dealerToday } from '@/lib/quote-utils';
 
 
 
@@ -115,13 +116,13 @@ export default function Promotions() {
 
   const fetchPromotions = async () => {
     try {
-      const now = new Date().toISOString();
+      const today = dealerToday();
       const { data, error } = await supabase
         .from('promotions')
         .select('*')
         .eq('is_active', true)
-        .lte('start_date', now)
-        .gte('end_date', now)
+        .lte('start_date', today)
+        .gte('end_date', today)
         .order('priority', { ascending: false });
 
       if (error) throw error;

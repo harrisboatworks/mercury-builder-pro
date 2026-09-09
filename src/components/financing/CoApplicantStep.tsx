@@ -272,7 +272,7 @@ export function CoApplicantStep() {
                     onValueChange={(value) => setValue('currentAddress.province', value)}
                     disabled={sameAddress}
                   >
-                    <SelectTrigger className={errors.currentAddress?.province ? 'border-destructive' : ''}>
+                    <SelectTrigger id="currentAddress.province" className={errors.currentAddress?.province ? 'border-destructive' : ''}>
                       <SelectValue placeholder="Select" />
                     </SelectTrigger>
                     <SelectContent>
@@ -316,7 +316,7 @@ export function CoApplicantStep() {
               <div className="space-y-2">
                 <Label htmlFor="currentAddress.timeAtAddress">Time at Address <RequiredMark /></Label>
                 <Select {...register('currentAddress.timeAtAddress')} onValueChange={(value) => setValue('currentAddress.timeAtAddress', value as any)} disabled={sameAddress}>
-                  <SelectTrigger className={errors.currentAddress?.timeAtAddress ? 'border-destructive' : ''}>
+                  <SelectTrigger id="currentAddress.timeAtAddress" className={errors.currentAddress?.timeAtAddress ? 'border-destructive' : ''}>
                     <SelectValue placeholder="Select" />
                   </SelectTrigger>
                   <SelectContent>
@@ -403,7 +403,12 @@ export function CoApplicantStep() {
                     <div className="space-y-2">
                       <Label htmlFor="timeAtJob">Time at Job <RequiredMark /></Label>
                       <Select {...register('timeAtJob')} onValueChange={(value) => setValue('timeAtJob', value as any)}>
-                        <SelectTrigger className={errors.timeAtJob ? 'border-destructive' : ''}>
+                        <SelectTrigger
+                          id="timeAtJob"
+                          aria-required="true"
+                          aria-invalid={Boolean(errors.timeAtJob)}
+                          className={errors.timeAtJob ? 'border-destructive' : ''}
+                        >
                           <SelectValue placeholder="Select" />
                         </SelectTrigger>
                         <SelectContent>
@@ -474,7 +479,7 @@ export function CoApplicantStep() {
                     <div className="space-y-2">
                       <Label htmlFor="previousEmployer.timeAtJob">Time at Previous Job</Label>
                       <Select {...register('previousEmployer.timeAtJob')} onValueChange={(value) => setValue('previousEmployer.timeAtJob', value as any)}>
-                        <SelectTrigger>
+                        <SelectTrigger id="previousEmployer.timeAtJob">
                           <SelectValue placeholder="Select" />
                         </SelectTrigger>
                         <SelectContent>
@@ -576,7 +581,7 @@ export function CoApplicantStep() {
                   <div className="space-y-2">
                     <Label htmlFor="accountType">Account Type <RequiredMark /></Label>
                     <Select {...register('accountType')} onValueChange={(value) => setValue('accountType', value as any)}>
-                      <SelectTrigger className={errors.accountType ? 'border-destructive' : ''}>
+                      <SelectTrigger id="accountType" className={errors.accountType ? 'border-destructive' : ''}>
                         <SelectValue placeholder="Select" />
                       </SelectTrigger>
                       <SelectContent>
@@ -589,7 +594,7 @@ export function CoApplicantStep() {
                   <div className="space-y-2">
                     <Label htmlFor="timeWithBank">Time with Bank <RequiredMark /></Label>
                     <Select {...register('timeWithBank')} onValueChange={(value) => setValue('timeWithBank', value as any)}>
-                      <SelectTrigger className={errors.timeWithBank ? 'border-destructive' : ''}>
+                      <SelectTrigger id="timeWithBank" className={errors.timeWithBank ? 'border-destructive' : ''}>
                         <SelectValue placeholder="Select" />
                       </SelectTrigger>
                       <SelectContent>
@@ -650,7 +655,7 @@ export function CoApplicantStep() {
                     <div className="space-y-2">
                       <Label htmlFor="bankruptcyDetails.status">Status</Label>
                       <Select {...register('bankruptcyDetails.status')} onValueChange={(value) => setValue('bankruptcyDetails.status', value as any)}>
-                        <SelectTrigger>
+                        <SelectTrigger id="bankruptcyDetails.status">
                           <SelectValue placeholder="Select" />
                         </SelectTrigger>
                         <SelectContent>

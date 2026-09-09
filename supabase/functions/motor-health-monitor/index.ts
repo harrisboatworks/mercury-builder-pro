@@ -148,10 +148,10 @@ serve(async (req) => {
               }
             }
           } catch (error) {
-            if (error.name === 'AbortError') {
+            if (error instanceof Error && error.name === 'AbortError') {
               check.issues.push(`Image URL check timed out`)
             } else {
-              check.issues.push(`Image URL unreachable: ${error.message}`)
+              check.issues.push(`Image URL unreachable: ${error instanceof Error ? error.message : String(error)}`)
             }
             healthReport.summary.brokenImages++
             hasIssues = true
@@ -327,7 +327,7 @@ serve(async (req) => {
     console.error('Health monitoring error:', error)
     return new Response(JSON.stringify({
       success: false,
-      error: error.message
+      error: error instanceof Error ? error.message : String(error)
     }), {
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
       status: 500,

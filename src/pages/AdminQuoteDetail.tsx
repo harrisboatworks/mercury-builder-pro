@@ -23,6 +23,7 @@ import QuoteHistoryTimeline from '@/components/admin/QuoteHistoryTimeline';
 import ContactLog from '@/components/admin/ContactLog';
 import FollowUpReminder from '@/components/admin/FollowUpReminder';
 import SendQuoteEmail from '@/components/admin/SendQuoteEmail';
+import QuoteEmailDeliveryHistory from '@/components/admin/QuoteEmailDeliveryHistory';
 
 interface QuoteDetail {
   id: string;
@@ -61,6 +62,7 @@ const AdminQuoteDetail = () => {
   const { toast } = useToast();
   const { user } = useAuth();
   const [changeLogKey, setChangeLogKey] = useState(0);
+  const [emailHistoryKey, setEmailHistoryKey] = useState(0);
   
   const [q, setQ] = useState<QuoteDetail | null>(null);
   const [loadState, setLoadState] = useState<'loading' | 'loaded' | 'notfound'>('loading');
@@ -199,31 +201,56 @@ const AdminQuoteDetail = () => {
         changes.trade_in_override = { old: tradeIn.overrideValue || null, new: overrideVal };
       }
 
-      const { error } = await supabase
-        .from('customer_quotes')
-        .update({
-          tradein_value_final: finalTradeValue,
-          final_price: newFinalPrice,
-          quote_data: updatedQuoteData,
-          last_modified_at: new Date().toISOString(),
-          last_modified_by: user.id,
-        })
-        .eq('id', q.id);
-      if (error) throw error;
+      if (q._source === 'saved_quotes') {
+        const { error } = await supabase
+          .from('saved_quotes')
+          .update({ quote_state: updatedQuoteData })
+          .eq('id', q.id);
+        if (error) throw error;
+      } else {
+        const { error } = await supabase
+          .from('customer_quotes')
+          .update({
+            tradein_value_final: finalTradeValue,
+            final_price: newFinalPrice,
+            quote_data: updatedQuoteData,
+            last_modified_at: new Date().toISOString(),
+            last_modified_by: user.id,
+          })
+          .eq('id', q.id);
+        if (error) throw error;
 
-      // Log change
-      await supabase.from('quote_change_log').insert({
-        quote_id: q.id,
-        changed_by: user.id,
-        change_type: clearOverride ? 'trade_in_clear' : 'trade_in_override',
-        changes,
-        notes: clearOverride ? 'Cleared trade-in override, reverted to formula estimate' : `Trade-in overridden to $${overrideVal?.toLocaleString()}`,
-      });
+        // quote_change_log.quote_id references customer_quotes only.
+        const { error: changeLogError } = await supabase.from('quote_change_log').insert({
+          quote_id: q.id,
+          changed_by: user.id,
+          change_type: clearOverride ? 'trade_in_clear' : 'trade_in_override',
+          changes,
+          notes: clearOverride ? 'Cleared trade-in override, reverted to formula estimate' : `Trade-in overridden to $${overrideVal?.toLocaleString()}`,
+        });
+        if (changeLogError) {
+          toast({
+            title: 'Change log not saved',
+            description: 'The trade-in was updated, but the change history row was not. Refresh and confirm the value before editing again.',
+            variant: 'destructive',
+          });
+        }
 
-      // Dual-write to saved_quotes if exists (best-effort)
-      try {
-        await (supabase as any).from('saved_quotes').update({ quote_data: updatedQuoteData }).eq('customer_quote_id', q.id);
-      } catch { /* ignore if saved_quotes doesn't have this record */ }
+        // Dual-write is best-effort: many leads have no saved_quotes copy.
+        // saved_quotes stores quote_state (not quote_data) and links via
+        // quote_state.customerQuoteId (there is no customer_quote_id column).
+        const { error: savedQuoteError } = await supabase
+          .from('saved_quotes')
+          .update({ quote_state: updatedQuoteData })
+          .contains('quote_state', { customerQuoteId: q.id });
+        if (savedQuoteError) {
+          toast({
+            title: 'Saved quote copy not updated',
+            description: 'The lead was saved, but the saved-quote copy was not. Refresh this page and try again, or open the saved quote directly.',
+            variant: 'destructive',
+          });
+        }
+      }
 
       // Update local state
       setQ(prev => prev ? {
@@ -345,14 +372,21 @@ const AdminQuoteDetail = () => {
       // Log the changes if any
       if (Object.keys(changes).length > 0 && user?.id) {
         const changeType = changes.admin_discount ? 'discount' : 'notes';
-        await supabase.from('quote_change_log').insert({
+        const { error: changeLogError } = await supabase.from('quote_change_log').insert({
           quote_id: q.id,
           changed_by: user.id,
           change_type: changeType,
           changes
         });
-        // Refresh the change log
-        setChangeLogKey(prev => prev + 1);
+        if (changeLogError) {
+          toast({
+            title: 'Change log not saved',
+            description: 'The quote was updated, but the change history row was not. Refresh and confirm the values before editing again.',
+            variant: 'destructive',
+          });
+        } else {
+          setChangeLogKey(prev => prev + 1);
+        }
       }
       
       // Update local state
@@ -835,12 +869,19 @@ const AdminQuoteDetail = () => {
                 customerEmail={q.customer_email}
                 motorModel={q.quote_data?.motor?.model || 'Mercury Motor'}
                 totalPrice={q.final_price}
+                onDeliverySettled={() => setEmailHistoryKey((key) => key + 1)}
               />
               <div className="text-xs text-muted-foreground bg-muted/50 p-2 rounded font-mono truncate">
                 {isSubmitted ? (privateShareUrl || 'Copy Link creates a private link to the original PDF, valid for 30 days.') : `${SITE_URL}/quote/saved/${q?.id?.slice(0, 8)}...`}
               </div>
             </div>
           </Card>
+
+          <QuoteEmailDeliveryHistory
+            quoteId={q.id}
+            customerEmail={q.customer_email}
+            refreshKey={emailHistoryKey}
+          />
 
           {/* Change Log */}
           <QuoteChangeLog key={changeLogKey} quoteId={q.id} />

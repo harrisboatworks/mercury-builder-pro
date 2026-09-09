@@ -8,6 +8,9 @@ import {
 import {
   buildAdminEmail,
   buildEmail,
+  detailsCard,
+  esc,
+  safeHttpsUrl,
 } from "../../supabase/functions/_shared/email-layout";
 import { replaceConsultationTemplateVariables } from "../../supabase/functions/_shared/consultation-quote-email";
 
@@ -115,5 +118,132 @@ describe("quote email template policy", () => {
     expect(source).toContain('heading: `Your Mercury ${data.motorModel} quote`');
     expect(source).not.toContain('heading: `Your Mercury ${esc(data.motorModel)} quote`');
     expect(source).not.toContain('heading: `${esc(data.leadData?.customerName || "Lead")}');
+  });
+});
+
+const XSS = `"><img src=x onerror=alert(1)>`;
+const ESCAPED_XSS = esc(XSS);
+
+describe("outbound email HTML interpolation", () => {
+  it("escapes request name in the repower-guide greeting exactly once", () => {
+    const greeting = XSS ? `Hi ${esc(XSS)},` : "Hi there,";
+    const html = buildEmail({
+      heading: "Your Repower Guide is ready",
+      bodyHtml: `<p style="margin:0 0 14px 0;">${greeting}</p>`,
+    });
+
+    expect(html).toContain(`Hi ${ESCAPED_XSS},`);
+    expect(html).not.toContain(`Hi ${XSS}`);
+    expect(html).not.toContain("&amp;lt;img");
+    expect(html).not.toContain("&amp;quot;");
+  });
+
+  it("escapes request name in the blog-subscribe greeting exactly once", () => {
+    const body = `<p style="margin:0 0 14px 0;">${XSS ? `Hi ${esc(XSS)},` : "Hi there,"}</p>`;
+    const html = buildEmail({
+      heading: "Welcome to our journal",
+      bodyHtml: body,
+    });
+
+    expect(html).toContain(`Hi ${ESCAPED_XSS},`);
+    expect(html).not.toContain(`Hi ${XSS}`);
+    expect(html).not.toContain("&amp;lt;img");
+  });
+
+  it("escapes weekly-report quote and activity strings in table cells", () => {
+    const q = { customer_name: XSS, customer_email: XSS };
+    const model = XSS;
+    const page = XSS;
+    const source = XSS;
+    const campaign = XSS;
+    const cells = [
+      `<td style="padding:8px 12px;border-bottom:1px solid #e5e7eb;">${esc(q.customer_name)}</td>`,
+      `<td style="padding:8px 12px;border-bottom:1px solid #e5e7eb;">${esc(q.customer_email)}</td>`,
+      `<td style="padding:8px 12px;border-bottom:1px solid #e5e7eb;">${esc(model)}</td>`,
+      `<td style="padding:8px 12px;border-bottom:1px solid #e5e7eb;">${esc(page)}</td>`,
+      `<td style="padding:8px 12px;border-bottom:1px solid #e5e7eb;">${esc(source)}</td>`,
+      `<td style="padding:8px 12px;border-bottom:1px solid #e5e7eb;">${esc(campaign)}</td>`,
+    ].join("");
+
+    expect(cells).toContain(ESCAPED_XSS);
+    expect(cells).not.toContain(XSS);
+    expect(cells).not.toContain("<img");
+    expect(cells).not.toContain("&amp;lt;");
+  });
+
+  it("escapes the weekly-report LLM summary before converting newlines", () => {
+    const aiText = `Line one\n${XSS}`;
+    const escapedText = esc(aiText).replace(/\n/g, "<br>");
+
+    expect(escapedText).toBe(`Line one<br>${ESCAPED_XSS}`);
+    expect(escapedText).not.toContain("<img");
+    expect(escapedText).not.toContain("&lt;br&gt;");
+    expect(escapedText).not.toContain("&amp;lt;");
+  });
+
+  it("rejects non-https articleImage URLs and escapes https src attributes", () => {
+    const injected = `https://cdn.example.com/hero.png?q=${XSS}`;
+    const safeImage = safeHttpsUrl(injected);
+    const imageBlock = safeImage
+      ? `<p style="margin:0 0 18px 0;text-align:center;"><img src="${safeImage}" alt="title" /></p>`
+      : "";
+
+    expect(safeHttpsUrl("javascript:alert(1)")).toBeNull();
+    expect(safeHttpsUrl("data:text/html,<img src=x onerror=alert(1)>")).toBeNull();
+    expect(safeHttpsUrl("http://cdn.example.com/hero.png")).toBeNull();
+    expect(safeHttpsUrl("https://cdn.example.com/hero.png")).toBe(
+      "https://cdn.example.com/hero.png",
+    );
+    expect(safeImage).toBe(esc(injected));
+    expect(imageBlock).toContain(`src="${esc(injected)}"`);
+    expect(imageBlock).not.toContain(`src="${injected}"`);
+    expect(imageBlock).not.toContain(XSS);
+    expect(imageBlock).not.toContain("&amp;amp;");
+  });
+
+  it("treats detailsCard valueHtml as already escaped", () => {
+    const html = detailsCard([{ label: XSS, valueHtml: esc(XSS) }]);
+
+    expect(html).toContain(ESCAPED_XSS);
+    expect(html).not.toContain(XSS);
+    expect(html).not.toContain("<img");
+    expect(html).not.toContain("&amp;lt;");
+    expect(html).not.toContain("&amp;quot;");
+    expect(detailsCard([{ label: "Motor", valueHtml: esc("O'Brien & Sons") }]))
+      .toContain("O'Brien &amp; Sons");
+    expect(detailsCard([{
+      label: "Payment ID",
+      valueHtml: `<span style="font-family:monospace;">${esc("pi_1")}</span>`,
+    }])).toContain('<span style="font-family:monospace;">pi_1</span>');
+  });
+
+  it("pins the interpolation sites so comments cannot satisfy the contract", () => {
+    const read = (relative: string) =>
+      readFileSync(join(process.cwd(), relative), "utf8");
+    const repower = read("supabase/functions/send-repower-guide-email/index.ts");
+    const subscribe = read("supabase/functions/subscribe-blog/index.ts");
+    const weekly = read("supabase/functions/weekly-quote-report/index.ts");
+    const blog = read("supabase/functions/send-blog-notification/index.ts");
+    const layout = read("supabase/functions/_shared/email-layout.ts");
+
+    expect(repower).toContain('const greeting = name ? `Hi ${esc(name)},` : "Hi there,";');
+    expect(repower).not.toContain("Hi ${name}");
+    expect(subscribe).toContain("${name ? `Hi ${esc(name)},` : \"Hi there,\"}");
+    expect(subscribe).not.toContain("Hi ${name}");
+    expect(weekly).toContain("const escapedText = esc(aiText).replace(/\\n/g, '<br>');");
+    expect(weekly).toContain("${esc(q.customer_name)}");
+    expect(weekly).toContain("${esc(q.customer_email)}");
+    expect(weekly).toContain("${esc(model)}");
+    expect(weekly).toContain("${esc(page)}");
+    expect(weekly).toContain("${esc(source)}");
+    expect(weekly).toContain("${esc(campaign)}");
+    expect(weekly).not.toContain("${q.customer_name}");
+    expect(weekly).not.toContain("${q.customer_email}");
+    expect(blog).toContain("const safeImage = articleImage ? safeHttpsUrl(articleImage) : null;");
+    expect(blog).toContain('src="${safeImage}"');
+    expect(blog).not.toContain('src="${articleImage}"');
+    expect(layout).toContain("${r.valueHtml}");
+    expect(layout).not.toContain("${esc(r.valueHtml)}");
+    expect(layout).not.toContain("${r.value}");
   });
 });

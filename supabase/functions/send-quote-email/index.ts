@@ -1,5 +1,13 @@
-import { assertResendAccepted } from "../_shared/consultation-submit-delivery.ts";
 import { isAuthorizedAdminAttachment, matchesAdminAttachmentQuote } from "../_shared/consultation-admin-attachment.ts";
+import {
+  claimQuoteEmailDelivery,
+  completeQuoteEmailDelivery,
+  deriveIdempotencyKey,
+  EmailSendFailed,
+  normalizeRecipient,
+  sha256Hex as sha256Recipient,
+  verifyResendResult,
+} from "../_shared/quote-email-delivery.ts";
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
 import { Resend } from "npm:resend@2.0.0";
@@ -52,6 +60,13 @@ function isAuthorizedInternalRequest(req: Request): boolean {
   return Boolean(serviceRoleKey && authorization === `Bearer ${serviceRoleKey}`);
 }
 
+function jsonResponse(status: number, body: Record<string, unknown>): Response {
+  return new Response(JSON.stringify(body), {
+    status,
+    headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+  });
+}
+
 // Input validation schema
 const leadDataSchema = z.object({
   customerName: z.string().max(100).optional(),
@@ -75,6 +90,7 @@ const quoteEmailSchema = z.object({
   documentAccessUrl: z.string().url().max(2000).optional(),
   emailType: z.enum(['quote_delivery', 'follow_up', 'reminder', 'admin_quote_notification']),
   leadData: leadDataSchema,
+  idempotencyKey: z.string().trim().min(8).max(200).optional(),
 });
 
 type QuoteEmailRequest = z.infer<typeof quoteEmailSchema>;
@@ -86,9 +102,9 @@ function generateConsultationQuoteDeliveryEmail(
   documentAccessUrl: string,
 ): string {
   const rows = [
-    { label: "Quote #", value: esc(data.quoteNumber) },
-    { label: "Motor", value: esc(data.motorModel) },
-    { label: "Total", value: `$${data.totalPrice.toLocaleString()} CAD` },
+    { label: "Quote #", valueHtml: esc(data.quoteNumber) },
+    { label: "Motor", valueHtml: esc(data.motorModel) },
+    { label: "Total", valueHtml: `$${data.totalPrice.toLocaleString()} CAD` },
   ];
   const body = `
     <p style="margin:0 0 14px 0;">Hi ${esc(data.customerName)},</p>
@@ -131,9 +147,9 @@ function generateQuoteDeliveryEmail(
 ): string {
   const cta = getQuoteCta(data, hasPdfAttachment);
   const rows = [
-    { label: "Quote #", value: esc(data.quoteNumber) },
-    { label: "Motor", value: esc(data.motorModel) },
-    { label: "Total", value: `$${data.totalPrice.toLocaleString()} CAD` },
+    { label: "Quote #", valueHtml: esc(data.quoteNumber) },
+    { label: "Motor", valueHtml: esc(data.motorModel) },
+    { label: "Total", valueHtml: `$${data.totalPrice.toLocaleString()} CAD` },
   ];
   const body = `
     <p style="margin:0 0 14px 0;">Hi ${esc(data.customerName)},</p>
@@ -165,9 +181,9 @@ function generateFollowUpEmail(
 ): string {
   const cta = getQuoteCta(data, hasPdfAttachment);
   const rows = [
-    { label: "Quote #", value: esc(data.quoteNumber) },
-    { label: "Motor", value: esc(data.motorModel) },
-    { label: "Total", value: `$${data.totalPrice.toLocaleString()} CAD` },
+    { label: "Quote #", valueHtml: esc(data.quoteNumber) },
+    { label: "Motor", valueHtml: esc(data.motorModel) },
+    { label: "Total", valueHtml: `$${data.totalPrice.toLocaleString()} CAD` },
   ];
   const body = `
     <p style="margin:0 0 14px 0;">Hi ${esc(data.customerName)},</p>
@@ -354,6 +370,7 @@ serve(async (req) => {
 
     console.log('Sending email:', emailData.emailType);
 
+    let attachmentStatus = 'none';
     let legacyPdfAttachment: { filename: string; content: string } | undefined;
     if (!isConsultationPath && emailData.pdfUrl) {
       try {
@@ -365,6 +382,7 @@ serve(async (req) => {
           filename: `Quote-${emailData.quoteNumber}.pdf`,
           content: bytesToBase64(pdfBytes),
         };
+        attachmentStatus = `attached:${pdfBytes.byteLength}`;
         console.log('PDF attachment prepared, size:', pdfBytes.byteLength, 'bytes');
       } catch (pdfError) {
         console.error(
@@ -460,17 +478,18 @@ serve(async (req) => {
     const emailOptions: {
       from: string;
       to: string[];
-      replyTo: string;
+      reply_to: string;
       bcc?: string[];
       subject: string;
       html: string;
       attachments?: Array<{ filename: string; content: string }>;
+      headers?: Record<string, string>;
     } = {
       from: isAdminNotification
         ? GROK_BOT_QUOTE_SENDER
         : 'Harris Boat Works - Mercury Marine <noreply@mercuryrepower.ca>',
       to: destinations.to,
-      replyTo: 'info@harrisboatworks.ca',
+      reply_to: 'info@harrisboatworks.ca',
       subject: subject,
       html: htmlContent,
     };
@@ -534,6 +553,7 @@ serve(async (req) => {
           headers: { ...corsHeaders, "Content-Type": "application/json" },
         });
       }
+      attachmentStatus = `attached:${pdfBytes.byteLength}`;
       const pdfBase64 = btoa(pdfBytes.reduce((data, byte) => data + String.fromCharCode(byte), ""));
       emailOptions.attachments = [{
         filename: `Quote-${emailData.quoteNumber}.pdf`,
@@ -541,44 +561,95 @@ serve(async (req) => {
       }];
     }
 
-    // Send email via Resend
-    const emailResponse = await resend.emails.send(emailOptions);
-    assertResendAccepted(emailResponse);
+    const idempotencyKey = await deriveIdempotencyKey({
+      suppliedKey: emailData.idempotencyKey,
+      emailType: emailData.emailType,
+      quoteNumber: emailData.quoteNumber,
+      quoteId: emailData.leadData?.quoteId,
+      recipient: emailData.customerEmail,
+    });
+    const recipientHash = await sha256Recipient(normalizeRecipient(emailData.customerEmail));
+    emailOptions.headers = { 'Idempotency-Key': idempotencyKey };
 
-    console.log('Email sent successfully:', emailResponse);
-
-    // Public quote delivery remains available, but only a verified admin may
-    // write internal quote notes through the service-role client.
     const admin = await requireAdmin(req, corsHeaders);
-    if (!(admin instanceof Response) && emailData.leadData?.quoteId) {
-      await supabase
-        .from('customer_quotes')
-        .update({
-          notes: `Email sent: ${emailData.emailType} on ${new Date().toISOString()}`
-        })
-        .eq('id', emailData.leadData.quoteId);
+    const initiator = !(admin instanceof Response) ? 'admin' : 'customer';
+
+    let claim;
+    try {
+      claim = await claimQuoteEmailDelivery(supabase, {
+        idempotencyKey,
+        emailType: emailData.emailType,
+        quoteNumber: emailData.quoteNumber,
+        quoteId: emailData.leadData?.quoteId,
+        recipientHash,
+        initiator,
+      });
+    } catch (claimError) {
+      const detail = claimError instanceof Error ? claimError.message : 'claim failed';
+      console.log('[send-quote-email] delivery claim failed', detail);
+      return jsonResponse(503, { success: false, error: 'Delivery guard unavailable', detail });
     }
 
-    return new Response(
-      JSON.stringify({ 
-        success: true, 
-        messageId: emailResponse.data?.id,
-        emailType: emailData.emailType 
-      }),
-      { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
-    );
+    if (claim.status === 'duplicate') {
+      console.log('[send-quote-email] duplicate suppressed', claim.deliveryId);
+      return jsonResponse(200, {
+        success: true,
+        duplicate: true,
+        messageId: claim.messageId,
+        emailType: emailData.emailType,
+        attachmentStatus,
+      });
+    }
+
+    if (claim.status === 'in_flight') {
+      return jsonResponse(409, { success: false, error: 'A send for this quote is already in progress' });
+    }
+
+    if (claim.status === 'mismatch') {
+      console.log('[send-quote-email] idempotency key mismatch', claim.deliveryId);
+      return jsonResponse(409, { success: false, error: 'Idempotency key does not match this message' });
+    }
+
+    let messageId: string;
+    try {
+      const emailResponse = await resend.emails.send(emailOptions);
+      messageId = verifyResendResult(emailResponse).messageId;
+    } catch (sendError) {
+      const detail = sendError instanceof EmailSendFailed
+        ? sendError.detail
+        : sendError instanceof Error
+        ? sendError.message
+        : 'unknown send error';
+      console.log('[send-quote-email] send failed', detail);
+      await completeQuoteEmailDelivery(supabase, {
+        deliveryId: claim.deliveryId,
+        status: 'failed',
+        errorDetail: detail,
+        attachmentStatus,
+      });
+      return jsonResponse(502, { success: false, error: 'Email delivery failed', detail });
+    }
+
+    const audited = await completeQuoteEmailDelivery(supabase, {
+      deliveryId: claim.deliveryId,
+      status: 'sent',
+      messageId,
+      attachmentStatus,
+    });
+
+    return jsonResponse(200, {
+      success: true,
+      messageId,
+      emailType: emailData.emailType,
+      attachmentStatus,
+      ...(audited ? {} : { auditWarning: 'delivery-audit-write-failed' }),
+    });
 
   } catch (error) {
     console.error('Error in send-quote-email function:', error);
-    return new Response(
-      JSON.stringify({ 
-        error: error instanceof Error ? error.message : 'Unknown error',
-        success: false 
-      }),
-      { 
-        status: 500,
-        headers: { ...corsHeaders, 'Content-Type': 'application/json' } 
-      }
-    );
+    return jsonResponse(500, {
+      error: error instanceof Error ? error.message : 'Unknown error',
+      success: false,
+    });
   }
 });

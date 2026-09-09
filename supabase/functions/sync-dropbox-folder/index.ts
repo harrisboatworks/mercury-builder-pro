@@ -226,7 +226,7 @@ Deno.serve(async (req) => {
 
       } catch (error) {
         console.error(`Error syncing ${file.name}:`, error)
-        errors.push(`${file.name}: ${error.message}`)
+        errors.push(`${file.name}: ${error instanceof Error ? error.message : String(error)}`)
       }
     }
 
@@ -259,7 +259,7 @@ Deno.serve(async (req) => {
     return new Response(
       JSON.stringify({ 
         success: false, 
-        error: error.message 
+        error: error instanceof Error ? error.message : String(error) 
       }),
       { 
         status: 500,

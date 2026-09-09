@@ -117,7 +117,13 @@ describe('admin consultation document policy', () => {
       path: 'consultation/evil/quote.pdf',
       documentAccessUrl: 'https://evil.example/quote.pdf',
       storageKey: 'spec-sheets/temp/quote.pdf',
-    })).toEqual({ action: 'admin-download', quoteId: CUSTOMER_ID });
+    })).toEqual({ action: 'admin-download', quoteId: CUSTOMER_ID, emailIntent: 'send' });
+    expect(parseAdminConsultationDocumentRequest({
+      action: 'admin-email',
+      quoteId: CUSTOMER_ID,
+      emailIntent: 'resend',
+      customerEmail: 'attacker@example.com',
+    })).toEqual({ action: 'admin-email', quoteId: CUSTOMER_ID, emailIntent: 'resend' });
     expect(() => parseAdminConsultationDocumentRequest({
       action: 'redeem',
       quoteId: CUSTOMER_ID,
@@ -165,12 +171,12 @@ describe('admin consultation document handler', () => {
   const req = new Request('https://www.mercuryrepower.ca/functions/v1/admin-consultation-document', {
     method: 'POST',
   });
-  const mailer = { sendQuoteEmail: vi.fn<(payload: AdminConsultationQuoteEmailPayload) => Promise<boolean>>() };
+  const mailer = { sendQuoteEmail: vi.fn<(payload: AdminConsultationQuoteEmailPayload) => Promise<{ success: boolean; duplicate?: boolean }>>() };
   const access = { createAccessToken: vi.fn(async () => ({ token: TOKEN, tokenHash: TOKEN_HASH })) };
 
   beforeEach(() => {
     mailer.sendQuoteEmail.mockReset();
-    mailer.sendQuoteEmail.mockResolvedValue(true);
+    mailer.sendQuoteEmail.mockResolvedValue({ success: true });
     access.createAccessToken.mockClear();
   });
 
@@ -313,12 +319,32 @@ describe('admin consultation document handler', () => {
       documentId: DOCUMENT_ID,
       documentAccessUrl: ACCESS_URL,
       leadData: { quoteId: CUSTOMER_ID },
+      idempotencyKey: `hbw-admin-v1:${CUSTOMER_ID}:quote_delivery`,
     });
     const payload = mailer.sendQuoteEmail.mock.calls[0][0];
     expect(payload).not.toHaveProperty('pdfUrl');
     expect(payload.documentAccessUrl).toBe(ACCESS_URL);
     expect(payload.documentAccessUrl).not.toContain('/storage/v1/');
     expect(payload.customerEmail).not.toBe('attacker@example.com');
+  });
+
+  it('mints a stable send key and a distinct resend key on the consultation path', async () => {
+    const { document, bytes } = await storedDocument();
+    const seeded = memoryStore({ document, bytes });
+    await run({ action: 'admin-email', quoteId: CUSTOMER_ID }, seeded.store);
+    expect(mailer.sendQuoteEmail.mock.calls[0][0].idempotencyKey)
+      .toBe(`hbw-admin-v1:${CUSTOMER_ID}:quote_delivery`);
+
+    mailer.sendQuoteEmail.mockClear();
+    await run({ action: 'admin-email', quoteId: CUSTOMER_ID, emailIntent: 'resend' }, seeded.store);
+    const resendKey = mailer.sendQuoteEmail.mock.calls[0][0].idempotencyKey;
+    expect(resendKey.startsWith(`hbw-admin-v1:${CUSTOMER_ID}:quote_delivery:resend:`)).toBe(true);
+    expect(resendKey).not.toBe(`hbw-admin-v1:${CUSTOMER_ID}:quote_delivery`);
+
+    mailer.sendQuoteEmail.mockResolvedValueOnce({ success: true, duplicate: true });
+    const duplicate = await run({ action: 'admin-email', quoteId: CUSTOMER_ID }, seeded.store);
+    expect(duplicate.status).toBe(200);
+    expect(await duplicate.json()).toEqual({ success: true, duplicate: true });
   });
 
   it('mints a private share capability instead of a public quote UUID or signed storage URL', async () => {
@@ -347,7 +373,7 @@ describe('admin consultation document handler', () => {
   it('revokes the minted capability when the mailer does not confirm provider success', async () => {
     const { document, bytes } = await storedDocument();
     const seeded = memoryStore({ document, bytes });
-    mailer.sendQuoteEmail.mockResolvedValue(false);
+    mailer.sendQuoteEmail.mockResolvedValue({ success: false });
     const response = await run({ action: 'admin-email', quoteId: CUSTOMER_ID }, seeded.store);
     expect(response.status).toBe(502);
     expect(await response.json()).toEqual({ error: 'Quote email could not be sent' });
@@ -422,5 +448,23 @@ describe('admin consultation document handler', () => {
     expect(payload.leadData.quoteId).toBe(CUSTOMER_ID);
     expect(payload.documentId).toBe(DOCUMENT_ID);
     expect(payload.quoteNumber).toBe('HBW-150193');
+    expect(payload.idempotencyKey).toBe(`hbw-admin-v1:${CUSTOMER_ID}:quote_delivery`);
+    expect(buildAdminConsultationQuoteEmailPayload({
+      snapshot: SNAPSHOT,
+      document: {
+        id: DOCUMENT_ID,
+        customer_quote_id: CUSTOMER_ID,
+        storage_key: canonicalConsultationDocumentPath(DOCUMENT_ID),
+        sha256: 'a'.repeat(64),
+        byte_size: 12,
+        content_type: 'application/pdf',
+        quote_number: 'HBW-150193',
+        delivery_snapshot: SNAPSHOT,
+      },
+      documentAccessUrl: ACCESS_URL,
+      quoteId: CUSTOMER_ID,
+      emailIntent: 'resend',
+      resendNonce: 'nonce-1',
+    }).idempotencyKey).toBe(`hbw-admin-v1:${CUSTOMER_ID}:quote_delivery:resend:nonce-1`);
   });
 });

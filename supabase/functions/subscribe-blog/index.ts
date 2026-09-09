@@ -45,7 +45,17 @@ const handler = async (req: Request): Promise<Response> => {
       );
     }
 
-    const { email, name }: SubscribeRequest = await req.json();
+    let parsed: SubscribeRequest;
+    try {
+      parsed = await req.json();
+    } catch {
+      return new Response(
+        JSON.stringify({ error: "Request body must be valid JSON" }),
+        { status: 400, headers: { "Content-Type": "application/json", ...corsHeaders } },
+      );
+    }
+
+    const { email, name } = parsed ?? {};
 
     // Validate email
     if (!email || !email.includes("@")) {
@@ -112,9 +122,9 @@ const handler = async (req: Request): Promise<Response> => {
         const appUrl = Deno.env.get("APP_URL") || "https://mercuryrepower.ca";
         const unsubscribeUrl = `${appUrl}/blog/unsubscribe?token=${subscription.unsubscribe_token}`;
 
-        const { buildEmail } = await import("../_shared/email-layout.ts");
+        const { buildEmail, esc } = await import("../_shared/email-layout.ts");
         const body = `
-          <p style="margin:0 0 14px 0;">${name ? `Hi ${name},` : "Hi there,"}</p>
+          <p style="margin:0 0 14px 0;">${name ? `Hi ${esc(name)},` : "Hi there,"}</p>
           <p style="margin:0 0 14px 0;">Thanks for subscribing. We will send you a note when we publish new pieces on:</p>
           <ul style="margin:0;padding-left:20px;color:#1f2430;">
             <li style="margin:0 0 6px 0;">Mercury outboard guides and buying advice</li>
@@ -133,7 +143,7 @@ const handler = async (req: Request): Promise<Response> => {
 
         await resend.emails.send({
           from: "Harris Boat Works <updates@mercuryrepower.ca>",
-          replyTo: "info@harrisboatworks.ca",
+          reply_to: "info@harrisboatworks.ca",
           to: [email],
           bcc: [GROK_BOT_AGENTMAIL],
           subject: "Welcome to the Harris Boat Works journal",
