@@ -11,7 +11,9 @@
  * list --linked`) and skips any function whose newly required migrations
  * (from buildDeployRequiredReport / deployTargetsFromDiff) are not
  * applied. That skip fails the job. If the applied list cannot be read,
- * nothing is deployed.
+ * only functions that require migrations are skipped; functions with an
+ * empty requiredMigrations list still deploy. The job fails if anything
+ * was skipped.
  *
  * Never applies migrations. Never prints secret values.
  *
@@ -204,59 +206,94 @@ export function deployFunctionSlugs(slugs, { deployOne, skipReason } = {}) {
   return { succeeded, failed };
 }
 
+function writeDeployLog(message, log) {
+  const line = String(message).endsWith('\n') ? String(message) : `${message}\n`;
+  if (typeof log === 'function') {
+    log(line);
+    return;
+  }
+  process.stdout.write(line);
+}
+
+function appliedRowVersion(row) {
+  if (typeof row === 'string') return row.trim();
+  if (row && typeof row === 'object') return String(row.version || '').trim();
+  return '';
+}
+
+export function formatAppliedMigrationsReadLine(appliedRows) {
+  const versions = (Array.isArray(appliedRows) ? appliedRows : [])
+    .map(appliedRowVersion)
+    .filter(Boolean);
+  const latest = versions.length ? versions.reduce((a, b) => (a > b ? a : b)) : 'none';
+  return `applied migrations read: ${versions.length} versions (latest ${latest})`;
+}
+
+function appliedSetFromLookup(appliedRows) {
+  if (!Array.isArray(appliedRows)) {
+    throw new Error('applied versions listing was not an array');
+  }
+  return appliedVersionSet(appliedRows);
+}
+
+function lookupFailureSkipReason(slug, detail, env) {
+  return redactSecrets(
+    `skipped: could not read applied migrations (${detail}). Required migrations for \`${slug}\` cannot be verified from an unreadable list, so it was not deployed.`,
+    env,
+  );
+}
+
 export function deployWithMigrationGate({
   functions = [],
   listAppliedVersions,
   deployOne,
   env = process.env,
+  log,
 } = {}) {
   const targets = functions.map((item) =>
     typeof item === 'string' ? { slug: item, requiredMigrations: [] } : item,
   );
 
+  const deployTargets = (skipReason) =>
+    deployFunctionSlugs(
+      targets.map((item) => item.slug),
+      { deployOne, skipReason },
+    );
+
+  const degradeOnUnreadableList = (error) => {
+    const detail = error instanceof Error ? error.message : String(error);
+    writeDeployLog(redactSecrets(`could not read applied migrations: ${detail}`, env), log);
+    return {
+      ...deployTargets((slug) => {
+        const target = targets.find((item) => item.slug === slug);
+        if (!target?.requiredMigrations?.length) return null;
+        return lookupFailureSkipReason(slug, detail, env);
+      }),
+      appliedLookupFailed: true,
+    };
+  };
+
   let appliedRows;
   try {
     appliedRows = listAppliedVersions();
   } catch (error) {
-    const detail = error instanceof Error ? error.message : String(error);
-    const message = redactSecrets(
-      `skipped: could not read applied migrations (${detail}). Fail closed: nothing was deployed.`,
-      env,
-    );
-    return {
-      succeeded: [],
-      failed: targets.map((item) => ({ slug: item.slug, detail: message })),
-      appliedLookupFailed: true,
-    };
+    return degradeOnUnreadableList(error);
   }
 
   let appliedSet;
   try {
-    appliedSet = appliedVersionSet(appliedRows);
+    appliedSet = appliedSetFromLookup(appliedRows);
   } catch (error) {
-    const detail = error instanceof Error ? error.message : String(error);
-    const message = redactSecrets(
-      `skipped: could not read applied migrations (${detail}). Fail closed: nothing was deployed.`,
-      env,
-    );
-    return {
-      succeeded: [],
-      failed: targets.map((item) => ({ slug: item.slug, detail: message })),
-      appliedLookupFailed: true,
-    };
+    return degradeOnUnreadableList(error);
   }
 
+  writeDeployLog(redactSecrets(formatAppliedMigrationsReadLine(appliedRows), env), log);
+
   return {
-    ...deployFunctionSlugs(
-      targets.map((item) => item.slug),
-      {
-        deployOne,
-        skipReason: (slug) => {
-          const target = targets.find((item) => item.slug === slug);
-          return blockedDeployReason(slug, target?.requiredMigrations, appliedSet);
-        },
-      },
-    ),
+    ...deployTargets((slug) => {
+      const target = targets.find((item) => item.slug === slug);
+      return blockedDeployReason(slug, target?.requiredMigrations, appliedSet);
+    }),
     appliedLookupFailed: false,
   };
 }

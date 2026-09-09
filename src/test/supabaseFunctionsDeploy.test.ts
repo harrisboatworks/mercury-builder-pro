@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 import {
   deployFunctionSlugs,
   deployWithMigrationGate,
+  formatAppliedMigrationsReadLine,
   formatFunctionsDeployMarkdown,
   isSafeFunctionSlug,
   parseAppliedVersionsFromMigrationList,
@@ -143,7 +144,62 @@ describe('migration apply-order gate', () => {
     expect(failed).toEqual([]);
   });
 
-  it('deploys nothing and fails when the applied-versions lookup throws', () => {
+  it('skips a migration-dependent function when the applied-versions lookup throws', () => {
+    const seen: string[] = [];
+    const lines: string[] = [];
+    const env = { SUPABASE_ACCESS_TOKEN: 'sbp_secret_value' };
+    const { succeeded, failed, appliedLookupFailed } = deployWithMigrationGate({
+      functions: [
+        {
+          slug: 'send-quote-email',
+          requiredMigrations: [{ path: QUOTE_EMAIL_MIGRATION, version: '20260909193000' }],
+        },
+      ],
+      listAppliedVersions: () => {
+        throw new Error('network down token=sbp_secret_value');
+      },
+      deployOne: (slug: string) => {
+        seen.push(slug);
+        return { ok: true, detail: 'Deployed' };
+      },
+      env,
+      log: (line: string) => {
+        lines.push(line);
+      },
+    });
+    expect(appliedLookupFailed).toBe(true);
+    expect(seen).toEqual([]);
+    expect(succeeded).toEqual([]);
+    expect(failed).toHaveLength(1);
+    expect(failed[0].slug).toBe('send-quote-email');
+    expect(failed[0].detail).toContain('could not read applied migrations');
+    expect(failed[0].detail).toContain('unreadable list');
+    expect(failed[0].detail).not.toContain('not applied in production');
+    expect(failed[0].detail).not.toContain('nothing was deployed');
+    expect(failed[0].detail).not.toContain('sbp_secret_value');
+    expect(lines.join('')).toContain('could not read applied migrations:');
+    expect(lines.join('\n')).not.toContain('sbp_secret_value');
+  });
+
+  it('deploys a migration-independent function when the applied-versions lookup throws', () => {
+    const seen: string[] = [];
+    const { succeeded, failed, appliedLookupFailed } = deployWithMigrationGate({
+      functions: [{ slug: 'send-sms', requiredMigrations: [] }],
+      listAppliedVersions: () => {
+        throw new Error('network down');
+      },
+      deployOne: (slug: string) => {
+        seen.push(slug);
+        return { ok: true, detail: 'Deployed' };
+      },
+    });
+    expect(appliedLookupFailed).toBe(true);
+    expect(seen).toEqual(['send-sms']);
+    expect(succeeded.map((item) => item.slug)).toEqual(['send-sms']);
+    expect(failed).toEqual([]);
+  });
+
+  it('deploys only migration-independent functions when the applied-versions lookup throws', () => {
     const seen: string[] = [];
     const { succeeded, failed, appliedLookupFailed } = deployWithMigrationGate({
       functions: [
@@ -162,11 +218,85 @@ describe('migration apply-order gate', () => {
       },
     });
     expect(appliedLookupFailed).toBe(true);
+    expect(seen).toEqual(['send-sms']);
+    expect(succeeded.map((item) => item.slug)).toEqual(['send-sms']);
+    expect(failed.map((item) => item.slug)).toEqual(['send-quote-email']);
+    expect(failed[0].detail).toContain('could not read applied migrations');
+    expect(failed[0].detail).toContain('unreadable list');
+    expect(failed[0].detail).not.toContain('not applied in production');
+    expect(failed.length).toBeGreaterThan(0);
+  });
+
+  it('treats empty CLI output as a lookup failure, not an empty applied set', () => {
+    const seen: string[] = [];
+    const { failed, appliedLookupFailed } = deployWithMigrationGate({
+      functions: [
+        {
+          slug: 'send-quote-email',
+          requiredMigrations: [{ path: QUOTE_EMAIL_MIGRATION, version: '20260909193000' }],
+        },
+      ],
+      listAppliedVersions: () => parseAppliedVersionsFromMigrationList(''),
+      deployOne: (slug: string) => {
+        seen.push(slug);
+        return { ok: true, detail: 'Deployed' };
+      },
+    });
+    expect(appliedLookupFailed).toBe(true);
+    expect(seen).toEqual([]);
+    expect(failed[0].detail).toContain('could not read applied migrations');
+    expect(failed[0].detail).toContain('empty output');
+    expect(failed[0].detail).not.toContain('not applied in production');
+  });
+
+  it('treats a successful empty applied-versions list as a real answer, not a lookup failure', () => {
+    const seen: string[] = [];
+    const { succeeded, failed, appliedLookupFailed } = deployWithMigrationGate({
+      functions: [
+        {
+          slug: 'send-quote-email',
+          requiredMigrations: [{ path: QUOTE_EMAIL_MIGRATION, version: '20260909193000' }],
+        },
+      ],
+      listAppliedVersions: () => [],
+      deployOne: (slug: string) => {
+        seen.push(slug);
+        return { ok: true, detail: 'Deployed' };
+      },
+    });
+    expect(appliedLookupFailed).toBe(false);
     expect(seen).toEqual([]);
     expect(succeeded).toEqual([]);
-    expect(failed.map((item) => item.slug)).toEqual(['send-sms', 'send-quote-email']);
-    expect(failed.every((item) => item.detail.includes('could not read applied migrations'))).toBe(true);
-    expect(failed.every((item) => item.detail.includes('nothing was deployed'))).toBe(true);
+    expect(failed).toHaveLength(1);
+    expect(failed[0].slug).toBe('send-quote-email');
+    expect(failed[0].detail).toContain('not applied in production');
+    expect(failed[0].detail).not.toContain('could not read applied migrations');
+  });
+
+  it('logs applied migration count and latest version without secret material', () => {
+    const lines: string[] = [];
+    const env = {
+      SUPABASE_ACCESS_TOKEN: 'sbp_secret_value',
+      SUPABASE_PROJECT_REF: 'eutsoqdpjurknjsshxes',
+    };
+    deployWithMigrationGate({
+      functions: [{ slug: 'send-sms', requiredMigrations: [] }],
+      listAppliedVersions: () => [
+        { version: '20260815160000' },
+        { version: '20260909193000' },
+      ],
+      deployOne: () => ({ ok: true, detail: 'Deployed' }),
+      env,
+      log: (line: string) => {
+        lines.push(line);
+      },
+    });
+    expect(lines.join('')).toContain('applied migrations read: 2 versions (latest 20260909193000)');
+    expect(formatAppliedMigrationsReadLine([{ version: '20260815160000' }, { version: '20260909193000' }])).toBe(
+      'applied migrations read: 2 versions (latest 20260909193000)',
+    );
+    expect(lines.join('\n')).not.toContain('sbp_secret_value');
+    expect(lines.join('\n')).not.toContain('eutsoqdpjurknjsshxes');
   });
 
   it('deploys the unblocked function in a mixed batch and skips the blocked one', () => {
@@ -230,6 +360,15 @@ describe('applied migration list parse', () => {
       /not a recognized table or JSON/,
     );
     expect(() => parseAppliedVersionsFromMigrationList('{"ok":true}')).toThrow(/migrations array/);
+  });
+
+  it('returns an empty list for a well-formed listing with no remote rows', () => {
+    const table = [
+      '        LOCAL      │     REMOTE     │     TIME (UTC)',
+      '  ─────────────────┼────────────────┼──────────────────────',
+    ].join('\n');
+    expect(parseAppliedVersionsFromMigrationList(table)).toEqual([]);
+    expect(parseAppliedVersionsFromMigrationList(JSON.stringify({ migrations: [] }))).toEqual([]);
   });
 });
 
