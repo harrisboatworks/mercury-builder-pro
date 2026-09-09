@@ -4,6 +4,7 @@ import {
   getPromotionOptions,
   type PromotionRecord,
 } from "./promotion-context.ts";
+import { parsePromoCalendarDate, promoEndOfDay, promoStartOfDay } from "./promo-dates.ts";
 
 export const PUBLIC_QUOTE_FINANCING_POLICY_VERSION = "public-quote-financing-v2-2026-08-15";
 export const DEALERPLAN_FEE_CAD = 349;
@@ -75,7 +76,8 @@ function round2(value: number): number {
 
 function parseDateBoundary(value: string | null | undefined, endOfDay: boolean): Date | null {
   if (!value) return null;
-  const date = new Date(`${value.slice(0, 10)}T${endOfDay ? "23:59:59" : "00:00:00"}Z`);
+  if (!parsePromoCalendarDate(value) && Number.isNaN(new Date(value).getTime())) return null;
+  const date = endOfDay ? promoEndOfDay(value) : promoStartOfDay(value);
   return Number.isNaN(date.getTime()) ? null : date;
 }
 

@@ -13,7 +13,7 @@ import { PageTransition } from '@/components/ui/page-transition';
 import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
 import { QuotePageShell } from '@/components/quote-builder/redesign/QuotePageShell';
 import { calculateMonthly, DEALERPLAN_FEE, FINANCING_MINIMUM, isUsableFinancingRate } from '@/lib/finance';
-import { promoEndOfDay } from '@/lib/quote-utils';
+import { formatPromoCalendarDate, promoEndOfDay } from '@/lib/quote-utils';
 import { calculateQuoteFinancingEstimate } from '@/lib/quote-financing-estimate';
 import { reconcileWarrantyConfig } from '@/lib/quote-product-protection';
 import { getAppliedPromotion, getAppliedWarrantyExtraYears } from '@/lib/warranty-display';
@@ -577,7 +577,7 @@ export default function PromoSelectionPage() {
             {endDate && (
               <div className="mb-8">
                 <p className="text-muted-foreground text-sm mb-2">
-                  Offer ends {endDate.toLocaleDateString('en-CA', { year: 'numeric', month: 'long', day: 'numeric' })}
+                  Offer ends {formatPromoCalendarDate(activePromo.end_date)}
                 </p>
                 <CountdownTimer endDate={endDate} className="justify-center" />
               </div>

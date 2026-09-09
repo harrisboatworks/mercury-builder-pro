@@ -1,6 +1,7 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
 import { forbiddenOriginResponse, isAllowedOrigin } from "../_shared/origin-check.ts";
+import { dealerToday } from "../_shared/promo-dates.ts";
 
 function corsHeadersFor(req: Request): Record<string, string> {
   const origin = req.headers.get('origin');
@@ -84,7 +85,7 @@ serve(async (req) => {
         .from('promotions')
         .select('name, bonus_description')
         .eq('is_active', true)
-        .or('end_date.is.null,end_date.gte.now()')
+        .or(`end_date.is.null,end_date.gte.${dealerToday()}`)
         .order('priority', { ascending: false })
         .limit(3)
     ]);

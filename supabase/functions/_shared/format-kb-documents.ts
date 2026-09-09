@@ -44,6 +44,7 @@ import {
   filterPromotionsForCountry,
   formatPromotionContext,
 } from "./promotion-context.ts";
+import { activePromotionDateOrFilters } from "./promo-dates.ts";
 import { formatHbwAuthorityKnowledge } from "./verified-hbw-authority-facts.ts";
 
 // ========== HARRIS BOAT WORKS GUIDE ==========
@@ -1160,13 +1161,13 @@ ${sections.join("\n\n")}`;
 export async function formatActivePromotions(
   supabase: { from: (t: string) => any }
 ): Promise<string> {
-  const today = new Date().toISOString().split("T")[0];
+  const { startOr, endOr } = activePromotionDateOrFilters();
   const { data, error } = await supabase
     .from("promotions")
     .select(ACTIVE_PROMOTION_SELECT)
     .eq("is_active", true)
-    .or(`start_date.is.null,start_date.lte.${today}`)
-    .or(`end_date.is.null,end_date.gte.${today}`)
+    .or(startOr)
+    .or(endOr)
     .order("priority", { ascending: false });
 
   const promos = filterPromotionsForCountry(error ? [] : (data || []), "CA");

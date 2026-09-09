@@ -14,6 +14,7 @@ import { Gift, Shield, CreditCard, ChevronRight, X, Phone, MessageSquare, Mail, 
 import { toast } from 'sonner';
 import { useHapticFeedback } from '@/hooks/useHapticFeedback';
 import { getAppliedPromotion, getAppliedWarrantyExtraYears } from '@/lib/warranty-display';
+import { formatPromoCalendarDate } from '@/lib/quote-utils';
 interface MobileQuoteDrawerProps {
   isOpen: boolean;
   onClose: () => void;
@@ -191,7 +192,7 @@ export const MobileQuoteDrawer: React.FC<MobileQuoteDrawerProps> = ({ isOpen, on
                         </p>
                         {promo.end_date && (
                           <p className="text-xs text-repower-gold mt-0.5">
-                            Ends {new Date(promo.end_date).toLocaleDateString()}
+                            Ends {formatPromoCalendarDate(promo.end_date)}
                           </p>
                         )}
                       </div>

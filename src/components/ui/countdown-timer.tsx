@@ -1,4 +1,5 @@
 import { useState, useEffect, useMemo } from 'react';
+import { promoEndOfDay } from '@/lib/quote-utils';
 import { cn } from '@/lib/utils';
 
 interface CountdownTimerProps {
@@ -42,9 +43,7 @@ const getUrgencyLevel = (days: number): 'normal' | 'warning' | 'critical' | 'urg
 export function CountdownTimer({ endDate, onExpire, className, compact = false }: CountdownTimerProps) {
   const targetDate = useMemo(() => {
     if (typeof endDate === 'string') {
-      const d = new Date(endDate);
-      d.setHours(23, 59, 59, 999);
-      return d;
+      return promoEndOfDay(endDate);
     }
     return endDate;
   }, [endDate]);

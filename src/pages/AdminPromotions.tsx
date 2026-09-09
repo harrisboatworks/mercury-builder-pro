@@ -14,7 +14,7 @@ import FinancingForm, { FinancingFormValues } from '@/components/admin/Financing
 import { toast } from 'sonner';
 import AdminNav from '@/components/admin/AdminNav';
 import { Mic, CheckCircle2, AlertCircle, Clock } from 'lucide-react';
-import { promoEndOfDay } from '@/lib/quote-utils';
+import { daysUntil, formatPromoCalendarDate, formatPromoDaysLeft, isPromotionLive } from '@/lib/quote-utils';
 interface DbMotor {
   id: string;
   model: string;
@@ -237,16 +237,11 @@ const AdminPromotions = () => {
     if (!promo.is_active) return 'inactive';
     
     const now = new Date();
-    now.setHours(0, 0, 0, 0);
-    
-    if (promo.start_date) {
-      const startDate = new Date(promo.start_date);
-      if (startDate > now) return 'future';
+    if (promo.start_date && !isPromotionLive({ startDate: promo.start_date, now })) {
+      return 'future';
     }
-    
-    if (promo.end_date) {
-      const endDate = promoEndOfDay(promo.end_date);
-      if (endDate < now) return 'expired';
+    if (promo.end_date && !isPromotionLive({ endDate: promo.end_date, now })) {
+      return 'expired';
     }
     
     return 'active';
@@ -418,31 +413,27 @@ const AdminPromotions = () => {
   // Count active promotions for voice agent display
   const activePromotionsForVoice = useMemo(() => {
     const now = new Date();
-    now.setHours(0, 0, 0, 0);
-    
     return promotions.filter(promo => {
       if (!promo.is_active) return false;
-      if (promo.start_date && new Date(promo.start_date) > now) return false;
-      if (promo.end_date && promoEndOfDay(promo.end_date) < now) return false;
-      return true;
+      return isPromotionLive({
+        startDate: promo.start_date,
+        endDate: promo.end_date,
+        now,
+      });
     });
   }, [promotions]);
 
   // Promos expiring within 7 days (for the in-admin warning banner).
   const expiringSoon = useMemo(() => {
     const now = new Date();
-    now.setHours(0, 0, 0, 0);
-    const cutoff = new Date(now);
-    cutoff.setDate(cutoff.getDate() + 7);
     return promotions
       .filter(p => {
         if (!p.is_active || !p.end_date) return false;
-        const end = promoEndOfDay(p.end_date);
-        return end >= now && end <= promoEndOfDay(cutoff.toISOString().split('T')[0]);
+        if (!isPromotionLive({ endDate: p.end_date, now })) return false;
+        return daysUntil(p.end_date, now) <= 7;
       })
       .map(p => {
-        const end = promoEndOfDay(p.end_date!);
-        const daysLeft = Math.max(0, Math.ceil((end.getTime() - now.getTime()) / (1000 * 60 * 60 * 24)));
+        const daysLeft = daysUntil(p.end_date!, now);
         return { ...p, daysLeft };
       })
       .sort((a, b) => a.daysLeft - b.daysLeft);
@@ -477,9 +468,9 @@ const AdminPromotions = () => {
                   <div>
                     <div className="font-medium">{p.name}</div>
                     <div className="text-xs text-muted-foreground">
-                      Ends {new Date(p.end_date!).toLocaleDateString()} •{' '}
+                      Ends {formatPromoCalendarDate(p.end_date!)} •{' '}
                       <span className={p.daysLeft <= 2 ? 'text-red-600 font-semibold' : p.daysLeft <= 5 ? 'text-amber-600 font-semibold' : ''}>
-                        {p.daysLeft} day{p.daysLeft === 1 ? '' : 's'} left
+                        {formatPromoDaysLeft(p.daysLeft)}
                       </span>
                     </div>
                   </div>
@@ -718,8 +709,8 @@ const AdminPromotions = () => {
                         {p.bonus_short_badge && <span className="ml-2">• {p.bonus_short_badge}</span>}
                       </>
                     )}
-                    {p.start_date && <span className="ml-2">• Starts {new Date(p.start_date).toLocaleDateString()}</span>}
-                    {p.end_date && <span className="ml-2">• Ends {new Date(p.end_date).toLocaleDateString()}</span>}
+                    {p.start_date && <span className="ml-2">• Starts {formatPromoCalendarDate(p.start_date)}</span>}
+                    {p.end_date && <span className="ml-2">• Ends {formatPromoCalendarDate(p.end_date)}</span>}
                     {p.terms_url && <span className="ml-2">• <a href={p.terms_url} target="_blank" rel="noreferrer" className="underline">Terms</a></span>}
                   </div>
 

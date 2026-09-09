@@ -11,6 +11,7 @@ import {
   resolveTradeInInput,
   TradeInInputError,
 } from "../_shared/trade-in-input.ts";
+import { activePromotionDateOrFilters, dealerToday } from "../_shared/promo-dates.ts";
 
 const DEALERPLAN_FEE = 349;
 const HST_RATE = 0.13;
@@ -369,7 +370,7 @@ async function listPromotions(supabase: any) {
     .from("promotions")
     .select("id, name, kind, start_date, end_date, is_active, warranty_extra_years, promo_options, discount_fixed_amount, discount_percentage, bonus_title, bonus_description, bonus_short_badge, terms_url")
     .eq("is_active", true)
-    .or('end_date.is.null,end_date.gte.' + new Date().toISOString())
+    .or('end_date.is.null,end_date.gte.' + dealerToday())
     .order("priority", { ascending: false });
 
   if (error) throw new Error(`list_promotions failed: ${error.message}`);
@@ -460,7 +461,7 @@ async function getWarrantyPricing(supabase: any, body: any) {
   const hp = body.horsepower;
   if (!hp) throw new Error("horsepower is required");
 
-  const today = new Date().toISOString().split("T")[0];
+  const { startOr, endOr } = activePromotionDateOrFilters();
   const [{ data, error }, { data: activePromotions, error: promotionsError }] = await Promise.all([
     supabase
       .from("warranty_pricing")
@@ -471,8 +472,8 @@ async function getWarrantyPricing(supabase: any, body: any) {
       .from("promotions")
       .select("warranty_extra_years")
       .eq("is_active", true)
-      .or(`start_date.is.null,start_date.lte.${today}`)
-      .or(`end_date.is.null,end_date.gte.${today}`),
+      .or(startOr)
+      .or(endOr),
   ]);
 
   if (error) throw new Error(`get_warranty_pricing failed: ${error.message}`);
@@ -724,13 +725,14 @@ async function createQuote(supabase: any, body: any) {
 
   // Always fetch promos — auto-default to cash_rebate if not specified
   {
+    const { startOr, endOr } = activePromotionDateOrFilters();
     // Fetch active promo
     const { data: promos, error: promotionsError } = await supabase
       .from("promotions")
       .select("id, name, promo_options, warranty_extra_years, end_date")
       .eq("is_active", true)
-      .or('start_date.is.null,start_date.lte.' + new Date().toISOString().split("T")[0])
-      .or('end_date.is.null,end_date.gte.' + new Date().toISOString().split("T")[0])
+      .or(startOr)
+      .or(endOr)
       .order("priority", { ascending: false });
 
     if (promotionsError) {

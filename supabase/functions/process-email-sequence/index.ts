@@ -3,6 +3,7 @@ import { Resend } from "npm:resend@2.0.0";
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
 import { requireAdmin } from "../_shared/admin-auth.ts";
 import { buildEmail, detailsCard, ctaButton, esc } from "../_shared/email-layout.ts";
+import { daysUntil as daysUntilPromoEnd, formatPromoCalendarDate } from "../_shared/promo-dates.ts";
 
 const resend = new Resend(Deno.env.get("RESEND_API_KEY"));
 const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
@@ -26,14 +27,13 @@ const trackingPixel = (token: string, step: number) =>
 
 const formatDate = (dateStr: string | null): string => {
   if (!dateStr) return "soon";
-  const d = new Date(dateStr);
-  return d.toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
+  return formatPromoCalendarDate(dateStr) || "soon";
 };
 
 const daysUntil = (dateStr: string | null): number => {
   if (!dateStr) return 30;
-  const target = new Date(dateStr);
-  return Math.max(0, Math.ceil((target.getTime() - Date.now()) / (1000 * 60 * 60 * 24)));
+  const left = daysUntilPromoEnd(dateStr);
+  return Number.isNaN(left) ? 30 : left;
 };
 
 const greeting = (name: string | null) => (name ? `Hi ${esc(name)},` : "Hi there,");
@@ -262,7 +262,7 @@ function buildLastChance(name: string | null, token: string, metadata: any): { s
 
   const body = `
     <p style="margin:0 0 14px 0;">${greeting(name)}</p>
-    <p style="margin:0 0 14px 0;">The ${promoName} promotion ends <strong>${endStr}</strong>. That is just ${days} day${days === 1 ? "" : "s"} away.</p>
+    <p style="margin:0 0 14px 0;">The ${promoName} promotion ends <strong>${endStr}</strong>. ${days === 0 ? "That is today." : `That is just ${days} day${days === 1 ? "" : "s"} away.`}</p>
 
     <h2 style="font-family:Georgia,'Times New Roman',Times,serif;font-size:20px;color:#0f2a43;margin:28px 0 12px 0;font-weight:400;">Last chance: ${promoName}</h2>
     <div style="height:1px;background:#d9d3c7;line-height:1px;font-size:1px;margin:0 0 6px 0;">&nbsp;</div>
@@ -272,8 +272,10 @@ function buildLastChance(name: string | null, token: string, metadata: any): { s
   `;
 
   const html = buildEmail({
-    preheader: `Only ${days} day${days === 1 ? "" : "s"} left on ${metadata?.promoName || "the current Mercury promotion"}.`,
-    eyebrow: `${days} day${days === 1 ? "" : "s"} left`,
+    preheader: days === 0
+      ? `${metadata?.promoName || "The current Mercury promotion"} ends today.`
+      : `Only ${days} day${days === 1 ? "" : "s"} left on ${metadata?.promoName || "the current Mercury promotion"}.`,
+    eyebrow: days === 0 ? "Ends today" : `${days} day${days === 1 ? "" : "s"} left`,
     heading: `Last chance on ${metadata?.promoName || "the current Mercury promotion"}`,
     bodyHtml: body + trackingPixel(token, 6),
     ctaText: "Complete your quote",
@@ -281,7 +283,9 @@ function buildLastChance(name: string | null, token: string, metadata: any): { s
     unsubscribeUrl,
   });
 
-  const subject = `Only ${days} days left: ${promoName.replace(/&amp;/g, "&")} ends ${endStr.replace(/&amp;/g, "&")}`;
+  const subject = days === 0
+    ? `${promoName.replace(/&amp;/g, "&")} ends today`
+    : `Only ${days} days left: ${promoName.replace(/&amp;/g, "&")} ends ${endStr.replace(/&amp;/g, "&")}`;
   return { subject, html };
 }
 

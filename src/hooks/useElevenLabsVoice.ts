@@ -15,6 +15,7 @@ import {
   getPromotionCombinationMode,
   getPromotionOptions,
 } from '../../supabase/functions/_shared/promotion-context';
+import { activePromotionDateOrFilters } from '../../supabase/functions/_shared/promo-dates';
 import {
   buildVerifiedMercuryTechnicalAnswer,
   type MercuryTechnicalMotorContext,
@@ -670,13 +671,13 @@ async function handleCheckCurrentDeals(params: {
   console.log('[ClientTool] check_current_deals', params);
   
   try {
-    const today = new Date().toISOString().split('T')[0];
+    const { startOr, endOr } = activePromotionDateOrFilters();
     const { data, error } = await supabase
       .from('promotions')
       .select(ACTIVE_PROMOTION_SELECT)
       .eq('is_active', true)
-      .or(`start_date.is.null,start_date.lte.${today}`)
-      .or(`end_date.is.null,end_date.gte.${today}`)
+      .or(startOr)
+      .or(endOr)
       .order('priority', { ascending: false })
       .limit(5);
 

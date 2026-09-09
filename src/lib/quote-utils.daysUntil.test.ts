@@ -11,19 +11,20 @@ describe('daysUntil', () => {
     expect(daysUntilFromFinance).toBe(daysUntil);
   });
 
-  it('counts from a date-only YYYY-MM-DD string parsed as UTC midnight', () => {
+  it('counts Ontario calendar days from a date-only YYYY-MM-DD string', () => {
     vi.useFakeTimers();
-    vi.setSystemTime(new Date('2026-09-09T16:00:00.000Z'));
+    vi.setSystemTime(new Date('2026-09-09T16:00:00.000Z')); // 12:00 EDT
 
-    // 2026-09-15T00:00:00.000Z − 2026-09-09T16:00:00.000Z = 5.333… days → ceil 6
     expect(daysUntil('2026-09-15')).toBe(6);
   });
 
-  it('accepts a Date object and ceils the millisecond delta', () => {
+  it('uses the Toronto calendar date of a Date instant', () => {
     vi.useFakeTimers();
     vi.setSystemTime(new Date('2026-09-09T16:00:00.000Z'));
 
-    expect(daysUntil(new Date('2026-09-15T00:00:00.000Z'))).toBe(6);
+    // 2026-09-15T00:00:00Z is still Sept 14 in America/Toronto (EDT).
+    expect(daysUntil(new Date('2026-09-15T00:00:00.000Z'))).toBe(5);
+    expect(daysUntil(new Date('2026-09-15T04:00:00.000Z'))).toBe(6);
   });
 
   it('clamps a past date to zero', () => {
@@ -34,16 +35,18 @@ describe('daysUntil', () => {
     expect(daysUntil(new Date('2026-09-08T00:00:00.000Z'))).toBe(0);
   });
 
-  it('returns zero for a date-only string on the same UTC day after midnight UTC', () => {
+  it('returns zero on the last Ontario calendar day, including after UTC midnight', () => {
     vi.useFakeTimers();
     vi.setSystemTime(new Date('2026-09-09T16:00:00.000Z'));
-
-    // '2026-09-09' is 2026-09-09T00:00:00.000Z, which is already 16h in the past.
     expect(daysUntil('2026-09-09')).toBe(0);
+
+    // 9pm EDT is already Sept 10 UTC; Ontario calendar day is still Sept 9.
+    vi.setSystemTime(new Date('2026-09-10T01:00:00.000Z'));
+    expect(daysUntil('2026-09-09')).toBe(0);
+    expect(daysUntil('2026-09-15')).toBe(6);
   });
 
-  it('returns NaN for an invalid input (current, undocumented-until-now behaviour)', () => {
-    // new Date('not-a-date').getTime() is NaN; Math.max(0, Math.ceil(NaN)) is NaN.
+  it('returns NaN for an invalid input', () => {
     expect(daysUntil('not-a-date')).toBeNaN();
   });
 });

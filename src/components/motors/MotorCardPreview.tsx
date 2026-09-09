@@ -27,6 +27,7 @@ import { calculateMotorFinancingEstimate } from '@/lib/finance';
 import { trackEvent } from '@/lib/analytics';
 
 import { preloadConfiguratorImagesHighPriority } from '@/lib/configurator-preload';
+import { formatPromoCalendarDate } from '@/lib/quote-utils';
 import mercuryLogo from '@/assets/mercury-logo.png';
 import { useSmartImageScale } from '@/hooks/useSmartImageScale';
 
@@ -371,9 +372,9 @@ function MotorCardPreviewInner({
       // Add end date if available
       const activePromo = promotions.find(promo => promo.warranty_extra_years);
       if (activePromo?.end_date) {
-        const endDate = new Date(activePromo.end_date).toLocaleDateString('en-US', {
+        const endDate = formatPromoCalendarDate(activePromo.end_date, {
           month: 'short',
-          day: 'numeric'
+          year: undefined,
         });
         promoText += ` • Until ${endDate}`;
       }
