@@ -1,4 +1,5 @@
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import type { ReactNode } from 'react';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 const mocks = vi.hoisted(() => ({
@@ -31,7 +32,7 @@ vi.mock('next-themes', () => ({
 
 vi.mock('framer-motion', () => ({
   motion: {
-    div: ({ children }: { children: unknown }) => <div>{children}</div>,
+    div: ({ children }: { children: ReactNode }) => <div>{children}</div>,
   },
 }));
 

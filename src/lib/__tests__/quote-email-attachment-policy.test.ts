@@ -19,7 +19,8 @@ function pdfResponse(
   bytes: Uint8Array = PDF_BYTES,
   headers: Record<string, string> = {},
 ): Response {
-  return new Response(bytes, {
+  const body = new Uint8Array(bytes);
+  return new Response(body, {
     status: 200,
     headers: { "content-type": "application/pdf", ...headers },
   });

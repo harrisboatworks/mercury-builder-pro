@@ -1,7 +1,7 @@
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import { resolveAllowedBrowserOrigin } from "../../../supabase/functions/_shared/browser-origin.ts";
-import { isAllowedOrigin } from "../../../supabase/functions/_shared/origin-check.ts";
+import { isAllowedOrigin } from "#edge-deno/origin-check";
 
 const PR_303_PREVIEW_REGEX = /^https:\/\/mercury-builder[a-z0-9-]*-hbw\.vercel\.app$/;
 

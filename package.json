@@ -3,6 +3,10 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "imports": {
+    "#edge-deno/origin-check": "./supabase/functions/_shared/origin-check.ts",
+    "#edge-deno/notification-webhook-handler": "./supabase/functions/_shared/notification-webhook-handler.ts"
+  },
   "engines": {
     "node": "22.x"
   },
