@@ -1,5 +1,7 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import md5 from "npm:blueimp-md5";
+import { forbiddenOriginResponse, isAllowedOrigin } from "../_shared/origin-check.ts";
+import { checkRateLimit, rateLimitedResponse } from "../_shared/rate-limit.ts";
 
 const CORS = {
   "Access-Control-Allow-Origin": "*",
@@ -15,6 +17,10 @@ serve(async (req) => {
   if (req.method === "OPTIONS") return new Response("ok", { headers: CORS });
   if (req.method !== "POST") return new Response("Method not allowed", { status: 405, headers: CORS });
 
+  if (!isAllowedOrigin(req)) {
+    return forbiddenOriginResponse(CORS);
+  }
+
   const apiKey = Deno.env.get("MAILCHIMP_API_KEY");
   if (!apiKey) return Response.json({ ok: false, error: "Mailchimp not configured" }, { status: 500, headers: CORS });
 
@@ -26,6 +32,14 @@ serve(async (req) => {
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     return Response.json({ ok: false, error: "Valid email required" }, { status: 400, headers: CORS });
   }
+
+  const allowed = await checkRateLimit(req, {
+    action: "subscribe_walkaround",
+    maxAttempts: 8,
+    windowMinutes: 60,
+    failClosed: true,
+  });
+  if (!allowed) return rateLimitedResponse(CORS, 300);
 
   const hash = md5(email);
   const auth = "Basic " + btoa(`anystring:${apiKey}`);
