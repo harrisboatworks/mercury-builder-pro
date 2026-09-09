@@ -18,7 +18,7 @@ Build, validation, and content-maintenance utilities. Run with `node scripts/<na
 | `validate-schema-org.mjs` | Posts every JSON-LD block in `dist/` to validator.schema.org and fails the build on error-severity issues. Warnings logged. Skippable via `SKIP_SCHEMA_ORG_VALIDATOR=1`. Sampling caps requests at `SCHEMA_VALIDATOR_MAX_FILES` (default 80) to stay within rate limits. Wired into `npm build` after `check-structured-data.mjs`. |
 | `report-supabase-deploy-required.mjs` | Git-derived report of edge functions and added migrations a push made undeployed. Writes `$GITHUB_STEP_SUMMARY`. Never deploys, never fails. Logic in `lib/supabase-deploy-required.mjs`. |
 | `deploy-supabase-functions.mjs` | Deploys edge functions changed in a git range (or one slug). Reuses `deployTargetsFromDiff` for `_shared/` fan-out and newly required migrations. Skips (and fails the run for) a function whose required migrations are not applied yet. Continues after per-function failures, then exits 1 if any failed. Never applies migrations. |
-| `supabase-drift-watch.mjs` | Scheduled compare of `main` vs deployed functions / applied migrations. No-op without `SUPABASE_ACCESS_TOKEN` and `SUPABASE_PROJECT_REF`. Never fails. |
+| `supabase-drift-watch.mjs` | Scheduled compare of `main` vs deployed functions / applied migrations. No-op without `SUPABASE_ACCESS_TOKEN`. Project ref is `SUPABASE_PROJECT_REF` or `supabase/config.toml`. Never fails. |
 
 
 ## Adding a new script

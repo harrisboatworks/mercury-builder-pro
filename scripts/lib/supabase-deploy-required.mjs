@@ -828,16 +828,15 @@ export function formatSecretsMissingNotice() {
   return [
     '## Supabase drift watch',
     '',
-    'Skipped: repository secrets `SUPABASE_ACCESS_TOKEN` and `SUPABASE_PROJECT_REF` are not both configured.',
-    'This job is a no-op until those secrets exist. It never deploys or applies migrations.',
+    'Skipped: repository secret `SUPABASE_ACCESS_TOKEN` is not configured.',
+    'This job is a no-op until that secret exists. It never deploys or applies migrations.',
     '',
   ].join('\n');
 }
 
 export function secretsConfigured(env = process.env) {
   const token = env.SUPABASE_ACCESS_TOKEN;
-  const ref = env.SUPABASE_PROJECT_REF;
-  return Boolean(token && String(token).trim() && ref && String(ref).trim());
+  return Boolean(token && String(token).trim());
 }
 
 export function sourceFilesForFunction(slug, files) {
