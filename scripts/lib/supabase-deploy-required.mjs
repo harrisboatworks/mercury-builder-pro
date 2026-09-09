@@ -255,6 +255,24 @@ export function migrationStem(filePath) {
   return base.replace(/\.sql$/i, '');
 }
 
+export function migrationNameFromFilename(filePath) {
+  const stem = migrationStem(filePath);
+  const match = stem.match(/^\d{14}_(.+)$/);
+  return match ? match[1] : null;
+}
+
+/**
+ * Inclusive minimum filename version reported as unapplied.
+ *
+ * Local files through 20260730161823 are UUID-suffixed Studio/Lovable
+ * migrations whose recorded versions do not match those prefixes (earliest
+ * applied versions look like 20250807012826). That historical set will not
+ * be reconciled. The cutoff is the first filename version after that last
+ * UUID file, so later descriptive-name migrations stay in scope and can
+ * still match by name when an apply tool records a different timestamp.
+ */
+export const MIGRATION_WATCH_MIN_VERSION = '20260731000000';
+
 function classifyDiff(diffEntries) {
   const changedFunctionFiles = [];
   const removedFunctionSlugs = new Set();
@@ -527,16 +545,30 @@ export function isCommitNewerThanDeploy(commitIso, updatedAt) {
   return { stale: commitMs > deployedMs, unknown: false };
 }
 
+function addAppliedToken(set, value) {
+  if (typeof value !== 'string') return;
+  const trimmed = value.trim();
+  if (!trimmed) return;
+  const withoutSql = trimmed.replace(/\.sql$/i, '');
+  set.add(withoutSql);
+  const base = posix.basename(toPosix(withoutSql));
+  if (base !== withoutSql) set.add(base);
+  const version = migrationVersionFromFilename(base);
+  const name = migrationNameFromFilename(base);
+  if (version) set.add(version);
+  if (name) set.add(name);
+}
+
 export function appliedVersionSet(applied) {
   const set = new Set();
   for (const row of applied || []) {
-    if (typeof row === 'string' && row) {
-      set.add(row);
+    if (typeof row === 'string') {
+      addAppliedToken(set, row);
       continue;
     }
     if (row && typeof row === 'object') {
-      if (typeof row.version === 'string' && row.version) set.add(row.version);
-      if (typeof row.name === 'string' && row.name) set.add(row.name);
+      addAppliedToken(set, row.version);
+      addAppliedToken(set, row.name);
     }
   }
   return set;
@@ -545,9 +577,41 @@ export function appliedVersionSet(applied) {
 export function isMigrationApplied(filePath, appliedSet) {
   const version = migrationVersionFromFilename(filePath);
   const stem = migrationStem(filePath);
+  const name = migrationNameFromFilename(filePath);
   if (version && appliedSet.has(version)) return true;
   if (stem && appliedSet.has(stem)) return true;
+  if (name && appliedSet.has(name)) return true;
   return false;
+}
+
+export function formatDeployedTimestamp(updatedAt) {
+  const ms = parseUpdatedAt(updatedAt);
+  if (!Number.isFinite(ms)) {
+    return updatedAt == null || updatedAt === '' ? 'unknown' : String(updatedAt);
+  }
+  return new Date(ms).toISOString();
+}
+
+export function formatTimeBehind(commitIso, updatedAt) {
+  const commitMs = Date.parse(commitIso);
+  const deployedMs = parseUpdatedAt(updatedAt);
+  if (!Number.isFinite(commitMs) || !Number.isFinite(deployedMs) || commitMs <= deployedMs) {
+    return null;
+  }
+  const deltaMs = commitMs - deployedMs;
+  const minute = 60_000;
+  const hour = 3_600_000;
+  const day = 86_400_000;
+  if (deltaMs < 90 * minute) {
+    const minutes = Math.max(1, Math.round(deltaMs / minute));
+    return `${minutes} minute${minutes === 1 ? '' : 's'} behind`;
+  }
+  if (deltaMs < 36 * hour) {
+    const hours = Math.max(1, Math.round(deltaMs / hour));
+    return `${hours} hour${hours === 1 ? '' : 's'} behind`;
+  }
+  const days = Math.max(1, Math.round(deltaMs / day));
+  return `${days} day${days === 1 ? '' : 's'} behind`;
 }
 
 export function buildDriftReport({
@@ -555,6 +619,7 @@ export function buildDriftReport({
   deployedFunctions = [],
   localMigrations = [],
   appliedVersions = [],
+  migrationWatchMinVersion = MIGRATION_WATCH_MIN_VERSION,
 }) {
   const deployedBySlug = new Map();
   for (const row of deployedFunctions) {
@@ -615,7 +680,10 @@ export function buildDriftReport({
   }
 
   const applied = appliedVersionSet(appliedVersions);
+  const minVersion = migrationWatchMinVersion || MIGRATION_WATCH_MIN_VERSION;
   const unapplied = [];
+  let migrationInScopeCount = 0;
+  let migrationSkippedHistoricalCount = 0;
   for (const migration of localMigrations) {
     const filePath = typeof migration === 'string' ? migration : migration.path;
     const version = migrationVersionFromFilename(filePath);
@@ -623,6 +691,11 @@ export function buildDriftReport({
       unapplied.push({ path: filePath, version: null, status: 'unknown', detail: ORDERING_UNKNOWN });
       continue;
     }
+    if (version < minVersion) {
+      migrationSkippedHistoricalCount += 1;
+      continue;
+    }
+    migrationInScopeCount += 1;
     if (!isMigrationApplied(filePath, applied)) {
       unapplied.push({ path: filePath, version, status: 'unapplied' });
     }
@@ -635,7 +708,48 @@ export function buildDriftReport({
     staleFunctions,
     unappliedMigrations: unapplied,
     empty: staleFunctions.length === 0 && unapplied.length === 0,
+    migrationWatchMinVersion: minVersion,
+    migrationInScopeCount,
+    migrationSkippedHistoricalCount,
   };
+}
+
+function formatStaleFunctionLine(fn) {
+  if (fn.status === 'not_deployed') {
+    return `- \`${fn.slug}\` — on main, not in deployed function list`;
+  }
+  if (fn.status !== 'stale') {
+    return `- \`${fn.slug}\` — ${ORDERING_UNKNOWN}`;
+  }
+  const deployed = formatDeployedTimestamp(fn.deployedUpdatedAt);
+  const behind = [];
+  const timeBehind = formatTimeBehind(fn.latestCommitAt, fn.deployedUpdatedAt);
+  if (timeBehind) behind.push(timeBehind);
+  if (Number.isInteger(fn.commitsBehind) && fn.commitsBehind > 0) {
+    behind.push(`${fn.commitsBehind} commit${fn.commitsBehind === 1 ? '' : 's'} behind`);
+  }
+  if (fn.deployedVersion != null) behind.push(`version ${fn.deployedVersion}`);
+  const extra = behind.length ? ` (${behind.join(', ')})` : '';
+  return `- \`${fn.slug}\` — main commit ${fn.latestCommitAt} is newer than deployed ${deployed}${extra}`;
+}
+
+function appendMigrationWatchRule(lines, report) {
+  const minVersion = report.migrationWatchMinVersion || MIGRATION_WATCH_MIN_VERSION;
+  const inScope = report.migrationInScopeCount;
+  const skipped = report.migrationSkippedHistoricalCount;
+  lines.push(
+    '### Migration matching rule',
+    '',
+    'A file counts as applied when its 14-digit version, full stem, or name suffix matches an applied `version` or `name`. The name suffix is the filename after `YYYYMMDDHHMMSS_`, so an apply tool that records a different timestamp still matches names such as `upsert_soft_lead_quote` and `atomic_saved_quote_access`.',
+    '',
+    `Only filename versions \`${minVersion}\` or later are reported as unapplied. Older files were applied through a path that recorded different versions; that historical set will not be reconciled retroactively.`,
+  );
+  if (Number.isInteger(inScope) && Number.isInteger(skipped)) {
+    lines.push(
+      '',
+      `This run checked ${inScope} in-scope migration file${inScope === 1 ? '' : 's'} for absence and did not report ${skipped} older file${skipped === 1 ? '' : 's'}.`,
+    );
+  }
 }
 
 export function formatDriftMarkdown(report) {
@@ -646,7 +760,8 @@ export function formatDriftMarkdown(report) {
     '',
   ];
   if (report.empty) {
-    lines.push('No stale functions or unapplied migrations relative to `main`.');
+    lines.push('No stale functions or unapplied migrations relative to `main`.', '');
+    appendMigrationWatchRule(lines, report);
     return `${lines.join('\n')}\n`;
   }
 
@@ -655,15 +770,7 @@ export function formatDriftMarkdown(report) {
     lines.push('None stale or missing.');
   } else {
     for (const fn of report.staleFunctions) {
-      if (fn.status === 'not_deployed') {
-        lines.push(`- \`${fn.slug}\` — on main, not in deployed function list`);
-      } else if (fn.status === 'stale') {
-        lines.push(
-          `- \`${fn.slug}\` — main commit ${fn.latestCommitAt} is newer than deployed updated_at ${fn.deployedUpdatedAt}${fn.deployedVersion != null ? ` (version ${fn.deployedVersion})` : ''}`,
-        );
-      } else {
-        lines.push(`- \`${fn.slug}\` — ${ORDERING_UNKNOWN}`);
-      }
+      lines.push(formatStaleFunctionLine(fn));
     }
   }
 
@@ -675,10 +782,15 @@ export function formatDriftMarkdown(report) {
       if (migration.status === 'unknown') {
         lines.push(`- \`${migration.path}\` — ${ORDERING_UNKNOWN} (no 14-digit version prefix)`);
       } else {
-        lines.push(`- \`${migration.path}\` — version \`${migration.version}\` has no matching applied version`);
+        lines.push(
+          `- \`${migration.path}\` — version \`${migration.version}\` has no matching applied version or name`,
+        );
       }
     }
   }
+
+  lines.push('');
+  appendMigrationWatchRule(lines, report);
 
   return `${lines.join('\n')}\n`;
 }
