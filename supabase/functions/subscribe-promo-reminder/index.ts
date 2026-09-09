@@ -135,7 +135,7 @@ serve(async (req) => {
         const body = `
           <p style="margin:0 0 14px 0;">${customerName ? `Hi ${esc(customerName)},` : "Hi there,"}</p>
           <p style="margin:0 0 14px 0;">You are on the list. When this motor goes on sale or a Mercury promotion becomes available, we will send you a note right away.</p>
-          ${detailsCard([{ label: "Watching", value: esc(motorName) }])}
+          ${detailsCard([{ label: "Watching", valueHtml: esc(motorName) }])}
           <p style="margin:18px 0 0 0;font-size:13px;color:#6b7280;">No spam, no resold lists. Unsubscribe any time.</p>
         `;
 

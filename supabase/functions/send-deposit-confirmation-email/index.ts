@@ -70,14 +70,14 @@ function createDepositConfirmationEmail(
     year: "numeric", month: "long", day: "numeric", timeZone: "America/Toronto",
   });
 
-  const rows: Array<{ label: string; value: string }> = [];
-  if (motorLabel) rows.push({ label: "Motor", value: esc(motorLabel) });
-  rows.push({ label: "Deposit", value: `$${esc(depositAmount)} CAD` });
-  rows.push({ label: "Reference", value: esc(referenceNumber) });
+  const rows: Array<{ label: string; valueHtml: string }> = [];
+  if (motorLabel) rows.push({ label: "Motor", valueHtml: esc(motorLabel) });
+  rows.push({ label: "Deposit", valueHtml: `$${esc(depositAmount)} CAD` });
+  rows.push({ label: "Reference", valueHtml: esc(referenceNumber) });
   if (paymentId && paymentId !== "TEMPLATE-PREVIEW") {
-    rows.push({ label: "Payment ID", value: `<span style="font-family:monospace;font-size:12px;font-weight:500;">${esc(paymentId)}</span>` });
+    rows.push({ label: "Payment ID", valueHtml: `<span style="font-family:monospace;font-size:12px;font-weight:500;">${esc(paymentId)}</span>` });
   }
-  rows.push({ label: "Date", value: esc(dateStr) });
+  rows.push({ label: "Date", valueHtml: esc(dateStr) });
 
   const motorPhrase = motorLabel ? ` for your ${esc(motorLabel)}` : "";
   const reservationPolicy = Number(depositAmount) === 100

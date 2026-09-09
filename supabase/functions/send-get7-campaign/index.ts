@@ -38,15 +38,15 @@ const generateGet7EmailHtml = (data: {
 }) => {
   const { customerName, motorModel, motorHp, rebateAmount, expiryDate, promoUrl } = data;
 
-  const rows: Array<{ label: string; value: string }> = [
-    { label: "Warranty", value: "7-Year Factory Warranty (3 + 4 bonus years)" },
-    { label: "Choose one", value: "6 months no payments, special financing from 2.99%, or up to $1,500 cash back" },
+  const rows: Array<{ label: string; valueHtml: string }> = [
+    { label: "Warranty", valueHtml: "7-Year Factory Warranty (3 + 4 bonus years)" },
+    { label: "Choose one", valueHtml: "6 months no payments, special financing from 2.99%, or up to $1,500 cash back" },
   ];
-  if (motorModel) rows.push({ label: "Your motor", value: esc(motorModel) });
+  if (motorModel) rows.push({ label: "Your motor", valueHtml: esc(motorModel) });
   if (rebateAmount && motorHp) {
-    rows.push({ label: "Your rebate", value: `$${rebateAmount.toLocaleString()} on your ${motorHp}HP` });
+    rows.push({ label: "Your rebate", valueHtml: `$${rebateAmount.toLocaleString()} on your ${motorHp}HP` });
   }
-  rows.push({ label: "Offer ends", value: esc(expiryDate) });
+  rows.push({ label: "Offer ends", valueHtml: esc(expiryDate) });
 
   const body = `
     <p style="margin:0 0 14px 0;">${customerName ? `Hi ${esc(customerName)},` : "Hi there,"}</p>

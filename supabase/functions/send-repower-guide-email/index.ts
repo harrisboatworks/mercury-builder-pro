@@ -115,12 +115,12 @@ serve(async (req: Request): Promise<Response> => {
     }
 
     // Build email using shared layout. Tracking pixel and unsubscribe preserved.
-    const { buildEmail } = await import("../_shared/email-layout.ts");
+    const { buildEmail, esc } = await import("../_shared/email-layout.ts");
     const unsubscribeUrl = `${APP_URL}/unsubscribe?token=${unsubscribeToken}`;
     const downloadUrl = trackClick(PDF_DOWNLOAD_URL, unsubscribeToken, 1);
     const quoteCtaUrl = trackClick(`${APP_URL}/quote/motor-selection`, unsubscribeToken, 1);
 
-    const greeting = name ? `Hi ${name},` : "Hi there,";
+    const greeting = name ? `Hi ${esc(name)},` : "Hi there,";
     const hotLeadBlock = hasBoatToRepower
       ? `<p style="margin:22px 0 0 0;font-size:14px;">Ready to start sizing options for your boat? <a href="${quoteCtaUrl}" style="color:#0f2a43;font-weight:600;">Build a quote</a> in a few minutes.</p>`
       : "";

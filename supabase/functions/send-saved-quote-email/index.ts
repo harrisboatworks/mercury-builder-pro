@@ -65,9 +65,9 @@ const handler = async (req: Request): Promise<Response> => {
       : "";
 
     const rows = [
-      { label: "Reference", value: esc(refNumber) },
-      { label: "Motor", value: esc(motorModel) },
-      { label: "Total", value: `${formattedPrice} CAD` },
+      { label: "Reference", valueHtml: esc(refNumber) },
+      { label: "Motor", valueHtml: esc(motorModel) },
+      { label: "Total", valueHtml: `${formattedPrice} CAD` },
     ];
 
     const body = `

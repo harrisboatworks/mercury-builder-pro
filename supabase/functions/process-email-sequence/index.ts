@@ -136,14 +136,14 @@ function buildQuoteReminder(name: string | null, token: string, metadata: any): 
   else if (metadata?.selectedPromoOption === "cash_rebate") bonusLabel = `Factory cash rebate: ${metadata.promoDisplayValue || "up to $750"}`;
 
   const rows = [
-    { label: "Motor", value: motor },
-    { label: "Warranty", value: "3-Year Factory Warranty (standard on every new Mercury)" },
+    { label: "Motor", valueHtml: motor },
+    { label: "Warranty", valueHtml: "3-Year Factory Warranty (standard on every new Mercury)" },
   ];
-  if (bonusLabel) rows.push({ label: "Your bonus", value: esc(bonusLabel) });
+  if (bonusLabel) rows.push({ label: "Your bonus", valueHtml: esc(bonusLabel) });
   if (metadata?.motorPrice) {
     rows.push({
       label: "Motor price",
-      value: `$${Number(metadata.motorPrice).toLocaleString()} CAD`,
+      valueHtml: `$${Number(metadata.motorPrice).toLocaleString()} CAD`,
     });
   }
 
@@ -215,8 +215,8 @@ function buildBonusFocus(name: string | null, token: string, metadata: any): { s
   }
 
   const rows = [
-    { label: "Motor", value: motor },
-    { label: highlightLabel, value: highlightValue },
+    { label: "Motor", valueHtml: motor },
+    { label: highlightLabel, valueHtml: highlightValue },
   ];
 
   const body = `
@@ -254,11 +254,11 @@ function buildLastChance(name: string | null, token: string, metadata: any): { s
   else if (metadata?.selectedPromoOption === "cash_rebate") bonusLabel = `${esc(metadata.promoDisplayValue || "$500")} factory rebate`;
 
   const rows = [
-    { label: "Motor", value: motor },
-    { label: "Warranty", value: "3-Year Factory Warranty (standard on every new Mercury)" },
+    { label: "Motor", valueHtml: motor },
+    { label: "Warranty", valueHtml: "3-Year Factory Warranty (standard on every new Mercury)" },
   ];
-  if (bonusLabel) rows.push({ label: "Your bonus", value: bonusLabel });
-  rows.push({ label: "Promotion ends", value: endStr });
+  if (bonusLabel) rows.push({ label: "Your bonus", valueHtml: bonusLabel });
+  rows.push({ label: "Promotion ends", valueHtml: endStr });
 
   const body = `
     <p style="margin:0 0 14px 0;">${greeting(name)}</p>

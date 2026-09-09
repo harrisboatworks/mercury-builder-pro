@@ -222,10 +222,10 @@ const handler = async (req: Request): Promise<Response> => {
 
     // --- Applicant email ---
     const applicantRows = [
-      { label: "Reference", value: esc(referenceNumber) },
-      { label: "Motor", value: esc(motorModel) },
-      { label: "Amount", value: `$${amountToFinance.toLocaleString()} CAD` },
-      { label: "Submitted", value: esc(submittedDate) },
+      { label: "Reference", valueHtml: esc(referenceNumber) },
+      { label: "Motor", valueHtml: esc(motorModel) },
+      { label: "Amount", valueHtml: `$${amountToFinance.toLocaleString()} CAD` },
+      { label: "Submitted", valueHtml: esc(submittedDate) },
     ];
     const applicantBody = `
       <p style="margin:0 0 14px 0;">Hi ${esc(applicantName)},</p>
