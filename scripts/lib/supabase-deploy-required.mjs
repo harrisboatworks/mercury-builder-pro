@@ -817,3 +817,37 @@ export function sourceFilesForFunction(slug, files) {
   const own = bySlug.get(slug) || [];
   return [...reachablePaths(own, graph)];
 }
+
+/**
+ * Deployable edge-function slugs for a git name-status diff.
+ *
+ * Reuses buildDeployRequiredReport: direct supabase/functions/<slug>/ changes
+ * plus every function whose import graph reaches a changed _shared file.
+ * _shared itself is never a target. Removed slugs are listed separately and
+ * are not deployed. Migrations are listed only so callers can refuse to apply
+ * them — they are never deploy targets.
+ *
+ * ORDERING_UNKNOWN is a migration/RPC matching hint on the report; it does
+ * not affect this slug list. Import-graph fan-out is deterministic for
+ * static relative imports.
+ */
+export function deployTargetsFromDiff({ diffEntries, files, from = '', to = '' }) {
+  const report = buildDeployRequiredReport({ diffEntries, files, from, to });
+  const functions = [];
+  const removed = [];
+  for (const fn of report.functions) {
+    if (fn.removed) {
+      removed.push(fn.slug);
+      continue;
+    }
+    functions.push({ slug: fn.slug, reasons: fn.reasons });
+  }
+  return {
+    from: report.from,
+    to: report.to,
+    functions,
+    removed,
+    migrations: (report.migrations || []).map((migration) => migration.path),
+    notes: report.notes || [],
+  };
+}
