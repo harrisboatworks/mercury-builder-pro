@@ -98,10 +98,13 @@ export function ApplicantStep() {
             id="firstName"
             {...register('firstName')}
             autoComplete="given-name"
+            aria-required="true"
+            aria-invalid={Boolean(errors.firstName)}
+            aria-describedby={errors.firstName ? 'firstName-error' : undefined}
             className={isFieldValid('firstName') ? 'border-green-500' : ''}
           />
           {errors.firstName && (
-            <p className="text-sm text-destructive font-normal">{errors.firstName.message}</p>
+            <p id="firstName-error" role="alert" className="text-sm text-destructive font-normal">{errors.firstName.message}</p>
           )}
         </div>
 
@@ -119,17 +122,20 @@ export function ApplicantStep() {
             id="lastName"
             {...register('lastName')}
             autoComplete="family-name"
+            aria-required="true"
+            aria-invalid={Boolean(errors.lastName)}
+            aria-describedby={errors.lastName ? 'lastName-error' : undefined}
             className={isFieldValid('lastName') ? 'border-green-500' : ''}
           />
           {errors.lastName && (
-            <p className="text-sm text-destructive font-normal">{errors.lastName.message}</p>
+            <p id="lastName-error" role="alert" className="text-sm text-destructive font-normal">{errors.lastName.message}</p>
           )}
         </div>
 
         <div className="space-y-2">
           <Label htmlFor="suffix">Suffix</Label>
           <Select onValueChange={(value) => setValue('suffix', value as any)}>
-            <SelectTrigger>
+            <SelectTrigger id="suffix">
               <SelectValue placeholder="None" />
             </SelectTrigger>
             <SelectContent>
@@ -170,6 +176,9 @@ export function ApplicantStep() {
                 field.onChange(value ? new Date(`${value}T12:00:00`) : undefined);
               }}
               max={new Date(new Date().setFullYear(new Date().getFullYear() - 18)).toISOString().split('T')[0]}
+              aria-required="true"
+              aria-invalid={Boolean(errors.dateOfBirth)}
+              aria-describedby={errors.dateOfBirth ? 'dateOfBirth-error' : undefined}
               className={isFieldValid('dateOfBirth') ? 'border-green-500' : ''}
             />
           )}
@@ -178,7 +187,7 @@ export function ApplicantStep() {
           <p className="text-sm text-green-500 font-normal">Age: {age} years old ✓</p>
         )}
         {errors.dateOfBirth && (
-          <p className="text-sm text-destructive font-normal">{errors.dateOfBirth.message}</p>
+          <p id="dateOfBirth-error" role="alert" className="text-sm text-destructive font-normal">{errors.dateOfBirth.message}</p>
         )}
       </div>
 
@@ -212,14 +221,17 @@ export function ApplicantStep() {
               onChange={field.onChange}
               onBlur={field.onBlur}
               name={field.name}
+              aria-required="true"
+              aria-invalid={Boolean(errors.sin)}
+              aria-describedby={errors.sin ? 'sin-error sin-help' : 'sin-help'}
               className={isFieldValid('sin') ? 'border-green-500' : ''}
             />
           )}
         />
         {errors.sin && (
-          <p className="text-sm text-destructive font-normal">{errors.sin.message}</p>
+          <p id="sin-error" role="alert" className="text-sm text-destructive font-normal">{errors.sin.message}</p>
         )}
-        <p className="text-xs leading-relaxed text-muted-foreground">
+        <p id="sin-help" className="text-xs leading-relaxed text-muted-foreground">
           Encrypted before storage. Your SIN is excluded from saved drafts and is never emailed.
         </p>
       </div>
@@ -237,10 +249,13 @@ export function ApplicantStep() {
             inputMode="email"
             autoComplete="email"
             {...register('email')}
+            aria-required="true"
+            aria-invalid={Boolean(errors.email)}
+            aria-describedby={errors.email ? 'email-error' : undefined}
             className={isFieldValid('email') ? 'border-green-500' : ''}
           />
           {errors.email && (
-            <p className="text-sm text-destructive font-normal">{errors.email.message}</p>
+            <p id="email-error" role="alert" className="text-sm text-destructive font-normal">{errors.email.message}</p>
           )}
         </div>
 
@@ -262,12 +277,15 @@ export function ApplicantStep() {
                 onChange={field.onChange}
                 onBlur={field.onBlur}
                 name={field.name}
+                aria-required="true"
+                aria-invalid={Boolean(errors.primaryPhone)}
+                aria-describedby={errors.primaryPhone ? 'primaryPhone-error' : undefined}
                 className={isFieldValid('primaryPhone') ? 'border-green-500' : ''}
               />
             )}
           />
           {errors.primaryPhone && (
-            <p className="text-sm text-destructive font-normal">{errors.primaryPhone.message}</p>
+            <p id="primaryPhone-error" role="alert" className="text-sm text-destructive font-normal">{errors.primaryPhone.message}</p>
           )}
         </div>
       </div>
@@ -285,10 +303,13 @@ export function ApplicantStep() {
             id="street"
             autoComplete="street-address"
             {...register('currentAddress.street')}
+            aria-required="true"
+            aria-invalid={Boolean(errors.currentAddress?.street)}
+            aria-describedby={errors.currentAddress?.street ? 'street-error' : undefined}
             className={isFieldValid('currentAddress.street') ? 'border-green-500' : ''}
           />
           {errors.currentAddress?.street && (
-            <p className="text-sm text-destructive font-normal">{errors.currentAddress.street.message}</p>
+            <p id="street-error" role="alert" className="text-sm text-destructive font-normal">{errors.currentAddress.street.message}</p>
           )}
         </div>
 
@@ -302,17 +323,25 @@ export function ApplicantStep() {
               id="city"
               autoComplete="address-level2"
               {...register('currentAddress.city')}
+              aria-required="true"
+              aria-invalid={Boolean(errors.currentAddress?.city)}
+              aria-describedby={errors.currentAddress?.city ? 'city-error' : undefined}
               className={isFieldValid('currentAddress.city') ? 'border-green-500' : ''}
             />
             {errors.currentAddress?.city && (
-              <p className="text-sm text-destructive font-normal">{errors.currentAddress.city.message}</p>
+              <p id="city-error" role="alert" className="text-sm text-destructive font-normal">{errors.currentAddress.city.message}</p>
             )}
           </div>
 
           <div className="space-y-2">
             <Label htmlFor="province">Province <RequiredMark /></Label>
             <Select onValueChange={(value) => setValue('currentAddress.province', value, { shouldValidate: true })}>
-              <SelectTrigger>
+              <SelectTrigger
+                id="province"
+                aria-required="true"
+                aria-invalid={Boolean(errors.currentAddress?.province)}
+                aria-describedby={errors.currentAddress?.province ? 'province-error' : undefined}
+              >
                 <SelectValue placeholder="Select province" />
               </SelectTrigger>
               <SelectContent>
@@ -321,6 +350,9 @@ export function ApplicantStep() {
                 ))}
               </SelectContent>
             </Select>
+            {errors.currentAddress?.province && (
+              <p id="province-error" role="alert" className="text-sm text-destructive font-normal">{errors.currentAddress.province.message}</p>
+            )}
           </div>
 
           <div className="space-y-2">
@@ -340,12 +372,15 @@ export function ApplicantStep() {
                   onChange={field.onChange}
                   onBlur={field.onBlur}
                   name={field.name}
+                  aria-required="true"
+                  aria-invalid={Boolean(errors.currentAddress?.postalCode)}
+                  aria-describedby={errors.currentAddress?.postalCode ? 'postalCode-error' : undefined}
                   className={isFieldValid('currentAddress.postalCode') ? 'border-green-500' : ''}
                 />
               )}
             />
             {errors.currentAddress?.postalCode && (
-              <p className="text-sm text-destructive font-normal">{errors.currentAddress.postalCode.message}</p>
+              <p id="postalCode-error" role="alert" className="text-sm text-destructive font-normal">{errors.currentAddress.postalCode.message}</p>
             )}
           </div>
         </div>
@@ -353,7 +388,12 @@ export function ApplicantStep() {
         <div className="space-y-2">
           <Label htmlFor="timeAtAddress">Time at Address <RequiredMark /></Label>
           <Select onValueChange={(value) => setValue('currentAddress.timeAtAddress', value as any, { shouldValidate: true })}>
-            <SelectTrigger>
+            <SelectTrigger
+              id="timeAtAddress"
+              aria-required="true"
+              aria-invalid={Boolean(errors.currentAddress?.timeAtAddress)}
+              aria-describedby={errors.currentAddress?.timeAtAddress ? 'timeAtAddress-error' : undefined}
+            >
               <SelectValue placeholder="Select duration" />
             </SelectTrigger>
             <SelectContent>
@@ -364,13 +404,22 @@ export function ApplicantStep() {
               <SelectItem value="5+">5+ years</SelectItem>
             </SelectContent>
           </Select>
+          {errors.currentAddress?.timeAtAddress && (
+            <p id="timeAtAddress-error" role="alert" className="text-sm text-destructive font-normal">{errors.currentAddress.timeAtAddress.message}</p>
+          )}
         </div>
       </div>
 
       {/* Housing Status */}
       <div className="space-y-3 pt-4">
-        <Label>Housing Status <RequiredMark /></Label>
-        <RadioGroup onValueChange={(value) => setValue('housingStatus', value as any, { shouldValidate: true })}>
+        <Label id="housing-status-label">Housing Status <RequiredMark /></Label>
+        <RadioGroup
+          aria-labelledby="housing-status-label"
+          aria-required="true"
+          aria-invalid={Boolean(errors.housingStatus)}
+          aria-describedby={errors.housingStatus ? 'housingStatus-error' : undefined}
+          onValueChange={(value) => setValue('housingStatus', value as any, { shouldValidate: true })}
+        >
           <div className="flex items-center space-x-2">
             <RadioGroupItem value="own" id="own" />
             <Label htmlFor="own" className="font-normal cursor-pointer">Own</Label>
@@ -389,7 +438,7 @@ export function ApplicantStep() {
           </div>
         </RadioGroup>
         {errors.housingStatus && (
-          <p className="text-sm text-destructive font-normal">{errors.housingStatus.message}</p>
+          <p id="housingStatus-error" role="alert" className="text-sm text-destructive font-normal">{errors.housingStatus.message}</p>
         )}
 
         <div className="space-y-2 pt-2">
@@ -403,10 +452,13 @@ export function ApplicantStep() {
             step="50"
             disabled={housingStatus === 'family'}
             {...register('monthlyHousingPayment', { valueAsNumber: true })}
+            aria-required={housingStatus === 'family' ? undefined : true}
+            aria-invalid={Boolean(errors.monthlyHousingPayment)}
+            aria-describedby={errors.monthlyHousingPayment ? 'monthlyHousingPayment-error' : undefined}
             className={isFieldValid('monthlyHousingPayment') ? 'border-green-500' : ''}
           />
           {errors.monthlyHousingPayment && (
-            <p className="text-sm text-destructive font-normal">{errors.monthlyHousingPayment.message}</p>
+            <p id="monthlyHousingPayment-error" role="alert" className="text-sm text-destructive font-normal">{errors.monthlyHousingPayment.message}</p>
           )}
         </div>
       </div>

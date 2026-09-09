@@ -250,6 +250,7 @@ export default function TradeInPage() {
         <div className="mx-auto w-full max-w-[880px] px-6 pt-8">
           <button
             onClick={handleBack}
+            aria-label={state.purchasePath === 'installed' ? 'Back to boat information' : 'Back to purchase path'}
             className="inline-flex items-center gap-1.5 font-sans text-[12px] font-semibold uppercase tracking-[0.14em] text-repower-navy-900/65 hover:text-repower-mercury-red transition-colors min-h-[44px]"
           >
             <ArrowLeft className="w-4 h-4" />

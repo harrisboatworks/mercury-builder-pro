@@ -116,7 +116,8 @@ function NestedQuoteCheckboxTile() {
             checked={selected}
             onCheckedChange={toggle}
             onClick={(event) => event.stopPropagation()}
-            aria-label="Include stainless propeller"
+            aria-hidden="true"
+            tabIndex={-1}
           />
         }
         label="Stainless propeller"
@@ -229,7 +230,8 @@ describe('Radix primitive upgrade acceptance', () => {
   it('toggles nested QuoteCheckbox once and QuoteRadioTile once', () => {
     render(<NestedQuoteCheckboxTile />);
 
-    fireEvent.click(screen.getByRole('checkbox', { name: 'Include stainless propeller' }));
+    const tile = screen.getByRole('checkbox', { name: /Stainless propeller/ });
+    fireEvent.click(tile);
     expect(screen.getByRole('status', { name: 'Quote option toggle count' })).toHaveTextContent(
       '1',
     );
@@ -237,9 +239,7 @@ describe('Radix primitive upgrade acceptance', () => {
       'selected',
     );
 
-    const tile = screen.getByText('Stainless propeller').closest('[role="checkbox"]');
-    expect(tile).not.toBeNull();
-    fireEvent.keyDown(tile as HTMLElement, { key: 'Enter' });
+    fireEvent.keyDown(tile, { key: 'Enter' });
     expect(screen.getByRole('status', { name: 'Quote option toggle count' })).toHaveTextContent(
       '2',
     );

@@ -614,19 +614,26 @@ export function ReviewSubmitStep() {
                   id="signature"
                   {...register('signature')}
                   placeholder="Type your full name"
+                  aria-required="true"
+                  aria-invalid={Boolean(errors.signature) || Boolean(signature && !signatureMatches)}
+                  aria-describedby={[
+                    'signature-help',
+                    errors.signature ? 'signature-error' : null,
+                    signature && !signatureMatches ? 'signature-mismatch' : null,
+                  ].filter(Boolean).join(' ') || undefined}
                   className={errors.signature ? 'border-destructive' : ''}
                 />
                 {signatureMatches && signature && (
                   <Check className="absolute right-3 top-3 h-4 w-4 text-green-500" />
                 )}
               </div>
-              <p className="text-sm text-muted-foreground font-light">
+              <p id="signature-help" className="text-sm text-muted-foreground font-light">
                 Must match: <span className="font-medium">{applicantFullName}</span>
               </p>
               {signature && !signatureMatches && (
-                <p className="text-sm text-destructive font-light">Signature must match your name</p>
+                <p id="signature-mismatch" role="alert" className="text-sm text-destructive font-light">Signature must match your name</p>
               )}
-              {errors.signature && <p className="text-sm text-destructive font-light">{errors.signature.message}</p>}
+              {errors.signature && <p id="signature-error" role="alert" className="text-sm text-destructive font-light">{errors.signature.message}</p>}
             </div>
 
             <div className="space-y-2">

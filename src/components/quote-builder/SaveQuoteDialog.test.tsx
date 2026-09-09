@@ -114,6 +114,35 @@ describe('SaveQuoteDialog', () => {
     consoleError.mockRestore();
   });
 
+  it('associates required-field errors with their inputs', () => {
+    render(
+      <SaveQuoteDialog
+        open
+        onOpenChange={vi.fn()}
+        quoteData={{ selectedMotor: { id: 'motor-1', hp: 115, msrp: 17000 } }}
+        motorModel="115 ELPT"
+        finalPrice={19000}
+      />,
+    );
+
+    fireEvent.click(screen.getByRole('button', { name: 'Save My Quote' }));
+
+    const name = screen.getByLabelText(/Name/i);
+    const email = screen.getByLabelText(/Email/i);
+    const phone = screen.getByLabelText(/Phone/i);
+    expect(name).toHaveAttribute('aria-invalid', 'true');
+    expect(email).toHaveAttribute('aria-invalid', 'true');
+    expect(phone).toHaveAttribute('aria-invalid', 'true');
+    expect(name).toHaveAccessibleDescription('Name is required');
+    expect(email).toHaveAccessibleDescription('Email address is required');
+    expect(phone).toHaveAccessibleDescription('Phone number is required');
+    expect(screen.getAllByRole('alert').map((node) => node.textContent)).toEqual([
+      'Name is required',
+      'Email address is required',
+      'Phone number is required',
+    ]);
+  });
+
   it('succeeds on the anonymous manual-email path without requesting a representation', async () => {
     mocks.authUser = null;
     mocks.savedQuoteInsert.mockResolvedValue({ error: null });
@@ -132,6 +161,7 @@ describe('SaveQuoteDialog', () => {
     await fillAndSubmitSaveForm();
 
     await waitFor(() => {
+      expect(screen.getByRole('heading', { name: 'Quote saved' })).toBeInTheDocument();
       expect(screen.getByText('Quote Saved!')).toBeInTheDocument();
     });
 

@@ -150,6 +150,7 @@ export function SaveForLaterDialog({ open, onOpenChange }: SaveForLaterDialogPro
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           disabled={isSending}
+          aria-required="true"
           className="h-12 rounded-sm border-repower-navy-900/15 focus-visible:ring-repower-gold"
         />
       </div>

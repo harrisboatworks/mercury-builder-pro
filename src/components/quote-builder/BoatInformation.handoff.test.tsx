@@ -9,9 +9,9 @@ describe('agent handoff into the actual boat form',()=>{
   const props={onStepComplete:vi.fn(),onBack:vi.fn(),selectedMotor:{id:'fixture',model:'90 ELPT FourStroke',hp:90,price:14000,year:2026,image:'',stockStatus:'In Stock',category:'high-performance',type:'FourStroke',specs:'90 HP'} as Motor,includeTradeIn:false};
   const {rerender}=render(<BoatInformation {...props} initialBoatInfo={draft}/>);
   fireEvent.click(screen.getByRole('button',{name:/^V-Hull Fishing boat/}));
-  const make=screen.getByPlaceholderText('e.g., Harris, Ranger, Boston Whaler');
+  const make=screen.getByLabelText('Boat Make');
   expect(make).toHaveValue('Lund');
-  expect(screen.getByPlaceholderText('e.g., Solstice 230, Z520L')).toHaveValue('Pro-V');
+  expect(screen.getByLabelText('Boat Model')).toHaveValue('Pro-V');
   fireEvent.change(make,{target:{value:'Buyer correction'}});
   rerender(<BoatInformation {...props} initialBoatInfo={{...draft,make:'Stale URL'}}/>);
   expect(make).toHaveValue('Buyer correction');
