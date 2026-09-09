@@ -91,6 +91,33 @@ export function mintAdminQuoteEmailIdempotencyKey(input: {
   return key;
 }
 
+function nonEmptyId(value?: string | null): string | null {
+  if (typeof value !== "string") return null;
+  const trimmed = value.trim();
+  return trimmed === "" ? null : trimmed;
+}
+
+/**
+ * Quote association for delivery identity and audit.
+ *
+ * send-quote-email is public. Caller body fields are not a trust signal.
+ * Associate a quote_id only for an authenticated admin or a verified
+ * internal request. Public and failed-admin callers still send, but the
+ * audit row stays unlinked. A stored consultation document/quote id is
+ * authoritative over a caller-supplied id.
+ */
+export function resolveTrustedQuoteEmailQuoteId(input: {
+  internalRequest: boolean;
+  adminAuthenticated: boolean;
+  callerQuoteId?: string | null;
+  storedQuoteId?: string | null;
+}): string | null {
+  if (!input.internalRequest && !input.adminAuthenticated) {
+    return null;
+  }
+  return nonEmptyId(input.storedQuoteId) ?? nonEmptyId(input.callerQuoteId);
+}
+
 /**
  * Idempotency key for one logical send.
  *

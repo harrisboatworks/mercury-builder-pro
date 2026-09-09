@@ -5,6 +5,7 @@ import {
   deriveIdempotencyKey,
   EmailSendFailed,
   normalizeRecipient,
+  resolveTrustedQuoteEmailQuoteId,
   sha256Hex as sha256Recipient,
   verifyResendResult,
 } from "../_shared/quote-email-delivery.ts";
@@ -500,6 +501,7 @@ serve(async (req) => {
       emailOptions.attachments = [legacyPdfAttachment];
     }
 
+    let storedQuoteId: string | null = null;
     if (isConsultationPath || emailData.adminDocumentId) {
       const documentId = assertConsultationDocumentId(emailData.adminDocumentId || emailData.documentId);
       const { data: documentRow, error: documentError } = await supabase
@@ -515,6 +517,9 @@ serve(async (req) => {
           headers: { ...corsHeaders, "Content-Type": "application/json" },
         });
       }
+      storedQuoteId = typeof documentRow.customer_quote_id === "string"
+        ? documentRow.customer_quote_id
+        : null;
       let binding: { path: string; sha256: string };
       try {
         binding = assertConsultationStoredDocument({
@@ -561,18 +566,25 @@ serve(async (req) => {
       }];
     }
 
+    const admin = await requireAdmin(req, corsHeaders);
+    const adminAuthenticated = !(admin instanceof Response);
+    const initiator = adminAuthenticated ? 'admin' : 'customer';
+    const trustedQuoteId = resolveTrustedQuoteEmailQuoteId({
+      internalRequest,
+      adminAuthenticated,
+      callerQuoteId: emailData.leadData?.quoteId,
+      storedQuoteId,
+    });
+
     const idempotencyKey = await deriveIdempotencyKey({
       suppliedKey: emailData.idempotencyKey,
       emailType: emailData.emailType,
       quoteNumber: emailData.quoteNumber,
-      quoteId: emailData.leadData?.quoteId,
+      quoteId: trustedQuoteId,
       recipient: emailData.customerEmail,
     });
     const recipientHash = await sha256Recipient(normalizeRecipient(emailData.customerEmail));
     emailOptions.headers = { 'Idempotency-Key': idempotencyKey };
-
-    const admin = await requireAdmin(req, corsHeaders);
-    const initiator = !(admin instanceof Response) ? 'admin' : 'customer';
 
     let claim;
     try {
@@ -580,7 +592,7 @@ serve(async (req) => {
         idempotencyKey,
         emailType: emailData.emailType,
         quoteNumber: emailData.quoteNumber,
-        quoteId: emailData.leadData?.quoteId,
+        quoteId: trustedQuoteId,
         recipientHash,
         initiator,
       });
