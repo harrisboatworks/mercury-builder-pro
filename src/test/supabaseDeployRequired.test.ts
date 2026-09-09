@@ -1,6 +1,8 @@
+import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 import {
   appliedVersionSet,
+  blockedDeployReason,
   buildDeployRequiredReport,
   buildDriftReport,
   deployTargetsFromDiff,
@@ -19,6 +21,7 @@ import {
   migrationNameFromFilename,
   ORDERING_UNKNOWN,
   parseNameStatusZ,
+  requiredMigrationsForSlug,
   resolveImportPath,
   secretsConfigured,
   sourceFilesForFunction,
@@ -235,6 +238,34 @@ describe('deploy targets from changed paths', () => {
     });
     expect(targets.functions).toEqual([]);
     expect(targets.migrations).toEqual([MIG_RPC]);
+  });
+
+  it('passes through the report\'s per-function required migrations', () => {
+    const filesWithMigrations = {
+      ...tree,
+      [MIG_RPC]: `
+        CREATE OR REPLACE FUNCTION public.insert_chat_lead()
+        RETURNS void LANGUAGE plpgsql AS $$ BEGIN NULL; END; $$;
+      `,
+      [MIG_TABLE]: `
+        CREATE TABLE public.chat_leads (
+          id uuid PRIMARY KEY
+        );
+      `,
+    };
+    const diffEntries = [
+      { status: 'M' as const, path: A_FN },
+      { status: 'A' as const, path: MIG_RPC },
+      { status: 'A' as const, path: MIG_TABLE },
+    ];
+    const report = buildDeployRequiredReport({ diffEntries, files: filesWithMigrations });
+    const targets = deployTargetsFromDiff({ diffEntries, files: filesWithMigrations });
+    const reportFn = report.functions.find((item) => item.slug === 'capture-chat-lead');
+    const targetFn = targets.functions.find((item) => item.slug === 'capture-chat-lead');
+    expect(targetFn?.requiredMigrations).toEqual(reportFn?.requiredMigrations);
+    expect(requiredMigrationsForSlug('capture-chat-lead', filesWithMigrations, [MIG_RPC, MIG_TABLE])).toEqual(
+      reportFn?.requiredMigrations,
+    );
   });
 
   it('lists a removed function as removed instead of deploying it', () => {
@@ -610,5 +641,99 @@ describe('secrets no-op notice', () => {
     expect(notice).toContain('SUPABASE_PROJECT_REF');
     expect(notice).toContain('no-op');
     expect(notice).not.toMatch(/token is missing|ref is missing/i);
+  });
+});
+
+describe('report script output contract', () => {
+  const GOLDEN_DEPLOY_REQUIRED_MARKDOWN = `## Supabase deploy-required report
+
+Push range: \`aaa111\` → \`bbb222\`
+
+This job only reports. It does not deploy edge functions, apply migrations, or call the Supabase API.
+
+Release order below: **migrations first**, then the functions that may depend on them.
+
+### 1. Migrations to apply (filename order)
+
+- \`supabase/migrations/20260101000000_create_lead_rpc.sql\` — version \`20260101000000\`; creates function \`insert_chat_lead\`
+- \`supabase/migrations/20260101000001_create_leads.sql\` — version \`20260101000001\`; creates table \`chat_leads\`
+- \`supabase/migrations/20260101000002_dynamic.sql\` — version \`20260101000002\`; ordering unknown, check manually
+
+### 2. Edge functions to redeploy
+
+- \`capture-chat-lead\`
+  - why: direct file change (index.ts)
+  - newly required migrations: \`20260101000000_create_lead_rpc.sql\` (rpc insert_chat_lead); \`20260101000001_create_leads.sql\` (table chat_leads); ordering unknown, check manually (20260101000002_dynamic.sql created objects not fully parsed)
+- \`public-quote-api\`
+  - why: direct file change (index.ts)
+  - newly required migrations: ordering unknown, check manually (20260101000002_dynamic.sql created objects not fully parsed)
+- \`unrelated\` (removed on main — confirm it is disabled remotely)
+  - why: direct file change (index.ts)
+  - newly required migrations: n/a
+
+### Notes
+
+- supabase/functions/deno.json changed; import-map effects are not inferred
+`;
+
+  it('keeps the report script output byte-identical after the deploy-gate refactor', () => {
+    const files = {
+      [A_FN]: `
+      import { checkRateLimit } from "../_shared/rate-limit.ts";
+      await supabase.from("chat_leads").insert({});
+      await supabase.rpc("insert_chat_lead", {});
+    `,
+      [B_FN]: `
+      await supabase.rpc("check_rate_limit", {});
+    `,
+      [C_FN]: `
+      const name = "insert_chat_lead";
+      await supabase.rpc(name);
+    `,
+      'supabase/functions/_shared/rate-limit.ts': `await client.rpc("check_rate_limit", {});`,
+      'supabase/functions/deno.json': '{}',
+      [MIG_RPC]: `
+      CREATE OR REPLACE FUNCTION public.insert_chat_lead()
+      RETURNS void LANGUAGE plpgsql AS $$ BEGIN NULL; END; $$;
+    `,
+      [MIG_TABLE]: `
+      CREATE TABLE public.chat_leads (
+        id uuid PRIMARY KEY
+      );
+    `,
+      [MIG_DO]: `
+      DO $$ BEGIN EXECUTE format('create table %I (id int)', 'mystery'); END $$;
+    `,
+    };
+    const report = buildDeployRequiredReport({
+      diffEntries: [
+        { status: 'M', path: A_FN },
+        { status: 'M', path: B_FN },
+        { status: 'D', path: C_FN },
+        { status: 'A', path: MIG_RPC },
+        { status: 'A', path: MIG_TABLE },
+        { status: 'A', path: MIG_DO },
+        { status: 'M', path: 'supabase/functions/deno.json' },
+      ],
+      files,
+      from: 'aaa111',
+      to: 'bbb222',
+    });
+    expect(formatDeployRequiredMarkdown(report)).toBe(GOLDEN_DEPLOY_REQUIRED_MARKDOWN);
+
+    const script = readFileSync('scripts/report-supabase-deploy-required.mjs', 'utf8');
+    expect(script).toContain('buildDeployRequiredReport');
+    expect(script).toContain('formatDeployRequiredMarkdown(report)');
+  });
+
+  it('blocks only when a required migration is missing from the applied set', () => {
+    const required = [{ path: MIG_RPC, version: '20260101000000' }];
+    const applied = appliedVersionSet([{ version: '20260101000000' }]);
+    const missing = appliedVersionSet([{ version: '20251201000000' }]);
+    expect(blockedDeployReason('capture-chat-lead', required, applied)).toBeNull();
+    expect(blockedDeployReason('capture-chat-lead', [], missing)).toBeNull();
+    expect(blockedDeployReason('capture-chat-lead', required, missing)).toContain(
+      '20260101000000_create_lead_rpc.sql',
+    );
   });
 });
