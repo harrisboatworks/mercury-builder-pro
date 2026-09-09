@@ -10,6 +10,7 @@ import * as notificationWebhookHandler from '../../../supabase/functions/_shared
 import {
   computeTwilioSignature,
   parseTwilioFormBody,
+  gateTwilioStatusCallback,
 } from '../../../supabase/functions/_shared/twilio-signature.ts';
 import {
   buildSmsStatusCallbackUrl,
@@ -59,10 +60,32 @@ describe('Twilio status ordering', () => {
 describe('Twilio status callback URL', () => {
   it('derives the public function URL from SUPABASE_URL plus sms_log_id', () => {
     expect(buildSmsStatusCallbackUrl(`${SUPABASE_URL}/`, SMS_LOG_ID)).toBe(
-      `${WEBHOOK_URL}?sms_log_id=${SMS_LOG_ID}`,
+      `${WEBHOOK_URL}?sms_log_id=${SMS_LOG_ID}#rp=ct,rt,5xx&rc=2`,
     );
     expect(buildSmsStatusCallbackUrl(SUPABASE_URL, 'not-a-uuid')).toBeNull();
     expect(buildSmsStatusCallbackUrl('', SMS_LOG_ID)).toBeNull();
+  });
+
+  it('keeps retry overrides outside the URL signed by Twilio', async () => {
+    const configuredUrl = new URL(buildSmsStatusCallbackUrl(SUPABASE_URL, SMS_LOG_ID)!);
+    expect(configuredUrl.hash).toBe('#rp=ct,rt,5xx&rc=2');
+    configuredUrl.hash = '';
+    const body = new URLSearchParams({
+      MessageSid: MESSAGE_SID,
+      MessageStatus: 'delivered',
+    }).toString();
+    const signature = await computeTwilioSignature(
+      AUTH_TOKEN, configuredUrl.toString(), parseTwilioFormBody(body),
+    );
+    const request = new Request(configuredUrl.toString(), {
+      method: 'POST',
+      headers: { 'X-Twilio-Signature': signature },
+      body,
+    });
+    await expect(gateTwilioStatusCallback(request, {
+      authToken: AUTH_TOKEN,
+      supabaseUrl: SUPABASE_URL,
+    })).resolves.toEqual({ ok: true, rawBody: body });
   });
 
   it('reads a single valid sms_log_id from the inbound request query', () => {
@@ -303,7 +326,7 @@ describe('send-sms records the outbound MessageSid', () => {
     expect(twilioCall).toBeTruthy();
     const twilioForm = new URLSearchParams(String(twilioCall?.[1]?.body ?? ''));
     expect(twilioForm.get('StatusCallback')).toBe(
-      `${WEBHOOK_URL}?sms_log_id=${SMS_LOG_ID}`,
+      `${WEBHOOK_URL}?sms_log_id=${SMS_LOG_ID}#rp=ct,rt,5xx&rc=2`,
     );
     expect(twilioForm.get('To')).toBe('+15555550100');
 

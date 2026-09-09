@@ -123,10 +123,14 @@ export function buildSmsStatusCallbackUrl(
   smsLogId: string,
 ): string | null {
   if (!SMS_LOG_ID_PATTERN.test(smsLogId)) return null;
-  return resolveTwilioWebhookUrl(
+  const callbackUrl = resolveTwilioWebhookUrl(
     supabaseUrl,
     `https://unused.invalid/?sms_log_id=${smsLogId}`,
   );
+  // Twilio defaults to retrying connection failures only. Storage failures
+  // return 5xx, so explicitly retry those and read timeouts as well. Twilio
+  // strips this connection-override fragment before signing the callback.
+  return callbackUrl ? `${callbackUrl}#rp=ct,rt,5xx&rc=2` : null;
 }
 
 export function httpStatusForTwilioStatusApplyResult(
