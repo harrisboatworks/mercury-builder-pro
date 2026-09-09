@@ -1,6 +1,7 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
 import { buildEmail, detailsCard, esc } from "../_shared/email-layout.ts";
+import { requireAdmin } from "../_shared/admin-auth.ts";
 
 
 const corsHeaders = {
@@ -149,6 +150,13 @@ const handler = async (req: Request): Promise<Response> => {
   if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
   }
+
+  // verify_jwt = true only proves the caller holds *a* valid JWT, and the anon
+  // key is one — it ships in the public browser bundle. Without this check any
+  // visitor could POST { targetType: "all", sendSms: true } and blast the whole
+  // customer list over Resend and Twilio on the dealership's account.
+  const authResult = await requireAdmin(req, corsHeaders);
+  if (authResult instanceof Response) return authResult;
 
   try {
     const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
