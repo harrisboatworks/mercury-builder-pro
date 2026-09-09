@@ -1,5 +1,6 @@
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
 import { corsHeaders } from "../_shared/cors.ts";
+import { buildPublicVoiceSessionsResponse } from "./public-sessions.ts";
 
 /**
  * Edge function proxy for anonymous voice session access.
@@ -55,7 +56,7 @@ Deno.serve(async (req) => {
 
       let query = admin
         .from("voice_sessions")
-        .select("*")
+        .select("started_at, duration_seconds, messages_exchanged, summary, motor_context")
         .order("started_at", { ascending: false })
         .limit(limit);
 
@@ -76,7 +77,7 @@ Deno.serve(async (req) => {
       }
 
       return new Response(
-        JSON.stringify({ sessions: sessions || [] }),
+        JSON.stringify(buildPublicVoiceSessionsResponse(sessions || [])),
         { status: 200, headers: { ...corsHeaders, "Content-Type": "application/json" } },
       );
     }
