@@ -154,7 +154,7 @@ const handler = async (req: Request): Promise<Response> => {
 
     const customerEmailResponse = await resend.emails.send({
       from: "Harris Boat Works <info@mercuryrepower.ca>",
-      replyTo: "info@harrisboatworks.ca",
+      reply_to: "info@harrisboatworks.ca",
       to: [inquiryData.email],
       bcc: [GROK_BOT_AGENTMAIL],
       subject: "We received your inquiry | Harris Boat Works",

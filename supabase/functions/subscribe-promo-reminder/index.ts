@@ -151,7 +151,7 @@ serve(async (req) => {
           from: "Harris Boat Works <noreply@mercuryrepower.ca>",
           to: [customerEmail],
           bcc: [GROK_BOT_AGENTMAIL],
-          replyTo: "info@harrisboatworks.ca",
+          reply_to: "info@harrisboatworks.ca",
           subject: `You are subscribed to ${motorName} promotions`,
           html,
         });

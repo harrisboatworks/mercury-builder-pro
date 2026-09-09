@@ -224,7 +224,7 @@ serve(async (req) => {
           from: "Harris Boat Works <system@mercuryrepower.ca>",
           to: ["info@harrisboatworks.ca"],
           bcc: [GROK_BOT_AGENTMAIL],
-          replyTo: "info@harrisboatworks.ca",
+          reply_to: "info@harrisboatworks.ca",
           subject: `Chat lead: ${leadData.name}`.slice(0, 200),
           html: emailHtml,
         });

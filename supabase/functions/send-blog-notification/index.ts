@@ -115,7 +115,7 @@ const handler = async (req: Request): Promise<Response> => {
 
             await resend.emails.send({
               from: "Harris Boat Works <updates@mercuryrepower.ca>",
-              replyTo: "info@harrisboatworks.ca",
+              reply_to: "info@harrisboatworks.ca",
               to: [subscriber.email],
               subject: `New from Harris Boat Works: ${articleTitle}`,
               html,
