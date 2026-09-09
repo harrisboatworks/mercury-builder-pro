@@ -121,7 +121,7 @@ async function sendResumeEmail(params: {
 
   const response = await new Resend(resendKey).emails.send({
     from: 'Harris Boat Works <noreply@mercuryrepower.ca>',
-    replyTo: 'info@harrisboatworks.ca',
+    reply_to: 'info@harrisboatworks.ca',
     to: [params.email],
     subject: 'Resume your financing application | Harris Boat Works',
     html,

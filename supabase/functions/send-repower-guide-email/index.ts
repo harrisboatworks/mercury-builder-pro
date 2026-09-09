@@ -51,10 +51,23 @@ serve(async (req: Request): Promise<Response> => {
   if (!allowed) return rateLimitedResponse(corsHeaders, 300);
 
   try {
-    const { email, name, phone, hasBoatToRepower }: RequestBody = await req.json();
+    let parsed: RequestBody;
+    try {
+      parsed = await req.json();
+    } catch {
+      return new Response(
+        JSON.stringify({ error: "Request body must be valid JSON" }),
+        { status: 400, headers: { "Content-Type": "application/json", ...corsHeaders } },
+      );
+    }
+
+    const { email, name, phone, hasBoatToRepower } = parsed ?? {};
 
     if (!email) {
-      throw new Error("Email is required");
+      return new Response(
+        JSON.stringify({ error: "Email is required" }),
+        { status: 400, headers: { "Content-Type": "application/json", ...corsHeaders } },
+      );
     }
 
     console.log(`[send-repower-guide-email] Processing request for: ${email}`);

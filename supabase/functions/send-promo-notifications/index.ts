@@ -151,7 +151,7 @@ serve(async (req) => {
 
             await resend.emails.send({
               from: "Harris Boat Works <noreply@mercuryrepower.ca>",
-              replyTo: "info@harrisboatworks.ca",
+              reply_to: "info@harrisboatworks.ca",
               to: [subscription.customer_email],
               subject: `New promotion: ${newestPromo.name} | Harris Boat Works`,
               html,

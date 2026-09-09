@@ -1132,9 +1132,9 @@ ${motor1.horsepower > motor2.horsepower ? `The ${motor1.model_display} has more 
           };
         }
         
-        const partName = result.name || partDescription || "Mercury Part";
-        const partDesc = result.description || "";
-        const priceInfo = result.cadPrice ? `$${result.cadPrice.toLocaleString()} CAD` : "Contact us for pricing";
+        const partName = result.data?.name || partDescription || "Mercury Part";
+        const partDesc = result.data?.description || "";
+        const priceInfo = result.data?.cadPrice ? `$${result.data.cadPrice.toLocaleString()} CAD` : "Contact us for pricing";
         
         return { 
           content: [{ 

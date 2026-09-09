@@ -45,7 +45,17 @@ const handler = async (req: Request): Promise<Response> => {
       );
     }
 
-    const { email, name }: SubscribeRequest = await req.json();
+    let parsed: SubscribeRequest;
+    try {
+      parsed = await req.json();
+    } catch {
+      return new Response(
+        JSON.stringify({ error: "Request body must be valid JSON" }),
+        { status: 400, headers: { "Content-Type": "application/json", ...corsHeaders } },
+      );
+    }
+
+    const { email, name } = parsed ?? {};
 
     // Validate email
     if (!email || !email.includes("@")) {
@@ -133,7 +143,7 @@ const handler = async (req: Request): Promise<Response> => {
 
         await resend.emails.send({
           from: "Harris Boat Works <updates@mercuryrepower.ca>",
-          replyTo: "info@harrisboatworks.ca",
+          reply_to: "info@harrisboatworks.ca",
           to: [email],
           bcc: [GROK_BOT_AGENTMAIL],
           subject: "Welcome to the Harris Boat Works journal",

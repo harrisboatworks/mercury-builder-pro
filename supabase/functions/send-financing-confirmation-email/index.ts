@@ -239,7 +239,7 @@ const handler = async (req: Request): Promise<Response> => {
 
     const applicantEmailResponse = await resend.emails.send({
       from: 'Harris Boat Works Financing <financing@mercuryrepower.ca>',
-      replyTo: ['info@harrisboatworks.ca'],
+      reply_to: ['info@harrisboatworks.ca'],
       to: [applicantEmail],
       subject: `Financing application received, ref ${referenceNumber} | Harris Boat Works`,
       html: applicantHtml,
@@ -287,7 +287,7 @@ const handler = async (req: Request): Promise<Response> => {
 
       adminEmailResponse = await resend.emails.send({
         from: 'Harris Boat Works System <noreply@mercuryrepower.ca>',
-        replyTo: ['info@harrisboatworks.ca'],
+        reply_to: ['info@harrisboatworks.ca'],
         to: [adminEmail],
         subject: `[FINANCING] ${applicantName} - ${motorModel} - $${amountToFinance.toLocaleString()}`,
         html: adminHtml,

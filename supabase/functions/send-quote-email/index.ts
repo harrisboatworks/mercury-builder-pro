@@ -460,7 +460,7 @@ serve(async (req) => {
     const emailOptions: {
       from: string;
       to: string[];
-      replyTo: string;
+      reply_to: string;
       bcc?: string[];
       subject: string;
       html: string;
@@ -470,7 +470,7 @@ serve(async (req) => {
         ? GROK_BOT_QUOTE_SENDER
         : 'Harris Boat Works - Mercury Marine <noreply@mercuryrepower.ca>',
       to: destinations.to,
-      replyTo: 'info@harrisboatworks.ca',
+      reply_to: 'info@harrisboatworks.ca',
       subject: subject,
       html: htmlContent,
     };
