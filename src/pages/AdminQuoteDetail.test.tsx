@@ -203,6 +203,10 @@ describe('AdminQuoteDetail trade-in writes', () => {
     expect(source).toContain('update({ quote_state: updatedQuoteData })');
     expect(source).toContain(".contains('quote_state', { customerQuoteId: q.id })");
     expect(source).not.toContain("update({ quote_data: updatedQuoteData })");
-    expect(source).not.toContain('customer_quote_id');
+    // The column does not exist on saved_quotes. Pin the query shape rather than the
+    // whole file, so the explanatory comment naming the wrong column can stay.
+    expect(source).not.toContain(".eq('customer_quote_id'");
+    expect(source).not.toContain('.eq("customer_quote_id"');
+    expect(source).not.toContain("customer_quote_id:");
   });
 });
