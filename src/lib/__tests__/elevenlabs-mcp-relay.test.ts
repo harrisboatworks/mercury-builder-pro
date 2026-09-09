@@ -393,6 +393,41 @@ describe("elevenlabs MCP shared-secret gate", () => {
     expect(sendEmail).not.toHaveBeenCalled();
   });
 
+  it.each(["GET", "PUT", "DELETE"])("rejects unauthenticated %s before dispatch", async (method) => {
+    const result = await invoke({ method, omitSecret: true });
+    expect(result.response.status).toBe(401);
+    expect(result.createClient).not.toHaveBeenCalled();
+    expect(result.fetchImpl).not.toHaveBeenCalled();
+  });
+
+  it.each(["initialize", "tools/list", "ping", "notifications/initialized"])(
+    "rejects unauthenticated %s discovery or protocol requests",
+    async (method) => {
+      const result = await invoke({ body: { jsonrpc: "2.0", id: "1", method }, omitSecret: true });
+      expect(result.response.status).toBe(401);
+      expect(result.createClient).not.toHaveBeenCalled();
+      expect(result.fetchImpl).not.toHaveBeenCalled();
+    },
+  );
+
+  it.each(["schedule_callback", "set_reminder", "email_quote_to_customer", "send_motor_info_email"])(
+    "rejects unauthenticated %s privileged forwarding",
+    async (tool) => {
+      const result = await invoke({ tool, omitSecret: true });
+      expect(result.response.status).toBe(401);
+      expect(result.createClient).not.toHaveBeenCalled();
+      expect(result.fetchImpl).not.toHaveBeenCalled();
+      expect(result.sendEmail).not.toHaveBeenCalled();
+    },
+  );
+
+  it("allows authenticated GET discovery without executing a tool", async () => {
+    const result = await invoke({ method: "GET" });
+    expect(result.response.status).toBe(200);
+    expect(result.createClient).not.toHaveBeenCalled();
+    expect(result.fetchImpl).not.toHaveBeenCalled();
+  });
+
   it("keeps OPTIONS working without the secret", async () => {
     const { response, raw, createClient, fetchImpl, sendEmail } = await invoke({
       method: "OPTIONS",
