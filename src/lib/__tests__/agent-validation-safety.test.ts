@@ -130,11 +130,21 @@ describe('agent validation safety', () => {
     expect(outside.stderr).toContain('Invalid Edge TypeScript path');
 
     const checkerSource = readFileSync(checker, 'utf8');
+    expect(checkerSource).toContain("'--config'");
+    expect(checkerSource).toContain('RUNTIME_CONFIG_PATH');
+    expect(checkerSource).toContain("'--import-map'");
+    expect(checkerSource).toContain('CHECK_CONFIG_PATH');
+    expect(checkerSource).toContain('supabase/functions/deno.check.json');
     expect(checkerSource).toContain("'--node-modules-dir=none'");
-    expect(checkerSource).toContain("'--lock=supabase/functions/deno.lock'");
+    expect(checkerSource).toContain('`--lock=${LOCK_PATH}`');
     expect(checkerSource).toContain("'--frozen'");
+    expect(checkerSource).toContain("'--no-remote'");
     expect(checkerSource).not.toContain("'--no-lock'");
+    expect(checkerSource).not.toContain("'--cached-only'");
     expect(checkerSource.indexOf("'--config'")).toBeLessThan(
+      checkerSource.indexOf("'--import-map'"),
+    );
+    expect(checkerSource.indexOf("'--import-map'")).toBeLessThan(
       checkerSource.indexOf("'--node-modules-dir=none'"),
     );
 
@@ -143,6 +153,18 @@ describe('agent validation safety', () => {
     );
     expect(edgeLock.version).toBe('5');
     expect(edgeLock.specifiers['npm:@supabase/supabase-js@2.53.1']).toBe('2.53.1');
+    expect(edgeLock.specifiers['npm:stripe@18.5.0']).toBe('18.5.0');
+
+    const typecheckConfig = JSON.parse(
+      readFileSync(resolve(repoRoot, 'supabase/functions/deno.check.json'), 'utf8'),
+    );
+    expect(typecheckConfig.imports['https://esm.sh/@supabase/supabase-js@2.53.1']).toBe(
+      'npm:@supabase/supabase-js@2.53.1',
+    );
+    expect(typecheckConfig.imports['https://esm.sh/stripe@18.5.0']).toBe('npm:stripe@18.5.0');
+    expect(typecheckConfig.imports['https://deno.land/x/xhr@0.1.0/mod.ts']).toBe(
+      '../../scripts/edge-typecheck/xhr-polyfill.ts',
+    );
 
     for (const dependency of edgeLock.workspace.dependencies) {
       const packageAndVersion = dependency.slice('npm:'.length);
@@ -164,6 +186,7 @@ describe('agent validation safety', () => {
       join(functionsDirectory, 'deno.json'),
       JSON.stringify({ imports: { resend: 'npm:resend@2.0.0' } }),
     );
+    writeFileSync(join(functionsDirectory, 'deno.check.json'), JSON.stringify({ imports: {} }));
     writeFileSync(
       join(functionsDirectory, 'deno.lock'),
       JSON.stringify({ version: '5', specifiers: {}, npm: {} }),
@@ -223,5 +246,103 @@ describe('agent validation safety', () => {
     });
 
     expect(complete.status).toBe(0);
+  });
+
+  it('refuses --all when a function directory has no index.ts', () => {
+    const fixtureRoot = mkdtempSync(join(tmpdir(), 'mercury-edge-all-'));
+    temporaryDirectories.push(fixtureRoot);
+    const functionsDirectory = join(fixtureRoot, 'supabase', 'functions');
+    mkdirSync(join(functionsDirectory, 'broken'), { recursive: true });
+    mkdirSync(join(functionsDirectory, 'ok'), { recursive: true });
+    writeFileSync(join(functionsDirectory, 'ok', 'index.ts'), 'Deno.serve(() => new Response("ok"));\n');
+
+    const checker = resolve(repoRoot, 'scripts/check-edge-functions.mjs');
+    const result = spawnSync(process.execPath, [checker, '--all'], {
+      cwd: fixtureRoot,
+      encoding: 'utf8',
+    });
+
+    expect(result.status).toBe(2);
+    expect(result.stderr).toContain('Edge function directories without index.ts');
+    expect(result.stderr).toContain('broken');
+  });
+
+  it('fails preflight when a remote import has no offline typecheck remap', () => {
+    const fixtureRoot = mkdtempSync(join(tmpdir(), 'mercury-edge-remap-'));
+    temporaryDirectories.push(fixtureRoot);
+    const functionsDirectory = join(fixtureRoot, 'supabase', 'functions');
+    mkdirSync(functionsDirectory, { recursive: true });
+    writeFileSync(join(functionsDirectory, 'deno.json'), JSON.stringify({ imports: {} }));
+    writeFileSync(join(functionsDirectory, 'deno.check.json'), JSON.stringify({ imports: {} }));
+    writeFileSync(
+      join(functionsDirectory, 'deno.lock'),
+      JSON.stringify({ version: '5', specifiers: {}, npm: {} }),
+    );
+    writeFileSync(
+      join(functionsDirectory, 'index.ts'),
+      'import { createClient } from "https://esm.sh/@supabase/supabase-js@2.53.1";\nvoid createClient;\n',
+    );
+
+    const checker = resolve(repoRoot, 'scripts/check-edge-functions.mjs');
+    const unmapped = spawnSync(process.execPath, [checker, '--check-lock-only'], {
+      cwd: fixtureRoot,
+      encoding: 'utf8',
+    });
+
+    expect(unmapped.status).toBe(2);
+    expect(unmapped.stderr).toContain('Unmapped remote Edge import');
+    expect(unmapped.stderr).toContain('https://esm.sh/@supabase/supabase-js@2.53.1');
+
+    writeFileSync(
+      join(functionsDirectory, 'deno.check.json'),
+      JSON.stringify({
+        imports: {
+          'https://esm.sh/@supabase/supabase-js@2.53.1':
+            'https://esm.sh/@supabase/supabase-js@2.53.1',
+        },
+      }),
+    );
+    const stillRemote = spawnSync(process.execPath, [checker, '--check-lock-only'], {
+      cwd: fixtureRoot,
+      encoding: 'utf8',
+    });
+
+    expect(stillRemote.status).toBe(2);
+    expect(stillRemote.stderr).toContain('Typecheck remap still points at the network');
+  });
+
+  it('fails preflight when a typecheck remap targets an unlocked npm package', () => {
+    const fixtureRoot = mkdtempSync(join(tmpdir(), 'mercury-edge-remap-lock-'));
+    temporaryDirectories.push(fixtureRoot);
+    const functionsDirectory = join(fixtureRoot, 'supabase', 'functions');
+    mkdirSync(functionsDirectory, { recursive: true });
+    writeFileSync(join(functionsDirectory, 'deno.json'), JSON.stringify({ imports: {} }));
+    writeFileSync(
+      join(functionsDirectory, 'deno.check.json'),
+      JSON.stringify({
+        imports: {
+          'https://esm.sh/stripe@18.5.0': 'npm:stripe@18.5.0',
+        },
+      }),
+    );
+    writeFileSync(
+      join(functionsDirectory, 'deno.lock'),
+      JSON.stringify({ version: '5', specifiers: {}, npm: {} }),
+    );
+    writeFileSync(
+      join(functionsDirectory, 'index.ts'),
+      'import Stripe from "https://esm.sh/stripe@18.5.0";\nvoid Stripe;\n',
+    );
+
+    const checker = resolve(repoRoot, 'scripts/check-edge-functions.mjs');
+    const unlocked = spawnSync(process.execPath, [checker, '--check-lock-only'], {
+      cwd: fixtureRoot,
+      encoding: 'utf8',
+    });
+
+    expect(unlocked.status).toBe(2);
+    expect(unlocked.stderr).toContain(
+      'Edge lockfile is incomplete for configured or direct import: npm:stripe@18.5.0',
+    );
   });
 });
