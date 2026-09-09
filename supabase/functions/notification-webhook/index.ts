@@ -5,6 +5,13 @@ import {
   handleNotificationWebhook,
   notificationWebhookCorsHeaders,
 } from "../_shared/notification-webhook-handler.ts";
+import {
+  httpStatusForTwilioStatusApplyResult,
+  isTwilioMessageSid,
+  isTwilioMessageStatus,
+  parseSmsLogIdFromRequestUrl,
+} from "../_shared/twilio-status.ts";
+import { applyTwilioStatusToSmsLog } from "../_shared/twilio-status-store.ts";
 
 const corsHeaders = notificationWebhookCorsHeaders;
 
@@ -12,7 +19,6 @@ const corsHeaders = notificationWebhookCorsHeaders;
 const twilioWebhookSchema = z.object({
   MessageSid: z.string().min(1).max(100),
   MessageStatus: z.string().min(1).max(50),
-  To: z.string().max(50).optional(),
   ErrorCode: z.string().max(20).optional(),
   ErrorMessage: z.string().max(500).optional(),
 });
@@ -35,7 +41,6 @@ serve(async (req) => {
         const rawData = {
           MessageSid: params.get('MessageSid') || undefined,
           MessageStatus: params.get('MessageStatus') || undefined,
-          To: params.get('To') || undefined,
           ErrorCode: params.get('ErrorCode') || undefined,
           ErrorMessage: params.get('ErrorMessage') || undefined,
         };
@@ -49,43 +54,46 @@ serve(async (req) => {
           )
         }
 
-        const { MessageSid: messageSid, MessageStatus: messageStatus, To: to, ErrorCode: errorCode, ErrorMessage: errorMessage } = validationResult.data;
+        const { MessageSid: messageSid, MessageStatus: messageStatus, ErrorCode: errorCode, ErrorMessage: errorMessage } = validationResult.data;
+
+        if (!isTwilioMessageSid(messageSid) || !isTwilioMessageStatus(messageStatus)) {
+          return new Response(
+            JSON.stringify({ error: 'Invalid webhook data' }),
+            { status: 400, headers: corsHeaders }
+          )
+        }
 
         console.log('Received Twilio webhook:', {
           messageSid,
           messageStatus,
-          to,
           errorCode,
           errorMessage
         })
 
-        // Update SMS log status
-        const { error } = await supabaseClient
-          .from('sms_logs')
-          .update({
-            status: messageStatus,
-            error: errorMessage || null
-          })
-          .eq('to_phone', to)
-          .order('created_at', { ascending: false })
-          .limit(1)
+        const result = await applyTwilioStatusToSmsLog(supabaseClient, {
+          smsLogId: parseSmsLogIdFromRequestUrl(req.url),
+          messageSid,
+          messageStatus,
+          errorCode: errorCode ?? null,
+          errorMessage: errorMessage ?? null,
+        });
 
-        if (error) {
-          console.error('Failed to update SMS log:', error)
+        const status = httpStatusForTwilioStatusApplyResult(result);
+        if (result.kind === 'not_found') {
           return new Response(
-            JSON.stringify({ error: 'Failed to update SMS status' }),
-            { status: 500, headers: corsHeaders }
+            JSON.stringify({ error: 'SMS log not found' }),
+            { status, headers: corsHeaders }
+          )
+        }
+        if (result.kind === 'sid_conflict') {
+          return new Response(
+            JSON.stringify({ error: 'MessageSid conflict' }),
+            { status, headers: corsHeaders }
           )
         }
 
-        // If message failed, you could implement retry logic here
-        if (messageStatus === 'failed' || messageStatus === 'undelivered') {
-          console.warn(`SMS delivery failed for ${to}: ${errorMessage}`)
-          // Could trigger retry or alternative notification method
-        }
-
         return new Response(
-          JSON.stringify({ success: true }),
+          JSON.stringify({ success: true, applied: result.kind === 'applied' }),
           { status: 200, headers: corsHeaders }
         )
       },
@@ -93,7 +101,7 @@ serve(async (req) => {
   } catch (error) {
     console.error('Error in notification-webhook:', error)
     return new Response(
-      JSON.stringify({ error: (error instanceof Error ? error.message : String(error)) }),
+      JSON.stringify({ error: 'Failed to update SMS status' }),
       { status: 500, headers: corsHeaders }
     )
   }
