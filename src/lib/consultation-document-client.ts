@@ -13,8 +13,14 @@ export async function redeemConsultationDocument(token: string): Promise<{
   return { signedUrl: data.signedUrl, expiresIn: data.expiresIn };
 }
 
-export async function adminConsultationDocument(quoteId: string, action: 'admin-download' | 'admin-share' | 'admin-email') {
-  const { data, error } = await supabase.functions.invoke('admin-consultation-document', { body: { action, quoteId } });
+export async function adminConsultationDocument(
+  quoteId: string,
+  action: 'admin-download' | 'admin-share' | 'admin-email',
+  emailIntent: 'send' | 'resend' = 'send',
+) {
+  const { data, error } = await supabase.functions.invoke('admin-consultation-document', {
+    body: { action, quoteId, ...(action === 'admin-email' ? { emailIntent } : {}) },
+  });
   if (error || data?.error) throw new Error(data?.error || 'The original quote document is unavailable.');
   if (action === 'admin-download' && typeof data?.signedUrl !== 'string') throw new Error('The original quote document is unavailable.');
   if (action === 'admin-share' && typeof data?.documentAccessUrl !== 'string') throw new Error('Could not create a private quote link.');
