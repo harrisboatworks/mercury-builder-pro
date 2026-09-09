@@ -1,8 +1,11 @@
 import { describe, expect, it } from 'vitest';
 import {
   deployFunctionSlugs,
+  deployWithMigrationGate,
+  formatAppliedMigrationsReadLine,
   formatFunctionsDeployMarkdown,
   isSafeFunctionSlug,
+  parseAppliedVersionsFromMigrationList,
   projectRefFromConfig,
   redactSecrets,
   resolveForcedSlug,
@@ -78,6 +81,297 @@ describe('deploy batch', () => {
   });
 });
 
+const QUOTE_EMAIL_MIGRATION =
+  'supabase/migrations/20260909193000_serialize_quote_email_delivery_failed_retry_claim.sql';
+
+describe('migration apply-order gate', () => {
+  it('deploys when the required migration is applied', () => {
+    const seen: string[] = [];
+    const { succeeded, failed } = deployWithMigrationGate({
+      functions: [
+        {
+          slug: 'send-quote-email',
+          requiredMigrations: [{ path: QUOTE_EMAIL_MIGRATION, version: '20260909193000' }],
+        },
+      ],
+      listAppliedVersions: () => [{ version: '20260909193000' }],
+      deployOne: (slug: string) => {
+        seen.push(slug);
+        return { ok: true, detail: 'Deployed' };
+      },
+    });
+    expect(seen).toEqual(['send-quote-email']);
+    expect(succeeded.map((item) => item.slug)).toEqual(['send-quote-email']);
+    expect(failed).toEqual([]);
+  });
+
+  it('skips a function whose required migration is not applied and fails the run', () => {
+    const seen: string[] = [];
+    const { succeeded, failed } = deployWithMigrationGate({
+      functions: [
+        {
+          slug: 'send-quote-email',
+          requiredMigrations: [{ path: QUOTE_EMAIL_MIGRATION, version: '20260909193000' }],
+        },
+      ],
+      listAppliedVersions: () => [{ version: '20260815160000' }],
+      deployOne: (slug: string) => {
+        seen.push(slug);
+        return { ok: true, detail: 'Deployed' };
+      },
+    });
+    expect(seen).toEqual([]);
+    expect(succeeded).toEqual([]);
+    expect(failed).toHaveLength(1);
+    expect(failed[0].slug).toBe('send-quote-email');
+    expect(failed[0].detail).toContain('20260909193000_serialize_quote_email_delivery_failed_retry_claim.sql');
+    expect(failed[0].detail).toContain('not applied in production');
+    expect(failed[0].detail).toContain('send-quote-email');
+  });
+
+  it('deploys a function with no migration dependency regardless of applied versions', () => {
+    const seen: string[] = [];
+    const { succeeded, failed } = deployWithMigrationGate({
+      functions: [{ slug: 'send-sms', requiredMigrations: [] }],
+      listAppliedVersions: () => [],
+      deployOne: (slug: string) => {
+        seen.push(slug);
+        return { ok: true, detail: 'Deployed' };
+      },
+    });
+    expect(seen).toEqual(['send-sms']);
+    expect(succeeded.map((item) => item.slug)).toEqual(['send-sms']);
+    expect(failed).toEqual([]);
+  });
+
+  it('skips a migration-dependent function when the applied-versions lookup throws', () => {
+    const seen: string[] = [];
+    const lines: string[] = [];
+    const env = { SUPABASE_ACCESS_TOKEN: 'sbp_secret_value' };
+    const { succeeded, failed, appliedLookupFailed } = deployWithMigrationGate({
+      functions: [
+        {
+          slug: 'send-quote-email',
+          requiredMigrations: [{ path: QUOTE_EMAIL_MIGRATION, version: '20260909193000' }],
+        },
+      ],
+      listAppliedVersions: () => {
+        throw new Error('network down token=sbp_secret_value');
+      },
+      deployOne: (slug: string) => {
+        seen.push(slug);
+        return { ok: true, detail: 'Deployed' };
+      },
+      env,
+      log: (line: string) => {
+        lines.push(line);
+      },
+    });
+    expect(appliedLookupFailed).toBe(true);
+    expect(seen).toEqual([]);
+    expect(succeeded).toEqual([]);
+    expect(failed).toHaveLength(1);
+    expect(failed[0].slug).toBe('send-quote-email');
+    expect(failed[0].detail).toContain('could not read applied migrations');
+    expect(failed[0].detail).toContain('unreadable list');
+    expect(failed[0].detail).not.toContain('not applied in production');
+    expect(failed[0].detail).not.toContain('nothing was deployed');
+    expect(failed[0].detail).not.toContain('sbp_secret_value');
+    expect(lines.join('')).toContain('could not read applied migrations:');
+    expect(lines.join('\n')).not.toContain('sbp_secret_value');
+  });
+
+  it('deploys a migration-independent function when the applied-versions lookup throws', () => {
+    const seen: string[] = [];
+    const { succeeded, failed, appliedLookupFailed } = deployWithMigrationGate({
+      functions: [{ slug: 'send-sms', requiredMigrations: [] }],
+      listAppliedVersions: () => {
+        throw new Error('network down');
+      },
+      deployOne: (slug: string) => {
+        seen.push(slug);
+        return { ok: true, detail: 'Deployed' };
+      },
+    });
+    expect(appliedLookupFailed).toBe(true);
+    expect(seen).toEqual(['send-sms']);
+    expect(succeeded.map((item) => item.slug)).toEqual(['send-sms']);
+    expect(failed).toEqual([]);
+  });
+
+  it('deploys only migration-independent functions when the applied-versions lookup throws', () => {
+    const seen: string[] = [];
+    const { succeeded, failed, appliedLookupFailed } = deployWithMigrationGate({
+      functions: [
+        { slug: 'send-sms', requiredMigrations: [] },
+        {
+          slug: 'send-quote-email',
+          requiredMigrations: [{ path: QUOTE_EMAIL_MIGRATION, version: '20260909193000' }],
+        },
+      ],
+      listAppliedVersions: () => {
+        throw new Error('network down');
+      },
+      deployOne: (slug: string) => {
+        seen.push(slug);
+        return { ok: true, detail: 'Deployed' };
+      },
+    });
+    expect(appliedLookupFailed).toBe(true);
+    expect(seen).toEqual(['send-sms']);
+    expect(succeeded.map((item) => item.slug)).toEqual(['send-sms']);
+    expect(failed.map((item) => item.slug)).toEqual(['send-quote-email']);
+    expect(failed[0].detail).toContain('could not read applied migrations');
+    expect(failed[0].detail).toContain('unreadable list');
+    expect(failed[0].detail).not.toContain('not applied in production');
+    expect(failed.length).toBeGreaterThan(0);
+  });
+
+  it('treats empty CLI output as a lookup failure, not an empty applied set', () => {
+    const seen: string[] = [];
+    const { failed, appliedLookupFailed } = deployWithMigrationGate({
+      functions: [
+        {
+          slug: 'send-quote-email',
+          requiredMigrations: [{ path: QUOTE_EMAIL_MIGRATION, version: '20260909193000' }],
+        },
+      ],
+      listAppliedVersions: () => parseAppliedVersionsFromMigrationList(''),
+      deployOne: (slug: string) => {
+        seen.push(slug);
+        return { ok: true, detail: 'Deployed' };
+      },
+    });
+    expect(appliedLookupFailed).toBe(true);
+    expect(seen).toEqual([]);
+    expect(failed[0].detail).toContain('could not read applied migrations');
+    expect(failed[0].detail).toContain('empty output');
+    expect(failed[0].detail).not.toContain('not applied in production');
+  });
+
+  it('treats a successful empty applied-versions list as a real answer, not a lookup failure', () => {
+    const seen: string[] = [];
+    const { succeeded, failed, appliedLookupFailed } = deployWithMigrationGate({
+      functions: [
+        {
+          slug: 'send-quote-email',
+          requiredMigrations: [{ path: QUOTE_EMAIL_MIGRATION, version: '20260909193000' }],
+        },
+      ],
+      listAppliedVersions: () => [],
+      deployOne: (slug: string) => {
+        seen.push(slug);
+        return { ok: true, detail: 'Deployed' };
+      },
+    });
+    expect(appliedLookupFailed).toBe(false);
+    expect(seen).toEqual([]);
+    expect(succeeded).toEqual([]);
+    expect(failed).toHaveLength(1);
+    expect(failed[0].slug).toBe('send-quote-email');
+    expect(failed[0].detail).toContain('not applied in production');
+    expect(failed[0].detail).not.toContain('could not read applied migrations');
+  });
+
+  it('logs applied migration count and latest version without secret material', () => {
+    const lines: string[] = [];
+    const env = {
+      SUPABASE_ACCESS_TOKEN: 'sbp_secret_value',
+      SUPABASE_PROJECT_REF: 'eutsoqdpjurknjsshxes',
+    };
+    deployWithMigrationGate({
+      functions: [{ slug: 'send-sms', requiredMigrations: [] }],
+      listAppliedVersions: () => [
+        { version: '20260815160000' },
+        { version: '20260909193000' },
+      ],
+      deployOne: () => ({ ok: true, detail: 'Deployed' }),
+      env,
+      log: (line: string) => {
+        lines.push(line);
+      },
+    });
+    expect(lines.join('')).toContain('applied migrations read: 2 versions (latest 20260909193000)');
+    expect(formatAppliedMigrationsReadLine([{ version: '20260815160000' }, { version: '20260909193000' }])).toBe(
+      'applied migrations read: 2 versions (latest 20260909193000)',
+    );
+    expect(lines.join('\n')).not.toContain('sbp_secret_value');
+    expect(lines.join('\n')).not.toContain('eutsoqdpjurknjsshxes');
+  });
+
+  it('deploys the unblocked function in a mixed batch and skips the blocked one', () => {
+    const seen: string[] = [];
+    const { succeeded, failed } = deployWithMigrationGate({
+      functions: [
+        { slug: 'send-sms', requiredMigrations: [] },
+        {
+          slug: 'send-quote-email',
+          requiredMigrations: [{ path: QUOTE_EMAIL_MIGRATION, version: '20260909193000' }],
+        },
+        { slug: 'ai-chatbot', requiredMigrations: [] },
+      ],
+      listAppliedVersions: () => [{ version: '20260815160000' }],
+      deployOne: (slug: string) => {
+        seen.push(slug);
+        return { ok: true, detail: 'Deployed' };
+      },
+    });
+    expect(seen).toEqual(['send-sms', 'ai-chatbot']);
+    expect(succeeded.map((item) => item.slug)).toEqual(['send-sms', 'ai-chatbot']);
+    expect(failed.map((item) => item.slug)).toEqual(['send-quote-email']);
+    expect(failed[0].detail).toContain('20260909193000_serialize_quote_email_delivery_failed_retry_claim.sql');
+  });
+});
+
+describe('applied migration list parse', () => {
+  it('reads remote versions from the CLI table and ignores local-only rows', () => {
+    const table = [
+      '        LOCAL      │     REMOTE     │     TIME (UTC)',
+      '  ─────────────────┼────────────────┼──────────────────────',
+      '                   │ 20230103054303 │ 2023-01-03 05:43:03',
+      '    20230103054315 │                │ 2023-01-03 05:43:15',
+      '    20240414044403 │ 20240414044403 │ 2024-04-14 04:44:03',
+    ].join('\n');
+    expect(parseAppliedVersionsFromMigrationList(table)).toEqual(['20230103054303', '20240414044403']);
+  });
+
+  it('reads remote versions from backtick-wrapped table cells and from JSON', () => {
+    const table = [
+      'Local | Remote | Time (UTC)',
+      '`20220727064247` | ` ` | `2022-07-27 06:42:47`',
+      '` ` | `20220727064248` | `2022-07-27 06:42:48`',
+    ].join('\n');
+    expect(parseAppliedVersionsFromMigrationList(table)).toEqual(['20220727064248']);
+    expect(
+      parseAppliedVersionsFromMigrationList(
+        JSON.stringify({
+          migrations: [
+            { local: '20240101000000', remote: '20240101000000', time: '2024-01-01 00:00:00' },
+            { local: '20240102000000', remote: '', time: '2024-01-02 00:00:00' },
+          ],
+        }),
+      ),
+    ).toEqual(['20240101000000']);
+  });
+
+  it('fails closed on empty or unrecognized CLI output', () => {
+    expect(() => parseAppliedVersionsFromMigrationList('')).toThrow(/empty output/);
+    expect(() => parseAppliedVersionsFromMigrationList('Connecting to remote database...')).toThrow(
+      /not a recognized table or JSON/,
+    );
+    expect(() => parseAppliedVersionsFromMigrationList('{"ok":true}')).toThrow(/migrations array/);
+  });
+
+  it('returns an empty list for a well-formed listing with no remote rows', () => {
+    const table = [
+      '        LOCAL      │     REMOTE     │     TIME (UTC)',
+      '  ─────────────────┼────────────────┼──────────────────────',
+    ].join('\n');
+    expect(parseAppliedVersionsFromMigrationList(table)).toEqual([]);
+    expect(parseAppliedVersionsFromMigrationList(JSON.stringify({ migrations: [] }))).toEqual([]);
+  });
+});
+
 describe('deploy summary', () => {
   it('lists succeeded and failed slugs and states that migrations are not applied', () => {
     const markdown = formatFunctionsDeployMarkdown({
@@ -92,6 +386,7 @@ describe('deploy summary', () => {
       failed: [{ slug: 'ai-chatbot', detail: 'bundle failed' }],
     });
     expect(markdown).toContain('never runs `supabase db push`');
+    expect(markdown).toContain('newly required migrations are not applied');
     expect(markdown).toContain('`send-sms` — direct file change (index.ts)');
     expect(markdown).toContain('Succeeded (1): `send-sms`');
     expect(markdown).toContain('Failed (1):');

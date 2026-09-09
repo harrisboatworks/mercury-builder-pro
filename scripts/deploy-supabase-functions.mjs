@@ -7,6 +7,14 @@
  * Deploys each slug with the Supabase CLI, continues after individual
  * failures, then exits 1 if any failed.
  *
+ * Before deploy, reads applied migration versions (`supabase migration
+ * list --linked`) and skips any function whose newly required migrations
+ * (from buildDeployRequiredReport / deployTargetsFromDiff) are not
+ * applied. That skip fails the job. If the applied list cannot be read,
+ * only functions that require migrations are skipped; functions with an
+ * empty requiredMigrations list still deploy. The job fails if anything
+ * was skipped.
+ *
  * Never applies migrations. Never prints secret values.
  *
  * Usage:
@@ -26,10 +34,13 @@ import { join, relative, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import {
   SHARED_SLUG,
+  appliedVersionSet,
+  blockedDeployReason,
   deployTargetsFromDiff,
   filesByFunctionSlug,
   isZeroSha,
   parseNameStatusZ,
+  requiredMigrationsForSlug,
   toPosix,
 } from './lib/supabase-deploy-required.mjs';
 
@@ -67,12 +78,118 @@ export function resolveForcedSlug(raw, files) {
   return { ok: true, slug };
 }
 
-export function deployFunctionSlugs(slugs, { deployOne }) {
+export function parseAppliedVersionsFromMigrationList(raw) {
+  const text = String(raw ?? '').trim();
+  if (!text) {
+    throw new Error('supabase migration list returned empty output');
+  }
+
+  const json = tryParseJsonDocument(text);
+  if (json.ok) {
+    const rows = migrationRowsFromListJson(json.value);
+    if (!rows) {
+      throw new Error('supabase migration list JSON did not include a migrations array');
+    }
+    return versionsFromMigrationListRows(rows);
+  }
+
+  return versionsFromMigrationListTable(text);
+}
+
+function tryParseJsonDocument(text) {
+  const start = text.search(/[\[{]/);
+  if (start < 0) return { ok: false };
+  try {
+    return { ok: true, value: JSON.parse(text.slice(start)) };
+  } catch {
+    return { ok: false };
+  }
+}
+
+function migrationRowsFromListJson(json) {
+  if (Array.isArray(json)) return json;
+  if (!json || typeof json !== 'object') return null;
+  if (Array.isArray(json.migrations)) return json.migrations;
+  if (json.result && Array.isArray(json.result.migrations)) return json.result.migrations;
+  if (Array.isArray(json.data)) return json.data;
+  return null;
+}
+
+function versionsFromMigrationListRows(rows) {
+  const applied = [];
+  for (const row of rows) {
+    if (typeof row === 'string') {
+      const trimmed = row.trim();
+      if (trimmed) applied.push(trimmed);
+      continue;
+    }
+    if (!row || typeof row !== 'object') continue;
+    if (Object.prototype.hasOwnProperty.call(row, 'remote')) {
+      const remote = String(row.remote || '')
+        .replaceAll('`', '')
+        .trim();
+      if (!remote) continue;
+      const name = typeof row.name === 'string' ? row.name.trim() : '';
+      applied.push(name ? { version: remote, name } : remote);
+      continue;
+    }
+    const version = typeof row.version === 'string' ? row.version.trim() : '';
+    if (!version) continue;
+    const name = typeof row.name === 'string' ? row.name.trim() : '';
+    applied.push(name ? { version, name } : version);
+  }
+  return applied;
+}
+
+function splitMigrationListRow(line) {
+  return String(line)
+    .split(/[│|]/)
+    .map((part) => part.trim());
+}
+
+function stripMigrationListCell(cell) {
+  return String(cell).replaceAll('`', '').trim();
+}
+
+function versionsFromMigrationListTable(text) {
+  const lines = text.split(/\r?\n/);
+  let remoteCol = -1;
+  let headerIndex = -1;
+  for (let i = 0; i < lines.length; i += 1) {
+    const cols = splitMigrationListRow(lines[i]);
+    const index = cols.findIndex((col) => /^remote$/i.test(stripMigrationListCell(col)));
+    if (index >= 0) {
+      remoteCol = index;
+      headerIndex = i;
+      break;
+    }
+  }
+  if (headerIndex < 0) {
+    throw new Error('supabase migration list output was not a recognized table or JSON listing');
+  }
+
+  const applied = [];
+  for (const line of lines.slice(headerIndex + 1)) {
+    if (!line.trim() || /^[\s─\-━┄╌┼┤├┌┐└┘+|]+$/.test(line)) continue;
+    const cols = splitMigrationListRow(line);
+    if (cols.length <= remoteCol) continue;
+    const remote = stripMigrationListCell(cols[remoteCol]);
+    if (/^\d+$/.test(remote)) applied.push(remote);
+  }
+  return applied;
+}
+
+export function deployFunctionSlugs(slugs, { deployOne, skipReason } = {}) {
   const succeeded = [];
   const failed = [];
   for (const slug of slugs) {
     if (!isSafeFunctionSlug(slug)) {
       failed.push({ slug, detail: 'refused: slug is not a deployable function name' });
+      continue;
+    }
+    const blocked = typeof skipReason === 'function' ? skipReason(slug) : null;
+    if (blocked) {
+      failed.push({ slug, detail: redactSecrets(blocked) });
       continue;
     }
     let result;
@@ -87,6 +204,98 @@ export function deployFunctionSlugs(slugs, { deployOne }) {
     else failed.push({ slug, detail });
   }
   return { succeeded, failed };
+}
+
+function writeDeployLog(message, log) {
+  const line = String(message).endsWith('\n') ? String(message) : `${message}\n`;
+  if (typeof log === 'function') {
+    log(line);
+    return;
+  }
+  process.stdout.write(line);
+}
+
+function appliedRowVersion(row) {
+  if (typeof row === 'string') return row.trim();
+  if (row && typeof row === 'object') return String(row.version || '').trim();
+  return '';
+}
+
+export function formatAppliedMigrationsReadLine(appliedRows) {
+  const versions = (Array.isArray(appliedRows) ? appliedRows : [])
+    .map(appliedRowVersion)
+    .filter(Boolean);
+  const latest = versions.length ? versions.reduce((a, b) => (a > b ? a : b)) : 'none';
+  return `applied migrations read: ${versions.length} versions (latest ${latest})`;
+}
+
+function appliedSetFromLookup(appliedRows) {
+  if (!Array.isArray(appliedRows)) {
+    throw new Error('applied versions listing was not an array');
+  }
+  return appliedVersionSet(appliedRows);
+}
+
+function lookupFailureSkipReason(slug, detail, env) {
+  return redactSecrets(
+    `skipped: could not read applied migrations (${detail}). Required migrations for \`${slug}\` cannot be verified from an unreadable list, so it was not deployed.`,
+    env,
+  );
+}
+
+export function deployWithMigrationGate({
+  functions = [],
+  listAppliedVersions,
+  deployOne,
+  env = process.env,
+  log,
+} = {}) {
+  const targets = functions.map((item) =>
+    typeof item === 'string' ? { slug: item, requiredMigrations: [] } : item,
+  );
+
+  const deployTargets = (skipReason) =>
+    deployFunctionSlugs(
+      targets.map((item) => item.slug),
+      { deployOne, skipReason },
+    );
+
+  const degradeOnUnreadableList = (error) => {
+    const detail = error instanceof Error ? error.message : String(error);
+    writeDeployLog(redactSecrets(`could not read applied migrations: ${detail}`, env), log);
+    return {
+      ...deployTargets((slug) => {
+        const target = targets.find((item) => item.slug === slug);
+        if (!target?.requiredMigrations?.length) return null;
+        return lookupFailureSkipReason(slug, detail, env);
+      }),
+      appliedLookupFailed: true,
+    };
+  };
+
+  let appliedRows;
+  try {
+    appliedRows = listAppliedVersions();
+  } catch (error) {
+    return degradeOnUnreadableList(error);
+  }
+
+  let appliedSet;
+  try {
+    appliedSet = appliedSetFromLookup(appliedRows);
+  } catch (error) {
+    return degradeOnUnreadableList(error);
+  }
+
+  writeDeployLog(redactSecrets(formatAppliedMigrationsReadLine(appliedRows), env), log);
+
+  return {
+    ...deployTargets((slug) => {
+      const target = targets.find((item) => item.slug === slug);
+      return blockedDeployReason(slug, target?.requiredMigrations, appliedSet);
+    }),
+    appliedLookupFailed: false,
+  };
 }
 
 export function formatFunctionsDeployMarkdown({
@@ -110,6 +319,7 @@ export function formatFunctionsDeployMarkdown({
       : `Push range: \`${from || '?'}\` → \`${to || '?'}\``,
     '',
     'This job deploys changed edge functions only. It never runs `supabase db push` or applies migrations.',
+    'A function whose newly required migrations are not applied in production is skipped and fails this job.',
     '',
   ];
 
@@ -267,7 +477,62 @@ function resolveGitRange(from, to) {
   }
 }
 
-export function runDeploy({ env = process.env, deployOne } = {}) {
+function defaultListAppliedVersions({ cli, projectRef, env }) {
+  const cliEnv = { ...env };
+  if (!String(cliEnv.SUPABASE_PROJECT_REF || '').trim()) {
+    delete cliEnv.SUPABASE_PROJECT_REF;
+  }
+  let output = '';
+  try {
+    output = execFileSync(cli, ['migration', 'list', '--linked', '--project-ref', projectRef], {
+      encoding: 'utf8',
+      env: cliEnv,
+      stdio: ['ignore', 'pipe', 'pipe'],
+      maxBuffer: 10 * 1024 * 1024,
+    });
+  } catch (error) {
+    const stderr = error && error.stderr != null ? String(error.stderr) : '';
+    const stdout = error && error.stdout != null ? String(error.stdout) : '';
+    const message = error instanceof Error ? error.message : String(error);
+    throw new Error([message, stdout, stderr].filter(Boolean).join('\n'));
+  }
+  return parseAppliedVersionsFromMigrationList(output);
+}
+
+function readRangeTargets(files, from, to) {
+  const range = resolveGitRange(from, to);
+  if (!range.ok) {
+    return { ok: false, range, reason: 'range' };
+  }
+  try {
+    const raw = git([
+      'diff',
+      '--name-status',
+      '--find-renames',
+      '-z',
+      range.from,
+      range.to,
+      '--',
+      'supabase/functions',
+      'supabase/migrations',
+    ]);
+    return {
+      ok: true,
+      range,
+      targets: deployTargetsFromDiff({
+        diffEntries: parseNameStatusZ(raw),
+        files,
+        from: range.from,
+        to: range.to,
+      }),
+    };
+  } catch (error) {
+    const detail = error instanceof Error ? error.message.split('\n')[0] : 'git diff failed';
+    return { ok: false, range, reason: 'diff', detail };
+  }
+}
+
+export function runDeploy({ env = process.env, deployOne, listAppliedVersions } = {}) {
   const files = {
     ...loadTextTree('supabase/functions'),
     ...loadTextTree('supabase/migrations'),
@@ -303,62 +568,41 @@ export function runDeploy({ env = process.env, deployOne } = {}) {
       );
       return 1;
     }
+    const ranged = readRangeTargets(files, env.DEPLOY_FROM || '', env.DEPLOY_TO || 'HEAD');
+    const rangeTargets = ranged.ok
+      ? ranged.targets
+      : { from: '', to: '', functions: [], removed: [], migrations: [], notes: [] };
+    const hit = rangeTargets.functions.find((item) => item.slug === resolved.slug);
+    const requiredMigrations = hit?.requiredMigrations?.length
+      ? hit.requiredMigrations
+      : requiredMigrationsForSlug(resolved.slug, files, rangeTargets.migrations || []);
     targets = {
-      from: '',
-      to: '',
-      functions: [{ slug: resolved.slug, reasons: ['workflow_dispatch'] }],
+      from: rangeTargets.from || '',
+      to: rangeTargets.to || '',
+      functions: [{ slug: resolved.slug, reasons: ['workflow_dispatch'], requiredMigrations }],
       removed: [],
-      migrations: [],
-      notes: [],
+      migrations: rangeTargets.migrations || [],
+      notes: rangeTargets.notes || [],
     };
   } else {
-    const range = resolveGitRange(env.DEPLOY_FROM || '', env.DEPLOY_TO || 'HEAD');
-    if (!range.ok) {
+    const ranged = readRangeTargets(files, env.DEPLOY_FROM || '', env.DEPLOY_TO || 'HEAD');
+    if (!ranged.ok) {
+      const skipReason =
+        ranged.reason === 'diff'
+          ? `git diff failed (${redactSecrets(ranged.detail || 'git diff failed', env)}). Nothing was deployed.`
+          : `Git range \`${ranged.range.from}\` → \`${ranged.range.to}\` is not in this clone. Nothing was deployed.`;
       writeSummary(
         formatFunctionsDeployMarkdown({
-          from: range.from,
-          to: range.to,
+          from: ranged.range.from,
+          to: ranged.range.to,
           skipped: true,
-          skipReason: `Git range \`${range.from}\` → \`${range.to}\` is not in this clone. Nothing was deployed.`,
+          skipReason,
         }),
         env,
       );
       return 0;
     }
-
-    let raw = '';
-    try {
-      raw = git([
-        'diff',
-        '--name-status',
-        '--find-renames',
-        '-z',
-        range.from,
-        range.to,
-        '--',
-        'supabase/functions',
-        'supabase/migrations',
-      ]);
-    } catch (error) {
-      const detail = error instanceof Error ? error.message.split('\n')[0] : 'git diff failed';
-      writeSummary(
-        formatFunctionsDeployMarkdown({
-          from: range.from,
-          to: range.to,
-          skipped: true,
-          skipReason: `git diff failed (${redactSecrets(detail, env)}). Nothing was deployed.`,
-        }),
-        env,
-      );
-      return 0;
-    }
-
-    targets = deployTargetsFromDiff({
-      diffEntries: parseNameStatusZ(raw),
-      files,
-      from: range.from,
-      to: range.to,
-    });
+    targets = ranged.targets;
   }
 
   if (!targets.functions.length) {
@@ -395,7 +639,13 @@ export function runDeploy({ env = process.env, deployOne } = {}) {
       }
     });
 
-  const { succeeded, failed } = deployFunctionSlugs(slugs, { deployOne: runOne });
+  const { succeeded, failed } = deployWithMigrationGate({
+    functions: targets.functions,
+    listAppliedVersions:
+      listAppliedVersions || (() => defaultListAppliedVersions({ cli, projectRef, env })),
+    deployOne: runOne,
+    env,
+  });
   writeSummary(
     formatFunctionsDeployMarkdown({
       from: targets.from,

@@ -584,6 +584,35 @@ export function isMigrationApplied(filePath, appliedSet) {
   return false;
 }
 
+/**
+ * Newly required migrations for one function, using the same RPC/table
+ * matcher as buildDeployRequiredReport.
+ */
+export function requiredMigrationsForSlug(slug, files, addedMigrationPaths) {
+  const graph = buildImportGraph(files);
+  const bySlug = filesByFunctionSlug(files);
+  const refs = refsForFunction(slug, bySlug.get(slug) || [], graph, files);
+  const migrations = (addedMigrationPaths || []).map((filePath) => ({
+    path: filePath,
+    version: migrationVersionFromFilename(filePath),
+    objects: extractMigrationObjects(files[filePath] || ''),
+  }));
+  return matchRequiredMigrations(refs, migrations).required;
+}
+
+export function unappliedRequiredMigrations(requiredMigrations, appliedSet) {
+  return (requiredMigrations || []).filter((item) => !isMigrationApplied(item.path, appliedSet));
+}
+
+export function blockedDeployReason(slug, requiredMigrations, appliedSet) {
+  const missing = unappliedRequiredMigrations(requiredMigrations, appliedSet);
+  if (!missing.length) return null;
+  const listed = missing.map((item) => `\`${posix.basename(item.path)}\``).join(', ');
+  const noun = missing.length === 1 ? 'migration' : 'migrations';
+  const verb = missing.length === 1 ? 'is' : 'are';
+  return `skipped: newly required ${noun} ${listed} ${verb} not applied in production. This job never applies migrations. Deploying \`${slug}\` would call schema that does not exist yet.`;
+}
+
 export function formatDeployedTimestamp(updatedAt) {
   const ms = parseUpdatedAt(updatedAt);
   if (!Number.isFinite(ms)) {
@@ -840,7 +869,11 @@ export function deployTargetsFromDiff({ diffEntries, files, from = '', to = '' }
       removed.push(fn.slug);
       continue;
     }
-    functions.push({ slug: fn.slug, reasons: fn.reasons });
+    functions.push({
+      slug: fn.slug,
+      reasons: fn.reasons,
+      requiredMigrations: fn.requiredMigrations || [],
+    });
   }
   return {
     from: report.from,
