@@ -2,6 +2,8 @@ name: Supabase drift watch
 
 # Compares main to deployed edge functions and applied migrations via the
 # Supabase Management API. Advisory only: never fails the build, never deploys.
+# Migration absence is only reported for filename versions on/after
+# 20260731000000; older files are historical and matched by name when present.
 #
 # Requires repository secrets SUPABASE_ACCESS_TOKEN and SUPABASE_PROJECT_REF.
 # If either is unset the job writes a notice and passes.

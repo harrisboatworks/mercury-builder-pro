@@ -18,6 +18,7 @@ import {
   filesByFunctionSlug,
   formatDriftMarkdown,
   formatSecretsMissingNotice,
+  parseUpdatedAt,
   secretsConfigured,
   sourceFilesForFunction,
   toPosix,
@@ -138,6 +139,21 @@ function latestCommitAt(paths) {
   try {
     const iso = git(['log', '-1', '--format=%cI', '--', ...existing]);
     return iso || null;
+  } catch {
+    return null;
+  }
+}
+
+function commitsBehindSince(updatedAt, paths) {
+  const deployedMs = parseUpdatedAt(updatedAt);
+  if (!Number.isFinite(deployedMs)) return null;
+  const existing = paths.filter((filePath) => existsSync(join(ROOT, filePath)));
+  if (!existing.length) return null;
+  try {
+    const iso = new Date(deployedMs).toISOString();
+    const raw = git(['rev-list', '--count', `--since=${iso}`, 'HEAD', '--', ...existing]);
+    const count = Number.parseInt(raw, 10);
+    return Number.isFinite(count) ? count : null;
   } catch {
     return null;
   }
@@ -321,6 +337,10 @@ async function main() {
     localMigrations,
     appliedVersions,
   });
+  for (const fn of report.staleFunctions) {
+    if (fn.status !== 'stale' || fn.deployedUpdatedAt == null) continue;
+    fn.commitsBehind = commitsBehindSince(fn.deployedUpdatedAt, sourceFilesForFunction(fn.slug, functionFiles));
+  }
   const markdown = formatDriftMarkdown(report);
   let issueAction = 'summary-only';
   try {
