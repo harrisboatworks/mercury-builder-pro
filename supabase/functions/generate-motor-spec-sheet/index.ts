@@ -1,10 +1,17 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
+import { forbiddenOriginResponse, isAllowedOrigin } from "../_shared/origin-check.ts";
 
-const corsHeaders = {
-  'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
-};
+function corsHeadersFor(req: Request): Record<string, string> {
+  const origin = req.headers.get('origin');
+  return {
+    'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
+    'Access-Control-Allow-Origin': origin && isAllowedOrigin(req)
+      ? origin
+      : 'https://www.mercuryrepower.ca',
+    'Vary': 'Origin',
+  };
+}
 
 const UUID_PATTERN = /^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$/i;
 const HTML_ESCAPES: Record<string, string> = {
@@ -36,8 +43,16 @@ function escapeHtml(value: unknown): string {
 }
 
 serve(async (req) => {
+  const corsHeaders = corsHeadersFor(req);
+
   if (req.method === 'OPTIONS') {
-    return new Response(null, { headers: corsHeaders });
+    return isAllowedOrigin(req)
+      ? new Response(null, { headers: corsHeaders })
+      : forbiddenOriginResponse(corsHeaders);
+  }
+
+  if (!isAllowedOrigin(req)) {
+    return forbiddenOriginResponse(corsHeaders);
   }
 
   try {
