@@ -632,15 +632,17 @@ describe('drift timestamp rendering', () => {
 });
 
 describe('secrets no-op notice', () => {
-  it('does not distinguish which secret is missing', () => {
-    expect(secretsConfigured({ SUPABASE_ACCESS_TOKEN: 'x', SUPABASE_PROJECT_REF: '' })).toBe(false);
+  it('skips only when the access token is missing', () => {
+    expect(secretsConfigured({ SUPABASE_ACCESS_TOKEN: 'x', SUPABASE_PROJECT_REF: '' })).toBe(true);
+    expect(secretsConfigured({ SUPABASE_ACCESS_TOKEN: 'x' })).toBe(true);
     expect(secretsConfigured({ SUPABASE_ACCESS_TOKEN: '', SUPABASE_PROJECT_REF: 'ref' })).toBe(false);
+    expect(secretsConfigured({ SUPABASE_ACCESS_TOKEN: '   ', SUPABASE_PROJECT_REF: 'ref' })).toBe(false);
+    expect(secretsConfigured({ SUPABASE_PROJECT_REF: 'ref' })).toBe(false);
     expect(secretsConfigured({ SUPABASE_ACCESS_TOKEN: 'x', SUPABASE_PROJECT_REF: 'ref' })).toBe(true);
     const notice = formatSecretsMissingNotice();
     expect(notice).toContain('SUPABASE_ACCESS_TOKEN');
-    expect(notice).toContain('SUPABASE_PROJECT_REF');
+    expect(notice).not.toContain('SUPABASE_PROJECT_REF');
     expect(notice).toContain('no-op');
-    expect(notice).not.toMatch(/token is missing|ref is missing/i);
   });
 });
 
