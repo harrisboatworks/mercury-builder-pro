@@ -1,6 +1,13 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2.39.3";
 import { checkRateLimit, rateLimitedResponse } from "../_shared/rate-limit.ts";
+import {
+  buildGooglePlacesMediaRequest,
+  formatPlacePhotos,
+  googlePlacesFunctionUrl,
+  isGooglePlacesPhotoName,
+  sanitizeCachedPlaceData,
+} from "./photos.ts";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -26,9 +33,47 @@ type GooglePlaceReview = {
   relativePublishTimeDescription?: string;
 };
 
-type GooglePlacePhoto = {
-  name: string;
-};
+async function proxyPlacePhoto(req: Request, photoName: string): Promise<Response> {
+  if (!isGooglePlacesPhotoName(photoName)) {
+    return new Response('Invalid photo name', {
+      status: 400,
+      headers: corsHeaders,
+    });
+  }
+
+  const apiKey = Deno.env.get('GOOGLE_API_KEY');
+  if (!apiKey) {
+    return new Response(JSON.stringify({ error: 'GOOGLE_API_KEY not configured' }), {
+      status: 500,
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+    });
+  }
+
+  const allowed = await checkRateLimit(req, {
+    action: 'google_places_photo',
+    maxAttempts: 60,
+    windowMinutes: 10,
+  });
+  if (!allowed) return rateLimitedResponse(corsHeaders, 60);
+
+  const media = buildGooglePlacesMediaRequest(photoName, apiKey);
+  const upstream = await fetch(media.url, { headers: media.headers });
+  const contentType = upstream.headers.get('content-type') ?? '';
+  if (!upstream.ok || !/^image\/(jpeg|jpg|png|webp|gif)(;.*)?$/i.test(contentType)) {
+    return new Response('Photo unavailable', {
+      status: 502,
+      headers: corsHeaders,
+    });
+  }
+
+  return new Response(upstream.body, {
+    headers: {
+      ...corsHeaders,
+      'Content-Type': contentType,
+      'Cache-Control': 'public, max-age=86400',
+    },
+  });
+}
 
 serve(async (req) => {
   if (req.method === 'OPTIONS') {
@@ -36,6 +81,12 @@ serve(async (req) => {
   }
 
   try {
+    const url = new URL(req.url);
+    const requestedPhoto = url.searchParams.get('photo');
+    if (requestedPhoto !== null) {
+      return await proxyPlacePhoto(req, requestedPhoto);
+    }
+
     const apiKey = Deno.env.get('GOOGLE_API_KEY');
     if (!apiKey) {
       throw new Error('GOOGLE_API_KEY not configured');
@@ -45,8 +96,8 @@ serve(async (req) => {
     const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
     const supabaseServiceKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
     const supabase = createClient(supabaseUrl, supabaseServiceKey);
+    const functionBaseUrl = googlePlacesFunctionUrl(supabaseUrl);
 
-    const url = new URL(req.url);
     const forceRefresh = url.searchParams.get('refresh') === 'true';
     const searchQuery = url.searchParams.get('query') || 'Harris Boat Works Gores Landing Ontario';
 
@@ -72,7 +123,7 @@ serve(async (req) => {
           .then(() => console.log('[google-places] Hit count updated'));
 
         return new Response(JSON.stringify({ 
-          ...cached.data, 
+          ...sanitizeCachedPlaceData(cached.data, functionBaseUrl), 
           cached: true,
           cachedAt: cached.cached_at,
           expiresAt: cached.expires_at
@@ -151,10 +202,7 @@ serve(async (req) => {
       address: place.formattedAddress,
       website: place.websiteUri,
       location: place.location,
-      photos: place.photos?.slice(0, 5).map((photo: GooglePlacePhoto) => ({
-        name: photo.name,
-        url: `https://places.googleapis.com/v1/${photo.name}/media?maxHeightPx=800&key=${apiKey}`,
-      })) || [],
+      photos: formatPlacePhotos(place.photos, functionBaseUrl),
     };
 
     console.log('[google-places] Returning', formattedResponse.reviews?.length, 'reviews');
