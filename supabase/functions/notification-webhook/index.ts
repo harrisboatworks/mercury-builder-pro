@@ -1,11 +1,12 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
 import { z } from "npm:zod@3.22.4";
+import {
+  handleNotificationWebhook,
+  notificationWebhookCorsHeaders,
+} from "../_shared/notification-webhook-handler.ts";
 
-const corsHeaders = {
-  'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
-}
+const corsHeaders = notificationWebhookCorsHeaders;
 
 // Twilio webhook validation schema
 const twilioWebhookSchema = z.object({
@@ -17,78 +18,78 @@ const twilioWebhookSchema = z.object({
 });
 
 serve(async (req) => {
-  if (req.method === 'OPTIONS') {
-    return new Response(null, { headers: corsHeaders })
-  }
-
   try {
-    const supabaseClient = createClient(
-      Deno.env.get('SUPABASE_URL') ?? '',
-      Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? ''
-    )
+    return await handleNotificationWebhook(req, {
+      authToken: Deno.env.get('TWILIO_AUTH_TOKEN'),
+      supabaseUrl: Deno.env.get('SUPABASE_URL'),
+      onVerified: async (rawBody) => {
+        const supabaseClient = createClient(
+          Deno.env.get('SUPABASE_URL') ?? '',
+          Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? ''
+        )
 
-    // Parse Twilio webhook data
-    const body = await req.text()
-    const params = new URLSearchParams(body)
-    
-    // Extract and validate webhook data
-    const rawData = {
-      MessageSid: params.get('MessageSid') || undefined,
-      MessageStatus: params.get('MessageStatus') || undefined,
-      To: params.get('To') || undefined,
-      ErrorCode: params.get('ErrorCode') || undefined,
-      ErrorMessage: params.get('ErrorMessage') || undefined,
-    };
+        // Parse Twilio webhook data
+        const params = new URLSearchParams(rawBody)
+        
+        // Extract and validate webhook data
+        const rawData = {
+          MessageSid: params.get('MessageSid') || undefined,
+          MessageStatus: params.get('MessageStatus') || undefined,
+          To: params.get('To') || undefined,
+          ErrorCode: params.get('ErrorCode') || undefined,
+          ErrorMessage: params.get('ErrorMessage') || undefined,
+        };
 
-    const validationResult = twilioWebhookSchema.safeParse(rawData);
-    if (!validationResult.success) {
-      console.log('[notification-webhook] Validation failed:', validationResult.error.errors);
-      return new Response(
-        JSON.stringify({ error: 'Invalid webhook data', details: validationResult.error.errors }),
-        { status: 400, headers: corsHeaders }
-      )
-    }
+        const validationResult = twilioWebhookSchema.safeParse(rawData);
+        if (!validationResult.success) {
+          console.log('[notification-webhook] Validation failed:', validationResult.error.errors);
+          return new Response(
+            JSON.stringify({ error: 'Invalid webhook data', details: validationResult.error.errors }),
+            { status: 400, headers: corsHeaders }
+          )
+        }
 
-    const { MessageSid: messageSid, MessageStatus: messageStatus, To: to, ErrorCode: errorCode, ErrorMessage: errorMessage } = validationResult.data;
+        const { MessageSid: messageSid, MessageStatus: messageStatus, To: to, ErrorCode: errorCode, ErrorMessage: errorMessage } = validationResult.data;
 
-    console.log('Received Twilio webhook:', {
-      messageSid,
-      messageStatus,
-      to,
-      errorCode,
-      errorMessage
-    })
+        console.log('Received Twilio webhook:', {
+          messageSid,
+          messageStatus,
+          to,
+          errorCode,
+          errorMessage
+        })
 
-    // Update SMS log status
-    const { error } = await supabaseClient
-      .from('sms_logs')
-      .update({
-        status: messageStatus,
-        error: errorMessage || null
-      })
-      .eq('to_phone', to)
-      .order('created_at', { ascending: false })
-      .limit(1)
+        // Update SMS log status
+        const { error } = await supabaseClient
+          .from('sms_logs')
+          .update({
+            status: messageStatus,
+            error: errorMessage || null
+          })
+          .eq('to_phone', to)
+          .order('created_at', { ascending: false })
+          .limit(1)
 
-    if (error) {
-      console.error('Failed to update SMS log:', error)
-      return new Response(
-        JSON.stringify({ error: 'Failed to update SMS status' }),
-        { status: 500, headers: corsHeaders }
-      )
-    }
+        if (error) {
+          console.error('Failed to update SMS log:', error)
+          return new Response(
+            JSON.stringify({ error: 'Failed to update SMS status' }),
+            { status: 500, headers: corsHeaders }
+          )
+        }
 
-    // If message failed, you could implement retry logic here
-    if (messageStatus === 'failed' || messageStatus === 'undelivered') {
-      console.warn(`SMS delivery failed for ${to}: ${errorMessage}`)
-      // Could trigger retry or alternative notification method
-    }
+        // If message failed, you could implement retry logic here
+        if (messageStatus === 'failed' || messageStatus === 'undelivered') {
+          console.warn(`SMS delivery failed for ${to}: ${errorMessage}`)
+          // Could trigger retry or alternative notification method
+        }
 
-    return new Response(
-      JSON.stringify({ success: true }),
-      { status: 200, headers: corsHeaders }
-    )
-
+        return new Response(
+          JSON.stringify({ success: true }),
+          { status: 200, headers: corsHeaders }
+        )
+      },
+    });
   } catch (error) {
     console.error('Error in notification-webhook:', error)
     return new Response(
