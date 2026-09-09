@@ -2,6 +2,7 @@ import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2.53.1";
 import { Resend } from "npm:resend@2.0.0";
 import { requireAdmin } from "../_shared/admin-auth.ts";
+import { esc } from "../_shared/email-layout.ts";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -286,7 +287,7 @@ serve(async (req) => {
           if (aiText) {
             console.log('[WEEKLY-REPORT] AI summary generated successfully');
             // Email version - styled box
-            const escapedText = aiText.replace(/\n/g, '<br>');
+            const escapedText = esc(aiText).replace(/\n/g, '<br>');
             aiSummaryHtml = `
               <div style="background:linear-gradient(135deg,#fefce8,#fef9c3);border:2px solid #eab308;border-radius:12px;padding:20px 24px;margin-bottom:28px;">
                 <h2 style="margin:0 0 12px;font-size:16px;color:#854d0e;">🧠 AI Weekly Debrief</h2>
@@ -459,7 +460,7 @@ serve(async (req) => {
         </tr></thead>
         <tbody>${topViewedMotors.map(([model, data]) => `
           <tr>
-            <td style="padding:8px 12px;border-bottom:1px solid #e5e7eb;">${model}</td>
+            <td style="padding:8px 12px;border-bottom:1px solid #e5e7eb;">${esc(model)}</td>
             <td style="padding:8px 12px;border-bottom:1px solid #e5e7eb;text-align:center;">${data.hp || '—'}</td>
             <td style="padding:8px 12px;border-bottom:1px solid #e5e7eb;text-align:center;font-weight:600;">${data.count}</td>
           </tr>
@@ -478,7 +479,7 @@ serve(async (req) => {
         </tr></thead>
         <tbody>${topAbandonedMotors.map(([model, data]) => `
           <tr>
-            <td style="padding:8px 12px;border-bottom:1px solid #e5e7eb;">${model}</td>
+            <td style="padding:8px 12px;border-bottom:1px solid #e5e7eb;">${esc(model)}</td>
             <td style="padding:8px 12px;border-bottom:1px solid #e5e7eb;text-align:center;color:#dc2626;font-weight:600;">${data.count}</td>
             <td style="padding:8px 12px;border-bottom:1px solid #e5e7eb;text-align:center;">${fmt(data.avgValue)}</td>
           </tr>
@@ -496,7 +497,7 @@ serve(async (req) => {
         </tr></thead>
         <tbody>${topModels.map(([model, count]) => `
           <tr>
-            <td style="padding:8px 12px;border-bottom:1px solid #e5e7eb;">${model}</td>
+            <td style="padding:8px 12px;border-bottom:1px solid #e5e7eb;">${esc(model)}</td>
             <td style="padding:8px 12px;border-bottom:1px solid #e5e7eb;text-align:center;font-weight:600;">${count}</td>
           </tr>
         `).join('')}</tbody>
@@ -597,7 +598,7 @@ serve(async (req) => {
           const timeData = avgTimePerPage.find(t => t.page === page);
           return `
           <tr>
-            <td style="padding:8px 12px;border-bottom:1px solid #e5e7eb;">${page}</td>
+            <td style="padding:8px 12px;border-bottom:1px solid #e5e7eb;">${esc(page)}</td>
             <td style="padding:8px 12px;border-bottom:1px solid #e5e7eb;text-align:center;">${count}</td>
             <td style="padding:8px 12px;border-bottom:1px solid #e5e7eb;text-align:center;">${timeData ? formatTime(timeData.avgSeconds) : '—'}</td>
           </tr>`;
@@ -616,7 +617,7 @@ serve(async (req) => {
         </tr></thead>
         <tbody>${topExitPages.map(([page, count]) => `
           <tr>
-            <td style="padding:8px 12px;border-bottom:1px solid #e5e7eb;">${page}</td>
+            <td style="padding:8px 12px;border-bottom:1px solid #e5e7eb;">${esc(page)}</td>
             <td style="padding:8px 12px;border-bottom:1px solid #e5e7eb;text-align:center;color:#dc2626;font-weight:600;">${count}</td>
             <td style="padding:8px 12px;border-bottom:1px solid #e5e7eb;text-align:center;">${siteExits.length > 0 ? Math.round((count / siteExits.length) * 100) : 0}%</td>
           </tr>
@@ -635,7 +636,7 @@ serve(async (req) => {
         </tr></thead>
         <tbody>${topTrafficSources.map(([source, count]) => `
           <tr>
-            <td style="padding:8px 12px;border-bottom:1px solid #e5e7eb;">${source}</td>
+            <td style="padding:8px 12px;border-bottom:1px solid #e5e7eb;">${esc(source)}</td>
             <td style="padding:8px 12px;border-bottom:1px solid #e5e7eb;text-align:center;">${count}</td>
             <td style="padding:8px 12px;border-bottom:1px solid #e5e7eb;text-align:center;">${uniqueSessions > 0 ? Math.round((count / uniqueSessions) * 100) : 0}%</td>
           </tr>
@@ -655,7 +656,7 @@ serve(async (req) => {
         </tr></thead>
         <tbody>${topCampaigns.map(([campaign, data]) => `
           <tr>
-            <td style="padding:8px 12px;border-bottom:1px solid #e5e7eb;">${campaign}</td>
+            <td style="padding:8px 12px;border-bottom:1px solid #e5e7eb;">${esc(campaign)}</td>
             <td style="padding:8px 12px;border-bottom:1px solid #e5e7eb;text-align:center;">${data.sessions}</td>
             <td style="padding:8px 12px;border-bottom:1px solid #e5e7eb;text-align:center;">${data.quotes}</td>
             <td style="padding:8px 12px;border-bottom:1px solid #e5e7eb;text-align:center;font-weight:600;">${data.sessions > 0 ? Math.round((data.quotes / data.sessions) * 100) : 0}%</td>
@@ -676,8 +677,8 @@ serve(async (req) => {
         </tr></thead>
         <tbody>${hotLeads.map(q => `
           <tr>
-            <td style="padding:8px 12px;border-bottom:1px solid #e5e7eb;">${q.customer_name}</td>
-            <td style="padding:8px 12px;border-bottom:1px solid #e5e7eb;">${q.customer_email}</td>
+            <td style="padding:8px 12px;border-bottom:1px solid #e5e7eb;">${esc(q.customer_name)}</td>
+            <td style="padding:8px 12px;border-bottom:1px solid #e5e7eb;">${esc(q.customer_email)}</td>
             <td style="padding:8px 12px;border-bottom:1px solid #e5e7eb;">${fmt(q.final_price)}</td>
             <td style="padding:8px 12px;border-bottom:1px solid #e5e7eb;">${q.lead_score}</td>
           </tr>

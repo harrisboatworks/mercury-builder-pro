@@ -86,9 +86,9 @@ function generateConsultationQuoteDeliveryEmail(
   documentAccessUrl: string,
 ): string {
   const rows = [
-    { label: "Quote #", value: esc(data.quoteNumber) },
-    { label: "Motor", value: esc(data.motorModel) },
-    { label: "Total", value: `$${data.totalPrice.toLocaleString()} CAD` },
+    { label: "Quote #", valueHtml: esc(data.quoteNumber) },
+    { label: "Motor", valueHtml: esc(data.motorModel) },
+    { label: "Total", valueHtml: `$${data.totalPrice.toLocaleString()} CAD` },
   ];
   const body = `
     <p style="margin:0 0 14px 0;">Hi ${esc(data.customerName)},</p>
@@ -131,9 +131,9 @@ function generateQuoteDeliveryEmail(
 ): string {
   const cta = getQuoteCta(data, hasPdfAttachment);
   const rows = [
-    { label: "Quote #", value: esc(data.quoteNumber) },
-    { label: "Motor", value: esc(data.motorModel) },
-    { label: "Total", value: `$${data.totalPrice.toLocaleString()} CAD` },
+    { label: "Quote #", valueHtml: esc(data.quoteNumber) },
+    { label: "Motor", valueHtml: esc(data.motorModel) },
+    { label: "Total", valueHtml: `$${data.totalPrice.toLocaleString()} CAD` },
   ];
   const body = `
     <p style="margin:0 0 14px 0;">Hi ${esc(data.customerName)},</p>
@@ -165,9 +165,9 @@ function generateFollowUpEmail(
 ): string {
   const cta = getQuoteCta(data, hasPdfAttachment);
   const rows = [
-    { label: "Quote #", value: esc(data.quoteNumber) },
-    { label: "Motor", value: esc(data.motorModel) },
-    { label: "Total", value: `$${data.totalPrice.toLocaleString()} CAD` },
+    { label: "Quote #", valueHtml: esc(data.quoteNumber) },
+    { label: "Motor", valueHtml: esc(data.motorModel) },
+    { label: "Total", valueHtml: `$${data.totalPrice.toLocaleString()} CAD` },
   ];
   const body = `
     <p style="margin:0 0 14px 0;">Hi ${esc(data.customerName)},</p>

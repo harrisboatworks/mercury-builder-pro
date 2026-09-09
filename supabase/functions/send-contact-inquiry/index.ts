@@ -136,9 +136,9 @@ const handler = async (req: Request): Promise<Response> => {
       <p style="margin:0 0 14px 0;">Hi ${escHtml(inquiryData.name)},</p>
       <p style="margin:0 0 14px 0;">Thanks for reaching out. We received your ${escHtml(inquiryData.inquiry_type)} inquiry and will be in touch.</p>
       ${detailsCard([
-        { label: "Type", value: escLayout(inquiryData.inquiry_type) },
-        { label: "Priority", value: escLayout(inquiryData.urgency_level) },
-        { label: "Preferred", value: escLayout(inquiryData.preferred_contact_method) },
+        { label: "Type", valueHtml: escLayout(inquiryData.inquiry_type) },
+        { label: "Priority", valueHtml: escLayout(inquiryData.urgency_level) },
+        { label: "Preferred", valueHtml: escLayout(inquiryData.preferred_contact_method) },
       ])}
       <p style="margin:18px 0 14px 0;font-weight:600;color:#1f2430;">Your message</p>
       <div style="background:#f8fafb;border-left:3px solid #0f2a43;padding:14px 16px;border-radius:4px;color:#1f2430;white-space:pre-wrap;">${escHtml(inquiryData.message)}</div>

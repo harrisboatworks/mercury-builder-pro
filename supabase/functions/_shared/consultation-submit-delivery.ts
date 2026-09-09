@@ -33,9 +33,9 @@ export function buildConsultationRequestReceivedEmail(data: {
   totalPrice: number;
 }): string {
   const rows = [
-    { label: "Reference", value: esc(data.quoteNumber) },
-    { label: "Motor", value: esc(data.motorModel) },
-    { label: "Quoted total", value: `$${data.totalPrice.toLocaleString()} CAD` },
+    { label: "Reference", valueHtml: esc(data.quoteNumber) },
+    { label: "Motor", valueHtml: esc(data.motorModel) },
+    { label: "Quoted total", valueHtml: `$${data.totalPrice.toLocaleString()} CAD` },
   ];
   const body = `
     <p style="margin:0 0 14px 0;">Hi ${esc(data.customerName)},</p>
@@ -89,9 +89,9 @@ export function buildConsultationQuoteMintedEmail(data: {
 }): string {
   const documentAccessUrl = assertConsultationAccessUrl(data.documentAccessUrl);
   const rows = [
-    { label: "Reference", value: esc(data.quoteNumber) },
-    { label: "Motor", value: esc(data.motorModel) },
-    { label: "Quoted total", value: `$${data.totalPrice.toLocaleString()} CAD` },
+    { label: "Reference", valueHtml: esc(data.quoteNumber) },
+    { label: "Motor", valueHtml: esc(data.motorModel) },
+    { label: "Quoted total", valueHtml: `$${data.totalPrice.toLocaleString()} CAD` },
   ];
   const body = `
     <p style="margin:0 0 14px 0;">Hi ${esc(data.customerName)},</p>
