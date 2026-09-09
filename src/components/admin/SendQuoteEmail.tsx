@@ -1,4 +1,3 @@
-import { adminConsultationDocument } from '@/lib/consultation-document-client';
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import {
@@ -16,7 +15,12 @@ import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
 import { Mail, Loader2, Check } from 'lucide-react';
 import { SITE_URL } from '@/lib/site';
-import { adminQuoteEmailRef, mintAdminQuoteEmailIdempotencyKey } from '@/lib/admin-quote-email';
+import {
+  adminQuoteEmailRef,
+  describeAdminQuoteEmailSendVerdict,
+  interpretAdminQuoteEmailSendResult,
+  mintAdminQuoteEmailIdempotencyKey,
+} from '@/lib/admin-quote-email';
 
 interface Props {
   isSubmitted?: boolean;
@@ -44,20 +48,11 @@ const SendQuoteEmail = ({
   const handleSend = async (intent: 'send' | 'resend') => {
     setSending(true);
     try {
-      if (isSubmitted) {
-        const result = await adminConsultationDocument(quoteId, 'admin-email', intent);
-        if (intent === 'send' && result?.duplicate) {
-          setSent(true);
-          toast({
-            title: 'Already sent',
-            description: 'This quote was already emailed. Use Send again to deliver another copy to the customer.',
-          });
-          setTimeout(() => setSent(false), 5000);
-          onDeliverySettled?.();
-          return;
-        }
-      } else {
-        const { data, error } = await supabase.functions.invoke('send-quote-email', {
+      const invokeResult = isSubmitted
+        ? await supabase.functions.invoke('admin-consultation-document', {
+          body: { action: 'admin-email', quoteId, emailIntent: intent },
+        })
+        : await supabase.functions.invoke('send-quote-email', {
           body: {
             customerEmail,
             customerName,
@@ -76,31 +71,17 @@ const SendQuoteEmail = ({
             }),
           },
         });
-        if (error) throw error;
-        const result = data as { success?: boolean; duplicate?: boolean; error?: string } | null;
-        if (result?.success === false) {
-          throw new Error(result.error || 'Could not send email.');
-        }
-        if (intent === 'send' && result?.duplicate) {
-          setSent(true);
-          toast({
-            title: 'Already sent',
-            description: 'This quote was already emailed. Use Send again to deliver another copy to the customer.',
-          });
-          setTimeout(() => setSent(false), 5000);
-          onDeliverySettled?.();
-          return;
-        }
+      const verdict = await interpretAdminQuoteEmailSendResult(invokeResult);
+      const notice = describeAdminQuoteEmailSendVerdict(verdict, intent);
+      if (verdict.kind === 'sent' || verdict.kind === 'duplicate') {
+        setSent(true);
+        toast(notice);
+        setTimeout(() => setSent(false), 5000);
+        onDeliverySettled?.();
+        return;
       }
-      setSent(true);
-      toast({
-        title: intent === 'resend' ? 'Another copy sent' : 'Email Sent',
-        description: intent === 'resend'
-          ? 'The customer will receive another copy of this quote.'
-          : `Quote emailed to ${customerEmail}`,
-      });
-      setTimeout(() => setSent(false), 5000);
-      onDeliverySettled?.();
+      toast({ ...notice, variant: 'destructive' });
+      if (verdict.kind === 'failed') onDeliverySettled?.();
     } catch (err: unknown) {
       const message = err instanceof Error ? err.message : 'Could not send email.';
       toast({ title: 'Failed to Send', description: message, variant: 'destructive' });
