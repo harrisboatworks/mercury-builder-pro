@@ -9,7 +9,7 @@ import { StockBadge } from '@/components/inventory/StockBadge';
 import { PopularityBadge, getMotorPopularity } from './PopularityBadge';
 import { LuxuryPriceDisplay } from '@/components/pricing/LuxuryPriceDisplay';
 import type { Motor } from '../../lib/motor-helpers';
-import { getHPDescriptor, requiresMercuryControls, isTillerMotor, getMotorImageByPriority, getMotorImageGallery, buildModelKey, extractHpAndCode, decodeModelName } from '../../lib/motor-helpers';
+import { getHPDescriptor, requiresMercuryControls, isTillerMotor, getMotorImageByPriority, getMotorImageGallery, decodeModelName } from '../../lib/motor-helpers';
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { getFinancingDisplay, isUsableFinancingRate } from '@/lib/finance';
