@@ -5,11 +5,14 @@ import {
   formatAppliedMigrationsReadLine,
   formatFunctionsDeployMarkdown,
   isSafeFunctionSlug,
+  isUnsupportedMigrationListOutputFlag,
   parseAppliedVersionsFromMigrationList,
   projectRefFromConfig,
+  readAppliedMigrationsFromCli,
   redactSecrets,
   resolveForcedSlug,
 } from '../../scripts/deploy-supabase-functions.mjs';
+import { isMigrationApplied, appliedVersionSet } from '../../scripts/lib/supabase-deploy-required.mjs';
 
 const files = {
   'supabase/functions/send-sms/index.ts': 'export {}',
@@ -83,6 +86,40 @@ describe('deploy batch', () => {
 
 const QUOTE_EMAIL_MIGRATION =
   'supabase/migrations/20260909193000_serialize_quote_email_delivery_failed_retry_claim.sql';
+const QUOTE_EMAIL_AUDIT_MIGRATION =
+  'supabase/migrations/20260815160000_quote_email_delivery_audit.sql';
+
+const MCP_LEDGER_ROWS = [
+  { version: '20260909194905', name: 'serialize_quote_email_delivery_failed_retry_claim' },
+  { version: '20260909164256', name: 'quote_email_delivery_audit' },
+] as const;
+
+const CLI_TABLE_WITHOUT_NAMES = [
+  '        LOCAL      │     REMOTE     │     TIME (UTC)',
+  '  ─────────────────┼────────────────┼──────────────────────',
+  '    20260815160000 │                │ 2026-08-15 16:00:00',
+  '                   │ 20260909164256 │ 2026-09-09 16:42:56',
+  '    20260909193000 │                │ 2026-09-09 19:30:00',
+  '                   │ 20260909194905 │ 2026-09-09 19:49:05',
+].join('\n');
+
+const CLI_JSON_WITH_NAMES = JSON.stringify({
+  message: 'Migrations listed',
+  migrations: [
+    { version: '20260909194905', name: 'serialize_quote_email_delivery_failed_retry_claim' },
+    { remote: '20260909164256', name: 'quote_email_delivery_audit' },
+  ],
+});
+
+const CLI_JSON_VERSIONS_ONLY = JSON.stringify({
+  message: 'Migrations listed',
+  migrations: [
+    { local: '20260815160000', remote: '', time: '2026-08-15 16:00:00' },
+    { local: '', remote: '20260909164256', time: '2026-09-09 16:42:56' },
+    { local: '20260909193000', remote: '', time: '2026-09-09 19:30:00' },
+    { local: '', remote: '20260909194905', time: '2026-09-09 19:49:05' },
+  ],
+});
 
 describe('migration apply-order gate', () => {
   it('deploys when the required migration is applied', () => {
@@ -321,6 +358,95 @@ describe('migration apply-order gate', () => {
     expect(failed.map((item) => item.slug)).toEqual(['send-quote-email']);
     expect(failed[0].detail).toContain('20260909193000_serialize_quote_email_delivery_failed_retry_claim.sql');
   });
+
+  it('treats a migration applied under a different version but the same name as applied', () => {
+    const applied = appliedVersionSet([...MCP_LEDGER_ROWS]);
+    expect(isMigrationApplied(QUOTE_EMAIL_MIGRATION, applied)).toBe(true);
+    expect(isMigrationApplied(QUOTE_EMAIL_AUDIT_MIGRATION, applied)).toBe(true);
+  });
+
+  it('still treats a genuinely absent migration as unapplied', () => {
+    const applied = appliedVersionSet([...MCP_LEDGER_ROWS]);
+    expect(isMigrationApplied('supabase/migrations/20260909199999_absent_from_ledger.sql', applied)).toBe(
+      false,
+    );
+  });
+
+  it('does not treat a newer ledger latest version as applied on a versions-only listing', () => {
+    const seen: string[] = [];
+    const { succeeded, failed } = deployWithMigrationGate({
+      functions: [
+        {
+          slug: 'send-quote-email',
+          requiredMigrations: [{ path: QUOTE_EMAIL_MIGRATION, version: '20260909193000' }],
+        },
+      ],
+      listAppliedVersions: () => parseAppliedVersionsFromMigrationList(CLI_TABLE_WITHOUT_NAMES),
+      deployOne: (slug: string) => {
+        seen.push(slug);
+        return { ok: true, detail: 'Deployed' };
+      },
+    });
+    expect(seen).toEqual([]);
+    expect(succeeded).toEqual([]);
+    expect(failed).toHaveLength(1);
+    expect(failed[0].detail).toContain('not applied in production');
+    expect(failed[0].detail).toContain('DEPLOY_TREAT_APPLIED');
+    expect(failed[0].detail).toContain('serialize_quote_email_delivery_failed_retry_claim');
+  });
+
+  it('does not mention the versions-only override when the listing already includes names', () => {
+    const { failed } = deployWithMigrationGate({
+      functions: [
+        {
+          slug: 'send-quote-email',
+          requiredMigrations: [{ path: QUOTE_EMAIL_MIGRATION, version: '20260909193000' }],
+        },
+      ],
+      listAppliedVersions: () => [{ version: '20260909164256', name: 'quote_email_delivery_audit' }],
+      deployOne: () => ({ ok: true, detail: 'Deployed' }),
+    });
+    expect(failed[0].detail).toContain('not applied in production');
+    expect(failed[0].detail).not.toContain('DEPLOY_TREAT_APPLIED');
+  });
+
+  it('cannot deadlock after MCP apply: name match or treat-applied override deploys on rerun', () => {
+    const target = {
+      slug: 'send-quote-email',
+      requiredMigrations: [{ path: QUOTE_EMAIL_MIGRATION, version: '20260909193000' }],
+    };
+    const seen: string[] = [];
+    const deployOne = (slug: string) => {
+      seen.push(slug);
+      return { ok: true, detail: 'Deployed' };
+    };
+
+    const firstPush = deployWithMigrationGate({
+      functions: [target],
+      listAppliedVersions: () => [{ version: '20260909164256', name: 'quote_email_delivery_audit' }],
+      deployOne,
+    });
+    expect(firstPush.failed.map((item) => item.slug)).toEqual(['send-quote-email']);
+    expect(seen).toEqual([]);
+
+    const recoveredByName = deployWithMigrationGate({
+      functions: [target],
+      listAppliedVersions: () => parseAppliedVersionsFromMigrationList(CLI_JSON_WITH_NAMES),
+      deployOne,
+    });
+    expect(recoveredByName.failed).toEqual([]);
+    expect(recoveredByName.succeeded.map((item) => item.slug)).toEqual(['send-quote-email']);
+
+    const recoveredByOverride = deployWithMigrationGate({
+      functions: [target],
+      listAppliedVersions: () => parseAppliedVersionsFromMigrationList(CLI_TABLE_WITHOUT_NAMES),
+      deployOne,
+      env: { DEPLOY_TREAT_APPLIED: 'serialize_quote_email_delivery_failed_retry_claim' },
+    });
+    expect(recoveredByOverride.failed).toEqual([]);
+    expect(recoveredByOverride.succeeded.map((item) => item.slug)).toEqual(['send-quote-email']);
+    expect(seen).toEqual(['send-quote-email', 'send-quote-email']);
+  });
 });
 
 describe('applied migration list parse', () => {
@@ -352,6 +478,66 @@ describe('applied migration list parse', () => {
         }),
       ),
     ).toEqual(['20240101000000']);
+  });
+
+  it('reads version and name from JSON-with-names output', () => {
+    expect(parseAppliedVersionsFromMigrationList(CLI_JSON_WITH_NAMES)).toEqual([
+      { version: '20260909194905', name: 'serialize_quote_email_delivery_failed_retry_claim' },
+      { version: '20260909164256', name: 'quote_email_delivery_audit' },
+    ]);
+  });
+
+  it('reads versions only from the pinned CLI table and from JSON without names', () => {
+    expect(parseAppliedVersionsFromMigrationList(CLI_TABLE_WITHOUT_NAMES)).toEqual([
+      '20260909164256',
+      '20260909194905',
+    ]);
+    expect(parseAppliedVersionsFromMigrationList(CLI_JSON_VERSIONS_ONLY)).toEqual([
+      '20260909164256',
+      '20260909194905',
+    ]);
+  });
+
+  it('reads a name column from a table when one is present', () => {
+    const table = [
+      'LOCAL | REMOTE | NAME | TIME (UTC)',
+      ' | 20260909194905 | serialize_quote_email_delivery_failed_retry_claim | 2026-09-09 19:49:05',
+    ].join('\n');
+    expect(parseAppliedVersionsFromMigrationList(table)).toEqual([
+      { version: '20260909194905', name: 'serialize_quote_email_delivery_failed_retry_claim' },
+    ]);
+  });
+
+  it('requests JSON output and falls back to the table when the flag is unsupported', () => {
+    const seen: string[][] = [];
+    const rows = readAppliedMigrationsFromCli((extra) => {
+      seen.push(extra);
+      if (extra.length) {
+        const error = new Error(`unknown flag: ${extra[0]}`);
+        throw error;
+      }
+      return CLI_TABLE_WITHOUT_NAMES;
+    });
+    expect(seen[0]).toEqual(['--output-format', 'json']);
+    expect(seen[1]).toEqual(['--output', 'json']);
+    expect(seen[2]).toEqual(['-o', 'json']);
+    expect(seen[3]).toEqual([]);
+    expect(rows).toEqual(['20260909164256', '20260909194905']);
+  });
+
+  it('does not fall back when JSON listing fails for a reason other than an unsupported flag', () => {
+    expect(() =>
+      readAppliedMigrationsFromCli(() => {
+        throw new Error('network down');
+      }),
+    ).toThrow(/network down/);
+  });
+
+  it('recognizes unsupported output flags and ignores unrelated CLI failures', () => {
+    expect(isUnsupportedMigrationListOutputFlag(new Error('unknown flag: --output-format'))).toBe(true);
+    expect(isUnsupportedMigrationListOutputFlag(new Error('could not connect to remote database'))).toBe(
+      false,
+    );
   });
 
   it('fails closed on empty or unrecognized CLI output', () => {

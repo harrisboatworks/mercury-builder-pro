@@ -7,13 +7,17 @@
  * Deploys each slug with the Supabase CLI, continues after individual
  * failures, then exits 1 if any failed.
  *
- * Before deploy, reads applied migration versions (`supabase migration
- * list --linked`) and skips any function whose newly required migrations
- * (from buildDeployRequiredReport / deployTargetsFromDiff) are not
- * applied. That skip fails the job. If the applied list cannot be read,
- * only functions that require migrations are skipped; functions with an
- * empty requiredMigrations list still deploy. The job fails if anything
- * was skipped.
+ * Before deploy, reads applied migrations (`supabase migration list
+ * --linked`, preferring `--output-format json` / `-o json`, falling back
+ * to the table). A function is skipped when a newly required migration
+ * matches neither an applied version nor an applied name. MCP apply
+ * stamps its own ledger version, so name is the durable match. The
+ * pinned CLI list does not emit names; `DEPLOY_TREAT_APPLIED` is the
+ * versions-only escape hatch so a function cannot stay undeployable
+ * after a successful MCP apply. That skip fails the job. If the applied
+ * list cannot be read, only functions that require migrations are
+ * skipped; functions with an empty requiredMigrations list still deploy.
+ * The job fails if anything was skipped.
  *
  * Never applies migrations. Never prints secret values.
  *
@@ -34,11 +38,13 @@ import { join, relative, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import {
   SHARED_SLUG,
+  appliedRowsHaveNames,
   appliedVersionSet,
   blockedDeployReason,
   deployTargetsFromDiff,
   filesByFunctionSlug,
   isZeroSha,
+  mergeTreatAppliedRows,
   parseNameStatusZ,
   requiredMigrationsForSlug,
   toPosix,
@@ -111,6 +117,9 @@ function migrationRowsFromListJson(json) {
   if (!json || typeof json !== 'object') return null;
   if (Array.isArray(json.migrations)) return json.migrations;
   if (json.result && Array.isArray(json.result.migrations)) return json.result.migrations;
+  if (json.data && typeof json.data === 'object' && Array.isArray(json.data.migrations)) {
+    return json.data.migrations;
+  }
   if (Array.isArray(json.data)) return json.data;
   return null;
 }
@@ -154,12 +163,14 @@ function stripMigrationListCell(cell) {
 function versionsFromMigrationListTable(text) {
   const lines = text.split(/\r?\n/);
   let remoteCol = -1;
+  let nameCol = -1;
   let headerIndex = -1;
   for (let i = 0; i < lines.length; i += 1) {
     const cols = splitMigrationListRow(lines[i]);
     const index = cols.findIndex((col) => /^remote$/i.test(stripMigrationListCell(col)));
     if (index >= 0) {
       remoteCol = index;
+      nameCol = cols.findIndex((col) => /^name$/i.test(stripMigrationListCell(col)));
       headerIndex = i;
       break;
     }
@@ -174,9 +185,52 @@ function versionsFromMigrationListTable(text) {
     const cols = splitMigrationListRow(line);
     if (cols.length <= remoteCol) continue;
     const remote = stripMigrationListCell(cols[remoteCol]);
-    if (/^\d+$/.test(remote)) applied.push(remote);
+    if (!/^\d+$/.test(remote)) continue;
+    const name = nameCol >= 0 && cols.length > nameCol ? stripMigrationListCell(cols[nameCol]) : '';
+    applied.push(name ? { version: remote, name } : remote);
   }
   return applied;
+}
+
+export function migrationListOutputFlagAttempts() {
+  return [
+    ['--output-format', 'json'],
+    ['--output', 'json'],
+    ['-o', 'json'],
+    [],
+  ];
+}
+
+export function collectExecErrorText(error) {
+  const message = error instanceof Error ? error.message : String(error);
+  const stderr = error && error.stderr != null ? String(error.stderr) : '';
+  const stdout = error && error.stdout != null ? String(error.stdout) : '';
+  return [message, stdout, stderr].filter(Boolean).join('\n');
+}
+
+export function isUnsupportedMigrationListOutputFlag(error) {
+  return /unknown flag|flag provided but not defined|unknown command-line flag|unknown shorthand flag/i.test(
+    collectExecErrorText(error),
+  );
+}
+
+export function readAppliedMigrationsFromCli(runList) {
+  if (typeof runList !== 'function') {
+    throw new Error('supabase migration list runner is missing');
+  }
+  let lastUnsupported;
+  for (const extra of migrationListOutputFlagAttempts()) {
+    try {
+      return parseAppliedVersionsFromMigrationList(runList(extra));
+    } catch (error) {
+      if (extra.length && isUnsupportedMigrationListOutputFlag(error)) {
+        lastUnsupported = error;
+        continue;
+      }
+      throw error;
+    }
+  }
+  throw lastUnsupported || new Error('supabase migration list failed');
 }
 
 export function deployFunctionSlugs(slugs, { deployOne, skipReason } = {}) {
@@ -282,17 +336,18 @@ export function deployWithMigrationGate({
 
   let appliedSet;
   try {
-    appliedSet = appliedSetFromLookup(appliedRows);
+    appliedSet = appliedSetFromLookup(mergeTreatAppliedRows(appliedRows, env.DEPLOY_TREAT_APPLIED));
   } catch (error) {
     return degradeOnUnreadableList(error);
   }
 
   writeDeployLog(redactSecrets(formatAppliedMigrationsReadLine(appliedRows), env), log);
+  const versionsOnly = !appliedRowsHaveNames(appliedRows);
 
   return {
     ...deployTargets((slug) => {
       const target = targets.find((item) => item.slug === slug);
-      return blockedDeployReason(slug, target?.requiredMigrations, appliedSet);
+      return blockedDeployReason(slug, target?.requiredMigrations, appliedSet, { versionsOnly });
     }),
     appliedLookupFailed: false,
   };
@@ -482,21 +537,22 @@ function defaultListAppliedVersions({ cli, projectRef, env }) {
   if (!String(cliEnv.SUPABASE_PROJECT_REF || '').trim()) {
     delete cliEnv.SUPABASE_PROJECT_REF;
   }
-  let output = '';
-  try {
-    output = execFileSync(cli, ['migration', 'list', '--linked', '--project-ref', projectRef], {
-      encoding: 'utf8',
-      env: cliEnv,
-      stdio: ['ignore', 'pipe', 'pipe'],
-      maxBuffer: 10 * 1024 * 1024,
-    });
-  } catch (error) {
-    const stderr = error && error.stderr != null ? String(error.stderr) : '';
-    const stdout = error && error.stdout != null ? String(error.stdout) : '';
-    const message = error instanceof Error ? error.message : String(error);
-    throw new Error([message, stdout, stderr].filter(Boolean).join('\n'));
-  }
-  return parseAppliedVersionsFromMigrationList(output);
+  return readAppliedMigrationsFromCli((extraArgs) => {
+    try {
+      return execFileSync(
+        cli,
+        ['migration', 'list', '--linked', '--project-ref', projectRef, ...extraArgs],
+        {
+          encoding: 'utf8',
+          env: cliEnv,
+          stdio: ['ignore', 'pipe', 'pipe'],
+          maxBuffer: 10 * 1024 * 1024,
+        },
+      );
+    } catch (error) {
+      throw new Error(collectExecErrorText(error));
+    }
+  });
 }
 
 function readRangeTargets(files, from, to) {
