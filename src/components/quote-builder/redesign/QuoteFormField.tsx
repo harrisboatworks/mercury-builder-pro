@@ -12,6 +12,9 @@ interface QuoteFormFieldProps {
 }
 
 export function QuoteFormField({ label, htmlFor, required, helper, error, children, className }: QuoteFormFieldProps) {
+  const errorId = htmlFor && error ? `${htmlFor}-error` : undefined;
+  const helperId = htmlFor && helper ? `${htmlFor}-helper` : undefined;
+
   return (
     <div className={cn('flex flex-col', className)}>
       {label && (
@@ -25,9 +28,9 @@ export function QuoteFormField({ label, htmlFor, required, helper, error, childr
       )}
       {children}
       {error ? (
-        <p className="mt-1.5 font-sans text-[13px] text-repower-mercury-red">{error}</p>
+        <p id={errorId} role="alert" className="mt-1.5 font-sans text-[13px] text-repower-mercury-red">{error}</p>
       ) : helper ? (
-        <p className="mt-1.5 font-sans text-[13px] text-repower-navy-900/55">{helper}</p>
+        <p id={helperId} className="mt-1.5 font-sans text-[13px] text-repower-navy-900/55">{helper}</p>
       ) : null}
     </div>
   );

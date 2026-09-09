@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef, useCallback } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import { useSound } from '@/contexts/SoundContext';
 import { useHapticFeedback } from '@/hooks/useHapticFeedback';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -119,6 +119,7 @@ export function QuoteRevealCinematic({
   const [showTapHint, setShowTapHint] = useState(false);
   const { playReveal, playSwoosh, playTick, playComplete, playAmbientPad, playCelebration, playMotorNameReveal } = useSound();
   const { triggerHaptic } = useHapticFeedback();
+  const prefersReducedMotion = useReducedMotion();
   const priceIntervalRef = useRef<NodeJS.Timeout>();
   const startTimeRef = useRef<number>(0);
   const onCompleteRef = useRef(onComplete);
@@ -244,6 +245,11 @@ export function QuoteRevealCinematic({
       return;
     }
 
+    if (prefersReducedMotion) {
+      onCompleteRef.current();
+      return;
+    }
+
     // Play ambient pad at start for immersive atmosphere
     playAmbientPadRef.current();
 
@@ -284,9 +290,9 @@ export function QuoteRevealCinematic({
       timeouts.forEach(clearTimeout);
       if (priceIntervalRef.current) clearInterval(priceIntervalRef.current);
     };
-  // Sound functions stored in refs, only isVisible triggers
+  // Sound functions stored in refs, only isVisible / reduced-motion triggers
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isVisible]);
+  }, [isVisible, prefersReducedMotion]);
 
   // Smoother price counting animation, runs exactly once
   useEffect(() => {

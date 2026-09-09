@@ -451,7 +451,12 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                       updateValuationInput({ brand: value, engineType: undefined });
                     }}
                   >
-                    <SelectTrigger className={`min-h-[48px] rounded-sm bg-repower-paper font-sans ${
+                    <SelectTrigger
+                      id="trade-brand"
+                      aria-required="true"
+                      aria-invalid={showValidation && missingFields.brand ? true : undefined}
+                      aria-describedby={showValidation && missingFields.brand ? 'trade-brand-error' : undefined}
+                      className={`min-h-[48px] rounded-sm bg-repower-paper font-sans ${
                       showValidation && missingFields.brand 
                         ? 'border-repower-mercury-red ring-1 ring-repower-mercury-red focus-visible:ring-repower-mercury-red' 
                         : 'border-repower-navy-900/20'
@@ -466,7 +471,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                     </SelectContent>
                   </Select>
                   {showValidation && missingFields.brand && (
-                    <p className="font-sans text-[12px] font-medium text-repower-mercury-red mt-1.5 inline-flex items-center gap-1.5"><AlertCircle className="h-3.5 w-3.5 shrink-0" strokeWidth={2} aria-hidden="true" />Required</p>
+                    <p id="trade-brand-error" role="alert" className="font-sans text-[12px] font-medium text-repower-mercury-red mt-1.5 inline-flex items-center gap-1.5"><AlertCircle className="h-3.5 w-3.5 shrink-0" strokeWidth={2} aria-hidden="true" />Required</p>
                   )}
                 </div>
 
@@ -520,6 +525,8 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                       });
                     }}
                     placeholder="e.g. 2003"
+                    aria-required="true"
+                    aria-invalid={showValidation && missingFields.year ? true : undefined}
                     aria-describedby={showValidation && missingFields.year ? 'trade-year-error' : undefined}
                     className={`min-h-[48px] rounded-sm bg-repower-paper font-sans ${
                       showValidation && missingFields.year 
@@ -528,7 +535,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                     }`}
                   />
                   {showValidation && missingFields.year && (
-                    <p id="trade-year-error" className="font-sans text-[12px] font-medium text-repower-mercury-red mt-1.5 inline-flex items-center gap-1.5"><AlertCircle className="h-3.5 w-3.5 shrink-0" strokeWidth={2} aria-hidden="true" />Enter a year from {TRADE_IN_MIN_YEAR} to {currentYear}</p>
+                    <p id="trade-year-error" role="alert" className="font-sans text-[12px] font-medium text-repower-mercury-red mt-1.5 inline-flex items-center gap-1.5"><AlertCircle className="h-3.5 w-3.5 shrink-0" strokeWidth={2} aria-hidden="true" />Enter a year from {TRADE_IN_MIN_YEAR} to {currentYear}</p>
                   )}
                 </div>
 
@@ -545,6 +552,9 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                     }}
                     placeholder="e.g. 150 ELPT, F115LB, or just 150"
                     maxLength={120}
+                    aria-required="true"
+                    aria-invalid={showValidation && missingFields.horsepower ? true : undefined}
+                    aria-describedby={showValidation && missingFields.horsepower ? 'trade-model-error' : undefined}
                     className={`min-h-[48px] rounded-sm bg-repower-paper font-sans ${
                       showValidation && missingFields.horsepower 
                         ? 'border-repower-mercury-red ring-1 ring-repower-mercury-red focus-visible:ring-repower-mercury-red' 
@@ -552,7 +562,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                     }`}
                   />
                   {showValidation && missingFields.horsepower && (
-                    <p className="font-sans text-[12px] font-medium text-repower-mercury-red mt-1.5 inline-flex items-center gap-1.5"><AlertCircle className="h-3.5 w-3.5 shrink-0" strokeWidth={2} aria-hidden="true" />Required</p>
+                    <p id="trade-model-error" role="alert" className="font-sans text-[12px] font-medium text-repower-mercury-red mt-1.5 inline-flex items-center gap-1.5"><AlertCircle className="h-3.5 w-3.5 shrink-0" strokeWidth={2} aria-hidden="true" />Required</p>
                   )}
                   {(() => {
                     const raw = modelTextForDecoding;
@@ -805,16 +815,21 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
 
               {/* Condition Selection */}
               <div className="space-y-4">
-                <Label className="font-sans font-semibold text-[12px] uppercase tracking-[0.14em] text-repower-navy-900/70">
+                <Label id="trade-condition-label" className="font-sans font-semibold text-[12px] uppercase tracking-[0.14em] text-repower-navy-900/70">
                   Motor Condition *
                 </Label>
-                <div className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 ${
+                <div
+                  role="group"
+                  aria-labelledby="trade-condition-label"
+                  aria-describedby={showValidation && missingFields.condition ? 'trade-condition-error' : undefined}
+                  className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 ${
                   showValidation && missingFields.condition ? 'ring-2 ring-repower-mercury-red rounded-sm p-2' : ''
                 }`}>
                   {conditionOptions.map((option) => (
                     <motion.button
                       type="button"
                       key={option.value}
+                      aria-pressed={tradeInInfo.condition === option.value}
                       whileTap={{ scale: 0.98 }}
                       className={`cursor-pointer rounded-sm border p-4 text-center transition-all duration-300 hover:scale-[1.02] hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-repower-navy-900/40 ${
                         tradeInInfo.condition === option.value 
@@ -834,7 +849,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                   ))}
                 </div>
                 {showValidation && missingFields.condition && (
-                  <p className="font-sans text-[12px] font-medium text-repower-mercury-red mt-1.5 inline-flex items-center gap-1.5"><AlertCircle className="h-3.5 w-3.5 shrink-0" strokeWidth={2} aria-hidden="true" />Please select a condition</p>
+                  <p id="trade-condition-error" role="alert" className="font-sans text-[12px] font-medium text-repower-mercury-red mt-1.5 inline-flex items-center gap-1.5"><AlertCircle className="h-3.5 w-3.5 shrink-0" strokeWidth={2} aria-hidden="true" />Please select a condition</p>
                 )}
               </div>
 
@@ -854,7 +869,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                         value={tradeInInfo.startType || ''} 
                         onValueChange={(value) => onTradeInChange({ ...tradeInInfo, startType: value as TradeInInfo['startType'] })}
                       >
-                        <SelectTrigger className="min-h-[48px] rounded-sm border-repower-navy-900/20 bg-repower-paper font-sans">
+                        <SelectTrigger id="trade-start-type" className="min-h-[48px] rounded-sm border-repower-navy-900/20 bg-repower-paper font-sans">
                           <SelectValue placeholder="Manual (default)" />
                         </SelectTrigger>
                         <SelectContent>
@@ -931,8 +946,8 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
 
               {/* Loading indicator */}
               {isLoading && (
-                <div className="pt-4 flex items-center justify-center gap-3 text-repower-navy-900/65">
-                  <Loader2 className="w-5 h-5 animate-spin" />
+                <div role="status" aria-live="polite" className="pt-4 flex items-center justify-center gap-3 text-repower-navy-900/65">
+                  <Loader2 className="w-5 h-5 animate-spin" aria-hidden="true" />
                   <span className="font-sans text-base">Calculating your estimate...</span>
                 </div>
               )}

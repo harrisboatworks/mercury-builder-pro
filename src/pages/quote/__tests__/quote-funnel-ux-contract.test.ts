@@ -183,6 +183,20 @@ describe('quote funnel UX contract', () => {
     expect(quoteTileSource).not.toContain('bg-white');
   });
 
+  it('exposes quote progress and honours reduced motion on promo/reveal', () => {
+    const stepperSource = read('src/components/quote-builder/QuoteProgressStepper.tsx');
+    const revealSource = read('src/components/quote-builder/QuoteRevealCinematic.tsx');
+    const promoSource = read('src/pages/quote/PromoSelectionPage.tsx');
+
+    expect(stepperSource).toContain('aria-current={current ? \'step\' : undefined}');
+    expect(stepperSource).toContain('role="progressbar"');
+    expect(revealSource).toContain('useReducedMotion');
+    expect(revealSource).toContain('if (prefersReducedMotion)');
+    expect(promoSource).toContain('useReducedMotion');
+    expect(promoSource).toContain('role="radio"');
+    expect(promoSource).toContain('aria-checked={isSelected}');
+  });
+
   it('does not celebrate before a customer has committed', () => {
     const summarySource = read('src/pages/quote/QuoteSummaryPage.tsx');
     const stickySource = read('src/components/quote-builder/StickySummary.tsx');
@@ -258,7 +272,8 @@ describe('quote funnel UX contract', () => {
     expect(scheduleSource).toContain('We use your details to review this quote and contact you about it.');
     expect(scheduleSource).toContain('to="/privacy"');
     expect(scheduleSource.match(/aria-required="true"/g)).toHaveLength(3);
-    expect(scheduleSource.match(/aria-invalid=/g)).toHaveLength(3);
+    expect(scheduleSource.match(/aria-invalid=/g)).toHaveLength(4);
+    expect(scheduleSource).toContain('id="turnstile-error"');
     expect(scheduleSource).toContain('role="alert"');
     expect(reminderSource).toContain('This signs you up for price and promotion updates for this motor.');
     expect(reminderSource).toContain('has-[:focus-visible]:ring-2');

@@ -1,6 +1,6 @@
 import { useState, useEffect, useMemo, useRef, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import { Shield, Percent, Banknote, CreditCard, Check, ArrowRight, ArrowLeft, AlertCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { CountdownTimer } from '@/components/ui/countdown-timer';
@@ -40,6 +40,7 @@ export default function PromoSelectionPage() {
   const { state, dispatch } = useQuote();
   const { promotions, loading: promoLoading, getRebateForHP, getPromotionSavingsForMotor, getSpecialFinancingRates } = useActivePromotions();
   const { triggerHaptic } = useHapticFeedback();
+  const prefersReducedMotion = useReducedMotion();
 
   // Restore from context if user navigates back
   const [selectedOption, setSelectedOption] = useState<PaymentOptionId | null>(() => {
@@ -342,6 +343,7 @@ export default function PromoSelectionPage() {
         <div className="mx-auto w-full max-w-[880px] px-6 pt-8">
           <button
             onClick={handleBack}
+            aria-label={state.purchasePath === 'installed' ? 'Back to installation' : 'Back to trade-in'}
             className="inline-flex items-center gap-1.5 font-sans text-[12px] font-semibold uppercase tracking-[0.14em] text-repower-navy-900/65 hover:text-repower-mercury-red transition-colors min-h-[44px]"
           >
             <ArrowLeft className="w-4 h-4" />
@@ -389,8 +391,8 @@ export default function PromoSelectionPage() {
                 {/* Floating Shield Icon */}
                 <motion.div 
                   className="w-12 h-12 rounded-full bg-repower-gold/20 flex items-center justify-center"
-                  animate={{ y: [0, -6, 0] }}
-                  transition={{ 
+                  animate={prefersReducedMotion ? undefined : { y: [0, -6, 0] }}
+                  transition={prefersReducedMotion ? undefined : { 
                     duration: 3, 
                     ease: 'easeInOut', 
                     repeat: Infinity 
@@ -409,8 +411,8 @@ export default function PromoSelectionPage() {
                 {/* Pulsing INCLUDED Badge */}
                 <motion.div 
                   className="bg-repower-mercury-red text-white text-xs font-bold px-3 py-1 rounded-full ml-2"
-                  animate={{ scale: [1, 1.05, 1] }}
-                  transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+                  animate={prefersReducedMotion ? undefined : { scale: [1, 1.05, 1] }}
+                  transition={prefersReducedMotion ? undefined : { duration: 2, repeat: Infinity, ease: 'easeInOut' }}
                 >
                   ✓ INCLUDED
                 </motion.div>
@@ -445,7 +447,10 @@ export default function PromoSelectionPage() {
 
 
             {/* Option Cards, transform-only entrance, no opacity */}
-            <div className={cn(
+            <div
+              role="radiogroup"
+              aria-label="Choose how you'll pay"
+              className={cn(
               "grid gap-6 mb-6",
               eligibleOptions.length === 2 ? "md:grid-cols-2 max-w-2xl mx-auto" : "md:grid-cols-3"
             )}>
@@ -456,17 +461,20 @@ export default function PromoSelectionPage() {
                 return (
                   <motion.button
                     key={option.id}
-                    initial={{ y: 24 }}
+                    type="button"
+                    role="radio"
+                    aria-checked={isSelected}
+                    initial={prefersReducedMotion ? false : { y: 24 }}
                     animate={{ y: 0 }}
-                    transition={{ 
+                    transition={prefersReducedMotion ? { duration: 0 } : { 
                       delay: index * 0.1,
                       type: 'spring',
                       stiffness: 100,
                       damping: 15
                     }}
                     style={{ opacity: 1 }}
-                    whileHover={{ scale: 1.03, y: -4 }}
-                    whileTap={{ scale: 0.98 }}
+                    whileHover={prefersReducedMotion ? undefined : { scale: 1.03, y: -4 }}
+                    whileTap={prefersReducedMotion ? undefined : { scale: 0.98 }}
                     onClick={() => handleOptionSelect(option.id)}
                     className={cn(
                       'relative rounded-sm border bg-repower-cream p-6 text-left transition-all duration-200',
@@ -531,7 +539,7 @@ export default function PromoSelectionPage() {
                 >
                     <div className="mx-auto max-w-2xl rounded-sm border border-repower-navy-900/10 bg-repower-cream p-6">
                     <h3 className="mb-4 font-display text-xl font-bold tracking-[-0.015em] text-repower-navy-900">Select your rate and term</h3>
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                    <div role="radiogroup" aria-label="Financing rate and term" className="grid grid-cols-2 md:grid-cols-4 gap-3">
                       {financingRates.map((rate) => {
                         const isRateSelected = selectedRate?.months === rate.months;
                         const estimatedPayment = getEstimatedPayment(rate.rate, rate.months);
@@ -539,6 +547,9 @@ export default function PromoSelectionPage() {
                         return (
                           <button
                             key={rate.months}
+                            type="button"
+                            role="radio"
+                            aria-checked={isRateSelected}
                             onClick={() => handleRateSelect(rate)}
                             className={cn(
                               'rounded-sm border p-4 text-center transition-all duration-200',
