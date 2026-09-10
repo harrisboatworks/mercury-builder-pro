@@ -2980,7 +2980,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Can I look up my serial myself online?",
-        "a": "Partially. MarineEngine.com, OBParts.com, and Crowley Marine all have free public serial-to-year lookups. They won't show you Mercury's internal service bulletins, warranty, or service history, that's dealer-only. But for \"what year is my motor?\" the public tools work fine."
+        "a": "Not really. Crowley Marine, MarineEngine.com, and OBParts publish serial-range charts and parts finders, which get you close enough to order the right parts. They are not a model-year or spec lookup, and they show nothing about warranty, service bulletins, or service history. The exact year and build spec for a specif…"
       },
       {
         "q": "Do older 2-stroke Mercurys (pre-2000) follow the same format?",
