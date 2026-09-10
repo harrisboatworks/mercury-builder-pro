@@ -168,10 +168,11 @@ export default function PromoSelectionPage() {
   // Filter to only eligible options - hide financing-only options if not eligible
   const eligibleOptions = useMemo(() => {
     return options.filter(option => {
+      if (option.id === 'special_financing' && financingRates.length === 0) return false;
       if ((option.id === 'special_financing' || option.id === 'standard_financing') && !isEligibleForFinancing) return false;
       return true;
     });
-  }, [options, isEligibleForFinancing]);
+  }, [options, isEligibleForFinancing, financingRates.length]);
 
   const persistFinancingRate = useCallback((rate: FinancingRate) => {
     dispatch({ type: 'SET_PAYMENT_METHOD', payload: 'special_financing' });
@@ -238,36 +239,14 @@ export default function PromoSelectionPage() {
     });
   }, [state.motor, activePromo, rebateAmount, state.selectedPromoOption, state.selectedPromoRate, dispatch]);
 
-  // Auto-skip only when we KNOW there are no promotion options. Layered
-  // offers still need this step so the customer can opt into promo financing
-  // while the rebate remains automatic.
-  // Guard against the loading race: while promotions are still loading we
-  // must not redirect, otherwise the customer skips the screen before we
-  // ever hear back from the DB and the rebate is silently dropped.
-  const hasPromotionOptions = (
-    activePromo?.promo_options?.type === 'choose_one' ||
-    activePromo?.promo_options?.type === 'layered'
-  ) && (activePromo.promo_options.options?.length ?? 0) > 0;
-
+  // Cash and standard financing are choices even when the active promotion
+  // has no structured promo_options. Do not navigate away from visible payment
+  // controls, or repeatedly dispatch warranty updates while the lazy summary
+  // route loads. Coverage is reconciled once in handleContinue below.
   useEffect(() => {
-    if (promoLoading) return;
-    if (!state.motor) return;
-    if (activePromo && hasPromotionOptions) return;
-
-    // For warranty-only promos, auto-apply the warranty and skip
-    if (activePromo && !hasPromotionOptions) {
-      dispatch({ type: 'SET_SELECTED_PACKAGE', payload: { id: 'good', label: 'Configured Quote', priceBeforeTax: 0 } });
-      dispatch({
-        type: 'SET_WARRANTY_CONFIG',
-        payload: reconcileWarrantyConfig(
-          Number(motorHP),
-          productProtectionIncludedYears,
-          state.warrantyConfig,
-        ),
-      });
-    }
+    if (promoLoading || !state.motor || activePromo) return;
     navigate('/quote/summary', { replace: true });
-  }, [promoLoading, activePromo, productProtectionIncludedYears, hasPromotionOptions, state.motor, state.warrantyConfig, motorHP, navigate, dispatch]);
+  }, [promoLoading, activePromo, state.motor, navigate]);
 
   const handleOptionSelect = (optionId: PaymentOptionId) => {
     setSelectedOption(optionId);
