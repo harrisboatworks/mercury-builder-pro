@@ -1,6 +1,6 @@
 // @vitest-environment happy-dom
 import { lazy, Suspense, type ReactNode } from 'react';
-import { act, fireEvent, render, screen } from '@testing-library/react';
+import { act, fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { MemoryRouter, Route, Routes, useLocation } from 'react-router-dom';
 import { QuoteProvider, useQuote } from '@/contexts/QuoteContext';
@@ -59,8 +59,11 @@ describe('cash purchase routed navigation', () => {
     expect(screen.queryByRole('radio', { name: /^Promotional Financing/i })).not.toBeInTheDocument();
     fireEvent.click(cash);
     fireEvent.click(screen.getByRole('button', { name: /Continue to Quote/i }));
-    expect(await screen.findByText('Loading summary')).toBeInTheDocument();
+    // React Router may retain the payment page during a transition instead of
+    // showing Suspense's fallback. Wait for the lazy module request itself.
+    await waitFor(() => expect(resolveSummary).toBeTypeOf('function'));
     await act(async () => { resolveSummary({ default: Summary }); });
+    expect(await screen.findByTestId('summary')).toBeInTheDocument();
     expect(screen.getByTestId('route')).toHaveTextContent('/quote/summary');
     expect(JSON.parse(screen.getByTestId('summary').textContent!)).toEqual({
       payment: 'cash_purchase', trade,
