@@ -31591,7 +31591,7 @@ For complex repowers (twin-engine setups, brand conversions, or unusual configur
     readTime: '8 min read',
     keywords: ['mercury pro xs buyer guide', 'mercury pro xs ontario', 'mercury pro xs pricing', 'mercury performance outboard'],
     faqs: [
-      { question: "Is Pro XS worth the premium over FourStroke?", answer: "For tournament fishing, performance pontoons, water sports applications, and big-water running, yes. For cruising, family use, casual fishing, no. FourStroke is the better tool for most Ontario boaters." },
+      { question: "Is Pro XS worth the premium over FourStroke?", answer: "Pro XS may be worth the extra cost if you use its performance. There is no single price premium across the lineup: compare current quotes for the exact models, shaft length, controls and gearcase, then account for rigging and HST. FourStroke is usually the better fit for cruising, family use and casual fishing." },
       { question: "What's the most popular Pro XS in Ontario?", answer: "The 200 Pro XS V8 is the dominant tournament fishing motor in Ontario bass boats. The 150 Pro XS is an inline-four and remains the walleye sweet spot for mid-size aluminum on big water." },
       { question: "Does Pro XS use the same powerhead as FourStroke?", answer: "The 115 Pro XS shares the 2.1L powerhead with the 115 FourStroke (different tuning). The 150 Pro XS uses a different 3.0L inline-4. The 175 Pro XS uses the 3.4L V6. The 200, 225, 250, and 300 Pro XS use the 4.6L V8. Horsepower alone does not identify the family." },
       { question: "Can I get Command Thrust on a Pro XS?", answer: "Yes, Command Thrust is available on the 115 Pro XS for pontoon applications. Higher HP Pro XS V6 and V8 motors use different gearcase options designed for their performance ranges." },
@@ -31692,7 +31692,7 @@ If you've read this far and you're still trying to decide between Pro XS and Fou
 - Performance pontoon applications
 - You'd actually use the difference in horsepower delivery
 
-The pricing premium for Pro XS over the equivalent FourStroke runs roughly $1,500-$3,000 depending on HP class. That's the cost of the performance upgrade.
+There is no single price premium for Pro XS over FourStroke across the lineup. Compare current quotes for the exact models at the same horsepower, matching shaft length, controls and gearcase where applicable. Motor-only prices exclude HST and installation; rigging differences can change the installed-price gap.
 
 ## What an installed Pro XS costs in Ontario (2026)
 
