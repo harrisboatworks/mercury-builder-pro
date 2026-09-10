@@ -171,6 +171,8 @@ verify_jwt = false
 verify_jwt = false
 
 [functions.elevenlabs-mcp-server]
+# Third-party ElevenLabs caller. In-code gate uses ELEVENLABS_MCP_SECRET
+# via x-elevenlabs-mcp-secret. Do not reuse EDGE_INTERNAL_SECRET.
 verify_jwt = false
 
 [functions.perplexity-prefetch]
