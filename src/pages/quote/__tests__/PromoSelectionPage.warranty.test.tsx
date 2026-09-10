@@ -254,6 +254,23 @@ describe('PromoSelectionPage — warranty copy + saved-quote contract', () => {
     expect(navigateMock).toHaveBeenCalledWith('/quote/summary');
   });
 
+  it.each([null, { type: 'choose_one', options: [] }])(
+    'keeps cash selection available without structured promotion choices (%j)',
+    (promoOptions) => {
+      currentPromotions = [makePromo({ promo_options: promoOptions })];
+      currentQuoteState = {
+        ...baseQuoteState,
+        tradeInInfo: { hasTradeIn: true, estimatedValue: 3725 },
+      };
+      render(<PromoSelectionPage />);
+      expect(navigateMock).not.toHaveBeenCalled();
+      fireEvent.click(screen.getByRole('radio', { name: /Cash Purchase/i }));
+      fireEvent.click(screen.getByRole('button', { name: /Continue to Quote/i }));
+      expect(navigateMock).toHaveBeenCalledExactlyOnceWith('/quote/summary');
+      expect(dispatchMock).toHaveBeenCalledWith({ type: 'SET_PAYMENT_METHOD', payload: 'cash_purchase' });
+    },
+  );
+
   it('keeps a layered promotion step visible for optional financing', () => {
     currentPromotions = [makePromo({
       warranty_extra_years: 0,
