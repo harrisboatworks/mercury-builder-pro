@@ -864,7 +864,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   {
     "slug": "boat-repowering-guide-when-to-replace-motor",
     "title": "When to Replace Your Boat Motor. A Repowering Guide for Ontario Boat Owners.",
-    "description": "When is it time to repower? Honest Ontario cost ranges ($11K-$40K CAD), signs your motor is done, and a Mercury repower framework from HBW.",
+    "description": "When is it time to repower? Honest Ontario cost ranges ($6.5K-$40K CAD), signs your motor is done, and a Mercury repower framework from HBW.",
     "category": "Repowering",
     "publishDate": "2024-03-05",
     "keywords": [
