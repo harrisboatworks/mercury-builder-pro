@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/ontario-mercury-outboard-price-guide.md
-last_updated: 2026-09-07
+last_updated: 2026-09-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Outboard Prices Ontario (2026): CAD Guide"
 description: "Real Mercury outboard prices in Ontario for 2026: CAD pricing by HP tier, model code decoder, what's included vs not. Ontario Premier dealer's price guide."
 category: "Mercury Outboards"
 date_published: 2026-05-08
-date_modified: 2026-09-07
+date_modified: 2026-09-10
 keywords: ["mercury outboard prices","ontario","cad pricing","repower","buying guide"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Mercury Outboards  
 **Published:** 2026-05-08  
-**Last reviewed:** 2026-09-07  
+**Last reviewed:** 2026-09-10  
 **Read time:** ~14 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ontario-mercury-outboard-price-guide
 
@@ -41,19 +41,19 @@ Mercury outboard pricing in Ontario depends on horsepower, controls, prop, riggi
 
 Mercury prices in Canada fall into 5 clear bands. These are 2026 starting points before HST. Real out-the-door pricing depends on shaft length, controls, rigging, and trade-in.
 
-**Portable tiller (2.5-20 HP), $1,400-$4,200**
+**Portable tiller (2.5-20 HP), $1,298–$5,709**
 Small kicker and dinghy motors. The 9.9 EFI ProKicker is HBW's most-sold in this range. Cash-and-carry friendly.
 
-**Mid-range (25-60 HP), $4,800-$9,800**
+**Mid-range (25-60 HP), $5,093–$13,057**
 Aluminum-fishing-boat sweet spot. 40-60 HP is the working range for most 16-18 ft hulls. Tiller and remote both available.
 
-**High-HP FourStroke (75-115 HP), $11,500-$19,500**
+**High-HP FourStroke (75-115 HP), $14,476–$17,892**
 The Rice Lake repower bread-and-butter. 90 and 115 HP are our highest-volume Mercury SKUs.
 
 **150 FourStroke (inline-four)**
 See the 150 FourStroke section below for 19-21 ft bowrider repower guidance and an installed-cost example.
 
-**V6 Pro XS or V8 FourStroke (175-300 HP), $22,000-$38,000**
+**V6 Pro XS or V8 FourStroke (175-300 HP), $27,544–$39,402**
 Bass boats, larger aluminum, big pontoons. Pro XS V6 is competitive vs Yamaha. V8 FourStroke is the quiet premium option.
 
 **V10 Verado (350-400 HP), $46,000-$54,000+**

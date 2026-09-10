@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/repair-repower-or-sell-boat-ontario-decision-guide.md
-last_updated: 2026-09-06
+last_updated: 2026-09-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Repair, Repower or Sell? Ontario Decision Guide"
 description: "Repair, repower or sell your boat? A practical Ontario guide to comparing costs and hull condition, from the repower specialists at Harris Boat Works."
 category: "Buying Guides"
 date_published: 2026-05-17
-date_modified: 2026-09-06
+date_modified: 2026-09-10
 keywords: ["repair repower or sell boat ontario decision guide","repair repower or sell boat ontario decision guide ontario","harris boat works","mercury outboard","rice lake"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guides  
 **Published:** 2026-05-17  
-**Last reviewed:** 2026-09-06  
+**Last reviewed:** 2026-09-10  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/repair-repower-or-sell-boat-ontario-decision-guide
 
@@ -142,7 +142,7 @@ For the full new-vs-used cost comparison, our [New vs Used Mercury Outboard Guid
 ## Common scenarios we see
 
 **The 15-year-old boat with a 12-year-old motor and a $3,500 powerhead repair:**
-Usually repower. The boat is fine, the motor is past mid-life, and $3,500 buys you nothing but a tired motor that will need its next repair within 18 months. A $13,000 repower buys you a full factory warranty and a clean second life for the boat.
+Usually repower. The boat is fine, the motor is past mid-life, and $3,500 buys you nothing but a tired motor that will need its next repair within 18 months. A $17,500 repower buys you a full factory warranty and a clean second life for the boat.
 
 **The 8-year-old boat with a 6-year-old motor and a $1,200 fuel system repair:**
 Repair. The motor has plenty of life left, the repair is well under 30 percent of value, and the boat fits your life.

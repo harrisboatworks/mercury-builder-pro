@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-mercury-for-family-runabouts.md
-last_updated: 2026-09-06
+last_updated: 2026-09-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Best Mercury for Family Runabout 2026"
 description: "A Mercury Premier dealer's straight answer on the right Mercury for a family runabout, by boat length, by use case."
 category: "Buying Guide"
 date_published: 2026-05-06
-date_modified: 2026-09-06
+date_modified: 2026-09-10
 keywords: ["mercury family boat motor","family runabout outboard","mercury for pontoon","best mercury for recreation","family boat motor size","best Mercury outboard family runabout","Mercury 90 HP family boat","Mercury 150 HP runabout","family runabout horsepower","watersports family boat motor","quiet outboard family"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-05-06  
-**Last reviewed:** 2026-09-06  
+**Last reviewed:** 2026-09-10  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-mercury-for-family-runabouts
 
@@ -126,17 +126,17 @@ We sell ethanol-free 89 marine gas at the dock in Gores Landing. Pick the HP tha
 
 These are planning-level ranges for a motor with rigging, prop, and installation on a typical family runabout. Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) for your specific configuration and current pricing.
 
-| Motor | All-In (CAD, before HST) |
-|---|---|
-| 90 HP FourStroke | [Live motor price](/pricing-reference) plus quoted rigging, prop, and installation |
-| 115 HP FourStroke | $17,500 to $22,500 |
-| 150 HP FourStroke | $23,000 to $30,000 |
-| 175 HP V6 FourStroke | $26,000 to $32,500 |
-| 200 HP V6 FourStroke | $28,000 to $35,000 |
+| Motor | Bare motor today (CAD, before HST) | Add for rigging, controls, prop & install (estimate) |
+|---|---|---|
+| 90 HP FourStroke | $14,960–$15,477 | $2,000 to $3,000 |
+| 115 HP FourStroke | $17,083–$17,892 | $2,500 to $4,000 |
+| 150 HP FourStroke | $22,242–$22,363 | $3,500 to $5,500 |
+| 175 HP V6 FourStroke | $27,544–$27,676 | $4,500 to $6,500 |
+| 200 HP V6 FourStroke | $27,858–$29,623 | $4,500 to $6,500 |
 
 _Prices here are planning figures as of September 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
-"All-in" means motor, rigging, prop, and installation. If you're repowering, the trade-in value on your existing motor, typically $1,500 to $5,000 depending on age and condition, applies against the total.
+Your all-in cost is the two columns added together: motor plus rigging, prop, and installation. Every model and shaft variant is on our [Live motor price](/pricing-reference) page. If you're repowering, the trade-in value on your existing motor, typically $1,500 to $5,000 depending on age and condition, applies against the total.
 
 ### What We Do
 

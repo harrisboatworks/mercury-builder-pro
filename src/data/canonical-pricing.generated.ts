@@ -1100,6 +1100,146 @@ export const CANONICAL_RANGES: Record<string, CanonicalRange | null> = {
     "msrpMin": 3860,
     "msrpMax": 5540
   },
+  "prokicker_9_9": {
+    "count": 4,
+    "dealerMin": 5000,
+    "dealerMax": 5198,
+    "msrpMin": 5325,
+    "msrpMax": 5540
+  },
+  "fourstroke_25": {
+    "count": 3,
+    "dealerMin": 5093,
+    "dealerMax": 6265,
+    "msrpMin": 5425,
+    "msrpMax": 6675
+  },
+  "fourstroke_40": {
+    "count": 3,
+    "dealerMin": 9438,
+    "dealerMax": 9955,
+    "msrpMin": 10515,
+    "msrpMax": 11090
+  },
+  "fourstroke_60": {
+    "count": 5,
+    "dealerMin": 12040,
+    "dealerMax": 13057,
+    "msrpMin": 13415,
+    "msrpMax": 14545
+  },
+  "fourstroke_90": {
+    "count": 3,
+    "dealerMin": 14960,
+    "dealerMax": 15477,
+    "msrpMin": 16665,
+    "msrpMax": 17240
+  },
+  "fourstroke_115": {
+    "count": 4,
+    "dealerMin": 17083,
+    "dealerMax": 17892,
+    "msrpMin": 19030,
+    "msrpMax": 19930
+  },
+  "fourstroke_150": {
+    "count": 2,
+    "dealerMin": 22242,
+    "dealerMax": 22363,
+    "msrpMin": 24780,
+    "msrpMax": 24915
+  },
+  "fourstroke_175": {
+    "count": 2,
+    "dealerMin": 27544,
+    "dealerMax": 27676,
+    "msrpMin": 30685,
+    "msrpMax": 30830
+  },
+  "fourstroke_200": {
+    "count": 2,
+    "dealerMin": 27858,
+    "dealerMax": 29623,
+    "msrpMin": 31035,
+    "msrpMax": 33000
+  },
+  "fourstroke_250": {
+    "count": 4,
+    "dealerMin": 36080,
+    "dealerMax": 37466,
+    "msrpMin": 40195,
+    "msrpMax": 41740
+  },
+  "proxs_150": {
+    "count": 2,
+    "dealerMin": 24349,
+    "dealerMax": 24475,
+    "msrpMin": 27125,
+    "msrpMax": 27265
+  },
+  "proxs_175": {
+    "count": 2,
+    "dealerMin": 27891,
+    "dealerMax": 28287,
+    "msrpMin": 31070,
+    "msrpMax": 31510
+  },
+  "proxs_200": {
+    "count": 3,
+    "dealerMin": 28122,
+    "dealerMax": 30399,
+    "msrpMin": 31330,
+    "msrpMax": 33865
+  },
+  "proxs_225": {
+    "count": 2,
+    "dealerMin": 34029,
+    "dealerMax": 36300,
+    "msrpMin": 37910,
+    "msrpMax": 40440
+  },
+  "proxs_250": {
+    "count": 4,
+    "dealerMin": 34848,
+    "dealerMax": 37741,
+    "msrpMin": 38820,
+    "msrpMax": 42045
+  },
+  "proxs_300": {
+    "count": 4,
+    "dealerMin": 36542,
+    "dealerMax": 39402,
+    "msrpMin": 40710,
+    "msrpMax": 43895
+  },
+  "hp_75_to_115_all": {
+    "count": 12,
+    "dealerMin": 14476,
+    "dealerMax": 18299,
+    "msrpMin": 16125,
+    "msrpMax": 20385
+  },
+  "hp_150_to_200_all": {
+    "count": 13,
+    "dealerMin": 22242,
+    "dealerMax": 30399,
+    "msrpMin": 24780,
+    "msrpMax": 33865
+  },
+  "hp_175_to_300_all": {
+    "count": 31,
+    "dealerMin": 27544,
+    "dealerMax": 39402,
+    "msrpMin": 30685,
+    "msrpMax": 43895
+  },
+  "hp_250_to_300_all": {
+    "count": 16,
+    "dealerMin": 34848,
+    "dealerMax": 39402,
+    "msrpMin": 38820,
+    "msrpMax": 43895
+  },
   "full_lineup": {
     "count": 101,
     "dealerMin": 1298,

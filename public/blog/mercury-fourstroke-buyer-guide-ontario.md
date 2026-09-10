@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-fourstroke-buyer-guide-ontario.md
-last_updated: 2026-09-06
+last_updated: 2026-09-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury FourStroke Buyer Guide for Ontario (2026)"
 description: "Mercury FourStroke buyer guide for Ontario: 2.5-300 hp coverage, HP recommendations by boat, prices, options, install considerations."
 category: "Buying Guide"
 date_published: 2026-05-17
-date_modified: 2026-09-06
+date_modified: 2026-09-10
 keywords: ["mercury fourstroke buyer guide","mercury fourstroke ontario","mercury fourstroke pricing","mercury outboard buyer guide ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-05-17  
-**Last reviewed:** 2026-09-06  
+**Last reviewed:** 2026-09-10  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-fourstroke-buyer-guide-ontario
 
@@ -141,19 +141,19 @@ Most serious Ontario walleye, muskie, and bass setups run a 9.9 ProKicker on the
 
 Installed pricing varies by HP, rigging complexity, and trade-in credit. Real CAD installed ranges for typical Ontario repowers:
 
-| HP | Typical installed cost (CAD, with HST) |
-|---|---|
-| 9.9 ProKicker | $4,500 - $5,500 |
-| 25 | $6,500 - $8,000 |
-| 40 | $8,500 - $11,000 |
-| 60 | $10,500 - $13,500 |
-| 90 | $13,500 - $17,500 |
-| 115 | $15,500 - $19,500 |
-| 150 | $18,500 - $24,500 |
-| 200 V6 | $24,500 - $31,000 |
-| 250 V8 | $30,000 - $38,000 |
+| Motor | Bare motor today (CAD, before HST) | Add for rigging, controls, prop & install (estimate) |
+|---|---|---|
+| 9.9 ProKicker | $5,000–$5,198 | Quoted per boat |
+| 25 | $5,093–$6,265 | Quoted per boat |
+| 40 | $9,438–$9,955 | $1,500 to $2,500 |
+| 60 | $12,040–$13,057 | $1,500 to $2,500 |
+| 90 | $14,960–$15,477 | $2,000 to $3,000 |
+| 115 | $17,083–$17,892 | $2,500 to $4,000 |
+| 150 | $22,242–$22,363 | $3,500 to $5,500 |
+| 200 V6 | $27,858–$29,623 | $4,500 to $6,500 |
+| 250 V8 | $36,080–$37,466 | Quoted per boat |
 
-These are general ranges based on 2026 pricing. Your actual installed price depends on existing rigging condition, prop spec, and any required upgrades (controls, gauges, harness, hydraulic steering). For [Mercury outboard prices in Ontario](/pricing-reference) on every FourStroke model in CAD, see our full price reference. Build a real quote at mercuryrepower.ca for the actual number on your boat.
+These are general ranges based on 2026 pricing. Your actual installed price depends on existing rigging condition, prop spec, and any required upgrades (controls, gauges, harness, hydraulic steering). For [Mercury outboard prices in Ontario](/pricing-reference) on every FourStroke model in CAD, see our full price reference. Build a quote at mercuryrepower.ca for the exact installed total, HST extra.
 
 ## What we see at HBW
 
