@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-mercury-for-ski-wakeboard-boats.md
-last_updated: 2026-09-06
+last_updated: 2026-09-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Best Mercury for Ski Boats 2026"
 description: "Best Mercury outboard for ski and wakeboard boats. Covers hole shot, Pro XS vs FourStroke, and correct HP for desired wake. Ontario dealer's real-world picks."
 category: "Buying Guide"
 date_published: 2026-05-03
-date_modified: 2026-09-06
+date_modified: 2026-09-10
 keywords: ["mercury ski boat motor","wakeboard boat outboard","mercury for watersports","best outboard for skiing","wakesurf outboard motor","best Mercury for ski wakeboard boats","Mercury Pro XS tow boat","Mercury V8 wakeboard","hole shot tow boat"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-05-03  
-**Last reviewed:** 2026-09-06  
+**Last reviewed:** 2026-09-10  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-mercury-for-ski-wakeboard-boats
 
@@ -105,17 +105,17 @@ If wakesurfing is the primary use, consider an inboard tow boat instead. We'll b
 
 ## Real Pricing for Mercury Pro XS Tow Outboards
 
-| Motor | All-in pricing (CAD, before HST) |
-|-------|----------------------------------|
-| 175 HP Pro XS | $26,500-$31,500 |
-| 200 HP V8 Pro XS | $29,500-$34,000 |
-| 225 HP V8 Pro XS | $32,000-$36,500 |
-| 250 HP V8 Pro XS | $36,500-$40,500 |
-| 300 HP V8 Pro XS | $39,500-$44,000 |
+| Motor | Bare motor today (CAD, before HST) | Add for rigging, controls, prop & install (estimate) |
+|-------|----------------------------------|----------------------------------|
+| 175 HP Pro XS | $27,891–$28,287 | $4,500 to $6,500 |
+| 200 HP V8 Pro XS | $28,122–$30,399 | $4,500 to $6,500 |
+| 225 HP V8 Pro XS | $34,029–$36,300 | $5,000 to $7,500 |
+| 250 HP V8 Pro XS | $34,848–$37,741 | Quoted per boat |
+| 300 HP V8 Pro XS | $36,542–$39,402 | Quoted per boat |
 
 _Prices here are planning figures as of September 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
-Pricing includes the motor, rigging, prop, and installation. Use the [configurator](https://www.mercuryrepower.ca) for exact current pricing.
+The motor column is the bare motor; rigging, prop, and installation are the second column. Use the [configurator](https://www.mercuryrepower.ca) for exact current pricing.
 
 For a tow boat repower, you also typically want:
 - **Stainless steel prop** instead of aluminum, better hole shot, more durable. Add $300-$700.

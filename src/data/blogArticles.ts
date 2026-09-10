@@ -3024,7 +3024,7 @@ Complete the licence before rental day, then [book the boat online](/blog/first-
     image: '/lovable-uploads/hero-ucp-agentic-commerce.png',
     author: 'Jay Harris',
     datePublished: '2026-06-11',
-    dateModified: '2026-09-06',
+    dateModified: '2026-09-10',
     publishDate: '2026-06-11',
     category: 'Mercury Technology',
     readTime: '6 min read',
@@ -3072,7 +3072,7 @@ To our knowledge, we’re the first marine dealer in North America with a live U
 
 If you’re using a UCP-aware assistant (and that list grows weekly), here’s what works today:
 
-- **Find a motor.** "Show me Mercury 90 HP four-strokes in stock at Harris Boat Works under $13,000 CAD." The assistant pulls live inventory from our catalog and returns real listings with our CAD prices.
+- **Find a motor.** "Show me Mercury 90 HP four-strokes in stock at Harris Boat Works under $16,000 CAD." The assistant pulls live inventory from our catalog and returns real listings with our CAD prices.
 - **Build a real quote.** "Build a quote for a 90 ELPT FourStroke installed on a 2015 Lund Pro-V, [trading in a 75 HP Mercury](/blog/outboard-trade-in-value-ontario-hbw) from 2010." You get an itemized quote: motor, controls, propeller, install, trade-in credit, HST estimate, and our financing tier (see the [Ontario rates and monthly payment guide](/blog/mercury-outboard-monthly-payment-ontario-2026) for the underlying numbers).
 - **Get handed back to the dealer.** Every checkout session returns a \`continue_url\` that drops you into our live quote flow with everything pre-filled, so you can review, save, or call us at (905) 342-2153.
 - **Register the quote.** If you let your assistant share your name and email, the quote is registered with the dealership and a human at HBW can follow up. Optional. Skipping it still gets you a working quote.
@@ -5226,11 +5226,11 @@ footer: Not sure repower makes sense yet? Start with the [repower basics](/repow
     slug: 'boat-repowering-guide-when-to-replace-motor',
     title: 'When to Replace Your Boat Motor. A Repowering Guide for Ontario Boat Owners.',
     seoTitle: "When to Replace Your Boat Motor: Repowering Guide | Harris Boat Works",
-    description: "When is it time to repower? Honest Ontario cost ranges ($11K-$40K CAD), signs your motor is done, and a Mercury repower framework from HBW.",
+    description: "When is it time to repower? Honest Ontario cost ranges ($6.5K-$40K CAD), signs your motor is done, and a Mercury repower framework from HBW.",
     image: '/lovable-uploads/hero-boat-repowering-guide-when-to-replace-motor.png',
     author: 'Harris Boat Works',
     datePublished: '2024-03-05',
-    dateModified: '2026-09-06',
+    dateModified: '2026-09-10',
     category: 'Repowering',
     readTime: '9 min read',
     keywords: ['boat repowering', 'when to replace outboard', 'repower cost', 'new boat vs repower', 'outboard motor replacement'],
@@ -5248,7 +5248,7 @@ The signs your motor needs replacement are usually consistent: harder starts eac
 | Motor state | Dead/unreliable, metal in gearcase oil, failed cylinder | Runs fine but 15+ yr or 1,500+ hr | Post-2010, maintained, still reliable |
 | Repair versus full repower | Major work with other unresolved faults | Get itemized quotes for both options | Isolated repair; the rest of the motor checks out |
 | Engine era | 2-stroke (pre-2005) | FourStroke 2002-2009 | Post-2010 |
-| Move | Quote a repower ($11K-$40K CAD) | Plan and order over winter for an early-spring install | Keep running, stay on maintenance |
+| Move | Quote a repower ($6.5K-$40K CAD) | Plan and order over winter for an early-spring install | Keep running, stay on maintenance |
 
 _Prices here are planning figures, last reviewed 2026-08-26. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
@@ -5435,7 +5435,7 @@ Modern FourStrokes can hit 2,000+ hours with proper maintenance. Older 2-strokes
 If it's been well-maintained and still performs reasonably, you can run it longer. But plan the repower budget over the next 2 to 3 seasons. 20+ year old motors have limited remaining life regardless of how they sound today.
 
 **How much does a Mercury repower cost?**
-Depends on HP. A 25 to 60 HP repower lands $11,000 to $15,000 CAD all-in. A 90 to 115 HP repower lands $17,000 to $22,000 CAD. A 150 to 200 HP repower lands $23,000 to $36,000 CAD. See our [Mercury repower cost guide](/blog/mercury-repower-cost-ontario-2026-cad) for full ranges.
+Depends on HP. A 25 to 60 HP repower lands $6,500 to $15,500 CAD all-in. A 90 to 115 HP repower lands $17,000 to $22,500 CAD. A 150 to 200 HP repower lands $25,500 to $37,000 CAD. See our [Mercury repower cost guide](/blog/mercury-repower-cost-ontario-2026-cad) for full ranges.
 
 **Is it cheaper to repair or repower an old motor?**
 Depends on motor age and repair cost. Compare an itemized repair quote with the full installed repower cost. Consider the condition of the rest of the motor, your expected use, and how long you plan to keep the boat. Mid-age motors with smaller repairs: repair often makes sense. We do this math case by case.
@@ -11065,7 +11065,7 @@ Honest version: the right month to buy is the month you actually need the boat o
     imageAlt: 'Docked Crestliner family runabout with a black Mercury 115 FourStroke on calm Ontario water.',
     author: 'Harris Boat Works',
     datePublished: '2026-05-06',
-    dateModified: '2026-09-06',
+    dateModified: '2026-09-10',
     publishDate: '2026-05-06',
     category: 'Buying Guide',
     readTime: '9 min read',
@@ -11166,17 +11166,17 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 
 These are planning-level ranges for a motor with rigging, prop, and installation on a typical family runabout. Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) for your specific configuration and current pricing.
 
-| Motor | All-In (CAD, before HST) |
-|---|---|
-| 90 HP FourStroke | [Live motor price](/pricing-reference) plus quoted rigging, prop, and installation |
-| 115 HP FourStroke | $17,500 to $22,500 |
-| 150 HP FourStroke | $23,000 to $30,000 |
-| 175 HP V6 FourStroke | $26,000 to $32,500 |
-| 200 HP V6 FourStroke | $28,000 to $35,000 |
+| Motor | Bare motor today (CAD, before HST) | Add for rigging, controls, prop & install (estimate) |
+|---|---|---|
+| 90 HP FourStroke | ${'$14,960–$15,477' /* @canonical:dealer-range:fourstroke_90 */} | $2,000 to $3,000 |
+| 115 HP FourStroke | ${'$17,083–$17,892' /* @canonical:dealer-range:fourstroke_115 */} | $2,500 to $4,000 |
+| 150 HP FourStroke | ${'$22,242–$22,363' /* @canonical:dealer-range:fourstroke_150 */} | $3,500 to $5,500 |
+| 175 HP V6 FourStroke | ${'$27,544–$27,676' /* @canonical:dealer-range:fourstroke_175 */} | $4,500 to $6,500 |
+| 200 HP V6 FourStroke | ${'$27,858–$29,623' /* @canonical:dealer-range:fourstroke_200 */} | $4,500 to $6,500 |
 
 _Prices here are planning figures as of {{PRICING_ASOF}}. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
-"All-in" means motor, rigging, prop, and installation. If you're repowering, the trade-in value on your existing motor, typically $1,500 to $5,000 depending on age and condition, applies against the total.
+Your all-in cost is the two columns added together: motor plus rigging, prop, and installation. Every model and shaft variant is on our [Live motor price](/pricing-reference) page. If you're repowering, the trade-in value on your existing motor, typically $1,500 to $5,000 depending on age and condition, applies against the total.
 
 ### What We Do
 
@@ -11279,7 +11279,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Mercury 175 Pro XS outboard on a tow boat pulling a wakeboarder at golden hour on an Ontario lake',
     author: 'Harris Boat Works',
     datePublished: '2026-05-03',
-    dateModified: '2026-09-06',
+    dateModified: '2026-09-10',
     publishDate: '2026-05-03',
     category: 'Buying Guide',
     readTime: '9 min read',
@@ -11362,17 +11362,17 @@ If wakesurfing is the primary use, consider an inboard tow boat instead. We'll b
 
 ## Real Pricing for Mercury Pro XS Tow Outboards
 
-| Motor | All-in pricing (CAD, before HST) |
-|-------|----------------------------------|
-| 175 HP Pro XS | $26,500-$31,500 |
-| 200 HP V8 Pro XS | $29,500-$34,000 |
-| 225 HP V8 Pro XS | $32,000-$36,500 |
-| 250 HP V8 Pro XS | $36,500-$40,500 |
-| 300 HP V8 Pro XS | $39,500-$44,000 |
+| Motor | Bare motor today (CAD, before HST) | Add for rigging, controls, prop & install (estimate) |
+|-------|----------------------------------|----------------------------------|
+| 175 HP Pro XS | ${'$27,891–$28,287' /* @canonical:dealer-range:proxs_175 */} | $4,500 to $6,500 |
+| 200 HP V8 Pro XS | ${'$28,122–$30,399' /* @canonical:dealer-range:proxs_200 */} | $4,500 to $6,500 |
+| 225 HP V8 Pro XS | ${'$34,029–$36,300' /* @canonical:dealer-range:proxs_225 */} | $5,000 to $7,500 |
+| 250 HP V8 Pro XS | ${'$34,848–$37,741' /* @canonical:dealer-range:proxs_250 */} | Quoted per boat |
+| 300 HP V8 Pro XS | ${'$36,542–$39,402' /* @canonical:dealer-range:proxs_300 */} | Quoted per boat |
 
 _Prices here are planning figures as of {{PRICING_ASOF}}. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
-Pricing includes the motor, rigging, prop, and installation. Use the [configurator](https://www.mercuryrepower.ca) for exact current pricing.
+The motor column is the bare motor; rigging, prop, and installation are the second column. Use the [configurator](https://www.mercuryrepower.ca) for exact current pricing.
 
 For a tow boat repower, you also typically want:
 - **Stainless steel prop** instead of aluminum, better hole shot, more durable. Add $300-$700.
@@ -23714,19 +23714,19 @@ Mercury outboard pricing in Ontario depends on horsepower, controls, prop, riggi
 
 Mercury prices in Canada fall into 5 clear bands. These are 2026 starting points before HST. Real out-the-door pricing depends on shaft length, controls, rigging, and trade-in.
 
-**Portable tiller (2.5-20 HP), $1,400-$4,200**
+**Portable tiller (2.5-20 HP), ${'$1,298–$5,709' /* @canonical:dealer-range:portable_2_5_to_20 */}**
 Small kicker and dinghy motors. The 9.9 EFI ProKicker is HBW's most-sold in this range. Cash-and-carry friendly.
 
-**Mid-range (25-60 HP), $4,800-$9,800**
+**Mid-range (25-60 HP), ${'$5,093–$13,057' /* @canonical:dealer-range:midrange_25_to_60 */}**
 Aluminum-fishing-boat sweet spot. 40-60 HP is the working range for most 16-18 ft hulls. Tiller and remote both available.
 
-**High-HP FourStroke (75-115 HP), $11,500-$19,500**
+**High-HP FourStroke (75-115 HP), ${'$14,476–$17,892' /* @canonical:dealer-range:fourstroke_75_to_115 */}**
 The Rice Lake repower bread-and-butter. 90 and 115 HP are our highest-volume Mercury SKUs.
 
 **150 FourStroke (inline-four)**
 See the 150 FourStroke section below for 19-21 ft bowrider repower guidance and an installed-cost example.
 
-**V6 Pro XS or V8 FourStroke (175-300 HP), $22,000-$38,000**
+**V6 Pro XS or V8 FourStroke (175-300 HP), ${'$27,544–$39,402' /* @canonical:dealer-range:hp_175_to_300_all */}**
 Bass boats, larger aluminum, big pontoons. Pro XS V6 is competitive vs Yamaha. V8 FourStroke is the quiet premium option.
 
 **V10 Verado (350-400 HP), $46,000-$54,000+**
@@ -23837,7 +23837,7 @@ We're at 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. Pickup only, we d
     imageAlt: 'Technician servicing a Mercury outboard in an Ontario workshop to illustrate the professional installation behind pricing.',
     author: 'Jay Harris',
     datePublished: '2026-05-08',
-    dateModified: '2026-09-07',
+    dateModified: '2026-09-10',
     publishDate: '2026-05-08',
     category: 'Mercury Outboards',
     readTime: '~14 min read',
@@ -30072,7 +30072,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: "/lovable-uploads/hero-new-vs-used-mercury-outboard-ontario.png",
     author: "Harris Boat Works",
     datePublished: "2026-05-16",
-    dateModified: "2026-09-06",
+    dateModified: "2026-09-10",
     publishDate: "2026-05-16",
     category: "Buying Guides",
     readTime: "9 min read",
@@ -30115,7 +30115,7 @@ The less obvious benefit is **known maintenance horizon**. With a new motor you 
 
 The third benefit is **current technology**. The 2027 Mercury lineup includes refinements in EFI calibration, SmartCraft integration, and noise reduction that did not exist on motors built before 2020. If you care about the smoothness and fuel economy of the new engines, you can feel the difference in a 30-second test drive.
 
-The downside is the price. A new Mercury 90 FourStroke ELPT installed and rigged on a typical Ontario aluminum boat lands in the $13,000 to $15,000 range depending on the package. New 115s go higher. That is real money to write a cheque for in May.
+The downside is the price. A new Mercury 90 ELPT FourStroke is ${'$14,960' /* @canonical:dealer:90elpt-fourstroke */} bare, and rigging, controls, prop and install on a typical Ontario aluminum boat add roughly $2,000 to $3,000, so installed and rigged it lands around $17,500 before HST. New 115s go higher. That is real money to write a cheque for in May.
 
 ## What "used" actually buys you
 
@@ -30139,22 +30139,22 @@ Here is a realistic comparison we walk customers through at the marina. Numbers 
 
 | Item | New Mercury 90 ELPT | Used Mercury 90 (2018-2020, ~400 hrs) |
 |---|---|---|
-| Motor purchase | $11,500 | $6,500 |
+| Motor purchase | ${'$14,960' /* @canonical:dealer:90elpt-fourstroke */} | $6,500 |
 | Install and rigging | $2,500 | $1,500 (controls usually transfer) |
 | Year-one service | 100-hour or annual service, scoped by model | Catch-up service based on records and inspection |
 | Warranty | 3 years factory (see /promotions for current offers) | Verify any unexpired transferable coverage by serial number |
 | Expected service cost years 2-5 | $1,000-$1,500 | $1,500-$2,500, depending on condition and records |
-| **5-year all-in estimate** | **$15,500-$16,000** | **$10,300-$12,000** |
+| **5-year all-in estimate** | **$18,500-$19,000** | **$10,300-$12,000** |
 
 _Prices here are planning figures as of {{PRICING_ASOF}}. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
-The used motor saves you roughly $3,500-$6,000 over five years. But the new motor saves you the **uncertainty premium**, which is hard to put a dollar value on until the day a $4,000 powerhead repair lands in your driveway.
+The used motor saves you roughly $6,500-$8,500 over five years. But the new motor saves you the **uncertainty premium**, which is hard to put a dollar value on until the day a $4,000 powerhead repair lands in your driveway.
 
 ::walkaround-lead-capture
 
 ## The trade-in wrinkle: HST only on the difference
 
-One more piece of math most buyers miss. For a typical private recreational trade at an Ontario dealer, HST is charged on the difference between the new purchase and your trade-in allowance, not the full sticker. Taxable-business or GST/HST-registrant trades are a separate case. A $3,500 private-owner trade against a $13,000 repower means you pay tax on $9,500, which keeps roughly $455 in your pocket on top of the trade value itself. A private sale has no equivalent lever. It narrows the new-vs-used gap more than most people expect, and it is worth running before you decide. Curious what your current motor is worth? Our [outboard trade-in guide](/blog/outboard-trade-in-value-ontario-hbw) covers how we value trades.
+One more piece of math most buyers miss. For a typical private recreational trade at an Ontario dealer, HST is charged on the difference between the new purchase and your trade-in allowance, not the full sticker. Taxable-business or GST/HST-registrant trades are a separate case. A $3,500 private-owner trade against a $17,500 repower means you pay tax on $14,000, which keeps roughly $455 in your pocket on top of the trade value itself. A private sale has no equivalent lever. It narrows the new-vs-used gap more than most people expect, and it is worth running before you decide. Curious what your current motor is worth? Our [outboard trade-in guide](/blog/outboard-trade-in-value-ontario-hbw) covers how we value trades.
 
 ## When new is the right answer
 
@@ -30182,7 +30182,7 @@ Customers we steer toward used: occasional weekenders who do not log many hours,
 
 ## What we do at Harris Boat Works
 
-We are a Mercury Premier dealer, which means new motor sales and Mercury Product Protection paperwork are a core part of the business. We also broker used boats and motors regularly, sometimes from trade-ins, sometimes from local consignment, sometimes from estate sales. When a customer walks in deciding between a $13,000 new repower and a $7,500 used motor, we do not push one direction. We walk through the math above with the customer's actual boat and actual budget, and the honest answer is usually obvious by the end of the conversation.
+We are a Mercury Premier dealer, which means new motor sales and Mercury Product Protection paperwork are a core part of the business. We also broker used boats and motors regularly, sometimes from trade-ins, sometimes from local consignment, sometimes from estate sales. When a customer walks in deciding between a $17,500 new repower and a $7,500 used motor, we do not push one direction. We walk through the math above with the customer's actual boat and actual budget, and the honest answer is usually obvious by the end of the conversation.
 
 If you are weighing this decision and want a second set of eyes, drop us an email at info@harrisboatworks.ca with the boat's specs, the used motor's documented history (if you have it), and a rough budget. We will tell you what we would do in your situation.
 
@@ -31071,7 +31071,7 @@ We diagnose Mercury outboards using the engine identity, symptom history and app
     imageAlt: 'Older Mercury outboard and worn transom beside a new Mercury repower installation at Harris Boat Works',
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
-    dateModified: '2026-09-06',
+    dateModified: '2026-09-10',
     publishDate: '2026-05-17',
     category: 'Buying Guides',
     readTime: '9 min read',
@@ -31200,7 +31200,7 @@ For the full new-vs-used cost comparison, our [New vs Used Mercury Outboard Guid
 ## Common scenarios we see
 
 **The 15-year-old boat with a 12-year-old motor and a $3,500 powerhead repair:**
-Usually repower. The boat is fine, the motor is past mid-life, and $3,500 buys you nothing but a tired motor that will need its next repair within 18 months. A $13,000 repower buys you a full factory warranty and a clean second life for the boat.
+Usually repower. The boat is fine, the motor is past mid-life, and $3,500 buys you nothing but a tired motor that will need its next repair within 18 months. A $17,500 repower buys you a full factory warranty and a clean second life for the boat.
 
 **The 8-year-old boat with a 6-year-old motor and a $1,200 fuel system repair:**
 Repair. The motor has plenty of life left, the repair is well under 30 percent of value, and the boat fits your life.
@@ -31411,7 +31411,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Mercury 115 FourStroke outboard on an aluminum fishing boat at an Ontario dock for our 2026 buyer guide.',
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
-    dateModified: '2026-09-06',
+    dateModified: '2026-09-10',
     publishDate: '2026-05-17',
     category: 'Buying Guide',
     readTime: '9 min read',
@@ -31538,19 +31538,19 @@ Most serious Ontario walleye, muskie, and bass setups run a 9.9 ProKicker on the
 
 Installed pricing varies by HP, rigging complexity, and trade-in credit. Real CAD installed ranges for typical Ontario repowers:
 
-| HP | Typical installed cost (CAD, with HST) |
-|---|---|
-| 9.9 ProKicker | $4,500 - $5,500 |
-| 25 | $6,500 - $8,000 |
-| 40 | $8,500 - $11,000 |
-| 60 | $10,500 - $13,500 |
-| 90 | $13,500 - $17,500 |
-| 115 | $15,500 - $19,500 |
-| 150 | $18,500 - $24,500 |
-| 200 V6 | $24,500 - $31,000 |
-| 250 V8 | $30,000 - $38,000 |
+| Motor | Bare motor today (CAD, before HST) | Add for rigging, controls, prop & install (estimate) |
+|---|---|---|
+| 9.9 ProKicker | ${'$5,000–$5,198' /* @canonical:dealer-range:prokicker_9_9 */} | Quoted per boat |
+| 25 | ${'$5,093–$6,265' /* @canonical:dealer-range:fourstroke_25 */} | Quoted per boat |
+| 40 | ${'$9,438–$9,955' /* @canonical:dealer-range:fourstroke_40 */} | $1,500 to $2,500 |
+| 60 | ${'$12,040–$13,057' /* @canonical:dealer-range:fourstroke_60 */} | $1,500 to $2,500 |
+| 90 | ${'$14,960–$15,477' /* @canonical:dealer-range:fourstroke_90 */} | $2,000 to $3,000 |
+| 115 | ${'$17,083–$17,892' /* @canonical:dealer-range:fourstroke_115 */} | $2,500 to $4,000 |
+| 150 | ${'$22,242–$22,363' /* @canonical:dealer-range:fourstroke_150 */} | $3,500 to $5,500 |
+| 200 V6 | ${'$27,858–$29,623' /* @canonical:dealer-range:fourstroke_200 */} | $4,500 to $6,500 |
+| 250 V8 | ${'$36,080–$37,466' /* @canonical:dealer-range:fourstroke_250 */} | Quoted per boat |
 
-These are general ranges based on 2026 pricing. Your actual installed price depends on existing rigging condition, prop spec, and any required upgrades (controls, gauges, harness, hydraulic steering). For [Mercury outboard prices in Ontario](/pricing-reference) on every FourStroke model in CAD, see our full price reference. Build a real quote at mercuryrepower.ca for the actual number on your boat.
+These are general ranges based on 2026 pricing. Your actual installed price depends on existing rigging condition, prop spec, and any required upgrades (controls, gauges, harness, hydraulic steering). For [Mercury outboard prices in Ontario](/pricing-reference) on every FourStroke model in CAD, see our full price reference. Build a quote at mercuryrepower.ca for the exact installed total, HST extra.
 
 ## What we see at HBW
 
@@ -31585,7 +31585,7 @@ For complex repowers (twin-engine setups, brand conversions, or unusual configur
     image: '/lovable-uploads/hero-mercury-pro-xs-buyer-guide.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
-    dateModified: '2026-09-06',
+    dateModified: '2026-09-10',
     publishDate: '2026-05-17',
     category: 'Buying Guide',
     readTime: '8 min read',
@@ -31696,17 +31696,17 @@ The pricing premium for Pro XS over the equivalent FourStroke runs roughly $1,50
 
 ## What an installed Pro XS costs in Ontario (2026)
 
-| HP | Typical installed cost (CAD, with HST) |
-|---|---|
-| 115 Pro XS | $17,000 - $21,500 |
-| 150 Pro XS | $20,500 - $26,500 |
-| 175 Pro XS V6 | $25,500 - $32,000 |
-| 200 Pro XS V8 | $27,500 - $34,500 |
-| 225 Pro XS V8 | $30,000 - $37,500 |
-| 250 Pro XS V8 | $33,000 - $41,000 |
-| 300 Pro XS V8 | $37,500 - $46,500 |
+| Motor | Bare motor today (CAD, before HST) | Add for rigging, controls, prop & install (estimate) |
+|---|---|---|
+| 115 Pro XS | ${'$17,490–$18,299' /* @canonical:dealer-range:proxs_115 */} | $2,500 to $4,000 |
+| 150 Pro XS | ${'$24,349–$24,475' /* @canonical:dealer-range:proxs_150 */} | $3,500 to $5,500 |
+| 175 Pro XS V6 | ${'$27,891–$28,287' /* @canonical:dealer-range:proxs_175 */} | $4,500 to $6,500 |
+| 200 Pro XS V8 | ${'$28,122–$30,399' /* @canonical:dealer-range:proxs_200 */} | $4,500 to $6,500 |
+| 225 Pro XS V8 | ${'$34,029–$36,300' /* @canonical:dealer-range:proxs_225 */} | $5,000 to $7,500 |
+| 250 Pro XS V8 | ${'$34,848–$37,741' /* @canonical:dealer-range:proxs_250 */} | Quoted per boat |
+| 300 Pro XS V8 | ${'$36,542–$39,402' /* @canonical:dealer-range:proxs_300 */} | Quoted per boat |
 
-These are general 2026 ranges. Your real installed price depends on existing rigging, prop spec, hydraulic steering requirements, and any harness work. [Browse every Mercury price](/pricing-reference) in CAD on our price reference, then build a real quote at mercuryrepower.ca.
+These are general 2026 ranges. Your real installed price depends on existing rigging, prop spec, hydraulic steering requirements, and any harness work. [Browse every Mercury price](/pricing-reference) in CAD on our price reference, then build a quote at mercuryrepower.ca for the exact installed total, HST extra.
 
 ## What we see at HBW
 
@@ -33850,10 +33850,10 @@ We quote both the motor-only price and the all-in installed price so customers s
 
 | HP class | Mercury motor (CAD, before tax) | Rigging premium for brand swap | All-in installed (estimate) |
 |--|--|--|--|
-| 25-60 HP | $4,800-$10,500 | $1,200-$2,000 | $11,000-$16,500 |
-| 75-115 HP | $11,500-$14,800 | $1,800-$2,800 | $17,000-$23,000 |
-| 150-200 HP | $17,500-$22,000 | $2,200-$3,500 | $23,000-$37,000 |
-| 250-300 HP | $25,000-$32,000 | $2,800-$4,500 | $35,000-$48,000 |
+| 25-60 HP | ${'$5,093–$13,057' /* @canonical:dealer-range:midrange_25_to_60 */} | $1,200-$2,000 | $7,500-$17,500 |
+| 75-115 HP | ${'$14,476–$18,299' /* @canonical:dealer-range:hp_75_to_115_all */} | $1,800-$2,800 | $18,500-$25,000 |
+| 150-200 HP | ${'$22,242–$30,399' /* @canonical:dealer-range:hp_150_to_200_all */} | $2,200-$3,500 | $28,000-$40,500 |
+| 250-300 HP | ${'$34,848–$39,402' /* @canonical:dealer-range:hp_250_to_300_all */} | $2,800-$4,500 | Quoted per boat |
 
 _Prices here are planning figures as of {{PRICING_ASOF}}. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
@@ -33961,7 +33961,7 @@ Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Family-owned s
     imageAlt: "Repower acceptance planning: confirm the scope, record results, and account for safe testing conditions.",
     author: 'Jay Harris, Harris Boat Works',
     datePublished: '2026-05-28',
-    dateModified: '2026-09-07',
+    dateModified: '2026-09-10',
     category: 'Repower Guide',
     readTime: '11 min read',
     keywords: ["Yamaha to Mercury repower", "Yamaha to Mercury Ontario", "brand swap outboard repower", "Mercury repower cost Ontario", "Yamaha Command Link Mercury", "Yamaha F150 to Mercury 150", "Mercury Premier dealer Ontario", "Yamaha trade-in Mercury"],

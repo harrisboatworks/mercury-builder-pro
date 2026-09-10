@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-repowering-guide-when-to-replace-motor.md
-last_updated: 2026-09-06
+last_updated: 2026-09-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -8,10 +8,10 @@ final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
 title: "When to Replace Your Boat Motor. A Repowering Guide for Ontario Boat Owners."
-description: "When is it time to repower? Honest Ontario cost ranges ($11K-$40K CAD), signs your motor is done, and a Mercury repower framework from HBW."
+description: "When is it time to repower? Honest Ontario cost ranges ($6.5K-$40K CAD), signs your motor is done, and a Mercury repower framework from HBW."
 category: "Repowering"
 date_published: 2024-03-05
-date_modified: 2026-09-06
+date_modified: 2026-09-10
 keywords: ["boat repowering","when to replace outboard","repower cost","new boat vs repower","outboard motor replacement"]
 author: Harris Boat Works
 content_type: blog_article
@@ -21,11 +21,11 @@ revenue_driver: repower
 
 # When to Replace Your Boat Motor. A Repowering Guide for Ontario Boat Owners.
 
-> When is it time to repower? Honest Ontario cost ranges ($11K-$40K CAD), signs your motor is done, and a Mercury repower framework from HBW.
+> When is it time to repower? Honest Ontario cost ranges ($6.5K-$40K CAD), signs your motor is done, and a Mercury repower framework from HBW.
 
 **Category:** Repowering  
 **Published:** 2024-03-05  
-**Last reviewed:** 2026-09-06  
+**Last reviewed:** 2026-09-10  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-repowering-guide-when-to-replace-motor
 
@@ -40,7 +40,7 @@ The signs your motor needs replacement are usually consistent: harder starts eac
 | Motor state | Dead/unreliable, metal in gearcase oil, failed cylinder | Runs fine but 15+ yr or 1,500+ hr | Post-2010, maintained, still reliable |
 | Repair versus full repower | Major work with other unresolved faults | Get itemized quotes for both options | Isolated repair; the rest of the motor checks out |
 | Engine era | 2-stroke (pre-2005) | FourStroke 2002-2009 | Post-2010 |
-| Move | Quote a repower ($11K-$40K CAD) | Plan and order over winter for an early-spring install | Keep running, stay on maintenance |
+| Move | Quote a repower ($6.5K-$40K CAD) | Plan and order over winter for an early-spring install | Keep running, stay on maintenance |
 
 _Prices here are planning figures, last reviewed 2026-08-26. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 

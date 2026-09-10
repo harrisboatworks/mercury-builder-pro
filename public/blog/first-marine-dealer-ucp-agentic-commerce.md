@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/first-marine-dealer-ucp-agentic-commerce.md
-last_updated: 2026-09-06
+last_updated: 2026-09-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Quote via AI at Harris Boat Works"
 description: "Harris Boat Works is a live Universal Commerce Protocol merchant. AI assistants can now build a real CAD Mercury outboard quote."
 category: "Mercury Technology"
 date_published: 2026-06-11
-date_modified: 2026-09-06
+date_modified: 2026-09-10
 keywords: ["universal commerce protocol","UCP marine dealer","AI agent Mercury quote","agentic commerce Ontario","ChatGPT buy outboard","Shopify ucp-cli","Harris Boat Works UCP"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Mercury Technology  
 **Published:** 2026-06-11  
-**Last reviewed:** 2026-09-06  
+**Last reviewed:** 2026-09-10  
 **Read time:** 6 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/first-marine-dealer-ucp-agentic-commerce
 
@@ -64,7 +64,7 @@ To our knowledge, we’re the first marine dealer in North America with a live U
 
 If you’re using a UCP-aware assistant (and that list grows weekly), here’s what works today:
 
-- **Find a motor.** "Show me Mercury 90 HP four-strokes in stock at Harris Boat Works under $13,000 CAD." The assistant pulls live inventory from our catalog and returns real listings with our CAD prices.
+- **Find a motor.** "Show me Mercury 90 HP four-strokes in stock at Harris Boat Works under $16,000 CAD." The assistant pulls live inventory from our catalog and returns real listings with our CAD prices.
 - **Build a real quote.** "Build a quote for a 90 ELPT FourStroke installed on a 2015 Lund Pro-V, [trading in a 75 HP Mercury](/blog/outboard-trade-in-value-ontario-hbw) from 2010." You get an itemized quote: motor, controls, propeller, install, trade-in credit, HST estimate, and our financing tier (see the [Ontario rates and monthly payment guide](/blog/mercury-outboard-monthly-payment-ontario-2026) for the underlying numbers).
 - **Get handed back to the dealer.** Every checkout session returns a `continue_url` that drops you into our live quote flow with everything pre-filled, so you can review, save, or call us at (905) 342-2153.
 - **Register the quote.** If you let your assistant share your name and email, the quote is registered with the dealership and a human at HBW can follow up. Optional. Skipping it still gets you a working quote.

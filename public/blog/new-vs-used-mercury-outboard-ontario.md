@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/new-vs-used-mercury-outboard-ontario.md
-last_updated: 2026-09-06
+last_updated: 2026-09-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "New vs Used Mercury Outboard in Ontario, by the Numbers"
 description: "New Mercury or used Mercury? The honest math for Ontario buyers, from a Mercury Premier dealer who sells both."
 category: "Buying Guides"
 date_published: 2026-05-16
-date_modified: 2026-09-06
+date_modified: 2026-09-10
 keywords: ["new vs used mercury outboard","used mercury outboard ontario","new mercury outboard ontario","mercury outboard buying guide","mercury premier dealer ontario","mercury product protection","used outboard inspection ontario","mercury repower vs used"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guides  
 **Published:** 2026-05-16  
-**Last reviewed:** 2026-09-06  
+**Last reviewed:** 2026-09-10  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/new-vs-used-mercury-outboard-ontario
 
@@ -45,7 +45,7 @@ The less obvious benefit is **known maintenance horizon**. With a new motor you 
 
 The third benefit is **current technology**. The 2027 Mercury lineup includes refinements in EFI calibration, SmartCraft integration, and noise reduction that did not exist on motors built before 2020. If you care about the smoothness and fuel economy of the new engines, you can feel the difference in a 30-second test drive.
 
-The downside is the price. A new Mercury 90 FourStroke ELPT installed and rigged on a typical Ontario aluminum boat lands in the $13,000 to $15,000 range depending on the package. New 115s go higher. That is real money to write a cheque for in May.
+The downside is the price. A new Mercury 90 ELPT FourStroke is $14,960 bare, and rigging, controls, prop and install on a typical Ontario aluminum boat add roughly $2,000 to $3,000, so installed and rigged it lands around $17,500 before HST. New 115s go higher. That is real money to write a cheque for in May.
 
 ## What "used" actually buys you
 
@@ -69,20 +69,20 @@ Here is a realistic comparison we walk customers through at the marina. Numbers 
 
 | Item | New Mercury 90 ELPT | Used Mercury 90 (2018-2020, ~400 hrs) |
 |---|---|---|
-| Motor purchase | $11,500 | $6,500 |
+| Motor purchase | $14,960 | $6,500 |
 | Install and rigging | $2,500 | $1,500 (controls usually transfer) |
 | Year-one service | 100-hour or annual service, scoped by model | Catch-up service based on records and inspection |
 | Warranty | 3 years factory (see /promotions for current offers) | Verify any unexpired transferable coverage by serial number |
 | Expected service cost years 2-5 | $1,000-$1,500 | $1,500-$2,500, depending on condition and records |
-| **5-year all-in estimate** | **$15,500-$16,000** | **$10,300-$12,000** |
+| **5-year all-in estimate** | **$18,500-$19,000** | **$10,300-$12,000** |
 
 _Prices here are planning figures as of September 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
-The used motor saves you roughly $3,500-$6,000 over five years. But the new motor saves you the **uncertainty premium**, which is hard to put a dollar value on until the day a $4,000 powerhead repair lands in your driveway.
+The used motor saves you roughly $6,500-$8,500 over five years. But the new motor saves you the **uncertainty premium**, which is hard to put a dollar value on until the day a $4,000 powerhead repair lands in your driveway.
 
 ## The trade-in wrinkle: HST only on the difference
 
-One more piece of math most buyers miss. For a typical private recreational trade at an Ontario dealer, HST is charged on the difference between the new purchase and your trade-in allowance, not the full sticker. Taxable-business or GST/HST-registrant trades are a separate case. A $3,500 private-owner trade against a $13,000 repower means you pay tax on $9,500, which keeps roughly $455 in your pocket on top of the trade value itself. A private sale has no equivalent lever. It narrows the new-vs-used gap more than most people expect, and it is worth running before you decide. Curious what your current motor is worth? Our [outboard trade-in guide](/blog/outboard-trade-in-value-ontario-hbw) covers how we value trades.
+One more piece of math most buyers miss. For a typical private recreational trade at an Ontario dealer, HST is charged on the difference between the new purchase and your trade-in allowance, not the full sticker. Taxable-business or GST/HST-registrant trades are a separate case. A $3,500 private-owner trade against a $17,500 repower means you pay tax on $14,000, which keeps roughly $455 in your pocket on top of the trade value itself. A private sale has no equivalent lever. It narrows the new-vs-used gap more than most people expect, and it is worth running before you decide. Curious what your current motor is worth? Our [outboard trade-in guide](/blog/outboard-trade-in-value-ontario-hbw) covers how we value trades.
 
 ## When new is the right answer
 
@@ -108,7 +108,7 @@ Customers we steer toward used: occasional weekenders who do not log many hours,
 
 ## What we do at Harris Boat Works
 
-We are a Mercury Premier dealer, which means new motor sales and Mercury Product Protection paperwork are a core part of the business. We also broker used boats and motors regularly, sometimes from trade-ins, sometimes from local consignment, sometimes from estate sales. When a customer walks in deciding between a $13,000 new repower and a $7,500 used motor, we do not push one direction. We walk through the math above with the customer's actual boat and actual budget, and the honest answer is usually obvious by the end of the conversation.
+We are a Mercury Premier dealer, which means new motor sales and Mercury Product Protection paperwork are a core part of the business. We also broker used boats and motors regularly, sometimes from trade-ins, sometimes from local consignment, sometimes from estate sales. When a customer walks in deciding between a $17,500 new repower and a $7,500 used motor, we do not push one direction. We walk through the math above with the customer's actual boat and actual budget, and the honest answer is usually obvious by the end of the conversation.
 
 If you are weighing this decision and want a second set of eyes, drop us an email at info@harrisboatworks.ca with the boat's specs, the used motor's documented history (if you have it), and a rough budget. We will tell you what we would do in your situation.
 
