@@ -1,153 +1,130 @@
 #!/usr/bin/env node
-// scripts/validate-schema-org.mjs
-//
-// Posts every JSON-LD block in dist/*.html to validator.schema.org and
-// fails the build on error-severity issues. Warnings are logged only.
-//
-// Skip with SKIP_SCHEMA_ORG_VALIDATOR=1 (offline dev, or to triage a
-// validator outage without blocking a release).
-//
-// Locally validates only files changed vs origin/main when LOCAL_DIFF=1
-// is set, to keep dev fast. On CI (CI=1 or VERCEL=1) it scans every file.
-//
-// Runs after static-prerender.mjs + check-structured-data.mjs in the
-// package.json build script.
-
+// Remote schema.org errors block; unavailable/unknown remote results are UNVERIFIED.
+// The earlier local check-structured-data gate remains independent and unchanged.
+// SKIP_SCHEMA_ORG_VALIDATOR=1 is an explicit bypass, never a verification result.
 import { readFileSync, readdirSync, statSync, existsSync } from 'node:fs';
-import { join } from 'node:path';
-import { execSync } from 'node:child_process';
+import { join, resolve } from 'node:path';
+import { pathToFileURL } from 'node:url';
+import { execFileSync } from 'node:child_process';
 
-if (process.env.SKIP_SCHEMA_ORG_VALIDATOR === '1') {
-  console.log('[validate-schema-org] SKIP_SCHEMA_ORG_VALIDATOR=1 — skipping.');
-  process.exit(0);
-}
-
-const DIST = 'dist';
 const VALIDATOR_URL = 'https://validator.schema.org/validate';
-const THROTTLE_MS = 350;
-const MAX_FILES = Number(process.env.SCHEMA_VALIDATOR_MAX_FILES || 80);
+const sleep = (ms) => new Promise((done) => setTimeout(done, ms));
 
-function walkDir(dir, ext, out = []) {
-  if (!existsSync(dir)) return out;
-  for (const entry of readdirSync(dir)) {
+function walkDir(dir) {
+  if (!existsSync(dir)) return [];
+  return readdirSync(dir).flatMap((entry) => {
     const full = join(dir, entry);
-    const st = statSync(full);
-    if (st.isDirectory()) walkDir(full, ext, out);
-    else if (full.endsWith(ext)) out.push(full);
+    return statSync(full).isDirectory() ? walkDir(full) : full.endsWith('.html') ? [full] : [];
+  }).sort();
+}
+
+export function selectFiles(files, changed) {
+  const relevant = changed.filter((file) => /\.html$|seo|schema|structured-data|static-prerender/i.test(file));
+  if (!relevant.length) return files;
+  // Source/template changes cannot reliably be mapped to a single output route.
+  const matches = relevant.map((file) => files.filter((output) =>
+    output === file || (file.endsWith('.html') && output === `dist/${file}`)));
+  if (matches.some((group) => !group.length)) return files;
+  return [...new Set(matches.flat())];
+}
+
+export function classifyResponse(result) {
+  // Retain the existing errors[] envelope only. Do not guess a new upstream API
+  // contract or treat missing fields as an empty error list.
+  if (!result || typeof result !== 'object' || Array.isArray(result) || !Array.isArray(result.errors)) {
+    return { errors: [], warnings: [], unverified: ['unrecognized validator response contract'] };
   }
-  return out;
-}
-
-function extractJsonLd(html) {
-  const blocks = [];
-  const re = /<script[^>]*type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi;
-  let m;
-  while ((m = re.exec(html)) !== null) blocks.push(m[1].trim());
-  return blocks;
-}
-
-async function validate(jsonLd) {
-  const body = new URLSearchParams({ code: jsonLd }).toString();
-  for (let attempt = 0; attempt < 2; attempt++) {
-    try {
-      const res = await fetch(VALIDATOR_URL, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-          Accept: 'application/json',
-        },
-        body,
-      });
-      const text = await res.text();
-      // Validator wraps response with )]}'
-      // anti-JSON-hijack prefix.
-      const cleaned = text.replace(/^\)\]\}'\n?/, '');
-      try {
-        return JSON.parse(cleaned);
-      } catch {
-        return { _parseError: true, raw: text.slice(0, 200) };
-      }
-    } catch (err) {
-      if (attempt === 1) throw err;
-      await new Promise((r) => setTimeout(r, 750));
+  const report = { errors: [], warnings: [], unverified: [] };
+  for (const issue of result.errors) {
+    if (!issue || typeof issue !== 'object' || Array.isArray(issue)) {
+      report.unverified.push('unrecognized validator issue');
+      continue;
     }
+    const severity = String(issue.severity || issue.errorType || '').toLowerCase();
+    const message = String(issue.description || issue.errorType || 'validator issue');
+    if (severity === 'error') report.errors.push(message);
+    else if (severity === 'warning' || severity === 'info') report.warnings.push(message);
+    else report.unverified.push('unrecognized validator issue severity');
   }
+  return report;
 }
 
-function pickFiles() {
-  let files = walkDir(DIST, '.html');
-  const onCI = process.env.CI === '1' || process.env.CI === 'true' || process.env.VERCEL === '1';
-  if (!onCI && process.env.LOCAL_DIFF === '1') {
+export async function validateBlock(jsonLd, { fetchImpl = fetch, timeoutMs = 10000 } = {}) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), timeoutMs);
+  try {
+    const response = await fetchImpl(VALIDATOR_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded', Accept: 'application/json' },
+      body: new URLSearchParams({ code: jsonLd }).toString(),
+      signal: controller.signal,
+    });
+    if (!response.ok) return { errors: [], warnings: [], unverified: [`validator HTTP ${response.status}`] };
+    const text = await response.text();
     try {
-      const changed = execSync('git diff --name-only origin/main...HEAD', { encoding: 'utf8' })
-        .split('\n')
-        .filter(Boolean);
-      const relevant = new Set(
-        changed.filter((f) => f.endsWith('.html') || f.includes('seo') || f.includes('static-prerender'))
-      );
-      if (relevant.size) {
-        files = files.filter((f) => [...relevant].some((c) => f.endsWith(c)));
-      }
+      return classifyResponse(JSON.parse(text.replace(/^\)\]\}'\r?\n?/, '')));
     } catch {
-      /* not a git repo, fall through */
+      return { errors: [], warnings: [], unverified: ['validator returned non-JSON response'] };
+    }
+  } catch {
+    return { errors: [], warnings: [], unverified: [controller.signal.aborted ? 'validator timeout' : 'validator network failure'] };
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
+export async function runValidator({
+  env = process.env,
+  dist = 'dist',
+  fetchImpl = fetch,
+  timeoutMs = 10000,
+  throttleMs = 350,
+  logger = console,
+  readChanged = () => execFileSync('git', ['diff', '--name-only', 'origin/main...HEAD'], { encoding: 'utf8' }).split('\n').filter(Boolean),
+} = {}) {
+  if (env.SKIP_SCHEMA_ORG_VALIDATOR === '1') {
+    logger.warn('[validate-schema-org] SKIPPED: SKIP_SCHEMA_ORG_VALIDATOR=1; remote validation not performed.');
+    return { exitCode: 0, status: 'SKIPPED' };
+  }
+  const maxFiles = Number(env.SCHEMA_VALIDATOR_MAX_FILES || 80);
+  let files = walkDir(dist);
+  if (!files.length || !Number.isInteger(maxFiles) || maxFiles < 1) {
+    logger.error('[validate-schema-org] LOCAL_COVERAGE_FAILURE: missing HTML output or invalid sampling cap.');
+    return { exitCode: 1, status: 'LOCAL_COVERAGE_FAILURE' };
+  }
+  const onCI = env.CI === '1' || env.CI === 'true' || env.VERCEL === '1';
+  if (!onCI && env.LOCAL_DIFF === '1') {
+    try { files = selectFiles(files, readChanged()); } catch { /* Full output scan if Git is unavailable. */ }
+  }
+  const availableFiles = files.length;
+  if (files.length > maxFiles) {
+    logger.warn(`[validate-schema-org] sampling ${maxFiles} of ${files.length} HTML files.`);
+    const step = Math.max(1, Math.floor(files.length / maxFiles));
+    files = files.filter((_, index) => index % step === 0).slice(0, maxFiles);
+  }
+  const errors = [], warnings = [], unverified = [];
+  let blocksChecked = 0;
+  for (const file of files) {
+    const blocks = [...readFileSync(file, 'utf8').matchAll(/<script[^>]*type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi)];
+    for (const [index, block] of blocks.entries()) {
+      blocksChecked++;
+      const result = await validateBlock(block[1].trim(), { fetchImpl, timeoutMs });
+      for (const [target, values] of [[errors, result.errors], [warnings, result.warnings], [unverified, result.unverified]]) {
+        values.forEach((value) => target.push(`${file} block[${index}]: ${value}`));
+      }
+      if (throttleMs) await sleep(throttleMs);
     }
   }
-  // Sampling cap so a full prerender does not nuke the validator.
-  if (files.length > MAX_FILES) {
-    console.log(`[validate-schema-org] sampling ${MAX_FILES} of ${files.length} HTML files (set SCHEMA_VALIDATOR_MAX_FILES to change).`);
-    const step = Math.max(1, Math.floor(files.length / MAX_FILES));
-    files = files.filter((_, i) => i % step === 0).slice(0, MAX_FILES);
-  }
-  return files;
+  if (!blocksChecked) unverified.push('no JSON-LD blocks found in selected HTML; remote validation not performed');
+  warnings.forEach((message) => logger.warn(`[validate-schema-org] WARNING: ${message}`));
+  unverified.forEach((message) => logger.warn(`[validate-schema-org] UNVERIFIED: ${message}`));
+  errors.forEach((message) => logger.error(`[validate-schema-org] ERROR: ${message}`));
+  const status = errors.length ? 'ERROR' : unverified.length ? 'UNVERIFIED' : 'NO_REPORTED_ERRORS';
+  logger.log(`[validate-schema-org] ${status}: ${blocksChecked} block(s), ${files.length}/${availableFiles} selected HTML file(s); ${errors.length} error(s), ${warnings.length} warning(s), ${unverified.length} unverified result(s).`);
+  if (errors.length) logger.error('[validate-schema-org] Build blocked by reported schema.org errors.');
+  return { exitCode: errors.length ? 1 : 0, status, blocksChecked, errors, warnings, unverified };
 }
 
-const files = pickFiles();
-if (!files.length) {
-  console.log('[validate-schema-org] No HTML files found in dist/. Skipping.');
-  process.exit(0);
+if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {
+  process.exitCode = (await runValidator()).exitCode;
 }
-
-const errors = [];
-const warnings = [];
-let blocksChecked = 0;
-
-for (const file of files) {
-  const blocks = extractJsonLd(readFileSync(file, 'utf8'));
-  for (let i = 0; i < blocks.length; i++) {
-    blocksChecked++;
-    try {
-      const result = await validate(blocks[i]);
-      if (result?._parseError) {
-        warnings.push(`${file} block[${i}]: validator returned non-JSON response (${result.raw})`);
-        await new Promise((r) => setTimeout(r, THROTTLE_MS));
-        continue;
-      }
-      // Response shape: { tripleCount, errors: [...], totalNumNodes, ... }
-      const errs = Array.isArray(result?.errors) ? result.errors : [];
-      for (const e of errs) {
-        const severity = (e.severity || e.errorType || '').toString().toLowerCase();
-        const msg = `${file} block[${i}]: ${e.description || e.errorType || JSON.stringify(e)}`;
-        if (severity.includes('warning') || severity === 'info') warnings.push(msg);
-        else errors.push(msg);
-      }
-    } catch (err) {
-      warnings.push(`${file} block[${i}]: validator network error — ${err.message}`);
-    }
-    await new Promise((r) => setTimeout(r, THROTTLE_MS));
-  }
-}
-
-if (warnings.length) {
-  console.warn(`\n[validate-schema-org] ${warnings.length} warning(s):`);
-  warnings.slice(0, 20).forEach((w) => console.warn('  ⚠ ' + w));
-  if (warnings.length > 20) console.warn(`  …and ${warnings.length - 20} more`);
-}
-
-if (errors.length) {
-  console.error(`\n[validate-schema-org] ❌ ${errors.length} schema.org error(s):\n`);
-  errors.forEach((e) => console.error('  ✗ ' + e));
-  console.error('\nBuild blocked by schema.org validator. Set SKIP_SCHEMA_ORG_VALIDATOR=1 to bypass.');
-  process.exit(1);
-}
-
-console.log(`[validate-schema-org] ✅ ${blocksChecked} JSON-LD block(s) across ${files.length} file(s) validated by schema.org.`);

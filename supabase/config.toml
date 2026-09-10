@@ -254,3 +254,30 @@ verify_jwt = false
 
 [functions.grok-supabase-oauth]
 verify_jwt = false
+
+[functions.scrape-mercury-public]
+verify_jwt = false
+
+[functions.fetch-part-images]
+verify_jwt = false
+
+[functions.sync-inventory-api]
+verify_jwt = false
+
+[functions.auto-image-enhancer]
+verify_jwt = false
+
+[functions.migrate-motor-images]
+verify_jwt = false
+
+[functions.optimize-motor-images]
+verify_jwt = false
+
+[functions.motor-health-monitor]
+verify_jwt = false
+
+[functions.sync-dropbox-folder]
+verify_jwt = false
+
+[functions.dropbox-chooser-upload]
+verify_jwt = false

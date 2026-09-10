@@ -1,6 +1,7 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
 import { corsHeaders } from "../_shared/cors.ts";
+import { requireAdmin } from "../_shared/admin-auth.ts";
 
 // Mercury public product page URLs by HP range and family
 const MERCURY_PRODUCT_PAGES: Record<string, { url: string; hpRange: [number, number] }[]> = {
@@ -407,6 +408,9 @@ serve(async (req) => {
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
   }
+
+  const authResult = await requireAdmin(req, corsHeaders);
+  if (authResult instanceof Response) return authResult;
 
   try {
     const { hp, family, motorId, controlType, dryRun = false, batchUpdate = false } = await req.json();

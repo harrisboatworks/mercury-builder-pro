@@ -31,7 +31,7 @@ export async function handleNotificationWebhook(
     authToken: dependencies.authToken,
     supabaseUrl: dependencies.supabaseUrl,
   });
-  if (!gated.ok) {
+  if (gated.ok === false) {
     return jsonResponse({ error: gated.error }, gated.status);
   }
 
