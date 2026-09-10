@@ -5,6 +5,12 @@ import ts from 'typescript';
 import { describe, expect, it, vi } from 'vitest';
 
 const slugs = ['voice-create-quote', 'locally-inventory', 'generate-spec-sheet-insights'] as const;
+it('explicitly preserves the verified live public gateway settings', () => {
+  const config = readFileSync('supabase/config.toml', 'utf8');
+  for (const slug of slugs) {
+    expect(config).toContain(`[functions.${slug}]\nverify_jwt = false`);
+  }
+});
 type Slug = typeof slugs[number];
 const source = new Map<string, string>();
 function compiled(path: string) {

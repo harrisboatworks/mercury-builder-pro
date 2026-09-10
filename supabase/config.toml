@@ -281,3 +281,6 @@ verify_jwt = false
 
 [functions.dropbox-chooser-upload]
 verify_jwt = false
+
+[functions.voice-create-quote]
+verify_jwt = false
