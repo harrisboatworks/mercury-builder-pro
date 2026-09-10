@@ -399,7 +399,7 @@ describe('admin edge auth hardening', () => {
     expect(result.from).toHaveBeenCalledWith('user_roles');
   });
 
-  it('does not change verify_jwt settings for the gated slugs', () => {
+  it('explicitly preserves the verified live gateway settings for the gated slugs', () => {
     expect(config).toMatch(/\[functions\.mark-out-of-stock\]\s*\nverify_jwt = true/);
     expect(config).toMatch(/\[functions\.scrape-mercury-portal\]\s*\nverify_jwt = true/);
     for (const slug of [
@@ -413,7 +413,7 @@ describe('admin edge auth hardening', () => {
       'sync-dropbox-folder',
       'dropbox-chooser-upload',
     ]) {
-      expect(config).not.toContain(`[functions.${slug}]`);
+      expect(config).toContain(`[functions.${slug}]\nverify_jwt = false`);
     }
   });
 
