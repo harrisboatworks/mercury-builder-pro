@@ -9,13 +9,13 @@
       "status": "unresolved",
       "path": null,
       "version": null,
-      "blocker": "Caller credential migration is not authorable. No approved protected database secret reference or matching Edge secret presence has been established. Observed scheduler jobs still present an anon bearer and do not mention an internal header or vault reference."
+      "blocker": "Guarded caller migration 20260910140000_rewrite_promo_lightspeed_cron_internal_secret.sql is authored but not an approved or applied fact. Proposed Vault names EDGE_INTERNAL_SECRET/CRON_SECRET require owner acceptance and are not an established Vault convention; Edge env names do not imply Vault names. Owner must verify exactly one matching Vault row, matching Edge secret presence, live commands that still match the supported original grammar, and no ambiguous callers, then apply the migration and set status=resolved. Review-ready source is not release authorization."
     },
     "sync-lightspeed-inventory": {
       "status": "unresolved",
       "path": null,
       "version": null,
-      "blocker": "Caller credential migration is not authorable. No approved protected database secret reference or matching Edge secret presence has been established. Observed scheduler jobs still present an anon bearer and do not mention an internal header or vault reference."
+      "blocker": "Guarded caller migration 20260910140000_rewrite_promo_lightspeed_cron_internal_secret.sql is authored but not an approved or applied fact. Proposed Vault names EDGE_INTERNAL_SECRET/CRON_SECRET require owner acceptance and are not an established Vault convention; Edge env names do not imply Vault names. Owner must verify exactly one matching Vault row, matching Edge secret presence, live commands that still match the supported original grammar, and no ambiguous callers, then apply the migration and set status=resolved. Review-ready source is not release authorization."
     }
   }
 }

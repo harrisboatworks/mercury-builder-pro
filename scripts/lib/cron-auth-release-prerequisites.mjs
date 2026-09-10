@@ -5,9 +5,13 @@
  * create tables/RPCs, so the existing matcher cannot see it. Protected slugs
  * fail closed until this manifest names a real applied caller migration.
  *
- * Unresolved entries must not invent a migration path or version. When a
- * caller migration later exists, set status=resolved with that path/version;
- * deploy then uses the ordinary applied-migration checks.
+ * Unresolved entries must not invent a migration path or version. A guarded
+ * caller rewrite may exist in source while the mapping stays unresolved until
+ * the owner accepts the proposed Vault names, verifies Vault/Edge parity, and
+ * authorizes apply. Uppercase EDGE_INTERNAL_SECRET/CRON_SECRET are a proposed
+ * naming contract, not an established Vault convention. When that later
+ * happens, set status=resolved with that path/version; deploy then uses the
+ * ordinary applied-migration checks.
  */
 
 export const CRON_AUTH_RELEASE_PROTECTED_SLUGS = Object.freeze([
@@ -17,6 +21,11 @@ export const CRON_AUTH_RELEASE_PROTECTED_SLUGS = Object.freeze([
 
 export const CRON_AUTH_RELEASE_PREREQUISITE_MANIFEST_PATH =
   'scripts/lib/cron-auth-release-prerequisites.json';
+
+export const CRON_AUTH_CALLER_MIGRATION_PATH =
+  'supabase/migrations/20260910140000_rewrite_promo_lightspeed_cron_internal_secret.sql';
+
+export const CRON_AUTH_CALLER_MIGRATION_VERSION = '20260910140000';
 
 export const EXPLICIT_PREREQUISITE_VIA = 'explicit caller-migration prerequisite';
 

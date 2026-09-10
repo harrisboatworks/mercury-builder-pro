@@ -341,6 +341,65 @@ describe('cron auth gates', () => {
     expect(await result.response.json()).toMatchObject(entry.success);
   });
 
+  it.each(ENTRYPOINTS)('treats an empty EDGE_INTERNAL_SECRET as unset on $slug', async (entry) => {
+    const result = await invoke({
+      slug: entry.slug,
+      headers: { 'x-internal-secret': 'test-cron-secret' },
+      env: { EDGE_INTERNAL_SECRET: '', CRON_SECRET: 'test-cron-secret' },
+    });
+    expect(result.response.status).toBe(200);
+    expect(await result.response.json()).toMatchObject(entry.success);
+  });
+
+  it.each(ENTRYPOINTS)('rejects $slug when both internal secrets are empty', async (entry) => {
+    const result = await invoke({
+      slug: entry.slug,
+      headers: { 'x-internal-secret': 'test-internal-secret' },
+      env: { ...BLOCKED_ENV, EDGE_INTERNAL_SECRET: '', CRON_SECRET: '' },
+    });
+    expect(result.response.status).toBe(401);
+    expect(await result.response.json()).toEqual({ error: 'Missing Authorization header' });
+    expectNoSideEffects(result);
+  });
+
+  it.each(ENTRYPOINTS)('rejects an incorrect internal secret on $slug before side effects', async (entry) => {
+    const result = await invoke({
+      slug: entry.slug,
+      headers: { 'x-internal-secret': 'wrong-secret' },
+      env: BLOCKED_ENV,
+    });
+    expect(result.response.status).toBe(401);
+    expect(await result.response.json()).toEqual({ error: 'Missing Authorization header' });
+    expectNoSideEffects(result);
+  });
+
+  it.each(ENTRYPOINTS)('rejects an incorrect internal secret plus the public anon bearer on $slug', async (entry) => {
+    const result = await invoke({
+      slug: entry.slug,
+      headers: {
+        'x-internal-secret': 'wrong-secret',
+        Authorization: 'Bearer test-anon-key',
+      },
+      env: { ...BLOCKED_ENV, SUPABASE_ANON_KEY: 'test-anon-key' },
+    });
+    expect(result.response.status).toBe(401);
+    expect(await result.response.json()).toEqual({ error: 'Unauthorized: Invalid or expired token' });
+    expectNoSideEffects(result);
+  });
+
+  it.each(ENTRYPOINTS)('lets the matching internal secret win over an anon bearer on $slug', async (entry) => {
+    const result = await invoke({
+      slug: entry.slug,
+      headers: {
+        'x-internal-secret': 'test-internal-secret',
+        Authorization: 'Bearer test-anon-key',
+      },
+    });
+    expect(result.response.status).toBe(200);
+    expect(await result.response.json()).toMatchObject(entry.success);
+    expect(result.from.mock.calls.map(([table]) => table)).not.toContain('user_roles');
+  });
+
   it('explicitly sets verify_jwt = false for the two gated cron slugs', () => {
     expect(config).toContain('[functions.check-expiring-promotions]\nverify_jwt = false');
     expect(config).toContain('[functions.sync-lightspeed-inventory]\nverify_jwt = false');

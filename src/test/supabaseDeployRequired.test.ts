@@ -28,6 +28,7 @@ import {
   sourceFilesForFunction,
 } from '../../scripts/lib/supabase-deploy-required.mjs';
 import {
+  CRON_AUTH_CALLER_MIGRATION_PATH,
   CRON_AUTH_RELEASE_PREREQUISITE_MANIFEST_PATH,
   EXPLICIT_PREREQUISITE_VIA,
 } from '../../scripts/lib/cron-auth-release-prerequisites.mjs';
@@ -956,7 +957,7 @@ describe('explicit cron-auth release prerequisites', () => {
     );
   });
 
-  it('keeps the committed on-disk mapping unresolved with no invented caller migration', () => {
+  it('keeps the committed on-disk mapping unresolved even after the guarded caller migration is authored', () => {
     const manifest = JSON.parse(readFileSync(CRON_AUTH_RELEASE_PREREQUISITE_MANIFEST_PATH, 'utf8'));
     expect(manifest.protectedSlugs).toEqual(['check-expiring-promotions', 'sync-lightspeed-inventory']);
     expect(manifest.slugs['check-expiring-promotions']).toMatchObject({
@@ -969,6 +970,19 @@ describe('explicit cron-auth release prerequisites', () => {
       path: null,
       version: null,
     });
+    expect(manifest.slugs['check-expiring-promotions'].blocker).toContain('20260910140000_rewrite_promo_lightspeed_cron_internal_secret.sql');
+    expect(manifest.slugs['check-expiring-promotions'].blocker).toMatch(/not an approved or applied fact/);
+    expect(manifest.slugs['check-expiring-promotions'].blocker).toMatch(/not an established Vault convention/);
+    expect(readFileSync(CRON_AUTH_CALLER_MIGRATION_PATH, 'utf8')).toContain('cron.alter_job');
+    const tree = {
+      ...cronAuthTree(),
+      [CRON_AUTH_CALLER_MIGRATION_PATH]: readFileSync(CRON_AUTH_CALLER_MIGRATION_PATH, 'utf8'),
+    };
+    expect(requiredMigrationsForSlug('check-expiring-promotions', tree, [CRON_AUTH_CALLER_MIGRATION_PATH])).toEqual([]);
+    expect(requiredMigrationsForSlug('sync-lightspeed-inventory', tree, [CRON_AUTH_CALLER_MIGRATION_PATH])).toEqual([]);
+    expect(releaseRequirementsForSlug('check-expiring-promotions', tree, []).explicitDeployBlock).toMatch(
+      /unresolved release prerequisite/,
+    );
     const script = readFileSync('scripts/report-supabase-deploy-required.mjs', 'utf8');
     expect(script).toContain('withReleasePrerequisiteManifest');
     const deploy = readFileSync('scripts/deploy-supabase-functions.mjs', 'utf8');
