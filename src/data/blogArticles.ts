@@ -18638,7 +18638,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Close-up of a hand using a flashlight to read the serial number plate on a Mercury outboard motor bracket.',
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
-    dateModified: '2026-09-07',
+    dateModified: '2026-09-10',
     publishDate: '2026-05-17',
     category: 'Buying Guide',
     readTime: '8 min read',
@@ -18809,28 +18809,26 @@ Mercury's official parts catalog uses the serial to give you the right exploded 
 Mercury issues service bulletins by serial range, known issues, recommended fixes, sometimes free recall work. A dealer pulls these against your serial to see if anything applies.
 
 ### 3. Warranty status
-[Standard warranty registration](/blog/mercury-outboard-warranty-canada-2026), extended warranty (Mercury Product Protection), and remaining coverage are all keyed to the serial. We can confirm what you have left.
+[Standard warranty registration](/blog/mercury-outboard-warranty-canada-2026), extended warranty (Mercury Product Protection), and remaining coverage are all keyed to the serial. Any Mercury dealer can confirm what you have left when the motor is in for service.
 
 ### 4. Engine hours (on SmartCraft motors)
 Modern Mercurys store hour data inside the engine's computer, independent of any dashboard meter. Plug a diagnostic tool into the SmartCraft port; the serial confirms the model; the hours come up. Treat the ECM reading as one part of the inspection, alongside the motor condition and available service records.
 
 ### 5. Service history
-If the motor was ever serviced at a Mercury dealer (any dealer, anywhere in North America), there's likely a record tied to the serial in Mercury's dealer network. We can request it.
+If the motor was ever serviced at a Mercury dealer (any dealer, anywhere in North America), there's likely a record tied to the serial in Mercury's dealer network. A dealer can pull it when the motor is in the shop.
 
 ---
 
-## Buying a Used Mercury? Here's Your First Move.
+## Buying a Used Mercury? Check the Serial Before You Pay
 
-Before you hand over money for a private-sale Mercury, do this:
+Before you hand over money for a private-sale Mercury, do this yourself:
 
-1. **Get a clear photo of the bracket plate**, model number + serial number both visible.
-2. **Send it to us** at [hbw.wiki/service](https://hbw.wiki/service), pre-purchase research, free.
-3. **We pull:** model year, original spec, outstanding service bulletins, warranty status, and any service history we can find on it.
-4. **You get a report**, what the motor really is, what it's worth, what's already been done, and what's overdue.
+1. **Get a clear photo of the bracket plate**, model number + serial number both visible. No readable plate and no backup stamp, no deal.
+2. **Decode the model number with the letter codes above**: shaft length, start type, trim, steering. Make sure it matches the transom it's going on.
+3. **Pin down the year.** Some plates print it. If not, ask the seller for the original bill of sale or any dealer service receipt, both reference the serial and the year. The parts-finder sites (Crowley Marine, MarineEngine.com) will land you in a rough year range for ordering parts, but they are not a model-year lookup and a seller's "it's a 2015" can't be checked against them.
+4. **Check the price against the market** with the [used outboard buying guide](/blog/used-outboard-buying-guide-ontario).
 
-If you're considering [a full pre-purchase inspection](/blog/used-boat-walkaround-inspection-ontario) (compression, gearcase pressure, on-water test), the serial-number research is the first 5 minutes of that. Sometimes the research alone tells you to walk away.
-
-This whole exercise, for a private buyer about to spend $4,000 to $14,000 on a used motor, should be table stakes. We do it every week.
+The exact model year, warranty status, service bulletins, and dealer service history are dealer-network lookups, not something you can do from a phone. If the motor is headed for Rice Lake, that research is the first five minutes of [a pre-purchase inspection](/blog/used-boat-walkaround-inspection-ontario) (compression, gearcase pressure, on-water test) with the motor in our shop. Sometimes the research alone tells you to walk away.
 
 ---
 
@@ -18877,7 +18875,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         "question": "Can I look up my serial myself online?",
-        "answer": "Partially. MarineEngine.com, OBParts.com, and Crowley Marine all have free public serial-to-year lookups. They won't show you Mercury's internal service bulletins, warranty, or service history, that's dealer-only. But for \"what year is my motor?\" the public tools work fine."
+        "answer": "Not really. Crowley Marine, MarineEngine.com, and OBParts publish serial-range charts and parts finders, which get you close enough to order the right parts. They are not a model-year or spec lookup, and they show nothing about warranty, service bulletins, or service history. The exact year and build spec for a specific serial live in Mercury's dealer system."
       },
       {
         "question": "Do older 2-stroke Mercurys (pre-2000) follow the same format?",
