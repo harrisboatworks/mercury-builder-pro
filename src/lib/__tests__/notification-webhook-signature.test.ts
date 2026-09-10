@@ -159,9 +159,10 @@ describe('Twilio webhook source contracts', () => {
   it('verifies the Twilio signature before creating a client or writing sms_logs', () => {
     const source = readFileSync('supabase/functions/notification-webhook/index.ts', 'utf8');
     expect(source.indexOf('handleNotificationWebhook')).toBeLessThan(source.indexOf('createClient('));
-    expect(source.indexOf('onVerified')).toBeLessThan(source.indexOf(".from('sms_logs')"));
-    expect(source).toContain(".eq('to_phone', to)");
-    expect(source).not.toContain('message_sid');
+    expect(source.indexOf('onVerified')).toBeLessThan(source.lastIndexOf('applyTwilioStatusToSmsLog'));
+    expect(source).toContain('applyTwilioStatusToSmsLog');
+    expect(source).toContain('parseSmsLogIdFromRequestUrl');
+    expect(source).not.toContain(".eq('to_phone'");
     expect(source).not.toContain('TWILIO_WEBHOOK_URL');
   });
 

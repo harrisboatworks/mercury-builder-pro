@@ -9,6 +9,12 @@ import {
   isTokenBearingSmsMessage,
 } from "../_shared/consultation-sms-policy.ts";
 import { ConsultationDocumentRequestError } from "../_shared/consultation-document-policy.ts";
+import {
+  buildSmsStatusCallbackUrl,
+  isTwilioMessageSid,
+  isTwilioMessageStatus,
+} from "../_shared/twilio-status.ts";
+import { applyTwilioStatusToSmsLog } from "../_shared/twilio-status-store.ts";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -154,13 +160,23 @@ serve(async (req) => {
     const twilioUrl = `https://api.twilio.com/2010-04-01/Accounts/${accountSid}/Messages.json`;
     const auth = btoa(`${accountSid}:${authToken}`);
     
+    const statusCallbackUrl = outbox?.id
+      ? buildSmsStatusCallbackUrl(supabaseUrl, outbox.id)
+      : null;
     const formData = new URLSearchParams();
     formData.append('To', formattedPhone);
     formData.append('From', fromNumber);
     formData.append('Body', smsData.message);
+    if (statusCallbackUrl) {
+      formData.append('StatusCallback', statusCallbackUrl);
+    }
 
     if (!tokenBearing) {
-      console.log('Sending SMS via Twilio:', { to: formattedPhone, from: fromNumber });
+      console.log('Sending SMS via Twilio:', {
+        to: formattedPhone,
+        from: fromNumber,
+        statusCallbackConfigured: Boolean(statusCallbackUrl),
+      });
     }
 
     const response = await fetch(twilioUrl, {
@@ -177,33 +193,58 @@ serve(async (req) => {
     if (!response.ok) {
       console.error('Twilio error:', responseData);
       if (outbox?.id) {
-        await supabase.from('sms_logs').update({
+        const providerErrorCode = responseData?.code == null
+          ? null
+          : String(responseData.code).slice(0, 20);
+        const { error: providerLogError } = await supabase.from('sms_logs').update({
           status: 'failed',
           error: 'provider_error',
-        }).eq('id', outbox.id);
+          error_code: providerErrorCode,
+        }).eq('id', outbox.id).eq('status', 'pending');
+        if (providerLogError) {
+          console.error('Failed to record Twilio provider error');
+        }
       }
       throw new Error(`Twilio API error: ${responseData.message || 'Unknown error'}`);
     }
 
+    const messageSid = typeof responseData?.sid === 'string' ? responseData.sid : '';
+    const providerStatus = typeof responseData?.status === 'string' &&
+        isTwilioMessageStatus(responseData.status)
+      ? responseData.status
+      : 'sent';
+
     if (!tokenBearing) {
-      console.log('SMS sent successfully:', responseData.sid);
+      console.log('SMS sent successfully:', messageSid);
     }
 
-    if (outbox?.id) {
-      const { error: logError } = await supabase
-        .from('sms_logs')
-        .update({ status: 'sent' })
-        .eq('id', outbox.id);
-      if (logError) {
-        console.error('Error logging SMS:', logError instanceof Error ? logError.name : 'unknown');
+    if (outbox?.id && isTwilioMessageSid(messageSid)) {
+      try {
+        const trackingResult = await applyTwilioStatusToSmsLog(supabase, {
+          smsLogId: outbox.id,
+          messageSid,
+          messageStatus: providerStatus,
+          errorCode: null,
+          errorMessage: null,
+        });
+        if (trackingResult.kind === 'not_found' || trackingResult.kind === 'sid_conflict') {
+          console.error('Failed to correlate Twilio response:', trackingResult.kind);
+        }
+      } catch (trackingError) {
+        console.error(
+          'Error logging SMS:',
+          trackingError instanceof Error ? trackingError.name : 'unknown',
+        );
       }
+    } else if (outbox?.id) {
+      console.error('Twilio response omitted a valid MessageSid');
     }
 
     return new Response(
       JSON.stringify({ 
         success: true, 
-        messageId: responseData.sid,
-        status: responseData.status,
+        messageId: messageSid || null,
+        status: providerStatus,
         to: formattedPhone
       }),
       { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
