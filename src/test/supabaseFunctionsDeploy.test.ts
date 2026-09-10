@@ -774,6 +774,87 @@ describe('deploy summary', () => {
     expect(markdown).toContain('20260909000000_brand_new.sql');
   });
 
+  it('skips unresolved cron-auth functions and still deploys unrelated slugs', async () => {
+    const seen: string[] = [];
+    const { succeeded, failed } = await deployWithMigrationGate({
+      functions: [
+        {
+          slug: 'check-expiring-promotions',
+          requiredMigrations: [],
+          explicitDeployBlock: 'unresolved release prerequisite for `check-expiring-promotions`: caller migration is not authorable',
+        },
+        { slug: 'send-sms', requiredMigrations: [] },
+      ],
+      listAppliedVersions: () => [{ version: '20260815160000' }],
+      deployOne: (slug: string) => {
+        seen.push(slug);
+        return { ok: true, detail: 'Deployed' };
+      },
+    });
+    expect(seen).toEqual(['send-sms']);
+    expect(succeeded.map((item) => item.slug)).toEqual(['send-sms']);
+    expect(failed.map((item) => item.slug)).toEqual(['check-expiring-promotions']);
+    expect(failed[0].detail).toContain('explicit release prerequisite');
+    expect(failed[0].detail).not.toContain('not applied in production');
+  });
+
+  it('skips unresolved cron-auth functions even when the applied list is unreadable', async () => {
+    const seen: string[] = [];
+    const { succeeded, failed, appliedLookupFailed } = await deployWithMigrationGate({
+      functions: [
+        {
+          slug: 'sync-lightspeed-inventory',
+          requiredMigrations: [],
+          explicitDeployBlock: 'unresolved release prerequisite for `sync-lightspeed-inventory`: caller migration is not authorable',
+        },
+        { slug: 'send-sms', requiredMigrations: [] },
+      ],
+      listAppliedVersions: () => {
+        throw new Error('network down');
+      },
+      deployOne: (slug: string) => {
+        seen.push(slug);
+        return { ok: true, detail: 'Deployed' };
+      },
+    });
+    expect(appliedLookupFailed).toBe(true);
+    expect(seen).toEqual(['send-sms']);
+    expect(succeeded.map((item) => item.slug)).toEqual(['send-sms']);
+    expect(failed.map((item) => item.slug)).toEqual(['sync-lightspeed-inventory']);
+    expect(failed[0].detail).toContain('explicit release prerequisite');
+    expect(failed[0].detail).not.toContain('could not read applied migrations');
+  });
+
+  it('deploys a resolved cron-auth function only after the mapped migration is applied', async () => {
+    const required = [
+      { path: 'supabase/migrations/20990101000001_synthetic_caller_fixture.sql', version: '20990101000001' },
+    ];
+    const seen: string[] = [];
+    const blocked = await deployWithMigrationGate({
+      functions: [{ slug: 'check-expiring-promotions', requiredMigrations: required }],
+      listAppliedVersions: () => [{ version: '20260815160000' }],
+      deployOne: (slug: string) => {
+        seen.push(slug);
+        return { ok: true, detail: 'Deployed' };
+      },
+    });
+    expect(seen).toEqual([]);
+    expect(blocked.failed[0].detail).toContain('20990101000001_synthetic_caller_fixture.sql');
+    expect(blocked.failed[0].detail).toContain('not applied in production');
+
+    const allowed = await deployWithMigrationGate({
+      functions: [{ slug: 'check-expiring-promotions', requiredMigrations: required }],
+      listAppliedVersions: () => [{ version: '20990101000001' }],
+      deployOne: (slug: string) => {
+        seen.push(slug);
+        return { ok: true, detail: 'Deployed' };
+      },
+    });
+    expect(seen).toEqual(['check-expiring-promotions']);
+    expect(allowed.succeeded.map((item) => item.slug)).toEqual(['check-expiring-promotions']);
+    expect(allowed.failed).toEqual([]);
+  });
+
   it('notes a large _shared fan-out', () => {
     const targets = Array.from({ length: 12 }, (_, index) => ({
       slug: `fn-${index}`,
@@ -785,5 +866,43 @@ describe('deploy summary', () => {
       failed: [],
     });
     expect(markdown).toContain('Large fan-out: **12** functions');
+  });
+});
+
+describe('cron-auth deploy path mapping', () => {
+  it('blocks a manual single-function deploy from the unresolved on-disk manifest', async () => {
+    const seen: string[] = [];
+    const code = await runDeploy({
+      env: {
+        DEPLOY_FUNCTION: 'check-expiring-promotions',
+        DEPLOY_FROM: 'HEAD',
+        DEPLOY_TO: 'HEAD',
+      },
+      deployOne: (slug: string) => {
+        seen.push(slug);
+        return { ok: true, detail: 'ok' };
+      },
+      listAppliedVersions: () => [{ version: '20260815160000' }],
+    });
+    expect(code).toBe(1);
+    expect(seen).toEqual([]);
+  });
+
+  it('blocks the other protected slug on the same manual path and does not invent a migration', async () => {
+    const seen: string[] = [];
+    const code = await runDeploy({
+      env: {
+        DEPLOY_FUNCTION: 'sync-lightspeed-inventory',
+        DEPLOY_FROM: 'HEAD',
+        DEPLOY_TO: 'HEAD',
+      },
+      deployOne: (slug: string) => {
+        seen.push(slug);
+        return { ok: true, detail: 'ok' };
+      },
+      listAppliedVersions: () => [{ version: '20260815160000' }],
+    });
+    expect(code).toBe(1);
+    expect(seen).toEqual([]);
   });
 });

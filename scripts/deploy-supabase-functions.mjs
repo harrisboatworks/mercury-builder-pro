@@ -20,6 +20,10 @@
  * list still deploy. The job fails if anything was skipped.
  *
  * Never applies migrations. Never prints secret values.
+ * Explicit cron-auth release prerequisites are merged into the same
+ * required-migration / skip path. Unresolved protected slugs are skipped
+ * even when inference finds no SQL objects. The job still never applies
+ * those migrations.
  *
  * Usage:
  *   node scripts/deploy-supabase-functions.mjs [function-slug]
@@ -46,9 +50,10 @@ import {
   filesByFunctionSlug,
   isZeroSha,
   parseNameStatusZ,
-  requiredMigrationsForSlug,
+  releaseRequirementsForSlug,
   toPosix,
 } from './lib/supabase-deploy-required.mjs';
+import { withReleasePrerequisiteManifest } from './lib/cron-auth-release-prerequisites.mjs';
 import { projectRefFromConfig, resolveProjectRef } from './lib/supabase-project-ref.mjs';
 
 export { projectRefFromConfig, resolveProjectRef };
@@ -351,11 +356,22 @@ export async function deployWithMigrationGate({
       { deployOne, skipReason },
     );
 
+  const explicitBlockReason = (slug) => {
+    const target = targets.find((item) => item.slug === slug);
+    if (!target?.explicitDeployBlock) return null;
+    return redactSecrets(
+      `skipped: ${target.explicitDeployBlock} This job never applies migrations. Deploying \`${slug}\` is blocked by an explicit release prerequisite.`,
+      env,
+    );
+  };
+
   const degradeOnUnreadableList = (error) => {
     const detail = error instanceof Error ? error.message : String(error);
     writeDeployLog(redactSecrets(`could not read applied migrations: ${detail}`, env), log);
     return {
       ...deployTargets((slug) => {
+        const blocked = explicitBlockReason(slug);
+        if (blocked) return blocked;
         const target = targets.find((item) => item.slug === slug);
         if (!target?.requiredMigrations?.length) return null;
         return lookupFailureSkipReason(slug, detail, env);
@@ -397,6 +413,8 @@ export async function deployWithMigrationGate({
 
   return {
     ...deployTargets((slug) => {
+      const blocked = explicitBlockReason(slug);
+      if (blocked) return blocked;
       const target = targets.find((item) => item.slug === slug);
       if (source === 'cli-fallback' && target?.requiredMigrations?.length) {
         return blockedDeployReason(slug, target.requiredMigrations, new Set(), { source });
@@ -632,10 +650,13 @@ function readRangeTargets(files, from, to) {
 }
 
 export async function runDeploy({ env = process.env, deployOne, listAppliedVersions } = {}) {
-  const files = {
-    ...loadTextTree('supabase/functions'),
-    ...loadTextTree('supabase/migrations'),
-  };
+  const files = withReleasePrerequisiteManifest(
+    {
+      ...loadTextTree('supabase/functions'),
+      ...loadTextTree('supabase/migrations'),
+    },
+    (relPath) => readFileSync(join(ROOT, relPath), 'utf8'),
+  );
   const forcedRaw = env.DEPLOY_FUNCTION || '';
   const projectRef = resolveProjectRef(env, { root: ROOT });
 
@@ -671,14 +692,22 @@ export async function runDeploy({ env = process.env, deployOne, listAppliedVersi
     const rangeTargets = ranged.ok
       ? ranged.targets
       : { from: '', to: '', functions: [], removed: [], migrations: [], notes: [] };
-    const hit = rangeTargets.functions.find((item) => item.slug === resolved.slug);
-    const requiredMigrations = hit?.requiredMigrations?.length
-      ? hit.requiredMigrations
-      : requiredMigrationsForSlug(resolved.slug, files, rangeTargets.migrations || []);
+    const requirements = releaseRequirementsForSlug(
+      resolved.slug,
+      files,
+      rangeTargets.migrations || [],
+    );
     targets = {
       from: rangeTargets.from || '',
       to: rangeTargets.to || '',
-      functions: [{ slug: resolved.slug, reasons: ['workflow_dispatch'], requiredMigrations }],
+      functions: [
+        {
+          slug: resolved.slug,
+          reasons: ['workflow_dispatch'],
+          requiredMigrations: requirements.requiredMigrations,
+          explicitDeployBlock: requirements.explicitDeployBlock,
+        },
+      ],
       removed: [],
       migrations: rangeTargets.migrations || [],
       notes: rangeTargets.notes || [],

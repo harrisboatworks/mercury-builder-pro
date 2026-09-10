@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "protectedSlugs": [
+    "check-expiring-promotions",
+    "sync-lightspeed-inventory"
+  ],
+  "slugs": {
+    "check-expiring-promotions": {
+      "status": "unresolved",
+      "path": null,
+      "version": null,
+      "blocker": "Caller credential migration is not authorable. No approved protected database secret reference or matching Edge secret presence has been established. Observed scheduler jobs still present an anon bearer and do not mention an internal header or vault reference."
+    },
+    "sync-lightspeed-inventory": {
+      "status": "unresolved",
+      "path": null,
+      "version": null,
+      "blocker": "Caller credential migration is not authorable. No approved protected database secret reference or matching Edge secret presence has been established. Observed scheduler jobs still present an anon bearer and do not mention an internal header or vault reference."
+    }
+  }
+}

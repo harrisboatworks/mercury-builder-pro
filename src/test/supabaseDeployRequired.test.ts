@@ -22,10 +22,15 @@ import {
   ORDERING_UNKNOWN,
   parseNameStatusZ,
   requiredMigrationsForSlug,
+  releaseRequirementsForSlug,
   resolveImportPath,
   secretsConfigured,
   sourceFilesForFunction,
 } from '../../scripts/lib/supabase-deploy-required.mjs';
+import {
+  CRON_AUTH_RELEASE_PREREQUISITE_MANIFEST_PATH,
+  EXPLICIT_PREREQUISITE_VIA,
+} from '../../scripts/lib/cron-auth-release-prerequisites.mjs';
 
 const files = (entries: Record<string, string>) => entries;
 
@@ -766,5 +771,209 @@ Release order below: **migrations first**, then the functions that may depend on
     expect(blockedDeployReason('capture-chat-lead', required, missing)).toContain(
       '20260101000000_create_lead_rpc.sql',
     );
+  });
+});
+
+const PROMO_FN = 'supabase/functions/check-expiring-promotions/index.ts';
+const LIGHTSPEED_FN = 'supabase/functions/sync-lightspeed-inventory/index.ts';
+const SMS_FN = 'supabase/functions/send-sms/index.ts';
+const ALTER_JOB_ONLY = 'supabase/migrations/20990101000000_synthetic_alter_job_fixture.sql';
+const RESOLVED_CALLER = 'supabase/migrations/20990101000001_synthetic_caller_fixture.sql';
+
+function unresolvedManifest(overrides: Record<string, unknown> = {}) {
+  return JSON.stringify({
+    version: 1,
+    protectedSlugs: ['check-expiring-promotions', 'sync-lightspeed-inventory'],
+    slugs: {
+      'check-expiring-promotions': {
+        status: 'unresolved',
+        path: null,
+        version: null,
+        blocker: 'caller migration is not authorable',
+      },
+      'sync-lightspeed-inventory': {
+        status: 'unresolved',
+        path: null,
+        version: null,
+        blocker: 'caller migration is not authorable',
+      },
+    },
+    ...overrides,
+  });
+}
+
+function resolvedManifest(path = RESOLVED_CALLER, version = '20990101000001') {
+  return JSON.stringify({
+    version: 1,
+    protectedSlugs: ['check-expiring-promotions', 'sync-lightspeed-inventory'],
+    slugs: {
+      'check-expiring-promotions': { status: 'resolved', path, version },
+      'sync-lightspeed-inventory': { status: 'resolved', path, version },
+    },
+  });
+}
+
+const cronAuthTree = () =>
+  files({
+    [PROMO_FN]: `
+      import { requireAdmin } from "../_shared/admin-auth.ts";
+      await supabase.from("promotions").select("id");
+    `,
+    [LIGHTSPEED_FN]: `
+      import { requireAdmin } from "../_shared/admin-auth.ts";
+      await supabase.from("motor_models").update({});
+    `,
+    [SMS_FN]: `
+      Deno.serve(() => new Response("ok"));
+    `,
+    [ALTER_JOB_ONLY]: "SELECT cron.alter_job(job_id := 1, command := 'SELECT 1');",
+    [CRON_AUTH_RELEASE_PREREQUISITE_MANIFEST_PATH]: unresolvedManifest(),
+  });
+
+describe('explicit cron-auth release prerequisites', () => {
+  it('does not treat an alter_job-only migration as an inferred dependency', () => {
+    const tree = cronAuthTree();
+    expect(requiredMigrationsForSlug('check-expiring-promotions', tree, [ALTER_JOB_ONLY])).toEqual([]);
+    expect(requiredMigrationsForSlug('sync-lightspeed-inventory', tree, [ALTER_JOB_ONLY])).toEqual([]);
+    expect(requiredMigrationsForSlug('send-sms', tree, [ALTER_JOB_ONLY])).toEqual([]);
+  });
+
+  it('blocks unresolved protected slugs on the push-range report without inventing a path', () => {
+    const tree = cronAuthTree();
+    const report = buildDeployRequiredReport({
+      diffEntries: [
+        { status: 'M', path: PROMO_FN },
+        { status: 'M', path: LIGHTSPEED_FN },
+        { status: 'M', path: SMS_FN },
+        { status: 'A', path: ALTER_JOB_ONLY },
+      ],
+      files: tree,
+    });
+    const promo = report.functions.find((item) => item.slug === 'check-expiring-promotions');
+    const lightspeed = report.functions.find((item) => item.slug === 'sync-lightspeed-inventory');
+    const sms = report.functions.find((item) => item.slug === 'send-sms');
+    expect(promo?.requiredMigrations).toEqual([]);
+    expect(lightspeed?.requiredMigrations).toEqual([]);
+    expect(promo?.explicitDeployBlock).toMatch(/unresolved release prerequisite/);
+    expect(lightspeed?.explicitDeployBlock).toMatch(/unresolved release prerequisite/);
+    expect(sms?.explicitDeployBlock).toBeFalsy();
+    expect(sms?.requiredMigrations).toEqual([]);
+    const markdown = formatDeployRequiredMarkdown(report);
+    expect(markdown).toContain('release prerequisite: blocked');
+    expect(markdown).toContain('send-sms');
+    expect(markdown).not.toContain(RESOLVED_CALLER);
+  });
+
+  it('uses the same unresolved mapping for deploy targets and the manual slug helper', () => {
+    const tree = cronAuthTree();
+    const targets = deployTargetsFromDiff({
+      diffEntries: [
+        { status: 'M', path: PROMO_FN },
+        { status: 'M', path: SMS_FN },
+      ],
+      files: tree,
+    });
+    const promo = targets.functions.find((item) => item.slug === 'check-expiring-promotions');
+    const sms = targets.functions.find((item) => item.slug === 'send-sms');
+    expect(promo?.explicitDeployBlock).toMatch(/unresolved release prerequisite/);
+    expect(sms?.explicitDeployBlock).toBeFalsy();
+    expect(releaseRequirementsForSlug('check-expiring-promotions', tree, []).explicitDeployBlock).toMatch(
+      /unresolved release prerequisite/,
+    );
+    expect(releaseRequirementsForSlug('send-sms', tree, []).explicitDeployBlock).toBeFalsy();
+    expect(releaseRequirementsForSlug('send-sms', tree, []).requiredMigrations).toEqual([]);
+  });
+
+  it('maps a resolved prerequisite onto the existing applied-migration checks', () => {
+    const tree = {
+      ...cronAuthTree(),
+      [CRON_AUTH_RELEASE_PREREQUISITE_MANIFEST_PATH]: resolvedManifest(),
+      [RESOLVED_CALLER]: 'SELECT 1;',
+      [MIG_TABLE]: `
+        CREATE TABLE public.promotions (
+          id uuid PRIMARY KEY
+        );
+      `,
+    };
+    const inferred = requiredMigrationsForSlug('check-expiring-promotions', tree, [MIG_TABLE]);
+    expect(inferred.map((item) => item.path)).toEqual([MIG_TABLE]);
+    const merged = releaseRequirementsForSlug('check-expiring-promotions', tree, [MIG_TABLE]);
+    expect(merged.explicitDeployBlock).toBeNull();
+    expect(merged.requiredMigrations.map((item) => item.path)).toEqual([MIG_TABLE, RESOLVED_CALLER]);
+    expect(merged.requiredMigrations[1].via).toContain(EXPLICIT_PREREQUISITE_VIA);
+    const applied = appliedVersionSet([{ version: '20990101000001' }, { version: '20260101000001' }]);
+    expect(blockedDeployReason('check-expiring-promotions', merged.requiredMigrations, applied)).toBeNull();
+    expect(
+      blockedDeployReason(
+        'check-expiring-promotions',
+        merged.requiredMigrations,
+        appliedVersionSet([{ version: '20260101000001' }]),
+      ),
+    ).toContain('20990101000001_synthetic_caller_fixture.sql');
+  });
+
+  it('fails closed when the manifest is missing, malformed, or omits a protected slug', () => {
+    const base = cronAuthTree();
+    const missing = { ...base };
+    delete missing[CRON_AUTH_RELEASE_PREREQUISITE_MANIFEST_PATH];
+    expect(releaseRequirementsForSlug('check-expiring-promotions', missing, []).explicitDeployBlock).toMatch(
+      /manifest is missing/,
+    );
+    expect(
+      releaseRequirementsForSlug(
+        'check-expiring-promotions',
+        { ...base, [CRON_AUTH_RELEASE_PREREQUISITE_MANIFEST_PATH]: '{' },
+        [],
+      ).explicitDeployBlock,
+    ).toMatch(/manifest is malformed/);
+    const omitted = JSON.parse(unresolvedManifest());
+    delete omitted.slugs['sync-lightspeed-inventory'];
+    expect(
+      releaseRequirementsForSlug(
+        'sync-lightspeed-inventory',
+        { ...base, [CRON_AUTH_RELEASE_PREREQUISITE_MANIFEST_PATH]: JSON.stringify(omitted) },
+        [],
+      ).explicitDeployBlock,
+    ).toMatch(/no explicit release-prerequisite manifest entry/);
+    expect(releaseRequirementsForSlug('send-sms', missing, []).explicitDeployBlock).toBeFalsy();
+  });
+
+  it('fails closed when a resolved mapping points at an absent or unreadable file', () => {
+    const base = cronAuthTree();
+    const absent = {
+      ...base,
+      [CRON_AUTH_RELEASE_PREREQUISITE_MANIFEST_PATH]: resolvedManifest(),
+    };
+    expect(releaseRequirementsForSlug('check-expiring-promotions', absent, []).explicitDeployBlock).toMatch(
+      /referenced caller migration is absent/,
+    );
+    const unreadable = {
+      ...absent,
+      [RESOLVED_CALLER]: '   ',
+    };
+    expect(releaseRequirementsForSlug('check-expiring-promotions', unreadable, []).explicitDeployBlock).toMatch(
+      /referenced caller migration is unreadable/,
+    );
+  });
+
+  it('keeps the committed on-disk mapping unresolved with no invented caller migration', () => {
+    const manifest = JSON.parse(readFileSync(CRON_AUTH_RELEASE_PREREQUISITE_MANIFEST_PATH, 'utf8'));
+    expect(manifest.protectedSlugs).toEqual(['check-expiring-promotions', 'sync-lightspeed-inventory']);
+    expect(manifest.slugs['check-expiring-promotions']).toMatchObject({
+      status: 'unresolved',
+      path: null,
+      version: null,
+    });
+    expect(manifest.slugs['sync-lightspeed-inventory']).toMatchObject({
+      status: 'unresolved',
+      path: null,
+      version: null,
+    });
+    const script = readFileSync('scripts/report-supabase-deploy-required.mjs', 'utf8');
+    expect(script).toContain('withReleasePrerequisiteManifest');
+    const deploy = readFileSync('scripts/deploy-supabase-functions.mjs', 'utf8');
+    expect(deploy).toContain('releaseRequirementsForSlug');
+    expect(deploy).toContain('explicitDeployBlock');
+    expect(deploy).toContain('never applies migrations');
   });
 });

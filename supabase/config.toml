@@ -284,3 +284,12 @@ verify_jwt = false
 
 [functions.voice-create-quote]
 verify_jwt = false
+
+# In-function requireAdmin() accepts admin JWT, service-role, or x-internal-secret.
+# Gateway JWT is off so a header-only internal caller can reach that gate.
+# Do not deploy these entries without the handler gates and the caller-migration prerequisite.
+[functions.check-expiring-promotions]
+verify_jwt = false
+
+[functions.sync-lightspeed-inventory]
+verify_jwt = false
