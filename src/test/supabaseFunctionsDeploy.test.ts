@@ -16,11 +16,17 @@ import {
   runDeploy,
 } from '../../scripts/deploy-supabase-functions.mjs';
 import { listAppliedMigrationsFromManagementApi } from '../../scripts/lib/supabase-management-api.mjs';
-import { isMigrationApplied, appliedVersionSet } from '../../scripts/lib/supabase-deploy-required.mjs';
+import { isMigrationApplied, appliedVersionSet, deployTargetsFromDiff, releaseRequirementsForSlug } from '../../scripts/lib/supabase-deploy-required.mjs';
 import {
   projectRefFromConfig as sharedProjectRefFromConfig,
   resolveProjectRef as sharedResolveProjectRef,
 } from '../../scripts/lib/supabase-project-ref.mjs';
+
+import {
+  CRON_AUTH_CALLER_MIGRATION_PATH,
+  CRON_AUTH_CALLER_MIGRATION_VERSION,
+  CRON_AUTH_RELEASE_PREREQUISITE_MANIFEST_PATH,
+} from '../../scripts/lib/cron-auth-release-prerequisites.mjs';
 
 const files = {
   'supabase/functions/send-sms/index.ts': 'export {}',
@@ -904,5 +910,39 @@ describe('cron-auth deploy path mapping', () => {
     });
     expect(code).toBe(1);
     expect(seen).toEqual([]);
+  });
+});
+
+
+describe('resolved cron prerequisite identity', () => {
+  const slugs = ['check-expiring-promotions', 'sync-lightspeed-inventory'];
+  const cases = slugs.flatMap((slug) => ['push', 'manual'].flatMap((mode) => [
+    { slug, mode, path: 'supabase/migrations/20260815160000_unrelated.sql', version: '20260815160000' },
+    { slug, mode, path: `supabase/migrations/${CRON_AUTH_CALLER_MIGRATION_VERSION}_unrelated.sql`, version: CRON_AUTH_CALLER_MIGRATION_VERSION },
+  ]));
+  it.each(cases)('rejects unrelated applied migration for $slug via $mode: $path', async ({slug, mode, path, version}) => {
+    const tree = {
+      [`supabase/functions/${slug}/index.ts`]: 'export {};',
+      [path]: 'SELECT 1;',
+      [CRON_AUTH_CALLER_MIGRATION_PATH]: 'SELECT cron.alter_job(job_id := 1);',
+      [CRON_AUTH_RELEASE_PREREQUISITE_MANIFEST_PATH]: JSON.stringify({
+        version: 1,
+        protectedSlugs: slugs,
+        slugs: Object.fromEntries(slugs.map((name) => [name, {status: 'resolved', path, version}])),
+      }),
+    };
+    const targets = mode === 'push'
+      ? deployTargetsFromDiff({diffEntries: [{status: 'M', path: `supabase/functions/${slug}/index.ts`}], files: tree}).functions
+      : [{slug, ...releaseRequirementsForSlug(slug, tree, [])}];
+    const seen: string[] = [];
+    const result = await deployWithMigrationGate({
+      functions: targets,
+      listAppliedVersions: () => [{version}],
+      deployOne: (name: string) => { seen.push(name); return {ok: true, detail: 'fake deployment'}; },
+    });
+    expect(seen).toEqual([]);
+    expect(result.succeeded).toEqual([]);
+    expect(result.failed).toHaveLength(1);
+    expect(result.failed[0].detail).toContain('must name the accepted caller migration');
   });
 });

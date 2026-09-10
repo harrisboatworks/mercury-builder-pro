@@ -29,6 +29,7 @@ import {
 } from '../../scripts/lib/supabase-deploy-required.mjs';
 import {
   CRON_AUTH_CALLER_MIGRATION_PATH,
+  CRON_AUTH_CALLER_MIGRATION_VERSION,
   CRON_AUTH_RELEASE_PREREQUISITE_MANIFEST_PATH,
   EXPLICIT_PREREQUISITE_VIA,
 } from '../../scripts/lib/cron-auth-release-prerequisites.mjs';
@@ -779,7 +780,7 @@ const PROMO_FN = 'supabase/functions/check-expiring-promotions/index.ts';
 const LIGHTSPEED_FN = 'supabase/functions/sync-lightspeed-inventory/index.ts';
 const SMS_FN = 'supabase/functions/send-sms/index.ts';
 const ALTER_JOB_ONLY = 'supabase/migrations/20990101000000_synthetic_alter_job_fixture.sql';
-const RESOLVED_CALLER = 'supabase/migrations/20990101000001_synthetic_caller_fixture.sql';
+const RESOLVED_CALLER = CRON_AUTH_CALLER_MIGRATION_PATH;
 
 function unresolvedManifest(overrides: Record<string, unknown> = {}) {
   return JSON.stringify({
@@ -803,7 +804,7 @@ function unresolvedManifest(overrides: Record<string, unknown> = {}) {
   });
 }
 
-function resolvedManifest(path = RESOLVED_CALLER, version = '20990101000001') {
+function resolvedManifest(path = RESOLVED_CALLER, version = CRON_AUTH_CALLER_MIGRATION_VERSION) {
   return JSON.stringify({
     version: 1,
     protectedSlugs: ['check-expiring-promotions', 'sync-lightspeed-inventory'],
@@ -902,7 +903,7 @@ describe('explicit cron-auth release prerequisites', () => {
     expect(merged.explicitDeployBlock).toBeNull();
     expect(merged.requiredMigrations.map((item) => item.path)).toEqual([MIG_TABLE, RESOLVED_CALLER]);
     expect(merged.requiredMigrations[1].via).toContain(EXPLICIT_PREREQUISITE_VIA);
-    const applied = appliedVersionSet([{ version: '20990101000001' }, { version: '20260101000001' }]);
+    const applied = appliedVersionSet([{ version: CRON_AUTH_CALLER_MIGRATION_VERSION }, { version: '20260101000001' }]);
     expect(blockedDeployReason('check-expiring-promotions', merged.requiredMigrations, applied)).toBeNull();
     expect(
       blockedDeployReason(
@@ -910,7 +911,7 @@ describe('explicit cron-auth release prerequisites', () => {
         merged.requiredMigrations,
         appliedVersionSet([{ version: '20260101000001' }]),
       ),
-    ).toContain('20990101000001_synthetic_caller_fixture.sql');
+    ).toContain(CRON_AUTH_CALLER_MIGRATION_PATH.split('/').pop());
   });
 
   it('fails closed when the manifest is missing, malformed, or omits a protected slug', () => {

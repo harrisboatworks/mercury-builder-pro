@@ -152,6 +152,12 @@ export function resolveCronAuthReleasePrerequisite(slug, files) {
         requiredMigrations: [],
       };
     }
+    if (path !== CRON_AUTH_CALLER_MIGRATION_PATH || version !== CRON_AUTH_CALLER_MIGRATION_VERSION) {
+      return {
+        blockReason: `protected function \`${slug}\` must name the accepted caller migration path and version.`,
+        requiredMigrations: [],
+      };
+    }
     if (!files || !Object.prototype.hasOwnProperty.call(files, path)) {
       return {
         blockReason: `protected function \`${slug}\` referenced caller migration is absent.`,
