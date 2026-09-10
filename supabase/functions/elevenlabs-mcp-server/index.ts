@@ -589,7 +589,7 @@ async function executeTool(
         engine_type: args.engine_type as string | undefined,
         model: args.model as string | undefined,
       });
-      if (!architecture && (args.engine_type || !args.model)) {
+      if (!architecture) {
         return {
           content: [{
             type: "text",
@@ -1172,11 +1172,13 @@ ${motor1.horsepower > motor2.horsepower ? `The ${motor1.model_display} has more 
     }
     
     case "get_store_hours": {
-      const { profile } = await fetchPublishedBusinessProfile();
+      const { profile, published } = await fetchPublishedBusinessProfile();
       return { 
         content: [{ 
           type: "text", 
-          text: buildBusinessCustomerAnswer(profile, "What are your current store hours?"),
+          text: published
+            ? buildBusinessCustomerAnswer(profile, "What are your current store hours?")
+            : "I can't verify the current store hours right now. Please check https://www.mercuryrepower.ca/contact or call Harris Boat Works at (905) 342-2153 before travelling.",
         }] 
       };
     }
