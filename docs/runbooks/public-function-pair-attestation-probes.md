@@ -8,6 +8,8 @@ Committed guards in `scripts/lib/public-function-release-guards.mjs` stay `UNVER
 
 Companion hold document: `docs/runbooks/public-function-backlog-release-533.md`.
 
+Executable offline harness (no live calls, no `ATTESTED` write): `scripts/lib/public-function-pair-attestation.mjs` and `scripts/public-function-pair-attestation-probe.mjs`. Tests: `src/test/publicFunctionPairAttestation.test.ts`.
+
 ## Insufficient evidence (do not attest from these)
 
 - Secret **name** `OPENAI_API_KEY` present
