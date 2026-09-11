@@ -133,3 +133,39 @@ Migration `20260910140000` is **not** in `supabase_migrations.schema_migrations`
 - Deploying the gated handlers before the caller migration would 401 the two scheduled jobs, which still send Authorization and do not mention an internal header or Vault reference.
 - Applying the caller migration now would abort or be wrong because Vault lacks the proposed names.
 - The explicit prerequisite JSON therefore stays unresolved. This update does not apply the caller migration, does not deploy, and does not resolve that mapping.
+
+## Precise remaining prerequisites (2026-09-11)
+
+Head this list was reconciled against: `23b9194270cb92ab776a9033fc2a2e386a027e97`. Manifest stays `status=unresolved`, `path=null`, `version=null`. Do not invent a Vault value. Do not reuse the ElevenLabs / `ELEVENLABS_MCP_SECRET` credential. Secret provisioning belongs to Codex/the owner through secure storage. Do not request or expose raw values in cloud chat.
+
+### Already verified in source or sanitized live readback
+
+| Item | Status | Evidence |
+| --- | --- | --- |
+| Job identity + schedule | Verified | jobid 46 `check-expiring-promotions-daily` `0 13 * * *` active; jobid 19 `lightspeed-motor-models-sync-daily` `15 2 * * *` active |
+| Duplicate callers on those two URLs | Verified none extra | Exactly one `cron.job` row each |
+| Sister / out-of-scope jobs | Verified | jobid 37 `promo-notifications-daily` already uses `x-internal-secret`; other Lightspeed jobs untouched |
+| Gateway `verify_jwt` | Verified false | Live registry for both slugs |
+| Execution role identity | Verified | Both in-scope jobs run as `username=postgres`, `database=postgres`, `nodename=localhost` |
+| Execution-role Vault table grants | Verified at privilege level | `postgres` has `SELECT` on `vault.secrets` and `vault.decrypted_secrets` (same for `service_role`). This is **not** proof a selected secret row exists. |
+| Proposed Vault names | Absent | No `EDGE_INTERNAL_SECRET` or `CRON_SECRET` row in `vault.secrets` |
+| Caller migration ledger | Absent | `20260910140000` not in `schema_migrations` |
+| Handler + deploy gate | Source ready | `requireAdmin` before side effects; unresolved manifest skips both slugs; `#538` pair holds coexist |
+| Selected-secret precedence (source contract) | Documented | `requireAdmin` uses `EDGE_INTERNAL_SECRET \|\| CRON_SECRET` (first nonempty wins). Migration prefers a Vault row named `EDGE_INTERNAL_SECRET`, else `CRON_SECRET` only if that is the only proposed name. |
+
+### Still required before anyone applies SQL or deploys handlers
+
+1. **Owner accepts the Vault naming contract** (`EDGE_INTERNAL_SECRET` preferred) or names a different accepted Vault reference that still matches the selected Edge env name. Established Vault names (`service_role_key`, `sin-encryption-key`, `vercel_pricing_deploy_hook_url`) are the wrong contract for `x-internal-secret`.
+2. **Codex/owner provisions exactly one nonempty Vault row** for the accepted name via secure storage. Zero rows: migration aborts. Duplicate rows: migration aborts. Empty/unreadable decrypted value: migration aborts.
+3. **Selected-secret precedence proof** (credential-owning environment, names/presence/parity only):
+   - List Edge secret **names** on project `eutsoqdpjurknjsshxes`.
+   - If both `EDGE_INTERNAL_SECRET` and `CRON_SECRET` exist on Edge, the Vault row must be `EDGE_INTERNAL_SECRET` and must match that Edge value.
+   - If only `CRON_SECRET` exists on Edge, Vault must be `CRON_SECRET` and Edge must also select it (no nonempty `EDGE_INTERNAL_SECRET`).
+   - Compare presence and equality without printing values. Edge-name presence alone is not Vault provisioning.
+4. **Preserved command/schedule/body/options snapshot** taken in the credential-owning environment. This chat verified schedule, active, job name, and header-shape flags only. It did **not** read `cron.job.command`. Owner must confirm the live command still matches the migration’s supported `SELECT net.http_post(url := '<exact function URL>', headers := jsonb_build_object('Content-Type','application/json','Authorization', 'Bearer <jwt>'), body := '{}'::jsonb [, timeout_milliseconds := <int>]) AS request_id;` grammar, then store a **protected rollback snapshot** outside git (same `job_id`, current command). Do not paste command text or JWTs into GitHub or this chat.
+5. **Duplicate / external callers beyond `cron.job`**. In-database extra URL callers are none. Owner still confirms no GitHub Action, Vercel cron, or external scheduler hits these two slugs with a different credential.
+6. **Authorize and apply** `supabase/migrations/20260910140000_rewrite_promo_lightspeed_cron_internal_secret.sql` only after steps 1–5. Read back ledger `version` + `name`. Confirm each job still has the same `jobid`, schedule, active state, and that the new command adds exactly one `x-internal-secret` Vault clause while retaining the existing Authorization pair.
+7. **Observe the next scheduled runs** (13:00 UTC promo; 02:15 UTC Lightspeed) or an explicitly authorized manual invoke. Success + HTTP 2xx before anyone deploys the gated handlers.
+8. **Then** set both manifest entries to `status=resolved`, `path=supabase/migrations/20260910140000_rewrite_promo_lightspeed_cron_internal_secret.sql`, `version=20260910140000` (both fields required) and deploy `check-expiring-promotions` + `sync-lightspeed-inventory` together. Deploying handlers before step 6/7 401s the current Authorization-only callers.
+
+Release hold remains. Review-ready source is not release authorization.
