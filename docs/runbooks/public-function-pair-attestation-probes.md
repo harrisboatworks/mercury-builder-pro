@@ -25,14 +25,18 @@ Executable offline harness (no live calls, no `ATTESTED` write): `scripts/lib/pu
 - Laptop, preview, or “this is the production key” labeling without a digest match
 - Posting A2 to live `ai-chatbot` / `ai-chatbot-stream` as a substitute for the source-contract probe
 
-## Provenance required (digest match, no secret values)
+The offline harness (`runPairAttestationProbes`) bounds the **entire** session, not only `close()`. Hung `fetch` / `createOffer` / `acceptAnswer` calls are cancelled against that deadline, and `close()` always runs in `finally` with its own cleanup budget. Passing `timeoutMs` to an adapter is not the deadline.
 
-Do **not** treat a copied label as proof. In the credential-owning environment, Codex compares two hashes and records the comparison only:
+Synthetic mode is labeled on every receipt (`mode=synthetic`, `synthetic=true`) and **never** returns `productionAttestable=true`. Do not mark guards `ATTESTED` from synthetic tests.
 
-1. SHA-256 of the `OPENAI_API_KEY` value retrieved from 1Password / secure storage.
-2. SHA-256 of the production Supabase Edge secret `OPENAI_API_KEY` on project `eutsoqdpjurknjsshxes`.
+## Provenance required (secret versus validated SHA-256, no secret values)
 
-Compare the two digests without printing either secret or either digest. Record:
+Do **not** treat a copied label as proof. Supabase already stores a SHA-256 digest. Hashing both sides is the wrong contract. In the credential-owning environment, Codex uses `compareSecretToSha256`:
+
+1. Nonempty plaintext `OPENAI_API_KEY` from 1Password / secure storage.
+2. Validated lowercase 64-hex SHA-256 digest of production Edge `OPENAI_API_KEY` on project `eutsoqdpjurknjsshxes`.
+
+Empty/empty is a mismatch. Do not print the secret or the digest. `evaluateProvenance` requires exact fields (`project`, `secretName`, `match`, valid `comparedAt`). A formatted string that merely contains `result=match` is not accepted. Record:
 
 | Field | Required record |
 | --- | --- |
@@ -97,8 +101,8 @@ Rules:
 Pass (all required):
 
 1. HTTP `200`.
-2. Returned `model` identity starts with `gpt-5.6-luna`.
-3. Actual assistant output is present and matches the disposable prompt (the completion contains `pong`, case-insensitive, no extra tool calls).
+2. Returned `model` identity equals `gpt-5.6-luna` exactly (prefix models fail).
+3. Assistant output equals `pong` after trim. Sentences that mention pong fail. No tool calls.
 
 Fail: any non-200, rejected request fields, missing/wrong `model`, empty output, or an output that is not the expected disposable token.
 

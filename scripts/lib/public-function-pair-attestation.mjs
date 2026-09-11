@@ -2,7 +2,7 @@
  * Offline-testable pair-attestation probe helpers for #542.
  * Does not read 1Password, does not call OpenAI, and never writes ATTESTED.
  */
-import { createHash } from 'node:crypto';
+import { createHash, timingSafeEqual } from 'node:crypto';
 import { acceptProductionAttestation, isLocalProductionKeyProvenance } from './public-function-release-guards.mjs';
 
 export const CHAT_MODEL = 'gpt-5.6-luna';
@@ -17,6 +17,8 @@ export const REALTIME_CALLS_URL = 'https://api.openai.com/v1/realtime/calls';
 export const PRODUCTION_PROJECT_REF = 'eutsoqdpjurknjsshxes';
 export const PRODUCTION_SECRET_NAME = 'OPENAI_API_KEY';
 export const SESSION_BOUND_MS = 30_000;
+export const CLEANUP_BUDGET_MS = 2_000;
+export const SHA256_HEX_RE = /^[a-f0-9]{64}$/;
 export const FORBIDDEN_CHAT_FIELDS = Object.freeze([
   'max_tokens',
   'temperature',
@@ -26,6 +28,28 @@ export const FORBIDDEN_CHAT_FIELDS = Object.freeze([
 ]);
 
 const SECRETISH = /(sk-|ek_|ephemeral|BEGIN|v=0|o=|a=fingerprint)/i;
+
+function deadlineError(label) {
+  const error = new Error(`SESSION_DEADLINE:${label}`);
+  error.code = 'SESSION_DEADLINE';
+  return error;
+}
+
+export async function raceWithDeadline(work, ms, label) {
+  const budget = Number(ms);
+  if (!Number.isFinite(budget) || budget <= 0) throw deadlineError(label);
+  let timer;
+  try {
+    return await Promise.race([
+      work,
+      new Promise((_, reject) => {
+        timer = setTimeout(() => reject(deadlineError(label)), budget);
+      }),
+    ]);
+  } finally {
+    clearTimeout(timer);
+  }
+}
 
 export function buildChatCompletionsRequest() {
   return {
@@ -65,16 +89,16 @@ export function validateChatCompletion(response) {
     return { ok: false, code: 'HTTP', modelOk: false, outputOk: false, detail: `status ${response?.status || 'missing'}` };
   }
   const model = String(response.json?.model || '');
-  const output = String(response.json?.choices?.[0]?.message?.content || '');
+  const output = String(response.json?.choices?.[0]?.message?.content ?? '');
   const toolCalls = response.json?.choices?.[0]?.message?.tool_calls;
-  const modelOk = model.startsWith(CHAT_MODEL);
-  const outputOk = /\bpong\b/i.test(output) && !toolCalls;
+  const modelOk = model === CHAT_MODEL;
+  const outputOk = output.trim() === 'pong' && !toolCalls;
   return {
     ok: modelOk && outputOk,
     code: modelOk && outputOk ? 'OK' : (!modelOk ? 'MODEL' : 'OUTPUT'),
     modelOk,
     outputOk,
-    detail: modelOk && outputOk ? 'pong' : (!modelOk ? 'model identity failed' : 'output check failed'),
+    detail: modelOk && outputOk ? 'exact-pong' : (!modelOk ? 'model identity failed' : 'output check failed'),
   };
 }
 
@@ -90,7 +114,7 @@ export function validateClientSecretMint(response) {
   const namePresent = Boolean(response?.json?.name || response?.json?.client_secret?.name);
   const valuePresent = Boolean(response?.json?.value || response?.json?.client_secret?.value);
   if (response?.status !== 200 || !namePresent) {
-    return { ok: false, code: 'MINT', namePresent: false, detail: 'client_secrets mint failed' };
+    return { ok: false, code: 'MINT', namePresent: false, valuePresent: false, detail: 'client_secrets mint failed' };
   }
   return { ok: true, code: 'OK', namePresent: true, valuePresent, detail: 'name present' };
 }
@@ -105,7 +129,8 @@ export function validateSdpAnswer(offer, answer, extra = {}) {
   const differs = Boolean(text) && text !== offerText;
   const peerAccepted = extra.peerAccepted === true;
   const webrtcOffer = extra.webrtcGenerated === true;
-  const ok = hasV && hasO && hasS && hasM && differs && peerAccepted && webrtcOffer;
+  const statusOk = extra.status == null || extra.status === 200 || extra.status === 201;
+  const ok = statusOk && hasV && hasO && hasS && hasM && differs && peerAccepted && webrtcOffer;
   return {
     ok,
     code: ok ? 'OK' : 'SDP',
@@ -120,10 +145,20 @@ export function validateSdpAnswer(offer, answer, extra = {}) {
   };
 }
 
-export function compareSecretDigests(leftValue, rightValue) {
-  const left = createHash('sha256').update(String(leftValue || ''), 'utf8').digest('hex');
-  const right = createHash('sha256').update(String(rightValue || ''), 'utf8').digest('hex');
-  return left === right;
+export function isValidatedSha256Digest(value) {
+  return typeof value === 'string' && SHA256_HEX_RE.test(value);
+}
+
+export function compareSecretToSha256(secret, digest) {
+  if (typeof secret !== 'string' || typeof digest !== 'string') return false;
+  if (!secret || !digest) return false;
+  if (!isValidatedSha256Digest(digest)) return false;
+  const hashed = createHash('sha256').update(secret, 'utf8').digest('hex');
+  try {
+    return timingSafeEqual(Buffer.from(hashed, 'hex'), Buffer.from(digest, 'hex'));
+  } catch {
+    return false;
+  }
 }
 
 export function formatProvenance({ match, comparedAt, project = PRODUCTION_PROJECT_REF, secretName = PRODUCTION_SECRET_NAME }) {
@@ -131,13 +166,27 @@ export function formatProvenance({ match, comparedAt, project = PRODUCTION_PROJE
   return `sha256-match:${secretName}@${project};compared=${comparedAt};result=${result}`;
 }
 
-export function evaluateProvenance(provenance) {
-  const text = String(provenance || '').trim();
-  if (!text) return { ok: false, code: 'MISSING' };
-  if (isLocalProductionKeyProvenance(text)) return { ok: false, code: 'LOCAL_PROVENANCE' };
-  if (!text.includes('sha256-match:') || !text.includes(`@${PRODUCTION_PROJECT_REF}`) || !text.includes('result=match')) {
-    return { ok: false, code: 'MISMATCH' };
+export function isValidComparedAt(value) {
+  if (typeof value !== 'string' || !value.trim()) return false;
+  if (!/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-]\d{2}:\d{2})$/.test(value)) return false;
+  return Number.isFinite(Date.parse(value));
+}
+
+export function evaluateProvenance(input) {
+  if (typeof input === 'string') {
+    if (isLocalProductionKeyProvenance(input)) return { ok: false, code: 'LOCAL_PROVENANCE' };
+    return { ok: false, code: 'FIELDS_REQUIRED' };
   }
+  if (!input || typeof input !== 'object' || Array.isArray(input)) {
+    return { ok: false, code: 'FIELDS_REQUIRED' };
+  }
+  if (isLocalProductionKeyProvenance(input.productionKeyProvenance || input.note || '')) {
+    return { ok: false, code: 'LOCAL_PROVENANCE' };
+  }
+  if (input.project !== PRODUCTION_PROJECT_REF) return { ok: false, code: 'PROJECT' };
+  if (input.secretName !== PRODUCTION_SECRET_NAME) return { ok: false, code: 'SECRET_NAME' };
+  if (input.match !== true) return { ok: false, code: 'MISMATCH' };
+  if (!isValidComparedAt(input.comparedAt)) return { ok: false, code: 'TIMESTAMP' };
   return { ok: true, code: 'MATCH' };
 }
 
@@ -153,20 +202,23 @@ export function redactProbeSecrets(text, secrets = []) {
 
 export function assertReceiptRedacted(receipt) {
   const dumped = JSON.stringify(receipt);
-  if (SECRETISH.test(dumped) || /sha256:[a-f0-9]{16}/i.test(dumped)) {
+  if (SECRETISH.test(dumped) || /sha256:[a-f0-9]{16}/i.test(dumped) || SHA256_HEX_RE.test(dumped)) {
     throw new Error('receipt leaked a secret, digest, or SDP body');
   }
 }
 
 export function buildReceipt(input) {
+  const mode = input.mode === 'live' ? 'live' : 'synthetic';
   const receipt = {
     ok: Boolean(input.ok),
+    mode,
+    synthetic: mode !== 'live',
     layer: input.layer || 'pre-deploy-provider',
     localKeyNotUsed: Boolean(input.localKeyNotUsed),
     provenance: {
       match: input.provenance?.match === true,
-      project: PRODUCTION_PROJECT_REF,
-      secretName: PRODUCTION_SECRET_NAME,
+      project: input.provenance?.project || PRODUCTION_PROJECT_REF,
+      secretName: input.provenance?.secretName || PRODUCTION_SECRET_NAME,
       comparedAt: input.provenance?.comparedAt || null,
     },
     siteChat: {
@@ -175,32 +227,72 @@ export function buildReceipt(input) {
     },
     realtime: {
       b1: input.realtime?.b1 || { status: null, discoveryOnly: true },
-      b2: input.realtime?.b2 || { status: null, namePresent: false },
-      b3: input.realtime?.b3 || { status: null, hasV: false, hasO: false, hasS: false, hasM: false, differs: false, peerAccepted: false },
-      b4: input.realtime?.b4 || { closed: false, elapsedMs: null },
+      b2: input.realtime?.b2 || { status: null, namePresent: false, mintOk: false },
+      b3: input.realtime?.b3 || {
+        status: null,
+        hasV: false,
+        hasO: false,
+        hasS: false,
+        hasM: false,
+        differs: false,
+        peerAccepted: false,
+        webrtcGenerated: false,
+      },
+      b4: input.realtime?.b4 || {
+        closed: false,
+        elapsedMs: null,
+        withinBound: false,
+        cleanupAttempted: false,
+      },
     },
     edgeRelay: {
       accepted: false,
       note: 'Provider capability is not Edge-relay acceptance.',
     },
     attestationWritten: false,
+    productionAttestable: false,
     note: 'Synthetic or Codex receipts never write PUBLIC_RELEASE_PAIRS attestation.',
   };
+  if (mode === 'live') {
+    receipt.productionAttestable = Boolean(input.productionAttestable);
+  }
   assertReceiptRedacted(receipt);
   return receipt;
 }
 
 export function siteChatAttestable(receipt) {
-  return Boolean(receipt?.provenance?.match && receipt?.siteChat?.a2?.modelOk && receipt?.siteChat?.a2?.outputOk);
+  return Boolean(
+    receipt?.provenance?.match
+    && receipt?.siteChat?.a2?.status === 200
+    && receipt?.siteChat?.a2?.modelOk
+    && receipt?.siteChat?.a2?.outputOk,
+  );
 }
 
 export function realtimeAttestable(receipt) {
-  const b3 = receipt?.realtime?.b3;
+  const r = receipt?.realtime;
   return Boolean(
     receipt?.provenance?.match
-    && b3?.hasV && b3?.hasO && b3?.hasS && b3?.hasM && b3?.differs && b3?.peerAccepted
-    && receipt?.realtime?.b4?.closed,
+    && r?.b1?.status === 200
+    && r?.b2?.status === 200
+    && r?.b2?.mintOk === true
+    && r?.b3?.status === 200
+    && r?.b3?.hasV && r?.b3?.hasO && r?.b3?.hasS && r?.b3?.hasM && r?.b3?.differs
+    && r?.b3?.peerAccepted === true
+    && r?.b3?.webrtcGenerated === true
+    && r?.b4?.closed === true
+    && r?.b4?.withinBound === true,
   );
+}
+
+function resolveSecretMatch(adapters) {
+  if (
+    Object.prototype.hasOwnProperty.call(adapters || {}, 'plaintextSecret')
+    || Object.prototype.hasOwnProperty.call(adapters || {}, 'edgeSha256Digest')
+  ) {
+    return compareSecretToSha256(adapters.plaintextSecret, adapters.edgeSha256Digest);
+  }
+  return Boolean(adapters?.provenanceMatch);
 }
 
 export async function runPairAttestationProbes(adapters) {
@@ -208,61 +300,125 @@ export async function runPairAttestationProbes(adapters) {
   const webrtc = adapters?.webrtc;
   const now = adapters?.now || (() => new Date().toISOString());
   const secrets = adapters?.secretsToRedact || [];
+  const mode = adapters?.mode === 'live' ? 'live' : 'synthetic';
+  const deadlineMs = Number.isFinite(adapters?.deadlineMs) ? adapters.deadlineMs : SESSION_BOUND_MS;
+  const cleanupBudgetMs = Number.isFinite(adapters?.cleanupBudgetMs) ? adapters.cleanupBudgetMs : CLEANUP_BUDGET_MS;
   if (typeof fetchImpl !== 'function') {
     throw new Error('offline/live adapters.fetch is required; this harness does not open a default network');
   }
 
+  const started = Date.now();
+  const remaining = () => deadlineMs - (Date.now() - started);
+  const bounded = (work, label) => raceWithDeadline(Promise.resolve().then(() => work), remaining(), label);
+
   const comparedAt = now();
-  const match = Boolean(adapters?.provenanceMatch);
-  const provenanceString = formatProvenance({ match, comparedAt });
-  const provenance = evaluateProvenance(adapters?.forceProvenance || provenanceString);
+  const match = resolveSecretMatch(adapters);
+  const provenanceFields = adapters?.forceProvenance && typeof adapters.forceProvenance === 'object'
+    ? adapters.forceProvenance
+    : {
+        project: PRODUCTION_PROJECT_REF,
+        secretName: PRODUCTION_SECRET_NAME,
+        match,
+        comparedAt,
+      };
+  const provenance = evaluateProvenance(provenanceFields);
+  const provenanceString = formatProvenance({
+    match: provenance.ok,
+    comparedAt,
+    project: provenanceFields.project,
+    secretName: provenanceFields.secretName,
+  });
 
-  const a1 = await fetchImpl(CHAT_DISCOVERY_URL, { method: 'GET' });
-  const chatRequest = buildChatCompletionsRequest();
-  const contract = assertChatRequestContract(chatRequest.body);
-  const a2 = contract.ok ? await fetchImpl(CHAT_COMPLETIONS_URL, { method: 'POST', body: chatRequest.body }) : { status: 0, json: {} };
-  const chat = validateChatCompletion(a2);
-
-  const b1 = await fetchImpl(REALTIME_DISCOVERY_URL, { method: 'GET' });
-  const mintReq = buildRealtimeClientSecretsRequest();
-  const b2 = await fetchImpl(REALTIME_CLIENT_SECRETS_URL, { method: 'POST', body: mintReq.body });
-  const mint = validateClientSecretMint(b2);
-
+  let a1 = { status: 0, json: {} };
+  let a2 = { status: 0, json: {} };
+  let b1 = { status: 0, json: {} };
+  let b2 = { status: 0, json: {} };
+  let b3 = { status: 0, text: '' };
   let offer = '';
   let webrtcGenerated = false;
-  if (typeof webrtc?.createOffer === 'function') {
-    offer = await webrtc.createOffer();
-    webrtcGenerated = Boolean(webrtc.generated);
-  }
-  const b3 = mint.ok
-    ? await fetchImpl(REALTIME_CALLS_URL, { method: 'POST', headers: { 'Content-Type': 'application/sdp' }, body: offer })
-    : { status: 0, text: '' };
-  const answer = String(b3.text || '');
   let peerAccepted = false;
-  if (typeof webrtc?.acceptAnswer === 'function' && answer) {
-    peerAccepted = await webrtc.acceptAnswer(answer);
-  }
-  const sdp = validateSdpAnswer(offer, answer, { peerAccepted, webrtcGenerated });
-
-  const started = Date.now();
   let closed = false;
-  if (typeof webrtc?.close === 'function') {
-    closed = await webrtc.close({ timeoutMs: SESSION_BOUND_MS });
-  }
-  const elapsedMs = Date.now() - started;
-  const boundOk = elapsedMs <= SESSION_BOUND_MS && closed === true;
+  let cleanupAttempted = false;
 
+  try {
+    a1 = await bounded(fetchImpl(CHAT_DISCOVERY_URL, { method: 'GET' }), 'a1');
+    const chatRequest = buildChatCompletionsRequest();
+    const contract = assertChatRequestContract(chatRequest.body);
+    a2 = contract.ok
+      ? await bounded(fetchImpl(CHAT_COMPLETIONS_URL, { method: 'POST', body: chatRequest.body }), 'a2')
+      : { status: 0, json: {} };
+
+    b1 = await bounded(fetchImpl(REALTIME_DISCOVERY_URL, { method: 'GET' }), 'b1');
+    const mintReq = buildRealtimeClientSecretsRequest();
+    b2 = await bounded(fetchImpl(REALTIME_CLIENT_SECRETS_URL, { method: 'POST', body: mintReq.body }), 'b2');
+    const mintEarly = validateClientSecretMint(b2);
+
+    if (typeof webrtc?.createOffer === 'function') {
+      offer = await bounded(webrtc.createOffer(), 'createOffer');
+      webrtcGenerated = Boolean(webrtc.generated);
+    }
+    b3 = mintEarly.ok
+      ? await bounded(fetchImpl(REALTIME_CALLS_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/sdp' },
+          body: offer,
+        }), 'b3')
+      : { status: 0, text: '' };
+    const answer = String(b3.text || '');
+    if (typeof webrtc?.acceptAnswer === 'function' && answer) {
+      peerAccepted = await bounded(webrtc.acceptAnswer(answer), 'acceptAnswer');
+    }
+  } catch {
+    // Bounded cancellation or adapter throw. Cleanup still runs.
+  } finally {
+    cleanupAttempted = true;
+    if (typeof webrtc?.close === 'function') {
+      try {
+        const closeBudget = Math.max(remaining(), cleanupBudgetMs);
+        closed = await raceWithDeadline(
+          Promise.resolve().then(() => webrtc.close({ timeoutMs: closeBudget })),
+          closeBudget,
+          'close',
+        ) === true;
+      } catch {
+        closed = false;
+      }
+    }
+  }
+
+  const chat = validateChatCompletion(a2);
+  const mint = validateClientSecretMint(b2);
+  const sdp = validateSdpAnswer(offer, String(b3.text || ''), {
+    peerAccepted,
+    webrtcGenerated,
+    status: b3?.status,
+  });
+  const elapsedMs = Date.now() - started;
+  const withinBound = elapsedMs <= deadlineMs && closed === true;
+  const siteOk = provenance.ok && chat.ok && a2?.status === 200;
+  const realtimeOk = provenance.ok
+    && b1?.status === 200
+    && mint.ok
+    && sdp.ok
+    && withinBound;
   const receipt = buildReceipt({
-    ok: provenance.ok && chat.ok && sdp.ok && boundOk,
+    ok: siteOk && realtimeOk,
+    mode,
+    productionAttestable: mode === 'live' && siteOk && realtimeOk,
     localKeyNotUsed: provenance.ok,
-    provenance: { match: provenance.ok, comparedAt },
+    provenance: {
+      match: provenance.ok,
+      project: PRODUCTION_PROJECT_REF,
+      secretName: PRODUCTION_SECRET_NAME,
+      comparedAt,
+    },
     siteChat: {
       a1: { status: a1?.status ?? null, idOk: a1?.json?.id === CHAT_MODEL, discoveryOnly: true },
       a2: { status: a2?.status ?? null, modelOk: chat.modelOk, outputOk: chat.outputOk },
     },
     realtime: {
       b1: { status: b1?.status ?? null, idOk: b1?.json?.id === REALTIME_MODEL, discoveryOnly: true },
-      b2: { status: b2?.status ?? null, namePresent: mint.namePresent },
+      b2: { status: b2?.status ?? null, namePresent: mint.namePresent, mintOk: mint.ok },
       b3: {
         status: b3?.status ?? null,
         hasV: sdp.hasV,
@@ -271,8 +427,9 @@ export async function runPairAttestationProbes(adapters) {
         hasM: sdp.hasM,
         differs: sdp.differs,
         peerAccepted: sdp.peerAccepted,
+        webrtcGenerated: sdp.webrtcGenerated,
       },
-      b4: { closed: boundOk, elapsedMs },
+      b4: { closed, elapsedMs, withinBound, cleanupAttempted },
     },
   });
 
@@ -281,6 +438,7 @@ export async function runPairAttestationProbes(adapters) {
     provenanceString: redactProbeSecrets(provenanceString, secrets),
     siteChatAttestable: siteChatAttestable(receipt),
     realtimeAttestable: realtimeAttestable(receipt),
+    productionAttestable: receipt.productionAttestable,
     wouldAcceptAttestation: acceptProductionAttestation,
   };
 }

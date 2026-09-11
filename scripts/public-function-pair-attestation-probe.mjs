@@ -23,6 +23,7 @@ const result = await runPairAttestationProbes({
   fetch: globalThis.pairAttestationFetch,
   webrtc: globalThis.pairAttestationWebRtc,
   provenanceMatch: false,
+  mode: 'synthetic',
 });
 process.stdout.write(`${JSON.stringify(result.receipt)}\n`);
 process.exit(result.receipt.ok ? 0 : 1);
