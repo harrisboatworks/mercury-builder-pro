@@ -19,6 +19,14 @@
  * migrations are skipped; functions with an empty requiredMigrations
  * list still deploy. The job fails if anything was skipped.
  *
+ * After that migration gate, public chat (`ai-chatbot` +
+ * `ai-chatbot-stream`) and OpenAI Realtime (`realtime-session` +
+ * `realtime-sdp-exchange`) also fail closed as pairs: one-sided
+ * selection, missing/unknown/unverified production key/model
+ * attestation, or a pair-member migration/lookup failure blocks every
+ * selected pair member before any deploy call. A local key is not
+ * production proof. Unrelated functions keep the migration-only rules.
+ *
  * Never applies migrations. Never prints secret values.
  *
  * Usage:
@@ -27,6 +35,9 @@
  * Env:
  *   DEPLOY_FROM / DEPLOY_TO   git range (defaults: previous SHA → HEAD)
  *   DEPLOY_FUNCTION           optional single slug (workflow_dispatch)
+ *   DEPLOY_PAIR               optional allowlisted pair: site-chat | openai-realtime
+ *                             Cannot be combined with DEPLOY_FUNCTION.
+ *                             Still subject to the committed UNVERIFIED hold.
  *   SUPABASE_ACCESS_TOKEN     required by the CLI (workflow gates this)
  *   SUPABASE_PROJECT_REF      optional; otherwise supabase/config.toml project_id
  *   SUPABASE_CLI              optional binary name (default: supabase)
@@ -49,6 +60,11 @@ import {
   requiredMigrationsForSlug,
   toPosix,
 } from './lib/supabase-deploy-required.mjs';
+import {
+  allowlistedPairIds,
+  pairById,
+  skipReasonsForSelectedSlugs,
+} from './lib/public-function-release-guards.mjs';
 import { projectRefFromConfig, resolveProjectRef } from './lib/supabase-project-ref.mjs';
 
 export { projectRefFromConfig, resolveProjectRef };
@@ -67,6 +83,42 @@ export function redactSecrets(message, env = process.env) {
 
 export function isSafeFunctionSlug(slug) {
   return typeof slug === 'string' && slug.length > 0 && slug !== SHARED_SLUG && SLUG_RE.test(slug);
+}
+
+export function requiredMigrationsForDispatch(slug, files, rangeTargets) {
+  const hit = (rangeTargets?.functions || []).find((item) => item.slug === slug);
+  if (hit?.requiredMigrations?.length) return hit.requiredMigrations;
+  return requiredMigrationsForSlug(slug, files, rangeTargets?.migrations || []);
+}
+
+export function resolveForcedPair(raw, files, pairs) {
+  const id = String(raw || '').trim();
+  if (!id) return { ok: false, error: 'pair id is empty' };
+  const pair = pairById(id, pairs);
+  if (!pair) {
+    return {
+      ok: false,
+      error: `\`${id}\` is not an allowlisted deploy pair. Allowed: ${allowlistedPairIds(pairs).join(', ')}.`,
+    };
+  }
+  const bySlug = filesByFunctionSlug(files);
+  for (const slug of pair.slugs) {
+    if (!bySlug.has(slug)) {
+      return {
+        ok: false,
+        error: `pair \`${id}\` member \`${slug}\` is not a function directory under supabase/functions/`,
+      };
+    }
+  }
+  return { ok: true, pair };
+}
+
+export function buildDispatchPairTargets(pair, files, rangeTargets) {
+  return pair.slugs.map((slug) => ({
+    slug,
+    reasons: [`workflow_dispatch pair ${pair.id}`],
+    requiredMigrations: requiredMigrationsForDispatch(slug, files, rangeTargets),
+  }));
 }
 
 export function resolveForcedSlug(raw, files) {
@@ -340,29 +392,44 @@ export async function deployWithMigrationGate({
   deployOne,
   env = process.env,
   log,
+  releaseAttestations,
+  releasePairs,
 } = {}) {
   const targets = functions.map((item) =>
     typeof item === 'string' ? { slug: item, requiredMigrations: [] } : item,
   );
+  const selectedSlugs = targets.map((item) => item.slug);
 
-  const deployTargets = (skipReason) =>
-    deployFunctionSlugs(
-      targets.map((item) => item.slug),
-      { deployOne, skipReason },
-    );
+  const deployGuarded = (preconditionSkipBySlug, extra) => {
+    const reasons = skipReasonsForSelectedSlugs(selectedSlugs, {
+      preconditionSkipBySlug,
+      attestations: releaseAttestations,
+      pairs: releasePairs,
+      env,
+    });
+    return {
+      ...deployFunctionSlugs(selectedSlugs, {
+        deployOne,
+        skipReason: (slug) => reasons.get(slug) || null,
+      }),
+      ...extra,
+    };
+  };
 
   const degradeOnUnreadableList = (error) => {
     const detail = error instanceof Error ? error.message : String(error);
     writeDeployLog(redactSecrets(`could not read applied migrations: ${detail}`, env), log);
-    return {
-      ...deployTargets((slug) => {
-        const target = targets.find((item) => item.slug === slug);
-        if (!target?.requiredMigrations?.length) return null;
-        return lookupFailureSkipReason(slug, detail, env);
-      }),
+    const preconditionSkipBySlug = new Map();
+    for (const target of targets) {
+      preconditionSkipBySlug.set(
+        target.slug,
+        target?.requiredMigrations?.length ? lookupFailureSkipReason(target.slug, detail, env) : null,
+      );
+    }
+    return deployGuarded(preconditionSkipBySlug, {
       appliedLookupFailed: true,
       appliedSource: null,
-    };
+    });
   };
 
   let appliedRows;
@@ -395,23 +462,32 @@ export async function deployWithMigrationGate({
 
   writeDeployLog(redactSecrets(formatAppliedMigrationsReadLine(appliedRows, source), env), log);
 
-  return {
-    ...deployTargets((slug) => {
-      const target = targets.find((item) => item.slug === slug);
-      if (source === 'cli-fallback' && target?.requiredMigrations?.length) {
-        return blockedDeployReason(slug, target.requiredMigrations, new Set(), { source });
-      }
-      return blockedDeployReason(slug, target?.requiredMigrations, appliedSet, { source });
-    }),
+  const preconditionSkipBySlug = new Map();
+  for (const target of targets) {
+    if (source === 'cli-fallback' && target?.requiredMigrations?.length) {
+      preconditionSkipBySlug.set(
+        target.slug,
+        blockedDeployReason(target.slug, target.requiredMigrations, new Set(), { source }),
+      );
+      continue;
+    }
+    preconditionSkipBySlug.set(
+      target.slug,
+      blockedDeployReason(target.slug, target?.requiredMigrations, appliedSet, { source }),
+    );
+  }
+
+  return deployGuarded(preconditionSkipBySlug, {
     appliedLookupFailed: false,
     appliedSource: source,
-  };
+  });
 }
 
 export function formatFunctionsDeployMarkdown({
   from = '',
   to = '',
   forced = '',
+  forcedPair = '',
   targets = [],
   removed = [],
   migrations = [],
@@ -421,15 +497,22 @@ export function formatFunctionsDeployMarkdown({
   skipped = false,
   skipReason = '',
 }) {
+  const selectorLine =
+    forced && forcedPair
+      ? `Refused combined selectors: function \`${forced}\` and pair \`${forcedPair}\`.`
+      : forcedPair
+        ? `Manual deploy of pair \`${forcedPair}\`.`
+        : forced
+          ? `Manual deploy of \`${forced}\`.`
+          : `Push range: \`${from || '?'}\` → \`${to || '?'}\``;
   const lines = [
     '## Supabase edge function deploy',
     '',
-    forced
-      ? `Manual deploy of \`${forced}\`.`
-      : `Push range: \`${from || '?'}\` → \`${to || '?'}\``,
+    selectorLine,
     '',
     'This job deploys changed edge functions only. It never runs `supabase db push` or applies migrations.',
     'A function whose newly required migrations are not applied in production is skipped and fails this job.',
+    'Paired public chat and Realtime functions fail closed when the pair is incomplete, a pair member is blocked, or production key/model attestation is missing, unknown, or not production-proven. A local key is not production proof. Sequential deploys in one job are not atomic.',
     '',
   ];
 
@@ -631,13 +714,23 @@ function readRangeTargets(files, from, to) {
   }
 }
 
-export async function runDeploy({ env = process.env, deployOne, listAppliedVersions } = {}) {
+export async function runDeploy({
+  env = process.env,
+  deployOne,
+  listAppliedVersions,
+  diffEntries,
+  releaseAttestations,
+  releasePairs,
+} = {}) {
   const files = {
     ...loadTextTree('supabase/functions'),
     ...loadTextTree('supabase/migrations'),
   };
   const forcedRaw = env.DEPLOY_FUNCTION || '';
+  const pairRaw = env.DEPLOY_PAIR || '';
   const projectRef = resolveProjectRef(env, { root: ROOT });
+  const forced = String(forcedRaw || '').trim();
+  const forcedPair = String(pairRaw || '').trim();
 
   if (!projectRef) {
     writeSummary(
@@ -652,9 +745,47 @@ export async function runDeploy({ env = process.env, deployOne, listAppliedVersi
   }
 
   let targets = { from: '', to: '', functions: [], removed: [], migrations: [], notes: [] };
-  const forced = String(forcedRaw || '').trim();
 
-  if (forced) {
+  if (forced && forcedPair) {
+    writeSummary(
+      formatFunctionsDeployMarkdown({
+        forced,
+        forcedPair,
+        skipped: true,
+        skipReason:
+          'refused: DEPLOY_FUNCTION and DEPLOY_PAIR cannot both be set. Nothing was deployed.',
+      }),
+      env,
+    );
+    return 1;
+  }
+
+  if (forcedPair) {
+    const resolved = resolveForcedPair(forcedPair, files);
+    if (!resolved.ok) {
+      writeSummary(
+        formatFunctionsDeployMarkdown({
+          forcedPair,
+          skipped: true,
+          skipReason: resolved.error,
+        }),
+        env,
+      );
+      return 1;
+    }
+    const ranged = readRangeTargets(files, env.DEPLOY_FROM || '', env.DEPLOY_TO || 'HEAD');
+    const rangeTargets = ranged.ok
+      ? ranged.targets
+      : { from: '', to: '', functions: [], removed: [], migrations: [], notes: [] };
+    targets = {
+      from: rangeTargets.from || '',
+      to: rangeTargets.to || '',
+      functions: buildDispatchPairTargets(resolved.pair, files, rangeTargets),
+      removed: [],
+      migrations: rangeTargets.migrations || [],
+      notes: rangeTargets.notes || [],
+    };
+  } else if (forced) {
     const resolved = resolveForcedSlug(forced, files);
     if (!resolved.ok) {
       writeSummary(
@@ -671,18 +802,27 @@ export async function runDeploy({ env = process.env, deployOne, listAppliedVersi
     const rangeTargets = ranged.ok
       ? ranged.targets
       : { from: '', to: '', functions: [], removed: [], migrations: [], notes: [] };
-    const hit = rangeTargets.functions.find((item) => item.slug === resolved.slug);
-    const requiredMigrations = hit?.requiredMigrations?.length
-      ? hit.requiredMigrations
-      : requiredMigrationsForSlug(resolved.slug, files, rangeTargets.migrations || []);
     targets = {
       from: rangeTargets.from || '',
       to: rangeTargets.to || '',
-      functions: [{ slug: resolved.slug, reasons: ['workflow_dispatch'], requiredMigrations }],
+      functions: [
+        {
+          slug: resolved.slug,
+          reasons: ['workflow_dispatch'],
+          requiredMigrations: requiredMigrationsForDispatch(resolved.slug, files, rangeTargets),
+        },
+      ],
       removed: [],
       migrations: rangeTargets.migrations || [],
       notes: rangeTargets.notes || [],
     };
+  } else if (Array.isArray(diffEntries)) {
+    targets = deployTargetsFromDiff({
+      diffEntries,
+      files,
+      from: env.DEPLOY_FROM || '',
+      to: env.DEPLOY_TO || 'HEAD',
+    });
   } else {
     const ranged = readRangeTargets(files, env.DEPLOY_FROM || '', env.DEPLOY_TO || 'HEAD');
     if (!ranged.ok) {
@@ -710,6 +850,7 @@ export async function runDeploy({ env = process.env, deployOne, listAppliedVersi
         from: targets.from,
         to: targets.to,
         forced,
+        forcedPair,
         targets: [],
         removed: targets.removed,
         migrations: targets.migrations,
@@ -752,12 +893,15 @@ export async function runDeploy({ env = process.env, deployOne, listAppliedVersi
         }),
     deployOne: runOne,
     env,
+    releaseAttestations,
+    releasePairs,
   });
   writeSummary(
     formatFunctionsDeployMarkdown({
       from: targets.from,
       to: targets.to,
       forced,
+      forcedPair,
       targets: targets.functions,
       removed: targets.removed,
       migrations: targets.migrations,
