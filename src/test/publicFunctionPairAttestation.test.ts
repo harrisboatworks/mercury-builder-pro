@@ -27,7 +27,23 @@ const FAKE_DIGEST = 'a'.repeat(64);
 const FAKE_OFFER = 'fixture-offer-not-for-commit';
 const FAKE_ANSWER = 'fixture-answer\nv=fixture\no=fixture\ns=fixture\nm=fixture';
 
-function fakeWebrtc(overrides = {}) {
+type FakeWebrtcOverrides = {
+  generated?: boolean;
+  offer?: 'missing';
+  peerAccepted?: boolean;
+  close?: boolean;
+  timeout?: boolean;
+};
+
+type ScenarioExtras = {
+  fetch?: ReturnType<typeof fakeFetch>;
+  webrtc?: ReturnType<typeof fakeWebrtc>;
+  webrtcOverrides?: FakeWebrtcOverrides;
+  provenanceMatch?: boolean;
+  forceProvenance?: unknown;
+};
+
+function fakeWebrtc(overrides: FakeWebrtcOverrides = {}) {
   return {
     generated: overrides.generated !== false,
     async createOffer() {
@@ -78,7 +94,7 @@ function fakeFetch(scenario) {
   };
 }
 
-async function runScenario(scenario, extras = {}) {
+async function runScenario(scenario: string, extras: ScenarioExtras = {}) {
   return runPairAttestationProbes({
     fetch: extras.fetch || fakeFetch(scenario),
     webrtc: extras.webrtc || (scenario === 'token-only' ? fakeWebrtc({ generated: false }) : fakeWebrtc(extras.webrtcOverrides)),
