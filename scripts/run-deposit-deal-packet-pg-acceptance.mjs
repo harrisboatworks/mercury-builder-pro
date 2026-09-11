@@ -16,6 +16,7 @@ import {
 import { homedir, tmpdir } from "node:os";
 import path from "node:path";
 import process from "node:process";
+import { describePostgres17Bin, requirePostgres17Bin } from "./lib/local-postgres17.mjs";
 
 const repoRoot = process.cwd();
 const migrationRel = "supabase/migrations/20260823120000_deposit_deal_packet.sql";
@@ -101,26 +102,7 @@ function run(command, args, options = {}) {
 }
 
 function resolvePostgresBin() {
-  const brew = run("brew", ["--prefix", "postgresql@17"], { allowFailure: true });
-  const prefix = brew.status === 0 ? brew.stdout.trim() : "";
-  const pgConfig = run("pg_config", ["--bindir"], { allowFailure: true });
-  const pgConfigDir = pgConfig.status === 0 ? pgConfig.stdout.trim() : "";
-  const extra = String(process.env.POSTGRES_17_BIN || "").trim();
-  const candidates = [
-    extra,
-    pgConfigDir,
-    "/usr/lib/postgresql/17/bin",
-    "/usr/pgsql-17/bin",
-    prefix ? path.join(prefix, "bin") : "",
-    "/opt/homebrew/opt/postgresql@17/bin",
-    "/usr/local/opt/postgresql@17/bin",
-  ].filter(Boolean);
-  for (const dir of candidates) {
-    if (existsSync(path.join(dir, "initdb")) && existsSync(path.join(dir, "pg_ctl")) && existsSync(path.join(dir, "psql"))) {
-      return dir;
-    }
-  }
-  fail("PostgreSQL 17 server binaries were not found; install official postgresql-17 / postgresql-client-17 or brew install postgresql@17");
+  return requirePostgres17Bin();
 }
 
 function bin(name) {
@@ -378,6 +360,7 @@ try {
   if (!existsSync(bindingMigrationPath)) fail(`missing unmodified migration ${bindingMigrationRel}`);
   if (port === 5432) fail("refusing default PostgreSQL port 5432");
 
+  const postgres17 = describePostgres17Bin();
   binDir = resolvePostgresBin();
   mkdirSync(ignoredTmpRoot, { recursive: true });
   clusterDir = mkdtempSync(path.join(ignoredTmpRoot, "ddp-"));
@@ -670,6 +653,7 @@ logging_collector = off
   const failed = results.filter((row) => !row.passed);
 
   console.log("[LOCAL-PG-SYNTHETIC] PostgreSQL deposit deal-packet runtime acceptance");
+  console.log(`postgres_major=${postgres17.major} postgres_version=${postgres17.version} mixed=${postgres17.mixed} bindir_ok=${postgres17.ok} evidence=LOCAL-PG-SYNTHETIC hosted_isolated_staging=outstanding`);
   console.log(`socket=${socketDir} port=${port} database=${database} tcp=off`);
   console.log(`cluster=${clusterDir}`);
   console.log(`migration=${migrationRel} (unmodified)`);
