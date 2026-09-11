@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/renting-vs-owning-boat-ontario-math.md
-last_updated: 2026-09-06
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Renting vs Owning a Boat in Ontario: The Honest Math (2026)"
 description: "Rent or buy a boat in Ontario? A marina that does both walks the real cost buckets, a practical worksheet, and what the spreadsheet misses."
 category: "Boating Lifestyle"
 date_published: 2026-07-02
-date_modified: 2026-09-06
+date_modified: 2026-09-11
 keywords: ["renting vs owning a boat","is buying a boat worth it ontario","boat rental vs ownership cost","should i buy a boat","cost of owning a boat ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Boating Lifestyle  
 **Published:** 2026-07-02  
-**Last reviewed:** 2026-09-06  
+**Last reviewed:** 2026-09-11  
 **Read time:** ~8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/renting-vs-owning-boat-ontario-math
 
@@ -130,7 +130,6 @@ Rent a day and count how much you loved it, or price the ownership side with a r
 
 **Rent:** book online at [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals)
 **Price a boat and motor:** [build a quote](/quote/motor-selection)
-**Questions about buying or repowering:** [905-342-2153](tel:+19053422153)
 
 ---
 
@@ -159,7 +158,7 @@ Yes. Renting different available layouts can show you how much passenger space, 
 
 ### If I decide to buy, when's the smart time to do it?
 
-Talk to us in late summer or fall. You'll know exactly how many boat days your season really had, fall is when promotions and next-season planning happen, and you skip the spring rush. Our [2026 buying-year guide](/blog/2026-boating-market-ontario-boat-buyers) covers the market side.
+Late summer or fall is often smart. You'll know exactly how many boat days your season really had, fall is when promotions and next-season planning happen, and you skip the spring rush. Our [2026 buying-year guide](/blog/2026-boating-market-ontario-boat-buyers) covers the market side.
 
 ### How do I price a Rice Lake rental day?
 

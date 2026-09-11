@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/es/licencia-navegacion-ontario-regulaciones.md
-last_updated: 2026-09-06
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Licencia de navegación y regulaciones de seguridad en Ontario"
 description: "Guía completa sobre la PCOC, PCL, equipo de seguridad obligatorio y regulaciones de navegación en Ontario."
 category: "Regulaciones"
 date_published: 2026-04-12
-date_modified: 2026-09-06
+date_modified: 2026-09-11
 keywords: ["licencia navegación Ontario","PCOC Ontario","regulaciones bote Ontario","permiso de navegación Canadá","seguridad embarcación Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Regulaciones  
 **Published:** 2026-04-12  
-**Última revisión:** 2026-09-06  
+**Última revisión:** 2026-09-11  
 **Read time:** 12 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/es/licencia-navegacion-ontario-regulaciones
 
@@ -185,8 +185,6 @@ Los requisitos de remolque dependen del peso combinado, las dimensiones, los fre
 Obtén tu PCOC en línea, renueva tu PCL en tc.gc.ca, y cuando tengas todo en orden, visítanos en Rice Lake.
 
 Si estás pensando en un motor nuevo o en repotenciar tu embarcación, usa el configurador en **mercuryrepower.ca**, precios reales, sin llamadas previas.
-
-¿Preguntas? Escríbenos en **hbw.wiki/service** o llama al **905-342-2153**. Nuestro equipo responde en inglés.
 
 Harris Boat Works
 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/is-a-pontoon-right-for-your-family-rice-lake.md
-last_updated: 2026-09-07
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Is a Pontoon Right for Your Family?"
 description: "Is a pontoon right for your family on Rice Lake? Honest look at what pontoons do well, where they fall short, tubing power, and tritoon vs pontoon."
 category: "Buying Guide"
 date_published: 2026-06-19
-date_modified: 2026-09-07
+date_modified: 2026-09-11
 keywords: ["is a pontoon boat right for my family","pontoon boat for family with kids","can you tube behind a pontoon","pontoon vs tritoon for family","how much horsepower pontoon tubing"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-06-19  
-**Last reviewed:** 2026-09-07  
+**Last reviewed:** 2026-09-11  
 **Read time:** ~9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/is-a-pontoon-right-for-your-family-rice-lake
 
@@ -89,7 +89,7 @@ A standard pontoon rides on two tubes (pontoons). A tritoon adds a third tube do
 
 A third tube buys you three things that matter for a family: it carries more horsepower (so it can actually pull skiers and bigger tubers), it gets up on plane and runs faster, and it handles Rice Lake chop noticeably better, less push from the wind, a drier and more planted ride.
 
-If your summer is mostly cruising, swimming, and light tubing, a two-tube pontoon with the right power is plenty, and it saves you money. If watersports are a real priority, or you spend a lot of time out when the wind is up, the tritoon is worth it. We will tell you honestly which one fits how your family actually boats.
+If your summer is mostly cruising, swimming, and light tubing, a two-tube pontoon with the right power is plenty, and it saves you money. If watersports are a real priority, or you spend a lot of time out when the wind is up, the tritoon is worth it.
 
 ## How much horsepower on Rice Lake
 
@@ -132,9 +132,8 @@ Here is the advantage of buying from [a marina that also rents](/blog/rice-lake-
 
 ## Ready to find the right boat for your family?
 
-Tell us how your family actually spends a day on the water, who is aboard, whether the kids want to tube, how often you are out when it is windy, and we will tell you straight whether a pontoon, a tritoon, or something else fits. Rent one first if you want to be sure.
+Rent a pontoon first to see whether it suits how your family spends a day on the water.
 
-**Phone:** [905-342-2153](tel:+19053422153)
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 **Configurator:** [mercuryrepower.ca](https://mercuryrepower.ca)
 **Rentals:** [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals)

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-motor-size-calculator-guide.md
-last_updated: 2026-09-06
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Boat Motor HP Size Guide Ontario"
 description: "Use our boat motor sizing guide. Inventory hull, engine, fuel, equipment, people, and gear, stay within manufacturer limits, and compare examples."
 category: "Buying Guide"
 date_published: 2026-05-11
-date_modified: 2026-09-06
+date_modified: 2026-09-11
 keywords: ["boat motor size","outboard motor calculator","hp for boat weight","motor sizing guide","boat horsepower"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-05-11  
-**Last reviewed:** 2026-09-06  
+**Last reviewed:** 2026-09-11  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-motor-size-calculator-guide
 
@@ -183,7 +183,7 @@ Bring us your boat info, make, model, year, length, and how you actually use it,
 
 ## Ready to size your motor?
 
-Build a real installed quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), real pricing across every Mercury HP class. Or call **905-342-2153** and we'll work through your specific boat.
+Build a real installed quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), real pricing across every Mercury HP class.
 
 ---
 

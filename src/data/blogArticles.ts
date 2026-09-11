@@ -1251,7 +1251,7 @@ A fault code names the circuit or condition the computer noticed. It does not na
     imageAlt: "Mercury Avator 7.5e electric outboard powering a Lund WC-12 aluminum boat on a freshwater lake",
     author: "Jay Harris",
     datePublished: "2026-07-15",
-    dateModified: "2026-09-06",
+    dateModified: "2026-09-11",
     publishDate: "2026-07-15",
     category: "Buying Guide",
     readTime: "~9 min read",
@@ -1271,7 +1271,7 @@ A fault code names the circuit or condition the computer noticed. It does not na
     ],
     content: `*Last reviewed: 2026-07-28*
 
-> **Quick answer:** Electric repower works extremely well for the right boat doing the right job: trolling kickers, tenders, sailboat auxiliaries, and short quiet trips near the dock. For covering real distance on a big lake, gas still wins. We sell both, so we have no reason to oversell either one. Call 905-342-2153 and we'll tell you straight which fits your boat.
+> **Quick answer:** Electric repower works extremely well for the right boat doing the right job: trolling kickers, tenders, sailboat auxiliaries, and short quiet trips near the dock. For covering real distance on a big lake, gas still wins. We sell both, so we have no reason to oversell either one.
 
 **Choosing electric propulsion starts with the trip: distance, load, speed, battery capacity, and charging access.**
 
@@ -1424,11 +1424,10 @@ All three make legitimate motors. Avator's edge is the Mercury dealer network be
 
 ---
 
-## Ready to Figure Out Which Way Your Repower Goes?
+## Compare Electric and Gas Options
 
-Tell us the boat, the water, and how you actually run it. We'll tell you straight whether that's an Avator, a gas FourStroke, or a gas main with an electric kicker. We sell both, so the only thing we're invested in is you being happy with it next August.
 
-**Phone:** 905-342-2153
+
 **Avator info:** [mercuryrepower.ca/electric/mercury-avator](https://www.mercuryrepower.ca/electric/mercury-avator)
 **Gas repower quotes:** [Build your quote](/quote/motor-selection)
 
@@ -2206,7 +2205,7 @@ Complete [hbw.wiki/service](https://hbw.wiki/service), then drop the boat off an
     image: "/lovable-uploads/hero-renting-vs-owning-boat.webp",
     author: "Jay Harris",
     datePublished: "2026-07-02",
-    dateModified: "2026-09-06",
+    dateModified: "2026-09-11",
 
     publishDate: "2026-07-02",
     category: "Boating Lifestyle",
@@ -2217,7 +2216,7 @@ Complete [hbw.wiki/service](https://hbw.wiki/service), then drop the boat off an
       { question: "How many times a year should I boat before buying makes sense?", answer: "There's no magic number, because it depends on the boat and your costs. The principle: renting wins at low usage, owning wins at high usage, and the crossover sits where YOUR ownership buckets divided by YOUR honest days beats a rental day. In between, decide on lifestyle: spontaneity favours owning; flexibility and zero hassle favour renting." },
       { question: "What ownership costs do first-time buyers forget?", answer: "Winterization, storage, spring commissioning, and depreciation. The purchase price gets all the attention, but the annual carry is what surprises people. Our [total cost of ownership guide](/blog/total-cost-of-owning-a-boat-ontario-2026) itemizes all of it with current Ontario ranges." },
       { question: "Can renting help me decide what boat to buy?", answer: "Yes. Renting different available layouts can show you how much passenger space, fishing room, and cruising comfort your group actually uses before you make a purchase." },
-      { question: "If I decide to buy, when's the smart time to do it?", answer: "Talk to us in late summer or fall. You'll know exactly how many boat days your season really had, fall is when promotions and next-season planning happen, and you skip the spring rush. Our [2026 buying-year guide](/blog/2026-boating-market-ontario-boat-buyers) covers the market side." },
+      { question: "If I decide to buy, when's the smart time to do it?", answer: "Late summer or fall is often smart. You'll know exactly how many boat days your season really had, fall is when promotions and next-season planning happen, and you skip the spring rush. Our [2026 buying-year guide](/blog/2026-boating-market-ontario-boat-buyers) covers the market side." },
       { question: "How do I price a Rice Lake rental day?", answer: "Start with the live boat rate at [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals), then add the fuel you use plus your own travel, food, bait, and fishing-licence costs." },
     ],
     content: `# Renting vs Owning a Boat in Ontario: The Honest Math (2026)
@@ -2334,7 +2333,7 @@ Winterization, storage, spring commissioning, and depreciation. The purchase pri
 Yes. Renting different available layouts can show you how much passenger space, fishing room, and cruising comfort your group actually uses before you make a purchase.
 
 **If I decide to buy, when's the smart time to do it?**
-Talk to us in late summer or fall. You'll know exactly how many boat days your season really had, fall is when promotions and next-season planning happen, and you skip the spring rush. Our [2026 buying-year guide](/blog/2026-boating-market-ontario-boat-buyers) covers the market side.
+Late summer or fall is often smart. You'll know exactly how many boat days your season really had, fall is when promotions and next-season planning happen, and you skip the spring rush. Our [2026 buying-year guide](/blog/2026-boating-market-ontario-boat-buyers) covers the market side.
 
 **How do I price a Rice Lake rental day?**
 Start with the live boat rate at [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals), then add the fuel you use plus your own travel, food, bait, and fishing-licence costs.
@@ -2347,7 +2346,7 @@ Rent a day and count how much you loved it, or price the ownership side with a r
 
 **Rent:** book online at [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals)
 **Price a boat and motor:** [build a quote](/quote/motor-selection)
-**Questions about buying or repowering:** [905-342-2153](tel:+19053422153)
+
 
 
 **Related guides:**
@@ -3235,7 +3234,7 @@ If water flow has changed, an overheat alarm has sounded, or you cannot identify
     imageAlt: 'Mercury 115 HP Command Thrust outboard on a pontoon boat at sunset, ideal for heavy loads on Ontario lakes.',
     author: 'Jay Harris',
     datePublished: '2026-05-28',
-    dateModified: '2026-09-06',
+    dateModified: '2026-09-11',
     publishDate: '2026-05-28',
     category: 'Mercury Technology',
     readTime: '12 min',
@@ -3253,7 +3252,7 @@ If water flow has changed, an overheat alarm has sounded, or you cannot identify
     ],
     content: `*Last reviewed: 2026-05-28*
 
-> **Quick answer:** Mercury Command Thrust is a gearcase option (not a separate motor): larger housing, larger-diameter propeller options, lower gear ratio. Mercury describes it as helping heavy boats plane and remain there at lower speed. HBW's September 5, 2026 pricing reference includes specific 9.9 FourStroke and ProKicker CT configurations, plus 40, 50, 60, 90 and 115 FourStroke and 115 Pro XS CT configurations. Check the exact model code. Best fit is a hull/load/prop decision, commonly pontoons, heavy boats, kicker rigs, and commercial. Email info@harrisboatworks.ca with your boat specifications and photos for a fit check. [FourStroke 75-150](https://www.mercurymarine.com/ca/en/engines/outboard/fourstroke/fourstroke-75-150hp) · [Pro XS 115-150](https://www.mercurymarine.com/ca/en/engines/outboard/pro-xs/pro-xs-115-150hp).
+> **Quick answer:** Mercury Command Thrust is a gearcase option (not a separate motor): larger housing, larger-diameter propeller options, lower gear ratio. Mercury describes it as helping heavy boats plane and remain there at lower speed. HBW's September 5, 2026 pricing reference includes specific 9.9 FourStroke and ProKicker CT configurations, plus 40, 50, 60, 90 and 115 FourStroke and 115 Pro XS CT configurations. Check the exact model code. Best fit is a hull/load/prop decision, commonly pontoons, heavy boats, kicker rigs, and commercial. [FourStroke 75-150](https://www.mercurymarine.com/ca/en/engines/outboard/fourstroke/fourstroke-75-150hp) · [Pro XS 115-150](https://www.mercurymarine.com/ca/en/engines/outboard/pro-xs/pro-xs-115-150hp).
 
 Most customers asking us about Command Thrust have already read the Mercury brochure. What they actually need is a straight answer to one question: is this the right gearcase for MY boat, MY use case, and the loads I actually carry. The Mercury brochure will not tell you that. We will.
 
@@ -3325,11 +3324,11 @@ Different hulls, different answers. The honest matrix:
 | Trolling-only fishing pontoon | **No, save the money** | Standard fine at trolling speeds |
 | 18-20 ft twin tube pontoon (moderate use) | **Probably yes** | Classic sweet spot |
 
-If your boat does not slot neatly, email a photo and your boat specs to info@harrisboatworks.ca for a fit assessment.
+
 
 ## Is your pontoon eligible?
 
-The fastest path: email a photo of your pontoon plus current motor specs to info@harrisboatworks.ca and we'll tell you yes or no in one reply. The framework below covers the decision logic.
+
 
 | Pontoon category | Command Thrust eligible? | Notes |
 |---|---|---|
@@ -3342,7 +3341,7 @@ The fastest path: email a photo of your pontoon plus current motor specs to info
 | Pontoon used for trolling fishing only | **No, save the money** | Trolling speeds don't need CT thrust |
 | Aluminum V-hull boat | **Boat-specific** | HBW often prefers standard on planing V-hulls; label that as a shop recommendation and check the actual hull |
 
-If your boat doesn't fit one of these neatly, send us details and we'll work through it.
+
 
 ### Which pontoons are eligible
 
@@ -3386,7 +3385,7 @@ Two people, lightweight gear, mostly day cruising at 25 MPH. Standard gearcase. 
 
 #### Already over-powered
 
-Some pontoons are [already running close to capacity-plate maximum HP](/blog/pontoon-hp-sizing-decision-tree-ontario). Adding Command Thrust to a motor that's already pushing your hull near its limit doesn't get you more performance; you're just changing the gearing. Talk to us before changing motors if you're near capacity.
+Some pontoons are [already running close to capacity-plate maximum HP](/blog/pontoon-hp-sizing-decision-tree-ontario). Adding Command Thrust to a motor that's already pushing your hull near its limit doesn't get you more performance; you're just changing the gearing.
 
 ### How to check your specific eligibility
 
@@ -3398,7 +3397,7 @@ Five things to confirm before you commit.
 4. **Transom height.** Command Thrust gearcases run a few inches taller than standard. Most modern pontoons handle this fine but it's worth measuring.
 5. **Current motor HP and serial number.** This tells us which Command Thrust options are available at that HP class and if you're at capacity-plate maximum.
 
-Email a photo of the capacity plate, the current motor cowl plate, and your loaded weight estimate to info@harrisboatworks.ca. We'll review the fit and reply with a recommendation or any information still needed.
+
 
 For the long version of motor serial number decoding, our [Mercury Outboard Serial Number Guide](/blog/how-to-read-mercury-outboard-serial-number) walks through year and model decoding.
 
@@ -3406,7 +3405,7 @@ For the long version of motor serial number decoding, our [Mercury Outboard Seri
 
 As of September 5, 2026, the [HBW pricing reference](/pricing-reference) lists CT configurations in the 9.9, 40, 50, 60, 90 and 115 HP classes, including the 115 Pro XS. These are examples from HBW's published catalog, not an exhaustive factory lineup. Shaft length, controls and gearcase must be checked together for the exact model.
 
-Rather than list every model and year here (Mercury changes things), we recommend the same path: email us your current motor details, what HP you're targeting, and we'll tell you exactly which Command Thrust configurations are available for your boat right now. Mercury's official Command Thrust overview is at [mercurymarine.com/en/us/outboards/fourstroke/command-thrust](https://www.mercurymarine.com/en/us/outboards/fourstroke/command-thrust).
+Rather than list every model and year here (Mercury changes things), check Mercury's official Command Thrust overview at [mercurymarine.com/en/us/outboards/fourstroke/command-thrust](https://www.mercurymarine.com/en/us/outboards/fourstroke/command-thrust).
 
 
 ## The full Mercury Command Thrust lineup
@@ -3435,7 +3434,7 @@ The HBW pricing reference lists a 115 ELPT Pro XS Command Thrust configuration. 
 
 SeaPro is Mercury's commercial line. SeaPro CT exists for charter boats, water taxis, government workboats, and anyone running daily hours with heavy load. SeaPro motors have longer maintenance intervals and reinforced internals vs the recreational line. CT is standard or optional depending on HP.
 
-For the official Mercury Marine Command Thrust overview, see [mercurymarine.com/en/us/outboards/fourstroke/command-thrust](https://www.mercurymarine.com/en/us/outboards/fourstroke/command-thrust). For HP-by-HP availability at HBW, send us your target HP + boat year and we will quote current configurations.
+For the official Mercury Marine Command Thrust overview, see [mercurymarine.com/en/us/outboards/fourstroke/command-thrust](https://www.mercurymarine.com/en/us/outboards/fourstroke/command-thrust).
 
 ## Application-by-application guide
 
@@ -3487,7 +3486,7 @@ Five things to check before you commit. The same five we ask every customer who 
 4. **Boat geometry (transom height, tube count for pontoons).** Some older transoms do not accommodate the taller CT lower unit. Worth measuring before ordering.
 5. **Existing motor's age + hours.** Decides whether retrofit-thinking is realistic vs full repower.
 
-Email a cowl plate photo, capacity plate photo, and an honest description of how you use the boat to info@harrisboatworks.ca. We will review the fit and follow up with a recommendation or any information still needed.
+
 
 For motor serial number decoding, our [Mercury Outboard Serial Number Guide](/blog/how-to-read-mercury-outboard-serial-number) walks through year and model identification.
 
@@ -3534,8 +3533,7 @@ The CT conversation goes wrong in predictable ways. The four we see most often:
 
 ## Ready to talk Command Thrust for your boat?
 
-**Phone:** 905-342-2153
-**Email:** info@harrisboatworks.ca (send cowl plate photo + boat year/make for a fit check)
+
 **Quote a CT repower:** [mercuryrepower.ca](https://mercuryrepower.ca)
 
 Harris Boat Works · 5369 Harris Boat Works Rd, Gores Landing, ON · Mercury Marine dealer since 1965, current Premier Dealer.
@@ -3551,27 +3549,27 @@ Harris Boat Works · 5369 Harris Boat Works Rd, Gores Landing, ON · Mercury Mar
     imageAlt: "Close-up photograph of a Mercury digital throttle and shift control with a hand on its handle.",
     author: 'Jay Harris',
     datePublished: '2026-05-28',
-    dateModified: '2026-09-07',
+    dateModified: '2026-09-11',
     publishDate: '2026-05-28',
     category: 'Mercury Technology',
     readTime: '10 min',
     keywords: ["mercury dts retrofit eligibility", "mercury digital throttle shift", "dts compatibility mercury", "joystick piloting eligibility", "mercury fly-by-wire", "dts retrofit cost"],
     relatedSlugs: ['mercury-dts-vs-mechanical-controls-ontario-repower', 'mercury-smartcraft-connect-guide-ontario', 'mercury-boost-software-upgrade-eligibility-2026', 'mercury-command-thrust-complete-guide-2026', 'how-to-read-mercury-outboard-serial-number'],
     faqs: [
-      { question: "Does my motor already have DTS without me knowing?", answer: "Possibly. If your current Mercury has a sealed binnacle helm control with no visible cables coming out the bottom, a SmartCraft gauge or VesselView display, and smooth electronic throttle feel with detents at neutral/forward/reverse, you have DTS. Customers calling about retrofit often find out they already have it. Email a photo of your helm control to info@harrisboatworks.ca for confirmation." },
+      { question: "Does my motor already have DTS without me knowing?", answer: "Possibly. If your current Mercury has a sealed binnacle helm control with no visible cables coming out the bottom, a SmartCraft gauge or VesselView display, and smooth electronic throttle feel with detents at neutral/forward/reverse, you have DTS." },
       { question: "Can I really not bolt DTS onto my mechanical Mercury?", answer: "Not in a way that makes financial sense for most customers. DTS-equipped motors have different internal components (electronic throttle body, electronic shift actuator, dedicated harness, SmartCraft-compatible ECU). Converting a mechanical motor that wasn't built with these means replacing more parts than the motor is usually worth. The honest path is to repower into a DTS-equipped motor." },
       { question: "What does a DTS retrofit cost when it does make sense?", answer: "When your engine is already DTS-capable and you're upgrading just the helm side (controls, harness, gateway, display), expect a four-figure ticket including parts and labor. Exact cost depends on engine count, helm complexity, and existing wiring. We quote both retrofit and repower paths at HBW so you can compare side by side." },
       { question: "Do I need DTS for Mercury joystick piloting?", answer: "Yes, DTS is part of Mercury joystick packages, but twin engines are not the only path. Most single-engine rigs do not qualify. Mercury lists package-specific single-engine systems, including Joystick Steering for Single-Engine Vessels and Joystick Piloting for Single-Engine Outboards with Thruster. The thruster package requires an electric-steering Verado or SeaPro V8, V10, or V12 from 250 to 600 HP plus a compatible CAN-based variable-speed thruster. Confirm the exact engine, steering, controls, and thruster package before quoting." },
       { question: "Will DTS make my boat faster or more fuel-efficient?", answer: "No. DTS is drive-by-wire. It changes how throttle and shift commands travel from the helm to the engine, but it doesn't change combustion, peak HP, or fuel burn. Same motor, same performance, smoother control feel. The real benefits are precision, multi-engine sync, and joystick eligibility, not raw numbers." },
       { question: "Is DTS available on smaller Mercury motors?", answer: "Generally no. Mercury offers DTS on motors roughly 75 HP and up, with most current Verado V8/V10/V12, Pro XS 150+, and FourStroke 200+ models DTS-equipped from factory. Under 75 HP, mechanical controls remain the standard. If you're shopping in the 25 to 60 HP range, the DTS question doesn't apply." },
-      { question: "How do I check if my exact motor supports DTS?", answer: "Email the motor serial number from your cowl plate to info@harrisboatworks.ca. We'll cross-reference it against Mercury's records and confirm whether your specific motor is DTS-capable, already DTS-equipped, or not eligible." },
+      { question: "How do I check if my exact motor supports DTS?", answer: "Check Mercury's published specifications and the documentation for your exact motor and model year." },
       { question: "Are current Verado motors supercharged like older Verados?", answer: "No. Current Verado V8/V10/V12 (250-600 HP) are naturally aspirated, not supercharged. The old inline-6 Verado was supercharged, but Mercury moved away from that architecture years ago. Current Verados come standard with DTS at all HP classes in the family." }
     ],
     content: `*Hero image: Mercury digital-control example. The pictured control does not establish retrofit eligibility; confirm the engine serial number, control part number and complete rigging package.*
 
 *Last reviewed: 2026-05-28*
 
-> **Quick answer:** Most current Mercury motors built with DTS already have it (all Verado, Pro XS 150 HP and up, FourStroke 200 HP and up since the model was DTS-equipped). True retrofit of a mechanical Mercury to DTS is rarely cost-effective. The honest eligibility path for most boaters is: repower into a DTS-equipped motor. Email your motor serial number to info@harrisboatworks.ca for an eligibility check.
+> **Quick answer:** Most current Mercury motors built with DTS already have it (all Verado, Pro XS 150 HP and up, FourStroke 200 HP and up since the model was DTS-equipped). True retrofit of a mechanical Mercury to DTS is rarely cost-effective. The honest eligibility path for most boaters is: repower into a DTS-equipped motor.
 
 Most callers asking about DTS retrofit are surprised by the answer. They expect a parts catalog and a labor estimate. What they actually need is a yes-or-no on whether their current motor already has DTS (many do without the owner realizing), and if not, an honest assessment of whether retrofitting makes more sense than just repowering with a DTS-equipped motor.
 
@@ -3590,7 +3588,7 @@ This post is the eligibility decision tree. It covers what DTS actually is, how 
 | Twin or triple Mercury rig | **Eligible if all motors are DTS-capable** | Required for joystick. Worth the conversation. |
 | Single small motor (under 75 HP) | **Not a DTS use case** | Save the money. Mechanical is correct here. |
 
-If your boat doesn't slot neatly into one of these, email a photo of your motor cowl plate plus your boat year and make to info@harrisboatworks.ca. We'll review eligibility and explain what information is still needed for a written estimate.
+
 
 ![Quicksilver mechanical helm control example](/lovable-uploads/inline/inline-mechanical-controls-cables.png "Mechanical control example. A photograph of the control alone does not identify every cable, harness or engine requirement.")
 *Mechanical control example. The photograph does not show the complete cables, harness or engine installation; confirm compatibility from the exact components.*
@@ -3666,7 +3664,7 @@ Mercury offers DTS on the following motor classes (current model year 2026):
 
 The numbers shift slightly model year to model year (Mercury sometimes adds or drops DTS as a standard feature on a given HP). The safe rule: 150 HP and up, plan on DTS being standard or available. Under 150 HP, check before assuming.
 
-For the official source, Mercury's product pages at [mercurymarine.com](https://www.mercurymarine.com/) list DTS as a feature on each model. Or send us your boat details and target HP and we'll tell you which DTS-equipped motors fit your transom.
+For the official source, Mercury's product pages at [mercurymarine.com](https://www.mercurymarine.com/) list DTS as a feature on each model.
 
 ## The joystick path: why most DTS retrofit calls are actually joystick calls
 
@@ -3695,7 +3693,7 @@ Five things to confirm before you commit money.
 4. **Multi-engine rig?** Single, twin, or triple. Joystick eligibility lives here.
 5. **Boat year and make.** Some older boats have helm/dash configurations that complicate DTS install. Worth flagging up front.
 
-Email a photo of the motor cowl plate plus the helm controls to info@harrisboatworks.ca. We'll review eligibility and the configuration, then quote the appropriate path or ask for any missing information.
+
 
 ## What we see at HBW
 
@@ -3750,8 +3748,7 @@ A few Ontario-specific notes that make DTS hit different here.
 
 ## Ready to confirm DTS eligibility?
 
-**Phone:** 905-342-2153
-**Email:** info@harrisboatworks.ca (send motor cowl plate photo + helm controls photo for an eligibility check)
+
 **Quote a repower:** [mercuryrepower.ca](https://mercuryrepower.ca)
 
 Harris Boat Works · 5369 Harris Boat Works Rd, Gores Landing, ON · Mercury Marine dealer since 1965, current Premier Dealer.
@@ -4268,7 +4265,7 @@ Harris Boat Works is a family-owned Mercury Premier Dealer in Gores Landing on R
     image: '/lovable-uploads/hero-mercury-9-9-vs-15-hp-tiller-v4.png',
     author: 'Jay Harris',
     datePublished: '2026-05-18',
-    dateModified: '2026-09-06',
+    dateModified: '2026-09-11',
     publishDate: '2026-05-18',
     category: 'Buying Guide',
     readTime: '~9 min read',
@@ -4359,7 +4356,7 @@ Boaters sometimes ask whether they can run a 15 HP motor on a hull plated at 9.9
 
 When a customer walks in shopping a Mercury tiller in this size class, here's what we check before we recommend anything:
 
-The capacity plate. We look for the rated horsepower stamp first. If you don't know where yours is, bring the boat or send us a photo of the transom and gunwale. Without that number, we're guessing.
+The capacity plate. We look for the rated horsepower stamp first. Without that number, we're guessing.
 
 The use case. A kicker motor for trolling on a bigger bass boat has different priorities than a primary motor on a 14 foot utility hull. A sailboat auxiliary cares about shaft length and weight aft. A cottage dinghy cares about portability. Same two motors, different right answers.
 
@@ -4375,9 +4372,9 @@ If you're rigging a kicker motor on a bigger boat, [the 9.9 EFI FourStroke is th
 
 - If you fish a specific tournament, check its current motor and trolling rules before buying. Do not treat every Rice Lake or Kawartha derby as a 9.9-only event, and do not assume a 15 is universally legal.
 - Weight still matters on a kicker bracket. Confirm the current model-code dry weights rather than using an older shared-block 7 kg story.
-- A 15 HP kicker is often more motor than a light aluminum needs at idle. Talk through hull, wind, and the named event rules before paying for unused top-end.
+- A 15 HP kicker is often more motor than a light aluminum needs at idle. Consider hull, wind, and the named event rules before paying for unused top-end.
 
-The only exception: a heavy boat that struggles to maintain trolling speed in chop or wind. [A pontoon kicker](/blog/mercury-prokicker-rice-lake-fishing-guide), for example, sometimes benefits from the 15 because it has the headroom to push the boat into the wind at slow speed. Talk to us if that's your situation.
+The only exception: a heavy boat that struggles to maintain trolling speed in chop or wind. [A pontoon kicker](/blog/mercury-prokicker-rice-lake-fishing-guide), for example, sometimes benefits from the 15 because it has the headroom to push the boat into the wind at slow speed.
 
 ## Sailboat Auxiliary: Long Shaft, Weight, Command Thrust
 
@@ -4469,7 +4466,7 @@ Yes. Both motors have remote-control conversion kits. You can start with a tille
 
 If your capacity plate caps at 9.9 or you're on an HP-restricted lake, the 9.9 EFI FourStroke is the right call. If a named tournament restricts kicker size, follow that event's current rules. Weight-sensitive sailboat owners should compare current model-code weights. For everyone else whose plate allows it, the 15 EFI FourStroke is often the stronger all-around boat motor.
 
-Build a quote for either motor in Canadian dollars at the configurator, or call us if you want to talk through capacity plate, shaft length, or tiller-vs-remote first.
+Build a quote for either motor in Canadian dollars at the configurator.
 
 **Phone:** 905-342-2153
 
@@ -4494,7 +4491,7 @@ Build a quote for either motor in Canadian dollars at the configurator, or call 
     image: '/lovable-uploads/hero-how-to-choose-horsepower.png',
     author: 'Harris Boat Works',
     datePublished: '2024-06-15',
-    dateModified: '2026-09-07',
+    dateModified: '2026-09-11',
     category: 'Buying Guide',
     readTime: '8 min read',
     keywords: ['boat motor horsepower', 'how to choose outboard motor', 'mercury motor sizing', 'boat hp guide', 'outboard motor selection'],
@@ -4676,7 +4673,7 @@ We won't over-power your boat. We also won't recommend the cheapest option if we
 
 ## Ready to figure out your HP?
 
-Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), real installed pricing across every Mercury HP class, no games. Or call us at **905-342-2153** and we'll talk through your specific boat. Sometimes the honest answer is "you already have the right motor." We'll say that too.
+Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), real installed pricing across every Mercury HP class, no games.
 
 ---
 
@@ -5049,7 +5046,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'New Mercury Pro XS outboard on its shipping pallet outside the Harris Boat Works shop in Gores Landing.',
     author: 'Jay Harris',
     datePublished: '2026-05-26',
-    dateModified: '2026-09-07',
+    dateModified: '2026-09-11',
     publishDate: '2026-06-19',
     category: 'Mercury Motors',
     readTime: '~9 min read',
@@ -5059,10 +5056,10 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       { question: 'Does the Pro XS need premium fuel?', answer: 'No. Mercury Pro XS outboards run on regular 87 octane with up to 10% ethanol, same as the FourStroke. The "premium fuel" idea is one of the most common myths we hear, and it shouldn\'t factor into your decision.' },
       { question: 'Is the Pro XS actually faster than the FourStroke at the same horsepower?', answer: "In the right boat, yes. Pro XS spins a couple hundred more RPM at the top and uses hole-shot tuning for stronger acceleration, so it gets on plane quicker and runs a higher top end. On a pontoon or a slow displacement hull, you won't see the benefit, which is the whole point of matching family to boat." },
       { question: 'Do the three families have different warranties?', answer: 'They all carry Mercury Canada\'s standard limited warranty (coverage plus corrosion protection running concurrently, not stacked). We almost always have an extended-coverage promotion running on new outboards. Ask us for the current terms before you assume. Call 905-342-2153 or see our Mercury warranty guide.' },
-      { question: 'Can I repower my boat with a Verado?', answer: "On the right boat, yes, and we service Verado, but it's not the family we stock and sell. For most repowers on this lake the answer lands on a FourStroke or a Pro XS. Tell us your boat and how you use it and we'll point you straight. Build a starting quote at mercuryrepower.ca." },
+      { question: 'Can I repower my boat with a Verado?', answer: "On the right boat, yes, and we service Verado, but it's not the family we stock and sell. For most repowers on this lake the answer lands on a FourStroke or a Pro XS. Build a starting quote at mercuryrepower.ca." },
       { question: 'Is the Pro XS a lot louder than the FourStroke?', answer: "The V8 Pro XS engines are tuned for a throatier startup note on purpose, because the performance crowd likes it. At cruise it's not a problem. If your priority is the quietest possible ride, that's the Verado's whole job." },
       { question: 'Which one holds its resale value best?', answer: "All three Mercury families hold value well in Ontario, partly because the local service network is strong. Pro XS does carry a year-dependent factor on used valuations versus a standard FourStroke. If you're weighing trade-in down the road, ask us to run real numbers on your specific motor." },
-      { question: 'Which Mercury does HBW recommend for a first boat?', answer: "For a pontoon or aluminum fishing boat, a FourStroke in the right horsepower for the hull. It's the lowest-fuss, best-value path, and it covers the way most families actually use their boat. See our pontoon motor guide or call and we'll talk it through." },
+      { question: 'Which Mercury does HBW recommend for a first boat?', answer: "For a pontoon or aluminum fishing boat, a FourStroke in the right horsepower for the hull. It's the lowest-fuss, best-value path, and it covers the way most families actually use their boat. See our pontoon motor guide." },
       { question: 'Is the Mercury Pro XS a four-stroke?', answer: "Yes. Pro XS is a four-stroke Mercury outboard, built on the same core engineering as FourStroke but tuned for performance: more RPM at the top end, hole-shot spark tuning, and a bit less weight. It runs on regular 87 octane, same as FourStroke." },
       { question: 'Is the Mercury Verado a four-stroke?', answer: "Yes. The current Mercury Verado V8, V10, and V12 outboards are naturally aspirated four-stroke engines, not supercharged like the old inline-six Verado. They're built for quiet, smooth, premium operation on bigger boats." },
       { question: 'What is the actual difference between Mercury Pro XS and FourStroke?', answer: "Same core block, different tuning. FourStroke is built for efficiency, quiet running, and value across the widest horsepower range. Pro XS is tuned for hole shot and top speed, with a higher RPM ceiling and performance gearcase options. Neither is a lesser engine; they're built for different jobs." }
@@ -5185,7 +5182,7 @@ In the right boat, yes. Pro XS spins a couple hundred more RPM at the top and us
 They all carry Mercury Canada's standard limited warranty (coverage plus corrosion protection running concurrently, not stacked). We almost always have an extended-coverage promotion running on new outboards. Ask us for the current terms before you assume. Call 905-342-2153 or see our [Mercury warranty guide](/blog/mercury-outboard-warranty-canada-2026).
 
 **Can I repower my boat with a Verado?**
-On the right boat, yes, and we service Verado, but it's not the family we stock and sell. For most repowers on this lake the answer lands on a FourStroke or a Pro XS. Tell us your boat and how you use it and we'll point you straight. Build a starting quote at mercuryrepower.ca.
+On the right boat, yes, and we service Verado, but it's not the family we stock and sell. For most repowers on this lake the answer lands on a FourStroke or a Pro XS. Build a starting quote at mercuryrepower.ca.
 
 **Is the Pro XS a lot louder than the FourStroke?**
 The V8 Pro XS engines are tuned for a throatier startup note on purpose, because the performance crowd likes it. At cruise it's not a problem. If your priority is the quietest possible ride, that's the Verado's whole job.
@@ -5194,11 +5191,11 @@ The V8 Pro XS engines are tuned for a throatier startup note on purpose, because
 All three Mercury families hold value well in Ontario, partly because the local service network is strong. Pro XS does carry a year-dependent factor on used valuations versus a standard FourStroke. If you're weighing trade-in down the road, ask us to run real numbers on your specific motor.
 
 **Which Mercury does HBW recommend for a first boat?**
-For a pontoon or aluminum fishing boat, a FourStroke in the right horsepower for the hull. It's the lowest-fuss, best-value path, and it covers the way most families actually use their boat. See our [pontoon motor guide](/blog/best-mercury-outboard-pontoon-boats) or call and we'll talk it through.
+For a pontoon or aluminum fishing boat, a FourStroke in the right horsepower for the hull. It's the lowest-fuss, best-value path, and it covers the way most families actually use their boat. See our [pontoon motor guide](/blog/best-mercury-outboard-pontoon-boats).
 
 ## Ready to figure out the right motor for your boat?
 
-Tell us the boat (make, length, what you do with it) and we'll tell you straight which Mercury family fits and why. No upsell to a motor you don't need. You can [build a repower quote yourself in a few minutes](/blog/mercury-repower-cost-ontario-2026-cad), or just call and talk to a person who's rigged a thousand of these.
+You can [build a repower quote yourself in a few minutes](/blog/mercury-repower-cost-ontario-2026-cad).
 
 **Phone:** 905-342-2153
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
@@ -5217,7 +5214,7 @@ heading: The right family, the real price, no games.
 body: Pick the engine family that fits how you run your boat, then build a quote on the exact model. Two minutes, a real price, a real person reviewing it.
 primaryLabel: Build Your Quote
 primaryHref: /quote/motor-selection
-phone: 905-342-2153
+
 footer: Not sure repower makes sense yet? Start with the [repower basics](/repower).
 ::
 `
@@ -5230,7 +5227,7 @@ footer: Not sure repower makes sense yet? Start with the [repower basics](/repow
     image: '/lovable-uploads/hero-boat-repowering-guide-when-to-replace-motor.png',
     author: 'Harris Boat Works',
     datePublished: '2024-03-05',
-    dateModified: '2026-09-10',
+    dateModified: '2026-09-11',
     category: 'Repowering',
     readTime: '9 min read',
     keywords: ['boat repowering', 'when to replace outboard', 'repower cost', 'new boat vs repower', 'outboard motor replacement'],
@@ -5390,13 +5387,13 @@ We do this math with customers at HBW. Not every problem is a repower trigger. S
 - [Mercury Motor Maintenance: Seasonal Care Tips](/blog/mercury-motor-maintenance-seasonal-tips), keeping motors going longer
 - [Mercury Outboard Won't Start Troubleshooting](/blog/mercury-outboard-wont-start-troubleshooting), early diagnostic
 
-## Ready to talk through whether to repower?
+
 
 Build a quote on the [motor selection page](/quote/motor-selection) if you've decided. Live Mercury pricing in CAD with full configuration including rigging.
 
 [**Build Your Mercury Quote**](/quote/motor-selection)
 
-If you're not sure whether your motor needs replacement, [give us a call at (905) 342-2153](tel:9053422153). We will walk through your motor's age, condition, and use to give you an honest answer. Sometimes that answer is "your motor has years left, run it."
+
 
 ---
 
@@ -5517,7 +5514,7 @@ Family-owned since 1947, Mercury dealer since 1965, Mercury Premier Dealer · Ri
     imageAlt: 'Concept diagram: vary throttle, avoid long steady RPM, and follow the serial-specific manual. Break-in is not the first scheduled service.',
     author: 'Harris Boat Works',
     datePublished: '2024-02-20',
-    dateModified: '2026-09-06',
+    dateModified: '2026-09-11',
     category: 'New Owner',
     readTime: '7 min read',
     keywords: ['mercury motor break in', 'new outboard break in procedure', 'mercury break in period', 'outboard motor break in', 'new boat motor care'],
@@ -5720,7 +5717,7 @@ Want HBW's optional early check, or due for scheduled service? Put in a request 
       },
       {
         question: 'Is the break-in procedure different for a 2-stroke vs 4-stroke Mercury?',
-        answer: 'The general principle, vary your throttle and avoid sustained full power, applies to both, but the specifics differ. Modern Mercury FourStrokes come from the factory pre-filled with the correct oil; there is no fuel-oil mixing and no special break-in oil required. Older Mercury 2-stroke engines required specific oil ratios during break-in. If you have a used 2-stroke Mercury and are unsure about its break-in history, call 905-342-2153 for model-specific advice.'
+        answer: 'The general principle, vary your throttle and avoid sustained full power, applies to both, but the specifics differ. Modern Mercury FourStrokes come from the factory pre-filled with the correct oil; there is no fuel-oil mixing and no special break-in oil required. Older Mercury 2-stroke engines required specific oil ratios during break-in.'
       },
       {
         question: 'Do I need to use Mercury-branded oil during break-in?',
@@ -5758,7 +5755,7 @@ Want HBW's optional early check, or due for scheduled service? Put in a request 
     imageAlt: "AI-generated editorial fishing scene with a Mercury-powered boat; not an identified ProKicker installation or documented HBW customer boat.",
     author: 'Harris Boat Works',
     datePublished: '2026-02-06',
-    dateModified: '2026-09-07',
+    dateModified: '2026-09-11',
     category: 'Fishing',
     readTime: '10 min read',
     keywords: ['Mercury 9.9 ProKicker Rice Lake', 'Mercury ProKicker Ontario', '9.9 kicker motor walleye trolling', 'Mercury 9.9 ProKicker vs standard 9.9', 'ProKicker EFI guide', 'kicker motor Rice Lake'],
@@ -5960,7 +5957,7 @@ Yes. It is used for trolling on the connecting lakes and as a backup motor on cr
 
 Live pricing, motor only or fully installed, is at **mercuryrepower.ca**. The quote tool shows actual HBW pricing in Canadian dollars, not MSRP.
 
-Call **905-342-2153** to talk through bracket choice, shaft length, and installation before you commit. We have done enough of these on Rice Lake fishing boats that we will have your specific hull sorted in about five minutes.
+
 
 **Phone:** 905-342-2153
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
@@ -6055,7 +6052,7 @@ Call **905-342-2153** to talk through bracket choice, shaft length, and installa
     imageAlt: 'Aerial view of Harris Boat Works marina and shop on Rice Lake in Ontario',
     author: 'Harris Boat Works',
     datePublished: '2026-05-04',
-    dateModified: "2026-08-26",
+    dateModified: "2026-09-11",
     publishDate: '2026-05-04',
     category: 'About Us',
     readTime: '8 min read',
@@ -6137,7 +6134,7 @@ We don't push repowers that aren't needed. Sometimes a customer comes in with a 
 
 HBW's standard repower handoff includes an on-water test on Rice Lake before pickup when safe seasonal conditions allow.
 
-Ready to talk repower? Call (905) 342-2153 or [build your Mercury quote online](/quote/motor-selection).
+Ready to repower? [Build your Mercury quote online](/quote/motor-selection).
 
 ## What HBW does not do
 - Saltwater servicing
@@ -6180,7 +6177,7 @@ If the work falls outside our core, we'll tell you that and point you toward a s
     imageAlt: 'Two anglers fishing from an aluminum console boat with a Mercury FourStroke outboard on a calm Kawartha lake',
     author: 'Harris Boat Works',
     datePublished: '2026-01-12',
-    dateModified: '2026-09-06',
+    dateModified: '2026-09-11',
     publishDate: '2026-01-12',
     category: 'Buying Guide',
     readTime: '10 min read',
@@ -6313,7 +6310,7 @@ heading: Common mistakes on aluminum fishing boat repowers
 
 ## Ready to find your motor?
 
-Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), real pricing in CAD on the full configuration: main motor, kicker, rigging, prop, and install. Or call us at **905-342-2153**. We rig fishing boats every week and can match a motor to your specific hull.
+Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), real pricing in CAD on the full configuration: main motor, kicker, rigging, prop, and install.
 
 ---
 
@@ -6398,7 +6395,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'A family cruising on a freshwater lake in a pontoon powered by a Mercury 90 HP Command Thrust FourStroke outboard',
     author: 'Jay Harris',
     datePublished: '2026-05-04',
-    dateModified: '2026-09-06',
+    dateModified: '2026-09-11',
     publishDate: '2026-05-04',
     category: 'Buying Guide',
     readTime: '12 min read',
@@ -6566,7 +6563,7 @@ For full Boost eligibility detail by motor family and serial range, see our [Mer
 
 ## Ready to repower your pontoon?
 
-Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca). The system asks for your hull info and use case and recommends the right HP class and gearcase. Or call **905-342-2153**, we rig pontoons every week and can give you the honest answer for your specific hull.
+Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca). The system asks for your hull info and use case and recommends the right HP class and gearcase.
 
 ---
 
@@ -6602,7 +6599,7 @@ heading: Get your pontoon the motor it deserves.
 body: Build a real quote on the right outboard for your pontoon in about two minutes. We've been rigging boats for Rice Lake and the Kawarthas since 1947, so we know what works out here.
 primaryLabel: Build Your Quote
 primaryHref: /quote/motor-selection
-phone: 905-342-2153
+
 footer: Repowering an older pontoon? Here's [how repower works](/repower).
 ::
 `,
@@ -6658,7 +6655,7 @@ footer: Repowering an older pontoon? Here's [how repower works](/repower).
     imageAlt: 'Family cruising a pontoon boat powered by a Mercury outboard past Rice Lake cottages at golden hour',
     author: 'Jay Harris',
     datePublished: '2026-05-04',
-    dateModified: '2026-09-06',
+    dateModified: '2026-09-11',
     publishDate: '2026-05-04',
     category: 'Buying Guide',
     readTime: '12 min read',
@@ -6666,7 +6663,7 @@ footer: Repowering an older pontoon? Here's [how repower works](/repower).
     content: `# Best Pontoon Boats for Rice Lake Cottage Use
 
 ## Quick answer
-For most Rice Lake cottage families, the right pontoon is 20 to 22 ft, two-tube, with a Mercury Command Thrust FourStroke in the 90 to 115 HP range (confirm the exact model and its standard or CT gearcase). Tritoons are worth the premium only if active water sports are a regular part of your use. We sell Legend Boats pontoons and handle Mercury repowers on existing pontoons. Get a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) or call us at 905-342-2153.
+For most Rice Lake cottage families, the right pontoon is 20 to 22 ft, two-tube, with a Mercury Command Thrust FourStroke in the 90 to 115 HP range (confirm the exact model and its standard or CT gearcase). Tritoons are worth the premium only if active water sports are a regular part of your use. We sell Legend Boats pontoons and handle Mercury repowers on existing pontoons. Get a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 ::decision-card
 eyebrow: Pick the right hull
@@ -6690,7 +6687,7 @@ rightCriteria:
   - You want better gas mileage and easier trailering than a pontoon
 rightOutcome: Cuts chop, planes faster, tracks better at speed. Less deck for kids and grandparents, but the hull you actually want when the wind comes up. New 19-21 ft V-hull with 150-200 HP Mercury; see current package pricing on our /pricing-reference page.
 rightVariant: recommended
-whenInDoubt: In our shop experience, Rice Lake families focused on calm-water cruising and carrying people often land on a pontoon. Anglers and boaters who prioritize handling in chop often land on a V-hull. Tell us how you actually use the boat and we'll point you at the right hull.
+whenInDoubt: In our shop experience, Rice Lake families focused on calm-water cruising and carrying people often land on a pontoon. Anglers and boaters who prioritize handling in chop often land on a V-hull.
 ::
 
 ## Why pontoons dominate Rice Lake cottages
@@ -6820,7 +6817,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Official Mercury freshwater photos of 75, 90 and 115 HP FourStroke outboards on the water',
     author: 'Harris Boat Works',
     datePublished: '2026-01-26',
-    dateModified: '2026-09-07',
+    dateModified: '2026-09-11',
     publishDate: '2026-01-26',
     category: 'Comparison',
     readTime: '9 min read',
@@ -6842,7 +6839,7 @@ For most 16 to 18 ft aluminum console boats on Kawartha and Ontario freshwater, 
 - Boat under 18 ft, lighter aluminum → **75 FourStroke**
 - Bowrider or mid-size aluminum, family use → **90 FourStroke**
 - Heavier rig, fish-and-ski, pontoon, or want performance → **115 Pro XS**
-- Not sure? Call us and we'll size it.
+
 
 ## Is Upgrading From 75 to 90 HP Worth It?
 
@@ -7006,7 +7003,7 @@ Build a quote for 75, 90, or 115 HP on the [motor selection page](/quote/motor-s
 
 [**Build Your Mercury Quote**](/quote/motor-selection)
 
-If you want to talk through the decision for your specific boat before you build, [give us a call at (905) 342-2153](tel:9053422153). We rig boats in this HP class every week and can give you the honest answer for your hull and use case.
+
 
 ---
 
@@ -7031,7 +7028,7 @@ heading: Stop comparing. Start pricing.
 body: You know the horsepower range. Build a real quote on the exact motor in about two minutes and we'll have a person review it, not a bot. Mercury Premier dealer, transparent pricing, Rice Lake since 1947.
 primaryLabel: Build Your Quote
 primaryHref: /quote/motor-selection
-phone: 905-342-2153
+
 footer: Repowering an older rig? Here's how the [repower process](/repower) works.
 ::
 `,
@@ -7093,7 +7090,7 @@ footer: Repowering an older rig? Here's how the [repower process](/repower) work
     imageAlt: "Repower acceptance planning: confirm the scope, record results, and account for safe testing conditions.",
     author: 'Harris Boat Works',
     datePublished: '2026-02-02',
-    dateModified: '2026-09-07',
+    dateModified: '2026-09-11',
     publishDate: '2026-02-02',
     category: 'Repowering',
     readTime: '10 min read',
@@ -7195,9 +7192,9 @@ Cottage boat trailers often outlive the motor and survive multiple repowers. But
 
 We look at trailers as part of cottage repower projects.
 
-## Ready to talk through your cottage boat?
 
-Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) for a starting point on motor and rigging costs. If you want to talk through your specific hull before you build, call us at 905-342-2153.
+
+Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) for a starting point on motor and rigging costs.
 
 We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport. You can also bring the boat to our Gores Landing shop.
 
@@ -7233,7 +7230,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-rice-lake-fishing-morning.png',
     author: 'Harris Boat Works',
     datePublished: '2026-02-09',
-    dateModified: '2026-09-07',
+    dateModified: '2026-09-11',
     publishDate: '2026-02-09',
     category: 'Buying Guide',
     readTime: '8 min read',
@@ -7389,7 +7386,7 @@ The HBW ramp at Gores Landing is the only 24/7 full-service launch on the lake. 
 
 If you fish Rice Lake, the right motor comes down to a match between your hull, your fishing style, and this specific water. We have been making that match here for three generations.
 
-Head to **mercuryrepower.ca** for live Mercury pricing in CAD, configured for your hull and your fishing. Or call us. You will get a straight answer on what you actually need, not a pitch for the most expensive thing on the wall.
+Head to **mercuryrepower.ca** for live Mercury pricing in CAD, configured for your hull and your fishing.
 
 **Phone:** 905-342-2153
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
@@ -7463,7 +7460,7 @@ Head to **mercuryrepower.ca** for live Mercury pricing in CAD, configured for yo
     imageAlt: 'Lund fishing boat with a Mercury outboard motor cruising on a calm Kawartha lake during a repower project.',
     author: 'Harris Boat Works',
     datePublished: '2026-02-23',
-    dateModified: '2026-09-07',
+    dateModified: '2026-09-11',
     publishDate: '2026-02-23',
     category: 'Repowering',
     readTime: '12 min read',
@@ -7725,7 +7722,7 @@ October through March. Off-season ordering gets you the best motor availability 
 
 Start at **mercuryrepower.ca** for live pricing on every Mercury we sell, real Canadian dollars, a few minutes to [build a quote](/quote/motor-selection).
 
-Or call **905-342-2153**. We will start with the hull walk-around, work through the right motor for how you actually boat, and give you a line-item quote before anything is ordered.
+
 
 **Phone:** 905-342-2153
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
@@ -7780,7 +7777,7 @@ Jay Harris helps run Harris Boat Works, a third-generation family marina in Gore
     image: '/lovable-uploads/bass-boat-150-proxs-hero-real.png',
     author: 'Harris Boat Works',
     datePublished: '2026-03-09',
-    dateModified: '2026-09-06',
+    dateModified: '2026-09-11',
     publishDate: '2026-03-09',
     category: 'Buying Guide',
     readTime: '10 min read',
@@ -7865,7 +7862,7 @@ For your specific boat and HP, build a quote at [mercuryrepower.ca](https://www.
 
 If the hull is solid and the boat fits your fishing, repower. A new Pro XS transforms an older bass boat. You get modern fuel efficiency (dramatically better than older 2-strokes), current electronics integration, and a full Mercury warranty, without paying for a new hull you don't need.
 
-If the hull is outdated, damaged, or doesn't fit the way you fish, a new boat makes more sense. We can help you think through the math either way.
+If the hull is outdated, damaged, or doesn't fit the way you fish, a new boat makes more sense.
 
 ---
 
@@ -7911,7 +7908,7 @@ Extended protection plans are available. Ask us about it at point of sale.
 
 ## Ready to configure your bass boat motor?
 
-Build a real quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) with actual current pricing. Or call **905-342-2153**, we handle bass boat repowers and can assess whether your transom and rigging are ready for a swap.
+Build a real quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) with actual current pricing.
 
 ---
 
@@ -7953,7 +7950,7 @@ Most bass boats use 20-inch shaft with a jack plate. Some deeper hulls or higher
 For recreational use, 200 HP can suit some 21 ft boats. The examples above compare 200–225 HP Pro XS for some 19–21 ft tournament setups and 250–300 HP Pro XS for some elite-level rigs of 21 ft and up. Use the exact hull rating, motor-weight limit, load, and intended use to make the choice; never exceed the rated limits.
 
 **Should I repower or buy a new bass boat?**
-If your hull is solid and you like your boat, repower. A new Pro XS transforms an older hull. If the boat itself is the problem, new makes more sense. We'll help you think through the specific math.
+If your hull is solid and you like your boat, repower. A new Pro XS transforms an older hull. If the boat itself is the problem, new makes more sense.
 
 **What's the best Mercury for Ontario bass tournaments?**
 For Ontario tournament fishing at the semi-competitive to competitive level, Mercury Pro XS 200–225 HP is the most common choice. At elite level on 21+ ft boats, 250–300 HP Pro XS. For budget-focused entrants on local circuits, FourStroke 150 HP is a solid option.
@@ -8013,7 +8010,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: "Captain's hand on a brushed-aluminum throttle next to a Mercury SmartCraft display showing 24.6 L/h (6.5 US gal/h) fuel flow at 4200 RPM and 28 MPH.",
     author: 'Harris Boat Works',
     datePublished: '2026-03-16',
-    dateModified: '2026-09-06',
+    dateModified: '2026-09-11',
     publishDate: '2026-03-16',
     category: 'Tips',
     readTime: '9 min read',
@@ -8189,7 +8186,7 @@ Often yes, prop tuning, fresh plugs, cleaned injectors or carburettor, and fresh
 **Ready to dial in your Mercury?** 
 Whether you want a prop check, a full service, or a quote on a new motor package: [hbw.wiki/service](https://hbw.wiki/service) is where to start. Or build a motor quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
-Phone: 905-342-2153 | Harris Boat Works, Gores Landing, ON | Since 1947
+Harris Boat Works, Gores Landing, ON | Since 1947
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---`,
@@ -8228,7 +8225,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         question: 'Do 2-stroke or 4-stroke Mercury outboards burn less fuel?',
-        answer: 'Four-strokes burn noticeably less fuel than carburetted two-strokes of the same horsepower, often a large difference at cruise, because a four-stroke does not lose unburned fuel out the exhaust the way an older two-stroke does. Mercury\'s current FourStroke and Pro XS engines are all four-stroke EFI designs. If you are running an older two-stroke and watching your fuel-dock bill climb, repowering to a current Mercury FourStroke is the single biggest consumption drop available. Build a repower quote at mercuryrepower.ca or call 905-342-2153.'
+        answer: 'Four-strokes burn noticeably less fuel than carburetted two-strokes of the same horsepower, often a large difference at cruise, because a four-stroke does not lose unburned fuel out the exhaust the way an older two-stroke does. Mercury\'s current FourStroke and Pro XS engines are all four-stroke EFI designs. If you are running an older two-stroke and watching your fuel-dock bill climb, repowering to a current Mercury FourStroke is the single biggest consumption drop available. Build a repower quote at mercuryrepower.ca.'
       },
       {
         question: 'What are the best fuel efficiency tips for outboard motors?',
@@ -8737,7 +8734,7 @@ Harris Boat Works | Since 1947 | Mercury Marine Premier Dealer | Gores Landing, 
     imageAlt: 'Comparison of tiller-steer outboard on an aluminum boat versus remote steering at a console on a bass boat.',
     author: 'Harris Boat Works',
     datePublished: '2026-04-06',
-    dateModified: '2026-09-06',
+    dateModified: '2026-09-11',
     publishDate: '2026-04-06',
     category: 'Buying Guide',
     readTime: '8 min read',
@@ -8906,7 +8903,7 @@ We rig both at HBW. Specific recommendations depend on motor HP and how you use 
 
 ## Ready to choose?
 
-Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), live pricing in CAD with full configuration options for both tiller and remote. Or call **905-342-2153** and we'll walk through what's right for your boat.
+Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), live pricing in CAD with full configuration options for both tiller and remote.
 
 ---
 
@@ -8961,7 +8958,7 @@ Common configuration. The main motor uses remote control from the helm; the kick
       },
       {
         question: 'Is hydraulic steering worth it on a Mercury outboard, and what does it cost?',
-        answer: 'There is no single horsepower cutoff that makes every cable or hydraulic system suitable. Check the steering manufacturer\'s application limits for the exact boat, engine and components. Hydraulic steering can improve steering effort and feel where an approved package is available. The cost adds roughly $800-$1,500 CAD to rigging cost depending on the system and installation. Harris Boat Works specs the right steering for your motor and hull during the rigging process, call 905-342-2153.'
+        answer: 'There is no single horsepower cutoff that makes every cable or hydraulic system suitable. Check the steering manufacturer\'s application limits for the exact boat, engine and components. Hydraulic steering can improve steering effort and feel where an approved package is available. The cost adds roughly $800-$1,500 CAD to rigging cost depending on the system and installation. Harris Boat Works specs the right steering for your motor and hull during the rigging process.'
       },
       {
         question: 'Which Mercury tiller motor is best for a 16-foot aluminum boat on a Kawartha lake?',
@@ -8981,7 +8978,7 @@ Common configuration. The main motor uses remote control from the helm; the kick
     imageAlt: 'Official Mercury Marine studio image of a 350 HP V10 SeaPro commercial outboard',
     author: 'Harris Boat Works',
     datePublished: '2026-04-20',
-    dateModified: '2026-09-06',
+    dateModified: '2026-09-11',
     publishDate: '2026-04-20',
     category: 'Buying Guide',
     readTime: '8 min read',
@@ -9098,7 +9095,7 @@ We support [guides and rental operators throughout the Kawarthas and Trent-Sever
 - **Priority service scheduling**, peak-season breakdowns get worked into the schedule. We know your boat is income.
 - **Multi-engine fleet maintenance planning**, predictable annual maintenance budget instead of breakdown surprises.
 
-If you run a commercial boat operation in the Kawarthas or anywhere within tow distance of Rice Lake, a phone call about your specific use case will tell you more than this article. Call **905-342-2153** and ask for the commercial quote.
+For a commercial SeaPro purchase quote, call **905-342-2153**.
 
 ---
 
@@ -9181,7 +9178,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Official Mercury Marine studio image of a portable FourStroke outboard in the 2.5 to 20 HP family',
     author: 'Harris Boat Works',
     datePublished: '2026-04-27',
-    dateModified: '2026-09-06',
+    dateModified: '2026-09-11',
     publishDate: '2026-04-27',
     category: 'Buying Guide',
     readTime: '8 min read',
@@ -9333,7 +9330,7 @@ Portable motors are designed for easy transport, but they need proper care:
 
 ## Ready to buy a portable Mercury?
 
-Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), live pricing in CAD on the full portable range. Or call **905-342-2153**. We sell portable Mercurys every season and can match the right motor to your specific application.
+Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), live pricing in CAD on the full portable range.
 
 ---
 
@@ -9575,7 +9572,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Three boats with Mercury outboards of increasing size at a marina dock, from small fishing boat to large pontoon',
     author: 'Harris Boat Works',
     datePublished: '2026-05-11',
-    dateModified: '2026-09-06',
+    dateModified: '2026-09-11',
     publishDate: '2026-05-11',
     category: 'Buying Guide',
     readTime: '8 min read',
@@ -9744,7 +9741,7 @@ Bring us your boat info, make, model, year, length, and how you actually use it,
 
 ## Ready to size your motor?
 
-Build a real installed quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), real pricing across every Mercury HP class. Or call **905-342-2153** and we'll work through your specific boat.
+Build a real installed quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), real pricing across every Mercury HP class.
 
 ---
 
@@ -9959,7 +9956,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Mercury 9.9 FourStroke tiller outboard on a 14-foot aluminum boat drifting on a misty Ontario lake at sunrise',
     author: 'Harris Boat Works',
     datePublished: '2026-04-17',
-    dateModified: '2026-09-06',
+    dateModified: '2026-09-11',
     publishDate: '2026-04-17',
     category: 'Buying Guide',
     readTime: '8 min read',
@@ -10052,7 +10049,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         question: 'Are Mercury electric outboards available?',
-        answer: 'Yes. Mercury\'s Avator electric line includes models from 7.5e to 110e. Contact us for current availability, pricing, and to discuss whether electric suits your cottage lake application.'
+        answer: 'Yes. Mercury\'s Avator electric line includes models from 7.5e to 110e. Contact us for a current Avator purchase quote and availability.'
       }
     ]
   },
@@ -11065,7 +11062,7 @@ Honest version: the right month to buy is the month you actually need the boat o
     imageAlt: 'Docked Crestliner family runabout with a black Mercury 115 FourStroke on calm Ontario water.',
     author: 'Harris Boat Works',
     datePublished: '2026-05-06',
-    dateModified: '2026-09-10',
+    dateModified: '2026-09-11',
     publishDate: '2026-05-06',
     category: 'Buying Guide',
     readTime: '9 min read',
@@ -11115,7 +11112,7 @@ We've rigged and repowered family runabouts on Rice Lake and the Kawarthas for a
 | 19-21 ft | 175-200 HP | Tow boat examples. FourStroke 175-225 are V6; 200 Pro XS is V8 |
 | 21-22 ft | 200-250 HP | Big crew / longer runs. 200-250 Pro XS are V8; FourStroke 250 is V8; FourStroke 200-225 are V6 |
 
-If your situation isn't on this list, the chart doesn't settle it anyway. The right answer comes from a conversation. Call us.
+
 
 ### Why FourStroke Beats Pro XS for Most Families
 
@@ -11187,7 +11184,7 @@ We rig family runabouts every spring in Gores Landing. Specifically:
 - **Trade-in valuation**, We give fair-market value on your old motor or boat. No lowballing.
 - **Annual service**, Mercury Premier dealer, factory-trained techs, ethanol-free 89 marine gas at the dock.
 
-If you're genuinely unsure between two HP ratings, call us before you build a quote. Picking right is more important than picking fast.
+
 
 ---
 
@@ -11237,7 +11234,7 @@ Motor, rigging (controls, harness, gauges), prop, and installation. We quote all
 
 Ready to find the right Mercury for your family runabout? Build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**, real CAD pricing, no phone tag, no "call for price."
 
-Not sure where to start? Call **905-342-2153**. We answer the phone and we'll tell you the honest answer for your hull.
+
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---`,
@@ -11279,7 +11276,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Mercury 175 Pro XS outboard on a tow boat pulling a wakeboarder at golden hour on an Ontario lake',
     author: 'Harris Boat Works',
     datePublished: '2026-05-03',
-    dateModified: '2026-09-10',
+    dateModified: '2026-09-11',
     publishDate: '2026-05-03',
     category: 'Buying Guide',
     readTime: '9 min read',
@@ -11408,9 +11405,9 @@ We rig outboard tow boats every spring. Specifically:
 - **Prop tuning**, tow boats are extremely prop-pitch sensitive; we'll dial it in for your specific hull and use case
 - **Ballast and wake-shaping retrofits**, if your boat supports them
 
-Tow boats run hard. We'll talk through your annual hours and use case before quoting, sometimes the right answer is "your existing motor still has life if we service it" instead of "buy a new V8." We'll be honest either way.
+Tow boats run hard.
 
-Call **905-342-2153** for a tow-boat consultation, or quote a Pro XS at [mercuryrepower.ca](https://www.mercuryrepower.ca).
+Quote a Pro XS at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
@@ -11457,7 +11454,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Mercury Pro XS powerhead families: 150 HP 3.0 L inline-4, 175 HP 3.4 L V6, and 200 to 300 HP 4.6 L V8.',
     author: 'Harris Boat Works',
     datePublished: '2026-05-13',
-    dateModified: '2026-09-07',
+    dateModified: '2026-09-11',
 
     publishDate: '2026-05-13',
     category: 'Buying Guide',
@@ -11603,7 +11600,7 @@ For higher-horsepower Pro XS conversations, HBW provides:
 - **Rigging upgrades**, hydraulic steering, stainless prop, DTS where available
 - **Boost software upgrade evaluations**, for eligible owners seeking better mid-range acceleration without buying a new motor
 
-If you're considering a Pro XS repower, the configurator at [mercuryrepower.ca](https://www.mercuryrepower.ca) provides the current pricing path. For twin vs single, V6 vs V8, or Pro XS vs FourStroke questions, call **905-342-2153**.
+If you're considering a Pro XS repower, the configurator at [mercuryrepower.ca](https://www.mercuryrepower.ca) provides the current pricing path.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
@@ -12290,7 +12287,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Mercury Pro XS outboard on its shipping pallet outside the Harris Boat Works shop.',
     author: 'Harris Boat Works',
     datePublished: '2026-02-06',
-    dateModified: '2026-09-06',
+    dateModified: '2026-09-11',
     publishDate: '2026-02-06',
     category: 'Buying Guide',
     readTime: '12 min read',
@@ -12342,7 +12339,7 @@ Expertise depth, parts inventory investment, customer fit. Three generations of 
 
 Live CAD pricing on every Mercury we sell is at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
-If you want to talk through whether Mercury is the right answer for your specific boat and use case, call 905-342-2153.
+
 
 Harris Boat Works. Mercury dealer since 1965, Mercury Premier dealer today.
 5369 Harris Boat Works Rd, Gores Landing, ON.
@@ -12540,7 +12537,7 @@ The model year flip doesn't change the basic questions: what motor fits your boa
     imageAlt: 'Mercury Avator 7.5e electric outboard powering a Lund WC-12 aluminum boat across a freshwater lake',
     author: 'Harris Boat Works',
     datePublished: '2026-02-06',
-    dateModified: '2026-09-06',
+    dateModified: '2026-09-11',
     publishDate: '2026-02-06',
     category: 'Buying Guide',
     readTime: '10 min read',
@@ -12603,7 +12600,7 @@ Be honest with yourself about how you boat.
 
 Avator pricing depends on the model, battery count, charger, controls and installation. We don't stock Avator on the floor: it's a build-to-order product, and the right battery count depends entirely on your boat and how you use it. The HBW Avator page currently says pricing is being finalized, so we do not publish a placeholder number. See our [Avator page](/electric/mercury-avator) for current availability and the configuration path.
 
-For gas outboards, the configurator does what it always does: **[build a real Mercury quote in 2 minutes at mercuryrepower.ca](https://www.mercuryrepower.ca)**. We sell both. We'll tell you straight which one fits your boat.
+For gas outboards, the configurator does what it always does: **[build a real Mercury quote in 2 minutes at mercuryrepower.ca](https://www.mercuryrepower.ca)**. We sell both.
 
 ---
 
@@ -12632,7 +12629,7 @@ For gas outboards, the configurator does what it always does: **[build a real Me
     imageAlt: 'An angler prepares tackle in a 16 ft aluminum fishing boat on a calm Rice Lake morning',
     author: 'Harris Boat Works',
     datePublished: '2026-02-06',
-    dateModified: '2026-09-06',
+    dateModified: '2026-09-11',
     publishDate: '2026-02-06',
     category: 'Lifestyle',
     readTime: '10 min read',
@@ -12788,7 +12785,7 @@ The kicker question is the one we settle most often for Rice Lake anglers, so he
 
 The walleye channels south of Gores Landing are 17 to 21 feet deep, and a productive troll over that weedy bottom can run four to six hours. A dedicated [Mercury 9.9 ProKicker](/blog/mercury-prokicker-rice-lake-fishing-guide) can handle slow trolling while preserving the main motor for higher-load work. It can also provide limited backup propulsion, but actual return range depends on the boat, load, weather, fuel, and distance. Treat it as risk reduction, not a guaranteed payback.
 
-The other thing we see is underpowered boats. Someone buys a hull, puts the smallest motor that will technically push it on the transom, and then meets a west wind with a full boat and a long way back to the ramp. Power the boat for the lake's worst afternoon, not its calmest morning. When in doubt, [build a live Mercury quote](https://mercuryrepower.ca) for your exact hull and we will talk it through.
+The other thing we see is underpowered boats. Someone buys a hull, puts the smallest motor that will technically push it on the transom, and then meets a west wind with a full boat and a long way back to the ramp. Power the boat for the lake's worst afternoon, not its calmest morning. When in doubt, [build a live Mercury quote](https://mercuryrepower.ca) for your exact hull.
 
 ## Boat Launches on Rice Lake
 
@@ -12891,7 +12888,7 @@ Whether you are rigging a new boat for the lake or repowering the one you have, 
     image: '/lovable-uploads/hero-mercury-boost-calibration-2026.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-14',
-    dateModified: '2026-09-06',
+    dateModified: '2026-09-11',
     category: 'Mercury Technology',
     readTime: '10 min read',
     keywords: ['Mercury Boost software upgrade', 'Mercury Boost eligible engines', 'Mercury software calibration', 'Mercury acceleration upgrade', 'Mercury dealer upgrade Ontario'],
@@ -12902,7 +12899,7 @@ Whether you are rigging a new boat for the lake or repowering the one you have, 
 
 > **Quick answer:** Mercury Boost is a software-based engine calibration update, not a hardware kit. Mercury reports 5% to 21% quicker acceleration from zero to top speed in its tested boat-and-engine applications. That is an acceleration comparison, not a 5% to 21% increase in top speed, and it is not a guaranteed result for every installation. Eligibility is determined by the exact engine and serial number, not model year alone. It covers select FourStroke, Pro XS, Verado, and Racing models and does not change top speed, rated horsepower, maximum RPM, or time to plane.
 
-> **Check yours:** Use the Boost Eligibility Checker on MercuryRepower.ca, or call HBW at 905-342-2153 with your serial number. Free.
+> **Check yours:** Use the Boost Eligibility Checker on MercuryRepower.ca.
 ---
 
 Mercury brought Boost to market in 2026 and has talked about it as the first of a series of software-based performance upgrades. It does one thing: recalibrates how the engine delivers power through the mid-range RPM band, producing faster acceleration from idle to wide-open throttle without touching internal components.
@@ -13022,7 +13019,7 @@ If the current Mercury eligibility check says the motor is not eligible, Boost i
 Do not assume a standard reversal or refund path. Confirm the current purchase, unlock, warranty, and support terms before authorizing the upgrade.
 
 **How do I know if my FourStroke qualifies?** 
-The current published dealer list includes FourStroke 175, 200, 250, and 300 HP; Pro XS 175, 200, 225, 250, and 300 HP; specified Verado models; and the Racing 150R, subject to serial-number rules and other requirements. The fastest answer is to call HBW at 905-342-2153 with the exact serial number.
+The current published dealer list includes FourStroke 175, 200, 250, and 300 HP; Pro XS 175, 200, 225, 250, and 300 HP; specified Verado models; and the Racing 150R, subject to serial-number rules and other requirements.
 
 **Is Boost worth it on Rice Lake?** 
 If the exact motor is eligible and mid-range acceleration is the goal, Boost may be worth comparing with the complete written price. It does not change time to plane or correct an underpowered boat, wrong propeller, or poor setup.
@@ -13038,7 +13035,7 @@ If the exact motor is eligible and mid-range acceleration is the goal, Boost may
 ## CTA
 
 **Check if your Mercury qualifies for Boost.** 
-Call 905-342-2153 with your serial number, or email info@harrisboatworks.ca. 
+Use the [Boost Eligibility Checker](/tools#boost-eligibility) as a starting point before requesting an installation quote.
 HBW confirms eligibility, quotes the installation, and books the visit. 
 Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. 
 Mercury Premier dealer. Est. 1947.
@@ -13231,7 +13228,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Old outboard removed from boat next to a new Mercury 90hp FourStroke being installed during an Evinrude repower.',
     author: 'Harris Boat Works',
     datePublished: '2026-04-16',
-     dateModified: '2026-09-06',
+     dateModified: '2026-09-11',
     category: 'Repower Guides',
     readTime: '14 min read',
     keywords: ['Evinrude to Mercury repower', 'Evinrude to Mercury conversion', 'replace Evinrude outboard Ontario', 'Evinrude discontinued repower', 'Evinrude E-TEC repower'],
@@ -13284,7 +13281,7 @@ Not everyone should switch this year. Here is the real framework.
 - You are a light seasonal user, cottage-only, with little travel
 - Budget timing makes waiting one more season the sensible move
 
-We will tell you which column you are in. The relationship matters more to us than one motor sale, so if your Evinrude has good years left and your plans are short-term, we will say so.
+
 
 ::pull-quote
 quote: Loved my old Johnson 90 but Evinrude's gone and the parts kept getting harder. Jay walked me through the Mercury 90 FourStroke swap and three weeks later it was on the transom. **First start of the season I forgot what a quiet motor sounds like.**
@@ -13402,7 +13399,7 @@ The E-TEC was a well-engineered engine, and a healthy late-model G2 is mechanica
 
 Build a live quote at **mercuryrepower.ca**: motor, rigging, install, an all-in Canadian number before you ever talk to us.
 
-Or call **905-342-2153**. We do Evinrude-to-Mercury conversions every month, and we will give you the honest answer on whether to switch now, wait a season, or run the Evinrude until it stops.
+
 
 **Phone:** 905-342-2153
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
@@ -13951,7 +13948,7 @@ The fastest way to estimate a payment is to build a quote using the current rate
     imageAlt: 'Mercury 90 HP FourStroke outboard on an aluminum fishing boat, ideal for Lake Simcoe walleye trolling setups.',
     author: 'Harris Boat Works',
     datePublished: '2026-04-21',
-    dateModified: '2026-08-19',
+    dateModified: '2026-09-11',
     category: 'Fishing & Local',
     readTime: '12 min read',
     keywords: ['best Mercury outboard for Lake Simcoe fishing', 'Lake Simcoe fishing guide 2026', 'Lake Simcoe walleye fishing', 'Lake Simcoe lake trout fishing', 'Lake Simcoe fishing regulations 2026'],
@@ -14063,7 +14060,7 @@ HBW's standard repower handoff includes an on-water test on Rice Lake before pic
 
 **Build a quote** on the motor selection page. Live Mercury pricing in CAD with full configuration including main motor, kicker, rigging, and prop. [Build Your Mercury Quote](https://mercuryrepower.ca)
 
-If you want to talk through your specific Simcoe fishing setup, call **905-342-2153**, email info@harrisboatworks.ca, or book service at hbw.wiki/service.
+
 
 **Phone:** 905-342-2153
 **Email:** info@harrisboatworks.ca
@@ -14096,7 +14093,7 @@ Pricing ranges in this article are HBW's working 2026 estimates, verified June 2
     imageAlt: "AI-generated editorial fishing scene with a Mercury-powered boat; not an identified ProKicker installation or documented HBW customer boat.",
     author: 'Harris Boat Works',
     datePublished: '2026-04-22',
-    dateModified: '2026-09-07',
+    dateModified: '2026-09-11',
     category: 'Fishing & Local',
     readTime: '15 min read',
     keywords: ['Lake Ontario salmon fishing motor', 'best outboard Lake Ontario', 'Mercury outboard salmon trolling', 'Lake Ontario chinook king salmon', 'salmon fishing boat Ontario', 'Mercury 150 200 salmon', 'Lake Ontario fishing charter motor'],
@@ -14205,7 +14202,7 @@ At the same HP, the Pro XS carries a price premium. Build both at [mercuryrepowe
 
 Hull make, model, year, and length. Current vs planned motor. Your primary fishing use (recreational, tournament, charter). How far offshore you typically run. Slip or trailer storage. Budget.
 
-We quote Lake Ontario repowers through [mercuryrepower.ca](https://www.mercuryrepower.ca). If you want to talk through the setup before configuring, call us at 905-342-2153.
+We quote Lake Ontario repowers through [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 ---
 
@@ -14252,7 +14249,7 @@ For engine repairs, we only service Mercury and MerCruiser. Schedule at [hbw.wik
 
 Configure your motor, V8 FourStroke, Pro XS, or ProKicker, at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**. Live pricing in CAD, no games.
 
-Questions before you configure? Call **905-342-2153**.
+
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 Harris Boat Works | Mercury Marine Premier Dealer | Family-owned since 1947 | Mercury dealer since 1965 | Gores Landing, ON`,
@@ -14841,7 +14838,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-cheapest-mercury-canada-lineup.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-23',
-    dateModified: '2026-09-07',
+    dateModified: '2026-09-11',
     publishDate: '2026-04-23',
     category: 'Buying Guide',
     readTime: '12 min read',
@@ -14987,7 +14984,7 @@ No. Tiller motors 20 HP and under are drop-in installs. Hang it on the transom, 
 
 Ready to find the right motor for your boat? Build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**, every model from the 2.5 portable through the 300 V8, live CAD pricing, no "call for price."
 
-Not sure what your boat actually needs? Call **905-342-2153**. We won't sell you a motor that doesn't fit your hull.
+
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---`,
@@ -15194,7 +15191,7 @@ For the Mercury vs Suzuki comparison specifically, see our [Mercury vs Suzuki Ou
     imageAlt: 'Lund boat with Mercury outboard docked on an Ontario lake, illustrating local reliability for the brand comparison guide.',
     author: 'Jay Harris',
     datePublished: '2026-06-06',
-    dateModified: '2026-09-06',
+    dateModified: '2026-09-11',
     category: 'Brand Comparison',
     readTime: '8 min',
     keywords: ['mercury vs suzuki', 'suzuki outboard reliability', 'ontario outboard comparison', 'mercury suzuki repower'],
@@ -15328,7 +15325,7 @@ Either decision can be the right one depending on the customer's situation. We a
 
 Family-owned on Rice Lake since 1947.
 
-**Weighing a switch?** Build a Mercury quote for your boat in about three minutes at [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection), or call 905-342-2153 and ask us straight.`,
+**Weighing a switch?** Build a Mercury quote for your boat in about three minutes at [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection).`,
     faqs: [
       { question: "Is Mercury more reliable than Suzuki in 2026?", answer: "Both brands make mechanically reliable four-stroke outboards in 2026. There is no meaningful defect-rate difference that should rule either one out on reliability alone. The bigger factor in long-term ownership is the maintenance habits of the owner and the service network behind the motor." },
       { question: "How long should a Mercury or Suzuki outboard last?", answer: "A properly maintained Mercury or Suzuki four-stroke outboard run 50 to 150 hours per season should provide 15 to 25 years of useful life. Oil changes on schedule, impeller replacement every couple of seasons, correct winterization, and avoiding running the motor hard before it is warmed up are the maintenance habits that drive that range." },
@@ -15349,7 +15346,7 @@ Family-owned on Rice Lake since 1947.
     imageAlt: 'Harris Boat Works staff discussing a Mercury outboard motor with a customer for a Rice Lake boat repower project.',
     author: 'Harris Boat Works',
     datePublished: '2026-04-25',
-    dateModified: '2026-09-06',
+    dateModified: '2026-09-11',
     publishDate: '2026-04-25',
     category: 'Buying Guide',
     readTime: '12 min read',
@@ -15448,7 +15445,7 @@ Most $30,000 budgets do better with the repower path.
 
 Whether you are buying a project hull, a used pontoon, or a new aluminum fishing boat, the motor is the part we handle. Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
-If you have a specific hull in mind and want to know if a repower makes sense before you commit to buying it, call us at 905-342-2153. We can often give you a useful answer in a single conversation.
+
 
 *Last reviewed: 2026-05-11.*
 
@@ -16144,7 +16141,7 @@ If the hull appears suitable, build the motor configuration at [mercuryrepower.c
     imageAlt: 'Official Mercury Marine comparison of the 150 HP FourStroke and 150 HP Pro XS outboards referenced in the Boost eligibility guide',
     author: 'Harris Boat Works',
     datePublished: '2026-04-30',
-    dateModified: '2026-09-06',
+    dateModified: '2026-09-11',
     publishDate: '2026-04-30',
     category: 'Performance',
     readTime: '12 min read',
@@ -16196,7 +16193,7 @@ leftCriteria:
   - The boat is correctly powered and propped
   - Mid-range acceleration is the specific concern
   - You understand that horsepower and top speed do not increase
-leftOutcome: Talk to us about Boost
+leftOutcome: Check Boost eligibility
 leftVariant: recommended
 rightLabel: Boost is not the right lever
 rightCriteria:
@@ -16285,11 +16282,11 @@ That is not currently promised. Future compatibility, pricing, and stacking depe
 
 ## CTA
 
-Wondering if Boost makes sense for your specific pontoon? We'll tell you straight. Call **905-342-2153** or build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**, the system will flag whether your motor is Boost-eligible.
+Build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**, the system will flag whether your motor is Boost-eligible.
 
-More often than not, the better upgrade is a prop and trim conversation, and that one's free to start.
 
-> **Want to see if your boat is a Boost candidate?** Try our [Boost Eligibility Checker](/tools#boost-eligibility). Couple of questions, instant answer on whether your motor is Boost-eligible. Or call [(905) 342-2153](tel:+19053422153) if you want to talk it through.
+
+> **Want to see if your boat is a Boost candidate?** Try our [Boost Eligibility Checker](/tools#boost-eligibility). Couple of questions, instant answer on whether your motor is Boost-eligible.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
@@ -16301,7 +16298,7 @@ primaryLabel: Build Your Quote
 primaryHref: /quote/motor-selection
 secondaryLabel: See current financing offers
 secondaryHref: /promotions
-phone: 905-342-2153
+
 ::
 ---`,
     faqs: [
@@ -16356,7 +16353,7 @@ phone: 905-342-2153
     imageAlt: 'Concept diagram of a complete quote: motor and shaft, controls and steering, propeller, rigging, and install labour.',
     author: 'Jay Harris',
     datePublished: '2026-05-05',
-    dateModified: '2026-09-06',
+    dateModified: '2026-09-11',
     publishDate: '2026-05-05',
     category: 'Buying Guide',
     readTime: '8 min read',
@@ -16484,7 +16481,7 @@ For twin-engine setups, brand conversions, or commercial applications, call 905-
 
 **See the number before you call.** 
 Build your configured Mercury quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), live CAD pricing, no phone-call gatekeeping. 
-Questions after you see it? Call 905-342-2153. 
+
 Harris Boat Works, Mercury dealer since 1965. Gores Landing, ON.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
@@ -16543,7 +16540,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Illustration of rigging work on an outboard powerhead with the cowl removed. Illustrative, not a Harris Boat Works job.',
     author: 'Jay Harris',
     datePublished: '2026-05-05',
-    dateModified: '2026-09-07',
+    dateModified: '2026-09-11',
     publishDate: '2026-05-05',
     category: 'Repower',
     readTime: '10 min read',
@@ -16742,7 +16739,7 @@ We quote rigging based on the walk-around assessment. Occasionally, hidden issue
 
 Ready for an honest rigging quote? Build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**, rigging is included in the all-in number, line by line.
 
-Prefer to talk through your specific boat's rigging condition first? Call **905-342-2153** or come in for a free walk-around.
+
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---`,
@@ -16798,7 +16795,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'A Harris Boat Works technician working beside an uncowled Mercury outboard during service',
     author: 'Jay Harris',
     datePublished: '2026-05-05',
-    dateModified: '2026-09-07',
+    dateModified: '2026-09-11',
     publishDate: '2026-05-05',
     category: 'Repower',
     readTime: '12 min read',
@@ -16867,7 +16864,7 @@ Customer builds a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) or
 - HST (13% Ontario)
 - Total all-in number in CAD
 
-If you want to talk through the configuration, we do a 15- to 30-minute consultation by phone or in-shop.
+
 
 #### Step 3: Deposit and Booking
 
@@ -17016,7 +17013,7 @@ Yes. HBW in Gores Landing can handle boats on trailers. Let us know when you boo
 
 Ready to schedule your repower? Build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**, live CAD pricing, full configuration, rigging and installation included.
 
-Questions about the process for your specific boat? Call **905-342-2153** or come in for a free hull walk-around. We do free walk-arounds and can answer process questions before you commit.
+
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---`,
@@ -17075,7 +17072,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: "Common nominal outboard shaft lengths: short 15 inches, long 20 inches, extra long 25 inches. Confirm the exact motor and hull.",
     author: 'Jay Harris',
     datePublished: '2026-05-05',
-    dateModified: '2026-09-07',
+    dateModified: '2026-09-11',
     publishDate: '2026-05-05',
     category: 'Buying Guide',
     readTime: '10 min read',
@@ -17210,9 +17207,9 @@ Three things we do on every repower that prevent wrong-shaft mistakes:
 
 Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca). The configurator includes shaft length selection by Mercury model.
 
-Not sure about your transom height? Call us at 905-342-2153 or send a side-profile photo with a tape measure on the transom. We can confirm the right shaft length in five minutes.
 
-> **Need a quick shaft-length check?** Try our [Shaft Length Picker](/tools#shaft-length). Punch in your transom height and we will tell you if you want a 15", 20", 25", or 30" shaft. Or call us at [(905) 342-2153](tel:+19053422153) and we will measure with you on the phone.
+
+> **Need a quick shaft-length check?** Try our [Shaft Length Picker](/tools#shaft-length). Punch in your transom height and we will tell you if you want a 15", 20", 25", or 30" shaft.
 
 Sizing a 9.9 to your transom? Our [Mercury 9.9 tiller, kicker, and ProKicker guide](/motors/mercury-9-9-tiller-kicker-guide) lists shaft length for every 9.9 variant.
 
@@ -17223,7 +17220,7 @@ Sizing a 9.9 to your transom? Our [Mercury 9.9 tiller, kicker, and ProKicker gui
 
 The single most common rigging mistake we see on used-boat purchases: wrong shaft length on a repower. Owner pulled a 15-inch short-shaft, ordered a 20-inch long-shaft expecting "more boat coverage", and the prop is now too deep to plane efficiently.
 
-Always measure the transom from the top edge to the cavitation plate centerline before ordering. 15" for most tinnies, 20" for bowriders and pontoons, 25" for offshore-style hulls. When in doubt, send us a photo and a tape measure reading -- we'll spec it before quoting the install.
+Always measure the transom from the top edge to the cavitation plate centerline before ordering. 15" for most tinnies, 20" for bowriders and pontoons, 25" for offshore-style hulls.
 
 ---
 
@@ -17247,11 +17244,11 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       { question: 'Can I use a longer shaft than recommended?', answer: 'You can, in the sense that the motor will mount. But an oversized shaft lowers your top speed, burns more fuel, and may cause the motor to load up at cruise. Use the right shaft for your transom.' },
       { question: 'Does shaft length affect speed or performance?', answer: 'Yes. A shaft that is too long adds lower-unit drag that costs top speed and fuel economy. A shaft that is too short allows the prop to ventilate under load, causing cavitation and power loss.' },
       { question: 'What if my transom height is between standard shaft lengths?', answer: 'Do not apply a universal round-down rule. Measure the transom, account for hull design and any setback, and confirm the exact motor and mounting height. Verify on the water before treating the install as final.' },
-      { question: 'How do I know what shaft length my Mercury currently is?', answer: 'Read the complete model suffix as a unit. ELPT is electric start, long (20-inch), power tilt. EXLPT is electric start, extra-long (25-inch), power tilt. A letter L inside a longer code is not enough by itself. S is 15-inch short. If you cannot find the model plate, call us and we can look it up by serial number.' },
-      { question: 'What is the difference between a long shaft and a short shaft outboard?', answer: 'A short shaft is 15 inches (Mercury code S) and a long shaft is 20 inches (code L). The difference is how far the gearcase hangs below the mounting bracket, which sets how deep the propeller runs. Match the shaft to your measured transom height, not to the boat\'s overall size. Most Ontario aluminum fishing boats take the 20-inch long shaft; small tinnies with low transoms take the 15-inch. Not sure which you need? Call us at 905-342-2153.' },
+      { question: 'How do I know what shaft length my Mercury currently is?', answer: 'Read the complete model suffix as a unit. ELPT is electric start, long (20-inch), power tilt. EXLPT is electric start, extra-long (25-inch), power tilt. A letter L inside a longer code is not enough by itself. S is 15-inch short.' },
+      { question: 'What is the difference between a long shaft and a short shaft outboard?', answer: 'A short shaft is 15 inches (Mercury code S) and a long shaft is 20 inches (code L). The difference is how far the gearcase hangs below the mounting bracket, which sets how deep the propeller runs. Match the shaft to your measured transom height, not to the boat\'s overall size. Most Ontario aluminum fishing boats take the 20-inch long shaft; small tinnies with low transoms take the 15-inch.' },
       { question: 'What is the outboard shaft length chart for 15, 20, and 25 inch shafts?', answer: 'Measure your transom height, then match it: 15 to 16 inches takes a short shaft (code S, 15 inch), 19 to 21 inches takes a long shaft (code L, 20 inch), 24 to 26 inches takes an extra long shaft (code XL, 25 inch), and 29 to 31 inches takes an ultra long shaft (code XXL, 30 inch). If you land between sizes, use boat- and engine-specific mounting guidance rather than a universal round-down rule.' },
-      { question: 'How do I measure transom height for outboard shaft length?', answer: 'Find the lowest point of the hull at the transom, where the water contacts the hull when the boat is running on plane. Measure straight up from that point to the top of the transom where the motor mounting bracket sits. That measurement is your transom height. It takes five minutes with a tape measure. Send a side-profile photo with the tape in place to 905-342-2153 and we will confirm the right shaft length.' },
-      { question: 'What shaft length do I need for a 25 inch transom?', answer: 'A transom measuring 24 to 26 inches takes a 25-inch extra long shaft, Mercury code XL or EXL. Deep-V hulls with steep transom angles sometimes need the 25-inch even when the tape reads slightly under. If your boat sits close to the line, we lake-test borderline cases before rigging is finalized. Build a quote at mercuryrepower.ca or call 905-342-2153.' },
+      { question: 'How do I measure transom height for outboard shaft length?', answer: 'Find the lowest point of the hull at the transom, where the water contacts the hull when the boat is running on plane. Measure straight up from that point to the top of the transom where the motor mounting bracket sits. That measurement is your transom height. It takes five minutes with a tape measure.' },
+      { question: 'What shaft length do I need for a 25 inch transom?', answer: 'A transom measuring 24 to 26 inches takes a 25-inch extra long shaft, Mercury code XL or EXL. Deep-V hulls with steep transom angles sometimes need the 25-inch even when the tape reads slightly under. If your boat sits close to the line, we lake-test borderline cases before rigging is finalized. Build a quote at mercuryrepower.ca.' },
     ]
   },
   // ============================================
@@ -17266,7 +17263,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: "AI-generated editorial scene of a buyer reviewing documents beside a trailered boat with a Mercury 90 outboard",
     author: 'Harris Boat Works',
     datePublished: "2026-05-07",
-    dateModified: "2026-09-07",
+    dateModified: "2026-09-11",
     publishDate: "2026-05-07",
     category: "Buying Guide",
     readTime: "8 min read",
@@ -17438,7 +17435,7 @@ Contact HBW with the serial number and symptoms so we can confirm service scope 
 
 If you have looked at the used market and the numbers do not work, or you just want to know what new actually costs, build a live quote at **mercuryrepower.ca**. Real Canadian pricing, configured for your hull, in about three minutes.
 
-Call **905-342-2153** with questions, or book a pre-purchase inspection at hbw.wiki/service before you commit to a private-sale motor.
+Book a pre-purchase inspection at hbw.wiki/service before you commit to a private-sale motor.
 
 **Phone:** 905-342-2153
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
@@ -17499,7 +17496,7 @@ Jay Harris helps run Harris Boat Works, a third-generation family marina in Gore
     image: "/lovable-uploads/hero-trent-severn-waterway-2026.png",
     author: 'Harris Boat Works',
     datePublished: "2026-05-08",
-    dateModified: "2026-09-06",
+    dateModified: "2026-09-11",
     publishDate: "2026-05-08",
     category: "Lifestyle",
     readTime: "9 min read",
@@ -17717,7 +17714,7 @@ The Peterborough Lift Lock (Lock 21) and the surrounding Lakefield-Trent canal s
 ## CTA
 
 **Starting from Rice Lake? HBW is between Locks 18 and 19.** 
-Call 905-342-2153 before you head out, slip availability, fuel confirmation, or anything else. 
+Call 905-342-2153 before you head out to confirm slip or fuel availability.
 Boat rentals at [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals). 
 Mercury repower quotes at [mercuryrepower.ca](https://www.mercuryrepower.ca). 
 Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Est. 1947.
@@ -18638,7 +18635,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Close-up of a hand using a flashlight to read the serial number plate on a Mercury outboard motor bracket.',
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
-    dateModified: '2026-09-10',
+    dateModified: '2026-09-11',
     publishDate: '2026-05-17',
     category: 'Buying Guide',
     readTime: '8 min read',
@@ -18648,7 +18645,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 *Last reviewed: 2026-05-17*
 
-> **Quick answer:** Mercury motors carry two different numbers, and they do two different jobs. The **Serial Number** (looks like \`0T123456\` or \`1B234567\`) is your motor's unique identifier, you use it to look up year, parts, warranty status, and recalls in Mercury's catalog or any dealer system. You don't decode it, you look it up. The **Model Number** (looks like \`90ELPT\` or \`1F60413GZ\`) is the spec code that you CAN decode, it tells you the horsepower, family, electric start, shaft length, power trim, and (on newer codes) model year. This guide covers finding both numbers, decoding the model number, and looking up the serial. Send us a serial or model code through mercuryrepower.ca for a quick check.
+> **Quick answer:** Mercury motors carry two different numbers, and they do two different jobs. The **Serial Number** (looks like \`0T123456\` or \`1B234567\`) is your motor's unique identifier, you use it to look up year, parts, warranty status, and recalls in Mercury's catalog or any dealer system. You don't decode it, you look it up. The **Model Number** (looks like \`90ELPT\` or \`1F60413GZ\`) is the spec code that you CAN decode, it tells you the horsepower, family, electric start, shaft length, power trim, and (on newer codes) model year. This guide covers finding both numbers, decoding the model number, and looking up the serial.
 
 ::cta
 variant: inline
@@ -18677,13 +18674,13 @@ A real Mercury serial number is short, alphanumeric, and unique to your specific
 
 The serial is **stamped or laser-etched on a small plate** on the motor's transom bracket. You will NOT find date or horsepower hidden in the digits, Mercury does not embed the spec into the serial like a car VIN. You look the serial up in Mercury's catalog or any reputable parts site (Crowley Marine, PartsVu, MarineEngine) to get year, model variant, and parts compatibility.
 
-If you want a quick check, send us your serial number through mercuryrepower.ca and we'll run it through the Mercury dealer system.
+
 
 ## How to decode your Mercury Model Number
 
 The Mercury Model Number is the spec code, and unlike the serial, this one IS decodable. Newer Mercury motors carry a full SKU string like \`1F60413GZ\`. Older motors use a shorter human-readable code like \`90ELPT\` or \`25EXLHGA\`.
 
-**Record both identifiers.** Photograph the complete serial number and model information. Use the serial number in Mercury's official parts or service lookup, or ask HBW to confirm the exact engine. Do not infer a year or parts fit from an unverified character-position chart.
+**Record both identifiers.** Photograph the complete serial number and model information. Use the serial number in Mercury's official parts or service lookup. Do not infer a year or parts fit from an unverified character-position chart.
 
 *The model number encodes product spec. Use it together with the serial number when ordering parts, planning a repower, or registering warranty.*
 
@@ -19993,7 +19990,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Diagram connecting warning information, the engine model and serial number, and the exact manual response. Follow the warning response immediately; record details only when safe.',
     author: 'Harris Boat Works',
     datePublished: '2026-02-06',
-    dateModified: "2026-09-07",
+    dateModified: "2026-09-11",
     publishDate: '2026-02-06',
     category: 'Troubleshooting',
     readTime: '12 min read',
@@ -20007,7 +20004,7 @@ If the display shows a complete number such as **621-5**, start with the [Mercur
 
 A Mercury alarm fires and most owners do one of two things. Either they keep running the boat (bad idea, that's what Guardian mode is trying to prevent) or they shut it down at the dock and Google the code (better idea, but most code lists online are out of date or apply to engine families you don't own).
 
-This guide explains alarm information, spring first-start checks, and Guardian mode. Use the manual for your exact engine to interpret an alarm. We have Mercury CDS (Computer Diagnostic System) at our dock and SmartCraft Connect Mobile on our phones. When you call HBW with an alarm, we ask for the exact display or fault text, the horn pattern, RPM or load when it happened, and the engine serial number. Those details help the technician identify the next diagnostic step.
+This guide explains alarm information, spring first-start checks, and Guardian mode. Use the manual for your exact engine to interpret an alarm. We have Mercury CDS (Computer Diagnostic System) at our dock and SmartCraft Connect Mobile on our phones. For an in-shop diagnosis, record the exact display or fault text, the horn pattern, RPM or load when it happened, and the engine serial number. Those details help the technician identify the next diagnostic step.
 
 ## What HBW asks first when you call
 
@@ -21257,7 +21254,7 @@ If your boat needs a motor, put together a real quote with real prices at mercur
     image: '/lovable-uploads/hero-pontoon-problems-rice-lake.png',
     author: 'Jay Harris',
     datePublished: '2026-02-12',
-    dateModified: '2026-06-09',
+    dateModified: '2026-09-11',
     publishDate: '2026-02-12',
     category: "Boating Lifestyle",
     readTime: '~9 min read',
@@ -21460,7 +21457,7 @@ If your pontoon is showing any of these signs, or if you're running an undersize
 
 Harris Boat Works has been [on Rice Lake since 1947](/blog/best-marina-rice-lake-ontario). We're a Mercury Marine Premier dealer, and we know what boats in this region actually need, not what looks good on a spec sheet.
 
-Call us at 905-342-2153 or request service online. We'll give you a straight answer.
+
 
 ---
 
@@ -21485,7 +21482,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-bad-used-boats-ontario.png',
     author: 'Jay Harris',
     datePublished: '2026-02-17',
-    dateModified: '2026-09-06',
+    dateModified: '2026-09-11',
     publishDate: '2026-02-17',
     category: "Buying Guide",
     readTime: '~12 min read',
@@ -21705,7 +21702,7 @@ We do Mercury repowers, full replacements that give an older hull a reliable, wa
 
 **Get a repower quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).** Real prices, no runaround.
 
-Or call us at 905-342-2153. We're at Rice Lake, Ontario (in the Kawarthas), Gores Landing, and we've been having this exact conversation since 1947.
+
 
 ---
 
@@ -21724,7 +21721,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: "A family runabout cruises smoothly on an Ontario lake with its black outboard set at a balanced trim angle and a clean wake behind the stern.",
     author: 'Jay Harris',
     datePublished: '2026-02-22',
-    dateModified: '2026-07-30',
+    dateModified: '2026-09-11',
     publishDate: '2026-02-22',
     category: 'Mercury Outboards',
     readTime: '~12 min read',
@@ -21879,7 +21876,7 @@ No. A gauge helps you repeat a known setting, but it cannot tell you whether tod
 
 ## Ready to Get the Boat Running Properly?
 
-If sensible trim changes do not stop porpoising, ventilation or poor handling, send us the motor, boat, propeller and load details. We can help separate an operating issue from a propeller, mounting-height, trim-system or hull-setup problem.
+If sensible trim changes do not stop porpoising, ventilation or poor handling, have the boat inspected by a qualified marine technician before further operation.
 
 **Request service:** [hbw.wiki/service](https://hbw.wiki/service)
 
@@ -22122,7 +22119,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-outboard-vs-sterndrive.png',
     author: 'Jay Harris',
     datePublished: '2026-03-05',
-    dateModified: '2026-09-06',
+    dateModified: '2026-09-11',
     publishDate: '2026-03-05',
     category: "Mercury Outboards",
     readTime: '~12 min read',
@@ -22357,7 +22354,7 @@ Either way, you deserve a straight answer, not a sales pitch.
 
 [Start your quote at mercuryrepower.ca →](https://www.mercuryrepower.ca)
 
-Questions? Call us at 905-342-2153 or [request service at hbw.wiki/service](https://hbw.wiki/service).
+[Request service at hbw.wiki/service](https://hbw.wiki/service).
 
 *Harris Boat Works. Gores Landing, ON. Mercury Marine Premier Dealer.*
 
@@ -22605,7 +22602,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Aluminum fishing boat with Mercury outboard approaching a wooden dock on Rice Lake during windy conditions.',
     author: 'Jay Harris',
     datePublished: '2026-03-21',
-    dateModified: '2026-08-08',
+    dateModified: '2026-09-11',
     publishDate: '2026-03-21',
     category: "Boating Lifestyle",
     readTime: '~9 min read',
@@ -22685,7 +22682,7 @@ step5Label: Know when to abort
 step5Question: If the approach is going wrong, will you re-circle or push through?
 step5Tip: A clean re-circle costs 90 seconds. A bad dock costs a fender, a rub rail, or worse. The right call is almost always to back off, go around, and try again with a fresh setup.
 escalationLabel: Want better control on windy days?
-escalationBody: Power-assist steering and a bow thruster make a real difference on bigger boats. Talk to us about rigging upgrades at (905) 342-2153.
+escalationBody: Power-assist steering and a bow thruster make a real difference on bigger boats.
 ::
 
 ## Slip-Style Docking in a Crosswind
@@ -22832,7 +22829,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: "AI-generated editorial scene of a family wearing life jackets on a Mercury-powered pontoon.",
     author: 'Jay Harris',
     datePublished: '2026-03-26',
-    dateModified: '2026-09-07',
+    dateModified: '2026-09-11',
     publishDate: '2026-03-26',
     category: "Mercury Outboards",
     readTime: '~12 min read',
@@ -23091,7 +23088,7 @@ Use the decision tree above. Be honest about your load and your intended use. An
 
 **Not sure if your pontoon is undersized? Build a real Mercury repower quote in 2 minutes.** → [mercuryrepower.ca](https://www.mercuryrepower.ca)
 
-You'll see real Mercury models, real configurations, and real pricing, no "call for quote" games, no guessing. If you want to talk it through, call 905-342-2153.
+You'll see real Mercury models, real configurations, and real pricing, no "call for quote" games, no guessing.
 
 ---
 
@@ -23415,7 +23412,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: "Marine fuel pump and red nozzle beside an Ontario lake at sunrise",
     author: "Jay Harris",
     datePublished: "2026-04-11",
-    dateModified: '2026-09-06',
+    dateModified: '2026-09-11',
     publishDate: "2026-04-11",
     category: "Service",
     readTime: "~12 min read",
@@ -23429,7 +23426,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       { question: "Does higher octane give a Mercury more power?", answer: "It doesn’t simply because the number is higher. Use fuel that meets the engine’s minimum. Performance also depends on engine calibration, load, propeller, rigging and condition." },
       { question: "Can fuel stabilizer fix phase-separated fuel?", answer: "No. Stabilizer is preventive when used with suitable fresh fuel according to its label and the storage procedure. It can’t recombine separated fuel or remove contamination." },
       { question: "How long can gasoline sit in a boat tank?", answer: "There isn’t one safe shelf-life promise. Mercury says fuel components can begin oxidizing in as little as two weeks. Use fresh fuel, turn it over regularly and stabilize it before the boat sits. Ethanol-free fuel avoids ethanol-related problems, but it can still oxidize and form gum or varnish." },
-      { question: "My Mercury manual says 91 octane. Do I need premium in Canada?", answer: "Probably not. Check which scale it uses. Canada and the US label pumps by AKI, shown as (R+M)/2, in grades 87, 89, 91 and 94. Much of the rest of the world labels by RON, in grades 92, 95 and 98. Mercury often publishes both, for example 87 octane minimum (R+M/2) or 91 RON. A 91 RON requirement is met by regular 87 at a Canadian pump. Confirm against the manual for your serial number, or send us the serial number and we'll confirm it." },
+      { question: "My Mercury manual says 91 octane. Do I need premium in Canada?", answer: "Probably not. Check which scale it uses. Canada and the US label pumps by AKI, shown as (R+M)/2, in grades 87, 89, 91 and 94. Much of the rest of the world labels by RON, in grades 92, 95 and 98. Mercury often publishes both, for example 87 octane minimum (R+M/2) or 91 RON. A 91 RON requirement is met by regular 87 at a Canadian pump. Confirm against the manual for your serial number." },
       { question: "Is E15 sold in Ontario, and can I use it?", answer: "Yes it is now sold at select Ontario locations including Costco and Valero sites, and no you should not use it. Mercury designs current gasoline engines for a maximum of 10 percent ethanol, and states that engine and fuel-system components are not built to tolerate blends above that. Check the pump before filling portable tanks at road stations, because a grade that was E10 last season can be E15 now." },
       { question: "What octane does a Mercury 9.9 need?", answer: "Regular 87 at a Canadian pump meets the requirement for current Mercury 9.9 portables, with ethanol at E10 or lower. Higher octane doesn't add power or cleanliness on an engine built for 87. If your literature quotes 91, check whether that figure is RON rather than the AKI number on Canadian pumps." },
     ],
@@ -23826,7 +23823,7 @@ Three ways to get a real price:
 
 - **Build it online:** mercuryrepower.ca, pick HP, configuration, add controls and prop. Real CAD quote in minutes.
 - **Look up a specific model:** mercuryrepower.ca/pricing-reference, live database with model codes, shaft options, stock status.
-- **Talk to us:** Call 905-342-2153 or submit a service request at hbw.wiki/service.
+
 
 We're at 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. Pickup only, we don't ship outboards, and we don't deliver. HBW's standard repower handoff includes an on-water test on Rice Lake before pickup when safe seasonal conditions allow; any alternate acceptance plan is documented with the customer.
 
@@ -23837,7 +23834,7 @@ We're at 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. Pickup only, we d
     imageAlt: 'Technician servicing a Mercury outboard in an Ontario workshop to illustrate the professional installation behind pricing.',
     author: 'Jay Harris',
     datePublished: '2026-05-08',
-    dateModified: '2026-09-10',
+    dateModified: '2026-09-11',
     publishDate: '2026-05-08',
     category: 'Mercury Outboards',
     readTime: '~14 min read',
@@ -24068,7 +24065,7 @@ Jay Harris helps run Harris Boat Works, a third-generation family marina in Gore
 
 **See real CAD pricing on every rigging line item.** 
 Build your Mercury repower quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), choose motor, controls, steering, gauges, wiring, prop, and see the configured total before calling anyone. 
-Questions? Call 905-342-2153. 
+
 Harris Boat Works, Mercury dealer since 1965. Gores Landing, ON.
 ---
 
@@ -24079,7 +24076,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-mercury-controls-rigging-guide.png',
     author: 'Jay Harris',
     datePublished: '2026-05-08',
-    dateModified: '2026-09-06',
+    dateModified: '2026-09-11',
     publishDate: '2026-05-08',
     category: 'Mercury Outboards',
     readTime: '~16 min read',
@@ -24137,7 +24134,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Mercury 40 HP and 60 HP FourStroke outboards shown side by side for an accurate product comparison',
     author: 'Jay Harris',
     datePublished: '2026-05-09',
-    dateModified: '2026-09-07',
+    dateModified: '2026-09-11',
     publishDate: '2026-05-09',
     category: 'Mercury Outboards',
     readTime: '~10 min read',
@@ -24371,7 +24368,7 @@ Review the information recorded on your Pleasure Craft Licence after a repower. 
 
 Build a complete quote in about three minutes at mercuryrepower.ca. Pick your HP, configuration, shaft length, and prop, see real CAD pricing including controls.
 
-Have a specific boat situation? Call us at 905-342-2153. Or submit a service request at hbw.wiki/service. Five minutes of conversation usually settles the 40-vs-60 question for good.
+
 
 Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
 
@@ -24389,7 +24386,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: "Tracker fishing boat powered by a Mercury 60 HP FourStroke running on freshwater",
     author: "Harris Boat Works",
     datePublished: "2026-07-27",
-    dateModified: "2026-09-07",
+    dateModified: "2026-09-11",
     publishDate: "2026-07-27",
     category: "Mercury Buying Guides",
     readTime: "14 min read",
@@ -24647,11 +24644,11 @@ The honest buying decision comes down to the gearcase, whether 60 horsepower sui
 
 Get those three things right and the 60 is the kind of motor owners stop talking about because they are busy using the boat.
 
-## When to Call HBW
+## Price a Mercury 60 Repower
 
-Call if you're unsure about shaft length, Command Thrust, propeller reuse, controls or whether your current boat is worth repowering. A capacity-plate photo and a few pictures of the transom usually make the first conversation much more useful.
+[Build your Mercury quote online](/quote/motor-selection) to compare current motor and rigging prices.
 
-**Call:** [905-342-2153](tel:+19053422153)
+
 
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 
@@ -24864,7 +24861,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Smartphone showing Mercury Marine app engine data with a white Mercury outboard motor at a dock in the background.',
     author: 'Jay Harris',
     datePublished: '2026-05-09',
-    dateModified: '2026-09-07',
+    dateModified: '2026-09-11',
     publishDate: '2026-05-09',
     category: 'Mercury Outboards',
     readTime: '~11 min read',
@@ -24917,7 +24914,7 @@ The 8M0173128 module lives under the cowl on a single-engine boat. The 8M0173129
 
 ## Compatibility (quick check)
 
-Most Mercury motors from 2004 onward are SmartCraft-compatible. Mercury 9.9, 15, 20 HP portables, pre-2004 4-strokes, and carbureted 2-strokes are NOT compatible. Optimax motors from 2004 onward are SmartCraft-capable, send us the serial and we'll confirm Connect fit.
+Most Mercury motors from 2004 onward are SmartCraft-compatible. Mercury 9.9, 15, 20 HP portables, pre-2004 4-strokes, and carbureted 2-strokes are NOT compatible. Optimax motors from 2004 onward are SmartCraft-capable.
 
 ## Eligibility Edge Cases
 
@@ -24943,9 +24940,9 @@ Most Mercury motors from 2004 onward are SmartCraft-compatible. Mercury 9.9, 15,
 
 ## Find Your Serial to Confirm
 
-Five places to look, in order: the engine cowl plate (lift the cowl; photograph the plate), the lower starboard side of the block just above the lower cowl seam, the swivel bracket stamp on older portables and some mid-range motors, the engine info page on a [VesselView display](/blog/mercury-vesselview-smartcraft-plain-english-guide), or your original purchase paperwork. Once you have it, email info@harrisboatworks.ca and we will check eligibility against the exact motor record. For full decoding, see the [Mercury Outboard Serial Number Guide](/blog/how-to-read-mercury-outboard-serial-number). Mercury 25 and 30 HP motors only support SmartCraft from 2022 onward. The eligibility details for every motor class and year cutoff are covered above.
+Five places to look, in order: the engine cowl plate (lift the cowl; photograph the plate), the lower starboard side of the block just above the lower cowl seam, the swivel bracket stamp on older portables and some mid-range motors, the engine info page on a [VesselView display](/blog/mercury-vesselview-smartcraft-plain-english-guide), or your original purchase paperwork. For full decoding, see the [Mercury Outboard Serial Number Guide](/blog/how-to-read-mercury-outboard-serial-number). Mercury 25 and 30 HP motors only support SmartCraft from 2022 onward. The eligibility details for every motor class and year cutoff are covered above.
 
-To confirm your specific motor, email your serial number to info@harrisboatworks.ca and we'll check compatibility against the exact record.
+
 
 ---
 
@@ -25598,7 +25595,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: "Mercury 9.9 EFI outboard on a tiller-steered boat, demonstrating the portable motor's performance on the water.",
     author: "Harris Boat Works",
     datePublished: "2026-05-10",
-    dateModified: "2026-09-07",
+    dateModified: "2026-09-11",
     publishDate: "2026-05-10",
     category: "Mercury Buying Guides",
     readTime: "10 min read",
@@ -25772,7 +25769,7 @@ Jay Harris helps run Harris Boat Works, a third-generation family marina in Gore
 
 **See the current price on the Mercury 9.9 MH EFI.** 
 [mercuryrepower.ca](https://www.mercuryrepower.ca), live CAD pricing, full configuration. 
-Or call 905-342-2153. 
+
 Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. 
 Mercury Premier dealer. Est. 1947.
 
@@ -26118,7 +26115,7 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
     imageAlt: 'Mercury 115 HP FourStroke on an aluminum fishing boat during a misty morning on an Ontario lake.',
     author: "Harris Boat Works",
     datePublished: "2026-05-10",
-    dateModified: "2026-09-07",
+    dateModified: "2026-09-11",
     publishDate: "2026-05-10",
     category: "Mercury Buying Guides",
     readTime: "18 min read",
@@ -26474,7 +26471,7 @@ Build the boat and motor together. The quote builder shows the current Canadian 
 
 **Build a complete quote:** [Mercury motor selection](/quote/motor-selection)
 
-**Phone:** [905-342-2153](tel:+19053422153)
+
 
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 
@@ -26520,7 +26517,7 @@ Harris Boat Works sells, installs and services Mercury outboards in Gores Landin
     imageAlt: "Mercury 150 Pro XS powering a Ranger 1782 aluminum fishing boat on fresh water",
     author: "Harris Boat Works",
     datePublished: "2026-07-26",
-    dateModified: "2026-07-28",
+    dateModified: "2026-09-11",
     publishDate: "2026-07-26",
     category: "Mercury Buying Guides",
     readTime: "18 min read",
@@ -26888,7 +26885,7 @@ The wrong answer is buying Pro XS because someone said it is secretly more horse
 
 Bring the actual boat into the decision.
 
-**Phone:** [905-342-2153](tel:+19053422153)
+
 
 **Address:** [5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0](https://www.google.com/maps/search/?api=1&query=5369+Harris+Boat+Works+Rd%2C+Gores+Landing%2C+ON+K0K+2E0)
 
@@ -27405,7 +27402,7 @@ All speed, acceleration and fuel-use results vary by boat, propeller, load, moun
     imageAlt: "Official Mercury 250 HP FourStroke and 250 Pro XS V8 outboards shown side by side",
     author: "Harris Boat Works",
     datePublished: "2026-07-27",
-    dateModified: "2026-09-06",
+    dateModified: "2026-09-11",
     publishDate: "2026-07-27",
     category: "Mercury Buying Guides",
     readTime: "19 min read",
@@ -27864,7 +27861,7 @@ The quote builder shows current Canadian motor pricing and lets you account for 
 
 **Build a complete quote:** [Mercury motor selection](/quote/motor-selection)
 
-**Call:** [905-342-2153](tel:+19053422153)
+
 
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 
@@ -27911,7 +27908,7 @@ Online owner material is treated as anecdotal buyer context, not as a warranty s
     imageAlt: 'Official Mercury Marine studio image of a 75 HP FourStroke outboard',
     author: "Harris Boat Works",
     datePublished: "2026-05-10",
-    dateModified: "2026-09-07",
+    dateModified: "2026-09-11",
     publishDate: "2026-05-10",
     category: "Mercury Buying Guides",
     readTime: "7 min read",
@@ -28010,7 +28007,7 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 
 **The capacity plate forces it.** Some 16-17 ft hulls are rated for 75 HP maximum. That plate is the ceiling, not a suggestion, not a starting point for negotiation. If the plate says 75, you get a 75. We'll order it and we won't try to talk you into something illegal.
 
-**An insurance or licensing constraint applies.** Rare in Ontario, but some commercial or shared-use applications have HP caps that land on 75. If you're in that situation, call us and we'll confirm the right configuration.
+**An insurance or licensing constraint applies.** Rare in Ontario, but some commercial or shared-use applications have HP caps that land on 75.
 
 **A used 75 with low hours is priced low enough to matter.** If a used 75 with 200 hours is available for significantly less than a new 90, the math might work out. We can help you assess the used motor honestly and tell you if it's worth it.
 
@@ -28045,7 +28042,7 @@ Because it's the same physical motor as the 90, same weight, minimal price diffe
 No. Mercury does not offer a 75 CT: the FourStroke Command Thrust lineup jumps from 60 CT to 90 CT. If you need Command Thrust for a pontoon, the 90 CT is the right pick.
 
 **What if my hull falls between 60 and 75 HP on the capacity plate?** 
-Call us at 905-342-2153. Some hulls have specific configurations that matter, year, model, trim level. Five minutes of conversation usually sorts it out.
+Some hulls have specific configurations that matter, year, model, trim level.
 
 **Does the 75 HP have a Command Thrust version?** 
 No. There is no 75 CT in the Mercury lineup; step to the 90 CT if you need Command Thrust.
@@ -28059,7 +28056,7 @@ Not significantly. The exact figures vary with [Mercury Canada](https://www.merc
 
 If you came here looking at the 75 and this confirmed what you suspected, go build a quote on the 90 at mercuryrepower.ca. Real CAD prices, real configurations.
 
-If you have a capacity plate situation or a used motor question, call us at 905-342-2153. We'll help you work through it honestly.
+
 
 Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
 
@@ -28422,7 +28419,7 @@ That's the deal. Has been since 1947.
     imageAlt: "Mercury Pro XS outboard on its shipping pallet outside the Harris Boat Works shop in Gores Landing.",
     author: 'Jay Harris',
     datePublished: '2026-05-11',
-    dateModified: '2026-09-07',
+    dateModified: '2026-09-11',
     publishDate: '2026-05-11',
     category: 'Dealer Locations',
     readTime: '4 min',
@@ -28517,7 +28514,7 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 At 35 minutes, you don't need to front-load every visit with hours of research. But a quick call still makes it more efficient:
 
 1. **Build your quote** at [mercuryrepower.ca](https://www.mercuryrepower.ca). Know the installed price.
-2. **Or just call us:** 905-342-2153. If you're 35 minutes away and have a question, we can probably answer it in five minutes on the phone and save you a trip, or confirm that the trip is worth it.
+
 3. **Submit service requests** at [hbw.wiki/service](https://hbw.wiki/service), that's how we schedule most service work.
 4. **Come up when you're ready.** At 35 minutes, "ready" is a lower bar than it is for someone driving from Mississauga.
 
@@ -28541,7 +28538,7 @@ Complete [hbw.wiki/service](https://hbw.wiki/service), then drop off anytime, in
 For parts, start at [marinecatalogue.ca](https://www.marinecatalogue.ca) or call us at 905-342-2153. If we have it in stock, you could be here and back in under an hour.
 
 **Is there a reason to buy from a GTA dealer instead of you?**
-Honestly? If a GTA dealer is a Premier dealer, has the same pricing, and is closer to where your boat is, use them. We're not going to tell someone to drive 35 minutes when 15 minutes is just as good. Call us first and we'll tell you straight.
+Honestly? If a GTA dealer is a Premier dealer, has the same pricing, and is closer to where your boat is, use them. We're not going to tell someone to drive 35 minutes when 15 minutes is just as good.
 
 ---
 
@@ -28571,7 +28568,7 @@ This is what a dealer relationship is supposed to feel like.
     imageAlt: 'Hand touching a warning icon on a Mercury VesselView display to troubleshoot outboard alarm codes.',
     author: 'Jay Harris',
     datePublished: '2026-05-11',
-    dateModified: '2026-09-07',
+    dateModified: '2026-09-11',
     publishDate: '2026-05-11',
     category: 'Service & Troubleshooting',
     readTime: '6 min',
@@ -28607,7 +28604,7 @@ step4Label: Separate oil level from oil pressure
 step4Question: Oil level and oil pressure are different warnings. Low oil pressure is a stop condition on the manuals that address it. Do not top up and restart to "see if it clears" when a pressure, temperature, or water-flow warning is active.
 step5Label: Record the display or fault before calling
 step5Question: VesselView or SmartCraft-linked plotters show fault text that the horn alone cannot. Photograph the exact code and conditions before calling the shop.
-step5Tip: Take a photo of the code on the screen so you can text it to us.
+step5Tip: Once the boat is safely stopped, photograph the code for the technician handling your service.
 escalationLabel: Warning still active? Put in a service request at hbw.wiki/service.
 escalationBody: If oil pressure, temperature, or water-flow warnings require a stop, stay stopped. Record the exact pattern and any SmartCraft code, then book at hbw.wiki/service.
 ::
@@ -30072,7 +30069,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: "/lovable-uploads/hero-new-vs-used-mercury-outboard-ontario.png",
     author: "Harris Boat Works",
     datePublished: "2026-05-16",
-    dateModified: "2026-09-10",
+    dateModified: "2026-09-11",
     publishDate: "2026-05-16",
     category: "Buying Guides",
     readTime: "9 min read",
@@ -30184,7 +30181,7 @@ Customers we steer toward used: occasional weekenders who do not log many hours,
 
 We are a Mercury Premier dealer, which means new motor sales and Mercury Product Protection paperwork are a core part of the business. We also broker used boats and motors regularly, sometimes from trade-ins, sometimes from local consignment, sometimes from estate sales. When a customer walks in deciding between a $17,500 new repower and a $7,500 used motor, we do not push one direction. We walk through the math above with the customer's actual boat and actual budget, and the honest answer is usually obvious by the end of the conversation.
 
-If you are weighing this decision and want a second set of eyes, drop us an email at info@harrisboatworks.ca with the boat's specs, the used motor's documented history (if you have it), and a rough budget. We will tell you what we would do in your situation.
+
 
 If you are looking at a used boat package and want a structured inspection before you buy, our printable [Used Boat Walkaround Guide](/blog/used-boat-walkaround-inspection-ontario) covers the 13-page checklist we use ourselves.
 
@@ -30337,7 +30334,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Freshwater V-hull fishing boat and family pontoon powered by Mercury outboards',
     author: "Harris Boat Works",
     datePublished: "2026-05-16",
-    dateModified: "2026-09-06",
+    dateModified: "2026-09-11",
     publishDate: "2026-05-16",
     category: "Buying Guides",
     readTime: "9 min read",
@@ -30428,7 +30425,7 @@ For a Rice Lake primary boater who plans to occasionally trailer to bigger water
 
 If you already have a pontoon or a V-hull you are happy with, the hull debate is settled. The real question is whether it is powered right for what you ask of it. A pontoon that is slow to plane with a full crew, or a V-hull that will not get out of its own way, is usually under-powered or propped wrong, not the wrong boat.
 
-Tell us the boat and what you do with it on the water, or build a live quote online, and we will tell you in plain English whether a repower is worth it. Build a quote at https://www.mercuryrepower.ca/quote/motor-selection or call 905-342-2153.
+Build a quote at https://www.mercuryrepower.ca/quote/motor-selection.
 
 ## What we actually sell at Harris Boat Works
 
@@ -30440,7 +30437,7 @@ We are a Legend Boats dealer, which gives us access to both their pontoon lineup
 
 The Mercury power package is matched to the hull (Command Thrust gearcase for tritoons in the 90-115 HP range, check the exact gearcase on higher-powered models; standard gearcase or Pro XS for V-hulls depending on use). Either way, the right motor pairing matters as much as the hull choice.
 
-If you are weighing this decision and want a structured conversation, email info@harrisboatworks.ca with what you are trying to do on the water. We will tell you which side of the line you fall on.
+
 
 ::walkaround-lead-capture
 
@@ -30490,7 +30487,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: "/lovable-uploads/hero-aluminum-vs-fiberglass-hull-ontario.png",
     author: "Harris Boat Works",
     datePublished: "2026-05-16",
-    dateModified: "2026-09-06",
+    dateModified: "2026-09-11",
     publishDate: "2026-05-16",
     category: "Buying Guides",
     readTime: "9 min read",
@@ -30588,7 +30585,7 @@ We sell Legend aluminum (V-hulls and pontoons) as our primary new-boat lineup. W
 
 For a Rice Lake / Kawarthas primary boater, the aluminum recommendation wins most of the time. For someone who keeps the boat at a Lake Ontario marina or trailers to bigger water frequently, the fiberglass recommendation is honest more often.
 
-Email info@harrisboatworks.ca with what you are trying to do on the water and we will tell you which side of the line you fall on.
+
 
 ## FAQ
 
@@ -30634,7 +30631,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: "Close-up photograph of a Mercury digital throttle and shift control.",
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
-    dateModified: '2026-09-07',
+    dateModified: '2026-09-11',
     publishDate: '2026-05-17',
     category: 'Buying Guides',
     readTime: '7 min read',
@@ -30672,7 +30669,7 @@ DTS is standard on current Mercury Verado V8/V10/V12 packages in the 250-600 HP 
 
 For a full eligibility table with every motor class, year cutoff, joystick prerequisites, and what to do if your motor isn't DTS-capable, see our dedicated eligibility post: [Is Your Mercury Outboard Eligible for DTS Retrofit? (2026)](/blog/mercury-dts-retrofit-eligibility-2026).
 
-To confirm your specific motor, email your serial number to info@harrisboatworks.ca and we'll check eligibility against the exact record.
+
 
 ### Mercury DTS compatibility by family and HP range
 
@@ -30746,7 +30743,7 @@ Customers we steer toward DTS: V8 and V10 repowers, premium pontoon packages wit
 
 We install both systems regularly. When a customer comes in for a repower, the first thing we check is the motor model they're putting on, because that often makes the choice for them. The second thing we check is the existing helm: if the boat already has mechanical and the cables are in good shape, keeping mechanical is the cheap, clean answer. If the cables are tired or the helm wiring is a mess, DTS sometimes makes more sense even on a smaller motor because we're rebuilding the helm anyway.
 
-For an honest cost-benefit conversation on your specific boat, email info@harrisboatworks.ca with your hull details, current control setup, and target Mercury model. We'll tell you what we'd do in your situation.
+
 
 ## Sources
 
@@ -30771,7 +30768,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Harris Boat Works technician servicing a Mercury outboard during installation',
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
-    dateModified: '2026-09-06',
+    dateModified: '2026-09-11',
     publishDate: '2026-05-17',
     category: 'Maintenance',
     readTime: '8 min read',
@@ -30862,7 +30859,7 @@ Our [Mercury Outboard Won't Start Troubleshooting Guide](/blog/mercury-outboard-
 
 The single most common spring issue we diagnose is a weak or dead battery. Fuel-related problems, including stale fuel, ethanol separation or damaged fuel lines, and impeller failures are also frequent. Together, those patterns make up a large share of the spring calls we receive, and each starts with a short owner-side check.
 
-If you want a structured walk-through of any step, email info@harrisboatworks.ca with your motor model and what's not behaving. For full spring commissioning service where we do the run-up plus a full inspection, our intake is at hbw.wiki/service.
+For full spring commissioning service where we do the run-up plus a full inspection, our intake is at hbw.wiki/service.
 
 For engine repairs, we only service Mercury and MerCruiser.
 
@@ -31071,7 +31068,7 @@ We diagnose Mercury outboards using the engine identity, symptom history and app
     imageAlt: 'Older Mercury outboard and worn transom beside a new Mercury repower installation at Harris Boat Works',
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
-    dateModified: '2026-09-10',
+    dateModified: '2026-09-11',
     publishDate: '2026-05-17',
     category: 'Buying Guides',
     readTime: '9 min read',
@@ -31215,7 +31212,7 @@ Probably sell. Even if the boat is fine, the question is whether this is the boa
 
 We see this decision multiple times per week, especially in spring and fall. When a customer comes in with a repair estimate that feels uncomfortably big, the first conversation we have is the framework above. We're a Mercury Premier dealer and a Legend Boats dealer, so we're not neutral: we'd rather sell you a new motor or a new boat than do a $3,000 repair. But we'd much rather give you honest advice and have you come back to us for the next repower than push you into a decision that doesn't fit your situation.
 
-For a structured conversation on your specific boat, motor, and budget, email info@harrisboatworks.ca with the details and we'll tell you what we'd do in your situation. For the repower-specific decision, our [Should I Repower or Buy New?](/blog/repower-vs-new-boat) decision guide covers that side of the conversation.
+For the repower-specific decision, our [Should I Repower or Buy New?](/blog/repower-vs-new-boat) decision guide covers that side of the conversation.
 
 ## Sources
 
@@ -31740,7 +31737,7 @@ For tournament or competitive setups, call 905-342-2153 after building the basic
     image: '/lovable-uploads/inline/inline-avator-electric-dock.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
-    dateModified: '2026-09-06',
+    dateModified: '2026-09-11',
     publishDate: '2026-05-17',
     category: 'Electric Boating',
     readTime: '6 min read',
@@ -31879,7 +31876,7 @@ For most Rice Lake fishing patterns covering significant distance, gas outboard 
 - [Charging a Mercury Avator at Your Cottage](/blog/mercury-avator-charging-cottage-dock)
 - [Best Mercury Outboard for Rice Lake Fishing](/blog/best-mercury-outboard-rice-lake-fishing)
 
-**Questions about Avator?** Call 905-342-2153 or email info@harrisboatworks.ca and we'll give you a straight answer for your setup.`,
+`,
   },
   {
     slug: 'mercury-avator-vs-torqeedo',
@@ -31890,7 +31887,7 @@ For most Rice Lake fishing patterns covering significant distance, gas outboard 
     imageAlt: "Mercury Avator 7.5e electric outboard on a small Lund boat.",
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
-    dateModified: '2026-09-07',
+    dateModified: '2026-09-11',
     publishDate: '2026-05-17',
     category: 'Electric Boating',
     readTime: '7 min read',
@@ -32039,7 +32036,7 @@ Neither brand automatically qualifies for an HP-restricted lake. Check the restr
 - [Mercury Avator Range on Rice Lake](/blog/mercury-avator-range-rice-lake-cottage)
 - [Charging a Mercury Avator at Your Cottage](/blog/mercury-avator-charging-cottage-dock)
 
-**Questions about Avator?** Call 905-342-2153 or email info@harrisboatworks.ca and we'll give you a straight answer for your setup.`,
+`,
   },
   {
     slug: 'mercury-avator-charging-cottage-dock',
@@ -32050,7 +32047,7 @@ Neither brand automatically qualifies for an HP-restricted lake. Check the restr
     imageAlt: "Mercury Avator 7.5e powering a Lund aluminum boat on a lake.",
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
-    dateModified: '2026-09-07',
+    dateModified: '2026-09-11',
     publishDate: '2026-05-17',
     category: 'Electric Boating',
     readTime: '6 min read',
@@ -32168,7 +32165,7 @@ The other common situation: cottagers who add Avator without consulting their co
 - [Mercury Avator vs Torqeedo Comparison](/blog/mercury-avator-vs-torqeedo)
 - [Boat Electrical Safety Checklist](/blog/boat-electrical-safety-checklist-ontario-freshwater)
 
-**Questions about Avator?** Call 905-342-2153 or email info@harrisboatworks.ca and we'll give you a straight answer for your setup.`,
+`,
   },
   {
     slug: 'two-stroke-vs-four-stroke-repower',
@@ -32178,7 +32175,7 @@ The other common situation: cottagers who add Avator without consulting their co
     image: '/lovable-uploads/blog-two-stroke-vs-four-stroke-repower-hero.jpg',
     author: 'Harris Boat Works',
     datePublished: '2026-05-24',
-    dateModified: '2026-09-06',
+    dateModified: '2026-09-11',
     publishDate: '2026-05-24',
     category: 'Repower Guides',
     readTime: '11 min read',
@@ -32283,7 +32280,7 @@ It depends on the exact motor, controls, steering, rigging, propeller, removal, 
 
 ## Ready to plan your 2-stroke repower?
 
-If your 2-stroke is on borrowed time, the winter planning window is where to start. Call us or build a quote and we will size the right FourStroke for your hull, transom and rigging check included.
+If your 2-stroke is on borrowed time, the winter planning window is where to start. Build a FourStroke repower quote at [mercuryrepower.ca](/quote/motor-selection).
 
 **Phone:** 905-342-2153
 **Configurator:** [mercuryrepower.ca](https://mercuryrepower.ca)
@@ -32305,7 +32302,7 @@ Harris Boat Works, family-owned since 1947. A Mercury Premier Dealer, selling Me
     imageAlt: 'Angler holding an Avator battery beside a Mercury Avator 7.5e on a freshwater aluminum fishing boat',
     author: 'Jay Harris',
     datePublished: '2026-05-24',
-    dateModified: '2026-09-06',
+    dateModified: '2026-09-11',
     publishDate: '2026-05-24',
     category: 'Buying Guide',
     readTime: '10 min read',
@@ -32414,7 +32411,7 @@ Warranty coverage is confirmed for the exact motor and battery package when HBW 
 
 ## Ready to rig an Avator?
 
-If the Avator 7.5e may fit the job, call us to work through the boat, route, expected range, battery and charger, mounting, and whether a separate main motor is required.
+For an Avator 7.5e purchase quote, request the complete motor, battery, charger and mounting package.
 
 **Phone:** 905-342-2153
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
@@ -32433,7 +32430,7 @@ Harris Boat Works, family-owned since 1947. A Mercury Premier Dealer, selling Me
     imageAlt: 'Family fishing from a freshwater pontoon powered by a Mercury 115 HP FourStroke outboard',
     author: 'Harris Boat Works',
     datePublished: '2026-05-25',
-    dateModified: '2026-09-06',
+    dateModified: '2026-09-11',
     publishDate: '2026-05-25',
     category: 'Buying Guide',
     readTime: '10 min read',
@@ -32520,7 +32517,7 @@ The Avator 7.5e is a small electric outboard with 0.75 kW of prop-shaft output. 
 
 Mercury rates Avator by prop-shaft output, not by a direct gasoline horsepower figure. The technical specification for the 7.5e is 0.75 kW at the propeller.
 
-If you are building a pontoon repower and you want quiet trolling for walleye or bass, talk to us about pairing a gasoline main motor with a small electric kicker. We rig that combination on Rice Lake fishing pontoons regularly.
+If you are building a pontoon repower and you want quiet trolling for walleye or bass, consider pairing a gasoline main motor with a small electric kicker. We rig that combination on Rice Lake fishing pontoons regularly.
 
 ## What we see at HBW
 
@@ -32974,7 +32971,7 @@ Family-owned since 1947.
     image: '/lovable-uploads/hero-mercury-boost-console.png',
     author: 'Jay Harris',
     datePublished: '2026-05-28',
-    dateModified: '2026-09-06',
+    dateModified: '2026-09-11',
     publishDate: '2026-05-28',
     category: 'Mercury Technology',
     readTime: '8 min read',
@@ -33121,7 +33118,7 @@ The honest framing: **Boost is a response tuning upgrade, not a power upgrade.**
 
 ## What HBW is doing about Boost
 
-HBW verifies the serial number against Mercury's current eligibility information, confirms the Canadian price, and explains any required shop work before a customer authorizes the upgrade. If you are interested, send us a clear photo of the serial-number plate and we will tell you whether the motor qualifies.
+HBW verifies the serial number against Mercury's current eligibility information, confirms the Canadian price, and explains any required shop work before a customer authorizes the upgrade.
 
 ---
 
@@ -33438,7 +33435,7 @@ Repowers combine a new motor with an existing hull and rigging, so the combinati
 
 ## Ready to talk repower?
 
-Build a quote at [mercuryrepower.ca](https://mercuryrepower.ca) and we'll show you the exact pricing for the right HP class on your specific boat. If you want to talk through the 115-vs-150 decision honestly for your use case, call HBW.
+Build a quote at [mercuryrepower.ca](https://mercuryrepower.ca) and we'll show you the exact pricing for the right HP class on your specific boat.
 
 **Phone:** 905-342-2153
 **Email:** info@harrisboatworks.ca
@@ -33453,7 +33450,7 @@ See live CAD pricing for every Mercury we stock at the [Mercury pricing referenc
 `,
     author: 'Jay Harris, Harris Boat Works',
     datePublished: '2026-05-28',
-    dateModified: '2026-09-06',
+    dateModified: '2026-09-11',
     category: 'Repower Guide',
     readTime: '9 min read',
     keywords: ["Mercury 115 vs 150 HP", "Mercury 115 Pro XS price", "Mercury 150 Pro XS price", "Mercury 115 vs 150 pontoon", "Mercury Command Thrust V-hull", "Mercury 115 CT", "Mercury outboard Ontario", "Mercury Premier dealer Rice Lake"],
@@ -33771,11 +33768,11 @@ If you launch from Port Hope, Cobourg, or anywhere on Lake Ontario's north shore
 
 Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Family-owned since 1947, Mercury dealer since 1965, current Premier Dealer. Confirm drive time, the exact part, and service capacity before travelling from Port Hope or Cobourg.
 
-**Pricing out a big-water setup?** Build the main-and-kicker quote at [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection), or call 905-342-2153.`,
+**Pricing out a big-water setup?** Build the main-and-kicker quote at [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection).`,
     image: '/lovable-uploads/hero-mercury-salmon-lake-ontario-2026.png',
     author: 'Jay Harris, Harris Boat Works',
     datePublished: '2026-05-28',
-    dateModified: '2026-09-06',
+    dateModified: '2026-09-11',
     category: 'Fishing / Rigging',
     readTime: '10 min read',
     keywords: ["Lake Ontario salmon Mercury setup", "Mercury salmon trolling setup", "Lake Ontario kicker install", "Mercury 9.9 ProKicker", "dual battery boat wiring Lake Ontario", "Mercury SmartCraft Troll Control", "Port Hope Mercury dealer", "Cobourg Mercury dealer"],
@@ -33859,7 +33856,7 @@ _Prices here are planning figures as of {{PRICING_ASOF}}. For live Mercury motor
 
 The "rigging premium for brand swap" line is the extra cost above a same-brand repower. If you were keeping Yamaha-to-Yamaha you'd skip this line and save roughly that amount. If you're switching brands, plan for it.
 
-Current Ontario CAD prices update seasonally. For your specific situation, build a quote at mercuryrepower.ca or email cowl plate photos to info@harrisboatworks.ca.
+Current Ontario CAD prices update seasonally. For your specific situation, build a quote at mercuryrepower.ca.
 
 The motor price is the easy number. The installed price is the honest one.
 
@@ -33961,7 +33958,7 @@ Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Family-owned s
     imageAlt: "Repower acceptance planning: confirm the scope, record results, and account for safe testing conditions.",
     author: 'Jay Harris, Harris Boat Works',
     datePublished: '2026-05-28',
-    dateModified: '2026-09-10',
+    dateModified: '2026-09-11',
     category: 'Repower Guide',
     readTime: '11 min read',
     keywords: ["Yamaha to Mercury repower", "Yamaha to Mercury Ontario", "brand swap outboard repower", "Mercury repower cost Ontario", "Yamaha Command Link Mercury", "Yamaha F150 to Mercury 150", "Mercury Premier dealer Ontario", "Yamaha trade-in Mercury"],
@@ -34222,7 +34219,7 @@ Start with the capacity label, current motor, hull details, controls, steering, 
     imageAlt: "Marine technician with a clipboard standing between an old 2-stroke outboard on a stand and a new Mercury 90 FourStroke ready for install, in an HBW service bay.",
     author: "Jay Harris",
     datePublished: "2026-06-06",
-    dateModified: "2026-08-26",
+    dateModified: "2026-09-11",
     publishDate: "2026-06-06",
     category: "Repower",
     readTime: "4 min read",
@@ -34333,7 +34330,7 @@ HBW's standard repower handoff includes an on-water test on Rice Lake before pic
 ---
 
 **Ready to see what your old motor is worth and what a new Mercury will cost you?**
-Build your repower quote at [mercuryrepower.ca](https://mercuryrepower.ca) or call us at 905-342-2153.
+Build your repower quote at [mercuryrepower.ca](https://mercuryrepower.ca).
 
 `
   },
@@ -34346,7 +34343,7 @@ Build your repower quote at [mercuryrepower.ca](https://mercuryrepower.ca) or ca
     imageAlt: "Repower planning: read the actual boat capacity information, confirm condition, and check the complete motor installation.",
     author: "Jay Harris",
     datePublished: "2026-06-06",
-    dateModified: "2026-09-07",
+    dateModified: "2026-09-11",
     publishDate: "2026-06-06",
     category: "Repower",
     readTime: "4 min read",
@@ -34413,7 +34410,7 @@ A few things to think about:
 
 ## The right question isn't "what's the maximum", it's "what do I actually need"
 
-When we talk through a repower with you, we're asking:
+Important repower questions include:
 
 - What do you use the boat for, and with how many people?
 - What's your current motor, and what's the complaint, not enough power, reliability, fuel economy?
@@ -34449,14 +34446,14 @@ That sequence separates this article from the plate decoder: the notice supplies
 
 ## Get a proper recommendation before you buy
 
-The quote configurator at mercuryrepower.ca lets you select by horsepower range and [see installed pricing](/blog/mercury-repower-cost-ontario-2026-cad). If you're not sure which range fits your hull, call us or submit a service request, we'd rather give you the right motor the first time than have a conversation about it later.
+The quote configurator at mercuryrepower.ca lets you select by horsepower range and [see installed pricing](/blog/mercury-repower-cost-ontario-2026-cad).
 
 HBW's standard repower handoff includes an on-water test on Rice Lake before pickup when safe seasonal conditions allow.
 
 ---
 
 **Ready to figure out the right motor for your hull?**
-Build your quote at [mercuryrepower.ca](https://mercuryrepower.ca) or call 905-342-2153.
+Build your quote at [mercuryrepower.ca](https://mercuryrepower.ca).
 
 `
   },
@@ -34468,7 +34465,7 @@ Build your quote at [mercuryrepower.ca](https://mercuryrepower.ca) or call 905-3
     image: '/lovable-uploads/hero-pontoon-aluminum-vhull.png',
     author: "Jay Harris",
     datePublished: "2026-06-06",
-    dateModified: "2026-09-06",
+    dateModified: "2026-09-11",
     publishDate: "2026-06-06",
     category: "Repower",
     readTime: "4 min read",
@@ -34560,8 +34557,8 @@ We're not putting a motor on a boat, handing you the keys, and finding out there
 
 ---
 
-**Tell us what you've got and we'll tell you what fits.**
-Build your quote at [mercuryrepower.ca](https://mercuryrepower.ca) or call 905-342-2153.
+**Compare motor options and current pricing online.**
+Build your quote at [mercuryrepower.ca](https://mercuryrepower.ca).
 
 `
   },
@@ -34688,7 +34685,7 @@ Family-owned since 1947, Mercury dealer since 1965, Mercury Premier Dealer.
     imageAlt: 'Harris Boat Works technician inspecting a Mercury outboard in the Gores Landing service shop.',
     author: "Jay Harris",
     datePublished: "2026-06-07",
-    dateModified: "2026-09-07",
+    dateModified: "2026-09-11",
     publishDate: "2026-06-07",
     category: "Buying Guide",
     readTime: "5 min read",
@@ -34719,7 +34716,7 @@ Mercury outboards range from 19 kg (41 lb) for the 2.5 and 3.5 HP portables to 2
 
 How much a motor weighs is not trivia. It decides whether your transom can carry it, how your boat sits at rest, and how it planes. Here's what Mercury outboards weigh according to Mercury's own specifications, why it matters, and how to use the number.
 
-This chart covers the FourStroke and Pro XS families we sell and install every week. Verado is special-order territory at HBW and its weights vary significantly by model and rigging; if you are considering a Verado, verify the exact model number against Mercury's spec sheet or call us.
+This chart covers the FourStroke and Pro XS families we sell and install every week. Verado is special-order territory at HBW and its weights vary significantly by model and rigging; if you are considering a Verado, verify the exact model number against Mercury's spec sheet.
 
 ### FourStroke dry weights
 
@@ -34773,7 +34770,7 @@ Most repower regret traces back to one of two things: too much horsepower, or to
 
 If you're repowering and not sure your transom can carry the modern equivalent of your old motor, that's exactly the kind of thing we check before we quote.
 
-**Get a real repower quote, motor, weight, rigging and all, at [mercuryrepower.ca](https://www.mercuryrepower.ca)**, or call 905-342-2153.
+**Get a real repower quote, motor, weight, rigging and all, at [mercuryrepower.ca](https://www.mercuryrepower.ca)**.
 
 Harris Boat Works: family-owned on Rice Lake since 1947.
 `
@@ -34787,7 +34784,7 @@ Harris Boat Works: family-owned on Rice Lake since 1947.
     imageAlt: 'Illustration of a family wearing lifejackets aboard a Mercury-powered pontoon on an Ontario lake.',
     author: 'Jay Harris',
     datePublished: '2026-06-19',
-    dateModified: '2026-09-07',
+    dateModified: '2026-09-11',
     publishDate: '2026-06-19',
     category: 'Buying Guide',
     readTime: '~9 min read',
@@ -34864,7 +34861,7 @@ A standard pontoon rides on two tubes (pontoons). A tritoon adds a third tube do
 
 A third tube buys you three things that matter for a family: it carries more horsepower (so it can actually pull skiers and bigger tubers), it gets up on plane and runs faster, and it handles Rice Lake chop noticeably better, less push from the wind, a drier and more planted ride.
 
-If your summer is mostly cruising, swimming, and light tubing, a two-tube pontoon with the right power is plenty, and it saves you money. If watersports are a real priority, or you spend a lot of time out when the wind is up, the tritoon is worth it. We will tell you honestly which one fits how your family actually boats.
+If your summer is mostly cruising, swimming, and light tubing, a two-tube pontoon with the right power is plenty, and it saves you money. If watersports are a real priority, or you spend a lot of time out when the wind is up, the tritoon is worth it.
 
 ## How much horsepower on Rice Lake
 
@@ -34930,9 +34927,9 @@ Yes, and we recommend it. Rent one for a weekend, use it the way your family act
 
 ## Ready to find the right boat for your family?
 
-Tell us how your family actually spends a day on the water, who is aboard, whether the kids want to tube, how often you are out when it is windy, and we will tell you straight whether a pontoon, a tritoon, or something else fits. Rent one first if you want to be sure.
+Rent a pontoon first to see whether it suits how your family spends a day on the water.
 
-**Phone:** [905-342-2153](tel:+19053422153)
+
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 **Configurator:** [mercuryrepower.ca](https://mercuryrepower.ca)
 **Rentals:** [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals)
@@ -35163,12 +35160,12 @@ Obtain assistance when you cannot establish that the engine may be operated safe
   {
     slug: 'bilge-pump-troubleshooting-guide',
     title: 'The Complete Guide to Boat Bilge Pumps: How They Work, Why They Fail, and How to Fix Them',
-    description: 'The complete guide to boat bilge pumps: how the pump, float switch, and wiring work together, why they really fail, how to size and test one, and when to call HBW.',
+    description: 'The complete guide to boat bilge pumps: how the pump, float switch, and wiring work together, why they really fail, how to size and test one, and when professional service is needed.',
     image: "/lovable-uploads/blog-visuals-2026-09/bilge-pump-editorial.webp",
     imageAlt: "Editorial illustration of an unbranded bilge pump, float switch, hose and multimeter laid out for inspection.",
     author: 'Jay Harris',
     datePublished: '2026-07-03',
-    dateModified: '2026-09-07',
+    dateModified: '2026-09-11',
     publishDate: '2026-07-03',
     category: 'Service & Troubleshooting',
     readTime: '~11 min read',

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/ontario-boating-regulations-zh.md
-last_updated: 2026-09-06
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "安省驾船法规中文指南（2026）：PCOC、PCL、安全装备与�
 description: "分清操作员证明 PCOC、船只牌照 PCL、按船型与船长决定的安全装备，以及钓鱼时才涉及的安省钓鱼资格。"
 category: "法规安全"
 date_published: 2026-04-12
-date_modified: 2026-09-06
+date_modified: 2026-09-11
 keywords: ["安大略省船只法规","加拿大快艇驾照","船只安全装备要求","Ontario boating regulations Chinese"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** 法规安全  
 **Published:** 2026-04-12  
-**最后审核:** 2026-09-06  
+**最后审核:** 2026-09-11  
 **Read time:** 9 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/ontario-boating-regulations-zh
 
@@ -77,8 +77,6 @@ Rice Lake 属于安大略 Fisheries Management Zone 17（FMZ 17）。Walleye（�
 - [Ontario：Fisheries Management Zone 17](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17)
 
 ## 联系我们
-
-如有关于船只合规、维修或冬储的问题:电话 (905) 342-2153 | 邮件 info@harrisboatworks.ca | [harrisboatworks.ca](https://www.harrisboatworks.ca)
 
 [Mercury Premier 经销商](https://www.mercurymarine.com/ca/en) · 莱斯湖 Gores Landing · 自 1947 年
 

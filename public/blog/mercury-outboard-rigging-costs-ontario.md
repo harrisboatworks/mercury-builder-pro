@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-rigging-costs-ontario.md
-last_updated: 2026-09-07
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Outboard Rigging Costs Explained (Ontario 2026)"
 description: "Mercury rigging costs: throttle, steering, harness, gauges, hose, cables, prop. Typical repower with post-2010 controls: $500-$1,500 CAD."
 category: "Repower"
 date_published: 2026-05-05
-date_modified: 2026-09-07
+date_modified: 2026-09-11
 keywords: ["mercury rigging cost","outboard rigging ontario","boat repower rigging","hydraulic steering upgrade","mercury install cost"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Repower  
 **Published:** 2026-05-05  
-**Last reviewed:** 2026-09-07  
+**Last reviewed:** 2026-09-11  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-rigging-costs-ontario
 
@@ -203,8 +203,6 @@ The hidden cost: SmartCraft display. Most repower customers want the data screen
 ---
 
 Ready for an honest rigging quote? Build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**, rigging is included in the all-in number, line by line.
-
-Prefer to talk through your specific boat's rigging condition first? Call **905-342-2153** or come in for a free walk-around.
 
 ---
 

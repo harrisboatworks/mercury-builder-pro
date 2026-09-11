@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-command-thrust-complete-guide-2026.md
-last_updated: 2026-09-06
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Command Thrust Guide 2026"
 description: "Mercury Command Thrust complete guide for 2026 covers 9.9 ProKicker to 115 FourStroke. Includes eligibility table, retrofit reality, decision matrix."
 category: "Mercury Technology"
 date_published: 2026-05-28
-date_modified: 2026-09-06
+date_modified: 2026-09-11
 keywords: ["mercury command thrust guide","mercury command thrust models","what is command thrust mercury","command thrust vs standard gearcase","mercury 9.9 prokicker","mercury 115 command thrust","pro xs command thrust","seapro command thrust"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,11 +25,11 @@ revenue_driver: repower
 
 **Category:** Mercury Technology  
 **Published:** 2026-05-28  
-**Last reviewed:** 2026-09-06  
+**Last reviewed:** 2026-09-11  
 **Read time:** 12 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-command-thrust-complete-guide-2026
 
-> **Quick answer:** Mercury Command Thrust is a gearcase option (not a separate motor): larger housing, larger-diameter propeller options, lower gear ratio. Mercury describes it as helping heavy boats plane and remain there at lower speed. HBW's September 5, 2026 pricing reference includes specific 9.9 FourStroke and ProKicker CT configurations, plus 40, 50, 60, 90 and 115 FourStroke and 115 Pro XS CT configurations. Check the exact model code. Best fit is a hull/load/prop decision, commonly pontoons, heavy boats, kicker rigs, and commercial. Email info@harrisboatworks.ca with your boat specifications and photos for a fit check. [FourStroke 75-150](https://www.mercurymarine.com/ca/en/engines/outboard/fourstroke/fourstroke-75-150hp) · [Pro XS 115-150](https://www.mercurymarine.com/ca/en/engines/outboard/pro-xs/pro-xs-115-150hp).
+> **Quick answer:** Mercury Command Thrust is a gearcase option (not a separate motor): larger housing, larger-diameter propeller options, lower gear ratio. Mercury describes it as helping heavy boats plane and remain there at lower speed. HBW's September 5, 2026 pricing reference includes specific 9.9 FourStroke and ProKicker CT configurations, plus 40, 50, 60, 90 and 115 FourStroke and 115 Pro XS CT configurations. Check the exact model code. Best fit is a hull/load/prop decision, commonly pontoons, heavy boats, kicker rigs, and commercial. [FourStroke 75-150](https://www.mercurymarine.com/ca/en/engines/outboard/fourstroke/fourstroke-75-150hp) · [Pro XS 115-150](https://www.mercurymarine.com/ca/en/engines/outboard/pro-xs/pro-xs-115-150hp).
 
 Most customers asking us about Command Thrust have already read the Mercury brochure. What they actually need is a straight answer to one question: is this the right gearcase for MY boat, MY use case, and the loads I actually carry. The Mercury brochure will not tell you that. We will.
 
@@ -101,11 +101,7 @@ Different hulls, different answers. The honest matrix:
 | Trolling-only fishing pontoon | **No, save the money** | Standard fine at trolling speeds |
 | 18-20 ft twin tube pontoon (moderate use) | **Probably yes** | Classic sweet spot |
 
-If your boat does not slot neatly, email a photo and your boat specs to info@harrisboatworks.ca for a fit assessment.
-
 ## Is your pontoon eligible?
-
-The fastest path: email a photo of your pontoon plus current motor specs to info@harrisboatworks.ca and we'll tell you yes or no in one reply. The framework below covers the decision logic.
 
 | Pontoon category | Command Thrust eligible? | Notes |
 |---|---|---|
@@ -117,8 +113,6 @@ The fastest path: email a photo of your pontoon plus current motor specs to info
 | Water-sports pontoon (skiing, tubing) | **Yes** | Pulling power is the whole reason CT exists |
 | Pontoon used for trolling fishing only | **No, save the money** | Trolling speeds don't need CT thrust |
 | Aluminum V-hull boat | **Boat-specific** | HBW often prefers standard on planing V-hulls; label that as a shop recommendation and check the actual hull |
-
-If your boat doesn't fit one of these neatly, send us details and we'll work through it.
 
 ### Which pontoons are eligible
 
@@ -162,7 +156,7 @@ Two people, lightweight gear, mostly day cruising at 25 MPH. Standard gearcase. 
 
 #### Already over-powered
 
-Some pontoons are [already running close to capacity-plate maximum HP](/blog/pontoon-hp-sizing-decision-tree-ontario). Adding Command Thrust to a motor that's already pushing your hull near its limit doesn't get you more performance; you're just changing the gearing. Talk to us before changing motors if you're near capacity.
+Some pontoons are [already running close to capacity-plate maximum HP](/blog/pontoon-hp-sizing-decision-tree-ontario). Adding Command Thrust to a motor that's already pushing your hull near its limit doesn't get you more performance; you're just changing the gearing.
 
 ### How to check your specific eligibility
 
@@ -174,15 +168,13 @@ Five things to confirm before you commit.
 4. **Transom height.** Command Thrust gearcases run a few inches taller than standard. Most modern pontoons handle this fine but it's worth measuring.
 5. **Current motor HP and serial number.** This tells us which Command Thrust options are available at that HP class and if you're at capacity-plate maximum.
 
-Email a photo of the capacity plate, the current motor cowl plate, and your loaded weight estimate to info@harrisboatworks.ca. We'll review the fit and reply with a recommendation or any information still needed.
-
 For the long version of motor serial number decoding, our [Mercury Outboard Serial Number Guide](/blog/how-to-read-mercury-outboard-serial-number) walks through year and model decoding.
 
 ### HP class availability
 
 As of September 5, 2026, the [HBW pricing reference](/pricing-reference) lists CT configurations in the 9.9, 40, 50, 60, 90 and 115 HP classes, including the 115 Pro XS. These are examples from HBW's published catalog, not an exhaustive factory lineup. Shaft length, controls and gearcase must be checked together for the exact model.
 
-Rather than list every model and year here (Mercury changes things), we recommend the same path: email us your current motor details, what HP you're targeting, and we'll tell you exactly which Command Thrust configurations are available for your boat right now. Mercury's official Command Thrust overview is at [mercurymarine.com/en/us/outboards/fourstroke/command-thrust](https://www.mercurymarine.com/en/us/outboards/fourstroke/command-thrust).
+Rather than list every model and year here (Mercury changes things), check Mercury's official Command Thrust overview at [mercurymarine.com/en/us/outboards/fourstroke/command-thrust](https://www.mercurymarine.com/en/us/outboards/fourstroke/command-thrust).
 
 ## The full Mercury Command Thrust lineup
 
@@ -210,7 +202,7 @@ The HBW pricing reference lists a 115 ELPT Pro XS Command Thrust configuration. 
 
 SeaPro is Mercury's commercial line. SeaPro CT exists for charter boats, water taxis, government workboats, and anyone running daily hours with heavy load. SeaPro motors have longer maintenance intervals and reinforced internals vs the recreational line. CT is standard or optional depending on HP.
 
-For the official Mercury Marine Command Thrust overview, see [mercurymarine.com/en/us/outboards/fourstroke/command-thrust](https://www.mercurymarine.com/en/us/outboards/fourstroke/command-thrust). For HP-by-HP availability at HBW, send us your target HP + boat year and we will quote current configurations.
+For the official Mercury Marine Command Thrust overview, see [mercurymarine.com/en/us/outboards/fourstroke/command-thrust](https://www.mercurymarine.com/en/us/outboards/fourstroke/command-thrust).
 
 ## Application-by-application guide
 
@@ -262,8 +254,6 @@ Five things to check before you commit. The same five we ask every customer who 
 4. **Boat geometry (transom height, tube count for pontoons).** Some older transoms do not accommodate the taller CT lower unit. Worth measuring before ordering.
 5. **Existing motor's age + hours.** Decides whether retrofit-thinking is realistic vs full repower.
 
-Email a cowl plate photo, capacity plate photo, and an honest description of how you use the boat to info@harrisboatworks.ca. We will review the fit and follow up with a recommendation or any information still needed.
-
 For motor serial number decoding, our [Mercury Outboard Serial Number Guide](/blog/how-to-read-mercury-outboard-serial-number) walks through year and model identification.
 
 ## What we see at HBW
@@ -307,8 +297,6 @@ The CT conversation goes wrong in predictable ways. The four we see most often:
 
 ## Ready to talk Command Thrust for your boat?
 
-**Phone:** 905-342-2153
-**Email:** info@harrisboatworks.ca (send cowl plate photo + boat year/make for a fit check)
 **Quote a CT repower:** [mercuryrepower.ca](https://mercuryrepower.ca)
 
 Harris Boat Works · 5369 Harris Boat Works Rd, Gores Landing, ON · Mercury Marine dealer since 1965, current Premier Dealer.

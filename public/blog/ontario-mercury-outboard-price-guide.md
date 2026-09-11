@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/ontario-mercury-outboard-price-guide.md
-last_updated: 2026-09-10
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Outboard Prices Ontario (2026): CAD Guide"
 description: "Real Mercury outboard prices in Ontario for 2026: CAD pricing by HP tier, model code decoder, what's included vs not. Ontario Premier dealer's price guide."
 category: "Mercury Outboards"
 date_published: 2026-05-08
-date_modified: 2026-09-10
+date_modified: 2026-09-11
 keywords: ["mercury outboard prices","ontario","cad pricing","repower","buying guide"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Mercury Outboards  
 **Published:** 2026-05-08  
-**Last reviewed:** 2026-09-10  
+**Last reviewed:** 2026-09-11  
 **Read time:** ~14 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ontario-mercury-outboard-price-guide
 
@@ -153,7 +153,6 @@ Three ways to get a real price:
 
 - **Build it online:** mercuryrepower.ca, pick HP, configuration, add controls and prop. Real CAD quote in minutes.
 - **Look up a specific model:** mercuryrepower.ca/pricing-reference, live database with model codes, shaft options, stock status.
-- **Talk to us:** Call 905-342-2153 or submit a service request at hbw.wiki/service.
 
 We're at 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. Pickup only, we don't ship outboards, and we don't deliver. HBW's standard repower handoff includes an on-water test on Rice Lake before pickup when safe seasonal conditions allow; any alternate acceptance plan is documented with the customer.
 

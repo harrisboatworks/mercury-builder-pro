@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/gamme-mercury-hors-bord-2026-ontario.md
-last_updated: 2026-09-06
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Gamme de hors-bord Mercury 2026 pour les plaisanciers ontariens"
 description: "La gamme Mercury 2026 couvre toutes les classes de HP récréatives. FourStroke (2,5 à 300 HP) pour la croisière, la pêche et l'usage familial."
 category: "Guide d'achat"
 date_published: 2026-05-13
-date_modified: 2026-09-06
+date_modified: 2026-09-11
 keywords: ["gamme Mercury 2026","modèles hors-bord Mercury","Mercury FourStroke 2026","Mercury Verado V10","hors-bord électrique Avator","hors-bord Mercury Ontario","concessionnaire Mercury Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Catégorie :** Guide d'achat\
 **Publié le :** 2026-05-13\
-**Dernière révision :** 2026-09-06\
+**Dernière révision :** 2026-09-11\
 **Temps de lecture :** 10 min\
 **URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/gamme-mercury-hors-bord-2026-ontario
 
@@ -39,7 +39,7 @@ La gamme Mercury 2026 couvre quatre familles principales : FourStroke (2,5 à 30
 
 Nous sommes un concessionnaire Mercury. Nous le sommes depuis 1965. Voici une analyse honnête de concessionnaire de la gamme Mercury, pas un dépotoir de fiches techniques, mais la réponse pratique à "quel Mercury convient à mon bateau?"
 
-Les familles ci-dessous décrivent la gamme Mercury actuelle. Pour savoir ce qui est disponible pour votre bateau, bâtissez une soumission ou appelez.
+Les familles ci-dessous décrivent la gamme Mercury actuelle. Pour savoir ce qui est disponible pour votre bateau, bâtissez une soumission.
 
 ## Découpage des familles Mercury
 
@@ -98,8 +98,6 @@ Ce tableau est un point de départ, pas une prescription. Le bon HP pour votre c
 ## Comment bâtir votre soumission
 
 Tarification CAD en direct sur chaque famille Mercury (sauf Verado, qui est soumissionné individuellement) à [mercuryrepower.ca](https://www.mercuryrepower.ca). Le configurateur de soumission inclut moteur, gréement, commandes, hélice et installation, le chiffre complet, pas seulement l'autocollant du moteur.
-
-Si vous comparez FourStroke et Pro XS pour une coque spécifique, ou si vous avez besoin d'aide pour le dimensionnement de ponton et la configuration Command Thrust, appelez 905-342-2153.
 
 > **Une note sur la langue**
 > Cet article est disponible en français parce que nous voulons que l'information technique sur les moteurs Mercury rejoigne plus de clients. Nous nous efforçons d'offrir du contenu utile dans votre langue.

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-40-vs-60-hp-outboard-ontario.md
-last_updated: 2026-09-07
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury 40 vs 60 HP Ontario Guide"
 description: "Mercury 40 vs 60 HP for Ontario boats. Real CAD prices, weight, fuel economy, Command Thrust availability, and which one your boat actually needs."
 category: "Mercury Outboards"
 date_published: 2026-05-09
-date_modified: 2026-09-07
+date_modified: 2026-09-11
 keywords: ["Mercury 40 vs 60 HP","Mercury 40 vs 60 HP comparison","best outboard for 16 ft aluminum boat Ontario","Mercury 40 ELPT vs 60 ELPT","Mercury 60 Command Thrust pontoon"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Mercury Outboards  
 **Published:** 2026-05-09  
-**Last reviewed:** 2026-09-07  
+**Last reviewed:** 2026-09-11  
 **Read time:** ~10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-40-vs-60-hp-outboard-ontario
 
@@ -187,8 +187,6 @@ As checked September 5, 2026, new, transferred and renewed Pleasure Craft Licenc
 ## Ready to Spec Your 40 or 60 Repower?
 
 Build a complete quote in about three minutes at mercuryrepower.ca. Pick your HP, configuration, shaft length, and prop, see real CAD pricing including controls.
-
-Have a specific boat situation? Call us at 905-342-2153. Or submit a service request at hbw.wiki/service. Five minutes of conversation usually settles the 40-vs-60 question for good.
 
 Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
 

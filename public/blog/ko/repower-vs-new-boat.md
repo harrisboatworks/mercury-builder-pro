@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/ko/repower-vs-new-boat.md
-last_updated: 2026-09-06
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "선외기 교체(Repower) vs 새 보트 구매: 온타리오 보트 오�
 description: "보트 엔진이 낡았을 때, 엔진만 교체하는 게 나을까 아니면 새 보트를 사는 게 나을까? 비용, 선체 상태, 타이밍 등 현실적인 판단 기준을 정리했습니다."
 category: "엔진 교체"
 date_published: 2026-04-12
-date_modified: 2026-09-06
+date_modified: 2026-09-11
 keywords: ["선외기 교체 vs 새 보트","repower 가성비","온타리오 보트 엔진 교체","repower vs new boat Korean"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** 엔진 교체  
 **Published:** 2026-04-12  
-**마지막 검토:** 2026-09-06  
+**마지막 검토:** 2026-09-11  
 **Read time:** 9 분  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ko/repower-vs-new-boat
 
@@ -130,7 +130,7 @@ hbw.wiki/service, 한국어로 메시지를 보내셔도 됩니다.
 
 ### 선체 상태를 어떻게 판단하나요?
 
-선체와 엔진 사진을 찍어 저희에게 보내주시면 초기 판단을 도와드릴 수 있습니다. 전화 905-342-2153 또는 hbw.wiki/service로 문의하세요.
+선체 상태는 사진만으로 확정할 수 없습니다. 구매 전에 전문가의 현장 점검을 받으세요.
 
 ### 엔진 교체에 걸리는 시간은?
 

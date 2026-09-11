@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-boost-cost-canada-2026.md
-last_updated: 2026-09-06
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Boost Canada 2026: Eligibility, Performance, and Pricing"
 description: "What Mercury Boost does, which motors may qualify, and how HBW confirms current Canadian pricing from the exact serial number."
 category: "Mercury Technology"
 date_published: 2026-05-28
-date_modified: 2026-09-06
+date_modified: 2026-09-11
 keywords: ["Mercury Boost","Mercury Boost worth it","Mercury Boost cost","Pro XS Boost","Verado Boost","Mercury Boost software"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Mercury Technology  
 **Published:** 2026-05-28  
-**Last reviewed:** 2026-09-06  
+**Last reviewed:** 2026-09-11  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-boost-cost-canada-2026
 
@@ -158,7 +158,7 @@ The honest framing: **Boost is a response tuning upgrade, not a power upgrade.**
 
 ## What HBW is doing about Boost
 
-HBW verifies the serial number against Mercury's current eligibility information, confirms the Canadian price, and explains any required shop work before a customer authorizes the upgrade. If you are interested, send us a clear photo of the serial-number plate and we will tell you whether the motor qualifies.
+HBW verifies the serial number against Mercury's current eligibility information, confirms the Canadian price, and explains any required shop work before a customer authorizes the upgrade.
 
 ---
 

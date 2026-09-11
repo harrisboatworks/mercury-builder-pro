@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-mercury-outboard-rice-lake-fishing.md
-last_updated: 2026-09-07
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Best Mercury Outboard Setup for Rice Lake Fishing"
 description: "Choose a Mercury main motor and kicker for Rice Lake fishing based on hull rating, load, trolling speed, weeds, wind, and how you fish."
 category: "Buying Guide"
 date_published: 2026-02-09
-date_modified: 2026-09-07
+date_modified: 2026-09-11
 keywords: ["best mercury outboard rice lake","rice lake fishing boat setup","mercury 9.9 prokicker walleye","rice lake repower","outboard and kicker setup","rice lake fishing motor"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-02-09  
-**Last reviewed:** 2026-09-07  
+**Last reviewed:** 2026-09-11  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-mercury-outboard-rice-lake-fishing
 
@@ -175,7 +175,7 @@ The HBW ramp at Gores Landing is the only 24/7 full-service launch on the lake. 
 
 If you fish Rice Lake, the right motor comes down to a match between your hull, your fishing style, and this specific water. We have been making that match here for three generations.
 
-Head to **mercuryrepower.ca** for live Mercury pricing in CAD, configured for your hull and your fishing. Or call us. You will get a straight answer on what you actually need, not a pitch for the most expensive thing on the wall.
+Head to **mercuryrepower.ca** for live Mercury pricing in CAD, configured for your hull and your fishing.
 
 **Phone:** 905-342-2153
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON

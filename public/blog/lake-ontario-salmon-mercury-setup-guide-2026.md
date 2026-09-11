@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/lake-ontario-salmon-mercury-setup-guide-2026.md
-last_updated: 2026-09-06
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Lake Ontario Salmon Boat Rigging: Kicker, Charging & Troll Control"
 description: "Rig a Lake Ontario salmon boat around trolling control, kicker fit, alternator demand, battery management, electronics, and safe handoff testing."
 category: "Fishing / Rigging"
 date_published: 2026-05-28
-date_modified: 2026-09-06
+date_modified: 2026-09-11
 keywords: ["Lake Ontario salmon Mercury setup","Mercury salmon trolling setup","Lake Ontario kicker install","Mercury 9.9 ProKicker","dual battery boat wiring Lake Ontario","Mercury SmartCraft Troll Control","Port Hope Mercury dealer","Cobourg Mercury dealer"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Fishing / Rigging  
 **Published:** 2026-05-28  
-**Last reviewed:** 2026-09-06  
+**Last reviewed:** 2026-09-11  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/lake-ontario-salmon-mercury-setup-guide-2026
 
@@ -166,7 +166,7 @@ If you launch from Port Hope, Cobourg, or anywhere on Lake Ontario's north shore
 
 Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Family-owned since 1947, Mercury dealer since 1965, current Premier Dealer. Confirm drive time, the exact part, and service capacity before travelling from Port Hope or Cobourg.
 
-**Pricing out a big-water setup?** Build the main-and-kicker quote at [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection), or call 905-342-2153.
+**Pricing out a big-water setup?** Build the main-and-kicker quote at [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection).
 
 ## FAQs
 

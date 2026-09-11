@@ -80,7 +80,7 @@ describe('propeller quote selection', () => {
     }));
   });
 
-  it('does not add an allowance below 25 HP', () => {
+  it('lists the included propeller and fuel tank at $0 below 25 HP', () => {
     const breakdown = buildAccessoryBreakdown({
       motor: { model: '20 ELH FourStroke', hp: 20 },
       purchasePath: 'installed',
@@ -90,6 +90,16 @@ describe('propeller quote selection', () => {
       hp: 20,
       model: '20 ELH FourStroke',
     } as Parameters<typeof includesPropeller>[0])).toBe(true);
-    expect(breakdown.some((item) => item.name.includes('Propeller'))).toBe(false);
+    expect(breakdown.some((item) => item.name.includes('Propeller Allowance'))).toBe(false);
+    expect(breakdown).toContainEqual(expect.objectContaining({
+      name: 'Standard Propeller',
+      price: 0,
+      description: 'Included with motor',
+    }));
+    expect(breakdown).toContainEqual(expect.objectContaining({
+      name: '12L Fuel Tank & Hose',
+      price: 0,
+      description: 'Included with motor',
+    }));
   });
 });

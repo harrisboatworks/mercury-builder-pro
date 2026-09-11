@@ -399,12 +399,6 @@ export default function FrenchBlogArticlePage() {
             >
               Bâtir ma soumission
             </Link>
-            <a
-              href="tel:905-342-2153"
-              className="inline-flex items-center justify-center px-6 py-3 border border-primary text-primary rounded-lg font-medium hover:bg-primary/5 transition-colors"
-            >
-              905-342-2153
-            </a>
           </div>
         </section>
       </main>

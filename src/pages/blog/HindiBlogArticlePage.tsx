@@ -9,7 +9,7 @@ import {
 } from '@/lib/blogLocaleMarkdown';
 import { SITE_URL } from '@/lib/site';
 import { cleanBlogContent } from '@/lib/cleanBlogContent.js';
-import { ArrowLeft, Calendar, Clock, Phone, MapPin } from 'lucide-react';
+import { ArrowLeft, Calendar, Clock, MapPin } from 'lucide-react';
 import { LuxuryHeader } from '@/components/ui/luxury-header';
 import { SiteFooter } from '@/components/ui/site-footer';
 import { getHindiArticleBySlug } from '@/data/hindiBlogArticles';
@@ -345,13 +345,6 @@ export default function HindiBlogArticlePage() {
             >
               ऑनलाइन कोटेशन प्राप्त करें
             </Link>
-            <a
-              href="tel:905-342-2153"
-              className="inline-flex items-center justify-center px-6 py-3 border border-primary text-primary rounded-lg font-medium hover:bg-primary/5 transition-colors"
-            >
-              <Phone className="w-4 h-4 mr-2" />
-              905-342-2153
-            </a>
           </div>
           <p className="text-sm text-muted-foreground mt-4 flex items-center justify-center gap-1">
             <MapPin className="w-3 h-3" />

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/what-happens-during-mercury-repower.md
-last_updated: 2026-09-07
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "What Happens During a Mercury Repower (Step-by-Step Process)"
 description: "What happens during a Mercury repower at Harris Boat Works: the step-by-step process, timeline, rigging, water test, and what you do before drop-off."
 category: "Repower"
 date_published: 2026-05-05
-date_modified: 2026-09-07
+date_modified: 2026-09-11
 keywords: ["mercury repower process","what happens during repower","boat repower steps","mercury install process","repower timeline ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Repower  
 **Published:** 2026-05-05  
-**Last reviewed:** 2026-09-07  
+**Last reviewed:** 2026-09-11  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/what-happens-during-mercury-repower
 
@@ -90,8 +90,6 @@ Customer builds a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) or
 - Install labour
 - HST (13% Ontario)
 - Total all-in number in CAD
-
-If you want to talk through the configuration, we do a 15- to 30-minute consultation by phone or in-shop.
 
 #### Step 3: Deposit and Booking
 
@@ -186,8 +184,6 @@ Customer drives away with a new Mercury, full documentation, and a clear picture
 ---
 
 Ready to schedule your repower? Build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**, live CAD pricing, full configuration, rigging and installation included.
-
-Questions about the process for your specific boat? Call **905-342-2153** or come in for a free hull walk-around. We do free walk-arounds and can answer process questions before you commit.
 
 ---
 

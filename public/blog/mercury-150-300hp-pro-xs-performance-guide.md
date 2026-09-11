@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-150-300hp-pro-xs-performance-guide.md
-last_updated: 2026-09-07
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Pro XS 150–300 HP: What Runs Best on Ontario Boats"
 description: "Mercury's 150 to 300 Pro XS lineup from the dealer who rigs them: inline-4 vs V6 vs V8, which hulls each one suits, and the honest pricing paths."
 category: "Buying Guide"
 date_published: 2026-05-13
-date_modified: 2026-09-07
+date_modified: 2026-09-11
 keywords: ["mercury 150 pro xs","mercury 175 pro xs","mercury 200 pro xs","mercury 225 pro xs","mercury 250 pro xs","mercury 300 pro xs","mercury v6 vs v8","mercury pro xs comparison ontario","mercury 150-300 hp guide"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-05-13  
-**Last reviewed:** 2026-09-07  
+**Last reviewed:** 2026-09-11  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-150-300hp-pro-xs-performance-guide
 
@@ -164,7 +164,7 @@ For higher-horsepower Pro XS conversations, HBW provides:
 - **Rigging upgrades**, hydraulic steering, stainless prop, DTS where available
 - **Boost software upgrade evaluations**, for eligible owners seeking better mid-range acceleration without buying a new motor
 
-If you're considering a Pro XS repower, the configurator at [mercuryrepower.ca](https://www.mercuryrepower.ca) provides the current pricing path. For twin vs single, V6 vs V8, or Pro XS vs FourStroke questions, call **905-342-2153**.
+If you're considering a Pro XS repower, the configurator at [mercuryrepower.ca](https://www.mercuryrepower.ca) provides the current pricing path.
 
 ## Sources and Review Notes
 

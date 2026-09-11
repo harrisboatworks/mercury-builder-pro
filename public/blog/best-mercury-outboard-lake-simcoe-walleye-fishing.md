@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-mercury-outboard-lake-simcoe-walleye-fishing.md
-last_updated: 2026-08-19
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Setup for Simcoe Walleye 2026"
 description: "A 2026 guide to fishing Lake Simcoe: species, seasons, FMZ 16 regulations, the open-water conditions, and the right Mercury outboard for every Simcoe setup."
 category: "Fishing & Local"
 date_published: 2026-04-21
-date_modified: 2026-08-19
+date_modified: 2026-09-11
 keywords: ["best Mercury outboard for Lake Simcoe fishing","Lake Simcoe fishing guide 2026","Lake Simcoe walleye fishing","Lake Simcoe lake trout fishing","Lake Simcoe fishing regulations 2026"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Fishing & Local  
 **Published:** 2026-04-21  
-**Last reviewed:** 2026-08-19  
+**Last reviewed:** 2026-09-11  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-mercury-outboard-lake-simcoe-walleye-fishing
 
@@ -134,8 +134,6 @@ HBW's standard repower handoff includes an on-water test on Rice Lake before pic
 ## Ready for your Lake Simcoe walleye setup?
 
 **Build a quote** on the motor selection page. Live Mercury pricing in CAD with full configuration including main motor, kicker, rigging, and prop. [Build Your Mercury Quote](https://mercuryrepower.ca)
-
-If you want to talk through your specific Simcoe fishing setup, call **905-342-2153**, email info@harrisboatworks.ca, or book service at hbw.wiki/service.
 
 **Phone:** 905-342-2153
 **Email:** info@harrisboatworks.ca

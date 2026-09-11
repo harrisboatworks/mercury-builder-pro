@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/why-mercury-dealers-hide-prices-online.md
-last_updated: 2026-09-06
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Why Mercury Dealers Hide Prices (HBW Doesn't)"
 description: "Most Mercury dealers hide prices online to control the sales conversation. HBW publishes Mercury prices live so you can compare without a phone call."
 category: "Buying Guide"
 date_published: 2026-05-05
-date_modified: 2026-09-06
+date_modified: 2026-09-11
 keywords: ["mercury outboard pricing","mercury dealer transparency","boat motor prices ontario","mercury price online","harris boat works pricing"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-05-05  
-**Last reviewed:** 2026-09-06  
+**Last reviewed:** 2026-09-11  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/why-mercury-dealers-hide-prices-online
 
@@ -124,7 +124,7 @@ For typical recreational FourStroke and Pro XS packages, the motor selection pag
 
 **See the number before you call.** 
 Build your configured Mercury quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), live CAD pricing, no phone-call gatekeeping. 
-Questions after you see it? Call 905-342-2153. 
+
 Harris Boat Works, Mercury dealer since 1965. Gores Landing, ON.
 
 ---
