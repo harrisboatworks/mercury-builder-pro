@@ -126,10 +126,11 @@ async function runScenario(scenario: string, extras: ScenarioExtras = {}) {
     forceProvenance: extras.forceProvenance,
     deadlineMs: extras.deadlineMs,
     cleanupBudgetMs: extras.cleanupBudgetMs,
-    plaintextSecret: extras.plaintextSecret,
-    edgeSha256Digest: extras.edgeSha256Digest,
     mode: extras.mode,
     secretsToRedact: [FAKE_KEY, FAKE_DIGEST, FAKE_OFFER, FAKE_ANSWER],
+    ...(extras.plaintextSecret != null || extras.edgeSha256Digest != null
+      ? { plaintextSecret: extras.plaintextSecret, edgeSha256Digest: extras.edgeSha256Digest }
+      : {}),
   });
 }
 
