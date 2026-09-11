@@ -4869,7 +4869,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "Is Pro XS worth the premium over FourStroke?",
-        "a": "For tournament fishing, performance pontoons, water sports applications, and big-water running, yes. For cruising, family use, casual fishing, no. FourStroke is the better tool for most Ontario boaters."
+        "a": "Pro XS may be worth the extra cost if you use its performance. There is no single price premium across the lineup: compare current quotes for the exact models, shaft length, controls and gearcase, then account for rigging and HST. FourStroke is usually the better fit for cruising, family use and casual fishing."
       },
       {
         "q": "What's the most popular Pro XS in Ontario?",
