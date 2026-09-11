@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/es/licencia-navegacion-ontario-regulaciones.md
-last_updated: 2026-08-15
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Licencia de navegación y regulaciones de seguridad en Ontario"
 description: "Guía completa sobre la PCOC, PCL, equipo de seguridad obligatorio y regulaciones de navegación en Ontario."
 category: "Regulaciones"
 date_published: 2026-04-12
-date_modified: 2026-08-15
+date_modified: 2026-09-11
 keywords: ["licencia navegación Ontario","PCOC Ontario","regulaciones bote Ontario","permiso de navegación Canadá","seguridad embarcación Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,13 +25,13 @@ revenue_driver: repower
 
 **Category:** Regulaciones  
 **Published:** 2026-04-12  
-**Última revisión:** 2026-08-15  
+**Última revisión:** 2026-09-11  
 **Read time:** 12 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/es/licencia-navegacion-ontario-regulaciones
 
 ### Respuesta rápida
 
-Para navegar legalmente en Ontario necesitas dos cosas: la **PCOC** ([Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency) / Carta de Operador de Embarcaciones), un certificado federal vitalicio cuyo costo varía según el proveedor acreditado, y la **PCL** ([Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences)), una licencia para la embarcación misma si tiene motor de 10 HP o más. Las PCL nuevas, transferidas o renovadas tienen una vigencia de 5 años; la tarifa federal actual es de **$24.41 CAD** y puede ajustarse anualmente. La multa por no llevar la PCOC en la embarcación comienza en **$250 CAD**. Siempre lleva el original, no se aceptan copias ni fotos en pantalla.
+Para navegar legalmente en Ontario, la **PCOC** ([Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency) / Carta de Operador de Embarcaciones) es una de las pruebas de competencia aceptadas; la emite un proveedor acreditado y su costo varía. La **PCL** ([Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences)) es la licencia de la embarcación misma si tiene motor de 10 HP o más. Las PCL nuevas, transferidas o renovadas tienen una vigencia de 5 años (el duplicado no renueva la vigencia); al 5 de septiembre de 2026 la tarifa federal es de **$24.41 CAD**; actualizar datos o cancelar es gratuito. La tarifa se ajusta cada 1 de abril. La multa por no llevar la PCOC en la embarcación comienza en **$250 CAD**. Siempre lleva el original, no se aceptan copias ni fotos en pantalla.
 
 ---
 
@@ -49,7 +49,7 @@ Esta guía está diseñada para hispanohablantes que quieren entender el sistema
 
 ## PCOC, La "licencia de conducir" del navegante
 
-La Pleasure Craft Operator Card (PCOC) es el equivalente náutico de una licencia de conducir. Es emitida por Transporte Canadá y es obligatoria para cualquier persona que opere una embarcación motorizada en aguas canadienses.
+La Pleasure Craft Operator Card (PCOC) es el equivalente náutico de una licencia de conducir. La emite un proveedor acreditado por Transport Canada. La PCOC es una de las pruebas de competencia aceptadas para manejar una embarcación de recreo motorizada.
 
 ### Características clave:
 
@@ -65,9 +65,9 @@ La Pleasure Craft Operator Card (PCOC) es el equivalente náutico de una licenci
 
 El examen está actualmente disponible en inglés y francés. A la fecha de publicación no existe una versión certificadora oficial en español, para prepararte, puedes usar materiales de estudio en español de terceros y luego presentar el examen en inglés o francés. Verifica la disponibilidad de idiomas directamente en tc.gc.ca.
 
-### ¿Quién necesita la PCOC?
+### ¿Quién necesita una prueba de competencia?
 
-Toda persona que opere el control de una embarcación motorizada, sin importar:
+La PCOC es una de las pruebas de competencia aceptadas. Quien conduzca una embarcación de recreo motorizada necesita una prueba reconocida, sin importar:
 - Si es propietario o arrendatario
 - Si el motor es pequeño (incluso un motor de pesca eléctrico)
 - Si es residente temporal o permanente
@@ -82,7 +82,7 @@ La Pleasure Craft Licence (PCL) es diferente de la PCOC personal. Es la licencia
 
 ### Vigencia y tarifa actuales
 
-Las PCL nuevas, transferidas o renovadas tienen una vigencia de **5 años**. La tarifa federal actual para emitir, renovar, transferir o duplicar una PCL es de **$24.41 CAD** y puede ajustarse anualmente. Las licencias antiguas sin fecha de vencimiento se están incorporando gradualmente al nuevo esquema; verifica el vencimiento de la tuya en tc.gc.ca.
+Las PCL nuevas, transferidas o renovadas tienen una vigencia de **5 años**. Al 5 de septiembre de 2026, la tarifa federal para emitir, renovar, transferir o duplicar una PCL es de **$24.41 CAD** ([tabla oficial](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/fees-service-standards)); actualizar datos o cancelar es gratuito. La tarifa se ajusta cada 1 de abril. Las licencias antiguas no eran todas vitalicias: Transport Canada fija ahora cohortes de vencimiento; verifica la tuya.
 
 La PCL no es lo mismo que el registro de embarcaciones (que aplica a barcos más grandes o de uso comercial). Para la mayoría de las embarcaciones de recreo de menos de 15 metros, la PCL es suficiente.
 
@@ -180,16 +180,14 @@ Los requisitos de remolque dependen del peso combinado, las dimensiones, los fre
 
 ---
 
-## CTA, ¿Listo para salir al agua legalmente?
+## ¿Listo para salir al agua legalmente?
 
 Obtén tu PCOC en línea, renueva tu PCL en tc.gc.ca, y cuando tengas todo en orden, visítanos en Rice Lake.
 
 Si estás pensando en un motor nuevo o en repotenciar tu embarcación, usa el configurador en **mercuryrepower.ca**, precios reales, sin llamadas previas.
 
-¿Preguntas? Escríbenos en **hbw.wiki/service** o llama al **905-342-2153**. Nuestro equipo responde en inglés.
-
-Harris Boat Works 
-5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0 
+Harris Boat Works
+5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 harrisboatworks.ca
 ---
 

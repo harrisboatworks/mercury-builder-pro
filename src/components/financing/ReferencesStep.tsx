@@ -62,6 +62,9 @@ export function ReferencesStep() {
                   id="ref1-fullName"
                   {...register('reference1.fullName')}
                   autoComplete="name"
+                  aria-required="true"
+                  aria-invalid={Boolean(errors.reference1?.fullName)}
+                  aria-describedby={errors.reference1?.fullName ? 'ref1-fullName-error' : undefined}
                   className="pr-10"
                 />
                 <FieldValidationIndicator 
@@ -70,7 +73,7 @@ export function ReferencesStep() {
                   className="absolute right-3 top-1/2 -translate-y-1/2"
                 />
               </div>
-              <FormErrorMessage error={errors.reference1?.fullName?.message} field="Full name" />
+              <FormErrorMessage id="ref1-fullName-error" error={errors.reference1?.fullName?.message} field="Full name" />
             </div>
 
             <div className="space-y-2">
@@ -79,7 +82,12 @@ export function ReferencesStep() {
                 value={watch('reference1.relationship')}
                 onValueChange={(value) => setValue('reference1.relationship', value, { shouldValidate: true })}
               >
-                <SelectTrigger>
+                <SelectTrigger
+                  id="ref1-relationship"
+                  aria-required="true"
+                  aria-invalid={Boolean(errors.reference1?.relationship)}
+                  aria-describedby={errors.reference1?.relationship ? 'ref1-relationship-error' : undefined}
+                >
                   <SelectValue placeholder="Select relationship" />
                 </SelectTrigger>
                 <SelectContent>
@@ -90,7 +98,7 @@ export function ReferencesStep() {
                   <SelectItem value="Other">Other</SelectItem>
                 </SelectContent>
               </Select>
-              <FormErrorMessage error={errors.reference1?.relationship?.message} field="Relationship" />
+              <FormErrorMessage id="ref1-relationship-error" error={errors.reference1?.relationship?.message} field="Relationship" />
             </div>
 
             <div className="space-y-2">
@@ -109,6 +117,9 @@ export function ReferencesStep() {
                       onChange={field.onChange}
                       onBlur={field.onBlur}
                       name={field.name}
+                      aria-required="true"
+                      aria-invalid={Boolean(errors.reference1?.phone)}
+                      aria-describedby={errors.reference1?.phone ? 'ref1-phone-error' : undefined}
                       className="pr-10"
                     />
                   )}
@@ -119,7 +130,7 @@ export function ReferencesStep() {
                   className="absolute right-3 top-1/2 -translate-y-1/2"
                 />
               </div>
-              <FormErrorMessage error={errors.reference1?.phone?.message} field="Phone number" />
+              <FormErrorMessage id="ref1-phone-error" error={errors.reference1?.phone?.message} field="Phone number" />
             </div>
 
             <div className="space-y-2">
@@ -128,7 +139,12 @@ export function ReferencesStep() {
                 value={watch('reference1.howLongKnown')}
                 onValueChange={(value) => setValue('reference1.howLongKnown', value as any, { shouldValidate: true })}
               >
-                <SelectTrigger>
+                <SelectTrigger
+                  id="ref1-howLongKnown"
+                  aria-required="true"
+                  aria-invalid={Boolean(errors.reference1?.howLongKnown)}
+                  aria-describedby={errors.reference1?.howLongKnown ? 'ref1-howLongKnown-error' : undefined}
+                >
                   <SelectValue placeholder="Select duration" />
                 </SelectTrigger>
                 <SelectContent>
@@ -138,7 +154,7 @@ export function ReferencesStep() {
                   <SelectItem value="10+">10+ years</SelectItem>
                 </SelectContent>
               </Select>
-              <FormErrorMessage error={errors.reference1?.howLongKnown?.message} field="Duration" />
+              <FormErrorMessage id="ref1-howLongKnown-error" error={errors.reference1?.howLongKnown?.message} field="Duration" />
             </div>
           </CardContent>
         </Card>
@@ -158,6 +174,9 @@ export function ReferencesStep() {
                   id="ref2-fullName"
                   {...register('reference2.fullName')}
                   autoComplete="name"
+                  aria-required="true"
+                  aria-invalid={Boolean(errors.reference2?.fullName)}
+                  aria-describedby={errors.reference2?.fullName ? 'ref2-fullName-error' : undefined}
                   className="pr-10"
                 />
                 <FieldValidationIndicator 
@@ -166,7 +185,7 @@ export function ReferencesStep() {
                   className="absolute right-3 top-1/2 -translate-y-1/2"
                 />
               </div>
-              <FormErrorMessage error={errors.reference2?.fullName?.message} field="Full name" />
+              <FormErrorMessage id="ref2-fullName-error" error={errors.reference2?.fullName?.message} field="Full name" />
             </div>
 
             <div className="space-y-2">
@@ -175,7 +194,12 @@ export function ReferencesStep() {
                 value={watch('reference2.relationship')}
                 onValueChange={(value) => setValue('reference2.relationship', value, { shouldValidate: true })}
               >
-                <SelectTrigger>
+                <SelectTrigger
+                  id="ref2-relationship"
+                  aria-required="true"
+                  aria-invalid={Boolean(errors.reference2?.relationship)}
+                  aria-describedby={errors.reference2?.relationship ? 'ref2-relationship-error' : undefined}
+                >
                   <SelectValue placeholder="Select relationship" />
                 </SelectTrigger>
                 <SelectContent>
@@ -186,7 +210,7 @@ export function ReferencesStep() {
                   <SelectItem value="Other">Other</SelectItem>
                 </SelectContent>
               </Select>
-              <FormErrorMessage error={errors.reference2?.relationship?.message} field="Relationship" />
+              <FormErrorMessage id="ref2-relationship-error" error={errors.reference2?.relationship?.message} field="Relationship" />
             </div>
 
             <div className="space-y-2">
@@ -205,6 +229,9 @@ export function ReferencesStep() {
                       onChange={field.onChange}
                       onBlur={field.onBlur}
                       name={field.name}
+                      aria-required="true"
+                      aria-invalid={Boolean(errors.reference2?.phone)}
+                      aria-describedby={errors.reference2?.phone ? 'ref2-phone-error' : undefined}
                       className="pr-10"
                     />
                   )}
@@ -215,7 +242,7 @@ export function ReferencesStep() {
                   className="absolute right-3 top-1/2 -translate-y-1/2"
                 />
               </div>
-              <FormErrorMessage error={errors.reference2?.phone?.message} field="Phone number" />
+              <FormErrorMessage id="ref2-phone-error" error={errors.reference2?.phone?.message} field="Phone number" />
             </div>
 
             <div className="space-y-2">
@@ -224,7 +251,12 @@ export function ReferencesStep() {
                 value={watch('reference2.howLongKnown')}
                 onValueChange={(value) => setValue('reference2.howLongKnown', value as any, { shouldValidate: true })}
               >
-                <SelectTrigger>
+                <SelectTrigger
+                  id="ref2-howLongKnown"
+                  aria-required="true"
+                  aria-invalid={Boolean(errors.reference2?.howLongKnown)}
+                  aria-describedby={errors.reference2?.howLongKnown ? 'ref2-howLongKnown-error' : undefined}
+                >
                   <SelectValue placeholder="Select duration" />
                 </SelectTrigger>
                 <SelectContent>
@@ -234,7 +266,7 @@ export function ReferencesStep() {
                   <SelectItem value="10+">10+ years</SelectItem>
                 </SelectContent>
               </Select>
-              <FormErrorMessage error={errors.reference2?.howLongKnown?.message} field="Duration" />
+              <FormErrorMessage id="ref2-howLongKnown-error" error={errors.reference2?.howLongKnown?.message} field="Duration" />
             </div>
           </CardContent>
         </Card>

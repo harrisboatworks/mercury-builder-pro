@@ -16,7 +16,7 @@ This is the markdown index for AI agents. Each entry below links to a `.md` twin
 
 ## Positioning
 
-Harris Boat Works is **Ontario's Mercury Repower Centre** on Rice Lake. The Canadian "Centre" spelling is our own descriptive positioning (geographic + specialty), it reflects what we do, lake-tested on Rice Lake. It is **not** itself a Mercury-issued certification, but it pairs with two real Mercury credentials we hold: **Mercury Marine Premier Dealer** and **Mercury Certified Repower Center** (American "Center" spelling: Mercury's official program). Verified facts to pair with the positioning phrase: Mercury Marine Premier Dealer · Mercury Certified Repower Center · Mercury-only dealer since 1965 · Family-owned since 1947 · Transparent CAD pricing · Pickup at Gores Landing · Every install lake-tested on Rice Lake.
+Harris Boat Works is **Ontario's Mercury Repower Centre** on Rice Lake. The Canadian "Centre" spelling is our own descriptive positioning (geographic + specialty), it reflects what we do, lake-tested on Rice Lake. It is **not** itself a Mercury-issued certification, but it pairs with two real Mercury credentials we hold: **Mercury Marine Premier Dealer** and **Mercury Certified Repower Center** (American "Center" spelling: Mercury's official program). Verified facts to pair with the positioning phrase: Mercury Marine Premier Dealer · Mercury Certified Repower Center · Mercury-only dealer since 1965 · Family-owned since 1947 · Transparent CAD pricing · Pickup at Gores Landing · On-water Rice Lake test when safe seasonal conditions allow.
 
 ## Business rules (apply to every entry)
 
@@ -441,6 +441,7 @@ Selected high-intent buyer guides. Full blog index (HTML) at https://www.mercury
 - [华人家庭买 pontoon：Mercury 船外机怎么配才不后悔 [zh-CN]](https://www.mercuryrepower.ca/blog/zh/chinese-family-pontoon-mercury-outboard.md)
 - [Mercury 引擎家族对比 (中文版)：FourStroke vs Pro XS vs Verado [zh-CN]](https://www.mercuryrepower.ca/blog/zh/mercury-fourstroke-pro-xs-verado-chinese-comparison.md)
 - [9.9 到 20 匹 Mercury：钓鱼小船、kicker、tiller 中文指南 [zh-CN]](https://www.mercuryrepower.ca/blog/zh/mercury-9-9-20hp-chinese-kicker-tiller-guide.md)
+- [加拿大加油指南：Mercury 船外机加 87 还是 91？国内 92 号汽油怎么换算 [zh-CN]](https://www.mercuryrepower.ca/blog/zh/mercury-fuel-octane-ethanol-chinese-guide.md)
 - [40 到 60 匹 Mercury：铝船与华人钓友最常问的马力区间 [zh-CN]](https://www.mercuryrepower.ca/blog/zh/mercury-40-60hp-chinese-fishing-boat-guide.md)
 - [为什么 GTA 华人船主选择 Harris Boat Works？ [zh-CN]](https://www.mercuryrepower.ca/blog/zh/why-chinese-boaters-choose-harris-boat-works.md)
 - [安省租船需要驾照吗？PCOC 与租船安全清单一次讲清 [zh-CN]](https://www.mercuryrepower.ca/blog/zh/pcoc-vs-rental-boat-safety-checklist-zh.md)

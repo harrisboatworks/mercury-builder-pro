@@ -1,6 +1,10 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
 import { checkRateLimit, rateLimitedResponse } from "../_shared/rate-limit.ts";
+import {
+  PARTS_PAGE_URL,
+  buildPublicPartResponse,
+} from "./public-part.ts";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -9,18 +13,6 @@ const corsHeaders = {
 
 const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
 const supabaseKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
-
-const PARTS_PAGE_URL = 'https://www.mercuryrepower.ca/mercuryparts';
-
-interface PartInfo {
-  partNumber: string;
-  name: string | null;
-  description: string | null;
-  cadPrice: number | null;
-  imageUrl: string | null;
-  sourceUrl: string;
-  fromCache: boolean;
-}
 
 // Common Mercury part patterns and known parts for quick lookup
 const KNOWN_PARTS: Record<string, { name: string; description?: string }> = {
@@ -64,48 +56,38 @@ serve(async (req) => {
     // Check cache first
     const { data: cached } = await supabase
       .from('mercury_parts_cache')
-      .select('*')
+      .select('part_number, name, description, cad_price, image_url, lookup_count')
       .eq('part_number', cleanPartNumber)
       .single();
 
     if (cached && cached.cad_price) {
       console.log(`Cache hit for part ${cleanPartNumber}`);
       
-      // Increment lookup count
+      // Increment lookup count server-side; never copy it into the public body.
       await supabase
         .from('mercury_parts_cache')
         .update({ lookup_count: (cached.lookup_count || 0) + 1 })
         .eq('part_number', cleanPartNumber);
 
-      const result: PartInfo = {
-        partNumber: cached.part_number,
-        name: cached.name,
-        description: cached.description,
-        cadPrice: cached.cad_price,
-        imageUrl: cached.image_url,
-        sourceUrl: PARTS_PAGE_URL,
-        fromCache: true
-      };
-
       return new Response(
-        JSON.stringify({ success: true, data: result }),
+        JSON.stringify(buildPublicPartResponse(cached, { fromCache: true })),
         { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
       );
     }
 
     // Check known parts list
     const knownPart = KNOWN_PARTS[cleanPartNumber];
-    
-    // Return with part info if known, otherwise just the part number
-    const result: PartInfo = {
-      partNumber: cleanPartNumber,
+
+    // Price must come from the live lookup / cache, never from this stand-in.
+    const result = buildPublicPartResponse({
+      part_number: cleanPartNumber,
       name: knownPart?.name || null,
       description: knownPart?.description || null,
-      cadPrice: null, // Price must come from the live lookup
-      imageUrl: null,
-      sourceUrl: PARTS_PAGE_URL,
-      fromCache: false
-    };
+    }, {
+      fromCache: false,
+      fallbackPartNumber: cleanPartNumber,
+      message: 'Use parts lookup for current CAD pricing',
+    });
 
     // Log this lookup for analytics
     await supabase
@@ -124,11 +106,7 @@ serve(async (req) => {
     console.log(`Returning deep link for part ${cleanPartNumber}`);
 
     return new Response(
-      JSON.stringify({ 
-        success: true, 
-        data: result,
-        message: 'Use parts lookup for current CAD pricing'
-      }),
+      JSON.stringify(result),
       { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
     );
 

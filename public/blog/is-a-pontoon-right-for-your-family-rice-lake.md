@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/is-a-pontoon-right-for-your-family-rice-lake.md
-last_updated: 2026-07-27
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Is a Pontoon Right for Your Family?"
 description: "Is a pontoon right for your family on Rice Lake? Honest look at what pontoons do well, where they fall short, tubing power, and tritoon vs pontoon."
 category: "Buying Guide"
 date_published: 2026-06-19
-date_modified: 2026-07-27
+date_modified: 2026-09-11
 keywords: ["is a pontoon boat right for my family","pontoon boat for family with kids","can you tube behind a pontoon","pontoon vs tritoon for family","how much horsepower pontoon tubing"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-06-19  
-**Last reviewed:** 2026-07-27  
+**Last reviewed:** 2026-09-11  
 **Read time:** ~9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/is-a-pontoon-right-for-your-family-rice-lake
 
@@ -52,6 +52,10 @@ This is where pontoons earn their reputation, and it is not hype.
 **Swimming and lounging.** A boarding ladder off the back, a wide deck to towel off on, and shade if you add a bimini. For a family that mostly wants to anchor in a bay, swim, and have lunch, nothing beats it.
 
 **It handles the everyday stuff.** Cottage errands, sunset cruises, a few rods over the side for the kids. A pontoon does the calm, social 80 percent of family boating better than any other boat on the lake.
+
+![Angler wearing flotation and fishing from the stern of a Legend pontoon beside a Mercury outboard.](/lovable-uploads/blog-photos-2026-09/legend-mercury-fishing-detail.webp)
+
+*Official [Legend Boats archive photography](https://media.legendboats.com/pontoon-boats/e-series/e-series-21-cruise/). A real example of casual pontoon fishing; the location is not identified as Rice Lake.*
 
 ## Where a pontoon falls short (the honest part)
 
@@ -85,11 +89,11 @@ A standard pontoon rides on two tubes (pontoons). A tritoon adds a third tube do
 
 A third tube buys you three things that matter for a family: it carries more horsepower (so it can actually pull skiers and bigger tubers), it gets up on plane and runs faster, and it handles Rice Lake chop noticeably better, less push from the wind, a drier and more planted ride.
 
-If your summer is mostly cruising, swimming, and light tubing, a two-tube pontoon with the right power is plenty, and it saves you money. If watersports are a real priority, or you spend a lot of time out when the wind is up, the tritoon is worth it. We will tell you honestly which one fits how your family actually boats.
+If your summer is mostly cruising, swimming, and light tubing, a two-tube pontoon with the right power is plenty, and it saves you money. If watersports are a real priority, or you spend a lot of time out when the wind is up, the tritoon is worth it.
 
 ## How much horsepower on Rice Lake
 
-For most family pontoons in the 18 to 22 foot range we rig [Mercury FourStroke power](/blog/best-mercury-outboard-pontoon-boats) in the 90 to 150 hp band, usually with the **Command Thrust** gearcase. [Command Thrust](/blog/mercury-command-thrust-complete-guide-2026) is a bigger gearcase with more low-end grunt, and it is exactly right for a heavy, load-carrying pontoon. (Worth knowing: Command Thrust belongs on pontoons and heavy work boats, not on standard V-hulls. Some dealers mis-rig it onto V-hulls claiming more torque. That is the wrong application, and it is the kind of thing we will steer you away from.)
+For most family pontoons in the 18 to 22 foot range we rig [Mercury FourStroke power](/blog/best-mercury-outboard-pontoon-boats) in the 90 to 150 hp band, usually with the **Command Thrust** gearcase. [Command Thrust](/blog/mercury-command-thrust-complete-guide-2026) is a bigger gearcase with more low-end grunt, and it is exactly right for a heavy, load-carrying pontoon. (Worth knowing: Command Thrust is a hull, load, and propeller choice. On most family pontoons we rig, it is the right tool. On a standard planing V-hull, HBW usually prefers the standard gearcase; that is a shop recommendation, not a universal ban. Some dealers spec CT onto those V-hulls claiming more torque. Ask for the actual boat, prop, and test result.)
 
 | Your family's main use | Boat | Mercury power |
 |---|---|---|
@@ -113,7 +117,7 @@ A pontoon (two-tube if you are budget-minded and cruise-focused, tritoon if wate
 
 Most families who come in worried a pontoon will be "boring" leave wishing they had bought one years ago. The space and the safety win them over fast. The families who do regret a pontoon almost always made one of two mistakes: they bought too little horsepower to tube the way their kids wanted, or they were genuinely watersports-first and should have bought a tritoon or a V-hull from the start.
 
-We carry **Legend** pontoons, a Canadian company headquartered in Whitefish, Ontario, near Sudbury, that designs its boats for Canadian water and backs them with a 6-Year WOWranty and All-In Pricing. The lineup sorts cleanly by family: the **LE Series** is the value pick for cruising families, the **Q Series** steps up to premium comfort, and the **Halo** brings modern 360-degree seating for families who want the newer look. Every one comes paired with Mercury power, rigged and serviced right here.
+We carry **Legend** pontoons, a Canadian company headquartered in Whitefish, Ontario, near Sudbury, that designs its boats for Canadian water. Ask for the exact model-year warranty and an itemized package quote before buying. The lineup sorts cleanly by family: the **LE Series** is the value pick for cruising families, the **Q Series** steps up to premium comfort, and the **Halo** brings modern 360-degree seating for families who want the newer look. Every one comes paired with Mercury power, rigged and serviced right here.
 
 ## Common mistakes
 
@@ -128,9 +132,8 @@ Here is the advantage of buying from [a marina that also rents](/blog/rice-lake-
 
 ## Ready to find the right boat for your family?
 
-Tell us how your family actually spends a day on the water, who is aboard, whether the kids want to tube, how often you are out when it is windy, and we will tell you straight whether a pontoon, a tritoon, or something else fits. Rent one first if you want to be sure.
+Rent a pontoon first to see whether it suits how your family spends a day on the water.
 
-**Phone:** [905-342-2153](tel:+19053422153)
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 **Configurator:** [mercuryrepower.ca](https://mercuryrepower.ca)
 **Rentals:** [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals)
@@ -178,7 +181,7 @@ Yes, and we recommend it. Rent one for a weekend, use it the way your family act
 - [Rice Lake Boating Guide 2026](/blog/rice-lake-boating-guide-2026), the 2026 Rice Lake boating guide
 - [Rice Lake's Full-Service Marina Since 1947](/blog/best-marina-rice-lake-ontario), marina options on Rice Lake
 - [Docking a Boat in Wind: Rice Lake Guide](/blog/docking-boat-in-wind-rice-lake), docking in the wind on Rice Lake
-- [Trent-Severn Waterway 2026 Guide](/blog/trent-severn-waterway-boating-guide-2026), boating the Trent-Severn Waterway
+- [Trent-Severn 2026: Free Lockage Dates, Rules & Trip Plan](/blog/trent-severn-waterway-boating-guide-2026), boating the Trent-Severn Waterway
 - [Trent-Severn Mercury Dealer Guide](/blog/trent-severn-mercury-dealer-survival-guide-2026), Trent-Severn Mercury survival guide
 
 ## Next steps

@@ -15,10 +15,10 @@ describe('spring commissioning cost article facts', () => {
   });
 
   it('keeps current HBW pricing and service-intake policy explicit', () => {
-    expect(article?.dateModified).toBe('2026-08-19');
+    expect(article?.dateModified).toBe('2026-08-26');
     expect(article?.content).toContain('free for our winter-storage customers');
     expect(article?.content).toContain('$99 labour before HST for everyone else');
-    expect(article?.content).toContain('about one to two weeks before your intended drop-off');
-    expect(article?.content).toContain('first-come, first-served');
+    expect(article?.content).toContain('drop the boat off anytime, including after hours');
+    expect(article?.content).not.toContain('one to two weeks before your intended drop-off');
   });
 });

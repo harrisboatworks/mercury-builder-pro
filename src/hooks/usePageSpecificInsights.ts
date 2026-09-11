@@ -17,14 +17,14 @@ const CACHE_TTL_MS = 30 * 60 * 1000; // 30 minutes
 
 // Page-specific Perplexity query configurations
 const PAGE_QUERIES: Record<string, { queries: string[]; questionTemplates: string[] }> = {
-  '/quote/package-selection': {
+  '/quote/options': {
     queries: [
-      'Mercury outboard extended warranty common claims 2024',
-      'Mercury water pump replacement cost outboard',
+      'Mercury SmartCraft Connect Mobile outboard smartphone data',
+      'Mercury portable fuel tank size 12L vs 25L outboard',
     ],
     questionTemplates: [
-      'Are water pump failures covered?',
-      'What parts fail most often?',
+      'Do I need SmartCraft Connect?',
+      'What fuel tank size should I add?',
     ],
   },
   '/quote/promo-selection': {
@@ -37,10 +37,20 @@ const PAGE_QUERIES: Record<string, { queries: string[]; questionTemplates: strin
       'What\'s the catch with 0% financing?',
     ],
   },
+  '/quote/summary': {
+    queries: [
+      'Mercury Product Protection vs factory warranty Canada',
+      'Harris Boat Works quote next steps consultation',
+    ],
+    questionTemplates: [
+      'What happens after I submit this quote?',
+      'Is extended coverage worth it on this motor?',
+    ],
+  },
   '/financing': {
     queries: [
       'boat financing approval requirements Canada',
-      'marine loan interest rates 2024',
+      'marine loan interest rates 2026',
     ],
     questionTemplates: [
       'What credit score do I really need?',

@@ -61,8 +61,9 @@ const ContactLog = ({ quoteId, customerEmail }: Props) => {
     if (error || !data) {
       toast({ title: 'Error', description: error?.message || 'No contact log row was saved.', variant: 'destructive' });
     } else {
-      // Also increment contact_attempts on the quote
-      try { await supabase.rpc('increment_contact_attempts' as any, { quote_id: quoteId } as any); } catch {}
+      // contact_attempts on customer_quotes exists, but increment_contact_attempts
+      // was never created and this screen never displayed that count. The log
+      // rows are the source of truth; do not invent an RPC or a fictional total.
       setNewNotes('');
       setNewType('note');
       setIsAdding(false);

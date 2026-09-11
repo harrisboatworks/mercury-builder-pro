@@ -2,6 +2,7 @@ import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
 import { Resend } from "npm:resend@2.0.0";
 import { requireAdmin } from "../_shared/admin-auth.ts";
+import { daysUntil, dealerToday } from "../_shared/promo-dates.ts";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -28,7 +29,7 @@ serve(async (req) => {
     console.log("[send-promo-notifications] Starting promo notification check");
 
     // Get active promotions sorted by creation date (newest first)
-    const now = new Date().toISOString().split('T')[0];
+    const now = dealerToday();
     const { data: activePromos, error: promoError } = await supabase
       .from('promotions')
       .select('*')
@@ -108,9 +109,10 @@ serve(async (req) => {
         // Calculate expiry
         let expiresText = '';
         if (newestPromo.end_date) {
-          const endDate = new Date(newestPromo.end_date);
-          const daysLeft = Math.ceil((endDate.getTime() - Date.now()) / (1000 * 60 * 60 * 24));
-          if (daysLeft > 0 && daysLeft <= 14) {
+          const daysLeft = daysUntil(newestPromo.end_date);
+          if (daysLeft === 0) {
+            expiresText = ' Ends today!';
+          } else if (daysLeft > 0 && daysLeft <= 14) {
             expiresText = ` Ends in ${daysLeft} day${daysLeft === 1 ? '' : 's'}!`;
           }
         }
@@ -151,7 +153,7 @@ serve(async (req) => {
 
             await resend.emails.send({
               from: "Harris Boat Works <noreply@mercuryrepower.ca>",
-              replyTo: "info@harrisboatworks.ca",
+              reply_to: "info@harrisboatworks.ca",
               to: [subscription.customer_email],
               subject: `New promotion: ${newestPromo.name} | Harris Boat Works`,
               html,

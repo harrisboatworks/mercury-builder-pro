@@ -15,10 +15,13 @@ import {
   getFinancingTermOptions,
   getMotorCalculatorApr,
   FINANCING_MINIMUM,
+  isUsableFinancingRate,
+  formatSpecialFinancingLabel,
 } from '@/lib/finance';
 import { FormErrorMessage, FieldValidationIndicator } from './FormErrorMessage';
 import { MobileFormNavigation } from './MobileFormNavigation';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
+import { financingAmountToFinance, FINANCING_PRICE_BASIS_ALL_IN_AFTER_TRADE } from '@/lib/financing-purchase';
 
 export function PurchaseDetailsStep() {
   const { state, dispatch } = useFinancing();
@@ -44,12 +47,17 @@ export function PurchaseDetailsStep() {
       amountToFinance: state.purchaseDetails?.amountToFinance || 0,
       preferredTerm: state.purchaseDetails?.preferredTerm || String(getFinancingTermOptions(state.purchaseDetails?.motorPrice || 0)[1]) as '24' | '36' | '48' | '60' | '72' | '84' | '120' | '180' | '240',
       promoOption: state.purchaseDetails?.promoOption || null,
-      promoRate: state.purchaseDetails?.promoRate || null,
+      promoRate: isUsableFinancingRate(state.purchaseDetails?.promoRate)
+        ? state.purchaseDetails.promoRate
+        : null,
       promoTerm: state.purchaseDetails?.promoTerm || null,
       promoValue: state.purchaseDetails?.promoValue || null,
       promoName: state.purchaseDetails?.promoName || null,
       promoSavings: state.purchaseDetails?.promoSavings ?? null,
       promoCombinationMode: state.purchaseDetails?.promoCombinationMode || null,
+      priceBasis: state.purchaseDetails?.priceBasis,
+      includedTradeInValue: state.purchaseDetails?.includedTradeInValue ?? state.purchaseDetails?.tradeInValue ?? 0,
+      preTradeSubtotal: state.purchaseDetails?.preTradeSubtotal,
     },
   });
 
@@ -58,7 +66,8 @@ export function PurchaseDetailsStep() {
   const downPayment = watch('downPayment');
   const tradeInValue = watch('tradeInValue') || 0;
   const preferredTerm = watch('preferredTerm');
-  const amountToFinance = Math.max(0, motorPrice - downPayment - tradeInValue);
+  const priceBasis = watch('priceBasis') || state.purchaseDetails?.priceBasis;
+  const amountToFinance = financingAmountToFinance(motorPrice, downPayment, tradeInValue, priceBasis, { includedTradeInValue: watch('includedTradeInValue'), preTradeSubtotal: watch('preTradeSubtotal') });
 
   // Keep the derived amount inside react-hook-form as well as on screen.
   // Without this synchronization the schema continues validating the initial
@@ -123,7 +132,7 @@ export function PurchaseDetailsStep() {
 
   // Check if special financing is still eligible
   const isEligibleForSpecialFinancing = amountToFinance >= FINANCING_MINIMUM;
-  const hasSpecialFinancing = isPromoStillActive && promoOption === 'special_financing' && promoRate;
+  const hasSpecialFinancing = isPromoStillActive && promoOption === 'special_financing' && isUsableFinancingRate(promoRate);
 
   // Sync local state with form
   useEffect(() => {
@@ -143,6 +152,7 @@ export function PurchaseDetailsStep() {
       payload: {
         ...data,
         amountToFinance,
+        priceBasis,
         // Preserve promo details
         promoOption,
         promoRate,
@@ -244,7 +254,7 @@ export function PurchaseDetailsStep() {
       )}
 
       {/* Promo Status Banners */}
-      {isPromoStillActive && promoOption === 'special_financing' && promoRate && (
+      {hasSpecialFinancing && (
         <div className={`rounded-lg p-4 flex items-start gap-3 ${
           isEligibleForSpecialFinancing
             ? 'bg-green-50 border border-green-200'
@@ -257,7 +267,7 @@ export function PurchaseDetailsStep() {
             {isEligibleForSpecialFinancing ? (
               <>
                 <p className="text-sm font-semibold text-green-800">
-                  Special Financing: {promoRate}% APR for {promoTerm} months
+                  Special Financing: {formatSpecialFinancingLabel(Number(promoRate), promoTerm)}
                 </p>
                 <p className="text-xs text-green-700 mt-0.5">
                   Locked in from your Mercury promotion selection
@@ -432,7 +442,7 @@ export function PurchaseDetailsStep() {
       </div>}
 
       {/* Trade-In Value */}
-      {tradeInValue > 0 && (
+      {(tradeInValue > 0 || (state.purchaseDetails?.tradeInValue || 0) > 0) && (
         <div className="space-y-2 animate-fade-in">
           <Label htmlFor="tradeInValue">Trade-In Value (Optional)</Label>
           <div className="relative">
@@ -453,7 +463,9 @@ export function PurchaseDetailsStep() {
           </div>
           <FormErrorMessage error={errors.tradeInValue?.message} field="Trade-in value" />
           <p className="text-sm text-muted-foreground font-light">
-            {money(tradeInValue)} credit applied
+            {priceBasis === FINANCING_PRICE_BASIS_ALL_IN_AFTER_TRADE
+              ? `${money(tradeInValue)} trade credit; the amount to finance includes the corresponding HST savings`
+              : `${money(tradeInValue)} credit applied`}
           </p>
         </div>
       )}

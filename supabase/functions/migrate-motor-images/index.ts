@@ -1,5 +1,6 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
+import { requireAdmin } from "../_shared/admin-auth.ts";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -39,6 +40,9 @@ serve(async (req) => {
   if (req.method === 'OPTIONS') {
     return new Response('ok', { headers: corsHeaders })
   }
+
+  const authResult = await requireAdmin(req, corsHeaders);
+  if (authResult instanceof Response) return authResult;
 
   try {
     const supabaseUrl = Deno.env.get('SUPABASE_URL')!
@@ -215,7 +219,8 @@ serve(async (req) => {
 
         } catch (error) {
           attempts++;
-          console.error(`✗ Attempt ${attempts} failed for ${motor.model}: ${error.message}`)
+          const errorMessage = error instanceof Error ? error.message : String(error)
+          console.error(`✗ Attempt ${attempts} failed for ${motor.model}: ${errorMessage}`)
           
           if (attempts >= maxAttempts) {
             failed++;
@@ -223,7 +228,7 @@ serve(async (req) => {
               id: motor.id,
               model: motor.model,
               status: 'failed',
-              error: error.message,
+              error: errorMessage,
               attempts
             })
           } else {
@@ -252,7 +257,7 @@ serve(async (req) => {
     console.error('Migration error:', error)
     return new Response(JSON.stringify({
       success: false,
-      error: error.message
+      error: error instanceof Error ? error.message : String(error)
     }), {
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
       status: 500,

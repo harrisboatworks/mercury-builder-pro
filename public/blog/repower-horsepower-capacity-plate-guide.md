@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/repower-horsepower-capacity-plate-guide.md
-last_updated: 2026-08-02
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "How to Choose Repower Horsepower From Your Capacity Plate"
 description: "Use the boat manufacturer's power limit, motor weight, transom condition, load, steering, and use to choose repower horsepower without guessing."
 category: "Repower"
 date_published: 2026-06-06
-date_modified: 2026-08-02
+date_modified: 2026-09-11
 keywords: ["boat capacity plate","maximum horsepower boat","repower horsepower guide","transport canada capacity plate","mercury repower ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,9 +25,11 @@ revenue_driver: repower
 
 **Category:** Repower  
 **Published:** 2026-06-06  
-**Last reviewed:** 2026-08-02  
+**Last reviewed:** 2026-09-11  
 **Read time:** 4 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/repower-horsepower-capacity-plate-guide
+
+*Hero graphic: a planning checklist, not a reproduction of a regulatory capacity label.*
 
 ## Quick answer
 
@@ -45,9 +47,14 @@ For a field-by-field explanation, start with [how to read a Canadian boat capaci
 
 Most powered pleasure craft under 24 metres require a visible Canadian compliance notice, subject to the exceptions in the Small Vessel Regulations. On an outboard-powered pleasure craft up to 6 metres, the notice also shows recommended maximum safe engine power, people, and load limits.
 
-![Labelled examples of a Canadian capacity plate and compliance notice showing maximum horsepower, load, and persons capacity](/lovable-uploads/canadian-capacity-plate-compliance-notice.jpg)
+**The two formats you will see**
 
-*Two common formats: the Coast Guard capacity plate (left) and the Canadian Compliance Notice (right). Yours will look like one of these.*
+| Format | What it carries |
+|---|---|
+| Coast Guard capacity plate | The older Canadian format. Maximum recommended safe engine power, maximum load, and maximum number of people. |
+| Canadian Compliance Notice | The current bilingual format. The same recommended maximum safe limits on an outboard-powered pleasure craft up to 6 metres, plus the manufacturer or importer block and the declaration of compliance. |
+
+Yours will look like one of these. Read the numbers on your own hull, and never copy a limit from a similar model. Format and samples: [Transport Canada, compliance notices for pleasure and non-pleasure craft](https://tc.canada.ca/en/marine-transportation/marine-safety/compliance-notices-pleasure-non-pleasure-craft).
 
 The plate lists three things relevant to this conversation:
 
@@ -55,7 +62,7 @@ The plate lists three things relevant to this conversation:
 2. **Maximum load** stated on the notice
 3. **Maximum number of people** stated on the notice
 
-Do not describe the power figure as an automatic criminal-law ceiling or promise that one insurance result applies to everyone. It is the manufacturer's recommended maximum safe limit. Exceeding it can still create serious safety, coverage, warranty, liability, financing, and resale problems, so HBW will not use an undocumented oversized setup as the basis for a recommendation.
+The power figure is the manufacturer's recommended maximum safe limit, not an automatic criminal-law ceiling, and insurance outcomes are not the same for every owner. Exceeding it can still create serious safety, coverage, warranty, liability, financing, and resale problems, so HBW will not use an undocumented oversized setup as the basis for a recommendation.
 
 ---
 
@@ -77,7 +84,7 @@ A few things to think about:
 
 ## The right question isn't "what's the maximum", it's "what do I actually need"
 
-When we talk through a repower with you, we're asking:
+Important repower questions include:
 
 - What do you use the boat for, and with how many people?
 - What's your current motor, and what's the complaint, not enough power, reliability, fuel economy?
@@ -113,14 +120,14 @@ That sequence separates this article from the plate decoder: the notice supplies
 
 ## Get a proper recommendation before you buy
 
-The quote configurator at mercuryrepower.ca lets you select by horsepower range and [see installed pricing](/blog/mercury-repower-cost-ontario-2026-cad). If you're not sure which range fits your hull, call us or submit a service request, we'd rather give you the right motor the first time than have a conversation about it later.
+The quote configurator at mercuryrepower.ca lets you select by horsepower range and [see installed pricing](/blog/mercury-repower-cost-ontario-2026-cad).
 
 HBW's standard repower handoff includes an on-water test on Rice Lake before pickup when safe seasonal conditions allow.
 
 ---
 
 **Ready to figure out the right motor for your hull?**
-Build your quote at [mercuryrepower.ca](https://mercuryrepower.ca) or call 905-342-2153.
+Build your quote at [mercuryrepower.ca](https://mercuryrepower.ca).
 
 ## FAQs
 

@@ -4,6 +4,7 @@ import {
   getFirstPromotionRebateForHP,
   getTotalPromotionDiscount,
 } from '@/lib/promotion-discounts';
+import { activePromotionDateOrFilters } from '@/lib/quote-utils';
 
 export interface PromoOption {
   id: string;
@@ -46,7 +47,7 @@ export function useActivePromotions(options?: { forceRefresh?: boolean }) {
   useEffect(() => {
     async function fetchPromotions() {
       try {
-        const today = new Date().toISOString().split('T')[0];
+        const { startOr, endOr } = activePromotionDateOrFilters();
         // Check cache first (skipped when forceRefresh is true)
         const now = Date.now();
         if (!forceRefresh && cachedPromotions && (now - cacheTimestamp) < CACHE_DURATION) {
@@ -69,8 +70,8 @@ export function useActivePromotions(options?: { forceRefresh?: boolean }) {
             promo_options
           `)
           .eq('is_active', true)
-          .or(`start_date.is.null,start_date.lte.${today}`)
-          .or(`end_date.is.null,end_date.gte.${today}`)
+          .or(startOr)
+          .or(endOr)
           .order('priority', { ascending: false });
 
         if (error) {

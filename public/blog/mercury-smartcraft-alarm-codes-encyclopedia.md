@@ -1,17 +1,17 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-smartcraft-alarm-codes-encyclopedia.md
-last_updated: 2026-08-02
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
-title: "Mercury SmartCraft Alarm Codes Ontario"
-description: "Mercury SmartCraft alarm code reference from an Ontario Premier dealer. Top 10 codes by service frequency, spring first-start patterns."
+title: "Mercury Alarm Codes List Ontario"
+description: "Mercury alarm codes explained: SmartCraft SYS FAULT, warning horns, the correct owner's manual, and why dismissing an alarm doesn't fix its cause."
 category: "Troubleshooting"
 date_published: 2026-02-06
-date_modified: 2026-08-02
+date_modified: 2026-09-11
 keywords: ["mercury smartcraft alarm codes","mercury smartcraft alarm codes list","mercury smartcraft alarm codes meanings","mercury alarm code list","smartcraft fault codes mercury","mercury outboard error codes","mercury smartcraft diagnostic","mercury outboard warning lights"]
 author: Harris Boat Works
 content_type: blog_article
@@ -19,13 +19,13 @@ language: en-CA
 revenue_driver: service
 ---
 
-# Mercury SmartCraft Alarm Codes Ontario
+# Mercury Alarm Codes List Ontario
 
-> Mercury SmartCraft alarm code reference from an Ontario Premier dealer. Top 10 codes by service frequency, spring first-start patterns.
+> Mercury alarm codes explained: SmartCraft SYS FAULT, warning horns, the correct owner's manual, and why dismissing an alarm doesn't fix its cause.
 
 **Category:** Troubleshooting  
 **Published:** 2026-02-06  
-**Last reviewed:** 2026-08-02  
+**Last reviewed:** 2026-09-11  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-smartcraft-alarm-codes-encyclopedia
 
@@ -35,7 +35,7 @@ If the display shows a complete number such as **621-5**, start with the [Mercur
 
 A Mercury alarm fires and most owners do one of two things. Either they keep running the boat (bad idea, that's what Guardian mode is trying to prevent) or they shut it down at the dock and Google the code (better idea, but most code lists online are out of date or apply to engine families you don't own).
 
-This page is the version we use ourselves at HBW. Top 10 codes by service frequency, the patterns we see at spring first-start, what Guardian mode actually does, and the customer-side calls that turn out to be misdiagnoses every time. We have Mercury CDS (Computer Diagnostic System) at our dock and SmartCraft Connect Mobile on our phones. When you call HBW with an alarm code, we already know what 80% of them mean.
+This guide explains alarm information, spring first-start checks, and Guardian mode. Use the manual for your exact engine to interpret an alarm. We have Mercury CDS (Computer Diagnostic System) at our dock and SmartCraft Connect Mobile on our phones. For an in-shop diagnosis, record the exact display or fault text, the horn pattern, RPM or load when it happened, and the engine serial number. Those details help the technician identify the next diagnostic step.
 
 ## What HBW asks first when you call
 
@@ -77,7 +77,7 @@ These are ranked by what comes through our service bays, not by Mercury's SmartC
 
 April and May are our highest-volume service months. The alarms cluster predictably (our shop pattern, not an official Mercury ranking).
 
-**#1: Water in Fuel (4 beeps every 2 minutes).** Phase separation from E10 fuel that sat for 5-6 months. Fix: drain the water-separating filter, refill with fresh fuel (ideally HBW's ethanol-free 89), restart.
+**#1: Water in Fuel (4 beeps every 2 minutes).** Treat this as a water-in-fuel alert, not a confirmed tank diagnosis. Phase-separated E10 can leave water and ethanol below gasoline with reduced octane, but a filter drain alone does not prove the tank is clean. Have the tank and fuel condition checked, follow the serial-specific filter procedure, and correct the contamination source before restarting. Fresh fuel or stabilizer does not reverse phase separation. See [Mercury fuel basics](https://www.mercurymarine.com/ca/en/parts-and-service/maintenance/maintenance-made-easy/fuel-basics).
 
 **#2: Low battery voltage / battery alarm.** Battery sat all winter, sulphated. Fix: charge it first, then load or conductance test; replace it if it fails rated capacity or cannot hold charge, or if it does not meet Mercury's spec for the motor (a 150 FourStroke calls for 1000 MCA / 800 CCA; V10 and V12 Verado require AGM or lithium marine cranking batteries).
 
@@ -97,7 +97,7 @@ Fix depends on the cause: purge and inspect the oil delivery lines and cap first
 - **Water in fuel / fuel quality alarms:** same E10 phase-separation; water or contaminants in the fuel must be filtered and drained promptly, because continued running with water in fuel can damage the engine.
 - **Fuel-pressure / fuel-system Guardian faults:** low-pressure or high-pressure fuel pump weakness, fuel rail pressure sensor drift, or fuel filter restriction.
 
-Note: any older Verado content referencing "supercharger codes" is out of date.
+Current V8/V10/V12 Verados are naturally aspirated. Older supercharged inline-six Verados have different systems and may have supercharger-related faults; use the manual and diagnostics for the actual engine. Stopping new production does not make that service information obsolete.
 
 ## Ontario boater alarm patterns
 
@@ -129,6 +129,8 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine 
 
 - Mercury Marine Universal Fault Code reference (publicly available subset, Codes 1-247)
 - Mercury Marine Owner's Manuals: [mercurymarine.com/manuals](https://www.mercurymarine.com/en/us/owners/manuals/)
+- [Mercury Canada fuel basics](https://www.mercurymarine.com/ca/en/parts-and-service/maintenance/maintenance-made-easy/fuel-basics)
+- [Mercury 85th anniversary timeline](https://www.mercurymarine.com/uk/en/about-us/85th-anniversary)
 - CDI Electronics Troubleshooting Guide (7th Edition)
 - HBW shop-floor data: 2026 spring service-ticket distribution
 
@@ -138,7 +140,7 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine 
 
 ### What is the most common Mercury alarm code at spring first-start?
 
-Water in Fuel (the 4-beeps-every-2-minutes warning) is the most common spring first-start alarm we see at HBW. The cause is typically phase separation from E10 fuel that sat untreated through winter storage, or a clogged 10-micron water-separating fuel filter. Drain the filter, replace if necessary, refill with fresh fuel (ideally ethanol-free).
+Water in Fuel (the 4-beeps-every-2-minutes warning) is the most common spring first-start alarm we see at HBW. That alert is not itself a confirmed tank diagnosis. Have the tank and fuel condition checked, follow the serial-specific filter procedure, and correct the contamination source before restarting. A filter drain or a refill does not reverse phase separation. See Mercury's Canadian fuel guide.
 
 ### Does HBW have Mercury CDS dealer software?
 
@@ -158,15 +160,31 @@ Yes. Anchor mud, zebra mussel buildup, weed debris, or a wasp nest in the tellta
 
 ### Are current Mercury Verado V8 and V10 outboards supercharged?
 
-No. Current Verado V8 (250-300 HP), V10 (350-425 HP), and V12 (600 HP) are all naturally aspirated. The older inline-6 Verado was supercharged but is no longer in production.
+Current V8/V10/V12 Verados are naturally aspirated. Older supercharged inline-six Verados have different systems and may have supercharger-related faults; use the manual and diagnostics for the actual engine. Those older engines are still in service, so their information is not obsolete.
+
+### What does SYS FAULT mean on a Mercury SmartCraft display?
+
+SYS FAULT means the system has detected a problem; the message alone isn't a diagnosis. Read the full warning and follow its instructions first. Once the boat is safe, photograph the display and note the engine serial number and what was happening when the alarm sounded. Those details help a Mercury technician interpret the fault. For an HBW diagnostic appointment in Gores Landing, call 905-342-2153.
+
+### Is there a Mercury 4-stroke beep code PDF?
+
+Start with the digital owner's manual for your exact engine, available through Mercury Marine's owner-manual lookup. Use the serial number on the outboard's transom bracket to find it. Warning-horn patterns and responses vary by engine family and model year, so a generic beep-code PDF may describe a different motor. This guide is a practical reference, not a replacement for that manual.
+
+### How do you reset a Mercury SmartCraft alarm?
+
+Dismissing a warning or restarting the engine doesn't prove the fault is fixed. Follow the warning response in your engine and display manuals, and correct the cause before trying to resume normal operation. Procedures for acknowledging a message, resetting Guardian operation, and clearing diagnostic history are different and depend on the equipment. If the warning persists or you can't identify its cause, have a Mercury dealer diagnose it.
+
+### Why is my Mercury outboard alarm sounding when no code is showing?
+
+A warning horn can alert you even without a display that shows fault text. Follow the warning-system instructions in the owner's manual for your engine; no visible code doesn't mean it's safe to keep running. Take the required action first and record the horn pattern only when safe. For an overheating or low-oil-pressure warning, stop the engine as directed. Don't treat a visible telltale stream or a normal oil level alone as proof that restarting is safe.
 
 ## Related guides
 
 - [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide), choosing the right propeller
 - [Mercury Outboard Won't Start (Ontario Dealer Guide, 2026)](/blog/mercury-outboard-wont-start-troubleshooting), won't-start troubleshooting
-- [Mercury Won't Start After Sitting: Fixes](/blog/mercury-outboard-wont-start-after-sitting), won't-start after sitting fixes
 - [Mercury Outboard Overheating at High Speed: What to Check](/blog/mercury-outboard-overheat-high-speed), overheating at high speed
 - [Mercury Overheating at Idle Fix](/blog/mercury-outboard-overheating-at-idle-fix-ontario), overheating at idle fixes
+- [Mercury Overheating Emergency Guide](/blog/outboard-overheating-emergency-guide), on-water overheating emergency guide
 
 ## Next steps
 

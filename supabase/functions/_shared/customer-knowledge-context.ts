@@ -7,6 +7,7 @@ import {
   type PromotionRecord,
 } from "./promotion-context.ts";
 import { MERCURY_TECHNICAL_FACTS_VERSION } from "./verified-mercury-technical-facts.ts";
+import { activePromotionDateOrFilters, dealerToday } from "./promo-dates.ts";
 
 export const CUSTOMER_MOTOR_SELECT = [
   "id",
@@ -363,13 +364,13 @@ export async function fetchCustomerMotors(supabase: SupabaseLike): Promise<Custo
 }
 
 export async function fetchActivePromotions(supabase: SupabaseLike): Promise<PromotionRecord[]> {
-  const today = new Date().toISOString().slice(0, 10);
+  const { startOr, endOr } = activePromotionDateOrFilters();
   const { data, error } = await supabase
     .from("promotions")
     .select(ACTIVE_PROMOTION_SELECT)
     .eq("is_active", true)
-    .or(`start_date.is.null,start_date.lte.${today}`)
-    .or(`end_date.is.null,end_date.gte.${today}`)
+    .or(startOr)
+    .or(endOr)
     .order("priority", { ascending: false })
     .limit(10);
   if (error) throw new Error(`promotions query failed: ${error.message || error}`);
@@ -377,7 +378,7 @@ export async function fetchActivePromotions(supabase: SupabaseLike): Promise<Pro
 }
 
 export async function fetchActiveFinancing(supabase: SupabaseLike): Promise<FinancingRecord[]> {
-  const today = new Date().toISOString().slice(0, 10);
+  const today = dealerToday();
   const { data, error } = await supabase
     .from("financing_options")
     .select(ACTIVE_FINANCING_SELECT)
@@ -488,20 +489,24 @@ function formatHours(profile: PublishedBusinessProfile): string {
   return parts.join("; ");
 }
 
-export function formatBusinessContext(profile: PublishedBusinessProfile): string {
+export function formatBusinessContext(
+  profile: PublishedBusinessProfile,
+  source: "published" | "fallback" = "published",
+): string {
   const exclusions = Object.entries(profile.productExclusions || {})
     .map(([key, value]) => `- ${key}: ${value.policy || "policy"} — ${value.reason || "See the published site policy."}`)
     .join("\n");
-  return `## PUBLISHED BUSINESS PROFILE (live ${BRAND_PROFILE_URL})
+  return `${source === "published"
+    ? `## PUBLISHED BUSINESS PROFILE (live ${BRAND_PROFILE_URL})`
+    : "## FALLBACK BUSINESS PROFILE (verified stable facts; current hours unavailable)"}
 - Business: ${profile.name || "Harris Boat Works"}; founded ${profile.founded || 1947}; Mercury dealer since ${profile.mercuryDealerSince || 1965}
 - Address: ${addressLine(profile)}
 - Service area: ${profile.geography?.primaryServiceArea || "Ontario, Canada"}
 - Phone: ${profile.contact?.phoneDisplay || profile.contact?.phone || "(905) 342-2153"}
 - Email: ${profile.contact?.email || "info@harrisboatworks.ca"}
-- Hours: ${formatHours(profile)}
-- Currency: ${profile.currency || "CAD"}
+${source === "published" ? `- Hours: ${formatHours(profile)}\n` : ""}- Currency: ${profile.currency || "CAD"}
 - Services: ${(profile.services || []).join("; ")}
-- Published policy boundaries:
+- ${source === "published" ? "Published policy" : "Policy"} boundaries:
 ${exclusions || "- See the current website for policy boundaries."}
 - Profile last updated: ${profile.lastUpdated || "fallback profile"}`;
 }

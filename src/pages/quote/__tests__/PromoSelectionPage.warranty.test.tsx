@@ -160,7 +160,7 @@ describe('PromoSelectionPage — warranty copy + saved-quote contract', () => {
 
     render(<PromoSelectionPage />);
 
-    fireEvent.click(screen.getByRole('button', { name: /Cash Purchase/i }));
+    fireEvent.click(screen.getByRole('radio', { name: /Cash Purchase/i }));
 
     fireEvent.click(screen.getByRole('button', { name: /Continue to Quote/i }));
 
@@ -192,7 +192,7 @@ describe('PromoSelectionPage — warranty copy + saved-quote contract', () => {
 
     render(<PromoSelectionPage />);
 
-    fireEvent.click(screen.getByRole('button', { name: /Cash Purchase/i }));
+    fireEvent.click(screen.getByRole('radio', { name: /Cash Purchase/i }));
     fireEvent.click(screen.getByRole('button', { name: /Continue to Quote/i }));
 
     const warrantyDispatches = dispatchMock.mock.calls
@@ -216,7 +216,7 @@ describe('PromoSelectionPage — warranty copy + saved-quote contract', () => {
 
     render(<PromoSelectionPage />);
 
-    fireEvent.click(screen.getByRole('button', { name: /Cash Purchase/i }));
+    fireEvent.click(screen.getByRole('radio', { name: /Cash Purchase/i }));
     fireEvent.click(screen.getByRole('button', { name: /Continue to Quote/i }));
 
     const warrantyDispatches = dispatchMock.mock.calls
@@ -234,7 +234,7 @@ describe('PromoSelectionPage — warranty copy + saved-quote contract', () => {
 
     render(<PromoSelectionPage />);
 
-    fireEvent.click(screen.getByRole('button', { name: /Promotional Financing/i }));
+    fireEvent.click(screen.getByRole('radio', { name: /Promotional Financing/i }));
 
     const continueButton = screen.getByRole('button', { name: /Continue to Quote/i });
     await waitFor(() => expect(continueButton).toBeEnabled());
@@ -254,6 +254,23 @@ describe('PromoSelectionPage — warranty copy + saved-quote contract', () => {
     expect(navigateMock).toHaveBeenCalledWith('/quote/summary');
   });
 
+  it.each([null, { type: 'choose_one', options: [] }])(
+    'keeps cash selection available without structured promotion choices (%j)',
+    (promoOptions) => {
+      currentPromotions = [makePromo({ promo_options: promoOptions })];
+      currentQuoteState = {
+        ...baseQuoteState,
+        tradeInInfo: { hasTradeIn: true, estimatedValue: 3725 },
+      };
+      render(<PromoSelectionPage />);
+      expect(navigateMock).not.toHaveBeenCalled();
+      fireEvent.click(screen.getByRole('radio', { name: /Cash Purchase/i }));
+      fireEvent.click(screen.getByRole('button', { name: /Continue to Quote/i }));
+      expect(navigateMock).toHaveBeenCalledExactlyOnceWith('/quote/summary');
+      expect(dispatchMock).toHaveBeenCalledWith({ type: 'SET_PAYMENT_METHOD', payload: 'cash_purchase' });
+    },
+  );
+
   it('keeps a layered promotion step visible for optional financing', () => {
     currentPromotions = [makePromo({
       warranty_extra_years: 0,
@@ -266,9 +283,9 @@ describe('PromoSelectionPage — warranty copy + saved-quote contract', () => {
     render(<PromoSelectionPage />);
 
     expect(screen.getByText(/Factory Rebate: \$500 auto-applied/i)).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: /Cash Purchase/i })).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: /Promotional Financing/i })).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: /^Standard TD Financing/i })).toBeInTheDocument();
+    expect(screen.getByRole('radio', { name: /Cash Purchase/i })).toBeInTheDocument();
+    expect(screen.getByRole('radio', { name: /Promotional Financing/i })).toBeInTheDocument();
+    expect(screen.getByRole('radio', { name: /^Standard TD Financing/i })).toBeInTheDocument();
     expect(navigateMock).not.toHaveBeenCalledWith('/quote/summary', { replace: true });
   });
 
@@ -282,7 +299,7 @@ describe('PromoSelectionPage — warranty copy + saved-quote contract', () => {
     })];
 
     render(<PromoSelectionPage />);
-    fireEvent.click(screen.getByRole('button', { name: /Cash Purchase/i }));
+    fireEvent.click(screen.getByRole('radio', { name: /Cash Purchase/i }));
 
     expect(dispatchMock).toHaveBeenCalledWith({
       type: 'SET_PAYMENT_METHOD',
@@ -303,7 +320,7 @@ describe('PromoSelectionPage — warranty copy + saved-quote contract', () => {
     currentPromotions = [makePromo({ warranty_extra_years: 0 })];
 
     render(<PromoSelectionPage />);
-    fireEvent.click(screen.getByRole('button', { name: /^Standard TD Financing/i }));
+    fireEvent.click(screen.getByRole('radio', { name: /^Standard TD Financing/i }));
 
     expect(dispatchMock).toHaveBeenCalledWith({
       type: 'SET_PAYMENT_METHOD',
@@ -322,9 +339,9 @@ describe('PromoSelectionPage — warranty copy + saved-quote contract', () => {
 
     render(<PromoSelectionPage />);
 
-    expect(screen.getByRole('button', { name: /Cash Purchase/i })).toBeInTheDocument();
-    expect(screen.queryByRole('button', { name: /Promotional Financing/i })).not.toBeInTheDocument();
-    expect(screen.queryByRole('button', { name: /^Standard TD Financing/i })).not.toBeInTheDocument();
+    expect(screen.getByRole('radio', { name: /Cash Purchase/i })).toBeInTheDocument();
+    expect(screen.queryByRole('radio', { name: /Promotional Financing/i })).not.toBeInTheDocument();
+    expect(screen.queryByRole('radio', { name: /^Standard TD Financing/i })).not.toBeInTheDocument();
   });
 
   it('does not use the DealerPlan fee to cross the financing minimum', () => {
@@ -337,9 +354,9 @@ describe('PromoSelectionPage — warranty copy + saved-quote contract', () => {
 
     render(<PromoSelectionPage />);
 
-    expect(screen.getByRole('button', { name: /Cash Purchase/i })).toBeInTheDocument();
-    expect(screen.queryByRole('button', { name: /Promotional Financing/i })).not.toBeInTheDocument();
-    expect(screen.queryByRole('button', { name: /^Standard TD Financing/i })).not.toBeInTheDocument();
+    expect(screen.getByRole('radio', { name: /Cash Purchase/i })).toBeInTheDocument();
+    expect(screen.queryByRole('radio', { name: /Promotional Financing/i })).not.toBeInTheDocument();
+    expect(screen.queryByRole('radio', { name: /^Standard TD Financing/i })).not.toBeInTheDocument();
   });
 
   it('renders a date-only promotion through the advertised local calendar day', () => {

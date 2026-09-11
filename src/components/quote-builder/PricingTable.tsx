@@ -4,6 +4,7 @@ import { LineItemRow } from './LineItemRow';
 import { FinancingCallout } from './FinancingCallout';
 import { type PricingBreakdown } from '@/lib/quote-utils';
 import { FINANCING_MINIMUM } from '@/lib/finance';
+import { groupAccessoryItems } from '@/lib/quote-accessory-groups';
 function formatTradeInDescription(tradeInInfo?: { brand: string; year: number; horsepower: number; model?: string }): string | undefined {
   if (!tradeInInfo) return undefined;
   
@@ -28,6 +29,7 @@ interface PricingTableProps {
     name: string;
     price: number;
     description?: string;
+    category?: 'equipment' | 'installation' | 'protection' | 'custom' | string;
   }>;
   tradeInValue?: number;
   tradeInInfo?: {
@@ -159,16 +161,18 @@ export function PricingTable({
         )}
 
         {/* Accessories & Setup */}
-        {accessoryBreakdown.length > 0 && (
-          <div className="space-y-1 pt-4">
+        {/* Grouped exactly like the customer PDF so both surfaces show the
+            same lines, in the same groups, on every viewport. */}
+        {groupAccessoryItems(accessoryBreakdown).map((group) => (
+          <div key={group.key} className="space-y-1 pt-4">
             <div className="font-sans font-semibold uppercase text-repower-navy-900/65 py-2" style={{ fontSize: 12, letterSpacing: '0.18em' }}>
-              {packageName}
+              {group.title}
             </div>
-            {accessoryBreakdown.map((item, index) => {
+            {group.items.map((item, index) => {
               const isExistingProp = item.name.includes('Use Existing');
               return (
                 <LineItemRow
-                  key={index}
+                  key={`${group.key}-${index}-${item.name}`}
                   label={item.name}
                   amount={item.price}
                   description={item.description}
@@ -177,7 +181,7 @@ export function PricingTable({
               );
             })}
           </div>
-        )}
+        ))}
 
         {/* Your Savings Section - only show if there are savings */}
         {(tradeInValue > 0 || pricing.promoValue > 0) && (
@@ -192,15 +196,15 @@ export function PricingTable({
             {tradeInValue > 0 && (
               <>
                 <LineItemRow
-                  label="Estimated Trade Value"
-                  amount={tradeInValue}
+                  label="Trade-In Credit"
+                  amount={pricing.appliedTradeCredit ?? tradeInValue}
                   isDiscount
                   description={formatTradeInDescription(tradeInInfo)}
                   className="pl-2 border-l-2 border-repower-mercury-red/30"
                 />
                 <div className="pl-2 border-l-2 border-repower-mercury-red/30 py-1">
                   <div className="text-xs text-repower-mercury-red font-medium">
-                    💡 Tax Savings from Trade-In: ${Math.round(tradeInValue * 0.13).toLocaleString()}
+                    💡 Tax Savings from Trade-In: ${Math.round((pricing.tradeTaxSaving ?? (pricing.appliedTradeCredit ?? tradeInValue) * 0.13)).toLocaleString()}
                   </div>
                   <div className="text-xs text-muted-foreground">
                     HST not charged on trade-in portion

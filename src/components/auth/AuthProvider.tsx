@@ -3,6 +3,7 @@ import { User, Session } from '@supabase/supabase-js';
 import { supabase } from '@/integrations/supabase/client';
 import { ErrorBoundary } from '@/components/ErrorBoundary';
 import { SITE_URL } from '@/lib/site';
+import { oauthRedirectUrl } from '@/lib/oauthRedirect';
 
 interface AuthContextType {
   user: User | null;
@@ -116,7 +117,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     const { error } = await supabase.auth.signInWithOAuth({
       provider: 'google',
       options: {
-        redirectTo: redirectTo || `${SITE_URL}/`
+        redirectTo: oauthRedirectUrl(window.location.origin, redirectTo)
       }
     });
     return { error };
@@ -126,7 +127,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     const { error } = await supabase.auth.signInWithOAuth({
       provider: 'facebook',
       options: {
-        redirectTo: redirectTo || `${SITE_URL}/`
+        redirectTo: oauthRedirectUrl(window.location.origin, redirectTo)
       }
     });
     return { error };

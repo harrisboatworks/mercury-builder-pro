@@ -1,6 +1,7 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
 import { requireAdmin } from "../_shared/admin-auth.ts";
+import { dealerToday } from "../_shared/promo-dates.ts";
 
 const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
 const supabaseServiceKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
@@ -107,7 +108,7 @@ serve(async (req: Request): Promise<Response> => {
         .from("promotions")
         .select("end_date, name, bonus_title")
         .eq("is_active", true)
-        .gte("end_date", new Date().toISOString())
+        .gte("end_date", dealerToday())
         .order("priority", { ascending: false })
         .limit(1)
         .single();

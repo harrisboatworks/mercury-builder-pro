@@ -283,7 +283,11 @@ export function FinancialStep() {
                 value={watch('bankName')}
                 onValueChange={(value) => setValue('bankName', value, { shouldValidate: true })}
               >
-                <SelectTrigger>
+                <SelectTrigger
+                  id="bankName"
+                  aria-invalid={Boolean(errors.bankName)}
+                  aria-describedby={errors.bankName ? 'bankName-error' : undefined}
+                >
                   <SelectValue placeholder="Select your bank" />
                 </SelectTrigger>
                 <SelectContent>
@@ -294,7 +298,7 @@ export function FinancialStep() {
                   ))}
                 </SelectContent>
               </Select>
-              <FormErrorMessage error={errors.bankName?.message} field="Bank name" />
+              <FormErrorMessage id="bankName-error" error={errors.bankName?.message} field="Bank name" />
             </div>
 
             <div className="space-y-2">
@@ -303,7 +307,11 @@ export function FinancialStep() {
                 value={watch('accountType')}
                 onValueChange={(value) => setValue('accountType', value as any, { shouldValidate: true })}
               >
-                <SelectTrigger>
+                <SelectTrigger
+                  id="accountType"
+                  aria-invalid={Boolean(errors.accountType)}
+                  aria-describedby={errors.accountType ? 'accountType-error' : undefined}
+                >
                   <SelectValue placeholder="Select account type" />
                 </SelectTrigger>
                 <SelectContent>
@@ -311,7 +319,7 @@ export function FinancialStep() {
                   <SelectItem value="savings">Savings</SelectItem>
                 </SelectContent>
               </Select>
-              <FormErrorMessage error={errors.accountType?.message} field="Account type" />
+              <FormErrorMessage id="accountType-error" error={errors.accountType?.message} field="Account type" />
             </div>
 
             <div className="space-y-2">
@@ -330,7 +338,11 @@ export function FinancialStep() {
                 value={watch('timeWithBank')}
                 onValueChange={(value) => setValue('timeWithBank', value as any, { shouldValidate: true })}
               >
-                <SelectTrigger>
+                <SelectTrigger
+                  id="timeWithBank"
+                  aria-invalid={Boolean(errors.timeWithBank)}
+                  aria-describedby={errors.timeWithBank ? 'timeWithBank-error' : undefined}
+                >
                   <SelectValue placeholder="Select duration" />
                 </SelectTrigger>
                 <SelectContent>
@@ -340,7 +352,7 @@ export function FinancialStep() {
                   <SelectItem value="5+">5+ years</SelectItem>
                 </SelectContent>
               </Select>
-              <FormErrorMessage error={errors.timeWithBank?.message} field="Time with bank" />
+              <FormErrorMessage id="timeWithBank-error" error={errors.timeWithBank?.message} field="Time with bank" />
             </div>
           </div>
 

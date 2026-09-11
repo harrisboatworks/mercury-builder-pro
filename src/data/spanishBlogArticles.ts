@@ -12,24 +12,22 @@ export const spanishBlogArticles: BlogArticle[] = [
     image: '/lovable-uploads/es-guia-comprar-bote-ontario-hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-08-15',
+    dateModified: '2026-09-06',
     publishDate: '2026-04-12',
     category: 'Guía de compra',
     readTime: '12 min',
     keywords: ['guía comprar bote Ontario', 'comprar bote en Canadá', 'primer bote Ontario', 'licencia de navegación Ontario'],
     content: `### Respuesta rápida
 
-Para comprar y operar un bote motorizado en Ontario necesitas dos cosas obligatorias: la Carta de Operador de Embarcaciones de Placer (PCOC/COEP), certificado federal vitalicio cuyo costo varía según el proveedor acreditado, y la Licencia de Embarcaciones de Placer (PCL) para motores de 10 HP o más. Las PCL nuevas, transferidas o renovadas tienen una vigencia de 5 años; la tarifa federal actual es de $24.41 CAD y puede ajustarse anualmente. El seguro no es obligatorio, pero sí muy recomendable. Más abajo encontrarás todo lo que necesitas saber para tomar una buena decisión.
+Para comprar y operar un bote motorizado en Ontario, la Carta de Operador de Embarcaciones de Placer (PCOC/COEP) es la forma más habitual de demostrar la competencia; Transport Canada también acepta otras pruebas en determinados casos. El costo del curso varía según el proveedor acreditado. La Licencia de Embarcaciones de Placer (PCL) aplica según los criterios de la embarcación, incluso para motores de 10 HP o más. Las PCL nuevas, transferidas o renovadas tienen una vigencia de 5 años (el duplicado no renueva la vigencia); al 5 de septiembre de 2026 la tarifa federal es de $24.41 CAD ([tabla oficial](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/fees-service-standards)); actualizar datos o cancelar es gratuito. La tarifa se ajusta cada 1 de abril. El seguro no es obligatorio, pero sí muy recomendable. Más abajo encontrarás todo lo que necesitas saber para tomar una buena decisión.
 
 ---
-
-### Artículo completo
 
 Comprar un bote en Ontario no es complicado, pero tampoco es comprar un electrodoméstico. Hay requisitos legales, costos recurrentes que muchos compradores no anticipan, y decisiones técnicas que afectan si el bote será fácil de usar o una fuente constante de frustraciones.
 
 Esta guía está escrita para compradores hispanohablantes que se acercan al mercado de embarcaciones en Ontario por primera vez, o que regresan después de años sin botar. No asumimos conocimiento previo.
 
-Harris Boat Works lleva 78 años en Rice Lake, Ontario, tercera generación, concesionario Mercury Marine Premier y concesionario Legend Boats. Publicamos esta información porque creemos que un comprador bien informado toma mejores decisiones, y eso es bueno para todos.
+Harris Boat Works lleva 79 años en Rice Lake, Ontario, tercera generación, concesionario Mercury Marine Premier y concesionario Legend Boats. Publicamos esta información porque creemos que un comprador bien informado toma mejores decisiones, y eso es bueno para todos.
 
 ---
 
@@ -37,7 +35,7 @@ Harris Boat Works lleva 78 años en Rice Lake, Ontario, tercera generación, con
 
 ### PCOC, Carta de Operador de Embarcaciones de Placer
 
-La PCOC (en inglés: [Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency), también conocida como "boating licence") es obligatoria para toda persona que opere una embarcación motorizada en Canadá, independientemente de la edad o la potencia del motor.
+La PCOC (en inglés: [Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency), también conocida como "boating licence") es la forma más habitual de demostrar la competencia para manejar una embarcación de recreo motorizada. Transport Canada también acepta otras pruebas en determinados casos.
 
 **Puntos clave:**
 - Es federal, la misma tarjeta es válida en toda provincia y territorio canadiense
@@ -53,7 +51,7 @@ El examen está disponible en inglés y francés en el sitio de Transporte Canad
 
 Además de la PCOC personal, el bote mismo requiere una PCL si tiene un motor de **10 HP (7.5 kW) o más**.
 
-- Las PCL nuevas, transferidas o renovadas tienen una vigencia de **5 años**; la tarifa federal actual es de **$24.41 CAD** y puede ajustarse anualmente
+- Las PCL nuevas, transferidas o renovadas tienen una vigencia de **5 años** (el duplicado no renueva la vigencia); al 5 de septiembre de 2026 la tarifa federal es de **$24.41 CAD** ([tabla oficial](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/fees-service-standards)); actualizar datos o cancelar es gratuito. La tarifa se ajusta cada 1 de abril
 - Anteriormente era gratuita y de renovación variable, confirma el estatus actual en tc.gc.ca
 - La PCL no es lo mismo que el registro de embarcación (que aplica a embarcaciones más grandes o de uso comercial)
 
@@ -104,7 +102,7 @@ En Harris Boat Works manejamos embarcaciones Legend Boats nuevas, precio de inic
 **Ventajas:** precio menor, la depreciación inicial ya ocurrió
 **Desventajas:** puede venir con problemas ocultos, garantía vencida, necesidades de servicio no documentadas
 
-Si compras un bote usado con motor Mercury, en Harris Boat Works podemos revisar y dar servicio a ese motor. Para engine repairs, we only service Mercury and Mercruiser.
+Si compras un bote usado con motor Mercury, en Harris Boat Works podemos revisar y dar servicio a ese motor. Para reparaciones de motor, solamente damos servicio a Mercury y Mercruiser.
 
 Revisa el inventario de usados en harrisboatworks.ca, en promedio ~13 embarcaciones disponibles, precio promedio alrededor de $25,000 CAD (varía por temporada).
 
@@ -112,7 +110,7 @@ Revisa el inventario de usados en harrisboatworks.ca, en promedio ~13 embarcacio
 
 Esta opción a menudo es pasada por alto pero puede ser la más inteligente. Si tienes un casco en buenas condiciones y el motor está al final de su vida útil, reemplazar solo el motor puede costar significativamente menos que comprar un conjunto nuevo, y te da un motor moderno con garantía completa.
 
-Un motor Mercury FourStroke de 115 HP (2026) tiene un precio de referencia de $19,220 CAD MSRP antes de impuestos, pero el precio final depende de la configuración, el rigging y las accesorios. Usa el configurador en **mercuryrepower.ca** para armar tu presupuesto en 3 minutos, sin llamadas telefónicas.
+Un motor Mercury FourStroke de 115 HP (2026) tiene un precio de referencia de $19,030 CAD MSRP (115ELPT FourStroke, 1115F132D) antes de impuestos, pero el precio final depende de la configuración, el rigging y las accesorios. Usa el configurador en **mercuryrepower.ca** para armar tu presupuesto en 3 minutos, sin llamadas telefónicas.
 
 ---
 
@@ -130,7 +128,7 @@ Muchos compradores subestiman los costos recurrentes. Esta tabla usa rangos real
 | Mantenimiento / servicio | $200–$600 CAD |
 | Slip de marina / amarre | $1,000–$3,000+ CAD |
 
-Harris Boat Works realizó **584 invernizaciones** y mantuvo **311 contratos de almacenamiento** en 2025, por lo que tenemos datos reales sobre estos costos, no son estimaciones genéricas de internet.
+Harris Boat Works tiene **584 registros de preparación invernal completados entre agosto y noviembre de 2025**, por lo que tenemos datos reales sobre estos costos, no son estimaciones genéricas de internet.
 
 **Consejo práctico:** No existe un número universal de días para decidir entre rentar y comprar. Compara la tarifa vigente del bote que usarías con tus costos reales de seguro, almacenamiento, mantenimiento e invernización. Consulta la flota, las tarifas y la disponibilidad actuales y reserva en línea en harrisboatworks.ca/rentals.
 
@@ -143,20 +141,20 @@ Harris Boat Works está ubicado en Gores Landing, Ontario, a orillas de Rice Lak
 **Lo que nos diferencia:**
 - Precios publicados en línea, sin juegos de "llame para cotizar"
 - Configurador de presupuesto en **mercuryrepower.ca**, 3 minutos, sin presión
-- 78 años de operación continua en Rice Lake
+- 79 años de operación continua en Rice Lake
 - Acceso a partes Mercury con prioridad de concesionario Premier
 - Técnicos certificados Mercury
 
-Nuestro equipo opera principalmente en inglés, pero somos completamente accesibles para compradores hispanohablantes a través del configurador en línea, el formulario de servicio en hbw.wiki/service, o por teléfono al **905-342-2153**. El configurador en mercuryrepower.ca no tiene barrera de idioma, los precios son claros y el proceso es visual.
+Nuestro equipo responde en inglés. No ofrecemos servicio en español, pero los compradores hispanohablantes son bienvenidos: puedes contactarnos por el configurador en línea, el formulario de servicio en hbw.wiki/service, o por teléfono al **905-342-2153**, y te responderemos en inglés. El configurador en mercuryrepower.ca es visual y muestra los precios claramente en dólares canadienses, así que es fácil de usar en cualquier idioma.
 
-Si tienes preguntas específicas, puedes escribir en español en el formulario de hbw.wiki/service y haremos lo posible por responder de manera útil.
+Si tienes preguntas específicas, envíalas por el formulario de hbw.wiki/service. Te responderemos en inglés; si lo prefieres, usa Google Translate o pídele ayuda a un familiar bilingüe.
 
 ---
 
 ## Preguntas frecuentes (FAQ)
 
 **¿Necesito licencia de conducir para manejar un bote en Ontario?**
-No una de auto, pero sí necesitas la PCOC (Carta de Operador de Embarcaciones de Placer). Se obtiene en línea y es válida de por vida.
+No una de auto. Para manejar una embarcación de recreo motorizada necesita una prueba de competencia reconocida; la PCOC (Carta de Operador de Embarcaciones de Placer) es la forma más habitual. Se obtiene en línea y es válida de por vida.
 
 **¿Es obligatorio el seguro para embarcaciones en Ontario?**
 No es legalmente obligatorio como en los autos, pero es altamente recomendable. Un accidente sin seguro puede resultar en responsabilidad civil significativa.
@@ -175,19 +173,19 @@ Sí, eso es exactamente para lo que existe mercuryrepower.ca. Construye tu presu
 
 ---
 
-## CTA, Próximos pasos
+## Próximos pasos
 
 **¿Listo para configurar tu motor o explorar opciones?**
 Usa el configurador en **mercuryrepower.ca**, precios reales, sin llamadas telefónicas, sin presión.
 
-¿Preguntas sobre inventario o servicio? Escríbenos en **hbw.wiki/service** (se aceptan mensajes en español) o llama al **905-342-2153**.
+¿Preguntas sobre inventario o servicio? Escríbenos en **hbw.wiki/service** (puedes escribirnos en español; te responderemos en inglés) o llama al **905-342-2153**.
 
 Harris Boat Works
 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 harrisboatworks.ca
 ---`,
     faqs: [
-      { question: '¿Necesito una licencia para conducir un bote en Ontario?', answer: 'Sí. Toda persona que opere una embarcación motorizada necesita la PCOC (Pleasure Craft Operator Card). Se obtiene una sola vez y es válida de por vida.' },
+      { question: '¿Necesito una licencia para conducir un bote en Ontario?', answer: 'Para manejar una embarcación de recreo motorizada necesita una prueba de competencia reconocida. La PCOC (Pleasure Craft Operator Card) es la forma más habitual; Transport Canada también acepta otras pruebas en determinados casos. Se obtiene una sola vez y es válida de por vida.' },
       { question: '¿Cuánto cuesta mantener un bote al año?', answer: 'Depende del tamaño y el uso, pero para un bote típico de 16-18 pies, considere entre $3,000 y $7,000 CAD al año incluyendo almacenamiento, combustible, seguro y mantenimiento.' },
       { question: '¿Es mejor comprar nuevo o usado?', answer: 'Si su presupuesto es limitado, un bote usado con un motor Mercury nuevo (remotorización) le da la mejor combinación de valor y confiabilidad.' },
       { question: '¿Puedo obtener un precio sin llamar?', answer: 'Sí. En mercuryrepower.ca puede configurar su motor y ver el precio en dólares canadienses, sin compromiso.' },
@@ -201,7 +199,7 @@ harrisboatworks.ca
     image: '/lovable-uploads/es-guia-pesca-rice-lake-ontario-hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-08-08',
+    dateModified: '2026-09-06',
     publishDate: '2026-04-12',
     category: 'Pesca',
     readTime: '12 min',
@@ -212,11 +210,9 @@ Rice Lake es uno de los mejores lagos para pescar walleye (lucioperca / doré) e
 
 ---
 
-### Artículo completo
-
 Hay muchos lagos en Ontario. Rice Lake no es el más grande ni el más profundo, pero para quienes saben pescar, tiene una reputación que pocos lagos del interior pueden igualar. Walleye abundante, bass de boca grande y pequeña, muskie, perca amarilla, y un acceso práctico desde el área metropolitana de Toronto que lo hace realista para una excursión de un día.
 
-Harris Boat Works lleva 78 años a orillas de este lago, en Gores Landing. Vendemos motores, rentamos botes y damos servicio a embarcaciones aquí. Esta guía la escribimos para pescadores hispanohablantes que quieren aprovechar bien Rice Lake sin perder tiempo buscando información fragmentada en inglés.
+Harris Boat Works lleva 79 años a orillas de este lago, en Gores Landing. Vendemos motores, rentamos botes y damos servicio a embarcaciones aquí. Esta guía la escribimos para pescadores hispanohablantes que quieren aprovechar bien Rice Lake sin perder tiempo buscando información fragmentada en inglés.
 
 ---
 
@@ -350,7 +346,7 @@ Nuestro equipo opera principalmente en inglés. Sin embargo, puedes escribirnos 
 
 ---
 
-## CTA, Reserva tu bote o configura tu próximo motor
+## Reserva tu bote o configura tu próximo motor
 
 **¿Quieres pescar Rice Lake este verano?**
 Llama al **905-342-2153** o visita **harrisboatworks.ca** para disponibilidad de renta.
@@ -358,7 +354,7 @@ Llama al **905-342-2153** o visita **harrisboatworks.ca** para disponibilidad de
 **¿Buscas un motor para tu propio bote?**
 Configura tu presupuesto en **mercuryrepower.ca**, 3 minutos, sin presión.
 
-¿Preguntas? Escríbenos en hbw.wiki/service (se aceptan mensajes en español).
+¿Preguntas? Escríbenos en hbw.wiki/service (puedes escribirnos en español; te responderemos en inglés).
 
 Harris Boat Works
 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
@@ -368,7 +364,7 @@ harrisboatworks.ca | 905-342-2153
       { question: '¿Necesito una licencia de pesca?', answer: 'Sí, si tiene entre 18 y 64 años. Los menores de 18 años (residentes canadienses) están exentos sin condiciones. Los mayores de 65 también están exentos.' },
       { question: '¿Puedo alquilar un bote en Rice Lake?', answer: 'Sí. Harris Boat Works tiene una flota de 9 botes de alquiler. Consulte harrisboatworks.ca.' },
       { question: '¿Qué tan lejos está Rice Lake de Toronto?', answer: 'Aproximadamente 1,5 horas por la 401 Este y luego la 115 Norte.' },
-      { question: '¿Necesito la PCOC (licencia de navegación) para alquilar un bote?', answer: 'Sí. Si usted opera una embarcación motorizada, necesita la Pleasure Craft Operator Card. Si no tiene PCOC, para embarcaciones de alquiler también puede aplicarse el rental boat safety checklist durante el período del alquiler.' },
+      { question: '¿Necesito la PCOC (licencia de navegación) para alquilar un bote?', answer: 'Transport Canada exige una prueba de competencia reconocida para operar una embarcación de recreo motorizada; la Pleasure Craft Operator Card (PCOC) es la prueba más común, no la única. En Harris Boat Works la política de alquiler es más estricta: cada conductor debe presentar una PCOC u otra licencia de operador válida al recoger el bote. La lista de seguridad de alquiler se completa como briefing y no sustituye ese requisito.' },
       { question: '¿Cuáles son las mejores especies para principiantes?', answer: 'La perca amarilla (perch) se pesca todo el año y es la más accesible para principiantes y familias con niños.' },
     ],
   },
@@ -379,14 +375,14 @@ harrisboatworks.ca | 905-342-2153
     image: '/lovable-uploads/es-preparacion-invernal-motor-mercury-hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-06-19',
+    dateModified: '2026-09-06',
     publishDate: '2026-04-12',
     category: 'Mantenimiento',
     readTime: '11 min',
     keywords: ['preparar motor fuera de borda invierno Ontario', 'winterization motor Mercury', 'preparación invernal bote Ontario'],
     content: `### Respuesta rápida
 
-La preparación invernal de un motor Mercury en Ontario cubre seis pasos esenciales: estabilizar el combustible, hacer el fogging (lubricación interna), drenar el aceite de engranajes (gear lube), retirar y almacenar la batería, engrasar las conexiones y puntos de articulación, y hacer un enjuague con agua dulce. Omitir cualquiera de estos pasos puede resultar en una reparación costosa en primavera. Para reservar su preparación invernal, visite hbw.wiki/service.
+La preparación invernal de un motor Mercury en Ontario sigue el manual del modelo y número de serie. Una batería en buen estado puede permanecer a bordo solo si está completamente cargada, desconectada, asegurada y permitida por el plan de almacenamiento aprobado. El manual del modelo/número de serie y el plan de almacenamiento aprobado rigen. Complete hbw.wiki/service y deje el bote en cualquier momento, incluso fuera de horario.
 
 ---
 
@@ -394,15 +390,13 @@ La preparación invernal de un motor Mercury en Ontario cubre seis pasos esencia
 
 El invierno en Ontario es largo. La temporada de navegación termina generalmente entre mediados de octubre y finales de noviembre, el fin de semana de Thanksgiving (segundo lunes de octubre) es con frecuencia la fecha límite psicológica para muchos propietarios. Lo que haga con el motor antes de guardarlo determinará si la primera salida de primavera es un placer o un dolor de cabeza.
 
-Harris Boat Works es una marina familiar de tercera generación en Gores Landing, sobre Rice Lake, en actividad desde 1947. Somos concesionario Mercury Marine Premier y realizamos más de 584 preparaciones invernales por temporada. Sabemos lo que falla cuando los pasos se omiten, lo vemos cada primavera.
+Harris Boat Works es una marina familiar de tercera generación en Gores Landing, sobre Rice Lake, en actividad desde 1947. Somos concesionario Mercury Marine Premier y tenemos 584 registros de preparación invernal completados entre agosto y noviembre de 2025. Sabemos lo que falla cuando los pasos se omiten, lo vemos cada primavera.
 
 ---
 
-<div class="hbw-language-note">
-  <h3>Una nota sobre el idioma</h3>
-  <p>Creamos esta guía en español porque queremos ayudar a la comunidad hispanohablante a disfrutar de la navegación en Ontario, algo que muy pocos concesionarios hacen.</p>
-  <p>Nuestro equipo atiende en inglés. No hablamos español, pero haremos todo lo posible por ayudarle. Le recomendamos traer a un amigo o familiar que hable inglés, o usar una aplicación de traducción en su teléfono. Con paciencia, lo resolvemos juntos.</p>
-</div>
+> **Una nota sobre el idioma**
+> Creamos esta guía en español porque queremos ayudar a la comunidad hispanohablante a disfrutar de la navegación en Ontario, algo que muy pocos concesionarios hacen.
+> Nuestro equipo atiende en inglés. No hablamos español, pero haremos todo lo posible por ayudarle. Le recomendamos traer a un amigo o familiar que hable inglés, o usar una aplicación de traducción en su teléfono. Con paciencia, lo resolvemos juntos.
 
 ---
 
@@ -428,11 +422,9 @@ Si no usa combustible sin etanol, agregue un estabilizante aprobado para motores
 
 ### 2. Lubricación interna (fogging)
 
-El fogging consiste en rociar un aceite protector dentro de los cilindros del motor mientras está en funcionamiento, y luego apagarlo con el aceite todavía en su lugar. Esta película protege las piezas metálicas internas contra la oxidación y la corrosión durante los meses de inactividad.
+La protección interna depende del modelo y del número de serie. Siga el procedimiento del manual Mercury correspondiente; no rocíe aceite en la admisión ni en los cilindros basándose solo en una guía general. Cuando el manual prevé esta protección, la película ayuda a limitar la oxidación y la corrosión durante los meses de inactividad.
 
-Muchos propietarios olvidan o saltan este paso. Lo vemos cada primavera: motores con cilindros oxidados que necesitan reparación cuando un tratamiento de fogging hubiera costado muy poco.
-
-**¿Qué pasa si lo omite?** Oxidación interna, desgaste prematuro, reparación costosa en primavera.
+**¿Qué pasa si omite el procedimiento del manual?** El riesgo depende del motor; el manual del modelo y del número de serie indica qué protección interna corresponde.
 
 ### 3. Drenaje del aceite de engranajes (gear lube)
 
@@ -442,11 +434,11 @@ Al drenar el aceite, observe su color: si sale lechoso o grisáceo, hay infiltra
 
 **¿Qué pasa si lo omite?** Carcasa agrietada por congelación, reparación mayor.
 
-### 4. Batería: retiro y almacenamiento
+### 4. Batería: plan aprobado
 
-No deje la batería en el bote durante el invierno. Las baterías marinas expuestas al frío se descargan rápidamente y pueden sufrir daño permanente. Retírela, limpie los terminales, y guárdela en un lugar protegido del frío, idealmente conectada a un cargador de mantenimiento (*trickle charger*). Una batería bien almacenada dura dos a tres veces más.
+Una batería en buen estado puede permanecer a bordo solo si está completamente cargada, desconectada, asegurada y permitida por el plan de almacenamiento aprobado. El manual del modelo/número de serie y el plan de almacenamiento aprobado rigen. El retiro no es un requisito universal de HBW.
 
-**¿Qué pasa si lo omite?** Batería muerta o dañada permanentemente, reemplazo costoso.
+**¿Qué pasa si la deja conectada?** Las cargas parásitas pueden descargarla.
 
 ### 5. Engrase de conexiones y puntos de articulación
 
@@ -469,7 +461,7 @@ Haga circular agua dulce por el sistema de enfriamiento del motor para eliminar 
 | Estabilizar combustible | Previene degradación y separación de fase | Combustible contaminado, motor no arranca |
 | Fogging (lubricación interna) | Protege cilindros contra corrosión | Oxidación interna, reparación costosa |
 | Drenar gear lube | Detecta y previene daño por agua congelada | Carcasa agrietada, reparación mayor |
-| Retirar batería | Previene descarga y daño por frío | Batería muerta, reemplazo necesario |
+| Plan de batería aprobado | Solo puede permanecer a bordo si está cargada, desconectada, asegurada y permitida | Descarga por cargas parásitas si queda conectada |
 | Engrasar articulaciones | Previene corrosión en cables y puntos de pivote | Piezas trabadas, cables dañados |
 | Enjuague con agua dulce | Elimina depósitos minerales | Corrosión acelerada del sistema de enfriamiento |
 
@@ -479,22 +471,22 @@ Haga circular agua dulce por el sistema de enfriamiento del motor para eliminar 
 
 La mayoría de los propietarios de botes en Ontario sacan su embarcación entre mediados de octubre y finales de noviembre. El fin de semana de Thanksgiving es a menudo la fecha límite psicológica. La ventana de lanzamiento en primavera es generalmente entre mediados de abril y finales de mayo, según la región.
 
-No espere demasiado: los talleres se llenan rápido al inicio y al final de la temporada.
+Complete hbw.wiki/service y deje el bote en cualquier momento, incluso fuera de horario. La marina cierra del 1 de diciembre al 1 de abril.
 
 ---
 
 ## ¿Por qué confiar la preparación invernal a profesionales?
 
-Hacer la preparación invernal usted mismo es posible, pero solo si tiene experiencia, los productos correctos, y no omite ningún paso. Los pasos que más se olvidan son: el fogging, la verificación de infiltración de agua en la caja de engranajes, y el engrase completo de los puntos de articulación.
+Hacer la preparación invernal usted mismo es posible, pero solo si tiene experiencia, los productos correctos y el manual del modelo y del número de serie. Los pasos que más se olvidan son: la protección interna cuando el manual la exige, la verificación de infiltración de agua en la caja de engranajes, y el engrase completo de los puntos de articulación.
 
-En Harris Boat Works realizamos más de 584 preparaciones invernales por temporada. Nuestros técnicos están certificados directamente por [Mercury Marine](https://www.mercurymarine.com/canada/en/) y conocen los motores Mercury a fondo.
+En Harris Boat Works tenemos 584 registros de preparación invernal completados entre agosto y noviembre de 2025. Nuestros técnicos están certificados directamente por [Mercury Marine](https://www.mercurymarine.com/ca/en) y conocen los motores Mercury a fondo.
 
 ---
 
 ## Preguntas frecuentes
 
 **¿Puedo hacer la preparación invernal yo mismo?**
-Sí, si tiene experiencia y los productos correctos, y no omite ningún paso. Los pasos más frecuentemente olvidados son el fogging y el drenaje del gear lube. Si tiene dudas, confíelo a un técnico certificado Mercury.
+Sí, si tiene experiencia, los productos correctos y el manual del modelo y del número de serie. Los pasos más frecuentemente olvidados son la protección interna prevista en el manual y el drenaje del gear lube. Si tiene dudas, confíelo a un técnico certificado Mercury.
 
 **¿Dónde puedo conseguir combustible sin etanol?**
 Harris Boat Works vende combustible sin etanol directamente en el sitio en Gores Landing. Es una de las pocas marinas en Ontario que lo ofrece.
@@ -506,7 +498,7 @@ La forma más fácil es a través de hbw.wiki/service; puede enviarnos su consul
 Los pasos descritos aquí son comunes a la mayoría de los motores fuera de borda Mercury. Los detalles exactos varían según el modelo y el año, siempre consulte el manual del motor o contacte al concesionario para su modelo específico.
 
 **¿Cuándo es el mejor momento para hacer la preparación invernal?**
-Tan pronto como sepa que no va a volver a usar el bote esa temporada. No espere al primer frío, los talleres se llenan hacia finales de octubre.
+Complete hbw.wiki/service y deje el bote en cualquier momento, incluso fuera de horario. La marina cierra del 1 de diciembre al 1 de abril.
 
 **¿Cuánto tiempo tarda la preparación invernal?**
 Depende del motor y el bote. En general, entre dos y cuatro horas en taller.
@@ -527,8 +519,8 @@ Depende del motor y el bote. En general, entre dos y cuatro horas en taller.
 ---`,
     faqs: [
       { question: '¿Cuánto cuesta una preparación invernal profesional?', answer: 'El precio varía según el motor y los servicios requeridos. Contacte a hbw.wiki/service para una estimación.' },
-      { question: '¿Cuándo debo reservar?', answer: 'Idealmente en septiembre o principios de octubre. Los espacios se llenan rápido después de Thanksgiving.' },
-      { question: '¿Harris Boat Works ofrece almacenamiento?', answer: 'Sí. Manejamos 311 contratos de almacenamiento por año, interior y exterior.' },
+      { question: '¿Cuándo debo reservar?', answer: 'Complete hbw.wiki/service y deje el bote en cualquier momento, incluso fuera de horario. La marina cierra del 1 de diciembre al 1 de abril.' },
+      { question: '¿Harris Boat Works ofrece almacenamiento?', answer: 'Sí. HBW ofrece almacenamiento exterior con envoltura retráctil profesional, almacenamiento exterior descubierto y servicio únicamente de envoltura retráctil. No ofrecemos almacenamiento interior ni calefaccionado.' },
       { question: '¿Qué pasa si no hago la preparación invernal?', answer: 'En el mejor caso, problemas para arrancar en primavera. En el peor caso, daño interno severo por corrosión o agua congelada, reparaciones que pueden costar miles de dólares.' },
     ],
   },
@@ -540,7 +532,7 @@ Depende del motor y el bote. En general, entre dos y cuatro horas en taller.
     image: '/lovable-uploads/es-mercury-115-vs-150-comparacion-hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-08-08',
+    dateModified: '2026-09-06',
     publishDate: '2026-04-12',
     category: 'Comparación de motores',
     readTime: '12 min',
@@ -550,8 +542,6 @@ Depende del motor y el bote. En general, entre dos y cuatro horas en taller.
 El Mercury FourStroke 115 HP pesa aproximadamente 163 kg, tiene motor de 2.1 litros y es ideal para botes de 16–19 pies con 2–3 personas. El 150 HP pesa ~206 kg (+44 kg / 96 libras), tiene un motor de 3.0 litros, y brilla en botes de 19–22 pies con cargas de 4–5 personas o en aguas más abiertas como Lake Simcoe. El 150 no es simplemente "35 HP más", es un motor fundamentalmente diferente con más desplazamiento, más torque y más peso. Para la mayoría del uso familiar en Rice Lake y los Kawarthas, el 115 es suficiente. Si tienes carga máxima o cruzas aguas abiertas regularmente, el 150 importa.
 
 ---
-
-### Artículo completo
 
 La pregunta "¿115 o 150?" es de las más comunes en Harris Boat Works. No tiene una respuesta única, depende de tu bote, tu uso típico, y honestamente, de cuánto peso llevas cuando sales al agua.
 
@@ -641,7 +631,7 @@ Si eres pescador de torneo o buscas máxima aceleración en planeado, el Pro XS 
 
 Harris Boat Works publica precios en línea, algo que la mayoría de los concesionarios no hacen. Para ver los precios actuales en CAD de los motores Mercury 115 y 150, usa el configurador en **mercuryrepower.ca**.
 
-El configurador incluye opciones de rigging, controles, y hélice, para que el presupuesto final sea real, no solo el precio del motor. El rigging completo puede agregar $2,000–$5,000+ CAD dependiendo de la configuración.
+El configurador incluye opciones de rigging, controles, y hélice, para que el presupuesto final sea real, no solo el precio del motor. El rigging, los controles y la hélice cambian el total; compare cotizaciones escritas con las mismas fechas y supuestos.
 
 ---
 
@@ -672,11 +662,11 @@ Con servicio regular (cada 100 horas o anualmente), los FourStroke Mercury alcan
 Sí. Mercury ofrece opciones de financiamiento. Verifica las condiciones actuales en mercuryrepower.ca, Harris Boat Works aplica las tasas vigentes al momento de la compra.
 
 **¿El equipo de Harris Boat Works habla español?**
-Nuestro equipo opera en inglés. El configurador en mercuryrepower.ca no tiene barrera de idioma, los precios son claros y el proceso es visual. Para preguntas específicas, puedes escribirnos en español en hbw.wiki/service.
+Nuestro equipo se comunica y presta servicio en inglés. El configurador en mercuryrepower.ca muestra precios claros en un proceso visual, y para preguntas específicas puedes escribirnos en hbw.wiki/service; te responderemos en inglés, así que si lo prefieres pide ayuda a un familiar o amigo que hable inglés o usa una aplicación de traducción.
 
 ---
 
-## CTA, Compara precios y configura tu motor
+## Compara precios y configura tu motor
 
 Usa el configurador en **mercuryrepower.ca** para ver precios reales del 115 y 150 HP, comparar opciones de rigging, y armar tu presupuesto completo, sin llamadas previas, sin presión.
 
@@ -718,11 +708,9 @@ Harris Boat Works es una marina familiar de tercera generación en Gores Landing
 
 ---
 
-<div class="hbw-language-note">
-  <h3>Una nota sobre el idioma</h3>
-  <p>Creamos esta guía en español porque queremos ayudar a la comunidad hispanohablante a disfrutar de la navegación en Ontario, algo que muy pocos concesionarios hacen.</p>
-  <p>Nuestro equipo atiende en inglés. No hablamos español, pero haremos todo lo posible por ayudarle. Le recomendamos traer a un amigo o familiar que hable inglés, o usar una aplicación de traducción en su teléfono. Con paciencia, lo resolvemos juntos.</p>
-</div>
+> **Una nota sobre el idioma**
+> Creamos esta guía en español porque queremos ayudar a la comunidad hispanohablante a disfrutar de la navegación en Ontario, algo que muy pocos concesionarios hacen.
+> Nuestro equipo atiende en inglés. No hablamos español, pero haremos todo lo posible por ayudarle. Le recomendamos traer a un amigo o familiar que hable inglés, o usar una aplicación de traducción en su teléfono. Con paciencia, lo resolvemos juntos.
 
 ---
 
@@ -839,12 +827,6 @@ Para reparaciones e instalaciones de motores, trabajamos exclusivamente con Merc
 ---
 
 *Guías relacionadas (en inglés): Should I repower or buy a new boat? | Ontario Mercury Outboard Price Guide | Mercury 90 HP FourStroke review*
-
----
-
-*End of file, 12 posts total*
-
-
 ---`,
     faqs: [
       { question: '¿Cuánto cuesta una remotorización comparada con un bote nuevo?', answer: 'En muchos casos, una remotorización cuesta considerablemente menos que reemplazar toda la embarcación, pero la diferencia real depende del casco, la potencia y la instalación necesaria. Consulte mercuryrepower.ca para precios actualizados.' },
@@ -861,14 +843,14 @@ Para reparaciones e instalaciones de motores, trabajamos exclusivamente con Merc
     image: '/lovable-uploads/hero-boating-safety-gear-es-2026.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-08-15',
+    dateModified: '2026-09-11',
     publishDate: '2026-04-12',
     category: 'Regulaciones',
     readTime: '12 min',
     keywords: ['licencia navegación Ontario', 'PCOC Ontario', 'regulaciones bote Ontario', 'permiso de navegación Canadá', 'seguridad embarcación Ontario'],
     content: `### Respuesta rápida
 
-Para navegar legalmente en Ontario necesitas dos cosas: la **PCOC** ([Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency) / Carta de Operador de Embarcaciones), un certificado federal vitalicio cuyo costo varía según el proveedor acreditado, y la **PCL** ([Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences)), una licencia para la embarcación misma si tiene motor de 10 HP o más. Las PCL nuevas, transferidas o renovadas tienen una vigencia de 5 años; la tarifa federal actual es de **$24.41 CAD** y puede ajustarse anualmente. La multa por no llevar la PCOC en la embarcación comienza en **$250 CAD**. Siempre lleva el original, no se aceptan copias ni fotos en pantalla.
+Para navegar legalmente en Ontario, la **PCOC** ([Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency) / Carta de Operador de Embarcaciones) es una de las pruebas de competencia aceptadas; la emite un proveedor acreditado y su costo varía. La **PCL** ([Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences)) es la licencia de la embarcación misma si tiene motor de 10 HP o más. Las PCL nuevas, transferidas o renovadas tienen una vigencia de 5 años (el duplicado no renueva la vigencia); al 5 de septiembre de 2026 la tarifa federal es de **$24.41 CAD**; actualizar datos o cancelar es gratuito. La tarifa se ajusta cada 1 de abril. La multa por no llevar la PCOC en la embarcación comienza en **$250 CAD**. Siempre lleva el original, no se aceptan copias ni fotos en pantalla.
 
 ---
 
@@ -886,7 +868,7 @@ Esta guía está diseñada para hispanohablantes que quieren entender el sistema
 
 ## PCOC, La "licencia de conducir" del navegante
 
-La Pleasure Craft Operator Card (PCOC) es el equivalente náutico de una licencia de conducir. Es emitida por Transporte Canadá y es obligatoria para cualquier persona que opere una embarcación motorizada en aguas canadienses.
+La Pleasure Craft Operator Card (PCOC) es el equivalente náutico de una licencia de conducir. La emite un proveedor acreditado por Transport Canada. La PCOC es una de las pruebas de competencia aceptadas para manejar una embarcación de recreo motorizada.
 
 ### Características clave:
 
@@ -902,9 +884,9 @@ La Pleasure Craft Operator Card (PCOC) es el equivalente náutico de una licenci
 
 El examen está actualmente disponible en inglés y francés. A la fecha de publicación no existe una versión certificadora oficial en español, para prepararte, puedes usar materiales de estudio en español de terceros y luego presentar el examen en inglés o francés. Verifica la disponibilidad de idiomas directamente en tc.gc.ca.
 
-### ¿Quién necesita la PCOC?
+### ¿Quién necesita una prueba de competencia?
 
-Toda persona que opere el control de una embarcación motorizada, sin importar:
+La PCOC es una de las pruebas de competencia aceptadas. Quien conduzca una embarcación de recreo motorizada necesita una prueba reconocida, sin importar:
 - Si es propietario o arrendatario
 - Si el motor es pequeño (incluso un motor de pesca eléctrico)
 - Si es residente temporal o permanente
@@ -919,7 +901,7 @@ La Pleasure Craft Licence (PCL) es diferente de la PCOC personal. Es la licencia
 
 ### Vigencia y tarifa actuales
 
-Las PCL nuevas, transferidas o renovadas tienen una vigencia de **5 años**. La tarifa federal actual para emitir, renovar, transferir o duplicar una PCL es de **$24.41 CAD** y puede ajustarse anualmente. Las licencias antiguas sin fecha de vencimiento se están incorporando gradualmente al nuevo esquema; verifica el vencimiento de la tuya en tc.gc.ca.
+Las PCL nuevas, transferidas o renovadas tienen una vigencia de **5 años**. Al 5 de septiembre de 2026, la tarifa federal para emitir, renovar, transferir o duplicar una PCL es de **$24.41 CAD** ([tabla oficial](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/fees-service-standards)); actualizar datos o cancelar es gratuito. La tarifa se ajusta cada 1 de abril. Las licencias antiguas no eran todas vitalicias: Transport Canada fija ahora cohortes de vencimiento; verifica la tuya.
 
 La PCL no es lo mismo que el registro de embarcaciones (que aplica a barcos más grandes o de uso comercial). Para la mayoría de las embarcaciones de recreo de menos de 15 metros, la PCL es suficiente.
 
@@ -1039,13 +1021,13 @@ La PCOC no equivale a una licencia en otros países. Cada estado tiene sus propi
 
 ---
 
-## CTA, ¿Listo para salir al agua legalmente?
+## ¿Listo para salir al agua legalmente?
 
 Obtén tu PCOC en línea, renueva tu PCL en tc.gc.ca, y cuando tengas todo en orden, visítanos en Rice Lake.
 
 Si estás pensando en un motor nuevo o en repotenciar tu embarcación, usa el configurador en **mercuryrepower.ca**, precios reales, sin llamadas previas.
 
-¿Preguntas? Escríbenos en **hbw.wiki/service** o llama al **905-342-2153**. Nuestro equipo responde en inglés.
+
 
 Harris Boat Works
 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0

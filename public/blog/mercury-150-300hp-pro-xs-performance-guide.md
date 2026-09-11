@@ -1,17 +1,17 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-150-300hp-pro-xs-performance-guide.md
-last_updated: 2026-07-27
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
-title: "Mercury 150 Pro XS to 300 Compared for Ontario Boats"
-description: "Mercury 150 Pro XS through 300 HP for Ontario boats: current inline-4, V6, and V8 architecture, hull-fit questions, and verified pricing paths."
+title: "Mercury Pro XS 150–300 HP: What Runs Best on Ontario Boats"
+description: "Mercury's 150 to 300 Pro XS lineup from the dealer who rigs them: inline-4 vs V6 vs V8, which hulls each one suits, and the honest pricing paths."
 category: "Buying Guide"
 date_published: 2026-05-13
-date_modified: 2026-07-27
+date_modified: 2026-09-11
 keywords: ["mercury 150 pro xs","mercury 175 pro xs","mercury 200 pro xs","mercury 225 pro xs","mercury 250 pro xs","mercury 300 pro xs","mercury v6 vs v8","mercury pro xs comparison ontario","mercury 150-300 hp guide"]
 author: Harris Boat Works
 content_type: blog_article
@@ -19,15 +19,17 @@ language: en-CA
 revenue_driver: repower
 ---
 
-# Mercury 150 Pro XS to 300 Compared for Ontario Boats
+# Mercury Pro XS 150–300 HP: What Runs Best on Ontario Boats
 
-> Mercury 150 Pro XS through 300 HP for Ontario boats: current inline-4, V6, and V8 architecture, hull-fit questions, and verified pricing paths.
+> Mercury's 150 to 300 Pro XS lineup from the dealer who rigs them: inline-4 vs V6 vs V8, which hulls each one suits, and the honest pricing paths.
 
 **Category:** Buying Guide  
 **Published:** 2026-05-13  
-**Last reviewed:** 2026-07-27  
+**Last reviewed:** 2026-09-11  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-150-300hp-pro-xs-performance-guide
+
+*Hero graphic: the powerhead families compared in this guide. It does not depict an identified physical motor.*
 
 > **Quick answer:** The current Mercury 150 Pro XS is a 3.0L inline-4, the 175 Pro XS is a 3.4L V6, and the 200, 225, 250, and 300 Pro XS models are 4.6L V8 outboards. The right choice depends on the capacity plate, hull, load, use, controls, and complete written quote.
 
@@ -137,8 +139,6 @@ We'd lay this out for a customer at the shop:
 
 Fuel burn and range cannot be predicted responsibly from horsepower alone. Hull, propeller, engine height, load, water, weather, throttle setting, and fuel capacity all matter. Use Mercury performance reports for a genuinely comparable boat-and-engine combination, then verify the final setup during the water test.
 
-For current bare-motor pricing, see the [Mercury pricing reference](/pricing-reference).
-
 For service intervals and major service costs on these motors, see [our Mercury maintenance schedule guide](/blog/mercury-maintenance-intervals-20-100-300-rule).
 
 ## Check Boost Eligibility
@@ -164,7 +164,7 @@ For higher-horsepower Pro XS conversations, HBW provides:
 - **Rigging upgrades**, hydraulic steering, stainless prop, DTS where available
 - **Boost software upgrade evaluations**, for eligible owners seeking better mid-range acceleration without buying a new motor
 
-If you're considering a Pro XS repower, the configurator at [mercuryrepower.ca](https://www.mercuryrepower.ca) provides the current pricing path. For twin vs single, V6 vs V8, or Pro XS vs FourStroke questions, call **905-342-2153**.
+If you're considering a Pro XS repower, the configurator at [mercuryrepower.ca](https://www.mercuryrepower.ca) provides the current pricing path.
 
 ## Sources and Review Notes
 
@@ -220,7 +220,7 @@ Our [live pricing reference](/pricing-reference) lists the current Canadian bare
 ## Related guides
 
 - [How to Choose the Right Boat Horsepower](/blog/how-to-choose-right-horsepower-boat), matching HP to boat size and use
-- [Pontoon HP Sizing Ontario Guide](/blog/pontoon-hp-sizing-decision-tree-ontario), pontoon HP sizing decision tree
+- [Pontoon HP Sizing: The Rice Lake Decision Tree by Length](/blog/pontoon-hp-sizing-decision-tree-ontario), pontoon HP sizing decision tree
 - [Outboard Shaft Length Guide: 15, 20, 25 Inch (2026)](/blog/outboard-shaft-length-guide), shaft length by transom height
 - [How to Read a Boat Capacity Plate in Ontario](/blog/how-to-read-boat-capacity-plate-ontario), how to read the capacity plate
 - [How to Choose Repower Horsepower From Your Capacity Plate](/blog/repower-horsepower-capacity-plate-guide), choose repower HP from the hull rating

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh-hant/pcoc-pcl-fishing-licence-difference-ontario.md
-last_updated: 2026-08-03
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "PCOC、PCL、釣魚證區別：安省新手別搞混"
 description: "安省新手分清 PCOC 操作員資格、PCL 船隻牌照與安省釣魚證：誰需要、有效期、官方申請入口與 HBW 租船政策。"
 category: "mandarin"
 date_published: 2026-06-12
-date_modified: 2026-08-03
+date_modified: 2026-09-06
 keywords: ["安省 船牌","繁體 PCOC","PCL","船隻操作員卡","釣魚證"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,11 +25,11 @@ revenue_driver: repower
 
 **Category:** mandarin  
 **Published:** 2026-06-12  
-**最後審核:** 2026-08-03  
+**最後審核:** 2026-09-06  
 **Read time:** 7 分鐘  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh-hant/pcoc-pcl-fishing-licence-difference-ontario
 
-> **簡短答案：** **PCOC**（Pleasure Craft Operator Card，船隻操作員卡）是操作動力休閒船時常用的資格證明，卡片終身有效。**PCL**（Pleasure Craft Licence，船隻牌照）是符合條件船隻的識別號；新辦、續期、轉讓或補發需要支付 Transport Canada 當前服務費，新辦或轉讓後有效 5 年。**釣魚證**完全獨立，由安省自然資源與林業部（MNRF）管理。在 HBW 租船，每位駕駛員必須持有有效 PCOC 或符合 HBW 要求的有效 boat operator licence。
+> **簡短答案：** **PCOC**（Pleasure Craft Operator Card，船隻操作員卡）是操作動力休閒船時常用的資格證明，卡片終身有效。**PCL**（Pleasure Craft Licence，船隻牌照）是符合條件船隻的識別號；2026 年 9 月 5 日新辦、續期、轉讓或補發為 **$24.41 CAD**，新辦、轉讓或續期後有效 5 年；資料更新或取消免費，每年 4 月 1 日按通脹調整。舊牌並非全部終身，請按到期批次核對。**釣魚證**完全獨立，由安省自然資源與林業部（MNRF）管理。在 HBW 租船，每位駕駛員必須持有有效 PCOC 或符合 HBW 要求的有效 boat operator licence。
 
 ## 一張表看懂三者區別
 
@@ -39,23 +39,23 @@ revenue_driver: repower
 | 全稱 | Pleasure Craft Operator Card | Pleasure Craft Licence | Outdoors Card + Fishing Licence |
 | 管理機構 | 加拿大運輸部 | 加拿大運輸部 | 安省自然資源與林業部 (MNRF) |
 | 是關於甚麼 | **人**：會不會安全開船 | **船**：船身的註冊號 | **行為**：允不允許釣魚 |
-| 費用 | 由 Transport Canada 認可提供商決定 | **按 Transport Canada 當前服務費** | 視類型而定 |
+| 費用 | 由 Transport Canada 認可提供商決定 | 新辦/續期/轉讓/補發 **$24.41 CAD**（2026-09-05）；資料更新或取消免費 | 視類型而定 |
 | 有效期 | **終身** | 新辦或轉讓後 **5 年** | Outdoors Card 3 年 |
 | 中文支援 | 視提供商而定（建議查運輸部認可名單） | 英 / 法文 | **有官方繁體中文摘要** |
 | 換引擎要更新嗎 | 不用 | **要**（HP 變化時） | 不影響 |
 
 ## PCOC：船隻操作員卡
 
-- **誰必須有：** 任何在加拿大水域操作配動力（包括電動推進器）的休閒船的人。
+- **誰必須有：** 任何在加拿大水域操作配動力（包括電動推進器）的休閒船的人都需要合資格的操作能力證明；PCOC 是最常見的證明，但不是唯一被接受的證明。
 - **官方認可名單：** [Transport Canada PCOC 認可提供商](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency-program)。
-- **中文考試是否提供：** 視提供商而定，**不能保證所有提供商都有中文版**，請直接聯繫認可名單上的提供商確認。
+- **學習材料與正式考試語言可能不同：** 中文複習資料可以用於學習。正式考試語言和經批准的協助（包括口譯）須在付款前向認可提供商確認，並按其批准規則安排。不要假定一定有獲批的中文線上考試，也不要假定所有考試都沒有中文。規則見 [Transport Canada Quality Assurance and Control Requirements](https://tc.canada.ca/en/marine-transportation/marine-safety/quality-assurance-control-requirements-course-providers-national-pleasure-craft-operator-competency-program)。
 - **有效期：** 終身。
 
 ## PCL：船隻牌照（船身註冊號）
 
 - **誰必須有：** 配 10 HP（7.5 kW）以上引擎的休閒船船主。
-- **怎麼辦：** 使用 [Transport Canada Pleasure Craft Licensing 官方入口](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl)。新辦、續期、轉讓或補發需要支付當前服務費；更新資料或取消牌照免費。
-- **有效期：** 新辦或轉讓後的 PCL 有效 5 年。
+- **怎麼辦：** 使用 [Transport Canada Pleasure Craft Licensing 官方入口](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl)。2026 年 9 月 5 日 [官方收費表](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/fees-service-standards) 為新辦、續期、轉讓或補發 **$24.41 CAD**；更新資料或取消牌照免費，每年 4 月 1 日調整。
+- **有效期：** 新辦、轉讓或續期後的 PCL 有效 5 年。舊牌並非全部終身，請按 Transport Canada 到期批次核對。
 - **何時必須更新：** 換引擎（HP 變化時）、賣船給新主、地址變更。
 
 ## 安省釣魚證
@@ -78,7 +78,7 @@ revenue_driver: repower
 
 ### PCOC 和 PCL 有甚麼區別？
 
-PCOC 是操作人的資格證明，卡片終身有效。PCL 是符合條件船隻的識別牌照；新辦、續期、轉讓或補發會收取 Transport Canada 當前服務費，新辦或轉讓後有效 5 年。
+PCOC 是操作人的資格證明，卡片終身有效。PCL 是符合條件船隻的識別牌照；新辦、續期、轉讓或補發現為 $24.41 CAD（2026-09-05）；新辦、轉讓或續期後有效 5 年（補發不延長有效期）；資料更新免費。
 
 ### 短期租船一定要 PCOC 嗎？
 

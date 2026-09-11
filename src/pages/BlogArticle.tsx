@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useOverheatInteractions } from '@/hooks/useOverheatInteractions';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
@@ -14,6 +15,7 @@ import { AuthorByline } from '@/components/blog/AuthorByline';
 // FloatingShareBar removed — byline BlogShareButtons is the sole share UI.
 import { TableOfContents } from '@/components/blog/TableOfContents';
 import { getArticleBySlug, getRelatedArticles, parseLocalDate } from '@/data/blogArticles';
+import { getMoreInHub } from '@/data/blogTopicHubs';
 import { isRepowerHubSlug } from '@/data/blogClusters';
 import { RepowerHubBanner } from '@/components/repower/RepowerHubBanner';
 import { slugify, extractHeaders } from '@/utils/slugify';
@@ -52,12 +54,14 @@ export default function BlogArticle() {
   const { slug } = useParams<{ slug: string }>();
   const article = slug ? getArticleBySlug(slug) : undefined;
   const [heroImgError, setHeroImgError] = useState(false);
+  const interactionRef = useOverheatInteractions(slug);
 
   if (!article) {
     return <Navigate to="/blog" replace />;
   }
 
   const relatedArticles = getRelatedArticles(article.slug, 4);
+  const moreInHub = getMoreInHub(article.slug, relatedArticles.map((a) => a.slug), 4);
   const cleanedContent = cleanBlogContent(article.content, {
     hasStructuredFaqs: Boolean(article.faqs?.length),
   });
@@ -302,7 +306,7 @@ export default function BlogArticle() {
 
 
 
-        <article className="max-w-[880px] mx-auto" aria-labelledby="article-title">
+        <article ref={interactionRef} className="max-w-[880px] mx-auto" aria-labelledby="article-title">
           {/* Header */}
           <header className="mb-8">
             <div className="flex items-center gap-3 mb-4">
@@ -412,7 +416,7 @@ export default function BlogArticle() {
                 // {{LIVE_RATE_PCT}} -> e.g. "5.48%". Sourced from the same
                 // finance helper that drives the quote builder's monthly-payment
                 // math. Change the rate in src/lib/finance.ts (MERCURY_PROMO_APR).
-                c = substituteLiveRateTokens(c);
+                c = substituteLiveRateTokens(c, { dateModified: article.dateModified });
                 return c;
               })()}
               markdownComponents={{
@@ -574,6 +578,36 @@ export default function BlogArticle() {
           )}
 
         </article>
+
+        {/* More in this topic hub */}
+        {moreInHub && moreInHub.articles.length > 0 && (
+          <section
+            aria-label={`More in ${moreInHub.hub.name}`}
+            className="mt-20 max-w-[1100px] mx-auto"
+          >
+            <div className="mb-8 flex flex-col items-center gap-2 text-center">
+              <h2
+                className="font-display font-bold text-2xl md:text-[28px] text-repower-navy-900"
+                style={{ letterSpacing: '-0.02em' }}
+              >
+                More in {moreInHub.hub.name}
+              </h2>
+              <Link
+                to={`/blog/${moreInHub.hub.slug}`}
+                className="font-sans text-sm font-semibold text-repower-mercury-red hover:underline underline-offset-4"
+              >
+                View all {moreInHub.hub.name} guides
+              </Link>
+            </div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {moreInHub.articles.map((hubArticle) => (
+                <article key={hubArticle.slug}>
+                  <BlogCard article={hubArticle} />
+                </article>
+              ))}
+            </div>
+          </section>
+        )}
 
         {/* Related Articles */}
         {relatedArticles.length > 0 && (

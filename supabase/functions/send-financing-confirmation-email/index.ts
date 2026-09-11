@@ -3,6 +3,8 @@ import { Resend } from 'npm:resend@2.0.0';
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
 import { z } from "npm:zod@3.22.4";
 import { buildEmail, buildAdminEmail, detailsCard, esc } from '../_shared/email-layout.ts';
+import { forbiddenOriginResponse, isAllowedOrigin } from '../_shared/origin-check.ts';
+import { checkRateLimit, rateLimitedResponse } from '../_shared/rate-limit.ts';
 
 // Input validation schema. Body values are trusted only as hints; the canonical
 // applicant data is re-read from the financing_applications row server-side so
@@ -109,6 +111,10 @@ const handler = async (req: Request): Promise<Response> => {
     return new Response(null, { headers: corsHeaders });
   }
 
+  if (!isAllowedOrigin(req)) {
+    return forbiddenOriginResponse(corsHeaders);
+  }
+
   try {
     const rawBody = await req.json();
     const validationResult = confirmationEmailSchema.safeParse(rawBody);
@@ -123,6 +129,23 @@ const handler = async (req: Request): Promise<Response> => {
       applicationId,
       sendAdminNotification,
     } = validationResult.data;
+
+    const ipAllowed = await checkRateLimit(req, {
+      action: 'confirmation_email_send',
+      maxAttempts: 10,
+      windowMinutes: 60,
+      failClosed: true,
+    });
+    if (!ipAllowed) return rateLimitedResponse(corsHeaders, 300);
+
+    const recipientAllowed = await checkRateLimit(req, {
+      identifier: validationResult.data.applicantEmail,
+      action: 'confirmation_email_send',
+      maxAttempts: 3,
+      windowMinutes: 60,
+      failClosed: true,
+    });
+    if (!recipientAllowed) return rateLimitedResponse(corsHeaders, 300);
 
     // Service role client to look up the canonical application row.
     const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
@@ -176,39 +199,6 @@ const handler = async (req: Request): Promise<Response> => {
       ? dbAmount
       : validationResult.data.amountToFinance;
 
-    // Rate limit per recipient email to prevent abuse.
-    const rateLimitResponse = await fetch(
-      `${supabaseUrl}/rest/v1/rpc/check_rate_limit`,
-      {
-        method: 'POST',
-        headers: {
-          'apikey': supabaseServiceKey,
-          'Authorization': `Bearer ${supabaseServiceKey}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          _identifier: applicantEmail,
-          _action: 'confirmation_email_send',
-          _max_attempts: 3,
-          _window_minutes: 60
-        })
-      }
-    );
-
-    if (!rateLimitResponse.ok) {
-      throw new Error('Rate limit check failed');
-    }
-
-    const rateLimitData = await rateLimitResponse.json();
-
-    if (rateLimitData === false) {
-      console.warn(`Rate limit exceeded for email: ${applicantEmail}`);
-      return new Response(
-        JSON.stringify({ error: 'Too many email requests. Please try again later.' }),
-        { status: 429, headers: { 'Content-Type': 'application/json', ...corsHeaders } }
-      );
-    }
-
     console.log('Sending confirmation emails:', { applicationId, applicantEmail });
 
     const referenceNumber = applicationId.substring(0, 8).toUpperCase();
@@ -222,10 +212,10 @@ const handler = async (req: Request): Promise<Response> => {
 
     // --- Applicant email ---
     const applicantRows = [
-      { label: "Reference", value: esc(referenceNumber) },
-      { label: "Motor", value: esc(motorModel) },
-      { label: "Amount", value: `$${amountToFinance.toLocaleString()} CAD` },
-      { label: "Submitted", value: esc(submittedDate) },
+      { label: "Reference", valueHtml: esc(referenceNumber) },
+      { label: "Motor", valueHtml: esc(motorModel) },
+      { label: "Amount", valueHtml: `$${amountToFinance.toLocaleString()} CAD` },
+      { label: "Submitted", valueHtml: esc(submittedDate) },
     ];
     const applicantBody = `
       <p style="margin:0 0 14px 0;">Hi ${esc(applicantName)},</p>
@@ -249,7 +239,7 @@ const handler = async (req: Request): Promise<Response> => {
 
     const applicantEmailResponse = await resend.emails.send({
       from: 'Harris Boat Works Financing <financing@mercuryrepower.ca>',
-      replyTo: ['info@harrisboatworks.ca'],
+      reply_to: ['info@harrisboatworks.ca'],
       to: [applicantEmail],
       subject: `Financing application received, ref ${referenceNumber} | Harris Boat Works`,
       html: applicantHtml,
@@ -297,7 +287,7 @@ const handler = async (req: Request): Promise<Response> => {
 
       adminEmailResponse = await resend.emails.send({
         from: 'Harris Boat Works System <noreply@mercuryrepower.ca>',
-        replyTo: ['info@harrisboatworks.ca'],
+        reply_to: ['info@harrisboatworks.ca'],
         to: [adminEmail],
         subject: `[FINANCING] ${applicantName} - ${motorModel} - $${amountToFinance.toLocaleString()}`,
         html: adminHtml,

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/2026-rice-lake-fishing-season-outlook.md
-last_updated: 2026-08-08
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Rice Lake Fishing Outlook 2026: Species, Seasons & Conditions"
 description: "Plan a 2026 Rice Lake fishing trip with current FMZ 17 season context, an honest species outlook, local hazards, and seasonal conditions."
 category: "Lifestyle"
 date_published: 2026-02-06
-date_modified: 2026-08-08
+date_modified: 2026-09-11
 keywords: ["rice lake fishing","rice lake fishing guide 2026","rice lake walleye","rice lake bass fishing","rice lake muskie fishing","FMZ 17 fishing regulations","rice lake ontario fishing"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Lifestyle  
 **Published:** 2026-02-06  
-**Last reviewed:** 2026-08-08  
+**Last reviewed:** 2026-09-11  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/2026-rice-lake-fishing-season-outlook
 
@@ -65,7 +65,7 @@ A few things worth spelling out:
 
 **Muskie is a big-fish-only fishery.** A muskellunge must be over 112 cm, about 44 inches, to keep, and the Conservation licence limit is zero. The honest expectation here is catch, photo and release. A Rice Lake muskie over the size limit is the fish of the season for most anglers.
 
-**The Otonabee River sanctuary.** The stretch of the Otonabee from the Trent-Severn dam at Peterborough down to Bensfort Bridge is a fish sanctuary closed to all fishing through the spring. It reopens the Friday after the walleye opener, which makes it May 16, 2026. There is also sanctuary water around the dam at Hastings. Watch for posted signs.
+**The Otonabee River sanctuary.** The stretch of the Otonabee from the Trent-Severn dam at Peterborough down to Bensfort Bridge remains closed through Friday May 15, 2026 and reopens Saturday May 16, subject to species seasons and limits. There is also sanctuary water around the dam at Hastings. Watch for posted signs. Confirm the current [FMZ 17 sanctuary wording](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17).
 
 **Licence-free weekends.** In 2026 you can fish Ontario without a licence on May 9 to 10, June 20 to 21, and June 27 to July 5. Conservation limits and all size and sanctuary rules still apply on those days.
 
@@ -176,7 +176,7 @@ The kicker question is the one we settle most often for Rice Lake anglers, so he
 
 The walleye channels south of Gores Landing are 17 to 21 feet deep, and a productive troll over that weedy bottom can run four to six hours. A dedicated [Mercury 9.9 ProKicker](/blog/mercury-prokicker-rice-lake-fishing-guide) can handle slow trolling while preserving the main motor for higher-load work. It can also provide limited backup propulsion, but actual return range depends on the boat, load, weather, fuel, and distance. Treat it as risk reduction, not a guaranteed payback.
 
-The other thing we see is underpowered boats. Someone buys a hull, puts the smallest motor that will technically push it on the transom, and then meets a west wind with a full boat and a long way back to the ramp. Power the boat for the lake's worst afternoon, not its calmest morning. When in doubt, [build a live Mercury quote](https://mercuryrepower.ca) for your exact hull and we will talk it through.
+The other thing we see is underpowered boats. Someone buys a hull, puts the smallest motor that will technically push it on the transom, and then meets a west wind with a full boat and a long way back to the ramp. Power the boat for the lake's worst afternoon, not its calmest morning. When in doubt, [build a live Mercury quote](https://mercuryrepower.ca) for your exact hull.
 
 ## Boat Launches on Rice Lake
 
@@ -194,7 +194,7 @@ For ramp details, parking and conditions, see our full [Rice Lake boat launch gu
 
 - **Running the railway blind.** The trestle north of Tic Island sits about 4 feet down and is invisible from the surface. First time through, idle until it is on your screen.
 - **Misreading the walleye slot.** The 35 to 50 cm window is a keep window. Fish under it and over it both go back. The big ones you are proud of are usually over-slot releases.
-- **Treating the Otonabee sanctuary as open on the walleye opener.** That stretch reopens the Friday after the opener, May 16 in 2026, not May 9. Watch for posted signs.
+- **Treating the Otonabee sanctuary as open on the walleye opener.** The listed stretch stays closed through Friday May 15, 2026 and reopens Saturday May 16, not May 9. Watch for posted signs.
 - **Underpowering the boat.** Rice Lake's afternoon west wind is the real test. Rig for that, not for the calm launch.
 - **Skipping the kicker for trolling.** Hours of low-RPM idling is hard on a main outboard. A kicker does that work and doubles as your get-home motor.
 - **Trusting a blog for regulations.** Including this one. Confirm seasons and limits at ontario.ca/fishing every season.
@@ -209,13 +209,13 @@ And here is the thing worth remembering: the bass, the muskie, the crappie and t
 
 ## Sources
 
-- Ontario Ministry of Natural Resources, Fisheries Management Zone 17 regulations summary: seasons, limits and sanctuaries (ontario.ca)
+- [Ontario FMZ 17 fishing regulations](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17): seasons, limits and sanctuaries
 - Ontario family fishing and licence-free fishing dates (ontario.ca)
 - Cobourg and District Historical Society: Cobourg and Peterborough Railway history
 - Save the Walleye committee: Rice Lake walleye spawning concerns
 - On-the-water spots and techniques: decades of Rice Lake angler reports through the Harris Boat Works dock
-- [Ontario.ca - Fishing Regulations Summary](https://www.ontario.ca/page/fishing-regulations-summary) - Current Ontario fishing regulations, season dates, and limits.
-- [Ontario.ca - Get a Fishing Licence](https://www.ontario.ca/page/get-fishing-licence) - Outdoors Card and licence requirements.
+- [Ontario.ca - Fishing Regulations Summary](https://www.ontario.ca/document/ontario-fishing-regulations-summary) - Current Ontario fishing regulations, season dates, and limits.
+- [Ontario.ca - Get a Fishing Licence](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees) - Outdoors Card and licence requirements.
 
 Always confirm current regulations at ontario.ca/fishing before you fish.
 

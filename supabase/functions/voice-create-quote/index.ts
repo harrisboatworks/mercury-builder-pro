@@ -1,4 +1,6 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
+import { forbiddenOriginResponse, isAllowedOrigin, isServiceRoleBearer } from "../_shared/origin-check.ts";
+import { checkRateLimit, rateLimitedResponse } from "../_shared/rate-limit.ts";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -15,6 +17,21 @@ serve(async (req) => {
     return new Response(null, { headers: corsHeaders });
   }
 
+  // Origin limits browser access; only the service-role bearer identifies a server caller.
+  const serviceRole = isServiceRoleBearer(req);
+  if (!isAllowedOrigin(req) && !serviceRole) {
+    return forbiddenOriginResponse(corsHeaders);
+  }
+
+  const allowed = await checkRateLimit(req, {
+    action: "voice_create_quote",
+    maxAttempts: serviceRole ? 60 : 10,
+    windowMinutes: 10,
+    failClosed: true,
+    ...(serviceRole ? { identifier: "service_role" } : {}),
+  });
+  if (!allowed) return rateLimitedResponse(corsHeaders, 60);
+
   try {
     const body = await req.json().catch(() => ({}));
 
@@ -30,6 +47,22 @@ serve(async (req) => {
     }
     if (!body.motor_id || typeof body.motor_id !== "string") {
       return json({ ok: false, error: "motor_id is required" }, 400);
+    }
+
+    if (body.send_customer_email !== false) {
+      // Keep recipient keys stable across IPs and casing without storing an email in the limiter.
+      const digest = await crypto.subtle.digest(
+        "SHA-256", new TextEncoder().encode(body.customer_email.trim().toLowerCase()),
+      );
+      const recipientKey = Array.from(new Uint8Array(digest), (byte) => byte.toString(16).padStart(2, "0")).join("");
+      const recipientAllowed = await checkRateLimit(req, {
+        identifier: `email:${recipientKey}`,
+        action: "voice_create_quote_email",
+        maxAttempts: 3,
+        windowMinutes: 60,
+        failClosed: true,
+      });
+      if (!recipientAllowed) return rateLimitedResponse(corsHeaders, 300);
     }
 
     const agentKey = Deno.env.get("AGENT_QUOTE_API_KEY");

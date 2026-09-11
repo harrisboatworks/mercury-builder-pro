@@ -173,6 +173,61 @@ describe('public quote financing policy', () => {
     expect(result.reason).toContain('no stale fallback');
   });
 
+  it('keeps a promotion live through Ontario end of day, including after UTC midnight', () => {
+    const lastMorning = buildPublicQuoteFinancing({
+      beforeTaxSubtotal: 10_000,
+      finalPriceWithTax: 11_300,
+      financing: [],
+      promotions: summer,
+      motorInStock: true,
+      now: new Date('2026-08-31T13:00:00.000Z'),
+    });
+    expect(lastMorning.available_offers.some((offer) => offer.source === 'promotion')).toBe(true);
+
+    const lastEvening = buildPublicQuoteFinancing({
+      beforeTaxSubtotal: 10_000,
+      finalPriceWithTax: 11_300,
+      financing: [],
+      promotions: summer,
+      motorInStock: true,
+      now: new Date('2026-09-01T03:59:00.000Z'),
+    });
+    expect(lastEvening.available_offers.some((offer) => offer.source === 'promotion')).toBe(true);
+
+    const afterMidnight = buildPublicQuoteFinancing({
+      beforeTaxSubtotal: 10_000,
+      finalPriceWithTax: 11_300,
+      financing: [],
+      promotions: summer,
+      motorInStock: true,
+      now: new Date('2026-09-01T04:01:00.000Z'),
+    });
+    expect(afterMidnight.available_offers).toEqual([]);
+  });
+
+  it('keeps a January promotion live through EST end of day', () => {
+    const winter = [{ ...summer[0], start_date: '2026-01-01', end_date: '2026-01-31' }];
+    const lastEvening = buildPublicQuoteFinancing({
+      beforeTaxSubtotal: 10_000,
+      finalPriceWithTax: 11_300,
+      financing: [],
+      promotions: winter,
+      motorInStock: true,
+      now: new Date('2026-02-01T04:59:00.000Z'),
+    });
+    expect(lastEvening.available_offers.some((offer) => offer.source === 'promotion')).toBe(true);
+
+    const afterMidnight = buildPublicQuoteFinancing({
+      beforeTaxSubtotal: 10_000,
+      finalPriceWithTax: 11_300,
+      financing: [],
+      promotions: winter,
+      motorInStock: true,
+      now: new Date('2026-02-01T05:01:00.000Z'),
+    });
+    expect(afterMidnight.available_offers).toEqual([]);
+  });
+
   it('filters expired, future, US-only, and inactive offers', () => {
     const invalidPromotions: PromotionRecord[] = [
       { ...summer[0], id: 'expired', end_date: '2026-08-14' },

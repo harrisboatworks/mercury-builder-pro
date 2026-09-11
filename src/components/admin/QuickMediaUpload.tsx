@@ -139,6 +139,15 @@ export function QuickMediaUpload({ motorId, onUploadComplete }: QuickMediaUpload
         }
       }
 
+      if (successCount === 0) {
+        toast({
+          title: "Upload failed",
+          description: "No files were uploaded. Please try again.",
+          variant: "destructive",
+        });
+        return;
+      }
+
       toast({
         title: "Upload complete",
         description: `${successCount} files uploaded and assigned to motor.`,

@@ -7,6 +7,7 @@
  * Run: npm run generate:blog-index
  */
 import { blogArticles } from "../src/data/blogArticles";
+import { substituteLiveRateTokens } from "../src/lib/finance";
 import { createHash } from "node:crypto";
 import { writeFileSync } from "node:fs";
 import { resolve } from "node:path";
@@ -25,16 +26,20 @@ type SlimArticle = {
 const TRUNC = (s: string, n: number) =>
   s && s.length > n ? s.slice(0, n - 1).trimEnd() + "…" : s || "";
 
+// Resolve live-rate placeholders from the shared financing policy before
+// publishing the compact index. Do not hardcode a headline rate here.
+const live = (s: string) => substituteLiveRateTokens(s || "");
+
 const slim: SlimArticle[] = blogArticles.map((a) => ({
   slug: a.slug,
-  title: a.title,
-  description: TRUNC(a.description || "", 240),
+  title: live(a.title),
+  description: TRUNC(live(a.description || ""), 240),
   category: a.category || "",
   publishDate: a.publishDate || a.datePublished || "",
-  keywords: (a.keywords || []).slice(0, 8),
+  keywords: (a.keywords || []).slice(0, 8).map(live),
   faqs: (a.faqs || []).slice(0, 4).map((f) => ({
-    q: TRUNC(f.question, 160),
-    a: TRUNC(f.answer, 320),
+    q: TRUNC(live(f.question), 160),
+    a: TRUNC(live(f.answer), 320),
   })),
 }));
 

@@ -22,15 +22,13 @@ const FollowUpReminder = ({ quoteId, currentDate, onUpdate }: Props) => {
   const handleSave = async () => {
     setSaving(true);
     const followUpDate = date ? new Date(date).toISOString() : null;
-    const { data, error } = await supabase
+    const { error } = await supabase
       .from('customer_quotes')
       .update({ follow_up_date: followUpDate } as any)
-      .eq('id', quoteId)
-      .select('id')
-      .maybeSingle();
+      .eq('id', quoteId);
     
-    if (error || !data) {
-      toast({ title: 'Error', description: error?.message || 'No customer quote row was updated.', variant: 'destructive' });
+    if (error) {
+      toast({ title: 'Error', description: 'Failed to set reminder.', variant: 'destructive' });
     } else {
       onUpdate(followUpDate);
       setIsEditing(false);
@@ -42,14 +40,12 @@ const FollowUpReminder = ({ quoteId, currentDate, onUpdate }: Props) => {
   const handleClear = async () => {
     setDate('');
     setSaving(true);
-    const { data, error } = await supabase
+    const { error } = await supabase
       .from('customer_quotes')
       .update({ follow_up_date: null } as any)
-      .eq('id', quoteId)
-      .select('id')
-      .maybeSingle();
-    if (error || !data) {
-      toast({ title: 'Error', description: error?.message || 'No customer quote row was updated.', variant: 'destructive' });
+      .eq('id', quoteId);
+    if (error) {
+      toast({ title: 'Error', description: 'Failed to clear reminder.', variant: 'destructive' });
     } else {
       onUpdate(null);
       setIsEditing(false);

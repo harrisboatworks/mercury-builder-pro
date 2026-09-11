@@ -93,13 +93,10 @@ export const GlobalAIChat: React.FC<{ children?: React.ReactNode }> = ({ childre
       <AIChatContext.Provider value={{ openChat, closeChat, isOpen, isLoading, setIsLoading, unreadCount, incrementUnread, clearUnread, chatMinimizedAt, notifyChatMinimized }}>
         {children}
         
-        {/* Desktop Chat Button - floating bubble (mobile uses unified bar) */}
-        {!isMobileOrTablet && (
-          <AIChatButton 
-            onOpenChat={() => openChat()} 
-            isOpen={isOpen} 
-          />
-        )}
+        <AIChatButton
+          onOpenChat={() => openChat()}
+          isOpen={isOpen}
+        />
         
         {/* Voice Indicator - Shows when voice active but chat minimized */}
         <VoiceIndicator isChatOpen={isOpen} onOpenChat={() => openChat()} />

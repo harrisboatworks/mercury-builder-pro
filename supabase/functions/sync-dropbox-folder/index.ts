@@ -1,4 +1,5 @@
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
+import { requireAdmin } from "../_shared/admin-auth.ts";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -16,6 +17,9 @@ Deno.serve(async (req) => {
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders })
   }
+
+  const authResult = await requireAdmin(req, corsHeaders);
+  if (authResult instanceof Response) return authResult;
 
   try {
     const supabaseClient = createClient(
@@ -226,7 +230,7 @@ Deno.serve(async (req) => {
 
       } catch (error) {
         console.error(`Error syncing ${file.name}:`, error)
-        errors.push(`${file.name}: ${error.message}`)
+        errors.push(`${file.name}: ${error instanceof Error ? error.message : String(error)}`)
       }
     }
 
@@ -259,7 +263,7 @@ Deno.serve(async (req) => {
     return new Response(
       JSON.stringify({ 
         success: false, 
-        error: error.message 
+        error: error instanceof Error ? error.message : String(error) 
       }),
       { 
         status: 500,

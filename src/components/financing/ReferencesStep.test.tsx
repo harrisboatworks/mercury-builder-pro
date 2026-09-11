@@ -40,6 +40,10 @@ describe('ReferencesStep', () => {
       await screen.findByText(/complete the highlighted reference fields before continuing/i),
     ).toBeInTheDocument();
     expect(screen.getAllByText(/full name is required/i)).toHaveLength(2);
+    const names = screen.getAllByLabelText(/full name/i);
+    expect(names[0]).toHaveAttribute('aria-invalid', 'true');
+    expect(names[1]).toHaveAttribute('aria-invalid', 'true');
+    expect(document.getElementById('ref1-relationship')).toHaveAttribute('aria-invalid', 'true');
     expect(trackClarityValidationBlocked).toHaveBeenCalledWith(
       'financing',
       'references_incomplete',

@@ -7,6 +7,7 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { synchronizeAgentContractDocs } from './lib/agent-contract-docs.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const readJson = (relativePath) => JSON.parse(readFileSync(join(ROOT, relativePath), 'utf8'));
@@ -93,6 +94,7 @@ llms = replaceRequired(
   `- Hours (in-season, April 1-November 30): Monday-Saturday ${monday?.opens || '08:00'}-${monday?.closes || '17:00'}, Sunday ${sunday?.opens || '09:00'}-${sunday?.closes || '16:00'}. Closed for winter December 1-April 1.`,
   'llms.txt hours',
 );
+llms = synchronizeAgentContractDocs(llms, readFileSync(join(ROOT, 'supabase/functions/ucp-checkout/index.ts'), 'utf8'));
 writeFileSync(llmsPath, llms, 'utf8');
 
 const aiPath = join(ROOT, 'public/.well-known/ai.txt');

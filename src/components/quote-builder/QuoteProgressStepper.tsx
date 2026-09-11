@@ -30,7 +30,7 @@ export const QuoteProgressStepper = () => {
     <div className="bg-repower-paper border-y border-repower-navy-900/10">
       <div className="container mx-auto px-6 py-4">
         {/* Desktop */}
-        <div className="hidden md:block">
+        <nav aria-label="Quote progress" className="hidden md:block">
           <div className="flex items-center justify-between mb-3">
             <span className="font-sans text-[12px] font-semibold uppercase tracking-[0.12em] text-repower-navy-900">
               Step {safeIndex + 1} of {visibleSteps.length}
@@ -46,12 +46,16 @@ export const QuoteProgressStepper = () => {
               const accessible = isAccessible(index);
               const showConnector = index < visibleSteps.length - 1;
               const nextCompleted = isCompleted(index + 1);
+              const stepState = current ? ', current step' : completed ? ', completed' : ', not yet available';
 
               return (
                 <div key={step.id} className="flex items-center flex-1 last:flex-none">
                   <button
+                    type="button"
                     onClick={() => handleStepClick(step, index)}
                     disabled={!accessible}
+                    aria-current={current ? 'step' : undefined}
+                    aria-label={`${step.label}, step ${index + 1} of ${visibleSteps.length}${stepState}`}
                     className={cn(
                       'flex flex-col items-center gap-2 transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-repower-gold/40 rounded',
                       accessible ? 'cursor-pointer' : 'cursor-not-allowed'
@@ -94,7 +98,7 @@ export const QuoteProgressStepper = () => {
               );
             })}
           </div>
-        </div>
+        </nav>
 
         {/* Mobile: compact label + progress bar */}
         <div className="md:hidden">
@@ -106,7 +110,14 @@ export const QuoteProgressStepper = () => {
               {currentLabel}
             </span>
           </div>
-          <div className="w-full h-[2px] bg-repower-navy-900/10 overflow-hidden">
+          <div
+            className="w-full h-[2px] bg-repower-navy-900/10 overflow-hidden"
+            role="progressbar"
+            aria-valuemin={0}
+            aria-valuemax={100}
+            aria-valuenow={Math.round(progressPct)}
+            aria-label={`Quote progress: ${currentLabel}, step ${safeIndex + 1} of ${visibleSteps.length}`}
+          >
             <div
               className="h-full bg-repower-gold transition-all duration-300"
               style={{ width: `${progressPct}%` }}

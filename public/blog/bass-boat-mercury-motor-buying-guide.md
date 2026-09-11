@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/bass-boat-mercury-motor-buying-guide.md
-last_updated: 2026-08-19
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Choosing the Right Mercury for Your Bass Boat (Ontario 2026)"
 description: "Find the perfect Mercury outboard for your bass boat. Compare Pro XS and FourStroke options for tournament and recreational bass fishing."
 category: "Buying Guide"
 date_published: 2026-03-09
-date_modified: 2026-08-19
+date_modified: 2026-09-11
 keywords: ["bass boat motor","mercury pro xs bass","best bass boat outboard","tournament bass motor","mercury 200 bass boat"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-03-09  
-**Last reviewed:** 2026-08-19  
+**Last reviewed:** 2026-09-11  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/bass-boat-mercury-motor-buying-guide
 
@@ -108,7 +108,7 @@ For your specific boat and HP, build a quote at [mercuryrepower.ca](https://www.
 
 If the hull is solid and the boat fits your fishing, repower. A new Pro XS transforms an older bass boat. You get modern fuel efficiency (dramatically better than older 2-strokes), current electronics integration, and a full Mercury warranty, without paying for a new hull you don't need.
 
-If the hull is outdated, damaged, or doesn't fit the way you fish, a new boat makes more sense. We can help you think through the math either way.
+If the hull is outdated, damaged, or doesn't fit the way you fish, a new boat makes more sense.
 
 ---
 
@@ -144,7 +144,7 @@ Extended protection plans are available. Ask us about it at point of sale.
 
 ## Ready to configure your bass boat motor?
 
-Build a real quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) with actual current pricing. Or call **905-342-2153**, we handle bass boat repowers and can assess whether your transom and rigging are ready for a swap.
+Build a real quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) with actual current pricing.
 
 ---
 
@@ -172,15 +172,15 @@ Most Ontario bass boats use a 20-inch (long) shaft. Some 21 ft fiberglass tourna
 
 ### Is 200 HP enough for a 21 ft bass boat?
 
-Marginal. Most 21 ft fiberglass tournament boats are spec'd for 250 HP and run optimally at that. A 200 will plane and run, but you'll be on the rev limiter at WOT and prop choice gets restrictive. If the boat is rated for 250, run 250.
+For recreational use, 200 HP can suit some 21 ft boats. The examples above compare 200–225 HP Pro XS for some 19–21 ft tournament setups and 250–300 HP Pro XS for some elite-level rigs of 21 ft and up. Use the exact hull rating, motor-weight limit, load, and intended use to make the choice; never exceed the rated limits.
 
 ### Should I buy new or repower my bass boat?
 
-Repower is usually the right answer if the hull is structurally sound and under 15 years old. New bass boats are $40,000-$70,000 in 2026 CAD; a Mercury 200 Pro XS repower at HBW is around $25,000-$30,000 all-in.
+Compare a professional assessment of the existing hull, transom, steering, and remaining equipment with dated written quotes for a complete repower and a replacement boat. Include the same installation, equipment, and tax assumptions in both totals.
 
 ### Can I use a kicker motor on a bass boat?
 
-Yes, and most Ontario tournament anglers do. The Mercury 9.9 ProKicker is the standard pick. It handles trolling speeds, keeps batteries topped up, and gives you a get-home option if the main motor faults.
+Most bass boats do not use a kicker for typical bass fishing. A bow-mount trolling motor is standard for positioning. A transom-mounted kicker is possible on some hulls; bring the boat in and we will assess whether it makes sense for your specific setup.
 
 ### Should I buy a stainless or aluminum prop?
 
@@ -188,7 +188,7 @@ Stainless on any tournament boat. Aluminum is fine for the 150 FourStroke break-
 
 ### How much does a Mercury Pro XS cost in Canada in 2026?
 
-Planning-level CAD ranges as of August 8, 2026 (HBW dealer selling price): 150 Pro XS around $24,000-$24,500, 200 Pro XS V6 around $28,000-$30,500, and 250 Pro XS V8 from $34,848 to $37,741. Check the [live pricing reference](/pricing-reference) because shaft length, controls, and configuration change the figure.
+Check the [live pricing reference](/pricing-reference) for the exact model. Shaft length, controls, and configuration change the motor price; request a written quote that separately identifies installation, equipment, and tax.
 
 ### What warranty does a Mercury outboard come with in Canada?
 
@@ -197,7 +197,7 @@ Mercury outboards in Canada carry a 3-year limited warranty plus 3-year corrosio
 ## Related guides
 
 - [Best Mercury for Aluminum Boats 2026](/blog/best-mercury-outboard-aluminum-fishing-boats), best Mercury for aluminum fishing boats
-- [Mercury for Center Console Boats Ontario](/blog/center-console-mercury-motor-guide), center-console power picks
+- [Best Mercury for a Center Console 2026: 115 HP to Quad V10](/blog/center-console-mercury-motor-guide), center-console power picks
 - [Best Mercury for Family Runabout 2026](/blog/best-mercury-for-family-runabouts), family-runabout recommendations
 - [Best Mercury for Ski Boats 2026](/blog/best-mercury-for-ski-wakeboard-boats), ski and wakeboard motor picks
 - [Electric Trolling Motor vs Kicker Guide](/blog/electric-trolling-motor-kicker-guide), electric trolling and kicker setups

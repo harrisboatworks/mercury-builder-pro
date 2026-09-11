@@ -26,6 +26,7 @@ import {
   stripeWebhookStatusAfterHandler,
 } from "../_shared/deposit-email-deliveries.ts";
 import { shouldSuppressDepositStagingSms } from "../_shared/deposit-staging-guard.ts";
+import { validateDepositBeforeClaim } from "./deposit-reconciliation.ts";
 
 const stripe = new Stripe(Deno.env.get("STRIPE_SECRET_KEY") || "", {
   apiVersion: "2025-08-27.basil",
@@ -178,6 +179,43 @@ serve(async (req) => {
         ) {
           throw new Error("Stripe deposit metadata does not match the bound record");
         }
+        const { data: boundSavedQuote, error: boundSavedQuoteError } = await supabase
+          .from("saved_quotes")
+          .select("id, email, deposit_status, deposit_amount")
+          .eq("id", boundSavedQuoteId)
+          .maybeSingle();
+        if (boundSavedQuoteError) {
+          throw new Error(`Bound saved quote lookup failed: ${boundSavedQuoteError.message}`);
+        }
+        const boundMotorId = typeof boundQuoteData.motor_id === "string" && boundQuoteData.motor_id
+          ? boundQuoteData.motor_id
+          : (typeof existingDeposit.motor_model_id === "string" ? existingDeposit.motor_model_id : "");
+        const boundMotorInfo = boundQuoteData.motor_info && typeof boundQuoteData.motor_info === "object"
+          ? boundQuoteData.motor_info
+          : null;
+        validateDepositBeforeClaim({
+          sessionId: session.id,
+          sessionMode: session.mode,
+          sessionStatus: session.status,
+          sessionCurrency: session.currency,
+          sessionAmountTotal: session.amount_total,
+          paymentIntentId,
+          metadataPaymentType: session.metadata.payment_type || "motor_deposit",
+          metadataDepositAmount: depositAmount,
+          metadataSavedQuoteId: savedQuoteId,
+          metadataMotorId: session.metadata.motor_id || boundMotorId,
+          metadataMotorInfo: session.metadata.motor_info
+            || (boundMotorInfo ? JSON.stringify(boundMotorInfo) : null),
+          stripeReceiptEmail: session.customer_details?.email || session.customer_email || "",
+          boundDeposit: {
+            ...existingDeposit,
+            quote_data: {
+              ...boundQuoteData,
+              motor_id: boundMotorId || boundQuoteData.motor_id,
+            },
+          },
+          boundSavedQuote,
+        });
         const motorInfo = boundQuoteData.motor_info || null;
         const customerName = existingDeposit.customer_name || "Customer";
         const customerEmail = existingDeposit.customer_email || "";

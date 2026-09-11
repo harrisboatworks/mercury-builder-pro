@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh-hant/gta-chinese-rice-lake-day-trip-plan.md
-last_updated: 2026-08-03
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "GTA → 萊斯湖 一日遊地圖（繁體版）"
 description: "從多倫多到萊斯湖的一日遊規劃：駕車路線、租船預訂、安全與證件、回程時段。完整簡體版內容詳見對應頁面。"
 category: "mandarin"
 date_published: 2026-06-12
-date_modified: 2026-08-03
+date_modified: 2026-09-06
 keywords: ["萊斯湖","一日遊","多倫多","繁體"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** mandarin  
 **Published:** 2026-06-12  
-**最後審核:** 2026-08-03  
+**最後審核:** 2026-09-06  
 **Read time:** 5 分鐘  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh-hant/gta-chinese-rice-lake-day-trip-plan
 
@@ -34,7 +34,7 @@ revenue_driver: repower
 ## 一日遊核心要點
 
 - **出發時間：** 早上 8-9 點離開多倫多，避開週末交通。
-- **車程：** 經 404 + 115，約 90 分鐘到 Gores Landing。
+- **車程：** 出發前查看前往 Gores Landing 的即時路線與路況，並預留交通緩衝時間。
 - **租船：** 在 HBW 碼頭辦理，需要相片證件 + 信用卡按金。
 - **釣魚證：** 出發前在 [安省官方頁面](http://www.ontario.ca/page/ontario-fishing-regulations-summary-traditional-chinese) 辦好。
 - **回程：** 下午 5 點前出發，避開 401 晚高峰。

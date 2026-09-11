@@ -177,7 +177,7 @@ export function BlogTable({ children }: { children?: ReactNode }) {
       className={wrapperClass}
       data-blog-table-wide={isWide ? 'true' : undefined}
     >
-      <div className={`blog-table-scroll w-full overflow-x-auto overflow-y-visible rounded-xl bg-card ${isWide ? 'lg:overflow-x-visible' : ''}`}>
+      <div tabIndex={0} role="region" aria-label="Scrollable table" className={`blog-table-scroll w-full overflow-x-auto overflow-y-visible rounded-xl bg-card ${isWide ? 'lg:overflow-x-visible' : ''}`}>
         <table className={tableClass}>
           {newThead}
           {newTbody}

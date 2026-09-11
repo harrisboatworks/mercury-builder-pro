@@ -2,6 +2,7 @@ import React, { createContext, useContext, useReducer, useEffect, useCallback, u
 import type { Motor, BoatInfo, QuoteData, QuotePaymentMethod } from '@/components/QuoteBuilder';
 import { findMotorSpecs, type MercuryMotor } from '@/lib/data/mercury-motors';
 import { trackEvent } from '@/lib/analytics';
+import { clearTradeInValuation, tradeInPricingIdentity } from '@/lib/trade-in-state';
 import type { QuotePdfSnapshot } from '@/lib/quote-pdf-data';
 
 export interface WarrantyConfig {
@@ -38,6 +39,7 @@ interface SelectedPackage {
 // Frozen pricing snapshot — locks in exact calculated values so shared/QR links
 // always match the PDF, regardless of whether promotions change later.
 export interface FrozenPricing {
+  appliedTradeCredit?: number;
   motorMSRP: number;
   motorDiscount: number;
   adminDiscount: number;
@@ -298,6 +300,7 @@ export function quoteReducer(state: QuoteState, action: QuoteAction): QuoteState
         selectedPromoRate: null,
         selectedPromoTerm: null,
         selectedPromoValue: null,
+        selectedPaymentMethod: null,
         completedSteps: [],
         currentStep: 1,
         uiFlags: {},
@@ -316,8 +319,12 @@ export function quoteReducer(state: QuoteState, action: QuoteAction): QuoteState
       return { ...state, purchasePath: action.payload };
     case 'SET_BOAT_INFO':
       return { ...state, boatInfo: action.payload };
-    case 'SET_TRADE_IN_INFO':
-      return { ...state, tradeInInfo: action.payload };
+    case 'SET_TRADE_IN_INFO': {
+      const hasTradein = action.payload?.hasTradeIn ?? false;
+      const changed = state.hasTradein !== hasTradein || tradeInPricingIdentity(state.tradeInInfo) !== tradeInPricingIdentity(action.payload);
+      return { ...state, tradeInInfo: action.payload, hasTradein,
+        ...(changed ? {frozenPricing:undefined,pdfSnapshot:undefined}:{}) };
+    }
     case 'PROMOTE_TRADE_IN':
       // The standalone estimator hands off both pieces of quote state as one
       // reducer transition. Persistence can never observe a trade payload
@@ -326,6 +333,7 @@ export function quoteReducer(state: QuoteState, action: QuoteAction): QuoteState
         ...state,
         tradeInInfo: { ...action.payload, hasTradeIn: true },
         hasTradein: true,
+        ...(!state.hasTradein || tradeInPricingIdentity(state.tradeInInfo) !== tradeInPricingIdentity({...action.payload,hasTradeIn:true}) ? {frozenPricing:undefined,pdfSnapshot:undefined}:{}),
       };
     case 'SET_FUEL_TANK_CONFIG':
       return { ...state, fuelTankConfig: action.payload };
@@ -337,8 +345,13 @@ export function quoteReducer(state: QuoteState, action: QuoteAction): QuoteState
       return { ...state, financing: action.payload };
     case 'SET_WARRANTY_CONFIG':
       return { ...state, warrantyConfig: action.payload };
-    case 'SET_HAS_TRADEIN':
-      return { ...state, hasTradein: action.payload };
+    case 'SET_HAS_TRADEIN': {
+      if (state.hasTradein === action.payload) return state;
+      const tradeInInfo = state.tradeInInfo
+        ? action.payload ? {...state.tradeInInfo,hasTradeIn:true} : clearTradeInValuation(state.tradeInInfo,{hasTradeIn:false})
+        : state.tradeInInfo;
+      return {...state,hasTradein:action.payload,tradeInInfo,frozenPricing:undefined,pdfSnapshot:undefined};
+    }
     case 'SET_SELECTED_OPTIONS':
       return { ...state, selectedOptions: action.payload };
     case 'SET_SELECTED_PACKAGE':

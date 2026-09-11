@@ -34,3 +34,12 @@ export function authenticatedBrowserCors(req: Request): {
   }
   return { allowedOrigin, headers, forbiddenOrigin };
 }
+
+// Server-to-server callers (ElevenLabs MCP) send no Origin. A service-role
+// bearer is the exception for those paths; it is not a browser check.
+export function isServiceRoleBearer(req: Request): boolean {
+  const serviceRoleKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY");
+  if (!serviceRoleKey) return false;
+  const authorization = req.headers.get("authorization") || "";
+  return authorization === `Bearer ${serviceRoleKey}`;
+}

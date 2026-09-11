@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/how-to-read-mercury-outboard-serial-number.md
-last_updated: 2026-07-31
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Read Mercury Outboard Serial Number"
 description: "A practical guide to finding, reading, and decoding your Mercury outboard's serial number, model year, shaft length, features."
 category: "Buying Guide"
 date_published: 2026-05-17
-date_modified: 2026-07-31
+date_modified: 2026-09-11
 keywords: ["how to read Mercury serial number","decode Mercury outboard model number","Mercury outboard year by serial number","Mercury serial number lookup Ontario","find Mercury outboard model code"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,15 +25,19 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-05-17  
-**Last reviewed:** 2026-07-31  
+**Last reviewed:** 2026-09-11  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/how-to-read-mercury-outboard-serial-number
 
 ## How to Read a Mercury Outboard Serial Number. Year, Specs, and Service History
 
-> **Quick answer:** Mercury motors carry two different numbers, and they do two different jobs. The **Serial Number** (looks like `0T123456` or `1B234567`) is your motor's unique identifier, you use it to look up year, parts, warranty status, and recalls in Mercury's catalog or any dealer system. You don't decode it, you look it up. The **Model Number** (looks like `90ELPT` or `1F60413GZ`) is the spec code that you CAN decode, it tells you the horsepower, family, electric start, shaft length, power trim, and (on newer codes) model year. This guide covers finding both numbers, decoding the model number, and looking up the serial. Send us a serial or model code through mercuryrepower.ca for a quick check.
+> **Quick answer:** Mercury motors carry two different numbers, and they do two different jobs. The **Serial Number** (looks like `0T123456` or `1B234567`) is your motor's unique identifier, you use it to look up year, parts, warranty status, and recalls in Mercury's catalog or any dealer system. You don't decode it, you look it up. The **Model Number** (looks like `90ELPT` or `1F60413GZ`) is the spec code that you CAN decode, it tells you the horsepower, family, electric start, shaft length, power trim, and (on newer codes) model year. This guide covers finding both numbers, decoding the model number, and looking up the serial.
 
-[Download the Mercury Serial Number & Service Request Prep Sheet](/downloads/mercury-service-request-prep-sheet-hbw.pdf) before you photograph the motor or start a service request.
+### Prepare one complete service request
+
+Capture the engine serial number, hours, exact symptoms, fuel history and recent work before contacting the shop. Clear details help HBW start with the correct engine and concern.
+
+[Download service prep sheet (PDF)](/downloads/mercury-service-request-prep-sheet-hbw.pdf)
 
 Once you've decoded the serial, you'll likely want to look up [Mercury Outboard Warranty (Canada 2026)](/blog/mercury-outboard-warranty-canada-2026), check pricing in the [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide), or compare engine families in [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/fourstroke-vs-pro-xs). Repower customers should also read [Mercury Repower Cost: Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad).
 
@@ -54,13 +58,11 @@ A real Mercury serial number is short, alphanumeric, and unique to your specific
 
 The serial is **stamped or laser-etched on a small plate** on the motor's transom bracket. You will NOT find date or horsepower hidden in the digits, Mercury does not embed the spec into the serial like a car VIN. You look the serial up in Mercury's catalog or any reputable parts site (Crowley Marine, PartsVu, MarineEngine) to get year, model variant, and parts compatibility.
 
-If you want a quick check, send us your serial number through mercuryrepower.ca and we'll run it through the Mercury dealer system.
-
 ## How to decode your Mercury Model Number
 
 The Mercury Model Number is the spec code, and unlike the serial, this one IS decodable. Newer Mercury motors carry a full SKU string like `1F60413GZ`. Older motors use a shorter human-readable code like `90ELPT` or `25EXLHGA`.
 
-![Infographic explaining how to decode a Mercury outboard model number, including country, horsepower, and year codes.](/lovable-uploads/diagram-mercury-model-number-decoder.png)
+**Record both identifiers.** Photograph the complete serial number and model information. Use the serial number in Mercury's official parts or service lookup. Do not infer a year or parts fit from an unverified character-position chart.
 
 *The model number encodes product spec. Use it together with the serial number when ordering parts, planning a repower, or registering warranty.*
 
@@ -182,28 +184,26 @@ Mercury's official parts catalog uses the serial to give you the right exploded 
 Mercury issues service bulletins by serial range, known issues, recommended fixes, sometimes free recall work. A dealer pulls these against your serial to see if anything applies.
 
 ### 3. Warranty status
-[Standard warranty registration](/blog/mercury-outboard-warranty-canada-2026), extended warranty (Mercury Product Protection), and remaining coverage are all keyed to the serial. We can confirm what you have left.
+[Standard warranty registration](/blog/mercury-outboard-warranty-canada-2026), extended warranty (Mercury Product Protection), and remaining coverage are all keyed to the serial. Any Mercury dealer can confirm what you have left when the motor is in for service.
 
 ### 4. Engine hours (on SmartCraft motors)
-Modern Mercurys store hour data inside the engine's computer, independent of any dashboard meter. Plug a diagnostic tool into the SmartCraft port; the serial confirms the model; the hours come up. Can't be tampered with, and it doesn't care if the dashboard meter was disconnected.
+Modern Mercurys store hour data inside the engine's computer, independent of any dashboard meter. Plug a diagnostic tool into the SmartCraft port; the serial confirms the model; the hours come up. Treat the ECM reading as one part of the inspection, alongside the motor condition and available service records.
 
 ### 5. Service history
-If the motor was ever serviced at a Mercury dealer (any dealer, anywhere in North America), there's likely a record tied to the serial in Mercury's dealer network. We can request it.
+If the motor was ever serviced at a Mercury dealer (any dealer, anywhere in North America), there's likely a record tied to the serial in Mercury's dealer network. A dealer can pull it when the motor is in the shop.
 
 ---
 
-## Buying a Used Mercury? Here's Your First Move.
+## Buying a Used Mercury? Check the Serial Before You Pay
 
-Before you hand over money for a private-sale Mercury, do this:
+Before you hand over money for a private-sale Mercury, do this yourself:
 
-1. **Get a clear photo of the bracket plate**, model number + serial number both visible.
-2. **Send it to us** at [hbw.wiki/service](https://hbw.wiki/service), pre-purchase research, free.
-3. **We pull:** model year, original spec, outstanding service bulletins, warranty status, and any service history we can find on it.
-4. **You get a report**, what the motor really is, what it's worth, what's already been done, and what's overdue.
+1. **Get a clear photo of the bracket plate**, model number + serial number both visible. No readable plate and no backup stamp, no deal.
+2. **Decode the model number with the letter codes above**: shaft length, start type, trim, steering. Make sure it matches the transom it's going on.
+3. **Pin down the year.** Some plates print it. If not, ask the seller for the original bill of sale or any dealer service receipt, both reference the serial and the year. The parts-finder sites (Crowley Marine, MarineEngine.com) will land you in a rough year range for ordering parts, but they are not a model-year lookup and a seller's "it's a 2015" can't be checked against them.
+4. **Check the price against the market** with the [used outboard buying guide](/blog/used-outboard-buying-guide-ontario).
 
-If you're considering [a full pre-purchase inspection](/blog/used-boat-walkaround-inspection-ontario) (compression, gearcase pressure, on-water test), the serial-number research is the first 5 minutes of that. Sometimes the research alone tells you to walk away.
-
-This whole exercise, for a private buyer about to spend $4,000 to $14,000 on a used motor, should be table stakes. We do it every week.
+The exact model year, warranty status, service bulletins, and dealer service history are dealer-network lookups, not something you can do from a phone. If the motor is headed for Rice Lake, that research is the first five minutes of [a pre-purchase inspection](/blog/used-boat-walkaround-inspection-ontario) (compression, gearcase pressure, on-water test) with the motor in our shop. Sometimes the research alone tells you to walk away.
 
 ---
 
@@ -248,7 +248,7 @@ No, but identification gets harder. We can usually decode it from secondary stam
 
 ### Can I look up my serial myself online?
 
-Partially. MarineEngine.com, OBParts.com, and Crowley Marine all have free public serial-to-year lookups. They won't show you Mercury's internal service bulletins, warranty, or service history, that's dealer-only. But for "what year is my motor?" the public tools work fine.
+Not really. Crowley Marine, MarineEngine.com, and OBParts publish serial-range charts and parts finders, which get you close enough to order the right parts. They are not a model-year or spec lookup, and they show nothing about warranty, service bulletins, or service history. The exact year and build spec for a specific serial live in Mercury's dealer system.
 
 ### Do older 2-stroke Mercurys (pre-2000) follow the same format?
 
@@ -268,7 +268,7 @@ No. The **model number** is the configuration (115ELPT). The **serial number** i
 - [Outboard Trade-In Value in Ontario (2026)](/blog/outboard-trade-in-value-ontario-hbw), what your outboard is worth on trade
 - [The Complete Guide to Boat Bilge Pumps: How They Work, Why They Fail, and How to Fix Them](/blog/bilge-pump-troubleshooting-guide), diagnosing a bilge pump that won't run
 - [Mercury Outboard Repair Guide: Troubleshooting and Maintenance](/blog/mercury-outboard-repair-guide), repair symptoms, triage, and service next steps
-- [Mercury Outboard Fuel Economy: How to Get Better MPG](/blog/mercury-outboard-fuel-efficiency-guide), maximizing fuel efficiency
+- [Mercury Fuel Burn by HP: 5 Ways to Cut Gas Costs (2026)](/blog/mercury-outboard-fuel-efficiency-guide), maximizing fuel efficiency
 
 ## Next steps
 

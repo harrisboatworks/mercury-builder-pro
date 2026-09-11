@@ -78,14 +78,16 @@ export default function AdminConnectors() {
           .from('sources')
           .createSignedUrl(filename, 60 * 60 * 24 * 7, { download: true });
 
-        if (signedUrl?.signedUrl) {
-          // Store in admin_sources
-          const sourceKey = fileExt === 'csv' ? 'pricelist_last_csv' : 'pricelist_last_html';
-          await supabase.from('admin_sources').upsert({
-            key: sourceKey,
-            value: signedUrl.signedUrl
-          });
+        if (!signedUrl?.signedUrl) {
+          throw new Error('Could not create a download URL for the uploaded file');
         }
+
+        const sourceKey = fileExt === 'csv' ? 'pricelist_last_csv' : 'pricelist_last_html';
+        const { error: sourceError } = await supabase.from('admin_sources').upsert({
+          key: sourceKey,
+          value: signedUrl.signedUrl
+        });
+        if (sourceError) throw sourceError;
       }
 
       toast({
@@ -146,58 +148,64 @@ export default function AdminConnectors() {
         .from('sources')
         .createSignedUrl(filename, 60 * 60 * 24 * 7, { download: true });
 
-      if (signedUrl?.signedUrl) {
-        const sourceKey = isCSV ? 'pricelist_last_csv' : 'pricelist_last_html';
-        await supabase.from('admin_sources').upsert({
-          key: sourceKey,
-          value: signedUrl.signedUrl
-        });
+      if (!signedUrl?.signedUrl) {
+        throw new Error('Could not create a download URL for the fetched file');
+      }
 
-        // If HTML and contains table, also generate CSV
-        if (!isCSV && content.toLowerCase().includes('<table')) {
-          try {
-            // Simple table to CSV conversion
-            const parser = new DOMParser();
-            const doc = parser.parseFromString(content, 'text/html');
-            const tables = doc.querySelectorAll('table');
+      const sourceKey = isCSV ? 'pricelist_last_csv' : 'pricelist_last_html';
+      const { error: sourceError } = await supabase.from('admin_sources').upsert({
+        key: sourceKey,
+        value: signedUrl.signedUrl
+      });
+      if (sourceError) throw sourceError;
+
+      // If HTML and contains table, also generate CSV
+      if (!isCSV && content.toLowerCase().includes('<table')) {
+        try {
+          // Simple table to CSV conversion
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(content, 'text/html');
+          const tables = doc.querySelectorAll('table');
+          
+          if (tables.length > 0) {
+            const csvRows: string[] = [];
+            tables[0].querySelectorAll('tr').forEach(row => {
+              const cells = Array.from(row.querySelectorAll('td, th')).map(cell => 
+                `"${cell.textContent?.trim().replace(/"/g, '""') || ''}"`
+              );
+              if (cells.length > 0) {
+                csvRows.push(cells.join(','));
+              }
+            });
             
-            if (tables.length > 0) {
-              const csvRows: string[] = [];
-              tables[0].querySelectorAll('tr').forEach(row => {
-                const cells = Array.from(row.querySelectorAll('td, th')).map(cell => 
-                  `"${cell.textContent?.trim().replace(/"/g, '""') || ''}"`
-                );
-                if (cells.length > 0) {
-                  csvRows.push(cells.join(','));
-                }
-              });
+            if (csvRows.length > 1) {
+              const csvContent = csvRows.join('\n');
+              const csvFilename = `pricelist/${timestamp}-fetched.csv`;
               
-              if (csvRows.length > 1) {
-                const csvContent = csvRows.join('\n');
-                const csvFilename = `pricelist/${timestamp}-fetched.csv`;
-                
-                await supabase.storage
-                  .from('sources')
-                  .upload(csvFilename, csvContent, {
-                    contentType: 'text/csv',
-                    cacheControl: 'public, max-age=86400'
-                  });
+              await supabase.storage
+                .from('sources')
+                .upload(csvFilename, csvContent, {
+                  contentType: 'text/csv',
+                  cacheControl: 'public, max-age=86400'
+                });
 
-                const { data: csvSignedUrl } = await supabase.storage
-                  .from('sources')
-                  .createSignedUrl(csvFilename, 60 * 60 * 24 * 7, { download: true });
+              const { data: csvSignedUrl } = await supabase.storage
+                .from('sources')
+                .createSignedUrl(csvFilename, 60 * 60 * 24 * 7, { download: true });
 
-                if (csvSignedUrl?.signedUrl) {
-                  await supabase.from('admin_sources').upsert({
-                    key: 'pricelist_last_csv',
-                    value: csvSignedUrl.signedUrl
-                  });
+              if (csvSignedUrl?.signedUrl) {
+                const { error: csvSourceError } = await supabase.from('admin_sources').upsert({
+                  key: 'pricelist_last_csv',
+                  value: csvSignedUrl.signedUrl
+                });
+                if (csvSourceError) {
+                  console.warn('Failed to store generated CSV source:', csvSourceError);
                 }
               }
             }
-          } catch (csvError) {
-            console.warn('Failed to generate CSV from HTML table:', csvError);
           }
+        } catch (csvError) {
+          console.warn('Failed to generate CSV from HTML table:', csvError);
         }
       }
 
@@ -244,10 +252,11 @@ export default function AdminConnectors() {
       const sourceType = sourceKey.includes('csv') ? 'csv' : 'html';
       
       // Update default source settings
-      await supabase.from('admin_sources').upsert([
+      const { error } = await supabase.from('admin_sources').upsert([
         { key: 'pricelist_default_source', value: sourceType },
         { key: 'pricelist_default_url', value: sourceUrl }
       ]);
+      if (error) throw error;
 
       toast({
         title: "Default Source Set",

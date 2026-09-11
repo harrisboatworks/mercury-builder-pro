@@ -1,6 +1,7 @@
 // src/hooks/useActiveFinancingPromo.ts
 import { useEffect, useState } from 'react';
 import { supabase } from '@/integrations/supabase/client';
+import { dealerToday } from '@/lib/quote-utils';
 
 export type ActiveFinancingPromo = {
   id: string;
@@ -33,7 +34,7 @@ export function useActiveFinancingPromo() {
       setLoading(true);
       setError(null);
       try {
-        const today = new Date().toISOString().slice(0, 10); // YYYY-MM-DD
+        const today = dealerToday();
         const { data, error } = await (supabase as any)
           .from('financing_options')
           .select('id, name, rate, promo_text, promo_end_date, is_promo, is_active')

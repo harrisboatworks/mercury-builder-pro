@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-main-and-trolling-motor.md
-last_updated: 2026-08-15
+last_updated: 2026-08-27
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Main + Trolling Motor: How to Pair Them"
 description: "Pair a Mercury main with a 9.9 ProKicker or Avator 7.5e electric kicker, or a bow electric trolling motor. What the bracket, tie bar, fuel routing, and wiring involve."
 category: "Buying Guide"
 date_published: 2026-05-25
-date_modified: 2026-08-15
+date_modified: 2026-08-27
 keywords: ["mercury kicker setup","mercury 9.9 prokicker","mercury avator kicker","main and kicker pairing","bow electric trolling motor","tie bar steering","kicker bracket installation"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-05-25  
-**Last reviewed:** 2026-08-15  
+**Last reviewed:** 2026-08-27  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-main-and-trolling-motor
 
@@ -104,6 +104,8 @@ Start with the main motor at **[mercuryrepower.ca](https://www.mercuryrepower.ca
 **Phone:** 905-342-2153
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 **Service:** [hbw.wiki/service](https://hbw.wiki/service)
+
+Family-owned since 1947, Mercury dealer since 1965, Mercury Premier Dealer.
 
 ---
 

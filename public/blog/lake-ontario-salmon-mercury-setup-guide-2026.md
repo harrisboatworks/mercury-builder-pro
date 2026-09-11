@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/lake-ontario-salmon-mercury-setup-guide-2026.md
-last_updated: 2026-08-02
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Lake Ontario Salmon Boat Rigging: Kicker, Charging & Troll Control"
 description: "Rig a Lake Ontario salmon boat around trolling control, kicker fit, alternator demand, battery management, electronics, and safe handoff testing."
 category: "Fishing / Rigging"
 date_published: 2026-05-28
-date_modified: 2026-08-02
+date_modified: 2026-09-11
 keywords: ["Lake Ontario salmon Mercury setup","Mercury salmon trolling setup","Lake Ontario kicker install","Mercury 9.9 ProKicker","dual battery boat wiring Lake Ontario","Mercury SmartCraft Troll Control","Port Hope Mercury dealer","Cobourg Mercury dealer"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Fishing / Rigging  
 **Published:** 2026-05-28  
-**Last reviewed:** 2026-08-02  
+**Last reviewed:** 2026-09-11  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/lake-ontario-salmon-mercury-setup-guide-2026
 
@@ -70,7 +70,7 @@ For salmon trolling, the kicker is genuinely critical. Slow trolling for hours o
 - High-thrust four-blade prop designed for low-speed control
 - Pairs cleanly with Mercury main-motor setups where SmartCraft Troll Control is already part of the rig
 
-**Kicker sizing:** The 9.9 ProKicker is the volume choice. For larger boats (22+ ft) or heavy-load Lake Ontario work, the Mercury 15 or 20 ProKicker provides more thrust margin. We've installed all three across our Lake Ontario customer base.
+**Kicker sizing:** Current Mercury Canada ProKicker listings are 9.9, 15, and 25 HP. The 9.9 is the volume choice. A 15 can add thrust on a heavier boat when weight, shaft length, mounting clearance, and controls fit. There is no current 20 HP ProKicker tier; the ordinary 20 HP FourStroke is a different product. Do not treat a 25 as the automatic motor for every 22-foot boat. [ProKicker 9.9-25](https://www.mercurymarine.com/ca/en/engines/outboard/prokicker/fourstroke-prokicker-9-9-25hp).
 
 **Common boat brands we set up for Mercury kicker installs:** Princecraft is the most common brand we rig. Lund, Lund Pro-V, MirroCraft, and Sylvan are also frequent. Older Alumacraft hulls come through with kicker upgrades regularly.
 
@@ -86,7 +86,7 @@ The right answer depends on use case, boat size, and what you're already running
 
 The electrical math matters. Electric downriggers draw significant current during retrieval cycles. Add a sonar, a chartplotter, navigation lights, courtesy lights, and a livewell, and total electrical load can exceed what a basic 30-40 amp alternator can sustain.
 
-**Per-downrigger draw:** Modern electric downriggers (Cannon, Scotty) typically pull 6-10 amps during retrieval, less during deployment. For 4 downriggers running concurrent retrieval cycles, peak draw can hit 32-40 amps just for the riggers.
+**Per-downrigger draw:** Electric downrigger current depends on the make, model, load, and whether retrieval is happening. Use the manufacturer's electrical specification and add it into a boat-specific load calculation. Do not treat one amp range as universal.
 
 **Add the other electronics:** Sonar 1-3 A, chartplotter 0.5-2 A, nav lights 1-2 A, livewell pump 3-5 A, courtesy lights 0.5-2 A. Total ancillary draw 6-14 A.
 
@@ -166,7 +166,7 @@ If you launch from Port Hope, Cobourg, or anywhere on Lake Ontario's north shore
 
 Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Family-owned since 1947, Mercury dealer since 1965, current Premier Dealer. Confirm drive time, the exact part, and service capacity before travelling from Port Hope or Cobourg.
 
-**Pricing out a big-water setup?** Build the main-and-kicker quote at [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection), or call 905-342-2153.
+**Pricing out a big-water setup?** Build the main-and-kicker quote at [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection).
 
 ## FAQs
 
@@ -180,7 +180,7 @@ Depends on boat. 19-20 ft aluminum V-hull: Mercury 150-200 HP. 21-22 ft aluminum
 
 ### What kicker do you recommend for Lake Ontario salmon trolling?
 
-Mercury 9.9 ProKicker is the volume choice. For larger boats (22+ ft) or heavy loads, the 15 or 20 ProKicker provides additional thrust margin. The ProKicker line is engineered for sustained low-RPM trolling, which is what salmon fishing requires.
+The current Canadian ProKicker line is 9.9, 15, and 25 HP. The 9.9 is the volume choice. Compare a 15 or, after checking weight, shaft, mounting clearance, and controls, a 25 when the boat and load actually need more thrust. Do not spec a current 20 HP ProKicker, and do not treat 25 as automatic on every 22-foot boat.
 
 ### What alternator output do I need for 4 electric downriggers?
 

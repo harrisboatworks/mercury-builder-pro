@@ -1,17 +1,17 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-weight-chart.md
-last_updated: 2026-07-23
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
-title: "Mercury Outboard Weight Chart (2.5 to 300 HP)"
-description: "How much does a Mercury outboard weigh? Official dry weights from 2.5 to 300 HP, why weight matters for your transom, and how to match a motor to your boat."
+title: "Mercury Outboard Weight Chart 2026: 2.5–300 HP Dry Weights"
+description: "Official dry weights for every Mercury FourStroke and Pro XS from 2.5 to 300 HP, plus the transom weight check we run before quoting any repower."
 category: "Buying Guide"
 date_published: 2026-06-07
-date_modified: 2026-07-23
+date_modified: 2026-09-11
 keywords: ["mercury outboard weight","mercury outboard weight chart","how much does a mercury 115 weigh","outboard motor weight","transom weight capacity"]
 author: Harris Boat Works
 content_type: blog_article
@@ -19,13 +19,13 @@ language: en-CA
 revenue_driver: repower
 ---
 
-# Mercury Outboard Weight Chart (2.5 to 300 HP)
+# Mercury Outboard Weight Chart 2026: 2.5–300 HP Dry Weights
 
-> How much does a Mercury outboard weigh? Official dry weights from 2.5 to 300 HP, why weight matters for your transom, and how to match a motor to your boat.
+> Official dry weights for every Mercury FourStroke and Pro XS from 2.5 to 300 HP, plus the transom weight check we run before quoting any repower.
 
 **Category:** Buying Guide  
 **Published:** 2026-06-07  
-**Last reviewed:** 2026-07-23  
+**Last reviewed:** 2026-09-11  
 **Read time:** 5 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-weight-chart
 
@@ -33,19 +33,19 @@ revenue_driver: repower
 
 Mercury outboards range from 19 kg (41 lb) for the 2.5 and 3.5 HP portables to 239 kg (527 lb) for the 250 and 300 HP V8 FourStroke, with the 75, 90, and 115 sharing the same 2.1L block at 163 kg (359 lb). All figures are Mercury's published dry weight for the lightest configuration; longer shafts, Command Thrust gearcases, and rigging add weight.
 
-![Mercury outboard dry weight by HP class: 9.9 HP 39 kg (85 lb), 60 HP 112 kg (247 lb), 115 HP 163 kg (359 lb), 150 HP 206 kg (455 lb), 250 V8 239 kg (527 lb) (Mercury published specs)](/blog-visuals/mercury-outboard-weight-by-hp-class.png)
+![Motor-weight planning: identify the exact configuration, account for the complete installation, and confirm hull limits.](/lovable-uploads/blog-visuals-2026-09/motor-weight-planning.svg)
 
 ## Mercury Outboard Weight Chart: 2.5 to 300 HP
 
 How much a motor weighs is not trivia. It decides whether your transom can carry it, how your boat sits at rest, and how it planes. Here's what Mercury outboards weigh according to Mercury's own specifications, why it matters, and how to use the number.
 
-This chart covers the FourStroke and Pro XS families we sell and install every week. Verado is special-order territory at HBW and its weights vary significantly by model and rigging; if you are considering a Verado, verify the exact model number against Mercury's spec sheet or call us.
+This chart covers the FourStroke and Pro XS families we sell and install every week. Verado is special-order territory at HBW and its weights vary significantly by model and rigging; if you are considering a Verado, verify the exact model number against Mercury's spec sheet.
 
 ### FourStroke dry weights
 
 | HP | Dry weight (lightest model) | Notes |
 |---|---|---|
-| 2.5 / 3.5 | 18 kg (41 lb) | Tiller portables |
+| 2.5 / 3.5 | 19 kg (41 lb) | Tiller portables |
 | 4 / 5 / 6 | 26 kg (57 lb) | Shared single-cylinder platform |
 | 9.9 EFI | 38.5 kg (85 lb) | Command Thrust: 45 kg (100 lb) |
 | 9.9 ProKicker | 55 to 57 kg (121 to 126 lb) | Kicker-duty gearcase and controls; range covers ProKicker variants |
@@ -60,8 +60,11 @@ This chart covers the FourStroke and Pro XS families we sell and install every w
 | 90 | 163 kg (359 lb) | Command Thrust: 165 kg (363 lb) |
 | 115 | 163 kg (359 lb) | Command Thrust: 165 kg (363 lb) |
 | 135 / 150 | 206 kg (455 lb) | 3.0L inline-4 |
-| 175 / 200 / 225 | 216 kg (475 lb) | 3.4L V6 |
+| 175 / 200 | 215 kg (475 lb), dated brochure reference | 3.4L V6; confirm exact configuration |
+| 225 | Confirm exact model specification | 3.4L V6; do not infer weight from the 175/200 row |
 | 250 / 300 | 239 kg (527 lb) | 4.6L V8 |
+
+*The 175/200 FourStroke reference is from Mercury brochure 8M0189529 (May 2022), PDF page 10. It is not a guarantee for every current model or shaft. Confirm the exact ordered motor.*
 
 ### Pro XS dry weights
 
@@ -69,10 +72,10 @@ This chart covers the FourStroke and Pro XS families we sell and install every w
 |---|---|---|
 | 115 | 163 kg (359 lb) | Same as the standard 115; Mercury calls it the lightest performance 115 in class |
 | 150 | 207 kg (456 lb) | 3.0L |
-| 175 | 213 kg (470 lb) | 3.4L V6 |
-| 200 / 225 / 250 / 300 | 229 kg (505 lb) | 4.6L V8; yes, the Pro XS V8s are lighter than the FourStroke V8s |
+| 175 | 216 kg (475 lb) | 3.4L V6; confirm the exact configuration |
+| 200 / 225 / 250 / 300 | 232 kg (511 lb) | 4.6L V8; confirm shaft, gearcase and control configuration |
 
-All figures are Mercury's published dry weight for the lightest available configuration. [Longer shafts](/blog/outboard-shaft-length-guide), Command Thrust gearcases, and rigging add weight, so a single HP can have more than one published number. Figures are from Mercury's published 2026 model-year specifications: [Mercury Marine official specifications](https://www.mercurymarine.com/ca/en/engines/outboard).
+All figures are Mercury's published dry weight for the lightest available configuration. [Longer shafts](/blog/outboard-shaft-length-guide), Command Thrust gearcases, and rigging add weight, so a single HP can have more than one published number. The Pro XS V6/V8 figures follow [Mercury Pro XS brochure 8M0189590, specification table](https://www.marineloisirs.com/wp-content/uploads/2024/03/8M0189590_MercProXS_Brochure_Web.pdf). Treat these as configuration-dependent reference figures, not a guaranteed installed weight or a substitute for the exact model specification. See [Mercury Marine official specifications](https://www.mercurymarine.com/ca/en/engines/outboard) and confirm the ordered model with HBW.
 
 **Dry weight is not installed weight.** Mercury's dry weight excludes the propeller, fluids, battery cables, controls, and rigging hardware. The real load on your transom once the motor is installed and rigged is meaningfully higher than the chart number, so leave margin when comparing against your capacity plate's maximum motor weight.
 
@@ -90,7 +93,7 @@ Most repower regret traces back to one of two things: too much horsepower, or to
 
 If you're repowering and not sure your transom can carry the modern equivalent of your old motor, that's exactly the kind of thing we check before we quote.
 
-**Get a real repower quote, motor, weight, rigging and all, at [mercuryrepower.ca](https://www.mercuryrepower.ca)**, or call 905-342-2153.
+**Get a real repower quote, motor, weight, rigging and all, at [mercuryrepower.ca](https://www.mercuryrepower.ca)**.
 
 Harris Boat Works: family-owned on Rice Lake since 1947.
 
@@ -110,15 +113,15 @@ Mercury's 115 Pro XS at 163 kg (359 lb), which Mercury says is the lightest perf
 
 ### How much does a Mercury 250 weigh?
 
-Depends on the family: the 250 Pro XS V8 is 229 kg (505 lb) dry, while the 250 FourStroke V8 is 239 kg (527 lb), both in their lightest configurations.
+Depends on the family: the 250 Pro XS V8 is 232 kg (511 lb) dry, while the 250 FourStroke V8 is 239 kg (527 lb), using the brochure's listed configurations; confirm the exact model and shaft before ordering.
 
 ### Why does outboard weight matter when repowering?
 
-Your capacity plate lists a maximum motor weight as well as horsepower. A heavier motor changes how the boat sits and planes, and modern four-strokes often weigh more than the old two-strokes they replace, so check transom capacity before you buy.
+Check the boat manufacturer's power and installed-motor-weight limits; not every capacity plate lists a motor-weight limit. A heavier motor changes how the boat sits and planes, and modern four-strokes often weigh more than the old two-strokes they replace, so check transom capacity before you buy.
 
 ### Are modern four-strokes heavier than the old two-strokes they replace?
 
-Often, yes. Modern four-strokes typically carry more weight than the two-strokes they replace, though the gap varies a lot by family and vintage. That is exactly why the capacity plate's maximum motor weight matters during a repower: check it before you buy, and if your hull is older or light, ask us to confirm the transom can carry the modern equivalent.
+Often, yes. Modern four-strokes typically carry more weight than the two-strokes they replace, though the gap varies a lot by family and vintage. That is exactly why the boat manufacturer's installed-motor-weight limit matters during a repower: check it before you buy, and if your hull is older or light, ask us to confirm the transom can carry the modern equivalent.
 
 ### How much does a 40 hp Mercury outboard weigh?
 
@@ -130,11 +133,11 @@ The 50 HP Mercury FourStroke EFI weighs 112 kg (247 lb) dry for the lightest mod
 
 ### How much does a 200 hp Mercury outboard weigh?
 
-It depends on the family. The 200 HP FourStroke (3.4L V6) is 216 kg (475 lb) dry, while the 200 HP Pro XS (4.6L V8) is 229 kg (505 lb), both in their lightest configurations. Check your capacity plate before repowering.
+It depends on the family. The 200 HP FourStroke (3.4L V6) is 215 kg (475 lb) dry, while the 200 HP Pro XS (4.6L V8) is 232 kg (511 lb), using the brochure's listed configurations; confirm the exact model and shaft before ordering. Check your capacity plate before repowering.
 
 ### How much does a 300 hp Mercury outboard weigh?
 
-The 300 HP Mercury FourStroke V8 is 239 kg (527 lb) dry, and the 300 HP Pro XS V8 is lighter at 229 kg (505 lb), both for the lightest configuration. Longer shafts and rigging add weight.
+The 300 HP Mercury FourStroke V8 is 239 kg (527 lb) dry, and the 300 HP Pro XS V8 is lighter at 232 kg (511 lb), both for the lightest configuration. Longer shafts and rigging add weight.
 
 ## Related guides
 

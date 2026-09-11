@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-overheating-at-idle-fix-ontario.md
-last_updated: 2026-08-19
+last_updated: 2026-09-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Overheating at Idle Fix"
 description: "Mercury outboard overheating at idle but fine at speed: diagnostic flow for water pump impeller, intake debris, thermostat, sensors."
 category: "Troubleshooting"
 date_published: 2026-05-11
-date_modified: 2026-08-19
+date_modified: 2026-09-07
 keywords: ["mercury outboard overheating","mercury overheating at idle","mercury water pump impeller","mercury tell-tale not pissing","mercury cooling system fix ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,13 +25,13 @@ revenue_driver: service
 
 **Category:** Troubleshooting  
 **Published:** 2026-05-11  
-**Last reviewed:** 2026-08-19  
+**Last reviewed:** 2026-09-07  
 **Read time:** 7 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-overheating-at-idle-fix-ontario
 
 ---
 
-![Diagnostic flowchart for Mercury outboard overheating, guiding owners through tell-tale and RPM checks to prevent damage.](/lovable-uploads/diagram-overheating-troubleshooting.png)
+**Use the exact engine guidance.** Follow the response specified for your motor and any displayed warning. A telltale stream alone does not establish that engine temperature is safe. Record the serial number and warning message for a qualified technician; do not use a generic chart as a diagnosis.
 
 ## Quick Answer
 
@@ -40,8 +40,6 @@ A Mercury that overheats at idle but runs fine at speed is a classic symptom of 
 For engine repairs, we only service Mercury and MerCruiser. Book at [hbw.wiki/service](https://hbw.wiki/service).
 
 ---
-
-![Diagnostic flowchart for Mercury outboard overheating alarms, showing steps for checking telltale stream and intake debris.](/lovable-uploads/mercury-outboard-overheating-emergency-decision-tree.png)
 
 ## Mercury Outboard Overheating at Idle: What's Actually Causing It (Ontario)
 
@@ -59,7 +57,7 @@ Check the tell-tale (the small water stream from the motor cowling) when the ala
 
 | Tell-tale at idle | What it means |
 |---|---|
-| Strong and steady | Water is flowing. Problem is likely thermostat, sensor, or internal blockage, not the pump. |
+| Strong and steady | Water is leaving the telltale. That does not rule out overheat. The cause may still be thermostat, sensor, internal blockage, or another cooling path. Follow the display and the serial-specific manual. |
 | Weak or sputtering | Pump isn't generating enough flow at low RPM. Classic worn impeller. |
 | Strong at cruise, weak at idle | **Classic worn impeller.** At cruise RPM the pump gets by; at idle RPM it can't. |
 | No tell-tale at all | Pump has failed or intake is completely blocked. Shut down. |
@@ -121,7 +119,17 @@ Sensor diagnosis requires dealer tools to read temperature sensor values against
 
 ---
 
-![Mercury outboard engine on a workbench with a service manual and infrared thermometer for overheating diagnostics.](/lovable-uploads/inline/inline-overheating-diagnostic.png)
+**The diagnostic sequence at a glance**
+
+| Step | What you check | What it points to |
+|---|---|---|
+| 1 | The tell-tale stream at idle | Strong at cruise and weak at idle is the classic worn-impeller pattern. No tell-tale at all means shut down. |
+| 2 | The cooling intake screens on the lower unit | Weeds, debris and zebra mussel growth restrict flow, and the restriction bites hardest at idle when flow is lowest. |
+| 3 | The water pump impeller | A worn impeller can keep up at cruise RPM and fall short at idle RPM. The lower unit has to come off to service it. |
+| 4 | The thermostat | A thermostat stuck partially closed restricts flow through the powerhead even when the pump is delivering water. |
+| 5 | The temperature sensor | Less common. Suspect it when the tell-tale looks normal, the motor does not sound like it is struggling, and the alarm is intermittent. Sensor diagnosis needs dealer tools. |
+
+Your serial-number owner's manual controls the exact procedure and service interval for your motor.
 
 ## Ontario Context: Why Idle Overheating Shows Up More in Summer
 
@@ -138,7 +146,7 @@ This is why we recommend impeller replacement on schedule rather than waiting fo
 If the overheat alarm sounds at idle:
 - **Don't keep running to see if it clears.** Running an overheated motor at any RPM risks powerhead damage.
 - **If the tell-tale is weak or absent: shut down immediately.**
-- **If the tell-tale is normal: idle very slowly toward shore and book service.**
+- **If the tell-tale looks normal: that does not rule out overheat.** Reduce load, follow the display and the serial-specific manual, and stop when a temperature, oil-pressure, or water-flow warning requires it. Do not treat a limp-back at idle as the default first step.
 
 After any overheating event, have the motor inspected before the next run. Heat cycling can cause damage that isn't visible externally.
 
@@ -150,9 +158,9 @@ Book at [hbw.wiki/service](https://hbw.wiki/service).
 
 ## What we see at HBW
 
-Rice Lake's central basin is thick with stumps and milfoil in late July. The number-one overheating call we get in August is a clogged water intake from weeds, not a failed impeller. Boater hits 70 km/h, sucks up a wad of weed, the alarm goes off, panic sets in.
+Rice Lake's central basin can be thick with stumps and milfoil in late July. If an overheat alarm sounds after a weed-heavy run, check the intake screens before assuming the impeller failed.
 
-The actual fix at the shop, after the impeller test, is usually a five-minute hose-and-pick clean of the intake screen. If the alarm has been on for more than a minute or two, we pressure-test the powerhead before sign-off. Heat damage compounds fast on Pro XS V8 powerheads.
+Follow the engine manual before inspecting or clearing intake screens. Do not probe or disassemble cooling components based on this summary. Have an overheat alarm diagnosed before the next run.
 
 ---
 
@@ -172,7 +180,7 @@ Every 3 years or 300 hours is the common Mercury guidance; your model's manual h
 
 ### My tell-tale is weak, can I still run it?
 
-Briefly at idle to limp back to dock, yes. Anything more risks the powerhead. The tell-tale stream is your real-time water-flow indicator - if it's weak, the engine is undercooled.
+A weak or missing telltale is a stop-and-assess warning, not permission to keep idling. Reduce load, follow the display and the serial-specific manual, and shut down when a temperature or water-flow warning requires it. A strong stream also does not rule out overheat. Arrange a tow or other safe return rather than using idle as a default limp-home plan.
 
 ### Can I just delete the thermostat to fix overheating?
 
@@ -180,7 +188,7 @@ No. Engines need to reach operating temp to combust properly. A deleted thermost
 
 ### Did I damage the powerhead by overheating?
 
-Depends on duration and how you responded. If you got the alarm, throttled to idle, and shut down within a few minutes - usually fine. If you kept running through the alarm, you may have damaged head gasket, rings, or valves. We can pressure-test to confirm.
+Depends on duration and how you responded. If you reduced load, followed the display and the serial-specific manual, and shut down when a temperature warning required it, many motors are unharmed. If you kept running through the alarm, you may have damaged the head gasket, rings, or valves. We can pressure-test to confirm.
 
 ## Related guides
 

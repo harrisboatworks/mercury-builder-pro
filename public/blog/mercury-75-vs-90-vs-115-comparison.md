@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-75-vs-90-vs-115-comparison.md
-last_updated: 2026-08-19
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury 90 vs 115 vs 75 HP: Which Outboard to Pick (2026)"
 description: "Compare Mercury 75, 90 and 115 FourStroke outboards by boat fit, loading, tiller and Command Thrust availability, pricing and performance tradeoffs."
 category: "Comparison"
 date_published: 2026-01-26
-date_modified: 2026-08-19
+date_modified: 2026-09-11
 keywords: ["90 hp mercury motor","mercury 75 vs 90","mercury 90 vs 115","best mercury hp","mercury 75hp review","mercury 115 fourstroke"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Comparison  
 **Published:** 2026-01-26  
-**Last reviewed:** 2026-08-19  
+**Last reviewed:** 2026-09-11  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-75-vs-90-vs-115-comparison
 
@@ -44,7 +44,6 @@ For most 16 to 18 ft aluminum console boats on Kawartha and Ontario freshwater, 
 - Boat under 18 ft, lighter aluminum → **75 FourStroke**
 - Bowrider or mid-size aluminum, family use → **90 FourStroke**
 - Heavier rig, fish-and-ski, pontoon, or want performance → **115 Pro XS**
-- Not sure? Call us and we'll size it.
 
 ## Is Upgrading From 75 to 90 HP Worth It?
 
@@ -83,8 +82,6 @@ For typical Ontario use on 16 to 18 ft aluminum console boats:
 | Best fit | 14 to 16 ft light aluminum | 16 to 18 ft aluminum console | 17 to 19 ft aluminum or light fiberglass |
 | Use case | Solo or two-person | Family of three or four | Family of four or five with gear |
 | Tournament use | No | Marginal | Yes (FourStroke) or step to Pro XS |
-
-![Visual matrix showing which Mercury (75/90/115) fits which boat type and use case](/lovable-uploads/mercury-75-90-115-best-fit-matrix.png)
 
 Note: top-speed numbers vary by hull design, prop selection, and loading. These are typical Kawartha-area lake-test results for representative aluminum console hulls. For your specific boat, lake-test numbers from HBW will be more accurate.
 
@@ -152,9 +149,9 @@ Pricing on the 75, 90, and 115 is right here, in real Canadian dollars, no 'call
 
 [See live Ontario pricing](/pricing-reference)
 
-## Resale: the 115 carries a premium
+## Resale: horsepower can change who looks at the boat
 
-When it comes time to sell, the transom horsepower plate shapes buyer interest. Boats hanging a 115 generally attract more attention than the same hull with a 90, especially in the popular 17-to-19-foot family-fish segment, and a well-maintained 115 typically fetches more and sells faster. If you plan to keep the boat for many years, the upfront savings on a 90 might outweigh the future resale difference. If you trade every five to seven years, the extra $1,500 to $2,500 spent today often comes back at resale, and you enjoy the performance in the meantime.
+When it comes time to sell, the transom horsepower plate can shape buyer interest. A well-matched, well-maintained motor usually helps more than a generic payback range. If you plan to keep the boat for many years, the upfront savings on a 90 might outweigh any later resale difference. If you trade more often, compare current written quotes and decide whether the extra performance is worth the extra spend while you own it. There is no universal resale payback figure.
 
 ## What HBW checks before recommending 75, 90, or 115
 
@@ -206,11 +203,9 @@ Build a quote for 75, 90, or 115 HP on the [motor selection page](/quote/motor-s
 
 [**Build Your Mercury Quote**](/quote/motor-selection)
 
-If you want to talk through the decision for your specific boat before you build, [give us a call at (905) 342-2153](tel:9053422153). We rig boats in this HP class every week and can give you the honest answer for your hull and use case.
-
 ---
 
-_Pricing ranges in this article are HBW's working 2026 estimates, verified May 2026. The actual price for your specific motor and configuration is on the [motor selection page](/quote/motor-selection), which is the source of truth and updates as Mercury pricing and HBW promotions change. Mercury model years change every July 1, and we refresh ranges in articles annually._
+_Pricing ranges in this article are HBW's working 2026 estimates, last reviewed 2026-08-19. The actual price for your specific motor and configuration is on the [motor selection page](/quote/motor-selection), which is the source of truth and updates as Mercury pricing and HBW promotions change. Mercury model years change every July 1, and we refresh ranges in articles annually._
 
 ---
 
@@ -230,8 +225,6 @@ Mercury Premier Dealer · Rice Lake, Ontario
 You know the horsepower range. Build a real quote on the exact motor in about two minutes and we'll have a person review it, not a bot. Mercury Premier dealer, transparent pricing, Rice Lake since 1947.
 
 [Build Your Quote](/quote/motor-selection)
-
-905-342-2153
 
 Repowering an older rig? Here's how the [repower process](/repower) works.
 
@@ -285,8 +278,8 @@ For most 16 to 18 ft aluminum boats that carry two or more people, yes. The 90 g
 
 - [Mercury 40 vs 60 HP Ontario Guide](/blog/mercury-40-vs-60-hp-outboard-ontario), 40 vs 60 HP for Ontario boats
 - [Mercury 9.9 vs 15 HP Tiller for Ontario](/blog/mercury-9-9-vs-15-hp-tiller-ontario), 9.9 vs 15 HP tiller comparison
-- [Mercury 150 Pro XS to 300 Compared for Ontario Boats](/blog/mercury-150-300hp-pro-xs-performance-guide), 150–300 HP Pro XS performance
-- [Pontoon HP Sizing Ontario Guide](/blog/pontoon-hp-sizing-decision-tree-ontario), pontoon HP sizing decision tree
+- [Mercury Pro XS 150–300 HP: What Runs Best on Ontario Boats](/blog/mercury-150-300hp-pro-xs-performance-guide), 150–300 HP Pro XS performance
+- [Pontoon HP Sizing: The Rice Lake Decision Tree by Length](/blog/pontoon-hp-sizing-decision-tree-ontario), pontoon HP sizing decision tree
 - [Outboard Shaft Length Guide: 15, 20, 25 Inch (2026)](/blog/outboard-shaft-length-guide), shaft length by transom height
 
 ## Next steps

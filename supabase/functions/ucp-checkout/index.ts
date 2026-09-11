@@ -16,9 +16,23 @@
 
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2.45.0";
 import { sanitizeAgentNote } from "../_shared/sanitize.ts";
+import {
+  PUBLIC_CATALOG_AVAILABILITY_OR,
+  PUBLIC_SITE_URL,
+} from "../_shared/public-motor-contract.ts";
+import {
+  checkUcpPlatformProfile,
+  parseUcpAllowedOrigins,
+  parseUcpCheckoutLineItems,
+  resolveUcpPricedItem,
+  ucpQuoteScopeMessage,
+  ucpTaxAndTotal,
+  UCP_QUOTE_SCOPE_NOTICE,
+  UcpClientError,
+} from "../_shared/ucp-checkout-contract.ts";
 
 const UCP_VERSION = "2026-04-08";
-const SITE = "https://www.mercuryrepower.ca";
+const SITE = PUBLIC_SITE_URL;
 const HST_RATE = 0.13;
 const LEAD_FLAG = "ca.mercuryrepower.lead_captured";
 
@@ -86,39 +100,14 @@ function parseProfileUrl(req: Request, mcpMeta?: any): string | null {
 }
 
 async function checkPlatformProfile(url: string | null): Promise<{ warning?: any; reject?: { code: string; status: number } }> {
-  const strict = (Deno.env.get("UCP_STRICT_PROFILES") || "").toLowerCase() === "true";
-  if (!url) {
-    return strict
-      ? { reject: { code: "invalid_profile_url", status: 400 } }
-      : { warning: { code: "profile_missing", severity: "info", content: "No UCP-Agent profile presented; proceeding in open quote mode." } };
-  }
-  if (!url.startsWith("https://")) {
-    return strict
-      ? { reject: { code: "invalid_profile_url", status: 400 } }
-      : { warning: { code: "invalid_profile_url", severity: "info", content: "UCP-Agent profile URL must be HTTPS; proceeding in open quote mode." } };
-  }
-  const cached = profileCache.get(url);
-  if (cached && Date.now() - cached.ts < PROFILE_TTL_MS) {
-    if (cached.ok || !strict) return {};
-    return { reject: { code: "profile_unreachable", status: 424 } };
-  }
-  try {
-    const ctrl = new AbortController();
-    const t = setTimeout(() => ctrl.abort(), 3000);
-    const resp = await fetch(url, { redirect: "error", signal: ctrl.signal });
-    clearTimeout(t);
-    let ok = resp.ok;
-    if (ok) {
-      try { await resp.json(); } catch { ok = false; }
-    }
-    profileCache.set(url, { ok, ts: Date.now() });
-    if (!ok && strict) return { reject: { code: "profile_unreachable", status: 424 } };
-    return ok ? {} : { warning: { code: "profile_unreachable", severity: "info", content: "Platform profile could not be fetched; proceeding in open quote mode." } };
-  } catch (_e) {
-    profileCache.set(url, { ok: false, ts: Date.now() });
-    if (strict) return { reject: { code: "profile_unreachable", status: 424 } };
-    return { warning: { code: "profile_unreachable", severity: "info", content: "Platform profile could not be fetched; proceeding in open quote mode." } };
-  }
+  return await checkUcpPlatformProfile({
+    url,
+    strict: (Deno.env.get("UCP_STRICT_PROFILES") || "").toLowerCase() === "true",
+    allowedOrigins: parseUcpAllowedOrigins(Deno.env.get("UCP_PROFILE_ALLOWED_ORIGINS")),
+    fetchImpl: fetch,
+    cache: profileCache,
+    ttlMs: PROFILE_TTL_MS,
+  });
 }
 
 function newSessionId(): string {
@@ -126,46 +115,44 @@ function newSessionId(): string {
 }
 
 async function resolveLineItems(supabase: any, rawItems: any[]): Promise<{ line_items: any[]; problems: any[]; motorIds: string[] }> {
+  const parsedItems = parseUcpCheckoutLineItems(rawItems);
   const line_items: any[] = [];
   const problems: any[] = [];
   const motorIds: string[] = [];
-  for (let i = 0; i < rawItems.length; i++) {
-    const raw = rawItems[i] || {};
-    const itemId = raw.item?.id || raw.id;
-    const quantity = Math.max(1, Number(raw.quantity || 1));
-    if (!itemId) {
-      problems.push({ code: "missing_item_id", severity: "requires_buyer_input", content: `Line item ${i + 1} has no item id. Use motor ids from search_motors / the catalog.` });
-      continue;
-    }
+  for (let i = 0; i < parsedItems.length; i++) {
+    const { itemId, quantity } = parsedItems[i];
     const { data, error } = await supabase
       .from("motor_models")
-      .select("id, model, model_display, family, horsepower, msrp, sale_price, dealer_price, manual_overrides, availability, in_stock")
+      .select("id, model, model_display, model_number, family, horsepower, msrp, sale_price, dealer_price, base_price, manual_overrides, availability, in_stock")
       .eq("id", itemId)
-      .neq("availability", "Exclude")
+      .or(PUBLIC_CATALOG_AVAILABILITY_OR)
       .limit(1);
-    if (error || !data?.length) {
+    if (error) throw { status: 503, code: "catalog_unavailable", message: "Motor catalog is temporarily unavailable. Retry later." };
+    if (!data?.length) {
       problems.push({ code: "item_not_found", severity: "requires_buyer_input", content: `Item ${itemId} was not found in current Mercury inventory. Search the catalog and retry.` });
       continue;
     }
-    const m = data[0];
-    if ((m.model_display || m.model || "").toLowerCase().includes("verado")) {
-      problems.push({ code: "special_order_only", severity: "requires_buyer_review", content: "Verado is special-order only at Harris Boat Works. Contact the dealer directly." });
+    const priced = resolveUcpPricedItem(data[0], quantity);
+    if (priced.problem) {
+      problems.push({
+        code: priced.problem.code,
+        severity: priced.problem.code === "special_order_only" ? "requires_buyer_review" : "requires_buyer_input",
+        content: priced.problem.content,
+      });
       continue;
     }
-    const priceCad = m.manual_overrides?.sale_price ?? m.sale_price ?? m.dealer_price ?? m.msrp;
-    const cents = Math.round(Number(priceCad) * 100);
-    motorIds.push(m.id);
+    motorIds.push(itemId);
     line_items.push({
       id: `li_${i + 1}`,
       item: {
-        id: m.id,
-        title: `Mercury ${m.model_display || m.model}`,
-        price: cents,
+        id: itemId,
+        title: `Mercury ${priced.motor.model_display || priced.motor.model}`,
+        price: priced.cents,
       },
-      quantity,
+      quantity: priced.quantity,
       totals: [
-        { type: "subtotal", amount: cents * quantity },
-        { type: "total", amount: cents * quantity },
+        { type: "subtotal", amount: priced.lineTotal },
+        { type: "total", amount: priced.lineTotal },
       ],
     });
   }
@@ -174,8 +161,12 @@ async function resolveLineItems(supabase: any, rawItems: any[]): Promise<{ line_
 
 function buildCheckout(id: string, line_items: any[], problems: any[], buyer: any, profileWarning: any, expiresAt: string) {
   const subtotal = line_items.reduce((s, li) => s + (li.item.price * li.quantity), 0);
-  const tax = Math.round(subtotal * HST_RATE);
-  const total = subtotal + tax;
+  const money = ucpTaxAndTotal(subtotal, HST_RATE);
+  if (line_items.length > 0 && money === null) {
+    throw new UcpClientError("invalid_request", "Checkout totals are not finite integer cents.");
+  }
+  const tax = money?.tax ?? 0;
+  const total = money?.total ?? 0;
   const allIds = line_items.map((li) => li.id);
 
   const messages: any[] = [];
@@ -186,6 +177,7 @@ function buildCheckout(id: string, line_items: any[], problems: any[], buyer: an
       content:
         "This is a quote, not a completed purchase. Outboard motors are high-value items: Harris Boat Works confirms final pricing, rigging fit, and availability with every buyer. Continue on our site or call (905) 342-2153 to finalize. Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID.",
     });
+    messages.push(ucpQuoteScopeMessage());
   }
   messages.push(...problems);
   if (profileWarning) messages.push(profileWarning);
@@ -303,20 +295,31 @@ async function loadSession(supabase: any, id: string): Promise<any | null> {
   const { data, error } = await supabase.from("ucp_checkout_sessions").select("id, status, payload, expires_at").eq("id", id).limit(1);
   if (error || !data?.length) return null;
   const row = data[0];
-  const checkout = row.payload;
+  const checkout = structuredClone(row.payload);
   if (!["completed", "canceled"].includes(row.status) && new Date(row.expires_at) < new Date()) {
     checkout.status = "canceled";
     checkout.messages = [...(checkout.messages || []), { code: "session_expired", severity: "info", content: "This checkout session expired. Create a new one or build a quote on our site." }];
     delete checkout.continue_url;
-    await saveSession(supabase, checkout, null);
+    // Expiration is projected on reads; GET and rejected updates never persist.
   }
   return checkout;
 }
 
+function checkoutRequest(body: unknown): Record<string, unknown> {
+  if (!body || typeof body !== "object" || Array.isArray(body)) {
+    throw { status: 400, code: "invalid_request", message: "Checkout body must be an object." };
+  }
+  const value = Object.prototype.hasOwnProperty.call(body, "checkout") ? (body as any).checkout : body;
+  if (!value || typeof value !== "object" || Array.isArray(value)) {
+    throw { status: 400, code: "invalid_request", message: "checkout must be an object." };
+  }
+  return value as Record<string, unknown>;
+}
+
 // ---------- shared operation handlers ----------
 async function opCreate(supabase: any, co: any, profileWarning: any, profileUrl: string | null) {
-  const rawItems = co?.line_items || [];
-  if (!Array.isArray(rawItems)) throw { status: 400, code: "invalid_request", message: "checkout.line_items must be an array." };
+  const rawItems = co?.line_items;
+  parseUcpCheckoutLineItems(rawItems);
   const id = newSessionId();
   const expiresAt = new Date(Date.now() + 6 * 3600_000).toISOString();
   const { line_items, problems, motorIds } = await resolveLineItems(supabase, rawItems);
@@ -330,8 +333,8 @@ async function opUpdate(supabase: any, existing: any, co: any, profileWarning: a
   if (["completed", "canceled"].includes(existing.status)) {
     throw { status: 409, code: "session_terminal", message: `Session is ${existing.status} and immutable.` };
   }
-  const rawItems = co?.line_items || [];
-  if (!Array.isArray(rawItems)) throw { status: 400, code: "invalid_request", message: "checkout.line_items must be an array." };
+  const rawItems = co?.line_items;
+  parseUcpCheckoutLineItems(rawItems);
   const { line_items, problems, motorIds } = await resolveLineItems(supabase, rawItems);
   const checkout = buildCheckout(existing.id, line_items, problems, co?.buyer, profileWarning, existing.expires_at);
   if (existing[LEAD_FLAG]) checkout[LEAD_FLAG] = true; // carry the once-per-session flag
@@ -500,9 +503,10 @@ async function handleMcp(req: Request, supabase: any, payload: any): Promise<Res
           return json(rpcError(id, -32601, `Unknown tool: ${name}`), 404);
       }
     } catch (e: any) {
+      if (e instanceof UcpClientError) return json(rpcError(id, -32000, `${e.code}: ${e.message}`), e.status);
       if (e?.status && e?.code) return json(rpcError(id, -32000, `${e.code}: ${e.message}`), e.status);
       console.error("[ucp-checkout mcp] error:", e);
-      return json(rpcError(id, -32603, e?.message || "Internal error"), 500);
+      return json(rpcError(id, -32603, "Unable to process checkout. Please try again later."), 500);
     }
   }
 
@@ -555,7 +559,8 @@ Deno.serve(async (req) => {
         },
         notes: [
           "Quote mode: payment is never collected via UCP. Sessions escalate to dealer confirmation via continue_url.",
-          "Include buyer contact (first_name, last_name, email, phone_number) to register the quote with the dealership.",
+          UCP_QUOTE_SCOPE_NOTICE,
+          "Buyer contact attempts lead capture. Only report registration when ca.mercuryrepower.lead_captured is true.",
           "Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID.",
           "Item ids are Mercury motor ids from the HBW catalog (see search_motors on the MCP server or /pricing-reference).",
         ],
@@ -582,7 +587,7 @@ Deno.serve(async (req) => {
     if (route.length === 1 && req.method === "POST") {
       let body: any;
       try { body = await req.json(); } catch { return err(400, "invalid_request", "Body must be JSON."); }
-      const checkout = await opCreate(supabase, body.checkout || body, profileCheck.warning, profileUrl);
+      const checkout = await opCreate(supabase, checkoutRequest(body), profileCheck.warning, profileUrl);
       return json(checkout, 201);
     }
 
@@ -596,7 +601,7 @@ Deno.serve(async (req) => {
     if (route.length === 2 && req.method === "PUT") {
       let body: any;
       try { body = await req.json(); } catch { return err(400, "invalid_request", "Body must be JSON."); }
-      const checkout = await opUpdate(supabase, existing, body.checkout || body, profileCheck.warning, profileUrl);
+      const checkout = await opUpdate(supabase, existing, checkoutRequest(body), profileCheck.warning, profileUrl);
       return json(checkout);
     }
 
@@ -614,6 +619,6 @@ Deno.serve(async (req) => {
   } catch (e: any) {
     if (e?.status && e?.code) return err(e.status, e.code, e.message);
     console.error("[ucp-checkout] error:", e);
-    return err(500, "internal_error", e?.message || "Internal error");
+    return err(500, "internal_error", "Unable to process checkout. Please try again later.");
   }
 });

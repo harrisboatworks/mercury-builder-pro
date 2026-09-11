@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-hull-replacement-vs-repower-decision.md
-last_updated: 2026-08-02
+last_updated: 2026-09-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Is Your Boat Hull Worth Repowering? A Structural Checklist"
 description: "Check the transom, floor, stringers, hull damage, layout, steering, and rigging before deciding whether an older boat is worth repowering."
 category: "Repower"
 date_published: 2026-04-29
-date_modified: 2026-08-02
+date_modified: 2026-09-07
 keywords: ["repower vs new boat","boat hull replacement","when to repower outboard"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,17 +25,19 @@ revenue_driver: repower
 
 **Category:** Repower  
 **Published:** 2026-04-29  
-**Last reviewed:** 2026-08-02  
+**Last reviewed:** 2026-09-07  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-hull-replacement-vs-repower-decision
 
 > **Quick answer:** Repower when the hull is structurally sound, the boat still suits how you use it, and the motor is the main problem. Replace or repair the hull first when the transom, floor, stringers, or impact areas show structural concerns. A photo can help with triage, but the final recommendation requires an in-person boat-specific assessment.
 
-**Canonical URL:** https://www.mercuryrepower.ca/blog/boat-hull-replacement-vs-repower-decision
-
 ---
 
-![Repower vs hull replacement decision diagram (HBW)](/lovable-uploads/diagram-hull-vs-repower.png)
+### Three checks before choosing a repower
+
+1. **Inspect the hull.** Have structural concerns assessed in person before choosing a replacement motor.
+2. **Confirm the boat still fits.** Consider how you use it, its capacity limits and the equipment it needs.
+3. **Compare written totals.** Put hull repairs, repower work and boat replacement on the same basis. Age alone does not decide the outcome.
 
 ## Quick Answer
 
@@ -59,7 +61,7 @@ The motor is rarely the most expensive thing on a boat. The hull underneath it i
 
 **Repower this boat**
 
-#### Replace the hull if
+#### Inspect and price structure first if
 
 - Transom is soft, cracked, or has obvious water damage
 - Stringers are rotting or the floor is spongy
@@ -67,9 +69,9 @@ The motor is rarely the most expensive thing on a boat. The hull underneath it i
 - The hull is 30 plus years old with no maintenance records
 - Your family use has grown beyond what the boat can carry
 
-**Sell or scrap, buy a different hull**
+**Have a qualified shop inspect and price any structural repair before you sell, scrap, or quote a new motor**
 
-Get an in-person hull inspection before quoting a major repower. We will not quote a serious motor into a hull that will not outlast the new motor.
+Get an in-person hull inspection before quoting a major repower. Localized floor or transom damage can be repairable; a qualified assessment decides that. We will not quote a serious motor into a hull that will not outlast the new motor.
 
 ---
 

@@ -104,26 +104,31 @@ export function SaveQuoteDialog({
       const resumeToken = `quote_${Array.from(tokenArray, b => b.toString(16).padStart(2, '0')).join('')}`;
       const expiresAt = new Date(Date.now() + 30 * 24 * 60 * 60 * 1000); // 30 days
 
-      const { data: savedQuote, error: savedQuoteError } = await supabase
+      // Anonymous visitors may INSERT saved_quotes but cannot SELECT the
+      // row back under RLS. Generate the UUID client-side so a successful
+      // insert is enough to bind the resumable quote without requesting a
+      // representation that the SELECT policy correctly blocks.
+      const savedQuoteId = crypto.randomUUID();
+      localStorage.removeItem('current_saved_quote_id');
+      const { error: savedQuoteError } = await supabase
         .from('saved_quotes')
         .insert({
+          id: savedQuoteId,
           email: email,
           resume_token: resumeToken,
           quote_state: quoteData, // Full QuoteContext state
           user_id: user?.id || null, // Link to user if logged in
           expires_at: expiresAt.toISOString(),
-        })
-        .select()
-        .single();
+        });
 
       if (savedQuoteError) {
         console.error('Error saving quote state:', savedQuoteError);
-        // Continue anyway - we have the customer_quotes record
-      } else if (savedQuote?.id) {
-        // Store saved quote ID for QR code generation
-        localStorage.setItem('current_saved_quote_id', savedQuote.id);
-        console.log('Saved quote ID for QR code:', savedQuote.id);
+        throw savedQuoteError;
       }
+
+      // Store saved quote ID for QR code generation
+      localStorage.setItem('current_saved_quote_id', savedQuoteId);
+      console.log('Saved quote ID for QR code:', savedQuoteId);
 
       // Analytics: quote_saved + lead_submitted
       trackAgentEvent({
@@ -165,7 +170,7 @@ export function SaveQuoteDialog({
           customerEmail: email,
           customerName: name || 'Valued Customer',
           quoteId: leadRecord.id,
-          savedQuoteId: savedQuote?.id,
+          savedQuoteId: savedQuoteId,
           resumeToken: resumeToken,
           motorModel: motorModel || 'Mercury Motor',
           finalPrice: finalPrice || 0,
@@ -278,10 +283,13 @@ export function SaveQuoteDialog({
             setNameError("");
           }}
           disabled={isLoading}
+          aria-required="true"
+          aria-invalid={Boolean(nameError)}
+          aria-describedby={nameError ? "save-quote-name-error" : undefined}
           className={nameError ? "border-destructive" : ""}
         />
         {nameError && (
-          <p className="text-sm text-destructive">{nameError}</p>
+          <p id="save-quote-name-error" role="alert" className="text-sm text-destructive">{nameError}</p>
         )}
       </div>
       
@@ -297,10 +305,13 @@ export function SaveQuoteDialog({
             setEmailError("");
           }}
           disabled={isLoading}
+          aria-required="true"
+          aria-invalid={Boolean(emailError)}
+          aria-describedby={emailError ? "save-quote-email-error" : undefined}
           className={emailError ? "border-destructive" : ""}
         />
         {emailError && (
-          <p className="text-sm text-destructive">{emailError}</p>
+          <p id="save-quote-email-error" role="alert" className="text-sm text-destructive">{emailError}</p>
         )}
       </div>
       
@@ -316,10 +327,13 @@ export function SaveQuoteDialog({
             setPhoneError("");
           }}
           disabled={isLoading}
+          aria-required="true"
+          aria-invalid={Boolean(phoneError)}
+          aria-describedby={phoneError ? "save-quote-phone-error" : undefined}
           className={phoneError ? "border-destructive" : ""}
         />
         {phoneError && (
-          <p className="text-sm text-destructive">{phoneError}</p>
+          <p id="save-quote-phone-error" role="alert" className="text-sm text-destructive">{phoneError}</p>
         )}
       </div>
       
@@ -358,6 +372,10 @@ export function SaveQuoteDialog({
       return (
         <Drawer open={open} onOpenChange={handleClose}>
           <DrawerContent className="px-4 pb-8">
+            <DrawerTitle className="sr-only">Quote saved</DrawerTitle>
+            <DrawerDescription className="sr-only">
+              We've saved your configuration and sent details to {email}.
+            </DrawerDescription>
             {successContent}
           </DrawerContent>
         </Drawer>
@@ -387,6 +405,10 @@ export function SaveQuoteDialog({
     return (
       <Dialog open={open} onOpenChange={handleClose}>
         <DialogContent className="sm:max-w-[425px]">
+          <DialogTitle className="sr-only">Quote saved</DialogTitle>
+          <DialogDescription className="sr-only">
+            We've saved your configuration and sent details to {email}.
+          </DialogDescription>
           {successContent}
         </DialogContent>
       </Dialog>

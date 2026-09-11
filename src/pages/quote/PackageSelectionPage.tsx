@@ -12,8 +12,9 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/comp
 import { useQuote } from '@/contexts/QuoteContext';
 import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
-import { calculateMonthlyPayment, DEALERPLAN_FEE } from '@/lib/finance';
+import { calculateMonthlyPayment, DEALERPLAN_FEE, isUsableFinancingRate } from '@/lib/finance';
 import { calculateQuotePricing, promoEndOfDay } from '@/lib/quote-utils';
+import { resolveAppliedTradeValue } from '@/lib/trade-credit';
 import {
   COMPLETE_COVERAGE_TARGET_YEARS,
   PREMIUM_COVERAGE_TARGET_YEARS,
@@ -78,9 +79,9 @@ export default function PackageSelectionPage() {
   const effectivePromoRate = useMemo(() => {
     if (state.selectedPromoOption === 'special_financing') {
       const rates = getSpecialFinancingRates();
-      return rates?.[0]?.rate || null;
+      return isUsableFinancingRate(rates?.[0]?.rate) ? rates[0].rate : null;
     }
-    return promo?.rate || null;
+    return isUsableFinancingRate(promo?.rate) ? promo.rate : null;
   }, [state.selectedPromoOption, getSpecialFinancingRates, promo?.rate]);
 
   // Create promo message for nudge bars
@@ -88,7 +89,7 @@ export default function PackageSelectionPage() {
     switch (state.selectedPromoOption) {
       case 'special_financing': {
         const rates = getSpecialFinancingRates();
-        return `Keeps ${rates?.[0]?.rate || 2.99}% APR`;
+        return `Keeps ${isUsableFinancingRate(rates?.[0]?.rate) ? rates[0].rate : 2.99}% APR`;
       }
       case 'no_payments':
         return 'Keeps 6 Mo. No Payments';
@@ -196,12 +197,12 @@ export default function PackageSelectionPage() {
     accessoryTotal: baseAccessoryCost + selectedOptionsTotal,
     warrantyPrice: 0,
     promotionalSavings: promoSavings,
-    tradeInValue: state.tradeInInfo?.estimatedValue || 0,
+    tradeInValue: resolveAppliedTradeValue(state.tradeInInfo),
     taxRate: 0.13
   });
 
   // Base subtotal
-  const baseSubtotal = (motorMSRP - motorDiscount) + baseAccessoryCost + selectedOptionsTotal - promoSavings - (state.tradeInInfo?.estimatedValue || 0);
+  const baseSubtotal = (motorMSRP - motorDiscount) + baseAccessoryCost + selectedOptionsTotal - promoSavings - resolveAppliedTradeValue(state.tradeInInfo);
   
   // Loose motor battery cost (if user opted for it on loose path)
   const looseMotorBatteryCost = state.purchasePath === 'loose' && state.looseMotorBattery?.wantsBattery 
@@ -514,7 +515,7 @@ export default function PackageSelectionPage() {
                   options={packages}
                   selectedId={selectedPackage}
                   onSelect={handlePackageSelect}
-                  promoRate={promo?.rate || null}
+                  promoRate={isUsableFinancingRate(promo?.rate) ? promo.rate : null}
                   showUpgradeDeltas={true}
                   revealComplete={true}
                   variant="dark"

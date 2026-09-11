@@ -324,12 +324,6 @@ export function BlogHub({
               >
                 Build My Mercury Quote <ArrowRight className="h-4 w-4" />
               </Link>
-              <a
-                href="tel:9053422153"
-                className="inline-flex min-h-[46px] items-center justify-center gap-2 rounded-md border border-white/35 px-5 py-3 font-sans text-sm font-semibold text-white transition-colors hover:bg-white/10"
-              >
-                <Phone className="h-4 w-4" /> (905) 342-2153
-              </a>
             </div>
 
             {/* Trust row */}

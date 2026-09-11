@@ -12,6 +12,7 @@ export const QuoteInput = React.forwardRef<HTMLInputElement, QuoteInputProps>(
   ({ className, invalid, ...props }, ref) => (
     <input
       ref={ref}
+      aria-invalid={invalid || undefined}
       className={cn(
         baseInputClass,
         invalid ? 'border-repower-mercury-red' : 'border-repower-navy-900/10',
@@ -27,6 +28,7 @@ export const QuoteTextarea = React.forwardRef<HTMLTextAreaElement, React.Textare
   ({ className, invalid, ...props }, ref) => (
     <textarea
       ref={ref}
+      aria-invalid={invalid || undefined}
       className={cn(
         baseInputClass,
         'min-h-[96px] resize-y',

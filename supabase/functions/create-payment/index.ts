@@ -301,6 +301,20 @@ const logStep = (step: string, details?: unknown) => {
   console.log(`[CREATE-PAYMENT] ${step}${detailsStr}`);
 };
 
+async function expireCheckoutSessionSafely(
+  stripe: Stripe,
+  sessionId: string,
+): Promise<void> {
+  try {
+    await stripe.checkout.sessions.expire(sessionId);
+  } catch (error) {
+    logStep("WARNING: Could not expire unbound checkout", {
+      sessionId,
+      error: error instanceof Error ? error.message : "Unknown Stripe error",
+    });
+  }
+}
+
 serve(async (req) => {
   const paymentOrigin = resolvePaymentOrigin(req);
   const corsHeaders = {
@@ -650,6 +664,12 @@ serve(async (req) => {
         }) && depositAmount === "500",
       });
 
+      const { data: bindingAuthorityReady, error: bindingAuthorityError } =
+        await supabaseService.rpc("deposit_checkout_binding_authority_ready");
+      if (bindingAuthorityError || bindingAuthorityReady !== true) {
+        throw new Error("Unable to prepare reservation checkout");
+      }
+
       const stripe = new Stripe(stripeKey, { apiVersion: "2025-08-27.basil" });
 
       let customerId: string | undefined;
@@ -836,7 +856,7 @@ serve(async (req) => {
         });
       if (persistOutcome === "already_paid") {
         logStep("Deposit already paid during persist race", { savedQuoteId });
-        await stripe.checkout.sessions.expire(session.id);
+        await expireCheckoutSessionSafely(stripe, session.id);
         throw new Error("Invalid saved quote for deposit");
       }
       if (persistOutcome === "reused_same_session" && session.url) {
@@ -848,7 +868,7 @@ serve(async (req) => {
       }
       if (persistOutcome !== "saved") {
         logStep("ERROR: Failed to save deposit record", { code: depositSaveError?.code });
-        await stripe.checkout.sessions.expire(session.id);
+        await expireCheckoutSessionSafely(stripe, session.id);
         throw new Error("Unable to prepare reservation checkout");
       }
       logStep("Deposit record saved to customer_quotes", { savedQuoteId });
@@ -1017,7 +1037,7 @@ serve(async (req) => {
 
     if (quoteError) {
       logStep("Error saving quote", { error: quoteError.message });
-      await stripe.checkout.sessions.expire(session.id);
+      await expireCheckoutSessionSafely(stripe, session.id);
       throw new Error(`Failed to save quote: ${quoteError.message}`);
     }
 

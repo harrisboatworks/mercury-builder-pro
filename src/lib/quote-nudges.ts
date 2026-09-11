@@ -1,4 +1,4 @@
-import { promoEndOfDay } from '@/lib/quote-utils';
+import { daysUntil } from '@/lib/quote-utils';
 /**
  * Expert Nudges Library
  * Contextual, educational messages that build trust and reduce friction
@@ -176,22 +176,18 @@ export const PROMO_AWARENESS_NUDGES = {
   
   // Urgency nudge when promo is ending soon
   getUrgencyNudge: (daysLeft: number, totalYears: number): { message: string; icon: string } | null => {
-    if (daysLeft <= 0) return null;
+    if (daysLeft < 0) return null;
+    if (daysLeft === 0) return { message: `⏰ The Get ${totalYears} offer ends today!`, icon: 'clock' };
     if (daysLeft <= 7) return { message: `⏰ Only ${daysLeft} days left on the Get ${totalYears} offer!`, icon: 'clock' };
     if (daysLeft <= 14) return { message: `Get ${totalYears} promotion ends in ${daysLeft} days`, icon: 'clock' };
     return null;
   },
   
-  // Calculate days until promo ends
+  // Calculate days until promo ends (0 = last Ontario calendar day, still live)
   getDaysUntilEnd: (endDateStr: string | null | undefined): number => {
     if (!endDateStr) return 999;
-    try {
-      const endDate = promoEndOfDay(endDateStr);
-      const now = new Date();
-      return Math.ceil((endDate.getTime() - now.getTime()) / (1000 * 60 * 60 * 24));
-    } catch {
-      return 999;
-    }
+    const left = daysUntil(endDateStr);
+    return Number.isNaN(left) ? 999 : left;
   },
 };
 

@@ -131,14 +131,14 @@ const handleSave = async () => {
           description: error.message,
           variant: "destructive",
         });
-      } else {
-        toast({
-          title: "Success",
-          description: "Financing option updated",
-        });
-        setEditingId(null);
-        setIsAddingNew(false);
+        return;
       }
+      toast({
+        title: "Success",
+        description: "Financing option updated",
+      });
+      setEditingId(null);
+      setIsAddingNew(false);
     } else {
       // Create new
       const { error } = await (supabase as any)
@@ -151,13 +151,13 @@ const handleSave = async () => {
           description: error.message,
           variant: "destructive",
         });
-      } else {
-        toast({
-          title: "Success",
-          description: "Financing option created",
-        });
-        setIsAddingNew(false);
+        return;
       }
+      toast({
+        title: "Success",
+        description: "Financing option created",
+      });
+      setIsAddingNew(false);
     }
 
     setFormData({

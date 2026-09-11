@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-propeller-selection-guide.md
-last_updated: 2026-08-19
+last_updated: 2026-09-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Propeller Selection Guide 2026"
 description: "Mercury propeller selection guide: hull-type to prop-family matching, 3-blade vs 4-blade, aluminum vs stainless, and the WOT RPM test to confirm."
 category: "Technical Reference"
 date_published: 2026-05-27
-date_modified: 2026-08-19
+date_modified: 2026-09-07
 keywords: ["mercury propeller","mercury prop selection","wot rpm test","command thrust prop","aluminum vs stainless prop","3 blade vs 4 blade","ontario mercury dealer"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,13 +25,15 @@ revenue_driver: repower
 
 **Category:** Technical Reference  
 **Published:** 2026-05-27  
-**Last reviewed:** 2026-08-19  
+**Last reviewed:** 2026-09-07  
 **Read time:** ~8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-propeller-selection-guide
 
+*Hero image: AI-generated editorial scene comparing propeller forms. These are unbranded illustrations, not identified Mercury propeller models or an HBW workshop photograph.*
+
 ## Quick Answer
 
-Picking a Mercury prop comes down to four things: your gearcase, your hull, how you load the boat, and what you want it to do. For most aluminum fishing boats on Rice Lake running a standard Mercury gearcase, a 3-blade aluminum prop is where the conversation starts. Pitch depends on horsepower and how the boat sits. Pontoons with Command Thrust need a 4-blade with more diameter, that gearcase was designed for it. The confirmation step is the same every time: run the motor at wide-open throttle and check the RPM against the spec for your engine family.
+Picking a Mercury prop comes down to four things: your gearcase, your hull, how you load the boat, and what you want it to do. For most aluminum fishing boats on Rice Lake running a standard Mercury gearcase, a 3-blade aluminum prop is where the conversation starts. Pitch depends on horsepower and how the boat sits. For pontoons with Command Thrust, compare compatible propellers for the hull and usual load; CT does not require four blades in every application. The confirmation step is the same every time: run the motor at wide-open throttle and check the RPM against the spec for your engine family.
 
 ## How Prop Pitch Works
 
@@ -73,29 +75,36 @@ The blade-count decision usually comes down to what the boat is for.
 
 **3-blade** props are the default for most aluminum fishing boats and general-purpose applications. They give the best top-end at a given pitch, the least drag at cruise, and the simplest tuning math. If the boat needs to go fast in a straight line and you are not pulling a tube or a skier, 3-blade is usually the right choice.
 
-**4-blade** props improve hole-shot, low-speed control, and turning grip. They are the default for pontoons, watersports tow boats, and any boat that has trouble getting up on plane. The trade-off is some top-end speed, usually 1 to 3 MPH at the high end depending on the setup. For pontoons with Command Thrust, 4-blade is almost always the right answer; that gearcase was engineered around it.
+**4-blade** props improve hole-shot, low-speed control, and turning grip. They are the default for pontoons, watersports tow boats, and any boat that has trouble getting up on plane. The trade-off is some top-end speed, usually 1 to 3 MPH at the high end depending on the setup. For pontoons with Command Thrust, compare compatible three- and four-blade options against the handling and performance you need.
 
 5-blade props exist for very specific high-load applications. Most HBW customers will never need one.
 
 ## Prop Selection by Hull Type
 
-The big-picture matching table. Specific pitch depends on horsepower and how the boat sits in the water, so the table below covers blade count, material, and prop family rather than naming a specific pitch number.
+The big-picture matching table. Specific pitch depends on horsepower and how the boat sits in the water. Each named family below keeps its own blade and material fields. Verify part number, hub, gearcase, and exact engine before treating any row as an order.
 
-| Hull type | Gearcase | Blade count | Material | Mercury prop families to look at |
-|---|---|---|---|---|
-| 14 to 18 ft aluminum tiller fishing boat | Standard | 3-blade | Aluminum | Black Max, Spitfire |
-| 16 to 20 ft aluminum console fishing boat | Standard | 3-blade | Aluminum or stainless | Black Max, Spitfire, Enertia |
-| 18 to 22 ft deep-V fibreglass | Standard | 3-blade | Stainless | Enertia, Fury 4 |
-| 20 to 24 ft pontoon (90 to 115 HP) | Command Thrust | 4-blade | Aluminum or stainless | Spitfire X7, Vensura |
-| 22 to 26 ft pontoon (115 to 200 HP) | Command Thrust | 4-blade | Stainless | Vensura, Enertia ECO |
-| 24+ ft tritoon / luxury pontoon (200+ HP) | Command Thrust | 4-blade | Stainless | Vensura, Fury 4 |
-| Bass boat / high-performance hull (Pro XS) | Sport Master / Torque Master | 3-blade or 4-blade | Stainless | Fury 4, Bravo I FS, Pro Max |
-| Watersports tow / wake / ski boat | Standard or Command Thrust | 4-blade | Stainless | Fury 4, Enertia ECO |
-| Heavy work boat / charter / commercial | Standard or Command Thrust | 4-blade or 3-blade | Stainless | Enertia, Vensura, application-specific |
+| Hull type | Gearcase | Families to compare | Blade / material facts |
+|---|---|---|---|
+| 14 to 18 ft aluminum tiller fishing boat | Standard | Black Max; Spitfire only if you want four blades | Black Max: 3-blade aluminum. Spitfire: 4-blade aluminum, not a 3-blade. |
+| 16 to 20 ft aluminum console fishing boat | Standard | Black Max, Enertia | Black Max: 3-blade aluminum. Enertia: 3-blade stainless. |
+| 18 to 22 ft deep-V fibreglass | Standard | Enertia, Fury 4 | Enertia: 3-blade stainless. Fury 4: 4-blade stainless, not a 3-blade. |
+| 20 to 24 ft pontoon (90 to 115 HP) | Command Thrust | Spitfire X7 | Spitfire X7: 4-blade stainless. Confirm hub and gearcase. |
+| 22 to 26 ft pontoon (115 to 200 HP) | Exact engine/gearcase; CT only where offered | Vensura after fitment check | Vensura: 4-blade stainless; confirm current hub, gearcase and engine compatibility before ordering. Enertia ECO is 3-blade stainless. |
+| 24+ ft tritoon / luxury pontoon (200+ HP) | Exact engine-specific gearcase | Fury 4 after fitment check | Fury 4: 4-blade stainless. Confirm the exact hub, gearcase, and engine compatibility. |
+| Bass boat / high-performance hull (Pro XS) | Sport Master / Torque Master | Fury 4, Bravo I FS, Pro Max | Fury 4: 4-blade stainless. Confirm the performance family's hub and gearcase. |
+| Watersports tow / wake / ski boat | Standard or Command Thrust | Fury 4, Enertia | Fury 4: 4-blade stainless. Enertia / Enertia ECO: 3-blade stainless. |
+| Heavy work boat / charter / commercial | Standard or Command Thrust | Enertia, Vensura | Confirm the exact family, hub, and gearcase rather than inferring from boat length. |
 
 This table is a starting point, not a final answer. Final prop selection depends on the WOT RPM test described below. A boat that is loaded heavier (full fuel, passengers, gear) than the dealer demo run will need a different pitch than the manufacturer-default prop ships with.
 
-![Mercury prop by hull type matrix: 7 Ontario hull types matched to gearcase, blade count, material, and Mercury prop family](/lovable-uploads/prop-selection-by-hull-matrix.svg)
+### Match the propeller to the complete setup
+
+- **Engine and gearcase:** confirm the exact model, shaft and compatible hub or mounting system.
+- **Boat and load:** account for hull design, passengers, fuel, equipment and normal use.
+- **Performance goal:** discuss planing, handling, cruising and towing needs with the installer.
+- **Verification:** compare the proposed propeller with the manufacturer's guidance and appropriate on-water test results.
+
+A boat-length table cannot establish propeller fit. Command Thrust does not by itself select a blade count, and a pitch change does not guarantee a fixed RPM change. Use the model-specific specifications and confirm compatibility with HBW.
 
 ## How to Confirm Prop Selection: The WOT RPM Test
 
@@ -120,13 +129,13 @@ Quick reference for the prop families you will see on Ontario Mercury motors:
 
 **Black Max** is Mercury's basic 3-blade aluminum prop. Standard equipment on many lower-HP fishing motors. Good general-purpose prop. Field-repairable.
 
-**Spitfire** (and Spitfire X7 for Command Thrust) is Mercury's 4-blade aluminum option. Standard equipment on many pontoon and mid-HP applications. The X7 specifically is built for Command Thrust gearcases.
+**Spitfire** is Mercury's 4-blade aluminum family. **Spitfire X7** is a separate 4-blade stainless family, not an aluminum option. Confirm hub and gearcase before treating X7 as the automatic Command Thrust prop.
 
-**Enertia** is Mercury's 3-blade stainless prop. Performance fishing, cruiser, deep-V hulls. The Enertia ECO is the larger-diameter 4-blade variant for higher-load applications.
+**Enertia** is Mercury's 3-blade stainless prop. Performance fishing, cruiser, deep-V hulls. **Enertia ECO** is also 3-blade stainless, not a 4-blade variant.
 
-**Fury 4** is Mercury's 4-blade stainless performance prop. Bass boats, performance pontoons, watersports applications. Top-end speed plus hole-shot.
+**Fury 4** is Mercury's 4-blade stainless performance prop (X7 stainless alloy on the current product page). Bass boats, performance pontoons, and watersports applications only after confirming hub, gearcase, and engine.
 
-**Vensura** is Mercury's 4-blade stainless pontoon prop. Designed specifically for Command Thrust gearcases on heavier pontoons. Strong hole-shot, smooth cruise.
+**Vensura** is identified in Mercury catalog material as a 4-blade stainless prop. Confirm the current hub, gearcase, and engine compatibility with your dealer before ordering.
 
 **Bravo One FS and Pro Max** are higher-tier performance props for Pro XS and racing applications. Less common in the recreational fishing and pontoon segments most HBW customers run.
 
@@ -155,11 +164,18 @@ Harris Boat Works, Gores Landing, Ontario. Mercury Premier dealer. For engine re
 Phone: (905) 342-2153
 Text: (647) 952-2153
 
+## Sources
+
+- [Mercury Fury 4](https://www.mercurymarine.com/us/en/product/fury4prop): four blades, X7 stainless
+- Mercury-authored propeller catalog P/N 90-8M0101690: Spitfire as four-blade aluminum; Enertia ECO as three-blade
+- 2025 Mercury outboard brochure: Spitfire X7 as stainless
+- Mercury propeller catalog P/N 90-8M0101690 identifies Vensura as four-blade stainless. Confirm current fitment with your dealer before ordering.
+
 ## FAQs
 
 ### How do I choose the right Mercury propeller for my boat?
 
-Start with four variables: your gearcase, your hull type, normal operating load, and what you want the boat to do. Most aluminum fishing boats run a 3-blade aluminum prop on a standard gearcase. Pontoons with Command Thrust run a 4-blade prop. Final confirmation comes from a wide-open-throttle RPM test under normal load, the WOT should land in the middle of Mercury's published spec for your motor family.
+Start with four variables: your gearcase, your hull type, normal operating load, and what you want the boat to do. Confirm blade count and material for the exact named family: Spitfire is four-blade aluminum, Spitfire X7 is four-blade stainless, Fury 4 is four-blade stainless, and Enertia ECO is three-blade stainless. Then verify part number, hub, gearcase, and engine before treating a hull-type table as a final order. Confirm the match with a wide-open-throttle RPM test under normal load.
 
 ### What is the rule for pitch and RPM on a Mercury outboard?
 
@@ -179,7 +195,7 @@ The wide-open-throttle RPM test confirms whether your prop is correctly matched 
 
 ### Do Command Thrust gearcases need a different prop?
 
-Yes. Command Thrust uses a larger-diameter gearcase designed for 4-blade props with more diameter. Standard outboard props will not fit. Mercury prop families designed for Command Thrust include Spitfire X7 and Vensura. If you have a Command Thrust pontoon, the prop family list is shorter and more specific than for a standard gearcase.
+Check the exact engine, gearcase, propeller part number, and hub; do not assume a prop from another setup will fit. Spitfire X7 is a four-blade stainless family often used on CT applications. Vensura is four-blade stainless in Mercury catalog material; confirm current hub, gearcase, and engine fitment rather than treating it as a proven CT-only design. Verify the exact part number before ordering.
 
 ### How do I know if my prop is over-pitched or under-pitched?
 
@@ -187,8 +203,8 @@ Over-pitched: WOT RPM is below the manufacturer's spec range. The motor cannot r
 
 ## Related guides
 
-- [Mercury Outboard Fuel Economy: How to Get Better MPG](/blog/mercury-outboard-fuel-efficiency-guide), maximizing fuel efficiency
-- [Mercury Outboard Octane and Ethanol Guide for Ontario](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), ethanol, octane and Mercury fuel
+- [Mercury Fuel Burn by HP: 5 Ways to Cut Gas Costs (2026)](/blog/mercury-outboard-fuel-efficiency-guide), maximizing fuel efficiency
+- [Mercury Ethanol & Octane Rules 2026 (V10 Verado Update)](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), ethanol, octane and Mercury fuel
 - [Mercury Boost Software Eligibility 2026](/blog/mercury-boost-software-upgrade-eligibility-2026), Boost software upgrade eligibility
 - [Mercury Boost and 150 HP Pontoons: Check Eligibility First](/blog/mercury-boost-upgrade-150hp-pontoon-analysis), 150 HP Boost upgrade analysis
 - [Mercury DTS Retrofit Eligibility 2026](/blog/mercury-dts-retrofit-eligibility-2026), DTS retrofit eligibility

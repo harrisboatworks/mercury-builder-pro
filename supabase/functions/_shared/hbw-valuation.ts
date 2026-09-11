@@ -1,3 +1,9 @@
+import {
+  parseCanonicalHbwValuation,
+  type CanonicalHbwValuationPayload,
+  normalizeHbwStroke as normalizeSharedHbwStroke,
+} from "./hbw-valuation-response.ts";
+
 const DEFAULT_HBW_VALUATION_URL =
   "https://valuation.mercuryrepower.ca/api/motor-valuation";
 
@@ -19,24 +25,7 @@ export interface CanonicalHbwValuationInput {
   model?: string;
 }
 
-export interface CanonicalHbwValuation {
-  wholesale: number;
-  listing: number;
-  rangeLow: number;
-  rangeHigh: number;
-  listingRangeLow?: number;
-  listingRangeHigh?: number;
-  confidence: "high" | "medium" | "low";
-  hstSavings: number;
-  depreciation?: number;
-  conditionFactor?: number;
-  marketDemand?: string;
-  seasonal?: string;
-  factors: string[];
-  reportUrl?: string;
-  engineVersion?: string;
-  referenceVersion?: string;
-}
+export interface CanonicalHbwValuation extends CanonicalHbwValuationPayload {}
 
 export class HbwValuationError extends Error {
   readonly status: number;
@@ -53,18 +42,15 @@ export class HbwValuationError extends Error {
 }
 
 export function normalizeHbwStroke(value: unknown): string | undefined {
-  if (typeof value !== "string") return undefined;
-  const normalized = value.trim().toLowerCase();
-  if (!normalized) return undefined;
-  const compact = normalized.replace(/[\s_-]+/g, "");
-  if (compact === "4stroke" || compact === "fourstroke") return "4-stroke";
-  if (compact === "2stroke" || compact === "twostroke") return "2-stroke";
-  if (ALLOWED_HBW_STROKES.has(normalized)) return normalized;
-  throw new HbwValuationError(
-    "engine_type must be one of: 4-stroke, 2-stroke, proxs, optimax, etec",
-    400,
-    "invalid_stroke",
-  );
+  try {
+    return normalizeSharedHbwStroke(value);
+  } catch {
+    throw new HbwValuationError(
+      "engine_type must be one of: 4-stroke, 2-stroke, proxs, optimax, etec",
+      400,
+      "invalid_stroke",
+    );
+  }
 }
 
 function safeUpstreamMessage(data: unknown, fallback: string): string {
@@ -151,21 +137,13 @@ export async function fetchCanonicalHbwValuation(
       throw new HbwValuationError(
         safeUpstreamMessage(data, "Trade-in valuation service rejected the request"),
         status,
-        upstreamCode || (response.status === 422 ? "unprocessable_valuation" : "upstream_error"),
+        upstreamCode || (response.status === 429 ? "rate_limited" : response.status === 422 ? "unprocessable_valuation" : "upstream_error"),
         data,
       );
     }
 
-    const value = data as Partial<CanonicalHbwValuation> | null;
-    if (
-      !value ||
-      !Number.isFinite(value.wholesale) ||
-      !Number.isFinite(value.rangeLow) ||
-      !Number.isFinite(value.rangeHigh) ||
-      (value.wholesale as number) <= 0 ||
-      (value.rangeLow as number) < 0 ||
-      (value.rangeHigh as number) < (value.rangeLow as number)
-    ) {
+    const parsed = parseCanonicalHbwValuation(data);
+    if (!parsed) {
       throw new HbwValuationError(
         "Trade-in valuation service returned an invalid response",
         502,
@@ -173,15 +151,7 @@ export async function fetchCanonicalHbwValuation(
       );
     }
 
-    return {
-      ...value,
-      listing: typeof value.listing === "number" ? value.listing : value.wholesale,
-      confidence: value.confidence === "high" || value.confidence === "medium"
-        ? value.confidence
-        : "low",
-      hstSavings: typeof value.hstSavings === "number" ? value.hstSavings : 0,
-      factors: Array.isArray(value.factors) ? value.factors : [],
-    } as CanonicalHbwValuation;
+    return parsed;
   } catch (error) {
     if (error instanceof HbwValuationError) throw error;
     console.error("HBW valuation fetch failed:", error);

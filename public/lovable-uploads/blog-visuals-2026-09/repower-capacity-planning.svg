@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="680" viewBox="0 0 800 680" role="img" aria-label="Start with your boat’s limits">
+<rect width="800" height="680" rx="24" fill="#f5f1e9"/>
+<path d="M40 45h64" stroke="#c92332" stroke-width="7"/>
+<g font-family="Arial,Helvetica,sans-serif" fill="#132b40">
+<text x="40" y="104" font-size="40" font-weight="700">Start with your boat’s limits</text>
+<text x="40" y="155" font-size="29">Your boat’s own notice and instructions come first.</text>
+<rect x="40" y="195" width="720" height="108" rx="14" fill="white"/>
+<text x="62" y="239" font-size="33" font-weight="700">Read the actual capacity information</text>
+<text x="62" y="279" font-size="29">Do not substitute a sample label.</text>
+<rect x="40" y="320" width="720" height="108" rx="14" fill="white"/>
+<text x="62" y="364" font-size="33" font-weight="700">Confirm hull and transom condition</text>
+<text x="62" y="404" font-size="29">Horsepower alone does not establish fit.</text>
+<rect x="40" y="445" width="720" height="108" rx="14" fill="white"/>
+<text x="62" y="489" font-size="33" font-weight="700">Check the complete motor installation</text>
+<text x="62" y="529" font-size="29">Weight, controls and rigging all matter.</text>
+<text x="40" y="620" font-size="28">Resolve missing or unclear information before ordering.</text>
+</g></svg>
