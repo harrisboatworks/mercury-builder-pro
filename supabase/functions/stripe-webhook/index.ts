@@ -180,6 +180,9 @@ serve(async (req) => {
         if (boundSavedQuoteId !== savedQuoteId) {
           throw new Error("Stripe deposit metadata does not match the bound record");
         }
+        if (savedQuoteId === boundSavedQuoteId) {
+          // Bound pair confirmed; continue with pre-claim reconciliation.
+        }
         if (!boundSavedQuoteId) {
           throw new Error("Bound saved quote lookup failed: missing binding");
         }

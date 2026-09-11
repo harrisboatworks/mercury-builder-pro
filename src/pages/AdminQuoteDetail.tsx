@@ -401,7 +401,7 @@ const AdminQuoteDetail = () => {
         const { error } = await supabase
           .from('saved_quotes')
           .update({ quote_state: updatedQuoteData })
-          .eq('id', q.id);
+          .eq('id', savedQuoteDealId || q.saved_quote_id);
         if (error) throw error;
         if (customerQuoteId) {
           await writeCustomerQuote({
@@ -422,11 +422,11 @@ const AdminQuoteDetail = () => {
             last_modified_at: new Date().toISOString(),
             last_modified_by: user.id,
           })
-          .eq('id', q.id);
+          .eq('id', customerQuoteId);
         if (error) throw error;
 
         const { error: changeLogError } = await supabase.from('quote_change_log').insert({
-          quote_id: q.id,
+          quote_id: customerQuoteId,
           changed_by: user.id,
           change_type: clearOverride ? 'trade_in_clear' : 'trade_in_override',
           changes,
