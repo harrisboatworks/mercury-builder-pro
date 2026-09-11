@@ -13071,7 +13071,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         question: 'Which FourStroke models are eligible for Mercury Boost?',
-        answer: 'The current published dealer list includes FourStroke 175, 200, 250, and 300 HP models subject to serial-number and software requirements. The 225 HP V6 FourStroke is specifically not eligible. Factory-equipped status also depends on the exact serial number. Call with the serial number for the current answer.'
+        answer: 'The current published dealer list includes FourStroke 175, 200, 250, and 300 HP models subject to serial-number and software requirements. The 225 HP V6 FourStroke is specifically not eligible: Mercury lists it under Models Not Eligible for Boost in service bulletin 8M0247441. Factory-equipped status also depends on the exact serial number. Call with the serial number for the current answer.'
       },
       {
         question: 'Is Mercury Boost worth it for Rice Lake and Kawartha Lakes boating?',
@@ -16941,7 +16941,7 @@ Back at the shop:
 Customer picks up the boat. We walk through:
 - The new motor's controls and features
 - Mercury SmartCraft display interpretation (if applicable)
-- The 10-hour break-in protocol
+- The model-specific break-in procedure for your motor
 - The model-specific break-in and first scheduled service plan
 - Mercury warranty terms
 - Annual maintenance schedule
@@ -17043,7 +17043,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         question: 'When can I use my boat after pickup?',
-        answer: 'Right away, with the 10-hour break-in protocol. The first hour at no-wake speed and gradual RPM increase. Vary throttle. Avoid sustained WOT for the first 10 hours. See our [breaking in guide](/blog/breaking-in-new-mercury-motor-guide).'
+        answer: 'Right away, following the break-in procedure for your exact engine model and serial number. We review that procedure with you at pickup, and the Mercury owner manual for your motor is the authority on throttle, load, and hours. Break-in guidance is model-specific rather than one universal rule. See our [breaking in guide](/blog/breaking-in-new-mercury-motor-guide).'
       },
       {
         question: 'When\'s my first service after the repower?',

@@ -367,14 +367,14 @@ Harris Boat Works 目前是 Mercury Marine Premier 认证经销商。`,
     image: '/lovable-uploads/hero-mercury-115-vs-150-comparison-zh.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-09-06',
+    dateModified: '2026-09-11',
     publishDate: '2026-04-12',
     category: '产品对比',
     readTime: '8 分钟',
     keywords: ['Mercury 115 vs 150', 'Mercury舷外机对比', '115马力还是150马力', 'Mercury outboard comparison Chinese'],
     content: `## 简短答案
 
-115和150马力是安大略省中型船主最常纠结的两个选择。**如果你的船在18英尺以下、通常一两个人使用、主要钓鱼，115马力很可能足够。如果船在18英尺以上、常载家人、需要拖曳水上玩具，150马力的冗余动力在未来几年会让你庆幸多花了那笔钱。**
+115和150马力是安大略省中型船主最常纠结的两个选择。**先看船身 Capacity Plate 标示的最大马力，这是硬性上限。在标示允许的前提下：船身较轻、常载1至2人、主要钓鱼，115马力通常够用；常载家人、需要拖曳水上玩具、经常满载出行，150马力的冗余动力会更从容。船长只是参考，真正决定的是 Capacity Plate、船体型式和你的常用载重。**
 
 犹豫的时候，通常选大一个。
 
@@ -412,7 +412,7 @@ Mercury FourStroke 115和150都属于同一个可靠的四冲程系列，油耗�
 | 排量 | 2.1升 | 3.0升 |
 | 汽缸数 | 4缸 | 4缸 |
 | 重量 | 163 公斤（359 磅）；Command Thrust 165 公斤（363 磅） | 约204公斤 |
-| 适配船长参考 | 16–19英尺 | 18–22英尺 |
+| 适配船长参考（仅供参考，最终以 Capacity Plate 标示为准） | 16–19英尺 | 18–22英尺 |
 
 115 FourStroke：官方公布的最轻配置干重为 163 公斤（359 磅）；Command Thrust 版本为 165 公斤（363 磅）。具体重量会随轴长和配置变化，干重不等于安装后的总重量。
 
@@ -446,7 +446,7 @@ Mercury FourStroke系列两款发动机在巡航速度下都安静。150马力�
 
 以下情况115马力是合理选择：
 
-- 船长在17英尺以下
+- Capacity Plate 允许，且船身较轻、载重较少
 - 主要钓鱼，通常只有1, 2人
 - 不拖曳滑水板或水上充气玩具
 - 船的最大马力标牌（Capacity Plate）在115, 150之间，且你不需要接近上限
@@ -462,7 +462,7 @@ Mercury FourStroke系列两款发动机在巡航速度下都安静。150马力�
 
 以下情况值得认真考虑150马力：
 
-- 船长在18英尺以上
+- Capacity Plate 允许更大马力，且经常满载或船身较重
 - 常载3人以上家庭出行
 - 有拖曳需求（滑水板、充气圈、香蕉船）
 - 在较大的湖面使用（Lake Simcoe、Georgian Bay等风浪较大的水域）
@@ -535,14 +535,17 @@ A：这取决于你的船型和使用方式。如果换发动机的同时想升�
 到 **[mercuryrepower.ca](https://www.mercuryrepower.ca)** 看两款发动机的当前加币报价，再联络HBW确认你的船体是否合适。
 或至 **[hbw.wiki/service](https://hbw.wiki/service)** 提交咨询申请。
 
+> **语言说明**
+> ${ZH_LANGUAGE_NOTE}
+
 Harris Boat Works，Mercury Marine Premier Dealer，自1947年起。
 ---`,
     faqs: [
       { question: 'Mercury 115 FourStroke 有多重？', answer: '115 FourStroke：官方公布的最轻配置干重为 163 公斤（359 磅）；Command Thrust 版本为 165 公斤（363 磅）。具体重量会随轴长和配置变化，干重不等于安装后的总重量。' },
-      { question: '115马力够用吗？', answer: '对于18英尺以下的船、主要1-2人使用的情况，115马力完全够用。关键是匹配船的大小和您的使用方式。' },
+      { question: '115马力够用吗？', answer: '先确认船身 Capacity Plate 标示的最大马力。在标示允许的前提下，船身较轻、主要1至2人使用的情况，115马力通常够用。关键是匹配 Capacity Plate、船体型式和您的常用载重，而不是只看船长。' },
       { question: '可以把115换成150吗？', answer: '通常可以，但需要确认船的最大马力标牌（max HP plate）允许150。安装可能需要调整操控线缆和安装支架。Harris Boat Works可以评估您的具体情况。' },
       { question: '二手115和新的115价格差多少？', answer: '取决于年份和状况。一般来说，5年左右的二手发动机价格约为新机的50-65%。但新机有完整保修，这是重要的考量因素。' },
-      { question: '保修期多长？', answer: 'Mercury FourStroke标准保修3年。通过Premier 经销商（如Harris Boat Works）购买，可享受额外保修优惠。' },
+      { question: '保修期多长？', answer: '符合条件的加拿大休闲用途新 Mercury 舷外机，标准保修为3年有限保修，另有3年防腐蚀保修，两个保修期同时计算，不是叠加成六年。额外的促销保修只有在当期书面促销条款明确写明时才适用，请以书面条款为准。' },
     ],
   },
   {
@@ -1246,14 +1249,14 @@ Harris Boat Works，自1947年起，Mercury Marine Premier Dealer，位于Rice L
     image: '/lovable-uploads/zh-mercury-40-60hp-fishing-boat-hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-10',
-    dateModified: '2026-09-06',
+    dateModified: '2026-09-11',
     publishDate: '2026-05-10',
     category: '中马力指南',
     readTime: '6 分钟',
     keywords: ['Mercury 40 60HP 中文', '铝船 Mercury 60HP', '华人钓友船外机', '安省 fishing boat Mercury'],
     content: `## 简短答案
 
-40至60HP是安省铝船和钓鱼船的黄金马力区间, 比小马力有更好的载重和起步能力，比大马力更容易控制预算。**对大多数GTA华人钓友的14至16英尺铝船，这个区间是「真正开始好用」的起点。** 但40、50、60HP的差异不只是马力数字, 你要看船体Capacity Rating、常载人数、是否Tiller、是否需要Command Thrust，以及你常去的湖区。
+40至60HP是安省铝船和钓鱼船的黄金马力区间, 比小马力有更好的载重和起步能力，比大马力更容易控制预算。**对大多数GTA华人钓友的16英尺铝船，这个区间是「真正开始好用」的起点。14英尺铝船通常只到25至30HP，15英尺多在30至40HP，一切以船身 Capacity Plate 标示为准。** 但40、50、60HP的差异不只是马力数字, 你要看船体Capacity Rating、常载人数、是否Tiller、是否需要Command Thrust，以及你常去的湖区。
 
 ::bilingual-trust
 heading: Why GTA Chinese buyers come to Rice Lake
@@ -1280,7 +1283,7 @@ ctaHref: /quote
 
 40至60HP的研究热度高，有几个原因：
 
-- 它覆盖了安省最常见的14至16英尺铝船的合理马力范围
+- 它覆盖了安省常见的15至16英尺铝船的合理马力范围
 - 它提供了比9.9至20HP明显更好的滑行能力和载重余裕
 - 它的价格比115HP以上的发动机低
 - 很多周末钓友发现自己在这个区间「介于想要和够用之间」
@@ -1317,7 +1320,7 @@ HBW的观察：**40至60HP区间最常见的错误不是买太大，而是买到
 
 ## 选40HP的合理情况
 
-- 轻型14英尺铝船，Capacity Plate明确不超过40HP
+- 轻型15英尺铝船，Capacity Plate明确允许40HP
 - 主要一两人轻装使用，不带大量装备
 - 预算是主要考量
 - 使用的湖区相对平静，不需要快速起步
@@ -1326,7 +1329,7 @@ HBW的观察：**40至60HP区间最常见的错误不是买太大，而是买到
 
 ## 选60HP的合理情况
 
-- 14至16英尺铝船，Capacity Plate允许60HP
+- 16英尺铝船，Capacity Plate允许60HP
 - 常载两至三人加上钓鱼装备
 - 需要可靠的滑行能力（不想让船在起步时拖沓）
 - 在Rice Lake或Kawarthas偶尔跑较长距离
@@ -1398,6 +1401,9 @@ A：取决于使用历史和保养状态。如果有完整的服务纪录，某�
 
 **在40、50、60HP之间拿不定主意？**
 到 **[mercuryrepower.ca](https://www.mercuryrepower.ca)** 比较当前加币报价，再至 **[hbw.wiki/service](https://hbw.wiki/service)** 让HBW帮你确认哪个配置最适合你的铝船和使用方式。
+
+> **语言说明**
+> ${ZH_LANGUAGE_NOTE}
 
 Harris Boat Works，自1947年起，Mercury Marine Premier Dealer，位于Rice Lake南岸Gores Landing。
 ---`,

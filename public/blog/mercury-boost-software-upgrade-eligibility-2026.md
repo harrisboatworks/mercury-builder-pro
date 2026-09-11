@@ -168,7 +168,7 @@ Your Mercury serial number is most commonly found on the transom bracket, look o
 
 ### Which FourStroke models are eligible for Mercury Boost?
 
-The current published dealer list includes FourStroke 175, 200, 250, and 300 HP models subject to serial-number and software requirements. The 225 HP V6 FourStroke is specifically not eligible. Factory-equipped status also depends on the exact serial number. Call with the serial number for the current answer.
+The current published dealer list includes FourStroke 175, 200, 250, and 300 HP models subject to serial-number and software requirements. The 225 HP V6 FourStroke is specifically not eligible: Mercury lists it under Models Not Eligible for Boost in service bulletin 8M0247441. Factory-equipped status also depends on the exact serial number. Call with the serial number for the current answer.
 
 ### Is Mercury Boost worth it for Rice Lake and Kawartha Lakes boating?
 

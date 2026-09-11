@@ -465,6 +465,8 @@ describe('public artifact regression', () => {
 
     expect(sourcesWithCanonNote.map((article) => article.slug).sort()).toEqual([
       'gta-chinese-rice-lake-winter-storage-complete-guide',
+      'mercury-115-vs-150-comparison-zh',
+      'mercury-40-60hp-chinese-fishing-boat-guide',
       'mercury-repower-guide-gta',
       'rice-lake-fishing-guide-toronto-chinese',
     ]);
