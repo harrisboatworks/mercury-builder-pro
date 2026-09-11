@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/mercury-40-60hp-chinese-fishing-boat-guide.md
-last_updated: 2026-09-06
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "40 到 60 匹 Mercury：铝船与华人钓友最常问的马力区间"
 description: "Mercury 40HP、50HP、60HP 船外机中文指南：安省铝船、钓鱼船、tiller/remote、Command Thrust、华人钓友怎么选。"
 category: "中马力指南"
 date_published: 2026-05-10
-date_modified: 2026-09-06
+date_modified: 2026-09-11
 keywords: ["Mercury 40 60HP 中文","铝船 Mercury 60HP","华人钓友船外机","安省 fishing boat Mercury"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,13 +25,13 @@ revenue_driver: repower
 
 **Category:** 中马力指南  
 **Published:** 2026-05-10  
-**最后审核:** 2026-09-06  
+**最后审核:** 2026-09-11  
 **Read time:** 6 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/mercury-40-60hp-chinese-fishing-boat-guide
 
 ## 简短答案
 
-40至60HP是安省铝船和钓鱼船的黄金马力区间, 比小马力有更好的载重和起步能力，比大马力更容易控制预算。**对大多数GTA华人钓友的14至16英尺铝船，这个区间是「真正开始好用」的起点。** 但40、50、60HP的差异不只是马力数字, 你要看船体Capacity Rating、常载人数、是否Tiller、是否需要Command Thrust，以及你常去的湖区。
+40至60HP是安省铝船和钓鱼船的黄金马力区间, 比小马力有更好的载重和起步能力，比大马力更容易控制预算。**对大多数GTA华人钓友的16英尺铝船，这个区间是「真正开始好用」的起点。14英尺铝船通常只到25至30HP，15英尺多在30至40HP，一切以船身 Capacity Plate 标示为准。** 但40、50、60HP的差异不只是马力数字, 你要看船体Capacity Rating、常载人数、是否Tiller、是否需要Command Thrust，以及你常去的湖区。
 
 *HBW 信任要点*
 
@@ -49,7 +49,7 @@ revenue_driver: repower
 
 40至60HP的研究热度高，有几个原因：
 
-- 它覆盖了安省最常见的14至16英尺铝船的合理马力范围
+- 它覆盖了安省常见的15至16英尺铝船的合理马力范围
 - 它提供了比9.9至20HP明显更好的滑行能力和载重余裕
 - 它的价格比115HP以上的发动机低
 - 很多周末钓友发现自己在这个区间「介于想要和够用之间」
@@ -86,7 +86,7 @@ HBW的观察：**40至60HP区间最常见的错误不是买太大，而是买到
 
 ## 选40HP的合理情况
 
-- 轻型14英尺铝船，Capacity Plate明确不超过40HP
+- 轻型15英尺铝船，Capacity Plate明确允许40HP
 - 主要一两人轻装使用，不带大量装备
 - 预算是主要考量
 - 使用的湖区相对平静，不需要快速起步
@@ -95,7 +95,7 @@ HBW的观察：**40至60HP区间最常见的错误不是买太大，而是买到
 
 ## 选60HP的合理情况
 
-- 14至16英尺铝船，Capacity Plate允许60HP
+- 16英尺铝船，Capacity Plate允许60HP
 - 常载两至三人加上钓鱼装备
 - 需要可靠的滑行能力（不想让船在起步时拖沓）
 - 在Rice Lake或Kawarthas偶尔跑较长距离
@@ -140,6 +140,9 @@ Command Thrust通常被认为是Pontoon的配置，但在某些情况下，40至
 
 **在40、50、60HP之间拿不定主意？**
 到 **[mercuryrepower.ca](https://www.mercuryrepower.ca)** 比较当前加币报价，再至 **[hbw.wiki/service](https://hbw.wiki/service)** 让HBW帮你确认哪个配置最适合你的铝船和使用方式。
+
+> **语言说明**
+> 我们专门为华人朋友准备了这些中文指南，因为我们真心希望帮助华人船主和他们的家人朋友在 Rice Lake 享受划船的乐趣，这是很多其他船行没有做的。说实话：我们的团队使用英语服务。欢迎带会英语的亲友同来，或者用手机翻译软件，我们一定会耐心沟通、尽力配合。
 
 Harris Boat Works，自1947年起，Mercury Marine Premier Dealer，位于Rice Lake南岸Gores Landing。
 ---

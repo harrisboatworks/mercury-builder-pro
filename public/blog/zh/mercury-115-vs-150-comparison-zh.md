@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/mercury-115-vs-150-comparison-zh.md
-last_updated: 2026-09-06
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury 115马力 vs 150马力舷外机：如何选择？"
 description: "Mercury FourStroke 115马力和150马力舷外机详细对比。价格、性能、油耗、适用船型全面分析，帮助您做出正确选择。"
 category: "产品对比"
 date_published: 2026-04-12
-date_modified: 2026-09-06
+date_modified: 2026-09-11
 keywords: ["Mercury 115 vs 150","Mercury舷外机对比","115马力还是150马力","Mercury outboard comparison Chinese"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,13 +25,13 @@ revenue_driver: repower
 
 **Category:** 产品对比  
 **Published:** 2026-04-12  
-**最后审核:** 2026-09-06  
+**最后审核:** 2026-09-11  
 **Read time:** 8 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/mercury-115-vs-150-comparison-zh
 
 ## 简短答案
 
-115和150马力是安大略省中型船主最常纠结的两个选择。**如果你的船在18英尺以下、通常一两个人使用、主要钓鱼，115马力很可能足够。如果船在18英尺以上、常载家人、需要拖曳水上玩具，150马力的冗余动力在未来几年会让你庆幸多花了那笔钱。**
+115和150马力是安大略省中型船主最常纠结的两个选择。**先看船身 Capacity Plate 标示的最大马力，这是硬性上限。在标示允许的前提下：船身较轻、常载1至2人、主要钓鱼，115马力通常够用；常载家人、需要拖曳水上玩具、经常满载出行，150马力的冗余动力会更从容。船长只是参考，真正决定的是 Capacity Plate、船体型式和你的常用载重。**
 
 犹豫的时候，通常选大一个。
 
@@ -60,7 +60,7 @@ Mercury FourStroke 115和150都属于同一个可靠的四冲程系列，油耗�
 | 排量 | 2.1升 | 3.0升 |
 | 汽缸数 | 4缸 | 4缸 |
 | 重量 | 163 公斤（359 磅）；Command Thrust 165 公斤（363 磅） | 约204公斤 |
-| 适配船长参考 | 16–19英尺 | 18–22英尺 |
+| 适配船长参考（仅供参考，最终以 Capacity Plate 标示为准） | 16–19英尺 | 18–22英尺 |
 
 115 FourStroke：官方公布的最轻配置干重为 163 公斤（359 磅）；Command Thrust 版本为 165 公斤（363 磅）。具体重量会随轴长和配置变化，干重不等于安装后的总重量。
 
@@ -94,7 +94,7 @@ Mercury FourStroke系列两款发动机在巡航速度下都安静。150马力�
 
 以下情况115马力是合理选择：
 
-- 船长在17英尺以下
+- Capacity Plate 允许，且船身较轻、载重较少
 - 主要钓鱼，通常只有1, 2人
 - 不拖曳滑水板或水上充气玩具
 - 船的最大马力标牌（Capacity Plate）在115, 150之间，且你不需要接近上限
@@ -110,7 +110,7 @@ Mercury FourStroke系列两款发动机在巡航速度下都安静。150马力�
 
 以下情况值得认真考虑150马力：
 
-- 船长在18英尺以上
+- Capacity Plate 允许更大马力，且经常满载或船身较重
 - 常载3人以上家庭出行
 - 有拖曳需求（滑水板、充气圈、香蕉船）
 - 在较大的湖面使用（Lake Simcoe、Georgian Bay等风浪较大的水域）
@@ -156,6 +156,9 @@ Mercury FourStroke系列两款发动机在巡航速度下都安静。150马力�
 到 **[mercuryrepower.ca](https://www.mercuryrepower.ca)** 看两款发动机的当前加币报价，再联络HBW确认你的船体是否合适。
 或至 **[hbw.wiki/service](https://hbw.wiki/service)** 提交咨询申请。
 
+> **语言说明**
+> 我们专门为华人朋友准备了这些中文指南，因为我们真心希望帮助华人船主和他们的家人朋友在 Rice Lake 享受划船的乐趣，这是很多其他船行没有做的。说实话：我们的团队使用英语服务。欢迎带会英语的亲友同来，或者用手机翻译软件，我们一定会耐心沟通、尽力配合。
+
 Harris Boat Works，Mercury Marine Premier Dealer，自1947年起。
 ---
 
@@ -167,7 +170,7 @@ Harris Boat Works，Mercury Marine Premier Dealer，自1947年起。
 
 ### 115马力够用吗？
 
-对于18英尺以下的船、主要1-2人使用的情况，115马力完全够用。关键是匹配船的大小和您的使用方式。
+先确认船身 Capacity Plate 标示的最大马力。在标示允许的前提下，船身较轻、主要1至2人使用的情况，115马力通常够用。关键是匹配 Capacity Plate、船体型式和您的常用载重，而不是只看船长。
 
 ### 可以把115换成150吗？
 
@@ -179,7 +182,7 @@ Harris Boat Works，Mercury Marine Premier Dealer，自1947年起。
 
 ### 保修期多长？
 
-Mercury FourStroke标准保修3年。通过Premier 经销商（如Harris Boat Works）购买，可享受额外保修优惠。
+符合条件的加拿大休闲用途新 Mercury 舷外机，标准保修为3年有限保修，另有3年防腐蚀保修，两个保修期同时计算，不是叠加成六年。额外的促销保修只有在当期书面促销条款明确写明时才适用，请以书面条款为准。
 
 ## Next steps
 
