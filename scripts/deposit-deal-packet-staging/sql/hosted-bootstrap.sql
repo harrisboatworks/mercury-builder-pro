@@ -11,7 +11,10 @@
 --
 -- This SQL cannot independently identify the hosted branch. The operator must
 -- supply deposit_staging.project_ref (a non-production 20-character lowercase
--- project ref) plus a matching nonce. The nonce is only operator intent
+-- project ref) plus a matching nonce. The wrapper/operator must also SET
+-- deposit_staging.connection_ref from the parsed DSN host
+-- (https://<ref>.supabase.co or db.<ref>.supabase.co) and this file asserts
+-- it equals project_ref before DDL. The nonce is only operator intent
 -- acknowledgement. Actual project identity is enforced externally by the
 -- Supabase connector/CLI target plus the staging guards.
 -- deposit_staging.* GUCs are excluded from the pg_settings ref scan so the
@@ -30,8 +33,9 @@
 --
 -- Session GUCs required in the same psql session, before this file:
 --   SET deposit_staging.project_ref TO '<isolated-20-char-lowercase-ref>'
+--   SET deposit_staging.connection_ref TO '<same-ref-parsed-from-DSN-host>'
 --   SET deposit_staging.allow_nonce TO 'deposit-deal-packet-staging/<that-exact-ref>'
--- Missing, malformed, or production refs fail before DDL.
+-- Missing, malformed, mismatched, or production refs fail before DDL.
 
 BEGIN;
 
@@ -39,6 +43,7 @@ DO $$
 DECLARE
   production_ref text := 'eutsoqdpjurknjsshxes';
   detected text := nullif(btrim(current_setting('deposit_staging.project_ref', true)), '');
+  connection_ref text := nullif(btrim(current_setting('deposit_staging.connection_ref', true)), '');
   nonce text := nullif(btrim(current_setting('deposit_staging.allow_nonce', true)), '');
   blob text := '';
   rec record;
@@ -91,6 +96,24 @@ BEGIN
   IF nonce IS DISTINCT FROM ('deposit-deal-packet-staging/' || detected) THEN
     RAISE EXCEPTION
       'hosted staging bootstrap requires SET deposit_staging.allow_nonce TO ''deposit-deal-packet-staging/<project_ref>'' as operator intent acknowledgement matching deposit_staging.project_ref'
+      USING ERRCODE = 'P0001';
+  END IF;
+
+  IF connection_ref IS NULL OR connection_ref !~ '^[a-z0-9]{20}$' THEN
+    RAISE EXCEPTION
+      'hosted staging bootstrap requires SET deposit_staging.connection_ref TO the 20-character lowercase project ref parsed from the DSN host before DDL'
+      USING ERRCODE = 'P0001';
+  END IF;
+
+  IF connection_ref IS DISTINCT FROM detected THEN
+    RAISE EXCEPTION
+      'hosted staging bootstrap requires deposit_staging.connection_ref to equal deposit_staging.project_ref before DDL'
+      USING ERRCODE = 'P0001';
+  END IF;
+
+  IF lower(connection_ref) = production_ref THEN
+    RAISE EXCEPTION
+      'hosted staging bootstrap refuses production project eutsoqdpjurknjsshxes'
       USING ERRCODE = 'P0001';
   END IF;
 END;

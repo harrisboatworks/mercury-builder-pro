@@ -158,6 +158,45 @@ export function hostFromUrl(value: string): string {
   }
 }
 
+const SUPABASE_PROJECT_REF_RE = /^[a-z0-9]{20}$/;
+
+function projectRefFromHostname(hostname: string): string | null {
+  const host = hostname.trim().toLowerCase();
+  if (!host) return null;
+  const dbMatch = host.match(/^db\.([a-z0-9]{20})\.supabase\.co$/);
+  if (dbMatch) return dbMatch[1];
+  const apiMatch = host.match(/^([a-z0-9]{20})\.supabase\.co$/);
+  if (apiMatch) return apiMatch[1];
+  return null;
+}
+
+export function extractSupabaseProjectRef(url: string): string | null {
+  const trimmed = typeof url === "string" ? url.trim() : "";
+  if (!trimmed) return null;
+
+  const candidates = [trimmed];
+  if (!trimmed.includes("://")) {
+    candidates.push(`https://${trimmed}`);
+    candidates.push(`postgres://${trimmed}`);
+  }
+
+  for (const candidate of candidates) {
+    try {
+      const parsed = new URL(candidate);
+      const fromHost = projectRefFromHostname(parsed.hostname);
+      if (fromHost && SUPABASE_PROJECT_REF_RE.test(fromHost)) return fromHost;
+    } catch {
+      // try the next candidate
+    }
+  }
+
+  const dbBare = trimmed.match(/(?:^|[/@])db\.([a-z0-9]{20})\.supabase\.co(?:[:/]|$)/i);
+  if (dbBare) return dbBare[1].toLowerCase();
+  const apiBare = trimmed.match(/(?:^|[/@])([a-z0-9]{20})\.supabase\.co(?:[:/]|$)/i);
+  if (apiBare) return apiBare[1].toLowerCase();
+  return null;
+}
+
 export function isProductionSupabaseUrl(value: string): boolean {
   const host = hostFromUrl(value);
   return (PRODUCTION_SUPABASE_HOSTS as readonly string[]).includes(host);
@@ -372,6 +411,24 @@ export function assessStagingSafety(
     !databaseUrl || !isProductionDatabaseTarget(databaseUrl),
     databaseUrl ? "STAGING_DATABASE_URL host class recorded without value" : "STAGING_DATABASE_URL omitted",
   );
+  if (supabaseUrl && databaseUrl) {
+    const supabaseRef = extractSupabaseProjectRef(supabaseUrl);
+    const databaseRef = extractSupabaseProjectRef(databaseUrl);
+    const aligned = Boolean(supabaseRef && databaseRef && supabaseRef === databaseRef);
+    add(
+      "staging_project_refs_aligned",
+      aligned,
+      aligned
+        ? "STAGING_SUPABASE_URL and STAGING_DATABASE_URL share one project ref"
+        : "STAGING_SUPABASE_URL and STAGING_DATABASE_URL must share one project ref",
+    );
+    const sharedRef = aligned ? supabaseRef : null;
+    add(
+      "staging_project_ref_not_production",
+      Boolean(sharedRef && sharedRef !== PRODUCTION_SUPABASE_PROJECT_REF),
+      "shared staging project ref must not be eutsoqdpjurknjsshxes",
+    );
+  }
   checks.push(assessInheritedNameCollision(inherited));
 
   return {

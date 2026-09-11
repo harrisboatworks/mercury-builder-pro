@@ -212,6 +212,17 @@ describe('deposit deal-packet staged acceptance', () => {
     expect(mailer).toContain('sendResendEmailWithIdempotency');
     expect(mailer).toContain('reconcile_deposit_notification_status');
     expect(mailer).toContain('notification_reconciled');
-    expect(mailer).not.toContain('.update({ quote_data:');
+    const boundMailer = mailer.slice(mailer.indexOf('let depositQuery = supabase'));
+    expect(boundMailer).not.toContain('.update({ quote_data:');
+  });
+
+  it('pins the Deno acceptance runner to deno@2.9.5 and --frozen', () => {
+    const runner = readFileSync('scripts/run-deposit-deal-packet-deno-acceptance.mjs', 'utf8');
+    expect(runner).toContain('deno@2.9.5');
+    expect(runner).toContain('--frozen');
+    expect(runner).toContain('--no-remote');
+    expect(runner).toContain('--node-modules-dir=none');
+    expect(runner).toContain('`--lock=${LOCK_PATH}`');
+    expect(runner).not.toMatch(/npx[\s\S]{0,40}["']deno["']/);
   });
 });

@@ -172,7 +172,10 @@ Apply this exact order against an operator-supplied isolated non-production proj
 4. `scripts/deposit-deal-packet-staging/sql/seed.sql`
 
 ```bash
-# Same psql session. Both GUCs are operator intent acknowledgement only.
+# Same psql session. project_ref and allow_nonce are operator intent
+# acknowledgement only. connection_ref must be the project ref parsed from
+# the STAGING_DATABASE_URL / STAGING_SUPABASE_URL host
+# (https://<ref>.supabase.co or db.<ref>.supabase.co) and must equal project_ref.
 # This SQL cannot independently identify the connected project.
 # Actual project identity is the Supabase connector/CLI target project_id
 # plus the staging URL/key guards. deposit_staging.* GUCs are excluded from
@@ -180,16 +183,21 @@ Apply this exact order against an operator-supplied isolated non-production proj
 # Replace <isolated-20-char-ref> with the exact non-production project ref.
 psql "$STAGING_DATABASE_URL" -v ON_ERROR_STOP=1 \
   -c "SET deposit_staging.project_ref TO '<isolated-20-char-ref>'" \
+  -c "SET deposit_staging.connection_ref TO '<isolated-20-char-ref>'" \
   -c "SET deposit_staging.allow_nonce TO 'deposit-deal-packet-staging/<isolated-20-char-ref>'" \
   -f scripts/deposit-deal-packet-staging/sql/hosted-bootstrap.sql
 
 # Missing or malformed project_ref fails before DDL.
 # SET deposit_staging.project_ref TO 'eutsoqdpjurknjsshxes' must fail before DDL,
 # even when a matching nonce is also set.
+# connection_ref must be the same 20-character ref parsed from the DSN host
+# (https://<ref>.supabase.co or db.<ref>.supabase.co). A mismatch fails before DDL.
 
 psql "$STAGING_DATABASE_URL" -v ON_ERROR_STOP=1 \
   -f supabase/migrations/20260823120000_deposit_deal_packet.sql
 psql "$STAGING_DATABASE_URL" -v ON_ERROR_STOP=1 \
+  -c "SET deposit_staging.project_ref TO '<isolated-20-char-ref>'" \
+  -c "SET deposit_staging.connection_ref TO '<isolated-20-char-ref>'" \
   -f scripts/deposit-deal-packet-staging/sql/hosted-bootstrap-verify.sql
 ```
 

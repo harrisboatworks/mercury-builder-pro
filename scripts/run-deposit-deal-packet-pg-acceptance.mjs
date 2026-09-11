@@ -38,7 +38,17 @@ const hostedVerifyPath = path.join(repoRoot, "scripts/deposit-deal-packet-stagin
 const hostedShapePath = path.join(repoRoot, "scripts/deposit-deal-packet-staging/sql/hosted-shape-local.sql");
 const hostedOlderAclPath = path.join(repoRoot, "scripts/deposit-deal-packet-staging/sql/hosted-acl-older-form.sql");
 const hostedProjectRef = "abcdabcdabcdabcdabcd";
+const hostedConnectionRef = hostedProjectRef;
 const hostedNonce = `deposit-deal-packet-staging/${hostedProjectRef}`;
+const hostedBootstrapGucs = [
+  `SET deposit_staging.project_ref TO '${hostedProjectRef}'`,
+  `SET deposit_staging.connection_ref TO '${hostedConnectionRef}'`,
+  `SET deposit_staging.allow_nonce TO '${hostedNonce}'`,
+];
+const hostedVerifyGucs = [
+  `SET deposit_staging.project_ref TO '${hostedProjectRef}'`,
+  `SET deposit_staging.connection_ref TO '${hostedConnectionRef}'`,
+];
 const fixtureMotorId = "36363636-3636-4636-8636-363636363636";
 const hostedRunnerRole = "deposit_hosted_runner";
 const stagingSeedIds = {
@@ -650,6 +660,7 @@ function hostedVerifyPassed(databaseName, sessionSets = []) {
     "marker_rls_enabled",
     "marker_privileges_locked",
     "marker_applying_role_can_select",
+    "connection_ref_matches_project_ref",
     "public_table_acls_exact",
     "public_function_acls_exact",
   ];
@@ -863,6 +874,7 @@ function recordHostedBootstrapProofs() {
 
   const leakedNonce = applySqlFileWithSets(hostedBootstrapPath, hostedDb, [
     `SET deposit_staging.project_ref TO '${hostedProjectRef}'`,
+    `SET deposit_staging.connection_ref TO '${hostedConnectionRef}'`,
     `SET deposit_staging.allow_nonce TO '${hostedProjectRef}'`,
   ], { allowFailure: true });
   const leakedOutput = `${leakedNonce.stderr || ""}${leakedNonce.stdout || ""}`;
@@ -877,6 +889,7 @@ function recordHostedBootstrapProofs() {
 
   const stagingRefOnly = applySqlFileWithSets(hostedBootstrapPath, hostedDb, [
     `SET deposit_staging.project_ref TO '${hostedProjectRef}'`,
+    `SET deposit_staging.connection_ref TO '${hostedConnectionRef}'`,
   ], { allowFailure: true });
   const stagingRefOutput = `${stagingRefOnly.stderr || ""}${stagingRefOnly.stdout || ""}`;
   const stagingRefRejected = stagingRefOnly.status !== 0
@@ -890,6 +903,7 @@ function recordHostedBootstrapProofs() {
 
   const productionApply = applySqlFileWithSets(hostedBootstrapPath, hostedDb, [
     "SET deposit_staging.project_ref TO 'eutsoqdpjurknjsshxes'",
+    "SET deposit_staging.connection_ref TO 'eutsoqdpjurknjsshxes'",
     "SET deposit_staging.allow_nonce TO 'deposit-deal-packet-staging/eutsoqdpjurknjsshxes'",
   ], { allowFailure: true });
   const productionOutput = `${productionApply.stderr || ""}${productionApply.stdout || ""}`;
@@ -902,14 +916,37 @@ function recordHostedBootstrapProofs() {
     ${psqlLiteral(`status=${productionApply.status} tables=${countPublicPacketTables(hostedDb)} ${productionOutput.slice(0, 180)}`)}
   );`);
 
-  const boot = applySqlFileWithSets(hostedBootstrapPath, hostedDb, [
+  const missingConnection = applySqlFileWithSets(hostedBootstrapPath, hostedDb, [
     `SET deposit_staging.project_ref TO '${hostedProjectRef}'`,
     `SET deposit_staging.allow_nonce TO '${hostedNonce}'`,
   ], { allowFailure: true });
-  const bootAgain = applySqlFileWithSets(hostedBootstrapPath, hostedDb, [
+  const missingConnectionOutput = `${missingConnection.stderr || ""}${missingConnection.stdout || ""}`;
+  const missingConnectionRejected = missingConnection.status !== 0
+    && /requires SET deposit_staging.connection_ref TO the 20-character lowercase project ref parsed from the DSN host before DDL/i.test(missingConnectionOutput)
+    && countPublicPacketTables(hostedDb) === 0;
+  psql(`SELECT public.accept_record(
+    'hosted_bootstrap_missing_connection_ref_fails_before_ddl',
+    ${missingConnectionRejected ? "true" : "false"},
+    ${psqlLiteral(`status=${missingConnection.status} tables=${countPublicPacketTables(hostedDb)} ${missingConnectionOutput.slice(0, 180)}`)}
+  );`);
+
+  const mismatchedConnection = applySqlFileWithSets(hostedBootstrapPath, hostedDb, [
     `SET deposit_staging.project_ref TO '${hostedProjectRef}'`,
+    "SET deposit_staging.connection_ref TO 'zzzzzzzzzzzzzzzzzzzz'",
     `SET deposit_staging.allow_nonce TO '${hostedNonce}'`,
   ], { allowFailure: true });
+  const mismatchedConnectionOutput = `${mismatchedConnection.stderr || ""}${mismatchedConnection.stdout || ""}`;
+  const mismatchedConnectionRejected = mismatchedConnection.status !== 0
+    && /requires deposit_staging.connection_ref to equal deposit_staging.project_ref before DDL/i.test(mismatchedConnectionOutput)
+    && countPublicPacketTables(hostedDb) === 0;
+  psql(`SELECT public.accept_record(
+    'hosted_bootstrap_mismatched_connection_ref_fails_before_ddl',
+    ${mismatchedConnectionRejected ? "true" : "false"},
+    ${psqlLiteral(`status=${mismatchedConnection.status} tables=${countPublicPacketTables(hostedDb)} ${mismatchedConnectionOutput.slice(0, 180)}`)}
+  );`);
+
+  const boot = applySqlFileWithSets(hostedBootstrapPath, hostedDb, hostedBootstrapGucs, { allowFailure: true });
+  const bootAgain = applySqlFileWithSets(hostedBootstrapPath, hostedDb, hostedBootstrapGucs, { allowFailure: true });
   const bootOk = boot.status === 0 && bootAgain.status === 0 && countPublicPacketTables(hostedDb) === 5;
   psql(`SELECT public.accept_record(
     'hosted_bootstrap_succeeds_with_nonce',
@@ -929,7 +966,7 @@ function recordHostedBootstrapProofs() {
   );`);
 
   const feature = applySqlFile(migrationPath, hostedDb, { allowFailure: true });
-  const verify = hostedVerifyPassed(hostedDb);
+  const verify = hostedVerifyPassed(hostedDb, hostedVerifyGucs);
   const featureOk = feature.status === 0 && verify.ok;
   psql(`SELECT public.accept_record(
     'hosted_bootstrap_feature_migration_and_edge_columns',
@@ -1043,13 +1080,11 @@ function recordHostedShapeBootstrapProofs() {
 
   const boot = applySqlFileWithSets(hostedBootstrapPath, shapeDb, [
     `SET ROLE ${hostedRunnerRole}`,
-    `SET deposit_staging.project_ref TO '${hostedProjectRef}'`,
-    `SET deposit_staging.allow_nonce TO '${hostedNonce}'`,
+    ...hostedBootstrapGucs,
   ], { allowFailure: true });
   const bootAgain = applySqlFileWithSets(hostedBootstrapPath, shapeDb, [
     `SET ROLE ${hostedRunnerRole}`,
-    `SET deposit_staging.project_ref TO '${hostedProjectRef}'`,
-    `SET deposit_staging.allow_nonce TO '${hostedNonce}'`,
+    ...hostedBootstrapGucs,
   ], { allowFailure: true });
   const bootOutput = `${boot.stderr || ""}${boot.stdout || ""}`;
   const bootOk = boot.status === 0
@@ -1131,7 +1166,7 @@ function recordHostedShapeBootstrapProofs() {
   const feature = applySqlFileWithSets(migrationPath, shapeDb, [
     `SET ROLE ${hostedRunnerRole}`,
   ], { allowFailure: true });
-  const verify = hostedVerifyPassed(shapeDb, [`SET ROLE ${hostedRunnerRole}`]);
+  const verify = hostedVerifyPassed(shapeDb, [`SET ROLE ${hostedRunnerRole}`, ...hostedVerifyGucs]);
   const featureOk = feature.status === 0 && verify.ok;
   psql(`SELECT public.accept_record(
     'hosted_bootstrap_hosted_shape_feature_migration_and_edge_columns',
@@ -1162,13 +1197,12 @@ function recordHostedShapeBootstrapProofs() {
 
   const recoverBoot = applySqlFileWithSets(hostedBootstrapPath, shapeDb, [
     `SET ROLE ${hostedRunnerRole}`,
-    `SET deposit_staging.project_ref TO '${hostedProjectRef}'`,
-    `SET deposit_staging.allow_nonce TO '${hostedNonce}'`,
+    ...hostedBootstrapGucs,
   ], { allowFailure: true });
   const recoverFeature = applySqlFileWithSets(migrationPath, shapeDb, [
     `SET ROLE ${hostedRunnerRole}`,
   ], { allowFailure: true });
-  const recoverVerify = hostedVerifyPassed(shapeDb, [`SET ROLE ${hostedRunnerRole}`]);
+  const recoverVerify = hostedVerifyPassed(shapeDb, [`SET ROLE ${hostedRunnerRole}`, ...hostedVerifyGucs]);
   const narrowed = recoverBoot.status === 0 && recoverFeature.status === 0 && recoverVerify.ok;
   psql(`SELECT public.accept_record(
     'hosted_bootstrap_hosted_shape_narrows_older_form_acls',
@@ -1178,13 +1212,12 @@ function recordHostedShapeBootstrapProofs() {
 
   const againBoot = applySqlFileWithSets(hostedBootstrapPath, shapeDb, [
     `SET ROLE ${hostedRunnerRole}`,
-    `SET deposit_staging.project_ref TO '${hostedProjectRef}'`,
-    `SET deposit_staging.allow_nonce TO '${hostedNonce}'`,
+    ...hostedBootstrapGucs,
   ], { allowFailure: true });
   const againFeature = applySqlFileWithSets(migrationPath, shapeDb, [
     `SET ROLE ${hostedRunnerRole}`,
   ], { allowFailure: true });
-  const againVerify = hostedVerifyPassed(shapeDb, [`SET ROLE ${hostedRunnerRole}`]);
+  const againVerify = hostedVerifyPassed(shapeDb, [`SET ROLE ${hostedRunnerRole}`, ...hostedVerifyGucs]);
   const idempotent = againBoot.status === 0 && againFeature.status === 0 && againVerify.ok;
   psql(`SELECT public.accept_record(
     'hosted_bootstrap_hosted_shape_acl_reapply_idempotent',

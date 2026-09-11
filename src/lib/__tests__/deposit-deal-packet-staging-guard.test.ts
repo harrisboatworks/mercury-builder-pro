@@ -11,6 +11,7 @@ import {
   assessRuntimeStagingIsolation,
   assessStagingSafety,
   assertRuntimeStagingIsolation,
+  extractSupabaseProjectRef,
   depositStagingModeEnabled,
   INVALID_STAGING_DEPOSIT_PRICE_500,
   resolveDepositStripePriceId,
@@ -78,6 +79,44 @@ describe('deposit deal-packet staging guard', () => {
       SUPABASE_URL: `https://${PRODUCTION_SUPABASE_HOSTS[0]}`,
     }).result).toBe('FAIL');
     expect(assessStagingSafety(safeEnv, {}).ok).toBe(true);
+  });
+
+  it('parses supabase.co and db.<ref>.supabase.co hosts and fails mismatched URL refs', () => {
+    const isolatedRef = 'abcdabcdabcdabcdabcd';
+    expect(extractSupabaseProjectRef(`https://${isolatedRef}.supabase.co`)).toBe(isolatedRef);
+    expect(extractSupabaseProjectRef(`https://${isolatedRef}.supabase.co/rest/v1`)).toBe(isolatedRef);
+    expect(extractSupabaseProjectRef(`postgresql://postgres:secret@db.${isolatedRef}.supabase.co:5432/postgres`))
+      .toBe(isolatedRef);
+    expect(extractSupabaseProjectRef(`db.${isolatedRef}.supabase.co`)).toBe(isolatedRef);
+    expect(extractSupabaseProjectRef(`https://${PRODUCTION_SUPABASE_HOSTS[0]}`)).toBe('eutsoqdpjurknjsshxes');
+    expect(extractSupabaseProjectRef('https://not-a-ref.example')).toBeNull();
+
+    const otherRef = 'zzzzzzzzzzzzzzzzzzzz';
+    const mismatched = assessStagingSafety({
+      ...safeEnv,
+      STAGING_SUPABASE_URL: `https://${isolatedRef}.supabase.co`,
+      STAGING_DATABASE_URL: `postgresql://postgres:secret@db.${otherRef}.supabase.co:5432/postgres`,
+    });
+    expect(mismatched.ok).toBe(false);
+    expect(mismatched.checks.find((check) => check.id === 'staging_project_refs_aligned')?.result).toBe('FAIL');
+
+    const productionPair = assessStagingSafety({
+      ...safeEnv,
+      STAGING_SUPABASE_URL: `https://${PRODUCTION_SUPABASE_HOSTS[0]}`,
+      STAGING_DATABASE_URL: `postgresql://postgres:secret@db.eutsoqdpjurknjsshxes.supabase.co:5432/postgres`,
+    });
+    expect(productionPair.ok).toBe(false);
+    expect(productionPair.checks.find((check) => check.id === 'staging_project_ref_not_production')?.result)
+      .toBe('FAIL');
+
+    const aligned = assessStagingSafety({
+      ...safeEnv,
+      STAGING_SUPABASE_URL: `https://${isolatedRef}.supabase.co`,
+      STAGING_DATABASE_URL: `postgresql://postgres:secret@db.${isolatedRef}.supabase.co:5432/postgres`,
+    });
+    expect(aligned.ok).toBe(true);
+    expect(aligned.checks.find((check) => check.id === 'staging_project_refs_aligned')?.result).toBe('PASS');
+    expect(aligned.checks.find((check) => check.id === 'staging_project_ref_not_production')?.result).toBe('PASS');
   });
 
   it('accepts restricted test Stripe keys and still rejects restricted live keys', () => {
@@ -330,6 +369,9 @@ describe('deposit deal-packet staging guard', () => {
     expect(bootstrap).toContain('hosted staging bootstrap refuses production project eutsoqdpjurknjsshxes');
     expect(bootstrap).toContain('hosted staging bootstrap requires SET deposit_staging.project_ref TO a non-production 20-character lowercase project ref before DDL');
     expect(bootstrap).toContain("hosted staging bootstrap requires SET deposit_staging.allow_nonce TO ''deposit-deal-packet-staging/<project_ref>'' as operator intent acknowledgement matching deposit_staging.project_ref");
+    expect(bootstrap).toContain('hosted staging bootstrap requires SET deposit_staging.connection_ref TO the 20-character lowercase project ref parsed from the DSN host before DDL');
+    expect(bootstrap).toContain('hosted staging bootstrap requires deposit_staging.connection_ref to equal deposit_staging.project_ref before DDL');
+    expect(bootstrap).toContain("nullif(btrim(current_setting('deposit_staging.connection_ref', true)), '')");
     expect(bootstrap).toContain('^[a-z0-9]{20}$');
     expect(bootstrap).toContain('This SQL cannot independently identify the hosted branch');
     expect(bootstrap).toContain("name NOT LIKE 'deposit_staging.%'");
@@ -391,6 +433,8 @@ describe('deposit deal-packet staging guard', () => {
     expect(verify).not.toContain('ccozickwrpautlxknsjk');
     expect(verify).toContain("target_project_ref ~ '^[a-z0-9]{20}$'");
     expect(verify).toContain("target_project_ref IS DISTINCT FROM 'eutsoqdpjurknjsshxes'");
+    expect(verify).toContain('connection_ref_matches_project_ref');
+    expect(verify).toContain("current_setting('deposit_staging.connection_ref', true)");
     expect(verify).toContain('motor_models_deposit_columns');
     expect(verify).toContain('motor_models_rls_enabled');
     expect(bootstrap).not.toContain('CREATE TABLE public.profiles');
@@ -486,6 +530,7 @@ describe('deposit deal-packet staging guard', () => {
     expect(runbook).toContain('hosted-bootstrap.sql');
     expect(runbook).toContain('deposit-deal-packet-hosted-bootstrap/v1');
     expect(runbook).toContain("SET deposit_staging.project_ref TO '<isolated-20-char-ref>'");
+    expect(runbook).toContain("SET deposit_staging.connection_ref TO '<isolated-20-char-ref>'");
     expect(runbook).toContain("SET deposit_staging.allow_nonce TO 'deposit-deal-packet-staging/<isolated-20-char-ref>'");
     expect(runbook).toContain('This SQL cannot independently identify the connected project');
     expect(runbook).toContain('operator intent acknowledgement only');
@@ -612,6 +657,7 @@ describe('deposit deal-packet staging guard', () => {
     expect(envExample).toContain('# STRIPE_DEPOSIT_PRICE_500=');
     expect(envExample).not.toContain('price_1U7jab');
     expect(envExample).toContain("SET deposit_staging.project_ref TO '<isolated-20-char-lowercase-ref>'");
+    expect(envExample).toContain("SET deposit_staging.connection_ref TO '<same-ref-parsed-from-DSN-host>'");
     expect(envExample).toContain("SET deposit_staging.allow_nonce TO 'deposit-deal-packet-staging/<that-exact-ref>'");
     expect(envExample).toContain('# DEPOSIT_STAGING_SAVED_QUOTE_ID=');
     expect(envExample).toContain('31313131-3131-4131-8131-313131313131');

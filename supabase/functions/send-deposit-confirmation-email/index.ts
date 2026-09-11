@@ -1,5 +1,4 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
-import { Resend } from "npm:resend@2.0.0";
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
 import { GROK_BOT_AGENTMAIL } from "../_shared/grok-email-routing.ts";
 import {
@@ -34,7 +33,9 @@ import {
   resendFailureCode,
   resendIdempotencyKey,
   sanitizeDeliveryError,
+  persistQuotePaymentAdminSend,
   seedDepositEmailDeliveryRows,
+  sendOrRehydrateQuotePaymentAdminEmail,
   sendResendEmailWithIdempotency,
   stableDepositTimestamp,
   type DepositEmailAudience,
@@ -47,7 +48,6 @@ import {
 } from "../_shared/quote-document-policy.ts";
 
 const resendApiKey = Deno.env.get("RESEND_API_KEY") || "";
-const resend = new Resend(resendApiKey);
 
 const supabaseUrl = Deno.env.get("SUPABASE_URL") ?? "";
 const supabaseServiceKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ?? "";
@@ -167,11 +167,33 @@ serve(async (req) => {
       const customerName = typeof requestBody.customerName === "string" ? requestBody.customerName : "";
       const depositAmount = String(requestBody.depositAmount || "");
       const paymentId = typeof requestBody.paymentId === "string" ? requestBody.paymentId : "";
+      const quoteId = typeof requestBody.quoteId === "string" ? requestBody.quoteId : "";
       const motorInfo = requestBody.motorInfo && typeof requestBody.motorInfo === "object"
         ? requestBody.motorInfo as { model?: string; hp?: number; year?: number }
         : undefined;
-      if (!customerName || !depositAmount) {
+      const idempotencySubject = paymentId || quoteId;
+      if (!customerName || !depositAmount || !idempotencySubject) {
         throw new Error("Incomplete payment notification data");
+      }
+      let quoteRow: { id: string; quote_data: Record<string, unknown> | null } | null = null;
+      if (quoteId) {
+        const found = await supabase
+          .from("quotes")
+          .select("id, quote_data")
+          .eq("id", quoteId)
+          .maybeSingle();
+        quoteRow = found.data
+          ? { id: found.data.id, quote_data: found.data.quote_data as Record<string, unknown> | null }
+          : null;
+      } else if (paymentId) {
+        const found = await supabase
+          .from("quotes")
+          .select("id, quote_data")
+          .contains("quote_data", { stripe_payment_intent: paymentId })
+          .maybeSingle();
+        quoteRow = found.data
+          ? { id: found.data.id, quote_data: found.data.quote_data as Record<string, unknown> | null }
+          : null;
       }
       const adminHtml = createInternalDealEmailHtml({
         customerName,
@@ -196,16 +218,43 @@ serve(async (req) => {
         grokEmail: GROK_BOT_AGENTMAIL,
         env: stagingMailerEnv(),
       });
-      const adminResponse = await resend.emails.send({
-        from: "Harris Boat Works System <deposits@mercuryrepower.ca>",
-        to: adminRecipients.hbw,
-        subject: hbwDepositEmailSubject(customerName, getMotorLabel(motorInfo), depositAmount),
-        html: adminHtml,
-      });
-      if (adminResponse.error) {
+      if (!assertResendApiKeyConfigured(resendApiKey)) {
         throw new Error("Unable to send deposit confirmation");
       }
-      return new Response(JSON.stringify({ success: true, referenceNumber: generateReferenceNumber(paymentId) }), {
+      const adminProvider = await sendOrRehydrateQuotePaymentAdminEmail({
+        apiKey: resendApiKey,
+        paymentIdOrQuoteId: idempotencySubject,
+        quoteData: quoteRow?.quote_data,
+        payload: {
+          from: "Harris Boat Works System <deposits@mercuryrepower.ca>",
+          to: adminRecipients.hbw,
+          subject: hbwDepositEmailSubject(customerName, getMotorLabel(motorInfo), depositAmount),
+          html: adminHtml,
+        },
+      });
+      if (adminProvider.kind !== "sent" && adminProvider.kind !== "rehydrated") {
+        throw new Error("Unable to send deposit confirmation");
+      }
+      if (quoteRow && adminProvider.kind === "sent") {
+        const { error: persistError } = await supabase
+          .from("quotes")
+          .update({
+            quote_data: persistQuotePaymentAdminSend(
+              quoteRow.quote_data && typeof quoteRow.quote_data === "object" ? quoteRow.quote_data : {},
+              adminProvider.id,
+            ),
+          })
+          .eq("id", quoteRow.id);
+        if (persistError) {
+          logStep("WARNING: Quote-payment admin provider persist failed", { quoteId: quoteRow.id });
+        }
+      }
+      return new Response(JSON.stringify({
+        success: true,
+        referenceNumber: generateReferenceNumber(paymentId),
+        provider_id: adminProvider.id,
+        rehydrated: adminProvider.kind === "rehydrated",
+      }), {
         status: 200,
         headers: responseHeaders,
       });

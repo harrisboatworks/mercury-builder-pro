@@ -18,7 +18,11 @@ import {
   resendFailureCode,
   resendIdempotencyKey,
   sanitizeDeliveryError,
+  persistQuotePaymentAdminSend,
+  quotePaymentAdminIdempotencyKey,
+  readAcceptedQuotePaymentAdminSend,
   seedDepositEmailDeliveryRows,
+  sendOrRehydrateQuotePaymentAdminEmail,
   sendResendEmailWithIdempotency,
   simulateConcurrentClaims,
 } from '../../../supabase/functions/_shared/deposit-email-deliveries.ts';
@@ -179,6 +183,7 @@ describe('deposit confirmation mailer contract', () => {
       mailer.indexOf('let depositQuery = supabase'),
     );
     expect(adminOnlyFallback).toContain('createInternalDealEmailHtml');
+    expect(adminOnlyFallback).toContain('sendOrRehydrateQuotePaymentAdminEmail');
     expect(adminOnlyFallback).not.toContain('paidAt');
     expect(adminOnlyFallback).not.toContain('1970-01-01');
     expect(adminOnlyFallback).not.toContain('seedDepositEmailDeliveryRows');
@@ -225,7 +230,7 @@ describe('deposit confirmation mailer contract', () => {
     );
     expect(mailer).not.toContain('applyQuoteNotificationReconciliation');
     expect(mailer).not.toContain('simulateConcurrentNotificationReconcile');
-    expect(mailer).not.toContain('.update({ quote_data:');
+    expect(mailer.slice(mailer.indexOf('let depositQuery = supabase'))).not.toContain('.update({ quote_data:');
     expect(mailer).not.toContain('sms_notification_status === "sent"');
     expect(mailer).not.toContain('parseSavedQuoteIdentity(savedQuote)');
     expect(mailer).toContain("contains(\"quote_data\", { saved_quote_id: savedQuoteDealId })");
@@ -256,6 +261,7 @@ describe('deposit confirmation mailer contract', () => {
     );
     expect(adminOnlyFallback).toContain('createInternalDealEmailHtml');
     expect(adminOnlyFallback).toContain('policy: null');
+    expect(adminOnlyFallback).toContain('sendOrRehydrateQuotePaymentAdminEmail');
     expect(adminOnlyFallback).not.toContain('paidAt');
     expect(adminOnlyFallback).not.toContain('1970-01-01T00:00:00.000Z');
     expect(adminOnlyFallback).not.toContain('seedDepositEmailDeliveryRows');
@@ -401,6 +407,65 @@ describe('deposit confirmation mailer contract', () => {
     );
     expect(keyFn).not.toContain('attempt');
   });
+
+  it('rehydrates an accepted quote-payment admin send instead of calling Resend again', async () => {
+    const paymentId = 'pi_quote_admin_001';
+    const key = quotePaymentAdminIdempotencyKey(paymentId);
+    expect(key).toBe(`quote-payment-admin:${paymentId}`);
+    const payload = {
+      from: 'Harris Boat Works System <deposits@example.com>',
+      to: ['ops@example.com'],
+      subject: 'quote payment',
+      html: '<p>quote payment</p>',
+    };
+    let fetchCount = 0;
+    const fetchImpl = async (_url: string | URL | Request, init?: RequestInit) => {
+      fetchCount += 1;
+      expect((init?.headers as Record<string, string>)['Idempotency-Key']).toBe(key);
+      return {
+        status: 200,
+        json: async () => ({ id: 're_quote_admin_accepted' }),
+      } as Response;
+    };
+
+    const first = await sendOrRehydrateQuotePaymentAdminEmail({
+      apiKey: 're_test',
+      paymentIdOrQuoteId: paymentId,
+      payload,
+      fetchImpl,
+    });
+    expect(first).toEqual({ kind: 'sent', id: 're_quote_admin_accepted' });
+    expect(fetchCount).toBe(1);
+
+    const stored = persistQuotePaymentAdminSend({}, 're_quote_admin_accepted');
+    expect(readAcceptedQuotePaymentAdminSend(stored)).toEqual({
+      status: 'sent',
+      provider_id: 're_quote_admin_accepted',
+    });
+
+    const retried = await sendOrRehydrateQuotePaymentAdminEmail({
+      apiKey: 're_test',
+      paymentIdOrQuoteId: paymentId,
+      quoteData: stored,
+      payload,
+      fetchImpl,
+    });
+    expect(retried).toEqual({ kind: 'rehydrated', id: 're_quote_admin_accepted' });
+    expect(fetchCount).toBe(1);
+
+    const mailer = readFileSync('supabase/functions/send-deposit-confirmation-email/index.ts', 'utf8');
+    const webhook = readFileSync('supabase/functions/stripe-webhook/index.ts', 'utf8');
+    const adminOnly = mailer.slice(
+      mailer.indexOf('const adminOnly = requestBody.adminOnly === true'),
+      mailer.indexOf('let depositQuery = supabase'),
+    );
+    expect(adminOnly).toContain('sendOrRehydrateQuotePaymentAdminEmail');
+    expect(adminOnly).toContain('persistQuotePaymentAdminSend');
+    expect(adminOnly).toContain('.from("quotes")');
+    expect(webhook).toContain('readAcceptedQuotePaymentAdminSend');
+    expect(webhook).toContain('quoteId: quoteRow.id');
+    expect(webhook).toContain('persistQuotePaymentAdminSend(paidQuoteData, quoteAdminProviderId)');
+  });
 });
 
 describe('quote-level notification retry reconciliation', () => {
@@ -412,7 +477,8 @@ describe('quote-level notification retry reconciliation', () => {
     expect(mailer).toContain('p_customer_quote_id: depositRecord.id');
     expect(mailer).not.toContain('applyQuoteNotificationReconciliation');
     expect(mailer).not.toContain('simulateConcurrentNotificationReconcile');
-    expect(mailer).not.toContain('.update({ quote_data:');
+    const boundMailer = mailer.slice(mailer.indexOf('let depositQuery = supabase'));
+    expect(boundMailer).not.toContain('.update({ quote_data:');
     expect(helper).not.toContain('export function applyQuoteNotificationReconciliation');
     expect(helper).not.toContain('export function simulateConcurrentNotificationReconcile');
     expect(migration).toContain('CREATE OR REPLACE FUNCTION public.reconcile_deposit_notification_status');

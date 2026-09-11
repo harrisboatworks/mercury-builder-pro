@@ -1,6 +1,18 @@
 -- Verification queries after hosted-bootstrap.sql and
 -- supabase/migrations/20260823120000_deposit_deal_packet.sql.
 -- Fixture-free. Safe to run before or after seed.sql.
+-- Same session must SET deposit_staging.project_ref and
+-- deposit_staging.connection_ref (DSN-host parsed) to the same
+-- non-production 20-character lowercase ref.
+
+SELECT 'connection_ref_matches_project_ref' AS check_id,
+       (
+         nullif(btrim(current_setting('deposit_staging.connection_ref', true)), '')
+           IS NOT DISTINCT FROM nullif(btrim(current_setting('deposit_staging.project_ref', true)), '')
+         AND coalesce(nullif(btrim(current_setting('deposit_staging.connection_ref', true)), ''), '') ~ '^[a-z0-9]{20}$'
+         AND coalesce(nullif(btrim(current_setting('deposit_staging.connection_ref', true)), ''), '')
+           IS DISTINCT FROM 'eutsoqdpjurknjsshxes'
+       ) AS passed;
 
 SELECT 'marker_is_hosted_staging_v1' AS check_id,
        EXISTS (

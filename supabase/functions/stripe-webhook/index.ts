@@ -19,7 +19,9 @@ import {
   deliveriesIndicateFailure,
   hasDepositOutboxSchema,
   legacyNotificationStatusFromAudienceResults,
+  persistQuotePaymentAdminSend,
   planDepositWebhookMailer,
+  readAcceptedQuotePaymentAdminSend,
   seedDepositEmailDeliveryRows,
   stripeWebhookStatusAfterHandler,
 } from "../_shared/deposit-email-deliveries.ts";
@@ -600,30 +602,52 @@ serve(async (req) => {
 
         // Admin email notification (reuse deposit confirmation function in adminOnly mode)
         let quoteEmailFailed = false;
-        try {
-          const { error: quoteEmailError } = await supabase.functions.invoke("send-deposit-confirmation-email", {
-            body: {
-              customerEmail: "",
-              customerName,
-              customerPhone: quoteRow.customer_phone || "",
-              depositAmount: amountTotal,
-              paymentId: typeof session.payment_intent === "string" ? session.payment_intent : session.payment_intent?.id,
-              motorInfo: { model: motorLabel, paymentType: "quote", customerEmail },
-              sendAdminNotification: true,
-              adminOnly: true,
-            },
+        const quotePaymentId = typeof session.payment_intent === "string"
+          ? session.payment_intent
+          : session.payment_intent?.id;
+        const previouslyAcceptedAdmin = readAcceptedQuotePaymentAdminSend(existingQuoteData);
+        let quoteAdminProviderId = previouslyAcceptedAdmin?.provider_id || "";
+        if (previouslyAcceptedAdmin) {
+          logStep("Quote-payment admin email rehydrated", {
+            quoteId: quoteRow.id,
+            providerId: previouslyAcceptedAdmin.provider_id,
           });
-          if (quoteEmailError) throw quoteEmailError;
-        } catch (e: any) {
-          quoteEmailFailed = true;
-          logStep("WARNING: Admin quote-payment email failed", { error: e?.message });
+        } else {
+          try {
+            const { data: quoteEmailData, error: quoteEmailError } = await supabase.functions.invoke("send-deposit-confirmation-email", {
+              body: {
+                customerEmail: "",
+                customerName,
+                customerPhone: quoteRow.customer_phone || "",
+                depositAmount: amountTotal,
+                paymentId: quotePaymentId,
+                quoteId: quoteRow.id,
+                motorInfo: { model: motorLabel, paymentType: "quote", customerEmail },
+                sendAdminNotification: true,
+                adminOnly: true,
+              },
+            });
+            if (quoteEmailError) throw quoteEmailError;
+            if (quoteEmailData && typeof quoteEmailData === "object") {
+              const providerId = (quoteEmailData as { provider_id?: unknown }).provider_id;
+              if (typeof providerId === "string" && providerId) {
+                quoteAdminProviderId = providerId;
+              }
+            }
+          } catch (e: any) {
+            quoteEmailFailed = true;
+            logStep("WARNING: Admin quote-payment email failed", { error: e?.message });
+          }
         }
 
+        const quoteNotificationData = quoteAdminProviderId
+          ? persistQuotePaymentAdminSend(paidQuoteData, quoteAdminProviderId)
+          : paidQuoteData;
         const { data: quoteNotificationUpdate, error: quoteNotificationUpdateError } = await supabase
           .from("quotes")
           .update({
             quote_data: {
-              ...paidQuoteData,
+              ...quoteNotificationData,
               notification_status: quoteSmsFailed && quoteEmailFailed ? "manual_follow_up" : "delivered",
               notification_completed_at: new Date().toISOString(),
               notification_lease_expires_at: null,

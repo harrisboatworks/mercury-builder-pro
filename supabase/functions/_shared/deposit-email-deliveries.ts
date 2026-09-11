@@ -376,6 +376,63 @@ export function assertResendApiKeyConfigured(apiKey: string | null | undefined):
   return typeof apiKey === "string" && apiKey.trim().length > 0;
 }
 
+export const QUOTE_PAYMENT_ADMIN_IDEMPOTENCY_PREFIX = "quote-payment-admin:";
+export const QUOTE_PAYMENT_ADMIN_EMAIL_KEY = "quote_payment_admin_email";
+
+export type QuotePaymentAdminSend = {
+  status: "sent";
+  provider_id: string;
+};
+
+export function quotePaymentAdminIdempotencyKey(paymentIdOrQuoteId: string): string {
+  return `${QUOTE_PAYMENT_ADMIN_IDEMPOTENCY_PREFIX}${paymentIdOrQuoteId}`;
+}
+
+export function readAcceptedQuotePaymentAdminSend(quoteData: unknown): QuotePaymentAdminSend | null {
+  if (!quoteData || typeof quoteData !== "object") return null;
+  const nested = (quoteData as Record<string, unknown>)[QUOTE_PAYMENT_ADMIN_EMAIL_KEY];
+  if (!nested || typeof nested !== "object") return null;
+  const record = nested as Record<string, unknown>;
+  if (record.status !== "sent") return null;
+  if (typeof record.provider_id !== "string" || !record.provider_id.trim()) return null;
+  return { status: "sent", provider_id: record.provider_id };
+}
+
+export function persistQuotePaymentAdminSend(
+  quoteData: Record<string, unknown>,
+  providerId: string,
+): Record<string, unknown> {
+  return {
+    ...quoteData,
+    [QUOTE_PAYMENT_ADMIN_EMAIL_KEY]: {
+      status: "sent",
+      provider_id: providerId,
+    },
+  };
+}
+
+export async function sendOrRehydrateQuotePaymentAdminEmail(options: {
+  apiKey: string;
+  paymentIdOrQuoteId: string;
+  quoteData?: unknown;
+  payload: ResendEmailPayload;
+  fetchImpl?: typeof fetch;
+}): Promise<
+  | { kind: "rehydrated"; id: string }
+  | ResendIdempotentResult
+> {
+  const accepted = readAcceptedQuotePaymentAdminSend(options.quoteData);
+  if (accepted) {
+    return { kind: "rehydrated", id: accepted.provider_id };
+  }
+  return await sendResendEmailWithIdempotency({
+    apiKey: options.apiKey,
+    idempotencyKey: quotePaymentAdminIdempotencyKey(options.paymentIdOrQuoteId),
+    payload: options.payload,
+    fetchImpl: options.fetchImpl,
+  });
+}
+
 export async function sendResendEmailWithIdempotency(options: {
   apiKey: string;
   idempotencyKey: string;
