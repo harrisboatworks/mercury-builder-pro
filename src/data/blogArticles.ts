@@ -5511,7 +5511,6 @@ Family-owned since 1947, Mercury dealer since 1965, Mercury Premier Dealer · Ri
   {
     slug: 'breaking-in-new-mercury-motor-guide',
     title: 'How to Break In a New Mercury Outboard',
-    seoTitle: "How to Break In a New Mercury Outboard | HBW",
     description: "Mercury outboard break-in: follow the manual for your model, avoid common mistakes, and understand scheduled service and HBW's optional early check.",
     image: '/lovable-uploads/blog-audit-2026-09/break-in-not-service-interval.svg',
     imageAlt: 'Concept diagram: vary throttle, avoid long steady RPM, and follow the serial-specific manual. Break-in is not the first scheduled service.',
