@@ -210,7 +210,7 @@ describe('deposit deal-packet staging guard', () => {
       'info@harrisboatworks.ca',
     ]);
     expect(production.grok_bot).toEqual(['hbwbot@agentmail.to']);
-    expect(production.replyTo).toBe('info@harrisboatworks.ca');
+    expect(production.reply_to).toBe('info@harrisboatworks.ca');
 
     const inertOnProductionUrl = resolveDepositAudienceRecipients({
       customerEmail: 'buyer@example.com',
@@ -256,7 +256,7 @@ describe('deposit deal-packet staging guard', () => {
     expect(staging.customer).toEqual([STAGING_PACKET_SUCCESS_RECIPIENTS.customer]);
     expect(staging.hbw).toEqual([STAGING_PACKET_SUCCESS_RECIPIENTS.hbw]);
     expect(staging.grok_bot).toEqual([STAGING_PACKET_SUCCESS_RECIPIENTS.grok]);
-    expect(staging.replyTo).toBe(STAGING_PACKET_SUCCESS_RECIPIENTS.hbw);
+    expect(staging.reply_to).toBe(STAGING_PACKET_SUCCESS_RECIPIENTS.hbw);
   });
 
   it('commits example.invalid identities and Resend test send recipients', async () => {

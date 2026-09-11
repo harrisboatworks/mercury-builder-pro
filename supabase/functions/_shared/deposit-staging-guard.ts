@@ -289,7 +289,7 @@ export function resolveDepositAudienceRecipients(options: {
   customer: string[];
   hbw: string[];
   grok_bot: string[];
-  replyTo: string;
+  reply_to: string;
   staging: boolean;
 } {
   const env = options.env || {};
@@ -298,7 +298,7 @@ export function resolveDepositAudienceRecipients(options: {
       customer: [options.customerEmail],
       hbw: hbwDepositRecipients(options.adminEmails),
       grok_bot: [options.grokEmail],
-      replyTo: HBW_OPERATIONS_EMAIL,
+      reply_to: HBW_OPERATIONS_EMAIL,
       staging: false,
     };
   }
@@ -325,7 +325,7 @@ export function resolveDepositAudienceRecipients(options: {
     customer: [customer],
     hbw: [hbw],
     grok_bot: [grok],
-    replyTo: hbw,
+    reply_to: hbw,
     staging: true,
   };
 }

@@ -130,9 +130,22 @@ export function parseDepositIdentity(input: unknown): DepositIdentity {
   };
 }
 
+function requiredFieldError(field: DepositIdentityField): string {
+  return field === "name" ? "Name is required" : `${fieldLabel(field)} is required`;
+}
+
 export function safeParseDepositIdentity(
   input: unknown,
 ): { success: true; data: DepositIdentity } | { success: false; errors: Record<string, string> } {
+  const missing = collectMissingDepositIdentityFields(input);
+  if (missing.length > 0) {
+    const fieldErrors: Record<string, string> = {};
+    for (const field of missing) {
+      fieldErrors[field] = requiredFieldError(field);
+    }
+    return { success: false, errors: fieldErrors };
+  }
+
   try {
     return { success: true, data: parseDepositIdentity(input) };
   } catch (error) {
@@ -142,16 +155,6 @@ export function safeParseDepositIdentity(
       else {
         for (const field of DEPOSIT_IDENTITY_REQUIRED_FIELDS) {
           errors[field] = error.message;
-        }
-      }
-      if (!error.field && isRecord(input)) {
-        const missing = collectMissingDepositIdentityFields(input);
-        if (missing.length > 0) {
-          const fieldErrors: Record<string, string> = {};
-          for (const field of missing) {
-            fieldErrors[field] = `${fieldLabel(field)} is required`;
-          }
-          return { success: false, errors: fieldErrors };
         }
       }
       return { success: false, errors };

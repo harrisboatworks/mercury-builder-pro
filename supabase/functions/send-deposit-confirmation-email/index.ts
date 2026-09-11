@@ -544,7 +544,7 @@ serve(async (req) => {
     if (pendingAudiences.includes("customer") && audienceRecipients.customer[0]) {
       await sendAudience("customer", {
         from: "Harris Boat Works <deposits@mercuryrepower.ca>",
-        reply_to: audienceRecipients.replyTo,
+        reply_to: audienceRecipients.reply_to,
         to: audienceRecipients.customer,
         subject: customerDepositEmailSubject(motorLabel),
         html: customerHtml,

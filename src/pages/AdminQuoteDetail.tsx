@@ -21,6 +21,7 @@ import QuoteHistoryTimeline from '@/components/admin/QuoteHistoryTimeline';
 import ContactLog from '@/components/admin/ContactLog';
 import FollowUpReminder from '@/components/admin/FollowUpReminder';
 import SendQuoteEmail from '@/components/admin/SendQuoteEmail';
+import QuoteEmailDeliveryHistory from '@/components/admin/QuoteEmailDeliveryHistory';
 import {
   formatDepositAddress,
   resolveDealAddress,
@@ -109,6 +110,7 @@ const AdminQuoteDetail = () => {
   const { toast } = useToast();
   const { user } = useAuth();
   const [changeLogKey, setChangeLogKey] = useState(0);
+  const [emailHistoryKey, setEmailHistoryKey] = useState(0);
   
   const [q, setQ] = useState<QuoteDetail | null>(null);
   const [loadState, setLoadState] = useState<'loading' | 'loaded' | 'notfound' | 'error'>('loading');
@@ -281,7 +283,7 @@ const AdminQuoteDetail = () => {
             quote_pdf_sha256: sq.quote_pdf_sha256,
             email_deliveries: deliveries,
             _source: 'saved_quotes',
-            _joined_customer_quote_id: cq?.id || null,
+            ['_joined_customer_quote_id']: cq?.id || null,
           };
           setQ(mapped);
           setAdminDiscount(mapped.admin_discount || 0);
@@ -395,23 +397,63 @@ const AdminQuoteDetail = () => {
         changes.trade_in_override = { old: tradeIn.overrideValue || null, new: overrideVal };
       }
 
-      await writeCustomerQuote({
-        tradein_value_final: finalTradeValue,
-        final_price: newFinalPrice,
-        quote_data: updatedQuoteData,
-        last_modified_at: new Date().toISOString(),
-        last_modified_by: user.id,
-      });
+      if (q._source === 'saved_quotes') {
+        const { error } = await supabase
+          .from('saved_quotes')
+          .update({ quote_state: updatedQuoteData })
+          .eq('id', q.id);
+        if (error) throw error;
+        if (customerQuoteId) {
+          await writeCustomerQuote({
+            tradein_value_final: finalTradeValue,
+            final_price: newFinalPrice,
+            quote_data: updatedQuoteData,
+            last_modified_at: new Date().toISOString(),
+            last_modified_by: user.id,
+          });
+        }
+      } else {
+        const { error } = await supabase
+          .from('customer_quotes')
+          .update({
+            tradein_value_final: finalTradeValue,
+            final_price: newFinalPrice,
+            quote_data: updatedQuoteData,
+            last_modified_at: new Date().toISOString(),
+            last_modified_by: user.id,
+          })
+          .eq('id', q.id);
+        if (error) throw error;
 
-      const { error: changeLogError } = await supabase.from('quote_change_log').insert({
-        quote_id: customerQuoteId,
-        changed_by: user.id,
-        change_type: clearOverride ? 'trade_in_clear' : 'trade_in_override',
-        changes,
-        notes: clearOverride ? 'Cleared trade-in override, reverted to formula estimate' : `Trade-in overridden to $${overrideVal?.toLocaleString()}`,
-      });
-      if (changeLogError) {
-        toast({ title: 'Saved, but change log failed', description: changeLogError.message, variant: 'destructive' });
+        const { error: changeLogError } = await supabase.from('quote_change_log').insert({
+          quote_id: q.id,
+          changed_by: user.id,
+          change_type: clearOverride ? 'trade_in_clear' : 'trade_in_override',
+          changes,
+          notes: clearOverride ? 'Cleared trade-in override, reverted to formula estimate' : `Trade-in overridden to $${overrideVal?.toLocaleString()}`,
+        });
+        if (changeLogError) {
+          toast({
+            title: 'Change log not saved',
+            description: 'The trade-in was updated, but the change history row was not. Refresh and confirm the value before editing again.',
+            variant: 'destructive',
+          });
+        }
+
+        // Dual-write is best-effort: many leads have no saved_quotes copy.
+        // saved_quotes stores quote_state (not quote_data) and links via
+        // quote_state.customerQuoteId (there is no customer_quote_id column).
+        const { error: savedQuoteError } = await supabase
+          .from('saved_quotes')
+          .update({ quote_state: updatedQuoteData })
+          .contains('quote_state', { customerQuoteId: q.id });
+        if (savedQuoteError) {
+          toast({
+            title: 'Saved quote copy not updated',
+            description: 'The lead was saved, but the saved-quote copy was not. Refresh this page and try again, or open the saved quote directly.',
+            variant: 'destructive',
+          });
+        }
       }
 
       // Update local state
@@ -552,7 +594,11 @@ const AdminQuoteDetail = () => {
           changes
         });
         if (changeLogError) {
-          toast({ title: 'Saved, but change log failed', description: changeLogError.message, variant: 'destructive' });
+          toast({
+            title: 'Change log not saved',
+            description: 'The quote was updated, but the change history row was not. Refresh and confirm the values before editing again.',
+            variant: 'destructive',
+          });
         }
         // Refresh the change log
         setChangeLogKey(prev => prev + 1);
@@ -1303,6 +1349,7 @@ const AdminQuoteDetail = () => {
                   customerEmail={q.customer_email}
                   motorModel={q.quote_data?.motor?.model || 'Mercury Motor'}
                   totalPrice={q.final_price}
+                  onDeliverySettled={() => setEmailHistoryKey((key) => key + 1)}
                 />
               ) : (
                 <p className="text-sm text-muted-foreground">Email quote is unavailable because this saved quote has no customer quote record.</p>
@@ -1312,6 +1359,11 @@ const AdminQuoteDetail = () => {
               </div>
             </div>
           </Card>
+
+          <QuoteEmailDeliveryHistory
+            quoteId={q.id}
+            refreshKey={emailHistoryKey}
+          />
 
           {/* Change Log */}
           {customerQuoteId ? (
