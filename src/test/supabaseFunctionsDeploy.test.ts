@@ -1114,6 +1114,7 @@ describe('public pair release holds', () => {
         return { ok: true, detail: 'ok' };
       },
       listAppliedVersions: () => [],
+      listSecretNamesFromApi: async () => ['TWILIO_WEBHOOK_URL'],
     });
     expect(code).toBe(1);
     expect(seen).toEqual(['send-sms']);
@@ -1175,6 +1176,7 @@ describe('public pair release holds', () => {
         return { ok: true, detail: 'ok' };
       },
       listAppliedVersions: () => [],
+      listSecretNamesFromApi: async () => ['TWILIO_WEBHOOK_URL'],
     });
     expect(seen).not.toContain('ai-chatbot');
     expect(seen).not.toContain('ai-chatbot-stream');

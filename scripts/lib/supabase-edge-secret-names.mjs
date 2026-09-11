@@ -138,6 +138,9 @@ export async function listEdgeSecretNamesForProject({
     if (Array.isArray(result)) return result;
     throw new Error('secret-name list unreadable');
   }
+  if (!String(token || '').trim()) {
+    throw new Error('secret-name list unreadable: no lookup adapter');
+  }
   try {
     return await listEdgeSecretNamesFromManagementApi({
       token,
