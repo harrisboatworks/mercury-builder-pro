@@ -11,10 +11,14 @@ import {
   readAppliedMigrationsFromCli,
   readAppliedMigrationsWithFallback,
   redactSecrets,
+  resolveForcedPair,
   resolveForcedSlug,
   resolveProjectRef,
+  requiredMigrationsForDispatch,
+  buildDispatchPairTargets,
   runDeploy,
 } from '../../scripts/deploy-supabase-functions.mjs';
+import { PUBLIC_RELEASE_PAIRS } from '../../scripts/lib/public-function-release-guards.mjs';
 import { listAppliedMigrationsFromManagementApi } from '../../scripts/lib/supabase-management-api.mjs';
 import { isMigrationApplied, appliedVersionSet } from '../../scripts/lib/supabase-deploy-required.mjs';
 import {
@@ -43,6 +47,23 @@ describe('function slug safety', () => {
     expect(resolveForcedSlug('_shared', files).ok).toBe(false);
     expect(resolveForcedSlug('not-a-function', files).ok).toBe(false);
     expect(resolveForcedSlug('send-sms; rm -rf /', files).ok).toBe(false);
+  });
+
+  it('resolves only allowlisted deploy pairs and rejects unknown ids', () => {
+    const pairFiles = {
+      ...files,
+      'supabase/functions/ai-chatbot-stream/index.ts': 'export {}',
+      'supabase/functions/realtime-session/index.ts': 'export {}',
+      'supabase/functions/realtime-sdp-exchange/index.ts': 'export {}',
+    };
+    expect(resolveForcedPair('site-chat', pairFiles).ok).toBe(true);
+    expect(resolveForcedPair('openai-realtime', pairFiles).pair.slugs).toEqual([
+      'realtime-session',
+      'realtime-sdp-exchange',
+    ]);
+    expect(resolveForcedPair('not-a-pair', pairFiles).ok).toBe(false);
+    expect(resolveForcedPair('site-chat,openai-realtime', pairFiles).ok).toBe(false);
+    expect(resolveForcedPair('', pairFiles).ok).toBe(false);
   });
 });
 
@@ -387,7 +408,7 @@ describe('migration apply-order gate', () => {
           slug: 'send-quote-email',
           requiredMigrations: [{ path: QUOTE_EMAIL_MIGRATION, version: '20260909193000' }],
         },
-        { slug: 'ai-chatbot', requiredMigrations: [] },
+        { slug: 'submit-quote-lead', requiredMigrations: [] },
       ],
       listAppliedVersions: () => [{ version: '20260815160000' }],
       deployOne: (slug: string) => {
@@ -395,8 +416,8 @@ describe('migration apply-order gate', () => {
         return { ok: true, detail: 'Deployed' };
       },
     });
-    expect(seen).toEqual(['send-sms', 'ai-chatbot']);
-    expect(succeeded.map((item) => item.slug)).toEqual(['send-sms', 'ai-chatbot']);
+    expect(seen).toEqual(['send-sms', 'submit-quote-lead']);
+    expect(succeeded.map((item) => item.slug)).toEqual(['send-sms', 'submit-quote-lead']);
     expect(failed.map((item) => item.slug)).toEqual(['send-quote-email']);
     expect(failed[0].detail).toContain('20260909193000_serialize_quote_email_delivery_failed_retry_claim.sql');
   });
@@ -766,6 +787,9 @@ describe('deploy summary', () => {
     });
     expect(markdown).toContain('never runs `supabase db push`');
     expect(markdown).toContain('newly required migrations are not applied');
+    expect(markdown).toContain('Paired public chat and Realtime functions fail closed');
+    expect(markdown).toContain('A local key is not production proof');
+    expect(markdown).toContain('Sequential deploys in one job are not atomic');
     expect(markdown).toContain('`send-sms` — direct file change (index.ts)');
     expect(markdown).toContain('Succeeded (1): `send-sms`');
     expect(markdown).toContain('Failed (1):');
@@ -785,5 +809,505 @@ describe('deploy summary', () => {
       failed: [],
     });
     expect(markdown).toContain('Large fan-out: **12** functions');
+  });
+
+  it('names an allowlisted pair selector and a conflicting selector refusal', () => {
+    expect(
+      formatFunctionsDeployMarkdown({
+        forcedPair: 'openai-realtime',
+        targets: [
+          { slug: 'realtime-session', reasons: ['workflow_dispatch pair openai-realtime'] },
+          { slug: 'realtime-sdp-exchange', reasons: ['workflow_dispatch pair openai-realtime'] },
+        ],
+        succeeded: [],
+        failed: [],
+      }),
+    ).toContain('Manual deploy of pair `openai-realtime`.');
+    expect(
+      formatFunctionsDeployMarkdown({
+        forced: 'ai-chatbot',
+        forcedPair: 'site-chat',
+        skipped: true,
+        skipReason: 'refused: DEPLOY_FUNCTION and DEPLOY_PAIR cannot both be set. Nothing was deployed.',
+      }),
+    ).toContain('Refused combined selectors: function `ai-chatbot` and pair `site-chat`.');
+  });
+});
+
+const ATTESTED_CHAT = {
+  'site-chat': {
+    status: 'ATTESTED',
+    productionKeyProvenance:
+      'supabase-production-secrets-read-plus-openai-project-behind-production-OPENAI_API_KEY',
+    attestedModels: ['gpt-5.6-luna'],
+    attestedKeys: ['OPENAI_API_KEY'],
+  },
+};
+
+const ATTESTED_REALTIME = {
+  'openai-realtime': {
+    status: 'ATTESTED',
+    productionKeyProvenance:
+      'supabase-production-secrets-read-plus-openai-project-behind-production-OPENAI_API_KEY',
+    attestedModels: ['gpt-realtime-2.1-mini'],
+    attestedKeys: ['OPENAI_API_KEY'],
+  },
+};
+
+describe('public pair release holds', () => {
+  it('invokes zero deploy calls when attestation is unverified for a complete chat pair', async () => {
+    const seen: string[] = [];
+    const { succeeded, failed } = await deployWithMigrationGate({
+      functions: [
+        { slug: 'ai-chatbot', requiredMigrations: [] },
+        { slug: 'ai-chatbot-stream', requiredMigrations: [] },
+      ],
+      listAppliedVersions: () => [],
+      env: { OPENAI_API_KEY: 'sk-local-not-production-proof' },
+      deployOne: (slug: string) => {
+        seen.push(slug);
+        return { ok: true, detail: 'Deployed' };
+      },
+    });
+    expect(seen).toEqual([]);
+    expect(succeeded).toEqual([]);
+    expect(failed.map((item) => item.slug)).toEqual(['ai-chatbot', 'ai-chatbot-stream']);
+    expect(failed[0].detail).toMatch(/attestation is unverified/);
+    expect(failed[0].detail).not.toContain('sk-local-not-production-proof');
+  });
+
+  it('invokes zero pair deploy calls for missing or unknown key/model attestation', async () => {
+    const cases = [
+      { 'site-chat': { status: 'MISSING' } },
+      { 'site-chat': { status: 'UNKNOWN' } },
+      {
+        'site-chat': {
+          status: 'ATTESTED',
+          productionKeyProvenance:
+            'supabase-production-secrets-read-plus-openai-project-behind-production-OPENAI_API_KEY',
+          attestedModels: [],
+          attestedKeys: ['OPENAI_API_KEY'],
+        },
+      },
+      {
+        'site-chat': {
+          status: 'ATTESTED',
+          productionKeyProvenance: 'local dotenv',
+          attestedModels: ['gpt-5.6-luna'],
+          attestedKeys: ['OPENAI_API_KEY'],
+        },
+      },
+    ];
+    for (const releaseAttestations of cases) {
+      const seen: string[] = [];
+      const { failed } = await deployWithMigrationGate({
+        functions: [
+          { slug: 'ai-chatbot', requiredMigrations: [] },
+          { slug: 'ai-chatbot-stream', requiredMigrations: [] },
+        ],
+        listAppliedVersions: () => [],
+        releaseAttestations,
+        deployOne: (slug: string) => {
+          seen.push(slug);
+          return { ok: true, detail: 'Deployed' };
+        },
+      });
+      expect(seen).toEqual([]);
+      expect(failed).toHaveLength(2);
+    }
+  });
+
+  it('invokes zero pair deploy calls for a one-sided attested selection', async () => {
+    const seen: string[] = [];
+    const { succeeded, failed } = await deployWithMigrationGate({
+      functions: [
+        { slug: 'realtime-session', requiredMigrations: [] },
+        { slug: 'send-sms', requiredMigrations: [] },
+      ],
+      listAppliedVersions: () => [],
+      releaseAttestations: ATTESTED_REALTIME,
+      deployOne: (slug: string) => {
+        seen.push(slug);
+        return { ok: true, detail: 'Deployed' };
+      },
+    });
+    expect(seen).toEqual(['send-sms']);
+    expect(succeeded.map((item) => item.slug)).toEqual(['send-sms']);
+    expect(failed.map((item) => item.slug)).toEqual(['realtime-session']);
+    expect(failed[0].detail).toMatch(/pair is incomplete/);
+  });
+
+  it('blocks both pair members when one required migration is missing', async () => {
+    const seen: string[] = [];
+    const { succeeded, failed } = await deployWithMigrationGate({
+      functions: [
+        { slug: 'ai-chatbot', requiredMigrations: [] },
+        {
+          slug: 'ai-chatbot-stream',
+          requiredMigrations: [{ path: QUOTE_EMAIL_MIGRATION, version: '20260909193000' }],
+        },
+        { slug: 'send-sms', requiredMigrations: [] },
+      ],
+      listAppliedVersions: () => [{ version: '20260815160000' }],
+      releaseAttestations: ATTESTED_CHAT,
+      deployOne: (slug: string) => {
+        seen.push(slug);
+        return { ok: true, detail: 'Deployed' };
+      },
+    });
+    expect(seen).toEqual(['send-sms']);
+    expect(succeeded.map((item) => item.slug)).toEqual(['send-sms']);
+    expect(failed.map((item) => item.slug)).toEqual(['ai-chatbot', 'ai-chatbot-stream']);
+    expect(failed[0].detail).toMatch(/pair member precondition failed/);
+    expect(failed[0].detail).toContain('20260909193000_serialize_quote_email_delivery_failed_retry_claim.sql');
+  });
+
+  it('blocks the whole attested pair when migration lookup fails for one member', async () => {
+    const seen: string[] = [];
+    const { succeeded, failed } = await deployWithMigrationGate({
+      functions: [
+        { slug: 'ai-chatbot', requiredMigrations: [] },
+        {
+          slug: 'ai-chatbot-stream',
+          requiredMigrations: [{ path: QUOTE_EMAIL_MIGRATION, version: '20260909193000' }],
+        },
+      ],
+      listAppliedVersions: () => {
+        throw new Error('network down');
+      },
+      releaseAttestations: ATTESTED_CHAT,
+      deployOne: (slug: string) => {
+        seen.push(slug);
+        return { ok: true, detail: 'Deployed' };
+      },
+    });
+    expect(seen).toEqual([]);
+    expect(succeeded).toEqual([]);
+    expect(failed.map((item) => item.slug)).toEqual(['ai-chatbot', 'ai-chatbot-stream']);
+    expect(failed[0].detail).toMatch(/pair member precondition failed/);
+    expect(failed[0].detail).toContain('could not read applied migrations');
+  });
+
+  it('still deploys an unprotected function next to a held pair', async () => {
+    const seen: string[] = [];
+    const { succeeded, failed } = await deployWithMigrationGate({
+      functions: [
+        { slug: 'send-sms', requiredMigrations: [] },
+        { slug: 'ai-chatbot', requiredMigrations: [] },
+        { slug: 'ai-chatbot-stream', requiredMigrations: [] },
+      ],
+      listAppliedVersions: () => [],
+      deployOne: (slug: string) => {
+        seen.push(slug);
+        return { ok: true, detail: 'Deployed' };
+      },
+    });
+    expect(seen).toEqual(['send-sms']);
+    expect(succeeded.map((item) => item.slug)).toEqual(['send-sms']);
+    expect(failed.map((item) => item.slug)).toEqual(['ai-chatbot', 'ai-chatbot-stream']);
+  });
+
+  it('deploys a complete attested pair and leaves an unverified sibling pair held', async () => {
+    const seen: string[] = [];
+    const { succeeded, failed } = await deployWithMigrationGate({
+      functions: [
+        { slug: 'ai-chatbot', requiredMigrations: [] },
+        { slug: 'ai-chatbot-stream', requiredMigrations: [] },
+        { slug: 'realtime-session', requiredMigrations: [] },
+        { slug: 'realtime-sdp-exchange', requiredMigrations: [] },
+      ],
+      listAppliedVersions: () => [],
+      releaseAttestations: ATTESTED_CHAT,
+      deployOne: (slug: string) => {
+        seen.push(slug);
+        return { ok: true, detail: 'Deployed' };
+      },
+    });
+    expect(seen).toEqual(['ai-chatbot', 'ai-chatbot-stream']);
+    expect(succeeded.map((item) => item.slug)).toEqual(['ai-chatbot', 'ai-chatbot-stream']);
+    expect(failed.map((item) => item.slug)).toEqual(['realtime-session', 'realtime-sdp-exchange']);
+  });
+
+  it('blocks a forced one-sided chat slug through runDeploy with zero deploy calls', async () => {
+    const seen: string[] = [];
+    const code = await runDeploy({
+      env: {
+        DEPLOY_FUNCTION: 'ai-chatbot',
+        DEPLOY_FROM: 'HEAD',
+        DEPLOY_TO: 'HEAD',
+        OPENAI_API_KEY: 'sk-local-not-production-proof',
+      },
+      deployOne: (slug: string) => {
+        seen.push(slug);
+        return { ok: true, detail: 'ok' };
+      },
+      listAppliedVersions: () => [],
+    });
+    expect(code).toBe(1);
+    expect(seen).toEqual([]);
+  });
+
+  it('blocks a forced one-sided Realtime slug through runDeploy with zero deploy calls', async () => {
+    const seen: string[] = [];
+    const code = await runDeploy({
+      env: {
+        DEPLOY_FUNCTION: 'realtime-sdp-exchange',
+        DEPLOY_FROM: 'HEAD',
+        DEPLOY_TO: 'HEAD',
+      },
+      releaseAttestations: ATTESTED_REALTIME,
+      deployOne: (slug: string) => {
+        seen.push(slug);
+        return { ok: true, detail: 'ok' };
+      },
+      listAppliedVersions: () => [],
+    });
+    expect(code).toBe(1);
+    expect(seen).toEqual([]);
+  });
+
+  it('keeps unprotected forced selection deployable', async () => {
+    const seen: string[] = [];
+    const code = await runDeploy({
+      env: {
+        DEPLOY_FUNCTION: 'send-sms',
+        DEPLOY_FROM: 'HEAD',
+        DEPLOY_TO: 'HEAD',
+      },
+      deployOne: (slug: string) => {
+        seen.push(slug);
+        return { ok: true, detail: 'ok' };
+      },
+      listAppliedVersions: () => [],
+    });
+    expect(code).toBe(0);
+    expect(seen).toEqual(['send-sms']);
+  });
+
+  it('holds a normal one-sided chat diff and still deploys an unprotected sibling', async () => {
+    const seen: string[] = [];
+    const code = await runDeploy({
+      env: {
+        DEPLOY_FROM: 'HEAD',
+        DEPLOY_TO: 'HEAD',
+      },
+      diffEntries: [
+        { status: 'M', path: 'supabase/functions/ai-chatbot/index.ts' },
+        { status: 'M', path: 'supabase/functions/send-sms/index.ts' },
+      ],
+      deployOne: (slug: string) => {
+        seen.push(slug);
+        return { ok: true, detail: 'ok' };
+      },
+      listAppliedVersions: () => [],
+    });
+    expect(code).toBe(1);
+    expect(seen).toEqual(['send-sms']);
+  });
+
+  it('holds a normal complete chat selection until production attestation exists', async () => {
+    const seen: string[] = [];
+    const code = await runDeploy({
+      env: {
+        DEPLOY_FROM: 'HEAD',
+        DEPLOY_TO: 'HEAD',
+      },
+      diffEntries: [
+        { status: 'M', path: 'supabase/functions/ai-chatbot/index.ts' },
+        { status: 'M', path: 'supabase/functions/ai-chatbot-stream/index.ts' },
+      ],
+      deployOne: (slug: string) => {
+        seen.push(slug);
+        return { ok: true, detail: 'ok' };
+      },
+      listAppliedVersions: () => [],
+    });
+    expect(code).toBe(1);
+    expect(seen).toEqual([]);
+  });
+
+  it('deploys a normal complete chat selection only after production attestation', async () => {
+    const seen: string[] = [];
+    const code = await runDeploy({
+      env: {
+        DEPLOY_FROM: 'HEAD',
+        DEPLOY_TO: 'HEAD',
+      },
+      diffEntries: [
+        { status: 'M', path: 'supabase/functions/ai-chatbot/index.ts' },
+        { status: 'M', path: 'supabase/functions/ai-chatbot-stream/index.ts' },
+      ],
+      releaseAttestations: ATTESTED_CHAT,
+      deployOne: (slug: string) => {
+        seen.push(slug);
+        return { ok: true, detail: 'ok' };
+      },
+      listAppliedVersions: () => [],
+    });
+    expect(code).toBe(0);
+    expect(seen.sort()).toEqual(['ai-chatbot', 'ai-chatbot-stream']);
+  });
+
+  it('holds both pairs on a shared fan-out and still deploys unprotected importers', async () => {
+    const seen: string[] = [];
+    const code = await runDeploy({
+      env: {
+        DEPLOY_FROM: 'HEAD',
+        DEPLOY_TO: 'HEAD',
+      },
+      diffEntries: [{ status: 'M', path: 'supabase/functions/_shared/rate-limit.ts' }],
+      deployOne: (slug: string) => {
+        seen.push(slug);
+        return { ok: true, detail: 'ok' };
+      },
+      listAppliedVersions: () => [],
+    });
+    expect(seen).not.toContain('ai-chatbot');
+    expect(seen).not.toContain('ai-chatbot-stream');
+    expect(seen).not.toContain('realtime-session');
+    expect(seen).not.toContain('realtime-sdp-exchange');
+    expect(seen).toEqual(expect.arrayContaining(['send-sms', 'elevenlabs-conversation-token']));
+    expect(code).toBe(1);
+  });
+
+  it('holds DEPLOY_PAIR=site-chat under the default UNVERIFIED attestation', async () => {
+    const seen: string[] = [];
+    const code = await runDeploy({
+      env: {
+        DEPLOY_PAIR: 'site-chat',
+        DEPLOY_FROM: 'HEAD',
+        DEPLOY_TO: 'HEAD',
+      },
+      deployOne: (slug: string) => {
+        seen.push(slug);
+        return { ok: true, detail: 'ok' };
+      },
+      listAppliedVersions: () => [],
+    });
+    expect(code).toBe(1);
+    expect(seen).toEqual([]);
+  });
+
+  it('holds DEPLOY_PAIR=openai-realtime under the default UNVERIFIED attestation', async () => {
+    const seen: string[] = [];
+    const code = await runDeploy({
+      env: {
+        DEPLOY_PAIR: 'openai-realtime',
+        DEPLOY_FROM: 'HEAD',
+        DEPLOY_TO: 'HEAD',
+      },
+      deployOne: (slug: string) => {
+        seen.push(slug);
+        return { ok: true, detail: 'ok' };
+      },
+      listAppliedVersions: () => [],
+    });
+    expect(code).toBe(1);
+    expect(seen).toEqual([]);
+  });
+
+  it('invokes zero deploy calls for an unknown pair id', async () => {
+    const seen: string[] = [];
+    const code = await runDeploy({
+      env: {
+        DEPLOY_PAIR: 'not-a-pair',
+        DEPLOY_FROM: 'HEAD',
+        DEPLOY_TO: 'HEAD',
+      },
+      deployOne: (slug: string) => {
+        seen.push(slug);
+        return { ok: true, detail: 'ok' };
+      },
+      listAppliedVersions: () => [],
+    });
+    expect(code).toBe(1);
+    expect(seen).toEqual([]);
+  });
+
+  it('invokes zero deploy calls when DEPLOY_FUNCTION and DEPLOY_PAIR conflict', async () => {
+    const seen: string[] = [];
+    const code = await runDeploy({
+      env: {
+        DEPLOY_FUNCTION: 'ai-chatbot',
+        DEPLOY_PAIR: 'site-chat',
+        DEPLOY_FROM: 'HEAD',
+        DEPLOY_TO: 'HEAD',
+      },
+      releaseAttestations: ATTESTED_CHAT,
+      deployOne: (slug: string) => {
+        seen.push(slug);
+        return { ok: true, detail: 'ok' };
+      },
+      listAppliedVersions: () => [],
+    });
+    expect(code).toBe(1);
+    expect(seen).toEqual([]);
+  });
+
+  it('selects exactly the chat pair when DEPLOY_PAIR=site-chat is injected as attested', async () => {
+    const seen: string[] = [];
+    const code = await runDeploy({
+      env: {
+        DEPLOY_PAIR: 'site-chat',
+        DEPLOY_FROM: 'HEAD',
+        DEPLOY_TO: 'HEAD',
+      },
+      releaseAttestations: ATTESTED_CHAT,
+      deployOne: (slug: string) => {
+        seen.push(slug);
+        return { ok: true, detail: 'ok' };
+      },
+      listAppliedVersions: () => [],
+    });
+    expect(code).toBe(0);
+    expect(seen).toEqual(['ai-chatbot', 'ai-chatbot-stream']);
+  });
+
+  it('selects exactly the Realtime pair when DEPLOY_PAIR=openai-realtime is injected as attested', async () => {
+    const seen: string[] = [];
+    const code = await runDeploy({
+      env: {
+        DEPLOY_PAIR: 'openai-realtime',
+        DEPLOY_FROM: 'HEAD',
+        DEPLOY_TO: 'HEAD',
+      },
+      releaseAttestations: ATTESTED_REALTIME,
+      deployOne: (slug: string) => {
+        seen.push(slug);
+        return { ok: true, detail: 'ok' };
+      },
+      listAppliedVersions: () => [],
+    });
+    expect(code).toBe(0);
+    expect(seen).toEqual(['realtime-session', 'realtime-sdp-exchange']);
+  });
+
+  it('does not bypass requiredMigrationsForSlug when building a dispatched pair', () => {
+    const pair = PUBLIC_RELEASE_PAIRS.find((item) => item.id === 'site-chat')!;
+    const tree = {
+      'supabase/functions/ai-chatbot/index.ts': 'await supabase.from("chat_leads").insert({});',
+      'supabase/functions/ai-chatbot-stream/index.ts': 'export {}',
+      'supabase/migrations/20260101000001_create_leads.sql': `
+        CREATE TABLE public.chat_leads (
+          id uuid PRIMARY KEY
+        );
+      `,
+    };
+    const rangeTargets = {
+      functions: [],
+      migrations: ['supabase/migrations/20260101000001_create_leads.sql'],
+    };
+    const dispatched = buildDispatchPairTargets(pair, tree, rangeTargets);
+    expect(dispatched.map((item) => item.slug)).toEqual(['ai-chatbot', 'ai-chatbot-stream']);
+    expect(requiredMigrationsForDispatch('ai-chatbot', tree, rangeTargets)).toEqual(
+      dispatched[0].requiredMigrations,
+    );
+    expect(dispatched[0].requiredMigrations).toEqual([
+      expect.objectContaining({
+        path: 'supabase/migrations/20260101000001_create_leads.sql',
+        version: '20260101000001',
+      }),
+    ]);
+    expect(dispatched[1].requiredMigrations).toEqual([]);
   });
 });
