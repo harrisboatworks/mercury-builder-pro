@@ -1,17 +1,17 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario.md
-last_updated: 2026-08-24
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
-title: "Mercury Outboard Octane and Ethanol Guide for Ontario"
-description: "Mercury outboard fuel in Ontario: check octane and ethanol separately. Covers E15 now on sale in Ontario, the RON vs AKI 91-octane trap, and the E10 limit."
+title: "Mercury Ethanol & Octane Rules 2026 (V10 Verado Update)"
+description: "Octane and ethanol are separate questions. We cover Ontario's new E15 pumps, the E10 limit, the 91 RON trap, and why V10 Verados list 87 octane."
 category: "Service"
 date_published: 2026-04-11
-date_modified: 2026-08-24
+date_modified: 2026-09-11
 keywords: ["Mercury outboard fuel","octane","ethanol","E10","Verado fuel","Ontario marine fuel"]
 author: Harris Boat Works
 content_type: blog_article
@@ -19,15 +19,17 @@ language: en-CA
 revenue_driver: service
 ---
 
-# Mercury Outboard Octane and Ethanol Guide for Ontario
+# Mercury Ethanol & Octane Rules 2026 (V10 Verado Update)
 
-> Mercury outboard fuel in Ontario: check octane and ethanol separately. Covers E15 now on sale in Ontario, the RON vs AKI 91-octane trap, and the E10 limit.
+> Octane and ethanol are separate questions. We cover Ontario's new E15 pumps, the E10 limit, the 91 RON trap, and why V10 Verados list 87 octane.
 
 **Category:** Service  
 **Published:** 2026-04-11  
-**Last reviewed:** 2026-08-24  
+**Last reviewed:** 2026-09-11  
 **Read time:** ~12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario
+
+## Mercury Outboard Octane and Ethanol Guide for Ontario
 
 > **Quick answer:** Octane and ethanol answer different questions, and only one of them is really a decision. Meet the octane minimum in your engine's manual and then stop thinking about octane. Ethanol is the part that decides how long your fuel system lasts. Mercury allows a maximum of E10, but fresh ethanol-free gasoline is the better fuel for a marine engine, which is what ethanol-free marine gas is for. Premium does not mean ethanol-free, and in Ontario it no longer reliably is.
 
@@ -38,7 +40,11 @@ Here's the safe choice. Make two independent checks:
 1. Does the octane meet the engine's minimum?
 2. Does the ethanol content stay within Mercury's limit?
 
-[Download the Marine Fuel & Storage Quick Guide](/downloads/marine-fuel-storage-quick-guide-hbw.pdf) for the pump and storage checklist in one page.
+### Take the fuel checks to the pump
+
+Octane and ethanol are separate checks. This one-page guide also covers storage preparation and the details to record when fuel may be contaminated.
+
+[Download fuel guide (PDF)](/downloads/marine-fuel-storage-quick-guide-hbw.pdf)
 
 ![Octane and ethanol are two independent fuel checks](/lovable-uploads/lens-cove/inline-lc014-octane-vs-ethanol.svg)
 
@@ -156,7 +162,7 @@ That is the legal reason ethanol-free marine gas can exist at a fuel dock, and i
 
 Note the word “may.” The deduction is permitted, not required. It removes the regulatory pressure to blend into those grades; it does not oblige anyone to keep them ethanol-free. As the provincial requirement climbs, suppliers have been blending into more of the pool, not less.
 
-That is exactly what happened to premium. Ontario stations used to sticker their 91 pumps ethanol-free. Around 2022 those stickers came off, and retailers including Shell and Canadian Tire relabelled 91 as “up to 10% ethanol,” pointing at the regulation when customers asked.
+That is why premium is easy to misread. The octane number does not prove ethanol content. Read the pump label. If you want ethanol-free, buy fuel sold as ethanol-free.
 
 The practical translation for 2026:
 
@@ -205,6 +211,10 @@ Use this sequence every time the fuel source changes:
 This takes less time than guessing from “regular versus premium,” and it gives you a much better answer.
 
 ## What We See at HBW
+
+![Harris Boat Works fuel dock on Rice Lake in Gores Landing, Ontario](/lovable-uploads/lens-cove/inline-lc014-hbw-ethanol-free-fuel-dock-2026-07.webp)
+
+*HBW's Gores Landing fuel dock, where boaters can buy ethanol-free 89-octane marine gas by road or water during the marina season.*
 
 Around Rice Lake and the Kawarthas, the question usually isn't “what does AKI mean?” It's “which pump can I use without hurting the motor?” Start with the cowl label and the serial-number manual, then read the fuel label at the pump. That's the whole decision.
 
@@ -259,7 +269,7 @@ Yes. Mercury says current gasoline engines are designed for fuel containing no m
 
 ### Is premium gasoline ethanol-free in Ontario?
 
-No, and it is less true every year. Ontario stations used to sticker 91 as ethanol-free; around 2022 those stickers came off and retailers including Shell and Canadian Tire relabelled 91 as up to 10% ethanol, citing the provincial renewable-content requirement. Premium often carries less ethanol than 87 or 89, but assume it is not ethanol-free. If you want ethanol-free, buy fuel sold as ethanol-free, which in Ontario usually means a marina fuel dock.
+No. Do not assume 91 octane is ethanol-free. Read the pump label. Premium may carry less ethanol than 87 or 89, but the octane number does not prove ethanol content. If you want ethanol-free, buy fuel sold as ethanol-free, which in Ontario usually means a marina fuel dock.
 
 ### Does Harris Boat Works sell ethanol-free marine gas?
 
@@ -279,7 +289,7 @@ There isn’t one safe shelf-life promise. Mercury says fuel components can begi
 
 ### My Mercury manual says 91 octane. Do I need premium in Canada?
 
-Probably not. Check which scale it uses. Canada and the US label pumps by AKI, shown as (R+M)/2, in grades 87, 89, 91 and 94. Much of the rest of the world labels by RON, in grades 92, 95 and 98. Mercury often publishes both, for example 87 octane minimum (R+M/2) or 91 RON. A 91 RON requirement is met by regular 87 at a Canadian pump. Confirm against the manual for your serial number, or send us the serial number and we'll confirm it.
+Probably not. Check which scale it uses. Canada and the US label pumps by AKI, shown as (R+M)/2, in grades 87, 89, 91 and 94. Much of the rest of the world labels by RON, in grades 92, 95 and 98. Mercury often publishes both, for example 87 octane minimum (R+M/2) or 91 RON. A 91 RON requirement is met by regular 87 at a Canadian pump. Confirm against the manual for your serial number.
 
 ### Is E15 sold in Ontario, and can I use it?
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-warranty-after-repower-ontario.md
-last_updated: 2026-08-21
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "How Your Mercury Warranty Works After a Repower"
 description: "What Mercury warranty covers after a repower: duration, inclusions, what voids it. How a Mercury Premier dealer affects your coverage. Harris Boat Works explains."
 category: "Warranty & Protection"
 date_published: 2026-06-06
-date_modified: 2026-08-21
+date_modified: 2026-09-06
 keywords: ["mercury warranty repower","mercury premier dealer warranty","mercury factory warranty","mercury extended warranty","mercury break-in period"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Warranty & Protection  
 **Published:** 2026-06-06  
-**Last reviewed:** 2026-08-21  
+**Last reviewed:** 2026-09-06  
 **Read time:** 4 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-warranty-after-repower-ontario
 
@@ -35,7 +35,7 @@ revenue_driver: repower
 
 A Mercury outboard repower comes with a factory warranty. How long that warranty runs, what it covers, and how it's registered depends on the motor model and how the installation is done. This page explains the key facts clearly.
 
-We are a Mercury Marine Premier dealer. That matters for how warranty claims are handled, we explain why below.
+We are a Mercury Marine Premier dealer. That matters for how warranty claims are handled: we explain why below.
 
 ---
 

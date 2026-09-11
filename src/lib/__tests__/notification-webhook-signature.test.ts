@@ -1,23 +1,20 @@
 import { readFileSync } from 'node:fs';
-import { createClient } from '@supabase/supabase-js';
 import { describe, expect, it, vi } from 'vitest';
-import { handleNotificationWebhook } from '../../../supabase/functions/_shared/notification-webhook-handler.ts';
+import { handleNotificationWebhook } from '#edge-deno/notification-webhook-handler';
 import {
-  buildTwilioMessageForm,
-  buildTwilioStatusCallbackUrl,
   computeTwilioSignature,
   decideNotificationWebhook,
   parseTwilioFormBody,
   resolveConfiguredTwilioWebhookUrl,
   resolveInboundTwilioWebhookUrl,
   TwilioWebhookRequestError,
+  verifyTwilioSignature,
 } from '../../../supabase/functions/_shared/twilio-signature.ts';
-import { canApplyTwilioStatus } from '../../../supabase/functions/_shared/twilio-status.ts';
-import { applyTwilioStatusToSmsLog } from '../../../supabase/functions/_shared/twilio-status-store.ts';
+import { buildSmsStatusCallbackUrl } from '../../../supabase/functions/_shared/twilio-status.ts';
 
-const AUTH_TOKEN = 'test-twilio-auth-token';
-const WEBHOOK_URL =
-  'https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/notification-webhook';
+const AUTH_TOKEN = 'test-twilio-auth-token-not-real';
+const SUPABASE_URL = 'https://eutsoqdpjurknjsshxes.supabase.co';
+const WEBHOOK_URL = `${SUPABASE_URL}/functions/v1/notification-webhook`;
 const SMS_LOG_ID = 'd9428888-122b-4f16-9f99-2a40336793c1';
 const MESSAGE_SID = 'SM1234567890abcdef1234567890abcdef';
 
@@ -27,34 +24,40 @@ function formBody(entries: ReadonlyArray<readonly [string, string]>): string {
   return form.toString();
 }
 
+const VALID_ENTRIES = [
+  ['MessageSid', MESSAGE_SID],
+  ['MessageStatus', 'delivered'],
+  ['To', '+15555550100'],
+] as const;
+
 async function signedRequest(input?: {
   requestUrl?: string;
   signedUrl?: string;
   entries?: ReadonlyArray<readonly [string, string]>;
-  signature?: string;
+  signature?: string | null;
+  authHeader?: boolean;
 }): Promise<Request> {
-  const entries = input?.entries ?? [
-    ['MessageSid', MESSAGE_SID],
-    ['MessageStatus', 'delivered'],
-  ];
+  const entries = input?.entries ?? VALID_ENTRIES;
   const body = formBody(entries);
-  const signature = input?.signature ?? await computeTwilioSignature(
-    AUTH_TOKEN,
-    input?.signedUrl ?? WEBHOOK_URL,
-    parseTwilioFormBody(body),
-  );
+  const headers: Record<string, string> = {
+    'Content-Type': 'application/x-www-form-urlencoded',
+  };
+  if (input?.signature !== null) {
+    headers['X-Twilio-Signature'] = input?.signature ?? await computeTwilioSignature(
+      AUTH_TOKEN,
+      input?.signedUrl ?? WEBHOOK_URL,
+      parseTwilioFormBody(body),
+    );
+  }
   return new Request(input?.requestUrl ?? WEBHOOK_URL, {
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/x-www-form-urlencoded',
-      'X-Twilio-Signature': signature,
-    },
+    headers,
     body,
   });
 }
 
 describe('Twilio request signature', () => {
-  it('matches Twilio\'s published HMAC-SHA1 known-answer vector', async () => {
+  it("matches Twilio's published HMAC-SHA1 known-answer vector", async () => {
     const signature = await computeTwilioSignature(
       '12345',
       'https://example.com/myapp.php?foo=1&bar=2',
@@ -86,6 +89,17 @@ describe('Twilio request signature', () => {
     expect(parseTwilioFormBody('Tag=zeta&Tag=alpha&Tag=alpha')).toEqual({
       Tag: ['zeta', 'alpha', 'alpha'],
     });
+  });
+
+  it('accepts a signature computed with a fake token over the form body', async () => {
+    const params = parseTwilioFormBody(formBody(VALID_ENTRIES));
+    const signature = await computeTwilioSignature(AUTH_TOKEN, WEBHOOK_URL, params);
+    await expect(verifyTwilioSignature({
+      authToken: AUTH_TOKEN,
+      webhookUrl: WEBHOOK_URL,
+      signature,
+      params,
+    })).resolves.toBe(true);
   });
 
   it('accepts exact semantic duplicates but rejects distinct signed values', async () => {
@@ -154,15 +168,20 @@ describe('Twilio request signature', () => {
 });
 
 describe('canonical Twilio webhook URL', () => {
-  it('normalizes configured whitespace identically for outbound and inbound URLs', () => {
+  it('signs the configured public URL, not the runtime host or path', () => {
     const configured = `  ${WEBHOOK_URL}  `;
-    const callback = buildTwilioStatusCallbackUrl(configured, SMS_LOG_ID);
     expect(resolveConfiguredTwilioWebhookUrl(configured)).toBe(WEBHOOK_URL);
-    expect(callback).toBe(`${WEBHOOK_URL}?sms_log_id=${SMS_LOG_ID}`);
     expect(resolveInboundTwilioWebhookUrl(
       configured,
-      `https://proxy.invalid/anything?sms_log_id=${SMS_LOG_ID}`,
-    )).toEqual({ signedUrl: callback, smsLogId: SMS_LOG_ID });
+      'http://localhost:9999/notification-webhook',
+    )).toEqual({ signedUrl: WEBHOOK_URL, smsLogId: null });
+    expect(resolveInboundTwilioWebhookUrl(
+      configured,
+      `https://proxy.invalid/rewritten?sms_log_id=${SMS_LOG_ID}`,
+    )).toEqual({
+      signedUrl: `${WEBHOOK_URL}?sms_log_id=${SMS_LOG_ID}`,
+      smsLogId: SMS_LOG_ID,
+    });
   });
 
   it('rejects duplicate or unexpected callback query keys', () => {
@@ -176,132 +195,137 @@ describe('canonical Twilio webhook URL', () => {
     )).toThrow(TwilioWebhookRequestError);
   });
 
-  it('puts the correlated callback URL in the outbound Twilio form', () => {
-    const callback = buildTwilioStatusCallbackUrl(WEBHOOK_URL, SMS_LOG_ID);
-    const form = buildTwilioMessageForm({
-      to: '+15555550100',
-      from: '+15555550199',
-      body: 'Quote ready',
-      statusCallbackUrl: callback,
-    });
-    expect(form.get('StatusCallback')).toBe(
-      `${WEBHOOK_URL}?sms_log_id=${SMS_LOG_ID}`,
+  it('puts the correlated callback URL in the outbound StatusCallback', () => {
+    expect(buildSmsStatusCallbackUrl(WEBHOOK_URL, SMS_LOG_ID)).toBe(
+      `${WEBHOOK_URL}?sms_log_id=${SMS_LOG_ID}#rp=ct,rt,5xx&rc=2`,
     );
   });
 });
 
 describe('notification webhook handler', () => {
-  it('does not invoke storage for an invalid signature', async () => {
-    const applyStatus = vi.fn();
+  it('accepts a valid signature and then invokes storage', async () => {
+    const onVerified = vi.fn(async () => new Response(JSON.stringify({ success: true }), { status: 200 }));
     const response = await handleNotificationWebhook(
-      await signedRequest({ signature: 'invalid' }),
-      { authToken: AUTH_TOKEN, configuredWebhookUrl: WEBHOOK_URL, applyStatus },
+      await signedRequest({
+        requestUrl: 'http://edge.internal/notification-webhook',
+      }),
+      { authToken: AUTH_TOKEN, configuredWebhookUrl: WEBHOOK_URL, onVerified },
     );
-    expect(response.status).toBe(403);
-    expect(applyStatus).not.toHaveBeenCalled();
+    expect(response.status).toBe(200);
+    expect(onVerified).toHaveBeenCalledTimes(1);
+    expect(onVerified).toHaveBeenCalledWith(formBody(VALID_ENTRIES));
   });
 
   it('persists an early callback by its pre-inserted outbox id', async () => {
-    const callback = buildTwilioStatusCallbackUrl(WEBHOOK_URL, SMS_LOG_ID)!;
-    const applyStatus = vi.fn().mockResolvedValue({
-      kind: 'applied',
-      currentStatus: 'delivered',
-    });
+    const callback = `${WEBHOOK_URL}?sms_log_id=${SMS_LOG_ID}`;
+    const onVerified = vi.fn(async () => new Response(JSON.stringify({ success: true }), { status: 200 }));
     const response = await handleNotificationWebhook(
       await signedRequest({
         requestUrl: `https://proxy.invalid/rewritten?sms_log_id=${SMS_LOG_ID}`,
         signedUrl: callback,
+        entries: [
+          ['MessageSid', MESSAGE_SID],
+          ['MessageStatus', 'delivered'],
+        ],
       }),
-      { authToken: AUTH_TOKEN, configuredWebhookUrl: WEBHOOK_URL, applyStatus },
+      { authToken: AUTH_TOKEN, configuredWebhookUrl: WEBHOOK_URL, onVerified },
     );
     expect(response.status).toBe(200);
-    expect(applyStatus).toHaveBeenCalledWith({
-      smsLogId: SMS_LOG_ID,
-      messageSid: MESSAGE_SID,
-      messageStatus: 'delivered',
-      errorCode: null,
-      errorMessage: null,
-    });
+    expect(onVerified).toHaveBeenCalledTimes(1);
   });
 
-  it.each([
-    ['not_found', 503],
-    ['sid_conflict', 409],
-    ['stale', 200],
-  ] as const)('maps %s storage results to HTTP %i', async (kind, status) => {
+  it('returns 400 and does not write when the inbound query is not allowlisted', async () => {
+    const onVerified = vi.fn();
+    const response = await handleNotificationWebhook(
+      await signedRequest({
+        requestUrl: `${WEBHOOK_URL}?sms_log_id=${SMS_LOG_ID}&next=https://evil.invalid`,
+        signedUrl: `${WEBHOOK_URL}?sms_log_id=${SMS_LOG_ID}`,
+      }),
+      { authToken: AUTH_TOKEN, configuredWebhookUrl: WEBHOOK_URL, onVerified },
+    );
+    expect(response.status).toBe(400);
+    expect(onVerified).not.toHaveBeenCalled();
+  });
+
+  it('returns 403 and does not write when the signature is wrong', async () => {
+    const onVerified = vi.fn();
+    const response = await handleNotificationWebhook(
+      await signedRequest({ signature: 'aaaaaaaaaaaaaaaaaaaaaaaaaaa=' }),
+      { authToken: AUTH_TOKEN, configuredWebhookUrl: WEBHOOK_URL, onVerified },
+    );
+    expect(response.status).toBe(403);
+    expect(onVerified).not.toHaveBeenCalled();
+  });
+
+  it('returns 403 and does not write when the header is missing', async () => {
+    const onVerified = vi.fn();
+    const response = await handleNotificationWebhook(
+      await signedRequest({ signature: null }),
+      { authToken: AUTH_TOKEN, configuredWebhookUrl: WEBHOOK_URL, onVerified },
+    );
+    expect(response.status).toBe(403);
+    expect(onVerified).not.toHaveBeenCalled();
+  });
+
+  it('returns 403 and does not write when a valid signature covers different parameters', async () => {
+    const onVerified = vi.fn();
+    const otherSignature = await computeTwilioSignature(
+      AUTH_TOKEN,
+      WEBHOOK_URL,
+      parseTwilioFormBody(formBody([
+        ['MessageSid', MESSAGE_SID],
+        ['MessageStatus', 'failed'],
+        ['To', '+15555550100'],
+      ])),
+    );
+    const response = await handleNotificationWebhook(
+      await signedRequest({ signature: otherSignature }),
+      { authToken: AUTH_TOKEN, configuredWebhookUrl: WEBHOOK_URL, onVerified },
+    );
+    expect(response.status).toBe(403);
+    expect(onVerified).not.toHaveBeenCalled();
+  });
+
+  it('fails closed without a token and does not write', async () => {
+    const onVerified = vi.fn();
     const response = await handleNotificationWebhook(
       await signedRequest(),
-      {
-        authToken: AUTH_TOKEN,
-        configuredWebhookUrl: WEBHOOK_URL,
-        applyStatus: vi.fn().mockResolvedValue({ kind, currentStatus: 'delivered' }),
-      },
+      { authToken: '', configuredWebhookUrl: WEBHOOK_URL, onVerified },
     );
-    expect(response.status).toBe(status);
+    expect(response.status).toBe(503);
+    expect(onVerified).not.toHaveBeenCalled();
   });
 });
 
-describe('Twilio status ordering', () => {
-  it('allows forward progress and exact retries', () => {
-    expect(canApplyTwilioStatus('pending', 'queued')).toBe(true);
-    expect(canApplyTwilioStatus('queued', 'sent')).toBe(true);
-    expect(canApplyTwilioStatus('delivered', 'delivered')).toBe(true);
+describe('Twilio webhook source contracts', () => {
+  it('verifies the Twilio signature before creating a client or writing sms_logs', () => {
+    const source = readFileSync('supabase/functions/notification-webhook/index.ts', 'utf8');
+    expect(source.indexOf('handleNotificationWebhook')).toBeLessThan(source.indexOf('createClient('));
+    expect(source.indexOf('readNotificationWebhookFields')).toBeLessThan(source.indexOf('createClient('));
+    expect(source.indexOf('isTwilioMessageSid')).toBeLessThan(source.indexOf('createClient('));
+    expect(source.indexOf('onVerified')).toBeLessThan(source.lastIndexOf('applyTwilioStatusToSmsLog'));
+    expect(source).toContain('applyTwilioStatusToSmsLog');
+    expect(source).toContain('parseSmsLogIdFromRequestUrl');
+    expect(source).toContain('TWILIO_WEBHOOK_URL');
+    expect(source).not.toContain(".eq('to_phone'");
   });
 
-  it('blocks regressions and conflicting terminal outcomes', () => {
-    expect(canApplyTwilioStatus('delivered', 'sent')).toBe(false);
-    expect(canApplyTwilioStatus('failed', 'delivered')).toBe(false);
-    expect(canApplyTwilioStatus('undelivered', 'failed')).toBe(false);
-  });
-
-  it('builds an AND-composed PostgREST update for status, row id, and SID', async () => {
-    const fetchSpy = vi.fn().mockResolvedValue(new Response(
-      JSON.stringify([{ id: SMS_LOG_ID, status: 'delivered' }]),
-      { status: 200, headers: { 'Content-Type': 'application/json' } },
-    ));
-    const client = createClient('https://project.invalid', 'test-anon-key', {
-      global: { fetch: fetchSpy },
-    });
-
-    await expect(applyTwilioStatusToSmsLog(client, {
-      smsLogId: SMS_LOG_ID,
-      messageSid: MESSAGE_SID,
-      messageStatus: 'delivered',
-      errorCode: null,
-      errorMessage: null,
-    })).resolves.toEqual({ kind: 'applied', currentStatus: 'delivered' });
-
-    const requestedUrl = new URL(String(fetchSpy.mock.calls[0][0]));
-    expect(requestedUrl.searchParams.get('id')).toBe(`eq.${SMS_LOG_ID}`);
-    expect(requestedUrl.searchParams.get('status')).toContain('in.');
-    expect(requestedUrl.searchParams.get('status')).toContain('pending');
-    expect(requestedUrl.searchParams.getAll('or')).toEqual([
-      `(message_sid.is.null,message_sid.eq.${MESSAGE_SID})`,
-    ]);
-  });
-});
-
-describe('Twilio tracking source contracts', () => {
-  it('retains current-main pre-insert ordering before the provider request', () => {
-    const source = readFileSync('supabase/functions/send-sms/index.ts', 'utf8');
-    expect(source.indexOf(".insert({\n        to_phone: formattedPhone")).toBeGreaterThan(-1);
-    expect(source.indexOf(".insert({\n        to_phone: formattedPhone")).toBeLessThan(
-      source.indexOf('api.twilio.com'),
-    );
-    expect(source).toContain('buildTwilioStatusCallbackUrl');
-    expect(source).not.toContain("headers.get('host')");
-    expect(source).not.toContain("headers.get('x-forwarded-host')");
-  });
-
-  it('keeps service-role creation behind validated handler dependencies', () => {
-    const source = readFileSync(
-      'supabase/functions/notification-webhook/index.ts',
+  it('keeps verify_jwt false and fails closed without TWILIO_AUTH_TOKEN', () => {
+    const config = readFileSync('supabase/config.toml', 'utf8');
+    const handler = readFileSync(
+      'supabase/functions/_shared/notification-webhook-handler.ts',
       'utf8',
     );
-    expect(source.indexOf('handleNotificationWebhook')).toBeLessThan(
-      source.indexOf('createClient('),
+    const signature = readFileSync(
+      'supabase/functions/_shared/twilio-signature.ts',
+      'utf8',
     );
-    expect(source).not.toContain('api.twilio.com');
-    expect(source).not.toContain(".eq('to_phone'");
+    expect(config).toMatch(/\[functions\.notification-webhook\]\s*\nverify_jwt = false/);
+    expect(handler).toContain('gateTwilioStatusCallback');
+    expect(signature).toContain('timingSafeEqual');
+    expect(signature).toContain('parseTwilioFormBody');
+    expect(signature).toContain('TWILIO_WEBHOOK_URL');
+    expect(signature).toContain('resolveConfiguredTwilioWebhookUrl');
+    expect(signature).toContain("if (!input.authToken)");
   });
 });

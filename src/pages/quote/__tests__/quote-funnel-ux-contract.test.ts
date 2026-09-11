@@ -1,3 +1,5 @@
+/// <reference types="node" />
+
 import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 
@@ -11,6 +13,13 @@ describe('quote funnel UX contract', () => {
     expect(tradeInSource).toContain('data-testid="trade-in-continue"');
   });
 
+  it('uses the canonical TradeInValuation form on the tools estimator', () => {
+    const estimatorSource = read('src/components/tools/TradeInValueEstimator.tsx');
+    expect(estimatorSource).toContain('TradeInValuation');
+    expect(estimatorSource).toContain('PROMOTE_TRADE_IN');
+    expect(estimatorSource).not.toContain('HP_TABLE');
+  });
+
   it('gives mobile customers the same reservation path as desktop', () => {
     const summarySource = read('src/pages/quote/QuoteSummaryPage.tsx');
 
@@ -18,6 +27,18 @@ describe('quote funnel UX contract', () => {
     expect(summarySource).toContain('onClick={handleReserveDeposit}');
     expect(summarySource).toContain('onReview={handleStepComplete}');
     expect(summarySource).toContain('Have HBW Review My Quote');
+  });
+
+  it('does not dress the mobile save action as a download', () => {
+    const summarySource = read('src/pages/quote/QuoteSummaryPage.tsx');
+    const saveHandler = 'user ? setShowSaveDialog(true) : setShowAuthSaveDialog(true)';
+    const saveBlock = summarySource.slice(
+      summarySource.indexOf(saveHandler),
+      summarySource.indexOf('Save for Later') + 'Save for Later'.length,
+    );
+
+    expect(saveBlock).toContain('<Bookmark');
+    expect(saveBlock).not.toContain('<Download');
   });
 
   it('supports an express motor-only purchase path from the 9.9 MH sale page', () => {
@@ -59,9 +80,10 @@ describe('quote funnel UX contract', () => {
     expect(depositDialogSource).toContain('you approve the order in writing');
     expect(motorSelectionFaqSource).toContain('model-specific Mercury 9.9 MH offer for model 1A10201LK uses a $100 CAD deposit');
     expect(motorSelectionFaqSource).not.toContain('Deposits are fully refundable within 7 days');
-    expect(paymentSource).toContain('if (depositAmount === "100")');
-    expect(paymentSource).toContain('quoteData?.motorId !== EXPRESS_MOTOR_ID');
-    expect(paymentSource).toContain('resolvedModelNumber !== EXPRESS_MOTOR_MODEL_NUMBER');
+    expect(paymentSource).toContain('const expressOfferVerified = isVerifiedExpressMotorReservation({');
+    expect(paymentSource).toContain('const authoritativeDeposit = getMotorReservationDeposit(');
+    expect(paymentSource).toContain('Number(savedQuote.deposit_amount) !== authoritativeDeposit');
+    expect(paymentSource).toContain('.eq("id", savedMotorId)');
     expect(paymentSource).toContain('Customer information required for deposit');
     expect(paymentSource).not.toContain('rawBody.motorInfo');
     expect(paymentSource).not.toContain('rawBody.savedQuoteId');
@@ -70,7 +92,8 @@ describe('quote funnel UX contract', () => {
     expect(paymentSource).toContain('action: z.literal("verify")');
     expect(paymentSource).toContain('phone: z.string().trim().min(7)');
     expect(webhookSource).toContain('session.payment_status !== "paid"');
-    expect(webhookSource).toContain('savedQuoteId === boundSavedQuoteId');
+    expect(webhookSource).toContain('validateDepositBeforeClaim(depositPreclaimInput)');
+    expect(webhookSource).toContain('sessionAmountTotal: session.amount_total');
     expect(webhookSource).toContain('.contains("quote_data", { payment_status: "pending" })');
     expect(webhookSource).toContain('Bound deposit record lookup failed');
     expect(webhookSource).toContain('Bound quote record lookup failed');
@@ -160,6 +183,20 @@ describe('quote funnel UX contract', () => {
     expect(quoteTileSource).not.toContain('bg-white');
   });
 
+  it('exposes quote progress and honours reduced motion on promo/reveal', () => {
+    const stepperSource = read('src/components/quote-builder/QuoteProgressStepper.tsx');
+    const revealSource = read('src/components/quote-builder/QuoteRevealCinematic.tsx');
+    const promoSource = read('src/pages/quote/PromoSelectionPage.tsx');
+
+    expect(stepperSource).toContain('aria-current={current ? \'step\' : undefined}');
+    expect(stepperSource).toContain('role="progressbar"');
+    expect(revealSource).toContain('useReducedMotion');
+    expect(revealSource).toContain('if (prefersReducedMotion)');
+    expect(promoSource).toContain('useReducedMotion');
+    expect(promoSource).toContain('role="radio"');
+    expect(promoSource).toContain('aria-checked={isSelected}');
+  });
+
   it('does not celebrate before a customer has committed', () => {
     const summarySource = read('src/pages/quote/QuoteSummaryPage.tsx');
     const stickySource = read('src/components/quote-builder/StickySummary.tsx');
@@ -235,7 +272,8 @@ describe('quote funnel UX contract', () => {
     expect(scheduleSource).toContain('We use your details to review this quote and contact you about it.');
     expect(scheduleSource).toContain('to="/privacy"');
     expect(scheduleSource.match(/aria-required="true"/g)).toHaveLength(3);
-    expect(scheduleSource.match(/aria-invalid=/g)).toHaveLength(3);
+    expect(scheduleSource.match(/aria-invalid=/g)).toHaveLength(4);
+    expect(scheduleSource).toContain('id="turnstile-error"');
     expect(scheduleSource).toContain('role="alert"');
     expect(reminderSource).toContain('This signs you up for price and promotion updates for this motor.');
     expect(reminderSource).toContain('has-[:focus-visible]:ring-2');

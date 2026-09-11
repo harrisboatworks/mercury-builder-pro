@@ -10,10 +10,10 @@ import {
 } from "../_shared/consultation-sms-policy.ts";
 import { ConsultationDocumentRequestError } from "../_shared/consultation-document-policy.ts";
 import {
-  buildTwilioMessageForm,
-  buildTwilioStatusCallbackUrl,
-} from "../_shared/twilio-signature.ts";
-import { isTwilioMessageStatus } from "../_shared/twilio-status.ts";
+  buildSmsStatusCallbackUrl,
+  isTwilioMessageSid,
+  isTwilioMessageStatus,
+} from "../_shared/twilio-status.ts";
 import { applyTwilioStatusToSmsLog } from "../_shared/twilio-status-store.ts";
 
 const corsHeaders = {
@@ -161,17 +161,15 @@ serve(async (req) => {
     const auth = btoa(`${accountSid}:${authToken}`);
     
     const statusCallbackUrl = outbox?.id
-      ? buildTwilioStatusCallbackUrl(
-          Deno.env.get('TWILIO_WEBHOOK_URL'),
-          outbox.id,
-        )
+      ? buildSmsStatusCallbackUrl(Deno.env.get('TWILIO_WEBHOOK_URL'), outbox.id)
       : null;
-    const formData = buildTwilioMessageForm({
-      to: formattedPhone,
-      from: fromNumber,
-      body: smsData.message,
-      statusCallbackUrl,
-    });
+    const formData = new URLSearchParams();
+    formData.append('To', formattedPhone);
+    formData.append('From', fromNumber);
+    formData.append('Body', smsData.message);
+    if (statusCallbackUrl) {
+      formData.append('StatusCallback', statusCallbackUrl);
+    }
 
     if (!tokenBearing) {
       console.log('Sending SMS via Twilio:', {
@@ -210,17 +208,17 @@ serve(async (req) => {
       throw new Error(`Twilio API error: ${responseData.message || 'Unknown error'}`);
     }
 
-    const messageSid = typeof responseData?.sid === 'string'
-      ? responseData.sid
-      : '';
+    const messageSid = typeof responseData?.sid === 'string' ? responseData.sid : '';
     const providerStatus = typeof responseData?.status === 'string' &&
         isTwilioMessageStatus(responseData.status)
       ? responseData.status
       : 'sent';
 
-    if (!tokenBearing) console.log('SMS sent successfully:', messageSid);
+    if (!tokenBearing) {
+      console.log('SMS sent successfully:', messageSid);
+    }
 
-    if (outbox?.id && /^SM[0-9a-f]{32}$/i.test(messageSid)) {
+    if (outbox?.id && isTwilioMessageSid(messageSid)) {
       try {
         const trackingResult = await applyTwilioStatusToSmsLog(supabase, {
           smsLogId: outbox.id,

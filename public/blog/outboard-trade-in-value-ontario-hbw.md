@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/outboard-trade-in-value-ontario-hbw.md
-last_updated: 2026-08-19
+last_updated: 2026-09-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -8,10 +8,10 @@ final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
 title: "Outboard Trade-In Value in Ontario (2026)"
-description: "Outboard trade-in values in Ontario (2026): how HBW evaluates trades, what helps and hurts value, ranges by HP class, and how trade credit saves you HST."
+description: "How HBW evaluates outboard trades in Ontario: appraisal factors, records to gather, and how to compare a trade with a private sale using your actual quote."
 category: "Buying Guide"
 date_published: 2026-05-09
-date_modified: 2026-08-19
+date_modified: 2026-09-07
 keywords: ["outboard trade-in value Ontario","what is my Mercury outboard worth","boat motor trade in value Canada","trade in old outboard for repower","outboard trade vs private sale"]
 author: Harris Boat Works
 content_type: blog_article
@@ -21,100 +21,38 @@ revenue_driver: repower
 
 # Outboard Trade-In Value in Ontario (2026)
 
-> Outboard trade-in values in Ontario (2026): how HBW evaluates trades, what helps and hurts value, ranges by HP class, and how trade credit saves you HST.
+> How HBW evaluates outboard trades in Ontario: appraisal factors, records to gather, and how to compare a trade with a private sale using your actual quote.
 
 **Category:** Buying Guide  
 **Published:** 2026-05-09  
-**Last reviewed:** 2026-08-19  
+**Last reviewed:** 2026-09-07  
 **Read time:** ~10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/outboard-trade-in-value-ontario-hbw
 
-> **Quick answer:** There is no blue book for outboards. Trade-in value comes down to brand, hours, age, condition, and service history, with Mercury and Yamaha 4-strokes holding value best. In Ontario, the trade credit also reduces the taxable amount of your new motor, a 13% HST saving most customers miss. Get a preliminary number in minutes at mercuryrepower.ca.
-
 ## What Is My Outboard Worth? How Trade-In Values Work at Harris Boat Works
 
-## Quick answer
-There is no official blue book for outboards. Trade-in value depends on brand, hours, age, visible condition, and service history. Mercury and Yamaha 4-strokes in good condition hold value best. Trading also saves you HST on the repower invoice, a real savings most customers do not know about until we walk them through it. Get a preliminary number in minutes at [mercuryrepower.ca](https://www.mercuryrepower.ca).
+> **Quick answer:** There is no official blue book for outboards. Trade-in value depends on brand, hours, age, visible condition, and service history. Mercury and Yamaha 4-strokes in good condition hold value best. For a typical private recreational trade at an Ontario dealer, the trade credit can reduce the taxable amount of the new motor. Taxable-business or GST/HST-registrant trades are a separate case. Get a preliminary number at [mercuryrepower.ca](https://www.mercuryrepower.ca); HBW confirms trade value after reviewing the serial number, hours, condition, and service history.
 
-> **Price the complete repower:** Start with the [Mercury quote configurator](/quote/motor-selection) for the replacement motor. HBW confirms trade value after reviewing the serial number, hours, condition, and service history.
+## Get a preliminary trade-in appraisal
 
-*Trade-in value ladder*
+Use the [trade-in estimator](/trade-in-value) for a preliminary estimate, then carry your motor details into the [Mercury quote builder](/quote/motor-selection). Use your current estimate when comparing repower options; HBW confirms the final appraisal.
 
-### What your trade-in is actually worth, by condition
+### What to have ready
 
-Mercury outboard trade-in value depends mostly on condition, hours, and whether it runs. Here is how we look at a trade on the shop floor.
+- Make, model, serial number and known year
+- Horsepower and confirmed engine type
+- Hours, running condition and known problems
+- Service records and clear photos
 
-#### Runs great, full service history, low hours
-
-**55 to 75% of comparable retail used price**
-
-The unicorn category. Original owner, all receipts, compression numbers documented. We can sell this immediately, so we pay the most.
-
-#### Runs, decent shape, some unknowns
-
-**35 to 50% of comparable retail used price**
-
-Most trade-ins fall here. Started, ran around the dock, but the service history is patchy or there are obvious cosmetic issues. We discount for the diagnostic time on our end.
-
-#### Won't start, but turns over
-
-**$300 to $1,500 depending on HP**
-
-We can usually get these running with carb work, fuel system flush, and new spark plugs. Pricing reflects parts and roughly 4 to 8 hours of shop labour we have to absorb before resale.
-
-#### Seized, locked-up, or major mechanical damage
-
-**$100 to $500**
-
-Scrap or parts-motor value. Lower unit, cowl, and electronics may still be sellable separately. We do not buy these for resale.
-
-#### 1990s and older 2-stroke
-
-**$200 to $1,200 regardless of running condition**
-
-Old carbureted 2-strokes have limited market in Ontario in 2026. We will take them on trade, but the value is what we can resell to a fixer-upper, not blue-book optimistic numbers.
-
-#### Honest framing
-
-**We do not sandbag trades, but we are not Kelley Blue Book either**
-
-*Final trade value is set after a 15-minute in-person inspection at HBW. We hook it up on muffs, check compression, scan codes if SmartCraft equipped, and look at the lower unit. Bring it to (905) 342-2153 or book at /quote.*
-
-*Honest appraisal factors*
-
-### What helps or hurts your trade-in value?
-
-Two things matter most. The condition of your motor, and how easy it is for us to resell.
-
-#### What helps your value
-
-- Service history with receipts (impeller, lower unit, plugs, oil)
-- Original cowl in good shape, no major dings or fade
-- Compression test within 10 percent across cylinders
-- Runs and shifts cleanly with no smoke or alarms
-- Current model line (last 5 years of Mercury or major OEM)
-
-**Top end of our offer range**
-
-#### What hurts your value
-
-- No service records and unclear maintenance history
-- Saltwater use or visible corrosion on powerhead or lower unit
-- Compression imbalance across cylinders
-- Smokes, runs rough, or has stored alarm codes
-- Discontinued model line (15 plus years old, parts hard to source)
-
-**Bottom of range or sell privately instead**
-
-Bring it in for a free 30 minute appraisal. We will be honest about both numbers, what we would pay and what a private sale would likely net you.
+Condition, documentation and the exact engine matter. A non-running motor needs diagnosis before anyone can judge repair or resale potential. A preliminary estimate is not an offer: HBW confirms the appraisal after reviewing the motor and any inspection findings.
 
 ## The first question in every repower conversation
 
 "What about my old motor?"
 
-It is always the first question, and it is the right one. A motor trade changes the whole cost picture, not just by the trade amount, but because in Ontario, **the trade-in credit reduces the taxable amount of the new motor**. [That 13% HST saving](/blog/repower-old-motor-trade-in-hst-disposal-ontario) adds up faster than most people expect.
+It is always the first question, and it is the right one. A motor trade changes the whole cost picture, not just by the trade amount. For a typical private recreational trade in Ontario, **the trade-in credit can reduce the taxable amount of the new motor**. Taxable-business or GST/HST-registrant trades need their own tax treatment. [That 13% HST saving](/blog/repower-old-motor-trade-in-hst-disposal-ontario) adds up faster than most people expect on a qualifying private-owner trade.
 
-This post is the answer we give over the phone, written down: what we look at, what helps and hurts value, the real ranges for 2026, and how to get a preliminary number before you drive anywhere.
+This post is the answer we give over the phone, written down: what we look at, what helps and hurts value, the appraisal process, and how to get a preliminary number before you drive anywhere.
 
 ## The five things we look at
 
@@ -149,7 +87,7 @@ We look at:
 A motor that looks like it has been used and serviced properly is fine. A motor that looks like it sat under a tarp for five winters is a different conversation.
 
 ### 5. Service history
-A service record binder adds 10 to 15% to most trades. Not because we are being generous, it is because a documented motor is one we can resell with confidence.
+A service record binder reduces appraisal uncertainty. A documented motor is one we can resell with more confidence than the same motor with no records.
 
 ## What adds value
 - Mercury or Yamaha brand rather than Honda, Suzuki, or Evinrude
@@ -158,7 +96,7 @@ A service record binder adds 10 to 15% to most trades. Not because we are being 
 - Original Mercury or Yamaha rigging still intact, controls, harness, gauges
 - Recent annual service (current or prior season)
 - Garaged or shrink-wrapped winters rather than tarped storage
-- Stainless prop rather than aluminum (~$300 to $400 retained value)
+- Included propeller and compatible rigging, assessed for condition and usefulness
 - Working power trim with no leaks
 - Digital instruments (VesselView, SmartCraft Connect) bundled in
 
@@ -170,7 +108,7 @@ A service record binder adds 10 to 15% to most trades. Not because we are being 
 - Over 1,000 hours without documented service
 - Cracked cowl, missing decals, prior collision evidence
 - Aftermarket controls or rigging the next owner has to undo
-- Oil weep at the lower unit seal (typically a $400 to $700 fix)
+- Visible oil leaks or lower-unit concerns requiring diagnosis
 - Stale fuel that ran through the system
 
 ## Documentation that moves your trade number
@@ -184,55 +122,25 @@ You do not need a thousand pages of records. You need the right ones:
 - **Recent service work receipts**, especially for a replaced powerhead, gearcase, or major electrical
 - **Ownership papers** for the boat if you are trading boat and motor as a package
 
-A motor with a clean documented service history can trade 10-25% higher than the same motor with no records. We have seen records move the offer by $1,500 on a 90 HP and $3,000 on a 200 V8. Paperwork is the cheapest way to add value.
+A motor with a clean documented service history is easier to appraise and resell than the same motor with no records. Paperwork is the cheapest way to add value.
 
-## Trade vs private sale vs scrap
+## Trade vs private sale vs parts value
 
-| Path | Typical Net | What You Do | Risk |
-|---|---|---|---|
-| Trade to HBW | 30 to 50% of comparable used retail | Tell us about the motor, drop it off when you pick up the new one | None, done in one transaction |
-| Private sale (Kijiji / Facebook) | 60 to 80% of used retail | Photos, listing, tire-kickers, cash transactions, transfer paperwork | Scams, no-shows, weeks of effort, occasional disputes |
-| Scrap or parts-out | 5 to 15% of retail | Drop at a metal yard, or part it out yourself | Time, mess, you become a small parts business |
+| Path | What to compare | What remains uncertain |
+|---|---|---|
+| Trade to HBW | Confirmed credit and the complete repower quote | Final appraisal and transaction terms |
+| Private sale | Actual proceeds after preparation, selling costs and your time | Buyer, sale price and completion date |
+| Parts or scrap | An actual offer after assessment | Usable components and disposal costs |
 
-The math case for trade: Trade is certain. Private sale has a higher gross number but lower net once you factor in time, hassle, and the HST you are not saving.
+Compare real written offers. A percentage of an advertised used-motor price is not a reliable trade offer.
 
 ## The HST savings most customers miss
 
-In Ontario, when you trade a motor as part of a repower at HBW, **the trade credit reduces the taxable amount of the new motor**. That is a 13% HST saving on whatever the trade is worth.
+When a private recreational customer trades a motor as part of a repower at HBW, **the trade credit can reduce the taxable amount of the new motor**. For a qualifying private-owner trade, that can affect the HST charged in the transaction. Taxable-business or GST/HST-registrant trades are a separate case.
 
-**Worked example.** Say you are [repowering with a Mercury 90 ELPT FourStroke](/blog/mercury-repower-cost-ontario-2026-cad) at $14,960, and we credit $4,000 for your old motor:
+**Use your actual transaction figures.** Compare the confirmed trade credit, purchase total and applicable tax treatment in your written quote with the net proceeds of a private sale. A worked example tied to an old motor price cannot establish what your current repower will cost.
 
-| Line | Trade Scenario | Private Sale Scenario |
-|---|---|---|
-| New motor price | $14,960 | $14,960 |
-| Trade credit | -$4,000 | $0 |
-| Subtotal | $10,960 | $14,960 |
-| HST (13%) | $1,425 | $1,945 |
-| Total to HBW | $12,385 | $16,905 |
-| Cash from private sale | -- | $5,000 (assumed) |
-| **Net cost** | **$12,385** | **$11,905** |
-
-In this example, the private sale wins by about $480, but only if you actually sell for $5,000, it does not take three weekends, and there is no cash dispute. If the private sale nets $4,500, trade wins. At $4,000, trade wins by a meaningful margin.
-
-Most customers find the private sale grind is not worth the modest delta once they price their own time. Talk to us before you list.
-
-![Table of Mercury/Yamaha outboard trade-in values by HP class and age, Ontario 2026 CAD ranges.](/lovable-uploads/inline/outboard-trade-in-value.svg)
-
-## 2026 trade-in ranges (Ontario, CAD)
-
-Working ranges for freshwater, documented Mercury or Yamaha 4-strokes in working condition. Starting points, final number confirmed in person.
-
-| HP Class | 0 to 5 yrs, Low Hours | 5 to 10 yrs, Mid Hours | 10 to 15 yrs, Higher Hours |
-|---|---|---|---|
-| 9.9 to 15 HP kicker | $1,800 to $3,000 | $1,200 to $2,000 | $600 to $1,200 |
-| 25 to 30 HP | $2,500 to $4,000 | $1,500 to $2,800 | $800 to $1,600 |
-| 40 to 50 HP | $3,500 to $5,500 | $2,200 to $3,800 | $1,200 to $2,200 |
-| 60 to 75 HP | $5,000 to $7,500 | $3,200 to $5,200 | $1,800 to $3,200 |
-| 90 to 115 HP | $7,000 to $10,500 | $4,500 to $7,500 | $2,500 to $4,500 |
-| 150 to 200 HP | $9,500 to $14,500 | $6,500 to $10,500 | $4,000 to $7,000 |
-| 225 to 300 HP V6/V8 | $13,000 to $19,000 | $9,000 to $14,500 | $5,500 to $10,000 |
-
-All figures are CAD, before HST, for working motors with no major issues. Add 10 to 15% for documented full service history. Subtract 20 to 40% for non-Mercury/non-Yamaha brands. Subtract 50%+ for Evinrude/OMC. Final number is always confirmed in person after inspection.
+[Get a preliminary trade estimate](/trade-in-value) or [build your repower quote](/quote/motor-selection). HBW confirms the final figures and tax treatment for your transaction.
 
 ## How to get a preliminary number before you visit
 
@@ -295,8 +203,8 @@ Some go to other customers looking for used motors. Some go to boat brokers or u
 - [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide), choosing the right propeller
 - [The Complete Guide to Boat Bilge Pumps: How They Work, Why They Fail, and How to Fix Them](/blog/bilge-pump-troubleshooting-guide), diagnosing a bilge pump that won't run
 - [Mercury Outboard Repair Guide: Troubleshooting and Maintenance](/blog/mercury-outboard-repair-guide), repair symptoms, triage, and service next steps
-- [Mercury Outboard Fuel Economy: How to Get Better MPG](/blog/mercury-outboard-fuel-efficiency-guide), maximizing fuel efficiency
-- [Mercury Outboard Octane and Ethanol Guide for Ontario](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), ethanol, octane and Mercury fuel
+- [Mercury Fuel Burn by HP: 5 Ways to Cut Gas Costs (2026)](/blog/mercury-outboard-fuel-efficiency-guide), maximizing fuel efficiency
+- [Mercury Ethanol & Octane Rules 2026 (V10 Verado Update)](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), ethanol, octane and Mercury fuel
 
 ## Next steps
 

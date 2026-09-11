@@ -2002,3 +2002,28 @@ article .blog-article-prose table {
   margin: 0;
   box-shadow: none;
 }
+
+/* Keep long source URLs inside the article on narrow screens. */
+.blog-article-prose {
+  overflow-wrap: anywhere;
+}
+
+/* Preserve a visible scroll cue and keyboard access for wide comparisons. */
+.blog-article-prose .blog-table-scroll {
+  scrollbar-width: auto;
+  scrollbar-color: hsl(var(--muted-foreground)) hsl(var(--muted));
+}
+.blog-article-prose .blog-table-scroll:focus-visible {
+  outline: 2px solid hsl(var(--mercury-red));
+  outline-offset: 3px;
+}
+.blog-article-prose .blog-table-scroll::-webkit-scrollbar {
+  height: 10px;
+}
+.blog-article-prose .blog-table-scroll::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground));
+  border-radius: 5px;
+}
+.blog-article-prose .blog-table-scroll::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}

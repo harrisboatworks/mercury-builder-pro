@@ -34,7 +34,7 @@ export function BatteryOptionPrompt({
         </p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+      <div role="radiogroup" aria-label="Starting battery" className="grid grid-cols-1 sm:grid-cols-3 gap-3">
         <QuoteRadioTile
           selected={selectedOption === true}
           onClick={() => onSelect(true)}

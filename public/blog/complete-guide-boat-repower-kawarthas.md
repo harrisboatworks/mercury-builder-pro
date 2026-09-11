@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/complete-guide-boat-repower-kawarthas.md
-last_updated: 2026-08-19
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Boat Repower in the Kawarthas: Complete Guide"
 description: "A step-by-step guide to repowering your boat in the Kawarthas: is your hull worth it, picking the motor, what the install involves."
 category: "Repowering"
 date_published: 2026-02-23
-date_modified: 2026-08-19
+date_modified: 2026-09-11
 keywords: ["boat repower Kawarthas","repower boat Ontario","Mercury repower process","repower vs buy new boat","Kawartha lakes repower","boat repower steps"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Repowering  
 **Published:** 2026-02-23  
-**Last reviewed:** 2026-08-19  
+**Last reviewed:** 2026-09-11  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/complete-guide-boat-repower-kawarthas
 
@@ -57,7 +57,16 @@ The boaters who regret a repower are almost always the ones who put a new motor 
 
 ---
 
-![Timeline: 6-step Mercury repower process at HBW, from hull walk-around to lake test.](/lovable-uploads/inline/repower-process-timeline.svg)
+### From request to handover
+
+1. **Share the boat details.** Use the [quote builder](/quote/motor-selection) to explore a repower and submit the [service request](https://hbw.wiki/service) before dropping off the boat.
+2. **Confirm fit and scope.** HBW reviews the hull, intended use, compatible equipment and work required.
+3. **Review the written quote.** Confirm the configuration, included work, availability, payment terms and scheduling with HBW.
+4. **Drop off when convenient.** Once the service request is complete, drop off anytime, including after hours.
+5. **Installation and checks.** HBW completes the approved work and confirms the testing appropriate to the boat and conditions.
+6. **Handover.** Review the completed work, documentation and owner instructions before taking the boat home.
+
+Timing depends on the boat, approved work, parts availability and testing conditions. Confirm your schedule with HBW.
 
 ## Step 1: Is Your Hull Worth Repowering?
 
@@ -95,10 +104,10 @@ This is the decision that anchors everything else.
 |---|---|---|
 | 14-16 ft aluminum console | 40-60 HP | Mercury 60 FourStroke, standard gearcase |
 | 16-18 ft aluminum fishing boat | 75-115 HP | Mercury 90 or 115 FourStroke, 90 for lighter use, 115 for regular full loads |
-| 18-20 ft aluminum or fiberglass console | 115-150 HP | Mercury 115 or 150 FourStroke, standard gearcase (CT is a pontoon and workboat gearcase, not for V-hulls) |
-| 18-22 ft pontoon | 60-115 HP | Mercury 60-115 Command Thrust (60 CT is the hero pick for 18-20 ft two-log pontoons; 150-class pontoons run the standard gearcase, since CT tops out at 115) |
+| 18-20 ft aluminum or fiberglass console | 115-150 HP | Mercury 115 or 150 FourStroke, standard gearcase (HBW often prefers standard on these planing V-hulls; CT is hull/load/prop specific) |
+| 18-22 ft pontoon | 60-115 HP | Mercury 60-115 Command Thrust (60 CT is the hero pick for 18-20 ft two-log pontoons; 150-class pontoons run the standard gearcase, subject to exact-model specification checks) |
 | 19-21 ft bass or tournament boat | 150-250 HP | Mercury FourStroke for real-world use, Pro XS if you run tournaments |
-| 22-24 ft tritoon or large pontoon | 150-200 HP | Mercury 150-200 FourStroke or Pro XS (standard gearcase; CT tops out at 115) |
+| 22-24 ft tritoon or large pontoon | 150-200 HP | Mercury 150-200 FourStroke or Pro XS (standard gearcase; confirm the exact model and gearcase) |
 
 ### FourStroke or Pro XS?
 
@@ -165,9 +174,13 @@ The schedule depends on the hull, current controls, rigging, parts, and any issu
 9. On-water checks on Rice Lake when safe seasonal conditions allow, with the scope matched to the motor, hull, rigging, and work order
 10. Customer receives the information needed to confirm any required Pleasure Craft Licence update
 
-![Mercury repower mid-install in the HBW service bay](/lovable-uploads/inline/inline-repower-shop.png)
+![A Harris Boat Works technician working beside an uncowled Mercury outboard suspended on the shop hoist](/lovable-uploads/blog-heroes-2026-07/hero-mercury-spring-run-up-hbw-service-2026-07.webp)
+
+*Photographed in our Gores Landing shop. It shows our own service work, not the specific job described above.*
 
 Before pickup, HBW documents the acceptance checks completed for the specific job. When safe seasonal conditions allow, that can include an on-water check on Rice Lake; otherwise, the alternate acceptance plan is documented with the customer. Transport Canada says licence information must be updated within 30 days when listed information changes. The boat owner remains responsible for the licence, and a dealer needs the owner's authorization to apply on their behalf. See our [Pleasure Craft Licence update guide](/blog/pleasure-craft-licence-update-repower-ontario) and confirm the current requirement for your boat.
+
+As checked September 5, 2026, new, transferred and renewed Pleasure Craft Licences are valid for five years. Older licences have their own expiry date or transition deadline; check your licence with Transport Canada. The current fee is $24.41 for a new, transferred, renewed or duplicate licence, while updates and cancellations are free. Fees may change each April 1.
 
 ---
 
@@ -231,8 +244,6 @@ Trade-in credit on your old motor, even a dead one, reduces the amount you finan
 
 Start at **mercuryrepower.ca** for live pricing on every Mercury we sell, real Canadian dollars, a few minutes to [build a quote](/quote/motor-selection).
 
-Or call **905-342-2153**. We will start with the hull walk-around, work through the right motor for how you actually boat, and give you a line-item quote before anything is ordered.
-
 **Phone:** 905-342-2153
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 **Configurator:** [Build Your Quote](/quote/motor-selection)
@@ -249,7 +260,7 @@ Or call **905-342-2153**. We will start with the hull walk-around, work through 
 ## Sources
 
 - Transport Canada, Pleasure Craft Licence: tc.canada.ca/en/marine-transportation/pleasure-craft-licensing
-- Mercury Marine, FourStroke and Pro XS outboard ranges: mercurymarine.com/us/en/engines/outboard
+- [Mercury Marine: FourStroke and Pro XS outboard ranges](https://www.mercurymarine.com/us/en/engines/outboard)
 - Mercury Marine, owner's resources and maintenance schedules: mercurymarine.com/us/en/service-and-support/owners-resources
 - Parks Canada, Trent-Severn Waterway operating season: parks.canada.ca/lhn-nhs/on/trentsevern
 
@@ -279,7 +290,7 @@ For a hull in solid structural condition, a repower almost always wins on the ma
 
 ### How long does a Kawartha repower take?
 
-There are two clocks: motor and rigging availability, then the scheduled shop work. HBW confirms the applicable installation window after reviewing the boat, required parts, and current shop capacity. Your boat stays with you until the drop-off date is confirmed.
+There are two clocks: motor and rigging availability, then the scheduled shop work. HBW confirms the applicable installation window after reviewing the boat, required parts, and current shop capacity. Complete the service request at hbw.wiki/service, then drop off your boat anytime, including after hours. HBW confirms the work schedule separately.
 
 ### Do I need new controls?
 
@@ -291,7 +302,7 @@ At 150 HP and above, yes. Hydraulic steering at that power is about safe, comfor
 
 ### Do I need to update my Pleasure Craft Licence?
 
-Yes, whenever motor horsepower, brand, or model changes. The update is free, takes about fifteen minutes online, and HBW handles it for every customer as part of the job.
+Review the information recorded on your Pleasure Craft Licence after a repower. Transport Canada requires changed licence information to be updated within 30 days, and updates are free. Check the current requirements for your boat and authorize any dealer help; do not assume that the fee for a new or renewed licence applies to an update.
 
 ### What happens to my old motor?
 

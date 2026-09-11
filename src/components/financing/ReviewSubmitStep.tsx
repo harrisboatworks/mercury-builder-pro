@@ -16,12 +16,13 @@ import { encryptSIN, getFriendlySinErrorMessage, generateSubmissionCorrelationId
 import { logFinancingSubmission } from '@/lib/financingSubmissionLog';
 import { useNavigate } from 'react-router-dom';
 import { Loader2, Check, Edit, ShieldCheck, FileText, CalendarCheck } from 'lucide-react';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { formatPhoneNumber } from '@/lib/validation';
 import { SuccessConfetti } from './SuccessConfetti';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { trackClaritySubmission } from '@/lib/analytics';
 import { submitFinancingApplication } from '@/lib/financingApplicationApi';
+import { formatSpecialFinancingLabel, isUsableFinancingRate } from '@/lib/finance';
 
 export function ReviewSubmitStep() {
   const { state, dispatch, clearStoredData } = useFinancing();
@@ -29,6 +30,7 @@ export function ReviewSubmitStep() {
   const navigate = useNavigate();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showConfetti, setShowConfetti] = useState(false);
+  const submissionIdRef = useRef(crypto.randomUUID());
   const { getChooseOneOptions } = useActivePromotions({ forceRefresh: true });
   const activeNoPaymentsOption = getChooseOneOptions().find((option) => option.id === 'no_payments');
 
@@ -158,6 +160,7 @@ export function ReviewSubmitStep() {
         const result = await submitFinancingApplication({
           applicationId: state.applicationId,
           resumeToken: state.resumeToken,
+          submissionId: submissionIdRef.current,
           applicantSinEncrypted,
           coApplicantSinEncrypted,
           application: {
@@ -325,7 +328,8 @@ export function ReviewSubmitStep() {
                           <>${state.purchaseDetails.promoSavings?.toLocaleString('en-CA')} CAD factory rebate<br /></>}
                         {state.purchaseDetails.promoOption === 'no_payments' && noPaymentsSummary}
                         {state.purchaseDetails.promoOption === 'special_financing' &&
-                          `${state.purchaseDetails.promoRate}% APR for ${state.purchaseDetails.promoTerm} months`}
+                          isUsableFinancingRate(state.purchaseDetails.promoRate) &&
+                          formatSpecialFinancingLabel(state.purchaseDetails.promoRate, state.purchaseDetails.promoTerm)}
                         {state.purchaseDetails.promoOption === 'cash_rebate' &&
                           `${state.purchaseDetails.promoValue}`}
                       </span>
@@ -610,19 +614,26 @@ export function ReviewSubmitStep() {
                   id="signature"
                   {...register('signature')}
                   placeholder="Type your full name"
+                  aria-required="true"
+                  aria-invalid={Boolean(errors.signature) || Boolean(signature && !signatureMatches)}
+                  aria-describedby={[
+                    'signature-help',
+                    errors.signature ? 'signature-error' : null,
+                    signature && !signatureMatches ? 'signature-mismatch' : null,
+                  ].filter(Boolean).join(' ') || undefined}
                   className={errors.signature ? 'border-destructive' : ''}
                 />
                 {signatureMatches && signature && (
                   <Check className="absolute right-3 top-3 h-4 w-4 text-green-500" />
                 )}
               </div>
-              <p className="text-sm text-muted-foreground font-light">
+              <p id="signature-help" className="text-sm text-muted-foreground font-light">
                 Must match: <span className="font-medium">{applicantFullName}</span>
               </p>
               {signature && !signatureMatches && (
-                <p className="text-sm text-destructive font-light">Signature must match your name</p>
+                <p id="signature-mismatch" role="alert" className="text-sm text-destructive font-light">Signature must match your name</p>
               )}
-              {errors.signature && <p className="text-sm text-destructive font-light">{errors.signature.message}</p>}
+              {errors.signature && <p id="signature-error" role="alert" className="text-sm text-destructive font-light">{errors.signature.message}</p>}
             </div>
 
             <div className="space-y-2">

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-mercury-outboard-lake-ontario-salmon-trout.md
-last_updated: 2026-08-19
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Best Mercury Outboard for Lake Ontario Salmon & Trout"
 description: "Choose a Mercury main outboard for a Lake Ontario salmon or trout boat by hull rating, loaded weight, use, range, and offshore conditions."
 category: "Fishing & Local"
 date_published: 2026-04-22
-date_modified: 2026-08-19
+date_modified: 2026-09-11
 keywords: ["Lake Ontario salmon fishing motor","best outboard Lake Ontario","Mercury outboard salmon trolling","Lake Ontario chinook king salmon","salmon fishing boat Ontario","Mercury 150 200 salmon","Lake Ontario fishing charter motor"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,9 +25,11 @@ revenue_driver: repower
 
 **Category:** Fishing & Local  
 **Published:** 2026-04-22  
-**Last reviewed:** 2026-08-19  
+**Last reviewed:** 2026-09-11  
 **Read time:** 15 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-mercury-outboard-lake-ontario-salmon-trout
+
+*Hero image: AI-generated editorial fishing scene. It illustrates boating context, not an exact ProKicker configuration, location or completed HBW customer installation.*
 
 ## Quick Answer
 
@@ -35,7 +37,7 @@ Lake Ontario salmon and trout trolling typically calls for a Mercury 200–300 H
 
 ---
 
-![Table of Mercury outboard setups for Lake Ontario salmon/trout by boat size: main motor (115-300 HP) and kicker (15 ProKicker or none).](/lovable-uploads/inline/lake-ontario-hp-setup.svg)
+**Build the setup around the boat and trip.** Confirm hull ratings, loaded use, rigging, desired trolling control and charging needs. Compare exact engine configurations with HBW. A main-motor or auxiliary-motor choice does not by itself guarantee a safe return in Lake Ontario conditions.
 
 ## Lake Ontario is Different Fishing Water
 
@@ -133,7 +135,7 @@ At the same HP, the Pro XS carries a price premium. Build both at [mercuryrepowe
 
 Hull make, model, year, and length. Current vs planned motor. Your primary fishing use (recreational, tournament, charter). How far offshore you typically run. Slip or trailer storage. Budget.
 
-We quote Lake Ontario repowers through [mercuryrepower.ca](https://www.mercuryrepower.ca). If you want to talk through the setup before configuring, call us at 905-342-2153.
+We quote Lake Ontario repowers through [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 ---
 
@@ -148,8 +150,6 @@ If your boat is slip-stored in a Lake Ontario marina and you need engine service
 ## Build Your Lake Ontario Setup
 
 Configure your motor, V8 FourStroke, Pro XS, or ProKicker, at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**. Live pricing in CAD, no games.
-
-Questions before you configure? Call **905-342-2153**.
 
 Harris Boat Works | Mercury Marine Premier Dealer | Family-owned since 1947 | Mercury dealer since 1965 | Gores Landing, ON
 

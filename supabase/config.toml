@@ -18,6 +18,9 @@ verify_jwt = false
 [functions.process-notifications]
 verify_jwt = false
 
+[functions.send-notification]
+verify_jwt = true
+
 [functions.notification-webhook]
 verify_jwt = false
 
@@ -168,6 +171,8 @@ verify_jwt = false
 verify_jwt = false
 
 [functions.elevenlabs-mcp-server]
+# Third-party ElevenLabs caller. In-code gate uses ELEVENLABS_MCP_SECRET
+# via x-elevenlabs-mcp-secret. Do not reuse EDGE_INTERNAL_SECRET.
 verify_jwt = false
 
 [functions.perplexity-prefetch]
@@ -241,4 +246,43 @@ verify_jwt = false
 verify_jwt = false
 
 [functions.consultation-document-retention]
+verify_jwt = false
+
+[functions.admin-consultation-document]
+verify_jwt = false
+
+[functions.grok-supabase-read]
+verify_jwt = false
+
+[functions.grok-supabase-oauth]
+verify_jwt = false
+
+[functions.scrape-mercury-public]
+verify_jwt = false
+
+[functions.fetch-part-images]
+verify_jwt = false
+
+[functions.sync-inventory-api]
+verify_jwt = false
+
+[functions.auto-image-enhancer]
+verify_jwt = false
+
+[functions.migrate-motor-images]
+verify_jwt = false
+
+[functions.optimize-motor-images]
+verify_jwt = false
+
+[functions.motor-health-monitor]
+verify_jwt = false
+
+[functions.sync-dropbox-folder]
+verify_jwt = false
+
+[functions.dropbox-chooser-upload]
+verify_jwt = false
+
+[functions.voice-create-quote]
 verify_jwt = false

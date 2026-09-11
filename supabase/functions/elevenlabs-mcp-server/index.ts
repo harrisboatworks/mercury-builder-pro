@@ -12,12 +12,48 @@ import {
   isDefaultQuotedMotor,
   resolveCustomerSellingPrice,
 } from "../_shared/customer-knowledge-context.ts";
+import { fetchCanonicalHbwValuation, HbwValuationError } from "../_shared/hbw-valuation.ts";
+import { mapVoiceTradeCondition, resolveVoiceArchitecture } from "../_shared/voice-trade-in-input.ts";
+import { checkRateLimit } from "../_shared/rate-limit.ts";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
-  "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
+  "Access-Control-Allow-Headers":
+    "authorization, x-client-info, apikey, content-type, x-elevenlabs-mcp-secret",
   "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
 };
+
+const ELEVENLABS_MCP_SECRET_HEADER = "x-elevenlabs-mcp-secret";
+
+function unauthorizedMcpResponse(): Response {
+  return new Response(JSON.stringify({ error: "Unauthorized" }), {
+    status: 401,
+    headers: { ...corsHeaders, "Content-Type": "application/json" },
+  });
+}
+
+async function secretsMatch(provided: string, expected: string): Promise<boolean> {
+  const encoder = new TextEncoder();
+  const [left, right] = await Promise.all([
+    crypto.subtle.digest("SHA-256", encoder.encode(provided)),
+    crypto.subtle.digest("SHA-256", encoder.encode(expected)),
+  ]);
+  const a = new Uint8Array(left);
+  const b = new Uint8Array(right);
+  let difference = 0;
+  for (let i = 0; i < a.length; i += 1) difference |= a[i] ^ b[i];
+  return difference === 0;
+}
+
+async function rejectIfMissingElevenLabsSecret(req: Request): Promise<Response | null> {
+  const expected = Deno.env.get("ELEVENLABS_MCP_SECRET") ?? "";
+  if (!expected) return unauthorizedMcpResponse();
+  const provided = req.headers.get(ELEVENLABS_MCP_SECRET_HEADER) ?? "";
+  if (!provided || !(await secretsMatch(provided, expected))) {
+    return unauthorizedMcpResponse();
+  }
+  return null;
+}
 
 /**
  * Resolve the customer-facing selling price using the standard hierarchy:
@@ -94,7 +130,7 @@ const TOOLS = [
   },
   {
     name: "estimate_trade_value",
-    description: "Estimate trade-in value for a used motor. Use when customers want to trade in their current motor.",
+    description: "Estimate trade-in value for a used motor using the live Harris Boat Works valuation. Ask for condition and engine type when they are missing. Do not invent a number.",
     inputSchema: {
       type: "object",
       properties: {
@@ -103,12 +139,18 @@ const TOOLS = [
         horsepower: { type: "number", description: "Motor horsepower" },
         condition: { 
           type: "string", 
-          enum: ["excellent", "good", "fair", "poor"],
-          description: "Overall condition" 
+          enum: ["excellent", "good", "fair", "poor", "rough"],
+          description: "Overall condition. Rough is valued as poor. Ask if missing."
         },
-        hours: { type: "number", description: "Engine hours (optional)" }
+        engine_type: {
+          type: "string",
+          enum: ["4-stroke", "2-stroke", "proxs", "optimax", "etec"],
+          description: "Engine architecture. Ask if unknown; do not assume four-stroke."
+        },
+        model: { type: "string", description: "Model text that may identify architecture" },
+        hours: { type: "number", description: "Engine hours, including explicit zero" }
       },
-      required: ["brand", "year", "horsepower", "condition"]
+      required: ["brand", "year", "horsepower"]
     }
   },
   {
@@ -381,8 +423,113 @@ function getSupabase() {
   return createClient(url, key);
 }
 
+function mcpText(text: string): { content: { type: string; text: string }[] } {
+  return { content: [{ type: "text", text }] };
+}
+
+function digitsOnly(value: unknown): string {
+  return String(value ?? "").replace(/\D/g, "");
+}
+
+function lastTenPhoneDigits(value: unknown): string {
+  const digits = digitsOnly(value);
+  return digits.length >= 10 ? digits.slice(-10) : "";
+}
+
+function phoneLookupCandidates(value: unknown): string[] {
+  const trimmed = String(value ?? "").trim();
+  const last10 = lastTenPhoneDigits(trimmed);
+  if (!last10) return [];
+  const area = last10.slice(0, 3);
+  const mid = last10.slice(3, 6);
+  const rest = last10.slice(6);
+  const digits = digitsOnly(trimmed);
+  return [...new Set([
+    trimmed,
+    digits,
+    last10,
+    `1${last10}`,
+    `+1${last10}`,
+    `(${area}) ${mid}-${rest}`,
+    `(${area})${mid}-${rest}`,
+    `${area}-${mid}-${rest}`,
+    `${area}.${mid}.${rest}`,
+    `${area} ${mid} ${rest}`,
+    `+1 (${area}) ${mid}-${rest}`,
+    `+1 ${area}-${mid}-${rest}`,
+    `1-${area}-${mid}-${rest}`,
+  ].filter((candidate) => candidate.length > 0))];
+}
+
+function normalizeEmail(value: unknown): string {
+  return String(value ?? "").trim().toLowerCase();
+}
+
+function escapeIlikeExact(value: string): string {
+  return value.replace(/\\/g, "\\\\").replace(/%/g, "\\%").replace(/_/g, "\\_");
+}
+
+const RELAY_UNKNOWN_PHONE =
+  "I can only text a number we already have on file. Could you confirm the phone number we have for you, or I can have someone from Harris Boat Works follow up?";
+const RELAY_UNKNOWN_EMAIL =
+  "I can only email an address we already have on file. Could you confirm the email we have for you, or I can have someone from Harris Boat Works follow up?";
+const RELAY_RATE_LIMITED =
+  "I've already sent a few messages your way. Please give us a few minutes, or I can have someone from the team follow up.";
+
+async function isKnownCustomerPhone(
+  supabase: { from: (table: string) => any },
+  phone: unknown,
+): Promise<boolean> {
+  const candidates = phoneLookupCandidates(phone);
+  if (!candidates.length) return false;
+  const { data, error } = await supabase
+    .from("customer_quotes")
+    .select("id")
+    .in("customer_phone", candidates)
+    .limit(1);
+  return !error && Array.isArray(data) && data.length > 0;
+}
+
+async function isKnownCustomerEmail(
+  supabase: { from: (table: string) => any },
+  email: unknown,
+): Promise<boolean> {
+  const key = normalizeEmail(email);
+  if (!key || !key.includes("@")) return false;
+  const { data, error } = await supabase
+    .from("customer_quotes")
+    .select("id")
+    .ilike("customer_email", escapeIlikeExact(key))
+    .limit(1);
+  return !error && Array.isArray(data) && data.length > 0;
+}
+
+async function allowRelay(
+  req: Request,
+  opts: { actionPrefix: string; identifier: string; recipientMax: number; ipMax: number },
+): Promise<boolean> {
+  const ipOk = await checkRateLimit(req, {
+    action: `${opts.actionPrefix}_ip`,
+    maxAttempts: opts.ipMax,
+    windowMinutes: 60,
+    failClosed: true,
+  });
+  if (!ipOk) return false;
+  return await checkRateLimit(req, {
+    identifier: opts.identifier,
+    action: `${opts.actionPrefix}_recipient`,
+    maxAttempts: opts.recipientMax,
+    windowMinutes: 60,
+    failClosed: true,
+  });
+}
+
 // Tool execution handlers
-async function executeTool(toolName: string, args: Record<string, unknown>): Promise<{ content: { type: string; text: string }[] }> {
+async function executeTool(
+  toolName: string,
+  args: Record<string, unknown>,
+  req: Request,
+): Promise<{ content: { type: string; text: string }[] }> {
   const supabase = getSupabase();
   
   switch (toolName) {
@@ -426,37 +573,68 @@ async function executeTool(toolName: string, args: Record<string, unknown>): Pro
     }
     
     case "estimate_trade_value": {
-      const year = args.year as number;
-      const hp = args.horsepower as number;
-      const condition = args.condition as string;
-      const currentYear = new Date().getFullYear();
-      const age = currentYear - year;
-      
-      let baseValue = hp * 50;
-      const ageDepreciation = Math.min(age * 0.10, 0.70);
-      baseValue *= (1 - ageDepreciation);
-      
-      const conditionMultipliers: Record<string, number> = {
-        excellent: 1.2,
-        good: 1.0,
-        fair: 0.75,
-        poor: 0.5
-      };
-      baseValue *= conditionMultipliers[condition] || 1.0;
-      
-      if ((args.brand as string)?.toLowerCase().includes("mercury")) {
-        baseValue *= 1.15;
+      const brand = String(args.brand || "").trim();
+      const year = Number(args.year);
+      const hp = Number(args.horsepower);
+      const condition = mapVoiceTradeCondition(args.condition as string | undefined);
+      if (!condition) {
+        return {
+          content: [{
+            type: "text",
+            text: "I need the motor condition before I can value a trade-in. Is it excellent, good, fair, or poor? Rough condition is valued as poor.",
+          }],
+        };
       }
-      
-      const lowEstimate = Math.round(baseValue * 0.85 / 100) * 100;
-      const highEstimate = Math.round(baseValue * 1.15 / 100) * 100;
-      
-      return { 
-        content: [{ 
-          type: "text", 
-          text: `Estimated trade-in value for your ${year} ${args.brand} ${hp}HP (${condition} condition): $${lowEstimate} - $${highEstimate} CAD. This is a rough estimate - the final value depends on an in-person inspection. Mercury motors typically hold value better.` 
-        }]
-      };
+      const architecture = resolveVoiceArchitecture({
+        engine_type: args.engine_type as string | undefined,
+        model: args.model as string | undefined,
+      });
+      if (!architecture) {
+        return {
+          content: [{
+            type: "text",
+            text: "I need the engine type before I can value that trade-in. Is it a 4-stroke, 2-stroke, OptiMax, Pro XS, or E-TEC?",
+          }],
+        };
+      }
+      if (!brand || !Number.isInteger(year) || year < 1950 || year > new Date().getFullYear() || !Number.isFinite(hp) || hp <= 0 || hp > 1000) {
+        return {
+          content: [{
+            type: "text",
+            text: "I need the brand, year, and horsepower before I can request a trade-in value.",
+          }],
+        };
+      }
+      const rawHours = args.hours ?? args.engine_hours;
+      const hours = rawHours === undefined || rawHours === null || rawHours === '' ? undefined : typeof rawHours === 'number' || typeof rawHours === 'string' ? Number(rawHours) : NaN;
+      if (hours !== undefined && (!Number.isFinite(hours) || hours < 0 || hours > 100000)) return {content:[{type:'text',text:'Engine hours must be a number from 0 to 100000.'}]};
+      try {
+        const value = await fetchCanonicalHbwValuation({
+          brand,
+          year,
+          hp,
+          condition,
+          stroke: architecture ?? undefined,
+          hours: hours !== undefined && Number.isFinite(hours) ? hours : undefined,
+          model: typeof args.model === "string" ? args.model : undefined,
+        });
+        return {
+          content: [{
+            type: "text",
+            text: `Live Harris Boat Works valuation for a ${year} ${brand} ${hp}HP ${value.effectiveInputs?.stroke || architecture || 'confirmed engine'} in ${condition} condition: $${value.wholesale} wholesale, range $${value.rangeLow}–$${value.rangeHigh}. Final value requires in-person inspection.`,
+          }],
+        };
+      } catch (error) {
+        const reason = error instanceof HbwValuationError ? error.code : "unavailable";
+        return {
+          content: [{
+            type: "text",
+            text: reason === "rate_limited"
+              ? "The valuation service asked us to wait a few minutes before another estimate."
+              : "The live trade-in valuation is unavailable or rejected those details.",
+          }],
+        };
+      }
     }
     
     case "recommend_motor": {
@@ -538,6 +716,17 @@ ${motor1.horsepower > motor2.horsepower ? `The ${motor1.model_display} has more 
     }
     
     case "send_motor_photos": {
+      const photosAllowed = await allowRelay(req, {
+        actionPrefix: "elevenlabs_mcp_send_motor_photos",
+        identifier: lastTenPhoneDigits(args.customer_phone) || "unknown",
+        recipientMax: 6,
+        ipMax: 60,
+      });
+      if (!photosAllowed) return mcpText(RELAY_RATE_LIMITED);
+      if (!await isKnownCustomerPhone(supabase, args.customer_phone)) {
+        return mcpText(RELAY_UNKNOWN_PHONE);
+      }
+
       // Check if SMS is configured before attempting
       const twilioSid = Deno.env.get("TWILIO_ACCOUNT_SID");
       const twilioToken = Deno.env.get("TWILIO_AUTH_TOKEN");
@@ -584,6 +773,17 @@ ${motor1.horsepower > motor2.horsepower ? `The ${motor1.model_display} has more 
     }
     
     case "send_motor_info_email": {
+      const emailAllowed = await allowRelay(req, {
+        actionPrefix: "elevenlabs_mcp_send_motor_info_email",
+        identifier: normalizeEmail(args.customer_email) || "unknown",
+        recipientMax: 8,
+        ipMax: 30,
+      });
+      if (!emailAllowed) return mcpText(RELAY_RATE_LIMITED);
+      if (!await isKnownCustomerEmail(supabase, args.customer_email)) {
+        return mcpText(RELAY_UNKNOWN_EMAIL);
+      }
+
       const customerEmail = args.customer_email as string;
       const customerName = (args.customer_name as string) || "Customer";
       const motorModel = args.motor_model as string;
@@ -621,13 +821,13 @@ ${motor1.horsepower > motor2.horsepower ? `The ${motor1.model_display} has more 
       const modelLabel = motor.model_display || motor.model;
 
       const rows = [
-        { label: "Motor", value: esc(modelLabel) },
-        { label: "Horsepower", value: `${motor.horsepower} HP` },
-        { label: "Family", value: esc(motor.family || "FourStroke") },
-        { label: "Shaft length", value: esc(motor.shaft || "Standard") },
-        { label: "Availability", value: motor.in_stock ? "In stock" : "Available to order (7 to 14 days)" },
+        { label: "Motor", valueHtml: esc(modelLabel) },
+        { label: "Horsepower", valueHtml: `${motor.horsepower} HP` },
+        { label: "Family", valueHtml: esc(motor.family || "FourStroke") },
+        { label: "Shaft length", valueHtml: esc(motor.shaft || "Standard") },
+        { label: "Availability", valueHtml: motor.in_stock ? "In stock" : "Available to order (7 to 14 days)" },
       ];
-      if (priceLine) rows.push({ label: "Price", value: priceLine });
+      if (priceLine) rows.push({ label: "Price", valueHtml: priceLine });
 
       const body = `
         <p style="margin:0 0 14px 0;">Hi ${esc(customerName)},</p>
@@ -652,7 +852,7 @@ ${motor1.horsepower > motor2.horsepower ? `The ${motor1.model_display} has more 
         await resend.emails.send({
           from: "Harris Boat Works <quotes@mercuryrepower.ca>",
           to: [customerEmail],
-          replyTo: "info@harrisboatworks.ca",
+          reply_to: "info@harrisboatworks.ca",
           subject: `Mercury ${modelLabel} details`,
           html: emailHtml,
         });
@@ -807,7 +1007,7 @@ ${motor1.horsepower > motor2.horsepower ? `The ${motor1.model_display} has more 
       
       let query = supabase
         .from("motor_models")
-        .select("model_display, model, horsepower, msrp, dealer_price, sale_price, base_price, manual_overrides, availability, family, in_stock")
+        .select("model_display, model, horsepower, msrp, dealer_price, sale_price, base_price, manual_overrides, availability, family, in_stock, stock_quantity")
         .or(`model_display.ilike.%${searchModel}%,model.ilike.%${searchModel}%,family.ilike.%${searchModel}%`);
       
       if (hp) query = query.eq("horsepower", hp);
@@ -972,11 +1172,13 @@ ${motor1.horsepower > motor2.horsepower ? `The ${motor1.model_display} has more 
     }
     
     case "get_store_hours": {
-      const { profile } = await fetchPublishedBusinessProfile();
+      const { profile, published } = await fetchPublishedBusinessProfile();
       return { 
         content: [{ 
           type: "text", 
-          text: buildBusinessCustomerAnswer(profile, "What are your current store hours?"),
+          text: published
+            ? buildBusinessCustomerAnswer(profile, "What are your current store hours?")
+            : "I can't verify the current store hours right now. Please check https://www.mercuryrepower.ca/contact or call Harris Boat Works at (905) 342-2153 before travelling.",
         }] 
       };
     }
@@ -1093,9 +1295,9 @@ ${motor1.horsepower > motor2.horsepower ? `The ${motor1.model_display} has more 
           };
         }
         
-        const partName = result.name || partDescription || "Mercury Part";
-        const partDesc = result.description || "";
-        const priceInfo = result.cadPrice ? `$${result.cadPrice.toLocaleString()} CAD` : "Contact us for pricing";
+        const partName = result.data?.name || partDescription || "Mercury Part";
+        const partDesc = result.data?.description || "";
+        const priceInfo = result.data?.cadPrice ? `$${result.data.cadPrice.toLocaleString()} CAD` : "Contact us for pricing";
         
         return { 
           content: [{ 
@@ -1137,9 +1339,12 @@ function handleToolsList() {
   return { tools: TOOLS };
 }
 
-async function handleToolCall(params: { name: string; arguments?: Record<string, unknown> }): Promise<{ content: { type: string; text: string }[] }> {
+async function handleToolCall(
+  params: { name: string; arguments?: Record<string, unknown> },
+  req: Request,
+): Promise<{ content: { type: string; text: string }[] }> {
   console.log(`[MCP] Executing tool: ${params.name}`, params.arguments);
-  return await executeTool(params.name, params.arguments || {});
+  return await executeTool(params.name, params.arguments || {}, req);
 }
 
 serve(async (req) => {
@@ -1147,6 +1352,9 @@ serve(async (req) => {
   if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
   }
+
+  const denied = await rejectIfMissingElevenLabsSecret(req);
+  if (denied) return denied;
 
   const url = new URL(req.url);
   console.log(`[MCP Streamable HTTP] ${req.method} ${url.pathname}`);
@@ -1169,7 +1377,7 @@ serve(async (req) => {
           break;
 
         case "tools/call":
-          result = await handleToolCall(body.params);
+          result = await handleToolCall(body.params, req);
           break;
 
         case "ping":

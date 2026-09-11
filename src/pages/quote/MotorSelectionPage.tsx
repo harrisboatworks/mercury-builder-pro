@@ -1,3 +1,4 @@
+import { resolvePublicSellingPrice } from '../../../supabase/functions/_shared/public-motor-contract';
 import { useEffect, useState, useMemo, useCallback, useRef } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 
@@ -14,7 +15,16 @@ import { useFavoriteMotors } from '@/hooks/useFavoriteMotors';
 import { useRecentlyViewed } from '@/hooks/useRecentlyViewed';
 import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
-import { daysUntil } from '@/lib/finance';
+import {
+  daysUntil,
+  DEALERPLAN_FEE,
+  FINANCING_CONTRACT_TERM_MONTHS,
+  FINANCING_MAXIMUM_AMORTIZATION_MONTHS,
+  formatFinancingRate,
+  isMercuryPromoActive,
+  MERCURY_PROMO_APR,
+} from '@/lib/finance';
+import { formatPromoCalendarDate } from '@/lib/quote-utils';
 import { Clock } from 'lucide-react';
 import { X } from 'lucide-react';
 // useScrollDirection removed - search bar scrolls naturally now
@@ -68,6 +78,11 @@ import {
   writeMotorSelectionUrlState,
   type MotorSelectionUrlState,
 } from '@/lib/motor-selection-url-state';
+import {
+  parseAgentQuoteHandoff,
+  useAgentQuoteHandoff,
+  UCP_CHECKOUT_REF_FLAG,
+} from '@/lib/agent-quote-handoff';
 
 // Refined navy promo strip, single-line on desktop, 2-line on mobile, dismissible
 const PROMO_DISMISS_KEY = 'repower_promo_dismissed_v1';
@@ -235,7 +250,7 @@ function PromoBannerConditional() {
   }
 
   const endLabel = promo.end_date
-    ? `Ends ${new Date(promo.end_date).toLocaleDateString('en-CA', { month: 'long', day: 'numeric', year: 'numeric' })}`
+    ? `Ends ${formatPromoCalendarDate(promo.end_date)}`
     : 'Ends May 17, 2026';
   const title = promo.bonus_title || promo.name || 'Current Mercury Promotion';
   return (
@@ -461,6 +476,12 @@ function MotorSelectionContent() {
   }
   const initialUrlState = initialUrlStateRef.current;
   const { state, dispatch } = useQuote();
+  useAgentQuoteHandoff({
+    searchParams,
+    setSearchParams,
+    state,
+    dispatch,
+  });
   const { toast } = useToast();
   
   
@@ -478,11 +499,23 @@ function MotorSelectionContent() {
   const { recentlyViewed, addToRecentlyViewed, clearRecentlyViewed } = useRecentlyViewed();
   const { hasSeen: hasSeenVoiceCoachMark, markAsSeen: markVoiceCoachMarkSeen } = useFeatureDiscovery('harris-voice-coachmark');
   const { promotions: activePromotionsForCards } = useActivePromotions();
+  const { promo: financingPromo } = useActiveFinancingPromo();
+  const financingRate = typeof financingPromo?.rate === 'number'
+    && Number.isFinite(financingPromo.rate)
+    && financingPromo.rate >= 0
+      ? financingPromo.rate
+      : undefined;
+  const financingRateLabel = financingRate !== undefined
+    ? formatFinancingRate(financingRate)
+    : isMercuryPromoActive()
+      ? formatFinancingRate(MERCURY_PROMO_APR)
+      : 'the applicable tiered APR';
   const [showComparison, setShowComparison] = useState(false);
 
   // Shared data object for motor cards, avoids per-card hook instantiation
   const sharedCardData: SharedCardData = useMemo(() => ({
     promotions: activePromotionsForCards,
+    financingRate,
     toggleComparison,
     isInComparison,
     comparisonCount,
@@ -490,7 +523,7 @@ function MotorSelectionContent() {
     hasSeenVoiceCoachMark,
     markVoiceCoachMarkSeen,
     addToRecentlyViewed,
-  }), [activePromotionsForCards, toggleComparison, isInComparison, comparisonCount, comparisonFull, hasSeenVoiceCoachMark, markVoiceCoachMarkSeen, addToRecentlyViewed]);
+  }), [activePromotionsForCards, financingRate, toggleComparison, isInComparison, comparisonCount, comparisonFull, hasSeenVoiceCoachMark, markVoiceCoachMarkSeen, addToRecentlyViewed]);
   
   // Search overlay state - triggered from header search icon
   const [showSearchOverlay, setShowSearchOverlay] = useState(false);
@@ -815,7 +848,7 @@ if (event.type === 'filter_motors') {
 
   // Convert DB motor to Motor type and apply promotions (same logic as original)
   const processedMotors = useMemo(() => {
-    return motors.map(dbMotor => {
+    return motors.filter(dbMotor => resolvePublicSellingPrice(dbMotor) !== null).map(dbMotor => {
       // Apply promotions - prioritize manual overrides, then msrp
       const manualOverrides = dbMotor.manual_overrides || {};
       const basePrice = manualOverrides.base_price || dbMotor.msrp || dbMotor.base_price || 0;
@@ -824,10 +857,7 @@ if (event.type === 'filter_motors') {
       const salePriceExpires = manualOverrides.sale_price_expires;
       const isManualSaleExpired = salePriceExpires && new Date(salePriceExpires) < new Date();
       
-      const salePrice = (!isManualSaleExpired && manualOverrides.sale_price) || 
-                       dbMotor.sale_price || 
-                       (dbMotor.dealer_price && dbMotor.dealer_price < (dbMotor.msrp || basePrice) ? dbMotor.dealer_price : null);
-      let effectivePrice = salePrice || basePrice;
+      let effectivePrice = resolvePublicSellingPrice(dbMotor) ?? 0;
       let promoTexts: string[] = [];
       
       // Find applicable promotions
@@ -919,7 +949,7 @@ if (event.type === 'filter_motors') {
         type: motorFamily,
         specs: `${dbMotor.horsepower}HP ${dbMotor.motor_type || 'FourStroke'}`,
         basePrice: basePrice,
-        salePrice: salePrice,
+        salePrice: effectivePrice < basePrice ? effectivePrice : null,
         msrp: dbMotor.msrp || basePrice, // Preserve original MSRP from database
         originalPrice: basePrice, // Use calculated basePrice with msrp fallback
         savings: Math.max(0, basePrice - effectivePrice), // Ensure savings is never negative
@@ -950,32 +980,6 @@ if (event.type === 'filter_motors') {
       return convertedMotor;
     });
   }, [motors, promotions, promotionRules]);
-
-  // Calculate monthly payments for each motor
-  
-  // Get active financing promo for dynamic rate
-  const { promo: financingPromo } = useActiveFinancingPromo();
-  const currentFinancingRate = financingPromo?.rate ?? 7.99;
-  
-  const monthlyPayments = useMemo(() => {
-    const payments: Record<string, number | null> = {};
-    
-    processedMotors.forEach(motor => {
-      // Simple calculation without hook - matches useMotorMonthlyPayment logic
-      if (motor.price > 5000) {
-        const annualRate = currentFinancingRate; // Dynamic rate from promo
-        const monthlyRate = annualRate / 100 / 12;
-        const termMonths = 60;
-        const priceWithHST = motor.price * 1.13;
-        const monthlyAmount = priceWithHST * (monthlyRate * Math.pow(1 + monthlyRate, termMonths)) / (Math.pow(1 + monthlyRate, termMonths) - 1);
-        payments[motor.id] = Math.round(monthlyAmount);
-      } else {
-        payments[motor.id] = null;
-      }
-    });
-    
-    return payments;
-  }, [processedMotors, currentFinancingRate]);
 
   // Filter motors with intelligent search + fuzzy matching
   const filteredMotors = useMemo(() => {
@@ -1143,6 +1147,13 @@ if (event.type === 'filter_motors') {
           source: 'mercury_9_9_mh_sale',
         });
         dispatch({ type: 'START_MOTOR_ONLY_QUOTE', payload: targetMotor });
+        const { ucpCheckoutRef } = parseAgentQuoteHandoff(searchParams);
+        if (ucpCheckoutRef) {
+          dispatch({
+            type: 'SET_UI_FLAG',
+            payload: { key: UCP_CHECKOUT_REF_FLAG, value: ucpCheckoutRef },
+          });
+        }
         navigate('/quote/summary?intent=motor-only', { replace: true });
         return true;
       }
@@ -1282,6 +1293,10 @@ if (event.type === 'filter_motors') {
 
     // Add motor to quote context
     dispatch({ type: 'SET_MOTOR', payload: motor });
+    const ucpCheckoutRef = parseAgentQuoteHandoff(searchParams).ucpCheckoutRef ?? state.uiFlags?.[UCP_CHECKOUT_REF_FLAG];
+    if (typeof ucpCheckoutRef === 'string') {
+      dispatch({ type: 'SET_UI_FLAG', payload: { key: UCP_CHECKOUT_REF_FLAG, value: ucpCheckoutRef } });
+    }
     
     // Auto-navigate to options step
     setTimeout(() => {
@@ -1683,14 +1698,18 @@ if (event.type === 'filter_motors') {
           {finalFilteredMotors.length > 0 && (
             <div className="mt-12 pt-8 border-t border-repower-navy-900/10">
               <p className="text-xs font-light text-repower-navy-900/400 text-center max-w-3xl mx-auto">
-                * Monthly payment estimates based on recommended financing term at {currentFinancingRate}% APR with $0 down, 
-                including HST and finance fee. Terms vary by purchase amount. Subject to credit approval.
-                {financingPromo?.promo_end_date && (
-                  <span className="ml-2 inline-flex items-center gap-1 text-repower-gold font-medium">
-                    <Clock className="h-3 w-3" />
-                    Promo rate ends in {daysUntil(financingPromo.promo_end_date)} days
-                  </span>
-                )}
+                * Monthly payment estimates use the recommended amortization at {financingRateLabel} with $0 down,
+                including 13% HST and the ${DEALERPLAN_FEE} DealerPlan fee. Contract term up to {FINANCING_CONTRACT_TERM_MONTHS} months;
+                amortization up to {FINANCING_MAXIMUM_AMORTIZATION_MONTHS} months may leave a balance due at maturity. Terms vary by purchase amount. OAC.
+                {financingPromo?.promo_end_date && (() => {
+                  const left = daysUntil(financingPromo.promo_end_date);
+                  return (
+                    <span className="ml-2 inline-flex items-center gap-1 text-repower-gold font-medium">
+                      <Clock className="h-3 w-3" />
+                      Promo rate {left === 0 ? 'ends today' : `ends in ${left} days`}
+                    </span>
+                  );
+                })()}
               </p>
             </div>
           )}

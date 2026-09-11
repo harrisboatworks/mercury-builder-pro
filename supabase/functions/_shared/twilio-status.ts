@@ -1,57 +1,77 @@
+/**
+ * Twilio SMS delivery-status helpers.
+ * Status names: https://www.twilio.com/docs/sms/api/message-resource#message-status-values
+ *
+ * Callback URLs are derived from TWILIO_WEBHOOK_URL the same way
+ * twilio-signature.ts signs inbound requests. Request/proxy host is never used.
+ */
+
+import { resolveConfiguredTwilioWebhookUrl } from "./twilio-signature.ts";
+
 export const TWILIO_MESSAGE_STATUSES = [
-  'accepted',
-  'scheduled',
-  'queued',
-  'sending',
-  'sent',
-  'partially_delivered',
-  'delivered',
-  'read',
-  'canceled',
-  'failed',
-  'undelivered',
+  "accepted",
+  "scheduled",
+  "queued",
+  "sending",
+  "sent",
+  "partially_delivered",
+  "delivered",
+  "read",
+  "canceled",
+  "failed",
+  "undelivered",
 ] as const;
 
 export type TwilioMessageStatus = (typeof TWILIO_MESSAGE_STATUSES)[number];
 
 const PRE_TERMINAL_STATUSES = [
-  'pending',
-  'accepted',
-  'scheduled',
-  'queued',
-  'sending',
-  'sent',
+  "pending",
+  "accepted",
+  "scheduled",
+  "queued",
+  "sending",
+  "sent",
 ] as const;
 
 const ALLOWED_CURRENT_STATUS: Readonly<
   Record<TwilioMessageStatus, readonly string[]>
 > = {
-  accepted: ['pending', 'accepted'],
-  scheduled: ['pending', 'accepted', 'scheduled'],
-  queued: ['pending', 'accepted', 'scheduled', 'queued'],
-  sending: ['pending', 'accepted', 'scheduled', 'queued', 'sending'],
+  accepted: ["pending", "accepted"],
+  scheduled: ["pending", "accepted", "scheduled"],
+  queued: ["pending", "accepted", "scheduled", "queued"],
+  sending: ["pending", "accepted", "scheduled", "queued", "sending"],
   sent: [...PRE_TERMINAL_STATUSES],
-  partially_delivered: [...PRE_TERMINAL_STATUSES, 'partially_delivered'],
+  partially_delivered: [...PRE_TERMINAL_STATUSES, "partially_delivered"],
   delivered: [
     ...PRE_TERMINAL_STATUSES,
-    'partially_delivered',
-    'delivered',
+    "partially_delivered",
+    "delivered",
   ],
   read: [
     ...PRE_TERMINAL_STATUSES,
-    'partially_delivered',
-    'delivered',
-    'read',
+    "partially_delivered",
+    "delivered",
+    "read",
   ],
-  canceled: [...PRE_TERMINAL_STATUSES, 'canceled'],
-  failed: [...PRE_TERMINAL_STATUSES, 'failed'],
-  undelivered: [...PRE_TERMINAL_STATUSES, 'undelivered'],
+  canceled: [...PRE_TERMINAL_STATUSES, "canceled"],
+  failed: [...PRE_TERMINAL_STATUSES, "failed"],
+  undelivered: [...PRE_TERMINAL_STATUSES, "undelivered"],
 };
+
+const SMS_LOG_ID_PATTERN =
+  /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
+const MESSAGE_SID_PATTERN = /^SM[0-9a-f]{32}$/i;
 
 export function isTwilioMessageStatus(
   value: string | null | undefined,
 ): value is TwilioMessageStatus {
   return TWILIO_MESSAGE_STATUSES.includes(value as TwilioMessageStatus);
+}
+
+export function isTwilioMessageSid(
+  value: string | null | undefined,
+): value is string {
+  return typeof value === "string" && MESSAGE_SID_PATTERN.test(value);
 }
 
 export function allowedCurrentStatusesFor(
@@ -68,7 +88,7 @@ export function canApplyTwilioStatus(
 }
 
 export function isTwilioFailureStatus(status: TwilioMessageStatus): boolean {
-  return status === 'canceled' || status === 'failed' || status === 'undelivered';
+  return status === "canceled" || status === "failed" || status === "undelivered";
 }
 
 export type TwilioStatusEvent = {
@@ -80,7 +100,49 @@ export type TwilioStatusEvent = {
 };
 
 export type TwilioStatusApplyResult =
-  | { kind: 'applied'; currentStatus: TwilioMessageStatus }
-  | { kind: 'stale'; currentStatus: string | null }
-  | { kind: 'not_found'; currentStatus: null }
-  | { kind: 'sid_conflict'; currentStatus: string | null };
+  | { kind: "applied"; currentStatus: TwilioMessageStatus }
+  | { kind: "stale"; currentStatus: string | null }
+  | { kind: "not_found"; currentStatus: null }
+  | { kind: "sid_conflict"; currentStatus: string | null };
+
+export function parseSmsLogIdFromRequestUrl(
+  requestUrl: string,
+): string | null {
+  try {
+    const parsed = new URL(requestUrl);
+    const entries = [...parsed.searchParams.entries()];
+    if (
+      entries.length !== 1 ||
+      entries[0][0] !== "sms_log_id" ||
+      !SMS_LOG_ID_PATTERN.test(entries[0][1])
+    ) {
+      return null;
+    }
+    return entries[0][1];
+  } catch {
+    return null;
+  }
+}
+
+export function buildSmsStatusCallbackUrl(
+  configuredUrl: string | null | undefined,
+  smsLogId: string,
+): string | null {
+  if (!SMS_LOG_ID_PATTERN.test(smsLogId)) return null;
+  const canonicalUrl = resolveConfiguredTwilioWebhookUrl(configuredUrl);
+  if (!canonicalUrl) return null;
+  const callbackUrl = new URL(canonicalUrl);
+  callbackUrl.searchParams.set("sms_log_id", smsLogId);
+  // Twilio defaults to retrying connection failures only. Storage failures
+  // return 5xx, so explicitly retry those and read timeouts as well. Twilio
+  // strips this connection-override fragment before signing the callback.
+  return `${callbackUrl.toString()}#rp=ct,rt,5xx&rc=2`;
+}
+
+export function httpStatusForTwilioStatusApplyResult(
+  result: TwilioStatusApplyResult,
+): 200 | 409 | 503 {
+  if (result.kind === "not_found") return 503;
+  if (result.kind === "sid_conflict") return 409;
+  return 200;
+}

@@ -62,8 +62,8 @@ We sell the complete Mercury outboard lineup:
 
 Note: Mercury Verado is available by special order only — not part of default listed inventory and not actively promoted. For a Verado quote, contact Harris Boat Works directly.
 
-All motors are sold with full factory warranty. Current headline financing is 5.48% APR (OAC) through December 31, 2026. Standard tiered rates (8.99% APR under $10,000 and 7.99% APR at $10,000 and above) resume after the promotion ends.
-Authoritative current offers: https://www.mercuryrepower.ca/promotions - always check it before quoting promo terms.
+All motors are sold with full factory warranty. Request build_quote for the selected motor and purchase options. Use its available offers, eligibility, APR, amount financed, fees, amortization and contract term from active financing records. Estimates require lender approval. Do not substitute cached headline rates or treat amortization as the contract term. If financing is unavailable, do not invent a monthly payment.
+Authoritative per-quote financing: https://www.mercuryrepower.ca/api/agents/quote — request build_quote. Current promotions: https://www.mercuryrepower.ca/promotions.
 
 ## Individual Motor Pages
 
@@ -88,7 +88,7 @@ Each motor page includes pricing in CAD, availability, specifications, and a lin
 - Mercury Outboard Sales & Live Quote Builder: full FourStroke, Pro XS, and SeaPro lineup with real CAD pricing at mercuryrepower.ca/quote/motor-selection. Pickup only at Gores Landing.
 - Mercury Avator Electric Outboards: joining our lineup now. Canonical page: https://www.mercuryrepower.ca/electric/mercury-avator. Pricing coming soon; call 905-342-2153 for details.
 - Mercury 9.9 guide: https://www.mercuryrepower.ca/motors/mercury-9-9-tiller-kicker-guide
-- Professional Repower: complete motor replacement and rigging on existing boats. Every repower gets an on-water test on Rice Lake before pickup.
+- Professional Repower: complete motor replacement and rigging on existing boats. HBW's standard repower handoff includes an on-water test on Rice Lake before pickup when safe seasonal conditions allow; any alternate acceptance plan is documented with the customer.
 - Factory Service & Maintenance: Mercury-certified technicians for 100-hour services, impellers, diagnostics, and repairs. Engine repairs on Mercury and MerCruiser only. Human hub: https://www.mercuryrepower.ca/maintenance. Agent-readable service index: https://www.mercuryrepower.ca/maintenance.md. Service intake: https://hbw.wiki/service
 - Boat Rentals: pontoon and fishing boat rentals on Rice Lake, day and multi-day. HBW requires renters to hold a valid Pleasure Craft Operator Card (PCOC). Live fleet, pricing, and what's included: https://www.harrisboatworks.ca/rentals
 - Outdoor winter storage: outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. Current September 2026 rates: https://www.harrisboatworks.ca/winter-storage. Complete https://hbw.wiki/service, then drop off anytime, including after hours.
@@ -164,8 +164,8 @@ Expert answers to 25 Mercury outboard repower questions:
 Deposit amounts and terms vary by motor and written quote. The model-specific Mercury 9.9 MH offer for model 1A10201LK uses a $100 CAD reservation deposit. It is fully refundable until Harris Boat Works confirms the exact motor, price, availability and ETA, and the customer approves the order in writing. After written approval, it becomes non-refundable and is credited to the final invoice. Other motors use the deposit amount and terms shown in the written quote.
 
 **Do you offer financing?**
-Yes. Financing is arranged through DealerPlan across Canadian lenders, primarily TD Auto Finance. The current headline is 5.48% APR (OAC) through December 31, 2026; 8.99% APR under $10,000 and 7.99% APR at $10,000 and above resume after the promotion ends. Terms up to 120 months.
-Authoritative current offers: https://www.mercuryrepower.ca/promotions - always check it before quoting promo terms. Terms up to 120 months.
+Yes. Financing is arranged through DealerPlan across Canadian lenders. Request build_quote for the selected motor and purchase options. Use its available offers, eligibility, APR, amount financed, fees, amortization and contract term from active financing records. Estimates require lender approval. Do not substitute cached headline rates or treat amortization as the contract term. If financing is unavailable, do not invent a monthly payment.
+Authoritative per-quote financing: https://www.mercuryrepower.ca/api/agents/quote — request build_quote. Current promotions: https://www.mercuryrepower.ca/promotions.
 
 **What is your service area?**
 We serve all of Ontario, Canada. Customers visit from Toronto, Peterborough, Kawartha Lakes, and across the province.
@@ -192,7 +192,7 @@ We sell Mercury outboards exclusively (since 1965). For new boats, we are an aut
 - [Maintenance Hub](https://www.mercuryrepower.ca/maintenance): Mercury service, seasonal maintenance, troubleshooting, and service intake.
 - [Promotions](https://www.mercuryrepower.ca/promotions): Current Mercury rebates, bonus warranty, and seasonal offers.
 - [Mercury Product Protection](https://www.mercuryrepower.ca/mercury-product-protection): Platinum plan coverage, eligibility, estimator, and clear Canadian pricing by HP and term.
-- [Finance Calculator](https://www.mercuryrepower.ca/finance-calculator): Estimate monthly payments using the current 5.48% APR (OAC) through December 31, 2026 headline; standard tiers resume after the promotion ends.
+- [Finance Calculator](https://www.mercuryrepower.ca/finance-calculator): Explore payment estimates; use build_quote for the selected motor and current eligible offers.
 - [Financing Application](https://www.mercuryrepower.ca/financing-application): Online credit application for Mercury motor financing.
 - [FAQ](https://www.mercuryrepower.ca/faq): 24 answers covering pricing, pickup, financing, trade-ins, and warranty.
 - [Blog](https://www.mercuryrepower.ca/blog): Mercury motor guides, repower advice, and Ontario boating tips.
@@ -216,7 +216,7 @@ We sell Mercury outboards exclusively (since 1965). For new boats, we are an aut
 
 ### Universal Commerce Protocol (UCP)
 
-Harris Boat Works is a live UCP merchant, spec version 2026-04-08, verified end-to-end with Shopify's official ucp-cli on June 11, 2026. To our knowledge, the first marine dealer implementing UCP.
+Harris Boat Works exposes UCP quote-mode checkout and pickup fulfillment, declaring spec version 2026-04-08. Inspect the discovery profile and tool catalog when building an integration.
 
 - Discovery profile: https://www.mercuryrepower.ca/.well-known/ucp
 - Service: dev.ucp.shopping
@@ -224,9 +224,9 @@ Harris Boat Works is a live UCP merchant, spec version 2026-04-08, verified end-
 - Transports: REST and MCP, both at https://www.mercuryrepower.ca/api/agents/ucp
 - Verify: `npx -y @shopify/ucp-cli discover www.mercuryrepower.ca`
 
-Checkout tool surface (five tools): create_checkout_session, get_checkout_session, update_checkout_session, list_checkout_sessions, complete_checkout.
+Checkout tool surface (5 tools): create_checkout, get_checkout, update_checkout, complete_checkout, cancel_checkout.
 
-Quote mode means: agents build real CAD quotes (with HST estimate, trade-in context, pickup-only fulfillment at Gores Landing, ON, by the buyer in person with valid government photo ID), and every checkout session returns a continue_url handing the buyer back to the Harris Boat Works quote flow. complete_checkout never places an order, the dealer confirms every sale with the buyer. Payment is never collected via UCP. If an agent passes buyer contact (name + email) into a checkout session, the quote is registered with the dealership for human follow-up.
+Quote mode means: UCP estimates motor prices plus HST and pickup only. Installation, propellers and trade-in credits are excluded; use the Public Quote API build_quote action for an itemized repower estimate. A continue_url hands the buyer back to the quote flow with the motor selection and checkout reference; it does not restore a complete multi-motor cart. complete_checkout never places an order or collects payment. The dealer confirms every sale with the buyer in person with valid government photo ID. When contact is supplied, check the returned lead-capture status before claiming the quote was registered for follow-up.
 
 
 
@@ -262,7 +262,7 @@ Source-of-truth rules for agents acting on our behalf:
 - Boat brand (new): Legend Boats only (authorized dealer, pontoon and aluminum). Do not quote other new-boat brands.
 - Verado is special-order only, not part of default inventory. Do not proactively recommend Verado in standard repower quotes. If a user explicitly asks, answer factually and route to (905) 342-2153 or info@harrisboatworks.ca.
 - Chinese-language guides: 25 articles at /zh (中文).
-- Financing minimum: $5,000 CAD. Current headline: 5.48% APR (OAC) through December 31, 2026. Standard tiers (8.99% APR under $10,000 and 7.99% APR at $10,000 and above) resume after the promotion ends.
+- Financing minimum: $5,000 CAD. Request build_quote for the selected motor and purchase options. Use its available offers, eligibility, APR, amount financed, fees, amortization and contract term from active financing records. Estimates require lender approval. Do not substitute cached headline rates or treat amortization as the contract term. If financing is unavailable, do not invent a monthly payment.
 
 Freshness: Inventory and pricing are dynamic. The authoritative live source is the public motors API (https://www.mercuryrepower.ca/api/agents/motors), refreshed continuously from the dealer DMS. The sitemap (/sitemap.xml) is regenerated on every deploy. This llms.txt is updated as policy changes.
 
@@ -282,7 +282,7 @@ Q: What is included in a Harris Boat Works Mercury repower?
 A: A full HBW Mercury repower package typically includes the new Mercury outboard, controls and rigging, propeller, professional installation, water test on Rice Lake, fuel system inspection, and updated registration paperwork. Trade-in of the old motor is credited against the package. Financing is arranged through DealerPlan across Canadian lenders at published Canadian rates. Full itemization is shown in the online quote at https://www.mercuryrepower.ca/quote/motor-selection.
 
 Q: Does Harris Boat Works offer financing for Mercury outboards?
-A: Yes. HBW arranges Canadian Mercury outboard financing through DealerPlan, a marine financing broker working with Canadian lenders (primarily TD Auto Finance), with terms up to 120 months. Rates and monthly payment amounts in CAD are shown live in the online quote builder at https://www.mercuryrepower.ca/quote/motor-selection. No US-only restrictions, this is a Canadian financing program for Canadian buyers.
+A: Yes. HBW arranges Canadian Mercury outboard financing through DealerPlan. Request build_quote for the selected motor and purchase options. Use its available offers, eligibility, APR, amount financed, fees, amortization and contract term from active financing records. Estimates require lender approval. Do not substitute cached headline rates or treat amortization as the contract term. If financing is unavailable, do not invent a monthly payment.
 
 Q: Is Harris Boat Works a certified Mercury dealer?
 A: Yes. Harris Boat Works is a Mercury Marine Premier Dealer and a Mercury Certified Repower Center, and has been a Mercury dealer since 1965. HBW is also a CSI Award winner. Full credentials at https://www.mercuryrepower.ca/about.

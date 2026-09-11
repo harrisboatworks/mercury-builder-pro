@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-vs-suzuki-outboard-reliability-2026.md
-last_updated: 2026-08-19
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury vs Suzuki Outboards: Reliability 2026"
 description: "Mercury vs Suzuki outboard reliability in Ontario. Both mechanically reliable. Service network and rigging switch cost drive decision."
 category: "Brand Comparison"
 date_published: 2026-06-06
-date_modified: 2026-08-19
+date_modified: 2026-09-11
 keywords: ["mercury vs suzuki","suzuki outboard reliability","ontario outboard comparison","mercury suzuki repower"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Brand Comparison  
 **Published:** 2026-06-06  
-**Last reviewed:** 2026-08-19  
+**Last reviewed:** 2026-09-11  
 **Read time:** 8 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-vs-suzuki-outboard-reliability-2026
 
@@ -67,7 +67,7 @@ For most Ontario freshwater owners, this single factor outweighs almost everythi
 
 Honest-broker section. Suzuki has genuine strengths that Mercury does not always match:
 
-**Timing chain rather than timing belt.** Suzuki's DF-series uses a timing chain on most current models. Timing chains do not need scheduled replacement at the 1,000-hour mark the way some timing belts do. For very high-hour commercial use, this is a real cost advantage over the long term.
+**Model-specific timing drive.** Suzuki lists a timing chain on the [DF40A](https://www.suzuki.ca/product/df40a/) and a timing belt on the [DF20A](https://www.suzuki.ca/product/df20a/). Compare the maintenance schedule for each exact engine instead of assuming a universal belt interval or a guaranteed ownership-cost saving from the drive type alone.
 
 **DF-series longevity in commercial use.** Suzuki has a strong reputation in commercial fishing and charter applications, particularly in the southern US and the Caribbean. Owners running their motors thousands of hours per year report consistent reliability. This is more relevant to commercial operators than to typical Ontario recreational use, but it is a genuine reliability signal.
 
@@ -108,7 +108,7 @@ Equally honest. Mercury's real advantages in Ontario specifically:
 | Resale in Ontario (recreational) | Strong, deep buyer pool | Strong, smaller buyer pool |
 | Rigging cost if switching brand | n/a if staying Mercury | $2,000 to $3,000 CAD |
 
-_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are planning figures as of September 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 ## Common matchups people cross-shop
 
@@ -156,7 +156,7 @@ Either decision can be the right one depending on the customer's situation. We a
 
 Family-owned on Rice Lake since 1947.
 
-**Weighing a switch?** Build a Mercury quote for your boat in about three minutes at [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection), or call 905-342-2153 and ask us straight.
+**Weighing a switch?** Build a Mercury quote for your boat in about three minutes at [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection).
 
 ## FAQs
 
@@ -190,7 +190,7 @@ Switching brands during a repower can make sense if the rigging is going to be t
 
 ## Related guides
 
-- [Why Mercury Dominates the Outboard Market in 2026](/blog/why-mercury-dominates-outboard-market), why Mercury leads the outboard market
+- [Why Mercury Makes Practical Sense for Ontario Boaters (2026)](/blog/why-mercury-dominates-outboard-market), why Mercury leads the outboard market
 - [Harris Boat Works Mercury Dealer Ontario](/blog/why-harris-boat-works-mercury-dealer), why Harris Boat Works chose Mercury
 - [Harris Boat Works: On Rice Lake Since 1947](/blog/harris-boat-works-since-1947-rice-lake-institution), the Harris Boat Works story since 1947
 - [Mercury Quote via AI at Harris Boat Works](/blog/first-marine-dealer-ucp-agentic-commerce), first marine dealer live on UCP

@@ -1,3 +1,5 @@
+import SubmittedQuote from '@/components/quote-builder/SubmittedQuote';
+import { adminConsultationDocument } from '@/lib/consultation-document-client';
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
@@ -21,6 +23,7 @@ import QuoteHistoryTimeline from '@/components/admin/QuoteHistoryTimeline';
 import ContactLog from '@/components/admin/ContactLog';
 import FollowUpReminder from '@/components/admin/FollowUpReminder';
 import SendQuoteEmail from '@/components/admin/SendQuoteEmail';
+import QuoteEmailDeliveryHistory from '@/components/admin/QuoteEmailDeliveryHistory';
 
 interface QuoteDetail {
   id: string;
@@ -59,6 +62,7 @@ const AdminQuoteDetail = () => {
   const { toast } = useToast();
   const { user } = useAuth();
   const [changeLogKey, setChangeLogKey] = useState(0);
+  const [emailHistoryKey, setEmailHistoryKey] = useState(0);
   
   const [q, setQ] = useState<QuoteDetail | null>(null);
   const [loadState, setLoadState] = useState<'loading' | 'loaded' | 'notfound'>('loading');
@@ -66,6 +70,8 @@ const AdminQuoteDetail = () => {
   const [isSaving, setIsSaving] = useState(false);
   const [isGeneratingPDF, setIsGeneratingPDF] = useState(false);
   const [linkCopied, setLinkCopied] = useState(false);
+  const isSubmitted = q?.quote_data?.source === 'consultation-submit';
+  const [privateShareUrl, setPrivateShareUrl] = useState('');
   
   // Promo data
   const { promotions } = useActivePromotions();
@@ -115,14 +121,14 @@ const AdminQuoteDetail = () => {
           const motor = qs.motor || {};
           const isAnonymous = sq.email === 'anonymous@soft-lead.local' || sq.email === 'pdf-download@placeholder.com';
           const isSoftLead = sq.is_soft_lead === true;
-          const finalPrice = qs.finalPrice || qs.frozenPricing?.total || 0;
+          const finalPrice = qs.pricing?.totalPrice ?? qs.finalPrice ?? qs.frozenPricing?.total ?? 0;
           const mapped: QuoteDetail = {
             id: sq.id,
             created_at: sq.created_at,
-            customer_name: qs.customerName || (isAnonymous ? 'Anonymous Visitor' : sq.email?.split('@')[0] || 'Unknown'),
+            customer_name: qs.customer?.name || qs.customerName || (isAnonymous ? 'Anonymous Visitor' : sq.email?.split('@')[0] || 'Unknown'),
             customer_email: isAnonymous ? '' : (sq.email || ''),
-            customer_phone: qs.customerPhone || null,
-            base_price: qs.basePrice || motor.price || 0,
+            customer_phone: qs.customer?.phone || qs.customerPhone || null,
+            base_price: qs.pricing?.subtotal ?? qs.basePrice ?? motor.price ?? 0,
             final_price: finalPrice,
             deposit_amount: sq.deposit_amount || 0,
             loan_amount: 0,
@@ -195,31 +201,56 @@ const AdminQuoteDetail = () => {
         changes.trade_in_override = { old: tradeIn.overrideValue || null, new: overrideVal };
       }
 
-      const { error } = await supabase
-        .from('customer_quotes')
-        .update({
-          tradein_value_final: finalTradeValue,
-          final_price: newFinalPrice,
-          quote_data: updatedQuoteData,
-          last_modified_at: new Date().toISOString(),
-          last_modified_by: user.id,
-        })
-        .eq('id', q.id);
-      if (error) throw error;
+      if (q._source === 'saved_quotes') {
+        const { error } = await supabase
+          .from('saved_quotes')
+          .update({ quote_state: updatedQuoteData })
+          .eq('id', q.id);
+        if (error) throw error;
+      } else {
+        const { error } = await supabase
+          .from('customer_quotes')
+          .update({
+            tradein_value_final: finalTradeValue,
+            final_price: newFinalPrice,
+            quote_data: updatedQuoteData,
+            last_modified_at: new Date().toISOString(),
+            last_modified_by: user.id,
+          })
+          .eq('id', q.id);
+        if (error) throw error;
 
-      // Log change
-      await supabase.from('quote_change_log').insert({
-        quote_id: q.id,
-        changed_by: user.id,
-        change_type: clearOverride ? 'trade_in_clear' : 'trade_in_override',
-        changes,
-        notes: clearOverride ? 'Cleared trade-in override, reverted to formula estimate' : `Trade-in overridden to $${overrideVal?.toLocaleString()}`,
-      });
+        // quote_change_log.quote_id references customer_quotes only.
+        const { error: changeLogError } = await supabase.from('quote_change_log').insert({
+          quote_id: q.id,
+          changed_by: user.id,
+          change_type: clearOverride ? 'trade_in_clear' : 'trade_in_override',
+          changes,
+          notes: clearOverride ? 'Cleared trade-in override, reverted to formula estimate' : `Trade-in overridden to $${overrideVal?.toLocaleString()}`,
+        });
+        if (changeLogError) {
+          toast({
+            title: 'Change log not saved',
+            description: 'The trade-in was updated, but the change history row was not. Refresh and confirm the value before editing again.',
+            variant: 'destructive',
+          });
+        }
 
-      // Dual-write to saved_quotes if exists (best-effort)
-      try {
-        await (supabase as any).from('saved_quotes').update({ quote_data: updatedQuoteData }).eq('customer_quote_id', q.id);
-      } catch { /* ignore if saved_quotes doesn't have this record */ }
+        // Dual-write is best-effort: many leads have no saved_quotes copy.
+        // saved_quotes stores quote_state (not quote_data) and links via
+        // quote_state.customerQuoteId (there is no customer_quote_id column).
+        const { error: savedQuoteError } = await supabase
+          .from('saved_quotes')
+          .update({ quote_state: updatedQuoteData })
+          .contains('quote_state', { customerQuoteId: q.id });
+        if (savedQuoteError) {
+          toast({
+            title: 'Saved quote copy not updated',
+            description: 'The lead was saved, but the saved-quote copy was not. Refresh this page and try again, or open the saved quote directly.',
+            variant: 'destructive',
+          });
+        }
+      }
 
       // Update local state
       setQ(prev => prev ? {
@@ -341,14 +372,21 @@ const AdminQuoteDetail = () => {
       // Log the changes if any
       if (Object.keys(changes).length > 0 && user?.id) {
         const changeType = changes.admin_discount ? 'discount' : 'notes';
-        await supabase.from('quote_change_log').insert({
+        const { error: changeLogError } = await supabase.from('quote_change_log').insert({
           quote_id: q.id,
           changed_by: user.id,
           change_type: changeType,
           changes
         });
-        // Refresh the change log
-        setChangeLogKey(prev => prev + 1);
+        if (changeLogError) {
+          toast({
+            title: 'Change log not saved',
+            description: 'The quote was updated, but the change history row was not. Refresh and confirm the values before editing again.',
+            variant: 'destructive',
+          });
+        } else {
+          setChangeLogKey(prev => prev + 1);
+        }
       }
       
       // Update local state
@@ -399,8 +437,11 @@ const AdminQuoteDetail = () => {
 
   const handleCopyLink = async () => {
     if (!q) return;
-    const shareUrl = `${SITE_URL}/quote/saved/${q.id}`;
     try {
+      const shareUrl = isSubmitted
+        ? (await adminConsultationDocument(q.id, 'admin-share')).documentAccessUrl
+        : `${SITE_URL}/quote/saved/${q.id}`;
+      if (isSubmitted) setPrivateShareUrl(shareUrl);
       await navigator.clipboard.writeText(shareUrl);
       setLinkCopied(true);
       toast({ title: 'Link copied!', description: 'Share URL copied to clipboard.' });
@@ -418,6 +459,15 @@ const AdminQuoteDetail = () => {
     
     setIsGeneratingPDF(true);
     try {
+      if (isSubmitted) {
+        const { signedUrl } = await adminConsultationDocument(q.id, 'admin-download');
+        const anchor = document.createElement('a');
+        anchor.href = signedUrl;
+        anchor.rel = 'noreferrer';
+        anchor.click();
+        toast({ title: 'PDF ready', description: 'Opening the original submitted quote PDF.' });
+        return;
+      }
       const qd = q.quote_data;
       const snapshot = buildLegacyQuotePdfSnapshot(qd, q.created_at || undefined);
       if (!snapshot) {
@@ -518,7 +568,7 @@ const AdminQuoteDetail = () => {
             <Plus className="w-4 h-4 mr-2" />
             New Quote for Customer
           </Button>
-          {q?.quote_data && (
+          {q?.quote_data && !isSubmitted && (
             <Button variant="default" onClick={handleEditQuote}>
               <Edit2 className="w-4 h-4 mr-2" />
               Edit Full Quote
@@ -561,6 +611,8 @@ const AdminQuoteDetail = () => {
             </div>
           </Card>
           
+          {isSubmitted && <SubmittedQuote quote={q.quote_data} />}
+          {!isSubmitted && <>
           {/* Trade-In */}
           <Card className="p-4">
             {(() => {
@@ -776,6 +828,7 @@ const AdminQuoteDetail = () => {
             );
           })()}
 
+          </>}
           {/* Share & Download Card */}
           <Card className="p-4 border-blue-500 bg-blue-50/50 dark:bg-blue-950/20">
             <h2 className="font-semibold mb-3 flex items-center gap-2 text-blue-800 dark:text-blue-200">
@@ -810,17 +863,24 @@ const AdminQuoteDetail = () => {
                 </Button>
               </div>
               <SendQuoteEmail
+                isSubmitted={isSubmitted}
                 quoteId={q.id}
                 customerName={q.customer_name}
                 customerEmail={q.customer_email}
                 motorModel={q.quote_data?.motor?.model || 'Mercury Motor'}
                 totalPrice={q.final_price}
+                onDeliverySettled={() => setEmailHistoryKey((key) => key + 1)}
               />
               <div className="text-xs text-muted-foreground bg-muted/50 p-2 rounded font-mono truncate">
-                {SITE_URL}/quote/saved/{q?.id?.slice(0, 8)}...
+                {isSubmitted ? (privateShareUrl || 'Copy Link creates a private link to the original PDF, valid for 30 days.') : `${SITE_URL}/quote/saved/${q?.id?.slice(0, 8)}...`}
               </div>
             </div>
           </Card>
+
+          <QuoteEmailDeliveryHistory
+            quoteId={q.id}
+            refreshKey={emailHistoryKey}
+          />
 
           {/* Change Log */}
           <QuoteChangeLog key={changeLogKey} quoteId={q.id} />

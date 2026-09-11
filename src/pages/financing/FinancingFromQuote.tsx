@@ -84,6 +84,11 @@ export default function FinancingFromQuote() {
         fromQr: 'true' // Flag to indicate QR code entry
       });
 
+      // Preserve the price basis rather than renaming a pre-tax legacy price.
+      if (!searchParams.has('motorPrice')) { params.delete('motorPrice'); params.set('price', motorPrice); }
+      for (const field of ['priceBasis','includedTradeInValue','preTradeSubtotal']) {
+        const value=searchParams.get(field); if (value !== null) params.set(field,value);
+      }
       navigate(`/financing-application?${params.toString()}`);
     }, 1500);
   }

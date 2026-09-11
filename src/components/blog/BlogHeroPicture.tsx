@@ -1,5 +1,11 @@
 import { useState } from 'react';
-import { optimizeImage, buildSrcSet } from '@/lib/optimizeImage';
+import { cn } from '@/lib/utils';
+import {
+  optimizeImage,
+  buildSrcSet,
+  isSvgImageSrc,
+  stripForcedImageCropClasses,
+} from '@/lib/optimizeImage';
 import { getResponsiveWebpSrcSet } from '@/lib/responsiveImageVariants';
 
 interface BlogHeroPictureProps {
@@ -12,7 +18,7 @@ interface BlogHeroPictureProps {
   sizes?: string;
   /** Optional error fallback (defaults to HBW Mercury Dealer block). */
   fallback?: React.ReactNode;
-  /** Wrapper classes (defaults to aspect-[16/9] rounded card). */
+  /** Wrapper classes (photos default to 16:9; SVG diagrams keep their intrinsic ratio). */
   wrapperClassName?: string;
   /** Emits data-photo-slot on the hero <img> so a real photo can be swapped in later. */
   photoSlot?: string;
@@ -28,13 +34,18 @@ const DEFAULT_SIZES = '(min-width: 1280px) 1024px, (min-width: 768px) 80vw, 100v
  * Keeping this in one place prevents drift across the 9 blog article
  * components — any future hero pipeline change happens here only.
  */
+const DEFAULT_RASTER_WRAPPER =
+  'aspect-[16/9] overflow-hidden rounded-lg bg-repower-paper border border-repower-navy-900/10 mb-10';
+const DEFAULT_SVG_WRAPPER =
+  'overflow-hidden rounded-lg bg-repower-paper border border-repower-navy-900/10 mb-10';
+
 export function BlogHeroPicture({
   image,
   alt,
-  className = 'w-full h-full object-contain',
+  className,
   sizes = DEFAULT_SIZES,
   fallback,
-  wrapperClassName = 'aspect-[16/9] overflow-hidden rounded-lg bg-repower-paper border border-repower-navy-900/10 mb-10',
+  wrapperClassName,
   photoSlot,
 }: BlogHeroPictureProps) {
   const [useOriginal, setUseOriginal] = useState(false);
@@ -42,6 +53,13 @@ export function BlogHeroPicture({
 
   if (!image) return null;
 
+  const isSvg = isSvgImageSrc(image);
+  const resolvedClassName = isSvg
+    ? cn(stripForcedImageCropClasses(className), 'w-full h-auto')
+    : (className ?? 'w-full h-full object-contain');
+  const resolvedWrapperClassName = isSvg
+    ? stripForcedImageCropClasses(wrapperClassName ?? DEFAULT_SVG_WRAPPER)
+    : (wrapperClassName ?? DEFAULT_RASTER_WRAPPER);
 
   const defaultFallback = (
     <div className="w-full h-full flex items-center justify-center bg-repower-navy-900 text-white">
@@ -55,20 +73,20 @@ export function BlogHeroPicture({
   const webpSrcSet = getResponsiveWebpSrcSet(image);
 
   return (
-    <div className={wrapperClassName} {...(photoSlot ? { 'data-photo-slot': photoSlot } : {})}>
+    <div className={resolvedWrapperClassName} {...(photoSlot ? { 'data-photo-slot': photoSlot } : {})}>
       {errored ? (
         fallback ?? defaultFallback
       ) : (
         <picture>
-          {!useOriginal && webpSrcSet && (
+          {!isSvg && !useOriginal && webpSrcSet && (
             <source srcSet={webpSrcSet} sizes={sizes} type="image/webp" />
           )}
           <img
-            src={useOriginal ? image : optimizeImage(image, 1280)}
-            srcSet={useOriginal ? undefined : buildSrcSet(image)}
-            sizes={sizes}
+            src={isSvg || useOriginal ? image : optimizeImage(image, 1280)}
+            srcSet={isSvg || useOriginal ? undefined : buildSrcSet(image)}
+            sizes={isSvg ? undefined : sizes}
             alt={alt}
-            className={className}
+            className={resolvedClassName}
             loading="eager"
             fetchPriority="high"
             onError={() => {

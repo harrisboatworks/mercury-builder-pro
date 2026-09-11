@@ -39,6 +39,16 @@ function esc(s: string): string {
     .replace(/"/g, "&quot;");
 }
 
+/** https: URLs only, then HTML-escaped for attribute interpolation. */
+export function safeHttpsUrl(url: string): string | null {
+  try {
+    if (new URL(url).protocol !== "https:") return null;
+  } catch {
+    return null;
+  }
+  return esc(url);
+}
+
 export function ctaButton(url: string, text: string): string {
   const safeUrl = esc(url);
   const safeText = esc(text);
@@ -54,13 +64,16 @@ export function ctaButton(url: string, text: string): string {
   <p style="margin:0 0 8px 0;font-family:${SANS};font-size:12px;line-height:1.5;color:${NAVY};text-align:center;word-break:break-all;"><a href="${safeUrl}" style="color:${NAVY};text-decoration:underline;">${safeUrl}</a></p>`;
 }
 
-export function detailsCard(rows: Array<{ label: string; value: string }>): string {
+// valueHtml is trusted HTML. Escape untrusted strings with esc() at the call
+// site. Do not wrap again here: every current caller already pre-escapes, and
+// send-deposit-confirmation-email passes a styled <span> for Payment ID.
+export function detailsCard(rows: Array<{ label: string; valueHtml: string }>): string {
   const trs = rows
     .map(
       (r, i) => `
       <tr>
         <td style="padding:14px 0 14px 0;${i === 0 ? "" : `border-top:1px solid ${HAIRLINE};`}font-family:${SANS};font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:${MUTED};vertical-align:top;width:150px;font-weight:600;">${esc(r.label)}</td>
-        <td style="padding:14px 0 14px 0;${i === 0 ? "" : `border-top:1px solid ${HAIRLINE};`}font-family:${SERIF};font-size:16px;color:${TEXT};vertical-align:top;line-height:1.5;">${r.value}</td>
+        <td style="padding:14px 0 14px 0;${i === 0 ? "" : `border-top:1px solid ${HAIRLINE};`}font-family:${SERIF};font-size:16px;color:${TEXT};vertical-align:top;line-height:1.5;">${r.valueHtml}</td>
       </tr>`,
     )
     .join("");

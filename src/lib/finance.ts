@@ -11,6 +11,17 @@ export const FINANCING_MINIMUM = financePolicy.minimumCad;
 export const DEALERPLAN_FEE = financePolicy.dealerplanFeeCad;
 
 /**
+ * Ontario HST applied to the motor price before the DealerPlan fee.
+ */
+export const ONTARIO_HST_RATE = 0.13;
+
+/**
+ * Lender contract and maximum amortization limits disclosed to customers.
+ */
+export const FINANCING_CONTRACT_TERM_MONTHS = financePolicy.contractTermMonths;
+export const FINANCING_MAXIMUM_AMORTIZATION_MONTHS = financePolicy.maximumAmortizationMonths;
+
+/**
  * Get default financing rate based on price tier
  * Under $10,000: 8.99% APR
  * $10,000 and up: 7.99% APR
@@ -119,18 +130,73 @@ export const formatFinancingRatePercent = (rate?: number): string => {
 };
 
 /**
- * Substitute live-rate tokens in arbitrary text. Single chokepoint that
+ * True for a real APR, including a genuine 0% promotional rate.
+ * Truthiness checks treat 0 as missing and silently fall back to the standing rate.
+ */
+export const isUsableFinancingRate = (
+  rate: number | null | undefined,
+): rate is number =>
+  typeof rate === 'number' && Number.isFinite(rate) && rate >= 0;
+
+export const firstUsableFinancingRate = (
+  ...candidates: Array<number | null | undefined>
+): number | null => {
+  for (const candidate of candidates) {
+    if (isUsableFinancingRate(candidate)) return candidate;
+  }
+  return null;
+};
+
+export const formatSpecialFinancingLabel = (
+  rate: number,
+  termMonths?: number | null,
+): string => {
+  const apr = `${rate}% APR`;
+  return typeof termMonths === 'number' && Number.isFinite(termMonths)
+    ? `${apr} for ${termMonths} months`
+    : apr;
+};
+
+const PRICING_ASOF_MONTHS = [
+  'January', 'February', 'March', 'April', 'May', 'June',
+  'July', 'August', 'September', 'October', 'November', 'December',
+];
+
+/**
+ * Format an ISO "YYYY-MM-DD" date as an English month and year, e.g.
+ * "2026-07-14" -> "July 2026". Built from the string parts so the result
+ * never shifts with the runtime timezone. Non-ISO input passes through
+ * unchanged.
+ */
+export const formatPricingAsOf = (dateModified: string): string => {
+  const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(dateModified || ''));
+  if (!match) return dateModified;
+  const month = PRICING_ASOF_MONTHS[Number(match[2]) - 1];
+  if (!month) return dateModified;
+  return `${month} ${match[1]}`;
+};
+
+/**
+ * Substitute live tokens in arbitrary text. Single chokepoint that
  * any rendering surface (markdown content, plain-text descriptions, FAQ
  * answers) can call to inject the current Mercury financing rate.
  *
  *   {{LIVE_RATE}}      -> "5.48% APR"
  *   {{LIVE_RATE_PCT}}  -> "5.48%"
+ *   {{PRICING_ASOF}}   -> "July 2026" (from the article's dateModified)
  */
-export const substituteLiveRateTokens = (text: string): string => {
+export const substituteLiveRateTokens = (
+  text: string,
+  options: { dateModified?: string } = {},
+): string => {
   if (!text) return text;
-  return text
+  let out = text
     .replace(/\{\{LIVE_RATE\}\}/g, formatFinancingRate())
     .replace(/\{\{LIVE_RATE_PCT\}\}/g, formatFinancingRatePercent());
+  if (options.dateModified) {
+    out = out.replace(/\{\{PRICING_ASOF\}\}/g, formatPricingAsOf(options.dateModified));
+  }
+  return out;
 };
 
 
@@ -198,16 +264,20 @@ export const calculatePaymentWithFrequency = (
 ) => {
   const termMonths = termMonthsOverride || getFinancingTerm(price);
   const defaultRate = getDefaultFinancingRate(price);
-  const rate = promoRate || defaultRate;
+  const rate = promoRate !== null && Number.isFinite(promoRate) && promoRate >= 0
+    ? promoRate
+    : defaultRate;
   const paymentsPerYear = getPaymentFrequencyMultiplier(frequency);
   
   // Convert term to payment periods for the selected frequency
   const termPeriods = Math.round((termMonths / 12) * paymentsPerYear);
   
   const periodRate = rate / 100 / paymentsPerYear;
-  const payment = price * 
-    (periodRate * Math.pow(1 + periodRate, termPeriods)) / 
-    (Math.pow(1 + periodRate, termPeriods) - 1);
+  const payment = periodRate === 0
+    ? price / termPeriods
+    : price
+      * (periodRate * Math.pow(1 + periodRate, termPeriods))
+      / (Math.pow(1 + periodRate, termPeriods) - 1);
   
   return {
     payment: Math.round(payment),
@@ -230,6 +300,37 @@ export const calculateMonthlyPayment = (
   termMonthsOverride: number | null = null,
 ) => {
   return calculatePaymentWithFrequency(price, 'monthly', promoRate, termMonthsOverride);
+};
+
+export type MotorFinancingEstimate = ReturnType<typeof calculateMonthlyPayment> & {
+  amountFinanced: number;
+};
+
+/**
+ * Build the monthly estimate shown beside a bare-motor price.
+ *
+ * Eligibility is checked against the before-tax motor price. The payment is
+ * then amortized on the motor price plus Ontario HST and the mandatory
+ * DealerPlan fee. A finite, non-negative supplied APR keeps the card and its
+ * page disclosure aligned; otherwise the current standing/tiered rate applies.
+ */
+export const calculateMotorFinancingEstimate = (
+  motorPrice: number,
+  annualRate: number | null = null,
+): MotorFinancingEstimate | null => {
+  if (!Number.isFinite(motorPrice) || motorPrice < FINANCING_MINIMUM) {
+    return null;
+  }
+
+  const amountFinanced = motorPrice * (1 + ONTARIO_HST_RATE) + DEALERPLAN_FEE;
+  const effectiveRate = annualRate !== null && Number.isFinite(annualRate) && annualRate >= 0
+    ? annualRate
+    : getMotorCalculatorApr(amountFinanced);
+
+  return {
+    ...calculateMonthlyPayment(amountFinanced, effectiveRate),
+    amountFinanced,
+  };
 };
 
 /**
@@ -274,11 +375,7 @@ export const calculateMonthly = (amount: number, rate?: number, termMonths = 60)
   return (amount * r) / (1 - Math.pow(1 + r, -termMonths));
 };
 
-export const daysUntil = (iso: string | Date) => {
-  const now = new Date();
-  const end = new Date(iso);
-  return Math.max(0, Math.ceil((end.getTime() - now.getTime()) / (1000 * 60 * 60 * 24)));
-};
+export { daysUntil } from './quote-utils';
 
 export type QuoteData = {
   msrp: number;

@@ -7,6 +7,12 @@ import { serve } from 'https://deno.land/std@0.190.0/http/server.ts';
 import { Resend } from 'npm:resend@2.0.0';
 import { createClient } from 'npm:@supabase/supabase-js@2.53.1';
 import { createBrandedEmailTemplate, createButtonHtml } from '../_shared/email-template.ts';
+import {
+  addDealerCalendarDays,
+  daysUntil,
+  dealerToday,
+  formatPromoCalendarDate,
+} from '../_shared/promo-dates.ts';
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -33,12 +39,8 @@ serve(async (req: Request): Promise<Response> => {
     const supabase = createClient(supabaseUrl, serviceKey);
     const resend = new Resend(resendKey);
 
-    const today = new Date();
-    today.setUTCHours(0, 0, 0, 0);
-    const cutoff = new Date(today);
-    cutoff.setUTCDate(cutoff.getUTCDate() + WARN_WITHIN_DAYS);
-    const todayStr = today.toISOString().split('T')[0];
-    const cutoffStr = cutoff.toISOString().split('T')[0];
+    const todayStr = dealerToday();
+    const cutoffStr = addDealerCalendarDays(todayStr, WARN_WITHIN_DAYS);
 
     const { data: promos, error } = await supabase
       .from('promotions')
@@ -67,9 +69,8 @@ serve(async (req: Request): Promise<Response> => {
     }
 
     const rows = fresh.map((p: any) => {
-      const endDate = new Date(p.end_date + 'T00:00:00Z');
-      const daysLeft = Math.max(0, Math.round((endDate.getTime() - today.getTime()) / (1000 * 60 * 60 * 24)));
-      const endLabel = endDate.toLocaleDateString('en-CA', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
+      const daysLeft = daysUntil(p.end_date);
+      const endLabel = formatPromoCalendarDate(p.end_date, { month: 'short', day: 'numeric', year: 'numeric' });
       const value = p.kind === 'discount'
         ? (p.discount_percentage ? `${p.discount_percentage}% off` : (p.discount_fixed_amount ? `$${p.discount_fixed_amount} off` : ''))
         : (p.bonus_short_badge || 'Bonus');

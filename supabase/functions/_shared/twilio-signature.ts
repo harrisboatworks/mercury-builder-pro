@@ -11,30 +11,24 @@ export type TwilioFormValues = Readonly<
   Record<string, string | readonly string[]>
 >;
 
-export type TwilioMessageFields = {
-  to: string;
-  from: string;
-  body: string;
-  statusCallbackUrl?: string | null;
-};
-
 export class TwilioWebhookConfigurationError extends Error {}
 export class TwilioWebhookRequestError extends Error {}
 
 const SMS_LOG_ID_PATTERN =
   /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 const MESSAGE_SID_PATTERN = /^SM[0-9a-f]{32}$/i;
+const MAX_WEBHOOK_BODY_BYTES = 16 * 1024;
 
 export function resolveConfiguredTwilioWebhookUrl(
   configuredUrl: string | null | undefined,
 ): string | null {
-  const rawUrl = configuredUrl?.trim() ?? '';
+  const rawUrl = configuredUrl?.trim() ?? "";
   if (!rawUrl) return null;
 
   try {
     const url = new URL(rawUrl);
     if (
-      url.protocol !== 'https:' ||
+      url.protocol !== "https:" ||
       url.username ||
       url.password ||
       url.search ||
@@ -46,18 +40,6 @@ export function resolveConfiguredTwilioWebhookUrl(
   } catch {
     return null;
   }
-}
-
-export function buildTwilioStatusCallbackUrl(
-  configuredUrl: string | null | undefined,
-  smsLogId: string,
-): string | null {
-  const canonicalUrl = resolveConfiguredTwilioWebhookUrl(configuredUrl);
-  if (!canonicalUrl || !SMS_LOG_ID_PATTERN.test(smsLogId)) return null;
-
-  const callbackUrl = new URL(canonicalUrl);
-  callbackUrl.searchParams.set('sms_log_id', smsLogId);
-  return callbackUrl.toString();
 }
 
 export type ResolvedTwilioWebhookUrl = {
@@ -72,7 +54,7 @@ export function resolveInboundTwilioWebhookUrl(
   const canonicalUrl = resolveConfiguredTwilioWebhookUrl(configuredUrl);
   if (!canonicalUrl) {
     throw new TwilioWebhookConfigurationError(
-      'Twilio webhook is not configured',
+      "Twilio webhook is not configured",
     );
   }
 
@@ -80,7 +62,7 @@ export function resolveInboundTwilioWebhookUrl(
   try {
     incomingUrl = new URL(requestUrl);
   } catch {
-    throw new TwilioWebhookRequestError('Invalid webhook URL');
+    throw new TwilioWebhookRequestError("Invalid webhook URL");
   }
 
   const entries = [...incomingUrl.searchParams.entries()];
@@ -89,31 +71,18 @@ export function resolveInboundTwilioWebhookUrl(
   }
   if (
     entries.length !== 1 ||
-    entries[0][0] !== 'sms_log_id' ||
+    entries[0][0] !== "sms_log_id" ||
     !SMS_LOG_ID_PATTERN.test(entries[0][1])
   ) {
-    throw new TwilioWebhookRequestError('Invalid webhook query');
+    throw new TwilioWebhookRequestError("Invalid webhook query");
   }
 
   const signedUrl = new URL(canonicalUrl);
-  signedUrl.searchParams.set('sms_log_id', entries[0][1]);
+  signedUrl.searchParams.set("sms_log_id", entries[0][1]);
   return {
     signedUrl: signedUrl.toString(),
     smsLogId: entries[0][1],
   };
-}
-
-export function buildTwilioMessageForm(
-  fields: TwilioMessageFields,
-): URLSearchParams {
-  const form = new URLSearchParams();
-  form.set('To', fields.to);
-  form.set('From', fields.from);
-  form.set('Body', fields.body);
-  if (fields.statusCallbackUrl) {
-    form.set('StatusCallback', fields.statusCallbackUrl);
-  }
-  return form;
 }
 
 export function parseTwilioFormBody(body: string): Record<string, string[]> {
@@ -146,18 +115,18 @@ export async function computeTwilioSignature(
 ): Promise<string> {
   const encoder = new TextEncoder();
   const key = await crypto.subtle.importKey(
-    'raw',
+    "raw",
     encoder.encode(authToken),
-    { name: 'HMAC', hash: 'SHA-1' },
+    { name: "HMAC", hash: "SHA-1" },
     false,
-    ['sign'],
+    ["sign"],
   );
   const signature = await crypto.subtle.sign(
-    'HMAC',
+    "HMAC",
     key,
     encoder.encode(buildTwilioSignaturePayload(webhookUrl, params)),
   );
-  let binary = '';
+  let binary = "";
   for (const byte of new Uint8Array(signature)) {
     binary += String.fromCharCode(byte);
   }
@@ -197,7 +166,7 @@ function uniqueSemanticValue(
   if (values.length > 1) {
     throw new TwilioWebhookRequestError(`Conflicting ${key} values`);
   }
-  const value = values[0] ?? '';
+  const value = values[0] ?? "";
   if (!value) {
     if (required) throw new TwilioWebhookRequestError(`Missing ${key}`);
     return null;
@@ -218,6 +187,36 @@ export type NotificationWebhookDecision =
       errorMessage: string | null;
     };
 
+export function readNotificationWebhookFields(
+  rawBody: string,
+): NotificationWebhookDecision {
+  const params = parseTwilioFormBody(rawBody);
+  try {
+    const messageSid = uniqueSemanticValue(params, "MessageSid", 34, true)!;
+    const messageStatus = uniqueSemanticValue(
+      params,
+      "MessageStatus",
+      50,
+      true,
+    )!;
+    if (!MESSAGE_SID_PATTERN.test(messageSid)) {
+      return { ok: false, status: 400, error: "Invalid MessageSid" };
+    }
+    return {
+      ok: true,
+      messageSid,
+      messageStatus,
+      errorCode: uniqueSemanticValue(params, "ErrorCode", 20),
+      errorMessage: uniqueSemanticValue(params, "ErrorMessage", 500),
+    };
+  } catch (error) {
+    if (error instanceof TwilioWebhookRequestError) {
+      return { ok: false, status: 400, error: error.message };
+    }
+    throw error;
+  }
+}
+
 export async function decideNotificationWebhook(input: {
   signature: string | null;
   rawBody: string;
@@ -225,10 +224,10 @@ export async function decideNotificationWebhook(input: {
   webhookUrl: string;
 }): Promise<NotificationWebhookDecision> {
   if (!input.authToken) {
-    return { ok: false, status: 503, error: 'Twilio webhook is not configured' };
+    return { ok: false, status: 503, error: "Twilio webhook is not configured" };
   }
   if (!input.signature) {
-    return { ok: false, status: 403, error: 'Missing Twilio signature' };
+    return { ok: false, status: 403, error: "Missing Twilio signature" };
   }
 
   const params = parseTwilioFormBody(input.rawBody);
@@ -239,31 +238,62 @@ export async function decideNotificationWebhook(input: {
     params,
   });
   if (!valid) {
-    return { ok: false, status: 403, error: 'Invalid Twilio signature' };
+    return { ok: false, status: 403, error: "Invalid Twilio signature" };
   }
 
+  return readNotificationWebhookFields(input.rawBody);
+}
+
+export type TwilioWebhookGate =
+  | { ok: false; status: 400 | 403 | 413 | 503; error: string }
+  | { ok: true; rawBody: string; smsLogId: string | null };
+
+export async function gateTwilioStatusCallback(
+  request: Request,
+  input: {
+    authToken: string | null | undefined;
+    configuredWebhookUrl: string | null | undefined;
+  },
+): Promise<TwilioWebhookGate> {
+  if (!input.authToken) {
+    return { ok: false, status: 503, error: "Twilio webhook is not configured" };
+  }
+
+  let resolved: ResolvedTwilioWebhookUrl;
   try {
-    const messageSid = uniqueSemanticValue(params, 'MessageSid', 34, true)!;
-    const messageStatus = uniqueSemanticValue(
-      params,
-      'MessageStatus',
-      50,
-      true,
-    )!;
-    if (!MESSAGE_SID_PATTERN.test(messageSid)) {
-      return { ok: false, status: 400, error: 'Invalid MessageSid' };
-    }
-    return {
-      ok: true,
-      messageSid,
-      messageStatus,
-      errorCode: uniqueSemanticValue(params, 'ErrorCode', 20),
-      errorMessage: uniqueSemanticValue(params, 'ErrorMessage', 500),
-    };
+    resolved = resolveInboundTwilioWebhookUrl(
+      input.configuredWebhookUrl,
+      request.url,
+    );
   } catch (error) {
+    if (error instanceof TwilioWebhookConfigurationError) {
+      return { ok: false, status: 503, error: error.message };
+    }
     if (error instanceof TwilioWebhookRequestError) {
       return { ok: false, status: 400, error: error.message };
     }
-    throw error;
+    return { ok: false, status: 400, error: "Invalid webhook URL" };
   }
+
+  const signature = request.headers.get("X-Twilio-Signature");
+  if (!signature) {
+    return { ok: false, status: 403, error: "Missing Twilio signature" };
+  }
+
+  const rawBody = await request.text();
+  if (new TextEncoder().encode(rawBody).byteLength > MAX_WEBHOOK_BODY_BYTES) {
+    return { ok: false, status: 413, error: "Webhook body too large" };
+  }
+
+  const valid = await verifyTwilioSignature({
+    authToken: input.authToken,
+    webhookUrl: resolved.signedUrl,
+    signature,
+    params: parseTwilioFormBody(rawBody),
+  });
+  if (!valid) {
+    return { ok: false, status: 403, error: "Invalid Twilio signature" };
+  }
+
+  return { ok: true, rawBody, smsLogId: resolved.smsLogId };
 }

@@ -1,9 +1,9 @@
-import type { SupabaseClient } from 'npm:@supabase/supabase-js@2.53.1';
+import type { SupabaseClient } from "npm:@supabase/supabase-js@2.53.1";
 import {
   allowedCurrentStatusesFor,
   type TwilioStatusApplyResult,
   type TwilioStatusEvent,
-} from './twilio-status.ts';
+} from "./twilio-status.ts";
 
 type SmsLogRow = {
   id: string;
@@ -28,40 +28,40 @@ export async function applyTwilioStatusToSmsLog(
   if (event.errorMessage !== null) values.error = event.errorMessage;
 
   let update = client
-    .from('sms_logs')
+    .from("sms_logs")
     .update(values)
-    .in('status', [...allowedCurrentStatusesFor(event.messageStatus)]);
+    .in("status", [...allowedCurrentStatusesFor(event.messageStatus)]);
 
   if (event.smsLogId) {
     update = update
-      .eq('id', event.smsLogId)
+      .eq("id", event.smsLogId)
       .or(`message_sid.is.null,message_sid.eq.${event.messageSid}`);
   } else {
-    update = update.eq('message_sid', event.messageSid);
+    update = update.eq("message_sid", event.messageSid);
   }
 
   const { data: updatedRows, error: updateError } = await update
-    .select('id,status');
-  if (updateError) throw new Error('Failed to update SMS status');
+    .select("id,status");
+  if (updateError) throw new Error("Failed to update SMS status");
 
   if (updatedRows && updatedRows.length > 0) {
-    return { kind: 'applied', currentStatus: event.messageStatus };
+    return { kind: "applied", currentStatus: event.messageStatus };
   }
 
   let lookup = client
-    .from('sms_logs')
-    .select('id,status,message_sid');
+    .from("sms_logs")
+    .select("id,status,message_sid");
   lookup = event.smsLogId
-    ? lookup.eq('id', event.smsLogId)
-    : lookup.eq('message_sid', event.messageSid);
+    ? lookup.eq("id", event.smsLogId)
+    : lookup.eq("message_sid", event.messageSid);
 
   const { data: current, error: lookupError } = await lookup.maybeSingle();
-  if (lookupError) throw new Error('Failed to read SMS status');
-  if (!current) return { kind: 'not_found', currentStatus: null };
+  if (lookupError) throw new Error("Failed to read SMS status");
+  if (!current) return { kind: "not_found", currentStatus: null };
 
   const row = current as SmsLogRow;
   if (row.message_sid && row.message_sid !== event.messageSid) {
-    return { kind: 'sid_conflict', currentStatus: row.status };
+    return { kind: "sid_conflict", currentStatus: row.status };
   }
-  return { kind: 'stale', currentStatus: row.status };
+  return { kind: "stale", currentStatus: row.status };
 }

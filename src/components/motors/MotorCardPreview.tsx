@@ -23,16 +23,18 @@ import { isTillerMotor, getMotorImageByPriority, getMotorImageGallery, decodeMod
 import { useIsMobile } from '@/hooks/use-mobile';
 import { formatMotorDisplayName } from '@/lib/motor-display-formatter';
 import { getDisplayPrices } from '@/lib/pricing';
-import { getFinancingTerm } from '@/lib/finance';
+import { calculateMotorFinancingEstimate } from '@/lib/finance';
 import { trackEvent } from '@/lib/analytics';
 
 import { preloadConfiguratorImagesHighPriority } from '@/lib/configurator-preload';
+import { formatPromoCalendarDate } from '@/lib/quote-utils';
 import mercuryLogo from '@/assets/mercury-logo.png';
 import { useSmartImageScale } from '@/hooks/useSmartImageScale';
 
 // Shared data passed from parent to avoid per-card hook explosion
 export interface SharedCardData {
   promotions: Array<{ warranty_extra_years?: number | null; end_date?: string | null; name?: string; bonus_title?: string | null }>;
+  financingRate?: number;
   toggleComparison: (motor: any) => void;
   isInComparison: (id: string) => boolean;
   comparisonCount: number;
@@ -370,9 +372,9 @@ function MotorCardPreviewInner({
       // Add end date if available
       const activePromo = promotions.find(promo => promo.warranty_extra_years);
       if (activePromo?.end_date) {
-        const endDate = new Date(activePromo.end_date).toLocaleDateString('en-US', {
+        const endDate = formatPromoCalendarDate(activePromo.end_date, {
           month: 'short',
-          day: 'numeric'
+          year: undefined,
         });
         promoText += ` • Until ${endDate}`;
       }
@@ -385,19 +387,10 @@ function MotorCardPreviewInner({
   const deliveryStatus = getDeliveryStatus();
   const warrantyText = getWarrantyText();
 
-  // Calculate dynamic monthly payment estimate
-  const calculateMonthlyPayment = () => {
-    if (!price || price < 5000) return null; // Hide financing for motors under $5k (FINANCING_MINIMUM)
-    
-    const term = getFinancingTerm(price);
-    const priceWithTax = price * 1.13; // 13% HST
-    const totalFinanced = priceWithTax + 299; // Add Dealerplan fee
-    const monthlyPayment = totalFinanced / term;
-    
-    return Math.round(monthlyPayment);
-  };
-
-  const monthlyPayment = calculateMonthlyPayment();
+  const financingEstimate = typeof price === 'number'
+    ? calculateMotorFinancingEstimate(price, sharedData?.financingRate ?? null)
+    : null;
+  const monthlyPayment = financingEstimate?.payment ?? null;
 
   // Build slug for individual motor URL (same logic as ShareLinkButton)
   const buildMotorSlug = (source: string): string => {

@@ -4,6 +4,7 @@ import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { getPropellerAllowance } from '@/lib/propeller-allowance';
 import { includesPropeller } from '@/lib/motor-helpers';
 import { resolvePropellerDecision } from '@/lib/propeller-selection';
+import { applyTradeCredit } from '@/lib/trade-credit';
 
 export interface LineItem {
   label: string;
@@ -16,6 +17,9 @@ export interface RunningTotalResult {
   hst: number;
   total: number;
   lineItems: LineItem[];
+  appliedTradeCredit?: number;
+  tradeEstimate?: number;
+  taxSaving?: number;
 }
 
 /**
@@ -36,6 +40,7 @@ export function calculateRunningTotal(
     warrantyPrice?: number;
     warrantyTotalYears?: number;
     tradeInValue?: number;
+    hasTradeIn?: boolean;
     adminCustomItems?: Array<{ name: string; price: number }>;
     adminDiscount?: number;
     selectedPromoOption?: string | null;
@@ -114,16 +119,6 @@ export function calculateRunningTotal(
     lineItems.push({ label: 'Marine Starting Battery', value: opts.batteryCost });
   }
 
-  // Trade-in credit (capped at subtotal — no cash refunds)
-  if (opts.tradeInValue) {
-    const cappedTradeIn = Math.min(opts.tradeInValue, subtotal);
-    subtotal -= cappedTradeIn;
-    lineItems.push({ label: 'Trade-In Credit', value: cappedTradeIn, isCredit: true });
-    if (opts.tradeInValue > cappedTradeIn) {
-      lineItems.push({ label: 'Trade-in exceeds motor cost (capped)', value: 0 });
-    }
-  }
-
   // Admin custom items
   if (opts.adminCustomItems?.length) {
     for (const item of opts.adminCustomItems) {
@@ -151,10 +146,18 @@ export function calculateRunningTotal(
     }
   }
 
+  const applied = applyTradeCredit({preTradeSubtotal:subtotal,estimatedValue:opts.tradeInValue,hasTradeIn:opts.hasTradeIn});
+  const appliedTradeCredit = applied.credit;
+  const tradeEstimate = applied.estimate;
+  const taxSaving = applied.taxSaving;
+  subtotal = applied.subtotal;
+  if (applied.credit > 0) lineItems.push({label:'Trade-In Credit',value:applied.credit,isCredit:true});
+  if (opts.hasTradeIn !== false && applied.estimate > applied.credit) lineItems.push({label:'Trade-in exceeds purchase subtotal (capped)',value:0});
+
   const hst = subtotal * 0.13;
   const total = subtotal + hst;
 
-  return { subtotal, hst, total, lineItems };
+  return { subtotal, hst, total, lineItems, appliedTradeCredit, tradeEstimate, taxSaving };
 }
 
 /**
@@ -193,6 +196,7 @@ export function useQuoteRunningTotal(
       warrantyPrice: state.warrantyConfig?.warrantyPrice,
       warrantyTotalYears: state.warrantyConfig?.totalYears,
       tradeInValue: state.tradeInInfo?.estimatedValue,
+      hasTradeIn: state.tradeInInfo?.hasTradeIn,
       adminCustomItems: state.adminCustomItems,
       adminDiscount: state.adminDiscount,
       selectedPromoOption: state.selectedPromoOption,

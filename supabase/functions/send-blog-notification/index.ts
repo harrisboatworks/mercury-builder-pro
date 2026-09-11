@@ -91,11 +91,12 @@ const handler = async (req: Request): Promise<Response> => {
           try {
             const unsubscribeUrl = `${appUrl}/blog/unsubscribe?token=${subscriber.unsubscribe_token}`;
             
-            const { buildEmail } = await import("../_shared/email-layout.ts");
-            const safeTitle = String(articleTitle).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-            const safeDesc = String(articleDescription || "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-            const imageBlock = articleImage
-              ? `<p style="margin:0 0 18px 0;text-align:center;"><img src="${articleImage}" alt="${safeTitle}" style="max-width:100%;height:auto;border-radius:4px;border:1px solid #e5e7eb;" /></p>`
+            const { buildEmail, esc, safeHttpsUrl } = await import("../_shared/email-layout.ts");
+            const safeTitle = esc(articleTitle);
+            const safeDesc = esc(articleDescription || "");
+            const safeImage = articleImage ? safeHttpsUrl(articleImage) : null;
+            const imageBlock = safeImage
+              ? `<p style="margin:0 0 18px 0;text-align:center;"><img src="${safeImage}" alt="${safeTitle}" style="max-width:100%;height:auto;border-radius:4px;border:1px solid #e5e7eb;" /></p>`
               : "";
             const body = `
               ${imageBlock}
@@ -104,7 +105,7 @@ const handler = async (req: Request): Promise<Response> => {
               <p style="margin:18px 0 0 0;color:#6b7280;font-size:13px;">From Harris Boat Works, your Mercury repower team on Rice Lake.</p>
             `;
             const html = buildEmail({
-              preheader: safeDesc.slice(0, 140),
+              preheader: String(articleDescription || "").slice(0, 140),
               heading: "New from the Harris Boat Works journal",
               bodyHtml: body,
               ctaText: "Read the full article",
@@ -114,7 +115,7 @@ const handler = async (req: Request): Promise<Response> => {
 
             await resend.emails.send({
               from: "Harris Boat Works <updates@mercuryrepower.ca>",
-              replyTo: "info@harrisboatworks.ca",
+              reply_to: "info@harrisboatworks.ca",
               to: [subscriber.email],
               subject: `New from Harris Boat Works: ${articleTitle}`,
               html,

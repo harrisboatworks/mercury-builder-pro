@@ -245,7 +245,7 @@ export function AdminQuoteControls({ onSave, className = '' }: AdminQuoteControl
         
         // Log the update
         if (user?.id) {
-          await supabase.from('quote_change_log').insert({
+          const { error: changeLogError } = await supabase.from('quote_change_log').insert({
             quote_id: state.editingQuoteId,
             changed_by: user.id,
             change_type: 'updated',
@@ -255,6 +255,13 @@ export function AdminQuoteControls({ onSave, className = '' }: AdminQuoteControl
               customer_notes: { new: customerNotes }
             }
           });
+          if (changeLogError) {
+            toast({
+              title: 'Change log not saved',
+              description: 'The quote was updated, but the change history row was not. Refresh and confirm the values before editing again.',
+              variant: 'destructive',
+            });
+          }
         }
         
         toast({
@@ -278,7 +285,7 @@ export function AdminQuoteControls({ onSave, className = '' }: AdminQuoteControl
           
           // Log the creation
           if (user?.id) {
-            await supabase.from('quote_change_log').insert({
+            const { error: changeLogError } = await supabase.from('quote_change_log').insert({
               quote_id: data.id,
               changed_by: user.id,
               change_type: 'created',
@@ -289,6 +296,13 @@ export function AdminQuoteControls({ onSave, className = '' }: AdminQuoteControl
                 admin_discount: { new: adminDiscount }
               }
             });
+            if (changeLogError) {
+              toast({
+                title: 'Change log not saved',
+                description: 'The quote was created, but the change history row was not. Refresh and confirm the values before editing again.',
+                variant: 'destructive',
+              });
+            }
           }
         }
         

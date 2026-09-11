@@ -1,12 +1,17 @@
+/**
+ * Nothing currently invokes this function. It is retained as the
+ * failure-notification hook for pg_cron. Any future cron job that
+ * calls it must send the internal secret (`x-internal-secret`).
+ */
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.53.1'
 import { Resend } from "npm:resend@2.0.0";
+import { requireAdmin } from "../_shared/admin-auth.ts";
 import { buildAdminEmail } from "../_shared/email-layout.ts";
 
 
 const corsHeaders = {
-  'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
+  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type, x-internal-secret',
 };
 
 interface NotificationRequest {
@@ -21,6 +26,9 @@ const handler = async (req: Request): Promise<Response> => {
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
   }
+
+  const authResult = await requireAdmin(req, corsHeaders);
+  if (authResult instanceof Response) return authResult;
 
   try {
     const supabaseUrl = Deno.env.get('SUPABASE_URL')!;

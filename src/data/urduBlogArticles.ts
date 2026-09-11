@@ -24,7 +24,7 @@ export const urduBlogArticles: Wave1Article[] = [
     image: '/lovable-uploads/hero-boat-rental-licence-ontario.webp',
     author: 'Harris Boat Works',
     datePublished: '2026-06-12',
-    dateModified: '2026-06-12',
+    dateModified: '2026-09-06',
     category: 'اردو گائیڈ',
     readTime: '8 منٹ',
     keywords: ['اونٹاریو میں مچھلی پکڑنے کا لائسنس (Fishing license Ontario)', 'ٹورنٹو کے قریب مچھلی پکڑنے کی جگہیں (Fishing spots near Toronto)', 'اونٹاریو فشنگ سیزن کیلنڈر (Ontario fishing season calendar)', 'مچھلی کی اقسام اونٹاریو جھیلوں میں (Fish species in Ontario lakes)', 'فشنگ رولز اونٹاریو برائے پاکستانی (Fishing rules Ontario for Pakistanis)'],
@@ -46,17 +46,17 @@ export const urduBlogArticles: Wave1Article[] = [
 
 Ontario میں مچھلی پکڑنے کا لائسنس دراصل دو حصوں پر مشتمل ہوتا ہے۔ پہلے آپ ایک Outdoors Card بنواتے ہیں، جو تین سال تک کارآمد رہتا ہے اور آپ کی شناختی معلومات رکھتا ہے۔ اس کے بعد آپ اس کارڈ پر اصل fishing licence خریدتے ہیں، جو ایک سال یا کچھ عرصے کے لیے جاری کیا جا سکتا ہے۔ یہ دونوں مراحل آن لائن، کچھ مخصوص دکانوں سے یا ServiceOntario کے دفاتر سے مکمل کیے جا سکتے ہیں۔
 
-بنیادی فرق دو طرح کے لائسنس کے درمیان ہے: Conservation Licence اور Sport Licence۔ Conservation Licence کی فیس کم ہوتی ہے اور اس کے تحت روزانہ مچھلی پکڑنے کی حد بھی کم رہتی ہے، جبکہ Sport Licence زیادہ تعداد کی اجازت دیتا ہے۔ آپ کے لیے کون سا بہتر ہے، اس کا انحصار اس پر ہے کہ آپ کتنی سنجیدگی سے اس شوق کو اپنانا چاہتے ہیں۔ تمام تازہ ترین فیسوں کے لیے براہِ کرم سرکاری فیس کا صفحہ یہاں دیکھیں: https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees۔ یاد رکھیں، یہ عمومی معلومات ہیں، قانونی مشورہ نہیں؛ قوانین تبدیل ہوتے رہتے ہیں اور سرکاری صفحے کی بات ہی آخری ہوتی ہے۔
+بنیادی فرق دو طرح کے لائسنس کے درمیان ہے: Conservation Licence اور Sport Licence۔ Conservation Licence کی فیس کم ہوتی ہے اور اس کے تحت روزانہ مچھلی پکڑنے کی حد بھی کم رہتی ہے، جبکہ Sport Licence زیادہ تعداد کی اجازت دیتا ہے۔ آپ کے لیے کون سا بہتر ہے، اس کا انحصار اس پر ہے کہ آپ کتنی سنجیدگی سے اس شوق کو اپنانا چاہتے ہیں۔ تمام تازہ ترین فیسوں کے لیے براہِ کرم سرکاری فیس کا صفحہ یہاں دیکھیں: [سرکاری فشنگ لائسنس فیس](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees)۔ یاد رکھیں، یہ عمومی معلومات ہیں، قانونی مشورہ نہیں؛ قوانین تبدیل ہوتے رہتے ہیں اور سرکاری صفحے کی بات ہی آخری ہوتی ہے۔
 
 ## رائس لیک اور فشریز مینجمنٹ زون 17 | FMZ 17
 
-Rice Lake، جہاں ہماری مرینا واقع ہے، Fisheries Management Zone 17 (FMZ 17) میں آتا ہے۔ زونز کا مطلب یہ ہے کہ مختلف جھیلوں اور علاقوں کے لیے الگ الگ اصول ہو سکتے ہیں، کیونکہ ہر جگہ کے مچھلی کے ذخیرے کی حالت جدا ہے۔ FMZ 17 میں ہر قسم کی مچھلی کا اپنا موسم ہوتا ہے، اپنی روزانہ کی حد اور اپنی کم از کم یا زیادہ سے زیادہ لمبائی کی شرط۔ ان اعداد و شمار کو رٹ لینا ممکن نہیں، کیونکہ یہ سالانہ بنیادوں پر بہتر انتظام کے لیے بدلتے ہیں۔ ہمیشہ تازہ ترین سرکاری ضابطوں کی کتابچہ یہاں دیکھیں: https://www.ontario.ca/document/ontario-fishing-regulations-summary۔
+Rice Lake، جہاں ہماری مرینا واقع ہے، Fisheries Management Zone 17 (FMZ 17) میں آتا ہے۔ زونز کا مطلب یہ ہے کہ مختلف جھیلوں اور علاقوں کے لیے الگ الگ اصول ہو سکتے ہیں، کیونکہ ہر جگہ کے مچھلی کے ذخیرے کی حالت جدا ہے۔ FMZ 17 میں ہر قسم کی مچھلی کا اپنا موسم ہوتا ہے، اپنی روزانہ کی حد اور اپنی کم از کم یا زیادہ سے زیادہ لمبائی کی شرط۔ ان اعداد و شمار کو رٹ لینا ممکن نہیں، کیونکہ یہ سالانہ بنیادوں پر بہتر انتظام کے لیے بدلتے ہیں۔ ہمیشہ تازہ ترین سرکاری ضابطوں کی کتابچہ یہاں دیکھیں: [Ontario Fishing Regulations Summary](https://www.ontario.ca/document/ontario-fishing-regulations-summary)۔
 
 ایک عام خاندانی دن کے لیے بس اتنا جان لیں: پانی پر نکلنے سے پہلے چیک کر لیں کہ جو مچھلی آپ پکڑنا چاہتے ہیں اس کا موسم کھلا ہے یا نہیں، اور Conservation Licence کی حد کو اپنی پارٹی میں بانٹ کر نہیں پورا کرتے، ہر لائسنس یافتہ شخص کی اپنی حد ہوتی ہے۔ شک ہو تو احتیاط برتیں اور چھوٹی مچھلیاں واپس چھوڑ دیں، یہ رویہ جھیل کو آنے والی نسلوں کے لیے بچاتا ہے۔
 
 ## خاندانی مواقع اور مفت پروگرام | Free Fishing & Family Days
 
-Ontario میں سال کے کچھ مخصوص دنوں پر licence-free fishing کے مواقع ملتے ہیں۔ تازہ تفصیل ہمیشہ official صفحے پر دیکھیں: https://www.ontario.ca/page/fishing-licence-ontario-and-canadian-residents۔ یہ Family Fishing Weekends کہلاتے ہیں؛ تازہ تاریخیں ہمیشہ official صفحے پر دیکھیں۔ اپنے کیلنڈر پر نشان لگائیں اور پہلی بار آزمانے کے لیے یہ بہترین وقت ہوتا ہے۔ اس کے علاوہ، **Learn to Fish** پروگرام بالکل مفت beginners کو سکھاتا ہے: کاسٹ کرنا، چارہ لگانا، حفاظتی اصول اور اخلاقی شکار۔ تفصیلات اور رجسٹریشن کے لیے یہ دیکھیں: https://www.ontario.ca/page/learn-fish۔ اس میں شامل ہو کر آپ آسان اور واضح انداز میں، فطرت سے جڑتے ہیں۔
+Ontario میں سال کے کچھ مخصوص دنوں پر licence-free fishing کے مواقع ملتے ہیں۔ تازہ تفصیل ہمیشہ official صفحے پر دیکھیں: [Ontario fishing licence for residents](https://www.ontario.ca/page/fishing-licence-ontario-and-canadian-residents)۔ یہ Family Fishing Weekends کہلاتے ہیں؛ تازہ تاریخیں ہمیشہ official صفحے پر دیکھیں۔ اپنے کیلنڈر پر نشان لگائیں اور پہلی بار آزمانے کے لیے یہ بہترین وقت ہوتا ہے۔ اس کے علاوہ، **Learn to Fish** پروگرام بالکل مفت beginners کو سکھاتا ہے: کاسٹ کرنا، چارہ لگانا، حفاظتی اصول اور اخلاقی شکار۔ تفصیلات اور رجسٹریشن کے لیے یہ دیکھیں: [Learn to Fish](https://www.ontario.ca/page/learn-fish)۔ اس میں شامل ہو کر آپ آسان اور واضح انداز میں، فطرت سے جڑتے ہیں۔
 
 ## پہلی بار جانے والوں کی چیک لسٹ | First-Trip Checklist
 
@@ -116,7 +116,7 @@ Harris Boat Works 1947 سے خاندانی مرینا ہے، 1965 سے Mercury �
     image: '/lovable-uploads/hero-used-boat-walkaround.png',
     author: 'Harris Boat Works',
     datePublished: '2026-06-12',
-    dateModified: '2026-08-19',
+    dateModified: '2026-09-11',
     category: 'اردو گائیڈ',
     readTime: '8 منٹ',
     keywords: ['یوزڈ بوٹ خریدتے وقت کیا دیکھیں (What to check when buying a used boat)', 'سیکنڈ ہینڈ کشتی کی خریدی میں دھوکہ (Scams in buying a used boat)', 'پرانے بوٹ انجن کی حالت کیسے چیک کریں (How to check condition of an old boat engine)', 'استعمال شدہ کشتی کی قیمت کا اندازہ (Estimating price of a used boat)', 'اونٹاریو میں یوزڈ بوٹ مارکیٹ (Used boat market Ontario)'],
@@ -170,13 +170,13 @@ Ontario میں ہر موٹر والی کشتی کے لیے Pleasure Craft Licenc
 
 ## جب مرمت سے بہتر ہے نیا انجن لگوانا | When Repower Beats Another Used Boat
 
-کئی بار ایسا ہوتا ہے کہ کشتی کا ڈھانچہ بالکل صحیح ہے لیکن انجن بہت زیادہ تھکا ہوا یا خراب ہے۔ ایسے میں دوسری استعمال شدہ کشتی خریدنے کے بجائے اپنی کشتی میں نیا Mercury انجن لگوانا زیادہ سمجھ داری ہے۔ آپ کو نئے انجن کی 3 سالہ بنیادی وارنٹی ملے گی، اور آپ جانتے ہیں کہ ہر پرزہ بالکل درست ہے۔ پرانی کشتیوں کے ساتھ مسلسل آنے والے چھوٹے موٹے مسائل کا وقت اور خرچ بچانے کا یہ ایک مستقل حل ہے۔ اگر آپ کا بجٹ اجازت دے تو repower پر غور ضرور کریں۔
+کئی بار ایسا ہوتا ہے کہ کشتی کا ڈھانچہ بالکل صحیح ہے لیکن انجن بہت زیادہ تھکا ہوا یا خراب ہے۔ ایسے میں دوسری استعمال شدہ کشتی خریدنے کے بجائے اپنی کشتی میں نیا Mercury انجن لگوانا زیادہ سمجھ داری ہے۔ آپ کو اہل Mercury تفریحی استعمال والے نئے انجن کی 3 سالہ فیکٹری محدود وارنٹی ملے گی، اور آپ جانتے ہیں کہ ہر پرزہ بالکل درست ہے۔ پرانی کشتیوں کے ساتھ مسلسل آنے والے چھوٹے موٹے مسائل کا وقت اور خرچ بچانے کا یہ ایک مستقل حل ہے۔ اگر آپ کا بجٹ اجازت دے تو repower پر غور ضرور کریں۔
 
 ## Harris Boat Works آپ کی کہاں مدد کر سکتا ہے | How We Help
 
 ہم Gores Landing میں Rice Lake کے کنارے واقع ہیں، اور آپ کی گاڑی سے Mississauga، Markham یا Brampton سے ہم تک پہنچنے میں تقریباً 90 منٹ لگتے ہیں۔ اگر آپ کسی استعمال شدہ کشتی کی خریداری کے بارے میں سنجیدہ ہیں اور بیچنے والے سے کشتی کو ہماری ورکشاپ پر لانے کا انتظام کر سکتے ہیں، تو ہماری Mercury Premier ڈیلر سروس ٹیم Mercury اور Mercruiser انجن کا معائنہ کر سکتی ہے؛ تفصیل کے لیے https://hbw.wiki/service پر فارم بھریں۔ ہم 1965 سے Mercury ڈیلر ہیں، اس لیے استعمال شدہ Mercury انجنوں کا باریک بینی سے جائزہ لینا ہماری پرانی عادت ہے۔
 
-اگر انجن واقعی ناکارہ نکلا اور آپ repower کا سوچ رہے ہیں، تو ہم نئے Mercury آؤٹ بورڈ کے لیے اقتباس فراہم کر سکتے ہیں، لیکن یاد رکھیں، ہم یہاں کوئی دام نہیں بتائیں گے، رہنمائی کے لیے ہمارا pricing reference صفحہ دیکھیں: https://www.mercuryrepower.ca/pricing-reference۔
+اگر انجن واقعی ناکارہ نکلا اور آپ repower کا سوچ رہے ہیں، تو ہم نئے Mercury آؤٹ بورڈ کے لیے اقتباس فراہم کر سکتے ہیں، لیکن یاد رکھیں، ہم یہاں کوئی دام نہیں بتائیں گے، رہنمائی کے لیے ہمارا pricing reference صفحہ دیکھیں: [Mercury pricing reference](https://www.mercuryrepower.ca/pricing-reference)۔
 
 ## ہمارا ایماندارانہ نوٹ
 
@@ -211,7 +211,7 @@ GTA اور اس کے ارد گرد استعمال شدہ کشتیوں کی بہ�
 
 اگر آپ نے کوئی استعمال شدہ کشتی منتخب کر لی ہے اور اسے پیشہ ورانہ نظروں سے چیک کروانا چاہتے ہیں، تو ہماری سروس ٹیم اس کے لیے تیار ہے۔ معائنے یا سوال کے لیے https://hbw.wiki/service پر سروس فارم بھریں۔
 
-اور اگر صورت حال یہ ہے کہ انجن تبدیل کرنے کا سوچ رہے ہیں، تو Mercury repower کے اقتباس کے لیے براہ راست https://www.mercuryrepower.ca/quote/motor-selection پر رابطہ کریں۔ فون پر بات کرنے کے لیے (905) 342-2153 یا ٹیکسٹ (647) 952-2153 پر پیغام بھیجیں۔
+اور اگر صورت حال یہ ہے کہ انجن تبدیل کرنے کا سوچ رہے ہیں، تو Mercury repower کے اقتباس کے لیے براہ راست https://www.mercuryrepower.ca/quote/motor-selection پر رابطہ کریں۔
 
 Harris Boat Works
 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
@@ -225,7 +225,7 @@ Harris Boat Works
     image: '/lovable-uploads/hero-winter-storage-shrinkwrap-vs-indoor.png',
     author: 'Harris Boat Works',
     datePublished: '2026-06-12',
-    dateModified: '2026-08-26',
+    dateModified: '2026-09-06',
     category: 'اردو گائیڈ',
     readTime: '8 منٹ',
     keywords: ['boat winterization Toronto Urdu', 'کشتی کی ونٹرائزیشن کیسے ہوتی ہے (how is boat winterization done)', 'boat storage Mississauga ke qareeb (boat storage near Mississauga)', 'kashti ko sardi ke liye kaise mehfooz karein (how to protect boat for winter)'],
@@ -257,7 +257,7 @@ Ontario کا موسم سرما سخت ہوتا ہے۔ نومبر کے بعد د�
 
 - **انجن سے پانی نکالنا**، Outboard اور stern drive کے تمام واٹر پاسیجز سے پانی ہوا کے ذریعے نکال کر نکاسی یقینی بناتے ہیں۔
 - **Fuel stabilizing**، باقی رہ جانے والے پٹرول میں stabilizer ملایا جاتا ہے تاکہ وہ سردیوں میں خراب نہ ہو اور کاربوریٹر/انجیکٹر بند نہ کریں۔
-- **Lower unit oil تبدیلی**، اگر نچلے حصے میں پانی گھس آیا تو جم کر کریشنگ ہو سکتی ہے، اس لیے تیل تبدیل کیا اور سیل چیک کیے جاتے ہیں۔
+- **Lower unit oil تبدیلی**، اگر نچلے حصے میں پانی گھس آیا تو جم کر ٹوٹ پھوٹ ہو سکتی ہے، اس لیے تیل تبدیل کیا اور سیل چیک کیے جاتے ہیں۔
 - **صحت مند بیٹری صرف اس صورت میں کشتی میں رہ سکتی ہے جب وہ مکمل چارج ہو، ڈسکنیکٹ ہو، محفوظ ہو، اور منظور شدہ اسٹوریج پلان اجازت دے۔** ماڈل/سیریل دستی اور منظور شدہ اسٹوریج پلان فیصلہ کن ہیں۔
 - **Livewell، bilge، اور تمام پانی کے پمپ خالی کرنا**، کہیں بھی پانی کی ایک بوند نہیں رہنی چاہیے۔
 - **سلنڈر walls کی حفاظت**، انجن کے اندرونی حصے پر تیل کی تہہ (fogging) لگائی جاتی ہے تاکہ زنگ نہ لگے۔

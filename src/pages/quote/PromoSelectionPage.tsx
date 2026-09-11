@@ -1,6 +1,6 @@
 import { useState, useEffect, useMemo, useRef, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import { Shield, Percent, Banknote, CreditCard, Check, ArrowRight, ArrowLeft, AlertCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { CountdownTimer } from '@/components/ui/countdown-timer';
@@ -12,8 +12,8 @@ import mercuryLogo from '@/assets/mercury-logo.png';
 import { PageTransition } from '@/components/ui/page-transition';
 import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
 import { QuotePageShell } from '@/components/quote-builder/redesign/QuotePageShell';
-import { calculateMonthly, DEALERPLAN_FEE, FINANCING_MINIMUM } from '@/lib/finance';
-import { promoEndOfDay } from '@/lib/quote-utils';
+import { calculateMonthly, DEALERPLAN_FEE, FINANCING_MINIMUM, isUsableFinancingRate } from '@/lib/finance';
+import { formatPromoCalendarDate, promoEndOfDay } from '@/lib/quote-utils';
 import { calculateQuoteFinancingEstimate } from '@/lib/quote-financing-estimate';
 import { reconcileWarrantyConfig } from '@/lib/quote-product-protection';
 import { getAppliedPromotion, getAppliedWarrantyExtraYears } from '@/lib/warranty-display';
@@ -40,6 +40,7 @@ export default function PromoSelectionPage() {
   const { state, dispatch } = useQuote();
   const { promotions, loading: promoLoading, getRebateForHP, getPromotionSavingsForMotor, getSpecialFinancingRates } = useActivePromotions();
   const { triggerHaptic } = useHapticFeedback();
+  const prefersReducedMotion = useReducedMotion();
 
   // Restore from context if user navigates back
   const [selectedOption, setSelectedOption] = useState<PaymentOptionId | null>(() => {
@@ -49,7 +50,9 @@ export default function PromoSelectionPage() {
     return null;
   });
   const [selectedRate, setSelectedRate] = useState<FinancingRate | null>(
-    state.selectedPromoRate && state.selectedPromoTerm
+    isUsableFinancingRate(state.selectedPromoRate) &&
+    state.selectedPromoTerm != null &&
+    Number.isFinite(state.selectedPromoTerm)
       ? { rate: state.selectedPromoRate, months: state.selectedPromoTerm }
       : null
   );
@@ -72,7 +75,9 @@ export default function PromoSelectionPage() {
     () => getSpecialFinancingRates() || [],
     [getSpecialFinancingRates],
   );
-  const lowestRate = financingRates?.[0]?.rate || 2.99;
+  const lowestRate = isUsableFinancingRate(financingRates?.[0]?.rate)
+    ? financingRates[0].rate
+    : 2.99;
   const shortestPromoTerm = financingRates.length > 0
     ? financingRates.reduce((min, r) => (r.months < min.months ? r : min), financingRates[0])
     : null;
@@ -163,10 +168,11 @@ export default function PromoSelectionPage() {
   // Filter to only eligible options - hide financing-only options if not eligible
   const eligibleOptions = useMemo(() => {
     return options.filter(option => {
+      if (option.id === 'special_financing' && financingRates.length === 0) return false;
       if ((option.id === 'special_financing' || option.id === 'standard_financing') && !isEligibleForFinancing) return false;
       return true;
     });
-  }, [options, isEligibleForFinancing]);
+  }, [options, isEligibleForFinancing, financingRates.length]);
 
   const persistFinancingRate = useCallback((rate: FinancingRate) => {
     dispatch({ type: 'SET_PAYMENT_METHOD', payload: 'special_financing' });
@@ -220,7 +226,7 @@ export default function PromoSelectionPage() {
   // summary line items. Idempotent: no-op if the same option is already set.
   useEffect(() => {
     if (!state.motor || !activePromo || rebateAmount <= 0) return;
-    if (state.selectedPromoOption === 'special_financing' && state.selectedPromoRate) return;
+    if (state.selectedPromoOption === 'special_financing' && isUsableFinancingRate(state.selectedPromoRate)) return;
     if (state.selectedPromoOption === 'cash_rebate') return;
     dispatch({
       type: 'SET_PROMO_DETAILS',
@@ -233,36 +239,14 @@ export default function PromoSelectionPage() {
     });
   }, [state.motor, activePromo, rebateAmount, state.selectedPromoOption, state.selectedPromoRate, dispatch]);
 
-  // Auto-skip only when we KNOW there are no promotion options. Layered
-  // offers still need this step so the customer can opt into promo financing
-  // while the rebate remains automatic.
-  // Guard against the loading race: while promotions are still loading we
-  // must not redirect, otherwise the customer skips the screen before we
-  // ever hear back from the DB and the rebate is silently dropped.
-  const hasPromotionOptions = (
-    activePromo?.promo_options?.type === 'choose_one' ||
-    activePromo?.promo_options?.type === 'layered'
-  ) && (activePromo.promo_options.options?.length ?? 0) > 0;
-
+  // Cash and standard financing are choices even when the active promotion
+  // has no structured promo_options. Do not navigate away from visible payment
+  // controls, or repeatedly dispatch warranty updates while the lazy summary
+  // route loads. Coverage is reconciled once in handleContinue below.
   useEffect(() => {
-    if (promoLoading) return;
-    if (!state.motor) return;
-    if (activePromo && hasPromotionOptions) return;
-
-    // For warranty-only promos, auto-apply the warranty and skip
-    if (activePromo && !hasPromotionOptions) {
-      dispatch({ type: 'SET_SELECTED_PACKAGE', payload: { id: 'good', label: 'Configured Quote', priceBeforeTax: 0 } });
-      dispatch({
-        type: 'SET_WARRANTY_CONFIG',
-        payload: reconcileWarrantyConfig(
-          Number(motorHP),
-          productProtectionIncludedYears,
-          state.warrantyConfig,
-        ),
-      });
-    }
+    if (promoLoading || !state.motor || activePromo) return;
     navigate('/quote/summary', { replace: true });
-  }, [promoLoading, activePromo, productProtectionIncludedYears, hasPromotionOptions, state.motor, state.warrantyConfig, motorHP, navigate, dispatch]);
+  }, [promoLoading, activePromo, state.motor, navigate]);
 
   const handleOptionSelect = (optionId: PaymentOptionId) => {
     setSelectedOption(optionId);
@@ -338,6 +322,7 @@ export default function PromoSelectionPage() {
         <div className="mx-auto w-full max-w-[880px] px-6 pt-8">
           <button
             onClick={handleBack}
+            aria-label={state.purchasePath === 'installed' ? 'Back to installation' : 'Back to trade-in'}
             className="inline-flex items-center gap-1.5 font-sans text-[12px] font-semibold uppercase tracking-[0.14em] text-repower-navy-900/65 hover:text-repower-mercury-red transition-colors min-h-[44px]"
           >
             <ArrowLeft className="w-4 h-4" />
@@ -385,8 +370,8 @@ export default function PromoSelectionPage() {
                 {/* Floating Shield Icon */}
                 <motion.div 
                   className="w-12 h-12 rounded-full bg-repower-gold/20 flex items-center justify-center"
-                  animate={{ y: [0, -6, 0] }}
-                  transition={{ 
+                  animate={prefersReducedMotion ? undefined : { y: [0, -6, 0] }}
+                  transition={prefersReducedMotion ? undefined : { 
                     duration: 3, 
                     ease: 'easeInOut', 
                     repeat: Infinity 
@@ -405,8 +390,8 @@ export default function PromoSelectionPage() {
                 {/* Pulsing INCLUDED Badge */}
                 <motion.div 
                   className="bg-repower-mercury-red text-white text-xs font-bold px-3 py-1 rounded-full ml-2"
-                  animate={{ scale: [1, 1.05, 1] }}
-                  transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+                  animate={prefersReducedMotion ? undefined : { scale: [1, 1.05, 1] }}
+                  transition={prefersReducedMotion ? undefined : { duration: 2, repeat: Infinity, ease: 'easeInOut' }}
                 >
                   ✓ INCLUDED
                 </motion.div>
@@ -441,7 +426,10 @@ export default function PromoSelectionPage() {
 
 
             {/* Option Cards, transform-only entrance, no opacity */}
-            <div className={cn(
+            <div
+              role="radiogroup"
+              aria-label="Choose how you'll pay"
+              className={cn(
               "grid gap-6 mb-6",
               eligibleOptions.length === 2 ? "md:grid-cols-2 max-w-2xl mx-auto" : "md:grid-cols-3"
             )}>
@@ -452,17 +440,20 @@ export default function PromoSelectionPage() {
                 return (
                   <motion.button
                     key={option.id}
-                    initial={{ y: 24 }}
+                    type="button"
+                    role="radio"
+                    aria-checked={isSelected}
+                    initial={prefersReducedMotion ? false : { y: 24 }}
                     animate={{ y: 0 }}
-                    transition={{ 
+                    transition={prefersReducedMotion ? { duration: 0 } : { 
                       delay: index * 0.1,
                       type: 'spring',
                       stiffness: 100,
                       damping: 15
                     }}
                     style={{ opacity: 1 }}
-                    whileHover={{ scale: 1.03, y: -4 }}
-                    whileTap={{ scale: 0.98 }}
+                    whileHover={prefersReducedMotion ? undefined : { scale: 1.03, y: -4 }}
+                    whileTap={prefersReducedMotion ? undefined : { scale: 0.98 }}
                     onClick={() => handleOptionSelect(option.id)}
                     className={cn(
                       'relative rounded-sm border bg-repower-cream p-6 text-left transition-all duration-200',
@@ -527,7 +518,7 @@ export default function PromoSelectionPage() {
                 >
                     <div className="mx-auto max-w-2xl rounded-sm border border-repower-navy-900/10 bg-repower-cream p-6">
                     <h3 className="mb-4 font-display text-xl font-bold tracking-[-0.015em] text-repower-navy-900">Select your rate and term</h3>
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                    <div role="radiogroup" aria-label="Financing rate and term" className="grid grid-cols-2 md:grid-cols-4 gap-3">
                       {financingRates.map((rate) => {
                         const isRateSelected = selectedRate?.months === rate.months;
                         const estimatedPayment = getEstimatedPayment(rate.rate, rate.months);
@@ -535,6 +526,9 @@ export default function PromoSelectionPage() {
                         return (
                           <button
                             key={rate.months}
+                            type="button"
+                            role="radio"
+                            aria-checked={isRateSelected}
                             onClick={() => handleRateSelect(rate)}
                             className={cn(
                               'rounded-sm border p-4 text-center transition-all duration-200',
@@ -573,7 +567,7 @@ export default function PromoSelectionPage() {
             {endDate && (
               <div className="mb-8">
                 <p className="text-muted-foreground text-sm mb-2">
-                  Offer ends {endDate.toLocaleDateString('en-CA', { year: 'numeric', month: 'long', day: 'numeric' })}
+                  Offer ends {formatPromoCalendarDate(activePromo.end_date)}
                 </p>
                 <CountdownTimer endDate={endDate} className="justify-center" />
               </div>

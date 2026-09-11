@@ -40,7 +40,7 @@ Best for small-boat owners prioritizing portability, cottage reliability, and pr
 
 - Right-sized for small transoms and light-duty use
 - Portable FourStroke practicality
-- Will stay clearly marked as illustrative until real photos arrive
+- Clearly labelled as an illustrative planning scenario
 
 ## Planning takeaway
 

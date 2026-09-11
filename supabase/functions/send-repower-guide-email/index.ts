@@ -2,6 +2,8 @@ import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { Resend } from "npm:resend@2.0.0";
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
 import { GROK_BOT_AGENTMAIL } from "../_shared/grok-email-routing.ts";
+import { forbiddenOriginResponse, isAllowedOrigin } from "../_shared/origin-check.ts";
+import { checkRateLimit, rateLimitedResponse } from "../_shared/rate-limit.ts";
 
 const resend = new Resend(Deno.env.get("RESEND_API_KEY"));
 const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
@@ -36,11 +38,36 @@ serve(async (req: Request): Promise<Response> => {
     return new Response(null, { headers: corsHeaders });
   }
 
+  if (!isAllowedOrigin(req)) {
+    return forbiddenOriginResponse(corsHeaders);
+  }
+
+  const allowed = await checkRateLimit(req, {
+    action: "send_repower_guide_email",
+    maxAttempts: 8,
+    windowMinutes: 60,
+    failClosed: true,
+  });
+  if (!allowed) return rateLimitedResponse(corsHeaders, 300);
+
   try {
-    const { email, name, phone, hasBoatToRepower }: RequestBody = await req.json();
+    let parsed: RequestBody;
+    try {
+      parsed = await req.json();
+    } catch {
+      return new Response(
+        JSON.stringify({ error: "Request body must be valid JSON" }),
+        { status: 400, headers: { "Content-Type": "application/json", ...corsHeaders } },
+      );
+    }
+
+    const { email, name, phone, hasBoatToRepower } = parsed ?? {};
 
     if (!email) {
-      throw new Error("Email is required");
+      return new Response(
+        JSON.stringify({ error: "Email is required" }),
+        { status: 400, headers: { "Content-Type": "application/json", ...corsHeaders } },
+      );
     }
 
     console.log(`[send-repower-guide-email] Processing request for: ${email}`);
@@ -115,12 +142,12 @@ serve(async (req: Request): Promise<Response> => {
     }
 
     // Build email using shared layout. Tracking pixel and unsubscribe preserved.
-    const { buildEmail } = await import("../_shared/email-layout.ts");
+    const { buildEmail, esc } = await import("../_shared/email-layout.ts");
     const unsubscribeUrl = `${APP_URL}/unsubscribe?token=${unsubscribeToken}`;
     const downloadUrl = trackClick(PDF_DOWNLOAD_URL, unsubscribeToken, 1);
     const quoteCtaUrl = trackClick(`${APP_URL}/quote/motor-selection`, unsubscribeToken, 1);
 
-    const greeting = name ? `Hi ${name},` : "Hi there,";
+    const greeting = name ? `Hi ${esc(name)},` : "Hi there,";
     const hotLeadBlock = hasBoatToRepower
       ? `<p style="margin:22px 0 0 0;font-size:14px;">Ready to start sizing options for your boat? <a href="${quoteCtaUrl}" style="color:#0f2a43;font-weight:600;">Build a quote</a> in a few minutes.</p>`
       : "";

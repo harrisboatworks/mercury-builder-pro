@@ -5,6 +5,7 @@ import { useToast } from '@/hooks/use-toast';
 import type { VoiceDiagnostics } from '@/lib/RealtimeVoice';
 import { dispatchVoiceNavigation, navigateToMotorsWithFilter, type MotorForQuote } from '@/lib/voiceNavigation';
 import { dispatchVoiceActivity, showTradeInEstimate, showCallbackConfirmation, showMotorComparison, showCurrentDeals, showLeadCaptureCard } from '@/lib/voiceActivityFeed';
+import { estimateVoiceTradeIn } from '@/lib/voice-trade-in';
 import { useVoiceSessionPersistence } from './useVoiceSessionPersistence';
 import { formatMotorsForVoice } from '@/lib/visibleMotorsStore';
 import {
@@ -14,6 +15,7 @@ import {
   getPromotionCombinationMode,
   getPromotionOptions,
 } from '../../supabase/functions/_shared/promotion-context';
+import { activePromotionDateOrFilters } from '../../supabase/functions/_shared/promo-dates';
 import {
   buildVerifiedMercuryTechnicalAnswer,
   type MercuryTechnicalMotorContext,
@@ -460,63 +462,37 @@ function handleServiceEstimate(params: {
 }
 
 // Client tool handler for trade-in estimates
-function handleTradeInEstimate(params: {
+async function handleTradeInEstimate(params: {
   brand: string;
   year: number;
   horsepower: number;
-  condition?: 'excellent' | 'good' | 'fair' | 'rough';
-}): string {
+  condition?: 'excellent' | 'good' | 'fair' | 'rough' | 'poor';
+  engine_type?: string;
+  model?: string;
+  hours?: number;
+}): Promise<string> {
   console.log('[ClientTool] estimate_trade_value', params);
-  
-  const currentYear = new Date().getFullYear();
-  const age = currentYear - params.year;
-  const condition = params.condition || 'good';
-  
-  // Brand multipliers
-  const brandMultipliers: Record<string, number> = {
-    mercury: 1.0, yamaha: 0.95, honda: 0.90, suzuki: 0.85,
-    evinrude: 0.70, johnson: 0.60, tohatsu: 0.75
-  };
-  const brandMult = brandMultipliers[params.brand.toLowerCase()] || 0.65;
-  
-  // Condition multipliers
-  const condMult = { excellent: 1.15, good: 1.0, fair: 0.80, rough: 0.55 }[condition];
-  
-  // Base value by HP
-  let baseValue: number;
-  if (params.horsepower <= 10) baseValue = params.horsepower * 400;
-  else if (params.horsepower <= 30) baseValue = params.horsepower * 350;
-  else if (params.horsepower <= 75) baseValue = params.horsepower * 250;
-  else if (params.horsepower <= 150) baseValue = params.horsepower * 180;
-  else baseValue = params.horsepower * 140;
-  
-  // Depreciation
-  let depreciation: number;
-  if (age <= 1) depreciation = 0.80;
-  else if (age <= 3) depreciation = 0.65;
-  else if (age <= 5) depreciation = 0.50;
-  else if (age <= 10) depreciation = 0.35;
-  else depreciation = 0.25;
-  
-  const estimatedValue = baseValue * brandMult * condMult * depreciation;
-  const lowValue = Math.round(estimatedValue * 0.85 / 100) * 100;
-  const highValue = Math.round(estimatedValue * 1.15 / 100) * 100;
-  const midValue = Math.round((lowValue + highValue) / 2 / 100) * 100;
-  
-  // Show activity card in chat with "Apply to Quote" button
-  showTradeInEstimate({
-    brand: params.brand,
-    year: params.year,
-    horsepower: params.horsepower,
-    condition,
-    estimatedValue: Math.max(midValue, 350),
-    valueRange: { low: Math.max(lowValue, 200), high: Math.max(highValue, 500) },
-  });
-  
+  const result = await estimateVoiceTradeIn(params);
+  if (result.ok === false) {
+    return JSON.stringify({
+      success: false,
+      reason: result.reason,
+      message: result.message,
+    });
+  }
+
+  showTradeInEstimate(result.card);
   return JSON.stringify({
     success: true,
-    estimate: { lowValue: Math.max(lowValue, 200), highValue: Math.max(highValue, 500) },
-    message: `A ${params.year} ${params.brand} ${params.horsepower} horsepower in ${condition} condition typically trades around $${Math.max(lowValue, 200).toLocaleString()} to $${Math.max(highValue, 500).toLocaleString()}. I've added a card to your chat where you can apply that to your quote with one tap.`
+    estimate: {
+      wholesale: result.card.wholesale,
+      lowValue: result.card.valueRange.low,
+      highValue: result.card.valueRange.high,
+      architecture: result.card.architecture,
+      valuedAt: result.card.valuedAt,
+      reportUrl: result.card.valuationReportUrl,
+    },
+    message: result.message,
   });
 }
 
@@ -695,13 +671,13 @@ async function handleCheckCurrentDeals(params: {
   console.log('[ClientTool] check_current_deals', params);
   
   try {
-    const today = new Date().toISOString().split('T')[0];
+    const { startOr, endOr } = activePromotionDateOrFilters();
     const { data, error } = await supabase
       .from('promotions')
       .select(ACTIVE_PROMOTION_SELECT)
       .eq('is_active', true)
-      .or(`start_date.is.null,start_date.lte.${today}`)
-      .or(`end_date.is.null,end_date.gte.${today}`)
+      .or(startOr)
+      .or(endOr)
       .order('priority', { ascending: false })
       .limit(5);
 
@@ -1756,13 +1732,16 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
         });
       },
       // Estimate trade-in value
-      estimate_trade_value: (params: {
+      estimate_trade_value: async (params: {
         brand: string;
         year: number;
         horsepower: number;
-        condition?: 'excellent' | 'good' | 'fair' | 'rough';
+        condition?: 'excellent' | 'good' | 'fair' | 'rough' | 'poor';
+        engine_type?: string;
+        model?: string;
+        hours?: number;
       }) => {
-        return handleTradeInEstimate(params);
+        return await handleTradeInEstimate(params);
       },
       // Recommend a motor based on boat/usage
       recommend_motor: withSearchingFeedback(

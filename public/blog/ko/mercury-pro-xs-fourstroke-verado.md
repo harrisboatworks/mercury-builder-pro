@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/ko/mercury-pro-xs-fourstroke-verado.md
-last_updated: 2026-06-08
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "머큐리 Pro XS, FourStroke, Verado: 무엇을 고를까?"
 description: "Pro XS, FourStroke, Verado? 머큐리 세 계열의 차이와 내 보트에 맞는 선택. 머큐리 딜러의 정직한 답변."
 category: "구매 가이드"
 date_published: 2026-06-08
-date_modified: 2026-06-08
+date_modified: 2026-09-06
 keywords: ["머큐리 Pro XS","머큐리 FourStroke","머큐리 Verado","Mercury motor comparison Korean","머큐리 선외기 비교"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** 구매 가이드  
 **Published:** 2026-06-08  
-**마지막 검토:** 2026-06-08  
+**마지막 검토:** 2026-09-06  
 **Read time:** 9 분  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ko/mercury-pro-xs-fourstroke-verado
 
@@ -33,7 +33,7 @@ revenue_driver: repower
 
 - **FourStroke**: 머큐리의 표준 4행정 라인. 부드러움, 정숙성, 연비. 가족 보트, 낚시 보트, 폰툰의 기본 선택.
 - **Pro XS**: 같은 4행정 블록을 베이스로 성능을 끌어올린 버전. 가속, 최고 속도, 토너먼트 사용. 베이스보트, 퍼포먼스 알루미늄, 가벼운 폰툰 부스트.
-- **Verado**: 머큐리의 슈퍼차저 V8/V12 프리미엄 라인. 정숙성과 출력을 모두 원하는 대형 보트. **HBW에서 Verado는 상시 재고가 아닌 주문 제작 모델입니다. 구성기에는 없으니, Verado가 맞으면 전화 주시면 사양을 잡아 주문해 드립니다.**
+- **Verado**: 머큐리의 자연 흡기 V8/V10/V12 프리미엄 라인. 정숙성과 편안한 승선감을 중시하는 대형 보트. **HBW에서 Verado는 상시 재고가 아닌 주문 제작 모델입니다. 구성기에는 없으니, Verado가 맞으면 전화 주시면 사양을 잡아 주문해 드립니다.**
 
 ---
 
@@ -42,7 +42,7 @@ revenue_driver: repower
 같은 마력대에서:
 - **FourStroke = 부드러움**
 - **Pro XS = 더 빠른 가속과 최고 속도**
-- **Verado = 프리미엄 정숙성 + 슈퍼차저 출력 (대형 보트 전용)**
+- **Verado = 정숙성과 편안한 승선감을 중시하는 프리미엄 모델군**
 
 ---
 
@@ -50,8 +50,8 @@ revenue_driver: repower
 
 | 항목 | FourStroke | Pro XS | Verado |
 |---|---|---|---|
-| 성격 | 부드러움, 정숙, 연비 | 가속, 최고 속도, 토너먼트 | 프리미엄 정숙 + 슈퍼차저 출력 |
-| 마력대 | 2.5~300 | 115~300 | 250~600 (V8/V12) |
+| 성격 | 부드러움, 정숙, 연비 | 가속, 최고 속도, 토너먼트 | 프리미엄 정숙과 편안한 승선감 |
+| 마력대 | 2.5~300 | 115~300 | 250~600 (V8/V10/V12) |
 | 적합 보트 | 가족 보트, 폰툰, 낚시 보트 | 베이스 보트, 퍼포먼스 알루미늄 | 대형 센터 콘솔, 크루저 |
 | 시동/조향 | 표준 메커니컬 또는 DTS | 메커니컬 또는 DTS | 풀 DTS, 일렉트릭 스티어링 표준 |
 | HBW 취급 | 구성기에서 제공 | 구성기에서 제공 | 주문 제작(전화 문의) |
@@ -68,7 +68,7 @@ revenue_driver: repower
 
 ## Verado: 프리미엄 카테고리
 
-Verado는 슈퍼차저(115~300 옛 모델) 또는 자연 흡기 V8/V12(현행)로 프리미엄 정숙성과 출력을 동시에 추구합니다. 250마력 이상, 특히 대형 센터 콘솔, 캐빈 크루저, 디우얼 콘솔 24피트 이상에 사용됩니다.
+Verado는 슈퍼차저(구형 직렬 6기통) 또는 자연 흡기 V8/V10/V12(현행)로 프리미엄 정숙성과 출력을 동시에 추구합니다. 250마력 이상, 특히 대형 센터 콘솔, 캐빈 크루저, 디우얼 콘솔 24피트 이상에 사용됩니다.
 
 **HBW에서는 Verado를 주문 제작 모델로 취급합니다.** 라이스 레이크와 코타와르타스 호수의 일반적인 보트(폰툰, 알루미늄 낚시 보트, 바우라이더 등)에는 Pro XS와 FourStroke가 더 자주 맞아떨어집니다. Verado가 적합한 경우 전화 주시면 사양을 잡아 주문해 드립니다.
 

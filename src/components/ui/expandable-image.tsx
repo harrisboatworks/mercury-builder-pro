@@ -4,6 +4,14 @@ import { X, Expand } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { getResponsiveWebpSrcSet } from '@/lib/responsiveImageVariants';
 
+// Measured source dimensions: keep these small official warranty assets at native size.
+const nativeArtworkWidths: Record<string, number> = {
+  '/lovable-uploads/inline/inline-legend-pontoon-lifetime-structure.png': 562,
+  '/lovable-uploads/inline/inline-legend-pontoon-tech-warranty.png': 564,
+  '/lovable-uploads/inline/inline-legend-welded-hull-warranty.webp': 768,
+  '/lovable-uploads/inline/inline-legend-wowranty-logo.webp': 421,
+};
+
 interface ExpandableImageProps {
   src: string;
   alt: string;
@@ -22,6 +30,13 @@ export const ExpandableImage: React.FC<ExpandableImageProps> = ({
   const [isExpanded, setIsExpanded] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
   const dialogId = useId();
+  // This archived photo has baked-in blurred side panels. Show its authentic
+  // portrait centre in the article; preserve the full original in the lightbox.
+  const isShopPortrait = src === '/lovable-uploads/blog-heroes-2026-07/hero-mercury-spring-run-up-hbw-service-2026-07.webp';
+  const nativeWidth = isShopPortrait ? 480 : nativeArtworkWidths[src];
+  const isMercury200Comparison = src === '/lovable-uploads/inline/mercury-200-fourstroke-vs-pro-xs-official.webp';
+  // Retain the verified product photographs without displaying obsolete raster specs.
+  const comparisonCrop = isMercury200Comparison ? 'inset(0 0 26% 0)' : undefined;
 
   const handleOverlayClick = (e: React.MouseEvent) => {
     if (e.target === e.currentTarget) {
@@ -32,11 +47,11 @@ export const ExpandableImage: React.FC<ExpandableImageProps> = ({
   return (
     <DialogPrimitive.Root open={isExpanded} onOpenChange={setIsExpanded}>
       {/* Main Image */}
-      <figure className={cn("relative", containerClassName)}>
+      <figure className={cn("relative", containerClassName)} style={nativeWidth ? { maxWidth: nativeWidth, marginInline: 'auto' } : undefined}>
         <DialogPrimitive.Trigger asChild>
           <button
             type="button"
-            className="relative group block w-full cursor-zoom-in rounded-lg text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+            className="relative group block w-full overflow-hidden cursor-zoom-in rounded-lg text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
             aria-label={`Expand image: ${alt}`}
             aria-controls={dialogId}
           >
@@ -47,6 +62,7 @@ export const ExpandableImage: React.FC<ExpandableImageProps> = ({
                 src={src}
                 alt={alt}
                 className={cn("w-full h-auto rounded-lg shadow-sm transition-all duration-200 group-hover:shadow-md", className)}
+                style={isShopPortrait ? { width: `${1600 / 680 * 100}%`, maxWidth: 'none', marginLeft: `${-460 / 680 * 100}%` } : isMercury200Comparison ? { clipPath: comparisonCrop, marginBottom: '-15.23%' } : undefined}
                 loading="lazy"
                 onLoad={() => setImageLoaded(true)}
               />
@@ -121,7 +137,9 @@ export const ExpandableImage: React.FC<ExpandableImageProps> = ({
               alt={alt}
               className="max-w-none object-contain select-none rounded-lg shadow-2xl"
               style={{ 
-                minWidth: '100%',
+                clipPath: comparisonCrop,
+                minWidth: nativeWidth ? undefined : '100%',
+                maxWidth: nativeWidth ? '100%' : undefined,
                 height: 'auto',
                 maxHeight: '90vh',
                 width: 'auto'

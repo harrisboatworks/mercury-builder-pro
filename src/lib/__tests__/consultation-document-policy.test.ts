@@ -6,6 +6,7 @@ import {
   ConsultationDocumentRequestError,
   ConsultationDocumentUnavailableError,
   MAX_QUOTE_DOCUMENT_BYTES,
+  assertConsultationDocumentBytes,
   assertConsultationStoredDocument,
   authorizeConsultationRedemption,
   canonicalConsultationDocumentPath,
@@ -17,6 +18,7 @@ import {
   parseConsultationUploadMeta,
   parseDurableDocumentAccessUrl,
   parseFragmentToken,
+  sha256Hex,
   CONSULTATION_UPLOAD_UNAVAILABLE_ERROR,
   CONSULTATION_UPLOAD_UNAVAILABLE_STATUS,
   consultationMultipartUploadRejection,
@@ -132,7 +134,7 @@ describe('consultation document policy', () => {
     const parsed = await parseConsultationMultipart(new Request('https://www.mercuryrepower.ca', {
       method: 'POST',
       headers: { 'content-type': good.contentType },
-      body: good.body,
+      body: good.body as BodyInit,
     }));
     expect(parsed.meta.flow).toBe('submit');
 
@@ -144,7 +146,7 @@ describe('consultation document policy', () => {
     await expect(parseConsultationMultipart(new Request('https://www.mercuryrepower.ca', {
       method: 'POST',
       headers: { 'content-type': extra.contentType },
-      body: extra.body,
+      body: extra.body as BodyInit,
     }))).rejects.toThrow(/only metadata and a PDF/);
 
     const badMagic = multipartBody([
@@ -154,7 +156,7 @@ describe('consultation document policy', () => {
     await expect(parseConsultationMultipart(new Request('https://www.mercuryrepower.ca', {
       method: 'POST',
       headers: { 'content-type': badMagic.contentType },
-      body: badMagic.body,
+      body: badMagic.body as BodyInit,
     }))).rejects.toThrow(/signature/);
 
     const oversizedMeta = multipartBody([
@@ -164,7 +166,7 @@ describe('consultation document policy', () => {
     await expect(parseConsultationMultipart(new Request('https://www.mercuryrepower.ca', {
       method: 'POST',
       headers: { 'content-type': oversizedMeta.contentType },
-      body: oversizedMeta.body,
+      body: oversizedMeta.body as BodyInit,
     }))).rejects.toThrow(ConsultationDocumentRequestError);
 
     expect(MAX_QUOTE_DOCUMENT_BYTES).toBe(5 * 1024 * 1024);
@@ -220,6 +222,39 @@ describe('consultation document policy', () => {
       byteSize: 12,
       contentType: 'application/pdf',
     })).toThrow(ConsultationDocumentUnavailableError);
+  });
+
+  it('rejects stored PDFs whose bytes, digest, or canonical path do not match the row', async () => {
+    const bytes = pdfBytes('bound');
+    const sha256 = await sha256Hex(bytes);
+    const binding = {
+      path: canonicalConsultationDocumentPath(DOCUMENT_ID),
+      sha256,
+    };
+    await expect(assertConsultationDocumentBytes({
+      bytes,
+      byteSize: bytes.byteLength,
+      binding,
+      documentId: DOCUMENT_ID,
+    })).resolves.toBeUndefined();
+    await expect(assertConsultationDocumentBytes({
+      bytes,
+      byteSize: bytes.byteLength + 1,
+      binding,
+      documentId: DOCUMENT_ID,
+    })).rejects.toBeInstanceOf(ConsultationDocumentUnavailableError);
+    await expect(assertConsultationDocumentBytes({
+      bytes,
+      byteSize: bytes.byteLength,
+      binding: { ...binding, sha256: 'd'.repeat(64) },
+      documentId: DOCUMENT_ID,
+    })).rejects.toBeInstanceOf(ConsultationDocumentUnavailableError);
+    await expect(assertConsultationDocumentBytes({
+      bytes: new TextEncoder().encode('not-a-pdf'),
+      byteSize: 9,
+      binding,
+      documentId: DOCUMENT_ID,
+    })).rejects.toBeInstanceOf(ConsultationDocumentUnavailableError);
   });
 });
 

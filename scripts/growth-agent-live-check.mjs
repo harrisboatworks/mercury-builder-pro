@@ -1,5 +1,4 @@
 import { execFileSync } from "node:child_process";
-import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -14,10 +13,6 @@ const TSX_BIN = join(
   ".bin",
   process.platform === "win32" ? "tsx.cmd" : "tsx",
 );
-const FINANCE_POLICY = JSON.parse(
-  readFileSync(new URL("../src/data/finance-policy.json", import.meta.url), "utf8"),
-);
-
 const AI_CRAWLER_ALLOWLIST = [
   "GPTBot",
   "ChatGPT-User",
@@ -217,12 +212,19 @@ function semanticArtifactAssertion(artifacts) {
     failures.push("motors markdown is missing the Verado special-order-only rule");
   }
 
-  const promoActive = Date.now() <= new Date(FINANCE_POLICY.mercuryPromo.endsAt).getTime();
-  if (promoActive && !artifacts.llms.text.includes(`${FINANCE_POLICY.mercuryPromo.apr}% APR`)) {
-    failures.push(`llms.txt is missing the active ${FINANCE_POLICY.mercuryPromo.apr}% APR headline`);
+  const financingAuthoritySignals = [
+    "Request build_quote for the selected motor and purchase options.",
+    "from active financing records",
+    "Do not substitute cached headline rates",
+    "https://www.mercuryrepower.ca/api/agents/quote",
+  ];
+  for (const signal of financingAuthoritySignals) {
+    if (!artifacts.llms.text.includes(signal)) {
+      failures.push(`llms.txt is missing per-quote financing authority: ${signal}`);
+    }
   }
-  if (promoActive && /Standard financing (?:rates )?(?:start|starts) (?:from|at)\s+7\.99%/i.test(artifacts.llms.text)) {
-    failures.push("llms.txt incorrectly frames 7.99% as current while the promo is active");
+  if (/\b\d+(?:\.\d+)?% APR\b/i.test(artifacts.llms.text)) {
+    failures.push("llms.txt contains a cached financing APR instead of per-quote authority");
   }
 
   const pricingRows = parsePricingRows(artifacts.pricing.text);

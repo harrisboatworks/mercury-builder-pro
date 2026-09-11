@@ -10,8 +10,10 @@ import {
 } from '@react-pdf/renderer';
 import type { ComponentType } from 'react';
 import { parseMercuryRigCodes } from '@/lib/mercury-codes';
+import { formatPromoCalendarDate, promoEndOfDay } from '@/lib/quote-utils';
 import { getRecommendedDeposit } from '@/lib/deposit';
 import { resolveFinancingContractTermMonths } from '@/lib/quote-pdf-data';
+import { groupAccessoryItems } from '@/lib/quote-accessory-groups';
 import harrisLogoBlack from '@/assets/harris-logo.png?inline';
 import mercuryLogoBlack from '@/assets/mercury-logo.png';
 
@@ -318,11 +320,12 @@ export interface QuotePDFProps {
 }
 
 function dateAtEndOfDay(value: string): Date {
-  return /^\d{4}-\d{2}-\d{2}$/.test(value) ? new Date(`${value}T23:59:59`) : new Date(value);
+  return promoEndOfDay(value);
 }
 
 function formattedDate(value: string): string {
-  return dateAtEndOfDay(value).toLocaleDateString('en-CA', { year: 'numeric', month: 'long', day: 'numeric' });
+  return formatPromoCalendarDate(value)
+    || dateAtEndOfDay(value).toLocaleDateString('en-CA', { year: 'numeric', month: 'long', day: 'numeric' });
 }
 
 function validUntilText(quoteDate: string, validUntil?: string, promoEndDate?: string): string {
@@ -404,7 +407,12 @@ export const FINANCING_ESTIMATE_DISCLAIMER = 'Payment figures are estimates and 
 export function quoteInspectionCaveat(quoteData: Pick<QuotePDFProps['quoteData'], 'accessoryBreakdown' | 'tradeInValue'>): string | null {
   const hasTradeIn = Number(quoteData.tradeInValue || 0) > 0;
   const hasPropeller = Boolean(
-    quoteData.accessoryBreakdown?.some((item) => item.name.toLowerCase().includes('propeller')),
+    quoteData.accessoryBreakdown?.some((item) => {
+      const name = item.name.toLowerCase();
+      // A factory-included propeller is not subject to water-test selection.
+      if (name.includes('standard propeller')) return false;
+      return name.includes('propeller');
+    }),
   );
 
   if (hasTradeIn && hasPropeller) {
@@ -459,12 +467,7 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
   const savedQuoteQrCode = quoteData.savedQuoteQrCode ?? quoteData.financingQrCode;
   const expiry = validUntilText(quoteData.date, quoteData.validUntil, quoteData.promoEndDate);
   const items = quoteData.accessoryBreakdown || [];
-  const groups = [
-    { key: 'equipment', title: 'Equipment and Rigging', items: items.filter((item) => !item.category || item.category === 'equipment') },
-    { key: 'installation', title: 'Installation and Setup', items: items.filter((item) => item.category === 'installation') },
-    { key: 'protection', title: 'Mercury Product Protection', items: items.filter((item) => item.category === 'protection') },
-    { key: 'custom', title: 'Additional Items', items: items.filter((item) => item.category === 'custom') },
-  ].filter((group) => group.items.length > 0);
+  const groups = groupAccessoryItems(items);
   const includedCoverage = quoteData.includedCoverageYears ?? 3;
   const coverageTotal = quoteData.productProtection?.totalCoverageYears ?? includedCoverage;
   const hasFinancing = quoteData.selectedPaymentMethod !== 'cash_purchase'
@@ -677,7 +680,7 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
         {spaciousLayout ? (
           <View style={styles.waterTestBand}>
             <Text style={styles.waterTestBandText}>{quoteData.includesInstallation
-              ? 'Every installed repower is water-tested on Rice Lake before pickup.'
+              ? 'Standard installed-repower handoff includes an on-water test on Rice Lake before pickup when safe seasonal conditions allow.'
               : 'Every loose motor is prepared, test-run and commissioned before pickup.'}</Text>
           </View>
         ) : null}

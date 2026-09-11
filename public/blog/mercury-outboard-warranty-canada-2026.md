@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-warranty-canada-2026.md
-last_updated: 2026-08-19
+last_updated: 2026-09-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Outboard Warranty Canada 2026"
 description: "A plain-English guide to Mercury outboard warranty in Canada: coverage, exclusions, maintenance records, registration, and Product Protection."
 category: "Buying Guide"
 date_published: 2026-05-23
-date_modified: 2026-08-19
+date_modified: 2026-09-07
 keywords: ["Mercury outboard warranty Canada","Mercury 3 year warranty","Mercury Product Protection MPP","Mercury corrosion warranty","Mercury warranty transfer used motor","Mercury warranty Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Category:** Buying Guide  
 **Published:** 2026-05-23  
-**Last reviewed:** 2026-08-19  
+**Last reviewed:** 2026-09-07  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-warranty-canada-2026
 
@@ -33,25 +33,25 @@ revenue_driver: service
 
 > **Quick answer:** Eligible new Mercury FourStroke outboards for pleasure use in Canada include a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; see [current promotions](https://www.mercuryrepower.ca/promotions). Coverage requires eligible purchase, proper registration, maintenance according to the applicable manual, and service records.
 
-The short version: every new Mercury outboard sold in Canada comes with a **3-year limited warranty AND a 3-year corrosion warranty**, both starting the day you buy it, both ending the same day three years later. They're concurrent, not stacked. Anyone telling you you have "six years of coverage" is reading the brochure wrong.
+The short version for **eligible pleasure-use** models: a new Mercury outboard sold through the authorized channel includes a **3-year limited warranty and a 3-year corrosion warranty**. Those periods run concurrently, not as six stacked years. Coverage begins at **first retail sale or first service, whichever happens earlier**. Commercial and other product categories have different coverage. An older used or demo purchase does not reset either clock. Anyone telling you you have "six years of coverage" is reading the brochure wrong. [Limited warranty](https://www.mercurymarine.com/ca/en/service-and-support/warranty-coverage-and-product-protection/mercury-limited-warranty) · [Coverage duration chart](https://www.mercurymarine.com/ca/en/service-and-support/warranty-coverage-and-product-protection/coverage-duration-chart).
 
 We're a Mercury dealer in Ontario since 1965. We do warranty work in our shop every week. This is the version of the warranty conversation we have with customers when they're buying a new motor or wondering if it's worth extending.
 
 ---
 
-![Mercury outboard warranty in Canada: 3-year standard factory coverage, extended Product Protection, and how to keep it valid](/blog-visuals/mercury-warranty-canada-explained.png)
+![Warranty checklist: confirm eligibility, check coverage and dates, and keep service records.](/lovable-uploads/blog-visuals-2026-09/warranty-checklist.svg)
 
-## The Two Standard Warranties (Both 3 Years, Both Start Day One)
+## The Two Standard Warranties (Eligible Pleasure-Use Models)
 
-Every new Mercury outboard sold in Canada includes:
+Eligible new pleasure-use Mercury outboards in Canada include:
 
 **1. Mercury 3-Year Limited Warranty.** Covers manufacturing defects in the motor, powerhead, gearcase, ignition, electronics, fuel system. If something fails because of a defect (not abuse, not neglect, not wrong oil), Mercury covers parts and labour at any authorized Canadian dealer.
 
-**2. Mercury 3-Year Corrosion Warranty.** Covers structural corrosion of the motor, hull-side surfaces, mounting bracket, exterior components. Important to understand: **this runs concurrently with the limited warranty**, not after it. Both clocks start the day you buy. Both stop on the same day three years later.
+**2. Mercury 3-Year Corrosion Warranty.** Mercury's written condition is the product being rendered inoperative directly by corrosion. It is not a cosmetic-finish or "hull-side surfaces" list. Named exclusions include, among other things, cosmetic corrosion, electrical-system corrosion, and corrosion of accessories, instruments, or steering. Required corrosion prevention and maintenance still apply. **This runs concurrently with the limited warranty**, not after it. Both clocks start at first retail sale or first service, whichever is earlier. Both stop on the same day three years later for eligible pleasure-use models. Commercial coverage is different.
 
 This is the single most-misunderstood part of Mercury's warranty. Some sales pitches frame it as "3+3 = six years of coverage." It isn't. **You get three years total**, with two different things being covered during those three years.
 
-That said, three years of Mercury limited-warranty coverage is genuinely strong for the marine industry. Additional promotional coverage may be offered for eligible purchases, but only when the written terms explicitly include it. See [current promotions](https://www.mercuryrepower.ca/promotions) and our [Mercury outboard warranty guide](/blog/mercury-outboard-warranty-canada-2026) for the current position.
+That said, three years of Mercury limited-warranty coverage is genuinely strong for the marine industry. Additional promotional coverage may be offered for eligible purchases, but only when the written terms explicitly include it. See [current promotions](https://www.mercuryrepower.ca/promotions) and our Mercury outboard warranty guide for the current position.
 
 ---
 
@@ -65,12 +65,7 @@ The 3-year limited warranty covers **manufacturing defects** in:
 - Fuel delivery system (injectors, fuel pump, lines)
 - Outboard structure as designed and built
 
-The corrosion warranty covers **structural corrosion** that wasn't caused by external damage or abuse:
-
-- Hull-side surfaces of the motor
-- Bracket and mid-section
-- Trim system housing
-- Anodes are wear items and excluded (you replace those yourself)
+The corrosion warranty covers the product being **rendered inoperative directly by corrosion**, not an invented list of hull-side surfaces. Follow Mercury's required corrosion prevention and maintenance. Anodes are wear items and excluded (you replace those yourself). Cosmetic corrosion, electrical-system corrosion, and corrosion of accessories, instruments, or steering are outside that coverage.
 
 **What's NOT covered under either warranty:**
 
@@ -172,7 +167,7 @@ Using a non-OEM maintenance part does not accurately mean the whole warranty van
 
 **The dealer network.** Every authorized Mercury dealer in Canada honours warranty work, regardless of where the motor was purchased. So if you buy in Ontario and move to BC, your warranty doesn't lapse, but the closest dealer is now four provinces away, and warranty work needs to be done at an authorized dealer.
 
-**Cross-border purchases.** Mercury motors imported privately from the US **do NOT have Canadian warranty coverage.** This catches buyers who think they're getting a deal at a US dealer. [Mercury Canada](https://www.mercurymarine.com/canada/en/) and Mercury USA are separate warranty entities, a US-purchased motor has US coverage only, and that coverage doesn't apply at Canadian dealers. If you're tempted, do the math including the lifetime cost of out-of-warranty repairs.
+**Cross-border purchases.** Do not assume either automatic Canadian coverage or automatic exclusion. Mercury's current Canadian limited warranty expressly covers new products purchased in the US and Canada when eligibility conditions are met. Those conditions are tied to an authorized selling dealer, documented predelivery inspection, and registration. Before buying across the border, have Mercury confirm the serial number, selling-dealer authorization, registration, and coverage that actually applies to that purchase. [Mercury Canada limited warranty](https://www.mercurymarine.com/ca/en/service-and-support/warranty-coverage-and-product-protection/mercury-limited-warranty).
 
 **The HST factor.** HBW's published Platinum prices are in Canadian dollars before HST. Buying later does not avoid tax, and the Canadian terms say purchases after the first factory-warranty year are subject to a surcharge. Check [current promotions](/promotions) and have HBW verify the serial record before choosing the timing.
 
@@ -211,6 +206,7 @@ An authorized dealer can verify registration, document the work it performs, and
 ## Sources
 
 - [Mercury Marine Canada Limited Warranty](https://www.mercurymarine.com/ca/en/service-and-support/warranty-coverage-and-product-protection/mercury-limited-warranty) - Official maintenance, exclusion, claim and transfer terms.
+- [Mercury coverage duration chart](https://www.mercurymarine.com/ca/en/service-and-support/warranty-coverage-and-product-protection/coverage-duration-chart) - Pleasure, commercial, and other category durations.
 - [Mercury Product Protection](https://www.mercurymarine.com/ca/en/service-and-support/warranty-coverage-and-product-protection/mercury-product-protection) - Official Mercury overview, coverage comparison and program guidelines.
 - [Current Canadian Platinum Plan Benefits and Provisions](https://www.mercurymarine.com/content/dam/mercury-marine/us_en/parts-and-services/service-and-support/warranty-coverage/product-protection/8M0236695%20Canada%20Platinum%20Plan%20Current%20upd%203-17-25.pdf.coredownload.pdf) - Canadian contract terms reviewed for this update.
 
@@ -218,7 +214,7 @@ An authorized dealer can verify registration, document the work it performs, and
 
 ### Is the Mercury warranty really 3 years or 6 years?
 
-3 years total. The limited warranty (defects) and the corrosion warranty (corrosion) both run concurrently from the day you buy. They cover different things during the same 3-year window, they don't stack to give you six years.
+For eligible pleasure-use models, 3 years total. The limited warranty (defects) and the corrosion warranty (inoperative-product corrosion, with named exclusions) run concurrently from first retail sale or first service, whichever is earlier. They cover different things during the same 3-year window; they don't stack to six years. Commercial and other categories differ. A later used or demo purchase does not restart either clock.
 
 ### When can I buy MPP, is there still a 1-year purchase deadline?
 

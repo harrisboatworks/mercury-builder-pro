@@ -134,8 +134,8 @@ const handler = async (req: Request): Promise<Response> => {
       <p style="margin:0 0 14px 0;">Hi${applicantName ? ` ${esc(applicantName)}` : ''},</p>
       <p style="margin:0 0 14px 0;">Your financing application is saved. You can pick it up where you left off whenever you have a few minutes.</p>
       ${detailsCard([
-        { label: "Progress", value: `${completedSteps} of ${totalSteps} steps (${progressPercentage}%)` },
-        { label: "Saved for", value: "30 days" },
+        { label: "Progress", valueHtml: `${completedSteps} of ${totalSteps} steps (${progressPercentage}%)` },
+        { label: "Saved for", valueHtml: "30 days" },
       ])}
       <p style="margin:18px 0 0 0;">Need a hand? Reply to this email or call <a href="tel:9053422153" style="color:#0f2a43;font-weight:600;">(905) 342-2153</a>.</p>
     `;
@@ -151,7 +151,7 @@ const handler = async (req: Request): Promise<Response> => {
 
     const emailResponse = await resend.emails.send({
       from: 'Harris Boat Works <noreply@mercuryrepower.ca>',
-      replyTo: 'info@harrisboatworks.ca',
+      reply_to: 'info@harrisboatworks.ca',
       to: [email],
       subject: 'Resume your financing application | Harris Boat Works',
       html,

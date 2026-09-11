@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/ur/used-boat-buying-checklist-urdu.md
-last_updated: 2026-08-19
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Canada mein purani kashti kharidne ki checklist | استعمال شدہ 
 description: "Canada mein purani kashti kharidne ki checklist: motor، transom، storage aur repower جانچ اردو میں۔ Rice Lake کے تجربہ کار marina کی طرف سے مکمل رہنمائی۔"
 category: "اردو گائیڈ"
 date_published: 2026-06-12
-date_modified: 2026-08-19
+date_modified: 2026-09-11
 keywords: ["یوزڈ بوٹ خریدتے وقت کیا دیکھیں (What to check when buying a used boat)","سیکنڈ ہینڈ کشتی کی خریدی میں دھوکہ (Scams in buying a used boat)","پرانے بوٹ انجن کی حالت کیسے چیک کریں (How to check condition of an old boat engine)","استعمال شدہ کشتی کی قیمت کا اندازہ (Estimating price of a used boat)","اونٹاریو میں یوزڈ بوٹ مارکیٹ (Used boat market Ontario)"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** اردو گائیڈ  
 **Published:** 2026-06-12  
-**آخری جائزہ:** 2026-08-19  
+**آخری جائزہ:** 2026-09-11  
 **Read time:** 8 منٹ  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ur/used-boat-buying-checklist-urdu
 
@@ -67,13 +67,13 @@ Ontario میں ہر موٹر والی کشتی کے لیے Pleasure Craft Licenc
 
 ## جب مرمت سے بہتر ہے نیا انجن لگوانا | When Repower Beats Another Used Boat
 
-کئی بار ایسا ہوتا ہے کہ کشتی کا ڈھانچہ بالکل صحیح ہے لیکن انجن بہت زیادہ تھکا ہوا یا خراب ہے۔ ایسے میں دوسری استعمال شدہ کشتی خریدنے کے بجائے اپنی کشتی میں نیا Mercury انجن لگوانا زیادہ سمجھ داری ہے۔ آپ کو نئے انجن کی 3 سالہ بنیادی وارنٹی ملے گی، اور آپ جانتے ہیں کہ ہر پرزہ بالکل درست ہے۔ پرانی کشتیوں کے ساتھ مسلسل آنے والے چھوٹے موٹے مسائل کا وقت اور خرچ بچانے کا یہ ایک مستقل حل ہے۔ اگر آپ کا بجٹ اجازت دے تو repower پر غور ضرور کریں۔
+کئی بار ایسا ہوتا ہے کہ کشتی کا ڈھانچہ بالکل صحیح ہے لیکن انجن بہت زیادہ تھکا ہوا یا خراب ہے۔ ایسے میں دوسری استعمال شدہ کشتی خریدنے کے بجائے اپنی کشتی میں نیا Mercury انجن لگوانا زیادہ سمجھ داری ہے۔ آپ کو اہل Mercury تفریحی استعمال والے نئے انجن کی 3 سالہ فیکٹری محدود وارنٹی ملے گی، اور آپ جانتے ہیں کہ ہر پرزہ بالکل درست ہے۔ پرانی کشتیوں کے ساتھ مسلسل آنے والے چھوٹے موٹے مسائل کا وقت اور خرچ بچانے کا یہ ایک مستقل حل ہے۔ اگر آپ کا بجٹ اجازت دے تو repower پر غور ضرور کریں۔
 
 ## Harris Boat Works آپ کی کہاں مدد کر سکتا ہے | How We Help
 
 ہم Gores Landing میں Rice Lake کے کنارے واقع ہیں، اور آپ کی گاڑی سے Mississauga، Markham یا Brampton سے ہم تک پہنچنے میں تقریباً 90 منٹ لگتے ہیں۔ اگر آپ کسی استعمال شدہ کشتی کی خریداری کے بارے میں سنجیدہ ہیں اور بیچنے والے سے کشتی کو ہماری ورکشاپ پر لانے کا انتظام کر سکتے ہیں، تو ہماری Mercury Premier ڈیلر سروس ٹیم Mercury اور Mercruiser انجن کا معائنہ کر سکتی ہے؛ تفصیل کے لیے https://hbw.wiki/service پر فارم بھریں۔ ہم 1965 سے Mercury ڈیلر ہیں، اس لیے استعمال شدہ Mercury انجنوں کا باریک بینی سے جائزہ لینا ہماری پرانی عادت ہے۔
 
-اگر انجن واقعی ناکارہ نکلا اور آپ repower کا سوچ رہے ہیں، تو ہم نئے Mercury آؤٹ بورڈ کے لیے اقتباس فراہم کر سکتے ہیں، لیکن یاد رکھیں، ہم یہاں کوئی دام نہیں بتائیں گے، رہنمائی کے لیے ہمارا pricing reference صفحہ دیکھیں: https://www.mercuryrepower.ca/pricing-reference۔
+اگر انجن واقعی ناکارہ نکلا اور آپ repower کا سوچ رہے ہیں، تو ہم نئے Mercury آؤٹ بورڈ کے لیے اقتباس فراہم کر سکتے ہیں، لیکن یاد رکھیں، ہم یہاں کوئی دام نہیں بتائیں گے، رہنمائی کے لیے ہمارا pricing reference صفحہ دیکھیں: [Mercury pricing reference](https://www.mercuryrepower.ca/pricing-reference)۔
 
 ## ہمارا ایماندارانہ نوٹ
 
@@ -85,7 +85,7 @@ Ontario میں ہر موٹر والی کشتی کے لیے Pleasure Craft Licenc
 
 اگر آپ نے کوئی استعمال شدہ کشتی منتخب کر لی ہے اور اسے پیشہ ورانہ نظروں سے چیک کروانا چاہتے ہیں، تو ہماری سروس ٹیم اس کے لیے تیار ہے۔ معائنے یا سوال کے لیے https://hbw.wiki/service پر سروس فارم بھریں۔
 
-اور اگر صورت حال یہ ہے کہ انجن تبدیل کرنے کا سوچ رہے ہیں، تو Mercury repower کے اقتباس کے لیے براہ راست https://www.mercuryrepower.ca/quote/motor-selection پر رابطہ کریں۔ فون پر بات کرنے کے لیے (905) 342-2153 یا ٹیکسٹ (647) 952-2153 پر پیغام بھیجیں۔
+اور اگر صورت حال یہ ہے کہ انجن تبدیل کرنے کا سوچ رہے ہیں، تو Mercury repower کے اقتباس کے لیے براہ راست https://www.mercuryrepower.ca/quote/motor-selection پر رابطہ کریں۔
 
 Harris Boat Works
 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0

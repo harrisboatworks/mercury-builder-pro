@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="680" viewBox="0 0 800 680" role="img" aria-label="Agree on the acceptance checks">
+<rect width="800" height="680" rx="24" fill="#f5f1e9"/>
+<path d="M40 45h64" stroke="#c92332" stroke-width="7"/>
+<g font-family="Arial,Helvetica,sans-serif" fill="#132b40">
+<text x="40" y="104" font-size="40" font-weight="700">Agree on the acceptance checks</text>
+<text x="40" y="155" font-size="29">Document the plan for your boat and the work ordered.</text>
+<rect x="40" y="195" width="720" height="108" rx="14" fill="white"/>
+<text x="62" y="239" font-size="33" font-weight="700">Confirm the scope</text>
+<text x="62" y="279" font-size="29">Motor, rigging and the checks to be completed.</text>
+<rect x="40" y="320" width="720" height="108" rx="14" fill="white"/>
+<text x="62" y="364" font-size="33" font-weight="700">Record the results</text>
+<text x="62" y="404" font-size="29">Include applicable shop and setup checks.</text>
+<rect x="40" y="445" width="720" height="108" rx="14" fill="white"/>
+<text x="62" y="489" font-size="33" font-weight="700">Account for conditions</text>
+<text x="62" y="529" font-size="29">Document alternatives when water testing is not safe.</text>
+<text x="40" y="620" font-size="28">A process guide, not evidence of a completed customer test.</text>
+</g></svg>

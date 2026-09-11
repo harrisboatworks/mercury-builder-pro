@@ -1308,6 +1308,7 @@ export type Database = {
           resume_token: string | null
           source_url: string | null
           status: Database["public"]["Enums"]["financing_application_status"]
+          submission_id: string | null
           updated_at: string
           user_id: string | null
         }
@@ -1336,6 +1337,7 @@ export type Database = {
           resume_token?: string | null
           source_url?: string | null
           status?: Database["public"]["Enums"]["financing_application_status"]
+          submission_id?: string | null
           updated_at?: string
           user_id?: string | null
         }
@@ -1364,6 +1366,7 @@ export type Database = {
           resume_token?: string | null
           source_url?: string | null
           status?: Database["public"]["Enums"]["financing_application_status"]
+          submission_id?: string | null
           updated_at?: string
           user_id?: string | null
         }
@@ -6200,6 +6203,7 @@ export type Database = {
         }
         Returns: boolean
       }
+      claim_saved_quotes_for_current_user: { Args: never; Returns: number }
       claim_due_hbw_bot_reminders: {
         Args: {
           p_gateway_secret: string
@@ -7260,6 +7264,10 @@ export type Database = {
       update_brochure_models_bulk_v2: {
         Args: { p_rows: Json }
         Returns: number
+      }
+      upsert_soft_lead_quote: {
+        Args: { p_quote_state: Json; p_session_id: string }
+        Returns: string
       }
       upsert_customer_comms_event: {
         Args: {

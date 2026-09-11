@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { useActiveFinancingPromo } from './useActiveFinancingPromo';
-import { calculateMonthlyPayment, getFinancingTerm } from '@/lib/finance';
+import { calculateMonthlyPayment, getFinancingTerm, isUsableFinancingRate } from '@/lib/finance';
 
 interface UseMotorMonthlyPaymentProps {
   motorPrice: number;
@@ -23,7 +23,7 @@ export function useMotorMonthlyPayment({
     const priceWithHST = motorPrice * 1.13;
     
     // Use smart term selection and promotional rate
-    const promoRate = promo?.rate || null;
+    const promoRate = isUsableFinancingRate(promo?.rate) ? promo.rate : null;
     const { payment, termMonths, rate } = calculateMonthlyPayment(priceWithHST, promoRate);
     
     return {

@@ -185,7 +185,7 @@ export function SiteFooter({ className = '' }: SiteFooterProps) {
 
         <nav
           aria-label="Language"
-          className="mt-8 flex flex-nowrap items-center justify-center gap-x-3 overflow-x-auto font-sans text-xs text-repower-cream/45"
+          className="mt-8 flex flex-wrap items-center justify-center gap-x-3 gap-y-2 font-sans text-xs text-repower-cream/45"
         >
           {[
             { label: 'English', href: '/' },
@@ -194,11 +194,11 @@ export function SiteFooter({ className = '' }: SiteFooterProps) {
             { label: '한국어', href: '/ko' },
             { label: 'Español', href: '/es' },
             { label: 'ਪੰਜਾਬੀ', href: '/pa' },
-            { label: 'اردو', href: '/ur' },
+            { label: 'اردو', href: '/ur', dir: 'rtl' as const },
             { label: 'Tagalog', href: '/tl' },
           ].map((lang, index, list) => (
-            <span key={lang.href} className="inline-flex items-center gap-x-3">
-              <Link to={lang.href} className="hover:text-repower-cream transition-colors whitespace-nowrap">
+            <span key={lang.href} className="inline-flex min-w-0 items-center gap-x-3">
+              <Link to={lang.href} dir={lang.dir ?? 'ltr'} className="hover:text-repower-cream transition-colors">
                 {lang.label}
               </Link>
               {index < list.length - 1 ? (

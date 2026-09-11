@@ -65,8 +65,8 @@ export const imagePlaceholders: ImagePlaceholderEntry[] = [
       'Visual matrix showing which Mercury (75/90/115) fits which boat type and use case',
     prompt:
       'Photorealistic editorial infographic. 3x3 visual grid: rows = Mercury 75, 90, 115 HP. Columns = Boat Type, Best Use Case, Avoid If. Each cell has a small motor silhouette icon and 2-line description. Mercury black cowls, red accents. Clean white background. No people. 1600x900. [STYLE ANCHOR]',
-    image: '/lovable-uploads/mercury-75-90-115-best-fit-matrix.png',
-    status: 'swapped',
+    image: null,
+    status: 'pending',
   },
   {
     slug: 'pontoon-hp-by-length-and-use',

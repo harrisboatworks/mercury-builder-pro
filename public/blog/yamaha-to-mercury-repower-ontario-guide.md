@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/yamaha-to-mercury-repower-ontario-guide.md
-last_updated: 2026-08-02
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Yamaha to Mercury Repower: Ontario Guide"
 description: "Yamaha to Mercury repower from an Ontario Mercury Premier dealer. What changes, what stays, brand-swap rigging premium, HP equivalency table."
 category: "Repower Guide"
 date_published: 2026-05-28
-date_modified: 2026-08-02
+date_modified: 2026-09-11
 keywords: ["Yamaha to Mercury repower","Yamaha to Mercury Ontario","brand swap outboard repower","Mercury repower cost Ontario","Yamaha Command Link Mercury","Yamaha F150 to Mercury 150","Mercury Premier dealer Ontario","Yamaha trade-in Mercury"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,15 +25,13 @@ revenue_driver: repower
 
 **Category:** Repower Guide  
 **Published:** 2026-05-28  
-**Last reviewed:** 2026-08-02  
+**Last reviewed:** 2026-09-11  
 **Read time:** 11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/yamaha-to-mercury-repower-ontario-guide
 
-> **Quick answer:** A Yamaha-to-Mercury repower replaces the motor, controls, harness, gauges, and prop; the fuel tank, steering, and most electronics usually carry over. Expect a brand-swap rigging premium of roughly $1,200 to $4,500 above a same-brand repower, depending on HP class. The swap makes the most sense when Mercury service is closer than your nearest Yamaha dealer. Build a quote at mercuryrepower.ca.
+*Hero graphic: a process guide, not a photograph or evidence of a completed HBW customer test.*
 
-## Quick answer
-
-A Yamaha-to-Mercury repower replaces the motor, throttle and shift controls, harness, gauges, and propeller; the fuel tank, steering, and most electronics usually carry over. The brand-swap rigging premium runs roughly $1,200 to $4,500 above a same-brand repower, depending on HP class. The math swings when a Mercury dealer is closer than the nearest Yamaha service.
+> **Quick answer:** A Yamaha-to-Mercury repower replaces the motor, throttle and shift controls, harness, gauges, and propeller; the fuel tank, steering, and most electronics usually carry over. Expect a brand-swap rigging premium of roughly $1,200 to $4,500 above a same-brand repower, depending on HP class. The swap makes the most sense when Mercury service is closer than your nearest Yamaha dealer. Build a quote at mercuryrepower.ca.
 
 - Mercury Premier Dealer
 - Family-owned since 1947
@@ -82,16 +80,16 @@ We quote both the motor-only price and the all-in installed price so customers s
 
 | HP class | Mercury motor (CAD, before tax) | Rigging premium for brand swap | All-in installed (estimate) |
 |--|--|--|--|
-| 25-60 HP | $4,800-$10,500 | $1,200-$2,000 | $11,000-$16,500 |
-| 75-115 HP | $11,500-$14,800 | $1,800-$2,800 | $17,000-$23,000 |
-| 150-200 HP | $17,500-$22,000 | $2,200-$3,500 | $23,000-$37,000 |
-| 250-300 HP | $25,000-$32,000 | $2,800-$4,500 | $35,000-$48,000 |
+| 25-60 HP | $5,093–$13,057 | $1,200-$2,000 | $7,500-$17,500 |
+| 75-115 HP | $14,476–$18,299 | $1,800-$2,800 | $18,500-$25,000 |
+| 150-200 HP | $22,242–$30,399 | $2,200-$3,500 | $28,000-$40,500 |
+| 250-300 HP | $34,848–$39,402 | $2,800-$4,500 | Quoted per boat |
 
-_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are planning figures as of September 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 The "rigging premium for brand swap" line is the extra cost above a same-brand repower. If you were keeping Yamaha-to-Yamaha you'd skip this line and save roughly that amount. If you're switching brands, plan for it.
 
-Current Ontario CAD prices update seasonally. For your specific situation, build a quote at mercuryrepower.ca or email cowl plate photos to info@harrisboatworks.ca.
+Current Ontario CAD prices update seasonally. For your specific situation, build a quote at mercuryrepower.ca.
 
 The motor price is the easy number. The installed price is the honest one.
 
@@ -101,7 +99,7 @@ We do Yamaha-to-Mercury swaps regularly at HBW, primarily in the 90-150 HP class
 
 The first pattern: customers who switch for local service reasons are usually satisfied with the service-access improvement. The "I can get parts and a service appointment in days, not weeks" payoff is the single biggest customer-satisfaction driver. The technical performance delta between modern Mercury FourStroke and modern Yamaha F-series in the same HP class is small enough that most owners don't notice it on the water. They notice the service experience.
 
-The second pattern: customers who switch for performance reasons sometimes regret it. Mercury and Yamaha both make solid motors. If your Yamaha was running fine and your only complaint was "I want more torque" or "I want better fuel economy", the swap probably won't deliver the magnitude of difference you're hoping for. A 115 Mercury FourStroke vs a 115 Yamaha F115 on the same hull are within 1-2 MPH top speed and within 5% fuel burn at cruise. The brand-swap rigging premium usually adds $1,200 to $4,500 depending on HP class and control/gauge setup. That's a lot of money for a small performance gain.
+A brand change alone does not establish a performance improvement. Compare the exact motors on an equivalent hull, load, propeller, and test setup. The brand-swap rigging premium is boat-specific. Compare current written quotes and, if needed, a same-hull test before treating a swap as a performance upgrade.
 
 The third pattern, specific to Ontario: Yamaha has historically had a small edge in idle-quietness and trolling smoothness at very low RPM, which matters for Lake Ontario salmon trollers. Mercury has closed that gap with current FourStroke V6s and the ProKicker 9.9 / 15 / 25 lineup. If trolling is your primary use case, ask us specifically about ProKicker pairings before committing.
 

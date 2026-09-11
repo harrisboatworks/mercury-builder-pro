@@ -1,15 +1,8 @@
 "use client";
 import { useActivePromotions } from "@/hooks/useActivePromotions";
+import { daysUntil, formatPromoDaysLeft } from "@/lib/quote-utils";
 import { Link } from "react-router-dom";
 import { Gift, Shield, Calendar, Percent, DollarSign, ChevronRight } from "lucide-react";
-
-function daysLeft(end: string | null) {
-  if (!end) return null;
-  const now = new Date();
-  const d = new Date(end);
-  const diff = Math.ceil((d.getTime() - now.getTime()) / (1000*60*60*24));
-  return diff < 0 ? 0 : diff;
-}
 
 export default function CurrentPromotions() {
   const { promotions, getPromotionOptions } = useActivePromotions();
@@ -17,7 +10,7 @@ export default function CurrentPromotions() {
   if (!promos.length) return null;
 
   const p = promos[0];
-  const left = daysLeft(p.end_date);
+  const left = p.end_date ? daysUntil(p.end_date) : null;
   const promotionOptions = getPromotionOptions?.() ?? [];
   const hasStructuredOptions = promotionOptions.length > 0;
 
@@ -31,7 +24,7 @@ export default function CurrentPromotions() {
             </div>
             {left !== null && (
               <div className="rounded-full bg-repower-cream px-2.5 py-0.5 text-xs font-medium text-repower-navy-900 ring-1 ring-inset ring-repower-navy-900/20   ">
-                {left} day{left === 1 ? "" : "s"} left
+                {formatPromoDaysLeft(left)}
               </div>
             )}
           </div>

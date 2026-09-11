@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-boats-rice-lake-under-30000.md
-last_updated: 2026-05-04
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Best Boats for Rice Lake Under $30,000 (2026 Buyer's Guide)"
 description: "Under $30,000 CAD on Rice Lake in 2026: a new small aluminum with a Mercury under 60 HP, a used pontoon, or a clean used hull repowered at HBW."
 category: "Buying Guide"
 date_published: 2026-04-25
-date_modified: 2026-05-04
+date_modified: 2026-09-11
 keywords: ["best boat rice lake","boats under 30000 ontario","rice lake fishing boat"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-04-25  
-**Last reviewed:** 2026-05-04  
+**Last reviewed:** 2026-09-11  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-boats-rice-lake-under-30000
 
@@ -38,7 +38,7 @@ For Rice Lake under $30,000, your three realistic paths are a new small aluminum
 
 Most Rice Lake boaters with a $30,000 budget land on a used hull plus a Mercury repower. Not because we tell them to, because the math holds up better than new entry-level boats almost every time.
 
-A five-to-ten-year-old aluminum fishing boat or pontoon with a solid hull, repowered with a current Mercury, gives you 80% of the new-boat experience for meaningfully less money. You skip the steepest portion of the depreciation curve. The motor is brand new with full warranty. And if the hull is right, it has decades of life left.
+A five-to-ten-year-old aluminum fishing boat or pontoon with a solid hull, repowered with a current Mercury, keeps the hull you already know while putting a new motor and full factory warranty on it. You skip the steepest portion of the depreciation curve. And if the hull is right, it has decades of life left.
 
 HBW does sell new Legend Boats and used boats, but we are not trying to be a high-volume boat dealer. Our strongest lane is Mercury repowers, rigging, service, and helping people make a good existing hull work harder for them. So when we tell you a used hull plus a repower is often the smarter path, it is not a trick to avoid showing you boats. It is what we see work out well, year after year, on this lake.
 
@@ -121,8 +121,6 @@ Most $30,000 budgets do better with the repower path.
 
 Whether you are buying a project hull, a used pontoon, or a new aluminum fishing boat, the motor is the part we handle. Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
-If you have a specific hull in mind and want to know if a repower makes sense before you commit to buying it, call us at 905-342-2153. We can often give you a useful answer in a single conversation.
-
 ---
 
 ## FAQs
@@ -156,8 +154,8 @@ For small aluminum boats on sheltered water, a 9.9 to 15 HP tiller is the classi
 - [Best Mercury for Aluminum Boats 2026](/blog/best-mercury-outboard-aluminum-fishing-boats), best Mercury for aluminum fishing boats
 - [Best Pontoon Boats for Rice Lake Cottage Use (2026)](/blog/best-pontoon-boats-rice-lake-cottage-use), pontoons suited to Rice Lake cottage use
 - [Common Pontoon Problems on Rice Lake](/blog/common-pontoon-boat-problems-rice-lake), common pontoon issues on Rice Lake
-- [Is Your Pontoon Eligible for Mercury Command Thrust? (2026)](/blog/mercury-command-thrust-pontoon-eligibility-2026), Command Thrust pontoon eligibility
 - [Legend Boats Mercury Packages Ontario](/blog/legend-boats-mercury-power-package-guide-ontario), Legend Boats Mercury power packages
+- [Best Mercury for a Pontoon: HP by Length + Command Thrust](/blog/best-mercury-outboard-pontoon-boats), best Mercury for pontoons
 
 ## Next steps
 

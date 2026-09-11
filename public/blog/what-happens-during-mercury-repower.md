@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/what-happens-during-mercury-repower.md
-last_updated: 2026-08-26
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "What Happens During a Mercury Repower (Step-by-Step Process)"
 description: "What happens during a Mercury repower at Harris Boat Works: the step-by-step process, timeline, rigging, water test, and what you do before drop-off."
 category: "Repower"
 date_published: 2026-05-05
-date_modified: 2026-08-26
+date_modified: 2026-09-11
 keywords: ["mercury repower process","what happens during repower","boat repower steps","mercury install process","repower timeline ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,13 +25,22 @@ revenue_driver: repower
 
 **Category:** Repower  
 **Published:** 2026-05-05  
-**Last reviewed:** 2026-08-26  
+**Last reviewed:** 2026-09-11  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/what-happens-during-mercury-repower
 
 ---
 
-![What happens during a Mercury repower at Harris Boat Works: six steps: quote, deposit, drop-off, rigging, on-water lake test, pickup](/blog-visuals/mercury-repower-6-step-timeline.png)
+### From request to handover
+
+1. **Share the boat details.** Use the [quote builder](/quote/motor-selection) to explore a repower and submit the [service request](https://hbw.wiki/service) before dropping off the boat.
+2. **Confirm fit and scope.** HBW reviews the hull, intended use, compatible equipment and work required.
+3. **Review the written quote.** Confirm the configuration, included work, availability, payment terms and scheduling with HBW.
+4. **Drop off when convenient.** Once the service request is complete, drop off anytime, including after hours.
+5. **Installation and checks.** HBW completes the approved work and confirms the testing appropriate to the boat and conditions.
+6. **Handover.** Review the completed work, documentation and owner instructions before taking the boat home.
+
+Timing depends on the boat, approved work, parts availability and testing conditions. Confirm your schedule with HBW.
 
 ## Quick Answer
 
@@ -43,7 +52,7 @@ A typical Mercury repower at HBW moves from a configurator starting point to a b
 
 Most customers don't know what actually happens during a repower. That's worth fixing, because knowing the process helps you plan around realistic timelines, ask better questions during the quote, and recognize when a shop is skipping something important.
 
-A repower isn't just bolting a new motor to your boat. It's a full integration project. The shop time is short; the inspection and verification work is what determines whether you get 20 years from the new motor or 5.
+A repower isn't just bolting a new motor to your boat. It's a full integration project. Shop time is only part of it; the inspection and verification work is what confirms the hull, transom, rigging, controls, and alignment are ready for the new motor.
 
 ### What Changes the Timeline
 
@@ -82,11 +91,9 @@ Customer builds a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) or
 - HST (13% Ontario)
 - Total all-in number in CAD
 
-If you want to talk through the configuration, we do a 15- to 30-minute consultation by phone or in-shop.
-
 #### Step 3: Deposit and Booking
 
-A fixed deposit holds the motor and booking slot. The online quote shows the exact amount for the selected motor, currently $200, $500, or $1,000 based on horsepower. It is not a percentage of the repower total. HBW confirms the motor and quote details before anything is ordered, and booking confirms the customer-arranged drop-off date and target completion date.
+A fixed deposit holds the motor and booking slot. The online quote shows the exact amount for the selected motor, currently $200, $500, or $1,000 based on horsepower. It is not a percentage of the repower total. HBW confirms the motor and quote details before anything is ordered, and HBW confirms the work schedule and target completion date separately. Complete the service request at hbw.wiki/service, then drop off your boat anytime, including after hours.
 
 If you want financing, HBW can help arrange boat repower financing through Canadian marine lenders, on approved credit. The application, rate, term, and approval are handled separately from the deposit.
 
@@ -178,15 +185,13 @@ Customer drives away with a new Mercury, full documentation, and a clear picture
 
 Ready to schedule your repower? Build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**, live CAD pricing, full configuration, rigging and installation included.
 
-Questions about the process for your specific boat? Call **905-342-2153** or come in for a free hull walk-around. We do free walk-arounds and can answer process questions before you commit.
-
 ---
 
 ## FAQs
 
 ### How long does a Mercury repower take?
 
-There are two clocks: motor and rigging availability, then the scheduled shop work. HBW confirms the applicable installation window after reviewing the boat, required parts, and current shop capacity. Your boat stays with you until the drop-off date is confirmed.
+There are two clocks: motor and rigging availability, then the scheduled shop work. HBW confirms the applicable installation window after reviewing the boat, required parts, and current shop capacity. Complete the service request at hbw.wiki/service, then drop off your boat anytime, including after hours. HBW confirms the work schedule separately.
 
 ### Do I need to bring my boat to HBW for the walk-around?
 

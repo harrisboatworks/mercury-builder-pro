@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-vs-yamaha-outboards-ontario.md
-last_updated: 2026-08-19
+last_updated: 2026-09-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury vs Yamaha Outboards: Honest Comparison"
 description: "Mercury vs Yamaha outboards for Ontario boaters: an honest comparison of reliability, parts, service network, and pricing from a Rice Lake dealer."
 category: "Buying Guide"
 date_published: 2026-05-04
-date_modified: 2026-08-19
+date_modified: 2026-09-06
 keywords: ["Mercury vs Yamaha outboard","Mercury vs Yamaha Ontario","Mercury or Yamaha which is better","Yamaha to Mercury repower","best outboard motor Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-05-04  
-**Last reviewed:** 2026-08-19  
+**Last reviewed:** 2026-09-06  
 **Read time:** 13 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-vs-yamaha-outboards-ontario
 
@@ -48,7 +48,7 @@ A Yamaha vs Mercury buyer walks into HBW with the same question we've heard hund
 | Resale value | Strong | Holds value comparably |
 | Switching to Mercury | - | ~$1,800-$3,500 brand-conversion rigging |
 
-_Prices here are planning figures as of July 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are planning figures as of September 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 ## The Rice Lake service-network reality
 
@@ -58,7 +58,7 @@ For Rice Lake boaters, the practical advantage is having Mercury-specific diagno
 
 ## What Mercury and Yamaha both do well
 
-[Both brands build genuinely good motors](/blog/mercury-vs-yamaha-vs-honda-reliability-2026) in 2026. Modern 4-stroke EFI engineering with reliable cold-start performance. 5-year or 8-year extended warranty options available. Comparable fuel economy at equivalent HP ratings. Similar real-world reliability in the 9.9 to 250 HP class.
+[Both brands build genuinely good motors](/blog/mercury-vs-yamaha-vs-honda-reliability-2026) in 2026. Modern 4-stroke EFI engineering with reliable cold-start performance. Both offer optional additional coverage, but terms differ. Compare the Canadian [Mercury Product Protection](/mercury-product-protection) and [Yamaha Motor Protection Plan](https://www.yamaha-motor.ca/en/yamaha-motor-protection-plan) terms for the exact motor; distinguish factory coverage from a purchased plan and added years from total coverage. Comparable fuel economy at equivalent HP ratings. Similar real-world reliability in the 9.9 to 250 HP class.
 
 If you removed the brand badges and asked owners to compare a 2026 Mercury 150 FourStroke to a 2026 Yamaha F150 on the same boat, most couldn't reliably tell which was which on perceived performance.
 
@@ -82,9 +82,9 @@ If you removed the brand badges and asked owners to compare a 2026 Mercury 150 F
 
 **Trade-in value consistency.** Yamaha holds value well in the Ontario used market, comparable to Mercury.
 
-## The 2025 Mercury shift-shaft recall (saltwater, doesn't affect Ontario)
+## The 2025 Mercury shift-shaft recall (saltwater-use and serial history)
 
-Mercury issued a shift-shaft recall in 2025 that received significant attention online. **For freshwater Ontario boats: the 2025 shift-shaft recall does NOT apply.** The recall addresses a saltwater-environment specific condition.
+Mercury issued a shift-shaft recall in 2025 that received significant attention online. Public notices identify upper shift-arm stud corrosion under **saltwater use**. UK regulator material says listed serials that have **only operated in freshwater** need no modification. Ontario ownership or current freshwater use does **not** establish an imported or used engine's lifetime history. Check the serial number, prior use, and current Mercury Canada campaign status with an authorized dealer. Do not exempt every boat now used in Ontario freshwater, and do not infer that every freshwater-only engine needs the modification. [UK OPSS notice](https://www.gov.uk/product-safety-alerts-reports-recalls/product-safety-report-mercury-marine-fourstroke-outboard-motor-2509-0305) · [Mercury SOB25-11 notice (PDF)](https://www.mercurymarine.com/content/dam/mercury-marine/aus---nz/safety-recall/sob25-11%20Website%20Notification%20AUS%20r1%20JL%20%20APPROVED%20-%202025_05_22.pdf).
 
 ## What HBW has on the shelf
 
@@ -107,7 +107,7 @@ HBW's standard repower handoff includes an on-water test on Rice Lake before pic
 - **Current Verado is supercharged.**  
   No. Current Mercury Verado V8 (250-300 HP), V10 (350-425 HP), and V12 (600 HP) are all naturally aspirated. The older inline-6 Verado was supercharged but is no longer in production.
 - **The 2025 Mercury recall is a big deal.**  
-  For freshwater Ontario boats, the 2025 shift-shaft recall doesn't apply.
+  Public notices identify a saltwater-use corrosion concern on listed serials. Ontario location does not prove lifetime freshwater-only use. Check the serial, prior use, and current Mercury Canada campaign status with an authorized dealer.
 - **I'll get Yamaha because the warranty is longer.**  
   Both brands offer extended warranty programs in the 8-year range. The practical difference is where you can get warranty service done.
 
@@ -126,7 +126,7 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine 
 - Mercury Marine Canada lineup: [mercurymarine.com](https://www.mercurymarine.com/)
 - Yamaha Marine Canada lineup: [yamaha-motor.ca](https://www.yamaha-motor.ca/)
 - HBW shop-floor service data 2026
-- Mercury 2025 shift-shaft recall: applies to saltwater-environment specific configurations only
+- Mercury 2025 shift-shaft recall: saltwater-use and serial-history qualifications; check current Mercury Canada campaign status rather than exempting every Ontario freshwater boat
 
 - [Mercury Outboard Warranty in Canada (2026)](/blog/mercury-outboard-warranty-canada-2026)
 - [Mercury Pro XS Buyer Guide (Ontario)](/blog/mercury-pro-xs-buyer-guide-ontario)
@@ -145,7 +145,7 @@ Depends on local dealer access, hull condition, and ownership plan. If your Yama
 
 ### How much does it cost to switch from Yamaha to Mercury?
 
-The Mercury motor cost plus an extra line for brand-conversion rigging on top of the standard repower install. Total all-in costs vary by HP class. For specific pricing, build a quote at mercuryrepower.ca. Total all-in costs vary by HP class. For specific pricing, build a quote at mercuryrepower.ca.
+The Mercury motor cost plus an extra line for brand-conversion rigging on top of the standard repower install. Total all-in costs vary by HP class. For specific pricing, build a quote at mercuryrepower.ca.
 
 ### Is Yamaha more reliable than Mercury?
 
@@ -169,7 +169,7 @@ Mercury, by a significant margin. Mercury is the dominant brand on Ontario fresh
 
 ## Related guides
 
-- [Why Mercury Dominates the Outboard Market in 2026](/blog/why-mercury-dominates-outboard-market), why Mercury leads the outboard market
+- [Why Mercury Makes Practical Sense for Ontario Boaters (2026)](/blog/why-mercury-dominates-outboard-market), why Mercury leads the outboard market
 - [Mercury vs Honda Ontario 2026](/blog/mercury-vs-honda-outboards-honest-ontario-dealer-comparison-2026), Mercury vs Honda dealer comparison
 - [Mercury vs Suzuki Outboards: Reliability 2026](/blog/mercury-vs-suzuki-outboard-reliability-2026), Mercury vs Suzuki reliability
 - [Harris Boat Works Mercury Dealer Ontario](/blog/why-harris-boat-works-mercury-dealer), why Harris Boat Works chose Mercury

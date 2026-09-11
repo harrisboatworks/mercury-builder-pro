@@ -16,20 +16,27 @@
  * Replaces the puppeteer-based prerender pipeline, which couldn't run on
  * Vercel's build container (missing Chromium shared libs).
  */
-import { readFileSync, writeFileSync, mkdirSync, existsSync, statSync, rmSync } from 'fs';
+import { readFileSync, writeFileSync, mkdirSync, existsSync, statSync, rmSync, readdirSync } from 'fs';
 import { join, resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { execSync } from 'child_process';
 import { marked } from 'marked';
+import { normalizeAuthoritativeDate, renderSitemapLastmod } from './lib/sitemap-lastmod.mjs';
 import { MERCURY_OUTBOARDS_ONTARIO_OFFERS } from '../src/data/mercuryOutboardsOffers.js';
 import { getHarrisBoatWorksBrandPagePrerender } from '../src/data/harrisBoatWorksBrandPage.js';
+import { buildMercuryProXSOffers } from '../src/data/mercuryProXSOffers.js';
 import { cleanBlogContent } from '../src/lib/cleanBlogContent.js';
 import { filterToOneBlogCredibilityAnchor } from '../src/lib/blogCredibilityAnchorPolicy.js';
 import { stripSuppressedBlogPullQuotes } from '../src/lib/blogPullQuotePolicy.js';
 import { getBlogOgImagePath } from '../src/lib/blogOgImage.js';
 import { loadCanonicalPricing } from './lib/canonical-pricing.mjs';
+import {
+  buildCanonicalMotorRouteCatalog,
+  mergeMotorRouteSources,
+} from './lib/motor-route-canonicalization.mjs';
 import { getBlogHreflangAlternates } from '../src/data/blogI18nRegistry.js';
 import { WARRANTY_AGENT_NOTE, WARRANTY_AGENT_NOTE_BOLD, WARRANTY_POLICY_SENTENCE, WARRANTY_TABLE_CELL } from './lib/warranty-copy.mjs';
+import { escHtml, renderYouTubeEmbedLinkHtml } from './lib/youtube-embed-html.mjs';
 
 // Public anonymous key used by the browser client. This read-only fallback
 // keeps prerendering available when the public motor edge function is down.
@@ -53,8 +60,9 @@ const BUSINESS_SAME_AS = [
 // Configure marked: GFM tables/strike, no auto line-break paragraphs.
 marked.setOptions({ gfm: true, breaks: false });
 
-// Load Google Places cache (rating, review count, opening hours) so the
-// LocalBusiness JSON-LD always matches what Google itself shows. Refreshed
+// Load Google Places cache (location and opening hours) so the LocalBusiness
+// JSON-LD always matches what Google itself shows. Visible review counts stay
+// in page UI, not in owned-business JSON-LD. Refreshed
 // by scripts/fetch-google-places-data.mjs in the build pipeline.
 let GOOGLE_PLACES_CACHE = {
   ratingValue: '4.6',
@@ -66,14 +74,8 @@ try {
   const cachePath = new URL('../src/data/google-places-cache.json', import.meta.url);
   GOOGLE_PLACES_CACHE = { ...GOOGLE_PLACES_CACHE, ...JSON.parse(readFileSync(cachePath, 'utf8')) };
 } catch (err) {
-  console.warn('[static-prerender] google-places-cache.json missing, using fallback rating/hours.');
+  console.warn('[static-prerender] google-places-cache.json missing, using fallback location/hours.');
 }
-const LIVE_AGGREGATE_RATING = {
-  '@type': 'AggregateRating',
-  ratingValue: GOOGLE_PLACES_CACHE.ratingValue,
-  reviewCount: GOOGLE_PLACES_CACHE.reviewCount,
-  bestRating: '5',
-};
 const LIVE_OPENING_HOURS = Array.isArray(GOOGLE_PLACES_CACHE.openingHoursSpecification)
   ? GOOGLE_PLACES_CACHE.openingHoursSpecification
   : [];
@@ -94,16 +96,6 @@ const IMAGE_VARIANTS_MANIFEST = JSON.parse(
 const MERCURY_PRODUCT_PROTECTION_ALL_PRICES = MERCURY_PRODUCT_PROTECTION_RATE_CARD.rates.flatMap(
   (band) => Object.values(band.prices).map(Number)
 );
-
-// HTML-escape a string for safe insertion into prerendered markup.
-function escHtml(v) {
-  return String(v ?? '')
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#39;');
-}
 
 function mercuryProductProtectionNoscriptHtml() {
   const money = (value) => `$${Number(value).toLocaleString('en-CA')}`;
@@ -156,6 +148,11 @@ function parseDirectiveBody(body) {
     }
   }
   return { flat, lists };
+}
+
+function renderYouTubeEmbedHtml(body) {
+  const { flat } = parseDirectiveBody(body);
+  return renderYouTubeEmbedLinkHtml({ id: flat.id, title: flat.title });
 }
 
 function renderDecisionCardHtml(body) {
@@ -434,6 +431,9 @@ function expandVisualDirectives(md) {
   md = sub(/^::mercury-price-table\s*\n([\s\S]*?)\n::\s*$/gm, renderMercuryPriceTableHtml);
   // Bodiless mercury-price-table form: a single line `::mercury-price-table`
   md = sub(/^(::mercury-price-table)\s*$/gm, () => renderMercuryPriceTableHtml(''));
+  // Preserve a safe, crawlable link for lazy YouTube cards. The SPA upgrades
+  // this to the click-to-load MercuryVideo facade after hydration.
+  md = sub(/^:::youtube-embed\s*\n([\s\S]*?)\n:::\s*$/gm, renderYouTubeEmbedHtml);
   // Bodiless directive: a single line `::walkaround-lead-capture`.
   md = sub(/^(::walkaround-lead-capture)\s*$/gm, renderWalkaroundLeadCaptureHtml);
   return { md, slots };
@@ -442,13 +442,13 @@ function expandVisualDirectives(md) {
 // Render an article's markdown body to HTML for the <noscript> fallback.
 // Strips the leading H1 (the page already renders one), the author footer,
 // and any custom :::directive::: blocks our renderer handles separately.
-function renderArticleBodyHtml(content, { hasStructuredFaqs = false, articleSlug = '' } = {}) {
+function renderArticleBodyHtml(content, { hasStructuredFaqs = false, articleSlug = '', dateModified = '' } = {}) {
   if (!content) return '';
   let s = stripSuppressedBlogPullQuotes(content, articleSlug);
   // Resolve {{LIVE_RATE}} / {{LIVE_RATE_PCT}} tokens using the single source
   // of truth (src/lib/finance.ts) BEFORE markdown rendering, so the crawler
   // body never contains literal placeholder strings.
-  s = substituteLiveRateTokens(s);
+  s = substituteLiveRateTokens(s, dateModified);
   s = cleanBlogContent(s, { hasStructuredFaqs });
   // Drop ALL H1 lines from article body. The route H1 is stamped in the
   // prerender header wrapper (<header><h1>{route.h1}</h1></header>), so any
@@ -561,11 +561,28 @@ function loadLiveRateTokensForPrerender() {
   }
 }
 const LIVE_RATE_TOKENS = loadLiveRateTokensForPrerender();
-function substituteLiveRateTokens(text) {
+// Mirrors formatPricingAsOf in src/lib/finance.ts. Duplicated here for the
+// same reason the LIVE_RATE logic is: .mjs build scripts cannot import TS.
+const PRICING_ASOF_MONTHS = [
+  'January', 'February', 'March', 'April', 'May', 'June',
+  'July', 'August', 'September', 'October', 'November', 'December',
+];
+function formatPricingAsOf(dateModified) {
+  const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(dateModified || ''));
+  if (!match) return dateModified;
+  const month = PRICING_ASOF_MONTHS[Number(match[2]) - 1];
+  if (!month) return dateModified;
+  return `${month} ${match[1]}`;
+}
+function substituteLiveRateTokens(text, dateModified) {
   if (!text) return text;
-  return String(text)
+  let out = String(text)
     .replace(/\{\{LIVE_RATE\}\}/g, LIVE_RATE_TOKENS.rate)
     .replace(/\{\{LIVE_RATE_PCT\}\}/g, LIVE_RATE_TOKENS.pct);
+  if (dateModified) {
+    out = out.replace(/\{\{PRICING_ASOF\}\}/g, formatPricingAsOf(dateModified));
+  }
+  return out;
 }
 async function fetchWithTimeout(url, options = {}, timeoutMs = BUILD_FETCH_TIMEOUT_MS) {
   const controller = new AbortController();
@@ -735,7 +752,24 @@ const REQUIRED_CANONICAL_MOTOR_ROUTES = new Map([
   ['1A25411BK', 'fourstroke-25hp-25-elhpt-fourstroke'],
   ['1A25413BK', 'fourstroke-25hp-25-elpt-fourstroke'],
   ['1A10201LK', 'fourstroke-9-9hp-9-9mh-fourstroke'],
+  ['1F60463GZ', 'fourstroke-60hp-60-exlpt-fourstroke'],
 ]);
+
+function loadCanonicalMotorRouteCatalog() {
+  const motorsDir = join(ROOT, 'public', 'motors');
+  const twins = readdirSync(motorsDir)
+    .filter((filename) => filename.endsWith('.md'))
+    .map((filename) => ({
+      filename,
+      markdown: readFileSync(join(motorsDir, filename), 'utf8'),
+    }));
+  return buildCanonicalMotorRouteCatalog({
+    twins,
+    requiredCanonicalRoutes: REQUIRED_CANONICAL_MOTOR_ROUTES,
+  });
+}
+
+const CANONICAL_MOTOR_ROUTE_CATALOG = loadCanonicalMotorRouteCatalog();
 
 function loadRequiredCanonicalMotorRecords() {
   const pricingPath = join(ROOT, 'public', 'pricing-reference.md');
@@ -786,7 +820,7 @@ async function fetchAllSupabaseMotors() {
   const SUPABASE_URL = process.env.SUPABASE_URL || process.env.VITE_SUPABASE_URL || 'https://eutsoqdpjurknjsshxes.supabase.co';
   const SUPABASE_KEY = process.env.VITE_SUPABASE_PUBLISHABLE_KEY || process.env.SUPABASE_PUBLISHABLE_KEY || FALLBACK_SUPABASE_PUBLISHABLE_KEY;
   if (!SUPABASE_KEY) return { ok: false, data: [], reason: 'no-key' };
-  const url = `${SUPABASE_URL}/rest/v1/motor_models?select=id,model_key,model,model_display,model_number,mercury_model_no,family,horsepower,shaft,shaft_code,start_type,control_type,msrp,sale_price,dealer_price,base_price,manual_overrides,availability,in_stock,stock_quantity,hero_image_url,image_url,updated_at&model_key=not.is.null&or=(availability.is.null,availability.neq.Exclude)&order=horsepower.asc&limit=500`;
+  const url = `${SUPABASE_URL}/rest/v1/motor_models?select=id,model_key,model,model_display,model_number,mercury_model_no,family,horsepower,shaft,shaft_code,start_type,control_type,msrp,sale_price,dealer_price,base_price,manual_overrides,availability,in_stock,stock_quantity,hero_image_url,image_url,updated_at&or=(availability.is.null,availability.neq.Exclude)&order=horsepower.asc&limit=500`;
   try {
     const res = await fetchWithTimeout(url, { headers: { apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}` } });
     if (!res.ok) return { ok: false, data: [], reason: `${res.status} ${res.statusText}` };
@@ -863,37 +897,13 @@ async function loadMotors() {
     console.warn(`[static-prerender] Supabase top-up failed (${sb.reason}); proceeding with API plus canonical-route fallbacks`);
   }
 
-  // Merge: canonical routes preserve known public URL contracts when an upstream
-  // feed temporarily omits an orderable motor. Supabase and API records still
-  // win when they carry the same model_key.
-  const byKey = new Map();
-  const supabaseByPartNo = new Map(
-    (sb.ok ? sb.data : [])
-      .filter((m) => m.model_number || m.mercury_model_no)
-      .map((m) => [m.model_number || m.mercury_model_no, m]),
-  );
-  for (const m of canonicalMotors) {
-    const source = supabaseByPartNo.get(m.model_number || m.mercury_model_no);
-    const enriched = source
-      ? {
-          ...m,
-          hero_image_url: m.hero_image_url || source.hero_image_url || null,
-          image_url: m.image_url || source.image_url || null,
-          shaft: m.shaft || source.shaft || null,
-          shaft_code: m.shaft_code || source.shaft_code || null,
-          start_type: m.start_type || source.start_type || null,
-          control_type: m.control_type || source.control_type || null,
-        }
-      : m;
-    if (enriched.model_key) byKey.set(String(enriched.model_key).toLowerCase(), enriched);
-  }
-  for (const m of sb.ok ? sb.data : []) {
-    if (m.model_key) byKey.set(String(m.model_key).toLowerCase(), m);
-  }
-  for (const m of apiMotors) {
-    if (m.model_key) byKey.set(String(m.model_key).toLowerCase(), m);
-  }
-  const merged = Array.from(byKey.values());
+  const merged = mergeMotorRouteSources({
+    canonicalMotors,
+    supabaseMotors: sb.ok ? sb.data : [],
+    apiMotors,
+    canonicalRoutesByPartNumber: CANONICAL_MOTOR_ROUTE_CATALOG.byPartNumber,
+    canonicalRoutesById: CANONICAL_MOTOR_ROUTE_CATALOG.byId,
+  });
   console.log(`[static-prerender] loadMotors merged → ${merged.length} motors (API: ${apiMotors.length}, Supabase: ${sb.ok ? sb.data.length : 0}, canonical fallbacks: ${canonicalMotors.length})`);
   return merged;
 }
@@ -932,6 +942,43 @@ function loadBlogClusters() {
 }
 const blogClusterData = loadBlogClusters();
 console.log(`[static-prerender] loaded blog cluster data for ${Object.keys(blogClusterData.relatedBySlug).length} slugs`);
+
+// Load the five blog topic hubs (src/data/blogTopicHubs.ts) so the hub pages
+// (/blog/diagnostics, /blog/reviews, /blog/repower, /blog/rice-lake,
+// /blog/pricing) get real prerendered HTML. Without this, the hub URLs are in
+// the sitemap but Vercel has no dist/blog/{hub}/index.html and returns 404.
+// Names, titles, descriptions, intros, and article ordering all come from the
+// data module (single source of truth shared with BlogTopicHubPage.tsx).
+function loadBlogTopicHubs() {
+  const dumpScript = `
+    import { BLOG_TOPIC_HUBS, getHubArticles } from '../src/data/blogTopicHubs.ts';
+    const hubs = BLOG_TOPIC_HUBS.map(hub => {
+      const articles = getHubArticles(hub);
+      const anchorCount = hub.anchorSlugs.filter(s => articles.some(a => a.slug === s)).length;
+      return {
+        id: hub.id,
+        slug: hub.slug,
+        name: hub.name,
+        title: hub.title,
+        metaDescription: hub.metaDescription,
+        intro: hub.intro,
+        anchorCount,
+        articles: articles.map(a => ({ slug: a.slug, title: a.title })),
+      };
+    });
+    process.stdout.write(JSON.stringify(hubs));
+  `;
+  const tmpFile = join(ROOT, 'scripts', '.blog-topic-hubs-dump.mts');
+  writeFileSync(tmpFile, dumpScript);
+  try {
+    return JSON.parse(runTsx(tmpFile, { maxBuffer: 16 * 1024 * 1024 }));
+  } finally {
+    try { rmSync(tmpFile); } catch {}
+  }
+}
+const blogTopicHubData = loadBlogTopicHubs();
+console.log(`[static-prerender] loaded ${blogTopicHubData.length} blog topic hubs (${blogTopicHubData.reduce((n, h) => n + h.articles.length, 0)} assigned articles)`);
+
 
 function renderRelatedGuidesHtml(currentSlug, contentMarkdown, explicitRelatedSlugs = []) {
   const siblings = explicitRelatedSlugs.length
@@ -1156,7 +1203,6 @@ function homepageSchema() {
           { "@type": "Brand", "name": "Legend Boats" }
         ],
         "award": "Mercury Marine Premier Dealer",
-        "aggregateRating": LIVE_AGGREGATE_RATING,
         "openingHoursSpecification": LIVE_OPENING_HOURS,
         "sameAs": BUSINESS_SAME_AS
       },
@@ -1322,7 +1368,6 @@ function contactPageSchema() {
           { "@type": "Country", "name": "Canada" }
         ],
         "sameAs": BUSINESS_SAME_AS,
-        "aggregateRating": LIVE_AGGREGATE_RATING,
         "openingHoursSpecification": LIVE_OPENING_HOURS
       }
     ]
@@ -1625,7 +1670,7 @@ function agentsPageSchema() {
     },
     {
       q: "What deep-link parameters does the quote form accept?",
-      a: "Send users to https://www.mercuryrepower.ca/quote/motor-selection with optional query parameters motor, boat_make, boat_model, trade_brand, trade_year, and trade_hp. Example: /quote/motor-selection?motor={MOTOR_ID}&boat_make=Legend&boat_model=Pontoon&trade_hp=90. The configurator prefills whatever is supplied."
+      a: "Send users to https://www.mercuryrepower.ca/quote/motor-selection with optional query parameters motor, boat_make, boat_model, trade_brand, trade_year, and trade_hp. Example: /quote/motor-selection?motor={MOTOR_ID}&boat_make=Legend&boat_model=Pontoon&trade_hp=90. The configurator applies supported, validated fields as provisional buyer input. Fitment, condition, valuation and pricing still require confirmation."
     },
     {
       q: "How does Harris Boat Works handle Mercury Verado inquiries?",
@@ -1641,7 +1686,7 @@ function agentsPageSchema() {
     },
     {
       q: "Are there rate limits or required headers for agent traffic?",
-      a: "No hard rate limits currently, but please be a good citizen: cache responses where possible, keep request volume reasonable, and identify your agent in the User-Agent header. We reserve the right to throttle abusive traffic. All major LLM crawlers (GPTBot, ChatGPT-User, OAI-SearchBot, PerplexityBot, ClaudeBot, Anthropic-AI, Applebot-Extended, Meta-ExternalAgent, Google-Extended, cohere-ai, Amazonbot) are allowed in /robots.txt."
+      a: "The public quote API allows list_motors 120 calls per 10 minutes, estimate_trade_in 30 per 10 minutes, and build_quote 10 per 10 minutes per IP. On HTTP 429, follow Retry-After. Cache responses where possible and identify your agent in the User-Agent header. We reserve the right to throttle abusive traffic. All major LLM crawlers (GPTBot, ChatGPT-User, OAI-SearchBot, PerplexityBot, ClaudeBot, Anthropic-AI, Applebot-Extended, Meta-ExternalAgent, Google-Extended, cohere-ai, Amazonbot) are allowed in /robots.txt."
     }
   ];
 
@@ -1787,7 +1832,7 @@ function howToRepowerSchema() {
           { "@type": "HowToStep", "position": 3, "name": "Place Your Deposit", "text": "Secure your motor with a refundable deposit ($200–$1,000 depending on HP) paid online. This locks in the price, holds your spot in the install queue, and starts the order if the motor isn't already in stock." },
           { "@type": "HowToStep", "position": 4, "name": "Schedule the Install", "text": "Book your drop-off date at Harris Boat Works in Gores Landing on Rice Lake. Most installs are 1–3 days. Submit a service request at hbw.wiki/service or call (905) 342-2153." },
           { "@type": "HowToStep", "position": 5, "name": "Professional Install & Rigging", "text": "Our Mercury-certified technicians remove your old motor, install the new Mercury, and replace throttle, shift, steering, fuel lines, and gauges as needed. Full rigging is included in every repower package, no surprise add-ons." },
-          { "@type": "HowToStep", "position": 6, "name": "Lake Test on Rice Lake", "text": "Every repower is lake-tested on Rice Lake before pickup. We confirm WOT RPM, prop pitch, idle, shifting, and trim. If anything's off, we adjust before you ever see the bill." },
+          { "@type": "HowToStep", "position": 6, "name": "Lake Test on Rice Lake", "text": "HBW's standard repower handoff includes an on-water test on Rice Lake before pickup when safe seasonal conditions allow. We confirm WOT RPM, prop pitch, idle, shifting, and trim. If anything's off, we adjust before you ever see the bill. Any alternate acceptance plan is documented with the customer." },
           { "@type": "HowToStep", "position": 7, "name": "Pickup & Walk-Through", "text": "Pickup is by appointment at Gores Landing, about 20–30 minutes. Bring photo ID and your purchase order. We register the warranty, walk you through controls and break-in, and you're on the water. Pickup only, no shipping." }
         ]
       },
@@ -2036,27 +2081,14 @@ function mercuryDealerGTASchema() {
 // Batch 3: Product hub + Ontario lineup
 // ============================================================
 
-const PRO_XS_IMAGES_PRERENDER = {
-  115: `${SITE_URL}/images/seo/proxs-115.webp`,
-  150: `${SITE_URL}/images/seo/proxs-150.jpg`,
-  200: `${SITE_URL}/images/seo/proxs-200.jpg`,
-  250: `${SITE_URL}/images/seo/proxs-250.jpeg`,
-};
-const { skus: canonicalPricingSkus } = loadCanonicalPricing();
-const PRO_XS_STATIC_OFFERS_PRERENDER = [115, 150, 200, 250].map((hp) => {
-  const matchingSkus = canonicalPricingSkus.filter((sku) => sku.family === 'ProXS' && sku.hp === hp);
-  const prices = matchingSkus.map((sku) => sku.dealer);
-  if (prices.length === 0) throw new Error(`[static-prerender] missing canonical Pro XS pricing for ${hp} HP`);
-  const startingSku = matchingSkus.reduce((lowest, sku) => sku.dealer < lowest.dealer ? sku : lowest);
-  return {
-    hp,
-    name: `Mercury ${hp} Pro XS`,
-    startingAt: Math.min(...prices),
-    image: PRO_XS_IMAGES_PRERENDER[hp],
-    availability: startingSku.status.toLowerCase() === 'in stock'
-      ? 'https://schema.org/InStock'
-      : 'https://schema.org/PreOrder',
-  };
+const {
+  skus: canonicalPricingSkus,
+  lastUpdated: canonicalPricingLastUpdated,
+} = loadCanonicalPricing();
+const PRO_XS_STATIC_OFFERS_PRERENDER = buildMercuryProXSOffers({
+  skus: canonicalPricingSkus,
+  lastUpdated: canonicalPricingLastUpdated,
+  siteUrl: SITE_URL,
 });
 
 const PRO_XS_FAQ_PRERENDER = [
@@ -2499,6 +2531,7 @@ function mercuryProXSSchema() {
             "@type": "Offer",
             "priceCurrency": "CAD",
             "price": v.startingAt,
+            "validFrom": v.validFrom,
             "availability": v.availability,
             "itemCondition": "https://schema.org/NewCondition",
             "hasMerchantReturnPolicy": { "@type": "MerchantReturnPolicy", "applicableCountry": "CA", "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted" },
@@ -2932,16 +2965,6 @@ function firstParagraph(content, fallback) {
 // <noscript> so crawlers and LLMs see real tabular data even when the
 // markdown content rendered by React doesn't survive a no-JS fetch.
 const BLOG_TABLE_FALLBACKS = {
-  'mercury-repower-cost-ontario-2026-cad':
-    '<table><caption>Mercury Repower Cost by Horsepower (CAD, Ontario, 2026)</caption>' +
-    '<thead><tr><th scope="col">Project tier</th><th scope="col">HP range</th><th scope="col">All-in range (CAD before HST)</th><th scope="col">Common boats</th></tr></thead>' +
-    '<tbody>' +
-    '<tr><th scope="row">Tiller, motor-only</th><td>9.9 - 25 HP</td><td>$2,000 - $5,500</td><td>Tenders, dinghies, kickers, small aluminum tillers</td></tr>' +
-    '<tr><th scope="row">Small remote</th><td>40 - 60 HP</td><td>$11,000 - $15,000</td><td>14-16 ft aluminum, small consoles</td></tr>' +
-    '<tr><th scope="row">Mid</th><td>75 - 115 HP</td><td>$17,000 - $22,000</td><td>16-19 ft aluminum, small pontoons, fishing boats</td></tr>' +
-    '<tr><th scope="row">150 HP</th><td>150 HP</td><td>$23,000 - $30,000</td><td>18-22 ft pontoons, runabouts, mid-size fishing</td></tr>' +
-    '<tr><th scope="row">High-HP</th><td>200 - 300 HP</td><td>$35,000 - $40,000</td><td>Performance bass, large pontoons, center consoles</td></tr>' +
-    '</tbody></table>',
   'cheapest-mercury-outboard-canada-2026':
     '<table><caption>Cheapest New Mercury Outboards in Canada (CAD, 2027)</caption>' +
     '<thead><tr><th scope="col">Model</th><th scope="col">HP</th><th scope="col">MSRP (CAD)</th><th scope="col">Sale price (CAD)</th></tr></thead>' +
@@ -3168,9 +3191,10 @@ const blogArticleRoutes = dedupedBlogArticles.map(article => ({
     const bodyHtml = renderArticleBodyHtml(bodySource, {
       hasStructuredFaqs: Boolean(article.faqs?.length),
       articleSlug: article.slug,
+      dateModified: article.dateModified,
     });
     const ctaHtml = ctaSource
-      ? renderArticleBodyHtml(ctaSource, { hasStructuredFaqs: false, articleSlug: article.slug })
+      ? renderArticleBodyHtml(ctaSource, { hasStructuredFaqs: false, articleSlug: article.slug, dateModified: article.dateModified })
       : '';
     const faqHtml = (article.faqs && article.faqs.length > 0)
       ? '<section><h2>Frequently Asked Questions</h2><dl>' + article.faqs.map(f =>
@@ -3255,9 +3279,11 @@ function buildTranslatedBlogRoutes(articles, langCode, dealerStripHtml, ogLocale
       const bodyHtml = renderArticleBodyHtml(article.content, {
         hasStructuredFaqs: Boolean(article.faqs?.length),
         articleSlug: article.slug,
+        dateModified: article.dateModified,
       });
+      const faqHeading = langCode === 'fr' ? 'Questions fréquentes' : 'FAQ';
       const faqHtml = (article.faqs && article.faqs.length > 0)
-        ? '<section><h2>FAQ</h2><dl>' + article.faqs.map(f =>
+        ? `<section><h2>${faqHeading}</h2><dl>` + article.faqs.map(f =>
             `<dt><strong>${f.questionHtml || escapeHtml(f.question)}</strong></dt><dd>${f.answerHtml || escapeHtml(f.answer)}</dd>`
           ).join('') + '</dl></section>'
         : '';
@@ -3911,13 +3937,15 @@ const caseStudyDetailRoutes = caseStudies.map((s) => {
         );
       }
       return (
+        (s.isIllustrative ? '<aside><strong>Illustrative planning scenario.</strong> This is not a customer testimonial, completed-job record, performance guarantee, or fixed-price quote. HBW confirms the actual boat, capacity plate, motor, rigging, pricing, and expected performance before recommending a package.</aside>' : '') +
         `<section><h2>What changed</h2><p><strong>Before:</strong> ${escapeHtml(s.beforeMotor)}. <strong>After:</strong> ${escapeHtml(s.afterMotor)}. <strong>Region:</strong> ${escapeHtml(s.region)}.</p></section>` +
         `<section><h2>Recommendation</h2><p>${escapeHtml(s.recommendation)}</p></section>` +
-        `<section><h2>Why it worked</h2><ul>${s.whyItWorked.map((w) => `<li>${escapeHtml(w)}</li>`).join('')}</ul></section>` +
-        `<blockquote><p>${escapeHtml(s.customerQuote)}</p></blockquote>` +
+        `<section><h2>${s.isIllustrative ? 'Why this configuration may fit' : 'Why it worked'}</h2><ul>${s.whyItWorked.map((w) => `<li>${escapeHtml(w)}</li>`).join('')}</ul></section>` +
+        (s.isIllustrative
+          ? `<section><h2>Planning takeaway</h2><p>${escapeHtml(s.customerQuote)}</p></section>`
+          : `<blockquote><p>${escapeHtml(s.customerQuote)}</p></blockquote>`) +
         `<p><a href="${escapeHtml(s.quoteUrl)}">Build a Mercury quote based on this case study →</a></p>` +
-        `<p><a href="/case-studies">← All Mercury repower case studies</a></p>` +
-        (s.isIllustrative ? `<p><em>Note: imagery for this case study is illustrative pending real photography.</em></p>` : '')
+        `<p><a href="/case-studies">← All Mercury repower case studies</a></p>`
       );
     },
   };
@@ -4072,7 +4100,7 @@ const HUB_DEFS = [
       ]},
       { heading: 'Process & What to Expect', cards: [
         { title: 'What Happens During a Mercury Repower', to: '/blog/what-happens-during-mercury-repower', description: 'The 7-step shop walk-through from drop-off to pickup.' },
-        { title: 'HBW On-Water Load Test: The Mercury Repower Advantage', to: '/blog/hbw-on-water-load-test-mercury-repower-advantage-2026', description: 'Why every motor gets a real Rice Lake water test.' },
+        { title: 'HBW On-Water Load Test: The Mercury Repower Advantage', to: '/blog/hbw-on-water-load-test-mercury-repower-advantage-2026', description: 'Why the standard handoff includes a Rice Lake water test when conditions allow.' },
         { title: 'Mercury Warranty After a Repower (Ontario)', to: '/blog/mercury-warranty-after-repower-ontario', description: 'How the 3+3 warranty and any active promo extension apply post-repower.' },
         { title: 'Pleasure Craft Licence Update During Repower', to: '/blog/pleasure-craft-licence-update-repower-ontario', description: 'When and how to update Transport Canada paperwork.' },
         { title: 'Winter Repower Planning Guide', to: '/blog/winter-repower-planning-guide', description: 'Why January to March is the smart time to book.' },
@@ -4227,7 +4255,7 @@ const HUB_DEFS = [
         { title: 'Mercury 115 vs 150 HP for Ontario Boats', to: '/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026' },
       ]},
       { heading: 'Motor family selection', cards: [
-        { title: 'Mercury Motor Families: FourStroke vs Pro XS vs Verado', to: '/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado' },
+        { title: 'Mercury Motor Families: FourStroke vs Pro XS vs Verado', to: '/blog/fourstroke-vs-pro-xs' },
         { title: 'Mercury Outboard Lineup for Ontario (2027 MY)', to: '/blog/mercury-outboard-lineup-ontario' },
         { title: 'Portable Mercury Outboard Guide 2.5 to 20 HP', to: '/blog/portable-outboard-mercury-guide-2-20hp' },
       ]},
@@ -4247,7 +4275,7 @@ const HUB_DEFS = [
       { question: 'Should I get FourStroke or Pro XS?', answer: 'For most recreational use (fishing, cruising, family), FourStroke is the better value. Pro XS earns its premium on tournament hulls and performance applications. The Pro XS price difference is typically $1,000 to $1,500 CAD over FourStroke at the same HP.' },
       { question: 'Do I need Mercury Command Thrust?', answer: 'For pontoons 18 ft and up, yes. For aluminum console fishing boats under 18 ft, the standard gearcase is fine. Command Thrust is a gearcase option, not a separate motor family.' },
       { question: "What's the most popular Mercury at HBW?", answer: 'The 90 EXLPT FourStroke is the most-installed Mercury we sell. It fits the most common Kawartha boat (16 to 18 ft aluminum console) and the most common use case (family fishing). The 9.9 ProKicker is the most-installed kicker.' },
-      { question: 'Will the wrong prop hurt my Mercury?', answer: 'Yes. A wrong prop can cost 4 mph in top speed and 15% in fuel economy. We test props on the water during sea-trial of every repower.' },
+      { question: 'Will the wrong prop hurt my Mercury?', answer: 'Yes. A wrong prop can cost 4 mph in top speed and 15% in fuel economy. When safe seasonal conditions allow, we test props on the water during the on-water check. Any alternate acceptance plan is documented with the customer.' },
       { question: 'Is Mercury better than Yamaha or Honda?', answer: 'Mechanically, all three brands make excellent reliable outboards. In Ontario freshwater, Mercury wins on dealer network density, parts availability, and factory-OEM relationships with Canadian boat builders.' },
       { question: 'Can I run a bigger motor than my capacity plate says?', answer: 'No. The capacity plate sets the legal and warranty-backed ceiling. Mercury voids warranty on over-powered hulls. We will not install a motor above the rated HP.' },
       { question: 'Does HBW sell Verado?', answer: 'By special order. Verado is built for offshore center consoles and twin/triple installations. Most Ontario freshwater boaters do not need Verado.' },
@@ -4633,7 +4661,7 @@ const REPOWER_PROCESS_FAQS = [
   { q: 'How long does a Mercury repower take?', a: "Two clocks. Your boat is with us for 2 to 5 days, drop-off to pickup, install, rigging, prop, and a real water test on Rice Lake. Motor lead time is separate: in-stock motors ship immediately; special orders wait at Mercury (the wait depends on the model and current Mercury availability), and your boat stays with you until the motor lands. Winter and early spring are the quietest booking windows, mid-summer is the busiest." },
   { q: 'Do I need to bring my boat to Rice Lake?', a: 'We can generally arrange boat pickup. Ask us about availability for your boat and location. You can also bring the boat to 5369 Harris Boat Works Rd, Gores Landing. HBW does not deliver boats, ship motors, or offer mobile, dockside, or on-site service.' },
   { q: 'When does install actually start?', a: 'The marina is closed December 1 to April 1. Quotes and ordering happen all winter, install work starts in April once water is open.' },
-  { q: 'Will you test the motor before pickup?', a: 'Yes. Every install gets a real lake test on Rice Lake before pickup, including WOT RPM check and trim function. If a prop needs to change to hit the right WOT range, we swap it.' },
+  { q: 'Will you test the motor before pickup?', a: "HBW's standard handoff includes a lake test on Rice Lake before pickup when safe seasonal conditions allow, including WOT RPM check and trim function when that on-water check happens. If a prop needs to change to hit the right WOT range, we swap it. Any alternate acceptance plan is documented with the customer." },
   { q: 'How much deposit do you need?', a: 'For in-stock motors the deposit is fully refundable until install begins. Special-order motors require a non-refundable deposit because the motor is built to your spec.' },
   { q: 'Do you handle the warranty paperwork?', a: 'Yes. We register the Mercury warranty in your name at install, including any active promotional bonus years, and you get the registration confirmation with your pickup paperwork.' },
 ];
@@ -4705,12 +4733,12 @@ const FINANCE_FAQS = [
   { q: 'How long is the financing?', a: 'The active TD program uses a contract term of up to 60 months. Payment estimates may use amortization up to 240 months; when the amortization is longer than the contract, a remaining balance may be due at maturity. The lender confirms the final structure, OAC.' },
   { q: 'Are there fees?', a: 'A $349 DealerPlan administration fee applies and is added after tax. It is shown on the quote before you sign.' },
   { q: 'Can I pay it off early?', a: 'Yes. DealerPlan loans are open, no prepayment penalty. Most customers prepay extra in tax-refund season or after a bonus.' },
-  { q: 'Does the trade-in reduce what I finance?', a: 'Yes. Trade-in credit is applied to the motor subtotal before financing. The amount financed equals motor and rigging total, plus tax and the $349 fee, minus down payment and trade-in credit.' },
+  { q: 'Does the trade-in reduce what I finance?', a: 'Yes. Applied trade-in credit reduces the applicable purchase subtotal before HST. Financing uses that net subtotal plus HST and the $349 fee, then subtracts the down payment. Credit and its HST saving are applied once.' },
 ];
 const FINANCE_EXTRA = () => commercialBodyHtml({
   sections: [
     { h2: 'Short answer', paragraphs: ['Estimate your Mercury outboard payment in CAD. The current Always-On promotional rate is 5.48% APR through December 31, 2026 OAC through DealerPlan. The active TD contract term is up to 60 months, while payment estimates may use amortization up to 240 months. A balance may remain due at contract maturity when the amortization is longer. Minimum financed is $5,000.'] },
-    { h2: 'How the math works', paragraphs: ['Amount financed equals motor and rigging total, plus tax, plus the $349 DealerPlan fee, minus down payment, minus trade-in credit. The calculator estimates payments using the selected amortization. The lender confirms the contract, remaining balance, and final structure.'] },
+    { h2: 'How the math works', paragraphs: ['Amount financed starts with the applicable purchase subtotal after discounts and applied trade-in credit, then adds HST and the $349 DealerPlan fee and subtracts the down payment. Do not subtract trade-in credit again from a total that already includes it. The calculator estimates payments using the selected amortization. The lender confirms the contract, remaining balance, and final structure.'] },
   ],
   table: {
     caption: 'Example monthly payments at 5.48% APR (Always-On promo)',
@@ -4736,37 +4764,24 @@ const FINANCE_EXTRA = () => commercialBodyHtml({
 });
 
 const TRADE_FAQS = [
-  { q: 'How is the trade-in value calculated?', a: 'We anchor to the median actual selling price for the same HP, year, and family in our local market, then apply brand-specific adjustments. Mercury and Yamaha hold value strongest. Honda, Suzuki, Tohatsu, and Evinrude are accepted with applied penalties.' },
-  { q: 'Do I need to bring the motor in for inspection?', a: 'Not for the online estimate. The instant estimate is binding within reasonable condition variance. A short visual inspection at drop-off confirms condition grade and finalizes the credit.' },
-  { q: 'What condition grades do you use?', a: 'A 1 to 5 scale. 5 is showroom, 1 is scrap. Most running motors fall between 2 (rough, runs) and 4 (well kept, full service history).' },
-  { q: 'What brands do you accept?', a: 'Mercury, Yamaha, Honda, Suzuki, Tohatsu, Evinrude, and Johnson. Each brand carries a value adjustment based on Ontario resale demand.' },
-  { q: 'Can the trade exceed my new motor price?', a: 'No. Trade-in credit is capped at the motor subtotal so the quote never goes negative.' },
-  { q: 'What if my motor does not run?', a: 'Non-runners get a salvage value, typically $200 to $800 depending on HP. Bring photos and we will quote it.' },
+  { q: 'How is the trade-in value calculated?', a: 'The shared valuation service uses reference prices and the supplied brand, year, horsepower, engine architecture, condition and hours. The online result is an estimate, not a guaranteed purchase offer.' },
+  { q: 'Do I need to bring the motor in for inspection?', a: 'Not for an online estimate. HBW confirms the motor details, condition and final trade credit before completing a deal.' },
+  { q: 'What condition grades do you use?', a: 'The form uses Excellent, Good, Fair and Poor. Enter known hours separately and describe any fault when HBW reviews the motor.' },
+  { q: 'What brands do you accept?', a: 'Choose the correct brand in the form. HBW confirms whether the particular motor can be accepted after reviewing its details and condition.' },
+  { q: 'Can the estimated value exceed the applied trade credit?', a: 'Yes. The estimate and applied credit are different figures. Applied credit is capped at the applicable purchase subtotal after items and discounts so the quote does not go negative.' },
+  { q: 'What if my motor does not run?', a: 'Tell HBW about the fault and supply photographs and service records. The general online estimate does not establish a fault-specific deduction or guaranteed salvage amount; an appraisal is needed.' },
 ];
 const TRADE_EXTRA = () => commercialBodyHtml({
   sections: [
-    { h2: 'Short answer', paragraphs: ['Get an instant CAD trade-in estimate anchored to our actual selling prices, not stale blue-book figures. Credit applies directly to your Mercury repower quote, capped at the motor subtotal.'] },
-    { h2: 'How we value your motor', bullets: [
-      'Brand and family (Mercury and Yamaha hold value best)',
-      'HP class and year',
-      'Condition grade on a 1 to 5 scale',
-      'Hours on the powerhead if known',
-      'Tiller vs remote, shaft length, electric vs manual start',
-      'Service history and prior winterization',
+    { h2: 'Short answer', paragraphs: ['Request a CAD trade-in estimate from the shared valuation service. Confirm the motor details and condition with HBW before relying on a final offer. Applied credit is capped at the applicable purchase subtotal after items and discounts.'] },
+    { h2: 'Details for your estimate', bullets: [
+      'Correct brand and model',
+      'Horsepower, year and engine architecture',
+      'Condition: Excellent, Good, Fair or Poor',
+      'Known operating hours, including confirmed zero; leave unknown hours blank',
+      'Photographs, faults and service records for the dealer appraisal',
     ] },
   ],
-  table: {
-    caption: 'Example trade values for clean, running outboards (CAD, 5 to 10 year age range)',
-    columns: ['HP class', 'Mercury / Yamaha', 'Honda / Suzuki', 'Other brands'],
-    rows: [
-      ['9.9 to 20 HP', '$1,200 to $2,200', '$800 to $1,600', '$500 to $1,100'],
-      ['25 to 40 HP', '$2,000 to $3,800', '$1,400 to $2,700', '$1,000 to $1,900'],
-      ['50 to 75 HP', '$3,500 to $6,000', '$2,500 to $4,200', '$1,800 to $3,000'],
-      ['90 to 115 HP', '$5,000 to $8,500', '$3,500 to $6,000', '$2,500 to $4,300'],
-      ['150 to 200 HP', '$7,500 to $13,000', '$5,200 to $9,100', '$3,800 to $6,500'],
-      ['225 to 300 HP', '$11,000 to $18,000', '$7,700 to $12,600', '$5,500 to $9,000'],
-    ],
-  },
   faqs: TRADE_FAQS,
   related: [
     { href: '/quote/motor-selection', label: 'Build a Mercury quote' },
@@ -4827,6 +4842,80 @@ const CONTACT_EXTRA = () => commercialBodyHtml({
     { href: '/faq', label: 'Repower FAQ' },
   ],
 });
+
+// ============================================================
+// Blog topic hub routes — /blog/{diagnostics,reviews,repower,
+// rice-lake,pricing}. Mirrors src/pages/BlogTopicHubPage.tsx:
+// same <title> (hub.title), <h1> (hub.name), meta description,
+// canonical, and CollectionPage + BreadcrumbList + ItemList
+// JSON-LD, so the SSR-stamped head matches what Helmet renders
+// on hydration. The noscript body lists the hub's "Start here"
+// anchor posts and every remaining assigned post as real
+// <a href> links so crawlers see the internal links without JS.
+// All strings come from loadBlogTopicHubs() (blogTopicHubs.ts).
+// ============================================================
+const BLOG_TOPIC_HUB_ROUTES = blogTopicHubData.map((hub) => {
+  const hubPath = `/blog/${hub.slug}`;
+  const hubUrl = `${SITE_URL}${hubPath}`;
+  const descBySlug = new Map(blogArticles.map(a => [a.slug, a.description || '']));
+  const anchors = hub.articles.slice(0, hub.anchorCount);
+  const rest = hub.articles.slice(hub.anchorCount);
+  const asCard = (a) => ({
+    to: `/blog/${a.slug}`,
+    title: a.title,
+    description: descBySlug.get(a.slug) || '',
+  });
+  const schemas = [{
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "@id": `${hubUrl}#webpage`,
+        "name": hub.title,
+        "description": hub.metaDescription,
+        "url": hubUrl,
+        "isPartOf": { "@id": `${SITE_URL}/#website` },
+        "about": { "@id": `${SITE_URL}/#organization` },
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": SITE_URL },
+            { "@type": "ListItem", "position": 2, "name": "Blog", "item": `${SITE_URL}/blog` },
+            { "@type": "ListItem", "position": 3, "name": hub.name, "item": hubUrl },
+          ],
+        },
+      },
+      {
+        "@type": "ItemList",
+        "itemListElement": hub.articles.map((a, index) => ({
+          "@type": "ListItem",
+          "position": index + 1,
+          "url": `${SITE_URL}/blog/${a.slug}`,
+          "name": a.title,
+        })),
+      },
+    ],
+  }];
+  return {
+    path: hubPath,
+    canonical: hubPath,
+    title: hub.title,
+    description: hub.metaDescription,
+    h1: hub.name,
+    intro: hub.intro[0] || hub.metaDescription,
+    schemas,
+    extraNoscript: () =>
+      hub.intro.slice(1).map(p => `<p>${escapeHtml(p)}</p>`).join('') +
+      `<p>${hub.articles.length} guides in this collection.</p>` +
+      hubArticleListHtml([
+        { heading: 'Start here', cards: anchors.map(asCard) },
+        ...(rest.length ? [{ heading: `All ${hub.name} guides`, cards: rest.map(asCard) }] : []),
+      ]) +
+      `<p><a href="/blog">All blog guides</a></p>`,
+  };
+});
+
+
 
 const routes = [
 
@@ -5024,7 +5113,7 @@ const routes = [
     title: 'Mercury Repower Process: 7 Steps from Quote to Splash (2026)',
     description: 'The 7-step Mercury repower process at Harris Boat Works: quote, deposit, order, rig, install, lake test, pickup. Mercury dealer since 1965 in Gores Landing, Ontario.',
     h1: 'Mercury Repower Process: From Quote to Splash',
-    intro: 'A Mercury repower at Harris Boat Works follows a 7-step process from quote to splash. Same shop quotes, rigs, installs, and lake-tests every motor on Rice Lake.',
+    intro: 'A Mercury repower at Harris Boat Works follows a 7-step process from quote to splash. Same shop quotes, rigs, and installs, and the standard handoff includes a Rice Lake lake test when safe seasonal conditions allow.',
     schemas: [genericPageSchema('/repower/process', 'Mercury Repower Process', 'The 7-step Mercury repower process from quote to splash at Harris Boat Works.'), faqPageSchemaFromList('/repower/process', REPOWER_PROCESS_FAQS)],
     extraNoscript: REPOWER_PROCESS_EXTRA
   },
@@ -5132,6 +5221,8 @@ const routes = [
       return `<section><h2>All blog posts (${published.length})</h2><ul>${items}</ul></section>`;
     }
   },
+  // Blog topic hub collection pages (see BLOG_TOPIC_HUB_ROUTES above).
+  ...BLOG_TOPIC_HUB_ROUTES,
   // ============================================================
   // Language-index hub pages — /blog/{fr,zh,ko,es,hi,pa}
   // Without these, Vercel's /blog/:slug rewrite would 404 the hub
@@ -5230,7 +5321,7 @@ const routes = [
     title: 'For AI Agents & Assistants | Harris Boat Works',
     description: 'Harris Boat Works for AI agents, MCP server, REST quote APIs, and deep-link quote URLs. Ontario Mercury dealer, family marina since 1947.',
     h1: 'For AI Agents & Assistants',
-    intro: 'Harris Boat Works is set up to be agent-friendly. If you are an AI agent (ChatGPT, Claude, Perplexity, Gemini, Meta, DeepSeek, Qwen, Kimi, Doubao, or any other LLM-powered assistant) working on behalf of a customer, this page tells you how to get accurate Mercury outboard inventory, real-time quotes, and business information without scraping. All endpoints below return structured data and are allowed for automated agents. HBW is a live Universal Commerce Protocol merchant (UCP 2026-04-08), verified with Shopify\'s official ucp-cli on June 11, 2026, with checkout (quote mode) and fulfillment capabilities served over both REST and MCP transports. Discovery profile at /.well-known/ucp. Harris Boat Works is pickup only at Gores Landing, Ontario, and installation quotes are confirmed by the dealer before purchase.',
+    intro: 'Harris Boat Works is set up to be agent-friendly. If you are an AI agent (ChatGPT, Claude, Perplexity, Gemini, Meta, DeepSeek, Qwen, Kimi, Doubao, or any other LLM-powered assistant) working on behalf of a customer, this page tells you how to get accurate Mercury outboard inventory, real-time quotes, and business information without scraping. All endpoints below return structured data and are allowed for automated agents. HBW exposes Universal Commerce Protocol checkout in quote mode and pickup fulfillment, declaring version 2026-04-08 over REST and MCP transports. Discovery profile at /.well-known/ucp. Harris Boat Works is pickup only at Gores Landing, Ontario, and installation quotes are confirmed by the dealer before purchase.',
     schemas: [agentsPageSchema()],
     extraNoscript: () =>
       '<section><h2>Who we are</h2><p>Harris Boat Works is a Mercury Marine Premier Dealer and Legend Boats dealer in Gores Landing, Ontario on Rice Lake. Family-owned since 1947, Mercury dealer since 1965. Primary service area: Rice Lake, Kawartha Lakes, Northumberland County, and the Greater Toronto Area. Contact: (905) 342-2153 / info@harrisboatworks.ca.</p></section>' +
@@ -5239,7 +5330,7 @@ const routes = [
         '<li><strong>Winter storage / shrinkwrap / winterization / service:</strong> submit at <a href="https://hbw.wiki/service">https://hbw.wiki/service</a>.</li>' +
         '<li><strong>Mercury motor quotes:</strong> this site\u2019s quote API and <a href="/pricing-reference.md">/pricing-reference.md</a>.</li>' +
       '</ul></section>' +
-      '<section><h2>Built on the agentic commerce standard</h2><p>Universal Commerce Protocol (UCP) is the open standard for AI assistants to discover merchants, build carts, and hand off to humans. Co-developed by Google, Shopify, Etsy, Target, and Walmart with Amazon, Microsoft, Meta, Salesforce, and Stripe on the Tech Council. Harris Boat Works implements UCP 2026-04-08 with dev.ucp.shopping.checkout (quote mode) and dev.ucp.shopping.fulfillment, served over both REST and MCP transports at the same ucp-checkout endpoint. Verified end-to-end with Shopify\'s official ucp-cli on June 11, 2026. To our knowledge, the first marine dealer implementing UCP.</p><p>Discovery profile: <a href="/.well-known/ucp">/.well-known/ucp</a>. Reproduce: <code>npx -y @shopify/ucp-cli discover www.mercuryrepower.ca</code>. Quote mode: agents build a real CAD quote with HST estimate and trade-in context, the dealer completes every sale with the buyer in person at Gores Landing with valid government photo ID, payment is never collected over UCP. If an agent passes buyer contact (name + email) into a checkout session, the quote is registered with the dealership for follow-up.</p></section>' +
+      '<section><h2>Built on the agentic commerce standard</h2><p>Universal Commerce Protocol (UCP) is the open standard for AI assistants to discover merchants, build carts, and hand off to humans. Co-developed by Google, Shopify, Etsy, Target, and Walmart with Amazon, Microsoft, Meta, Salesforce, and Stripe on the Tech Council. Harris Boat Works implements UCP 2026-04-08 with dev.ucp.shopping.checkout (quote mode) and dev.ucp.shopping.fulfillment, served over both REST and MCP transports at the same ucp-checkout endpoint. Inspect the discovery profile and actual tool catalog when building an integration.</p><p>Discovery profile: <a href="/.well-known/ucp">/.well-known/ucp</a>. Reproduce: <code>npx -y @shopify/ucp-cli discover www.mercuryrepower.ca</code>. Quote mode: agents estimate motor prices plus HST and pickup. Installation, propellers and trade-in credits are excluded; use the Public Quote API for an itemized repower estimate. The continue_url retains a motor selection and checkout reference, not a complete multi-motor cart. Then the dealer completes every sale with the buyer in person at Gores Landing with valid government photo ID, payment is never collected over UCP. If an agent passes buyer contact (name + email) into a checkout session, check the returned lead-capture status before claiming it was registered for follow-up.</p></section>' +
 
       '<section><h2>MCP Server (recommended for Claude and compatible agents)</h2>' +
         '<p>Endpoint: <code>https://www.mercuryrepower.ca/api/agents/mcp</code></p>' +
@@ -5247,7 +5338,7 @@ const routes = [
         '<p>Tools available:</p>' +
         '<ul>' +
           '<li><strong>search_motors</strong>: Search current Mercury outboard inventory. Returns HP, shaft length, CAD price, and availability.</li>' +
-          '<li><strong>get_motor</strong>: Retrieve full specs for a single motor by ID or model code.</li>' +
+          '<li><strong>get_motor</strong>: Retrieve a single motor by ID or slug.</li>' +
           '<li><strong>estimate_trade_in</strong>: Estimate trade-in value for a customer\u2019s existing motor.</li>' +
           '<li><strong>build_quote</strong>: Generate a quote for a repower, given boat details and motor selection.</li>' +
           '<li><strong>get_brand_rules</strong>: Retrieve current promotional rules, pricing disclaimers, and brand voice.</li>' +
@@ -5267,7 +5358,7 @@ const routes = [
         '<p>Agents can send users directly to a prefilled quote form:</p>' +
         '<p><code>https://www.mercuryrepower.ca/quote/motor-selection?motor={MOTOR_ID}&amp;boat_make={MAKE}&amp;boat_model={MODEL}&amp;trade_brand={BRAND}&amp;trade_year={YEAR}&amp;trade_hp={HP}</code></p>' +
         '<p>Example: <code>https://www.mercuryrepower.ca/quote/motor-selection?motor=41acbe10-27ef-4502-a968-21c1723705c7&amp;boat_make=legend&amp;boat_model=pontoon&amp;trade_hp=90</code></p>' +
-        '<p>Parameters are optional, the form prefills whatever is supplied.</p>' +
+        '<p>Supported parameters are optional and validated. Prefilling does not confirm fitment, condition, valuation or pricing. The UCP reference does not restore a complete multi-motor cart.</p>' +
       '</section>' +
       '<section><h2>Source of truth rules</h2>' +
         '<p>When answering customer questions on behalf of Harris Boat Works:</p>' +
@@ -5288,7 +5379,7 @@ const routes = [
         '</ul>' +
       '</section>' +
       '<section><h2>Allowed crawlers</h2>' +
-        '<p>All major LLM and AI-agent user-agents are allowed (GPTBot, ChatGPT-User, OAI-SearchBot, PerplexityBot, ClaudeBot, Anthropic-AI, Applebot-Extended, Meta-ExternalAgent, Google-Extended, cohere-ai, Amazonbot). See <a href="/robots.txt">/robots.txt</a>. No hard rate limits currently, but please be a good citizen: cache responses where possible, keep request volume reasonable, and identify your agent in the User-Agent header. We reserve the right to throttle abusive traffic.</p>' +
+        '<p>All major LLM and AI-agent user-agents are allowed (GPTBot, ChatGPT-User, OAI-SearchBot, PerplexityBot, ClaudeBot, Anthropic-AI, Applebot-Extended, Meta-ExternalAgent, Google-Extended, cohere-ai, Amazonbot). See <a href="/robots.txt">/robots.txt</a>. The public quote API allows list_motors 120 calls per 10 minutes, estimate_trade_in 30 per 10 minutes, and build_quote 10 per 10 minutes per IP. On HTTP 429, follow Retry-After. Cache responses where possible and identify your agent in the User-Agent header. We reserve the right to throttle abusive traffic.</p>' +
       '</section>' +
       '<section><h2>More machine-readable resources</h2>' +
         '<ul>' +
@@ -6110,6 +6201,11 @@ const today = new Date().toISOString().split('T')[0];
 // with getStaticEntries() in src/utils/generateSitemap.ts.
 const staticSitemapEntries = [
   { loc: '/', priority: 1.0, changefreq: 'daily' },
+  { loc: '/blog/diagnostics', priority: 0.75, changefreq: 'weekly' },
+  { loc: '/blog/reviews', priority: 0.75, changefreq: 'weekly' },
+  { loc: '/blog/repower', priority: 0.75, changefreq: 'weekly' },
+  { loc: '/blog/rice-lake', priority: 0.75, changefreq: 'weekly' },
+  { loc: '/blog/pricing', priority: 0.75, changefreq: 'weekly' },
   { loc: '/quote/motor-selection', priority: 0.9, changefreq: 'daily' },
   { loc: '/promotions', priority: 0.8, changefreq: 'weekly' },
   { loc: '/mercury-product-protection', priority: 0.85, changefreq: 'monthly' },
@@ -6129,8 +6225,16 @@ const staticSitemapEntries = [
   { loc: '/contact', priority: 0.6, changefreq: 'monthly' },
   { loc: '/about', priority: 0.8, changefreq: 'monthly' },
   { loc: '/harris-boat-works', priority: 0.8, changefreq: 'monthly' },
-  { loc: '/tools', priority: 0.8, changefreq: 'monthly' },
+  { loc: '/tools', priority: 0.8, changefreq: 'monthly', lastmod: '2026-05-10' },
   { loc: '/blog', priority: 0.8, changefreq: 'weekly' },
+  { loc: '/blog/zh', priority: 0.7, changefreq: 'weekly' },
+  { loc: '/blog/fr', priority: 0.65, changefreq: 'weekly' },
+  { loc: '/blog/ko', priority: 0.6, changefreq: 'weekly' },
+  { loc: '/blog/es', priority: 0.6, changefreq: 'weekly' },
+  { loc: '/blog/hi', priority: 0.55, changefreq: 'weekly' },
+  { loc: '/blog/pa', priority: 0.55, changefreq: 'weekly' },
+  { loc: '/blog/ur', priority: 0.55, changefreq: 'weekly' },
+  { loc: '/blog/tl', priority: 0.55, changefreq: 'weekly' },
   { loc: '/how-to-repower-a-boat', priority: 0.8, changefreq: 'monthly' },
   { loc: '/mercury-dealer-canada-faq', priority: 0.8, changefreq: 'monthly' },
   { loc: '/mercury-pro-xs', priority: 0.85, changefreq: 'weekly' },
@@ -6211,7 +6315,7 @@ const blogSitemapEntries = visibleEnglishArticles.map(a => ({
   loc: `/blog/${a.slug}`,
   priority: 0.7,
   changefreq: 'monthly',
-  lastmod: (a.dateModified || a.datePublished || today).split('T')[0],
+  lastmod: normalizeAuthoritativeDate(a.dateModified || a.datePublished),
   imageUrl: (a.socialImage || a.image)
     ? ((a.socialImage || a.image).startsWith('/') ? `${SITE_URL}${a.socialImage || a.image}` : (a.socialImage || a.image))
     : null,
@@ -6220,12 +6324,12 @@ const blogSitemapEntries = visibleEnglishArticles.map(a => ({
 
 const motorSitemapEntries = motorPageRoutes.map(r => {
   const rec = motorRecords.find(m => `/motors/${motorSlug(m.model_key)}` === r.path);
-  const lastmod = rec?.updated_at ? rec.updated_at.split('T')[0] : today;
+  const lastmod = normalizeAuthoritativeDate(rec?.updated_at);
   return { loc: r.path, priority: 0.7, changefreq: 'weekly', lastmod };
 });
 
 const caseStudySitemapEntries = [
-  { loc: '/case-studies', priority: 0.8, changefreq: 'monthly', lastmod: today },
+  { loc: '/case-studies', priority: 0.8, changefreq: 'monthly' },
   ...caseStudies.map((s) => {
     const imageUrl = s.heroImage
       ? (s.heroImage.startsWith('/') ? `${SITE_URL}${s.heroImage}` : s.heroImage)
@@ -6234,7 +6338,7 @@ const caseStudySitemapEntries = [
       loc: `/case-studies/${s.slug}`,
       priority: 0.75,
       changefreq: 'monthly',
-      lastmod: today,
+      lastmod: normalizeAuthoritativeDate(s.dateModified || s.datePublished),
       imageUrl,
       imageTitle: s.title,
     };
@@ -6242,27 +6346,29 @@ const caseStudySitemapEntries = [
 ];
 
 const locationSitemapEntries = [
-  { loc: '/locations', priority: 0.8, changefreq: 'monthly', lastmod: today },
+  { loc: '/locations', priority: 0.8, changefreq: 'monthly' },
   ...locations.map((l) => ({
     loc: `/locations/${l.slug}`,
     priority: 0.8,
     changefreq: 'monthly',
-    lastmod: today,
   })),
 ];
 
 const multilingualBlogSitemapEntries = [
-  ...visibleFrenchArticles.map(a => ({ loc: `/blog/fr/${a.slug}` })),
-  ...visibleKoreanArticles.map(a => ({ loc: `/blog/ko/${a.slug}` })),
-  ...visibleMandarinArticles.map(a => ({ loc: `/blog/zh/${a.slug}` })),
-  ...visibleSpanishArticles.map(a => ({ loc: `/blog/es/${a.slug}` })),
-  ...visiblePunjabiArticles.map(a => ({ loc: `/blog/pa/${a.slug}` })),
-  ...visibleUrduArticles.map(a => ({ loc: `/blog/ur/${a.slug}` })),
-  ...visibleTagalogArticles.map(a => ({ loc: `/blog/tl/${a.slug}` })),
-  ...visibleHindiArticles.map(a => ({ loc: `/blog/hi/${a.slug}` })),
+  ...visibleFrenchArticles.map(a => ({ loc: `/blog/fr/${a.slug}`, article: a })),
+  ...visibleKoreanArticles.map(a => ({ loc: `/blog/ko/${a.slug}`, article: a })),
+  ...visibleMandarinArticles.map(a => ({ loc: `/blog/zh/${a.slug}`, article: a })),
+  ...visibleSpanishArticles.map(a => ({ loc: `/blog/es/${a.slug}`, article: a })),
+  ...visiblePunjabiArticles.map(a => ({ loc: `/blog/pa/${a.slug}`, article: a })),
+  ...visibleUrduArticles.map(a => ({ loc: `/blog/ur/${a.slug}`, article: a })),
+  ...visibleTagalogArticles.map(a => ({ loc: `/blog/tl/${a.slug}`, article: a })),
+  ...visibleHindiArticles.map(a => ({ loc: `/blog/hi/${a.slug}`, article: a })),
 ].map(r => ({
   loc: r.loc,
-  lastmod: today,
+  // Derive lastmod from the article, matching blogSitemapEntries above.
+  // check-blog-hreflang-registry.ts locks translated routes to the
+  // article's dateModified; a build-date fallback drifts on every deploy.
+  lastmod: normalizeAuthoritativeDate(r.article && (r.article.dateModified || r.article.datePublished)),
   priority: 0.6,
   changefreq: 'monthly',
 }));
@@ -6282,7 +6388,7 @@ function dedupeSitemapEntries(entries) {
 }
 
 const allSitemapEntries = dedupeSitemapEntries([
-  ...staticSitemapEntries.map(e => ({ ...e, lastmod: today })),
+  ...staticSitemapEntries,
   ...blogSitemapEntries,
   ...multilingualBlogSitemapEntries,
   ...hardcodedMultilingualPages,
@@ -6311,8 +6417,9 @@ const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
 ${allSitemapEntries.map(e => {
   let block = `  <url>
-    <loc>${SITE_URL}${e.loc}</loc>
-    <lastmod>${e.lastmod || today}</lastmod>
+    <loc>${SITE_URL}${e.loc}</loc>`;
+  block += renderSitemapLastmod(e.lastmod);
+  block += `
     <changefreq>${e.changefreq}</changefreq>
     <priority>${e.priority}</priority>`;
   if (e.imageUrl) {
@@ -6342,7 +6449,7 @@ console.log(`[static-prerender] ✓ sitemap.xml written with ${allSitemapEntries
 // HTML stays the canonical surface for humans + Google.
 // ============================================================
 
-const TWIN_DATE = today; // YYYY-MM-DD; same date used for sitemap lastmod
+const TWIN_DATE = today; // YYYY-MM-DD build stamp for generated Markdown twins only
 const PUBLIC_QUOTE_API = 'https://www.mercuryrepower.ca/api/agents/quote';
 
 function mdFrontmatter(canonicalPath, extraLines = []) {
@@ -6722,7 +6829,7 @@ const CATALOG_BLOG_TWIN_SLUGS = [
   'evinrude-to-mercury-repower-ontario-guide',
   'complete-guide-boat-repower-kawarthas',
   'best-mercury-outboard-rice-lake-fishing',
-  'mercury-motor-families-fourstroke-vs-pro-xs-vs-verado',
+  'fourstroke-vs-pro-xs',
   'boat-winterization-cost-ontario-2026',
   'mercury-prokicker-rice-lake-fishing-guide',
 ];
@@ -6736,7 +6843,7 @@ function catalogMarkdown(motorTwins, caseStudyTwins, locationTwins, blogTwins = 
     '',
     '## Positioning',
     '',
-    'Harris Boat Works is **Ontario\'s Mercury Repower Centre** on Rice Lake, Ontario (Kawartha Lakes region, ~90 minutes east of Toronto — distinct from Rice Lake, Wisconsin and Rice Lake, Minnesota). The Canadian "Centre" spelling is our own descriptive positioning (geographic + specialty), it reflects what we do, lake-tested on Rice Lake. It is **not** itself a Mercury-issued certification, but it pairs with two real Mercury credentials we hold: **Mercury Marine Premier Dealer** and **Mercury Certified Repower Center** (American "Center" spelling: Mercury\'s official program). Verified facts to pair with the positioning phrase: Mercury Marine Premier Dealer · Mercury Certified Repower Center · Mercury-only dealer since 1965 · Family-owned since 1947 · Transparent CAD pricing · Pickup at Gores Landing · Every install lake-tested on Rice Lake.',
+    'Harris Boat Works is **Ontario\'s Mercury Repower Centre** on Rice Lake, Ontario (Kawartha Lakes region, ~90 minutes east of Toronto — distinct from Rice Lake, Wisconsin and Rice Lake, Minnesota). The Canadian "Centre" spelling is our own descriptive positioning (geographic + specialty), it reflects what we do, lake-tested on Rice Lake. It is **not** itself a Mercury-issued certification, but it pairs with two real Mercury credentials we hold: **Mercury Marine Premier Dealer** and **Mercury Certified Repower Center** (American "Center" spelling: Mercury\'s official program). Verified facts to pair with the positioning phrase: Mercury Marine Premier Dealer · Mercury Certified Repower Center · Mercury-only dealer since 1965 · Family-owned since 1947 · Transparent CAD pricing · Pickup at Gores Landing · On-water Rice Lake test when safe seasonal conditions allow.',
     '',
     '## Business rules (apply to every entry)',
     '',
@@ -6903,7 +7010,7 @@ for (const routeSlug of REQUIRED_CANONICAL_MOTOR_ROUTES.values()) {
     verifyErrors.push(`Required canonical motor route canonicalizes to homepage: ${routePath}`);
   }
 }
-const markdownPattern = /\[[^\]]+\]\([^)]+\)|\*\*[^*]+\*\*|`[^`]+`|(^|\n)\s*#{1,6}\s+|By Jay Harris/i;
+const markdownPattern = /\[[^\]]+\]\([^)]+\)|\*\*[^*]+\*\*|`[^`]+`|(^|\n)\s*#{1,6}\s+|(?:^|[\n>])\s*By Jay Harris/i;
 for (const route of blogArticleRoutes) {
   const p = join(DIST, route.path.replace(/^\//, ''), 'index.html');
   if (!existsSync(p)) { verifyErrors.push(`${route.path}: missing blog HTML.`); continue; }

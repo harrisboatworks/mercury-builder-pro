@@ -76,6 +76,7 @@ const AdminAbandonedQuoteAnalytics = lazy(() => import("./pages/AdminAbandonedQu
 const AdminPayments = lazy(() => import("./pages/AdminPayments"));
 const AdminSMS = lazy(() => import("./pages/AdminSMS"));
 const AdminInventory = lazy(() => import("./pages/AdminInventory"));
+const AdminDropbox = lazy(() => import("./pages/AdminDropbox"));
 const AdminAgentFunnel = lazy(() => import("./pages/admin/AgentFunnel"));
 const AdminStockSync = lazy(() => import("./pages/AdminStockSync"));
 const AdminConnectors = lazy(() => import("./pages/AdminConnectors"));
@@ -185,6 +186,7 @@ const HindiBlogArticlePage = lazy(() => import("./pages/blog/HindiBlogArticlePag
 const PunjabiBlogArticlePage = lazy(() => import("./pages/blog/PunjabiBlogArticlePage"));
 const UrduBlogArticlePage = lazy(() => import("./pages/blog/UrduBlogArticlePage"));
 const TagalogBlogArticlePage = lazy(() => import("./pages/blog/TagalogBlogArticlePage"));
+const BlogTopicHubPage = lazy(() => import("./pages/BlogTopicHubPage"));
 
 // Test/Dev pages (low priority)
 // IMPORTANT: Keep dev-only tooling (e.g., Transformers/ONNX background removal) out of production bundles.
@@ -416,6 +418,14 @@ function AnimatedRoutes() {
           }
         />
         <Route
+          path="/admin/motor-images"
+          element={
+            <SecureRoute requireAdmin={true}>
+              <AdminDropbox />
+            </SecureRoute>
+          }
+        />
+        <Route
           path="/admin/agent-funnel"
           element={
             <SecureRoute requireAdmin={true}>
@@ -609,6 +619,12 @@ function AnimatedRoutes() {
         
         {/* Blog Routes */}
         <Route path="/blog" element={<Blog />} />
+        {/* Topic hub collections — must stay above the /blog/:slug catch-all */}
+        <Route path="/blog/diagnostics" element={<BlogTopicHubPage hubId="diagnostics" />} />
+        <Route path="/blog/reviews" element={<BlogTopicHubPage hubId="reviews" />} />
+        <Route path="/blog/repower" element={<BlogTopicHubPage hubId="repower" />} />
+        <Route path="/blog/rice-lake" element={<BlogTopicHubPage hubId="rice-lake" />} />
+        <Route path="/blog/pricing" element={<BlogTopicHubPage hubId="pricing" />} />
         <Route path="/pricing-reference" element={<PricingReference />} />
         <Route path="/resources" element={<Resources />} />
         {/* Short-link used in blog/case-study copy; redirect to canonical pricing reference. */}
@@ -636,7 +652,7 @@ function AnimatedRoutes() {
         <Route path="/blog/:slug" element={<BlogArticle />} />
         <Route path="/blog/unsubscribe" element={<BlogUnsubscribe />} />
         <Route path="/rss.xml" element={<RssFeed />} />
-        <Route path="/admin/blog" element={<SecureRoute><AdminBlog /></SecureRoute>} />
+        <Route path="/admin/blog" element={<SecureRoute requireAdmin={true}><AdminBlog /></SecureRoute>} />
 
         {/* Case Studies */}
         <Route path="/case-studies" element={<CaseStudies />} />

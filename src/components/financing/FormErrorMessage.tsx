@@ -6,9 +6,10 @@ interface FormErrorMessageProps {
   error?: string;
   field?: string;
   variant?: "inline" | "alert";
+  id?: string;
 }
 
-export function FormErrorMessage({ error, field, variant = "inline" }: FormErrorMessageProps) {
+export function FormErrorMessage({ error, field, variant = "inline", id }: FormErrorMessageProps) {
   if (!error) return null;
 
   const userFriendlyMessages: Record<string, string> = {
@@ -34,7 +35,7 @@ export function FormErrorMessage({ error, field, variant = "inline" }: FormError
 
   if (variant === "alert") {
     return (
-      <Alert variant="destructive" className="animate-fade-in">
+      <Alert id={id} variant="destructive" className="animate-fade-in" role="alert">
         <AlertCircle className="h-4 w-4" />
         <AlertTitle>Error</AlertTitle>
         <AlertDescription>{message}</AlertDescription>
@@ -43,7 +44,7 @@ export function FormErrorMessage({ error, field, variant = "inline" }: FormError
   }
 
   return (
-    <p className="text-sm text-destructive flex items-center gap-1 animate-fade-in">
+    <p id={id} role="alert" className="text-sm text-destructive flex items-center gap-1 animate-fade-in">
       <AlertCircle className="h-3 w-3" />
       {message}
     </p>

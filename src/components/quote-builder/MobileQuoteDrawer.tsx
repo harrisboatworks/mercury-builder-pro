@@ -6,7 +6,7 @@ import { useQuote } from '@/contexts/QuoteContext';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { useQuoteRunningTotal } from '@/hooks/useQuoteRunningTotal';
-import { calculateMonthlyPayment, DEALERPLAN_FEE, FINANCING_MINIMUM } from '@/lib/finance';
+import { calculateMonthlyPayment, DEALERPLAN_FEE, FINANCING_MINIMUM, isUsableFinancingRate } from '@/lib/finance';
 import { money } from '@/lib/money';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
@@ -14,6 +14,7 @@ import { Gift, Shield, CreditCard, ChevronRight, X, Phone, MessageSquare, Mail, 
 import { toast } from 'sonner';
 import { useHapticFeedback } from '@/hooks/useHapticFeedback';
 import { getAppliedPromotion, getAppliedWarrantyExtraYears } from '@/lib/warranty-display';
+import { formatPromoCalendarDate } from '@/lib/quote-utils';
 interface MobileQuoteDrawerProps {
   isOpen: boolean;
   onClose: () => void;
@@ -42,27 +43,28 @@ export const MobileQuoteDrawer: React.FC<MobileQuoteDrawerProps> = ({ isOpen, on
   const isPreview = !!state.previewMotor;
 
   // Centralized running total (single source of truth)
-  const { subtotal, hst, total, lineItems } = useQuoteRunningTotal(displayMotor);
+  const { subtotal, hst, total, lineItems, taxSaving } = useQuoteRunningTotal(displayMotor);
 
   // Calculate financing details
   const pricing = useMemo(() => {
     if (!displayMotor || total === 0) return null;
 
     const totalWithFee = total + DEALERPLAN_FEE;
-    const promoRate = financingPromo?.rate || null;
+    const promoRate = isUsableFinancingRate(financingPromo?.rate) ? financingPromo.rate : null;
     const { payment: monthly, termMonths, rate } = calculateMonthlyPayment(totalWithFee, promoRate);
 
     return {
       lineItems,
       subtotal,
       hst,
+      taxSaving,
       total,
       monthly,
       termMonths,
       rate,
       financingUnavailable: total < FINANCING_MINIMUM,
     };
-  }, [displayMotor, total, subtotal, hst, lineItems, financingPromo]);
+  }, [displayMotor, total, subtotal, hst, taxSaving, lineItems, financingPromo]);
 
   // Get package info - dynamically based on promo years
   const packageInfo = useMemo(() => {
@@ -154,6 +156,12 @@ export const MobileQuoteDrawer: React.FC<MobileQuoteDrawerProps> = ({ isOpen, on
                   <span className="text-muted-foreground">HST (13%)</span>
                   <span>{money(pricing.hst)}</span>
                 </div>
+                {pricing.taxSaving > 0 && (
+                  <div className="flex justify-between text-sm">
+                    <span className="text-muted-foreground">HST saved on trade</span>
+                    <span className="text-repower-gold font-medium">-{money(pricing.taxSaving)}</span>
+                  </div>
+                )}
 
                 <Separator className="my-2" />
 
@@ -184,7 +192,7 @@ export const MobileQuoteDrawer: React.FC<MobileQuoteDrawerProps> = ({ isOpen, on
                         </p>
                         {promo.end_date && (
                           <p className="text-xs text-repower-gold mt-0.5">
-                            Ends {new Date(promo.end_date).toLocaleDateString()}
+                            Ends {formatPromoCalendarDate(promo.end_date)}
                           </p>
                         )}
                       </div>

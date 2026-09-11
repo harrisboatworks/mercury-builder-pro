@@ -1,4 +1,6 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
+import { forbiddenOriginResponse, isAllowedOrigin, isServiceRoleBearer } from "../_shared/origin-check.ts";
+import { checkRateLimit, rateLimitedResponse } from "../_shared/rate-limit.ts";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -30,6 +32,21 @@ serve(async (req) => {
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
   }
+
+  // Origin limits browser access; only the service-role bearer identifies a server caller.
+  const serviceRole = isServiceRoleBearer(req);
+  if (!isAllowedOrigin(req) && !serviceRole) {
+    return forbiddenOriginResponse(corsHeaders);
+  }
+
+  const allowed = await checkRateLimit(req, {
+    action: "locally_inventory",
+    maxAttempts: serviceRole ? 120 : 30,
+    windowMinutes: 1,
+    failClosed: true,
+    ...(serviceRole ? { identifier: "service_role" } : {}),
+  });
+  if (!allowed) return rateLimitedResponse(corsHeaders, 60);
 
   try {
     const LOCALLY_API_KEY = Deno.env.get('LOCALLY_API_KEY');

@@ -88,8 +88,11 @@ export function DepositInfoDialog({
               value={name}
               onChange={e => setName(e.target.value)}
               autoFocus
+              aria-required="true"
+              aria-invalid={Boolean(errors.name)}
+              aria-describedby={errors.name ? "deposit-name-error" : undefined}
             />
-            {errors.name && <p className="text-xs text-destructive">{errors.name}</p>}
+            {errors.name && <p id="deposit-name-error" role="alert" className="text-xs text-destructive">{errors.name}</p>}
           </div>
 
           <div className="space-y-1.5">
@@ -100,8 +103,11 @@ export function DepositInfoDialog({
               placeholder="john@example.com"
               value={email}
               onChange={e => setEmail(e.target.value)}
+              aria-required="true"
+              aria-invalid={Boolean(errors.email)}
+              aria-describedby={errors.email ? "deposit-email-error" : undefined}
             />
-            {errors.email && <p className="text-xs text-destructive">{errors.email}</p>}
+            {errors.email && <p id="deposit-email-error" role="alert" className="text-xs text-destructive">{errors.email}</p>}
           </div>
 
           <div className="space-y-1.5">
@@ -112,8 +118,11 @@ export function DepositInfoDialog({
               placeholder="(905) 555-1234"
               value={phone}
               onChange={e => setPhone(e.target.value)}
+              aria-required="true"
+              aria-invalid={Boolean(errors.phone)}
+              aria-describedby={errors.phone ? "deposit-phone-error" : undefined}
             />
-            {errors.phone && <p className="text-xs text-destructive">{errors.phone}</p>}
+            {errors.phone && <p id="deposit-phone-error" role="alert" className="text-xs text-destructive">{errors.phone}</p>}
           </div>
         </div>
 

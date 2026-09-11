@@ -1,5 +1,5 @@
--- Schema only. Deploy before the send-sms and notification-webhook functions.
--- This migration is intentionally not applied by the PR validation workflow.
+-- Schema only. Apply by hand before deploying send-sms / notification-webhook.
+-- CI never applies migrations. Idempotent: safe if re-run.
 
 ALTER TABLE public.sms_logs
   ADD COLUMN IF NOT EXISTS message_sid text,

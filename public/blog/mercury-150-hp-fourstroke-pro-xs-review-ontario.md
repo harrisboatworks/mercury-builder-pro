@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-150-hp-fourstroke-pro-xs-review-ontario.md
-last_updated: 2026-07-28
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury 150 HP Review: FourStroke vs Pro XS"
 description: "An honest Mercury 150 HP review for Ontario, comparing the current FourStroke and Pro XS with exact specs, freshwater tests and candid buyer advice."
 category: "Mercury Buying Guides"
 date_published: 2026-07-26
-date_modified: 2026-07-28
+date_modified: 2026-09-11
 keywords: ["mercury 150 hp review","mercury 150 fourstroke review","mercury 150 pro xs review","mercury 150 fourstroke vs pro xs","mercury 150 real world performance","mercury 150 owner reviews","mercury 150 hp ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Mercury Buying Guides  
 **Published:** 2026-07-26  
-**Last reviewed:** 2026-07-28  
+**Last reviewed:** 2026-09-11  
 **Read time:** 18 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-150-hp-fourstroke-pro-xs-review-ontario
 
@@ -322,8 +322,6 @@ The wrong answer is buying Pro XS because someone said it is secretly more horse
 
 Bring the actual boat into the decision.
 
-**Phone:** [905-342-2153](tel:+19053422153)
-
 **Address:** [5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0](https://www.google.com/maps/search/?api=1&query=5369+Harris+Boat+Works+Rd%2C+Gores+Landing%2C+ON+K0K+2E0)
 
 Harris Boat Works is a Mercury Marine Premier Dealer on Rice Lake. We have been a Mercury dealer since 1965 and a family marina since 1947.
@@ -392,7 +390,7 @@ The price depends on model, shaft length, rigging and current Canadian programs.
 - [Mercury Pro XS vs Verado vs FourStroke Compared](/blog/fourstroke-vs-pro-xs), FourStroke vs Pro XS side-by-side
 - [Mercury 200 HP Review: FourStroke vs Pro XS](/blog/mercury-200-hp-fourstroke-pro-xs-review-ontario)
 - [Mercury 250 HP Review: FourStroke vs Pro XS](/blog/mercury-250-hp-fourstroke-pro-xs-review-ontario)
-- [Mercury Outboard Weight Chart (2.5 to 300 HP)](/blog/mercury-outboard-weight-chart), Mercury outboard weight chart
+- [Mercury Outboard Weight Chart 2026: 2.5–300 HP Dry Weights](/blog/mercury-outboard-weight-chart), Mercury outboard weight chart
 - [Mercury Outboard Lineup for Ontario Boaters (2027 Model Year)](/blog/mercury-outboard-lineup-ontario), Mercury outboard lineup for Ontario (2027 model year)
 
 ## Next steps

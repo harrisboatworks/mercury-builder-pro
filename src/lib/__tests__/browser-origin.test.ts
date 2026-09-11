@@ -1,7 +1,7 @@
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import { resolveAllowedBrowserOrigin } from "../../../supabase/functions/_shared/browser-origin.ts";
-import { isAllowedOrigin } from "../../../supabase/functions/_shared/origin-check.ts";
+import { isAllowedOrigin } from "#edge-deno/origin-check";
 
 const PR_303_PREVIEW_REGEX = /^https:\/\/mercury-builder[a-z0-9-]*-hbw\.vercel\.app$/;
 
@@ -28,6 +28,13 @@ describe("browser origin ownership boundary", () => {
     "https://evil.vercel.app",
     "http://mercury-builder-pro-git-main-hbw.vercel.app",
     "https://mercury-builder-pro-git-main-hbw.vercel.app.",
+    "https://mercury-builder-pro-git-fix-consultation-quote-display-hbw.vercel.app",
+    "https://mercury-builder-76p5fgnik-hbw.vercel.app",
+    "https://mercury-builder-76p5fgnik-hbw.vercel.app.attacker.example",
+    "https://mercury-builder-76p5fgnik-hbw.vercel.app:444",
+    "http://mercury-builder-76p5fgnik-hbw.vercel.app",
+    "https://mercury-builder-pro-git-fix-consultation-quote-display-hbw.vercel.app.attacker.example",
+    "https://mercury-builder-pro-git-other-branch-hbw.vercel.app",
   ])("rejects unowned or non-exact Vercel origin %s", (origin) => {
     expect(resolveAllowedBrowserOrigin(origin)).toBeNull();
   });
