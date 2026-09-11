@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-smartcraft-alarm-codes-encyclopedia.md
-last_updated: 2026-09-07
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Alarm Codes List Ontario"
 description: "Mercury alarm codes explained: SmartCraft SYS FAULT, warning horns, the correct owner's manual, and why dismissing an alarm doesn't fix its cause."
 category: "Troubleshooting"
 date_published: 2026-02-06
-date_modified: 2026-09-07
+date_modified: 2026-09-11
 keywords: ["mercury smartcraft alarm codes","mercury smartcraft alarm codes list","mercury smartcraft alarm codes meanings","mercury alarm code list","smartcraft fault codes mercury","mercury outboard error codes","mercury smartcraft diagnostic","mercury outboard warning lights"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Category:** Troubleshooting  
 **Published:** 2026-02-06  
-**Last reviewed:** 2026-09-07  
+**Last reviewed:** 2026-09-11  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-smartcraft-alarm-codes-encyclopedia
 
@@ -35,7 +35,7 @@ If the display shows a complete number such as **621-5**, start with the [Mercur
 
 A Mercury alarm fires and most owners do one of two things. Either they keep running the boat (bad idea, that's what Guardian mode is trying to prevent) or they shut it down at the dock and Google the code (better idea, but most code lists online are out of date or apply to engine families you don't own).
 
-This guide explains alarm information, spring first-start checks, and Guardian mode. Use the manual for your exact engine to interpret an alarm. We have Mercury CDS (Computer Diagnostic System) at our dock and SmartCraft Connect Mobile on our phones. When you call HBW with an alarm, we ask for the exact display or fault text, the horn pattern, RPM or load when it happened, and the engine serial number. Those details help the technician identify the next diagnostic step.
+This guide explains alarm information, spring first-start checks, and Guardian mode. Use the manual for your exact engine to interpret an alarm. We have Mercury CDS (Computer Diagnostic System) at our dock and SmartCraft Connect Mobile on our phones. For an in-shop diagnosis, record the exact display or fault text, the horn pattern, RPM or load when it happened, and the engine serial number. Those details help the technician identify the next diagnostic step.
 
 ## What HBW asks first when you call
 

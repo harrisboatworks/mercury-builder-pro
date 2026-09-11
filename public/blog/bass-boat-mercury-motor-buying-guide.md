@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/bass-boat-mercury-motor-buying-guide.md
-last_updated: 2026-09-06
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Choosing the Right Mercury for Your Bass Boat (Ontario 2026)"
 description: "Find the perfect Mercury outboard for your bass boat. Compare Pro XS and FourStroke options for tournament and recreational bass fishing."
 category: "Buying Guide"
 date_published: 2026-03-09
-date_modified: 2026-09-06
+date_modified: 2026-09-11
 keywords: ["bass boat motor","mercury pro xs bass","best bass boat outboard","tournament bass motor","mercury 200 bass boat"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-03-09  
-**Last reviewed:** 2026-09-06  
+**Last reviewed:** 2026-09-11  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/bass-boat-mercury-motor-buying-guide
 
@@ -108,7 +108,7 @@ For your specific boat and HP, build a quote at [mercuryrepower.ca](https://www.
 
 If the hull is solid and the boat fits your fishing, repower. A new Pro XS transforms an older bass boat. You get modern fuel efficiency (dramatically better than older 2-strokes), current electronics integration, and a full Mercury warranty, without paying for a new hull you don't need.
 
-If the hull is outdated, damaged, or doesn't fit the way you fish, a new boat makes more sense. We can help you think through the math either way.
+If the hull is outdated, damaged, or doesn't fit the way you fish, a new boat makes more sense.
 
 ---
 
@@ -144,7 +144,7 @@ Extended protection plans are available. Ask us about it at point of sale.
 
 ## Ready to configure your bass boat motor?
 
-Build a real quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) with actual current pricing. Or call **905-342-2153**, we handle bass boat repowers and can assess whether your transom and rigging are ready for a swap.
+Build a real quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) with actual current pricing.
 
 ---
 

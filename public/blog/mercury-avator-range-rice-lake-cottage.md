@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-avator-range-rice-lake-cottage.md
-last_updated: 2026-09-06
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Avator Electric Outboard Range on Rice Lake (2026)"
 description: "How far a Mercury Avator electric outboard actually goes on Rice Lake. Real-world range by model, battery configuration, charging logistics for cottage."
 category: "Electric Boating"
 date_published: 2026-05-17
-date_modified: 2026-09-06
+date_modified: 2026-09-11
 keywords: ["mercury avator range","avator electric outboard rice lake","mercury electric outboard ontario","avator cottage range"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Electric Boating  
 **Published:** 2026-05-17  
-**Last reviewed:** 2026-09-06  
+**Last reviewed:** 2026-09-11  
 **Read time:** 6 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-avator-range-rice-lake-cottage
 
@@ -152,8 +152,6 @@ For most Rice Lake fishing patterns covering significant distance, gas outboard 
 - [Mercury Avator vs Torqeedo Comparison](/blog/mercury-avator-vs-torqeedo)
 - [Charging a Mercury Avator at Your Cottage](/blog/mercury-avator-charging-cottage-dock)
 - [Best Mercury Outboard for Rice Lake Fishing](/blog/best-mercury-outboard-rice-lake-fishing)
-
-**Questions about Avator?** Call 905-342-2153 or email info@harrisboatworks.ca and we'll give you a straight answer for your setup.
 
 ## FAQs
 

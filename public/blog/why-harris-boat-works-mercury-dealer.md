@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/why-harris-boat-works-mercury-dealer.md
-last_updated: 2026-08-26
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Harris Boat Works Mercury Dealer Ontario"
 description: "Discover why Harris Boat Works has been Ontario's trusted Mercury dealer since 1965. Learn about our expertise, inventory, service."
 category: "About Us"
 date_published: 2026-05-04
-date_modified: 2026-08-26
+date_modified: 2026-09-11
 keywords: ["mercury dealer ontario","harris boat works","mercury outboard dealer","mercury sales peterborough","trusted boat dealer ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** About Us  
 **Published:** 2026-05-04  
-**Last reviewed:** 2026-08-26  
+**Last reviewed:** 2026-09-11  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/why-harris-boat-works-mercury-dealer
 
@@ -106,7 +106,7 @@ We don't push repowers that aren't needed. Sometimes a customer comes in with a 
 
 HBW's standard repower handoff includes an on-water test on Rice Lake before pickup when safe seasonal conditions allow.
 
-Ready to talk repower? Call (905) 342-2153 or [build your Mercury quote online](/quote/motor-selection).
+Ready to repower? [Build your Mercury quote online](/quote/motor-selection).
 
 ## What HBW does not do
 - Saltwater servicing

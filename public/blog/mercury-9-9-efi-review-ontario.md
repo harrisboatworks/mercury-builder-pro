@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-9-9-efi-review-ontario.md
-last_updated: 2026-09-07
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury 9.9 EFI Review Ontario"
 description: "The Mercury 9.9 MH EFI brings battery-free fuel injection to a simple portable outboard. Here's what Ontario boaters should know before buying."
 category: "Mercury Buying Guides"
 date_published: 2026-05-10
-date_modified: 2026-09-07
+date_modified: 2026-09-11
 keywords: ["mercury 9.9 efi review","mercury 9.9 mh efi","mercury 9.9 fuel injected outboard","mercury 9.9 efi ontario","mercury 9.9 outboard price ontario","mercury 9.9 efi vs prokicker"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Mercury Buying Guides  
 **Published:** 2026-05-10  
-**Last reviewed:** 2026-09-07  
+**Last reviewed:** 2026-09-11  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-9-9-efi-review-ontario
 
@@ -152,7 +152,7 @@ Jay Harris helps run Harris Boat Works, a third-generation family marina in Gore
 
 **See the current price on the Mercury 9.9 MH EFI.** 
 [mercuryrepower.ca](https://www.mercuryrepower.ca), live CAD pricing, full configuration. 
-Or call 905-342-2153. 
+
 Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. 
 Mercury Premier dealer. Est. 1947.
 

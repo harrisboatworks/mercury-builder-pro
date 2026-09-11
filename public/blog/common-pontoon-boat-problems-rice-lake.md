@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/common-pontoon-boat-problems-rice-lake.md
-last_updated: 2026-06-09
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Common Pontoon Problems on Rice Lake"
 description: "The most common pontoon boat problems we see at Harris Boat Works, from underpowered motors to tube leaks and wiring corrosion."
 category: "Boating Lifestyle"
 date_published: 2026-02-12
-date_modified: 2026-06-09
+date_modified: 2026-09-11
 keywords: ["pontoon problems","rice lake","pontoon maintenance","mercury outboard","pontoon hp"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Category:** Boating Lifestyle  
 **Published:** 2026-02-12  
-**Last reviewed:** 2026-06-09  
+**Last reviewed:** 2026-09-11  
 **Read time:** ~9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/common-pontoon-boat-problems-rice-lake
 
@@ -229,8 +229,6 @@ If your pontoon is showing any of these signs, or if you're running an undersize
 **Get a repower quote:** [mercuryrepower.ca](https://www.mercuryrepower.ca)
 
 Harris Boat Works has been [on Rice Lake since 1947](/blog/best-marina-rice-lake-ontario). We're a Mercury Marine Premier dealer, and we know what boats in this region actually need, not what looks good on a spec sheet.
-
-Call us at 905-342-2153 or request service online. We'll give you a straight answer.
 
 ---
 

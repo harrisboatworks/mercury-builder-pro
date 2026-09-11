@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-avator-charging-cottage-dock.md
-last_updated: 2026-09-07
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Charging a Mercury Avator at Your Cottage Dock (2026)"
 description: "How to set up Mercury Avator charging at an Ontario cottage. 110V vs 240V options, dock outlets, charge times by model, real-world planning for cottage."
 category: "Electric Boating"
 date_published: 2026-05-17
-date_modified: 2026-09-07
+date_modified: 2026-09-11
 keywords: ["mercury avator charging","electric outboard cottage charging","avator dock charging","ontario electric boat charging"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Electric Boating  
 **Published:** 2026-05-17  
-**Last reviewed:** 2026-09-07  
+**Last reviewed:** 2026-09-11  
 **Read time:** 6 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-avator-charging-cottage-dock
 
@@ -129,8 +129,6 @@ The other common situation: cottagers who add Avator without consulting their co
 - [Mercury Avator Range on Rice Lake](/blog/mercury-avator-range-rice-lake-cottage)
 - [Mercury Avator vs Torqeedo Comparison](/blog/mercury-avator-vs-torqeedo)
 - [Boat Electrical Safety Checklist](/blog/boat-electrical-safety-checklist-ontario-freshwater)
-
-**Questions about Avator?** Call 905-342-2153 or email info@harrisboatworks.ca and we'll give you a straight answer for your setup.
 
 ## FAQs
 

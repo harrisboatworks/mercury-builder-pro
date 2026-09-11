@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fourstroke-vs-pro-xs.md
-last_updated: 2026-09-07
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Pro XS vs Verado vs FourStroke Compared"
 description: "Mercury Pro XS, Verado, or FourStroke: what's actually different, which is a four-stroke, and which fits your boat. A Rice Lake Mercury Premier dealer explains."
 category: "Mercury Motors"
 date_published: 2026-05-26
-date_modified: 2026-09-07
+date_modified: 2026-09-11
 keywords: ["Mercury Pro XS vs FourStroke","Mercury FourStroke vs Pro XS vs Verado","which Mercury outboard should I buy","Mercury Verado worth it","Mercury outboard families explained"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Mercury Motors  
 **Published:** 2026-05-26  
-**Last reviewed:** 2026-09-07  
+**Last reviewed:** 2026-09-11  
 **Read time:** ~9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/fourstroke-vs-pro-xs
 
@@ -133,7 +133,7 @@ One more local point worth saying plainly: HBW is a Mercury Premier shop on Rice
 
 ## Ready to figure out the right motor for your boat?
 
-Tell us the boat (make, length, what you do with it) and we'll tell you straight which Mercury family fits and why. No upsell to a motor you don't need. You can [build a repower quote yourself in a few minutes](/blog/mercury-repower-cost-ontario-2026-cad), or just call and talk to a person who's rigged a thousand of these.
+You can [build a repower quote yourself in a few minutes](/blog/mercury-repower-cost-ontario-2026-cad).
 
 **Phone:** 905-342-2153
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
@@ -151,8 +151,6 @@ Tell us the boat (make, length, what you do with it) and we'll tell you straight
 Pick the engine family that fits how you run your boat, then build a quote on the exact model. Two minutes, a real price, a real person reviewing it.
 
 [Build Your Quote](/quote/motor-selection)
-
-905-342-2153
 
 Not sure repower makes sense yet? Start with the [repower basics](/repower).
 
@@ -172,7 +170,7 @@ They all carry Mercury Canada's standard limited warranty (coverage plus corrosi
 
 ### Can I repower my boat with a Verado?
 
-On the right boat, yes, and we service Verado, but it's not the family we stock and sell. For most repowers on this lake the answer lands on a FourStroke or a Pro XS. Tell us your boat and how you use it and we'll point you straight. Build a starting quote at mercuryrepower.ca.
+On the right boat, yes, and we service Verado, but it's not the family we stock and sell. For most repowers on this lake the answer lands on a FourStroke or a Pro XS. Build a starting quote at mercuryrepower.ca.
 
 ### Is the Pro XS a lot louder than the FourStroke?
 
@@ -184,7 +182,7 @@ All three Mercury families hold value well in Ontario, partly because the local 
 
 ### Which Mercury does HBW recommend for a first boat?
 
-For a pontoon or aluminum fishing boat, a FourStroke in the right horsepower for the hull. It's the lowest-fuss, best-value path, and it covers the way most families actually use their boat. See our pontoon motor guide or call and we'll talk it through.
+For a pontoon or aluminum fishing boat, a FourStroke in the right horsepower for the hull. It's the lowest-fuss, best-value path, and it covers the way most families actually use their boat. See our pontoon motor guide.
 
 ### Is the Mercury Pro XS a four-stroke?
 

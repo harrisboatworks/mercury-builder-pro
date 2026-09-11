@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/ko/mercury-seonoegi-muge.md
-last_updated: 2026-09-06
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "머큐리 선외기 무게표 (2.5~300마력)"
 description: "머큐리 선외기는 얼마나 무거운가? 2.5~300마력 공식 건조 중량(kg/lb), 무게가 트랜섬에 중요한 이유, 그리고 내 보트에 맞추는 법."
 category: "구매 가이드"
 date_published: 2026-06-08
-date_modified: 2026-09-06
+date_modified: 2026-09-11
 keywords: ["머큐리 선외기 무게","머큐리 무게표","Mercury outboard weight Korean","선외기 트랜섬 무게","머큐리 115 무게"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** 구매 가이드  
 **Published:** 2026-06-08  
-**마지막 검토:** 2026-09-06  
+**마지막 검토:** 2026-09-11  
 **Read time:** 7 분  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ko/mercury-seonoegi-muge
 
@@ -90,7 +90,7 @@ revenue_driver: repower
 
 리파워를 고려하고 있고 트랜섬이 현대형 모터를 감당할 수 있는지 모르겠다면, 견적 전에 저희가 확인해 드리는 부분입니다.
 
-**모터, 무게, 리깅까지 포함한 실제 리파워 견적은 [mercuryrepower.ca](https://www.mercuryrepower.ca)에서 받으세요. 또는 905-342-2153으로 전화.**
+**모터, 무게, 리깅까지 포함한 실제 리파워 견적은 [mercuryrepower.ca](https://www.mercuryrepower.ca)에서 받으세요.**
 
 ---
 

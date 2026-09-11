@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-beeping-codes-guide.md
-last_updated: 2026-09-07
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Outboard Beep & Alarm Codes: What Each Means"
 description: "Continuous beep, 4 beeps every 2 minutes, or a key-on alarm on your Mercury outboard: what each pattern means, what to check first, and when to stop the motor."
 category: "Service & Troubleshooting"
 date_published: 2026-05-11
-date_modified: 2026-09-07
+date_modified: 2026-09-11
 keywords: ["mercury outboard beeping codes","mercury warning horn beeps","mercury continuous beep","mercury four beeps every two minutes","mercury alarm ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Category:** Service & Troubleshooting  
 **Published:** 2026-05-11  
-**Last reviewed:** 2026-09-07  
+**Last reviewed:** 2026-09-11  
 **Read time:** 6 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-beeping-codes-guide
 
@@ -69,7 +69,7 @@ Mercury manuals describe overheating despite steady telltale flow. Treat tempera
 
 **VesselView or SmartCraft-linked plotters show fault text that the horn alone cannot. Photograph the exact code and conditions before calling the shop.**
 
-Take a photo of the code on the screen so you can text it to us.
+Once the boat is safely stopped, photograph the code for the technician handling your service.
 
 #### Warning still active? Put in a service request at hbw.wiki/service.
 

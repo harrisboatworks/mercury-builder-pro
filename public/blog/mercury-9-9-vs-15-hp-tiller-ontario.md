@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-9-9-vs-15-hp-tiller-ontario.md
-last_updated: 2026-09-06
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury 9.9 vs 15 HP Tiller for Ontario"
 description: "Mercury 9.9 vs 15 HP tiller, licensing, fuel use, real-world performance on Ontario lakes. Build a live quote at mercuryrepower.ca."
 category: "Buying Guide"
 date_published: 2026-05-18
-date_modified: 2026-09-06
+date_modified: 2026-09-11
 keywords: ["Mercury 9.9 vs 15 HP","Mercury tiller motor Ontario","kicker motor 9.9 vs 15","sailboat auxiliary outboard","Mercury 9.9 EFI FourStroke"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-05-18  
-**Last reviewed:** 2026-09-06  
+**Last reviewed:** 2026-09-11  
 **Read time:** ~9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-9-9-vs-15-hp-tiller-ontario
 
@@ -103,7 +103,7 @@ Boaters sometimes ask whether they can run a 15 HP motor on a hull plated at 9.9
 
 When a customer walks in shopping a Mercury tiller in this size class, here's what we check before we recommend anything:
 
-The capacity plate. We look for the rated horsepower stamp first. If you don't know where yours is, bring the boat or send us a photo of the transom and gunwale. Without that number, we're guessing.
+The capacity plate. We look for the rated horsepower stamp first. Without that number, we're guessing.
 
 The use case. A kicker motor for trolling on a bigger bass boat has different priorities than a primary motor on a 14 foot utility hull. A sailboat auxiliary cares about shaft length and weight aft. A cottage dinghy cares about portability. Same two motors, different right answers.
 
@@ -119,9 +119,9 @@ If you're rigging a kicker motor on a bigger boat, [the 9.9 EFI FourStroke is th
 
 - If you fish a specific tournament, check its current motor and trolling rules before buying. Do not treat every Rice Lake or Kawartha derby as a 9.9-only event, and do not assume a 15 is universally legal.
 - Weight still matters on a kicker bracket. Confirm the current model-code dry weights rather than using an older shared-block 7 kg story.
-- A 15 HP kicker is often more motor than a light aluminum needs at idle. Talk through hull, wind, and the named event rules before paying for unused top-end.
+- A 15 HP kicker is often more motor than a light aluminum needs at idle. Consider hull, wind, and the named event rules before paying for unused top-end.
 
-The only exception: a heavy boat that struggles to maintain trolling speed in chop or wind. [A pontoon kicker](/blog/mercury-prokicker-rice-lake-fishing-guide), for example, sometimes benefits from the 15 because it has the headroom to push the boat into the wind at slow speed. Talk to us if that's your situation.
+The only exception: a heavy boat that struggles to maintain trolling speed in chop or wind. [A pontoon kicker](/blog/mercury-prokicker-rice-lake-fishing-guide), for example, sometimes benefits from the 15 because it has the headroom to push the boat into the wind at slow speed.
 
 ## Sailboat Auxiliary: Long Shaft, Weight, Command Thrust
 
@@ -179,7 +179,7 @@ We're not in Toronto. We're in Gores Landing, roughly 1 hour 45 minutes from cen
 
 If your capacity plate caps at 9.9 or you're on an HP-restricted lake, the 9.9 EFI FourStroke is the right call. If a named tournament restricts kicker size, follow that event's current rules. Weight-sensitive sailboat owners should compare current model-code weights. For everyone else whose plate allows it, the 15 EFI FourStroke is often the stronger all-around boat motor.
 
-Build a quote for either motor in Canadian dollars at the configurator, or call us if you want to talk through capacity plate, shaft length, or tiller-vs-remote first.
+Build a quote for either motor in Canadian dollars at the configurator.
 
 **Phone:** 905-342-2153
 

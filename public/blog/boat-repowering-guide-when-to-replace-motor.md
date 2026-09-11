@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-repowering-guide-when-to-replace-motor.md
-last_updated: 2026-09-10
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "When to Replace Your Boat Motor. A Repowering Guide for Ontario Boat Own
 description: "When is it time to repower? Honest Ontario cost ranges ($6.5K-$40K CAD), signs your motor is done, and a Mercury repower framework from HBW."
 category: "Repowering"
 date_published: 2024-03-05
-date_modified: 2026-09-10
+date_modified: 2026-09-11
 keywords: ["boat repowering","when to replace outboard","repower cost","new boat vs repower","outboard motor replacement"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Repowering  
 **Published:** 2024-03-05  
-**Last reviewed:** 2026-09-10  
+**Last reviewed:** 2026-09-11  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-repowering-guide-when-to-replace-motor
 
@@ -182,13 +182,9 @@ We do this math with customers at HBW. Not every problem is a repower trigger. S
 - [Mercury Motor Maintenance: Seasonal Care Tips](/blog/mercury-motor-maintenance-seasonal-tips), keeping motors going longer
 - [Mercury Outboard Won't Start Troubleshooting](/blog/mercury-outboard-wont-start-troubleshooting), early diagnostic
 
-## Ready to talk through whether to repower?
-
 Build a quote on the [motor selection page](/quote/motor-selection) if you've decided. Live Mercury pricing in CAD with full configuration including rigging.
 
 [**Build Your Mercury Quote**](/quote/motor-selection)
-
-If you're not sure whether your motor needs replacement, [give us a call at (905) 342-2153](tel:9053422153). We will walk through your motor's age, condition, and use to give you an honest answer. Sometimes that answer is "your motor has years left, run it."
 
 ---
 

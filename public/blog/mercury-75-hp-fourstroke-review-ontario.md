@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-75-hp-fourstroke-review-ontario.md
-last_updated: 2026-09-07
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury 75 HP FourStroke: Buy the 90 Instead?"
 description: "Mercury 75 hp FourStroke: why HBW doesn't stock it. Same weight and price as 90 hp, so 90 is the smarter buy. Ontario dealer's honest take on this motor."
 category: "Mercury Buying Guides"
 date_published: 2026-05-10
-date_modified: 2026-09-07
+date_modified: 2026-09-11
 keywords: ["mercury 75 hp review","mercury 75 hp fourstroke","mercury 75 vs 90","mercury 75 elpt ontario","why dealers dont sell 75 hp","mercury 90 better than 75"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Mercury Buying Guides  
 **Published:** 2026-05-10  
-**Last reviewed:** 2026-09-07  
+**Last reviewed:** 2026-09-11  
 **Read time:** 7 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-75-hp-fourstroke-review-ontario
 
@@ -113,7 +113,7 @@ There are three real scenarios where the 75 is the right call:
 
 **The capacity plate forces it.** Some 16-17 ft hulls are rated for 75 HP maximum. That plate is the ceiling, not a suggestion, not a starting point for negotiation. If the plate says 75, you get a 75. We'll order it and we won't try to talk you into something illegal.
 
-**An insurance or licensing constraint applies.** Rare in Ontario, but some commercial or shared-use applications have HP caps that land on 75. If you're in that situation, call us and we'll confirm the right configuration.
+**An insurance or licensing constraint applies.** Rare in Ontario, but some commercial or shared-use applications have HP caps that land on 75.
 
 **A used 75 with low hours is priced low enough to matter.** If a used 75 with 200 hours is available for significantly less than a new 90, the math might work out. We can help you assess the used motor honestly and tell you if it's worth it.
 
@@ -139,8 +139,6 @@ For current Mercury dealer pricing, see the [Mercury pricing reference](/pricing
 ## Build a Quote, on the 90
 
 If you came here looking at the 75 and this confirmed what you suspected, go build a quote on the 90 at mercuryrepower.ca. Real CAD prices, real configurations.
-
-If you have a capacity plate situation or a used motor question, call us at 905-342-2153. We'll help you work through it honestly.
 
 Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
 

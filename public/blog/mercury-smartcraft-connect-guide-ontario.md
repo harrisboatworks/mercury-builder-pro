@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-smartcraft-connect-guide-ontario.md
-last_updated: 2026-09-07
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury SmartCraft Connect: Features, App & Installation"
 description: "See what SmartCraft Connect shows in the Mercury Marine app, how the module is installed, and how it differs from helm-display integrations."
 category: "Mercury Outboards"
 date_published: 2026-05-09
-date_modified: 2026-09-07
+date_modified: 2026-09-11
 keywords: ["Mercury SmartCraft Connect","Mercury Marine app setup","SmartCraft Connect compatibility","VesselView Mobile vs SmartCraft Connect","SmartCraft Connect Mobile install"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Category:** Mercury Outboards  
 **Published:** 2026-05-09  
-**Last reviewed:** 2026-09-07  
+**Last reviewed:** 2026-09-11  
 **Read time:** ~11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-smartcraft-connect-guide-ontario
 
@@ -67,7 +67,7 @@ The 8M0173128 module lives under the cowl on a single-engine boat. The 8M0173129
 
 ## Compatibility (quick check)
 
-Most Mercury motors from 2004 onward are SmartCraft-compatible. Mercury 9.9, 15, 20 HP portables, pre-2004 4-strokes, and carbureted 2-strokes are NOT compatible. Optimax motors from 2004 onward are SmartCraft-capable, send us the serial and we'll confirm Connect fit.
+Most Mercury motors from 2004 onward are SmartCraft-compatible. Mercury 9.9, 15, 20 HP portables, pre-2004 4-strokes, and carbureted 2-strokes are NOT compatible. Optimax motors from 2004 onward are SmartCraft-capable.
 
 ## Eligibility Edge Cases
 
@@ -93,9 +93,7 @@ Most Mercury motors from 2004 onward are SmartCraft-compatible. Mercury 9.9, 15,
 
 ## Find Your Serial to Confirm
 
-Five places to look, in order: the engine cowl plate (lift the cowl; photograph the plate), the lower starboard side of the block just above the lower cowl seam, the swivel bracket stamp on older portables and some mid-range motors, the engine info page on a [VesselView display](/blog/mercury-vesselview-smartcraft-plain-english-guide), or your original purchase paperwork. Once you have it, email info@harrisboatworks.ca and we will check eligibility against the exact motor record. For full decoding, see the [Mercury Outboard Serial Number Guide](/blog/how-to-read-mercury-outboard-serial-number). Mercury 25 and 30 HP motors only support SmartCraft from 2022 onward. The eligibility details for every motor class and year cutoff are covered above.
-
-To confirm your specific motor, email your serial number to info@harrisboatworks.ca and we'll check compatibility against the exact record.
+Five places to look, in order: the engine cowl plate (lift the cowl; photograph the plate), the lower starboard side of the block just above the lower cowl seam, the swivel bracket stamp on older portables and some mid-range motors, the engine info page on a [VesselView display](/blog/mercury-vesselview-smartcraft-plain-english-guide), or your original purchase paperwork. For full decoding, see the [Mercury Outboard Serial Number Guide](/blog/how-to-read-mercury-outboard-serial-number). Mercury 25 and 30 HP motors only support SmartCraft from 2022 onward. The eligibility details for every motor class and year cutoff are covered above.
 
 ---
 

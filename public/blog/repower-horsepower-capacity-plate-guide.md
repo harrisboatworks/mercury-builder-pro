@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/repower-horsepower-capacity-plate-guide.md
-last_updated: 2026-09-07
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "How to Choose Repower Horsepower From Your Capacity Plate"
 description: "Use the boat manufacturer's power limit, motor weight, transom condition, load, steering, and use to choose repower horsepower without guessing."
 category: "Repower"
 date_published: 2026-06-06
-date_modified: 2026-09-07
+date_modified: 2026-09-11
 keywords: ["boat capacity plate","maximum horsepower boat","repower horsepower guide","transport canada capacity plate","mercury repower ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Repower  
 **Published:** 2026-06-06  
-**Last reviewed:** 2026-09-07  
+**Last reviewed:** 2026-09-11  
 **Read time:** 4 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/repower-horsepower-capacity-plate-guide
 
@@ -84,7 +84,7 @@ A few things to think about:
 
 ## The right question isn't "what's the maximum", it's "what do I actually need"
 
-When we talk through a repower with you, we're asking:
+Important repower questions include:
 
 - What do you use the boat for, and with how many people?
 - What's your current motor, and what's the complaint, not enough power, reliability, fuel economy?
@@ -120,14 +120,14 @@ That sequence separates this article from the plate decoder: the notice supplies
 
 ## Get a proper recommendation before you buy
 
-The quote configurator at mercuryrepower.ca lets you select by horsepower range and [see installed pricing](/blog/mercury-repower-cost-ontario-2026-cad). If you're not sure which range fits your hull, call us or submit a service request, we'd rather give you the right motor the first time than have a conversation about it later.
+The quote configurator at mercuryrepower.ca lets you select by horsepower range and [see installed pricing](/blog/mercury-repower-cost-ontario-2026-cad).
 
 HBW's standard repower handoff includes an on-water test on Rice Lake before pickup when safe seasonal conditions allow.
 
 ---
 
 **Ready to figure out the right motor for your hull?**
-Build your quote at [mercuryrepower.ca](https://mercuryrepower.ca) or call 905-342-2153.
+Build your quote at [mercuryrepower.ca](https://mercuryrepower.ca).
 
 ## FAQs
 

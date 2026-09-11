@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-avator-7-5e-review.md
-last_updated: 2026-09-06
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Avator 7.5e: Review, Range, and Best Uses (2026)"
 description: "Mercury Avator 7.5e electric outboard: honest review, current pricing status, battery life, range, and best uses on Rice Lake."
 category: "Buying Guide"
 date_published: 2026-05-24
-date_modified: 2026-09-06
+date_modified: 2026-09-11
 keywords: ["mercury avator 7.5e review","avator 7.5e electric outboard","mercury electric outboard ontario","avator battery life","avator range rice lake","mercury avator price canada"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-05-24  
-**Last reviewed:** 2026-09-06  
+**Last reviewed:** 2026-09-11  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-avator-7-5e-review
 
@@ -100,7 +100,7 @@ HBW starts with the boat, total load, intended route, required reserve, transom 
 
 ## Ready to rig an Avator?
 
-If the Avator 7.5e may fit the job, call us to work through the boat, route, expected range, battery and charger, mounting, and whether a separate main motor is required.
+For an Avator 7.5e purchase quote, request the complete motor, battery, charger and mounting package.
 
 **Phone:** 905-342-2153
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/aluminum-vs-fiberglass-hull-ontario.md
-last_updated: 2026-09-06
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Aluminum vs Fiberglass Hull Ontario"
 description: "Aluminum or fiberglass? A Mercury Premier dealer's straight take on which hull material fits which kind of Ontario boater."
 category: "Buying Guides"
 date_published: 2026-05-16
-date_modified: 2026-09-06
+date_modified: 2026-09-11
 keywords: ["aluminum vs fiberglass boat","aluminum hull ontario","fiberglass hull ontario","boat hull material guide","legend aluminum boat","boat material comparison","rice lake boat material"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guides  
 **Published:** 2026-05-16  
-**Last reviewed:** 2026-09-06  
+**Last reviewed:** 2026-09-11  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/aluminum-vs-fiberglass-hull-ontario
 
@@ -108,8 +108,6 @@ We sell Legend aluminum (V-hulls and pontoons) as our primary new-boat lineup. W
 5. **What's your tow vehicle?** A half-ton truck is happier with aluminum.
 
 For a Rice Lake / Kawarthas primary boater, the aluminum recommendation wins most of the time. For someone who keeps the boat at a Lake Ontario marina or trailers to bigger water frequently, the fiberglass recommendation is honest more often.
-
-Email info@harrisboatworks.ca with what you are trying to do on the water and we will tell you which side of the line you fall on.
 
 ## About the author
 

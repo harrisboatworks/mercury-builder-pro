@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "sourceVersion": "6a3706391ec2a12f5598",
+  "sourceVersion": "4b7594c493eb167274c1",
   "count": 179,
   "articles": [
     {
@@ -604,7 +604,7 @@
       "faqs": [
         {
           "q": "Does my motor already have DTS without me knowing?",
-          "a": "Possibly. If your current Mercury has a sealed binnacle helm control with no visible cables coming out the bottom, a SmartCraft gauge or VesselView display, and smooth electronic throttle feel with detents at neutral/forward/reverse, you have DTS. Customers calling about retrofit often find out they already have it. E…"
+          "a": "Possibly. If your current Mercury has a sealed binnacle helm control with no visible cables coming out the bottom, a SmartCraft gauge or VesselView display, and smooth electronic throttle feel with detents at neutral/forward/reverse, you have DTS."
         },
         {
           "q": "Can I really not bolt DTS onto my mechanical Mercury?",
@@ -846,7 +846,7 @@
         },
         {
           "q": "Can I repower my boat with a Verado?",
-          "a": "On the right boat, yes, and we service Verado, but it's not the family we stock and sell. For most repowers on this lake the answer lands on a FourStroke or a Pro XS. Tell us your boat and how you use it and we'll point you straight. Build a starting quote at mercuryrepower.ca."
+          "a": "On the right boat, yes, and we service Verado, but it's not the family we stock and sell. For most repowers on this lake the answer lands on a FourStroke or a Pro XS. Build a starting quote at mercuryrepower.ca."
         }
       ]
     },
@@ -1562,7 +1562,7 @@
         },
         {
           "q": "Are Mercury electric outboards available?",
-          "a": "Yes. Mercury's Avator electric line includes models from 7.5e to 110e. Contact us for current availability, pricing, and to discuss whether electric suits your cottage lake application."
+          "a": "Yes. Mercury's Avator electric line includes models from 7.5e to 110e. Contact us for a current Avator purchase quote and availability."
         }
       ]
     },
@@ -5699,7 +5699,7 @@
     {
       "slug": "bilge-pump-troubleshooting-guide",
       "title": "The Complete Guide to Boat Bilge Pumps: How They Work, Why They Fail, and How to Fix Them",
-      "description": "The complete guide to boat bilge pumps: how the pump, float switch, and wiring work together, why they really fail, how to size and test one, and when to call HBW.",
+      "description": "The complete guide to boat bilge pumps: how the pump, float switch, and wiring work together, why they really fail, how to size and test one, and when professional service is needed.",
       "category": "Service & Troubleshooting",
       "publishDate": "2026-07-03",
       "keywords": [

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/used-outboard-buying-guide-ontario.md
-last_updated: 2026-09-07
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Used Outboard Buying Guide Ontario"
 description: "What to check before you buy a used outboard in Ontario: the inspection order, the deal-breakers, the on-water test."
 category: "Buying Guide"
 date_published: 2026-05-07
-date_modified: 2026-09-07
+date_modified: 2026-09-11
 keywords: ["used outboard buying guide Ontario","how to inspect a used outboard","used Mercury outboard checklist","buying a used boat motor","outboard compression test"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-05-07  
-**Last reviewed:** 2026-09-07  
+**Last reviewed:** 2026-09-11  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/used-outboard-buying-guide-ontario
 
@@ -170,7 +170,7 @@ We will tell you which one you are looking at, even when the honest answer point
 
 If you have looked at the used market and the numbers do not work, or you just want to know what new actually costs, build a live quote at **mercuryrepower.ca**. Real Canadian pricing, configured for your hull, in about three minutes.
 
-Call **905-342-2153** with questions, or book a pre-purchase inspection at hbw.wiki/service before you commit to a private-sale motor.
+Book a pre-purchase inspection at hbw.wiki/service before you commit to a private-sale motor.
 
 **Phone:** 905-342-2153
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON

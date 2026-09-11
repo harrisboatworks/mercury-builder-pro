@@ -116,7 +116,7 @@ Harris Boat Works 1947 سے خاندانی مرینا ہے، 1965 سے Mercury �
     image: '/lovable-uploads/hero-used-boat-walkaround.png',
     author: 'Harris Boat Works',
     datePublished: '2026-06-12',
-    dateModified: '2026-09-06',
+    dateModified: '2026-09-11',
     category: 'اردو گائیڈ',
     readTime: '8 منٹ',
     keywords: ['یوزڈ بوٹ خریدتے وقت کیا دیکھیں (What to check when buying a used boat)', 'سیکنڈ ہینڈ کشتی کی خریدی میں دھوکہ (Scams in buying a used boat)', 'پرانے بوٹ انجن کی حالت کیسے چیک کریں (How to check condition of an old boat engine)', 'استعمال شدہ کشتی کی قیمت کا اندازہ (Estimating price of a used boat)', 'اونٹاریو میں یوزڈ بوٹ مارکیٹ (Used boat market Ontario)'],
@@ -211,7 +211,7 @@ GTA اور اس کے ارد گرد استعمال شدہ کشتیوں کی بہ�
 
 اگر آپ نے کوئی استعمال شدہ کشتی منتخب کر لی ہے اور اسے پیشہ ورانہ نظروں سے چیک کروانا چاہتے ہیں، تو ہماری سروس ٹیم اس کے لیے تیار ہے۔ معائنے یا سوال کے لیے https://hbw.wiki/service پر سروس فارم بھریں۔
 
-اور اگر صورت حال یہ ہے کہ انجن تبدیل کرنے کا سوچ رہے ہیں، تو Mercury repower کے اقتباس کے لیے براہ راست https://www.mercuryrepower.ca/quote/motor-selection پر رابطہ کریں۔ فون پر بات کرنے کے لیے (905) 342-2153 یا ٹیکسٹ (647) 952-2153 پر پیغام بھیجیں۔
+اور اگر صورت حال یہ ہے کہ انجن تبدیل کرنے کا سوچ رہے ہیں، تو Mercury repower کے اقتباس کے لیے براہ راست https://www.mercuryrepower.ca/quote/motor-selection پر رابطہ کریں۔
 
 Harris Boat Works
 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0

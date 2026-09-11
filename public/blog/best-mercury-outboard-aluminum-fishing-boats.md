@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-mercury-outboard-aluminum-fishing-boats.md
-last_updated: 2026-09-06
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Best Mercury for Aluminum Boats 2026"
 description: "The right Mercury for an aluminum fishing boat depends on the hull, load, and the boat's documented limits. 9.9-25 HP and 60-115 HP are examples to compare against..."
 category: "Buying Guide"
 date_published: 2026-01-12
-date_modified: 2026-09-06
+date_modified: 2026-09-11
 keywords: ["mercury for aluminum boat","best outboard aluminum fishing boat","mercury 60hp fishing","lund boat motor","tracker boat outboard"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-01-12  
-**Last reviewed:** 2026-09-06  
+**Last reviewed:** 2026-09-11  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-mercury-outboard-aluminum-fishing-boats
 
@@ -146,7 +146,7 @@ A kicker can be worth the added cost when slow trolling, backup propulsion, or l
 
 ## Ready to find your motor?
 
-Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), real pricing in CAD on the full configuration: main motor, kicker, rigging, prop, and install. Or call us at **905-342-2153**. We rig fishing boats every week and can match a motor to your specific hull.
+Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), real pricing in CAD on the full configuration: main motor, kicker, rigging, prop, and install.
 
 ---
 

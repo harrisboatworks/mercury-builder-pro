@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/pontoon-hp-sizing-decision-tree-ontario.md
-last_updated: 2026-09-07
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Pontoon HP Sizing: The Rice Lake Decision Tree by Length"
 description: "Pontoon HP by load, use, and the boat's documented limits. 25 HP through 300-plus bands are examples to compare, not an HP-per-foot or length chart."
 category: "Mercury Outboards"
 date_published: 2026-03-26
-date_modified: 2026-09-07
+date_modified: 2026-09-11
 keywords: ["pontoon hp","horsepower sizing","mercury","command thrust","tritoon"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Mercury Outboards  
 **Published:** 2026-03-26  
-**Last reviewed:** 2026-09-07  
+**Last reviewed:** 2026-09-11  
 **Read time:** ~12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/pontoon-hp-sizing-decision-tree-ontario
 
@@ -271,7 +271,7 @@ Use the decision tree above. Be honest about your load and your intended use. An
 
 **Not sure if your pontoon is undersized? Build a real Mercury repower quote in 2 minutes.** → [mercuryrepower.ca](https://www.mercuryrepower.ca)
 
-You'll see real Mercury models, real configurations, and real pricing, no "call for quote" games, no guessing. If you want to talk it through, call 905-342-2153.
+You'll see real Mercury models, real configurations, and real pricing, no "call for quote" games, no guessing.
 
 ---
 

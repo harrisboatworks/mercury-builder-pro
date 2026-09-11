@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/how-to-trim-boat-mercury-outboard.md
-last_updated: 2026-07-30
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "How to Trim a Boat With a Mercury Outboard: Read the Boat, Not Just the 
 description: "Learn how to trim a Mercury outboard for planing, cruise, turns and rough water. Read speed, RPM, steering and spray instead of guessing on the water."
 category: "Mercury Outboards"
 date_published: 2026-02-22
-date_modified: 2026-07-30
+date_modified: 2026-09-11
 keywords: ["how to trim a boat","Mercury outboard trim","trim in vs trim out","boat porpoising fix","Mercury Active Trim"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Mercury Outboards  
 **Published:** 2026-02-22  
-**Last reviewed:** 2026-07-30  
+**Last reviewed:** 2026-09-11  
 **Read time:** ~12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/how-to-trim-boat-mercury-outboard
 
@@ -149,7 +149,7 @@ Our [Mercury propeller selection guide](/blog/mercury-propeller-selection-guide)
 
 ## Ready to Get the Boat Running Properly?
 
-If sensible trim changes do not stop porpoising, ventilation or poor handling, send us the motor, boat, propeller and load details. We can help separate an operating issue from a propeller, mounting-height, trim-system or hull-setup problem.
+If sensible trim changes do not stop porpoising, ventilation or poor handling, have the boat inspected by a qualified marine technician before further operation.
 
 **Request service:** [hbw.wiki/service](https://hbw.wiki/service)
 
