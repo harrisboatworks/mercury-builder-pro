@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-weight-chart.md
-last_updated: 2026-09-07
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Outboard Weight Chart 2026: 2.5–300 HP Dry Weights"
 description: "Official dry weights for every Mercury FourStroke and Pro XS from 2.5 to 300 HP, plus the transom weight check we run before quoting any repower."
 category: "Buying Guide"
 date_published: 2026-06-07
-date_modified: 2026-09-07
+date_modified: 2026-09-11
 keywords: ["mercury outboard weight","mercury outboard weight chart","how much does a mercury 115 weigh","outboard motor weight","transom weight capacity"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-06-07  
-**Last reviewed:** 2026-09-07  
+**Last reviewed:** 2026-09-11  
 **Read time:** 5 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-weight-chart
 
@@ -39,7 +39,7 @@ Mercury outboards range from 19 kg (41 lb) for the 2.5 and 3.5 HP portables to 2
 
 How much a motor weighs is not trivia. It decides whether your transom can carry it, how your boat sits at rest, and how it planes. Here's what Mercury outboards weigh according to Mercury's own specifications, why it matters, and how to use the number.
 
-This chart covers the FourStroke and Pro XS families we sell and install every week. Verado is special-order territory at HBW and its weights vary significantly by model and rigging; if you are considering a Verado, verify the exact model number against Mercury's spec sheet or call us.
+This chart covers the FourStroke and Pro XS families we sell and install every week. Verado is special-order territory at HBW and its weights vary significantly by model and rigging; if you are considering a Verado, verify the exact model number against Mercury's spec sheet.
 
 ### FourStroke dry weights
 
@@ -93,7 +93,7 @@ Most repower regret traces back to one of two things: too much horsepower, or to
 
 If you're repowering and not sure your transom can carry the modern equivalent of your old motor, that's exactly the kind of thing we check before we quote.
 
-**Get a real repower quote, motor, weight, rigging and all, at [mercuryrepower.ca](https://www.mercuryrepower.ca)**, or call 905-342-2153.
+**Get a real repower quote, motor, weight, rigging and all, at [mercuryrepower.ca](https://www.mercuryrepower.ca)**.
 
 Harris Boat Works: family-owned on Rice Lake since 1947.
 

@@ -597,7 +597,7 @@ Pro XS 버전의 가격은 표준 FourStroke보다 높습니다. 정확한 가�
     image: '/lovable-uploads/ko-repower-vs-new-boat-hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-09-06',
+    dateModified: '2026-09-11',
     publishDate: '2026-04-12',
     category: '엔진 교체',
     readTime: '9 분',
@@ -725,7 +725,7 @@ harrisboatworks.ca에서 현재 재고를 확인하실 수 있습니다.
 *관련 자료 (영어): Should I repower or buy a new boat? | Ontario Mercury Outboard Price Guide | Mercury 90 HP FourStroke review*
 ---`,
     faqs: [
-      { question: '선체 상태를 어떻게 판단하나요?', answer: '선체와 엔진 사진을 찍어 저희에게 보내주시면 초기 판단을 도와드릴 수 있습니다. 전화 905-342-2153 또는 hbw.wiki/service로 문의하세요.' },
+      { question: '선체 상태를 어떻게 판단하나요?', answer: '선체 상태는 사진만으로 확정할 수 없습니다. 구매 전에 전문가의 현장 점검을 받으세요.' },
       { question: '엔진 교체에 걸리는 시간은?', answer: '작업 기간은 시즌, 부품 수급, 현재 작업량에 따라 달라집니다. 구체적인 일정은 문의 시 확인하세요.' },
       { question: '엔진 교체 후 보증은 어떻게 되나요?', answer: '새 Mercury 엔진에는 제조사 보증이 포함됩니다. HBW에서 설치하면 보증 등록도 함께 처리됩니다.' },
       { question: '중고 보트를 구입하고 HBW에서 엔진만 새로 달 수 있나요?', answer: '네. 중고 보트 + 새 엔진 교체를 한곳에서 처리할 수 있습니다. 검수, 설치, 보증 등록까지 HBW에서 진행합니다.' },
@@ -1096,7 +1096,7 @@ Harris Boat Works는 1947년부터 운영된 가족 기업이며, 1965년부터 
     imageAlt: '공식 건조 중량에 장비와 유체 무게를 고려하고 선체의 허용 한도를 확인하는 과정.',
     author: 'Harris Boat Works',
     datePublished: '2026-06-08',
-    dateModified: '2026-09-06',
+    dateModified: '2026-09-11',
     publishDate: '2026-06-08',
     category: '구매 가이드',
     readTime: '7 분',
@@ -1163,7 +1163,7 @@ Harris Boat Works는 1947년부터 운영된 가족 기업이며, 1965년부터 
 
 리파워를 고려하고 있고 트랜섬이 현대형 모터를 감당할 수 있는지 모르겠다면, 견적 전에 저희가 확인해 드리는 부분입니다.
 
-**모터, 무게, 리깅까지 포함한 실제 리파워 견적은 [mercuryrepower.ca](https://www.mercuryrepower.ca)에서 받으세요. 또는 905-342-2153으로 전화.**
+**모터, 무게, 리깅까지 포함한 실제 리파워 견적은 [mercuryrepower.ca](https://www.mercuryrepower.ca)에서 받으세요.**
 
 ---
 

@@ -24,6 +24,18 @@ name: Deploy Supabase edge functions
 # source answers, functions WITH required migrations are skipped, functions
 # WITHOUT them still deploy, and the job fails if anything was skipped.
 #
+# Public chat (`ai-chatbot` + `ai-chatbot-stream`) and OpenAI Realtime
+# (`realtime-session` + `realtime-sdp-exchange`) also fail closed as pairs
+# before either member is deployed when the pair is incomplete, a pair
+# member is blocked, or production key/model attestation is missing,
+# unknown, or not production-proven. A local key is not production proof.
+# Sequential deploys in one job are not atomic.
+# workflow_dispatch may set pair_name (DEPLOY_PAIR=site-chat|openai-realtime)
+# to select exactly those two slugs. That selector is not an approval switch;
+# the committed UNVERIFIED attestation still holds the pair. Cannot be
+# combined with function_name. The job CHECKS applied migrations and never
+# applies them.
+#
 # Inert until repository secret SUPABASE_ACCESS_TOKEN exists. A missing
 # secret skips cleanly (green). A real CLI/deploy failure fails the job
 # after every targeted function has been attempted.
@@ -34,7 +46,11 @@ on:
   workflow_dispatch:
     inputs:
       function_name:
-        description: Optional single function slug to deploy (leave empty to deploy functions changed in HEAD^..HEAD)
+        description: Optional single function slug to deploy (leave empty to deploy functions changed in HEAD^..HEAD). Cannot be combined with pair_name.
+        required: false
+        type: string
+      pair_name:
+        description: Optional allowlisted pair (site-chat or openai-realtime). Selects exactly those two slugs. Cannot be combined with function_name. Still held until a later reviewed production attestation.
         required: false
         type: string
 
@@ -97,4 +113,5 @@ jobs:
           DEPLOY_FROM: ${{ github.event.before }}
           DEPLOY_TO: ${{ github.sha }}
           DEPLOY_FUNCTION: ${{ github.event.inputs.function_name }}
+          DEPLOY_PAIR: ${{ github.event.inputs.pair_name }}
         run: node scripts/deploy-supabase-functions.mjs

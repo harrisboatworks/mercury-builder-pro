@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-115-hp-fourstroke-review-ontario.md
-last_updated: 2026-09-07
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury 115 FourStroke Review 2026: Fit, Features and Performance"
 description: "An honest Mercury 115 outboard review for Ontario: 4 stroke vs Pro XS, Command Thrust, weights, performance examples and propeller advice."
 category: "Mercury Buying Guides"
 date_published: 2026-05-10
-date_modified: 2026-09-07
+date_modified: 2026-09-11
 keywords: ["mercury 115 hp review","mercury 115 fourstroke review","mercury 115 pro xs review","mercury 115 command thrust","mercury 115 standard vs pro xs","mercury 115 real world performance","mercury 115 owner reviews","mercury 115 hp ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Mercury Buying Guides  
 **Published:** 2026-05-10  
-**Last reviewed:** 2026-09-07  
+**Last reviewed:** 2026-09-11  
 **Read time:** 18 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-115-hp-fourstroke-review-ontario
 
@@ -322,8 +322,6 @@ Build the boat and motor together. The quote builder shows the current Canadian 
 **Browse current pricing:** [Canadian Mercury pricing reference](/pricing-reference)
 
 **Build a complete quote:** [Mercury motor selection](/quote/motor-selection)
-
-**Phone:** [905-342-2153](tel:+19053422153)
 
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 

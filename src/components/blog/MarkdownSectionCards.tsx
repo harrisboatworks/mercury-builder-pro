@@ -1,6 +1,6 @@
 import ReactMarkdown, { Components, defaultUrlTransform } from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import { Phone, Calculator, MapPin, Wrench } from 'lucide-react';
+import { Calculator, MapPin, Wrench } from 'lucide-react';
 import {
   ImagePlaceholder,
   type ImagePlaceholderProps,
@@ -1195,10 +1195,10 @@ const cardConfig: Record<
       backgroundColor: 'hsl(220 25% 10%)',
       borderColor: 'hsl(45 75% 50%)',
     },
-    eyebrow: 'Talk to Us',
+    eyebrow: 'Next Steps',
     eyebrowClass: 'text-[hsl(45_85%_60%)]',
     role: 'complementary',
-    aria: 'When to call HBW',
+    aria: 'Recommended next steps',
   },
   'when-to-service': {
     wrapper:
@@ -1337,7 +1337,6 @@ export function MarkdownSectionCards({ content, markdownComponents, articleSlug 
   const renderConfiguredCard = (section: Section, idx: number) => {
     const headingMd = `## ${section.heading}\n\n${section.body}`;
     const cfg = cardConfig[section.kind as Exclude<CardKind, null>];
-    const isPhoneCard = section.kind === 'when-to-call';
     const isDealerNote = section.kind === 'dealer-note';
     const isLocalContext = section.kind === 'local-context';
     const isCommonMistakes = section.kind === 'common-mistakes';
@@ -1378,15 +1377,6 @@ export function MarkdownSectionCards({ content, markdownComponents, articleSlug 
             `c-${idx}`,
           )}
         </div>
-        {isPhoneCard && (
-          <a
-            href="tel:9053422153"
-            className="mt-3 inline-flex items-center gap-2 rounded-md bg-[hsl(45_85%_55%)] px-4 py-2 font-semibold !text-[hsl(220_25%_10%)] no-underline shadow-sm hover:bg-[hsl(45_85%_50%)]"
-          >
-            <Phone className="h-4 w-4" aria-hidden="true" />
-            Call 905-342-2153
-          </a>
-        )}
         {section.kind === 'when-to-service' && (
           <a
             href="https://hbw.wiki/service"

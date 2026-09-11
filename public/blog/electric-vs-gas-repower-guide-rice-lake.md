@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/electric-vs-gas-repower-guide-rice-lake.md
-last_updated: 2026-09-06
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Electric or Gas Repower? An Honest Guide for Rice Lake Boaters (Mercury 
 description: "Thinking about an electric repower? An honest look at where the Mercury Avator fits in cottage country, where gas still wins, and how to decide for your boat."
 category: "Buying Guide"
 date_published: 2026-07-15
-date_modified: 2026-09-06
+date_modified: 2026-09-11
 keywords: ["electric outboard repower Ontario","Mercury Avator repower","electric vs gas outboard","Avator Rice Lake","electric outboard Ontario lakes"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,11 +25,11 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-07-15  
-**Last reviewed:** 2026-09-06  
+**Last reviewed:** 2026-09-11  
 **Read time:** ~9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/electric-vs-gas-repower-guide-rice-lake
 
-> **Quick answer:** Electric repower works extremely well for the right boat doing the right job: trolling kickers, tenders, sailboat auxiliaries, and short quiet trips near the dock. For covering real distance on a big lake, gas still wins. We sell both, so we have no reason to oversell either one. Call 905-342-2153 and we'll tell you straight which fits your boat.
+> **Quick answer:** Electric repower works extremely well for the right boat doing the right job: trolling kickers, tenders, sailboat auxiliaries, and short quiet trips near the dock. For covering real distance on a big lake, gas still wins. We sell both, so we have no reason to oversell either one.
 
 **Choosing electric propulsion starts with the trip: distance, load, speed, battery capacity, and charging access.**
 
@@ -163,11 +163,8 @@ We're bringing Avator into the lineup now, with Mercury Canada pricing still bei
 
 ---
 
-## Ready to Figure Out Which Way Your Repower Goes?
+## Compare Electric and Gas Options
 
-Tell us the boat, the water, and how you actually run it. We'll tell you straight whether that's an Avator, a gas FourStroke, or a gas main with an electric kicker. We sell both, so the only thing we're invested in is you being happy with it next August.
-
-**Phone:** 905-342-2153
 **Avator info:** [mercuryrepower.ca/electric/mercury-avator](https://www.mercuryrepower.ca/electric/mercury-avator)
 **Gas repower quotes:** [Build your quote](/quote/motor-selection)
 

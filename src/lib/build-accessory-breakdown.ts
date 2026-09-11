@@ -2,7 +2,7 @@
  * Shared utility to build the full accessory breakdown for a quote.
  * Used by QuoteSummaryPage (live), AdminQuoteControls (save), and AdminQuoteDetail (legacy restore).
  */
-import { isTillerMotor, requiresMercuryControls, includesPropeller, canAddExternalFuelTank } from '@/lib/motor-helpers';
+import { isTillerMotor, requiresMercuryControls, includesPropeller, includesFuelTank, canAddExternalFuelTank } from '@/lib/motor-helpers';
 import { getPropellerAllowance } from '@/lib/propeller-allowance';
 import { isSameHpMercuryTrade, resolvePropellerDecision } from '@/lib/propeller-selection';
 import { hasElectricStart } from '@/lib/motor-config-utils';
@@ -174,6 +174,36 @@ export function buildAccessoryBreakdown(params: BuildAccessoryBreakdownParams): 
         category: 'equipment',
       });
     }
+  }
+
+  // Equipment that ships with the motor from the factory. Listed at $0 so the
+  // customer can see what is included; totals are unchanged.
+  const alreadyListed = (needle: string) =>
+    breakdown.some(item => item.name?.toLowerCase().includes(needle));
+
+  if (includesFuelTank(motor) && !alreadyListed('fuel tank')) {
+    const tankName = hp <= 6
+      ? 'Internal Fuel Tank'
+      : (hp >= 8 && hp <= 20)
+        ? '12L Fuel Tank & Hose'
+        : (hp >= 25 && hp <= 30 && isManualTiller)
+          ? '25L Fuel Tank & Hose'
+          : 'Fuel Tank & Hose';
+    breakdown.push({
+      name: tankName,
+      price: 0,
+      description: 'Included with motor',
+      category: 'equipment',
+    });
+  }
+
+  if (includesProp && !alreadyListed('propeller')) {
+    breakdown.push({
+      name: 'Standard Propeller',
+      price: 0,
+      description: 'Included with motor',
+      category: 'equipment',
+    });
   }
 
   // Premium package fuel tank

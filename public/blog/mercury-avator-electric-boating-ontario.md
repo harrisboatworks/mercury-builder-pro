@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-avator-electric-boating-ontario.md
-last_updated: 2026-09-06
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Avator Electric Outboards: Cost & Range (Canada)"
 description: "Mercury Avator electric outboards: what they cost, how far they go, and whether one fits Rice Lake. Honest take from a Mercury Premier dealer."
 category: "Buying Guide"
 date_published: 2026-02-06
-date_modified: 2026-09-06
+date_modified: 2026-09-11
 keywords: ["mercury avator","electric outboard motor","avator electric boat","electric boating ontario","mercury electric motor","cottage boat electric","rice lake electric outboard","avator range runtime","avator cost canada"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: avator
 
 **Category:** Buying Guide  
 **Published:** 2026-02-06  
-**Last reviewed:** 2026-09-06  
+**Last reviewed:** 2026-09-11  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-avator-electric-boating-ontario
 
@@ -81,7 +81,7 @@ Be honest with yourself about how you boat.
 
 Avator pricing depends on the model, battery count, charger, controls and installation. We don't stock Avator on the floor: it's a build-to-order product, and the right battery count depends entirely on your boat and how you use it. The HBW Avator page currently says pricing is being finalized, so we do not publish a placeholder number. See our [Avator page](/electric/mercury-avator) for current availability and the configuration path.
 
-For gas outboards, the configurator does what it always does: **[build a real Mercury quote in 2 minutes at mercuryrepower.ca](https://www.mercuryrepower.ca)**. We sell both. We'll tell you straight which one fits your boat.
+For gas outboards, the configurator does what it always does: **[build a real Mercury quote in 2 minutes at mercuryrepower.ca](https://www.mercuryrepower.ca)**. We sell both.
 
 ---
 

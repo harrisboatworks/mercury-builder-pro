@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/remotorisation-mercury-gta-toronto.md
-last_updated: 2026-09-07
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Remotorisation Mercury dans la GTA : comment un plaisancier de Toronto r
 description: "Un parcours étape par étape sur la façon dont un plaisancier de la GTA remotorise un bateau chez Harris Boat Works : logistique, prix, échéancier et transport."
 category: "Guide d'achat"
 date_published: 2026-05-13
-date_modified: 2026-09-07
+date_modified: 2026-09-11
 keywords: ["remotorisation Mercury GTA","remotorisation Mercury Toronto","remotorisation Mercury Mississauga","coût remotorisation bateau GTA","concessionnaire Mercury Premier Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Catégorie :** Guide d'achat\
 **Publié le :** 2026-05-13\
-**Dernière révision :** 2026-09-07\
+**Dernière révision :** 2026-09-11\
 **Temps de lecture :** 12 min\
 **URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/remotorisation-mercury-gta-toronto
 
@@ -77,9 +77,9 @@ Apportez les informations sur votre échange si vous en avez (année, heures, é
 
 Cette étape compte parce que la plupart des concessionnaires GTA ne donneront pas de prix ferme sans visite en personne. Le configurateur veut dire que **vous pouvez comparer le prix tout inclus de Harris Boat Works aux estimations de concessionnaires locaux sans devoir vous déplacer**.
 
-### Étape 2 : L'appel téléphonique (30 à 60 minutes)
+### Étape 2 : Confirmer votre soumission
 
-Si le chiffre du configurateur fonctionne, appelez au **905-342-2153**. Nous couvrirons :
+Si le chiffre du configurateur convient à votre projet, appelez au **905-342-2153** pour confirmer les détails de votre soumission avant de commander :
 
 - Confirmer la spécification du moteur (parfois, la longueur d'arbre demande une vérification sur le tableau arrière; nous vous guidons pour la mesure)
 - Passer en revue tout câblage optionnel (DTS, mise à niveau de la direction hydraulique, hélice en acier inoxydable)

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-bowmanville-ontario-hbw.md
-last_updated: 2026-09-07
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Dealer for Bowmanville: 35 Minutes to Rice Lake"
 description: "Mercury Premier dealer for Bowmanville: Harris Boat Works on Rice Lake, 35 minutes via 401 and 115. Repower, sales, parts, winter storage practically next door."
 category: "Dealer Locations"
 date_published: 2026-05-11
-date_modified: 2026-09-07
+date_modified: 2026-09-11
 keywords: ["mercury dealer bowmanville","mercury repower bowmanville","mercury outboard bowmanville ontario","boat motor service clarington"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Dealer Locations  
 **Published:** 2026-05-11  
-**Last reviewed:** 2026-09-07  
+**Last reviewed:** 2026-09-11  
 **Read time:** 4 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dealer-bowmanville-ontario-hbw
 
@@ -116,7 +116,7 @@ HBW offers outdoor storage with professional shrink wrap, outdoor uncovered stor
 At 35 minutes, you don't need to front-load every visit with hours of research. But a quick call still makes it more efficient:
 
 1. **Build your quote** at [mercuryrepower.ca](https://www.mercuryrepower.ca). Know the installed price.
-2. **Or just call us:** 905-342-2153. If you're 35 minutes away and have a question, we can probably answer it in five minutes on the phone and save you a trip, or confirm that the trip is worth it.
+
 3. **Submit service requests** at [hbw.wiki/service](https://hbw.wiki/service), that's how we schedule most service work.
 4. **Come up when you're ready.** At 35 minutes, "ready" is a lower bar than it is for someone driving from Mississauga.
 

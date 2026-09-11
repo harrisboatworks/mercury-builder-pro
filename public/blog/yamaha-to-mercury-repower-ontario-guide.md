@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/yamaha-to-mercury-repower-ontario-guide.md
-last_updated: 2026-09-07
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Yamaha to Mercury Repower: Ontario Guide"
 description: "Yamaha to Mercury repower from an Ontario Mercury Premier dealer. What changes, what stays, brand-swap rigging premium, HP equivalency table."
 category: "Repower Guide"
 date_published: 2026-05-28
-date_modified: 2026-09-07
+date_modified: 2026-09-11
 keywords: ["Yamaha to Mercury repower","Yamaha to Mercury Ontario","brand swap outboard repower","Mercury repower cost Ontario","Yamaha Command Link Mercury","Yamaha F150 to Mercury 150","Mercury Premier dealer Ontario","Yamaha trade-in Mercury"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Repower Guide  
 **Published:** 2026-05-28  
-**Last reviewed:** 2026-09-07  
+**Last reviewed:** 2026-09-11  
 **Read time:** 11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/yamaha-to-mercury-repower-ontario-guide
 
@@ -80,16 +80,16 @@ We quote both the motor-only price and the all-in installed price so customers s
 
 | HP class | Mercury motor (CAD, before tax) | Rigging premium for brand swap | All-in installed (estimate) |
 |--|--|--|--|
-| 25-60 HP | $4,800-$10,500 | $1,200-$2,000 | $11,000-$16,500 |
-| 75-115 HP | $11,500-$14,800 | $1,800-$2,800 | $17,000-$23,000 |
-| 150-200 HP | $17,500-$22,000 | $2,200-$3,500 | $23,000-$37,000 |
-| 250-300 HP | $25,000-$32,000 | $2,800-$4,500 | $35,000-$48,000 |
+| 25-60 HP | $5,093–$13,057 | $1,200-$2,000 | $7,500-$17,500 |
+| 75-115 HP | $14,476–$18,299 | $1,800-$2,800 | $18,500-$25,000 |
+| 150-200 HP | $22,242–$30,399 | $2,200-$3,500 | $28,000-$40,500 |
+| 250-300 HP | $34,848–$39,402 | $2,800-$4,500 | Quoted per boat |
 
 _Prices here are planning figures as of September 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 The "rigging premium for brand swap" line is the extra cost above a same-brand repower. If you were keeping Yamaha-to-Yamaha you'd skip this line and save roughly that amount. If you're switching brands, plan for it.
 
-Current Ontario CAD prices update seasonally. For your specific situation, build a quote at mercuryrepower.ca or email cowl plate photos to info@harrisboatworks.ca.
+Current Ontario CAD prices update seasonally. For your specific situation, build a quote at mercuryrepower.ca.
 
 The motor price is the easy number. The installed price is the honest one.
 

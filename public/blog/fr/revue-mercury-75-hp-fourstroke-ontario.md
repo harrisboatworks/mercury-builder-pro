@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/revue-mercury-75-hp-fourstroke-ontario.md
-last_updated: 2026-09-06
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury 75 HP FourStroke : pourquoi HBW ne le tient pas en stock (et pou
 description: "Une réponse honnête d'un concessionnaire Mercury en Ontario. Nous privilégions souvent le 90 HP quand la plaque de capacité le permet."
 category: "Avis produit"
 date_published: 2026-05-13
-date_modified: 2026-09-06
+date_modified: 2026-09-11
 keywords: ["revue Mercury 75 HP","Mercury 75 HP FourStroke","Mercury 75 vs 90","Mercury 75 ELPT Ontario","Mercury 90 mieux que 75"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Catégorie :** Avis produit\
 **Publié le :** 2026-05-13\
-**Dernière révision :** 2026-09-06\
+**Dernière révision :** 2026-09-11\
 **Temps de lecture :** 7 min\
 **URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/revue-mercury-75-hp-fourstroke-ontario
 
@@ -111,8 +111,6 @@ Si votre coque est cotée pour un maximum de 60 HP, vous êtes dans la conversat
 ## Bâtissez une soumission, sur le 90
 
 Si vous êtes venu ici en regardant le 75 et que cela a confirmé ce que vous soupçonniez, allez bâtir une soumission sur le 90 à mercuryrepower.ca. Vrais prix CAD, vraies configurations.
-
-Si vous avez une situation de plaque de capacité ou une question de moteur usagé, appelez-nous au 905-342-2153.
 
 Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
 

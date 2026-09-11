@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-pro-xs-buyer-guide-ontario.md
-last_updated: 2026-09-06
+last_updated: 2026-09-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Pro XS Buyer Guide for Ontario (2026)"
 description: "The canonical Mercury Pro XS buyer guide for Ontario boaters. 115-300 HP coverage, bass and tournament fishing applications, pontoon performance setups."
 category: "Buying Guide"
 date_published: 2026-05-17
-date_modified: 2026-09-06
+date_modified: 2026-09-10
 keywords: ["mercury pro xs buyer guide","mercury pro xs ontario","mercury pro xs pricing","mercury performance outboard"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-05-17  
-**Last reviewed:** 2026-09-06  
+**Last reviewed:** 2026-09-10  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-pro-xs-buyer-guide-ontario
 
@@ -121,21 +121,21 @@ If you've read this far and you're still trying to decide between Pro XS and Fou
 - Performance pontoon applications
 - You'd actually use the difference in horsepower delivery
 
-The pricing premium for Pro XS over the equivalent FourStroke runs roughly $1,500-$3,000 depending on HP class. That's the cost of the performance upgrade.
+There is no single price premium for Pro XS over FourStroke across the lineup. Compare current quotes for the exact models at the same horsepower, matching shaft length, controls and gearcase where applicable. Motor-only prices exclude HST and installation; rigging differences can change the installed-price gap.
 
 ## What an installed Pro XS costs in Ontario (2026)
 
-| HP | Typical installed cost (CAD, with HST) |
-|---|---|
-| 115 Pro XS | $17,000 - $21,500 |
-| 150 Pro XS | $20,500 - $26,500 |
-| 175 Pro XS V6 | $25,500 - $32,000 |
-| 200 Pro XS V8 | $27,500 - $34,500 |
-| 225 Pro XS V8 | $30,000 - $37,500 |
-| 250 Pro XS V8 | $33,000 - $41,000 |
-| 300 Pro XS V8 | $37,500 - $46,500 |
+| Motor | Bare motor today (CAD, before HST) | Add for rigging, controls, prop & install (estimate) |
+|---|---|---|
+| 115 Pro XS | $17,490–$18,299 | $2,500 to $4,000 |
+| 150 Pro XS | $24,349–$24,475 | $3,500 to $5,500 |
+| 175 Pro XS V6 | $27,891–$28,287 | $4,500 to $6,500 |
+| 200 Pro XS V8 | $28,122–$30,399 | $4,500 to $6,500 |
+| 225 Pro XS V8 | $34,029–$36,300 | $5,000 to $7,500 |
+| 250 Pro XS V8 | $34,848–$37,741 | Quoted per boat |
+| 300 Pro XS V8 | $36,542–$39,402 | Quoted per boat |
 
-These are general 2026 ranges. Your real installed price depends on existing rigging, prop spec, hydraulic steering requirements, and any harness work. [Browse every Mercury price](/pricing-reference) in CAD on our price reference, then build a real quote at mercuryrepower.ca.
+These are general 2026 ranges. Your real installed price depends on existing rigging, prop spec, hydraulic steering requirements, and any harness work. [Browse every Mercury price](/pricing-reference) in CAD on our price reference, then build a quote at mercuryrepower.ca for the exact installed total, HST extra.
 
 ## What we see at HBW
 
@@ -163,7 +163,7 @@ For tournament or competitive setups, call 905-342-2153 after building the basic
 
 ### Is Pro XS worth the premium over FourStroke?
 
-For tournament fishing, performance pontoons, water sports applications, and big-water running, yes. For cruising, family use, casual fishing, no. FourStroke is the better tool for most Ontario boaters.
+Pro XS may be worth the extra cost if you use its performance. There is no single price premium across the lineup: compare current quotes for the exact models, shaft length, controls and gearcase, then account for rigging and HST. FourStroke is usually the better fit for cruising, family use and casual fishing.
 
 ### What's the most popular Pro XS in Ontario?
 

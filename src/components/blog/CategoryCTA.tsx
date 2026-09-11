@@ -32,15 +32,10 @@ interface CategoryCTAProps {
   className?: string;
 }
 
-const PHONE_HREF = 'tel:+19053422153';
-const PHONE_LABEL = 'Call 905-342-2153';
-
 const primaryBtn =
   'inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold bg-repower-mercury-red text-white hover:bg-repower-mercury-red-deep transition no-underline';
 const secondaryBtn =
   'inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold border-2 border-white/80 text-white hover:bg-white hover:text-repower-navy-900 transition no-underline';
-const tertiaryLink =
-  'inline-flex items-center justify-center px-2 py-3 font-semibold text-white/90 hover:text-white underline-offset-4 hover:underline no-underline';
 
 function CardShell({
   heading,
@@ -77,14 +72,13 @@ export function CategoryCTA({ category, className }: CategoryCTAProps) {
   if (variant === 'service') {
     return (
       <CardShell
-        heading="Need a Tech to Look at It?"
-        body="Book service through HBW. Online intake is faster than the phone for most cases."
+        heading="Need Service in Gores Landing?"
+        body="Request service if you can bring your boat to our Gores Landing shop."
         className={className}
       >
         <a href="https://hbw.wiki/service" target="_blank" rel="noopener noreferrer" className={primaryBtn}>
           Book service
         </a>
-        <a href={PHONE_HREF} className={tertiaryLink}>{PHONE_LABEL}</a>
       </CardShell>
     );
   }
@@ -115,7 +109,6 @@ export function CategoryCTA({ category, className }: CategoryCTAProps) {
       >
         <Link to="/quote/motor-selection" className={primaryBtn}>Start your repower quote</Link>
         <Link to="/trade-in-value" className={secondaryBtn}>Review trade-in options</Link>
-        <a href={PHONE_HREF} className={tertiaryLink}>{PHONE_LABEL}</a>
       </CardShell>
     );
   }
@@ -123,12 +116,11 @@ export function CategoryCTA({ category, className }: CategoryCTAProps) {
   return (
     <CardShell
       heading="Ready to See Your Number?"
-      body="Build a quote, check trade value, or call us."
+      body="Build your quote online or review trade-in options."
       className={className}
     >
       <Link to="/quote/motor-selection" className={primaryBtn}>Build your quote</Link>
       <Link to="/trade-in-value" className={secondaryBtn}>Trade-in estimator</Link>
-      <a href={PHONE_HREF} className={tertiaryLink}>{PHONE_LABEL}</a>
     </CardShell>
   );
 }

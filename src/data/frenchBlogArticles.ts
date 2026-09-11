@@ -1299,7 +1299,7 @@ Pour les réparations de moteurs, nous ne servons que Mercury et Mercruiser.
     image: '/lovable-uploads/hero-mercury-repower-gta.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-13',
-    dateModified: '2026-09-07',
+    dateModified: '2026-09-11',
     publishDate: '2026-05-13',
     category: 'Guide d\'achat',
     readTime: '12 min',
@@ -1352,9 +1352,9 @@ Apportez les informations sur votre échange si vous en avez (année, heures, é
 
 Cette étape compte parce que la plupart des concessionnaires GTA ne donneront pas de prix ferme sans visite en personne. Le configurateur veut dire que **vous pouvez comparer le prix tout inclus de Harris Boat Works aux estimations de concessionnaires locaux sans devoir vous déplacer**.
 
-### Étape 2 : L'appel téléphonique (30 à 60 minutes)
+### Étape 2 : Confirmer votre soumission
 
-Si le chiffre du configurateur fonctionne, appelez au **905-342-2153**. Nous couvrirons :
+Si le chiffre du configurateur convient à votre projet, appelez au **905-342-2153** pour confirmer les détails de votre soumission avant de commander :
 
 - Confirmer la spécification du moteur (parfois, la longueur d'arbre demande une vérification sur le tableau arrière; nous vous guidons pour la mesure)
 - Passer en revue tout câblage optionnel (DTS, mise à niveau de la direction hydraulique, hélice en acier inoxydable)
@@ -1539,7 +1539,7 @@ Très variable. Un Mercury 150 de 5 ans à faible heures s'échange pour 5 500 $
     image: '/lovable-uploads/hero-mercury-90-shop-shot.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-13',
-    dateModified: '2026-09-06',
+    dateModified: '2026-09-11',
     publishDate: '2026-05-13',
     category: 'Avis produit',
     readTime: '7 min',
@@ -1656,7 +1656,7 @@ Pas significativement. Les chiffres exacts varient avec la tarification de [Merc
 
 Si vous êtes venu ici en regardant le 75 et que cela a confirmé ce que vous soupçonniez, allez bâtir une soumission sur le 90 à mercuryrepower.ca. Vrais prix CAD, vraies configurations.
 
-Si vous avez une situation de plaque de capacité ou une question de moteur usagé, appelez-nous au 905-342-2153.
+
 
 Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
 `,
@@ -1831,7 +1831,7 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
     imageAlt: 'Mercury 115 HP FourStroke on an aluminum fishing boat during a misty morning on an Ontario lake.',
     author: 'Harris Boat Works',
     datePublished: '2026-05-13',
-    dateModified: '2026-09-06',
+    dateModified: '2026-09-11',
     publishDate: '2026-05-13',
     category: 'Avis produit',
     readTime: '10 min',
@@ -2005,7 +2005,7 @@ Oui. Mercury offre le 115 Pro XS dans plusieurs configurations, dont une version
 
 Voyez le 115 ELPT, le 115 CT et le 115 Pro XS côte à côte à mercuryrepower.ca. Vrais prix CAD, vraies configurations.
 
-Questions sur la version qui convient à votre bateau? Appelez 905-342-2153 ou soumettez une demande de service à hbw.wiki/service.
+
 
 Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
 `,
@@ -2647,7 +2647,7 @@ Par Harris Boat Works, marina familiale depuis 1947 sur le lac Rice, concessionn
     imageAlt: 'Trois scènes de navigation en eau douce avec des hors-bord Mercury.',
     author: 'Harris Boat Works',
     datePublished: '2026-05-13',
-    dateModified: '2026-09-06',
+    dateModified: '2026-09-11',
     publishDate: '2026-05-13',
     category: "Guide d'achat",
     readTime: '10 min',
@@ -2662,7 +2662,7 @@ La gamme Mercury 2026 couvre quatre familles principales : FourStroke (2,5 à 30
 
 Nous sommes un concessionnaire Mercury. Nous le sommes depuis 1965. Voici une analyse honnête de concessionnaire de la gamme Mercury, pas un dépotoir de fiches techniques, mais la réponse pratique à "quel Mercury convient à mon bateau?"
 
-Les familles ci-dessous décrivent la gamme Mercury actuelle. Pour savoir ce qui est disponible pour votre bateau, bâtissez une soumission ou appelez.
+Les familles ci-dessous décrivent la gamme Mercury actuelle. Pour savoir ce qui est disponible pour votre bateau, bâtissez une soumission.
 
 ## Découpage des familles Mercury
 
@@ -2722,7 +2722,7 @@ Ce tableau est un point de départ, pas une prescription. Le bon HP pour votre c
 
 Tarification CAD en direct sur chaque famille Mercury (sauf Verado, qui est soumissionné individuellement) à [mercuryrepower.ca](https://www.mercuryrepower.ca). Le configurateur de soumission inclut moteur, gréement, commandes, hélice et installation, le chiffre complet, pas seulement l'autocollant du moteur.
 
-Si vous comparez FourStroke et Pro XS pour une coque spécifique, ou si vous avez besoin d'aide pour le dimensionnement de ponton et la configuration Command Thrust, appelez 905-342-2153.
+
 
 > **Une note sur la langue**
 > Cet article est disponible en français parce que nous voulons que l'information technique sur les moteurs Mercury rejoigne plus de clients. Nous nous efforçons d'offrir du contenu utile dans votre langue.
@@ -2825,7 +2825,7 @@ Harris Boat Works : entreprise familiale depuis 1947, concessionnaire Mercury de
     image: '/lovable-uploads/hero-mercury-motor-families.png',
     author: 'Harris Boat Works',
     datePublished: '2026-06-08',
-    dateModified: '2026-08-02',
+    dateModified: '2026-09-11',
     publishDate: '2026-06-08',
     category: 'Guide d\'achat',
     readTime: '7 min',
@@ -2875,7 +2875,7 @@ Oubliez les débats de fidélité de marque. Posez trois questions :
 
 On vend du Mercury. La section sur Mercury n'a pas été écrite par la Suisse. La comparaison doit quand même rester honnête, alors la voici : la plupart des gens sur le lac Rice sont bien servis par un FourStroke. Le Pro XS si vous chassez la performance. Le Verado si vous avez un plus gros bateau et voulez du raffinement (et un coup de téléphone, puisqu'on le commande spécialement). Adaptez le moteur à votre coque et à votre usage réel, pas à l'opinion la plus forte à la rampe de mise à l'eau.
 
-**Vous voulez le vrai prix d'un FourStroke ou d'un Pro XS ? [Obtenez une soumission en 2 minutes](https://www.mercuryrepower.ca)**, ou appelez le 905-342-2153 et on l'adaptera à votre bateau, Verado compris.
+**Vous voulez le vrai prix d'un FourStroke ou d'un Pro XS ? [Obtenez une soumission en 2 minutes](https://www.mercuryrepower.ca)**.
 
 Harris Boat Works : entreprise familiale depuis 1947, concessionnaire Mercury depuis 1965, et actuellement concessionnaire Mercury Premier. Gores Landing, Ontario, sur le lac Rice.`,
     faqs: [
@@ -2892,7 +2892,7 @@ Harris Boat Works : entreprise familiale depuis 1947, concessionnaire Mercury de
     imageAlt: 'Poids sec publié, équipements et fluides à ajouter, puis vérification des limites de la coque.',
     author: 'Harris Boat Works',
     datePublished: '2026-06-08',
-    dateModified: '2026-09-06',
+    dateModified: '2026-09-11',
     publishDate: '2026-06-08',
     category: 'Guide d\'achat',
     readTime: '6 min',
@@ -2947,7 +2947,7 @@ La plupart des regrets de remotorisation viennent de deux choses : trop de puiss
 
 Si vous remotorisez et que vous n'êtes pas certain que votre tableau arrière peut porter l'équivalent moderne de votre ancien moteur, c'est exactement le genre de chose qu'on vérifie avant de faire une soumission.
 
-**Obtenez une vraie soumission de remotorisation, moteur, poids, gréage et tout, sur [mercuryrepower.ca](https://www.mercuryrepower.ca)**, ou appelez le 905-342-2153.
+**Obtenez une vraie soumission de remotorisation, moteur, poids, gréage et tout, sur [mercuryrepower.ca](https://www.mercuryrepower.ca)**.
 
 Harris Boat Works : entreprise familiale depuis 1947, concessionnaire Mercury depuis 1965, et actuellement concessionnaire Mercury Premier. Gores Landing, Ontario, sur le lac Rice.`,
     faqs: [

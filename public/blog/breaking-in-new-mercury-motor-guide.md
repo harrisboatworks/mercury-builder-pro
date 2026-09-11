@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/breaking-in-new-mercury-motor-guide.md
-last_updated: 2026-09-06
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "How to Break In a New Mercury Outboard"
 description: "Mercury outboard break-in: follow the manual for your model, avoid common mistakes, and understand scheduled service and HBW's optional early check."
 category: "New Owner"
 date_published: 2024-02-20
-date_modified: 2026-09-06
+date_modified: 2026-09-11
 keywords: ["mercury motor break in","new outboard break in procedure","mercury break in period","outboard motor break in","new boat motor care"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** New Owner  
 **Published:** 2024-02-20  
-**Last reviewed:** 2026-09-06  
+**Last reviewed:** 2026-09-11  
 **Read time:** 7 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/breaking-in-new-mercury-motor-guide
 
@@ -165,7 +165,7 @@ Plan the fishing trip around the throttle, load and duration limits in your owne
 
 ### Is the break-in procedure different for a 2-stroke vs 4-stroke Mercury?
 
-The general principle, vary your throttle and avoid sustained full power, applies to both, but the specifics differ. Modern Mercury FourStrokes come from the factory pre-filled with the correct oil; there is no fuel-oil mixing and no special break-in oil required. Older Mercury 2-stroke engines required specific oil ratios during break-in. If you have a used 2-stroke Mercury and are unsure about its break-in history, call 905-342-2153 for model-specific advice.
+The general principle, vary your throttle and avoid sustained full power, applies to both, but the specifics differ. Modern Mercury FourStrokes come from the factory pre-filled with the correct oil; there is no fuel-oil mixing and no special break-in oil required. Older Mercury 2-stroke engines required specific oil ratios during break-in.
 
 ### Do I need to use Mercury-branded oil during break-in?
 

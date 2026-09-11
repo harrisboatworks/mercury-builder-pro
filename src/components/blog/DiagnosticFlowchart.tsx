@@ -96,7 +96,7 @@ export function DiagnosticFlowchart({
   escalation,
 }: DiagnosticFlowchartProps) {
   return (
-    <div className="my-8 w-full rounded-xl border-2 border-repower-navy-900 bg-white shadow-sm overflow-hidden">
+    <div data-diagnostic-flow className="my-8 w-full rounded-xl border-2 border-repower-navy-900 bg-white shadow-sm overflow-hidden">
       <div className="px-6 pt-6 md:px-8 md:pt-8">
         {eyebrow ? (
           <div className="text-[11px] uppercase tracking-[0.14em] font-medium text-muted-foreground mb-2">
@@ -123,7 +123,7 @@ export function DiagnosticFlowchart({
         ))}
       </div>
       {escalation ? (
-        <div className="bg-repower-navy-900 text-white border-t border-repower-navy-900/15 px-6 py-5 md:px-8">
+        <div data-diagnostic-escalation className="bg-repower-navy-900 text-white border-t border-repower-navy-900/15 px-6 py-5 md:px-8">
           <div className="flex items-start gap-3">
             <Wrench className="h-5 w-5 mt-0.5 flex-shrink-0 text-white" aria-hidden="true" />
             <div>

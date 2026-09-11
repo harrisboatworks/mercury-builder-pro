@@ -18,9 +18,42 @@ import { checkRateLimit } from "../_shared/rate-limit.ts";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
-  "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
+  "Access-Control-Allow-Headers":
+    "authorization, x-client-info, apikey, content-type, x-elevenlabs-mcp-secret",
   "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
 };
+
+const ELEVENLABS_MCP_SECRET_HEADER = "x-elevenlabs-mcp-secret";
+
+function unauthorizedMcpResponse(): Response {
+  return new Response(JSON.stringify({ error: "Unauthorized" }), {
+    status: 401,
+    headers: { ...corsHeaders, "Content-Type": "application/json" },
+  });
+}
+
+async function secretsMatch(provided: string, expected: string): Promise<boolean> {
+  const encoder = new TextEncoder();
+  const [left, right] = await Promise.all([
+    crypto.subtle.digest("SHA-256", encoder.encode(provided)),
+    crypto.subtle.digest("SHA-256", encoder.encode(expected)),
+  ]);
+  const a = new Uint8Array(left);
+  const b = new Uint8Array(right);
+  let difference = 0;
+  for (let i = 0; i < a.length; i += 1) difference |= a[i] ^ b[i];
+  return difference === 0;
+}
+
+async function rejectIfMissingElevenLabsSecret(req: Request): Promise<Response | null> {
+  const expected = Deno.env.get("ELEVENLABS_MCP_SECRET") ?? "";
+  if (!expected) return unauthorizedMcpResponse();
+  const provided = req.headers.get(ELEVENLABS_MCP_SECRET_HEADER) ?? "";
+  if (!provided || !(await secretsMatch(provided, expected))) {
+    return unauthorizedMcpResponse();
+  }
+  return null;
+}
 
 /**
  * Resolve the customer-facing selling price using the standard hierarchy:
@@ -556,7 +589,7 @@ async function executeTool(
         engine_type: args.engine_type as string | undefined,
         model: args.model as string | undefined,
       });
-      if (!architecture && (args.engine_type || !args.model)) {
+      if (!architecture) {
         return {
           content: [{
             type: "text",
@@ -1139,11 +1172,13 @@ ${motor1.horsepower > motor2.horsepower ? `The ${motor1.model_display} has more 
     }
     
     case "get_store_hours": {
-      const { profile } = await fetchPublishedBusinessProfile();
+      const { profile, published } = await fetchPublishedBusinessProfile();
       return { 
         content: [{ 
           type: "text", 
-          text: buildBusinessCustomerAnswer(profile, "What are your current store hours?"),
+          text: published
+            ? buildBusinessCustomerAnswer(profile, "What are your current store hours?")
+            : "I can't verify the current store hours right now. Please check https://www.mercuryrepower.ca/contact or call Harris Boat Works at (905) 342-2153 before travelling.",
         }] 
       };
     }
@@ -1317,6 +1352,9 @@ serve(async (req) => {
   if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
   }
+
+  const denied = await rejectIfMissingElevenLabsSecret(req);
+  if (denied) return denied;
 
   const url = new URL(req.url);
   console.log(`[MCP Streamable HTTP] ${req.method} ${url.pathname}`);
