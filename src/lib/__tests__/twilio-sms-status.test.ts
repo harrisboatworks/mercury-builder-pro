@@ -67,7 +67,7 @@ describe('Twilio status callback URL', () => {
   });
 
   it('keeps retry overrides outside the URL signed by Twilio', async () => {
-    const configuredUrl = new URL(buildSmsStatusCallbackUrl(SUPABASE_URL, SMS_LOG_ID)!);
+    const configuredUrl = new URL(buildSmsStatusCallbackUrl(WEBHOOK_URL, SMS_LOG_ID)!);
     expect(configuredUrl.hash).toBe('#rp=ct,rt,5xx&rc=2');
     configuredUrl.hash = '';
     const body = new URLSearchParams({
