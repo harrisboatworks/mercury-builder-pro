@@ -1299,7 +1299,6 @@ const AdminQuoteDetail = () => {
               ) : customerQuoteId ? (
                 <SendQuoteEmail
                   quoteId={customerQuoteId}
-                  savedQuoteId={savedQuoteDealId}
                   customerName={q.customer_name}
                   customerEmail={q.customer_email}
                   motorModel={q.quote_data?.motor?.model || 'Mercury Motor'}

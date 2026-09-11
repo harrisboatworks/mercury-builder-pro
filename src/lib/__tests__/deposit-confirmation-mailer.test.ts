@@ -26,7 +26,7 @@ import {
   sendResendEmailWithIdempotency,
   simulateConcurrentClaims,
 } from '../../../supabase/functions/_shared/deposit-email-deliveries.ts';
-import { authenticatedBrowserCors } from '../../../supabase/functions/_shared/origin-check.ts';
+import { authenticatedBrowserCors } from '#edge-deno/origin-check';
 import {
   MAX_QUOTE_DOCUMENT_BYTES,
   assertCanonicalPaidQuoteDocument,
