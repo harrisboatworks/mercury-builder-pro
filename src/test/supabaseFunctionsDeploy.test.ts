@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'vitest';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 import {
   deployFunctionSlugs,
   deployWithMigrationGate,
@@ -31,6 +31,10 @@ const files = {
   'supabase/functions/ai-chatbot/index.ts': 'export {}',
   'supabase/functions/_shared/cors.ts': 'export const corsHeaders = {};',
 };
+
+beforeEach(() => {
+  vi.stubEnv('SUPABASE_EDGE_SECRET_NAMES', 'TWILIO_WEBHOOK_URL');
+});
 
 describe('function slug safety', () => {
   it('accepts real slugs and rejects _shared, paths, and flags', () => {
@@ -1309,5 +1313,65 @@ describe('public pair release holds', () => {
       }),
     ]);
     expect(dispatched[1].requiredMigrations).toEqual([]);
+  });
+});
+
+describe('TWILIO_WEBHOOK_URL deploy preflight', () => {
+  it('fails closed for send-sms and notification-webhook when the secret name is missing', async () => {
+    const seen: string[] = [];
+    const { succeeded, failed } = await deployWithMigrationGate({
+      functions: [
+        { slug: 'send-sms', requiredMigrations: [] },
+        { slug: 'notification-webhook', requiredMigrations: [] },
+        { slug: 'hbw-valuation-proxy', requiredMigrations: [] },
+      ],
+      listAppliedVersions: () => [],
+      secretNames: ['TWILIO_AUTH_TOKEN'],
+      deployOne: (slug: string) => {
+        seen.push(slug);
+        return { ok: true, detail: 'ok' };
+      },
+    });
+    expect(seen).toEqual(['hbw-valuation-proxy']);
+    expect(succeeded.map((item) => item.slug)).toEqual(['hbw-valuation-proxy']);
+    expect(failed.map((item) => item.slug).sort()).toEqual(['notification-webhook', 'send-sms']);
+    expect(failed.every((item) => String(item.detail).includes('TWILIO_WEBHOOK_URL is missing'))).toBe(true);
+  });
+
+  it('fails closed when the secret-name list is unreadable', async () => {
+    const seen: string[] = [];
+    const { failed } = await deployWithMigrationGate({
+      functions: [{ slug: 'notification-webhook', requiredMigrations: [] }],
+      listAppliedVersions: () => [],
+      listSecretNames: async () => {
+        throw new Error('secrets list unavailable');
+      },
+      deployOne: (slug: string) => {
+        seen.push(slug);
+        return { ok: true, detail: 'ok' };
+      },
+    });
+    expect(seen).toEqual([]);
+    expect(failed).toHaveLength(1);
+    expect(String(failed[0].detail)).toMatch(/secret-name list is unreadable/);
+  });
+
+  it('deploys the pair when TWILIO_WEBHOOK_URL is present by name', async () => {
+    const seen: string[] = [];
+    const { succeeded, failed } = await deployWithMigrationGate({
+      functions: [
+        { slug: 'send-sms', requiredMigrations: [] },
+        { slug: 'notification-webhook', requiredMigrations: [] },
+      ],
+      listAppliedVersions: () => [],
+      secretNames: ['TWILIO_AUTH_TOKEN', 'TWILIO_WEBHOOK_URL'],
+      deployOne: (slug: string) => {
+        seen.push(slug);
+        return { ok: true, detail: 'ok' };
+      },
+    });
+    expect(seen).toEqual(['send-sms', 'notification-webhook']);
+    expect(succeeded.map((item) => item.slug)).toEqual(['send-sms', 'notification-webhook']);
+    expect(failed).toEqual([]);
   });
 });

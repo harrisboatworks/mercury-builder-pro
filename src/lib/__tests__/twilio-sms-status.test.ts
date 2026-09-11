@@ -239,7 +239,7 @@ describe('send-sms records the outbound MessageSid', () => {
     vi.unstubAllGlobals();
   });
 
-  it('pre-inserts the outbox row, sets a SUPABASE_URL callback, and persists the SID', async () => {
+  it('pre-inserts the outbox row, sets a TWILIO_WEBHOOK_URL callback, and persists the SID', async () => {
     const fetchSpy = vi.fn(async (input: RequestInfo | URL, init?: RequestInit) => {
       const url = requestUrl(input);
       const method = ((typeof input === 'object' && input && 'method' in input && input.method)

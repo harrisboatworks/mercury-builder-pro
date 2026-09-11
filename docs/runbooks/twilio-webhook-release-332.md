@@ -62,7 +62,7 @@ If the secret is missing or not that exact URL, callbacks fail closed (`503` “
 
 After this PR merges, deploy `send-sms` and `notification-webhook` **together**. One-sided deploy splits signing (new URL) from send-sms callback construction (or the reverse).
 
-These two slugs are **not** in the `#538` pair-hold set. The workflow still never applies migrations. The tracking migration is already applied by name, so the deploy job must not treat it as unapplied.
+These two slugs are **not** in the `#538` pair-hold set. Deploy still fails closed when `TWILIO_WEBHOOK_URL` is absent from the Edge secret-name list (`SUPABASE_EDGE_SECRET_NAMES` or `listSecretNames`). The workflow still never applies migrations. The tracking migration is already applied by name, so the deploy job must not treat it as unapplied.
 
 Do not send live Twilio messages as proof. Source verification is the HMAC suite plus Edge typecheck.
 

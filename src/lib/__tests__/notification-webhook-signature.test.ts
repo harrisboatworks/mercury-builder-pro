@@ -295,6 +295,90 @@ describe('notification webhook handler', () => {
     expect(response.status).toBe(503);
     expect(onVerified).not.toHaveBeenCalled();
   });
+
+  it('fails closed without TWILIO_WEBHOOK_URL and does not write', async () => {
+    const onVerified = vi.fn();
+    const response = await handleNotificationWebhook(
+      await signedRequest(),
+      { authToken: AUTH_TOKEN, configuredWebhookUrl: '', onVerified },
+    );
+    expect(response.status).toBe(503);
+    expect(onVerified).not.toHaveBeenCalled();
+  });
+
+  it('rejects http configured URLs and query/hash on the canonical base', () => {
+    expect(resolveConfiguredTwilioWebhookUrl('http://eutsoqdpjurknjsshxes.supabase.co/functions/v1/notification-webhook')).toBeNull();
+    expect(resolveConfiguredTwilioWebhookUrl(`${WEBHOOK_URL}?sms_log_id=${SMS_LOG_ID}`)).toBeNull();
+    expect(resolveConfiguredTwilioWebhookUrl(`${WEBHOOK_URL}#rp=ct,rt,5xx&rc=2`)).toBeNull();
+  });
+
+  it('returns 405 for non-POST methods other than OPTIONS', async () => {
+    const onVerified = vi.fn();
+    const response = await handleNotificationWebhook(
+      new Request(WEBHOOK_URL, { method: 'GET' }),
+      { authToken: AUTH_TOKEN, configuredWebhookUrl: WEBHOOK_URL, onVerified },
+    );
+    expect(response.status).toBe(405);
+    expect(onVerified).not.toHaveBeenCalled();
+  });
+
+  it('returns 413 and does not write when the body exceeds 16 KiB', async () => {
+    const onVerified = vi.fn();
+    const oversized = `MessageSid=${MESSAGE_SID}&MessageStatus=delivered&Pad=${'x'.repeat(20_000)}`;
+    const response = await handleNotificationWebhook(
+      new Request(WEBHOOK_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+          'X-Twilio-Signature': 'aaaaaaaaaaaaaaaaaaaaaaaaaaa=',
+        },
+        body: oversized,
+      }),
+      { authToken: AUTH_TOKEN, configuredWebhookUrl: WEBHOOK_URL, onVerified },
+    );
+    expect(response.status).toBe(413);
+    expect(onVerified).not.toHaveBeenCalled();
+  });
+
+  it('rejects conflicting repeated MessageSid values', async () => {
+    const body = formBody([
+      ['MessageSid', MESSAGE_SID],
+      ['MessageSid', 'SM00000000000000000000000000000000'],
+      ['MessageStatus', 'delivered'],
+    ]);
+    const signature = await computeTwilioSignature(
+      AUTH_TOKEN,
+      WEBHOOK_URL,
+      parseTwilioFormBody(body),
+    );
+    await expect(decideNotificationWebhook({
+      signature,
+      rawBody: body,
+      authToken: AUTH_TOKEN,
+      webhookUrl: WEBHOOK_URL,
+    })).resolves.toEqual({
+      ok: false,
+      status: 400,
+      error: 'Conflicting MessageSid values',
+    });
+  });
+
+  it('maps storage outcomes the way Twilio retries expect', async () => {
+    const cases = [
+      { status: 200, body: { applied: false }, kind: 'stale' },
+      { status: 503, body: { error: 'not_found' }, kind: 'not_found' },
+      { status: 409, body: { error: 'sid_conflict' }, kind: 'sid_conflict' },
+    ] as const;
+    for (const item of cases) {
+      const onVerified = vi.fn(async () => new Response(JSON.stringify(item.body), { status: item.status }));
+      const response = await handleNotificationWebhook(
+        await signedRequest(),
+        { authToken: AUTH_TOKEN, configuredWebhookUrl: WEBHOOK_URL, onVerified },
+      );
+      expect(response.status).toBe(item.status);
+      expect(onVerified).toHaveBeenCalledTimes(1);
+    }
+  });
 });
 
 describe('Twilio webhook source contracts', () => {

@@ -41,6 +41,10 @@
  *   SUPABASE_ACCESS_TOKEN     required by the CLI (workflow gates this)
  *   SUPABASE_PROJECT_REF      optional; otherwise supabase/config.toml project_id
  *   SUPABASE_CLI              optional binary name (default: supabase)
+ *   SUPABASE_EDGE_SECRET_NAMES
+ *                             comma/space-separated Edge secret **names** only.
+ *                             send-sms + notification-webhook fail closed when
+ *                             TWILIO_WEBHOOK_URL is absent from this list.
  */
 
 import { execFileSync } from 'node:child_process';
@@ -66,6 +70,10 @@ import {
   skipReasonsForSelectedSlugs,
 } from './lib/public-function-release-guards.mjs';
 import { projectRefFromConfig, resolveProjectRef } from './lib/supabase-project-ref.mjs';
+import {
+  applyTwilioWebhookUrlPreflight,
+  parseEdgeSecretNames,
+} from './lib/twilio-webhook-deploy-preflight.mjs';
 
 export { projectRefFromConfig, resolveProjectRef };
 
@@ -394,15 +402,33 @@ export async function deployWithMigrationGate({
   log,
   releaseAttestations,
   releasePairs,
+  secretNames,
+  listSecretNames,
 } = {}) {
   const targets = functions.map((item) =>
     typeof item === 'string' ? { slug: item, requiredMigrations: [] } : item,
   );
   const selectedSlugs = targets.map((item) => item.slug);
+  let resolvedSecretNames = secretNames;
+  if (resolvedSecretNames === undefined && typeof listSecretNames === 'function') {
+    try {
+      resolvedSecretNames = await listSecretNames();
+    } catch {
+      resolvedSecretNames = null;
+    }
+  }
+  if (resolvedSecretNames === undefined) {
+    resolvedSecretNames = parseEdgeSecretNames(
+      env.SUPABASE_EDGE_SECRET_NAMES ?? process.env.SUPABASE_EDGE_SECRET_NAMES,
+    );
+  }
+
+  const withTwilioPreflight = (preconditionSkipBySlug) =>
+    applyTwilioWebhookUrlPreflight(preconditionSkipBySlug, selectedSlugs, resolvedSecretNames);
 
   const deployGuarded = (preconditionSkipBySlug, extra) => {
     const reasons = skipReasonsForSelectedSlugs(selectedSlugs, {
-      preconditionSkipBySlug,
+      preconditionSkipBySlug: withTwilioPreflight(preconditionSkipBySlug),
       attestations: releaseAttestations,
       pairs: releasePairs,
       env,
