@@ -1,10 +1,11 @@
 // @vitest-environment node
 import { execFileSync } from 'node:child_process';
-import { existsSync, mkdtempSync, readFileSync, rmSync } from 'node:fs';
+import { mkdtempSync, readFileSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { afterAll, beforeAll, beforeEach, describe, expect, it } from 'vitest';
 import { CRON_AUTH_CALLER_MIGRATION_PATH } from '../../../scripts/lib/cron-auth-release-prerequisites.mjs';
+import { requirePostgres17Bin, resolvePostgres17Bin } from '../../../scripts/lib/local-postgres17.mjs';
 
 const source = readFileSync(CRON_AUTH_CALLER_MIGRATION_PATH, 'utf8');
 // Execute the actual migration DO block. pg_cron/pg_net are replaced by fake
@@ -22,13 +23,8 @@ const command = (i: number, option = '') => `SELECT net.http_post(
   body := '{}'::jsonb${option}
 ) AS request_id;`;
 
-function postgresBin(): string | undefined {
-  try {
-    const dir = execFileSync('pg_config', ['--bindir'], { encoding: 'utf8' }).trim();
-    if (['initdb', 'pg_ctl', 'psql'].every((name) => existsSync(join(dir, name)))) return dir;
-  } catch { /* PostgreSQL is an optional local test prerequisite. */ }
-}
-const bin = postgresBin();
+const requirePg = process.env.CRON_AUTH_REQUIRE_PG === '1';
+const bin = requirePg ? requirePostgres17Bin() : resolvePostgres17Bin() || undefined;
 
 it('keeps both deployment prerequisites unresolved while the migration is only proposed', () => {
   for (const slug of slugs) {
@@ -38,8 +34,8 @@ it('keeps both deployment prerequisites unresolved while the migration is only p
   expect(source).not.toMatch(/eyJ[A-Za-z0-9_-]{10,}/);
 });
 
-// pg_config + server binaries are required. Missing binaries skip explicitly;
-// the runbook records the required local PostgreSQL validation before review.
+// Official PostgreSQL 17 (PGDG apt or Homebrew). CRON_AUTH_REQUIRE_PG=1 fails
+// closed instead of skipping. A skipped run is not migration acceptance.
 describe.skipIf(!bin)('actual caller migration in disposable PostgreSQL', () => {
   let dir: string;
   let started = false;
@@ -110,6 +106,7 @@ INSERT INTO cron.job(jobid,jobname,schedule,command,active) VALUES
     ['duplicate job', 'INSERT INTO cron.job SELECT 4,jobname,schedule,command,active,database,username FROM cron.job WHERE jobid=1;'],
     ['extra caller', "INSERT INTO cron.job SELECT 4,'unexpected',schedule,command,active,database,username FROM cron.job WHERE jobid=1;"],
     ['second schedule drift rolls first back', "UPDATE cron.job SET schedule='1 1 * * *' WHERE jobid=2;"],
+    ['first schedule drift rolls neither job', "UPDATE cron.job SET schedule='1 1 * * *' WHERE jobid=1;"],
   ])('rejects %s atomically', (_name, mutate) => { sql(mutate); rejectWithoutChanges(); });
 
   it.each([
@@ -138,6 +135,14 @@ INSERT INTO cron.job(jobid,jobname,schedule,command,active) VALUES
     sql("UPDATE vault.secrets SET name='CRON_SECRET';"); sql(migration);
     sql(snapshot()[0].command);
     expect(sql("SELECT headers->>'x-internal-secret' FROM net.calls;").trim()).toBe('fixture-internal-secret');
+  });
+  it('prefers EDGE_INTERNAL_SECRET when both proposed Vault names exist', () => {
+    sql("INSERT INTO vault.secrets VALUES ('CRON_SECRET','fixture-cron-fallback');");
+    sql(migration);
+    sql(snapshot()[0].command);
+    expect(sql("SELECT headers->>'x-internal-secret' FROM net.calls;").trim()).toBe('fixture-internal-secret');
+    expect(snapshot()[0].command).toContain("'EDGE_INTERNAL_SECRET'");
+    expect(snapshot()[0].command).not.toContain("'CRON_SECRET'");
   });
   it.each([
     ['missing', 'DELETE FROM vault.secrets;'],
