@@ -4,7 +4,7 @@ PR 371, isolated worktree `mercury-deposit-recovery-main-5406efd`, branch `curso
 
 Feature HEAD: `0696eb91f650382290bcc48fa63d69189fd36efd`. Prior harness commits: `b90f6e68`, `c2a3c22b`, `674915a3`. This document is the acceptance artifact after the Kimi K3 follow-up: quote `customerInfo` compatibility, orphan admin routing, already-paid outbox replay ownership, and deposit-only bound-identity scope.
 
-Live I/O: none. Synthetic fixtures only (`ada@example.com`, quote `11111111-1111-4111-8111-111111111111`, deal `22222222-2222-4222-8222-222222222222`). No Stripe, Resend, SMS, or remote Supabase. Homebrew's default datadir is never started.
+Live I/O: none. **Label: `[LOCAL-PG-SYNTHETIC]` / `[LOCAL-VITEST-SYNTHETIC]`**. Hosted isolated staging remains outstanding. Synthetic fixtures only (`ada@example.com`, quote `11111111-1111-4111-8111-111111111111`, deal `22222222-2222-4222-8222-222222222222`). No Stripe, Resend, SMS, or remote Supabase. Official PostgreSQL 17 (PGDG `postgresql-17` or Homebrew `postgresql@17`) is used for the disposable Unix-socket cluster. Homebrew's default datadir is never started.
 
 ## How to reproduce
 
@@ -32,7 +32,7 @@ The PostgreSQL harness creates one unique directory under ignored `.tmp/ddp-XXXX
 | Command | Result |
 | --- | --- |
 | `npm run test:deposit-acceptance` | **12/12 files, 111/111 tests passed** |
-| `npm run test:deposit-acceptance:pg` | **55/55 assertions passed**, unique dirs removed, no TCP |
+| `npm run test:deposit-acceptance:pg` | **114/114 `[LOCAL-PG-SYNTHETIC]` assertions** (includes binding uniqueness, concurrent binding race, fail/retry). Unique dirs removed, no TCP. Hosted isolated staging outstanding. |
 | `npm run test:deposit-acceptance:deno` | **exit 0** (Deno 2.9.5) |
 | `node scripts/run-deposit-deal-packet-acceptance.mjs` | **exit 0** |
 | `npm test` | **115 passed + 1 skipped files; 650 passed + 1 skipped tests** |

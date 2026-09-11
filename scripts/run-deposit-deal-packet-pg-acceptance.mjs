@@ -19,7 +19,9 @@ import process from "node:process";
 
 const repoRoot = process.cwd();
 const migrationRel = "supabase/migrations/20260823120000_deposit_deal_packet.sql";
+const bindingMigrationRel = "supabase/migrations/20260830193000_enforce_unique_deposit_checkout_bindings.sql";
 const migrationPath = path.join(repoRoot, migrationRel);
+const bindingMigrationPath = path.join(repoRoot, bindingMigrationRel);
 const bootstrapPath = path.join(repoRoot, "scripts/deposit-deal-packet-pg/bootstrap.sql");
 const fixturesPath = path.join(repoRoot, "scripts/deposit-deal-packet-pg/historical-fixtures.sql");
 const checksPath = path.join(repoRoot, "scripts/deposit-deal-packet-pg/checks.sql");
@@ -101,17 +103,24 @@ function run(command, args, options = {}) {
 function resolvePostgresBin() {
   const brew = run("brew", ["--prefix", "postgresql@17"], { allowFailure: true });
   const prefix = brew.status === 0 ? brew.stdout.trim() : "";
+  const pgConfig = run("pg_config", ["--bindir"], { allowFailure: true });
+  const pgConfigDir = pgConfig.status === 0 ? pgConfig.stdout.trim() : "";
+  const extra = String(process.env.POSTGRES_17_BIN || "").trim();
   const candidates = [
+    extra,
+    pgConfigDir,
+    "/usr/lib/postgresql/17/bin",
+    "/usr/pgsql-17/bin",
     prefix ? path.join(prefix, "bin") : "",
     "/opt/homebrew/opt/postgresql@17/bin",
     "/usr/local/opt/postgresql@17/bin",
   ].filter(Boolean);
   for (const dir of candidates) {
-    if (existsSync(path.join(dir, "pg_ctl")) && existsSync(path.join(dir, "psql"))) {
+    if (existsSync(path.join(dir, "initdb")) && existsSync(path.join(dir, "pg_ctl")) && existsSync(path.join(dir, "psql"))) {
       return dir;
     }
   }
-  fail("postgresql@17 binaries were not found; install with brew install postgresql@17");
+  fail("PostgreSQL 17 server binaries were not found; install official postgresql-17 / postgresql-client-17 or brew install postgresql@17");
 }
 
 function bin(name) {
@@ -366,6 +375,7 @@ function assertNoTcpListener() {
 
 try {
   if (!existsSync(migrationPath)) fail(`missing unmodified migration ${migrationRel}`);
+  if (!existsSync(bindingMigrationPath)) fail(`missing unmodified migration ${bindingMigrationRel}`);
   if (port === 5432) fail("refusing default PostgreSQL port 5432");
 
   binDir = resolvePostgresBin();
@@ -412,6 +422,7 @@ logging_collector = off
   psql(bootstrapPath, true);
   psql(fixturesPath, true);
   psql(migrationPath, true);
+  psql(bindingMigrationPath, true);
   psql(checksPath, true);
 
   const raced = await Promise.all([spawnClaim(tokenX), spawnClaim(tokenY)]);
@@ -527,6 +538,129 @@ logging_collector = off
     ${psqlLiteral(`socket=${socketDir} listen_addresses= empty port=${port}`)}
   );`);
 
+  const bindingReady = psqlValue(database, "SELECT public.deposit_checkout_binding_authority_ready()");
+  psql(`SELECT public.accept_record(
+    'binding_authority_ready_after_second_migration',
+    ${bindingReady === "t" ? "true" : "false"},
+    ${psqlLiteral(`ready=${bindingReady}`)}
+  );`);
+
+  const bindingSaved = "a1a1a1a1-a1a1-41a1-81a1-a1a1a1a1a1a1";
+  const bindingQuoteA = "b1b1b1b1-b1b1-41b1-81b1-b1b1b1b1b1b1";
+  const bindingQuoteB = "b2b2b2b2-b2b2-42b2-82b2-b2b2b2b2b2b2";
+  psql(`
+    SET ROLE service_role;
+    SELECT set_config('accept.role', 'service_role', false);
+    INSERT INTO public.saved_quotes (id, email, resume_token, quote_state)
+    VALUES ('${bindingSaved}', 'ada@example.com', 'binding-unique', '{}'::jsonb);
+    INSERT INTO public.customer_quotes (id, lead_source, quote_data)
+    VALUES (
+      '${bindingQuoteA}',
+      'deposit',
+      jsonb_build_object('saved_quote_id', '${bindingSaved}', 'stripe_session_id', 'cs_test_binding_a')
+    );
+  `);
+  const duplicateBinding = run(bin("psql"), [
+    "-v", "ON_ERROR_STOP=1", "-X", "-q", "-d", database, "-c",
+    `SET ROLE service_role; SELECT set_config('accept.role', 'service_role', false);
+     INSERT INTO public.customer_quotes (id, lead_source, quote_data)
+     VALUES (
+       '${bindingQuoteB}',
+       'deposit',
+       jsonb_build_object('saved_quote_id', '${bindingSaved}', 'stripe_session_id', 'cs_test_binding_b')
+     );`,
+  ], { env: envForSocket(), allowFailure: true });
+  const duplicateRejected = duplicateBinding.status !== 0
+    && /uq_customer_quotes_deposit_saved_quote|duplicate key/i.test(`${duplicateBinding.stderr || ""}${duplicateBinding.stdout || ""}`);
+  psql(`SELECT public.accept_record(
+    'duplicate_deposit_saved_quote_binding_rejected',
+    ${duplicateRejected ? "true" : "false"},
+    ${psqlLiteral(`status=${duplicateBinding.status} ${(duplicateBinding.stderr || "").slice(0, 160)}`)}
+  );`);
+
+  const raceSaved = "c1c1c1c1-c1c1-41c1-81c1-c1c1c1c1c1c1";
+  psql(`
+    SET ROLE service_role;
+    SELECT set_config('accept.role', 'service_role', false);
+    INSERT INTO public.saved_quotes (id, email, resume_token, quote_state)
+    VALUES ('${raceSaved}', 'ada@example.com', 'binding-race', '{}'::jsonb);
+  `);
+  const bindingInsertSql = (quoteId, sessionId) => `
+    SET ROLE service_role;
+    SELECT set_config('accept.role', 'service_role', false);
+    INSERT INTO public.customer_quotes (id, lead_source, quote_data)
+    VALUES (
+      '${quoteId}',
+      'deposit',
+      jsonb_build_object('saved_quote_id', '${raceSaved}', 'stripe_session_id', '${sessionId}')
+    );
+    SELECT 1;
+  `;
+  const bindingRaced = await Promise.all([
+    spawnSqlSession(bindingInsertSql("d1d1d1d1-d1d1-41d1-81d1-d1d1d1d1d1d1", "cs_test_race_a")).finished,
+    spawnSqlSession(bindingInsertSql("d2d2d2d2-d2d2-42d2-82d2-d2d2d2d2d2d2", "cs_test_race_b")).finished,
+  ]);
+  const bindingWinners = bindingRaced.filter((result) => result.status === 0);
+  const bindingLosers = bindingRaced.filter((result) => result.status !== 0);
+  const bindingRaceOk = bindingWinners.length === 1 && bindingLosers.length === 1;
+  psql(`SELECT public.accept_record(
+    'concurrent_deposit_saved_quote_binding_one_winner',
+    ${bindingRaceOk ? "true" : "false"},
+    ${psqlLiteral(bindingRaced.map((result, index) => `session${index + 1} status=${result.status}`).join("; "))}
+  );`);
+
+  const retryDeal = "e1e1e1e1-e1e1-41e1-81e1-e1e1e1e1e1e1";
+  const retrySaved = "e2e2e2e2-e2e2-42e2-82e2-e2e2e2e2e2e2";
+  const retryTokenA = "f1f1f1f1-f1f1-41f1-81f1-f1f1f1f1f1f1";
+  const retryTokenB = "f2f2f2f2-f2f2-42f2-82e2-f2f2f2f2f2f2";
+  const retryTokenC = "f3f3f3f3-f3f3-43f3-83f3-f3f3f3f3f3f3";
+  psql(`
+    SET ROLE service_role;
+    SELECT set_config('accept.role', 'service_role', false);
+    INSERT INTO public.saved_quotes (id, email, resume_token, quote_state)
+    VALUES ('${retrySaved}', 'ada@example.com', 'fail-retry', '{}'::jsonb);
+    INSERT INTO public.customer_quotes (id, lead_source, saved_quote_id, payment_status, quote_data)
+    VALUES ('${retryDeal}', 'deposit', '${retrySaved}', 'paid', '{}'::jsonb);
+    INSERT INTO public.deposit_email_deliveries (customer_quote_id, saved_quote_id, audience, status)
+    VALUES ('${retryDeal}', '${retrySaved}', 'customer', 'pending');
+  `);
+  const lastDataLine = (text) => String(text || "")
+    .split("\n")
+    .map((line) => line.trim())
+    .filter((line) => line && !/^SET\b/.test(line))
+    .at(-1) || "";
+  const firstClaim = lastDataLine(psqlValue(database, `
+    SET ROLE service_role;
+    SELECT set_config('accept.role', 'service_role', false);
+    SELECT status FROM public.claim_deposit_email_delivery('${retryDeal}'::uuid, 'customer', '${retryTokenA}'::uuid, 120);
+  `));
+  const failedDelivery = lastDataLine(psqlValue(database, `
+    SET ROLE service_role;
+    SELECT set_config('accept.role', 'service_role', false);
+    SELECT status FROM public.fail_deposit_email_delivery('${retryDeal}'::uuid, 'customer', '${retryTokenA}'::uuid, 'synthetic_provider_timeout');
+  `));
+  const secondClaim = lastDataLine(psqlValue(database, `
+    SET ROLE service_role;
+    SELECT set_config('accept.role', 'service_role', false);
+    SELECT status FROM public.claim_deposit_email_delivery('${retryDeal}'::uuid, 'customer', '${retryTokenB}'::uuid, 120);
+  `));
+  const completed = lastDataLine(psqlValue(database, `
+    SET ROLE service_role;
+    SELECT set_config('accept.role', 'service_role', false);
+    SELECT status FROM public.complete_deposit_email_delivery('${retryDeal}'::uuid, 'customer', '${retryTokenB}'::uuid, 're_synthetic_retry');
+  `));
+  const replayDenied = lastDataLine(psqlValue(database, `
+    SET ROLE service_role;
+    SELECT set_config('accept.role', 'service_role', false);
+    SELECT public.claim_deposit_email_delivery('${retryDeal}'::uuid, 'customer', '${retryTokenC}'::uuid, 120) IS NULL;
+  `));
+  const retryOk = firstClaim === "sending" && failedDelivery === "failed" && secondClaim === "sending" && completed === "sent" && replayDenied === "t";
+  psql(`SELECT public.accept_record(
+    'fail_then_retry_claim_completes_and_blocks_replay',
+    ${retryOk ? "true" : "false"},
+    ${psqlLiteral(`claim1=${firstClaim} fail=${failedDelivery} claim2=${secondClaim} complete=${completed} replay_denied=${replayDenied}`)}
+  );`);
+
   recordStagingSeedProofs();
   recordHostedBootstrapProofs();
   recordHostedShapeBootstrapProofs();
@@ -535,10 +669,12 @@ logging_collector = off
   const results = parseResults(copy.stdout || "");
   const failed = results.filter((row) => !row.passed);
 
-  console.log("PostgreSQL deposit deal-packet runtime acceptance");
+  console.log("[LOCAL-PG-SYNTHETIC] PostgreSQL deposit deal-packet runtime acceptance");
   console.log(`socket=${socketDir} port=${port} database=${database} tcp=off`);
   console.log(`cluster=${clusterDir}`);
   console.log(`migration=${migrationRel} (unmodified)`);
+  console.log(`binding_migration=${bindingMigrationRel} (unmodified)`);
+  console.log("evidence=LOCAL-PG-SYNTHETIC hosted_isolated_staging=outstanding");
   console.log(`assertions=${results.length} passed=${results.filter((row) => row.passed).length} failed=${failed.length}`);
   for (const row of results) {
     console.log(`${row.passed ? "PASS" : "FAIL"} ${row.name}${row.detail ? ` — ${row.detail}` : ""}`);
