@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-mercury-outboard-pontoon-boats.md
-last_updated: 2026-09-06
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Best Mercury for a Pontoon: HP by Length + Command Thrust"
 description: "Pontoon HP examples to compare by load and use: 60 CT, 90-115 CT, and 150. Gearcase choice and the boat's documented limits matter more than length."
 category: "Buying Guide"
 date_published: 2026-05-04
-date_modified: 2026-09-06
+date_modified: 2026-09-11
 keywords: ["mercury for pontoon boat","best pontoon outboard","pontoon motor hp","command thrust pontoon","mercury 115 pontoon","mercury 150 pontoon","rice lake pontoon"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-05-04  
-**Last reviewed:** 2026-09-06  
+**Last reviewed:** 2026-09-11  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-mercury-outboard-pontoon-boats
 
@@ -180,7 +180,7 @@ For full Boost eligibility detail by motor family and serial range, see our [Mer
 
 ## Ready to repower your pontoon?
 
-Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca). The system asks for your hull info and use case and recommends the right HP class and gearcase. Or call **905-342-2153**, we rig pontoons every week and can give you the honest answer for your specific hull.
+Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca). The system asks for your hull info and use case and recommends the right HP class and gearcase.
 
 ---
 

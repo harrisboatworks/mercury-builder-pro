@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-150-hp-fourstroke-pro-xs-review-ontario.md
-last_updated: 2026-07-28
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury 150 HP Review: FourStroke vs Pro XS"
 description: "An honest Mercury 150 HP review for Ontario, comparing the current FourStroke and Pro XS with exact specs, freshwater tests and candid buyer advice."
 category: "Mercury Buying Guides"
 date_published: 2026-07-26
-date_modified: 2026-07-28
+date_modified: 2026-09-11
 keywords: ["mercury 150 hp review","mercury 150 fourstroke review","mercury 150 pro xs review","mercury 150 fourstroke vs pro xs","mercury 150 real world performance","mercury 150 owner reviews","mercury 150 hp ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Mercury Buying Guides  
 **Published:** 2026-07-26  
-**Last reviewed:** 2026-07-28  
+**Last reviewed:** 2026-09-11  
 **Read time:** 18 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-150-hp-fourstroke-pro-xs-review-ontario
 
@@ -321,8 +321,6 @@ The 150 Pro XS is the right answer when the boat and owner will use what makes i
 The wrong answer is buying Pro XS because someone said it is secretly more horsepower, or buying the standard motor while expecting a Nitro bass-boat speed from a pontoon.
 
 Bring the actual boat into the decision.
-
-**Phone:** [905-342-2153](tel:+19053422153)
 
 **Address:** [5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0](https://www.google.com/maps/search/?api=1&query=5369+Harris+Boat+Works+Rd%2C+Gores+Landing%2C+ON+K0K+2E0)
 

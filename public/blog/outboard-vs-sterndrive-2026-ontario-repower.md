@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/outboard-vs-sterndrive-2026-ontario-repower.md
-last_updated: 2026-09-06
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Outboard vs Sterndrive 2026 Ontario"
 description: "Ontario sterndrive owners weighing a repower get an honest dealer's take on outboard vs. sterndrive in 2026, covering cost reality, market trends."
 category: "Mercury Outboards"
 date_published: 2026-03-05
-date_modified: 2026-09-06
+date_modified: 2026-09-11
 keywords: ["outboard vs sterndrive","repower","mercruiser","ontario","mercury"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Mercury Outboards  
 **Published:** 2026-03-05  
-**Last reviewed:** 2026-09-06  
+**Last reviewed:** 2026-09-11  
 **Read time:** ~12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/outboard-vs-sterndrive-2026-ontario-repower
 
@@ -251,7 +251,7 @@ Either way, you deserve a straight answer, not a sales pitch.
 
 [Start your quote at mercuryrepower.ca →](https://www.mercuryrepower.ca)
 
-Questions? Call us at 905-342-2153 or [request service at hbw.wiki/service](https://hbw.wiki/service).
+[Request service at hbw.wiki/service](https://hbw.wiki/service).
 
 *Harris Boat Works. Gores Landing, ON. Mercury Marine Premier Dealer.*
 

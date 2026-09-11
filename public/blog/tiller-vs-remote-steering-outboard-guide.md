@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/tiller-vs-remote-steering-outboard-guide.md
-last_updated: 2026-09-06
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Tiller vs Remote Steering Outboard: Which to Choose (2026)"
 description: "Choose tiller or remote from helm layout, how you handle the boat, and normal use. Kickers and solo transom fishing often stay tiller; console and family boats..."
 category: "Buying Guide"
 date_published: 2026-04-06
-date_modified: 2026-09-06
+date_modified: 2026-09-11
 keywords: ["tiller vs remote outboard","tiller steering boat","outboard remote steering","boat steering options","mercury tiller motor"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-04-06  
-**Last reviewed:** 2026-09-06  
+**Last reviewed:** 2026-09-11  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/tiller-vs-remote-steering-outboard-guide
 
@@ -186,7 +186,7 @@ We rig both at HBW. Specific recommendations depend on motor HP and how you use 
 
 ## Ready to choose?
 
-Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), live pricing in CAD with full configuration options for both tiller and remote. Or call **905-342-2153** and we'll walk through what's right for your boat.
+Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), live pricing in CAD with full configuration options for both tiller and remote.
 
 ---
 
@@ -222,7 +222,7 @@ Mercury does not currently offer fully electronic or steer-by-wire tiller system
 
 ### Is hydraulic steering worth it on a Mercury outboard, and what does it cost?
 
-There is no single horsepower cutoff that makes every cable or hydraulic system suitable. Check the steering manufacturer's application limits for the exact boat, engine and components. Hydraulic steering can improve steering effort and feel where an approved package is available. The cost adds roughly $800-$1,500 CAD to rigging cost depending on the system and installation. Harris Boat Works specs the right steering for your motor and hull during the rigging process, call 905-342-2153.
+There is no single horsepower cutoff that makes every cable or hydraulic system suitable. Check the steering manufacturer's application limits for the exact boat, engine and components. Hydraulic steering can improve steering effort and feel where an approved package is available. The cost adds roughly $800-$1,500 CAD to rigging cost depending on the system and installation. Harris Boat Works specs the right steering for your motor and hull during the rigging process.
 
 ### Which Mercury tiller motor is best for a 16-foot aluminum boat on a Kawartha lake?
 

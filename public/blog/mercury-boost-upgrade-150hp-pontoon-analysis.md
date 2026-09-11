@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-boost-upgrade-150hp-pontoon-analysis.md
-last_updated: 2026-09-06
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Boost and 150 HP Pontoons: Check Eligibility First"
 description: "Most standard Mercury 150 FourStroke pontoon motors are not on the published Boost retrofit list. Check the engine family and serial number before comparing..."
 category: "Performance"
 date_published: 2026-04-30
-date_modified: 2026-09-06
+date_modified: 2026-09-11
 keywords: ["mercury boost upgrade pontoon","mercury boost 150hp","mercury software upgrade"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Performance  
 **Published:** 2026-04-30  
-**Last reviewed:** 2026-09-06  
+**Last reviewed:** 2026-09-11  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-boost-upgrade-150hp-pontoon-analysis
 
@@ -77,7 +77,7 @@ Boost is a software upgrade on specific late-model Mercury motors. The math only
 - Mid-range acceleration is the specific concern
 - You understand that horsepower and top speed do not increase
 
-**Talk to us about Boost**
+**Check Boost eligibility**
 
 #### Boost is not the right lever
 
@@ -126,11 +126,9 @@ Price the 150 the same way our sales team sees it, real dealer pricing, no phone
 
 ---
 
-Wondering if Boost makes sense for your specific pontoon? We'll tell you straight. Call **905-342-2153** or build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**, the system will flag whether your motor is Boost-eligible.
+Build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**, the system will flag whether your motor is Boost-eligible.
 
-More often than not, the better upgrade is a prop and trim conversation, and that one's free to start.
-
-> **Want to see if your boat is a Boost candidate?** Try our [Boost Eligibility Checker](/tools#boost-eligibility). Couple of questions, instant answer on whether your motor is Boost-eligible. Or call [(905) 342-2153](tel:+19053422153) if you want to talk it through.
+> **Want to see if your boat is a Boost candidate?** Try our [Boost Eligibility Checker](/tools#boost-eligibility). Couple of questions, instant answer on whether your motor is Boost-eligible.
 
 ### Worth it? Run your own numbers.
 
@@ -139,8 +137,6 @@ Build a quote on the 150 and see the real cost, then check current financing if 
 [Build Your Quote](/quote/motor-selection)
 
 [See current financing offers](/promotions)
-
-905-342-2153
 
 ---
 

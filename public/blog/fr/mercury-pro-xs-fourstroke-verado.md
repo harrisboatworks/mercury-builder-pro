@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/mercury-pro-xs-fourstroke-verado.md
-last_updated: 2026-08-02
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Pro XS, FourStroke ou Verado : lequel choisir ?"
 description: "Pro XS, FourStroke ou Verado ? Ce qui distingue les trois familles Mercury, et lequel convient à votre bateau. Réponses franches d'un concessionnaire Mercury."
 category: "Guide d'achat"
 date_published: 2026-06-08
-date_modified: 2026-08-02
+date_modified: 2026-09-11
 keywords: ["Mercury Pro XS","Mercury FourStroke","Mercury Verado","comparaison moteur Mercury"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Catégorie :** Guide d'achat\
 **Publié le :** 2026-06-08\
-**Dernière révision :** 2026-08-02\
+**Dernière révision :** 2026-09-11\
 **Temps de lecture :** 7 min\
 **URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/mercury-pro-xs-fourstroke-verado
 
@@ -74,7 +74,7 @@ Oubliez les débats de fidélité de marque. Posez trois questions :
 
 On vend du Mercury. La section sur Mercury n'a pas été écrite par la Suisse. La comparaison doit quand même rester honnête, alors la voici : la plupart des gens sur le lac Rice sont bien servis par un FourStroke. Le Pro XS si vous chassez la performance. Le Verado si vous avez un plus gros bateau et voulez du raffinement (et un coup de téléphone, puisqu'on le commande spécialement). Adaptez le moteur à votre coque et à votre usage réel, pas à l'opinion la plus forte à la rampe de mise à l'eau.
 
-**Vous voulez le vrai prix d'un FourStroke ou d'un Pro XS ? [Obtenez une soumission en 2 minutes](https://www.mercuryrepower.ca)**, ou appelez le 905-342-2153 et on l'adaptera à votre bateau, Verado compris.
+**Vous voulez le vrai prix d'un FourStroke ou d'un Pro XS ? [Obtenez une soumission en 2 minutes](https://www.mercuryrepower.ca)**.
 
 Harris Boat Works : entreprise familiale depuis 1947, concessionnaire Mercury depuis 1965, et actuellement concessionnaire Mercury Premier. Gores Landing, Ontario, sur le lac Rice.
 

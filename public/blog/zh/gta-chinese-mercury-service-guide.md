@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/gta-chinese-mercury-service-guide.md
-last_updated: 2026-09-06
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "多伦多华人 Mercury 发动机维修保养完整指南：从机油到
 description: "多伦多华人 Mercury 发动机维修保养完整指南：保养周期、机油、火花塞、水泵、磁电、冬储、大修，由 Mercury Marine Premier 经销商 Harris Boat Works 整理。"
 category: "mandarin"
 date_published: 2026-05-15
-date_modified: 2026-09-06
+date_modified: 2026-09-11
 keywords: ["Mercury 发动机保养","Mercury 维修中文","Mercruiser 服务","安省冬储","Mercury Premier 经销商","GTA 华人船保养","Mercury winterization Chinese"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Category:** mandarin  
 **Published:** 2026-05-15  
-**最后审核:** 2026-09-06  
+**最后审核:** 2026-09-11  
 **Read time:** 12 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/gta-chinese-mercury-service-guide
 
@@ -63,7 +63,7 @@ Mercury 把发动机保养按使用小时数分成几个关键节点。下面是
 
 ### 机油 + 滤芯（年度必换）
 
-四冲程 Mercury 请使用 Mercury 4-Stroke Marine Oil（FC-W 认证），**不能用汽车机油代替**。在加拿大按马力区分：0 至 30 hp 用 10W-30，40/50/60 hp 用 25W-40，75 hp 及以上用 10W-30。确切以用户手册为准，或致电我们 905-342-2153 确认。每 100 小时或每年一次（取较早者）。如果你只在 5 月到 10 月用船 20–30 小时，仍然建议每年换一次。
+四冲程 Mercury 请使用 Mercury 4-Stroke Marine Oil（FC-W 认证），**不能用汽车机油代替**。在加拿大按马力区分：0 至 30 hp 用 10W-30，40/50/60 hp 用 25W-40，75 hp 及以上用 10W-30。确切以用户手册为准。每 100 小时或每年一次（取较早者）。如果你只在 5 月到 10 月用船 20–30 小时，仍然建议每年换一次。
 
 ### 火花塞（300 小时或 3 年）
 

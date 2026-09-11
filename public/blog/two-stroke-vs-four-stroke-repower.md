@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/two-stroke-vs-four-stroke-repower.md
-last_updated: 2026-09-06
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "2-Stroke vs 4-Stroke Repower: What to Know"
 description: "Repower an old 2-stroke with a Mercury FourStroke. Weight, rigging, fuel, and how to get a current Ontario price. Pickup at Gores Landing."
 category: "Repower Guides"
 date_published: 2026-05-24
-date_modified: 2026-09-06
+date_modified: 2026-09-11
 keywords: ["2-stroke vs 4-stroke repower","2-stroke to 4-stroke Mercury","Mercury FourStroke repower Ontario","replace 2-stroke outboard","Mercury repower cost Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Repower Guides  
 **Published:** 2026-05-24  
-**Last reviewed:** 2026-09-06  
+**Last reviewed:** 2026-09-11  
 **Read time:** 11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/two-stroke-vs-four-stroke-repower
 
@@ -98,7 +98,7 @@ The happiest repower customers walked in expecting the trade, not just the upgra
 
 ## Ready to plan your 2-stroke repower?
 
-If your 2-stroke is on borrowed time, the winter planning window is where to start. Call us or build a quote and we will size the right FourStroke for your hull, transom and rigging check included.
+If your 2-stroke is on borrowed time, the winter planning window is where to start. Build a FourStroke repower quote at [mercuryrepower.ca](/quote/motor-selection).
 
 **Phone:** 905-342-2153
 **Configurator:** [mercuryrepower.ca](https://mercuryrepower.ca)

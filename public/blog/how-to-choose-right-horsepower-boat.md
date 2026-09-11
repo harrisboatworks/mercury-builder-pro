@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/how-to-choose-right-horsepower-boat.md
-last_updated: 2026-09-07
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "How to Choose the Right Boat Horsepower"
 description: "Choose outboard horsepower for your boat's limits, hull, usual and heaviest planned loads, and intended use. A fixed percentage cannot decide the right fit."
 category: "Buying Guide"
 date_published: 2024-06-15
-date_modified: 2026-09-07
+date_modified: 2026-09-11
 keywords: ["boat motor horsepower","how to choose outboard motor","mercury motor sizing","boat hp guide","outboard motor selection"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2024-06-15  
-**Last reviewed:** 2026-09-07  
+**Last reviewed:** 2026-09-11  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/how-to-choose-right-horsepower-boat
 
@@ -197,7 +197,7 @@ We won't over-power your boat. We also won't recommend the cheapest option if we
 
 ## Ready to figure out your HP?
 
-Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), real installed pricing across every Mercury HP class, no games. Or call us at **905-342-2153** and we'll talk through your specific boat. Sometimes the honest answer is "you already have the right motor." We'll say that too.
+Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), real installed pricing across every Mercury HP class, no games.
 
 ---
 

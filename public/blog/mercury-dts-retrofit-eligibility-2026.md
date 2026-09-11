@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dts-retrofit-eligibility-2026.md
-last_updated: 2026-09-07
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury DTS Retrofit Eligibility 2026"
 description: "Check if your Mercury outboard supports DTS retrofit. Covers Verado, Pro XS, FourStroke, multi-engine joystick eligibility, and motors needing repower."
 category: "Mercury Technology"
 date_published: 2026-05-28
-date_modified: 2026-09-07
+date_modified: 2026-09-11
 keywords: ["mercury dts retrofit eligibility","mercury digital throttle shift","dts compatibility mercury","joystick piloting eligibility","mercury fly-by-wire","dts retrofit cost"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,13 +25,13 @@ revenue_driver: repower
 
 **Category:** Mercury Technology  
 **Published:** 2026-05-28  
-**Last reviewed:** 2026-09-07  
+**Last reviewed:** 2026-09-11  
 **Read time:** 10 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dts-retrofit-eligibility-2026
 
 *Hero image: Mercury digital-control example. The pictured control does not establish retrofit eligibility; confirm the engine serial number, control part number and complete rigging package.*
 
-> **Quick answer:** Most current Mercury motors built with DTS already have it (all Verado, Pro XS 150 HP and up, FourStroke 200 HP and up since the model was DTS-equipped). True retrofit of a mechanical Mercury to DTS is rarely cost-effective. The honest eligibility path for most boaters is: repower into a DTS-equipped motor. Email your motor serial number to info@harrisboatworks.ca for an eligibility check.
+> **Quick answer:** Most current Mercury motors built with DTS already have it (all Verado, Pro XS 150 HP and up, FourStroke 200 HP and up since the model was DTS-equipped). True retrofit of a mechanical Mercury to DTS is rarely cost-effective. The honest eligibility path for most boaters is: repower into a DTS-equipped motor.
 
 Most callers asking about DTS retrofit are surprised by the answer. They expect a parts catalog and a labor estimate. What they actually need is a yes-or-no on whether their current motor already has DTS (many do without the owner realizing), and if not, an honest assessment of whether retrofitting makes more sense than just repowering with a DTS-equipped motor.
 
@@ -49,8 +49,6 @@ This post is the eligibility decision tree. It covers what DTS actually is, how 
 | Mechanical Mercury under 150 HP | **Not eligible for retrofit** | DTS not offered on these classes |
 | Twin or triple Mercury rig | **Eligible if all motors are DTS-capable** | Required for joystick. Worth the conversation. |
 | Single small motor (under 75 HP) | **Not a DTS use case** | Save the money. Mechanical is correct here. |
-
-If your boat doesn't slot neatly into one of these, email a photo of your motor cowl plate plus your boat year and make to info@harrisboatworks.ca. We'll review eligibility and explain what information is still needed for a written estimate.
 
 ![Quicksilver mechanical helm control example](/lovable-uploads/inline/inline-mechanical-controls-cables.png "Mechanical control example. A photograph of the control alone does not identify every cable, harness or engine requirement.")
 *Mechanical control example. The photograph does not show the complete cables, harness or engine installation; confirm compatibility from the exact components.*
@@ -126,7 +124,7 @@ Mercury offers DTS on the following motor classes (current model year 2026):
 
 The numbers shift slightly model year to model year (Mercury sometimes adds or drops DTS as a standard feature on a given HP). The safe rule: 150 HP and up, plan on DTS being standard or available. Under 150 HP, check before assuming.
 
-For the official source, Mercury's product pages at [mercurymarine.com](https://www.mercurymarine.com/) list DTS as a feature on each model. Or send us your boat details and target HP and we'll tell you which DTS-equipped motors fit your transom.
+For the official source, Mercury's product pages at [mercurymarine.com](https://www.mercurymarine.com/) list DTS as a feature on each model.
 
 ## The joystick path: why most DTS retrofit calls are actually joystick calls
 
@@ -154,8 +152,6 @@ Five things to confirm before you commit money.
 3. **Helm controls.** Are your current controls mechanical (visible cables) or already DTS (sealed binnacle with wiring harness)?
 4. **Multi-engine rig?** Single, twin, or triple. Joystick eligibility lives here.
 5. **Boat year and make.** Some older boats have helm/dash configurations that complicate DTS install. Worth flagging up front.
-
-Email a photo of the motor cowl plate plus the helm controls to info@harrisboatworks.ca. We'll review eligibility and the configuration, then quote the appropriate path or ask for any missing information.
 
 ## What we see at HBW
 
@@ -211,8 +207,6 @@ A few Ontario-specific notes that make DTS hit different here.
 
 ## Ready to confirm DTS eligibility?
 
-**Phone:** 905-342-2153
-**Email:** info@harrisboatworks.ca (send motor cowl plate photo + helm controls photo for an eligibility check)
 **Quote a repower:** [mercuryrepower.ca](https://mercuryrepower.ca)
 
 Harris Boat Works · 5369 Harris Boat Works Rd, Gores Landing, ON · Mercury Marine dealer since 1965, current Premier Dealer.
@@ -221,7 +215,7 @@ Harris Boat Works · 5369 Harris Boat Works Rd, Gores Landing, ON · Mercury Mar
 
 ### Does my motor already have DTS without me knowing?
 
-Possibly. If your current Mercury has a sealed binnacle helm control with no visible cables coming out the bottom, a SmartCraft gauge or VesselView display, and smooth electronic throttle feel with detents at neutral/forward/reverse, you have DTS. Customers calling about retrofit often find out they already have it. Email a photo of your helm control to info@harrisboatworks.ca for confirmation.
+Possibly. If your current Mercury has a sealed binnacle helm control with no visible cables coming out the bottom, a SmartCraft gauge or VesselView display, and smooth electronic throttle feel with detents at neutral/forward/reverse, you have DTS.
 
 ### Can I really not bolt DTS onto my mechanical Mercury?
 
@@ -245,7 +239,7 @@ Generally no. Mercury offers DTS on motors roughly 75 HP and up, with most curre
 
 ### How do I check if my exact motor supports DTS?
 
-Email the motor serial number from your cowl plate to info@harrisboatworks.ca. We'll cross-reference it against Mercury's records and confirm whether your specific motor is DTS-capable, already DTS-equipped, or not eligible.
+Check Mercury's published specifications and the documentation for your exact motor and model year.
 
 ### Are current Verado motors supercharged like older Verados?
 

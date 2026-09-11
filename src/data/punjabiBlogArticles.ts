@@ -121,7 +121,7 @@ Harris Boat Works 1947 ਤੋਂ family-owned marina ਹੈ, Mercury ਡੀਲ�
     image: '/lovable-uploads/hero-boat-rental-licence-ontario.webp',
     author: 'Harris Boat Works',
     datePublished: '2026-06-12',
-    dateModified: '2026-09-06',
+    dateModified: '2026-09-11',
     category: 'ਪੰਜਾਬੀ ਗਾਈਡ',
     readTime: '8 ਮਿੰਟ',
     keywords: ['Ontario vich boat license kinj banaye (how to get a boat license in Ontario)', 'boat operator card zaroori hai Ontario vich (is boat operator card necessary in Ontario)', 'PCOC course online free Punjabi (PCOC course online free in Punjabi)', 'boat chalan layi license di lod hai Canada ch (do you need a license to drive a boat in Canada)'],
@@ -193,7 +193,7 @@ A: ਇਹ guide Punjabi ਵਿੱਚ ਲਿਖੀ ਸੀ, ਪਰ ਸਾਡੀ �
 
 ## Shuru karo apni Rice Lake trip | ਆਪਣੀ ਰਾਈਸ ਲੇਕ ਟ੍ਰਿਪ ਸ਼ੁਰੂ ਕਰੋ
 
-PCOC rules ਨੂੰ ਔਖਾ ਨਾ ਸਮਝੋ; ਪਹਿਲਾ ਕਦਮ safety information ਸਮਝਣਾ ਹੈ। Rice Lake, Gores Landing (5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0) Toronto area ਤੋਂ 90 minutes ਦੂਰ, Brampton, Mississauga, Scarborough, Markham ਵਾਲਿਆਂ ਲਈ simple day trip ਹੈ। ਸਾਡੀ Ethanol-free fuel site ’ਤੇ ਮਿਲੇਗੀ, ਤੇ Mercury outboard engines 3-year warranty ਨਾਲ confident ਰੱਖਣਗੇ, ਜੇ ਨਵੀਂ boat ਦਾ ਸੋਚ ਰਹੇ ਹੋ। rental booking ਲਈ rent page ਖੋਲ੍ਹੋ: [Harris Boat Works rentals](https://harrisboatworks.ca/rentals)। service request ਭੇਜਣੀ ਹੈ: hbw.wiki/service। Phone (905) 342-2153, text (647) 952-2153, english ਵਿੱਚ ਜਵਾਬ ਆਵੇਗਾ, ਕਰਕੇ ਦਿਖਾਵਾਂਗੇ, ਦਿਲੋਂ ਸਾਥ ਦਿਆਂਗੇ। December 1 to April 1 ਅਸੀਂ winter break ਵਿੱਚ ਬੰਦ ਰਹਿੰਦੇ ਹਾਂ, oh season Rice Lake ’ਤੇ ਨਹੀਂ ਚੱਲਦਾ।`
+PCOC rules ਨੂੰ ਔਖਾ ਨਾ ਸਮਝੋ; ਪਹਿਲਾ ਕਦਮ safety information ਸਮਝਣਾ ਹੈ। Rice Lake, Gores Landing (5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0) Toronto area ਤੋਂ 90 minutes ਦੂਰ, Brampton, Mississauga, Scarborough, Markham ਵਾਲਿਆਂ ਲਈ simple day trip ਹੈ। ਸਾਡੀ Ethanol-free fuel site ’ਤੇ ਮਿਲੇਗੀ, ਤੇ Mercury outboard engines 3-year warranty ਨਾਲ confident ਰੱਖਣਗੇ, ਜੇ ਨਵੀਂ boat ਦਾ ਸੋਚ ਰਹੇ ਹੋ। rental booking ਲਈ rent page ਖੋਲ੍ਹੋ: [Harris Boat Works rentals](https://harrisboatworks.ca/rentals)। service request ਭੇਜਣੀ ਹੈ: hbw.wiki/service। December 1 to April 1 ਅਸੀਂ winter break ਵਿੱਚ ਬੰਦ ਰਹਿੰਦੇ ਹਾਂ, oh season Rice Lake ’ਤੇ ਨਹੀਂ ਚੱਲਦਾ।`
   },
   {
     slug: 'mercury-outboard-prices-ontario-punjabi',
@@ -203,7 +203,7 @@ PCOC rules ਨੂੰ ਔਖਾ ਨਾ ਸਮਝੋ; ਪਹਿਲਾ ਕਦਮ sa
     image: '/lovable-uploads/hero-cheapest-mercury-canada-lineup.png',
     author: 'Harris Boat Works',
     datePublished: '2026-06-12',
-    dateModified: '2026-09-06',
+    dateModified: '2026-09-11',
     category: 'ਪੰਜਾਬੀ ਗਾਈਡ',
     readTime: '8 ਮਿੰਟ',
     keywords: ['Mercury outboard motor di keemat Canada vich (Mercury outboard motor price in Canada)', 'Mercury 90hp outboard price Ontario Punjabi (Mercury 90hp outboard price Ontario Punjabi)', 'outboard motor dealer near Toronto Punjabi speaking (outboard motor dealer near Toronto who speaks Punjabi)', 'new outboard motor khareedan di guide Punjabi (guide to buying a new outboard motor in Punjabi)', 'Mercury vs Yamaha outboard video Punjabi (Mercury vs Yamaha outboard video in Punjabi)'],
@@ -238,7 +238,7 @@ Mercury outboard ਬਹੁਤ ਸਾਰੇ horsepower (HP) ranges ਵਿੱਚ �
 
 ## Purani motor badalni hai? Repower di salah | ਪੁਰਾਣੀ ਮੋਟਰ ਬਦਲਣੀ ਹੈ? ਰੀਪਾਵਰ ਦੀ ਸਲਾਹ
 
-ਬਹੁਤ ਲੋਕ ਆਪਣੀ ਪੁਰਾਣੀ boat ਨੂੰ ਪਿਆਰ ਕਰਦੇ ਨੇ, ਪਰ motor ਨੇ ਸਾਥ ਛੱਡ ਦਿੱਤਾ। “Repower” ਦਾ ਮਤਲਬ ਹੈ ਕਿ ਨਵਾਂ outboard ਲਗਾਓ, ਚਾਹੇ Mercury ਹੀ ਹੋਵੇ, ਕਿਸੇ ਹੋਰ brand ਦਾ replace ਕਰਨਾ। Repower ਵਿੱਚ ਖਰਚ ਬੱਸ motor ’ਤੇ ਹੀ ਨਹੀਂ, ਬਲਕਿ ਪੁਰਾਣੇ controls, wiring, ਅਤੇ fuel system ਨੂੰ update ਕਰਨ ਵਿੱਚ ਵੀ ਲੱਗਦਾ ਹੈ, ਖ਼ਾਸ ਕਰਕੇ ਜੇ 2-stroke ਤੋਂ 4-stroke ’ਤੇ ਆ ਰਹੇ ਹੋ। ਸਾਡੇ mechanics GPS speedometer integration ਤੱਕ ਦਾ ਖਿਆਲ ਰੱਖਦੇ ਨੇ, ਅਤੇ ethanol-free fuel ਸਾਡੇ dock ’ਤੇ ਮਿਲਦੀ ਹੈ, ਜੋ ਨਵੀਂ motor ਦੀ life ਵਧਾਉਂਦੀ ਹੈ। Repower ਲਈ ਪਹਿਲੀ ਸਲਾਹ: ਅਸੀਂ ਕਦੇ phone ’ਤੇ ਅੱਖ ਬੰਦ ਕਰਕੇ quote ਨਹੀਂ ਦਿੰਦੇ। ਸਾਡੇ ਤੋਂ quote ਲੈਣ ਤੋਂ ਪਹਿਲਾਂ ਤੁਸੀਂ boat ਦੀਆਂ ਕੁਝ ਨਿਆਮਤਾਂ photos whatsapp ’ਤੇ ਭੇਜੋ: transom bracket, current controls, ਅਤੇ motor model number। ਫਿਰ ਅਸੀਂ ਤੁਹਾਨੂੰ ਲੱਭ ਕੇ ਦੱਸਾਂਗੇ ਕਿ ਤੁਹਾਡੇ setup ਲਈ ਕਿੰਨਾ ਖਰਚ ਆਵੇਗਾ। ਜੇ ਤੁਸੀਂ ਆਪਣੀ ਪੁਰਾਣੀ motor ਵੇਚ ਕੇ ਆਉਣਾ ਚਾਹੁੰਦੇ ਹੋ, ਉਹ ਗੱਲ ਵੀ ਕਰੋ। ਸਾਡਾ contact number (905) 342-2153 ਜਾਂ text (647) 952-2153 ਹੈ।
+ਬਹੁਤ ਲੋਕ ਆਪਣੀ ਪੁਰਾਣੀ boat ਨੂੰ ਪਿਆਰ ਕਰਦੇ ਨੇ, ਪਰ motor ਨੇ ਸਾਥ ਛੱਡ ਦਿੱਤਾ। “Repower” ਦਾ ਮਤਲਬ ਹੈ ਕਿ ਨਵਾਂ outboard ਲਗਾਓ, ਚਾਹੇ Mercury ਹੀ ਹੋਵੇ, ਕਿਸੇ ਹੋਰ brand ਦਾ replace ਕਰਨਾ। Repower ਵਿੱਚ ਖਰਚ ਬੱਸ motor ’ਤੇ ਹੀ ਨਹੀਂ, ਬਲਕਿ ਪੁਰਾਣੇ controls, wiring, ਅਤੇ fuel system ਨੂੰ update ਕਰਨ ਵਿੱਚ ਵੀ ਲੱਗਦਾ ਹੈ, ਖ਼ਾਸ ਕਰਕੇ ਜੇ 2-stroke ਤੋਂ 4-stroke ’ਤੇ ਆ ਰਹੇ ਹੋ। ਸਾਡੇ mechanics GPS speedometer integration ਤੱਕ ਦਾ ਖਿਆਲ ਰੱਖਦੇ ਨੇ, ਅਤੇ ethanol-free fuel ਸਾਡੇ dock ’ਤੇ ਮਿਲਦੀ ਹੈ, ਜੋ ਨਵੀਂ motor ਦੀ life ਵਧਾਉਂਦੀ ਹੈ।
 
 ## Mercury warranty: man di shanti | Mercury ਵਾਰੰਟੀ: ਮਨ ਦੀ ਸ਼ਾਂਤੀ
 
@@ -249,7 +249,7 @@ Mercury outboard ਬਹੁਤ ਸਾਰੇ horsepower (HP) ranges ਵਿੱਚ �
 Outboard ਖਰੀਦ ਦਾ ਕਦਮ ਫੂਕ-ਫੂਕ ਕੇ ਰੱਖਣਾ ਚੰਗਾ ਹੈ। ਸਾਡੀ ਸਲਾਹ ਹੈ:
 
 1. **Online ਸ਼ੁਰੂ ਕਰੋ:** ਸਾਡੇ Mercury Repower page (https://www.mercuryrepower.ca/quote/motor-selection) ’ਤੇ ਆਪਣੀ boat ਦੀ ਮਾਲੂਮਾਤ ਭਰੋ, boat brand, length, haul load, preferred activity। ਇਹ tool ਤੁਹਾਨੂੰ suggested Mercury models ਦਿਖਾਏਗਾ। ਕੋਈ price ਨਹੀਂ, ਪਰ ਤਕਰੀਬਨ range ਪਤਾ ਲੱਗੂ।
-2. **ਸਾਨੂੰ phone ਕਰਕੇ follow-up ਕਰੋ:** (905) 342-2153. Markham, Scarborough, Mississauga, Brampton, ਅਸੀਂ 90-minute drive ਦੂਰ ਹਾਂ, ਪਰ quote ਲੈਣਾ free ਹੈ। ਦੱਸਿਓ ਕਿ ਤੁਸੀਂ Punjabi guide ਪੜ੍ਹ ਕੇ call ਕੀਤਾ ਹੈ, ਅਸੀਂ ਥੋਨੂੰ ਆਰਾਮ ਨਾਲ ਸਮਝਾਵਾਂਗੇ। ਜੇ ਤੁਹਾਨੂੰ English ਚ ਬੋਲਣ ਵਾਲਾ ਦੋਸਤ ਨਾਲ ਲਿਆਉਣਾ ਪੈ ਸਕਦਾ ਹੈ (ਥੱਲ੍ਹੇ ਇਸਦਾ ਜ਼ਿਕਰ ਹੈ), ਤਾਂ ਅਸੀਂ ਆਰਾਮ ਨਾਲ phone ’ਤੇ ਵੀ ਗੱਲ ਕਰ ਸਕਦੇ ਹਾਂ।
+
 3. **Installed quote ਦੇ estimate ਵਿੱਚ ਇਹ ਗੱਲਾਂ ਸ਼ਾਮਲ ਹੋਣੀਆਂ ਚਾਹੀਦੀਆਂ:** motor, controls, prop, rigging harness, labour, batteries, gauges (ਜੇ ਲੋੜ ਪਵੇ), ਅਤੇ ਜੋ ਵੀ ਪੁਰਾਣੀ ਚੀਜ਼ change ਹੋਣੀ ਹੈ। ਆਖਰੀ ਗਿਣਤੀ dollar ਵਿੱਚ ਅਸੀਂ ਤੁਰੰਤ ਨਹੀਂ ਦੇ ਸਕਦੇ ਪਰ ਸਾਡੇ pricing reference page ਨੂੰ ਵੇਖ ਕੇ ਤੁਸੀਂ ਮਿਸਾਲ ਦੇ budget columns ਸਮਝ ਸਕਦੇ ਹੋ। ਉਹ page https://www.mercuryrepower.ca/pricing-reference ’ਤੇ ਹੈ।
 4. **Dealership ’ਤੇ ਆਓ ਜੇ ਹੋ ਸਕੇ:** ਜੇ ਤੁਸੀਂ physically ਆਉਣਾ ਚਾਹੁੰਦੇ ਹੋ, Gores Landing ਦਾ address 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0 ਹੈ। ਯਾਦ ਰੱਖੋ ਅਸੀਂ 1 December ਤੋਂ 1 April ਤੱਕ winter closed ਹਾਂ। ਬਾਕੀ ਮੌਸਮ ਵਿੱਚ ਆ ਕੇ ਸਾਡੇ set up ਦੇਖ ਸਕਦੇ ਹੋ।
 
@@ -288,7 +288,7 @@ Mercury outboard ਨਾਲ ਪੁਰਾਣੀ ਕਿਸ਼ਤੀ ਵਿੱਚ �
 • **Motor suggestion tool:** https://www.mercuryrepower.ca/quote/motor-selection
 • **Pricing reference page:** https://www.mercuryrepower.ca/pricing-reference
 • **Financing guide (English vich):** https://www.mercuryrepower.ca/blog/mercury-outboard-financing-ontario-2026
-Phone ਕਰੋ (905) 342-2153, ਜੇ ਕੋਈ ਸਵਾਲ ਹੋਵੇ। ਜੇ ਤੁਸੀਂ ਆਪਣੇ phone ਰਾਹੀਂ ਇਸ guide ਨਾਲ ਜੁੜੇ ਹੋ, ਤੁਸੀਂ ਦੱਸੋ “Punjabi guide toh call kita”। ਆਪਣੀ ਕਿਸ਼ਤੀ ਦੀ ਸਹੀ Mercury ਦੀ ਯਾਤਰਾ ਅੱਜ ਸ਼ੁਰੂ ਕਰੋ।`
+`
   }
 ];
 

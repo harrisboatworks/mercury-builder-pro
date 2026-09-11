@@ -553,7 +553,7 @@ Harris Boat Works，Mercury Marine Premier Dealer，自1947年起。
     image: '/lovable-uploads/home-step3-rice-lake-water-test.webp',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-09-06',
+    dateModified: '2026-09-11',
     publishDate: '2026-04-12',
     category: '法规安全',
     readTime: '9 分钟',
@@ -619,7 +619,7 @@ Rice Lake 属于安大略 Fisheries Management Zone 17（FMZ 17）。Walleye（�
 
 ## 联系我们
 
-如有关于船只合规、维修或冬储的问题:电话 (905) 342-2153 | 邮件 info@harrisboatworks.ca | [harrisboatworks.ca](https://www.harrisboatworks.ca)
+
 
 [Mercury Premier 经销商](https://www.mercurymarine.com/ca/en) · 莱斯湖 Gores Landing · 自 1947 年
 
@@ -2184,7 +2184,7 @@ A：视时间段和库存情况而定，旺季等待时间可能较长。建议�
     image: '/lovable-uploads/hero-mandarin-mercury-service.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-15',
-    dateModified: '2026-09-06',
+    dateModified: '2026-09-11',
     publishDate: '2026-05-15',
     category: 'mandarin',
     readTime: '12 分钟',
@@ -2231,7 +2231,7 @@ Mercury 把发动机保养按使用小时数分成几个关键节点。下面是
 
 ### 机油 + 滤芯（年度必换）
 
-四冲程 Mercury 请使用 Mercury 4-Stroke Marine Oil（FC-W 认证），**不能用汽车机油代替**。在加拿大按马力区分：0 至 30 hp 用 10W-30，40/50/60 hp 用 25W-40，75 hp 及以上用 10W-30。确切以用户手册为准，或致电我们 905-342-2153 确认。每 100 小时或每年一次（取较早者）。如果你只在 5 月到 10 月用船 20–30 小时，仍然建议每年换一次。
+四冲程 Mercury 请使用 Mercury 4-Stroke Marine Oil（FC-W 认证），**不能用汽车机油代替**。在加拿大按马力区分：0 至 30 hp 用 10W-30，40/50/60 hp 用 25W-40，75 hp 及以上用 10W-30。确切以用户手册为准。每 100 小时或每年一次（取较早者）。如果你只在 5 月到 10 月用船 20–30 小时，仍然建议每年换一次。
 
 ### 火花塞（300 小时或 3 年）
 

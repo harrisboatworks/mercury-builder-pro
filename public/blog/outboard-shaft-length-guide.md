@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/outboard-shaft-length-guide.md
-last_updated: 2026-09-07
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Outboard Shaft Length Guide: 15, 20, 25 Inch (2026)"
 description: "Outboard shaft length chart for 15, 20, and 25 inch shafts. Measure transom height, match the Mercury shaft code, and avoid cavitation. Ontario dealer guide."
 category: "Buying Guide"
 date_published: 2026-05-05
-date_modified: 2026-09-07
+date_modified: 2026-09-11
 keywords: ["outboard shaft length","mercury shaft length guide","20 inch shaft outboard","25 inch shaft outboard","transom height measurement"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-05-05  
-**Last reviewed:** 2026-09-07  
+**Last reviewed:** 2026-09-11  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/outboard-shaft-length-guide
 
@@ -153,9 +153,7 @@ Three things we do on every repower that prevent wrong-shaft mistakes:
 
 Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca). The configurator includes shaft length selection by Mercury model.
 
-Not sure about your transom height? Call us at 905-342-2153 or send a side-profile photo with a tape measure on the transom. We can confirm the right shaft length in five minutes.
-
-> **Need a quick shaft-length check?** Try our [Shaft Length Picker](/tools#shaft-length). Punch in your transom height and we will tell you if you want a 15", 20", 25", or 30" shaft. Or call us at [(905) 342-2153](tel:+19053422153) and we will measure with you on the phone.
+> **Need a quick shaft-length check?** Try our [Shaft Length Picker](/tools#shaft-length). Punch in your transom height and we will tell you if you want a 15", 20", 25", or 30" shaft.
 
 Sizing a 9.9 to your transom? Our [Mercury 9.9 tiller, kicker, and ProKicker guide](/motors/mercury-9-9-tiller-kicker-guide) lists shaft length for every 9.9 variant.
 
@@ -165,7 +163,7 @@ Sizing a 9.9 to your transom? Our [Mercury 9.9 tiller, kicker, and ProKicker gui
 
 The single most common rigging mistake we see on used-boat purchases: wrong shaft length on a repower. Owner pulled a 15-inch short-shaft, ordered a 20-inch long-shaft expecting "more boat coverage", and the prop is now too deep to plane efficiently.
 
-Always measure the transom from the top edge to the cavitation plate centerline before ordering. 15" for most tinnies, 20" for bowriders and pontoons, 25" for offshore-style hulls. When in doubt, send us a photo and a tape measure reading -- we'll spec it before quoting the install.
+Always measure the transom from the top edge to the cavitation plate centerline before ordering. 15" for most tinnies, 20" for bowriders and pontoons, 25" for offshore-style hulls.
 
 ---
 
@@ -193,11 +191,11 @@ Do not apply a universal round-down rule. Measure the transom, account for hull 
 
 ### How do I know what shaft length my Mercury currently is?
 
-Read the complete model suffix as a unit. ELPT is electric start, long (20-inch), power tilt. EXLPT is electric start, extra-long (25-inch), power tilt. A letter L inside a longer code is not enough by itself. S is 15-inch short. If you cannot find the model plate, call us and we can look it up by serial number.
+Read the complete model suffix as a unit. ELPT is electric start, long (20-inch), power tilt. EXLPT is electric start, extra-long (25-inch), power tilt. A letter L inside a longer code is not enough by itself. S is 15-inch short.
 
 ### What is the difference between a long shaft and a short shaft outboard?
 
-A short shaft is 15 inches (Mercury code S) and a long shaft is 20 inches (code L). The difference is how far the gearcase hangs below the mounting bracket, which sets how deep the propeller runs. Match the shaft to your measured transom height, not to the boat's overall size. Most Ontario aluminum fishing boats take the 20-inch long shaft; small tinnies with low transoms take the 15-inch. Not sure which you need? Call us at 905-342-2153.
+A short shaft is 15 inches (Mercury code S) and a long shaft is 20 inches (code L). The difference is how far the gearcase hangs below the mounting bracket, which sets how deep the propeller runs. Match the shaft to your measured transom height, not to the boat's overall size. Most Ontario aluminum fishing boats take the 20-inch long shaft; small tinnies with low transoms take the 15-inch.
 
 ### What is the outboard shaft length chart for 15, 20, and 25 inch shafts?
 
@@ -205,11 +203,11 @@ Measure your transom height, then match it: 15 to 16 inches takes a short shaft 
 
 ### How do I measure transom height for outboard shaft length?
 
-Find the lowest point of the hull at the transom, where the water contacts the hull when the boat is running on plane. Measure straight up from that point to the top of the transom where the motor mounting bracket sits. That measurement is your transom height. It takes five minutes with a tape measure. Send a side-profile photo with the tape in place to 905-342-2153 and we will confirm the right shaft length.
+Find the lowest point of the hull at the transom, where the water contacts the hull when the boat is running on plane. Measure straight up from that point to the top of the transom where the motor mounting bracket sits. That measurement is your transom height. It takes five minutes with a tape measure.
 
 ### What shaft length do I need for a 25 inch transom?
 
-A transom measuring 24 to 26 inches takes a 25-inch extra long shaft, Mercury code XL or EXL. Deep-V hulls with steep transom angles sometimes need the 25-inch even when the tape reads slightly under. If your boat sits close to the line, we lake-test borderline cases before rigging is finalized. Build a quote at mercuryrepower.ca or call 905-342-2153.
+A transom measuring 24 to 26 inches takes a 25-inch extra long shaft, Mercury code XL or EXL. Deep-V hulls with steep transom angles sometimes need the 25-inch even when the tape reads slightly under. If your boat sits close to the line, we lake-test borderline cases before rigging is finalized. Build a quote at mercuryrepower.ca.
 
 ## Related guides
 

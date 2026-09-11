@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/pontoon-vs-v-hull-comparison-ontario.md
-last_updated: 2026-09-06
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Pontoon vs V-Hull, Honestly Compared for Ontario Boaters"
 description: "Pontoon or V-hull? A Mercury Premier dealer's honest take on which hull fits which Ontario boater. Family use, fishing, rough water, fuel economy."
 category: "Buying Guides"
 date_published: 2026-05-16
-date_modified: 2026-09-06
+date_modified: 2026-09-11
 keywords: ["pontoon vs v-hull","pontoon vs fishing boat ontario","pontoon boat ontario","v-hull boat comparison","which boat type ontario","rice lake boat type","legend pontoon vs legend v-hull"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guides  
 **Published:** 2026-05-16  
-**Last reviewed:** 2026-09-06  
+**Last reviewed:** 2026-09-11  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/pontoon-vs-v-hull-comparison-ontario
 
@@ -104,7 +104,7 @@ For a Rice Lake primary boater who plans to occasionally trailer to bigger water
 
 If you already have a pontoon or a V-hull you are happy with, the hull debate is settled. The real question is whether it is powered right for what you ask of it. A pontoon that is slow to plane with a full crew, or a V-hull that will not get out of its own way, is usually under-powered or propped wrong, not the wrong boat.
 
-Tell us the boat and what you do with it on the water, or build a live quote online, and we will tell you in plain English whether a repower is worth it. Build a quote at https://www.mercuryrepower.ca/quote/motor-selection or call 905-342-2153.
+Build a quote at https://www.mercuryrepower.ca/quote/motor-selection.
 
 ## What we actually sell at Harris Boat Works
 
@@ -115,8 +115,6 @@ We are a Legend Boats dealer, which gives us access to both their pontoon lineup
 4. Test-drive whichever hull seems to fit, and sometimes the alternative too.
 
 The Mercury power package is matched to the hull (Command Thrust gearcase for tritoons in the 90-115 HP range, check the exact gearcase on higher-powered models; standard gearcase or Pro XS for V-hulls depending on use). Either way, the right motor pairing matters as much as the hull choice.
-
-If you are weighing this decision and want a structured conversation, email info@harrisboatworks.ca with what you are trying to do on the water. We will tell you which side of the line you fall on.
 
 ## About the author
 

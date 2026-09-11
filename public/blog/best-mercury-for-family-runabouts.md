@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-mercury-for-family-runabouts.md
-last_updated: 2026-09-10
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Best Mercury for Family Runabout 2026"
 description: "A Mercury Premier dealer's straight answer on the right Mercury for a family runabout, by boat length, by use case."
 category: "Buying Guide"
 date_published: 2026-05-06
-date_modified: 2026-09-10
+date_modified: 2026-09-11
 keywords: ["mercury family boat motor","family runabout outboard","mercury for pontoon","best mercury for recreation","family boat motor size","best Mercury outboard family runabout","Mercury 90 HP family boat","Mercury 150 HP runabout","family runabout horsepower","watersports family boat motor","quiet outboard family"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-05-06  
-**Last reviewed:** 2026-09-10  
+**Last reviewed:** 2026-09-11  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-mercury-for-family-runabouts
 
@@ -76,8 +76,6 @@ We've rigged and repowered family runabouts on Rice Lake and the Kawarthas for a
 | 18-19 ft | 150 HP FourStroke | Loaded tow day |
 | 19-21 ft | 175-200 HP | Tow boat examples. FourStroke 175-225 are V6; 200 Pro XS is V8 |
 | 21-22 ft | 200-250 HP | Big crew / longer runs. 200-250 Pro XS are V8; FourStroke 250 is V8; FourStroke 200-225 are V6 |
-
-If your situation isn't on this list, the chart doesn't settle it anyway. The right answer comes from a conversation. Call us.
 
 ### Why FourStroke Beats Pro XS for Most Families
 
@@ -147,13 +145,9 @@ We rig family runabouts every spring in Gores Landing. Specifically:
 - **Trade-in valuation**, We give fair-market value on your old motor or boat. No lowballing.
 - **Annual service**, Mercury Premier dealer, factory-trained techs, ethanol-free 89 marine gas at the dock.
 
-If you're genuinely unsure between two HP ratings, call us before you build a quote. Picking right is more important than picking fast.
-
 ---
 
 Ready to find the right Mercury for your family runabout? Build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**, real CAD pricing, no phone tag, no "call for price."
-
-Not sure where to start? Call **905-342-2153**. We answer the phone and we'll tell you the honest answer for your hull.
 
 ---
 

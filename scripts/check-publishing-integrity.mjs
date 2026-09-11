@@ -1096,10 +1096,12 @@ check(
   /title: Mercury 115 Pro XS owner tests 19, 20 and 21-pitch propellers/.test(mercury115Review),
   'The Mercury 115 owner prop-test embed must keep its accurate accessible title.',
 );
-check(
-  /tel:\+19053422153/.test(mercury115Review),
-  'The Mercury 115 closing call path must remain tappable.',
-);
+for (const surface of [mercury115Review, mercury115Twin]) {
+  check(
+    /\/quote\/motor-selection/.test(surface) && !/\*\*Phone:\*\*/.test(surface),
+    'The Mercury 115 review must retain its self-service quote path without a generic phone invitation.',
+  );
+}
 check(
   /## What This Means on Ontario Water/.test(mercury115Review),
   'The Mercury 115 review must keep its Ontario-use section.',

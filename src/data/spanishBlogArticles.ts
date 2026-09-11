@@ -843,7 +843,7 @@ Para reparaciones e instalaciones de motores, trabajamos exclusivamente con Merc
     image: '/lovable-uploads/hero-boating-safety-gear-es-2026.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-09-06',
+    dateModified: '2026-09-11',
     publishDate: '2026-04-12',
     category: 'Regulaciones',
     readTime: '12 min',
@@ -1027,7 +1027,7 @@ Obtén tu PCOC en línea, renueva tu PCL en tc.gc.ca, y cuando tengas todo en or
 
 Si estás pensando en un motor nuevo o en repotenciar tu embarcación, usa el configurador en **mercuryrepower.ca**, precios reales, sin llamadas previas.
 
-¿Preguntas? Escríbenos en **hbw.wiki/service** o llama al **905-342-2153**. Nuestro equipo responde en inglés.
+
 
 Harris Boat Works
 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0

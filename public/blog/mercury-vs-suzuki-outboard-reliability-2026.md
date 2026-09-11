@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-vs-suzuki-outboard-reliability-2026.md
-last_updated: 2026-09-06
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury vs Suzuki Outboards: Reliability 2026"
 description: "Mercury vs Suzuki outboard reliability in Ontario. Both mechanically reliable. Service network and rigging switch cost drive decision."
 category: "Brand Comparison"
 date_published: 2026-06-06
-date_modified: 2026-09-06
+date_modified: 2026-09-11
 keywords: ["mercury vs suzuki","suzuki outboard reliability","ontario outboard comparison","mercury suzuki repower"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Brand Comparison  
 **Published:** 2026-06-06  
-**Last reviewed:** 2026-09-06  
+**Last reviewed:** 2026-09-11  
 **Read time:** 8 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-vs-suzuki-outboard-reliability-2026
 
@@ -156,7 +156,7 @@ Either decision can be the right one depending on the customer's situation. We a
 
 Family-owned on Rice Lake since 1947.
 
-**Weighing a switch?** Build a Mercury quote for your boat in about three minutes at [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection), or call 905-342-2153 and ask us straight.
+**Weighing a switch?** Build a Mercury quote for your boat in about three minutes at [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection).
 
 ## FAQs
 

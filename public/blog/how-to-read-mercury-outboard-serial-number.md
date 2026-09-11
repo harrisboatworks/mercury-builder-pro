@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/how-to-read-mercury-outboard-serial-number.md
-last_updated: 2026-09-10
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Read Mercury Outboard Serial Number"
 description: "A practical guide to finding, reading, and decoding your Mercury outboard's serial number, model year, shaft length, features."
 category: "Buying Guide"
 date_published: 2026-05-17
-date_modified: 2026-09-10
+date_modified: 2026-09-11
 keywords: ["how to read Mercury serial number","decode Mercury outboard model number","Mercury outboard year by serial number","Mercury serial number lookup Ontario","find Mercury outboard model code"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,13 +25,13 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-05-17  
-**Last reviewed:** 2026-09-10  
+**Last reviewed:** 2026-09-11  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/how-to-read-mercury-outboard-serial-number
 
 ## How to Read a Mercury Outboard Serial Number. Year, Specs, and Service History
 
-> **Quick answer:** Mercury motors carry two different numbers, and they do two different jobs. The **Serial Number** (looks like `0T123456` or `1B234567`) is your motor's unique identifier, you use it to look up year, parts, warranty status, and recalls in Mercury's catalog or any dealer system. You don't decode it, you look it up. The **Model Number** (looks like `90ELPT` or `1F60413GZ`) is the spec code that you CAN decode, it tells you the horsepower, family, electric start, shaft length, power trim, and (on newer codes) model year. This guide covers finding both numbers, decoding the model number, and looking up the serial. Send us a serial or model code through mercuryrepower.ca for a quick check.
+> **Quick answer:** Mercury motors carry two different numbers, and they do two different jobs. The **Serial Number** (looks like `0T123456` or `1B234567`) is your motor's unique identifier, you use it to look up year, parts, warranty status, and recalls in Mercury's catalog or any dealer system. You don't decode it, you look it up. The **Model Number** (looks like `90ELPT` or `1F60413GZ`) is the spec code that you CAN decode, it tells you the horsepower, family, electric start, shaft length, power trim, and (on newer codes) model year. This guide covers finding both numbers, decoding the model number, and looking up the serial.
 
 ### Prepare one complete service request
 
@@ -58,13 +58,11 @@ A real Mercury serial number is short, alphanumeric, and unique to your specific
 
 The serial is **stamped or laser-etched on a small plate** on the motor's transom bracket. You will NOT find date or horsepower hidden in the digits, Mercury does not embed the spec into the serial like a car VIN. You look the serial up in Mercury's catalog or any reputable parts site (Crowley Marine, PartsVu, MarineEngine) to get year, model variant, and parts compatibility.
 
-If you want a quick check, send us your serial number through mercuryrepower.ca and we'll run it through the Mercury dealer system.
-
 ## How to decode your Mercury Model Number
 
 The Mercury Model Number is the spec code, and unlike the serial, this one IS decodable. Newer Mercury motors carry a full SKU string like `1F60413GZ`. Older motors use a shorter human-readable code like `90ELPT` or `25EXLHGA`.
 
-**Record both identifiers.** Photograph the complete serial number and model information. Use the serial number in Mercury's official parts or service lookup, or ask HBW to confirm the exact engine. Do not infer a year or parts fit from an unverified character-position chart.
+**Record both identifiers.** Photograph the complete serial number and model information. Use the serial number in Mercury's official parts or service lookup. Do not infer a year or parts fit from an unverified character-position chart.
 
 *The model number encodes product spec. Use it together with the serial number when ordering parts, planning a repower, or registering warranty.*
 

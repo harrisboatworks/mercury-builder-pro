@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-250-hp-fourstroke-pro-xs-review-ontario.md
-last_updated: 2026-09-06
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury 250 HP Review: FourStroke vs Pro XS"
 description: "An honest Mercury 250 HP review for Ontario, comparing the current 4.6 L V8 FourStroke and Pro XS with exact Canadian specs, freshwater tests and owner evidence."
 category: "Mercury Buying Guides"
 date_published: 2026-07-27
-date_modified: 2026-09-06
+date_modified: 2026-09-11
 keywords: ["mercury 250 hp review","mercury 250 fourstroke review","mercury 250 pro xs review","mercury 250 fourstroke vs pro xs","mercury 250 real world performance","mercury 250 owner reviews","mercury 250 hp ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Mercury Buying Guides  
 **Published:** 2026-07-27  
-**Last reviewed:** 2026-09-06  
+**Last reviewed:** 2026-09-11  
 **Read time:** 19 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-250-hp-fourstroke-pro-xs-review-ontario
 
@@ -396,8 +396,6 @@ The quote builder shows current Canadian motor pricing and lets you account for 
 **Browse current pricing:** [Canadian Mercury pricing reference](/pricing-reference)
 
 **Build a complete quote:** [Mercury motor selection](/quote/motor-selection)
-
-**Call:** [905-342-2153](tel:+19053422153)
 
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 

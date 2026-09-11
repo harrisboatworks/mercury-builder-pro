@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Phone, Search } from 'lucide-react';
+import { Search } from 'lucide-react';
 import { RepowerHeader } from '@/components/repower/RepowerHeader';
 import { SiteFooter } from '@/components/ui/site-footer';
 import {
@@ -330,14 +330,6 @@ export function BlogIndexHub() {
             >
               Build My Quote
             </Link>
-            <a
-              href="tel:9053422153"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-white/30 text-white rounded-md font-medium hover:bg-white/10 transition-colors"
-            >
-              <Phone className="h-4 w-4" />
-              <span className="sr-only">Call Harris Boat Works: </span>
-              (905) 342-2153
-            </a>
           </div>
         </div>
       </section>

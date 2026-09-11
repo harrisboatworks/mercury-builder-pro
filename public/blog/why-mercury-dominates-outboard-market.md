@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/why-mercury-dominates-outboard-market.md
-last_updated: 2026-09-06
+last_updated: 2026-09-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Why Mercury Makes Practical Sense for Ontario Boaters (2026)"
 description: "A Mercury Premier dealer explains Ontario dealer coverage, parts access, and factory-rigged boats, plus where Yamaha or Honda can still be the better fit."
 category: "Buying Guide"
 date_published: 2026-02-06
-date_modified: 2026-09-06
+date_modified: 2026-09-11
 keywords: ["mercury marine market share","best outboard brand","mercury vs yamaha","mercury verado v12","mercury innovation","mercury prokicker"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-02-06  
-**Last reviewed:** 2026-09-06  
+**Last reviewed:** 2026-09-11  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/why-mercury-dominates-outboard-market
 
@@ -73,8 +73,6 @@ Expertise depth, parts inventory investment, customer fit. Three generations of 
 ## Ready to build your quote?
 
 Live CAD pricing on every Mercury we sell is at [mercuryrepower.ca](https://www.mercuryrepower.ca).
-
-If you want to talk through whether Mercury is the right answer for your specific boat and use case, call 905-342-2153.
 
 Harris Boat Works. Mercury dealer since 1965, Mercury Premier dealer today.
 5369 Harris Boat Works Rd, Gores Landing, ON.
