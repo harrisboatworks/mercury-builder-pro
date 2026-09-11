@@ -5,7 +5,7 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { afterAll, beforeAll, beforeEach, describe, expect, it } from 'vitest';
 import { CRON_AUTH_CALLER_MIGRATION_PATH } from '../../../scripts/lib/cron-auth-release-prerequisites.mjs';
-import { requirePostgres17Bin, resolvePostgres17Bin } from '../../../scripts/lib/local-postgres17.mjs';
+import { inspectPostgresBinDir, requirePostgres17Bin, resolvePostgres17Bin } from '../../../scripts/lib/local-postgres17.mjs';
 
 const source = readFileSync(CRON_AUTH_CALLER_MIGRATION_PATH, 'utf8');
 // Execute the actual migration DO block. pg_cron/pg_net are replaced by fake
@@ -37,6 +37,14 @@ it('keeps both deployment prerequisites unresolved while the migration is only p
 // Official PostgreSQL 17 (PGDG apt or Homebrew). CRON_AUTH_REQUIRE_PG=1 fails
 // closed instead of skipping. A skipped run is not migration acceptance.
 describe.skipIf(!bin)('actual caller migration in disposable PostgreSQL', () => {
+  it('uses official PostgreSQL major 17 and records fixture version evidence', () => {
+    const inspected = inspectPostgresBinDir(bin!);
+    expect(inspected.ok).toBe(true);
+    expect(inspected.major).toBe(17);
+    expect(inspected.mixed).toBe(false);
+    expect(inspected.version).toMatch(/^17\b/);
+  });
+
   let dir: string;
   let started = false;
   const env = { ...process.env, PGCONNECT_TIMEOUT: '3' };
