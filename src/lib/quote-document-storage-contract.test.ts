@@ -110,7 +110,9 @@ describe('private quote document storage contract', () => {
     expect(quotesMigration).not.toMatch(/DELETE\s+FROM\s+public\.saved_quotes/i);
     expect(quotesMigration).not.toContain('spec-sheets');
 
-    expect(consultation).toContain(".from('spec-sheets')");
-    expect(consultation).toContain('getPublicUrl');
+    // Main moved consultation PDFs off the public spec-sheets bucket.
+    // The quotes lock must still leave that historical public bucket alone.
+    expect(consultation).not.toContain(".from('spec-sheets')");
+    expect(consultation).not.toContain("storage.from('quotes')");
   });
 });
