@@ -25,7 +25,7 @@ Executable offline harness (no live calls, no `ATTESTED` write): `scripts/lib/pu
 - Laptop, preview, or “this is the production key” labeling without a digest match
 - Posting A2 to live `ai-chatbot` / `ai-chatbot-stream` as a substitute for the source-contract probe
 
-The offline harness (`runPairAttestationProbes`) bounds the **entire** session, not only `close()`. Hung `fetch` / `createOffer` / `acceptAnswer` calls are cancelled against that deadline, and `close()` always runs in `finally` with its own cleanup budget. Passing `timeoutMs` to an adapter is not the deadline.
+The offline harness (`runPairAttestationProbes`) bounds the **entire** session, not only `close()`. It passes `AbortSignal` into `fetch`, `createOffer`, and `acceptAnswer`, aborts on timeout or error, and does not start later stages after abort. `Promise.race` only ends the caller wait. Adapters that ignore the signal fail acceptance (`ADAPTER_ABORT_CONTRACT`); `close()` being called is not proof that no live peer or request remains. Late-resolving `createOffer` is settled, then `close()` runs again. Passing `timeoutMs` to an adapter is not the deadline.
 
 Synthetic mode is labeled on every receipt (`mode=synthetic`, `synthetic=true`) and **never** returns `productionAttestable=true`. Do not mark guards `ATTESTED` from synthetic tests.
 
@@ -135,7 +135,7 @@ Offer requirements:
 
 Answer validation — **beyond** the `v=` prefix. The body must be an SDP **answer**, not a copy of the offer. Require all of:
 
-- HTTP `200` or `201`
+- HTTP `200` or `201` (one `isSdpExchangeSuccessStatus` predicate; receipt `b3.ok` and `realtimeAttestable` must agree)
 - `v=` present (necessary, not sufficient)
 - `o=` origin line present
 - `s=` session-name line present

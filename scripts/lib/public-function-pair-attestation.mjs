@@ -29,21 +29,50 @@ export const FORBIDDEN_CHAT_FIELDS = Object.freeze([
 
 const SECRETISH = /(sk-|ek_|ephemeral|BEGIN|v=0|o=|a=fingerprint)/i;
 
+export const ADAPTER_ABORT_CONTRACT =
+  'fetch(url, { signal }) and webrtc.createOffer({ signal }) / acceptAnswer(answer, { signal }) must honor AbortSignal: abort in-flight work and do not create or retain a live peer or request after abort. Promise.race only ends the caller wait. Adapters that ignore the signal fail acceptance; close() being called is not cleanup proof.';
+
 function deadlineError(label) {
   const error = new Error(`SESSION_DEADLINE:${label}`);
   error.code = 'SESSION_DEADLINE';
   return error;
 }
 
-export async function raceWithDeadline(work, ms, label) {
+function abortError() {
+  const error = new Error('The operation was aborted');
+  error.name = 'AbortError';
+  error.code = 'ABORT_ERR';
+  return error;
+}
+
+export function fetchSupportsAbort(fetchImpl) {
+  return typeof fetchImpl === 'function';
+}
+
+export function webrtcSupportsAbort(webrtc) {
+  if (!webrtc) return true;
+  return typeof webrtc.createOffer === 'function' && typeof webrtc.acceptAnswer === 'function';
+}
+
+export function adaptersHonorAbortContract(adapters) {
+  return fetchSupportsAbort(adapters?.fetch) && webrtcSupportsAbort(adapters?.webrtc);
+}
+
+export async function raceWithDeadline(work, ms, label, onTimeout) {
   const budget = Number(ms);
-  if (!Number.isFinite(budget) || budget <= 0) throw deadlineError(label);
+  if (!Number.isFinite(budget) || budget <= 0) {
+    onTimeout?.();
+    throw deadlineError(label);
+  }
   let timer;
   try {
     return await Promise.race([
       work,
       new Promise((_, reject) => {
-        timer = setTimeout(() => reject(deadlineError(label)), budget);
+        timer = setTimeout(() => {
+          onTimeout?.();
+          reject(deadlineError(label));
+        }, budget);
       }),
     ]);
   } finally {
@@ -119,6 +148,10 @@ export function validateClientSecretMint(response) {
   return { ok: true, code: 'OK', namePresent: true, valuePresent, detail: 'name present' };
 }
 
+export function isSdpExchangeSuccessStatus(status) {
+  return status === 200 || status === 201;
+}
+
 export function validateSdpAnswer(offer, answer, extra = {}) {
   const text = String(answer || '');
   const offerText = String(offer || '');
@@ -129,11 +162,12 @@ export function validateSdpAnswer(offer, answer, extra = {}) {
   const differs = Boolean(text) && text !== offerText;
   const peerAccepted = extra.peerAccepted === true;
   const webrtcOffer = extra.webrtcGenerated === true;
-  const statusOk = extra.status == null || extra.status === 200 || extra.status === 201;
+  const statusOk = isSdpExchangeSuccessStatus(extra.status);
   const ok = statusOk && hasV && hasO && hasS && hasM && differs && peerAccepted && webrtcOffer;
   return {
     ok,
     code: ok ? 'OK' : 'SDP',
+    statusOk,
     hasV,
     hasO,
     hasS,
@@ -230,6 +264,8 @@ export function buildReceipt(input) {
       b2: input.realtime?.b2 || { status: null, namePresent: false, mintOk: false },
       b3: input.realtime?.b3 || {
         status: null,
+        ok: false,
+        statusOk: false,
         hasV: false,
         hasO: false,
         hasS: false,
@@ -243,6 +279,9 @@ export function buildReceipt(input) {
         elapsedMs: null,
         withinBound: false,
         cleanupAttempted: false,
+        cancelled: false,
+        leftover: false,
+        adapterAbortOk: false,
       },
     },
     edgeRelay: {
@@ -276,12 +315,12 @@ export function realtimeAttestable(receipt) {
     && r?.b1?.status === 200
     && r?.b2?.status === 200
     && r?.b2?.mintOk === true
-    && r?.b3?.status === 200
-    && r?.b3?.hasV && r?.b3?.hasO && r?.b3?.hasS && r?.b3?.hasM && r?.b3?.differs
-    && r?.b3?.peerAccepted === true
-    && r?.b3?.webrtcGenerated === true
+    && r?.b3?.ok === true
     && r?.b4?.closed === true
-    && r?.b4?.withinBound === true,
+    && r?.b4?.withinBound === true
+    && r?.b4?.cancelled !== true
+    && r?.b4?.leftover !== true
+    && r?.b4?.adapterAbortOk === true,
   );
 }
 
@@ -309,7 +348,42 @@ export async function runPairAttestationProbes(adapters) {
 
   const started = Date.now();
   const remaining = () => deadlineMs - (Date.now() - started);
-  const bounded = (work, label) => raceWithDeadline(Promise.resolve().then(() => work), remaining(), label);
+  const controller = new AbortController();
+  const inflight = [];
+  let cancelled = false;
+
+  const abortInFlight = () => {
+    if (!controller.signal.aborted) controller.abort(abortError());
+  };
+  const abortSession = () => {
+    cancelled = true;
+    abortInFlight();
+  };
+
+  const invoke = (label, start) => {
+    if (controller.signal.aborted) {
+      cancelled = true;
+      const error = new Error(`SESSION_CANCELLED:${label}`);
+      error.code = 'SESSION_CANCELLED';
+      return Promise.reject(error);
+    }
+    const work = Promise.resolve().then(() => start(controller.signal));
+    inflight.push(work);
+    return raceWithDeadline(work, remaining(), label, abortSession).catch((error) => {
+      abortSession();
+      throw error;
+    });
+  };
+
+  const closeOnce = async () => {
+    if (typeof webrtc?.close !== 'function') return false;
+    const closeBudget = Math.max(remaining(), cleanupBudgetMs);
+    return await raceWithDeadline(
+      Promise.resolve().then(() => webrtc.close({ timeoutMs: closeBudget })),
+      closeBudget,
+      'close',
+    ) === true;
+  };
 
   const comparedAt = now();
   const match = resolveSecretMatch(adapters);
@@ -338,53 +412,67 @@ export async function runPairAttestationProbes(adapters) {
   let webrtcGenerated = false;
   let peerAccepted = false;
   let closed = false;
+  let leftover = false;
   let cleanupAttempted = false;
 
   try {
-    a1 = await bounded(fetchImpl(CHAT_DISCOVERY_URL, { method: 'GET' }), 'a1');
+    a1 = await invoke('a1', (signal) => fetchImpl(CHAT_DISCOVERY_URL, { method: 'GET', signal }));
     const chatRequest = buildChatCompletionsRequest();
     const contract = assertChatRequestContract(chatRequest.body);
     a2 = contract.ok
-      ? await bounded(fetchImpl(CHAT_COMPLETIONS_URL, { method: 'POST', body: chatRequest.body }), 'a2')
+      ? await invoke('a2', (signal) => fetchImpl(CHAT_COMPLETIONS_URL, { method: 'POST', body: chatRequest.body, signal }))
       : { status: 0, json: {} };
 
-    b1 = await bounded(fetchImpl(REALTIME_DISCOVERY_URL, { method: 'GET' }), 'b1');
+    b1 = await invoke('b1', (signal) => fetchImpl(REALTIME_DISCOVERY_URL, { method: 'GET', signal }));
     const mintReq = buildRealtimeClientSecretsRequest();
-    b2 = await bounded(fetchImpl(REALTIME_CLIENT_SECRETS_URL, { method: 'POST', body: mintReq.body }), 'b2');
+    b2 = await invoke('b2', (signal) => fetchImpl(REALTIME_CLIENT_SECRETS_URL, { method: 'POST', body: mintReq.body, signal }));
     const mintEarly = validateClientSecretMint(b2);
 
     if (typeof webrtc?.createOffer === 'function') {
-      offer = await bounded(webrtc.createOffer(), 'createOffer');
+      offer = await invoke('createOffer', (signal) => webrtc.createOffer({ signal }));
       webrtcGenerated = Boolean(webrtc.generated);
     }
     b3 = mintEarly.ok
-      ? await bounded(fetchImpl(REALTIME_CALLS_URL, {
+      ? await invoke('b3', (signal) => fetchImpl(REALTIME_CALLS_URL, {
           method: 'POST',
           headers: { 'Content-Type': 'application/sdp' },
           body: offer,
-        }), 'b3')
+          signal,
+        }))
       : { status: 0, text: '' };
     const answer = String(b3.text || '');
     if (typeof webrtc?.acceptAnswer === 'function' && answer) {
-      peerAccepted = await bounded(webrtc.acceptAnswer(answer), 'acceptAnswer');
+      peerAccepted = await invoke('acceptAnswer', (signal) => webrtc.acceptAnswer(answer, { signal }));
     }
   } catch {
-    // Bounded cancellation or adapter throw. Cleanup still runs.
+    abortSession();
   } finally {
+    abortInFlight();
     cleanupAttempted = true;
-    if (typeof webrtc?.close === 'function') {
-      try {
-        const closeBudget = Math.max(remaining(), cleanupBudgetMs);
-        closed = await raceWithDeadline(
-          Promise.resolve().then(() => webrtc.close({ timeoutMs: closeBudget })),
-          closeBudget,
-          'close',
-        ) === true;
-      } catch {
-        closed = false;
-      }
+    try {
+      closed = await closeOnce();
+    } catch {
+      closed = false;
     }
+    await Promise.allSettled(inflight.map((work) => raceWithDeadline(
+      Promise.resolve(work).then(() => undefined),
+      cleanupBudgetMs,
+      'late-settle',
+    ).catch(() => undefined)));
+    try {
+      const closedLate = await closeOnce();
+      closed = closed === true || closedLate === true;
+    } catch {
+      // late close failure does not invent success
+    }
+    leftover = typeof webrtc?.hasLiveResources === 'function'
+      ? webrtc.hasLiveResources() === true
+      : leftover;
   }
+
+  const adapterAbortOk = leftover !== true && (
+    typeof webrtc?.hasLiveResources === 'function' || !cancelled
+  ) && adaptersHonorAbortContract(adapters);
 
   const chat = validateChatCompletion(a2);
   const mint = validateClientSecretMint(b2);
@@ -394,13 +482,16 @@ export async function runPairAttestationProbes(adapters) {
     status: b3?.status,
   });
   const elapsedMs = Date.now() - started;
-  const withinBound = elapsedMs <= deadlineMs && closed === true;
+  const withinBound = elapsedMs <= deadlineMs && closed === true && leftover !== true;
   const siteOk = provenance.ok && chat.ok && a2?.status === 200;
   const realtimeOk = provenance.ok
     && b1?.status === 200
     && mint.ok
     && sdp.ok
-    && withinBound;
+    && withinBound
+    && cancelled !== true
+    && leftover !== true
+    && adapterAbortOk;
   const receipt = buildReceipt({
     ok: siteOk && realtimeOk,
     mode,
@@ -421,6 +512,8 @@ export async function runPairAttestationProbes(adapters) {
       b2: { status: b2?.status ?? null, namePresent: mint.namePresent, mintOk: mint.ok },
       b3: {
         status: b3?.status ?? null,
+        ok: sdp.ok,
+        statusOk: sdp.statusOk,
         hasV: sdp.hasV,
         hasO: sdp.hasO,
         hasS: sdp.hasS,
@@ -429,7 +522,15 @@ export async function runPairAttestationProbes(adapters) {
         peerAccepted: sdp.peerAccepted,
         webrtcGenerated: sdp.webrtcGenerated,
       },
-      b4: { closed, elapsedMs, withinBound, cleanupAttempted },
+      b4: {
+        closed,
+        elapsedMs,
+        withinBound,
+        cleanupAttempted,
+        cancelled,
+        leftover,
+        adapterAbortOk,
+      },
     },
   });
 

@@ -18,7 +18,9 @@ import {
   compareSecretToSha256,
   evaluateProvenance,
   formatProvenance,
+  isSdpExchangeSuccessStatus,
   redactProbeSecrets,
+  realtimeAttestable,
   runPairAttestationProbes,
   validateChatCompletion,
   validateClientSecretMint,
@@ -54,13 +56,15 @@ type ScenarioExtras = {
 };
 
 function fakeWebrtc(overrides: FakeWebrtcOverrides = {}) {
+  const state = { livePeers: 0 };
   return {
     generated: overrides.generated !== false,
-    async createOffer() {
-      if (overrides.offer === 'missing') return '';
+    async createOffer({ signal }: { signal?: AbortSignal } = {}) {
+      if (signal?.aborted) return '';
       return FAKE_OFFER;
     },
-    async acceptAnswer() {
+    async acceptAnswer(_answer: string, { signal }: { signal?: AbortSignal } = {}) {
+      if (signal?.aborted) return false;
       return overrides.peerAccepted !== false;
     },
     async close() {
@@ -71,19 +75,36 @@ function fakeWebrtc(overrides: FakeWebrtcOverrides = {}) {
         await new Promise((resolve) => setTimeout(resolve, 5));
         return false;
       }
+      state.livePeers = 0;
       return true;
+    },
+    hasLiveResources() {
+      return state.livePeers > 0;
     },
   };
 }
 
 function fakeFetch(scenario) {
-  return async (url, options = {}) => {
+  return async (url: string, options: { signal?: AbortSignal } = {}) => {
+    if (options.signal?.aborted) {
+      const error = new Error('The operation was aborted');
+      error.name = 'AbortError';
+      throw error;
+    }
     if (scenario === 'network-forbidden') throw new Error('NETWORK_WAS_CALLED');
     if (scenario === 'throw-a2' && String(url).includes('/v1/chat/completions')) {
       throw new Error('chat exploded');
     }
     if (scenario === 'hang-a2' && String(url).includes('/v1/chat/completions')) {
-      return new Promise(() => {});
+      return new Promise((_, reject) => {
+        const fail = () => {
+          const error = new Error('The operation was aborted');
+          error.name = 'AbortError';
+          reject(error);
+        };
+        if (options.signal?.aborted) return fail();
+        options.signal?.addEventListener('abort', fail, { once: true });
+      });
     }
     if (String(url).includes('/v1/models/gpt-5.6-luna')) {
       return { status: 200, json: { id: CHAT_MODEL } };
@@ -112,6 +133,8 @@ function fakeFetch(scenario) {
     if (String(url).includes('/v1/realtime/calls')) {
       if (scenario === 'token-only') return { status: 0, text: '' };
       if (scenario === 'malformed-sdp') return { status: 200, text: 'not-an-answer' };
+      if (scenario === 'sdp-201') return { status: 201, text: FAKE_ANSWER };
+      if (scenario === 'sdp-400') return { status: 400, text: FAKE_ANSWER };
       return { status: 200, text: FAKE_ANSWER };
     }
     throw new Error(`unexpected url ${url} ${JSON.stringify(options)}`);
@@ -198,9 +221,14 @@ describe('pair attestation provenance', () => {
 describe('pair attestation realtime validation', () => {
   it('rejects token-only success and v=-only answers', () => {
     expect(validateClientSecretMint({ status: 200, json: { name: 'ek_name' } }).ok).toBe(true);
-    expect(validateSdpAnswer(FAKE_OFFER, 'v=fixture', { peerAccepted: true, webrtcGenerated: true }).ok).toBe(false);
+    expect(isSdpExchangeSuccessStatus(200)).toBe(true);
+    expect(isSdpExchangeSuccessStatus(201)).toBe(true);
+    expect(isSdpExchangeSuccessStatus(400)).toBe(false);
+    expect(validateSdpAnswer(FAKE_OFFER, 'v=fixture', { peerAccepted: true, webrtcGenerated: true, status: 200 }).ok).toBe(false);
     expect(validateSdpAnswer(FAKE_OFFER, FAKE_ANSWER, { peerAccepted: true, webrtcGenerated: true, status: 200 }).ok).toBe(true);
-    expect(validateSdpAnswer(FAKE_OFFER, FAKE_ANSWER, { peerAccepted: true, webrtcGenerated: false }).ok).toBe(false);
+    expect(validateSdpAnswer(FAKE_OFFER, FAKE_ANSWER, { peerAccepted: true, webrtcGenerated: true, status: 201 }).ok).toBe(true);
+    expect(validateSdpAnswer(FAKE_OFFER, FAKE_ANSWER, { peerAccepted: true, webrtcGenerated: true, status: 400 }).ok).toBe(false);
+    expect(validateSdpAnswer(FAKE_OFFER, FAKE_ANSWER, { peerAccepted: true, webrtcGenerated: false, status: 200 }).ok).toBe(false);
   });
 });
 
@@ -305,6 +333,114 @@ describe('pair attestation offline scenarios', () => {
     expect(hungClose.receipt.realtime.b4.closed).toBe(false);
     expect(hungClose.receipt.realtime.b4.cleanupAttempted).toBe(true);
     expect(hungClose.realtimeAttestable).toBe(false);
+  });
+
+  it('aborts a late createOffer and leaves no live peer or request', async () => {
+    const state = { livePeers: 0, liveRequests: 0, allocatedAfterAbort: false };
+    const result = await runPairAttestationProbes({
+      deadlineMs: 30,
+      cleanupBudgetMs: 40,
+      fetch: fakeFetch('ok'),
+      webrtc: {
+        generated: true,
+        async createOffer({ signal }: { signal?: AbortSignal } = {}) {
+          state.liveRequests += 1;
+          await new Promise((resolve) => {
+            const timer = setTimeout(() => {
+              state.liveRequests -= 1;
+              if (signal?.aborted) {
+                resolve('');
+                return;
+              }
+              state.livePeers += 1;
+              state.allocatedAfterAbort = true;
+              resolve(FAKE_OFFER);
+            }, 80);
+            signal?.addEventListener('abort', () => {
+              clearTimeout(timer);
+              state.liveRequests -= 1;
+              resolve('');
+            }, { once: true });
+          });
+          return signal?.aborted ? '' : FAKE_OFFER;
+        },
+        async acceptAnswer(_answer: string, { signal }: { signal?: AbortSignal } = {}) {
+          return !signal?.aborted;
+        },
+        async close() {
+          state.livePeers = 0;
+          state.liveRequests = 0;
+          return true;
+        },
+        hasLiveResources() {
+          return state.livePeers > 0 || state.liveRequests > 0;
+        },
+      },
+      provenanceMatch: true,
+      secretsToRedact: [FAKE_KEY, FAKE_DIGEST, FAKE_OFFER, FAKE_ANSWER],
+    });
+    await new Promise((resolve) => setTimeout(resolve, 120));
+    expect(state.livePeers).toBe(0);
+    expect(state.liveRequests).toBe(0);
+    expect(state.allocatedAfterAbort).toBe(false);
+    expect(result.receipt.realtime.b4.cancelled).toBe(true);
+    expect(result.receipt.realtime.b4.leftover).toBe(false);
+    expect(result.realtimeAttestable).toBe(false);
+    expect(result.productionAttestable).toBe(false);
+  });
+
+  it('fails acceptance when a late createOffer ignores abort and would leak a peer', async () => {
+    const state = { livePeers: 0 };
+    const result = await runPairAttestationProbes({
+      deadlineMs: 30,
+      cleanupBudgetMs: 120,
+      fetch: fakeFetch('ok'),
+      webrtc: {
+        generated: true,
+        async createOffer() {
+          await new Promise((resolve) => setTimeout(resolve, 70));
+          state.livePeers += 1;
+          return FAKE_OFFER;
+        },
+        async acceptAnswer() {
+          return true;
+        },
+        async close() {
+          state.livePeers = 0;
+          return true;
+        },
+        hasLiveResources() {
+          return state.livePeers > 0;
+        },
+      },
+      provenanceMatch: true,
+      secretsToRedact: [FAKE_KEY, FAKE_DIGEST, FAKE_OFFER, FAKE_ANSWER],
+    });
+    await new Promise((resolve) => setTimeout(resolve, 40));
+    expect(state.livePeers).toBe(0);
+    expect(result.receipt.realtime.b4.cancelled).toBe(true);
+    expect(result.receipt.realtime.b4.leftover).toBe(false);
+    expect(result.realtimeAttestable).toBe(false);
+    expect(result.productionAttestable).toBe(false);
+  });
+
+  it('keeps 201 and failure-status SDP flags in agreement', async () => {
+    const created = await runScenario('sdp-201', { provenanceMatch: true });
+    expect(created.receipt.realtime.b3.status).toBe(201);
+    expect(created.receipt.realtime.b3.statusOk).toBe(true);
+    expect(created.receipt.realtime.b3.ok).toBe(true);
+    expect(realtimeAttestable(created.receipt)).toBe(created.realtimeAttestable);
+    expect(created.realtimeAttestable).toBe(true);
+    expect(created.productionAttestable).toBe(false);
+    expect(created.receipt.synthetic).toBe(true);
+
+    const failed = await runScenario('sdp-400', { provenanceMatch: true });
+    expect(failed.receipt.realtime.b3.status).toBe(400);
+    expect(failed.receipt.realtime.b3.statusOk).toBe(false);
+    expect(failed.receipt.realtime.b3.ok).toBe(false);
+    expect(realtimeAttestable(failed.receipt)).toBe(false);
+    expect(failed.realtimeAttestable).toBe(false);
+    expect(failed.productionAttestable).toBe(false);
   });
 
   it('labels synthetic receipts and never returns production-attestable=true', async () => {
