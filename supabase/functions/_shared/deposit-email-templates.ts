@@ -85,12 +85,12 @@ function policySummary(
 export function createDepositConfirmationEmailHtml(input: DepositCustomerEmailInput): string {
   const dateStr = formatStableDepositEmailDate(input.paidAt);
   const summary = policySummary(input.policy, "customer");
-  const rows: Array<{ label: string; value: string }> = [];
-  if (input.motorLabel) rows.push({ label: "Motor", value: esc(input.motorLabel) });
-  rows.push({ label: "Deposit", value: `$${esc(input.depositAmount)} CAD` });
-  rows.push({ label: "Deposit reference", value: esc(input.referenceNumber) });
-  rows.push({ label: "Stock", value: esc(summary.stock) });
-  rows.push({ label: "Date", value: esc(dateStr) });
+  const rows: Array<{ label: string; valueHtml: string }> = [];
+  if (input.motorLabel) rows.push({ label: "Motor", valueHtml: esc(input.motorLabel) });
+  rows.push({ label: "Deposit", valueHtml: `$${esc(input.depositAmount)} CAD` });
+  rows.push({ label: "Deposit reference", valueHtml: esc(input.referenceNumber) });
+  rows.push({ label: "Stock", valueHtml: esc(summary.stock) });
+  rows.push({ label: "Date", valueHtml: esc(dateStr) });
 
   const body = `
     <p style="margin:0 0 14px 0;">Hi ${esc(input.customerName)},</p>

@@ -243,7 +243,7 @@ describe('quote funnel UX contract', () => {
     expect(scheduleSource).toContain('We use your details to review this quote and contact you about it.');
     expect(scheduleSource).toContain('to="/privacy"');
     expect(scheduleSource.match(/aria-required="true"/g)).toHaveLength(3);
-    expect(scheduleSource.match(/aria-invalid=/g)).toHaveLength(3);
+    expect(scheduleSource.match(/aria-invalid=/g)).toHaveLength(4);
     expect(scheduleSource).toContain('role="alert"');
     expect(reminderSource).toContain('This signs you up for price and promotion updates for this motor.');
     expect(reminderSource).toContain('has-[:focus-visible]:ring-2');

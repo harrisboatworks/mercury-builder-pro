@@ -172,8 +172,8 @@ Apply this exact order against an operator-supplied isolated non-production proj
 4. `scripts/deposit-deal-packet-staging/sql/seed.sql`
 
 ```bash
-# Same psql session. project_ref and allow_nonce are operator intent
-# acknowledgement only. connection_ref must be the project ref parsed from
+# Same psql session. project_ref and allow_nonce are operator intent acknowledgement only.
+# connection_ref must be the project ref parsed from
 # the STAGING_DATABASE_URL / STAGING_SUPABASE_URL host
 # (https://<ref>.supabase.co or db.<ref>.supabase.co) and must equal project_ref.
 # This SQL cannot independently identify the connected project.

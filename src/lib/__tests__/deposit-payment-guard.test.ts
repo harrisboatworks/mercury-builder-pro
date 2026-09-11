@@ -333,7 +333,7 @@ describe('deposit create-payment savedQuoteId guard', () => {
     expect(source).toContain('.eq("stripe_checkout_session_id", existingDeposit.stripe_checkout_session_id)');
     expect(source).toContain('.is("stripe_checkout_session_id", null)');
     expect(source).toContain('Deposit already paid during persist race');
-    expect(source).toContain('stripe.checkout.sessions.expire(session.id)');
+    expect(source).toMatch(/expireCheckoutSessionSafely\(\s*stripe,\s*session\.id\s*\)/);
     expect(source.lastIndexOf('classifyDepositPersistOutcome'))
       .toBeGreaterThan(source.indexOf('stripe.checkout.sessions.create(sessionData'));
   });
