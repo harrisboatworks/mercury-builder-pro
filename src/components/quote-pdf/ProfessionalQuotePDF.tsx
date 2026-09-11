@@ -13,6 +13,7 @@ import { parseMercuryRigCodes } from '@/lib/mercury-codes';
 import { formatPromoCalendarDate, promoEndOfDay } from '@/lib/quote-utils';
 import { getRecommendedDeposit } from '@/lib/deposit';
 import { resolveFinancingContractTermMonths } from '@/lib/quote-pdf-data';
+import { groupAccessoryItems } from '@/lib/quote-accessory-groups';
 import harrisLogoBlack from '@/assets/harris-logo.png?inline';
 import mercuryLogoBlack from '@/assets/mercury-logo.png';
 
@@ -406,7 +407,12 @@ export const FINANCING_ESTIMATE_DISCLAIMER = 'Payment figures are estimates and 
 export function quoteInspectionCaveat(quoteData: Pick<QuotePDFProps['quoteData'], 'accessoryBreakdown' | 'tradeInValue'>): string | null {
   const hasTradeIn = Number(quoteData.tradeInValue || 0) > 0;
   const hasPropeller = Boolean(
-    quoteData.accessoryBreakdown?.some((item) => item.name.toLowerCase().includes('propeller')),
+    quoteData.accessoryBreakdown?.some((item) => {
+      const name = item.name.toLowerCase();
+      // A factory-included propeller is not subject to water-test selection.
+      if (name.includes('standard propeller')) return false;
+      return name.includes('propeller');
+    }),
   );
 
   if (hasTradeIn && hasPropeller) {
@@ -461,12 +467,7 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
   const savedQuoteQrCode = quoteData.savedQuoteQrCode ?? quoteData.financingQrCode;
   const expiry = validUntilText(quoteData.date, quoteData.validUntil, quoteData.promoEndDate);
   const items = quoteData.accessoryBreakdown || [];
-  const groups = [
-    { key: 'equipment', title: 'Equipment and Rigging', items: items.filter((item) => !item.category || item.category === 'equipment') },
-    { key: 'installation', title: 'Installation and Setup', items: items.filter((item) => item.category === 'installation') },
-    { key: 'protection', title: 'Mercury Product Protection', items: items.filter((item) => item.category === 'protection') },
-    { key: 'custom', title: 'Additional Items', items: items.filter((item) => item.category === 'custom') },
-  ].filter((group) => group.items.length > 0);
+  const groups = groupAccessoryItems(items);
   const includedCoverage = quoteData.includedCoverageYears ?? 3;
   const coverageTotal = quoteData.productProtection?.totalCoverageYears ?? includedCoverage;
   const hasFinancing = quoteData.selectedPaymentMethod !== 'cash_purchase'
