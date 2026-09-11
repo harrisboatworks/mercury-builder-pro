@@ -194,9 +194,12 @@ Codex completed the read-only metadata and OPTIONS checks above. Provider/sessio
 
 Codex already completed credential-free OPTIONS reachability (200, `ACAO *`) at `2026-09-11T02:11:36Z`. That is not a provider/runtime pass.
 
+Exact bounded Codex probes (production Edge `OPENAI_API_KEY` only, SDP required for Realtime, `#541` insufficient): `docs/runbooks/public-function-pair-attestation-probes.md`.
+
 Only after Jay authorizes a specific check, using production provenance, and **without** creating customer, quote, or session business records:
 
 - Model-existence probe on the production OpenAI project for `gpt-5.6-luna` and `gpt-realtime-2.1-mini` (read/list only; no chat completion that writes CRM state).
+- Realtime acceptance: `POST /v1/realtime/client_secrets` plus `POST /v1/realtime/calls` SDP answer (`v=`). Token issuance alone is insufficient.
 - Registry re-read of the six slugs.
 - If a widget/session probe is later authorized: use a non-customer origin that already passes `isAllowedOrigin`, do not submit a quote, do not save a lead, do not run MCP tools that estimate trade-in, build a quote, send SMS/email, or write reminders. `/voice-test` creates a Realtime session and is **not** a no-side-effect check unless separately scoped.
 
