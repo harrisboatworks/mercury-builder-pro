@@ -25,6 +25,11 @@ import {
   projectRefFromConfig as sharedProjectRefFromConfig,
   resolveProjectRef as sharedResolveProjectRef,
 } from '../../scripts/lib/supabase-project-ref.mjs';
+import {
+  listEdgeSecretNamesForProject,
+  managementApiSecretsUrl,
+  pickSecretNames,
+} from '../../scripts/lib/supabase-edge-secret-names.mjs';
 
 const files = {
   'supabase/functions/send-sms/index.ts': 'export {}',
@@ -95,6 +100,10 @@ describe('project ref and secret redaction', () => {
         return { ok: true, detail: 'ok' };
       },
       listAppliedVersions: () => [],
+      listSecretNamesFromApi: async ({ projectRef }: { projectRef: string }) => {
+        expect(projectRef).toBe('eutsoqdpjurknjsshxes');
+        return ['TWILIO_WEBHOOK_URL'];
+      },
     });
     expect(code).toBe(0);
     expect(seen).toEqual(['send-sms']);
@@ -1083,6 +1092,7 @@ describe('public pair release holds', () => {
         return { ok: true, detail: 'ok' };
       },
       listAppliedVersions: () => [],
+      listSecretNamesFromApi: async () => ['TWILIO_WEBHOOK_URL'],
     });
     expect(code).toBe(0);
     expect(seen).toEqual(['send-sms']);
@@ -1354,6 +1364,137 @@ describe('TWILIO_WEBHOOK_URL deploy preflight', () => {
     expect(seen).toEqual([]);
     expect(failed).toHaveLength(1);
     expect(String(failed[0].detail)).toMatch(/secret-name list is unreadable/);
+  });
+
+  it('runDeploy looks up names for the resolved project and deploys when present', async () => {
+    const seen: string[] = [];
+    const lookups: string[] = [];
+    const code = await runDeploy({
+      env: {
+        DEPLOY_FUNCTION: 'send-sms',
+        SUPABASE_PROJECT_REF: 'eutsoqdpjurknjsshxes',
+        DEPLOY_FROM: 'HEAD',
+        DEPLOY_TO: 'HEAD',
+      },
+      listAppliedVersions: () => [],
+      listSecretNamesFromApi: async ({ projectRef }: { projectRef: string }) => {
+        lookups.push(projectRef);
+        return {
+          projectRef,
+          names: ['TWILIO_AUTH_TOKEN', 'TWILIO_WEBHOOK_URL'],
+        };
+      },
+      deployOne: (slug: string) => {
+        seen.push(slug);
+        return { ok: true, detail: 'ok' };
+      },
+    });
+    expect(lookups).toEqual(['eutsoqdpjurknjsshxes']);
+    expect(code).toBe(0);
+    expect(seen).toEqual(['send-sms']);
+  });
+
+  it('runDeploy fails closed when TWILIO_WEBHOOK_URL is absent from the looked-up names', async () => {
+    const seen: string[] = [];
+    const code = await runDeploy({
+      env: {
+        DEPLOY_FUNCTION: 'notification-webhook',
+        SUPABASE_PROJECT_REF: 'eutsoqdpjurknjsshxes',
+        DEPLOY_FROM: 'HEAD',
+        DEPLOY_TO: 'HEAD',
+      },
+      listAppliedVersions: () => [],
+      listSecretNamesFromApi: async () => ['TWILIO_AUTH_TOKEN'],
+      deployOne: (slug: string) => {
+        seen.push(slug);
+        return { ok: true, detail: 'ok' };
+      },
+    });
+    expect(code).toBe(1);
+    expect(seen).toEqual([]);
+  });
+
+  it('runDeploy fails closed when the secret-name lookup is unreadable', async () => {
+    const seen: string[] = [];
+    const code = await runDeploy({
+      env: {
+        DEPLOY_FUNCTION: 'send-sms',
+        SUPABASE_PROJECT_REF: 'eutsoqdpjurknjsshxes',
+        DEPLOY_FROM: 'HEAD',
+        DEPLOY_TO: 'HEAD',
+      },
+      listAppliedVersions: () => [],
+      listSecretNamesFromApi: async () => {
+        throw new Error('secrets list unavailable');
+      },
+      deployOne: (slug: string) => {
+        seen.push(slug);
+        return { ok: true, detail: 'ok' };
+      },
+    });
+    expect(code).toBe(1);
+    expect(seen).toEqual([]);
+  });
+
+  it('runDeploy fails closed when the secrets adapter reports a different project', async () => {
+    const seen: string[] = [];
+    const code = await runDeploy({
+      env: {
+        DEPLOY_FUNCTION: 'send-sms',
+        SUPABASE_PROJECT_REF: 'eutsoqdpjurknjsshxes',
+        DEPLOY_FROM: 'HEAD',
+        DEPLOY_TO: 'HEAD',
+      },
+      listAppliedVersions: () => [],
+      listSecretNamesFromApi: async () => ({
+        projectRef: 'wrongprojectrefxxxx',
+        names: ['TWILIO_WEBHOOK_URL'],
+      }),
+      deployOne: (slug: string) => {
+        seen.push(slug);
+        return { ok: true, detail: 'ok' };
+      },
+    });
+    expect(code).toBe(1);
+    expect(seen).toEqual([]);
+  });
+
+  it('runDeploy uses a fake CLI list bound to the resolved project and never keeps digests', async () => {
+    const seen: string[] = [];
+    const cliRefs: string[] = [];
+    const code = await runDeploy({
+      env: {
+        DEPLOY_FUNCTION: 'send-sms',
+        SUPABASE_PROJECT_REF: 'eutsoqdpjurknjsshxes',
+        DEPLOY_FROM: 'HEAD',
+        DEPLOY_TO: 'HEAD',
+      },
+      listAppliedVersions: () => [],
+      listSecretNamesFromCli: async ({ projectRef }: { projectRef: string }) => {
+        cliRefs.push(projectRef);
+        return pickSecretNames([
+          { name: 'TWILIO_WEBHOOK_URL', value: 'must-not-leak', digest: 'a'.repeat(64) },
+        ]);
+      },
+      deployOne: (slug: string) => {
+        seen.push(slug);
+        return { ok: true, detail: 'ok' };
+      },
+    });
+    expect(cliRefs).toEqual(['eutsoqdpjurknjsshxes']);
+    expect(managementApiSecretsUrl('eutsoqdpjurknjsshxes')).toBe(
+      'https://api.supabase.com/v1/projects/eutsoqdpjurknjsshxes/secrets',
+    );
+    expect(code).toBe(0);
+    expect(seen).toEqual(['send-sms']);
+  });
+
+  it('listEdgeSecretNamesForProject refuses a mismatched expected ref before any lookup', async () => {
+    await expect(listEdgeSecretNamesForProject({
+      projectRef: 'eutsoqdpjurknjsshxes',
+      expectedProjectRef: 'otherprojectrefxxxx',
+      listFromApi: async () => ['TWILIO_WEBHOOK_URL'],
+    })).rejects.toMatchObject({ code: 'WRONG_PROJECT' });
   });
 
   it('deploys the pair when TWILIO_WEBHOOK_URL is present by name', async () => {
