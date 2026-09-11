@@ -98,3 +98,38 @@ The migration test contains 24 PostgreSQL behavior cases and one manifest assert
 Reproduction requires `pg_config`, `initdb`, `pg_ctl`, and `psql`. The PostgreSQL group explicitly skips when server binaries are absent; a run with those tests skipped is not migration acceptance evidence. Local validation above ran all of them. The fixtures do not establish installed Supabase extension behavior, the live job execution roles' Vault access, secret parity, or production readiness.
 
 Before any later release, independently verify the existing cron execution roles can read the selected accepted Vault reference. Do not infer runtime access from the migration owner's privileges or broaden grants as a shortcut. Preserve the unresolved manifest until the contract, caller readback, authorized apply and applied-migration evidence are established. No merge, Supabase migration apply, deployment, live cron alteration, secret rotation, or promotion dispatch was performed for this follow-up.
+
+## Live metadata readback 2026-09-11 (Cursor, names/flags only)
+
+Sanitized production metadata was already read against project `eutsoqdpjurknjsshxes`. This section records names, schedules, and presence flags only. It does not reprint commands, credentials, or secret values. It is not authorization to apply the caller migration, deploy handlers, or resolve the prerequisite mapping. The mapping must remain `status=unresolved`, `path=null`, `version=null`.
+
+Public-function pair holds from #538 have landed on `main`. This hold branch merged that work and must keep both systems: cron-auth unresolved slugs stay skipped, and chat/realtime pairs stay UNVERIFIED-held.
+
+### In-scope scheduled callers
+
+| jobid | name | schedule | active | target endpoint | mentions_internal_header | mentions_authorization | mentions_vault |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 46 | `check-expiring-promotions-daily` | `0 13 * * *` | true | `check-expiring-promotions` | false | true | false |
+| 19 | `lightspeed-motor-models-sync-daily` | `15 2 * * *` | true | `sync-lightspeed-inventory` | false | true | false |
+
+Exactly one caller exists for each of those two endpoints.
+
+### Sister job and out-of-scope Lightspeed jobs
+
+| jobid | name | schedule | active | mentions_internal_header | mentions_authorization | mentions_vault | note |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 37 | `promo-notifications-daily` | `0 14 * * *` | true | true | false | false | Different endpoint; already uses `x-internal-secret`. Do not rewrite it in this PR. |
+
+Other Lightspeed jobs (customers, units, parts, service, deals, open-ros, parts-invoices) are Authorization-only and remain out of scope.
+
+### Vault names and migration ledger
+
+Vault secret names present: `service_role_key`, `sin-encryption-key`, `vercel_pricing_deploy_hook_url`, plus one unnamed (`null`) row. Vault names **not** present: `EDGE_INTERNAL_SECRET`, `CRON_SECRET`. The proposed Vault contract is therefore still unaccepted and unprovisioned. A prior Edge-secret-name audit that `EDGE_INTERNAL_SECRET` exists as an Edge env name is **not** a Vault row.
+
+Migration `20260910140000` is **not** in `supabase_migrations.schema_migrations`.
+
+### Why this stay-held conclusion is unchanged
+
+- Deploying the gated handlers before the caller migration would 401 the two scheduled jobs, which still send Authorization and do not mention an internal header or Vault reference.
+- Applying the caller migration now would abort or be wrong because Vault lacks the proposed names.
+- The explicit prerequisite JSON therefore stays unresolved. This update does not apply the caller migration, does not deploy, and does not resolve that mapping.
