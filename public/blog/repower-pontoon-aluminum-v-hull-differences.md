@@ -78,7 +78,7 @@ That said:
 
 **Shaft length:** Most aluminum fishing boats in the 14–20 ft range run a standard 20" (long) shaft. Some older or smaller hulls use a short (15") shaft. Confirm before ordering.
 
-**HP match:** These hulls are well-rated documents, the capacity plate is usually reliable and easy to read. Matching the rated HP range to actual use is the main conversation.
+**HP match:** These hulls are well-documented, the capacity plate is usually reliable and easy to read. Matching the rated HP range to actual use is the main conversation.
 
 Your transom will tell you the truth about its condition even if you'd rather not hear it. Better to find out now than when the new motor is already mounted.
 
