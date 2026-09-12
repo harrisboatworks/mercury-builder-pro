@@ -188,9 +188,9 @@ export default function Terms() {
             </p>
             <hr />
 
-            <h3>Model-Specific Mercury 9.9 MH Reservation Deposit</h3>
+            <h3>Mercury Motor Deposits</h3>
             <p>
-              The $100 CAD reservation offer applies only to the Mercury 9.9 MH, model 1A10201LK. The deposit is fully refundable until {COMPANY_INFO.name} confirms the exact motor, price, availability and estimated arrival time, and you approve the order in writing. After your written approval, the deposit becomes non-refundable and is credited to your final invoice. Other motor deposits are governed by the amount and terms shown in the applicable written quote or order.
+              Refundability is based on the motor's stock status, not the deposit amount. If the motor is in stock, the deposit is refundable. If the motor is out of stock or a special order, the deposit stays refundable until {COMPANY_INFO.name} confirms the exact motor, price, availability and estimated arrival time, and you approve the order in writing. Once {COMPANY_INFO.name} places the order after that written approval, the deposit becomes non-refundable and is credited to the final invoice. The $100 CAD reservation offer applies only to the Mercury 9.9 MH, model 1A10201LK. That offer changes the deposit amount, not the refund rule.
             </p>
             <hr />
 

@@ -20,7 +20,7 @@ const HOWTO_FAQ = [
   },
   {
     question: "How do I pay the deposit and final balance?",
-    answer: "Deposit is paid online when you build the quote, between $200 and $1,000 depending on motor HP, fully refundable on stock motors. Final balance is due at pickup. We accept e-transfer, debit, credit card, certified cheque, and dealer financing."
+    answer: "Deposit is paid online when you build the quote, between $200 and $1,000 depending on motor HP, or $100 for the model-specific 9.9 MH offer. If the motor is in stock, the deposit is refundable. If the motor is out of stock or a special order, the deposit stays refundable until HBW confirms the exact motor, price, availability and ETA, and you approve the order in writing. Once HBW places the order after that written approval, the deposit becomes non-refundable and is credited to the final invoice. The deposit does not start a factory order. Final balance is due at pickup. We accept e-transfer, debit, credit card, certified cheque, and dealer financing."
   }
 ];
 
@@ -86,7 +86,7 @@ export function HowToRepowerSEO() {
             "@type": "HowToStep",
             "position": 3,
             "name": "Place Your Deposit",
-            "text": "Secure your motor with a refundable deposit ($200–$1,000 depending on HP) paid online. This locks in the price, holds your spot in the install queue, and starts the order if the motor isn't already in stock."
+            "text": "Pay the deposit shown on your quote online. The deposit holds the quoted price. It does not start a factory order. If the motor is in stock, the deposit is refundable. If the motor is out of stock or a special order, the deposit stays refundable until HBW confirms the exact motor, price, availability and ETA, and you approve the order in writing. Once HBW places the order after that written approval, the deposit becomes non-refundable and is credited to the final invoice."
           },
           {
             "@type": "HowToStep",
