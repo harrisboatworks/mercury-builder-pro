@@ -8,6 +8,9 @@ name: Deploy Supabase edge functions
 # migration-apply step here. That omission is intentional. A migration can
 # be destructive and irreversible, and this repo has one production project
 # with no staging. Drift watch reports unapplied migrations; humans apply them.
+# Explicit cron-auth release prerequisites are consulted on both push-range
+# and manual single-function deploys. Unresolved or unapplied mappings skip
+# those functions only. This workflow still never applies migrations.
 #
 # Before each deploy, the job READs applied migrations from the Management
 # API (`GET /v1/projects/{ref}/database/migrations`) with SUPABASE_ACCESS_TOKEN
