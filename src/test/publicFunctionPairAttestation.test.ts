@@ -36,6 +36,25 @@ const FAKE_DIGEST = createHash('sha256').update(FAKE_KEY, 'utf8').digest('hex');
 const FAKE_OFFER = 'fixture-offer-not-for-commit';
 const FAKE_ANSWER = 'fixture-answer\nv=fixture\no=fixture\ns=fixture\nm=fixture';
 
+type FakeOfferSdp = typeof FAKE_OFFER | '';
+type SignalOpts = { signal?: AbortSignal };
+
+/** Closed set of leftover readbacks the leftover regressions actually pass. */
+type LeftoverReadback =
+  | boolean
+  | null
+  | undefined
+  | 'cleared'
+  | Promise<boolean>;
+
+type PairAttestationTestWebrtc = {
+  generated?: boolean;
+  createOffer: (input?: SignalOpts) => Promise<FakeOfferSdp>;
+  acceptAnswer: (answer?: string, input?: SignalOpts) => Promise<boolean>;
+  close: (input?: { timeoutMs?: number }) => Promise<boolean>;
+  hasLiveResources?: () => LeftoverReadback;
+};
+
 type FakeWebrtcOverrides = {
   generated?: boolean;
   offer?: 'missing';
@@ -48,7 +67,7 @@ type FakeWebrtcOverrides = {
 
 type ScenarioExtras = {
   fetch?: ReturnType<typeof fakeFetch>;
-  webrtc?: ReturnType<typeof fakeWebrtc>;
+  webrtc?: PairAttestationTestWebrtc;
   webrtcOverrides?: FakeWebrtcOverrides;
   provenanceMatch?: boolean;
   forceProvenance?: unknown;
@@ -59,16 +78,16 @@ type ScenarioExtras = {
   mode?: 'synthetic' | 'live';
 };
 
-function successfulWebrtc(readback: unknown) {
+function successfulWebrtc(readback: LeftoverReadback): PairAttestationTestWebrtc {
   return {
     generated: true,
-    async createOffer() {
+    async createOffer(_input?: SignalOpts): Promise<FakeOfferSdp> {
       return FAKE_OFFER;
     },
-    async acceptAnswer() {
+    async acceptAnswer(_answer?: string, _input?: SignalOpts): Promise<boolean> {
       return true;
     },
-    async close() {
+    async close(_input?: { timeoutMs?: number }): Promise<boolean> {
       return true;
     },
     hasLiveResources() {
@@ -77,21 +96,21 @@ function successfulWebrtc(readback: unknown) {
   };
 }
 
-function fakeWebrtc(overrides: FakeWebrtcOverrides = {}) {
+function fakeWebrtc(overrides: FakeWebrtcOverrides = {}): PairAttestationTestWebrtc {
   const state = { livePeers: 0 };
   return {
     generated: overrides.generated !== false,
-    async createOffer({ signal }: { signal?: AbortSignal } = {}) {
+    async createOffer({ signal }: SignalOpts = {}): Promise<FakeOfferSdp> {
       if (signal?.aborted) return '';
       return FAKE_OFFER;
     },
-    async acceptAnswer(_answer: string, { signal }: { signal?: AbortSignal } = {}) {
+    async acceptAnswer(_answer?: string, { signal }: SignalOpts = {}): Promise<boolean> {
       if (signal?.aborted) return false;
       return overrides.peerAccepted !== false;
     },
-    async close() {
+    async close(): Promise<boolean> {
       if (overrides.throwOnClose) throw new Error('close failed');
-      if (overrides.hangClose) return new Promise(() => {});
+      if (overrides.hangClose) return new Promise<boolean>(() => {});
       if (overrides.close === false) return false;
       if (overrides.timeout) {
         await new Promise((resolve) => setTimeout(resolve, 5));
