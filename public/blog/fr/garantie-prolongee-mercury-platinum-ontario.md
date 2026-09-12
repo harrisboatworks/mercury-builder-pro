@@ -128,8 +128,6 @@ Commencez avec la page des [prix Mercury Product Protection](/mercury-product-pr
 - [Mercury Product Protection, aperçu officiel](https://www.mercurymarine.com/ca/en/service-and-support/warranty-coverage-and-product-protection/mercury-product-protection)
 - [Modalités canadiennes Platinum, mars 2025](https://www.mercurymarine.com/content/dam/mercury-marine/us_en/parts-and-services/service-and-support/warranty-coverage/product-protection/8M0236695%20Canada%20Platinum%20Plan%20Current%20upd%203-17-25.pdf.coredownload.pdf)
 
-*Dernière révision : 2026-07-18*
-
 Par Harris Boat Works, marina familiale depuis 1947 sur le lac Rice, concessionnaire Mercury Marine depuis 1965 et concessionnaire Mercury Premier.
 ## Guides connexes
 

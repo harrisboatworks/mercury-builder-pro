@@ -51,7 +51,7 @@ Pour qui : Plaisanciers récréatifs. Bateaux de pêche, pontons familiaux, vede
 
 La gamme FourStroke est le best-seller de Mercury en volume en Ontario parce qu'elle couvre toute la plage d'usage récréatif. Un 2,5 HP à barre franche pour un bateau sur le toit. Un 9,9 pour un kicker. Un 25 pour un bateau d'aluminium léger. Un 40, 60 ou 75 pour des configurations de pêche moyennes. Un 90, 115 ou 150 pour des bateaux d'aluminium ou de fibre de verre plus grands. Un 200 ou 250 pour des center consoles. Jusqu'à 300 HP pour les applications en grande eau.
 
-**FourStroke Command Thrust** mérite une mention spécifique pour les plaisanciers ontariens. Disponible sur le 115 HP et plus, conçu pour les charges de couple plus élevées que les pontons et coques plus lourdes imposent à l'embase. Si vous remotorisez un ponton, demandez spécifiquement Command Thrust.
+**FourStroke Command Thrust** mérite une mention spécifique pour les plaisanciers ontariens. Command Thrust est offert de 9,9 à 115 HP (9,9, 40, 50, 60, 90 et 115 HP). Il s'agit d'une option de boîtier d'engrenages, avec hélice à plus grand diamètre et rapport de démultiplication plus court, et non d'un palier de puissance. Il est conçu pour les charges de couple plus élevées que les pontons et coques plus lourdes imposent à l'embase. Si vous remotorisez un ponton, demandez spécifiquement Command Thrust.
 
 Ce que FourStroke fait bien : efficacité énergétique en croisière, ralenti doux, fonctionnement silencieux, démarrage à froid facile, longs intervalles d'entretien.
 
@@ -86,7 +86,7 @@ La gamme électrique Mercury Avator couvre les applications portatives plus peti
 | Bateau de pêche en aluminium léger, 14 à 16 pi | FourStroke | 25 à 60 HP |
 | Bateau de pêche/famille moyen, 16 à 18 pi | FourStroke | 60 à 115 HP |
 | Bateau de pêche ou famille plus grand, 18 à 20 pi | FourStroke | 115 à 150 HP |
-| Ponton, 22 à 24 pi | FourStroke Command Thrust | 115 à 150 HP |
+| Ponton, 22 à 24 pi | FourStroke | 115 à 150 HP |
 | Bass boat de tournoi | Pro XS | 200 à 250 HP |
 | Center console, grande eau ontarienne | FourStroke ou Verado | 200 à 300+ HP |
 | Guide commercial ou location | SeaPro | Selon la cote de la coque |
@@ -102,8 +102,6 @@ Tarification CAD en direct sur chaque famille Mercury (sauf Verado, qui est soum
 > **Une note sur la langue**
 > Cet article est disponible en français parce que nous voulons que l'information technique sur les moteurs Mercury rejoigne plus de clients. Nous nous efforçons d'offrir du contenu utile dans votre langue.
 > Cela dit, nous devons être honnêtes : notre personnel parle anglais. Si vous nous contactez pour une soumission ou un service, nous vous répondrons en anglais. Si vous préférez, vous pouvez utiliser Google Traduction ou demander à un membre bilingue de votre famille de vous aider avec la communication. Nous nous engageons à vous offrir le meilleur service possible.
-
-*Dernière révision : 2026-05-13.*
 
 ## Guides connexes
 
