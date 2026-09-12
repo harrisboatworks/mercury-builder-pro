@@ -12110,6 +12110,8 @@ Typically when the motor is installed and ready for its Lake Test. Review the pa
 - [Ontario Cottage Owner's Guide: Is It Time to Repower Your Boat?](/blog/ontario-cottage-boat-motor-repower-guide), cottage-specific repower considerations
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
+Harris Boat Works has been a Mercury dealer since 1965.
     `,
     faqs: [
       {
@@ -13041,6 +13043,8 @@ Mercury Premier dealer. Est. 1947.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---
+
+Harris Boat Works has been a Mercury dealer since 1965.
 
 ---
 `,
@@ -17015,6 +17019,8 @@ Ready to schedule your repower? Build a quote at **[mercuryrepower.ca](https://w
 
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
+Harris Boat Works has been a Mercury dealer since 1965.
 ---`,
     faqs: [
       {

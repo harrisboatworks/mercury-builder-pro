@@ -140,6 +140,10 @@ Mercury Premier dealer. Est. 1947.
 
 ---
 
+Harris Boat Works has been a Mercury dealer since 1965.
+
+---
+
 ## FAQs
 
 ### Does Boost add horsepower?

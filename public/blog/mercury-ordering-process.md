@@ -216,6 +216,8 @@ Typically when the motor is installed and ready for its Lake Test. Review the pa
 - [Boat Repowering 101: When to Replace Your Outboard Motor](/blog/boat-repowering-guide-when-to-replace-motor), how to know it's time to replace your motor
 - [Ontario Cottage Owner's Guide: Is It Time to Repower Your Boat?](/blog/ontario-cottage-boat-motor-repower-guide), cottage-specific repower considerations
 
+Harris Boat Works has been a Mercury dealer since 1965.
+
 ## FAQs
 
 ### How long does the whole process take?
