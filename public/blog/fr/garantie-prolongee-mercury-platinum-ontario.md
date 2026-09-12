@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/garantie-prolongee-mercury-platinum-ontario.md
-last_updated: 2026-09-06
+last_updated: 2026-09-12
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Product Protection Platinum : couverture et prix canadiens"
 description: "Mercury Product Protection Platinum est un contrat de service prolongé. Consultez les vrais prix canadiens par puissance et durée, les règles d'admissibilité et les..."
 category: "Garantie"
 date_published: 2026-05-13
-date_modified: 2026-09-06
+date_modified: 2026-09-12
 keywords: ["garantie prolongée Mercury","Mercury Product Protection","Mercury Platinum","garantie Mercury Ontario","prix protection Mercury","couverture Mercury Platinum"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Catégorie :** Garantie\
 **Publié le :** 2026-05-13\
-**Dernière révision :** 2026-09-06\
+**Dernière révision :** 2026-09-12\
 **Temps de lecture :** 9 min\
 **URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/garantie-prolongee-mercury-platinum-ontario
 

@@ -34477,7 +34477,7 @@ Build your quote at [mercuryrepower.ca](https://mercuryrepower.ca).
     image: '/lovable-uploads/hero-pontoon-aluminum-vhull.png',
     author: "Jay Harris",
     datePublished: "2026-06-06",
-    dateModified: "2026-09-11",
+    dateModified: "2026-09-12",
     publishDate: "2026-06-06",
     category: "Repower",
     readTime: "4 min read",
