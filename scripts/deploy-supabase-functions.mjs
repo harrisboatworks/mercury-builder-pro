@@ -28,6 +28,10 @@
  * production proof. Unrelated functions keep the migration-only rules.
  *
  * Never applies migrations. Never prints secret values.
+ * Explicit cron-auth release prerequisites are merged into the same
+ * required-migration / skip path. Unresolved protected slugs are skipped
+ * even when inference finds no SQL objects. The job still never applies
+ * those migrations.
  *
  * Usage:
  *   node scripts/deploy-supabase-functions.mjs [function-slug]
@@ -65,9 +69,11 @@ import {
   filesByFunctionSlug,
   isZeroSha,
   parseNameStatusZ,
+  releaseRequirementsForSlug,
   requiredMigrationsForSlug,
   toPosix,
 } from './lib/supabase-deploy-required.mjs';
+import { withReleasePrerequisiteManifest } from './lib/cron-auth-release-prerequisites.mjs';
 import {
   allowlistedPairIds,
   pairById,
@@ -448,14 +454,24 @@ export async function deployWithMigrationGate({
     };
   };
 
+  const explicitBlockReason = (slug) => {
+    const target = targets.find((item) => item.slug === slug);
+    if (!target?.explicitDeployBlock) return null;
+    return redactSecrets(
+      `skipped: ${target.explicitDeployBlock} This job never applies migrations. Deploying \`${slug}\` is blocked by an explicit release prerequisite.`,
+      env,
+    );
+  };
+
   const degradeOnUnreadableList = (error) => {
     const detail = error instanceof Error ? error.message : String(error);
     writeDeployLog(redactSecrets(`could not read applied migrations: ${detail}`, env), log);
     const preconditionSkipBySlug = new Map();
     for (const target of targets) {
+      const blocked = explicitBlockReason(target.slug);
       preconditionSkipBySlug.set(
         target.slug,
-        target?.requiredMigrations?.length ? lookupFailureSkipReason(target.slug, detail, env) : null,
+        blocked || (target?.requiredMigrations?.length ? lookupFailureSkipReason(target.slug, detail, env) : null),
       );
     }
     return deployGuarded(preconditionSkipBySlug, {
@@ -496,6 +512,11 @@ export async function deployWithMigrationGate({
 
   const preconditionSkipBySlug = new Map();
   for (const target of targets) {
+    const blocked = explicitBlockReason(target.slug);
+    if (blocked) {
+      preconditionSkipBySlug.set(target.slug, blocked);
+      continue;
+    }
     if (source === 'cli-fallback' && target?.requiredMigrations?.length) {
       preconditionSkipBySlug.set(
         target.slug,
@@ -758,10 +779,13 @@ export async function runDeploy({
   listSecretNamesFromApi,
   listSecretNamesFromCli,
 } = {}) {
-  const files = {
-    ...loadTextTree('supabase/functions'),
-    ...loadTextTree('supabase/migrations'),
-  };
+  const files = withReleasePrerequisiteManifest(
+    {
+      ...loadTextTree('supabase/functions'),
+      ...loadTextTree('supabase/migrations'),
+    },
+    (relPath) => readFileSync(join(ROOT, relPath), 'utf8'),
+  );
   const forcedRaw = env.DEPLOY_FUNCTION || '';
   const pairRaw = env.DEPLOY_PAIR || '';
   const projectRef = resolveProjectRef(env, { root: ROOT });
@@ -838,6 +862,11 @@ export async function runDeploy({
     const rangeTargets = ranged.ok
       ? ranged.targets
       : { from: '', to: '', functions: [], removed: [], migrations: [], notes: [] };
+    const requirements = releaseRequirementsForSlug(
+      resolved.slug,
+      files,
+      rangeTargets.migrations || [],
+    );
     targets = {
       from: rangeTargets.from || '',
       to: rangeTargets.to || '',
@@ -845,7 +874,8 @@ export async function runDeploy({
         {
           slug: resolved.slug,
           reasons: ['workflow_dispatch'],
-          requiredMigrations: requiredMigrationsForDispatch(resolved.slug, files, rangeTargets),
+          requiredMigrations: requirements.requiredMigrations,
+          explicitDeployBlock: requirements.explicitDeployBlock,
         },
       ],
       removed: [],
