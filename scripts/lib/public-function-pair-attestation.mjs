@@ -30,7 +30,7 @@ export const FORBIDDEN_CHAT_FIELDS = Object.freeze([
 const SECRETISH = /(sk-|ek_|ephemeral|BEGIN|v=0|o=|a=fingerprint)/i;
 
 export const ADAPTER_ABORT_CONTRACT =
-  'fetch(url, { signal }) and webrtc.createOffer({ signal }) / acceptAnswer(answer, { signal }) must honor AbortSignal: abort in-flight work and do not create or retain a live peer or request after abort. Promise.race only ends the caller wait. Adapters that ignore the signal fail acceptance; close() being called is not cleanup proof.';
+  'fetch(url, { signal }) and webrtc.createOffer({ signal }) / acceptAnswer(answer, { signal }) must honor AbortSignal: abort in-flight work and do not create or retain a live peer or request after abort. Promise.race only ends the caller wait. Function presence is not AbortSignal proof. Adapters that ignore the signal fail acceptance; close() being called is not leftover proof. Final cleanup is unproven unless the last close() returns true and hasLiveResources() exists and returns false.';
 
 function deadlineError(label) {
   const error = new Error(`SESSION_DEADLINE:${label}`);
@@ -45,17 +45,20 @@ function abortError() {
   return error;
 }
 
-export function fetchSupportsAbort(fetchImpl) {
-  return typeof fetchImpl === 'function';
+export function fetchSupportsAbort(_fetchImpl) {
+  return false;
 }
 
-export function webrtcSupportsAbort(webrtc) {
-  if (!webrtc) return true;
-  return typeof webrtc.createOffer === 'function' && typeof webrtc.acceptAnswer === 'function';
+export function webrtcSupportsAbort(_webrtc) {
+  return false;
 }
 
-export function adaptersHonorAbortContract(adapters) {
-  return fetchSupportsAbort(adapters?.fetch) && webrtcSupportsAbort(adapters?.webrtc);
+export function adaptersHonorAbortContract(_adapters) {
+  return false;
+}
+
+export function leftoverResourcesUnproven(webrtc) {
+  return typeof webrtc?.hasLiveResources !== 'function';
 }
 
 export async function raceWithDeadline(work, ms, label, onTimeout) {
@@ -450,9 +453,9 @@ export async function runPairAttestationProbes(adapters) {
     abortInFlight();
     cleanupAttempted = true;
     try {
-      closed = await closeOnce();
+      await closeOnce();
     } catch {
-      closed = false;
+      // first close is not final cleanup proof
     }
     await Promise.allSettled(inflight.map((work) => raceWithDeadline(
       Promise.resolve(work).then(() => undefined),
@@ -460,19 +463,22 @@ export async function runPairAttestationProbes(adapters) {
       'late-settle',
     ).catch(() => undefined)));
     try {
-      const closedLate = await closeOnce();
-      closed = closed === true || closedLate === true;
+      closed = await closeOnce();
     } catch {
-      // late close failure does not invent success
+      closed = false;
     }
-    leftover = typeof webrtc?.hasLiveResources === 'function'
-      ? webrtc.hasLiveResources() === true
-      : leftover;
+    try {
+      leftover = leftoverResourcesUnproven(webrtc)
+        ? true
+        : webrtc.hasLiveResources() === true;
+    } catch {
+      leftover = true;
+    }
   }
 
-  const adapterAbortOk = leftover !== true && (
-    typeof webrtc?.hasLiveResources === 'function' || !cancelled
-  ) && adaptersHonorAbortContract(adapters);
+  const adapterAbortOk = leftover !== true
+    && leftoverResourcesUnproven(webrtc) !== true
+    && closed === true;
 
   const chat = validateChatCompletion(a2);
   const mint = validateClientSecretMint(b2);

@@ -18,10 +18,14 @@ import {
   compareSecretToSha256,
   evaluateProvenance,
   formatProvenance,
+  adaptersHonorAbortContract,
+  fetchSupportsAbort,
   isSdpExchangeSuccessStatus,
+  leftoverResourcesUnproven,
   redactProbeSecrets,
   realtimeAttestable,
   runPairAttestationProbes,
+  webrtcSupportsAbort,
   validateChatCompletion,
   validateClientSecretMint,
   validateSdpAnswer,
@@ -420,6 +424,84 @@ describe('pair attestation offline scenarios', () => {
     expect(state.livePeers).toBe(0);
     expect(result.receipt.realtime.b4.cancelled).toBe(true);
     expect(result.receipt.realtime.b4.leftover).toBe(false);
+    expect(result.realtimeAttestable).toBe(false);
+    expect(result.productionAttestable).toBe(false);
+  });
+
+  it('does not treat function presence as AbortSignal proof', () => {
+    expect(fetchSupportsAbort(fakeFetch('ok'))).toBe(false);
+    expect(webrtcSupportsAbort(fakeWebrtc())).toBe(false);
+    expect(adaptersHonorAbortContract({
+      fetch: fakeFetch('ok'),
+      webrtc: fakeWebrtc(),
+    })).toBe(false);
+    expect(leftoverResourcesUnproven({})).toBe(true);
+    expect(leftoverResourcesUnproven(fakeWebrtc())).toBe(false);
+  });
+
+  it('uses the last close result so first success cannot mask second failure', async () => {
+    let closeCalls = 0;
+    const state = { livePeers: 0 };
+    const result = await runPairAttestationProbes({
+      fetch: fakeFetch('ok'),
+      webrtc: {
+        generated: true,
+        async createOffer() {
+          state.livePeers += 1;
+          return FAKE_OFFER;
+        },
+        async acceptAnswer() {
+          return true;
+        },
+        async close() {
+          closeCalls += 1;
+          if (closeCalls === 1) {
+            state.livePeers = 0;
+            return true;
+          }
+          state.livePeers = 1;
+          return false;
+        },
+        hasLiveResources() {
+          return state.livePeers > 0;
+        },
+      },
+      provenanceMatch: true,
+      secretsToRedact: [FAKE_KEY, FAKE_DIGEST, FAKE_OFFER, FAKE_ANSWER],
+    });
+    expect(closeCalls).toBe(2);
+    expect(result.receipt.realtime.b4.closed).toBe(false);
+    expect(result.receipt.realtime.b4.leftover).toBe(true);
+    expect(result.receipt.realtime.b4.adapterAbortOk).toBe(false);
+    expect(result.realtimeAttestable).toBe(false);
+    expect(result.productionAttestable).toBe(false);
+  });
+
+  it('fails closed when leftover readback is absent even if both closes succeed', async () => {
+    let closeCalls = 0;
+    const result = await runPairAttestationProbes({
+      fetch: fakeFetch('ok'),
+      webrtc: {
+        generated: true,
+        async createOffer() {
+          return FAKE_OFFER;
+        },
+        async acceptAnswer() {
+          return true;
+        },
+        async close() {
+          closeCalls += 1;
+          return true;
+        },
+      },
+      provenanceMatch: true,
+      secretsToRedact: [FAKE_KEY, FAKE_DIGEST, FAKE_OFFER, FAKE_ANSWER],
+    });
+    expect(closeCalls).toBe(2);
+    expect(result.receipt.realtime.b4.closed).toBe(true);
+    expect(result.receipt.realtime.b4.leftover).toBe(true);
+    expect(result.receipt.realtime.b4.adapterAbortOk).toBe(false);
+    expect(result.receipt.realtime.b4.withinBound).toBe(false);
     expect(result.realtimeAttestable).toBe(false);
     expect(result.productionAttestable).toBe(false);
   });

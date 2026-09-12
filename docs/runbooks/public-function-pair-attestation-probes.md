@@ -25,7 +25,7 @@ Executable offline harness (no live calls, no `ATTESTED` write): `scripts/lib/pu
 - Laptop, preview, or “this is the production key” labeling without a digest match
 - Posting A2 to live `ai-chatbot` / `ai-chatbot-stream` as a substitute for the source-contract probe
 
-The offline harness (`runPairAttestationProbes`) bounds the **entire** session, not only `close()`. It passes `AbortSignal` into `fetch`, `createOffer`, and `acceptAnswer`, aborts on timeout or error, and does not start later stages after abort. `Promise.race` only ends the caller wait. Adapters that ignore the signal fail acceptance (`ADAPTER_ABORT_CONTRACT`); `close()` being called is not proof that no live peer or request remains. Late-resolving `createOffer` is settled, then `close()` runs again. Passing `timeoutMs` to an adapter is not the deadline.
+The offline harness (`runPairAttestationProbes`) bounds the **entire** session, not only `close()`. It passes `AbortSignal` into `fetch`, `createOffer`, and `acceptAnswer`, aborts on timeout or error, and does not start later stages after abort. `Promise.race` only ends the caller wait. Function presence is not AbortSignal proof. Adapters that ignore the signal fail acceptance (`ADAPTER_ABORT_CONTRACT`); `close()` being called is not leftover proof. The first `close()` success does not mask a later close failure: only the last close result counts. Missing `hasLiveResources()` is leftover=true (fail closed). Late-resolving `createOffer` is settled, then `close()` runs again. Passing `timeoutMs` to an adapter is not the deadline.
 
 Synthetic mode is labeled on every receipt (`mode=synthetic`, `synthetic=true`) and **never** returns `productionAttestable=true`. Do not mark guards `ATTESTED` from synthetic tests.
 
