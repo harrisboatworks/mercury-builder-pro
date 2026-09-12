@@ -11,7 +11,7 @@ Recorded 2026-09-12 from GitHub `pull_request_read` plus local `git rev-parse` /
 | #528 `codex/cursor-cron-auth-20260910` | `cebec56ad573fedd6f1dc00efaf35add77602f97` |
 | #371 `cursor/deposit-deal-packet-20260823` | `896d74198a961d4d2c4710625929c7e50f67b8fe` |
 | #332 `cursor/twilio-webhook-signature-1b4b` | `38e49fb0cb2be2427d8171b602f9541f92db7aee` |
-| #542 `cursor/pair-attestation-probes-3e2c` | `28ced613c4be3da8ae2d80085b5226e308fa519d` (supersedes `9f7544ef063244d20b57c59c5c82986f89c128ab`; see `SUPERSEDED-542.md`) |
+| #542 `cursor/pair-attestation-probes-3e2c` | `a164eeae82b17da8754ca924bcff22d18a54d8db` (supersedes leftover-only `28ced613c` and `9f7544ef063244d20b57c59c5c82986f89c128ab`; see `SUPERSEDED-542.md`) |
 | #544 excluded `codex/serialize-edge-drift-deployment-handoff` | `6235d9935e147791c5477eae8fe074a7e44fe31c` |
 | Combo-only `tmp/integration-four-prs-local` | `d4e0956e6150b484473480408b354544ed8f02ce` |
 
