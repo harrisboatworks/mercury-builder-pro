@@ -487,27 +487,51 @@ const expectedHomeAlternates = [
   { hrefLang: 'en-CA', path: '/' },
   { hrefLang: 'fr-CA', path: '/fr' },
   { hrefLang: 'zh-Hans', path: '/zh' },
+  { hrefLang: 'ko', path: '/ko' },
+  { hrefLang: 'es', path: '/es' },
+  { hrefLang: 'pa', path: '/pa' },
+  { hrefLang: 'ur', path: '/ur' },
+  { hrefLang: 'tl', path: '/tl' },
   { hrefLang: 'x-default', path: '/' },
 ];
+const homeHubPaths = [...new Set(expectedHomeAlternates.map((alternate) => alternate.path))];
 check(
   JSON.stringify(seoPageMetadata.home?.alternates) === JSON.stringify(expectedHomeAlternates),
-  'Home hreflang metadata must contain only the reciprocal English, French, Simplified Chinese, and x-default home hubs.',
+  'Home hreflang metadata must contain the reciprocal 8-locale hub cluster plus x-default.',
 );
 check(
-  /new Set\(\['\/', '\/fr', '\/zh'\]\)/.test(canonicalComponent) &&
+  /seoPageMetadata\.home\.alternates/.test(canonicalComponent) &&
     /HOME_HUB_PATHS\.has\(canonicalPath\)/.test(canonicalComponent) &&
     /seoPageMetadata\.home\.alternates/.test(homeHubAlternates),
-  'Only the English, French, and Mandarin home hubs may render the shared hreflang cluster.',
+  'All JSON-defined home hubs must render the shared hreflang cluster.',
 );
 check(
   !/hrefLang="(?:ko|es|hi|pa)"/.test(homepageSeo),
   'Blog language hubs must not be advertised as translated homepage equivalents.',
 );
 check(
-  (prerenderScript.match(/extraHead:\s*HOME_HUB_ALTERNATE_TAGS/g) ?? []).length === 3 &&
-    /<link data-rh="true" rel="alternate"/.test(prerenderScript),
+  !/rel="alternate"/.test(read('src/pages/LocaleHubLanding.tsx')),
+  'Locale hub landings must not hand-roll hreflang; Canonical owns the shared cluster.',
+);
+check(
+  (prerenderScript.match(/extraHead:\s*HOME_HUB_ALTERNATE_TAGS/g) ?? []).length === 4 &&
+    /<link data-rh="true" rel="alternate"/.test(prerenderScript) &&
+    /HOME_HUB_PATHS\.has\(loc\)/.test(prerenderScript) &&
+    /HOME_HUB_PATHS\.has\(loc\)/.test(sitemapGenerator),
   'Static home-hub hreflang tags must use the shared reciprocal cluster and be adoptable by Helmet.',
 );
+for (const path of homeHubPaths) {
+  const loc = `https://www.mercuryrepower.ca${path}`;
+  const entry = sitemapEntries.find((candidate) => candidate.includes(`<loc>${loc}</loc>`));
+  check(Boolean(entry), `sitemap.xml must contain the home hub ${path}.`);
+  if (!entry) continue;
+  check(!entry.includes('<lastmod>'), `sitemap hub ${path} must not invent a lastmod.`);
+  for (const alternate of expectedHomeAlternates) {
+    const link =
+      `hreflang="${alternate.hrefLang}" href="https://www.mercuryrepower.ca${alternate.path}"`;
+    check(entry.includes(link), `sitemap hub ${path} must include ${link}.`);
+  }
+}
 check(
   /const \{ title, description \} = seoPageMetadata\.home/.test(homepageSeo) &&
     /title:\s*HOME_SEO\.title/.test(prerenderScript) &&
