@@ -502,6 +502,7 @@ const HOME_HUB_ALTERNATE_TAGS = HOME_SEO.alternates
     return `<link data-rh="true" rel="alternate" hreflang="${hrefLang}" href="${href}" />`;
   })
   .join('\n  ');
+const HOME_HUB_PATHS = new Set(HOME_SEO.alternates.map(({ path }) => path));
 const MIN_BYTES = 4 * 1024;
 const BUILD_FETCH_TIMEOUT_MS = Number(process.env.BUILD_FETCH_TIMEOUT_MS || 8000);
 const BUILD_SUBPROCESS_TIMEOUT_MS = Number(process.env.BUILD_SUBPROCESS_TIMEOUT_MS || 30000);
@@ -5083,6 +5084,7 @@ const routes = [
     h1,
     intro,
     htmlLang,
+    extraHead: HOME_HUB_ALTERNATE_TAGS,
     schemas: [genericPageSchema(`/${lang}`, h1, intro)],
     extraNoscript: () => {
       const visible = (articles || []).filter(a => a.isPublished !== false);
@@ -6398,6 +6400,13 @@ const allSitemapEntries = dedupeSitemapEntries([
 ]);
 
 function sitemapHreflangBlock(loc) {
+  if (HOME_HUB_PATHS.has(loc)) {
+    const links = HOME_SEO.alternates.map(({ hrefLang, path }) =>
+      `    <xhtml:link rel="alternate" hreflang="${hrefLang}" href="${SITE_URL}${path}" />`
+    );
+    return links.length ? `\n${links.join('\n')}` : '';
+  }
+
   const localized = loc.match(/^\/blog\/(fr|ko|zh|es|pa|ur|tl|hi)\/(.+)$/);
   const english = loc.match(/^\/blog\/([^/]+)$/);
   const blogIndexSlugs = new Set(['fr', 'ko', 'zh', 'es', 'pa', 'ur', 'tl', 'hi', 'zh-hant']);
