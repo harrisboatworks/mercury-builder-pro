@@ -2,11 +2,11 @@
  * Twilio SMS delivery-status helpers.
  * Status names: https://www.twilio.com/docs/sms/api/message-resource#message-status-values
  *
- * Callback URLs are derived from SUPABASE_URL the same way
- * twilio-signature.ts signs inbound requests. TWILIO_WEBHOOK_URL is not used.
+ * Callback URLs are derived from TWILIO_WEBHOOK_URL the same way
+ * twilio-signature.ts signs inbound requests. Request/proxy host is never used.
  */
 
-import { resolveTwilioWebhookUrl } from "./twilio-signature.ts";
+import { resolveConfiguredTwilioWebhookUrl } from "./twilio-signature.ts";
 
 export const TWILIO_MESSAGE_STATUSES = [
   "accepted",
@@ -110,27 +110,33 @@ export function parseSmsLogIdFromRequestUrl(
 ): string | null {
   try {
     const parsed = new URL(requestUrl);
-    const values = parsed.searchParams.getAll("sms_log_id");
-    if (values.length !== 1 || !SMS_LOG_ID_PATTERN.test(values[0])) return null;
-    return values[0];
+    const entries = [...parsed.searchParams.entries()];
+    if (
+      entries.length !== 1 ||
+      entries[0][0] !== "sms_log_id" ||
+      !SMS_LOG_ID_PATTERN.test(entries[0][1])
+    ) {
+      return null;
+    }
+    return entries[0][1];
   } catch {
     return null;
   }
 }
 
 export function buildSmsStatusCallbackUrl(
-  supabaseUrl: string | null | undefined,
+  configuredUrl: string | null | undefined,
   smsLogId: string,
 ): string | null {
   if (!SMS_LOG_ID_PATTERN.test(smsLogId)) return null;
-  const callbackUrl = resolveTwilioWebhookUrl(
-    supabaseUrl,
-    `https://unused.invalid/?sms_log_id=${smsLogId}`,
-  );
+  const canonicalUrl = resolveConfiguredTwilioWebhookUrl(configuredUrl);
+  if (!canonicalUrl) return null;
+  const callbackUrl = new URL(canonicalUrl);
+  callbackUrl.searchParams.set("sms_log_id", smsLogId);
   // Twilio defaults to retrying connection failures only. Storage failures
   // return 5xx, so explicitly retry those and read timeouts as well. Twilio
   // strips this connection-override fragment before signing the callback.
-  return callbackUrl ? `${callbackUrl}#rp=ct,rt,5xx&rc=2` : null;
+  return `${callbackUrl.toString()}#rp=ct,rt,5xx&rc=2`;
 }
 
 export function httpStatusForTwilioStatusApplyResult(
