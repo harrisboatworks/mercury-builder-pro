@@ -538,7 +538,7 @@ A：这取决于你的船型和使用方式。如果换发动机的同时想升�
 > **语言说明**
 > ${ZH_LANGUAGE_NOTE}
 
-Harris Boat Works，Mercury Marine Premier Dealer，自1947年起。
+Harris Boat Works，自1965年起的 Mercury 经销商。
 ---`,
     faqs: [
       { question: 'Mercury 115 FourStroke 有多重？', answer: '115 FourStroke：官方公布的最轻配置干重为 163 公斤（359 磅）；Command Thrust 版本为 165 公斤（363 磅）。具体重量会随轴长和配置变化，干重不等于安装后的总重量。' },
@@ -1405,7 +1405,7 @@ A：取决于使用历史和保养状态。如果有完整的服务纪录，某�
 > **语言说明**
 > ${ZH_LANGUAGE_NOTE}
 
-Harris Boat Works，自1947年起，Mercury Marine Premier Dealer，位于Rice Lake南岸Gores Landing。
+Harris Boat Works，自1965年起的 Mercury 经销商，位于Rice Lake南岸Gores Landing。
 ---`,
     faqs: [
       { question: '40HP 和 60HP 差很多吗？', answer: '在空船时可能觉得还好，满载后差异会更明显。' },
