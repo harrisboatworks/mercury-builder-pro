@@ -11911,7 +11911,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'A crated new Mercury Pro XS outboard outside the Harris Boat Works shop',
     author: 'Harris Boat Works',
     datePublished: '2026-05-19',
-    dateModified: '2026-09-06',
+    dateModified: '2026-09-11',
     publishDate: '2026-05-19',
     category: 'Buying Guide',
     readTime: '9 min read',
