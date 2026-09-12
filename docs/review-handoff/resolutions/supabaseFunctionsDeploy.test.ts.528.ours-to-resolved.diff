@@ -1,0 +1,188 @@
+---  a/supabaseFunctionsDeploy.test.ts.528.ours
++++  b/supabaseFunctionsDeploy.test.ts.528.resolved
+@@ -20,7 +20,7 @@
+ } from '../../scripts/deploy-supabase-functions.mjs';
+ import { PUBLIC_RELEASE_PAIRS } from '../../scripts/lib/public-function-release-guards.mjs';
+ import { listAppliedMigrationsFromManagementApi } from '../../scripts/lib/supabase-management-api.mjs';
+-import { isMigrationApplied, appliedVersionSet } from '../../scripts/lib/supabase-deploy-required.mjs';
++import { isMigrationApplied, appliedVersionSet, deployTargetsFromDiff, releaseRequirementsForSlug } from '../../scripts/lib/supabase-deploy-required.mjs';
+ import {
+   projectRefFromConfig as sharedProjectRefFromConfig,
+   resolveProjectRef as sharedResolveProjectRef,
+@@ -31,6 +31,12 @@
+   pickSecretNames,
+ } from '../../scripts/lib/supabase-edge-secret-names.mjs';
+ 
++import {
++  CRON_AUTH_CALLER_MIGRATION_PATH,
++  CRON_AUTH_CALLER_MIGRATION_VERSION,
++  CRON_AUTH_RELEASE_PREREQUISITE_MANIFEST_PATH,
++} from '../../scripts/lib/cron-auth-release-prerequisites.mjs';
++
+ const files = {
+   'supabase/functions/send-sms/index.ts': 'export {}',
+   'supabase/functions/ai-chatbot/index.ts': 'export {}',
+@@ -811,6 +817,87 @@
+     expect(markdown).toContain('20260909000000_brand_new.sql');
+   });
+ 
++  it('skips unresolved cron-auth functions and still deploys unrelated slugs', async () => {
++    const seen: string[] = [];
++    const { succeeded, failed } = await deployWithMigrationGate({
++      functions: [
++        {
++          slug: 'check-expiring-promotions',
++          requiredMigrations: [],
++          explicitDeployBlock: 'unresolved release prerequisite for `check-expiring-promotions`: caller migration is not authorable',
++        },
++        { slug: 'send-sms', requiredMigrations: [] },
++      ],
++      listAppliedVersions: () => [{ version: '20260815160000' }],
++      deployOne: (slug: string) => {
++        seen.push(slug);
++        return { ok: true, detail: 'Deployed' };
++      },
++    });
++    expect(seen).toEqual(['send-sms']);
++    expect(succeeded.map((item) => item.slug)).toEqual(['send-sms']);
++    expect(failed.map((item) => item.slug)).toEqual(['check-expiring-promotions']);
++    expect(failed[0].detail).toContain('explicit release prerequisite');
++    expect(failed[0].detail).not.toContain('not applied in production');
++  });
++
++  it('skips unresolved cron-auth functions even when the applied list is unreadable', async () => {
++    const seen: string[] = [];
++    const { succeeded, failed, appliedLookupFailed } = await deployWithMigrationGate({
++      functions: [
++        {
++          slug: 'sync-lightspeed-inventory',
++          requiredMigrations: [],
++          explicitDeployBlock: 'unresolved release prerequisite for `sync-lightspeed-inventory`: caller migration is not authorable',
++        },
++        { slug: 'send-sms', requiredMigrations: [] },
++      ],
++      listAppliedVersions: () => {
++        throw new Error('network down');
++      },
++      deployOne: (slug: string) => {
++        seen.push(slug);
++        return { ok: true, detail: 'Deployed' };
++      },
++    });
++    expect(appliedLookupFailed).toBe(true);
++    expect(seen).toEqual(['send-sms']);
++    expect(succeeded.map((item) => item.slug)).toEqual(['send-sms']);
++    expect(failed.map((item) => item.slug)).toEqual(['sync-lightspeed-inventory']);
++    expect(failed[0].detail).toContain('explicit release prerequisite');
++    expect(failed[0].detail).not.toContain('could not read applied migrations');
++  });
++
++  it('deploys a resolved cron-auth function only after the mapped migration is applied', async () => {
++    const required = [
++      { path: 'supabase/migrations/20990101000001_synthetic_caller_fixture.sql', version: '20990101000001' },
++    ];
++    const seen: string[] = [];
++    const blocked = await deployWithMigrationGate({
++      functions: [{ slug: 'check-expiring-promotions', requiredMigrations: required }],
++      listAppliedVersions: () => [{ version: '20260815160000' }],
++      deployOne: (slug: string) => {
++        seen.push(slug);
++        return { ok: true, detail: 'Deployed' };
++      },
++    });
++    expect(seen).toEqual([]);
++    expect(blocked.failed[0].detail).toContain('20990101000001_synthetic_caller_fixture.sql');
++    expect(blocked.failed[0].detail).toContain('not applied in production');
++
++    const allowed = await deployWithMigrationGate({
++      functions: [{ slug: 'check-expiring-promotions', requiredMigrations: required }],
++      listAppliedVersions: () => [{ version: '20990101000001' }],
++      deployOne: (slug: string) => {
++        seen.push(slug);
++        return { ok: true, detail: 'Deployed' };
++      },
++    });
++    expect(seen).toEqual(['check-expiring-promotions']);
++    expect(allowed.succeeded.map((item) => item.slug)).toEqual(['check-expiring-promotions']);
++    expect(allowed.failed).toEqual([]);
++  });
++
+   it('notes a large _shared fan-out', () => {
+     const targets = Array.from({ length: 12 }, (_, index) => ({
+       slug: `fn-${index}`,
+@@ -1518,3 +1605,75 @@
+     expect(failed).toEqual([]);
+   });
+ });
++
++describe('cron-auth deploy path mapping', () => {
++  it('blocks a manual single-function deploy from the unresolved on-disk manifest', async () => {
++    const seen: string[] = [];
++    const code = await runDeploy({
++      env: {
++        DEPLOY_FUNCTION: 'check-expiring-promotions',
++        DEPLOY_FROM: 'HEAD',
++        DEPLOY_TO: 'HEAD',
++      },
++      deployOne: (slug: string) => {
++        seen.push(slug);
++        return { ok: true, detail: 'ok' };
++      },
++      listAppliedVersions: () => [{ version: '20260815160000' }],
++    });
++    expect(code).toBe(1);
++    expect(seen).toEqual([]);
++  });
++
++  it('blocks the other protected slug on the same manual path and does not invent a migration', async () => {
++    const seen: string[] = [];
++    const code = await runDeploy({
++      env: {
++        DEPLOY_FUNCTION: 'sync-lightspeed-inventory',
++        DEPLOY_FROM: 'HEAD',
++        DEPLOY_TO: 'HEAD',
++      },
++      deployOne: (slug: string) => {
++        seen.push(slug);
++        return { ok: true, detail: 'ok' };
++      },
++      listAppliedVersions: () => [{ version: '20260815160000' }],
++    });
++    expect(code).toBe(1);
++    expect(seen).toEqual([]);
++  });
++});
++
++
++describe('resolved cron prerequisite identity', () => {
++  const slugs = ['check-expiring-promotions', 'sync-lightspeed-inventory'];
++  const cases = slugs.flatMap((slug) => ['push', 'manual'].flatMap((mode) => [
++    { slug, mode, path: 'supabase/migrations/20260815160000_unrelated.sql', version: '20260815160000' },
++    { slug, mode, path: `supabase/migrations/${CRON_AUTH_CALLER_MIGRATION_VERSION}_unrelated.sql`, version: CRON_AUTH_CALLER_MIGRATION_VERSION },
++  ]));
++  it.each(cases)('rejects unrelated applied migration for $slug via $mode: $path', async ({slug, mode, path, version}) => {
++    const tree = {
++      [`supabase/functions/${slug}/index.ts`]: 'export {};',
++      [path]: 'SELECT 1;',
++      [CRON_AUTH_CALLER_MIGRATION_PATH]: 'SELECT cron.alter_job(job_id := 1);',
++      [CRON_AUTH_RELEASE_PREREQUISITE_MANIFEST_PATH]: JSON.stringify({
++        version: 1,
++        protectedSlugs: slugs,
++        slugs: Object.fromEntries(slugs.map((name) => [name, {status: 'resolved', path, version}])),
++      }),
++    };
++    const targets = mode === 'push'
++      ? deployTargetsFromDiff({diffEntries: [{status: 'M', path: `supabase/functions/${slug}/index.ts`}], files: tree}).functions
++      : [{slug, ...releaseRequirementsForSlug(slug, tree, [])}];
++    const seen: string[] = [];
++    const result = await deployWithMigrationGate({
++      functions: targets,
++      listAppliedVersions: () => [{version}],
++      deployOne: (name: string) => { seen.push(name); return {ok: true, detail: 'fake deployment'}; },
++    });
++    expect(seen).toEqual([]);
++    expect(result.succeeded).toEqual([]);
++    expect(result.failed).toHaveLength(1);
++    expect(result.failed[0].detail).toContain('must name the accepted caller migration');
++  });
++});
