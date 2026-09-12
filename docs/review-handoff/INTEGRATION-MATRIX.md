@@ -2,6 +2,8 @@
 
 Reviewed 2026-09-12 against freshly fetched `origin/main`. Local combination only. No remote merge of the four PRs, no deploy, no production data, no live provider calls.
 
+**#542 update:** combo-parent `9f7544ef063244d20b57c59c5c82986f89c128ab` is superseded by `28ced613c4be3da8ae2d80085b5226e308fa519d` (leftover fail-open). See `SUPERSEDED-542.md`. The disposable combo was not rebuilt.
+
 Diagnostic publication (this branch) contains the local combination plus this handoff tree. It is not an integration PR.
 
 ## #89 preserve (do not repeat)
@@ -17,7 +19,7 @@ See `issue89/`. Viewport geometry and `scrollIntoView` were mocked in the jsdom 
 | #528 | `cebec56ad573fedd6f1dc00efaf35add77602f97` | none | Cursor-authored; Codex/owner: Vault name `EDGE_INTERNAL_SECRET`, provision, parity, authorize `20260910140000`. Manifest `unresolved`. Ready for review, not merge. |
 | #371 | `896d74198a961d4d2c4710625929c7e50f67b8fe` | none | Cursor-authored; owner must create a new data-less isolated staging project (do not reuse `eutsoqdpjurknjsshxes`). Draft. |
 | #332 | `38e49fb0cb2be2427d8171b602f9541f92db7aee` | none | Cursor-authored; owner sets `TWILIO_WEBHOOK_URL` and paired-deploys `send-sms` + `notification-webhook`. Tracking SQL already on main/prod as ledger `20260910005522` / `add_twilio_sms_status_tracking` — never reapply. Draft. |
-| #542 | `9f7544ef063244d20b57c59c5c82986f89c128ab` | none | Cursor lane; Codex live probes in a credential-owning env. Guards stay `UNVERIFIED`. Draft. |
+| #542 | `28ced613c4be3da8ae2d80085b5226e308fa519d` (supersedes combo-parent `9f7544ef063244d20b57c59c5c82986f89c128ab`) | none | Cursor lane; leftover fail-open fixed. Codex live probes in a credential-owning env. Guards stay `UNVERIFIED`. Draft. Combo tree not rebuilt. |
 | #544 excluded | `6235d9935e147791c5477eae8fe074a7e44fe31c` | none | Codex docs-only serialize-edge-drift. Not combined. |
 
 ## Shared PostgreSQL 17

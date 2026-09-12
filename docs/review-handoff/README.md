@@ -11,6 +11,7 @@ The four-PR merge-only tree remains at `tmp/integration-four-prs-local` (`d4e095
 
 | Path | What it is |
 | --- | --- |
+| `SUPERSEDED-542.md` | #542 leftover fail-open: `9f7544ef` superseded by `28ced613c`; combo not rebuilt |
 | `PARENT-SHAS.md` | Exact parent SHAs for `main` and each merge |
 | `INTEGRATION-MATRIX.md` | Compatibility matrix, commands, remaining gates |
 | `SYNTHETIC-TEST-INSTRUCTIONS.md` | How to rerun the synthetic checks |
