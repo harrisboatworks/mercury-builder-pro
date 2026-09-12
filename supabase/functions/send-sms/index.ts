@@ -161,7 +161,7 @@ serve(async (req) => {
     const auth = btoa(`${accountSid}:${authToken}`);
     
     const statusCallbackUrl = outbox?.id
-      ? buildSmsStatusCallbackUrl(supabaseUrl, outbox.id)
+      ? buildSmsStatusCallbackUrl(Deno.env.get('TWILIO_WEBHOOK_URL'), outbox.id)
       : null;
     const formData = new URLSearchParams();
     formData.append('To', formattedPhone);
