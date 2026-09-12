@@ -30,7 +30,7 @@ export const FORBIDDEN_CHAT_FIELDS = Object.freeze([
 const SECRETISH = /(sk-|ek_|ephemeral|BEGIN|v=0|o=|a=fingerprint)/i;
 
 export const ADAPTER_ABORT_CONTRACT =
-  'fetch(url, { signal }) and webrtc.createOffer({ signal }) / acceptAnswer(answer, { signal }) must honor AbortSignal: abort in-flight work and do not create or retain a live peer or request after abort. Promise.race only ends the caller wait. Function presence is not AbortSignal proof. Adapters that ignore the signal fail acceptance; close() being called is not leftover proof. Final cleanup is unproven unless the last close() returns true and hasLiveResources() exists and returns false.';
+  'fetch(url, { signal }) and webrtc.createOffer({ signal }) / acceptAnswer(answer, { signal }) must honor AbortSignal: abort in-flight work and do not create or retain a live peer or request after abort. Promise.race only ends the caller wait. Function presence is not AbortSignal proof. Adapters that ignore the signal fail acceptance; close() being called is not leftover proof. Final cleanup is unproven unless the last close() returns true and hasLiveResources() returns the boolean false synchronously. true, undefined, null, strings, Promises, a missing method, and a throw leave leftover=true.';
 
 function deadlineError(label) {
   const error = new Error(`SESSION_DEADLINE:${label}`);
@@ -58,7 +58,12 @@ export function adaptersHonorAbortContract(_adapters) {
 }
 
 export function leftoverResourcesUnproven(webrtc) {
-  return typeof webrtc?.hasLiveResources !== 'function';
+  if (typeof webrtc?.hasLiveResources !== 'function') return true;
+  try {
+    return webrtc.hasLiveResources() !== false;
+  } catch {
+    return true;
+  }
 }
 
 export async function raceWithDeadline(work, ms, label, onTimeout) {
@@ -468,17 +473,13 @@ export async function runPairAttestationProbes(adapters) {
       closed = false;
     }
     try {
-      leftover = leftoverResourcesUnproven(webrtc)
-        ? true
-        : webrtc.hasLiveResources() === true;
+      leftover = leftoverResourcesUnproven(webrtc) === true;
     } catch {
       leftover = true;
     }
   }
 
-  const adapterAbortOk = leftover !== true
-    && leftoverResourcesUnproven(webrtc) !== true
-    && closed === true;
+  const adapterAbortOk = leftover !== true && closed === true;
 
   const chat = validateChatCompletion(a2);
   const mint = validateClientSecretMint(b2);

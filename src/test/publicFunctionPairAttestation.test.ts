@@ -59,6 +59,24 @@ type ScenarioExtras = {
   mode?: 'synthetic' | 'live';
 };
 
+function successfulWebrtc(readback: unknown) {
+  return {
+    generated: true,
+    async createOffer() {
+      return FAKE_OFFER;
+    },
+    async acceptAnswer() {
+      return true;
+    },
+    async close() {
+      return true;
+    },
+    hasLiveResources() {
+      return readback;
+    },
+  };
+}
+
 function fakeWebrtc(overrides: FakeWebrtcOverrides = {}) {
   const state = { livePeers: 0 };
   return {
@@ -437,6 +455,17 @@ describe('pair attestation offline scenarios', () => {
     })).toBe(false);
     expect(leftoverResourcesUnproven({})).toBe(true);
     expect(leftoverResourcesUnproven(fakeWebrtc())).toBe(false);
+    expect(leftoverResourcesUnproven({ hasLiveResources: () => false })).toBe(false);
+    expect(leftoverResourcesUnproven({ hasLiveResources: () => true })).toBe(true);
+    expect(leftoverResourcesUnproven({ hasLiveResources: () => undefined })).toBe(true);
+    expect(leftoverResourcesUnproven({ hasLiveResources: () => null })).toBe(true);
+    expect(leftoverResourcesUnproven({ hasLiveResources: () => 'cleared' })).toBe(true);
+    expect(leftoverResourcesUnproven({ hasLiveResources: () => Promise.resolve(true) })).toBe(true);
+    expect(leftoverResourcesUnproven({
+      hasLiveResources() {
+        throw new Error('readback failed');
+      },
+    })).toBe(true);
   });
 
   it('uses the last close result so first success cannot mask second failure', async () => {
@@ -504,6 +533,53 @@ describe('pair attestation offline scenarios', () => {
     expect(result.receipt.realtime.b4.withinBound).toBe(false);
     expect(result.realtimeAttestable).toBe(false);
     expect(result.productionAttestable).toBe(false);
+  });
+
+  it.each([
+    ['undefined', undefined],
+    ['null', null],
+    ['unknown string', 'cleared'],
+    ['Promise.resolve(true)', Promise.resolve(true)],
+    ['true', true],
+  ] as const)('fails closed in live mode when leftover readback is %s', async (_label, value) => {
+    const result = await runScenario('ok', {
+      provenanceMatch: true,
+      mode: 'live',
+      webrtc: successfulWebrtc(value),
+    });
+    expect(result.receipt.realtime.b4.closed).toBe(true);
+    expect(result.receipt.realtime.b4.leftover).toBe(true);
+    expect(result.receipt.realtime.b4.adapterAbortOk).toBe(false);
+    expect(result.realtimeAttestable).toBe(false);
+    expect(result.productionAttestable).toBe(false);
+  });
+
+  it('fails closed in live mode when leftover readback throws', async () => {
+    const result = await runScenario('ok', {
+      provenanceMatch: true,
+      mode: 'live',
+      webrtc: {
+        ...successfulWebrtc(false),
+        hasLiveResources() {
+          throw new Error('readback failed');
+        },
+      },
+    });
+    expect(result.receipt.realtime.b4.leftover).toBe(true);
+    expect(result.productionAttestable).toBe(false);
+  });
+
+  it('proves cleanup in live mode only when leftover readback is synchronous false', async () => {
+    const result = await runScenario('ok', {
+      provenanceMatch: true,
+      mode: 'live',
+      webrtc: successfulWebrtc(false),
+    });
+    expect(result.receipt.realtime.b4.closed).toBe(true);
+    expect(result.receipt.realtime.b4.leftover).toBe(false);
+    expect(result.receipt.realtime.b4.adapterAbortOk).toBe(true);
+    expect(result.realtimeAttestable).toBe(true);
+    expect(result.productionAttestable).toBe(true);
   });
 
   it('keeps 201 and failure-status SDP flags in agreement', async () => {
