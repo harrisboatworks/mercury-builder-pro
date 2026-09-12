@@ -21,6 +21,7 @@ type StickySummaryProps = {
   onSaveForLater?: () => void;
   onApplyForFinancing?: () => void;
   isGeneratingPDF?: boolean;
+  reserveDisabled?: boolean;
   // Payment processing prop
   isProcessingPayment?: boolean;
   // Quote expiry
@@ -43,6 +44,7 @@ export default function StickySummary({
   onSaveForLater,
   onApplyForFinancing,
   isGeneratingPDF = false,
+  reserveDisabled = false,
   // Payment processing prop
   isProcessingPayment = false,
   // Quote expiry
@@ -128,7 +130,7 @@ export default function StickySummary({
         <div className="space-y-3">
           <button
             onClick={onReserve}
-            disabled={isProcessingPayment}
+            disabled={isProcessingPayment || reserveDisabled}
             className={`group w-full rounded bg-repower-mercury-red px-6 py-4 text-center font-sans text-[13px] font-bold uppercase tracking-[0.12em] text-repower-cream transition hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-repower-mercury-red disabled:opacity-50 disabled:cursor-not-allowed ${showPulse && !isProcessingPayment ? 'premium-pulse' : ''}`}
           >
             <span className="inline-flex items-center justify-center gap-2">
