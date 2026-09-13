@@ -2999,9 +2999,9 @@ const BLOG_TABLE_FALLBACKS = {
 // without executing JS. Keep in sync if those components change.
 // ============================================================
 function getResponsiveWebpSrcSet(image) {
-  const match = /^(\/.+)\.(png|jpe?g)$/i.exec(image || '');
+  const match = /^(\/.+)\.(png|jpe?g|webp)$/i.exec(image || '');
   const base = match?.[1];
-  if (!base || !IMAGE_VARIANTS_MANIFEST.bases?.includes(base)) return null;
+  if (!base || /-(?:640|1024)$/.test(base) || !IMAGE_VARIANTS_MANIFEST.bases?.includes(base)) return null;
 
   const widths = IMAGE_VARIANTS_MANIFEST.widths?.[base];
   if (!Array.isArray(widths) || widths.length !== 3) return null;
