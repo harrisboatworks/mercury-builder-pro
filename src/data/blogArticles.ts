@@ -18639,7 +18639,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     seoTitle: "How to Read a Mercury Outboard Serial Number",
     description: "A practical guide to finding, reading, and decoding your Mercury outboard's serial number, model year, shaft length, features.",
     image: "/images/shop/mercury-115-serial-model-label-transom.webp",
-    imageAlt: "Mercury 115 FourStroke model and serial number label on the outboard transom bracket",
+    imageAlt: "Mercury outboard transom bracket with the identification-label location redacted",
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
     dateModified: '2026-09-11',

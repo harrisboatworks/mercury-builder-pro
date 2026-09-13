@@ -1,11 +1,11 @@
-// Scans public/lovable-uploads/ recursively for responsive WebP variants
-// and emits src/data/imageVariantsManifest.json with the set of URL paths
-// (without extension) that have ALL THREE variants generated, plus each
+// Scans public/lovable-uploads/ and public/images/shop/ for responsive WebP
+// variants and emits src/data/imageVariantsManifest.json with the set of URL
+// paths (without extension) that have ALL THREE variants generated, plus each
 // variant's real pixel width:
 //   {base}-640.webp, {base}-1024.webp, {base}.webp
 //
-// Consumed by src/components/ui/expandable-image.tsx so the <picture>
-// <source srcSet> is only emitted when the responsive WebPs actually exist.
+// Consumed by src/lib/responsiveImageVariants.ts so <picture> <source srcSet>
+// is only emitted when the responsive WebPs actually exist.
 // Prevents iOS Safari from rendering the broken-image icon when the
 // browser fetches a webp source that 404s.
 
@@ -16,8 +16,21 @@ import sharp from 'sharp';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
-const SCAN_ROOT = join(ROOT, 'public', 'lovable-uploads');
 const OUT_FILE = join(ROOT, 'src', 'data', 'imageVariantsManifest.json');
+
+const SCAN_ROOTS = [
+  {
+    dir: join(ROOT, 'public', 'lovable-uploads'),
+    urlPrefix: '/lovable-uploads',
+    masterPattern: /^(.+)\.(png|jpe?g)$/i,
+  },
+  {
+    dir: join(ROOT, 'public', 'images', 'shop'),
+    urlPrefix: '/images/shop',
+    masterPattern: /^(.+)\.webp$/i,
+    skipVariantMasters: true,
+  },
+];
 
 function walk(dir, out = []) {
   if (!existsSync(dir)) return out;
@@ -29,37 +42,45 @@ function walk(dir, out = []) {
   return out;
 }
 
-const all = walk(SCAN_ROOT);
-const fileSet = new Set(all.map((p) => relative(SCAN_ROOT, p).replace(/\\/g, '/')));
+const discovered = new Map();
 
-// Find basenames (relative to lovable-uploads) that have all three variants
-const baseRels = new Set();
-for (const rel of fileSet) {
-  const m = rel.match(/^(.+)\.(png|jpe?g)$/i);
-  if (!m) continue;
-  const base = m[1];
-  if (
-    fileSet.has(`${base}-640.webp`) &&
-    fileSet.has(`${base}-1024.webp`) &&
-    fileSet.has(`${base}.webp`)
-  ) {
-    baseRels.add(base);
+for (const root of SCAN_ROOTS) {
+  const all = walk(root.dir);
+  const fileSet = new Set(all.map((p) => relative(root.dir, p).replace(/\\/g, '/')));
+  for (const rel of fileSet) {
+    const match = rel.match(root.masterPattern);
+    if (!match) continue;
+    const base = match[1];
+    if (root.skipVariantMasters && /-(?:640|1024)$/i.test(base)) continue;
+    if (
+      fileSet.has(`${base}-640.webp`) &&
+      fileSet.has(`${base}-1024.webp`) &&
+      fileSet.has(`${base}.webp`)
+    ) {
+      const urlBase = `${root.urlPrefix}/${base}`;
+      // PNG+JPG twins share one WebP triple; keep a single URL base.
+      discovered.set(urlBase, {
+        relBase: base,
+        urlBase,
+        dir: root.dir,
+      });
+    }
   }
 }
 
-const sortedRels = [...baseRels].sort();
-const bases = sortedRels.map((base) => `/lovable-uploads/${base}`);
+const discoveredEntries = [...discovered.values()].sort((a, b) => a.urlBase.localeCompare(b.urlBase));
+const bases = discoveredEntries.map((entry) => entry.urlBase);
 const widths = {};
 
 const METADATA_BATCH_SIZE = 24;
-for (let index = 0; index < sortedRels.length; index += METADATA_BATCH_SIZE) {
-  const batch = sortedRels.slice(index, index + METADATA_BATCH_SIZE);
+for (let index = 0; index < discoveredEntries.length; index += METADATA_BATCH_SIZE) {
+  const batch = discoveredEntries.slice(index, index + METADATA_BATCH_SIZE);
   const records = await Promise.all(
-    batch.map(async (base) => {
+    batch.map(async (entry) => {
       const variantFiles = [
-        join(SCAN_ROOT, `${base}-640.webp`),
-        join(SCAN_ROOT, `${base}-1024.webp`),
-        join(SCAN_ROOT, `${base}.webp`),
+        join(entry.dir, `${entry.relBase}-640.webp`),
+        join(entry.dir, `${entry.relBase}-1024.webp`),
+        join(entry.dir, `${entry.relBase}.webp`),
       ];
       // Measure the generated files themselves. Some legacy WebPs were enlarged
       // or otherwise no longer match their original PNG/JPG dimensions, so the
@@ -67,18 +88,18 @@ for (let index = 0; index < sortedRels.length; index += METADATA_BATCH_SIZE) {
       const metadata = await Promise.all(
         variantFiles.map((file) => sharp(file).metadata()),
       );
-      return { base, widths: metadata.map((item) => item.width) };
+      return { urlBase: entry.urlBase, widths: metadata.map((item) => item.width) };
     }),
   );
 
-  for (const { base, widths: actualWidths } of records) {
+  for (const { urlBase, widths: actualWidths } of records) {
     if (
       actualWidths.length !== 3 ||
       actualWidths.some((width) => !Number.isFinite(width) || width <= 0)
     ) {
       continue;
     }
-    widths[`/lovable-uploads/${base}`] = actualWidths;
+    widths[urlBase] = actualWidths;
   }
 }
 
