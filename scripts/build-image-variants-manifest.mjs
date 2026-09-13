@@ -42,7 +42,7 @@ function walk(dir, out = []) {
   return out;
 }
 
-const discovered = [];
+const discovered = new Map();
 
 for (const root of SCAN_ROOTS) {
   const all = walk(root.dir);
@@ -57,22 +57,24 @@ for (const root of SCAN_ROOTS) {
       fileSet.has(`${base}-1024.webp`) &&
       fileSet.has(`${base}.webp`)
     ) {
-      discovered.push({
+      const urlBase = `${root.urlPrefix}/${base}`;
+      // PNG+JPG twins share one WebP triple; keep a single URL base.
+      discovered.set(urlBase, {
         relBase: base,
-        urlBase: `${root.urlPrefix}/${base}`,
+        urlBase,
         dir: root.dir,
       });
     }
   }
 }
 
-discovered.sort((a, b) => a.urlBase.localeCompare(b.urlBase));
-const bases = discovered.map((entry) => entry.urlBase);
+const discoveredEntries = [...discovered.values()].sort((a, b) => a.urlBase.localeCompare(b.urlBase));
+const bases = discoveredEntries.map((entry) => entry.urlBase);
 const widths = {};
 
 const METADATA_BATCH_SIZE = 24;
-for (let index = 0; index < discovered.length; index += METADATA_BATCH_SIZE) {
-  const batch = discovered.slice(index, index + METADATA_BATCH_SIZE);
+for (let index = 0; index < discoveredEntries.length; index += METADATA_BATCH_SIZE) {
+  const batch = discoveredEntries.slice(index, index + METADATA_BATCH_SIZE);
   const records = await Promise.all(
     batch.map(async (entry) => {
       const variantFiles = [
