@@ -18,7 +18,12 @@ let measuredBox = {
   height: CHART_RUNTIME_HARNESS_HEIGHT,
 };
 
-const resizeObservers: Array<{ callback: ResizeObserverCallback; target: Element | null }> = [];
+type ObservedResize = {
+  callback: ResizeObserverCallback;
+  target: Element | null;
+};
+
+const resizeObservers: ObservedResize[] = [];
 
 function resizeObserverEntry(target: Element): ResizeObserverEntry {
   const { width, height } = measuredBox;
@@ -54,25 +59,24 @@ function installChartMeasureStubs() {
   resizeObservers.length = 0;
 
   class NotifyingResizeObserver implements ResizeObserver {
-    private readonly callback: ResizeObserverCallback;
-    private target: Element | null = null;
+    private readonly observed: ObservedResize;
 
     constructor(callback: ResizeObserverCallback) {
-      this.callback = callback;
-      resizeObservers.push(this);
+      this.observed = { callback, target: null };
+      resizeObservers.push(this.observed);
     }
 
     observe(target: Element) {
-      this.target = target;
-      this.callback([resizeObserverEntry(target)], this);
+      this.observed.target = target;
+      this.observed.callback([resizeObserverEntry(target)], this);
     }
 
     unobserve() {
-      this.target = null;
+      this.observed.target = null;
     }
 
     disconnect() {
-      this.target = null;
+      this.observed.target = null;
     }
   }
 
