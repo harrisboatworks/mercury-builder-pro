@@ -6172,21 +6172,21 @@ If the work falls outside our core, we'll tell you that and point you toward a s
     slug: 'best-mercury-outboard-aluminum-fishing-boats',
     title: 'Best Mercury for Aluminum Boats 2026',
     seoTitle: "Best Mercury for Aluminum Fishing Boats (Ontario) | HBW",
-    description: "The right Mercury for an aluminum fishing boat depends on the hull, load, and the boat's documented limits. 9.9-25 HP and 60-115 HP are examples to compare against your capacity plate. HBW honest guide.",
+    description: "Boat length does not pick the motor. Start with your capacity plate and the manufacturer's documentation for that exact hull, then match shaft, controls, weight, and load. Honest Mercury guide from Harris Boat Works on Rice Lake.",
     image: '/lovable-uploads/Aluminum_Console_Mercury_FourStroke_Hero_2026.png',
     imageAlt: 'Two anglers fishing from an aluminum console boat with a Mercury FourStroke outboard on a calm Kawartha lake',
     author: 'Harris Boat Works',
     datePublished: '2026-01-12',
-    dateModified: '2026-09-11',
+    dateModified: '2026-09-14',
     publishDate: '2026-01-12',
     category: 'Buying Guide',
     readTime: '10 min read',
     keywords: ['mercury for aluminum boat', 'best outboard aluminum fishing boat', 'mercury 60hp fishing', 'lund boat motor', 'tracker boat outboard'],
-    content: `**Last reviewed:** 2026-05-07
+    content: `**Last reviewed:** 2026-09-14
 
 ---
 
-> **Quick answer:** Length alone does not pick the motor. Start with the capacity plate and manufacturer documentation for this hull's horsepower and weight limits, then consider layout, steering, and your usual and heaviest planned load. Where those support it, 40-60 HP is an example to compare for 14-16 ft and 60-115 HP for 16-18 ft. Tiller versus remote still follows the boat. A 9.9 ProKicker is worth considering if you troll walleye. Installed pricing at [mercuryrepower.ca](https://www.mercuryrepower.ca).
+> **Quick answer:** Boat length does not establish safe or suitable horsepower. Two 16 ft aluminum hulls can be rated very differently. Start with the capacity plate on your boat and the manufacturer's documentation for that exact make, model, and year: maximum horsepower, maximum engine weight, and maximum people and gear. That maximum is a ceiling, not a recommendation or a budget target. From there, match transom height and shaft length, tiller or remote controls, hull and transom condition, and the load you actually carry on a normal day. A 9.9 ProKicker is worth considering if you troll walleye. Installed pricing at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 ---
 
@@ -6201,7 +6201,7 @@ leftCriteria:
   - You launch at unimproved ramps where dragging happens
   - You want lower maintenance and won't repaint or gel-coat-fix
   - Repair-ability matters to you (welding > fiberglass work)
-leftOutcome: Lighter, more forgiving, easier to fix. Consider modern welded aluminum (Lund, Princecraft, Legend Tin) when trailering, shallow-water use, and repair options matter to you. For a 16-18 ft example, compare 60-90 HP Mercury where the hull's limits and load support it.
+leftOutcome: Lighter, more forgiving, easier to fix. Consider modern welded aluminum (Lund, Princecraft, Legend Tin) when trailering, shallow-water use, and repair options matter to you. Power comes from that specific hull's plate and manufacturer documentation, not from its length.
 leftVariant: recommended
 rightLabel: Fiberglass
 rightCriteria:
@@ -6210,7 +6210,7 @@ rightCriteria:
   - You're 18-22+ ft for runabout, bowrider, or wakeboard use
   - You can absorb higher maintenance (gel coat, blisters, hull cleaning)
   - You'll keep the boat 8+ years and value the smoother trip
-rightOutcome: Heavier, more comfortable in chop, prettier. Right answer for runabouts, ski boats, and bigger fiberglass cruisers. 19-23 ft fiberglass with 200+ HP Mercury, $55K-$110K.
+rightOutcome: Heavier, more comfortable in chop, prettier. Right answer for runabouts, ski boats, and bigger fiberglass cruisers. Power and budget still follow that hull's rated limits and how it is equipped, not a length rule of thumb.
 rightVariant: alternative
 whenInDoubt: Most Kawartha and Rice Lake customers buy aluminum because the trip to the boat is short, the boats hit stuff, and the resale market loves them. Fiberglass is a lifestyle pick on bigger water. Both are right; the wrong one is whatever doesn't match how you actually boat.
 ::
@@ -6219,7 +6219,7 @@ whenInDoubt: Most Kawartha and Rice Lake customers buy aluminum because the trip
 
 We rig aluminum fishing boats every season at HBW. On Rice Lake and across the Kawarthas, they're the workhorse of cottage fishing, lightweight, easy to trailer, manageable to maintain.
 
-The mistakes we see are consistent: underbuying on HP, skipping the kicker, running the wrong prop, or choosing Command Thrust without checking the hull, load, propeller, and rigging. Fix any one of those and the boat performs noticeably better than before.
+The mistakes we see are consistent: guessing power from boat length, skipping the kicker, running the wrong prop, or choosing Command Thrust without checking the hull, load, propeller, and rigging. Fix any one of those and the boat performs noticeably better than before.
 
 Here's how to think through each decision.
 
