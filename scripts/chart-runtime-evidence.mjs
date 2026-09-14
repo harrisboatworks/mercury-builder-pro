@@ -1,9 +1,13 @@
 import { spawn } from "node:child_process";
 import { createServer } from "node:http";
+import { createRequire } from "node:module";
 import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { chromium } from "playwright";
+
+const require = createRequire(import.meta.url);
+const rechartsVersion = require("recharts/package.json").version;
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const outDir = path.join(root, "dist-chart-evidence");
@@ -68,9 +72,9 @@ async function measureSection(page, testId) {
       )
       .map((node) => node.textContent?.trim());
     const desktopIcon = section.querySelector("svg.lucide-monitor");
-    const mobileSwatch = [...section.querySelectorAll("div")].find((node) =>
-      node.textContent?.trim() === "Mobile visits",
-    )?.querySelector("div.h-2.w-2");
+    const mobileSwatch = [...section.querySelectorAll("div.h-2.w-2")].find((node) =>
+      node.parentElement?.textContent?.includes("Mobile visits"),
+    );
     const tooltipText = tooltip?.textContent || "";
     const chartStyle = section.querySelector("style")?.textContent || "";
 
@@ -110,7 +114,10 @@ async function measureSection(page, testId) {
 await run("npx", ["vite", "build", "--config", "vite.chart-evidence.config.ts"]);
 
 const { server, port } = await serveEvidence();
-const browser = await chromium.launch({ headless: true });
+const browser = await chromium.launch({
+  headless: true,
+  executablePath: process.env.CHROME_PATH || "/opt/google/chrome/chrome",
+});
 const page = await browser.newPage({ viewport: { width: 1280, height: 900 } });
 
 try {
@@ -131,7 +138,7 @@ try {
 
   const measurements = {
     runtime: "playwright-chromium",
-    recharts: "3.10.1",
+    recharts: rechartsVersion,
     page: `http://127.0.0.1:${port}/`,
     wide: await measureSection(page, "chart-runtime-evidence-wide"),
     narrow: await measureSection(page, "chart-runtime-evidence-narrow"),
