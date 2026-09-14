@@ -6225,39 +6225,55 @@ Here's how to think through each decision.
 
 ---
 
-## What changes the right motor for your aluminum fishing boat
+## What actually sets the right motor for your aluminum fishing boat
 
-**Hull length and weight.** A 14-foot tin boat needs less HP than a 19-foot console. Aluminum hulls are lighter than equivalent fiberglass, so HP requirements trend lower than the same-length fiberglass alternative.
+**The capacity plate, first.** The plate near the transom lists the maximum horsepower, the maximum number of people, and the maximum total load the builder certified for that hull. It is the starting point, and nothing below overrides it.
 
-**Tiller or remote control.** Tiller boats under 20 HP are drop-in installs, no rigging required. Console boats need remote-control motors with cables, controls, and prop. Different cost structure entirely.
+**The manufacturer's documentation for your exact model and year.** The plate gives you horsepower and load. The owner's manual or the builder's spec sheet for that model year usually adds the maximum engine weight and the transom height the boat was designed around. Two 16 ft aluminum boats can be rated very differently, and the same model can change ratings between years.
 
-**How many people and how much gear.** Solo angler trolling at 3 mph has completely different HP needs than a family of three who want to run between spots.
+**The maximum is a ceiling, not a recommendation.** Being rated for a number does not mean the boat is best with that number, and it does not mean you should budget for it. Plenty of well-set-up hulls run happily below their rating.
 
-**Where you fish.** Protected bays on smaller Kawartha lakes vs. open Rice Lake in the afternoon vs. Lake Ontario. Bigger, windier water changes the practical HP minimum.
+**Engine weight and transom height.** A modern FourStroke can weigh more than the motor it replaces. Check the rated engine weight and how the boat sits at rest with your normal load in it. Then match shaft length to transom height, 20 inch on most standard aluminum transoms, 25 inch on taller ones.
+
+**Steering and controls.** Tiller motors are a drop-in on boats built for them, no rigging. A console boat needs a remote-control motor with compatible steering, cables or hydraulics, controls, harness, and a prop. Mixing an incompatible control system is where repower budgets quietly grow.
+
+**Hull and transom condition.** Soft or repaired transoms, corroded rivets, and old stringer repairs change what the boat should carry, whatever the plate says. We check this before we quote.
+
+**How many people and how much gear.** A solo angler trolling at 3 mph asks something very different of the boat than three people, a full livewell, and a day's gear. Size for the heaviest load you genuinely run, inside the rated limits.
+
+**Where you fish.** Protected bays on smaller Kawartha lakes, open Rice Lake on a windy afternoon, and Lake Ontario are three different jobs. Bigger water rewards reserve power you already have room for on the plate.
 
 **Whether you have a kicker.** A 9.9 ProKicker on a fishing boat is the standard for trolling speed control. Without one, you're either sacrificing main-motor performance or sacrificing trolling control. You can't optimize both with one motor.
 
 ---
 
-## Best Mercury by boat size
+## How to work it out for your boat, in order
 
-### 12–14 ft tin boat (solo or two-person, sheltered water)
+**1. Photograph the capacity plate.** Maximum horsepower, maximum persons, maximum total weight. If the plate is missing, painted over, or unreadable, get the make, model, and year and ask the builder or a dealer for the original rating. Do not guess from the length.
 
-**Best fit: 9.9 to 15 HP tiller.** The Mercury 9.9 MH, 15 MH, or 15 EH (electric start) are all drop-in, no-rigging purchases. For pure solo fishing on small lakes, a 9.9 MH is plenty. Step up to 15 if you have a heavier hull or want a bit more cruise speed.
+**2. Write down the hull's limits in one line.** Maximum horsepower, maximum engine weight, maximum load. Every option gets checked against that line.
 
-### 14–16 ft tiller or console aluminum
+**3. Measure the transom.** Transom height decides shaft length. Getting it wrong causes ventilation or drag no prop will fix.
 
-**Example to compare: 25 to 60 HP**, tiller without a console, remote with one. For a 16-foot console with two anglers and gear, a 60 HP FourStroke is worth comparing, provided the capacity plate, manufacturer documentation, and your planned loads allow it. Installed pricing: [mercuryrepower.ca](https://www.mercuryrepower.ca).
+**4. Decide tiller or remote.** That follows the boat's layout and how you fish, and it changes the rigging list more than the motor choice does.
 
-### 16–18 ft console aluminum (the most common Kawartha repower)
+**5. Total your real load.** People, gear, fuel, batteries, livewell water, and the motor itself. That total lives inside the plate's weight limit, not at its edge.
 
-**Examples to compare: 90 to 115 HP FourStroke.** The 90 EXLPT and 115 EXLPT are motors we often install on 16-18 ft consoles where the hull's documented limits, steering, and a heavier family or open-water load support them.
+**6. Then choose the model.** Within what steps 1 to 5 allow, pick the Mercury family that matches how you run the boat, and price the full configuration rather than the motor alone at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
-For tournament-style fishing or bigger open water, step up to 115 Pro XS. The Pro XS earns the premium if you actually run it hard. For typical recreational fishing, FourStroke is the better value.
+---
 
-### 18–20 ft aluminum with deep-V hull
+## Choosing between Mercury families, once the limits are set
 
-**Best fit: 115 to 150 HP.** Larger aluminum fishing boats with deep-V hulls need real HP to plane reliably with a full load. The 115 Pro XS or 150 FourStroke/Pro XS land here.
+**FourStroke.** The volume choice for recreational fishing on aluminum hulls: quiet at trolling speed, smooth, straightforward to service. Most of the aluminum fishing boats we rig on Rice Lake end up here.
+
+**Pro XS.** Built for hole shot and sustained hard running. It earns the premium on tournament hulls and for anglers who push across open water every morning. If most of your season is trolling and working structure, FourStroke at the same horsepower is the better value.
+
+**ProKicker.** A purpose-built trolling and auxiliary motor with a high-thrust gearcase and long shaft, not a main-motor substitute on a planing hull.
+
+**Command Thrust.** A hull, load, and propeller decision. On most of the planing aluminum fishing boats we see, the standard gearcase is our shop preference. That is a preference from the boats in front of us, not a rule about V-hulls.
+
+Whichever family you land in, the horsepower still has to sit inside what your plate and documentation allow.
 
 ---
 
