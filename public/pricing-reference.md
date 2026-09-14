@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/pricing-reference.md
-last_updated: 2026-08-19
+last_updated: 2026-09-14
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -18,7 +18,7 @@ Every Mercury outboard Harris Boat Works sells, priced in Canadian dollars. Four
 
 **Published by [Harris Boat Works](/)** — Mercury Marine Premier Dealer on Rice Lake, Ontario, Canada. Family-owned since 1947, Mercury dealer since 1965. All prices below are HBW's actual dealer selling price in CAD, not generic MSRP estimates. Verified weekly. Pickup only at 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
 
-_Last updated 2026-08-19._
+_Last updated 2026-09-14._
 
 All prices shown on this page are live from our current Mercury pricelist feed, updated regularly. Every figure is in Canadian dollars and reflects the dealer price at our Rice Lake yard.
 
@@ -87,15 +87,15 @@ All prices shown on this page are live from our current Mercury pricelist feed, 
 | 15 | 15ELHPT ProKicker FourStroke | 1A15451BK | 20" | Tiller | $5,599 _(MSRP $5,965)_ | Available to order | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=fad847b9-b335-405d-8801-828032331e25) |
 | 15 | 15ELPT ProKicker FourStroke | 1A15452BK | 20" | Remote | $5,500 _(MSRP $5,860)_ | Available to order | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=72c70f60-9795-449d-8b08-a1e1e9dcd0ca) |
 | 15 | 15EXLHPT ProKicker FourStroke | 1A15461BK | 25" | Tiller | $5,709 _(MSRP $6,085)_ | Available to order | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=21dfd281-6213-4953-8428-18bc9d88bb90) |
-| 15 | 15EXLPT ProKicker FourStroke | 1A15462BK | 25" | Remote | $5,594 _(MSRP $5,960)_ | Available to order | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=5597e08d-d818-426c-b80e-80d52caf6d21) |
+| 15 | 15EXLPT ProKicker FourStroke | 1A15462BK | 25" | Remote | $5,594 _(MSRP $5,960)_ | In stock | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=5597e08d-d818-426c-b80e-80d52caf6d21) |
 | 20 | 20MH FourStroke | 1A20201LK | 15" | Tiller | $4,334 _(MSRP $4,620)_ | Available to order | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=3fe5ca75-4c12-42d8-9626-3f78350f6834) |
 | 20 | 20MLH FourStroke | 1A20211LK | 20" | Tiller | $4,373 _(MSRP $4,660)_ | Available to order | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=c365e813-4d47-4e92-9348-8ad65ff1a733) |
 | 20 | 20EH FourStroke | 1A20301LK | 15" | Tiller | $4,802 _(MSRP $5,115)_ | In stock | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=782de8b4-6f7e-459f-ac58-400a6b49ad0b) |
 | 20 | 20ELH FourStroke | 1A20311LK | 20" | Tiller | $4,873 _(MSRP $5,190)_ | In stock | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=4fab2935-c80e-4cd3-95ec-f201a3fd59f2) |
 | 20 | 20ELHPT FourStroke | 1A20411LK | 20" | Tiller | $5,528 _(MSRP $5,890)_ | In stock | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=2e892176-96f0-44f3-baa4-0896d8cc5ab2) |
 | 25 | 25MLH FourStroke | 1A25213BK | 20" | Tiller | $5,093 _(MSRP $5,425)_ | Available to order | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=5149f934-6988-4af0-8ae3-441b1f908615) |
-| 25 | 25ELHPT FourStroke | 1A25411BK | 20" | Tiller | $6,265 _(MSRP $6,675)_ | Available to order | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=71d56079-1b47-44e9-8447-969ec6ef416b) |
-| 25 | 25ELPT FourStroke | 1A25413BK | 20" | Remote | $6,144 _(MSRP $6,545)_ | Available to order | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=70870b08-2d14-42d2-93db-974b93c6557f) |
+| 25 | 25ELHPT FourStroke | 1A25411BK | 20" | Tiller | $6,265 _(MSRP $6,675)_ | In stock | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=71d56079-1b47-44e9-8447-969ec6ef416b) |
+| 25 | 25ELPT FourStroke | 1A25413BK | 20" | Remote | $6,144 _(MSRP $6,545)_ | In stock | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=70870b08-2d14-42d2-93db-974b93c6557f) |
 | 30 | 30ELHPT FourStroke | 1A30411BK | 20" | Tiller | $7,926 _(MSRP $8,445)_ | Available to order | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=54e743a9-559e-4153-9ac0-f2107ab8136e) |
 | 30 | 30ELPT FourStroke | 1A30413BK | 20" | Remote | $7,805 _(MSRP $8,315)_ | Available to order | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=91fee167-20c2-4d7b-8569-b8270241e8fd) |
 | 40 | 40ELPT FourStroke | 1F40413GZ | 20" | Remote | $9,438 _(MSRP $10,515)_ | Available to order | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=06a95675-6418-4902-964f-e04b5f6bd0f2) |
@@ -169,3 +169,4 @@ All prices shown on this page are live from our current Mercury pricelist feed, 
 - llms.txt: https://www.mercuryrepower.ca/llms.txt
 - Public motors API (live JSON): https://www.mercuryrepower.ca/api/agents/motors
 - Public quote API: `POST https://www.mercuryrepower.ca/api/agents/quote` with `{ "action": "build_quote", "motor_id": "<id>" }`.
+

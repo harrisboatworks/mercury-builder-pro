@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/fourstroke-150hp-150-xl-fourstroke
-last_updated: 2026-08-19
+last_updated: 2026-09-14
 currency: CAD
 pickup_only: true
 delivery_offered: false

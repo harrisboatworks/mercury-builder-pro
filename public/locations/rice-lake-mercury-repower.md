@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/locations/rice-lake-mercury-repower
-last_updated: 2026-08-19
+last_updated: 2026-09-14
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -50,6 +50,7 @@ Harris Boat Works has been Rice Lake’s Mercury repower specialist for three ge
 - Standard repower handoff includes an on-water test on Rice Lake before pickup when safe seasonal conditions allow
 ## Recommended links
 - [Build a Mercury quote (CAD, itemized)](https://www.mercuryrepower.ca/quote/motor-selection)
+- [Harris Boat Works in Gores Landing](https://www.mercuryrepower.ca/harris-boat-works)
 - [Bass boat repower case study (150 → 150 Pro XS)](https://www.mercuryrepower.ca/case-studies/bass-boat-150-to-150-pro-xs)
 - [Walkaround cuddy repower (90 → 115 EFI)](https://www.mercuryrepower.ca/case-studies/walkaround-cuddy-90-to-115-efi)
 - [Mercury repower cost guide (Ontario, CAD)](https://www.mercuryrepower.ca/blog/mercury-repower-cost-ontario-2026-cad)
