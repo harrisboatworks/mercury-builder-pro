@@ -6301,8 +6301,10 @@ A kicker can be worth the added cost when slow trolling, backup propulsion, or l
 
 :::mythbuster
 heading: Common mistakes on aluminum fishing boat repowers
-- claim: Underbuying HP.
-  rebuttal: A 25 HP on a 16-foot aluminum that needs 60 HP leaves you fighting wind and current every day.
+- claim: Picking horsepower from boat length.
+  rebuttal: Two 16 ft aluminum boats can carry different plate ratings, different weight limits, and different transom heights. Read the plate and the manufacturer documentation for your exact model and year, then size for the load you actually carry.
+- claim: Treating the maximum rating as the target.
+  rebuttal: The maximum is a legal and structural ceiling, not advice. Buying to the ceiling adds weight and cost the boat may not need.
 - claim: Skipping the kicker.
   rebuttal: Two seasons later, they wish they'd bought it. Buy it once.
 - claim: Wrong prop.
@@ -6334,34 +6336,36 @@ Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), real pricin
 
 ## What we see at HBW
 
-Many 14-17 ft tinnies and modest-load consoles that come through our service bay run a 25-60 HP FourStroke. For some 17-footers carrying 3-4 people and gear, the 60 EFI (standard gearcase) is worth comparing; a 90-115 on a heavier 16-18 ft console suits a different load and water. Command Thrust remains a hull, load, and propeller choice; HBW often prefers standard on these planing V-hulls.
+Every aluminum fishing boat that comes through our service bay gets the same first step: read the plate, confirm the manufacturer's documentation for that model and year, check the transom, and weigh what the owner actually carries. Two boats that look identical on the trailer regularly come back with different answers.
 
-Read the capacity plate and manufacturer documentation before quoting. The shop still turns down a 90 when that hull is rated for 60.
+Command Thrust stays a hull, load, and propeller decision, and on most of these planing V-hulls we prefer the standard gearcase.
+
+The shop will still turn down a repower that exceeds a hull's rating, and we will say so before we quote. If your plate is unreadable, send us the make, model, and year with a photo of the transom and we will help you track down the original rating.
 
 ---
 
 ## FAQ
 
 **What's the best Mercury for a 16-foot aluminum fishing boat?**
-It depends on layout and load. A 60 EFI suits two-person fishing on many hulls; a 90 EXLPT adds headroom for a family with gear where the plate, manufacturer documentation, and your heaviest planned day allow. Both are popular Kawartha repower choices.
+There isn't one answer, because 16 ft is not a specification. Two 16 ft hulls from different builders, or different years of the same builder, can be rated for different horsepower, different engine weight, and different total load. Start with your capacity plate and the manufacturer's documentation for that exact boat, confirm transom height and controls, then choose inside those limits for the load you carry. Send us the make, model, and year with a photo of the plate and we'll work it through with you.
 
-**What's the best Mercury for a 14-foot aluminum tiller boat?**
-A 15 to 25 HP tiller motor. Mercury 15 MH, 15 EH (electric start), or 25 EFI. All are drop-in tiller installs with no rigging. Choose based on whether you want manual or electric start and how heavily loaded your boat typically is.
+**My plate is painted over or missing. What now?**
+Don't estimate from length. Get the hull identification number, make, model, and year, and ask the builder or a dealer for the original certified rating. We do this regularly for older Kawartha boats.
+
+**Should I buy up to my boat's maximum horsepower?**
+Only if the rest of the picture supports it. The maximum is a ceiling set for safety and structure, not a recommendation. Engine weight, how the boat sits with your normal load, transom condition, and what you actually do on the water all matter. Many boats are better set up below their rating.
 
 **Should I get FourStroke or Pro XS for fishing?**
-For tournament fishing or anyone who wants the fastest acceleration to beat wind to a spot, Pro XS earns its price. For recreational fishing, trolling, drifting, working structure, FourStroke at the same HP is the better value.
+For tournament fishing or anyone who wants the fastest acceleration to beat wind to a spot, Pro XS earns its price. For recreational fishing, trolling, drifting, working structure, FourStroke at the same HP is the better value. Both still have to fit inside your hull's rated horsepower and engine weight.
 
 **Do I need a kicker motor for fishing?**
-For serious fishing on Rice Lake or Kawartha lakes, yes, it's the standard setup. The 9.9 ProKicker gives you trolling speed control, backup propulsion, fuel-efficient slow-speed running, and stealth in shallow water.
-
-**What HP for a 19-foot aluminum console fishing boat?**
-A 90 to 115 FourStroke suits typical lighter recreational use on some hulls; a 115 to 150 Pro XS suits bigger water or heavier gear, in line with the 18-20 ft deep-V examples. Pair with a 9.9 ProKicker if slow trolling is part of the day. The hull's rated limits still govern.
+For serious fishing on Rice Lake or Kawartha lakes, it's the standard setup. The 9.9 ProKicker gives you trolling speed control, backup propulsion, efficient slow-speed running, and stealth in shallow water. Remember that a kicker adds weight at the transom, which counts against the hull's limits.
 
 **Should I get Command Thrust on a fishing boat?**
 It depends on the hull, load, and propeller, not a universal V-hull ban. HBW's shop recommendation on most aluminum fishing boats we see is the standard gearcase. The ProKicker CT trolling motor is a separate, legitimate configuration.
 
 **Can I use a kicker as my main motor?**
-On small aluminum boats (12–14 ft), yes, a 9.9 or 15 HP can be the only motor. On 16 ft and bigger, you need a proper main motor; the kicker is the auxiliary.
+On some small, lightly loaded aluminum boats a 9.9 or 15 HP is the only motor, and that's a normal setup. On a boat you need to get on plane with people and gear, the kicker is an auxiliary and not the main. Your plate and your real load decide which case you're in.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 `,
