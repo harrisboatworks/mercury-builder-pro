@@ -16,26 +16,6 @@
         "path": "/zh"
       },
       {
-        "hrefLang": "ko",
-        "path": "/ko"
-      },
-      {
-        "hrefLang": "es",
-        "path": "/es"
-      },
-      {
-        "hrefLang": "pa",
-        "path": "/pa"
-      },
-      {
-        "hrefLang": "ur",
-        "path": "/ur"
-      },
-      {
-        "hrefLang": "tl",
-        "path": "/tl"
-      },
-      {
         "hrefLang": "x-default",
         "path": "/"
       }

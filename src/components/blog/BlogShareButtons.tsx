@@ -126,13 +126,12 @@ export function BlogShareButtons({
 
   if (variant === 'inline') {
     return (
-      <div data-blog-share="inline" className="flex items-center gap-2">
+      <div className="flex items-center gap-2">
         {/* Native share button on mobile */}
         {canShare && (
           <Button
             variant="ghost"
             size="sm"
-            data-share-control="native"
             onClick={handleNativeShare}
             className="h-8 w-8 p-0 text-muted-foreground hover:text-primary md:hidden"
             aria-label="Share article"
@@ -146,7 +145,6 @@ export function BlogShareButtons({
           <Button
             variant="ghost"
             size="sm"
-            data-share-control="facebook"
             onClick={() => openShareWindow(shareLinks.facebook, 'facebook')}
             className="h-8 w-8 p-0 text-muted-foreground hover:text-[#1877F2]"
             aria-label="Share on Facebook"
@@ -156,7 +154,6 @@ export function BlogShareButtons({
           <Button
             variant="ghost"
             size="sm"
-            data-share-control="twitter"
             onClick={() => openShareWindow(shareLinks.twitter, 'twitter')}
             className="h-8 w-8 p-0 text-muted-foreground hover:text-foreground"
             aria-label="Share on X"
@@ -166,7 +163,6 @@ export function BlogShareButtons({
           <Button
             variant="ghost"
             size="sm"
-            data-share-control="copy"
             onClick={handleCopyLink}
             className="h-8 w-8 p-0 text-muted-foreground hover:text-primary"
             aria-label="Copy link"
@@ -180,7 +176,7 @@ export function BlogShareButtons({
 
   // Full variant with labels
   return (
-    <div data-blog-share="full" className="space-y-4">
+    <div className="space-y-4">
       <h3 className="text-lg font-medium text-foreground">Share this article</h3>
       
       <div className="flex flex-wrap gap-2">
@@ -188,7 +184,6 @@ export function BlogShareButtons({
         {canShare && (
           <Button
             variant="outline"
-            data-share-control="native"
             onClick={handleNativeShare}
             className="gap-2 md:hidden"
           >
@@ -201,7 +196,6 @@ export function BlogShareButtons({
         <div className={`flex flex-wrap gap-2 ${canShare ? 'hidden md:flex' : 'flex'}`}>
           <Button
             variant="outline"
-            data-share-control="facebook"
             onClick={() => openShareWindow(shareLinks.facebook, 'facebook')}
             className="gap-2 hover:border-[#1877F2] hover:text-[#1877F2]"
           >
@@ -210,7 +204,6 @@ export function BlogShareButtons({
           </Button>
           <Button
             variant="outline"
-            data-share-control="twitter"
             onClick={() => openShareWindow(shareLinks.twitter, 'twitter')}
             className="gap-2 hover:border-foreground"
           >
@@ -219,7 +212,6 @@ export function BlogShareButtons({
           </Button>
           <Button
             variant="outline"
-            data-share-control="whatsapp"
             onClick={() => openShareWindow(shareLinks.whatsapp, 'whatsapp')}
             className="gap-2 hover:border-[#25D366] hover:text-[#25D366]"
           >
@@ -228,7 +220,6 @@ export function BlogShareButtons({
           </Button>
           <Button
             variant="outline"
-            data-share-control="reddit"
             onClick={() => openShareWindow(shareLinks.reddit, 'reddit')}
             className="gap-2 hover:border-[#FF4500] hover:text-[#FF4500]"
           >
@@ -237,7 +228,6 @@ export function BlogShareButtons({
           </Button>
           <Button
             variant="outline"
-            data-share-control="copy"
             onClick={handleCopyLink}
             className="gap-2"
           >
@@ -248,7 +238,6 @@ export function BlogShareButtons({
             variant="outline"
             asChild
             className="gap-2"
-            data-share-control="email"
             onClick={() => trackShare('email')}
           >
             <a href={shareLinks.email}>
@@ -258,7 +247,6 @@ export function BlogShareButtons({
           </Button>
           <Button
             variant="outline"
-            data-share-control="print"
             onClick={handlePrint}
             className="gap-2"
           >

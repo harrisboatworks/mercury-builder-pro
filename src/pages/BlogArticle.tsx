@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { useOverheatInteractions } from '@/hooks/useOverheatInteractions';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
@@ -54,7 +53,6 @@ export default function BlogArticle() {
   const { slug } = useParams<{ slug: string }>();
   const article = slug ? getArticleBySlug(slug) : undefined;
   const [heroImgError, setHeroImgError] = useState(false);
-  const interactionRef = useOverheatInteractions(slug);
 
   if (!article) {
     return <Navigate to="/blog" replace />;
@@ -306,7 +304,7 @@ export default function BlogArticle() {
 
 
 
-        <article ref={interactionRef} className="max-w-[880px] mx-auto" aria-labelledby="article-title">
+        <article className="max-w-[880px] mx-auto" aria-labelledby="article-title">
           {/* Header */}
           <header className="mb-8">
             <div className="flex items-center gap-3 mb-4">
