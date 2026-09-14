@@ -18,44 +18,62 @@ let measuredBox = {
   height: CHART_RUNTIME_HARNESS_HEIGHT,
 };
 
+const resizeObservers: Array<{ callback: ResizeObserverCallback; target: Element | null }> = [];
+
+function resizeObserverEntry(target: Element): ResizeObserverEntry {
+  const { width, height } = measuredBox;
+  return {
+    target,
+    contentRect: {
+      x: 0,
+      y: 0,
+      width,
+      height,
+      top: 0,
+      left: 0,
+      bottom: height,
+      right: width,
+      toJSON() {
+        return {};
+      },
+    },
+    borderBoxSize: [{ inlineSize: width, blockSize: height }],
+    contentBoxSize: [{ inlineSize: width, blockSize: height }],
+    devicePixelContentBoxSize: [{ inlineSize: width, blockSize: height }],
+  };
+}
+
+function notifyObservedResize() {
+  for (const observer of resizeObservers) {
+    if (!observer.target) continue;
+    observer.callback([resizeObserverEntry(observer.target)], observer as unknown as ResizeObserver);
+  }
+}
+
 function installChartMeasureStubs() {
+  resizeObservers.length = 0;
+
   class NotifyingResizeObserver implements ResizeObserver {
     private readonly callback: ResizeObserverCallback;
+    private target: Element | null = null;
 
     constructor(callback: ResizeObserverCallback) {
       this.callback = callback;
+      resizeObservers.push(this);
     }
 
     observe(target: Element) {
-      const { width, height } = measuredBox;
-      this.callback(
-        [
-          {
-            target,
-            contentRect: {
-              x: 0,
-              y: 0,
-              width,
-              height,
-              top: 0,
-              left: 0,
-              bottom: height,
-              right: width,
-              toJSON() {
-                return {};
-              },
-            },
-            borderBoxSize: [{ inlineSize: width, blockSize: height }],
-            contentBoxSize: [{ inlineSize: width, blockSize: height }],
-            devicePixelContentBoxSize: [{ inlineSize: width, blockSize: height }],
-          },
-        ],
-        this,
-      );
+      this.target = target;
+      this.callback([resizeObserverEntry(target)], this);
     }
 
-    unobserve() {}
-    disconnect() {}
+    unobserve() {
+      this.target = null;
+    }
+
+    disconnect() {
+      this.target = null;
+    }
   }
 
   window.ResizeObserver = NotifyingResizeObserver;
@@ -90,6 +108,7 @@ beforeEach(() => {
 });
 
 afterEach(() => {
+  document.getElementById("recharts_measurement_span")?.remove();
   vi.restoreAllMocks();
 });
 
@@ -98,17 +117,21 @@ describe("chart wrapper runtime (Recharts 3 harness)", () => {
     const { container } = render(<ChartRuntimeHarness />);
 
     await waitFor(() => {
-      expect(screen.getByText("Desktop visits")).toBeInTheDocument();
-      expect(screen.getByText("Mobile visits")).toBeInTheDocument();
+      expect(screen.getAllByText("Desktop visits").length).toBeGreaterThan(0);
+      expect(screen.getAllByText("Mobile visits").length).toBeGreaterThan(0);
     });
 
-    const desktopItem = screen.getByText("Desktop visits").closest("div");
-    expect(desktopItem?.querySelector("svg.lucide-monitor")).toBeTruthy();
+    const legendDesktop = [...container.querySelectorAll("div")].find(
+      (node) => node.textContent === "Desktop visits" && node.querySelector("svg.lucide-monitor"),
+    );
+    expect(legendDesktop).toBeTruthy();
 
-    const mobileItem = screen.getByText("Mobile visits").closest("div");
-    const swatch = mobileItem?.querySelector("div.h-2.w-2");
-    expect(swatch).toBeTruthy();
-    expect(swatch).toHaveStyle({ backgroundColor: "var(--color-mobile)" });
+    const legendMobile = [...container.querySelectorAll("div")].find(
+      (node) => node.textContent === "Mobile visits" && node.querySelector("div.h-2.w-2"),
+    );
+    expect(legendMobile?.querySelector("div.h-2.w-2")).toHaveStyle({
+      backgroundColor: "var(--color-mobile)",
+    });
 
     const chartStyle = container.querySelector("style");
     expect(chartStyle?.textContent).toContain("--color-desktop: hsl(221, 83%, 40%)");
@@ -139,14 +162,15 @@ describe("chart wrapper runtime (Recharts 3 harness)", () => {
   });
 
   it("shows composed tooltip label and series values when Recharts injects the first index", async () => {
-    render(<ChartRuntimeHarness tooltipDefaultIndex={0} />);
+    const { container } = render(<ChartRuntimeHarness tooltipDefaultIndex={0} />);
 
     await waitFor(() => {
-      expect(screen.getByText("January")).toBeInTheDocument();
-      expect(screen.getByText("186")).toBeInTheDocument();
-      expect(screen.getByText("80")).toBeInTheDocument();
-      expect(screen.getByText("Desktop visits")).toBeInTheDocument();
-      expect(screen.getByText("Mobile visits")).toBeInTheDocument();
+      const tooltip = container.querySelector(".recharts-tooltip-wrapper");
+      expect(tooltip).toHaveTextContent("January");
+      expect(tooltip).toHaveTextContent("Desktop visits");
+      expect(tooltip).toHaveTextContent("Mobile visits");
+      expect(tooltip).toHaveTextContent("186");
+      expect(tooltip).toHaveTextContent("80");
     });
   });
 
@@ -161,6 +185,7 @@ describe("chart wrapper runtime (Recharts 3 harness)", () => {
 
     measuredBox = { width: 360, height: 240 };
     rerender(<ChartRuntimeHarness width={360} height={240} />);
+    notifyObservedResize();
 
     await waitFor(() => {
       const surface = container.querySelector(".recharts-surface");
@@ -170,7 +195,7 @@ describe("chart wrapper runtime (Recharts 3 harness)", () => {
   });
 
   it("renders tooltip content from a Recharts-shaped payload without a live chart", () => {
-    render(
+    const { container } = render(
       <ChartContainer config={CHART_RUNTIME_HARNESS_CONFIG} id="tooltip-payload">
         <ChartTooltipContent
           active
@@ -195,10 +220,13 @@ describe("chart wrapper runtime (Recharts 3 harness)", () => {
       </ChartContainer>,
     );
 
-    expect(screen.getByText("January")).toBeInTheDocument();
-    expect(screen.getByText("Desktop visits")).toBeInTheDocument();
-    expect(screen.getByText("Mobile visits")).toBeInTheDocument();
-    expect(screen.getByText("186")).toBeInTheDocument();
-    expect(screen.getByText("80")).toBeInTheDocument();
+    const tooltip = container.querySelector("[data-chart='chart-tooltip-payload']");
+    expect(tooltip).toHaveTextContent("January");
+    expect(tooltip).toHaveTextContent("Desktop visits");
+    expect(tooltip).toHaveTextContent("Mobile visits");
+    expect(tooltip).toHaveTextContent("186");
+    expect(tooltip).toHaveTextContent("80");
+    expect(tooltip?.querySelector("svg.lucide-monitor")).toBeTruthy();
+    expect(tooltip?.querySelector('[style*="--color-bg: var(--color-mobile)"]')).toBeTruthy();
   });
 });
