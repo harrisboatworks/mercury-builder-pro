@@ -6371,16 +6371,16 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 `,
     faqs: [
       {
-        question: 'What\'s the minimum HP I should get for my aluminum boat?',
-        answer: '25 HP is a 14 ft example and 40 HP a 16 ft example, usually for lighter tiller days; a loaded 16 ft console may suit 60 or 90 instead. Check the capacity plate and manufacturer documentation for horsepower, people, and weight limits, then size for the heaviest planned load that still fits.'
+        question: 'How do I work out the right horsepower for my aluminum boat?',
+        answer: 'Start with the capacity plate on your boat, not the length. It gives the maximum horsepower, maximum people, and maximum total load certified for that hull. Then check the manufacturer\'s documentation for your exact make, model, and year for maximum engine weight and transom height. Inside those limits, size for the load you actually carry and the water you actually run. The maximum is a ceiling, not a recommendation or a budget target. Two boats of the same length can land in completely different places.'
       },
       {
         question: 'Is a tiller or remote better for fishing an aluminum boat?',
-        answer: 'For most serious anglers on aluminum fishing boats, tiller is better, specifically the Mercury Advanced Tiller system giving you throttle, shift, and trim control at your fingertips. Tiller keeps you connected to the boat and lets you make instant micro-adjustments. Available on Mercury FourStroke models from 2.5HP through 115HP. Remote (console) steering is better for family boats, mixed-use hulls, or 18-20ft boats with center-console setups. Solo walleye anglers almost universally prefer tiller.'
+        answer: 'It follows the boat and how you fish, not the length. Many serious anglers prefer tiller, specifically the Mercury Advanced Tiller system giving you throttle, shift, and trim control at your fingertips, because it keeps you connected to the boat for instant micro-adjustments. Remote (console) steering suits family boats, mixed-use hulls, and boats already built around a console. Whichever you choose, confirm the motor is offered in that configuration and that the boat\'s existing controls and steering are compatible before you price the job.'
       },
       {
         question: 'Should I get Command Thrust on my Mercury outboard?',
-        answer: 'Usually not, though it is model- and application-specific rather than a blanket rule. On a typical planing aluminum fishing boat, CT trades top-end speed for low-speed push you will rarely use. Standard gearcase is the right call for 14-20 ft aluminum fishing boats around Rice Lake and the Kawarthas. If you want more low-speed control for trolling, add a 9.9 or 15 HP ProKicker (the ProKicker CT is a legitimate trolling-motor configuration). Command Thrust on the main motor makes sense on pontoons, tritoons, and heavy workboats.'
+        answer: 'Usually not, though it is model- and application-specific rather than a blanket rule. On a typical planing aluminum fishing boat, CT trades top-end speed for low-speed push you will rarely use, so the standard gearcase is our shop preference on the aluminum fishing boats we see around Rice Lake and the Kawarthas. If you want more low-speed control for trolling, add a 9.9 or 15 HP ProKicker (the ProKicker CT is a legitimate trolling-motor configuration). Command Thrust on the main motor makes sense on pontoons, tritoons, and heavy workboats.'
       },
       {
         question: 'What shaft length do I need for an aluminum fishing boat?',
@@ -6388,7 +6388,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         question: 'How much does it cost to power an aluminum fishing boat in Ontario in 2026?',
-        answer: 'Examples from the HBW pricing reference checked September 5, 2026: 40ELPT FourStroke $9,438, 60ELPT FourStroke $12,040, and 75ELPT FourStroke $14,476 CAD. These are bare-motor prices for the listed 20-inch remote-control configurations, excluding HST, rigging, controls, and propeller. Shaft length, tiller versus remote control, and gearcase options change the price. For an 18-20ft boat, check the [live 115HP FourStroke prices](/pricing-reference) rather than relying on a single horsepower-wide estimate. Command Thrust is a hull, load, and propeller choice; HBW often prefers standard on aluminum V-hulls. Build a configured quote at mercuryrepower.ca/quote/motor-selection.'
+        answer: 'It depends on the horsepower your hull is rated and equipped for, and on the rigging that goes with it. Examples from the HBW pricing reference checked September 5, 2026: 40ELPT FourStroke $9,438, 60ELPT FourStroke $12,040, and 75ELPT FourStroke $14,476 CAD. These are bare-motor prices for the listed 20-inch remote-control configurations, excluding HST, rigging, controls, and propeller. Shaft length, tiller versus remote control, and gearcase options change the price. If your capacity plate and documentation support 115 HP, check the [live 115HP FourStroke prices](/pricing-reference) rather than relying on a single horsepower-wide estimate. Command Thrust is a hull, load, and propeller choice; HBW often prefers standard on aluminum V-hulls. Build a configured quote at mercuryrepower.ca/quote/motor-selection.'
       },
       {
         question: 'Is EFI worth it over a carbureted motor on an aluminum fishing boat?',
@@ -6396,11 +6396,11 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         question: 'What should I expect when replacing an older two-stroke with a Mercury FourStroke?',
-        answer: 'Switching from an older two-stroke to a current Mercury FourStroke EFI is immediately noticeable: the FourStroke runs significantly quieter at trolling speeds, starts instantly without priming, and uses 30-40% less fuel. It runs cleaner with no oil injection to worry about. One adjustment: modern FourStrokes are heavier than comparable two-strokes, which can affect how the boat trims and planes. Proper prop selection after installation, which Harris Boat Works handles as part of any motor sale or repower, corrects this quickly.'
+        answer: 'Switching from an older two-stroke to a current Mercury FourStroke EFI is immediately noticeable: quieter at trolling speeds, instant starts without priming, cleaner running with no oil injection, and better fuel economy. One thing to plan for: modern FourStrokes are often heavier than the two-stroke they replace, so check the new motor\'s weight against your hull\'s maximum engine weight and see how the boat sits at rest with your normal load. Propeller selection after installation, which Harris Boat Works handles as part of any motor sale or repower, is part of getting the trim and hole shot right.'
       },
       {
-        question: 'What\'s the best Mercury outboard for a Lund 1675 in Ontario?',
-        answer: 'The Mercury 75HP EFI FourStroke is the most popular and well-matched motor for a Lund 1675 in Ontario. It gives the 16ft deep-V more than enough power to plane quickly, handle 2-3 anglers with gear, and run open water confidently. For lighter use on calm inland lakes, the standard-gearcase Mercury 60HP is a solid alternative. Command Thrust is a hull, load, and propeller choice; HBW often prefers standard on a planing V-hull like the Lund 1675. The 90HP is worth considering for heavy loads or lots of open water running, but is often more than needed for typical use.'
+        question: 'What Mercury should I put on a Lund 1675?',
+        answer: 'Model names cover several hull variants and model years with different ratings, so we do not treat this as a universal answer. Check the capacity plate on your specific boat and the Lund documentation for that model and year for maximum horsepower and engine weight, then choose inside those limits based on your load, your water, and whether the boat is tiller or console. Send us the year, the exact model designation, and a photo of the plate, and we will work through the options with you as an individual assessment rather than a generic recommendation.'
       }
     ]
   },
