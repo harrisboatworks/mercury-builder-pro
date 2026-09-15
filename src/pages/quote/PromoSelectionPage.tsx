@@ -354,7 +354,9 @@ export default function PromoSelectionPage() {
               style={{ opacity: 1 }}
             >
               {appliedWarrantyExtraYears > 0
-                ? `${appliedWarrantyTotalYears}-Year Factory-Backed Warranty`
+                ? (activePromo.details?.coverage_summary
+                  ? `${appliedWarrantyTotalYears} Years Total Mercury Coverage`
+                  : `${appliedWarrantyTotalYears}-Year Factory-Backed Warranty`)
                 : (activePromo.bonus_title || activePromo.name || 'Current Mercury Promotion')}
             </motion.h1>
 
