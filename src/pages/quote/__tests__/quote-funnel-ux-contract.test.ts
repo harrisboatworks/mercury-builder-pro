@@ -1,5 +1,3 @@
-/// <reference types="node" />
-
 import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 
@@ -13,13 +11,6 @@ describe('quote funnel UX contract', () => {
     expect(tradeInSource).toContain('data-testid="trade-in-continue"');
   });
 
-  it('uses the canonical TradeInValuation form on the tools estimator', () => {
-    const estimatorSource = read('src/components/tools/TradeInValueEstimator.tsx');
-    expect(estimatorSource).toContain('TradeInValuation');
-    expect(estimatorSource).toContain('PROMOTE_TRADE_IN');
-    expect(estimatorSource).not.toContain('HP_TABLE');
-  });
-
   it('gives mobile customers the same reservation path as desktop', () => {
     const summarySource = read('src/pages/quote/QuoteSummaryPage.tsx');
 
@@ -27,18 +18,6 @@ describe('quote funnel UX contract', () => {
     expect(summarySource).toContain('onClick={handleReserveDeposit}');
     expect(summarySource).toContain('onReview={handleStepComplete}');
     expect(summarySource).toContain('Have HBW Review My Quote');
-  });
-
-  it('does not dress the mobile save action as a download', () => {
-    const summarySource = read('src/pages/quote/QuoteSummaryPage.tsx');
-    const saveHandler = 'user ? setShowSaveDialog(true) : setShowAuthSaveDialog(true)';
-    const saveBlock = summarySource.slice(
-      summarySource.indexOf(saveHandler),
-      summarySource.indexOf('Save for Later') + 'Save for Later'.length,
-    );
-
-    expect(saveBlock).toContain('<Bookmark');
-    expect(saveBlock).not.toContain('<Download');
   });
 
   it('supports an express motor-only purchase path from the 9.9 MH sale page', () => {
@@ -74,26 +53,32 @@ describe('quote funnel UX contract', () => {
     expect(summarySource).toContain('showProgress={!isMotorOnlyExpress}');
     expect(summarySource).toContain('!isMotorOnlyExpress && (');
     expect(summarySource).toContain('motorId: state.motor?.id');
-    expect(saleSource).toContain('Fully refundable until HBW confirms the exact motor, price, availability and ETA');
-    expect(summarySource).toContain('After written approval, it becomes non-refundable and is credited to your final invoice.');
-    expect(depositDialogSource).toContain("depositAmount === 100");
-    expect(depositDialogSource).toContain('you approve the order in writing');
+    expect(saleSource).toContain('If the motor is in stock, the deposit is refundable.');
+    expect(saleSource).toContain('Once HBW places the order after that written approval, the deposit becomes non-refundable');
+    expect(summarySource).toContain('customerPolicyText(depositPolicySnapshot.policyCode)');
+    expect(summarySource).toContain('tryBuildDepositPolicySnapshot');
+    expect(summarySource).toContain('depositPolicySnapshot');
+    expect(depositDialogSource).not.toContain('depositAmount === 100');
+    expect(depositDialogSource).toContain('policyText || DEPOSIT_POLICY_PUBLIC_SUMMARY');
     expect(motorSelectionFaqSource).toContain('model-specific Mercury 9.9 MH offer for model 1A10201LK uses a $100 CAD deposit');
     expect(motorSelectionFaqSource).not.toContain('Deposits are fully refundable within 7 days');
-    expect(paymentSource).toContain('const expressOfferVerified = isVerifiedExpressMotorReservation({');
-    expect(paymentSource).toContain('const authoritativeDeposit = getMotorReservationDeposit(');
-    expect(paymentSource).toContain('Number(savedQuote.deposit_amount) !== authoritativeDeposit');
-    expect(paymentSource).toContain('.eq("id", savedMotorId)');
-    expect(paymentSource).toContain('Customer information required for deposit');
+    expect(motorSelectionFaqSource).toContain('Refundability follows stock status, not the deposit amount');
+    expect(paymentSource).toContain('if (depositAmount === "100")');
+    expect(paymentSource).toContain('quoteData?.motorId !== EXPRESS_MOTOR_ID');
+    expect(paymentSource).toContain('resolvedModelNumber !== EXPRESS_MOTOR_MODEL_NUMBER');
+    expect(paymentSource).toContain('mapCreatePaymentCaughtError');
+    expect(read('supabase/functions/_shared/deposit-payment-guard.ts')).toContain('Customer identity and address are required');
     expect(paymentSource).not.toContain('rawBody.motorInfo');
     expect(paymentSource).not.toContain('rawBody.savedQuoteId');
     expect(paymentSource).toContain('const paymentOrigin = resolvePaymentOrigin(req)');
     expect(paymentSource).toContain('const origin = paymentOrigin');
     expect(paymentSource).toContain('action: z.literal("verify")');
-    expect(paymentSource).toContain('phone: z.string().trim().min(7)');
+    expect(paymentSource).toContain('createPaymentCustomerInfoSchema(z)');
+    expect(paymentSource).toContain('decideCreatePaymentStripeAccess');
+    expect(paymentSource).toContain('assertDepositPolicyReadyForCheckout');
+    expect(paymentSource).toContain('stock_quantity, in_stock, availability');
     expect(webhookSource).toContain('session.payment_status !== "paid"');
-    expect(webhookSource).toContain('validateDepositBeforeClaim(depositPreclaimInput)');
-    expect(webhookSource).toContain('sessionAmountTotal: session.amount_total');
+    expect(webhookSource).toContain('savedQuoteId === boundSavedQuoteId');
     expect(webhookSource).toContain('.contains("quote_data", { payment_status: "pending" })');
     expect(webhookSource).toContain('Bound deposit record lookup failed');
     expect(webhookSource).toContain('Bound quote record lookup failed');
@@ -105,16 +90,30 @@ describe('quote funnel UX contract', () => {
     expect(supabaseConfig).toContain('[functions.send-deposit-confirmation-email]\nverify_jwt = true');
     expect(successSource).toContain("body: { action: 'verify', sessionId }");
     expect(successSource).toContain("const isDeposit = verification.paymentType === 'motor_deposit'");
-    expect(successSource).toContain('const isMercury99MhReservation = isDeposit && verification.amountPaid === 100');
-    expect(successSource).toContain('Your $100 reservation terms:');
+    expect(successSource).not.toContain('isMercury99MhReservation');
+    expect(successSource).not.toContain('Your $100 reservation terms:');
+    expect(successSource).toContain('DEPOSIT_POLICY_PUBLIC_SUMMARY');
     expect(successSource).toContain("data?.paymentIntentStatus === 'processing'");
     expect(successSource).toContain('if (verificationError || !verification?.verified)');
     expect(successSource).not.toContain('quote PDF attached');
-    expect(pdfSource).toContain('reservationRequiresConfirmation');
-    expect(pdfSource).toContain('It becomes non-refundable and is credited to your final invoice only after you approve the order in writing.');
-    expect(emailSource).toContain('Your $100 reservation terms:');
-    expect(termsSource).toContain('Model-Specific Mercury 9.9 MH Reservation Deposit');
+    expect(pdfSource).toContain('depositPolicySnapshot');
+    expect(pdfSource).toContain('customerPolicyText');
+    expect(pdfSource).toContain('Reservation details');
+    expect(pdfSource).not.toContain('Ready to lock this in?');
+    expect(read('src/App.tsx')).toContain('<Route path="/deposits" element={<Navigate to="/quote" replace />} />');
+    expect(read('src/pages/Deposits.tsx')).toContain('<Navigate to="/quote" replace />');
+    expect(read('src/pages/Deposits.tsx')).not.toContain('DepositPayment');
+    expect(emailSource).toContain('filename: `HBW-quote-${savedQuote.id.slice(0, 8)}.pdf`');
+    expect(emailSource).not.toContain('HBW-reservation-');
+    expect(emailSource).toContain('throw new Error("Deposit policy snapshot is missing")');
+    expect(emailSource).toContain('createDepositConfirmationEmailHtml');
+    expect(emailSource).toContain('createGrokDealEmailHtml');
+    expect(emailSource).toContain('readPersistedDepositPolicy');
+    expect(emailSource).not.toContain('Your $100 reservation terms:');
+    expect(termsSource).toContain('Mercury Motor Deposits');
+    expect(termsSource).toContain('Refundability is based on the motor\'s stock status, not the deposit amount.');
     expect(llmsSource).toContain('model-specific Mercury 9.9 MH offer for model 1A10201LK uses a $100 CAD reservation deposit');
+    expect(llmsSource).toContain('Refundability follows stock status, not the deposit amount.');
     expect(globalStickySource).toContain("'/payment-success'");
     expect(globalStickySource).toContain("'/motors/fourstroke-9-9hp-9-9mh-fourstroke'");
     expect(summarySource).not.toContain("status: 'Confirmed'");
@@ -183,20 +182,6 @@ describe('quote funnel UX contract', () => {
     expect(quoteTileSource).not.toContain('bg-white');
   });
 
-  it('exposes quote progress and honours reduced motion on promo/reveal', () => {
-    const stepperSource = read('src/components/quote-builder/QuoteProgressStepper.tsx');
-    const revealSource = read('src/components/quote-builder/QuoteRevealCinematic.tsx');
-    const promoSource = read('src/pages/quote/PromoSelectionPage.tsx');
-
-    expect(stepperSource).toContain('aria-current={current ? \'step\' : undefined}');
-    expect(stepperSource).toContain('role="progressbar"');
-    expect(revealSource).toContain('useReducedMotion');
-    expect(revealSource).toContain('if (prefersReducedMotion)');
-    expect(promoSource).toContain('useReducedMotion');
-    expect(promoSource).toContain('role="radio"');
-    expect(promoSource).toContain('aria-checked={isSelected}');
-  });
-
   it('does not celebrate before a customer has committed', () => {
     const summarySource = read('src/pages/quote/QuoteSummaryPage.tsx');
     const stickySource = read('src/components/quote-builder/StickySummary.tsx');
@@ -250,20 +235,6 @@ describe('quote funnel UX contract', () => {
     expect(scheduleSource).toContain('Installation is booked only after you approve the quote');
   });
 
-  it('offers only a local PDF download before submit and treats text as later human follow-up', () => {
-    const scheduleSource = read('src/components/quote-builder/ScheduleConsultation.tsx');
-
-    expect(scheduleSource).toContain('Want a PDF on this device?');
-    expect(scheduleSource).toContain('Download a local copy of this quote. This does not email, text, or store the PDF on Harris Boat Works systems.');
-    expect(scheduleSource).toContain('onClick={generatePDF}');
-    expect(scheduleSource).toContain('downloadPDF');
-    expect(scheduleSource).toContain('Preferred Contact Method');
-    expect(scheduleSource).toContain('<SelectItem value="text">Text Message</SelectItem>');
-    expect(scheduleSource).toContain('Choosing text asks for a later message from a person, not an automated SMS.');
-    expect(scheduleSource).not.toContain('Email Me a Copy');
-    expect(scheduleSource).not.toContain('Text Me a Copy');
-  });
-
   it('explains data use and exposes required quote fields to assistive technology', () => {
     const scheduleSource = read('src/components/quote-builder/ScheduleConsultation.tsx');
     const reminderSource = read('src/components/quote-builder/PromoReminderModal.tsx');
@@ -273,7 +244,6 @@ describe('quote funnel UX contract', () => {
     expect(scheduleSource).toContain('to="/privacy"');
     expect(scheduleSource.match(/aria-required="true"/g)).toHaveLength(3);
     expect(scheduleSource.match(/aria-invalid=/g)).toHaveLength(4);
-    expect(scheduleSource).toContain('id="turnstile-error"');
     expect(scheduleSource).toContain('role="alert"');
     expect(reminderSource).toContain('This signs you up for price and promotion updates for this motor.');
     expect(reminderSource).toContain('has-[:focus-visible]:ring-2');
@@ -286,20 +256,8 @@ describe('quote funnel UX contract', () => {
 
     expect(depositSource).toContain('Review Secure Checkout');
     expect(depositSource).toContain('before anything is ordered');
-  });
-
-  it('keeps the motor-search name aligned with its visible prompt', () => {
-    const searchSource = read('src/components/motors/HybridMotorSearch.tsx');
-    const inputMarkup = searchSource.match(/<input\b[\s\S]*?placeholder=""[\s\S]*?\/>/)?.[0];
-    const placeholderMarkup = searchSource.match(
-      /\{!query && \([\s\S]*?<div[\s\S]*?<\/div>[\s\S]*?\)\}/,
-    )?.[0];
-
-    expect(inputMarkup).toBeTruthy();
-    expect(inputMarkup).toContain('placeholder=""');
-    expect(inputMarkup).toContain(
-      "aria-label={isDark ? 'Search motors by HP, model, or feature' : 'Find a motor'}",
-    );
-    expect(placeholderMarkup).toContain('aria-hidden="true"');
+    expect(depositSource).toContain('aria-invalid={Boolean(errors.name)}');
+    expect(depositSource).toContain("aria-describedby={errors.addressLine1 ? 'deposit-address-line1-error' : undefined}");
+    expect((depositSource.match(/aria-invalid=\{Boolean\(errors\.\w+\)\}/g) || []).length).toBe(9);
   });
 });

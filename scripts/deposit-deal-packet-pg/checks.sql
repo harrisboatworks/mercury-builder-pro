@@ -1,0 +1,1055 @@
+RESET ROLE;
+SELECT set_config('accept.uid', '', false);
+SELECT set_config('accept.role', '', false);
+
+SELECT public.accept_record(
+  'migration_saved_quote_identity_columns',
+  (
+    SELECT COUNT(*) = 8
+    FROM information_schema.columns
+    WHERE table_schema = 'public'
+      AND table_name = 'saved_quotes'
+      AND column_name IN (
+        'customer_full_name', 'customer_phone', 'customer_address_line1',
+        'customer_address_line2', 'customer_city', 'customer_region',
+        'customer_postal_code', 'customer_country'
+      )
+  ),
+  ''
+);
+
+SELECT public.accept_record(
+  'migration_customer_quote_join_columns',
+  (
+    SELECT COUNT(*) = 12
+    FROM information_schema.columns
+    WHERE table_schema = 'public'
+      AND table_name = 'customer_quotes'
+      AND column_name IN (
+        'saved_quote_id', 'stripe_checkout_session_id', 'stripe_payment_intent_id',
+        'payment_status', 'payment_paid_at', 'stripe_billing_address',
+        'customer_address_line1', 'customer_address_line2', 'customer_city',
+        'customer_region', 'customer_postal_code', 'customer_country'
+      )
+  ),
+  'six payment/join columns plus six submitted-address columns'
+);
+
+SELECT public.accept_record(
+  'historical_join_promoted_without_paid',
+  COALESCE((
+    SELECT
+      saved_quote_id = '11111111-1111-4111-8111-111111111111'
+      AND stripe_checkout_session_id = 'cs_test_99mh001'
+      AND stripe_payment_intent_id = 'pi_test_99mh001'
+      AND payment_status IS NULL
+      AND payment_paid_at IS NULL
+      AND stripe_billing_address IS NULL
+    FROM public.customer_quotes
+    WHERE id = '22222222-2222-4222-8222-222222222222'
+  ), false),
+  ''
+);
+
+SELECT public.accept_record(
+  'historical_saved_quote_not_promoted_paid',
+  COALESCE((
+    SELECT deposit_status IS NOT DISTINCT FROM 'pending' AND deposit_paid_at IS NULL
+    FROM public.saved_quotes
+    WHERE id = '11111111-1111-4111-8111-111111111111'
+  ), false),
+  ''
+);
+
+SELECT public.accept_record(
+  'historical_no_outbox_seed',
+  NOT EXISTS (SELECT 1 FROM public.deposit_email_deliveries),
+  ''
+);
+SELECT public.accept_record(
+  'deposit_email_deliveries_unique_customer_quote_audience',
+  EXISTS (
+    SELECT 1
+    FROM pg_constraint AS c
+    JOIN pg_attribute AS quote_id
+      ON quote_id.attrelid = c.conrelid
+     AND quote_id.attnum = c.conkey[1]
+    JOIN pg_attribute AS audience
+      ON audience.attrelid = c.conrelid
+     AND audience.attnum = c.conkey[2]
+    WHERE c.conrelid = 'public.deposit_email_deliveries'::regclass
+      AND c.contype = 'u'
+      AND array_length(c.conkey, 1) = 2
+      AND quote_id.attname = 'customer_quote_id'
+      AND audience.attname = 'audience'
+  ),
+  ''
+);
+
+SELECT public.accept_record(
+  'orphan_saved_quote_id_not_promoted',
+  COALESCE((
+    SELECT
+      saved_quote_id IS NULL
+      AND stripe_checkout_session_id = 'cs_test_orphan001'
+      AND stripe_payment_intent_id = 'pi_test_orphan001'
+      AND payment_status IS NULL
+    FROM public.customer_quotes
+    WHERE id = '99999999-9999-4999-8999-999999999999'
+  ), false),
+  ''
+);
+
+SELECT public.accept_record(
+  'anon_execute_deposit_authority_caller',
+  has_function_privilege('anon', 'public.deposit_authority_caller()', 'EXECUTE'),
+  ''
+);
+SELECT public.accept_record(
+  'authenticated_execute_deposit_authority_caller',
+  has_function_privilege('authenticated', 'public.deposit_authority_caller()', 'EXECUTE'),
+  ''
+);
+SELECT public.accept_record(
+  'service_role_execute_deposit_authority_caller',
+  has_function_privilege('service_role', 'public.deposit_authority_caller()', 'EXECUTE'),
+  ''
+);
+SELECT public.accept_record(
+  'anon_execute_quote_data_helper',
+  has_function_privilege(
+    'anon',
+    'public.deposit_quote_data_authority_changed(jsonb,jsonb)',
+    'EXECUTE'
+  ),
+  ''
+);
+SELECT public.accept_record(
+  'anon_no_execute_enforce_authority',
+  NOT has_function_privilege('anon', 'public.enforce_customer_quotes_deposit_authority()', 'EXECUTE'),
+  ''
+);
+SELECT public.accept_record(
+  'authenticated_no_execute_enforce_authority',
+  NOT has_function_privilege('authenticated', 'public.enforce_customer_quotes_deposit_authority()', 'EXECUTE'),
+  ''
+);
+SELECT public.accept_record(
+  'anon_no_execute_enforce_delete',
+  NOT has_function_privilege('anon', 'public.enforce_customer_quotes_deposit_delete()', 'EXECUTE'),
+  ''
+);
+SELECT public.accept_record(
+  'anon_no_execute_claim_rpc',
+  NOT has_function_privilege(
+    'anon',
+    'public.claim_deposit_email_delivery(uuid,text,uuid,integer)',
+    'EXECUTE'
+  ),
+  ''
+);
+SELECT public.accept_record(
+  'authenticated_no_execute_claim_rpc',
+  NOT has_function_privilege(
+    'authenticated',
+    'public.claim_deposit_email_delivery(uuid,text,uuid,integer)',
+    'EXECUTE'
+  ),
+  ''
+);
+SELECT public.accept_record(
+  'service_role_execute_claim_rpc',
+  has_function_privilege(
+    'service_role',
+    'public.claim_deposit_email_delivery(uuid,text,uuid,integer)',
+    'EXECUTE'
+  ),
+  ''
+);
+SELECT public.accept_record(
+  'anon_no_execute_reconcile_rpc',
+  NOT has_function_privilege(
+    'anon',
+    'public.reconcile_deposit_notification_status(uuid)',
+    'EXECUTE'
+  ),
+  ''
+);
+SELECT public.accept_record(
+  'authenticated_no_execute_reconcile_rpc',
+  NOT has_function_privilege(
+    'authenticated',
+    'public.reconcile_deposit_notification_status(uuid)',
+    'EXECUTE'
+  ),
+  ''
+);
+SELECT public.accept_record(
+  'service_role_execute_reconcile_rpc',
+  has_function_privilege(
+    'service_role',
+    'public.reconcile_deposit_notification_status(uuid)',
+    'EXECUTE'
+  ),
+  ''
+);
+SELECT public.accept_record(
+  'service_role_no_delete_grant_on_deliveries',
+  has_table_privilege('service_role', 'public.deposit_email_deliveries', 'SELECT')
+    AND has_table_privilege('service_role', 'public.deposit_email_deliveries', 'INSERT')
+    AND has_table_privilege('service_role', 'public.deposit_email_deliveries', 'UPDATE')
+    AND NOT has_table_privilege('service_role', 'public.deposit_email_deliveries', 'DELETE')
+    AND NOT has_table_privilege('service_role', 'public.deposit_email_deliveries', 'TRUNCATE')
+    AND NOT has_table_privilege('service_role', 'public.deposit_email_deliveries', 'REFERENCES')
+    AND NOT has_table_privilege('service_role', 'public.deposit_email_deliveries', 'TRIGGER')
+    AND NOT has_table_privilege('service_role', 'public.deposit_email_deliveries', 'MAINTAIN'),
+  ''
+);
+SELECT public.accept_record(
+  'anon_no_select_grant_on_deliveries',
+  NOT has_table_privilege('anon', 'public.deposit_email_deliveries', 'SELECT')
+    AND NOT has_table_privilege('anon', 'public.deposit_email_deliveries', 'INSERT')
+    AND NOT has_table_privilege('anon', 'public.deposit_email_deliveries', 'UPDATE')
+    AND NOT has_table_privilege('anon', 'public.deposit_email_deliveries', 'DELETE'),
+  ''
+);
+SELECT public.accept_record(
+  'authenticated_select_only_on_deliveries',
+  has_table_privilege('authenticated', 'public.deposit_email_deliveries', 'SELECT')
+    AND NOT has_table_privilege('authenticated', 'public.deposit_email_deliveries', 'INSERT')
+    AND NOT has_table_privilege('authenticated', 'public.deposit_email_deliveries', 'UPDATE')
+    AND NOT has_table_privilege('authenticated', 'public.deposit_email_deliveries', 'DELETE')
+    AND NOT has_table_privilege('authenticated', 'public.deposit_email_deliveries', 'TRUNCATE')
+    AND NOT has_table_privilege('authenticated', 'public.deposit_email_deliveries', 'REFERENCES')
+    AND NOT has_table_privilege('authenticated', 'public.deposit_email_deliveries', 'TRIGGER')
+    AND NOT has_table_privilege('authenticated', 'public.deposit_email_deliveries', 'MAINTAIN'),
+  ''
+);
+
+SET ROLE anon;
+SELECT set_config('accept.uid', '', false);
+SELECT set_config('accept.role', 'anon', false);
+SELECT public.accept_record('anon_authority_caller_false', NOT public.deposit_authority_caller(), '');
+SELECT public.accept_expect_sqlstate(
+  'anon_insert_payment_status_rejected',
+  '42501',
+  $sql$
+    INSERT INTO public.customer_quotes (
+      id, customer_name, customer_email, lead_source, payment_status, quote_data
+    ) VALUES (
+      'abababab-abab-4bab-8bab-abababababab',
+      'Ada Lovelace',
+      'ada@example.com',
+      'website',
+      'paid',
+      '{}'::jsonb
+    )
+  $sql$
+);
+SELECT public.accept_expect_sqlstate(
+  'anon_select_deliveries_denied',
+  '42501',
+  'SELECT count(*) FROM public.deposit_email_deliveries'
+);
+SELECT public.accept_expect_sqlstate(
+  'anon_claim_rpc_denied',
+  '42501',
+  $sql$
+    SELECT public.claim_deposit_email_delivery(
+      '22222222-2222-4222-8222-222222222222',
+      'customer',
+      '01010101-0101-4101-8101-010101010101',
+      120
+    )
+  $sql$
+);
+SELECT set_config('accept.role', 'service_role', false);
+SELECT public.accept_record(
+  'anon_cannot_spoof_service_role_via_jwt',
+  NOT public.deposit_authority_caller(),
+  ''
+);
+SELECT public.accept_expect_sqlstate(
+  'anon_spoofed_jwt_insert_rejected',
+  '42501',
+  $sql$
+    INSERT INTO public.customer_quotes (
+      id, customer_name, customer_email, lead_source, payment_status, quote_data
+    ) VALUES (
+      'adadadad-adad-4dad-8dad-adadadadadad',
+      'Ada Lovelace',
+      'ada@example.com',
+      'website',
+      'paid',
+      '{}'::jsonb
+    )
+  $sql$
+);
+RESET ROLE;
+
+SET ROLE authenticated;
+SELECT set_config('accept.uid', '44444444-4444-4444-8444-444444444444', false);
+SELECT set_config('accept.role', 'authenticated', false);
+SELECT public.accept_record('user_authority_caller_false', NOT public.deposit_authority_caller(), '');
+SELECT public.accept_expect_sqlstate(
+  'authenticated_insert_deposit_rejected',
+  '42501',
+  $sql$
+    INSERT INTO public.customer_quotes (
+      id, customer_name, customer_email, lead_source, quote_data
+    ) VALUES (
+      'acacacac-acac-4cac-8cac-acacacacacac',
+      'Ada Lovelace',
+      'ada@example.com',
+      'deposit',
+      '{}'::jsonb
+    )
+  $sql$
+);
+RESET ROLE;
+
+SET ROLE service_role;
+SELECT set_config('accept.uid', '', false);
+SELECT set_config('accept.role', 'anon', false);
+SELECT public.accept_record(
+  'service_role_not_blocked_by_jwt_claim',
+  public.deposit_authority_caller(),
+  ''
+);
+SELECT set_config('accept.role', 'service_role', false);
+SELECT public.accept_record('service_role_authority_caller_true', public.deposit_authority_caller(), '');
+
+INSERT INTO public.saved_quotes (
+  id, email, resume_token, quote_state, deposit_status
+) VALUES (
+  '55555555-5555-4555-8555-555555555555',
+  'ada@example.com',
+  'dep_accept_fresh_001',
+  '{}'::jsonb,
+  'pending'
+);
+
+INSERT INTO public.customer_quotes (
+  id, customer_name, customer_email, lead_source, saved_quote_id, payment_status, quote_data
+) VALUES (
+  '77777777-7777-4777-8777-777777777777',
+  'Ada Lovelace',
+  'ada@example.com',
+  'deposit',
+  '55555555-5555-4555-8555-555555555555',
+  'pending',
+  '{}'::jsonb
+);
+
+INSERT INTO public.saved_quotes (
+  id, email, resume_token, quote_state, deposit_status
+) VALUES (
+  'bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb',
+  'ada@example.com',
+  'dep_accept_delete_001',
+  '{}'::jsonb,
+  'pending'
+);
+
+INSERT INTO public.customer_quotes (
+  id, customer_name, customer_email, lead_source, saved_quote_id, payment_status, quote_data
+) VALUES (
+  'aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa',
+  'Ada Lovelace',
+  'ada@example.com',
+  'deposit',
+  'bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb',
+  'pending',
+  '{}'::jsonb
+);
+
+INSERT INTO public.customer_quotes (
+  id, customer_name, customer_email, lead_source, quote_data
+) VALUES (
+  '88888888-8888-4888-8888-888888888888',
+  'Ada Lovelace',
+  'ada@example.com',
+  'website',
+  '{}'::jsonb
+);
+
+INSERT INTO public.saved_quotes (
+  id, email, resume_token, quote_state, deposit_status
+) VALUES (
+  'dddddddd-dddd-4ddd-8ddd-dddddddddddd',
+  'ada@example.com',
+  'dep_accept_claim_001',
+  '{}'::jsonb,
+  'pending'
+);
+
+INSERT INTO public.customer_quotes (
+  id, customer_name, customer_email, lead_source, saved_quote_id, payment_status, quote_data
+) VALUES (
+  'cccccccc-cccc-4ccc-8ccc-cccccccccccc',
+  'Ada Lovelace',
+  'ada@example.com',
+  'deposit',
+  'dddddddd-dddd-4ddd-8ddd-dddddddddddd',
+  'paid',
+  '{}'::jsonb
+);
+
+INSERT INTO public.deposit_email_deliveries (
+  customer_quote_id, saved_quote_id, audience, status
+) VALUES
+  ('77777777-7777-4777-8777-777777777777', '55555555-5555-4555-8555-555555555555', 'customer', 'pending'),
+  ('77777777-7777-4777-8777-777777777777', '55555555-5555-4555-8555-555555555555', 'hbw', 'pending'),
+  ('77777777-7777-4777-8777-777777777777', '55555555-5555-4555-8555-555555555555', 'grok_bot', 'pending'),
+  ('cccccccc-cccc-4ccc-8ccc-cccccccccccc', 'dddddddd-dddd-4ddd-8ddd-dddddddddddd', 'customer', 'pending');
+
+SELECT public.accept_record(
+  'service_role_insert_deposit_allowed',
+  EXISTS (
+    SELECT 1 FROM public.customer_quotes
+    WHERE id = '77777777-7777-4777-8777-777777777777'
+      AND lead_source = 'deposit'
+  ),
+  ''
+);
+RESET ROLE;
+
+SET ROLE authenticated;
+SELECT set_config('accept.uid', '44444444-4444-4444-8444-444444444444', false);
+SELECT set_config('accept.role', 'authenticated', false);
+SELECT public.accept_expect_sqlstate(
+  'authenticated_update_saved_quote_id_rejected',
+  '42501',
+  $sql$
+    UPDATE public.customer_quotes
+    SET saved_quote_id = '11111111-1111-4111-8111-111111111111'
+    WHERE id = '88888888-8888-4888-8888-888888888888'
+  $sql$
+);
+SELECT public.accept_expect_sqlstate(
+  'authenticated_update_quote_data_authority_rejected',
+  '42501',
+  $sql$
+    UPDATE public.customer_quotes
+    SET quote_data = jsonb_build_object('payment_status', 'paid', 'deposit_outbox_schema', 1)
+    WHERE id = '77777777-7777-4777-8777-777777777777'
+  $sql$
+);
+SELECT public.accept_expect_sqlstate(
+  'authenticated_delete_deposit_rejected',
+  '42501',
+  $sql$
+    DELETE FROM public.customer_quotes
+    WHERE id = 'aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa'
+  $sql$
+);
+SELECT public.accept_record(
+  'nonadmin_select_deliveries_rls_empty',
+  (SELECT count(*) FROM public.deposit_email_deliveries) = 0,
+  ''
+);
+SELECT public.accept_expect_sqlstate(
+  'authenticated_insert_deliveries_denied',
+  '42501',
+  $sql$
+    INSERT INTO public.deposit_email_deliveries (
+      customer_quote_id, saved_quote_id, audience
+    ) VALUES (
+      '77777777-7777-4777-8777-777777777777',
+      '55555555-5555-4555-8555-555555555555',
+      'customer'
+    )
+  $sql$
+);
+SELECT public.accept_expect_sqlstate(
+  'authenticated_claim_rpc_denied',
+  '42501',
+  $sql$
+    SELECT public.claim_deposit_email_delivery(
+      '77777777-7777-4777-8777-777777777777',
+      'customer',
+      '01010101-0101-4101-8101-010101010101',
+      120
+    )
+  $sql$
+);
+SELECT public.accept_expect_sqlstate(
+  'authenticated_reconcile_rpc_denied',
+  '42501',
+  $sql$
+    SELECT public.reconcile_deposit_notification_status(
+      '77777777-7777-4777-8777-777777777777'
+    )
+  $sql$
+);
+RESET ROLE;
+SELECT public.accept_record(
+  'nested_helper_error_is_business_not_missing_execute',
+  EXISTS (
+    SELECT 1 FROM public.accept_results
+    WHERE name = 'authenticated_update_saved_quote_id_rejected'
+      AND passed
+      AND detail LIKE '%deposit payment fields are service-managed%'
+  ),
+  ''
+);
+
+SET ROLE authenticated;
+SELECT set_config('accept.uid', '33333333-3333-4333-8333-333333333333', false);
+SELECT set_config('accept.role', 'authenticated', false);
+SELECT public.accept_record('admin_authority_caller_true', public.deposit_authority_caller(), '');
+SELECT public.accept_record(
+  'admin_select_deliveries_allowed',
+  (SELECT count(*) FROM public.deposit_email_deliveries) >= 3,
+  ''
+);
+SELECT public.accept_expect_sqlstate(
+  'admin_claim_rpc_denied',
+  '42501',
+  $sql$
+    SELECT public.claim_deposit_email_delivery(
+      '77777777-7777-4777-8777-777777777777',
+      'hbw',
+      '02020202-0202-4202-8202-020202020202',
+      120
+    )
+  $sql$
+);
+DELETE FROM public.customer_quotes
+WHERE id = 'aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa';
+SELECT public.accept_record(
+  'admin_delete_deposit_allowed',
+  NOT EXISTS (
+    SELECT 1 FROM public.customer_quotes
+    WHERE id = 'aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa'
+  ),
+  ''
+);
+RESET ROLE;
+
+SET ROLE service_role;
+SELECT set_config('accept.role', 'service_role', false);
+SELECT public.accept_expect_sqlstate(
+  'service_role_delete_deliveries_denied',
+  '42501',
+  'DELETE FROM public.deposit_email_deliveries WHERE audience = ''grok_bot'''
+);
+
+SELECT public.accept_record(
+  'claim_first_token_wins',
+  COALESCE((
+    SELECT status = 'sending' AND claim_token = '01010101-0101-4101-8101-010101010101'
+    FROM public.claim_deposit_email_delivery(
+      '77777777-7777-4777-8777-777777777777',
+      'customer',
+      '01010101-0101-4101-8101-010101010101',
+      120
+    )
+  ), false),
+  ''
+);
+
+SELECT public.accept_record(
+  'claim_second_token_denied_while_leased',
+  (
+    SELECT public.claim_deposit_email_delivery(
+      '77777777-7777-4777-8777-777777777777',
+      'customer',
+      '02020202-0202-4202-8202-020202020202',
+      120
+    )
+  ) IS NULL,
+  ''
+);
+
+SELECT public.accept_record(
+  'complete_wrong_token_denied',
+  (
+    SELECT public.complete_deposit_email_delivery(
+      '77777777-7777-4777-8777-777777777777',
+      'customer',
+      '02020202-0202-4202-8202-020202020202',
+      're_wrong'
+    )
+  ) IS NULL,
+  ''
+);
+
+SELECT public.accept_record(
+  'fail_wrong_token_denied',
+  (
+    SELECT public.fail_deposit_email_delivery(
+      '77777777-7777-4777-8777-777777777777',
+      'customer',
+      '02020202-0202-4202-8202-020202020202',
+      'should_not_fail'
+    )
+  ) IS NULL,
+  ''
+);
+
+SELECT public.accept_record(
+  'complete_correct_token_sent',
+  COALESCE((
+    SELECT status = 'sent' AND provider_id = 're_customer'
+    FROM public.complete_deposit_email_delivery(
+      '77777777-7777-4777-8777-777777777777',
+      'customer',
+      '01010101-0101-4101-8101-010101010101',
+      're_customer'
+    )
+  ), false),
+  ''
+);
+
+SELECT public.accept_record(
+  'claim_after_sent_denied',
+  (
+    SELECT public.claim_deposit_email_delivery(
+      '77777777-7777-4777-8777-777777777777',
+      'customer',
+      '03030303-0303-4303-8303-030303030303',
+      120
+    )
+  ) IS NULL,
+  ''
+);
+
+SELECT public.accept_record(
+  'historical_still_has_no_outbox_after_fresh_seed',
+  NOT EXISTS (
+    SELECT 1 FROM public.deposit_email_deliveries
+    WHERE customer_quote_id = '22222222-2222-4222-8222-222222222222'
+  ),
+  ''
+);
+
+INSERT INTO public.saved_quotes (
+  id, email, resume_token, quote_state, deposit_status
+) VALUES
+  ('12121212-1212-4121-8121-121212121212', 'ada@example.com', 'dep_accept_reconcile_001', '{}'::jsonb, 'paid'),
+  ('14141414-1414-4141-8141-141414141414', 'ada@example.com', 'dep_accept_hist_ledger_001', '{}'::jsonb, 'paid'),
+  ('16161616-1616-4161-8161-161616161616', 'ada@example.com', 'dep_accept_reconcile_race_001', '{}'::jsonb, 'paid'),
+  ('18181818-1818-4181-8181-181818181818', 'ada@example.com', 'dep_accept_reconcile_hold_001', '{}'::jsonb, 'paid'),
+  ('23232323-2323-4232-8232-232323232323', 'ada@example.com', 'dep_accept_null_status_001', '{}'::jsonb, 'paid');
+
+INSERT INTO public.customer_quotes (
+  id, customer_name, customer_email, lead_source, saved_quote_id, payment_status, quote_data
+) VALUES
+  (
+    '13131313-1313-4131-8131-131313131313',
+    'Ada Lovelace',
+    'ada@example.com',
+    'deposit',
+    '12121212-1212-4121-8121-121212121212',
+    'paid',
+    jsonb_build_object(
+      'notification_status', 'processing',
+      'sms_notification_status', 'skipped',
+      'deposit_outbox_schema', 1,
+      'probe_key', 'reconcile-probe'
+    )
+  ),
+  (
+    '15151515-1515-4151-8151-151515151515',
+    'Ada Lovelace',
+    'ada@example.com',
+    'deposit',
+    '14141414-1414-4141-8141-141414141414',
+    'paid',
+    jsonb_build_object(
+      'notification_status', 'delivered',
+      'sms_notification_status', 'skipped',
+      'staging_historical_control', 'deposit-deal-packet-staging/v1'
+    )
+  ),
+  (
+    '17171717-1717-4171-8171-171717171717',
+    'Ada Lovelace',
+    'ada@example.com',
+    'deposit',
+    '16161616-1616-4161-8161-161616161616',
+    'paid',
+    jsonb_build_object(
+      'notification_status', 'manual_follow_up',
+      'sms_notification_status', 'skipped',
+      'deposit_outbox_schema', 1,
+      'probe_key', 'reconcile-race'
+    )
+  ),
+  (
+    '19191919-1919-4191-8191-191919191919',
+    'Ada Lovelace',
+    'ada@example.com',
+    'deposit',
+    '18181818-1818-4181-8181-181818181818',
+    'paid',
+    jsonb_build_object(
+      'notification_status', 'processing',
+      'sms_notification_status', 'skipped',
+      'deposit_outbox_schema', 1,
+      'probe_key', 'reconcile-hold'
+    )
+  ),
+  (
+    '20202020-2020-4202-8202-202020202020',
+    'Ada Lovelace',
+    'ada@example.com',
+    'website',
+    NULL,
+    NULL,
+    jsonb_build_object(
+      'notification_status', 'processing',
+      'probe_key', 'non-deposit'
+    )
+  ),
+  (
+    '24242424-2424-4242-8242-242424242424',
+    'Ada Lovelace',
+    'ada@example.com',
+    'deposit',
+    '23232323-2323-4232-8232-232323232323',
+    'paid',
+    jsonb_build_object(
+      'sms_notification_status', 'skipped',
+      'probe_key', 'null-status-no-outbox'
+    )
+  );
+
+INSERT INTO public.deposit_email_deliveries (
+  customer_quote_id, saved_quote_id, audience, status, provider_id
+) VALUES
+  ('13131313-1313-4131-8131-131313131313', '12121212-1212-4121-8121-121212121212', 'customer', 'sent', 're_customer'),
+  ('13131313-1313-4131-8131-131313131313', '12121212-1212-4121-8121-121212121212', 'hbw', 'failed', NULL),
+  ('13131313-1313-4131-8131-131313131313', '12121212-1212-4121-8121-121212121212', 'grok_bot', 'sent', 're_grok'),
+  ('17171717-1717-4171-8171-171717171717', '16161616-1616-4161-8161-161616161616', 'customer', 'sent', 're_race_customer'),
+  ('17171717-1717-4171-8171-171717171717', '16161616-1616-4161-8161-161616161616', 'hbw', 'sent', 're_race_hbw'),
+  ('17171717-1717-4171-8171-171717171717', '16161616-1616-4161-8161-161616161616', 'grok_bot', 'sent', 're_race_grok'),
+  ('19191919-1919-4191-8191-191919191919', '18181818-1818-4181-8181-181818181818', 'customer', 'sent', 're_hold_customer'),
+  ('19191919-1919-4191-8191-191919191919', '18181818-1818-4181-8181-181818181818', 'hbw', 'pending', NULL),
+  ('19191919-1919-4191-8191-191919191919', '18181818-1818-4181-8181-181818181818', 'grok_bot', 'sent', 're_hold_grok');
+
+SELECT public.accept_record(
+  'reconcile_missing_quote_is_null',
+  public.reconcile_deposit_notification_status('00000000-0000-4000-8000-000000000000') IS NULL,
+  ''
+);
+
+SELECT set_config(
+  'accept.reconcile_status',
+  COALESCE(
+    public.reconcile_deposit_notification_status('13131313-1313-4131-8131-131313131313'),
+    ''
+  ),
+  false
+);
+SELECT public.accept_record(
+  'reconcile_incomplete_required_audience_is_manual',
+  current_setting('accept.reconcile_status', true) = 'manual_follow_up'
+    AND EXISTS (
+      SELECT 1
+      FROM public.customer_quotes
+      WHERE id = '13131313-1313-4131-8131-131313131313'
+        AND quote_data->>'notification_status' = 'manual_follow_up'
+        AND quote_data->>'sms_notification_status' = 'skipped'
+        AND quote_data->>'probe_key' = 'reconcile-probe'
+        AND quote_data->>'deposit_outbox_schema' = '1'
+        AND quote_data ? 'notification_completed_at'
+    ),
+  current_setting('accept.reconcile_status', true)
+);
+
+UPDATE public.deposit_email_deliveries
+SET status = 'sent', provider_id = 're_hbw'
+WHERE customer_quote_id = '13131313-1313-4131-8131-131313131313'
+  AND audience = 'hbw';
+
+SELECT set_config(
+  'accept.reconcile_status',
+  COALESCE(
+    public.reconcile_deposit_notification_status('13131313-1313-4131-8131-131313131313'),
+    ''
+  ),
+  false
+);
+SELECT public.accept_record(
+  'reconcile_all_required_sent_promotes_delivered',
+  current_setting('accept.reconcile_status', true) = 'delivered'
+    AND EXISTS (
+      SELECT 1
+      FROM public.customer_quotes
+      WHERE id = '13131313-1313-4131-8131-131313131313'
+        AND quote_data->>'notification_status' = 'delivered'
+        AND quote_data->>'sms_notification_status' = 'skipped'
+        AND quote_data->>'probe_key' = 'reconcile-probe'
+        AND quote_data->>'deposit_outbox_schema' = '1'
+        AND quote_data ? 'notification_completed_at'
+        AND quote_data->'notification_lease_expires_at' = 'null'::jsonb
+    ),
+  current_setting('accept.reconcile_status', true)
+);
+
+SELECT public.accept_record(
+  'reconcile_repeated_all_sent_stays_delivered',
+  public.reconcile_deposit_notification_status('13131313-1313-4131-8131-131313131313') = 'delivered',
+  ''
+);
+
+UPDATE public.deposit_email_deliveries
+SET status = 'failed', provider_id = NULL
+WHERE customer_quote_id = '13131313-1313-4131-8131-131313131313'
+  AND audience = 'hbw';
+
+SELECT set_config(
+  'accept.reconcile_status',
+  COALESCE(
+    public.reconcile_deposit_notification_status('13131313-1313-4131-8131-131313131313'),
+    ''
+  ),
+  false
+);
+SELECT public.accept_record(
+  'reconcile_never_downgrades_delivered',
+  current_setting('accept.reconcile_status', true) = 'delivered'
+    AND EXISTS (
+      SELECT 1
+      FROM public.customer_quotes
+      WHERE id = '13131313-1313-4131-8131-131313131313'
+        AND quote_data->>'notification_status' = 'delivered'
+        AND quote_data->>'sms_notification_status' = 'skipped'
+    ),
+  current_setting('accept.reconcile_status', true)
+);
+
+SELECT set_config(
+  'accept.reconcile_status',
+  COALESCE(
+    public.reconcile_deposit_notification_status('15151515-1515-4151-8151-151515151515'),
+    ''
+  ),
+  false
+);
+SELECT public.accept_record(
+  'reconcile_historical_no_ledger_keeps_delivered',
+  current_setting('accept.reconcile_status', true) = 'delivered'
+    AND EXISTS (
+      SELECT 1
+      FROM public.customer_quotes
+      WHERE id = '15151515-1515-4151-8151-151515151515'
+        AND quote_data->>'notification_status' = 'delivered'
+        AND quote_data->>'sms_notification_status' = 'skipped'
+        AND quote_data->>'staging_historical_control' = 'deposit-deal-packet-staging/v1'
+    )
+    AND NOT EXISTS (
+      SELECT 1 FROM public.deposit_email_deliveries
+      WHERE customer_quote_id = '15151515-1515-4151-8151-151515151515'
+    ),
+  current_setting('accept.reconcile_status', true)
+);
+
+SELECT public.accept_record(
+  'reconcile_historical_control_still_has_no_outbox',
+  public.reconcile_deposit_notification_status('22222222-2222-4222-8222-222222222222') IS NULL
+    AND NOT EXISTS (
+      SELECT 1 FROM public.deposit_email_deliveries
+      WHERE customer_quote_id = '22222222-2222-4222-8222-222222222222'
+    ),
+  ''
+);
+
+SELECT set_config(
+  'accept.quote_before',
+  (
+    SELECT quote_data::text
+    FROM public.customer_quotes
+    WHERE id = '20202020-2020-4202-8202-202020202020'
+  ),
+  false
+);
+SELECT set_config(
+  'accept.reconcile_status',
+  COALESCE(
+    public.reconcile_deposit_notification_status('20202020-2020-4202-8202-202020202020'),
+    ''
+  ),
+  false
+);
+SELECT public.accept_record(
+  'reconcile_non_deposit_quote_is_null_and_unwritten',
+  current_setting('accept.reconcile_status', true) = ''
+    AND (
+      SELECT quote_data::text
+      FROM public.customer_quotes
+      WHERE id = '20202020-2020-4202-8202-202020202020'
+    ) = current_setting('accept.quote_before', true)
+    AND NOT EXISTS (
+      SELECT 1 FROM public.deposit_email_deliveries
+      WHERE customer_quote_id = '20202020-2020-4202-8202-202020202020'
+    ),
+  current_setting('accept.reconcile_status', true)
+);
+
+SELECT set_config(
+  'accept.quote_before',
+  (
+    SELECT quote_data::text
+    FROM public.customer_quotes
+    WHERE id = '24242424-2424-4242-8242-242424242424'
+  ),
+  false
+);
+SELECT set_config(
+  'accept.reconcile_status',
+  COALESCE(
+    public.reconcile_deposit_notification_status('24242424-2424-4242-8242-242424242424'),
+    ''
+  ),
+  false
+);
+SELECT public.accept_record(
+  'reconcile_deposit_null_status_no_outbox_is_unwritten',
+  current_setting('accept.reconcile_status', true) = ''
+    AND (
+      SELECT quote_data::text
+      FROM public.customer_quotes
+      WHERE id = '24242424-2424-4242-8242-242424242424'
+    ) = current_setting('accept.quote_before', true)
+    AND EXISTS (
+      SELECT 1
+      FROM public.customer_quotes
+      WHERE id = '24242424-2424-4242-8242-242424242424'
+        AND NOT (quote_data ? 'notification_status')
+        AND NOT (quote_data ? 'notification_completed_at')
+        AND quote_data->>'probe_key' = 'null-status-no-outbox'
+    )
+    AND NOT EXISTS (
+      SELECT 1 FROM public.deposit_email_deliveries
+      WHERE customer_quote_id = '24242424-2424-4242-8242-242424242424'
+    ),
+  current_setting('accept.reconcile_status', true)
+);
+RESET ROLE;
+
+CREATE ROLE deposit_reconcile_invoker NOLOGIN NOSUPERUSER NOBYPASSRLS INHERIT;
+GRANT deposit_reconcile_invoker TO CURRENT_USER;
+GRANT EXECUTE ON FUNCTION public.reconcile_deposit_notification_status(uuid) TO deposit_reconcile_invoker;
+GRANT SELECT, UPDATE ON TABLE public.customer_quotes TO deposit_reconcile_invoker;
+GRANT SELECT, UPDATE ON TABLE public.deposit_email_deliveries TO deposit_reconcile_invoker;
+SET ROLE deposit_reconcile_invoker;
+SELECT public.accept_expect_sqlstate(
+  'reconcile_current_user_guard_denies_non_service_role',
+  '42501',
+  $sql$
+    SELECT public.reconcile_deposit_notification_status(
+      '13131313-1313-4131-8131-131313131313'
+    )
+  $sql$
+);
+RESET ROLE;
+REVOKE ALL ON FUNCTION public.reconcile_deposit_notification_status(uuid) FROM deposit_reconcile_invoker;
+REVOKE ALL ON TABLE public.customer_quotes FROM deposit_reconcile_invoker;
+REVOKE ALL ON TABLE public.deposit_email_deliveries FROM deposit_reconcile_invoker;
+DROP ROLE deposit_reconcile_invoker;
+
+SET ROLE service_role;
+SELECT set_config('accept.uid', '', false);
+SELECT set_config('accept.role', 'service_role', false);
+INSERT INTO public.saved_quotes (
+  id, email, resume_token, quote_state, deposit_status,
+  quote_pdf_path, quote_pdf_sha256,
+  customer_full_name, customer_phone, customer_address_line1,
+  customer_city, customer_region, customer_postal_code, customer_country
+) VALUES (
+  'eeeeeeee-eeee-4eee-8eee-eeeeeeeeeeee',
+  'ada@example.com',
+  'dep_accept_nonden_001',
+  '{"motor":{"id":"motor-quote"}}'::jsonb,
+  NULL,
+  'saved-quotes/eeeeeeee-eeee-4eee-8eee-eeeeeeeeeeee/quote.pdf',
+  repeat('a', 64),
+  'Ada Lovelace',
+  '9055550100',
+  '5369 Harris Boat Works Rd',
+  'Gores Landing',
+  'ON',
+  'K0K 2E0',
+  'Canada'
+);
+INSERT INTO public.saved_quotes (
+  id, email, resume_token, quote_state, deposit_status,
+  quote_pdf_path, quote_pdf_sha256,
+  customer_full_name, customer_phone, customer_address_line1,
+  customer_city, customer_region, customer_postal_code, customer_country
+) VALUES (
+  'ffffffff-ffff-4fff-8fff-ffffffffffff',
+  'ada@example.com',
+  'dep_accept_bounddep_001',
+  '{"motor":{"id":"motor-deposit"}}'::jsonb,
+  'pending',
+  'saved-quotes/ffffffff-ffff-4fff-8fff-ffffffffffff/quote.pdf',
+  repeat('b', 64),
+  'Ada Lovelace',
+  '9055550100',
+  '5369 Harris Boat Works Rd',
+  'Gores Landing',
+  'ON',
+  'K0K 2E0',
+  'Canada'
+);
+RESET ROLE;
+
+SET ROLE authenticated;
+SELECT set_config('accept.uid', '44444444-4444-4444-8444-444444444444', false);
+SELECT set_config('accept.role', 'authenticated', false);
+UPDATE public.saved_quotes
+SET quote_state = '{"motor":{"id":"motor-quote-edit"}}'::jsonb,
+    customer_full_name = 'Ada Lovelace Edited'
+WHERE id = 'eeeeeeee-eeee-4eee-8eee-eeeeeeeeeeee';
+SELECT public.accept_record(
+  'authenticated_non_deposit_bound_quote_update_allowed',
+  COALESCE((
+    SELECT customer_full_name = 'Ada Lovelace Edited'
+      AND quote_state->'motor'->>'id' = 'motor-quote-edit'
+    FROM public.saved_quotes
+    WHERE id = 'eeeeeeee-eeee-4eee-8eee-eeeeeeeeeeee'
+  ), false),
+  ''
+);
+SELECT public.accept_expect_sqlstate(
+  'authenticated_deposit_bound_quote_update_rejected',
+  '42501',
+  $sql$
+    UPDATE public.saved_quotes
+    SET customer_full_name = 'Should Not Persist'
+    WHERE id = 'ffffffff-ffff-4fff-8fff-ffffffffffff'
+  $sql$
+);
+SELECT public.accept_record(
+  'authenticated_deposit_bound_quote_unchanged',
+  COALESCE((
+    SELECT customer_full_name = 'Ada Lovelace'
+    FROM public.saved_quotes
+    WHERE id = 'ffffffff-ffff-4fff-8fff-ffffffffffff'
+  ), false),
+  ''
+);
+RESET ROLE;
+
+SET ROLE service_role;
+SELECT set_config('accept.uid', '', false);
+SELECT set_config('accept.role', 'service_role', false);
+UPDATE public.saved_quotes
+SET customer_full_name = 'Service Ada'
+WHERE id = 'ffffffff-ffff-4fff-8fff-ffffffffffff';
+SELECT public.accept_record(
+  'service_role_deposit_bound_quote_update_allowed',
+  COALESCE((
+    SELECT customer_full_name = 'Service Ada'
+    FROM public.saved_quotes
+    WHERE id = 'ffffffff-ffff-4fff-8fff-ffffffffffff'
+  ), false),
+  ''
+);
+RESET ROLE;
+SELECT set_config('accept.uid', '', false);
+SELECT set_config('accept.role', '', false);

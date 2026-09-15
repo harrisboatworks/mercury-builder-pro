@@ -161,7 +161,7 @@ Expert answers to 25 Mercury outboard repower questions:
 ## Frequently Asked Questions
 
 **What deposit is required to reserve a motor?**
-Deposit amounts and terms vary by motor and written quote. The model-specific Mercury 9.9 MH offer for model 1A10201LK uses a $100 CAD reservation deposit. It is fully refundable until Harris Boat Works confirms the exact motor, price, availability and ETA, and the customer approves the order in writing. After written approval, it becomes non-refundable and is credited to the final invoice. Other motors use the deposit amount and terms shown in the written quote.
+Deposit amounts vary by motor. The model-specific Mercury 9.9 MH offer for model 1A10201LK uses a $100 CAD reservation deposit. Refundability follows stock status, not the deposit amount. If the motor is in stock, the deposit is refundable. If the motor is out of stock or a special order, the deposit stays refundable until Harris Boat Works confirms the exact motor, price, availability and ETA, and the customer approves the order in writing. Once Harris Boat Works places the order after that written approval, the deposit becomes non-refundable and is credited to the final invoice.
 
 **Do you offer financing?**
 Yes. Financing is arranged through DealerPlan across Canadian lenders. Request build_quote for the selected motor and purchase options. Use its available offers, eligibility, APR, amount financed, fees, amortization and contract term from active financing records. Estimates require lender approval. Do not substitute cached headline rates or treat amortization as the contract term. If financing is unavailable, do not invent a monthly payment.

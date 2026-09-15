@@ -30,6 +30,7 @@ import { filterToOneBlogCredibilityAnchor } from '../src/lib/blogCredibilityAnch
 import { stripSuppressedBlogPullQuotes } from '../src/lib/blogPullQuotePolicy.js';
 import { getBlogOgImagePath } from '../src/lib/blogOgImage.js';
 import { loadCanonicalPricing } from './lib/canonical-pricing.mjs';
+import { resolveBuildContentSupabase } from './lib/build-content-supabase.mjs';
 import {
   buildCanonicalMotorRouteCatalog,
   mergeMotorRouteSources,
@@ -818,8 +819,8 @@ function loadRequiredCanonicalMotorRecords() {
 }
 
 async function fetchAllSupabaseMotors() {
-  const SUPABASE_URL = process.env.SUPABASE_URL || process.env.VITE_SUPABASE_URL || 'https://eutsoqdpjurknjsshxes.supabase.co';
-  const SUPABASE_KEY = process.env.VITE_SUPABASE_PUBLISHABLE_KEY || process.env.SUPABASE_PUBLISHABLE_KEY || FALLBACK_SUPABASE_PUBLISHABLE_KEY;
+  const { url: SUPABASE_URL, key: SUPABASE_KEY, source } = resolveBuildContentSupabase(process.env);
+  console.log(`[static-prerender] motor_models via ${source} ${SUPABASE_URL}`);
   if (!SUPABASE_KEY) return { ok: false, data: [], reason: 'no-key' };
   const url = `${SUPABASE_URL}/rest/v1/motor_models?select=id,model_key,model,model_display,model_number,mercury_model_no,family,horsepower,shaft,shaft_code,start_type,control_type,msrp,sale_price,dealer_price,base_price,manual_overrides,availability,in_stock,stock_quantity,hero_image_url,image_url,updated_at&or=(availability.is.null,availability.neq.Exclude)&order=horsepower.asc&limit=500`;
   try {
@@ -1830,7 +1831,7 @@ function howToRepowerSchema() {
         "step": [
           { "@type": "HowToStep", "position": 1, "name": "Build Your Quote Online", "text": "Use the configurator at mercuryrepower.ca to choose your Mercury motor (FourStroke, Pro XS, SeaPro, or ProKicker), shaft length, and controls. You'll see live CAD pricing, financing estimates, and any active promotions instantly, no forms, no waiting.", "url": `${SITE_URL}/quote/motor-selection` },
           { "@type": "HowToStep", "position": 2, "name": "Confirm Motor & Shaft Fit", "text": "Tell us your boat's make, model, transom height, and capacity plate HP rating. We'll confirm the right Mercury HP, shaft length (15\", 20\", or 25\"), and whether you need Command Thrust for a pontoon or heavy hull." },
-          { "@type": "HowToStep", "position": 3, "name": "Place Your Deposit", "text": "Secure your motor with a refundable deposit ($200–$1,000 depending on HP) paid online. This locks in the price, holds your spot in the install queue, and starts the order if the motor isn't already in stock." },
+          { "@type": "HowToStep", "position": 3, "name": "Place Your Deposit", "text": "Secure your motor with a deposit paid online. If the motor is in stock, the deposit is refundable. Special-order deposits stay refundable until written approval, then they are credited to the invoice." },
           { "@type": "HowToStep", "position": 4, "name": "Schedule the Install", "text": "Book your drop-off date at Harris Boat Works in Gores Landing on Rice Lake. Most installs are 1–3 days. Submit a service request at hbw.wiki/service or call (905) 342-2153." },
           { "@type": "HowToStep", "position": 5, "name": "Professional Install & Rigging", "text": "Our Mercury-certified technicians remove your old motor, install the new Mercury, and replace throttle, shift, steering, fuel lines, and gauges as needed. Full rigging is included in every repower package, no surprise add-ons." },
           { "@type": "HowToStep", "position": 6, "name": "Lake Test on Rice Lake", "text": "HBW's standard repower handoff includes an on-water test on Rice Lake before pickup when safe seasonal conditions allow. We confirm WOT RPM, prop pitch, idle, shifting, and trim. If anything's off, we adjust before you ever see the bill. Any alternate acceptance plan is documented with the customer." },
