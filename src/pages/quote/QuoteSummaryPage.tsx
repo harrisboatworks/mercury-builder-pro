@@ -471,7 +471,7 @@ export default function QuoteSummaryPage() {
     state.selectedPromoOption === 'special_financing' &&
     state.selectedPromoRate != null &&
     state.selectedPromoTerm != null &&
-    meetsPromotionFinancingMinimum(getPromotionOptions().find(option => option.id === 'special_financing'), displayPricing.total);
+    meetsPromotionFinancingMinimum(getPromotionOptions().find(option => option.id === 'special_financing'), amountToFinance);
   const effectiveRate = usePromoFinancing ? state.selectedPromoRate : (isUsableFinancingRate(promo?.rate) ? promo.rate : null);
   const effectiveTerm = usePromoFinancing ? state.selectedPromoTerm : null;
   const { payment: monthlyPayment, termMonths, rate: financingRate } = calculateMonthlyPayment(amountToFinance, effectiveRate, effectiveTerm);
@@ -729,7 +729,7 @@ export default function QuoteSummaryPage() {
           const promotionalFinancing = getPromotionOptions()
             .find((option) => option.id === 'special_financing');
           if (
-            !meetsPromotionFinancingMinimum(promotionalFinancing, displayPricing.total)
+            !meetsPromotionFinancingMinimum(promotionalFinancing, amountToFinance)
           ) {
             return undefined;
           }

@@ -93,12 +93,12 @@ export function PromotionsPageSEO({ isSummerSavingsActive = false, currentCampai
       <meta property="og:description" content={description} />
       <meta property="og:type" content="website" />
       {ogImage && <meta property="og:image" content={ogImage} />}
-      {ogImage && <meta property="og:image:width" content={currentCampaign ? "770" : "1200"} />}
-      {ogImage && <meta property="og:image:height" content={currentCampaign ? "770" : "1200"} />}
+      {ogImage && (!currentCampaign || currentCampaign.details?.mobile_image_url) && <meta property="og:image:width" content={currentCampaign ? "770" : "1200"} />}
+      {ogImage && (!currentCampaign || currentCampaign.details?.mobile_image_url) && <meta property="og:image:height" content={currentCampaign ? "770" : "1200"} />}
       {ogImage && (
         <meta
           property="og:image:alt"
-          content={currentCampaign?.image_alt_text || "Mercury Summer Savings Rebate: save up to $700 CAD plus financing as low as 2.99%, ends August 31, 2026"}
+          content={currentCampaign ? currentCampaign.image_alt_text || currentCampaign.name : "Mercury Summer Savings Rebate: save up to $700 CAD plus financing as low as 2.99%, ends August 31, 2026"}
         />
       )}
 

@@ -136,7 +136,7 @@ export default function PromoSelectionPage() {
   const isEligibleForFinancing = financingEligibilityAmount >= FINANCING_MINIMUM;
   const isEligibleForPromoFinancing = isEligibleForFinancing && meetsPromotionFinancingMinimum(
     activePromo?.promo_options?.options.find(option => option.id === 'special_financing'),
-    financingEligibilityAmount,
+    estimatedFinancingAmount,
   );
 
   const options = useMemo<PromoOption[]>(() => [

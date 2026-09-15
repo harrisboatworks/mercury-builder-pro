@@ -118,7 +118,7 @@ async function checkActivePromotion(page) {
     throw new Error('Cash summary still displayed an Apply for Financing button');
   }
 
-  await page.getByRole('button', { name: /^Promo$/i }).click();
+  await page.getByRole('button', { name: /^Promo(?:, step|$)/i }).click();
   await page.waitForURL(/\/quote\/promo-selection/);
 
   // Then opt into promo financing. The 24-month rate must persist even when
@@ -189,7 +189,7 @@ async function checkExpiredPromotion(page) {
 
   const promotionsText = await page.locator('body').innerText();
   assertNoExpiredChaseSavings(promotionsText, '/promotions');
-  if (await page.locator('meta[property="og:image"][content*="chase-the-savings"]').count()) {
+  if (await page.locator('meta[property="og:image"][content*="chase-savings"]').count()) {
     throw new Error('Expired Chase the Savings social image remained in /promotions metadata');
   }
 
