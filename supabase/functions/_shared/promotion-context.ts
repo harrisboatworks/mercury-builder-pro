@@ -173,9 +173,13 @@ export function buildPromotionCustomerAnswer(
   const start = formatDate(primary.start_date);
   const end = formatDate(primary.end_date);
   const lines: string[] = [`**${name}** is active${start || end ? ` from ${start || 'now'} through ${end || 'further notice'}` : ''}.`];
+  const coverageSummary = asString(details.coverage_summary);
+  if (coverageSummary) lines.push(`Coverage: ${coverageSummary}`);
 
   if (horsepower !== null && rebate) {
     lines.push(`For an eligible ${horsepower} HP Mercury FourStroke repower, the factory rebate is **${rebate} CAD**.`);
+  } else if (horsepower !== null && matrix.length) {
+    lines.push(`The published rebate matrix does not offer a portable rebate for ${horsepower} HP. Other benefits have separate eligibility requirements.`);
   } else if (matrix.length) {
     const tiers = matrix.map((tier) => {
       const range = formatHpRange(tier);
@@ -210,6 +214,8 @@ export function buildPromotionCustomerAnswer(
 
   const requirements = asStringList(details.requirements);
   if (requirements.length) lines.push(`Requirements: ${requirements.join('; ')}.`);
+  const qualification = asString(details.financing_qualification);
+  if (qualification) lines.push(`Financing conditions: ${qualification}`);
 
   const exclusions = [
     ...asStringList(eligibility.exclusions),

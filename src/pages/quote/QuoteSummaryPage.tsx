@@ -1,3 +1,4 @@
+import { meetsPromotionFinancingMinimum } from '@/lib/promotion-financing';
 import { useEffect, useState, useMemo, useRef, useCallback } from 'react';
 import { calculateRunningTotal } from '@/hooks/useQuoteRunningTotal';
 import { useNavigate } from 'react-router-dom';
@@ -93,7 +94,7 @@ export default function QuoteSummaryPage() {
   const suppressAdditionalPromoSavings = state.uiFlags.suppressAdditionalPromoSavings === true;
   const { user, isAdmin } = useAuth();
   const { promo } = useActiveFinancingPromo();
-  const { promotions, loading: promoLoading, getTotalPromotionalSavings, getPromotionSavingsForMotor, getPromotionOptions, getRebateForHP, getSpecialFinancingRates } = useActivePromotions();
+  const { promotions, loading: promoLoading, getTotalPromotionalSavings, getPromotionSavingsForMotor, getPromotionOptions, getRebateForHP, getSpecialFinancingRates } = useActivePromotions({ motor: state.motor });
   const { rating: googleRating, totalReviews: googleReviewCount } = useGoogleReviewStats();
   const { toast } = useToast();
   const baseCoverageYears = 3;
@@ -469,7 +470,8 @@ export default function QuoteSummaryPage() {
   const usePromoFinancing =
     state.selectedPromoOption === 'special_financing' &&
     state.selectedPromoRate != null &&
-    state.selectedPromoTerm != null;
+    state.selectedPromoTerm != null &&
+    meetsPromotionFinancingMinimum(getPromotionOptions().find(option => option.id === 'special_financing'), amountToFinance);
   const effectiveRate = usePromoFinancing ? state.selectedPromoRate : (isUsableFinancingRate(promo?.rate) ? promo.rate : null);
   const effectiveTerm = usePromoFinancing ? state.selectedPromoTerm : null;
   const { payment: monthlyPayment, termMonths, rate: financingRate } = calculateMonthlyPayment(amountToFinance, effectiveRate, effectiveTerm);
@@ -727,8 +729,7 @@ export default function QuoteSummaryPage() {
           const promotionalFinancing = getPromotionOptions()
             .find((option) => option.id === 'special_financing');
           if (
-            promotionalFinancing?.minimum_amount
-            && amountToFinance < promotionalFinancing.minimum_amount
+            !meetsPromotionFinancingMinimum(promotionalFinancing, amountToFinance)
           ) {
             return undefined;
           }

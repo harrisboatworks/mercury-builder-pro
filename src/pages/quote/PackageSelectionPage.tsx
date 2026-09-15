@@ -62,7 +62,7 @@ export default function PackageSelectionPage() {
     error: promotionsError,
     getPromotionSavingsForMotor,
     getSpecialFinancingRates,
-  } = useActivePromotions();
+  } = useActivePromotions({ motor: state.motor });
   const promotionsReady = !promotionsLoading && !promotionsError;
   
   // Always start with no selection - customer must explicitly choose

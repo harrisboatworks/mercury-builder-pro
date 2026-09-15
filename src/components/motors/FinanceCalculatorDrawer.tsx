@@ -49,7 +49,7 @@ export function FinanceCalculatorDrawer({ open, onOpenChange, motor }: FinanceCa
 
   // Use Quote context and Active Promotions for correct promo data
   const { state } = useQuote();
-  const { getSpecialFinancingRates, promotions } = useActivePromotions();
+  const { getSpecialFinancingRates, promotions } = useActivePromotions({ motor: motor });
 
   // Get effective promo rate based on user's selection
   const effectivePromoRate = useMemo(() => {

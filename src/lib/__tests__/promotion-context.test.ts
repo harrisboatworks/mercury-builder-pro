@@ -51,6 +51,24 @@ const summerSavings: PromotionRecord = {
 };
 
 describe('promotion context', () => {
+  it('keeps Chase coverage and financing qualifications in customer answers', () => {
+    const chase: PromotionRecord = {
+      ...summerSavings, name: 'Mercury Chase the Savings!', discount_fixed_amount: 0,
+      start_date: '2026-09-14', end_date: '2026-10-30',
+      details: { combination_mode: 'layered',
+        coverage_summary: '3-year limited factory warranty + 2 years MPP Gold = 5 years total coverage; eligible stock manufactured in 2022–2026.',
+        financing_qualification: 'TD Bank, OAC, loans over $5,000; excludes Special Markets rebates.' },
+      promo_options: { type: 'layered', options: [
+        { id: 'cash_rebate', matrix: [{ hp_min: 25, hp_max: 30, rebate: 400 }] },
+        { id: 'special_financing', rates: [{ rate: 2.99, months: 24 }] },
+      ] },
+    };
+    const answer = buildPromotionCustomerAnswer([chase], 'What rebate applies to a 60 HP motor?');
+    expect(answer).toContain('MPP Gold');
+    expect(answer).toContain('loans over $5,000');
+    expect(answer).toContain('60 HP');
+    expect(answer).not.toContain('$400 CAD');
+  });
   it('uses the canonical layered relationship and complete live facts', () => {
     const context = formatPromotionContext([summerSavings]);
 
