@@ -2,6 +2,7 @@ export const STANDARD_WARRANTY_YEARS = 3;
 
 export type AppliedWarrantyPromotion = {
   warranty_extra_years?: number | null;
+  details?: { coverage_summary?: string };
 };
 
 /**
@@ -45,5 +46,9 @@ export function getWarrantyDisplay(extraYears: number) {
 export function getWarrantyDisplayFromAppliedPromotion(
   appliedPromotion: AppliedWarrantyPromotion | null | undefined,
 ) {
-  return getWarrantyDisplay(getAppliedWarrantyExtraYears(appliedPromotion));
+  const display = getWarrantyDisplay(getAppliedWarrantyExtraYears(appliedPromotion));
+  if (display.hasExtension && appliedPromotion?.details?.coverage_summary) {
+    return { ...display, badgeLabel: `${display.totalYears}-YEAR COVERAGE`, headline: `${display.totalYears} Years Coverage`, detail: appliedPromotion.details.coverage_summary };
+  }
+  return display;
 }

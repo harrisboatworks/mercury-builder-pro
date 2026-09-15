@@ -1,3 +1,4 @@
+import { meetsPromotionFinancingMinimum } from '@/lib/promotion-financing';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { purchaseDetailsSchema, type PurchaseDetails } from '@/lib/financingValidation';
@@ -131,8 +132,8 @@ export function PurchaseDetailsStep() {
   }, [promosLoading, promoOption, activeOptionIds.join(',')]);
 
   // Check if special financing is still eligible
-  const isEligibleForSpecialFinancing = amountToFinance >= FINANCING_MINIMUM;
-  const hasSpecialFinancing = isPromoStillActive && promoOption === 'special_financing' && isUsableFinancingRate(promoRate);
+  const isEligibleForSpecialFinancing = amountToFinance >= FINANCING_MINIMUM && meetsPromotionFinancingMinimum(activeOptions.find(option => option.id === 'special_financing'), amountToFinance);
+  const hasSpecialFinancing = isEligibleForSpecialFinancing && isPromoStillActive && promoOption === 'special_financing' && isUsableFinancingRate(promoRate);
 
   // Sync local state with form
   useEffect(() => {

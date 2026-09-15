@@ -26,6 +26,7 @@ import { RebateCalculator } from '@/components/promotions/RebateCalculator';
 import { TDAlwaysOnCard, isTDAlwaysOnActive } from '@/components/promotions/TDAlwaysOnOffer';
 import { TDFinancingHero } from '@/components/promotions/TDFinancingHero';
 import { SummerSavingsRebateHero } from '@/components/promotions/SummerSavingsRebateHero';
+import { CurrentCampaignOffer, type CurrentCampaign } from '@/components/promotions/CurrentCampaignOffer';
 import { dealerToday } from '@/lib/quote-utils';
 
 
@@ -85,7 +86,7 @@ interface PromotionOptions {
   options: PromoOption[];
 }
 
-interface Promotion {
+interface Promotion extends CurrentCampaign {
   id: string;
   name: string;
   bonus_title: string | null;
@@ -344,7 +345,8 @@ export default function Promotions() {
   const hasActivePromos = promotions.length > 0;
   const mainName = `${mainPromotion?.name || ''} ${mainPromotion?.bonus_title || ''}`;
   const mainIsSummerSavings = /summer savings/i.test(mainName);
-  const mainIsTDAlwaysOn = !mainIsSummerSavings && /td|always on|financ/i.test(mainName);
+  const mainIsStructuredCampaign = !mainIsSummerSavings && promotionOptions.length > 0 && mainPromotion?.promo_options?.type === 'layered';
+  const mainIsTDAlwaysOn = !mainIsSummerSavings && !mainIsStructuredCampaign && /td|always on|financ/i.test(mainName);
 
   // Bonus-warranty FAQs are only correct when the active DB promo actually
   // includes an extended warranty. Never hardcode "7 years" as always-on.
@@ -352,7 +354,7 @@ export default function Promotions() {
   const totalWarrantyYears = 3 + bonusYears;
   const hasBonusWarranty = bonusYears > 0;
 
-  const warrantyFaqs = hasBonusWarranty
+  const warrantyFaqs = hasBonusWarranty && !mainIsStructuredCampaign
     ? [
         {
           question: `What is the ${totalWarrantyYears}-Year Warranty promotion?`,
@@ -421,7 +423,7 @@ export default function Promotions() {
 
   return (
     <div className="min-h-screen bg-repower-paper">
-      <PromotionsPageSEO promotions={promotions} isSummerSavingsActive={hasActivePromos && mainIsSummerSavings} />
+      <PromotionsPageSEO currentCampaign={mainIsStructuredCampaign ? mainPromotion : null} promotions={promotions} isSummerSavingsActive={hasActivePromos && mainIsSummerSavings} />
       <RepowerHeader />
       <div className="pt-[64px] lg:pt-[72px]" />
 
@@ -432,7 +434,9 @@ export default function Promotions() {
         <TDFinancingHero endDate={mainPromotion?.end_date} />
       )}
 
-      {hasActivePromos && !mainIsTDAlwaysOn && !mainIsSummerSavings && (
+      {hasActivePromos && mainIsStructuredCampaign && mainPromotion && <CurrentCampaignOffer promotion={mainPromotion} />}
+
+      {hasActivePromos && !mainIsTDAlwaysOn && !mainIsSummerSavings && !mainIsStructuredCampaign && (
         <PromotionHero
           endDate={mainPromotion?.end_date}
           bonusTitle={mainPromotion?.bonus_title}
@@ -454,7 +458,7 @@ export default function Promotions() {
       )}
 
       {/* Mercury TD "Always On" Financing as a second section below the headline promo. */}
-      {hasActivePromos && !mainIsTDAlwaysOn && <TDAlwaysOnCard />}
+
 
       {/* Full Rebate Matrix Table with Interactive Calculator */}
       {rebateMatrix.length > 0 && (
@@ -465,20 +469,22 @@ export default function Promotions() {
                 Factory Rebate by Horsepower
               </h2>
               <p className="font-sans text-repower-navy-900/65">
-                The rebate is applied automatically based on your motor's horsepower
+                Rebates apply to eligible engines only. Find the amount for your horsepower below.
               </p>
             </div>
 
             <div className="max-w-2xl mx-auto mb-8">
-              <RebateCalculator matrix={rebateMatrix} initialHP={115} />
+              <RebateCalculator matrix={rebateMatrix} initialHP={rebateMatrix[0]?.hp_min ?? 2.5} />
             </div>
 
             <p className="text-center text-sm text-repower-navy-900/60">
-              Rebate applied automatically at purchase. Promo financing can be added on top (OAC).
+              Eligible rebates are included in your quote, subject to dealer verification. Qualifying promo financing can be added (OAC).
             </p>
           </div>
         </section>
       )}
+
+      {hasActivePromos && !mainIsTDAlwaysOn && <TDAlwaysOnCard />}
 
       {/* Loading state for other promotions */}
       {loading && (

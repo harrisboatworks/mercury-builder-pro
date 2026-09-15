@@ -1,8 +1,10 @@
+import type { CurrentCampaign } from '@/components/promotions/CurrentCampaignOffer';
 import { Helmet } from '@/lib/helmet';
 import { SITE_URL } from '@/lib/site';
 import { MERCURY_PROMO_APR, formatFinancingRate } from '@/lib/finance';
 
 interface PromotionsPageSEOProps {
+  currentCampaign?: CurrentCampaign | null;
   promotions?: Array<{
     name: string;
     discount_percentage?: number;
@@ -19,18 +21,18 @@ interface PromotionsPageSEOProps {
   isSummerSavingsActive?: boolean;
 }
 
-export function PromotionsPageSEO({ isSummerSavingsActive = false }: PromotionsPageSEOProps) {
+export function PromotionsPageSEO({ isSummerSavingsActive = false, currentCampaign }: PromotionsPageSEOProps) {
   const RATE = formatFinancingRate(MERCURY_PROMO_APR);
 
-  const title = isSummerSavingsActive
+  const title = currentCampaign ? `${currentCampaign.name} | Harris Boat Works` : isSummerSavingsActive
     ? 'Mercury Summer Savings Rebate + Financing | HBW'
     : 'Mercury Outboard Promotions & Financing | HBW';
 
-  const description = isSummerSavingsActive
+  const description = currentCampaign ? `${currentCampaign.bonus_description || currentCampaign.name} Offer ends ${currentCampaign.end_date}. Canada, CAD; eligibility and OAC conditions apply.` : isSummerSavingsActive
     ? 'Mercury Summer Savings Rebate: save up to $700 CAD on eligible new Mercury FourStroke repower outboards, plus financing as low as 2.99% for 24 months (OAC). Ends August 31, 2026 at Harris Boat Works on Rice Lake.'
     : `Current Mercury outboard promotions and low-rate financing at Harris Boat Works on Rice Lake. TD Auto Finance repower program from ${RATE} (OAC), Canada-wide pricing in CAD.`;
 
-  const ogImage = isSummerSavingsActive
+  const ogImage = currentCampaign ? currentCampaign.details?.mobile_image_url || currentCampaign.image_url : isSummerSavingsActive
     ? `${SITE_URL}/lovable-uploads/mercury-summer-savings-rebate-2026-square-1x1.jpg`
     : null;
 
@@ -91,12 +93,12 @@ export function PromotionsPageSEO({ isSummerSavingsActive = false }: PromotionsP
       <meta property="og:description" content={description} />
       <meta property="og:type" content="website" />
       {ogImage && <meta property="og:image" content={ogImage} />}
-      {ogImage && <meta property="og:image:width" content="1200" />}
-      {ogImage && <meta property="og:image:height" content="1200" />}
+      {ogImage && <meta property="og:image:width" content={currentCampaign ? "770" : "1200"} />}
+      {ogImage && <meta property="og:image:height" content={currentCampaign ? "770" : "1200"} />}
       {ogImage && (
         <meta
           property="og:image:alt"
-          content="Mercury Summer Savings Rebate: save up to $700 CAD plus financing as low as 2.99%, ends August 31, 2026"
+          content={currentCampaign?.image_alt_text || "Mercury Summer Savings Rebate: save up to $700 CAD plus financing as low as 2.99%, ends August 31, 2026"}
         />
       )}
 

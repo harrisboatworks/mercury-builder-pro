@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import { isPromotionMotorEligible, type PromotionEligibility, type PromotionMotor } from '@/lib/promotion-eligibility';
+import { useState, useEffect, useMemo } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import {
   getFirstPromotionRebateForHP,
@@ -13,6 +14,7 @@ export interface PromoOption {
   icon?: string;
   rates?: Array<{ months: number; rate: number }>;
   minimum_amount?: number;
+  minimum_amount_exclusive?: boolean;
   matrix?: Array<{ hp_min: number; hp_max: number; rebate: number }>;
 }
 
@@ -22,6 +24,7 @@ export interface ActivePromotion {
   discount_percentage: number;
   discount_fixed_amount: number;
   warranty_extra_years: number | null;
+  details?: PromotionEligibility;
   bonus_title: string | null;
   bonus_description: string | null;
   end_date: string | null;
@@ -38,9 +41,14 @@ let cachedPromotions: ActivePromotion[] | null = null;
 let cacheTimestamp: number = 0;
 const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
 
-export function useActivePromotions(options?: { forceRefresh?: boolean }) {
+export function useActivePromotions(options?: { forceRefresh?: boolean; motor?: PromotionMotor | null }) {
   const forceRefresh = options?.forceRefresh ?? false;
-  const [promotions, setPromotions] = useState<ActivePromotion[]>([]);
+  const [allPromotions, setPromotions] = useState<ActivePromotion[]>([]);
+  const hasMotorContext = Boolean(options && 'motor' in options);
+  const motor = options?.motor;
+  const promotions = useMemo(() => hasMotorContext
+    ? allPromotions.filter(p => isPromotionMotorEligible(p.details, motor))
+    : allPromotions, [allPromotions, hasMotorContext, motor]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -67,7 +75,8 @@ export function useActivePromotions(options?: { forceRefresh?: boolean }) {
             bonus_title,
             bonus_description,
             end_date,
-            promo_options
+            promo_options,
+            details
           `)
           .eq('is_active', true)
           .or(startOr)

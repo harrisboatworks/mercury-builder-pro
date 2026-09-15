@@ -108,7 +108,7 @@ export default function MotorDetailsPremiumModal({
   const [showFullPricing, setShowFullPricing] = useState(false);
   const isMobile = useIsMobile();
   const { promo: activePromo } = useActiveFinancingPromo();
-  const { promotions: activePromotions } = useActivePromotions();
+  const { promotions: activePromotions } = useActivePromotions({ motor: motor });
   const { setScrollLock } = useScrollCoordination();
   const { state } = useQuote();
   const { triggerHaptic } = useHapticFeedback();

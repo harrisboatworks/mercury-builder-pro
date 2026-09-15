@@ -48,7 +48,7 @@ async function acceptCookies(page) {
 }
 
 async function configureCanaryMotor(page) {
-  const motorHeading = page.getByRole('heading', { name: /^60 ELPT FourStroke$/i }).first();
+  const motorHeading = page.getByRole('heading', { name: /^25 ELPT FourStroke$/i }).first();
   await motorHeading.waitFor({ state: 'visible' });
   const motorCard = motorHeading.locator(
     'xpath=ancestor::div[.//button[contains(normalize-space(.), "Build & Price")]][1]',
@@ -59,7 +59,7 @@ async function configureCanaryMotor(page) {
     'Configure This Motor button',
   );
   await page.waitForURL(/\/quote\/options/);
-  await page.getByRole('heading', { name: /Options for your 60 ELPT/i }).waitFor();
+  await page.getByRole('heading', { name: /Options for your 25 ELPT/i }).waitFor();
 
   await clickVisible(page.getByRole('button', { name: /^Continue$/i }), 'options Continue button');
   await page.waitForURL(/\/quote\/purchase-path/);
@@ -67,16 +67,16 @@ async function configureCanaryMotor(page) {
   await page.waitForURL(/\/quote\/trade-in/);
 }
 
-function assertNoExpiredSummerSavings(text, location) {
+function assertNoExpiredChaseSavings(text, location) {
   const stalePatterns = [
-    /Summer Savings/i,
-    /save up to \$700/i,
+    /Chase the Savings/i,
+    /save up to \$400/i,
     /2\.99% for 24 months/i,
-    /August 31, 2026/i,
+    /October 30, 2026/i,
   ];
   const stalePattern = stalePatterns.find((pattern) => pattern.test(text));
   if (stalePattern) {
-    throw new Error(`Expired Summer Savings copy remained on ${location}: ${stalePattern}`);
+    throw new Error(`Expired Chase the Savings copy remained on ${location}: ${stalePattern}`);
   }
 }
 
@@ -89,8 +89,8 @@ async function checkActivePromotion(page) {
   await page.getByRole('button', { name: /No trade-in/i }).click();
   await page.waitForURL(/\/quote\/promo-selection/);
 
-  await page.getByText('Factory Rebate: $250 auto-applied', { exact: false }).waitFor();
-  await page.getByText('Offer ends August 31, 2026', { exact: false }).waitFor();
+  await page.getByText('Factory Rebate: $400 auto-applied', { exact: false }).waitFor();
+  await page.getByText('Offer ends October 30, 2026', { exact: false }).waitFor();
 
   // Exercise the cash branch first. The rebate must remain applied and no
   // financing language should leak into the summary.
@@ -108,8 +108,8 @@ async function checkActivePromotion(page) {
 
   await page.getByText('Cash purchase selected', { exact: true }).waitFor();
   const cashPageText = await page.locator('body').innerText();
-  if (!/Mercury Rebate[\s\S]{0,160}(?:−|-)\$250/.test(cashPageText)) {
-    throw new Error('Cash summary did not retain the $250 Mercury rebate line item');
+  if (!/Mercury Rebate[\s\S]{0,160}(?:−|-)\$400/.test(cashPageText)) {
+    throw new Error('Cash summary did not retain the $400 Mercury rebate line item');
   }
   if (/From \$[\d,]+\/(?:month|mo)/.test(cashPageText)) {
     throw new Error('Cash summary still displayed a monthly financing payment');
@@ -147,8 +147,8 @@ async function checkActivePromotion(page) {
   await page.getByText('2.99% APR · 24 months', { exact: false }).first().waitFor();
 
   const pageText = await page.locator('body').innerText();
-  if (!/Mercury Rebate[\s\S]{0,160}(?:−|-)\$250/.test(pageText)) {
-    throw new Error('Summary did not show a $250 Mercury rebate line item');
+  if (!/Mercury Rebate[\s\S]{0,160}(?:−|-)\$400/.test(pageText)) {
+    throw new Error('Summary did not show a $400 Mercury rebate line item');
   }
 
   const pricingPayment = requireMatch(
@@ -171,10 +171,10 @@ async function checkActivePromotion(page) {
     status: 'pass',
     phase,
     baseUrl,
-    motor: '60 ELPT FourStroke',
-    rebate: 250,
+    motor: '25 ELPT FourStroke',
+    rebate: 400,
     financing: { rate: 2.99, months: 24, monthlyPayment: pricingPayment },
-    offerEnds: '2026-08-31',
+    offerEnds: '2026-10-30',
   };
 }
 
@@ -188,17 +188,17 @@ async function checkExpiredPromotion(page) {
   const evergreenTitle = await page.title();
 
   const promotionsText = await page.locator('body').innerText();
-  assertNoExpiredSummerSavings(promotionsText, '/promotions');
-  if (await page.locator('meta[property="og:image"][content*="summer-savings"]').count()) {
-    throw new Error('Expired Summer Savings social image remained in /promotions metadata');
+  assertNoExpiredChaseSavings(promotionsText, '/promotions');
+  if (await page.locator('meta[property="og:image"][content*="chase-the-savings"]').count()) {
+    throw new Error('Expired Chase the Savings social image remained in /promotions metadata');
   }
 
   await page.goto(`${baseUrl}/quote/motor-selection?promo_canary=1`, {
     waitUntil: 'domcontentloaded',
   });
-  await page.getByRole('heading', { name: /^60 ELPT FourStroke$/i }).first().waitFor();
+  await page.getByRole('heading', { name: /^25 ELPT FourStroke$/i }).first().waitFor();
   const motorSelectionText = await page.locator('body').innerText();
-  assertNoExpiredSummerSavings(motorSelectionText, '/quote/motor-selection');
+  assertNoExpiredChaseSavings(motorSelectionText, '/quote/motor-selection');
   await configureCanaryMotor(page);
 
   await page.getByRole('button', { name: /No trade-in/i }).click();
@@ -210,7 +210,7 @@ async function checkExpiredPromotion(page) {
   }
 
   const summaryText = await page.locator('body').innerText();
-  assertNoExpiredSummerSavings(summaryText, '/quote/summary');
+  assertNoExpiredChaseSavings(summaryText, '/quote/summary');
   if (/Mercury Rebate/i.test(summaryText)) {
     throw new Error('Expired Mercury rebate remained in the quote summary');
   }

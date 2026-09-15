@@ -92,7 +92,7 @@ export function TDAlwaysOnCard() {
                 TD Financing Available
               </h3>
               <p className="font-sans text-[16px] md:text-[17px] text-repower-navy-900/70 leading-relaxed">
-                Low-rate TD financing on a new Mercury repower, plus the standard 3-year factory warranty that comes on every new Mercury.
+                Low-rate TD financing on an eligible new Mercury repower. Standard factory warranty and any promotional coverage depend on engine and program eligibility.
               </p>
               <p className="font-sans text-[14px] text-repower-navy-900/65 leading-relaxed">
                 Not all customers will qualify. Approval depends on TD's credit review.
