@@ -307,7 +307,10 @@ function formatPromotion(promotion: PromotionRecord): string {
   }
 
   const warrantyYears = asNumber(promotion.warranty_extra_years);
-  if (warrantyYears !== null && warrantyYears > 0) {
+  const coverageSummary = asString(details.coverage_summary);
+  if (coverageSummary) {
+    lines.push(`- Coverage benefit: ${coverageSummary}`);
+  } else if (warrantyYears !== null && warrantyYears > 0) {
     lines.push(`- Warranty benefit: ${warrantyYears} additional factory-backed year${warrantyYears === 1 ? '' : 's'}`);
   }
 
