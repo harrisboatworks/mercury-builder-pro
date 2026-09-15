@@ -166,7 +166,7 @@ export function PurchaseDetailsStep() {
         // Preserve promo details
         promoOption: promoOption === 'special_financing' && !hasSpecialFinancing ? null : promoOption,
         promoRate: promoOption === 'special_financing' && !hasSpecialFinancing ? null : promoRate,
-        promoTerm: hasSpecialFinancing ? activePromoRate!.months : null,
+        promoTerm: hasSpecialFinancing ? activePromoRate!.months : promoOption === 'special_financing' ? null : promoTerm,
         preferredTerm: hasSpecialFinancing ? String(activePromoRate!.months) as PurchaseDetails['preferredTerm'] : data.preferredTerm,
         promoValue: promoOption === 'special_financing' && !hasSpecialFinancing ? null : promoValue,
         promoName,

@@ -123,7 +123,7 @@ export function TDAlwaysOnBanner() {
           <Percent className="h-4 w-4 text-repower-navy-900" strokeWidth={2} />
         </div>
         <div className="font-sans text-[13px] leading-relaxed text-repower-navy-900/72 md:text-[14px]">
-          <span className="font-bold text-repower-navy-900">Current Canadian program:</span>{' '}
+          <span className="font-bold text-repower-navy-900">Standard TD financing option:</span>{' '}
           {formatFinancingRate(MERCURY_PROMO_APR)} up to 240-month amortization on eligible new Mercury outboards. OAC. Available through Dec 31, 2026.
         </div>
       </div>
