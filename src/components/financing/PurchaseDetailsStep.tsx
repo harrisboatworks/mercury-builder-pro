@@ -133,7 +133,16 @@ export function PurchaseDetailsStep() {
 
   // Check if special financing is still eligible
   const isEligibleForSpecialFinancing = amountToFinance >= FINANCING_MINIMUM && meetsPromotionFinancingMinimum(activeOptions.find(option => option.id === 'special_financing'), amountToFinance);
-  const hasSpecialFinancing = isEligibleForSpecialFinancing && isPromoStillActive && promoOption === 'special_financing' && isUsableFinancingRate(promoRate);
+  const activePromoRate = activeOptions.find(option => option.id === 'special_financing')?.rates?.find(
+    rate => rate.rate === promoRate && (promoTerm == null || rate.months === promoTerm),
+  );
+  const hasSpecialFinancing = isEligibleForSpecialFinancing && isPromoStillActive && promoOption === 'special_financing' && isUsableFinancingRate(promoRate) && !!activePromoRate;
+
+  useEffect(() => {
+    if (hasSpecialFinancing && activePromoRate && preferredTerm !== String(activePromoRate.months)) {
+      setValue('preferredTerm', String(activePromoRate.months) as PurchaseDetails['preferredTerm'], { shouldValidate: true });
+    }
+  }, [hasSpecialFinancing, activePromoRate?.months, preferredTerm, setValue]);
 
   // Sync local state with form
   useEffect(() => {
@@ -155,10 +164,11 @@ export function PurchaseDetailsStep() {
         amountToFinance,
         priceBasis,
         // Preserve promo details
-        promoOption,
-        promoRate,
-        promoTerm,
-        promoValue,
+        promoOption: promoOption === 'special_financing' && !hasSpecialFinancing ? null : promoOption,
+        promoRate: promoOption === 'special_financing' && !hasSpecialFinancing ? null : promoRate,
+        promoTerm: hasSpecialFinancing ? activePromoRate!.months : null,
+        preferredTerm: hasSpecialFinancing ? String(activePromoRate!.months) as PurchaseDetails['preferredTerm'] : data.preferredTerm,
+        promoValue: promoOption === 'special_financing' && !hasSpecialFinancing ? null : promoValue,
         promoName,
         promoSavings,
         promoCombinationMode,
@@ -185,7 +195,7 @@ export function PurchaseDetailsStep() {
   // Special promotions retain their own permitted terms. Standard TD estimates
   // surface a calculator selection such as 240 months in the third card.
   const termOptions = hasSpecialFinancing
-    ? [24, 36, 48, 60]
+    ? [activePromoRate!.months]
     : hasRestoredStandardAmortization
       ? [...standardTermOptions.slice(0, 2), restoredAmortization].sort((a, b) => a - b)
       : standardTermOptions;
@@ -522,7 +532,7 @@ export function PurchaseDetailsStep() {
             </button>
 
             {/* Mid Term (Recommended) */}
-            <button
+            {termOptions.length > 1 && <button
               type="button"
               onClick={() => {
                 setSelectedTerm(String(midTerm));
@@ -545,10 +555,10 @@ export function PurchaseDetailsStep() {
                 ${Math.round(paymentMid)}
               </p>
               <p className="text-xs text-muted-foreground font-light">/month</p>
-            </button>
+            </button>}
 
             {/* Long Term */}
-            <button
+            {termOptions.length > 2 && <button
               type="button"
               onClick={() => {
                 setSelectedTerm(String(longTerm));
@@ -571,7 +581,7 @@ export function PurchaseDetailsStep() {
               <p className="text-[10px] text-muted-foreground font-light mt-1">
                 Lowest payment
               </p>
-            </button>
+            </button>}
           </div>
           <p className="text-xs text-muted-foreground font-light text-center">
             {hasSpecialFinancing && isEligibleForSpecialFinancing
