@@ -22,7 +22,7 @@ import { PromotionsPageSEO } from '@/components/seo/PromotionsPageSEO';
 import { PromotionHero } from '@/components/promotions/PromotionHero';
 import { ChooseOneSection } from '@/components/promotions/ChooseOneSection';
 
-import { RebateCalculator } from '@/components/promotions/RebateCalculator';
+import { RebateTable } from '@/components/promotions/RebateTable';
 import { TDAlwaysOnCard, isTDAlwaysOnActive } from '@/components/promotions/TDAlwaysOnOffer';
 import { TDFinancingHero } from '@/components/promotions/TDFinancingHero';
 import { SummerSavingsRebateHero } from '@/components/promotions/SummerSavingsRebateHero';
@@ -460,7 +460,7 @@ export default function Promotions() {
       {/* Mercury TD "Always On" Financing as a second section below the headline promo. */}
 
 
-      {/* Full Rebate Matrix Table with Interactive Calculator */}
+      {/* Rebate table */}
       {rebateMatrix.length > 0 && (
         <section className="bg-repower-cream py-20 md:py-24 px-6 md:px-14 border-t border-repower-navy-900/10">
           <div className="max-w-[1100px] mx-auto">
@@ -474,7 +474,7 @@ export default function Promotions() {
             </div>
 
             <div className="max-w-2xl mx-auto mb-8">
-              <RebateCalculator matrix={rebateMatrix} initialHP={rebateMatrix[0]?.hp_min ?? 2.5} />
+              <RebateTable matrix={rebateMatrix} />
             </div>
 
           </div>
