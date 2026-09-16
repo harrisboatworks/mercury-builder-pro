@@ -1,6 +1,7 @@
 import { Helmet } from '@/lib/helmet';
 import { SITE_URL } from '@/lib/site';
 import { MERCURY_PROMO_APR, formatFinancingRate } from '@/lib/finance';
+import seoPageMetadata from '@/data/seoPageMetadata.json';
 
 interface PromotionsPageSEOProps {
   promotions?: Array<{
@@ -24,11 +25,11 @@ export function PromotionsPageSEO({ isSummerSavingsActive = false }: PromotionsP
 
   const title = isSummerSavingsActive
     ? 'Mercury Summer Savings Rebate + Financing | HBW'
-    : 'Mercury Outboard Promotions & Financing | HBW';
+    : seoPageMetadata.promotions.title;
 
   const description = isSummerSavingsActive
     ? 'Mercury Summer Savings Rebate: save up to $700 CAD on eligible new Mercury FourStroke repower outboards, plus financing as low as 2.99% for 24 months (OAC). Ends August 31, 2026 at Harris Boat Works on Rice Lake.'
-    : `Current Mercury outboard promotions and low-rate financing at Harris Boat Works on Rice Lake. TD Auto Finance repower program from ${RATE} (OAC), Canada-wide pricing in CAD.`;
+    : seoPageMetadata.promotions.description;
 
   const ogImage = isSummerSavingsActive
     ? `${SITE_URL}/lovable-uploads/mercury-summer-savings-rebate-2026-square-1x1.jpg`

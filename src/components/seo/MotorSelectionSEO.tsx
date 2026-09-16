@@ -1,5 +1,8 @@
 import { Helmet } from '@/lib/helmet';
 import { SITE_URL } from '@/lib/site';
+import seoPageMetadata from '@/data/seoPageMetadata.json';
+
+const MOTOR_SELECTION_SEO = seoPageMetadata.motorSelection;
 
 interface FamilyCounts {
   fourStroke?: number;
@@ -176,18 +179,15 @@ export function MotorSelectionSEO({
 
   return (
     <Helmet>
-      <title>Build a Mercury Outboard Quote: 2.5 to 600 HP | HBW</title>
-      <meta
-        name="description"
-        content="Configure any Mercury FourStroke, Pro XS, SeaPro or ProKicker outboard and get instant CAD pricing online. Mercury dealer on Rice Lake since 1965."
-      />
+      <title>{MOTOR_SELECTION_SEO.title}</title>
+      <meta name="description" content={MOTOR_SELECTION_SEO.description} />
 
-      <meta property="og:title" content="Build a Mercury Outboard Quote: 2.5 to 600 HP" />
-      <meta property="og:description" content="Configure Mercury FourStroke, Pro XS, SeaPro or ProKicker and get instant CAD pricing online." />
+      <meta property="og:title" content={MOTOR_SELECTION_SEO.title} />
+      <meta property="og:description" content={MOTOR_SELECTION_SEO.description} />
       <meta property="og:type" content="website" />
 
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="Build a Mercury Outboard Quote: 2.5 to 600 HP" />
+      <meta name="twitter:title" content={MOTOR_SELECTION_SEO.title} />
       <meta name="twitter:description" content="Configure any Mercury outboard and get instant CAD pricing. Mercury dealer since 1965." />
       <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
     </Helmet>

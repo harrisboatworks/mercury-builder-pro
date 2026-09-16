@@ -1,6 +1,8 @@
 import { Award, Users, MapPin, Wrench, Phone, MessageSquare, Mail } from 'lucide-react';
 import { HubPage } from '@/components/hub/HubPage';
+import { Link } from 'react-router-dom';
 import { SITE_URL } from '@/lib/site';
+import seoPageMetadata from '@/data/seoPageMetadata.json';
 
 const PATH = '/electric/mercury-avator';
 const LAST_REVIEWED_ISO = '2026-07-13';
@@ -31,6 +33,21 @@ const FAQS = [
     question: 'How do I charge an Avator at the cottage?',
     answer:
       'The portable models use swappable batteries you can carry up to the cottage and charge on a standard outlet overnight. Our charging guide covers dock and cottage setups in detail.',
+  },
+  {
+    question: 'How much does a Mercury Avator 7.5e cost in Canada?',
+    answer:
+      'The price row for the 7.5e is in the lineup table at the top of this page. Avator is built to order through Mercury Canada, so we confirm the CAD figure with you before anything is ordered. Call 905-342-2153 if the row is not filled in yet.',
+  },
+  {
+    question: 'Is the battery included in the Avator price?',
+    answer:
+      'It depends on the model, and the table above says which. The 7.5e carries its battery on the motor. The larger models run external packs, so battery count is part of the quote rather than a fixed line on a price list.',
+  },
+  {
+    question: 'Can I try an Avator before buying?',
+    answer:
+      'Yes. We demo on Rice Lake from the dock at Gores Landing. Call 905-342-2153 to book a time, and tell us which model in the table you want to run so we have it rigged.',
   },
 ];
 
@@ -142,8 +159,8 @@ export default function AvatorLanding() {
   return (
     <HubPage
       path={PATH}
-      metaTitle="Mercury Avator Electric Outboards Ontario | Harris Boat Works"
-      metaDescription="Mercury Avator electric outboards are coming to Harris Boat Works on Rice Lake. Lineup, use cases for Kawartha waters, and honest answers. Pricing coming soon."
+      metaTitle={seoPageMetadata.avator.title}
+      metaDescription={seoPageMetadata.avator.description}
       breadcrumbName="Mercury Avator Electric"
       lastReviewedISO={LAST_REVIEWED_ISO}
       lastReviewedLabel={LAST_REVIEWED_LABEL}
@@ -165,13 +182,17 @@ export default function AvatorLanding() {
           { key: 'model', label: 'Model' },
           { key: 'style', label: 'Style' },
           { key: 'use', label: 'Best for' },
+          { key: 'power', label: 'HP-equivalent' },
+          { key: 'price', label: 'Price (CAD)' },
+          { key: 'battery', label: 'Battery included?' },
+          { key: 'quote', label: 'Quote' },
         ],
         rows: [
-          { model: 'Avator 7.5e', style: 'Portable tiller · integrated ~1 kWh battery', use: 'Canoes, tenders, dinghies, trolling' },
-          { model: 'Avator 20e', style: 'Portable tiller · external battery', use: 'Small tinnies, inflatables' },
-          { model: 'Avator 35e', style: 'Portable tiller · external battery', use: 'Small fishing boats, light tenders' },
-          { model: 'Avator 75e', style: 'Remote steer · multi-battery bank', use: 'Small pontoons, larger tenders' },
-          { model: 'Avator 110e', style: 'Remote steer · multi-battery bank', use: 'Pontoons and small day boats' },
+          { model: 'Avator 7.5e', style: 'Portable tiller · integrated ~1 kWh battery', use: 'Canoes, tenders, dinghies, trolling' , power: '750 W at the propshaft', price: 'TODO-JAY', battery: 'Yes, integrated', quote: <Link to="/quote/motor-selection" data-cta="quote-start" data-cta-location="avator_price_table" className="text-repower-gold hover:underline">Build quote</Link> },
+          { model: 'Avator 20e', style: 'Portable tiller · external battery', use: 'Small tinnies, inflatables' , power: 'TODO-JAY', price: 'TODO-JAY', battery: 'TODO-JAY, external battery pack', quote: <Link to="/quote/motor-selection" data-cta="quote-start" data-cta-location="avator_price_table" className="text-repower-gold hover:underline">Build quote</Link> },
+          { model: 'Avator 35e', style: 'Portable tiller · external battery', use: 'Small fishing boats, light tenders' , power: 'TODO-JAY', price: 'TODO-JAY', battery: 'TODO-JAY, external battery pack', quote: <Link to="/quote/motor-selection" data-cta="quote-start" data-cta-location="avator_price_table" className="text-repower-gold hover:underline">Build quote</Link> },
+          { model: 'Avator 75e', style: 'Remote steer · multi-battery bank', use: 'Small pontoons, larger tenders' , power: 'TODO-JAY', price: 'TODO-JAY', battery: 'TODO-JAY, external battery pack', quote: <Link to="/quote/motor-selection" data-cta="quote-start" data-cta-location="avator_price_table" className="text-repower-gold hover:underline">Build quote</Link> },
+          { model: 'Avator 110e', style: 'Remote steer · multi-battery bank', use: 'Pontoons and small day boats' , power: 'TODO-JAY', price: 'TODO-JAY', battery: 'TODO-JAY, external battery pack', quote: <Link to="/quote/motor-selection" data-cta="quote-start" data-cta-location="avator_price_table" className="text-repower-gold hover:underline">Build quote</Link> },
         ],
         footnote: (
           <>Avator is rated in kilowatts of output power and thrust, not gas horsepower. Built to order through Mercury Canada.</>

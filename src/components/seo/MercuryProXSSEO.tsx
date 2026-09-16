@@ -3,6 +3,9 @@ import { SITE_URL } from '@/lib/site';
 import { getMercuryFinancingFaqAnswer } from '@/components/promotions/TDAlwaysOnOffer';
 import { CANONICAL_LAST_UPDATED, CANONICAL_SKUS } from '@/data/canonical-pricing.generated';
 import { buildMercuryProXSOffers } from '@/data/mercuryProXSOffers.js';
+import seoPageMetadata from '@/data/seoPageMetadata.json';
+
+const PRO_XS_SEO = seoPageMetadata.mercuryFamilies['/mercury-pro-xs'];
 
 // Static "starting at" CAD prices for JSON-LD Offer (rich-result safe).
 // Source: the generated canonical pricing reference, never motor_models.base_price.
@@ -116,11 +119,8 @@ export function MercuryProXSSEO() {
 
   return (
     <Helmet>
-      <title>Mercury Pro XS Outboards - 115 to 300 HP Ontario | HBW</title>
-      <meta
-        name="description"
-        content="Mercury Pro XS from 115 to 300 HP with live CAD pricing. The performance line for bass, walleye and speed. Ontario Mercury Premier dealer."
-      />
+      <title>{PRO_XS_SEO.title}</title>
+      <meta name="description" content={PRO_XS_SEO.description} />
       <meta
         name="keywords"
         content="Mercury Pro XS, Mercury Pro XS Ontario, Mercury Pro XS 115, Mercury Pro XS 150, Mercury Pro XS 200, Mercury Pro XS 250, Pro XS dealer Canada, Mercury performance outboard"

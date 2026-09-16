@@ -1,7 +1,8 @@
 {
   "home": {
-    "title": "Mercury Repower Cost Ontario: Real Prices in 2 Minutes",
-    "description": "Repowering with a Mercury outboard? Build a real quote in 2 minutes: motor, rigging, install, out-the-door price. No phone tag. Since 1947.",
+    "title": "Mercury Repower Ontario | Installed CAD Prices & Quotes",
+    "description": "Ontario's Mercury Repower Centre. Every quote itemized in CAD: motor, controls, prop, install. Mercury Premier Dealer on Rice Lake, Mercury since 1965.",
+    "h1": "Mercury Repower Ontario. Keep your boat.",
     "alternates": [
       {
         "hrefLang": "en-CA",
@@ -20,5 +21,57 @@
         "path": "/"
       }
     ]
+  },
+  "repowerHub": {
+    "title": "How a Mercury Repower Works: Process, Cost & Timeline",
+    "description": "What happens when you repower with Harris Boat Works: assessment, motor choice, rigging, install, sea trial, and what drives the cost.",
+    "h1": "How a Mercury Repower Works: Process, Cost and Timeline"
+  },
+  "promotions": {
+    "title": "Mercury Outboard Promotions Canada: Fall 2026",
+    "description": "Current Mercury Marine Canada offers as they apply to an HBW quote, in CAD. Updated when Mercury updates them.",
+    "h1": "Mercury Outboard Promotions Canada"
+  },
+  "motorSelection": {
+    "title": "Build Your Mercury Outboard Quote (CAD)",
+    "description": "Pick your HP, controls and prop. See an itemized Mercury outboard quote in Canadian dollars, installed at Harris Boat Works, Gores Landing."
+  },
+  "pricingReference": {
+    "title": "Mercury Outboard Prices Canada 2026: Every HP in CAD",
+    "description": "Every Mercury outboard, 2.5 to 600 HP, with current Canadian MSRP in CAD. From Harris Boat Works, Mercury Premier Dealer, Ontario."
+  },
+  "avator": {
+    "title": "Mercury Avator Prices Canada 2026: 7.5e, 20e, 35e, 75e, 110e",
+    "description": "Mercury Avator electric outboard prices in CAD for the 7.5e, 20e, 35e, 75e and 110e, plus battery and charger options. Demo on Rice Lake at Harris Boat Works."
+  },
+  "mercuryFamilies": {
+    "/mercury/150-hp": {
+      "title": "Mercury 150 HP Outboard Price Canada 2026 | Installed",
+      "description": "Mercury 150 HP outboard prices in CAD, installed in Ontario at Harris Boat Works on Rice Lake."
+    },
+    "/mercury/115-pro-xs": {
+      "title": "Mercury 115 Pro XS Price Canada 2026 | Installed",
+      "description": "Mercury 115 Pro XS prices in CAD, installed in Ontario at Harris Boat Works on Rice Lake."
+    },
+    "/mercury/mid-power-90-115hp": {
+      "title": "Mercury 90 & 115 HP Outboard Prices Canada 2026",
+      "description": "Mercury 90 and 115 HP outboard prices in CAD, installed in Ontario at Harris Boat Works on Rice Lake."
+    },
+    "/mercury/mid-range-40-60hp": {
+      "title": "Mercury 40, 50 & 60 HP Outboard Prices Canada 2026",
+      "description": "Mercury 40, 50 and 60 HP outboard prices in CAD, installed in Ontario at Harris Boat Works on Rice Lake."
+    },
+    "/mercury/portable-9-20hp": {
+      "title": "Mercury 9.9–20 HP Outboard Prices Canada 2026",
+      "description": "Mercury 9.9, 15 and 20 HP portable outboard prices in CAD, installed in Ontario at Harris Boat Works on Rice Lake."
+    },
+    "/mercury/pro-xs-250": {
+      "title": "Mercury 250 Pro XS Price Canada 2026 | Installed",
+      "description": "Mercury 250 Pro XS prices in CAD, installed in Ontario at Harris Boat Works on Rice Lake."
+    },
+    "/mercury-pro-xs": {
+      "title": "Mercury Pro XS Prices Canada 2026: 115 to 300 HP",
+      "description": "Mercury Pro XS prices from 115 to 300 HP in CAD, installed in Ontario at Harris Boat Works on Rice Lake."
+    }
   }
 }

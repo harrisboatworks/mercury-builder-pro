@@ -43,6 +43,8 @@ The real conversation starts with your prop.
 
 This guide covers what actually drives fuel economy on a Mercury outboard, in the order that matters. We rig and Lake Test Mercurys at our shop in Gores Landing every season, and we see the same setup problems cutting the same owners' fuel economy year after year.
 
+Shopping while you read: [Mercury outboard prices in Canada](/pricing-reference).
+
 ### The Five Levers, in Order
 
 Fuel economy on an outboard comes down to five controllable variables. Fix them in this order, the first two deliver the most gain.
