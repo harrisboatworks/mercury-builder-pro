@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useOverheatInteractions } from '@/hooks/useOverheatInteractions';
+import { REVIEW_150_SLUG, useReview150Interactions } from '@/hooks/useReview150Interactions';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
@@ -54,7 +55,9 @@ export default function BlogArticle() {
   const { slug } = useParams<{ slug: string }>();
   const article = slug ? getArticleBySlug(slug) : undefined;
   const [heroImgError, setHeroImgError] = useState(false);
-  const interactionRef = useOverheatInteractions(slug);
+  const overheatRef = useOverheatInteractions(slug);
+  const review150Ref = useReview150Interactions(slug);
+  const interactionRef = slug === REVIEW_150_SLUG ? review150Ref : overheatRef;
 
   if (!article) {
     return <Navigate to="/blog" replace />;
