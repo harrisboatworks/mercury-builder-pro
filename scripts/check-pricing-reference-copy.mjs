@@ -5,13 +5,14 @@
  * Fails the build if the page title, H1, or meta description in either
  * src/pages/PricingReference.tsx or scripts/static-prerender.mjs deviate
  * from the canonical strings, or if an em-dash / en-dash appears in the
- * H1 or meta description.
+ * title, H1 or meta description.
  *
  * Title and description are read from src/data/seoPageMetadata.json
  * (`pricingReference`), the single source both files consume, so the pinned
  * value cannot drift from the metadata again. Both files must reference that
- * key rather than hard-code a string. The title is exempt from the dash rule
- * because the approved GSC title ("... 2026 — Every HP, in CAD") uses one.
+ * key rather than hard-code a string.
+ *
+ * House style: no em-dashes or en-dashes anywhere.
  */
 import { readFileSync, existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
@@ -40,6 +41,8 @@ const checked = [];
 
 if (typeof EXPECTED.title !== 'string' || !EXPECTED.title.trim()) {
   errors.push('seoPageMetadata.json: pricingReference.title is missing');
+} else if (DASH_RE.test(EXPECTED.title)) {
+  errors.push(`seoPageMetadata.json pricingReference.title: contains em-dash or en-dash: "${EXPECTED.title}"`);
 }
 if (typeof EXPECTED.description !== 'string' || !EXPECTED.description.trim()) {
   errors.push('seoPageMetadata.json: pricingReference.description is missing');
@@ -141,4 +144,4 @@ if (errors.length) {
   process.exit(1);
 }
 
-console.log(`[check-pricing-reference-copy] OK — ${checked.length} fields match seoPageMetadata.pricingReference and the pinned H1; no dashes in H1/description.`);
+console.log(`[check-pricing-reference-copy] OK — ${checked.length} fields match seoPageMetadata.pricingReference and the pinned H1; no em/en dashes.`);
