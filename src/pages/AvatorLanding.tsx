@@ -1,6 +1,8 @@
 import { Award, Users, MapPin, Wrench, Phone, MessageSquare, Mail } from 'lucide-react';
 import { HubPage } from '@/components/hub/HubPage';
+import { Link } from 'react-router-dom';
 import { SITE_URL } from '@/lib/site';
+import seoPageMetadata from '@/data/seoPageMetadata.json';
 
 const PATH = '/electric/mercury-avator';
 const LAST_REVIEWED_ISO = '2026-07-13';
@@ -142,8 +144,8 @@ export default function AvatorLanding() {
   return (
     <HubPage
       path={PATH}
-      metaTitle="Mercury Avator Electric Outboards Ontario | Harris Boat Works"
-      metaDescription="Mercury Avator electric outboards are coming to Harris Boat Works on Rice Lake. Lineup, use cases for Kawartha waters, and honest answers. Pricing coming soon."
+      metaTitle={seoPageMetadata.avator.title}
+      metaDescription={seoPageMetadata.avator.description}
       breadcrumbName="Mercury Avator Electric"
       lastReviewedISO={LAST_REVIEWED_ISO}
       lastReviewedLabel={LAST_REVIEWED_LABEL}
@@ -165,13 +167,17 @@ export default function AvatorLanding() {
           { key: 'model', label: 'Model' },
           { key: 'style', label: 'Style' },
           { key: 'use', label: 'Best for' },
+          { key: 'power', label: 'HP-equivalent' },
+          { key: 'price', label: 'Price (CAD)' },
+          { key: 'battery', label: 'Battery included?' },
+          { key: 'quote', label: 'Quote' },
         ],
         rows: [
-          { model: 'Avator 7.5e', style: 'Portable tiller · integrated ~1 kWh battery', use: 'Canoes, tenders, dinghies, trolling' },
-          { model: 'Avator 20e', style: 'Portable tiller · external battery', use: 'Small tinnies, inflatables' },
-          { model: 'Avator 35e', style: 'Portable tiller · external battery', use: 'Small fishing boats, light tenders' },
-          { model: 'Avator 75e', style: 'Remote steer · multi-battery bank', use: 'Small pontoons, larger tenders' },
-          { model: 'Avator 110e', style: 'Remote steer · multi-battery bank', use: 'Pontoons and small day boats' },
+          { model: 'Avator 7.5e', style: 'Portable tiller · integrated ~1 kWh battery', use: 'Canoes, tenders, dinghies, trolling' , power: 'About 3.5 HP equivalent', price: 'TODO-JAY', battery: 'Integrated battery', quote: <Link to="/quote/motor-selection" data-cta="quote-start" data-cta-location="avator_price_table" className="text-repower-gold hover:underline">Build quote</Link> },
+          { model: 'Avator 20e', style: 'Portable tiller · external battery', use: 'Small tinnies, inflatables' , power: 'About 5 HP equivalent', price: 'TODO-JAY', battery: 'Battery sold separately', quote: <Link to="/quote/motor-selection" data-cta="quote-start" data-cta-location="avator_price_table" className="text-repower-gold hover:underline">Build quote</Link> },
+          { model: 'Avator 35e', style: 'Portable tiller · external battery', use: 'Small fishing boats, light tenders' , power: 'About 9.9 HP equivalent', price: 'TODO-JAY', battery: 'Battery sold separately', quote: <Link to="/quote/motor-selection" data-cta="quote-start" data-cta-location="avator_price_table" className="text-repower-gold hover:underline">Build quote</Link> },
+          { model: 'Avator 75e', style: 'Remote steer · multi-battery bank', use: 'Small pontoons, larger tenders' , power: 'About 20 HP equivalent', price: 'TODO-JAY', battery: 'Battery sold separately', quote: <Link to="/quote/motor-selection" data-cta="quote-start" data-cta-location="avator_price_table" className="text-repower-gold hover:underline">Build quote</Link> },
+          { model: 'Avator 110e', style: 'Remote steer · multi-battery bank', use: 'Pontoons and small day boats' , power: 'About 30 HP equivalent', price: 'TODO-JAY', battery: 'Battery sold separately', quote: <Link to="/quote/motor-selection" data-cta="quote-start" data-cta-location="avator_price_table" className="text-repower-gold hover:underline">Build quote</Link> },
         ],
         footnote: (
           <>Avator is rated in kilowatts of output power and thrust, not gas horsepower. Built to order through Mercury Canada.</>
