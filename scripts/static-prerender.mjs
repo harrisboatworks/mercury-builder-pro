@@ -496,6 +496,8 @@ const PUBLIC = join(ROOT, 'public');
 const SHELL_PATH = join(DIST, 'index.html');
 const SITE_URL = 'https://www.mercuryrepower.ca';
 const HOME_SEO = SEO_PAGE_METADATA.home;
+const REPOWER_HUB_SEO = SEO_PAGE_METADATA.repowerHub;
+const MERCURY_FAMILY_SEO = SEO_PAGE_METADATA.mercuryFamilies;
 const HOME_HUB_ALTERNATE_TAGS = HOME_SEO.alternates
   .map(({ hrefLang, path }) => {
     const href = path === '/' ? `${SITE_URL}/` : `${SITE_URL}${path}`;
@@ -4186,10 +4188,10 @@ const HUB_DEFS = [
     return {
       path: '/repower',
       lastReviewedISO: '2026-06-12',
-      metaTitle: 'Boat Repower Ontario 2026: Cost & Process | HBW',
-      metaDescription: 'Boat repower in Ontario in 2026: cost by HP class, the repower process, financing, and trade-in. Live CAD pricing from a Mercury Premier dealer.',
+      metaTitle: REPOWER_HUB_SEO.title,
+      metaDescription: REPOWER_HUB_SEO.description,
       breadcrumbName: 'Boat Repower Guide',
-      h1: 'Boat Repower Guide for Ontario (2026): Mercury Repower Specialists',
+      h1: REPOWER_HUB_SEO.h1,
       intro: "A boat repower means replacing your existing outboard with a new Mercury on your current boat. For most Ontario freshwater customers in 2026, a full boat engine repower lands between $11,000 and $40,000 CAD depending on HP class, hull, and rigging. The hull is the asset; the motor is the wear part. A repower on a solid hull gives you 80% of the new-boat experience for half the money. Live pricing on every Mercury we sell is at /quote/motor-selection.",
       table: {
         caption: 'Mercury Repower Cost by HP Class',
@@ -4923,7 +4925,7 @@ const routes = [
     path: '/',
     title: HOME_SEO.title,
     description: HOME_SEO.description,
-    h1: 'Mercury Outboard Quotes: Real Prices, No Forms',
+    h1: HOME_SEO.h1,
     intro: 'Build a real Mercury outboard quote online in three minutes. Live CAD pricing, financing options, and trade-in estimates. Family-owned Mercury Premier Dealer on Rice Lake since 1947, selling Mercury since 1965.',
     schemas: [homepageSchema()],
     extraHead: HOME_HUB_ALTERNATE_TAGS + '\n  ' + HOME_LCP_PRELOAD,
