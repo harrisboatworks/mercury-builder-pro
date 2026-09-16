@@ -21,6 +21,7 @@ import { RepowerHubBanner } from '@/components/repower/RepowerHubBanner';
 import { slugify, extractHeaders } from '@/utils/slugify';
 import { getCleanDescription } from '@/lib/strip-markdown';
 import { formatFinancingRate, substituteLiveRateTokens } from '@/lib/finance';
+import { linkifyHbwPhone } from '@/lib/linkify-phone';
 import { cleanBlogContent } from '@/lib/cleanBlogContent.js';
 import { shouldUnwrapMarkdownImageParagraph } from '@/lib/markdown-paragraph';
 
@@ -417,6 +418,9 @@ export default function BlogArticle() {
                 // finance helper that drives the quote builder's monthly-payment
                 // math. Change the rate in src/lib/finance.ts (MERCURY_PROMO_APR).
                 c = substituteLiveRateTokens(c, { dateModified: article.dateModified });
+                // Every rendered phone number becomes a tel: link so mobile
+                // readers can tap it and the shared phone_click event fires.
+                c = linkifyHbwPhone(c);
                 return c;
               })()}
               markdownComponents={{

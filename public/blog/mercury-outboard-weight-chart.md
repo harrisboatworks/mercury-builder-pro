@@ -41,6 +41,8 @@ How much a motor weighs is not trivia. It decides whether your transom can carry
 
 This chart covers the FourStroke and Pro XS families we sell and install every week. Verado is special-order territory at HBW and its weights vary significantly by model and rigging; if you are considering a Verado, verify the exact model number against Mercury's spec sheet.
 
+Also useful: [current Mercury outboard prices in Canada](/pricing-reference) and the [outboard shaft length guide](/blog/outboard-shaft-length-guide).
+
 ### FourStroke dry weights
 
 | HP | Dry weight (lightest model) | Notes |

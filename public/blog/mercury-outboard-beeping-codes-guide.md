@@ -77,6 +77,10 @@ If oil pressure, temperature, or water-flow warnings require a stop, stay stoppe
 
 ---
 
+[Beeping at the dock? Book a diagnostic](https://hbw.wiki/service "cta")
+
+Related: [SmartCraft alarm codes](/blog/mercury-smartcraft-alarm-codes-encyclopedia) and [Mercury service at HBW](/maintenance).
+
 ## Mercury Outboard Beeping Codes: What Each Pattern Means and What to Check
 
 A Mercury outboard beep is the motor talking to you. Sometimes routine (a normal self-check at key-on), sometimes a warning (low oil, water in fuel, overheating, Guardian mode). The pattern, when it happens, and what else the boat is doing tells you which one you're dealing with. Most patterns fall into a handful of categories, and the right response depends on whether the engine is also losing power or showing a SmartCraft message. Below: every common Mercury beep pattern, what it can mean, and what to do next.

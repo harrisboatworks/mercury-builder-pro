@@ -36,6 +36,8 @@ revenue_driver: repower
 ## Quick answer
 Most Ontario aluminum fishing boats need a 20-inch (long) shaft. Most pontoons over 22 feet need a 25-inch (extra long) shaft. Small tiller boats with low transoms typically take a 15-inch (short) shaft. The only correct way to confirm is to measure transom height, the distance from the top of the transom down to where the hull contacts the water. Mercury's shaft code on the motor (S, L, XL, XXL) tells you the rest. The full decoder and a measurement guide are below.
 
+Ready to price it? [Build your quote, shaft length is a step](/quote/motor-selection).
+
 ## Why shaft length matters more than most people think
 
 Shaft length determines where the propeller sits in the water column relative to your hull. The rule is straightforward: the cavitation plate (the flat plate just above the prop) should ride roughly level with the bottom of your hull at the prop location when the boat is on plane.

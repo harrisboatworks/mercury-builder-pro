@@ -65,6 +65,8 @@ The 8M0173128 module lives under the cowl on a single-engine boat. The 8M0173129
 
 ---
 
+Getting it fitted: [SmartCraft & VesselView install at HBW](/maintenance).
+
 ## Compatibility (quick check)
 
 Most Mercury motors from 2004 onward are SmartCraft-compatible. Mercury 9.9, 15, 20 HP portables, pre-2004 4-strokes, and carbureted 2-strokes are NOT compatible. Optimax motors from 2004 onward are SmartCraft-capable.
