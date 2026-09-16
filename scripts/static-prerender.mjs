@@ -4398,8 +4398,8 @@ const HUB_DEFS = [
   {
     path: '/electric/mercury-avator',
     lastReviewedISO: '2026-07-13',
-    metaTitle: 'Mercury Avator Electric Outboards Ontario | Harris Boat Works',
-    metaDescription: 'Mercury Avator electric outboards are coming to Harris Boat Works on Rice Lake. Lineup, use cases for Kawartha waters, and honest answers. Pricing coming soon.',
+    metaTitle: "Mercury Avator Prices Canada 2026: 7.5e, 20e, 35e, 75e, 110e",
+    metaDescription: "Mercury Avator electric outboard prices in CAD for the 7.5e, 20e, 35e, 75e and 110e, plus battery and charger options. Demo on Rice Lake at Harris Boat Works.",
     breadcrumbName: 'Mercury Avator Electric',
     h1: 'Mercury Avator Electric Outboards Are Coming to Harris Boat Works',
     intro: "Mercury's Avator line brings quiet, zero-exhaust electric power to small boats, and it's joining our lineup at Harris Boat Works on Rice Lake. Pricing is being finalized now. Call or text us to get on the list, and we'll have real CAD numbers for you soon.",
