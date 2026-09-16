@@ -78,9 +78,33 @@ customer identifiers, or user-agent strings are sent. Pointer positions exist
 only transiently for gesture detection. Static target labels come from a
 bounded map, never from arbitrary DOM attribute values.
 
-## Next evidence
+## Verification (September 16, 2026)
 
-After an authorized release, collect a comparable consented Clarity window and
-relate repeated target names to recordings before proposing an affordance
-change. Empty recordings alone do not close #559. Article copy and prices are
-unchanged.
+Started from current main `8399db04c`. Local Vite on `:8080` with a temporary
+Clarity stub; the real `clarity.ms` host was blocked so no test events left
+this machine.
+
+- Focused tests cover consent states and revocation, malformed cookies, absent
+  provider, allowlisted payloads, repeat limits, selection/form exclusions,
+  current-DOM share controls, route isolation, cleanup, per-table pan/click
+  separation, pointer cancellation, wheel bursts and unchanged default
+  behavior.
+- `npm run typecheck` passed. `npm run test:unit` ran 1,822 tests: 1,821
+  passed. The only failure is the pre-existing Dropbox OAuth state check in
+  `src/lib/__tests__/edge-hardening-packet-a.test.ts`; it is outside this
+  change.
+- Playwright at 1280x720 and 390x844: one H1, document width exactly the
+  viewport. Desktop tables 846px; mobile tables 640px inside a 332px
+  labelled/focusable region. Comparison image opened a named dialog and
+  Escape closed it. Contents comparison link set the heading hash at both
+  sizes; the mobile panel collapsed afterward.
+- Stub events on the real article: mobile emitted `review150_table_1_r2_c1_click_first`,
+  `review150_table_1_pan_first`, `review150_image_2_click_first`,
+  `review150_toc_toggle_click_first`, and `review150_toc_2_click_first`.
+  Desktop emitted the table, pan, image and `toc_2` events (no mobile
+  toggle). The stub/config is not part of this PR.
+
+Article/pricing source and consent implementation are unchanged. This is local
+validation, not deployment or evidence of reduced production dead clicks. After
+an authorized release, collect a comparable consented Clarity window and relate
+repeated target names to recordings before proposing an affordance change.
