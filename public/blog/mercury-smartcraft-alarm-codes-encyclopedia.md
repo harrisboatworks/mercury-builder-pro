@@ -45,6 +45,10 @@ When a customer calls with a Guardian alarm active or a code on the screen, the 
 
 That single question routes the call. The display text tells us the system involved (fuel, charging, oil, temperature, communication). The beep pattern tells us severity and the specific subsystem. A continuous tone is different from 4 beeps every 2 minutes is different from 6 beeps once.
 
+[Beeping at the dock? Book a diagnostic](https://hbw.wiki/service "cta")
+
+Related: [Mercury service at HBW](/maintenance). Or call [905-342-2153](tel:+19053422153).
+
 ## Mercury beep code patterns (what the horn is telling you)
 
 [Mercury's warning horn uses repeated patterns](/blog/mercury-outboard-beeping-codes-guide) to communicate without a display. Even if your VesselView screen is off, the horn alone can tell you what's happening.

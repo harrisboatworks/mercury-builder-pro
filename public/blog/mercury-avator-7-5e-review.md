@@ -29,7 +29,7 @@ revenue_driver: repower
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-avator-7-5e-review
 
-> **Now at HBW:** Mercury Avator is joining our lineup. See the [Avator landing page](/electric/mercury-avator) for the lineup, use cases, and to get on the pricing list.
+> **Now at HBW:** Mercury Avator is in our lineup. See [Mercury Avator prices in Canada](/electric/mercury-avator) for the model table, battery notes, and the quote path.
 
 > **Quick answer:** The Mercury Avator 7.5e delivers 750 watts at the propeller and uses a removable integrated 1 kWh battery. It can suit compatible small boats, tenders, sailboats, or quiet low-speed use, but runtime and fit are boat-specific. Mercury's published 13-foot test ran about 60 minutes or 5 miles at full throttle and up to 19 hours or 34 miles at 25% throttle. Avator is build-to-order at HBW; see the [Avator page](/electric/mercury-avator) for current availability and the configuration path.
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/fourstroke-300hp-300xl-fourstroke-dts
-last_updated: 2026-08-19
+last_updated: 2026-09-16
 currency: CAD
 pickup_only: true
 delivery_offered: false
