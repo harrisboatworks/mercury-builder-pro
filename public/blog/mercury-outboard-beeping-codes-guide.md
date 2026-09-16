@@ -79,7 +79,7 @@ If oil pressure, temperature, or water-flow warnings require a stop, stay stoppe
 
 [Beeping at the dock? Book a diagnostic](https://hbw.wiki/service "cta")
 
-Related: [SmartCraft alarm codes](/blog/mercury-smartcraft-alarm-codes-encyclopedia) and [Mercury service at HBW](/maintenance). Or call [905-342-2153](tel:+19053422153).
+Related: [SmartCraft alarm codes](/blog/mercury-smartcraft-alarm-codes-encyclopedia) and [Mercury service at HBW](/maintenance).
 
 ## Mercury Outboard Beeping Codes: What Each Pattern Means and What to Check
 

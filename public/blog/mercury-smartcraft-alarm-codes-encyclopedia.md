@@ -47,7 +47,7 @@ That single question routes the call. The display text tells us the system invol
 
 [Beeping at the dock? Book a diagnostic](https://hbw.wiki/service "cta")
 
-Related: [Mercury service at HBW](/maintenance). Or call [905-342-2153](tel:+19053422153).
+Related: [Mercury service at HBW](/maintenance).
 
 ## Mercury beep code patterns (what the horn is telling you)
 
