@@ -51,6 +51,8 @@ For most 16 to 18 ft aluminum console boats carrying two or more people on Kawar
 
 Real-world performance varies with hull, load, prop, mounting height, water conditions, and rigging. Numbers below are typical ranges from boats we've rigged at HBW; treat them as ballpark, not guarantees.
 
+See [Mercury 90 & 115 HP prices in Canada](/mercury/mid-power-90-115hp), or [build an installed quote](/quote/motor-selection).
+
 ## Quick recommendation
 
 The 90 HP FourStroke sits in the useful middle of this group. On many 16 to 18 ft aluminum console boats, it adds loaded planing and acceleration over the 75 without automatically moving the buyer into the price and weight of the 115. The capacity plate, hull, normal load, current rigging, and performance goal still decide whether that middle answer is the right one.

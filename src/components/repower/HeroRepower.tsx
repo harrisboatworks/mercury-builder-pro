@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { ChevronRight, Phone, ChevronDown } from 'lucide-react';
 import { RepowerCta } from './RepowerCta';
 import { HERO_VARIATIONS } from './heroVariations';
+import seoPageMetadata from '@/data/seoPageMetadata.json';
 
 const ease = [0.2, 0.8, 0.2, 1] as const;
 const fadeUp = (delay = 0) => ({
@@ -26,7 +27,10 @@ const statLabelStyle = { letterSpacing: '0.16em' } as const;
 const DEFAULT_EYEBROW = 'Mercury Repower · Rice Lake · Since 1947';
 const ACCENT = 'text-[#C8102E]';
 
-// Static anchor + rotating endings. Index 0 = default rendered SSR for stable SEO H1.
+// Static H1 ("Keep your boat."), shared with the prerenderer via seoPageMetadata.
+const HOME_H1 = seoPageMetadata.home.h1;
+
+// Rotating endings shown under the H1 (outside it). Index 0 = default for SSR/prerender.
 const HEADLINE_ENDINGS = [
   'Get your weekends back.',
   'Stop losing Saturdays.',
@@ -154,7 +158,12 @@ export function HeroRepower() {
           {variation.eyebrow ?? DEFAULT_EYEBROW}
         </motion.p>
 
-        <motion.h1
+        {/* The <h1> holds only the static line (seoPageMetadata.home.h1, which
+            static-prerender.mjs also emits), so the prerendered and hydrated H1
+            are byte-identical. The rotating red ending is visually part of the
+            headline but lives in a sibling <p> outside the h1; the wrapper
+            carries the headline typography so the rendered look is unchanged. */}
+        <motion.div
           {...fadeUp(0.2)}
           className="font-display font-bold tracking-tight leading-[1.05] sm:leading-[1.02] mb-8"
           style={{
@@ -163,11 +172,11 @@ export function HeroRepower() {
             textWrap: 'balance',
           }}
         >
-          <span className="block">Keep your boat.</span>
+          <h1 className="block">{HOME_H1}</h1>
           {reduceMotion ? (
-            <span className={`block ${ACCENT}`}>{ending}</span>
+            <p className={`block ${ACCENT}`}>{ending}</p>
           ) : (
-            <span className="block relative">
+            <p className="block relative">
               {/* Invisible sizer keeps layout stable across endings */}
               <span aria-hidden="true" className="invisible block">
                 {HEADLINE_ENDINGS.reduce((a, b) => (a.length >= b.length ? a : b))}
@@ -184,9 +193,9 @@ export function HeroRepower() {
                   {ending}
                 </motion.span>
               </AnimatePresence>
-            </span>
+            </p>
           )}
-        </motion.h1>
+        </motion.div>
 
         <motion.p
           {...fadeUp(0.4)}
