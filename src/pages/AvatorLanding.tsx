@@ -34,6 +34,21 @@ const FAQS = [
     answer:
       'The portable models use swappable batteries you can carry up to the cottage and charge on a standard outlet overnight. Our charging guide covers dock and cottage setups in detail.',
   },
+  {
+    question: 'How much does a Mercury Avator 7.5e cost in Canada?',
+    answer:
+      'The price row for the 7.5e is in the lineup table at the top of this page. Avator is built to order through Mercury Canada, so we confirm the CAD figure with you before anything is ordered. Call 905-342-2153 if the row is not filled in yet.',
+  },
+  {
+    question: 'Is the battery included in the Avator price?',
+    answer:
+      'It depends on the model, and the table above says which. The 7.5e carries its battery on the motor. The larger models run external packs, so battery count is part of the quote rather than a fixed line on a price list.',
+  },
+  {
+    question: 'Can I try an Avator before buying?',
+    answer:
+      'Yes. We demo on Rice Lake from the dock at Gores Landing. Call 905-342-2153 to book a time, and tell us which model in the table you want to run so we have it rigged.',
+  },
 ];
 
 const serviceSchema = {
