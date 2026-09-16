@@ -11,19 +11,6 @@ const MERCURY_HP_STEPS: number[] = [
   200, 225, 250, 300, 350, 400, 425,
 ];
 
-function snapToMercuryHP(value: number): number {
-  let closest = MERCURY_HP_STEPS[0];
-  let bestDist = Math.abs(value - closest);
-  for (const step of MERCURY_HP_STEPS) {
-    const d = Math.abs(value - step);
-    if (d < bestDist) {
-      bestDist = d;
-      closest = step;
-    }
-  }
-  return closest;
-}
-
 type RebateRow = RebateTier;
 
 interface RebateCalculatorProps {
@@ -39,25 +26,27 @@ export function RebateCalculator({
   onHPChange,
   className,
 }: RebateCalculatorProps) {
-  const [selectedHP, setSelectedHP] = useState(initialHP);
-
-  const { minHP, maxHP } = useMemo(() => {
-    if (!matrix.length) return { minHP: 2.5, maxHP: 425 };
-    const min = Math.min(...matrix.map(r => r.hp_min));
-    const max = Math.max(...matrix.map(r => r.hp_max));
-    return { minHP: min, maxHP: max };
-  }, [matrix]);
-
-  const currentTier = useMemo(() => {
-    return getRebateTierForHP(matrix, selectedHP);
-  }, [matrix, selectedHP]);
+  const [requestedHP, setSelectedHP] = useState(initialHP);
+  const eligibleSteps = useMemo(() => MERCURY_HP_STEPS.filter(
+    hp => Boolean(getRebateTierForHP(matrix, hp))
+  ), [matrix]);
+  const selectedHP = eligibleSteps.includes(requestedHP)
+    ? requestedHP
+    : (eligibleSteps[0] ?? 0);
+  const selectedIndex = Math.max(0, eligibleSteps.indexOf(selectedHP));
+  const minHP = eligibleSteps[0];
+  const maxHP = eligibleSteps[eligibleSteps.length - 1];
+  const currentTier = getRebateTierForHP(matrix, selectedHP);
   const currentRebate = currentTier?.rebate ?? 0;
 
   const handleSliderChange = (value: number[]) => {
-    const newHP = snapToMercuryHP(value[0]);
+    const newHP = eligibleSteps[value[0]];
+    if (newHP === undefined) return;
     setSelectedHP(newHP);
     onHPChange?.(newHP);
   };
+
+  if (!eligibleSteps.length) return null;
 
   const formatHPRange = (row: RebateRow) => {
     if (row.hp_min === row.hp_max) {
@@ -69,7 +58,7 @@ export function RebateCalculator({
   return (
     <div
       className={cn(
-        'rounded-[12px] border border-repower-navy-900/10 bg-repower-cream p-8',
+        'rounded-[12px] border border-repower-navy-900/10 bg-repower-cream p-5 sm:p-8',
         className
       )}
     >
@@ -116,7 +105,7 @@ export function RebateCalculator({
               {minHP}HP
             </span>
             <span className="font-display font-semibold text-[16px] text-repower-navy-900">
-              {selectedHP}HP
+              Selected: {selectedHP}HP
             </span>
             <span
               className="text-[12px] text-repower-navy-900"
@@ -127,12 +116,14 @@ export function RebateCalculator({
           </div>
 
           <Slider
-            value={[selectedHP]}
+            value={[selectedIndex]}
+            thumbProps={{ "aria-label": "Engine horsepower", "aria-valuetext": `${selectedHP} horsepower` }}
+            disabled={eligibleSteps.length < 2}
             onValueChange={handleSliderChange}
-            min={minHP}
-            max={maxHP}
+            min={0}
+            max={Math.max(1, eligibleSteps.length - 1)}
             step={1}
-            className="w-full"
+            className="w-full py-2 [&>span:first-child]:bg-repower-navy-900/20 [&>span:first-child>span]:bg-repower-mercury-red"
           />
         </div>
 
@@ -144,26 +135,28 @@ export function RebateCalculator({
           >
             All Rebate Tiers
           </div>
-          <div className="grid grid-cols-2 gap-2">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
             {matrix.map((row, index) => {
               const isActive = currentTier === row;
               return (
                 <button
                   key={index}
                   type="button"
+                  aria-pressed={isActive}
                   onClick={() => {
-                    const midHP = snapToMercuryHP((row.hp_min + row.hp_max) / 2);
+                    const midHP = eligibleSteps.find(hp => hp >= row.hp_min && hp <= row.hp_max);
+                    if (midHP === undefined) return;
                     setSelectedHP(midHP);
                     onHPChange?.(midHP);
                   }}
                   className={cn(
-                    'flex items-center justify-between gap-2 px-3 py-2 rounded-[10px] bg-white border text-[13px] transition-all',
+                    'flex flex-row items-center justify-between gap-2 px-3 py-2 rounded-[10px] bg-white border text-[13px] transition-all',
                     isActive
                       ? 'border-repower-navy-900 ring-1 ring-repower-navy-900'
                       : 'border-repower-navy-900/10 hover:border-repower-navy-900/30'
                   )}
                 >
-                  <span className="flex items-center gap-2 font-medium text-repower-navy-900">
+                  <span className="flex flex-row items-center gap-2 font-medium text-repower-navy-900">
                     <span
                       className={cn(
                         'inline-block w-1.5 h-1.5 rounded-full',

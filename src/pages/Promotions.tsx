@@ -477,9 +477,6 @@ export default function Promotions() {
               <RebateCalculator matrix={rebateMatrix} initialHP={rebateMatrix[0]?.hp_min ?? 2.5} />
             </div>
 
-            <p className="text-center text-sm text-repower-navy-900/60">
-              Eligible rebates are included in your quote, subject to dealer verification. Qualifying promo financing can be added (OAC).
-            </p>
           </div>
         </section>
       )}

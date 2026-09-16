@@ -64,3 +64,37 @@ describe('RebateCalculator animated rebate transitions', () => {
     expect(anchorText()).toContain('$1,500');
   });
 });
+
+const chase = [
+  { hp_min: 2.5, hp_max: 3.5, rebate: 250 },
+  { hp_min: 4, hp_max: 9.9, rebate: 300 },
+  { hp_min: 15, hp_max: 20, rebate: 350 },
+  { hp_min: 25, hp_max: 30, rebate: 400 },
+];
+
+describe('eligible horsepower selection', () => {
+  it('advances through every eligible engine size with the keyboard', () => {
+    render(<RebateCalculator matrix={chase} initialHP={2.5} />);
+    const slider = screen.getByRole('slider', { name: 'Engine horsepower' });
+    for (const hp of [3.5, 4, 5, 6, 8, 9.9, 15, 20, 25, 30]) {
+      fireEvent.keyDown(slider, { key: 'ArrowRight' });
+      expect(slider).toHaveAttribute('aria-valuetext', `${hp} horsepower`);
+      const tier = chase.find(row => hp >= row.hp_min && hp <= row.hp_max)!;
+      expect(anchorText()).toContain(`$${tier.rebate}`);
+    }
+    fireEvent.keyDown(slider, { key: 'ArrowRight' });
+    expect(slider).toHaveAttribute('aria-valuetext', '30 horsepower');
+    fireEvent.keyDown(slider, { key: 'Home' });
+    expect(slider).toHaveAttribute('aria-valuetext', '2.5 horsepower');
+  });
+
+  it('keeps the selection eligible when the promotion matrix changes', () => {
+    const { rerender } = render(<RebateCalculator matrix={matrix} initialHP={90} />);
+    rerender(<RebateCalculator matrix={chase} initialHP={90} />);
+    expect(screen.getByRole('slider')).toHaveAttribute('aria-valuetext', '2.5 horsepower');
+    expect(anchorText()).toContain('$250');
+    fireEvent.click(screen.getByRole('button', { name: /25–30HP/ }));
+    expect(screen.getByRole('slider')).toHaveAttribute('aria-valuetext', '25 horsepower');
+    expect(anchorText()).toContain('$400');
+  });
+});
