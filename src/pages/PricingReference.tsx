@@ -13,6 +13,19 @@ const PAGE_SEO = seoPageMetadata.pricingReference;
 
 marked.setOptions({ gfm: true, breaks: false });
 
+// HP bands that have their own landing page. Each band owns its HP-specific
+// queries; this page owns the generic "Mercury outboard prices" query.
+const HP_BAND_LINKS = [
+  { min: 9.9, max: 20, proXs: false, label: 'See the 9.9 to 20 HP page', to: '/mercury/portable-9-20hp' },
+  { min: 40, max: 60, proXs: false, label: 'See the 40, 50 and 60 HP page', to: '/mercury/mid-range-40-60hp' },
+  { min: 90, max: 115, proXs: false, label: 'See the 90 and 115 HP page', to: '/mercury/mid-power-90-115hp' },
+  { min: 150, max: 150, proXs: false, label: 'See the 150 HP page', to: '/mercury/150-hp' },
+  { min: 115, max: 115, proXs: true, label: 'See the 115 Pro XS page', to: '/mercury/115-pro-xs' },
+  { min: 250, max: 250, proXs: true, label: 'See the 250 Pro XS page', to: '/mercury/pro-xs-250' },
+] as const;
+
+type HpBandLink = (typeof HP_BAND_LINKS)[number];
+
 function annotatePricingReferenceCtas(rawHtml: string) {
   if (typeof DOMParser === 'undefined') return rawHtml;
   const doc = new DOMParser().parseFromString(rawHtml, 'text/html');
@@ -71,7 +84,7 @@ function annotatePricingReferenceCtas(rawHtml: string) {
     const bandFor = (hp: number) => HP_BAND_LINKS.find(
       (b) => b.proXs === isProXsTable && hp >= b.min && hp <= b.max,
     );
-    let previous: { label: string; to: string } | undefined;
+    let previous: HpBandLink | undefined;
     rows.forEach((row, rowIndex) => {
       const hp = Number((row.querySelector('td')?.textContent || '').replace(/[^\d.]/g, ''));
       const band = Number.isFinite(hp) ? bandFor(hp) : undefined;
