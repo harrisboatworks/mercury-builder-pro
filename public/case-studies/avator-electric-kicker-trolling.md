@@ -16,7 +16,7 @@ is_illustrative: true
 
 # Avator 7.5e Electric Kicker on a Walleye Boat
 
-An illustrative 18-foot walleye-boat scenario adding a Mercury Avator 7.5e electric outboard for quiet, low-speed use.
+An illustrative 18-foot walleye-boat scenario adding a Mercury Avator 7.5e electric outboard for quiet, low-speed use. See [Mercury Avator prices in Canada](/electric/mercury-avator) for the model table and quote path.
 
 > **Illustrative planning scenario:** This is not a customer testimonial, completed-job record, or fixed-price quote. Harris Boat Works confirms the actual boat, motor, rigging, pricing, and expected performance before recommending a package.
 
