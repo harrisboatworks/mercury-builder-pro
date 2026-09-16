@@ -6,6 +6,9 @@ import { SiteFooter } from "@/components/ui/site-footer";
 import { BlogInlineCTA } from "@/components/blog/BlogInlineCTA";
 import { ALL_SEGMENTS } from "@/data/landing/mercuryLineupLandings";
 import { CANONICAL_LAST_UPDATED } from "@/lib/canonical-pricing";
+import seoPageMetadata from "@/data/seoPageMetadata.json";
+
+const PAGE_SEO = seoPageMetadata.pricingReference;
 
 
 marked.setOptions({ gfm: true, breaks: false });
@@ -112,27 +115,18 @@ export default function PricingReference() {
   return (
     <div className="min-h-screen bg-repower-paper">
       <Helmet>
-        <title>Mercury Outboard Prices Ontario (CAD) | Harris Boat Works</title>
-        <meta
-          name="description"
-          content="Live Mercury outboard prices in CAD, listed FourStroke and Pro XS models, 2.5-300 HP. MSRP vs dealer price, drop-off at our Gores Landing shop."
-        />
+        <title>{PAGE_SEO.title}</title>
+        <meta name="description" content={PAGE_SEO.description} />
         <link rel="alternate" type="text/markdown" href="https://www.mercuryrepower.ca/pricing-reference.md" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Harris Boat Works" />
         <meta property="og:locale" content="en_CA" />
-        <meta property="og:title" content="Mercury Outboard Prices Ontario (CAD) | Harris Boat Works" />
-        <meta
-          property="og:description"
-          content="Live Mercury outboard prices in CAD, listed FourStroke and Pro XS models, 2.5-300 HP. MSRP vs dealer price, drop-off at our Gores Landing shop."
-        />
+        <meta property="og:title" content={PAGE_SEO.title} />
+        <meta property="og:description" content={PAGE_SEO.description} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:url" content="https://www.mercuryrepower.ca/pricing-reference" />
-        <meta name="twitter:title" content="Mercury Outboard Prices Ontario (CAD) | Harris Boat Works" />
-        <meta
-          name="twitter:description"
-          content="Live Mercury outboard prices in CAD, listed FourStroke and Pro XS models, 2.5-300 HP. MSRP vs dealer price, drop-off at our Gores Landing shop."
-        />
+        <meta name="twitter:title" content={PAGE_SEO.title} />
+        <meta name="twitter:description" content={PAGE_SEO.description} />
         {schemaJson && (
           <script type="application/ld+json">{schemaJson}</script>
         )}
