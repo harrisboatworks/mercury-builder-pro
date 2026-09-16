@@ -5538,6 +5538,8 @@ https://www.youtube.com/watch?v=ydFfxwUz5yc
 
 Follow the break-in procedure in the owner's manual for your exact motor. Mercury's published 150 Pro XS example covers 10 hours. For your motor, vary RPM and follow the throttle limits and duration in its own manual. Once break-in is complete, operate normally within Mercury's rated RPM band. For most current FourStrokes, the published first scheduled service is 100 hours or annually.
 
+Booking ahead: [first service and rigging at HBW](/maintenance).
+
 ## Why break-in actually matters
 
 Mercury's published break-in guide uses a 10-hour graduated protocol for the example motor: vary throttle, avoid long steady-RPM runs, and limit sustained wide-open throttle. Your owner's manual is the final authority because the exact procedure varies by model and family. Break-in and scheduled maintenance are separate timelines. For most current FourStrokes, Mercury says the first scheduled service is at 100 hours or annually. HBW's optional early check around 20 hours is dealer best practice, not Mercury's published first-service requirement.
@@ -6867,6 +6869,8 @@ For most 16 to 18 ft aluminum console boats carrying two or more people on Kawar
 
 Real-world performance varies with hull, load, prop, mounting height, water conditions, and rigging. Numbers below are typical ranges from boats we've rigged at HBW; treat them as ballpark, not guarantees.
 
+See [Mercury 90 & 115 HP prices in Canada](/mercury/mid-power-90-115hp), or [build an installed quote](/quote/motor-selection).
+
 ## Quick recommendation
 
 The 90 HP FourStroke sits in the useful middle of this group. On many 16 to 18 ft aluminum console boats, it adds loaded planing and acceleration over the 75 without automatically moving the buyer into the price and weight of the 115. The capacity plate, hull, normal load, current rigging, and performance goal still decide whether that middle answer is the right one.
@@ -8048,6 +8052,8 @@ Most conversations about fuel economy start in the wrong place. People ask which
 The real conversation starts with your prop.
 
 This guide covers what actually drives fuel economy on a Mercury outboard, in the order that matters. We rig and Lake Test Mercurys at our shop in Gores Landing every season, and we see the same setup problems cutting the same owners' fuel economy year after year.
+
+Shopping while you read: [Mercury outboard prices in Canada](/pricing-reference).
 
 ### The Five Levers, in Order
 
@@ -17106,6 +17112,8 @@ _Last updated: May 27, 2026_
 ## Quick answer
 Most Ontario aluminum fishing boats need a 20-inch (long) shaft. Most pontoons over 22 feet need a 25-inch (extra long) shaft. Small tiller boats with low transoms typically take a 15-inch (short) shaft. The only correct way to confirm is to measure transom height, the distance from the top of the transom down to where the hull contacts the water. Mercury's shaft code on the motor (S, L, XL, XXL) tells you the rest. The full decoder and a measurement guide are below.
 
+Ready to price it? [Build your quote, shaft length is a step](/quote/motor-selection).
+
 ## Why shaft length matters more than most people think
 
 Shaft length determines where the propeller sits in the water column relative to your hull. The rule is straightforward: the cavitation plate (the flat plate just above the prop) should ride roughly level with the bottom of your hull at the prop location when the boat is on plane.
@@ -18491,6 +18499,8 @@ You don't "install SmartCraft." It's already in your motor if it's modern enough
 
 ---
 
+Getting it fitted: [SmartCraft & VesselView install at HBW](/maintenance).
+
 ## SmartCraft Connect Mobile (formerly VesselView Mobile) and the Mercury Marine App (Summer 2025)
 
 Quick history. **VesselView Mobile** has been Mercury's phone app for several years. A Bluetooth module under the cowl talked to your phone, and the phone showed engine data. Around **summer 2025**, Mercury started transitioning everyone to the new **Mercury Marine App**, which replaces VesselView Mobile with more features and a cleaner interface.
@@ -18695,6 +18705,8 @@ A real Mercury serial number is short, alphanumeric, and unique to your specific
 The serial is **stamped or laser-etched on a small plate** on the motor's transom bracket. You will NOT find date or horsepower hidden in the digits, Mercury does not embed the spec into the serial like a car VIN. You look the serial up in Mercury's catalog or any reputable parts site (Crowley Marine, PartsVu, MarineEngine) to get year, model variant, and parts compatibility.
 
 
+
+Once you have the numbers, find out [what your outboard is worth as a trade-in](/trade-in-value).
 
 ## How to decode your Mercury Model Number
 
@@ -20033,6 +20045,10 @@ When a customer calls with a Guardian alarm active or a code on the screen, the 
 **"What exactly does the screen say, and what beeps are you hearing? Is it a solid tone or a pattern? How many beeps and how often?"**
 
 That single question routes the call. The display text tells us the system involved (fuel, charging, oil, temperature, communication). The beep pattern tells us severity and the specific subsystem. A continuous tone is different from 4 beeps every 2 minutes is different from 6 beeps once.
+
+[Beeping at the dock? Book a diagnostic](https://hbw.wiki/service "cta")
+
+Related: [Mercury service at HBW](/maintenance). Or call [905-342-2153](tel:+19053422153).
 
 ## Mercury beep code patterns (what the horn is telling you)
 
@@ -24932,6 +24948,8 @@ The 8M0173128 module lives under the cowl on a single-engine boat. The 8M0173129
 
 ---
 
+Getting it fitted: [SmartCraft & VesselView install at HBW](/maintenance).
+
 ## Compatibility (quick check)
 
 Most Mercury motors from 2004 onward are SmartCraft-compatible. Mercury 9.9, 15, 20 HP portables, pre-2004 4-strokes, and carbureted 2-strokes are NOT compatible. Optimax motors from 2004 onward are SmartCraft-capable.
@@ -28630,6 +28648,10 @@ escalationBody: If oil pressure, temperature, or water-flow warnings require a s
 ::
 
 ---
+
+[Beeping at the dock? Book a diagnostic](https://hbw.wiki/service "cta")
+
+Related: [SmartCraft alarm codes](/blog/mercury-smartcraft-alarm-codes-encyclopedia) and [Mercury service at HBW](/maintenance). Or call [905-342-2153](tel:+19053422153).
 
 ## Mercury Outboard Beeping Codes: What Each Pattern Means and What to Check
 
@@ -34737,6 +34759,8 @@ Mercury outboards range from 19 kg (41 lb) for the 2.5 and 3.5 HP portables to 2
 How much a motor weighs is not trivia. It decides whether your transom can carry it, how your boat sits at rest, and how it planes. Here's what Mercury outboards weigh according to Mercury's own specifications, why it matters, and how to use the number.
 
 This chart covers the FourStroke and Pro XS families we sell and install every week. Verado is special-order territory at HBW and its weights vary significantly by model and rigging; if you are considering a Verado, verify the exact model number against Mercury's spec sheet.
+
+Also useful: [current Mercury outboard prices in Canada](/pricing-reference) and the [outboard shaft length guide](/blog/outboard-shaft-length-guide).
 
 ### FourStroke dry weights
 
