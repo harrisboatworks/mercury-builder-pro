@@ -62,6 +62,34 @@ function annotatePricingReferenceCtas(rawHtml: string) {
     if (index === 0) wrapper.id = 'current-prices';
     table.parentNode?.insertBefore(wrapper, table);
     wrapper.appendChild(table);
+
+    // One cross-link per HP band, placed after the last row of that band, so a
+    // reader scanning for "150 HP" lands on the page that owns that query.
+    const isProXsTable = index > 0;
+    const rows = Array.from(table.querySelectorAll('tbody tr'));
+    const colCount = table.querySelectorAll('thead th').length || 1;
+    const bandFor = (hp: number) => HP_BAND_LINKS.find(
+      (b) => b.proXs === isProXsTable && hp >= b.min && hp <= b.max,
+    );
+    let previous: { label: string; to: string } | undefined;
+    rows.forEach((row, rowIndex) => {
+      const hp = Number((row.querySelector('td')?.textContent || '').replace(/[^\d.]/g, ''));
+      const band = Number.isFinite(hp) ? bandFor(hp) : undefined;
+      const isLastOfBand = band && band !== bandFor(
+        Number((rows[rowIndex + 1]?.querySelector('td')?.textContent || '').replace(/[^\d.]/g, '')),
+      );
+      if (!band || !isLastOfBand || band === previous) return;
+      previous = band;
+      const linkRow = doc.createElement('tr');
+      const cell = doc.createElement('td');
+      cell.setAttribute('colspan', String(colCount));
+      const anchor = doc.createElement('a');
+      anchor.setAttribute('href', band.to);
+      anchor.textContent = `${band.label} \u2192`;
+      cell.appendChild(anchor);
+      linkRow.appendChild(cell);
+      row.parentNode?.insertBefore(linkRow, row.nextSibling);
+    });
   });
   return doc.body.innerHTML;
 }
