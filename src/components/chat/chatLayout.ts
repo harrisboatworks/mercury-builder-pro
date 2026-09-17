@@ -25,8 +25,8 @@ export function getMobileLauncherBottom(pathname: string): string {
   if (isPhoneQuoteNavPath(pathname)) {
     return 'calc(10.5rem + env(safe-area-inset-bottom, 0px))';
   }
-  // Sit above the mobile cookie-consent banner (about 3.5rem tall) plus a 1rem gap.
-  return 'calc(4.5rem + env(safe-area-inset-bottom, 0px))';
+  // Sit above the mobile cookie-consent banner (about 3.5rem tall) plus a 1.5rem gap.
+  return 'calc(5rem + env(safe-area-inset-bottom, 0px))';
 }
 
 /** CSS bottom offset for the mobile drawer when the keyboard is closed. */
