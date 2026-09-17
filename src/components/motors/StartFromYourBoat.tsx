@@ -148,7 +148,7 @@ export function StartFromYourBoat({ catalogMinHp, catalogMaxHp, onSubmit }: Star
                 min={catalogMinHp}
                 max={catalogMaxHp}
                 step="0.5"
-                required
+                aria-required="true"
                 placeholder="60"
                 value={maxHp}
                 onChange={(event) => {
