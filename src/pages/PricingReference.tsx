@@ -197,6 +197,8 @@ export default function PricingReference() {
           
         />
 
+        <GoogleReviewsInline />
+
         {loading ? (
           <p>Loading current pricing…</p>
         ) : html ? (
