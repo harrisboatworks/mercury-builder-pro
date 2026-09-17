@@ -113,9 +113,10 @@ if (!existsSync(prerenderPath)) {
     const titleMatch = window.match(/title:\s*(?:'([^']*)'|"([^"]*)")/);
     const descMatch = window.match(/description:\s*(?:'([^']*)'|"([^"]*)")/);
     const h1Match = window.match(/h1:\s*(?:'([^']*)'|"([^"]*)")/);
-    check('static-prerender.mjs', 'title', titleMatch?.[1], EXPECTED.title);
-    check('static-prerender.mjs', 'description', descMatch?.[1], EXPECTED.description);
-    check('static-prerender.mjs', 'h1', h1Match?.[1], EXPECTED.h1);
+    const pick = (m) => m?.[1] ?? m?.[2];
+    check('static-prerender.mjs', 'title', pick(titleMatch), EXPECTED.title);
+    check('static-prerender.mjs', 'description', pick(descMatch), EXPECTED.description);
+    check('static-prerender.mjs', 'h1', pick(h1Match), EXPECTED.h1);
   }
 }
 
