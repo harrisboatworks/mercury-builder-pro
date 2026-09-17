@@ -15,6 +15,24 @@ describe('motor selection URL state', () => {
     });
   });
 
+  it('falls back to all motors when any explicit instruction is present', () => {
+    expect(readMotorSelectionUrlState(new URLSearchParams('q=pro+xs'))).toEqual({
+      searchQuery: 'pro xs',
+      hpRange: 'all',
+      configFilters: null,
+    });
+    expect(readMotorSelectionUrlState(new URLSearchParams('model=60-elpt'))).toEqual({
+      searchQuery: '',
+      hpRange: 'all',
+      configFilters: null,
+    });
+    expect(readMotorSelectionUrlState(new URLSearchParams('stock=1'))).toEqual({
+      searchQuery: '',
+      hpRange: 'all',
+      configFilters: { inStock: true },
+    });
+  });
+
   it('round-trips combined filters while preserving unrelated attribution params', () => {
     const state: MotorSelectionUrlState = {
       searchQuery: 'Pro XS',
