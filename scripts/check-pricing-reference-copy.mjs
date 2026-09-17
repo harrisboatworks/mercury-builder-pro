@@ -19,11 +19,24 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const ROOT = join(__dirname, '..');
 
+// Title and description are owned by src/data/seoPageMetadata.json so the
+// page, the prerenderer, and this guard cannot drift apart. The H1 is still
+// pinned here because it is not part of that metadata file.
+const seoMetadata = JSON.parse(
+  readFileSync(join(ROOT, 'src/data/seoPageMetadata.json'), 'utf8')
+);
+const pricingReferenceSeo = seoMetadata.pricingReference;
+if (!pricingReferenceSeo?.title || !pricingReferenceSeo?.description) {
+  console.error(
+    '\n[check-pricing-reference-copy] FAILED: seoPageMetadata.json is missing pricingReference.title or .description\n'
+  );
+  process.exit(1);
+}
+
 const EXPECTED = {
-  title: 'Mercury Outboard Prices Ontario (CAD) | Harris Boat Works',
-  h1: 'Mercury Outboard Prices in Ontario (CAD): Live HBW Dealer Pricing',
-  description:
-    "Live Mercury outboard prices in CAD, listed FourStroke and Pro XS models, 2.5-300 HP. MSRP vs dealer price, drop-off at our Gores Landing shop.",
+  title: pricingReferenceSeo.title,
+  h1: pricingReferenceSeo.h1 ?? 'Mercury Outboard Prices in Ontario (CAD): Live HBW Dealer Pricing',
+  description: pricingReferenceSeo.description,
 };
 
 
@@ -54,26 +67,34 @@ if (!existsSync(pagePath)) {
   errors.push(`Missing file: ${pagePath}`);
 } else {
   const src = readFileSync(pagePath, 'utf8');
-  // <title>...</title>
-  const titleMatch = src.match(/<title>([\s\S]*?)<\/title>/);
-  // first <meta name="description" content="..." />
-  const descMatch = src.match(/<meta\s+name="description"\s+content="([\s\S]*?)"/);
-  // <h1 ...>...</h1>
-  const h1Match = src.match(/<h1[^>]*>([\s\S]*?)<\/h1>/);
 
-  check('PricingReference.tsx', '<title>', titleMatch?.[1]?.trim(), EXPECTED.title);
-  check('PricingReference.tsx', 'meta description', descMatch?.[1]?.trim(), EXPECTED.description);
+  // The page binds its SEO fields to src/data/seoPageMetadata.json. A literal
+  // string here would be drift, so assert the binding instead of the text.
+  if (!/seoPageMetadata\.pricingReference/.test(src)) {
+    errors.push('PricingReference.tsx: does not read SEO copy from seoPageMetadata.pricingReference');
+  }
+  const bindings = [
+    ['<title>', /<title>\{PAGE_SEO\.title\}<\/title>/],
+    ['meta description', /<meta\s+name="description"\s+content=\{PAGE_SEO\.description\}/],
+    ['og:title', /property="og:title"\s+content=\{PAGE_SEO\.title\}/],
+    ['og:description', /property="og:description"\s+content=\{PAGE_SEO\.description\}/],
+    ['twitter:title', /name="twitter:title"\s+content=\{PAGE_SEO\.title\}/],
+    ['twitter:description', /name="twitter:description"\s+content=\{PAGE_SEO\.description\}/],
+  ];
+  for (const [label, re] of bindings) {
+    checked.push(`PricingReference.tsx ${label}`);
+    if (!re.test(src)) {
+      errors.push(`PricingReference.tsx ${label}: not bound to PAGE_SEO from seoPageMetadata.json`);
+    }
+  }
+
+  // The H1 is still literal in the page.
+  const h1Match = src.match(/<h1[^>]*>([\s\S]*?)<\/h1>/);
   check('PricingReference.tsx', '<h1>', h1Match?.[1]?.trim(), EXPECTED.h1);
 
-  // Also lint og:title, twitter:title, og:description, twitter:description
-  for (const prop of ['og:title', 'twitter:title']) {
-    const m = src.match(new RegExp(`(?:property|name)="${prop}"\\s+content="([\\s\\S]*?)"`));
-    check('PricingReference.tsx', `${prop}`, m?.[1]?.trim(), EXPECTED.title);
-  }
-  for (const prop of ['og:description', 'twitter:description']) {
-    const m = src.match(new RegExp(`(?:property|name)="${prop}"\\s+content="([\\s\\S]*?)"`));
-    check('PricingReference.tsx', `${prop}`, m?.[1]?.trim(), EXPECTED.description);
-  }
+  // The JSON values themselves must stay free of em/en dashes.
+  check('seoPageMetadata.json', 'pricingReference.title', EXPECTED.title, EXPECTED.title);
+  check('seoPageMetadata.json', 'pricingReference.description', EXPECTED.description, EXPECTED.description);
 }
 
 // --- 2) scripts/static-prerender.mjs route entry ---
@@ -89,12 +110,13 @@ if (!existsSync(prerenderPath)) {
   } else {
     // Grab a window large enough to include title/description/h1 fields
     const window = src.slice(idx, idx + 2000);
-    const titleMatch = window.match(/title:\s*'([^']*)'/);
-    const descMatch = window.match(/description:\s*'([^']*)'/);
-    const h1Match = window.match(/h1:\s*'([^']*)'/);
-    check('static-prerender.mjs', 'title', titleMatch?.[1], EXPECTED.title);
-    check('static-prerender.mjs', 'description', descMatch?.[1], EXPECTED.description);
-    check('static-prerender.mjs', 'h1', h1Match?.[1], EXPECTED.h1);
+    const titleMatch = window.match(/title:\s*(?:'([^']*)'|"([^"]*)")/);
+    const descMatch = window.match(/description:\s*(?:'([^']*)'|"([^"]*)")/);
+    const h1Match = window.match(/h1:\s*(?:'([^']*)'|"([^"]*)")/);
+    const pick = (m) => m?.[1] ?? m?.[2];
+    check('static-prerender.mjs', 'title', pick(titleMatch), EXPECTED.title);
+    check('static-prerender.mjs', 'description', pick(descMatch), EXPECTED.description);
+    check('static-prerender.mjs', 'h1', pick(h1Match), EXPECTED.h1);
   }
 }
 
