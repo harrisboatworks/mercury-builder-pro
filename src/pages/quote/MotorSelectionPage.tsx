@@ -748,6 +748,14 @@ if (event.type === 'filter_motors') {
       const { motorId } = e.detail;
       console.log('[MotorSelectionPage] voice:show-motor received, motorId:', motorId);
       
+      // Make sure the requested motor is not hidden behind the default 75-115 HP
+      // range if the voice agent asks for something outside it.
+      applyUrlFilterState({
+        searchQuery,
+        hpRange: 'all',
+        configFilters,
+      });
+      
       // We'll handle this after processedMotors and groupedMotors are defined
       // For now, just dispatch the event to state for later handling
       setVoiceShowMotorId(motorId);
@@ -759,7 +767,7 @@ if (event.type === 'filter_motors') {
       window.removeEventListener(VOICE_NAVIGATION_EVENT, handleVoiceNavigation as EventListener);
       window.removeEventListener('voice:show-motor', handleShowMotor as EventListener);
     };
-  }, [applyUrlFilterState, searchQuery, toast]);
+  }, [applyUrlFilterState, searchQuery, configFilters, toast]);
 
   // Note: Legacy auto-image-scraping removed. Motor images now come from Dropbox sync + motor_media table.
 
