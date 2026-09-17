@@ -25,11 +25,17 @@ export function getBoatTypeOption(value: string) {
   return BOAT_TYPE_OPTIONS.find((option) => option.value === value) ?? BOAT_TYPE_OPTIONS[0];
 }
 
-export function buildBoatFitSummary(fit: BoatFitSelection): string {
+export function buildBoatFitSummary(
+  fit: BoatFitSelection,
+  shownHpBounds?: { min: number; max: number } | null,
+): string {
   const lengthPart = fit.lengthFt ? `${fit.lengthFt} ft ` : '';
   const phrase = getBoatTypeOption(fit.boatType).phrase;
-  return `Showing ${fit.minHp} to ${fit.maxHp} HP Mercurys for your ${lengthPart}${phrase}. Never exceed your capacity plate.`;
+  const low = shownHpBounds ? shownHpBounds.min : fit.minHp;
+  const high = shownHpBounds ? shownHpBounds.max : fit.maxHp;
+  return `Showing ${low} to ${high} HP Mercurys for your ${lengthPart}${phrase}. Never exceed your capacity plate.`;
 }
+
 
 interface StartFromYourBoatProps {
   /** Lowest horsepower Harris sells, used for validation only. */
