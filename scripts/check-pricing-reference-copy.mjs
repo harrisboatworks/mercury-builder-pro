@@ -19,11 +19,24 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const ROOT = join(__dirname, '..');
 
+// Title and description are owned by src/data/seoPageMetadata.json so the
+// page, the prerenderer, and this guard cannot drift apart. The H1 is still
+// pinned here because it is not part of that metadata file.
+const seoMetadata = JSON.parse(
+  readFileSync(join(ROOT, 'src/data/seoPageMetadata.json'), 'utf8')
+);
+const pricingReferenceSeo = seoMetadata.pricingReference;
+if (!pricingReferenceSeo?.title || !pricingReferenceSeo?.description) {
+  console.error(
+    '\n[check-pricing-reference-copy] FAILED: seoPageMetadata.json is missing pricingReference.title or .description\n'
+  );
+  process.exit(1);
+}
+
 const EXPECTED = {
-  title: 'Mercury Outboard Prices Ontario (CAD) | Harris Boat Works',
-  h1: 'Mercury Outboard Prices in Ontario (CAD): Live HBW Dealer Pricing',
-  description:
-    "Live Mercury outboard prices in CAD, listed FourStroke and Pro XS models, 2.5-300 HP. MSRP vs dealer price, drop-off at our Gores Landing shop.",
+  title: pricingReferenceSeo.title,
+  h1: pricingReferenceSeo.h1 ?? 'Mercury Outboard Prices in Ontario (CAD): Live HBW Dealer Pricing',
+  description: pricingReferenceSeo.description,
 };
 
 
