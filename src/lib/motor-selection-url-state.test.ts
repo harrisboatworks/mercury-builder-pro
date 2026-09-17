@@ -7,10 +7,10 @@ import {
 } from './motor-selection-url-state';
 
 describe('motor selection URL state', () => {
-  it('uses default filters for an empty URL', () => {
+  it('uses the popular 75-115 HP range for a clean landing URL', () => {
     expect(readMotorSelectionUrlState(new URLSearchParams())).toEqual({
       searchQuery: '',
-      hpRange: 'all',
+      hpRange: 'core-repower',
       configFilters: null,
     });
   });
