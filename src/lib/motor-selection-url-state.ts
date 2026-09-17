@@ -103,7 +103,9 @@ export function writeMotorSelectionUrlState(
 
   const query = normalizedQuery(state.searchQuery);
   if (query) nextParams.set(FILTER_PARAMS.query, query);
-  if (state.hpRange !== 'all' && VALID_HP_RANGES.has(state.hpRange)) {
+  // The default 75-115 HP range is represented by a clean URL. Any other
+  // range, including an explicit "All HP" choice, is written out.
+  if (state.hpRange !== DEFAULT_HP_RANGE && VALID_HP_RANGES.has(state.hpRange)) {
     nextParams.set(FILTER_PARAMS.hpRange, state.hpRange);
   }
 
