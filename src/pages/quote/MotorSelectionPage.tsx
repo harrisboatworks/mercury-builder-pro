@@ -67,6 +67,12 @@ import { parseMercuryRigCodes } from '@/lib/mercury-codes';
 import { SITE_URL } from '@/lib/site';
 import { trackClarityMotorSelection, trackEvent } from '@/lib/analytics';
 import {
+  buildBoatFitSummary,
+  StartFromYourBoat,
+  type BoatFitSelection,
+} from '@/components/motors/StartFromYourBoat';
+
+import {
   getMotorHpRange,
   MOTOR_HP_RANGES,
   motorMatchesHpRange,
@@ -562,19 +568,24 @@ function MotorSelectionContent() {
     initialUrlState.configFilters,
   );
 
+  // "Start from your boat" fit window, cleared whenever any other filter changes.
+  const [boatFit, setBoatFit] = useState<BoatFitSelection | null>(null);
+
   const applyUrlFilterState = useCallback((
     nextState: MotorSelectionUrlState,
-    options: { replace?: boolean } = {},
+    options: { replace?: boolean; keepBoatFit?: boolean } = {},
   ) => {
     setSearchQueryState(nextState.searchQuery);
     setHpRangeState(nextState.hpRange);
     setConfigFiltersState(nextState.configFilters);
+    if (!options.keepBoatFit) setBoatFit(null);
 
     const nextParams = writeMotorSelectionUrlState(searchParams, nextState);
     if (nextParams.toString() !== searchParams.toString()) {
       setSearchParams(nextParams, { replace: options.replace ?? false });
     }
   }, [searchParams, setSearchParams]);
+
 
   useEffect(() => {
     const urlState = readMotorSelectionUrlState(searchParams);
@@ -1042,9 +1053,16 @@ if (event.type === 'filter_motors') {
     return fuzzyResults.map(r => r.item);
   }, [processedMotors, searchQuery]);
 
-  const hpRangeFilteredMotors = useMemo(() => (
-    filteredMotors.filter((motor) => motorMatchesHpRange(Number(motor.hp), hpRange))
-  ), [filteredMotors, hpRange]);
+  const hpRangeFilteredMotors = useMemo(() => {
+    const byRange = filteredMotors.filter((motor) => motorMatchesHpRange(Number(motor.hp), hpRange));
+    if (!boatFit) return byRange;
+    // Never show a motor above the capacity plate rating.
+    return byRange.filter((motor) => {
+      const hp = Number(motor.hp);
+      return hp <= boatFit.maxHp && hp >= boatFit.minHp;
+    });
+  }, [filteredMotors, hpRange, boatFit]);
+
 
   // Apply structured config filters AFTER search and visible HP-range choices
   const finalFilteredMotors = useMemo(() => {
