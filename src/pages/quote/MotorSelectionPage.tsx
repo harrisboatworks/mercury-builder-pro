@@ -1605,7 +1605,7 @@ if (event.type === 'filter_motors') {
               onChange={handleHpRangeChange}
             />
 
-            {(searchQuery || configFilters || hpRange !== 'all') && (
+            {(searchQuery || configFilters || boatFit || hpRange !== 'all') && (
               <div className="flex items-center gap-2 flex-wrap mt-3">
                 <span
                   className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-medium tabular-nums ${
