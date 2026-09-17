@@ -4,6 +4,7 @@ import { marked } from "marked";
 import { RepowerHeader } from "@/components/repower/RepowerHeader";
 import { SiteFooter } from "@/components/ui/site-footer";
 import { BlogInlineCTA } from "@/components/blog/BlogInlineCTA";
+import { GoogleReviewsInline } from "@/components/reviews/GoogleReviewsInline";
 import { ALL_SEGMENTS } from "@/data/landing/mercuryLineupLandings";
 import { CANONICAL_LAST_UPDATED } from "@/lib/canonical-pricing";
 import seoPageMetadata from "@/data/seoPageMetadata.json";
@@ -195,6 +196,8 @@ export default function PricingReference() {
           primaryHref="/quote/motor-selection"
           
         />
+
+        <GoogleReviewsInline />
 
         {loading ? (
           <p>Loading current pricing…</p>
