@@ -59,9 +59,22 @@ describe('motor selection URL state', () => {
     expect(canonical.toString()).toBe('utm_medium=cpc');
   });
 
-  it('omits default values so unfiltered URLs stay compact', () => {
+  it('omits the default 75-115 HP range so clean landing URLs stay compact', () => {
     const params = writeMotorSelectionUrlState(
       new URLSearchParams('q=old&hp=portable&stock=1&ref=agent'),
+      {
+        searchQuery: '',
+        hpRange: 'core-repower',
+        configFilters: null,
+      },
+    );
+
+    expect(params.toString()).toBe('ref=agent');
+  });
+
+  it('writes an explicit All HP choice so it survives a refresh', () => {
+    const params = writeMotorSelectionUrlState(
+      new URLSearchParams(),
       {
         searchQuery: '',
         hpRange: 'all',
@@ -69,6 +82,6 @@ describe('motor selection URL state', () => {
       },
     );
 
-    expect(params.toString()).toBe('ref=agent');
+    expect(params.toString()).toBe('hp=all');
   });
 });
