@@ -1374,6 +1374,54 @@ if (event.type === 'filter_motors') {
       range_label: range.label,
     });
   };
+
+  const catalogHpBounds = useMemo(() => {
+    const values = processedMotors.map((motor) => Number(motor.hp)).filter((hp) => Number.isFinite(hp) && hp > 0);
+    if (values.length === 0) return { min: 2.5, max: 600 };
+    return { min: Math.min(...values), max: Math.max(...values) };
+  }, [processedMotors]);
+
+  const handleBoatFitSubmit = (fit: BoatFitSelection) => {
+    // Reuse the shared filter state so the chips, match pill and All HP reset keep working.
+    applyUrlFilterState({
+      searchQuery: '',
+      hpRange: 'all',
+      configFilters: null,
+    }, { keepBoatFit: true });
+    setBoatFit(fit);
+
+    // Carry the boat details forward for the later boat-info step.
+    dispatch({
+      type: 'SET_BOAT_INFO',
+      payload: {
+        type: fit.boatTypeLabel,
+        make: state.boatInfo?.make ?? '',
+        model: state.boatInfo?.model ?? '',
+        length: fit.lengthFt != null ? String(fit.lengthFt) : (state.boatInfo?.length ?? ''),
+        currentMotorBrand: state.boatInfo?.currentMotorBrand ?? '',
+        currentHp: state.boatInfo?.currentHp ?? 0,
+        serialNumber: state.boatInfo?.serialNumber ?? '',
+        controlType: state.boatInfo?.controlType ?? '',
+        shaftLength: state.boatInfo?.shaftLength ?? '',
+      },
+    });
+
+    trackEvent('quote_boat_first_submit', {
+      max_hp: fit.maxHp,
+      boat_type: fit.boatType,
+    });
+
+    setTimeout(() => {
+      const gridSection = document.querySelector('.motor-grid-section');
+      if (gridSection) {
+        const headerOffset = 180;
+        const elementPosition = gridSection.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        window.scrollTo({ top: Math.max(0, offsetPosition), behavior: 'smooth' });
+      }
+    }, 100);
+  };
+
   
   // Handle recently viewed click - open motor details
   const handleRecentlyViewedClick = (motorId: string) => {
@@ -1596,11 +1644,18 @@ if (event.type === 'filter_motors') {
           </div>
         </div>
 
+        <StartFromYourBoat
+          catalogMinHp={catalogHpBounds.min}
+          catalogMaxHp={catalogHpBounds.max}
+          onSubmit={handleBoatFitSubmit}
+        />
+
         <HpRangeRail
           activeRange={hpRange}
           mobile
           onChange={handleHpRangeChange}
         />
+
         
         {/* Search Overlay for Desktop (opens from nav icon) */}
         <SearchOverlay
@@ -1641,6 +1696,12 @@ if (event.type === 'filter_motors') {
         <div className="bg-repower-paper py-10 md:py-14 motor-grid-section">
         
         <div className="max-w-[1400px] mx-auto px-6 md:px-14">
+          {boatFit && (
+            <p className="mb-4 text-center text-[14px] font-medium text-repower-navy-900/80" role="status">
+              {buildBoatFitSummary(boatFit)}
+            </p>
+          )}
+
           {/* Call-us note: shown once above the grid instead of on every card */}
           <div className="mb-6 text-center">
             <a
