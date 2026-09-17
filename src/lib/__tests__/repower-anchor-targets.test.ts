@@ -64,12 +64,10 @@ function normalize(text: string): string {
   return text
     .replace(/&nbsp;/g, ' ')
     .replace(/[→←↠»›]/g, ' ')
-    // Normalize common punctuation/spacing separators so "Mercury Repower | Ontario"
-    // and "Repower — Details" collapse the same way as plain phrases.
-    .replace(/[|–—:\/]+/g, ' ')
     .replace(/\s+/g, ' ')
     .trim()
-    // Strip leading and trailing sentence punctuation, symbols, and brackets.
+    // Strip leading/trailing sentence punctuation and symbols so "Mercury Repower."
+    // and "Repower," are treated identically to the bare phrase.
     .replace(/^[\s.:,!?;]+|[\s.:,!?;]+$/g, '')
     .toLowerCase();
 }
