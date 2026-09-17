@@ -21,7 +21,7 @@ const statNumberClass =
   'font-display font-bold text-[clamp(22px,3.6vw,42px)] text-[#F5F1EA] tabular-nums';
 const statNumberStyle = { letterSpacing: '-0.035em', lineHeight: 1 } as const;
 const statLabelClass =
-  'font-sans text-[10px] md:text-[11px] uppercase text-[#F5F1EA]/70 mt-1 sm:mt-2 leading-tight sm:max-w-[18ch]';
+  'font-sans text-[10px] md:text-[11px] uppercase text-[#F5F1EA]/70 max-md:text-[#F5F1EA]/95 mt-1 sm:mt-2 leading-tight sm:max-w-[18ch]';
 const statLabelStyle = { letterSpacing: '0.16em' } as const;
 
 const DEFAULT_EYEBROW = 'Mercury Repower · Rice Lake · Since 1947';
@@ -111,6 +111,15 @@ export function HeroRepower() {
             'linear-gradient(180deg, rgba(5,14,28,0.72) 0%, rgba(5,14,28,0.38) 55%, rgba(5,14,28,0) 100%)',
         }}
       />
+      {/* Mobile-only tint: sits behind the text container (z-10) so the subhead, stats and trust line read over bright photo frames. */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 md:hidden"
+        style={{
+          background:
+            'linear-gradient(180deg, rgba(5,14,28,.35) 0%, rgba(5,14,28,.62) 30%, rgba(5,14,28,.62) 70%, rgba(5,14,28,.45) 100%)',
+        }}
+      />
 
       <div className="relative z-10 mx-auto w-full max-w-[1400px] px-5 sm:px-6 md:px-14 py-24 sm:py-20 md:py-28">
         <motion.p
@@ -141,7 +150,7 @@ export function HeroRepower() {
 
         <motion.p
           {...fadeUp(0.4)}
-          className="font-sans font-light text-xl md:text-2xl text-[#F5F1EA]/85 max-w-2xl leading-relaxed mb-8"
+          className="font-sans font-light text-xl md:text-2xl text-[#F5F1EA]/85 max-md:text-white max-md:font-normal max-w-2xl leading-relaxed mb-8"
         >
           {variation.subheading}
         </motion.p>
@@ -189,7 +198,7 @@ export function HeroRepower() {
         <motion.div style={{ opacity: trustLineOpacity }}>
           <motion.p
             {...fadeUp(1.05)}
-            className="mt-4 font-sans text-[12px] md:text-[13px] text-[#F5F1EA]/65 max-w-2xl leading-relaxed"
+            className="mt-4 font-sans text-[12px] md:text-[13px] text-[#F5F1EA]/65 max-md:text-[#F5F1EA]/95 max-w-2xl leading-relaxed"
           >
             We'll tell you no if a repower isn't right. Mercury dealer since 1965, and we plan to keep it that way.
           </motion.p>
