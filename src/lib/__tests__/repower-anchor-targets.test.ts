@@ -34,7 +34,13 @@ const GENERIC_ANCHORS = new Set([
 
 const FORBIDDEN_TARGETS = ['/repower', '/promotions', '/quote/motor-selection', '/quote'];
 
-type Violation = { file: string; anchor: string; target: string };
+type Violation = {
+  file: string;
+  line: number;
+  column: number;
+  anchor: string;
+  target: string;
+};
 
 function walk(dir: string, out: string[] = []): string[] {
   for (const entry of readdirSync(dir)) {
