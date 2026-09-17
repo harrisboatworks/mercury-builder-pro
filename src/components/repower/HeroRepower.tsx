@@ -198,7 +198,7 @@ export function HeroRepower() {
         <motion.div style={{ opacity: trustLineOpacity }}>
           <motion.p
             {...fadeUp(1.05)}
-            className="mt-4 font-sans text-[12px] md:text-[13px] text-[#F5F1EA]/65 max-w-2xl leading-relaxed"
+            className="mt-4 font-sans text-[12px] md:text-[13px] text-[#F5F1EA]/95 md:text-[#F5F1EA]/65 max-w-2xl leading-relaxed"
           >
             We'll tell you no if a repower isn't right. Mercury dealer since 1965, and we plan to keep it that way.
           </motion.p>
