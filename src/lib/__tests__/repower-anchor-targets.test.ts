@@ -105,9 +105,17 @@ describe('generic "repower" anchor targets', () => {
   it('sends every generic repower anchor to the homepage', () => {
     const violations = collectViolations();
     const report = violations
-      .map((v) => `${v.file}: "${v.anchor}" -> ${v.target} (should be "/")`)
+      .map(
+        (v) =>
+          `${v.file}:${v.line}:${v.column}  "${v.anchor}" -> ${v.target}  (should be "/")`
+      )
       .join('\n');
-    expect(report, `Generic repower anchors must point at "/":\n${report}`).toBe('');
+    expect(
+      report,
+      violations.length
+        ? `${violations.length} generic repower anchor(s) must point at "/":\n${report}`
+        : ''
+    ).toBe('');
   });
 
   it('flags a generic anchor pointing at a competing page', () => {
