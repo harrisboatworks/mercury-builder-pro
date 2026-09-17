@@ -21,7 +21,7 @@ const statNumberClass =
   'font-display font-bold text-[clamp(22px,3.6vw,42px)] text-[#F5F1EA] tabular-nums';
 const statNumberStyle = { letterSpacing: '-0.035em', lineHeight: 1 } as const;
 const statLabelClass =
-  'font-sans text-[10px] md:text-[11px] uppercase text-[#F5F1EA]/70 mt-1 sm:mt-2 leading-tight sm:max-w-[18ch]';
+  'font-sans text-[10px] md:text-[11px] uppercase text-[#F5F1EA]/95 md:text-[#F5F1EA]/70 mt-1 sm:mt-2 leading-tight sm:max-w-[18ch]';
 const statLabelStyle = { letterSpacing: '0.16em' } as const;
 
 const DEFAULT_EYEBROW = 'Mercury Repower · Rice Lake · Since 1947';
