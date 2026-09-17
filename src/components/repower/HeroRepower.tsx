@@ -150,7 +150,7 @@ export function HeroRepower() {
 
         <motion.p
           {...fadeUp(0.4)}
-          className="font-sans font-normal md:font-light text-xl md:text-2xl text-white md:text-[#F5F1EA]/85 max-w-2xl leading-relaxed mb-8"
+          className="font-sans font-light text-xl md:text-2xl text-[#F5F1EA]/85 max-md:text-white max-md:font-normal max-w-2xl leading-relaxed mb-8"
         >
           {variation.subheading}
         </motion.p>
