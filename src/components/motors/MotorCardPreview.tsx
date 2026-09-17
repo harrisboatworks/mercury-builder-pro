@@ -537,19 +537,22 @@ function MotorCardPreviewInner({
                 <div
                   onClick={(e) => e.stopPropagation()}
                   onTouchStart={(e) => e.stopPropagation()}
-                  className="absolute bottom-3 left-3 flex flex-col items-center gap-1 [&_button]:!w-7 [&_button]:!h-7 opacity-0 -translate-x-1 pointer-events-none transition-[opacity,transform] duration-200 ease-[cubic-bezier(0.2,0.8,0.2,1)] group-hover:opacity-100 group-hover:translate-x-0 group-hover:pointer-events-auto group-focus-within:opacity-100 group-focus-within:translate-x-0 group-focus-within:pointer-events-auto [@media(hover:none)]:opacity-100 [@media(hover:none)]:translate-x-0 [@media(hover:none)]:pointer-events-auto"
+                  className="absolute bottom-3 left-3 flex flex-col items-center gap-1 opacity-0 -translate-x-1 pointer-events-none transition-[opacity,transform] duration-200 ease-[cubic-bezier(0.2,0.8,0.2,1)] group-hover:opacity-100 group-hover:translate-x-0 group-hover:pointer-events-auto group-focus-within:opacity-100 group-focus-within:translate-x-0 group-focus-within:pointer-events-auto [@media(hover:none)]:opacity-100 [@media(hover:none)]:translate-x-0 [@media(hover:none)]:pointer-events-auto [@media(hover:none)]:items-start [@media(hover:none)]:bottom-4 [@media(hover:none)]:left-4"
                 >
                   <CompareButton 
                     isInComparison={isInComparison(motor.id)}
                     isFull={comparisonFull}
                     onToggle={() => toggleComparison(motor as any)}
                     count={comparisonCount}
+                    showLabel={isMobile}
                   />
                   <div className="relative">
-                    <VoiceChatCoachMark 
-                      show={!hasSeenVoiceCoachMark}
-                      onDismiss={markVoiceCoachMarkSeen}
-                    />
+                    {!isMobile && (
+                      <VoiceChatCoachMark 
+                        show={!hasSeenVoiceCoachMark}
+                        onDismiss={markVoiceCoachMarkSeen}
+                      />
+                    )}
                     <VoiceChatButton 
                       motor={motor as any}
                       size="sm"
@@ -629,14 +632,6 @@ function MotorCardPreviewInner({
               <span>Build & Price</span>
               <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
             </button>
-
-            <a
-              href="tel:9053422153"
-              onClick={(e) => e.stopPropagation()}
-              className="block text-center text-xs text-repower-navy-900/55 hover:text-repower-navy-900 mt-3 underline-offset-2 hover:underline"
-            >
-              Have a complete written quote? Call (905) 342-2153 and we'll see what we can do.
-            </a>
 
             {/* Monthly payment estimate (kept, secondary) */}
             {monthlyPayment && (

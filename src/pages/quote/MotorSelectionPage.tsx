@@ -1623,6 +1623,16 @@ if (event.type === 'filter_motors') {
         <div className="bg-repower-paper py-10 md:py-14 motor-grid-section">
         
         <div className="max-w-[1400px] mx-auto px-6 md:px-14">
+          {/* Call-us note: shown once above the grid instead of on every card */}
+          <div className="mb-6 text-center">
+            <a
+              href="tel:9053422153"
+              className="inline-block text-sm text-repower-navy-900/70 hover:text-repower-navy-900 underline-offset-2 hover:underline"
+            >
+              Have a complete written quote from another dealer? Call (905) 342-2153 and we'll see what we can do.
+            </a>
+          </div>
+
           {/* Motors Grid */}
           {finalFilteredMotors.length > 0 ? (
             <div
