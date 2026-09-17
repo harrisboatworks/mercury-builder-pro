@@ -1,7 +1,8 @@
-import { COMPANY_INFO } from '@/lib/companyInfo';
+import { BUSINESS_GEO, COMPANY_INFO } from '@/lib/companyInfo';
 import {
   buildGoogleMapEmbedUrl,
   buildGoogleMapsFallbackHref,
+  buildOpenStreetMapEmbedUrl,
   getGoogleMapsEmbedKey,
 } from '@/lib/google-maps-embed';
 
