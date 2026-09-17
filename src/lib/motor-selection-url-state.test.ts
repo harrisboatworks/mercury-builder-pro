@@ -74,7 +74,9 @@ describe('motor selection URL state', () => {
     });
 
     const canonical = writeMotorSelectionUrlState(current, state);
-    expect(canonical.toString()).toBe('utm_medium=cpc');
+    // Invalid HP falls back to an explicit "all" so the URL reflects the
+    // actual state rather than silently re-applying the default range.
+    expect(canonical.toString()).toBe('utm_medium=cpc&hp=all');
   });
 
   it('omits the default 75-115 HP range so clean landing URLs stay compact', () => {
