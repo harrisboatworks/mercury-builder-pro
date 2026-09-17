@@ -67,26 +67,34 @@ if (!existsSync(pagePath)) {
   errors.push(`Missing file: ${pagePath}`);
 } else {
   const src = readFileSync(pagePath, 'utf8');
-  // <title>...</title>
-  const titleMatch = src.match(/<title>([\s\S]*?)<\/title>/);
-  // first <meta name="description" content="..." />
-  const descMatch = src.match(/<meta\s+name="description"\s+content="([\s\S]*?)"/);
-  // <h1 ...>...</h1>
-  const h1Match = src.match(/<h1[^>]*>([\s\S]*?)<\/h1>/);
 
-  check('PricingReference.tsx', '<title>', titleMatch?.[1]?.trim(), EXPECTED.title);
-  check('PricingReference.tsx', 'meta description', descMatch?.[1]?.trim(), EXPECTED.description);
+  // The page binds its SEO fields to src/data/seoPageMetadata.json. A literal
+  // string here would be drift, so assert the binding instead of the text.
+  if (!/seoPageMetadata\.pricingReference/.test(src)) {
+    errors.push('PricingReference.tsx: does not read SEO copy from seoPageMetadata.pricingReference');
+  }
+  const bindings = [
+    ['<title>', /<title>\{PAGE_SEO\.title\}<\/title>/],
+    ['meta description', /<meta\s+name="description"\s+content=\{PAGE_SEO\.description\}/],
+    ['og:title', /property="og:title"\s+content=\{PAGE_SEO\.title\}/],
+    ['og:description', /property="og:description"\s+content=\{PAGE_SEO\.description\}/],
+    ['twitter:title', /name="twitter:title"\s+content=\{PAGE_SEO\.title\}/],
+    ['twitter:description', /name="twitter:description"\s+content=\{PAGE_SEO\.description\}/],
+  ];
+  for (const [label, re] of bindings) {
+    checked.push(`PricingReference.tsx ${label}`);
+    if (!re.test(src)) {
+      errors.push(`PricingReference.tsx ${label}: not bound to PAGE_SEO from seoPageMetadata.json`);
+    }
+  }
+
+  // The H1 is still literal in the page.
+  const h1Match = src.match(/<h1[^>]*>([\s\S]*?)<\/h1>/);
   check('PricingReference.tsx', '<h1>', h1Match?.[1]?.trim(), EXPECTED.h1);
 
-  // Also lint og:title, twitter:title, og:description, twitter:description
-  for (const prop of ['og:title', 'twitter:title']) {
-    const m = src.match(new RegExp(`(?:property|name)="${prop}"\\s+content="([\\s\\S]*?)"`));
-    check('PricingReference.tsx', `${prop}`, m?.[1]?.trim(), EXPECTED.title);
-  }
-  for (const prop of ['og:description', 'twitter:description']) {
-    const m = src.match(new RegExp(`(?:property|name)="${prop}"\\s+content="([\\s\\S]*?)"`));
-    check('PricingReference.tsx', `${prop}`, m?.[1]?.trim(), EXPECTED.description);
-  }
+  // The JSON values themselves must stay free of em/en dashes.
+  check('seoPageMetadata.json', 'pricingReference.title', EXPECTED.title, EXPECTED.title);
+  check('seoPageMetadata.json', 'pricingReference.description', EXPECTED.description, EXPECTED.description);
 }
 
 // --- 2) scripts/static-prerender.mjs route entry ---
