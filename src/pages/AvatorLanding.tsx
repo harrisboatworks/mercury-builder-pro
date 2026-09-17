@@ -182,17 +182,17 @@ export default function AvatorLanding() {
           { key: 'model', label: 'Model' },
           { key: 'style', label: 'Style' },
           { key: 'use', label: 'Best for' },
-          { key: 'power', label: 'HP-equivalent' },
+          { key: 'power', label: 'Power rating' },
           { key: 'price', label: 'Price (CAD)' },
           { key: 'battery', label: 'Battery included?' },
           { key: 'quote', label: 'Quote' },
         ],
         rows: [
-          { model: 'Avator 7.5e', style: 'Portable tiller · integrated ~1 kWh battery', use: 'Canoes, tenders, dinghies, trolling' , power: '750 W at the propshaft', price: 'TODO-JAY', battery: 'Yes, integrated', quote: <Link to="/quote/motor-selection" data-cta="quote-start" data-cta-location="avator_price_table" className="text-repower-gold hover:underline">Build quote</Link> },
-          { model: 'Avator 20e', style: 'Portable tiller · external battery', use: 'Small tinnies, inflatables' , power: 'TODO-JAY', price: 'TODO-JAY', battery: 'TODO-JAY, external battery pack', quote: <Link to="/quote/motor-selection" data-cta="quote-start" data-cta-location="avator_price_table" className="text-repower-gold hover:underline">Build quote</Link> },
-          { model: 'Avator 35e', style: 'Portable tiller · external battery', use: 'Small fishing boats, light tenders' , power: 'TODO-JAY', price: 'TODO-JAY', battery: 'TODO-JAY, external battery pack', quote: <Link to="/quote/motor-selection" data-cta="quote-start" data-cta-location="avator_price_table" className="text-repower-gold hover:underline">Build quote</Link> },
-          { model: 'Avator 75e', style: 'Remote steer · multi-battery bank', use: 'Small pontoons, larger tenders' , power: 'TODO-JAY', price: 'TODO-JAY', battery: 'TODO-JAY, external battery pack', quote: <Link to="/quote/motor-selection" data-cta="quote-start" data-cta-location="avator_price_table" className="text-repower-gold hover:underline">Build quote</Link> },
-          { model: 'Avator 110e', style: 'Remote steer · multi-battery bank', use: 'Pontoons and small day boats' , power: 'TODO-JAY', price: 'TODO-JAY', battery: 'TODO-JAY, external battery pack', quote: <Link to="/quote/motor-selection" data-cta="quote-start" data-cta-location="avator_price_table" className="text-repower-gold hover:underline">Build quote</Link> },
+          { model: 'Avator 7.5e', style: 'Portable tiller · integrated ~1 kWh battery', use: 'Canoes, tenders, dinghies, trolling' , power: '750 W at the propshaft', price: 'Pricing coming soon', battery: 'Yes, integrated', quote: <Link to="/quote/motor-selection" data-cta="quote-start" data-cta-location="avator_price_table" className="text-repower-gold hover:underline">Build quote</Link> },
+          { model: 'Avator 20e', style: 'Portable tiller · external battery', use: 'Small tinnies, inflatables' , power: 'Confirmed on quote', price: 'Pricing coming soon', battery: 'No, external battery pack', quote: <Link to="/quote/motor-selection" data-cta="quote-start" data-cta-location="avator_price_table" className="text-repower-gold hover:underline">Build quote</Link> },
+          { model: 'Avator 35e', style: 'Portable tiller · external battery', use: 'Small fishing boats, light tenders' , power: 'Confirmed on quote', price: 'Pricing coming soon', battery: 'No, external battery pack', quote: <Link to="/quote/motor-selection" data-cta="quote-start" data-cta-location="avator_price_table" className="text-repower-gold hover:underline">Build quote</Link> },
+          { model: 'Avator 75e', style: 'Remote steer · multi-battery bank', use: 'Small pontoons, larger tenders' , power: 'Confirmed on quote', price: 'Pricing coming soon', battery: 'No, external battery bank', quote: <Link to="/quote/motor-selection" data-cta="quote-start" data-cta-location="avator_price_table" className="text-repower-gold hover:underline">Build quote</Link> },
+          { model: 'Avator 110e', style: 'Remote steer · multi-battery bank', use: 'Pontoons and small day boats' , power: 'Confirmed on quote', price: 'Pricing coming soon', battery: 'No, external battery bank', quote: <Link to="/quote/motor-selection" data-cta="quote-start" data-cta-location="avator_price_table" className="text-repower-gold hover:underline">Build quote</Link> },
         ],
         footnote: (
           <>Avator is rated in kilowatts of output power and thrust, not gas horsepower. Built to order through Mercury Canada.</>

@@ -367,7 +367,7 @@ Harris Boat Works 目前是 Mercury Marine Premier 认证经销商。`,
     image: '/lovable-uploads/hero-mercury-115-vs-150-comparison-zh.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-09-06',
+    dateModified: '2026-09-17',
     publishDate: '2026-04-12',
     category: '产品对比',
     readTime: '8 分钟',
@@ -412,7 +412,7 @@ Mercury FourStroke 115和150都属于同一个可靠的四冲程系列，油耗�
 | 排量 | 2.1升 | 3.0升 |
 | 汽缸数 | 4缸 | 4缸 |
 | 重量 | 163 公斤（359 磅）；Command Thrust 165 公斤（363 磅） | 约204公斤 |
-| 适配船长参考 | 16–19英尺 | 18–22英尺 |
+| 适配船长参考（仅供参考，最终以 Capacity Plate 标示为准） | 16–19英尺 | 18–22英尺 |
 
 115 FourStroke：官方公布的最轻配置干重为 163 公斤（359 磅）；Command Thrust 版本为 165 公斤（363 磅）。具体重量会随轴长和配置变化，干重不等于安装后的总重量。
 
@@ -446,7 +446,7 @@ Mercury FourStroke系列两款发动机在巡航速度下都安静。150马力�
 
 以下情况115马力是合理选择：
 
-- 船长在17英尺以下
+- 船体 Capacity Plate 允许的最大马力接近115，且船长多在17英尺以下
 - 主要钓鱼，通常只有1, 2人
 - 不拖曳滑水板或水上充气玩具
 - 船的最大马力标牌（Capacity Plate）在115, 150之间，且你不需要接近上限
@@ -462,7 +462,7 @@ Mercury FourStroke系列两款发动机在巡航速度下都安静。150马力�
 
 以下情况值得认真考虑150马力：
 
-- 船长在18英尺以上
+- 船体 Capacity Plate 允许150马力，且船长多在18英尺以上
 - 常载3人以上家庭出行
 - 有拖曳需求（滑水板、充气圈、香蕉船）
 - 在较大的湖面使用（Lake Simcoe、Georgian Bay等风浪较大的水域）
@@ -542,7 +542,7 @@ Harris Boat Works，Mercury Marine Premier Dealer，自1947年起。
       { question: '115马力够用吗？', answer: '对于18英尺以下的船、主要1-2人使用的情况，115马力完全够用。关键是匹配船的大小和您的使用方式。' },
       { question: '可以把115换成150吗？', answer: '通常可以，但需要确认船的最大马力标牌（max HP plate）允许150。安装可能需要调整操控线缆和安装支架。Harris Boat Works可以评估您的具体情况。' },
       { question: '二手115和新的115价格差多少？', answer: '取决于年份和状况。一般来说，5年左右的二手发动机价格约为新机的50-65%。但新机有完整保修，这是重要的考量因素。' },
-      { question: '保修期多长？', answer: 'Mercury FourStroke标准保修3年。通过Premier 经销商（如Harris Boat Works）购买，可享受额外保修优惠。' },
+      { question: '保修期多长？', answer: '加拿大合资格全新 Mercury 舷外机的标准休闲用途保障为3年有限保修，另有3年防腐蚀保修，两个保修期同时计算，不是叠加成六年。额外的促销保固只有在书面促销条款明确包含时才适用。' },
     ],
   },
   {
