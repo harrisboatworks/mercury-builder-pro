@@ -1698,7 +1698,16 @@ if (event.type === 'filter_motors') {
         <div className="max-w-[1400px] mx-auto px-6 md:px-14">
           {boatFit && (
             <p className="mb-4 text-center text-[14px] font-medium text-repower-navy-900/80" role="status">
-              {buildBoatFitSummary(boatFit)}
+              {buildBoatFitSummary(
+                boatFit,
+                finalFilteredMotors.length > 0
+                  ? {
+                      min: Math.min(...finalFilteredMotors.map((motor) => Number(motor.hp))),
+                      max: Math.max(...finalFilteredMotors.map((motor) => Number(motor.hp))),
+                    }
+                  : null,
+              )}
+
             </p>
           )}
 
