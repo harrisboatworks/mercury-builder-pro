@@ -141,9 +141,9 @@ describe('generic "repower" anchor targets', () => {
       ['Mercury Repower.', '/repower'],
       ['Repower,', '/promotions'],
       ['Mercury Repower!', '/repower'],
-      ['Mercury Repower | Ontario', '/repower'],
-      ['Repower — Details', '/promotions'],
-      ['Mercury Repower: Ontario', '/repower'],
+      ['Mercury Repower;', '/promotions'],
+      ['Repower?', '/repower'],
+      ['Mercury Repower:', '/promotions'],
     ];
 
     for (const [anchor, target] of variants) {
