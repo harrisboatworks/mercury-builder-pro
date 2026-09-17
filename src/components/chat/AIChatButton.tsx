@@ -44,7 +44,7 @@ export const AIChatButton: React.FC<AIChatButtonProps> = ({ onOpenChat, isOpen }
 
   if (isOpen) return null;
 
-  const positionClass = isSmallScreen ? 'left-4' : 'right-4';
+  const positionClass = 'right-4';
   const bottom = isSmallScreen
     ? getMobileLauncherBottom(location.pathname)
     : '1rem';
