@@ -110,9 +110,9 @@ if (!existsSync(prerenderPath)) {
   } else {
     // Grab a window large enough to include title/description/h1 fields
     const window = src.slice(idx, idx + 2000);
-    const titleMatch = window.match(/title:\s*'([^']*)'/);
-    const descMatch = window.match(/description:\s*'([^']*)'/);
-    const h1Match = window.match(/h1:\s*'([^']*)'/);
+    const titleMatch = window.match(/title:\s*(?:'([^']*)'|"([^"]*)")/);
+    const descMatch = window.match(/description:\s*(?:'([^']*)'|"([^"]*)")/);
+    const h1Match = window.match(/h1:\s*(?:'([^']*)'|"([^"]*)")/);
     check('static-prerender.mjs', 'title', titleMatch?.[1], EXPECTED.title);
     check('static-prerender.mjs', 'description', descMatch?.[1], EXPECTED.description);
     check('static-prerender.mjs', 'h1', h1Match?.[1], EXPECTED.h1);
