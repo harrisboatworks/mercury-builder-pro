@@ -111,6 +111,15 @@ export function HeroRepower() {
             'linear-gradient(180deg, rgba(5,14,28,0.72) 0%, rgba(5,14,28,0.38) 55%, rgba(5,14,28,0) 100%)',
         }}
       />
+      {/* Mobile-only tint: sits behind the text container (z-10) so the subhead, stats and trust line read over bright photo frames. */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 md:hidden"
+        style={{
+          background:
+            'linear-gradient(180deg, rgba(5,14,28,.35) 0%, rgba(5,14,28,.62) 30%, rgba(5,14,28,.62) 70%, rgba(5,14,28,.45) 100%)',
+        }}
+      />
 
       <div className="relative z-10 mx-auto w-full max-w-[1400px] px-5 sm:px-6 md:px-14 py-24 sm:py-20 md:py-28">
         <motion.p
