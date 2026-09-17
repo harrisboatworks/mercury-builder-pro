@@ -38,7 +38,14 @@ describe('/pricing-reference rendered SEO', () => {
     }
 
     const { chromium } = await import('playwright');
-    const browser = await chromium.launch({ headless: true });
+    let browser;
+    try {
+      browser = await chromium.launch({ headless: true });
+    } catch (err) {
+      // No Chromium binary in this environment (`npx playwright install`).
+      console.warn(`[pricing-reference-live-seo] skipped: ${String(err)}`);
+      return;
+    }
     try {
       const page = await browser.newPage();
       await page.goto(`${BASE_URL}/pricing-reference`, {
