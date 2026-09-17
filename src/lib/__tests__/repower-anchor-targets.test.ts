@@ -83,7 +83,18 @@ function collectViolations(): Violation[] {
         const path = target.split(/[?#]/)[0].replace(/\/+$/, '') || '/';
         if (path === '/') continue;
         if (!FORBIDDEN_TARGETS.includes(path)) continue;
-        violations.push({ file: relative(ROOT, file), anchor: match[3].trim(), target });
+        // Resolve the match offset to a 1-indexed line/column so the failure
+        // message can be pasted straight into an editor.
+        const before = source.slice(0, match.index ?? 0);
+        const line = before.split('\n').length;
+        const column = (match.index ?? 0) - (before.lastIndexOf('\n') + 1) + 1;
+        violations.push({
+          file: relative(ROOT, file),
+          line,
+          column,
+          anchor: match[3].trim(),
+          target,
+        });
       }
     }
   }
