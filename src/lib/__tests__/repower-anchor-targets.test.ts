@@ -131,4 +131,50 @@ describe('generic "repower" anchor targets', () => {
     expect(GENERIC_ANCHORS.has(normalize(match![3]))).toBe(true);
     expect(FORBIDDEN_TARGETS).toContain(match![2].match(TARGET_RE)![1]);
   });
+
+  it('flags case and punctuation variants of Mercury Repower / Repower', () => {
+    // These variants must all be recognized as generic and therefore forbidden
+    // when they point at /repower or /promotions.
+    const variants = [
+      ['Mercury Repower', '/repower'],
+      ['mercury repower', '/promotions'],
+      ['Repower', '/repower'],
+      ['repower', '/promotions'],
+      ['Mercury Repower.', '/repower'],
+      ['Repower,', '/promotions'],
+      ['Mercury Repower!', '/repower'],
+      ['Mercury Repower | Ontario', '/repower'],
+      ['Repower — Details', '/promotions'],
+      ['Mercury Repower: Ontario', '/repower'],
+    ];
+
+    for (const [anchor, target] of variants) {
+      const sample = `<a href="${target}">${anchor}</a>`;
+      const match = [...sample.matchAll(LINK_RE)][0];
+      expect(match, `regex should match anchor "${anchor}"`).toBeDefined();
+      const normalized = normalize(match![3]);
+      expect(
+        GENERIC_ANCHORS.has(normalized),
+        `"${anchor}" normalized to "${normalized}" should be a generic anchor`
+      ).toBe(true);
+      expect(FORBIDDEN_TARGETS).toContain(target);
+    }
+  });
+
+  it('does not flag qualified anchors that mention repower', () => {
+    // Qualified anchors are allowed to keep pointing at /repower.
+    const qualified = [
+      'how a repower works',
+      'Repower service overview',
+      'Mercury repower process',
+      'repowering your boat',
+    ];
+
+    for (const anchor of qualified) {
+      const sample = `<Link to="/repower">${anchor}</Link>`;
+      const match = [...sample.matchAll(LINK_RE)][0];
+      expect(match).toBeDefined();
+      expect(GENERIC_ANCHORS.has(normalize(match![3]))).toBe(false);
+    }
+  });
 });
