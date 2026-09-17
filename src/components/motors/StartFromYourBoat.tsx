@@ -86,6 +86,8 @@ export function StartFromYourBoat({ catalogMinHp, catalogMaxHp, onSubmit }: Star
       <div className="mx-auto max-w-[1400px]">
         <form
           onSubmit={handleSubmit}
+          noValidate
+
           aria-labelledby={`${fieldId}-heading`}
           className="rounded-md border border-[#050E1C]/15 bg-white p-4 shadow-[0_2px_10px_-6px_rgba(5,14,28,0.35)] md:max-w-[640px] md:p-5"
         >
