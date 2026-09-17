@@ -40,7 +40,7 @@ const FAQS = [
   {
     question: 'How do I lock in a Mercury quote price?',
     answer:
-      'Reserve your motor with the deposit amount and terms shown on its summary page. The model-specific Mercury 9.9 MH offer for model 1A10201LK uses a $100 CAD deposit. It is fully refundable until Harris Boat Works confirms the exact motor, price, availability and ETA, and you approve the order in writing. After written approval, it becomes non-refundable and is credited to your final invoice. The balance is paid at pickup in Gores Landing.',
+      'Reserve your motor with the deposit amount shown on its summary page. The model-specific Mercury 9.9 MH offer for model 1A10201LK uses a $100 CAD deposit. Refundability follows stock status, not the deposit amount. If the motor is in stock, the deposit is refundable. If the motor is out of stock or a special order, the deposit stays refundable until Harris Boat Works confirms the exact motor, price, availability and ETA, and you approve the order in writing. Once Harris Boat Works places the order after that written approval, the deposit becomes non-refundable and is credited to the final invoice. The balance is paid at pickup in Gores Landing.',
   },
   {
     question: 'Can I get a Mercury outboard quote online in Ontario?',
