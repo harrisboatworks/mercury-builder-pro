@@ -164,6 +164,16 @@ const AdminQuotes = () => {
     };
   };
 
+  const normalizeCustomerQuote = (r: any): UnifiedQuoteRow => ({
+    ...r,
+    _source: 'customer_quotes' as const,
+    _source_label: 'Lead',
+    _motor_info: r.quote_data?.motor?.model ? `${r.quote_data.motor.hp || ''}HP ${r.quote_data.motor.model}` : '',
+    _deposit_status: null,
+    _is_soft_lead: false,
+    _reference_number: r.quote_data?.reference_number || r.quote_data?.quoteNumber || null,
+  });
+
   const load = async (penalizedOnly: boolean = showPenalizedOnly, statusFilter: string = leadStatusFilter, sourceFilter: string = leadSourceFilter) => {
     setLoading(true);
 
