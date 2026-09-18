@@ -461,9 +461,14 @@ const AdminQuotes = () => {
           <div className="relative flex-1 min-w-[200px] max-w-sm">
             <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
             <Input
-              placeholder="Search name, email, motor, ref # (e.g. HBW-00827)..."
+              placeholder="Search name, email, motor, or quote # (HBW-48213 or just 48213)"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' && exactRefMatch) {
+                  navigate(`/admin/quotes/${exactRefMatch.id}`);
+                }
+              }}
               className="pl-9 h-9"
             />
           </div>
