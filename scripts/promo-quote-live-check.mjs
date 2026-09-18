@@ -81,7 +81,7 @@ function assertNoExpiredChaseSavings(text, location) {
 }
 
 async function checkActivePromotion(page) {
-  await page.goto(`${baseUrl}/quote/motor-selection?promo_canary=1`, {
+  await page.goto(`${baseUrl}/quote/motor-selection?promo_canary=1&hp=all`, {
     waitUntil: 'domcontentloaded',
   });
   await acceptCookies(page);
@@ -193,7 +193,7 @@ async function checkExpiredPromotion(page) {
     throw new Error('Expired Chase the Savings social image remained in /promotions metadata');
   }
 
-  await page.goto(`${baseUrl}/quote/motor-selection?promo_canary=1`, {
+  await page.goto(`${baseUrl}/quote/motor-selection?promo_canary=1&hp=all`, {
     waitUntil: 'domcontentloaded',
   });
   await page.getByRole('heading', { name: /^25 ELPT FourStroke$/i }).first().waitFor();
