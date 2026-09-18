@@ -190,7 +190,7 @@ export function SaveQuoteDialog({
             customerName: name,
             customerEmail: email,
             customerPhone: phone,
-            quoteNumber: leadRecord.id?.slice(0, 8)?.toUpperCase() || 'NEW',
+            quoteNumber: quoteData.reference_number || leadRecord.id?.slice(0, 8)?.toUpperCase() || 'NEW',
             motorModel: motorModel || 'Mercury Motor',
             totalPrice: finalPrice || 0,
             emailType: 'admin_quote_notification',

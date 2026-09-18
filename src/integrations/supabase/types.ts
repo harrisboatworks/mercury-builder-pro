@@ -6682,6 +6682,10 @@ export type Database = {
         Args: { hp: number; motor_type?: string; specifications?: Json }
         Returns: Json
       }
+      get_soft_lead_reference: {
+        Args: { p_session_id: string }
+        Returns: string
+      }
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]
