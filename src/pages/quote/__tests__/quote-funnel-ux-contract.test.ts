@@ -209,6 +209,22 @@ describe('quote funnel UX contract', () => {
     expect(installationSource).not.toContain('playCelebration');
   });
 
+  it('puts call and text before review and deposit on the quote summary', () => {
+    const summarySource = read('src/pages/quote/QuoteSummaryPage.tsx');
+    const stickySource = read('src/components/quote-builder/StickySummary.tsx');
+
+    for (const source of [summarySource, stickySource]) {
+      expect(source.indexOf('Call (905) 342-2153')).toBeLessThan(source.indexOf('Text This Quote to HBW'));
+      expect(source.indexOf('Text This Quote to HBW')).toBeLessThan(source.indexOf('Have HBW Review My Quote'));
+      expect(source.indexOf('Have HBW Review My Quote')).toBeLessThan(source.indexOf('Ready to lock it in?'));
+      expect(source.indexOf('Ready to lock it in?')).toBeLessThan(source.indexOf('Reserve this motor,'));
+    }
+    expect(summarySource).toContain("eventName: 'phone_click' | 'sms_click'");
+    expect(summarySource).toContain("location: 'quote_summary'");
+    expect(summarySource).toContain("from('quote_activity_events').insert");
+    expect(summarySource).not.toContain('Reserve this motor —');
+  });
+
   it('keeps quote content inset through tablet and small-laptop widths', () => {
     const shellSource = read('src/components/quote-builder/redesign/QuotePageShell.tsx');
     const summarySource = read('src/pages/quote/QuoteSummaryPage.tsx');
