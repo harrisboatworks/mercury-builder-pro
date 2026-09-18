@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-motor-size-calculator-guide.md
-last_updated: 2026-09-11
+last_updated: 2026-09-18
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Boat Motor HP Size Guide Ontario"
 description: "Use our boat motor sizing guide. Inventory hull, engine, fuel, equipment, people, and gear, stay within manufacturer limits, and compare examples."
 category: "Buying Guide"
 date_published: 2026-05-11
-date_modified: 2026-09-11
+date_modified: 2026-09-18
 keywords: ["boat motor size","outboard motor calculator","hp for boat weight","motor sizing guide","boat horsepower"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-05-11  
-**Last reviewed:** 2026-09-11  
+**Last reviewed:** 2026-09-18  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-motor-size-calculator-guide
 
@@ -195,7 +195,7 @@ Maximum HP often provides more power than needed for typical use. Mid-range HP u
 
 ### Does motor weight affect boat performance?
 
-Yes, significantly. Modern Mercury motors are lighter than older designs, so you may be able to run higher HP than before. We factor motor weight into recommendations.
+Yes, significantly, but do not assume a newer motor is lighter. Installed weight varies by exact model and configuration, and a modern four-stroke can outweigh the older two-stroke it replaces. Check the exact proposed motor weight against the hull's documented power and motor-weight limits independently, rather than inferring one from the other. We factor motor weight into recommendations.
 
 ### How does altitude affect motor sizing?
 
