@@ -661,7 +661,11 @@ const AdminQuotes = () => {
                 <TableRow><TableCell colSpan={11}>Loading...</TableCell></TableRow>
               ) : rows.length === 0 ? (
                 <TableRow>
-                  <TableCell colSpan={11}>{searchQuery ? 'No results matching search.' : 'No quotes found.'}</TableCell>
+                  <TableCell colSpan={11}>
+                    {remoteRefLoading
+                      ? 'Searching all quotes by number...'
+                      : searchQuery ? 'No results matching search.' : 'No quotes found.'}
+                  </TableCell>
                 </TableRow>
               ) : (
                 pagedRows.map((r) => {
