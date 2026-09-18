@@ -673,7 +673,14 @@ const AdminQuotes = () => {
                       className="cursor-pointer"
                       onClick={() => navigate(`/admin/quotes/${r.id}`)}
                     >
-                      <TableCell className="text-xs font-mono font-medium text-primary">{r._reference_number || '-'}</TableCell>
+                      <TableCell className="text-xs font-mono font-medium text-primary">
+                        <div className="flex items-center gap-1.5">
+                          {r._reference_number || '-'}
+                          {exactRefMatch && r._source === exactRefMatch._source && r.id === exactRefMatch.id && (
+                            <Badge variant="default" className="text-[10px] px-1 py-0">Exact match</Badge>
+                          )}
+                        </div>
+                      </TableCell>
                       <TableCell className="text-xs whitespace-nowrap">{r.created_at ? new Date(r.created_at).toLocaleString() : '-'}</TableCell>
                       <TableCell>{getSourceBadge(r)}</TableCell>
                       <TableCell>
