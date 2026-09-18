@@ -297,6 +297,14 @@ describe('chat launcher layout', () => {
     expect(getMobileDrawerBottom()).toBe('0px');
   });
 
+  it('docks the phone launcher on the left only on the quote summary route', () => {
+    expect(getMobileLauncherHorizontal('/quote/summary')).toBe('left');
+    expect(getMobileLauncherHorizontal('/quote/motor-selection')).toBe('right');
+    expect(getMobileLauncherHorizontal('/pricing-reference')).toBe('right');
+    expect(getMobileLauncherHorizontal('/')).toBe('right');
+    expect(getMobileLauncherHorizontal('/quote')).toBe('right');
+  });
+
   it('keeps bare and nested quote routes in one persistence category', () => {
     expect(getChatPageCategory('/quote')).toBe('quote');
     expect(getChatPageCategory('/quote/motor-selection')).toBe('quote');
