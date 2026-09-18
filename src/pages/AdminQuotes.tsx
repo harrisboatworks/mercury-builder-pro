@@ -345,7 +345,15 @@ const AdminQuotes = () => {
     }
 
     return merged;
-  }, [customerQuoteRows, savedQuoteRows, quoteSourceFilter, searchQuery, hpFilter, modelFilter, dateRangeFilter]);
+  }, [customerQuoteRows, savedQuoteRows, remoteRefRows, quoteSourceFilter, searchQuery, hpFilter, modelFilter, dateRangeFilter]);
+
+  // The single exact quote-number match, if any (used for Enter-to-open and the "Exact match" marker).
+  const exactRefMatch = useMemo(() => {
+    const ref = quoteRefFromSearch(searchQuery);
+    if (!ref) return null;
+    const exact = rows.filter(r => (r._reference_number || '').toLowerCase() === ref.toLowerCase());
+    return exact.length === 1 ? exact[0] : null;
+  }, [rows, searchQuery]);
 
   // Reset page on filter change
   useEffect(() => { setCurrentPage(1); }, [searchQuery, hpFilter, modelFilter, dateRangeFilter, quoteSourceFilter]);
