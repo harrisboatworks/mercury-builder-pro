@@ -23,7 +23,7 @@ describe('quote funnel UX contract', () => {
   it('gives mobile customers the same reservation path as desktop', () => {
     const summarySource = read('src/pages/quote/QuoteSummaryPage.tsx');
 
-    expect(summarySource).toContain('Reserve this motor —');
+    expect(summarySource).toContain('Reserve this motor,');
     expect(summarySource).toContain('onClick={handleReserveDeposit}');
     expect(summarySource).toContain('onReview={handleStepComplete}');
     expect(summarySource).toContain('Have HBW Review My Quote');
