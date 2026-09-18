@@ -74,6 +74,8 @@ const AdminQuotes = () => {
   const [modelFilter, setModelFilter] = useState('');
   const [dateRangeFilter, setDateRangeFilter] = useState<string>('all');
   const [currentPage, setCurrentPage] = useState(1);
+  const [remoteRefRows, setRemoteRefRows] = useState<UnifiedQuoteRow[]>([]);
+  const [remoteRefLoading, setRemoteRefLoading] = useState(false);
   const PAGE_SIZE = 50;
 
   // Parse HP from "40HP 40 ELPT Command Thrust FourStroke"
