@@ -1117,22 +1117,6 @@ export default function QuoteSummaryPage() {
                   <p className="text-sm font-medium text-foreground">
                     {isMotorOnlyExpress ? 'Your motor-only reservation' : 'Your configured quote'}
                   </p>
-                  {isMotorOnlyExpress && (
-                    <div className="rounded-[12px] border border-repower-mercury-red/20 bg-white p-5 shadow-sm">
-                      <p className="font-display text-xl font-bold text-repower-navy-900">
-                        Motor only. No installation or added options.
-                      </p>
-                      <p className="mt-2 text-sm leading-relaxed text-repower-navy-900/65">
-                        Review the pickup total below, then reserve this exact motor with a ${depositAmount.toLocaleString()} deposit. HBW confirms availability and ETA before anything is ordered.
-                      </p>
-                      <p className="mt-2 text-xs leading-relaxed text-repower-navy-900/55">
-                        The ${depositAmount.toLocaleString()} deposit is fully refundable until HBW confirms the exact motor, price, availability and ETA, and you approve the order in writing. After written approval, it becomes non-refundable and is credited to your final invoice.
-                      </p>
-                      <p className="mt-2 text-xs leading-relaxed text-repower-navy-900/55">
-                        Any additional factory rebate is confirmed separately after HBW checks eligibility and delivery timing.
-                      </p>
-                    </div>
-                  )}
                 </div>
 
                 {(!referenceNumberResolved || canonicalReferenceNumber) && (
@@ -1159,6 +1143,25 @@ export default function QuoteSummaryPage() {
                     )}
                   </div>
                 )}
+
+                <div className="space-y-3">
+                  {isMotorOnlyExpress && (
+                    <div className="rounded-[12px] border border-repower-mercury-red/20 bg-white p-5 shadow-sm">
+                      <p className="font-display text-xl font-bold text-repower-navy-900">
+                        Motor only. No installation or added options.
+                      </p>
+                      <p className="mt-2 text-sm leading-relaxed text-repower-navy-900/65">
+                        Review the pickup total below, then reserve this exact motor with a ${depositAmount.toLocaleString()} deposit. HBW confirms availability and ETA before anything is ordered.
+                      </p>
+                      <p className="mt-2 text-xs leading-relaxed text-repower-navy-900/55">
+                        The ${depositAmount.toLocaleString()} deposit is fully refundable until HBW confirms the exact motor, price, availability and ETA, and you approve the order in writing. After written approval, it becomes non-refundable and is credited to your final invoice.
+                      </p>
+                      <p className="mt-2 text-xs leading-relaxed text-repower-navy-900/55">
+                        Any additional factory rebate is confirmed separately after HBW checks eligibility and delivery timing.
+                      </p>
+                    </div>
+                  )}
+                </div>
 
                 {/* Detailed Pricing Breakdown */}
                 <motion.div
