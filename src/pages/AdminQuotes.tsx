@@ -303,12 +303,21 @@ const AdminQuotes = () => {
     });
 
     // Text search (with HBW- ref prioritization)
+    const activeRef = quoteRefFromSearch(searchQuery);
     if (searchQuery.trim()) {
       const q = searchQuery.toLowerCase().trim();
-      const isRef = /^hbw-?\d+/i.test(q);
-      if (isRef) {
-        const normalized = q.replace(/^hbw-?/i, 'hbw-');
+      if (activeRef) {
+        const normalized = activeRef.toLowerCase();
         merged = merged.filter(r => (r._reference_number || '').toLowerCase().includes(normalized));
+        // Merge direct database hits (beyond the 500-row window), deduped.
+        const loaded = new Set(merged.map(r => `${r._source}-${r.id}`));
+        const extras = remoteRefRows.filter(r => !loaded.has(`${r._source}-${r.id}`));
+        merged = [...merged, ...extras];
+        // Pin a single exact match to the top.
+        const exact = merged.filter(r => (r._reference_number || '').toLowerCase() === normalized);
+        if (exact.length === 1) {
+          merged = [exact[0], ...merged.filter(r => r !== exact[0])];
+        }
       } else {
         merged = merged.filter(r =>
           (r.customer_name || '').toLowerCase().includes(q) ||
