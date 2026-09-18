@@ -895,7 +895,7 @@ export default function QuoteSummaryPage() {
       quote_total: displayPricing.total,
     };
     trackEvent(eventName, eventData);
-    void (supabase as any).from('quote_activity_events').insert({
+    const activityPayload = {
       session_id: getOrCreateSessionId(),
       user_id: user?.id ?? null,
       event_type: eventName,
@@ -904,7 +904,20 @@ export default function QuoteSummaryPage() {
       quote_value: displayPricing.total,
       event_data: eventData,
       page_path: '/quote/summary',
-    });
+    };
+    const supabaseUrl = (supabase as any).supabaseUrl;
+    const supabaseKey = (supabase as any).supabaseKey;
+    void fetch(`${supabaseUrl}/rest/v1/quote_activity_events`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        apikey: supabaseKey,
+        Authorization: `Bearer ${supabaseKey}`,
+        Prefer: 'return=minimal',
+      },
+      body: JSON.stringify(activityPayload),
+      keepalive: true,
+    }).catch(() => {});
   };
 
   // Handle deposit after customer info is collected

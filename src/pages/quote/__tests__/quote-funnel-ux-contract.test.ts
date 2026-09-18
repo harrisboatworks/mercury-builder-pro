@@ -221,7 +221,8 @@ describe('quote funnel UX contract', () => {
     }
     expect(summarySource).toContain("eventName: 'phone_click' | 'sms_click'");
     expect(summarySource).toContain("location: 'quote_summary'");
-    expect(summarySource).toContain("from('quote_activity_events').insert");
+    expect(summarySource).toContain('/rest/v1/quote_activity_events');
+    expect(summarySource).toContain('keepalive: true');
     expect(summarySource).not.toContain('Reserve this motor —');
   });
 
