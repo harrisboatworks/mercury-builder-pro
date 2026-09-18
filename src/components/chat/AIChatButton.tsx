@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom';
 import { useIsMobileOrTablet } from '@/hooks/use-mobile';
 import { useAIChat } from './GlobalAIChat';
 import { motion } from 'framer-motion';
-import { getMobileLauncherBottom } from './chatLayout';
+import { getMobileLauncherBottom, getMobileLauncherHorizontal } from './chatLayout';
 
 interface AIChatButtonProps {
   onOpenChat: () => void;
