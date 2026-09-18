@@ -877,7 +877,7 @@ export default function QuoteSummaryPage() {
 
   const callHref = `tel:${COMPANY_INFO.contact.phone.replace(/\D/g, '')}`;
   const smsMessage = canonicalReferenceNumber
-    ? `Hi, I'm looking at quote ${canonicalReferenceNumber} (${motorName}, $${displayPricing.total.toLocaleString('en-CA')} CAD).`
+    ? `Hi, I'm looking at quote ${canonicalReferenceNumber} (${motorName}, $${displayPricing.total.toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} CAD).`
     : '';
   const smsHref = canonicalReferenceNumber
     ? `sms:${COMPANY_INFO.contact.sms.replace(/\D/g, '')}?body=${encodeURIComponent(smsMessage)}`
