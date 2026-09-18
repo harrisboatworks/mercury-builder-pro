@@ -34,6 +34,7 @@ import {
   getChatPageCategory,
   getMobileDrawerBottom,
   getMobileLauncherBottom,
+  getMobileLauncherHorizontal,
   isPhoneQuoteNavPath,
 } from './chatLayout';
 
@@ -294,6 +295,14 @@ describe('chat launcher layout', () => {
     expect(getMobileLauncherBottom('/quote/options')).toContain('10.5rem');
     expect(getMobileLauncherBottom('/contact')).toContain('1rem');
     expect(getMobileDrawerBottom()).toBe('0px');
+  });
+
+  it('docks the phone launcher on the left only on the quote summary route', () => {
+    expect(getMobileLauncherHorizontal('/quote/summary')).toBe('left');
+    expect(getMobileLauncherHorizontal('/quote/motor-selection')).toBe('right');
+    expect(getMobileLauncherHorizontal('/pricing-reference')).toBe('right');
+    expect(getMobileLauncherHorizontal('/')).toBe('right');
+    expect(getMobileLauncherHorizontal('/quote')).toBe('right');
   });
 
   it('keeps bare and nested quote routes in one persistence category', () => {
