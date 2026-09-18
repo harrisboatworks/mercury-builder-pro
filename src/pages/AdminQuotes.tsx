@@ -49,6 +49,13 @@ interface UnifiedQuoteRow {
   _reference_number?: string | null;
 }
 
+// Detect a search that looks like a quote number: HBW-12345, hbw12345, or 4-6 bare digits.
+const QUOTE_REF_RE = /^(?:hbw-?)?(\d{4,6})$/i;
+const quoteRefFromSearch = (q: string): string | null => {
+  const m = q.trim().match(QUOTE_REF_RE);
+  return m ? `HBW-${m[1].padStart(5, '0')}` : null;
+};
+
 const AdminQuotes = () => {
   const [customerQuoteRows, setCustomerQuoteRows] = useState<UnifiedQuoteRow[]>([]);
   const [savedQuoteRows, setSavedQuoteRows] = useState<UnifiedQuoteRow[]>([]);
