@@ -7453,6 +7453,10 @@ export type Database = {
           isSetofReturn: true
         }
       }
+      get_soft_lead_reference: {
+        Args: { p_session_id: string }
+        Returns: string
+      }
       get_staff_file: {
         Args: { p_file_id: string; p_staff_id: string }
         Returns: Json
