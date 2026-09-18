@@ -113,8 +113,12 @@ export default function QuoteSummaryPage() {
   const [showAuthSaveDialog, setShowAuthSaveDialog] = useState(false);
   const [showPhoneCapture, setShowPhoneCapture] = useState(false);
   const [phoneCaptureQuoteId, setPhoneCaptureQuoteId] = useState<string | undefined>();
-  const [canonicalReferenceNumber, setCanonicalReferenceNumber] = useState<string | null>(null);
-  const [referenceNumberResolved, setReferenceNumberResolved] = useState(false);
+  const [sessionReferenceNumber, setSessionReferenceNumber] = useState<string | null>(null);
+  const [sessionReferenceResolved, setSessionReferenceResolved] = useState(false);
+  // A quote resumed from a PDF QR code keeps the number printed on that PDF.
+  // Otherwise the number belongs to this session's soft save.
+  const canonicalReferenceNumber = state.restoredReferenceNumber ?? sessionReferenceNumber;
+  const referenceNumberResolved = Boolean(state.restoredReferenceNumber) || sessionReferenceResolved;
   const pdfSavedQuoteRef = useRef<{
     id: string;
     referenceNumber?: string;
@@ -645,13 +649,13 @@ export default function QuoteSummaryPage() {
     }).then(async () => {
       const referenceNumber = await getSoftLeadReference(sessionId);
       if (!cancelled) {
-        setCanonicalReferenceNumber(referenceNumber);
-        setReferenceNumberResolved(true);
+        setSessionReferenceNumber(referenceNumber);
+        setSessionReferenceResolved(true);
       }
     }).catch(() => {
       if (!cancelled) {
-        setCanonicalReferenceNumber(null);
-        setReferenceNumberResolved(true);
+        setSessionReferenceNumber(null);
+        setSessionReferenceResolved(true);
       }
     });
 
