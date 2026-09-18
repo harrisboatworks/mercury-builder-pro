@@ -195,15 +195,7 @@ const AdminQuotes = () => {
       toast({ title: 'Error', description: 'Failed to load customer quotes', variant: 'destructive' });
     }
 
-    const cqRows: UnifiedQuoteRow[] = (cqResult.data || []).map((r: any) => ({
-      ...r,
-      _source: 'customer_quotes' as const,
-      _source_label: 'Lead',
-      _motor_info: r.quote_data?.motor?.model ? `${r.quote_data.motor.hp || ''}HP ${r.quote_data.motor.model}` : '',
-      _deposit_status: null,
-      _is_soft_lead: false,
-      _reference_number: r.quote_data?.quoteNumber || null,
-    }));
+    const cqRows: UnifiedQuoteRow[] = (cqResult.data || []).map(normalizeCustomerQuote);
 
     // Submission receipts mirror the lead; list the actionable lead once.
     const leadIds = new Set(cqRows.map(row => row.id));
