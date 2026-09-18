@@ -227,6 +227,58 @@ const AdminQuotes = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  // Direct quote-number lookup: bypasses the 500-row window so old quotes are findable.
+  useEffect(() => {
+    const ref = quoteRefFromSearch(searchQuery);
+    if (!ref) {
+      setRemoteRefRows([]);
+      setRemoteRefLoading(false);
+      return;
+    }
+    let cancelled = false;
+    setRemoteRefLoading(true);
+    const timer = setTimeout(async () => {
+      try {
+        const pattern = `${ref}%`;
+        const [sqResult, cqResult] = await Promise.all([
+          (supabase as any)
+            .from('saved_quotes')
+            .select('*')
+            .ilike('reference_number', pattern)
+            .order('created_at', { ascending: false })
+            .limit(50),
+          supabase
+            .from('customer_quotes')
+            .select('*')
+            .or(`quote_data->>reference_number.ilike.${pattern},quote_data->>quoteNumber.ilike.${pattern}`)
+            .order('created_at', { ascending: false })
+            .limit(50),
+        ]);
+        if (cancelled) return;
+        if (sqResult.error) console.warn('Quote-number lookup (saved_quotes) failed:', sqResult.error.message);
+        if (cqResult.error) console.warn('Quote-number lookup (customer_quotes) failed:', cqResult.error.message);
+        const rows: UnifiedQuoteRow[] = [
+          ...((sqResult.data || []) as any[]).map(normalizeSavedQuote),
+          ...((cqResult.data || []) as any[]).map(normalizeCustomerQuote),
+        ];
+        // Dedupe across the two tables
+        const seen = new Set<string>();
+        setRemoteRefRows(rows.filter(r => {
+          const key = `${r._source}-${r.id}`;
+          if (seen.has(key)) return false;
+          seen.add(key);
+          return true;
+        }));
+      } catch (err) {
+        if (!cancelled) setRemoteRefRows([]);
+      } finally {
+        if (!cancelled) setRemoteRefLoading(false);
+      }
+    }, 300);
+    return () => { cancelled = true; clearTimeout(timer); };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchQuery]);
+
   // Merge and filter
   const rows = useMemo(() => {
     let merged: UnifiedQuoteRow[] = [];
