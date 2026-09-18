@@ -34,6 +34,7 @@ import {
   getChatPageCategory,
   getMobileDrawerBottom,
   getMobileLauncherBottom,
+  getMobileLauncherHorizontal,
   isPhoneQuoteNavPath,
 } from './chatLayout';
 
