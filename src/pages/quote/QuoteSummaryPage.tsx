@@ -48,6 +48,7 @@ import { trackAgentEvent } from '@/lib/agentEvents';
 import { trackEvent } from '@/lib/analytics';
 import { buildSoftLeadSnapshotKey, softLeadSaveCoordinator } from '@/lib/soft-lead-save';
 import { getSoftLeadReference } from '@/lib/soft-lead-reference';
+import { COMPANY_INFO } from '@/lib/companyInfo';
 import {
   reconcileWarrantyConfig,
   type QuoteWarrantyConfig,
@@ -874,6 +875,51 @@ export default function QuoteSummaryPage() {
     setShowDepositDialog(true);
   };
 
+  const callHref = `tel:${COMPANY_INFO.contact.phone.replace(/\D/g, '')}`;
+  const smsMessage = canonicalReferenceNumber
+    ? `Hi, I'm looking at quote ${canonicalReferenceNumber} (${motorName}, $${displayPricing.total.toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} CAD).`
+    : '';
+  const smsHref = canonicalReferenceNumber
+    ? `sms:${COMPANY_INFO.contact.sms.replace(/\D/g, '')}?body=${encodeURIComponent(smsMessage)}`
+    : `sms:${COMPANY_INFO.contact.sms.replace(/\D/g, '')}`;
+
+  const handleContactClick = (
+    event: React.MouseEvent<HTMLAnchorElement>,
+    eventName: 'phone_click' | 'sms_click',
+  ) => {
+    event.stopPropagation();
+    const eventData = {
+      location: 'quote_summary',
+      reference_number: canonicalReferenceNumber,
+      motor_model: motorName,
+      quote_total: displayPricing.total,
+    };
+    trackEvent(eventName, eventData);
+    const activityPayload = {
+      session_id: getOrCreateSessionId(),
+      user_id: user?.id ?? null,
+      event_type: eventName,
+      motor_model: motorName,
+      motor_hp: Number(hp),
+      quote_value: displayPricing.total,
+      event_data: eventData,
+      page_path: '/quote/summary',
+    };
+    const supabaseUrl = (supabase as any).supabaseUrl;
+    const supabaseKey = (supabase as any).supabaseKey;
+    void fetch(`${supabaseUrl}/rest/v1/quote_activity_events`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        apikey: supabaseKey,
+        Authorization: `Bearer ${supabaseKey}`,
+        Prefer: 'return=minimal',
+      },
+      body: JSON.stringify(activityPayload),
+      keepalive: true,
+    }).catch(() => {});
+  };
+
   // Handle deposit after customer info is collected
   const handleDepositSubmit = async (customerInfo: DepositCustomerInfo) => {
     setShowDepositDialog(false);
@@ -1269,32 +1315,34 @@ export default function QuoteSummaryPage() {
 
                 {/* Mobile CTA Section */}
                 <div className="lg:hidden space-y-3">
-                  <button
-                    onClick={handleReserveDeposit}
-                    disabled={isProcessingDeposit || noMotorSelected}
-                    title={noMotorSelected ? 'Select a motor first' : undefined}
-                    className="group w-full rounded bg-repower-mercury-red px-6 py-4 font-sans text-[13px] font-bold uppercase tracking-[0.12em] text-repower-cream transition hover:opacity-90 hover:-translate-y-px hover:shadow-md disabled:cursor-not-allowed disabled:opacity-50"
+                  <div className="pb-1 text-center font-sans">
+                    <p className="text-[13px] font-semibold text-repower-navy-900">Questions about this quote? Talk to a person.</p>
+                    {canonicalReferenceNumber && (
+                      <p className="mt-1 select-text text-[12px] text-repower-navy-900/60">Quote {canonicalReferenceNumber}</p>
+                    )}
+                  </div>
+                  <a
+                    href={callHref}
+                    onClick={(event) => handleContactClick(event, 'phone_click')}
+                    data-cta-location="quote_summary"
+                    className="group flex w-full items-center justify-center rounded bg-repower-mercury-red px-6 py-4 text-center font-sans text-[13px] font-bold uppercase tracking-[0.12em] text-repower-cream transition hover:opacity-90 hover:-translate-y-px hover:shadow-md"
                   >
                     <span className="inline-flex items-center justify-center gap-2">
-                      {isProcessingDeposit
-                        ? 'Preparing secure checkout…'
-                        : `Reserve this motor — $${depositAmount.toLocaleString()}`
-                      }
-                      {!isProcessingDeposit && (
-                        <span aria-hidden className="transition-transform duration-200 group-hover:translate-x-1">→</span>
-                      )}
+                      Call (905) 342-2153
+                      <span aria-hidden className="transition-transform duration-200 group-hover:translate-x-1">→</span>
                     </span>
-                  </button>
-                  <p className="px-2 text-center font-sans text-[12px] leading-relaxed text-repower-navy-900/60">
-                    Secure Stripe checkout. HBW confirms the motor and quote details before anything is ordered.
-                  </p>
-                  <div className="flex items-center gap-3 py-1" aria-hidden>
-                    <span className="h-px flex-1 bg-repower-navy-900/10" />
-                    <span className="font-sans text-[10px] font-semibold uppercase tracking-[0.14em] text-repower-navy-900/45">
-                      Not ready to reserve?
+                  </a>
+                  <a
+                    href={smsHref}
+                    onClick={(event) => handleContactClick(event, 'sms_click')}
+                    data-cta-location="quote_summary"
+                    className="group flex w-full items-center justify-center rounded border border-repower-navy-900 bg-transparent px-6 py-4 text-center font-sans text-[13px] font-bold uppercase tracking-[0.12em] text-repower-navy-900 transition hover:bg-repower-navy-900 hover:text-repower-cream"
+                  >
+                    <span className="inline-flex items-center justify-center gap-2">
+                      Text This Quote to HBW
+                      <span aria-hidden className="transition-transform duration-200 group-hover:translate-x-1">→</span>
                     </span>
-                    <span className="h-px flex-1 bg-repower-navy-900/10" />
-                  </div>
+                  </a>
                   <button
                     onClick={handleStepComplete}
                     className="group w-full rounded border border-repower-navy-900 bg-transparent px-6 py-4 font-sans text-[13px] font-bold uppercase tracking-[0.12em] text-repower-navy-900 transition hover:bg-repower-navy-900 hover:text-repower-cream"
@@ -1304,6 +1352,32 @@ export default function QuoteSummaryPage() {
                       <span aria-hidden className="transition-transform duration-200 group-hover:translate-x-1">→</span>
                     </span>
                   </button>
+                  <div className="flex items-center gap-3 py-1" aria-hidden>
+                    <span className="h-px flex-1 bg-repower-navy-900/10" />
+                    <span className="font-sans text-[10px] font-semibold uppercase tracking-[0.14em] text-repower-navy-900/45">
+                      Ready to lock it in?
+                    </span>
+                    <span className="h-px flex-1 bg-repower-navy-900/10" />
+                  </div>
+                  <button
+                    onClick={handleReserveDeposit}
+                    disabled={isProcessingDeposit || noMotorSelected}
+                    title={noMotorSelected ? 'Select a motor first' : undefined}
+                    className="group w-full rounded border border-repower-navy-900 bg-transparent px-6 py-4 font-sans text-[13px] font-bold uppercase tracking-[0.12em] text-repower-navy-900 transition hover:bg-repower-navy-900 hover:text-repower-cream disabled:cursor-not-allowed disabled:opacity-50"
+                  >
+                    <span className="inline-flex items-center justify-center gap-2">
+                      {isProcessingDeposit
+                        ? 'Preparing secure checkout…'
+                        : `Reserve this motor, $${depositAmount.toLocaleString()}`
+                      }
+                      {!isProcessingDeposit && (
+                        <span aria-hidden className="transition-transform duration-200 group-hover:translate-x-1">→</span>
+                      )}
+                    </span>
+                  </button>
+                  <p className="px-2 text-center font-sans text-[12px] leading-relaxed text-repower-navy-900/60">
+                    Secure Stripe checkout. HBW confirms the motor and quote details before anything is ordered.
+                  </p>
                   <button
                     onClick={() => user ? setShowSaveDialog(true) : setShowAuthSaveDialog(true)}
                     disabled={noMotorSelected}
@@ -1351,6 +1425,11 @@ export default function QuoteSummaryPage() {
                   bullets={selectedPackageFeatures}
                   onReserve={handleReserveDeposit}
                   onReview={handleStepComplete}
+                  callHref={callHref}
+                  smsHref={smsHref}
+                  quoteReference={canonicalReferenceNumber}
+                  onCall={(event) => handleContactClick(event, 'phone_click')}
+                  onText={(event) => handleContactClick(event, 'sms_click')}
                   depositAmount={depositAmount}
                   coverageYears={selectedPackageCoverageYears}
                   promoWarrantyYears={promoYears > 0 ? promoYears : undefined}
