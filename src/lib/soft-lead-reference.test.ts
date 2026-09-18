@@ -1,7 +1,12 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
-const setHeader = vi.fn();
-const rpc = vi.fn(() => ({ setHeader }));
+const { setHeader, rpc } = vi.hoisted(() => {
+  const headerMock = vi.fn();
+  return {
+    setHeader: headerMock,
+    rpc: vi.fn(() => ({ setHeader: headerMock })),
+  };
+});
 
 vi.mock('@/integrations/supabase/client', () => ({
   supabase: { rpc },
