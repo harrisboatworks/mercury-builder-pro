@@ -47,6 +47,7 @@ import { QuoteSummaryPageSEO } from '@/components/seo/QuoteSummaryPageSEO';
 import { trackAgentEvent } from '@/lib/agentEvents';
 import { trackEvent } from '@/lib/analytics';
 import { buildSoftLeadSnapshotKey, softLeadSaveCoordinator } from '@/lib/soft-lead-save';
+import { getSoftLeadReference } from '@/lib/soft-lead-reference';
 import {
   reconcileWarrantyConfig,
   type QuoteWarrantyConfig,
@@ -110,6 +111,8 @@ export default function QuoteSummaryPage() {
   const [showAuthSaveDialog, setShowAuthSaveDialog] = useState(false);
   const [showPhoneCapture, setShowPhoneCapture] = useState(false);
   const [phoneCaptureQuoteId, setPhoneCaptureQuoteId] = useState<string | undefined>();
+  const [canonicalReferenceNumber, setCanonicalReferenceNumber] = useState<string | null>(null);
+  const [referenceNumberResolved, setReferenceNumberResolved] = useState(false);
   const pdfSavedQuoteRef = useRef<{
     id: string;
     referenceNumber?: string;
@@ -629,11 +632,29 @@ export default function QuoteSummaryPage() {
       });
     }
 
+    const sessionId = getOrCreateSessionId();
+    let cancelled = false;
+
     void softLeadSaveCoordinator.enqueue({
-      sessionId: getOrCreateSessionId(),
+      sessionId,
       quoteState: quoteStateSnapshot,
       snapshotKey,
+    }).then(async () => {
+      const referenceNumber = await getSoftLeadReference(sessionId);
+      if (!cancelled) {
+        setCanonicalReferenceNumber(referenceNumber);
+        setReferenceNumberResolved(true);
+      }
+    }).catch(() => {
+      if (!cancelled) {
+        setCanonicalReferenceNumber(null);
+        setReferenceNumberResolved(true);
+      }
     });
+
+    return () => {
+      cancelled = true;
+    };
   }, [pdfSnapshot, state]);
 
   // CTA handlers
@@ -647,7 +668,7 @@ export default function QuoteSummaryPage() {
     setIsGeneratingPDF(true);
     
     try {
-      const quoteNumber = `HBW-${Date.now().toString().slice(-6)}`;
+      const quoteNumber = canonicalReferenceNumber || `HBW-${Date.now().toString().slice(-6)}`;
       const packageTotal = pdfSnapshot.pricing.totalCashPrice;
       
       let qrTargetUrl: string | null = null;
@@ -682,7 +703,12 @@ export default function QuoteSummaryPage() {
               id: savedQuoteId,
               email: state.customerEmail || 'pdf-download@placeholder.com',
               resume_token: `qr_${crypto.randomUUID().replace(/-/g, '').slice(0, 24)}`,
-              quote_state: { ...state, frozenPricing: frozenPricingSnapshot, pdfSnapshot } as any,
+              quote_state: {
+                ...state,
+                frozenPricing: frozenPricingSnapshot,
+                pdfSnapshot,
+                ...(canonicalReferenceNumber ? { reference_number: canonicalReferenceNumber } : {}),
+              } as any,
               user_id: user?.id || null,
               expires_at: new Date(Date.now() + 90 * 24 * 60 * 60 * 1000).toISOString(),
             } as any);
@@ -698,7 +724,7 @@ export default function QuoteSummaryPage() {
           };
           qrTargetUrl = `${SITE_URL}/quote/saved/${savedForQr.id}`;
           savedQuoteIdForSms = savedForQr.id;
-          savedQuoteRefForSms = savedForQr.reference_number || undefined;
+          savedQuoteRefForSms = canonicalReferenceNumber || savedForQr.reference_number || undefined;
         }
       } catch (qrSaveErr) {
         console.warn('Could not save quote for QR code:', qrSaveErr);
@@ -757,7 +783,10 @@ export default function QuoteSummaryPage() {
             customer_phone: state.customerPhone || undefined,
             lead_status: 'downloaded',
             lead_source: 'pdf_download',
-            quote_data: quoteData
+            quote_data: {
+              ...quoteData,
+              ...(canonicalReferenceNumber ? { reference_number: canonicalReferenceNumber } : {}),
+            }
           });
         } catch (leadError) {
           console.error('Failed to save identified PDF lead:', leadError);
@@ -850,7 +879,7 @@ export default function QuoteSummaryPage() {
     setShowDepositDialog(false);
     setIsProcessingDeposit(true);
     try {
-      const quoteNumber = `HBW-${Date.now().toString().slice(-6)}`;
+      const quoteNumber = canonicalReferenceNumber || `HBW-${Date.now().toString().slice(-6)}`;
       const savedQuoteId = crypto.randomUUID();
       const resumeTokenEntropy = crypto.getRandomValues(new Uint8Array(12));
       const resumeToken = `dep_${Array.from(
@@ -877,7 +906,12 @@ export default function QuoteSummaryPage() {
           id: savedQuoteId,
           email: customerInfo.email,
           resume_token: resumeToken,
-          quote_state: { ...state, frozenPricing: frozenPricingFromPdfSnapshot(pdfSnapshot), pdfSnapshot } as any,
+          quote_state: {
+            ...state,
+            frozenPricing: frozenPricingFromPdfSnapshot(pdfSnapshot),
+            pdfSnapshot,
+            ...(canonicalReferenceNumber ? { reference_number: canonicalReferenceNumber } : {}),
+          } as any,
           user_id: user?.id || null,
           expires_at: new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toISOString(),
           quote_pdf_path: null,
@@ -932,6 +966,7 @@ export default function QuoteSummaryPage() {
         installConfig: state.installConfig,
         adminDiscount: state.adminDiscount || 0,
         customerNotes: state.customerNotes || '',
+        ...(canonicalReferenceNumber ? { reference_number: canonicalReferenceNumber } : {}),
       };
 
       trackAgentEvent({
@@ -956,6 +991,7 @@ export default function QuoteSummaryPage() {
             horsepower: hp,
             motorPrice: motorSalePrice,
             totalPrice: displayPricing.total,
+            ...(canonicalReferenceNumber ? { reference_number: canonicalReferenceNumber } : {}),
           },
           motorInfo: {
             model: motorName,
@@ -1098,6 +1134,31 @@ export default function QuoteSummaryPage() {
                     </div>
                   )}
                 </div>
+
+                {(!referenceNumberResolved || canonicalReferenceNumber) && (
+                  <div
+                    className="min-h-[92px] border border-repower-navy-900/20 border-l-4 border-l-repower-mercury-red bg-white px-4 py-3 sm:min-h-[68px] sm:px-5"
+                    aria-live="polite"
+                  >
+                    {canonicalReferenceNumber ? (
+                      <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between sm:gap-6">
+                        <div className="shrink-0">
+                          <p className="font-sans text-[10px] font-semibold uppercase tracking-[0.16em] text-repower-navy-900/60">
+                            Your quote number
+                          </p>
+                          <p className="select-text font-display text-xl font-bold text-repower-navy-900">
+                            {canonicalReferenceNumber}
+                          </p>
+                        </div>
+                        <p className="max-w-[34ch] font-sans text-sm leading-snug text-repower-navy-900/70 sm:text-right">
+                          Have it handy when you call or text. We can pull this quote up in seconds.
+                        </p>
+                      </div>
+                    ) : (
+                      <div className="h-10 animate-pulse bg-repower-navy-900/5" aria-hidden="true" />
+                    )}
+                  </div>
+                )}
 
                 {/* Detailed Pricing Breakdown */}
                 <motion.div
@@ -1312,7 +1373,12 @@ export default function QuoteSummaryPage() {
           <SaveQuoteDialog 
             open={showSaveDialog}
             onOpenChange={setShowSaveDialog}
-            quoteData={{ ...state, frozenPricing: frozenPricingFromPdfSnapshot(pdfSnapshot), pdfSnapshot }}
+            quoteData={{
+              ...state,
+              frozenPricing: frozenPricingFromPdfSnapshot(pdfSnapshot),
+              pdfSnapshot,
+              ...(canonicalReferenceNumber ? { reference_number: canonicalReferenceNumber } : {}),
+            }}
             motorModel={motorName}
             finalPrice={displayPricing.total}
           />
