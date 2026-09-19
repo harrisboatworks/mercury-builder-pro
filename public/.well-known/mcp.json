@@ -36,7 +36,7 @@
     },
     {
       "name": "build_quote",
-      "description": "Build an itemized CAD quote (motor + installation + propeller + trade-in + HST + financing tier) and return a deep-link the customer can open. Optional contact captures a lead."
+      "description": "Build an itemized CAD quote (motor + installation + propeller + trade-in + HST + financing tier) and return a deep-link the customer can open. The deep-link carries motor, boat_make, boat_model, trade_brand, trade_year, trade_hp, and when supplied trade_condition and trade_engine_type. Optional contact captures a lead."
     },
     {
       "name": "get_brand_rules",
