@@ -972,7 +972,7 @@ function docs() {
         "GET shares the per-IP buckets with POST: build_quote 10 per 10 minutes, estimate_trade_in 30 per 10 minutes, list_motors 120 per 10 minutes.",
       examples: {
         build_quote:
-          "https://www.mercuryrepower.ca/api/agents/quote?action=build_quote&motor_id=b16ac296-e506-4357-ad69-18a0aa347cbf&purchase_path=installed&boat_make=Lund&boat_model=Pro-V&trade_brand=Mercury&trade_year=2010&trade_hp=75&trade_condition=good",
+          "https://www.mercuryrepower.ca/api/agents/quote?action=build_quote&motor_id=b16ac296-e506-4357-ad69-18a0aa347cbf&purchase_path=installed&boat_make=Lund&boat_model=Pro-V&trade_brand=Mercury&trade_year=2010&trade_hp=75&trade_condition=good&trade_engine_type=4-stroke",
         estimate_trade_in:
           "https://www.mercuryrepower.ca/api/agents/quote?action=estimate_trade_in&brand=Mercury&year=2010&horsepower=75&condition=good",
         list_motors:
