@@ -110,7 +110,7 @@ export default function MotorDetailsSheet({
   }, [motor]);
   const isMobile = useIsMobile();
   const { promo: activePromo } = useActiveFinancingPromo();
-  const { promotions: activePromotions } = useActivePromotions();
+  const { promotions: activePromotions } = useActivePromotions({ motor: motor });
   const { setScrollLock } = useScrollCoordination();
 
   // Get smart review for this motor with rotation logic

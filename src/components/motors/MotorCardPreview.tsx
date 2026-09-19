@@ -1,3 +1,4 @@
+import { isPromotionMotorEligible, type PromotionEligibility } from '@/lib/promotion-eligibility';
 "use client";
 import React, { useState, useEffect, lazy, Suspense, useCallback, useRef } from "react";
 import { AnimatePresence } from "framer-motion";
@@ -33,7 +34,7 @@ import { useSmartImageScale } from '@/hooks/useSmartImageScale';
 
 // Shared data passed from parent to avoid per-card hook explosion
 export interface SharedCardData {
-  promotions: Array<{ warranty_extra_years?: number | null; end_date?: string | null; name?: string; bonus_title?: string | null }>;
+  promotions: Array<{ details?: PromotionEligibility; warranty_extra_years?: number | null; end_date?: string | null; name?: string; bonus_title?: string | null }>;
   financingRate?: number;
   toggleComparison: (motor: any) => void;
   isInComparison: (id: string) => boolean;
@@ -102,7 +103,7 @@ function MotorCardPreviewInner({
 }) {
   const hpNum = typeof hp === "string" ? parseFloat(hp) : (typeof hp === "number" ? hp : undefined);
   // Use shared data from parent when available, otherwise keep working standalone
-  const promotions = sharedData?.promotions ?? [];
+  const promotions = (sharedData?.promotions ?? []).filter(p => isPromotionMotorEligible(p.details, motor));
   const { dispatch } = useQuote();
   const { openChat } = useAIChat();
   const [showDetailsSheet, setShowDetailsSheet] = useState(false);
@@ -355,7 +356,7 @@ function MotorCardPreviewInner({
   const getWarrantyText = () => {
     if (hasWarrantyPromo && warrantyYears > 0) {
       const totalYears = 3 + warrantyYears; // Base 3-year + promo bonus
-      return `✓ ${totalYears} Year Warranty`;
+      return `✓ Up to ${totalYears} Years Coverage`;
     }
     return null;
   };
@@ -367,7 +368,7 @@ function MotorCardPreviewInner({
   const getPromoDisplay = () => {
     if (hasWarrantyPromo && warrantyYears > 0) {
       const totalYears = 3 + warrantyYears; // Base 3-year + promo bonus
-      let promoText = `Mercury Get ${totalYears}: ${totalYears} Years Factory Warranty Included`;
+      let promoText = `${promotions.find(p => p.warranty_extra_years)?.name || 'Mercury promotion'}: up to ${totalYears} years coverage; eligibility applies`;
       
       // Add end date if available
       const activePromo = promotions.find(promo => promo.warranty_extra_years);

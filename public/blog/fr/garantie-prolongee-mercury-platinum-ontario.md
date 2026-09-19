@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/garantie-prolongee-mercury-platinum-ontario.md
-last_updated: 2026-09-06
+last_updated: 2026-09-12
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Product Protection Platinum : couverture et prix canadiens"
 description: "Mercury Product Protection Platinum est un contrat de service prolongé. Consultez les vrais prix canadiens par puissance et durée, les règles d'admissibilité et les..."
 category: "Garantie"
 date_published: 2026-05-13
-date_modified: 2026-09-06
+date_modified: 2026-09-12
 keywords: ["garantie prolongée Mercury","Mercury Product Protection","Mercury Platinum","garantie Mercury Ontario","prix protection Mercury","couverture Mercury Platinum"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Catégorie :** Garantie\
 **Publié le :** 2026-05-13\
-**Dernière révision :** 2026-09-06\
+**Dernière révision :** 2026-09-12\
 **Temps de lecture :** 9 min\
 **URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/garantie-prolongee-mercury-platinum-ontario
 
@@ -127,8 +127,6 @@ Commencez avec la page des [prix Mercury Product Protection](/mercury-product-pr
 
 - [Mercury Product Protection, aperçu officiel](https://www.mercurymarine.com/ca/en/service-and-support/warranty-coverage-and-product-protection/mercury-product-protection)
 - [Modalités canadiennes Platinum, mars 2025](https://www.mercurymarine.com/content/dam/mercury-marine/us_en/parts-and-services/service-and-support/warranty-coverage/product-protection/8M0236695%20Canada%20Platinum%20Plan%20Current%20upd%203-17-25.pdf.coredownload.pdf)
-
-*Dernière révision : 2026-07-18*
 
 Par Harris Boat Works, marina familiale depuis 1947 sur le lac Rice, concessionnaire Mercury Marine depuis 1965 et concessionnaire Mercury Premier.
 ## Guides connexes

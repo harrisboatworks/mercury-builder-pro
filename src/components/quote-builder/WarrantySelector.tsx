@@ -28,7 +28,7 @@ interface WarrantyOption {
 
 export function WarrantySelector() {
   const { state, dispatch } = useQuote();
-  const { promotions, loading: promotionsLoading } = useActivePromotions();
+  const { promotions, loading: promotionsLoading } = useActivePromotions({ motor: state.motor });
   const [warrantyPricing, setWarrantyPricing] = useState<WarrantyPricing | null>(null);
   const [loading, setLoading] = useState(true);
 

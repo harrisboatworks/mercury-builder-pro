@@ -84,7 +84,7 @@ export default function AgentsHub() {
                 {
                   "@type": "Question",
                   "name": "How do I send a customer to a prefilled Harris Boat Works quote configurator?",
-                  "acceptedAnswer": { "@type": "Answer", "text": "Build a deep-link URL: https://www.mercuryrepower.ca/quote/motor-selection?motor={MOTOR_ID}&boat_make={MAKE}&boat_model={MODEL}&trade_brand={BRAND}&trade_year={YEAR}&trade_hp={HP}, supported fields are validated and treated as provisional buyer inputs. Get MOTOR_ID from list_motors or search_motors." }
+                  "acceptedAnswer": { "@type": "Answer", "text": "Build a deep-link URL: https://www.mercuryrepower.ca/quote/motor-selection?motor={MOTOR_ID}&boat_make={MAKE}&boat_model={MODEL}&trade_brand={BRAND}&trade_year={YEAR}&trade_hp={HP}&trade_condition={CONDITION}&trade_engine_type={ENGINE_TYPE}, supported fields are validated and treated as provisional buyer inputs. Get MOTOR_ID from list_motors or search_motors." }
                 },
                 {
                   "@type": "Question",
@@ -247,6 +247,11 @@ export default function AgentsHub() {
       "horsepower": 150,
       "shaftLength": "L",
       "controlType": "Remote",
+      "shaftInches": 20,
+      "startType": "Electric",
+      "powerTrim": true,
+      "commandThrust": true,
+      "specSource": "model_code",
       "msrp": 18995,
       "sellingPrice": 17495,
       "availability": "In Stock",
@@ -305,13 +310,20 @@ export default function AgentsHub() {
             <code>trade_engine_hours</code>.
           </p>
           <CodeBlock language="url" size="xs">{`# Trade-in only
-GET ${PUBLIC_QUOTE_API}?action=estimate_trade_in&brand=Mercury&year=2010&horsepower=75&condition=good
+GET ${PUBLIC_QUOTE_API}?action=estimate_trade_in&brand=Mercury&year=2010&horsepower=75&condition=good&engine_type=4-stroke
 
 # Inventory
 GET ${PUBLIC_QUOTE_API}?action=list_motors&family=FourStroke&min_hp=75&max_hp=115
 
 # Same JSON the POST returns, minus the lead fields
 GET ${PUBLIC_QUOTE_API}?action=build_quote&motor_id=${EXAMPLE_MOTOR_ID}&format=json`}</CodeBlock>
+          <p className="text-protected text-sm mt-2">
+            <code>list_motors</code> rows include <code>shaftLength</code>, <code>shaftInches</code>, <code>controlType</code>,{' '}
+            <code>startType</code>, <code>powerTrim</code> and <code>commandThrust</code>, so you can match a transom height and
+            tiller or remote steering without decoding model names. Tiller-handle motors are always quoted as a loose motor
+            for pickup, even if <code>purchase_path=installed</code> was requested; the response explains this in{' '}
+            <code>purchase_path_note</code>, and tiller mounting options are chosen in the online quote builder.
+          </p>
           <p className="text-protected text-sm mt-2">
             Default response is <code>text/markdown; charset=utf-8</code> with a <code>Generated:</code> timestamp,
             line items, trade-in credit, subtotal, HST and total in CAD, financing offers when the quote qualifies,
@@ -464,7 +476,7 @@ GET ${MOTORS_MD}?slug=fourstroke-90hp-elpt-efi`}</CodeBlock>
           <p className="text-protected">
             Prefill the selected motor and the boat/trade-in fields shown below. These are provisional buyer inputs; missing details, fitment, valuation and pricing still require confirmation:
           </p>
-          <CodeBlock language="url" size="xs">{`${SITE_URL}/quote/motor-selection?motor={MOTOR_ID}&boat_make=Lund&boat_model=Pro-V&trade_brand=Mercury&trade_year=2010&trade_hp=75`}</CodeBlock>
+          <CodeBlock language="url" size="xs">{`${SITE_URL}/quote/motor-selection?motor={MOTOR_ID}&boat_make=Lund&boat_model=Pro-V&trade_brand=Mercury&trade_year=2010&trade_hp=75&trade_condition=good&trade_engine_type=4-stroke`}</CodeBlock>
         </section>
 
         <section className="mb-10">

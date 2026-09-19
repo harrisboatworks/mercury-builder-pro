@@ -85,7 +85,8 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
   const [financingOptions, setFinancingOptions] = useState<any[]>([]);
   const [selectedFinancing, setSelectedFinancing] = useState<string | null>(null);
   const { promo: activePromo } = useActiveFinancingPromo();
-  const { promotions } = useActivePromotions();
+  const { state, dispatch } = useQuote();
+  const { promotions } = useActivePromotions({ motor: state.motor });
   const appliedPromotion = getAppliedPromotion(promotions);
   const effectiveRate = (activePromo?.rate ?? quoteData.financing.rate);
 
@@ -100,7 +101,6 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
   const { user } = useAuth();
 
   // Get state and dispatch from QuoteContext
-  const { state, dispatch } = useQuote();
   
   // Selected promo option handler
   const handlePromoOptionSelect = (option: PromoOptionType) => {
@@ -212,7 +212,7 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
       basePrice: motorPrice,
       horsepower: motorHP,
     });
-    const warrantyValue = getAppliedWarrantyExtraYears(appliedPromotion) * 200;
+    const warrantyValue = appliedPromotion?.details?.coverage_summary ? 0 : getAppliedWarrantyExtraYears(appliedPromotion) * 200;
     
     return {
       warrantyValue,
@@ -562,8 +562,8 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
                         )}
                         {promo.id === appliedPromotion?.id && promo.warranty_extra_years && promo.warranty_extra_years > 0 && (
                           <div className="flex justify-between text-repower-gold">
-                            <span className="text-xs">+{promo.warranty_extra_years} Year Warranty:</span>
-                            <span className="font-medium">{formatCurrency(promo.warranty_extra_years * 200)} Value</span>
+                            <span className="text-xs">+{promo.warranty_extra_years} Years {promo.details?.coverage_summary ? 'MPP Gold' : 'Warranty'}:</span>
+                            <span className="font-medium">{promo.details?.coverage_summary ? 'Included if eligible' : `${formatCurrency(promo.warranty_extra_years * 200)} Value`}</span>
                           </div>
                         )}
                         {promo.end_date && (

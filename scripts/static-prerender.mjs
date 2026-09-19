@@ -504,6 +504,7 @@ const HOME_HUB_ALTERNATE_TAGS = HOME_SEO.alternates
     return `<link data-rh="true" rel="alternate" hreflang="${hrefLang}" href="${href}" />`;
   })
   .join('\n  ');
+const HOME_HUB_PATHS = new Set(HOME_SEO.alternates.map(({ path }) => path));
 const MIN_BYTES = 4 * 1024;
 const BUILD_FETCH_TIMEOUT_MS = Number(process.env.BUILD_FETCH_TIMEOUT_MS || 8000);
 const BUILD_SUBPROCESS_TIMEOUT_MS = Number(process.env.BUILD_SUBPROCESS_TIMEOUT_MS || 30000);
@@ -1672,7 +1673,7 @@ function agentsPageSchema() {
     },
     {
       q: "What deep-link parameters does the quote form accept?",
-      a: "Send users to https://www.mercuryrepower.ca/quote/motor-selection with optional query parameters motor, boat_make, boat_model, trade_brand, trade_year, and trade_hp. Example: /quote/motor-selection?motor={MOTOR_ID}&boat_make=Legend&boat_model=Pontoon&trade_hp=90. The configurator applies supported, validated fields as provisional buyer input. Fitment, condition, valuation and pricing still require confirmation."
+      a: "Send users to https://www.mercuryrepower.ca/quote/motor-selection with optional query parameters motor, boat_make, boat_model, trade_brand, trade_year, trade_hp, trade_condition, and trade_engine_type. Example: /quote/motor-selection?motor={MOTOR_ID}&boat_make=Legend&boat_model=Pontoon&trade_hp=90&trade_condition=good&trade_engine_type=4-stroke. The configurator applies supported, validated fields as provisional buyer input. Fitment, condition, valuation and pricing still require confirmation."
     },
     {
       q: "How does Harris Boat Works handle Mercury Verado inquiries?",
@@ -1680,7 +1681,7 @@ function agentsPageSchema() {
     },
     {
       q: "Can an AI assistant build a quote with only HTTP GET?",
-      a: "Yes. If you can only make GET requests, use https://www.mercuryrepower.ca/api/agents/quote?action=build_quote&motor_id=b16ac296-e506-4357-ad69-18a0aa347cbf&purchase_path=installed&boat_make=Lund&boat_model=Pro-V&trade_brand=Mercury&trade_year=2010&trade_hp=75&trade_condition=good&amp;trade_engine_type=4-stroke. It returns the same itemized estimate as the POST build_quote action, from the same pricing code, as text/markdown by default, or add format=json for JSON. Other GET actions are estimate_trade_in (brand, year, horsepower, condition, engine_type, engine_hours) and list_motors (search, family, min_hp, max_hp, limit, in_stock_only). GET never captures a lead and never writes anything: contact parameters such as name, email and phone are ignored and not logged. Hand the customer the Continue this quote deep link in the response to finish. GET shares the same per-IP rate-limit buckets as POST."
+      a: "Yes. If you can only make GET requests, use https://www.mercuryrepower.ca/api/agents/quote?action=build_quote&motor_id=b16ac296-e506-4357-ad69-18a0aa347cbf&purchase_path=installed&boat_make=Lund&boat_model=Pro-V&trade_brand=Mercury&trade_year=2010&trade_hp=75&trade_condition=good&trade_engine_type=4-stroke (the URL ends at 4-stroke). It returns the same itemized estimate as the POST build_quote action, from the same pricing code, as text/markdown by default, or add format=json for JSON. Other GET actions are estimate_trade_in (brand, year, horsepower, condition, engine_type, engine_hours) and list_motors (search, family, min_hp, max_hp, limit, in_stock_only). GET never captures a lead and never writes anything: contact parameters such as name, email and phone are ignored and not logged. Hand the customer the Continue this quote deep link in the response to finish. GET shares the same per-IP rate-limit buckets as POST."
     },
     {
       q: "What error responses does the public quote API return?",
@@ -2263,8 +2264,8 @@ function proXS250NoscriptHtml() {
 const LINEUP_LANDING_CONFIGS = [
   {
     path: '/mercury/portable-9-20hp',
-    title: "Mercury 9.9\u201320 HP Outboard Prices Canada 2026",
-    description: "Mercury 9.9, 15 and 20 HP portable outboard prices in CAD, installed in Ontario at Harris Boat Works on Rice Lake.",
+    title: MERCURY_FAMILY_SEO['/mercury/portable-9-20hp'].title,
+    description: MERCURY_FAMILY_SEO['/mercury/portable-9-20hp'].description,
     h1: 'Mercury 9.9 to 20 HP Portable Outboard Prices in Canada',
     intro: 'The small Mercury that does the big jobs: trolling kicker, dinghy power, the main motor on a 12 or 14-foot tinnie. Portable Mercury FourStrokes from $2,999 CAD at Harris Boat Works, with real prices and model-specific availability.',
     ogImage: 'https://eutsoqdpjurknjsshxes.supabase.co/storage/v1/object/public/motor-images/uploads/2025-09-22T00-14-12-050Z-Mercury-Marine-9-9HP-Rear-3-4-Port-Short-TillerUp-1718214770881%20(1).jpg',
@@ -2300,8 +2301,8 @@ const LINEUP_LANDING_CONFIGS = [
   },
   {
     path: '/mercury/mid-range-40-60hp',
-    title: "Mercury 40, 50 & 60 HP Outboard Prices Canada 2026",
-    description: "Mercury 40, 50 and 60 HP outboard prices in CAD, installed in Ontario at Harris Boat Works on Rice Lake.",
+    title: MERCURY_FAMILY_SEO['/mercury/mid-range-40-60hp'].title,
+    description: MERCURY_FAMILY_SEO['/mercury/mid-range-40-60hp'].description,
     h1: 'Mercury 40 to 60 HP Outboard Prices in Canada',
     intro: 'The mid-range FourStroke is the Rice Lake workhorse: enough power for a real fishing boat or a small bowrider, light enough to be easy on the transom and the fuel bill. Mercury 40 to 60 HP from $9,532 CAD at Harris Boat Works.',
     ogImage: 'https://mercuryrepower.ca/asset-gap-heroes/60-elpt-fourstroke.jpg',
@@ -2335,8 +2336,8 @@ const LINEUP_LANDING_CONFIGS = [
   },
   {
     path: '/mercury/mid-power-90-115hp',
-    title: "Mercury 90 & 115 HP Outboard Prices Canada 2026",
-    description: "Mercury 90 and 115 HP outboard prices in CAD, installed in Ontario at Harris Boat Works on Rice Lake.",
+    title: MERCURY_FAMILY_SEO['/mercury/mid-power-90-115hp'].title,
+    description: MERCURY_FAMILY_SEO['/mercury/mid-power-90-115hp'].description,
     h1: 'Mercury 90 to 115 HP Outboard Prices in Canada',
     intro: 'The 90 to 115 HP band is where most Rice Lake repowers land: enough motor for a bowrider, a fish-and-ski, or a loaded pontoon, without stepping up to V6 money. Mercury 90 to 115 HP from $14,812 CAD at Harris Boat Works.',
     ogImage: 'https://eutsoqdpjurknjsshxes.supabase.co/storage/v1/object/public/motor-images/1769026949011-Mercury-MM-115PRO-XS-FS-SideProf-STBD-1555756206491.jpg',
@@ -2370,8 +2371,8 @@ const LINEUP_LANDING_CONFIGS = [
   },
   {
     path: '/mercury/150-hp',
-    title: "Mercury 150 HP Outboard Price Canada 2026 | Installed",
-    description: "Mercury 150 HP outboard prices in CAD, installed in Ontario at Harris Boat Works on Rice Lake.",
+    title: MERCURY_FAMILY_SEO['/mercury/150-hp'].title,
+    description: MERCURY_FAMILY_SEO['/mercury/150-hp'].description,
     h1: 'Mercury 150 HP Outboard Price in Ontario',
     intro: 'The 150 FourStroke is the workhorse, the sweet spot for 17 to 19 ft fibreglass and aluminum boats: bowriders, fish-and-ski, deep-V aluminum. Smooth 3.0L inline-4, real fuel numbers, real-world reliability. Mercury 150 HP from $22,242 CAD at Harris Boat Works.',
     ogImage: 'https://eutsoqdpjurknjsshxes.supabase.co/storage/v1/object/public/motor-images/1769026949011-Mercury-MM-115PRO-XS-FS-SideProf-STBD-1555756206491.jpg',
@@ -2402,8 +2403,8 @@ const LINEUP_LANDING_CONFIGS = [
   },
   {
     path: '/mercury/115-pro-xs',
-    title: "Mercury 115 Pro XS Price Canada 2026 | Installed",
-    description: "Mercury 115 Pro XS prices in CAD, installed in Ontario at Harris Boat Works on Rice Lake.",
+    title: MERCURY_FAMILY_SEO['/mercury/115-pro-xs'].title,
+    description: MERCURY_FAMILY_SEO['/mercury/115-pro-xs'].description,
     h1: 'Mercury 115 Pro XS Price in Ontario',
     intro: 'The 115 Pro XS is the hot-rod 115: same 2.1L block as the FourStroke 115, tuned for hole shot, top end, and bass-boat handling. From $17,490 CAD at Harris Boat Works, a Mercury Premier Dealer on Rice Lake.',
     ogImage: 'https://eutsoqdpjurknjsshxes.supabase.co/storage/v1/object/public/motor-images/1769026949011-Mercury-MM-115PRO-XS-FS-SideProf-STBD-1555756206491.jpg',
@@ -4406,8 +4407,8 @@ const HUB_DEFS = [
   {
     path: '/electric/mercury-avator',
     lastReviewedISO: '2026-07-13',
-    metaTitle: "Mercury Avator Electric Outboards Canada: 7.5e to 110e",
-    metaDescription: "Mercury Avator electric outboards at Harris Boat Works: 7.5e, 20e, 35e, 75e and 110e. CAD pricing confirmed on your quote. Demo on Rice Lake.",
+    metaTitle: SEO_PAGE_METADATA.avator.title,
+    metaDescription: SEO_PAGE_METADATA.avator.description,
     breadcrumbName: 'Mercury Avator Electric',
     h1: 'Mercury Avator Electric Outboards Are Coming to Harris Boat Works',
     intro: "Mercury's Avator line brings quiet, zero-exhaust electric power to small boats, and it's joining our lineup at Harris Boat Works on Rice Lake. Pricing is being finalized now. Call or text us to get on the list, and we'll have real CAD numbers for you soon.",
@@ -5093,6 +5094,7 @@ const routes = [
     h1,
     intro,
     htmlLang,
+    extraHead: HOME_HUB_ALTERNATE_TAGS,
     schemas: [genericPageSchema(`/${lang}`, h1, intro)],
     extraNoscript: () => {
       const visible = (articles || []).filter(a => a.isPublished !== false);
@@ -5284,8 +5286,8 @@ const routes = [
   // ============================================================
   {
     path: '/pricing-reference',
-    title: "Mercury Outboard Prices Canada 2026: Every HP in CAD",
-    description: "Every Mercury outboard, 2.5 to 600 HP, with current Canadian MSRP in CAD. From Harris Boat Works, Mercury Premier Dealer, Ontario.",
+    title: SEO_PAGE_METADATA.pricingReference.title,
+    description: SEO_PAGE_METADATA.pricingReference.description,
     h1: 'Mercury Outboard Prices in Ontario (CAD): Live HBW Dealer Pricing',
     intro: 'Every Mercury outboard Harris Boat Works sells, priced in Canadian dollars. FourStroke and Pro XS, 2.5 HP to 300 HP, with Mercury\'s MSRP and our actual dealer selling price shown side by side. These are bare-motor prices in CAD before HST, controls, propeller, and rigging. For a full installed total, build a quote in the configurator. Pickup only at Gores Landing, Ontario.',
     // Prefer the build-time-generated Product+Offer @graph from
@@ -5371,7 +5373,8 @@ const routes = [
         '<ul>' +
           '<li>build_quote parameters: motor_id or (horsepower + family), purchase_path (installed or loose), customer_has_propeller, financing_offer_id, boat_make, boat_model, trade_brand, trade_year, trade_hp, trade_condition, trade_engine_type, trade_engine_hours.</li>' +
           '<li>estimate_trade_in parameters: brand, year, horsepower, condition, engine_type, engine_hours.</li>' +
-          '<li>list_motors parameters: search, family, min_hp, max_hp, limit, in_stock_only.</li>' +
+          '<li>list_motors parameters: search, family, min_hp, max_hp, limit, in_stock_only. Each motor row includes shaftLength, shaftInches, controlType, startType, powerTrim and commandThrust so you can match a transom height and tiller or remote steering without decoding model names.</li>' +
+          '<li>Tiller-handle motors are always quoted as a loose motor for pickup, even if purchase_path=installed was requested. The response explains this in purchase_path_note; tiller mounting options are chosen in the online quote builder.</li>' +
         '</ul>' +
         '<p>Default response is <code>text/markdown; charset=utf-8</code> with a Generated timestamp, line items, trade-in credit, subtotal, HST and total in CAD, financing offers when the quote qualifies, and the deep link. Add <code>format=json</code> for the same JSON the POST returns, minus the lead fields. GET responses send Cache-Control: no-store and X-Robots-Tag: noindex. GET with no parameters returns the machine-readable schema for this endpoint.</p>' +
         '<p>Contact parameters (name, email, phone, contact, referrer) are ignored on GET and never logged, because personal information must not travel in URLs and link prefetchers would create junk leads. Lead capture stays POST-only. GET shares the per-IP rate-limit buckets with POST, so it is not a way around them.</p>' +
@@ -5390,8 +5393,8 @@ const routes = [
       '</section>' +
       '<section><h2>Deep-link quote URLs</h2>' +
         '<p>Agents can send users directly to a prefilled quote form:</p>' +
-        '<p><code>https://www.mercuryrepower.ca/quote/motor-selection?motor={MOTOR_ID}&amp;boat_make={MAKE}&amp;boat_model={MODEL}&amp;trade_brand={BRAND}&amp;trade_year={YEAR}&amp;trade_hp={HP}</code></p>' +
-        '<p>Example: <code>https://www.mercuryrepower.ca/quote/motor-selection?motor=41acbe10-27ef-4502-a968-21c1723705c7&amp;boat_make=legend&amp;boat_model=pontoon&amp;trade_hp=90</code></p>' +
+        '<p><code>https://www.mercuryrepower.ca/quote/motor-selection?motor={MOTOR_ID}&amp;boat_make={MAKE}&amp;boat_model={MODEL}&amp;trade_brand={BRAND}&amp;trade_year={YEAR}&amp;trade_hp={HP}&amp;trade_condition={CONDITION}&amp;trade_engine_type={ENGINE_TYPE}</code></p>' +
+        '<p>Example: <code>https://www.mercuryrepower.ca/quote/motor-selection?motor=41acbe10-27ef-4502-a968-21c1723705c7&amp;boat_make=legend&amp;boat_model=pontoon&amp;trade_hp=90&amp;trade_condition=good&amp;trade_engine_type=4-stroke</code></p>' +
         '<p>Supported parameters are optional and validated. Prefilling does not confirm fitment, condition, valuation or pricing. The UCP reference does not restore a complete multi-motor cart.</p>' +
       '</section>' +
       '<section><h2>Source of truth rules</h2>' +
@@ -5427,8 +5430,8 @@ const routes = [
   },
   {
     path: '/quote/motor-selection',
-    title: "Build Your Mercury Outboard Quote (CAD)",
-    description: "Pick your HP, controls and prop. See an itemized Mercury outboard quote in Canadian dollars, installed at Harris Boat Works, Gores Landing.",
+    title: SEO_PAGE_METADATA.motorSelection.title,
+    description: SEO_PAGE_METADATA.motorSelection.description,
     h1: 'Build Your Mercury Outboard Quote',
     intro: 'Select a Mercury outboard motor to build a real quote with live CAD pricing, financing, and trade-in. No forms, no waiting. Harris Boat Works: Mercury dealer since 1965.',
     schemas: [motorSelectionPageSchema(), faqPageSchemaFromList('/quote/motor-selection', MOTOR_SELECTION_FAQS)],
@@ -5505,8 +5508,8 @@ const routes = [
   // content risk. See vercel.json redirects for the current destinations.
   {
     path: '/mercury-pro-xs',
-    title: "Mercury Pro XS Prices Canada 2026: 115 to 300 HP",
-    description: "Mercury Pro XS prices from 115 to 300 HP in CAD, installed in Ontario at Harris Boat Works on Rice Lake.",
+    title: MERCURY_FAMILY_SEO['/mercury-pro-xs'].title,
+    description: MERCURY_FAMILY_SEO['/mercury-pro-xs'].description,
     h1: 'Mercury Pro XS Outboards in Ontario',
     intro: 'Tournament-grade performance from 115 to 250 HP. Current CAD bare-motor pricing and model-level availability from Harris Boat Works, Mercury Marine Premier Dealer on Rice Lake. Family-owned since 1947, Mercury dealer since 1965.',
     schemas: [mercuryProXSSchema()],
@@ -5523,8 +5526,8 @@ const routes = [
   },
   {
     path: '/mercury/pro-xs-250',
-    title: "Mercury 250 Pro XS Price Canada 2026 | Installed",
-    description: "Mercury 250 Pro XS prices in CAD, installed in Ontario at Harris Boat Works on Rice Lake.",
+    title: MERCURY_FAMILY_SEO['/mercury/pro-xs-250'].title,
+    description: MERCURY_FAMILY_SEO['/mercury/pro-xs-250'].description,
     h1: 'Mercury Pro XS 250 Price in Canada: From $34,848 CAD',
     intro: 'Most dealers make you call for a price. Here is ours, in writing. The Mercury Pro XS 250 starts at $34,848 CAD at Harris Boat Works, a Mercury Premier Dealer on Rice Lake. Four configurations, the same number our sales desk sees.',
     ogImage: PRO_XS_250_HERO_IMAGE_PRERENDER,
@@ -5591,8 +5594,8 @@ const routes = [
   },
   {
     path: '/promotions',
-    title: "Mercury Outboard Promotions Canada: Fall 2026",
-    description: "Current Mercury Marine Canada offers as they apply to an HBW quote, in CAD. Updated when Mercury updates them.",
+    title: SEO_PAGE_METADATA.promotions.title,
+    description: SEO_PAGE_METADATA.promotions.description,
     h1: 'Mercury Outboard Promotions',
     intro: 'Current Mercury outboard motor promotions, rebates, and financing offers from Harris Boat Works: Mercury Marine Premier Dealer on Rice Lake, Mercury dealer since 1965.',
     schemas: [promotionsPageSchema()],
@@ -6432,6 +6435,13 @@ const allSitemapEntries = dedupeSitemapEntries([
 ]);
 
 function sitemapHreflangBlock(loc) {
+  if (HOME_HUB_PATHS.has(loc)) {
+    const links = HOME_SEO.alternates.map(({ hrefLang, path }) =>
+      `    <xhtml:link rel="alternate" hreflang="${hrefLang}" href="${SITE_URL}${path}" />`
+    );
+    return links.length ? `\n${links.join('\n')}` : '';
+  }
+
   const localized = loc.match(/^\/blog\/(fr|ko|zh|es|pa|ur|tl|hi)\/(.+)$/);
   const english = loc.match(/^\/blog\/([^/]+)$/);
   const blogIndexSlugs = new Set(['fr', 'ko', 'zh', 'es', 'pa', 'ur', 'tl', 'hi', 'zh-hant']);

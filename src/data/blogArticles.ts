@@ -1746,8 +1746,8 @@ We rechecked the aggregate on August 2, 2026 using a broader, documented text ma
     title: "Mercury Water Pump Replacement Cost in Ontario: 112 Shop Jobs (2026)",
     seoTitle: "Mercury Water Pump Replacement Cost Ontario | HBW",
     description: "HBW medians from 112 Mercury water-pump jobs, plus the model, kit, corrosion and diagnostic factors that change an Ontario quote.",
-    image: "/lovable-uploads/blog-heroes-2026-07/batch-d/hero-mercury-vaughan-hbw-service-real-2026-07.webp",
-    imageAlt: "An uncowled Mercury outboard in the Harris Boat Works service shop during technician work",
+    image: '/lovable-uploads/blog-heroes-2026-07/batch-d/hero-mercury-vaughan-hbw-service-real-2026-07.webp',
+    imageAlt: 'An uncowled Mercury outboard in the Harris Boat Works service shop during technician work',
     author: "Jay Harris",
     datePublished: "2026-07-02",
     dateModified: "2026-08-02",
@@ -1904,7 +1904,8 @@ Tell us the motor, the hours, and the last time anyone was in there.
     slug: "mercury-100-hour-service-cost-ontario",
     title: "Mercury 100-Hour Service Cost in Ontario: What's Included (2026)",
     description: "What shapes the cost of a Mercury 100-hour or annual service in Ontario, what the visit includes, and when to submit an HBW service request.",
-    image: "/lovable-uploads/hero-100-hour-service-cost.webp",
+    image: "/images/shop/hbw-service-bay-doors-boat-in-shop.webp",
+    imageAlt: "Open service bay doors at Harris Boat Works with a boat inside on its trailer",
     author: "Jay Harris",
     datePublished: "2026-07-02",
     dateModified: "2026-09-06",
@@ -3549,7 +3550,7 @@ Harris Boat Works · 5369 Harris Boat Works Rd, Gores Landing, ON · Mercury Mar
     imageAlt: "Close-up photograph of a Mercury digital throttle and shift control with a hand on its handle.",
     author: 'Jay Harris',
     datePublished: '2026-05-28',
-    dateModified: '2026-09-11',
+    dateModified: '2026-09-18',
     publishDate: '2026-05-28',
     category: 'Mercury Technology',
     readTime: '10 min',
@@ -3561,7 +3562,7 @@ Harris Boat Works · 5369 Harris Boat Works Rd, Gores Landing, ON · Mercury Mar
       { question: "What does a DTS retrofit cost when it does make sense?", answer: "When your engine is already DTS-capable and you're upgrading just the helm side (controls, harness, gateway, display), expect a four-figure ticket including parts and labor. Exact cost depends on engine count, helm complexity, and existing wiring. We quote both retrofit and repower paths at HBW so you can compare side by side." },
       { question: "Do I need DTS for Mercury joystick piloting?", answer: "Yes, DTS is part of Mercury joystick packages, but twin engines are not the only path. Most single-engine rigs do not qualify. Mercury lists package-specific single-engine systems, including Joystick Steering for Single-Engine Vessels and Joystick Piloting for Single-Engine Outboards with Thruster. The thruster package requires an electric-steering Verado or SeaPro V8, V10, or V12 from 250 to 600 HP plus a compatible CAN-based variable-speed thruster. Confirm the exact engine, steering, controls, and thruster package before quoting." },
       { question: "Will DTS make my boat faster or more fuel-efficient?", answer: "No. DTS is drive-by-wire. It changes how throttle and shift commands travel from the helm to the engine, but it doesn't change combustion, peak HP, or fuel burn. Same motor, same performance, smoother control feel. The real benefits are precision, multi-engine sync, and joystick eligibility, not raw numbers." },
-      { question: "Is DTS available on smaller Mercury motors?", answer: "Generally no. Mercury offers DTS on motors roughly 75 HP and up, with most current Verado V8/V10/V12, Pro XS 150+, and FourStroke 200+ models DTS-equipped from factory. Under 75 HP, mechanical controls remain the standard. If you're shopping in the 25 to 60 HP range, the DTS question doesn't apply." },
+      { question: "Is DTS available on smaller Mercury motors?", answer: "Generally no, but the exact answer is a model and configuration check rather than a horsepower rule. Current Verado V8/V10/V12 come standard with DTS. In the Pro XS and FourStroke families, DTS availability depends on the specific model, year and configuration, and Mercury still lists mechanical versions in several of those horsepower classes. Confirm against Mercury's current specifications for your exact motor. If you're shopping in the 25 to 60 HP range, the DTS question doesn't apply." },
       { question: "How do I check if my exact motor supports DTS?", answer: "Check Mercury's published specifications and the documentation for your exact motor and model year." },
       { question: "Are current Verado motors supercharged like older Verados?", answer: "No. Current Verado V8/V10/V12 (250-600 HP) are naturally aspirated, not supercharged. The old inline-6 Verado was supercharged, but Mercury moved away from that architecture years ago. Current Verados come standard with DTS at all HP classes in the family." }
     ],
@@ -3569,7 +3570,7 @@ Harris Boat Works · 5369 Harris Boat Works Rd, Gores Landing, ON · Mercury Mar
 
 *Last reviewed: 2026-05-28*
 
-> **Quick answer:** Most current Mercury motors built with DTS already have it (all Verado, Pro XS 150 HP and up, FourStroke 200 HP and up since the model was DTS-equipped). True retrofit of a mechanical Mercury to DTS is rarely cost-effective. The honest eligibility path for most boaters is: repower into a DTS-equipped motor.
+> **Quick answer:** Most current Mercury motors built with DTS already have it (all current Verado, plus the Pro XS and FourStroke configurations that were built with it; Mercury still offers mechanical versions in several of those horsepower classes). True retrofit of a mechanical Mercury to DTS is rarely cost-effective. The honest eligibility path for most boaters is: repower into a DTS-equipped motor.
 
 Most callers asking about DTS retrofit are surprised by the answer. They expect a parts catalog and a labor estimate. What they actually need is a yes-or-no on whether their current motor already has DTS (many do without the owner realizing), and if not, an honest assessment of whether retrofitting makes more sense than just repowering with a DTS-equipped motor.
 
@@ -3580,11 +3581,11 @@ This post is the eligibility decision tree. It covers what DTS actually is, how 
 | Motor situation | DTS retrofit eligible? | Honest path |
 |---|---|---|
 | Current Verado V8/V10/V12 (250-600 HP, 2020+) | **Already has DTS** | You already have it. Check your throttle handle. |
-| Current Pro XS 150-300 HP (2018+) | **Already has DTS** | Same. Most are DTS-equipped from factory. |
+| Current Pro XS 150-300 HP (2018+) | **Depends on configuration** | Mercury lists both mechanical and DTS versions in this range. Verify by serial number. |
 | Current FourStroke 200-300 HP (2018+) | **Most are DTS-equipped** | Verify by serial number, usually yes. |
 | Older Verado I6 (2006-2017, 200-350 HP) | **DTS-equipped, harness compatibility varies** | Often workable for harness/controls upgrade |
 | Mechanical Mercury 150 HP+ (any age) | **Retrofit possible but rarely worth it** | Quote a repower side-by-side. |
-| Mechanical Mercury under 150 HP | **Not eligible for retrofit** | DTS not offered on these classes |
+| Mechanical Mercury under 150 HP | **Rarely eligible** | Check Mercury's current specifications for your exact model before assuming either way |
 | Twin or triple Mercury rig | **Eligible if all motors are DTS-capable** | Required for joystick. Worth the conversation. |
 | Single small motor (under 75 HP) | **Not a DTS use case** | Save the money. Mechanical is correct here. |
 
@@ -3701,11 +3702,11 @@ A few patterns from our DTS conversations every spring on Rice Lake and the Kawa
 
 Before considering a DTS retrofit, have the motor serial number checked to establish which controls it supports and which system is already fitted.
 
-The second pattern: customers wanting DTS for the "smoother throttle" alone usually back off when they see the cost. A standalone DTS upgrade on a single-engine boat is a four-figure ticket once you add helm controls, harness, gateway, and labour; we quote it per job, with current figures on our /pricing-reference page. The smoother-throttle benefit is real but rarely worth the price. The customers who DO pull the trigger are usually twins-or-more rigs upgrading for joystick.
+The second pattern: customers wanting DTS for the "smoother throttle" alone usually back off when they see the cost. A standalone DTS upgrade on a single-engine boat is a four-figure ticket once you add helm controls, harness, gateway, and labour; we quote it per job. Our /pricing-reference page carries current motor pricing, not retrofit labour figures. The smoother-throttle benefit is real but rarely worth the price. The customers who DO pull the trigger are usually twins-or-more rigs upgrading for joystick.
 
 The third pattern, specific to Ontario boating: late-season dock approaches in fall winds at Rice Lake or in tight cottage dock spaces in the Kawarthas. Joystick piloting earns its keep in those moments. Customers who switch from twin mechanical to twin DTS with joystick almost never go back. The ability to crab sideways into a dock in a cross-wind without a second person on the bow is the kind of thing you don't appreciate until you have it.
 
-Fourth pattern: the worst DTS install we ever rescued was a customer who had bought a "DTS retrofit" kit online for an old Mercury 225 that wasn't DTS-capable. Three months of helm wiring trying to make it work before he called us. We sold him a new 250 Pro XS DTS, took the old one in trade, finished the install in a week, and he was back on the water. Not every retrofit story has a happy ending. Sometimes the honest answer is "this isn't the path."
+Fourth pattern, illustrative rather than a specific customer event: an owner buys a "DTS retrofit" kit online for an older mechanical motor that was never DTS-capable, then spends months on helm wiring before asking a dealer. A kit cannot turn a non-DTS engine into a DTS engine. Not every retrofit story has a happy ending, and sometimes the honest answer is "this isn't the path."
 
 ::pull-quote
 quote: A common shop conversation: someone asks about adding DTS to a recent Pro XS, then finds the motor already has it. Checking the helm first can avoid quoting a retrofit you do not need.
@@ -4760,7 +4761,8 @@ Significantly. A fully loaded family boat behaves like a different machine than 
     title: 'Mercury Motor Seasonal Care Ontario',
     seoTitle: "Mercury Maintenance: Ontario Seasonal Care 2026 | HBW",
     description: "Seasonal Mercury maintenance for Ontario: spring checks, 100-hour or annual service, model-specific fall storage, and expanded 300-hour work.",
-    image: '/lovable-uploads/hero-mercury-motor-maintenance-seasonal-tips.png',
+    image: "/images/shop/mercury-water-pump-repair-kits-parts-shelf.webp",
+    imageAlt: "Mercury water pump repair kits on the parts shelf at Harris Boat Works in Gores Landing, Ontario",
     author: 'Harris Boat Works',
     datePublished: '2024-05-20',
     dateModified: '2026-09-06',
@@ -9598,7 +9600,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Three boats with Mercury outboards of increasing size at a marina dock, from small fishing boat to large pontoon',
     author: 'Harris Boat Works',
     datePublished: '2026-05-11',
-    dateModified: '2026-09-11',
+    dateModified: '2026-09-18',
     publishDate: '2026-05-11',
     category: 'Buying Guide',
     readTime: '8 min read',
@@ -9807,7 +9809,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         question: 'Does motor weight affect boat performance?',
-        answer: 'Yes, significantly. Modern Mercury motors are lighter than older designs, so you may be able to run higher HP than before. We factor motor weight into recommendations.'
+        answer: 'Yes, significantly, but do not assume a newer motor is lighter. Installed weight varies by exact model and configuration, and a modern four-stroke can outweigh the older two-stroke it replaces. Check the exact proposed motor weight against the hull\'s documented power and motor-weight limits independently, rather than inferring one from the other. We factor motor weight into recommendations.'
       },
       {
         question: 'How does altitude affect motor sizing?',
@@ -14328,8 +14330,8 @@ Harris Boat Works | Mercury Marine Premier Dealer | Family-owned since 1947 | Me
     title: 'Boat Winterization Cost Ontario 2026',
     seoTitle: 'Boat Winterization Cost Ontario 2026 | HBW Guide',
     description: 'Ontario winterization quotes follow the current HBW rate card plus the engine, systems, and storage scope for your boat. No generic package price.',
-    image: '/lovable-uploads/Ontario_Short_Boating_Season_Fall.png',
-    imageAlt: 'Two boaters on an Ontario lake during the fall-colour season before winter storage.',
+    image: "/images/shop/boat-drop-off-hbw-yard-bowrider-trailer.webp",
+    imageAlt: "Customer bowrider dropped off on its trailer in the Harris Boat Works yard on Rice Lake",
     author: 'Harris Boat Works',
     datePublished: '2026-04-21',
     dateModified: '2026-09-06',
@@ -18661,8 +18663,8 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     title: 'Read Mercury Outboard Serial Number',
     seoTitle: "How to Read a Mercury Outboard Serial Number",
     description: "A practical guide to finding, reading, and decoding your Mercury outboard's serial number, model year, shaft length, features.",
-    image: '/lovable-uploads/hero-mercury-serial-number-decoder.png',
-    imageAlt: 'Close-up of a hand using a flashlight to read the serial number plate on a Mercury outboard motor bracket.',
+    image: "/images/shop/mercury-115-serial-model-label-transom.webp",
+    imageAlt: "Mercury 115 FourStroke model and serial number label on the outboard transom bracket",
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
     dateModified: '2026-09-11',
@@ -19078,7 +19080,8 @@ Put in a service request at [hbw.wiki/service](https://hbw.wiki/service) with th
     title: 'Shrinkwrap vs Indoor Boat Storage Ontario',
     seoTitle: "Shrinkwrap vs Indoor Boat Storage in Ontario",
     description: 'Shrinkwrap vs indoor boat storage in Ontario: honest comparison on cost, protection, and what happens without winterization.',
-    image: '/lovable-uploads/hero-winter-storage-shrinkwrap-vs-indoor.png',
+    image: "/images/shop/hbw-tractor-trailer-haul-out-office.webp",
+    imageAlt: "Tractor hitched to a boat trailer outside the Harris Boat Works shop for haul-out",
     author: 'Harris Boat Works',
     datePublished: '2026-05-13',
     dateModified: '2026-09-06',
@@ -20718,7 +20721,8 @@ Send the capacity label, current motor serial number, and rigging photos. HBW wi
     title: 'Boat Service Near Toronto HBW Reach',
     seoTitle: "Boat Service Near Toronto from Rice Lake",
     description: "A Mercury Premier dealer's honest take on what GTA boat-service options really look like, what HBW does that local options often don't.",
-    image: '/lovable-uploads/hero-boat-service-near-toronto.png',
+    image: "/images/shop/hbw-parts-counter-gores-landing.webp",
+    imageAlt: "The parts and service counter inside the Harris Boat Works shop in Gores Landing, Ontario",
     author: 'Jay Harris',
     datePublished: "2026-05-15",
     dateModified: '2026-09-06',
@@ -21113,7 +21117,8 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     title: 'Harris Boat Works: On Rice Lake Since 1947',
     seoTitle: "Harris Boat Works Since 1947: Rice Lake Institution",
     description: "The real story of Harris Boat Works. George Harris opened the shop in 1947, Jim ran it for 37 years, and Jay runs it today. Three generations on the same Rice Lake dock.",
-    image: '/lovable-uploads/hero-harris-boat-works-since-1947.png',
+    image: "/images/shop/harris-boat-works-shop-exterior-rice-lake.webp",
+    imageAlt: "The Harris Boat Works shop and service bays on the Rice Lake shoreline in Gores Landing, Ontario",
     author: 'Jay Harris',
     datePublished: "2026-05-18",
     dateModified: '2026-08-30',
@@ -22152,7 +22157,8 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     title: 'Outboard vs Sterndrive 2026 Ontario',
     seoTitle: "Outboard vs Sterndrive: Why Ontario Repowers Outboard",
     description: "Ontario sterndrive owners weighing a repower get an honest dealer's take on outboard vs. sterndrive in 2026, covering cost reality, market trends.",
-    image: '/lovable-uploads/hero-outboard-vs-sterndrive.png',
+    image: "/images/shop/mercruiser-sterndrive-service-hbw-shop.webp",
+    imageAlt: "Boat with its Mercruiser sterndrive removed for service inside the Harris Boat Works shop",
     author: 'Jay Harris',
     datePublished: '2026-03-05',
     dateModified: '2026-09-11',
@@ -25410,7 +25416,8 @@ Ready to price a Mercury repower? Build a live CAD quote at the [Mercury Repower
     title: 'Where to Launch Boat on Rice Lake',
     seoTitle: 'Where to Launch a Boat on Rice Lake: A Practical Guide',
     description: "A no-nonsense guide to launching on Rice Lake from Gores Landing. Pre-launch checklist, parking, after-hours payment, what to know about the ramp.",
-    image: "/lovable-uploads/hero-rice-lake-boat-launch-ramp.png",
+    image: "/images/shop/hbw-launch-ramp-docks-rice-lake.webp",
+    imageAlt: "The concrete launch ramp and docks at Harris Boat Works on Rice Lake, Ontario",
     author: "Harris Boat Works",
     datePublished: "2026-05-10",
     dateModified: "2026-09-06",
@@ -32468,8 +32475,8 @@ Harris Boat Works, family-owned since 1947. A Mercury Premier Dealer, selling Me
     seoTitle: 'Best Pontoon Outboard 2026: Mercury Guide | Mercuryrepower.ca',
     title: 'Best Pontoon Outboard 2026: Mercury Buyer\'s Guide',
     description: 'Match Mercury horsepower and gearcase to your pontoon size, tube count, passenger load, and real Rice Lake use.',
-    image: '/lovable-uploads/blog-heroes-2026-07/batch-b/hero-best-pontoon-outboard-115-freshwater-2026-07.webp',
-    imageAlt: 'Family fishing from a freshwater pontoon powered by a Mercury 115 HP FourStroke outboard',
+    image: "/images/shop/mercury-pro-xs-pontoon-rigging-service-bay.webp",
+    imageAlt: "Mercury Pro XS outboard on a Princecraft pontoon in the Harris Boat Works rigging bay",
     author: 'Harris Boat Works',
     datePublished: '2026-05-25',
     dateModified: '2026-09-11',
@@ -34507,7 +34514,7 @@ Build your quote at [mercuryrepower.ca](https://mercuryrepower.ca).
     image: '/lovable-uploads/hero-pontoon-aluminum-vhull.png',
     author: "Jay Harris",
     datePublished: "2026-06-06",
-    dateModified: "2026-09-11",
+    dateModified: "2026-09-12",
     publishDate: "2026-06-06",
     category: "Repower",
     readTime: "4 min read",
@@ -34569,7 +34576,7 @@ That said:
 
 **Shaft length:** Most aluminum fishing boats in the 14–20 ft range run a standard 20" (long) shaft. Some older or smaller hulls use a short (15") shaft. Confirm before ordering.
 
-**HP match:** These hulls are well-rated documents, the capacity plate is usually reliable and easy to read. Matching the rated HP range to actual use is the main conversation.
+**HP match:** These hulls are well-documented, the capacity plate is usually reliable and easy to read. Matching the rated HP range to actual use is the main conversation.
 
 Your transom will tell you the truth about its condition even if you'd rather not hear it. Better to find out now than when the new motor is already mounted.
 

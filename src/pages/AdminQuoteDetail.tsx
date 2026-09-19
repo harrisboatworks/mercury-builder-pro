@@ -53,6 +53,7 @@ interface QuoteDetail {
   lead_source?: string;
   follow_up_date?: string | null;
   _source?: 'customer_quotes' | 'saved_quotes';
+  _reference_number?: string | null;
 }
 
 const AdminQuoteDetail = () => {
@@ -101,7 +102,11 @@ const AdminQuoteDetail = () => {
         // Try customer_quotes first (primary lead table)
         const { data, error } = await supabase.from('customer_quotes').select('*').eq('id', id).maybeSingle();
         if (!error && data) {
-          setQ({ ...(data as any), _source: 'customer_quotes' });
+          setQ({
+            ...(data as any),
+            _source: 'customer_quotes',
+            _reference_number: (data as any).quote_data?.reference_number || (data as any).quote_data?.quoteNumber || null,
+          });
           setAdminDiscount(data.admin_discount || 0);
           setAdminNotes(data.admin_notes || '');
           setCustomerNotes(data.customer_notes || '');
@@ -143,6 +148,7 @@ const AdminQuoteDetail = () => {
             quote_data: qs,
             lead_status: sq.deposit_status === 'paid' ? 'deposit_paid' : (isSoftLead || isAnonymous ? 'browsing' : 'saved'),
             lead_source: sq.email === 'pdf-download@placeholder.com' ? 'pdf_download' : 'website',
+            _reference_number: sq.reference_number || qs.reference_number || null,
             follow_up_date: null,
             _source: 'saved_quotes',
           };
@@ -490,7 +496,8 @@ const AdminQuoteDetail = () => {
       
       // Build complete PDF data object matching QuoteSummaryPage structure
       const pdfData = {
-        quoteNumber: `HBW-${q.id.slice(0, 6).toUpperCase()}`,
+        // Prefer the canonical HBW-12345 number the customer saw on the summary and their own PDF.
+        quoteNumber: q._reference_number || `HBW-${q.id.slice(0, 6).toUpperCase()}`,
         customerName: q.customer_name || 'Valued Customer',
         customerEmail: q.customer_email || '',
         customerPhone: q.customer_phone || '',

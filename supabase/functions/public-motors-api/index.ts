@@ -7,6 +7,7 @@ import {
   detectFamily,
   motorSlug,
 } from '../_shared/motor-slug.ts';
+import { resolveMercuryCatalogSpecs } from '../_shared/mercury-codes.ts';
 import {
   isPublicCatalogMotor,
   isPublicMotorInStock,
@@ -16,6 +17,7 @@ import {
   publicStockQuantity,
   resolvePublicSellingPrice,
   toPublicImageUrl,
+  publicAvailabilityLabel,
 } from '../_shared/public-motor-contract.ts';
 
 const corsHeaders = {
@@ -79,6 +81,12 @@ Deno.serve(async (req) => {
         const quantity = publicStockQuantity(m);
         const inStock = isPublicMotorInStock(m);
         if (inStockOnly && !inStock) return null;
+        const specs = resolveMercuryCatalogSpecs({
+          modelDisplay: m.model_display || m.model,
+          shaft: m.shaft,
+          shaftCode: m.shaft_code,
+          controlType: m.control_type,
+        });
         return {
           id: m.id,
           slug,
@@ -86,13 +94,18 @@ Deno.serve(async (req) => {
           modelNumber: m.model_number || null,
           family,
           horsepower: m.horsepower,
-          shaftLength: m.shaft_code || m.shaft || null,
-          controlType: m.control_type || null,
+          shaftLength: specs.shaftLength,
+          controlType: specs.controlType,
+          shaftInches: specs.shaftInches,
+          startType: specs.startType,
+          powerTrim: specs.powerTrim,
+          commandThrust: specs.commandThrust,
+          specSource: specs.specSource,
           motorType: m.motor_type,
           msrp: m.msrp,
           sellingPrice,
           currency: 'CAD',
-          availability: m.availability || (inStock ? 'In Stock' : 'Special Order'),
+          availability: publicAvailabilityLabel(m.availability, inStock),
           inStock,
           stockQuantity: quantity,
           imageUrl: toPublicImageUrl(m.hero_image_url || m.image_url),

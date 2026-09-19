@@ -1501,7 +1501,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Does motor weight affect boat performance?",
-        "a": "Yes, significantly. Modern Mercury motors are lighter than older designs, so you may be able to run higher HP than before. We factor motor weight into recommendations."
+        "a": "Yes, significantly, but do not assume a newer motor is lighter. Installed weight varies by exact model and configuration, and a modern four-stroke can outweigh the older two-stroke it replaces. Check the exact proposed motor weight against the hull's documented power and motor-weight limits independently, rather than…"
       },
       {
         "q": "How does altitude affect motor sizing?",

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ChevronRight, Phone, ChevronDown } from 'lucide-react';
 import { RepowerCta } from './RepowerCta';
@@ -27,22 +27,55 @@ const statLabelStyle = { letterSpacing: '0.16em' } as const;
 const DEFAULT_EYEBROW = 'Mercury Repower · Rice Lake · Since 1947';
 const ACCENT = 'text-[#C8102E]';
 
-// Single source of truth for the homepage H1. The prerenderer reads the same
-// value from src/data/seoPageMetadata.json, so prerendered and hydrated markup
-// carry an identical heading string.
-const HOME_H1_LINES = seoPageMetadata.home.h1.split('. ').map((part, i, all) =>
-  i === all.length - 1 ? part : `${part}.`,
-);
+// Static H1 ("Keep your boat."), shared with the prerenderer via seoPageMetadata.
+const HOME_H1 = seoPageMetadata.home.h1;
+
+// Rotating endings shown under the H1 (outside it). Index 0 = default for SSR/prerender.
+const HEADLINE_ENDINGS = [
+  'Get your weekends back.',
+  'Stop losing Saturdays.',
+  'Turn the key without holding your breath.',
+  'It already fits your life.',
+  'Pay a third of new.',
+  "The lake's waiting.",
+];
+
+const ROTATE_INTERVAL_MS = 7000;
 
 export function HeroRepower() {
   // Lock to baseline variation (stable subhead/stats/CTAs per brief).
   const variation = HERO_VARIATIONS[0];
 
+  // Ending index: 0 for SSR/prerender (stable H1). Hydration picks a random one.
+  const [endingIndex, setEndingIndex] = useState(0);
+  const [reduceMotion, setReduceMotion] = useState(false);
   const [showVideo, setShowVideo] = useState(false);
 
   // Fade the trust line out early on scroll so it never visually collides with the sticky nav.
   const { scrollY } = useScroll();
   const trustLineOpacity = useTransform(scrollY, [120, 380], [1, 0]);
+
+  // Pick random ending on mount; set up gentle crossfade if motion allowed.
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const prefersReduce = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ?? false;
+    setReduceMotion(prefersReduce);
+
+    // Random pick on every page load.
+    const initial = Math.floor(Math.random() * HEADLINE_ENDINGS.length);
+    setEndingIndex(initial);
+
+    if (prefersReduce) return; // static pick only
+
+    const interval = window.setInterval(() => {
+      setEndingIndex((prev) => {
+        let next = prev;
+        while (next === prev) next = Math.floor(Math.random() * HEADLINE_ENDINGS.length);
+        return next;
+      });
+    }, ROTATE_INTERVAL_MS);
+    return () => window.clearInterval(interval);
+  }, []);
 
   // Defer video to after LCP. Skip on reduced-motion / Save-Data.
   useEffect(() => {
@@ -63,6 +96,7 @@ export function HeroRepower() {
     };
   }, []);
 
+  const ending = HEADLINE_ENDINGS[endingIndex];
 
   return (
     <section
@@ -133,7 +167,12 @@ export function HeroRepower() {
           {variation.eyebrow ?? DEFAULT_EYEBROW}
         </motion.p>
 
-        <motion.h1
+        {/* The <h1> holds only the static line (seoPageMetadata.home.h1, which
+            static-prerender.mjs also emits), so the prerendered and hydrated H1
+            are byte-identical. The rotating red ending is visually part of the
+            headline but lives in a sibling <p> outside the h1; the wrapper
+            carries the headline typography so the rendered look is unchanged. */}
+        <motion.div
           {...fadeUp(0.2)}
           className="font-display font-bold tracking-tight leading-[1.05] sm:leading-[1.02] mb-8"
           style={{
@@ -142,11 +181,30 @@ export function HeroRepower() {
             textWrap: 'balance',
           }}
         >
-          {/* Static H1. Must stay byte-identical to seoPageMetadata.home.h1 so the
-              prerendered heading and the hydrated heading are the same string. */}
-          <span className="block">{HOME_H1_LINES[0]}</span>
-          <span className={`block ${ACCENT}`}>{HOME_H1_LINES[1]}</span>
-        </motion.h1>
+          <h1 className="block">{HOME_H1}</h1>
+          {reduceMotion ? (
+            <p className={`block ${ACCENT}`}>{ending}</p>
+          ) : (
+            <p className="block relative">
+              {/* Invisible sizer keeps layout stable across endings */}
+              <span aria-hidden="true" className="invisible block">
+                {HEADLINE_ENDINGS.reduce((a, b) => (a.length >= b.length ? a : b))}
+              </span>
+              <AnimatePresence mode="wait" initial={false}>
+                <motion.span
+                  key={endingIndex}
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -8 }}
+                  transition={{ duration: 0.6, ease }}
+                  className={`absolute inset-0 ${ACCENT}`}
+                >
+                  {ending}
+                </motion.span>
+              </AnimatePresence>
+            </p>
+          )}
+        </motion.div>
 
         <motion.p
           {...fadeUp(0.4)}

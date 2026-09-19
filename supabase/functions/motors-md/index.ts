@@ -15,6 +15,10 @@ import {
   motorSlug,
 } from "../_shared/motor-slug.ts";
 import {
+  formatMercuryShaftMarkdown,
+  resolveMercuryCatalogSpecs,
+} from "../_shared/mercury-codes.ts";
+import {
   findPresentedPublicMotor,
   isPublicCatalogMotor,
   parseOptionalBooleanFlag,
@@ -25,6 +29,7 @@ import {
   resolvePublicQuoteDeposit,
   resolvePublicSellingPrice,
   toPublicImageUrl,
+  publicAvailabilityLabel,
 } from "../_shared/public-motor-contract.ts";
 
 const corsHeaders = {
@@ -47,23 +52,36 @@ function motorMarkdown(sourceMotor: any): string {
   const price = presented?.sellingPrice ?? resolvePublicSellingPrice(m);
   const slug = presented?.slug || motorSlug(m);
   const display = presented?.modelDisplay || m.model_display || m.model;
-  const availability = presented?.availability || m.availability || (m.in_stock ? "In Stock" : "Special Order");
+  const availability = publicAvailabilityLabel(presented?.availability || m.availability, Boolean(presented?.inStock ?? m.in_stock));
   const deposit = resolvePublicQuoteDeposit(m);
+  const specs = resolveMercuryCatalogSpecs({
+    modelDisplay: display,
+    shaft: m.shaft,
+    shaftCode: m.shaft_code,
+    controlType: m.control_type,
+  });
+  const specLines = [
+    `- **Price (CAD):** ${fmtCAD(price)}${m.msrp && price && m.msrp > price ? ` (MSRP ${fmtCAD(m.msrp)})` : ""}`,
+    `- **Horsepower:** ${m.horsepower}`,
+    `- **Family:** ${family}`,
+    `- **Shaft length:** ${formatMercuryShaftMarkdown(specs.shaftLength, specs.shaftInches)}`,
+    `- **Controls:** ${specs.controlType || "—"}`,
+  ];
+  if (specs.startType) specLines.push(`- **Start:** ${specs.startType}`);
+  if (specs.powerTrim != null) specLines.push(`- **Power trim:** ${specs.powerTrim ? "Yes" : "No"}`);
+  specLines.push(
+    `- **Availability:** ${availability}`,
+    `- **Currency:** CAD only`,
+    `- **Pickup:** Gores Landing, Ontario (no delivery)`,
+    `- **Warranty:** Standard 3-year Mercury`,
+    `- **Reservation deposit:** CA$${deposit} using the canonical motor reservation schedule`,
+  );
 
   return `# Mercury ${display}
 
 **${m.horsepower} HP ${family}** — Harris Boat Works, Gores Landing, Ontario
 
-- **Price (CAD):** ${fmtCAD(price)}${m.msrp && price && m.msrp > price ? ` (MSRP ${fmtCAD(m.msrp)})` : ""}
-- **Horsepower:** ${m.horsepower}
-- **Family:** ${family}
-- **Shaft length:** ${m.shaft_code || m.shaft || "—"}
-- **Controls:** ${m.control_type || "—"}
-- **Availability:** ${availability}
-- **Currency:** CAD only
-- **Pickup:** Gores Landing, Ontario (no delivery)
-- **Warranty:** Standard 3-year Mercury
-- **Reservation deposit:** CA$${deposit} using the canonical motor reservation schedule
+${specLines.join("\n")}
 
 ## Get a quote
 
@@ -78,6 +96,7 @@ Or call **(905) 342-2153**.
 - Final out-the-door price requires confirmation by Harris Boat Works.
 - Current financing terms come from the live public quote API. This page does not invent a fallback APR, term, or amortization.
 - ${PUBLIC_VERADO_POLICY.message}
+- Shaft length and controls are decoded from the Mercury model code and must be confirmed against the customer's transom before ordering.
 
 ---
 Source: ${SITE_URL}/motors/${slug}
@@ -99,6 +118,7 @@ function indexMarkdown(motors: any[]): string {
     `Mercury repower specialist on Rice Lake, Ontario. Family-owned since 1947.`,
     `All prices in CAD. Pickup only at Gores Landing. ${PUBLIC_VERADO_POLICY.message}`,
     `In-stock-only is an optional filter (\`in_stock_only=true\`); the default index is the advertised catalog.`,
+    `Shaft length and controls are decoded from the Mercury model code and must be confirmed against the customer's transom before ordering.`,
     ``,
     `**Updated:** ${now}`,
     `**Total motors:** ${presented.length}`,
@@ -112,7 +132,7 @@ function indexMarkdown(motors: any[]): string {
     `|---:|-------|--------|-------------|-------|-------|`,
   ];
   for (const m of presented) {
-    const stock = m.inStock ? "✓ In Stock" : (m.availability || "Special Order");
+    const stock = m.inStock ? "✓ In Stock" : publicAvailabilityLabel(m.availability, false);
     lines.push(
       `| ${m.horsepower} | ${m.modelDisplay} | ${m.family} | ${fmtCAD(m.sellingPrice)} | ${stock} | ${m.quoteUrl} |`
     );

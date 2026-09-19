@@ -16,6 +16,7 @@ import { sanitizeAgentNote } from "../_shared/sanitize.ts";
 import {
   fetchCanonicalHbwValuation,
   HbwValuationError,
+  normalizeHbwStroke,
 } from "../_shared/hbw-valuation.ts";
 import {
   fetchActiveFinancing,
@@ -48,6 +49,7 @@ import {
   TradeInInputError,
 } from "../_shared/trade-in-input.ts";
 import { insertPublicQuoteLead } from "../_shared/public-quote-lead.ts";
+import { formatMercuryShaftMarkdown, resolveMercuryCatalogSpecs } from "../_shared/mercury-codes.ts";
 
 // Rate-limit identifier from x-forwarded-for (first hop), used to key the
 // stricter fail-closed limiter on the write path (build_quote).
@@ -235,9 +237,10 @@ function isTillerMotor(modelDisplay: string): boolean {
   if (!modelDisplay) return false;
   const u = modelDisplay.toUpperCase().trim();
   if (u.includes("TILLER") || u.includes("BIG TILLER")) return true;
-  if (/\b\d+\.?\d*\s*(MLH|ELH|EXLH|MH)\b/i.test(u)) return true;
-  if (/\bMH\b/i.test(u) && !u.includes("EXLPT") && !u.includes("CT")) return true;
-  return false;
+  // Keep in lockstep with the site's canonical detector (src/lib/motor-helpers.ts):
+  // [E|M] + optional shaft (L, XL, XXL) + H + optional PT + optional alpha suffix.
+  // Matches MH, MLH, EH, ELH, EXLH, ELHPT, EXLHPT, MLHA ... never ELPT / EXLPT.
+  return /\b(\d+\.?\d*)?\s*[ME]X{0,2}L?H(?:PT)?[A-Z]*\b/i.test(u);
 }
 
 
@@ -247,6 +250,38 @@ function quoteUrl(motorId: string, opts: Record<string, string | number | undefi
     if (v != null && v !== "") params.set(k, String(v));
   }
   return `${SITE_URL}/quote/motor-selection?${params.toString()}`;
+}
+
+const DEEP_LINK_TRADE_CONDITIONS = new Set(["excellent", "good", "fair", "poor"]);
+
+function deepLinkTradeCondition(trade: unknown): string | undefined {
+  if (!trade || typeof trade !== "object") return undefined;
+  const raw = (trade as Record<string, unknown>).condition;
+  if (raw == null || raw === "") return undefined;
+  const value = String(raw).trim().toLowerCase();
+  return DEEP_LINK_TRADE_CONDITIONS.has(value) ? value : undefined;
+}
+
+function deepLinkTradeEngineType(trade: unknown): string | undefined {
+  if (!trade || typeof trade !== "object") return undefined;
+  const record = trade as Record<string, unknown>;
+  const raw = record.engine_type ?? record.engineType;
+  if (raw == null || raw === "") return undefined;
+  try {
+    return normalizeHbwStroke(raw);
+  } catch {
+    return undefined;
+  }
+}
+
+function deepLinkTradeEngineHours(trade: unknown): number | undefined {
+  if (!trade || typeof trade !== "object") return undefined;
+  const record = trade as Record<string, unknown>;
+  const raw = record.engine_hours ?? record.engineHours ?? record.hours;
+  if (raw == null || raw === "") return undefined;
+  const hours = typeof raw === "number" || typeof raw === "string" ? Number(raw) : NaN;
+  if (!Number.isFinite(hours) || hours < 0 || hours > 100000) return undefined;
+  return hours;
 }
 
 // ── GET support ─────────────────────────────────────────
@@ -283,7 +318,9 @@ function safeText(value: unknown, maxLen = 80): string {
 function queryString(params: URLSearchParams, key: string, maxLen = 200): string | undefined {
   const raw = params.get(key);
   if (raw == null) return undefined;
-  const trimmed = raw.trim();
+  // Assistants often copy a URL out of a sentence and keep the sentence's closing
+  // punctuation ("...engine_type=4-stroke."). Strip it so the value still validates.
+  const trimmed = raw.trim().replace(/[.,;:!?)\]]+$/, "").trim();
   if (!trimmed) return undefined;
   return trimmed.slice(0, maxLen);
 }
@@ -452,6 +489,7 @@ function renderQuoteMarkdown(p: any): string {
   lines.push(`Price valid until: ${p.priceValidUntil}`);
   lines.push(`Motor: ${title}, ${Number(motor.horsepower) || 0} HP ${safeText(motor.family, 40)}`.trim());
   lines.push(`Purchase path: ${p.purchase_path === "loose" ? "Loose motor, pickup only" : "Installed at Gores Landing"}`);
+  if (p.purchase_path_note) lines.push(`Note: ${p.purchase_path_note}`);
   lines.push("");
 
   lines.push("## Line items");
@@ -491,14 +529,18 @@ function renderQuoteMarkdown(p: any): string {
   if (financing?.eligible) {
     lines.push("## Financing");
     lines.push("");
-    const aprLabel = financing.apr_label
-      ?? (financing.apr_percent != null ? `${Number(financing.apr_percent).toFixed(2)}%` : null);
-    if (aprLabel) lines.push(`- APR: ${safeText(aprLabel, 20)}`);
+    const aprPercent = financing.offer?.apr_percent ??
+      (financing.apr != null ? (Number(financing.apr) < 1 ? Number(financing.apr) * 100 : Number(financing.apr)) : null);
+    if (aprPercent != null) lines.push(`- APR: ${Number(aprPercent).toFixed(2)}%`);
     if (financing.monthly_payment != null) lines.push(`- Estimated monthly payment: ${cad(financing.monthly_payment)}`);
     if (financing.amortization_months != null) lines.push(`- Amortization: ${financing.amortization_months} months`);
     if (financing.amount_financed != null) lines.push(`- Amount financed: ${cad(financing.amount_financed)}`);
     for (const offer of (financing.available_offers || [])) {
-      lines.push(`- Offer: ${safeText(offer.label || offer.name, 120)} (id: ${safeText(offer.id, 80)})`);
+      const offerBits = [safeText(offer.name || offer.label, 120)];
+      if (offer.apr_percent != null) offerBits.push(`${Number(offer.apr_percent).toFixed(2)}% APR`);
+      if (offer.amortization_months != null) offerBits.push(`${offer.amortization_months} months`);
+      if (offer.monthly_payment != null) offerBits.push(`est. ${cad(offer.monthly_payment)}/month`);
+      lines.push(`- Offer (financing_offer_id=${String(offer.id).replace(/[^A-Za-z0-9:_-]/g, "").slice(0, 80)}): ${offerBits.join(", ")}`);
     }
     lines.push("- Estimates only, subject to lender approval.");
     lines.push("");
@@ -552,14 +594,16 @@ function renderMotorsMarkdown(p: any): string {
     `Generated: ${p.lastUpdated}`,
     `Count: ${p.count}`,
     "",
-    "| Model | HP | Price (CAD) | Availability | Quote link |",
-    "| --- | --- | --- | --- | --- |",
+    "| Model | HP | Shaft | Controls | Start | Price (CAD) | Availability | Quote link |",
+    "| --- | --- | --- | --- | --- | --- | --- | --- |",
   ];
   for (const m of (p.motors || [])) {
     lines.push(
-      `| ${safeText(m.modelDisplay, 80)} | ${m.horsepower} | ${cad(m.sellingPrice)} | ${safeText(m.availability, 40)} | ${m.quoteUrl} |`,
+      `| ${safeText(m.modelDisplay, 80)} | ${m.horsepower} | ${formatMercuryShaftMarkdown(m.shaftLength ?? null, m.shaftInches ?? null)} | ${safeText(m.controlType, 20) || "—"} | ${safeText(m.startType, 20) || "—"} | ${cad(m.sellingPrice)} | ${safeText(m.availability, 40)} | ${m.quoteUrl} |`,
     );
   }
+  lines.push("");
+  lines.push("Shaft, controls and start are decoded from the Mercury model code when the dealer record is blank. Confirm against the customer's transom before ordering. Tiller motors are always quoted as loose motors.");
   lines.push("");
   lines.push("## Rules");
   lines.push("");
@@ -584,7 +628,7 @@ async function listMotors(supabase: any, body: any) {
   let q = supabase
     .from("motor_models")
     .select(
-      "id, model_display, model, model_key, model_number, horsepower, family, msrp, sale_price, dealer_price, base_price, manual_overrides, availability, in_stock, stock_quantity, image_url, hero_image_url, year",
+      "id, model_display, model, model_key, model_number, horsepower, family, msrp, sale_price, dealer_price, base_price, manual_overrides, availability, in_stock, stock_quantity, image_url, hero_image_url, year, shaft, shaft_code, control_type",
     )
     .or(PUBLIC_CATALOG_AVAILABILITY_OR)
     .gte("horsepower", minHp)
@@ -614,12 +658,25 @@ async function listMotors(supabase: any, body: any) {
     .map((m: any) => {
       const price = resolvePublicSellingPrice(m);
       const slug = motorSlug(m);
+      const specs = resolveMercuryCatalogSpecs({
+        modelDisplay: m.model_display || m.model,
+        shaft: m.shaft,
+        shaftCode: m.shaft_code,
+        controlType: m.control_type,
+      });
       return {
         id: m.id,
         slug,
         modelDisplay: m.model_display,
         family: m.family,
         horsepower: Number(m.horsepower) || 0,
+        shaftLength: specs.shaftLength,
+        shaftInches: specs.shaftInches,
+        controlType: specs.controlType,
+        startType: specs.startType,
+        powerTrim: specs.powerTrim,
+        commandThrust: specs.commandThrust,
+        specSource: specs.specSource,
         year: m.year,
         sellingPrice: price,
         msrp: Number(m.msrp) || null,
@@ -755,6 +812,12 @@ async function buildQuote(supabase: any, body: any) {
   const motorHp = Number(motor.horsepower) || hp || 0;
   const isTiller = isTillerMotor(motor.model_display || "");
   const purchasePath = (quoteFlags.purchase_path === "loose" || isTiller) ? "loose" : "installed";
+  const purchasePathRequested = quoteFlags.purchase_path === "loose"
+    ? "loose"
+    : quoteFlags.purchase_path === "installed" ? "installed" : null;
+  const purchasePathNote = isTiller && purchasePathRequested !== "loose"
+    ? "Tiller-handle motors are quoted as a loose motor for pickup at Gores Landing, so no remote-rigging installation or propeller allowance lines apply. If the customer wants Harris Boat Works to mount it, tiller mounting options are chosen in the online quote builder (the Continue this quote link) or by calling (905) 342-2153."
+    : null;
   const customerHasProp = quoteFlags.customer_has_propeller === true;
 
   // Build line items
@@ -866,6 +929,9 @@ async function buildQuote(supabase: any, body: any) {
     trade_brand: body?.trade_in?.brand,
     trade_year: body?.trade_in?.year,
     trade_hp: body?.trade_in?.horsepower,
+    trade_condition: deepLinkTradeCondition(body?.trade_in),
+    trade_engine_type: deepLinkTradeEngineType(body?.trade_in),
+    trade_engine_hours: deepLinkTradeEngineHours(body?.trade_in),
   });
 
   // Optional lead capture (only if contact provided)
@@ -928,6 +994,8 @@ async function buildQuote(supabase: any, body: any) {
       imageUrl: toPublicImageUrl(motor.hero_image_url || motor.image_url),
     },
     purchase_path: purchasePath,
+    purchase_path_requested: purchasePathRequested,
+    purchase_path_note: purchasePathNote,
     line_items: items,
     pricing: {
       subtotal: round2(subtotal),
@@ -974,7 +1042,7 @@ function docs() {
         build_quote:
           "https://www.mercuryrepower.ca/api/agents/quote?action=build_quote&motor_id=b16ac296-e506-4357-ad69-18a0aa347cbf&purchase_path=installed&boat_make=Lund&boat_model=Pro-V&trade_brand=Mercury&trade_year=2010&trade_hp=75&trade_condition=good&trade_engine_type=4-stroke",
         estimate_trade_in:
-          "https://www.mercuryrepower.ca/api/agents/quote?action=estimate_trade_in&brand=Mercury&year=2010&horsepower=75&condition=good",
+          "https://www.mercuryrepower.ca/api/agents/quote?action=estimate_trade_in&brand=Mercury&year=2010&horsepower=75&condition=good&engine_type=4-stroke",
         list_motors:
           "https://www.mercuryrepower.ca/api/agents/quote?action=list_motors&family=FourStroke&min_hp=75&max_hp=115",
       },
@@ -992,6 +1060,10 @@ function docs() {
         "trade_engine_type",
         "trade_engine_hours",
       ],
+      motor_specs:
+        "list_motors rows include shaftLength (S | L | XL | XXL), shaftInches (15 | 20 | 25 | 30), controlType (Tiller | Remote), startType, powerTrim, commandThrust and specSource (database | model_code). Values decoded from the Mercury model code must be confirmed against the customer's transom before ordering; null means the model code does not state it.",
+      tiller_motors:
+        "Tiller-handle motors are always quoted as purchase_path loose (no remote-rigging installation or propeller allowance lines), even when installed was requested. The response carries purchase_path_requested and purchase_path_note explaining this.",
       lead_capture:
         "Lead capture is POST-only. On GET, hand the customer the 'Continue this quote' deep link in the response, or (905) 342-2153.",
     },

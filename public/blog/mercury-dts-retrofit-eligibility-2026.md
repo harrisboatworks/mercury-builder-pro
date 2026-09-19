@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dts-retrofit-eligibility-2026.md
-last_updated: 2026-09-11
+last_updated: 2026-09-18
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury DTS Retrofit Eligibility 2026"
 description: "Check if your Mercury outboard supports DTS retrofit. Covers Verado, Pro XS, FourStroke, multi-engine joystick eligibility, and motors needing repower."
 category: "Mercury Technology"
 date_published: 2026-05-28
-date_modified: 2026-09-11
+date_modified: 2026-09-18
 keywords: ["mercury dts retrofit eligibility","mercury digital throttle shift","dts compatibility mercury","joystick piloting eligibility","mercury fly-by-wire","dts retrofit cost"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,13 +25,13 @@ revenue_driver: repower
 
 **Category:** Mercury Technology  
 **Published:** 2026-05-28  
-**Last reviewed:** 2026-09-11  
+**Last reviewed:** 2026-09-18  
 **Read time:** 10 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dts-retrofit-eligibility-2026
 
 *Hero image: Mercury digital-control example. The pictured control does not establish retrofit eligibility; confirm the engine serial number, control part number and complete rigging package.*
 
-> **Quick answer:** Most current Mercury motors built with DTS already have it (all Verado, Pro XS 150 HP and up, FourStroke 200 HP and up since the model was DTS-equipped). True retrofit of a mechanical Mercury to DTS is rarely cost-effective. The honest eligibility path for most boaters is: repower into a DTS-equipped motor.
+> **Quick answer:** Most current Mercury motors built with DTS already have it (all current Verado, plus the Pro XS and FourStroke configurations that were built with it; Mercury still offers mechanical versions in several of those horsepower classes). True retrofit of a mechanical Mercury to DTS is rarely cost-effective. The honest eligibility path for most boaters is: repower into a DTS-equipped motor.
 
 Most callers asking about DTS retrofit are surprised by the answer. They expect a parts catalog and a labor estimate. What they actually need is a yes-or-no on whether their current motor already has DTS (many do without the owner realizing), and if not, an honest assessment of whether retrofitting makes more sense than just repowering with a DTS-equipped motor.
 
@@ -42,11 +42,11 @@ This post is the eligibility decision tree. It covers what DTS actually is, how 
 | Motor situation | DTS retrofit eligible? | Honest path |
 |---|---|---|
 | Current Verado V8/V10/V12 (250-600 HP, 2020+) | **Already has DTS** | You already have it. Check your throttle handle. |
-| Current Pro XS 150-300 HP (2018+) | **Already has DTS** | Same. Most are DTS-equipped from factory. |
+| Current Pro XS 150-300 HP (2018+) | **Depends on configuration** | Mercury lists both mechanical and DTS versions in this range. Verify by serial number. |
 | Current FourStroke 200-300 HP (2018+) | **Most are DTS-equipped** | Verify by serial number, usually yes. |
 | Older Verado I6 (2006-2017, 200-350 HP) | **DTS-equipped, harness compatibility varies** | Often workable for harness/controls upgrade |
 | Mechanical Mercury 150 HP+ (any age) | **Retrofit possible but rarely worth it** | Quote a repower side-by-side. |
-| Mechanical Mercury under 150 HP | **Not eligible for retrofit** | DTS not offered on these classes |
+| Mechanical Mercury under 150 HP | **Rarely eligible** | Check Mercury's current specifications for your exact model before assuming either way |
 | Twin or triple Mercury rig | **Eligible if all motors are DTS-capable** | Required for joystick. Worth the conversation. |
 | Single small motor (under 75 HP) | **Not a DTS use case** | Save the money. Mechanical is correct here. |
 
@@ -159,11 +159,11 @@ A few patterns from our DTS conversations every spring on Rice Lake and the Kawa
 
 Before considering a DTS retrofit, have the motor serial number checked to establish which controls it supports and which system is already fitted.
 
-The second pattern: customers wanting DTS for the "smoother throttle" alone usually back off when they see the cost. A standalone DTS upgrade on a single-engine boat is a four-figure ticket once you add helm controls, harness, gateway, and labour; we quote it per job, with current figures on our /pricing-reference page. The smoother-throttle benefit is real but rarely worth the price. The customers who DO pull the trigger are usually twins-or-more rigs upgrading for joystick.
+The second pattern: customers wanting DTS for the "smoother throttle" alone usually back off when they see the cost. A standalone DTS upgrade on a single-engine boat is a four-figure ticket once you add helm controls, harness, gateway, and labour; we quote it per job. Our /pricing-reference page carries current motor pricing, not retrofit labour figures. The smoother-throttle benefit is real but rarely worth the price. The customers who DO pull the trigger are usually twins-or-more rigs upgrading for joystick.
 
 The third pattern, specific to Ontario boating: late-season dock approaches in fall winds at Rice Lake or in tight cottage dock spaces in the Kawarthas. Joystick piloting earns its keep in those moments. Customers who switch from twin mechanical to twin DTS with joystick almost never go back. The ability to crab sideways into a dock in a cross-wind without a second person on the bow is the kind of thing you don't appreciate until you have it.
 
-Fourth pattern: the worst DTS install we ever rescued was a customer who had bought a "DTS retrofit" kit online for an old Mercury 225 that wasn't DTS-capable. Three months of helm wiring trying to make it work before he called us. We sold him a new 250 Pro XS DTS, took the old one in trade, finished the install in a week, and he was back on the water. Not every retrofit story has a happy ending. Sometimes the honest answer is "this isn't the path."
+Fourth pattern, illustrative rather than a specific customer event: an owner buys a "DTS retrofit" kit online for an older mechanical motor that was never DTS-capable, then spends months on helm wiring before asking a dealer. A kit cannot turn a non-DTS engine into a DTS engine. Not every retrofit story has a happy ending, and sometimes the honest answer is "this isn't the path."
 
 > A common shop conversation: someone asks about adding DTS to a recent Pro XS, then finds the motor already has it. Checking the helm first can avoid quoting a retrofit you do not need.
 >
@@ -235,7 +235,7 @@ No. DTS is drive-by-wire. It changes how throttle and shift commands travel from
 
 ### Is DTS available on smaller Mercury motors?
 
-Generally no. Mercury offers DTS on motors roughly 75 HP and up, with most current Verado V8/V10/V12, Pro XS 150+, and FourStroke 200+ models DTS-equipped from factory. Under 75 HP, mechanical controls remain the standard. If you're shopping in the 25 to 60 HP range, the DTS question doesn't apply.
+Generally no, but the exact answer is a model and configuration check rather than a horsepower rule. Current Verado V8/V10/V12 come standard with DTS. In the Pro XS and FourStroke families, DTS availability depends on the specific model, year and configuration, and Mercury still lists mechanical versions in several of those horsepower classes. Confirm against Mercury's current specifications for your exact motor. If you're shopping in the 25 to 60 HP range, the DTS question doesn't apply.
 
 ### How do I check if my exact motor supports DTS?
 

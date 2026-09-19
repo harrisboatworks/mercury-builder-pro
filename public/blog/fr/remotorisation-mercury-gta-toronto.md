@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/remotorisation-mercury-gta-toronto.md
-last_updated: 2026-09-11
+last_updated: 2026-09-12
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Remotorisation Mercury dans la GTA : comment un plaisancier de Toronto r
 description: "Un parcours étape par étape sur la façon dont un plaisancier de la GTA remotorise un bateau chez Harris Boat Works : logistique, prix, échéancier et transport."
 category: "Guide d'achat"
 date_published: 2026-05-13
-date_modified: 2026-09-11
+date_modified: 2026-09-12
 keywords: ["remotorisation Mercury GTA","remotorisation Mercury Toronto","remotorisation Mercury Mississauga","coût remotorisation bateau GTA","concessionnaire Mercury Premier Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,13 +25,11 @@ revenue_driver: repower
 
 **Catégorie :** Guide d'achat\
 **Publié le :** 2026-05-13\
-**Dernière révision :** 2026-09-11\
+**Dernière révision :** 2026-09-12\
 **Temps de lecture :** 12 min\
 **URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/remotorisation-mercury-gta-toronto
 
 ## Remotorisation Mercury dans la GTA : comment un plaisancier de la région de Toronto remotorise chez Harris Boat Works (2026)
-
-*Dernière révision : 2026-05-13*
 
 > **Réponse rapide :** Les plaisanciers de la GTA remotorisent chez Harris Boat Works parce que nous donnons des soumissions installées en ligne, maintenons une bonne profondeur d'inventaire Mercury (les modèles courants sont normalement disponibles) et gardons votre bateau à l'atelier de 2 à 5 jours, du dépôt à la récupération; si le moteur doit être commandé, le délai dépend du modèle et de la disponibilité chez Mercury. Vous laissez le bateau à Gores Landing, vous le récupérez mis en service et essayé sur l'eau. Commencez le configurateur à mercuryrepower.ca.
 

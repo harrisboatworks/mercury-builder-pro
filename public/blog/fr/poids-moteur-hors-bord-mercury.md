@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/poids-moteur-hors-bord-mercury.md
-last_updated: 2026-09-11
+last_updated: 2026-09-18
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Poids des hors-bord Mercury (2,5 à 300 ch)"
 description: "Combien pèse un hors-bord Mercury ? Poids secs officiels de 2,5 à 300 ch, pourquoi le poids compte pour votre tableau arrière."
 category: "Guide d'achat"
 date_published: 2026-06-08
-date_modified: 2026-09-11
+date_modified: 2026-09-18
 keywords: ["poids moteur Mercury","tableau poids hors-bord","Mercury 115 poids","capacité tableau arrière"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Catégorie :** Guide d'achat\
 **Publié le :** 2026-06-08\
-**Dernière révision :** 2026-09-11\
+**Dernière révision :** 2026-09-18\
 **Temps de lecture :** 6 min\
 **URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/poids-moteur-hors-bord-mercury
 
@@ -51,7 +51,8 @@ Le poids d'un moteur, ce n'est pas un détail. Il décide si votre tableau arri�
 | 90 ch | 163 kg (359 lb) | Command Thrust : 165 kg (363 lb) |
 | 115 ch | 163 kg (359 lb) | Command Thrust : 165 kg (363 lb) |
 | 135 / 150 ch | 206 kg (455 lb) | 3,0 L 4 cylindres |
-| 175 / 200 / 225 ch | 216 kg (475 lb) | V6 3,4 L |
+| 175 / 200 ch | 215 kg (475 lb), référence de brochure datée | V6 3,4 L; confirmez la configuration exacte |
+| 225 ch | Confirmez la fiche technique du modèle exact | V6 3,4 L; ne déduisez pas le poids à partir de la ligne 175/200 |
 | 250 / 300 ch | 239 kg (527 lb) | V8 4,6 L |
 
 ### Poids secs Pro XS
@@ -60,8 +61,8 @@ Le poids d'un moteur, ce n'est pas un détail. Il décide si votre tableau arri�
 |---|---|---|
 | 115 ch | 163 kg (359 lb) | Identique au 115 standard; Mercury le présente comme le 115 de performance le plus léger de sa catégorie |
 | 150 ch | 207 kg (456 lb) | 3,0 L |
-| 175 ch | 213 kg (470 lb) | V6 3,4 L |
-| 200 / 225 / 250 / 300 ch | 229 kg (505 lb) | V8 4,6 L; oui, les V8 Pro XS sont plus légers que les V8 FourStroke |
+| 175 ch | 216 kg (475 lb) | V6 3,4 L; confirmez la configuration exacte |
+| 200 / 225 / 250 / 300 ch | 232 kg (511 lb) | V8 4,6 L; confirmez l'arbre, l'embase et la configuration de commande. Les V8 Pro XS restent plus légers que les V8 FourStroke |
 
 Tous les chiffres sont les poids secs publiés par Mercury pour la configuration la plus légère offerte. Le poids sec indiqué n'est pas le poids total installé. Ajoutez les équipements et fluides applicables selon la configuration, et vérifiez les limites de la coque avant de choisir le moteur. Les arbres plus longs, les boîtiers Command Thrust et le gréage ajoutent du poids, donc une même puissance peut avoir plus d'un poids publié. Source : [spécifications officielles Mercury Marine](https://www.mercurymarine.com/ca/en/engines/outboard).
 
@@ -99,7 +100,7 @@ Le Mercury 115 Pro XS à 163 kg (359 lb), que Mercury présente comme le 115 de 
 
 ### Combien pèse un Mercury 250 ?
 
-Ça dépend de la famille : le 250 Pro XS V8 fait 229 kg (505 lb) de poids sec, et le 250 FourStroke V8 fait 239 kg (527 lb), tous deux dans leur configuration la plus légère.
+Ça dépend de la famille : le 250 Pro XS V8 fait 232 kg (511 lb) de poids sec, et le 250 FourStroke V8 fait 239 kg (527 lb), tous deux dans leur configuration la plus légère.
 
 ### Pourquoi le poids compte-t-il pour une remotorisation ?
 

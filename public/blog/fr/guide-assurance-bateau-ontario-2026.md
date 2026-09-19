@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/guide-assurance-bateau-ontario-2026.md
-last_updated: 2026-09-06
+last_updated: 2026-09-12
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Assurance bateau en Ontario : ce dont vous avez réellement besoin (2026
 description: "Bases de l'assurance bateau en Ontario. Couverture responsabilité vs coque, ce qui est couvert vs ce qui ne l'est pas, fourchettes de primes annuelles réelles par..."
 category: "Assurance"
 date_published: 2026-05-13
-date_modified: 2026-09-06
+date_modified: 2026-09-12
 keywords: ["assurance bateau Ontario","assurance maritime","coût assurance bateau","couverture responsabilité bateaux","assurance bateau valeur convenue","assurance embarcation de plaisance"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Catégorie :** Assurance\
 **Publié le :** 2026-05-13\
-**Dernière révision :** 2026-09-06\
+**Dernière révision :** 2026-09-12\
 **Temps de lecture :** 9 min\
 **URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/guide-assurance-bateau-ontario-2026
 
@@ -138,8 +138,6 @@ Nous recommandons les deux pour tout moteur d'une valeur de 5 000 $ et plus.
 > **Une note sur la langue**
 > Cet article est disponible en français parce que nous voulons que l'information technique sur les moteurs Mercury rejoigne plus de clients. Nous nous efforçons d'offrir du contenu utile dans votre langue.
 > Cela dit, nous devons être honnêtes : notre personnel parle anglais. Si vous nous contactez pour une soumission ou un service, nous vous répondrons en anglais. Si vous préférez, vous pouvez utiliser Google Traduction ou demander à un membre bilingue de votre famille de vous aider avec la communication. Nous nous engageons à vous offrir le meilleur service possible.
-
-*Dernière révision : 2026-05-13*
 
 Par Harris Boat Works, marina familiale depuis 1947 sur le lac Rice, concessionnaire [Mercury Marine](https://www.mercurymarine.com/ca/en) depuis 1965 et concessionnaire Mercury Premier.
 ## Guides connexes
