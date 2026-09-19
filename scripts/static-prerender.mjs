@@ -5373,7 +5373,8 @@ const routes = [
         '<ul>' +
           '<li>build_quote parameters: motor_id or (horsepower + family), purchase_path (installed or loose), customer_has_propeller, financing_offer_id, boat_make, boat_model, trade_brand, trade_year, trade_hp, trade_condition, trade_engine_type, trade_engine_hours.</li>' +
           '<li>estimate_trade_in parameters: brand, year, horsepower, condition, engine_type, engine_hours.</li>' +
-          '<li>list_motors parameters: search, family, min_hp, max_hp, limit, in_stock_only.</li>' +
+          '<li>list_motors parameters: search, family, min_hp, max_hp, limit, in_stock_only. Each motor row includes shaftLength, shaftInches, controlType, startType, powerTrim and commandThrust so you can match a transom height and tiller or remote steering without decoding model names.</li>' +
+          '<li>Tiller-handle motors are always quoted as a loose motor for pickup, even if purchase_path=installed was requested. The response explains this in purchase_path_note; tiller mounting options are chosen in the online quote builder.</li>' +
         '</ul>' +
         '<p>Default response is <code>text/markdown; charset=utf-8</code> with a Generated timestamp, line items, trade-in credit, subtotal, HST and total in CAD, financing offers when the quote qualifies, and the deep link. Add <code>format=json</code> for the same JSON the POST returns, minus the lead fields. GET responses send Cache-Control: no-store and X-Robots-Tag: noindex. GET with no parameters returns the machine-readable schema for this endpoint.</p>' +
         '<p>Contact parameters (name, email, phone, contact, referrer) are ignored on GET and never logged, because personal information must not travel in URLs and link prefetchers would create junk leads. Lead capture stays POST-only. GET shares the per-IP rate-limit buckets with POST, so it is not a way around them.</p>' +
