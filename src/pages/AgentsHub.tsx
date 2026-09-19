@@ -17,7 +17,7 @@ const MOTORS_MD = `${AGENTS_API_BASE}/motors.md`;
 const EXAMPLE_MOTOR_ID = 'b16ac296-e506-4357-ad69-18a0aa347cbf';
 const GET_QUOTE_EXAMPLE_URL =
   `GET ${PUBLIC_QUOTE_API}?action=build_quote&motor_id=${EXAMPLE_MOTOR_ID}` +
-  '&purchase_path=installed&boat_make=Lund&boat_model=Pro-V&trade_brand=Mercury&trade_year=2010&trade_hp=75&trade_condition=good';
+  '&purchase_path=installed&boat_make=Lund&boat_model=Pro-V&trade_brand=Mercury&trade_year=2010&trade_hp=75&trade_condition=good&trade_engine_type=4-stroke';
 
 export default function AgentsHub() {
   return (

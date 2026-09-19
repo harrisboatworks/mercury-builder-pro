@@ -491,12 +491,14 @@ function renderQuoteMarkdown(p: any): string {
   if (financing?.eligible) {
     lines.push("## Financing");
     lines.push("");
-    if (financing.apr != null) lines.push(`- APR: ${financing.apr}%`);
+    const aprLabel = financing.apr_label
+      ?? (financing.apr_percent != null ? `${Number(financing.apr_percent).toFixed(2)}%` : null);
+    if (aprLabel) lines.push(`- APR: ${safeText(aprLabel, 20)}`);
     if (financing.monthly_payment != null) lines.push(`- Estimated monthly payment: ${cad(financing.monthly_payment)}`);
     if (financing.amortization_months != null) lines.push(`- Amortization: ${financing.amortization_months} months`);
     if (financing.amount_financed != null) lines.push(`- Amount financed: ${cad(financing.amount_financed)}`);
     for (const offer of (financing.available_offers || [])) {
-      lines.push(`- Offer ${safeText(offer.id, 60)}: ${safeText(offer.label || offer.name, 120)}`);
+      lines.push(`- Offer: ${safeText(offer.label || offer.name, 120)} (id: ${safeText(offer.id, 80)})`);
     }
     lines.push("- Estimates only, subject to lender approval.");
     lines.push("");
@@ -970,7 +972,7 @@ function docs() {
         "GET shares the per-IP buckets with POST: build_quote 10 per 10 minutes, estimate_trade_in 30 per 10 minutes, list_motors 120 per 10 minutes.",
       examples: {
         build_quote:
-          "https://www.mercuryrepower.ca/api/agents/quote?action=build_quote&motor_id=b16ac296-e506-4357-ad69-18a0aa347cbf&purchase_path=installed&boat_make=Lund&boat_model=Pro-V&trade_brand=Mercury&trade_year=2010&trade_hp=75&trade_condition=good",
+          "https://www.mercuryrepower.ca/api/agents/quote?action=build_quote&motor_id=b16ac296-e506-4357-ad69-18a0aa347cbf&purchase_path=installed&boat_make=Lund&boat_model=Pro-V&trade_brand=Mercury&trade_year=2010&trade_hp=75&trade_condition=good&trade_engine_type=4-stroke",
         estimate_trade_in:
           "https://www.mercuryrepower.ca/api/agents/quote?action=estimate_trade_in&brand=Mercury&year=2010&horsepower=75&condition=good",
         list_motors:
