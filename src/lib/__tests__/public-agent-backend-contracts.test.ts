@@ -9,6 +9,7 @@ import {
   filterPublicCatalogMotors,
   findPresentedPublicMotor,
   presentPublicCatalogMotor,
+  publicAvailabilityLabel,
   resolvePublicQuoteDeposit,
   resolvePublicSellingPrice,
   toFinitePositiveCents,
@@ -316,6 +317,38 @@ describe("AG07 public catalog coverage", () => {
     expect(findPresentedPublicMotor(rows, { slug: "missing-motor" })).toBeNull();
     expect(findPresentedPublicMotor(rows, { id: "55555555-5555-4555-8555-555555555555" })).toBeNull();
   });
+
+  it("normalizes every regular non-stock catalog status to Available to Order", () => {
+    const rawStatuses = [
+      "Out of Stock",
+      "Special Order",
+      "Brochure",
+      "Sold",
+      "On Order",
+      "Available",
+      "In Stock",
+      null,
+    ];
+
+    for (const availability of rawStatuses) {
+      expect(publicAvailabilityLabel(availability, false)).toBe("Available to Order");
+      expect(presentPublicCatalogMotor({
+        ...AG01_MOTOR,
+        id: "66666666-6666-4666-8666-666666666666",
+        in_stock: false,
+        stock_quantity: 0,
+        availability,
+      })?.availability).toBe("Available to Order");
+    }
+
+    expect(publicAvailabilityLabel("Out of Stock", true)).toBe("In Stock");
+    expect(presentPublicCatalogMotor({
+      ...AG01_MOTOR,
+      availability: "Out of Stock",
+      in_stock: true,
+      stock_quantity: 1,
+    })?.availability).toBe("In Stock");
+  });
 });
 
 describe("AG10 MCP envelopes, tool args, and upstream errors", () => {
@@ -403,6 +436,7 @@ describe("authorized transport wiring", () => {
     for (const handler of [motorsApi, quoteApi, mcp, markdown]) {
       expect(handler).toContain("resolvePublicSellingPrice(");
       expect(handler).toContain("PUBLIC_CATALOG_AVAILABILITY_OR");
+      expect(handler).toContain("publicAvailabilityLabel(");
     }
     expect(ucp).toContain("resolveUcpPricedItem(");
     expect(ucp).toContain("parseUcpCheckoutLineItems(");
