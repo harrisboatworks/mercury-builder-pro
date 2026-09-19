@@ -79,12 +79,17 @@ export function runLockfileSyncCheck({
   lockPath = 'package-lock.json',
   forbiddenLockfiles = ['bun.lock', 'bun.lockb'],
 } = {}) {
-  const presentForbidden = forbiddenLockfiles.filter((file) => existsSync(resolve(cwd, file)));
+  // A hosted builder may run `bun install` and drop an untracked bun.lock next to
+  // package-lock.json. That copy is disposable build output, so only a committed
+  // bun lockfile breaks the npm-only policy.
+  const presentForbidden = forbiddenLockfiles
+    .filter((file) => existsSync(resolve(cwd, file)))
+    .filter((file) => isTrackedByGit(file, cwd));
   if (presentForbidden.length) {
     return {
       ok: false,
       errors: [
-        `❌ npm-only policy: found ${presentForbidden.join(', ')}.\n` +
+        `❌ npm-only policy: found committed ${presentForbidden.join(', ')}.\n` +
           'This repository uses npm as the sole Node package manager.\n' +
           'Delete bun.lock and bun.lockb; keep package-lock.json as the only lockfile.',
       ],
