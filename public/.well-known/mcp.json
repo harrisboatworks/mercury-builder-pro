@@ -121,6 +121,14 @@
     "agentsHub": "https://www.mercuryrepower.ca/agents",
     "sitemap": "https://www.mercuryrepower.ca/sitemap.xml"
   },
+  "httpGetQuote": {
+    "description": "For assistants that can only issue HTTP GET. The same quote endpoint accepts flat query params and runs the same pricing code as the POST build_quote action, so the numbers are identical. Returns text/markdown by default; add format=json for JSON. GET never captures a lead and never writes anything: contact params are ignored and not logged. Lead capture stays POST-only; hand the customer the 'Continue this quote' deep link in the response. GET shares the same per-IP rate-limit buckets as POST.",
+    "endpoint": "https://www.mercuryrepower.ca/api/agents/quote",
+    "actions": ["build_quote", "estimate_trade_in", "list_motors"],
+    "example": "https://www.mercuryrepower.ca/api/agents/quote?action=build_quote&motor_id=b16ac296-e506-4357-ad69-18a0aa347cbf&purchase_path=installed&boat_make=Lund&boat_model=Pro-V&trade_brand=Mercury&trade_year=2010&trade_hp=75&trade_condition=good",
+    "schema": "GET https://www.mercuryrepower.ca/api/agents/quote with no params returns the full schema and an errors block.",
+    "errors": "https://www.mercuryrepower.ca/agents"
+  },
   "markdownTwins": {
     "description": "Lightweight text/markdown twins of every motor, case study, and location. Preferred over HTML for AI ingestion. Served with Content-Type: text/markdown; charset=utf-8 and X-Robots-Tag: noindex, follow.",
     "catalog": "https://www.mercuryrepower.ca/catalog.md",
@@ -140,5 +148,5 @@
       "verado_status"
     ]
   },
-  "lastUpdated": "2026-08-04"
+  "lastUpdated": "2026-09-19"
 }
