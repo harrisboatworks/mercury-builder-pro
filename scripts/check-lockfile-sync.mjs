@@ -5,9 +5,20 @@
 // Catches the common CI failure where `npm ci` rejects a stale lockfile.
 // Also rejects bun.lock / bun.lockb so npm remains the sole package manager.
 
+import { spawnSync } from 'node:child_process';
 import { readFileSync, existsSync, realpathSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+
+export function isTrackedByGit(file, cwd = process.cwd()) {
+  const result = spawnSync('git', ['ls-files', '--error-unmatch', '--', file], {
+    cwd,
+    stdio: 'ignore',
+  });
+  // No git available (or not a repo): fall back to treating the file as committed.
+  if (result.error || result.status === null) return true;
+  return result.status === 0;
+}
 
 export const EXACT_VERSION =
   /^(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)(?:-[0-9A-Za-z.-]+)?(?:\+[0-9A-Za-z.-]+)?$/;
@@ -79,12 +90,17 @@ export function runLockfileSyncCheck({
   lockPath = 'package-lock.json',
   forbiddenLockfiles = ['bun.lock', 'bun.lockb'],
 } = {}) {
-  const presentForbidden = forbiddenLockfiles.filter((file) => existsSync(resolve(cwd, file)));
+  // A hosted builder may run `bun install` and drop an untracked bun.lock next to
+  // package-lock.json. That copy is disposable build output, so only a committed
+  // bun lockfile breaks the npm-only policy.
+  const presentForbidden = forbiddenLockfiles
+    .filter((file) => existsSync(resolve(cwd, file)))
+    .filter((file) => isTrackedByGit(file, cwd));
   if (presentForbidden.length) {
     return {
       ok: false,
       errors: [
-        `❌ npm-only policy: found ${presentForbidden.join(', ')}.\n` +
+        `❌ npm-only policy: found committed ${presentForbidden.join(', ')}.\n` +
           'This repository uses npm as the sole Node package manager.\n' +
           'Delete bun.lock and bun.lockb; keep package-lock.json as the only lockfile.',
       ],
