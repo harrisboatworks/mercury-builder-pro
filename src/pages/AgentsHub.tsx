@@ -14,6 +14,10 @@ const PUBLIC_MOTORS_API = `${AGENTS_API_BASE}/motors`;
 const PUBLIC_QUOTE_API = `${AGENTS_API_BASE}/quote`;
 const MCP_SERVER = `${AGENTS_API_BASE}/mcp`;
 const MOTORS_MD = `${AGENTS_API_BASE}/motors.md`;
+const EXAMPLE_MOTOR_ID = 'b16ac296-e506-4357-ad69-18a0aa347cbf';
+const GET_QUOTE_EXAMPLE_URL =
+  `GET ${PUBLIC_QUOTE_API}?action=build_quote&motor_id=${EXAMPLE_MOTOR_ID}` +
+  '&purchase_path=installed&boat_make=Lund&boat_model=Pro-V&trade_brand=Mercury&trade_year=2010&trade_hp=75&trade_condition=good';
 
 export default function AgentsHub() {
   return (
@@ -280,6 +284,82 @@ export default function AgentsHub() {
             Returns <code>line_items</code>, <code>pricing</code>, <code>financing</code>, <code>deep_link</code>, and <code>priceValidUntil</code>.
             Final out-the-door price always requires human confirmation.
           </p>
+        </section>
+
+        <section className="mb-10">
+          <h2 className="heading-protected text-2xl font-semibold mt-8 mb-3">GET quote (for assistants that cannot POST)</h2>
+          <p className="text-protected">
+            If you can only make GET requests, use this. It returns the same itemized estimate as{' '}
+            <code>build_quote</code>, produced by the same pricing code, so the numbers are identical.
+            It never captures a lead: send the customer to the "Continue this quote" link in the response to finish.
+            Contact parameters (<code>name</code>, <code>email</code>, <code>phone</code>, <code>contact</code>,{' '}
+            <code>referrer</code>) are ignored and never logged. Lead capture stays POST-only.
+          </p>
+          <p className="text-protected text-sm mt-4 font-medium">Worked example, 90 HP FourStroke installed with a 2010 Mercury 75 trade-in:</p>
+          <CodeBlock language="url" size="xs">{GET_QUOTE_EXAMPLE_URL}</CodeBlock>
+          <p className="text-protected text-sm mt-2">
+            Parameters for <code>action=build_quote</code>: <code>motor_id</code> or (<code>horsepower</code> +{' '}
+            <code>family</code>), <code>purchase_path</code>, <code>customer_has_propeller</code>,{' '}
+            <code>financing_offer_id</code>, <code>boat_make</code>, <code>boat_model</code>, <code>trade_brand</code>,{' '}
+            <code>trade_year</code>, <code>trade_hp</code>, <code>trade_condition</code>, <code>trade_engine_type</code>,{' '}
+            <code>trade_engine_hours</code>.
+          </p>
+          <CodeBlock language="url" size="xs">{`# Trade-in only
+GET ${PUBLIC_QUOTE_API}?action=estimate_trade_in&brand=Mercury&year=2010&horsepower=75&condition=good
+
+# Inventory
+GET ${PUBLIC_QUOTE_API}?action=list_motors&family=FourStroke&min_hp=75&max_hp=115
+
+# Same JSON the POST returns, minus the lead fields
+GET ${PUBLIC_QUOTE_API}?action=build_quote&motor_id=${EXAMPLE_MOTOR_ID}&format=json`}</CodeBlock>
+          <p className="text-protected text-sm mt-2">
+            Default response is <code>text/markdown; charset=utf-8</code> with a <code>Generated:</code> timestamp,
+            line items, trade-in credit, subtotal, HST and total in CAD, financing offers when the quote qualifies,
+            and the deep link. Add <code>format=json</code> for JSON. GET responses send{' '}
+            <code>Cache-Control: no-store</code> and <code>X-Robots-Tag: noindex</code>. GET with no parameters returns the
+            machine-readable schema for this endpoint. GET shares the per-IP rate-limit buckets with POST, so it is not a
+            way around them.
+          </p>
+        </section>
+
+        <section className="mb-10">
+          <h2 className="heading-protected text-2xl font-semibold mt-8 mb-3">Error responses</h2>
+          <p className="text-protected">
+            Errors are always JSON, with the same status codes on GET and POST, even when the successful GET response is
+            markdown.
+          </p>
+          <ul className="text-protected space-y-2">
+            <li>
+              <strong>400</strong> <code>{'{"error": "<message>"}'}</code>. An unknown action also returns{' '}
+              <code>available_actions</code> and <code>docs_url</code>. Fix the parameters and retry.
+            </li>
+            <li>
+              <strong>404</strong> <code>{'{"error": "Motor not found"}'}</code>. Re-check <code>motor_id</code> against{' '}
+              <code>list_motors</code>, or search by horsepower and family.
+            </li>
+            <li>
+              <strong>405</strong> <code>{'{"error": "Method not allowed. Use GET or POST."}'}</code>. Any other verb.
+            </li>
+            <li>
+              <strong>422</strong> <code>{'{"error": "<message>"}'}</code> for Verado (special-order only, not quoted
+              here) or a motor with no published price. Do not estimate: route the customer to{' '}
+              <a href="tel:+19053422153" className="text-primary underline">(905) 342-2153</a>.
+            </li>
+            <li>
+              <strong>429</strong>{' '}
+              <code>{'{"error": "Too many requests. Please try again in a moment.", "code": "rate_limited"}'}</code> with a{' '}
+              <code>Retry-After</code> header in seconds (currently 600). Back off for that window, then retry.
+            </li>
+            <li>
+              <strong>5xx</strong> <code>{'{"error": "<message>"}'}</code>. Retry once, then fall back to the deep link
+              or <a href="tel:+19053422153" className="text-primary underline">(905) 342-2153</a>.
+            </li>
+            <li>
+              <strong>Trade-in valuation upstream</strong>{' '}
+              <code>{'{"error": "<message>", "code": "<code>", "notes": [...]}'}</code> at the upstream status code. Retry,
+              or send the customer to <Link to="/trade-in-value" className="text-primary underline">/trade-in-value</Link>.
+            </li>
+          </ul>
         </section>
 
         <section className="mb-10">
