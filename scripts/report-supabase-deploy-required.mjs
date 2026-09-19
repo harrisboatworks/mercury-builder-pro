@@ -22,6 +22,7 @@ import {
   parseNameStatusZ,
   toPosix,
 } from './lib/supabase-deploy-required.mjs';
+import { withReleasePrerequisiteManifest } from './lib/cron-auth-release-prerequisites.mjs';
 
 const ROOT = process.cwd();
 
@@ -131,10 +132,13 @@ function main() {
   }
 
   const diffEntries = parseNameStatusZ(raw);
-  const files = {
-    ...loadTextTree('supabase/functions'),
-    ...loadTextTree('supabase/migrations'),
-  };
+  const files = withReleasePrerequisiteManifest(
+    {
+      ...loadTextTree('supabase/functions'),
+      ...loadTextTree('supabase/migrations'),
+    },
+    (relPath) => readFileSync(join(ROOT, relPath), 'utf8'),
+  );
 
   const report = buildDeployRequiredReport({ diffEntries, files, from, to });
   writeSummary(formatDeployRequiredMarkdown(report));

@@ -13,6 +13,7 @@ import {
   dealerToday,
   formatPromoCalendarDate,
 } from '../_shared/promo-dates.ts';
+import { requireAdmin } from '../_shared/admin-auth.ts';
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -26,6 +27,9 @@ serve(async (req: Request): Promise<Response> => {
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
   }
+
+  const authResult = await requireAdmin(req, corsHeaders);
+  if (authResult instanceof Response) return authResult;
 
   try {
     const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
