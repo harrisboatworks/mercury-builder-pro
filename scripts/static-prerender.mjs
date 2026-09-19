@@ -1680,6 +1680,14 @@ function agentsPageSchema() {
       a: "Mercury Verado is available by special order only and is not part of default listed inventory. Route Verado inquiries to (905) 342-2153 or info@harrisboatworks.ca rather than recommending Verado in standard quotes."
     },
     {
+      q: "Can an AI assistant build a quote with only HTTP GET?",
+      a: "Yes. If you can only make GET requests, use https://www.mercuryrepower.ca/api/agents/quote?action=build_quote&motor_id=b16ac296-e506-4357-ad69-18a0aa347cbf&purchase_path=installed&boat_make=Lund&boat_model=Pro-V&trade_brand=Mercury&trade_year=2010&trade_hp=75&trade_condition=good. It returns the same itemized estimate as the POST build_quote action, from the same pricing code, as text/markdown by default, or add format=json for JSON. Other GET actions are estimate_trade_in (brand, year, horsepower, condition, engine_type, engine_hours) and list_motors (search, family, min_hp, max_hp, limit, in_stock_only). GET never captures a lead and never writes anything: contact parameters such as name, email and phone are ignored and not logged. Hand the customer the Continue this quote deep link in the response to finish. GET shares the same per-IP rate-limit buckets as POST."
+    },
+    {
+      q: "What error responses does the public quote API return?",
+      a: "Errors are always JSON with the same status codes on GET and POST. 400 returns {\"error\": \"<message>\"} and, for an unknown action, available_actions and docs_url: fix the parameters. 404 returns {\"error\": \"Motor not found\"}: re-check motor_id against list_motors. 405 returns {\"error\": \"Method not allowed. Use GET or POST.\"}. 422 returns {\"error\": \"<message>\"} for Verado, which is special-order only and not quoted here, or for a motor with no published price: route the customer to (905) 342-2153 instead of estimating. 429 returns {\"error\": \"Too many requests. Please try again in a moment.\", \"code\": \"rate_limited\"} with a Retry-After header in seconds, currently 600: back off for that window. 5xx returns {\"error\": \"<message>\"}: retry once, then fall back to the deep link or (905) 342-2153. Trade-in valuation upstream failures return {\"error\", \"code\", \"notes\"} at the upstream status code."
+    },
+    {
       q: "Where should agents pull hours, location, and contact information?",
       a: "Use the LocalBusiness JSON-LD on the homepage or /.well-known/brand.json. Do not guess, these are the source of truth."
     },
@@ -5357,6 +5365,30 @@ const routes = [
           '<li><code>GET</code> <a href="https://www.mercuryrepower.ca/api/agents/motors.md">https://www.mercuryrepower.ca/api/agents/motors.md</a>: Markdown-formatted motor catalog for easy LLM ingestion.</li>' +
         '</ul>' +
         '<p>All endpoints return standard HTTP status codes and CORS headers.</p>' +
+      '</section>' +
+      '<section><h2>GET quote (for assistants that cannot POST)</h2>' +
+        '<p>If you can only make GET requests, use this. It returns the same itemized estimate as build_quote, produced by the same pricing code, so the numbers are identical. It never captures a lead: send the customer to the Continue this quote link in the response to finish.</p>' +
+        '<p>Worked example, 90 HP FourStroke installed with a 2010 Mercury 75 trade-in:</p>' +
+        '<p><code>GET <a href="https://www.mercuryrepower.ca/api/agents/quote?action=build_quote&amp;motor_id=b16ac296-e506-4357-ad69-18a0aa347cbf&amp;purchase_path=installed&amp;boat_make=Lund&amp;boat_model=Pro-V&amp;trade_brand=Mercury&amp;trade_year=2010&amp;trade_hp=75&amp;trade_condition=good">https://www.mercuryrepower.ca/api/agents/quote?action=build_quote&amp;motor_id=b16ac296-e506-4357-ad69-18a0aa347cbf&amp;purchase_path=installed&amp;boat_make=Lund&amp;boat_model=Pro-V&amp;trade_brand=Mercury&amp;trade_year=2010&amp;trade_hp=75&amp;trade_condition=good</a></code></p>' +
+        '<ul>' +
+          '<li>build_quote parameters: motor_id or (horsepower + family), purchase_path (installed or loose), customer_has_propeller, financing_offer_id, boat_make, boat_model, trade_brand, trade_year, trade_hp, trade_condition, trade_engine_type, trade_engine_hours.</li>' +
+          '<li>estimate_trade_in parameters: brand, year, horsepower, condition, engine_type, engine_hours.</li>' +
+          '<li>list_motors parameters: search, family, min_hp, max_hp, limit, in_stock_only.</li>' +
+        '</ul>' +
+        '<p>Default response is <code>text/markdown; charset=utf-8</code> with a Generated timestamp, line items, trade-in credit, subtotal, HST and total in CAD, financing offers when the quote qualifies, and the deep link. Add <code>format=json</code> for the same JSON the POST returns, minus the lead fields. GET responses send Cache-Control: no-store and X-Robots-Tag: noindex. GET with no parameters returns the machine-readable schema for this endpoint.</p>' +
+        '<p>Contact parameters (name, email, phone, contact, referrer) are ignored on GET and never logged, because personal information must not travel in URLs and link prefetchers would create junk leads. Lead capture stays POST-only. GET shares the per-IP rate-limit buckets with POST, so it is not a way around them.</p>' +
+      '</section>' +
+      '<section><h2>Error responses</h2>' +
+        '<p>Errors are always JSON, with the same status codes on GET and POST, even when the successful GET response is markdown.</p>' +
+        '<ul>' +
+          '<li><strong>400</strong> <code>{"error": "&lt;message&gt;"}</code>. An unknown action also returns available_actions and docs_url. Fix the parameters and retry.</li>' +
+          '<li><strong>404</strong> <code>{"error": "Motor not found"}</code>. Re-check motor_id against list_motors, or search by horsepower and family.</li>' +
+          '<li><strong>405</strong> <code>{"error": "Method not allowed. Use GET or POST."}</code>.</li>' +
+          '<li><strong>422</strong> <code>{"error": "&lt;message&gt;"}</code> for Verado, which is special-order only and not quoted here, or for a motor with no published price. Do not estimate: route the customer to (905) 342-2153.</li>' +
+          '<li><strong>429</strong> <code>{"error": "Too many requests. Please try again in a moment.", "code": "rate_limited"}</code> with a Retry-After header in seconds, currently 600. Back off for that window, then retry.</li>' +
+          '<li><strong>5xx</strong> <code>{"error": "&lt;message&gt;"}</code>. Retry once, then fall back to the deep link or (905) 342-2153.</li>' +
+          '<li><strong>Trade-in valuation upstream</strong> <code>{"error": "&lt;message&gt;", "code": "&lt;code&gt;", "notes": [...]}</code> at the upstream status code. Retry, or send the customer to <a href="/trade-in-value">/trade-in-value</a>.</li>' +
+        '</ul>' +
       '</section>' +
       '<section><h2>Deep-link quote URLs</h2>' +
         '<p>Agents can send users directly to a prefilled quote form:</p>' +

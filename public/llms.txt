@@ -249,7 +249,14 @@ DeepSeek, Qwen, Kimi, and Doubao, can use the REST APIs below instead.
 - Public quote API (POST, itemized CAD quotes with optional trade-in):
   https://www.mercuryrepower.ca/api/agents/quote
   Actions: list_motors, estimate_trade_in, build_quote
-  Docs: GET the same URL returns the full schema.
+  Docs: GET the same URL with no parameters returns the full schema, including the errors block.
+- Same quote API over GET, for assistants that cannot POST (same pricing code, identical numbers):
+  https://www.mercuryrepower.ca/api/agents/quote?action=build_quote&motor_id=b16ac296-e506-4357-ad69-18a0aa347cbf&purchase_path=installed&boat_make=Lund&boat_model=Pro-V&trade_brand=Mercury&trade_year=2010&trade_hp=75&trade_condition=good
+  Also action=estimate_trade_in (brand, year, horsepower, condition) and action=list_motors (family, min_hp, max_hp).
+  Returns text/markdown by default, or add format=json. GET never captures a lead and never writes anything:
+  contact parameters are ignored and not logged, and lead capture stays POST-only. Hand the customer the
+  "Continue this quote" deep link in the response. GET shares the same per-IP rate limits as POST.
+  Error shapes and what to do about each: https://www.mercuryrepower.ca/agents
 - Deep-link prefilled quote URL pattern (one-shot link to the configurator):
   https://www.mercuryrepower.ca/quote/motor-selection?motor={MOTOR_ID}&boat_make={MAKE}&boat_model={MODEL}&trade_brand={BRAND}&trade_year={YEAR}&trade_hp={HP}
 - Markdown twins and indexes (LLM-cheap plain-text): see /catalog.md, /maintenance.md, and /motors/{slug}.md
