@@ -283,7 +283,9 @@ function safeText(value: unknown, maxLen = 80): string {
 function queryString(params: URLSearchParams, key: string, maxLen = 200): string | undefined {
   const raw = params.get(key);
   if (raw == null) return undefined;
-  const trimmed = raw.trim();
+  // Assistants often copy a URL out of a sentence and keep the sentence's closing
+  // punctuation ("...engine_type=4-stroke."). Strip it so the value still validates.
+  const trimmed = raw.trim().replace(/[.,;:!?)\]]+$/, "").trim();
   if (!trimmed) return undefined;
   return trimmed.slice(0, maxLen);
 }
