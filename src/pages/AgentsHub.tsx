@@ -318,6 +318,13 @@ GET ${PUBLIC_QUOTE_API}?action=list_motors&family=FourStroke&min_hp=75&max_hp=11
 # Same JSON the POST returns, minus the lead fields
 GET ${PUBLIC_QUOTE_API}?action=build_quote&motor_id=${EXAMPLE_MOTOR_ID}&format=json`}</CodeBlock>
           <p className="text-protected text-sm mt-2">
+            <code>list_motors</code> rows include <code>shaftLength</code>, <code>shaftInches</code>, <code>controlType</code>,{' '}
+            <code>startType</code>, <code>powerTrim</code> and <code>commandThrust</code>, so you can match a transom height and
+            tiller or remote steering without decoding model names. Tiller-handle motors are always quoted as a loose motor
+            for pickup, even if <code>purchase_path=installed</code> was requested; the response explains this in{' '}
+            <code>purchase_path_note</code>, and tiller mounting options are chosen in the online quote builder.
+          </p>
+          <p className="text-protected text-sm mt-2">
             Default response is <code>text/markdown; charset=utf-8</code> with a <code>Generated:</code> timestamp,
             line items, trade-in credit, subtotal, HST and total in CAD, financing offers when the quote qualifies,
             and the deep link. Add <code>format=json</code> for JSON. GET responses send{' '}
