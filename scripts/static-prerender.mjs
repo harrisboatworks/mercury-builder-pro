@@ -1673,7 +1673,7 @@ function agentsPageSchema() {
     },
     {
       q: "What deep-link parameters does the quote form accept?",
-      a: "Send users to https://www.mercuryrepower.ca/quote/motor-selection with optional query parameters motor, boat_make, boat_model, trade_brand, trade_year, and trade_hp. Example: /quote/motor-selection?motor={MOTOR_ID}&boat_make=Legend&boat_model=Pontoon&trade_hp=90. The configurator applies supported, validated fields as provisional buyer input. Fitment, condition, valuation and pricing still require confirmation."
+      a: "Send users to https://www.mercuryrepower.ca/quote/motor-selection with optional query parameters motor, boat_make, boat_model, trade_brand, trade_year, trade_hp, trade_condition, and trade_engine_type. Example: /quote/motor-selection?motor={MOTOR_ID}&boat_make=Legend&boat_model=Pontoon&trade_hp=90&trade_condition=good&trade_engine_type=4-stroke. The configurator applies supported, validated fields as provisional buyer input. Fitment, condition, valuation and pricing still require confirmation."
     },
     {
       q: "How does Harris Boat Works handle Mercury Verado inquiries?",
@@ -5392,8 +5392,8 @@ const routes = [
       '</section>' +
       '<section><h2>Deep-link quote URLs</h2>' +
         '<p>Agents can send users directly to a prefilled quote form:</p>' +
-        '<p><code>https://www.mercuryrepower.ca/quote/motor-selection?motor={MOTOR_ID}&amp;boat_make={MAKE}&amp;boat_model={MODEL}&amp;trade_brand={BRAND}&amp;trade_year={YEAR}&amp;trade_hp={HP}</code></p>' +
-        '<p>Example: <code>https://www.mercuryrepower.ca/quote/motor-selection?motor=41acbe10-27ef-4502-a968-21c1723705c7&amp;boat_make=legend&amp;boat_model=pontoon&amp;trade_hp=90</code></p>' +
+        '<p><code>https://www.mercuryrepower.ca/quote/motor-selection?motor={MOTOR_ID}&amp;boat_make={MAKE}&amp;boat_model={MODEL}&amp;trade_brand={BRAND}&amp;trade_year={YEAR}&amp;trade_hp={HP}&amp;trade_condition={CONDITION}&amp;trade_engine_type={ENGINE_TYPE}</code></p>' +
+        '<p>Example: <code>https://www.mercuryrepower.ca/quote/motor-selection?motor=41acbe10-27ef-4502-a968-21c1723705c7&amp;boat_make=legend&amp;boat_model=pontoon&amp;trade_hp=90&amp;trade_condition=good&amp;trade_engine_type=4-stroke</code></p>' +
         '<p>Supported parameters are optional and validated. Prefilling does not confirm fitment, condition, valuation or pricing. The UCP reference does not restore a complete multi-motor cart.</p>' +
       '</section>' +
       '<section><h2>Source of truth rules</h2>' +

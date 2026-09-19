@@ -84,7 +84,7 @@ export default function AgentsHub() {
                 {
                   "@type": "Question",
                   "name": "How do I send a customer to a prefilled Harris Boat Works quote configurator?",
-                  "acceptedAnswer": { "@type": "Answer", "text": "Build a deep-link URL: https://www.mercuryrepower.ca/quote/motor-selection?motor={MOTOR_ID}&boat_make={MAKE}&boat_model={MODEL}&trade_brand={BRAND}&trade_year={YEAR}&trade_hp={HP}, supported fields are validated and treated as provisional buyer inputs. Get MOTOR_ID from list_motors or search_motors." }
+                  "acceptedAnswer": { "@type": "Answer", "text": "Build a deep-link URL: https://www.mercuryrepower.ca/quote/motor-selection?motor={MOTOR_ID}&boat_make={MAKE}&boat_model={MODEL}&trade_brand={BRAND}&trade_year={YEAR}&trade_hp={HP}&trade_condition={CONDITION}&trade_engine_type={ENGINE_TYPE}, supported fields are validated and treated as provisional buyer inputs. Get MOTOR_ID from list_motors or search_motors." }
                 },
                 {
                   "@type": "Question",
@@ -247,6 +247,11 @@ export default function AgentsHub() {
       "horsepower": 150,
       "shaftLength": "L",
       "controlType": "Remote",
+      "shaftInches": 20,
+      "startType": "Electric",
+      "powerTrim": true,
+      "commandThrust": true,
+      "specSource": "model_code",
       "msrp": 18995,
       "sellingPrice": 17495,
       "availability": "In Stock",
@@ -464,7 +469,7 @@ GET ${MOTORS_MD}?slug=fourstroke-90hp-elpt-efi`}</CodeBlock>
           <p className="text-protected">
             Prefill the selected motor and the boat/trade-in fields shown below. These are provisional buyer inputs; missing details, fitment, valuation and pricing still require confirmation:
           </p>
-          <CodeBlock language="url" size="xs">{`${SITE_URL}/quote/motor-selection?motor={MOTOR_ID}&boat_make=Lund&boat_model=Pro-V&trade_brand=Mercury&trade_year=2010&trade_hp=75`}</CodeBlock>
+          <CodeBlock language="url" size="xs">{`${SITE_URL}/quote/motor-selection?motor={MOTOR_ID}&boat_make=Lund&boat_model=Pro-V&trade_brand=Mercury&trade_year=2010&trade_hp=75&trade_condition=good&trade_engine_type=4-stroke`}</CodeBlock>
         </section>
 
         <section className="mb-10">

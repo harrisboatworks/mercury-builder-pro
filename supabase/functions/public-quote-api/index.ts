@@ -16,6 +16,7 @@ import { sanitizeAgentNote } from "../_shared/sanitize.ts";
 import {
   fetchCanonicalHbwValuation,
   HbwValuationError,
+  normalizeHbwStroke,
 } from "../_shared/hbw-valuation.ts";
 import {
   fetchActiveFinancing,
@@ -247,6 +248,38 @@ function quoteUrl(motorId: string, opts: Record<string, string | number | undefi
     if (v != null && v !== "") params.set(k, String(v));
   }
   return `${SITE_URL}/quote/motor-selection?${params.toString()}`;
+}
+
+const DEEP_LINK_TRADE_CONDITIONS = new Set(["excellent", "good", "fair", "poor"]);
+
+function deepLinkTradeCondition(trade: unknown): string | undefined {
+  if (!trade || typeof trade !== "object") return undefined;
+  const raw = (trade as Record<string, unknown>).condition;
+  if (raw == null || raw === "") return undefined;
+  const value = String(raw).trim().toLowerCase();
+  return DEEP_LINK_TRADE_CONDITIONS.has(value) ? value : undefined;
+}
+
+function deepLinkTradeEngineType(trade: unknown): string | undefined {
+  if (!trade || typeof trade !== "object") return undefined;
+  const record = trade as Record<string, unknown>;
+  const raw = record.engine_type ?? record.engineType;
+  if (raw == null || raw === "") return undefined;
+  try {
+    return normalizeHbwStroke(raw);
+  } catch {
+    return undefined;
+  }
+}
+
+function deepLinkTradeEngineHours(trade: unknown): number | undefined {
+  if (!trade || typeof trade !== "object") return undefined;
+  const record = trade as Record<string, unknown>;
+  const raw = record.engine_hours ?? record.engineHours ?? record.hours;
+  if (raw == null || raw === "") return undefined;
+  const hours = typeof raw === "number" || typeof raw === "string" ? Number(raw) : NaN;
+  if (!Number.isFinite(hours) || hours < 0 || hours > 100000) return undefined;
+  return hours;
 }
 
 // ── GET support ─────────────────────────────────────────
@@ -872,6 +905,9 @@ async function buildQuote(supabase: any, body: any) {
     trade_brand: body?.trade_in?.brand,
     trade_year: body?.trade_in?.year,
     trade_hp: body?.trade_in?.horsepower,
+    trade_condition: deepLinkTradeCondition(body?.trade_in),
+    trade_engine_type: deepLinkTradeEngineType(body?.trade_in),
+    trade_engine_hours: deepLinkTradeEngineHours(body?.trade_in),
   });
 
   // Optional lead capture (only if contact provided)
