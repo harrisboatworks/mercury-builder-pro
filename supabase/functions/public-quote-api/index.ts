@@ -491,12 +491,14 @@ function renderQuoteMarkdown(p: any): string {
   if (financing?.eligible) {
     lines.push("## Financing");
     lines.push("");
-    if (financing.apr != null) lines.push(`- APR: ${financing.apr}%`);
+    const aprLabel = financing.apr_label
+      ?? (financing.apr_percent != null ? `${Number(financing.apr_percent).toFixed(2)}%` : null);
+    if (aprLabel) lines.push(`- APR: ${safeText(aprLabel, 20)}`);
     if (financing.monthly_payment != null) lines.push(`- Estimated monthly payment: ${cad(financing.monthly_payment)}`);
     if (financing.amortization_months != null) lines.push(`- Amortization: ${financing.amortization_months} months`);
     if (financing.amount_financed != null) lines.push(`- Amount financed: ${cad(financing.amount_financed)}`);
     for (const offer of (financing.available_offers || [])) {
-      lines.push(`- Offer ${safeText(offer.id, 60)}: ${safeText(offer.label || offer.name, 120)}`);
+      lines.push(`- Offer: ${safeText(offer.label || offer.name, 120)} (id: ${safeText(offer.id, 80)})`);
     }
     lines.push("- Estimates only, subject to lender approval.");
     lines.push("");
