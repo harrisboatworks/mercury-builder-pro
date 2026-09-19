@@ -157,7 +157,7 @@ Do not start this list until Jay authorizes the exact pin, the production model/
 1. **Reconcile #528 if it merged first.** Same deploy script and workflow. Do not take #528's cron patches.
 2. **Re-pin source.** Confirm the candidate SHA. Re-run the sanitized bundle-hash compare. The only demonstrated mismatch today is `realtime-sdp-exchange` (`#462` + current `rate-limit.ts` / `#368`). If a previously equal slug now mismatches, stop.
 3. **Registry checks (read-only).** Confirm the six slugs are `ACTIVE` and present. Record version + `updated_at` + `verify_jwt`. Do not treat version/time as a commit.
-4. **Fresh production model/API proof** on the OpenAI project behind the **production** `OPENAI_API_KEY` (names are already present). A laptop key, `.env`, or preview project is not provenance. Recording `ATTESTED` in the committed manifest is a later reviewed change that also needs live registry validation for that project/source/window. Today's validator only checks attestation shape and required names.
+4. **Fresh production model/API proof** on the OpenAI project behind the **production** `OPENAI_API_KEY` (names are already present). Provenance is a SHA-256 match of the 1Password value against the production Supabase secret digest (project, secret name, match result, time — no values or digests printed). A laptop key, `.env`, preview project, or a key merely labeled production is not provenance. For `site-chat`, a model `GET` is discovery only; a required non-customer `POST /v1/chat/completions` matching the `ai-chatbot` source contract (model identity **and** actual output) must pass. For Realtime, a provider WebRTC SDP probe is capability proof only and is not acceptance of the deployed Edge relay. Recording `ATTESTED` in the committed manifest is a later reviewed change that also needs live registry validation for that project/source/window. Today's validator only checks attestation shape and required names.
 5. **Migrations.** Confirm no newly required in-scope migration is unapplied. The job checks this; it does not apply SQL.
 6. **Realtime pair first** — the only demonstrated source mismatch. After step 4 and Jay's approval, select exactly:
 
@@ -194,9 +194,14 @@ Codex completed the read-only metadata and OPTIONS checks above. Provider/sessio
 
 Codex already completed credential-free OPTIONS reachability (200, `ACAO *`) at `2026-09-11T02:11:36Z`. That is not a provider/runtime pass.
 
-Only after Jay authorizes a specific check, using production provenance, and **without** creating customer, quote, or session business records:
+Exact bounded Codex probes (digest-matched production Edge `OPENAI_API_KEY` only, required A2 chat/completions, required WebRTC SDP + close for Realtime, `#541` insufficient): `docs/runbooks/public-function-pair-attestation-probes.md`. Do not request those credentials in Cursor or run the live probes in the cloud worker.
 
-- Model-existence probe on the production OpenAI project for `gpt-5.6-luna` and `gpt-realtime-2.1-mini` (read/list only; no chat completion that writes CRM state).
+Only after Jay authorizes a specific check, using SHA-256-matched production provenance, and **without** creating customer, quote, or session business records:
+
+- A1/B1 model `GET` on `gpt-5.6-luna` and `gpt-realtime-2.1-mini` is **discovery only**. It is not `site-chat` or Realtime attestation.
+- **Required A2:** one successful non-customer `POST /v1/chat/completions` matching the `ai-chatbot` source contract (`model`, `messages`, `max_completion_tokens: 250`, `reasoning_effort: 'none'`; no `max_tokens` / `temperature` / `top_p` / penalty fields). Check returned model identity **and** actual output. Do not post A2 to live `ai-chatbot` / `ai-chatbot-stream`.
+- **Required Realtime B2–B4 (pre-deploy provider capability):** `POST /v1/realtime/client_secrets`, then `POST /v1/realtime/calls` with a **WebRTC-generated** SDP offer, an SDP answer validated beyond the `v=` prefix (`o=`, `s=`, `m=`, answer ≠ offer, peer accepts), a bounded duration, and an explicit peer/session close. Token issuance or `v=`-only acceptance is insufficient. This does **not** accept production `realtime-session` / `realtime-sdp-exchange`.
+- **Post-deploy Edge relay acceptance** is a later, separately authorized check against the deployed pair on an allowed origin. Do not collapse it into the provider probe.
 - Registry re-read of the six slugs.
 - If a widget/session probe is later authorized: use a non-customer origin that already passes `isAllowedOrigin`, do not submit a quote, do not save a lead, do not run MCP tools that estimate trade-in, build a quote, send SMS/email, or write reminders. `/voice-test` creates a Realtime session and is **not** a no-side-effect check unless separately scoped.
 
