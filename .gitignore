@@ -30,3 +30,7 @@ reports/*.json
 
 # Build-generated 1200x630 social cards
 public/generated-og/
+
+# Bun lockfile: npm is the only package manager here (see scripts/check-lockfile-sync.mjs)
+bun.lock
+bun.lockb
