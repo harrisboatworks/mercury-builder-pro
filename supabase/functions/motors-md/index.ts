@@ -29,6 +29,7 @@ import {
   resolvePublicQuoteDeposit,
   resolvePublicSellingPrice,
   toPublicImageUrl,
+  publicAvailabilityLabel,
 } from "../_shared/public-motor-contract.ts";
 
 const corsHeaders = {
@@ -51,7 +52,7 @@ function motorMarkdown(sourceMotor: any): string {
   const price = presented?.sellingPrice ?? resolvePublicSellingPrice(m);
   const slug = presented?.slug || motorSlug(m);
   const display = presented?.modelDisplay || m.model_display || m.model;
-  const availability = presented?.availability || m.availability || (m.in_stock ? "In Stock" : "Special Order");
+  const availability = publicAvailabilityLabel(presented?.availability || m.availability, Boolean(presented?.inStock ?? m.in_stock));
   const deposit = resolvePublicQuoteDeposit(m);
   const specs = resolveMercuryCatalogSpecs({
     modelDisplay: display,
@@ -131,7 +132,7 @@ function indexMarkdown(motors: any[]): string {
     `|---:|-------|--------|-------------|-------|-------|`,
   ];
   for (const m of presented) {
-    const stock = m.inStock ? "✓ In Stock" : (m.availability || "Special Order");
+    const stock = m.inStock ? "✓ In Stock" : publicAvailabilityLabel(m.availability, false);
     lines.push(
       `| ${m.horsepower} | ${m.modelDisplay} | ${m.family} | ${fmtCAD(m.sellingPrice)} | ${stock} | ${m.quoteUrl} |`
     );

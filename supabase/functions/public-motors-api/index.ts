@@ -17,6 +17,7 @@ import {
   publicStockQuantity,
   resolvePublicSellingPrice,
   toPublicImageUrl,
+  publicAvailabilityLabel,
 } from '../_shared/public-motor-contract.ts';
 
 const corsHeaders = {
@@ -104,7 +105,7 @@ Deno.serve(async (req) => {
           msrp: m.msrp,
           sellingPrice,
           currency: 'CAD',
-          availability: m.availability || (inStock ? 'In Stock' : 'Special Order'),
+          availability: publicAvailabilityLabel(m.availability, inStock),
           inStock,
           stockQuantity: quantity,
           imageUrl: toPublicImageUrl(m.hero_image_url || m.image_url),
