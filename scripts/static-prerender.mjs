@@ -5094,7 +5094,6 @@ const routes = [
     h1,
     intro,
     htmlLang,
-    extraHead: HOME_HUB_ALTERNATE_TAGS,
     schemas: [genericPageSchema(`/${lang}`, h1, intro)],
     extraNoscript: () => {
       const visible = (articles || []).filter(a => a.isPublished !== false);
