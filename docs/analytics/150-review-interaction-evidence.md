@@ -123,10 +123,14 @@ Those UI changes do **not** supersede this draft.
 - This observer is still the collection path for the four categories (static
   table click, horizontal pan, image expansion, contents navigation).
 - Labels stay positional (`toc_<N>`, `image_<N>`, `table_<N>_r<R>_c<C>`). The
-  `#577` visible labels do not become event names.
-- GitHub still reports this branch MERGEABLE / CLEAN against current `main`.
-  `BlogArticle.tsx` still only wires `useOverheatInteractions` on `main`; this
-  PR still swaps in `useReview150Interactions` for the 150 slug only.
+  `#577` visible labels do not become event names. After merging current
+  `main`, `useReview150Interactions.test.ts` clicks Show/Hide contents and
+  Expand image and asserts only `toc_toggle` / `image_2` events. No real
+  Clarity or customer data is sent.
+- This branch now includes current `main` (`d3cde84621`, #585) so
+  `BlogArticle.tsx` keeps both `useReview150Interactions` for the 150 slug
+  and the `#577` `mobileAffordances` / `visibleExpandLabel` / `overflowHint`
+  wiring.
 
 Keep this PR draft. Keep #559 open. Retain the telemetry. Do not treat `#577`
 as proof the cluster is gone.

@@ -93,6 +93,25 @@ describe('150 review evidence privacy and scope', () => {
     expect(clarity.mock.calls.every(call => call.length === 2 && call[0] === 'event')).toBe(true);
     expect(JSON.stringify(clarity.mock.calls)).not.toMatch(/private|Article text|Table text|http|customer|\/blog/i);
   });
+  it('keeps #577 visible Show/Hide and Expand image labels out of event names', () => {
+    get('nav button').textContent = 'Show table of contents';
+    const expand = get('.overlay');
+    expand.textContent = 'Expand image';
+    expand.setAttribute('aria-label', 'Expand image: FourStroke vs Pro XS');
+    consent('granted');
+    click('nav button');
+    get('nav button').textContent = 'Hide table of contents';
+    click('nav button');
+    click('.overlay');
+    expect(events()).toEqual([
+      'review150_toc_toggle_click_first',
+      'review150_toc_toggle_click_repeat',
+      'review150_image_2_click_first',
+    ]);
+    const payload = JSON.stringify(clarity.mock.calls);
+    expect(payload).not.toMatch(/Show table of contents|Hide table of contents|Expand image|FourStroke/i);
+    expect(payload).not.toMatch(/private|customer|\/blog/i);
+  });
   it('resolves controls added after mount without sending DOM-provided labels', () => {
     consent('granted');
     const native = document.createElement('button');
