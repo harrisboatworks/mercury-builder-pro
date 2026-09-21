@@ -8,6 +8,7 @@ import {
 import {
   filterPublicCatalogMotors,
   findPresentedPublicMotor,
+  isPublicMotorInStock,
   presentPublicCatalogMotor,
   publicAvailabilityLabel,
   resolvePublicQuoteDeposit,
@@ -316,6 +317,12 @@ describe("AG07 public catalog coverage", () => {
     expect(inStock.map((motor) => motor.id)).toEqual([AG01_MOTOR.id]);
     expect(findPresentedPublicMotor(rows, { slug: "missing-motor" })).toBeNull();
     expect(findPresentedPublicMotor(rows, { id: "55555555-5555-4555-8555-555555555555" })).toBeNull();
+    expect(advertised.some((motor) => /verado|exclude/i.test(String(motor.modelDisplay)))).toBe(false);
+    expect(presentPublicCatalogMotor({
+      ...AG01_MOTOR,
+      id: "55555555-5555-4555-8555-555555555555",
+      availability: "Exclude",
+    })).toBeNull();
   });
 
   it("normalizes every regular non-stock catalog status to Available to Order", () => {
@@ -348,6 +355,26 @@ describe("AG07 public catalog coverage", () => {
       in_stock: true,
       stock_quantity: 1,
     })?.availability).toBe("In Stock");
+
+    const quantityZero = {
+      ...AG01_MOTOR,
+      id: "77777777-7777-4777-8777-777777777777",
+      in_stock: true,
+      stock_quantity: 0,
+    };
+    const availabilityOnly = {
+      ...AG01_MOTOR,
+      id: "88888888-8888-4888-8888-888888888888",
+      in_stock: false,
+      stock_quantity: null,
+      availability: "In Stock",
+    };
+    expect(Boolean(quantityZero.in_stock)).toBe(true);
+    expect(isPublicMotorInStock(quantityZero)).toBe(false);
+    expect(presentPublicCatalogMotor(quantityZero)?.availability).toBe("Available to Order");
+    expect(Boolean(availabilityOnly.in_stock)).toBe(false);
+    expect(isPublicMotorInStock(availabilityOnly)).toBe(true);
+    expect(presentPublicCatalogMotor(availabilityOnly)?.availability).toBe("In Stock");
   });
 });
 
@@ -437,6 +464,8 @@ describe("authorized transport wiring", () => {
       expect(handler).toContain("resolvePublicSellingPrice(");
       expect(handler).toContain("PUBLIC_CATALOG_AVAILABILITY_OR");
       expect(handler).toContain("publicAvailabilityLabel(");
+      expect(handler).toContain("isPublicMotorInStock(");
+      expect(handler).not.toContain("Boolean(m.in_stock)");
     }
     expect(ucp).toContain("resolveUcpPricedItem(");
     expect(ucp).toContain("parseUcpCheckoutLineItems(");

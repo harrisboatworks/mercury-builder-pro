@@ -280,8 +280,15 @@ describe("public motor agent contract", () => {
     expect(motorsApi).toContain("publicAvailabilityLabel(");
     expect(quoteApi).toContain("publicAvailabilityLabel(");
     expect(mcpServer).toContain("publicAvailabilityLabel(");
-    expect(source("supabase/functions/motors-md/index.ts")).toContain("publicAvailabilityLabel(");
+    const motorsMd = source("supabase/functions/motors-md/index.ts");
+    expect(motorsMd).toContain("publicAvailabilityLabel(");
     expect(quoteApi).not.toContain('isPublicMotorInStock(m) ? "In Stock" : "Available to Order"');
+    for (const handler of [motorsApi, quoteApi, mcpServer, motorsMd]) {
+      expect(handler).toContain("isPublicMotorInStock(");
+      expect(handler).not.toContain("Boolean(m.in_stock)");
+      expect(handler).not.toContain("Boolean(presented?.inStock ?? m.in_stock)");
+    }
+    expect(mcpServer).not.toContain('.eq("in_stock", true)');
     expect(mcpServer).toContain(".limit(500)");
     expect(mcpServer).toContain(".slice(0, resultLimit)");
 
