@@ -25834,7 +25834,6 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     slug: "mercury-90-hp-fourstroke-review-ontario",
     relatedSlugs: ['mercury-115-hp-fourstroke-review-ontario', 'mercury-150-hp-fourstroke-pro-xs-review-ontario', 'mercury-command-thrust-complete-guide-2026', 'mercury-propeller-selection-guide'],
     title: 'Mercury 90 HP FourStroke Review: Standard vs Command Thrust',
-    seoTitle: 'Mercury 90 HP Review: Standard vs Command Thrust',
     description: "An honest Mercury 90 HP FourStroke review for Ontario, with current specs, exact freshwater tests, Command Thrust differences and candid buyer advice.",
     image: "/lovable-uploads/blog-heroes-2026-07/batch-b/hero-mercury-90-fourstroke-freshwater-review-2026-07.webp",
     imageAlt: "Pontoon boat underway with a Mercury FourStroke outboard.",
