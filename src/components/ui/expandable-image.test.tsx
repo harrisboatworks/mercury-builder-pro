@@ -82,4 +82,51 @@ describe('ExpandableImage', () => {
     expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
     await waitFor(() => expect(trigger).toHaveFocus());
   });
+
+  it('keeps the expand label hidden unless the article opts in', () => {
+    render(
+      <ExpandableImage
+        src="/lovable-uploads/inline/mercury-150-fourstroke-vs-pro-xs-official.webp"
+        alt="Current Mercury 150 FourStroke and 150 Pro XS"
+      />,
+    );
+
+    expect(screen.queryByText('Expand image')).not.toBeInTheDocument();
+    expect(
+      screen.getByRole('button', {
+        name: 'Expand image: Current Mercury 150 FourStroke and 150 Pro XS',
+      }),
+    ).toBeInTheDocument();
+  });
+
+  it('shows a visible expand label without changing Escape or focus behavior', async () => {
+    render(
+      <ExpandableImage
+        src="/lovable-uploads/inline/mercury-150-fourstroke-vs-pro-xs-official.webp"
+        alt="Current Mercury 150 FourStroke and 150 Pro XS"
+        visibleExpandLabel
+      />,
+    );
+
+    const trigger = screen.getByRole('button', {
+      name: 'Expand image: Current Mercury 150 FourStroke and 150 Pro XS',
+    });
+
+    expect(screen.getByText('Expand image')).toBeInTheDocument();
+
+    fireEvent.click(trigger);
+    const closeButton = screen.getByRole('button', { name: 'Close expanded image' });
+
+    expect(
+      screen.getByRole('dialog', {
+        name: 'Expanded image: Current Mercury 150 FourStroke and 150 Pro XS',
+      }),
+    ).toBeInTheDocument();
+    expect(closeButton).toHaveFocus();
+
+    fireEvent.keyDown(document, { key: 'Escape' });
+
+    expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+    await waitFor(() => expect(trigger).toHaveFocus());
+  });
 });

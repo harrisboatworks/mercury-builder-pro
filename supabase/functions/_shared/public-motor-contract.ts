@@ -192,7 +192,7 @@ export function presentPublicCatalogMotor(sourceMotor: PublicMotorRow) {
     currency: "CAD" as const,
     inStock,
     stockQuantity: publicStockQuantity(row),
-    availability: row.availability || (inStock ? "In Stock" : "Special Order"),
+    availability: publicAvailabilityLabel(row.availability, inStock),
     imageUrl: toPublicImageUrl(row.hero_image_url || row.image_url),
     url: slug ? `${PUBLIC_SITE_URL}/motors/${slug}` : null,
     quoteUrl: row.id ? `${PUBLIC_SITE_URL}/quote/motor-selection?motor=${row.id}` : null,
@@ -228,4 +228,16 @@ export function findPresentedPublicMotor(
 
 export function parseOptionalBooleanFlag(value: unknown): boolean {
   return value === true || value === "true" || value === "1";
+}
+
+/**
+ * Agent-facing availability label. Regular catalog motors that are not on the
+ * floor are "Available to Order". "Special order" is reserved for Verado, which
+ * is not in the public catalog, so assistants never confuse an orderable 15 ELH
+ * with a call-the-dealer Verado.
+ */
+export function publicAvailabilityLabel(raw: unknown, inStock: boolean): string {
+  const text = typeof raw === "string" ? raw.trim() : "";
+  if (text && !/special[\s-]*order/i.test(text)) return text;
+  return inStock ? "In Stock" : "Available to Order";
 }

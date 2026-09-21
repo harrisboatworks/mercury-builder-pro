@@ -14,6 +14,11 @@ type StickySummaryProps = {
   bullets?: string[];
   onReserve: () => void;
   onReview?: () => void;
+  callHref: string;
+  smsHref: string;
+  quoteReference: string | null;
+  onCall: (event: React.MouseEvent<HTMLAnchorElement>) => void;
+  onText: (event: React.MouseEvent<HTMLAnchorElement>) => void;
   depositAmount?: number;
   coverageYears?: number;
   promoWarrantyYears?: number;
@@ -37,6 +42,11 @@ export default function StickySummary({
   bullets = [],
   onReserve,
   onReview,
+  callHref,
+  smsHref,
+  quoteReference,
+  onCall,
+  onText,
   depositAmount = 200,
   coverageYears,
   promoWarrantyYears,
@@ -128,24 +138,34 @@ export default function StickySummary({
         <div className="my-5 h-px w-full bg-repower-navy-900/10" aria-hidden />
 
         <div className="space-y-3">
-          <button
-            onClick={onReserve}
-            disabled={isProcessingPayment || reserveDisabled}
-            className={`group w-full rounded bg-repower-mercury-red px-6 py-4 text-center font-sans text-[13px] font-bold uppercase tracking-[0.12em] text-repower-cream transition hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-repower-mercury-red disabled:opacity-50 disabled:cursor-not-allowed ${showPulse && !isProcessingPayment ? 'premium-pulse' : ''}`}
+          <div className="pb-1 text-center font-sans">
+            <p className="text-[13px] font-semibold text-repower-navy-900">Questions about this quote? Talk to a person.</p>
+            {quoteReference && (
+              <p className="mt-1 select-text text-[12px] text-repower-navy-900/60">Quote {quoteReference}</p>
+            )}
+          </div>
+          <a
+            href={callHref}
+            onClick={onCall}
+            data-cta-location="quote_summary"
+            className="group flex w-full items-center justify-center rounded bg-repower-mercury-red px-6 py-4 text-center font-sans text-[13px] font-bold uppercase tracking-[0.12em] text-repower-cream transition hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-repower-mercury-red"
           >
             <span className="inline-flex items-center justify-center gap-2">
-              {isProcessingPayment
-                ? 'Processing...'
-                : `Reserve with ${money(depositAmount)} deposit`
-              }
-              {!isProcessingPayment && (
-                <span aria-hidden className="transition-transform duration-200 group-hover:translate-x-1">→</span>
-              )}
+              Call (905) 342-2153
+              <span aria-hidden className="transition-transform duration-200 group-hover:translate-x-1">→</span>
             </span>
-          </button>
-          <p className="px-1 text-center font-sans text-[12px] leading-relaxed text-repower-navy-900/60">
-            Secure Stripe checkout. HBW confirms details before ordering.
-          </p>
+          </a>
+          <a
+            href={smsHref}
+            onClick={onText}
+            data-cta-location="quote_summary"
+            className="group flex w-full items-center justify-center rounded border border-repower-navy-900 bg-transparent px-6 py-4 text-center font-sans text-[13px] font-bold uppercase tracking-[0.12em] text-repower-navy-900 transition hover:bg-repower-navy-900 hover:text-repower-cream focus:outline-none focus-visible:ring-2 focus-visible:ring-repower-gold/40"
+          >
+            <span className="inline-flex items-center justify-center gap-2">
+              Text This Quote to HBW
+              <span aria-hidden className="transition-transform duration-200 group-hover:translate-x-1">→</span>
+            </span>
+          </a>
 
           {onReview && (
             <button
@@ -159,14 +179,40 @@ export default function StickySummary({
             </button>
           )}
 
-          {onApplyForFinancing && (
+          <div className="flex items-center gap-3 py-1" aria-hidden>
+            <span className="h-px flex-1 bg-repower-navy-900/10" />
+            <span className="font-sans text-[10px] font-semibold uppercase tracking-[0.14em] text-repower-navy-900/45">
+              Ready to lock it in?
+            </span>
+            <span className="h-px flex-1 bg-repower-navy-900/10" />
+          </div>
+          <button
+            onClick={onReserve}
+            disabled={isProcessingPayment}
+            className={`group w-full rounded border border-repower-navy-900 bg-transparent px-6 py-4 text-center font-sans text-[13px] font-bold uppercase tracking-[0.12em] text-repower-navy-900 transition hover:bg-repower-navy-900 hover:text-repower-cream focus:outline-none focus-visible:ring-2 focus-visible:ring-repower-gold/40 disabled:cursor-not-allowed disabled:opacity-50 ${showPulse && !isProcessingPayment ? 'premium-pulse' : ''}`}
+          >
+            <span className="inline-flex items-center justify-center gap-2">
+              {isProcessingPayment
+                ? 'Processing...'
+                : `Reserve this motor, ${money(depositAmount)}`
+              }
+              {!isProcessingPayment && (
+                <span aria-hidden className="transition-transform duration-200 group-hover:translate-x-1">→</span>
+              )}
+            </span>
+          </button>
+          <p className="px-1 text-center font-sans text-[12px] leading-relaxed text-repower-navy-900/60">
+            Secure Stripe checkout. HBW confirms details before ordering.
+          </p>
+
+          {onSaveForLater && (
             <button
-              onClick={onApplyForFinancing}
+              onClick={onSaveForLater}
               className="w-full rounded border border-repower-navy-900/15 bg-transparent px-6 py-4 font-sans text-[13px] font-bold uppercase tracking-[0.12em] text-repower-navy-900 transition hover:border-repower-navy-900/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-repower-gold/40"
             >
               <span className="inline-flex items-center justify-center gap-2">
-                <CreditCard className="w-4 h-4" />
-                Apply for Financing
+                <Bookmark className="w-4 h-4" />
+                {user ? 'Save Quote' : 'Save My Quote'}
               </span>
             </button>
           )}
@@ -184,14 +230,14 @@ export default function StickySummary({
             </button>
           )}
 
-          {onSaveForLater && (
+          {onApplyForFinancing && (
             <button
-              onClick={onSaveForLater}
+              onClick={onApplyForFinancing}
               className="w-full rounded border border-repower-navy-900/15 bg-transparent px-6 py-4 font-sans text-[13px] font-bold uppercase tracking-[0.12em] text-repower-navy-900 transition hover:border-repower-navy-900/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-repower-gold/40"
             >
               <span className="inline-flex items-center justify-center gap-2">
-                <Bookmark className="w-4 h-4" />
-                {user ? 'Save Quote' : 'Save My Quote'}
+                <CreditCard className="w-4 h-4" />
+                Apply for Financing
               </span>
             </button>
           )}

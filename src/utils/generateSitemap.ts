@@ -11,6 +11,7 @@ import { caseStudies } from '../data/caseStudies';
 import { locations } from '../data/locations';
 import { getBlogHreflangAlternates } from '../data/blogI18nRegistry.js';
 import { BLOG_TOPIC_HUBS } from '../data/blogTopicHubs';
+import seoPageMetadata from '../data/seoPageMetadata.json';
 import { renderSitemapLastmod } from '../../scripts/lib/sitemap-lastmod.mjs';
 
 // Multilingual blog index pages and standalone hardcoded translated posts.
@@ -103,8 +104,18 @@ function notRedirected(entry: SitemapEntry): boolean {
 const LOCALIZED_BLOG_PREFIX = /^\/blog\/(fr|ko|zh|es|pa|ur|tl|hi)\/(.+)$/;
 const ENGLISH_BLOG_PREFIX = /^\/blog\/([^/]+)$/;
 const BLOG_INDEX_SLUGS = new Set(['fr', 'ko', 'zh', 'es', 'pa', 'ur', 'tl', 'hi', 'zh-hant']);
+const HOME_HUB_ALTERNATES = seoPageMetadata.home.alternates;
+const HOME_HUB_PATHS = new Set(HOME_HUB_ALTERNATES.map(({ path }) => path));
 
 function sitemapHreflangBlock(loc: string): string {
+  if (HOME_HUB_PATHS.has(loc)) {
+    const links = HOME_HUB_ALTERNATES.map(
+      ({ hrefLang, path }) =>
+        `    <xhtml:link rel="alternate" hreflang="${hrefLang}" href="${BASE_URL}${path}" />`,
+    );
+    return links.length ? `\n${links.join('\n')}` : '';
+  }
+
   const localized = loc.match(LOCALIZED_BLOG_PREFIX);
   const english = loc.match(ENGLISH_BLOG_PREFIX);
   const locale = localized?.[1] || (english && !BLOG_INDEX_SLUGS.has(english[1]) ? 'en' : null);

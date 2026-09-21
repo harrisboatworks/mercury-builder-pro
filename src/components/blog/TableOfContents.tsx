@@ -5,9 +5,10 @@ import { cn } from '@/lib/utils';
 
 interface TableOfContentsProps {
   items: TOCItem[];
+  mobileAffordances?: boolean;
 }
 
-export function TableOfContents({ items }: TableOfContentsProps) {
+export function TableOfContents({ items, mobileAffordances = false }: TableOfContentsProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [activeId, setActiveId] = useState<string>('');
   const panelId = useId();
@@ -91,7 +92,9 @@ export function TableOfContents({ items }: TableOfContentsProps) {
       >
         <span className="flex items-center gap-2 font-medium text-foreground">
           <List className="h-4 w-4" />
-          Table of Contents
+          {mobileAffordances
+            ? (isOpen ? 'Hide table of contents' : 'Show table of contents')
+            : 'Table of Contents'}
         </span>
         <ChevronDown 
           className={cn(
@@ -124,6 +127,7 @@ export function TableOfContents({ items }: TableOfContentsProps) {
                 aria-current={activeId === group.h2.id ? 'location' : undefined}
                 className={cn(
                   "block w-full text-left py-1.5 px-3 rounded-md text-sm transition-colors",
+                  mobileAffordances && "min-h-11 flex items-center md:min-h-0",
                   "hover:bg-muted hover:text-foreground",
                   activeId === group.h2.id
                     ? "bg-primary/10 text-primary font-medium"
@@ -143,6 +147,7 @@ export function TableOfContents({ items }: TableOfContentsProps) {
                         aria-current={activeId === h3.id ? 'location' : undefined}
                         className={cn(
                           "block w-full text-left py-1 px-3 rounded-md text-sm transition-colors",
+                          mobileAffordances && "min-h-11 flex items-center md:min-h-0",
                           "hover:bg-muted hover:text-foreground",
                           activeId === h3.id
                             ? "text-primary font-medium"

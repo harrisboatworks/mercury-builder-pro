@@ -54,6 +54,13 @@ interface UnifiedQuoteRow {
   _deal_packet_id?: string;
 }
 
+// Detect a search that looks like a quote number: HBW-12345, hbw12345, or 4-6 bare digits.
+const QUOTE_REF_RE = /^(?:hbw-?)?(\d{4,6})$/i;
+const quoteRefFromSearch = (q: string): string | null => {
+  const m = q.trim().match(QUOTE_REF_RE);
+  return m ? `HBW-${m[1].padStart(5, '0')}` : null;
+};
+
 const AdminQuotes = () => {
   const [customerQuoteRows, setCustomerQuoteRows] = useState<UnifiedQuoteRow[]>([]);
   const [savedQuoteRows, setSavedQuoteRows] = useState<UnifiedQuoteRow[]>([]);
@@ -72,6 +79,8 @@ const AdminQuotes = () => {
   const [modelFilter, setModelFilter] = useState('');
   const [dateRangeFilter, setDateRangeFilter] = useState<string>('all');
   const [currentPage, setCurrentPage] = useState(1);
+  const [remoteRefRows, setRemoteRefRows] = useState<UnifiedQuoteRow[]>([]);
+  const [remoteRefLoading, setRemoteRefLoading] = useState(false);
   const PAGE_SIZE = 50;
 
   // Parse HP from "40HP 40 ELPT Command Thrust FourStroke"
@@ -162,6 +171,16 @@ const AdminQuotes = () => {
     };
   };
 
+  const normalizeCustomerQuote = (r: any): UnifiedQuoteRow => ({
+    ...r,
+    _source: 'customer_quotes' as const,
+    _source_label: 'Lead',
+    _motor_info: r.quote_data?.motor?.model ? `${r.quote_data.motor.hp || ''}HP ${r.quote_data.motor.model}` : '',
+    _deposit_status: null,
+    _is_soft_lead: false,
+    _reference_number: r.quote_data?.reference_number || r.quote_data?.quoteNumber || null,
+  });
+
   const load = async (penalizedOnly: boolean = showPenalizedOnly, statusFilter: string = leadStatusFilter, sourceFilter: string = leadSourceFilter) => {
     setLoading(true);
 
@@ -197,17 +216,14 @@ const AdminQuotes = () => {
     const knownSavedQuoteIds = new Set(sqRows.map((row) => row.id));
 
     const cqRows: UnifiedQuoteRow[] = (cqResult.data || []).map((r: any) => ({
-      ...r,
+      ...normalizeCustomerQuote(r),
       saved_quote_id: r.saved_quote_id || null,
       payment_status: r.payment_status || null,
       stripe_checkout_session_id: r.stripe_checkout_session_id || r.quote_data?.stripe_session_id || null,
-      _source: 'customer_quotes' as const,
       _source_label: r.lead_source === 'deposit' ? 'Deposit' : 'Lead',
       _motor_info: r.quote_data?.motor_info?.model
         || (r.quote_data?.motor?.model ? `${r.quote_data.motor.hp || ''}HP ${r.quote_data.motor.model}` : ''),
       _deposit_status: r.payment_status || null,
-      _is_soft_lead: false,
-      _reference_number: null,
       _deal_packet_id: resolveAdminDealPacketId({
         id: r.id,
         saved_quote_id: r.saved_quote_id || null,
@@ -228,6 +244,58 @@ const AdminQuotes = () => {
     load(initial);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  // Direct quote-number lookup: bypasses the 500-row window so old quotes are findable.
+  useEffect(() => {
+    const ref = quoteRefFromSearch(searchQuery);
+    if (!ref) {
+      setRemoteRefRows([]);
+      setRemoteRefLoading(false);
+      return;
+    }
+    let cancelled = false;
+    setRemoteRefLoading(true);
+    const timer = setTimeout(async () => {
+      try {
+        const pattern = `${ref}%`;
+        const [sqResult, cqResult] = await Promise.all([
+          (supabase as any)
+            .from('saved_quotes')
+            .select('*')
+            .ilike('reference_number', pattern)
+            .order('created_at', { ascending: false })
+            .limit(50),
+          supabase
+            .from('customer_quotes')
+            .select('*')
+            .or(`quote_data->>reference_number.ilike.${pattern},quote_data->>quoteNumber.ilike.${pattern}`)
+            .order('created_at', { ascending: false })
+            .limit(50),
+        ]);
+        if (cancelled) return;
+        if (sqResult.error) console.warn('Quote-number lookup (saved_quotes) failed:', sqResult.error.message);
+        if (cqResult.error) console.warn('Quote-number lookup (customer_quotes) failed:', cqResult.error.message);
+        const rows: UnifiedQuoteRow[] = [
+          ...((sqResult.data || []) as any[]).map(normalizeSavedQuote),
+          ...((cqResult.data || []) as any[]).map(normalizeCustomerQuote),
+        ];
+        // Dedupe across the two tables
+        const seen = new Set<string>();
+        setRemoteRefRows(rows.filter(r => {
+          const key = `${r._source}-${r.id}`;
+          if (seen.has(key)) return false;
+          seen.add(key);
+          return true;
+        }));
+      } catch (err) {
+        if (!cancelled) setRemoteRefRows([]);
+      } finally {
+        if (!cancelled) setRemoteRefLoading(false);
+      }
+    }, 300);
+    return () => { cancelled = true; clearTimeout(timer); };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchQuery]);
 
   // Merge and filter
   const rows = useMemo(() => {
@@ -253,12 +321,21 @@ const AdminQuotes = () => {
     });
 
     // Text search (with HBW- ref prioritization)
+    const activeRef = quoteRefFromSearch(searchQuery);
     if (searchQuery.trim()) {
       const q = searchQuery.toLowerCase().trim();
-      const isRef = /^hbw-?\d+/i.test(q);
-      if (isRef) {
-        const normalized = q.replace(/^hbw-?/i, 'hbw-');
+      if (activeRef) {
+        const normalized = activeRef.toLowerCase();
         merged = merged.filter(r => (r._reference_number || '').toLowerCase().includes(normalized));
+        // Merge direct database hits (beyond the 500-row window), deduped.
+        const loaded = new Set(merged.map(r => `${r._source}-${r.id}`));
+        const extras = remoteRefRows.filter(r => !loaded.has(`${r._source}-${r.id}`));
+        merged = [...merged, ...extras];
+        // Pin a single exact match to the top.
+        const exact = merged.filter(r => (r._reference_number || '').toLowerCase() === normalized);
+        if (exact.length === 1) {
+          merged = [exact[0], ...merged.filter(r => r !== exact[0])];
+        }
       } else {
         merged = merged.filter(r =>
           (r.customer_name || '').toLowerCase().includes(q) ||
@@ -286,7 +363,15 @@ const AdminQuotes = () => {
     }
 
     return merged;
-  }, [customerQuoteRows, savedQuoteRows, quoteSourceFilter, searchQuery, hpFilter, modelFilter, dateRangeFilter]);
+  }, [customerQuoteRows, savedQuoteRows, remoteRefRows, quoteSourceFilter, searchQuery, hpFilter, modelFilter, dateRangeFilter]);
+
+  // The single exact quote-number match, if any (used for Enter-to-open and the "Exact match" marker).
+  const exactRefMatch = useMemo(() => {
+    const ref = quoteRefFromSearch(searchQuery);
+    if (!ref) return null;
+    const exact = rows.filter(r => (r._reference_number || '').toLowerCase() === ref.toLowerCase());
+    return exact.length === 1 ? exact[0] : null;
+  }, [rows, searchQuery]);
 
   // Reset page on filter change
   useEffect(() => { setCurrentPage(1); }, [searchQuery, hpFilter, modelFilter, dateRangeFilter, quoteSourceFilter]);
@@ -394,9 +479,14 @@ const AdminQuotes = () => {
           <div className="relative flex-1 min-w-[200px] max-w-sm">
             <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
             <Input
-              placeholder="Search name, email, motor, ref # (e.g. HBW-00827)..."
+              placeholder="Search name, email, motor, or quote # (HBW-48213 or just 48213)"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' && exactRefMatch) {
+                  navigate(`/admin/quotes/${exactRefMatch.id}`);
+                }
+              }}
               className="pl-9 h-9"
             />
           </div>
@@ -589,7 +679,11 @@ const AdminQuotes = () => {
                 <TableRow><TableCell colSpan={11}>Loading...</TableCell></TableRow>
               ) : rows.length === 0 ? (
                 <TableRow>
-                  <TableCell colSpan={11}>{searchQuery ? 'No results matching search.' : 'No quotes found.'}</TableCell>
+                  <TableCell colSpan={11}>
+                    {remoteRefLoading
+                      ? 'Searching all quotes by number...'
+                      : searchQuery ? 'No results matching search.' : 'No quotes found.'}
+                  </TableCell>
                 </TableRow>
               ) : (
                 pagedRows.map((r) => {
@@ -601,7 +695,14 @@ const AdminQuotes = () => {
                       className="cursor-pointer"
                       onClick={() => navigate(`/admin/quotes/${r._deal_packet_id || r.id}`)}
                     >
-                      <TableCell className="text-xs font-mono font-medium text-primary">{r._reference_number || '-'}</TableCell>
+                      <TableCell className="text-xs font-mono font-medium text-primary">
+                        <div className="flex items-center gap-1.5">
+                          {r._reference_number || '-'}
+                          {exactRefMatch && r._source === exactRefMatch._source && r.id === exactRefMatch.id && (
+                            <Badge variant="default" className="text-[10px] px-1 py-0">Exact match</Badge>
+                          )}
+                        </div>
+                      </TableCell>
                       <TableCell className="text-xs whitespace-nowrap">{r.created_at ? new Date(r.created_at).toLocaleString() : '-'}</TableCell>
                       <TableCell>{getSourceBadge(r)}</TableCell>
                       <TableCell>

@@ -7,6 +7,8 @@ import {
   buildAgentQuoteHandoffActions,
   canOpenMotorFromHandoff,
   parseAgentQuoteHandoff,
+  parseTradeConditionParam,
+  parseTradeEngineTypeParam,
   parseTradeHpParam,
   parseTradeYearParam,
   stripConsumedAgentQuoteHandoffParams,
@@ -38,6 +40,8 @@ describe('parseAgentQuoteHandoff', () => {
       trade_brand: 'mercury',
       trade_year: '2010',
       trade_hp: '75',
+      trade_condition: 'good',
+      trade_engine_type: '4-stroke',
       ucp: 'chk_abc-123',
     }), CURRENT_YEAR);
 
@@ -48,6 +52,8 @@ describe('parseAgentQuoteHandoff', () => {
       tradeBrand: 'Mercury',
       tradeYear: 2010,
       tradeHp: 75,
+      tradeCondition: 'good',
+      tradeEngineType: '4-stroke',
       ucpCheckoutRef: 'chk_abc-123',
     });
     expect(parseAgentQuoteHandoff(new URLSearchParams({
@@ -62,6 +68,8 @@ describe('parseAgentQuoteHandoff', () => {
       trade_brand: '',
       trade_year: '',
       trade_hp: '',
+      trade_condition: '',
+      trade_engine_type: '',
       motor: '',
       ucp: '',
     }), CURRENT_YEAR)).toEqual({});
@@ -107,8 +115,43 @@ describe('parseAgentQuoteHandoff', () => {
     expect(parsed.tradeBrand).toBe('Yamaha');
     expect(parsed.tradeYear).toBeUndefined();
     expect(parsed.tradeHp).toBeUndefined();
+    expect(parsed.tradeCondition).toBeUndefined();
+    expect(parsed.tradeEngineType).toBeUndefined();
     expect(parsed).not.toHaveProperty('condition');
     expect(parsed).not.toHaveProperty('estimatedValue');
+  });
+
+  it('accepts allowlisted trade condition and engine type', () => {
+    expect(parseTradeConditionParam('excellent')).toBe('excellent');
+    expect(parseTradeConditionParam('GOOD')).toBe('good');
+    expect(parseTradeConditionParam('Fair')).toBe('fair');
+    expect(parseTradeConditionParam('poor')).toBe('poor');
+    expect(parseTradeEngineTypeParam('4-stroke')).toBe('4-stroke');
+    expect(parseTradeEngineTypeParam('2-stroke')).toBe('2-stroke');
+    expect(parseTradeEngineTypeParam('PROXS')).toBe('proxs');
+    expect(parseTradeEngineTypeParam('optimax')).toBe('optimax');
+    expect(parseTradeEngineTypeParam('etec')).toBe('etec');
+
+    expect(parseAgentQuoteHandoff(new URLSearchParams({
+      trade_condition: 'excellent',
+      trade_engine_type: 'proxs',
+    }), CURRENT_YEAR)).toEqual({
+      tradeCondition: 'excellent',
+      tradeEngineType: 'proxs',
+    });
+  });
+
+  it('ignores invalid trade condition and engine type', () => {
+    expect(parseTradeConditionParam('great')).toBeUndefined();
+    expect(parseTradeConditionParam('good enough')).toBeUndefined();
+    expect(parseTradeEngineTypeParam('fourstroke')).toBeUndefined();
+    expect(parseTradeEngineTypeParam('4 stroke')).toBeUndefined();
+    expect(parseTradeEngineTypeParam('diesel')).toBeUndefined();
+
+    expect(parseAgentQuoteHandoff(new URLSearchParams({
+      trade_condition: 'mint',
+      trade_engine_type: 'four-stroke',
+    }), CURRENT_YEAR)).toEqual({});
   });
 });
 
@@ -120,6 +163,8 @@ describe('applyAgentQuoteHandoff reducer', () => {
       trade_brand: 'Mercury',
       trade_year: '2010',
       trade_hp: '9.9',
+      trade_condition: 'good',
+      trade_engine_type: '4-stroke',
       ucp: 'session_opaque_1',
     }), CURRENT_YEAR);
 
@@ -138,9 +183,11 @@ describe('applyAgentQuoteHandoff reducer', () => {
       brand: 'Mercury',
       year: 2010,
       horsepower: 9.9,
+      condition: 'good',
+      engineType: '4-stroke',
       estimatedValue: 0,
     });
-    expect(next.tradeInInfo.condition).toBeUndefined();
+    expect(next.tradeInInfo.condition).toBe('good');
     expect(next.hasTradein).toBe(true);
     expect(next.completedSteps).toEqual([]);
     expect(next.frozenPricing).toBeUndefined();
@@ -162,6 +209,7 @@ describe('applyAgentQuoteHandoff reducer', () => {
         model: 'BF60',
         serialNumber: '',
         condition: 'good',
+        engineType: '2-stroke',
         estimatedValue: 1800,
         confidenceLevel: 'medium',
       },
@@ -191,6 +239,7 @@ describe('applyAgentQuoteHandoff reducer', () => {
       horsepower: 115,
       model: 'BF60',
       condition: 'good',
+      engineType: '2-stroke',
       estimatedValue: 0,
     });
     expect(next.completedSteps).toEqual([1]);
@@ -240,6 +289,8 @@ describe('stripConsumedAgentQuoteHandoffParams', () => {
       ['trade_brand', 'NotABrand'],
       ['trade_year', '2010.5'],
       ['trade_hp', '75'],
+      ['trade_condition', 'mint'],
+      ['trade_engine_type', '4-stroke'],
       ['ucp', 'chk_keep'],
       ['utm_source', 'agent'],
       ['intent', 'motor-only'],
@@ -258,6 +309,8 @@ describe('stripConsumedAgentQuoteHandoffParams', () => {
     expect(stripped.get('trade_brand')).toBe('NotABrand');
     expect(stripped.get('trade_year')).toBe('2010.5');
     expect(stripped.get('trade_hp')).toBeNull();
+    expect(stripped.get('trade_condition')).toBe('mint');
+    expect(stripped.get('trade_engine_type')).toBeNull();
     expect(stripped.get('ucp')).toBe('chk_keep');
     expect(stripped.get('utm_source')).toBe('agent');
     expect(stripped.get('intent')).toBe('motor-only');

@@ -117,6 +117,9 @@ export interface QuoteState {
   adminCustomItems: Array<{ name: string; price: number }>;
   frozenPricing?: FrozenPricing;
   pdfSnapshot?: QuotePdfSnapshot;
+  // Canonical HBW-12345 number restored from a shared/QR link. Undefined for a
+  // quote built in this session (its number comes from the soft-save RPC).
+  restoredReferenceNumber?: string;
 }
 
 export type QuoteAction =
@@ -307,6 +310,8 @@ export function quoteReducer(state: QuoteState, action: QuoteAction): QuoteState
         adminDiscount: 0,
         frozenPricing: undefined,
         pdfSnapshot: undefined,
+        // A different motor is a different quote; do not reuse the printed number.
+        restoredReferenceNumber: undefined,
       };
     }
     case 'SET_PREVIEW_MOTOR':
@@ -492,6 +497,10 @@ export function quoteReducer(state: QuoteState, action: QuoteAction): QuoteState
         adminCustomItems: restored.adminCustomItems ?? [],
         frozenPricing: restored.frozenPricing,
         pdfSnapshot: restored.pdfSnapshot,
+        restoredReferenceNumber:
+          typeof restored.reference_number === 'string' && /^HBW-\d{5}$/.test(restored.reference_number)
+            ? restored.reference_number
+            : undefined,
         isLoading: false
       };
     }

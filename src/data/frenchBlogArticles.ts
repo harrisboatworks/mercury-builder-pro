@@ -1299,14 +1299,12 @@ Pour les réparations de moteurs, nous ne servons que Mercury et Mercruiser.
     image: '/lovable-uploads/hero-mercury-repower-gta.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-13',
-    dateModified: '2026-09-11',
+    dateModified: '2026-09-12',
     publishDate: '2026-05-13',
     category: 'Guide d\'achat',
     readTime: '12 min',
     keywords: ['remotorisation Mercury GTA', 'remotorisation Mercury Toronto', 'remotorisation Mercury Mississauga', 'coût remotorisation bateau GTA', 'concessionnaire Mercury Premier Ontario'],
     content: `# Remotorisation Mercury dans la GTA : comment un plaisancier de la région de Toronto remotorise chez Harris Boat Works (2026)
-
-*Dernière révision : 2026-05-13*
 
 > **Réponse rapide :** Les plaisanciers de la GTA remotorisent chez Harris Boat Works parce que nous donnons des soumissions installées en ligne, maintenons une bonne profondeur d'inventaire Mercury (les modèles courants sont normalement disponibles) et gardons votre bateau à l'atelier de 2 à 5 jours, du dépôt à la récupération; si le moteur doit être commandé, le délai dépend du modèle et de la disponibilité chez Mercury. Vous laissez le bateau à Gores Landing, vous le récupérez mis en service et essayé sur l'eau. Commencez le configurateur à mercuryrepower.ca.
 
@@ -2018,7 +2016,7 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
     image: '/lovable-uploads/hero-outboard-overheating.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-13',
-    dateModified: '2026-09-06',
+    dateModified: '2026-09-18',
     publishDate: '2026-05-13',
     category: 'Dépannage',
     readTime: '9 min',
@@ -2026,8 +2024,8 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
     faqs: [
       { question: "Combien de temps puis-je faire fonctionner un hors-bord en surchauffe avant les dommages?", answer: "En cas de surchauffe, suivez immédiatement les consignes d'alarme du manuel de votre moteur. Il n'existe pas de délai universel pendant lequel continuer à tourner serait sans risque. La réponse sécuritaire : arrêtez-le à la première alarme. Ne négociez pas avec la jauge de température." },
       { question: "Mon jet témoin est constant mais mon alarme continue de sonner, qu'est-ce qui se passe?", answer: "Un jet signifie que l'eau bouge, mais cela ne prouve pas que le système de refroidissement circule pleinement à l'interne. Coupables courants : un thermostat coincé, un capteur de température défaillant, ou un blocage interne partiel. Apportez-le pour un vrai diagnostic." },
-      { question: "Devrais-je remplacer la turbine moi-même?", answer: "Sur les plus petits moteurs (moins de 30 HP), oui, c'est simple, bien documenté, et les pièces sont peu coûteuses. Sur les V6 et V8 modernes avec trim électrique, embases sensibles à l'alignement et SmartCraft, le ratio main-d'œuvre/erreur empire. Nous chargeons moins de 200 $ en main-d'œuvre sur la plupart des travaux." },
-      { question: "À quelle fréquence devrais-je rincer mon moteur?", answer: "Après chaque utilisation est la meilleure pratique. Au minimum, après tout voyage dans des herbes, du limon ou de l'eau peu profonde. Utilisez le port de rinçage sur le capot avec un boyau d'arrosage, faites tourner pendant 10 minutes au ralenti." },
+      { question: "Devrais-je remplacer la turbine moi-même?", answer: "Cela dépend de votre moteur précis et de votre expérience, pas d'un seuil de puissance universel. Sur les V6 et V8 modernes avec trim électrique, embases sensibles à l'alignement et SmartCraft, le ratio main-d'œuvre/erreur empire nettement. Consultez le manuel de votre moteur et, en cas de doute, faites-le faire. Pour un prix de main-d'œuvre à jour sur votre moteur, écrivez-nous à [hbw.wiki/service](https://hbw.wiki/service)." },
+      { question: "À quelle fréquence devrais-je rincer mon moteur?", answer: "Après chaque utilisation est la meilleure pratique. Au minimum, après tout voyage dans des herbes, du limon ou de l'eau peu profonde. La méthode de rinçage varie selon le modèle et le numéro de série : suivez la procédure du manuel de votre moteur. Sur plusieurs Mercury, le raccord de rinçage du capot s'utilise moteur arrêté; ce raccord n'est pas une alimentation en eau pour faire tourner le moteur. Ne présumez pas qu'une seule méthode convient à tous les moteurs." },
       { question: "Le carburant sans éthanol affecte-t-il la surchauffe?", answer: "Pas directement, la surchauffe est un problème du côté refroidissement, pas du côté carburant. Mais l'essence à la pompe avec éthanol stresse le reste du moteur de façons qui aggravent les problèmes." },
       { question: "Mon bateau est sur l'eau et je panique. Que dois-je faire?", answer: "Réduisez à ralenti, vérifiez le jet témoin, coupez le moteur s'il est faible/absent, inclinez vers le haut, dégagez les prises, attendez 15 minutes, redémarrez et vérifiez le jet. Si l'alarme revient, appelez un remorqueur. **905-342-2153** si vous êtes dans notre secteur." }
     ],
@@ -2199,7 +2197,7 @@ Pour les réparations de moteurs, nous ne servons que Mercury et Mercruiser.
     imageAlt: 'Boat trailer on jack stands with maintenance tools like a grease gun and torque wrench at an Ontario marina.',
     author: 'Harris Boat Works',
     datePublished: '2026-05-13',
-    dateModified: '2026-09-06',
+    dateModified: '2026-09-12',
     publishDate: '2026-05-13',
     category: 'Entretien',
     readTime: '10 min',
@@ -2342,8 +2340,6 @@ Une nouvelle remorque en aluminium de taille moyenne pour un bateau de 16 à 18 
 
 ---
 
-*Dernière révision : 2026-05-13*
-
 Par Harris Boat Works, marina familiale depuis 1947 sur le lac Rice, concessionnaire [Mercury Marine](https://www.mercurymarine.com/ca/en) depuis 1965 et concessionnaire Mercury Premier.
 ## Guides connexes
 
@@ -2370,7 +2366,7 @@ Par Harris Boat Works, marina familiale depuis 1947 sur le lac Rice, concessionn
     imageAlt: 'Marine insurance policy on a dock beside a boat with a Mercury outboard, illustrating Ontario boat insurance coverage.',
     author: 'Harris Boat Works',
     datePublished: '2026-05-13',
-    dateModified: '2026-09-06',
+    dateModified: '2026-09-12',
     publishDate: '2026-05-13',
     category: 'Assurance',
     readTime: '9 min',
@@ -2486,8 +2482,6 @@ Nous recommandons les deux pour tout moteur d'une valeur de 5 000 $ et plus.
 > Cet article est disponible en français parce que nous voulons que l'information technique sur les moteurs Mercury rejoigne plus de clients. Nous nous efforçons d'offrir du contenu utile dans votre langue.
 > Cela dit, nous devons être honnêtes : notre personnel parle anglais. Si vous nous contactez pour une soumission ou un service, nous vous répondrons en anglais. Si vous préférez, vous pouvez utiliser Google Traduction ou demander à un membre bilingue de votre famille de vous aider avec la communication. Nous nous engageons à vous offrir le meilleur service possible.
 
-*Dernière révision : 2026-05-13*
-
 Par Harris Boat Works, marina familiale depuis 1947 sur le lac Rice, concessionnaire [Mercury Marine](https://www.mercurymarine.com/ca/en) depuis 1965 et concessionnaire Mercury Premier.
 ## Guides connexes
 
@@ -2513,7 +2507,7 @@ Par Harris Boat Works, marina familiale depuis 1947 sur le lac Rice, concessionn
     image: '/lovable-uploads/hero-best-mercury-dealer-ontario.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-13',
-    dateModified: '2026-09-06',
+    dateModified: '2026-09-12',
     publishDate: '2026-05-13',
     category: 'Garantie',
     readTime: '9 min',
@@ -2618,8 +2612,6 @@ Commencez avec la page des [prix Mercury Product Protection](/mercury-product-pr
 - [Mercury Product Protection, aperçu officiel](https://www.mercurymarine.com/ca/en/service-and-support/warranty-coverage-and-product-protection/mercury-product-protection)
 - [Modalités canadiennes Platinum, mars 2025](https://www.mercurymarine.com/content/dam/mercury-marine/us_en/parts-and-services/service-and-support/warranty-coverage/product-protection/8M0236695%20Canada%20Platinum%20Plan%20Current%20upd%203-17-25.pdf.coredownload.pdf)
 
-*Dernière révision : 2026-07-18*
-
 Par Harris Boat Works, marina familiale depuis 1947 sur le lac Rice, concessionnaire Mercury Marine depuis 1965 et concessionnaire Mercury Premier.
 ## Guides connexes
 
@@ -2647,7 +2639,7 @@ Par Harris Boat Works, marina familiale depuis 1947 sur le lac Rice, concessionn
     imageAlt: 'Trois scènes de navigation en eau douce avec des hors-bord Mercury.',
     author: 'Harris Boat Works',
     datePublished: '2026-05-13',
-    dateModified: '2026-09-11',
+    dateModified: '2026-09-12',
     publishDate: '2026-05-13',
     category: "Guide d'achat",
     readTime: '10 min',
@@ -2674,7 +2666,7 @@ Pour qui : Plaisanciers récréatifs. Bateaux de pêche, pontons familiaux, vede
 
 La gamme FourStroke est le best-seller de Mercury en volume en Ontario parce qu'elle couvre toute la plage d'usage récréatif. Un 2,5 HP à barre franche pour un bateau sur le toit. Un 9,9 pour un kicker. Un 25 pour un bateau d'aluminium léger. Un 40, 60 ou 75 pour des configurations de pêche moyennes. Un 90, 115 ou 150 pour des bateaux d'aluminium ou de fibre de verre plus grands. Un 200 ou 250 pour des center consoles. Jusqu'à 300 HP pour les applications en grande eau.
 
-**FourStroke Command Thrust** mérite une mention spécifique pour les plaisanciers ontariens. Disponible sur le 115 HP et plus, conçu pour les charges de couple plus élevées que les pontons et coques plus lourdes imposent à l'embase. Si vous remotorisez un ponton, demandez spécifiquement Command Thrust.
+**FourStroke Command Thrust** mérite une mention spécifique pour les plaisanciers ontariens. Command Thrust est offert de 9,9 à 115 HP (9,9, 40, 50, 60, 90 et 115 HP). Il s'agit d'une option de boîtier d'engrenages, avec hélice à plus grand diamètre et rapport de démultiplication plus court, et non d'un palier de puissance. Il est conçu pour les charges de couple plus élevées que les pontons et coques plus lourdes imposent à l'embase. Si vous remotorisez un ponton, demandez spécifiquement Command Thrust.
 
 Ce que FourStroke fait bien : efficacité énergétique en croisière, ralenti doux, fonctionnement silencieux, démarrage à froid facile, longs intervalles d'entretien.
 
@@ -2709,7 +2701,7 @@ La gamme électrique Mercury Avator couvre les applications portatives plus peti
 | Bateau de pêche en aluminium léger, 14 à 16 pi | FourStroke | 25 à 60 HP |
 | Bateau de pêche/famille moyen, 16 à 18 pi | FourStroke | 60 à 115 HP |
 | Bateau de pêche ou famille plus grand, 18 à 20 pi | FourStroke | 115 à 150 HP |
-| Ponton, 22 à 24 pi | FourStroke Command Thrust | 115 à 150 HP |
+| Ponton, 22 à 24 pi | FourStroke | 115 à 150 HP |
 | Bass boat de tournoi | Pro XS | 200 à 250 HP |
 | Center console, grande eau ontarienne | FourStroke ou Verado | 200 à 300+ HP |
 | Guide commercial ou location | SeaPro | Selon la cote de la coque |
@@ -2727,8 +2719,6 @@ Tarification CAD en direct sur chaque famille Mercury (sauf Verado, qui est soum
 > **Une note sur la langue**
 > Cet article est disponible en français parce que nous voulons que l'information technique sur les moteurs Mercury rejoigne plus de clients. Nous nous efforçons d'offrir du contenu utile dans votre langue.
 > Cela dit, nous devons être honnêtes : notre personnel parle anglais. Si vous nous contactez pour une soumission ou un service, nous vous répondrons en anglais. Si vous préférez, vous pouvez utiliser Google Traduction ou demander à un membre bilingue de votre famille de vous aider avec la communication. Nous nous engageons à vous offrir le meilleur service possible.
-
-*Dernière révision : 2026-05-13.*
 
 ## Guides connexes
 
@@ -2892,7 +2882,7 @@ Harris Boat Works : entreprise familiale depuis 1947, concessionnaire Mercury de
     imageAlt: 'Poids sec publié, équipements et fluides à ajouter, puis vérification des limites de la coque.',
     author: 'Harris Boat Works',
     datePublished: '2026-06-08',
-    dateModified: '2026-09-11',
+    dateModified: '2026-09-18',
     publishDate: '2026-06-08',
     category: 'Guide d\'achat',
     readTime: '6 min',
@@ -2919,7 +2909,8 @@ Le poids d'un moteur, ce n'est pas un détail. Il décide si votre tableau arri�
 | 90 ch | 163 kg (359 lb) | Command Thrust : 165 kg (363 lb) |
 | 115 ch | 163 kg (359 lb) | Command Thrust : 165 kg (363 lb) |
 | 135 / 150 ch | 206 kg (455 lb) | 3,0 L 4 cylindres |
-| 175 / 200 / 225 ch | 216 kg (475 lb) | V6 3,4 L |
+| 175 / 200 ch | 215 kg (475 lb), référence de brochure datée | V6 3,4 L; confirmez la configuration exacte |
+| 225 ch | Confirmez la fiche technique du modèle exact | V6 3,4 L; ne déduisez pas le poids à partir de la ligne 175/200 |
 | 250 / 300 ch | 239 kg (527 lb) | V8 4,6 L |
 
 ### Poids secs Pro XS
@@ -2928,8 +2919,8 @@ Le poids d'un moteur, ce n'est pas un détail. Il décide si votre tableau arri�
 |---|---|---|
 | 115 ch | 163 kg (359 lb) | Identique au 115 standard; Mercury le présente comme le 115 de performance le plus léger de sa catégorie |
 | 150 ch | 207 kg (456 lb) | 3,0 L |
-| 175 ch | 213 kg (470 lb) | V6 3,4 L |
-| 200 / 225 / 250 / 300 ch | 229 kg (505 lb) | V8 4,6 L; oui, les V8 Pro XS sont plus légers que les V8 FourStroke |
+| 175 ch | 216 kg (475 lb) | V6 3,4 L; confirmez la configuration exacte |
+| 200 / 225 / 250 / 300 ch | 232 kg (511 lb) | V8 4,6 L; confirmez l'arbre, l'embase et la configuration de commande. Les V8 Pro XS restent plus légers que les V8 FourStroke |
 
 Tous les chiffres sont les poids secs publiés par Mercury pour la configuration la plus légère offerte. Le poids sec indiqué n'est pas le poids total installé. Ajoutez les équipements et fluides applicables selon la configuration, et vérifiez les limites de la coque avant de choisir le moteur. Les arbres plus longs, les boîtiers Command Thrust et le gréage ajoutent du poids, donc une même puissance peut avoir plus d'un poids publié. Source : [spécifications officielles Mercury Marine](https://www.mercurymarine.com/ca/en/engines/outboard).
 
@@ -2954,7 +2945,7 @@ Harris Boat Works : entreprise familiale depuis 1947, concessionnaire Mercury de
       { question: 'Combien pèse un Mercury 115 quatre-temps ?', answer: 'Mercury publie 163 kg (359 lb) de poids sec pour le modèle le plus léger du 115 FourStroke; la version Command Thrust fait 165 kg (363 lb). Le 115 Pro XS pèse aussi 163 kg. Les arbres plus longs ajoutent du poids.' },
       { question: 'Combien pèse un hors-bord Mercury de 90 ch ?', answer: '163 kg (359 lb) de poids sec pour le modèle le plus léger, ou 165 kg (363 lb) avec le boîtier Command Thrust. Les 75, 90 et 115 partagent le même bloc de 2,1 L, c\'est pourquoi leurs poids sont identiques.' },
       { question: 'Quel est le 115 ch le plus léger sur le marché ?', answer: 'Le Mercury 115 Pro XS à 163 kg (359 lb), que Mercury présente comme le 115 de performance le plus léger de sa catégorie par environ 9 kg (20 lb). Le 115 FourStroke standard fait le même 163 kg dans sa configuration la plus légère.' },
-      { question: 'Combien pèse un Mercury 250 ?', answer: 'Ça dépend de la famille : le 250 Pro XS V8 fait 229 kg (505 lb) de poids sec, et le 250 FourStroke V8 fait 239 kg (527 lb), tous deux dans leur configuration la plus légère.' },
+      { question: 'Combien pèse un Mercury 250 ?', answer: 'Ça dépend de la famille : le 250 Pro XS V8 fait 232 kg (511 lb) de poids sec, et le 250 FourStroke V8 fait 239 kg (527 lb), tous deux dans leur configuration la plus légère.' },
       { question: 'Pourquoi le poids compte-t-il pour une remotorisation ?', answer: 'Votre plaque de capacité indique un poids de moteur maximal en plus de la puissance. Un moteur plus lourd change l\'assiette et le déjaugeage, et les quatre-temps modernes pèsent souvent plus que les vieux deux-temps qu\'ils remplacent. Vérifiez la capacité du tableau arrière avant d\'acheter.' }
     ]
   },

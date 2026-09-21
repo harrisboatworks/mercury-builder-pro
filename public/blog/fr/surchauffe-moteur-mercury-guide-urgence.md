@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/surchauffe-moteur-mercury-guide-urgence.md
-last_updated: 2026-09-06
+last_updated: 2026-09-18
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Votre Mercury surchauffe. Quoi faire maintenant (et comment l'éviter)"
 description: "Le guide d'urgence et de prévention d'un concessionnaire Mercury Marine certifié Premier pour la surchauffe d'un hors-bord : quoi faire dans les 60 prochaines..."
 category: "Dépannage"
 date_published: 2026-05-13
-date_modified: 2026-09-06
+date_modified: 2026-09-18
 keywords: ["surchauffe hors-bord quoi faire","Mercury hors-bord surchauffe","Mercury remplacement turbine","jet témoin faible","lac Rice prise eau bouchée","alarme surchauffe hors-bord"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Catégorie :** Dépannage\
 **Publié le :** 2026-05-13\
-**Dernière révision :** 2026-09-06\
+**Dernière révision :** 2026-09-18\
 **Temps de lecture :** 9 min\
 **URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/surchauffe-moteur-mercury-guide-urgence
 
@@ -162,11 +162,11 @@ Un jet signifie que l'eau bouge, mais cela ne prouve pas que le système de refr
 
 ### Devrais-je remplacer la turbine moi-même?
 
-Sur les plus petits moteurs (moins de 30 HP), oui, c'est simple, bien documenté, et les pièces sont peu coûteuses. Sur les V6 et V8 modernes avec trim électrique, embases sensibles à l'alignement et SmartCraft, le ratio main-d'œuvre/erreur empire. Nous chargeons moins de 200 $ en main-d'œuvre sur la plupart des travaux.
+Cela dépend de votre moteur précis et de votre expérience, pas d'un seuil de puissance universel. Sur les V6 et V8 modernes avec trim électrique, embases sensibles à l'alignement et SmartCraft, le ratio main-d'œuvre/erreur empire nettement. Consultez le manuel de votre moteur et, en cas de doute, faites-le faire. Pour un prix de main-d'œuvre à jour sur votre moteur, écrivez-nous à [hbw.wiki/service](https://hbw.wiki/service).
 
 ### À quelle fréquence devrais-je rincer mon moteur?
 
-Après chaque utilisation est la meilleure pratique. Au minimum, après tout voyage dans des herbes, du limon ou de l'eau peu profonde. Utilisez le port de rinçage sur le capot avec un boyau d'arrosage, faites tourner pendant 10 minutes au ralenti.
+Après chaque utilisation est la meilleure pratique. Au minimum, après tout voyage dans des herbes, du limon ou de l'eau peu profonde. La méthode de rinçage varie selon le modèle et le numéro de série : suivez la procédure du manuel de votre moteur. Sur plusieurs Mercury, le raccord de rinçage du capot s'utilise moteur arrêté; ce raccord n'est pas une alimentation en eau pour faire tourner le moteur. Ne présumez pas qu'une seule méthode convient à tous les moteurs.
 
 ### Le carburant sans éthanol affecte-t-il la surchauffe?
 

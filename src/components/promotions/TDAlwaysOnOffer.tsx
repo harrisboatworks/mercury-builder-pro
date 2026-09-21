@@ -92,7 +92,7 @@ export function TDAlwaysOnCard() {
                 TD Financing Available
               </h3>
               <p className="font-sans text-[16px] md:text-[17px] text-repower-navy-900/70 leading-relaxed">
-                Low-rate TD financing on a new Mercury repower, plus the standard 3-year factory warranty that comes on every new Mercury.
+                Low-rate TD financing on an eligible new Mercury repower. Standard factory warranty and any promotional coverage depend on engine and program eligibility.
               </p>
               <p className="font-sans text-[14px] text-repower-navy-900/65 leading-relaxed">
                 Not all customers will qualify. Approval depends on TD's credit review.
@@ -123,7 +123,7 @@ export function TDAlwaysOnBanner() {
           <Percent className="h-4 w-4 text-repower-navy-900" strokeWidth={2} />
         </div>
         <div className="font-sans text-[13px] leading-relaxed text-repower-navy-900/72 md:text-[14px]">
-          <span className="font-bold text-repower-navy-900">Current Canadian program:</span>{' '}
+          <span className="font-bold text-repower-navy-900">Standard TD financing option:</span>{' '}
           {formatFinancingRate(MERCURY_PROMO_APR)} up to 240-month amortization on eligible new Mercury outboards. OAC. Available through Dec 31, 2026.
         </div>
       </div>

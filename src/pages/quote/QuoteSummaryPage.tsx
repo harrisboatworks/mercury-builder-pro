@@ -1,3 +1,4 @@
+import { meetsPromotionFinancingMinimum } from '@/lib/promotion-financing';
 import { useEffect, useState, useMemo, useRef, useCallback } from 'react';
 import { calculateRunningTotal } from '@/hooks/useQuoteRunningTotal';
 import { useNavigate } from 'react-router-dom';
@@ -53,6 +54,8 @@ import { QuoteSummaryPageSEO } from '@/components/seo/QuoteSummaryPageSEO';
 import { trackAgentEvent } from '@/lib/agentEvents';
 import { trackEvent } from '@/lib/analytics';
 import { buildSoftLeadSnapshotKey, softLeadSaveCoordinator } from '@/lib/soft-lead-save';
+import { getSoftLeadReference } from '@/lib/soft-lead-reference';
+import { COMPANY_INFO } from '@/lib/companyInfo';
 import {
   reconcileWarrantyConfig,
   type QuoteWarrantyConfig,
@@ -105,7 +108,7 @@ export default function QuoteSummaryPage() {
   const suppressAdditionalPromoSavings = state.uiFlags.suppressAdditionalPromoSavings === true;
   const { user, isAdmin } = useAuth();
   const { promo } = useActiveFinancingPromo();
-  const { promotions, loading: promoLoading, getTotalPromotionalSavings, getPromotionSavingsForMotor, getPromotionOptions, getRebateForHP, getSpecialFinancingRates } = useActivePromotions();
+  const { promotions, loading: promoLoading, getTotalPromotionalSavings, getPromotionSavingsForMotor, getPromotionOptions, getRebateForHP, getSpecialFinancingRates } = useActivePromotions({ motor: state.motor });
   const { rating: googleRating, totalReviews: googleReviewCount } = useGoogleReviewStats();
   const { toast } = useToast();
   const baseCoverageYears = 3;
@@ -122,6 +125,12 @@ export default function QuoteSummaryPage() {
   const [showAuthSaveDialog, setShowAuthSaveDialog] = useState(false);
   const [showPhoneCapture, setShowPhoneCapture] = useState(false);
   const [phoneCaptureQuoteId, setPhoneCaptureQuoteId] = useState<string | undefined>();
+  const [sessionReferenceNumber, setSessionReferenceNumber] = useState<string | null>(null);
+  const [sessionReferenceResolved, setSessionReferenceResolved] = useState(false);
+  // A quote resumed from a PDF QR code keeps the number printed on that PDF.
+  // Otherwise the number belongs to this session's soft save.
+  const canonicalReferenceNumber = state.restoredReferenceNumber ?? sessionReferenceNumber;
+  const referenceNumberResolved = Boolean(state.restoredReferenceNumber) || sessionReferenceResolved;
   const pdfSavedQuoteRef = useRef<{
     id: string;
     referenceNumber?: string;
@@ -490,7 +499,8 @@ export default function QuoteSummaryPage() {
   const usePromoFinancing =
     state.selectedPromoOption === 'special_financing' &&
     state.selectedPromoRate != null &&
-    state.selectedPromoTerm != null;
+    state.selectedPromoTerm != null &&
+    meetsPromotionFinancingMinimum(getPromotionOptions().find(option => option.id === 'special_financing'), amountToFinance);
   const effectiveRate = usePromoFinancing ? state.selectedPromoRate : (isUsableFinancingRate(promo?.rate) ? promo.rate : null);
   const effectiveTerm = usePromoFinancing ? state.selectedPromoTerm : null;
   const { payment: monthlyPayment, termMonths, rate: financingRate } = calculateMonthlyPayment(amountToFinance, effectiveRate, effectiveTerm);
@@ -650,11 +660,29 @@ export default function QuoteSummaryPage() {
       });
     }
 
+    const sessionId = getOrCreateSessionId();
+    let cancelled = false;
+
     void softLeadSaveCoordinator.enqueue({
-      sessionId: getOrCreateSessionId(),
+      sessionId,
       quoteState: quoteStateSnapshot,
       snapshotKey,
+    }).then(async () => {
+      const referenceNumber = await getSoftLeadReference(sessionId);
+      if (!cancelled) {
+        setSessionReferenceNumber(referenceNumber);
+        setSessionReferenceResolved(true);
+      }
+    }).catch(() => {
+      if (!cancelled) {
+        setSessionReferenceNumber(null);
+        setSessionReferenceResolved(true);
+      }
     });
+
+    return () => {
+      cancelled = true;
+    };
   }, [pdfSnapshot, state]);
 
   // CTA handlers
@@ -668,7 +696,7 @@ export default function QuoteSummaryPage() {
     setIsGeneratingPDF(true);
     
     try {
-      const quoteNumber = `HBW-${Date.now().toString().slice(-6)}`;
+      const quoteNumber = canonicalReferenceNumber || `HBW-${Date.now().toString().slice(-6)}`;
       const packageTotal = pdfSnapshot.pricing.totalCashPrice;
       
       let qrTargetUrl: string | null = null;
@@ -710,6 +738,7 @@ export default function QuoteSummaryPage() {
                 ...(depositPolicySnapshot
                   ? { [DEPOSIT_POLICY_QUOTE_STATE_KEY]: depositPolicySnapshot }
                   : {}),
+                ...(canonicalReferenceNumber ? { reference_number: canonicalReferenceNumber } : {}),
               } as any,
               user_id: user?.id || null,
               expires_at: new Date(Date.now() + 90 * 24 * 60 * 60 * 1000).toISOString(),
@@ -726,7 +755,7 @@ export default function QuoteSummaryPage() {
           };
           qrTargetUrl = `${SITE_URL}/quote/saved/${savedForQr.id}`;
           savedQuoteIdForSms = savedForQr.id;
-          savedQuoteRefForSms = savedForQr.reference_number || undefined;
+          savedQuoteRefForSms = canonicalReferenceNumber || savedForQr.reference_number || undefined;
         }
       } catch (qrSaveErr) {
         console.warn('Could not save quote for QR code:', qrSaveErr);
@@ -756,8 +785,7 @@ export default function QuoteSummaryPage() {
           const promotionalFinancing = getPromotionOptions()
             .find((option) => option.id === 'special_financing');
           if (
-            promotionalFinancing?.minimum_amount
-            && amountToFinance < promotionalFinancing.minimum_amount
+            !meetsPromotionFinancingMinimum(promotionalFinancing, amountToFinance)
           ) {
             return undefined;
           }
@@ -786,7 +814,10 @@ export default function QuoteSummaryPage() {
             customer_phone: state.customerPhone || undefined,
             lead_status: 'downloaded',
             lead_source: 'pdf_download',
-            quote_data: quoteData
+            quote_data: {
+              ...quoteData,
+              ...(canonicalReferenceNumber ? { reference_number: canonicalReferenceNumber } : {}),
+            }
           });
         } catch (leadError) {
           console.error('Failed to save identified PDF lead:', leadError);
@@ -882,6 +913,51 @@ export default function QuoteSummaryPage() {
     setShowDepositDialog(true);
   };
 
+  const callHref = `tel:${COMPANY_INFO.contact.phone.replace(/\D/g, '')}`;
+  const smsMessage = canonicalReferenceNumber
+    ? `Hi, I'm looking at quote ${canonicalReferenceNumber} (${motorName}, $${displayPricing.total.toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} CAD).`
+    : '';
+  const smsHref = canonicalReferenceNumber
+    ? `sms:${COMPANY_INFO.contact.sms.replace(/\D/g, '')}?body=${encodeURIComponent(smsMessage)}`
+    : `sms:${COMPANY_INFO.contact.sms.replace(/\D/g, '')}`;
+
+  const handleContactClick = (
+    event: React.MouseEvent<HTMLAnchorElement>,
+    eventName: 'phone_click' | 'sms_click',
+  ) => {
+    event.stopPropagation();
+    const eventData = {
+      location: 'quote_summary',
+      reference_number: canonicalReferenceNumber,
+      motor_model: motorName,
+      quote_total: displayPricing.total,
+    };
+    trackEvent(eventName, eventData);
+    const activityPayload = {
+      session_id: getOrCreateSessionId(),
+      user_id: user?.id ?? null,
+      event_type: eventName,
+      motor_model: motorName,
+      motor_hp: Number(hp),
+      quote_value: displayPricing.total,
+      event_data: eventData,
+      page_path: '/quote/summary',
+    };
+    const supabaseUrl = (supabase as any).supabaseUrl;
+    const supabaseKey = (supabase as any).supabaseKey;
+    void fetch(`${supabaseUrl}/rest/v1/quote_activity_events`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        apikey: supabaseKey,
+        Authorization: `Bearer ${supabaseKey}`,
+        Prefer: 'return=minimal',
+      },
+      body: JSON.stringify(activityPayload),
+      keepalive: true,
+    }).catch(() => {});
+  };
+
   // Handle deposit after customer info is collected
   const handleDepositSubmit = async (customerInfo: DepositCustomerInfo) => {
     setShowDepositDialog(false);
@@ -889,7 +965,7 @@ export default function QuoteSummaryPage() {
     try {
       const identity = parseDepositIdentity(customerInfo);
       const customerPatch = quoteStateCustomerPatch(identity);
-      const quoteNumber = `HBW-${Date.now().toString().slice(-6)}`;
+      const quoteNumber = canonicalReferenceNumber || `HBW-${Date.now().toString().slice(-6)}`;
       const savedQuoteId = crypto.randomUUID();
       const resumeTokenEntropy = crypto.getRandomValues(new Uint8Array(12));
       const resumeToken = `dep_${Array.from(
@@ -926,7 +1002,10 @@ export default function QuoteSummaryPage() {
           id: savedQuoteId,
           email: identity.email,
           resume_token: resumeToken,
-          quote_state: quoteStateSnapshot as any,
+          quote_state: {
+            ...quoteStateSnapshot,
+            ...(canonicalReferenceNumber ? { reference_number: canonicalReferenceNumber } : {}),
+          } as any,
           user_id: user?.id || null,
           expires_at: new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toISOString(),
           quote_pdf_path: null,
@@ -981,6 +1060,7 @@ export default function QuoteSummaryPage() {
         installConfig: state.installConfig,
         adminDiscount: state.adminDiscount || 0,
         customerNotes: state.customerNotes || '',
+        ...(canonicalReferenceNumber ? { reference_number: canonicalReferenceNumber } : {}),
       };
 
       trackAgentEvent({
@@ -1011,6 +1091,7 @@ export default function QuoteSummaryPage() {
             horsepower: hp,
             motorPrice: motorSalePrice,
             totalPrice: displayPricing.total,
+            ...(canonicalReferenceNumber ? { reference_number: canonicalReferenceNumber } : {}),
           },
           motorInfo: {
             model: motorName,
@@ -1139,6 +1220,34 @@ export default function QuoteSummaryPage() {
                   <p className="text-sm font-medium text-foreground">
                     {isMotorOnlyExpress ? 'Your motor-only reservation' : 'Your configured quote'}
                   </p>
+                </div>
+
+                {(!referenceNumberResolved || canonicalReferenceNumber) && (
+                  <div
+                    className="min-h-[92px] border border-repower-navy-900/20 border-l-4 border-l-repower-mercury-red bg-white px-4 py-3 sm:min-h-[68px] sm:px-5"
+                    aria-live="polite"
+                  >
+                    {canonicalReferenceNumber ? (
+                      <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between sm:gap-6">
+                        <div className="shrink-0">
+                          <p className="font-sans text-[10px] font-semibold uppercase tracking-[0.16em] text-repower-navy-900/60">
+                            Your quote number
+                          </p>
+                          <p className="select-text font-display text-xl font-bold text-repower-navy-900">
+                            {canonicalReferenceNumber}
+                          </p>
+                        </div>
+                        <p className="max-w-[34ch] font-sans text-sm leading-snug text-repower-navy-900/70 sm:text-right">
+                          Have it handy when you call or text. We can pull this quote up in seconds.
+                        </p>
+                      </div>
+                    ) : (
+                      <div className="h-10 animate-pulse bg-repower-navy-900/5" aria-hidden="true" />
+                    )}
+                  </div>
+                )}
+
+                <div className="space-y-3">
                   {isMotorOnlyExpress && (
                     <div className="rounded-[12px] border border-repower-mercury-red/20 bg-white p-5 shadow-sm">
                       <p className="font-display text-xl font-bold text-repower-navy-900">
@@ -1265,32 +1374,34 @@ export default function QuoteSummaryPage() {
 
                 {/* Mobile CTA Section */}
                 <div className="lg:hidden space-y-3">
-                  <button
-                    onClick={handleReserveDeposit}
-                    disabled={isProcessingDeposit || noMotorSelected || !canReserveMotor}
-                    title={noMotorSelected ? 'Select a motor first' : !canReserveMotor ? 'Reservation terms could not be verified' : undefined}
-                    className="group w-full rounded bg-repower-mercury-red px-6 py-4 font-sans text-[13px] font-bold uppercase tracking-[0.12em] text-repower-cream transition hover:opacity-90 hover:-translate-y-px hover:shadow-md disabled:cursor-not-allowed disabled:opacity-50"
+                  <div className="pb-1 text-center font-sans">
+                    <p className="text-[13px] font-semibold text-repower-navy-900">Questions about this quote? Talk to a person.</p>
+                    {canonicalReferenceNumber && (
+                      <p className="mt-1 select-text text-[12px] text-repower-navy-900/60">Quote {canonicalReferenceNumber}</p>
+                    )}
+                  </div>
+                  <a
+                    href={callHref}
+                    onClick={(event) => handleContactClick(event, 'phone_click')}
+                    data-cta-location="quote_summary"
+                    className="group flex w-full items-center justify-center rounded bg-repower-mercury-red px-6 py-4 text-center font-sans text-[13px] font-bold uppercase tracking-[0.12em] text-repower-cream transition hover:opacity-90 hover:-translate-y-px hover:shadow-md"
                   >
                     <span className="inline-flex items-center justify-center gap-2">
-                      {isProcessingDeposit
-                        ? 'Preparing secure checkout…'
-                        : `Reserve this motor — $${depositAmount.toLocaleString()}`
-                      }
-                      {!isProcessingDeposit && (
-                        <span aria-hidden className="transition-transform duration-200 group-hover:translate-x-1">→</span>
-                      )}
+                      Call (905) 342-2153
+                      <span aria-hidden className="transition-transform duration-200 group-hover:translate-x-1">→</span>
                     </span>
-                  </button>
-                  <p className="px-2 text-center font-sans text-[12px] leading-relaxed text-repower-navy-900/60">
-                    Secure Stripe checkout. HBW confirms the motor and quote details before anything is ordered.
-                  </p>
-                  <div className="flex items-center gap-3 py-1" aria-hidden>
-                    <span className="h-px flex-1 bg-repower-navy-900/10" />
-                    <span className="font-sans text-[10px] font-semibold uppercase tracking-[0.14em] text-repower-navy-900/45">
-                      Not ready to reserve?
+                  </a>
+                  <a
+                    href={smsHref}
+                    onClick={(event) => handleContactClick(event, 'sms_click')}
+                    data-cta-location="quote_summary"
+                    className="group flex w-full items-center justify-center rounded border border-repower-navy-900 bg-transparent px-6 py-4 text-center font-sans text-[13px] font-bold uppercase tracking-[0.12em] text-repower-navy-900 transition hover:bg-repower-navy-900 hover:text-repower-cream"
+                  >
+                    <span className="inline-flex items-center justify-center gap-2">
+                      Text This Quote to HBW
+                      <span aria-hidden className="transition-transform duration-200 group-hover:translate-x-1">→</span>
                     </span>
-                    <span className="h-px flex-1 bg-repower-navy-900/10" />
-                  </div>
+                  </a>
                   <button
                     onClick={handleStepComplete}
                     className="group w-full rounded border border-repower-navy-900 bg-transparent px-6 py-4 font-sans text-[13px] font-bold uppercase tracking-[0.12em] text-repower-navy-900 transition hover:bg-repower-navy-900 hover:text-repower-cream"
@@ -1300,6 +1411,32 @@ export default function QuoteSummaryPage() {
                       <span aria-hidden className="transition-transform duration-200 group-hover:translate-x-1">→</span>
                     </span>
                   </button>
+                  <div className="flex items-center gap-3 py-1" aria-hidden>
+                    <span className="h-px flex-1 bg-repower-navy-900/10" />
+                    <span className="font-sans text-[10px] font-semibold uppercase tracking-[0.14em] text-repower-navy-900/45">
+                      Ready to lock it in?
+                    </span>
+                    <span className="h-px flex-1 bg-repower-navy-900/10" />
+                  </div>
+                  <button
+                    onClick={handleReserveDeposit}
+                    disabled={isProcessingDeposit || noMotorSelected || !canReserveMotor}
+                    title={noMotorSelected ? 'Select a motor first' : !canReserveMotor ? 'Reservation terms could not be verified' : undefined}
+                    className="group w-full rounded border border-repower-navy-900 bg-transparent px-6 py-4 font-sans text-[13px] font-bold uppercase tracking-[0.12em] text-repower-navy-900 transition hover:bg-repower-navy-900 hover:text-repower-cream disabled:cursor-not-allowed disabled:opacity-50"
+                  >
+                    <span className="inline-flex items-center justify-center gap-2">
+                      {isProcessingDeposit
+                        ? 'Preparing secure checkout…'
+                        : `Reserve this motor, $${depositAmount.toLocaleString()}`
+                      }
+                      {!isProcessingDeposit && (
+                        <span aria-hidden className="transition-transform duration-200 group-hover:translate-x-1">→</span>
+                      )}
+                    </span>
+                  </button>
+                  <p className="px-2 text-center font-sans text-[12px] leading-relaxed text-repower-navy-900/60">
+                    Secure Stripe checkout. HBW confirms the motor and quote details before anything is ordered.
+                  </p>
                   <button
                     onClick={() => user ? setShowSaveDialog(true) : setShowAuthSaveDialog(true)}
                     disabled={noMotorSelected}
@@ -1347,6 +1484,11 @@ export default function QuoteSummaryPage() {
                   bullets={selectedPackageFeatures}
                   onReserve={handleReserveDeposit}
                   onReview={handleStepComplete}
+                  callHref={callHref}
+                  smsHref={smsHref}
+                  quoteReference={canonicalReferenceNumber}
+                  onCall={(event) => handleContactClick(event, 'phone_click')}
+                  onText={(event) => handleContactClick(event, 'sms_click')}
                   depositAmount={depositAmount}
                   coverageYears={selectedPackageCoverageYears}
                   promoWarrantyYears={promoYears > 0 ? promoYears : undefined}
@@ -1373,7 +1515,12 @@ export default function QuoteSummaryPage() {
           <SaveQuoteDialog 
             open={showSaveDialog}
             onOpenChange={setShowSaveDialog}
-            quoteData={{ ...state, frozenPricing: frozenPricingFromPdfSnapshot(pdfSnapshot), pdfSnapshot }}
+            quoteData={{
+              ...state,
+              frozenPricing: frozenPricingFromPdfSnapshot(pdfSnapshot),
+              pdfSnapshot,
+              ...(canonicalReferenceNumber ? { reference_number: canonicalReferenceNumber } : {}),
+            }}
             motorModel={motorName}
             finalPrice={displayPricing.total}
           />

@@ -993,7 +993,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   {
     "slug": "best-mercury-outboard-aluminum-fishing-boats",
     "title": "Best Mercury for Aluminum Boats 2026",
-    "description": "The right Mercury for an aluminum fishing boat depends on the hull, load, and the boat's documented limits. 9.9-25 HP and 60-115 HP are examples to compare against your capacity plate. HBW honest guide.",
+    "description": "Boat length does not pick the motor. Start with your capacity plate and the manufacturer's documentation for that exact hull, then match shaft, controls, weight, and load. Honest Mercury guide from Harris Boat Works on Rice Lake.",
     "category": "Buying Guide",
     "publishDate": "2026-01-12",
     "keywords": [
@@ -1005,16 +1005,16 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     ],
     "faqs": [
       {
-        "q": "What's the minimum HP I should get for my aluminum boat?",
-        "a": "25 HP is a 14 ft example and 40 HP a 16 ft example, usually for lighter tiller days; a loaded 16 ft console may suit 60 or 90 instead. Check the capacity plate and manufacturer documentation for horsepower, people, and weight limits, then size for the heaviest planned load that still fits."
+        "q": "How do I work out the right horsepower for my aluminum boat?",
+        "a": "Start with the capacity plate on your boat, not the length. It gives the maximum horsepower, maximum people, and maximum total load certified for that hull. Then check the manufacturer's documentation for your exact make, model, and year for maximum engine weight and transom height. Inside those limits, size for the l…"
       },
       {
         "q": "Is a tiller or remote better for fishing an aluminum boat?",
-        "a": "For most serious anglers on aluminum fishing boats, tiller is better, specifically the Mercury Advanced Tiller system giving you throttle, shift, and trim control at your fingertips. Tiller keeps you connected to the boat and lets you make instant micro-adjustments. Available on Mercury FourStroke models from 2.5HP th…"
+        "a": "It follows the boat and how you fish, not the length. Many serious anglers prefer tiller, specifically the Mercury Advanced Tiller system giving you throttle, shift, and trim control at your fingertips, because it keeps you connected to the boat for instant micro-adjustments. Remote (console) steering suits family boa…"
       },
       {
         "q": "Should I get Command Thrust on my Mercury outboard?",
-        "a": "Usually not, though it is model- and application-specific rather than a blanket rule. On a typical planing aluminum fishing boat, CT trades top-end speed for low-speed push you will rarely use. Standard gearcase is the right call for 14-20 ft aluminum fishing boats around Rice Lake and the Kawarthas. If you want more…"
+        "a": "Usually not, though it is model- and application-specific rather than a blanket rule. On a typical planing aluminum fishing boat, CT trades top-end speed for low-speed push you will rarely use, so the standard gearcase is our shop preference on the aluminum fishing boats we see around Rice Lake and the Kawarthas. If y…"
       },
       {
         "q": "What shaft length do I need for an aluminum fishing boat?",
@@ -1501,7 +1501,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Does motor weight affect boat performance?",
-        "a": "Yes, significantly. Modern Mercury motors are lighter than older designs, so you may be able to run higher HP than before. We factor motor weight into recommendations."
+        "a": "Yes, significantly, but do not assume a newer motor is lighter. Installed weight varies by exact model and configuration, and a modern four-stroke can outweigh the older two-stroke it replaces. Check the exact proposed motor weight against the hull's documented power and motor-weight limits independently, rather than…"
       },
       {
         "q": "How does altitude affect motor sizing?",

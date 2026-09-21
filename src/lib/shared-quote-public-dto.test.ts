@@ -306,6 +306,15 @@ describe('public shared quote DTO', () => {
       isConsultationSubmitted: true,
     }).isConsultationSubmitted).toBe(false);
   });
+
+  it('passes through only a well-formed canonical quote number', () => {
+    expect(buildPublicQuoteData({ reference_number: 'HBW-02627' }).reference_number).toBe('HBW-02627');
+    // Legacy timestamp numbers, part numbers and junk never reach the browser.
+    expect(buildPublicQuoteData({ reference_number: 'HBW-123456' })).not.toHaveProperty('reference_number');
+    expect(buildPublicQuoteData({ reference_number: '1A2B3C' })).not.toHaveProperty('reference_number');
+    expect(buildPublicQuoteData({ reference_number: 12345 })).not.toHaveProperty('reference_number');
+    expect(buildPublicQuoteData({ quoteNumber: 'HBW-02627' })).not.toHaveProperty('quoteNumber');
+  });
 });
 
 describe('shared quote boundary source contract', () => {

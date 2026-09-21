@@ -31,7 +31,7 @@ revenue_driver: repower
 
 *Hero image: Mercury Avator 7.5e on a Lund boat. This photograph illustrates the outboard in use; it does not show a charging installation.*
 
-> **Now at HBW:** Mercury Avator is joining our lineup. See the [Avator landing page](/electric/mercury-avator) for the lineup, use cases, and to get on the pricing list.
+> **Now at HBW:** Mercury Avator is in our lineup. See [Mercury Avator prices in Canada](/electric/mercury-avator) for the model table, battery notes, and the quote path.
 ## Quick Answer
 
 Charging a Mercury Avator at a typical Ontario cottage works fine if you have reliable shore power. Mercury's [Avator 7.5e page](https://www.mercurymarine.com/ca/en/engines/electric/avator/avator-7-5e) confirms that the included 110 W charger uses a standard household outlet. Its [current Avator family brochure](https://www.mercurymarine.com/content/dam/mercury-marine/emea-assets/avator-general/avator-emea-brochures/EMEA_Avator_Brochure_EN_screen.pdf.coredownload.pdf) lists about nine hours from fully depleted, with charging time varying by battery state and temperature. Plan on an overnight charge unless you select a compatible faster charger. Larger Avator models use different battery and charger combinations, so confirm the package and electrical requirements before planning turnaround time. The deciding factors are how many battery packs you're charging, how often you're running the motor, and whether your cottage has the electrical capacity for simultaneous charging.

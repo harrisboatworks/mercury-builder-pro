@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom';
 import { useIsMobileOrTablet } from '@/hooks/use-mobile';
 import { useAIChat } from './GlobalAIChat';
 import { motion } from 'framer-motion';
-import { getMobileLauncherBottom } from './chatLayout';
+import { getMobileLauncherBottom, getMobileLauncherHorizontal } from './chatLayout';
 
 interface AIChatButtonProps {
   onOpenChat: () => void;
@@ -44,7 +44,10 @@ export const AIChatButton: React.FC<AIChatButtonProps> = ({ onOpenChat, isOpen }
 
   if (isOpen) return null;
 
-  const positionClass = isSmallScreen ? 'left-4' : 'right-4';
+  const horizontal = isSmallScreen
+    ? getMobileLauncherHorizontal(location.pathname)
+    : 'right';
+  const positionClass = horizontal === 'left' ? 'left-4' : 'right-4';
   const bottom = isSmallScreen
     ? getMobileLauncherBottom(location.pathname)
     : '1rem';

@@ -101,6 +101,7 @@ interface QuoteDetail {
   stripe_billing_address?: unknown;
   _source?: 'customer_quotes' | 'saved_quotes';
   _joined_customer_quote_id?: string | null;
+  _reference_number?: string | null;
 }
 
 const AdminQuoteDetail = () => {
@@ -282,6 +283,7 @@ const AdminQuoteDetail = () => {
             quote_pdf_path: sq.quote_pdf_path,
             quote_pdf_sha256: sq.quote_pdf_sha256,
             email_deliveries: deliveries,
+            _reference_number: sq.reference_number || qs.reference_number || cq?.quote_data?.reference_number || cq?.quote_data?.quoteNumber || null,
             _source: 'saved_quotes',
             ['_joined_customer_quote_id']: cq?.id || null,
           };
@@ -307,6 +309,7 @@ const AdminQuoteDetail = () => {
           legacy_json_payment_status: typeof cq.quote_data?.payment_status === 'string' ? cq.quote_data.payment_status : null,
           email_deliveries: [],
           _source: 'customer_quotes',
+          _reference_number: cq?.quote_data?.reference_number || cq?.quote_data?.quoteNumber || null,
         });
         setAdminDiscount(cq.admin_discount || 0);
         setAdminNotes(cq.admin_notes || '');
@@ -795,7 +798,8 @@ const AdminQuoteDetail = () => {
       
       // Build complete PDF data object matching QuoteSummaryPage structure
       const pdfData = {
-        quoteNumber: `HBW-${q.id.slice(0, 6).toUpperCase()}`,
+        // Prefer the canonical HBW-12345 number the customer saw on the summary and their own PDF.
+        quoteNumber: q._reference_number || `HBW-${q.id.slice(0, 6).toUpperCase()}`,
         customerName: q.customer_name || 'Valued Customer',
         customerEmail: q.customer_email || '',
         customerPhone: q.customer_phone || '',

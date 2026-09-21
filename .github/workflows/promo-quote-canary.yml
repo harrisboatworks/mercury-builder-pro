@@ -1,4 +1,4 @@
-name: Summer Savings quote canary
+name: Chase the Savings quote canary
 
 on:
   deployment_status: {}
@@ -29,13 +29,13 @@ jobs:
         run: npm ci --ignore-scripts
       - name: Install Chromium
         run: npx playwright install --with-deps chromium
-      - name: Check live 60 HP promo quote
+      - name: Check live 25 HP promo quote
         run: npm run check:promo-quote-live
         env:
           PROMO_CANARY_BASE_URL: https://www.mercuryrepower.ca
-          PROMO_CANARY_EXPIRES_AT: '2026-09-01T04:00:00Z'
+          PROMO_CANARY_EXPIRES_AT: '2026-10-31T04:00:00Z'
           # After expiry, assert the campaign disappears cleanly for one week.
-          PROMO_CANARY_RETIRES_AT: '2026-09-08T04:00:00Z'
+          PROMO_CANARY_RETIRES_AT: '2026-11-07T05:00:00Z'
       - name: Upload failure screenshot
         if: failure()
         uses: actions/upload-artifact@v4

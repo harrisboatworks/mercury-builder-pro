@@ -6,6 +6,15 @@
     <loc>https://www.mercuryrepower.ca/</loc>
     <changefreq>daily</changefreq>
     <priority>1</priority>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://www.mercuryrepower.ca/" />
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://www.mercuryrepower.ca/fr" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.mercuryrepower.ca/zh" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.mercuryrepower.ca/ko" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.mercuryrepower.ca/es" />
+    <xhtml:link rel="alternate" hreflang="pa" href="https://www.mercuryrepower.ca/pa" />
+    <xhtml:link rel="alternate" hreflang="ur" href="https://www.mercuryrepower.ca/ur" />
+    <xhtml:link rel="alternate" hreflang="tl" href="https://www.mercuryrepower.ca/tl" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mercuryrepower.ca/" />
   </url>
   <url>
     <loc>https://www.mercuryrepower.ca/blog/diagnostics</loc>
@@ -252,36 +261,99 @@
     <loc>https://www.mercuryrepower.ca/zh</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://www.mercuryrepower.ca/" />
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://www.mercuryrepower.ca/fr" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.mercuryrepower.ca/zh" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.mercuryrepower.ca/ko" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.mercuryrepower.ca/es" />
+    <xhtml:link rel="alternate" hreflang="pa" href="https://www.mercuryrepower.ca/pa" />
+    <xhtml:link rel="alternate" hreflang="ur" href="https://www.mercuryrepower.ca/ur" />
+    <xhtml:link rel="alternate" hreflang="tl" href="https://www.mercuryrepower.ca/tl" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mercuryrepower.ca/" />
   </url>
   <url>
     <loc>https://www.mercuryrepower.ca/fr</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://www.mercuryrepower.ca/" />
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://www.mercuryrepower.ca/fr" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.mercuryrepower.ca/zh" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.mercuryrepower.ca/ko" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.mercuryrepower.ca/es" />
+    <xhtml:link rel="alternate" hreflang="pa" href="https://www.mercuryrepower.ca/pa" />
+    <xhtml:link rel="alternate" hreflang="ur" href="https://www.mercuryrepower.ca/ur" />
+    <xhtml:link rel="alternate" hreflang="tl" href="https://www.mercuryrepower.ca/tl" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mercuryrepower.ca/" />
   </url>
   <url>
     <loc>https://www.mercuryrepower.ca/ko</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://www.mercuryrepower.ca/" />
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://www.mercuryrepower.ca/fr" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.mercuryrepower.ca/zh" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.mercuryrepower.ca/ko" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.mercuryrepower.ca/es" />
+    <xhtml:link rel="alternate" hreflang="pa" href="https://www.mercuryrepower.ca/pa" />
+    <xhtml:link rel="alternate" hreflang="ur" href="https://www.mercuryrepower.ca/ur" />
+    <xhtml:link rel="alternate" hreflang="tl" href="https://www.mercuryrepower.ca/tl" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mercuryrepower.ca/" />
   </url>
   <url>
     <loc>https://www.mercuryrepower.ca/es</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://www.mercuryrepower.ca/" />
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://www.mercuryrepower.ca/fr" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.mercuryrepower.ca/zh" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.mercuryrepower.ca/ko" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.mercuryrepower.ca/es" />
+    <xhtml:link rel="alternate" hreflang="pa" href="https://www.mercuryrepower.ca/pa" />
+    <xhtml:link rel="alternate" hreflang="ur" href="https://www.mercuryrepower.ca/ur" />
+    <xhtml:link rel="alternate" hreflang="tl" href="https://www.mercuryrepower.ca/tl" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mercuryrepower.ca/" />
   </url>
   <url>
     <loc>https://www.mercuryrepower.ca/pa</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://www.mercuryrepower.ca/" />
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://www.mercuryrepower.ca/fr" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.mercuryrepower.ca/zh" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.mercuryrepower.ca/ko" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.mercuryrepower.ca/es" />
+    <xhtml:link rel="alternate" hreflang="pa" href="https://www.mercuryrepower.ca/pa" />
+    <xhtml:link rel="alternate" hreflang="ur" href="https://www.mercuryrepower.ca/ur" />
+    <xhtml:link rel="alternate" hreflang="tl" href="https://www.mercuryrepower.ca/tl" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mercuryrepower.ca/" />
   </url>
   <url>
     <loc>https://www.mercuryrepower.ca/ur</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://www.mercuryrepower.ca/" />
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://www.mercuryrepower.ca/fr" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.mercuryrepower.ca/zh" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.mercuryrepower.ca/ko" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.mercuryrepower.ca/es" />
+    <xhtml:link rel="alternate" hreflang="pa" href="https://www.mercuryrepower.ca/pa" />
+    <xhtml:link rel="alternate" hreflang="ur" href="https://www.mercuryrepower.ca/ur" />
+    <xhtml:link rel="alternate" hreflang="tl" href="https://www.mercuryrepower.ca/tl" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mercuryrepower.ca/" />
   </url>
   <url>
     <loc>https://www.mercuryrepower.ca/tl</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://www.mercuryrepower.ca/" />
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://www.mercuryrepower.ca/fr" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.mercuryrepower.ca/zh" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.mercuryrepower.ca/ko" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.mercuryrepower.ca/es" />
+    <xhtml:link rel="alternate" hreflang="pa" href="https://www.mercuryrepower.ca/pa" />
+    <xhtml:link rel="alternate" hreflang="ur" href="https://www.mercuryrepower.ca/ur" />
+    <xhtml:link rel="alternate" hreflang="tl" href="https://www.mercuryrepower.ca/tl" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mercuryrepower.ca/" />
   </url>
   <url>
     <loc>https://www.mercuryrepower.ca/pricing-reference</loc>
@@ -2088,7 +2160,7 @@
   </url>
   <url>
     <loc>https://www.mercuryrepower.ca/blog/repower-pontoon-aluminum-v-hull-differences</loc>
-    <lastmod>2026-09-11</lastmod>
+    <lastmod>2026-09-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -2276,7 +2348,7 @@
   </url>
   <url>
     <loc>https://www.mercuryrepower.ca/blog/fr/remotorisation-mercury-gta-toronto</loc>
-    <lastmod>2026-09-11</lastmod>
+    <lastmod>2026-09-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en-CA" href="https://www.mercuryrepower.ca/blog/mercury-repower-gta-toronto-destination" />
@@ -2321,7 +2393,7 @@
   </url>
   <url>
     <loc>https://www.mercuryrepower.ca/blog/fr/entretien-remorque-bateau-ontario</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en-CA" href="https://www.mercuryrepower.ca/blog/boat-trailer-maintenance-guide-ontario" />
@@ -2330,7 +2402,7 @@
   </url>
   <url>
     <loc>https://www.mercuryrepower.ca/blog/fr/guide-assurance-bateau-ontario-2026</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en-CA" href="https://www.mercuryrepower.ca/blog/boat-insurance-ontario-guide-2026" />
@@ -2339,7 +2411,7 @@
   </url>
   <url>
     <loc>https://www.mercuryrepower.ca/blog/fr/garantie-prolongee-mercury-platinum-ontario</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en-CA" href="https://www.mercuryrepower.ca/blog/mercury-extended-warranty-platinum-ontario" />
@@ -2348,7 +2420,7 @@
   </url>
   <url>
     <loc>https://www.mercuryrepower.ca/blog/fr/gamme-mercury-hors-bord-2026-ontario</loc>
-    <lastmod>2026-09-11</lastmod>
+    <lastmod>2026-09-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en-CA" href="https://www.mercuryrepower.ca/blog/mercury-outboard-lineup-ontario" />

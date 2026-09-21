@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/entretien-remorque-bateau-ontario.md
-last_updated: 2026-09-06
+last_updated: 2026-09-12
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Entretien d'une remorque de bateau : le guide que personne n'écrit (Ont
 description: "Liste de vérification annuelle d'entretien de remorque de bateau pour les plaisanciers ontariens. Roulements, freins, pneus, lumières, tasseaux."
 category: "Entretien"
 date_published: 2026-05-13
-date_modified: 2026-09-06
+date_modified: 2026-09-12
 keywords: ["entretien remorque bateau","roulements remorque","remorque bateau Ontario","coût service remorque","pneus ST","freins remorque bateau"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Catégorie :** Entretien\
 **Publié le :** 2026-05-13\
-**Dernière révision :** 2026-09-06\
+**Dernière révision :** 2026-09-12\
 **Temps de lecture :** 10 min\
 **URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/entretien-remorque-bateau-ontario
 
@@ -165,8 +165,6 @@ Une nouvelle remorque en aluminium de taille moyenne pour un bateau de 16 à 18 
 > Cela dit, nous devons être honnêtes : notre personnel parle anglais. Si vous nous contactez pour une soumission ou un service, nous vous répondrons en anglais. Si vous préférez, vous pouvez utiliser Google Traduction ou demander à un membre bilingue de votre famille de vous aider avec la communication. Nous nous engageons à vous offrir le meilleur service possible.
 
 ---
-
-*Dernière révision : 2026-05-13*
 
 Par Harris Boat Works, marina familiale depuis 1947 sur le lac Rice, concessionnaire [Mercury Marine](https://www.mercurymarine.com/ca/en) depuis 1965 et concessionnaire Mercury Premier.
 ## Guides connexes

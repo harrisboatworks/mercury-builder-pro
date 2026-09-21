@@ -58,6 +58,8 @@ A real Mercury serial number is short, alphanumeric, and unique to your specific
 
 The serial is **stamped or laser-etched on a small plate** on the motor's transom bracket. You will NOT find date or horsepower hidden in the digits, Mercury does not embed the spec into the serial like a car VIN. You look the serial up in Mercury's catalog or any reputable parts site (Crowley Marine, PartsVu, MarineEngine) to get year, model variant, and parts compatibility.
 
+Once you have the numbers, find out [what your outboard is worth as a trade-in](/trade-in-value).
+
 ## How to decode your Mercury Model Number
 
 The Mercury Model Number is the spec code, and unlike the serial, this one IS decodable. Newer Mercury motors carry a full SKU string like `1F60413GZ`. Older motors use a shorter human-readable code like `90ELPT` or `25EXLHGA`.
