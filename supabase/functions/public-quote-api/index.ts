@@ -635,7 +635,10 @@ async function listMotors(supabase: any, body: any) {
     .gte("horsepower", minHp)
     .lte("horsepower", maxHp)
     .order("horsepower", { ascending: true })
-    .limit(textSearch ? 500 : limit);
+    // Catalog page stays 500. Caller limit is applied after eligibility,
+    // normalized stock, and text filters so in_stock_only cannot lose
+    // later in-stock rows to an earlier SQL slice. Same order as MCP search.
+    .limit(500);
 
   if (search) {
     if (!Number.isNaN(hpSearch)) q = q.eq("horsepower", hpSearch);

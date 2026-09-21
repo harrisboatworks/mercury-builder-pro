@@ -258,8 +258,13 @@ describe("public motor agent contract", () => {
     expect(mcpServer).toContain("const SITE_URL = PUBLIC_SITE_URL;");
     expect(quoteApi).not.toContain('Deno.env.get("APP_URL")');
     expect(quoteApi).not.toContain('.ilike("model_display"');
-    expect(quoteApi).toContain(".limit(textSearch ? 500 : limit)");
+    expect(quoteApi).toContain(".limit(500)");
+    expect(quoteApi).not.toContain(".limit(textSearch ? 500 : limit)");
     expect(quoteApi).toContain(".includes(textSearch)");
+    expect(quoteApi).toContain(".slice(0, limit)");
+    expect(quoteApi.indexOf("!inStockOnly || isPublicMotorInStock(m)")).toBeLessThan(
+      quoteApi.indexOf(".slice(0, limit)"),
+    );
 
     expect(motorsApi).toContain("const slug = motorSlug(m);");
     expect(quoteApi).toContain("const slug = motorSlug(m);");
