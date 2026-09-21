@@ -212,7 +212,11 @@ const AdminQuotes = () => {
       toast({ title: 'Error', description: 'Failed to load customer quotes', variant: 'destructive' });
     }
 
-    const knownSavedQuoteIds = new Set((sqResult.data || []).map((row: any) => row.id));
+    const knownSavedQuoteIds = new Set<string>(
+      (sqResult.data || [])
+        .map((row: { id?: unknown }) => row.id)
+        .filter((id): id is string => typeof id === 'string' && id.length > 0),
+    );
     const cqRows: UnifiedQuoteRow[] = (cqResult.data || []).map((r: any) => ({
       ...normalizeCustomerQuote(r),
       saved_quote_id: r.saved_quote_id || null,
