@@ -40,6 +40,7 @@ import { MercuryVideoFile } from '@/components/blog/MercuryVideoFile';
 import { PremiumFaq } from '@/components/blog/PremiumFaq';
 import { renderHbwVisual } from '@/components/blog/visuals';
 import { FaultCodeFinder } from '@/components/blog/FaultCodeFinder';
+import { usesReview150MobileAffordances } from '@/lib/review150Article';
 
 
 import {
@@ -88,6 +89,7 @@ export default function BlogArticle() {
   const cleanDescription = getCleanDescription(article);
   const isDiagnostic = isDiagnosticArticle(article.category, article.slug);
   const revenueDriver = getBlogRevenueDriver(article.category, article.slug);
+  const review150Affordances = usesReview150MobileAffordances(article.slug);
 
   // Process inline markdown formatting (bold, italic, links, code)
   const processInlineFormatting = (text: string): React.ReactNode[] => {
@@ -378,7 +380,7 @@ export default function BlogArticle() {
 
           {/* Table of Contents */}
           {tocItems.length > 0 && (
-            <TableOfContents items={tocItems} />
+            <TableOfContents items={tocItems} mobileAffordances={review150Affordances} />
           )}
 
           {article.slug === 'mercury-outboard-fault-codes-lookup' && (
@@ -471,9 +473,12 @@ export default function BlogArticle() {
                     caption={title}
                     className="w-full rounded-lg"
                     containerClassName="my-6"
+                    visibleExpandLabel={review150Affordances}
                   />
                 ),
-                table: ({ node, children }) => <BlogTable>{children}</BlogTable>,
+                table: ({ node, children }) => (
+                  <BlogTable overflowHint={review150Affordances}>{children}</BlogTable>
+                ),
                 hr: () => <hr className="my-8 border-t border-repower-navy-900/15" />,
                 ul: ({ node, children, ...props }) => (
                   <ul className="list-disc pl-6 my-4 space-y-2 text-repower-navy-900/85" {...props}>{children}</ul>
