@@ -86,7 +86,7 @@ Each motor page includes pricing in CAD, availability, specifications, and a lin
 ## Services
 
 - Mercury Outboard Sales & Live Quote Builder: full FourStroke, Pro XS, and SeaPro lineup with real CAD pricing at mercuryrepower.ca/quote/motor-selection. Pickup only at Gores Landing.
-- Mercury Avator Electric Outboards: joining our lineup now. Canonical page: https://www.mercuryrepower.ca/electric/mercury-avator. Pricing coming soon; call 905-342-2153 for details.
+- Mercury Avator Electric Outboards: canonical price page for the 7.5e, 20e, 35e, 75e and 110e, with battery and charger notes and CAD pricing as Mercury Canada confirms it: https://www.mercuryrepower.ca/electric/mercury-avator. Demo rides on Rice Lake; call 905-342-2153.
 - Mercury 9.9 guide: https://www.mercuryrepower.ca/motors/mercury-9-9-tiller-kicker-guide
 - Professional Repower: complete motor replacement and rigging on existing boats. HBW's standard repower handoff includes an on-water test on Rice Lake before pickup when safe seasonal conditions allow; any alternate acceptance plan is documented with the customer.
 - Factory Service & Maintenance: Mercury-certified technicians for 100-hour services, impellers, diagnostics, and repairs. Engine repairs on Mercury and MerCruiser only. Human hub: https://www.mercuryrepower.ca/maintenance. Agent-readable service index: https://www.mercuryrepower.ca/maintenance.md. Service intake: https://hbw.wiki/service
@@ -249,9 +249,16 @@ DeepSeek, Qwen, Kimi, and Doubao, can use the REST APIs below instead.
 - Public quote API (POST, itemized CAD quotes with optional trade-in):
   https://www.mercuryrepower.ca/api/agents/quote
   Actions: list_motors, estimate_trade_in, build_quote
-  Docs: GET the same URL returns the full schema.
+  Docs: GET the same URL with no parameters returns the full schema, including the errors block.
+- Same quote API over GET, for assistants that cannot POST (same pricing code, identical numbers):
+  https://www.mercuryrepower.ca/api/agents/quote?action=build_quote&motor_id=b16ac296-e506-4357-ad69-18a0aa347cbf&purchase_path=installed&boat_make=Lund&boat_model=Pro-V&trade_brand=Mercury&trade_year=2010&trade_hp=75&trade_condition=good&trade_engine_type=4-stroke
+  Also action=estimate_trade_in (brand, year, horsepower, condition) and action=list_motors (family, min_hp, max_hp).
+  Returns text/markdown by default, or add format=json. GET never captures a lead and never writes anything:
+  contact parameters are ignored and not logged, and lead capture stays POST-only. Hand the customer the
+  "Continue this quote" deep link in the response. GET shares the same per-IP rate limits as POST.
+  Error shapes and what to do about each: https://www.mercuryrepower.ca/agents
 - Deep-link prefilled quote URL pattern (one-shot link to the configurator):
-  https://www.mercuryrepower.ca/quote/motor-selection?motor={MOTOR_ID}&boat_make={MAKE}&boat_model={MODEL}&trade_brand={BRAND}&trade_year={YEAR}&trade_hp={HP}
+  https://www.mercuryrepower.ca/quote/motor-selection?motor={MOTOR_ID}&boat_make={MAKE}&boat_model={MODEL}&trade_brand={BRAND}&trade_year={YEAR}&trade_hp={HP}&trade_condition={CONDITION}&trade_engine_type={ENGINE_TYPE}
 - Markdown twins and indexes (LLM-cheap plain-text): see /catalog.md, /maintenance.md, and /motors/{slug}.md
 
 Source-of-truth rules for agents acting on our behalf:

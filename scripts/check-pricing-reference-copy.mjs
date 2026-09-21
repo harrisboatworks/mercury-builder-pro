@@ -4,12 +4,15 @@
  *
  * Fails the build if the page title, H1, or meta description in either
  * src/pages/PricingReference.tsx or scripts/static-prerender.mjs deviate
- * from the canonical Ontario strings, or if any em-dash (— or –) appears
- * in those fields.
+ * from the canonical strings, or if an em-dash / en-dash appears in the
+ * title, H1 or meta description.
  *
- * House style: no em-dashes anywhere. This check is narrow: it only
- * inspects the three SEO-critical fields for the /pricing-reference
- * route in the two files that emit them.
+ * Title and description are read from src/data/seoPageMetadata.json
+ * (`pricingReference`), the single source both files consume, so the pinned
+ * value cannot drift from the metadata again. Both files must reference that
+ * key rather than hard-code a string.
+ *
+ * House style: no em-dashes or en-dashes anywhere.
  */
 import { readFileSync, existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
@@ -19,11 +22,15 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const ROOT = join(__dirname, '..');
 
+const SEO_PAGE_METADATA = JSON.parse(
+  readFileSync(join(ROOT, 'src/data/seoPageMetadata.json'), 'utf8'),
+);
+const PAGE_SEO = SEO_PAGE_METADATA.pricingReference ?? {};
+
 const EXPECTED = {
-  title: 'Mercury Outboard Prices Ontario (CAD) | Harris Boat Works',
+  title: PAGE_SEO.title,
   h1: 'Mercury Outboard Prices in Ontario (CAD): Live HBW Dealer Pricing',
-  description:
-    "Live Mercury outboard prices in CAD, listed FourStroke and Pro XS models, 2.5-300 HP. MSRP vs dealer price, drop-off at our Gores Landing shop.",
+  description: PAGE_SEO.description,
 };
 
 
@@ -31,6 +38,34 @@ const DASH_RE = /[\u2014\u2013]/; // em-dash, en-dash
 
 const errors = [];
 const checked = [];
+
+if (typeof EXPECTED.title !== 'string' || !EXPECTED.title.trim()) {
+  errors.push('seoPageMetadata.json: pricingReference.title is missing');
+} else if (DASH_RE.test(EXPECTED.title)) {
+  errors.push(`seoPageMetadata.json pricingReference.title: contains em-dash or en-dash: "${EXPECTED.title}"`);
+}
+if (typeof EXPECTED.description !== 'string' || !EXPECTED.description.trim()) {
+  errors.push('seoPageMetadata.json: pricingReference.description is missing');
+} else if (DASH_RE.test(EXPECTED.description)) {
+  errors.push(`seoPageMetadata.json pricingReference.description: contains em-dash or en-dash: "${EXPECTED.description}"`);
+}
+
+// Fields sourced from seoPageMetadata.pricingReference: the file must read the
+// key (e.g. `PAGE_SEO.title` / `SEO_PAGE_METADATA.pricingReference.title`),
+// never re-type the string.
+function checkRef(file, label, actual, key) {
+  checked.push(`${file} ${label}`);
+  if (actual == null) {
+    errors.push(`${file}: could not locate ${label}`);
+    return;
+  }
+  const ok = new RegExp(`^(?:PAGE_SEO|SEO_PAGE_METADATA\\.pricingReference|seoPageMetadata\\.pricingReference)\\.${key}$`).test(actual.trim());
+  if (!ok) {
+    errors.push(
+      `${file} ${label} must read seoPageMetadata.pricingReference.${key}.\n  actual:   ${JSON.stringify(actual)}`
+    );
+  }
+}
 
 function check(file, label, actual, expected) {
   checked.push(`${file} ${label}`);
@@ -55,24 +90,28 @@ if (!existsSync(pagePath)) {
 } else {
   const src = readFileSync(pagePath, 'utf8');
   // <title>...</title>
-  const titleMatch = src.match(/<title>([\s\S]*?)<\/title>/);
-  // first <meta name="description" content="..." />
-  const descMatch = src.match(/<meta\s+name="description"\s+content="([\s\S]*?)"/);
+  const titleMatch = src.match(/<title>\{([\s\S]*?)\}<\/title>/);
+  // first <meta name="description" content={...} />
+  const descMatch = src.match(/<meta\s+name="description"\s+content=\{([\s\S]*?)\}/);
+  const pageSeoMatch = src.match(/const\s+PAGE_SEO\s*=\s*([\w.]+);/);
+  if (pageSeoMatch?.[1] !== 'seoPageMetadata.pricingReference') {
+    errors.push('PricingReference.tsx: PAGE_SEO must be seoPageMetadata.pricingReference');
+  }
   // <h1 ...>...</h1>
   const h1Match = src.match(/<h1[^>]*>([\s\S]*?)<\/h1>/);
 
-  check('PricingReference.tsx', '<title>', titleMatch?.[1]?.trim(), EXPECTED.title);
-  check('PricingReference.tsx', 'meta description', descMatch?.[1]?.trim(), EXPECTED.description);
+  checkRef('PricingReference.tsx', '<title>', titleMatch?.[1], 'title');
+  checkRef('PricingReference.tsx', 'meta description', descMatch?.[1], 'description');
   check('PricingReference.tsx', '<h1>', h1Match?.[1]?.trim(), EXPECTED.h1);
 
   // Also lint og:title, twitter:title, og:description, twitter:description
   for (const prop of ['og:title', 'twitter:title']) {
-    const m = src.match(new RegExp(`(?:property|name)="${prop}"\\s+content="([\\s\\S]*?)"`));
-    check('PricingReference.tsx', `${prop}`, m?.[1]?.trim(), EXPECTED.title);
+    const m = src.match(new RegExp(`(?:property|name)="${prop}"\\s+content=\\{([\\s\\S]*?)\\}`));
+    checkRef('PricingReference.tsx', `${prop}`, m?.[1], 'title');
   }
   for (const prop of ['og:description', 'twitter:description']) {
-    const m = src.match(new RegExp(`(?:property|name)="${prop}"\\s+content="([\\s\\S]*?)"`));
-    check('PricingReference.tsx', `${prop}`, m?.[1]?.trim(), EXPECTED.description);
+    const m = src.match(new RegExp(`(?:property|name)="${prop}"\\s+content=\\{([\\s\\S]*?)\\}`));
+    checkRef('PricingReference.tsx', `${prop}`, m?.[1], 'description');
   }
 }
 
@@ -89,11 +128,11 @@ if (!existsSync(prerenderPath)) {
   } else {
     // Grab a window large enough to include title/description/h1 fields
     const window = src.slice(idx, idx + 2000);
-    const titleMatch = window.match(/title:\s*'([^']*)'/);
-    const descMatch = window.match(/description:\s*'([^']*)'/);
+    const titleMatch = window.match(/title:\s*([\w.]+),/);
+    const descMatch = window.match(/description:\s*([\w.]+),/);
     const h1Match = window.match(/h1:\s*'([^']*)'/);
-    check('static-prerender.mjs', 'title', titleMatch?.[1], EXPECTED.title);
-    check('static-prerender.mjs', 'description', descMatch?.[1], EXPECTED.description);
+    checkRef('static-prerender.mjs', 'title', titleMatch?.[1], 'title');
+    checkRef('static-prerender.mjs', 'description', descMatch?.[1], 'description');
     check('static-prerender.mjs', 'h1', h1Match?.[1], EXPECTED.h1);
   }
 }
@@ -105,4 +144,4 @@ if (errors.length) {
   process.exit(1);
 }
 
-console.log(`[check-pricing-reference-copy] OK — ${checked.length} fields match Ontario copy, no em-dashes.`);
+console.log(`[check-pricing-reference-copy] OK — ${checked.length} fields match seoPageMetadata.pricingReference and the pinned H1; no em/en dashes.`);

@@ -17,6 +17,8 @@ export const AGENT_QUOTE_HANDOFF_CONSUMABLE_PARAMS = [
   'trade_brand',
   'trade_year',
   'trade_hp',
+  'trade_condition',
+  'trade_engine_type',
 ] as const;
 
 export const TRADE_IN_FORM_BRANDS = [
@@ -47,6 +49,12 @@ const TRADE_HP_RE = /^\d+(?:\.\d+)?$/;
 const TRADE_YEAR_RE = /^\d{4}$/;
 const UCP_REF_RE = /^[A-Za-z0-9._-]+$/;
 
+export const TRADE_IN_HANDOFF_CONDITIONS = ['excellent', 'good', 'fair', 'poor'] as const;
+export const TRADE_IN_HANDOFF_ENGINE_TYPES = ['4-stroke', '2-stroke', 'proxs', 'optimax', 'etec'] as const;
+
+export type TradeInHandoffCondition = typeof TRADE_IN_HANDOFF_CONDITIONS[number];
+export type TradeInHandoffEngineType = typeof TRADE_IN_HANDOFF_ENGINE_TYPES[number];
+
 export interface ParsedAgentQuoteHandoff {
   motorId?: string;
   boatMake?: string;
@@ -54,6 +62,8 @@ export interface ParsedAgentQuoteHandoff {
   tradeBrand?: string;
   tradeYear?: number;
   tradeHp?: number;
+  tradeCondition?: TradeInHandoffCondition;
+  tradeEngineType?: TradeInHandoffEngineType;
   ucpCheckoutRef?: string;
 }
 
@@ -117,6 +127,22 @@ export function parseTradeHpParam(raw: string | null): number | undefined {
   return horsepower;
 }
 
+export function parseTradeConditionParam(raw: string | null): TradeInHandoffCondition | undefined {
+  if (raw === null) return undefined;
+  if (hasControlChars(raw)) return undefined;
+  const trimmed = raw.trim().toLowerCase();
+  if (!trimmed) return undefined;
+  return TRADE_IN_HANDOFF_CONDITIONS.find((condition) => condition === trimmed);
+}
+
+export function parseTradeEngineTypeParam(raw: string | null): TradeInHandoffEngineType | undefined {
+  if (raw === null) return undefined;
+  if (hasControlChars(raw)) return undefined;
+  const trimmed = raw.trim().toLowerCase();
+  if (!trimmed) return undefined;
+  return TRADE_IN_HANDOFF_ENGINE_TYPES.find((engineType) => engineType === trimmed);
+}
+
 export function parseAgentQuoteHandoff(
   searchParams: URLSearchParams,
   currentYear = new Date().getFullYear(),
@@ -133,6 +159,8 @@ export function parseAgentQuoteHandoff(
     : undefined;
   const tradeYear = parseTradeYearParam(searchParams.get('trade_year'), currentYear);
   const tradeHp = parseTradeHpParam(searchParams.get('trade_hp'));
+  const tradeCondition = parseTradeConditionParam(searchParams.get('trade_condition'));
+  const tradeEngineType = parseTradeEngineTypeParam(searchParams.get('trade_engine_type'));
   const ucpCheckoutRef = sanitizeBuyerText(
     searchParams.get('ucp'),
     AGENT_QUOTE_HANDOFF_UCP_MAX,
@@ -148,6 +176,8 @@ export function parseAgentQuoteHandoff(
   if (tradeBrand) parsed.tradeBrand = tradeBrand;
   if (tradeYear !== undefined) parsed.tradeYear = tradeYear;
   if (tradeHp !== undefined) parsed.tradeHp = tradeHp;
+  if (tradeCondition) parsed.tradeCondition = tradeCondition;
+  if (tradeEngineType) parsed.tradeEngineType = tradeEngineType;
   if (trustedUcp) parsed.ucpCheckoutRef = trustedUcp;
   return parsed;
 }
@@ -242,7 +272,11 @@ export function mergeTradeInInfoFromHandoff(
   handoff: ParsedAgentQuoteHandoff,
 ): { next: Partial<TradeInInfo>; changed: boolean } | null {
   const hasTradeFields = Boolean(
-    handoff.tradeBrand || handoff.tradeYear !== undefined || handoff.tradeHp !== undefined,
+    handoff.tradeBrand
+    || handoff.tradeYear !== undefined
+    || handoff.tradeHp !== undefined
+    || handoff.tradeCondition
+    || handoff.tradeEngineType,
   );
   if (!hasTradeFields) return null;
 
@@ -259,6 +293,14 @@ export function mergeTradeInInfoFromHandoff(
   }
   if (handoff.tradeHp !== undefined && next.horsepower !== handoff.tradeHp) {
     next.horsepower = handoff.tradeHp;
+    changed = true;
+  }
+  if (handoff.tradeCondition && next.condition !== handoff.tradeCondition) {
+    next.condition = handoff.tradeCondition;
+    changed = true;
+  }
+  if (handoff.tradeEngineType && next.engineType !== handoff.tradeEngineType) {
+    next.engineType = handoff.tradeEngineType;
     changed = true;
   }
   if (changed) {
@@ -283,6 +325,8 @@ export function consumedAgentQuoteHandoffParams(
   if (handoff.tradeBrand) consumed.push('trade_brand');
   if (handoff.tradeYear !== undefined) consumed.push('trade_year');
   if (handoff.tradeHp !== undefined) consumed.push('trade_hp');
+  if (handoff.tradeCondition) consumed.push('trade_condition');
+  if (handoff.tradeEngineType) consumed.push('trade_engine_type');
   return consumed;
 }
 

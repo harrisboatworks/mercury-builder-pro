@@ -18,6 +18,7 @@ interface ExpandableImageProps {
   className?: string;
   containerClassName?: string;
   caption?: string;
+  visibleExpandLabel?: boolean;
 }
 
 export const ExpandableImage: React.FC<ExpandableImageProps> = ({
@@ -25,7 +26,8 @@ export const ExpandableImage: React.FC<ExpandableImageProps> = ({
   alt,
   className,
   containerClassName,
-  caption
+  caption,
+  visibleExpandLabel = false,
 }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
@@ -88,8 +90,17 @@ export const ExpandableImage: React.FC<ExpandableImageProps> = ({
           </span>
           
           {/* Mobile hint - always visible on small screens */}
-          <span className="absolute top-2 right-2 md:hidden bg-white/90 backdrop-blur-sm rounded-full p-1.5 shadow-sm" aria-hidden="true">
+          <span
+            className={cn(
+              'absolute top-2 right-2 md:hidden bg-white/90 backdrop-blur-sm shadow-sm',
+              visibleExpandLabel
+                ? 'inline-flex items-center gap-1 rounded-full px-2 py-1 text-xs font-medium text-gray-700'
+                : 'rounded-full p-1.5',
+            )}
+            aria-hidden="true"
+          >
             <Expand className="w-3 h-3 text-gray-600" aria-hidden="true" />
+            {visibleExpandLabel ? <span>Expand image</span> : null}
           </span>
           </button>
         </DialogPrimitive.Trigger>

@@ -3550,7 +3550,7 @@ Harris Boat Works · 5369 Harris Boat Works Rd, Gores Landing, ON · Mercury Mar
     imageAlt: "Close-up photograph of a Mercury digital throttle and shift control with a hand on its handle.",
     author: 'Jay Harris',
     datePublished: '2026-05-28',
-    dateModified: '2026-09-11',
+    dateModified: '2026-09-18',
     publishDate: '2026-05-28',
     category: 'Mercury Technology',
     readTime: '10 min',
@@ -3562,7 +3562,7 @@ Harris Boat Works · 5369 Harris Boat Works Rd, Gores Landing, ON · Mercury Mar
       { question: "What does a DTS retrofit cost when it does make sense?", answer: "When your engine is already DTS-capable and you're upgrading just the helm side (controls, harness, gateway, display), expect a four-figure ticket including parts and labor. Exact cost depends on engine count, helm complexity, and existing wiring. We quote both retrofit and repower paths at HBW so you can compare side by side." },
       { question: "Do I need DTS for Mercury joystick piloting?", answer: "Yes, DTS is part of Mercury joystick packages, but twin engines are not the only path. Most single-engine rigs do not qualify. Mercury lists package-specific single-engine systems, including Joystick Steering for Single-Engine Vessels and Joystick Piloting for Single-Engine Outboards with Thruster. The thruster package requires an electric-steering Verado or SeaPro V8, V10, or V12 from 250 to 600 HP plus a compatible CAN-based variable-speed thruster. Confirm the exact engine, steering, controls, and thruster package before quoting." },
       { question: "Will DTS make my boat faster or more fuel-efficient?", answer: "No. DTS is drive-by-wire. It changes how throttle and shift commands travel from the helm to the engine, but it doesn't change combustion, peak HP, or fuel burn. Same motor, same performance, smoother control feel. The real benefits are precision, multi-engine sync, and joystick eligibility, not raw numbers." },
-      { question: "Is DTS available on smaller Mercury motors?", answer: "Generally no. Mercury offers DTS on motors roughly 75 HP and up, with most current Verado V8/V10/V12, Pro XS 150+, and FourStroke 200+ models DTS-equipped from factory. Under 75 HP, mechanical controls remain the standard. If you're shopping in the 25 to 60 HP range, the DTS question doesn't apply." },
+      { question: "Is DTS available on smaller Mercury motors?", answer: "Generally no, but the exact answer is a model and configuration check rather than a horsepower rule. Current Verado V8/V10/V12 come standard with DTS. In the Pro XS and FourStroke families, DTS availability depends on the specific model, year and configuration, and Mercury still lists mechanical versions in several of those horsepower classes. Confirm against Mercury's current specifications for your exact motor. If you're shopping in the 25 to 60 HP range, the DTS question doesn't apply." },
       { question: "How do I check if my exact motor supports DTS?", answer: "Check Mercury's published specifications and the documentation for your exact motor and model year." },
       { question: "Are current Verado motors supercharged like older Verados?", answer: "No. Current Verado V8/V10/V12 (250-600 HP) are naturally aspirated, not supercharged. The old inline-6 Verado was supercharged, but Mercury moved away from that architecture years ago. Current Verados come standard with DTS at all HP classes in the family." }
     ],
@@ -3570,7 +3570,7 @@ Harris Boat Works · 5369 Harris Boat Works Rd, Gores Landing, ON · Mercury Mar
 
 *Last reviewed: 2026-05-28*
 
-> **Quick answer:** Most current Mercury motors built with DTS already have it (all Verado, Pro XS 150 HP and up, FourStroke 200 HP and up since the model was DTS-equipped). True retrofit of a mechanical Mercury to DTS is rarely cost-effective. The honest eligibility path for most boaters is: repower into a DTS-equipped motor.
+> **Quick answer:** Most current Mercury motors built with DTS already have it (all current Verado, plus the Pro XS and FourStroke configurations that were built with it; Mercury still offers mechanical versions in several of those horsepower classes). True retrofit of a mechanical Mercury to DTS is rarely cost-effective. The honest eligibility path for most boaters is: repower into a DTS-equipped motor.
 
 Most callers asking about DTS retrofit are surprised by the answer. They expect a parts catalog and a labor estimate. What they actually need is a yes-or-no on whether their current motor already has DTS (many do without the owner realizing), and if not, an honest assessment of whether retrofitting makes more sense than just repowering with a DTS-equipped motor.
 
@@ -3581,11 +3581,11 @@ This post is the eligibility decision tree. It covers what DTS actually is, how 
 | Motor situation | DTS retrofit eligible? | Honest path |
 |---|---|---|
 | Current Verado V8/V10/V12 (250-600 HP, 2020+) | **Already has DTS** | You already have it. Check your throttle handle. |
-| Current Pro XS 150-300 HP (2018+) | **Already has DTS** | Same. Most are DTS-equipped from factory. |
+| Current Pro XS 150-300 HP (2018+) | **Depends on configuration** | Mercury lists both mechanical and DTS versions in this range. Verify by serial number. |
 | Current FourStroke 200-300 HP (2018+) | **Most are DTS-equipped** | Verify by serial number, usually yes. |
 | Older Verado I6 (2006-2017, 200-350 HP) | **DTS-equipped, harness compatibility varies** | Often workable for harness/controls upgrade |
 | Mechanical Mercury 150 HP+ (any age) | **Retrofit possible but rarely worth it** | Quote a repower side-by-side. |
-| Mechanical Mercury under 150 HP | **Not eligible for retrofit** | DTS not offered on these classes |
+| Mechanical Mercury under 150 HP | **Rarely eligible** | Check Mercury's current specifications for your exact model before assuming either way |
 | Twin or triple Mercury rig | **Eligible if all motors are DTS-capable** | Required for joystick. Worth the conversation. |
 | Single small motor (under 75 HP) | **Not a DTS use case** | Save the money. Mechanical is correct here. |
 
@@ -3702,11 +3702,11 @@ A few patterns from our DTS conversations every spring on Rice Lake and the Kawa
 
 Before considering a DTS retrofit, have the motor serial number checked to establish which controls it supports and which system is already fitted.
 
-The second pattern: customers wanting DTS for the "smoother throttle" alone usually back off when they see the cost. A standalone DTS upgrade on a single-engine boat is a four-figure ticket once you add helm controls, harness, gateway, and labour; we quote it per job, with current figures on our /pricing-reference page. The smoother-throttle benefit is real but rarely worth the price. The customers who DO pull the trigger are usually twins-or-more rigs upgrading for joystick.
+The second pattern: customers wanting DTS for the "smoother throttle" alone usually back off when they see the cost. A standalone DTS upgrade on a single-engine boat is a four-figure ticket once you add helm controls, harness, gateway, and labour; we quote it per job. Our /pricing-reference page carries current motor pricing, not retrofit labour figures. The smoother-throttle benefit is real but rarely worth the price. The customers who DO pull the trigger are usually twins-or-more rigs upgrading for joystick.
 
 The third pattern, specific to Ontario boating: late-season dock approaches in fall winds at Rice Lake or in tight cottage dock spaces in the Kawarthas. Joystick piloting earns its keep in those moments. Customers who switch from twin mechanical to twin DTS with joystick almost never go back. The ability to crab sideways into a dock in a cross-wind without a second person on the bow is the kind of thing you don't appreciate until you have it.
 
-Fourth pattern: the worst DTS install we ever rescued was a customer who had bought a "DTS retrofit" kit online for an old Mercury 225 that wasn't DTS-capable. Three months of helm wiring trying to make it work before he called us. We sold him a new 250 Pro XS DTS, took the old one in trade, finished the install in a week, and he was back on the water. Not every retrofit story has a happy ending. Sometimes the honest answer is "this isn't the path."
+Fourth pattern, illustrative rather than a specific customer event: an owner buys a "DTS retrofit" kit online for an older mechanical motor that was never DTS-capable, then spends months on helm wiring before asking a dealer. A kit cannot turn a non-DTS engine into a DTS engine. Not every retrofit story has a happy ending, and sometimes the honest answer is "this isn't the path."
 
 ::pull-quote
 quote: A common shop conversation: someone asks about adding DTS to a recent Pro XS, then finds the motor already has it. Checking the helm first can avoid quoting a retrofit you do not need.
@@ -5510,6 +5510,7 @@ Family-owned since 1947, Mercury dealer since 1965, Mercury Premier Dealer · Ri
   {
     slug: 'breaking-in-new-mercury-motor-guide',
     title: 'How to Break In a New Mercury Outboard',
+    seoTitle: "How to Break In a New Mercury Outboard | HBW",
     description: "Mercury outboard break-in: follow the manual for your model, avoid common mistakes, and understand scheduled service and HBW's optional early check.",
     image: '/lovable-uploads/blog-audit-2026-09/break-in-not-service-interval.svg',
     imageAlt: 'Concept diagram: vary throttle, avoid long steady RPM, and follow the serial-specific manual. Break-in is not the first scheduled service.',
@@ -5538,6 +5539,8 @@ https://www.youtube.com/watch?v=ydFfxwUz5yc
 ## How Do I Break In a New Mercury Outboard? (Quick Answer)
 
 Follow the break-in procedure in the owner's manual for your exact motor. Mercury's published 150 Pro XS example covers 10 hours. For your motor, vary RPM and follow the throttle limits and duration in its own manual. Once break-in is complete, operate normally within Mercury's rated RPM band. For most current FourStrokes, the published first scheduled service is 100 hours or annually.
+
+Booking ahead: [first service and rigging at HBW](/maintenance).
 
 ## Why break-in actually matters
 
@@ -6173,21 +6176,21 @@ If the work falls outside our core, we'll tell you that and point you toward a s
     slug: 'best-mercury-outboard-aluminum-fishing-boats',
     title: 'Best Mercury for Aluminum Boats 2026',
     seoTitle: "Best Mercury for Aluminum Fishing Boats (Ontario) | HBW",
-    description: "The right Mercury for an aluminum fishing boat depends on the hull, load, and the boat's documented limits. 9.9-25 HP and 60-115 HP are examples to compare against your capacity plate. HBW honest guide.",
+    description: "Boat length does not pick the motor. Start with your capacity plate and the manufacturer's documentation for that exact hull, then match shaft, controls, weight, and load. Honest Mercury guide from Harris Boat Works on Rice Lake.",
     image: '/lovable-uploads/Aluminum_Console_Mercury_FourStroke_Hero_2026.png',
     imageAlt: 'Two anglers fishing from an aluminum console boat with a Mercury FourStroke outboard on a calm Kawartha lake',
     author: 'Harris Boat Works',
     datePublished: '2026-01-12',
-    dateModified: '2026-09-11',
+    dateModified: '2026-09-21',
     publishDate: '2026-01-12',
     category: 'Buying Guide',
     readTime: '10 min read',
     keywords: ['mercury for aluminum boat', 'best outboard aluminum fishing boat', 'mercury 60hp fishing', 'lund boat motor', 'tracker boat outboard'],
-    content: `**Last reviewed:** 2026-05-07
+    content: `**Last reviewed:** 2026-09-21
 
 ---
 
-> **Quick answer:** Length alone does not pick the motor. Start with the capacity plate and manufacturer documentation for this hull's horsepower and weight limits, then consider layout, steering, and your usual and heaviest planned load. Where those support it, 40-60 HP is an example to compare for 14-16 ft and 60-115 HP for 16-18 ft. Tiller versus remote still follows the boat. A 9.9 ProKicker is worth considering if you troll walleye. Installed pricing at [mercuryrepower.ca](https://www.mercuryrepower.ca).
+> **Quick answer:** Boat length does not establish safe or suitable horsepower. Two 16 ft aluminum hulls can be rated very differently. Start with the capacity plate on your boat and the manufacturer's documentation for that exact make, model, and year: maximum horsepower, maximum engine weight, and maximum people and gear. That maximum is a ceiling, not a recommendation or a budget target. From there, match transom height and shaft length, tiller or remote controls, hull and transom condition, and the load you actually carry on a normal day. A 9.9 ProKicker is worth considering if you troll walleye. Installed pricing at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 ---
 
@@ -6202,7 +6205,7 @@ leftCriteria:
   - You launch at unimproved ramps where dragging happens
   - You want lower maintenance and won't repaint or gel-coat-fix
   - Repair-ability matters to you (welding > fiberglass work)
-leftOutcome: Lighter, more forgiving, easier to fix. Consider modern welded aluminum (Lund, Princecraft, Legend Tin) when trailering, shallow-water use, and repair options matter to you. For a 16-18 ft example, compare 60-90 HP Mercury where the hull's limits and load support it.
+leftOutcome: Lighter, more forgiving, easier to fix. Consider modern welded aluminum (Lund, Princecraft, Legend Tin) when trailering, shallow-water use, and repair options matter to you. Power comes from that specific hull's plate and manufacturer documentation, not from its length.
 leftVariant: recommended
 rightLabel: Fiberglass
 rightCriteria:
@@ -6211,7 +6214,7 @@ rightCriteria:
   - You're 18-22+ ft for runabout, bowrider, or wakeboard use
   - You can absorb higher maintenance (gel coat, blisters, hull cleaning)
   - You'll keep the boat 8+ years and value the smoother trip
-rightOutcome: Heavier, more comfortable in chop, prettier. Right answer for runabouts, ski boats, and bigger fiberglass cruisers. 19-23 ft fiberglass with 200+ HP Mercury, $55K-$110K.
+rightOutcome: Heavier, more comfortable in chop, prettier. Right answer for runabouts, ski boats, and bigger fiberglass cruisers. Power and budget still follow that hull's rated limits and how it is equipped, not a length rule of thumb.
 rightVariant: alternative
 whenInDoubt: Most Kawartha and Rice Lake customers buy aluminum because the trip to the boat is short, the boats hit stuff, and the resale market loves them. Fiberglass is a lifestyle pick on bigger water. Both are right; the wrong one is whatever doesn't match how you actually boat.
 ::
@@ -6220,45 +6223,61 @@ whenInDoubt: Most Kawartha and Rice Lake customers buy aluminum because the trip
 
 We rig aluminum fishing boats every season at HBW. On Rice Lake and across the Kawarthas, they're the workhorse of cottage fishing, lightweight, easy to trailer, manageable to maintain.
 
-The mistakes we see are consistent: underbuying on HP, skipping the kicker, running the wrong prop, or choosing Command Thrust without checking the hull, load, propeller, and rigging. Fix any one of those and the boat performs noticeably better than before.
+The mistakes we see are consistent: guessing power from boat length, skipping the kicker, running the wrong prop, or choosing Command Thrust without checking the hull, load, propeller, and rigging. Fix any one of those and the boat performs noticeably better than before.
 
 Here's how to think through each decision.
 
 ---
 
-## What changes the right motor for your aluminum fishing boat
+## What actually sets the right motor for your aluminum fishing boat
 
-**Hull length and weight.** A 14-foot tin boat needs less HP than a 19-foot console. Aluminum hulls are lighter than equivalent fiberglass, so HP requirements trend lower than the same-length fiberglass alternative.
+**The capacity plate, first.** The plate near the transom lists the maximum horsepower, the maximum number of people, and the maximum total load the builder certified for that hull. It is the starting point, and nothing below overrides it.
 
-**Tiller or remote control.** Tiller boats under 20 HP are drop-in installs, no rigging required. Console boats need remote-control motors with cables, controls, and prop. Different cost structure entirely.
+**The manufacturer's documentation for your exact model and year.** The plate gives you horsepower and load. The owner's manual or the builder's spec sheet for that model year usually adds the maximum engine weight and the transom height the boat was designed around. Two 16 ft aluminum boats can be rated very differently, and the same model can change ratings between years.
 
-**How many people and how much gear.** Solo angler trolling at 3 mph has completely different HP needs than a family of three who want to run between spots.
+**The maximum is a ceiling, not a recommendation.** Being rated for a number does not mean the boat is best with that number, and it does not mean you should budget for it. Plenty of well-set-up hulls run happily below their rating.
 
-**Where you fish.** Protected bays on smaller Kawartha lakes vs. open Rice Lake in the afternoon vs. Lake Ontario. Bigger, windier water changes the practical HP minimum.
+**Engine weight and transom height.** A modern FourStroke can weigh more than the motor it replaces. Check the rated engine weight and how the boat sits at rest with your normal load in it. Then match shaft length to transom height, 20 inch on most standard aluminum transoms, 25 inch on taller ones.
+
+**Steering and controls.** Tiller motors are a drop-in on boats built for them, no rigging. A console boat needs a remote-control motor with compatible steering, cables or hydraulics, controls, harness, and a prop. Mixing an incompatible control system is where repower budgets quietly grow.
+
+**Hull and transom condition.** Soft or repaired transoms, corroded rivets, and old stringer repairs change what the boat should carry, whatever the plate says. We check this before we quote.
+
+**How many people and how much gear.** A solo angler trolling at 3 mph asks something very different of the boat than three people, a full livewell, and a day's gear. Size for the heaviest load you genuinely run, inside the rated limits.
+
+**Where you fish.** Protected bays on smaller Kawartha lakes, open Rice Lake on a windy afternoon, and Lake Ontario are three different jobs. Bigger water rewards reserve power you already have room for on the plate.
 
 **Whether you have a kicker.** A 9.9 ProKicker on a fishing boat is the standard for trolling speed control. Without one, you're either sacrificing main-motor performance or sacrificing trolling control. You can't optimize both with one motor.
 
 ---
 
-## Best Mercury by boat size
+## How to work it out for your boat, in order
 
-### 12–14 ft tin boat (solo or two-person, sheltered water)
+**1. Photograph the capacity plate.** Maximum horsepower, maximum persons, maximum total weight. If the plate is missing, painted over, or unreadable, get the make, model, and year and ask the builder or a dealer for the original rating. Do not guess from the length.
 
-**Best fit: 9.9 to 15 HP tiller.** The Mercury 9.9 MH, 15 MH, or 15 EH (electric start) are all drop-in, no-rigging purchases. For pure solo fishing on small lakes, a 9.9 MH is plenty. Step up to 15 if you have a heavier hull or want a bit more cruise speed.
+**2. Write down the hull's limits in one line.** Maximum horsepower, maximum engine weight, maximum load. Every option gets checked against that line.
 
-### 14–16 ft tiller or console aluminum
+**3. Measure the transom.** Transom height decides shaft length. Getting it wrong causes ventilation or drag no prop will fix.
 
-**Example to compare: 25 to 60 HP**, tiller without a console, remote with one. For a 16-foot console with two anglers and gear, a 60 HP FourStroke is worth comparing, provided the capacity plate, manufacturer documentation, and your planned loads allow it. Installed pricing: [mercuryrepower.ca](https://www.mercuryrepower.ca).
+**4. Decide tiller or remote.** That follows the boat's layout and how you fish, and it changes the rigging list more than the motor choice does.
 
-### 16–18 ft console aluminum (the most common Kawartha repower)
+**5. Total your real load.** People, gear, fuel, batteries, livewell water, and the motor itself. That total lives inside the plate's weight limit, not at its edge.
 
-**Examples to compare: 90 to 115 HP FourStroke.** The 90 EXLPT and 115 EXLPT are motors we often install on 16-18 ft consoles where the hull's documented limits, steering, and a heavier family or open-water load support them.
+**6. Then choose the model.** Within what steps 1 to 5 allow, pick the Mercury family that matches how you run the boat, and price the full configuration rather than the motor alone at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
-For tournament-style fishing or bigger open water, step up to 115 Pro XS. The Pro XS earns the premium if you actually run it hard. For typical recreational fishing, FourStroke is the better value.
+---
 
-### 18–20 ft aluminum with deep-V hull
+## Choosing between Mercury families, once the limits are set
 
-**Best fit: 115 to 150 HP.** Larger aluminum fishing boats with deep-V hulls need real HP to plane reliably with a full load. The 115 Pro XS or 150 FourStroke/Pro XS land here.
+**FourStroke.** The volume choice for recreational fishing on aluminum hulls: quiet at trolling speed, smooth, straightforward to service. Most of the aluminum fishing boats we rig on Rice Lake end up here.
+
+**Pro XS.** Built for hole shot and sustained hard running. It earns the premium on tournament hulls and for anglers who push across open water every morning. If most of your season is trolling and working structure, FourStroke at the same horsepower is the better value.
+
+**ProKicker.** A purpose-built trolling and auxiliary motor with a high-thrust gearcase and long shaft, not a main-motor substitute on a planing hull.
+
+**Command Thrust.** A hull, load, and propeller decision. On most of the planing aluminum fishing boats we see, the standard gearcase is our shop preference. That is a preference from the boats in front of us, not a rule about V-hulls.
+
+Whichever family you land in, the horsepower still has to sit inside what your plate and documentation allow.
 
 ---
 
@@ -6286,8 +6305,10 @@ A kicker can be worth the added cost when slow trolling, backup propulsion, or l
 
 :::mythbuster
 heading: Common mistakes on aluminum fishing boat repowers
-- claim: Underbuying HP.
-  rebuttal: A 25 HP on a 16-foot aluminum that needs 60 HP leaves you fighting wind and current every day.
+- claim: Picking horsepower from boat length.
+  rebuttal: Two 16 ft aluminum boats can carry different plate ratings, different weight limits, and different transom heights. Read the plate and the manufacturer documentation for your exact model and year, then size for the load you actually carry.
+- claim: Treating the maximum rating as the target.
+  rebuttal: The maximum is a legal and structural ceiling, not advice. Buying to the ceiling adds weight and cost the boat may not need.
 - claim: Skipping the kicker.
   rebuttal: Two seasons later, they wish they'd bought it. Buy it once.
 - claim: Wrong prop.
@@ -6319,49 +6340,51 @@ Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), real pricin
 
 ## What we see at HBW
 
-Many 14-17 ft tinnies and modest-load consoles that come through our service bay run a 25-60 HP FourStroke. For some 17-footers carrying 3-4 people and gear, the 60 EFI (standard gearcase) is worth comparing; a 90-115 on a heavier 16-18 ft console suits a different load and water. Command Thrust remains a hull, load, and propeller choice; HBW often prefers standard on these planing V-hulls.
+Every aluminum fishing boat that comes through our service bay gets the same first step: read the plate, confirm the manufacturer's documentation for that model and year, check the transom, and weigh what the owner actually carries. Two boats that look identical on the trailer regularly come back with different answers.
 
-Read the capacity plate and manufacturer documentation before quoting. The shop still turns down a 90 when that hull is rated for 60.
+Command Thrust stays a hull, load, and propeller decision, and on most of these planing V-hulls we prefer the standard gearcase.
+
+The shop will still turn down a repower that exceeds a hull's rating, and we will say so before we quote. If your plate is unreadable, send us the make, model, and year with a photo of the transom and we will help you track down the original rating.
 
 ---
 
 ## FAQ
 
 **What's the best Mercury for a 16-foot aluminum fishing boat?**
-It depends on layout and load. A 60 EFI suits two-person fishing on many hulls; a 90 EXLPT adds headroom for a family with gear where the plate, manufacturer documentation, and your heaviest planned day allow. Both are popular Kawartha repower choices.
+There isn't one answer, because 16 ft is not a specification. Two 16 ft hulls from different builders, or different years of the same builder, can be rated for different horsepower, different engine weight, and different total load. Start with your capacity plate and the manufacturer's documentation for that exact boat, confirm transom height and controls, then choose inside those limits for the load you carry. Send us the make, model, and year with a photo of the plate and we'll work it through with you.
 
-**What's the best Mercury for a 14-foot aluminum tiller boat?**
-A 15 to 25 HP tiller motor. Mercury 15 MH, 15 EH (electric start), or 25 EFI. All are drop-in tiller installs with no rigging. Choose based on whether you want manual or electric start and how heavily loaded your boat typically is.
+**My plate is painted over or missing. What now?**
+Don't estimate from length. Get the hull identification number, make, model, and year, and ask the builder or a dealer for the original certified rating. We do this regularly for older Kawartha boats.
+
+**Should I buy up to my boat's maximum horsepower?**
+Only if the rest of the picture supports it. The maximum is a ceiling set for safety and structure, not a recommendation. Engine weight, how the boat sits with your normal load, transom condition, and what you actually do on the water all matter. Many boats are better set up below their rating.
 
 **Should I get FourStroke or Pro XS for fishing?**
-For tournament fishing or anyone who wants the fastest acceleration to beat wind to a spot, Pro XS earns its price. For recreational fishing, trolling, drifting, working structure, FourStroke at the same HP is the better value.
+For tournament fishing or anyone who wants the fastest acceleration to beat wind to a spot, Pro XS earns its price. For recreational fishing, trolling, drifting, working structure, FourStroke at the same HP is the better value. Both still have to fit inside your hull's rated horsepower and engine weight.
 
 **Do I need a kicker motor for fishing?**
-For serious fishing on Rice Lake or Kawartha lakes, yes, it's the standard setup. The 9.9 ProKicker gives you trolling speed control, backup propulsion, fuel-efficient slow-speed running, and stealth in shallow water.
-
-**What HP for a 19-foot aluminum console fishing boat?**
-A 90 to 115 FourStroke suits typical lighter recreational use on some hulls; a 115 to 150 Pro XS suits bigger water or heavier gear, in line with the 18-20 ft deep-V examples. Pair with a 9.9 ProKicker if slow trolling is part of the day. The hull's rated limits still govern.
+For serious fishing on Rice Lake or Kawartha lakes, it's the standard setup. The 9.9 ProKicker gives you trolling speed control, backup propulsion, efficient slow-speed running, and stealth in shallow water. Remember that a kicker adds weight at the transom, which counts against the hull's limits.
 
 **Should I get Command Thrust on a fishing boat?**
 It depends on the hull, load, and propeller, not a universal V-hull ban. HBW's shop recommendation on most aluminum fishing boats we see is the standard gearcase. The ProKicker CT trolling motor is a separate, legitimate configuration.
 
 **Can I use a kicker as my main motor?**
-On small aluminum boats (12–14 ft), yes, a 9.9 or 15 HP can be the only motor. On 16 ft and bigger, you need a proper main motor; the kicker is the auxiliary.
+On some small, lightly loaded aluminum boats a 9.9 or 15 HP is the only motor, and that's a normal setup. On a boat you need to get on plane with people and gear, the kicker is an auxiliary and not the main. Your plate and your real load decide which case you're in.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 `,
     faqs: [
       {
-        question: 'What\'s the minimum HP I should get for my aluminum boat?',
-        answer: '25 HP is a 14 ft example and 40 HP a 16 ft example, usually for lighter tiller days; a loaded 16 ft console may suit 60 or 90 instead. Check the capacity plate and manufacturer documentation for horsepower, people, and weight limits, then size for the heaviest planned load that still fits.'
+        question: 'How do I work out the right horsepower for my aluminum boat?',
+        answer: 'Start with the capacity plate on your boat, not the length. It gives the maximum horsepower, maximum people, and maximum total load certified for that hull. Then check the manufacturer\'s documentation for your exact make, model, and year for maximum engine weight and transom height. Inside those limits, size for the load you actually carry and the water you actually run. The maximum is a ceiling, not a recommendation or a budget target. Two boats of the same length can land in completely different places.'
       },
       {
         question: 'Is a tiller or remote better for fishing an aluminum boat?',
-        answer: 'For most serious anglers on aluminum fishing boats, tiller is better, specifically the Mercury Advanced Tiller system giving you throttle, shift, and trim control at your fingertips. Tiller keeps you connected to the boat and lets you make instant micro-adjustments. Available on Mercury FourStroke models from 2.5HP through 115HP. Remote (console) steering is better for family boats, mixed-use hulls, or 18-20ft boats with center-console setups. Solo walleye anglers almost universally prefer tiller.'
+        answer: 'It follows the boat and how you fish, not the length. Many serious anglers prefer tiller, specifically the Mercury Advanced Tiller system giving you throttle, shift, and trim control at your fingertips, because it keeps you connected to the boat for instant micro-adjustments. Remote (console) steering suits family boats, mixed-use hulls, and boats already built around a console. Whichever you choose, confirm the motor is offered in that configuration and that the boat\'s existing controls and steering are compatible before you price the job.'
       },
       {
         question: 'Should I get Command Thrust on my Mercury outboard?',
-        answer: 'Usually not, though it is model- and application-specific rather than a blanket rule. On a typical planing aluminum fishing boat, CT trades top-end speed for low-speed push you will rarely use. Standard gearcase is the right call for 14-20 ft aluminum fishing boats around Rice Lake and the Kawarthas. If you want more low-speed control for trolling, add a 9.9 or 15 HP ProKicker (the ProKicker CT is a legitimate trolling-motor configuration). Command Thrust on the main motor makes sense on pontoons, tritoons, and heavy workboats.'
+        answer: 'Usually not, though it is model- and application-specific rather than a blanket rule. On a typical planing aluminum fishing boat, CT trades top-end speed for low-speed push you will rarely use, so the standard gearcase is our shop preference on the aluminum fishing boats we see around Rice Lake and the Kawarthas. If you want more low-speed control for trolling, add a 9.9 or 15 HP ProKicker (the ProKicker CT is a legitimate trolling-motor configuration). Command Thrust on the main motor makes sense on pontoons, tritoons, and heavy workboats.'
       },
       {
         question: 'What shaft length do I need for an aluminum fishing boat?',
@@ -6369,7 +6392,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         question: 'How much does it cost to power an aluminum fishing boat in Ontario in 2026?',
-        answer: 'Examples from the HBW pricing reference checked September 5, 2026: 40ELPT FourStroke $9,438, 60ELPT FourStroke $12,040, and 75ELPT FourStroke $14,476 CAD. These are bare-motor prices for the listed 20-inch remote-control configurations, excluding HST, rigging, controls, and propeller. Shaft length, tiller versus remote control, and gearcase options change the price. For an 18-20ft boat, check the [live 115HP FourStroke prices](/pricing-reference) rather than relying on a single horsepower-wide estimate. Command Thrust is a hull, load, and propeller choice; HBW often prefers standard on aluminum V-hulls. Build a configured quote at mercuryrepower.ca/quote/motor-selection.'
+        answer: 'It depends on the horsepower your hull is rated and equipped for, and on the rigging that goes with it. Examples from the HBW pricing reference checked September 5, 2026: 40ELPT FourStroke $9,438, 60ELPT FourStroke $12,040, and 75ELPT FourStroke $14,476 CAD. These are bare-motor prices for the listed 20-inch remote-control configurations, excluding HST, rigging, controls, and propeller. Shaft length, tiller versus remote control, and gearcase options change the price. If your capacity plate and documentation support 115 HP, check the [live 115HP FourStroke prices](/pricing-reference) rather than relying on a single horsepower-wide estimate. Command Thrust is a hull, load, and propeller choice; HBW often prefers standard on aluminum V-hulls. Build a configured quote at mercuryrepower.ca/quote/motor-selection.'
       },
       {
         question: 'Is EFI worth it over a carbureted motor on an aluminum fishing boat?',
@@ -6377,11 +6400,11 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         question: 'What should I expect when replacing an older two-stroke with a Mercury FourStroke?',
-        answer: 'Switching from an older two-stroke to a current Mercury FourStroke EFI is immediately noticeable: the FourStroke runs significantly quieter at trolling speeds, starts instantly without priming, and uses 30-40% less fuel. It runs cleaner with no oil injection to worry about. One adjustment: modern FourStrokes are heavier than comparable two-strokes, which can affect how the boat trims and planes. Proper prop selection after installation, which Harris Boat Works handles as part of any motor sale or repower, corrects this quickly.'
+        answer: 'Switching from an older two-stroke to a current Mercury FourStroke EFI is immediately noticeable: quieter at trolling speeds, instant starts without priming, cleaner running with no oil injection, and better fuel economy. One thing to plan for: modern FourStrokes are often heavier than the two-stroke they replace, so check the new motor\'s weight against your hull\'s maximum engine weight and see how the boat sits at rest with your normal load. Propeller selection after installation, which Harris Boat Works handles as part of any motor sale or repower, is part of getting the trim and hole shot right.'
       },
       {
-        question: 'What\'s the best Mercury outboard for a Lund 1675 in Ontario?',
-        answer: 'The Mercury 75HP EFI FourStroke is the most popular and well-matched motor for a Lund 1675 in Ontario. It gives the 16ft deep-V more than enough power to plane quickly, handle 2-3 anglers with gear, and run open water confidently. For lighter use on calm inland lakes, the standard-gearcase Mercury 60HP is a solid alternative. Command Thrust is a hull, load, and propeller choice; HBW often prefers standard on a planing V-hull like the Lund 1675. The 90HP is worth considering for heavy loads or lots of open water running, but is often more than needed for typical use.'
+        question: 'What Mercury should I put on a Lund 1675?',
+        answer: 'Model names cover several hull variants and model years with different ratings, so we do not treat this as a universal answer. Check the capacity plate on your specific boat and the Lund documentation for that model and year for maximum horsepower and engine weight, then choose inside those limits based on your load, your water, and whether the boat is tiller or console. Send us the year, the exact model designation, and a photo of the plate, and we will work through the options with you as an individual assessment rather than a generic recommendation.'
       }
     ]
   },
@@ -6847,6 +6870,8 @@ For most 16 to 18 ft aluminum console boats on Kawartha and Ontario freshwater, 
 For most 16 to 18 ft aluminum console boats carrying two or more people on Kawartha lakes, yes. The 90 gives you stronger loaded planing and acceleration on the same 2.1L block and mounting footprint. The exact speed gain depends on hull, load, prop, mounting height, and conditions, so we do not promise a fixed mph increase. If you mostly run light and single-handed, the 75 is a fine motor. If the boat fills up on weekends, the 90 is the one you are less likely to outgrow.
 
 Real-world performance varies with hull, load, prop, mounting height, water conditions, and rigging. Numbers below are typical ranges from boats we've rigged at HBW; treat them as ballpark, not guarantees.
+
+See [Mercury 90 & 115 HP prices in Canada](/mercury/mid-power-90-115hp), or [build an installed quote](/quote/motor-selection).
 
 ## Quick recommendation
 
@@ -8029,6 +8054,8 @@ Most conversations about fuel economy start in the wrong place. People ask which
 The real conversation starts with your prop.
 
 This guide covers what actually drives fuel economy on a Mercury outboard, in the order that matters. We rig and Lake Test Mercurys at our shop in Gores Landing every season, and we see the same setup problems cutting the same owners' fuel economy year after year.
+
+Shopping while you read: [Mercury outboard prices in Canada](/pricing-reference).
 
 ### The Five Levers, in Order
 
@@ -9573,7 +9600,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Three boats with Mercury outboards of increasing size at a marina dock, from small fishing boat to large pontoon',
     author: 'Harris Boat Works',
     datePublished: '2026-05-11',
-    dateModified: '2026-09-11',
+    dateModified: '2026-09-18',
     publishDate: '2026-05-11',
     category: 'Buying Guide',
     readTime: '8 min read',
@@ -9782,7 +9809,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         question: 'Does motor weight affect boat performance?',
-        answer: 'Yes, significantly. Modern Mercury motors are lighter than older designs, so you may be able to run higher HP than before. We factor motor weight into recommendations.'
+        answer: 'Yes, significantly, but do not assume a newer motor is lighter. Installed weight varies by exact model and configuration, and a modern four-stroke can outweigh the older two-stroke it replaces. Check the exact proposed motor weight against the hull\'s documented power and motor-weight limits independently, rather than inferring one from the other. We factor motor weight into recommendations.'
       },
       {
         question: 'How does altitude affect motor sizing?',
@@ -12550,7 +12577,7 @@ The model year flip doesn't change the basic questions: what motor fits your boa
 
 *Last reviewed: 2026-07-23*
 
-> **Now at HBW:** Mercury Avator is joining our lineup. See the [Avator landing page](/electric/mercury-avator) for the lineup, use cases, and to get on the pricing list.
+> **Now at HBW:** Mercury Avator is in our lineup. See [Mercury Avator prices in Canada](/electric/mercury-avator) for the model table, battery notes, and the quote path.
 > **Quick answer:** Mercury's Avator electric line runs from the 7.5e (rated 750 W) up to the 110e (rated 11 kW), suited to canoes, tenders, small fishing boats, and pontoons. Range trades against throttle: Mercury's 7.5e test on a 13-foot boat ran about 60 minutes at full throttle or up to 19 hours at 25%. Avator is build-to-order; call 905-342-2153.
 
 ## Mercury Avator Electric Outboards: What They Are, What They Cost, and Who They're Actually For
@@ -17093,6 +17120,8 @@ _Last updated: May 27, 2026_
 ## Quick answer
 Most Ontario aluminum fishing boats need a 20-inch (long) shaft. Most pontoons over 22 feet need a 25-inch (extra long) shaft. Small tiller boats with low transoms typically take a 15-inch (short) shaft. The only correct way to confirm is to measure transom height, the distance from the top of the transom down to where the hull contacts the water. Mercury's shaft code on the motor (S, L, XL, XXL) tells you the rest. The full decoder and a measurement guide are below.
 
+Ready to price it? [Build your quote, shaft length is a step](/quote/motor-selection).
+
 ## Why shaft length matters more than most people think
 
 Shaft length determines where the propeller sits in the water column relative to your hull. The rule is straightforward: the cavitation plate (the flat plate just above the prop) should ride roughly level with the bottom of your hull at the prop location when the boat is on plane.
@@ -18478,6 +18507,8 @@ You don't "install SmartCraft." It's already in your motor if it's modern enough
 
 ---
 
+Getting it fitted: [SmartCraft & VesselView install at HBW](/maintenance).
+
 ## SmartCraft Connect Mobile (formerly VesselView Mobile) and the Mercury Marine App (Summer 2025)
 
 Quick history. **VesselView Mobile** has been Mercury's phone app for several years. A Bluetooth module under the cowl talked to your phone, and the phone showed engine data. Around **summer 2025**, Mercury started transitioning everyone to the new **Mercury Marine App**, which replaces VesselView Mobile with more features and a cleaner interface.
@@ -18682,6 +18713,8 @@ A real Mercury serial number is short, alphanumeric, and unique to your specific
 The serial is **stamped or laser-etched on a small plate** on the motor's transom bracket. You will NOT find date or horsepower hidden in the digits, Mercury does not embed the spec into the serial like a car VIN. You look the serial up in Mercury's catalog or any reputable parts site (Crowley Marine, PartsVu, MarineEngine) to get year, model variant, and parts compatibility.
 
 
+
+Once you have the numbers, find out [what your outboard is worth as a trade-in](/trade-in-value).
 
 ## How to decode your Mercury Model Number
 
@@ -20021,6 +20054,10 @@ When a customer calls with a Guardian alarm active or a code on the screen, the 
 **"What exactly does the screen say, and what beeps are you hearing? Is it a solid tone or a pattern? How many beeps and how often?"**
 
 That single question routes the call. The display text tells us the system involved (fuel, charging, oil, temperature, communication). The beep pattern tells us severity and the specific subsystem. A continuous tone is different from 4 beeps every 2 minutes is different from 6 beeps once.
+
+[Beeping at the dock? Book a diagnostic](https://hbw.wiki/service "cta")
+
+Related: [Mercury service at HBW](/maintenance).
 
 ## Mercury beep code patterns (what the horn is telling you)
 
@@ -24923,6 +24960,8 @@ The 8M0173128 module lives under the cowl on a single-engine boat. The 8M0173129
 
 ---
 
+Getting it fitted: [SmartCraft & VesselView install at HBW](/maintenance).
+
 ## Compatibility (quick check)
 
 Most Mercury motors from 2004 onward are SmartCraft-compatible. Mercury 9.9, 15, 20 HP portables, pre-2004 4-strokes, and carbureted 2-strokes are NOT compatible. Optimax motors from 2004 onward are SmartCraft-capable.
@@ -25795,7 +25834,6 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     slug: "mercury-90-hp-fourstroke-review-ontario",
     relatedSlugs: ['mercury-115-hp-fourstroke-review-ontario', 'mercury-150-hp-fourstroke-pro-xs-review-ontario', 'mercury-command-thrust-complete-guide-2026', 'mercury-propeller-selection-guide'],
     title: 'Mercury 90 HP FourStroke Review: Standard vs Command Thrust',
-    seoTitle: 'Mercury 90 HP Review: Standard vs Command Thrust',
     description: "An honest Mercury 90 HP FourStroke review for Ontario, with current specs, exact freshwater tests, Command Thrust differences and candid buyer advice.",
     image: "/lovable-uploads/blog-heroes-2026-07/batch-b/hero-mercury-90-fourstroke-freshwater-review-2026-07.webp",
     imageAlt: "Pontoon boat underway with a Mercury FourStroke outboard.",
@@ -28622,6 +28660,10 @@ escalationBody: If oil pressure, temperature, or water-flow warnings require a s
 ::
 
 ---
+
+[Beeping at the dock? Book a diagnostic](https://hbw.wiki/service "cta")
+
+Related: [SmartCraft alarm codes](/blog/mercury-smartcraft-alarm-codes-encyclopedia) and [Mercury service at HBW](/maintenance).
 
 ## Mercury Outboard Beeping Codes: What Each Pattern Means and What to Check
 
@@ -31764,7 +31806,7 @@ For tournament or competitive setups, call 905-342-2153 after building the basic
     ],
     content: `
 
-> **Now at HBW:** Mercury Avator is joining our lineup. See the [Avator landing page](/electric/mercury-avator) for the lineup, use cases, and to get on the pricing list.
+> **Now at HBW:** Mercury Avator is in our lineup. See [Mercury Avator prices in Canada](/electric/mercury-avator) for the model table, battery notes, and the quote path.
 ## Quick Answer
 
 A Mercury Avator electric outboard's real-world range on Rice Lake depends on the boat, load, weather, throttle setting and battery configuration. Mercury's published 13-foot test reached about 5 miles at full throttle and 34 miles at quarter-throttle. For practical Rice Lake trip planning with a reserve for wind and chop, use roughly 3 to 4 miles at full throttle or 20 to 25 miles at quarter-throttle on a 7.5e with one 1 kWh battery. Larger Avator models with multiple packs extend that meaningfully. The honest take: Avator works for short-range cottage use; it is not the practical choice for a full-day trip covering the lake.
@@ -31917,7 +31959,7 @@ For most Rice Lake fishing patterns covering significant distance, gas outboard 
 
 
 
-> **Now at HBW:** Mercury Avator is joining our lineup. See the [Avator landing page](/electric/mercury-avator) for the lineup, use cases, and to get on the pricing list.
+> **Now at HBW:** Mercury Avator is in our lineup. See [Mercury Avator prices in Canada](/electric/mercury-avator) for the model table, battery notes, and the quote path.
 ## Quick Answer
 
 Both Mercury Avator and Torqeedo make legitimate electric outboards. The deciding factor for many Ontario buyers is not the motor itself but local service support. Avator uses Mercury's broader Canadian dealer network, while Torqeedo has a smaller specialized network. Not every dealer stocks every part or services every electric package, so confirm the exact location and capability before buying.
@@ -32078,7 +32120,7 @@ Neither brand automatically qualifies for an HP-restricted lake. Check the restr
 
 
 
-> **Now at HBW:** Mercury Avator is joining our lineup. See the [Avator landing page](/electric/mercury-avator) for the lineup, use cases, and to get on the pricing list.
+> **Now at HBW:** Mercury Avator is in our lineup. See [Mercury Avator prices in Canada](/electric/mercury-avator) for the model table, battery notes, and the quote path.
 ## Quick Answer
 
 Charging a Mercury Avator at a typical Ontario cottage works fine if you have reliable shore power. Mercury's [Avator 7.5e page](https://www.mercurymarine.com/ca/en/engines/electric/avator/avator-7-5e) confirms that the included 110 W charger uses a standard household outlet. Its [current Avator family brochure](https://www.mercurymarine.com/content/dam/mercury-marine/emea-assets/avator-general/avator-emea-brochures/EMEA_Avator_Brochure_EN_screen.pdf.coredownload.pdf) lists about nine hours from fully depleted, with charging time varying by battery state and temperature. Plan on an overnight charge unless you select a compatible faster charger. Larger Avator models use different battery and charger combinations, so confirm the package and electrical requirements before planning turnaround time. The deciding factors are how many battery packs you're charging, how often you're running the motor, and whether your cottage has the electrical capacity for simultaneous charging.
@@ -32330,7 +32372,7 @@ Harris Boat Works, family-owned since 1947. A Mercury Premier Dealer, selling Me
     ],
     content: `
 
-> **Now at HBW:** Mercury Avator is joining our lineup. See the [Avator landing page](/electric/mercury-avator) for the lineup, use cases, and to get on the pricing list.
+> **Now at HBW:** Mercury Avator is in our lineup. See [Mercury Avator prices in Canada](/electric/mercury-avator) for the model table, battery notes, and the quote path.
 *Last reviewed: 2026-07-18*
 
 > **Quick answer:** The Mercury Avator 7.5e delivers 750 watts at the propeller and uses a removable integrated 1 kWh battery. It can suit compatible small boats, tenders, sailboats, or quiet low-speed use, but runtime and fit are boat-specific. Mercury's published 13-foot test ran about 60 minutes or 5 miles at full throttle and up to 19 hours or 34 miles at 25% throttle. Avator is build-to-order at HBW; see the [Avator page](/electric/mercury-avator) for current availability and the configuration path.
@@ -34729,6 +34771,8 @@ Mercury outboards range from 19 kg (41 lb) for the 2.5 and 3.5 HP portables to 2
 How much a motor weighs is not trivia. It decides whether your transom can carry it, how your boat sits at rest, and how it planes. Here's what Mercury outboards weigh according to Mercury's own specifications, why it matters, and how to use the number.
 
 This chart covers the FourStroke and Pro XS families we sell and install every week. Verado is special-order territory at HBW and its weights vary significantly by model and rigging; if you are considering a Verado, verify the exact model number against Mercury's spec sheet.
+
+Also useful: [current Mercury outboard prices in Canada](/pricing-reference) and the [outboard shaft length guide](/blog/outboard-shaft-length-guide).
 
 ### FourStroke dry weights
 
