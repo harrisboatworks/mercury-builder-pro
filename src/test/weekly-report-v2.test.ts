@@ -40,9 +40,18 @@ describe('weekly report v2',()=>{
   expect(d.sms).not.toHaveBeenCalled();
  });
  it('escapes untrusted breakdowns and preserves the difference between intent and commitment',()=>{
-  const data=fixture();data.weeks[0].blogs=[{path:'<script>alert(1)</script>',sessions:1,quote_starts:0}];
+  const data=fixture();
+  const hostile = '<img src=x onerror="alert(1)"> & <script>alert(1)</script>';
+  data.weeks[0].blogs=[{path:hostile,sessions:1,quote_starts:0}];
+  data.weeks[0].quote_sources=[{source:hostile,records:1}];
+  data.weeks[0].traffic=[{source:hostile,sessions:1}];
+  data.weeks[0].top_motors=[{model:hostile,records:1}];
+  data.weeks[0].viewed_motors=[{model:hostile,sessions:1}];
   const r=renderReport(data);
-  expect(r.html).not.toContain('<script>');expect(r.html).toContain('&lt;script&gt;');
+  expect(r.html).not.toContain('<script>');expect(r.html).not.toContain('<img');
+  expect(r.html.match(/&lt;img/g)).toHaveLength(5);
+  expect(r.html).toContain('&quot;alert(1)&quot;');
+  expect(r.html).not.toContain('&amp;lt;');
   expect(r.sms).toContain('4,082 tracked sessions');expect(r.sms).toContain('46 public API');
   expect(r.sms).toContain('not confirmed contacts or downloads');expect(r.sms).not.toContain('BIGGEST DROP');
   expect(r.sms.length).toBeLessThan(1500);
