@@ -38,9 +38,6 @@ export default function LocaleHubLanding() {
         <title>{hub.title}</title>
         <meta name="description" content={hub.intro} />
         <link rel="canonical" href={url} />
-        <link rel="alternate" hrefLang={hub.hrefLang} href={url} />
-        <link rel="alternate" hrefLang="en-CA" href={`${SITE_URL}/`} />
-        <link rel="alternate" hrefLang="x-default" href={`${SITE_URL}/`} />
         <meta property="og:title" content={hub.heading} />
         <meta property="og:description" content={hub.intro} />
         <meta property="og:url" content={url} />

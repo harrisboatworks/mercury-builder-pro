@@ -6181,12 +6181,12 @@ If the work falls outside our core, we'll tell you that and point you toward a s
     imageAlt: 'Two anglers fishing from an aluminum console boat with a Mercury FourStroke outboard on a calm Kawartha lake',
     author: 'Harris Boat Works',
     datePublished: '2026-01-12',
-    dateModified: '2026-09-14',
+    dateModified: '2026-09-21',
     publishDate: '2026-01-12',
     category: 'Buying Guide',
     readTime: '10 min read',
     keywords: ['mercury for aluminum boat', 'best outboard aluminum fishing boat', 'mercury 60hp fishing', 'lund boat motor', 'tracker boat outboard'],
-    content: `**Last reviewed:** 2026-09-14
+    content: `**Last reviewed:** 2026-09-21
 
 ---
 
@@ -11940,7 +11940,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'A crated new Mercury Pro XS outboard outside the Harris Boat Works shop',
     author: 'Harris Boat Works',
     datePublished: '2026-05-19',
-    dateModified: '2026-09-06',
+    dateModified: '2026-09-11',
     publishDate: '2026-05-19',
     category: 'Buying Guide',
     readTime: '9 min read',
@@ -12139,6 +12139,8 @@ Typically when the motor is installed and ready for its Lake Test. Review the pa
 - [Ontario Cottage Owner's Guide: Is It Time to Repower Your Boat?](/blog/ontario-cottage-boat-motor-repower-guide), cottage-specific repower considerations
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
+Harris Boat Works has been a Mercury dealer since 1965.
     `,
     faqs: [
       {
@@ -13071,6 +13073,8 @@ Mercury Premier dealer. Est. 1947.
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---
 
+Harris Boat Works has been a Mercury dealer since 1965.
+
 ---
 `,
     faqs: [
@@ -13100,7 +13104,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         question: 'Which FourStroke models are eligible for Mercury Boost?',
-        answer: 'The current published dealer list includes FourStroke 175, 200, 250, and 300 HP models subject to serial-number and software requirements. The 225 HP V6 FourStroke is specifically not eligible. Factory-equipped status also depends on the exact serial number. Call with the serial number for the current answer.'
+        answer: 'The current published dealer list includes FourStroke 175, 200, 250, and 300 HP models subject to serial-number and software requirements. The 225 HP V6 FourStroke is specifically not eligible: Mercury lists it under Models Not Eligible for Boost in service bulletin 8M0247441. Factory-equipped status also depends on the exact serial number. Call with the serial number for the current answer.'
       },
       {
         question: 'Is Mercury Boost worth it for Rice Lake and Kawartha Lakes boating?',
@@ -16970,7 +16974,7 @@ Back at the shop:
 Customer picks up the boat. We walk through:
 - The new motor's controls and features
 - Mercury SmartCraft display interpretation (if applicable)
-- The 10-hour break-in protocol
+- The model-specific break-in procedure for your motor
 - The model-specific break-in and first scheduled service plan
 - Mercury warranty terms
 - Annual maintenance schedule
@@ -17044,6 +17048,8 @@ Ready to schedule your repower? Build a quote at **[mercuryrepower.ca](https://w
 
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
+Harris Boat Works has been a Mercury dealer since 1965.
 ---`,
     faqs: [
       {
@@ -17072,7 +17078,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         question: 'When can I use my boat after pickup?',
-        answer: 'Right away, with the 10-hour break-in protocol. The first hour at no-wake speed and gradual RPM increase. Vary throttle. Avoid sustained WOT for the first 10 hours. See our [breaking in guide](/blog/breaking-in-new-mercury-motor-guide).'
+        answer: 'Right away, following the break-in procedure for your exact engine model and serial number. We review that procedure with you at pickup, and the Mercury owner manual for your motor is the authority on throttle, load, and hours. Break-in guidance is model-specific rather than one universal rule. See our [breaking in guide](/blog/breaking-in-new-mercury-motor-guide).'
       },
       {
         question: 'When\'s my first service after the repower?',
@@ -31637,7 +31643,7 @@ For complex repowers (twin-engine setups, brand conversions, or unusual configur
     readTime: '8 min read',
     keywords: ['mercury pro xs buyer guide', 'mercury pro xs ontario', 'mercury pro xs pricing', 'mercury performance outboard'],
     faqs: [
-      { question: "Is Pro XS worth the premium over FourStroke?", answer: "For tournament fishing, performance pontoons, water sports applications, and big-water running, yes. For cruising, family use, casual fishing, no. FourStroke is the better tool for most Ontario boaters." },
+      { question: "Is Pro XS worth the premium over FourStroke?", answer: "Pro XS may be worth the extra cost if you use its performance. There is no single price premium across the lineup: compare current quotes for the exact models, shaft length, controls and gearcase, then account for rigging and HST. FourStroke is usually the better fit for cruising, family use and casual fishing." },
       { question: "What's the most popular Pro XS in Ontario?", answer: "The 200 Pro XS V8 is the dominant tournament fishing motor in Ontario bass boats. The 150 Pro XS is an inline-four and remains the walleye sweet spot for mid-size aluminum on big water." },
       { question: "Does Pro XS use the same powerhead as FourStroke?", answer: "The 115 Pro XS shares the 2.1L powerhead with the 115 FourStroke (different tuning). The 150 Pro XS uses a different 3.0L inline-4. The 175 Pro XS uses the 3.4L V6. The 200, 225, 250, and 300 Pro XS use the 4.6L V8. Horsepower alone does not identify the family." },
       { question: "Can I get Command Thrust on a Pro XS?", answer: "Yes, Command Thrust is available on the 115 Pro XS for pontoon applications. Higher HP Pro XS V6 and V8 motors use different gearcase options designed for their performance ranges." },
@@ -31738,7 +31744,7 @@ If you've read this far and you're still trying to decide between Pro XS and Fou
 - Performance pontoon applications
 - You'd actually use the difference in horsepower delivery
 
-The pricing premium for Pro XS over the equivalent FourStroke runs roughly $1,500-$3,000 depending on HP class. That's the cost of the performance upgrade.
+There is no single price premium for Pro XS over FourStroke across the lineup. Compare current quotes for the exact models at the same horsepower, matching shaft length, controls and gearcase where applicable. Motor-only prices exclude HST and installation; rigging differences can change the installed-price gap.
 
 ## What an installed Pro XS costs in Ontario (2026)
 

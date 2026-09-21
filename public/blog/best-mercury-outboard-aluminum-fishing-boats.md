@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-mercury-outboard-aluminum-fishing-boats.md
-last_updated: 2026-09-14
+last_updated: 2026-09-21
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Best Mercury for Aluminum Boats 2026"
 description: "Boat length does not pick the motor. Start with your capacity plate and the manufacturer's documentation for that exact hull, then match shaft, controls, weight, and..."
 category: "Buying Guide"
 date_published: 2026-01-12
-date_modified: 2026-09-14
+date_modified: 2026-09-21
 keywords: ["mercury for aluminum boat","best outboard aluminum fishing boat","mercury 60hp fishing","lund boat motor","tracker boat outboard"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-01-12  
-**Last reviewed:** 2026-09-14  
+**Last reviewed:** 2026-09-21  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-mercury-outboard-aluminum-fishing-boats
 

@@ -19,3 +19,21 @@ Photo relay limits are 6 requests per recipient per hour and 60 per request IP p
 ## Separate post-authentication improvement
 
 After authentication is deployed and accepted, assess a separate change allowing a validated, explicitly requested recipient supplied during a trusted conversation without requiring a preexisting quote. Preserve fail-closed recipient quotas and a deliberate aggregate provider budget; do not label provider IP as individual caller identity. A conversation-specific key is useful only when bound to trusted provider metadata, never a client-supplied identity assumed trustworthy. Test first-time recipients, invalid contacts, limiter errors/exhaustion, shared provider IP across distinct recipients, and both missing/wrong secrets with mocked outbound services before any authorized live message test. This should not remove current containment before the authenticated channel is verified.
+
+## Chat and voice knowledge canary
+
+The scheduled/deployment-triggered `Chat and voice knowledge parity` workflow is
+also an MCP caller. Its GitHub Actions repository secret `ELEVENLABS_MCP_SECRET`
+must match the existing Supabase/ElevenLabs MCP secret. Transfer it through the
+approved secret-management surface; do not rotate the live secret merely to
+repair the canary, and never put its value in a command argument or log.
+
+The workflow passes that secret only to the live-check step. The script sends
+`x-elevenlabs-mcp-secret` only to `elevenlabs-mcp-server`, rejects redirects, and
+fails before any network requests when the secret is missing. HTTP/MCP errors
+remain failures; response bodies are omitted from errors to avoid logging
+credential echoes. The three MCP calls only read deals, financing, and hours.
+
+After authorized configuration and merge, run the workflow on `main` and require
+`ok: true` from the full parity check. Confirm unsigned MCP requests still return
+401. A green parity check verifies these reads, not voice calls or message delivery.
