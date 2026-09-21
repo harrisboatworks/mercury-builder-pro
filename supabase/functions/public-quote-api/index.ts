@@ -635,9 +635,9 @@ async function listMotors(supabase: any, body: any) {
     .gte("horsepower", minHp)
     .lte("horsepower", maxHp)
     .order("horsepower", { ascending: true })
-    // Catalog page stays 500. Caller limit is applied after eligibility,
-    // normalized stock, and text filters so in_stock_only cannot lose
-    // later in-stock rows to an earlier SQL slice. Same order as MCP search.
+    // Candidate page stays 500. Caller limit is applied after eligibility,
+    // normalized stock, and text filters so in_stock_only cannot lose later
+    // in-stock rows inside that page. This is not unbounded enumeration.
     .limit(500);
 
   if (search) {

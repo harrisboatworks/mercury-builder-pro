@@ -196,9 +196,9 @@ async function searchMotors(supabase: any, args: any) {
   const { data, error } = await q;
   if (error) throw new Error(error.message);
 
-  // Eligibility and normalized stock run on the full 500-row public page.
-  // The caller limit is applied last so in_stock_only cannot lose later
-  // in-stock rows to an earlier slice.
+  // Eligibility and normalized stock run on the 500-row candidate page.
+  // That page still bounds the catalog; this only prevents the caller
+  // limit from dropping later in-stock rows inside those 500 rows.
   return filterPublicCatalogMotors(data || [], {
     inStockOnly: Boolean(args.in_stock_only),
   })
