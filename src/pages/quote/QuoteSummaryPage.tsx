@@ -1502,7 +1502,7 @@ export default function QuoteSummaryPage() {
                   }}
                   onApplyForFinancing={!isCashPurchase && displayPricing.total >= FINANCING_MINIMUM ? handleApplyForFinancing : undefined}
                   isGeneratingPDF={isGeneratingPDF}
-                  reserveDisabled={!canReserveMotor}
+                  reserveDisabled={!canReserveMotor || noMotorSelected}
                   isProcessingPayment={isProcessingDeposit}
                   quoteValidUntil={quoteValidUntil}
                 />

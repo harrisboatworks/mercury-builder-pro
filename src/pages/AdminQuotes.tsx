@@ -212,9 +212,7 @@ const AdminQuotes = () => {
       toast({ title: 'Error', description: 'Failed to load customer quotes', variant: 'destructive' });
     }
 
-    const sqRows: UnifiedQuoteRow[] = (sqResult.data || []).map(normalizeSavedQuote);
-    const knownSavedQuoteIds = new Set(sqRows.map((row) => row.id));
-
+    const knownSavedQuoteIds = new Set((sqResult.data || []).map((row: any) => row.id));
     const cqRows: UnifiedQuoteRow[] = (cqResult.data || []).map((r: any) => ({
       ...normalizeCustomerQuote(r),
       saved_quote_id: r.saved_quote_id || null,
@@ -232,6 +230,13 @@ const AdminQuotes = () => {
         _source: 'customer_quotes',
       }, knownSavedQuoteIds),
     }));
+
+    const leadIds = new Set(cqRows.map((row) => row.id));
+    const sqRows: UnifiedQuoteRow[] = (sqResult.data || [])
+      .filter((row: any) => row.quote_state?.source !== 'consultation-submit'
+        || row.deposit_status === 'paid'
+        || !leadIds.has(row.quote_state?.customerQuoteId))
+      .map(normalizeSavedQuote);
 
     setCustomerQuoteRows(cqRows);
     setSavedQuoteRows(sqRows);

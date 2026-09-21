@@ -161,6 +161,19 @@ describe('admin deal packet', () => {
     expect(detail).toContain('quoteNotificationDisplayStatus');
     expect(detail).toContain('Quote notification');
     expect(detail).not.toContain("from('saved_quotes').update({ quote_data: updatedQuoteData })");
+    expect(detail).toContain('_reference_number');
+    expect(detail).toContain('authoritativeDepositPaymentStatus');
+  });
+
+  it('keeps deal-packet IDs, reference numbers, and consultation-submit list filter', () => {
+    const list = readFileSync('src/pages/AdminQuotes.tsx', 'utf8');
+    expect(list).toContain('resolveAdminDealPacketId');
+    expect(list).toContain('dedupeAdminDealPacketRows');
+    expect(list).toContain('_deal_packet_id');
+    expect(list).toContain('_reference_number');
+    expect(list).toContain("row.quote_state?.source !== 'consultation-submit'");
+    expect(list).toContain('navigate(`/admin/quotes/${r._deal_packet_id || r.id}`)');
+    expect(list).toContain('r.quote_data?.reference_number || r.quote_data?.quoteNumber');
   });
 
   it('does not offer retry while a delivery lease is in progress', () => {

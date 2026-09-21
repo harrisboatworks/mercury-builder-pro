@@ -209,6 +209,19 @@ describe('quote funnel UX contract', () => {
     expect(summarySource).toContain('/rest/v1/quote_activity_events');
     expect(summarySource).toContain('keepalive: true');
     expect(summarySource).not.toContain('Reserve this motor —');
+    expect(summarySource).toContain('reserveDisabled={!canReserveMotor || noMotorSelected}');
+    expect(summarySource).toContain('disabled={isProcessingDeposit || noMotorSelected || !canReserveMotor}');
+    expect(stickySource).toContain('disabled={isProcessingPayment || reserveDisabled}');
+    expect(stickySource).not.toMatch(/onClick=\{onReserve\}[\s\S]{0,80}disabled=\{isProcessingPayment\}/);
+  });
+
+  it('keeps canonical reference numbers and deposit-policy gating on reserve', () => {
+    const summarySource = read('src/pages/quote/QuoteSummaryPage.tsx');
+    expect(summarySource).toContain('canonicalReferenceNumber');
+    expect(summarySource).toContain('parseDepositIdentity');
+    expect(summarySource).toContain('[DEPOSIT_POLICY_QUOTE_STATE_KEY]: depositPolicySnapshot');
+    expect(summarySource).toContain('...(canonicalReferenceNumber ? { reference_number: canonicalReferenceNumber } : {})');
+    expect(summarySource).toContain('const canReserveMotor = Boolean(depositPolicySnapshot)');
   });
 
   it('keeps quote content inset through tablet and small-laptop widths', () => {
