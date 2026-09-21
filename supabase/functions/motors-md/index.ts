@@ -19,6 +19,7 @@ import {
   resolveMercuryCatalogSpecs,
 } from "../_shared/mercury-codes.ts";
 import {
+  filterPublicCatalogMotors,
   findPresentedPublicMotor,
   isPublicCatalogMotor,
   parseOptionalBooleanFlag,
@@ -172,9 +173,7 @@ Deno.serve(async (req) => {
     if (error) throw error;
 
     const motors = (data || []).filter((m) => isPublicCatalogMotor(applyMotorPresentationOverrides(m)));
-    const catalog = inStockOnly
-      ? motors.filter((m) => presentPublicCatalogMotor(m)?.inStock)
-      : motors;
+    const catalog = filterPublicCatalogMotors(data || [], { inStockOnly }).map((motor) => motor.row);
 
     if (id || slug) {
       const found = findPresentedPublicMotor(motors, { id, slug });

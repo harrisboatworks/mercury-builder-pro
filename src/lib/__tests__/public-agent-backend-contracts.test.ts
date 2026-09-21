@@ -325,6 +325,44 @@ describe("AG07 public catalog coverage", () => {
     })).toBeNull();
   });
 
+  it("applies public eligibility and normalized stock before the caller limit", () => {
+    const outOfStock = Array.from({ length: 4 }, (_, index) => ({
+      ...AG01_MOTOR,
+      id: `aaaaaaa${index}-0000-4000-8000-00000000000${index}`,
+      horsepower: 10 + index,
+      in_stock: false,
+      stock_quantity: 0,
+      availability: "Available",
+    }));
+    const lateInStock = {
+      ...AG01_MOTOR,
+      id: "bbbbbbbb-0000-4000-8000-000000000001",
+      horsepower: 225,
+      in_stock: true,
+      stock_quantity: 1,
+    };
+    const rows = [
+      ...outOfStock,
+      { ...AG01_MOTOR, id: "cccccccc-0000-4000-8000-000000000001", availability: "Exclude" },
+      { ...AG01_MOTOR, id: "dddddddd-0000-4000-8000-000000000001", family: "Verado", model_display: "300 Verado" },
+      lateInStock,
+    ];
+
+    const truncatedThenFiltered = rows
+      .slice(0, 3)
+      .map((motor) => presentPublicCatalogMotor(motor))
+      .filter((motor) => motor?.inStock);
+    expect(truncatedThenFiltered.map((motor) => motor?.id)).toEqual([]);
+
+    const stockThenLimit = filterPublicCatalogMotors(rows, { inStockOnly: true }).slice(0, 3);
+    expect(stockThenLimit.map((motor) => motor.id)).toEqual([lateInStock.id]);
+    expect(stockThenLimit.every((motor) => motor.inStock)).toBe(true);
+    expect(stockThenLimit.some((motor) => /verado|exclude/i.test(String(motor.modelDisplay)))).toBe(false);
+
+    const advertised = filterPublicCatalogMotors(rows).slice(0, 3);
+    expect(advertised.map((motor) => motor.id)).toEqual(outOfStock.slice(0, 3).map((motor) => motor.id));
+  });
+
   it("normalizes every regular non-stock catalog status to Available to Order", () => {
     const rawStatuses = [
       "Out of Stock",

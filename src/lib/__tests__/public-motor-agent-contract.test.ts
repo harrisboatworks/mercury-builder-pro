@@ -291,6 +291,11 @@ describe("public motor agent contract", () => {
     expect(mcpServer).not.toContain('.eq("in_stock", true)');
     expect(mcpServer).toContain(".limit(500)");
     expect(mcpServer).toContain(".slice(0, resultLimit)");
+    expect(mcpServer).toContain("filterPublicCatalogMotors(");
+    expect(motorsMd).toContain("filterPublicCatalogMotors(");
+    expect(mcpServer.indexOf("filterPublicCatalogMotors(")).toBeLessThan(
+      mcpServer.indexOf(".slice(0, resultLimit)"),
+    );
 
     for (const handler of [motorsApi, quoteApi, mcpServer]) {
       expect(handler).toContain("applyMotorPresentationOverrides(");

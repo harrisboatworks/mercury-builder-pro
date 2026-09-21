@@ -30,6 +30,7 @@ import {
   motorSlug,
 } from "../_shared/motor-slug.ts";
 import {
+  filterPublicCatalogMotors,
   isPublicCatalogMotor,
   PUBLIC_CATALOG_AVAILABILITY_OR,
   PUBLIC_SITE_URL,
@@ -195,31 +196,30 @@ async function searchMotors(supabase: any, args: any) {
   const { data, error } = await q;
   if (error) throw new Error(error.message);
 
-  return (data || [])
-    .map((sourceMotor: any) => applyMotorPresentationOverrides(sourceMotor))
-    .filter((m: any) => isPublicCatalogMotor(m))
-    .filter((m: any) =>
+  // Eligibility and normalized stock run on the full 500-row public page.
+  // The caller limit is applied last so in_stock_only cannot lose later
+  // in-stock rows to an earlier slice.
+  return filterPublicCatalogMotors(data || [], {
+    inStockOnly: Boolean(args.in_stock_only),
+  })
+    .filter((m) =>
       wantFamilyKey ? familyKey(m.family) === wantFamilyKey : true
     )
-    .filter((m: any) => !args.in_stock_only || isPublicMotorInStock(m))
     .slice(0, resultLimit)
-    .map((m: any) => {
-      const slug = motorSlug(m);
-      return {
-        id: m.id,
-        slug,
-        modelDisplay: m.model_display || m.model,
-        family: m.family || "FourStroke",
-        horsepower: m.horsepower,
-        shaftLength: m.shaft_code,
-        sellingPrice: resolvePublicSellingPrice(m),
-        currency: "CAD",
-        availability: publicAvailabilityLabel(m.availability, isPublicMotorInStock(m)),
-        imageUrl: toPublicImageUrl(m.hero_image_url || m.image_url),
-        url: slug ? `${SITE_URL}/motors/${slug}` : null,
-        quoteUrl: `${SITE_URL}/quote/motor-selection?motor=${m.id}`,
-      };
-    });
+    .map((m) => ({
+      id: m.id,
+      slug: m.slug,
+      modelDisplay: m.modelDisplay,
+      family: m.family || "FourStroke",
+      horsepower: m.horsepower,
+      shaftLength: m.shaftLength,
+      sellingPrice: m.sellingPrice,
+      currency: "CAD" as const,
+      availability: m.availability,
+      imageUrl: m.imageUrl,
+      url: m.url,
+      quoteUrl: m.quoteUrl,
+    }));
 }
 
 async function getMotor(supabase: any, args: any) {
