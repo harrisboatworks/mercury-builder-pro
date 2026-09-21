@@ -108,3 +108,25 @@ Article/pricing source and consent implementation are unchanged. This is local
 validation, not deployment or evidence of reduced production dead clicks. After
 an authorized release, collect a comparable consented Clarity window and relate
 repeated target names to recordings before proposing an affordance change.
+
+## Reconciliation with #577 (September 21, 2026)
+
+`#577` merged to `main` (`9512d69aa`). It changed rendered affordances on this
+same route: overflow-only table hints, a visible mobile “Expand image” label,
+explicit Show/Hide contents labels, and contents links at least 44px on mobile.
+Those UI changes do **not** supersede this draft.
+
+- The September 16 28px nested-contents measurement is historical. It is not
+  current `main` after `#577`.
+- `#577` did not add analytics, did not close #559, and did not claim fewer
+  production dead clicks.
+- This observer is still the collection path for the four categories (static
+  table click, horizontal pan, image expansion, contents navigation).
+- Labels stay positional (`toc_<N>`, `image_<N>`, `table_<N>_r<R>_c<C>`). The
+  `#577` visible labels do not become event names.
+- GitHub still reports this branch MERGEABLE / CLEAN against current `main`.
+  `BlogArticle.tsx` still only wires `useOverheatInteractions` on `main`; this
+  PR still swaps in `useReview150Interactions` for the 150 slug only.
+
+Keep this PR draft. Keep #559 open. Retain the telemetry. Do not treat `#577`
+as proof the cluster is gone.
