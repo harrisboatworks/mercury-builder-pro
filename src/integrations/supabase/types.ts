@@ -8273,7 +8273,25 @@ export type Database = {
         Args: { p_worker_secret: string }
         Returns: undefined
       }
+      weekly_report_is_test_email: {
+        Args: { p_email: string }
+        Returns: boolean
+      }
+      weekly_report_metrics: {
+        Args: { p_end: string; p_start: string }
+        Returns: Json
+      }
+      weekly_report_test_sessions: {
+        Args: { p_end: string; p_start: string }
+        Returns: {
+          session_id: string
+        }[]
+      }
       weekly_report_v2: { Args: { p_end: string }; Returns: Json }
+      weekly_report_week_core: {
+        Args: { p_end: string; p_start: string }
+        Returns: Json
+      }
     }
     Enums: {
       app_role: "admin" | "user"
