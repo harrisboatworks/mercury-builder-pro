@@ -140,7 +140,7 @@ Aluminum decks transmit cold more than fiberglass decks. A carpeted aluminum boa
 
 ### What's the right Mercury for an aluminum vs a fiberglass boat?
 
-Same rules either way: match the motor to the capacity plate maximum, factor in your typical load, and consider Command Thrust when the hull, load, and propeller need it. HBW often prefers the standard gearcase on planing V-hulls. Our Mercury 40 vs 60 HP comparison and the broader Ontario Mercury price guide cover the matching logic.
+Same rules either way: size the motor one Mercury model below the capacity plate maximum, factor in your typical load, and consider Command Thrust when the hull, load, and propeller need it. Max rated is overkill because it adds power and transom weight the boat may not perform well with. HBW often prefers the standard gearcase on planing V-hulls. Our Mercury 40 vs 60 HP comparison and the broader Ontario Mercury price guide cover the matching logic.
 
 ### Is buying a used aluminum boat safer than buying a used fiberglass boat?
 
