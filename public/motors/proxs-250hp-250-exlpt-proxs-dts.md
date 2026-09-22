@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/proxs-250hp-250-exlpt-proxs-dts
-last_updated: 2026-08-19
+last_updated: 2026-09-22
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -27,6 +27,8 @@ Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Premier Dealer Â
 - **Family:** Mercury Pro XS
 - **Horsepower:** 250 HP
 - **Model number:** 12500096A
+- **Shaft:** XL
+- **Control type:** Remote
 
 ## Pricing (CAD)
 

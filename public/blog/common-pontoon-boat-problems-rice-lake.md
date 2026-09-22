@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/common-pontoon-boat-problems-rice-lake.md
-last_updated: 2026-09-11
+last_updated: 2026-09-22
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -8,10 +8,10 @@ final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
 title: "Common Pontoon Problems on Rice Lake"
-description: "The most common pontoon boat problems we see at Harris Boat Works, from underpowered motors to tube leaks and wiring corrosion."
+description: "The most common pontoon boat problems we see at Harris Boat Works, including why the best motor fit is one Mercury model below the hull's max HP rating."
 category: "Boating Lifestyle"
 date_published: 2026-02-12
-date_modified: 2026-09-11
+date_modified: 2026-09-22
 keywords: ["pontoon problems","rice lake","pontoon maintenance","mercury outboard","pontoon hp"]
 author: Harris Boat Works
 content_type: blog_article
@@ -21,17 +21,17 @@ revenue_driver: service
 
 # Common Pontoon Problems on Rice Lake
 
-> The most common pontoon boat problems we see at Harris Boat Works, from underpowered motors to tube leaks and wiring corrosion.
+> The most common pontoon boat problems we see at Harris Boat Works, including why the best motor fit is one Mercury model below the hull's max HP rating.
 
 **Category:** Boating Lifestyle  
 **Published:** 2026-02-12  
-**Last reviewed:** 2026-09-11  
+**Last reviewed:** 2026-09-22  
 **Read time:** ~9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/common-pontoon-boat-problems-rice-lake
 
 ## Common Pontoon Boat Problems on Rice Lake in the Kawarthas (Ontario) (And How to Avoid Them)
 
-> **Quick answer:** Most pontoon problems we see are preventable. The biggest one: undersized motors that lug under load. Other recurring issues include tube leaks, deck rot, wiring corrosion, ethanol fuel damage, and shallow-shoreline bottom strikes. Match the motor to your hull's max HP rating, inspect tubes and deck annually, run ethanol-free fuel, and most pontoons stay reliable for decades.
+> **Quick answer:** Most pontoon problems we see are preventable. The biggest one: undersized motors that lug under load. Other recurring issues include tube leaks, deck rot, wiring corrosion, ethanol fuel damage, and shallow-shoreline bottom strikes. Size the motor one Mercury model below your hull's max HP rating, not the minimum, and not the max. Inspect tubes and deck annually, run ethanol-free fuel, and most pontoons stay reliable for decades.
 
 There's a reason videos about pontoon boat problems rack up millions of views. People buy pontoons expecting the easiest, most relaxed boating experience possible, and they're not wrong to expect that. Done right, a pontoon is the perfect Rice Lake, Ontario (in the Kawarthas) boat.
 
@@ -51,7 +51,7 @@ The mistake we see constantly: someone buys a 22- or 24-foot pontoon and puts a 
 
 On Rice Lake, you want to get places. You want to pull a tube. You want to get home before the storm hits. A properly sized motor (90HP to 115HP for most 20-24 ft boats, more for tritoons) does that without working itself to death.
 
-The general rule: **match the motor to the max HP rating on the hull plate, not the minimum**. Most pontoon owners buy to the minimum and call it good enough. It isn't.
+The general rule: **size it one Mercury model below the max HP on the capacity plate. Max rated is overkill: more power and more weight hanging off the transom than the boat performs well with.** Most pontoon owners buy to the minimum and call it good enough. It isn't.
 
 If you're shopping repowers or new setups, the [Mercury Command Thrust guide for pontoons](https://www.mercuryrepower.ca/blog/mercury-command-thrust-complete-guide-2026) is worth reading. CT motors are specifically designed for the high-drag, low-RPM torque demands of pontoon hulls. And if you want a side-by-side comparison of motor options, see our breakdown of [the best Mercury outboards for pontoon boats](https://www.mercuryrepower.ca/blog/best-mercury-outboard-pontoon-boats).
 
@@ -207,7 +207,7 @@ We sell ethanol-free fuel at Harris Boat Works for exactly this reason. It costs
 
 Here's what our techs would tell you if you asked them after a long week in the shop:
 
-- **Buy enough motor.** Match the hull rating, not the minimum.
+- **Buy enough motor.** Choose one Mercury model below the hull's max HP rating, not the minimum and not the max.
 - **Look at the tubes.** Check for leaks and damage every season.
 - **Feel the deck.** Soft spots catch up with you.
 - **Protect the wiring.** Corrosion is slow and then expensive.
@@ -236,7 +236,7 @@ Harris Boat Works has been [on Rice Lake since 1947](/blog/best-marina-rice-lake
 
 ### What is the most common problem with pontoon boats on Rice Lake?
 
-Underpowered motors. We see 22 and 24 ft pontoons running 60 HP because a dealer said it would work. The boat moves, but it lugs under load and the engine works twice as hard as it should for its entire life. Match the motor to the hull's max HP rating, not the minimum. For most 20 to 24 ft pontoons that means 90 to 115 HP, more for tritoons.
+Underpowered motors. We see 22 and 24 ft pontoons running 60 HP because a dealer said it would work. The boat moves, but it lugs under load and the engine works twice as hard as it should for its entire life. Size the motor one Mercury model below the hull's max HP rating, underpowered is a problem, but max rated is overkill. For most 20 to 24 ft pontoons that means 90 to 115 HP, more for tritoons.
 
 ### How can I tell if my pontoon tubes are leaking?
 

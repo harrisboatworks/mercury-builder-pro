@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/fourstroke-3-5hp-3-5mlh-fourstroke
-last_updated: 2026-08-19
+last_updated: 2026-09-22
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -27,6 +27,8 @@ Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Premier Dealer Â
 - **Family:** Mercury FourStroke
 - **Horsepower:** 3.5 HP
 - **Model number:** 1F03211KK
+- **Shaft:** L
+- **Control type:** Tiller
 
 ## Pricing (CAD)
 
