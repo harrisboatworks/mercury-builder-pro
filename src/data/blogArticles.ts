@@ -4740,7 +4740,7 @@ Significantly. A fully loaded family boat behaves like a different machine than 
       },
       {
         question: 'Should I choose the maximum HP my boat is rated for?',
-        answer: 'The labelled maximum is a safety ceiling, not a performance goal. Stay within your boat\'s documented power, transom, and weight limits, then size for the hull, your usual and heaviest planned loads, and how you use it. Watersports, full passenger loads in rough conditions, or bigger lakes may call for a different choice within those limits.'
+        answer: 'No. HBW recommends one Mercury model step below the maximum HP on the capacity plate. If the plate says 150 HP, the best fit is a 115. Max rated is overkill: more power and more weight on the transom than the boat performs well with. Never exceed the documented power, transom, or weight limits.'
       },
       {
         question: 'What horsepower do I need for a pontoon boat in Ontario?',
@@ -5471,7 +5471,7 @@ Family-owned since 1947, Mercury dealer since 1965, Mercury Premier Dealer · Ri
       },
       {
         question: 'Can I increase HP when repowering?',
-        answer: 'Often yes, up to your boat\'s maximum rated HP. Modern motors are lighter and more efficient, so a higher HP motor may work well where it wouldn\'t have before. We\'ll help you choose the right size.'
+        answer: 'Often yes, but HBW recommends one Mercury model step below the maximum HP on the capacity plate. If the plate says 150 HP, the best fit is a 115. Max rated is overkill: more power and more weight on the transom than the boat performs well with. We\'ll help you choose the right size.'
       },
       {
         question: 'Do I need new controls when repowering?',
@@ -6181,12 +6181,12 @@ If the work falls outside our core, we'll tell you that and point you toward a s
     imageAlt: 'Two anglers fishing from an aluminum console boat with a Mercury FourStroke outboard on a calm Kawartha lake',
     author: 'Harris Boat Works',
     datePublished: '2026-01-12',
-    dateModified: '2026-09-14',
+    dateModified: '2026-09-21',
     publishDate: '2026-01-12',
     category: 'Buying Guide',
     readTime: '10 min read',
     keywords: ['mercury for aluminum boat', 'best outboard aluminum fishing boat', 'mercury 60hp fishing', 'lund boat motor', 'tracker boat outboard'],
-    content: `**Last reviewed:** 2026-09-14
+    content: `**Last reviewed:** 2026-09-21
 
 ---
 
@@ -9609,7 +9609,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ---
 
-> **Quick answer:** There is no single formula that spits out the right HP. Read the hull's documented power and weight limits from the capacity plate and manufacturer documentation, then inventory hull, engine, fuel, equipment, people, and gear for a normal trip and the heaviest planned trip, without double-counting anything already included in a listed weight. Stay inside those limits. Length, percent-of-plate, and weight-per-HP shortcuts are not a verified method.
+> **Quick answer:** Start one Mercury model step below the maximum HP on the capacity plate. If the plate says 150 HP, the best fit is a 115. Max rated is overkill: more power and more weight on the transom than the boat performs well with. Then confirm the hull's documented power and weight limits, the exact motor weight, and the boat's normal load. Never exceed the plate.
 
 > **Pick the right shaft:** Try our [Shaft Length Picker](/tools#shaft-length) to check if you need a 20" or 25" shaft for your boat. Free, no email.
 ---
@@ -9661,7 +9661,7 @@ Protected Kawartha bays: lower HP works fine. Open Rice Lake in the afternoon wi
 - Cruising: mid-range HP is efficient and appropriate
 - Fishing: consider trolling needs alongside main-motor requirements
 - Water sports: more HP for pulling people on tubes and skis
-- Speed-focused use: HP at or near the capacity plate maximum makes sense
+- Speed-focused use: Choose one Mercury model below the capacity plate maximum. Max rated is still overkill, even when speed matters.
 
 ---
 
@@ -9805,7 +9805,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     faqs: [
       {
         question: 'Why not just max out the HP rating?',
-        answer: 'Maximum HP often provides more power than needed for typical use. Mid-range HP usually offers better efficiency, adequate performance, and lower cost. Max HP makes sense for specific applications.'
+        answer: 'Do not max out the rating. HBW recommends one Mercury model step below the maximum HP on the capacity plate. The maximum is overkill: more power and more weight on the transom than the boat performs well with.'
       },
       {
         question: 'Does motor weight affect boat performance?',
@@ -11589,7 +11589,7 @@ Use the [pricing reference](/pricing-reference) once for the current bare-motor 
 
 We'd lay this out for a customer at the shop:
 
-**1. What's your boat's max HP rating?** Never exceed it. The best choice below that ceiling depends on the hull, load, use, and measured performance; there is no universal rule that every boat must be within 25 HP of maximum.
+**1. What's your boat's max HP rating?** Never exceed it. HBW recommends one Mercury model step below that ceiling. Max rated is overkill: more power and more weight on the transom than the boat performs well with.
 
 **2. What outcome are you trying to change?** Acceleration, loaded cruising, watersports pull, and top speed are different goals. Do not choose horsepower from a generic speed chart; compare Mercury performance reports for a genuinely similar hull and load.
 
@@ -11940,7 +11940,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'A crated new Mercury Pro XS outboard outside the Harris Boat Works shop',
     author: 'Harris Boat Works',
     datePublished: '2026-05-19',
-    dateModified: '2026-09-06',
+    dateModified: '2026-09-11',
     publishDate: '2026-05-19',
     category: 'Buying Guide',
     readTime: '9 min read',
@@ -12139,6 +12139,8 @@ Typically when the motor is installed and ready for its Lake Test. Review the pa
 - [Ontario Cottage Owner's Guide: Is It Time to Repower Your Boat?](/blog/ontario-cottage-boat-motor-repower-guide), cottage-specific repower considerations
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
+Harris Boat Works has been a Mercury dealer since 1965.
     `,
     faqs: [
       {
@@ -13071,6 +13073,8 @@ Mercury Premier dealer. Est. 1947.
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 ---
 
+Harris Boat Works has been a Mercury dealer since 1965.
+
 ---
 `,
     faqs: [
@@ -13100,7 +13104,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         question: 'Which FourStroke models are eligible for Mercury Boost?',
-        answer: 'The current published dealer list includes FourStroke 175, 200, 250, and 300 HP models subject to serial-number and software requirements. The 225 HP V6 FourStroke is specifically not eligible. Factory-equipped status also depends on the exact serial number. Call with the serial number for the current answer.'
+        answer: 'The current published dealer list includes FourStroke 175, 200, 250, and 300 HP models subject to serial-number and software requirements. The 225 HP V6 FourStroke is specifically not eligible: Mercury lists it under Models Not Eligible for Boost in service bulletin 8M0247441. Factory-equipped status also depends on the exact serial number. Call with the serial number for the current answer.'
       },
       {
         question: 'Is Mercury Boost worth it for Rice Lake and Kawartha Lakes boating?',
@@ -16970,7 +16974,7 @@ Back at the shop:
 Customer picks up the boat. We walk through:
 - The new motor's controls and features
 - Mercury SmartCraft display interpretation (if applicable)
-- The 10-hour break-in protocol
+- The model-specific break-in procedure for your motor
 - The model-specific break-in and first scheduled service plan
 - Mercury warranty terms
 - Annual maintenance schedule
@@ -17044,6 +17048,8 @@ Ready to schedule your repower? Build a quote at **[mercuryrepower.ca](https://w
 
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
+
+Harris Boat Works has been a Mercury dealer since 1965.
 ---`,
     faqs: [
       {
@@ -17072,7 +17078,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         question: 'When can I use my boat after pickup?',
-        answer: 'Right away, with the 10-hour break-in protocol. The first hour at no-wake speed and gradual RPM increase. Vary throttle. Avoid sustained WOT for the first 10 hours. See our [breaking in guide](/blog/breaking-in-new-mercury-motor-guide).'
+        answer: 'Right away, following the break-in procedure for your exact engine model and serial number. We review that procedure with you at pickup, and the Mercury owner manual for your motor is the authority on throttle, load, and hours. Break-in guidance is model-specific rather than one universal rule. See our [breaking in guide](/blog/breaking-in-new-mercury-motor-guide).'
       },
       {
         question: 'When\'s my first service after the repower?',
@@ -21291,17 +21297,18 @@ If your boat needs a motor, put together a real quote with real prices at mercur
     slug: 'common-pontoon-boat-problems-rice-lake',
     title: 'Common Pontoon Problems on Rice Lake',
     seoTitle: "Common Pontoon Boat Problems on Rice Lake",
-    description: "The most common pontoon boat problems we see at Harris Boat Works, from underpowered motors to tube leaks and wiring corrosion.",
+    description: "The most common pontoon boat problems we see at Harris Boat Works, including why the best motor fit is one Mercury model below the hull's max HP rating.",
     image: '/lovable-uploads/hero-pontoon-problems-rice-lake.png',
     author: 'Jay Harris',
     datePublished: '2026-02-12',
-    dateModified: '2026-09-11',
+    dateModified: '2026-09-22',
     publishDate: '2026-02-12',
     category: "Boating Lifestyle",
     readTime: '~9 min read',
     keywords: ["pontoon problems","rice lake","pontoon maintenance","mercury outboard","pontoon hp"],
     faqs: [
-      { question: 'What is the most common problem with pontoon boats on Rice Lake?', answer: 'Underpowered motors. We see 22 and 24 ft pontoons running 60 HP because a dealer said it would work. The boat moves, but it lugs under load and the engine works twice as hard as it should for its entire life. Match the motor to the hull\'s max HP rating, not the minimum. For most 20 to 24 ft pontoons that means 90 to 115 HP, more for tritoons.' },
+      { question: 'What is the most common problem with pontoon boats on Rice Lake?', answer: 'Wrong-sized motors, usually too small. We see 22 and 24 ft pontoons running 60 HP because a dealer said it would work. The boat moves, but it lugs under load and the engine works twice as hard as it should. The fix isn\'t the max rating either. Size the motor one Mercury model below the hull\'s max HP. For most 20 to 24 ft pontoons that means 90 to 115 HP, more for tritoons.' },
+      { question: 'Should I put the max HP motor on my pontoon?', answer: 'Usually not. The max HP on the capacity plate is the most the hull is rated to carry, not a recommendation. We tell customers it should be labelled overkill. Maxing out adds cost and transom weight, and the boat often performs no better. Cost aside, the best fit is one Mercury model below the max: a pontoon plated for 150 HP runs best with a 115.' },
       { question: 'How can I tell if my pontoon tubes are leaking?', answer: 'Watch for uneven trim at the dock when the boat is sitting level, visible weeping or staining on a tube exterior, and unexplained sluggishness after rough water. Welding cracks typically develop at baffles, the nose of the tube, and crossmember attachment points. Caught early, tube repairs are manageable; full replacement is a much bigger job. Annual inspection matters.' },
       { question: 'How do I prevent deck rot on a pontoon?', answer: 'Pontoon decks sit over a wood subfloor under carpet or vinyl, materials that trap moisture instead of draining it. Inspect carpet seams and vinyl edges annually for lifting or gaps, reseal around deck fittings showing wear, and never leave pooled water on the deck after rain. A soft spot underfoot near the bow, stern, cleats, or fittings means rot has already started.' },
       { question: 'What causes wiring problems on aluminum pontoons?', answer: 'Aluminum, moisture, dissimilar metals, and marine electrical current are an ideal corrosion environment. Symptoms include gauges reading wrong or not at all, intermittent starting with an otherwise healthy motor, navigation lights that work sometimes, and accessories that quit mid-season. Clean and protect connections with dielectric grease and replace corroded terminal ends before they fail. A full console rewire is much more expensive than upkeep.' },
@@ -21309,9 +21316,9 @@ If your boat needs a motor, put together a real quote with real prices at mercur
     ],
     content: `# Common Pontoon Boat Problems on Rice Lake in the Kawarthas (Ontario) (And How to Avoid Them)
 
-*Last reviewed: 2026-06-09*
+*Last reviewed: 2026-09-22*
 
-> **Quick answer:** Most pontoon problems we see are preventable. The biggest one: undersized motors that lug under load. Other recurring issues include tube leaks, deck rot, wiring corrosion, ethanol fuel damage, and shallow-shoreline bottom strikes. Match the motor to your hull's max HP rating, inspect tubes and deck annually, run ethanol-free fuel, and most pontoons stay reliable for decades.
+> **Quick answer:** Most pontoon problems we see are preventable, and the biggest one is motor size. Too small and it lugs under load. Maxed out and it's overkill: extra cost and extra weight on the transom. The best fit is one Mercury model below the hull's max HP rating. Inspect tubes and deck annually, run ethanol-free fuel, and most pontoons stay reliable for decades.
 
 There's a reason videos about pontoon boat problems rack up millions of views. People buy pontoons expecting the easiest, most relaxed boating experience possible, and they're not wrong to expect that. Done right, a pontoon is the perfect Rice Lake, Ontario (in the Kawarthas) boat.
 
@@ -21323,15 +21330,26 @@ This isn't a scare piece. It's what our service techs actually deal with, writte
 
 ## Why HP Sizing Is the #1 Mistake Pontoon Buyers Make
 
-Before we get into the full list, this one deserves its own section because it causes more problems than everything else combined.
+Before we get into the full list, this one gets its own section. It causes more problems than everything else combined, and people get it wrong in both directions.
 
-Pontoons are heavy. A 22-foot pontoon fully loaded with a cooler, canopy, six adults, and gear can easily top 1,361 kg (3,000 lb). Add water drag from two or three aluminum tubes, and you've got a boat that needs serious power to perform well.
+Pontoons are heavy. A 22-foot pontoon loaded with a cooler, canopy, six adults and gear can easily top 1,361 kg (3,000 lb). Add drag from two or three aluminum tubes and you've got a boat that needs real power to perform.
 
-The mistake we see constantly: someone buys a 22- or 24-foot pontoon and puts a 60HP motor on it because the dealer said it would "work." Technically, yes. It will move the boat. But it won't come up to cruise properly under load, it'll lug when you push it, and that engine will work twice as hard as it should for its entire life.
+**Too little motor.** The mistake we see constantly: a 22- or 24-foot pontoon with a 60 HP on the back because the dealer said it would "work." Technically, yes. It moves the boat. But it won't come up to cruise under load, it lugs when you push it, and that engine works twice as hard as it should for its entire life.
 
-On Rice Lake, you want to get places. You want to pull a tube. You want to get home before the storm hits. A properly sized motor (90HP to 115HP for most 20-24 ft boats, more for tritoons) does that without working itself to death.
+**Too much motor.** The opposite mistake is buying the biggest number on the capacity plate. Jay Harris, our owner, tells customers the max HP rating should really be labelled "overkill." The plate tells you the most the hull is rated to carry. It isn't a recommendation. Going to the max usually means more money up front, more weight hanging off the back of the boat, and a pontoon that often performs no better than one a step down. Just because the boat can handle it doesn't mean it's a good idea.
 
-The general rule: **match the motor to the max HP rating on the hull plate, not the minimum**. Most pontoon owners buy to the minimum and call it good enough. It isn't.
+The weight difference is real. A Mercury 150 FourStroke weighs 206 kg (455 lb) dry. A 115 FourStroke weighs 163 kg (359 lb). That's about 43 kg (96 lb) more on the transom for power the boat didn't need. (Dry weights from our [Mercury outboard weight chart](/blog/mercury-outboard-weight-chart).)
+
+**The HBW rule: one Mercury model below the max.** Cost aside, the best fit is the next Mercury model down from the max HP on the capacity plate. Plate says 150? The best fit is a 115. For most 20 to 24 ft pontoons, that lands at 90 to 115 HP. Tritoons rated higher get more.
+
+| Capacity plate max | HBW best fit |
+|---|---|
+| 75 HP | 60 HP |
+| 90 HP | 75 HP |
+| 115 HP | 90 HP |
+| 150 HP | 115 HP |
+| 200 HP | 175 HP |
+| 250 HP | 225 HP |
 
 If you're shopping repowers or new setups, the [Mercury Command Thrust guide for pontoons](https://www.mercuryrepower.ca/blog/mercury-command-thrust-complete-guide-2026) is worth reading. CT motors are specifically designed for the high-drag, low-RPM torque demands of pontoon hulls. And if you want a side-by-side comparison of motor options, see our breakdown of [the best Mercury outboards for pontoon boats](https://www.mercuryrepower.ca/blog/best-mercury-outboard-pontoon-boats).
 
@@ -21339,11 +21357,13 @@ If you're shopping repowers or new setups, the [Mercury Command Thrust guide for
 
 ## The 8 Pontoon Problems We See at the Shop
 
-### 1. Underpowered Motor
+### 1. Wrong-Sized Motor (Usually Too Small, Sometimes Too Big)
 
 Already covered above, but it's worth reinforcing: **being underpowered isn't just a performance problem, it's a maintenance problem**. An engine that's constantly working near its limits runs hotter, wears faster, and costs more to maintain. You'll be in the shop more often, and the repairs won't be cheap.
 
-If you're on the fence about stepping up to a bigger motor, the math usually favours the repower.
+Going the other way doesn't fix it. A maxed-out motor costs more to buy, adds weight you carry on every trip, and rarely makes the boat better. The sweet spot is one Mercury model below the max.
+
+If you're running an undersized motor and on the fence about repowering, the math usually favours the repower.
 
 ---
 
@@ -21475,7 +21495,7 @@ We sell ethanol-free fuel at Harris Boat Works for exactly this reason. It costs
 
 Here's what our techs would tell you if you asked them after a long week in the shop:
 
-- **Buy enough motor.** Match the hull rating, not the minimum.
+- **Buy the right motor.** One Mercury model below the hull's max HP rating. Not the minimum, not the max.
 - **Look at the tubes.** Check for leaks and damage every season.
 - **Feel the deck.** Soft spots catch up with you.
 - **Protect the wiring.** Corrosion is slow and then expensive.
@@ -30547,7 +30567,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       { question: "Does aluminum corrode in fresh water?", answer: "Marine-grade aluminum (5052 or 5086 alloy) resists fresh-water corrosion well for decades. The exception is galvanic corrosion at fittings where dissimilar metals contact aluminum without proper isolation. A boat kept in the water year-round needs sacrificial zincs and proper fitting installation. A trailered boat that comes home dry has almost no corrosion risk." },
       { question: "Can fiberglass survive Ontario winters in outdoor storage?", answer: "Yes, with proper preparation. Drain all water, cover with shrinkwrap or a quality cover, keep the cockpit drains clear so meltwater drains out. Cracked gelcoat and water intrusion from a winter of standing water is the most common avoidable fiberglass damage we see." },
       { question: "Are aluminum boats colder to fish from in shoulder seasons?", answer: "Aluminum decks transmit cold more than fiberglass decks. A carpeted aluminum boat is a non-issue; a bare-aluminum-deck boat in October is genuinely cold. Most modern aluminum fishing boats have carpet or rubber matting that solves this." },
-      { question: "What's the right Mercury for an aluminum vs a fiberglass boat?", answer: "Same rules either way: match the motor to the capacity plate maximum, factor in your typical load, and consider Command Thrust when the hull, load, and propeller need it. HBW often prefers the standard gearcase on planing V-hulls. Our Mercury 40 vs 60 HP comparison and the broader Ontario Mercury price guide cover the matching logic." },
+      { question: "What's the right Mercury for an aluminum vs a fiberglass boat?", answer: "Same rules either way: size the motor one Mercury model below the capacity plate maximum, factor in your typical load, and consider Command Thrust when the hull, load, and propeller need it. Max rated is overkill because it adds power and transom weight the boat may not perform well with. HBW often prefers the standard gearcase on planing V-hulls. Our Mercury 40 vs 60 HP comparison and the broader Ontario Mercury price guide cover the matching logic." },
       { question: "Is buying a used aluminum boat safer than buying a used fiberglass boat?", answer: "Marginally yes, because aluminum hides fewer structural problems and the failure modes are more visible. Fiberglass transom rot, stringer rot, and core delamination can hide for years and then surface during a survey. Either way, a structured inspection before purchase is worth the time. Our printable Used Boat Walkaround Guide walks through the 13-page checklist we use ourselves." },
     ],
     content: `# Aluminum vs Fiberglass Hull, Honest Trade-offs for Ontario Boaters
@@ -30651,7 +30671,7 @@ Yes, with proper preparation. Drain all water, cover with shrinkwrap or a qualit
 Aluminum decks transmit cold more than fiberglass decks. A carpeted aluminum boat is a non-issue; a bare-aluminum-deck boat in October is genuinely cold. Most modern aluminum fishing boats have carpet or rubber matting that solves this.
 
 **What's the right Mercury for an aluminum vs a fiberglass boat?**
-Same rules either way: match the motor to the capacity plate maximum, factor in your typical load, and consider Command Thrust when the hull, load, and propeller need it. HBW often prefers the standard gearcase on planing V-hulls. Our [Mercury 40 vs 60 HP comparison](/blog/mercury-40-vs-60-hp-outboard-ontario) and the broader [Ontario Mercury price guide](/blog/ontario-mercury-outboard-price-guide) cover the matching logic.
+Same rules either way: size the motor one Mercury model below the capacity plate maximum, factor in your typical load, and consider Command Thrust when the hull, load, and propeller need it. Max rated is overkill because it adds power and transom weight the boat may not perform well with. HBW often prefers the standard gearcase on planing V-hulls. Our [Mercury 40 vs 60 HP comparison](/blog/mercury-40-vs-60-hp-outboard-ontario) and the broader [Ontario Mercury price guide](/blog/ontario-mercury-outboard-price-guide) cover the matching logic.
 
 **Is buying a used aluminum boat safer than buying a used fiberglass boat?**
 Marginally yes, because aluminum hides fewer structural problems and the failure modes are more visible. Fiberglass transom rot, stringer rot, and core delamination can hide for years and then surface during a survey. Either way, a structured inspection before purchase is worth the time. Our printable [Used Boat Walkaround Guide](/blog/used-boat-walkaround-inspection-ontario) walks through the 13-page checklist we use ourselves.
@@ -31637,7 +31657,7 @@ For complex repowers (twin-engine setups, brand conversions, or unusual configur
     readTime: '8 min read',
     keywords: ['mercury pro xs buyer guide', 'mercury pro xs ontario', 'mercury pro xs pricing', 'mercury performance outboard'],
     faqs: [
-      { question: "Is Pro XS worth the premium over FourStroke?", answer: "For tournament fishing, performance pontoons, water sports applications, and big-water running, yes. For cruising, family use, casual fishing, no. FourStroke is the better tool for most Ontario boaters." },
+      { question: "Is Pro XS worth the premium over FourStroke?", answer: "Pro XS may be worth the extra cost if you use its performance. There is no single price premium across the lineup: compare current quotes for the exact models, shaft length, controls and gearcase, then account for rigging and HST. FourStroke is usually the better fit for cruising, family use and casual fishing." },
       { question: "What's the most popular Pro XS in Ontario?", answer: "The 200 Pro XS V8 is the dominant tournament fishing motor in Ontario bass boats. The 150 Pro XS is an inline-four and remains the walleye sweet spot for mid-size aluminum on big water." },
       { question: "Does Pro XS use the same powerhead as FourStroke?", answer: "The 115 Pro XS shares the 2.1L powerhead with the 115 FourStroke (different tuning). The 150 Pro XS uses a different 3.0L inline-4. The 175 Pro XS uses the 3.4L V6. The 200, 225, 250, and 300 Pro XS use the 4.6L V8. Horsepower alone does not identify the family." },
       { question: "Can I get Command Thrust on a Pro XS?", answer: "Yes, Command Thrust is available on the 115 Pro XS for pontoon applications. Higher HP Pro XS V6 and V8 motors use different gearcase options designed for their performance ranges." },
@@ -31738,7 +31758,7 @@ If you've read this far and you're still trying to decide between Pro XS and Fou
 - Performance pontoon applications
 - You'd actually use the difference in horsepower delivery
 
-The pricing premium for Pro XS over the equivalent FourStroke runs roughly $1,500-$3,000 depending on HP class. That's the cost of the performance upgrade.
+There is no single price premium for Pro XS over FourStroke across the lineup. Compare current quotes for the exact models at the same horsepower, matching shaft length, controls and gearcase where applicable. Motor-only prices exclude HST and installation; rigging differences can change the installed-price gap.
 
 ## What an installed Pro XS costs in Ontario (2026)
 

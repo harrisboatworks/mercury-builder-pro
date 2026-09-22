@@ -21,6 +21,14 @@ export interface PromotionEligibility {
   };
 }
 
+/** True when the record carries any inventory signal we can judge stock from. */
+function hasStockSignal(motor: PromotionMotor): boolean {
+  return motor.availability !== undefined
+    || motor.stockStatus !== undefined
+    || motor.in_stock !== undefined
+    || motor.stock_quantity !== undefined;
+}
+
 /** Quote estimates fail closed on known stock/product restrictions. */
 export function isPromotionMotorEligible(details: PromotionEligibility | undefined, motor: PromotionMotor | null | undefined): boolean {
   const rule = details?.motor_eligibility;
@@ -28,7 +36,10 @@ export function isPromotionMotorEligible(details: PromotionEligibility | undefin
   if (!motor || !Number.isFinite(motor.hp)) return false;
   if (rule.min_hp != null && motor.hp! < rule.min_hp) return false;
   if (rule.max_hp != null && motor.hp! > rule.max_hp) return false;
-  if (rule.stock_required && resolveMotorAvailability({...motor, availability: motor.availability ?? motor.stockStatus}).status !== 'in_stock') return false;
+  // Screens that only carry pricing fields (payment calculator, quote totals) have no
+  // inventory signal at all. Judging those as out of stock hid live offers, so the stock
+  // rule only applies when the record actually reports inventory.
+  if (rule.stock_required && hasStockSignal(motor) && resolveMotorAvailability({...motor, availability: motor.availability ?? motor.stockStatus}).status !== 'in_stock') return false;
   const identity = `${motor.model || ''} ${motor.family || ''} ${motor.type || ''}`.toLowerCase();
   return !(rule.excluded_families || []).some(family => identity.includes(family.toLowerCase()));
 }

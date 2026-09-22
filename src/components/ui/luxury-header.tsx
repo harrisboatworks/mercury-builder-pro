@@ -271,7 +271,7 @@ export function LuxuryHeader({
                     : 'text-muted-foreground hover:text-foreground'
                 }`}
               >
-                How Repower Works
+                Repower
               </Link>
               <Link 
                 to="/trade-in-value" 

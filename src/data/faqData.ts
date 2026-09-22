@@ -51,7 +51,7 @@ export const faqCategories: FAQCategory[] = [
     items: [
       {
         question: 'How do I choose the right horsepower for my boat?',
-        answer: 'Start with your boat\'s maximum horsepower rating, which is stamped on the capacity plate near the transom, you cannot exceed this rating safely or legally. From there, match the motor to how you use the boat: fishing and cruising at moderate speeds works fine with mid-range power, while watersports and larger loads benefit from topping out closer to the maximum. If your boat is rated for 115hp, running 90hp is fine; running 150hp is not. When in doubt, bring your boat specs to <a href="https://www.mercuryrepower.ca" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">mercuryrepower.ca</a> and we can help you choose the right fit.'
+        answer: 'Start with your boat\'s maximum horsepower rating, which is stamped on the capacity plate near the transom. You cannot exceed this rating safely or legally. HBW recommends one Mercury model step below that maximum. If the plate says 150 HP, the best fit is a 115. Max rated is overkill: more power and more weight on the transom than the boat performs well with. When in doubt, bring your boat specs to <a href="https://www.mercuryrepower.ca" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">mercuryrepower.ca</a> and we can help you choose the right fit.'
       },
       {
         question: 'How do I know what shaft length I need?',

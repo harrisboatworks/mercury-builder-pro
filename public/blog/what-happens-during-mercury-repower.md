@@ -165,7 +165,7 @@ Back at the shop:
 Customer picks up the boat. We walk through:
 - The new motor's controls and features
 - Mercury SmartCraft display interpretation (if applicable)
-- The 10-hour break-in protocol
+- The model-specific break-in procedure for your motor
 - The model-specific break-in and first scheduled service plan
 - Mercury warranty terms
 - Annual maintenance schedule
@@ -185,6 +185,7 @@ Customer drives away with a new Mercury, full documentation, and a clear picture
 
 Ready to schedule your repower? Build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**, live CAD pricing, full configuration, rigging and installation included.
 
+Harris Boat Works has been a Mercury dealer since 1965.
 ---
 
 ## FAQs
@@ -215,7 +216,7 @@ Hull repairs (transom, fiberglass, structural), trade-in valuation (handled sepa
 
 ### When can I use my boat after pickup?
 
-Right away, with the 10-hour break-in protocol. The first hour at no-wake speed and gradual RPM increase. Vary throttle. Avoid sustained WOT for the first 10 hours. See our [breaking in guide](/blog/breaking-in-new-mercury-motor-guide).
+Right away, following the break-in procedure for your exact engine model and serial number. We review that procedure with you at pickup, and the Mercury owner manual for your motor is the authority on throttle, load, and hours. Break-in guidance is model-specific rather than one universal rule. See our [breaking in guide](/blog/breaking-in-new-mercury-motor-guide).
 
 ### When's my first service after the repower?
 

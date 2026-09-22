@@ -881,7 +881,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Can I increase HP when repowering?",
-        "a": "Often yes, up to your boat's maximum rated HP. Modern motors are lighter and more efficient, so a higher HP motor may work well where it wouldn't have before. We'll help you choose the right size."
+        "a": "Often yes, but HBW recommends one Mercury model step below the maximum HP on the capacity plate. If the plate says 150 HP, the best fit is a 115. Max rated is overkill: more power and more weight on the transom than the boat performs well with. We'll help you choose the right size."
       },
       {
         "q": "Do I need new controls when repowering?",
@@ -1497,7 +1497,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "Why not just max out the HP rating?",
-        "a": "Maximum HP often provides more power than needed for typical use. Mid-range HP usually offers better efficiency, adequate performance, and lower cost. Max HP makes sense for specific applications."
+        "a": "Do not max out the rating. HBW recommends one Mercury model step below the maximum HP on the capacity plate. The maximum is overkill: more power and more weight on the transom than the boat performs well with."
       },
       {
         "q": "Does motor weight affect boat performance?",
@@ -3388,7 +3388,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   {
     "slug": "common-pontoon-boat-problems-rice-lake",
     "title": "Common Pontoon Problems on Rice Lake",
-    "description": "The most common pontoon boat problems we see at Harris Boat Works, from underpowered motors to tube leaks and wiring corrosion.",
+    "description": "The most common pontoon boat problems we see at Harris Boat Works, including why the best motor fit is one Mercury model below the hull's max HP rating.",
     "category": "Boating Lifestyle",
     "publishDate": "2026-02-12",
     "keywords": [
@@ -3401,7 +3401,11 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "What is the most common problem with pontoon boats on Rice Lake?",
-        "a": "Underpowered motors. We see 22 and 24 ft pontoons running 60 HP because a dealer said it would work. The boat moves, but it lugs under load and the engine works twice as hard as it should for its entire life. Match the motor to the hull's max HP rating, not the minimum. For most 20 to 24 ft pontoons that means 90 to 1…"
+        "a": "Wrong-sized motors, usually too small. We see 22 and 24 ft pontoons running 60 HP because a dealer said it would work. The boat moves, but it lugs under load and the engine works twice as hard as it should. The fix isn't the max rating either. Size the motor one Mercury model below the hull's max HP. For most 20 to 24…"
+      },
+      {
+        "q": "Should I put the max HP motor on my pontoon?",
+        "a": "Usually not. The max HP on the capacity plate is the most the hull is rated to carry, not a recommendation. We tell customers it should be labelled overkill. Maxing out adds cost and transom weight, and the boat often performs no better. Cost aside, the best fit is one Mercury model below the max: a pontoon plated for…"
       },
       {
         "q": "How can I tell if my pontoon tubes are leaking?",
@@ -3410,10 +3414,6 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       {
         "q": "How do I prevent deck rot on a pontoon?",
         "a": "Pontoon decks sit over a wood subfloor under carpet or vinyl, materials that trap moisture instead of draining it. Inspect carpet seams and vinyl edges annually for lifting or gaps, reseal around deck fittings showing wear, and never leave pooled water on the deck after rain. A soft spot underfoot near the bow, stern,…"
-      },
-      {
-        "q": "What causes wiring problems on aluminum pontoons?",
-        "a": "Aluminum, moisture, dissimilar metals, and marine electrical current are an ideal corrosion environment. Symptoms include gauges reading wrong or not at all, intermittent starting with an otherwise healthy motor, navigation lights that work sometimes, and accessories that quit mid-season. Clean and protect connections…"
       }
     ]
   },
@@ -4869,7 +4869,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "Is Pro XS worth the premium over FourStroke?",
-        "a": "For tournament fishing, performance pontoons, water sports applications, and big-water running, yes. For cruising, family use, casual fishing, no. FourStroke is the better tool for most Ontario boaters."
+        "a": "Pro XS may be worth the extra cost if you use its performance. There is no single price premium across the lineup: compare current quotes for the exact models, shaft length, controls and gearcase, then account for rigging and HST. FourStroke is usually the better fit for cruising, family use and casual fishing."
       },
       {
         "q": "What's the most popular Pro XS in Ontario?",

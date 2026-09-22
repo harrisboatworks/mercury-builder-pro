@@ -3,21 +3,31 @@ const base = (process.env.KNOWLEDGE_CANARY_SUPABASE_URL ||
 const site = (process.env.KNOWLEDGE_CANARY_SITE_URL ||
   'https://www.mercuryrepower.ca').replace(/\/$/, '');
 
+const mcpSecret = process.env.ELEVENLABS_MCP_SECRET;
+if (!mcpSecret?.trim()) {
+  throw new Error('ELEVENLABS_MCP_SECRET is required: configure the GitHub Actions secret to match the existing Supabase/ElevenLabs MCP secret.');
+}
+
 async function postFunction(name, body) {
   const response = await fetch(`${base}/functions/v1/${name}`, {
     method: 'POST',
-    headers: { 'content-type': 'application/json' },
+    headers: {
+      'content-type': 'application/json',
+      ...(name === 'elevenlabs-mcp-server' ? { 'x-elevenlabs-mcp-secret': mcpSecret } : {}),
+    },
+    // Never forward the custom authentication header through a redirect.
+    redirect: 'error',
     body: JSON.stringify(body),
     signal: AbortSignal.timeout(30_000),
   });
   const text = await response.text();
   if (!response.ok) {
-    throw new Error(`${name} returned ${response.status}: ${text.slice(0, 500)}`);
+    throw new Error(`${name} returned ${response.status}${response.status === 401 && name === 'elevenlabs-mcp-server' ? ': verify ELEVENLABS_MCP_SECRET matches the deployed MCP endpoint' : ''}`);
   }
   try {
     return JSON.parse(text);
   } catch {
-    throw new Error(`${name} returned non-JSON: ${text.slice(0, 500)}`);
+    throw new Error(`${name} returned non-JSON`);
   }
 }
 
@@ -32,6 +42,7 @@ async function callVoiceTool(name, args = {}) {
     method: 'tools/call',
     params: { name, arguments: args },
   });
+  assert(!response?.error && !response?.result?.isError, `Voice tool ${name} returned an MCP error`);
   const text = response?.result?.content?.map((item) => item.text || '').join('\n') || '';
   assert(text, `Voice tool ${name} returned no text`);
   return text;

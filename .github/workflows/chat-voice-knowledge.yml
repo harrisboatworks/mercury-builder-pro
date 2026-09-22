@@ -22,4 +22,6 @@ jobs:
         with:
           node-version: '22.19.0'
       - name: Verify live chat, voice, and published facts
+        env:
+          ELEVENLABS_MCP_SECRET: ${{ secrets.ELEVENLABS_MCP_SECRET }}
         run: npm run check:chat-voice-knowledge-live

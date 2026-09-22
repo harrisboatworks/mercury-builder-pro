@@ -58,16 +58,15 @@ describe('GoogleMapEmbed', () => {
     expect(html).toContain('/maps/embed/v1/place?');
   });
 
-  it('renders a keyless OpenStreetMap preview when the embed key is absent', () => {
+  it('renders a static address fallback when the embed key is absent', () => {
     getGoogleMapsEmbedKey.mockReturnValue('');
     const html = renderToStaticMarkup(
       <GoogleMapEmbed center={{ latitude: 44.121684, longitude: -78.241502 }} />,
     );
 
     expect(html).not.toContain('maps/embed/v1');
-    expect(html).not.toContain('Map preview is unavailable.');
-    expect(html).toContain('openstreetmap.org/export/embed.html');
-    expect(html).toContain('marker=44.121684,-78.241502');
+    expect(html).not.toContain('<iframe');
+    expect(html).toContain('Map preview is unavailable.');
     expect(html).toContain('Harris Boat Works');
     expect(html).toContain('5369 Harris Boat Works Rd');
     expect(html).toContain('Gores Landing, ON K0K 2E0');
