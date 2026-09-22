@@ -6,10 +6,15 @@ const details = { motor_eligibility: { stock_required: true, min_hp: 2.5, max_hp
 const motor = { hp: 20, model: '20 ELH FourStroke', stock_quantity: 1, in_stock: true };
 describe('restricted campaign stock and model eligibility', () => {
   it('accepts available FourStroke stock', () => expect(isPromotionMotorEligible(details, motor)).toBe(true));
+  it('does not infer out-of-stock from a pricing-only motor', () => {
+    expect(isPromotionMotorEligible(details, { hp: 20, model: '20 ELH FourStroke' })).toBe(true);
+  });
   it('rejects exhausted stock even with a stale stock flag', () => expect(isPromotionMotorEligible(details, {...motor, stock_quantity: 0})).toBe(false));
   it('rejects unknown or backordered inventory', () => {
     expect(isPromotionMotorEligible(details, null)).toBe(false);
     expect(isPromotionMotorEligible(details, {hp:20, stockStatus:'On Order'})).toBe(false);
+    expect(isPromotionMotorEligible(details, {hp:20, in_stock: null})).toBe(false);
+    expect(isPromotionMotorEligible(details, {hp:20, stock_quantity: 0})).toBe(false);
   });
   it.each(['Racing', 'Avator', 'V12', 'CPO'])('excludes %s', family => expect(isPromotionMotorEligible(details, {...motor, family})).toBe(false));
   it('preserves offers without motor restrictions', () => expect(isPromotionMotorEligible(undefined, null)).toBe(true));
