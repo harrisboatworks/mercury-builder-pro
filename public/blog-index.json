@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "sourceVersion": "45387a2f8533dfa51762",
+  "sourceVersion": "b3e2464e699085a9e428",
   "count": 179,
   "articles": [
     {
@@ -3390,7 +3390,11 @@
       "faqs": [
         {
           "q": "What is the most common problem with pontoon boats on Rice Lake?",
-          "a": "Underpowered motors. We see 22 and 24 ft pontoons running 60 HP because a dealer said it would work. The boat moves, but it lugs under load and the engine works twice as hard as it should for its entire life. Size the motor one Mercury model below the hull's max HP rating, underpowered is a problem, but max rated is o…"
+          "a": "Wrong-sized motors, usually too small. We see 22 and 24 ft pontoons running 60 HP because a dealer said it would work. The boat moves, but it lugs under load and the engine works twice as hard as it should. The fix isn't the max rating either. Size the motor one Mercury model below the hull's max HP. For most 20 to 24…"
+        },
+        {
+          "q": "Should I put the max HP motor on my pontoon?",
+          "a": "Usually not. The max HP on the capacity plate is the most the hull is rated to carry, not a recommendation. We tell customers it should be labelled overkill. Maxing out adds cost and transom weight, and the boat often performs no better. Cost aside, the best fit is one Mercury model below the max: a pontoon plated for…"
         },
         {
           "q": "How can I tell if my pontoon tubes are leaking?",
@@ -3399,10 +3403,6 @@
         {
           "q": "How do I prevent deck rot on a pontoon?",
           "a": "Pontoon decks sit over a wood subfloor under carpet or vinyl, materials that trap moisture instead of draining it. Inspect carpet seams and vinyl edges annually for lifting or gaps, reseal around deck fittings showing wear, and never leave pooled water on the deck after rain. A soft spot underfoot near the bow, stern,…"
-        },
-        {
-          "q": "What causes wiring problems on aluminum pontoons?",
-          "a": "Aluminum, moisture, dissimilar metals, and marine electrical current are an ideal corrosion environment. Symptoms include gauges reading wrong or not at all, intermittent starting with an otherwise healthy motor, navigation lights that work sometimes, and accessories that quit mid-season. Clean and protect connections…"
         }
       ]
     },

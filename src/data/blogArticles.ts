@@ -21307,7 +21307,8 @@ If your boat needs a motor, put together a real quote with real prices at mercur
     readTime: '~9 min read',
     keywords: ["pontoon problems","rice lake","pontoon maintenance","mercury outboard","pontoon hp"],
     faqs: [
-      { question: 'What is the most common problem with pontoon boats on Rice Lake?', answer: 'Underpowered motors. We see 22 and 24 ft pontoons running 60 HP because a dealer said it would work. The boat moves, but it lugs under load and the engine works twice as hard as it should for its entire life. Size the motor one Mercury model below the hull\'s max HP rating, underpowered is a problem, but max rated is overkill. For most 20 to 24 ft pontoons that means 90 to 115 HP, more for tritoons.' },
+      { question: 'What is the most common problem with pontoon boats on Rice Lake?', answer: 'Wrong-sized motors, usually too small. We see 22 and 24 ft pontoons running 60 HP because a dealer said it would work. The boat moves, but it lugs under load and the engine works twice as hard as it should. The fix isn\'t the max rating either. Size the motor one Mercury model below the hull\'s max HP. For most 20 to 24 ft pontoons that means 90 to 115 HP, more for tritoons.' },
+      { question: 'Should I put the max HP motor on my pontoon?', answer: 'Usually not. The max HP on the capacity plate is the most the hull is rated to carry, not a recommendation. We tell customers it should be labelled overkill. Maxing out adds cost and transom weight, and the boat often performs no better. Cost aside, the best fit is one Mercury model below the max: a pontoon plated for 150 HP runs best with a 115.' },
       { question: 'How can I tell if my pontoon tubes are leaking?', answer: 'Watch for uneven trim at the dock when the boat is sitting level, visible weeping or staining on a tube exterior, and unexplained sluggishness after rough water. Welding cracks typically develop at baffles, the nose of the tube, and crossmember attachment points. Caught early, tube repairs are manageable; full replacement is a much bigger job. Annual inspection matters.' },
       { question: 'How do I prevent deck rot on a pontoon?', answer: 'Pontoon decks sit over a wood subfloor under carpet or vinyl, materials that trap moisture instead of draining it. Inspect carpet seams and vinyl edges annually for lifting or gaps, reseal around deck fittings showing wear, and never leave pooled water on the deck after rain. A soft spot underfoot near the bow, stern, cleats, or fittings means rot has already started.' },
       { question: 'What causes wiring problems on aluminum pontoons?', answer: 'Aluminum, moisture, dissimilar metals, and marine electrical current are an ideal corrosion environment. Symptoms include gauges reading wrong or not at all, intermittent starting with an otherwise healthy motor, navigation lights that work sometimes, and accessories that quit mid-season. Clean and protect connections with dielectric grease and replace corroded terminal ends before they fail. A full console rewire is much more expensive than upkeep.' },
@@ -21317,7 +21318,7 @@ If your boat needs a motor, put together a real quote with real prices at mercur
 
 *Last reviewed: 2026-09-22*
 
-> **Quick answer:** Most pontoon problems we see are preventable. The biggest one: undersized motors that lug under load. Other recurring issues include tube leaks, deck rot, wiring corrosion, ethanol fuel damage, and shallow-shoreline bottom strikes. Size the motor one Mercury model below your hull's max HP rating, not the minimum, and not the max. Inspect tubes and deck annually, run ethanol-free fuel, and most pontoons stay reliable for decades.
+> **Quick answer:** Most pontoon problems we see are preventable, and the biggest one is motor size. Too small and it lugs under load. Maxed out and it's overkill: extra cost and extra weight on the transom. The best fit is one Mercury model below the hull's max HP rating. Inspect tubes and deck annually, run ethanol-free fuel, and most pontoons stay reliable for decades.
 
 There's a reason videos about pontoon boat problems rack up millions of views. People buy pontoons expecting the easiest, most relaxed boating experience possible, and they're not wrong to expect that. Done right, a pontoon is the perfect Rice Lake, Ontario (in the Kawarthas) boat.
 
@@ -21329,15 +21330,26 @@ This isn't a scare piece. It's what our service techs actually deal with, writte
 
 ## Why HP Sizing Is the #1 Mistake Pontoon Buyers Make
 
-Before we get into the full list, this one deserves its own section because it causes more problems than everything else combined.
+Before we get into the full list, this one gets its own section. It causes more problems than everything else combined, and people get it wrong in both directions.
 
-Pontoons are heavy. A 22-foot pontoon fully loaded with a cooler, canopy, six adults, and gear can easily top 1,361 kg (3,000 lb). Add water drag from two or three aluminum tubes, and you've got a boat that needs serious power to perform well.
+Pontoons are heavy. A 22-foot pontoon loaded with a cooler, canopy, six adults and gear can easily top 1,361 kg (3,000 lb). Add drag from two or three aluminum tubes and you've got a boat that needs real power to perform.
 
-The mistake we see constantly: someone buys a 22- or 24-foot pontoon and puts a 60HP motor on it because the dealer said it would "work." Technically, yes. It will move the boat. But it won't come up to cruise properly under load, it'll lug when you push it, and that engine will work twice as hard as it should for its entire life.
+**Too little motor.** The mistake we see constantly: a 22- or 24-foot pontoon with a 60 HP on the back because the dealer said it would "work." Technically, yes. It moves the boat. But it won't come up to cruise under load, it lugs when you push it, and that engine works twice as hard as it should for its entire life.
 
-On Rice Lake, you want to get places. You want to pull a tube. You want to get home before the storm hits. A properly sized motor (90HP to 115HP for most 20-24 ft boats, more for tritoons) does that without working itself to death.
+**Too much motor.** The opposite mistake is buying the biggest number on the capacity plate. Jay Harris, our owner, tells customers the max HP rating should really be labelled "overkill." The plate tells you the most the hull is rated to carry. It isn't a recommendation. Going to the max usually means more money up front, more weight hanging off the back of the boat, and a pontoon that often performs no better than one a step down. Just because the boat can handle it doesn't mean it's a good idea.
 
-The general rule: **size it one Mercury model below the max HP on the capacity plate. Max rated is overkill: more power and more weight hanging off the transom than the boat performs well with.** Most pontoon owners buy to the minimum and call it good enough. It isn't.
+The weight difference is real. A Mercury 150 FourStroke weighs 206 kg (455 lb) dry. A 115 FourStroke weighs 163 kg (359 lb). That's about 43 kg (96 lb) more on the transom for power the boat didn't need. (Dry weights from our [Mercury outboard weight chart](/blog/mercury-outboard-weight-chart).)
+
+**The HBW rule: one Mercury model below the max.** Cost aside, the best fit is the next Mercury model down from the max HP on the capacity plate. Plate says 150? The best fit is a 115. For most 20 to 24 ft pontoons, that lands at 90 to 115 HP. Tritoons rated higher get more.
+
+| Capacity plate max | HBW best fit |
+|---|---|
+| 75 HP | 60 HP |
+| 90 HP | 75 HP |
+| 115 HP | 90 HP |
+| 150 HP | 115 HP |
+| 200 HP | 175 HP |
+| 250 HP | 225 HP |
 
 If you're shopping repowers or new setups, the [Mercury Command Thrust guide for pontoons](https://www.mercuryrepower.ca/blog/mercury-command-thrust-complete-guide-2026) is worth reading. CT motors are specifically designed for the high-drag, low-RPM torque demands of pontoon hulls. And if you want a side-by-side comparison of motor options, see our breakdown of [the best Mercury outboards for pontoon boats](https://www.mercuryrepower.ca/blog/best-mercury-outboard-pontoon-boats).
 
@@ -21345,11 +21357,13 @@ If you're shopping repowers or new setups, the [Mercury Command Thrust guide for
 
 ## The 8 Pontoon Problems We See at the Shop
 
-### 1. Underpowered Motor
+### 1. Wrong-Sized Motor (Usually Too Small, Sometimes Too Big)
 
 Already covered above, but it's worth reinforcing: **being underpowered isn't just a performance problem, it's a maintenance problem**. An engine that's constantly working near its limits runs hotter, wears faster, and costs more to maintain. You'll be in the shop more often, and the repairs won't be cheap.
 
-If you're on the fence about stepping up to a bigger motor, the math usually favours the repower.
+Going the other way doesn't fix it. A maxed-out motor costs more to buy, adds weight you carry on every trip, and rarely makes the boat better. The sweet spot is one Mercury model below the max.
+
+If you're running an undersized motor and on the fence about repowering, the math usually favours the repower.
 
 ---
 
@@ -21481,7 +21495,7 @@ We sell ethanol-free fuel at Harris Boat Works for exactly this reason. It costs
 
 Here's what our techs would tell you if you asked them after a long week in the shop:
 
-- **Buy enough motor.** Choose one Mercury model below the hull's max HP rating, not the minimum and not the max.
+- **Buy the right motor.** One Mercury model below the hull's max HP rating. Not the minimum, not the max.
 - **Look at the tubes.** Check for leaks and damage every season.
 - **Feel the deck.** Soft spots catch up with you.
 - **Protect the wiring.** Corrosion is slow and then expensive.
