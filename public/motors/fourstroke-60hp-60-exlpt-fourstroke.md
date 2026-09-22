@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/fourstroke-60hp-60-exlpt-fourstroke
-last_updated: 2026-09-22
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -27,8 +27,6 @@ Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Premier Dealer Â
 - **Family:** Mercury FourStroke
 - **Horsepower:** 60 HP
 - **Model number:** 1F60463GZ
-- **Shaft:** XL
-- **Control type:** Remote
 
 ## Pricing (CAD)
 

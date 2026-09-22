@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/fourstroke-150hp-150-xl-fourstroke
-last_updated: 2026-09-22
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -27,7 +27,6 @@ Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Premier Dealer Â
 - **Family:** Mercury FourStroke
 - **Horsepower:** 150 HP
 - **Model number:** 1150F23ED
-- **Shaft:** XL
 
 ## Pricing (CAD)
 

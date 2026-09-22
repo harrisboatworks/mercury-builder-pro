@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/fourstroke-9-9hp-9-9exlh-command-thrust-fourstroke
-last_updated: 2026-09-22
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -27,8 +27,6 @@ Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Premier Dealer Â
 - **Family:** Mercury FourStroke
 - **Horsepower:** 9.9 HP
 - **Model number:** 1A10361LK
-- **Shaft:** XL
-- **Control type:** Tiller
 
 ## Pricing (CAD)
 
