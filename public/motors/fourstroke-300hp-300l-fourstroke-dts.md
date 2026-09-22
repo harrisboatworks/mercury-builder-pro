@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/fourstroke-300hp-300l-fourstroke-dts
-last_updated: 2026-08-19
+last_updated: 2026-09-22
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -27,6 +27,7 @@ Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Premier Dealer Â
 - **Family:** Mercury FourStroke
 - **Horsepower:** 300 HP
 - **Model number:** 13000006A
+- **Shaft:** L
 
 ## Pricing (CAD)
 
