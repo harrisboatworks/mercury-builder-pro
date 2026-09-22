@@ -8273,6 +8273,7 @@ export type Database = {
         Args: { p_worker_secret: string }
         Returns: undefined
       }
+      weekly_report_v2: { Args: { p_end: string }; Returns: Json }
     }
     Enums: {
       app_role: "admin" | "user"
