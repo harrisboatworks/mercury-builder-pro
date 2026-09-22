@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/fourstroke-40hp-40-elhpt-fourstroke
-last_updated: 2026-09-22
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -27,8 +27,6 @@ Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Premier Dealer Â
 - **Family:** Mercury FourStroke
 - **Horsepower:** 40 HP
 - **Model number:** 1F4041TJZ
-- **Shaft:** L
-- **Control type:** Tiller
 
 ## Pricing (CAD)
 

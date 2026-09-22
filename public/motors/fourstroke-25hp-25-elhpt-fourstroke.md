@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/fourstroke-25hp-25-elhpt-fourstroke
-last_updated: 2026-09-22
+last_updated: 2026-08-19
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -12,7 +12,7 @@ slug: fourstroke-25hp-25-elhpt-fourstroke
 family: FourStroke
 horsepower: 25
 model_number: 1A25411BK
-availability: in_stock
+availability: special_order
 price_cad: 6265
 ---
 
@@ -27,8 +27,6 @@ Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Premier Dealer Â
 - **Family:** Mercury FourStroke
 - **Horsepower:** 25 HP
 - **Model number:** 1A25411BK
-- **Shaft:** L
-- **Control type:** Tiller
 
 ## Pricing (CAD)
 
@@ -39,7 +37,7 @@ Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Premier Dealer Â
 
 ## Availability
 
-- **Status:** In stock at Gores Landing
+- **Status:** Special order, contact dealer for ETA
 - **Pickup:** Required at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not ship, we do not deliver, and we do not release motors to couriers or third parties.
 
 ## Best fit for

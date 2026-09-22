@@ -4239,7 +4239,7 @@ const HUB_DEFS = [
     metaDescription: 'Mercury outboard selection by boat type, HP class, and use case. FourStroke vs Pro XS, prop selection, Command Thrust, and live CAD pricing from Harris Boat Works.',
     breadcrumbName: 'Mercury Motor Selection',
     h1: 'How to Choose the Right Mercury Outboard for Your Boat (2026)',
-    intro: "The right Mercury for your boat depends on hull length and weight, intended use, passenger and gear loading, and the maximum HP rating on your boat's capacity plate. For most Ontario freshwater boats, the answer falls in the Mercury 60 to 150 HP FourStroke range, paired with a 9.9 ProKicker if you fish. Choose one Mercury model step below the maximum HP on the capacity plate. Max rated is overkill, with more power and transom weight than the boat performs well with. Live pricing on every Mercury we sell is at /quote/motor-selection.",
+    intro: "The right Mercury for your boat depends on hull length and weight, intended use, passenger and gear loading, and the maximum HP rating on your boat's capacity plate. For most Ontario freshwater boats, the answer falls in the Mercury 60 to 150 HP FourStroke range, paired with a 9.9 ProKicker if you fish. Aim for 70 to 90% of your maximum rated HP for typical recreational use. Live pricing on every Mercury we sell is at /quote/motor-selection.",
     table: {
       caption: 'Mercury HP by Boat Type',
       columns: [

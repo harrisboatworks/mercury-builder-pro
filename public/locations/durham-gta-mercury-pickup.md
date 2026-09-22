@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/locations/durham-gta-mercury-pickup
-last_updated: 2026-09-22
+last_updated: 2026-08-27
 currency: CAD
 pickup_only: true
 delivery_offered: false
