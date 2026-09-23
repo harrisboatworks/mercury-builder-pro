@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-9-9-efi-review-ontario.md
-last_updated: 2026-09-11
+last_updated: 2026-09-23
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -8,10 +8,10 @@ final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
 title: "Mercury 9.9 EFI Review Ontario"
-description: "The Mercury 9.9 MH EFI brings battery-free fuel injection to a simple portable outboard. Here's what Ontario boaters should know before buying."
+description: "What the Mercury 9.9 EFI outboard actually is: FourStroke power, dry weight, shaft length, model codes, and which boats it suits. An Ontario buying guide."
 category: "Mercury Buying Guides"
 date_published: 2026-05-10
-date_modified: 2026-09-11
+date_modified: 2026-09-23
 keywords: ["mercury 9.9 efi review","mercury 9.9 mh efi","mercury 9.9 fuel injected outboard","mercury 9.9 efi ontario","mercury 9.9 outboard price ontario","mercury 9.9 efi vs prokicker"]
 author: Harris Boat Works
 content_type: blog_article
@@ -21,11 +21,11 @@ revenue_driver: repower
 
 # Mercury 9.9 EFI Review Ontario
 
-> The Mercury 9.9 MH EFI brings battery-free fuel injection to a simple portable outboard. Here's what Ontario boaters should know before buying.
+> What the Mercury 9.9 EFI outboard actually is: FourStroke power, dry weight, shaft length, model codes, and which boats it suits. An Ontario buying guide.
 
 **Category:** Mercury Buying Guides  
 **Published:** 2026-05-10  
-**Last reviewed:** 2026-09-11  
+**Last reviewed:** 2026-09-23  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-9-9-efi-review-ontario
 
@@ -176,10 +176,6 @@ Mercury Canada's exact-SKU listing gives model 1A10201LK a dry weight of 88 lb. 
 
 The 9.9 MH EFI is a 15-inch short-shaft model. Make sure your boat's transom is right for a short shaft before buying.
 
-### What comes with the HBW Mercury 9.9 MH EFI offer?
-
-Check the current exact-model listing and confirm the written offer, including the fuel tank, hose, preparation, taxes, and any fees.
-
 ### Will the Mercury 9.9 EFI plane my 14-foot aluminum boat?
 
 It depends on the boat, load, prop, shaft length, weight distribution, and hull setup. Owner discussions show that even a newer Mercury 9.9 may struggle to plane a heavier 1448-style aluminum boat when the boat has added decking, batteries, and gear.
@@ -188,9 +184,21 @@ It depends on the boat, load, prop, shaft length, weight distribution, and hull 
 
 No. The 9.9 MH EFI is the simple portable version with manual start, tiller, and short shaft. ProKicker-style models are built around trolling control with a high-thrust prop, Command Thrust gearcase, and standard power tilt.
 
-### How should I compare Mercury 9.9 MH EFI prices in Ontario?
+### Is the Mercury 9.9 a four-stroke?
 
-Compare the exact model, shaft length, starting system, included tank and hose, preparation, taxes, and fees in dated written offers. Confirm stock and the final total before buying.
+The current Mercury 9.9 EFI models listed by Harris Boat Works in Canada are FourStroke outboards. For an older 9.9, check the model and serial number rather than identifying the engine by horsepower alone.
+
+### What do the letters mean on a Mercury 9.9, like MH or MLH?
+
+For the current standard 9.9 MH and MLH FourStroke models listed by HBW, M means manual start and H means a hand tiller. The MH has a 15-inch shaft; the L in MLH identifies the 20-inch long-shaft version. Confirm the exact model and shaft length against your boat before ordering.
+
+### What size boat is a Mercury 9.9 outboard right for?
+
+Small aluminum boats, car toppers, sailboat auxiliary duty, and kicker work on a larger hull. Match the shaft length to your transom, the board the motor bolts to, and check the boat's capacity plate for its maximum rated horsepower before you order.
+
+### What warranty comes with a new Mercury 9.9?
+
+For a new Mercury 9.9 FourStroke purchased in Canada for recreational use, the standard limited warranty is three years, subject to Mercury registration, eligibility and warranty terms. Commercial-use coverage differs. Any additional dated promotional coverage is listed at mercuryrepower.ca/promotions; confirm the written terms for your exact motor.
 
 ## Related guides
 
