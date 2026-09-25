@@ -19,12 +19,14 @@ import {
   resolveMercuryCatalogSpecs,
 } from "../_shared/mercury-codes.ts";
 import {
+  filterPublicCatalogMotors,
   findPresentedPublicMotor,
   isPublicCatalogMotor,
   parseOptionalBooleanFlag,
   PUBLIC_CATALOG_AVAILABILITY_OR,
   PUBLIC_SITE_URL,
   PUBLIC_VERADO_POLICY,
+  isPublicMotorInStock,
   presentPublicCatalogMotor,
   resolvePublicQuoteDeposit,
   resolvePublicSellingPrice,
@@ -52,7 +54,8 @@ function motorMarkdown(sourceMotor: any): string {
   const price = presented?.sellingPrice ?? resolvePublicSellingPrice(m);
   const slug = presented?.slug || motorSlug(m);
   const display = presented?.modelDisplay || m.model_display || m.model;
-  const availability = publicAvailabilityLabel(presented?.availability || m.availability, Boolean(presented?.inStock ?? m.in_stock));
+  const inStock = presented?.inStock ?? isPublicMotorInStock(m);
+  const availability = publicAvailabilityLabel(presented?.availability || m.availability, inStock);
   const deposit = resolvePublicQuoteDeposit(m);
   const specs = resolveMercuryCatalogSpecs({
     modelDisplay: display,
@@ -170,9 +173,7 @@ Deno.serve(async (req) => {
     if (error) throw error;
 
     const motors = (data || []).filter((m) => isPublicCatalogMotor(applyMotorPresentationOverrides(m)));
-    const catalog = inStockOnly
-      ? motors.filter((m) => presentPublicCatalogMotor(m)?.inStock)
-      : motors;
+    const catalog = filterPublicCatalogMotors(data || [], { inStockOnly }).map((motor) => motor.row);
 
     if (id || slug) {
       const found = findPresentedPublicMotor(motors, { id, slug });

@@ -8,7 +8,9 @@ import {
 import {
   filterPublicCatalogMotors,
   findPresentedPublicMotor,
+  isPublicMotorInStock,
   presentPublicCatalogMotor,
+  publicAvailabilityLabel,
   resolvePublicQuoteDeposit,
   resolvePublicSellingPrice,
   toFinitePositiveCents,
@@ -315,6 +317,102 @@ describe("AG07 public catalog coverage", () => {
     expect(inStock.map((motor) => motor.id)).toEqual([AG01_MOTOR.id]);
     expect(findPresentedPublicMotor(rows, { slug: "missing-motor" })).toBeNull();
     expect(findPresentedPublicMotor(rows, { id: "55555555-5555-4555-8555-555555555555" })).toBeNull();
+    expect(advertised.some((motor) => /verado|exclude/i.test(String(motor.modelDisplay)))).toBe(false);
+    expect(presentPublicCatalogMotor({
+      ...AG01_MOTOR,
+      id: "55555555-5555-4555-8555-555555555555",
+      availability: "Exclude",
+    })).toBeNull();
+  });
+
+  it("applies public eligibility and normalized stock before the caller limit", () => {
+    const outOfStock = Array.from({ length: 4 }, (_, index) => ({
+      ...AG01_MOTOR,
+      id: `aaaaaaa${index}-0000-4000-8000-00000000000${index}`,
+      horsepower: 10 + index,
+      in_stock: false,
+      stock_quantity: 0,
+      availability: "Available",
+    }));
+    const lateInStock = {
+      ...AG01_MOTOR,
+      id: "bbbbbbbb-0000-4000-8000-000000000001",
+      horsepower: 225,
+      in_stock: true,
+      stock_quantity: 1,
+    };
+    const rows = [
+      ...outOfStock,
+      { ...AG01_MOTOR, id: "cccccccc-0000-4000-8000-000000000001", availability: "Exclude" },
+      { ...AG01_MOTOR, id: "dddddddd-0000-4000-8000-000000000001", family: "Verado", model_display: "300 Verado" },
+      lateInStock,
+    ];
+
+    const truncatedThenFiltered = rows
+      .slice(0, 3)
+      .map((motor) => presentPublicCatalogMotor(motor))
+      .filter((motor) => motor?.inStock);
+    expect(truncatedThenFiltered.map((motor) => motor?.id)).toEqual([]);
+
+    const stockThenLimit = filterPublicCatalogMotors(rows, { inStockOnly: true }).slice(0, 3);
+    expect(stockThenLimit.map((motor) => motor.id)).toEqual([lateInStock.id]);
+    expect(stockThenLimit.every((motor) => motor.inStock)).toBe(true);
+    expect(stockThenLimit.some((motor) => /verado|exclude/i.test(String(motor.modelDisplay)))).toBe(false);
+
+    const advertised = filterPublicCatalogMotors(rows).slice(0, 3);
+    expect(advertised.map((motor) => motor.id)).toEqual(outOfStock.slice(0, 3).map((motor) => motor.id));
+  });
+
+  it("normalizes every regular non-stock catalog status to Available to Order", () => {
+    const rawStatuses = [
+      "Out of Stock",
+      "Special Order",
+      "Brochure",
+      "Sold",
+      "On Order",
+      "Available",
+      "In Stock",
+      null,
+    ];
+
+    for (const availability of rawStatuses) {
+      expect(publicAvailabilityLabel(availability, false)).toBe("Available to Order");
+      expect(presentPublicCatalogMotor({
+        ...AG01_MOTOR,
+        id: "66666666-6666-4666-8666-666666666666",
+        in_stock: false,
+        stock_quantity: 0,
+        availability,
+      })?.availability).toBe("Available to Order");
+    }
+
+    expect(publicAvailabilityLabel("Out of Stock", true)).toBe("In Stock");
+    expect(presentPublicCatalogMotor({
+      ...AG01_MOTOR,
+      availability: "Out of Stock",
+      in_stock: true,
+      stock_quantity: 1,
+    })?.availability).toBe("In Stock");
+
+    const quantityZero = {
+      ...AG01_MOTOR,
+      id: "77777777-7777-4777-8777-777777777777",
+      in_stock: true,
+      stock_quantity: 0,
+    };
+    const availabilityOnly = {
+      ...AG01_MOTOR,
+      id: "88888888-8888-4888-8888-888888888888",
+      in_stock: false,
+      stock_quantity: null,
+      availability: "In Stock",
+    };
+    expect(Boolean(quantityZero.in_stock)).toBe(true);
+    expect(isPublicMotorInStock(quantityZero)).toBe(false);
+    expect(presentPublicCatalogMotor(quantityZero)?.availability).toBe("Available to Order");
+    expect(Boolean(availabilityOnly.in_stock)).toBe(false);
+    expect(isPublicMotorInStock(availabilityOnly)).toBe(true);
+    expect(presentPublicCatalogMotor(availabilityOnly)?.availability).toBe("In Stock");
   });
 });
 
@@ -403,6 +501,9 @@ describe("authorized transport wiring", () => {
     for (const handler of [motorsApi, quoteApi, mcp, markdown]) {
       expect(handler).toContain("resolvePublicSellingPrice(");
       expect(handler).toContain("PUBLIC_CATALOG_AVAILABILITY_OR");
+      expect(handler).toContain("publicAvailabilityLabel(");
+      expect(handler).toContain("isPublicMotorInStock(");
+      expect(handler).not.toContain("Boolean(m.in_stock)");
     }
     expect(ucp).toContain("resolveUcpPricedItem(");
     expect(ucp).toContain("parseUcpCheckoutLineItems(");

@@ -258,8 +258,13 @@ describe("public motor agent contract", () => {
     expect(mcpServer).toContain("const SITE_URL = PUBLIC_SITE_URL;");
     expect(quoteApi).not.toContain('Deno.env.get("APP_URL")');
     expect(quoteApi).not.toContain('.ilike("model_display"');
-    expect(quoteApi).toContain(".limit(textSearch ? 500 : limit)");
+    expect(quoteApi).toContain(".limit(500)");
+    expect(quoteApi).not.toContain(".limit(textSearch ? 500 : limit)");
     expect(quoteApi).toContain(".includes(textSearch)");
+    expect(quoteApi).toContain(".slice(0, limit)");
+    expect(quoteApi.indexOf("!inStockOnly || isPublicMotorInStock(m)")).toBeLessThan(
+      quoteApi.indexOf(".slice(0, limit)"),
+    );
 
     expect(motorsApi).toContain("const slug = motorSlug(m);");
     expect(quoteApi).toContain("const slug = motorSlug(m);");
@@ -277,8 +282,25 @@ describe("public motor agent contract", () => {
     expect(motorsApi).toContain("resolvePublicSellingPrice(");
     expect(quoteApi).toContain("resolvePublicSellingPrice(");
     expect(mcpServer).toContain("resolvePublicSellingPrice(");
+    expect(motorsApi).toContain("publicAvailabilityLabel(");
+    expect(quoteApi).toContain("publicAvailabilityLabel(");
+    expect(mcpServer).toContain("publicAvailabilityLabel(");
+    const motorsMd = source("supabase/functions/motors-md/index.ts");
+    expect(motorsMd).toContain("publicAvailabilityLabel(");
+    expect(quoteApi).not.toContain('isPublicMotorInStock(m) ? "In Stock" : "Available to Order"');
+    for (const handler of [motorsApi, quoteApi, mcpServer, motorsMd]) {
+      expect(handler).toContain("isPublicMotorInStock(");
+      expect(handler).not.toContain("Boolean(m.in_stock)");
+      expect(handler).not.toContain("Boolean(presented?.inStock ?? m.in_stock)");
+    }
+    expect(mcpServer).not.toContain('.eq("in_stock", true)');
     expect(mcpServer).toContain(".limit(500)");
     expect(mcpServer).toContain(".slice(0, resultLimit)");
+    expect(mcpServer).toContain("filterPublicCatalogMotors(");
+    expect(motorsMd).toContain("filterPublicCatalogMotors(");
+    expect(mcpServer.indexOf("filterPublicCatalogMotors(")).toBeLessThan(
+      mcpServer.indexOf(".slice(0, resultLimit)"),
+    );
 
     for (const handler of [motorsApi, quoteApi, mcpServer]) {
       expect(handler).toContain("applyMotorPresentationOverrides(");
