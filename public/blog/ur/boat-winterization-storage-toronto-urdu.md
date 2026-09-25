@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/ur/boat-winterization-storage-toronto-urdu.md
-last_updated: 2026-09-06
+last_updated: 2026-09-25
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Boat winterization aur storage Toronto ke qareeb | کشتی کی ونٹ�
 description: "Boat winterization aur storage Toronto ke qareeb: کب کروائیں، کیا شامل ہوتا ہے، اور Mercury motor کی ماہر service۔ Rice Lake marina کی اردو گائیڈ پڑھیں۔"
 category: "اردو گائیڈ"
 date_published: 2026-06-12
-date_modified: 2026-09-06
+date_modified: 2026-09-25
 keywords: ["boat winterization Toronto Urdu","کشتی کی ونٹرائزیشن کیسے ہوتی ہے (how is boat winterization done)","boat storage Mississauga ke qareeb (boat storage near Mississauga)","kashti ko sardi ke liye kaise mehfooz karein (how to protect boat for winter)"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** اردو گائیڈ  
 **Published:** 2026-06-12  
-**آخری جائزہ:** 2026-09-06  
+**آخری جائزہ:** 2026-09-25  
 **Read time:** 8 منٹ  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ur/boat-winterization-storage-toronto-urdu
 
@@ -63,7 +63,7 @@ Harris Boat Works آؤٹ ڈور پروفیشنل shrink wrap اسٹوریج، آ
 
 1 دسمبر سے لے کر 1 اپریل تک Harris Boat Works سردیوں کے لیے بند رہتا ہے۔ اس دوران کوئی بھی کشتی pickup نہیں ہو سکتی، نہ مرینا پر کوئی سٹاف موجود ہوتا ہے۔ اگر آپ سردیوں میں اچانک کشتی نکالنا چاہیں تو یہ ممکن نہیں، اس لیے پہلے سے منصوبہ بندی بہت ضروری ہے۔
 
-اگر آپ نومبر کے آخر تک کشتی winterize کروا کر محفوظ کرا دیتے ہیں، تو بہار میں یکم اپریل کے بعد آپ اسے دوبارہ لے جا سکتے ہیں۔ [hbw.wiki/service](https://hbw.wiki/service) مکمل کریں، پھر کسی بھی وقت کشتی چھوڑ سکتے ہیں، آفس آورز کے بعد بھی۔
+اگر آپ بندش شروع ہونے سے پہلے کشتی winterize کروا کر محفوظ کرا دیتے ہیں، تو بہار میں pickup اس سال مرینا کے دوبارہ کھلنے کی تصدیق شدہ تاریخ کے بعد ہوتی ہے۔ pickup کا وقت بھی hbw.wiki/service کے ذریعے طے کریں۔ [hbw.wiki/service](https://hbw.wiki/service) مکمل کریں، پھر کسی بھی وقت کشتی چھوڑ سکتے ہیں، آفس آورز کے بعد بھی۔
 
 اس سروس کے لیے رجوع کریں: [https://hbw.wiki/service](https://hbw.wiki/service)
 
@@ -90,7 +90,7 @@ Harris Boat Works آؤٹ ڈور پروفیشنل shrink wrap اسٹوریج، آ
 
 ### boat winterization کب کرانی چاہیے؟
 
-[hbw.wiki/service](https://hbw.wiki/service) مکمل کریں، پھر کسی بھی وقت کشتی چھوڑ سکتے ہیں، آفس آورز کے بعد بھی۔ مرینا 1 دسمبر سے 1 اپریل تک بند رہتا ہے۔
+سیزن میں کشتی کے آخری استعمال کے فوراً بعد اور پہلی سخت سردی سے پہلے winterization کروائیں، کیونکہ Ontario میں نومبر کے بعد درجہ حرارت اکثر جمنے سے نیچے چلا جاتا ہے۔ جتنا جلدی بک کریں اتنا بہتر۔ hbw.wiki/service مکمل کریں، پھر کسی بھی وقت کشتی چھوڑ سکتے ہیں، آفس آورز کے بعد بھی۔ مرینا 1 دسمبر سے 1 اپریل تک بند رہتا ہے۔
 
 ### اگر کشتی winterize نہ کروائی تو کیا ہوگا؟
 
