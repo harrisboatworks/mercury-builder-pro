@@ -141,6 +141,27 @@ export function assertQuoteDocumentPaymentAvailable(options: {
   assertAvailableSavedQuote(options.row, savedQuoteId, options.now || new Date());
 }
 
+function assertPaidSavedQuote(row: QuoteDocumentAvailability, savedQuoteId: string): void {
+  const rowId = parseSavedQuoteId(row.id);
+  if (
+    !constantTimeEqual(rowId, savedQuoteId)
+    || row.is_soft_lead === true
+    || row.deposit_status !== 'paid'
+    || !isRecord(row.quote_state)
+    || !isRecord(row.quote_state.motor)
+  ) {
+    throw new QuoteDocumentUnavailableError();
+  }
+}
+
+export function assertQuoteDocumentPaidAvailable(options: {
+  row: QuoteDocumentAvailability;
+  savedQuoteId: string;
+}): void {
+  const savedQuoteId = parseSavedQuoteId(options.savedQuoteId);
+  assertPaidSavedQuote(options.row, savedQuoteId);
+}
+
 export function authorizeQuoteDocumentUpload(options: {
   row: QuoteDocumentSavedQuote;
   savedQuoteId: string;
@@ -284,6 +305,42 @@ export async function assertCanonicalQuoteDocumentReady(options: {
     row: options.row,
     savedQuoteId: options.savedQuoteId,
     now: options.now,
+  });
+
+  let binding: { path: string | null; sha256: string | null };
+  try {
+    binding = quoteDocumentBinding({
+      row: options.row,
+      savedQuoteId: options.savedQuoteId,
+    });
+  } catch {
+    throw new QuoteDocumentUnavailableError();
+  }
+  if (!binding.path || !binding.sha256 || !options.object) {
+    throw new QuoteDocumentUnavailableError();
+  }
+
+  try {
+    validateQuotePdf(options.object.bytes, options.object.contentType);
+    if (!constantTimeEqual(await sha256Hex(options.object.bytes), binding.sha256)) {
+      throw new QuoteDocumentUnavailableError();
+    }
+  } catch (error) {
+    if (error instanceof QuoteDocumentUnavailableError) throw error;
+    throw new QuoteDocumentUnavailableError();
+  }
+
+  return { path: binding.path, sha256: binding.sha256 };
+}
+
+export async function assertCanonicalPaidQuoteDocument(options: {
+  row: QuoteDocumentAvailability & Pick<QuoteDocumentSavedQuote, 'quote_pdf_path' | 'quote_pdf_sha256'>;
+  savedQuoteId: string;
+  object: { bytes: Uint8Array; contentType?: string | null } | null;
+}): Promise<{ path: string; sha256: string }> {
+  assertQuoteDocumentPaidAvailable({
+    row: options.row,
+    savedQuoteId: options.savedQuoteId,
   });
 
   let binding: { path: string | null; sha256: string | null };
