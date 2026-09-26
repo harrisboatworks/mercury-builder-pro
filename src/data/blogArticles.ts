@@ -34745,7 +34745,7 @@ Family-owned since 1947, Mercury dealer since 1965, Mercury Premier Dealer.
     imageAlt: 'Harris Boat Works technician inspecting a Mercury outboard in the Gores Landing service shop.',
     author: "Jay Harris",
     datePublished: "2026-06-07",
-    dateModified: "2026-09-11",
+    dateModified: "2026-09-25",
     publishDate: "2026-06-07",
     category: "Buying Guide",
     readTime: "5 min read",
@@ -34816,11 +34816,11 @@ Also useful: [current Mercury outboard prices in Canada](/pricing-reference) and
 
 All figures are Mercury's published dry weight for the lightest available configuration. [Longer shafts](/blog/outboard-shaft-length-guide), Command Thrust gearcases, and rigging add weight, so a single HP can have more than one published number. The Pro XS V6/V8 figures follow [Mercury Pro XS brochure 8M0189590, specification table](https://www.marineloisirs.com/wp-content/uploads/2024/03/8M0189590_MercProXS_Brochure_Web.pdf). Treat these as configuration-dependent reference figures, not a guaranteed installed weight or a substitute for the exact model specification. See [Mercury Marine official specifications](https://www.mercurymarine.com/ca/en/engines/outboard) and confirm the ordered model with HBW.
 
-**Dry weight is not installed weight.** Mercury's dry weight excludes the propeller, fluids, battery cables, controls, and rigging hardware. The real load on your transom once the motor is installed and rigged is meaningfully higher than the chart number, so leave margin when comparing against your capacity plate's maximum motor weight.
+**Dry weight is not installed weight.** Mercury's dry weight excludes the propeller, fluids, battery cables, controls, and rigging hardware. The real load on your transom once the motor is installed and rigged is meaningfully higher than the chart number, so compare the complete installed weight against the boat manufacturer's documented motor-weight limit. If that limit is not shown on the capacity plate or in the boat documentation, confirm it with the manufacturer before choosing a replacement motor.
 
 ### Why weight matters more than people think
 
-**Your transom has a limit.** The [capacity plate](/blog/how-to-read-boat-capacity-plate-ontario) lists a maximum motor weight as well as horsepower. Both matter. A motor that's within the HP rating but over the weight rating still sits wrong.
+**Your transom has a limit.** Check the boat manufacturer's power and installed-motor-weight limits; not every [capacity plate](/blog/how-to-read-boat-capacity-plate-ontario) lists a motor-weight limit. Staying within the horsepower rating alone does not confirm that the boat can carry the complete installation.
 
 **It changes how the boat floats.** Too much weight on the transom and the stern squats: the bow rides high, the boat porpoises, and you burn fuel fighting it. This is one of the most common things we see when someone repowers heavier than the old motor.
 
