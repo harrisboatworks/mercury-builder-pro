@@ -4415,6 +4415,75 @@ export type Database = {
         }
         Relationships: []
       }
+      service_board_send_ledger: {
+        Row: {
+          accepted_at: string | null
+          attempt: number
+          board_date: string
+          board_snapshot: Json | null
+          claimed_at: string
+          confirmation_level: string | null
+          confirmed_at: string | null
+          graph_status: number | null
+          internet_message_id: string | null
+          last_error: string | null
+          recipient_count: number | null
+          send_id: string
+          state: string
+          updated_at: string
+        }
+        Insert: {
+          accepted_at?: string | null
+          attempt: number
+          board_date: string
+          board_snapshot?: Json | null
+          claimed_at?: string
+          confirmation_level?: string | null
+          confirmed_at?: string | null
+          graph_status?: number | null
+          internet_message_id?: string | null
+          last_error?: string | null
+          recipient_count?: number | null
+          send_id: string
+          state: string
+          updated_at?: string
+        }
+        Update: {
+          accepted_at?: string | null
+          attempt?: number
+          board_date?: string
+          board_snapshot?: Json | null
+          claimed_at?: string
+          confirmation_level?: string | null
+          confirmed_at?: string | null
+          graph_status?: number | null
+          internet_message_id?: string | null
+          last_error?: string | null
+          recipient_count?: number | null
+          send_id?: string
+          state?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      service_board_watchdog_runs: {
+        Row: {
+          board_date: string
+          check_kind: string
+          claimed_at: string
+        }
+        Insert: {
+          board_date: string
+          check_kind: string
+          claimed_at?: string
+        }
+        Update: {
+          board_date?: string
+          check_kind?: string
+          claimed_at?: string
+        }
+        Relationships: []
+      }
       service_requests: {
         Row: {
           boat_description: string | null
@@ -6815,6 +6884,15 @@ export type Database = {
         }
         Relationships: []
       }
+      unit_inventory_sync_receipt: {
+        Row: {
+          completed_at: string | null
+          records_fetched: number | null
+          records_upserted: number | null
+          status: string | null
+        }
+        Relationships: []
+      }
     }
     Functions: {
       add_customer_memory: {
@@ -6978,6 +7056,45 @@ export type Database = {
         Returns: Json
       }
       claim_saved_quotes_for_current_user: { Args: never; Returns: number }
+      claim_service_board_send: {
+        Args: { p_date: string; p_send_id: string }
+        Returns: {
+          accepted_at: string | null
+          attempt: number
+          board_date: string
+          board_snapshot: Json | null
+          claimed_at: string
+          confirmation_level: string | null
+          confirmed_at: string | null
+          graph_status: number | null
+          internet_message_id: string | null
+          last_error: string | null
+          recipient_count: number | null
+          send_id: string
+          state: string
+          updated_at: string
+        }[]
+        SetofOptions: {
+          from: "*"
+          to: "service_board_send_ledger"
+          isOneToOne: false
+          isSetofReturn: true
+        }
+      }
+      claim_service_board_watchdog_run: {
+        Args: { p_date: string; p_kind: string }
+        Returns: {
+          board_date: string
+          check_kind: string
+          claimed_at: string
+        }[]
+        SetofOptions: {
+          from: "*"
+          to: "service_board_watchdog_runs"
+          isOneToOne: false
+          isSetofReturn: true
+        }
+      }
       cleanup_expired_sessions: { Args: never; Returns: number }
       cleanup_motor_duplicates_by_display: {
         Args: never
@@ -7955,6 +8072,7 @@ export type Database = {
         }
         Returns: Json
       }
+      read_service_board_watchdog: { Args: never; Returns: Json }
       reconcile_hbw_call_transcription_links: {
         Args: { p_gateway_secret: string; p_limit?: number }
         Returns: {
