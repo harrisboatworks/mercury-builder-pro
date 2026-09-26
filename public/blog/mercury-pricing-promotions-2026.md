@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-pricing-promotions-2026.md
-last_updated: 2026-09-06
+last_updated: 2026-09-26
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "2026 Mercury Buying: Pricing, Promotions and Smart Timing"
 description: "Work through 2026 Mercury outboard pricing. Understand MSRP vs dealer pricing, seasonal promotions, winter buying advantages."
 category: "Buying Guide"
 date_published: 2026-05-08
-date_modified: 2026-09-06
+date_modified: 2026-09-26
 keywords: ["mercury outboard price 2026","mercury promotions","mercury dealer pricing","best time buy outboard","mercury financing options"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-05-08  
-**Last reviewed:** 2026-09-06  
+**Last reviewed:** 2026-09-26  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-pricing-promotions-2026
 
@@ -107,7 +107,7 @@ Motor MSRP is one line on the invoice. Here is the full picture across Mercury's
 
 **$2,999 - $5,200**
 
-Motor only. ProKicker remote variants land at the top of the range.
+Motor only.
 
 #### FourStroke 60 to 115 (mid-range main)
 

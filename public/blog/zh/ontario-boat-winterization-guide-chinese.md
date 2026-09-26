@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/ontario-boat-winterization-guide-chinese.md
-last_updated: 2026-09-06
+last_updated: 2026-09-26
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "安省船主冬化与室外冬储清单：什么时候送、要做什么
 description: "安省船主冬化与室外冬储中文指南：分清发动机冬化和存船，按机型确认项目，并了解 HBW 先到先办、随时送船（包括下班后）和 12 月 1 日至 4 月 1 日停业。"
 category: "mandarin"
 date_published: 2026-06-12
-date_modified: 2026-09-06
+date_modified: 2026-09-26
 keywords: ["冬季保养","冬储","安省","中文","winterization","Mercury"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** mandarin  
 **Published:** 2026-06-12  
-**最后审核:** 2026-09-06  
+**最后审核:** 2026-09-26  
 **Read time:** 9 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/ontario-boat-winterization-guide-chinese
 
@@ -71,7 +71,6 @@ HBW **12 月 1 日至 4 月 1 日关闭**，期间不接收船只，也不进行
 | 防雪压 | 配骨架支撑可以 | 当然可以 |
 | 防漆面氧化 | 收缩膜下温差大，但日晒最少 | 最好 |
 | 防鼠 | 室外鼠害低于无遮蔽 | 视设施而定 |
-| 价格 | 较低 | 高 30-100% |
 | HBW 提供吗 | **是（室外专业收缩膜、室外无遮盖或仅收缩膜）** | **否：不提供室内或加热存储** |
 
 HBW 不提供室内或加热存储。
