@@ -35,6 +35,7 @@ const SERVICE_SLUGS = new Set([
 const RENTAL_SLUGS = new Set([
   'docking-boat-in-wind-rice-lake',
   'group-boat-rentals-rice-lake',
+  'gta-chinese-rice-lake-day-trip-plan',
   'rice-lake-boat-launch-guide',
   'rice-lake-boat-rental-guide-2026',
   'rice-lake-boating-guide-2026',

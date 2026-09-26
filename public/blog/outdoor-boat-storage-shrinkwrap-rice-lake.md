@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/outdoor-boat-storage-shrinkwrap-rice-lake.md
-last_updated: 2026-09-07
+last_updated: 2026-09-26
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "HBW Outdoor Winter Boat Storage & Shrinkwrap"
 description: "Outdoor winter boat storage and shrinkwrap at Harris Boat Works, Gores Landing on Rice Lake. What's included, what's not, and how to prep for an Ontario winter."
 category: "Service & Maintenance"
 date_published: 2026-05-10
-date_modified: 2026-09-07
+date_modified: 2026-09-26
 keywords: ["outdoor boat storage rice lake","boat shrinkwrap kawarthas","gores landing winter storage","harris boat works winter storage","boat winterization rice lake","kawartha shrinkwrap"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Category:** Service & Maintenance  
 **Published:** 2026-05-10  
-**Last reviewed:** 2026-09-07  
+**Last reviewed:** 2026-09-26  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/outdoor-boat-storage-shrinkwrap-rice-lake
 
@@ -110,7 +110,7 @@ The boat and trailer must be safe to move. If HBW cannot safely accept or positi
 
 Shrinkwrap protects the boat from weather. It does not prepare an engine, gearcase, fuel system, livewell, freshwater system, or head for freezing conditions.
 
-The exact winterization procedure depends on the engine family, serial number, installed equipment, prior maintenance, and storage position. HBW repairs Mercury outboards and MerCruiser products; the current service request form states that engine-repair boundary. Confirm any storage or systems-only work for another brand before drop-off.
+The exact winterization procedure depends on the engine family, serial number, installed equipment, prior maintenance, and storage position. HBW repairs Mercury outboards and MerCruiser products; the current service request form states that engine-repair boundary. Winterization is different: we winterize all brands of outboards, sterndrives, inboards and PWCs.
 
 Avoid universal shortcuts:
 

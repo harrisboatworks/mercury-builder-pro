@@ -29,6 +29,7 @@ describe('blog revenue driver', () => {
   it.each([
     ['Boating Lifestyle', 'group-boat-rentals-rice-lake'],
     ['租船与钓鱼', 'first-boat-rental-rice-lake-chinese-guide'],
+    ['mandarin', 'gta-chinese-rice-lake-day-trip-plan'],
   ])('routes genuine rental content to rentals', (category, slug) => {
     expect(getBlogRevenueDriver(category, slug)).toBe(BLOG_REVENUE_DRIVER.RENTALS);
   });

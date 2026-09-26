@@ -6841,7 +6841,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Official Mercury freshwater photos of 75, 90 and 115 HP FourStroke outboards on the water',
     author: 'Harris Boat Works',
     datePublished: '2026-01-26',
-    dateModified: '2026-09-11',
+    dateModified: '2026-09-26',
     publishDate: '2026-01-26',
     category: 'Comparison',
     readTime: '9 min read',
@@ -7033,7 +7033,7 @@ Build a quote for 75, 90, or 115 HP on the [motor selection page](/quote/motor-s
 
 ---
 
-_Pricing ranges in this article are HBW's working 2026 estimates, last reviewed 2026-08-19. The actual price for your specific motor and configuration is on the [motor selection page](/quote/motor-selection), which is the source of truth and updates as Mercury pricing and HBW promotions change. Mercury model years change every July 1, and we refresh ranges in articles annually._
+_This article does not quote prices. Current Mercury CAD pricing is on the [pricing reference](/pricing-reference); the [motor selection page](/quote/motor-selection) builds the exact configuration._
 
 ---
 
@@ -11696,7 +11696,7 @@ This guide was checked July 27, 2026 against Mercury's current product pages and
     imageAlt: 'Mercury Pro XS outboard on a boat outside the Harris Boat Works shop in Gores Landing, Ontario',
     author: 'Harris Boat Works',
     datePublished: '2026-05-08',
-    dateModified: '2026-09-06',
+    dateModified: '2026-09-26',
     publishDate: '2026-05-08',
     category: 'Buying Guide',
     readTime: '10 min read',
@@ -11778,7 +11778,7 @@ eyebrow: All-in ballparks
 subhead: Motor MSRP is one line on the invoice. Here is the full picture across Mercury's tiers, before any trade-in or current promo.
 item1Label: FourStroke 9.9 (kicker / small tiller)
 item1Value: $2,999 - $5,200
-item1Note: Motor only. ProKicker remote variants land at the top of the range.
+item1Note: Motor only.
 item2Label: FourStroke 60 to 115 (mid-range main)
 item2Value: $12,000 - $18,000
 item2Note: Most common Rice Lake / Kawarthas repower range. Includes Command Thrust where applicable.
@@ -16567,19 +16567,19 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
   {
     slug: 'mercury-outboard-rigging-costs-ontario',
     title: 'Mercury Outboard Rigging Costs Explained (Ontario 2026)',
-    description: 'Mercury rigging costs: throttle, steering, harness, gauges, hose, cables, prop. Typical repower with post-2010 controls: $500-$1,500 CAD.',
+    description: 'Mercury rigging costs: throttle, steering, harness, gauges, hose, cables. Typical repower with post-2010 controls: $500-$1,500 CAD before prop and installation labour.',
     image: '/lovable-uploads/hero-mercury-rigging-costs.png',
     imageAlt: 'Illustration of rigging work on an outboard powerhead with the cowl removed. Illustrative, not a Harris Boat Works job.',
     author: 'Jay Harris',
     datePublished: '2026-05-05',
-    dateModified: '2026-09-11',
+    dateModified: '2026-09-26',
     publishDate: '2026-05-05',
     category: 'Repower',
     readTime: '10 min read',
     keywords: ['mercury rigging cost', 'outboard rigging ontario', 'boat repower rigging', 'hydraulic steering upgrade', 'mercury install cost'],
     content: `## Quick Answer
 
-Rigging costs vary significantly by job. A like-for-like Mercury-to-Mercury swap on post-2010 controls can land under $1,500. A full re-rig, new gauges, harness, controls, and steering, runs $2,500 to $6,000. We quote rigging line by line, no surprises. Build an installed quote with rigging spelled out at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**.
+Rigging costs vary significantly by job. A like-for-like Mercury-to-Mercury swap on post-2010 controls can land under $1,500. A full re-rig, new gauges, harness, controls, and steering, runs $2,500 to $6,000. Both figures are before prop and installation labour. We quote rigging line by line, no surprises. Build an installed quote with rigging spelled out at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**.
 
 ---
 
@@ -16737,7 +16737,7 @@ The hidden cost: SmartCraft display. Most repower customers want the data screen
 Throttle and shift controls, steering, wiring harness, gauges or display, battery cables and switches, fuel hose and filter, and propeller. Everything connecting the motor to the boat's systems.
 
 **How much does Mercury rigging cost in Ontario?** 
-Mercury-to-Mercury on post-2010 controls in good condition: $500 to $1,500 CAD. Brand conversion or full re-rig: $2,500 to $6,000 CAD. Hydraulic steering upgrade adds $1,650 to $3,500 CAD. All before HST.
+Mercury-to-Mercury on post-2010 controls in good condition: $500 to $1,500 CAD. Brand conversion or full re-rig: $2,500 to $6,000 CAD. Hydraulic steering upgrade adds $1,650 to $3,500 CAD. All before HST, prop and installation labour.
 
 **Is rigging included in the quote from mercuryrepower.ca?** 
 Yes. The configurator builds the rigging cost into the all-in installed price.
@@ -16778,7 +16778,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     faqs: [
       {
         question: 'How much does Mercury rigging cost?',
-        answer: 'For Mercury-to-Mercury repowers with post-2010 controls in good shape, rigging lands $500 to $1,500 CAD. Brand conversions add $1,500 to $3,000. Full rerigs (everything new) run $2,500 to $6,000. Specific quote at [/quote/motor-selection](/quote/motor-selection).'
+        answer: 'For Mercury-to-Mercury repowers with post-2010 controls in good shape, rigging lands $500 to $1,500 CAD. Brand conversions add $1,500 to $3,000. Full rerigs (everything new) run $2,500 to $6,000, all before prop, installation labour and HST. Specific quote at [/quote/motor-selection](/quote/motor-selection).'
       },
       {
         question: 'What\'s included in rigging?',
@@ -20025,7 +20025,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Diagram connecting warning information, the engine model and serial number, and the exact manual response. Follow the warning response immediately; record details only when safe.',
     author: 'Harris Boat Works',
     datePublished: '2026-02-06',
-    dateModified: "2026-09-11",
+    dateModified: "2026-09-26",
     publishDate: '2026-02-06',
     category: 'Troubleshooting',
     readTime: '12 min read',
@@ -20059,10 +20059,10 @@ Related: [Mercury service at HBW](/maintenance).
 
 | Beep pattern | What it means | What to do |
 |---|---|---|
-| **One beep at key-on** | Normal system test; the horn confirms it is working | None |
+| **Brief horn at key-on** | Normal system test; the horn confirms it is working | None |
 | **Four beeps every 2 minutes** | Low oil reserve (2-stroke engine-mounted reservoir) OR water in the water-separating fuel filter | Check the display if equipped; check oil reservoir and fuel filter; both are advisory-level, do not ignore |
 | **Continuous tone** | Serious or critical fault such as overheat, critically low oil, or oil pump failure. Engine Guardian may limit power. Horn strategy varies by engine family and year; some newer engines use a six-second horn instead, and overspeed protection can cut power with no horn at all | Reduce to idle, check the telltale stream, shut down if it persists; do not override |
-| **Intermittent / random beeps** | Sensor or wiring fault | Note conditions (RPM, load, timing) and book a diagnostic |
+| **Intermittent / random beeps** | Voltage, sensor or wiring fault | Note conditions (RPM, load, timing) and book a diagnostic |
 
 Patterns vary by engine family and model year. Some small EFI FourStroke models (like the 10 EFI) use six-beep patterns for low oil pressure and sensor faults, while many current SmartCraft engines use six-second horn strategies instead of repeating counts. The owner's manual for your serial number is the source of truth.
 
@@ -20089,7 +20089,7 @@ April and May are our highest-volume service months. The alarms cluster predicta
 
 **#2: Low battery voltage / battery alarm.** Battery sat all winter, sulphated. Fix: charge it first, then load or conductance test; replace it if it fails rated capacity or cannot hold charge, or if it does not meet Mercury's spec for the motor (a 150 FourStroke calls for 1000 MCA / 800 CCA; V10 and V12 Verado require AGM or lithium marine cranking batteries).
 
-**#3: Engine over-temperature within first 5 minutes of running.** Impeller didn't survive winter, or raw water intake has wasp nest, mud, or zebra mussel debris. Fix: impeller replacement and intake cleaning.
+**#3: Engine over-temperature within first 5 minutes of running.** Impeller didn't survive winter, or raw water intake has wasp nest, mud, or zebra mussel debris. Fix: impeller replacement and intake cleaning. An idle overheat is a different pattern (we cover that in [our idle-overheat guide](/blog/mercury-outboard-overheating-at-idle-fix-ontario)).
 
 ## Optimax DFI oil alarms: Fault 13, 14, and the float problem
 
@@ -23174,7 +23174,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Two boxed marine batteries strapped in a boat battery locker with a rotary battery switch above them.',
     author: 'Jay Harris',
     datePublished: '2026-04-01',
-    dateModified: '2026-09-07',
+    dateModified: '2026-09-26',
     publishDate: '2026-04-01',
     category: "Service",
     readTime: '~12 min read',
@@ -23213,7 +23213,7 @@ step1Question: Does the battery hold above 9.5V under starter load?
 step1Tip: Resting voltage lies. A tired battery can read 12.4V at rest and collapse to 8V the moment the starter pulls. Get a real load test at any auto parts store, free.
 step2Label: Terminals and cables
 step2Question: Are the terminals clean and the cable connections tight?
-step2Tip: White or green powder means corrosion, which means resistance, which mimics a dead battery. Clean with baking soda and water, then dielectric grease.
+step2Tip: White or green powder means corrosion, which means resistance, which mimics a dead battery. Clean with baking soda and water, reconnect and tighten, then coat the finished connection with dielectric grease.
 step3Label: Charging system (alternator output)
 step3Question: With the engine at 1,500 RPM, does battery voltage read 13.8V to 14.4V?
 step3Tip: Under 13.5V running means the alternator or voltage regulator isn't charging. The battery is being drained by the boat, not failing on its own.
@@ -23376,7 +23376,7 @@ For the full winterization picture, see our [DIY Mercury Outboard Winterization 
 
 1. **Check resting voltage.** After an hour off charge: 12.6V+ = healthy. 12.4-12.5V = okay. Below 12.4V = recharge and retest. Below 12.2V after a full charge = replace it.
 2. **Load test.** Voltage alone isn't the whole picture, a battery can read 12.6V and still fail under cranking load. Our shop load tests, and most auto parts stores will test for free.
-3. **Inspect terminals.** White or green crust is corrosion. Clean with a paste of baking soda and water, rinse, dry, and apply dielectric grease before reconnecting. This prevents recurrence.
+3. **Inspect terminals.** White or green crust is corrosion. Clean with a paste of baking soda and water, rinse, dry, reconnect and tighten, then coat the finished connection with dielectric grease. This prevents recurrence.
 4. **Check water levels (flooded batteries only).** Top up with distilled water, never tap water.
 5. **Confirm switch position.** Make sure it's in the correct operating position, not OFF.
 6. **Reconnect and crank.** A healthy battery on a healthy engine starts in 2 to 3 seconds.
@@ -23961,7 +23961,7 @@ Single lever that mounts on top of the helm console. Push forward for forward ge
 
 **Binnacle Gen II Single Lever (mechanical):** CAD $700 to $1,200. The workhorse. Connects via push-pull cables. Works reliably on single-engine setups up to 200 HP.
 
-**Binnacle Gen II Single Lever DTS (Digital Throttle & Shift):** CAD $1,400 to $2,400. Same physical lever, but cables are replaced by an electronic harness. Smoother shifting, supports multi-engine sync, integrates with SmartCraft. Standard for 250+ HP, twin-engine setups, or when VesselView integration needs to feel clean.
+**Binnacle Gen II Single Lever DTS (Digital Throttle & Shift):** CAD $1,400 to $2,400. Same physical lever, but cables are replaced by an electronic harness. Smoother shifting, supports multi-engine sync, integrates with SmartCraft. Standard on current Mercury Verado V8/V10/V12 packages, and the right call for twin-engine setups or when VesselView integration needs to feel clean.
 
 ### Side-Mount Controls
 
@@ -23969,7 +23969,7 @@ Mounts on the side of the helm console or a pedestal. Same function as a binnacl
 
 ### DTS (Digital Throttle & Shift)
 
-Mercury's electronic control system. Replaces mechanical throttle and shift cables with a wiring harness. Smoother shifting, no "clunk" between gears, multi-engine sync, cruise control, SmartTow integration. Standard on Mercury's V8 and V12 motors, but confirm the requirement for your specific model. Optional on some V6 models. For most single-engine Ontario repowers under 250 HP, mechanical controls are the right call.
+Mercury's electronic control system. Replaces mechanical throttle and shift cables with a wiring harness. Smoother shifting, no "clunk" between gears, multi-engine sync, cruise control, SmartTow integration. DTS is standard on current Mercury Verado V8/V10/V12 packages in the 250-600 HP range. Confirm DTS fitment on the exact Pro XS or FourStroke model rather than inferring it from horsepower. For most single-engine Ontario repowers under 250 HP, mechanical controls are the right call.
 
 ---
 
@@ -24132,7 +24132,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-mercury-controls-rigging-guide.png',
     author: 'Jay Harris',
     datePublished: '2026-05-08',
-    dateModified: '2026-09-11',
+    dateModified: '2026-09-26',
     publishDate: '2026-05-08',
     category: 'Mercury Outboards',
     readTime: '~16 min read',
@@ -24144,7 +24144,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         question: 'Do I need DTS on a single-engine V6?',
-        answer: 'No. Mechanical controls work fine on a single-engine 150-225 HP motor and save you CAD $1,500-$2,500. DTS becomes the right call on twin-engine setups, V8+ motors (where it\'s mandatory), or if you specifically want VesselView integration to feel clean.',
+        answer: 'No. Mechanical controls work fine on a single-engine 150-225 HP motor and save you CAD $1,500-$2,500. DTS becomes the right call on twin-engine setups, on current Verado models (where DTS is standard), or if you specifically want VesselView integration to feel clean.',
       },
       {
         question: 'Is hydraulic steering worth it for 90 HP?',
@@ -25186,7 +25186,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: "/lovable-uploads/hero-outdoor-shrinkwrap-storage-rice-lake.png",
     author: "Harris Boat Works",
     datePublished: "2026-05-10",
-    dateModified: "2026-09-07",
+    dateModified: "2026-09-26",
     publishDate: "2026-05-10",
     category: "Service & Maintenance",
     readTime: "9 min read",
@@ -25283,7 +25283,7 @@ The boat and trailer must be safe to move. If HBW cannot safely accept or positi
 
 Shrinkwrap protects the boat from weather. It does not prepare an engine, gearcase, fuel system, livewell, freshwater system, or head for freezing conditions.
 
-The exact winterization procedure depends on the engine family, serial number, installed equipment, prior maintenance, and storage position. HBW repairs Mercury outboards and MerCruiser products; the current service request form states that engine-repair boundary. Confirm any storage or systems-only work for another brand before drop-off.
+The exact winterization procedure depends on the engine family, serial number, installed equipment, prior maintenance, and storage position. HBW repairs Mercury outboards and MerCruiser products; the current service request form states that engine-repair boundary. Winterization is different: we winterize all brands of outboards, sterndrives, inboards and PWCs.
 
 Avoid universal shortcuts:
 
