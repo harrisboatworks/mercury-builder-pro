@@ -2587,7 +2587,7 @@ Docking causes a lot of first-timer anxiety, but the basic approach is simple:
 - Neutral early, glide, short reverse burst to stop.
 - Let the crew step off with lines. Nobody jumps, nobody pulls the boat by hand while it's moving.
 
-![A rental pontoon easing up to the dock at low speed](/lovable-uploads/inline-pontoon-docking-approach.webp)
+![Top-down diagram of a four-step docking approach: line up at idle, come in at a shallow angle, shift to neutral early with a short reverse burst, then crew steps off with lines.](/lovable-uploads/inline/pontoon-docking-steps-2026-09.webp)
 
 And here's the part we mean sincerely: come in slow and crooked and bump a fender, and that's a normal Tuesday. The fenders exist because everyone was new once. And at day's end you're landing back at our dock, where staff handle the return check anyway.
 
@@ -3231,8 +3231,8 @@ If water flow has changed, an overheat alarm has sounded, or you cannot identify
     title: 'Mercury Command Thrust Guide 2026',
     seoTitle: 'Mercury Command Thrust Guide 2026: All Models | HBW',
     description: 'Mercury Command Thrust complete guide for 2026 covers 9.9 ProKicker to 115 FourStroke. Includes eligibility table, retrofit reality, decision matrix.',
-    image: '/lovable-uploads/command-thrust-complete-guide-hero.png',
-    imageAlt: 'Mercury 115 HP Command Thrust outboard on a pontoon boat at sunset, ideal for heavy loads on Ontario lakes.',
+    image: '/lovable-uploads/blog-heroes-2026-09/command-thrust-what-changes.webp',
+    imageAlt: "Infographic: Command Thrust keeps the same powerhead and horsepower but adds a larger gearcase, a larger prop and a lower gear ratio; best fit for heavy pontoons, tritoons and commercial boats.",
     author: 'Jay Harris',
     datePublished: '2026-05-28',
     dateModified: '2026-09-11',
@@ -4644,7 +4644,7 @@ We won't over-power your boat. We also won't recommend the cheapest option if we
 
 ---
 
-![Mercury 25 HP and 90 HP outboards on aluminum boats to illustrate different horsepower needs for boat sizing.](/lovable-uploads/inline/inline-horsepower-selection.png)
+![Infographic: start one Mercury model step below the capacity plate maximum, then adjust for hull, load, use and where you run the boat.](/lovable-uploads/inline/hp-one-step-below-max-2026-09.webp)
 
 ## When to step up, when to stay
 
@@ -8268,8 +8268,8 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     title: 'Best Mercury for a Center Console 2026: 115 HP to Quad V10',
     seoTitle: "Best Mercury for a Center Console 2026: 115 HP to Quad V10",
     description: "How we'd power a center console by hull length: a single 115 inshore, twin V6s and V8s midrange, up to triple and quad V10s for offshore hulls.",
-    image: '/lovable-uploads/center-console-mercury-hero.jpg',
-    imageAlt: 'Single-engine center console fishing boat with a Mercury 90 FourStroke on the stern, skipper at the helm, on a calm Ontario lake.',
+    image: '/lovable-uploads/blog-heroes-2026-09/center-console-length-power.webp',
+    imageAlt: "Infographic: center console lengths from 17 to 28-plus feet matched to typical Mercury horsepower ranges and example motors, from 90 to 150 HP up to triple Verado setups.",
     author: 'Harris Boat Works',
     datePublished: '2026-03-23',
     dateModified: '2026-09-06',
@@ -9099,7 +9099,7 @@ whenInDoubt: Most Ontario recreational buyers do not need SeaPro. If you are not
 
 ---
 
-![Black Mercury SeaPro outboard on a rugged aluminum work boat, illustrating commercial-grade reliability for guides.](/lovable-uploads/inline/inline-mercury-seapro-commercial.png)
+![Infographic: what differs between Mercury SeaPro and a standard FourStroke, the typical price premium, and which annual-hours bands actually need SeaPro.](/lovable-uploads/inline/seapro-vs-fourstroke-2026-09.webp)
 
 You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
@@ -10190,7 +10190,7 @@ escalationBody: We run a pre-opener service every spring, typically $200 to $350
 
 ---
 
-![Aluminum fishing boat with Mercury outboard docked on a misty lake, ready for the Ontario walleye opener.](/lovable-uploads/inline/inline-walleye-opener-dawn.png)
+![Infographic: five walleye opener prep checks in order: battery, fuel system, motor flush and telltale, trailer bearings and tires, and live well, lights and electronics.](/lovable-uploads/inline/walleye-opener-prep-order-2026-09.webp)
 
 ## What HBW Does for Opener Prep Customers
 
@@ -15600,7 +15600,7 @@ When in doubt, weigh the rig at a CAT scale before a long trip. Knowing the actu
 
 ---
 
-![Pickup truck towing an aluminum fishing boat eastbound on Highway 401 at golden hour](/lovable-uploads/inline/inline-401-east-trailering.png)
+![Infographic: six pre-trip trailer checks before towing: tires, bearings, lights, coupler and chains, boat tie-downs and drain plug, and brakes.](/lovable-uploads/inline/trailer-pre-trip-check-2026-09.webp)
 
 ## What to Do at the Launch in Gores Landing
 
@@ -23172,8 +23172,8 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     title: 'Mercury Boat Battery Guide Ontario',
     seoTitle: "Mercury Boat Battery Guide for Ontario (2026)",
     description: "Marine battery guide for Ontario boaters: types, switches, wiring, winter storage, and spring startup so you're not stranded on the May long weekend.",
-    image: '/lovable-uploads/hero-mercury-battery-guide.png',
-    imageAlt: 'Two boxed marine batteries strapped in a boat battery locker with a rotary battery switch above them.',
+    image: '/lovable-uploads/blog-heroes-2026-09/battery-dual-switch-wiring.webp',
+    imageAlt: "Infographic: wiring diagram of a cranking battery and a house battery sharing one battery selector switch, with a fused house feed, a common ground bus and five battery care takeaways.",
     author: 'Jay Harris',
     datePublished: '2026-04-01',
     dateModified: '2026-09-26',
@@ -24915,8 +24915,8 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     title: 'Mercury SmartCraft Connect: Features, App & Installation',
     seoTitle: "SmartCraft Connect Features, App & Install Guide | HBW",
     description: 'See what SmartCraft Connect shows in the Mercury Marine app, how the module is installed, and how it differs from helm-display integrations.',
-    image: '/lovable-uploads/hero-smartcraft-connect-app.png',
-    imageAlt: 'Smartphone showing Mercury Marine app engine data with a white Mercury outboard motor at a dock in the background.',
+    image: '/lovable-uploads/blog-heroes-2026-09/smartcraft-connect-path.webp',
+    imageAlt: "Infographic: how SmartCraft Connect links a compatible Mercury engine through the Connect module to the free Mercury Marine app, what data appears on the phone, and which horsepower and model years qualify.",
     author: 'Jay Harris',
     datePublished: '2026-05-09',
     dateModified: '2026-09-11',
@@ -31295,8 +31295,8 @@ Jay Harris helps run Harris Boat Works, a third-generation family marina in Gore
     title: 'Boat Electrical Safety Ontario',
     seoTitle: 'Boat Electrical Safety Checklist Ontario | Harris Boat Works',
     description: 'Marine electrical safety checklist for Ontario freshwater boats: corrosion, fuses, bilge pump, battery switch, amateur wiring traps.',
-    image: '/lovable-uploads/hero-boat-electrical-safety-checklist.png',
-    imageAlt: 'Illustration of a tidy marine battery, switch and fuse block layout with circuits labelled for battery, house, engine and bilge pump. Illustrative, not a Harris Boat Works installation.',
+    image: '/lovable-uploads/blog-heroes-2026-09/electrical-seasonal-check.webp',
+    imageAlt: "Infographic: a one-line boat DC circuit from battery through switch and fuse panel to bilge pump, lights and electronics, with five seasonal checks for terminals, switch, fuses, bilge pump and wiring.",
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
     dateModified: '2026-09-07',
@@ -32360,8 +32360,8 @@ Harris Boat Works, family-owned since 1947. A Mercury Premier Dealer, selling Me
     seoTitle: 'Mercury Avator 7.5e Review, Range & Best Uses (2026)',
     title: 'Mercury Avator 7.5e: Review, Range, and Best Uses (2026)',
     description: 'Mercury Avator 7.5e electric outboard: honest review, current pricing status, battery life, range, and best uses on Rice Lake.',
-    image: '/lovable-uploads/blog-heroes-2026-07/batch-b/hero-avator-7-5e-battery-freshwater-2026-07.webp',
-    imageAlt: 'Angler holding an Avator battery beside a Mercury Avator 7.5e on a freshwater aluminum fishing boat',
+    image: '/lovable-uploads/blog-heroes-2026-09/avator-7-5e-at-a-glance.webp',
+    imageAlt: "Infographic: Mercury Avator 7.5e specs, Mercury test-boat range at full and 25% throttle, and which boats and uses it suits.",
     author: 'Jay Harris',
     datePublished: '2026-05-24',
     dateModified: '2026-09-11',
@@ -34162,7 +34162,8 @@ Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON - Mercury Marin
 ---
 
 `,
-    image: '/lovable-uploads/hero-on-water-load-test.png',
+    image: '/lovable-uploads/blog-heroes-2026-09/honda-to-mercury-what-changes.webp',
+    imageAlt: "Infographic: in a Honda to Mercury repower the motor, controls, cables, gauges and prop get replaced; battery, fuel tank and electronics usually carry over; steering is checked case by case.",
     author: 'Jay Harris, Harris Boat Works',
     datePublished: '2026-05-28',
     category: 'Repower Guide',
