@@ -2511,7 +2511,8 @@ Get your headcount, pick your boats, and get each driver licensed this week. The
     slug: "first-time-boat-rental-rice-lake-guide",
     title: "First Time Renting a Boat? What We Tell Every Renter at Our Dock",
     description: "Never driven a boat? Review the core handling and safety guidance for a first Rice Lake rental: controls, docking, wind, hazards, and what to do if something goes wrong.",
-    image: "/lovable-uploads/hero-first-time-boat-rental.webp",
+    image: '/lovable-uploads/blog-heroes-2026-09/first-rental-day-steps.webp',
+    imageAlt: "Four-step timeline of a first Rice Lake boat rental day: what to bring, check-in at the HBW dock, on-water basics, and heading back.",
     author: "Jay Harris",
     datePublished: "2026-07-02",
     dateModified: "2026-09-06",
@@ -8138,7 +8139,7 @@ If your fuel burn is significantly above these ranges for your setup, prop pitch
 
 ---
 
-![Mercury SmartCraft gauge showing 24.6 L/h (6.5 US gal/h) fuel flow at the helm, illustrating real-time fuel consumption monitoring.](/lovable-uploads/inline/inline-smartcraft-fuel-gauge.png)
+![Example SmartCraft-style fuel flow readout at 24.6 L/h, 4,200 RPM and 28 MPH, with the typical 3,500 to 4,500 RPM cruise sweet spot and the five things that change fuel flow.](/lovable-uploads/inline/fuel-flow-gauge-five-factors-2026-09.webp)
 
 ## Ethanol and Fuel Quality
 
@@ -9421,8 +9422,8 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     title: 'Electric Trolling Motor vs Kicker Guide',
     seoTitle: "Trolling Motor vs Kicker on Rice Lake: Which Wins | HBW",
     description: "An HBW take on trolling motors vs kicker motors, when each wins on Rice Lake and the Kawarthas, the math on running both, and why most serious anglers do.",
-    image: '/lovable-uploads/hero-mercury-kicker-transom.png',
-    imageAlt: 'Mercury FourStroke kicker and main outboard mounted on a boat transom for Rice Lake trolling and big water navigation.',
+    image: '/lovable-uploads/blog-heroes-2026-09/trolling-motor-vs-kicker.webp',
+    imageAlt: "Top-down diagram of a fishing boat with an electric trolling motor at the bow and a gas kicker beside the main outboard, with what each one is best at.",
     author: 'Harris Boat Works',
     datePublished: '2026-05-04',
     dateModified: '2026-09-07',
@@ -9598,8 +9599,8 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     title: 'Boat Motor HP Size Guide Ontario',
     seoTitle: 'Boat Motor Size Guide (How to Calculate HP)',
     description: 'Use our boat motor sizing guide. Inventory hull, engine, fuel, equipment, people, and gear, stay within manufacturer limits, and compare examples. No weight-per-HP formula.',
-    image: '/lovable-uploads/Boat_Sizes_Dock_Comparison_Hero_2026.png',
-    imageAlt: 'Three boats with Mercury outboards of increasing size at a marina dock, from small fishing boat to large pontoon',
+    image: '/lovable-uploads/blog-heroes-2026-09/motor-size-load-inventory.webp',
+    imageAlt: "Infographic: a six-line load inventory to record before sizing a motor, three Ontario boat examples with hull and people-plus-gear weights drawn to scale, and a reminder that the capacity plate is a limit, not a target.",
     author: 'Harris Boat Works',
     datePublished: '2026-05-11',
     dateModified: '2026-09-18',
@@ -16256,7 +16257,7 @@ There are real scenarios where Boost can be worth discussing on an eligible moto
 
 Mercury has described Boost as part of a broader software-upgrade capability, but future modes, eligibility expansions, prices, and compatibility are not promises to a current buyer. Buy the motor that correctly powers the boat today. Treat any later software option as a separate decision only after Mercury publishes the terms for that exact serial number.
 
-![Mercury Pro XS outboard with Boost decal on a pontoon boat transom, illustrating the software upgrade performance.](/lovable-uploads/inline/inline-boost-150hp-pontoon.png)
+![Chart: a standard 150 FourStroke is not on Mercury Boost dealer-installed list while the Mercury Racing 150R is, what Boost does and does not change, and the six factors that drive pontoon top speed.](/lovable-uploads/inline/boost-150hp-pontoon-what-matters-2026-09.webp)
 
 ### What We Check Before Recommending Boost
 
@@ -22888,8 +22889,8 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     title: 'Pontoon HP Sizing: The Rice Lake Decision Tree by Length',
     seoTitle: "Pontoon HP Sizing: The Rice Lake Decision Tree by Length",
     description: "Pontoon HP by load, use, and the boat's documented limits. 25 HP through 300-plus bands are examples to compare, not an HP-per-foot or length chart.",
-    image: "/lovable-uploads/blog-photos-2026-09/mercury-pontoon-family-editorial.webp",
-    imageAlt: "AI-generated editorial scene of a family wearing life jackets on a Mercury-powered pontoon.",
+    image: '/lovable-uploads/blog-heroes-2026-09/pontoon-hp-decision-tree.webp',
+    imageAlt: "Flowchart of example Mercury horsepower ranges for pontoons by length, tube count, passenger load and use, from 25 to 40 HP on 16 to 18 foot boats up to 300 to 400 plus HP on 26 foot plus tritoons.",
     author: 'Jay Harris',
     datePublished: '2026-03-26',
     dateModified: '2026-09-11',
@@ -23471,8 +23472,8 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     title: "Mercury Ethanol & Octane Rules 2026 (V10 Verado Update)",
     seoTitle: "Mercury Ethanol & Octane Rules 2026 (V10 Verado Update)",
     description: "Octane and ethanol are separate questions. We cover Ontario's new E15 pumps, the E10 limit, the 91 RON trap, and why V10 Verados list 87 octane.",
-    image: "/lovable-uploads/lens-cove/hero-lc014-octane-ethanol-2026-07.webp",
-    imageAlt: "Marine fuel pump and red nozzle beside an Ontario lake at sunrise",
+    image: '/lovable-uploads/blog-heroes-2026-09/octane-ethanol-storage-checks.webp',
+    imageAlt: "Infographic: octane minimums by Mercury engine family, why E10 is within Mercury limit while E15 and E85 are not, and how to store fuel so it stays fresh.",
     author: "Jay Harris",
     datePublished: "2026-04-11",
     dateModified: '2026-09-11',
@@ -29233,8 +29234,8 @@ By Harris Boat Works, Mercury Premier Dealer, family marina since 1947 on Rice L
     seoTitle: 'Mercury Extended Warranty Platinum (Ontario 2026)',
     title: 'Mercury Extended Warranty Ontario',
     description: 'Mercury Product Protection Platinum is an extended service contract for eligible mechanical and electrical failures. See real Canadian pricing by HP and term.',
-    image: '/lovable-uploads/hero-mercury-extended-warranty-platinum-ontario.png',
-    imageAlt: 'Mercury FourStroke cowling and Platinum Product Protection brochure on a shop workbench for extended warranty coverage.',
+    image: '/lovable-uploads/blog-heroes-2026-09/mercury-product-protection-timeline.webp',
+    imageAlt: "Timeline: the Mercury factory limited warranty followed by an optional Product Protection extended service contract, with eligibility rules and what is and is not covered.",
     author: 'Harris Boat Works',
     datePublished: '2026-05-13',
     dateModified: '2026-09-06',
