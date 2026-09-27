@@ -787,8 +787,8 @@ If you can bring the boat to HBW in Gores Landing, submit a request at [hbw.wiki
     title: 'Mercury Outboard Fault Codes: Legacy VesselView and Modern UFC Lookup',
     seoTitle: 'Mercury Outboard Fault Codes: VesselView & UFC Lookup',
     description: 'Search Mercury fault codes by format and engine family, including legacy VesselView IDs and the current V6/V8 UFC table checked against dealer literature.',
-    image: '/lovable-uploads/blog-heroes-2026-09/mercury-fault-code-steps.webp',
-    imageAlt: "Infographic: five steps to read a Mercury fault code, from finding the alert and photographing it to knowing the category, when to stop running, and when to call the shop.",
+    image: '/lovable-uploads/hero-vesselview-smartcraft.png',
+    imageAlt: 'Boater checking live Mercury engine data in the Mercury Marine app, with a Mercury FourStroke outboard on the transom.',
     author: 'Jay Harris',
     datePublished: '2026-07-23',
     dateModified: '2026-07-28',
@@ -1247,8 +1247,8 @@ A fault code names the circuit or condition the computer noticed. It does not na
     title: "Electric or Gas Repower? An Honest Guide for Rice Lake Boaters (Mercury Avator Included)",
     seoTitle: "Electric vs Gas Repower Guide for Rice Lake | HBW",
     description: "Thinking about an electric repower? An honest look at where the Mercury Avator fits in cottage country, where gas still wins, and how to decide for your boat.",
-    image: '/lovable-uploads/blog-heroes-2026-09/electric-vs-gas-repower.webp',
-    imageAlt: "Infographic comparing when to choose a Mercury Avator electric outboard versus a Mercury FourStroke for a Rice Lake repower.",
+    image: "/lovable-uploads/blog-heroes-2026-07/batch-c/hero-avator-7-5e-reference-locked-2026-07.jpg",
+    imageAlt: "Mercury Avator 7.5e electric outboard powering a Lund WC-12 aluminum boat on a freshwater lake",
     author: "Jay Harris",
     datePublished: "2026-07-15",
     dateModified: "2026-09-11",
@@ -2511,8 +2511,7 @@ Get your headcount, pick your boats, and get each driver licensed this week. The
     slug: "first-time-boat-rental-rice-lake-guide",
     title: "First Time Renting a Boat? What We Tell Every Renter at Our Dock",
     description: "Never driven a boat? Review the core handling and safety guidance for a first Rice Lake rental: controls, docking, wind, hazards, and what to do if something goes wrong.",
-    image: '/lovable-uploads/blog-heroes-2026-09/first-rental-day-steps.webp',
-    imageAlt: "Four-step timeline of a first Rice Lake boat rental day: what to bring, check-in at the HBW dock, on-water basics, and heading back.",
+    image: "/lovable-uploads/hero-first-time-boat-rental.webp",
     author: "Jay Harris",
     datePublished: "2026-07-02",
     dateModified: "2026-09-06",
@@ -3547,8 +3546,8 @@ Harris Boat Works · 5369 Harris Boat Works Rd, Gores Landing, ON · Mercury Mar
     title: 'Mercury DTS Retrofit Eligibility 2026',
     seoTitle: 'Mercury DTS Retrofit Eligibility 2026 | HBW Guide',
     description: 'Check if your Mercury outboard supports DTS retrofit. Covers Verado, Pro XS, FourStroke, multi-engine joystick eligibility, and motors needing repower.',
-    image: '/lovable-uploads/blog-heroes-2026-09/mechanical-vs-dts-controls.webp',
-    imageAlt: "Infographic comparing mechanical push-pull cable controls with Mercury DTS digital controls, plus five things to confirm before a DTS retrofit.",
+    image: "/lovable-uploads/inline/inline-dts-throttle-control.png",
+    imageAlt: "Close-up photograph of a Mercury digital throttle and shift control with a hand on its handle.",
     author: 'Jay Harris',
     datePublished: '2026-05-28',
     dateModified: '2026-09-18',
@@ -3926,8 +3925,8 @@ Thinking it's time for a new motor instead? Build a live CAD quote at [mercuryre
     title: 'Mercury Propeller Selection Guide 2026',
     seoTitle: 'Mercury Propeller Selection Guide 2026 (Ontario) | HBW',
     description: 'Mercury propeller selection guide: hull-type to prop-family matching, 3-blade vs 4-blade, aluminum vs stainless, and the WOT RPM test to confirm.',
-    image: '/lovable-uploads/blog-heroes-2026-09/prop-pitch-and-blades.webp',
-    imageAlt: "Infographic: more propeller pitch lowers wide-open-throttle RPM, about 150 to 200 RPM per inch, plus aluminum versus stainless and 3-blade versus 4-blade trade-offs.",
+    image: "/lovable-uploads/blog-visuals-2026-09/propeller-selection-editorial.webp",
+    imageAlt: "AI-generated editorial scene of three unbranded boat propellers on a workbench.",
     author: 'Jay Harris',
     datePublished: '2026-05-27',
     dateModified: '2026-09-07',
@@ -5227,8 +5226,7 @@ footer: Not sure repower makes sense yet? Start with the [repower basics](/repow
     title: 'When to Replace Your Boat Motor. A Repowering Guide for Ontario Boat Owners.',
     seoTitle: "When to Replace Your Boat Motor: Repowering Guide | Harris Boat Works",
     description: "When is it time to repower? Honest Ontario cost ranges ($6.5K-$40K CAD), signs your motor is done, and a Mercury repower framework from HBW.",
-    image: '/lovable-uploads/blog-heroes-2026-09/repair-or-repower-signs.webp',
-    imageAlt: "Infographic: end-stage signs it is time to repower, when a repair still makes sense, and what HBW checks before recommending either.",
+    image: '/lovable-uploads/hero-boat-repowering-guide-when-to-replace-motor.png',
     author: 'Harris Boat Works',
     datePublished: '2024-03-05',
     dateModified: '2026-09-11',
@@ -5757,8 +5755,8 @@ Want HBW's optional early check, or due for scheduled service? Put in a request 
     title: 'Mercury ProKicker for Rice Lake Walleye',
     seoTitle: "Mercury 9.9 ProKicker: Rice Lake Fishing Guide (2026)",
     description: "Why the Mercury 9.9 ProKicker is the standard kicker for Rice Lake walleye trolling: what it is, which version to buy, install tips.",
-    image: '/lovable-uploads/blog-heroes-2026-09/prokicker-setup.webp',
-    imageAlt: "Stern-view schematic of a main outboard beside a Mercury 9.9 ProKicker on an offset bracket, with why and how the kicker is set up for Rice Lake trolling.",
+    image: '/lovable-uploads/blog-photos-2026-09/mercury-fishing-editorial.webp',
+    imageAlt: "AI-generated editorial fishing scene with a Mercury-powered boat; not an identified ProKicker installation or documented HBW customer boat.",
     author: 'Harris Boat Works',
     datePublished: '2026-02-06',
     dateModified: '2026-09-11',
@@ -8139,7 +8137,7 @@ If your fuel burn is significantly above these ranges for your setup, prop pitch
 
 ---
 
-![Example SmartCraft-style fuel flow readout at 24.6 L/h, 4,200 RPM and 28 MPH, with the typical 3,500 to 4,500 RPM cruise sweet spot and the five things that change fuel flow.](/lovable-uploads/inline/fuel-flow-gauge-five-factors-2026-09.webp)
+![Mercury SmartCraft gauge showing 24.6 L/h (6.5 US gal/h) fuel flow at the helm, illustrating real-time fuel consumption monitoring.](/lovable-uploads/inline/inline-smartcraft-fuel-gauge.png)
 
 ## Ethanol and Fuel Quality
 
@@ -9422,8 +9420,8 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     title: 'Electric Trolling Motor vs Kicker Guide',
     seoTitle: "Trolling Motor vs Kicker on Rice Lake: Which Wins | HBW",
     description: "An HBW take on trolling motors vs kicker motors, when each wins on Rice Lake and the Kawarthas, the math on running both, and why most serious anglers do.",
-    image: '/lovable-uploads/blog-heroes-2026-09/trolling-motor-vs-kicker.webp',
-    imageAlt: "Top-down diagram of a fishing boat with an electric trolling motor at the bow and a gas kicker beside the main outboard, with what each one is best at.",
+    image: '/lovable-uploads/hero-mercury-kicker-transom.png',
+    imageAlt: 'Mercury FourStroke kicker and main outboard mounted on a boat transom for Rice Lake trolling and big water navigation.',
     author: 'Harris Boat Works',
     datePublished: '2026-05-04',
     dateModified: '2026-09-07',
@@ -9599,8 +9597,8 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     title: 'Boat Motor HP Size Guide Ontario',
     seoTitle: 'Boat Motor Size Guide (How to Calculate HP)',
     description: 'Use our boat motor sizing guide. Inventory hull, engine, fuel, equipment, people, and gear, stay within manufacturer limits, and compare examples. No weight-per-HP formula.',
-    image: '/lovable-uploads/blog-heroes-2026-09/motor-size-load-inventory.webp',
-    imageAlt: "Infographic: a six-line load inventory to record before sizing a motor, three Ontario boat examples with hull and people-plus-gear weights drawn to scale, and a reminder that the capacity plate is a limit, not a target.",
+    image: '/lovable-uploads/Boat_Sizes_Dock_Comparison_Hero_2026.png',
+    imageAlt: 'Three boats with Mercury outboards of increasing size at a marina dock, from small fishing boat to large pontoon',
     author: 'Harris Boat Works',
     datePublished: '2026-05-11',
     dateModified: '2026-09-18',
@@ -12918,8 +12916,7 @@ Whether you are rigging a new boat for the lake or repowering the one you have, 
     title: 'Mercury Boost Software Eligibility 2026',
     seoTitle: 'Is Your Mercury Eligible for the 2026 Boost Upgrade?',
     description: 'Mercury Boost eligibility by exact motor and serial number, including current FourStroke, Pro XS, Verado, and Racing rules and limitations.',
-    image: '/lovable-uploads/blog-heroes-2026-09/mercury-boost-eligibility-steps.webp',
-    imageAlt: "Infographic: four steps to check Mercury Boost eligibility, from finding the serial number to dealer confirmation, and the three possible outcomes.",
+    image: '/lovable-uploads/hero-mercury-boost-calibration-2026.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-14',
     dateModified: '2026-09-11',
@@ -13128,8 +13125,8 @@ Harris Boat Works has been a Mercury dealer since 1965.
     slug: 'pleasure-craft-licence-update-repower-ontario',
     title: 'Pleasure Craft Licence Update During Repower (Ontario 2026)',
     description: "How the Pleasure Craft Licence update works when you repower in Ontario: what Transport Canada requires, and how the owner submits it with motor specs from the HBW invoice.",
-    image: '/lovable-uploads/blog-heroes-2026-09/pcl-update-after-repower.webp',
-    imageAlt: "Infographic: four steps to update a Pleasure Craft Licence after a repower: what triggers it, what you need, where to submit, and the 30-day timing.",
+    image: '/lovable-uploads/hero-pcl-repower-licence.png',
+    imageAlt: 'Pleasure Craft Licence form on a workbench next to an aluminum boat undergoing a Mercury outboard motor repower.',
     author: 'Harris Boat Works',
     datePublished: '2026-04-15',
     dateModified: '2026-09-06',
@@ -13832,8 +13829,8 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine 
     title: 'Mercury Outboard Financing Ontario (2026): Rates',
     seoTitle: 'Mercury Outboard & Boat Repower Financing in Ontario (2026): Rates, Payments, and How It Actually Works',
     description: 'How to finance a Mercury outboard or full repower in Ontario: current rate, monthly payments, terms, and the honest fine print.',
-    image: '/lovable-uploads/blog-heroes-2026-09/mercury-financing-how-it-works.webp',
-    imageAlt: "Infographic: how Mercury outboard financing works in four steps, what sets the payment, and what to compare beyond the monthly payment.",
+    image: '/lovable-uploads/hero-mercury-financing-ontario.png',
+    imageAlt: 'Person reviewing a Mercury outboard financing summary at an Ontario marina office.',
     author: 'Harris Boat Works',
     datePublished: '2026-04-20',
     dateModified: "2026-09-02",
@@ -14546,8 +14543,8 @@ Submit the boat, engine, trailer, storage, and requested-work details at [hbw.wi
     title: 'DIY Mercury Outboard Winterization',
     seoTitle: 'Can I Winterize My Mercury Outboard Myself? DIY Guide',
     description: 'DIY Mercury outboard winterization: identify the exact model procedure, prepare fuel and gearcase, protect the battery, and know when to stop.',
-    image: '/lovable-uploads/blog-heroes-2026-09/fall-winterization-order.webp',
-    imageAlt: "Infographic: eight outboard winterization steps in order: fuel, flush, internal protection, gearcase, grease, battery, storage position and vented cover, plus when to call the shop.",
+    image: '/lovable-uploads/diy-mercury-winterization-hero.jpg',
+    imageAlt: 'Boat owner kneeling beside a Mercury FourStroke outboard in a garage workshop, draining gear oil into a pan, with Mercury fogging oil and 4-stroke FC-W oil bottles on the workbench.',
     author: 'Harris Boat Works',
     datePublished: '2026-04-22',
     dateModified: '2026-08-31',
@@ -16257,7 +16254,7 @@ There are real scenarios where Boost can be worth discussing on an eligible moto
 
 Mercury has described Boost as part of a broader software-upgrade capability, but future modes, eligibility expansions, prices, and compatibility are not promises to a current buyer. Buy the motor that correctly powers the boat today. Treat any later software option as a separate decision only after Mercury publishes the terms for that exact serial number.
 
-![Chart: a standard 150 FourStroke is not on Mercury Boost dealer-installed list while the Mercury Racing 150R is, what Boost does and does not change, and the six factors that drive pontoon top speed.](/lovable-uploads/inline/boost-150hp-pontoon-what-matters-2026-09.webp)
+![Mercury Pro XS outboard with Boost decal on a pontoon boat transom, illustrating the software upgrade performance.](/lovable-uploads/inline/inline-boost-150hp-pontoon.png)
 
 ### What We Check Before Recommending Boost
 
@@ -16573,8 +16570,8 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     slug: 'mercury-outboard-rigging-costs-ontario',
     title: 'Mercury Outboard Rigging Costs Explained (Ontario 2026)',
     description: 'Mercury rigging costs: throttle, steering, harness, gauges, hose, cables. Typical repower with post-2010 controls: $500-$1,500 CAD before prop and installation labour.',
-    image: '/lovable-uploads/blog-heroes-2026-09/rigging-quote-parts.webp',
-    imageAlt: "Diagram of a boat from helm to transom labelling the rigging parts in a Mercury quote, with five factors that push rigging cost up or down.",
+    image: '/lovable-uploads/hero-mercury-rigging-costs.png',
+    imageAlt: 'Illustration of rigging work on an outboard powerhead with the cowl removed. Illustrative, not a Harris Boat Works job.',
     author: 'Jay Harris',
     datePublished: '2026-05-05',
     dateModified: '2026-09-26',
@@ -17300,8 +17297,8 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     title: 'Used Outboard Buying Guide Ontario',
     seoTitle: 'Used Outboard Buying Guide for Ontario Boaters',
     description: "What to check before you buy a used outboard in Ontario: the inspection order, the deal-breakers, the on-water test.",
-    image: '/lovable-uploads/blog-heroes-2026-09/used-outboard-checks.webp',
-    imageAlt: "Infographic: six checks before buying a used outboard, from serial number and records to a run on the water, plus when to pause the purchase.",
+    image: "/lovable-uploads/blog-photos-2026-09/used-mercury-editorial.webp",
+    imageAlt: "AI-generated editorial scene of a buyer reviewing documents beside a trailered boat with a Mercury 90 outboard",
     author: 'Harris Boat Works',
     datePublished: "2026-05-07",
     dateModified: "2026-09-11",
@@ -17794,8 +17791,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     title: 'Mercury Overheating Emergency Guide',
     seoTitle: "Mercury Outboard Overheating: What To Do Right Now",
     description: "A Mercury Premier dealer's emergency-and-prevention guide for outboard overheating: what to do in 60 seconds, what to check at the dock.",
-    image: '/lovable-uploads/blog-heroes-2026-09/overheat-alarm-on-water-steps.webp',
-    imageAlt: "Infographic: five steps when an outboard overheat alarm sounds on the water: reduce throttle, check the telltale, clear the intake, restart with care, and stop and call for a tow if it returns.",
+    image: "/lovable-uploads/hero-mercury-overheating-dockside.png",
     author: 'Harris Boat Works',
     datePublished: "2026-05-09",
     dateModified: "2026-09-06",
@@ -21814,7 +21810,7 @@ Keep going and the benefit disappears. The bow may begin to rise and fall in a c
 
 The right position sits between plowing and losing grip. It varies with hull, motor height, propeller, passenger placement, fuel, gear, speed and water.
 
-![Four side-profile diagrams of outboard trim: tucked in for the holeshot, balanced cruise with the prop shaft level, trimmed out too far with the bow porpoising, and over-trimmed with the prop drawing air at the surface.](/lovable-uploads/inline/four-trim-positions-2026-09.webp)
+![Four side-profile boats compare outboard trim: tucked in for acceleration, nearly vertical for efficient cruise, farther out with the bow porpoising, and over-trimmed near aerated surface water where the propeller can ventilate.](/lovable-uploads/lens-cove/LC-003/inline-four-trim-states-0c4960b2d7bd.svg)
 *From left: tuck the motor in for acceleration; ease it out to find a clean, efficient cruise; back in when the bow starts to porpoise; and trim in immediately if rising RPM and broken thrust signal ventilation.*
 
 ## A Repeatable Way to Find the Right Trim
@@ -21957,8 +21953,7 @@ Family-owned since 1947, Mercury dealer since 1965, Mercury Premier Dealer.
     title: 'Boat Trailering Mistakes to Avoid, Ontario',
     seoTitle: "10 Boat Trailering Mistakes (Ontario Edition)",
     description: "Ten trailering mistakes Ontario boaters make every season, from wrong tongue weight and blown trailer tires to forgetting the drain plug.",
-    image: '/lovable-uploads/blog-heroes-2026-09/trailering-mistakes-and-fixes.webp',
-    imageAlt: "Infographic: ten common boat trailering mistakes marked on a truck, trailer and boat diagram, each paired with its fix.",
+    image: '/lovable-uploads/hero-trailering-mistakes-ontario.png',
     author: 'Jay Harris',
     datePublished: '2026-02-28',
     dateModified: '2026-09-06',
@@ -22441,8 +22436,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     title: 'Used Boat Walkaround Ontario Guide',
     seoTitle: "30-Minute Used Boat Walkaround Inspection Guide",
     description: "A practical, time-blocked inspection checklist for Ontario buyers showing up to look at a used boat: what to check, in what order.",
-    image: '/lovable-uploads/blog-heroes-2026-09/used-boat-walkaround-points.webp',
-    imageAlt: "Diagram of a boat on a trailer with seven numbered walkaround checks: trailer tires, transom, hull and chines, floor, wiring, gear oil and trailer hubs.",
+    image: '/lovable-uploads/hero-used-boat-walkaround.png',
     author: 'Jay Harris',
     datePublished: '2026-03-16',
     dateModified: '2026-09-06',
@@ -22662,8 +22656,8 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     title: 'Docking a Boat in Wind: Rice Lake Guide',
     seoTitle: "Docking a Boat in Wind on Rice Lake",
     description: "A technique-first guide to docking single-outboard boats (pontoons, bowriders, and fishing boats) in windy conditions on Rice Lake.",
-    image: '/lovable-uploads/blog-heroes-2026-09/docking-in-wind-two-scenarios.webp',
-    imageAlt: "Top-down diagrams of docking with wind blowing onto the dock and wind blowing off the dock, showing the approach path and technique for each.",
+    image: '/lovable-uploads/hero-docking-in-wind-rice-lake.png',
+    imageAlt: 'Aluminum fishing boat with Mercury outboard approaching a wooden dock on Rice Lake during windy conditions.',
     author: 'Jay Harris',
     datePublished: '2026-03-21',
     dateModified: '2026-09-11',
@@ -22889,8 +22883,8 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     title: 'Pontoon HP Sizing: The Rice Lake Decision Tree by Length',
     seoTitle: "Pontoon HP Sizing: The Rice Lake Decision Tree by Length",
     description: "Pontoon HP by load, use, and the boat's documented limits. 25 HP through 300-plus bands are examples to compare, not an HP-per-foot or length chart.",
-    image: '/lovable-uploads/blog-heroes-2026-09/pontoon-hp-decision-tree.webp',
-    imageAlt: "Flowchart of example Mercury horsepower ranges for pontoons by length, tube count, passenger load and use, from 25 to 40 HP on 16 to 18 foot boats up to 300 to 400 plus HP on 26 foot plus tritoons.",
+    image: "/lovable-uploads/blog-photos-2026-09/mercury-pontoon-family-editorial.webp",
+    imageAlt: "AI-generated editorial scene of a family wearing life jackets on a Mercury-powered pontoon.",
     author: 'Jay Harris',
     datePublished: '2026-03-26',
     dateModified: '2026-09-11',
@@ -23472,8 +23466,8 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     title: "Mercury Ethanol & Octane Rules 2026 (V10 Verado Update)",
     seoTitle: "Mercury Ethanol & Octane Rules 2026 (V10 Verado Update)",
     description: "Octane and ethanol are separate questions. We cover Ontario's new E15 pumps, the E10 limit, the 91 RON trap, and why V10 Verados list 87 octane.",
-    image: '/lovable-uploads/blog-heroes-2026-09/octane-ethanol-storage-checks.webp',
-    imageAlt: "Infographic: octane minimums by Mercury engine family, why E10 is within Mercury limit while E15 and E85 are not, and how to store fuel so it stays fresh.",
+    image: "/lovable-uploads/lens-cove/hero-lc014-octane-ethanol-2026-07.webp",
+    imageAlt: "Marine fuel pump and red nozzle beside an Ontario lake at sunrise",
     author: "Jay Harris",
     datePublished: "2026-04-11",
     dateModified: '2026-09-11',
@@ -25306,7 +25300,7 @@ For engine-specific requirements, use the owner’s manual for the exact serial 
 
 ---
 
-![Infographic: shrinkwrap cover scope in three parts, support, fitted cover and venting, and the systems a cover does not winterize.](/lovable-uploads/inline/shrinkwrap-scope-2026-09.webp)
+![Fiberglass bowrider mid-shrinkwrap in a Canadian marina yard](/lovable-uploads/inline/inline-shrinkwrap-process.png)
 
 ## What Happens During the Winter Closure
 
@@ -28141,8 +28135,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     title: 'Mercury Overheating at Idle Fix',
     seoTitle: 'Mercury Outboard Overheating at Idle? The Real Fix',
     description: 'Mercury outboard overheating at idle but fine at speed: diagnostic flow for water pump impeller, intake debris, thermostat, sensors.',
-    image: '/lovable-uploads/blog-heroes-2026-09/overheat-at-idle-cooling-path.webp',
-    imageAlt: "Infographic: the outboard cooling water path from intake to telltale, why a worn pump falls behind at idle, and five checks in order showing what an owner can check and what needs the shop.",
+    image: '/lovable-uploads/hero-mercury-overheating-at-idle.png',
     author: 'Jay Harris',
     datePublished: '2026-05-11',
     dateModified: '2026-09-07',
@@ -28633,8 +28626,8 @@ This is what a dealer relationship is supposed to feel like.
     title: 'Mercury Outboard Beep & Alarm Codes: What Each Means',
     seoTitle: 'Mercury Outboard Beep & Alarm Codes: What Each Means',
     description: "Continuous beep, 4 beeps every 2 minutes, or a key-on alarm on your Mercury outboard: what each pattern means, what to check first, and when to stop the motor.",
-    image: '/lovable-uploads/blog-heroes-2026-09/mercury-beep-patterns.webp',
-    imageAlt: "Infographic: six Mercury alarm beep patterns, what each usually means and what to do, from the normal key-on beep to a continuous alarm with power reduction.",
+    image: '/lovable-uploads/hero-mercury-beeping-codes.png',
+    imageAlt: 'Hand touching a warning icon on a Mercury VesselView display to troubleshoot outboard alarm codes.',
     author: 'Jay Harris',
     datePublished: '2026-05-11',
     dateModified: '2026-09-11',
@@ -29234,8 +29227,8 @@ By Harris Boat Works, Mercury Premier Dealer, family marina since 1947 on Rice L
     seoTitle: 'Mercury Extended Warranty Platinum (Ontario 2026)',
     title: 'Mercury Extended Warranty Ontario',
     description: 'Mercury Product Protection Platinum is an extended service contract for eligible mechanical and electrical failures. See real Canadian pricing by HP and term.',
-    image: '/lovable-uploads/blog-heroes-2026-09/mercury-product-protection-timeline.webp',
-    imageAlt: "Timeline: the Mercury factory limited warranty followed by an optional Product Protection extended service contract, with eligibility rules and what is and is not covered.",
+    image: '/lovable-uploads/hero-mercury-extended-warranty-platinum-ontario.png',
+    imageAlt: 'Mercury FourStroke cowling and Platinum Product Protection brochure on a shop workbench for extended warranty coverage.',
     author: 'Harris Boat Works',
     datePublished: '2026-05-13',
     dateModified: '2026-09-06',
@@ -30139,8 +30132,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     title: "New vs Used Mercury Outboard in Ontario, by the Numbers",
     seoTitle: "New vs Used Mercury Outboard Ontario | Harris Boat Works",
     description: "New Mercury or used Mercury? The honest math for Ontario buyers, from a Mercury Premier dealer who sells both.",
-    image: '/lovable-uploads/blog-heroes-2026-09/new-vs-used-mercury.webp',
-    imageAlt: "Infographic comparing a new and a used Mercury outboard on warranty, service history, risk and price, with when each makes sense.",
+    image: "/lovable-uploads/hero-new-vs-used-mercury-outboard-ontario.png",
     author: "Harris Boat Works",
     datePublished: "2026-05-16",
     dateModified: "2026-09-11",
@@ -30283,8 +30275,8 @@ Jay Harris helps run Harris Boat Works, a third-generation family marina in Gore
     title: "How to Read a Boat Capacity Plate in Ontario",
     seoTitle: "How to Read a Boat Capacity Plate in Ontario | HBW",
     description: "Decode a Canadian compliance notice: maximum recommended safe horsepower, people and load limits, where to find it, and what to do if it is missing.",
-    image: '/lovable-uploads/blog-heroes-2026-09/capacity-plate-annotated.webp',
-    imageAlt: "Annotated example capacity notice explaining maximum persons, maximum recommended engine power, maximum gross load and the manufacturer declaration, with caveats that still apply.",
+    image: "/lovable-uploads/blog-audit-2026-09/capacity-label-vs-actual-load.svg",
+    imageAlt: 'Concept diagram: a hull notice lists people, recommended engine power and load limits; weather, motor weight and the actual hull still have to be checked.',
     author: "Harris Boat Works",
     datePublished: "2026-05-16",
     dateModified: "2026-09-07",
@@ -31651,8 +31643,7 @@ For complex repowers (twin-engine setups, brand conversions, or unusual configur
     title: 'Mercury Pro XS Buyer Guide for Ontario (2026)',
     seoTitle: 'Mercury Pro XS Buyer Guide Ontario | Harris Boat Works',
     description: 'The canonical Mercury Pro XS buyer guide for Ontario boaters. 115-300 HP coverage, bass and tournament fishing applications, pontoon performance setups.',
-    image: '/lovable-uploads/blog-heroes-2026-09/pro-xs-buyer-guide.webp',
-    imageAlt: "Infographic: when to choose Mercury FourStroke versus Pro XS, which Ontario boaters benefit from Pro XS, and what to confirm before quoting one.",
+    image: '/lovable-uploads/hero-mercury-pro-xs-buyer-guide.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
     dateModified: '2026-09-10',
@@ -31807,8 +31798,7 @@ For tournament or competitive setups, call 905-342-2153 after building the basic
     title: 'Mercury Avator Electric Outboard Range on Rice Lake (2026)',
     seoTitle: 'Mercury Avator Range Rice Lake | Ontario Electric Outboard',
     description: 'How far a Mercury Avator electric outboard actually goes on Rice Lake. Real-world range by model, battery configuration, charging logistics for cottage.',
-    image: '/lovable-uploads/blog-heroes-2026-09/avator-range-rice-lake.webp',
-    imageAlt: "Infographic: what changes Mercury Avator range, practical Avator 7.5e range by throttle drawn to scale, and how to charge at the cottage.",
+    image: '/lovable-uploads/inline/inline-avator-electric-dock.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
     dateModified: '2026-09-11',
@@ -32667,7 +32657,7 @@ Build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)** and we'l
 
 > **Quick answer:** Repower can win when the hull is structurally suitable, the boat still fits your use, and the complete installed repower quote beats the complete replacement package. Buying new can win when the hull or several major systems need work, the layout no longer fits, or you simply want a different boat. Compare current written totals, not old article ranges: HST, trailer, structural repairs, rigging, steering, controls, gauges, propeller, batteries, electronics, financing cost, trade value, and exclusions.
 
-![Five checks before pricing a repower: hull and transom suitable, boat still fits your use, manufacturer documentation supports the motor, other systems in scope, and the motor is actually the problem.](/lovable-uploads/inline/repower-five-checks-2026-09.webp)
+![The 5-Check Repower Eligibility Test: if all five are true, a repower is worth pricing and comparing](/lovable-uploads/repower-eligibility-5-check-card.png)
 
 *Before the cost comparison matters, confirm five things: the hull and transom are structurally suitable; the boat still fits how you use it; the manufacturer documentation supports the proposed motor; the other systems are included in the scope; and the current motor is actually the problem. Clearing those checks makes a repower worth pricing, not automatically the right answer.*
 
@@ -34415,8 +34405,8 @@ Build your repower quote at [mercuryrepower.ca](https://mercuryrepower.ca).
     title: 'How to Choose Repower Horsepower From Your Capacity Plate',
     seoTitle: "How to Choose Repower Horsepower From a Capacity Plate",
     description: 'Use the boat manufacturer\'s power limit, motor weight, transom condition, load, steering, and use to choose repower horsepower without guessing.',
-    image: '/lovable-uploads/blog-heroes-2026-09/repower-hp-decision-path.webp',
-    imageAlt: "Infographic: read the capacity notice, confirm hull and transom condition, check the complete installation, then HBW starts one Mercury model step below the maximum.",
+    image: "/lovable-uploads/blog-visuals-2026-09/repower-capacity-planning.svg",
+    imageAlt: "Repower planning: read the actual boat capacity information, confirm condition, and check the complete motor installation.",
     author: "Jay Harris",
     datePublished: "2026-06-06",
     dateModified: "2026-09-11",
@@ -34538,8 +34528,7 @@ Build your quote at [mercuryrepower.ca](https://mercuryrepower.ca).
     title: 'Pontoon vs Aluminum vs V-Hull Repower',
     seoTitle: "Repowering a Pontoon vs. Aluminum Boat vs. V-Hull | Harris Boat Works",
     description: "Not all repowers are the same. What changes, and what to watch, when replacing the motor on a pontoon, an aluminum fishing boat, or a fibreglass V-hull.",
-    image: '/lovable-uploads/blog-heroes-2026-09/repower-by-hull-type.webp',
-    imageAlt: "Infographic comparing repowers on a pontoon, an aluminum fishing boat and a fibreglass V-hull: typical approach, shaft length and transom checks.",
+    image: '/lovable-uploads/hero-pontoon-aluminum-vhull.png',
     author: "Jay Harris",
     datePublished: "2026-06-06",
     dateModified: "2026-09-12",
@@ -34644,8 +34633,7 @@ Build your quote at [mercuryrepower.ca](https://mercuryrepower.ca).
     title: "How Your Mercury Warranty Works After a Repower",
     seoTitle: "Mercury Warranty After a Repower: What's Covered | Harris Boat Works",
     description: 'What Mercury warranty covers after a repower: duration, inclusions, what voids it. How a Mercury Premier dealer affects your coverage. Harris Boat Works explains.',
-    image: '/lovable-uploads/blog-heroes-2026-09/mercury-warranty-after-repower.webp',
-    imageAlt: "Infographic: the 3-year factory limited warranty and 3-year corrosion warranty run side by side from the day the motor is rigged and registered, with what is and is not covered.",
+    image: '/lovable-uploads/hero-mercury-warranty-after-repower.png',
     author: "Jay Harris",
     datePublished: "2026-06-06",
     dateModified: "2026-09-06",
@@ -35305,7 +35293,7 @@ For the recreational boats this guide is written for, follow the manufacturer's 
 
 Most small to mid-size boats use three components working together.
 
-![Diagram of a bilge pump circuit: battery, fuse, helm switch with manual and auto paths, float switch and pump, with the negative return to the battery and five numbered test points.](/lovable-uploads/inline/bilge-pump-circuit-2026-09.webp)
+![How a boat bilge pump system works: battery, fuse, helm switch, float switch, and pump](/lovable-uploads/bilge-pump-system-diagram.png)
 
 ### 1. The Pump
 
