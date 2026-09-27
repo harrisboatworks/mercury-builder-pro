@@ -787,8 +787,8 @@ If you can bring the boat to HBW in Gores Landing, submit a request at [hbw.wiki
     title: 'Mercury Outboard Fault Codes: Legacy VesselView and Modern UFC Lookup',
     seoTitle: 'Mercury Outboard Fault Codes: VesselView & UFC Lookup',
     description: 'Search Mercury fault codes by format and engine family, including legacy VesselView IDs and the current V6/V8 UFC table checked against dealer literature.',
-    image: '/lovable-uploads/blog-heroes-2026-09/mercury-fault-code-steps.webp',
-    imageAlt: "Infographic: five steps to read a Mercury fault code, from finding the alert and photographing it to knowing the category, when to stop running, and when to call the shop.",
+    image: '/lovable-uploads/hero-vesselview-smartcraft.png',
+    imageAlt: 'Boater checking live Mercury engine data in the Mercury Marine app, with a Mercury FourStroke outboard on the transom.',
     author: 'Jay Harris',
     datePublished: '2026-07-23',
     dateModified: '2026-07-28',
@@ -3546,8 +3546,8 @@ Harris Boat Works · 5369 Harris Boat Works Rd, Gores Landing, ON · Mercury Mar
     title: 'Mercury DTS Retrofit Eligibility 2026',
     seoTitle: 'Mercury DTS Retrofit Eligibility 2026 | HBW Guide',
     description: 'Check if your Mercury outboard supports DTS retrofit. Covers Verado, Pro XS, FourStroke, multi-engine joystick eligibility, and motors needing repower.',
-    image: '/lovable-uploads/blog-heroes-2026-09/mechanical-vs-dts-controls.webp',
-    imageAlt: "Infographic comparing mechanical push-pull cable controls with Mercury DTS digital controls, plus five things to confirm before a DTS retrofit.",
+    image: "/lovable-uploads/inline/inline-dts-throttle-control.png",
+    imageAlt: "Close-up photograph of a Mercury digital throttle and shift control with a hand on its handle.",
     author: 'Jay Harris',
     datePublished: '2026-05-28',
     dateModified: '2026-09-18',
@@ -3925,8 +3925,8 @@ Thinking it's time for a new motor instead? Build a live CAD quote at [mercuryre
     title: 'Mercury Propeller Selection Guide 2026',
     seoTitle: 'Mercury Propeller Selection Guide 2026 (Ontario) | HBW',
     description: 'Mercury propeller selection guide: hull-type to prop-family matching, 3-blade vs 4-blade, aluminum vs stainless, and the WOT RPM test to confirm.',
-    image: '/lovable-uploads/blog-heroes-2026-09/prop-pitch-and-blades.webp',
-    imageAlt: "Infographic: more propeller pitch lowers wide-open-throttle RPM, about 150 to 200 RPM per inch, plus aluminum versus stainless and 3-blade versus 4-blade trade-offs.",
+    image: "/lovable-uploads/blog-visuals-2026-09/propeller-selection-editorial.webp",
+    imageAlt: "AI-generated editorial scene of three unbranded boat propellers on a workbench.",
     author: 'Jay Harris',
     datePublished: '2026-05-27',
     dateModified: '2026-09-07',
@@ -17791,8 +17791,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     title: 'Mercury Overheating Emergency Guide',
     seoTitle: "Mercury Outboard Overheating: What To Do Right Now",
     description: "A Mercury Premier dealer's emergency-and-prevention guide for outboard overheating: what to do in 60 seconds, what to check at the dock.",
-    image: '/lovable-uploads/blog-heroes-2026-09/overheat-alarm-on-water-steps.webp',
-    imageAlt: "Infographic: five steps when an outboard overheat alarm sounds on the water: reduce throttle, check the telltale, clear the intake, restart with care, and stop and call for a tow if it returns.",
+    image: "/lovable-uploads/hero-mercury-overheating-dockside.png",
     author: 'Harris Boat Works',
     datePublished: "2026-05-09",
     dateModified: "2026-09-06",
@@ -21811,7 +21810,7 @@ Keep going and the benefit disappears. The bow may begin to rise and fall in a c
 
 The right position sits between plowing and losing grip. It varies with hull, motor height, propeller, passenger placement, fuel, gear, speed and water.
 
-![Four side-profile diagrams of outboard trim: tucked in for the holeshot, balanced cruise with the prop shaft level, trimmed out too far with the bow porpoising, and over-trimmed with the prop drawing air at the surface.](/lovable-uploads/inline/four-trim-positions-2026-09.webp)
+![Four side-profile boats compare outboard trim: tucked in for acceleration, nearly vertical for efficient cruise, farther out with the bow porpoising, and over-trimmed near aerated surface water where the propeller can ventilate.](/lovable-uploads/lens-cove/LC-003/inline-four-trim-states-0c4960b2d7bd.svg)
 *From left: tuck the motor in for acceleration; ease it out to find a clean, efficient cruise; back in when the bow starts to porpoise; and trim in immediately if rising RPM and broken thrust signal ventilation.*
 
 ## A Repeatable Way to Find the Right Trim
@@ -28136,8 +28135,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     title: 'Mercury Overheating at Idle Fix',
     seoTitle: 'Mercury Outboard Overheating at Idle? The Real Fix',
     description: 'Mercury outboard overheating at idle but fine at speed: diagnostic flow for water pump impeller, intake debris, thermostat, sensors.',
-    image: '/lovable-uploads/blog-heroes-2026-09/overheat-at-idle-cooling-path.webp',
-    imageAlt: "Infographic: the outboard cooling water path from intake to telltale, why a worn pump falls behind at idle, and five checks in order showing what an owner can check and what needs the shop.",
+    image: '/lovable-uploads/hero-mercury-overheating-at-idle.png',
     author: 'Jay Harris',
     datePublished: '2026-05-11',
     dateModified: '2026-09-07',
@@ -28628,8 +28626,8 @@ This is what a dealer relationship is supposed to feel like.
     title: 'Mercury Outboard Beep & Alarm Codes: What Each Means',
     seoTitle: 'Mercury Outboard Beep & Alarm Codes: What Each Means',
     description: "Continuous beep, 4 beeps every 2 minutes, or a key-on alarm on your Mercury outboard: what each pattern means, what to check first, and when to stop the motor.",
-    image: '/lovable-uploads/blog-heroes-2026-09/mercury-beep-patterns.webp',
-    imageAlt: "Infographic: six Mercury alarm beep patterns, what each usually means and what to do, from the normal key-on beep to a continuous alarm with power reduction.",
+    image: '/lovable-uploads/hero-mercury-beeping-codes.png',
+    imageAlt: 'Hand touching a warning icon on a Mercury VesselView display to troubleshoot outboard alarm codes.',
     author: 'Jay Harris',
     datePublished: '2026-05-11',
     dateModified: '2026-09-11',
@@ -32659,7 +32657,7 @@ Build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)** and we'l
 
 > **Quick answer:** Repower can win when the hull is structurally suitable, the boat still fits your use, and the complete installed repower quote beats the complete replacement package. Buying new can win when the hull or several major systems need work, the layout no longer fits, or you simply want a different boat. Compare current written totals, not old article ranges: HST, trailer, structural repairs, rigging, steering, controls, gauges, propeller, batteries, electronics, financing cost, trade value, and exclusions.
 
-![Five checks before pricing a repower: hull and transom suitable, boat still fits your use, manufacturer documentation supports the motor, other systems in scope, and the motor is actually the problem.](/lovable-uploads/inline/repower-five-checks-2026-09.webp)
+![The 5-Check Repower Eligibility Test: if all five are true, a repower is worth pricing and comparing](/lovable-uploads/repower-eligibility-5-check-card.png)
 
 *Before the cost comparison matters, confirm five things: the hull and transom are structurally suitable; the boat still fits how you use it; the manufacturer documentation supports the proposed motor; the other systems are included in the scope; and the current motor is actually the problem. Clearing those checks makes a repower worth pricing, not automatically the right answer.*
 
@@ -35295,7 +35293,7 @@ For the recreational boats this guide is written for, follow the manufacturer's 
 
 Most small to mid-size boats use three components working together.
 
-![Diagram of a bilge pump circuit: battery, fuse, helm switch with manual and auto paths, float switch and pump, with the negative return to the battery and five numbered test points.](/lovable-uploads/inline/bilge-pump-circuit-2026-09.webp)
+![How a boat bilge pump system works: battery, fuse, helm switch, float switch, and pump](/lovable-uploads/bilge-pump-system-diagram.png)
 
 ### 1. The Pump
 
