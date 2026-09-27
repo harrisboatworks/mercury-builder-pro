@@ -2057,8 +2057,8 @@ Yes. HBW services Mercury outboards regardless of where they were purchased. Com
     slug: "spring-commissioning-cost-ontario",
     title: "Spring Commissioning Cost in Ontario: What 9,540 Spring Jobs Taught Us (2026)",
     description: "HBW spring commissioning is free for winter-storage customers or $99 labour for others. See what 9,540 Lightspeed job records actually measure.",
-    image: "/lovable-uploads/hero-spring-commissioning-cost.webp",
-    imageAlt: "A technician checking a Mercury 90 outboard beside covered boats in spring",
+    image: '/lovable-uploads/blog-heroes-2026-09/spring-commissioning-bill-drivers.webp',
+    imageAlt: "Infographic: a spring bill is the standard check, $0 labour for HBW winter storage customers or $99 before HST for others, plus parts and repairs only when the check finds something.",
     author: "Jay Harris",
     datePublished: "2026-07-02",
     dateModified: "2026-08-26",
@@ -8373,7 +8373,7 @@ This is the most common Ontario center console application.
 **Performance:** 50 to 60 mph two-up.
 **Use case:** Lake Ontario salmon tournament days, bigger-water Bay of Quinte.
 
-![24-foot center-console fishing boat with twin Mercury Verado V8 outboards](/lovable-uploads/inline/inline-center-console-twin-verados.png)
+![Infographic comparing a single Mercury with twin outboards on a center console: twins buy get-home redundancy and total power, not extra speed, and typically cost substantially more.](/lovable-uploads/inline/center-console-single-vs-twin-2026-09.webp)
 
 You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
@@ -24595,7 +24595,7 @@ The useful lesson is less dramatic. If a 60 suddenly loses top-end rpm, overheat
 
 Command Thrust doesn't add horsepower. It gives the 60 a larger gearcase, a 2.33:1 ratio and the ability to turn a larger-diameter propeller.
 
-![Mercury 60 HP Command Thrust FourStroke powering a Tracker fishing boat on freshwater.](/lovable-uploads/inline/mercury-60-command-thrust-freshwater.webp)
+![Infographic comparing the Mercury 60 FourStroke standard gearcase with Command Thrust: which boats and loads suit each, with gear ratio and dry weight.](/lovable-uploads/inline/mercury-60-standard-vs-command-thrust-2026-09.webp)
 
 *Mercury 60 HP Command Thrust FourStroke on a freshwater fishing boat. Photo: Mercury Marine.*
 
@@ -26326,6 +26326,8 @@ Choose Command Thrust for a pontoon or a specific heavy-duty application that ne
 Don't buy it as a generic upgrade for a recreational V-hull. The larger case can carry load and produce lift, but it also adds drag. On an ordinary aluminum or fibreglass runabout, the standard gearcase is normally the better choice.
 
 [Read the full Command Thrust explanation](/blog/mercury-command-thrust-complete-guide-2026) if another dealer has told you CT simply means “more torque.”
+
+![Infographic comparing the Mercury 115 FourStroke, 115 Pro XS and 115 Command Thrust: rpm range or gear ratio, best fit and trade-off for each.](/lovable-uploads/inline/mercury-115-fourstroke-pro-xs-ct-2026-09.webp)
 
 ![Two anglers fishing from a Ranger aluminum boat powered by a Mercury 115 Pro XS on fresh water.](/lovable-uploads/inline/mercury-115-pro-xs-freshwater-ranger-full.webp)
 
@@ -30901,7 +30903,7 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 
 If anything feels wrong during this sequence, stop. Don't push through. Most spring problems get worse, not better, when ignored.
 
-![Technician checking the cooling system telltale stream on a Mercury FourStroke outboard during spring run-up.](/lovable-uploads/inline/inline-mercury-telltale-water-stream.png)
+![Diagram of an outboard telltale showing a good steady stream, a weak or intermittent stream, and no flow, with what to do in each case.](/lovable-uploads/inline/telltale-stream-good-weak-none-2026-09.webp)
 
 ## When something is wrong, the most likely culprits
 
@@ -33030,7 +33032,8 @@ Family-owned since 1947.
     title: 'Mercury Boost Canada 2026: Eligibility, Performance, and Pricing',
     seoTitle: 'Mercury Boost Canada 2026: Eligibility & Pricing | HBW',
     description: `What Mercury Boost does, which motors may qualify, and how HBW confirms current Canadian pricing from the exact serial number.`,
-    image: '/lovable-uploads/hero-mercury-boost-console.png',
+    image: '/lovable-uploads/blog-heroes-2026-09/mercury-boost-what-changes.webp',
+    imageAlt: "Infographic: Mercury Boost is a response tune, not added horsepower; which Mercury families are and are not eligible by serial number; and why HBW confirms the Canadian price for the exact motor.",
     author: 'Jay Harris',
     datePublished: '2026-05-28',
     dateModified: '2026-09-11',
@@ -35865,7 +35868,7 @@ For a used boat, confirm transfer eligibility, deadlines, inspection requirement
 | Trolling motor and charger | Brand, model, serial number, receipt and installation details |
 | Navigation, audio and other electronics | Provider, model, serial number and purchase records |
 
-![Legend detail images of helm instruments and a boat fitting](/lovable-uploads/inline/inline-legend-pontoon-tech-warranty.png "Legend component illustrations. Confirm the applicable provider and written coverage for each component.")
+![Table showing that a Legend boat package is covered by several providers: Legend WOWranty for the hull and structure, and separate written warranties for the Mercury outboard, trailer, electronics and other components.](/lovable-uploads/inline/legend-package-warranty-providers-2026-09.webp "Coverage summary only. The written model-year warranty for the exact boat governs.")
 
 Factory-installed equipment and accessories fitted later may follow different claim routes. Confirm the provider for the failed component before authorizing repairs. For motor-specific background, see our [Mercury warranty guide](/blog/mercury-outboard-warranty-canada-2026).
 
