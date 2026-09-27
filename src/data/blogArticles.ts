@@ -36188,6 +36188,563 @@ If you know what you need, look it up and order through our [Mercury parts looku
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 **Configurator:** [mercuryrepower.ca](https://mercuryrepower.ca)`,
   },
+  {
+    slug: "mercury-fourstroke-making-oil-guide",
+    title: "Why Mercury FourStrokes Make Oil (and What Actually Fixes It)",
+    seoTitle: "Mercury FourStroke Making Oil? Causes and Fixes (2026)",
+    description: "Rising oil level on your Mercury FourStroke? Why four-strokes \"make oil\" when trolling in cold water, how to check it properly, and the fixes that work.",
+    image: "/lovable-uploads/blog-heroes-2026-09/mercury-making-oil-flow.webp",
+    imageAlt: "Infographic: cutaway of a four-stroke cylinder showing cold lake water, fuel condensing in the intake, fuel film on the cylinder walls slipping past the piston rings, and the oil level rising on the dipstick.",
+    author: 'Jay Harris',
+    datePublished: '2026-09-26',
+    dateModified: '2026-09-26',
+    publishDate: '2026-09-26',
+    category: "Maintenance",
+    readTime: "~6 min read",
+    keywords: ["Mercury four stroke making oil", "outboard oil level rising", "fuel in oil outboard", "kicker making oil trolling", "Mercury oil smells like gas"],
+    citations: [
+      { name: "Mercury 150 FourStroke owner's manual (oil capacity, dipstick procedure, extended-trolling guidance)", url: "https://dmna.ny.gov/nynm/manuals/Mercury_150_FourStroke_Manual.pdf" },
+      { name: "Mercury SmartCraft operations manual (Troll Control range)", url: "https://dmna.ny.gov/nynm/manuals/Mercury_SmartCraft_Operations_Manual.pdf" },
+      { name: "Mercury Marine: FourStroke maintenance", url: "https://www.mercurymarine.com/us/en/lifestyle/dockline/four-stroke-maintenance" },
+      { name: "Boats.com, Charles Plueddeman: Trolling four-stroke contamination", url: "https://www.boats.com/reviews/outboard-expert-trolling-four-stroke-contamination/" },
+    ],
+    faqs: [
+      { question: "Is making oil a warranty issue?", answer: "Usually not. Fuel dilution from long, cold, low-RPM running is an operating condition, and Mercury's own answer to extended trolling is more frequent oil changes. If the level keeps rising after proper hot runs and fresh oil, have it diagnosed, because that pattern points to something else." },
+      { question: "Can I just drain some oil out to bring the level down?", answer: "You can, but it fixes nothing. The oil left in the motor is just as diluted. Change it." },
+      { question: "Do two-strokes make oil?", answer: "No. A two-stroke has no oil sump to dilute. Its oil is burned with the fuel, so rising crankcase oil is a four-stroke issue." },
+      { question: "Why does my kicker make oil faster than my main motor?", answer: "A kicker lives at one low speed and rarely gets hot enough to boil fuel off. The main motor that runs to the fishing spot and back cleans itself out. The kicker that idles all day doesn't." },
+      { question: "How much rise is too much?", answer: "Any noticeable rise between weekly checks is worth an oil change. Don't wait until it smells like gas, because by then the dilution is well along." },
+    ],
+    content: `# Why Mercury FourStrokes Make Oil (and What Actually Fixes It)
+
+*Last reviewed: 2026-09-26*
+
+> **Quick answer:** "Making oil" means raw fuel is getting past the piston rings into the crankcase, so the oil level climbs even though you haven't added any. It isn't a Mercury defect. It's what four-stroke outboards do when they run cold and slow for hours, which is exactly what a day of trolling is. The fix: change the oil as soon as the level rises, run the motor under load for about 20 minutes after long trolling days, and check the dipstick weekly in trolling season. If the level keeps climbing after a fresh change and proper hot runs, get it looked at.
+
+## What "making oil" actually is
+
+A four-stroke outboard keeps its engine oil in a sump at the bottom of the powerhead. A pump circulates it through the crankshaft, rods and cam. That oil is supposed to stay put and stay clean.
+
+When a motor "makes oil," fuel is working its way into that sump. The level rises on the dipstick, the oil thins out, and the dipstick smells like a gas can. Thinned oil protects bearings and cylinder walls less well, and those are the last places you want to cut corners.
+
+The catch: the motor usually runs fine while it's happening. There's no alarm for fuel dilution. The dipstick is the alarm.
+
+## Why four-strokes do it
+
+It comes down to temperature.
+
+An outboard is cooled by the water it sits in. On Rice Lake in October that water can be around 10°C, and it keeps the intake manifold and cylinder walls cool too. Fuel hitting a cool intake doesn't fully vaporize. Some condenses on the manifold walls as liquid instead of arriving in the cylinder as a burnable mist.
+
+Liquid fuel doesn't burn cleanly. It films the cylinder walls and gets carried past the rings into the crankcase, a little at a time. Multiply that by six hours at trolling speed and the dipstick tells the story.
+
+| Factor | Effect on fuel dilution |
+|---|---|
+| Water temperature | Colder water, cooler engine, more condensation |
+| Engine speed | Hours at low RPM never make enough heat to cook the fuel off |
+| Fuel delivery | Modern EFI is less prone to it than older carbureted four-strokes |
+
+**Kickers are the worst offenders.** They spend their whole working life at one low speed and rarely get hot enough to boil fuel out of the oil. A kicker that idles along all day and then gets tilted up at the dock is running the perfect fuel-dilution experiment.
+
+**EFI helps, but it isn't immunity.** Modern Mercury FourStrokes meter their fuel far more precisely than the carbureted four-strokes of 20 years ago, so they're less susceptible. Hours of cold, low-RPM running still show up on the dipstick.
+
+Mercury says it plainly in the owner's manual: change the engine oil more often when the engine is operated under adverse conditions, such as extended trolling. That one sentence is the whole story.
+
+## The thermostat connection
+
+Your FourStroke has a thermostat that controls cooling-water flow so the engine reaches and holds operating temperature. A thermostat stuck open lets full water flow all the time, and the motor never properly warms up. That's the same cold-running condition that causes fuel dilution.
+
+If your motor always seems to run cool, or it makes oil faster than your trolling hours explain, the thermostat is one of the first things a technician will check.
+
+Getting overheat alarms instead of rising oil? That's a different problem. Our [Mercury beeping codes guide](/blog/mercury-outboard-beeping-codes-guide) and [overheat alarm decoder](/blog/mercury-outboard-overheat-alarm-decoder) cover that side.
+
+## How to check the oil properly
+
+Most "my oil level looks weird" readings come from checking it wrong. Mercury's manual procedure:
+
+1. **Tilt the motor to vertical** so the powerhead is level.
+2. **Check it cold, or at least an hour after shutdown**, so the oil has drained back to the sump.
+3. **Pull, wipe, re-insert, and read.**
+4. **Keep it in the operating range, not over the top mark.** Overfilling a four-stroke is its own problem. Add oil in small amounts (roughly half a litre at a time) and re-check.
+
+Do this weekly during trolling season. A rising trend between checks is your early warning. As a reference point, a Mercury 150 FourStroke holds about 6 litres with the filter. Capacities vary a lot by model, so check our [Mercury outboard oil capacity chart](/blog/mercury-outboard-oil-capacity-chart) for yours.
+
+**One caution:** high and fuel-smelling is dilution. Milky oil means water is getting in, which is a different and more serious problem. That one needs a technician, not an oil change.
+
+## What actually fixes it
+
+Do these in order:
+
+1. **Change the oil and filter as soon as the level rises.** Draining a little off to get back to the mark solves nothing. What's left is still diluted.
+2. **Run it under load at higher RPM for about 20 minutes** after long trolling days. Under load means actually pushing the boat, not revving it at the dock. That brings the engine up to real operating temperature and drives the fuel out of the oil.
+3. **Change the oil again before winter storage.** Old, diluted oil sitting against bearings all winter is how a small fall problem becomes a spring repair bill. It's standard in our [winterization routine](/blog/diy-mercury-outboard-winterization-guide).
+
+Change it, cook it, store it clean. That handles fuel dilution on the vast majority of motors.
+
+## How to prevent it next season
+
+- **Give the motor a hard run after trolling.** If your Mercury has SmartCraft Troll Control, it holds a set trolling speed somewhere between about 550 and 1,000 RPM depending on the engine. Handy, but it's still hours at low speed. The run afterwards matters more than the RPM you picked.
+- **Use the main motor when you move spots.** The motor that never works hard is the one that makes oil.
+- **Shorten your oil change interval if you troll a lot.** Mercury doesn't give a number for "more often." Your dipstick will. Our [20/100/300 maintenance guide](/blog/mercury-maintenance-intervals-20-100-300-rule) covers the standard schedule.
+- **Keep the 100-hour service honest.** Oil, filter, gearcase lube, and a look at the cooling system on schedule.
+
+## When to bring it in
+
+Book a service visit if:
+
+- The level keeps rising after a fresh oil change and proper hot runs
+- The oil smells strongly of fuel or looks milky
+- The motor consistently runs cool
+- You're due for the 100-hour service anyway, which is the natural time to deal with diluted oil and check the thermostat in one visit
+
+Request service at [hbw.wiki/service](https://hbw.wiki/service). We're a Mercury Premier dealer on Rice Lake, and a kicker that makes oil after a fall of walleye trolling is a routine diagnosis here, not a mystery.
+
+## FAQs
+
+**Is making oil a warranty issue?**
+Usually not. Fuel dilution from long, cold, low-RPM running is an operating condition, and Mercury's own answer to extended trolling is more frequent oil changes. If the level keeps rising after proper hot runs and fresh oil, have it diagnosed, because that pattern points to something else.
+
+**Can I just drain some oil out to bring the level down?**
+You can, but it fixes nothing. The oil left in the motor is just as diluted. Change it.
+
+**Do two-strokes make oil?**
+No. A two-stroke has no oil sump to dilute. Its oil is burned with the fuel, so rising crankcase oil is a four-stroke issue.
+
+**Why does my kicker make oil faster than my main motor?**
+A kicker lives at one low speed and rarely gets hot enough to boil fuel off. The main motor that runs to the fishing spot and back cleans itself out. The kicker that idles all day doesn't.
+
+**How much rise is too much?**
+Any noticeable rise between weekly checks is worth an oil change. Don't wait until it smells like gas, because by then the dilution is well along.
+
+## Sources
+
+- [Mercury 150 FourStroke owner's manual (oil capacity, dipstick procedure, extended-trolling guidance)](https://dmna.ny.gov/nynm/manuals/Mercury_150_FourStroke_Manual.pdf)
+- [Mercury SmartCraft operations manual (Troll Control range)](https://dmna.ny.gov/nynm/manuals/Mercury_SmartCraft_Operations_Manual.pdf)
+- [Mercury Marine: FourStroke maintenance](https://www.mercurymarine.com/us/en/lifestyle/dockline/four-stroke-maintenance)
+- [Boats.com, Charles Plueddeman: Trolling four-stroke contamination](https://www.boats.com/reviews/outboard-expert-trolling-four-stroke-contamination/)
+
+## About the author
+
+Jay Harris runs Harris Boat Works in Gores Landing, Ontario, a third-generation family marina on Rice Lake since 1947 and a Mercury dealer since 1965.
+`,
+  },
+  {
+    slug: "mercury-outboard-battery-size-guide",
+    title: "What Battery Does My Mercury Outboard Need? MCA, Group Size and Lithium Rules",
+    seoTitle: "Mercury Outboard Battery Size: MCA, Group and Lithium (2026)",
+    description: "The right battery for your Mercury outboard starts with the MCA spec in your owner's manual. Cranking specs by model, group sizes, and Mercury's lithium rules.",
+    image: "/lovable-uploads/blog-heroes-2026-09/mercury-battery-decision.webp",
+    imageAlt: "Infographic: a Mercury 150 FourStroke needs 1,000 MCA, 800 CCA and 180 Ah; cold starts more than double the cranking requirement; three steps to choose a battery; and the two conditions for a lithium cranking battery.",
+    author: 'Jay Harris',
+    datePublished: '2026-09-26',
+    dateModified: '2026-09-26',
+    publishDate: '2026-09-26',
+    category: "Maintenance",
+    readTime: "~6 min read",
+    keywords: ["what battery does my Mercury outboard need", "Mercury outboard battery size", "battery for 90 hp Mercury outboard", "50 hp Mercury outboard battery size", "Mercury lithium cranking battery"],
+    citations: [
+      { name: "Mercury 150 FourStroke owner's manual (battery specification)", url: "https://dmna.ny.gov/nynm/manuals/Mercury_150_FourStroke_Manual.pdf" },
+      { name: "Mercury service bulletin on lithium-ion cranking batteries (via West Marine)", url: "https://www.westmarine.com/on/demandware.static/-/Sites-wm-master-catalog/default/dwde8853e8/images/legacy-pdf/MER_4324_Relion_IBEX_SerivceBulletin.pdf" },
+      { name: "RELiON RB100-HP product page", url: "https://www.relionbattery.com/products/lithium/rb100-hp" },
+      { name: "Older Mercury electrical FAQ battery table, as quoted by owners on Bass Boat Magazine", url: "https://www.bassboatmagazine.com/threads/the-correct-battery-for-a-mercury-outboard-motor.7105/" },
+    ],
+    faqs: [
+      { question: "Can I use a car battery in my boat?", answer: "If it meets the manual's cranking spec it will turn the motor over, but marine batteries are built for vibration and repeated charge cycles, and car batteries aren't. In a battery box that takes wave chop all season, the marine rating earns its keep." },
+      { question: "Is a bigger battery always better?", answer: "Up to a point. Meeting spec with some headroom is good. A dramatically oversized battery adds weight and cost without starting the motor any better." },
+      { question: "Can I run lithium on my 90 FourStroke?", answer: "If it's the 2.1 L 75 to 115 hp family, it's on Mercury's approved list for all serial numbers, so yes, as long as the battery is a LiFePO4 marine cranking battery that meets every line of Mercury's spec. If the battery doesn't meet the spec, no." },
+      { question: "Why is the cold-weather requirement so much higher?", answer: "Cold thickens the oil and slows the battery's chemistry at the same time. The starter needs more amps just as the battery can deliver fewer. In Ontario, spring and fall launches live in the cold column." },
+      { question: "Do I need a separate battery for my kicker?", answer: "If you troll with a kicker and run electronics, a dedicated cranking battery for each motor plus a house battery is the standard serious-fishing setup. One extra battery and switch beats losing a day to a flat bank." },
+    ],
+    content: `# What Battery Does My Mercury Outboard Need? MCA, Group Size and Lithium Rules
+
+*Last reviewed: 2026-09-26*
+
+> **Quick answer:** Your owner's manual sets the battery spec, and the number that matters is the cranking rating. A current Mercury 150 FourStroke calls for at least **1,000 MCA (800 CCA) and 180 Ah**. Smaller motors need less, and older Mercury guidance roughly doubles the requirement for cold-weather starts on mid-range motors. Lithium cranking batteries are allowed, but only on Mercury's approved engine list and only if the battery meets Mercury's published spec.
+
+## Why the manual number wins
+
+An outboard battery lives in a box in the weather, takes wave pounding all season, and has to spin a big engine in cold spring air. Mercury sets a cranking requirement for each engine family and prints it in the manual. That number is the minimum.
+
+If your manual lists MCA, buy to MCA. If it lists CCA, buy to CCA. Don't guess between them, and don't let a parts counter talk you into "close enough." A battery that barely meets spec in July often won't in October.
+
+Our [boat battery guide](/blog/mercury-boat-battery-guide-ontario) covers chemistry, wiring and battery switches in depth. This page is the model-specific piece: what your Mercury actually asks for.
+
+## MCA, CCA and Ah in plain English
+
+| Rating | What it measures | Why it matters |
+|---|---|---|
+| **MCA** (marine cranking amps) | Cranking amps for 30 seconds at 0°C (32°F) | The marine standard. Most outboard manuals use it. |
+| **CCA** (cold cranking amps) | Cranking amps for 30 seconds at −18°C (0°F) | Tested colder, so 800 CCA is a bigger ask than 800 MCA. |
+| **Ah** (amp-hours) | Stored energy | Runs electronics with the engine off. |
+| **RC** (reserve capacity) | Minutes the battery can supply 25 amps | Another way of expressing stored energy. |
+
+If the manual gives both MCA and CCA, meet both. A battery rated 1,000 MCA / 800 CCA covers the 150 FourStroke on both counts.
+
+## Battery specs by Mercury model
+
+The 150 FourStroke line comes from Mercury's current owner's manual. The smaller-motor lines come from an older Mercury electrical FAQ that's widely quoted by owners. Treat those as a starting point and **confirm against the manual for your serial number**, because specs have changed over the years.
+
+| Mercury engine | Minimum cranking spec |
+|---|---|
+| 9.9 / 15 / 25 hp FourStroke | 465 MCA or 350 CCA |
+| 30 to 50 hp FourStroke | 465 MCA / 350 CCA above freezing; 1,000 MCA / 750 CCA below freezing |
+| 75 / 90 hp FourStroke | 465 MCA / 350 CCA above freezing; 1,000 MCA / 750 CCA below freezing |
+| OptiMax 2.5 / 3.0 L | 1,000 MCA / 750 CCA |
+| 150 FourStroke (current manual) | **1,000 MCA / 800 CCA / 180 Ah** |
+
+The cold-weather column is the one that surprises people: below freezing, the mid-range requirement more than doubles. In Ontario we launch onto water that was ice a few weeks earlier, so the cold column is the one to buy for.
+
+That same older guidance suggested 70 to 100 Ah for mid-range motors. If a chartplotter, livewell and sounder run off your cranking battery, buy toward the top of that range. Better still, put house loads on a second battery. A cranking battery for the main motor plus a house battery (and one for the kicker on a triple-rigged walleye boat) means a dead house bank never strands you.
+
+
+## Group sizes: what fits
+
+"Group" is a case size, not a power rating:
+
+- **Group 24:** the common mid-size case, typical in smaller aluminum boats
+- **Group 27:** longer case, usually more Ah
+- **Group 31:** the big case, most capacity
+
+Measure your battery box before you shop, and match the terminal layout to your cables. A group 31 that doesn't fit the box is a paperweight with posts.
+
+## Flooded, AGM or lithium?
+
+| Chemistry | Strength | Watch out for |
+|---|---|---|
+| Flooded lead-acid | Cheapest up front, dependable | Needs charging discipline; can spill if tipped |
+| AGM | Sealed, vibration-resistant, maintenance-free | Costs more |
+| Lithium (LiFePO4) | Light, long cycle life | Only approved by Mercury on specific engines and specs (below) |
+
+## Mercury's lithium rules
+
+Mercury has published a service bulletin on lithium cranking batteries, and it's refreshingly specific.
+
+**Approved engine families (all serial numbers):**
+
+- 2.1 L 75 to 115 hp FourStroke, Pro XS and SeaPro
+- 3.0 L 150 hp FourStroke, Pro XS and SeaPro
+- 3.4 L V6 and 4.6 L V8 175 to 300 hp FourStroke, Pro XS, SeaPro and Verado
+- 2.6 L L6 200 to 400 hp Pro and Verado
+- 7.6 L V12 500 to 600 hp SeaPro and Verado
+
+**Every other Mercury outboard, all MerCruiser engines and Mercury Diesel are not approved** for lithium cranking batteries. If your engine isn't on the list, buy a quality AGM or flooded battery that meets the manual spec.
+
+**What the battery must meet on an approved engine:**
+
+| Requirement | Mercury's spec |
+|---|---|
+| Chemistry | Lithium iron phosphate (LiFePO4), built for marine cranking |
+| Cranking | At least 800 A for 8 seconds at −7°C (20°F) |
+| Peak charge acceptance | 165 A for one minute |
+| Maximum charge current | 150 A |
+| Maximum charge voltage | 14.8 V |
+| Reserve capacity | 135 minutes (RC25) |
+| Sealing | IP67 or better |
+
+A bargain lithium that can't take the alternator's charge current, or isn't sealed to IP67, doesn't meet the spec. The first battery Mercury evaluated and approved under this standard was the RELiON RB100-HP: 100 Ah LiFePO4, rated 800 A for 8 seconds, IP67, with a 10-year warranty.
+
+Two things worth knowing:
+
+1. **This is about the cranking battery.** A lithium house bank for electronics is a separate conversation.
+2. **Per Mercury's bulletin, a battery that meets the spec on an approved engine doesn't void the engine warranty.** Anything off-spec, or lithium on a non-approved engine, is a different story.
+
+Not sure which side of the line your motor is on? Ask us through the [service form](https://hbw.wiki/service), or when you [build a repower quote](/quote/motor-selection). We'd rather answer it before you buy a battery than after.
+
+## FAQs
+
+**Can I use a car battery in my boat?**
+If it meets the manual's cranking spec it will turn the motor over, but marine batteries are built for vibration and repeated charge cycles, and car batteries aren't. In a battery box that takes wave chop all season, the marine rating earns its keep.
+
+**Is a bigger battery always better?**
+Up to a point. Meeting spec with some headroom is good. A dramatically oversized battery adds weight and cost without starting the motor any better.
+
+**Can I run lithium on my 90 FourStroke?**
+If it's the 2.1 L 75 to 115 hp family, it's on Mercury's approved list for all serial numbers, so yes, as long as the battery is a LiFePO4 marine cranking battery that meets every line of Mercury's spec. If the battery doesn't meet the spec, no.
+
+**Why is the cold-weather requirement so much higher?**
+Cold thickens the oil and slows the battery's chemistry at the same time. The starter needs more amps just as the battery can deliver fewer. In Ontario, spring and fall launches live in the cold column.
+
+**Do I need a separate battery for my kicker?**
+If you troll with a kicker and run electronics, a dedicated cranking battery for each motor plus a house battery is the standard serious-fishing setup. One extra battery and switch beats losing a day to a flat bank.
+
+## Sources
+
+- [Mercury 150 FourStroke owner's manual (battery specification)](https://dmna.ny.gov/nynm/manuals/Mercury_150_FourStroke_Manual.pdf)
+- [Mercury service bulletin on lithium-ion cranking batteries (via West Marine)](https://www.westmarine.com/on/demandware.static/-/Sites-wm-master-catalog/default/dwde8853e8/images/legacy-pdf/MER_4324_Relion_IBEX_SerivceBulletin.pdf)
+- [RELiON RB100-HP product page](https://www.relionbattery.com/products/lithium/rb100-hp)
+- [Older Mercury electrical FAQ battery table, as quoted by owners on Bass Boat Magazine](https://www.bassboatmagazine.com/threads/the-correct-battery-for-a-mercury-outboard-motor.7105/)
+
+## About the author
+
+Jay Harris runs Harris Boat Works in Gores Landing, Ontario, a third-generation family marina on Rice Lake since 1947 and a Mercury dealer since 1965.
+`,
+  },
+  {
+    slug: "mercury-nmea-2000-lowrance-garmin-guide",
+    title: "Mercury Engine Data on Your Garmin, Lowrance or Humminbird: Which Gateway and How to Wire It",
+    seoTitle: "Mercury Engine Data on Lowrance, Garmin or Humminbird (2026)",
+    description: "How to get Mercury engine data onto your fishfinder or chartplotter. Which Mercury gateway matches your screen brand, real part numbers, and how the NMEA 2000 wiring works.",
+    image: "/lovable-uploads/blog-heroes-2026-09/nmea-2000-mercury-backbone.webp",
+    imageAlt: "Infographic: top view of a boat with a NMEA 2000 backbone linking the Mercury engine gateway, display and 12 V feed, plus which Mercury module matches Garmin, Raymarine, Simrad, Lowrance and Humminbird screens.",
+    author: 'Jay Harris',
+    datePublished: '2026-09-26',
+    dateModified: '2026-09-26',
+    publishDate: '2026-09-26',
+    category: "Mercury Technology",
+    readTime: "~5 min read",
+    keywords: ["Mercury engine data Lowrance", "Mercury SmartCraft Connect Garmin", "Mercury NMEA 2000 gateway Humminbird", "VesselView Link Lowrance", "connect Mercury outboard to fishfinder"],
+    citations: [
+      { name: "Mercury Marine: SmartCraft Connect (engine and display compatibility)", url: "https://www.mercurymarine.com/us/en/smartcraft/vessel-intelligence/smartcraft-connect" },
+      { name: "Garmin support: SmartCraft Connect integration and part numbers", url: "https://support.garmin.com/en-US/?faq=3MdGIQcQhC2Y2F05PmVbo8" },
+      { name: "Humminbird: NMEA 2000 compatibility and required hardware", url: "https://humminbird-help.johnsonoutdoors.com/hc/en-us/articles/4412797910423-NMEA-2000-Compatibility" },
+      { name: "MercruiserParts: VesselView Link vs SmartCraft Connect vs NMEA 2000 Gateway", url: "https://www.mercruiserparts.com/vesselview-link-vs-smartcraft-connect" },
+      { name: "Energy Power Sports: Mercury SmartCraft Connect pricing (Canada)", url: "https://shop.energypowersports.ca/collections/mercury-smartcraft-connect" },
+    ],
+    faqs: [
+      { question: "Do I need VesselView to see my engine data?", answer: "No. VesselView is Mercury's own display line. The right Mercury gateway for your screen brand, plus a NMEA 2000 network, puts engine data on the display you already have." },
+      { question: "Will this work on my 2006 Mercury 90?", answer: "2004-and-newer SmartCraft-capable Mercury outboards from 40 hp up are inside Mercury's compatibility window. Confirm with your serial number before ordering, because older installs may be missing the SmartCraft harness at the helm." },
+      { question: "Can I start with the phone app and add the plotter later?", answer: "Yes. The Connect Mobile module gets you engine data for about $300 CAD, and you can add the plotter gateway any season after." },
+      { question: "Does adding a gateway affect my Mercury warranty?", answer: "These are Mercury's own SmartCraft accessories, not aftermarket add-ons. Install them to Mercury's instructions and confirm the right part for your serial number with your dealer." },
+      { question: "Will my Humminbird show Mercury data?", answer: "Yes, through Mercury's NMEA 2000 Gateway (8M0165589) and a Humminbird NMEA 2000 kit. Expect basic engine data rather than the full Mercury feature set that SmartCraft Connect or VesselView Link gives other brands." },
+      { question: "What about my Lowrance?", answer: "Lowrance uses Mercury's VesselView Link, not SmartCraft Connect. Check that your Lowrance model and software support it before ordering." },
+    ],
+    content: `# Mercury Engine Data on Your Garmin, Lowrance or Humminbird: Which Gateway and How to Wire It
+
+*Last reviewed: 2026-09-26*
+
+> **Quick answer:** Yes, a SmartCraft-capable Mercury can put its engine data on the screen you already own, but the Mercury module you need depends on the brand of that screen. **Garmin, Raymarine and newer Simrad** use SmartCraft Connect. **Lowrance and Simrad** use VesselView Link. **Humminbird and other brands** use Mercury's NMEA 2000 Gateway, which sends basic engine data only. All three join your boat's NMEA 2000 network. If you just want engine data on your phone, the SmartCraft Connect Mobile module does that for about $300 CAD.
+
+## Why bother
+
+RPM, water temperature, oil pressure, fuel, and alarms can all live on the screen that's already mounted where you look. Alarms show up where you'll see them, and you can lose the clutter of mismatched gauges.
+
+It's also the honest answer to "do I need VesselView?" VesselView is Mercury's own display line and it's excellent, but if you already run a good plotter, the right gateway gets the engine data onto it. Our [VesselView and SmartCraft guide](/blog/mercury-vesselview-smartcraft-plain-english-guide) explains the two in plain English.
+
+## Step 1: Is your motor SmartCraft-capable?
+
+Mercury's line: outboards from **model year 2004 and newer, 40 hp and up**, plus **25 and 30 hp outboards from 2022 on with electric start**. If there's a SmartCraft harness or junction box under your console, you're likely in the game. Not sure? We can tell from the serial number. Here's [how to find it](/blog/how-to-read-mercury-outboard-serial-number).
+
+## Step 2: Match the gateway to your screen
+
+This is where most online advice goes wrong. Mercury makes three different ways to feed a non-Mercury screen, and they are not interchangeable.
+
+| Your screen | Mercury module | What you get |
+|---|---|---|
+| Garmin GPSMAP / TD50 (software 24.1+), NMEA 2000-capable ECHOMAP (17.1+) | **SmartCraft Connect** | Full native Mercury integration |
+| Raymarine plotters on LightHouse 4.1 | **SmartCraft Connect** | Full native Mercury integration |
+| Simrad NSX, NSX Ultrawide, NSS 4 | **SmartCraft Connect** | Full native Mercury integration |
+| Lowrance (and Simrad) | **VesselView Link** | Full native Mercury integration |
+| Humminbird, Furuno and other NMEA 2000 displays | **NMEA 2000 Gateway** (8M0165589) | Basic engine data: no Mercury fault descriptions, Troll Control or software updates |
+
+Humminbird's own compatibility chart lists the Mercury 8M0165589 gateway plus a Humminbird NMEA 2000 starter kit for Mercury engines, and some Humminbird models need an extra adapter cable. Check your model's page before ordering.
+
+**Phone instead of plotter?** The SmartCraft Connect Mobile module sends engine data over Bluetooth to the Mercury app on your phone or tablet. It's the cheapest way in and a good fit for occasional checks.
+
+## Step 3: What it costs
+
+| Part | Number | Recent price |
+|---|---|---|
+| SmartCraft Connect Mobile (phone), under-cowl | 8M0173128 | ~$310 to $330 CAD |
+| SmartCraft Connect Mobile (phone), under-helm | 8M0173129 | ~$310 to $330 CAD |
+| SmartCraft Connect, single engine, under-helm | 8M0173694 | ~$1,170 to $1,300 CAD |
+| SmartCraft Connect, multi-engine | 8M0173703 | ~$2,340 to $2,600 CAD |
+| VesselView Link base kit, single engine | 8M0110639 | ~$820 to $885 USD |
+| VesselView Link base kit, multi-engine | 8M0110641 | ~$1,310 to $1,435 USD |
+| NMEA 2000 backbone starter kit | 8M0110642 | ~$107 USD |
+| SmartCraft data harness, 10-pin, 25 ft | 84-879981T25 | ~$119 USD |
+| NMEA 2000 T-connector | 8M0204742 | ~$41 USD each |
+
+CAD prices are recent Canadian retail and USD prices are US parts-retailer references, both checked September 2026. Prices move with the exchange rate, so confirm when you order. The takeaway: the gateway is where the money goes. The wiring is commodity parts.
+
+## Step 4: How the NMEA 2000 wiring works
+
+A NMEA 2000 network isn't one cable from motor to screen. It's a small backbone that every device taps into.
+
+
+1. **The backbone** is a run of NMEA 2000 cable along the boat, usually from the console toward the stern.
+2. **T-connectors** sit on the backbone wherever a device joins: the Mercury gateway, the display, and the power feed.
+3. **Each device** connects to its T with a drop cable.
+4. **A terminator goes on each end** of the backbone. Exactly two.
+5. **The backbone needs power**, from a fused 12 V feed on its own T.
+6. **The Mercury side:** the gateway connects to the engine's SmartCraft junction box with Mercury's data harness, then joins the backbone on its own T.
+
+Powered backbone, two terminators, a T for everything. Multi-engine boats use the multi-engine version of the gateway rather than a second network.
+
+## What you'll see on screen
+
+With SmartCraft Connect or VesselView Link, your display gets Mercury's engine pages: RPM, temperatures, pressures, fuel data, battery voltage and alarms, in a layout designed for that brand. Depending on the display and engine, extras like Troll Control and Mercury fault descriptions come along too.
+
+The generic NMEA 2000 Gateway gives the basics in your display's own engine pages, which is plenty for many fishing boats. If a feature matters to you, check it before you buy. Our [beeping codes guide](/blog/mercury-outboard-beeping-codes-guide) covers what each alarm means.
+
+## DIY or dealer install?
+
+The phone module is a reasonable DIY job if you're comfortable behind a console. The plotter path is where it's worth a conversation: picking the right gateway for your display and engine, running the backbone cleanly, powering it properly, and confirming the display actually reads the data. It's part of a normal [repower rig-out](/blog/mercury-outboard-rigging-costs-ontario), and it's also a standalone job on boats keeping their current motor.
+
+Book it through the [service form](https://hbw.wiki/service). If you're shopping motors with this setup in mind, [build your repower quote](/quote/motor-selection) and we'll spec the rigging with it.
+
+## FAQs
+
+**Do I need VesselView to see my engine data?**
+No. VesselView is Mercury's own display line. The right Mercury gateway for your screen brand, plus a NMEA 2000 network, puts engine data on the display you already have.
+
+**Will this work on my 2006 Mercury 90?**
+2004-and-newer SmartCraft-capable Mercury outboards from 40 hp up are inside Mercury's compatibility window. Confirm with your serial number before ordering, because older installs may be missing the SmartCraft harness at the helm.
+
+**Can I start with the phone app and add the plotter later?**
+Yes. The Connect Mobile module gets you engine data for about $300 CAD, and you can add the plotter gateway any season after.
+
+**Does adding a gateway affect my Mercury warranty?**
+These are Mercury's own SmartCraft accessories, not aftermarket add-ons. Install them to Mercury's instructions and confirm the right part for your serial number with your dealer.
+
+**Will my Humminbird show Mercury data?**
+Yes, through Mercury's NMEA 2000 Gateway (8M0165589) and a Humminbird NMEA 2000 kit. Expect basic engine data rather than the full Mercury feature set that SmartCraft Connect or VesselView Link gives other brands.
+
+**What about my Lowrance?**
+Lowrance uses Mercury's VesselView Link, not SmartCraft Connect. Check that your Lowrance model and software support it before ordering.
+
+## Sources
+
+- [Mercury Marine: SmartCraft Connect (engine and display compatibility)](https://www.mercurymarine.com/us/en/smartcraft/vessel-intelligence/smartcraft-connect)
+- [Garmin support: SmartCraft Connect integration and part numbers](https://support.garmin.com/en-US/?faq=3MdGIQcQhC2Y2F05PmVbo8)
+- [Humminbird: NMEA 2000 compatibility and required hardware](https://humminbird-help.johnsonoutdoors.com/hc/en-us/articles/4412797910423-NMEA-2000-Compatibility)
+- [MercruiserParts: VesselView Link vs SmartCraft Connect vs NMEA 2000 Gateway](https://www.mercruiserparts.com/vesselview-link-vs-smartcraft-connect)
+- [Energy Power Sports: Mercury SmartCraft Connect pricing (Canada)](https://shop.energypowersports.ca/collections/mercury-smartcraft-connect)
+
+## About the author
+
+Jay Harris runs Harris Boat Works in Gores Landing, Ontario, a third-generation family marina on Rice Lake since 1947 and a Mercury dealer since 1965.
+`,
+  },
+  {
+    slug: "aluminum-boat-transom-inspection-guide",
+    title: "The 4-Point Aluminum Transom Check Before You Repower",
+    seoTitle: "Aluminum Boat Transom Inspection Before a Repower (2026)",
+    description: "Before you hang a new Mercury on an aluminum boat, run a 4-point transom check: look, tap, flex and seals. What the warning signs mean, what repairs cost, and what comes next.",
+    image: "/lovable-uploads/blog-heroes-2026-09/aluminum-transom-4-point-check.webp",
+    imageAlt: "Infographic: cross-section of an aluminum transom with a plywood core rotting around an engine mount bolt, beside the four checks: look, tap, flex and seals.",
+    author: 'Jay Harris',
+    datePublished: '2026-09-26',
+    dateModified: '2026-09-26',
+    publishDate: '2026-09-26',
+    category: "Repower",
+    readTime: "~5 min read",
+    keywords: ["aluminum boat transom inspection", "aluminum transom rot signs", "check transom before repower", "aluminum transom repair cost", "soft transom aluminum boat"],
+    citations: [
+      { name: "The Jimbo Slice Workshop: how to reinforce a transom on an aluminum boat (construction and cost benchmarks)", url: "https://thejimbosliceworkshop.com/how-to-reinforce-a-transom-on-an-aluminum-boat/" },
+      { name: "Custom Marine Finishes: transom failure signs and tap test", url: "https://www.custommarinefinishes.com/blog/preventing-transom-failure-signs-repairs-and-long-term-protection" },
+      { name: "Premium Boat Care: transom repair cost scoping", url: "https://premiumboatcare.com/resources/boat-transom-repair-cost" },
+    ],
+    faqs: [
+      { question: "Can I put a bigger motor on an old aluminum transom?", answer: "Only within the manufacturer's power limit, and only on a transom in good condition. HBW recommends one Mercury model step below the plate maximum. If the core is soft, the repair comes first regardless of horsepower." },
+      { question: "How long does an aluminum transom last?", answer: "Decades, if the seals hold and the boat is stored dry. Rotten cores almost always trace back to one fitting that leaked for years." },
+      { question: "Is an all-aluminum transom better?", answer: "It can't rot, but many production aluminum boats still use a plywood core because it's stiff and economical. The core usually isn't the weak point. Neglected seals are." },
+      { question: "Can I do the tap test on a boat I'm buying?", answer: "Yes, and you should. Just remember it's a screen, not a verdict. If you hear dull spots or see staining, get a professional inspection before you buy." },
+      { question: "Can a tap test prove my transom is sound?", answer: "No. Looking, tapping and flex checks can reveal warning signs, but they can't certify hidden core, weld or fastener condition. If anything is questionable, have a qualified marine technician inspect it." },
+    ],
+    content: `# The 4-Point Aluminum Transom Check Before You Repower
+
+*Last reviewed: 2026-09-26*
+
+> **Quick answer:** Many aluminum boats have a transom built as a sandwich: aluminum skins with a marine plywood core. If water gets into that core, it rots, and a new motor ends up bolted to a soft centre. Before you repower, run four checks in the driveway: **look** for staining and cracks around the motor bolts, **tap** for dull spots, watch for **flex** under load, and inspect every **seal** through the transom. These checks find warning signs; they can't certify the transom. If anything looks off, have a technician inspect it before you buy a motor.
+
+## Why this comes before the repower
+
+A repower puts years of new load on the transom: torque, trim and steering forces, and sometimes more weight. A 20-year-old aluminum hull with a solid transom can be a great repower candidate. The same hull with a wet core is a repair bill waiting to happen, ideally found before the new motor is bolted on.
+
+The [hull replacement versus repower decision](/blog/boat-hull-replacement-vs-repower-decision) is a lot easier once you know which of those two boats you have.
+
+## How an aluminum transom is built
+
+On many aluminum fishing boats, the transom is two aluminum skins, inner and outer, with a marine plywood core (typically 3/4 to 1 inch) between them. The plywood gives stiffness; the aluminum gives the skin. Some boats use all-aluminum transom structures instead, so check how yours is built.
+
+Aluminum doesn't rot. The plywood does, and the cause is almost always the same: water finds a hole. Motor mount bolts, the drain plug fitting, transducer mounts, and anything else that pierces the skins are the usual entry points. Once the core stays wet, it softens and delaminates.
+
+
+## Check 1: Look
+
+- **Brown staining or rust streaks around the engine mounting bolts**, a classic sign of water moving through the core
+- **Cracks in the aluminum around mount holes**, where the skin is flexing without solid backing
+- **Water weeping from bolt holes or seams** after rain or a wash
+- **A musty smell** in the splashwell or transom corners
+
+Any one of these is worth the next checks. Two or more together, and it's time for a professional look.
+
+## Check 2: Tap
+
+Use the plastic handle of a screwdriver or a small mallet and tap across the transom in a grid: corners, middle, and around the motor mounts.
+
+- **Sharp, solid sound:** skin backed by a firm core
+- **Dull thud:** possible void or soft core behind the skin
+
+Tap the whole surface, not just around the stains. A moisture meter can add detail, but readings vary with construction and conditions. Treat both as screening tools. A tap test can point to a problem; it can't prove the core is sound.
+
+## Check 3: Flex
+
+1. **Under trim load.** With the boat on the trailer and someone watching from the side, trim the motor up and down. The transom should act like a wall. Visible flexing, bowing or shifting means the core isn't doing its job.
+2. **At the hardware.** Mount bolts that keep loosening after proper torquing, or fasteners that pull through instead of clamping, point to a soft core where it matters most.
+
+Flex can be subtle in early rot, which is why this check comes after looking and tapping, not instead of them.
+
+## Check 4: Seals
+
+Every hole through the transom is a maintenance item:
+
+- **Motor mount bolts:** the biggest consequence if they leak, and they're disturbed every time a motor is swapped
+- **Drain plug and transducer fittings:** small holes, frequent leakers
+- **Splashwell corners and seams:** anywhere sealant has aged out
+
+If the core seems solid and the seals are tired, resealing during the repower is cheap insurance. Buying used? Add this to the walkaround in our [used boat inspection guide](/blog/used-boat-walkaround-inspection-ontario).
+
+## What a bad transom costs to fix
+
+Every job is scoped to the boat, but published benchmarks give a sense of scale:
+
+| Repair route | Typical range |
+|---|---|
+| DIY core replacement (materials) | $200 to $800 |
+| Professional transom repair | $1,500 to $4,000+ |
+| Repairs involving aluminum welding | Higher, priced per job |
+
+The DIY figure assumes real skill with plywood and epoxy encapsulation. Professional cost climbs with how much of the boat has to come apart to reach the core. Anyone quoting a firm number over the phone without seeing the boat is guessing.
+
+A transom repair plus a repower can still land well under a new boat package; our [repower versus new boat guide](/blog/repower-vs-new-boat) walks through that math. Just make the decision with the transom's condition known.
+
+## Repowering onto a healthy transom
+
+If nothing turns up, you can plan the motor. Two things to get right:
+
+- **Shaft length and motor weight.** Our [outboard shaft length guide](/blog/outboard-shaft-length-guide) covers the measurement, and the [Mercury outboard weight chart](/blog/mercury-outboard-weight-chart) shows the weight difference between your old motor and the new one.
+- **Horsepower.** Stay within the manufacturer's power limit on the capacity plate. HBW recommends one Mercury model step below the plate maximum; on an older hull, that margin is kind to the transom too. Our [capacity plate guide](/blog/repower-horsepower-capacity-plate-guide) explains how to read it.
+
+Want a second set of eyes? Bring the boat by or book through the [service form](https://hbw.wiki/service), and we'll check the transom before you commit to a motor. When you're ready, [build your repower quote](/quote/motor-selection).
+
+## FAQs
+
+**Can I put a bigger motor on an old aluminum transom?**
+Only within the manufacturer's power limit, and only on a transom in good condition. HBW recommends one Mercury model step below the plate maximum. If the core is soft, the repair comes first regardless of horsepower.
+
+**How long does an aluminum transom last?**
+Decades, if the seals hold and the boat is stored dry. Rotten cores almost always trace back to one fitting that leaked for years.
+
+**Is an all-aluminum transom better?**
+It can't rot, but many production aluminum boats still use a plywood core because it's stiff and economical. The core usually isn't the weak point. Neglected seals are.
+
+**Can I do the tap test on a boat I'm buying?**
+Yes, and you should. Just remember it's a screen, not a verdict. If you hear dull spots or see staining, get a professional inspection before you buy.
+
+**Can a tap test prove my transom is sound?**
+No. Looking, tapping and flex checks can reveal warning signs, but they can't certify hidden core, weld or fastener condition. If anything is questionable, have a qualified marine technician inspect it.
+
+## Sources
+
+- [The Jimbo Slice Workshop: how to reinforce a transom on an aluminum boat (construction and cost benchmarks)](https://thejimbosliceworkshop.com/how-to-reinforce-a-transom-on-an-aluminum-boat/)
+- [Custom Marine Finishes: transom failure signs and tap test](https://www.custommarinefinishes.com/blog/preventing-transom-failure-signs-repairs-and-long-term-protection)
+- [Premium Boat Care: transom repair cost scoping](https://premiumboatcare.com/resources/boat-transom-repair-cost)
+
+## About the author
+
+Jay Harris runs Harris Boat Works in Gores Landing, Ontario, a third-generation family marina on Rice Lake since 1947 and a Mercury dealer since 1965.
+`,
+  },
 ];
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
   // Return the article whether or not its publishDate is in the future.
