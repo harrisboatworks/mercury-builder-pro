@@ -18,7 +18,7 @@ import {
   buildDispatchPairTargets,
   runDeploy,
 } from '../../scripts/deploy-supabase-functions.mjs';
-import { PUBLIC_RELEASE_PAIRS } from '../../scripts/lib/public-function-release-guards.mjs';
+import { PUBLIC_RELEASE_PAIRS, UNVERIFIED_PRODUCTION_ATTESTATION } from '../../scripts/lib/public-function-release-guards.mjs';
 import { listAppliedMigrationsFromManagementApi } from '../../scripts/lib/supabase-management-api.mjs';
 import { isMigrationApplied, appliedVersionSet } from '../../scripts/lib/supabase-deploy-required.mjs';
 import {
@@ -834,6 +834,11 @@ describe('deploy summary', () => {
   });
 });
 
+const UNVERIFIED_PAIRS = {
+  'site-chat': UNVERIFIED_PRODUCTION_ATTESTATION,
+  'openai-realtime': UNVERIFIED_PRODUCTION_ATTESTATION,
+};
+
 const ATTESTED_CHAT = {
   'site-chat': {
     status: 'ATTESTED',
@@ -855,6 +860,22 @@ const ATTESTED_REALTIME = {
 };
 
 describe('public pair release holds', () => {
+  it('selects exactly each committed production-attested pair with mocked deploys', async () => {
+    for (const pair of PUBLIC_RELEASE_PAIRS) {
+      const seen: string[] = [];
+      const code = await runDeploy({
+        env: { DEPLOY_PAIR: pair.id, DEPLOY_FROM: 'HEAD', DEPLOY_TO: 'HEAD' },
+        deployOne: (slug: string) => {
+          seen.push(slug);
+          return { ok: true, detail: 'mock only' };
+        },
+        listAppliedVersions: () => [],
+      });
+      expect(code).toBe(0);
+      expect(seen.sort()).toEqual([...pair.slugs].sort());
+    }
+  });
+
   it('invokes zero deploy calls when attestation is unverified for a complete chat pair', async () => {
     const seen: string[] = [];
     const { succeeded, failed } = await deployWithMigrationGate({
@@ -862,6 +883,7 @@ describe('public pair release holds', () => {
         { slug: 'ai-chatbot', requiredMigrations: [] },
         { slug: 'ai-chatbot-stream', requiredMigrations: [] },
       ],
+      releaseAttestations: UNVERIFIED_PAIRS,
       listAppliedVersions: () => [],
       env: { OPENAI_API_KEY: 'sk-local-not-production-proof' },
       deployOne: (slug: string) => {
@@ -996,6 +1018,7 @@ describe('public pair release holds', () => {
         { slug: 'ai-chatbot', requiredMigrations: [] },
         { slug: 'ai-chatbot-stream', requiredMigrations: [] },
       ],
+      releaseAttestations: UNVERIFIED_PAIRS,
       listAppliedVersions: () => [],
       deployOne: (slug: string) => {
         seen.push(slug);
@@ -1017,7 +1040,7 @@ describe('public pair release holds', () => {
         { slug: 'realtime-sdp-exchange', requiredMigrations: [] },
       ],
       listAppliedVersions: () => [],
-      releaseAttestations: ATTESTED_CHAT,
+      releaseAttestations: { ...UNVERIFIED_PAIRS, ...ATTESTED_CHAT },
       deployOne: (slug: string) => {
         seen.push(slug);
         return { ok: true, detail: 'Deployed' };
@@ -1120,6 +1143,7 @@ describe('public pair release holds', () => {
         seen.push(slug);
         return { ok: true, detail: 'ok' };
       },
+      releaseAttestations: UNVERIFIED_PAIRS,
       listAppliedVersions: () => [],
     });
     expect(code).toBe(1);
@@ -1160,6 +1184,7 @@ describe('public pair release holds', () => {
         seen.push(slug);
         return { ok: true, detail: 'ok' };
       },
+      releaseAttestations: UNVERIFIED_PAIRS,
       listAppliedVersions: () => [],
     });
     expect(seen).not.toContain('ai-chatbot');
@@ -1170,7 +1195,7 @@ describe('public pair release holds', () => {
     expect(code).toBe(1);
   });
 
-  it('holds DEPLOY_PAIR=site-chat under the default UNVERIFIED attestation', async () => {
+  it('holds DEPLOY_PAIR=site-chat when production attestation is explicitly UNVERIFIED', async () => {
     const seen: string[] = [];
     const code = await runDeploy({
       env: {
@@ -1182,13 +1207,14 @@ describe('public pair release holds', () => {
         seen.push(slug);
         return { ok: true, detail: 'ok' };
       },
+      releaseAttestations: UNVERIFIED_PAIRS,
       listAppliedVersions: () => [],
     });
     expect(code).toBe(1);
     expect(seen).toEqual([]);
   });
 
-  it('holds DEPLOY_PAIR=openai-realtime under the default UNVERIFIED attestation', async () => {
+  it('holds DEPLOY_PAIR=openai-realtime when production attestation is explicitly UNVERIFIED', async () => {
     const seen: string[] = [];
     const code = await runDeploy({
       env: {
@@ -1200,6 +1226,7 @@ describe('public pair release holds', () => {
         seen.push(slug);
         return { ok: true, detail: 'ok' };
       },
+      releaseAttestations: UNVERIFIED_PAIRS,
       listAppliedVersions: () => [],
     });
     expect(code).toBe(1);

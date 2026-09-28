@@ -1,0 +1,408 @@
+{
+  "schemaVersion": 1,
+  "project": "eutsoqdpjurknjsshxes",
+  "sourceSha": "6e58b3711424a36c0832528dcc7cbf6fbae8373f",
+  "verifiedBy": "Codex",
+  "date": "2026-09-28",
+  "evidenceRoute": "deployed-edge-runtime using server-side production OPENAI_API_KEY; not direct-provider credentials",
+  "provenance": {
+    "secretNamePresent": true,
+    "deployedEntryPointsMatchCandidate": true,
+    "sourceReadsProductionSecret": true,
+    "storedCredentialDigestMatch": false,
+    "storedCredentialUsedForProviderCalls": false,
+    "secretValuesOrDigestsRecorded": false
+  },
+  "legacyChat": {
+    "surface": "ai-chatbot",
+    "status": 200,
+    "reply": "pong",
+    "pong": true,
+    "checkedAt": "2026-09-28T12:47:35.263Z"
+  },
+  "streamingChat": [
+    {
+      "topic": "oil",
+      "status": 200,
+      "models": [
+        "gpt-5.6-luna"
+      ],
+      "answer": "\u201cMaking oil\u201d usually means fuel is getting past the piston rings into the crankcase, raising the oil level and often making it smell like gasoline. On a 4-stroke, stop running it if the level is rising or the oil feels thin\u2014change the oil and have the fuel system checked, especially the injectors.\n\nOur guide explains the causes and fixes: [Why Mercury FourStrokes Make Oil](https://www.mercuryrepower.ca/blog/mercury-fourstroke-making-oil-guide)",
+      "done": true
+    },
+    {
+      "topic": "nmea",
+      "status": 200,
+      "models": [
+        "gpt-5.6-luna"
+      ],
+      "answer": "Yeah \u2014 here\u2019s our guide: [Mercury Engine Data on Your Garmin, Lowrance or Humminbird: Which Gateway and How to Wire It](https://www.mercuryrepower.ca/blog/mercury-nmea-2000-lowrance-garmin-guide)\n\nIt covers SmartCraft Connect, VesselView Link, the Mercury NMEA 2000 Gateway, compatibility, and wiring basics.",
+      "done": true
+    },
+    {
+      "topic": "transom",
+      "status": 200,
+      "models": [
+        "gpt-5.6-luna"
+      ],
+      "answer": "Before repowering, check the aluminum transom in four ways:\n\n- **Look:** Check around motor-mount holes, seams, corners, and the bottom edge for cracks, corrosion, stains, or bent metal.\n- **Tap:** A solid area sounds crisp; a dull thud can point to a weak or wet core.\n- **Flex:** With the boat safely on the trailer, carefully apply pressure near the motor mounting area and watch for movement.\n- **Seals and fasteners:** Look for loose or enlarged holes, failed sealant, and moisture around bolts and penetrations.\n\nThese are warning checks\u2014not a certification. If anything looks questionable, have a technician inspect it before hanging a new motor.\n\nHere\u2019s our full guide: [The 4-Point Aluminum Transom Check Before You Repower](https://www.mercuryrepower.ca/blog/aluminum-boat-transom-inspection-guide)",
+      "done": true
+    }
+  ],
+  "realtime": {
+    "layer": "deployed-edge-runtime",
+    "startedAt": "2026-09-28T12:46:08.411Z",
+    "sessionStatus": 200,
+    "model": "gpt-realtime-2.1-mini",
+    "secretPresent": true,
+    "sdpStatus": 200,
+    "answerFields": true,
+    "answerDiffers": true,
+    "peerAccepted": true,
+    "peerClosed": true,
+    "elapsedMs": 2939
+  },
+  "battery": {
+    "status": 200,
+    "guideLinked": false,
+    "result": "Deterministic manual-lookup guard; no provider call or model proof"
+  },
+  "bundleComparison": [
+    {
+      "slug": "ai-chatbot",
+      "version": 752,
+      "verifyJwt": false,
+      "files": [
+        {
+          "path": "supabase/functions/ai-chatbot/index.ts",
+          "deployedSha256": "720bda3b2509d9e78b6b78f2d08d58854d0cd6361d15df54bff2226c71bd8f59",
+          "candidateSha256": "720bda3b2509d9e78b6b78f2d08d58854d0cd6361d15df54bff2226c71bd8f59",
+          "matches": true
+        },
+        {
+          "path": "supabase/functions/_shared/rate-limit.ts",
+          "deployedSha256": "1117bd1856c37e6c883999f7feefd3ff0b705304daaa60c74250f4d3d915d7a0",
+          "candidateSha256": "1117bd1856c37e6c883999f7feefd3ff0b705304daaa60c74250f4d3d915d7a0",
+          "matches": true
+        },
+        {
+          "path": "supabase/functions/_shared/rate-limit-probe.ts",
+          "deployedSha256": "fdf69309bb51f1abf46f7ef3930c6166af9a5e5e1da912355ac8673d3d3ffa18",
+          "candidateSha256": "fdf69309bb51f1abf46f7ef3930c6166af9a5e5e1da912355ac8673d3d3ffa18",
+          "matches": true
+        },
+        {
+          "path": "supabase/functions/_shared/format-kb-documents.ts",
+          "deployedSha256": "eda2645d75f7d174d25e48f20267948f4fd5b820a9c5ec99af3f844b25a7acdc",
+          "candidateSha256": "eda2645d75f7d174d25e48f20267948f4fd5b820a9c5ec99af3f844b25a7acdc",
+          "matches": true
+        },
+        {
+          "path": "supabase/functions/_shared/harris-knowledge.ts",
+          "deployedSha256": "4d552adf8250059f802e2968e13735f8657a8426e4c1e5e9ed456bead474d69d",
+          "candidateSha256": "4d552adf8250059f802e2968e13735f8657a8426e4c1e5e9ed456bead474d69d",
+          "matches": true
+        },
+        {
+          "path": "supabase/functions/_shared/blog-knowledge.ts",
+          "deployedSha256": "609a3c1bad909757f1c6b05a659c1bee3e6b3d3ad386cefd0797833d52c19f8f",
+          "candidateSha256": "609a3c1bad909757f1c6b05a659c1bee3e6b3d3ad386cefd0797833d52c19f8f",
+          "matches": true
+        },
+        {
+          "path": "supabase/functions/_shared/mercury-knowledge.ts",
+          "deployedSha256": "deb008cf1e619358b72abcc1308de38ba7cb061344537ce3005b95d4421e51d0",
+          "candidateSha256": "deb008cf1e619358b72abcc1308de38ba7cb061344537ce3005b95d4421e51d0",
+          "matches": true
+        },
+        {
+          "path": "supabase/functions/_shared/blog-index-generated.ts",
+          "deployedSha256": "1976b9d245a4fe2a0c6012d5dbc12d3398a3a605b7bc34d81c48ed4e93796780",
+          "candidateSha256": "a54aac35acc5ebd1d64840f41cf15cd650c8fa24712beb3e6f10c609c5af7ea1",
+          "matches": false
+        },
+        {
+          "path": "supabase/functions/_shared/promotion-context.ts",
+          "deployedSha256": "2b8c6d891a6db756cbc98011b95624828526be36bc3fd40efe1e2dec14521b4e",
+          "candidateSha256": "2b8c6d891a6db756cbc98011b95624828526be36bc3fd40efe1e2dec14521b4e",
+          "matches": true
+        },
+        {
+          "path": "supabase/functions/_shared/promo-dates.ts",
+          "deployedSha256": "ffeb2a4171d35e3192b87c1d06b513da91249cd8f497d8cb9638f0633ec2e53b",
+          "candidateSha256": "ffeb2a4171d35e3192b87c1d06b513da91249cd8f497d8cb9638f0633ec2e53b",
+          "matches": true
+        },
+        {
+          "path": "supabase/functions/_shared/verified-hbw-authority-facts.ts",
+          "deployedSha256": "a697b0a34c2736f8bf2bd530ab92291880b70ef245e173ecf6eddbfebc422574",
+          "candidateSha256": "a697b0a34c2736f8bf2bd530ab92291880b70ef245e173ecf6eddbfebc422574",
+          "matches": true
+        },
+        {
+          "path": "supabase/functions/_shared/customer-knowledge-context.ts",
+          "deployedSha256": "9d75c2ad324953392828fa3d09003828680edff9ad7fc0f92e63870afaabfef9",
+          "candidateSha256": "9d75c2ad324953392828fa3d09003828680edff9ad7fc0f92e63870afaabfef9",
+          "matches": true
+        },
+        {
+          "path": "supabase/functions/_shared/verified-mercury-technical-facts.ts",
+          "deployedSha256": "58e4cf6c8f2f6fecf3d998fe13e20347cd9d3e6a43185edfa8694ed72ea40160",
+          "candidateSha256": "58e4cf6c8f2f6fecf3d998fe13e20347cd9d3e6a43185edfa8694ed72ea40160",
+          "matches": true
+        },
+        {
+          "path": "supabase/functions/deno.json",
+          "deployedSha256": "d8f0ae9ea07f95815906bc83a916d0be04b3af11a7eee910a879a880fa8679ce",
+          "candidateSha256": "d8f0ae9ea07f95815906bc83a916d0be04b3af11a7eee910a879a880fa8679ce",
+          "matches": true
+        }
+      ]
+    },
+    {
+      "slug": "ai-chatbot-stream",
+      "version": 464,
+      "verifyJwt": false,
+      "files": [
+        {
+          "path": "supabase/functions/ai-chatbot-stream/index.ts",
+          "deployedSha256": "9b3dc655d532a7891874b73830c3067dbb68672ab709dc95cbfeb203d92c354d",
+          "candidateSha256": "9b3dc655d532a7891874b73830c3067dbb68672ab709dc95cbfeb203d92c354d",
+          "matches": true
+        },
+        {
+          "path": "supabase/functions/_shared/rate-limit.ts",
+          "deployedSha256": "1117bd1856c37e6c883999f7feefd3ff0b705304daaa60c74250f4d3d915d7a0",
+          "candidateSha256": "1117bd1856c37e6c883999f7feefd3ff0b705304daaa60c74250f4d3d915d7a0",
+          "matches": true
+        },
+        {
+          "path": "supabase/functions/_shared/rate-limit-probe.ts",
+          "deployedSha256": "fdf69309bb51f1abf46f7ef3930c6166af9a5e5e1da912355ac8673d3d3ffa18",
+          "candidateSha256": "fdf69309bb51f1abf46f7ef3930c6166af9a5e5e1da912355ac8673d3d3ffa18",
+          "matches": true
+        },
+        {
+          "path": "supabase/functions/_shared/mercury-knowledge.ts",
+          "deployedSha256": "deb008cf1e619358b72abcc1308de38ba7cb061344537ce3005b95d4421e51d0",
+          "candidateSha256": "deb008cf1e619358b72abcc1308de38ba7cb061344537ce3005b95d4421e51d0",
+          "matches": true
+        },
+        {
+          "path": "supabase/functions/_shared/harris-knowledge.ts",
+          "deployedSha256": "4d552adf8250059f802e2968e13735f8657a8426e4c1e5e9ed456bead474d69d",
+          "candidateSha256": "4d552adf8250059f802e2968e13735f8657a8426e4c1e5e9ed456bead474d69d",
+          "matches": true
+        },
+        {
+          "path": "supabase/functions/_shared/format-kb-documents.ts",
+          "deployedSha256": "eda2645d75f7d174d25e48f20267948f4fd5b820a9c5ec99af3f844b25a7acdc",
+          "candidateSha256": "eda2645d75f7d174d25e48f20267948f4fd5b820a9c5ec99af3f844b25a7acdc",
+          "matches": true
+        },
+        {
+          "path": "supabase/functions/_shared/blog-knowledge.ts",
+          "deployedSha256": "609a3c1bad909757f1c6b05a659c1bee3e6b3d3ad386cefd0797833d52c19f8f",
+          "candidateSha256": "609a3c1bad909757f1c6b05a659c1bee3e6b3d3ad386cefd0797833d52c19f8f",
+          "matches": true
+        },
+        {
+          "path": "supabase/functions/_shared/blog-index-generated.ts",
+          "deployedSha256": "1976b9d245a4fe2a0c6012d5dbc12d3398a3a605b7bc34d81c48ed4e93796780",
+          "candidateSha256": "a54aac35acc5ebd1d64840f41cf15cd650c8fa24712beb3e6f10c609c5af7ea1",
+          "matches": false
+        },
+        {
+          "path": "supabase/functions/_shared/promotion-context.ts",
+          "deployedSha256": "2b8c6d891a6db756cbc98011b95624828526be36bc3fd40efe1e2dec14521b4e",
+          "candidateSha256": "2b8c6d891a6db756cbc98011b95624828526be36bc3fd40efe1e2dec14521b4e",
+          "matches": true
+        },
+        {
+          "path": "supabase/functions/_shared/promo-dates.ts",
+          "deployedSha256": "ffeb2a4171d35e3192b87c1d06b513da91249cd8f497d8cb9638f0633ec2e53b",
+          "candidateSha256": "ffeb2a4171d35e3192b87c1d06b513da91249cd8f497d8cb9638f0633ec2e53b",
+          "matches": true
+        },
+        {
+          "path": "supabase/functions/_shared/verified-hbw-authority-facts.ts",
+          "deployedSha256": "a697b0a34c2736f8bf2bd530ab92291880b70ef245e173ecf6eddbfebc422574",
+          "candidateSha256": "a697b0a34c2736f8bf2bd530ab92291880b70ef245e173ecf6eddbfebc422574",
+          "matches": true
+        },
+        {
+          "path": "supabase/functions/_shared/customer-knowledge-context.ts",
+          "deployedSha256": "9d75c2ad324953392828fa3d09003828680edff9ad7fc0f92e63870afaabfef9",
+          "candidateSha256": "9d75c2ad324953392828fa3d09003828680edff9ad7fc0f92e63870afaabfef9",
+          "matches": true
+        },
+        {
+          "path": "supabase/functions/_shared/verified-mercury-technical-facts.ts",
+          "deployedSha256": "58e4cf6c8f2f6fecf3d998fe13e20347cd9d3e6a43185edfa8694ed72ea40160",
+          "candidateSha256": "58e4cf6c8f2f6fecf3d998fe13e20347cd9d3e6a43185edfa8694ed72ea40160",
+          "matches": true
+        },
+        {
+          "path": "supabase/functions/_shared/mercury-product-protection-rates.ts",
+          "deployedSha256": "7db65e774aa7d3f4fbd5f16a0bbffd7c3819015c52dbce63c72fd12022a8f7be",
+          "candidateSha256": "7db65e774aa7d3f4fbd5f16a0bbffd7c3819015c52dbce63c72fd12022a8f7be",
+          "matches": true
+        },
+        {
+          "path": "supabase/functions/_shared/nearby-horsepowers.ts",
+          "deployedSha256": "7c9a9f03ea98978881fb97f8cec38c0395198d3c1be15ee42cd7e5943ded8df4",
+          "candidateSha256": "7c9a9f03ea98978881fb97f8cec38c0395198d3c1be15ee42cd7e5943ded8df4",
+          "matches": true
+        },
+        {
+          "path": "supabase/functions/deno.json",
+          "deployedSha256": "d8f0ae9ea07f95815906bc83a916d0be04b3af11a7eee910a879a880fa8679ce",
+          "candidateSha256": "d8f0ae9ea07f95815906bc83a916d0be04b3af11a7eee910a879a880fa8679ce",
+          "matches": true
+        }
+      ]
+    },
+    {
+      "slug": "realtime-session",
+      "version": 409,
+      "verifyJwt": false,
+      "files": [
+        {
+          "path": "supabase/functions/realtime-session/index.ts",
+          "deployedSha256": "b1a7279ff619d2df3fac1aa225be7657fbfa0d6a0e4188add338ce24c67c4cbd",
+          "candidateSha256": "b1a7279ff619d2df3fac1aa225be7657fbfa0d6a0e4188add338ce24c67c4cbd",
+          "matches": true
+        },
+        {
+          "path": "supabase/functions/_shared/rate-limit.ts",
+          "deployedSha256": "1117bd1856c37e6c883999f7feefd3ff0b705304daaa60c74250f4d3d915d7a0",
+          "candidateSha256": "1117bd1856c37e6c883999f7feefd3ff0b705304daaa60c74250f4d3d915d7a0",
+          "matches": true
+        },
+        {
+          "path": "supabase/functions/_shared/rate-limit-probe.ts",
+          "deployedSha256": "fdf69309bb51f1abf46f7ef3930c6166af9a5e5e1da912355ac8673d3d3ffa18",
+          "candidateSha256": "fdf69309bb51f1abf46f7ef3930c6166af9a5e5e1da912355ac8673d3d3ffa18",
+          "matches": true
+        },
+        {
+          "path": "supabase/functions/_shared/origin-check.ts",
+          "deployedSha256": "77409181a9a626e81cb4efcbe08abfdbbe87fce0f543d5716905f569463e056f",
+          "candidateSha256": "77409181a9a626e81cb4efcbe08abfdbbe87fce0f543d5716905f569463e056f",
+          "matches": true
+        },
+        {
+          "path": "supabase/functions/_shared/browser-origin.ts",
+          "deployedSha256": "7a46811a1dc7c7f613098a7cd876a6eceafae4d20881e176b851b4bdae778dbd",
+          "candidateSha256": "7a46811a1dc7c7f613098a7cd876a6eceafae4d20881e176b851b4bdae778dbd",
+          "matches": true
+        },
+        {
+          "path": "supabase/functions/_shared/format-kb-documents.ts",
+          "deployedSha256": "eda2645d75f7d174d25e48f20267948f4fd5b820a9c5ec99af3f844b25a7acdc",
+          "candidateSha256": "eda2645d75f7d174d25e48f20267948f4fd5b820a9c5ec99af3f844b25a7acdc",
+          "matches": true
+        },
+        {
+          "path": "supabase/functions/_shared/harris-knowledge.ts",
+          "deployedSha256": "4d552adf8250059f802e2968e13735f8657a8426e4c1e5e9ed456bead474d69d",
+          "candidateSha256": "4d552adf8250059f802e2968e13735f8657a8426e4c1e5e9ed456bead474d69d",
+          "matches": true
+        },
+        {
+          "path": "supabase/functions/_shared/blog-knowledge.ts",
+          "deployedSha256": "609a3c1bad909757f1c6b05a659c1bee3e6b3d3ad386cefd0797833d52c19f8f",
+          "candidateSha256": "609a3c1bad909757f1c6b05a659c1bee3e6b3d3ad386cefd0797833d52c19f8f",
+          "matches": true
+        },
+        {
+          "path": "supabase/functions/_shared/mercury-knowledge.ts",
+          "deployedSha256": "deb008cf1e619358b72abcc1308de38ba7cb061344537ce3005b95d4421e51d0",
+          "candidateSha256": "deb008cf1e619358b72abcc1308de38ba7cb061344537ce3005b95d4421e51d0",
+          "matches": true
+        },
+        {
+          "path": "supabase/functions/_shared/blog-index-generated.ts",
+          "deployedSha256": "1976b9d245a4fe2a0c6012d5dbc12d3398a3a605b7bc34d81c48ed4e93796780",
+          "candidateSha256": "a54aac35acc5ebd1d64840f41cf15cd650c8fa24712beb3e6f10c609c5af7ea1",
+          "matches": false
+        },
+        {
+          "path": "supabase/functions/_shared/promotion-context.ts",
+          "deployedSha256": "2b8c6d891a6db756cbc98011b95624828526be36bc3fd40efe1e2dec14521b4e",
+          "candidateSha256": "2b8c6d891a6db756cbc98011b95624828526be36bc3fd40efe1e2dec14521b4e",
+          "matches": true
+        },
+        {
+          "path": "supabase/functions/_shared/promo-dates.ts",
+          "deployedSha256": "ffeb2a4171d35e3192b87c1d06b513da91249cd8f497d8cb9638f0633ec2e53b",
+          "candidateSha256": "ffeb2a4171d35e3192b87c1d06b513da91249cd8f497d8cb9638f0633ec2e53b",
+          "matches": true
+        },
+        {
+          "path": "supabase/functions/_shared/verified-hbw-authority-facts.ts",
+          "deployedSha256": "a697b0a34c2736f8bf2bd530ab92291880b70ef245e173ecf6eddbfebc422574",
+          "candidateSha256": "a697b0a34c2736f8bf2bd530ab92291880b70ef245e173ecf6eddbfebc422574",
+          "matches": true
+        },
+        {
+          "path": "supabase/functions/_shared/customer-knowledge-context.ts",
+          "deployedSha256": "9d75c2ad324953392828fa3d09003828680edff9ad7fc0f92e63870afaabfef9",
+          "candidateSha256": "9d75c2ad324953392828fa3d09003828680edff9ad7fc0f92e63870afaabfef9",
+          "matches": true
+        },
+        {
+          "path": "supabase/functions/_shared/verified-mercury-technical-facts.ts",
+          "deployedSha256": "58e4cf6c8f2f6fecf3d998fe13e20347cd9d3e6a43185edfa8694ed72ea40160",
+          "candidateSha256": "58e4cf6c8f2f6fecf3d998fe13e20347cd9d3e6a43185edfa8694ed72ea40160",
+          "matches": true
+        },
+        {
+          "path": "supabase/functions/deno.json",
+          "deployedSha256": "d8f0ae9ea07f95815906bc83a916d0be04b3af11a7eee910a879a880fa8679ce",
+          "candidateSha256": "d8f0ae9ea07f95815906bc83a916d0be04b3af11a7eee910a879a880fa8679ce",
+          "matches": true
+        }
+      ]
+    },
+    {
+      "slug": "realtime-sdp-exchange",
+      "version": 386,
+      "verifyJwt": false,
+      "files": [
+        {
+          "path": "supabase/functions/realtime-sdp-exchange/index.ts",
+          "deployedSha256": "dc28683729c51ea3e597e3269ad0242424beb4b9e6779af864bcbb1f611e455e",
+          "candidateSha256": "dc28683729c51ea3e597e3269ad0242424beb4b9e6779af864bcbb1f611e455e",
+          "matches": true
+        },
+        {
+          "path": "supabase/functions/_shared/rate-limit.ts",
+          "deployedSha256": "1117bd1856c37e6c883999f7feefd3ff0b705304daaa60c74250f4d3d915d7a0",
+          "candidateSha256": "1117bd1856c37e6c883999f7feefd3ff0b705304daaa60c74250f4d3d915d7a0",
+          "matches": true
+        },
+        {
+          "path": "supabase/functions/_shared/rate-limit-probe.ts",
+          "deployedSha256": "fdf69309bb51f1abf46f7ef3930c6166af9a5e5e1da912355ac8673d3d3ffa18",
+          "candidateSha256": "fdf69309bb51f1abf46f7ef3930c6166af9a5e5e1da912355ac8673d3d3ffa18",
+          "matches": true
+        },
+        {
+          "path": "supabase/functions/deno.json",
+          "deployedSha256": "d8f0ae9ea07f95815906bc83a916d0be04b3af11a7eee910a879a880fa8679ce",
+          "candidateSha256": "d8f0ae9ea07f95815906bc83a916d0be04b3af11a7eee910a879a880fa8679ce",
+          "matches": true
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "No claim of satisfying PR #542 digest-matched direct-provider protocol.",
+    "No audio, transcription, interruption, or customer-tool acceptance.",
+    "Peer closed; no separate provider hangup receipt exposed by production SDP relay.",
+    "No deployment performed. All post-deploy acceptance remains pending.",
+    "Battery guide routing remains unresolved.",
+    "Generated blog index differs in three bundles; every other compared file matches."
+  ]
+}
