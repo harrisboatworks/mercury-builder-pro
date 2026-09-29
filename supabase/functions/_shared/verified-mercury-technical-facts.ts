@@ -243,7 +243,11 @@ export function buildVerifiedMercuryTechnicalAnswer(
   if (!intent) return null;
 
   if (!isVerified115ProXs(message, context)) {
-    return manualHandoff(context, options);
+    const handoff = manualHandoff(context, options);
+    if (intent === "battery" && !options.voice && options.includeLinks !== false) {
+      return `${handoff} For general selection guidance, see [HBW's Mercury outboard battery-size guide](https://www.mercuryrepower.ca/blog/mercury-outboard-battery-size-guide); confirm the requirements in your exact motor's manual before choosing a battery.`;
+    }
+    return handoff;
   }
 
   const facts = MERCURY_115_PRO_XS_FACTS;
