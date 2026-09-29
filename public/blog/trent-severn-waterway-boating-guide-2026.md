@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/trent-severn-waterway-boating-guide-2026.md
-last_updated: 2026-09-11
+last_updated: 2026-09-29
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Trent-Severn 2026: Free Lockage Dates, Rules & Trip Plan"
 description: "Free lockage runs June 19 to September 7, 2026, roughly $45 a day saved on a 20-footer. Our marina sits on the waterway; here's how we'd run it."
 category: "Lifestyle"
 date_published: 2026-05-08
-date_modified: 2026-09-11
+date_modified: 2026-09-29
 keywords: ["Trent-Severn Waterway 2026 guide","Trent-Severn free lockage 2026","Canada Strong Pass boating","Trent-Severn locks hours 2026","Rice Lake Trent-Severn","boating Trent-Severn for beginners"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: rentals
 
 **Category:** Lifestyle  
 **Published:** 2026-05-08  
-**Last reviewed:** 2026-09-11  
+**Last reviewed:** 2026-09-29  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/trent-severn-waterway-boating-guide-2026
 
@@ -128,20 +128,20 @@ In 2026, free lockage from June 19 to September 7 means more boats will try the 
 
 **Check your dimensions**
 
-Measure beam and draft before you plan a full transit. Most 18 to 20 foot aluminum fishing boats and smaller pontoons clear everything. Wide cruisers and sailboats need to check the 22 foot vertical clearance at fixed bridges too.
+Measure beam and draft before you plan a full transit. Most 18 to 20 foot aluminum fishing boats and smaller pontoons clear everything. Wide cruisers and sailboats need to check the 20 foot minimum overhead clearance at fixed bridges too.
 
 ## Vessel Constraints, Will Your Boat Fit?
 
 | Constraint | Detail |
 |---|---|
-| Vertical clearance (lowest fixed bridge) | 22 feet (6.7 m) |
+| Vertical clearance (lowest fixed bridge) | 20 feet (6.1 m) |
 | Water depth at Locks 1, 19 | 8 feet |
 | Water depth at Locks 20, 45 | 6 feet |
 | Big Chute Marine Railway max length | 99.2 feet |
 | Big Chute max beam | 24 feet |
 | Big Chute max weight | 99 tons |
 
-Anything taller than 22 feet, radar arches, tall biminis, sailboat masts, needs to come down. Most sailors un-step at Trenton or Frankford before the transit.
+Parks Canada lists a minimum overhead fixed bridge clearance of 20 feet (6.1 m). Measure your vessel's full air draft, including radar arches, biminis and masts, and confirm current route conditions before transit. Do not attempt passage unless your vessel clears the confirmed overhead height. Most sailors un-step at Trenton or Frankford before the transit.
 
 ---
 
