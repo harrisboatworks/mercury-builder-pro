@@ -128,20 +128,20 @@ In 2026, free lockage from June 19 to September 7 means more boats will try the 
 
 **Check your dimensions**
 
-Measure beam and draft before you plan a full transit. Most 18 to 20 foot aluminum fishing boats and smaller pontoons clear everything. Wide cruisers and sailboats need to check the 22 foot vertical clearance at fixed bridges too.
+Measure beam and draft before you plan a full transit. Most 18 to 20 foot aluminum fishing boats and smaller pontoons clear everything. Wide cruisers and sailboats need to check the 20 foot minimum overhead clearance at fixed bridges too.
 
 ## Vessel Constraints, Will Your Boat Fit?
 
 | Constraint | Detail |
 |---|---|
-| Vertical clearance (lowest fixed bridge) | 22 feet (6.7 m) |
+| Vertical clearance (lowest fixed bridge) | 20 feet (6.1 m) |
 | Water depth at Locks 1, 19 | 8 feet |
 | Water depth at Locks 20, 45 | 6 feet |
 | Big Chute Marine Railway max length | 99.2 feet |
 | Big Chute max beam | 24 feet |
 | Big Chute max weight | 99 tons |
 
-Anything taller than 22 feet, radar arches, tall biminis, sailboat masts, needs to come down. Most sailors un-step at Trenton or Frankford before the transit.
+Parks Canada lists a minimum overhead fixed bridge clearance of 20 feet (6.1 m). Measure your vessel's full air draft, including radar arches, biminis and masts, and confirm current route conditions before transit. Do not attempt passage unless your vessel clears the confirmed overhead height. Most sailors un-step at Trenton or Frankford before the transit.
 
 ---
 
