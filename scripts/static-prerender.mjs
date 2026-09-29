@@ -37,6 +37,8 @@ import {
 import { getBlogHreflangAlternates } from '../src/data/blogI18nRegistry.js';
 import { WARRANTY_AGENT_NOTE, WARRANTY_AGENT_NOTE_BOLD, WARRANTY_POLICY_SENTENCE, WARRANTY_TABLE_CELL } from './lib/warranty-copy.mjs';
 import { escHtml, renderYouTubeEmbedLinkHtml } from './lib/youtube-embed-html.mjs';
+import { agentFinancingGuidance } from './lib/agent-contract-docs.mjs';
+import { loadSnapshotPromotion, renderSnapshotPromotion } from './lib/promotion-snapshot.mjs';
 
 // Public anonymous key used by the browser client. This read-only fallback
 // keeps prerendering available when the public motor edge function is down.
@@ -2743,44 +2745,23 @@ function promotionsPageSchema() {
   };
 }
 
-const SUMMER_SAVINGS_START_ISO = '2026-07-15T00:00:00-04:00';
-const SUMMER_SAVINGS_END_ISO = '2026-08-31T23:59:59-04:00';
 const TD_ALWAYS_ON_END_ISO = '2026-12-31T23:59:59-05:00';
-
-function promotionsNoscriptSnapshot(now = new Date()) {
-  const timestamp = now.getTime();
-  const summerIsActive =
-    timestamp >= new Date(SUMMER_SAVINGS_START_ISO).getTime() &&
-    timestamp <= new Date(SUMMER_SAVINGS_END_ISO).getTime();
-
-  if (summerIsActive) {
-    return (
-      '<section><h2>Summer Savings Rebate: Save Up to $700 CAD</h2>' +
-      '<p>Save up to $700 CAD on eligible new Mercury FourStroke repower outboards, plus promotional financing as low as 2.99% for 24 months (OAC). Available July 15 to August 31, 2026 at Harris Boat Works.</p>' +
-      '<table><caption>Mercury Summer Savings rebate by horsepower</caption>' +
-      '<thead><tr><th scope="col">Eligible horsepower</th><th scope="col">Rebate (CAD)</th></tr></thead><tbody>' +
-      '<tr><td>2.5-3.5 HP</td><td>$50</td></tr>' +
-      '<tr><td>4-8 HP</td><td>$75</td></tr>' +
-      '<tr><td>9.9-25 HP</td><td>$100</td></tr>' +
-      '<tr><td>30-115 HP</td><td>$250</td></tr>' +
-      '<tr><td>150-200 HP</td><td>$350</td></tr>' +
-      '<tr><td>225-425 HP</td><td>$700</td></tr>' +
-      '</tbody></table>' +
-      '<p>The rebate and the 2.99% for 24 months promotional financing are layered, not either-or. Approval and eligibility conditions apply. The dealer confirms the final offer in writing.</p>' +
-      '<p><a href="/quote/motor-selection">Build a Mercury quote</a> or call Harris Boat Works at (905) 342-2153.</p></section>'
-    );
-  }
-
-  if (timestamp <= new Date(TD_ALWAYS_ON_END_ISO).getTime()) {
-    return (
-      '<section><h2>Current Mercury financing</h2>' +
-      `<p>Eligible new Mercury outboards may qualify for ${escapeHtml(LIVE_RATE_TOKENS.rate)} through December 31, 2026 (OAC). The contract is up to 60 months and payment estimates may use amortization up to 240 months, so a balance may remain due at maturity.</p>` +
-      '<p>HBW confirms the lender, amount financed, $349 DealerPlan documentation fee, and all terms in the written disclosure.</p>' +
-      '<p><a href="/financing-application">Apply for financing</a> or <a href="/quote/motor-selection">build a Mercury quote</a>.</p></section>'
-    );
-  }
-
-  return '<section><h2>Check current Mercury offers</h2><p>Mercury rebates and financing programs change. Build a quote or contact Harris Boat Works for the current written offer and eligibility terms.</p><p><a href="/quote/motor-selection">Build a Mercury quote</a></p></section>';
+const promotionSnapshotNow = new Date();
+// Read the same public, priority-ordered active catalog as Promotions.tsx.
+// A failed/malformed fetch stops publication instead of shipping stale offers.
+const snapshotPromotion = await loadSnapshotPromotion({
+  baseUrl: process.env.SUPABASE_URL || process.env.VITE_SUPABASE_URL || 'https://eutsoqdpjurknjsshxes.supabase.co',
+  publicKey: process.env.VITE_SUPABASE_PUBLISHABLE_KEY || process.env.SUPABASE_PUBLISHABLE_KEY || FALLBACK_SUPABASE_PUBLISHABLE_KEY,
+  fetcher: fetchWithTimeout,
+  now: promotionSnapshotNow,
+});
+function promotionsNoscriptSnapshot() {
+  const campaign = renderSnapshotPromotion(snapshotPromotion);
+  if (promotionSnapshotNow.getTime() > new Date(TD_ALWAYS_ON_END_ISO).getTime()) return campaign;
+  return campaign + '<section><h2>Standing TD financing</h2>' +
+    `<p>Eligible new Mercury outboards may qualify for ${escapeHtml(LIVE_RATE_TOKENS.rate)} through December 31, 2026 (OAC). The contract is up to 60 months and payment estimates may use amortization up to 240 months, so a balance may remain due at maturity.</p>` +
+    '<p>HBW confirms the lender, amount financed, $349 DealerPlan documentation fee, and all terms in the written disclosure.</p>' +
+    '<p><a href="/financing-application">Apply for financing</a> or <a href="/quote/motor-selection">build a Mercury quote</a>.</p></section>';
 }
 
 // ============================================================
@@ -6734,7 +6715,7 @@ function motorMarkdown(m) {
     isVerado
       ? '- Verado is special-order only and not part of default inventory. Contact Harris Boat Works directly for Verado availability and lead time.'
       : null,
-    `- Financing is available on eligible totals over $5,000 CAD. Current offer: ${LIVE_RATE_TOKENS.rate} (OAC); confirm terms at ${SITE_URL}/promotions.`,
+    `- Financing: ${agentFinancingGuidance} Current promotions: ${SITE_URL}/promotions.`,
     WARRANTY_AGENT_NOTE,
     '- We are pickup-only at Gores Landing, ON. Final price confirmed by dealer.',
     `- Shop-based Mercury service and maintenance guide: ${SITE_URL}/maintenance.md`,
@@ -6896,7 +6877,7 @@ function catalogMarkdown(motorTwins, caseStudyTwins, locationTwins, blogTwins = 
     '- **Final price** is always confirmed by Harris Boat Works staff before purchase.',
     '- **Verado** is special-order only, not part of default inventory and not actively promoted.',
     WARRANTY_AGENT_NOTE_BOLD,
-    `- Financing minimum: **$5,000 CAD** total. Current promotional offer: **${LIVE_RATE_TOKENS.rate} (OAC)**; confirm current terms at ${SITE_URL}/promotions.`,
+    `- Financing: ${agentFinancingGuidance} Current promotions: ${SITE_URL}/promotions.`,
     '- Motor specifications are based on Mercury Marine official sources: mercurymarine.com and the official Mercury Marine brochure. Harris Boat Works is the source of truth for local pricing, availability, pickup policy, and quote terms.',
     '',
     '## What we do NOT offer (negative definitions)',
@@ -7111,12 +7092,9 @@ if (!existsSync(promotionsPath)) {
   verifyErrors.push('Promotions HTML is missing.');
 } else {
   const promotionsHtml = readFileSync(promotionsPath, 'utf8');
-  const buildTimestamp = Date.now();
-  const requiredPromotionText = buildTimestamp <= new Date(SUMMER_SAVINGS_END_ISO).getTime()
-    ? ['Summer Savings Rebate: Save Up to $700 CAD', '2.99% for 24 months', 'August 31, 2026']
-    : buildTimestamp <= new Date(TD_ALWAYS_ON_END_ISO).getTime()
-      ? ['Current Mercury financing', LIVE_RATE_TOKENS.rate, 'December 31, 2026']
-      : ['Check current Mercury offers', 'Build a Mercury quote'];
+  const requiredPromotionText = snapshotPromotion
+    ? [escapeHtml(snapshotPromotion.name), snapshotPromotion.start_date, snapshotPromotion.end_date]
+    : ['Check current Mercury offers', 'Build a Mercury quote'];
   for (const expected of requiredPromotionText) {
     if (!promotionsHtml.includes(expected)) {
       verifyErrors.push(`/promotions prerender is missing current-offer text: ${expected}`);
