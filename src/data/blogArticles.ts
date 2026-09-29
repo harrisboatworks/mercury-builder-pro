@@ -17534,7 +17534,7 @@ Jay Harris helps run Harris Boat Works, a third-generation family marina in Gore
     image: "/lovable-uploads/hero-trent-severn-waterway-2026.png",
     author: 'Harris Boat Works',
     datePublished: "2026-05-08",
-    dateModified: "2026-09-11",
+    dateModified: "2026-09-29",
     publishDate: "2026-05-08",
     category: "Lifestyle",
     readTime: "9 min read",
