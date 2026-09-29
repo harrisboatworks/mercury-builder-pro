@@ -899,7 +899,7 @@ export default function QuoteSummaryPage() {
       motor_model: motorName,
       quote_total: displayPricing.total,
     };
-    trackEvent(eventName, eventData);
+    // GlobalCtaTracker owns GA4 handoffs; this handler records first-party activity.
     const activityPayload = {
       session_id: getOrCreateSessionId(),
       user_id: user?.id ?? null,
