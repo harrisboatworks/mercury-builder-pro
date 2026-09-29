@@ -6,7 +6,7 @@ import {
 } from "./promotion-context.ts";
 import { parsePromoCalendarDate, promoEndOfDay, promoStartOfDay } from "./promo-dates.ts";
 
-export const PUBLIC_QUOTE_FINANCING_POLICY_VERSION = "public-quote-financing-v2-2026-08-15";
+export const PUBLIC_QUOTE_FINANCING_POLICY_VERSION = "public-quote-financing-v3-2026-09-29";
 export const DEALERPLAN_FEE_CAD = 349;
 export const FINANCING_MINIMUM_CAD = 5000;
 export const MAXIMUM_AMORTIZATION_MONTHS = 240;
@@ -130,7 +130,6 @@ function standingOffers(
 function promotionalOffers(
   promotions: PromotionRecord[],
   beforeTaxSubtotal: number,
-  motorInStock: boolean,
   now: Date,
 ): PublicQuoteFinancingOffer[] {
   const offers: PublicQuoteFinancingOffer[] = [];
@@ -143,8 +142,6 @@ function promotionalOffers(
     const endsAt = parseDateBoundary(promotion.end_date, true);
     if (promotion.start_date && (!startsAt || startsAt > now)) continue;
     if (promotion.end_date && (!endsAt || endsAt < now)) continue;
-    const eligibility = asRecord(details?.eligibility);
-    const backordersQualify = eligibility?.backorders_qualify !== false;
     let promotionRateIndex = 0;
 
     for (const option of getPromotionOptions(promotion)) {
@@ -159,12 +156,10 @@ function promotionalOffers(
 
         const minimum = asNumber(rate.minAmount ?? rate.minimum_amount) ?? FINANCING_MINIMUM_CAD;
         const minimumMet = beforeTaxSubtotal >= minimum;
-        const stockMet = motorInStock || backordersQualify;
-        const eligible = minimumMet && stockMet;
+        // HBW quoting policy applies promotional offers regardless of stock.
+        const eligible = minimumMet;
         const reason = !minimumMet
           ? `Promotion requires at least $${minimum.toLocaleString("en-CA")} CAD before tax`
-          : !stockMet
-          ? "Promotion does not apply to backordered motors"
           : undefined;
         offers.push({
           id: `promotion:${promotion.id || "active"}:${offerIndex}`,
@@ -206,7 +201,7 @@ export function buildPublicQuoteFinancing(input: {
   const amountFinanced = round2(input.finalPriceWithTax + DEALERPLAN_FEE_CAD);
   const offers = [
     ...standingOffers(input.financing, input.beforeTaxSubtotal, now),
-    ...promotionalOffers(input.promotions, input.beforeTaxSubtotal, input.motorInStock, now),
+    ...promotionalOffers(input.promotions, input.beforeTaxSubtotal, now),
   ].map((offer) => ({
     ...offer,
     ...(offer.eligible

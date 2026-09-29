@@ -101,9 +101,10 @@ const EnrichedContent = (
 
     <h2>9.9 or 15? The eternal question</h2>
     <p>
-      Same block, same weight, same footprint; the 15 is a tuning step up for about $1,000 more. If
-      the boat is rated for 15 HP and you ever carry two people, the 15 is usually the better buy.
-      If it's a dedicated kicker or a sailboat auxiliary, the 9.9 (especially ProKicker/CT) is the
+      Same block, same weight, same footprint; the 15 is a tuning step up for about $1,000 more. Do
+      not choose the 15 just because it is the boat's maximum rating. HBW recommends the Mercury
+      model step below the maximum. If it's a dedicated kicker or a sailboat auxiliary, the 9.9
+      (especially ProKicker/CT) is the
       right tool. See our full comparison at{' '}
       <a href="/blog/mercury-9-9-vs-15-hp-tiller-ontario">9.9 vs 15 HP tiller</a>.
     </p>

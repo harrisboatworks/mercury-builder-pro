@@ -323,7 +323,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     { question: 'Is the Mercury Verado relevant for Ontario inland boating?', answer: 'For most Ontario inland lakes (Rice Lake, Kawarthas, Lake Simcoe), no. Verado is engineered for offshore applications. For typical inland fishing and family boats, a FourStroke up to 300 HP handles the job.' },
     { question: 'What Mercury motors does Harris Boat Works stock for 2026?', answer: 'We stock and order the full FourStroke range, Pro XS performance motors, and SeaPro commercial motors. Verado is special-order only, and Avator electric outboards are build-to-order from the brochure rather than stocked on the floor.' },
     { question: 'What is the best Mercury outboard for trolling walleye on Rice Lake?', answer: 'A main motor in the 60 to 115 HP FourStroke range paired with a dedicated Mercury ProKicker 9.9 HP. The ProKicker is purpose-built for low-RPM trolling.' },
-    { question: 'How do I choose the right Mercury for my Ontario boat?', answer: 'Start with your hull capacity plate maximum HP. Then consider your primary use. For most Ontario fishing and family boats, the answer lands in the 60 to 115 HP FourStroke range.' },
+    { question: 'How do I choose the right Mercury for my Ontario boat?', answer: 'Start one Mercury model step below the maximum HP on your hull capacity plate. Max rated is overkill because it adds power and transom weight the boat may not perform well with. For most Ontario fishing and family boats, the answer lands in the 60 to 115 HP FourStroke range.' },
   ],
   },
   {

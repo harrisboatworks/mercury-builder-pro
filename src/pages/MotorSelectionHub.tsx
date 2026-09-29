@@ -22,9 +22,10 @@ export default function MotorSelectionHub() {
           intended use, passenger and gear loading, and the maximum HP rating
           on your boat's capacity plate. For most Ontario freshwater boats,
           the answer falls in the Mercury 60 to 150 HP FourStroke range,
-          paired with a 9.9 ProKicker if you fish. The shortcut: aim for 70
-          to 90% of your maximum rated HP for typical recreational use.
-          Going lower leaves you underpowered. Live pricing on every Mercury
+           paired with a 9.9 ProKicker if you fish. The shortcut: choose one
+           Mercury model step below the maximum HP on the capacity plate.
+           Max rated is overkill, with more power and transom weight than the
+           boat performs well with. Live pricing on every Mercury
           we sell is at{' '}
           <Link to="/quote/motor-selection" className="font-semibold text-repower-gold underline-offset-4 hover:underline">
             build your Mercury quote
@@ -100,7 +101,7 @@ export default function MotorSelectionHub() {
         { icon: <MapPin className="h-5 w-5" aria-hidden="true" />, title: 'Mercury Premier dealer access', description: 'Factory-direct support and current product knowledge.' },
       ]}
       faqs={[
-        { question: 'What HP do I need for my boat?', answer: "Aim for 70 to 90% of your boat's maximum rated HP for typical recreational use. Specific answer depends on hull length, type, and use case. See our HP guide or use the quote builder for recommendations based on your boat." },
+        { question: 'What HP do I need for my boat?', answer: "Choose one Mercury model step below the maximum HP on your boat's capacity plate. If the plate says 150 HP, the best fit is a 115. Max rated is overkill, with more power and transom weight than the boat performs well with. See our HP guide or use the quote builder for help with your boat." },
         { question: 'Should I get FourStroke or Pro XS?', answer: 'For most recreational use (fishing, cruising, family), FourStroke is the better value. Pro XS earns its premium on tournament hulls and performance applications. The Pro XS price difference is typically $1,000 to $1,500 CAD over FourStroke at the same HP.' },
         { question: 'Do I need Mercury Command Thrust?', answer: 'For pontoons 18 ft and up, yes. For aluminum console fishing boats under 18 ft, the standard gearcase is fine. Command Thrust is a gearcase option, not a separate motor family.' },
         { question: "What's the most popular Mercury at HBW?", answer: 'The 90 EXLPT FourStroke is the most-installed Mercury we sell. It fits the most common Kawartha boat (16 to 18 ft aluminum console) and the most common use case (family fishing). The 9.9 ProKicker is the most-installed kicker.' },

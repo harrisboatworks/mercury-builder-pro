@@ -206,7 +206,7 @@ If your hull, transom, and interior are in good condition, repowering almost alw
 
 ### Can I increase HP when repowering?
 
-Often yes, up to your boat's maximum rated HP. Modern motors are lighter and more efficient, so a higher HP motor may work well where it wouldn't have before. We'll help you choose the right size.
+Often yes, but HBW recommends one Mercury model step below the maximum HP on the capacity plate. If the plate says 150 HP, the best fit is a 115. Max rated is overkill: more power and more weight on the transom than the boat performs well with. We'll help you choose the right size.
 
 ### Do I need new controls when repowering?
 

@@ -225,7 +225,7 @@ For a 16-18 ft aluminum fishing boat on Rice Lake or the Kawarthas, the most pra
 
 ### Should I choose the maximum HP my boat is rated for?
 
-The labelled maximum is a safety ceiling, not a performance goal. Stay within your boat's documented power, transom, and weight limits, then size for the hull, your usual and heaviest planned loads, and how you use it. Watersports, full passenger loads in rough conditions, or bigger lakes may call for a different choice within those limits.
+No. HBW recommends one Mercury model step below the maximum HP on the capacity plate. If the plate says 150 HP, the best fit is a 115. Max rated is overkill: more power and more weight on the transom than the boat performs well with. Never exceed the documented power, transom, or weight limits.
 
 ### What horsepower do I need for a pontoon boat in Ontario?
 

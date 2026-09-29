@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-smartcraft-alarm-codes-encyclopedia.md
-last_updated: 2026-09-11
+last_updated: 2026-09-26
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Alarm Codes List Ontario"
 description: "Mercury alarm codes explained: SmartCraft SYS FAULT, warning horns, the correct owner's manual, and why dismissing an alarm doesn't fix its cause."
 category: "Troubleshooting"
 date_published: 2026-02-06
-date_modified: 2026-09-11
+date_modified: 2026-09-26
 keywords: ["mercury smartcraft alarm codes","mercury smartcraft alarm codes list","mercury smartcraft alarm codes meanings","mercury alarm code list","smartcraft fault codes mercury","mercury outboard error codes","mercury smartcraft diagnostic","mercury outboard warning lights"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Category:** Troubleshooting  
 **Published:** 2026-02-06  
-**Last reviewed:** 2026-09-11  
+**Last reviewed:** 2026-09-26  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-smartcraft-alarm-codes-encyclopedia
 
@@ -55,10 +55,10 @@ Related: [Mercury service at HBW](/maintenance).
 
 | Beep pattern | What it means | What to do |
 |---|---|---|
-| **One beep at key-on** | Normal system test; the horn confirms it is working | None |
+| **Brief horn at key-on** | Normal system test; the horn confirms it is working | None |
 | **Four beeps every 2 minutes** | Low oil reserve (2-stroke engine-mounted reservoir) OR water in the water-separating fuel filter | Check the display if equipped; check oil reservoir and fuel filter; both are advisory-level, do not ignore |
 | **Continuous tone** | Serious or critical fault such as overheat, critically low oil, or oil pump failure. Engine Guardian may limit power. Horn strategy varies by engine family and year; some newer engines use a six-second horn instead, and overspeed protection can cut power with no horn at all | Reduce to idle, check the telltale stream, shut down if it persists; do not override |
-| **Intermittent / random beeps** | Sensor or wiring fault | Note conditions (RPM, load, timing) and book a diagnostic |
+| **Intermittent / random beeps** | Voltage, sensor or wiring fault | Note conditions (RPM, load, timing) and book a diagnostic |
 
 Patterns vary by engine family and model year. Some small EFI FourStroke models (like the 10 EFI) use six-beep patterns for low oil pressure and sensor faults, while many current SmartCraft engines use six-second horn strategies instead of repeating counts. The owner's manual for your serial number is the source of truth.
 
@@ -85,7 +85,7 @@ April and May are our highest-volume service months. The alarms cluster predicta
 
 **#2: Low battery voltage / battery alarm.** Battery sat all winter, sulphated. Fix: charge it first, then load or conductance test; replace it if it fails rated capacity or cannot hold charge, or if it does not meet Mercury's spec for the motor (a 150 FourStroke calls for 1000 MCA / 800 CCA; V10 and V12 Verado require AGM or lithium marine cranking batteries).
 
-**#3: Engine over-temperature within first 5 minutes of running.** Impeller didn't survive winter, or raw water intake has wasp nest, mud, or zebra mussel debris. Fix: impeller replacement and intake cleaning.
+**#3: Engine over-temperature within first 5 minutes of running.** Impeller didn't survive winter, or raw water intake has wasp nest, mud, or zebra mussel debris. Fix: impeller replacement and intake cleaning. An idle overheat is a different pattern (we cover that in [our idle-overheat guide](/blog/mercury-outboard-overheating-at-idle-fix-ontario)).
 
 ## Optimax DFI oil alarms: Fault 13, 14, and the float problem
 

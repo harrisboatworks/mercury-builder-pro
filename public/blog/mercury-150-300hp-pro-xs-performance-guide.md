@@ -125,7 +125,7 @@ Use the [pricing reference](/pricing-reference) once for the current bare-motor 
 
 We'd lay this out for a customer at the shop:
 
-**1. What's your boat's max HP rating?** Never exceed it. The best choice below that ceiling depends on the hull, load, use, and measured performance; there is no universal rule that every boat must be within 25 HP of maximum.
+**1. What's your boat's max HP rating?** Never exceed it. HBW recommends one Mercury model step below that ceiling. Max rated is overkill: more power and more weight on the transom than the boat performs well with.
 
 **2. What outcome are you trying to change?** Acceleration, loaded cruising, watersports pull, and top speed are different goals. Do not choose horsepower from a generic speed chart; compare Mercury performance reports for a genuinely similar hull and load.
 

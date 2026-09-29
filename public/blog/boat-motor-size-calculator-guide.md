@@ -31,7 +31,7 @@ revenue_driver: repower
 
 ---
 
-> **Quick answer:** There is no single formula that spits out the right HP. Read the hull's documented power and weight limits from the capacity plate and manufacturer documentation, then inventory hull, engine, fuel, equipment, people, and gear for a normal trip and the heaviest planned trip, without double-counting anything already included in a listed weight. Stay inside those limits. Length, percent-of-plate, and weight-per-HP shortcuts are not a verified method.
+> **Quick answer:** Start one Mercury model step below the maximum HP on the capacity plate. If the plate says 150 HP, the best fit is a 115. Max rated is overkill: more power and more weight on the transom than the boat performs well with. Then confirm the hull's documented power and weight limits, the exact motor weight, and the boat's normal load. Never exceed the plate.
 
 > **Pick the right shaft:** Try our [Shaft Length Picker](/tools#shaft-length) to check if you need a 20" or 25" shaft for your boat. Free, no email.
 ---
@@ -83,7 +83,7 @@ Protected Kawartha bays: lower HP works fine. Open Rice Lake in the afternoon wi
 - Cruising: mid-range HP is efficient and appropriate
 - Fishing: consider trolling needs alongside main-motor requirements
 - Water sports: more HP for pulling people on tubes and skis
-- Speed-focused use: HP at or near the capacity plate maximum makes sense
+- Speed-focused use: Choose one Mercury model below the capacity plate maximum. Max rated is still overkill, even when speed matters.
 
 ---
 
@@ -191,7 +191,7 @@ Build a real installed quote at [mercuryrepower.ca](https://www.mercuryrepower.c
 
 ### Why not just max out the HP rating?
 
-Maximum HP often provides more power than needed for typical use. Mid-range HP usually offers better efficiency, adequate performance, and lower cost. Max HP makes sense for specific applications.
+Do not max out the rating. HBW recommends one Mercury model step below the maximum HP on the capacity plate. The maximum is overkill: more power and more weight on the transom than the boat performs well with.
 
 ### Does motor weight affect boat performance?
 
