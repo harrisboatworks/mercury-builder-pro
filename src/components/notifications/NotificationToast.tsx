@@ -5,14 +5,14 @@ import { useAuth } from '@/components/auth/AuthProvider'
 import { supabase } from '@/integrations/supabase/client'
 
 export const NotificationToast = () => {
-  // Safely handle auth context - return null if not available
+  // Safely handle auth context - skip toasts if not available. Hooks below must
+  // still run on every render, so this cannot return early.
   let user;
   try {
     const authContext = useAuth();
     user = authContext?.user;
   } catch (error) {
-    // AuthProvider not available, skip notification toasts
-    return null;
+    user = undefined;
   }
 
   useEffect(() => {
