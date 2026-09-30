@@ -63,9 +63,12 @@ describe('NotificationToast', () => {
 
     auth.available = false;
     rerender(<NotificationToast />);
-    unmount();
 
+    // Cleanup must run on the auth transition itself, before teardown.
     expect(container.innerHTML).toBe('');
+    expect(removeChannel).toHaveBeenCalledTimes(1);
+
+    unmount();
     expect(removeChannel).toHaveBeenCalledTimes(1);
   });
 });
