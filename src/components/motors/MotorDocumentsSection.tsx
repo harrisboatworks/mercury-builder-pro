@@ -87,47 +87,53 @@ export default function MotorDocumentsSection({ motorId, motorFamily }: MotorDoc
   const [pdfLoadError, setPdfLoadError] = useState(false);
 
   useEffect(() => {
-    loadDocuments();
-  }, [motorId, motorFamily]);
+    let cancelled = false;
 
-  const loadDocuments = async () => {
-    try {
-      setLoading(true);
-      
-      // Query for motor-specific documents and family-wide documents
-      const { data, error } = await supabase
-        .from('motor_media')
-        .select('id, media_type, media_category, media_url, title, description, file_size')
-        .or(`motor_id.eq.${motorId},and(motor_id.is.null,assignment_type.eq.family)`)
-        .in('media_type', ['pdf', 'document', 'url'])
-        .eq('is_active', true)
-        .order('media_category')
-        .order('title');
+    const loadDocuments = async () => {
+      try {
+        setLoading(true);
 
-      if (error) throw error;
-      
-      // Filter out video URLs (YouTube, Vimeo) - these should only appear in MotorVideosSection
-      const filteredData = (data || []).filter(item => {
-        // Exclude items categorized as video
-        if (item.media_category === 'video') return false;
-        
-        // Exclude YouTube/Vimeo URLs
-        if (item.media_type === 'url') {
-          const url = item.media_url.toLowerCase();
-          if (url.includes('youtube.') || url.includes('youtu.be') || url.includes('vimeo.')) {
-            return false;
+        // Query for motor-specific documents and family-wide documents
+        const { data, error } = await supabase
+          .from('motor_media')
+          .select('id, media_type, media_category, media_url, title, description, file_size')
+          .or(`motor_id.eq.${motorId},and(motor_id.is.null,assignment_type.eq.family)`)
+          .in('media_type', ['pdf', 'document', 'url'])
+          .eq('is_active', true)
+          .order('media_category')
+          .order('title');
+
+        if (cancelled) return;
+        if (error) throw error;
+
+        // Filter out video URLs (YouTube, Vimeo) - these should only appear in MotorVideosSection
+        const filteredData = (data || []).filter(item => {
+          // Exclude items categorized as video
+          if (item.media_category === 'video') return false;
+
+          // Exclude YouTube/Vimeo URLs
+          if (item.media_type === 'url') {
+            const url = item.media_url.toLowerCase();
+            if (url.includes('youtube.') || url.includes('youtu.be') || url.includes('vimeo.')) {
+              return false;
+            }
           }
-        }
-        return true;
-      });
-      
-      setDocuments(filteredData);
-    } catch (error) {
-      console.error('Error loading documents:', error);
-    } finally {
-      setLoading(false);
-    }
-  };
+          return true;
+        });
+
+        if (!cancelled) setDocuments(filteredData);
+      } catch (error) {
+        if (!cancelled) console.error('Error loading documents:', error);
+      } finally {
+        if (!cancelled) setLoading(false);
+      }
+    };
+
+    loadDocuments();
+    return () => {
+      cancelled = true;
+    };
+  }, [motorId, motorFamily]);
 
   const getProxyUrl = (mediaUrl: string, download = false, filename?: string) => {
     // Extract path from Supabase storage URL
