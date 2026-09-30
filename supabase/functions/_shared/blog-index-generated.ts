@@ -3969,7 +3969,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   {
     "slug": "mercury-9-9-efi-review-ontario",
     "title": "Mercury 9.9 EFI Review Ontario",
-    "description": "The Mercury 9.9 MH EFI brings battery-free fuel injection to a simple portable outboard. Here's what Ontario boaters should know before buying.",
+    "description": "What the Mercury 9.9 EFI outboard actually is: FourStroke power, dry weight, shaft length, model codes, and which boats it suits. An Ontario buying guide.",
     "category": "Mercury Buying Guides",
     "publishDate": "2026-05-10",
     "keywords": [
