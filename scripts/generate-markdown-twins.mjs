@@ -1,3 +1,4 @@
+import { agentFinancingGuidance } from './lib/agent-contract-docs.mjs';
 import { writeFileSync, mkdirSync, rmSync, existsSync, readdirSync, readFileSync } from 'fs';
 import { join, resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
@@ -835,7 +836,7 @@ function motorMarkdown(m) {
     '## Notes',
     '',
     isVerado ? '- Verado is special-order only and not part of default inventory. Contact Harris Boat Works directly for Verado availability and lead time.' : null,
-    `- Financing is available on eligible totals over $5,000 CAD. Current offer: ${LIVE_RATE_TOKENS.rate} (OAC); confirm terms at ${SITE_URL}/promotions.`,
+    `- Financing: ${agentFinancingGuidance} Current promotions: ${SITE_URL}/promotions.`,
     WARRANTY_AGENT_NOTE,
     '- We are pickup-only at Gores Landing, ON. Final price confirmed by dealer.',
     `- Shop-based Mercury service and maintenance guide: ${SITE_URL}/maintenance.md`,
@@ -1054,7 +1055,7 @@ function catalogMarkdown(motorTwins, caseStudyTwins, locationTwins, blogTwins = 
     '- **Final price** is always confirmed by Harris Boat Works staff before purchase.',
     '- **Verado** is special-order only, not part of default inventory and not actively promoted.',
     WARRANTY_AGENT_NOTE_BOLD,
-    `- Financing minimum: **$5,000 CAD** total. Current promotional offer: **${LIVE_RATE_TOKENS.rate} (OAC)**; confirm current terms at ${SITE_URL}/promotions.`,
+    `- Financing: ${agentFinancingGuidance} Current promotions: ${SITE_URL}/promotions.`,
     '- Motor specifications are based on Mercury Marine official sources: mercurymarine.com and the official Mercury Marine brochure. Harris Boat Works is the source of truth for local pricing, availability, pickup policy, and quote terms.',
     '',
     '## What we do NOT offer (negative definitions)',

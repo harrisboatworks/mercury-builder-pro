@@ -2057,8 +2057,8 @@ Yes. HBW services Mercury outboards regardless of where they were purchased. Com
     slug: "spring-commissioning-cost-ontario",
     title: "Spring Commissioning Cost in Ontario: What 9,540 Spring Jobs Taught Us (2026)",
     description: "HBW spring commissioning is free for winter-storage customers or $99 labour for others. See what 9,540 Lightspeed job records actually measure.",
-    image: "/lovable-uploads/hero-spring-commissioning-cost.webp",
-    imageAlt: "A technician checking a Mercury 90 outboard beside covered boats in spring",
+    image: '/lovable-uploads/blog-heroes-2026-09/spring-commissioning-bill-drivers.webp',
+    imageAlt: "Infographic: a spring bill is the standard check, $0 labour for HBW winter storage customers or $99 before HST for others, plus parts and repairs only when the check finds something.",
     author: "Jay Harris",
     datePublished: "2026-07-02",
     dateModified: "2026-08-26",
@@ -2587,7 +2587,7 @@ Docking causes a lot of first-timer anxiety, but the basic approach is simple:
 - Neutral early, glide, short reverse burst to stop.
 - Let the crew step off with lines. Nobody jumps, nobody pulls the boat by hand while it's moving.
 
-![A rental pontoon easing up to the dock at low speed](/lovable-uploads/inline-pontoon-docking-approach.webp)
+![Top-down diagram of a four-step docking approach: line up at idle, come in at a shallow angle, shift to neutral early with a short reverse burst, then crew steps off with lines.](/lovable-uploads/inline/pontoon-docking-steps-2026-09.webp)
 
 And here's the part we mean sincerely: come in slow and crooked and bump a fender, and that's a normal Tuesday. The fenders exist because everyone was new once. And at day's end you're landing back at our dock, where staff handle the return check anyway.
 
@@ -3231,8 +3231,8 @@ If water flow has changed, an overheat alarm has sounded, or you cannot identify
     title: 'Mercury Command Thrust Guide 2026',
     seoTitle: 'Mercury Command Thrust Guide 2026: All Models | HBW',
     description: 'Mercury Command Thrust complete guide for 2026 covers 9.9 ProKicker to 115 FourStroke. Includes eligibility table, retrofit reality, decision matrix.',
-    image: '/lovable-uploads/command-thrust-complete-guide-hero.png',
-    imageAlt: 'Mercury 115 HP Command Thrust outboard on a pontoon boat at sunset, ideal for heavy loads on Ontario lakes.',
+    image: '/lovable-uploads/blog-heroes-2026-09/command-thrust-what-changes.webp',
+    imageAlt: "Infographic: Command Thrust keeps the same powerhead and horsepower but adds a larger gearcase, a larger prop and a lower gear ratio; best fit for heavy pontoons, tritoons and commercial boats.",
     author: 'Jay Harris',
     datePublished: '2026-05-28',
     dateModified: '2026-09-11',
@@ -4644,7 +4644,7 @@ We won't over-power your boat. We also won't recommend the cheapest option if we
 
 ---
 
-![Mercury 25 HP and 90 HP outboards on aluminum boats to illustrate different horsepower needs for boat sizing.](/lovable-uploads/inline/inline-horsepower-selection.png)
+![Infographic: start one Mercury model step below the capacity plate maximum, then adjust for hull, load, use and where you run the boat.](/lovable-uploads/inline/hp-one-step-below-max-2026-09.webp)
 
 ## When to step up, when to stay
 
@@ -6841,7 +6841,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Official Mercury freshwater photos of 75, 90 and 115 HP FourStroke outboards on the water',
     author: 'Harris Boat Works',
     datePublished: '2026-01-26',
-    dateModified: '2026-09-11',
+    dateModified: '2026-09-26',
     publishDate: '2026-01-26',
     category: 'Comparison',
     readTime: '9 min read',
@@ -7033,7 +7033,7 @@ Build a quote for 75, 90, or 115 HP on the [motor selection page](/quote/motor-s
 
 ---
 
-_Pricing ranges in this article are HBW's working 2026 estimates, last reviewed 2026-08-19. The actual price for your specific motor and configuration is on the [motor selection page](/quote/motor-selection), which is the source of truth and updates as Mercury pricing and HBW promotions change. Mercury model years change every July 1, and we refresh ranges in articles annually._
+_This article does not quote prices. Current Mercury CAD pricing is on the [pricing reference](/pricing-reference); the [motor selection page](/quote/motor-selection) builds the exact configuration._
 
 ---
 
@@ -8268,8 +8268,8 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     title: 'Best Mercury for a Center Console 2026: 115 HP to Quad V10',
     seoTitle: "Best Mercury for a Center Console 2026: 115 HP to Quad V10",
     description: "How we'd power a center console by hull length: a single 115 inshore, twin V6s and V8s midrange, up to triple and quad V10s for offshore hulls.",
-    image: '/lovable-uploads/center-console-mercury-hero.jpg',
-    imageAlt: 'Single-engine center console fishing boat with a Mercury 90 FourStroke on the stern, skipper at the helm, on a calm Ontario lake.',
+    image: '/lovable-uploads/blog-heroes-2026-09/center-console-length-power.webp',
+    imageAlt: "Infographic: center console lengths from 17 to 28-plus feet matched to typical Mercury horsepower ranges and example motors, from 90 to 150 HP up to triple Verado setups.",
     author: 'Harris Boat Works',
     datePublished: '2026-03-23',
     dateModified: '2026-09-06',
@@ -8373,7 +8373,7 @@ This is the most common Ontario center console application.
 **Performance:** 50 to 60 mph two-up.
 **Use case:** Lake Ontario salmon tournament days, bigger-water Bay of Quinte.
 
-![24-foot center-console fishing boat with twin Mercury Verado V8 outboards](/lovable-uploads/inline/inline-center-console-twin-verados.png)
+![Infographic comparing a single Mercury with twin outboards on a center console: twins buy get-home redundancy and total power, not extra speed, and typically cost substantially more.](/lovable-uploads/inline/center-console-single-vs-twin-2026-09.webp)
 
 You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
@@ -8467,7 +8467,8 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     relatedSlugs: ['mercury-outboard-wont-start-troubleshooting', 'mercury-maintenance-intervals-20-100-300-rule'],
     title: 'Spring Outboard Commissioning Checklist (2026 Ontario)',
     description: 'Spring commissioning brings your Mercury back to operational state after winter storage: fuel, cooling, lubrication, electrical.',
-    image: '/lovable-uploads/hero-spring-commissioning-checklist.png',
+    image: "/lovable-uploads/blog-heroes-2026-09/spring-commissioning-order.webp",
+    imageAlt: "Six-step spring commissioning order: walk-around, battery, fuel, cooling with the 30-second telltale rule, lower unit, then a test run on muffs before launch.",
     author: 'Harris Boat Works',
     datePublished: '2026-03-30',
     dateModified: '2026-09-06',
@@ -9098,7 +9099,7 @@ whenInDoubt: Most Ontario recreational buyers do not need SeaPro. If you are not
 
 ---
 
-![Black Mercury SeaPro outboard on a rugged aluminum work boat, illustrating commercial-grade reliability for guides.](/lovable-uploads/inline/inline-mercury-seapro-commercial.png)
+![Infographic: what differs between Mercury SeaPro and a standard FourStroke, the typical price premium, and which annual-hours bands actually need SeaPro.](/lovable-uploads/inline/seapro-vs-fourstroke-2026-09.webp)
 
 You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
@@ -10189,7 +10190,7 @@ escalationBody: We run a pre-opener service every spring, typically $200 to $350
 
 ---
 
-![Aluminum fishing boat with Mercury outboard docked on a misty lake, ready for the Ontario walleye opener.](/lovable-uploads/inline/inline-walleye-opener-dawn.png)
+![Infographic: five walleye opener prep checks in order: battery, fuel system, motor flush and telltale, trailer bearings and tires, and live well, lights and electronics.](/lovable-uploads/inline/walleye-opener-prep-order-2026-09.webp)
 
 ## What HBW Does for Opener Prep Customers
 
@@ -11696,7 +11697,7 @@ This guide was checked July 27, 2026 against Mercury's current product pages and
     imageAlt: 'Mercury Pro XS outboard on a boat outside the Harris Boat Works shop in Gores Landing, Ontario',
     author: 'Harris Boat Works',
     datePublished: '2026-05-08',
-    dateModified: '2026-09-06',
+    dateModified: '2026-09-26',
     publishDate: '2026-05-08',
     category: 'Buying Guide',
     readTime: '10 min read',
@@ -11778,7 +11779,7 @@ eyebrow: All-in ballparks
 subhead: Motor MSRP is one line on the invoice. Here is the full picture across Mercury's tiers, before any trade-in or current promo.
 item1Label: FourStroke 9.9 (kicker / small tiller)
 item1Value: $2,999 - $5,200
-item1Note: Motor only. ProKicker remote variants land at the top of the range.
+item1Note: Motor only.
 item2Label: FourStroke 60 to 115 (mid-range main)
 item2Value: $12,000 - $18,000
 item2Note: Most common Rice Lake / Kawarthas repower range. Includes Command Thrust where applicable.
@@ -12400,7 +12401,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     title: 'Mercury Outboard Lineup for Ontario Boaters (2027 Model Year)',
     description: "Compare Mercury FourStroke, Pro XS, SeaPro, Verado and Avator for an Ontario boat, with exact-model checks, current pricing references and ordering questions.",
     image: '/lovable-uploads/hero-mercury-motor-families.webp',
-    imageAlt: "Mercury outboard motors on a Harris Boat Works dock.",
+    imageAlt: "Mercury outboard motors lined up on a showroom floor.",
     author: 'Jay Harris',
     datePublished: '2026-07-09',
     dateModified: '2026-09-06',
@@ -15599,7 +15600,7 @@ When in doubt, weigh the rig at a CAT scale before a long trip. Knowing the actu
 
 ---
 
-![Pickup truck towing an aluminum fishing boat eastbound on Highway 401 at golden hour](/lovable-uploads/inline/inline-401-east-trailering.png)
+![Infographic: six pre-trip trailer checks before towing: tires, bearings, lights, coupler and chains, boat tie-downs and drain plug, and brakes.](/lovable-uploads/inline/trailer-pre-trip-check-2026-09.webp)
 
 ## What to Do at the Launch in Gores Landing
 
@@ -15720,7 +15721,8 @@ Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | Since 1947`,
     title: 'Mercury Outboard Won\'t Start (Ontario Dealer Guide, 2026)',
     seoTitle: 'Mercury Outboard Won\'t Start | HBW Ontario Dealer 2026',
     description: 'Mercury outboard won\'t start? Ontario dealer\'s honest diagnostic ladder: battery, fuel, ignition, EFI. Ethanol-free fuel available at HBW.',
-    image: '/lovable-uploads/hero-mercury-wont-start-dockside.png',
+    image: "/lovable-uploads/blog-heroes-2026-09/mercury-wont-start-order.webp",
+    imageAlt: "Mercury no-start triage: note the symptom, check the kill switch, neutral and battery switch, then work the five-step ladder from battery under load to an EFI fault scan.",
     author: 'Harris Boat Works',
     datePublished: '2026-04-27',
     dateModified: "2026-09-07",
@@ -16567,19 +16569,19 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
   {
     slug: 'mercury-outboard-rigging-costs-ontario',
     title: 'Mercury Outboard Rigging Costs Explained (Ontario 2026)',
-    description: 'Mercury rigging costs: throttle, steering, harness, gauges, hose, cables, prop. Typical repower with post-2010 controls: $500-$1,500 CAD.',
+    description: 'Mercury rigging costs: throttle, steering, harness, gauges, hose, cables. Typical repower with post-2010 controls: $500-$1,500 CAD before prop and installation labour.',
     image: '/lovable-uploads/hero-mercury-rigging-costs.png',
     imageAlt: 'Illustration of rigging work on an outboard powerhead with the cowl removed. Illustrative, not a Harris Boat Works job.',
     author: 'Jay Harris',
     datePublished: '2026-05-05',
-    dateModified: '2026-09-11',
+    dateModified: '2026-09-26',
     publishDate: '2026-05-05',
     category: 'Repower',
     readTime: '10 min read',
     keywords: ['mercury rigging cost', 'outboard rigging ontario', 'boat repower rigging', 'hydraulic steering upgrade', 'mercury install cost'],
     content: `## Quick Answer
 
-Rigging costs vary significantly by job. A like-for-like Mercury-to-Mercury swap on post-2010 controls can land under $1,500. A full re-rig, new gauges, harness, controls, and steering, runs $2,500 to $6,000. We quote rigging line by line, no surprises. Build an installed quote with rigging spelled out at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**.
+Rigging costs vary significantly by job. A like-for-like Mercury-to-Mercury swap on post-2010 controls can land under $1,500. A full re-rig, new gauges, harness, controls, and steering, runs $2,500 to $6,000. Both figures are before prop and installation labour. We quote rigging line by line, no surprises. Build an installed quote with rigging spelled out at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**.
 
 ---
 
@@ -16737,7 +16739,7 @@ The hidden cost: SmartCraft display. Most repower customers want the data screen
 Throttle and shift controls, steering, wiring harness, gauges or display, battery cables and switches, fuel hose and filter, and propeller. Everything connecting the motor to the boat's systems.
 
 **How much does Mercury rigging cost in Ontario?** 
-Mercury-to-Mercury on post-2010 controls in good condition: $500 to $1,500 CAD. Brand conversion or full re-rig: $2,500 to $6,000 CAD. Hydraulic steering upgrade adds $1,650 to $3,500 CAD. All before HST.
+Mercury-to-Mercury on post-2010 controls in good condition: $500 to $1,500 CAD. Brand conversion or full re-rig: $2,500 to $6,000 CAD. Hydraulic steering upgrade adds $1,650 to $3,500 CAD. All before HST, prop and installation labour.
 
 **Is rigging included in the quote from mercuryrepower.ca?** 
 Yes. The configurator builds the rigging cost into the all-in installed price.
@@ -16778,7 +16780,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     faqs: [
       {
         question: 'How much does Mercury rigging cost?',
-        answer: 'For Mercury-to-Mercury repowers with post-2010 controls in good shape, rigging lands $500 to $1,500 CAD. Brand conversions add $1,500 to $3,000. Full rerigs (everything new) run $2,500 to $6,000. Specific quote at [/quote/motor-selection](/quote/motor-selection).'
+        answer: 'For Mercury-to-Mercury repowers with post-2010 controls in good shape, rigging lands $500 to $1,500 CAD. Brand conversions add $1,500 to $3,000. Full rerigs (everything new) run $2,500 to $6,000, all before prop, installation labour and HST. Specific quote at [/quote/motor-selection](/quote/motor-selection).'
       },
       {
         question: 'What\'s included in rigging?',
@@ -17532,7 +17534,7 @@ Jay Harris helps run Harris Boat Works, a third-generation family marina in Gore
     image: "/lovable-uploads/hero-trent-severn-waterway-2026.png",
     author: 'Harris Boat Works',
     datePublished: "2026-05-08",
-    dateModified: "2026-09-11",
+    dateModified: "2026-09-29",
     publishDate: "2026-05-08",
     category: "Lifestyle",
     readTime: "9 min read",
@@ -17630,21 +17632,21 @@ rightCriteria:
   - Draft under 3 feet handles the shallowest chambers
   - Length 21 to 25 feet is the practical sweet spot
 rightOutcome: Check your dimensions
-whenInDoubt: Measure beam and draft before you plan a full transit. Most 18 to 20 foot aluminum fishing boats and smaller pontoons clear everything. Wide cruisers and sailboats need to check the 22 foot vertical clearance at fixed bridges too.
+whenInDoubt: Measure beam and draft before you plan a full transit. Most 18 to 20 foot aluminum fishing boats and smaller pontoons clear everything. Wide cruisers and sailboats need to check the 20 foot minimum overhead clearance at fixed bridges too.
 ::
 
 ## Vessel Constraints, Will Your Boat Fit?
 
 | Constraint | Detail |
 |---|---|
-| Vertical clearance (lowest fixed bridge) | 22 feet (6.7 m) |
+| Vertical clearance (lowest fixed bridge) | 20 feet (6.1 m) |
 | Water depth at Locks 1, 19 | 8 feet |
 | Water depth at Locks 20, 45 | 6 feet |
 | Big Chute Marine Railway max length | 99.2 feet |
 | Big Chute max beam | 24 feet |
 | Big Chute max weight | 99 tons |
 
-Anything taller than 22 feet, radar arches, tall biminis, sailboat masts, needs to come down. Most sailors un-step at Trenton or Frankford before the transit.
+Parks Canada lists a minimum overhead fixed bridge clearance of 20 feet (6.1 m). Measure your vessel's full air draft, including radar arches, biminis and masts, and confirm current route conditions before transit. Do not attempt passage unless your vessel clears the confirmed overhead height. Most sailors un-step at Trenton or Frankford before the transit.
 
 ---
 
@@ -19579,7 +19581,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Legend XT18 aluminum boat with a Mercury 115 Pro XS outboard motor docked at an Ontario lake.',
     author: 'Harris Boat Works',
     datePublished: '2026-05-21',
-    dateModified: '2026-09-06',
+    dateModified: '2026-09-25',
     publishDate: '2026-05-21',
     category: 'Buying Guide',
     readTime: '11 min read',
@@ -19615,11 +19617,13 @@ We've been a Mercury dealer since 1965 and a Legend dealer for years. The combin
 
 ## The 2026 V-Hull / Fishing Boat Lineup
 
-Five series in the 2026 V-hull lineup, ranked roughly entry-level to top-tier:
+Five series in the V-hull lineup, ranked roughly entry-level to top-tier.
+
+**Pricing note:** Legend's website now lists the R, XF, XT and Titanium series as 2027 models and the Pulse, LE, Q and Halo as 2026 models. The starting prices below are Legend's published Ontario all-in starting prices, checked September 25, 2026. A 2026 boat still in dealer inventory can be priced differently from a 2027 catalog start, and the included motor and length depend on the exact package, so confirm the configuration with us before you compare.
 
 ### Pulse, entry-level, 10 ft
 
-The Pulse is built differently from anything else in the lineup, **rotomolded HDPE plastic hull**, virtually unsinkable. Single 10-foot length only, max 15 HP. Starting **$5,999 CAD** with a small Mercury 4-stroke.
+The Pulse is built differently from anything else in the lineup, **rotomolded HDPE plastic hull**, virtually unsinkable. Single 10-foot length only, max 15 HP. Legend's published starting price for the 2026 Pulse is **$5,999 CAD**.
 
 **Best for:** First-time boaters, kids' boats, cottage runabouts, anyone who wants a near-indestructible hull that doesn't need spring service.
 
@@ -19627,7 +19631,7 @@ The Pulse is built differently from anything else in the lineup, **rotomolded HD
 
 The R Series is **riveted aluminum**, not welded, the entry price comes from the rivets. Two configurations: **R Series Ultralite** (12-14 ft, boat-only options) and **R Series ProSport** (14-16 ft, motor + trailer packages).
 
-Starting at **$5,399 CAD** for the smallest Ultralite hulls; ProSport packages with a Mercury 25 ELPT and trailer run **$15,000-$22,000** all-in.
+Legend's published starting price for the 2027 R Series is **$5,699 CAD**. Motor-and-trailer ProSport packages cost more; we quote the exact package.
 
 _Prices here are planning figures as of {{PRICING_ASOF}}. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
@@ -19635,13 +19639,13 @@ _Prices here are planning figures as of {{PRICING_ASOF}}. For live Mercury motor
 
 ### XF Series, 16-18 ft, serious fishing
 
-The XF Series moves up to **welded aluminum** with a deeper-V hull (17° deadrise, the same as Legend's premium hulls). Starting **$36,999 CAD** with a Mercury 50 ELPT; max-rigged with a **Mercury 90 ELPT**, you're around **$48,000-$52,000 CAD**.
+The XF Series moves up to **welded aluminum** with a deeper-V hull (17° deadrise, the same as Legend's premium hulls). Legend's published starting price for the 2027 XF Series is **$38,999 CAD**. Bigger motors and options raise that; we price the exact rig.
 
 **Best for:** Mid-range fishermen who want a real fishing boat without going to premium pricing. Solid all-around platform.
 
 ### XT Series, 17-20 ft, premium fishing/family hybrid
 
-The XT Series is **brand-new for 2026** and the most-talked-about Legend lineup we've seen in years. Four lengths: **17 XT, 18 XT, 19 XT, 20 XT.** Starting at **$56,999 CAD** for the 17 with a Mercury 115 EXLPT; the 20 XT with a Mercury 175 lands around **$71,999 CAD.**
+The XT Series is **brand-new for 2026** and the most-talked-about Legend lineup we've seen in years. Four lengths: **17 XT, 18 XT, 19 XT, 20 XT.** Legend's published starting price for the 2027 XT Series is **$59,999 CAD**. Longer hulls and bigger Mercury motors cost more.
 
 What's new on the XT:
 
@@ -19656,7 +19660,7 @@ What's new on the XT:
 
 ### Titanium 19 Rugged, top-tier
 
-The Titanium is the heaviest-duty V-hull in the line. **0.125-gauge aluminum** (everything else is 0.100), **RIGS gunnel system, hydraulic steering**, full tournament-style fishing layout. Starting **$86,999 CAD** with a Mercury 115 EXLPT; max HP is 150.
+The Titanium is the heaviest-duty V-hull in the line. **0.125-gauge aluminum** (everything else is 0.100), **RIGS gunnel system, hydraulic steering**, full tournament-style fishing layout. Legend's published starting price for the 2027 Titanium is **$91,999 CAD**; max HP is 150.
 
 **Best for:** Tournament anglers, guides, anyone running serious water who wants the thickest hull in the lineup. Less common, we move 1-2 a year.
 
@@ -19670,7 +19674,7 @@ Three series across three positioning bands:
 
 You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
-Best-value pontoon line. **2-tube standard** with optional 3-tube on the 21. Mercury **25 ELPT / 40 ELPT Command Thrust (CT on the 40; there is no 25 CT)** standard depending on size. Starting **$39,999 CAD** for the 15 LE C; the 21 LE rigged with a Mercury 90 EXLPT runs around **$48,000-$50,000 CAD**.
+Best-value pontoon line. **2-tube standard** with optional 3-tube on the 21. Mercury **25 ELPT / 40 ELPT Command Thrust (CT on the 40; there is no 25 CT)** standard depending on size. Legend's published starting price for the 2026 LE Series is **$41,998 CAD**. Longer and three-tube LE models with bigger motors cost more.
 
 **Best for:** First-time pontoon buyers, weekend cottage families, anyone who wants the pontoon experience without premium pricing.
 
@@ -19678,23 +19682,15 @@ Best-value pontoon line. **2-tube standard** with optional 3-tube on the 21. Mer
 
 ### Q Series, premium comfort pontoons, 21-23 ft
 
-Step-up tier. **2-tube or 3-tube** options. Garmin 52CV GPS standard. Premium furniture and finish. Starting **$56,999 CAD**.
+Step-up tier. **2-tube or 3-tube** options. Garmin 52CV GPS standard. Premium furniture and finish. Legend's published starting price for the 2026 Q Series is **$56,999 CAD**.
 
 **Best for:** Buyers who want comfort and electronics without the design statement of the Halo.
 
 ### Halo, modern-design pontoons, 19-23 ft
 
-The Halo is Legend's most distinctive pontoon, **PolyForm construction**, **360° seating**, **JBL audio**, modern aesthetic that doesn't look like every other pontoon at the marina. **$48,999-$51,999 CAD** depending on size. Mercury 115 EXLPT standard.
+The Halo is Legend's most distinctive pontoon, **PolyForm construction**, **360° seating**, **JBL audio**, modern aesthetic that doesn't look like every other pontoon at the marina. Legend's published starting price for the 2026 Halo is **$49,999 CAD**. Mercury 115 EXLPT standard.
 
 **Best for:** Younger families, design-conscious buyers, anyone who wants a pontoon that doesn't blend into the dock.
-
----
-
-::pull-quote
-quote: Test-drove three pontoons. **The Legend with the Mercury 115 Command Thrust was the only one that came up on cruise clean with seven adults on it.** That was the test that ended my shopping.
-attribution: Karen L.
-source: Kawarthas cottage
-::
 
 ---
 
@@ -20031,7 +20027,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Diagram connecting warning information, the engine model and serial number, and the exact manual response. Follow the warning response immediately; record details only when safe.',
     author: 'Harris Boat Works',
     datePublished: '2026-02-06',
-    dateModified: "2026-09-11",
+    dateModified: "2026-09-26",
     publishDate: '2026-02-06',
     category: 'Troubleshooting',
     readTime: '12 min read',
@@ -20065,10 +20061,10 @@ Related: [Mercury service at HBW](/maintenance).
 
 | Beep pattern | What it means | What to do |
 |---|---|---|
-| **One beep at key-on** | Normal system test; the horn confirms it is working | None |
+| **Brief horn at key-on** | Normal system test; the horn confirms it is working | None |
 | **Four beeps every 2 minutes** | Low oil reserve (2-stroke engine-mounted reservoir) OR water in the water-separating fuel filter | Check the display if equipped; check oil reservoir and fuel filter; both are advisory-level, do not ignore |
 | **Continuous tone** | Serious or critical fault such as overheat, critically low oil, or oil pump failure. Engine Guardian may limit power. Horn strategy varies by engine family and year; some newer engines use a six-second horn instead, and overspeed protection can cut power with no horn at all | Reduce to idle, check the telltale stream, shut down if it persists; do not override |
-| **Intermittent / random beeps** | Sensor or wiring fault | Note conditions (RPM, load, timing) and book a diagnostic |
+| **Intermittent / random beeps** | Voltage, sensor or wiring fault | Note conditions (RPM, load, timing) and book a diagnostic |
 
 Patterns vary by engine family and model year. Some small EFI FourStroke models (like the 10 EFI) use six-beep patterns for low oil pressure and sensor faults, while many current SmartCraft engines use six-second horn strategies instead of repeating counts. The owner's manual for your serial number is the source of truth.
 
@@ -20095,7 +20091,7 @@ April and May are our highest-volume service months. The alarms cluster predicta
 
 **#2: Low battery voltage / battery alarm.** Battery sat all winter, sulphated. Fix: charge it first, then load or conductance test; replace it if it fails rated capacity or cannot hold charge, or if it does not meet Mercury's spec for the motor (a 150 FourStroke calls for 1000 MCA / 800 CCA; V10 and V12 Verado require AGM or lithium marine cranking batteries).
 
-**#3: Engine over-temperature within first 5 minutes of running.** Impeller didn't survive winter, or raw water intake has wasp nest, mud, or zebra mussel debris. Fix: impeller replacement and intake cleaning.
+**#3: Engine over-temperature within first 5 minutes of running.** Impeller didn't survive winter, or raw water intake has wasp nest, mud, or zebra mussel debris. Fix: impeller replacement and intake cleaning. An idle overheat is a different pattern (we cover that in [our idle-overheat guide](/blog/mercury-outboard-overheating-at-idle-fix-ontario)).
 
 ## Optimax DFI oil alarms: Fault 13, 14, and the float problem
 
@@ -22178,7 +22174,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     seoTitle: "Outboard vs Sterndrive: Why Ontario Repowers Outboard",
     description: "Ontario sterndrive owners weighing a repower get an honest dealer's take on outboard vs. sterndrive in 2026, covering cost reality, market trends.",
     image: "/images/shop/mercruiser-sterndrive-service-hbw-shop.webp",
-    imageAlt: "Boat with its Mercruiser sterndrive removed for service inside the Harris Boat Works shop",
+    imageAlt: "Boat with a Mercruiser sterndrive in for service inside the Harris Boat Works shop",
     author: 'Jay Harris',
     datePublished: '2026-03-05',
     dateModified: '2026-09-11',
@@ -23176,11 +23172,11 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     title: 'Mercury Boat Battery Guide Ontario',
     seoTitle: "Mercury Boat Battery Guide for Ontario (2026)",
     description: "Marine battery guide for Ontario boaters: types, switches, wiring, winter storage, and spring startup so you're not stranded on the May long weekend.",
-    image: '/lovable-uploads/hero-mercury-battery-guide.png',
-    imageAlt: 'Two boxed marine batteries strapped in a boat battery locker with a rotary battery switch above them.',
+    image: '/lovable-uploads/blog-heroes-2026-09/battery-dual-switch-wiring.webp',
+    imageAlt: "Infographic: wiring diagram of a cranking battery and a house battery sharing one battery selector switch, with a fused house feed, a common ground bus and five battery care takeaways.",
     author: 'Jay Harris',
     datePublished: '2026-04-01',
-    dateModified: '2026-09-07',
+    dateModified: '2026-09-26',
     publishDate: '2026-04-01',
     category: "Service",
     readTime: '~12 min read',
@@ -23219,7 +23215,7 @@ step1Question: Does the battery hold above 9.5V under starter load?
 step1Tip: Resting voltage lies. A tired battery can read 12.4V at rest and collapse to 8V the moment the starter pulls. Get a real load test at any auto parts store, free.
 step2Label: Terminals and cables
 step2Question: Are the terminals clean and the cable connections tight?
-step2Tip: White or green powder means corrosion, which means resistance, which mimics a dead battery. Clean with baking soda and water, then dielectric grease.
+step2Tip: White or green powder means corrosion, which means resistance, which mimics a dead battery. Clean with baking soda and water, reconnect and tighten, then coat the finished connection with dielectric grease.
 step3Label: Charging system (alternator output)
 step3Question: With the engine at 1,500 RPM, does battery voltage read 13.8V to 14.4V?
 step3Tip: Under 13.5V running means the alternator or voltage regulator isn't charging. The battery is being drained by the boat, not failing on its own.
@@ -23382,7 +23378,7 @@ For the full winterization picture, see our [DIY Mercury Outboard Winterization 
 
 1. **Check resting voltage.** After an hour off charge: 12.6V+ = healthy. 12.4-12.5V = okay. Below 12.4V = recharge and retest. Below 12.2V after a full charge = replace it.
 2. **Load test.** Voltage alone isn't the whole picture, a battery can read 12.6V and still fail under cranking load. Our shop load tests, and most auto parts stores will test for free.
-3. **Inspect terminals.** White or green crust is corrosion. Clean with a paste of baking soda and water, rinse, dry, and apply dielectric grease before reconnecting. This prevents recurrence.
+3. **Inspect terminals.** White or green crust is corrosion. Clean with a paste of baking soda and water, rinse, dry, reconnect and tighten, then coat the finished connection with dielectric grease. This prevents recurrence.
 4. **Check water levels (flooded batteries only).** Top up with distilled water, never tap water.
 5. **Confirm switch position.** Make sure it's in the correct operating position, not OFF.
 6. **Reconnect and crank.** A healthy battery on a healthy engine starts in 2 to 3 seconds.
@@ -23788,8 +23784,8 @@ See the 150 FourStroke section below for 19-21 ft bowrider repower guidance and 
 **V6 Pro XS or V8 FourStroke (175-300 HP), ${'$27,544–$39,402' /* @canonical:dealer-range:hp_175_to_300_all */}**
 Bass boats, larger aluminum, big pontoons. Pro XS V6 is competitive vs Yamaha. V8 FourStroke is the quiet premium option.
 
-**V10 Verado (350-400 HP), $46,000-$54,000+**
-Twin or triple outboards on big offshore boats and large pontoons. Most Ontario customers don't need this band.
+**Verado (special order)**
+Twin or triple outboards on big offshore boats and large pontoons. Verado is special order, so we quote each one directly. Most Ontario customers don't need this band.
 
 **[Repower budget reality check](/blog/mercury-repower-cost-ontario-2026-cad).** Add 20-35% on top of the bare motor price for rigging, prop, install labour, and lake test. Pricing varies by model year, shaft length, controls package, gauges, and prop selection. HST extra. For an actual quote, use the configurator at mercuryrepower.ca.
 
@@ -23832,10 +23828,10 @@ The full current Mercury outboard lineup we sell, grouped by HP class. The prici
 
 ### What changes the price within a class
 
-- **Tiller vs. remote:** Remote (electric start, cable or hydraulic steering) adds $300-$1,500 over tiller.
-- **Shaft length:** Long (20") fits most boats. Extra long (25") is $100-$200 more. Measure your transom before you order.
-- **Power trim:** Adds $400-$600. Worth it for motors that are going in and out of weedy water regularly.
-- **Command Thrust:** Adds $400-$1,000. Designed for pontoons and heavy hulls. If you're mounting a 9.9 on a pontoon as a trolling motor, this is the right gearcase.
+- **Tiller vs. remote:** Tiller and remote versions are priced as separate models, and the gap is not fixed. On our September 2026 pricing reference, the 60 HP Command Thrust tiller (60ELHPT CT) was $715 more than the remote 60ELPT CT motor. A remote motor also needs controls, steering and rigging, which we quote per boat.
+- **Shaft length:** Long (20") fits most boats. Extra long (25") is its own model and the gap varies: the 225 FourStroke was $2,068 more in 25" than in 20" on the same list. Measure your transom before you order.
+- **Power trim:** Changes the model code. Compare the exact configurations rather than adding a flat surcharge. Worth it for motors that are going in and out of weedy water regularly.
+- **Command Thrust:** Also its own model, so compare the exact configurations. Designed for pontoons and heavy hulls. If you're mounting a 9.9 on a pontoon as a trolling motor, this is the right gearcase.
 
 ### Things to know about the mid-range tier
 
@@ -23853,7 +23849,7 @@ Price difference between the two at 115 HP is small, roughly **$400** ($17,083 d
 
 ### Things to know about the V6 and V8 tier
 
-**All-in installed cost.** For a V6 repower, add $2,500-$5,000 for SmartCraft / VesselView controls and rigging, $600-$1,200 for prop selection, and the on-water test (included). Old motor removal and disposal are typically included in the install quote. A 225 Pro XS repower typically lands at **$36,000-$39,000**.
+**All-in installed cost.** For a V6 repower, add $2,500-$5,000 for SmartCraft / VesselView controls and rigging, $600-$1,200 for prop selection, and the on-water test (included). Old motor removal and disposal are typically included in the install quote. The bare 225EXLPT Pro XS alone was $36,300 on our September 2026 pricing reference, so an installed 225 Pro XS repower lands above that once controls, rigging and prop are added. Your written quote sets the actual total.
 
 Ready to compare a 150 against a 200? Build both configurations on [mercuryrepower.ca](https://www.mercuryrepower.ca), motor, rigging, prop, and install all in one quote.
 
@@ -23877,11 +23873,11 @@ Eligible new Mercury outboards for pleasure use in Canada include a 3-year limit
 
 ## About the author
 
-Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW is a current Mercury Marine Premier Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. Read Jay's full bio.
+Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW is a current Mercury Marine Premier Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. [Read Jay's full bio](/about/jay-harris).
 
 ## Ready to build a quote?
 
-Three ways to get a real price:
+Two ways to get a real price:
 
 - **Build it online:** mercuryrepower.ca, pick HP, configuration, add controls and prop. Real CAD quote in minutes.
 - **Look up a specific model:** mercuryrepower.ca/pricing-reference, live database with model codes, shaft options, stock status.
@@ -23896,7 +23892,7 @@ We're at 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. Pickup only, we d
     imageAlt: 'Technician servicing a Mercury outboard in an Ontario workshop to illustrate the professional installation behind pricing.',
     author: 'Jay Harris',
     datePublished: '2026-05-08',
-    dateModified: '2026-09-11',
+    dateModified: '2026-09-25',
     publishDate: '2026-05-08',
     category: 'Mercury Outboards',
     readTime: '~14 min read',
@@ -23967,7 +23963,7 @@ Single lever that mounts on top of the helm console. Push forward for forward ge
 
 **Binnacle Gen II Single Lever (mechanical):** CAD $700 to $1,200. The workhorse. Connects via push-pull cables. Works reliably on single-engine setups up to 200 HP.
 
-**Binnacle Gen II Single Lever DTS (Digital Throttle & Shift):** CAD $1,400 to $2,400. Same physical lever, but cables are replaced by an electronic harness. Smoother shifting, supports multi-engine sync, integrates with SmartCraft. Standard for 250+ HP, twin-engine setups, or when VesselView integration needs to feel clean.
+**Binnacle Gen II Single Lever DTS (Digital Throttle & Shift):** CAD $1,400 to $2,400. Same physical lever, but cables are replaced by an electronic harness. Smoother shifting, supports multi-engine sync, integrates with SmartCraft. Standard on current Mercury Verado V8/V10/V12 packages, and the right call for twin-engine setups or when VesselView integration needs to feel clean.
 
 ### Side-Mount Controls
 
@@ -23975,7 +23971,7 @@ Mounts on the side of the helm console or a pedestal. Same function as a binnacl
 
 ### DTS (Digital Throttle & Shift)
 
-Mercury's electronic control system. Replaces mechanical throttle and shift cables with a wiring harness. Smoother shifting, no "clunk" between gears, multi-engine sync, cruise control, SmartTow integration. Standard on Mercury's V8 and V12 motors, but confirm the requirement for your specific model. Optional on some V6 models. For most single-engine Ontario repowers under 250 HP, mechanical controls are the right call.
+Mercury's electronic control system. Replaces mechanical throttle and shift cables with a wiring harness. Smoother shifting, no "clunk" between gears, multi-engine sync, cruise control, SmartTow integration. DTS is standard on current Mercury Verado V8/V10/V12 packages in the 250-600 HP range. Confirm DTS fitment on the exact Pro XS or FourStroke model rather than inferring it from horsepower. For most single-engine Ontario repowers under 250 HP, mechanical controls are the right call.
 
 ---
 
@@ -24138,7 +24134,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-mercury-controls-rigging-guide.png',
     author: 'Jay Harris',
     datePublished: '2026-05-08',
-    dateModified: '2026-09-11',
+    dateModified: '2026-09-26',
     publishDate: '2026-05-08',
     category: 'Mercury Outboards',
     readTime: '~16 min read',
@@ -24150,7 +24146,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         question: 'Do I need DTS on a single-engine V6?',
-        answer: 'No. Mechanical controls work fine on a single-engine 150-225 HP motor and save you CAD $1,500-$2,500. DTS becomes the right call on twin-engine setups, V8+ motors (where it\'s mandatory), or if you specifically want VesselView integration to feel clean.',
+        answer: 'No. Mechanical controls work fine on a single-engine 150-225 HP motor and save you CAD $1,500-$2,500. DTS becomes the right call on twin-engine setups, on current Verado models (where DTS is standard), or if you specifically want VesselView integration to feel clean.',
       },
       {
         question: 'Is hydraulic steering worth it for 90 HP?',
@@ -24193,7 +24189,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     seoTitle: 'Mercury 40 vs 60 HP: Which Is Right for Your Boat?',
     description: 'Mercury 40 vs 60 HP for Ontario boats. Real CAD prices, weight, fuel economy, Command Thrust availability, and which one your boat actually needs.',
     image: '/lovable-uploads/blog-heroes-2026-07/batch-b/hero-mercury-40-vs-60-official-photo-comparison-2026-07.webp',
-    imageAlt: 'Mercury 40 HP and 60 HP FourStroke outboards shown side by side for an accurate product comparison',
+    imageAlt: "Mercury FourStroke outboards in the 40 to 60 HP range, shown side by side",
     author: 'Jay Harris',
     datePublished: '2026-05-09',
     dateModified: '2026-09-11',
@@ -24599,7 +24595,7 @@ The useful lesson is less dramatic. If a 60 suddenly loses top-end rpm, overheat
 
 Command Thrust doesn't add horsepower. It gives the 60 a larger gearcase, a 2.33:1 ratio and the ability to turn a larger-diameter propeller.
 
-![Mercury 60 HP Command Thrust FourStroke powering a Tracker fishing boat on freshwater.](/lovable-uploads/inline/mercury-60-command-thrust-freshwater.webp)
+![Infographic comparing the Mercury 60 FourStroke standard gearcase with Command Thrust: which boats and loads suit each, with gear ratio and dry weight.](/lovable-uploads/inline/mercury-60-standard-vs-command-thrust-2026-09.webp)
 
 *Mercury 60 HP Command Thrust FourStroke on a freshwater fishing boat. Photo: Mercury Marine.*
 
@@ -24919,8 +24915,8 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     title: 'Mercury SmartCraft Connect: Features, App & Installation',
     seoTitle: "SmartCraft Connect Features, App & Install Guide | HBW",
     description: 'See what SmartCraft Connect shows in the Mercury Marine app, how the module is installed, and how it differs from helm-display integrations.',
-    image: '/lovable-uploads/hero-smartcraft-connect-app.png',
-    imageAlt: 'Smartphone showing Mercury Marine app engine data with a white Mercury outboard motor at a dock in the background.',
+    image: '/lovable-uploads/blog-heroes-2026-09/smartcraft-connect-path.webp',
+    imageAlt: "Infographic: how SmartCraft Connect links a compatible Mercury engine through the Connect module to the free Mercury Marine app, what data appears on the phone, and which horsepower and model years qualify.",
     author: 'Jay Harris',
     datePublished: '2026-05-09',
     dateModified: '2026-09-11',
@@ -25192,7 +25188,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: "/lovable-uploads/hero-outdoor-shrinkwrap-storage-rice-lake.png",
     author: "Harris Boat Works",
     datePublished: "2026-05-10",
-    dateModified: "2026-09-07",
+    dateModified: "2026-09-26",
     publishDate: "2026-05-10",
     category: "Service & Maintenance",
     readTime: "9 min read",
@@ -25289,7 +25285,7 @@ The boat and trailer must be safe to move. If HBW cannot safely accept or positi
 
 Shrinkwrap protects the boat from weather. It does not prepare an engine, gearcase, fuel system, livewell, freshwater system, or head for freezing conditions.
 
-The exact winterization procedure depends on the engine family, serial number, installed equipment, prior maintenance, and storage position. HBW repairs Mercury outboards and MerCruiser products; the current service request form states that engine-repair boundary. Confirm any storage or systems-only work for another brand before drop-off.
+The exact winterization procedure depends on the engine family, serial number, installed equipment, prior maintenance, and storage position. HBW repairs Mercury outboards and MerCruiser products; the current service request form states that engine-repair boundary. Winterization is different: we winterize all brands of outboards, sterndrives, inboards and PWCs.
 
 Avoid universal shortcuts:
 
@@ -26331,6 +26327,8 @@ Choose Command Thrust for a pontoon or a specific heavy-duty application that ne
 Don't buy it as a generic upgrade for a recreational V-hull. The larger case can carry load and produce lift, but it also adds drag. On an ordinary aluminum or fibreglass runabout, the standard gearcase is normally the better choice.
 
 [Read the full Command Thrust explanation](/blog/mercury-command-thrust-complete-guide-2026) if another dealer has told you CT simply means “more torque.”
+
+![Infographic comparing the Mercury 115 FourStroke, 115 Pro XS and 115 Command Thrust: rpm range or gear ratio, best fit and trade-off for each.](/lovable-uploads/inline/mercury-115-fourstroke-pro-xs-ct-2026-09.webp)
 
 ![Two anglers fishing from a Ranger aluminum boat powered by a Mercury 115 Pro XS on fresh water.](/lovable-uploads/inline/mercury-115-pro-xs-freshwater-ranger-full.webp)
 
@@ -30700,7 +30698,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: "Close-up photograph of a Mercury digital throttle and shift control.",
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
-    dateModified: '2026-09-11',
+    dateModified: '2026-09-25',
     publishDate: '2026-05-17',
     category: 'Buying Guides',
     readTime: '7 min read',
@@ -30720,7 +30718,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ## Quick answer
 
-Mercury Digital Throttle & Shift (DTS) replaces the old mechanical cable-and-lever system with an electronic control head that sends digital signals to the motor. DTS feels smoother, looks cleaner at the helm, and is required on most Mercury V8 and V10 outboards (150 HP and up depending on model). Mechanical controls still work fine on most Mercury FourStroke outboards from 9.9 HP up to about 150 HP, and they cost roughly $400-$800 less than the DTS equivalent fully installed. For an Ontario boater repowering a small-to-mid-size fishing boat or pontoon with a Mercury 25-115 HP, mechanical is usually the smarter buy. For a repower into a Mercury Pro XS 175+ or a Verado, you don't have a choice. We install both at Harris Boat Works, and the right call usually depends on motor size and what the helm looks like today.
+Mercury Digital Throttle & Shift (DTS) replaces the old mechanical cable-and-lever system with an electronic control head that sends digital signals to the motor. DTS feels smoother and looks cleaner at the helm. Whether a motor uses DTS or mechanical controls depends on the exact model and configuration, not horsepower alone: our current Mercury price list carries Pro XS models from 200 to 300 HP in both mechanical and DTS versions, while Verado is DTS in the current generation. Mechanical controls still work fine on most Mercury FourStroke outboards from 9.9 HP up to about 150 HP. For an Ontario boater repowering a small-to-mid-size fishing boat or pontoon with a Mercury 25-115 HP, mechanical is usually the smarter buy. We install both at Harris Boat Works, and the right call depends on the exact motor, confirmed by model and serial, and what the helm looks like today.
 
 _Prices here are planning figures as of {{PRICING_ASOF}}. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
@@ -30748,8 +30746,8 @@ For a full eligibility table with every motor class, year cutoff, joystick prere
 | FourStroke | 150 HP | Mechanical only | DTS not offered on the inline 4. Use standard binnacle. |
 | FourStroke V6 (3.4L) | 175–225 HP | Optional DTS | DTS availability depends on the exact model and configuration. |
 | FourStroke V8 (4.6L) | 250–300 HP | Optional DTS | DTS availability depends on the exact model and configuration. |
-| Pro XS | 115-200 HP | Mechanical or DTS | DTS optional on most current Pro XS. Confirm by serial. |
-| Pro XS V8 (4.6L) | 250-300 HP | DTS standard | All current 250 and 300 Pro XS V8 are DTS. |
+| Pro XS | 115-200 HP | Depends on model | Confirm DTS fitment by exact model and serial. |
+| Pro XS V8 (4.6L) | 250-300 HP | Mechanical or DTS | Both versions appear on our current price list. Confirm by exact model and serial. |
 | Verado V8 | 250-300 HP | DTS standard | Verado has been DTS-only for the current generation. |
 | Verado V10 | 350-425 HP | DTS standard | Joystick Piloting requires DTS. |
 | Verado V12 | 600 HP | DTS standard | Joystick Piloting requires DTS. |
@@ -30758,13 +30756,11 @@ For a full eligibility table with every motor class, year cutoff, joystick prere
 
 **Note:** DTS retrofit on motors built for mechanical only is rarely worth it. New rigging cost varies depending on helm; see our /pricing-reference page for current figures. The decision usually only makes sense on a new repower or a multi-engine setup where Joystick Piloting is the goal.
 
-## Cost: mechanical wins by $400-$800
+## Cost: compare the motor and the helm separately
 
-Mechanical controls installed: typically $250-$450 in parts (control head, cables, hardware) plus 1-2 hours of rigging labour at $135-$165/hour.
+Two different numbers get mixed together here. The first is the motor itself. Where Mercury sells the same Pro XS in mechanical and DTS versions, the DTS motor costs more. On our pricing reference in September 2026, the gap was about $1,870 at 200 HP, $2,057 at 250 HP and $2,008 at 300 HP, before any rigging.
 
-DTS installed: typically $800-$1,200 in parts (digital control, harness, SmartCraft integration kit) plus 2-3 hours of rigging labour for cleaner installation and configuration.
-
-For a typical Ontario repower in 2026, you're looking at $400-$800 more total for DTS. That isn't a deal-breaker number on a typical motor purchase, but it isn't nothing either, especially when the mechanical setup will do everything most owners actually need.
+The second number is the helm: control head, harness or cables, and rigging labour. That depends on your boat and on what is already installed, so we quote rigging per job. The full installed difference comes from a written quote for your exact motor and boat, not a rule of thumb. Check the [Mercury pricing reference](/pricing-reference) for current motor prices.
 
 ## Ride feel: DTS is smoother
 
@@ -30772,7 +30768,7 @@ This is the honest one. DTS has a noticeable feel advantage at low speeds. The s
 
 Where DTS really shines is in maneuvering: docking, slow trolling, holding position in current. The digital system gives you precise small throttle adjustments without the dead spot a mechanical cable can develop. For an Ontario boater who docks regularly in tight Kawartha marina slips or runs slow trolling speeds for walleye, that precision is genuinely useful.
 
-For a boater who launches and runs out to a fishing hole at cruise speed, the mechanical setup will do exactly the same job for $600 less.
+For a boater who launches and runs out to a fishing hole at cruise speed, the mechanical setup will do exactly the same job for less money.
 
 ## Serviceability: mechanical is more democratic
 
@@ -30793,7 +30789,7 @@ The mechanical decision usually wins when at least two of these are true:
 - You like simple, owner-serviceable systems
 - The boat is a fishing platform where the helm sees more abuse than precision
 
-Customers we steer toward mechanical: repowers on 16-18 foot aluminum fishing boats, owners who flip boats every 3-5 years, and any project where the $600 saved buys a better trailer or fishfinder.
+Customers we steer toward mechanical: repowers on 16-18 foot aluminum fishing boats, owners who flip boats every 3-5 years, and any project where the money saved on controls buys a better trailer or fishfinder.
 
 ![Quicksilver mechanical helm control beside an ignition switch](/lovable-uploads/inline/inline-mechanical-controls-cables.png "Mechanical control example. The cables are not visible in this photograph.")
 
@@ -30801,7 +30797,7 @@ Customers we steer toward mechanical: repowers on 16-18 foot aluminum fishing bo
 
 The DTS decision usually wins when at least two of these are true:
 
-- The motor is 175 HP or larger (often you have no choice)
+- The exact motor you want is only offered with DTS (Verado, for example)
 - The boat is a center console, pontoon, or runabout where the helm aesthetic matters
 - You run twin or triple engines and need integrated SmartCraft
 - You already use VesselView or want joystick piloting
@@ -30810,7 +30806,7 @@ Customers we steer toward DTS: V8 and V10 repowers, premium pontoon packages wit
 
 ## What we do at Harris Boat Works
 
-We install both systems regularly. When a customer comes in for a repower, the first thing we check is the motor model they're putting on, because that often makes the choice for them. The second thing we check is the existing helm: if the boat already has mechanical and the cables are in good shape, keeping mechanical is the cheap, clean answer. If the cables are tired or the helm wiring is a mess, DTS sometimes makes more sense even on a smaller motor because we're rebuilding the helm anyway.
+We've been a Mercury dealer since 1965, and we install both systems regularly. When a customer comes in for a repower, the first thing we check is the motor model they're putting on, because that often makes the choice for them. The second thing we check is the existing helm: if the boat already has mechanical and the cables are in good shape, keeping mechanical is the cheap, clean answer. If the cables are tired or the helm wiring is a mess, DTS sometimes makes more sense even on a smaller motor because we're rebuilding the helm anyway.
 
 
 
@@ -30908,7 +30904,7 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 
 If anything feels wrong during this sequence, stop. Don't push through. Most spring problems get worse, not better, when ignored.
 
-![Technician checking the cooling system telltale stream on a Mercury FourStroke outboard during spring run-up.](/lovable-uploads/inline/inline-mercury-telltale-water-stream.png)
+![Diagram of an outboard telltale showing a good steady stream, a weak or intermittent stream, and no flow, with what to do in each case.](/lovable-uploads/inline/telltale-stream-good-weak-none-2026-09.webp)
 
 ## When something is wrong, the most likely culprits
 
@@ -31302,8 +31298,8 @@ Jay Harris helps run Harris Boat Works, a third-generation family marina in Gore
     title: 'Boat Electrical Safety Ontario',
     seoTitle: 'Boat Electrical Safety Checklist Ontario | Harris Boat Works',
     description: 'Marine electrical safety checklist for Ontario freshwater boats: corrosion, fuses, bilge pump, battery switch, amateur wiring traps.',
-    image: '/lovable-uploads/hero-boat-electrical-safety-checklist.png',
-    imageAlt: 'Illustration of a tidy marine battery, switch and fuse block layout with circuits labelled for battery, house, engine and bilge pump. Illustrative, not a Harris Boat Works installation.',
+    image: '/lovable-uploads/blog-heroes-2026-09/electrical-seasonal-check.webp',
+    imageAlt: "Infographic: a one-line boat DC circuit from battery through switch and fuse panel to bilge pump, lights and electronics, with five seasonal checks for terminals, switch, fuses, bilge pump and wiring.",
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
     dateModified: '2026-09-07',
@@ -32367,8 +32363,8 @@ Harris Boat Works, family-owned since 1947. A Mercury Premier Dealer, selling Me
     seoTitle: 'Mercury Avator 7.5e Review, Range & Best Uses (2026)',
     title: 'Mercury Avator 7.5e: Review, Range, and Best Uses (2026)',
     description: 'Mercury Avator 7.5e electric outboard: honest review, current pricing status, battery life, range, and best uses on Rice Lake.',
-    image: '/lovable-uploads/blog-heroes-2026-07/batch-b/hero-avator-7-5e-battery-freshwater-2026-07.webp',
-    imageAlt: 'Angler holding an Avator battery beside a Mercury Avator 7.5e on a freshwater aluminum fishing boat',
+    image: '/lovable-uploads/blog-heroes-2026-09/avator-7-5e-at-a-glance.webp',
+    imageAlt: "Infographic: Mercury Avator 7.5e specs, Mercury test-boat range at full and 25% throttle, and which boats and uses it suits.",
     author: 'Jay Harris',
     datePublished: '2026-05-24',
     dateModified: '2026-09-11',
@@ -33037,7 +33033,8 @@ Family-owned since 1947.
     title: 'Mercury Boost Canada 2026: Eligibility, Performance, and Pricing',
     seoTitle: 'Mercury Boost Canada 2026: Eligibility & Pricing | HBW',
     description: `What Mercury Boost does, which motors may qualify, and how HBW confirms current Canadian pricing from the exact serial number.`,
-    image: '/lovable-uploads/hero-mercury-boost-console.png',
+    image: '/lovable-uploads/blog-heroes-2026-09/mercury-boost-what-changes.webp',
+    imageAlt: "Infographic: Mercury Boost is a response tune, not added horsepower; which Mercury families are and are not eligible by serial number; and why HBW confirms the Canadian price for the exact motor.",
     author: 'Jay Harris',
     datePublished: '2026-05-28',
     dateModified: '2026-09-11',
@@ -34169,7 +34166,8 @@ Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON - Mercury Marin
 ---
 
 `,
-    image: '/lovable-uploads/hero-on-water-load-test.png',
+    image: '/lovable-uploads/blog-heroes-2026-09/honda-to-mercury-what-changes.webp',
+    imageAlt: "Infographic: in a Honda to Mercury repower the motor, controls, cables, gauges and prop get replaced; battery, fuel tank and electronics usually carry over; steering is checked case by case.",
     author: 'Jay Harris, Harris Boat Works',
     datePublished: '2026-05-28',
     category: 'Repower Guide',
@@ -35871,7 +35869,7 @@ For a used boat, confirm transfer eligibility, deadlines, inspection requirement
 | Trolling motor and charger | Brand, model, serial number, receipt and installation details |
 | Navigation, audio and other electronics | Provider, model, serial number and purchase records |
 
-![Legend detail images of helm instruments and a boat fitting](/lovable-uploads/inline/inline-legend-pontoon-tech-warranty.png "Legend component illustrations. Confirm the applicable provider and written coverage for each component.")
+![Table showing that a Legend boat package is covered by several providers: Legend WOWranty for the hull and structure, and separate written warranties for the Mercury outboard, trailer, electronics and other components.](/lovable-uploads/inline/legend-package-warranty-providers-2026-09.webp "Coverage summary only. The written model-year warranty for the exact boat governs.")
 
 Factory-installed equipment and accessories fitted later may follow different claim routes. Confirm the provider for the failed component before authorizing repairs. For motor-specific background, see our [Mercury warranty guide](/blog/mercury-outboard-warranty-canada-2026).
 
@@ -36196,6 +36194,563 @@ If you know what you need, look it up and order through our [Mercury parts looku
 **Phone:** 905-342-2153
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 **Configurator:** [mercuryrepower.ca](https://mercuryrepower.ca)`,
+  },
+  {
+    slug: "mercury-fourstroke-making-oil-guide",
+    title: "Why Mercury FourStrokes Make Oil (and What Actually Fixes It)",
+    seoTitle: "Mercury FourStroke Making Oil? Causes and Fixes (2026)",
+    description: "Rising oil level on your Mercury FourStroke? Why four-strokes \"make oil\" when trolling in cold water, how to check it properly, and the fixes that work.",
+    image: "/lovable-uploads/blog-heroes-2026-09/mercury-making-oil-flow.webp",
+    imageAlt: "Infographic: cutaway of a four-stroke cylinder showing cold lake water, fuel condensing in the intake, fuel film on the cylinder walls slipping past the piston rings, and the oil level rising on the dipstick.",
+    author: 'Jay Harris',
+    datePublished: '2026-09-26',
+    dateModified: '2026-09-26',
+    publishDate: '2026-09-26',
+    category: "Maintenance",
+    readTime: "~6 min read",
+    keywords: ["Mercury four stroke making oil", "outboard oil level rising", "fuel in oil outboard", "kicker making oil trolling", "Mercury oil smells like gas"],
+    citations: [
+      { name: "Mercury 150 FourStroke owner's manual (oil capacity, dipstick procedure, extended-trolling guidance)", url: "https://dmna.ny.gov/nynm/manuals/Mercury_150_FourStroke_Manual.pdf" },
+      { name: "Mercury SmartCraft operations manual (Troll Control range)", url: "https://dmna.ny.gov/nynm/manuals/Mercury_SmartCraft_Operations_Manual.pdf" },
+      { name: "Mercury Marine: FourStroke maintenance", url: "https://www.mercurymarine.com/us/en/lifestyle/dockline/four-stroke-maintenance" },
+      { name: "Boats.com, Charles Plueddeman: Trolling four-stroke contamination", url: "https://www.boats.com/reviews/outboard-expert-trolling-four-stroke-contamination/" },
+    ],
+    faqs: [
+      { question: "Is making oil a warranty issue?", answer: "Usually not. Fuel dilution from long, cold, low-RPM running is an operating condition, and Mercury's own answer to extended trolling is more frequent oil changes. If the level keeps rising after proper hot runs and fresh oil, have it diagnosed, because that pattern points to something else." },
+      { question: "Can I just drain some oil out to bring the level down?", answer: "You can, but it fixes nothing. The oil left in the motor is just as diluted. Change it." },
+      { question: "Do two-strokes make oil?", answer: "No. A two-stroke has no oil sump to dilute. Its oil is burned with the fuel, so rising crankcase oil is a four-stroke issue." },
+      { question: "Why does my kicker make oil faster than my main motor?", answer: "A kicker lives at one low speed and rarely gets hot enough to boil fuel off. The main motor that runs to the fishing spot and back cleans itself out. The kicker that idles all day doesn't." },
+      { question: "How much rise is too much?", answer: "Any noticeable rise between weekly checks is worth an oil change. Don't wait until it smells like gas, because by then the dilution is well along." },
+    ],
+    content: `# Why Mercury FourStrokes Make Oil (and What Actually Fixes It)
+
+*Last reviewed: 2026-09-26*
+
+> **Quick answer:** "Making oil" means raw fuel is getting past the piston rings into the crankcase, so the oil level climbs even though you haven't added any. It isn't a Mercury defect. It's what four-stroke outboards do when they run cold and slow for hours, which is exactly what a day of trolling is. The fix: change the oil as soon as the level rises, run the motor under load for about 20 minutes after long trolling days, and check the dipstick weekly in trolling season. If the level keeps climbing after a fresh change and proper hot runs, get it looked at.
+
+## What "making oil" actually is
+
+A four-stroke outboard keeps its engine oil in a sump at the bottom of the powerhead. A pump circulates it through the crankshaft, rods and cam. That oil is supposed to stay put and stay clean.
+
+When a motor "makes oil," fuel is working its way into that sump. The level rises on the dipstick, the oil thins out, and the dipstick smells like a gas can. Thinned oil protects bearings and cylinder walls less well, and those are the last places you want to cut corners.
+
+The catch: the motor usually runs fine while it's happening. There's no alarm for fuel dilution. The dipstick is the alarm.
+
+## Why four-strokes do it
+
+It comes down to temperature.
+
+An outboard is cooled by the water it sits in. On Rice Lake in October that water can be around 10°C, and it keeps the intake manifold and cylinder walls cool too. Fuel hitting a cool intake doesn't fully vaporize. Some condenses on the manifold walls as liquid instead of arriving in the cylinder as a burnable mist.
+
+Liquid fuel doesn't burn cleanly. It films the cylinder walls and gets carried past the rings into the crankcase, a little at a time. Multiply that by six hours at trolling speed and the dipstick tells the story.
+
+| Factor | Effect on fuel dilution |
+|---|---|
+| Water temperature | Colder water, cooler engine, more condensation |
+| Engine speed | Hours at low RPM never make enough heat to cook the fuel off |
+| Fuel delivery | Modern EFI is less prone to it than older carbureted four-strokes |
+
+**Kickers are the worst offenders.** They spend their whole working life at one low speed and rarely get hot enough to boil fuel out of the oil. A kicker that idles along all day and then gets tilted up at the dock is running the perfect fuel-dilution experiment.
+
+**EFI helps, but it isn't immunity.** Modern Mercury FourStrokes meter their fuel far more precisely than the carbureted four-strokes of 20 years ago, so they're less susceptible. Hours of cold, low-RPM running still show up on the dipstick.
+
+Mercury says it plainly in the owner's manual: change the engine oil more often when the engine is operated under adverse conditions, such as extended trolling. That one sentence is the whole story.
+
+## The thermostat connection
+
+Your FourStroke has a thermostat that controls cooling-water flow so the engine reaches and holds operating temperature. A thermostat stuck open lets full water flow all the time, and the motor never properly warms up. That's the same cold-running condition that causes fuel dilution.
+
+If your motor always seems to run cool, or it makes oil faster than your trolling hours explain, the thermostat is one of the first things a technician will check.
+
+Getting overheat alarms instead of rising oil? That's a different problem. Our [Mercury beeping codes guide](/blog/mercury-outboard-beeping-codes-guide) and [overheat alarm decoder](/blog/mercury-outboard-overheat-alarm-decoder) cover that side.
+
+## How to check the oil properly
+
+Most "my oil level looks weird" readings come from checking it wrong. Mercury's manual procedure:
+
+1. **Tilt the motor to vertical** so the powerhead is level.
+2. **Check it cold, or at least an hour after shutdown**, so the oil has drained back to the sump.
+3. **Pull, wipe, re-insert, and read.**
+4. **Keep it in the operating range, not over the top mark.** Overfilling a four-stroke is its own problem. Add oil in small amounts (roughly half a litre at a time) and re-check.
+
+Do this weekly during trolling season. A rising trend between checks is your early warning. As a reference point, a Mercury 150 FourStroke holds about 6 litres with the filter. Capacities vary a lot by model, so check our [Mercury outboard oil capacity chart](/blog/mercury-outboard-oil-capacity-chart) for yours.
+
+**One caution:** high and fuel-smelling is dilution. Milky oil means water is getting in, which is a different and more serious problem. That one needs a technician, not an oil change.
+
+## What actually fixes it
+
+Do these in order:
+
+1. **Change the oil and filter as soon as the level rises.** Draining a little off to get back to the mark solves nothing. What's left is still diluted.
+2. **Run it under load at higher RPM for about 20 minutes** after long trolling days. Under load means actually pushing the boat, not revving it at the dock. That brings the engine up to real operating temperature and drives the fuel out of the oil.
+3. **Change the oil again before winter storage.** Old, diluted oil sitting against bearings all winter is how a small fall problem becomes a spring repair bill. It's standard in our [winterization routine](/blog/diy-mercury-outboard-winterization-guide).
+
+Change it, cook it, store it clean. That handles fuel dilution on the vast majority of motors.
+
+## How to prevent it next season
+
+- **Give the motor a hard run after trolling.** If your Mercury has SmartCraft Troll Control, it holds a set trolling speed somewhere between about 550 and 1,000 RPM depending on the engine. Handy, but it's still hours at low speed. The run afterwards matters more than the RPM you picked.
+- **Use the main motor when you move spots.** The motor that never works hard is the one that makes oil.
+- **Shorten your oil change interval if you troll a lot.** Mercury doesn't give a number for "more often." Your dipstick will. Our [20/100/300 maintenance guide](/blog/mercury-maintenance-intervals-20-100-300-rule) covers the standard schedule.
+- **Keep the 100-hour service honest.** Oil, filter, gearcase lube, and a look at the cooling system on schedule.
+
+## When to bring it in
+
+Book a service visit if:
+
+- The level keeps rising after a fresh oil change and proper hot runs
+- The oil smells strongly of fuel or looks milky
+- The motor consistently runs cool
+- You're due for the 100-hour service anyway, which is the natural time to deal with diluted oil and check the thermostat in one visit
+
+Request service at [hbw.wiki/service](https://hbw.wiki/service). We're a Mercury Premier dealer on Rice Lake, and a kicker that makes oil after a fall of walleye trolling is a routine diagnosis here, not a mystery.
+
+## FAQs
+
+**Is making oil a warranty issue?**
+Usually not. Fuel dilution from long, cold, low-RPM running is an operating condition, and Mercury's own answer to extended trolling is more frequent oil changes. If the level keeps rising after proper hot runs and fresh oil, have it diagnosed, because that pattern points to something else.
+
+**Can I just drain some oil out to bring the level down?**
+You can, but it fixes nothing. The oil left in the motor is just as diluted. Change it.
+
+**Do two-strokes make oil?**
+No. A two-stroke has no oil sump to dilute. Its oil is burned with the fuel, so rising crankcase oil is a four-stroke issue.
+
+**Why does my kicker make oil faster than my main motor?**
+A kicker lives at one low speed and rarely gets hot enough to boil fuel off. The main motor that runs to the fishing spot and back cleans itself out. The kicker that idles all day doesn't.
+
+**How much rise is too much?**
+Any noticeable rise between weekly checks is worth an oil change. Don't wait until it smells like gas, because by then the dilution is well along.
+
+## Sources
+
+- [Mercury 150 FourStroke owner's manual (oil capacity, dipstick procedure, extended-trolling guidance)](https://dmna.ny.gov/nynm/manuals/Mercury_150_FourStroke_Manual.pdf)
+- [Mercury SmartCraft operations manual (Troll Control range)](https://dmna.ny.gov/nynm/manuals/Mercury_SmartCraft_Operations_Manual.pdf)
+- [Mercury Marine: FourStroke maintenance](https://www.mercurymarine.com/us/en/lifestyle/dockline/four-stroke-maintenance)
+- [Boats.com, Charles Plueddeman: Trolling four-stroke contamination](https://www.boats.com/reviews/outboard-expert-trolling-four-stroke-contamination/)
+
+## About the author
+
+Jay Harris runs Harris Boat Works in Gores Landing, Ontario, a third-generation family marina on Rice Lake since 1947 and a Mercury dealer since 1965.
+`,
+  },
+  {
+    slug: "mercury-outboard-battery-size-guide",
+    title: "What Battery Does My Mercury Outboard Need? MCA, Group Size and Lithium Rules",
+    seoTitle: "Mercury Outboard Battery Size: MCA, Group and Lithium (2026)",
+    description: "The right battery for your Mercury outboard starts with the MCA spec in your owner's manual. Cranking specs by model, group sizes, and Mercury's lithium rules.",
+    image: "/lovable-uploads/blog-heroes-2026-09/mercury-battery-decision.webp",
+    imageAlt: "Infographic: a Mercury 150 FourStroke needs 1,000 MCA, 800 CCA and 180 Ah; cold starts more than double the cranking requirement; three steps to choose a battery; and the two conditions for a lithium cranking battery.",
+    author: 'Jay Harris',
+    datePublished: '2026-09-26',
+    dateModified: '2026-09-26',
+    publishDate: '2026-09-26',
+    category: "Maintenance",
+    readTime: "~6 min read",
+    keywords: ["what battery does my Mercury outboard need", "Mercury outboard battery size", "battery for 90 hp Mercury outboard", "50 hp Mercury outboard battery size", "Mercury lithium cranking battery"],
+    citations: [
+      { name: "Mercury 150 FourStroke owner's manual (battery specification)", url: "https://dmna.ny.gov/nynm/manuals/Mercury_150_FourStroke_Manual.pdf" },
+      { name: "Mercury service bulletin on lithium-ion cranking batteries (via West Marine)", url: "https://www.westmarine.com/on/demandware.static/-/Sites-wm-master-catalog/default/dwde8853e8/images/legacy-pdf/MER_4324_Relion_IBEX_SerivceBulletin.pdf" },
+      { name: "RELiON RB100-HP product page", url: "https://www.relionbattery.com/products/lithium/rb100-hp" },
+      { name: "Older Mercury electrical FAQ battery table, as quoted by owners on Bass Boat Magazine", url: "https://www.bassboatmagazine.com/threads/the-correct-battery-for-a-mercury-outboard-motor.7105/" },
+    ],
+    faqs: [
+      { question: "Can I use a car battery in my boat?", answer: "If it meets the manual's cranking spec it will turn the motor over, but marine batteries are built for vibration and repeated charge cycles, and car batteries aren't. In a battery box that takes wave chop all season, the marine rating earns its keep." },
+      { question: "Is a bigger battery always better?", answer: "Up to a point. Meeting spec with some headroom is good. A dramatically oversized battery adds weight and cost without starting the motor any better." },
+      { question: "Can I run lithium on my 90 FourStroke?", answer: "If it's the 2.1 L 75 to 115 hp family, it's on Mercury's approved list for all serial numbers, so yes, as long as the battery is a LiFePO4 marine cranking battery that meets every line of Mercury's spec. If the battery doesn't meet the spec, no." },
+      { question: "Why is the cold-weather requirement so much higher?", answer: "Cold thickens the oil and slows the battery's chemistry at the same time. The starter needs more amps just as the battery can deliver fewer. In Ontario, spring and fall launches live in the cold column." },
+      { question: "Do I need a separate battery for my kicker?", answer: "If you troll with a kicker and run electronics, a dedicated cranking battery for each motor plus a house battery is the standard serious-fishing setup. One extra battery and switch beats losing a day to a flat bank." },
+    ],
+    content: `# What Battery Does My Mercury Outboard Need? MCA, Group Size and Lithium Rules
+
+*Last reviewed: 2026-09-26*
+
+> **Quick answer:** Your owner's manual sets the battery spec, and the number that matters is the cranking rating. A current Mercury 150 FourStroke calls for at least **1,000 MCA (800 CCA) and 180 Ah**. Smaller motors need less, and older Mercury guidance roughly doubles the requirement for cold-weather starts on mid-range motors. Lithium cranking batteries are allowed, but only on Mercury's approved engine list and only if the battery meets Mercury's published spec.
+
+## Why the manual number wins
+
+An outboard battery lives in a box in the weather, takes wave pounding all season, and has to spin a big engine in cold spring air. Mercury sets a cranking requirement for each engine family and prints it in the manual. That number is the minimum.
+
+If your manual lists MCA, buy to MCA. If it lists CCA, buy to CCA. Don't guess between them, and don't let a parts counter talk you into "close enough." A battery that barely meets spec in July often won't in October.
+
+Our [boat battery guide](/blog/mercury-boat-battery-guide-ontario) covers chemistry, wiring and battery switches in depth. This page is the model-specific piece: what your Mercury actually asks for.
+
+## MCA, CCA and Ah in plain English
+
+| Rating | What it measures | Why it matters |
+|---|---|---|
+| **MCA** (marine cranking amps) | Cranking amps for 30 seconds at 0°C (32°F) | The marine standard. Most outboard manuals use it. |
+| **CCA** (cold cranking amps) | Cranking amps for 30 seconds at −18°C (0°F) | Tested colder, so 800 CCA is a bigger ask than 800 MCA. |
+| **Ah** (amp-hours) | Stored energy | Runs electronics with the engine off. |
+| **RC** (reserve capacity) | Minutes the battery can supply 25 amps | Another way of expressing stored energy. |
+
+If the manual gives both MCA and CCA, meet both. A battery rated 1,000 MCA / 800 CCA covers the 150 FourStroke on both counts.
+
+## Battery specs by Mercury model
+
+The 150 FourStroke line comes from Mercury's current owner's manual. The smaller-motor lines come from an older Mercury electrical FAQ that's widely quoted by owners. Treat those as a starting point and **confirm against the manual for your serial number**, because specs have changed over the years.
+
+| Mercury engine | Minimum cranking spec |
+|---|---|
+| 9.9 / 15 / 25 hp FourStroke | 465 MCA or 350 CCA |
+| 30 to 50 hp FourStroke | 465 MCA / 350 CCA above freezing; 1,000 MCA / 750 CCA below freezing |
+| 75 / 90 hp FourStroke | 465 MCA / 350 CCA above freezing; 1,000 MCA / 750 CCA below freezing |
+| OptiMax 2.5 / 3.0 L | 1,000 MCA / 750 CCA |
+| 150 FourStroke (current manual) | **1,000 MCA / 800 CCA / 180 Ah** |
+
+The cold-weather column is the one that surprises people: below freezing, the mid-range requirement more than doubles. In Ontario we launch onto water that was ice a few weeks earlier, so the cold column is the one to buy for.
+
+That same older guidance suggested 70 to 100 Ah for mid-range motors. If a chartplotter, livewell and sounder run off your cranking battery, buy toward the top of that range. Better still, put house loads on a second battery. A cranking battery for the main motor plus a house battery (and one for the kicker on a triple-rigged walleye boat) means a dead house bank never strands you.
+
+
+## Group sizes: what fits
+
+"Group" is a case size, not a power rating:
+
+- **Group 24:** the common mid-size case, typical in smaller aluminum boats
+- **Group 27:** longer case, usually more Ah
+- **Group 31:** the big case, most capacity
+
+Measure your battery box before you shop, and match the terminal layout to your cables. A group 31 that doesn't fit the box is a paperweight with posts.
+
+## Flooded, AGM or lithium?
+
+| Chemistry | Strength | Watch out for |
+|---|---|---|
+| Flooded lead-acid | Cheapest up front, dependable | Needs charging discipline; can spill if tipped |
+| AGM | Sealed, vibration-resistant, maintenance-free | Costs more |
+| Lithium (LiFePO4) | Light, long cycle life | Only approved by Mercury on specific engines and specs (below) |
+
+## Mercury's lithium rules
+
+Mercury has published a service bulletin on lithium cranking batteries, and it's refreshingly specific.
+
+**Approved engine families (all serial numbers):**
+
+- 2.1 L 75 to 115 hp FourStroke, Pro XS and SeaPro
+- 3.0 L 150 hp FourStroke, Pro XS and SeaPro
+- 3.4 L V6 and 4.6 L V8 175 to 300 hp FourStroke, Pro XS, SeaPro and Verado
+- 2.6 L L6 200 to 400 hp Pro and Verado
+- 7.6 L V12 500 to 600 hp SeaPro and Verado
+
+**Every other Mercury outboard, all MerCruiser engines and Mercury Diesel are not approved** for lithium cranking batteries. If your engine isn't on the list, buy a quality AGM or flooded battery that meets the manual spec.
+
+**What the battery must meet on an approved engine:**
+
+| Requirement | Mercury's spec |
+|---|---|
+| Chemistry | Lithium iron phosphate (LiFePO4), built for marine cranking |
+| Cranking | At least 800 A for 8 seconds at −7°C (20°F) |
+| Peak charge acceptance | 165 A for one minute |
+| Maximum charge current | 150 A |
+| Maximum charge voltage | 14.8 V |
+| Reserve capacity | 135 minutes (RC25) |
+| Sealing | IP67 or better |
+
+A bargain lithium that can't take the alternator's charge current, or isn't sealed to IP67, doesn't meet the spec. The first battery Mercury evaluated and approved under this standard was the RELiON RB100-HP: 100 Ah LiFePO4, rated 800 A for 8 seconds, IP67, with a 10-year warranty.
+
+Two things worth knowing:
+
+1. **This is about the cranking battery.** A lithium house bank for electronics is a separate conversation.
+2. **Per Mercury's bulletin, a battery that meets the spec on an approved engine doesn't void the engine warranty.** Anything off-spec, or lithium on a non-approved engine, is a different story.
+
+Not sure which side of the line your motor is on? Ask us through the [service form](https://hbw.wiki/service), or when you [build a repower quote](/quote/motor-selection). We'd rather answer it before you buy a battery than after.
+
+## FAQs
+
+**Can I use a car battery in my boat?**
+If it meets the manual's cranking spec it will turn the motor over, but marine batteries are built for vibration and repeated charge cycles, and car batteries aren't. In a battery box that takes wave chop all season, the marine rating earns its keep.
+
+**Is a bigger battery always better?**
+Up to a point. Meeting spec with some headroom is good. A dramatically oversized battery adds weight and cost without starting the motor any better.
+
+**Can I run lithium on my 90 FourStroke?**
+If it's the 2.1 L 75 to 115 hp family, it's on Mercury's approved list for all serial numbers, so yes, as long as the battery is a LiFePO4 marine cranking battery that meets every line of Mercury's spec. If the battery doesn't meet the spec, no.
+
+**Why is the cold-weather requirement so much higher?**
+Cold thickens the oil and slows the battery's chemistry at the same time. The starter needs more amps just as the battery can deliver fewer. In Ontario, spring and fall launches live in the cold column.
+
+**Do I need a separate battery for my kicker?**
+If you troll with a kicker and run electronics, a dedicated cranking battery for each motor plus a house battery is the standard serious-fishing setup. One extra battery and switch beats losing a day to a flat bank.
+
+## Sources
+
+- [Mercury 150 FourStroke owner's manual (battery specification)](https://dmna.ny.gov/nynm/manuals/Mercury_150_FourStroke_Manual.pdf)
+- [Mercury service bulletin on lithium-ion cranking batteries (via West Marine)](https://www.westmarine.com/on/demandware.static/-/Sites-wm-master-catalog/default/dwde8853e8/images/legacy-pdf/MER_4324_Relion_IBEX_SerivceBulletin.pdf)
+- [RELiON RB100-HP product page](https://www.relionbattery.com/products/lithium/rb100-hp)
+- [Older Mercury electrical FAQ battery table, as quoted by owners on Bass Boat Magazine](https://www.bassboatmagazine.com/threads/the-correct-battery-for-a-mercury-outboard-motor.7105/)
+
+## About the author
+
+Jay Harris runs Harris Boat Works in Gores Landing, Ontario, a third-generation family marina on Rice Lake since 1947 and a Mercury dealer since 1965.
+`,
+  },
+  {
+    slug: "mercury-nmea-2000-lowrance-garmin-guide",
+    title: "Mercury Engine Data on Your Garmin, Lowrance or Humminbird: Which Gateway and How to Wire It",
+    seoTitle: "Mercury Engine Data on Lowrance, Garmin or Humminbird (2026)",
+    description: "How to get Mercury engine data onto your fishfinder or chartplotter. Which Mercury gateway matches your screen brand, real part numbers, and how the NMEA 2000 wiring works.",
+    image: "/lovable-uploads/blog-heroes-2026-09/nmea-2000-mercury-backbone.webp",
+    imageAlt: "Infographic: top view of a boat with a NMEA 2000 backbone linking the Mercury engine gateway, display and 12 V feed, plus which Mercury module matches Garmin, Raymarine, Simrad, Lowrance and Humminbird screens.",
+    author: 'Jay Harris',
+    datePublished: '2026-09-26',
+    dateModified: '2026-09-26',
+    publishDate: '2026-09-26',
+    category: "Mercury Technology",
+    readTime: "~5 min read",
+    keywords: ["Mercury engine data Lowrance", "Mercury SmartCraft Connect Garmin", "Mercury NMEA 2000 gateway Humminbird", "VesselView Link Lowrance", "connect Mercury outboard to fishfinder"],
+    citations: [
+      { name: "Mercury Marine: SmartCraft Connect (engine and display compatibility)", url: "https://www.mercurymarine.com/us/en/smartcraft/vessel-intelligence/smartcraft-connect" },
+      { name: "Garmin support: SmartCraft Connect integration and part numbers", url: "https://support.garmin.com/en-US/?faq=3MdGIQcQhC2Y2F05PmVbo8" },
+      { name: "Humminbird: NMEA 2000 compatibility and required hardware", url: "https://humminbird-help.johnsonoutdoors.com/hc/en-us/articles/4412797910423-NMEA-2000-Compatibility" },
+      { name: "MercruiserParts: VesselView Link vs SmartCraft Connect vs NMEA 2000 Gateway", url: "https://www.mercruiserparts.com/vesselview-link-vs-smartcraft-connect" },
+      { name: "Energy Power Sports: Mercury SmartCraft Connect pricing (Canada)", url: "https://shop.energypowersports.ca/collections/mercury-smartcraft-connect" },
+    ],
+    faqs: [
+      { question: "Do I need VesselView to see my engine data?", answer: "No. VesselView is Mercury's own display line. The right Mercury gateway for your screen brand, plus a NMEA 2000 network, puts engine data on the display you already have." },
+      { question: "Will this work on my 2006 Mercury 90?", answer: "2004-and-newer SmartCraft-capable Mercury outboards from 40 hp up are inside Mercury's compatibility window. Confirm with your serial number before ordering, because older installs may be missing the SmartCraft harness at the helm." },
+      { question: "Can I start with the phone app and add the plotter later?", answer: "Yes. The Connect Mobile module gets you engine data for about $300 CAD, and you can add the plotter gateway any season after." },
+      { question: "Does adding a gateway affect my Mercury warranty?", answer: "These are Mercury's own SmartCraft accessories, not aftermarket add-ons. Install them to Mercury's instructions and confirm the right part for your serial number with your dealer." },
+      { question: "Will my Humminbird show Mercury data?", answer: "Yes, through Mercury's NMEA 2000 Gateway (8M0165589) and a Humminbird NMEA 2000 kit. Expect basic engine data rather than the full Mercury feature set that SmartCraft Connect or VesselView Link gives other brands." },
+      { question: "What about my Lowrance?", answer: "Lowrance uses Mercury's VesselView Link, not SmartCraft Connect. Check that your Lowrance model and software support it before ordering." },
+    ],
+    content: `# Mercury Engine Data on Your Garmin, Lowrance or Humminbird: Which Gateway and How to Wire It
+
+*Last reviewed: 2026-09-26*
+
+> **Quick answer:** Yes, a SmartCraft-capable Mercury can put its engine data on the screen you already own, but the Mercury module you need depends on the brand of that screen. **Garmin, Raymarine and newer Simrad** use SmartCraft Connect. **Lowrance and Simrad** use VesselView Link. **Humminbird and other brands** use Mercury's NMEA 2000 Gateway, which sends basic engine data only. All three join your boat's NMEA 2000 network. If you just want engine data on your phone, the SmartCraft Connect Mobile module does that for about $300 CAD.
+
+## Why bother
+
+RPM, water temperature, oil pressure, fuel, and alarms can all live on the screen that's already mounted where you look. Alarms show up where you'll see them, and you can lose the clutter of mismatched gauges.
+
+It's also the honest answer to "do I need VesselView?" VesselView is Mercury's own display line and it's excellent, but if you already run a good plotter, the right gateway gets the engine data onto it. Our [VesselView and SmartCraft guide](/blog/mercury-vesselview-smartcraft-plain-english-guide) explains the two in plain English.
+
+## Step 1: Is your motor SmartCraft-capable?
+
+Mercury's line: outboards from **model year 2004 and newer, 40 hp and up**, plus **25 and 30 hp outboards from 2022 on with electric start**. If there's a SmartCraft harness or junction box under your console, you're likely in the game. Not sure? We can tell from the serial number. Here's [how to find it](/blog/how-to-read-mercury-outboard-serial-number).
+
+## Step 2: Match the gateway to your screen
+
+This is where most online advice goes wrong. Mercury makes three different ways to feed a non-Mercury screen, and they are not interchangeable.
+
+| Your screen | Mercury module | What you get |
+|---|---|---|
+| Garmin GPSMAP / TD50 (software 24.1+), NMEA 2000-capable ECHOMAP (17.1+) | **SmartCraft Connect** | Full native Mercury integration |
+| Raymarine plotters on LightHouse 4.1 | **SmartCraft Connect** | Full native Mercury integration |
+| Simrad NSX, NSX Ultrawide, NSS 4 | **SmartCraft Connect** | Full native Mercury integration |
+| Lowrance (and Simrad) | **VesselView Link** | Full native Mercury integration |
+| Humminbird, Furuno and other NMEA 2000 displays | **NMEA 2000 Gateway** (8M0165589) | Basic engine data: no Mercury fault descriptions, Troll Control or software updates |
+
+Humminbird's own compatibility chart lists the Mercury 8M0165589 gateway plus a Humminbird NMEA 2000 starter kit for Mercury engines, and some Humminbird models need an extra adapter cable. Check your model's page before ordering.
+
+**Phone instead of plotter?** The SmartCraft Connect Mobile module sends engine data over Bluetooth to the Mercury app on your phone or tablet. It's the cheapest way in and a good fit for occasional checks.
+
+## Step 3: What it costs
+
+| Part | Number | Recent price |
+|---|---|---|
+| SmartCraft Connect Mobile (phone), under-cowl | 8M0173128 | ~$310 to $330 CAD |
+| SmartCraft Connect Mobile (phone), under-helm | 8M0173129 | ~$310 to $330 CAD |
+| SmartCraft Connect, single engine, under-helm | 8M0173694 | ~$1,170 to $1,300 CAD |
+| SmartCraft Connect, multi-engine | 8M0173703 | ~$2,340 to $2,600 CAD |
+| VesselView Link base kit, single engine | 8M0110639 | ~$820 to $885 USD |
+| VesselView Link base kit, multi-engine | 8M0110641 | ~$1,310 to $1,435 USD |
+| NMEA 2000 backbone starter kit | 8M0110642 | ~$107 USD |
+| SmartCraft data harness, 10-pin, 25 ft | 84-879981T25 | ~$119 USD |
+| NMEA 2000 T-connector | 8M0204742 | ~$41 USD each |
+
+CAD prices are recent Canadian retail and USD prices are US parts-retailer references, both checked September 2026. Prices move with the exchange rate, so confirm when you order. The takeaway: the gateway is where the money goes. The wiring is commodity parts.
+
+## Step 4: How the NMEA 2000 wiring works
+
+A NMEA 2000 network isn't one cable from motor to screen. It's a small backbone that every device taps into.
+
+
+1. **The backbone** is a run of NMEA 2000 cable along the boat, usually from the console toward the stern.
+2. **T-connectors** sit on the backbone wherever a device joins: the Mercury gateway, the display, and the power feed.
+3. **Each device** connects to its T with a drop cable.
+4. **A terminator goes on each end** of the backbone. Exactly two.
+5. **The backbone needs power**, from a fused 12 V feed on its own T.
+6. **The Mercury side:** the gateway connects to the engine's SmartCraft junction box with Mercury's data harness, then joins the backbone on its own T.
+
+Powered backbone, two terminators, a T for everything. Multi-engine boats use the multi-engine version of the gateway rather than a second network.
+
+## What you'll see on screen
+
+With SmartCraft Connect or VesselView Link, your display gets Mercury's engine pages: RPM, temperatures, pressures, fuel data, battery voltage and alarms, in a layout designed for that brand. Depending on the display and engine, extras like Troll Control and Mercury fault descriptions come along too.
+
+The generic NMEA 2000 Gateway gives the basics in your display's own engine pages, which is plenty for many fishing boats. If a feature matters to you, check it before you buy. Our [beeping codes guide](/blog/mercury-outboard-beeping-codes-guide) covers what each alarm means.
+
+## DIY or dealer install?
+
+The phone module is a reasonable DIY job if you're comfortable behind a console. The plotter path is where it's worth a conversation: picking the right gateway for your display and engine, running the backbone cleanly, powering it properly, and confirming the display actually reads the data. It's part of a normal [repower rig-out](/blog/mercury-outboard-rigging-costs-ontario), and it's also a standalone job on boats keeping their current motor.
+
+Book it through the [service form](https://hbw.wiki/service). If you're shopping motors with this setup in mind, [build your repower quote](/quote/motor-selection) and we'll spec the rigging with it.
+
+## FAQs
+
+**Do I need VesselView to see my engine data?**
+No. VesselView is Mercury's own display line. The right Mercury gateway for your screen brand, plus a NMEA 2000 network, puts engine data on the display you already have.
+
+**Will this work on my 2006 Mercury 90?**
+2004-and-newer SmartCraft-capable Mercury outboards from 40 hp up are inside Mercury's compatibility window. Confirm with your serial number before ordering, because older installs may be missing the SmartCraft harness at the helm.
+
+**Can I start with the phone app and add the plotter later?**
+Yes. The Connect Mobile module gets you engine data for about $300 CAD, and you can add the plotter gateway any season after.
+
+**Does adding a gateway affect my Mercury warranty?**
+These are Mercury's own SmartCraft accessories, not aftermarket add-ons. Install them to Mercury's instructions and confirm the right part for your serial number with your dealer.
+
+**Will my Humminbird show Mercury data?**
+Yes, through Mercury's NMEA 2000 Gateway (8M0165589) and a Humminbird NMEA 2000 kit. Expect basic engine data rather than the full Mercury feature set that SmartCraft Connect or VesselView Link gives other brands.
+
+**What about my Lowrance?**
+Lowrance uses Mercury's VesselView Link, not SmartCraft Connect. Check that your Lowrance model and software support it before ordering.
+
+## Sources
+
+- [Mercury Marine: SmartCraft Connect (engine and display compatibility)](https://www.mercurymarine.com/us/en/smartcraft/vessel-intelligence/smartcraft-connect)
+- [Garmin support: SmartCraft Connect integration and part numbers](https://support.garmin.com/en-US/?faq=3MdGIQcQhC2Y2F05PmVbo8)
+- [Humminbird: NMEA 2000 compatibility and required hardware](https://humminbird-help.johnsonoutdoors.com/hc/en-us/articles/4412797910423-NMEA-2000-Compatibility)
+- [MercruiserParts: VesselView Link vs SmartCraft Connect vs NMEA 2000 Gateway](https://www.mercruiserparts.com/vesselview-link-vs-smartcraft-connect)
+- [Energy Power Sports: Mercury SmartCraft Connect pricing (Canada)](https://shop.energypowersports.ca/collections/mercury-smartcraft-connect)
+
+## About the author
+
+Jay Harris runs Harris Boat Works in Gores Landing, Ontario, a third-generation family marina on Rice Lake since 1947 and a Mercury dealer since 1965.
+`,
+  },
+  {
+    slug: "aluminum-boat-transom-inspection-guide",
+    title: "The 4-Point Aluminum Transom Check Before You Repower",
+    seoTitle: "Aluminum Boat Transom Inspection Before a Repower (2026)",
+    description: "Before you hang a new Mercury on an aluminum boat, run a 4-point transom check: look, tap, flex and seals. What the warning signs mean, what repairs cost, and what comes next.",
+    image: "/lovable-uploads/blog-heroes-2026-09/aluminum-transom-4-point-check.webp",
+    imageAlt: "Infographic: cross-section of an aluminum transom with a plywood core rotting around an engine mount bolt, beside the four checks: look, tap, flex and seals.",
+    author: 'Jay Harris',
+    datePublished: '2026-09-26',
+    dateModified: '2026-09-26',
+    publishDate: '2026-09-26',
+    category: "Repower",
+    readTime: "~5 min read",
+    keywords: ["aluminum boat transom inspection", "aluminum transom rot signs", "check transom before repower", "aluminum transom repair cost", "soft transom aluminum boat"],
+    citations: [
+      { name: "The Jimbo Slice Workshop: how to reinforce a transom on an aluminum boat (construction and cost benchmarks)", url: "https://thejimbosliceworkshop.com/how-to-reinforce-a-transom-on-an-aluminum-boat/" },
+      { name: "Custom Marine Finishes: transom failure signs and tap test", url: "https://www.custommarinefinishes.com/blog/preventing-transom-failure-signs-repairs-and-long-term-protection" },
+      { name: "Premium Boat Care: transom repair cost scoping", url: "https://premiumboatcare.com/resources/boat-transom-repair-cost" },
+    ],
+    faqs: [
+      { question: "Can I put a bigger motor on an old aluminum transom?", answer: "Only within the manufacturer's power limit, and only on a transom in good condition. HBW recommends one Mercury model step below the plate maximum. If the core is soft, the repair comes first regardless of horsepower." },
+      { question: "How long does an aluminum transom last?", answer: "Decades, if the seals hold and the boat is stored dry. Rotten cores almost always trace back to one fitting that leaked for years." },
+      { question: "Is an all-aluminum transom better?", answer: "It can't rot, but many production aluminum boats still use a plywood core because it's stiff and economical. The core usually isn't the weak point. Neglected seals are." },
+      { question: "Can I do the tap test on a boat I'm buying?", answer: "Yes, and you should. Just remember it's a screen, not a verdict. If you hear dull spots or see staining, get a professional inspection before you buy." },
+      { question: "Can a tap test prove my transom is sound?", answer: "No. Looking, tapping and flex checks can reveal warning signs, but they can't certify hidden core, weld or fastener condition. If anything is questionable, have a qualified marine technician inspect it." },
+    ],
+    content: `# The 4-Point Aluminum Transom Check Before You Repower
+
+*Last reviewed: 2026-09-26*
+
+> **Quick answer:** Many aluminum boats have a transom built as a sandwich: aluminum skins with a marine plywood core. If water gets into that core, it rots, and a new motor ends up bolted to a soft centre. Before you repower, run four checks in the driveway: **look** for staining and cracks around the motor bolts, **tap** for dull spots, watch for **flex** under load, and inspect every **seal** through the transom. These checks find warning signs; they can't certify the transom. If anything looks off, have a technician inspect it before you buy a motor.
+
+## Why this comes before the repower
+
+A repower puts years of new load on the transom: torque, trim and steering forces, and sometimes more weight. A 20-year-old aluminum hull with a solid transom can be a great repower candidate. The same hull with a wet core is a repair bill waiting to happen, ideally found before the new motor is bolted on.
+
+The [hull replacement versus repower decision](/blog/boat-hull-replacement-vs-repower-decision) is a lot easier once you know which of those two boats you have.
+
+## How an aluminum transom is built
+
+On many aluminum fishing boats, the transom is two aluminum skins, inner and outer, with a marine plywood core (typically 3/4 to 1 inch) between them. The plywood gives stiffness; the aluminum gives the skin. Some boats use all-aluminum transom structures instead, so check how yours is built.
+
+Aluminum doesn't rot. The plywood does, and the cause is almost always the same: water finds a hole. Motor mount bolts, the drain plug fitting, transducer mounts, and anything else that pierces the skins are the usual entry points. Once the core stays wet, it softens and delaminates.
+
+
+## Check 1: Look
+
+- **Brown staining or rust streaks around the engine mounting bolts**, a classic sign of water moving through the core
+- **Cracks in the aluminum around mount holes**, where the skin is flexing without solid backing
+- **Water weeping from bolt holes or seams** after rain or a wash
+- **A musty smell** in the splashwell or transom corners
+
+Any one of these is worth the next checks. Two or more together, and it's time for a professional look.
+
+## Check 2: Tap
+
+Use the plastic handle of a screwdriver or a small mallet and tap across the transom in a grid: corners, middle, and around the motor mounts.
+
+- **Sharp, solid sound:** skin backed by a firm core
+- **Dull thud:** possible void or soft core behind the skin
+
+Tap the whole surface, not just around the stains. A moisture meter can add detail, but readings vary with construction and conditions. Treat both as screening tools. A tap test can point to a problem; it can't prove the core is sound.
+
+## Check 3: Flex
+
+1. **Under trim load.** With the boat on the trailer and someone watching from the side, trim the motor up and down. The transom should act like a wall. Visible flexing, bowing or shifting means the core isn't doing its job.
+2. **At the hardware.** Mount bolts that keep loosening after proper torquing, or fasteners that pull through instead of clamping, point to a soft core where it matters most.
+
+Flex can be subtle in early rot, which is why this check comes after looking and tapping, not instead of them.
+
+## Check 4: Seals
+
+Every hole through the transom is a maintenance item:
+
+- **Motor mount bolts:** the biggest consequence if they leak, and they're disturbed every time a motor is swapped
+- **Drain plug and transducer fittings:** small holes, frequent leakers
+- **Splashwell corners and seams:** anywhere sealant has aged out
+
+If the core seems solid and the seals are tired, resealing during the repower is cheap insurance. Buying used? Add this to the walkaround in our [used boat inspection guide](/blog/used-boat-walkaround-inspection-ontario).
+
+## What a bad transom costs to fix
+
+Every job is scoped to the boat, but published benchmarks give a sense of scale:
+
+| Repair route | Typical range |
+|---|---|
+| DIY core replacement (materials) | $200 to $800 |
+| Professional transom repair | $1,500 to $4,000+ |
+| Repairs involving aluminum welding | Higher, priced per job |
+
+The DIY figure assumes real skill with plywood and epoxy encapsulation. Professional cost climbs with how much of the boat has to come apart to reach the core. Anyone quoting a firm number over the phone without seeing the boat is guessing.
+
+A transom repair plus a repower can still land well under a new boat package; our [repower versus new boat guide](/blog/repower-vs-new-boat) walks through that math. Just make the decision with the transom's condition known.
+
+## Repowering onto a healthy transom
+
+If nothing turns up, you can plan the motor. Two things to get right:
+
+- **Shaft length and motor weight.** Our [outboard shaft length guide](/blog/outboard-shaft-length-guide) covers the measurement, and the [Mercury outboard weight chart](/blog/mercury-outboard-weight-chart) shows the weight difference between your old motor and the new one.
+- **Horsepower.** Stay within the manufacturer's power limit on the capacity plate. HBW recommends one Mercury model step below the plate maximum; on an older hull, that margin is kind to the transom too. Our [capacity plate guide](/blog/repower-horsepower-capacity-plate-guide) explains how to read it.
+
+Want a second set of eyes? Bring the boat by or book through the [service form](https://hbw.wiki/service), and we'll check the transom before you commit to a motor. When you're ready, [build your repower quote](/quote/motor-selection).
+
+## FAQs
+
+**Can I put a bigger motor on an old aluminum transom?**
+Only within the manufacturer's power limit, and only on a transom in good condition. HBW recommends one Mercury model step below the plate maximum. If the core is soft, the repair comes first regardless of horsepower.
+
+**How long does an aluminum transom last?**
+Decades, if the seals hold and the boat is stored dry. Rotten cores almost always trace back to one fitting that leaked for years.
+
+**Is an all-aluminum transom better?**
+It can't rot, but many production aluminum boats still use a plywood core because it's stiff and economical. The core usually isn't the weak point. Neglected seals are.
+
+**Can I do the tap test on a boat I'm buying?**
+Yes, and you should. Just remember it's a screen, not a verdict. If you hear dull spots or see staining, get a professional inspection before you buy.
+
+**Can a tap test prove my transom is sound?**
+No. Looking, tapping and flex checks can reveal warning signs, but they can't certify hidden core, weld or fastener condition. If anything is questionable, have a qualified marine technician inspect it.
+
+## Sources
+
+- [The Jimbo Slice Workshop: how to reinforce a transom on an aluminum boat (construction and cost benchmarks)](https://thejimbosliceworkshop.com/how-to-reinforce-a-transom-on-an-aluminum-boat/)
+- [Custom Marine Finishes: transom failure signs and tap test](https://www.custommarinefinishes.com/blog/preventing-transom-failure-signs-repairs-and-long-term-protection)
+- [Premium Boat Care: transom repair cost scoping](https://premiumboatcare.com/resources/boat-transom-repair-cost)
+
+## About the author
+
+Jay Harris runs Harris Boat Works in Gores Landing, Ontario, a third-generation family marina on Rice Lake since 1947 and a Mercury dealer since 1965.
+`,
   },
 ];
 export function getArticleBySlug(slug: string): BlogArticle | undefined {

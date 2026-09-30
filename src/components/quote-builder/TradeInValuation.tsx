@@ -872,7 +872,8 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                         <SelectTrigger id="trade-start-type" className="min-h-[48px] rounded-sm border-repower-navy-900/20 bg-repower-paper font-sans">
                           <SelectValue placeholder="Manual (default)" />
                         </SelectTrigger>
-                        <SelectContent>
+                        {/* Match Brand: avoid the iOS popper ResizeObserver loop (#176). */}
+                        <SelectContent position="item-aligned">
                           <SelectItem value="manual" className="font-sans">Manual (Pull Start)</SelectItem>
                           <SelectItem value="electric" className="font-sans">Electric Start</SelectItem>
                         </SelectContent>

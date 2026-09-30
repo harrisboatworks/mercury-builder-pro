@@ -106,7 +106,7 @@ describe('public quote financing policy', () => {
     expect(exact.eligible).toBe(true);
   });
 
-  it('does not apply a backorder-ineligible promotion', () => {
+  it('applies selected promotional financing regardless of backorder metadata', () => {
     const result = buildPublicQuoteFinancing({
       beforeTaxSubtotal: 10_000,
       finalPriceWithTax: 11_300,
@@ -116,9 +116,9 @@ describe('public quote financing policy', () => {
       selectedOfferId: 'promotion:summer-savings:0',
       now: new Date('2026-08-15T12:00:00Z'),
     });
-    expect(result.apr_percent).toBe(5.48);
-    expect(result.selected_offer_applied).toBe(false);
-    expect(result.reason).toContain('backordered');
+    expect(result.apr_percent).toBe(2.99);
+    expect(result.selected_offer_applied).toBe(true);
+    expect(result.reason).toBeUndefined();
   });
 
   it('keeps promotion offer ids unique across multiple special-financing options', () => {
@@ -145,7 +145,7 @@ describe('public quote financing policy', () => {
     expect(promotionIds).toEqual(['promotion:summer-savings:0', 'promotion:summer-savings:1']);
   });
 
-  it('reports backorder ineligibility when no standing offer can apply', () => {
+  it('offers promotional financing to ordered motors even without a standing offer', () => {
     const result = buildPublicQuoteFinancing({
       beforeTaxSubtotal: 10_000,
       finalPriceWithTax: 11_300,
@@ -154,8 +154,8 @@ describe('public quote financing policy', () => {
       motorInStock: false,
       now: new Date('2026-08-15T12:00:00Z'),
     });
-    expect(result.eligible).toBe(false);
-    expect(result.reason).toBe('Promotion does not apply to backordered motors');
+    expect(result.available_offers[0].eligible).toBe(true);
+    expect(result.available_offers[0].ineligibility_reason).toBeUndefined();
   });
 
   it('returns pricing without financing when the live lookup has no offers', () => {

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-boat-battery-guide-ontario.md
-last_updated: 2026-09-07
+last_updated: 2026-09-26
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Boat Battery Guide Ontario"
 description: "Marine battery guide for Ontario boaters: types, switches, wiring, winter storage, and spring startup so you're not stranded on the May long weekend."
 category: "Service"
 date_published: 2026-04-01
-date_modified: 2026-09-07
+date_modified: 2026-09-26
 keywords: ["marine battery","mercury","winter storage","battery switch","agm"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Category:** Service  
 **Published:** 2026-04-01  
-**Last reviewed:** 2026-09-07  
+**Last reviewed:** 2026-09-26  
 **Read time:** ~12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-boat-battery-guide-ontario
 
@@ -59,7 +59,7 @@ Resting voltage lies. A tired battery can read 12.4V at rest and collapse to 8V 
 
 **Are the terminals clean and the cable connections tight?**
 
-White or green powder means corrosion, which means resistance, which mimics a dead battery. Clean with baking soda and water, then dielectric grease.
+White or green powder means corrosion, which means resistance, which mimics a dead battery. Clean with baking soda and water, reconnect and tighten, then coat the finished connection with dielectric grease.
 
 #### Charging system (alternator output)
 
@@ -227,7 +227,7 @@ For the full winterization picture, see our [DIY Mercury Outboard Winterization 
 
 1. **Check resting voltage.** After an hour off charge: 12.6V+ = healthy. 12.4-12.5V = okay. Below 12.4V = recharge and retest. Below 12.2V after a full charge = replace it.
 2. **Load test.** Voltage alone isn't the whole picture, a battery can read 12.6V and still fail under cranking load. Our shop load tests, and most auto parts stores will test for free.
-3. **Inspect terminals.** White or green crust is corrosion. Clean with a paste of baking soda and water, rinse, dry, and apply dielectric grease before reconnecting. This prevents recurrence.
+3. **Inspect terminals.** White or green crust is corrosion. Clean with a paste of baking soda and water, rinse, dry, reconnect and tighten, then coat the finished connection with dielectric grease. This prevents recurrence.
 4. **Check water levels (flooded batteries only).** Top up with distilled water, never tap water.
 5. **Confirm switch position.** Make sure it's in the correct operating position, not OFF.
 6. **Reconnect and crank.** A healthy battery on a healthy engine starts in 2 to 3 seconds.
