@@ -87,7 +87,9 @@ export default function MotorDocumentsSection({ motorId, motorFamily }: MotorDoc
   const [pdfLoadError, setPdfLoadError] = useState(false);
 
   useEffect(() => {
-    let cancelled = false;
+    // Skip state and log updates from this run after motorId or motorFamily
+    // changes. The Supabase query already in flight is not aborted.
+    let ignoreStale = false;
 
     const loadDocuments = async () => {
       try {
@@ -103,7 +105,7 @@ export default function MotorDocumentsSection({ motorId, motorFamily }: MotorDoc
           .order('media_category')
           .order('title');
 
-        if (cancelled) return;
+        if (ignoreStale) return;
         if (error) throw error;
 
         // Filter out video URLs (YouTube, Vimeo) - these should only appear in MotorVideosSection
@@ -121,17 +123,17 @@ export default function MotorDocumentsSection({ motorId, motorFamily }: MotorDoc
           return true;
         });
 
-        if (!cancelled) setDocuments(filteredData);
+        if (!ignoreStale) setDocuments(filteredData);
       } catch (error) {
-        if (!cancelled) console.error('Error loading documents:', error);
+        if (!ignoreStale) console.error('Error loading documents:', error);
       } finally {
-        if (!cancelled) setLoading(false);
+        if (!ignoreStale) setLoading(false);
       }
     };
 
     loadDocuments();
     return () => {
-      cancelled = true;
+      ignoreStale = true;
     };
   }, [motorId, motorFamily]);
 
