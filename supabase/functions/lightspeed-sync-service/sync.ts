@@ -1,3 +1,4 @@
+import { parseLightspeedJson } from "../_shared/lightspeed-json.ts";
 export function serviceFilter(days: number, now = new Date()) {
   if (!days) return undefined;
   const since = new Date(now.getTime()-days*86400000).toISOString().slice(0,10)+"T00:00:00";
@@ -10,7 +11,7 @@ export async function fetchServicePage(skip: number,top: number,filter?: string,
   if(filter) params.set("$filter",filter);
   const response=await fetcher(`https://int.lightspeeddataservices.com/lsapi/ServiceDet/76160844?${params}`,{headers:{Authorization:`Basic ${btoa(`${username}:${password}`)}`,Accept:"application/json"},signal:AbortSignal.timeout(30000)});
   if(!response.ok) throw new Error(`Lightspeed API ${response.status}`);
-  const rows=await response.json();
+  const rows=parseLightspeedJson(await response.text());
   if(!Array.isArray(rows)) throw new Error("Invalid Lightspeed response shape");
   return rows;
 }

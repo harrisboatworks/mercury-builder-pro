@@ -1,3 +1,4 @@
+import { parseLightspeedJson } from "../_shared/lightspeed-json.ts";
 import { mapCustomer } from "./customer.ts";
 import postgres from "https://deno.land/x/postgresjs@v3.4.5/mod.js";
 
@@ -18,7 +19,7 @@ async function fetchPage(endpoint: string, skip: number, top: number): Promise<a
     headers: { Authorization: `Basic ${auth}`, Accept: "application/json" },
   });
   if (!resp.ok) throw new Error(`Lightspeed API ${resp.status}`);
-  return await resp.json();
+  return parseLightspeedJson(await resp.text());
 }
 
 async function fetchAll(endpoint: string, pageSize = 500): Promise<any[]> {
@@ -45,7 +46,7 @@ async function fetchByROHeaderIDs(ids: number[]): Promise<any[]> {
     headers: { Authorization: `Basic ${auth}`, Accept: "application/json" },
   });
   if (!resp.ok) throw new Error(`Lightspeed API ${resp.status}`);
-  return await resp.json();
+  return parseLightspeedJson(await resp.text());
 }
 
 function parseTs(val: string | null | undefined): string | null {

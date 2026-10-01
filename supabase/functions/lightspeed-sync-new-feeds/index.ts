@@ -1,3 +1,4 @@
+import { parseLightspeedJson } from "../_shared/lightspeed-json.ts";
 import postgres from "https://deno.land/x/postgresjs@v3.4.5/mod.js";
 
 const LS_USERNAME = Deno.env.get("LIGHTSPEED_USERNAME");
@@ -57,7 +58,7 @@ async function fetchPage(endpoint: string, skip: number, top: number, filter?: s
     throw new Error(`${endpoint} API ${response.status}: ${await response.text()}`);
   }
 
-  const payload = await response.json();
+  const payload = parseLightspeedJson(await response.text());
   return Array.isArray(payload) ? payload : [];
 }
 
