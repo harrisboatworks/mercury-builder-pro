@@ -19,7 +19,9 @@ async function fetchPage(endpoint: string, skip: number, top: number): Promise<a
     headers: { Authorization: `Basic ${auth}`, Accept: "application/json" },
   });
   if (!resp.ok) throw new Error(`Lightspeed API ${resp.status}`);
-  return parseLightspeedJson(await resp.text());
+  const rows = parseLightspeedJson(await resp.text());
+  if (!Array.isArray(rows)) throw new Error("Invalid Lightspeed response shape");
+  return rows;
 }
 
 async function fetchAll(endpoint: string, pageSize = 500): Promise<any[]> {
@@ -46,7 +48,9 @@ async function fetchByROHeaderIDs(ids: number[]): Promise<any[]> {
     headers: { Authorization: `Basic ${auth}`, Accept: "application/json" },
   });
   if (!resp.ok) throw new Error(`Lightspeed API ${resp.status}`);
-  return parseLightspeedJson(await resp.text());
+  const rows = parseLightspeedJson(await resp.text());
+  if (!Array.isArray(rows)) throw new Error("Invalid Lightspeed response shape");
+  return rows;
 }
 
 function parseTs(val: string | null | undefined): string | null {
@@ -195,14 +199,15 @@ Deno.serve(async (req: Request) => {
 
     const elapsed = ((Date.now() - startTime) / 1000).toFixed(1);
     for (const r of results) {
-      await sql`INSERT INTO lightspeed.sync_log (feed_name, status, records_fetched, records_upserted, completed_at, metadata) VALUES (${r.feed}, 'completed', ${r.total || r.total_ros || 0}, ${r.upserted || r.total_ros || 0}, NOW(), ${JSON.stringify(r)}::jsonb)`;
+      await sql`INSERT INTO lightspeed.sync_log (feed_name, status, records_fetched, records_upserted, started_at, completed_at, metadata) VALUES (${r.feed}, 'completed', ${r.total || r.total_ros || 0}, ${r.upserted || r.total_ros || 0}, ${new Date(startTime).toISOString()}, NOW(), ${sql.json(r)})`;
     }
     await sql.end();
     return new Response(JSON.stringify({ success: true, elapsed_seconds: elapsed, results }), { headers: { "Content-Type": "application/json" } });
   } catch (error) {
-    await sql`INSERT INTO lightspeed.sync_log (feed_name, status, error_message, completed_at) VALUES ('error', 'failed', ${error instanceof Error ? error.message : "Sync failed"}, NOW())`.catch(() => {});
+    const message = error instanceof Error && /^(Lightspeed API \d+|Lightspeed credentials are not configured|Customer consent missing or invalid|Invalid Lightspeed (JSON|response shape))$/.test(error.message) ? error.message : "Lightspeed sync failed";
+    await sql`INSERT INTO lightspeed.sync_log (feed_name, status, error_message, completed_at) VALUES ('error', 'failed', ${message}, NOW())`.catch(() => {});
     await sql.end();
-    return new Response(JSON.stringify({ success: false, error: error instanceof Error ? error.message : "Sync failed" }), { status: 500, headers: { "Content-Type": "application/json" } });
+    return new Response(JSON.stringify({ success: false, error: message }), { status: 500, headers: { "Content-Type": "application/json" } });
   }
 });
 

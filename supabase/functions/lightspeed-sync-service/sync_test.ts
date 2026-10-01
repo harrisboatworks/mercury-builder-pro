@@ -7,6 +7,7 @@ function db() {
    logs.push({text:strings.join("?"),values});return Promise.resolve([]);
  };
  sql.begin=async(fn:any)=>fn(sql);
+ sql.json=(value:unknown)=>value;
  return {sql,logs};
 }
 function provider(pages:any[][],badDetail=false) {
@@ -44,7 +45,7 @@ Deno.test("incomplete detail fails before writes and records failure",async()=>{
  const {sql,logs}=db(),{fetcher}=provider([[{ROHeaderID:10}]],true);
  const res=await runServiceSync(new Request("https://fixture/?top=1"),sql,fetcher);
  equal(res.status,500);equal(logs.length,1);equal(logs[0].text.includes("'failed'"),true);
- equal(JSON.parse(logs[0].values.at(-1) as string).complete,false);
+ equal((logs[0].values.at(-1) as any).complete,false);
 });
 Deno.test("repeated page keys cannot report completeness",async()=>{
  const {sql,logs}=db(),{fetcher}=provider([[{ROHeaderID:10}],[{ROHeaderID:10}]]);

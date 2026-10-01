@@ -83,11 +83,11 @@ export async function runServiceSync(req:Request,sql:any,fetcher:typeof fetch=fe
       currentSkip+=top;
     }
     const metadata={days_back:days||"all",skip,top,pages,filter_fields:["lastmodifieddate","closedate","datein"],complete:true,...counts};
-    await sql`INSERT INTO lightspeed.sync_log (feed_name,status,records_fetched,records_upserted,started_at,completed_at,metadata) VALUES ('service_detail_incremental','completed',${fetched},${counts.headers},${startedAt},NOW(),${JSON.stringify(metadata)}::jsonb)`;
+    await sql`INSERT INTO lightspeed.sync_log (feed_name,status,records_fetched,records_upserted,started_at,completed_at,metadata) VALUES ('service_detail_incremental','completed',${fetched},${counts.headers},${startedAt},NOW(),${sql.json(metadata)})`;
     return Response.json({success:true,done:true,fetched,...metadata});
   }catch(error) {
     const message=error instanceof Error && /^(Lightspeed API \d+|Incomplete RO detail response|Invalid Lightspeed response shape|Invalid or repeated RO page keys|Sync bound reached before completeness|Lightspeed credentials are not configured)$/.test(error.message)?error.message:"Service sync failed";
-    await sql`INSERT INTO lightspeed.sync_log (feed_name,status,records_fetched,records_upserted,started_at,completed_at,error_message,metadata) VALUES ('service_detail_incremental','failed',${fetched},${counts.headers},${startedAt},NOW(),${message},${JSON.stringify({skip,top,pages,complete:false,next_skip:currentSkip})}::jsonb)`.catch(()=>{});
+    await sql`INSERT INTO lightspeed.sync_log (feed_name,status,records_fetched,records_upserted,started_at,completed_at,error_message,metadata) VALUES ('service_detail_incremental','failed',${fetched},${counts.headers},${startedAt},NOW(),${message},${sql.json({skip,top,pages,complete:false,next_skip:currentSkip})})`.catch(()=>{});
     return Response.json({success:false,done:false,error:message,fetched,pages},{status:500});
   }
 }

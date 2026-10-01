@@ -55,11 +55,12 @@ async function fetchPage(endpoint: string, skip: number, top: number, filter?: s
   });
 
   if (!response.ok) {
-    throw new Error(`${endpoint} API ${response.status}: ${await response.text()}`);
+    throw new Error(`${endpoint} API ${response.status}`);
   }
 
   const payload = parseLightspeedJson(await response.text());
-  return Array.isArray(payload) ? payload : [];
+  if (!Array.isArray(payload)) throw new Error("Invalid Lightspeed response shape");
+  return payload;
 }
 
 async function fetchAll(endpoint: string, pageSize: number, filter?: string): Promise<any[]> {
@@ -451,7 +452,7 @@ Deno.serve(async (req: Request) => {
       results,
     }), { headers: { "Content-Type": "application/json" } });
   } catch (error) {
-    const message = error instanceof Error ? error.message : String(error);
+    const message = error instanceof Error && /^(\w+ API \d+|Lightspeed credentials are not configured|Invalid Lightspeed (JSON|response shape))$/.test(error.message) ? error.message : "Lightspeed feed sync failed";
     await sql`
       insert into lightspeed.sync_log
         (feed_name, status, error_message, completed_at, metadata)
