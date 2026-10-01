@@ -352,7 +352,9 @@ async function syncOpenRos(sql: any): Promise<SyncResult> {
           total_tax text,
           total_owed text,
           category text,
-          oem_ro_number text
+          oem_ro_number text,
+          service_writer_id text,
+          service_writer_username text
         )
       )
       update lightspeed.ro_headers_open r
@@ -366,7 +368,9 @@ async function syncOpenRos(sql: any): Promise<SyncResult> {
         total_tax = nullif(i.total_tax, '')::numeric,
         total_owed = nullif(i.total_owed, '')::numeric,
         category = nullif(i.category, ''),
-        oem_ro_number = nullif(i.oem_ro_number, '')
+        oem_ro_number = nullif(i.oem_ro_number, ''),
+        service_writer_id = nullif(i.service_writer_id, '')::bigint,
+        service_writer_username = nullif(i.service_writer_username, '')
       from incoming i
       where r.ro_header_id = nullif(i.ro_header_id, '')::bigint
     `;
