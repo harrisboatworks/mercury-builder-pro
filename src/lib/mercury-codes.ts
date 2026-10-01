@@ -35,7 +35,7 @@ function toCanon(raw: string): string | null {
  *  "9.9 EXLPT EFI", "25 ELHPT", "90 ELPT CT", "MLH", "EXLPT-CT"
  * Strategy:
  *  1) Tokenize by non-alnum boundaries -> alnum chunks
- *  2) Peel known sub-codes from each chunk in priority order
+ *  2) Strip a leading horsepower prefix, then peel known sub-codes in priority order
  *  3) De-duplicate preserving first occurrence order
  *  4) Infer shaft S (15") if no L/XL/XXL present
  */
@@ -87,6 +87,34 @@ export function parseMercuryRigCodes(input: string): RigAttrs {
   const SUB_ORDER = ["CXXL","CXL","ECXLPT","ECXL","XXL","XL","PT","CT","ELECTRIC","ELEC","E","MANUAL","M","TILLER","H","L"];
   function peel(chunk: string) {
     let s = chunk.toUpperCase();
+    // Catalog names glue horsepower onto the rig bundle ("115EXLPT", "9.9MH").
+    // Chunks are already split on the decimal point. A glued "HP" label is not
+    // a tiller code; "HPT" still peels as tiller plus power trim.
+    const leadingHp = s.match(/^\d+(?:\.\d+)?/);
+    if (leadingHp) {
+      s = s.slice(leadingHp[0].length);
+      if (/^HP(?!T)/.test(s)) s = s.slice(2);
+    }
+    if (!s) return;
+
+    // Glued counter-rotation ("225CXXL", "115ECXLPT") has no word boundary
+    // before the code, so the pre-pass above misses it. Standalone codes are
+    // still recorded there; dedupe keeps a single shaft token.
+    if (/^C(?:XXL|XL|L)/.test(s)) {
+      is_counter_rotating = true;
+      const shaft = s.startsWith("CXXL") ? "XXL" : s.startsWith("CXL") ? "XL" : "L";
+      out.push(shaft);
+      s = s.slice(1 + shaft.length);
+    } else if (s.startsWith("ECXLPT")) {
+      is_counter_rotating = true;
+      out.push("E", "XL", "PT");
+      s = s.slice(6);
+    } else if (s.startsWith("ECXL")) {
+      is_counter_rotating = true;
+      out.push("E", "XL");
+      s = s.slice(4);
+    }
+
     let progressed = true;
     while (s && progressed) {
       progressed = false;
