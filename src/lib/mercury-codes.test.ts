@@ -166,6 +166,43 @@ describe('mercury-codes', () => {
       has_power_trim: true,
       is_counter_rotating: true,
     });
+    expect(parseMercuryRigCodes('CXL')).toMatchObject({
+      tokens: ['XL'],
+      shaft_code: 'XL',
+      is_counter_rotating: true,
+    });
+    expect(parseMercuryRigCodes('CL')).toMatchObject({
+      tokens: ['L'],
+      shaft_code: 'L',
+      is_counter_rotating: true,
+    });
+  });
+
+  it('keeps ordinary words and standalone partial codes off the counter-rotation path', () => {
+    expect(parseMercuryRigCodes('Classic')).toMatchObject({
+      tokens: ['S'],
+      shaft_code: 'S',
+      shaft_inches: 15,
+      is_counter_rotating: false,
+    });
+    expect(parseMercuryRigCodes('Classic XL')).toMatchObject({
+      tokens: ['XL'],
+      shaft_code: 'XL',
+      is_counter_rotating: false,
+    });
+    expect(parseMercuryRigCodes('Clearwater')).toMatchObject({
+      tokens: ['S'],
+      shaft_code: 'S',
+      is_counter_rotating: false,
+      start_type: 'Unknown',
+    });
+    expect(parseMercuryRigCodes('CXLPT')).toMatchObject({
+      tokens: ['S', 'PT'],
+      shaft_code: 'S',
+      shaft_inches: 15,
+      is_counter_rotating: false,
+      has_power_trim: true,
+    });
   });
 
   it('keeps unrelated inference and official model-number identity', () => {
