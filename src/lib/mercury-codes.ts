@@ -35,7 +35,7 @@ function toCanon(raw: string): string | null {
  *  "9.9 EXLPT EFI", "25 ELHPT", "90 ELPT CT", "MLH", "EXLPT-CT"
  * Strategy:
  *  1) Tokenize by non-alnum boundaries -> alnum chunks
- *  2) Peel known sub-codes from each chunk in priority order
+ *  2) Strip a leading horsepower prefix, then peel known sub-codes in priority order
  *  3) De-duplicate preserving first occurrence order
  *  4) Infer shaft S (15") if no L/XL/XXL present
  */
@@ -85,8 +85,65 @@ export function parseMercuryRigCodes(input: string): RigAttrs {
 
   // peel sub-tokens in priority order so "EXLPT" splits correctly
   const SUB_ORDER = ["CXXL","CXL","ECXLPT","ECXL","XXL","XL","PT","CT","ELECTRIC","ELEC","E","MANUAL","M","TILLER","H","L"];
+  // A counter-rotation bundle may end in a real rig suffix ("225CXXLPT").
+  // An ordinary word tail ("Classic" -> "ASSIC") does not.
+  function counterRotationTailIsRig(rest: string): boolean {
+    let t = rest;
+    let progressed = true;
+    while (t && progressed) {
+      progressed = false;
+      for (const pat of SUB_ORDER) {
+        if (!t.startsWith(pat) || !toCanon(pat)) continue;
+        t = t.slice(pat.length);
+        progressed = true;
+        break;
+      }
+    }
+    return t === "" || t === "A";
+  }
   function peel(chunk: string) {
     let s = chunk.toUpperCase();
+    // Catalog names glue horsepower onto the rig bundle ("115EXLPT", "9.9MH").
+    // Chunks are already split on the decimal point. A glued "HP" label is not
+    // a tiller code; "HPT" still peels as tiller plus power trim.
+    const hpPrefixed = /^\d/.test(s);
+    const leadingHp = s.match(/^\d+(?:\.\d+)?/);
+    if (leadingHp) {
+      s = s.slice(leadingHp[0].length);
+      if (/^HP(?!T)/.test(s)) s = s.slice(2);
+    }
+    if (!s) return;
+
+    // Counter-rotation glued to horsepower ("225CXXL", "115ECXLPT") has no
+    // word boundary, so the pre-pass misses it. Only that horsepower-prefixed
+    // bundle is handled here. Standalone chunks stay on the pre-pass and the
+    // peel below, so "Classic" and "CXLPT" keep their previous results.
+    if (hpPrefixed) {
+      let consumed = 0;
+      let tokens: string[] = [];
+      if (s.startsWith("CXXL")) {
+        consumed = 4;
+        tokens = ["XXL"];
+      } else if (s.startsWith("CXL")) {
+        consumed = 3;
+        tokens = ["XL"];
+      } else if (s.startsWith("CL")) {
+        consumed = 2;
+        tokens = ["L"];
+      } else if (s.startsWith("ECXLPT")) {
+        consumed = 6;
+        tokens = ["E", "XL", "PT"];
+      } else if (s.startsWith("ECXL")) {
+        consumed = 4;
+        tokens = ["E", "XL"];
+      }
+      if (consumed && counterRotationTailIsRig(s.slice(consumed))) {
+        is_counter_rotating = true;
+        out.push(...tokens);
+        s = s.slice(consumed);
+      }
+    }
+
     let progressed = true;
     while (s && progressed) {
       progressed = false;
