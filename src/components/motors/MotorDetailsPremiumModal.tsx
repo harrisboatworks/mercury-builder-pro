@@ -319,12 +319,19 @@ export default function MotorDetailsPremiumModal({
   const [imagesLoading, setImagesLoading] = useState(true);
 
   useEffect(() => {
+    // Ignore this run's gallery result after the motor changes, the modal
+    // closes, or the modal unmounts. The helper request already in flight
+    // is not aborted.
+    let ignoreStale = false;
+
     if (open && motor?.id) {
       setImagesLoading(true);
       getMotorImageGallery(motor).then(images => {
+        if (ignoreStale) return;
         setLoadedGalleryImages(images);
         setImagesLoading(false);
       }).catch(() => {
+        if (ignoreStale) return;
         setLoadedGalleryImages([]);
         setImagesLoading(false);
       });
@@ -333,6 +340,10 @@ export default function MotorDetailsPremiumModal({
       setLoadedGalleryImages([]);
       setImagesLoading(true);
     }
+
+    return () => {
+      ignoreStale = true;
+    };
   }, [open, motor]);
 
   const [calculatorOpen, setCalculatorOpen] = useState(false);
