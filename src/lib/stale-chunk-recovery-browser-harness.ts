@@ -13,7 +13,8 @@ import {
   type StorageMode,
 } from './stale-chunk-recovery-harness';
 import { lazyWithRetry as harnessLazyWithRetry } from 'virtual:stale-chunk-harness-helper';
-import { HARNESS_RELOAD_SIMULATION } from './stale-chunk-recovery-harness-plugin';
+// Keep the browser driver free of Node-only Vite plugin imports.
+const HARNESS_RELOAD_SIMULATION = '__hbwStaleChunkReloadSimulation' as const;
 
 type SimulationHost = typeof globalThis & {
   [HARNESS_RELOAD_SIMULATION]?: () => void;
