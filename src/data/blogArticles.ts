@@ -3550,7 +3550,7 @@ Harris Boat Works · 5369 Harris Boat Works Rd, Gores Landing, ON · Mercury Mar
     imageAlt: "Close-up photograph of a Mercury digital throttle and shift control with a hand on its handle.",
     author: 'Jay Harris',
     datePublished: '2026-05-28',
-    dateModified: '2026-09-18',
+    dateModified: '2026-10-02',
     publishDate: '2026-05-28',
     category: 'Mercury Technology',
     readTime: '10 min',
@@ -3653,17 +3653,18 @@ The honest decision matrix:
 
 ## Step 3: HP class eligibility
 
-Mercury offers DTS on the following motor classes (current model year 2026):
+Here is where DTS versions show up on our current price list (2026 model year):
 
-| HP class | Motor family | DTS availability |
+| HP class | Motor family | On our current price list |
 |---|---|---|
-| 250-600 HP | Verado V8/V10/V12 | **Standard on all** |
-| 150-300 HP | Pro XS | **Standard on most current** |
-| 200-300 HP | FourStroke V8 | **Standard on most current** |
-| 75-150 HP | FourStroke I4 | **Optional on select models** |
-| Under 75 HP | All families | **Not available** |
+| 250-600 HP | Verado V8/V10/V12 | **Standard on all** (Verado is a special order at HBW) |
+| 200, 250, 300 HP | Pro XS | **DTS and mechanical versions both listed** |
+| 150, 175, 225 HP | Pro XS | **Mechanical versions listed** |
+| 300 HP | FourStroke | **DTS and mechanical versions both listed** |
+| 150-250 HP | FourStroke | **Mechanical versions listed** |
+| Under 150 HP | FourStroke, Pro XS | **No DTS versions listed** |
 
-The numbers shift slightly model year to model year (Mercury sometimes adds or drops DTS as a standard feature on a given HP). The safe rule: 150 HP and up, plan on DTS being standard or available. Under 150 HP, check before assuming.
+Mercury can add or drop DTS versions between model years, and our list shows what we price, not every model Mercury builds. The safe rule: confirm DTS fitment by exact model and serial before you plan the helm.
 
 For the official source, Mercury's product pages at [mercurymarine.com](https://www.mercurymarine.com/) list DTS as a feature on each model.
 
@@ -3739,13 +3740,13 @@ whenInDoubt: Quote both paths if your mechanical motor is under 5 years old, low
 
 A few Ontario-specific notes that make DTS hit different here.
 
-**Multi-engine boats are common on bigger water.** Lake Ontario, Simcoe, Couchiching, and the Trent-Severn run a lot of twin-engine setups. DTS standard equipment on the motors that fit those boats. Customers in those markets either already have DTS or are repowering into it on the next motor change.
+**Multi-engine boats are common on bigger water.** Lake Ontario, Simcoe, Couchiching, and the Trent-Severn run a lot of twin-engine setups. DTS versions are common on the motors that fit those boats. Customers in those markets either already have DTS or are repowering into it on the next motor change.
 
 **Single-engine pontoons rarely need DTS.** Most Rice Lake and Kawartha Lakes pontoons run a single motor in the 90-200 HP range. The DTS conversation rarely applies. Mechanical is correct for most pontoon repowers.
 
 **Late-season docking conditions.** Ontario boaters often run into October. Cross-winds, current at lock approaches, tight cottage docks. Joystick piloting (which requires DTS) is the real upgrade story here, not DTS for its own sake.
 
-**Verado lineup matters.** All current Verado V8/V10/V12 (naturally aspirated, 250-600 HP) come standard with DTS. If your boat is in that class, you don't have a DTS retrofit decision. You have a Verado vs Pro XS vs FourStroke decision, and DTS comes with all three at that HP.
+**Verado lineup matters.** All current Verado V8/V10/V12 (naturally aspirated, 250-600 HP) come standard with DTS. If your boat is in that class, you don't have a DTS retrofit decision. You have a Verado vs Pro XS vs FourStroke decision. At 200, 250, and 300 HP our current price list carries both DTS and mechanical Pro XS versions, and at 300 HP both FourStroke versions, so confirm the exact model before assuming DTS comes with it.
 
 ## Ready to confirm DTS eligibility?
 
@@ -16387,14 +16388,14 @@ secondaryHref: /promotions
     imageAlt: 'Concept diagram of a complete quote: motor and shaft, controls and steering, propeller, rigging, and install labour.',
     author: 'Jay Harris',
     datePublished: '2026-05-05',
-    dateModified: '2026-09-11',
+    dateModified: '2026-10-02',
     publishDate: '2026-05-05',
     category: 'Buying Guide',
     readTime: '8 min read',
     keywords: ['mercury outboard pricing', 'mercury dealer transparency', 'boat motor prices ontario', 'mercury price online', 'harris boat works pricing'],
     content: `### Quick Answer
 
-Most Mercury dealers hide prices to force a phone call. That call gives them your name, your boat, your budget, and control of the negotiation before you have a number to compare. [Mercury Marine](https://www.mercurymarine.com/ca/en) does not require dealers to hide prices. HBW posts live installed prices in CAD at [mercuryrepower.ca](https://www.mercuryrepower.ca). You can build a full configured quote, motor, controls, steering, prop, rigging, install labor, in about three minutes, without talking to anyone.
+Most Mercury dealers hide prices to force a phone call. That call gives them your name, your boat, your budget, and control of the negotiation before you have a number to compare. HBW publishes bare-motor Mercury prices in CAD before HST at [mercuryrepower.ca](https://www.mercuryrepower.ca). The configurator then builds an itemized estimate for the motor, controls, steering, prop, rigging, and install labor in about three minutes, without talking to anyone. Final pricing and scope are confirmed in the written quote.
 
 ---
 
@@ -16411,7 +16412,7 @@ That is not a coincidence. It is a business model.
 Here are the five most common explanations dealers offer, ranked from most to least defensible:
 
 **1. "Manufacturer pricing requirements"** 
-False. Mercury Marine sets MSRP. Dealers can sell at, above, or below MSRP. Mercury does not require dealers to hide prices online. Any dealer who says otherwise is telling you something that is not true.
+Ask to see the requirement in writing. HBW publishes its Mercury motor prices online, so you can compare that dealer's number against a published one.
 
 **2. "Prices change too frequently"** 
 Motor prices and promotional offers can change. Check the current price list, offer dates, and expiry on the written quote. A dated price is more useful than an undated verbal estimate.
@@ -16443,7 +16444,7 @@ HBW has listed prices from the start of [mercuryrepower.ca](https://www.mercuryr
 
 **It is faster.** Three minutes to a configured quote beats a 30-minute phone call you did not want to make.
 
-**It builds trust.** The price you see online is the price you pay. No surprises at the counter.
+**It builds trust.** You see the bare-motor price and an itemized package estimate before you call, and the written quote confirms the final price and scope. No surprises at the counter.
 
 You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
@@ -16490,10 +16491,10 @@ For typical recreational FourStroke and Pro XS packages, the motor selection pag
 ## FAQs
 
 **Does Mercury Marine prohibit dealers from publishing prices?** 
-No. Mercury sets MSRP. Dealers set their own pricing and choose whether to publish it. Any dealer who claims Mercury requires them to hide prices is not being straight with you.
+HBW publishes its Mercury motor prices online. If a dealer says a manufacturer rule stops them from publishing, ask them to show you that requirement in writing.
 
 **How do I know HBW's published price is the actual price?** 
-The quote you build at [mercuryrepower.ca](https://www.mercuryrepower.ca) reflects the current live pricing. When you engage with HBW, that is the number the team works from. No negotiation theater.
+The configurator at [mercuryrepower.ca](https://www.mercuryrepower.ca) uses current pricing data and gives you an itemized CAD estimate before HST. The team works from that estimate, and the final price and scope are confirmed in the written quote. No negotiation theater.
 
 **What does an all-in Mercury repower cost in 2026?** 
 Ranges vary by HP class. The configured quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) gives you the full number, motor, controls, steering, gauges, wiring, prop, and install labor, in a single place. Build one and see.
@@ -16526,11 +16527,11 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     faqs: [
       {
         question: 'Why don\'t most marine dealers list prices online?',
-        answer: 'Three real reasons: information asymmetry is profitable for them, phone calls capture leads more reliably than web visits, and industry inertia. The reasons they say out loud (manufacturer requirements, prices change too fast, configuration is too complex) are mostly excuses.'
+        answer: 'Three real reasons: information asymmetry is profitable for them, phone calls capture leads more reliably than web visits, and industry inertia. The reasons they say out loud, like prices changing or configuration being complex, are only partly true. A dated, itemized written number answers both.'
       },
       {
         question: 'Does Mercury Marine require dealers to hide prices?',
-        answer: 'No. Mercury sets MSRP and dealers can publish, sell at, above, or below it. Any dealer claiming Mercury prohibits price publication is misinformed or being dishonest.'
+        answer: 'HBW publishes its Mercury motor prices online. If a dealer says a manufacturer rule stops them from publishing, ask them to show you that requirement in writing.'
       },
       {
         question: 'Do Mercury prices actually change frequently?',
@@ -22887,7 +22888,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: "AI-generated editorial scene of a family wearing life jackets on a Mercury-powered pontoon.",
     author: 'Jay Harris',
     datePublished: '2026-03-26',
-    dateModified: '2026-09-11',
+    dateModified: '2026-10-02',
     publishDate: '2026-03-26',
     category: "Mercury Outboards",
     readTime: '~12 min read',
@@ -22895,7 +22896,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     faqs: [
       { question: 'What HP do I need for a pontoon boat?', answer: 'It depends on the boat\'s documented power, transom, and motor-weight limits, tube count, hull, load, and use. 25 to 40 HP for some 16 to 18 ft cruise boats, 60 to 90 HP for some 20 to 22 ft cruisers, 115 to 150 HP for some 22 to 24 ft loaded family boats, and 200+ HP for some tritoons and watersports setups are examples to compare, not minima.' },
       { question: 'Is 90 HP enough for a 22 ft pontoon?', answer: 'For a loaded 22-foot boat, 90 or 115 CT is an occasional-tube example; 150 suits regular tube pulling. A 60 HP 20-footer is a lighter-cruise comparison. Use CT only where Mercury offers that model and this boat\'s limits support it. Hole shot still depends on hull, prop, and load.' },
-      { question: 'Why do pontoons need more HP than runabouts?', answer: 'A typical pontoon sits 816 to 1,588 kg (1,800 to 3,500 lbs) dry before people, gear, and fuel. On a hypothetical 22-footer actually rated for 10 adults, that passenger load plus a full cooler can easily clear 2,268 kg (5,000 lb). Length alone does not set legal capacity. Pontoon tubes also create more drag than a V-hull because you are pushing water aside rather than cutting through it. Add huge freeboard catching crosswind, and a pontoon needs meaningfully more horsepower than an equivalent-length runabout.' },
+      { question: 'Why do pontoons need more HP than runabouts?', answer: 'Pontoon dry weight varies widely by length, tube count, and build, so check the builder\'s published dry weight for the exact boat before adding people, gear, and fuel. On a hypothetical 22-footer actually rated for 10 adults, that passenger load plus a full cooler can easily clear 2,268 kg (5,000 lb). Length alone does not set legal capacity. Pontoon tubes also create more drag than a V-hull because you are pushing water aside rather than cutting through it. Add huge freeboard catching crosswind, and a pontoon needs meaningfully more horsepower than an equivalent-length runabout.' },
       { question: 'When does Command Thrust matter on a pontoon?', answer: 'CT is model-specific: check the exact model\'s gearcase specifications before assuming it is available in the horsepower you are considering. Use CT where that exact model is offered and this pontoon\'s documented power, transom, motor-weight, steering, and load accept it, not because the boat is over 20 feet. A larger-diameter prop changes low-speed thrust on some heavy boats; it does not guarantee a given crew will plane.' },
       { question: 'How much horsepower do I need to pull a tube or wakeboard from a pontoon?', answer: 'For regular tube pulling, 150 HP on a 22-foot two-tube and 200 HP on a tritoon are the examples used in the body. For wakeboarding, a tritoon with 250+ HP is an example to compare; 200 HP is a lighter tritoon example. A two-tube pontoon is a different hull.' },
     ],
@@ -22934,7 +22935,7 @@ If you're buying used and the motor is at the low end of that manufacturer's HP 
 
 Pontoon buyers coming from fishing boats or runabouts always underestimate how much power a pontoon needs. Here's why:
 
-**Weight.** A typical pontoon sits 816 to 1,588 kg (1,800 to 3,500 lbs) dry before you add people, gear, and fuel. On a 22-footer actually rated for 10 adults, that passenger load plus a full cooler can easily clear 2,268 kg (5,000 lb). Length does not set how many people you may carry.
+**Weight.** Pontoon dry weight varies widely by length, tube count, and build, so check the builder's published dry weight for your exact boat before you add people, gear, and fuel. On a 22-footer actually rated for 10 adults, that passenger load plus a full cooler can easily clear 2,268 kg (5,000 lb). Length does not set how many people you may carry.
 
 **Drag.** Pontoon tubes create significant drag compared to a V-hull. You're not cutting through the water, you're pushing it out of the way with cylindrical aluminum logs. It takes real power to overcome that resistance and get the boat up on cruise.
 
@@ -23047,7 +23048,7 @@ Bigger boat, bigger load, bigger water. A 250 or 300 HP Mercury handles this cat
 
 **Mercury 300-400+ HP**
 
-At this size, you're in Verado or high-output V8 territory. A 400R or twin-motor setup gives you the performance these boats are capable of. If you're spending this much on a pontoon, don't pair it with a motor that makes it feel slow.
+At this size, the right power depends on the exact boat. Check its capacity plate and builder documentation for maximum horsepower, transom and motor-weight limits, steering requirements, and whether it is rigged for one motor or two, then size for your planned load. Higher-horsepower options in this range include Verado, which is a special order at HBW, not part of our default inventory. Bring the boat's documented limits to the quote so we can match the motor to them.
 
 ---
 
@@ -23824,7 +23825,7 @@ A plain 9.9 MH (manual start, tiller, no trim) sits at the bottom of the lineup.
 
 ## Current Mercury outboard prices by HP class
 
-The full current Mercury outboard lineup we sell, grouped by HP class. The pricing tables on the live page are generated from the same data the rest of mercuryrepower.ca uses, so prices stay in sync site-wide. Tables not duplicated here, see the live page or the configurator for the full motor-by-motor pricing list. Below is the narrative context that goes with it.
+The full current Mercury outboard lineup we sell, grouped by HP class. Our published prices come from the same data the rest of mercuryrepower.ca uses, so they stay in sync site-wide. For the full motor-by-motor price list, see the [pricing reference](/pricing-reference) or build a quote in the [configurator](/quote/motor-selection).
 
 ### What changes the price within a class
 
@@ -23892,7 +23893,7 @@ We're at 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. Pickup only, we d
     imageAlt: 'Technician servicing a Mercury outboard in an Ontario workshop to illustrate the professional installation behind pricing.',
     author: 'Jay Harris',
     datePublished: '2026-05-08',
-    dateModified: '2026-09-25',
+    dateModified: '2026-10-02',
     publishDate: '2026-05-08',
     category: 'Mercury Outboards',
     readTime: '~14 min read',
@@ -30698,7 +30699,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: "Close-up photograph of a Mercury digital throttle and shift control.",
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
-    dateModified: '2026-09-25',
+    dateModified: '2026-10-02',
     publishDate: '2026-05-17',
     category: 'Buying Guides',
     readTime: '7 min read',
@@ -30810,7 +30811,7 @@ We've been a Mercury dealer since 1965, and we install both systems regularly. W
 
 
 
-## Sources
+---
 
 - [Mercury Marine Digital Throttle & Shift (DTS) guidance](https://www.mercurymarine.com/ca/en/smartcraft/vessel-control/digital-controls)
 - Mercury Marine outboard rigging guide (dealer technical reference, 2026)
@@ -35636,7 +35637,7 @@ If your bilge pump has already let you down once, or you just want to know it'll
     imageAlt: 'Concept diagram of a first season: dealer pre-delivery inspection, on-water break-in, then the first scheduled service.',
     author: 'Harris Boat Works',
     datePublished: '2026-07-27',
-    dateModified: '2026-09-06',
+    dateModified: '2026-10-02',
     publishDate: '2026-07-27',
     category: 'Maintenance',
     readTime: '9 min read',
@@ -35733,7 +35734,7 @@ Even smart boaters can make a few unforced errors. Here are the ones we see most
 
 **Running hard on day one.** Following break-in means holding off on the wide-open throttle sprints until the manual says so. Rushing this does not create hidden performance; it just skips a step that protects the engine's long-term health.
 
-**Skipping fall winterization.** In Ontario, a first-season owner might think they'll be back on the water in a few weeks. When January hits and the boat hasn't been fogged or drained, that's a big bill. HBW closes December 1 and reopens April 1. Winterize before the first deep freeze.
+**Skipping fall winterization.** In Ontario, a first-season owner might think they'll be back on the water in a few weeks. When January hits and the boat hasn't been fogged or drained, that's a big bill. HBW is closed from December 1 through April 1 and reopens in early April, so confirm the current season's opening date before you plan spring work. Winterize before the first deep freeze.
 
 ## Normal vs. Not Normal: Key Things to Watch For
 
@@ -35759,7 +35760,7 @@ Running a new outboard around here comes with a few realities that first-time bo
 
 **Sandbars and prop dings.** The Kawarthas are full of surprises below the surface. A small prop ding on a new stainless or aluminum prop isn't the end of the world, but it should be looked at. A bent blade can cause vibration that stresses the gearcase. Get into the habit of trimming up in shallow water and checking the prop visually before you trailer home. If you tag something hard, book a service check to make sure the prop shaft didn't get tweaked.
 
-**Seasonal reality: fall sneaks up.** The Rice Lake boating season doesn't last all year. By late October, the nights get cold. If you're not winterized, a freeze can crack a block or housing. Many first-season owners assume they'll get one more weekend and end up calling us in a panic. We close December 1 and reopen April 1. Plan the winterization appointment while the weather is still pleasant.
+**Seasonal reality: fall sneaks up.** The Rice Lake boating season doesn't last all year. By late October, the nights get cold. If you're not winterized, a freeze can crack a block or housing. Many first-season owners assume they'll get one more weekend and end up calling us in a panic. We are closed from December 1 through April 1 and reopen in early April. Call or text to confirm the exact opening date each spring. Plan the winterization appointment while the weather is still pleasant.
 
 ## Sources
 

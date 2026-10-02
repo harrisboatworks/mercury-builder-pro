@@ -41,7 +41,7 @@ export const traditionalChineseBlogArticles: BlogArticle[] = [
     image: '/lovable-uploads/Ontario_Short_Boating_Season_Fall.png',
     author: 'Jay Harris',
     datePublished: '2026-06-12',
-    dateModified: '2026-09-06',
+    dateModified: '2026-10-02',
     publishDate: '2026-06-12',
     category: 'mandarin',
     readTime: '9 分鐘',
@@ -92,7 +92,7 @@ HBW **12 月 1 日至 4 月 1 日完全停業**：沒有員工在場、不接收
 | 防雪壓 | 配骨架支撐可以 | 當然可以 |
 | 防漆面氧化 | 收縮膜下溫差大，但日曬最少 | 最好 |
 | 防鼠 | 室外鼠害低於無遮蔽 | 視設施而定 |
-| 價格 | 較低 | 高 30-100% |
+| 價格 | 較低 | 通常較高，視設施而定 |
 | HBW 提供嗎 | **是（室外專業收縮膜、室外無遮蓋或僅收縮膜）** | **否：不提供室內或加熱存放** |
 
 HBW 不提供室內或加熱存放。
