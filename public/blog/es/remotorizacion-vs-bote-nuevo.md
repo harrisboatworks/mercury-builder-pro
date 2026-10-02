@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/es/remotorizacion-vs-bote-nuevo.md
-last_updated: 2026-06-19
+last_updated: 2026-10-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Remotorización vs bote nuevo: ¿Cuál es la mejor inversión?"
 description: "Análisis completo: remotorización (repower) con motor Mercury nuevo vs comprar un bote nuevo."
 category: "Remotorización"
 date_published: 2026-04-12
-date_modified: 2026-06-19
+date_modified: 2026-10-02
 keywords: ["remotorización vs bote nuevo","repower Mercury Ontario","cambiar motor bote","costo remotorización Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,13 +25,13 @@ revenue_driver: repower
 
 **Category:** Remotorización  
 **Published:** 2026-04-12  
-**Última revisión:** 2026-06-19  
+**Última revisión:** 2026-10-02  
 **Read time:** 12 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/es/remotorizacion-vs-bote-nuevo
 
 ### Respuesta rápida
 
-Si su casco está en buen estado y el problema es el motor, remotorizar. Un bote nuevo con motor puede costar entre $40,000 y $100,000 CAD o más; una remotorización cuesta una fracción de eso. Si el casco está dañado, o si necesita un tipo de embarcación completamente distinto, comprar un bote nuevo tiene sentido. Para ver exactamente cuánto costaría remotorizar su embarcación, visite mercuryrepower.ca.
+Si su casco está en buen estado y el problema es el motor, remotorizar. El precio de un bote nuevo con motor depende del tamaño, la categoría y el equipo, y normalmente es mayor que el costo de reemplazar solo el motor. Si el casco está dañado, o si necesita un tipo de embarcación completamente distinto, comprar un bote nuevo tiene sentido. Para ver una estimación detallada de su remotorización, visite [mercuryrepower.ca](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ---
 
@@ -53,9 +53,11 @@ Harris Boat Works es una marina familiar de tercera generación en Gores Landing
 
 ### 1. El costo: la diferencia es real
 
-Un bote nuevo con motor puede costar entre $40,000 y $100,000 CAD o más, según el tamaño y la categoría. Una remotorización le permite reemplazar únicamente el motor por una fracción de ese presupuesto.
+El precio de un bote nuevo con motor depende del tamaño, la categoría y el equipo, y normalmente es mayor que el costo de reemplazar solo el motor. Para comparar con números reales, consulte el [inventario actual de botes nuevos](https://www.harrisboatworks.ca) y una cotización de remotorización.
 
-En mercuryrepower.ca puede configurar su remotorización en línea y ver los precios en tiempo real, no hay "llame para cotizar." Usted ingresa el tipo de embarcación, elige la potencia, y ve cuánto cuesta. En dólares canadienses, sin sorpresas.
+En [mercuryrepower.ca](https://www.mercuryrepower.ca/quote/motor-selection) puede configurar su remotorización en línea y ver los precios en tiempo real, no hay "llame para cotizar." Usted ingresa el tipo de embarcación, elige la potencia, y ve una estimación detallada en dólares canadienses.
+
+Los precios publicados de los motores son en dólares canadienses, antes del HST, sin controles, hélice ni instalación. El configurador suma esos elementos, y la cotización final por escrito confirma el precio y el alcance del trabajo. Los motores se entregan e instalan únicamente en Harris Boat Works, en Gores Landing: no enviamos motores.
 
 ### 2. Su casco tiene valor
 
@@ -101,10 +103,10 @@ Edad, desgaste acumulado y mantenimiento diferido hacen que, en algún punto, un
 Haga revisar la estructura por un técnico con experiencia antes de decidir. En Harris Boat Works, evaluamos el casco antes de recomendar cualquier cosa. Si la remotorización no es la decisión correcta, se lo decimos, incluso si eso significa perder una venta.
 
 **Paso 2: Obtenga un precio real de remotorización.**
-Vaya a mercuryrepower.ca. En unos minutos tiene un precio en dólares canadienses, con todas las opciones desglosadas y sin compromisos.
+Vaya a [mercuryrepower.ca](https://www.mercuryrepower.ca/quote/motor-selection). En unos minutos tiene una estimación en dólares canadienses, antes del HST, con todas las opciones desglosadas y sin compromisos.
 
 **Paso 3: Compare con el costo de un bote nuevo equivalente.**
-Consulte el inventario en harrisboatworks.ca para ver los botes nuevos disponibles. Compare ambos caminos con números reales.
+Consulte el inventario en [harrisboatworks.ca](https://www.harrisboatworks.ca) para ver los botes nuevos disponibles. Compare ambos caminos con números reales.
 
 **Paso 4: Pregúntese honestamente si le gusta su embarcación actual.**
 Si la respuesta es sí, y el casco está en buen estado, remotorizar probablemente es la decisión correcta. Si la respuesta es no, si el formato ya no le conviene, si necesita más espacio, si quiere algo diferente, entonces puede ser el momento de cambiar.
@@ -127,11 +129,11 @@ Si la respuesta es sí, y el casco está en buen estado, remotorizar probablemen
 
 ## Contáctenos
 
-**Precio de remotorización en línea:** mercuryrepower.ca, configure su proyecto y vea el costo real en minutos.
+**Precio de remotorización en línea:** [mercuryrepower.ca](https://www.mercuryrepower.ca/quote/motor-selection), configure su proyecto y vea una estimación detallada en minutos.
 
-**Botes nuevos:** harrisboatworks.ca, inventario Legend Boats.
+**Botes nuevos:** [harrisboatworks.ca](https://www.harrisboatworks.ca), inventario Legend Boats.
 
-**Solicitud de servicio:** hbw.wiki/service, puede enviarnos su consulta (le responderemos en inglés).
+**Solicitud de servicio:** [hbw.wiki/service](https://hbw.wiki/service), puede enviarnos su consulta (le responderemos en inglés).
 
 **Por teléfono:** 905-342-2153
 

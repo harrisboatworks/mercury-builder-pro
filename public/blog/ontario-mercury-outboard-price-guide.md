@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/ontario-mercury-outboard-price-guide.md
-last_updated: 2026-09-25
+last_updated: 2026-10-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Outboard Prices Ontario (2026): CAD Guide"
 description: "Real Mercury outboard prices in Ontario for 2026: CAD pricing by HP tier, model code decoder, what's included vs not. Ontario Premier dealer's price guide."
 category: "Mercury Outboards"
 date_published: 2026-05-08
-date_modified: 2026-09-25
+date_modified: 2026-10-02
 keywords: ["mercury outboard prices","ontario","cad pricing","repower","buying guide"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Mercury Outboards  
 **Published:** 2026-05-08  
-**Last reviewed:** 2026-09-25  
+**Last reviewed:** 2026-10-02  
 **Read time:** ~14 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ontario-mercury-outboard-price-guide
 
@@ -96,7 +96,7 @@ A plain 9.9 MH (manual start, tiller, no trim) sits at the bottom of the lineup.
 
 ## Current Mercury outboard prices by HP class
 
-The full current Mercury outboard lineup we sell, grouped by HP class. The pricing tables on the live page are generated from the same data the rest of mercuryrepower.ca uses, so prices stay in sync site-wide. Tables not duplicated here, see the live page or the configurator for the full motor-by-motor pricing list. Below is the narrative context that goes with it.
+The full current Mercury outboard lineup we sell, grouped by HP class. Our published prices come from the same data the rest of mercuryrepower.ca uses, so they stay in sync site-wide. For the full motor-by-motor price list, see the [pricing reference](/pricing-reference) or build a quote in the [configurator](/quote/motor-selection).
 
 ### What changes the price within a class
 

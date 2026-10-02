@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dts-vs-mechanical-controls-ontario-repower.md
-last_updated: 2026-09-25
+last_updated: 2026-10-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury DTS vs Mechanical Ontario"
 description: "Mercury DTS vs mechanical controls: how digital throttle and shift feels on the water, what it costs and which boats qualify - from Harris Boat Works."
 category: "Buying Guides"
 date_published: 2026-05-17
-date_modified: 2026-09-25
+date_modified: 2026-10-02
 keywords: ["mercury dts vs mechanical controls ontario repower","mercury dts vs mechanical controls ontario repower ontario","harris boat works","mercury outboard","rice lake"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guides  
 **Published:** 2026-05-17  
-**Last reviewed:** 2026-09-25  
+**Last reviewed:** 2026-10-02  
 **Read time:** 7 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dts-vs-mechanical-controls-ontario-repower
 
@@ -37,7 +37,7 @@ revenue_driver: repower
 
 Mercury Digital Throttle & Shift (DTS) replaces the old mechanical cable-and-lever system with an electronic control head that sends digital signals to the motor. DTS feels smoother and looks cleaner at the helm. Whether a motor uses DTS or mechanical controls depends on the exact model and configuration, not horsepower alone: our current Mercury price list carries Pro XS models from 200 to 300 HP in both mechanical and DTS versions, while Verado is DTS in the current generation. Mechanical controls still work fine on most Mercury FourStroke outboards from 9.9 HP up to about 150 HP. For an Ontario boater repowering a small-to-mid-size fishing boat or pontoon with a Mercury 25-115 HP, mechanical is usually the smarter buy. We install both at Harris Boat Works, and the right call depends on the exact motor, confirmed by model and serial, and what the helm looks like today.
 
-_Prices here are planning figures as of September 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are planning figures as of October 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 ## What you're actually choosing between
 
@@ -121,7 +121,7 @@ Customers we steer toward DTS: V8 and V10 repowers, premium pontoon packages wit
 
 We've been a Mercury dealer since 1965, and we install both systems regularly. When a customer comes in for a repower, the first thing we check is the motor model they're putting on, because that often makes the choice for them. The second thing we check is the existing helm: if the boat already has mechanical and the cables are in good shape, keeping mechanical is the cheap, clean answer. If the cables are tired or the helm wiring is a mess, DTS sometimes makes more sense even on a smaller motor because we're rebuilding the helm anyway.
 
-## Sources
+---
 
 - [Mercury Marine Digital Throttle & Shift (DTS) guidance](https://www.mercurymarine.com/ca/en/smartcraft/vessel-control/digital-controls)
 - Mercury Marine outboard rigging guide (dealer technical reference, 2026)
@@ -163,8 +163,8 @@ Marginal in theory, irrelevant in practice. DTS allows slightly more precise thr
 - [Boat Repower in the Kawarthas: Complete Guide](/blog/complete-guide-boat-repower-kawarthas), the full Kawarthas repower playbook
 - [Ontario Cottage Boat Motor Repower Guide (2026)](/blog/ontario-cottage-boat-motor-repower-guide), cottage-specific repower considerations
 - [Is Your Boat Hull Worth Repowering? A Structural Checklist](/blog/boat-hull-replacement-vs-repower-decision), is this hull structurally worth repowering?
+- [The 4-Point Aluminum Transom Check Before You Repower](/blog/aluminum-boat-transom-inspection-guide), the four transom checks to run before you repower
 - [Winter Repower Planning: Get Ready for Spring](/blog/winter-repower-planning-guide), why winter is the smart time to plan
-- [Pleasure Craft Licence Update During Repower (Ontario 2026)](/blog/pleasure-craft-licence-update-repower-ontario), updating your PCL after a repower
 
 ## Next steps
 

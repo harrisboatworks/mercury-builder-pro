@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/new-mercury-outboard-first-season-guide-ontario.md
-last_updated: 2026-09-06
+last_updated: 2026-10-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Your New Mercury Outboard's First Season: What to Expect From PDI to Fir
 description: "New Mercury outboard? What the dealer PDI covers, how break-in really works, when the first oil change is due, and what's normal in season one."
 category: "Maintenance"
 date_published: 2026-07-27
-date_modified: 2026-09-06
+date_modified: 2026-10-02
 keywords: ["new Mercury outboard first season","Mercury outboard PDI","Mercury break-in Ontario","Mercury first oil change","SmartCraft Connect app","Mercury alarm codes"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Category:** Maintenance  
 **Published:** 2026-07-27  
-**Last reviewed:** 2026-09-06  
+**Last reviewed:** 2026-10-02  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/new-mercury-outboard-first-season-guide-ontario
 
@@ -104,7 +104,7 @@ Even smart boaters can make a few unforced errors. Here are the ones we see most
 
 **Running hard on day one.** Following break-in means holding off on the wide-open throttle sprints until the manual says so. Rushing this does not create hidden performance; it just skips a step that protects the engine's long-term health.
 
-**Skipping fall winterization.** In Ontario, a first-season owner might think they'll be back on the water in a few weeks. When January hits and the boat hasn't been fogged or drained, that's a big bill. HBW closes December 1 and reopens April 1. Winterize before the first deep freeze.
+**Skipping fall winterization.** In Ontario, a first-season owner might think they'll be back on the water in a few weeks. When January hits and the boat hasn't been fogged or drained, that's a big bill. HBW is closed from December 1 through April 1 and reopens in early April, so confirm the current season's opening date before you plan spring work. Winterize before the first deep freeze.
 
 ## Normal vs. Not Normal: Key Things to Watch For
 
@@ -130,7 +130,7 @@ Running a new outboard around here comes with a few realities that first-time bo
 
 **Sandbars and prop dings.** The Kawarthas are full of surprises below the surface. A small prop ding on a new stainless or aluminum prop isn't the end of the world, but it should be looked at. A bent blade can cause vibration that stresses the gearcase. Get into the habit of trimming up in shallow water and checking the prop visually before you trailer home. If you tag something hard, book a service check to make sure the prop shaft didn't get tweaked.
 
-**Seasonal reality: fall sneaks up.** The Rice Lake boating season doesn't last all year. By late October, the nights get cold. If you're not winterized, a freeze can crack a block or housing. Many first-season owners assume they'll get one more weekend and end up calling us in a panic. We close December 1 and reopen April 1. Plan the winterization appointment while the weather is still pleasant.
+**Seasonal reality: fall sneaks up.** The Rice Lake boating season doesn't last all year. By late October, the nights get cold. If you're not winterized, a freeze can crack a block or housing. Many first-season owners assume they'll get one more weekend and end up calling us in a panic. We are closed from December 1 through April 1 and reopen in early April. Call or text to confirm the exact opening date each spring. Plan the winterization appointment while the weather is still pleasant.
 
 ## Sources
 
@@ -175,9 +175,9 @@ A good PDI and careful break-in make an extra inspection unnecessary, but if you
 
 - [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule), the model-specific Mercury service schedule
 - [Mercury Outboard Oil Capacity Chart: Model and Year Lookup](/blog/mercury-outboard-oil-capacity-chart)
+- [Why Mercury FourStrokes Make Oil (and What Actually Fixes It)](/blog/mercury-fourstroke-making-oil-guide), why oil levels rise after trolling and how to fix it
 - [Mercury Outboard Maintenance Parts List: Filters, Plugs, Kits and Part Numbers (2.5 to 600 HP)](/blog/mercury-outboard-maintenance-parts-list), the full Mercury maintenance parts and part-number list
 - [The Five-Minute Boat-Trailer Check Before Every Trip](/blog/boat-trailer-maintenance-guide-ontario), boat trailer maintenance guide
-- [Boat Trailering Mistakes to Avoid, Ontario](/blog/boat-trailering-mistakes-ontario), common trailering mistakes
 
 ## Next steps
 
