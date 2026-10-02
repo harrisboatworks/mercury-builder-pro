@@ -12,6 +12,9 @@ import { lazy, type ComponentType } from 'react';
  *     force a one-time hard reload to fetch the fresh index.html (which
  *     references the new chunk hashes). A sessionStorage flag prevents
  *     reload loops if the failure isn't actually a stale-deploy issue.
+ *     Reload only after that flag is stored and read back as "1". If
+ *     storage throws or does not keep the flag, surface the original
+ *     error instead of reloading.
  */
 export function lazyWithRetry<T extends ComponentType<any>>(
   factory: () => Promise<{ default: T }>,
@@ -55,14 +58,24 @@ export function lazyWithRetry<T extends ComponentType<any>>(
     } catch {}
 
     if (looksLikeChunkError && !alreadyReloaded && typeof window !== 'undefined') {
-      console.warn(`[lazyWithRetry] "${key}" looks like stale chunk — hard reloading once.`);
+      // A later page instance can honor the one-reload guard only if this
+      // write is still readable. Storage that throws or drops the flag must
+      // not reload.
+      let reloadGuardPersisted = false;
       try {
         sessionStorage.setItem(RELOAD_FLAG, '1');
-      } catch {}
-      window.location.reload();
-      // Return a never-resolving promise so Suspense keeps showing the route
-      // loader during the reload, instead of bubbling to the NotFound route.
-      return new Promise<{ default: T }>(() => {});
+        reloadGuardPersisted = sessionStorage.getItem(RELOAD_FLAG) === '1';
+      } catch {
+        reloadGuardPersisted = false;
+      }
+
+      if (reloadGuardPersisted) {
+        console.warn(`[lazyWithRetry] "${key}" looks like stale chunk — hard reloading once.`);
+        window.location.reload();
+        // Return a never-resolving promise so Suspense keeps showing the route
+        // loader during the reload, instead of bubbling to the NotFound route.
+        return new Promise<{ default: T }>(() => {});
+      }
     }
 
     console.error(`[lazyWithRetry] FATAL "${key}":`, lastError);
