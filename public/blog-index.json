@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "sourceVersion": "6e9cc8e83bc22ce327eb",
+  "sourceVersion": "26e60ff11fd9e39f5de1",
   "count": 183,
   "articles": [
     {
@@ -2640,11 +2640,11 @@
       "faqs": [
         {
           "q": "Why don't most marine dealers list prices online?",
-          "a": "Three real reasons: information asymmetry is profitable for them, phone calls capture leads more reliably than web visits, and industry inertia. The reasons they say out loud (manufacturer requirements, prices change too fast, configuration is too complex) are mostly excuses."
+          "a": "Three real reasons: information asymmetry is profitable for them, phone calls capture leads more reliably than web visits, and industry inertia. The reasons they say out loud, like prices changing or configuration being complex, are only partly true. A dated, itemized written number answers both."
         },
         {
           "q": "Does Mercury Marine require dealers to hide prices?",
-          "a": "No. Mercury sets MSRP and dealers can publish, sell at, above, or below it. Any dealer claiming Mercury prohibits price publication is misinformed or being dishonest."
+          "a": "HBW publishes its Mercury motor prices online. If a dealer says a manufacturer rule stops them from publishing, ask them to show you that requirement in writing."
         },
         {
           "q": "Do Mercury prices actually change frequently?",
@@ -3622,7 +3622,7 @@
         },
         {
           "q": "Why do pontoons need more HP than runabouts?",
-          "a": "A typical pontoon sits 816 to 1,588 kg (1,800 to 3,500 lbs) dry before people, gear, and fuel. On a hypothetical 22-footer actually rated for 10 adults, that passenger load plus a full cooler can easily clear 2,268 kg (5,000 lb). Length alone does not set legal capacity. Pontoon tubes also create more drag than a V-hu…"
+          "a": "Pontoon dry weight varies widely by length, tube count, and build, so check the builder's published dry weight for the exact boat before adding people, gear, and fuel. On a hypothetical 22-footer actually rated for 10 adults, that passenger load plus a full cooler can easily clear 2,268 kg (5,000 lb). Length alone doe…"
         },
         {
           "q": "When does Command Thrust matter on a pontoon?",
