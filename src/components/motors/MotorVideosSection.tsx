@@ -59,43 +59,51 @@ export default function MotorVideosSection({ motorId, motorFamily }: MotorVideos
   const [playingVideo, setPlayingVideo] = useState<VideoItem | null>(null);
 
   useEffect(() => {
+    // Skip state and log updates from this run after motorId or motorFamily
+    // changes. The Supabase query already in flight is not aborted.
+    let ignoreStale = false;
+
+    const loadVideos = async () => {
+      try {
+        setLoading(true);
+
+        // Query for motor-specific videos and family-wide videos
+        const { data, error } = await supabase
+          .from('motor_media')
+          .select('id, media_type, media_category, media_url, title, description')
+          .or(`motor_id.eq.${motorId},and(motor_id.is.null,assignment_type.eq.family)`)
+          .in('media_type', ['video', 'url'])
+          .eq('is_active', true)
+          .order('media_category')
+          .order('title');
+
+        if (ignoreStale) return;
+        if (error) throw error;
+
+        // Filter for video-related URLs (YouTube, Vimeo, etc.)
+        const videoData = (data || []).filter(item => {
+          if (item.media_type === 'video') return true;
+          if (item.media_type === 'url') {
+            const url = item.media_url.toLowerCase();
+            return url.includes('youtube.') || url.includes('youtu.be') ||
+                   url.includes('vimeo.') || url.includes('video');
+          }
+          return false;
+        });
+
+        if (!ignoreStale) setVideos(videoData);
+      } catch (error) {
+        if (!ignoreStale) console.error('Error loading videos:', error);
+      } finally {
+        if (!ignoreStale) setLoading(false);
+      }
+    };
+
     loadVideos();
+    return () => {
+      ignoreStale = true;
+    };
   }, [motorId, motorFamily]);
-
-  const loadVideos = async () => {
-    try {
-      setLoading(true);
-      
-      // Query for motor-specific videos and family-wide videos
-      const { data, error } = await supabase
-        .from('motor_media')
-        .select('id, media_type, media_category, media_url, title, description')
-        .or(`motor_id.eq.${motorId},and(motor_id.is.null,assignment_type.eq.family)`)
-        .in('media_type', ['video', 'url'])
-        .eq('is_active', true)
-        .order('media_category')
-        .order('title');
-
-      if (error) throw error;
-      
-      // Filter for video-related URLs (YouTube, Vimeo, etc.)
-      const videoData = (data || []).filter(item => {
-        if (item.media_type === 'video') return true;
-        if (item.media_type === 'url') {
-          const url = item.media_url.toLowerCase();
-          return url.includes('youtube.') || url.includes('youtu.be') || 
-                 url.includes('vimeo.') || url.includes('video');
-        }
-        return false;
-      });
-      
-      setVideos(videoData);
-    } catch (error) {
-      console.error('Error loading videos:', error);
-    } finally {
-      setLoading(false);
-    }
-  };
 
   const handlePlayVideo = (video: VideoItem) => {
     const youtubeId = extractYouTubeId(video.media_url);

@@ -157,4 +157,34 @@ describe('GlobalCtaTracker customer handoffs', () => {
       entry_cta: 'untagged_contact_link',
     });
   });
+  it.each([
+    ['phone_click', 'tel:+19053422153'],
+    ['sms_click', 'sms:+12897693111'],
+  ])('counts a quote-summary %s once while preserving first-party activity', (eventName, href) => {
+    const recordActivity = vi.fn();
+    window.history.replaceState({}, '', '/quote/summary');
+    render(
+      <>
+        <GlobalCtaTracker />
+        <a
+          href={href}
+          data-cta-location="quote_summary"
+          onClick={(event) => {
+            event.preventDefault();
+            event.stopPropagation();
+            recordActivity(eventName);
+          }}
+        >
+          <span>Contact about quote</span>
+        </a>
+      </>,
+    );
+    fireEvent.click(screen.getByText('Contact about quote'));
+    expect(analytics.trackEvent).toHaveBeenCalledTimes(1);
+    expect(analytics.trackEvent).toHaveBeenCalledWith(eventName, expect.objectContaining({
+      entry_page: '/quote/summary', entry_cta: 'quote_summary',
+    }));
+    expect(recordActivity).toHaveBeenCalledExactlyOnceWith(eventName);
+  });
+
 });
