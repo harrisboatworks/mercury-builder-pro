@@ -35762,7 +35762,7 @@ Running a new outboard around here comes with a few realities that first-time bo
 
 **Seasonal reality: fall sneaks up.** The Rice Lake boating season doesn't last all year. By late October, the nights get cold. If you're not winterized, a freeze can crack a block or housing. Many first-season owners assume they'll get one more weekend and end up calling us in a panic. We are closed from December 1 through April 1 and reopen in early April. Call or text to confirm the exact opening date each spring. Plan the winterization appointment while the weather is still pleasant.
 
-## Sources
+---
 
 - [Mercury Marine maintenance and service guidance](https://www.mercurymarine.com/ca/en/service-and-support/owners-resources/maintenance-made-easy)
 - [Mercury Marine owner resources and serial-specific manual lookup](https://www.mercurymarine.com/ca/en/service-and-support/owners-resources)
