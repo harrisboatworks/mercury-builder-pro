@@ -3,17 +3,40 @@
  * Synthetic factories, storage, and reload only. Fake timers. No network.
  */
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
+import { readFileSync } from 'node:fs';
 import {
   BROAD_FETCH_MESSAGE,
   CHUNK_MESSAGE,
   ORDINARY_MESSAGE,
   RELOAD_KEY,
-  installReloadSimulation,
   installSessionStorage,
   loaderFor,
   moduleSentinel,
   type StorageMode,
 } from './stale-chunk-recovery-harness';
+import { retargetHarnessReload } from './stale-chunk-recovery-harness-plugin';
+
+/**
+ * jsdom unit-test double for the real helper's window.location.reload() call.
+ * Vitest's jsdom exposes a configurable window.location. The browser harness
+ * does not use this; Chromium's location is non-configurable.
+ */
+function installReloadSimulation() {
+  let calls = 0;
+  const reload = () => {
+    calls += 1;
+  };
+  const href = window.location.href;
+  Object.defineProperty(window, 'location', {
+    configurable: true,
+    value: { href, reload },
+  });
+  return {
+    get calls() {
+      return calls;
+    },
+  };
+}
 
 type LoaderOutcome =
   | { status: 'fulfilled'; value: { default: unknown } }
@@ -54,6 +77,18 @@ async function settleLoader(loader: () => Promise<{ default: unknown }>): Promis
 }
 
 describe('lazyWithRetry stale-chunk recovery', () => {
+  it('retargets the helper reload call for the dev-only browser harness', () => {
+    const source = readFileSync('src/lib/lazyWithRetry.ts', 'utf8');
+    const transformed = retargetHarnessReload(source);
+
+    expect(transformed).toContain('globalThis.__hbwStaleChunkReloadSimulation()');
+    expect(transformed).not.toContain('window.location.reload()');
+    expect(transformed).toContain("sessionStorage.getItem(RELOAD_FLAG) === '1'");
+    expect(() => retargetHarnessReload(source.replace('window.location.reload()', '/* removed */'))).toThrow(
+      /expected one window\.location\.reload\(\) call, found 0/,
+    );
+  });
+
   beforeEach(() => {
     vi.useFakeTimers();
     vi.spyOn(console, 'warn').mockImplementation(() => {});

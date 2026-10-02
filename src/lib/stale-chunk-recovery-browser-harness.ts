@@ -1,17 +1,23 @@
 /**
  * In-browser driver for the offline stale-chunk harness.
- * Reload is simulated: location.reload is counted and does not navigate.
- * The second lazyWithRetry() call is another instance in this same document.
- * That is not proof of a second document load.
+ * A dev-only Vite transform retargets the helper's reload call to a counter.
+ * window.location is not replaced. This is a synthetic two-instance simulation
+ * in the current document, not a real second-document reload.
  */
 import {
   CHUNK_MESSAGE,
+  HARNESS_KEY,
   RELOAD_KEY,
-  installReloadSimulation,
   installSessionStorage,
-  loaderFor,
+  readLoader,
   type StorageMode,
 } from './stale-chunk-recovery-harness';
+import { lazyWithRetry as harnessLazyWithRetry } from 'virtual:stale-chunk-harness-helper';
+import { HARNESS_RELOAD_SIMULATION } from './stale-chunk-recovery-harness-plugin';
+
+type SimulationHost = typeof globalThis & {
+  [HARNESS_RELOAD_SIMULATION]?: () => void;
+};
 
 type InstanceStatus = 'fulfilled' | 'rejected' | 'pending';
 
@@ -31,6 +37,41 @@ interface ProbeResult {
 }
 
 const BACKOFF_BUDGET_MS = 2500;
+const SIMULATION_NOTE =
+  'Synthetic two-instance simulation. A dev-only transform retargets the helper reload call to a counter. window.location was not replaced, and this is not a second-document reload.';
+
+function assertHarnessTransform() {
+  const source = harnessLazyWithRetry.toString();
+  if (
+    source.includes('window.location.reload') ||
+    !source.includes(`globalThis.${HARNESS_RELOAD_SIMULATION}()`)
+  ) {
+    throw new Error(
+      'Dev-only harness transform did not retarget window.location.reload(). Refusing to run so this page cannot navigate.',
+    );
+  }
+}
+
+function installReloadCounter() {
+  assertHarnessTransform();
+  let calls = 0;
+  const host = globalThis as SimulationHost;
+  host[HARNESS_RELOAD_SIMULATION] = () => {
+    calls += 1;
+  };
+  return {
+    get calls() {
+      return calls;
+    },
+    restore() {
+      delete host[HARNESS_RELOAD_SIMULATION];
+    },
+  };
+}
+
+function loaderFor(factory: () => Promise<{ default: import('react').ComponentType }>) {
+  return readLoader(harnessLazyWithRetry(factory, HARNESS_KEY));
+}
 
 function text(id: string, value: string) {
   const node = document.getElementById(id);
@@ -87,7 +128,7 @@ function flagReadback(): string {
 
 export async function runRecoveryProbe(mode: StorageMode): Promise<ProbeResult> {
   installSessionStorage(mode);
-  const reload = installReloadSimulation();
+  const reload = installReloadCounter();
   try {
     const first = await runInstance(() => reload.calls);
     const second = await runInstance(() => reload.calls);
@@ -97,7 +138,7 @@ export async function runRecoveryProbe(mode: StorageMode): Promise<ProbeResult> 
       second,
       reloadSimulations: reload.calls,
       flagReadback: flagReadback(),
-      note: 'Reload simulation only. The second instance is a new lazyWithRetry() call in this document, not a second document.',
+      note: SIMULATION_NOTE,
     };
   } finally {
     reload.restore();
@@ -125,7 +166,7 @@ async function onMode(mode: StorageMode, button: HTMLButtonElement) {
   text('result-reloads', '…');
   text('result-flag', '…');
   text('result-same-error', '…');
-  text('result-note', 'Reload is intercepted. This click does not navigate.');
+  text('result-note', 'Synthetic two-instance simulation. This click does not navigate.');
   try {
     render(await runRecoveryProbe(mode));
   } catch (err) {
