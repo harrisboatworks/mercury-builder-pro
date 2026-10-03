@@ -181,7 +181,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   {
     "slug": "mercury-outboard-reliability-2026",
     "title": "Is Mercury Still Reliable in 2026? A Dealer's Honest Answer",
-    "description": "Is Mercury still reliable in 2026? An Ontario Mercury Premier Dealer's honest shop answer: what actually fails, what the maintenance record shows, and how long a well-maintained outboard really lasts.",
+    "description": "Is Mercury reliable in 2026? An Ontario Mercury Premier Dealer's shop answer: what fails, what the maintenance record shows, and how long a maintained outboard lasts.",
     "category": "Mercury Outboards",
     "publishDate": "2026-07-13",
     "keywords": [
@@ -436,7 +436,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   {
     "slug": "rice-lake-boat-rental-guide-2026",
     "title": "Rice Lake Boat Rentals: Fleet, Costs, and How It Works (2026)",
-    "description": "Rice Lake boat rentals from Harris Boat Works in Gores Landing. The current pontoon and fishing-boat lineup, what's included, fuel planning, licence rules, and online booking.",
+    "description": "Rice Lake boat rentals from Harris Boat Works in Gores Landing. The pontoon and fishing-boat lineup, what's included, fuel planning, licence rules, and online booking.",
     "category": "Boating Lifestyle",
     "publishDate": "2026-07-02",
     "keywords": [
@@ -1254,7 +1254,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   {
     "slug": "mercury-outboard-fuel-efficiency-guide",
     "title": "Mercury Fuel Burn by HP: 5 Ways to Cut Gas Costs (2026)",
-    "description": "Real Mercury fuel burn by HP class and the five levers we adjust first at the shop. The right prop depends on hull, load, and the engine's specified WOT range, confirmed on a measured trial.",
+    "description": "Mercury fuel burn by HP class and five levers we adjust first. The right prop depends on hull, load, and the engine's specified WOT range, confirmed on a measured trial.",
     "category": "Tips",
     "publishDate": "2026-03-16",
     "keywords": [
@@ -1350,7 +1350,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   {
     "slug": "tiller-vs-remote-steering-outboard-guide",
     "title": "Tiller vs Remote Steering Outboard: Which to Choose (2026)",
-    "description": "Choose tiller or remote from helm layout, how you handle the boat, and normal use. Kickers and solo transom fishing often stay tiller; console and family boats usually want remote.",
+    "description": "Choose tiller or remote from helm layout and how you handle the boat. Kickers and solo transom fishing often stay tiller; console and family boats usually want remote.",
     "category": "Buying Guide",
     "publishDate": "2026-04-06",
     "keywords": [
@@ -2111,7 +2111,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   {
     "slug": "pleasure-craft-licence-update-repower-ontario",
     "title": "Pleasure Craft Licence Update During Repower (Ontario 2026)",
-    "description": "How the Pleasure Craft Licence update works when you repower in Ontario: what Transport Canada requires, and how the owner submits it with motor specs from the HBW invoice.",
+    "description": "How the Pleasure Craft Licence update works when you repower in Ontario: what Transport Canada requires, and how owners submit it with motor specs from the HBW invoice.",
     "category": "Canadian Boating Regulations",
     "publishDate": "2026-04-15",
     "keywords": [
@@ -2608,7 +2608,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   {
     "slug": "mercury-boost-upgrade-150hp-pontoon-analysis",
     "title": "Mercury Boost and 150 HP Pontoons: Check Eligibility First",
-    "description": "Most standard Mercury 150 FourStroke pontoon motors are not on the published Boost retrofit list. Check the engine family and serial number before comparing performance or cost.",
+    "description": "Most standard Mercury 150 FourStroke pontoon motors are not on the published Boost list. Check the engine family and serial number before comparing performance or cost.",
     "category": "Performance",
     "publishDate": "2026-04-30",
     "keywords": [
@@ -5710,7 +5710,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   {
     "slug": "bilge-pump-troubleshooting-guide",
     "title": "The Complete Guide to Boat Bilge Pumps: How They Work, Why They Fail, and How to Fix Them",
-    "description": "The complete guide to boat bilge pumps: how the pump, float switch, and wiring work together, why they really fail, how to size and test one, and when professional service is needed.",
+    "description": "The complete guide to boat bilge pumps: how the pump, float switch, and wiring work together, why they fail, how to size and test one, and when service is needed.",
     "category": "Service & Troubleshooting",
     "publishDate": "2026-07-03",
     "keywords": [

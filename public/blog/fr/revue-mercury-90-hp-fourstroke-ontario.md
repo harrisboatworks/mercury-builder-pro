@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/revue-mercury-90-hp-fourstroke-ontario.md
-last_updated: 2026-09-06
+last_updated: 2026-10-03
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -8,10 +8,10 @@ final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
 title: "Revue du Mercury 90 HP FourStroke : le point d'équilibre de la gamme moyenne Mercury"
-description: "Un guide d'achat honnête en Ontario pour le Mercury 90 HP FourStroke. Ce que le bloc 2,1 L fait bien, où il est le mauvais choix, et comment il s'intègre aux bateaux..."
+description: "Guide d'achat pour le Mercury 90 HP FourStroke. Ce que le bloc 2,1 L fait bien, où il est le mauvais choix, comment il s'intègre aux bateaux et pontons du lac Rice."
 category: "Avis produit"
 date_published: 2026-05-13
-date_modified: 2026-09-06
+date_modified: 2026-10-03
 keywords: ["revue Mercury 90 HP","Mercury 90 HP FourStroke","Mercury 90 ELPT Ontario","Mercury 90 CT Command Thrust","90 HP ponton","90 HP bateau aluminium"]
 author: Harris Boat Works
 content_type: blog_article
@@ -21,11 +21,11 @@ revenue_driver: repower
 
 # Revue du Mercury 90 HP FourStroke : le point d'équilibre de la gamme moyenne Mercury
 
-> Un guide d'achat honnête en Ontario pour le Mercury 90 HP FourStroke. Ce que le bloc 2,1 L fait bien, où il est le mauvais choix, et comment il s'intègre aux bateaux...
+> Guide d'achat pour le Mercury 90 HP FourStroke. Ce que le bloc 2,1 L fait bien, où il est le mauvais choix, comment il s'intègre aux bateaux et pontons du lac Rice.
 
 **Catégorie :** Avis produit\
 **Publié le :** 2026-05-13\
-**Dernière révision :** 2026-09-06\
+**Dernière révision :** 2026-10-03\
 **Temps de lecture :** 9 min\
 **URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/revue-mercury-90-hp-fourstroke-ontario
 

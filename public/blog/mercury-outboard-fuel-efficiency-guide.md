@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-fuel-efficiency-guide.md
-last_updated: 2026-09-11
+last_updated: 2026-10-03
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -8,10 +8,10 @@ final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
 title: "Mercury Fuel Burn by HP: 5 Ways to Cut Gas Costs (2026)"
-description: "Real Mercury fuel burn by HP class and the five levers we adjust first at the shop. The right prop depends on hull, load, and the engine's specified WOT range..."
+description: "Mercury fuel burn by HP class and five levers we adjust first. The right prop depends on hull, load, and the engine's specified WOT range, confirmed on a measured trial."
 category: "Tips"
 date_published: 2026-03-16
-date_modified: 2026-09-11
+date_modified: 2026-10-03
 keywords: ["outboard fuel efficiency","mercury mpg","boat fuel economy","save fuel boating","outboard consumption"]
 author: Harris Boat Works
 content_type: blog_article
@@ -21,11 +21,11 @@ revenue_driver: repower
 
 # Mercury Fuel Burn by HP: 5 Ways to Cut Gas Costs (2026)
 
-> Real Mercury fuel burn by HP class and the five levers we adjust first at the shop. The right prop depends on hull, load, and the engine's specified WOT range...
+> Mercury fuel burn by HP class and five levers we adjust first. The right prop depends on hull, load, and the engine's specified WOT range, confirmed on a measured trial.
 
 **Category:** Tips  
 **Published:** 2026-03-16  
-**Last reviewed:** 2026-09-11  
+**Last reviewed:** 2026-10-03  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-fuel-efficiency-guide
 
