@@ -8,7 +8,7 @@ export function handleNotificationWebhook(
   request: Request,
   dependencies: {
     authToken: string | null | undefined;
-    supabaseUrl: string | null | undefined;
+    configuredWebhookUrl: string | null | undefined;
     onVerified: (rawBody: string) => Promise<Response>;
   },
 ): Promise<Response>;

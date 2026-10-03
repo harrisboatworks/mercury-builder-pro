@@ -58,16 +58,16 @@ describe('Twilio status ordering', () => {
 });
 
 describe('Twilio status callback URL', () => {
-  it('derives the public function URL from SUPABASE_URL plus sms_log_id', () => {
-    expect(buildSmsStatusCallbackUrl(`${SUPABASE_URL}/`, SMS_LOG_ID)).toBe(
+  it('derives the public function URL from TWILIO_WEBHOOK_URL plus sms_log_id', () => {
+    expect(buildSmsStatusCallbackUrl(`  ${WEBHOOK_URL}  `, SMS_LOG_ID)).toBe(
       `${WEBHOOK_URL}?sms_log_id=${SMS_LOG_ID}#rp=ct,rt,5xx&rc=2`,
     );
-    expect(buildSmsStatusCallbackUrl(SUPABASE_URL, 'not-a-uuid')).toBeNull();
+    expect(buildSmsStatusCallbackUrl(WEBHOOK_URL, 'not-a-uuid')).toBeNull();
     expect(buildSmsStatusCallbackUrl('', SMS_LOG_ID)).toBeNull();
   });
 
   it('keeps retry overrides outside the URL signed by Twilio', async () => {
-    const configuredUrl = new URL(buildSmsStatusCallbackUrl(SUPABASE_URL, SMS_LOG_ID)!);
+    const configuredUrl = new URL(buildSmsStatusCallbackUrl(WEBHOOK_URL, SMS_LOG_ID)!);
     expect(configuredUrl.hash).toBe('#rp=ct,rt,5xx&rc=2');
     configuredUrl.hash = '';
     const body = new URLSearchParams({
@@ -84,8 +84,8 @@ describe('Twilio status callback URL', () => {
     });
     await expect(gateTwilioStatusCallback(request, {
       authToken: AUTH_TOKEN,
-      supabaseUrl: SUPABASE_URL,
-    })).resolves.toEqual({ ok: true, rawBody: body });
+      configuredWebhookUrl: WEBHOOK_URL,
+    })).resolves.toEqual({ ok: true, rawBody: body, smsLogId: SMS_LOG_ID });
   });
 
   it('reads a single valid sms_log_id from the inbound request query', () => {
@@ -95,6 +95,9 @@ describe('Twilio status callback URL', () => {
     expect(parseSmsLogIdFromRequestUrl(WEBHOOK_URL)).toBeNull();
     expect(parseSmsLogIdFromRequestUrl(
       `${WEBHOOK_URL}?sms_log_id=${SMS_LOG_ID}&sms_log_id=${SMS_LOG_ID}`,
+    )).toBeNull();
+    expect(parseSmsLogIdFromRequestUrl(
+      `${WEBHOOK_URL}?sms_log_id=${SMS_LOG_ID}&next=https://evil.invalid`,
     )).toBeNull();
   });
 });
@@ -236,7 +239,7 @@ describe('send-sms records the outbound MessageSid', () => {
     vi.unstubAllGlobals();
   });
 
-  it('pre-inserts the outbox row, sets a SUPABASE_URL callback, and persists the SID', async () => {
+  it('pre-inserts the outbox row, sets a TWILIO_WEBHOOK_URL callback, and persists the SID', async () => {
     const fetchSpy = vi.fn(async (input: RequestInfo | URL, init?: RequestInit) => {
       const url = requestUrl(input);
       const method = ((typeof input === 'object' && input && 'method' in input && input.method)
@@ -297,6 +300,7 @@ describe('send-sms records the outbound MessageSid', () => {
             TWILIO_ACCOUNT_SID: 'ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
             TWILIO_AUTH_TOKEN: AUTH_TOKEN,
             TWILIO_FROM_NUMBER: '+15555550199',
+            TWILIO_WEBHOOK_URL: WEBHOOK_URL,
             ADMIN_PHONE: '+19053766208',
           }[name]),
         },
@@ -366,6 +370,7 @@ describe('notification-webhook persists verified callbacks by SID', () => {
       },
       'npm:zod@3.22.4': { z },
       '../_shared/notification-webhook-handler.ts': notificationWebhookHandler,
+      '../_shared/twilio-signature.ts': await import('../../../supabase/functions/_shared/twilio-signature.ts'),
       '../_shared/twilio-status.ts': await import('../../../supabase/functions/_shared/twilio-status.ts'),
       '../_shared/twilio-status-store.ts': await import('../../../supabase/functions/_shared/twilio-status-store.ts'),
     };
@@ -382,6 +387,7 @@ describe('notification-webhook persists verified callbacks by SID', () => {
             SUPABASE_URL,
             SUPABASE_SERVICE_ROLE_KEY: 'test-service-role',
             TWILIO_AUTH_TOKEN: AUTH_TOKEN,
+            TWILIO_WEBHOOK_URL: WEBHOOK_URL,
           }[name]),
         },
       },
@@ -454,7 +460,7 @@ describe('notification-webhook persists verified callbacks by SID', () => {
 });
 
 describe('Twilio delivery-status source contracts', () => {
-  it('keeps send-sms on SUPABASE_URL and records MessageSid after the provider call', () => {
+  it('keeps send-sms on TWILIO_WEBHOOK_URL and records MessageSid after the provider call', () => {
     const source = readFileSync('supabase/functions/send-sms/index.ts', 'utf8');
     expect(source.indexOf(".insert({\n        to_phone: formattedPhone")).toBeGreaterThan(-1);
     expect(source.indexOf(".insert({\n        to_phone: formattedPhone")).toBeLessThan(
@@ -463,7 +469,7 @@ describe('Twilio delivery-status source contracts', () => {
     expect(source.indexOf('api.twilio.com')).toBeLessThan(source.lastIndexOf('applyTwilioStatusToSmsLog'));
     expect(source).toContain('buildSmsStatusCallbackUrl');
     expect(source).toContain('isTwilioMessageSid');
-    expect(source).not.toContain('TWILIO_WEBHOOK_URL');
+    expect(source).toContain('TWILIO_WEBHOOK_URL');
     expect(source).not.toContain("headers.get('host')");
   });
 

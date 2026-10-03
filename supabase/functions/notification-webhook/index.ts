@@ -1,10 +1,10 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
-import { z } from "npm:zod@3.22.4";
 import {
   handleNotificationWebhook,
   notificationWebhookCorsHeaders,
 } from "../_shared/notification-webhook-handler.ts";
+import { readNotificationWebhookFields } from "../_shared/twilio-signature.ts";
 import {
   httpStatusForTwilioStatusApplyResult,
   isTwilioMessageSid,
@@ -15,53 +15,34 @@ import { applyTwilioStatusToSmsLog } from "../_shared/twilio-status-store.ts";
 
 const corsHeaders = notificationWebhookCorsHeaders;
 
-// Twilio webhook validation schema
-const twilioWebhookSchema = z.object({
-  MessageSid: z.string().min(1).max(100),
-  MessageStatus: z.string().min(1).max(50),
-  ErrorCode: z.string().max(20).optional(),
-  ErrorMessage: z.string().max(500).optional(),
-});
-
 serve(async (req) => {
   try {
     return await handleNotificationWebhook(req, {
       authToken: Deno.env.get('TWILIO_AUTH_TOKEN'),
-      supabaseUrl: Deno.env.get('SUPABASE_URL'),
+      configuredWebhookUrl: Deno.env.get('TWILIO_WEBHOOK_URL'),
+      // Invoked only after URL, body, and signature validation.
       onVerified: async (rawBody) => {
-        const supabaseClient = createClient(
-          Deno.env.get('SUPABASE_URL') ?? '',
-          Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? ''
-        )
-
-        // Parse Twilio webhook data
-        const params = new URLSearchParams(rawBody)
-        
-        // Extract and validate webhook data
-        const rawData = {
-          MessageSid: params.get('MessageSid') || undefined,
-          MessageStatus: params.get('MessageStatus') || undefined,
-          ErrorCode: params.get('ErrorCode') || undefined,
-          ErrorMessage: params.get('ErrorMessage') || undefined,
-        };
-
-        const validationResult = twilioWebhookSchema.safeParse(rawData);
-        if (!validationResult.success) {
-          console.log('[notification-webhook] Validation failed:', validationResult.error.errors);
+        const fields = readNotificationWebhookFields(rawBody);
+        if (!fields.ok) {
           return new Response(
-            JSON.stringify({ error: 'Invalid webhook data', details: validationResult.error.errors }),
-            { status: 400, headers: corsHeaders }
+            JSON.stringify({ error: fields.error }),
+            { status: fields.status, headers: corsHeaders }
           )
         }
 
-        const { MessageSid: messageSid, MessageStatus: messageStatus, ErrorCode: errorCode, ErrorMessage: errorMessage } = validationResult.data;
-
+        const { messageSid, messageStatus, errorCode, errorMessage } = fields;
         if (!isTwilioMessageSid(messageSid) || !isTwilioMessageStatus(messageStatus)) {
           return new Response(
             JSON.stringify({ error: 'Invalid webhook data' }),
             { status: 400, headers: corsHeaders }
           )
         }
+
+        // Service-role client is created only after URL/body/signature/SID/status validation.
+        const supabaseClient = createClient(
+          Deno.env.get('SUPABASE_URL') ?? '',
+          Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? ''
+        )
 
         console.log('Received Twilio webhook:', {
           messageSid,
@@ -74,8 +55,8 @@ serve(async (req) => {
           smsLogId: parseSmsLogIdFromRequestUrl(req.url),
           messageSid,
           messageStatus,
-          errorCode: errorCode ?? null,
-          errorMessage: errorMessage ?? null,
+          errorCode,
+          errorMessage,
         });
 
         const status = httpStatusForTwilioStatusApplyResult(result);
