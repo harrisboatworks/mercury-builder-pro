@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/tiller-vs-remote-steering-outboard-guide.md
-last_updated: 2026-09-11
+last_updated: 2026-10-03
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -8,10 +8,10 @@ final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
 title: "Tiller vs Remote Steering Outboard: Which to Choose (2026)"
-description: "Choose tiller or remote from helm layout, how you handle the boat, and normal use. Kickers and solo transom fishing often stay tiller; console and family boats..."
+description: "Choose tiller or remote from helm layout and how you handle the boat. Kickers and solo transom fishing often stay tiller; console and family boats usually want remote."
 category: "Buying Guide"
 date_published: 2026-04-06
-date_modified: 2026-09-11
+date_modified: 2026-10-03
 keywords: ["tiller vs remote outboard","tiller steering boat","outboard remote steering","boat steering options","mercury tiller motor"]
 author: Harris Boat Works
 content_type: blog_article
@@ -21,11 +21,11 @@ revenue_driver: repower
 
 # Tiller vs Remote Steering Outboard: Which to Choose (2026)
 
-> Choose tiller or remote from helm layout, how you handle the boat, and normal use. Kickers and solo transom fishing often stay tiller; console and family boats...
+> Choose tiller or remote from helm layout and how you handle the boat. Kickers and solo transom fishing often stay tiller; console and family boats usually want remote.
 
 **Category:** Buying Guide  
 **Published:** 2026-04-06  
-**Last reviewed:** 2026-09-11  
+**Last reviewed:** 2026-10-03  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/tiller-vs-remote-steering-outboard-guide
 

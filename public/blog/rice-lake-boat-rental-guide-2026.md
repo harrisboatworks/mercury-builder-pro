@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/rice-lake-boat-rental-guide-2026.md
-last_updated: 2026-09-07
+last_updated: 2026-10-03
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -8,10 +8,10 @@ final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
 title: "Rice Lake Boat Rentals: Fleet, Costs, and How It Works (2026)"
-description: "Rice Lake boat rentals from Harris Boat Works in Gores Landing. The current pontoon and fishing-boat lineup, what's included, fuel planning, licence rules, and online..."
+description: "Rice Lake boat rentals from Harris Boat Works in Gores Landing. The pontoon and fishing-boat lineup, what's included, fuel planning, licence rules, and online booking."
 category: "Boating Lifestyle"
 date_published: 2026-07-02
-date_modified: 2026-09-07
+date_modified: 2026-10-03
 keywords: ["rice lake boat rentals","pontoon rental rice lake","boat rental gores landing","fishing boat rental kawarthas","rent a boat rice lake ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -21,11 +21,11 @@ revenue_driver: rentals
 
 # Rice Lake Boat Rentals: Fleet, Costs, and How It Works (2026)
 
-> Rice Lake boat rentals from Harris Boat Works in Gores Landing. The current pontoon and fishing-boat lineup, what's included, fuel planning, licence rules, and online...
+> Rice Lake boat rentals from Harris Boat Works in Gores Landing. The pontoon and fishing-boat lineup, what's included, fuel planning, licence rules, and online booking.
 
 **Category:** Boating Lifestyle  
 **Published:** 2026-07-02  
-**Last reviewed:** 2026-09-07  
+**Last reviewed:** 2026-10-03  
 **Read time:** ~9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/rice-lake-boat-rental-guide-2026
 

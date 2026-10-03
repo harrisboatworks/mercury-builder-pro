@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/garantie-prolongee-mercury-platinum-ontario.md
-last_updated: 2026-09-12
+last_updated: 2026-10-03
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -8,10 +8,10 @@ final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
 title: "Mercury Product Protection Platinum : couverture et prix canadiens"
-description: "Mercury Product Protection Platinum est un contrat de service prolongé. Consultez les vrais prix canadiens par puissance et durée, les règles d'admissibilité et les..."
+description: "Mercury Product Protection Platinum est un contrat de service prolongé. Consultez les prix canadiens par puissance et durée, les règles d'admissibilité et les exclusions."
 category: "Garantie"
 date_published: 2026-05-13
-date_modified: 2026-09-12
+date_modified: 2026-10-03
 keywords: ["garantie prolongée Mercury","Mercury Product Protection","Mercury Platinum","garantie Mercury Ontario","prix protection Mercury","couverture Mercury Platinum"]
 author: Harris Boat Works
 content_type: blog_article
@@ -21,11 +21,11 @@ revenue_driver: repower
 
 # Mercury Product Protection Platinum : couverture et prix canadiens
 
-> Mercury Product Protection Platinum est un contrat de service prolongé. Consultez les vrais prix canadiens par puissance et durée, les règles d'admissibilité et les...
+> Mercury Product Protection Platinum est un contrat de service prolongé. Consultez les prix canadiens par puissance et durée, les règles d'admissibilité et les exclusions.
 
 **Catégorie :** Garantie\
 **Publié le :** 2026-05-13\
-**Dernière révision :** 2026-09-12\
+**Dernière révision :** 2026-10-03\
 **Temps de lecture :** 9 min\
 **URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/garantie-prolongee-mercury-platinum-ontario
 

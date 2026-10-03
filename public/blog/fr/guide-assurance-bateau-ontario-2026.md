@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/guide-assurance-bateau-ontario-2026.md
-last_updated: 2026-09-12
+last_updated: 2026-10-03
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -8,10 +8,10 @@ final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
 title: "Assurance bateau en Ontario : ce dont vous avez réellement besoin (2026)"
-description: "Bases de l'assurance bateau en Ontario. Couverture responsabilité vs coque, ce qui est couvert vs ce qui ne l'est pas, fourchettes de primes annuelles réelles par..."
+description: "Bases de l'assurance bateau en Ontario. Responsabilité vs coque, fourchettes de primes annuelles par type de bateau, pourquoi assurance et garantie prolongée diffèrent."
 category: "Assurance"
 date_published: 2026-05-13
-date_modified: 2026-09-12
+date_modified: 2026-10-03
 keywords: ["assurance bateau Ontario","assurance maritime","coût assurance bateau","couverture responsabilité bateaux","assurance bateau valeur convenue","assurance embarcation de plaisance"]
 author: Harris Boat Works
 content_type: blog_article
@@ -21,11 +21,11 @@ revenue_driver: repower
 
 # Assurance bateau en Ontario : ce dont vous avez réellement besoin (2026)
 
-> Bases de l'assurance bateau en Ontario. Couverture responsabilité vs coque, ce qui est couvert vs ce qui ne l'est pas, fourchettes de primes annuelles réelles par...
+> Bases de l'assurance bateau en Ontario. Responsabilité vs coque, fourchettes de primes annuelles par type de bateau, pourquoi assurance et garantie prolongée diffèrent.
 
 **Catégorie :** Assurance\
 **Publié le :** 2026-05-13\
-**Dernière révision :** 2026-09-12\
+**Dernière révision :** 2026-10-03\
 **Temps de lecture :** 9 min\
 **URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/guide-assurance-bateau-ontario-2026
 
