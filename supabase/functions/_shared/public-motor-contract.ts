@@ -235,9 +235,11 @@ export function parseOptionalBooleanFlag(value: unknown): boolean {
  * floor are "Available to Order". "Special order" is reserved for Verado, which
  * is not in the public catalog, so assistants never confuse an orderable 15 ELH
  * with a call-the-dealer Verado.
+ *
+ * Derived only from `inStock`. Catalog row statuses such as "Out of Stock" or
+ * "Brochure" do not leak through; those motors stay orderable in the public
+ * catalog unless they are Exclude or Verado.
  */
-export function publicAvailabilityLabel(raw: unknown, inStock: boolean): string {
-  const text = typeof raw === "string" ? raw.trim() : "";
-  if (text && !/special[\s-]*order/i.test(text)) return text;
+export function publicAvailabilityLabel(_raw: unknown, inStock: boolean): string {
   return inStock ? "In Stock" : "Available to Order";
 }

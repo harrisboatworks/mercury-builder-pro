@@ -30,9 +30,11 @@ import {
   motorSlug,
 } from "../_shared/motor-slug.ts";
 import {
+  filterPublicCatalogMotors,
   isPublicCatalogMotor,
   PUBLIC_CATALOG_AVAILABILITY_OR,
   PUBLIC_SITE_URL,
+  isPublicMotorInStock,
   resolvePublicSellingPrice,
   toPublicImageUrl,
   publicAvailabilityLabel,
@@ -190,35 +192,34 @@ async function searchMotors(supabase: any, args: any) {
   if (args.horsepower) q = q.eq("horsepower", args.horsepower);
   if (args.min_hp) q = q.gte("horsepower", args.min_hp);
   if (args.max_hp) q = q.lte("horsepower", args.max_hp);
-  if (args.in_stock_only) q = q.eq("in_stock", true);
 
   const { data, error } = await q;
   if (error) throw new Error(error.message);
 
-  return (data || [])
-    .map((sourceMotor: any) => applyMotorPresentationOverrides(sourceMotor))
-    .filter((m: any) => isPublicCatalogMotor(m))
-    .filter((m: any) =>
+  // Eligibility and normalized stock run on the 500-row candidate page.
+  // That page still bounds the catalog; this only prevents the caller
+  // limit from dropping later in-stock rows inside those 500 rows.
+  return filterPublicCatalogMotors(data || [], {
+    inStockOnly: Boolean(args.in_stock_only),
+  })
+    .filter((m) =>
       wantFamilyKey ? familyKey(m.family) === wantFamilyKey : true
     )
     .slice(0, resultLimit)
-    .map((m: any) => {
-      const slug = motorSlug(m);
-      return {
-        id: m.id,
-        slug,
-        modelDisplay: m.model_display || m.model,
-        family: m.family || "FourStroke",
-        horsepower: m.horsepower,
-        shaftLength: m.shaft_code,
-        sellingPrice: resolvePublicSellingPrice(m),
-        currency: "CAD",
-        availability: publicAvailabilityLabel(m.availability, Boolean(m.in_stock)),
-        imageUrl: toPublicImageUrl(m.hero_image_url || m.image_url),
-        url: slug ? `${SITE_URL}/motors/${slug}` : null,
-        quoteUrl: `${SITE_URL}/quote/motor-selection?motor=${m.id}`,
-      };
-    });
+    .map((m) => ({
+      id: m.id,
+      slug: m.slug,
+      modelDisplay: m.modelDisplay,
+      family: m.family || "FourStroke",
+      horsepower: m.horsepower,
+      shaftLength: m.shaftLength,
+      sellingPrice: m.sellingPrice,
+      currency: "CAD" as const,
+      availability: m.availability,
+      imageUrl: m.imageUrl,
+      url: m.url,
+      quoteUrl: m.quoteUrl,
+    }));
 }
 
 async function getMotor(supabase: any, args: any) {
@@ -257,7 +258,7 @@ async function getMotor(supabase: any, args: any) {
     sellingPrice: resolvePublicSellingPrice(m),
     msrp: m.msrp,
     currency: "CAD",
-    availability: publicAvailabilityLabel(m.availability, Boolean(m.in_stock)),
+    availability: publicAvailabilityLabel(m.availability, isPublicMotorInStock(m)),
     imageUrl: toPublicImageUrl(m.hero_image_url || m.image_url),
     description: m.description,
     features: m.features,
