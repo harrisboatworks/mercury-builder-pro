@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { articleIssues, extractArticles } from './check-blog-pcoc-referrals.mjs';
+import { reconcileOfferContent } from './reconcile-blog-pcoc-referrals.mjs';
 const offer = "Need your PCOC? Use [HBW's MyBoatCard referral link](https://myboatcard.com/card/harrisboat) and **HARRIS15** for **15% off**.";
 const article = content => ({ slug: 'guide', title: 'Boat guide', content });
 
@@ -32,4 +33,16 @@ test('known broken official links fail even in sources; working citations stay',
 test('code blocks and removed FAQ copy cannot satisfy the visible-offer rule', () => {
   assert.equal(articleIssues(article('PCOC guide.\n\n```md\n\n' + offer + '\n\n```')).issues.length, 1);
   assert.equal(articleIssues({ ...article('PCOC guide.\n\n## Frequently Asked Questions\n\n' + offer), faqs: [{ question: 'Do I need a PCOC?', answer: 'Yes.' }] }).issues.length, 1);
+});
+test('legacy transcript destinations cannot return through content imports', () => {
+  for (const path of ['pleasure-craft-operator-card', 'pleasure-craft-licensing']) {
+    assert.equal(articleIssues(article(`See https://tc.canada.ca/en/marine-transportation/marine-safety/${path}`)).issues.length, 1);
+  }
+});
+test('revised offer copy replaces previous text once and keeps the review stamp', () => {
+  const revised = offer.replace('Need your PCOC?', 'Ready to earn your PCOC?');
+  const raw = '# Boat guide\n\nLast reviewed: 2026-10-04\n\nIntro paragraph.\n\n' + offer + '\n\n## Next steps';
+  const output = reconcileOfferContent(raw, revised);
+  assert.equal(output, raw.replace(offer, revised));
+  assert.equal(reconcileOfferContent(output, revised), output);
 });

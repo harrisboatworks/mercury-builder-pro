@@ -6,7 +6,7 @@ import ts from 'typescript';
 import { readFileSync, writeFileSync, readdirSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { articleIssues } from './check-blog-pcoc-referrals.mjs';
+import { articleIssues, isReferralParagraph } from './check-blog-pcoc-referrals.mjs';
 
 const root = resolve(fileURLToPath(new URL('..', import.meta.url)));
 const referral = 'https://myboatcard.com/card/harrisboat';
@@ -43,6 +43,16 @@ const offers = {
   tl: `Kailangan ng PCOC? Kunin ang online course gamit ang [MyBoatCard referral link ng HBW](${referral}) at gamitin ang code na **HARRIS15** para sa **15% diskuwento**.`,
 };
 const locales = { blogArticles: 'en', archivedBlogArticles: 'en', frenchBlogArticles: 'fr', mandarinBlogArticles: 'zh', traditionalChineseBlogArticles: 'zh-hant', koreanBlogArticles: 'ko', spanishBlogArticles: 'es', hindiBlogArticles: 'hi', punjabiBlogArticles: 'pa', urduBlogArticles: 'ur', tagalogBlogArticles: 'tl' };
+export function reconcileOfferContent(raw, offer) {
+  // Recognize prior offers by their affiliate link/code/discount, so a revised
+  // localized sentence replaces the old copy instead of leaving it behind.
+  const paragraphs = raw.split('\n\n').filter(p => !isReferralParagraph(p));
+  const firstProse = paragraphs.findIndex(p => !/^\s*#/.test(p) && !/^\s*\*?Last reviewed:/i.test(p));
+  paragraphs.splice(firstProse < 0 ? paragraphs.length : firstProse + 1, 0, offer);
+  return paragraphs.join('\n\n');
+}
+
+function reconcileArticles() {
 const today = new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Toronto', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date());
 let changed = 0;
 for (const file of readdirSync(resolve(root, 'src/data')).filter(f => locales[f.replace(/\.ts$/, '')])) {
@@ -60,7 +70,7 @@ for (const file of readdirSync(resolve(root, 'src/data')).filter(f => locales[f.
         for (const [before, after] of replacements) next = next.replaceAll(new RegExp(before.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '(?=[\\s)\\]<>"\x27`।]|$)', 'g'), after);
         const { triggered: mentions, issues } = articleIssues(article);
         const offerText = offers[locales[file.replace(/\.ts$/, '')]];
-        const generatedOffer = article.content.includes(offerText);
+        const generatedOffer = article.content.split('\n\n').some(isReferralParagraph);
         if (generatedOffer || (mentions && issues.some(issue => issue.startsWith('PCOC reference')))) {
           const prop = node.properties.find(p => ts.isPropertyAssignment(p) && p.name.getText(ast) === 'content');
           if (!prop || !(ts.isNoSubstitutionTemplateLiteral(prop.initializer) || ts.isTemplateExpression(prop.initializer))) throw new Error(`Cannot safely update content: ${file}:${article.slug}`);
@@ -68,14 +78,10 @@ for (const file of readdirSync(resolve(root, 'src/data')).filter(f => locales[f.
           // Place the offer after the quick answer/intro, before tables, FAQs
           // or source lists which some renderers remove or collapse.
           const contentEnd = prop.initializer.end - 1 - node.getStart(ast);
-          const raw = block.slice(contentStart, contentEnd).replace('\n\n' + offerText, '');
-          const paragraphs = raw.split('\n\n');
-          const firstProse = paragraphs.findIndex(p => !/^\s*#/.test(p) && !/^\s*\*?Last reviewed:/i.test(p));
-          const end = firstProse < 0 ? raw.length : paragraphs.slice(0, firstProse + 1).join('\n\n').length;
-          const offer = '\n\n' + offerText;
+          const raw = reconcileOfferContent(block.slice(contentStart, contentEnd), offerText);
           // URL substitutions can alter positions before content, so insert
           // into the original block first, then perform the substitutions.
-          next = block.slice(0, contentStart) + raw.slice(0, end) + offer + raw.slice(end) + block.slice(contentEnd);
+          next = block.slice(0, contentStart) + raw + block.slice(contentEnd);
           for (const [before, after] of replacements) next = next.replaceAll(new RegExp(before.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '(?=[\\s)\\]<>"\x27`।]|$)', 'g'), after);
         }
         if (next !== block) {
@@ -94,3 +100,6 @@ for (const file of readdirSync(resolve(root, 'src/data')).filter(f => locales[f.
   if (output !== source) writeFileSync(path, output);
 }
 console.log(`Reconciled ${changed} articles. Source: HBW rentals referral offer and Transport Canada pages verified 2026-10-04.`);
+}
+
+if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) reconcileArticles();

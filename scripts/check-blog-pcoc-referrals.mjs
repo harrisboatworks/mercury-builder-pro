@@ -13,8 +13,10 @@ const stale = new Set([
   'marine-safety/operator-competency-requirements',
   'marine-safety/pleasure-craft-operator-competency',
   'marine-safety/pleasure-craft-operator-competency-program',
+  'marine-safety/pleasure-craft-operator-card',
   'marine-safety/pleasure-craft-licences',
   'marine-safety/pleasure-craft-licensing-system',
+  'marine-safety/pleasure-craft-licensing',
   'marine-personnel/pleasure-craft-licence',
   'marine-safety/transport-canada-boating-safety-guide-tp-511',
   'marine-safety/office-boating-safety/boating-safety-recreational-boaters',
@@ -54,13 +56,19 @@ export function articleIssues(article) {
     // paragraph, a clickable exact affiliate URL, the code and its percentage.
     const cleaned = cleanBlogContent(article.content, { hasStructuredFaqs: Boolean(article.faqs?.length) });
     const paragraphs = marked.lexer(cleaned).filter(token => token.type === 'paragraph');
-    const hasOffer = paragraphs.some(p => p.tokens.some(t => t.type === 'link' && t.raw.startsWith('[') && [REFERRAL, REFERRAL + '/'].includes(t.href)) && /\bHARRIS15\b/.test(p.text) && /15\s*%/.test(p.text));
+    const hasOffer = paragraphs.some(p => isReferralParagraph(p.raw));
     if (!hasOffer) issues.push('PCOC reference needs a visible MyBoatCard referral paragraph with HARRIS15 and 15%');
   }
   const sourceCopy = publicText([article.content, article.faqs, article.howToSteps, article.officialSources, article.citations]);
   const urls = sourceCopy.match(/https?:\/\/(?:www\.)?tc\.canada\.ca\/[^\s\)\]<>"'`\\]+/g) || [];
   for (const u of new Set(urls)) if (stale.has(u.replace(/[।.,;]$/, '').replace(/\/$/, '').replace('https://www.tc.canada.ca/', 'https://tc.canada.ca/'))) issues.push(`Known broken Transport Canada link: ${u}`);
   return { triggered, issues };
+}
+
+export function isReferralParagraph(text) {
+  const tokens = marked.lexer(text);
+  const paragraph = tokens.find(t => t.type === 'paragraph');
+  return Boolean(paragraph && tokens.every(t => t.type === 'paragraph' || t.type === 'space') && paragraph.tokens.some(t => t.type === 'link' && t.raw.startsWith('[') && [REFERRAL, REFERRAL + '/'].includes(t.href)) && /\bHARRIS15\b/.test(paragraph.text) && /15\s*%/.test(paragraph.text));
 }
 
 export function checkDirectory(directory) {
