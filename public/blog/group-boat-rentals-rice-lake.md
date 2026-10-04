@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/group-boat-rentals-rice-lake.md
-last_updated: 2026-09-06
+last_updated: 2026-10-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Group Boat Rentals on Rice Lake: Reunions, Fishing Weekends, and Big Day
 description: "Planning a reunion or group day on Rice Lake? How multi-boat rentals work: capacity rules, one licensed driver per boat, BBQs, and cottage-dock weekends."
 category: "Boating Lifestyle"
 date_published: 2026-07-02
-date_modified: 2026-09-06
+date_modified: 2026-10-04
 keywords: ["group boat rental rice lake","family reunion boat rental ontario","rent multiple boats","pontoon rental for large group","fishing weekend boat rental kawarthas"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,11 +25,13 @@ revenue_driver: rentals
 
 **Category:** Boating Lifestyle  
 **Published:** 2026-07-02  
-**Last reviewed:** 2026-09-06  
+**Last reviewed:** 2026-10-04  
 **Read time:** ~8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/group-boat-rentals-rice-lake
 
 > **Quick answer:** For groups bigger than one boat's capacity, check current availability for two or more boats and plan to run them together. Each boat needs its own licensed driver, capacity limits are hard, and everyone gets fitted life jackets at check-in. Multi-day rentals can stay at your cottage dock. Book online at harrisboatworks.ca/rentals.
+
+Need your PCOC? Take the online course through [HBW's MyBoatCard referral link](https://myboatcard.com/card/harrisboat) and use **HARRIS15** for **15% off**.
 
 Planning a family reunion means balancing the headcount, coolers, drivers, and a group chat that's been active for months.
 
@@ -114,7 +116,7 @@ Get your headcount, pick your boats, and get each driver licensed this week. The
 ## Sources
 
 - [Harris Boat Works rental FAQ and policies](https://harrisboatworks.ca/boat-rentals)
-- [Transport Canada: Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-card)
+- [Transport Canada: Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc)
 
 ## FAQs
 

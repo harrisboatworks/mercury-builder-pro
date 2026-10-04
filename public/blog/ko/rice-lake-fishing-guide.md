@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/ko/rice-lake-fishing-guide.md
-last_updated: 2026-09-06
+last_updated: 2026-10-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Rice Lake 낚시 완전 가이드: 토론토 한인을 위한 온타리�
 description: "Rice Lake는 토론토에서 약 1.5시간 거리에 있는 온타리오 최고의 walleye 낚시터입니다. 어종, FMZ 17 시즌 일정, 낚시 면허, 렌탈 보트 정보까지 한 번에 정리했습니다."
 category: "낚시 가이드"
 date_published: 2026-04-12
-date_modified: 2026-09-06
+date_modified: 2026-10-04
 keywords: ["Rice Lake 낚시 가이드","온타리오 낚시","토론토 근처 낚시","Rice Lake fishing guide Korean"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,13 +25,15 @@ revenue_driver: repower
 
 **Category:** 낚시 가이드  
 **Published:** 2026-04-12  
-**마지막 검토:** 2026-09-06  
+**마지막 검토:** 2026-10-04  
 **Read time:** 10 분  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ko/rice-lake-fishing-guide
 
 ## 빠른 답변
 
 **Rice Lake는 토론토에서 약 1.5시간(401번 → 115번 도로) 거리의 숨은 walleye·bass 명소. Lake Simcoe보다 한적하고, GTA 한인 가족이 당일치기로 다녀오기 좋습니다.**
+
+PCOC가 필요하신가요? [HBW의 MyBoatCard 추천 링크](https://myboatcard.com/card/harrisboat)에서 온라인 과정을 수강하고 할인 코드 **HARRIS15**로 **15% 할인**을 받으세요.
 
 - **거리**: 토론토에서 약 1.5시간, FMZ 17 구역
 - **주요 어종**: Walleye, Smallmouth Bass, Northern Pike, Perch. 시즌·한도는 당해 공식 FMZ 17 규정을 확인

@@ -24,7 +24,7 @@ export const hindiBlogArticles: Wave1Article[] = [
     image: '/lovable-uploads/hero-boat-rental-licence-ontario.webp',
     author: 'Harris Boat Works',
     datePublished: '2026-06-12',
-    dateModified: '2026-09-06',
+    dateModified: '2026-10-04',
     category: 'हिन्दी गाइड',
     readTime: '8 मिनट',
     keywords: ['pcoc kya hai Ontario (What is PCOC in Ontario)', 'boat operator license kaise banwayein Canada (How to get boat operator license in Canada)', 'Ontario boat license online hindi (Ontario boat license online in Hindi)', 'pcoc ka exam pass karne ke tips (Tips to pass PCOC exam)', 'boat chalane ka license kitne din mein milta hai (How many days to get a boating license)', 'Ontario fishing license hindi mein jaankari (Information about Ontario fishing license in Hindi)', 'Toronto ke paas machli pakadne ki jagahein (Fishing spots near Toronto)', 'Ontario fishing rules 2024 hindi (Ontario fishing rules 2024 Hindi)', 'fishing season Ontario kab se hai (When does fishing season start in Ontario)', 'best fishing spots near Toronto hindi (Best fishing spots near Toronto in Hindi)'],
@@ -41,6 +41,8 @@ export const hindiBlogArticles: Wave1Article[] = [
     internalLinks: ['https://harrisboatworks.ca/rentals', 'https://hbw.wiki/service'],
     officialSources: ['https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc', 'https://tc.canada.ca/en/marine-transportation/buying-boat/find-education-resources-recreational-boaters', 'https://www.ontario.ca/page/fishing-licence-ontario-and-canadian-residents', 'https://www.ontario.ca/page/get-outdoors-card-and-licence-summary', 'https://www.ontario.ca/page/learn-fish'],
     content: `अगर आप Greater Toronto Area (GTA) में रहने वाले पहली पीढ़ी के प्रवासी परिवार हैं और आपने कनाडा में कभी नाव नहीं चलाई, तो लाइसेंसों की बात सुनकर घबराहट होना आम है। हम समझते हैं। असल में, दो चीज़ें ज़रूरी हैं: एक आपका अपना ऑपरेटर कार्ड (PCOC) और दूसरा मछली पकड़ने का लाइसेंस। नीचे हम दोनों को आसान हिंदी में समझा रहे हैं ताकि आप बिना डरे Rice Lake पर अपने परिवार के साथ अच्छा समय बिता सकें। यह पूरी जानकारी आम समझ के लिए है, क़ानूनी सलाह नहीं। नियम बदल सकते हैं, हमेशा आधिकारिक स्रोत को अंतिम मानें।
+
+PCOC चाहिए? [HBW के MyBoatCard रेफ़रल लिंक](https://myboatcard.com/card/harrisboat) से ऑनलाइन कोर्स करें और **15% छूट** के लिए कोड **HARRIS15** इस्तेमाल करें।
 
 ## PCOC kya hai Ontario | PCOC क्या है
 

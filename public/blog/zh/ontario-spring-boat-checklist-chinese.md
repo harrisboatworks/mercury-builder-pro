@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/ontario-spring-boat-checklist-chinese.md
-last_updated: 2026-08-08
+last_updated: 2026-10-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "安省华人船主春季开船检查清单"
 description: "多伦多和安省华人船主春季下水前要检查什么？HBW 用中文讲清 PCOC、安全装备、船牌、发动机、燃油、电池和第一次湖测。"
 category: "Maintenance"
 date_published: 2026-05-17
-date_modified: 2026-08-08
+date_modified: 2026-10-04
 keywords: ["安省春季开船","spring boat checklist","GTA 华人船主","Rice Lake spring","Mercury 春季检查","Harris Boat Works"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,11 +25,13 @@ revenue_driver: service
 
 **Category:** Maintenance  
 **Published:** 2026-05-17  
-**最后审核:** 2026-08-08  
+**最后审核:** 2026-10-04  
 **Read time:** 10 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/ontario-spring-boat-checklist-chinese
 
 > **快速答案：** 安省春季开船前，华人船主至少要检查六件事：驾驶资格证明、船牌或船只文件、安全装备、电池、燃油系统、引擎启动和冷却情况。加拿大操作有马达的休闲船需要操作能力证明，PCOC 是常见证明，而且 Transport Canada 明确说纸质或电子复印件不能代替实体 PCOC 卡；租船时，完成 Rental Boat Safety Checklist 只在租船期间有效 (Transport Canada PCOC)。
+
+需要考取 PCOC？通过 [HBW 的 MyBoatCard 推荐链接](https://myboatcard.com/card/harrisboat)参加在线课程，使用优惠码 **HARRIS15** 可享 **15% 折扣**。
 
 如果你不确定船外机能不能放心下水，不要在私家车道里硬试到冒烟。春天第一天已经够忙了，别给自己加一个“为什么马达在咳嗽”的悬疑剧。
 

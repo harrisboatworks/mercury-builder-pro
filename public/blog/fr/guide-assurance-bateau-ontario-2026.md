@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/guide-assurance-bateau-ontario-2026.md
-last_updated: 2026-10-03
+last_updated: 2026-10-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Assurance bateau en Ontario : ce dont vous avez réellement besoin (2026
 description: "Bases de l'assurance bateau en Ontario. Responsabilité vs coque, fourchettes de primes annuelles par type de bateau, pourquoi assurance et garantie prolongée diffèrent."
 category: "Assurance"
 date_published: 2026-05-13
-date_modified: 2026-10-03
+date_modified: 2026-10-04
 keywords: ["assurance bateau Ontario","assurance maritime","coût assurance bateau","couverture responsabilité bateaux","assurance bateau valeur convenue","assurance embarcation de plaisance"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,13 +25,15 @@ revenue_driver: repower
 
 **Catégorie :** Assurance\
 **Publié le :** 2026-05-13\
-**Dernière révision :** 2026-10-03\
+**Dernière révision :** 2026-10-04\
 **Temps de lecture :** 9 min\
 **URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/guide-assurance-bateau-ontario-2026
 
 ## Réponse rapide
 
 **En Ontario, l'assurance bateau n'est généralement pas obligatoire pour toutes les embarcations de plaisance, mais elle peut être exigée par un prêteur, une marina, un programme de financement ou une installation d'entreposage. Pour tout bateau d'une valeur supérieure à 5 000 $, ou tout bateau transportant des passagers, une couverture de base responsabilité et coque est ce que tout concessionnaire honnête recommande. Le vrai coût dépend de la valeur du bateau, du moteur, du remorquage, de l'usage, du dossier du conducteur et des protections choisies. Demandez des soumissions à un courtier ou à votre assureur.**
+
+Besoin de votre CCEP (PCOC)? Suivez le cours en ligne avec [le lien de parrainage MyBoatCard de HBW](https://myboatcard.com/card/harrisboat) et utilisez le code **HARRIS15** pour obtenir **15% de réduction**.
 
 - **Responsabilité** : 1 M$ à 2 M$ minimum (couvre dommages à d'autres bateaux, quais ou blessures)
 - **Coque / valeur convenue** : coût de remplacement moins dépréciation, avec avenants pour moteur et remorque

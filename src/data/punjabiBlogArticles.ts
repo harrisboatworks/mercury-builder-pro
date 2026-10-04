@@ -121,7 +121,7 @@ Harris Boat Works 1947 ਤੋਂ family-owned marina ਹੈ, Mercury ਡੀਲ�
     image: '/lovable-uploads/hero-boat-rental-licence-ontario.webp',
     author: 'Harris Boat Works',
     datePublished: '2026-06-12',
-    dateModified: '2026-09-11',
+    dateModified: '2026-10-04',
     category: 'ਪੰਜਾਬੀ ਗਾਈਡ',
     readTime: '8 ਮਿੰਟ',
     keywords: ['Ontario vich boat license kinj banaye (how to get a boat license in Ontario)', 'boat operator card zaroori hai Ontario vich (is boat operator card necessary in Ontario)', 'PCOC course online free Punjabi (PCOC course online free in Punjabi)', 'boat chalan layi license di lod hai Canada ch (do you need a license to drive a boat in Canada)'],
@@ -137,6 +137,8 @@ Harris Boat Works 1947 ਤੋਂ family-owned marina ਹੈ, Mercury ਡੀਲ�
     internalLinks: ['https://harrisboatworks.ca/rentals'],
     officialSources: ['https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc', 'https://tc.canada.ca/en/marine-transportation/buying-boat/find-education-resources-recreational-boaters'],
     content: `ਜਵਾਬ ਪਹਿਲਾਂ: Ontario ਵਿੱਚ ਕੋਈ ਵੀ ਮੋਟਰ ਵਾਲੀ ਕਿਸ਼ਤੀ (power-driven boat) ਚਲਾਉਣ ਲਈ ਤੁਹਾਡੇ ਕੋਲ PCOC (Pleasure Craft Operator Card) ਜਾਂ ਹੋਰ ਮਾਨਤਾ-ਪ੍ਰਾਪਤ proof of competency ਹੋਣਾ ਲਾਜ਼ਮੀ ਹੈ। ਇਹ ਕਾਰਡ-ਵਰਗਾ ਸਰਟੀਫਿਕੇਟ ਹੈ, ਜਿਵੇਂ ਕਾਰ ਚਲਾਉਣ ਲਈ ਡਰਾਈਵਿੰਗ ਲਾਇਸੰਸ। ਮਾਮੂਲੀ ਪੈਡਲ ਬੋਟਾਂ, ਕਾਇਆਕ, ਜਾਂ ਕੈਨੂਆਂ ਲਈ PCOC ਦੀ ਲੋੜ ਨਹੀਂ, ਬੱਸ ਜੇ ਉਹਨਾਂ ’ਤੇ ਕੋਈ ਮੋਟਰ ਲੱਗੀ ਹੋਵੇ। Harris Boat Works ਵਿੱਚ ਹਰ driver ਨੂੰ check-in ਸਮੇਂ ਵੈਧ boat operator licence ਦਿਖਾਉਣਾ ਲਾਜ਼ਮੀ ਹੈ।
+
+PCOC ਚਾਹੀਦਾ ਹੈ? [HBW ਦੇ MyBoatCard ਰੈਫ਼ਰਲ ਲਿੰਕ](https://myboatcard.com/card/harrisboat) ਰਾਹੀਂ ਆਨਲਾਈਨ ਕੋਰਸ ਕਰੋ ਅਤੇ **15% ਛੋਟ** ਲਈ ਕੋਡ **HARRIS15** ਵਰਤੋ।
 
 
 ਨੋਟ: ਇਹ page ਸਿਰਫ਼ ਆਮ ਜਾਣਕਾਰੀ ਲਈ ਹੈ, legal advice ਨਹੀਂ। Rules ਬਦਲ ਸਕਦੇ ਹਨ; ਆਖ਼ਰੀ ਗੱਲ ਹਮੇਸ਼ਾ Transport Canada ਦੇ official ਸਫ਼ੇ ਦੀ ਮੰਨੋ: https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc

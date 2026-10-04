@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/rice-lake-boating-guide-2026.md
-last_updated: 2026-09-07
+last_updated: 2026-10-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Rice Lake Boating Guide 2026"
 description: "Rice Lake boating guide from the marina that's been on it since 1947: launches, fish, hazards, rentals, and Trent-Severn access."
 category: "Lifestyle"
 date_published: 2026-05-10
-date_modified: 2026-09-07
+date_modified: 2026-10-04
 keywords: ["Rice Lake boating guide","Rice Lake fishing 2026","Rice Lake boat launch","Rice Lake sunken railway","FMZ 17 fishing regulations","Rice Lake walleye opener"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,11 +25,13 @@ revenue_driver: rentals
 
 **Category:** Lifestyle  
 **Published:** 2026-05-10  
-**Last reviewed:** 2026-09-07  
+**Last reviewed:** 2026-10-04  
 **Read time:** 11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/rice-lake-boating-guide-2026
 
 ![Illustrated orientation map of Rice Lake, Ontario. Bewdley sits at the southwest end. Gores Landing, Harris Boat Works and Harwood are on the south shore. Hiawatha and Keene are on the north shore. The Otonabee River enters at the west end and the Trent River leaves at the northeast end.](/lovable-uploads/rice-lake-map-illustrated.jpg)
+
+Need your PCOC? Take the online course through [HBW's MyBoatCard referral link](https://myboatcard.com/card/harrisboat) and use **HARRIS15** for **15% off**.
 
 *Rice Lake at a glance. Orientation map, not for navigation.*
 
@@ -119,9 +121,9 @@ Other rental options exist around Bewdley, but availability and quality vary. Ca
 
 **PFDs and lifejackets.** Carry one Canadian-approved PFD or lifejacket of the appropriate size for each person on board, and keep it readily accessible. Transport Canada's [Safe Boating Guide](https://tc.canada.ca/en/marine-transportation/marine-safety/boating-safety) explains the approved Canadian types and carriage rules.
 
-**[Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences) (PCL).** Required for boats with motors 7.5 kW (10 HP) or larger. As of August 8, 2026, new and renewed PCLs are valid for five years and cost $24.41. Transport Canada adjusts the fee for inflation each April 1, so verify the current amount and your licence status before launch.
+**[Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl) (PCL).** Required for boats with motors 7.5 kW (10 HP) or larger. As of August 8, 2026, new and renewed PCLs are valid for five years and cost $24.41. Transport Canada adjusts the fee for inflation each April 1, so verify the current amount and your licence status before launch.
 
-**[Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency) (PCOC).** Required for anyone operating a powered boat in Canada. One-time test, not annual.
+**[Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc) (PCOC).** Required for anyone operating a powered boat in Canada. One-time test, not annual.
 
 **Required safety equipment.** Sound-signaling device (whistle or horn), bailer, paddle, anchor, navigation lights for sunset operation. Transport Canada publishes the full list, and CO2-charged life jackets count as PFDs.
 
@@ -163,7 +165,7 @@ Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | Mercury Marin
 - Parks Canada, [Trent-Severn Waterway hours of operation](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/heures-hours)
 - Ontario MNR, [Fisheries Management Zone 17 regulations](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17)
 
-- Transport Canada, [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-personnel/pleasure-craft-licence)
+- Transport Canada, [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl)
 
 ## FAQs
 

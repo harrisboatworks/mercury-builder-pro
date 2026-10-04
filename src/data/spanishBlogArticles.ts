@@ -12,7 +12,7 @@ export const spanishBlogArticles: BlogArticle[] = [
     image: '/lovable-uploads/es-guia-comprar-bote-ontario-hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-09-06',
+    dateModified: '2026-10-04',
     publishDate: '2026-04-12',
     category: 'Guía de compra',
     readTime: '12 min',
@@ -20,6 +20,8 @@ export const spanishBlogArticles: BlogArticle[] = [
     content: `### Respuesta rápida
 
 Para comprar y operar un bote motorizado en Ontario, la Carta de Operador de Embarcaciones de Placer (PCOC/COEP) es la forma más habitual de demostrar la competencia; Transport Canada también acepta otras pruebas en determinados casos. El costo del curso varía según el proveedor acreditado. La Licencia de Embarcaciones de Placer (PCL) aplica según los criterios de la embarcación, incluso para motores de 10 HP o más. Las PCL nuevas, transferidas o renovadas tienen una vigencia de 5 años (el duplicado no renueva la vigencia); al 5 de septiembre de 2026 la tarifa federal es de $24.41 CAD ([tabla oficial](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/fees-service-standards)); actualizar datos o cancelar es gratuito. La tarifa se ajusta cada 1 de abril. El seguro no es obligatorio, pero sí muy recomendable. Más abajo encontrarás todo lo que necesitas saber para tomar una buena decisión.
+
+¿Necesita su PCOC? Haga el curso en línea con [el enlace de recomendación de HBW a MyBoatCard](https://myboatcard.com/card/harrisboat) y use el código **HARRIS15** para obtener **15% de descuento**.
 
 ---
 
@@ -35,7 +37,7 @@ Harris Boat Works lleva 79 años en Rice Lake, Ontario, tercera generación, con
 
 ### PCOC, Carta de Operador de Embarcaciones de Placer
 
-La PCOC (en inglés: [Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency), también conocida como "boating licence") es la forma más habitual de demostrar la competencia para manejar una embarcación de recreo motorizada. Transport Canada también acepta otras pruebas en determinados casos.
+La PCOC (en inglés: [Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc), también conocida como "boating licence") es la forma más habitual de demostrar la competencia para manejar una embarcación de recreo motorizada. Transport Canada también acepta otras pruebas en determinados casos.
 
 **Puntos clave:**
 - Es federal, la misma tarjeta es válida en toda provincia y territorio canadiense
@@ -199,7 +201,7 @@ harrisboatworks.ca
     image: '/lovable-uploads/es-guia-pesca-rice-lake-ontario-hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-09-06',
+    dateModified: '2026-10-04',
     publishDate: '2026-04-12',
     category: 'Pesca',
     readTime: '12 min',
@@ -207,6 +209,8 @@ harrisboatworks.ca
     content: `### Respuesta rápida
 
 Rice Lake es uno de los mejores lagos para pescar walleye (lucioperca / doré) en toda Ontario. Está a aproximadamente **1.5 horas al este de Toronto** por la Hwy 401E + Hwy 115N. La temporada de walleye en la Zona de Gestión de Pesca 17 (FMZ 17) abre el segundo sábado de mayo y cierra el 15 de noviembre, con un límite de 4 peces. Las licencias de pesca son obligatorias para personas de 18 a 64 años. Verifica siempre las fechas y límites actuales en ontario.ca antes de salir.
+
+¿Necesita su PCOC? Haga el curso en línea con [el enlace de recomendación de HBW a MyBoatCard](https://myboatcard.com/card/harrisboat) y use el código **HARRIS15** para obtener **15% de descuento**.
 
 ---
 
@@ -845,14 +849,16 @@ Para reparaciones e instalaciones de motores, trabajamos exclusivamente con Merc
     image: '/lovable-uploads/hero-boating-safety-gear-es-2026.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-09-11',
+    dateModified: '2026-10-04',
     publishDate: '2026-04-12',
     category: 'Regulaciones',
     readTime: '12 min',
     keywords: ['licencia navegación Ontario', 'PCOC Ontario', 'regulaciones bote Ontario', 'permiso de navegación Canadá', 'seguridad embarcación Ontario'],
     content: `### Respuesta rápida
 
-Para navegar legalmente en Ontario, la **PCOC** ([Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency) / Carta de Operador de Embarcaciones) es una de las pruebas de competencia aceptadas; la emite un proveedor acreditado y su costo varía. La **PCL** ([Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences)) es la licencia de la embarcación misma si tiene motor de 10 HP o más. Las PCL nuevas, transferidas o renovadas tienen una vigencia de 5 años (el duplicado no renueva la vigencia); al 5 de septiembre de 2026 la tarifa federal es de **$24.41 CAD**; actualizar datos o cancelar es gratuito. La tarifa se ajusta cada 1 de abril. La multa por no llevar la PCOC en la embarcación comienza en **$250 CAD**. Siempre lleva el original, no se aceptan copias ni fotos en pantalla.
+Para navegar legalmente en Ontario, la **PCOC** ([Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc) / Carta de Operador de Embarcaciones) es una de las pruebas de competencia aceptadas; la emite un proveedor acreditado y su costo varía. La **PCL** ([Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl)) es la licencia de la embarcación misma si tiene motor de 10 HP o más. Las PCL nuevas, transferidas o renovadas tienen una vigencia de 5 años (el duplicado no renueva la vigencia); al 5 de septiembre de 2026 la tarifa federal es de **$24.41 CAD**; actualizar datos o cancelar es gratuito. La tarifa se ajusta cada 1 de abril. La multa por no llevar la PCOC en la embarcación comienza en **$250 CAD**. Siempre lleva el original, no se aceptan copias ni fotos en pantalla.
+
+¿Necesita su PCOC? Haga el curso en línea con [el enlace de recomendación de HBW a MyBoatCard](https://myboatcard.com/card/harrisboat) y use el código **HARRIS15** para obtener **15% de descuento**.
 
 ---
 

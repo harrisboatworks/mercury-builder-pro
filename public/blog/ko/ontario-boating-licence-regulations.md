@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/ko/ontario-boating-licence-regulations.md
-last_updated: 2026-09-06
+last_updated: 2026-10-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "온타리오 보트 면허 및 안전 규정 완전 가이드: 한인 �
 description: "PCOC 취득, PCL 등록, 필수 안전 장비, 낚시 면허, 미성년자 규정까지, 온타리오에서 보트를 운행하기 전에 알아야 할 모든 규정을 한국어로 정리했습니다."
 category: "규정 가이드"
 date_published: 2026-04-12
-date_modified: 2026-09-06
+date_modified: 2026-10-04
 keywords: ["온타리오 보트 면허 규정","캐나다 보트 면허","PCOC 한국어","Ontario boating regulations Korean"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** 규정 가이드  
 **Published:** 2026-04-12  
-**마지막 검토:** 2026-09-06  
+**마지막 검토:** 2026-10-04  
 **Read time:** 11 분  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ko/ontario-boating-licence-regulations
 
@@ -33,8 +33,10 @@ revenue_driver: repower
 
 **동력 레저 보트 운항자는 PCOC 등 인정되는 조종 자격 증명을 소지해야 합니다. 선박 면허(PCL)는 보트의 엔진 출력 등 등록 조건에 따라 필요합니다. HBW 렌털 조건은 예약 전에 별도로 확인하세요. 미면허 운항은 OPP 단속 시 $250부터 과태료가 시작됩니다.**
 
-- **PCOC ([Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency))**: 약 $40-50, 평생 유효, 가장 흔한 조종 자격 증명, 원본 카드 휴대
-- **PCL ([Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences))**: 엔진 출력 등 등록 조건에 따라 필요. 신규·이전·갱신 면허는 5년 유효. 신규·이전·갱신·재발급 수수료는 2026년 9월 5일 기준 **$24.41 CAD**(재발급은 유효기간을 갱신하지 않음). 기재사항 변경·취소는 무료. hull에 7.5cm 이상으로 표시
+PCOC가 필요하신가요? [HBW의 MyBoatCard 추천 링크](https://myboatcard.com/card/harrisboat)에서 온라인 과정을 수강하고 할인 코드 **HARRIS15**로 **15% 할인**을 받으세요.
+
+- **PCOC ([Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc))**: 약 $40-50, 평생 유효, 가장 흔한 조종 자격 증명, 원본 카드 휴대
+- **PCL ([Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl))**: 엔진 출력 등 등록 조건에 따라 필요. 신규·이전·갱신 면허는 5년 유효. 신규·이전·갱신·재발급 수수료는 2026년 9월 5일 기준 **$24.41 CAD**(재발급은 유효기간을 갱신하지 않음). 기재사항 변경·취소는 무료. hull에 7.5cm 이상으로 표시
 - **미성년자 규정**: 12세 미만 ≤10HP, 12-15세 ≤40HP, 16세 미만 PWC 운항 금지
 - **PCL 자료 변경**: 엔진 변경 등 기재사항 업데이트는 수수료 없음. HBW가 repower 시 함께 안내
 

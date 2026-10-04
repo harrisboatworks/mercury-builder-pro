@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/ko/ontario-boat-buying-guide.md
-last_updated: 2026-09-06
+last_updated: 2026-10-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "온타리오 보트 구매 완전 가이드: 첫 보트부터 엔진 교
 description: "온타리오에서 보트를 처음 구매하려는 한인을 위한 실용 가이드. PCOC 취득, 보트 종류, 보관 방법, 연간 유지비, 신규 구매 vs 중고 vs 엔진 교체(repower)까지 한 번에 정리했습니다."
 category: "구매 가이드"
 date_published: 2026-04-12
-date_modified: 2026-09-06
+date_modified: 2026-10-04
 keywords: ["온타리오 보트 구매 가이드","캐나다 보트 구매","토론토 보트 입문","Ontario boat buying guide Korean"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,13 +25,15 @@ revenue_driver: repower
 
 **Category:** 구매 가이드  
 **Published:** 2026-04-12  
-**마지막 검토:** 2026-09-06  
+**마지막 검토:** 2026-10-04  
 **Read time:** 12 분  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ko/ontario-boat-buying-guide
 
 ## 빠른 답변
 
 **온타리오에서 첫 보트를 구매하는 GTA 한인 가정을 위한 5단계 가이드. PCOC 면허, 보트 종류 선택, 신규/중고/repower 비교, 보관·보험까지 한 번에 정리.**
+
+PCOC가 필요하신가요? [HBW의 MyBoatCard 추천 링크](https://myboatcard.com/card/harrisboat)에서 온라인 과정을 수강하고 할인 코드 **HARRIS15**로 **15% 할인**을 받으세요.
 
 - **조종 자격 증명**: 모든 동력 보트(전기 트롤링 모터 포함)에 필요. 흔한 증명은 PCOC(약 $40-50, 평생 유효)이며, 연방 규칙상 다른 인정 증명도 있음
 - **신규 vs 중고 vs Repower**: 신규 패키지는 $40,000-$100,000+ CAD, repower(엔진만 교체)는 가장 저렴한 진입로
@@ -57,7 +59,7 @@ Harris Boat Works(HBW)는 Rice Lake 호숫가에 위치한 3대째 가족 경영
 
 **네, 필요합니다.**
 
-캐나다에서 엔진이 달린 보트(전기 트롤링 모터 포함)를 조종하려면 인정된 조종 자격 증명(proof of competency)이 필요합니다. **PCOC([Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency), 여가용 선박 조종 자격증)**가 가장 흔한 증명이지만, 연방 규칙상 유일한 증명은 아닙니다. 연방법으로 전국 어디서나 적용됩니다.
+캐나다에서 엔진이 달린 보트(전기 트롤링 모터 포함)를 조종하려면 인정된 조종 자격 증명(proof of competency)이 필요합니다. **PCOC([Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc), 여가용 선박 조종 자격증)**가 가장 흔한 증명이지만, 연방 규칙상 유일한 증명은 아닙니다. 연방법으로 전국 어디서나 적용됩니다.
 
 - 온라인 시험으로 취득 가능
 - 비용 약 $40~$50

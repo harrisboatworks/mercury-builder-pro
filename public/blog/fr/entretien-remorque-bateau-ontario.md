@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/entretien-remorque-bateau-ontario.md
-last_updated: 2026-09-12
+last_updated: 2026-10-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Entretien d'une remorque de bateau : le guide que personne n'écrit (Ont
 description: "Liste de vérification annuelle d'entretien de remorque de bateau pour les plaisanciers ontariens. Roulements, freins, pneus, lumières, tasseaux."
 category: "Entretien"
 date_published: 2026-05-13
-date_modified: 2026-09-12
+date_modified: 2026-10-04
 keywords: ["entretien remorque bateau","roulements remorque","remorque bateau Ontario","coût service remorque","pneus ST","freins remorque bateau"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,13 +25,15 @@ revenue_driver: service
 
 **Catégorie :** Entretien\
 **Publié le :** 2026-05-13\
-**Dernière révision :** 2026-09-12\
+**Dernière révision :** 2026-10-04\
 **Temps de lecture :** 10 min\
 **URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/entretien-remorque-bateau-ontario
 
 ## Réponse rapide
 
 **Votre remorque de bateau porte la même valeur que votre moteur et votre bateau combinés. Sautez l'entretien annuel et vous le découvrez de la pire façon au pire moment, habituellement en pleine mise à l'eau un samedi matin de mai.**
+
+Besoin de votre CCEP (PCOC)? Suivez le cours en ligne avec [le lien de parrainage MyBoatCard de HBW](https://myboatcard.com/card/harrisboat) et utilisez le code **HARRIS15** pour obtenir **15% de réduction**.
 
 - **Roulements** : regraisser annuellement OU tous les 12 000 km; remplacer au premier signe de changement de couleur de la graisse ou de jeu
 - **Freins** : rinçage annuel et inspection des plaquettes; à inertie ou électriques, les deux échouent de la même façon

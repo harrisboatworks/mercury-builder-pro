@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-rental-licence-ontario-guide.md
-last_updated: 2026-09-06
+last_updated: 2026-10-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Do You Need a Licence to Rent a Boat in Ontario? (2026)"
 description: "Renting a boat in Ontario? Here's what the driver actually needs, how to get a boating licence online, and how long to allow before rental day."
 category: "Boating Lifestyle"
 date_published: 2026-07-02
-date_modified: 2026-09-06
+date_modified: 2026-10-04
 keywords: ["licence to rent a boat ontario","boat rental licence ontario","pcoc for rental boat","boating licence rice lake","temporary boat licence ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,11 +25,13 @@ revenue_driver: rentals
 
 **Category:** Boating Lifestyle  
 **Published:** 2026-07-02  
-**Last reviewed:** 2026-09-06  
+**Last reviewed:** 2026-10-04  
 **Read time:** ~7 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-rental-licence-ontario-guide
 
 > **Quick answer:** Canadian law requires proof of competency to operate a powered recreational boat. A completed rental safety checklist can satisfy that rule for some rentals, but Harris Boat Works has a stricter policy: every person who may drive an HBW rental must show a valid Pleasure Craft Operator Card and photo ID. Passengers do not need one.
+
+Need your PCOC? Take the online course through [HBW's MyBoatCard referral link](https://myboatcard.com/card/harrisboat) and use **HARRIS15** for **15% off**.
 
 Getting the PCOC sorted before your rental date keeps check-in to a couple of minutes.
 
@@ -115,8 +117,8 @@ Complete the licence before rental day, then [book the boat online](/blog/first-
 
 ## Sources
 
-- [Transport Canada: Operator competency requirements](https://tc.canada.ca/en/marine-transportation/marine-safety/operator-competency-requirements)
-- [Transport Canada: Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-card)
+- [Transport Canada: Operator competency requirements](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc)
+- [Transport Canada: Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc)
 - [Ontario: Get a fishing licence](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees)
 - [Ontario recreational fishing licence information](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licence-information)
 - [Harris Boat Works rental FAQ and policies](https://harrisboatworks.ca/boat-rentals)

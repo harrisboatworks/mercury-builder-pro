@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/trent-severn-waterway-boating-guide-2026.md
-last_updated: 2026-09-29
+last_updated: 2026-10-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Trent-Severn 2026: Free Lockage Dates, Rules & Trip Plan"
 description: "Free lockage runs June 19 to September 7, 2026, roughly $45 a day saved on a 20-footer. Our marina sits on the waterway; here's how we'd run it."
 category: "Lifestyle"
 date_published: 2026-05-08
-date_modified: 2026-09-29
+date_modified: 2026-10-04
 keywords: ["Trent-Severn Waterway 2026 guide","Trent-Severn free lockage 2026","Canada Strong Pass boating","Trent-Severn locks hours 2026","Rice Lake Trent-Severn","boating Trent-Severn for beginners"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,13 +25,15 @@ revenue_driver: rentals
 
 **Category:** Lifestyle  
 **Published:** 2026-05-08  
-**Last reviewed:** 2026-09-29  
+**Last reviewed:** 2026-10-04  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/trent-severn-waterway-boating-guide-2026
 
 ### Quick Answer
 
 The [Trent-Severn Waterway](https://parks.canada.ca/lhn-nhs/on/trentsevern) is a 386-kilometre navigable system running from Trenton to Port Severn through 44 locks. In 2026, lockage is free under the Canada Strong Pass from June 19 to September 7. For a 20-foot boat, that is roughly $45 per day in fees not paid. Mooring at lockstations is still $1.50 per foot per night. Harris Boat Works sits on Rice Lake between Locks 18 and 19. Navigation season runs May 15 to October 12, 2026.
+
+Need your PCOC? Take the online course through [HBW's MyBoatCard referral link](https://myboatcard.com/card/harrisboat) and use **HARRIS15** for **15% off**.
 
 **Verify all lock hours, fees, and program dates directly with Parks Canada before your trip, as these details are subject to change.**
 

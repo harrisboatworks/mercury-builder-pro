@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/pleasure-craft-licence-update-repower-ontario.md
-last_updated: 2026-10-03
+last_updated: 2026-10-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Pleasure Craft Licence Update During Repower (Ontario 2026)"
 description: "How the Pleasure Craft Licence update works when you repower in Ontario: what Transport Canada requires, and how owners submit it with motor specs from the HBW invoice."
 category: "Canadian Boating Regulations"
 date_published: 2026-04-15
-date_modified: 2026-10-03
+date_modified: 2026-10-04
 keywords: ["pleasure craft licence update","PCL repower Ontario","Transport Canada boat licence","update boat registration after repower","PCL rules 2026"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,11 +25,11 @@ revenue_driver: repower
 
 **Category:** Canadian Boating Regulations  
 **Published:** 2026-04-15  
-**Last reviewed:** 2026-10-03  
+**Last reviewed:** 2026-10-04  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/pleasure-craft-licence-update-repower-ontario
 
-## [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences) Update During a Repower: What Ontario Boaters Need to Know in 2026
+## [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl) Update During a Repower: What Ontario Boaters Need to Know in 2026
 
 ## Quick answer
 When recorded information on a licensed pleasure craft changes, including after a repower if the motor details on the licence change, the boat owner must update the Pleasure Craft Licence (PCL) with Transport Canada within 30 days. Updates and cancellations are free. As checked September 5, 2026, a $24.41 fee applies to a new, transferred, renewed or duplicate licence. Fees may change each April 1. New, transferred and renewed licences under the rules effective December 31, 2025 are valid for five years. A duplicate or an information update does not renew the licence. Licences issued April 29, 2010 through December 30, 2025 keep their stated 10-year expiry. Older issue-date cohorts follow the table below. At HBW, the repower invoice lists the motor specs so you can submit the update yourself.
@@ -37,6 +37,8 @@ When recorded information on a licensed pleasure craft changes, including after 
 ## What changed that you actually need to know
 
 Transport Canada's Pleasure Craft Licence changes took effect on December 31, 2025. If you have not looked at your PCL lately, check the cohort that matches your licence instead of assuming every card is now a five-year document.
+
+Need your PCOC? Take the online course through [HBW's MyBoatCard referral link](https://myboatcard.com/card/harrisboat) and use **HARRIS15** for **15% off**.
 
 Key points, as checked September 5, 2026:
 - New, transferred and renewed PCLs are valid for five years.
@@ -126,7 +128,7 @@ Transport Canada requires an update within 30 days when recorded information cha
 
 - [Transport Canada: PCL changes effective December 31, 2025](https://www.canada.ca/en/transport-canada/news/2026/01/minister-of-transport-and-leader-of-the-government-in-the-house-of-commons-announces-changes-to-make-boating-safer-for-canadians.html).
 - Transport Canada, Pleasure Craft Licence (cohort validity, current fees and 30-day update window). [Fees and service standards](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/fees-service-standards)
-- [Transport Canada - Pleasure Craft Licensing System](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licensing-system) - Federal authority on PCL requirements and renewal rules.
+- [Transport Canada - Pleasure Craft Licensing System](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl) - Federal authority on PCL requirements and renewal rules.
 - [Transport Canada - Boating Safety](https://tc.canada.ca/en/marine-transportation/marine-safety/boating-safety) - Broader Canadian boating safety framework.
 
 ---

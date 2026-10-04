@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/rice-lake-fishing-guide-toronto-chinese.md
-last_updated: 2026-09-06
+last_updated: 2026-10-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Rice Lake 钓鱼指南（2026）：FMZ 17 鱼种、鱼牌与出发清单
 description: "从 GTA 到 Rice Lake 钓鱼前要知道的 2026 指南：FMZ 17 鱼种与季节、安省鱼牌、PCOC、租船要求、装备和水下危险。"
 category: "钓鱼指南"
 date_published: 2026-04-12
-date_modified: 2026-09-06
+date_modified: 2026-10-04
 keywords: ["Rice Lake钓鱼","多伦多华人钓鱼","安大略省钓鱼攻略","Rice Lake fishing guide Chinese"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,13 +25,15 @@ revenue_driver: repower
 
 **Category:** 钓鱼指南  
 **Published:** 2026-04-12  
-**最后审核:** 2026-09-06  
+**最后审核:** 2026-10-04  
 **Read time:** 9 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/rice-lake-fishing-guide-toronto-chinese
 
 ## 快速答案
 
 Rice Lake 属于安省 Fisheries Management Zone 17（FMZ 17）。常见目标鱼包括 walleye（梭鲈／玻璃眼）、largemouth 和 smallmouth bass（大嘴鲈／小嘴鲈）、muskellunge（muskie）以及 yellow perch（黄鲈）等 panfish。不要把 walleye 和 yellow perch 都翻成“黄鲈”：它们是不同鱼种，季节、尺寸和限额也可能不同。
+
+需要考取 PCOC？通过 [HBW 的 MyBoatCard 推荐链接](https://myboatcard.com/card/harrisboat)参加在线课程，使用优惠码 **HARRIS15** 可享 **15% 折扣**。
 
 从 GTA 多数地区开车通常约 60–120 分钟，实际时间取决于出发点、401／115 路况和你使用的下水点。出发前先做三件事：查 [FMZ 17 当年规则](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17)、确认自己的[安省钓鱼资格](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees)，再核对天气、下水点和船上安全装备。
 
@@ -134,7 +136,7 @@ Rice Lake 也有 yellow perch、crappie、sunfish 和 northern pike。中文俗�
 - HBW 不销售钓鱼证
 
 **操作船需要**
-- [Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/boating-safety/pleasure-craft-operator-card-pcoc)（PCOC）或其他合资格证明：操作动力休闲船的人需要随船携带
+- [Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc)（PCOC）或其他合资格证明：操作动力休闲船的人需要随船携带
 - [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl)（PCL）：主要在加拿大使用、发动机总功率至少 10 HP 的合资格休闲船通常需要；PCL 属于船，不是驾驶员
 - 租 HBW 船时，每位驾驶员都必须出示有效 boat operator licence／PCOC 和带照片身份证件；请以[在线租船页面](https://www.harrisboatworks.ca/rentals)与租赁协议为准
 

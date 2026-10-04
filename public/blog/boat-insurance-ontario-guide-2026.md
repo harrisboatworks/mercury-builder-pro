@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-insurance-ontario-guide-2026.md
-last_updated: 2026-09-06
+last_updated: 2026-10-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Boat Insurance in Ontario: What You Actually Need (2026)"
 description: "Ontario boat insurance basics: liability vs hull coverage, what is covered, and real annual premiums by boat type. Plain-language guide."
 category: "Boating"
 date_published: 2026-05-13
-date_modified: 2026-09-06
+date_modified: 2026-10-04
 keywords: ["boat insurance Ontario","marine insurance","boat insurance cost","liability coverage boats","agreed value boat insurance","Ontario boat liability","pleasure craft insurance"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,13 +25,15 @@ revenue_driver: repower
 
 **Category:** Boating  
 **Published:** 2026-05-13  
-**Last reviewed:** 2026-09-06  
+**Last reviewed:** 2026-10-04  
 **Read time:** ~9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-insurance-ontario-guide-2026
 
 ## Quick Answer
 
 **Ontario does not legally require boat insurance for most pleasure craft. But for any boat worth more than $5,000, or any boat carrying passengers, basic liability and hull coverage is what every honest dealer recommends. Premiums vary widely by boat, value, and coverage; the ranges in the table below show what 2026 Ontario policies realistically run.**
+
+Need your PCOC? Take the online course through [HBW's MyBoatCard referral link](https://myboatcard.com/card/harrisboat) and use **HARRIS15** for **15% off**.
 
 - **Liability**: $1M-$2M minimum (covers damage to other boats, docks, or injuries)
 - **Hull coverage**: damage to the boat itself; motor and trailer often need their own riders or scheduled amounts
@@ -128,7 +130,7 @@ Ranges based on typical 2026 Ontario quotes:
 | 18-22 ft pontoon or runabout + 90-150 HP | $2M liability, agreed value | $400-$700 |
 | 22-26 ft cruiser or center console + 150-300 HP | $2M liability, agreed value | $700-$1,500 |
 
-_Prices here are planning figures as of September 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are planning figures as of October 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 Cost factors:
 
@@ -136,7 +138,7 @@ Cost factors:
 - **Engine HP**: over 150 HP increases premium meaningfully
 - **Where you boat**: Lake Ontario (open water, weather risk) costs more than inland lakes like Rice Lake
 - **Claim history**: clean record gets best rates
-- **Operator experience**: [PCOC](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency) alone is minimum; documented experience helps
+- **Operator experience**: [PCOC](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc) alone is minimum; documented experience helps
 - **Storage location**: indoor storage discounts are real
 
 ## Who Insures Boats in Ontario?

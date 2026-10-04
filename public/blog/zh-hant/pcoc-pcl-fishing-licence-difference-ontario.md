@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh-hant/pcoc-pcl-fishing-licence-difference-ontario.md
-last_updated: 2026-09-06
+last_updated: 2026-10-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "PCOC、PCL、釣魚證區別：安省新手別搞混"
 description: "安省新手分清 PCOC 操作員資格、PCL 船隻牌照與安省釣魚證：誰需要、有效期、官方申請入口與 HBW 租船政策。"
 category: "mandarin"
 date_published: 2026-06-12
-date_modified: 2026-09-06
+date_modified: 2026-10-04
 keywords: ["安省 船牌","繁體 PCOC","PCL","船隻操作員卡","釣魚證"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,11 +25,13 @@ revenue_driver: repower
 
 **Category:** mandarin  
 **Published:** 2026-06-12  
-**最後審核:** 2026-09-06  
+**最後審核:** 2026-10-04  
 **Read time:** 7 分鐘  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh-hant/pcoc-pcl-fishing-licence-difference-ontario
 
 > **簡短答案：** **PCOC**（Pleasure Craft Operator Card，船隻操作員卡）是操作動力休閒船時常用的資格證明，卡片終身有效。**PCL**（Pleasure Craft Licence，船隻牌照）是符合條件船隻的識別號；2026 年 9 月 5 日新辦、續期、轉讓或補發為 **$24.41 CAD**，新辦、轉讓或續期後有效 5 年；資料更新或取消免費，每年 4 月 1 日按通脹調整。舊牌並非全部終身，請按到期批次核對。**釣魚證**完全獨立，由安省自然資源與林業部（MNRF）管理。在 HBW 租船，每位駕駛員必須持有有效 PCOC 或符合 HBW 要求的有效 boat operator licence。
+
+需要考取 PCOC？透過 [HBW 的 MyBoatCard 推薦連結](https://myboatcard.com/card/harrisboat)參加網上課程，使用優惠碼 **HARRIS15** 可享 **15% 折扣**。
 
 ## 一張表看懂三者區別
 
@@ -47,7 +49,7 @@ revenue_driver: repower
 ## PCOC：船隻操作員卡
 
 - **誰必須有：** 任何在加拿大水域操作配動力（包括電動推進器）的休閒船的人都需要合資格的操作能力證明；PCOC 是最常見的證明，但不是唯一被接受的證明。
-- **官方認可名單：** [Transport Canada PCOC 認可提供商](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency-program)。
+- **官方認可名單：** [Transport Canada PCOC 認可提供商](https://tc.canada.ca/en/marine-transportation/buying-boat/find-education-resources-recreational-boaters)。
 - **學習材料與正式考試語言可能不同：** 中文複習資料可以用於學習。正式考試語言和經批准的協助（包括口譯）須在付款前向認可提供商確認，並按其批准規則安排。不要假定一定有獲批的中文線上考試，也不要假定所有考試都沒有中文。規則見 [Transport Canada Quality Assurance and Control Requirements](https://tc.canada.ca/en/marine-transportation/marine-safety/quality-assurance-control-requirements-course-providers-national-pleasure-craft-operator-competency-program)。
 - **有效期：** 終身。
 

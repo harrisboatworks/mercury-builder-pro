@@ -146,7 +146,7 @@ export const blogArticles: BlogArticle[] = [
     imageAlt: 'Official Legend photograph of anglers wearing flotation aboard a pontoon with a Mercury outboard.',
     author: 'Jay Harris',
     datePublished: '2026-08-04',
-    dateModified: '2026-09-07',
+    dateModified: '2026-10-04',
     publishDate: '2026-08-04',
     category: 'Buying Guide',
     readTime: '13 min read',
@@ -186,7 +186,7 @@ export const blogArticles: BlogArticle[] = [
     ],
     citations: [
       { name: 'Transport Canada: Pleasure Craft Licence', url: 'https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl' },
-      { name: 'Transport Canada: Safe Boating Guide', url: 'https://tc.canada.ca/sites/default/files/2026-07/tp-511-boating-guide-2026-en-acc.pdf' },
+      { name: 'Transport Canada: Safe Boating Guide', url: 'https://tc.canada.ca/sites/default/files/2026-07/tp-511-boating-guide-2026-EN-acc.pdf' },
       { name: 'Ontario: Retail Sales Tax', url: 'https://www.ontario.ca/document/retail-sales-tax' },
       { name: 'Mercury Marine Canada: Warranty Transfer', url: 'https://www.mercurymarine.com/ca/en/service-and-support/warranty-coverage-and-product-protection/mercury-limited-warranty-and-mercury-product-protection-transfer' },
     ],
@@ -2374,7 +2374,7 @@ Rent a day and count how much you loved it, or price the ownership side with a r
     image: "/lovable-uploads/hero-group-boat-rentals.webp",
     author: "Jay Harris",
     datePublished: "2026-07-02",
-    dateModified: "2026-09-06",
+    dateModified: '2026-10-04',
     publishDate: "2026-07-02",
     category: "Boating Lifestyle",
     readTime: "~8 min read",
@@ -2392,6 +2392,8 @@ Rent a day and count how much you loved it, or price the ownership side with a r
 *Last reviewed: 2026-08-01*
 
 > **Quick answer:** For groups bigger than one boat's capacity, check current availability for two or more boats and plan to run them together. Each boat needs its own licensed driver, capacity limits are hard, and everyone gets fitted life jackets at check-in. Multi-day rentals can stay at your cottage dock. Book online at harrisboatworks.ca/rentals.
+
+Need your PCOC? Take the online course through [HBW's MyBoatCard referral link](https://myboatcard.com/card/harrisboat) and use **HARRIS15** for **15% off**.
 
 Planning a family reunion means balancing the headcount, coolers, drivers, and a group chat that's been active for months.
 
@@ -2504,7 +2506,7 @@ Get your headcount, pick your boats, and get each driver licensed this week. The
 ## Sources
 
 - [Harris Boat Works rental FAQ and policies](https://harrisboatworks.ca/boat-rentals)
-- [Transport Canada: Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-card)
+- [Transport Canada: Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc)
 `,
   },
   {
@@ -2514,7 +2516,7 @@ Get your headcount, pick your boats, and get each driver licensed this week. The
     image: "/lovable-uploads/hero-first-time-boat-rental.webp",
     author: "Jay Harris",
     datePublished: "2026-07-02",
-    dateModified: "2026-09-06",
+    dateModified: '2026-10-04',
     publishDate: "2026-07-02",
     category: "Boating Lifestyle",
     readTime: "~8 min read",
@@ -2532,6 +2534,8 @@ Get your headcount, pick your boats, and get each driver licensed this week. The
 *Last reviewed: 2026-08-02*
 
 > **Quick answer:** A pontoon can be a beginner-friendly rental when you stay slow, leave extra stopping distance, and follow the dock orientation. Harris Boat Works fits life jackets, supplies the required safety gear, and reviews the boat and Rice Lake map before departure. Every driver must bring a valid Pleasure Craft Operator Card and photo ID; passengers do not need one.
+
+Need your PCOC? Take the online course through [HBW's MyBoatCard referral link](https://myboatcard.com/card/harrisboat) and use **HARRIS15** for **15% off**.
 
 A lot of the people stepping onto our rental dock have never driven anything without brakes. Some have never been on a boat that wasn't a ferry.
 
@@ -2668,7 +2672,7 @@ Review the current cancellation, rescheduling, and deposit terms when you book. 
 ## Sources
 
 - [Harris Boat Works rental FAQ and policies](https://harrisboatworks.ca/boat-rentals)
-- [Transport Canada: Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-card)
+- [Transport Canada: Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc)
 `,
   },
   {
@@ -2678,7 +2682,7 @@ Review the current cancellation, rescheduling, and deposit terms when you book. 
     image: "/lovable-uploads/hero-rice-lake-boat-rental-guide.webp",
     author: "Jay Harris",
     datePublished: "2026-07-02",
-    dateModified: "2026-10-03",
+    dateModified: '2026-10-04',
     publishDate: "2026-07-02",
     category: "Boating Lifestyle",
     readTime: "~9 min read",
@@ -2697,6 +2701,8 @@ Review the current cancellation, rescheduling, and deposit terms when you book. 
 *Last reviewed: 2026-08-02*
 
 > **Quick answer:** Harris Boat Works rents pontoons and fishing boats on Rice Lake. The current online lineup includes 20 Transporter, 23 Cruise, 24 Transporter, the Halo pontoon, and 16 ProSport boats. Everything books online with live availability, life jackets and safety gear included. You need photo ID and proof of operator competency. Book at harrisboatworks.ca/rentals.
+
+Need your PCOC? Take the online course through [HBW's MyBoatCard referral link](https://myboatcard.com/card/harrisboat) and use **HARRIS15** for **15% off**.
 
 Most rental questions start in the same place: what boats are currently available, what does it cost, and what licence does the driver need?
 
@@ -2868,7 +2874,7 @@ Pick your boat and date, and the booking system shows you live availability and 
 ## Sources
 
 - [Harris Boat Works rental FAQ and policies](https://harrisboatworks.ca/boat-rentals)
-- [Transport Canada: Pleasure Craft Operator Card requirements](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-card)
+- [Transport Canada: Pleasure Craft Operator Card requirements](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc)
 - [Ontario fishing licence information](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees)
 - [Ontario recreational fishing licence information](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licence-information)`,
   },
@@ -2879,7 +2885,7 @@ Pick your boat and date, and the booking system shows you live availability and 
     image: "/lovable-uploads/hero-boat-rental-licence-ontario.webp",
     author: "Jay Harris",
     datePublished: "2026-07-02",
-    dateModified: "2026-09-06",
+    dateModified: '2026-10-04',
     publishDate: "2026-07-02",
     category: "Boating Lifestyle",
     readTime: "~7 min read",
@@ -2897,6 +2903,8 @@ Pick your boat and date, and the booking system shows you live availability and 
 *Last reviewed: 2026-08-02*
 
 > **Quick answer:** Canadian law requires proof of competency to operate a powered recreational boat. A completed rental safety checklist can satisfy that rule for some rentals, but Harris Boat Works has a stricter policy: every person who may drive an HBW rental must show a valid Pleasure Craft Operator Card and photo ID. Passengers do not need one.
+
+Need your PCOC? Take the online course through [HBW's MyBoatCard referral link](https://myboatcard.com/card/harrisboat) and use **HARRIS15** for **15% off**.
 
 Getting the PCOC sorted before your rental date keeps check-in to a couple of minutes.
 
@@ -3010,8 +3018,8 @@ Complete the licence before rental day, then [book the boat online](/blog/first-
 
 ## Sources
 
-- [Transport Canada: Operator competency requirements](https://tc.canada.ca/en/marine-transportation/marine-safety/operator-competency-requirements)
-- [Transport Canada: Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-card)
+- [Transport Canada: Operator competency requirements](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc)
+- [Transport Canada: Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc)
 - [Ontario: Get a fishing licence](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees)
 - [Ontario recreational fishing licence information](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licence-information)
 - [Harris Boat Works rental FAQ and policies](https://harrisboatworks.ca/boat-rentals)`,
@@ -5230,7 +5238,7 @@ footer: Not sure repower makes sense yet? Start with the [repower basics](/repow
     image: '/lovable-uploads/hero-boat-repowering-guide-when-to-replace-motor.png',
     author: 'Harris Boat Works',
     datePublished: '2024-03-05',
-    dateModified: '2026-09-11',
+    dateModified: '2026-10-04',
     category: 'Repowering',
     readTime: '9 min read',
     keywords: ['boat repowering', 'when to replace outboard', 'repower cost', 'new boat vs repower', 'outboard motor replacement'],
@@ -5452,7 +5460,7 @@ Yes if the hull is structurally solid. Many cottage aluminum hulls 25 to 40 year
 **Do I need a new prop with a Mercury repower?**
 Often yes, especially during brand conversions. Mercury-to-Mercury repowers sometimes keep existing props. The prop-verification plan depends on the motor, hull, existing rigging, work order, and safe seasonal testing conditions.
 
-**What about my [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences) (PCL)?**
+**What about my [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl) (PCL)?**
 The PCL must be updated when motor HP, brand, or model changes. We handle the paperwork for HBW customers. See our [PCL update guide](/blog/pleasure-craft-licence-update-repower-ontario).
 
 **How long does a typical repower take?**
@@ -8472,12 +8480,14 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: "Six-step spring commissioning order: walk-around, battery, fuel, cooling with the 30-second telltale rule, lower unit, then a test run on muffs before launch.",
     author: 'Harris Boat Works',
     datePublished: '2026-03-30',
-    dateModified: '2026-09-06',
+    dateModified: '2026-10-04',
     publishDate: '2026-03-30',
     category: 'Maintenance',
     readTime: '9 min read',
     keywords: ['spring boat commissioning', 'outboard commissioning', 'spring boat startup', 'mercury spring maintenance', 'boat season prep'],
     content: `> **Quick answer:** Spring commissioning brings your Mercury back to operational condition after winter storage. The core work: fuel system inspection, cooling system and impeller check, battery load test, fresh gear lube verification, spark plug inspection, propeller check, and a test run on muffs before the boat goes in the water. Book early, by late April, shops are running behind. Schedule at [hbw.wiki/service](https://hbw.wiki/service).
+
+Need your PCOC? Take the online course through [HBW's MyBoatCard referral link](https://myboatcard.com/card/harrisboat) and use **HARRIS15** for **15% off**.
 
 ::cta
 variant: inline
@@ -8634,9 +8644,9 @@ If anything sounds wrong, smells wrong, or shows a warning light, stop. That's a
 ### Step 10, Documentation
 
 - **Update your service log** with date, hours, and what was done.
-- **Verify [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences) (PCL)** is current. Expired PCL is a fine on the water.
+- **Verify [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl) (PCL)** is current. Expired PCL is a fine on the water.
 - **Confirm insurance** is renewed for the season.
-- **Check that [Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency) (PCOC)** is accessible in the boat.
+- **Check that [Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc) (PCOC)** is accessible in the boat.
 
 ---
 
@@ -10099,12 +10109,14 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: "Illustration of an angler wearing a lifejacket and checking equipment in a fishing boat beside a dock.",
     author: 'Harris Boat Works',
     datePublished: '2026-05-01',
-    dateModified: '2026-09-06',
+    dateModified: '2026-10-04',
     publishDate: '2026-05-01',
     category: 'Tips',
     readTime: '8 min read',
     keywords: ['walleye opener', 'ontario walleye season', 'boat prep checklist', 'fishing opener prep', 'walleye opener checklist'],
     content: `> **Quick answer:** The Ontario walleye opener for Zone 17 (Kawarthas, Rice Lake area) is the second Saturday of May, confirm the exact date each year in the Ontario (MNRF) Fishing Regulations Summary. The most common opener failures, dead battery, gummed kicker, stale fuel, are all preventable. Start your final prep two weeks before opener day, not the night before.
+
+Need your PCOC? Take the online course through [HBW's MyBoatCard referral link](https://myboatcard.com/card/harrisboat) and use **HARRIS15** for **15% off**.
 
 ---
 
@@ -10137,8 +10149,8 @@ Five factors affect how thorough your opener prep needs to be:
 - Confirm spring commissioning is complete. If it is not, book it now. Service slots fill in May.
 - Schedule any final service at [hbw.wiki/service](https://hbw.wiki/service) if needed.
 - Check your fishing licence is valid for the new season. Renew online if not.
-- Confirm your [Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency) (PCOC) is on the boat. It is a lifetime certification, you should have the original card.
-- Confirm your [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences) (PCL) is displayed on the bow and current. As of August 8, 2026, a renewal costs $24.41 and is valid for five years. Transport Canada adjusts the fee for inflation each April 1, so verify the current amount before applying. Without a valid PCL, you can be fined.
+- Confirm your [Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc) (PCOC) is on the boat. It is a lifetime certification, you should have the original card.
+- Confirm your [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl) (PCL) is displayed on the bow and current. As of August 8, 2026, a renewal costs $24.41 and is valid for five years. Transport Canada adjusts the fee for inflation each April 1, so verify the current amount before applying. Without a valid PCL, you can be fined.
 
 ### One Week Before Opener
 
@@ -10351,7 +10363,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: "Illustration of two boaters wearing orange lifejackets and checking a map and radio beside a Mercury outboard at an autumn dock.",
     author: 'Harris Boat Works',
     datePublished: '2026-05-05',
-    dateModified: '2026-09-07',
+    dateModified: '2026-10-04',
     publishDate: '2026-05-05',
     category: 'Tips',
     readTime: '9 min read',
@@ -10505,7 +10517,7 @@ We can generally arrange boat pickup. Ask us about availability for your boat an
 
 ## Sources
 
-- [Transport Canada - Safe Boating Guide (TP 511)](https://tc.canada.ca/en/marine-transportation/marine-safety/transport-canada-boating-safety-guide-tp-511) - Cold-water immersion guidance, mandatory safety equipment, and required operator competencies.
+- [Transport Canada - Safe Boating Guide (TP 511)](https://tc.canada.ca/sites/default/files/2026-07/tp-511-boating-guide-2026-EN-acc.pdf) - Cold-water immersion guidance, mandatory safety equipment, and required operator competencies.
 - [Transport Canada - Boating Safety](https://tc.canada.ca/en/marine-transportation/marine-safety/boating-safety) - Late-season operating recommendations.
 
 ## CTA
@@ -10548,7 +10560,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: "Illustration of two people wearing lifejackets in a motorboat beside an autumn shoreline.",
     author: 'Harris Boat Works',
     datePublished: '2026-04-22',
-    dateModified: '2026-09-06',
+    dateModified: '2026-10-04',
     publishDate: '2026-04-22',
     category: 'Boating Lifestyle',
     readTime: '~8 min read',
@@ -10559,6 +10571,8 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 *Last reviewed: 2026-08-08*
 
 > **Quick answer:** Ontario boating season runs roughly mid-April (ice-out) through late October (winterization). The three phases that matter are spring commissioning (March-April), peak summer operations (May-September), and fall layup (October-November). Most expensive surprises happen in the gaps when boaters skip steps or push past the season. This post is the HBW seasonal hub, what to do, when to do it, and what to skip the DIY on.
+
+Need your PCOC? Take the online course through [HBW's MyBoatCard referral link](https://myboatcard.com/card/harrisboat) and use **HARRIS15** for **15% off**.
 
 Ontario's boating season is shorter than people realize. Strip out the ice, the spring cold front, the fall layup, and you're left with maybe 22 good weekends if the weather cooperates. Making them count means doing the prep work outside that window, when nobody else is thinking about boats.
 
@@ -13130,12 +13144,12 @@ Harris Boat Works has been a Mercury dealer since 1965.
     imageAlt: 'Pleasure Craft Licence form on a workbench next to an aluminum boat undergoing a Mercury outboard motor repower.',
     author: 'Harris Boat Works',
     datePublished: '2026-04-15',
-    dateModified: '2026-10-03',
+    dateModified: '2026-10-04',
     category: 'Canadian Boating Regulations',
     readTime: '9 min read',
     keywords: ['pleasure craft licence update', 'PCL repower Ontario', 'Transport Canada boat licence', 'update boat registration after repower', 'PCL rules 2026'],
     content: `
-# [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences) Update During a Repower: What Ontario Boaters Need to Know in 2026
+# [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl) Update During a Repower: What Ontario Boaters Need to Know in 2026
 
 ## Quick answer
 When recorded information on a licensed pleasure craft changes, including after a repower if the motor details on the licence change, the boat owner must update the Pleasure Craft Licence (PCL) with Transport Canada within 30 days. Updates and cancellations are free. As checked September 5, 2026, a $24.41 fee applies to a new, transferred, renewed or duplicate licence. Fees may change each April 1. New, transferred and renewed licences under the rules effective December 31, 2025 are valid for five years. A duplicate or an information update does not renew the licence. Licences issued April 29, 2010 through December 30, 2025 keep their stated 10-year expiry. Older issue-date cohorts follow the table below. At HBW, the repower invoice lists the motor specs so you can submit the update yourself.
@@ -13143,6 +13157,8 @@ When recorded information on a licensed pleasure craft changes, including after 
 ## What changed that you actually need to know
 
 Transport Canada's Pleasure Craft Licence changes took effect on December 31, 2025. If you have not looked at your PCL lately, check the cohort that matches your licence instead of assuming every card is now a five-year document.
+
+Need your PCOC? Take the online course through [HBW's MyBoatCard referral link](https://myboatcard.com/card/harrisboat) and use **HARRIS15** for **15% off**.
 
 Key points, as checked September 5, 2026:
 - New, transferred and renewed PCLs are valid for five years.
@@ -13234,7 +13250,7 @@ Transport Canada requires an update within 30 days when recorded information cha
 
 - [Transport Canada: PCL changes effective December 31, 2025](https://www.canada.ca/en/transport-canada/news/2026/01/minister-of-transport-and-leader-of-the-government-in-the-house-of-commons-announces-changes-to-make-boating-safer-for-canadians.html).
 - Transport Canada, Pleasure Craft Licence (cohort validity, current fees and 30-day update window). [Fees and service standards](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/fees-service-standards)
-- [Transport Canada - Pleasure Craft Licensing System](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licensing-system) - Federal authority on PCL requirements and renewal rules.
+- [Transport Canada - Pleasure Craft Licensing System](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl) - Federal authority on PCL requirements and renewal rules.
 - [Transport Canada - Boating Safety](https://tc.canada.ca/en/marine-transportation/marine-safety/boating-safety) - Broader Canadian boating safety framework.
 
 *Last reviewed: 2026-08-08.*
@@ -17535,7 +17551,7 @@ Jay Harris helps run Harris Boat Works, a third-generation family marina in Gore
     image: "/lovable-uploads/hero-trent-severn-waterway-2026.png",
     author: 'Harris Boat Works',
     datePublished: "2026-05-08",
-    dateModified: "2026-09-29",
+    dateModified: '2026-10-04',
     publishDate: "2026-05-08",
     category: "Lifestyle",
     readTime: "9 min read",
@@ -17543,6 +17559,8 @@ Jay Harris helps run Harris Boat Works, a third-generation family marina in Gore
     content: `### Quick Answer
 
 The [Trent-Severn Waterway](https://parks.canada.ca/lhn-nhs/on/trentsevern) is a 386-kilometre navigable system running from Trenton to Port Severn through 44 locks. In 2026, lockage is free under the Canada Strong Pass from June 19 to September 7. For a 20-foot boat, that is roughly $45 per day in fees not paid. Mooring at lockstations is still $1.50 per foot per night. Harris Boat Works sits on Rice Lake between Locks 18 and 19. Navigation season runs May 15 to October 12, 2026.
+
+Need your PCOC? Take the online course through [HBW's MyBoatCard referral link](https://myboatcard.com/card/harrisboat) and use **HARRIS15** for **15% off**.
 
 **Verify all lock hours, fees, and program dates directly with Parks Canada before your trip, as these details are subject to change.**
 
@@ -17987,12 +18005,14 @@ After any overheating event, get it checked before the next run. [Book a Mercury
     image: "/lovable-uploads/hero-rice-lake-boating-guide.png",
     author: 'Harris Boat Works',
     datePublished: "2026-05-10",
-    dateModified: "2026-09-07",
+    dateModified: '2026-10-04',
     publishDate: "2026-05-10",
     category: "Lifestyle",
     readTime: "11 min read",
     keywords: ["Rice Lake boating guide", "Rice Lake fishing 2026", "Rice Lake boat launch", "Rice Lake sunken railway", "FMZ 17 fishing regulations", "Rice Lake walleye opener"],
     content: `![Illustrated orientation map of Rice Lake, Ontario. Bewdley sits at the southwest end. Gores Landing, Harris Boat Works and Harwood are on the south shore. Hiawatha and Keene are on the north shore. The Otonabee River enters at the west end and the Trent River leaves at the northeast end.](/lovable-uploads/rice-lake-map-illustrated.jpg)
+
+Need your PCOC? Take the online course through [HBW's MyBoatCard referral link](https://myboatcard.com/card/harrisboat) and use **HARRIS15** for **15% off**.
 
 *Rice Lake at a glance. Orientation map, not for navigation.*
 
@@ -18084,9 +18104,9 @@ Other rental options exist around Bewdley, but availability and quality vary. Ca
 
 **PFDs and lifejackets.** Carry one Canadian-approved PFD or lifejacket of the appropriate size for each person on board, and keep it readily accessible. Transport Canada's [Safe Boating Guide](https://tc.canada.ca/en/marine-transportation/marine-safety/boating-safety) explains the approved Canadian types and carriage rules.
 
-**[Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences) (PCL).** Required for boats with motors 7.5 kW (10 HP) or larger. As of August 8, 2026, new and renewed PCLs are valid for five years and cost $24.41. Transport Canada adjusts the fee for inflation each April 1, so verify the current amount and your licence status before launch.
+**[Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl) (PCL).** Required for boats with motors 7.5 kW (10 HP) or larger. As of August 8, 2026, new and renewed PCLs are valid for five years and cost $24.41. Transport Canada adjusts the fee for inflation each April 1, so verify the current amount and your licence status before launch.
 
-**[Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency) (PCOC).** Required for anyone operating a powered boat in Canada. One-time test, not annual.
+**[Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc) (PCOC).** Required for anyone operating a powered boat in Canada. One-time test, not annual.
 
 **Required safety equipment.** Sound-signaling device (whistle or horn), bailer, paddle, anchor, navigation lights for sunset operation. Transport Canada publishes the full list, and CO2-charged life jackets count as PFDs.
 
@@ -18163,7 +18183,7 @@ Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | Mercury Marin
 - Ontario MNR, [Fisheries Management Zone 17 regulations](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17)
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
-- Transport Canada, [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-personnel/pleasure-craft-licence)`,
+- Transport Canada, [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl)`,
     faqs: [
   {
     "question": "Where exactly is the sunken railway hazard?",
@@ -18676,7 +18696,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: "Mercury 115 FourStroke model and serial number label on the outboard transom bracket",
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
-    dateModified: '2026-09-11',
+    dateModified: '2026-10-04',
     publishDate: '2026-05-17',
     category: 'Buying Guide',
     readTime: '8 min read',
@@ -18877,7 +18897,7 @@ The exact model year, warranty status, service bulletins, and dealer service his
 If the bracket plate is gone and the freeze-plug stamp is unreadable:
 
 - **Check service receipts**, any prior service work would have referenced the serial.
-- **Check the boat's [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences)**, sometimes the serial was recorded.
+- **Check the boat's [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl)**, sometimes the serial was recorded.
 - **Check insurance documents**, same.
 - **Bring it to us**, we can sometimes identify the motor from the casting numbers and other markings, but this is detective work, not a quick lookup.
 - **Worst case**, we can pressure-test, compression-test, and document the actual current condition without the serial. It's a less complete picture, but it's something.
@@ -19309,7 +19329,7 @@ Submit the boat details once. HBW will confirm whether the outdoor-storage model
     imageAlt: 'Diagram of ownership costs: slip or launch, insurance, storage and winterization, fuel, routine service, and licensing when due.',
     author: 'Harris Boat Works',
     datePublished: '2026-05-19',
-    dateModified: '2026-09-06',
+    dateModified: '2026-10-04',
     publishDate: '2026-05-19',
     category: 'Buying Guide',
     readTime: '11 min read',
@@ -19320,6 +19340,8 @@ Submit the boat details once. HBW will confirm whether the outdoor-storage model
 *Last reviewed: 2026-08-27*
 
 > **Quick answer:** The Section 7 sample is an illustrative CAD budget. Its annual cash total is $5,879.49. Storage and winterization in that sample are before HST, shop supplies and miscellaneous charges. For illustration only, financing $32,000 after an $8,000 down payment on a $40,000 purchase for 120 monthly payments at 8% nominal annual interest produces a payment of about $388.25/month, or $4,658.98/year, before any financed taxes or fees. Added to the $5,879.49 sample annual cash budget, that is about $10,538.47/year. The 8% rate is an assumption, not a current HBW financing offer. Full sample budget is in Section 7 below. Build a current quote at mercuryrepower.ca.
+
+Need your PCOC? Take the online course through [HBW's MyBoatCard referral link](https://myboatcard.com/card/harrisboat) and use **HARRIS15** for **15% off**.
 
 If you're shopping your first boat or thinking about whether to keep your current one, the *purchase price* is only part of the question. The bigger question is: **what does it cost to keep it on the water every year?**
 
@@ -19467,7 +19489,7 @@ For most current recreational Mercury FourStrokes, the **100-hour or annual trig
 
 [Transport Canada's PCL changes](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl) effective December 31, 2025 ended lifetime licences. As of August 8, 2026, new and renewed PCLs are **5-year licences at $24.41 CAD**, issued and renewed online through Transport Canada's PCL portal. Transport Canada adjusts the fee for inflation each April 1, so verify the current amount before applying. At the August 8 fee, that works out to about **$4.88/year**.
 
-[PCOC](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency) (operator card) is a one-time test, lifetime card. ~$50 once, never again.
+[PCOC](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc) (operator card) is a one-time test, lifetime card. ~$50 once, never again.
 
 This category used to be near-zero. It's still essentially negligible.
 
@@ -25437,7 +25459,7 @@ Ready to price a Mercury repower? Build a live CAD quote at the [Mercury Repower
     imageAlt: "The concrete launch ramp and docks at Harris Boat Works on Rice Lake, Ontario",
     author: "Harris Boat Works",
     datePublished: "2026-05-10",
-    dateModified: "2026-09-06",
+    dateModified: '2026-10-04',
     publishDate: "2026-05-10",
     category: "Local Guides",
     readTime: "8 min read",
@@ -25453,7 +25475,9 @@ Ready to price a Mercury repower? Build a live CAD quote at the [Mercury Repower
     ],
     content: `## Quick Answer
 
-Rice Lake has four main public boat launch options: Bewdley (west end), Roseneath (south shore), Gores Landing (HBW's location, south shore), and Hastings (east end, Trent-Severn entrance). Each has different facilities, parking, and seasonal access. HBW's Gores Landing ramp is 2-lane concrete with parking and washrooms; day fees apply. [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences) (PCL) and [Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency) (PCOC) are required for powered boats.
+Rice Lake has four main public boat launch options: Bewdley (west end), Roseneath (south shore), Gores Landing (HBW's location, south shore), and Hastings (east end, Trent-Severn entrance). Each has different facilities, parking, and seasonal access. HBW's Gores Landing ramp is 2-lane concrete with parking and washrooms; day fees apply. [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl) (PCL) and [Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc) (PCOC) are required for powered boats.
+
+Need your PCOC? Take the online course through [HBW's MyBoatCard referral link](https://myboatcard.com/card/harrisboat) and use **HARRIS15** for **15% off**.
 
 ---
 
@@ -25554,7 +25578,7 @@ For any powered boat in Ontario waters:
 
 **Valid Pleasure Craft Licence (PCL)** for a boat with one or more motors adding up to 7.5 kW (10 HP) or more, unless the boat is registered. Since December 31, 2025, new and renewed PCLs are valid for five years. As of August 8, 2026, the federal service fee is $24.41. Transport Canada adjusts the fee for inflation each April 1, so check the current amount and your licence status before launch day.
 
-**Required safety equipment:** Carry a Canadian-approved lifejacket or PFD in the correct size for each person. The rest of the minimum equipment depends on the boat's type and length, so use Transport Canada's current [Safe Boating Guide](https://tc.canada.ca/en/marine-transportation/marine-safety/office-boating-safety/boating-safety-recreational-boaters) for the checklist that matches your boat. Everything must be in working order and easy to reach.
+**Required safety equipment:** Carry a Canadian-approved lifejacket or PFD in the correct size for each person. The rest of the minimum equipment depends on the boat's type and length, so use Transport Canada's current [Safe Boating Guide](https://tc.canada.ca/sites/default/files/2026-07/tp-511-boating-guide-2026-EN-acc.pdf) for the checklist that matches your boat. Everything must be in working order and easy to reach.
 
 ---
 
@@ -29068,7 +29092,7 @@ If a trailer concern appears while you're preparing the boat for Mercury service
     imageAlt: 'Bowrider with a Mercury outboard and lifejackets aboard tied at a private dock on a calm Ontario lake',
     author: 'Harris Boat Works',
     datePublished: '2026-05-13',
-    dateModified: '2026-09-06',
+    dateModified: '2026-10-04',
     publishDate: '2026-05-13',
     category: 'Boating',
     readTime: '~9 min read',
@@ -29077,6 +29101,8 @@ If a trailer concern appears while you're preparing the boat for Mercury service
     content: `## Quick Answer
 
 **Ontario does not legally require boat insurance for most pleasure craft. But for any boat worth more than $5,000, or any boat carrying passengers, basic liability and hull coverage is what every honest dealer recommends. Premiums vary widely by boat, value, and coverage; the ranges in the table below show what 2026 Ontario policies realistically run.**
+
+Need your PCOC? Take the online course through [HBW's MyBoatCard referral link](https://myboatcard.com/card/harrisboat) and use **HARRIS15** for **15% off**.
 
 - **Liability**: $1M-$2M minimum (covers damage to other boats, docks, or injuries)
 - **Hull coverage**: damage to the boat itself; motor and trailer often need their own riders or scheduled amounts
@@ -29166,7 +29192,7 @@ Cost factors:
 - **Engine HP**: over 150 HP increases premium meaningfully
 - **Where you boat**: Lake Ontario (open water, weather risk) costs more than inland lakes like Rice Lake
 - **Claim history**: clean record gets best rates
-- **Operator experience**: [PCOC](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency) alone is minimum; documented experience helps
+- **Operator experience**: [PCOC](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc) alone is minimum; documented experience helps
 - **Storage location**: indoor storage discounts are real
 
 ## Who Insures Boats in Ontario?
@@ -31303,7 +31329,7 @@ Jay Harris helps run Harris Boat Works, a third-generation family marina in Gore
     imageAlt: "Infographic: a one-line boat DC circuit from battery through switch and fuse panel to bilge pump, lights and electronics, with five seasonal checks for terminals, switch, fuses, bilge pump and wiring.",
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
-    dateModified: '2026-09-07',
+    dateModified: '2026-10-04',
     publishDate: '2026-05-17',
     category: 'Maintenance',
     readTime: '8 min read',
@@ -31455,7 +31481,7 @@ For engine repairs, we only service Mercury and MerCruiser.
 - Transport Canada Construction Standards for Small Vessels (TP 1332)
 - Mercury Marine electrical installation guidelines (dealer technical reference, 2026)
 - HBW service shop records, 2018-2026
-- [Transport Canada - Safe Boating Guide (TP 511)](https://tc.canada.ca/en/marine-transportation/marine-safety/transport-canada-boating-safety-guide-tp-511) - Federal guidance on small-vessel electrical safety and required equipment.
+- [Transport Canada - Safe Boating Guide (TP 511)](https://tc.canada.ca/sites/default/files/2026-07/tp-511-boating-guide-2026-EN-acc.pdf) - Federal guidance on small-vessel electrical safety and required equipment.
 - [Mercury Marine Canada](https://www.mercurymarine.com/ca/en) - Manufacturer guidance on rigging, batteries, and ignition-protected equipment.
 
 ## About the author

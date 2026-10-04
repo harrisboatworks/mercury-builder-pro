@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/boat-ownership-cost-ontario-chinese.md
-last_updated: 2026-08-08
+last_updated: 2026-10-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "安省华人养船成本指南"
 description: "安省买船后到底有哪些成本？HBW 用中文讲清购船价格、PCOC、PCL、保险、燃油、保养、存放、冬化、拖车和换装发动机。"
 category: "Buying Guides"
 date_published: 2026-05-17
-date_modified: 2026-08-08
+date_modified: 2026-10-04
 keywords: ["船只持有成本","boat ownership cost Ontario","华人船主预算","winterization 费用","HBW service cost","Mercury 维护成本"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,11 +25,13 @@ revenue_driver: repower
 
 **Category:** Buying Guides  
 **Published:** 2026-05-17  
-**最后审核:** 2026-08-08  
+**最后审核:** 2026-10-04  
 **Read time:** 10 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/boat-ownership-cost-ontario-chinese
 
 > **快速答案：** 安省买船后的真实成本不只是买船价格。还要考虑 PCOC、Pleasure Craft Licence、保险、安全装备、燃油、拖车、保养维修、冬化保养、存放、船位、下水、维修和未来换装发动机。HBW 提供船只销售、保养维修、租船服务、冬化保养、存放、船位、Mercury 船外机和 MerCruiser 支持 (Harris Boat Works)。
+
+需要考取 PCOC？通过 [HBW 的 MyBoatCard 推荐链接](https://myboatcard.com/card/harrisboat)参加在线课程，使用优惠码 **HARRIS15** 可享 **15% 折扣**。
 
 如果一个船交易看起来便宜得像捡到宝，先别急着开心。船很少免费送你惊喜，但它很擅长晚一点给你账单。
 

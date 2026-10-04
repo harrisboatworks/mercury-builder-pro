@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/gta-chinese-pcl-fishing-licence-guide.md
-last_updated: 2026-09-06
+last_updated: 2026-10-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "GTA 华人 PCOC 操作员卡、PCL 船牌与安省钓鱼证指南"
 description: "分清 PCOC 操作员资格、PCL 船只牌照和安省钓鱼证：谁需要、有效期、官方申请入口与 Rice Lake 出发前检查。"
 category: "mandarin"
 date_published: 2026-05-15
-date_modified: 2026-09-06
+date_modified: 2026-10-04
 keywords: ["PCOC 操作员卡","PCL 船只牌照","加拿大船驾照中文","Pleasure Craft Operator Card 华人","安省钓鱼证","Ontario 钓鱼证 中文","Rice Lake 钓鱼规则","GTA Chinese boating licence"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,13 +25,15 @@ revenue_driver: repower
 
 **Category:** mandarin  
 **Published:** 2026-05-15  
-**最后审核:** 2026-09-06  
+**最后审核:** 2026-10-04  
 **Read time:** 11 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/gta-chinese-pcl-fishing-licence-guide
 
 ## 快速答案
 
 如果你是 GTA 华人，准备买船、租船或在 Rice Lake 钓鱼，需要分清三件事：（1）PCOC（Pleasure Craft Operator Card）是操作动力休闲船的人的常见资格证明，卡终身有效；（2）[PCL 船只牌照](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl)（Pleasure Craft Licence）用于符合条件的船，发动机总功率达到 10 HP（7.5 kW）或以上时通常需要，新办、续期、转让或补发现为 $24.41 CAD（2026-09-05）；新办、转让或续期后有效 5 年（补发不延长有效期），资料更新免费；（3）安省钓鱼资格取决于年龄和居住身份。费用和规则会变，请使用 Transport Canada 与 Ontario.ca 的当前官方页面。
+
+需要考取 PCOC？通过 [HBW 的 MyBoatCard 推荐链接](https://myboatcard.com/card/harrisboat)参加在线课程，使用优惠码 **HARRIS15** 可享 **15% 折扣**。
 
 ---
 
@@ -47,7 +49,7 @@ Harris Boat Works（HBW）是 Rice Lake 上家族经营·1947 年至今 的 mari
 
 ## 一、PCOC 操作员卡（Pleasure Craft Operator Card）
 
-**这是最常被忽略的一项。** 在加拿大水域操作任何带发动机的休闲船只（包括小马力电动船）时，操作人必须随身携带 Transport Canada 认可的操作能力证明；PCOC 是最常见的证明，但不是唯一被接受的证明。颁发机构是 [Transport Canada](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency)。
+**这是最常被忽略的一项。** 在加拿大水域操作任何带发动机的休闲船只（包括小马力电动船）时，操作人必须随身携带 Transport Canada 认可的操作能力证明；PCOC 是最常见的证明，但不是唯一被接受的证明。颁发机构是 [Transport Canada](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc)。
 
 ### 谁需要
 
@@ -186,7 +188,7 @@ Rice Lake 属于安省 Fisheries Management Zone（FMZ），具体的鱼种季�
 
 ## 六、罚款与风险
 
-被检查时拿不出有效的操作员资格证明、需要的 Pleasure Craft Licence 或安省钓鱼资格，可能被开告票或面临其他执法后果。具体项目和金额请参考 [Transport Canada](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency) 和 [Ontario MNRF](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees) 的当前官方信息。
+被检查时拿不出有效的操作员资格证明、需要的 Pleasure Craft Licence 或安省钓鱼资格，可能被开告票或面临其他执法后果。具体项目和金额请参考 [Transport Canada](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc) 和 [Ontario MNRF](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees) 的当前官方信息。
 
 不要用旧帖中的课程价格或罚款金额做决定。先把需要的证件、船牌和当年钓鱼规则确认清楚，再出发。
 

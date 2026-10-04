@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/used-boat-buying-checklist-toronto-chinese.md
-last_updated: 2026-08-08
+last_updated: 2026-10-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "多伦多华人二手船购买检查清单"
 description: "多伦多华人买二手船前要检查什么？HBW 用中文讲清船体、艉板、拖车、Mercury 船外机、PCL、PCOC、湖测和常见风险。"
 category: "Buying Guides"
 date_published: 2026-05-17
-date_modified: 2026-08-08
+date_modified: 2026-10-04
 keywords: ["二手船购买","used boat checklist","多伦多华人买二手船","船只检查清单","Mercury 二手 inspection","Harris Boat Works"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,11 +25,13 @@ revenue_driver: repower
 
 **Category:** Buying Guides  
 **Published:** 2026-05-17  
-**最后审核:** 2026-08-08  
+**最后审核:** 2026-10-04  
 **Read time:** 9 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/used-boat-buying-checklist-toronto-chinese
 
 > **快速答案：** 多伦多华人买二手船，最重要不是先问“能不能再便宜一点”，而是先确认船体、艉板、地板、拖车、发动机、操控系统、PCL 文件、所有权文件和湖测。Transport Canada 说明，10 HP 或以上、主要在加拿大水域使用的休闲船通常需要 Pleasure Craft Licence，但 PCL 只是识别文件，不是所有权证明 (Transport Canada PCL)。
+
+需要考取 PCOC？通过 [HBW 的 MyBoatCard 推荐链接](https://myboatcard.com/card/harrisboat)参加在线课程，使用优惠码 **HARRIS15** 可享 **15% 折扣**。
 
 二手船可以买得很聪明，也可以买成一个漂浮的翻新工程。区别通常不在运气，在检查。
 
