@@ -3599,7 +3599,7 @@ Phone: 905-342-2153
     image: '/lovable-uploads/pontoon-family-rice-lake-hero.png',
     author: 'Jay Harris',
     datePublished: "2026-05-16",
-    dateModified: '2026-08-02',
+    dateModified: '2026-10-04',
     publishDate: "2026-05-16",
     category: "Boating Lifestyle",
     readTime: '12 min read',
@@ -3609,6 +3609,8 @@ Phone: 905-342-2153
 *Last reviewed: 2026-08-02*
 
 > **Quick answer:** A Toronto-to-Rice Lake rental day trip works: plan roughly 1 hour 45 minutes from central Toronto in light traffic to Harris Boat Works in Gores Landing, and allow more time during GTA or summer-weekend traffic. Check the live listings, rates, and availability at harrisboatworks.ca/rentals before planning the rest of the day.
+
+Need your PCOC? Take the online course through [HBW's MyBoatCard referral link](https://myboatcard.com/card/harrisboat) and use **HARRIS15** for **15% off**.
 
 You're in Toronto, you don't own a boat, but you'd like to have one for a day. Harris Boat Works operates a current online rental lineup from its Gores Landing dock on Rice Lake. HBW has served boaters here since 1947; current rentals and their availability are listed online.
 

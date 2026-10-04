@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/ontario-boating-season-tips.md
-last_updated: 2026-09-06
+last_updated: 2026-10-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Ontario Boating Season Tips 2026"
 description: "How to run an Ontario boat season smart: spring commissioning, peak summer operations, fall layup, and the call-the-shop moments in between."
 category: "Boating Lifestyle"
 date_published: 2026-04-22
-date_modified: 2026-09-06
+date_modified: 2026-10-04
 keywords: ["ontario boating season","boat seasonal maintenance ontario","spring boat commissioning","fall boat layup","ontario boating tips"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,13 +25,15 @@ revenue_driver: repower
 
 **Category:** Boating Lifestyle  
 **Published:** 2026-04-22  
-**Last reviewed:** 2026-09-06  
+**Last reviewed:** 2026-10-04  
 **Read time:** ~8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ontario-boating-season-tips
 
 ## Ontario Boating Season Tips: A Seasonal Operations Hub (Spring, Summer, Fall)
 
 > **Quick answer:** Ontario boating season runs roughly mid-April (ice-out) through late October (winterization). The three phases that matter are spring commissioning (March-April), peak summer operations (May-September), and fall layup (October-November). Most expensive surprises happen in the gaps when boaters skip steps or push past the season. This post is the HBW seasonal hub, what to do, when to do it, and what to skip the DIY on.
+
+Need your PCOC? Take the online course through [HBW's MyBoatCard referral link](https://myboatcard.com/card/harrisboat) and use **HARRIS15** for **15% off**.
 
 Ontario's boating season is shorter than people realize. Strip out the ice, the spring cold front, the fall layup, and you're left with maybe 22 good weekends if the weather cooperates. Making them count means doing the prep work outside that window, when nobody else is thinking about boats.
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh-hant/first-boat-rental-rice-lake-chinese-guide.md
-last_updated: 2026-08-02
+last_updated: 2026-10-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "多倫多華人第一次租船釣魚：證件、安全和當天流程"
 description: "多倫多華人第一次到 Rice Lake 租船釣魚的完整指南：需要帶甚麼證件、HBW 要求的有效 PCOC、租船安全檢查清單、當天到達流程、安省釣魚證，以及從萬錦或士嘉堡前往 Rice Lake 的路線。"
 category: "mandarin"
 date_published: 2026-06-12
-date_modified: 2026-08-02
+date_modified: 2026-10-04
 keywords: ["Rice Lake 租船","繁體 多倫多","第一次 租船 釣魚","安省 釣魚證","Harris Boat Works"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,11 +25,13 @@ revenue_driver: rentals
 
 **Category:** mandarin  
 **Published:** 2026-06-12  
-**最後審核:** 2026-08-02  
+**最後審核:** 2026-10-04  
 **Read time:** 8 分鐘  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh-hant/first-boat-rental-rice-lake-chinese-guide
 
 > **簡短答案：** 多倫多出發到 Rice Lake 約 90 分鐘車程。HBW 要求操作租賃船隻的人持有有效的 PCOC（Pleasure Craft Operator Card）。租船當天還需要政府簽發的有相片證件、信用卡（按金用），如果要釣魚，還要有效的安省釣魚證。HBW 亦會完成租船安全檢查清單；這份清單不能代替 HBW 的 PCOC 要求。出發前請在 [HBW 租船頁面](https://www.harrisboatworks.ca/rentals) 確認最新要求。
+
+需要考取 PCOC？透過 [HBW 的 MyBoatCard 推薦連結](https://myboatcard.com/card/harrisboat)參加網上課程，使用優惠碼 **HARRIS15** 可享 **15% 折扣**。
 
 ## 多倫多出發：路線和時間
 

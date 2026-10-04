@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/pa/boat-licence-rental-ontario-punjabi-pcoc-faq.md
-last_updated: 2026-09-11
+last_updated: 2026-10-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Ontario vich boat chalaun layi licence chahida? PCOC FAQ | ਕਿਸ਼�
 description: "Ki Ontario vich boat rent karan layi licence chahida? HBW de PCOC rules, rental safety briefing te lifejacket rules. Punjabi vich poori jaankari ethe lao."
 category: "ਪੰਜਾਬੀ ਗਾਈਡ"
 date_published: 2026-06-12
-date_modified: 2026-09-11
+date_modified: 2026-10-04
 keywords: ["Ontario vich boat license kinj banaye (how to get a boat license in Ontario)","boat operator card zaroori hai Ontario vich (is boat operator card necessary in Ontario)","PCOC course online free Punjabi (PCOC course online free in Punjabi)","boat chalan layi license di lod hai Canada ch (do you need a license to drive a boat in Canada)"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,11 +25,13 @@ revenue_driver: rentals
 
 **Category:** ਪੰਜਾਬੀ ਗਾਈਡ  
 **Published:** 2026-06-12  
-**ਆਖਰੀ ਸਮੀਖਿਆ:** 2026-09-11  
+**ਆਖਰੀ ਸਮੀਖਿਆ:** 2026-10-04  
 **Read time:** 8 ਮਿੰਟ  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/pa/boat-licence-rental-ontario-punjabi-pcoc-faq
 
 ਜਵਾਬ ਪਹਿਲਾਂ: Ontario ਵਿੱਚ ਕੋਈ ਵੀ ਮੋਟਰ ਵਾਲੀ ਕਿਸ਼ਤੀ (power-driven boat) ਚਲਾਉਣ ਲਈ ਤੁਹਾਡੇ ਕੋਲ PCOC (Pleasure Craft Operator Card) ਜਾਂ ਹੋਰ ਮਾਨਤਾ-ਪ੍ਰਾਪਤ proof of competency ਹੋਣਾ ਲਾਜ਼ਮੀ ਹੈ। ਇਹ ਕਾਰਡ-ਵਰਗਾ ਸਰਟੀਫਿਕੇਟ ਹੈ, ਜਿਵੇਂ ਕਾਰ ਚਲਾਉਣ ਲਈ ਡਰਾਈਵਿੰਗ ਲਾਇਸੰਸ। ਮਾਮੂਲੀ ਪੈਡਲ ਬੋਟਾਂ, ਕਾਇਆਕ, ਜਾਂ ਕੈਨੂਆਂ ਲਈ PCOC ਦੀ ਲੋੜ ਨਹੀਂ, ਬੱਸ ਜੇ ਉਹਨਾਂ ’ਤੇ ਕੋਈ ਮੋਟਰ ਲੱਗੀ ਹੋਵੇ। Harris Boat Works ਵਿੱਚ ਹਰ driver ਨੂੰ check-in ਸਮੇਂ ਵੈਧ boat operator licence ਦਿਖਾਉਣਾ ਲਾਜ਼ਮੀ ਹੈ।
+
+PCOC ਚਾਹੀਦਾ ਹੈ? [HBW ਦੇ MyBoatCard ਰੈਫ਼ਰਲ ਲਿੰਕ](https://myboatcard.com/card/harrisboat) ਰਾਹੀਂ ਆਨਲਾਈਨ ਕੋਰਸ ਕਰੋ ਅਤੇ **15% ਛੋਟ** ਲਈ ਕੋਡ **HARRIS15** ਵਰਤੋ।
 
 ਨੋਟ: ਇਹ page ਸਿਰਫ਼ ਆਮ ਜਾਣਕਾਰੀ ਲਈ ਹੈ, legal advice ਨਹੀਂ। Rules ਬਦਲ ਸਕਦੇ ਹਨ; ਆਖ਼ਰੀ ਗੱਲ ਹਮੇਸ਼ਾ Transport Canada ਦੇ official ਸਫ਼ੇ ਦੀ ਮੰਨੋ: https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc
 

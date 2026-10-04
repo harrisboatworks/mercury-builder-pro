@@ -69,13 +69,16 @@
     "check:rss": "node scripts/generate-rss.mjs --check",
     "build:image-variants-manifest": "node scripts/build-image-variants-manifest.mjs",
     "reconcile:blog-pricing": "node scripts/reconcile-blog-pricing.mjs",
-    "prebuild": "npm run check:lockfile-sync && npm run generate:canonical-pricing && npm run generate:blog-index && npm run generate:product-protection-reference && npm run generate:motor-markdown && npm run rewrite:agent-urls && npm run check:blog-leaks && npm run check:blog-output-hygiene && npm run check:blog-hreflang-registry && npm run check:blog-section-cards && npm run check:blog-range-integrity && npm run check:blog-internal-links && npm run check:blog-zh-markdown-structure && npm run check:blog-zh-code-mix && npm run check:blog-timeline-facts && npm run check:blog-credibility-anchors && npm run check:maintenance-surface && npm run check:blog-assets && npm run check:pricing-reference-copy && npm run check:pricing-drift && npm run check:blog-price-hygiene && npm run check:publishing-integrity && npm run generate:responsive-variants && npm run build:image-variants-manifest && npm run check:responsive-images && npm run generate:blog-og-images && npm run check:blog-og-images",
+    "prebuild": "npm run check:lockfile-sync && npm run generate:canonical-pricing && npm run generate:blog-index && npm run generate:product-protection-reference && npm run generate:motor-markdown && npm run rewrite:agent-urls && npm run check:blog-leaks && npm run check:blog-output-hygiene && npm run check:blog-hreflang-registry && npm run check:blog-section-cards && npm run check:blog-range-integrity && npm run check:blog-internal-links && npm run check:blog-zh-markdown-structure && npm run check:blog-zh-code-mix && npm run check:blog-pcoc-referrals && npm run check:blog-timeline-facts && npm run check:blog-credibility-anchors && npm run check:maintenance-surface && npm run check:blog-assets && npm run check:pricing-reference-copy && npm run check:pricing-drift && npm run check:blog-price-hygiene && npm run check:publishing-integrity && npm run generate:responsive-variants && npm run build:image-variants-manifest && npm run check:responsive-images && npm run generate:blog-og-images && npm run check:blog-og-images",
     "verify:gta-sitemap": "node scripts/verify-gta-sitemap.mjs",
     "verify:updated-hero-eligibility": "tsx scripts/verify-updated-hero-eligibility.ts",
     "prepare": "husky || true",
     "lint": "eslint .",
     "lint:tokens": "node scripts/check-design-tokens.mjs",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "reconcile:blog-pcoc-referrals": "node scripts/reconcile-blog-pcoc-referrals.mjs",
+    "check:blog-pcoc-referrals": "node scripts/check-blog-pcoc-referrals.mjs",
+    "test:blog-pcoc-referrals": "node --test scripts/check-blog-pcoc-referrals.test.mjs"
   },
   "dependencies": {
     "@elevenlabs/react": "^0.12.3",

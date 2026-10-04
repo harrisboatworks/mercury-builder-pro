@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/rice-lake-boat-rental-guide-2026.md
-last_updated: 2026-10-03
+last_updated: 2026-10-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Rice Lake Boat Rentals: Fleet, Costs, and How It Works (2026)"
 description: "Rice Lake boat rentals from Harris Boat Works in Gores Landing. The pontoon and fishing-boat lineup, what's included, fuel planning, licence rules, and online booking."
 category: "Boating Lifestyle"
 date_published: 2026-07-02
-date_modified: 2026-10-03
+date_modified: 2026-10-04
 keywords: ["rice lake boat rentals","pontoon rental rice lake","boat rental gores landing","fishing boat rental kawarthas","rent a boat rice lake ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,11 +25,13 @@ revenue_driver: rentals
 
 **Category:** Boating Lifestyle  
 **Published:** 2026-07-02  
-**Last reviewed:** 2026-10-03  
+**Last reviewed:** 2026-10-04  
 **Read time:** ~9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/rice-lake-boat-rental-guide-2026
 
 > **Quick answer:** Harris Boat Works rents pontoons and fishing boats on Rice Lake. The current online lineup includes 20 Transporter, 23 Cruise, 24 Transporter, the Halo pontoon, and 16 ProSport boats. Everything books online with live availability, life jackets and safety gear included. You need photo ID and proof of operator competency. Book at harrisboatworks.ca/rentals.
+
+Need your PCOC? Take the online course through [HBW's MyBoatCard referral link](https://myboatcard.com/card/harrisboat) and use **HARRIS15** for **15% off**.
 
 Most rental questions start in the same place: what boats are currently available, what does it cost, and what licence does the driver need?
 
@@ -169,7 +171,7 @@ Pick your boat and date, and the booking system shows you live availability and 
 ## Sources
 
 - [Harris Boat Works rental FAQ and policies](https://harrisboatworks.ca/boat-rentals)
-- [Transport Canada: Pleasure Craft Operator Card requirements](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-card)
+- [Transport Canada: Pleasure Craft Operator Card requirements](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc)
 - [Ontario fishing licence information](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees)
 - [Ontario recreational fishing licence information](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licence-information)
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/es/guia-pesca-rice-lake-ontario.md
-last_updated: 2026-09-06
+last_updated: 2026-10-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Guía de pesca en Rice Lake, Ontario"
 description: "Guía completa de pesca en Rice Lake: especies (walleye, bass, muskie, perch), temporadas FMZ 17, licencias, mejores zonas y alquiler de botes en Harris."
 category: "Pesca"
 date_published: 2026-04-12
-date_modified: 2026-09-06
+date_modified: 2026-10-04
 keywords: ["pesca Rice Lake Ontario","guía pesca Ontario","pescar walleye Ontario","lago cerca de Toronto para pescar"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,13 +25,15 @@ revenue_driver: repower
 
 **Category:** Pesca  
 **Published:** 2026-04-12  
-**Última revisión:** 2026-09-06  
+**Última revisión:** 2026-10-04  
 **Read time:** 12 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/es/guia-pesca-rice-lake-ontario
 
 ### Respuesta rápida
 
 Rice Lake es uno de los mejores lagos para pescar walleye (lucioperca / doré) en toda Ontario. Está a aproximadamente **1.5 horas al este de Toronto** por la Hwy 401E + Hwy 115N. La temporada de walleye en la Zona de Gestión de Pesca 17 (FMZ 17) abre el segundo sábado de mayo y cierra el 15 de noviembre, con un límite de 4 peces. Las licencias de pesca son obligatorias para personas de 18 a 64 años. Verifica siempre las fechas y límites actuales en ontario.ca antes de salir.
+
+¿Necesita su PCOC? Haga el curso en línea con [el enlace de recomendación de HBW a MyBoatCard](https://myboatcard.com/card/harrisboat) y use el código **HARRIS15** para obtener **15% de descuento**.
 
 ---
 

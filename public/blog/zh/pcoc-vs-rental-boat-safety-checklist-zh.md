@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/pcoc-vs-rental-boat-safety-checklist-zh.md
-last_updated: 2026-09-06
+last_updated: 2026-10-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "安省租船需要驾照吗？PCOC 与租船安全清单一次讲清"
 description: "安省租船华人指南：PCOC（船只操作员卡）与 Rental Boat Safety Checklist 的差别、何时需要哪一个、罚款风险、如何合法上水。"
 category: "安省法规中文"
 date_published: 2026-05-11
-date_modified: 2026-09-06
+date_modified: 2026-10-04
 keywords: ["安省租船 驾照 中文","PCOC 租船 中文","Rental Boat Safety Checklist 中文","多伦多 租船 不需要驾照","华人 租船 安省 规则"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,13 +25,15 @@ revenue_driver: rentals
 
 **Category:** 安省法规中文  
 **Published:** 2026-05-11  
-**最后审核:** 2026-09-06  
+**最后审核:** 2026-10-04  
 **Read time:** 6 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/pcoc-vs-rental-boat-safety-checklist-zh
 
 ## 快速答案
 
 在加拿大租船，**通常需要 PCOC（船只操作员卡）**。部分租船公司会在你前往时提供「临时免除 PCOC」的 Safety Briefing（限该次租用），但这不是法律默认。即使有临时免除，安全责任仍然在操作者身上。如果你计划多次租船或将来买船，建议直接取得 PCOC，因为它一次性终身有效。
+
+需要考取 PCOC？通过 [HBW 的 MyBoatCard 推荐链接](https://myboatcard.com/card/harrisboat)参加在线课程，使用优惠码 **HARRIS15** 可享 **15% 折扣**。
 
 *HBW 信任要点*
 
@@ -47,7 +49,7 @@ revenue_driver: rentals
 
 ## PCOC 与租船的关系
 
-**PCOC（[Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency)，船只操作员卡）** 是 Transport Canada 规定的证件。法律规定：任何在加拿大水域操作有马达的休闲船的人，必须持有 PCOC 或同等证明。
+**PCOC（[Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc)，船只操作员卡）** 是 Transport Canada 规定的证件。法律规定：任何在加拿大水域操作有马达的休闲船的人，必须持有 PCOC 或同等证明。
 
 **这个规定适用于租船吗？** 一般来说，**是的**。
 

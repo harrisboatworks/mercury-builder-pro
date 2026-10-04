@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/tl/first-time-fishing-rice-lake-tagalog-family-guide.md
-last_updated: 2026-09-06
+last_updated: 2026-10-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "First-time fishing sa Rice Lake mula Toronto: Family Guide"
 description: "First-time fishing sa Rice Lake mula Toronto: fishing licence, boat rental, ano ang dadalhin, at mga family tip. Kumpletong Tagalog guide para sa pamilya."
 category: "Tagalog Guide"
 date_published: 2026-06-12
-date_modified: 2026-09-06
+date_modified: 2026-10-04
 keywords: ["bangkang mura sa Ontario (cheap boat in Ontario)","paano bumili ng bangka sa Canada (how to buy a boat in Canada)","magkano ang bangka sa Toronto (how much is a boat in Toronto)","tips sa pagbili ng unang bangka (tips for buying first boat)","fishing license Ontario paano kumuha (fishing license Ontario how to get)","saan mangisda malapit sa Toronto (where to fish near Toronto)","Ontario fishing rules Tagalog (Ontario fishing rules Tagalog)","panahon ng pangingisda sa Ontario (fishing season in Ontario)","magkano fishing license sa Ontario (how much fishing license in Ontario)","pangingisda sa Rice Lake Ontario (fishing at Rice Lake Ontario)"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,11 +25,13 @@ revenue_driver: repower
 
 **Category:** Tagalog Guide  
 **Published:** 2026-06-12  
-**Huling sinuri:** 2026-09-06  
+**Huling sinuri:** 2026-10-04  
 **Read time:** 8 min basa  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/tl/first-time-fishing-rice-lake-tagalog-family-guide
 
 Rice Lake ang pinakamagandang unang subok na pangingisda para sa pamilyang Pilipino sa Toronto. Mga 90 minuto ang biyahe mula Brampton, Mississauga, Scarborough, o Markham, at dito sa Harris Boat Works, gagawin naming simple at masaya ang inyong araw kahit baguhan kayo, may rental boat na, lifejacket para sa kids, at fishing license guidance.
+
+Kailangan ng PCOC? Kunin ang online course gamit ang [MyBoatCard referral link ng HBW](https://myboatcard.com/card/harrisboat) at gamitin ang code na **HARRIS15** para sa **15% diskuwento**.
 
 ## Bakit Rice Lake?
 

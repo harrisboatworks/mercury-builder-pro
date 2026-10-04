@@ -24,7 +24,7 @@ export const tagalogBlogArticles: Wave1Article[] = [
     image: '/lovable-uploads/hero-rice-lake-fishing-morning.png',
     author: 'Harris Boat Works',
     datePublished: '2026-06-12',
-    dateModified: '2026-09-06',
+    dateModified: '2026-10-04',
     category: 'Tagalog Guide',
     readTime: '8 min basa',
     keywords: ['bangkang mura sa Ontario (cheap boat in Ontario)', 'paano bumili ng bangka sa Canada (how to buy a boat in Canada)', 'magkano ang bangka sa Toronto (how much is a boat in Toronto)', 'tips sa pagbili ng unang bangka (tips for buying first boat)', 'fishing license Ontario paano kumuha (fishing license Ontario how to get)', 'saan mangisda malapit sa Toronto (where to fish near Toronto)', 'Ontario fishing rules Tagalog (Ontario fishing rules Tagalog)', 'panahon ng pangingisda sa Ontario (fishing season in Ontario)', 'magkano fishing license sa Ontario (how much fishing license in Ontario)', 'pangingisda sa Rice Lake Ontario (fishing at Rice Lake Ontario)'],
@@ -42,6 +42,8 @@ export const tagalogBlogArticles: Wave1Article[] = [
     internalLinks: ['https://harrisboatworks.ca/rentals'],
     officialSources: ['https://www.ontario.ca/page/fishing-licence-ontario-and-canadian-residents', 'https://www.ontario.ca/page/get-outdoors-card-and-licence-summary', 'https://www.ontario.ca/page/learn-fish', 'https://www.ontario.ca/document/ontario-fishing-regulations-summary'],
     content: `Rice Lake ang pinakamagandang unang subok na pangingisda para sa pamilyang Pilipino sa Toronto. Mga 90 minuto ang biyahe mula Brampton, Mississauga, Scarborough, o Markham, at dito sa Harris Boat Works, gagawin naming simple at masaya ang inyong araw kahit baguhan kayo, may rental boat na, lifejacket para sa kids, at fishing license guidance.
+
+Kailangan ng PCOC? Kunin ang online course gamit ang [MyBoatCard referral link ng HBW](https://myboatcard.com/card/harrisboat) at gamitin ang code na **HARRIS15** para sa **15% diskuwento**.
 
 ## Bakit Rice Lake?
 
@@ -134,7 +136,7 @@ Hatid namin ang karanasan sa lawa na maaalala ng inyong pamilya, tunay, simple, 
     image: '/lovable-uploads/hero-first-time-boat-rental.webp',
     author: 'Harris Boat Works',
     datePublished: '2026-06-12',
-    dateModified: '2026-09-06',
+    dateModified: '2026-10-04',
     category: 'Tagalog Guide',
     readTime: '8 min basa',
     keywords: ['paano kumuha ng boat license sa Ontario (how to get a boat license in Ontario)', 'kailangan ba ng boat license sa Ontario (is a boat license required in Ontario)', 'boat operator card Ontario paano (boat operator card Ontario how)', 'online boat license Ontario Tagalog (online boat license Ontario Tagalog)', 'PCOC exam Tagalog (PCOC exam Tagalog)'],
@@ -152,6 +154,8 @@ Hatid namin ang karanasan sa lawa na maaalala ng inyong pamilya, tunay, simple, 
     internalLinks: ['https://harrisboatworks.ca/rentals'],
     officialSources: ['https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc', 'https://tc.canada.ca/en/marine-transportation/buying-boat/find-education-resources-recreational-boaters'],
     content: `Sa Harris Boat Works, dapat magpakita ng wastong boat operator licence ang bawat driver sa check-in. Ginagawa pa rin ang rental safety checklist bilang safety briefing, ngunit hindi ito ginagamit ng HBW kapalit ng licence ng driver. Mula sa pamilya ng Harris Boat Works sa Gores Landing, gusto ka naming tulungan, lalo na ang mga kababayan nating Filipino sa Toronto, Mississauga, at buong GTA, na ma-enjoy ang Rice Lake nang walang kaba. Malapit lang kami: mga 90 minutong drive mula sa Brampton, Mississauga, Scarborough, o Markham. Kahit never ka pa sumakay ng bangka sa Canada, dito ka safe na magsisimula. Ito ang dapat mong malaman tungkol sa boat rental rules, lifejackets, at kung paano gumagana ang sistema dito.
+
+Kailangan ng PCOC? Kunin ang online course gamit ang [MyBoatCard referral link ng HBW](https://myboatcard.com/card/harrisboat) at gamitin ang code na **HARRIS15** para sa **15% diskuwento**.
 
 ## Kailangan ng boat operator licence para sa HBW rental
 

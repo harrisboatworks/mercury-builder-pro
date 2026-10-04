@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/permis-bateau-ontario-carte-conducteur-embarcation.md
-last_updated: 2026-10-03
+last_updated: 2026-10-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Permis de conduire une embarcation au Canada : Ce que vous devez savoir"
 description: "Guide sur la Carte de conducteur d'embarcation de plaisance (CCEP) : qui en a besoin, comment l'obtenir, coût, équipements obligatoires et réglementation en Ontario."
 category: "Réglementation"
 date_published: 2026-04-12
-date_modified: 2026-10-03
+date_modified: 2026-10-04
 keywords: ["permis bateau Ontario","carte de conducteur embarcation plaisance","permis navigation Canada","CCEP Canada","boating licence Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,13 +25,15 @@ revenue_driver: repower
 
 **Catégorie :** Réglementation\
 **Publié le :** 2026-04-12\
-**Dernière révision :** 2026-10-03\
+**Dernière révision :** 2026-10-04\
 **Temps de lecture :** 8 min\
 **URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/permis-bateau-ontario-carte-conducteur-embarcation
 
 ### Réponse rapide
 
 Au Canada, la Carte de conducteur d'embarcation de plaisance (CCEP) est la preuve de compétence la plus courante pour conduire une embarcation de plaisance motorisée. Transports Canada reconnaît aussi certaines autres preuves de compétence. Ce n'est pas un permis à renouveler, vous le passez une fois, et c'est valide à vie. Le test se fait en ligne auprès de fournisseurs accrédités par Transports Canada, et coûte généralement entre 40 $ et 50 $. L'amende de base pour défaut de carte est de 250 $. Vérifiez les exigences actuelles sur le site de Transports Canada avant de prendre le large.
+
+Besoin de votre CCEP (PCOC)? Suivez le cours en ligne avec [le lien de parrainage MyBoatCard de HBW](https://myboatcard.com/card/harrisboat) et utilisez le code **HARRIS15** pour obtenir **15% de réduction**.
 
 ---
 

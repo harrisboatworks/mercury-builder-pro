@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/es/guia-comprar-bote-ontario.md
-last_updated: 2026-09-06
+last_updated: 2026-10-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Guía completa para comprar un bote en Ontario"
 description: "Guía práctica para comprar un bote en Ontario: requisitos legales (PCOC, PCL), tipos de embarcación, opciones de compra y costos anuales reales en dólares."
 category: "Guía de compra"
 date_published: 2026-04-12
-date_modified: 2026-09-06
+date_modified: 2026-10-04
 keywords: ["guía comprar bote Ontario","comprar bote en Canadá","primer bote Ontario","licencia de navegación Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,13 +25,15 @@ revenue_driver: repower
 
 **Category:** Guía de compra  
 **Published:** 2026-04-12  
-**Última revisión:** 2026-09-06  
+**Última revisión:** 2026-10-04  
 **Read time:** 12 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/es/guia-comprar-bote-ontario
 
 ### Respuesta rápida
 
 Para comprar y operar un bote motorizado en Ontario, la Carta de Operador de Embarcaciones de Placer (PCOC/COEP) es la forma más habitual de demostrar la competencia; Transport Canada también acepta otras pruebas en determinados casos. El costo del curso varía según el proveedor acreditado. La Licencia de Embarcaciones de Placer (PCL) aplica según los criterios de la embarcación, incluso para motores de 10 HP o más. Las PCL nuevas, transferidas o renovadas tienen una vigencia de 5 años (el duplicado no renueva la vigencia); al 5 de septiembre de 2026 la tarifa federal es de $24.41 CAD ([tabla oficial](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/fees-service-standards)); actualizar datos o cancelar es gratuito. La tarifa se ajusta cada 1 de abril. El seguro no es obligatorio, pero sí muy recomendable. Más abajo encontrarás todo lo que necesitas saber para tomar una buena decisión.
+
+¿Necesita su PCOC? Haga el curso en línea con [el enlace de recomendación de HBW a MyBoatCard](https://myboatcard.com/card/harrisboat) y use el código **HARRIS15** para obtener **15% de descuento**.
 
 ---
 
@@ -47,7 +49,7 @@ Harris Boat Works lleva 79 años en Rice Lake, Ontario, tercera generación, con
 
 ### PCOC, Carta de Operador de Embarcaciones de Placer
 
-La PCOC (en inglés: [Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency), también conocida como "boating licence") es la forma más habitual de demostrar la competencia para manejar una embarcación de recreo motorizada. Transport Canada también acepta otras pruebas en determinados casos.
+La PCOC (en inglés: [Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc), también conocida como "boating licence") es la forma más habitual de demostrar la competencia para manejar una embarcación de recreo motorizada. Transport Canada también acepta otras pruebas en determinados casos.
 
 **Puntos clave:**
 - Es federal, la misma tarjeta es válida en toda provincia y territorio canadiense

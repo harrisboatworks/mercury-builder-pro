@@ -141,12 +141,14 @@ quote: ${ZH_HANT_LANGUAGE_NOTE}
     image: '/lovable-uploads/hero-first-time-boat-rental.webp',
     author: 'Jay Harris',
     datePublished: '2026-06-12',
-    dateModified: '2026-08-02',
+    dateModified: '2026-10-04',
     publishDate: '2026-06-12',
     category: 'mandarin',
     readTime: '8 分鐘',
     keywords: ['Rice Lake 租船', '繁體 多倫多', '第一次 租船 釣魚', '安省 釣魚證', 'Harris Boat Works'],
     content: `> **簡短答案：** 多倫多出發到 Rice Lake 約 90 分鐘車程。HBW 要求操作租賃船隻的人持有有效的 PCOC（Pleasure Craft Operator Card）。租船當天還需要政府簽發的有相片證件、信用卡（按金用），如果要釣魚，還要有效的安省釣魚證。HBW 亦會完成租船安全檢查清單；這份清單不能代替 HBW 的 PCOC 要求。出發前請在 [HBW 租船頁面](https://www.harrisboatworks.ca/rentals) 確認最新要求。
+
+需要考取 PCOC？透過 [HBW 的 MyBoatCard 推薦連結](https://myboatcard.com/card/harrisboat)參加網上課程，使用優惠碼 **HARRIS15** 可享 **15% 折扣**。
 
 ## 多倫多出發：路線和時間
 
@@ -220,12 +222,14 @@ quote: ${ZH_HANT_LANGUAGE_NOTE}
     image: '/lovable-uploads/hero-boat-rental-licence-ontario.webp',
     author: 'Jay Harris',
     datePublished: '2026-06-12',
-    dateModified: '2026-09-06',
+    dateModified: '2026-10-04',
     publishDate: '2026-06-12',
     category: 'mandarin',
     readTime: '7 分鐘',
     keywords: ['安省 船牌', '繁體 PCOC', 'PCL', '船隻操作員卡', '釣魚證'],
     content: `> **簡短答案：** **PCOC**（Pleasure Craft Operator Card，船隻操作員卡）是操作動力休閒船時常用的資格證明，卡片終身有效。**PCL**（Pleasure Craft Licence，船隻牌照）是符合條件船隻的識別號；2026 年 9 月 5 日新辦、續期、轉讓或補發為 **$24.41 CAD**，新辦、轉讓或續期後有效 5 年；資料更新或取消免費，每年 4 月 1 日按通脹調整。舊牌並非全部終身，請按到期批次核對。**釣魚證**完全獨立，由安省自然資源與林業部（MNRF）管理。在 HBW 租船，每位駕駛員必須持有有效 PCOC 或符合 HBW 要求的有效 boat operator licence。
+
+需要考取 PCOC？透過 [HBW 的 MyBoatCard 推薦連結](https://myboatcard.com/card/harrisboat)參加網上課程，使用優惠碼 **HARRIS15** 可享 **15% 折扣**。
 
 ## 一張表看懂三者區別
 
@@ -243,7 +247,7 @@ quote: ${ZH_HANT_LANGUAGE_NOTE}
 ## PCOC：船隻操作員卡
 
 - **誰必須有：** 任何在加拿大水域操作配動力（包括電動推進器）的休閒船的人都需要合資格的操作能力證明；PCOC 是最常見的證明，但不是唯一被接受的證明。
-- **官方認可名單：** [Transport Canada PCOC 認可提供商](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency-program)。
+- **官方認可名單：** [Transport Canada PCOC 認可提供商](https://tc.canada.ca/en/marine-transportation/buying-boat/find-education-resources-recreational-boaters)。
 - **學習材料與正式考試語言可能不同：** 中文複習資料可以用於學習。正式考試語言和經批准的協助（包括口譯）須在付款前向認可提供商確認，並按其批准規則安排。不要假定一定有獲批的中文線上考試，也不要假定所有考試都沒有中文。規則見 [Transport Canada Quality Assurance and Control Requirements](https://tc.canada.ca/en/marine-transportation/marine-safety/quality-assurance-control-requirements-course-providers-national-pleasure-craft-operator-competency-program)。
 - **有效期：** 終身。
 
@@ -274,7 +278,7 @@ quote: ${ZH_HANT_LANGUAGE_NOTE}
 
 ## 常見問題
 
-**Q：PCOC 中文考試在哪裡？** 中文複習資料可以用於學習，但正式考試語言可能不同。付款前向 [認可提供商](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency-program) 確認考試語言和經批准的協助，不要假定一定有獲批的中文線上考試。
+**Q：PCOC 中文考試在哪裡？** 中文複習資料可以用於學習，但正式考試語言可能不同。付款前向 [認可提供商](https://tc.canada.ca/en/marine-transportation/buying-boat/find-education-resources-recreational-boaters) 確認考試語言和經批准的協助，不要假定一定有獲批的中文線上考試。
 
 **Q：換引擎後 PCL 一定要更新嗎？** 引擎資料或 HP 變更時應按 Transport Canada 當前規則更新 PCL 資料；資料更新本身免費。
 

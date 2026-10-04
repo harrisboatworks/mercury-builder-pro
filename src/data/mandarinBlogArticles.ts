@@ -131,7 +131,7 @@ HBW 的 Lightspeed 记录显示，有 **2025 年 8 月至 11 月完成的 584 �
     image: '/lovable-uploads/aluminum-fishing-hero-real.webp',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-09-06',
+    dateModified: '2026-10-04',
     publishDate: '2026-04-12',
     category: '钓鱼指南',
     readTime: '9 分钟',
@@ -139,6 +139,8 @@ HBW 的 Lightspeed 记录显示，有 **2025 年 8 月至 11 月完成的 584 �
     content: `## 快速答案
 
 Rice Lake 属于安省 Fisheries Management Zone 17（FMZ 17）。常见目标鱼包括 walleye（梭鲈／玻璃眼）、largemouth 和 smallmouth bass（大嘴鲈／小嘴鲈）、muskellunge（muskie）以及 yellow perch（黄鲈）等 panfish。不要把 walleye 和 yellow perch 都翻成“黄鲈”：它们是不同鱼种，季节、尺寸和限额也可能不同。
+
+需要考取 PCOC？通过 [HBW 的 MyBoatCard 推荐链接](https://myboatcard.com/card/harrisboat)参加在线课程，使用优惠码 **HARRIS15** 可享 **15% 折扣**。
 
 从 GTA 多数地区开车通常约 60–120 分钟，实际时间取决于出发点、401／115 路况和你使用的下水点。出发前先做三件事：查 [FMZ 17 当年规则](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17)、确认自己的[安省钓鱼资格](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees)，再核对天气、下水点和船上安全装备。
 
@@ -250,7 +252,7 @@ Rice Lake 也有 yellow perch、crappie、sunfish 和 northern pike。中文俗�
 - HBW 不销售钓鱼证
 
 **操作船需要**
-- [Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/boating-safety/pleasure-craft-operator-card-pcoc)（PCOC）或其他合资格证明：操作动力休闲船的人需要随船携带
+- [Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc)（PCOC）或其他合资格证明：操作动力休闲船的人需要随船携带
 - [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl)（PCL）：主要在加拿大使用、发动机总功率至少 10 HP 的合资格休闲船通常需要；PCL 属于船，不是驾驶员
 - 租 HBW 船时，每位驾驶员都必须出示有效 boat operator licence／PCOC 和带照片身份证件；请以[在线租船页面](https://www.harrisboatworks.ca/rentals)与租赁协议为准
 
@@ -556,18 +558,20 @@ Harris Boat Works，自1965年起的 Mercury 经销商。
     image: '/lovable-uploads/home-step3-rice-lake-water-test.webp',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-09-11',
+    dateModified: '2026-10-04',
     publishDate: '2026-04-12',
     category: '法规安全',
     readTime: '9 分钟',
     keywords: ['安大略省船只法规', '加拿大快艇驾照', '船只安全装备要求', 'Ontario boating regulations Chinese'],
     content: `> **简短答案：** 操作动力休闲船的人需要随船携带 PCOC 或其他合资格的操作能力证明。主要在加拿大使用、发动机总功率至少 10 HP（7.5 kW）的合资格休闲船通常需要 PCL，除非已经注册。钓鱼证不是“开船证”：只有钓鱼时才需要按年龄、居住身份和牌照类型确认安省钓鱼资格。船上安全装备则按船型、船长和使用条件决定，不能用一张万能清单代替 [Transport Canada 2026 Safe Boating Guide](https://tc.canada.ca/sites/default/files/2026-05/boating_guide_2026_en_acc.pdf)。
 
+需要考取 PCOC？通过 [HBW 的 MyBoatCard 推荐链接](https://myboatcard.com/card/harrisboat)参加在线课程，使用优惠码 **HARRIS15** 可享 **15% 折扣**。
+
 ## 三大必备证件
 
 ### 1. Pleasure Craft Operator Card (PCOC) 船只操作员证
 
-任何操作动力休闲船的人都需要携带合资格的 proof of competency，包括电动马达。PCOC 是最常见的证明；也可能是 1999 年 4 月 1 日前通过加拿大安全课程的证明、指定海事证书，或符合条件的租赁船安全清单。PCOC 本身终身有效。课程语言、费用和上课方式由 Transport Canada 认可提供商决定，请查[当前认可名单](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/boating-safety/boating-safety-courses-across-canada)。
+任何操作动力休闲船的人都需要携带合资格的 proof of competency，包括电动马达。PCOC 是最常见的证明；也可能是 1999 年 4 月 1 日前通过加拿大安全课程的证明、指定海事证书，或符合条件的租赁船安全清单。PCOC 本身终身有效。课程语言、费用和上课方式由 Transport Canada 认可提供商决定，请查[当前认可名单](https://tc.canada.ca/en/marine-transportation/buying-boat/find-education-resources-recreational-boaters)。
 
 ### 2. Pleasure Craft Licence (PCL) 船只牌照
 
@@ -1085,7 +1089,7 @@ GTA 华人船主用 Verado 的场景较少 (因为大部分船 < 25 英尺)。�
     image: '/lovable-uploads/zh-mercury-9-9-20hp-kicker-tiller-hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-10',
-    dateModified: '2026-09-06',
+    dateModified: '2026-10-04',
     publishDate: '2026-05-10',
     category: '小马力指南',
     readTime: '6 分钟',
@@ -1186,7 +1190,7 @@ HBW的经验：9.9HP最容易被高估, 「感觉应该够了」的直觉，在�
 
 ## PCL（船只牌照）与马力门槛
 
-Transport Canada规定，有引擎的休闲船如果马力达到特定门槛，需要办理[Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences)（PCL）。具体门槛请查Transport Canada当前规定。
+Transport Canada规定，有引擎的休闲船如果马力达到特定门槛，需要办理[Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl)（PCL）。具体门槛请查Transport Canada当前规定。
 
 9.9HP、15HP、20HP之间的选择，不只是性能问题，可能也牵涉文件要求，买之前确认清楚。
 
@@ -1421,12 +1425,14 @@ Harris Boat Works，自1965年起的 Mercury 经销商，位于Rice Lake南岸Go
     image: '/lovable-uploads/hero-chinese-buyers-rice-lake-marina.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-10',
-    dateModified: '2026-09-06',
+    dateModified: '2026-10-04',
     publishDate: '2026-05-10',
     category: 'HBW 中文介绍',
     readTime: '5 分钟',
     keywords: ['Harris Boat Works 中文', 'GTA 华人船主', 'Mercury Dealer Ontario 中文', 'Rice Lake marina 中文', 'MercuryRepower.ca 中文'],
     content: `> **简短答案：** Harris Boat Works (HBW) 是莱斯湖南岸的家族经营船坞,自 1947 年至今,已经传承三代。Mercury Premier 认证经销商。距离多伦多 1-1.5 小时车程,加元价格公开发布、您可以自行对比 (详见 [Mercury 加元定价参考](/pricing-reference))，Mercury 维修和冬储一体化。团队使用英语服务，欢迎带会英语的亲友同来或使用手机翻译软件，我们会耐心沟通、尽力配合 (info@harrisboatworks.ca)。我们通常可以安排取船。请向我们确认您的船和地点是否可安排。 HBW 不提供送船服务、不邮寄发动机、不上门/码头服务，也不推荐运输商或报价第三方运输。
+
+需要考取 PCOC？通过 [HBW 的 MyBoatCard 推荐链接](https://myboatcard.com/card/harrisboat)参加在线课程，使用优惠码 **HARRIS15** 可享 **15% 折扣**。
 
 ## 三代华人船主的选择
 
@@ -1554,7 +1560,7 @@ HBW 不做：
     image: '/lovable-uploads/zh-pcoc-vs-rental-boat-safety-hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-11',
-    dateModified: '2026-09-06',
+    dateModified: '2026-10-04',
     publishDate: '2026-05-11',
     category: '安省法规中文',
     readTime: '6 分钟',
@@ -1562,6 +1568,8 @@ HBW 不做：
     content: `## 快速答案
 
 在加拿大租船，**通常需要 PCOC（船只操作员卡）**。部分租船公司会在你前往时提供「临时免除 PCOC」的 Safety Briefing（限该次租用），但这不是法律默认。即使有临时免除，安全责任仍然在操作者身上。如果你计划多次租船或将来买船，建议直接取得 PCOC，因为它一次性终身有效。
+
+需要考取 PCOC？通过 [HBW 的 MyBoatCard 推荐链接](https://myboatcard.com/card/harrisboat)参加在线课程，使用优惠码 **HARRIS15** 可享 **15% 折扣**。
 
 ::bilingual-trust
 heading: Why GTA Chinese buyers come to Rice Lake
@@ -1586,7 +1594,7 @@ ctaHref: /quote
 
 ## PCOC 与租船的关系
 
-**PCOC（[Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency)，船只操作员卡）** 是 Transport Canada 规定的证件。法律规定：任何在加拿大水域操作有马达的休闲船的人，必须持有 PCOC 或同等证明。
+**PCOC（[Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc)，船只操作员卡）** 是 Transport Canada 规定的证件。法律规定：任何在加拿大水域操作有马达的休闲船的人，必须持有 PCOC 或同等证明。
 
 **这个规定适用于租船吗？** 一般来说，**是的**。
 
@@ -2404,7 +2412,7 @@ Mercury 或 MerCruiser 需要保养、诊断或维修时，到 [hbw.wiki/service
     image: '/lovable-uploads/blog-heroes-2026-07/hero-why-harris-mercury-dealer-hbw-aerial-2026-07.webp',
     author: 'Harris Boat Works',
     datePublished: '2026-05-15',
-    dateModified: '2026-09-06',
+    dateModified: '2026-10-04',
     publishDate: '2026-05-15',
     category: 'mandarin',
     readTime: '8 分钟',
@@ -2417,6 +2425,8 @@ Mercury 或 MerCruiser 需要保养、诊断或维修时，到 [hbw.wiki/service
       'Toronto Chinese day trip Rice Lake',
     ],
     content: `> **简短答案：** 先在 [HBW 在线租船页面](https://www.harrisboatworks.ca/rentals) 选日期、船型和时段并完成预订，再用确认单上的报到时间倒推当天行程。每位可能驾驶的人都必须带有效 boat operator licence／PCOC 和带照片身份证件。出发当天重新查路线、天气和租赁条件；不要把博客里的示例当作预订或天气保证。
+
+需要考取 PCOC？通过 [HBW 的 MyBoatCard 推荐链接](https://myboatcard.com/card/harrisboat)参加在线课程，使用优惠码 **HARRIS15** 可享 **15% 折扣**。
 
 ## 最容易犯的错，不是在保温箱里少放一瓶水
 
@@ -2440,7 +2450,7 @@ Rice Lake 一日游并不复杂。把顺序做对就行：**先订船，再确�
 
 ## 第二步：把每位驾驶员的证件一次准备好
 
-加拿大一般规则要求动力休闲船操作者随船携带 proof of competency。[Transport Canada](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/boating-safety/pleasure-craft-operator-card-pcoc) 也说明，合资格的 Rental Boat Safety Checklist 在某些租赁情境下可作为该租期的证明。
+加拿大一般规则要求动力休闲船操作者随船携带 proof of competency。[Transport Canada](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc) 也说明，合资格的 Rental Boat Safety Checklist 在某些租赁情境下可作为该租期的证明。
 
 **HBW 的内部政策更严格：每位可能驾驶的人都必须出示有效 boat operator licence／PCOC 和带照片身份证件。** 不要假设到了码头再做一张临时清单就可以代替 HBW 要求的驾驶资格。
 
@@ -2518,7 +2528,7 @@ GTA 多数地区到 Gores Landing 通常约 60–120 分钟，但起点、401／
 
 - [HBW 在线租船与实时可订船型](https://www.harrisboatworks.ca/rentals)
 - [Transport Canada：Rental boats](https://tc.canada.ca/en/marine-transportation/marine-safety/boating-safety/rental-boats)
-- [Transport Canada：PCOC 与其他 proof of competency](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/boating-safety/pleasure-craft-operator-card-pcoc)
+- [Transport Canada：PCOC 与其他 proof of competency](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc)
 - [Transport Canada：出发前安全检查](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/maintaining-safe-pleasure-craft)
 - [Ontario：FMZ 17 当前钓鱼规定](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17)
 
@@ -2553,7 +2563,7 @@ GTA 多数地区到 Gores Landing 通常约 60–120 分钟，但起点、401／
     image: '/lovable-uploads/hero-mandarin-pcl-licence.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-15',
-    dateModified: '2026-09-06',
+    dateModified: '2026-10-04',
     publishDate: '2026-05-15',
     category: 'mandarin',
     readTime: '11 分钟',
@@ -2571,6 +2581,8 @@ GTA 多数地区到 Gores Landing 通常约 60–120 分钟，但起点、401／
 
 如果你是 GTA 华人，准备买船、租船或在 Rice Lake 钓鱼，需要分清三件事：（1）PCOC（Pleasure Craft Operator Card）是操作动力休闲船的人的常见资格证明，卡终身有效；（2）[PCL 船只牌照](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl)（Pleasure Craft Licence）用于符合条件的船，发动机总功率达到 10 HP（7.5 kW）或以上时通常需要，新办、续期、转让或补发现为 $24.41 CAD（2026-09-05）；新办、转让或续期后有效 5 年（补发不延长有效期），资料更新免费；（3）安省钓鱼资格取决于年龄和居住身份。费用和规则会变，请使用 Transport Canada 与 Ontario.ca 的当前官方页面。
 
+需要考取 PCOC？通过 [HBW 的 MyBoatCard 推荐链接](https://myboatcard.com/card/harrisboat)参加在线课程，使用优惠码 **HARRIS15** 可享 **15% 折扣**。
+
 ---
 
 ## 写在前面：为什么 GTA 华人最容易混淆
@@ -2585,7 +2597,7 @@ Harris Boat Works（HBW）是 Rice Lake 上家族经营·1947 年至今 的 mari
 
 ## 一、PCOC 操作员卡（Pleasure Craft Operator Card）
 
-**这是最常被忽略的一项。** 在加拿大水域操作任何带发动机的休闲船只（包括小马力电动船）时，操作人必须随身携带 Transport Canada 认可的操作能力证明；PCOC 是最常见的证明，但不是唯一被接受的证明。颁发机构是 [Transport Canada](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency)。
+**这是最常被忽略的一项。** 在加拿大水域操作任何带发动机的休闲船只（包括小马力电动船）时，操作人必须随身携带 Transport Canada 认可的操作能力证明；PCOC 是最常见的证明，但不是唯一被接受的证明。颁发机构是 [Transport Canada](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc)。
 
 ### 谁需要
 
@@ -2707,7 +2719,7 @@ Rice Lake 属于安省 Fisheries Management Zone（FMZ），具体的鱼种季�
 
 ## 六、罚款与风险
 
-被检查时拿不出有效的操作员资格证明、需要的 Pleasure Craft Licence 或安省钓鱼资格，可能被开告票或面临其他执法后果。具体项目和金额请参考 [Transport Canada](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency) 和 [Ontario MNRF](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees) 的当前官方信息。
+被检查时拿不出有效的操作员资格证明、需要的 Pleasure Craft Licence 或安省钓鱼资格，可能被开告票或面临其他执法后果。具体项目和金额请参考 [Transport Canada](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc) 和 [Ontario MNRF](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees) 的当前官方信息。
 
 不要用旧帖中的课程价格或罚款金额做决定。先把需要的证件、船牌和当年钓鱼规则确认清楚，再出发。
 
@@ -2771,7 +2783,7 @@ Rice Lake 属于安省 Fisheries Management Zone（FMZ），具体的鱼种季�
     image: '/lovable-uploads/hero-mandarin-buying-guide.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-15',
-    dateModified: '2026-09-06',
+    dateModified: '2026-10-04',
     publishDate: '2026-05-15',
     category: 'mandarin',
     readTime: '12 分钟',
@@ -2787,6 +2799,8 @@ Rice Lake 属于安省 Fisheries Management Zone（FMZ），具体的鱼种季�
     content: `## 快速答案
 
 如果你是住在 GTA 的华人家庭，正准备买人生第一艘船：**先决定用途（家庭出游 vs 认真钓鱼），再决定船型，最后再谈发动机和预算**。Rice Lake 离多伦多约 90 分钟车程，是 GTA 最近的"真湖"，也是新手家庭买船最合理的落脚点。Harris Boat Works（HBW）是 Rice Lake 上家族经营·1947 年至今 的 marina，Mercury 经销商始于 1965 年，也是 Mercury Marine Premier 经销商，提供看船、报价、交付和冬季存储一条龙服务（团队使用英语服务，欢迎带会英语的亲友同来或使用手机翻译软件）。建议先在 [试租指南](/blog/zh/gta-chinese-rice-lake-day-trip-plan) 中租一两次，确定真的喜欢，再回来看这篇买船指南。
+
+需要考取 PCOC？通过 [HBW 的 MyBoatCard 推荐链接](https://myboatcard.com/card/harrisboat)参加在线课程，使用优惠码 **HARRIS15** 可享 **15% 折扣**。
 
 ---
 
@@ -3021,12 +3035,14 @@ Harris Boat Works 自 1947 年起一直由 Harris 家族在 Rice Lake 经营。�
     image: '/lovable-uploads/hero-zh-toronto-fishing-rice-lake-vs-lake-simcoe-kawarthas.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
-    dateModified: '2026-09-06',
+    dateModified: '2026-10-04',
     publishDate: '2026-05-17',
     category: 'Buying Guides',
     readTime: '16 分钟',
     keywords: ['Rice Lake', 'Lake Simcoe', 'Kawarthas', '多伦多钓鱼', '湖区对比', '华人钓友'],
     content: `如果你从 GTA 出发，莱斯湖更适合家庭租船、浮筒船一日行程、第一次湖上钓鱼和后续买船或换装发动机的需求；Lake Simcoe 更适合很多人熟悉的开放水域钓鱼和冰钓话题，但规则和水体例外需要认真查；Kawarthas 更像一个大区域，适合已经愿意花时间探索不同湖泊、船闸、湖边度假屋和用船场景的人。无论去哪，都不要只看别人群里一句“这里好钓”，要查 Ontario 钓鱼法规、FMZ 和当年水体例外 (Ontario Traditional Chinese fishing regulations, Ontario FMZ 16, Ontario FMZ 17).
+
+需要考取 PCOC？通过 [HBW 的 MyBoatCard 推荐链接](https://myboatcard.com/card/harrisboat)参加在线课程，使用优惠码 **HARRIS15** 可享 **15% 折扣**。
 
 ## 先问自己：你要的是钓鱼，还是湖上一天？
 
@@ -3336,12 +3352,14 @@ HBW 自 1947 年起就在 Gores Landing、莱斯湖经营家族码头，是 Merc
     image: '/lovable-uploads/hero-zh-ontario-spring-boat-checklist-chinese.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
-    dateModified: '2026-08-08',
+    dateModified: '2026-10-04',
     publishDate: '2026-05-17',
     category: 'Maintenance',
     readTime: '10 分钟',
     keywords: ['安省春季开船', 'spring boat checklist', 'GTA 华人船主', 'Rice Lake spring', 'Mercury 春季检查', 'Harris Boat Works'],
     content: `> **快速答案：** 安省春季开船前，华人船主至少要检查六件事：驾驶资格证明、船牌或船只文件、安全装备、电池、燃油系统、引擎启动和冷却情况。加拿大操作有马达的休闲船需要操作能力证明，PCOC 是常见证明，而且 Transport Canada 明确说纸质或电子复印件不能代替实体 PCOC 卡；租船时，完成 Rental Boat Safety Checklist 只在租船期间有效 (Transport Canada PCOC)。
+
+需要考取 PCOC？通过 [HBW 的 MyBoatCard 推荐链接](https://myboatcard.com/card/harrisboat)参加在线课程，使用优惠码 **HARRIS15** 可享 **15% 折扣**。
 
 如果你不确定船外机能不能放心下水，不要在私家车道里硬试到冒烟。春天第一天已经够忙了，别给自己加一个“为什么马达在咳嗽”的悬疑剧。
 
@@ -3438,12 +3456,14 @@ HBW 自 1947 年起就经营家族码头，是 Mercury Marine Premier dealer 与
     image: '/lovable-uploads/hero-zh-used-boat-buying-checklist-toronto-chinese.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
-    dateModified: '2026-08-08',
+    dateModified: '2026-10-04',
     publishDate: '2026-05-17',
     category: 'Buying Guides',
     readTime: '9 分钟',
     keywords: ['二手船购买', 'used boat checklist', '多伦多华人买二手船', '船只检查清单', 'Mercury 二手 inspection', 'Harris Boat Works'],
     content: `> **快速答案：** 多伦多华人买二手船，最重要不是先问“能不能再便宜一点”，而是先确认船体、艉板、地板、拖车、发动机、操控系统、PCL 文件、所有权文件和湖测。Transport Canada 说明，10 HP 或以上、主要在加拿大水域使用的休闲船通常需要 Pleasure Craft Licence，但 PCL 只是识别文件，不是所有权证明 (Transport Canada PCL)。
+
+需要考取 PCOC？通过 [HBW 的 MyBoatCard 推荐链接](https://myboatcard.com/card/harrisboat)参加在线课程，使用优惠码 **HARRIS15** 可享 **15% 折扣**。
 
 二手船可以买得很聪明，也可以买成一个漂浮的翻新工程。区别通常不在运气，在检查。
 
@@ -3675,12 +3695,14 @@ HBW 自 1947 年起就在 Gores Landing、Rice Lake 经营家族 marina，自 19
     image: '/lovable-uploads/hero-zh-boat-ownership-cost-ontario-chinese.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
-    dateModified: '2026-08-08',
+    dateModified: '2026-10-04',
     publishDate: '2026-05-17',
     category: 'Buying Guides',
     readTime: '10 分钟',
     keywords: ['船只持有成本', 'boat ownership cost Ontario', '华人船主预算', 'winterization 费用', 'HBW service cost', 'Mercury 维护成本'],
     content: `> **快速答案：** 安省买船后的真实成本不只是买船价格。还要考虑 PCOC、Pleasure Craft Licence、保险、安全装备、燃油、拖车、保养维修、冬化保养、存放、船位、下水、维修和未来换装发动机。HBW 提供船只销售、保养维修、租船服务、冬化保养、存放、船位、Mercury 船外机和 MerCruiser 支持 (Harris Boat Works)。
+
+需要考取 PCOC？通过 [HBW 的 MyBoatCard 推荐链接](https://myboatcard.com/card/harrisboat)参加在线课程，使用优惠码 **HARRIS15** 可享 **15% 折扣**。
 
 如果一个船交易看起来便宜得像捡到宝，先别急着开心。船很少免费送你惊喜，但它很擅长晚一点给你账单。
 
@@ -3790,12 +3812,14 @@ HBW 自 1947 年起就在 Gores Landing、莱斯湖经营家族码头，是 Merc
     image: '/lovable-uploads/hero-zh-gta-chinese-rent-to-buy-boat-roadmap.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
-    dateModified: '2026-08-08',
+    dateModified: '2026-10-04',
     publishDate: '2026-05-17',
     category: 'Buying Guides',
     readTime: '11 分钟',
     keywords: ['rent to buy boat', 'GTA 华人租到买', 'first boat roadmap', 'rental experience', 'HBW rentals', 'Mercury buying path'],
     content: `> **快速答案：** GTA 华人从租船升级到买船，最聪明的路线是：先在莱斯湖租浮筒船或钓鱼船，确认家人真的喜欢，再准备 PCOC，比较船型，了解 PCL 和所有权文件，规划保养维修、冬化保养、存放和保险，最后再选择 Mercury 发动机或换装发动机方案。HBW 的莱斯湖租船服务页面提供浮筒船和钓鱼船，并要求驾驶者持有操船证件 (HBW Rice Lake Boat Rentals)。
+
+需要考取 PCOC？通过 [HBW 的 MyBoatCard 推荐链接](https://myboatcard.com/card/harrisboat)参加在线课程，使用优惠码 **HARRIS15** 可享 **15% 折扣**。
 
 先租不是犹豫。先租是聪明。尤其是当一条船的价格比一次租船高很多的时候，这个逻辑应该不难。
 
@@ -4048,12 +4072,14 @@ quote: ${ZH_LANGUAGE_NOTE}
     image: '/lovable-uploads/hero-first-time-boat-rental.webp',
     author: 'Jay Harris',
     datePublished: '2026-06-12',
-    dateModified: '2026-09-06',
+    dateModified: '2026-10-04',
     publishDate: '2026-06-12',
     category: 'mandarin',
     readTime: '8 分钟',
     keywords: ['Rice Lake 租船', '中文 多伦多', '第一次 租船 钓鱼', '安省 钓鱼证', 'Harris Boat Works'],
     content: `> **简短答案：** 根据加拿大的一般规定，填写完整的 Rental Boat Safety Checklist 可作为该次租赁的能力证明。Harris Boat Works 有更严格的政策：每位可能驾驶 HBW 租赁船的人员在办理手续时必须出示有效的 Pleasure Craft Operator Card (PCOC) 和带照片身份证件；该清单不能替代 HBW 要求的 PCOC。
+
+需要考取 PCOC？通过 [HBW 的 MyBoatCard 推荐链接](https://myboatcard.com/card/harrisboat)参加在线课程，使用优惠码 **HARRIS15** 可享 **15% 折扣**。
 
 ## 多伦多出发：路线和时间
 
@@ -4167,12 +4193,14 @@ ${ZH_LANGUAGE_NOTE}
     image: '/lovable-uploads/hero-boat-rental-licence-ontario.webp',
     author: 'Jay Harris',
     datePublished: '2026-06-12',
-    dateModified: '2026-08-19',
+    dateModified: '2026-10-04',
     publishDate: '2026-06-12',
     category: 'mandarin',
     readTime: '7 分钟',
     keywords: ['安省 船牌', '中文 PCOC', 'PCL', '船只操作员卡', '钓鱼证', '安省'],
     content: `> **简短答案：** 三个证件管的是完全不同的事。**PCOC**（Pleasure Craft Operator Card，船只操作员卡）是终身有效的"驾照"，只要操作配动力的船就必须有。**PCL**（Pleasure Craft Licence，船只牌照）是船身上那串字母数字注册号，**免费**，登记给加拿大交通部，换引擎或换船主时要更新。**钓鱼证**完全独立，由安省自然资源与林业部（MNRF）管，先办 Outdoors Card 再加 Fishing Licence。短期租船通常不需要 PCOC（用 Rental Boat Safety Checklist 代替）。
+
+需要考取 PCOC？通过 [HBW 的 MyBoatCard 推荐链接](https://myboatcard.com/card/harrisboat)参加在线课程，使用优惠码 **HARRIS15** 可享 **15% 折扣**。
 
 ## 一张表看懂三者区别
 
@@ -4194,7 +4222,7 @@ ${ZH_LANGUAGE_NOTE}
 
 - **谁必须有：** 任何在加拿大水域操作配动力（包括电动马达）的休闲船的人。
 - **怎么办：** 选一家 Transport Canada 认可的提供商，在线学习 + 在线或现场考试 + 出卡片。
-- **官方认可名单：** [Transport Canada PCOC 认可提供商](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency-program)。
+- **官方认可名单：** [Transport Canada PCOC 认可提供商](https://tc.canada.ca/en/marine-transportation/buying-boat/find-education-resources-recreational-boaters)。
 - **中文考试是否提供：** 视提供商而定，**不能保证所有提供商都有中文版**，请直接联系认可名单上的提供商确认。
 - **有效期：** 终身，不需要续期。
 - **携带：** 操作船只时必须在船上带着卡或带着电子版。
@@ -4205,7 +4233,7 @@ ${ZH_LANGUAGE_NOTE}
 
 - **谁必须有：** 配 10 HP（7.5 kW）以上引擎的休闲船船主。
 - **是什么：** 一串字母+数字（例如 \`ON 12345 AB\`），按规定**必须用至少 7.5 cm 高的字母**贴在船头两侧。
-- **怎么办：** [Transport Canada Pleasure Craft Licence 在线申请](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences)：**免费**，约 4 至 6 周下卡。
+- **怎么办：** [Transport Canada Pleasure Craft Licence 在线申请](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl)：**免费**，约 4 至 6 周下卡。
 - **有效期：** 10 年。
 - **何时必须更新：** 换引擎（HP 变化时）、卖船给新主、地址变更、船只丢失或被偷。
 - **常见误解：** PCL ≠ PCOC。PCL 是船的"车牌"，PCOC 是您的"驾照"。两个都要。
@@ -4235,7 +4263,7 @@ ${ZH_LANGUAGE_NOTE}
 
 **"我在中国有船证，加拿大能用吗？"** 不能。PCOC 是加拿大体系，需要在加拿大重新考。
 
-**"PCOC 中文考试在哪里？"** 视 Transport Canada 认可提供商而定。**请直接查 [Transport Canada 认可名单](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency-program) 并联系提供商**——我们不能保证所有提供商都有中文版。
+**"PCOC 中文考试在哪里？"** 视 Transport Canada 认可提供商而定。**请直接查 [Transport Canada 认可名单](https://tc.canada.ca/en/marine-transportation/buying-boat/find-education-resources-recreational-boaters) 并联系提供商**——我们不能保证所有提供商都有中文版。
 
 **"换了引擎，PCL 要重新申请吗？"** 不是重新申请，是**更新**。在 Transport Canada 在线表单上提交新的引擎信息即可，仍然免费。
 
@@ -4298,7 +4326,7 @@ ${ZH_LANGUAGE_NOTE}
     imageAlt: 'Rice Lake 水面上的 Mercury 船外机测试',
     author: 'Harris Boat Works',
     datePublished: '2026-08-24',
-    dateModified: '2026-09-06',
+    dateModified: '2026-10-04',
     publishDate: '2026-08-24',
     category: '保养与使用',
     readTime: '10 分钟',
@@ -4306,6 +4334,8 @@ ${ZH_LANGUAGE_NOTE}
     content: `## 简短答案
 
 **辛烷值达标就行，真正要选的是乙醇。**
+
+需要考取 PCOC？通过 [HBW 的 MyBoatCard 推荐链接](https://myboatcard.com/card/harrisboat)参加在线课程，使用优惠码 **HARRIS15** 可享 **15% 折扣**。
 
 这两件事里，只有一件算得上「选择」：
 

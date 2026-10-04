@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/mercury-9-9-20hp-chinese-kicker-tiller-guide.md
-last_updated: 2026-09-06
+last_updated: 2026-10-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "9.9 到 20 匹 Mercury：钓鱼小船、kicker、tiller 中文指南"
 description: "Mercury 9.9HP、15HP、20HP 船外机中文指南：小铝船、kicker、tiller、钓鱼、trolling、安省华人钓友怎么选。"
 category: "小马力指南"
 date_published: 2026-05-10
-date_modified: 2026-09-06
+date_modified: 2026-10-04
 keywords: ["Mercury 9.9 20HP 中文","Mercury kicker 中文","tiller 船外机中文","小铝船 Mercury"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** 小马力指南  
 **Published:** 2026-05-10  
-**最后审核:** 2026-09-06  
+**最后审核:** 2026-10-04  
 **Read time:** 6 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/mercury-9-9-20hp-chinese-kicker-tiller-guide
 
@@ -116,7 +116,7 @@ HBW的经验：9.9HP最容易被高估, 「感觉应该够了」的直觉，在�
 
 ## PCL（船只牌照）与马力门槛
 
-Transport Canada规定，有引擎的休闲船如果马力达到特定门槛，需要办理[Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences)（PCL）。具体门槛请查Transport Canada当前规定。
+Transport Canada规定，有引擎的休闲船如果马力达到特定门槛，需要办理[Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl)（PCL）。具体门槛请查Transport Canada当前规定。
 
 9.9HP、15HP、20HP之间的选择，不只是性能问题，可能也牵涉文件要求，买之前确认清楚。
 

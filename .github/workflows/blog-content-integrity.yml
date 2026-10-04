@@ -81,6 +81,10 @@ jobs:
         run: npm run check:blog-zh-markdown-structure
       - name: Mandarin code-mix
         run: npm run check:blog-zh-code-mix
+      - name: PCOC referral promotion and official links
+        run: |
+          npm run test:blog-pcoc-referrals
+          npm run check:blog-pcoc-referrals
       - name: Timeline facts
         run: npm run check:blog-timeline-facts
       - name: Credibility anchors

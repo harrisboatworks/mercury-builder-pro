@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/rice-lake-boat-launch-guide.md
-last_updated: 2026-09-06
+last_updated: 2026-10-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Where to Launch Boat on Rice Lake"
 description: "A no-nonsense guide to launching on Rice Lake from Gores Landing. Pre-launch checklist, parking, after-hours payment, what to know about the ramp."
 category: "Local Guides"
 date_published: 2026-05-10
-date_modified: 2026-09-06
+date_modified: 2026-10-04
 keywords: ["rice lake boat launch","gores landing boat ramp","boat launch peterborough","boat launch cobourg","kawartha boat launch","24 hour boat ramp ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,13 +25,15 @@ revenue_driver: rentals
 
 **Category:** Local Guides  
 **Published:** 2026-05-10  
-**Last reviewed:** 2026-09-06  
+**Last reviewed:** 2026-10-04  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/rice-lake-boat-launch-guide
 
 ## Quick Answer
 
-Rice Lake has four main public boat launch options: Bewdley (west end), Roseneath (south shore), Gores Landing (HBW's location, south shore), and Hastings (east end, Trent-Severn entrance). Each has different facilities, parking, and seasonal access. HBW's Gores Landing ramp is 2-lane concrete with parking and washrooms; day fees apply. [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences) (PCL) and [Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency) (PCOC) are required for powered boats.
+Rice Lake has four main public boat launch options: Bewdley (west end), Roseneath (south shore), Gores Landing (HBW's location, south shore), and Hastings (east end, Trent-Severn entrance). Each has different facilities, parking, and seasonal access. HBW's Gores Landing ramp is 2-lane concrete with parking and washrooms; day fees apply. [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl) (PCL) and [Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc) (PCOC) are required for powered boats.
+
+Need your PCOC? Take the online course through [HBW's MyBoatCard referral link](https://myboatcard.com/card/harrisboat) and use **HARRIS15** for **15% off**.
 
 ---
 
@@ -137,7 +139,7 @@ For any powered boat in Ontario waters:
 
 **Valid Pleasure Craft Licence (PCL)** for a boat with one or more motors adding up to 7.5 kW (10 HP) or more, unless the boat is registered. Since December 31, 2025, new and renewed PCLs are valid for five years. As of August 8, 2026, the federal service fee is $24.41. Transport Canada adjusts the fee for inflation each April 1, so check the current amount and your licence status before launch day.
 
-**Required safety equipment:** Carry a Canadian-approved lifejacket or PFD in the correct size for each person. The rest of the minimum equipment depends on the boat's type and length, so use Transport Canada's current [Safe Boating Guide](https://tc.canada.ca/en/marine-transportation/marine-safety/office-boating-safety/boating-safety-recreational-boaters) for the checklist that matches your boat. Everything must be in working order and easy to reach.
+**Required safety equipment:** Carry a Canadian-approved lifejacket or PFD in the correct size for each person. The rest of the minimum equipment depends on the boat's type and length, so use Transport Canada's current [Safe Boating Guide](https://tc.canada.ca/sites/default/files/2026-07/tp-511-boating-guide-2026-EN-acc.pdf) for the checklist that matches your boat. Everything must be in working order and easy to reach.
 
 ---
 

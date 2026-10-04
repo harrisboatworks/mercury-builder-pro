@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/toronto-fishing-rice-lake-vs-lake-simcoe-kawarthas.md
-last_updated: 2026-09-06
+last_updated: 2026-10-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "多伦多出发钓鱼去哪：莱斯湖、Lake Simcoe、Kawarthas 怎么
 description: "多伦多华人钓鱼去哪？比较莱斯湖、Lake Simcoe 和 Kawarthas：家庭租船、岸钓、冰钓、规则、车程和第一次驾船或钓鱼的选择。"
 category: "Buying Guides"
 date_published: 2026-05-17
-date_modified: 2026-09-06
+date_modified: 2026-10-04
 keywords: ["Rice Lake","Lake Simcoe","Kawarthas","多伦多钓鱼","湖区对比","华人钓友"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,11 +25,13 @@ revenue_driver: repower
 
 **Category:** Buying Guides  
 **Published:** 2026-05-17  
-**最后审核:** 2026-09-06  
+**最后审核:** 2026-10-04  
 **Read time:** 16 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/toronto-fishing-rice-lake-vs-lake-simcoe-kawarthas
 
 如果你从 GTA 出发，莱斯湖更适合家庭租船、浮筒船一日行程、第一次湖上钓鱼和后续买船或换装发动机的需求；Lake Simcoe 更适合很多人熟悉的开放水域钓鱼和冰钓话题，但规则和水体例外需要认真查；Kawarthas 更像一个大区域，适合已经愿意花时间探索不同湖泊、船闸、湖边度假屋和用船场景的人。无论去哪，都不要只看别人群里一句“这里好钓”，要查 Ontario 钓鱼法规、FMZ 和当年水体例外 (Ontario Traditional Chinese fishing regulations, Ontario FMZ 16, Ontario FMZ 17).
+
+需要考取 PCOC？通过 [HBW 的 MyBoatCard 推荐链接](https://myboatcard.com/card/harrisboat)参加在线课程，使用优惠码 **HARRIS15** 可享 **15% 折扣**。
 
 ## 先问自己：你要的是钓鱼，还是湖上一天？
 

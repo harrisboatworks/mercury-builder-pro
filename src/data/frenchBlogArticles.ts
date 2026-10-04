@@ -270,7 +270,7 @@ Harris Boat Works offre du contenu disponible en français pour les clients fran
     image: '/lovable-uploads/hero-mercury-115-vs-150-comparison.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-09-06',
+    dateModified: '2026-10-04',
     publishDate: '2026-04-12',
     category: 'Comparaison',
     readTime: '7 min',
@@ -278,6 +278,8 @@ Harris Boat Works offre du contenu disponible en français pour les clients fran
     content: `### Réponse rapide
 
 Le Mercury 115 FourStroke est le bon choix pour la plupart des embarcations de 16 à 19 pieds naviguant sur les lacs intérieurs de l'Ontario, il est léger, économique et amplement puissant. Le Mercury 150 FourStroke est justifié lorsque l'embarcation fait 19 à 22 pieds, que la charge est régulièrement importante, ou que vous voulez une marge de puissance confortable sur un grand ponton ou une grosse embarcation familiale. Pour voir les prix des deux moteurs côte à côte en dollars canadiens, utilisez mercuryrepower.ca.
+
+Besoin de votre CCEP (PCOC)? Suivez le cours en ligne avec [le lien de parrainage MyBoatCard de HBW](https://myboatcard.com/card/harrisboat) et utilisez le code **HARRIS15** pour obtenir **15% de réduction**.
 
 ---
 
@@ -865,7 +867,7 @@ Harris Boat Works, Gores Landing, Ontario, sur le lac Rice. En affaires depuis 1
     imageAlt: 'Pleasure Craft Licence form on a workbench next to an aluminum boat undergoing a Mercury outboard motor repower.',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-10-03',
+    dateModified: '2026-10-04',
     publishDate: '2026-04-12',
     category: 'Réglementation',
     readTime: '8 min',
@@ -873,6 +875,8 @@ Harris Boat Works, Gores Landing, Ontario, sur le lac Rice. En affaires depuis 1
     content: `### Réponse rapide
 
 Au Canada, la Carte de conducteur d'embarcation de plaisance (CCEP) est la preuve de compétence la plus courante pour conduire une embarcation de plaisance motorisée. Transports Canada reconnaît aussi certaines autres preuves de compétence. Ce n'est pas un permis à renouveler, vous le passez une fois, et c'est valide à vie. Le test se fait en ligne auprès de fournisseurs accrédités par Transports Canada, et coûte généralement entre 40 $ et 50 $. L'amende de base pour défaut de carte est de 250 $. Vérifiez les exigences actuelles sur le site de Transports Canada avant de prendre le large.
+
+Besoin de votre CCEP (PCOC)? Suivez le cours en ligne avec [le lien de parrainage MyBoatCard de HBW](https://myboatcard.com/card/harrisboat) et utilisez le code **HARRIS15** pour obtenir **15% de réduction**.
 
 ---
 
@@ -978,7 +982,7 @@ Non. Vous réussissez le test une fois et la carte est valide à vie.
 Oui. Plusieurs fournisseurs accrédités par Transports Canada offrent le test en français. Cherchez « carte conducteur embarcation plaisance cours français » pour trouver une option dans votre langue.
 
 **Quelle est la différence entre la CCEP et la licence d'embarcation?** 
-La CCEP concerne la compétence du conducteur. La licence d'embarcation ([Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences)) concerne l'embarcation elle-même et dépend des critères de Transports Canada. Ce sont deux exigences distinctes.
+La CCEP concerne la compétence du conducteur. La licence d'embarcation ([Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl)) concerne l'embarcation elle-même et dépend des critères de Transports Canada. Ce sont deux exigences distinctes.
 
 **Est-ce que la CCEP est reconnue dans d'autres provinces?** 
 Oui. La CCEP est une certification fédérale valide partout au Canada.
@@ -2197,7 +2201,7 @@ Pour les réparations de moteurs, nous ne servons que Mercury et Mercruiser.
     imageAlt: 'Boat trailer on jack stands with maintenance tools like a grease gun and torque wrench at an Ontario marina.',
     author: 'Harris Boat Works',
     datePublished: '2026-05-13',
-    dateModified: '2026-09-12',
+    dateModified: '2026-10-04',
     publishDate: '2026-05-13',
     category: 'Entretien',
     readTime: '10 min',
@@ -2206,6 +2210,8 @@ Pour les réparations de moteurs, nous ne servons que Mercury et Mercruiser.
     content: `## Réponse rapide
 
 **Votre remorque de bateau porte la même valeur que votre moteur et votre bateau combinés. Sautez l'entretien annuel et vous le découvrez de la pire façon au pire moment, habituellement en pleine mise à l'eau un samedi matin de mai.**
+
+Besoin de votre CCEP (PCOC)? Suivez le cours en ligne avec [le lien de parrainage MyBoatCard de HBW](https://myboatcard.com/card/harrisboat) et utilisez le code **HARRIS15** pour obtenir **15% de réduction**.
 
 - **Roulements** : regraisser annuellement OU tous les 12 000 km; remplacer au premier signe de changement de couleur de la graisse ou de jeu
 - **Freins** : rinçage annuel et inspection des plaquettes; à inertie ou électriques, les deux échouent de la même façon
@@ -2366,7 +2372,7 @@ Par Harris Boat Works, marina familiale depuis 1947 sur le lac Rice, concessionn
     imageAlt: 'Marine insurance policy on a dock beside a boat with a Mercury outboard, illustrating Ontario boat insurance coverage.',
     author: 'Harris Boat Works',
     datePublished: '2026-05-13',
-    dateModified: '2026-10-03',
+    dateModified: '2026-10-04',
     publishDate: '2026-05-13',
     category: 'Assurance',
     readTime: '9 min',
@@ -2375,6 +2381,8 @@ Par Harris Boat Works, marina familiale depuis 1947 sur le lac Rice, concessionn
     content: `## Réponse rapide
 
 **En Ontario, l'assurance bateau n'est généralement pas obligatoire pour toutes les embarcations de plaisance, mais elle peut être exigée par un prêteur, une marina, un programme de financement ou une installation d'entreposage. Pour tout bateau d'une valeur supérieure à 5 000 $, ou tout bateau transportant des passagers, une couverture de base responsabilité et coque est ce que tout concessionnaire honnête recommande. Le vrai coût dépend de la valeur du bateau, du moteur, du remorquage, de l'usage, du dossier du conducteur et des protections choisies. Demandez des soumissions à un courtier ou à votre assureur.**
+
+Besoin de votre CCEP (PCOC)? Suivez le cours en ligne avec [le lien de parrainage MyBoatCard de HBW](https://myboatcard.com/card/harrisboat) et utilisez le code **HARRIS15** pour obtenir **15% de réduction**.
 
 - **Responsabilité** : 1 M$ à 2 M$ minimum (couvre dommages à d'autres bateaux, quais ou blessures)
 - **Coque / valeur convenue** : coût de remplacement moins dépréciation, avec avenants pour moteur et remorque

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/tl/ontario-boat-rental-rules-tagalog-pcoc.md
-last_updated: 2026-09-06
+last_updated: 2026-10-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Boat rental rules sa Ontario: PCOC, checklist, lifejackets (Tagalog Guid
 description: "Kailangan ba ng PCOC para mag-rent ng boat sa Ontario? Rental rules, lifejacket requirements, at checklist bago bumangka. Tagalog guide para sa pamilya mo."
 category: "Tagalog Guide"
 date_published: 2026-06-12
-date_modified: 2026-09-06
+date_modified: 2026-10-04
 keywords: ["paano kumuha ng boat license sa Ontario (how to get a boat license in Ontario)","kailangan ba ng boat license sa Ontario (is a boat license required in Ontario)","boat operator card Ontario paano (boat operator card Ontario how)","online boat license Ontario Tagalog (online boat license Ontario Tagalog)","PCOC exam Tagalog (PCOC exam Tagalog)"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,11 +25,13 @@ revenue_driver: rentals
 
 **Category:** Tagalog Guide  
 **Published:** 2026-06-12  
-**Huling sinuri:** 2026-09-06  
+**Huling sinuri:** 2026-10-04  
 **Read time:** 8 min basa  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/tl/ontario-boat-rental-rules-tagalog-pcoc
 
 Sa Harris Boat Works, dapat magpakita ng wastong boat operator licence ang bawat driver sa check-in. Ginagawa pa rin ang rental safety checklist bilang safety briefing, ngunit hindi ito ginagamit ng HBW kapalit ng licence ng driver. Mula sa pamilya ng Harris Boat Works sa Gores Landing, gusto ka naming tulungan, lalo na ang mga kababayan nating Filipino sa Toronto, Mississauga, at buong GTA, na ma-enjoy ang Rice Lake nang walang kaba. Malapit lang kami: mga 90 minutong drive mula sa Brampton, Mississauga, Scarborough, o Markham. Kahit never ka pa sumakay ng bangka sa Canada, dito ka safe na magsisimula. Ito ang dapat mong malaman tungkol sa boat rental rules, lifejackets, at kung paano gumagana ang sistema dito.
+
+Kailangan ng PCOC? Kunin ang online course gamit ang [MyBoatCard referral link ng HBW](https://myboatcard.com/card/harrisboat) at gamitin ang code na **HARRIS15** para sa **15% diskuwento**.
 
 ## Kailangan ng boat operator licence para sa HBW rental
 

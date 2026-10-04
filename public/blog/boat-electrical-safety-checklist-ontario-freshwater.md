@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-electrical-safety-checklist-ontario-freshwater.md
-last_updated: 2026-09-07
+last_updated: 2026-10-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Boat Electrical Safety Ontario"
 description: "Marine electrical safety checklist for Ontario freshwater boats: corrosion, fuses, bilge pump, battery switch, amateur wiring traps."
 category: "Maintenance"
 date_published: 2026-05-17
-date_modified: 2026-09-07
+date_modified: 2026-10-04
 keywords: ["boat electrical safety checklist","marine electrical ontario","boat wiring inspection","bilge pump check","harris boat works"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Category:** Maintenance  
 **Published:** 2026-05-17  
-**Last reviewed:** 2026-09-07  
+**Last reviewed:** 2026-10-04  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-electrical-safety-checklist-ontario-freshwater
 
@@ -166,7 +166,7 @@ For engine repairs, we only service Mercury and MerCruiser.
 - Transport Canada Construction Standards for Small Vessels (TP 1332)
 - Mercury Marine electrical installation guidelines (dealer technical reference, 2026)
 - HBW service shop records, 2018-2026
-- [Transport Canada - Safe Boating Guide (TP 511)](https://tc.canada.ca/en/marine-transportation/marine-safety/transport-canada-boating-safety-guide-tp-511) - Federal guidance on small-vessel electrical safety and required equipment.
+- [Transport Canada - Safe Boating Guide (TP 511)](https://tc.canada.ca/sites/default/files/2026-07/tp-511-boating-guide-2026-EN-acc.pdf) - Federal guidance on small-vessel electrical safety and required equipment.
 - [Mercury Marine Canada](https://www.mercurymarine.com/ca/en) - Manufacturer guidance on rigging, batteries, and ignition-protected equipment.
 
 ## About the author

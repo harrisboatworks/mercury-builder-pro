@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/total-cost-of-owning-a-boat-ontario-2026.md
-last_updated: 2026-09-06
+last_updated: 2026-10-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Cost of Owning a Boat Ontario 2026"
 description: "A no-marketing, real-numbers breakdown of what it costs to own a boat in Ontario in 2026, slip, storage, insurance, fuel."
 category: "Buying Guide"
 date_published: 2026-05-19
-date_modified: 2026-09-06
+date_modified: 2026-10-04
 keywords: ["cost of owning a boat Ontario","boat ownership cost Canada","Rice Lake marina slip cost","boat insurance Ontario cost","boat winterization cost Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,13 +25,15 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-05-19  
-**Last reviewed:** 2026-09-06  
+**Last reviewed:** 2026-10-04  
 **Read time:** 11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/total-cost-of-owning-a-boat-ontario-2026
 
 ## What Does It Actually Cost to Own a Boat in Ontario? (2026 HBW Guide)
 
 > **Quick answer:** The Section 7 sample is an illustrative CAD budget. Its annual cash total is $5,879.49. Storage and winterization in that sample are before HST, shop supplies and miscellaneous charges. For illustration only, financing $32,000 after an $8,000 down payment on a $40,000 purchase for 120 monthly payments at 8% nominal annual interest produces a payment of about $388.25/month, or $4,658.98/year, before any financed taxes or fees. Added to the $5,879.49 sample annual cash budget, that is about $10,538.47/year. The 8% rate is an assumption, not a current HBW financing offer. Full sample budget is in Section 7 below. Build a current quote at mercuryrepower.ca.
+
+Need your PCOC? Take the online course through [HBW's MyBoatCard referral link](https://myboatcard.com/card/harrisboat) and use **HARRIS15** for **15% off**.
 
 If you're shopping your first boat or thinking about whether to keep your current one, the *purchase price* is only part of the question. The bigger question is: **what does it cost to keep it on the water every year?**
 
@@ -43,7 +45,7 @@ Most online articles answer that with American numbers, generic ranges, and no s
 
 For the $40,000, 20-foot aluminum example in Section 7, the illustrative annual cash budget is **$5,879.49** (cash-bought, no loan payment). Storage and winterization in that sample are before HST, shop supplies and miscellaneous charges. For illustration only, financing $32,000 after an $8,000 down payment for 120 monthly payments at 8% nominal annual interest is about **$388.25/month**, or **$4,658.98/year**, before any financed taxes or fees. Added together, that is about **$10,538.47/year**. The 8% rate is an assumption, not a current HBW financing offer.
 
-_Prices here are planning figures as of September 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference). Winterization and storage examples use the current [HBW winter-storage rate page](https://www.harrisboatworks.ca/winter-storage)._
+_Prices here are planning figures as of October 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference). Winterization and storage examples use the current [HBW winter-storage rate page](https://www.harrisboatworks.ca/winter-storage)._
 
 For a 22-foot pontoon at $55,000, a separate planning assumption (not the Section 7 loan arithmetic) is roughly $7,500-$9,500 a year cash-bought, or about $12,000-$14,000 financed.
 
@@ -175,7 +177,7 @@ For most current recreational Mercury FourStrokes, the **100-hour or annual trig
 
 [Transport Canada's PCL changes](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl) effective December 31, 2025 ended lifetime licences. As of August 8, 2026, new and renewed PCLs are **5-year licences at $24.41 CAD**, issued and renewed online through Transport Canada's PCL portal. Transport Canada adjusts the fee for inflation each April 1, so verify the current amount before applying. At the August 8 fee, that works out to about **$4.88/year**.
 
-[PCOC](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency) (operator card) is a one-time test, lifetime card. ~$50 once, never again.
+[PCOC](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc) (operator card) is a one-time test, lifetime card. ~$50 once, never again.
 
 This category used to be near-zero. It's still essentially negligible.
 

@@ -12,7 +12,7 @@ export const koreanBlogArticles: BlogArticle[] = [
     image: '/lovable-uploads/ko-ontario-boat-buying-guide-hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-09-06',
+    dateModified: '2026-10-04',
     publishDate: '2026-04-12',
     category: '구매 가이드',
     readTime: '12 분',
@@ -21,6 +21,8 @@ export const koreanBlogArticles: BlogArticle[] = [
 ## 빠른 답변
 
 **온타리오에서 첫 보트를 구매하는 GTA 한인 가정을 위한 5단계 가이드. PCOC 면허, 보트 종류 선택, 신규/중고/repower 비교, 보관·보험까지 한 번에 정리.**
+
+PCOC가 필요하신가요? [HBW의 MyBoatCard 추천 링크](https://myboatcard.com/card/harrisboat)에서 온라인 과정을 수강하고 할인 코드 **HARRIS15**로 **15% 할인**을 받으세요.
 
 - **조종 자격 증명**: 모든 동력 보트(전기 트롤링 모터 포함)에 필요. 흔한 증명은 PCOC(약 $40-50, 평생 유효)이며, 연방 규칙상 다른 인정 증명도 있음
 - **신규 vs 중고 vs Repower**: 신규 패키지는 $40,000-$100,000+ CAD, repower(엔진만 교체)는 가장 저렴한 진입로
@@ -46,7 +48,7 @@ Harris Boat Works(HBW)는 Rice Lake 호숫가에 위치한 3대째 가족 경영
 
 **네, 필요합니다.**
 
-캐나다에서 엔진이 달린 보트(전기 트롤링 모터 포함)를 조종하려면 인정된 조종 자격 증명(proof of competency)이 필요합니다. **PCOC([Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency), 여가용 선박 조종 자격증)**가 가장 흔한 증명이지만, 연방 규칙상 유일한 증명은 아닙니다. 연방법으로 전국 어디서나 적용됩니다.
+캐나다에서 엔진이 달린 보트(전기 트롤링 모터 포함)를 조종하려면 인정된 조종 자격 증명(proof of competency)이 필요합니다. **PCOC([Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc), 여가용 선박 조종 자격증)**가 가장 흔한 증명이지만, 연방 규칙상 유일한 증명은 아닙니다. 연방법으로 전국 어디서나 적용됩니다.
 
 - 온라인 시험으로 취득 가능
 - 비용 약 $40~$50
@@ -189,7 +191,7 @@ Harris Boat Works, Mercury Marine Premier 딜러. 1947년 창립.
     image: '/lovable-uploads/ko-rice-lake-fishing-guide-hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-09-06',
+    dateModified: '2026-10-04',
     publishDate: '2026-04-12',
     category: '낚시 가이드',
     readTime: '10 분',
@@ -198,6 +200,8 @@ Harris Boat Works, Mercury Marine Premier 딜러. 1947년 창립.
 ## 빠른 답변
 
 **Rice Lake는 토론토에서 약 1.5시간(401번 → 115번 도로) 거리의 숨은 walleye·bass 명소. Lake Simcoe보다 한적하고, GTA 한인 가족이 당일치기로 다녀오기 좋습니다.**
+
+PCOC가 필요하신가요? [HBW의 MyBoatCard 추천 링크](https://myboatcard.com/card/harrisboat)에서 온라인 과정을 수강하고 할인 코드 **HARRIS15**로 **15% 할인**을 받으세요.
 
 - **거리**: 토론토에서 약 1.5시간, FMZ 17 구역
 - **주요 어종**: Walleye, Smallmouth Bass, Northern Pike, Perch. 시즌·한도는 당해 공식 FMZ 17 규정을 확인
@@ -739,7 +743,7 @@ harrisboatworks.ca에서 현재 재고를 확인하실 수 있습니다.
     image: '/lovable-uploads/ko-ontario-boating-licence-regulations-hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-09-06',
+    dateModified: '2026-10-04',
     publishDate: '2026-04-12',
     category: '규정 가이드',
     readTime: '11 분',
@@ -749,8 +753,10 @@ harrisboatworks.ca에서 현재 재고를 확인하실 수 있습니다.
 
 **동력 레저 보트 운항자는 PCOC 등 인정되는 조종 자격 증명을 소지해야 합니다. 선박 면허(PCL)는 보트의 엔진 출력 등 등록 조건에 따라 필요합니다. HBW 렌털 조건은 예약 전에 별도로 확인하세요. 미면허 운항은 OPP 단속 시 $250부터 과태료가 시작됩니다.**
 
-- **PCOC ([Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency))**: 약 $40-50, 평생 유효, 가장 흔한 조종 자격 증명, 원본 카드 휴대
-- **PCL ([Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences))**: 엔진 출력 등 등록 조건에 따라 필요. 신규·이전·갱신 면허는 5년 유효. 신규·이전·갱신·재발급 수수료는 2026년 9월 5일 기준 **$24.41 CAD**(재발급은 유효기간을 갱신하지 않음). 기재사항 변경·취소는 무료. hull에 7.5cm 이상으로 표시
+PCOC가 필요하신가요? [HBW의 MyBoatCard 추천 링크](https://myboatcard.com/card/harrisboat)에서 온라인 과정을 수강하고 할인 코드 **HARRIS15**로 **15% 할인**을 받으세요.
+
+- **PCOC ([Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc))**: 약 $40-50, 평생 유효, 가장 흔한 조종 자격 증명, 원본 카드 휴대
+- **PCL ([Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl))**: 엔진 출력 등 등록 조건에 따라 필요. 신규·이전·갱신 면허는 5년 유효. 신규·이전·갱신·재발급 수수료는 2026년 9월 5일 기준 **$24.41 CAD**(재발급은 유효기간을 갱신하지 않음). 기재사항 변경·취소는 무료. hull에 7.5cm 이상으로 표시
 - **미성년자 규정**: 12세 미만 ≤10HP, 12-15세 ≤40HP, 16세 미만 PWC 운항 금지
 - **PCL 자료 변경**: 엔진 변경 등 기재사항 업데이트는 수수료 없음. HBW가 repower 시 함께 안내
 
