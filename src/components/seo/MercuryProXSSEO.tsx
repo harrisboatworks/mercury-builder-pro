@@ -88,6 +88,7 @@ export function MercuryProXSSEO() {
         "hasVariant": PRO_XS_STATIC_OFFERS.map(v => ({
           "@type": "Product",
           "name": v.name,
+          "description": v.description,
           "image": v.image,
           "brand": { "@type": "Brand", "name": "Mercury Marine" },
           "category": "Outboard Motor",
