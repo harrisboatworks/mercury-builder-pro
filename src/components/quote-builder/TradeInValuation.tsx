@@ -16,6 +16,8 @@ import { fetchHBWValuation, buildHBWReportUrl, type TradeValueEstimate, type Tra
 import { AnimatedPrice } from '@/components/ui/AnimatedPrice';
 import { useHapticFeedback } from '@/hooks/useHapticFeedback';
 import { clearTradeInValuation, isSupportedTradeInYear, TRADE_IN_MIN_YEAR, TRADE_IN_VALUATION_FRESH_MS } from '@/lib/trade-in-state';
+import { uuidv4 } from '@/lib/analytics';
+import { trackStandaloneTrade } from '@/lib/trade-in-analytics';
 
 
 
@@ -30,11 +32,13 @@ interface TradeInValuationProps {
   customerName?: string;
   /** When true, skip the Yes/No toggle and show the form immediately */
   standalone?: boolean;
+  /** Generated correlation ID for the standalone checker, never asset/customer data. */
+  standaloneFunnelId?: string;
   /** The price of the motor being quoted, used to warn if trade-in exceeds it */
   selectedMotorPrice?: number;
 }
 
-export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, currentMotorBrand, currentHp, currentMotorYear, customerName, standalone = false, selectedMotorPrice }: TradeInValuationProps) => {
+export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, currentMotorBrand, currentHp, currentMotorYear, customerName, standalone = false, standaloneFunnelId, selectedMotorPrice }: TradeInValuationProps) => {
   const [isLoading, setIsLoading] = useState(false);
   const [estimate, setEstimate] = useState<TradeValueEstimate | null>(null);
   const [apiUnavailable, setApiUnavailable] = useState(false);
@@ -48,6 +52,9 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
   const mountedRef = useRef(true);
   const { triggerHaptic } = useHapticFeedback();
   const autoEstimateTriggered = useRef(false);
+  const fallbackFunnelId = useRef<string>();
+  if (!fallbackFunnelId.current) fallbackFunnelId.current = uuidv4();
+  const funnelId = standaloneFunnelId || fallbackFunnelId.current;
 
   useEffect(() => {
     mountedRef.current = true;
@@ -206,16 +213,14 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
   ];
 
   const handleGetEstimate = async () => {
-    console.log('Getting estimate - Current tradeInInfo:', tradeInInfo);
-    
     if (!tradeInInfo.brand || !hasValidYear || !hasModelOrHp || !tradeInInfo.condition || !effectiveEngineType) {
-      console.log('Missing required fields');
       return;
     }
 
     const requestId = ++requestIdRef.current;
     setIsLoading(true);
     setApiUnavailable(false);
+    if (standalone) trackStandaloneTrade('standalone_trade_estimate_requested', funnelId);
 
     // Send the decoded or manually confirmed architecture. Configuration
     // suffixes such as ELPT and EFI do not reliably distinguish two-stroke
@@ -236,8 +241,8 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
     let tradeEstimate: TradeValueEstimate & { listingValue?: number; hstSavings?: number; fromHBW?: boolean };
 
     if (hbwResult.ok === true) {
-      console.log('✅ HBW API returned valuation:', hbwResult.value);
       tradeEstimate = hbwResult.value;
+      if (standalone) trackStandaloneTrade('standalone_trade_estimate_succeeded', funnelId);
     } else {
       // Live valuation API unreachable. We deliberately do NOT fall back to the
       // local table — it drifts out of sync with the canonical HBW engine
@@ -248,6 +253,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
       setApiUnavailable(true);
       setEstimate(null);
       setIsLoading(false);
+      if (standalone) trackStandaloneTrade('standalone_trade_estimate_failed', funnelId, hbwResult.reason);
       return;
     }
 
@@ -1065,6 +1071,9 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                         href={tradeInInfo.valuationReportUrl}
                         target="_blank"
                         rel="noopener noreferrer"
+                        onClick={() => {
+                          if (standalone) trackStandaloneTrade('standalone_trade_report_opened', funnelId);
+                        }}
                         className="inline-flex items-center gap-1.5 font-sans text-sm text-repower-navy-900/55 underline underline-offset-2 transition-colors hover:text-repower-navy-900"
                       >
                         View detailed valuation report
