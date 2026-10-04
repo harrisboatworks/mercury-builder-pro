@@ -10,6 +10,8 @@ import { useQuote } from '@/contexts/QuoteContext';
 import { type TradeInInfo } from '@/lib/trade-valuation';
 import { SITE_URL } from '@/lib/site';
 import { parseTradeInDraft, serializeTradeInDraft } from '@/lib/trade-in-state';
+import { uuidv4 } from '@/lib/analytics';
+import { trackStandaloneTrade } from '@/lib/trade-in-analytics';
 
 const DRAFT_KEY = 'tradeInValuePage:draft';
 
@@ -53,6 +55,8 @@ export default function TradeInValuePage() {
   const [showRestored, setShowRestored] = useState(initial.current.restored);
   const navigate = useNavigate();
   const { dispatch } = useQuote();
+  const funnelId = useRef<string>();
+  if (!funnelId.current) funnelId.current = uuidv4();
   const hasEstimate = tradeInInfo.estimatedValue > 0;
   const canStartQuote = hasTradeInDetails(tradeInInfo);
 
@@ -76,6 +80,7 @@ export default function TradeInValuePage() {
   }, [tradeInInfo]);
 
   const handleClearDraft = () => {
+    trackStandaloneTrade('standalone_trade_reset', funnelId.current!);
     try {
       localStorage.removeItem(DRAFT_KEY);
     } catch {
@@ -92,6 +97,7 @@ export default function TradeInValuePage() {
     // any direct write on its next persist and the trade-in is silently lost.
     const promoted: TradeInInfo = { ...tradeInInfo, hasTradeIn: true };
     dispatch({ type: 'PROMOTE_TRADE_IN', payload: promoted });
+    trackStandaloneTrade('standalone_trade_quote_started', funnelId.current!);
     // Keep the standalone draft. If the customer backs out of the quote flow, their
     // entry is still here; handleClearDraft and the next valuation both replace it.
     navigate('/quote/motor-selection');
@@ -152,19 +158,25 @@ export default function TradeInValuePage() {
               <span className="font-sans text-repower-navy-900/65">
                 Restored your previous entries.
               </span>
+            </motion.div>
+          )}
+
+          {hasTradeInDetails(tradeInInfo) && (
+            <div className="mb-4 text-right">
               <button
                 type="button"
                 onClick={handleClearDraft}
-                className="inline-flex items-center gap-1.5 font-sans text-[13px] font-semibold text-repower-navy-900 hover:text-repower-mercury-red transition-colors"
+                className="inline-flex items-center gap-1.5 px-3 py-2 font-sans text-[13px] font-semibold text-repower-navy-900 hover:text-repower-mercury-red transition-colors"
               >
                 <RotateCcw className="w-3.5 h-3.5" />
                 Start over
               </button>
-            </motion.div>
+            </div>
           )}
 
           <TradeInValuation
             standalone
+            standaloneFunnelId={funnelId.current}
             tradeInInfo={tradeInInfo}
             onTradeInChange={setTradeInInfo}
             onAutoAdvance={handleStartQuote}
