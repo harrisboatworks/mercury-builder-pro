@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-warranty-canada-2026.md
-last_updated: 2026-09-07
+last_updated: 2026-10-05
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Outboard Warranty Canada 2026"
 description: "A plain-English guide to Mercury outboard warranty in Canada: coverage, exclusions, maintenance records, registration, and Product Protection."
 category: "Buying Guide"
 date_published: 2026-05-23
-date_modified: 2026-09-07
+date_modified: 2026-10-05
 keywords: ["Mercury outboard warranty Canada","Mercury 3 year warranty","Mercury Product Protection MPP","Mercury corrosion warranty","Mercury warranty transfer used motor","Mercury warranty Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Category:** Buying Guide  
 **Published:** 2026-05-23  
-**Last reviewed:** 2026-09-07  
+**Last reviewed:** 2026-10-05  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-warranty-canada-2026
 
@@ -41,6 +41,10 @@ We're a Mercury dealer in Ontario since 1965. We do warranty work in our shop ev
 
 ![Warranty checklist: confirm eligibility, check coverage and dates, and keep service records.](/lovable-uploads/blog-visuals-2026-09/warranty-checklist.svg)
 
+## Chase the Savings: dated included MPP Gold coverage
+
+As of October 5, 2026, **Chase the Savings** runs **September 14–October 30, 2026**. Eligible new dealer-stock 2.5–425 HP FourStroke engines manufactured in 2022–2026 can receive **3 years limited factory warranty + 2 years Mercury Product Protection Gold = 5 years total coverage**. The engine must be sold and delivered within the promotion window and warranty-registered by **November 15, 2026**. Recreational-use eligibility and product exclusions apply; see [current promotions](/promotions) before relying on coverage. This included MPP Gold benefit is separate from optional paid MPP Platinum.
+
 ## The Two Standard Warranties (Eligible Pleasure-Use Models)
 
 Eligible new pleasure-use Mercury outboards in Canada include:
@@ -49,7 +53,7 @@ Eligible new pleasure-use Mercury outboards in Canada include:
 
 **2. Mercury 3-Year Corrosion Warranty.** Mercury's written condition is the product being rendered inoperative directly by corrosion. It is not a cosmetic-finish or "hull-side surfaces" list. Named exclusions include, among other things, cosmetic corrosion, electrical-system corrosion, and corrosion of accessories, instruments, or steering. Required corrosion prevention and maintenance still apply. **This runs concurrently with the limited warranty**, not after it. Both clocks start at first retail sale or first service, whichever is earlier. Both stop on the same day three years later for eligible pleasure-use models. Commercial coverage is different.
 
-This is the single most-misunderstood part of Mercury's warranty. Some sales pitches frame it as "3+3 = six years of coverage." It isn't. **You get three years total**, with two different things being covered during those three years.
+This is the single most-misunderstood part of Mercury's warranty. Some sales pitches frame it as "3+3 = six years of coverage." It isn't. **The standard warranties give you three years total**, with two different things covered during that period. Separate promotional MPP coverage, when eligible, can extend protection after the limited warranty.
 
 That said, three years of Mercury limited-warranty coverage is genuinely strong for the marine industry. Additional promotional coverage may be offered for eligible purchases, but only when the written terms explicitly include it. See [current promotions](https://www.mercuryrepower.ca/promotions) and our Mercury outboard warranty guide for the current position.
 
@@ -214,7 +218,7 @@ An authorized dealer can verify registration, document the work it performs, and
 
 ### Is the Mercury warranty really 3 years or 6 years?
 
-For eligible pleasure-use models, 3 years total. The limited warranty (defects) and the corrosion warranty (inoperative-product corrosion, with named exclusions) run concurrently from first retail sale or first service, whichever is earlier. They cover different things during the same 3-year window; they don't stack to six years. Commercial and other categories differ. A later used or demo purchase does not restart either clock.
+The standard warranties for eligible pleasure-use models give 3 years total. The limited warranty (defects) and the corrosion warranty (inoperative-product corrosion, with named exclusions) run concurrently from first retail sale or first service, whichever is earlier. They cover different things during the same 3-year window; they don't stack to six years. Commercial and other categories differ. A later used or demo purchase does not restart either clock. Separately, Chase the Savings runs September 14–October 30, 2026 and can add 2 years MPP Gold for 5 years total coverage on eligible new dealer-stock 2.5–425 HP FourStroke engines manufactured in 2022–2026, sold and delivered within that window and warranty-registered by November 15, 2026. See mercuryrepower.ca/promotions for eligibility and exclusions.
 
 ### When can I buy MPP, is there still a 1-year purchase deadline?
 

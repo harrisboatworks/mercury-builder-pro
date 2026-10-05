@@ -11712,13 +11712,13 @@ This guide was checked July 27, 2026 against Mercury's current product pages and
     imageAlt: 'Mercury Pro XS outboard on a boat outside the Harris Boat Works shop in Gores Landing, Ontario',
     author: 'Harris Boat Works',
     datePublished: '2026-05-08',
-    dateModified: '2026-09-26',
+    dateModified: '2026-10-05',
     publishDate: '2026-05-08',
     category: 'Buying Guide',
     readTime: '10 min read',
     keywords: ['mercury outboard price 2026', 'mercury promotions', 'mercury dealer pricing', 'best time buy outboard', 'mercury financing options'],
     content: `
-*Last reviewed: 2026-07-02*
+*Last reviewed: 2026-10-05*
 
 > **Quick answer:** Mercury controls promotions; dealers can't invent discounts. Real 2026 deals can include Mercury rebates, financing incentives, and additional coverage when the written offer says so. Current terms are reflected in our configurator at mercuryrepower.ca and on the [promotions page](/promotions).
 
@@ -11841,7 +11841,7 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 
 Manufacturer-level programs come and go through the year, so the only list that matters is the live one on [the promotions page](https://www.mercuryrepower.ca/promotions). Individual dealers like Harris Boat Works also run their own promotions. Family-owned since 1947, Mercury dealer since 1965, Mercury Premier Dealer.
 
-**Current warranty position (verified July 2026)**:
+**Standard warranty position**:
 - Mercury's standard Canadian limited factory warranty is 3 years
 - Additional promotional coverage applies only when a current promotion explicitly includes it
 - See the [Mercury outboard warranty in Canada](/blog/mercury-outboard-warranty-canada-2026) and [current promotions](https://www.mercuryrepower.ca/promotions)
@@ -11853,7 +11853,10 @@ Manufacturer-level programs come and go through the year, so the only list that 
 
 ### Financing Your Mercury
 
-**Current promotional financing**:
+**Canadian financing programs (reviewed October 5, 2026)**:
+
+As of October 5, 2026, **Chase the Savings** runs **September 14–October 30, 2026** for eligible Canadian purchases. Mercury advertises TD financing as low as **2.99% for 24 months [5.49% APR]**, on approved credit, for an eligible repower of at least $5,000. The advertised rate and APR are different disclosures; ask HBW for the written lender terms before comparing payments. See [current promotions](/promotions) for eligibility and exclusions. Do not assume financing and cash rebates can be combined.
+
 - TD "Always On" promotional financing at 5.48% APR (OAC), arranged via DealerPlan, through December 31, 2026
 - Standard tiered rates (8.99% APR under $10,000 / 7.99% APR at $10,000 and up) apply outside the promo
 - Financing minimum $5,000 before tax
@@ -11930,7 +11933,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     faqs: [
       {
         question: 'Are there current promotions available?',
-        answer: 'Mercury promotions change over time. The standard Canadian warranty is 3 years, while the current TD financing offer runs separately. See [current promotions](https://www.mercuryrepower.ca/promotions) for the live offer and eligibility.'
+        answer: 'As of October 5, 2026, Chase the Savings runs September 14–October 30, 2026: eligible Canadian purchases may qualify for 2.5–30 HP portable rebates (unavailable in Newfoundland and Labrador), 3-year limited warranty plus 2 years MPP Gold, or TD financing as low as 2.99% for 24 months [5.49% APR], OAC. TD "Always On" is separate. Check current promotions at mercuryrepower.ca/promotions for each benefit\'s eligibility; do not assume offers combine.'
       },
       {
         question: 'Can I negotiate below advertised price?',
@@ -13850,13 +13853,13 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine 
     imageAlt: 'Person reviewing a Mercury outboard financing summary at an Ontario marina office.',
     author: 'Harris Boat Works',
     datePublished: '2026-04-20',
-    dateModified: "2026-09-02",
+    dateModified: "2026-10-05",
     category: 'Financing & Value',
     readTime: '12 min read',
     keywords: ['mercury outboard financing Ontario', 'boat repower financing Ontario', 'finance boat motor Ontario', 'mercury financing rate 2026', 'mercury outboard monthly payment'],
     content: `## Quick answer
 
-Yes, eligible Mercury outboard and repower purchases can be financed through DealerPlan and participating Canadian lenders. The current headline rate is {{LIVE_RATE}} (OAC). Under the active TD program, the contract term is up to 60 months and payment examples may use amortization up to 240 months, which can leave a balance due at maturity. Qualified buyers may be eligible for $0 down; the lender confirms approval, down payment, timing, and final terms in writing.
+Yes, eligible Mercury outboard and repower purchases can be financed through DealerPlan and participating Canadian lenders. TD "Always On" is {{LIVE_RATE}} (OAC) through December 31, 2026. Chase the Savings also advertises TD financing as low as 2.99% for 24 months [5.49% APR], on approved credit, for an eligible Canadian repower of at least $5,000 during September 14–October 30, 2026. Under TD "Always On", the contract term is up to 60 months and payment examples may use amortization up to 240 months, which can leave a balance due at maturity. Qualified buyers may be eligible for $0 down; the lender confirms approval, down payment, timing, and final terms in writing.
 
 Family-owned since 1947.
 
@@ -13872,7 +13875,9 @@ _Prices here are planning figures as of {{PRICING_ASOF}}. For live Mercury motor
 
 ## How HBW financing actually works
 
-**One Mercury financing program is live right now.** TD "Always On" promotional financing is 5.48% APR (OAC) through December 31, 2026, arranged via DealerPlan, with contract terms up to 60 months. The Mercury Summer Savings rebate and its 2.99% short-term financing ended August 31, 2026 and are no longer available. Financing minimum $5,000 before tax. The lender confirms approval, eligibility, and final terms in writing. Current offers always at [the promotions page](https://www.mercuryrepower.ca/promotions).
+As of October 5, 2026, **Chase the Savings** runs **September 14–October 30, 2026** for eligible Canadian purchases. Mercury advertises TD financing as low as **2.99% for 24 months [5.49% APR]**, on approved credit, for an eligible repower of at least $5,000. The advertised rate and APR are different disclosures; ask HBW for the written lender terms before comparing payments. See [current promotions](/promotions) for eligibility and exclusions. Do not assume financing and cash rebates can be combined.
+
+**TD "Always On" is a separate program:** {{LIVE_RATE}} (OAC) through December 31, 2026, arranged via DealerPlan, with contract terms up to 60 months and amortization up to 240 months. The lender confirms final terms in writing. **Historical offer:** Mercury Summer Savings and its short-term financing ended August 31, 2026; that expiry does not describe the later Chase the Savings offer.
 
 We don't lend the money ourselves, and we're not a bank. HBW arranges eligible applications through DealerPlan and participating Canadian lenders. The current headline program is through TD Auto Finance; the signed lender disclosure identifies the actual lender and controls the approval and terms.
 
@@ -13890,20 +13895,20 @@ You apply once, the broker does the shopping, and you get an answer. That's the 
 
 This is where most financing articles get vague, so let's be specific.
 
-The current headline financing rate is {{LIVE_RATE}} on approved credit through December 31, 2026. It is not an approval promise. Eligibility, lender, contract term, amortization, amount financed, and any balance due at maturity are confirmed in the written disclosure. Check the [promotions page](/promotions) for the current program dates before applying.
+The TD "Always On" financing rate is {{LIVE_RATE}} on approved credit through December 31, 2026. It is not an approval promise. Eligibility, lender, contract term, amortization, amount financed, and any balance due at maturity are confirmed in the written disclosure. Check the [promotions page](/promotions) for the current program dates before applying.
 
 Now, the word "promo rate" gets thrown around a lot, so here's the honest distinction:
 
-- The current headline rate ({{LIVE_RATE}}) is the active HBW program shown on the promotions page, subject to approval and program terms.
+- The TD "Always On" rate ({{LIVE_RATE}}) is one HBW program shown on the promotions page, subject to approval and program terms.
 - A separate seasonal offer may apply only to eligible models, purchase dates, contract lengths, or applicants. Use the dated offer and signed lender disclosure rather than an example rate from an old article.
 
-The practical takeaway: the rate you see in our quote builder and on our promotions page is the live one. We don't bury an old number in a blog post and let it rot. Which brings us to the question everyone actually has.
+The practical takeaway: the quote builder estimates payments using the standing program. Compare the separate dated seasonal offer on our promotions page with your written lender quote. Which brings us to the question everyone actually has.
 
 ## "How do I know the rate I'm reading is still real?"
 
 Fair, because half the financing pages on the internet are quoting rates from two years ago. Here's how we keep it honest:
 
-- The rate shown above ({{LIVE_RATE}}) is pulled live from the same source that drives the monthly-payment math in our quote builder. When the rate changes, that number changes everywhere automatically. It is not typed into this article by hand.
+- The TD "Always On" rate shown above ({{LIVE_RATE}}) is pulled live from the same source that drives the monthly-payment math in our quote builder. When the rate changes, that number changes everywhere automatically. It is not typed into this article by hand.
 - Active seasonal promotions live on one page: [mercuryrepower.ca/promotions](https://mercuryrepower.ca/promotions). If Mercury Canada has something running that beats the standing rate, that's where it shows up, current and dated.
 - A site quote shows the current estimate for the selected amount and amortization. The approved lender offer and signed disclosure control the actual rate, payment, contract term, and maturity balance.
 
@@ -13979,7 +13984,7 @@ The fastest way to estimate a payment is to build a quote using the current rate
 `,
     faqs: [
       { question: 'Can I finance a Mercury outboard in Ontario?', answer: 'Yes. HBW arranges eligible applications through DealerPlan and participating Canadian lenders. Under the current TD program, the contract term is up to 60 months and payment estimates may use amortization up to 240 months, which can leave a balance due at maturity. Qualified buyers may be eligible for $0 down; approval and final terms come from the lender.' },
-      { question: "What's the current financing rate?", answer: getFinancingHeadlineFaqAnswer() },
+      { question: "What's the current financing rate?", answer: `TD "Always On": ${getFinancingHeadlineFaqAnswer()} As of October 5, 2026, Chase the Savings runs September 14–October 30, 2026 and advertises TD financing as low as 2.99% for 24 months [5.49% APR], OAC, for an eligible Canadian repower of at least $5,000. The signed lender disclosure controls the actual terms. Check mercuryrepower.ca/promotions for eligibility and exclusions; do not assume offers combine.` },
       { question: 'What\'s the difference between the standing rate and a "promo rate"?', answer: 'A promotion is a dated, time-limited program with its own model, purchase-date, credit, contract, and amortization rules. Check the current promotions page and use the signed lender disclosure rather than an example rate from an older article.' },
       { question: 'Is there a down payment?', answer: 'Down payment requirements vary by lender and approval. Qualified buyers may be eligible for $0 down. The minimum eligible purchase is $5,000 before the DealerPlan fee; the lender confirms the amount financed.' },
       { question: 'Are there any fees?', answer: "The current HBW financed quote includes a $349 DealerPlan fee after HST. The written quote and lender disclosure show the fee and any contract-specific charges or prepayment terms." },
@@ -14888,7 +14893,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-cheapest-mercury-canada-lineup.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-23',
-    dateModified: '2026-09-11',
+    dateModified: '2026-10-05',
     publishDate: '2026-04-23',
     category: 'Buying Guide',
     readTime: '12 min read',
@@ -14958,6 +14963,10 @@ Six things determine where your real floor is:
 
 **Skipping rigging on a remote-control install.** Saving $2,000 by reusing 22-year-old controls isn't savings if the throttle sticks at full speed on Rice Lake. Mercury-to-Mercury repowers can often keep existing controls in good condition, that's part of what makes Mercury-to-Mercury the cheapest repower path.
 
+### Chase the Savings portable rebates
+
+As of October 5, 2026, **Chase the Savings** runs **September 14–October 30, 2026** and offers eligible Canadian portable buyers these CAD rebates: **2.5–3.5 HP: $250; 4–9.9 HP: $300; 15–20 HP: $350; 25–30 HP: $400**. Available eligible new dealer stock must be sold and delivered during the window. Portable rebates are unavailable in Newfoundland and Labrador. Model, use, registration and other exclusions apply; confirm [current promotions](/promotions) on the written quote. Do not assume a rebate can be combined with promotional financing.
+
 ### Cheap That Is Actually Cheap
 
 **Buy in winter.** The shop closes December 1 through April 1, but we quote and take orders all winter. Ask about exact-model availability and the installation schedule before planning a spring launch. Mercury sometimes runs promotional financing rates below the standard rate, check the promotions page on [mercuryrepower.ca](https://www.mercuryrepower.ca) for current terms.
@@ -15006,7 +15015,7 @@ Mercury offers electric start on motors as small as the 9.9 EH. For specific pri
 Only if it actually fits your boat and use. Buying too small is the most common expensive mistake we see. The cheapest motor that genuinely fits your hull and use is what you want.
 
 **Can I finance a small Mercury outboard?** 
-Yes. Mercury financing covers motors of any size. For current terms, see the financing page on [mercuryrepower.ca](https://www.mercuryrepower.ca).
+Eligible Canadian financing requires at least $5,000 financed and lender approval; a small motor alone may be below that minimum. See the [financing guide](/blog/mercury-outboard-financing-ontario-2026) and [current promotions](/promotions) for the separate TD "Always On" and dated Chase the Savings programs.
 
 **Are small Mercury portable motors reliable?** 
 Yes. Mercury has dominated the small-portable category in Canada for decades. Parts availability is strong. We have customers running 9.9s that are 20+ years old and still going.
@@ -19819,7 +19828,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     image: '/lovable-uploads/hero-mercury-warranty-canada.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-23',
-    dateModified: '2026-09-07',
+    dateModified: '2026-10-05',
     publishDate: '2026-05-23',
     category: 'Buying Guide',
     readTime: '10 min read',
@@ -19827,7 +19836,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     content: `
 # Mercury Outboard Warranty in Canada (2026): What's Covered, What's Not, and What's Worth Buying
 
-*Last reviewed: 2026-07-23*
+*Last reviewed: 2026-10-05*
 
 > **Quick answer:** Eligible new Mercury FourStroke outboards for pleasure use in Canada include a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; see [current promotions](https://www.mercuryrepower.ca/promotions). Coverage requires eligible purchase, proper registration, maintenance according to the applicable manual, and service records.
 
@@ -19839,6 +19848,10 @@ We're a Mercury dealer in Ontario since 1965. We do warranty work in our shop ev
 
 ![Warranty checklist: confirm eligibility, check coverage and dates, and keep service records.](/lovable-uploads/blog-visuals-2026-09/warranty-checklist.svg)
 
+## Chase the Savings: dated included MPP Gold coverage
+
+As of October 5, 2026, **Chase the Savings** runs **September 14–October 30, 2026**. Eligible new dealer-stock 2.5–425 HP FourStroke engines manufactured in 2022–2026 can receive **3 years limited factory warranty + 2 years Mercury Product Protection Gold = 5 years total coverage**. The engine must be sold and delivered within the promotion window and warranty-registered by **November 15, 2026**. Recreational-use eligibility and product exclusions apply; see [current promotions](/promotions) before relying on coverage. This included MPP Gold benefit is separate from optional paid MPP Platinum.
+
 ## The Two Standard Warranties (Eligible Pleasure-Use Models)
 
 Eligible new pleasure-use Mercury outboards in Canada include:
@@ -19847,7 +19860,7 @@ Eligible new pleasure-use Mercury outboards in Canada include:
 
 **2. Mercury 3-Year Corrosion Warranty.** Mercury's written condition is the product being rendered inoperative directly by corrosion. It is not a cosmetic-finish or "hull-side surfaces" list. Named exclusions include, among other things, cosmetic corrosion, electrical-system corrosion, and corrosion of accessories, instruments, or steering. Required corrosion prevention and maintenance still apply. **This runs concurrently with the limited warranty**, not after it. Both clocks start at first retail sale or first service, whichever is earlier. Both stop on the same day three years later for eligible pleasure-use models. Commercial coverage is different.
 
-This is the single most-misunderstood part of Mercury's warranty. Some sales pitches frame it as "3+3 = six years of coverage." It isn't. **You get three years total**, with two different things being covered during those three years.
+This is the single most-misunderstood part of Mercury's warranty. Some sales pitches frame it as "3+3 = six years of coverage." It isn't. **The standard warranties give you three years total**, with two different things covered during that period. Separate promotional MPP coverage, when eligible, can extend protection after the limited warranty.
 
 That said, three years of Mercury limited-warranty coverage is genuinely strong for the marine industry. Additional promotional coverage may be offered for eligible purchases, but only when the written terms explicitly include it. See [current promotions](https://www.mercuryrepower.ca/promotions) and our Mercury outboard warranty guide for the current position.
 
@@ -20013,7 +20026,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     faqs: [
       {
         question: "Is the Mercury warranty really 3 years or 6 years?",
-        answer: "For eligible pleasure-use models, 3 years total. The limited warranty (defects) and the corrosion warranty (inoperative-product corrosion, with named exclusions) run concurrently from first retail sale or first service, whichever is earlier. They cover different things during the same 3-year window; they don't stack to six years. Commercial and other categories differ. A later used or demo purchase does not restart either clock."
+        answer: "The standard warranties for eligible pleasure-use models give 3 years total. The limited warranty (defects) and the corrosion warranty (inoperative-product corrosion, with named exclusions) run concurrently from first retail sale or first service, whichever is earlier. They cover different things during the same 3-year window; they don't stack to six years. Commercial and other categories differ. A later used or demo purchase does not restart either clock. Separately, Chase the Savings runs September 14–October 30, 2026 and can add 2 years MPP Gold for 5 years total coverage on eligible new dealer-stock 2.5–425 HP FourStroke engines manufactured in 2022–2026, sold and delivered within that window and warranty-registered by November 15, 2026. See mercuryrepower.ca/promotions for eligibility and exclusions."
       },
       {
         question: "When can I buy MPP, is there still a 1-year purchase deadline?",
@@ -23890,7 +23903,9 @@ Harris Boat Works has been a Mercury dealer since 1965. We've been Premier for o
 
 [Mercury Canada runs promotions through the season](/blog/mercury-pricing-promotions-2026): spring repower season (March-May), summer in-stock pushes (July-August), and fall "buy now for spring" windows (September-November).
 
-Mercury promotions can include cash rebates, financing incentives, or additional coverage when the written offer explicitly says so. The current financing path is **TD "Always On" at {{LIVE_RATE}} through December 31, 2026**, see [the financing guide](/blog/mercury-outboard-financing-ontario-2026) for terms. Check [current promotions](/promotions) before comparing any offer.
+Mercury promotions can include cash rebates, financing incentives, or additional coverage when the written offer explicitly says so. One financing path is **TD "Always On" at {{LIVE_RATE}} through December 31, 2026**, see [the financing guide](/blog/mercury-outboard-financing-ontario-2026) for terms. Check [current promotions](/promotions) before comparing any offer.
+
+As of October 5, 2026, **Chase the Savings** runs **September 14–October 30, 2026** for eligible Canadian purchases. Mercury advertises TD financing as low as **2.99% for 24 months [5.49% APR]**, on approved credit, for an eligible repower of at least $5,000. The advertised rate and APR are different disclosures; ask HBW for the written lender terms before comparing payments. See [current promotions](/promotions) for eligibility and exclusions. Do not assume financing and cash rebates can be combined.
 
 Eligible new Mercury outboards for pleasure use in Canada include a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it. Check the [promotions page](https://www.mercuryrepower.ca/promotions) for current terms.
 
@@ -23915,7 +23930,7 @@ We're at 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. Pickup only, we d
     imageAlt: 'Technician servicing a Mercury outboard in an Ontario workshop to illustrate the professional installation behind pricing.',
     author: 'Jay Harris',
     datePublished: '2026-05-08',
-    dateModified: '2026-10-02',
+    dateModified: '2026-10-05',
     publishDate: '2026-05-08',
     category: 'Mercury Outboards',
     readTime: '~14 min read',
@@ -32927,15 +32942,15 @@ Family-owned since 1947, Mercury dealer since 1965, Mercury Premier Dealer.
     image: '/lovable-uploads/hero-mercury-monthly-payment.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-28',
-    dateModified: '2026-09-06',
+    dateModified: '2026-10-05',
     category: 'Repower Cost & Pricing',
     readTime: '10 min read',
     keywords: ['mercury', 'repower', 'financing', 'ontario', 'monthly payment', 'Mercury outboard monthly payment', 'TD Auto Finance', 'Dealerplan Peterborough'],
     content: `## Quick answer
 
-A Mercury outboard purchase at HBW may qualify for {{LIVE_RATE}} promotional financing through DealerPlan, primarily with TD Auto Finance, through Dec 31, 2026 (OAC). Using the current bare-motor prices and including the mandatory $349 DealerPlan documentation fee, but paying HST separately, payment examples for a Mercury 115 Pro XS and a 150 Pro XS are shown in the configurator at mercuryrepower.ca, based on current live pricing and a 240-month amortization basis. The contract is up to 60 months, so a balance may remain due at maturity when the amortization is longer. Controls, propeller, rigging, installation, HST, down payment, and trade value change the financed total. Confirm the complete lender disclosure in the written quote.
+A Mercury outboard purchase at HBW may qualify for TD "Always On" financing at {{LIVE_RATE}} through DealerPlan, primarily with TD Auto Finance, through Dec 31, 2026 (OAC). Using the current bare-motor prices and including the mandatory $349 DealerPlan documentation fee, but paying HST separately, payment examples for a Mercury 115 Pro XS and a 150 Pro XS are shown in the configurator at mercuryrepower.ca, based on current live pricing and a 240-month amortization basis. The contract is up to 60 months, so a balance may remain due at maturity when the amortization is longer. Controls, propeller, rigging, installation, HST, down payment, and trade value change the financed total. Confirm the complete lender disclosure in the written quote.
 
-*Last reviewed: 2026-08-08*
+*Last reviewed: 2026-10-05*
 
 Every repower customer asks the same question before they ask for a quote: what would this actually cost per month?
 
@@ -32944,6 +32959,8 @@ This page shows the current bare-motor examples, Ontario tax treatment, the mand
 ## How HBW finances Mercury repowers
 
 ${canonicalBlogFinancingCopy}
+
+As of October 5, 2026, **Chase the Savings** runs **September 14–October 30, 2026** for eligible Canadian purchases. Mercury advertises TD financing as low as **2.99% for 24 months [5.49% APR]**, on approved credit, for an eligible repower of at least $5,000. The advertised rate and APR are different disclosures; ask HBW for the written lender terms before comparing payments. See [current promotions](/promotions) for eligibility and exclusions. Do not assume financing and cash rebates can be combined.
 
 HBW arranges the application; Mercury Marine does not issue the loan. The written lender disclosure confirms the lender, approval, down payment, fee, balance at maturity, and final terms. U.S. lender pages do not apply to an HBW Canadian purchase.
 
@@ -32968,9 +32985,9 @@ _Prices here are planning figures as of {{PRICING_ASOF}}. For live Mercury motor
 
 The first payment table below assumes HST is paid separately but includes the mandatory $349 DealerPlan fee. The worked examples later show both fee-only and HST-included totals.
 
-## Amortization scenarios at the current promotional rate
+## Amortization scenarios for TD "Always On"
 
-The table uses the active {{LIVE_RATE}} promotional rate on a 240-month amortization basis and a contract of up to 60 months. The financed principal is the current bare-motor price plus the $349 DealerPlan fee; HST is paid separately in this example. A remaining balance is due at maturity unless it is paid, refinanced, or otherwise handled under the signed agreement.
+The table uses the TD "Always On" rate of {{LIVE_RATE}} on a 240-month amortization basis and a contract of up to 60 months. The financed principal is the current bare-motor price plus the $349 DealerPlan fee; HST is paid separately in this example. A remaining balance is due at maturity unless it is paid, refinanced, or otherwise handled under the signed agreement.
 
 Python-verified math using M = P x [r(1+r)^n] / [(1+r)^n - 1].
 
@@ -32979,7 +32996,7 @@ Python-verified math using M = P x [r(1+r)^n] / [(1+r)^n - 1].
 | Mercury 115 Pro XS | $17,490 | $17,839 | **about $123/mo** |
 | Mercury 150 Pro XS | $24,349 | $24,698 | **about $170/mo** |
 
-*All amounts in CAD and rounded. HST is not included in this principal. Rate: {{LIVE_RATE}} through Dec 31, 2026 (OAC), 240-month amortization basis, contract up to 60 months. The signed lender disclosure controls.*
+*All amounts in CAD and rounded. HST is not included in this principal. TD "Always On" rate: {{LIVE_RATE}} through Dec 31, 2026 (OAC), 240-month amortization basis, contract up to 60 months. The signed lender disclosure controls.*
 
 ## The HBW on-water repower test
 
@@ -32990,11 +33007,11 @@ Repowers combine a new motor with an existing hull and rigging. HBW's standard h
 - **Using a U.S. financing page for a Canadian purchase.** HBW arranges eligible Canadian applications through DealerPlan and participating Canadian lenders. The U.S.-only lender path does not apply.
 - **Comparing the headline payment without the fee or HST choice.** The $349 DealerPlan fee is mandatory on financed purchases. HST may be paid at closing or included in the financed amount, which changes both the monthly payment and balance at maturity.
 - **Treating 240 months as the contract term.** It is the amortization basis in these examples. The active contract is up to 60 months, so a remaining balance may be due at maturity.
-- **Assuming an advertised rate is an approval.** {{LIVE_RATE}} is the current headline rate through Dec 31, 2026 on eligible purchases, OAC. The written lender disclosure is the final answer.
+- **Assuming an advertised rate is an approval.** TD "Always On" at {{LIVE_RATE}} is one financing offer through Dec 31, 2026 on eligible purchases, OAC. The written lender disclosure is the final answer.
 
-## The current HBW-arranged promotional rate
+## TD "Always On": the program used for these examples
 
-Through December 31, 2026, the current headline rate on eligible purchases is:
+Through December 31, 2026, TD "Always On" on eligible purchases offers:
 
 - **{{LIVE_RATE}} (OAC)**
 - **Contract up to 60 months**
@@ -33008,7 +33025,7 @@ HBW routes eligible applications through DealerPlan and participating Canadian l
 
 The amortization is the basis used to CALCULATE your monthly payment. It is NOT how long you will be paying. Your contract term is up to 60 months. At maturity, the remaining principal is due as a balloon payment.
 
-### Worked examples at HBW pricing (current promotional program)
+### Worked examples at HBW pricing (TD "Always On")
 
 | Motor | Financing Basis | Amount Financed | Monthly | Principal at Month 60 |
 |---|---|---|---|---|
@@ -33044,7 +33061,7 @@ Family-owned since 1947.
 
 `,
     faqs: [
-      { question: "What is the current promotional APR through HBW?", answer: getFinancingHeadlineFaqAnswer() },
+      { question: "What is the current promotional APR through HBW?", answer: `TD "Always On": ${getFinancingHeadlineFaqAnswer()} As of October 5, 2026, Chase the Savings runs September 14–October 30, 2026 and advertises TD financing as low as 2.99% for 24 months [5.49% APR], OAC, for an eligible Canadian repower of at least $5,000. The signed lender disclosure controls the actual terms. Check mercuryrepower.ca/promotions for eligibility and exclusions; do not assume offers combine.` },
       { question: "Does HBW require a down payment to finance a Mercury repower?", answer: "Qualified buyers may be eligible for $0 down. Approval, down payment, and all terms are confirmed by the lender." },
       { question: "Can I pay off the loan early without a penalty?", answer: "Prepayment terms are confirmed in the signed lender disclosure. Do not rely on a website example for contract-specific terms." },
       { question: "How long does the approval take?", answer: "Approval timing depends on the application and lender. HBW will confirm status after the completed application is submitted." },
@@ -33052,7 +33069,7 @@ Family-owned since 1947.
       { question: "Is there a minimum loan amount?", answer: "Yes. The minimum loan through HBW is $5,000." },
       { question: "Is HST financed or paid separately?", answer: "Both options are available. Most customers roll the 13% HST into the financed amount. You can also pay the HST at closing and finance only the engine, which lowers your monthly payment." },
       { question: "What fee is added to a financed purchase?", answer: "A mandatory DealerPlan documentation fee is added after HST to every financed purchase; the current amount appears on your mercuryrepower.ca quote. The payment example must include it." },
-      { question: "Where do I find the current promotional financing rate?", answer: `${getFinancingHeadlineFaqAnswer()} The contract is up to 60 months with amortization up to 240 months, so a balance may remain due at maturity. Check mercuryrepower.ca/promotions for current program terms.` }
+      { question: "Where do I find the current promotional financing rate?", answer: `TD "Always On": ${getFinancingHeadlineFaqAnswer()} The contract is up to 60 months with amortization up to 240 months, so a balance may remain due at maturity. Check mercuryrepower.ca/promotions for current program terms.` }
     ]
   },
   {
