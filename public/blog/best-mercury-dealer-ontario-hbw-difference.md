@@ -79,9 +79,9 @@ For an Ontario-wide comparison, separate reputation from distance. HBW's shop is
 
 Selected public Google reviews, checked October 5, 2026, describe work beyond a marina visit:
 
-- **Toni B. — motor replacement:** described the team as “Very responsive, reasonable, timely, professional, honest, transparent” and said the experience made travelling farther worthwhile.
-- **Gisele T. — repair advice and parts:** described a mechanic asking about the problem, explaining that a different part was needed, and explaining the repair process. Her account says: “He provided the part we needed.”
-- **Mark R. — repairs to a used boat:** described the team taking time to explain the work and praised the people handling it.
+- **Toni B.: motor replacement:** described the team as “Very responsive, reasonable, timely, professional, honest, transparent” and said the experience made travelling farther worthwhile.
+- **Gisele T.: repair advice and parts:** described a mechanic asking about the problem, explaining that a different part was needed, and explaining the repair process. Her account says: “He provided the part we needed.”
+- **Mark R.: repairs to a used boat:** described the team taking time to explain the work and praised the people handling it.
 
 [Read the original customer reviews on Google](https://www.google.com/maps/place/Harris+Boat+Works/@44.1217924,-78.2436722,17z/data=!4m8!3m7!1s0x89d5ea50a9347369:0x4af31bbc949182!8m2!3d44.1217924!4d-78.2410973!9m1!1b1!16s%2Fg%2F1vfwdvm0?entry=ttu), including critical reviews and the full context. These individual accounts describe motor replacement, repair help and communication; they do not identify the engine models or establish a province-wide ranking. For your Mercury job, compare the written scope, testing plan and path for future service with the experience you want.
 
