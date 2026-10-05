@@ -13,10 +13,8 @@ const LEGACY_PAKO_1_0_11_DEFLATE = Uint8Array.from([
   205, 73, 77, 79, 76, 174, 212, 45, 51, 4, 0, 120, 100, 9, 42,
 ]);
 
-function compress(windowBits: number, payload: string, dictionary?: Uint8Array) {
-  const input = textEncoder.encode(payload);
+function initDeflate(windowBits: number) {
   const stream = new ZStream();
-  const output = new Uint8Array(input.length + 256);
   expect(deflate.deflateInit2(
     stream,
     6,
@@ -25,9 +23,15 @@ function compress(windowBits: number, payload: string, dictionary?: Uint8Array) 
     8,
     constants.Z_DEFAULT_STRATEGY,
   )).toBe(constants.Z_OK);
+  return stream;
+}
+
+function deflatePayload(stream: ZStream, payload: string, dictionary?: Uint8Array) {
   if (dictionary) {
     expect(deflate.deflateSetDictionary(stream, dictionary)).toBe(constants.Z_OK);
   }
+  const input = textEncoder.encode(payload);
+  const output = new Uint8Array(input.length + 256);
   stream.input = input;
   stream.next_in = 0;
   stream.avail_in = input.length;
@@ -35,16 +39,17 @@ function compress(windowBits: number, payload: string, dictionary?: Uint8Array) 
   stream.next_out = 0;
   stream.avail_out = output.length;
   expect(deflate.deflate(stream, constants.Z_FINISH)).toBe(constants.Z_STREAM_END);
-  const compressed = output.slice(0, stream.next_out);
-  expect(deflate.deflateReset(stream)).toBe(constants.Z_OK);
-  deflate.deflateEnd(stream);
-  return compressed;
+  return output.slice(0, stream.next_out);
 }
 
-function decompress(windowBits: number, compressed: Uint8Array, dictionary?: Uint8Array) {
+function initInflate(windowBits: number) {
   const stream = new ZStream();
-  const output = new Uint8Array(compressed.length * 8 + 64);
   expect(inflate.inflateInit2(stream, windowBits)).toBe(constants.Z_OK);
+  return stream;
+}
+
+function inflatePayload(stream: ZStream, compressed: Uint8Array, dictionary?: Uint8Array) {
+  const output = new Uint8Array(compressed.length * 8 + 64);
   stream.input = compressed;
   stream.next_in = 0;
   stream.avail_in = compressed.length;
@@ -58,8 +63,19 @@ function decompress(windowBits: number, compressed: Uint8Array, dictionary?: Uin
     status = inflate.inflate(stream, constants.Z_FINISH);
   }
   expect(status).toBe(constants.Z_STREAM_END);
-  const text = textDecoder.decode(output.slice(0, stream.next_out));
-  expect(inflate.inflateReset(stream)).toBe(constants.Z_OK);
+  return textDecoder.decode(output.slice(0, stream.next_out));
+}
+
+function compress(windowBits: number, payload: string) {
+  const stream = initDeflate(windowBits);
+  const compressed = deflatePayload(stream, payload);
+  deflate.deflateEnd(stream);
+  return compressed;
+}
+
+function decompress(windowBits: number, compressed: Uint8Array) {
+  const stream = initInflate(windowBits);
+  const text = inflatePayload(stream, compressed);
   expect(inflate.inflateEnd(stream)).toBe(constants.Z_OK);
   return text;
 }
@@ -85,9 +101,21 @@ describe('pako 3 zlib shims', () => {
     expect(decompress(15, LEGACY_PAKO_1_0_11_DEFLATE)).toBe('synthetic-pako-legacy-v1');
   });
 
-  it('resets a zlib stream and restores a preset dictionary', () => {
+  it('reuses one deflate stream and one inflate stream after reset', () => {
     const dictionary = textEncoder.encode('synthetic-dictionary');
-    const compressed = compress(15, 'synthetic dictionary payload', dictionary);
-    expect(decompress(15, compressed, dictionary)).toBe('synthetic dictionary payload');
+    const firstPayload = 'synthetic dictionary payload';
+    const secondPayload = 'second dictionary payload';
+    const deflateStream = initDeflate(15);
+    const first = deflatePayload(deflateStream, firstPayload, dictionary);
+    expect(deflate.deflateReset(deflateStream)).toBe(constants.Z_OK);
+    const second = deflatePayload(deflateStream, secondPayload, dictionary);
+    expect(Array.from(first)).not.toEqual(Array.from(second));
+    expect(deflate.deflateEnd(deflateStream)).toBe(constants.Z_OK);
+
+    const inflateStream = initInflate(15);
+    expect(inflatePayload(inflateStream, first, dictionary)).toBe(firstPayload);
+    expect(inflate.inflateReset(inflateStream)).toBe(constants.Z_OK);
+    expect(inflatePayload(inflateStream, second, dictionary)).toBe(secondPayload);
+    expect(inflate.inflateEnd(inflateStream)).toBe(constants.Z_OK);
   });
 });
