@@ -31,3 +31,6 @@ reports/*.json
 
 # Build-generated 1200x630 social cards
 public/generated-og/
+
+# Local synthetic PDF written by harness/pako-pdf
+harness/pako-pdf/out/
