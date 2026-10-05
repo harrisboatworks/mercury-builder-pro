@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/ontario-mercury-outboard-price-guide.md
-last_updated: 2026-10-02
+last_updated: 2026-10-05
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Outboard Prices Ontario (2026): CAD Guide"
 description: "Real Mercury outboard prices in Ontario for 2026: CAD pricing by HP tier, model code decoder, what's included vs not. Ontario Premier dealer's price guide."
 category: "Mercury Outboards"
 date_published: 2026-05-08
-date_modified: 2026-10-02
+date_modified: 2026-10-05
 keywords: ["mercury outboard prices","ontario","cad pricing","repower","buying guide"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Mercury Outboards  
 **Published:** 2026-05-08  
-**Last reviewed:** 2026-10-02  
+**Last reviewed:** 2026-10-05  
 **Read time:** ~14 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ontario-mercury-outboard-price-guide
 
@@ -139,7 +139,9 @@ Harris Boat Works has been a Mercury dealer since 1965. We've been Premier for o
 
 [Mercury Canada runs promotions through the season](/blog/mercury-pricing-promotions-2026): spring repower season (March-May), summer in-stock pushes (July-August), and fall "buy now for spring" windows (September-November).
 
-Mercury promotions can include cash rebates, financing incentives, or additional coverage when the written offer explicitly says so. The current financing path is **TD "Always On" at 5.48% APR through December 31, 2026**, see [the financing guide](/blog/mercury-outboard-financing-ontario-2026) for terms. Check [current promotions](/promotions) before comparing any offer.
+Mercury promotions can include cash rebates, financing incentives, or additional coverage when the written offer explicitly says so. One financing path is **TD "Always On" at 5.48% APR through December 31, 2026**, see [the financing guide](/blog/mercury-outboard-financing-ontario-2026) for terms. Check [current promotions](/promotions) before comparing any offer.
+
+As of October 5, 2026, **Chase the Savings** runs **September 14–October 30, 2026** for eligible Canadian purchases. Mercury advertises TD financing as low as **2.99% for 24 months [5.49% APR]**, on approved credit, for an eligible repower of at least $5,000. The advertised rate and APR are different disclosures; ask HBW for the written lender terms before comparing payments. See [current promotions](/promotions) for eligibility and exclusions. Do not assume financing and cash rebates can be combined.
 
 Eligible new Mercury outboards for pleasure use in Canada include a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it. Check the [promotions page](https://www.mercuryrepower.ca/promotions) for current terms.
 

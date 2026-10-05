@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-monthly-payment-ontario-2026.md
-last_updated: 2026-09-06
+last_updated: 2026-10-05
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Outboard Monthly Payment Math (Ontario, 2026)"
 description: "What a Mercury outboard costs per month in Ontario: 2026 financing math by HP tier, current promo rate, terms, monthly payment, and remaining-balance guidance."
 category: "Repower Cost & Pricing"
 date_published: 2026-05-28
-date_modified: 2026-09-06
+date_modified: 2026-10-05
 keywords: ["mercury","repower","financing","ontario","monthly payment","Mercury outboard monthly payment","TD Auto Finance","Dealerplan Peterborough"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,13 +25,13 @@ revenue_driver: repower
 
 **Category:** Repower Cost & Pricing  
 **Published:** 2026-05-28  
-**Last reviewed:** 2026-09-06  
+**Last reviewed:** 2026-10-05  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-monthly-payment-ontario-2026
 
 ## Quick answer
 
-A Mercury outboard purchase at HBW may qualify for 5.48% APR promotional financing through DealerPlan, primarily with TD Auto Finance, through Dec 31, 2026 (OAC). Using the current bare-motor prices and including the mandatory $349 DealerPlan documentation fee, but paying HST separately, payment examples for a Mercury 115 Pro XS and a 150 Pro XS are shown in the configurator at mercuryrepower.ca, based on current live pricing and a 240-month amortization basis. The contract is up to 60 months, so a balance may remain due at maturity when the amortization is longer. Controls, propeller, rigging, installation, HST, down payment, and trade value change the financed total. Confirm the complete lender disclosure in the written quote.
+A Mercury outboard purchase at HBW may qualify for TD "Always On" financing at 5.48% APR through DealerPlan, primarily with TD Auto Finance, through Dec 31, 2026 (OAC). Using the current bare-motor prices and including the mandatory $349 DealerPlan documentation fee, but paying HST separately, payment examples for a Mercury 115 Pro XS and a 150 Pro XS are shown in the configurator at mercuryrepower.ca, based on current live pricing and a 240-month amortization basis. The contract is up to 60 months, so a balance may remain due at maturity when the amortization is longer. Controls, propeller, rigging, installation, HST, down payment, and trade value change the financed total. Confirm the complete lender disclosure in the written quote.
 
 Every repower customer asks the same question before they ask for a quote: what would this actually cost per month?
 
@@ -40,6 +40,8 @@ This page shows the current bare-motor examples, Ontario tax treatment, the mand
 ## How HBW finances Mercury repowers
 
 HBW arranges Canadian financing through DealerPlan, primarily with TD Auto Finance. As of August 8, 2026, the TD "Always On" offer is 5.48% APR on approved credit through December 31, 2026. The contract term is up to 60 months, with amortization up to 240 months; a balance may remain due at contract maturity when the amortization is longer. The minimum financed amount is $5,000 CAD, and a $349 DealerPlan fee applies after HST. Check [current financing terms](/promotions) before relying on any rate or payment estimate.
+
+As of October 5, 2026, **Chase the Savings** runs **September 14–October 30, 2026** for eligible Canadian purchases. Mercury advertises TD financing as low as **2.99% for 24 months [5.49% APR]**, on approved credit, for an eligible repower of at least $5,000. The advertised rate and APR are different disclosures; ask HBW for the written lender terms before comparing payments. See [current promotions](/promotions) for eligibility and exclusions. Do not assume financing and cash rebates can be combined.
 
 HBW arranges the application; Mercury Marine does not issue the loan. The written lender disclosure confirms the lender, approval, down payment, fee, balance at maturity, and final terms. U.S. lender pages do not apply to an HBW Canadian purchase.
 
@@ -60,13 +62,13 @@ In Ontario, [every new outboard purchase](/blog/mercury-repower-cost-ontario-202
 | Mercury 115 Pro XS | $17,490 | $2,274 | $349 | $20,113 |
 | Mercury 150 Pro XS | $24,349 | $3,165 | $349 | $27,863 |
 
-_Prices here are planning figures as of September 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are planning figures as of October 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 The first payment table below assumes HST is paid separately but includes the mandatory $349 DealerPlan fee. The worked examples later show both fee-only and HST-included totals.
 
-## Amortization scenarios at the current promotional rate
+## Amortization scenarios for TD "Always On"
 
-The table uses the active 5.48% APR promotional rate on a 240-month amortization basis and a contract of up to 60 months. The financed principal is the current bare-motor price plus the $349 DealerPlan fee; HST is paid separately in this example. A remaining balance is due at maturity unless it is paid, refinanced, or otherwise handled under the signed agreement.
+The table uses the TD "Always On" rate of 5.48% APR on a 240-month amortization basis and a contract of up to 60 months. The financed principal is the current bare-motor price plus the $349 DealerPlan fee; HST is paid separately in this example. A remaining balance is due at maturity unless it is paid, refinanced, or otherwise handled under the signed agreement.
 
 Python-verified math using M = P x [r(1+r)^n] / [(1+r)^n - 1].
 
@@ -75,7 +77,7 @@ Python-verified math using M = P x [r(1+r)^n] / [(1+r)^n - 1].
 | Mercury 115 Pro XS | $17,490 | $17,839 | **about $123/mo** |
 | Mercury 150 Pro XS | $24,349 | $24,698 | **about $170/mo** |
 
-*All amounts in CAD and rounded. HST is not included in this principal. Rate: 5.48% APR through Dec 31, 2026 (OAC), 240-month amortization basis, contract up to 60 months. The signed lender disclosure controls.*
+*All amounts in CAD and rounded. HST is not included in this principal. TD "Always On" rate: 5.48% APR through Dec 31, 2026 (OAC), 240-month amortization basis, contract up to 60 months. The signed lender disclosure controls.*
 
 ## The HBW on-water repower test
 
@@ -86,11 +88,11 @@ Repowers combine a new motor with an existing hull and rigging. HBW's standard h
 - **Using a U.S. financing page for a Canadian purchase.** HBW arranges eligible Canadian applications through DealerPlan and participating Canadian lenders. The U.S.-only lender path does not apply.
 - **Comparing the headline payment without the fee or HST choice.** The $349 DealerPlan fee is mandatory on financed purchases. HST may be paid at closing or included in the financed amount, which changes both the monthly payment and balance at maturity.
 - **Treating 240 months as the contract term.** It is the amortization basis in these examples. The active contract is up to 60 months, so a remaining balance may be due at maturity.
-- **Assuming an advertised rate is an approval.** 5.48% APR is the current headline rate through Dec 31, 2026 on eligible purchases, OAC. The written lender disclosure is the final answer.
+- **Assuming an advertised rate is an approval.** TD "Always On" at 5.48% APR is one financing offer through Dec 31, 2026 on eligible purchases, OAC. The written lender disclosure is the final answer.
 
-## The current HBW-arranged promotional rate
+## TD "Always On": the program used for these examples
 
-Through December 31, 2026, the current headline rate on eligible purchases is:
+Through December 31, 2026, TD "Always On" on eligible purchases offers:
 
 - **5.48% APR (OAC)**
 - **Contract up to 60 months**
@@ -104,7 +106,7 @@ HBW routes eligible applications through DealerPlan and participating Canadian l
 
 The amortization is the basis used to CALCULATE your monthly payment. It is NOT how long you will be paying. Your contract term is up to 60 months. At maturity, the remaining principal is due as a balloon payment.
 
-### Worked examples at HBW pricing (current promotional program)
+### Worked examples at HBW pricing (TD "Always On")
 
 | Motor | Financing Basis | Amount Financed | Monthly | Principal at Month 60 |
 |---|---|---|---|---|
@@ -142,7 +144,7 @@ Family-owned since 1947.
 
 ### What is the current promotional APR through HBW?
 
-The current headline rate is 5.48% APR through December 31, 2026 on eligible purchases (OAC). HBW arranges applications through DealerPlan, primarily with TD Auto Finance; the signed lender disclosure controls the actual approval and terms.
+TD "Always On": The current headline rate is 5.48% APR through December 31, 2026 on eligible purchases (OAC). HBW arranges applications through DealerPlan, primarily with TD Auto Finance; the signed lender disclosure controls the actual approval and terms. As of October 5, 2026, Chase the Savings runs September 14–October 30, 2026 and advertises TD financing as low as 2.99% for 24 months [5.49% APR], OAC, for an eligible Canadian repower of at least $5,000. The signed lender disclosure controls the actual terms. Check mercuryrepower.ca/promotions for eligibility and exclusions; do not assume offers combine.
 
 ### Does HBW require a down payment to finance a Mercury repower?
 
@@ -174,7 +176,7 @@ A mandatory DealerPlan documentation fee is added after HST to every financed pu
 
 ### Where do I find the current promotional financing rate?
 
-The current headline rate is 5.48% APR through December 31, 2026 on eligible purchases (OAC). HBW arranges applications through DealerPlan, primarily with TD Auto Finance; the signed lender disclosure controls the actual approval and terms. The contract is up to 60 months with amortization up to 240 months, so a balance may remain due at maturity. Check mercuryrepower.ca/promotions for current program terms.
+TD "Always On": The current headline rate is 5.48% APR through December 31, 2026 on eligible purchases (OAC). HBW arranges applications through DealerPlan, primarily with TD Auto Finance; the signed lender disclosure controls the actual approval and terms. The contract is up to 60 months with amortization up to 240 months, so a balance may remain due at maturity. Check mercuryrepower.ca/promotions for current program terms.
 
 ## Related guides
 
