@@ -5,7 +5,8 @@ import type { Connect } from 'vite';
 import react from '@vitejs/plugin-react-swc';
 import { defineConfig, type Plugin } from 'vite';
 
-const savedPdfPath = '/opt/cursor/artifacts/synthetic-pako-634.pdf';
+const harnessDir = path.dirname(fileURLToPath(import.meta.url));
+const savedPdfPath = path.resolve(harnessDir, 'out/synthetic-pako-634.pdf');
 
 function readBody(req: Connect.IncomingMessage) {
   return new Promise<Buffer>((resolve, reject) => {
@@ -44,7 +45,6 @@ function saveSyntheticPdfPlugin(): Plugin {
   };
 }
 
-const harnessDir = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(harnessDir, '../..');
 
 // Same four aliases as the app vite.config.ts. pdfkit's browser build
