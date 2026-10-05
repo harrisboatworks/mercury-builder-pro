@@ -20455,6 +20455,16 @@ Our Google profile covers the whole marina, including rentals and boating visits
 
 For an Ontario-wide comparison, separate reputation from distance. HBW's shop is in Gores Landing on Rice Lake. We aren't a Toronto or Peterborough storefront. A repower-focused quote and a practical plan for future service can make the trip worthwhile; a nearby capable dealer may suit other jobs better. Ask about boat pickup availability for your boat and location before making plans.
 
+## Customer Accounts of Motor Replacement and Repair Support
+
+Selected public Google reviews, checked October 5, 2026, describe work beyond a marina visit:
+
+- **Toni B. — motor replacement:** described the team as “Very responsive, reasonable, timely, professional, honest, transparent” and said the experience made travelling farther worthwhile.
+- **Gisele T. — repair advice and parts:** described a mechanic asking about the problem, explaining that a different part was needed, and explaining the repair process. Her account says: “He provided the part we needed.”
+- **Mark R. — repairs to a used boat:** described the team taking time to explain the work and praised the people handling it.
+
+[Read the original customer reviews on Google](${GOOGLE_REVIEWS_URL}), including critical reviews and the full context. These individual accounts describe motor replacement, repair help and communication; they do not identify the engine models or establish a province-wide ranking. For your Mercury job, compare the written scope, testing plan and path for future service with the experience you want.
+
 ## Consistency Matters, for Customers and Staff
 
 Marine work involves handoffs. The person who discusses the boat, the technician who rigs or diagnoses it, the parts team, and the person who explains the finished work all affect the outcome.
