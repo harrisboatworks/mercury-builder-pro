@@ -34,10 +34,10 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: '22.19.0'
+          node-version: '22.22.2'
           cache: 'npm'
       - name: Install growth-check dependencies
-        run: npm ci --ignore-scripts
+        run: npm ci --ignore-scripts --engine-strict
       - name: Run growth-agent live check
         run: node scripts/growth-agent-live-check.mjs
         env:

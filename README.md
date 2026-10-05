@@ -10,7 +10,7 @@ Mercury Repower is Harris Boat Works' public Mercury outboard catalogue and quot
 
 ## Local setup
 
-Use Node 22, as declared in `engines.node`.
+Use Node 22.22.2 or newer on the 22 line, as declared in `engines.node`.
 
 ```sh
 npm ci --ignore-scripts
