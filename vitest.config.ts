@@ -5,10 +5,8 @@ import path from "path";
 export default defineConfig({
   plugins: [react()],
   test: {
-    // NOTE: jsdom 29 needs undici ^7.25. The repo previously pinned
-    // overrides.undici to 6.28.0, so jsdom died at startup with
-    // "Cannot find module 'undici/lib/handler/wrap-handler.js'" and the entire
-    // suite silently ran zero tests. The override is now ^7.25.0.
+    // jsdom 30 resolves undici 8 through the jsdom-scoped override.
+    // The root override stays undici 7.29.0 for every other consumer.
     environment: "jsdom",
     globals: true,
     setupFiles: ["./src/test/setup.ts"],
