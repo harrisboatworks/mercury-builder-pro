@@ -31,5 +31,6 @@ export const GOOGLE_REVIEWS = [
 
 export type GoogleReviewEntry = (typeof GOOGLE_REVIEWS)[number];
 
+/** Google Maps profile and Reviews tab verified in the live UI on 2026-10-05. */
 export const GOOGLE_REVIEWS_URL =
-  'https://www.google.com/maps/place/Harris+Boat+Works/@44.1264476,-78.2111697,17z/data=!4m8!3m7!1s0x89d583f7a1111111:0x1234567890abcdef!8m2!3d44.1264476!4d-78.2111697!9m1!1b1!16s%2Fg%2F1tdqqt8h?entry=ttu';
+  'https://www.google.com/maps/place/Harris+Boat+Works/@44.1217924,-78.2436722,17z/data=!4m8!3m7!1s0x89d5ea50a9347369:0x4af31bbc949182!8m2!3d44.1217924!4d-78.2410973!9m1!1b1!16s%2Fg%2F1vfwdvm0?entry=ttu';

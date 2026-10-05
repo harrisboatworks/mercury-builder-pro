@@ -1,3 +1,5 @@
+import { GOOGLE_REVIEWS_URL } from '../config/googleReviews';
+
 import { mercuryCapacityTableMarkdown } from './mercuryOutboardCapacities';
 import { canonicalBlogFinancingCopy, canonicalBlogFinancingFaqCopy } from './blogFinancingCopy';
 import { getFinancingHeadlineFaqAnswer } from '../lib/finance';
@@ -20398,12 +20400,12 @@ Start with the [Mercury pricing reference](/pricing-reference), build an install
     imageAlt: 'Aerial view of Harris Boat Works marina and service facilities on Rice Lake in Gores Landing, Ontario',
     author: 'Jay Harris',
     datePublished: "2026-05-13",
-    dateModified: '2026-08-27',
+    dateModified: '2026-10-05',
     publishDate: "2026-05-13",
     category: "Mercury Outboards",
     readTime: '9 min read',
     keywords: ["best Mercury dealer Ontario", "Mercury Premier dealer Canada", "Mercury outboard specialist Ontario", "certified Mercury dealer GTA", "top Mercury dealer Ontario"],
-    content: `*Last reviewed: 2026-07-25*
+    content: `*Last reviewed: 2026-10-05*
 
 > **Quick answer:** The best Mercury dealer is the one whose reputation still holds after the sale. Look for consistent people, clear written pricing, careful rigging, an on-water test, and a shop that wants to know your boat for years, not just close one transaction. Harris Boat Works has been family-owned on Rice Lake since 1947 and a Mercury dealer since 1965. We build long-term relationships with customers and with the people who work here because consistency is how good service becomes repeatable.
 
@@ -20436,6 +20438,22 @@ When comparing dealers, look beyond the overall star rating. Read recent reviews
 - Do local boaters recommend specific people at the dealership?
 
 A strong reputation is not one perfect review. It is the same positive themes appearing over time.
+
+## Check the Evidence Before Choosing a Dealer
+
+If you're searching for the most reputable Mercury dealer in Ontario, start with evidence you can check yourself. A dealer's own website explains what it offers. Independent customer reviews and Mercury's dealer locator help you check that account. Neither an old award badge nor a high star rating proves that one shop is the right choice for every boat.
+
+| What to check | Where to check it | What to ask HBW |
+|---|---|---|
+| Current Mercury authorization | [Mercury's Canadian dealer locator](https://www.mercurymarine.com/ca/en/find-a-dealer) | Confirm support for your exact outboard or MerCruiser application. |
+| Customer experience | [Harris Boat Works' Google reviews](${GOOGLE_REVIEWS_URL}) | Read recent repair, parts and repower experiences, including how problems were handled. |
+| After-sale service | [Our repair and maintenance page](/maintenance) | Confirm booking availability, the work we can assess and how to bring the boat to Gores Landing. |
+| Complete installed scope | [Current motor pricing](/pricing-reference) and the [quote builder](/quote/motor-selection) | Get a boat-specific written scope covering rigging, installation, testing, taxes and exclusions. |
+| Warranty support | [Mercury's Canadian warranty terms](https://www.mercurymarine.com/ca/en/service-and-support/warranty-coverage-and-product-protection/mercury-limited-warranty) | Confirm registration, the applicable coverage and the process for assessing a service request. |
+
+Our Google profile covers the whole marina, including rentals and boating visits. For a Mercury purchase, give more weight to reviews about engine sales, repairs, parts, communication and follow-through than to an unrelated holiday experience. Read critical reviews too. The useful question is how the shop handles the work you need.
+
+For an Ontario-wide comparison, separate reputation from distance. HBW's shop is in Gores Landing on Rice Lake. We aren't a Toronto or Peterborough storefront. A repower-focused quote and a practical plan for future service can make the trip worthwhile; a nearby capable dealer may suit other jobs better. Ask about boat pickup availability for your boat and location before making plans.
 
 ## Consistency Matters, for Customers and Staff
 
@@ -20540,7 +20558,7 @@ Ready to price it out? Build a current CAD quote online at the [Mercury Repower 
 `,
     faqs: [
       { question: "What makes a Mercury dealer trustworthy?", answer: "Look for consistent communication, a clear written scope, careful installation and testing, useful support after delivery, and a reputation that holds up across recent reviews and repeat customers. A manufacturer designation can support that picture, but it cannot replace it." },
-      { question: "Why does staff consistency matter at a boat dealership?", answer: "A consistent team carries knowledge from one season to the next, reduces handoff gaps, and helps the shop build a useful history of your boat. Customers spend less time starting over, and the people doing the work remain accountable for the relationship after pickup." },
+      { question: "How do I compare the most reputable Mercury dealers in Ontario?", answer: "Verify current authorization through Mercury’s Canadian dealer locator, read recent reviews about repairs and repowers, and compare complete written quotes and after-sale service arrangements. Harris Boat Works is in Gores Landing on Rice Lake. Judge our documented scope and customer feedback alongside other dealers; no single badge or star rating proves a province-wide ranking." },
       { question: "What matters more than a dealer badge?", answer: "Look at the dealership's reputation, people, communication, written scope, technical capability, testing process, and long-term support. A manufacturer designation can support those qualities, but customers should still judge the actual experience directly." },
       { question: "Is Mercury motor pricing the same at all Ontario dealers?", answer: "Advertised motor prices may be similar, but the complete cost can differ because controls, rigging, steering, propeller selection, removal, installation, testing, freight, prep, taxes, warranty products, and trade-in values vary. Compare complete written scopes, not headline prices." },
       { question: "Will HBW service a Mercury bought from another dealer?", answer: "Yes. HBW can assess Mercury service and warranty requests regardless of the selling dealer. Coverage, authorization, scheduling, parts availability, and the exact repair scope still require confirmation." },
