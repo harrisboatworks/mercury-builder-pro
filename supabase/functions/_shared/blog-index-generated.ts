@@ -3240,8 +3240,8 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
         "a": "Look for consistent communication, a clear written scope, careful installation and testing, useful support after delivery, and a reputation that holds up across recent reviews and repeat customers. A manufacturer designation can support that picture, but it cannot replace it."
       },
       {
-        "q": "Why does staff consistency matter at a boat dealership?",
-        "a": "A consistent team carries knowledge from one season to the next, reduces handoff gaps, and helps the shop build a useful history of your boat. Customers spend less time starting over, and the people doing the work remain accountable for the relationship after pickup."
+        "q": "How do I compare the most reputable Mercury dealers in Ontario?",
+        "a": "Verify current authorization through Mercury’s Canadian dealer locator, read recent reviews about repairs and repowers, and compare complete written quotes and after-sale service arrangements. Harris Boat Works is in Gores Landing on Rice Lake. Judge our documented scope and customer feedback alongside other dealers;…"
       },
       {
         "q": "What matters more than a dealer badge?",
