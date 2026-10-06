@@ -273,7 +273,7 @@ Rice Lake 周边有公共和商业下水选择，但设施、收费、停车和�
 **主马达：** 先看船厂 capacity plate、船体重量、负载与原厂适配，不要只按船长套用通用马力范围
 **低速推进：** 电动 trolling motor 或合适的 Mercury ProKicker，选择取决于船体、续航、充电和冗余需求
 **电子设备：** 使用更新的 Chartplotter 与声呐辅助识别湖底结构和旧铁路区域，但仍须观察水面与水深
-**建议装备：** 每人一件合身 PFD、适用的发声和照明设备、锚与锚绳、备用推进方式；法定最低装备仍须按[Transport Canada boating safety](https://tc.canada.ca/en/marine-transportation/marine-safety/boating-safety)
+**建议装备：** 每人一件合身 PFD、适用的发声和照明设备、锚与锚绳、备用推进方式；法定最低装备仍须按[加拿大交通部船艇安全页面](https://tc.canada.ca/en/marine-transportation/marine-safety/boating-safety)
 
 ProKicker 的低速控制和充电能力适合认真拖钓，但是否需要 kicker 取决于船体、主机怠速表现、电动拖钓马达、预算和安全冗余。先确认船厂马力标牌、艉板空间、转向和充电需求，再由经销商配型。
 
@@ -336,7 +336,7 @@ HBW 要求每位驾驶员出示有效 boat operator licence／PCOC 和带照片�
 - [Ontario：Fisheries Management Zone 17](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17)
 - [Ontario：Fishing licence 资格](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees)
 - [Ontario：2026 fishing licence fees](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees)
-- [Transport Canada boating safety](https://tc.canada.ca/en/marine-transportation/marine-safety/boating-safety)
+- [加拿大交通部船艇安全页面](https://tc.canada.ca/en/marine-transportation/marine-safety/boating-safety)
 - [HBW：当前在线租船页面](https://www.harrisboatworks.ca/rentals)
 
 > **语言说明**
@@ -563,7 +563,7 @@ Harris Boat Works，自1965年起的 Mercury 经销商。
     category: '法规安全',
     readTime: '9 分钟',
     keywords: ['安大略省船只法规', '加拿大快艇驾照', '船只安全装备要求', 'Ontario boating regulations Chinese'],
-    content: `> **简短答案：** 操作动力休闲船的人需要随船携带 PCOC 或其他合资格的操作能力证明。主要在加拿大使用、发动机总功率至少 10 HP（7.5 kW）的合资格休闲船通常需要 PCL，除非已经注册。钓鱼证不是“开船证”：只有钓鱼时才需要按年龄、居住身份和牌照类型确认安省钓鱼资格。船上安全装备则按船型、船长和使用条件决定，不能用一张万能清单代替 [Transport Canada boating safety](https://tc.canada.ca/en/marine-transportation/marine-safety/boating-safety)。
+    content: `> **简短答案：** 操作动力休闲船的人需要随船携带 PCOC 或其他合资格的操作能力证明。主要在加拿大使用、发动机总功率至少 10 HP（7.5 kW）的合资格休闲船通常需要 PCL，除非已经注册。钓鱼证不是“开船证”：只有钓鱼时才需要按年龄、居住身份和牌照类型确认安省钓鱼资格。船上安全装备则按船型、船长和使用条件决定，不能用一张万能清单代替 [加拿大交通部船艇安全页面](https://tc.canada.ca/en/marine-transportation/marine-safety/boating-safety)。
 
 需要考取 PCOC？通过 [HBW 的 MyBoatCard 推荐链接](https://myboatcard.com/card/harrisboat)参加在线课程，使用优惠码 **HARRIS15** 可享 **15% 折扣**。
 
@@ -589,7 +589,7 @@ Harris Boat Works，自1965年起的 Mercury 经销商。
 
 最低装备取决于船型、船长、是否有发动机或燃油设备，以及是否在夜间或低能见度航行。常见项目包括每人一件合身并获认可的 lifejacket／PFD、浮力抛绳、重新登船装置、发声设备、照明、舀水或抽水设备；灭火器、照明、信号弹、指南针和雷达反射器等要求并非对每艘船都完全相同。
 
-最可靠做法是按自己船的类型和长度查看 [Transport Canada boating safety](https://tc.canada.ca/en/marine-transportation/marine-safety/boating-safety)，并确保装备状态良好、容易取用。只有“船上有”还不够。
+最可靠做法是按自己船的类型和长度查看 [加拿大交通部船艇安全页面](https://tc.canada.ca/en/marine-transportation/marine-safety/boating-safety)，并确保装备状态良好、容易取用。只有“船上有”还不够。
 
 ## 莱斯湖钓鱼法规
 
@@ -619,7 +619,7 @@ Rice Lake 属于安大略 Fisheries Management Zone 17（FMZ 17）。Walleye（�
 
 ## 官方来源
 
-- [Transport Canada boating safety](https://tc.canada.ca/en/marine-transportation/marine-safety/boating-safety)
+- [加拿大交通部船艇安全页面](https://tc.canada.ca/en/marine-transportation/marine-safety/boating-safety)
 - [Transport Canada：申请或管理 PCL](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl)
 - [Ontario：Fishing licence 资格](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees)
 - [Ontario：Fisheries Management Zone 17](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17)
@@ -1425,7 +1425,7 @@ Harris Boat Works，自1965年起的 Mercury 经销商，位于Rice Lake南岸Go
     image: '/lovable-uploads/hero-chinese-buyers-rice-lake-marina.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-10',
-    dateModified: '2026-10-04',
+    dateModified: '2026-10-06',
     publishDate: '2026-05-10',
     category: 'HBW 中文介绍',
     readTime: '5 分钟',
@@ -1440,7 +1440,7 @@ Harris Boat Works，自1965年起的 Mercury 经销商，位于Rice Lake南岸Go
 
 ## 1. 距离 + 路况
 
-多伦多到 HBW 的标准路线：401 东到 Cobourg (约 1 小时),然后 Highway 28 北到 Gores Landing (15-20 分钟)。总车程 1-1.5 小时。比北上 Muskoka (2.5-3 小时) 近。比 Lake Ontario 沿岸船坞选择多。
+多伦多到 HBW 的标准路线：401 东到 Cobourg 的 Exit 472（County Road 18 / Burnham Street，约 1 小时），然后沿 County Road 18 北行约 16 公里到 Gores Landing（约 20 分钟）。总车程 1-1.5 小时。比北上 Muskoka (2.5-3 小时) 近。比 Lake Ontario 沿岸船坞选择多。
 
 ## 2. 价格透明
 
@@ -1822,7 +1822,7 @@ Harris Boat Works 目前是 Mercury Marine Premier 认证经销商。`,
     image: '/lovable-uploads/zh-pontoon-vs-fishing-boat-hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-11',
-    dateModified: '2026-09-06',
+    dateModified: '2026-10-06',
     publishDate: '2026-05-11',
     category: '租船与钓鱼',
     readTime: '6 分钟',
@@ -1834,7 +1834,7 @@ Harris Boat Works 目前是 Mercury Marine Premier 认证经销商。`,
 | 项目 | Pontoon 平台船 | Fishing Boat 钓鱼船 |
 |---|---|---|
 | 最佳人数 | 6-10 人 | 1-4 人 |
-| 稳定性 | 非常稳 (湖面波涛不晃) | 较稳但比 pontoon 差 |
+| 稳定性 | 非常稳（通常比同级钓鱼船更稳，但大风浪时仍会晃动） | 较稳但比 pontoon 差 |
 | 速度 | 中等 (一般 20-35 km/h) | 快 (35-55 km/h) |
 | 油耗 | 中-高 | 低 |
 | 钓鱼适应性 | 一般 (有钓鱼版可选) | 专业级 |
@@ -1851,7 +1851,7 @@ Harris Boat Works 目前是 Mercury Marine Premier 认证经销商。`,
 
 **2. 稳定不晃** ， Rice Lake 夏天周末游艇多，浪不大但稳定性差的船仍会晃。Pontoon 平台船有两个浮筒，有些是三浮筒，通常比同级钓鱼船更稳定。
 
-**3. 安全 + 不晕船** ， 老人和小孩对船晃敏感。Pontoon 不晃。
+**3. 稳定性与舒适度** ， 老人和小孩对船晃敏感。Pontoon 在平静或小浪时比一般小船稳得多，比较不容易晕船；风浪大时仍可能晃动，出行前看天气。
 
 **4. 多功能** ， 游泳、烧烤、看日落、钓鱼 (轻度)、cruising。同一条船覆盖所有家庭活动。
 
@@ -1861,7 +1861,7 @@ Harris Boat Works 目前是 Mercury Marine Premier 认证经销商。`,
 
 - 1-3 人专业钓鱼 (主要是 angler,家人偶尔陪)
 - 想去 Rice Lake 外的其他湖钓 (拖船能力很关键)
-- 主要在 5-7 月禁渔前的早晨和傍晚出钓
+- 主要在 5-7 月的早晨和傍晚出钓。FMZ 17 没有全区夏季禁渔期：walleye 从 5 月第二个星期六开放至 11 月 15 日，bass 从 6 月第三个星期六开放至 12 月 15 日
 - 想花钱省油 (钓鱼船油耗是 pontoon 的 60-70%)
 
 钓鱼船更适合。
@@ -1976,7 +1976,7 @@ whenInDoubt: 一半华人家庭买了钓鱼船后才发现, 周末其实更想�
     image: '/lovable-uploads/zh-mercury-repower-guide-gta-hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-12',
-    dateModified: '2026-09-07',
+    dateModified: '2026-10-06',
     publishDate: '2026-05-12',
     category: '成本分析',
     readTime: '10 min read',
@@ -2180,7 +2180,7 @@ A：视时间段和库存情况而定，旺季等待时间可能较长。建议�
 → 地址：5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 `,
     faqs: [
-      { question: 'Repower 之后保固怎么算？', answer: '通过 HBW Premier 授权经销商购买的 Mercury 新机，享有完整 Mercury 原厂保固。保固期从安装完成日起算，详细条款请在购买时确认。' },
+      { question: 'Repower 之后保固怎么算？', answer: '通过 HBW Premier 授权经销商购买的 Mercury 新机，享有完整 Mercury 原厂保固。保固期从首次零售售出日或首次投入使用日（以先到者为准）起算，并由授权经销商向 Mercury 登记，详细条款请在购买时确认。' },
       { question: '旧机可以 trade-in 吗？', answer: '可以。HBW 接受旧机 trade-in，折抵金额视机型、年份、运作状况而定。建立报价时可同时提交旧机资讯，我们会提供估价。' },
       { question: '换机需要多久？', answer: '视库存和安装排程而定，旺季（春季）等待时间可能较长。建议提早计划，并通过 https://hbw.wiki/service 提交服务请求。' },
       { question: '换机之后需要换螺旋桨吗？', answer: '视情况而定。如果旧螺旋桨匹配新机，可以沿用；如果不匹配，HBW 会在报价中包含适合的螺旋桨选项。' },
@@ -2563,7 +2563,7 @@ GTA 多数地区到 Gores Landing 通常约 60–120 分钟，但起点、401／
     image: '/lovable-uploads/hero-mandarin-pcl-licence.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-15',
-    dateModified: '2026-10-04',
+    dateModified: '2026-10-06',
     publishDate: '2026-05-15',
     category: 'mandarin',
     readTime: '11 分钟',
@@ -2698,7 +2698,7 @@ Rice Lake 属于安省 Fisheries Management Zone（FMZ），具体的鱼种季�
 
 - **碧古鱼 (Walleye)：** 有季节窗口和尺寸限制（slot size），具体数字每年可能调整
 - **Smallmouth / Largemouth Bass（鲈鱼）：** 通常有禁渔期（春季产卵期）和持有量限制
-- **Muskie（北方狗鱼）：** 严格的最小尺寸和持有量限制
+- **Muskie（北美狗鱼，Esox masquinongy）：** 严格的最小尺寸和持有量限制
 - **Perch、Sunfish、Crappie（杂鱼）：** 限制较宽松，适合带小孩
 
 **关键提醒：** 上面这些规则每年可能调整，**建议查询安省最新钓鱼规则，因为尺寸与时段每年可能调整。Ontario.ca 上的官方钓鱼条例摘要（Recreational Fishing Regulations Summary）是最可靠来源。** 不要依赖网上的旧帖或别人的口头建议。
@@ -2783,7 +2783,7 @@ Rice Lake 属于安省 Fisheries Management Zone（FMZ），具体的鱼种季�
     image: '/lovable-uploads/hero-mandarin-buying-guide.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-15',
-    dateModified: '2026-10-04',
+    dateModified: '2026-10-06',
     publishDate: '2026-05-15',
     category: 'mandarin',
     readTime: '12 分钟',
@@ -3012,7 +3012,7 @@ Harris Boat Works 自 1947 年起一直由 Harris 家族在 Rice Lake 经营。�
 地址：5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 `,
     faqs: [
-      { question: '从多伦多开车到 Rice Lake 要多久？路线推荐？', answer: '多伦多市中心到 Gores Landing 约 90 分钟，Markham 75 分钟，Pickering 60 分钟。最简单的路线是 Highway 401 东向，在 Exit 461（Port Hope / Highway 28）下高速，再走 County Road 28 北上约 15 分钟。' },
+      { question: '从多伦多开车到 Rice Lake 要多久？路线推荐？', answer: '多伦多市中心到 Gores Landing 约 90 分钟，Markham 75 分钟，Pickering 60 分钟。最简单的路线是沿 Highway 401 东向，到 Cobourg 的 Exit 472（County Road 18 / Burnham Street，路牌指向 Gores Landing）下高速，再沿 County Road 18 北行约 16 公里到 Gores Landing。' },
       { question: 'GTA 华人家庭第一艘船，建议是 Pontoon 还是钓鱼船？', answer: '如果家里有老人或小孩、需要多人出游、希望在船上吃饭聊天，选 Pontoon。如果只是夫妻两人、主要目的是认真钓 walleye 或 bass，选铝合金钓鱼船。多数 GTA 华人家庭的第一艘船是 20–22 尺 Pontoon。' },
       { question: '买新船还是二手船更划算？', answer: '看你的优先级。新船有完整保固、可以自己配置、转手残值可控；二手船同预算可以买更大更高配，但需要懂行或带懂行的朋友看船。预算允许且想省心，建议买新；预算紧且愿意花时间挑，可以考虑 1–4 年的二手。' },
       { question: '我没有船的驾驶经验，HBW 会教吗？', answer: '会。第一次买船的家庭，我们在交付时会安排基础操作讲解，包括启动、靠泊、加油、保养注意事项。但要熟练还是需要自己多开几次，建议先在 Rice Lake 内的开阔水面练习。' },
@@ -4072,7 +4072,7 @@ quote: ${ZH_LANGUAGE_NOTE}
     image: '/lovable-uploads/hero-first-time-boat-rental.webp',
     author: 'Jay Harris',
     datePublished: '2026-06-12',
-    dateModified: '2026-10-04',
+    dateModified: '2026-10-06',
     publishDate: '2026-06-12',
     category: 'mandarin',
     readTime: '8 分钟',
@@ -4108,7 +4108,7 @@ quote: ${ZH_LANGUAGE_NOTE}
 1. **到店登记（约 15-20 分钟）**：出示证件，签租船合同，刷信用卡押金。
 2. **安全简报和租船检查清单**：HBW 工作人员会讲解船只控制、安全设备、救生衣、紧急联系方式和允许航行的水域。清单属于安全流程，但不能替代 HBW 要求每位驾驶者出示的有效 PCOC。
 3. **船只交接和试机**：工作人员把船开到码头，演示启动、变速、停泊。第一次开建议在码头边试一次起步停止。
-4. **下水使用**：按约定时长（半天 / 全天）使用。Rice Lake 是浅湖（平均 25 英尺深），适合新手，但**注意中央有部分浅滩和草甸区域**，简报时会标出。
+4. **下水使用**：按约定时长（半天 / 全天）使用。莱斯湖是浅湖（最深约 8 米 / 27 英尺），有大片浅水和水草区域，适合新手，但**注意中央有部分浅滩和草甸区域**，简报时会标出。
 5. **返航和归还**：按约定时间回到 HBW 码头。工作人员检查船况、燃油，结清燃油费用，退还押金。
 
 > **典型时间：** 上午 10 点到店、10:30 下水、下午 4 点返航、4:30 离场，足够完成一次完整的钓鱼日。
@@ -4127,7 +4127,7 @@ quote: ${ZH_LANGUAGE_NOTE}
 - **居民 / 非居民价格不同。**
 - **官方页面（含繁体中文版）：** [安省钓鱼规章摘要（繁体中文）](http://www.ontario.ca/page/ontario-fishing-regulations-summary-traditional-chinese)。
 
-> 重要：14 岁以下儿童和持 Resident Senior 卡的部分老人有豁免，**但具体规则每年都可能更新**，出发前请查 MNRF 当年的规则。
+> 重要：安省及加拿大居民中，未满 18 岁或年满 65 岁的人可凭政府签发的身份证件免钓鱼证，适用 Conservation 限额。不需要 Resident Senior 卡；非加拿大居民没有 65 岁以上的年龄豁免，**但具体规则每年都可能更新**，出发前请查 MNRF 当年的规则。
 
 ## 安全提示（湖上常见情况）
 
@@ -4179,9 +4179,9 @@ ${ZH_LANGUAGE_NOTE}
     faqs: [
       { question: 'Rice Lake 租船 中文：必须有 PCOC 吗？', answer: '根据加拿大的一般规定，填写完整的 Rental Boat Safety Checklist 可作为该次租赁的能力证明。但 HBW 政策更严格：每位可能驾驶 HBW 租赁船的人员都必须在办理手续时出示有效的 PCOC 和带照片身份证件；清单不能替代该卡。' },
       { question: '第一次 租船 钓鱼 要带什么？', answer: '带政府签发带照片的证件、信用卡（押金）、安省钓鱼证（如果要钓鱼）、防风衣物、防晒霜、饮用水。救生衣 HBW 提供。' },
-      { question: '从万锦/士嘉堡到 Rice Lake 多久？', answer: '万锦经 404 + 115 约 75-90 分钟，士嘉堡经 401 + 115 约 90-110 分钟。建议早上 8-9 点出发以利用上午黄金钓鱼时段。' },
+      { question: '从万锦/士嘉堡到 Rice Lake 多久？', answer: '从万锦或士嘉堡接 Highway 401 东向，到 Cobourg 的 Exit 472（County Road 18 / Burnham Street）下高速，再沿 County Road 18 北行约 16 公里到 Gores Landing。车程随出发点和交通情况而变。建议早上 8-9 点出发以利用上午黄金钓鱼时段。' },
       { question: '钓鱼证可以当天在 HBW 买吗？', answer: '不可以。钓鱼证由安省 MNRF 在线或 Service Ontario 站点出售。出发前请先在官方页面办好。' },
-      { question: '14 岁以下儿童钓鱼要证吗？', answer: '通常豁免，但具体规则每年可能更新，出发前以 MNRF 当年说明为准。' },
+      { question: '14 岁以下儿童钓鱼要证吗？', answer: '未满 18 岁的安省及加拿大居民可凭政府签发的身份证件免钓鱼证，适用 Conservation 限额。非加拿大居民未满 18 岁可与持证成人一起钓鱼，渔获计入成人限额；如需自己的限额，应另办钓鱼证。出发前请核对 MNRF 当前规则。' },
     ],
   },
 

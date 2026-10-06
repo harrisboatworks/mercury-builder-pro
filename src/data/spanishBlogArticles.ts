@@ -201,14 +201,14 @@ harrisboatworks.ca
     image: '/lovable-uploads/es-guia-pesca-rice-lake-ontario-hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-10-04',
+    dateModified: '2026-10-06',
     publishDate: '2026-04-12',
     category: 'Pesca',
     readTime: '12 min',
     keywords: ['pesca Rice Lake Ontario', 'guía pesca Ontario', 'pescar walleye Ontario', 'lago cerca de Toronto para pescar'],
     content: `### Respuesta rápida
 
-Rice Lake es uno de los mejores lagos para pescar walleye (lucioperca / doré) en toda Ontario. Está a aproximadamente **1.5 horas al este de Toronto** por la Hwy 401E + Hwy 115N. La temporada de walleye en la Zona de Gestión de Pesca 17 (FMZ 17) abre el segundo sábado de mayo y cierra el 15 de noviembre, con un límite de 4 peces. Las licencias de pesca son obligatorias para personas de 18 a 64 años. Verifica siempre las fechas y límites actuales en ontario.ca antes de salir.
+Rice Lake es uno de los mejores lagos para pescar walleye (lucioperca / doré) en toda Ontario. Está a aproximadamente **1.5 horas al este de Toronto** por la Hwy 401 Este, salida 472 en Cobourg, y County Road 18 al norte. La temporada de walleye en la Zona de Gestión de Pesca 17 (FMZ 17) abre el segundo sábado de mayo y cierra el 15 de noviembre, con límites combinados de walleye y sauger de 4 con Sport y 1 con Conservation, solo de 35–50 cm. Los lagos Balsam y Mitchell tienen reglas propias. Las licencias de pesca son obligatorias para personas de 18 a 64 años. Verifica siempre las fechas y límites actuales en ontario.ca antes de salir.
 
 ¿Necesita su PCOC? Haga el curso en línea con [el enlace de recomendación de HBW a MyBoatCard](https://myboatcard.com/card/harrisboat) y use el código **HARRIS15** para obtener **15% de descuento**.
 
@@ -227,8 +227,8 @@ Rice Lake tiene aproximadamente **37 km de longitud** y forma parte del sistema 
 El fondo variable del lago, mezclas de arena, grava, barro y vegetación acuática, crea hábitats ideales para múltiples especies. La visibilidad es moderada, lo que favorece la pesca de walleye (que prefiere condiciones de poca luz y fondos con cover).
 
 **Cómo llegar desde Toronto:**
-- Toma la Hwy 401 Este hasta la salida de la Hwy 115N (aproximadamente 110 km)
-- Sigue por 115N hacia Campbellford / Gores Landing
+- Toma la Hwy 401 Este hasta la salida 472 en Cobourg (County Road 18 / Burnham Street)
+- Sigue por County Road 18 al norte unos 16 km hasta Gores Landing; el recorrido completo desde Toronto es de unos 130 km
 - Tiempo total: **~1.5 horas** sin tráfico desde el centro de Toronto
 - Desde el área de Mississauga o Brampton: similar o ligeramente más largo por la 401
 
@@ -240,14 +240,14 @@ Las siguientes fechas y límites corresponden a la Zona de Gestión de Pesca 17,
 
 | Especie | Temporada típica | Límite diario |
 |---------|-----------------|--------------|
-| Walleye (lucioperca / doré) | 2.º sábado de mayo–15 de noviembre | 4 |
+| Walleye y sauger (lucioperca / doré) | 2.º sábado de mayo–15 de noviembre; solo de 35–50 cm | Sport: 4; Conservation: 1, combinados |
 | Bass de boca grande (largemouth) | 3.er sábado de junio–15 de diciembre | 6 |
 | Bass de boca pequeña (smallmouth) | 3.er sábado de junio–15 de diciembre | 6 |
 | Muskie (lucio almizclero) | 1.er sábado de junio–15 de diciembre | 1 |
 | Perca amarilla (yellow perch) | Todo el año | 50 |
 | Lucio norteño (northern pike) | Consultar reglamento FMZ 17 | Consultar |
 
-> **Importante:** Los límites y fechas anteriores son de referencia. El gobierno de Ontario actualiza las regulaciones anualmente. Consulta la guía oficial antes de cada temporada.
+> **Importante:** Los límites y fechas anteriores son de referencia. Los lagos Balsam y Mitchell tienen reglas propias. El gobierno de Ontario actualiza las regulaciones anualmente. Consulta la guía oficial antes de cada temporada.
 
 ---
 
@@ -367,7 +367,7 @@ harrisboatworks.ca | 905-342-2153
     faqs: [
       { question: '¿Necesito una licencia de pesca?', answer: 'Sí, si tiene entre 18 y 64 años. Los menores de 18 años (residentes canadienses) están exentos sin condiciones. Los mayores de 65 también están exentos.' },
       { question: '¿Puedo alquilar un bote en Rice Lake?', answer: 'Sí. Harris Boat Works tiene una flota de 9 botes de alquiler. Consulte harrisboatworks.ca.' },
-      { question: '¿Qué tan lejos está Rice Lake de Toronto?', answer: 'Aproximadamente 1,5 horas por la 401 Este y luego la 115 Norte.' },
+      { question: '¿Qué tan lejos está Rice Lake de Toronto?', answer: 'Aproximadamente 1,5 horas por la 401 Este hasta la salida 472 en Cobourg y luego County Road 18 al norte unos 16 km hasta Gores Landing.' },
       { question: '¿Necesito la PCOC (licencia de navegación) para alquilar un bote?', answer: 'Transport Canada exige una prueba de competencia reconocida para operar una embarcación de recreo motorizada; la Pleasure Craft Operator Card (PCOC) es la prueba más común, no la única. En Harris Boat Works la política de alquiler es más estricta: cada conductor debe presentar una PCOC u otra licencia de operador válida al recoger el bote. La lista de seguridad de alquiler se completa como briefing y no sustituye ese requisito.' },
       { question: '¿Cuáles son las mejores especies para principiantes?', answer: 'La perca amarilla (perch) se pesca todo el año y es la más accesible para principiantes y familias con niños.' },
     ],
@@ -536,14 +536,14 @@ Depende del motor y el bote. En general, entre dos y cuatro horas en taller.
     image: '/lovable-uploads/es-mercury-115-vs-150-comparacion-hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-09-06',
+    dateModified: '2026-10-06',
     publishDate: '2026-04-12',
     category: 'Comparación de motores',
     readTime: '12 min',
     keywords: ['Mercury 115 vs 150', 'motor fuera de borda 115 o 150 HP', 'Mercury FourStroke comparación', 'remotorización Mercury Ontario'],
     content: `### Respuesta rápida
 
-El Mercury FourStroke 115 HP pesa aproximadamente 163 kg, tiene motor de 2.1 litros y es ideal para botes de 16–19 pies con 2–3 personas. El 150 HP pesa ~206 kg (+44 kg / 96 libras), tiene un motor de 3.0 litros, y brilla en botes de 19–22 pies con cargas de 4–5 personas o en aguas más abiertas como Lake Simcoe. El 150 no es simplemente "35 HP más", es un motor fundamentalmente diferente con más desplazamiento, más torque y más peso. Para la mayoría del uso familiar en Rice Lake y los Kawarthas, el 115 es suficiente. Si tienes carga máxima o cruzas aguas abiertas regularmente, el 150 importa.
+El Mercury FourStroke 115 HP pesa aproximadamente 163 kg, tiene motor de 2.1 litros y encaja desde unos 18 pies con 2–3 personas, según la placa de capacidad; los botes de aluminio de 16–17 pies suelen usar 60–90 HP. El 150 HP pesa ~206 kg (+44 kg / 96 libras), tiene un motor de 3.0 litros, y encaja en botes de 19–20 pies o más, según la placa de capacidad, y brilla con cargas de 4–5 personas o en aguas más abiertas como Lake Simcoe. El 150 no es simplemente "35 HP más", es un motor fundamentalmente diferente con más desplazamiento, más torque y más peso. Para la mayoría del uso familiar en Rice Lake y los Kawarthas, el 115 es suficiente. Si tienes carga máxima o cruzas aguas abiertas regularmente, el 150 importa.
 
 ---
 
@@ -565,7 +565,7 @@ Este artículo te da las especificaciones reales, la diferencia práctica en el 
 | Desplazamiento | 2.1 litros (inline-4) | 3.0 litros (inline-4) |
 | Peso aproximado | ~163 kg | ~206 kg (+44 kg / 96 lbs) |
 | RPM máximo (WOT) | 5,000–6,000 RPM | 5,000–5,800 RPM |
-| Rango de botes | 16–19 pies | 19–22 pies |
+| Rango de botes | Desde unos 18 pies; placa de 150 HP para elegir un modelo por debajo del máximo | 19–20 pies o más; placa de 175 HP para elegir un modelo por debajo del máximo |
 | Versión Pro XS | Sí | Sí |
 | Garantía Mercury | 3 años | 3 años |
 
@@ -577,7 +577,7 @@ El 150 tiene un **43% más desplazamiento** que el 115. No es la misma base con 
 
 ### Con carga ligera (2 adultos, equipo básico de pesca)
 
-En un bote de 17 pies con dos adultos y equipo de pesca liviano, la diferencia entre 115 y 150 es **notoria pero no dramática**. El 150 planeará más rápido y llegará a velocidad de crucero con menos esfuerzo. El 115 llega también, un poco más lento en el plano.
+En un bote de unos 18 pies o más, cuya placa y espejo de popa permitan comparar ambas opciones, con dos adultos y equipo de pesca liviano, la diferencia entre 115 y 150 es **notoria pero no dramática**. El 150 planeará más rápido y llegará a velocidad de crucero con menos esfuerzo. El 115 llega también, un poco más lento en el plano.
 
 ### Con carga completa (4 adultos + cooler + equipaje)
 
@@ -616,14 +616,14 @@ Si eres pescador de torneo o buscas máxima aceleración en planeado, el Pro XS 
 ## ¿Cuál motor es para ti?
 
 ### Elige el Mercury 115 FourStroke si:
-- Tu bote es de 16–19 pies
+- Tu bote mide unos 18 pies o más y la placa permite 150 HP: el 115 queda un modelo por debajo del máximo
 - Sales típicamente con 2–3 personas
 - Pescas en Rice Lake, Kawarthas, y lagos interiores similares
 - El precio importa, el 115 es más accesible
 - No buscas rendimiento extremo ni cargas completas regulares
 
 ### Elige el Mercury 150 FourStroke si:
-- Tu bote es de 19–22 pies
+- Tu bote mide 19–20 pies o más y la placa permite 175 HP: el 150 queda un modelo por debajo del máximo
 - Sales regularmente con 4–5 personas o carga completa
 - Navegas en aguas más abiertas con viento y oleaje
 - El planeo rápido importa para salidas de pesca temprana al amanecer
@@ -654,10 +654,10 @@ Para servicio técnico: Harris Boat Works solo da servicio a motores Mercury y M
 ## Preguntas frecuentes (FAQ)
 
 **¿El 150 HP garantiza más velocidad máxima que el 115 HP?**
-Depende del bote, la hélice y el peso. En muchos botes de 17 pies, el 115 puede alcanzar velocidades máximas similares al 150 con hélice optimizada, la diferencia real está en el plano bajo carga y en la reserva de potencia.
+Depende del bote, la hélice y el peso. En muchos botes de unos 18 pies o más, según la placa de capacidad, el 115 puede alcanzar velocidades máximas similares al 150 con hélice optimizada, la diferencia real está en el plano bajo carga y en la reserva de potencia.
 
 **¿Puedo instalar un 150 en un bote que originalmente tenía un 115?**
-Siempre que el transom y la placa de capacidad del bote lo permitan. Algunos botes de 17 pies tienen certificación para hasta 150 HP; otros solo para 115. Verifica la placa de capacidad antes de comprar.
+La placa de capacidad y el espejo de popa tienen que permitirlo, pero eso no convierte el máximo en la mejor opción. Los botes de aluminio de 16–17 pies suelen usar 60–90 HP. Nuestra regla es un modelo Mercury por debajo del máximo: con una placa de 150 HP, el mejor ajuste es un 115. Para elegir un 150, busca una placa de 175 HP y confirma el peso admisible antes de comprar.
 
 **¿Cuánto dura un motor Mercury FourStroke con buen mantenimiento?**
 Con servicio regular (cada 100 horas o anualmente), los FourStroke Mercury alcanzan fácilmente 2,000–3,000 horas. Hemos visto motores bien mantenidos durar muchos más años que eso en Rice Lake.
