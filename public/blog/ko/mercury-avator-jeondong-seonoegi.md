@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/ko/mercury-avator-jeondong-seonoegi.md
-last_updated: 2026-09-06
+last_updated: 2026-10-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "머큐리 Avator 전동 선외기: 가격과 항속거리"
 description: "머큐리 Avator 전동 선외기: 가격, 실제 항속거리, 그리고 라이스 레이크에 적합한지. 머큐리 Premier 딜러의 정직한 평가."
 category: "구매 가이드"
 date_published: 2026-06-08
-date_modified: 2026-09-06
+date_modified: 2026-10-06
 keywords: ["머큐리 Avator","전동 선외기","전기 보트 모터","Mercury Avator Korean","라이스 레이크 전동 보트"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** 구매 가이드  
 **Published:** 2026-06-08  
-**마지막 검토:** 2026-09-06  
+**마지막 검토:** 2026-10-06  
 **Read time:** 8 분  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ko/mercury-avator-jeondong-seonoegi
 
@@ -52,7 +52,7 @@ revenue_driver: repower
 |---|---|---|---|
 | 7.5e | 750 W | 약 3.5마력 (가솔린 비교) | 딩기, 카누, 작은 보트 보조 |
 | 20e | 2,200 W | 약 5마력 (가솔린 비교) | 소형 알루미늄, 트롤링 |
-| 35e | 3,800 W | 약 9.9마력 (가솔린 비교) | 14~16피트 알루미늄, 폰툰 보조 |
+| 35e | 3,700 W (3.7 kW, 정격 프로펠러 축 출력) | 약 9.9마력 (가솔린 비교) | 14~16피트 알루미늄, 폰툰 보조 |
 | 75e | 7,500 W | 10마력 (프로펠러 축 출력 환산) | 폰툰 보조, 중형 알루미늄 |
 | 110e | 11,000 W | 15마력 (프로펠러 축 출력 환산) | 폰툰, 중형 보트 메인 동력 |
 

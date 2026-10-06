@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/entretien-remorque-bateau-ontario.md
-last_updated: 2026-10-04
+last_updated: 2026-10-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Entretien d'une remorque de bateau : le guide que personne n'écrit (Ont
 description: "Liste de vérification annuelle d'entretien de remorque de bateau pour les plaisanciers ontariens. Roulements, freins, pneus, lumières, tasseaux."
 category: "Entretien"
 date_published: 2026-05-13
-date_modified: 2026-10-04
+date_modified: 2026-10-06
 keywords: ["entretien remorque bateau","roulements remorque","remorque bateau Ontario","coût service remorque","pneus ST","freins remorque bateau"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Catégorie :** Entretien\
 **Publié le :** 2026-05-13\
-**Dernière révision :** 2026-10-04\
+**Dernière révision :** 2026-10-06\
 **Temps de lecture :** 10 min\
 **URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/entretien-remorque-bateau-ontario
 
@@ -76,7 +76,7 @@ Les roulements sont des cartouches de graisse scellées qui permettent aux roues
 
 ### 2. Freins (à inertie ou électriques)
 
-La plupart des remorques ontariennes sous 2 500 lb brut utilisent des freins à inertie. Les remorques plus grandes utilisent des freins électriques contrôlés depuis le véhicule remorqueur.
+En Ontario, les remorques d'un poids brut de 1 360 kg (environ 3 000 lb) ou plus doivent avoir des freins selon l'article 64(5) du Code de la route. Sous ce seuil, la plupart des remorques de bateau n'en ont pas. Les freins à inertie sont courants au-dessus du seuil; les freins électriques équipent les plus grosses remorques.
 
 **Action :**
 - À inertie : utilisez uniquement le liquide de freins prescrit par le fabricant de votre actionneur et de vos freins. Ne mélangez pas des types de liquide non compatibles; suivez la procédure et l'intervalle d'entretien du fabricant.
@@ -90,7 +90,7 @@ La plupart des remorques ontariennes sous 2 500 lb brut utilisent des freins à 
 Les pneus de remorque de bateau (cotés ST) sont différents des pneus d'auto. Ils ont des flancs plus rigides mais se dégradent plus vite à cause des UV et de l'ozone.
 
 **Action :**
-- Vérifier la pression à froid avant chaque sortie (cible 50 à 65 PSI selon la taille)
+- Vérifier la pression à froid avant chaque sortie (gonfler les pneus ST à la pression maximale inscrite sur le flanc, selon leur taille et leur catégorie de charge : généralement 50 PSI pour C, 65 pour D et 80 pour E; certains petits pneus diagonaux exigent davantage)
 - Remplacer les pneus tous les 5 à 6 ans peu importe la profondeur de la bande de roulement
 - Transporter une roue de secours pleine taille
 - Vérifier le code de date DOT (les 4 derniers chiffres = semaine/année de fabrication)

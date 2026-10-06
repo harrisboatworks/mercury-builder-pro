@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/pa/ontario-fishing-licence-punjabi-guide.md
-last_updated: 2026-09-06
+last_updated: 2026-10-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Ontario Fishing Licence ki hai te kiven laiye | ਓਨਟਾਰੀਓ �
 description: "Ontario fishing licence ki kiven laiye? Outdoors Card, conservation vs sport licence, FMZ 17 Rice Lake rules te free Learn to Fish program, sab Punjabi vich."
 category: "ਪੰਜਾਬੀ ਗਾਈਡ"
 date_published: 2026-06-12
-date_modified: 2026-09-06
+date_modified: 2026-10-06
 keywords: ["Ontario fishing license keemat online (Ontario fishing license price online)","Toronto de nere fishing spots family layi (fishing spots near Toronto for family)","fishing seasons Ontario 2024 Punjabi (fishing seasons Ontario 2024 Punjabi)","Rice Lake fishing rules limits Punjabi (Rice Lake fishing rules and limits in Punjabi)","Brampton waale fishing spot ki ne Punjabi (what are the fishing spots for Brampton people in Punjabi)","Kawartha lakes fishing map Punjabi video (Kawartha lakes fishing map Punjabi video)"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** ਪੰਜਾਬੀ ਗਾਈਡ  
 **Published:** 2026-06-12  
-**ਆਖਰੀ ਸਮੀਖਿਆ:** 2026-09-06  
+**ਆਖਰੀ ਸਮੀਖਿਆ:** 2026-10-06  
 **Read time:** 8 ਮਿੰਟ  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/pa/ontario-fishing-licence-punjabi-guide
 
@@ -95,7 +95,7 @@ rule structure ਇਹ ਹੈ: conservation licence ’ਤੇ daily catch limit s
 
 ### 5. Brampton ton fishing spot kidhar jaayiye?
 
-Brampton ਤੋਂ Gores Landing, Rice Lake 90 ਮਿੰਟ ਲੱਗਦੇ ਹਨ। Highway 401 ਪੂਰਬ, Highway 115/35 ਉੱਤਰ, ਫ਼ਿਰ County Rd 18। Gores Landing Harris Boat Works Rd ’ਤੇ parking site ’ਤੇ ਹੈ। rentals page ’ਤੇ plan ਬਣਾਓ: [Harris Boat Works rentals](https://harrisboatworks.ca/rentals)।
+Brampton ਤੋਂ Gores Landing, Rice Lake ਲਗਭਗ 150 ਤੋਂ 160 km ਹੈ, ਆਮ ਤੌਰ ’ਤੇ 1 ਘੰਟਾ 45 ਮਿੰਟ ਤੋਂ 2 ਘੰਟੇ, traffic ਅਤੇ 407 ਦੀ ਵਰਤੋਂ ’ਤੇ ਨਿਰਭਰ। Highway 401 ਪੂਰਬ, Exit 472 (County Road 18 / Burnham Street, Cobourg) ’ਤੇ ਉੱਤਰ, ਫ਼ਿਰ County Road 18 ਉੱਤਰ ਲਗਭਗ 16 km। Gores Landing Harris Boat Works Rd ’ਤੇ parking site ’ਤੇ ਹੈ। rentals page ’ਤੇ plan ਬਣਾਓ: [Harris Boat Works rentals](https://harrisboatworks.ca/rentals)।
 
 ### 6. Kya mainu Harris Boat Works te Punjabi vich service mil sakdi hai?
 

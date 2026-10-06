@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/remotorisation-mercury-gta-toronto.md
-last_updated: 2026-09-12
+last_updated: 2026-10-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Remotorisation Mercury dans la GTA : comment un plaisancier de Toronto r
 description: "Un parcours étape par étape sur la façon dont un plaisancier de la GTA remotorise un bateau chez Harris Boat Works : logistique, prix, échéancier et transport."
 category: "Guide d'achat"
 date_published: 2026-05-13
-date_modified: 2026-09-12
+date_modified: 2026-10-06
 keywords: ["remotorisation Mercury GTA","remotorisation Mercury Toronto","remotorisation Mercury Mississauga","coût remotorisation bateau GTA","concessionnaire Mercury Premier Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Catégorie :** Guide d'achat\
 **Publié le :** 2026-05-13\
-**Dernière révision :** 2026-09-12\
+**Dernière révision :** 2026-10-06\
 **Temps de lecture :** 12 min\
 **URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/remotorisation-mercury-gta-toronto
 
@@ -229,7 +229,7 @@ Le ramassage du bateau peut être organisé, sous réserve de confirmation de l'
 
 ### Mon Mercury sera-t-il admissible à la garantie si je l'ai acheté ailleurs ?
 
-Oui. Le réseau de garantie canadien Mercury honore la couverture chez n'importe quel concessionnaire autorisé peu importe où le moteur a été acheté. Apportez les papiers d'achat; nous enregistrons le travail dans le système central de Mercury.
+Oui, si le moteur a été acheté neuf chez un concessionnaire Mercury autorisé au Canada et enregistré : tout concessionnaire autorisé peut effectuer une réparation sous garantie. Un moteur acheté par petites annonces, aux enchères ou importé des États-Unis n'est généralement pas couvert. Apportez les papiers d'achat; nous enregistrons le travail dans le système central de Mercury.
 
 ### Puis-je choisir un Pro XS plutôt qu'un FourStroke pour la remotorisation ?
 

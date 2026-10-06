@@ -157,7 +157,7 @@ Rice Lake 周边有公共和商业下水选择，但设施、收费、停车和�
 **主马达：** 先看船厂 capacity plate、船体重量、负载与原厂适配，不要只按船长套用通用马力范围
 **低速推进：** 电动 trolling motor 或合适的 Mercury ProKicker，选择取决于船体、续航、充电和冗余需求
 **电子设备：** 使用更新的 Chartplotter 与声呐辅助识别湖底结构和旧铁路区域，但仍须观察水面与水深
-**建议装备：** 每人一件合身 PFD、适用的发声和照明设备、锚与锚绳、备用推进方式；法定最低装备仍须按[Transport Canada boating safety](https://tc.canada.ca/en/marine-transportation/marine-safety/boating-safety)
+**建议装备：** 每人一件合身 PFD、适用的发声和照明设备、锚与锚绳、备用推进方式；法定最低装备仍须按[加拿大交通部船艇安全页面](https://tc.canada.ca/en/marine-transportation/marine-safety/boating-safety)
 
 ProKicker 的低速控制和充电能力适合认真拖钓，但是否需要 kicker 取决于船体、主机怠速表现、电动拖钓马达、预算和安全冗余。先确认船厂马力标牌、艉板空间、转向和充电需求，再由经销商配型。
 
@@ -188,7 +188,7 @@ Rice Lake 中部的旧水下铁路遗迹是本地著名危险之一，但不是�
 - [Ontario：Fisheries Management Zone 17](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17)
 - [Ontario：Fishing licence 资格](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees)
 - [Ontario：2026 fishing licence fees](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees)
-- [Transport Canada boating safety](https://tc.canada.ca/en/marine-transportation/marine-safety/boating-safety)
+- [加拿大交通部船艇安全页面](https://tc.canada.ca/en/marine-transportation/marine-safety/boating-safety)
 - [HBW：当前在线租船页面](https://www.harrisboatworks.ca/rentals)
 
 > **语言说明**

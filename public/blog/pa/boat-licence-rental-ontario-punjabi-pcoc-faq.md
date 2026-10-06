@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/pa/boat-licence-rental-ontario-punjabi-pcoc-faq.md
-last_updated: 2026-10-04
+last_updated: 2026-10-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Ontario vich boat chalaun layi licence chahida? PCOC FAQ | ਕਿਸ਼�
 description: "Ki Ontario vich boat rent karan layi licence chahida? HBW de PCOC rules, rental safety briefing te lifejacket rules. Punjabi vich poori jaankari ethe lao."
 category: "ਪੰਜਾਬੀ ਗਾਈਡ"
 date_published: 2026-06-12
-date_modified: 2026-10-04
+date_modified: 2026-10-06
 keywords: ["Ontario vich boat license kinj banaye (how to get a boat license in Ontario)","boat operator card zaroori hai Ontario vich (is boat operator card necessary in Ontario)","PCOC course online free Punjabi (PCOC course online free in Punjabi)","boat chalan layi license di lod hai Canada ch (do you need a license to drive a boat in Canada)"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: rentals
 
 **Category:** ਪੰਜਾਬੀ ਗਾਈਡ  
 **Published:** 2026-06-12  
-**ਆਖਰੀ ਸਮੀਖਿਆ:** 2026-10-04  
+**ਆਖਰੀ ਸਮੀਖਿਆ:** 2026-10-06  
 **Read time:** 8 ਮਿੰਟ  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/pa/boat-licence-rental-ontario-punjabi-pcoc-faq
 
@@ -81,7 +81,7 @@ PCOC rules ਨੂੰ ਔਖਾ ਨਾ ਸਮਝੋ; ਪਹਿਲਾ ਕਦਮ sa
 
 ### Kya “boat license” te “boat operator card” different hunde ne?
 
-Boat license (PCL) boat di registration number hai; operator card (PCOC) tuhadi training da saboot hai. New, transfer ya renew PCL hun $24.41 CAD / 5 saal; jaankari update muft. Doven vakt confuse na ho, official terms PCL te PCOC yaad rakho.
+Boat license (PCL) ਕਿਸ਼ਤੀ ਦਾ ਪਛਾਣ ਲਾਇਸੰਸ/ਨੰਬਰ ਹੈ, Transport Canada ਤੋਂ, ਜ਼ਰੂਰੀ ਉਹਨਾਂ ਕਿਸ਼ਤੀਆਂ ਲਈ ਜਿਹਨਾਂ ਦੇ ਇੰਜਣ 10 hp (7.5 kW) ਜਾਂ ਵੱਧ ਹਨ; ਇਹ vessel registration ਤੋਂ ਵੱਖਰਾ ਹੈ ਅਤੇ ਮਾਲਕੀ ਦਾ ਸਬੂਤ ਨਹੀਂ ਹੈ। Operator card (PCOC) tuhadi training da saboot hai. New, transfer ya renew PCL hun $24.41 CAD / 5 saal; jaankari update muft. Doven vakt confuse na ho, official terms PCL te PCOC yaad rakho.
 
 ### PCOC course online muft Punjabi vich mil sakda ae?
 

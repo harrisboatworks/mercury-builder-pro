@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/gta-chinese-pcl-fishing-licence-guide.md
-last_updated: 2026-10-04
+last_updated: 2026-10-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "GTA 华人 PCOC 操作员卡、PCL 船牌与安省钓鱼证指南"
 description: "分清 PCOC 操作员资格、PCL 船只牌照和安省钓鱼证：谁需要、有效期、官方申请入口与 Rice Lake 出发前检查。"
 category: "mandarin"
 date_published: 2026-05-15
-date_modified: 2026-10-04
+date_modified: 2026-10-06
 keywords: ["PCOC 操作员卡","PCL 船只牌照","加拿大船驾照中文","Pleasure Craft Operator Card 华人","安省钓鱼证","Ontario 钓鱼证 中文","Rice Lake 钓鱼规则","GTA Chinese boating licence"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** mandarin  
 **Published:** 2026-05-15  
-**最后审核:** 2026-10-04  
+**最后审核:** 2026-10-06  
 **Read time:** 11 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/gta-chinese-pcl-fishing-licence-guide
 
@@ -167,7 +167,7 @@ Rice Lake 属于安省 Fisheries Management Zone（FMZ），具体的鱼种季�
 
 - **碧古鱼 (Walleye)：** 有季节窗口和尺寸限制（slot size），具体数字每年可能调整
 - **Smallmouth / Largemouth Bass（鲈鱼）：** 通常有禁渔期（春季产卵期）和持有量限制
-- **Muskie（北方狗鱼）：** 严格的最小尺寸和持有量限制
+- **Muskie（北美狗鱼，Esox masquinongy）：** 严格的最小尺寸和持有量限制
 - **Perch、Sunfish、Crappie（杂鱼）：** 限制较宽松，适合带小孩
 
 **关键提醒：** 上面这些规则每年可能调整，**建议查询安省最新钓鱼规则，因为尺寸与时段每年可能调整。Ontario.ca 上的官方钓鱼条例摘要（Recreational Fishing Regulations Summary）是最可靠来源。** 不要依赖网上的旧帖或别人的口头建议。

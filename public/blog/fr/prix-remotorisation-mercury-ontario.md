@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/prix-remotorisation-mercury-ontario.md
-last_updated: 2026-09-06
+last_updated: 2026-10-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Guide de remotorisation Mercury : prix, délais, rentabilité"
 description: "Ce qu'une remotorisation Mercury coûte vraiment, combien de temps ça prend, et quand ça vaut mieux que d'acheter neuf."
 category: "Guide d'achat"
 date_published: 2026-04-12
-date_modified: 2026-09-06
+date_modified: 2026-10-06
 keywords: ["prix remotorisation Mercury Ontario","remotorisation bateau coût Canada","moteur hors-bord Mercury prix","repower Mercury Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Catégorie :** Guide d'achat\
 **Publié le :** 2026-04-12\
-**Dernière révision :** 2026-09-06\
+**Dernière révision :** 2026-10-06\
 **Temps de lecture :** 7 min\
 **URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/prix-remotorisation-mercury-ontario
 
@@ -67,7 +67,7 @@ C'est le facteur le plus évident. Un moteur Mercury de 9,9 HP coûte une fracti
 
 ### 2. La longueur de l'arbre
 
-Il existe principalement deux longueurs : arbre court (20 pouces) et arbre long (25 pouces). Un arbre long coûte légèrement plus cher. Pour certaines embarcations, un arbre ultra-long (30 pouces) est nécessaire. Choisir la bonne longueur pour votre tableau arrière est important : une erreur peut affecter les performances et causer des problèmes mécaniques.
+Pour une remotorisation, les deux longueurs courantes sont le pied long L (20 pouces) et le pied extra-long XL (25 pouces). Le pied court mesure 15 pouces et le XXL, 30 pouces. Un arbre long coûte légèrement plus cher. Pour certaines embarcations, un arbre ultra-long (30 pouces) est nécessaire. Choisir la bonne longueur pour votre tableau arrière est important : une erreur peut affecter les performances et causer des problèmes mécaniques.
 
 ### 3. Le câblage et le tableau de bord
 
@@ -117,7 +117,7 @@ Un moteur Mercury FourStroke neuf, c'est aussi un départ sur une nouvelle base 
 
 ## Harris Boat Works : concessionnaire Mercury Premier à Gores Landing
 
-Nous sommes situés à Gores Landing, sur le lac Rice, à environ 1 h 30 à l'est de Toronto par l'autoroute 401 et la 115 Nord. Les clients de Montréal font le trajet en environ 3 heures.
+Nous sommes situés à Gores Landing, sur le lac Rice, à environ 1 h 30 à l'est de Toronto par la 401 Est jusqu'à la sortie 472 (County Road 18 / Burnham Street, Cobourg), puis County Road 18 vers le nord sur environ 16 km jusqu'à Gores Landing. Les clients de Montréal font le trajet en environ 4 h 30 (environ 445 km).
 
 Notre équipe travaille principalement en anglais, nous ne parlons pas français couramment, mais nous accueillons chaleureusement les clients francophones et nous trouverons une façon de communiquer efficacement. Le configurateur en ligne sur mercuryrepower.ca fonctionne sans barrière linguistique : vous entrez les informations sur votre embarcation, choisissez la puissance, et obtenez un vrai prix en dollars canadiens, pas un « appelez-nous pour en savoir plus ».
 

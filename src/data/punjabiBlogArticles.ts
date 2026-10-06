@@ -24,7 +24,7 @@ export const punjabiBlogArticles: Wave1Article[] = [
     image: '/lovable-uploads/hero-boat-rental-licence-ontario.webp',
     author: 'Harris Boat Works',
     datePublished: '2026-06-12',
-    dateModified: '2026-09-06',
+    dateModified: '2026-10-06',
     category: 'ਪੰਜਾਬੀ ਗਾਈਡ',
     readTime: '8 ਮਿੰਟ',
     keywords: ['Ontario fishing license keemat online (Ontario fishing license price online)', 'Toronto de nere fishing spots family layi (fishing spots near Toronto for family)', 'fishing seasons Ontario 2024 Punjabi (fishing seasons Ontario 2024 Punjabi)', 'Rice Lake fishing rules limits Punjabi (Rice Lake fishing rules and limits in Punjabi)', 'Brampton waale fishing spot ki ne Punjabi (what are the fishing spots for Brampton people in Punjabi)', 'Kawartha lakes fishing map Punjabi video (Kawartha lakes fishing map Punjabi video)'],
@@ -33,7 +33,7 @@ export const punjabiBlogArticles: Wave1Article[] = [
       { question: '2. Toronto de nere family layi fishing spots kaun se ne?', answer: 'Rice Lake, Gores Landing ’ਤੇ, Toronto area ਤੋਂ ਆਮ ਤੌਰ ’ਤੇ ਲਗਭਗ 90 ਤੋਂ 120 ਮਿੰਟ ਦੀ drive ਹੈ, origin ਅਤੇ traffic ’ਤੇ ਨਿਰਭਰ। HBW ਕੋਲ pontoon ਅਤੇ fishing boat rentals ਹਨ; ਮੌਜੂਦਾ listings ਅਤੇ availability harrisboatworks.ca/rentals ’ਤੇ ਵੇਖੋ। Ethanol-free fuel site ’ਤੇ ਹੈ।' },
       { question: '3. Fishing seasons Ontario vich kiven pata lagge?', answer: 'FMZ 17 (Rice Lake ਦਾ ਜ਼ੋਨ) ਲਈ Ontario Fishing Regulations Summary online ਵੇਖੋ: [Ontario Fishing Regulations Summary](https://www.ontario.ca/document/ontario-fishing-regulations-summary)। ਹਰ species ਲਈ season ਖੁੱਲ੍ਹਣ-ਬੰਦ ਹੋਣ ਦੀਆਂ dates, size limits, slot sizes, ਸਭ official summary ਤੋਂ ਮਿਲਦਾ ਹੈ। ਇਸ ’ਤੇ trust ਕਰੋ, ਕਿਸੇ older video ’ਤੇ ਨਹੀਂ।' },
       { question: '4. Rice Lake te fishing rules limits ki ne?', answer: 'rule structure ਇਹ ਹੈ: conservation licence ’ਤੇ daily catch limit sport licence ਨਾਲੋਂ ਘੱਟ; size limit species ਮੁਤਾਬਕ; slot size (walleye, muskellunge) ’ਵੇਖਣੀ ਪੈਂਦੀ ਹੈ। official summary FMZ 17 section ਵਿੱਚ ਹਰ species ਵੱਖ-ਵੱਖ rules ਦਿੱਤੇ ਹਨ। numbers ਅਗਲੀ trip ਤੋਂ ਪਹਿਲਾਂ official ਸਰੋਤ ਤੋਂ ਜ਼ਰੂਰ check ਕਰੋ।' },
-      { question: '5. Brampton ton fishing spot kidhar jaayiye?', answer: 'Brampton ਤੋਂ Gores Landing, Rice Lake 90 ਮਿੰਟ ਲੱਗਦੇ ਹਨ। Highway 401 ਪੂਰਬ, Highway 115/35 ਉੱਤਰ, ਫ਼ਿਰ County Rd 18। Gores Landing Harris Boat Works Rd ’ਤੇ parking site ’ਤੇ ਹੈ। rentals page ’ਤੇ plan ਬਣਾਓ: [Harris Boat Works rentals](https://harrisboatworks.ca/rentals)।' },
+      { question: '5. Brampton ton fishing spot kidhar jaayiye?', answer: 'Brampton ਤੋਂ Gores Landing, Rice Lake ਲਗਭਗ 150 ਤੋਂ 160 km ਹੈ, ਆਮ ਤੌਰ ’ਤੇ 1 ਘੰਟਾ 45 ਮਿੰਟ ਤੋਂ 2 ਘੰਟੇ, traffic ਅਤੇ 407 ਦੀ ਵਰਤੋਂ ’ਤੇ ਨਿਰਭਰ। Highway 401 ਪੂਰਬ, Exit 472 (County Road 18 / Burnham Street, Cobourg) ’ਤੇ ਉੱਤਰ, ਫ਼ਿਰ County Road 18 ਉੱਤਰ ਲਗਭਗ 16 km। Gores Landing Harris Boat Works Rd ’ਤੇ parking site ’ਤੇ ਹੈ। rentals page ’ਤੇ plan ਬਣਾਓ: [Harris Boat Works rentals](https://harrisboatworks.ca/rentals)।' },
       { question: '6. Kya mainu Harris Boat Works te Punjabi vich service mil sakdi hai?', answer: 'honestly, team English ਵਿੱਚ service ਦਿੰਦੀ ਹੈ। ਫ਼ਿਕਰ ਨਾ ਕਰੋ: friend ਜਾਂ family member English speaker ਲੈ ਕੇ ਆਓ, ਜਾਂ translation app use ਕਰੋ। ਅਸੀਂ ਧੀਰਜ ਨਾਲ ਗੱਲ ਸਮਝਾਂਗੇ ਅਤੇ ਤੁਹਾਡੀ ਮਦਦ ਕਰਨ ਦੀ ਪੂਰੀ ਕੋਸ਼ਿਸ਼ ਕਰਾਂਗੇ।' },
       { question: '7. Kids layi fishing licence di lod hai?', answer: 'Ontario residents under 18 ਨੂੰ Outdoors Card ਜਾਂ fishing licence ਨਹੀਂ ਲੈਣੀ ਪੈਂਦੀ, ਪਰ rules limits ਜ਼ਰੂਰ follow ਕਰਨੇ ਪੈਂਦੇ ਹਨ। non-resident minors ਲਈ rules ਜ਼ਰਾ different ਹਨ, official page ’ਤੇ confirm ਕਰੋ: [Ontario fishing licence for residents](https://www.ontario.ca/page/fishing-licence-ontario-and-canadian-residents)।' },
       { question: '8. Kawartha lakes fishing map video Punjabi vich mildi hai?', answer: 'video availability Punjabi ਵਿੱਚ official ਤੌਰ ’ਤੇ ਨਹੀਂ, ਪਰ Ontario government fishing map interactive online ਹੈ। Rice Lake ਨੂੰ Kawarthas ਵਿੱਚ select ਕਰਕੇ spots ’ਤੇ information ਮਿਲ ਜਾਵੇਗੀ। regulations summary ਜ਼ਰੂਰ read ਕਰੋ।' }
@@ -92,7 +92,7 @@ FMZ 17 (Rice Lake ਦਾ ਜ਼ੋਨ) ਲਈ Ontario Fishing Regulations Summary o
 rule structure ਇਹ ਹੈ: conservation licence ’ਤੇ daily catch limit sport licence ਨਾਲੋਂ ਘੱਟ; size limit species ਮੁਤਾਬਕ; slot size (walleye, muskellunge) ’ਵੇਖਣੀ ਪੈਂਦੀ ਹੈ। official summary FMZ 17 section ਵਿੱਚ ਹਰ species ਵੱਖ-ਵੱਖ rules ਦਿੱਤੇ ਹਨ। numbers ਅਗਲੀ trip ਤੋਂ ਪਹਿਲਾਂ official ਸਰੋਤ ਤੋਂ ਜ਼ਰੂਰ check ਕਰੋ।
 
 **5. Brampton ton fishing spot kidhar jaayiye?**  
-Brampton ਤੋਂ Gores Landing, Rice Lake 90 ਮਿੰਟ ਲੱਗਦੇ ਹਨ। Highway 401 ਪੂਰਬ, Highway 115/35 ਉੱਤਰ, ਫ਼ਿਰ County Rd 18। Gores Landing Harris Boat Works Rd ’ਤੇ parking site ’ਤੇ ਹੈ। rentals page ’ਤੇ plan ਬਣਾਓ: [Harris Boat Works rentals](https://harrisboatworks.ca/rentals)।
+Brampton ਤੋਂ Gores Landing, Rice Lake ਲਗਭਗ 150 ਤੋਂ 160 km ਹੈ, ਆਮ ਤੌਰ ’ਤੇ 1 ਘੰਟਾ 45 ਮਿੰਟ ਤੋਂ 2 ਘੰਟੇ, traffic ਅਤੇ 407 ਦੀ ਵਰਤੋਂ ’ਤੇ ਨਿਰਭਰ। Highway 401 ਪੂਰਬ, Exit 472 (County Road 18 / Burnham Street, Cobourg) ’ਤੇ ਉੱਤਰ, ਫ਼ਿਰ County Road 18 ਉੱਤਰ ਲਗਭਗ 16 km। Gores Landing Harris Boat Works Rd ’ਤੇ parking site ’ਤੇ ਹੈ। rentals page ’ਤੇ plan ਬਣਾਓ: [Harris Boat Works rentals](https://harrisboatworks.ca/rentals)।
 
 **6. Kya mainu Harris Boat Works te Punjabi vich service mil sakdi hai?**  
 honestly, team English ਵਿੱਚ service ਦਿੰਦੀ ਹੈ। ਫ਼ਿਕਰ ਨਾ ਕਰੋ: friend ਜਾਂ family member English speaker ਲੈ ਕੇ ਆਓ, ਜਾਂ translation app use ਕਰੋ। ਅਸੀਂ ਧੀਰਜ ਨਾਲ ਗੱਲ ਸਮਝਾਂਗੇ ਅਤੇ ਤੁਹਾਡੀ ਮਦਦ ਕਰਨ ਦੀ ਪੂਰੀ ਕੋਸ਼ਿਸ਼ ਕਰਾਂਗੇ।
@@ -121,14 +121,14 @@ Harris Boat Works 1947 ਤੋਂ family-owned marina ਹੈ, Mercury ਡੀਲ�
     image: '/lovable-uploads/hero-boat-rental-licence-ontario.webp',
     author: 'Harris Boat Works',
     datePublished: '2026-06-12',
-    dateModified: '2026-10-04',
+    dateModified: '2026-10-06',
     category: 'ਪੰਜਾਬੀ ਗਾਈਡ',
     readTime: '8 ਮਿੰਟ',
     keywords: ['Ontario vich boat license kinj banaye (how to get a boat license in Ontario)', 'boat operator card zaroori hai Ontario vich (is boat operator card necessary in Ontario)', 'PCOC course online free Punjabi (PCOC course online free in Punjabi)', 'boat chalan layi license di lod hai Canada ch (do you need a license to drive a boat in Canada)'],
     faqs: [
       { question: 'Ontario vich boat chalaun lai license kinj banayiye?', answer: 'ਪਹਿਲਾਂ Transport Canada ਦੇ ਮਾਨਤਾ-ਪ੍ਰਾਪਤ ਪ੍ਰਦਾਤਾਵਾਂ ਰਾਹੀਂ online PCOC ਕੋਰਸ ਕਰੋ। exam pass ਕਰੋ, card lifetime ਲਈ ਮਿਲ ਜਾਵੇਗਾ। official list: https://tc.canada.ca/en/marine-transportation/buying-boat/find-education-resources-recreational-boaters' },
       { question: 'Je main ik din layi HBW ton boat rent karan, PCOC deni paini hai?', answer: 'ਹਾਂ। Harris Boat Works ਵਿੱਚ ਹਰ driver ਨੂੰ check-in ਸਮੇਂ ਵੈਧ boat operator licence ਦਿਖਾਉਣਾ ਲਾਜ਼ਮੀ ਹੈ। Rental safety checklist safety briefing ਵਜੋਂ ਫਿਰ ਵੀ ਪੂਰੀ ਹੁੰਦੀ ਹੈ, ਪਰ HBW ਇਸਨੂੰ driver ਦੇ licence ਦੀ ਥਾਂ ਨਹੀਂ ਵਰਤਦਾ। ਜਿਹੜੇ passengers boat ਨਹੀਂ ਚਲਾਉਣਗੇ, ਉਹਨਾਂ ਨੂੰ PCOC ਦੀ ਲੋੜ ਨਹੀਂ।' },
-      { question: 'Kya “boat license” te “boat operator card” different hunde ne?', answer: 'Boat license (PCL) boat di registration number hai; operator card (PCOC) tuhadi training da saboot hai. New, transfer ya renew PCL hun $24.41 CAD / 5 saal; jaankari update muft. Doven vakt confuse na ho, official terms PCL te PCOC yaad rakho.' },
+      { question: 'Kya “boat license” te “boat operator card” different hunde ne?', answer: 'Boat license (PCL) ਕਿਸ਼ਤੀ ਦਾ ਪਛਾਣ ਲਾਇਸੰਸ/ਨੰਬਰ ਹੈ, Transport Canada ਤੋਂ, ਜ਼ਰੂਰੀ ਉਹਨਾਂ ਕਿਸ਼ਤੀਆਂ ਲਈ ਜਿਹਨਾਂ ਦੇ ਇੰਜਣ 10 hp (7.5 kW) ਜਾਂ ਵੱਧ ਹਨ; ਇਹ vessel registration ਤੋਂ ਵੱਖਰਾ ਹੈ ਅਤੇ ਮਾਲਕੀ ਦਾ ਸਬੂਤ ਨਹੀਂ ਹੈ। Operator card (PCOC) tuhadi training da saboot hai. New, transfer ya renew PCL hun $24.41 CAD / 5 saal; jaankari update muft. Doven vakt confuse na ho, official terms PCL te PCOC yaad rakho.' },
       { question: 'PCOC course online muft Punjabi vich mil sakda ae?', answer: 'Muft Punjabi course da bharosa na karo; providers keemat mangange. Translation app naal study asaan ho sakda hai. Official exam language ate approved assistance (interpreter samet) paise laun ton pehlan accredited provider naal unhan de approved protocol heth taiya karo. Eh na samjho ke Punjabi exam har thaon milda hai, te eh vi na samjho ke English/French ton bina koi sahaita hi nahi. Family nu bina manzoori exam vich bitha ke jawab ya anuvaad na karvao.' },
       { question: 'Mere chacha ji apni boat leke Ontario aaye; kya oh bina card de chala sakde?', answer: 'ਨਹੀਂ, motor boat operate ਕਰਨ ਲਈ valid PCOC ਹੋਣੀ ਚਾਹੀਦੀ, ਨਹੀਂ ਤਾਂ officer penalty ਲਾ ਸਕਦਾ। Temporary visitor ਵੀ online course ਕੀਤਾ ਜਾ ਸਕਦਾ, ਇਸ ਲਈ planning ਕਰਕੇ ਆਓ।' },
       { question: 'Ki Harris Boat Works te Punjabi vich service mildi hai?', answer: 'ਇਹ guide Punjabi ਵਿੱਚ ਲਿਖੀ ਸੀ, ਪਰ ਸਾਡੀ ਸੇਵਾ English ਵਿੱਚ ਹੀ ਚੱਲਦੀ ਹੈ। ਨਾਲ English ਦਾ ਬੰਦਾ ਲੈ ਆਓ ਜਾਂ phone translate ਵਰਤੋ, ਅਸੀਂ ਰੁਕ ਕੇ ਸਮਝਾਵਾਂਗੇ, ਕੋਈ ਮੁਸ਼ਕਲ ਨਹੀਂ। (ਉੱਪਰ ਵਾਲੀ ਇਮਾਨਦਾਰੀ ਵਾਲੀ ਗੱਲ ਵੇਖ ਲਓ।)' }
@@ -182,7 +182,7 @@ A: ਪਹਿਲਾਂ Transport Canada ਦੇ ਮਾਨਤਾ-ਪ੍ਰਾਪਤ
 A: ਹਾਂ। Harris Boat Works ਵਿੱਚ ਹਰ driver ਨੂੰ check-in ਸਮੇਂ ਵੈਧ boat operator licence ਦਿਖਾਉਣਾ ਲਾਜ਼ਮੀ ਹੈ। Rental safety checklist briefing ਵਜੋਂ ਪੂਰੀ ਹੁੰਦੀ ਹੈ, ਪਰ driver ਦੇ licence ਦੀ ਥਾਂ ਨਹੀਂ ਲੈਂਦੀ।
 
 **Q: Kya “boat license” te “boat operator card” different hunde ne?**  
-A: Boat license (PCL) boat di registration number hai; operator card (PCOC) tuhadi training da saboot hai. New, transfer ya renew PCL hun $24.41 CAD / 5 saal; jaankari update muft. Doven vakt confuse na ho, official terms PCL te PCOC yaad rakho.
+A: Boat license (PCL) ਕਿਸ਼ਤੀ ਦਾ ਪਛਾਣ ਲਾਇਸੰਸ/ਨੰਬਰ ਹੈ, Transport Canada ਤੋਂ, ਜ਼ਰੂਰੀ ਉਹਨਾਂ ਕਿਸ਼ਤੀਆਂ ਲਈ ਜਿਹਨਾਂ ਦੇ ਇੰਜਣ 10 hp (7.5 kW) ਜਾਂ ਵੱਧ ਹਨ; ਇਹ vessel registration ਤੋਂ ਵੱਖਰਾ ਹੈ ਅਤੇ ਮਾਲਕੀ ਦਾ ਸਬੂਤ ਨਹੀਂ ਹੈ। Operator card (PCOC) tuhadi training da saboot hai. New, transfer ya renew PCL hun $24.41 CAD / 5 saal; jaankari update muft. Doven vakt confuse na ho, official terms PCL te PCOC yaad rakho.
 
 **Q: PCOC course online muft Punjabi vich mil sakda ae?**  
 A: Muft Punjabi course da bharosa na karo; providers keemat mangange. Translation app naal study asaan ho sakda hai. Official exam language ate approved assistance (interpreter samet) paise laun ton pehlan accredited provider naal unhan de approved protocol heth taiya karo. Eh na samjho ke Punjabi exam har thaon milda hai, te eh vi na samjho ke English/French ton bina koi sahaita hi nahi. Family nu bina manzoori exam vich bitha ke jawab ya anuvaad na karvao.

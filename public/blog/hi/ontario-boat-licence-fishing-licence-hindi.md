@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/hi/ontario-boat-licence-fishing-licence-hindi.md
-last_updated: 2026-10-04
+last_updated: 2026-10-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Ontario boat licence aur fishing licence: PCOC kya hai | पूरी �
 description: "PCOC kya hai? Ontario boat licence aur fishing licence में अंतर, दोनों कैसे बनवाएं, fee structure और Rice Lake के नियम। पूरी जानकारी Hindi में यहां पढ़ें।"
 category: "हिन्दी गाइड"
 date_published: 2026-06-12
-date_modified: 2026-10-04
+date_modified: 2026-10-06
 keywords: ["pcoc kya hai Ontario (What is PCOC in Ontario)","boat operator license kaise banwayein Canada (How to get boat operator license in Canada)","Ontario boat license online hindi (Ontario boat license online in Hindi)","pcoc ka exam pass karne ke tips (Tips to pass PCOC exam)","boat chalane ka license kitne din mein milta hai (How many days to get a boating license)","Ontario fishing license hindi mein jaankari (Information about Ontario fishing license in Hindi)","Toronto ke paas machli pakadne ki jagahein (Fishing spots near Toronto)","Ontario fishing rules 2024 hindi (Ontario fishing rules 2024 Hindi)","fishing season Ontario kab se hai (When does fishing season start in Ontario)","best fishing spots near Toronto hindi (Best fishing spots near Toronto in Hindi)"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** हिन्दी गाइड  
 **Published:** 2026-06-12  
-**अंतिम समीक्षा:** 2026-10-04  
+**अंतिम समीक्षा:** 2026-10-06  
 **Read time:** 8 मिनट  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/hi/ontario-boat-licence-fishing-licence-hindi
 
@@ -58,7 +58,7 @@ Harris Boat Works पर हम नावों की रजिस्ट्र�
 
 ## Ontario fishing license: Outdoors Card aur licence | ओंटेरियो फिशिंग लाइसेंस: आउटडोर्स कार्ड और लाइसेंस
 
-मछली पकड़ने के लिए दो चीज़ें चाहिए: एक प्लास्टिक का Outdoors Card और एक मछली पकड़ने का लाइसेंस टैग। Outdoors Card आपकी पहचान का कार्ड है, जो हर तीन साल में बनवाना होता है (या रिन्यू कराना होता है)। फिर हर साल आप उस कार्ड पर एक मछली पकड़ने का लाइसेंस खरीदते हैं। लाइसेंस दो तरह के होते हैं:
+मछली पकड़ने के लिए दो चीज़ें चाहिए: एक प्लास्टिक का Outdoors Card और एक मछली पकड़ने का लाइसेंस टैग। Outdoors Card आपकी पहचान का कार्ड है, जो हर तीन साल में बनवाना होता है (या रिन्यू कराना होता है)। फिर हर साल आप उस कार्ड पर एक मछली पकड़ने का लाइसेंस खरीदते हैं। छूट भी जान लें: Ontario और कनाडा के निवासी जो 18 साल से कम या 65 या उससे अधिक उम्र के हैं, उन्हें लाइसेंस की ज़रूरत नहीं है, बस साथ में सरकारी पहचान दस्तावेज़ रखें। Residents के लिए हर साल चार लाइसेंस-मुफ़्त मछली पकड़ने के अवधि होते हैं: Family Day weekend, Mother's Day weekend, Father's Day weekend, और Canada Day के आसपास Ontario Family Fishing Week। लाइसेंस दो तरह के होते हैं:
 
 - Sport Fishing Licence (स्पोर्ट लाइसेंस): इसमें मछली रखने की सीमा ज़्यादा होती है।
 - Conservation Fishing Licence (कंज़र्वेशन लाइसेंस): सीमा कम होती है और यह सस्ता होता है।
@@ -120,7 +120,7 @@ PCOC यानी Pleasure Craft Operator Card बताता है कि आ
 
 ### Ontario fishing license hindi mein jaankari kahan milegi?
 
-हमने ऊपर पूरी जानकारी हिंदी में दे दी है। मुख्य बात: पहले Outdoors Card बनवाएँ (हर तीन साल में), फिर हर साल उस पर एक मछली पकड़ने का लाइसेंस खरीदें, आप कंज़र्वेशन या स्पोर्ट लाइसेंस चुन सकते हैं। सब कुछ आधिकारिक वेबसाइट पर ऑनलाइन मिलता है: https://www.ontario.ca/page/fishing-licence-ontario-and-canadian-residents
+हमने ऊपर पूरी जानकारी हिंदी में दे दी है। मुख्य बात: पहले Outdoors Card बनवाएँ (हर तीन साल में), फिर हर साल उस पर एक मछली पकड़ने का लाइसेंस खरीदें, आप कंज़र्वेशन या स्पोर्ट लाइसेंस चुन सकते हैं। छूट याद रखें: Ontario और कनाडा के निवासी जो 18 साल से कम या 65 या उससे अधिक उम्र के हैं, उन्हें लाइसेंस की ज़रूरत नहीं है (साथ में सरकारी पहचान दस्तावेज़ रखें), और residents के लिए हर साल चार लाइसेंस-मुफ़्त मछली पकड़ने के अवधि होते हैं। सब कुछ आधिकारिक वेबसाइट पर ऑनलाइन मिलता है: https://www.ontario.ca/page/fishing-licence-ontario-and-canadian-residents
 
 ### fishing season Ontario kab se hai?
 

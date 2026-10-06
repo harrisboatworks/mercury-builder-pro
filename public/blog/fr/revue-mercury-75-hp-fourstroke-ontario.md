@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/revue-mercury-75-hp-fourstroke-ontario.md
-last_updated: 2026-09-11
+last_updated: 2026-10-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury 75 HP FourStroke : pourquoi HBW ne le tient pas en stock (et pou
 description: "Une réponse honnête d'un concessionnaire Mercury en Ontario. Nous privilégions souvent le 90 HP quand la plaque de capacité le permet."
 category: "Avis produit"
 date_published: 2026-05-13
-date_modified: 2026-09-11
+date_modified: 2026-10-06
 keywords: ["revue Mercury 75 HP","Mercury 75 HP FourStroke","Mercury 75 vs 90","Mercury 75 ELPT Ontario","Mercury 90 mieux que 75"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Catégorie :** Avis produit\
 **Publié le :** 2026-05-13\
-**Dernière révision :** 2026-09-11\
+**Dernière révision :** 2026-10-06\
 **Temps de lecture :** 7 min\
 **URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/revue-mercury-75-hp-fourstroke-ontario
 
@@ -95,7 +95,7 @@ Trois scénarios réels :
 | Bateau de pêche en aluminium 14 à 17 pi | 90 ELPT FourStroke, embase standard. Plane plus facilement, croisière plus rapide au même régime. |
 | Petit ponton sous 20 pi | 90 ELPT Command Thrust, l'embase CT fait une différence significative sur les coques à fond plat. |
 | Petite vedette de chalet | 90 ELPT FourStroke, même logique que le bateau de pêche. |
-| Remotorisation d'un vieux 60 à 75 HP deux temps | 90 ELPT FourStroke, plus léger, plus silencieux, plus propre, plus efficace. |
+| Remotorisation d'un vieux 60 à 75 HP deux temps | 90 ELPT FourStroke, plus silencieux, plus propre et plus économique, mais plus lourd (environ 165 kg). Vérifiez la capacité du tableau arrière et la plaque : un 90 convient à une plaque de 115 HP, un modèle sous le maximum. |
 
 Si votre coque est cotée pour un maximum de 60 HP, vous êtes dans la conversation du Mercury 60 ELPT FourStroke, pas celle-ci. Le 60 fonctionne sur un bloc plus petit de 1,0 L, un moteur entièrement différent.
 
