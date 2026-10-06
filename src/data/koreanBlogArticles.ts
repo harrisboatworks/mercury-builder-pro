@@ -191,7 +191,7 @@ Harris Boat Works, Mercury Marine Premier 딜러. 1947년 창립.
     image: '/lovable-uploads/ko-rice-lake-fishing-guide-hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-10-04',
+    dateModified: '2026-10-06',
     publishDate: '2026-04-12',
     category: '낚시 가이드',
     readTime: '10 분',
@@ -224,7 +224,7 @@ Rice Lake는 토론토에서 약 1.5시간(401 동쪽 → 115 북쪽) 거리에 
 
 Rice Lake는 온타리오 Kawarthas 지역에 위치합니다. 남쪽 호숫가 Gores Landing이라는 작은 마을에 Harris Boat Works가 1947년부터 자리 잡고 있습니다.
 
-**토론토에서 오는 길:** 401 동쪽 → 115/35번 북쪽 → Gores Landing으로 내비게이션. 약 1.5시간 소요.
+**토론토에서 오는 길:** 401번 고속도로를 타고 동쪽으로 가다가 Cobourg의 472번 출구(County Road 18 / Burnham Street)로 나와 County Road 18을 따라 북쪽으로 약 16 km 가면 Gores Landing에 도착합니다. 토론토 시내에서 약 1시간 45분 걸립니다.
 
 ---
 
@@ -335,7 +335,7 @@ Largemouth bass(큰입배스)와 smallmouth bass(작은입배스) 두 종류. Sm
 **주소:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 ---`,
     faqs: [
-      { question: '토론토에서 얼마나 걸리나요?', answer: '약 1.5시간입니다 (401 동쪽 → 115 북쪽).' },
+      { question: '토론토에서 얼마나 걸리나요?', answer: '토론토 시내에서 약 1시간 45분입니다. 401번 고속도로 동쪽 방향으로 가다가 Cobourg의 472번 출구(County Road 18 / Burnham Street)로 나와 County Road 18을 따라 북쪽으로 약 16 km 가면 Gores Landing에 도착합니다.' },
       { question: '렌탈 보트에 낚시 장비가 포함되나요?', answer: '아니요. 보트만 대여되며, 낚싯대·줄·루어 등은 직접 준비해야 합니다.' },
       { question: '낚시 면허 없이 낚시하면 어떻게 되나요?', answer: '벌금 대상입니다. 18~64세는 반드시 면허가 필요합니다.' },
       { question: '보트 없이 Rice Lake에서 낚시할 수 있나요?', answer: '호숫가에서 뚝방 낚시가 가능한 곳도 있지만, 보트를 이용하면 접근 가능한 포인트가 훨씬 넓어집니다. HBW에서 당일 렌탈이 가능합니다.' },
@@ -926,7 +926,7 @@ OPP 수상 순찰에 적발 시 과태료가 부과됩니다. $250부터 시작�
     image: '/lovable-uploads/hero-avator-range-rice-lake.png',
     author: 'Harris Boat Works',
     datePublished: '2026-06-08',
-    dateModified: '2026-09-06',
+    dateModified: '2026-10-06',
     publishDate: '2026-06-08',
     category: '구매 가이드',
     readTime: '8 분',
@@ -955,7 +955,7 @@ OPP 수상 순찰에 적발 시 과태료가 부과됩니다. $250부터 시작�
 |---|---|---|---|
 | 7.5e | 750 W | 약 3.5마력 (가솔린 비교) | 딩기, 카누, 작은 보트 보조 |
 | 20e | 2,200 W | 약 5마력 (가솔린 비교) | 소형 알루미늄, 트롤링 |
-| 35e | 3,800 W | 약 9.9마력 (가솔린 비교) | 14~16피트 알루미늄, 폰툰 보조 |
+| 35e | 3,700 W (3.7 kW, 정격 프로펠러 축 출력) | 약 9.9마력 (가솔린 비교) | 14~16피트 알루미늄, 폰툰 보조 |
 | 75e | 7,500 W | 10마력 (프로펠러 축 출력 환산) | 폰툰 보조, 중형 알루미늄 |
 | 110e | 11,000 W | 15마력 (프로펠러 축 출력 환산) | 폰툰, 중형 보트 메인 동력 |
 
@@ -1102,7 +1102,7 @@ Harris Boat Works는 1947년부터 운영된 가족 기업이며, 1965년부터 
     imageAlt: '공식 건조 중량에 장비와 유체 무게를 고려하고 선체의 허용 한도를 확인하는 과정.',
     author: 'Harris Boat Works',
     datePublished: '2026-06-08',
-    dateModified: '2026-09-11',
+    dateModified: '2026-10-06',
     publishDate: '2026-06-08',
     category: '구매 가이드',
     readTime: '7 분',
@@ -1144,7 +1144,7 @@ Harris Boat Works는 1947년부터 운영된 가족 기업이며, 1965년부터 
 | 115 | 163 kg | 359 lb | 표준 115와 동일; 머큐리가 동급 최경량 퍼포먼스 115로 소개 |
 | 150 | 207 kg | 456 lb | 3.0 L |
 | 175 | 213 kg | 470 lb | 3.4 L V6 |
-| 200 / 225 / 250 / 300 | 229 kg | 505 lb | 4.6 L V8 |
+| 200 / 225 / 250 / 300 Pro XS | 232 kg | 511 lb | 4.6 L V8 |
 
 모든 수치는 머큐리가 공개한 가장 가벼운 구성의 건조 중량입니다. 표의 건조 중량이 실제 설치 총중량은 아닙니다. 구성에 필요한 장비와 유체의 무게를 고려하고, 엔진을 선택하기 전에 선체의 허용 한도를 확인하세요. 샤프트가 길거나 Command Thrust, 리깅이 추가되면 무거워지므로 한 마력대에 여러 공식 무게가 있을 수 있습니다. 출처: 머큐리 마린 공식 사양.
 
@@ -1179,7 +1179,7 @@ Harris Boat Works는 1947년부터 운영된 가족 기업이며, 1965년부터 
       { question: '머큐리 115 4행정의 무게는 얼마인가요?', answer: '머큐리 공식 사양상 115 FourStroke는 가장 가벼운 구성에서 약 163 kg(359 lb)이며, Command Thrust 버전은 약 165 kg(363 lb)입니다. 115 Pro XS도 동일한 약 163 kg(359 lb)입니다. 샤프트 길이가 길어지면 무게가 늘어납니다.' },
       { question: '머큐리 90마력 선외기 무게는 얼마인가요?', answer: '가장 가벼운 구성에서 약 163 kg(359 lb), Command Thrust 기어케이스 적용 시 약 165 kg(363 lb)입니다. 75, 90, 115는 동일한 2.1 L 블록을 공유해 무게가 같습니다.' },
       { question: '가장 가벼운 115마력 선외기는 무엇인가요?', answer: '머큐리 115 Pro XS로 약 163 kg(359 lb)이며, 머큐리는 이를 동급 최경량 퍼포먼스 115라고 소개합니다(약 9 kg / 20 lb 차이). 표준 115 FourStroke도 가장 가벼운 구성에서 같은 약 163 kg(359 lb)입니다.' },
-      { question: '머큐리 250마력 선외기 무게는 얼마인가요?', answer: '계열에 따라 다릅니다. 250 Pro XS V8은 약 229 kg(505 lb), 250 FourStroke V8은 약 239 kg(527 lb)이며, 둘 다 가장 가벼운 구성 기준입니다.' },
+      { question: '머큐리 250마력 선외기 무게는 얼마인가요?', answer: '계열에 따라 다릅니다. 250 Pro XS V8은 약 232 kg(511 lb), 250 FourStroke V8은 약 239 kg(527 lb)이며, 둘 다 가장 가벼운 구성 기준입니다.' },
     ],
   },
 ];
