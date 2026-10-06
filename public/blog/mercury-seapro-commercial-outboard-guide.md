@@ -117,7 +117,7 @@ Most Ontario recreational buyers do not need SeaPro. If you are not earning inco
 
 ---
 
-![Black Mercury SeaPro outboard on a rugged aluminum work boat, illustrating commercial-grade reliability for guides.](/lovable-uploads/inline/inline-mercury-seapro-commercial.png)
+![Infographic: what differs between Mercury SeaPro and a standard FourStroke, the typical price premium, and which annual-hours bands actually need SeaPro.](/lovable-uploads/inline/seapro-vs-fourstroke-2026-09.webp)
 
 ## Does SeaPro make sense for recreational boaters?
 

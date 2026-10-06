@@ -196,7 +196,7 @@ Depends on duration and how you responded. If you reduced load, followed the dis
 - [Mercury Overheating Emergency Guide](/blog/outboard-overheating-emergency-guide), on-water overheating emergency guide
 - [When to Replace a Mercury Impeller: 12 Years of Shop Data](/blog/mercury-impeller-replacement-when-they-fail), when impellers fail and how to replace
 - [Mercury Boat Battery Guide Ontario](/blog/mercury-boat-battery-guide-ontario), boat battery selection and care
-- [Boat Electrical Safety Ontario](/blog/boat-electrical-safety-checklist-ontario-freshwater), freshwater electrical safety checklist
+- [What Battery Does My Mercury Outboard Need? MCA, Group Size and Lithium Rules](/blog/mercury-outboard-battery-size-guide), cranking battery specs by Mercury model, plus the lithium rules
 
 ## Next steps
 

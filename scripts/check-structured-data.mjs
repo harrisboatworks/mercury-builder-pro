@@ -42,7 +42,7 @@ const REQUIRED_FIELDS = {
   Store: ['name', 'address'],
   Organization: ['name'],
   Article: ['headline', 'datePublished'],
-  BlogPosting: ['headline', 'datePublished'],
+  BlogPosting: ['headline', 'datePublished', 'image'],
   NewsArticle: ['headline', 'datePublished'],
   BreadcrumbList: ['itemListElement'],
   FAQPage: ['mainEntity'],

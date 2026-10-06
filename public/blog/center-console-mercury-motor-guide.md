@@ -126,7 +126,7 @@ This is the most common Ontario center console application.
 **Performance:** 50 to 60 mph two-up.
 **Use case:** Lake Ontario salmon tournament days, bigger-water Bay of Quinte.
 
-![24-foot center-console fishing boat with twin Mercury Verado V8 outboards](/lovable-uploads/inline/inline-center-console-twin-verados.png)
+![Infographic comparing a single Mercury with twin outboards on a center console: twins buy get-home redundancy and total power, not extra speed, and typically cost substantially more.](/lovable-uploads/inline/center-console-single-vs-twin-2026-09.webp)
 
 ### 25 to 28 ft twin-engine
 **Motor:** Twin 250 Pro XS V8 for performance; twin 300 Verado V8 for premium ride.

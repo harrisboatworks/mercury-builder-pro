@@ -185,9 +185,9 @@ Jay Harris helps run Harris Boat Works, a third-generation family marina in Gore
 
 ## More from HBW on Mercury performance and repowers
 
-- [Mercury 150–300 HP Pro XS Performance Guide](/blog/mercury-150-300hp-pro-xs-performance-guide), full lineup walk-through with HP, weights, and use cases
-- [Boat Hull Replacement vs Repower Decision](/blog/boat-hull-replacement-vs-repower-decision), when the hull is the limit, not the motor
-- [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide), current planning ranges across the lineup
+- [Mercury 150–300 HP Pro XS Performance Guide](/blog/mercury-150-300hp-pro-xs-performance-guide): full lineup walk-through with HP, weights, and use cases
+- [Boat Hull Replacement vs Repower Decision](/blog/boat-hull-replacement-vs-repower-decision): when the hull is the limit, not the motor
+- [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide): current planning ranges across the lineup
 
 For a real CAD quote on a Pro XS repower, use the quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca). For service bookings and shop appointments, [hbw.wiki/service](https://hbw.wiki/service).
 
@@ -235,9 +235,9 @@ Yes, on repowers above $5,000 CAD. We offer financing through Mercury's repower 
 
 - [Boat Repower in the Kawarthas: Complete Guide](/blog/complete-guide-boat-repower-kawarthas), the full Kawarthas repower playbook
 - [Ontario Cottage Boat Motor Repower Guide (2026)](/blog/ontario-cottage-boat-motor-repower-guide), cottage-specific repower considerations
+- [The 4-Point Aluminum Transom Check Before You Repower](/blog/aluminum-boat-transom-inspection-guide), the four transom checks to run before you repower
 - [Winter Repower Planning: Get Ready for Spring](/blog/winter-repower-planning-guide), why winter is the smart time to plan
 - [Pleasure Craft Licence Update During Repower (Ontario 2026)](/blog/pleasure-craft-licence-update-repower-ontario), updating your PCL after a repower
-- [Ordering Your Mercury: What to Expect](/blog/mercury-ordering-process), how Mercury motors are ordered and delivered
 
 ## Next steps
 

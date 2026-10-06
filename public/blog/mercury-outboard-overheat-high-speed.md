@@ -117,9 +117,9 @@ Treat it as an urgent warning. Follow the engine's warning response, stop when d
 
 - [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide), choosing the right propeller
 - [Mercury Boat Battery Guide Ontario](/blog/mercury-boat-battery-guide-ontario), boat battery selection and care
+- [What Battery Does My Mercury Outboard Need? MCA, Group Size and Lithium Rules](/blog/mercury-outboard-battery-size-guide), cranking battery specs by Mercury model, plus the lithium rules
 - [Boat Electrical Safety Ontario](/blog/boat-electrical-safety-checklist-ontario-freshwater), freshwater electrical safety checklist
 - [How to Trim a Boat With a Mercury Outboard: Read the Boat, Not Just the Gauge](/blog/how-to-trim-boat-mercury-outboard), how to trim your Mercury outboard
-- [Read Mercury Outboard Serial Number](/blog/how-to-read-mercury-outboard-serial-number), decoding the Mercury serial number
 
 ## Next steps
 

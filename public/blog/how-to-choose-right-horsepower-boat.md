@@ -176,7 +176,7 @@ We won't over-power your boat. We also won't recommend the cheapest option if we
 
 ---
 
-![Mercury 25 HP and 90 HP outboards on aluminum boats to illustrate different horsepower needs for boat sizing.](/lovable-uploads/inline/inline-horsepower-selection.png)
+![Infographic: start one Mercury model step below the capacity plate maximum, then adjust for hull, load, use and where you run the boat.](/lovable-uploads/inline/hp-one-step-below-max-2026-09.webp)
 
 ## When to step up, when to stay
 

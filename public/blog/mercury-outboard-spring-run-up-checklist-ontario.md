@@ -85,7 +85,7 @@ _Prices here are planning figures as of September 2026. For live Mercury motor p
 
 If anything feels wrong during this sequence, stop. Don't push through. Most spring problems get worse, not better, when ignored.
 
-![Technician checking the cooling system telltale stream on a Mercury FourStroke outboard during spring run-up.](/lovable-uploads/inline/inline-mercury-telltale-water-stream.png)
+![Diagram of an outboard telltale showing a good steady stream, a weak or intermittent stream, and no flow, with what to do in each case.](/lovable-uploads/inline/telltale-stream-good-weak-none-2026-09.webp)
 
 ## When something is wrong, the most likely culprits
 
@@ -151,7 +151,7 @@ Running an engine with inadequate cooling can damage it. Follow the exact engine
 - [How to Break In a New Mercury Outboard](/blog/breaking-in-new-mercury-motor-guide), breaking in a new Mercury
 - [Your New Mercury Outboard's First Season: What to Expect From PDI to First Service](/blog/new-mercury-outboard-first-season-guide-ontario)
 - [Mercury Outboard Oil Capacity Chart: Model and Year Lookup](/blog/mercury-outboard-oil-capacity-chart)
-- [Mercury Outboard Maintenance Parts List: Filters, Plugs, Kits and Part Numbers (2.5 to 600 HP)](/blog/mercury-outboard-maintenance-parts-list), the full Mercury maintenance parts and part-number list
+- [Why Mercury FourStrokes Make Oil (and What Actually Fixes It)](/blog/mercury-fourstroke-making-oil-guide), why oil levels rise after trolling and how to fix it
 
 ## Next steps
 

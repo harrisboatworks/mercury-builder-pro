@@ -131,7 +131,7 @@ HBW 的 Lightspeed 记录显示，有 **2025 年 8 月至 11 月完成的 584 �
     image: '/lovable-uploads/aluminum-fishing-hero-real.webp',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-10-04',
+    dateModified: '2026-10-06',
     publishDate: '2026-04-12',
     category: '钓鱼指南',
     readTime: '9 分钟',
@@ -160,7 +160,7 @@ item6En: Mercury dealer since 1965
 item6Zh: 自1965年起的 Mercury 经销商
 ctaEn: Build your quote
 ctaZh: 在线获取报价
-ctaHref: /quote
+ctaHref: /quote/motor-selection
 ::
 
 ---
@@ -273,7 +273,7 @@ Rice Lake 周边有公共和商业下水选择，但设施、收费、停车和�
 **主马达：** 先看船厂 capacity plate、船体重量、负载与原厂适配，不要只按船长套用通用马力范围
 **低速推进：** 电动 trolling motor 或合适的 Mercury ProKicker，选择取决于船体、续航、充电和冗余需求
 **电子设备：** 使用更新的 Chartplotter 与声呐辅助识别湖底结构和旧铁路区域，但仍须观察水面与水深
-**建议装备：** 每人一件合身 PFD、适用的发声和照明设备、锚与锚绳、备用推进方式；法定最低装备仍须按[船型和船长查表](https://tc.canada.ca/sites/default/files/2026-05/boating_guide_2026_en_acc.pdf)
+**建议装备：** 每人一件合身 PFD、适用的发声和照明设备、锚与锚绳、备用推进方式；法定最低装备仍须按[Transport Canada boating safety](https://tc.canada.ca/en/marine-transportation/marine-safety/boating-safety)
 
 ProKicker 的低速控制和充电能力适合认真拖钓，但是否需要 kicker 取决于船体、主机怠速表现、电动拖钓马达、预算和安全冗余。先确认船厂马力标牌、艉板空间、转向和充电需求，再由经销商配型。
 
@@ -336,7 +336,7 @@ HBW 要求每位驾驶员出示有效 boat operator licence／PCOC 和带照片�
 - [Ontario：Fisheries Management Zone 17](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17)
 - [Ontario：Fishing licence 资格](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees)
 - [Ontario：2026 fishing licence fees](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees)
-- [Transport Canada：2026 Safe Boating Guide](https://tc.canada.ca/sites/default/files/2026-05/boating_guide_2026_en_acc.pdf)
+- [Transport Canada boating safety](https://tc.canada.ca/en/marine-transportation/marine-safety/boating-safety)
 - [HBW：当前在线租船页面](https://www.harrisboatworks.ca/rentals)
 
 > **语言说明**
@@ -396,7 +396,7 @@ item6En: Mercury dealer since 1965
 item6Zh: 自1965年起的 Mercury 经销商
 ctaEn: Build your quote
 ctaZh: 在线获取报价
-ctaHref: /quote
+ctaHref: /quote/motor-selection
 ::
 
 ---
@@ -558,12 +558,12 @@ Harris Boat Works，自1965年起的 Mercury 经销商。
     image: '/lovable-uploads/home-step3-rice-lake-water-test.webp',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-10-04',
+    dateModified: '2026-10-06',
     publishDate: '2026-04-12',
     category: '法规安全',
     readTime: '9 分钟',
     keywords: ['安大略省船只法规', '加拿大快艇驾照', '船只安全装备要求', 'Ontario boating regulations Chinese'],
-    content: `> **简短答案：** 操作动力休闲船的人需要随船携带 PCOC 或其他合资格的操作能力证明。主要在加拿大使用、发动机总功率至少 10 HP（7.5 kW）的合资格休闲船通常需要 PCL，除非已经注册。钓鱼证不是“开船证”：只有钓鱼时才需要按年龄、居住身份和牌照类型确认安省钓鱼资格。船上安全装备则按船型、船长和使用条件决定，不能用一张万能清单代替 [Transport Canada 2026 Safe Boating Guide](https://tc.canada.ca/sites/default/files/2026-05/boating_guide_2026_en_acc.pdf)。
+    content: `> **简短答案：** 操作动力休闲船的人需要随船携带 PCOC 或其他合资格的操作能力证明。主要在加拿大使用、发动机总功率至少 10 HP（7.5 kW）的合资格休闲船通常需要 PCL，除非已经注册。钓鱼证不是“开船证”：只有钓鱼时才需要按年龄、居住身份和牌照类型确认安省钓鱼资格。船上安全装备则按船型、船长和使用条件决定，不能用一张万能清单代替 [Transport Canada boating safety](https://tc.canada.ca/en/marine-transportation/marine-safety/boating-safety)。
 
 需要考取 PCOC？通过 [HBW 的 MyBoatCard 推荐链接](https://myboatcard.com/card/harrisboat)参加在线课程，使用优惠码 **HARRIS15** 可享 **15% 折扣**。
 
@@ -589,7 +589,7 @@ Harris Boat Works，自1965年起的 Mercury 经销商。
 
 最低装备取决于船型、船长、是否有发动机或燃油设备，以及是否在夜间或低能见度航行。常见项目包括每人一件合身并获认可的 lifejacket／PFD、浮力抛绳、重新登船装置、发声设备、照明、舀水或抽水设备；灭火器、照明、信号弹、指南针和雷达反射器等要求并非对每艘船都完全相同。
 
-最可靠做法是按自己船的类型和长度查看 [2026 Safe Boating Guide 的装备表](https://tc.canada.ca/sites/default/files/2026-05/boating_guide_2026_en_acc.pdf)，并确保装备状态良好、容易取用。只有“船上有”还不够。
+最可靠做法是按自己船的类型和长度查看 [Transport Canada boating safety](https://tc.canada.ca/en/marine-transportation/marine-safety/boating-safety)，并确保装备状态良好、容易取用。只有“船上有”还不够。
 
 ## 莱斯湖钓鱼法规
 
@@ -619,7 +619,7 @@ Rice Lake 属于安大略 Fisheries Management Zone 17（FMZ 17）。Walleye（�
 
 ## 官方来源
 
-- [Transport Canada：2026 Safe Boating Guide](https://tc.canada.ca/sites/default/files/2026-05/boating_guide_2026_en_acc.pdf)
+- [Transport Canada boating safety](https://tc.canada.ca/en/marine-transportation/marine-safety/boating-safety)
 - [Transport Canada：申请或管理 PCL](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl)
 - [Ontario：Fishing licence 资格](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees)
 - [Ontario：Fisheries Management Zone 17](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17)
@@ -797,7 +797,7 @@ item5En: Mercury dealer since 1965
 item5Zh: 自1965年起的 Mercury 经销商
 ctaEn: Build your quote
 ctaZh: 在线获取报价
-ctaHref: /quote
+ctaHref: /quote/motor-selection
 ::
 
 > **关于语言的说明**
@@ -1116,7 +1116,7 @@ item6En: Mercury dealer since 1965
 item6Zh: 自1965年起的 Mercury 经销商
 ctaEn: Build your quote
 ctaZh: 在线获取报价
-ctaHref: /quote
+ctaHref: /quote/motor-selection
 ::
 
 ---
@@ -1278,7 +1278,7 @@ item6En: Mercury dealer since 1965
 item6Zh: 自1965年起的 Mercury 经销商
 ctaEn: Build your quote
 ctaZh: 在线获取报价
-ctaHref: /quote
+ctaHref: /quote/motor-selection
 ::
 
 ---
@@ -1587,7 +1587,7 @@ item6En: Mercury dealer since 1965
 item6Zh: 自1965年起的 Mercury 经销商
 ctaEn: Build your quote
 ctaZh: 在线获取报价
-ctaHref: /quote
+ctaHref: /quote/motor-selection
 ::
 
 ---
@@ -2012,7 +2012,7 @@ item6En: Mercury dealer since 1965
 item6Zh: 自1965年起的 Mercury 经销商
 ctaEn: Build your quote
 ctaZh: 在线获取报价
-ctaHref: /quote
+ctaHref: /quote/motor-selection
 ::
 
 ---

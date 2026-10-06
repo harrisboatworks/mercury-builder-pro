@@ -163,7 +163,7 @@ Our standard repower includes a rigging assessment. If the controls are tired, w
 
 The other observation: customers consistently under-spec horsepower when they own their first boat, and over-spec on the second one. Match the motor to your actual use case, not the spec sheet aspirations.
 
-- [Mercury Pro XS Buyer Guide](/blog/mercury-pro-xs-buyer-guide-ontario), the performance-tuned alternative
+- [Mercury Pro XS Buyer Guide](/blog/mercury-pro-xs-buyer-guide-ontario): the performance-tuned alternative
 - [Mercury 40 vs 60 HP comparison](/blog/mercury-40-vs-60-hp-outboard-ontario)
 - [Mercury 75 vs 90 vs 115 comparison](/blog/mercury-75-vs-90-vs-115-comparison)
 - [Mercury 115 vs 150 HP comparison](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026)

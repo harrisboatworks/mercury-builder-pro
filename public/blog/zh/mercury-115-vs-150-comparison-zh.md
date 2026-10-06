@@ -43,7 +43,7 @@ revenue_driver: repower
 - 透明加元价格，无需讨价还价
 - 从 GTA 经 401 + 115 高速约 60 到 90 分钟车程
 
-[在线获取报价](/quote)
+[在线获取报价](/quote/motor-selection)
 
 ---
 
