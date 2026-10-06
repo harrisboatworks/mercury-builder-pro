@@ -2975,21 +2975,30 @@ function firstParagraph(content, fallback) {
   return plain.length > 280 ? plain.slice(0, 277).replace(/\s+\S*$/, '').trim() + '...' : plain;
 }
 
+// Price cells in these fallbacks are built from the canonical price list at
+// prerender time. Never type a dollar figure into them: hand-typed prices
+// drifted from the live list (blog audit, 2026-10-06).
+const canonicalSkuByModel = new Map(canonicalPricingSkus.map((sku) => [sku.model, sku]));
+const fallbackAsOf = canonicalPricingLastUpdated ? `as of ${canonicalPricingLastUpdated}` : 'current list';
+function fallbackPriceRow(model) {
+  const sku = canonicalSkuByModel.get(model);
+  if (!sku) return '';
+  return `<tr><th scope="row">${escapeHtml(sku.model)}</th><td>${sku.hp}</td><td>${fmtCadPrerender(sku.msrp)}</td><td>${fmtCadPrerender(sku.dealer)}</td></tr>`;
+}
+function fallbackDealerPrice(model) {
+  const sku = canonicalSkuByModel.get(model);
+  return sku ? fmtCadPrerender(sku.dealer) : '<a href="/pricing-reference">See live pricing</a>';
+}
+
 // Per-blog-slug semantic <table> fallbacks. Injected into the prerendered
 // <noscript> so crawlers and LLMs see real tabular data even when the
 // markdown content rendered by React doesn't survive a no-JS fetch.
 const BLOG_TABLE_FALLBACKS = {
   'cheapest-mercury-outboard-canada-2026':
-    '<table><caption>Cheapest New Mercury Outboards in Canada (CAD, 2027)</caption>' +
-    '<thead><tr><th scope="col">Model</th><th scope="col">HP</th><th scope="col">MSRP (CAD)</th><th scope="col">Sale price (CAD)</th></tr></thead>' +
+    `<table><caption>Cheapest New Mercury Outboards in Canada (CAD, ${fallbackAsOf})</caption>` +
+    '<thead><tr><th scope="col">Model</th><th scope="col">HP</th><th scope="col">MSRP (CAD)</th><th scope="col">HBW price (CAD)</th></tr></thead>' +
     '<tbody>' +
-    '<tr><th scope="row">2.5MH FourStroke</th><td>2.5</td><td>$1,385</td><td>$1,271</td></tr>' +
-    '<tr><th scope="row">3.5MH FourStroke</th><td>3.5</td><td>$1,650</td><td>$1,499</td></tr>' +
-    '<tr><th scope="row">5MH FourStroke</th><td>5</td><td>$1,950</td><td>$1,795</td></tr>' +
-    '<tr><th scope="row">6MH FourStroke</th><td>6</td><td>$2,275</td><td>$2,085</td></tr>' +
-    '<tr><th scope="row">9.9MH FourStroke</th><td>9.9</td><td>$3,150</td><td>$2,895</td></tr>' +
-    '<tr><th scope="row">9.9EH FourStroke</th><td>9.9</td><td>$3,690</td><td>$3,399</td></tr>' +
-    '<tr><th scope="row">9.9ELH FourStroke</th><td>9.9</td><td>$4,435</td><td>$3,399</td></tr>' +
+    ['2.5MH FourStroke', '3.5MH FourStroke', '5MH FourStroke', '6MH FourStroke', '9.9MH FourStroke', '9.9EH FourStroke', '9.9ELH FourStroke'].map(fallbackPriceRow).join('') +
     '</tbody></table>',
   'mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026':
     '<table><caption>Mercury 115 HP vs 150 HP FourStroke: Side-by-Side Comparison</caption>' +
@@ -2999,7 +3008,7 @@ const BLOG_TABLE_FALLBACKS = {
     '<tr><th scope="row">Dry weight</th><td>359 lbs (163 kg)</td><td>455 lbs (206 kg)</td></tr>' +
     '<tr><th scope="row">Top boat speed (18 ft aluminum)</th><td>~38 mph</td><td>~47 mph</td></tr>' +
     '<tr><th scope="row">Cruise fuel burn @ 25 mph</th><td>~5.5 GPH</td><td>~5.8 GPH</td></tr>' +
-    '<tr><th scope="row">Typical price (CAD)</th><td>$15,500</td><td>$18,000</td></tr>' +
+    `<tr><th scope="row">HBW price (CAD, bare motor, ${fallbackAsOf})</th><td>${fallbackDealerPrice('115ELPT FourStroke')}</td><td>${fallbackDealerPrice('150L FourStroke')}</td></tr>` +
     '<tr><th scope="row">Best for</th><td>16–19 ft tinnies, light pontoons</td><td>18–22 ft, tritoons, family runabouts</td></tr>' +
     `<tr><th scope="row">Warranty</th><td>${escapeHtml(WARRANTY_TABLE_CELL)}</td><td>${escapeHtml(WARRANTY_TABLE_CELL)}</td></tr>` +
     '</tbody></table>',
