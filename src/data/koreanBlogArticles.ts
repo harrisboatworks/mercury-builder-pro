@@ -187,7 +187,7 @@ Harris Boat Works, Mercury Marine Premier 딜러. 1947년 창립.
   {
     slug: 'rice-lake-fishing-guide',
     title: 'Rice Lake 낚시 완전 가이드: 토론토 한인을 위한 온타리오 최고의 숨은 명소',
-    description: 'Rice Lake는 토론토에서 약 1.5시간 거리에 있는 온타리오 최고의 walleye 낚시터입니다. 어종, FMZ 17 시즌 일정, 낚시 면허, 렌탈 보트 정보까지 한 번에 정리했습니다.',
+    description: 'Rice Lake는 토론토 시내에서 약 1시간 45분 거리에 있는 온타리오 최고의 walleye 낚시터입니다. 어종, FMZ 17 시즌 일정, 낚시 면허, 렌탈 보트 정보까지 한 번에 정리했습니다.',
     image: '/lovable-uploads/ko-rice-lake-fishing-guide-hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
@@ -199,11 +199,11 @@ Harris Boat Works, Mercury Marine Premier 딜러. 1947년 창립.
     content: `
 ## 빠른 답변
 
-**Rice Lake는 토론토에서 약 1.5시간(401번 → 115번 도로) 거리의 숨은 walleye·bass 명소. Lake Simcoe보다 한적하고, GTA 한인 가족이 당일치기로 다녀오기 좋습니다.**
+**Rice Lake는 토론토 시내에서 약 1시간 45분 거리의 숨은 walleye·bass 명소. 401번 고속도로 동쪽 방향으로 가다가 Cobourg의 472번 출구(County Road 18 / Burnham Street)로 나와 County Road 18을 따라 북쪽으로 약 16 km 가면 Gores Landing에 도착합니다. Lake Simcoe보다 한적하고, GTA 한인 가족이 당일치기로 다녀오기 좋습니다.**
 
 PCOC가 필요하신가요? [HBW의 MyBoatCard 추천 링크](https://myboatcard.com/card/harrisboat)에서 온라인 과정을 수강하고 할인 코드 **HARRIS15**로 **15% 할인**을 받으세요.
 
-- **거리**: 토론토에서 약 1.5시간, FMZ 17 구역
+- **거리**: 토론토 시내에서 약 1시간 45분, FMZ 17 구역
 - **주요 어종**: Walleye, Smallmouth Bass, Northern Pike, Perch. 시즌·한도는 당해 공식 FMZ 17 규정을 확인
 - **면허 비용**: Outdoors Card $9 + Sportfishing licence 약 $27/년 (ontario.ca/fishing에서 온라인 신청)
 - **렌탈**: HBW(Gores Landing)에서 보트 렌탈 가능
@@ -212,7 +212,7 @@ PCOC가 필요하신가요? [HBW의 MyBoatCard 추천 링크](https://myboatcard
 
 ### 핵심 요약
 
-Rice Lake는 토론토에서 약 1.5시간(401 동쪽 → 115 북쪽) 거리에 있으며, 온타리오에서 손꼽히는 walleye(월아이) 산지입니다. Bass, muskie, yellow perch도 풍부합니다. Harris Boat Works가 호숫가(Gores Landing)에 위치해 당일 렌탈 보트로 바로 출발할 수 있습니다. 낚시를 하려면 낚시 면허(18~64세 필수)가 필요합니다. 어종별 시즌과 어획 한도는 매년 온타리오 정부 사이트에서 확인하세요.
+Rice Lake는 토론토 시내에서 약 1시간 45분 거리에 있으며, 온타리오에서 손꼽히는 walleye(월아이) 산지입니다. 401번 고속도로 동쪽 방향으로 가다가 Cobourg의 472번 출구(County Road 18 / Burnham Street)로 나와 County Road 18을 따라 북쪽으로 약 16 km 가면 Gores Landing에 도착합니다. Bass, muskie, yellow perch도 풍부합니다. Harris Boat Works가 호숫가(Gores Landing)에 위치해 당일 렌탈 보트로 바로 출발할 수 있습니다. 낚시를 하려면 낚시 면허(18~64세 필수)가 필요합니다. 어종별 시즌과 어획 한도는 매년 온타리오 정부 사이트에서 확인하세요.
 
 ---
 

@@ -657,7 +657,7 @@ Para servicio técnico: Harris Boat Works solo da servicio a motores Mercury y M
 Depende del bote, la hélice y el peso. En muchos botes de unos 18 pies o más, según la placa de capacidad, el 115 puede alcanzar velocidades máximas similares al 150 con hélice optimizada, la diferencia real está en el plano bajo carga y en la reserva de potencia.
 
 **¿Puedo instalar un 150 en un bote que originalmente tenía un 115?**
-Siempre que el transom y la placa de capacidad del bote lo permitan. Algunos botes de 17 pies tienen certificación para hasta 150 HP; otros solo para 115. Verifica la placa de capacidad antes de comprar.
+La placa de capacidad y el espejo de popa tienen que permitirlo, pero eso no convierte el máximo en la mejor opción. Los botes de aluminio de 16–17 pies suelen usar 60–90 HP. Nuestra regla es un modelo Mercury por debajo del máximo: con una placa de 150 HP, el mejor ajuste es un 115. Para elegir un 150, busca una placa de 175 HP y confirma el peso admisible antes de comprar.
 
 **¿Cuánto dura un motor Mercury FourStroke con buen mantenimiento?**
 Con servicio regular (cada 100 horas o anualmente), los FourStroke Mercury alcanzan fácilmente 2,000–3,000 horas. Hemos visto motores bien mantenidos durar muchos más años que eso en Rice Lake.
