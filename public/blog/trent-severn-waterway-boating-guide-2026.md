@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/trent-severn-waterway-boating-guide-2026.md
-last_updated: 2026-10-04
+last_updated: 2026-10-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Trent-Severn 2026: Free Lockage Dates, Rules & Trip Plan"
 description: "Free lockage runs June 19 to September 7, 2026, roughly $45 a day saved on a 20-footer. Our marina sits on the waterway; here's how we'd run it."
 category: "Lifestyle"
 date_published: 2026-05-08
-date_modified: 2026-10-04
+date_modified: 2026-10-06
 keywords: ["Trent-Severn Waterway 2026 guide","Trent-Severn free lockage 2026","Canada Strong Pass boating","Trent-Severn locks hours 2026","Rice Lake Trent-Severn","boating Trent-Severn for beginners"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: rentals
 
 **Category:** Lifestyle  
 **Published:** 2026-05-08  
-**Last reviewed:** 2026-10-04  
+**Last reviewed:** 2026-10-06  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/trent-severn-waterway-boating-guide-2026
 
@@ -169,11 +169,11 @@ For a 20-foot boat: $45 for a day, $225 for a seasonal pass. **Confirm current f
 
 Most people do not transit all 386 kilometres. They take three or four locks at a time, anchor for the night, eat lunch in a small town, and come back. Here are three trip types from HBW at Gores Landing.
 
-**Weekend run (2 days, 4 locks):** East from Rice Lake to Lock 18 at Hastings. Overnight at Hastings. Lunch at one of the pubs. Return Sunday. Quiet and scenic. No commercial harbor traffic.
+**Weekend run (2 days, 2 lockages):** East from Rice Lake to Hastings (Lock 18), the first lock east of the lake. One lockage each way, or none if you tie up above the lock. Overnight at Hastings. Lunch at one of the pubs. Return Sunday. Quiet and scenic. No commercial harbor traffic.
 
 **Long weekend (4 days, ~10 locks):** West from Rice Lake up the Otonabee through Lock 19 (Scott's Mills) and the Peterborough Lift Lock (Lock 21). Continue to Lakefield and back.
 
-**Full Kawartha tour (7 days, 17 locks):** Rice Lake to Bobcaygeon and back. Includes the Lift Lock, the flight at Healey Falls, Lakefield, and Buckhorn. The most relaxed pace, best for first-timers wanting to see the system.
+**Full Kawartha tour (7 days, 14 locks each way):** Rice Lake to Bobcaygeon and back takes you through Locks 19 to 32, or 28 lockages round trip. Includes the Peterborough Lift Lock, Lakefield and Buckhorn. Healey Falls is downstream of Hastings on the Trent River, not on this route. The most relaxed pace, best for first-timers wanting to see the system.
 
 For a full Trenton-to-Port-Severn transit, plan at least 5 to 7 days at a relaxed pace.
 

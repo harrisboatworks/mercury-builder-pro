@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-avator-charging-cottage-dock.md
-last_updated: 2026-09-11
+last_updated: 2026-10-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Charging a Mercury Avator at Your Cottage Dock (2026)"
 description: "How to set up Mercury Avator charging at an Ontario cottage. 110V vs 240V options, dock outlets, charge times by model, real-world planning for cottage."
 category: "Electric Boating"
 date_published: 2026-05-17
-date_modified: 2026-09-11
+date_modified: 2026-10-06
 keywords: ["mercury avator charging","electric outboard cottage charging","avator dock charging","ontario electric boat charging"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Electric Boating  
 **Published:** 2026-05-17  
-**Last reviewed:** 2026-09-11  
+**Last reviewed:** 2026-10-06  
 **Read time:** 6 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-avator-charging-cottage-dock
 
@@ -111,7 +111,7 @@ This pattern works fine with overnight charging for most Avator models. The sing
 
 Avator batteries lose meaningful capacity in cold weather. Late-season operation (October-November on Ontario lakes) means [reduced range and slower charging](/blog/mercury-avator-range-rice-lake-cottage).
 
-For off-season storage (December-March), Mercury recommends storing battery packs at 50-80% charge in a heated space. Don't leave packs at the cottage through winter, battery degradation in cold storage is real.
+For off-season storage (December-March), Mercury's Avator manual says to fully charge packs before storage, and again every six months if storage lasts longer than six months. Never let them sit below 20% charge. Remove the packs from the boat and store them in a dry, ventilated, temperature-stable room between 0 and 25°C.
 
 This is one of [the practical differences from gas](/blog/mercury-avator-electric-boating-ontario): a gas outboard can sit at the cottage through winter (properly winterized). An Avator setup means battery packs come home to a heated garage every fall.
 
@@ -150,7 +150,7 @@ Theoretically yes, practically no for serious use. The solar array required to c
 
 ### Should I leave battery packs at the cottage over winter?
 
-No. Mercury recommends bringing battery packs to a heated space at 50-80% charge for winter storage. Cold storage degrades lithium batteries.
+No. Mercury's Avator manual says to fully charge packs before storage, and again every six months for storage longer than six months. Keep charge above 20%. Remove packs from the boat and store them in a dry, ventilated, temperature-stable room between 0 and 25°C.
 
 ### How long do Avator batteries last (lifecycle)?
 

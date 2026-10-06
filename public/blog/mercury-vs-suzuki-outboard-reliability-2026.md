@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-vs-suzuki-outboard-reliability-2026.md
-last_updated: 2026-09-11
+last_updated: 2026-10-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury vs Suzuki Outboards: Reliability 2026"
 description: "Mercury vs Suzuki outboard reliability in Ontario. Both mechanically reliable. Service network and rigging switch cost drive decision."
 category: "Brand Comparison"
 date_published: 2026-06-06
-date_modified: 2026-09-11
+date_modified: 2026-10-06
 keywords: ["mercury vs suzuki","suzuki outboard reliability","ontario outboard comparison","mercury suzuki repower"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Brand Comparison  
 **Published:** 2026-06-06  
-**Last reviewed:** 2026-09-11  
+**Last reviewed:** 2026-10-06  
 **Read time:** 8 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-vs-suzuki-outboard-reliability-2026
 
@@ -59,7 +59,7 @@ The real difference between Mercury and Suzuki in Ontario is not the motor itsel
 
 Mercury has broad dealer coverage across the Kawarthas, the GTA and Ontario cottage corridors. That gives many owners multiple service options, but parts inventory and repair timing vary by dealer and season. Confirm the required part and appointment capacity before changing a trip plan.
 
-Suzuki's Canadian dealer footprint is smaller. In the Rice Lake and Kawarthas region specifically, finding an active Suzuki marine service dealer within a comparable proximity to HBW is not easy. That gap is not a knock on Suzuki, it is a market fact. It matters most in the moment the motor needs service, which is usually the moment you cannot afford to drive 90 minutes each way to drop it off.
+Suzuki's Canadian dealer footprint is smaller, and there's no Suzuki dealer on Rice Lake. That's not a knock on Suzuki. It matters most when the motor needs service and you have to arrange a trip to the shop.
 
 For most Ontario freshwater owners, this single factor outweighs almost everything else in the comparison.
 
@@ -108,7 +108,7 @@ Equally honest. Mercury's real advantages in Ontario specifically:
 | Resale in Ontario (recreational) | Strong, deep buyer pool | Strong, smaller buyer pool |
 | Rigging cost if switching brand | n/a if staying Mercury | $2,000 to $3,000 CAD |
 
-_Prices here are planning figures as of September 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are planning figures as of October 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 ## Common matchups people cross-shop
 

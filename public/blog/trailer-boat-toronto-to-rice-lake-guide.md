@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/trailer-boat-toronto-to-rice-lake-guide.md
-last_updated: 2026-09-06
+last_updated: 2026-10-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Trailering a Boat: Toronto to Rice Lake"
 description: "A guide to trailering your boat from Toronto to Rice Lake. Ontario rules, route notes, launch picks, and what HBW handles when you arrive."
 category: "How To"
 date_published: 2026-04-26
-date_modified: 2026-09-06
+date_modified: 2026-10-06
 keywords: ["trailer boat toronto rice lake","ontario trailer rules","boat launch rice lake"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,23 +25,23 @@ revenue_driver: repower
 
 **Category:** How To  
 **Published:** 2026-04-26  
-**Last reviewed:** 2026-09-06  
+**Last reviewed:** 2026-10-06  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/trailer-boat-toronto-to-rice-lake-guide
 
 ## Quick Answer
 
-Trailering a boat from central Toronto to Rice Lake takes roughly 1 hour 45 minutes in light traffic via Highway 401 east and Highway 115 north, and longer on summer weekends. The route is mostly highway. Ontario requires trailer brakes when gross trailer weight, including the load, is 1,360 kg (3,000 lb) or more. Confirm tire pressure, lights and bearing condition before you leave, and verify current traffic conditions before departing.
+Trailering a boat from central Toronto to Rice Lake takes roughly 1 hour 45 minutes in light traffic via Highway 401 east to Exit 472 in Cobourg, then County Road 18 north about 16 km to Gores Landing, and longer on summer weekends. The route is mostly highway. Ontario requires trailer brakes when gross trailer weight, including the load, is 1,360 kg (3,000 lb) or more. Confirm tire pressure, lights and bearing condition before you leave, and verify current traffic conditions before departing.
 
 ---
 
 ## The Route, In Plain Terms
 
-From central Toronto: 401 east through Scarborough and Whitby, exit onto Highway 115 northbound at Newcastle/Port Hope. Stay on 115 about 40 minutes through farmland, then exit onto County Road 28 north for the last 15 minutes into Gores Landing.
+From central Toronto: Highway 401 east through Scarborough and Whitby, past Port Hope to Exit 472 (County Road 18 / Burnham Street, Cobourg), then north on County Road 18 about 16 km to Gores Landing.
 
-Most of the drive is straight, two-lane highway after you get off 401. The trickiest parts are 401 traffic timing (weekend mornings and Friday afternoons are crowded), and the County Road 28 stretch in late fall when leaves are wet.
+After you get off the 401, County Road 18 is a two-lane rural road. The trickiest parts are 401 traffic timing (weekend mornings and Friday afternoons are crowded), and the County Road 18 stretch in late fall when leaves are wet.
 
-If your GPS routes you through the Trent-Severn parkway or smaller back roads, override it and stay on 115. Faster, smoother, and you can avoid surprises with bridges or weight-restricted roads.
+Set your destination to 5369 Harris Boat Works Rd, Gores Landing, and check the route before you leave. Use Highway 401 east to Exit 472, then County Road 18 north. Highway 115 and County Road 28 head toward Peterborough, not Gores Landing.
 
 ---
 
@@ -85,13 +85,13 @@ Going through this once at home saves you a bad day on the side of the 401. Spen
 
 **Whitby to Port Hope (about 20 minutes)**: Continuing east on 401. Lighter traffic, faster pace. Watch for OPP enforcement, this stretch has been known for speed checks.
 
-**Port Hope to Highway 115 turnoff (about 5 minutes)**: Exit onto Highway 115 north.
+**Port Hope to Cobourg**: Stay on Highway 401 east to Exit 472 (County Road 18 / Burnham Street).
 
-**Highway 115 to County Road 28 (about 25 minutes)**: Mostly two-lane through farmland. Watch for left-turning traffic onto side roads, slower-moving local traffic, and seasonal farm equipment.
+**Exit 472 to Gores Landing**: Head north on County Road 18 about 16 km. Watch for left-turning traffic, slower-moving local traffic and seasonal farm equipment.
 
-**County Road 28 to Gores Landing (about 15 minutes)**: Rural road, well-paved but narrower. The last 5 minutes into Gores Landing is downhill toward the lake; watch your brakes if you're carrying a heavy load.
+**Into Gores Landing**: Follow the signs to Harris Boat Works Rd. Watch your brakes on the approach to the lake if you're carrying a heavy load.
 
-**Total: roughly 1 hour 45 minutes from central Toronto in light traffic via Highway 401 east and Highway 115 north**, longer on summer weekends.
+**Total: roughly 1 hour 45 minutes from central Toronto in light traffic via Highway 401 east to Exit 472 in Cobourg, then County Road 18 north about 16 km to Gores Landing**, longer on summer weekends.
 
 ---
 
@@ -153,7 +153,7 @@ Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | Since 1947
 
 ### How long does it take to trailer a boat from Toronto to Rice Lake?
 
-The drive from central Toronto to Rice Lake takes roughly 1 hour 45 minutes in light traffic via Highway 401 east and Highway 115 north. Summer weekends and long-weekend traffic can make it two hours or more, so check the route before departure.
+The drive from central Toronto to Rice Lake takes roughly 1 hour 45 minutes in light traffic via Highway 401 east to Exit 472 in Cobourg, then County Road 18 north about 16 km to Gores Landing. Summer weekends and long-weekend traffic can make it two hours or more, so check the route before departure.
 
 ### Do I need a special licence to tow a boat trailer in Ontario?
 
@@ -165,7 +165,7 @@ Rice Lake has several launch options, including Gores Landing near Harris Boat W
 
 ### How do I prepare my boat trailer before a long drive?
 
-Before any highway trip, check: coupler locked and safety chains crossed and attached; all trailer lights working (tails, brakes, turn signals); tires inflated to spec and lug nuts torqued; wheel bearings greased or repacked if sitting since last season; at least four tie-down straps securing the boat; outboard tilted up and locked; bilge drain plug removed for travel; and no loose gear inside the boat. The two most commonly skipped items are bearing inspection and lights. Both can turn a 90-minute drive into a roadside breakdown.
+Before any highway trip, check: coupler locked and safety chains crossed and attached; all trailer lights working (tails, brakes, turn signals); tires inflated to spec and lug nuts torqued; wheel bearings greased or repacked if sitting since last season; at least four tie-down straps securing the boat; outboard secured in the trailering position for your model, vertical if ground clearance allows, otherwise supported with an outboard support (transom saver); bilge drain plug removed for travel; and no loose gear inside the boat. The two most commonly skipped items are bearing inspection and lights. Both can turn a 90-minute drive into a roadside breakdown.
 
 ### What's the correct tongue weight for a boat trailer?
 

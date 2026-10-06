@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dts-retrofit-eligibility-2026.md
-last_updated: 2026-10-02
+last_updated: 2026-10-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury DTS Retrofit Eligibility 2026"
 description: "Check if your Mercury outboard supports DTS retrofit. Covers Verado, Pro XS, FourStroke, multi-engine joystick eligibility, and motors needing repower."
 category: "Mercury Technology"
 date_published: 2026-05-28
-date_modified: 2026-10-02
+date_modified: 2026-10-06
 keywords: ["mercury dts retrofit eligibility","mercury digital throttle shift","dts compatibility mercury","joystick piloting eligibility","mercury fly-by-wire","dts retrofit cost"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Mercury Technology  
 **Published:** 2026-05-28  
-**Last reviewed:** 2026-10-02  
+**Last reviewed:** 2026-10-06  
 **Read time:** 10 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dts-retrofit-eligibility-2026
 
@@ -148,7 +148,7 @@ If you have twins or triples, joystick is the real eligibility question. DTS is 
 
 Five things to confirm before you commit money.
 
-1. **Current motor model and year.** From the cowl plate (lower starboard side of the motor) or VesselView display.
+1. **Current motor model and year.** From the serial/model label on the starboard side of the transom (clamp) bracket, or the VesselView display.
 2. **Current motor serial number.** This tells us which DTS configurations are available for that motor year.
 3. **Helm controls.** Are your current controls mechanical (visible cables) or already DTS (sealed binnacle with wiring harness)?
 4. **Multi-engine rig?** Single, twin, or triple. Joystick eligibility lives here.

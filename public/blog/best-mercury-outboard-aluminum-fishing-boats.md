@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-mercury-outboard-aluminum-fishing-boats.md
-last_updated: 2026-09-21
+last_updated: 2026-10-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Best Mercury for Aluminum Boats 2026"
 description: "Boat length does not pick the motor. Start with your capacity plate and the manufacturer's documentation for that exact hull, then match shaft, controls, weight, and..."
 category: "Buying Guide"
 date_published: 2026-01-12
-date_modified: 2026-09-21
+date_modified: 2026-10-06
 keywords: ["mercury for aluminum boat","best outboard aluminum fishing boat","mercury 60hp fishing","lund boat motor","tracker boat outboard"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-01-12  
-**Last reviewed:** 2026-09-21  
+**Last reviewed:** 2026-10-06  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-mercury-outboard-aluminum-fishing-boats
 
@@ -194,7 +194,7 @@ Usually not, though it is model- and application-specific rather than a blanket 
 
 ### What shaft length do I need for an aluminum fishing boat?
 
-Most aluminum fishing boats with a standard transom use a 20-inch (long) shaft outboard. Taller transoms or boats with a jack plate may require a 25-inch (XL) shaft. To determine the right length: measure from the bottom of the transom mounting bracket to the waterline. If that distance is 15-20 inches, use a 20-inch shaft; if 20-25 inches, use a 25-inch shaft. Getting shaft length wrong causes ventilation (prop breaking the surface) or excess drag. When in doubt, have a dealer measure the boat.
+Most aluminum fishing boats with a standard transom use a 20-inch (long) shaft outboard. Taller transoms or boats with a jack plate may require a 25-inch (XL) shaft. To determine the right length: measure from the top of the transom, where the motor bracket sits, straight down to the bottom of the hull at the centreline. About 15 inches needs a short (15-inch) shaft, 20 inches a long (20-inch) shaft, and 25 inches an XL (25-inch) shaft. Getting shaft length wrong causes ventilation (prop breaking the surface) or excess drag. When in doubt, have a dealer measure the boat.
 
 ### How much does it cost to power an aluminum fishing boat in Ontario in 2026?
 
@@ -202,7 +202,7 @@ It depends on the horsepower your hull is rated and equipped for, and on the rig
 
 ### Is EFI worth it over a carbureted motor on an aluminum fishing boat?
 
-For any new motor purchase in 2026, EFI is the standard. Mercury no longer offers carbureted motors in their current lineup. EFI brings instant cold starts, consistent fuel delivery across the RPM range, better fuel economy, and far fewer maintenance issues. If comparing a new EFI to an older carbureted motor you already own, the EFI's reliability and lower maintenance costs typically justify the upgrade within a few seasons, especially for anglers running motors in the cold shoulder seasons.
+Mercury's 8 to 20 HP portables and everything larger use EFI. The smallest FourStrokes, 2.5 to 6 HP, are still carbureted. EFI brings instant cold starts, consistent fuel delivery across the RPM range, better fuel economy, and far fewer maintenance issues. If comparing a new EFI to an older carbureted motor you already own, the EFI's reliability and lower maintenance costs typically justify the upgrade within a few seasons, especially for anglers running motors in the cold shoulder seasons.
 
 ### What should I expect when replacing an older two-stroke with a Mercury FourStroke?
 

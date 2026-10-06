@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/outboard-vs-sterndrive-2026-ontario-repower.md
-last_updated: 2026-09-11
+last_updated: 2026-10-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Outboard vs Sterndrive 2026 Ontario"
 description: "Ontario sterndrive owners weighing a repower get an honest dealer's take on outboard vs. sterndrive in 2026, covering cost reality, market trends."
 category: "Mercury Outboards"
 date_published: 2026-03-05
-date_modified: 2026-09-11
+date_modified: 2026-10-06
 keywords: ["outboard vs sterndrive","repower","mercruiser","ontario","mercury"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Mercury Outboards  
 **Published:** 2026-03-05  
-**Last reviewed:** 2026-09-11  
+**Last reviewed:** 2026-10-06  
 **Read time:** ~12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/outboard-vs-sterndrive-2026-ontario-repower
 
@@ -97,7 +97,7 @@ If you're newer to the conversation, here's the short version.
 **Sterndrive (Inboard/Outboard or "I/O"):**
 The engine sits inside the hull, in an engine bay below the cockpit or under a centre hatch. The outdrive unit hangs off the transom and handles steering, trim, and propulsion. MerCruiser is the dominant brand; Volvo Penta is the other major player. Sterndrives were the dominant setup on bowriders and runabouts from the 1970s through the 2000s.
 
-**Outboard:** The entire engine (powerhead, midsection, and lower unit) mounts on the transom and is fully external. Everything is accessible without opening a hatch or pulling a floor panel. Tilt it up, the prop clears the water entirely. Modern outboards are 4-stroke, direct-injected, and available from 2.5hp all the way to 600hp.
+**Outboard:** The entire engine (powerhead, midsection, and lower unit) mounts on the transom and is fully external. Everything is accessible without opening a hatch or pulling a floor panel. Tilt it up, the prop clears the water entirely. Modern Mercury outboards are four-strokes with electronic fuel injection (the smallest portables are carbureted), from 2.5 HP up to 600 HP.
 
 If you want deeper background on how sterndrives work and their service requirements, our [MerCruiser sterndrive guide for Ontario owners](https://www.mercuryrepower.ca/blog/mercruiser-sterndrive-guide-ontario) covers the full picture.
 
@@ -149,7 +149,7 @@ Ontario freshwater storage is a real consideration. When you're not running the 
 
 ### Modern Mercury Digital Controls and Joystick Options
 
-Mercury's current generation of digital throttle and shift, VesselView displays, and joystick docking controls are outboard-native. Newer boaters expect these features; experienced boaters appreciate them when docking in a crosswind. The technology ecosystem has been built around outboards.
+Mercury's DTS and VesselView are available on current outboards. Joystick docking needs a specific setup, usually twin engines with DTS. Mercury's single-engine joystick is limited to select models with a thruster, so ask us whether your boat qualifies. Newer boaters expect these features; experienced boaters appreciate them when docking in a crosswind. The technology ecosystem has been built around outboards.
 
 ### Resale Value
 
@@ -177,7 +177,7 @@ This is the critical check. Outboard brackets mount to the transom. If the trans
 **When the boat is worth it.**
 A repower should make economic sense for the hull you have. Don't spend $35,000-$45,000 on a fresh outboard package for a hull with $12,000 in market value. If you're uncertain where you land, our [boat hull vs. repower decision guide](https://www.mercuryrepower.ca/blog/boat-hull-replacement-vs-repower-decision) is a good starting point.
 
-_Prices here are planning figures as of September 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are planning figures as of October 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 **When you plan to keep the boat.**
 Repowers are long-term plays. If you're keeping the boat for another 10-15 years, the investment makes sense. If you're planning to sell in two seasons, the calculus is different.

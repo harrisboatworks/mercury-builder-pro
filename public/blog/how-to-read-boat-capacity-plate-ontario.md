@@ -35,7 +35,7 @@ A Canadian compliance notice confirms that the builder or importer declared the 
 
 ## Where to find the plate
 
-On boats manufactured in Canada or imported and Transport Canada-compliant, the Compliance Notice is permanently affixed in one of three places:
+Transport Canada requires the Compliance Notice to be displayed where it can be seen from the helm. You'll usually find it in one of these places:
 
 1. **Inside the transom** at the rear of the boat, often on the splashwell.
 2. **At the helm** on the side of the console (typical on bowriders and runabouts).

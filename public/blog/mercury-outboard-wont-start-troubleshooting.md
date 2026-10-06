@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-wont-start-troubleshooting.md
-last_updated: 2026-09-07
+last_updated: 2026-10-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Outboard Won't Start (Ontario Dealer Guide, 2026)"
 description: "Mercury outboard won't start? Ontario dealer's honest diagnostic ladder: battery, fuel, ignition, EFI. Ethanol-free fuel available at HBW."
 category: "Troubleshooting"
 date_published: 2026-04-27
-date_modified: 2026-09-07
+date_modified: 2026-10-06
 keywords: ["mercury outboard wont start","outboard troubleshooting","mercury starting problems"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Category:** Troubleshooting  
 **Published:** 2026-04-27  
-**Last reviewed:** 2026-09-07  
+**Last reviewed:** 2026-10-06  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-wont-start-troubleshooting
 
@@ -177,7 +177,7 @@ After sitting, spark plugs can be fouled (oil or carbon deposits from the last s
 - Confirm the electrode gap matches your motor's spec (in the owner's manual)
 - Replace any that look doubtful
 
-**Flooding:** If you cranked the motor multiple times trying to start it before reading this, the cylinders may be flooded with fuel. Remove the plugs, crank briefly to clear the cylinders, let it sit 15-20 minutes with plugs out, then reinstall fresh plugs and try again.
+**Flooding:** If you cranked the motor multiple times trying to start it before reading this, the cylinders may be flooded with fuel. Modern EFI motors rarely flood. On a flooded carbureted motor, remove the plugs, ground the spark plug leads (or disconnect the coils) and keep the lanyard off while cranking briefly to clear the cylinders. Keep sparks and flames clear of the fuel spray. Let it sit 15-20 minutes with the plugs out, then reinstall fresh plugs, reconnect the leads and lanyard, and try again.
 
 ### Check for display messages or fault codes
 
@@ -231,7 +231,7 @@ Once the boat is on the bench, many no-start jobs are quick to isolate. Parts av
 
 - [Mercury Marine Owner's Manuals](https://www.mercurymarine.com/us/en/service-and-support/owners-resources/owners-manual)
 - CDI Electronics Troubleshooting Guide (7th Edition)
-- Transport Canada E10 fuel regulations (Dec 2022 marine/race carve-out)
+- Mercury owner's manual fuel requirements (up to E10)
 - HBW Lightspeed service history: frozen 537-job-row no-start and rough-running publication snapshot, 2013-2026 (symptom-labelled records, not unique boats or mutually exclusive root-cause diagnoses; no customer data used)
 
 ---

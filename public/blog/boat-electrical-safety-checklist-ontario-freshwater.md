@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-electrical-safety-checklist-ontario-freshwater.md
-last_updated: 2026-10-04
+last_updated: 2026-10-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Boat Electrical Safety Ontario"
 description: "Marine electrical safety checklist for Ontario freshwater boats: corrosion, fuses, bilge pump, battery switch, amateur wiring traps."
 category: "Maintenance"
 date_published: 2026-05-17
-date_modified: 2026-10-04
+date_modified: 2026-10-06
 keywords: ["boat electrical safety checklist","marine electrical ontario","boat wiring inspection","bilge pump check","harris boat works"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Category:** Maintenance  
 **Published:** 2026-05-17  
-**Last reviewed:** 2026-10-04  
+**Last reviewed:** 2026-10-06  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-electrical-safety-checklist-ontario-freshwater
 
@@ -146,7 +146,7 @@ Most Rice Lake and Kawartha boaters don't run shore power on their boats, but if
 - Shore power systems require galvanic isolators or isolation transformers to prevent stray current corrosion
 - A reverse-polarity indicator should be visible at the panel
 - GFCI protection on all AC outlets is mandatory in marine applications
-- ABYC compliance is not optional, it's the safety baseline
+- ABYC E-11 is the recognized best-practice baseline for AC and DC systems. These standards are voluntary for owners; Transport Canada accepts them as a compliance route for builders. The legal construction baseline is Transport Canada's TP 1332
 
 If you have shore power and aren't 100 percent sure your boat's setup is compliant, have a marine electrician inspect it. This is an area where a small mistake can be fatal.
 

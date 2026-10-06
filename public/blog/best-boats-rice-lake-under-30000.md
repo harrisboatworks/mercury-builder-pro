@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-boats-rice-lake-under-30000.md
-last_updated: 2026-09-11
+last_updated: 2026-10-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Best Boats for Rice Lake Under $30,000 (2026 Buyer's Guide)"
 description: "Under $30,000 CAD on Rice Lake in 2026: a new small aluminum with a Mercury under 60 HP, a used pontoon, or a clean used hull repowered at HBW."
 category: "Buying Guide"
 date_published: 2026-04-25
-date_modified: 2026-09-11
+date_modified: 2026-10-06
 keywords: ["best boat rice lake","boats under 30000 ontario","rice lake fishing boat"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-04-25  
-**Last reviewed:** 2026-09-11  
+**Last reviewed:** 2026-10-06  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-boats-rice-lake-under-30000
 
@@ -98,7 +98,7 @@ The sticker price is not the real cost of ownership. Three things move the five-
 
 **Storage.** Trailer storage at home costs nothing. Outdoor [marina storage on Rice Lake](/blog/best-marina-rice-lake-ontario) runs several hundred dollars a year and up.
 
-**Service.** A new Mercury under warranty is essentially free to maintain for the first several years. An older motor out of warranty costs more per season in service.
+**Service.** A new Mercury's defect warranty can limit surprise repair bills in the first few years, but routine maintenance is still an owner cost: oil, gearcase lube, impeller, plugs and winterization. An older motor out of warranty costs more per season in service.
 
 A used hull with an older non-warranty motor: cheaper to buy, more expensive to own. A used hull with a fresh Mercury repower: flips that math.
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/complete-guide-boat-repower-kawarthas.md
-last_updated: 2026-09-11
+last_updated: 2026-10-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Boat Repower in the Kawarthas: Complete Guide"
 description: "A step-by-step guide to repowering your boat in the Kawarthas: is your hull worth it, picking the motor, what the install involves."
 category: "Repowering"
 date_published: 2026-02-23
-date_modified: 2026-09-11
+date_modified: 2026-10-06
 keywords: ["boat repower Kawarthas","repower boat Ontario","Mercury repower process","repower vs buy new boat","Kawartha lakes repower","boat repower steps"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Repowering  
 **Published:** 2026-02-23  
-**Last reviewed:** 2026-09-11  
+**Last reviewed:** 2026-10-06  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/complete-guide-boat-repower-kawarthas
 
@@ -102,7 +102,7 @@ This is the decision that anchors everything else.
 
 | Hull | HP range | HBW recommendation |
 |---|---|---|
-| 14-16 ft aluminum console | 40-60 HP | Mercury 60 FourStroke, standard gearcase |
+| 14-16 ft aluminum console | Match the capacity plate | One Mercury model below the plate maximum: 50 HP on a 60 HP plate, or 60 HP on a 75 HP plate. Standard gearcase; never exceed the plate |
 | 16-18 ft aluminum fishing boat | 75-115 HP | Mercury 90 or 115 FourStroke, 90 for lighter use, 115 for regular full loads |
 | 18-20 ft aluminum or fiberglass console | 115-150 HP | Mercury 115 or 150 FourStroke, standard gearcase (HBW often prefers standard on these planing V-hulls; CT is hull/load/prop specific) |
 | 18-22 ft pontoon | 60-115 HP | Mercury 60-115 Command Thrust (60 CT is the hero pick for 18-20 ft two-log pontoons; 150-class pontoons run the standard gearcase, subject to exact-model specification checks) |

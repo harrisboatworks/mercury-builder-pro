@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/aluminum-vs-fiberglass-hull-ontario.md
-last_updated: 2026-09-11
+last_updated: 2026-10-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Aluminum vs Fiberglass Hull Ontario"
 description: "Aluminum or fiberglass? A Mercury Premier dealer's straight take on which hull material fits which kind of Ontario boater."
 category: "Buying Guides"
 date_published: 2026-05-16
-date_modified: 2026-09-11
+date_modified: 2026-10-06
 keywords: ["aluminum vs fiberglass boat","aluminum hull ontario","fiberglass hull ontario","boat hull material guide","legend aluminum boat","boat material comparison","rice lake boat material"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guides  
 **Published:** 2026-05-16  
-**Last reviewed:** 2026-09-11  
+**Last reviewed:** 2026-10-06  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/aluminum-vs-fiberglass-hull-ontario
 
@@ -128,7 +128,7 @@ Yes, marginally. Aluminum transmits more wake-slap and rivet noise. Modern welde
 
 ### Does aluminum corrode in fresh water?
 
-Marine-grade aluminum (5052 or 5086 alloy) resists fresh-water corrosion well for decades. The exception is galvanic corrosion at fittings where dissimilar metals contact aluminum without proper isolation. A boat kept in the water year-round needs sacrificial zincs and proper fitting installation. A trailered boat that comes home dry has almost no corrosion risk.
+Marine-grade aluminum (5052 or 5086 alloy) resists fresh-water corrosion well for decades. The exception is galvanic corrosion at fittings where dissimilar metals contact aluminum without proper isolation. An aluminum hull kept in fresh water needs magnesium anodes (the best freshwater choice) or aluminum anodes, plus proper fitting installation. Zinc is for salt water and stops protecting in fresh water. A trailered boat that comes home dry has almost no corrosion risk.
 
 ### Can fiberglass survive Ontario winters in outdoor storage?
 
