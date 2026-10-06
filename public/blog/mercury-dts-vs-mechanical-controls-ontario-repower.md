@@ -160,11 +160,11 @@ Marginal in theory, irrelevant in practice. DTS allows slightly more precise thr
 
 ## Related guides
 
-- [Boat Repower in the Kawarthas: Complete Guide](/blog/complete-guide-boat-repower-kawarthas), the full Kawarthas repower playbook
-- [Ontario Cottage Boat Motor Repower Guide (2026)](/blog/ontario-cottage-boat-motor-repower-guide), cottage-specific repower considerations
-- [Is Your Boat Hull Worth Repowering? A Structural Checklist](/blog/boat-hull-replacement-vs-repower-decision), is this hull structurally worth repowering?
-- [The 4-Point Aluminum Transom Check Before You Repower](/blog/aluminum-boat-transom-inspection-guide), the four transom checks to run before you repower
-- [Winter Repower Planning: Get Ready for Spring](/blog/winter-repower-planning-guide), why winter is the smart time to plan
+- [Boat Repower in the Kawarthas: Complete Guide](/blog/complete-guide-boat-repower-kawarthas): the full Kawarthas repower playbook
+- [Ontario Cottage Boat Motor Repower Guide (2026)](/blog/ontario-cottage-boat-motor-repower-guide): cottage-specific repower considerations
+- [Is Your Boat Hull Worth Repowering? A Structural Checklist](/blog/boat-hull-replacement-vs-repower-decision): is this hull structurally worth repowering?
+- [The 4-Point Aluminum Transom Check Before You Repower](/blog/aluminum-boat-transom-inspection-guide): the four transom checks to run before you repower
+- [Winter Repower Planning: Get Ready for Spring](/blog/winter-repower-planning-guide): why winter is the smart time to plan
 
 ## Next steps
 

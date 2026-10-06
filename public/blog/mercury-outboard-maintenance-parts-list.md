@@ -266,11 +266,11 @@ On a plate or decal on the transom bracket, usually the port side. It starts wit
 
 ## Related guides
 
-- [The Five-Minute Boat-Trailer Check Before Every Trip](/blog/boat-trailer-maintenance-guide-ontario), boat trailer maintenance guide
-- [Boat Trailering Mistakes to Avoid, Ontario](/blog/boat-trailering-mistakes-ontario), common trailering mistakes
-- [Five Boat Problems That Get Expensive When You Keep Running](/blog/accidentally-increase-boat-service-bills-ontario), habits that inflate your service bill
-- [Walleye Opener Boat Prep Checklist (2026)](/blog/walleye-opener-boat-prep), walleye-opener boat prep
-- [Cold-Water Boating Safety in Ontario: What to Know](/blog/late-season-boating-safety), late-season safety tips
+- [The Five-Minute Boat-Trailer Check Before Every Trip](/blog/boat-trailer-maintenance-guide-ontario): boat trailer maintenance guide
+- [Boat Trailering Mistakes to Avoid, Ontario](/blog/boat-trailering-mistakes-ontario): common trailering mistakes
+- [Five Boat Problems That Get Expensive When You Keep Running](/blog/accidentally-increase-boat-service-bills-ontario): habits that inflate your service bill
+- [Walleye Opener Boat Prep Checklist (2026)](/blog/walleye-opener-boat-prep): walleye-opener boat prep
+- [Cold-Water Boating Safety in Ontario: What to Know](/blog/late-season-boating-safety): late-season safety tips
 
 ## Next steps
 

@@ -190,11 +190,11 @@ Yes. HBW handles pontoon service and repower work, plus outdoor storage with pro
 
 ## Related guides
 
-- [Best Mercury for Aluminum Boats 2026](/blog/best-mercury-outboard-aluminum-fishing-boats), best Mercury for aluminum fishing boats
-- [Common Pontoon Problems on Rice Lake](/blog/common-pontoon-boat-problems-rice-lake), common pontoon issues on Rice Lake
-- [Legend Boats Mercury Packages Ontario](/blog/legend-boats-mercury-power-package-guide-ontario), Legend Boats Mercury power packages
-- [Best Mercury for a Pontoon: HP by Length + Command Thrust](/blog/best-mercury-outboard-pontoon-boats), best Mercury for pontoons
-- [Best Pontoon Outboard 2026: Mercury Buyer's Guide](/blog/best-pontoon-outboard-2026-mercury), top 2026 Mercury picks for pontoons
+- [Best Mercury for Aluminum Boats 2026](/blog/best-mercury-outboard-aluminum-fishing-boats): best Mercury for aluminum fishing boats
+- [Common Pontoon Problems on Rice Lake](/blog/common-pontoon-boat-problems-rice-lake): common pontoon issues on Rice Lake
+- [Legend Boats Mercury Packages Ontario](/blog/legend-boats-mercury-power-package-guide-ontario): Legend Boats Mercury power packages
+- [Best Mercury for a Pontoon: HP by Length + Command Thrust](/blog/best-mercury-outboard-pontoon-boats): best Mercury for pontoons
+- [Best Pontoon Outboard 2026: Mercury Buyer's Guide](/blog/best-pontoon-outboard-2026-mercury): top 2026 Mercury picks for pontoons
 
 ## Next steps
 

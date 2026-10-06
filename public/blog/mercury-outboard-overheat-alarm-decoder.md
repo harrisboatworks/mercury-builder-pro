@@ -176,11 +176,11 @@ No. Alarm behaviour varies by motor model, year, and whether the boat is SmartCr
 
 ## Related guides
 
-- [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide), choosing the right propeller
-- [Mercury Outboard Overheating at High Speed: What to Check](/blog/mercury-outboard-overheat-high-speed), overheating at high speed
-- [Mercury Overheating at Idle Fix](/blog/mercury-outboard-overheating-at-idle-fix-ontario), overheating at idle fixes
-- [Mercury Overheating Emergency Guide](/blog/outboard-overheating-emergency-guide), on-water overheating emergency guide
-- [Mercury Boat Battery Guide Ontario](/blog/mercury-boat-battery-guide-ontario), boat battery selection and care
+- [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide): choosing the right propeller
+- [Mercury Outboard Overheating at High Speed: What to Check](/blog/mercury-outboard-overheat-high-speed): overheating at high speed
+- [Mercury Overheating at Idle Fix](/blog/mercury-outboard-overheating-at-idle-fix-ontario): overheating at idle fixes
+- [Mercury Overheating Emergency Guide](/blog/outboard-overheating-emergency-guide): on-water overheating emergency guide
+- [Mercury Boat Battery Guide Ontario](/blog/mercury-boat-battery-guide-ontario): boat battery selection and care
 
 ## Next steps
 

@@ -1240,7 +1240,7 @@ function renderRelatedGuidesMarkdown(slug, contentMarkdown, clusterData) {
   for (const s of picked) {
     const title = clusterData.titles[s] || s;
     const ctx = clusterData.contexts[s];
-    lines.push(ctx ? `- [${title}](/blog/${s}), ${ctx}` : `- [${title}](/blog/${s})`);
+    lines.push(ctx ? `- [${title}](/blog/${s}): ${ctx}` : `- [${title}](/blog/${s})`);
   }
   return lines.join('\n');
 }

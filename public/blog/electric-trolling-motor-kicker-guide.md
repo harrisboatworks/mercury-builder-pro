@@ -204,11 +204,11 @@ Request service at hbw.wiki/service or call us at 905-342-2153. We are on Rice L
 
 ## Related guides
 
-- [Best Mercury for Aluminum Boats 2026](/blog/best-mercury-outboard-aluminum-fishing-boats), best Mercury for aluminum fishing boats
-- [Used Outboard Buying Guide Ontario](/blog/used-outboard-buying-guide-ontario), buying a used outboard in Ontario
-- [New vs Used Mercury Outboard in Ontario, by the Numbers](/blog/new-vs-used-mercury-outboard-ontario), new vs used Mercury tradeoffs
-- [Bad Used Boats to Avoid Ontario](/blog/bad-used-boats-to-avoid-ontario), used boats to avoid in Ontario
-- [Used Boat Walkaround Ontario Guide](/blog/used-boat-walkaround-inspection-ontario), used-boat walkaround inspection
+- [Best Mercury for Aluminum Boats 2026](/blog/best-mercury-outboard-aluminum-fishing-boats): best Mercury for aluminum fishing boats
+- [Used Outboard Buying Guide Ontario](/blog/used-outboard-buying-guide-ontario): buying a used outboard in Ontario
+- [New vs Used Mercury Outboard in Ontario, by the Numbers](/blog/new-vs-used-mercury-outboard-ontario): new vs used Mercury tradeoffs
+- [Bad Used Boats to Avoid Ontario](/blog/bad-used-boats-to-avoid-ontario): used boats to avoid in Ontario
+- [Used Boat Walkaround Ontario Guide](/blog/used-boat-walkaround-inspection-ontario): used-boat walkaround inspection
 
 ## Next steps
 
