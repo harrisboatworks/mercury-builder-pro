@@ -3918,10 +3918,10 @@ A clean photo of the display and a sentence about when it happens will save us 3
 
 This page is the SmartCraft Alarm Codes hub. Companion pages in the same diagnostic cluster:
 
-- [Mercury Outboard Beeping Codes Guide](/blog/mercury-outboard-beeping-codes-guide), the beep-pattern reference that points here for full overheat detail
-- [Mercury Outboard Won't Start Troubleshooting](/blog/mercury-outboard-wont-start-troubleshooting), diagnostic flow when the motor doesn't fire
-- [Mercury Outboard Overheating at Idle (Ontario Fix)](/blog/mercury-outboard-overheating-at-idle-fix-ontario), specific to idle-only overheat
-- [Breaking-In a New Mercury Motor](/blog/breaking-in-new-mercury-motor-guide), break-in protocol that prevents some sensor faults
+- [Mercury Outboard Beeping Codes Guide](/blog/mercury-outboard-beeping-codes-guide): the beep-pattern reference that points here for full overheat detail
+- [Mercury Outboard Won't Start Troubleshooting](/blog/mercury-outboard-wont-start-troubleshooting): diagnostic flow when the motor doesn't fire
+- [Mercury Outboard Overheating at Idle (Ontario Fix)](/blog/mercury-outboard-overheating-at-idle-fix-ontario): specific to idle-only overheat
+- [Breaking-In a New Mercury Motor](/blog/breaking-in-new-mercury-motor-guide): break-in protocol that prevents some sensor faults
 
 ## CTA
 
@@ -4091,11 +4091,11 @@ Things we see customers do that we wish they would not:
 
 Other technical reference content in the same cluster:
 
-- [Outboard Shaft Length Guide](/blog/outboard-shaft-length-guide), measure transom height and decode Mercury shaft codes
-- [Breaking In a New Mercury Outboard](/blog/breaking-in-new-mercury-motor-guide), break-in protocol before WOT testing
-- [Mercury 90 HP FourStroke Review (Ontario)](/blog/mercury-90-hp-fourstroke-review-ontario), sample hull-to-motor matching
-- [Best Mercury Outboard for Aluminum Fishing Boats](/blog/best-mercury-outboard-aluminum-fishing-boats), motor selection that drives prop selection
-- [Mercury Boost Software Upgrade Eligibility 2026](/blog/mercury-boost-software-upgrade-eligibility-2026), if you are considering Boost, prop selection may need to be re-confirmed after
+- [Outboard Shaft Length Guide](/blog/outboard-shaft-length-guide): measure transom height and decode Mercury shaft codes
+- [Breaking In a New Mercury Outboard](/blog/breaking-in-new-mercury-motor-guide): break-in protocol before WOT testing
+- [Mercury 90 HP FourStroke Review (Ontario)](/blog/mercury-90-hp-fourstroke-review-ontario): sample hull-to-motor matching
+- [Best Mercury Outboard for Aluminum Fishing Boats](/blog/best-mercury-outboard-aluminum-fishing-boats): motor selection that drives prop selection
+- [Mercury Boost Software Upgrade Eligibility 2026](/blog/mercury-boost-software-upgrade-eligibility-2026): if you are considering Boost, prop selection may need to be re-confirmed after
 
 ## CTA
 
@@ -4675,8 +4675,8 @@ We won't over-power your boat. We also won't recommend the cheapest option if we
 ---
 
 ## Related posts
-- [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/fourstroke-vs-pro-xs), which family fits which use case
-- [Mercury Propeller Selection Guide](/blog/mercury-propeller-selection-guide), the often-overlooked variable
+- [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/fourstroke-vs-pro-xs): which family fits which use case
+- [Mercury Propeller Selection Guide](/blog/mercury-propeller-selection-guide): the often-overlooked variable
 - [Best Mercury Outboard for Aluminum Fishing Boats](/blog/best-mercury-outboard-aluminum-fishing-boats)
 - [Best Mercury Outboard for Pontoon Boats](/blog/best-mercury-outboard-pontoon-boats)
 - [Mercury Command Thrust Guide for Pontoons](/blog/mercury-command-thrust-complete-guide-2026)
@@ -4909,11 +4909,11 @@ For high-hour use, the hour trigger can arrive before the calendar. Commercial-d
 
 For exact intervals on your specific motor model, the Mercury owner's manual is the authoritative source. We follow Mercury's published schedules at HBW.
 
-- [Spring Outboard Commissioning Checklist](/blog/spring-outboard-commissioning-checklist), what to do at spring service
-- [How Much Does Boat Winterization Cost?](/blog/boat-winterization-cost-ontario-2026), winterization pricing and what's included
-- [DIY Mercury Outboard Winterization Guide](/blog/diy-mercury-outboard-winterization-guide), step-by-step DIY walkthrough
-- [Breaking In Your New Mercury Motor](/blog/breaking-in-new-mercury-motor-guide), first-year service for repowered or new motors
-- [Mercury Outboard Won't Start Troubleshooting](/blog/mercury-outboard-wont-start-troubleshooting), spring start-up diagnostics
+- [Spring Outboard Commissioning Checklist](/blog/spring-outboard-commissioning-checklist): what to do at spring service
+- [How Much Does Boat Winterization Cost?](/blog/boat-winterization-cost-ontario-2026): winterization pricing and what's included
+- [DIY Mercury Outboard Winterization Guide](/blog/diy-mercury-outboard-winterization-guide): step-by-step DIY walkthrough
+- [Breaking In Your New Mercury Motor](/blog/breaking-in-new-mercury-motor-guide): first-year service for repowered or new motors
+- [Mercury Outboard Won't Start Troubleshooting](/blog/mercury-outboard-wont-start-troubleshooting): spring start-up diagnostics
 
 ## Ready to request service?
 
@@ -5394,11 +5394,11 @@ For new motors (under 8 years), repair almost always makes sense unless the dama
 
 We do this math with customers at HBW. Not every problem is a repower trigger. Some are.
 
-- [Mercury Repower Cost Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad), full HP class pricing
-- [Boat Hull Replacement vs Repower Decision](/blog/boat-hull-replacement-vs-repower-decision), the honest decision tree
-- [Evinrude to Mercury Repower Ontario Guide](/blog/evinrude-to-mercury-repower-ontario-guide), brand conversion
-- [Mercury Motor Maintenance: Seasonal Care Tips](/blog/mercury-motor-maintenance-seasonal-tips), keeping motors going longer
-- [Mercury Outboard Won't Start Troubleshooting](/blog/mercury-outboard-wont-start-troubleshooting), early diagnostic
+- [Mercury Repower Cost Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad): full HP class pricing
+- [Boat Hull Replacement vs Repower Decision](/blog/boat-hull-replacement-vs-repower-decision): the honest decision tree
+- [Evinrude to Mercury Repower Ontario Guide](/blog/evinrude-to-mercury-repower-ontario-guide): brand conversion
+- [Mercury Motor Maintenance: Seasonal Care Tips](/blog/mercury-motor-maintenance-seasonal-tips): keeping motors going longer
+- [Mercury Outboard Won't Start Troubleshooting](/blog/mercury-outboard-wont-start-troubleshooting): early diagnostic
 
 
 
@@ -7028,11 +7028,11 @@ Pro XS is the right call when:
 
 For typical recreational use (fishing, family, mixed), FourStroke at the same HP is the better value. Pro XS earns the price difference on tournament hulls, not on family aluminum consoles. See our [Mercury motor families guide](/blog/fourstroke-vs-pro-xs) for the full FourStroke vs Pro XS picture.
 
-- [Mercury 115 vs 150 HP for Ontario Boats](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026), the next step-up question
-- [How to Choose the Right Horsepower for Your Boat](/blog/how-to-choose-right-horsepower-boat), full HP class guide
-- [Best Mercury Outboard for Aluminum Fishing Boats](/blog/best-mercury-outboard-aluminum-fishing-boats), aluminum-specific recommendations
-- [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/fourstroke-vs-pro-xs), which family fits your use
-- [Mercury Propeller Selection Guide](/blog/mercury-propeller-selection-guide), prop selection meaningfully changes performance
+- [Mercury 115 vs 150 HP for Ontario Boats](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026): the next step-up question
+- [How to Choose the Right Horsepower for Your Boat](/blog/how-to-choose-right-horsepower-boat): full HP class guide
+- [Best Mercury Outboard for Aluminum Fishing Boats](/blog/best-mercury-outboard-aluminum-fishing-boats): aluminum-specific recommendations
+- [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/fourstroke-vs-pro-xs): which family fits your use
+- [Mercury Propeller Selection Guide](/blog/mercury-propeller-selection-guide): prop selection meaningfully changes performance
 
 ## Ready to pick your motor?
 
@@ -9961,7 +9961,7 @@ That is a 19-20 ft Deep-V example inside the 150-200 band.
 
 **See also:** [Best Mercury Outboard for Rice Lake, Ontario Fishing: Local Expert's Guide](/blog/best-mercury-outboard-rice-lake-fishing) and [Best Mercury Outboard for Lake Simcoe Walleye Fishing](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing).
 
-- [Best Mercury Outboard for Rice Lake, Ontario (in the Kawarthas) Fishing: Local Expert's Guide](/blog/best-mercury-outboard-rice-lake-fishing), best Mercury for Rice Lake fishing
+- [Best Mercury Outboard for Rice Lake, Ontario (in the Kawarthas) Fishing: Local Expert's Guide](/blog/best-mercury-outboard-rice-lake-fishing): best Mercury for Rice Lake fishing
 - [Best Mercury Outboard for Lake Simcoe Walleye Fishing](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing). Lake Simcoe walleye picks
 - [Best Mercury Outboard for Lake Ontario Salmon & Trout Fishing](/blog/best-mercury-outboard-lake-ontario-salmon-trout). Lake Ontario salmon and trout setups
 - [The Secret Weapon Rice Lake Anglers Swear By: Mercury ProKicker Guide](/blog/mercury-prokicker-rice-lake-fishing-guide). Pro Kicker on Rice Lake
@@ -10892,10 +10892,10 @@ If yes to most, repower makes sense.
 
 **[Start Your Repower Conversation](/quote/motor-selection)**
 
-- [Complete Guide to Repowering Your Boat in the Kawarthas](/blog/complete-guide-boat-repower-kawarthas), the full Kawarthas repower playbook
-- [How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)](/blog/mercury-repower-cost-ontario-2026-cad), transparent 2026 CAD repower pricing
-- [Boat Repowering 101: When to Replace Your Outboard Motor](/blog/boat-repowering-guide-when-to-replace-motor), how to know it's time to replace your motor
-- [Ontario Cottage Owner's Guide: Is It Time to Repower Your Boat?](/blog/ontario-cottage-boat-motor-repower-guide), cottage-specific repower considerations
+- [Complete Guide to Repowering Your Boat in the Kawarthas](/blog/complete-guide-boat-repower-kawarthas): the full Kawarthas repower playbook
+- [How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)](/blog/mercury-repower-cost-ontario-2026-cad): transparent 2026 CAD repower pricing
+- [Boat Repowering 101: When to Replace Your Outboard Motor](/blog/boat-repowering-guide-when-to-replace-motor): how to know it's time to replace your motor
+- [Ontario Cottage Owner's Guide: Is It Time to Repower Your Boat?](/blog/ontario-cottage-boat-motor-repower-guide): cottage-specific repower considerations
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
     `,
@@ -11926,9 +11926,9 @@ As of October 5, 2026, **Chase the Savings** runs **September 14–October 30, 2
 
 For complete installed-repower pricing in CAD, including the rigging, controls, prop, and labour components above, see our canonical [2026 Mercury repower cost guide for Ontario](https://www.mercuryrepower.ca/blog/mercury-repower-cost-ontario-2026-cad).
 
-- [Mercury Outboard Financing in Ontario: Your Complete 2026 Guide](/blog/mercury-outboard-financing-ontario-2026), current financing rates and terms
-- [What's the Cheapest Mercury Outboard in Canada in 2026? (Full Price Guide by HP)](/blog/cheapest-mercury-outboard-canada-2026), lowest-cost Mercury models in Canada
-- [What the 2026 Boating Market Means for Ontario Boat Buyers](/blog/2026-boating-market-ontario-boat-buyers), what 2026 looks like for Ontario buyers
+- [Mercury Outboard Financing in Ontario: Your Complete 2026 Guide](/blog/mercury-outboard-financing-ontario-2026): current financing rates and terms
+- [What's the Cheapest Mercury Outboard in Canada in 2026? (Full Price Guide by HP)](/blog/cheapest-mercury-outboard-canada-2026): lowest-cost Mercury models in Canada
+- [What the 2026 Boating Market Means for Ontario Boat Buyers](/blog/2026-boating-market-ontario-boat-buyers): what 2026 looks like for Ontario buyers
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
     `,
@@ -12154,10 +12154,10 @@ Typically when the motor is installed and ready for its Lake Test. Review the pa
 
 **[Start Your Order](/quote/motor-selection)**
 
-- [Complete Guide to Repowering Your Boat in the Kawarthas](/blog/complete-guide-boat-repower-kawarthas), the full Kawarthas repower playbook
-- [How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)](/blog/mercury-repower-cost-ontario-2026-cad), transparent 2026 CAD repower pricing
-- [Boat Repowering 101: When to Replace Your Outboard Motor](/blog/boat-repowering-guide-when-to-replace-motor), how to know it's time to replace your motor
-- [Ontario Cottage Owner's Guide: Is It Time to Repower Your Boat?](/blog/ontario-cottage-boat-motor-repower-guide), cottage-specific repower considerations
+- [Complete Guide to Repowering Your Boat in the Kawarthas](/blog/complete-guide-boat-repower-kawarthas): the full Kawarthas repower playbook
+- [How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)](/blog/mercury-repower-cost-ontario-2026-cad): transparent 2026 CAD repower pricing
+- [Boat Repowering 101: When to Replace Your Outboard Motor](/blog/boat-repowering-guide-when-to-replace-motor): how to know it's time to replace your motor
+- [Ontario Cottage Owner's Guide: Is It Time to Repower Your Boat?](/blog/ontario-cottage-boat-motor-repower-guide): cottage-specific repower considerations
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
@@ -15679,9 +15679,9 @@ Yes. Trailer it to 5369 Harris Boat Works Rd, Gores Landing. We have space to re
 
 ## Internal Links
 
-- [Rice Lake Boat Launch Guide](/blog/rice-lake-boat-launch-guide), where to launch on Rice Lake
-- [Rice Lake Boating Guide 2026](/blog/rice-lake-boating-guide-2026), conditions and hazards
-- [Spring Outboard Commissioning Checklist](/blog/spring-outboard-commissioning-checklist), pre-trip motor prep
+- [Rice Lake Boat Launch Guide](/blog/rice-lake-boat-launch-guide): where to launch on Rice Lake
+- [Rice Lake Boating Guide 2026](/blog/rice-lake-boating-guide-2026): conditions and hazards
+- [Spring Outboard Commissioning Checklist](/blog/spring-outboard-commissioning-checklist): pre-trip motor prep
 - [Best Mercury Outboard for Rice Lake Fishing](/blog/best-mercury-outboard-rice-lake-fishing)
 
 ---
@@ -17218,7 +17218,7 @@ Between chart sizes, do not apply a universal round-down rule. Shaft length depe
 ## How to tell if your shaft length is wrong
 
 ### Shaft too short
-- [Prop cavitates (ventilates) under load](/blog/mercury-propeller-selection-guide), RPMs spike, the boat will not accelerate cleanly
+- [Prop cavitates (ventilates) under load](/blog/mercury-propeller-selection-guide): RPMs spike, the boat will not accelerate cleanly
 - Choppy ride at speed, the motor lifts in waves, the prop breaks the surface
 - Overheating, the cooling water intake can rise above the waterline
 - Cavitation plate is visibly above the water at cruising speed
@@ -30180,9 +30180,9 @@ Jay Harris helps run Harris Boat Works, a third-generation family marina in Gore
 
 ## More from HBW on Mercury performance and repowers
 
-- [Mercury 150–300 HP Pro XS Performance Guide](/blog/mercury-150-300hp-pro-xs-performance-guide), full lineup walk-through with HP, weights, and use cases
-- [Boat Hull Replacement vs Repower Decision](/blog/boat-hull-replacement-vs-repower-decision), when the hull is the limit, not the motor
-- [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide), current planning ranges across the lineup
+- [Mercury 150–300 HP Pro XS Performance Guide](/blog/mercury-150-300hp-pro-xs-performance-guide): full lineup walk-through with HP, weights, and use cases
+- [Boat Hull Replacement vs Repower Decision](/blog/boat-hull-replacement-vs-repower-decision): when the hull is the limit, not the motor
+- [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide): current planning ranges across the lineup
 
 For a real CAD quote on a Pro XS repower, use the quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca). For service bookings and shop appointments, [hbw.wiki/service](https://hbw.wiki/service).
 
@@ -31694,7 +31694,7 @@ Our standard repower includes a rigging assessment. If the controls are tired, w
 
 The other observation: customers consistently under-spec horsepower when they own their first boat, and over-spec on the second one. Match the motor to your actual use case, not the spec sheet aspirations.
 
-- [Mercury Pro XS Buyer Guide](/blog/mercury-pro-xs-buyer-guide-ontario), the performance-tuned alternative
+- [Mercury Pro XS Buyer Guide](/blog/mercury-pro-xs-buyer-guide-ontario): the performance-tuned alternative
 - [Mercury 40 vs 60 HP comparison](/blog/mercury-40-vs-60-hp-outboard-ontario)
 - [Mercury 75 vs 90 vs 115 comparison](/blog/mercury-75-vs-90-vs-115-comparison)
 - [Mercury 115 vs 150 HP comparison](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026)

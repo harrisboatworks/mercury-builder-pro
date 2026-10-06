@@ -160,7 +160,7 @@ item6En: Mercury dealer since 1965
 item6Zh: 自1965年起的 Mercury 经销商
 ctaEn: Build your quote
 ctaZh: 在线获取报价
-ctaHref: /quote
+ctaHref: /quote/motor-selection
 ::
 
 ---
@@ -396,7 +396,7 @@ item6En: Mercury dealer since 1965
 item6Zh: 自1965年起的 Mercury 经销商
 ctaEn: Build your quote
 ctaZh: 在线获取报价
-ctaHref: /quote
+ctaHref: /quote/motor-selection
 ::
 
 ---
@@ -797,7 +797,7 @@ item5En: Mercury dealer since 1965
 item5Zh: 自1965年起的 Mercury 经销商
 ctaEn: Build your quote
 ctaZh: 在线获取报价
-ctaHref: /quote
+ctaHref: /quote/motor-selection
 ::
 
 > **关于语言的说明**
@@ -1116,7 +1116,7 @@ item6En: Mercury dealer since 1965
 item6Zh: 自1965年起的 Mercury 经销商
 ctaEn: Build your quote
 ctaZh: 在线获取报价
-ctaHref: /quote
+ctaHref: /quote/motor-selection
 ::
 
 ---
@@ -1278,7 +1278,7 @@ item6En: Mercury dealer since 1965
 item6Zh: 自1965年起的 Mercury 经销商
 ctaEn: Build your quote
 ctaZh: 在线获取报价
-ctaHref: /quote
+ctaHref: /quote/motor-selection
 ::
 
 ---
@@ -1587,7 +1587,7 @@ item6En: Mercury dealer since 1965
 item6Zh: 自1965年起的 Mercury 经销商
 ctaEn: Build your quote
 ctaZh: 在线获取报价
-ctaHref: /quote
+ctaHref: /quote/motor-selection
 ::
 
 ---
@@ -2012,7 +2012,7 @@ item6En: Mercury dealer since 1965
 item6Zh: 自1965年起的 Mercury 经销商
 ctaEn: Build your quote
 ctaZh: 在线获取报价
-ctaHref: /quote
+ctaHref: /quote/motor-selection
 ::
 
 ---
