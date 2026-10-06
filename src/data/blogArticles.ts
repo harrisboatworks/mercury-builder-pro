@@ -9957,7 +9957,7 @@ Pair with main motor for complete musky setup.
 
 That is a 19-20 ft Deep-V example inside the 150-200 band.
 
-**[Build Your Musky Motor Setup](/quote)**
+**[Build Your Musky Motor Setup](/quote/motor-selection)**
 
 **See also:** [Best Mercury Outboard for Rice Lake, Ontario Fishing: Local Expert's Guide](/blog/best-mercury-outboard-rice-lake-fishing) and [Best Mercury Outboard for Lake Simcoe Walleye Fishing](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing).
 
@@ -10063,7 +10063,7 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 - **General cottage use, 14-16 ft boat**: Mercury 40 FourStroke
 - **Pontoon to 20 ft, calm water**: Mercury 60 FourStroke
 
-**[Explore Small Lake Motor Options](/quote)**
+**[Explore Small Lake Motor Options](/quote/motor-selection)**
 
 Related guides:
 
@@ -10890,7 +10890,7 @@ If yes to most, repower makes sense.
 - Realistic timeline
 - No pressure decisions
 
-**[Start Your Repower Conversation](/quote)**
+**[Start Your Repower Conversation](/quote/motor-selection)**
 
 - [Complete Guide to Repowering Your Boat in the Kawarthas](/blog/complete-guide-boat-repower-kawarthas), the full Kawarthas repower playbook
 - [How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)](/blog/mercury-repower-cost-ontario-2026-cad), transparent 2026 CAD repower pricing
@@ -11922,7 +11922,7 @@ As of October 5, 2026, **Chase the Savings** runs **September 14–October 30, 2
 
 **Total Rigged Cost**: Add $2,000-5,000+ to motor price
 
-**[Get Current Pricing](/quote)**
+**[Get Current Pricing](/quote/motor-selection)**
 
 For complete installed-repower pricing in CAD, including the rigging, controls, prop, and labour components above, see our canonical [2026 Mercury repower cost guide for Ontario](https://www.mercuryrepower.ca/blog/mercury-repower-cost-ontario-2026-cad).
 
@@ -12152,7 +12152,7 @@ Tell us early and we'll adjust what we can. Specification changes may affect pri
 **When do I pay the balance?**
 Typically when the motor is installed and ready for its Lake Test. Review the payment terms in your agreement.
 
-**[Start Your Order](/quote)**
+**[Start Your Order](/quote/motor-selection)**
 
 - [Complete Guide to Repowering Your Boat in the Kawarthas](/blog/complete-guide-boat-repower-kawarthas), the full Kawarthas repower playbook
 - [How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)](/blog/mercury-repower-cost-ontario-2026-cad), transparent 2026 CAD repower pricing
@@ -23002,7 +23002,7 @@ Pontoon buyers coming from fishing boats or runabouts always underestimate how m
 
 **Drag.** Pontoon tubes create significant drag compared to a V-hull. You're not cutting through the water, you're pushing it out of the way with cylindrical aluminum logs. It takes real power to overcome that resistance and get the boat up on cruise.
 
-**Passenger load.** A family load can add hundreds of kilograms. Use the exact boat's capacity/owner documentation, count people and gear, and stay within both people and weight limits, whichever is reached first. If illustrating 10 adults, that is only a hypothetical boat rated for that load. Transport Canada's 2026 boating guide requires attention to those limits and reductions for conditions. Length alone cannot establish legal capacity. [Transport Canada Safe Boating Guide (2026)](https://tc.canada.ca/sites/default/files/2026-05/boating_guide_2026_en_acc.pdf).
+**Passenger load.** A family load can add hundreds of kilograms. Use the exact boat's capacity/owner documentation, count people and gear, and stay within both people and weight limits, whichever is reached first. If illustrating 10 adults, that is only a hypothetical boat rated for that load. Transport Canada's 2026 boating guide requires attention to those limits and reductions for conditions. Length alone cannot establish legal capacity. [Transport Canada boating safety](https://tc.canada.ca/en/marine-transportation/marine-safety/boating-safety).
 
 **Windage.** Pontoons have enormous freeboard and surface area. A side wind on Rice Lake or the Kawarthas can push your boat around hard. You need power in reserve to hold a line and handle unexpected conditions, not just to get up on cruise on a flat morning.
 
@@ -30452,7 +30452,7 @@ Jay Harris helps run Harris Boat Works, a third-generation family marina in Gore
 
 ## Sources
 
-- [Transport Canada 2026 Safe Boating Guide](https://tc.canada.ca/sites/default/files/2026-05/boating_guide_2026_en_acc.pdf), compliance notices and recommended maximum safe limits
+- [Transport Canada boating safety](https://tc.canada.ca/en/marine-transportation/marine-safety/boating-safety), compliance notices and recommended maximum safe limits
 - [Small Vessel Regulations, section 802](https://laws-lois.justice.gc.ca/eng/regulations/SOR-2010-91/section-802.html), information required on compliance notices
 - [Small Vessel Regulations, section 811](https://laws-lois.justice.gc.ca/eng/regulations/SOR-2010-91/section-811.html), replacement of an illegible compliance notice
 - [Construction Standards for Small Vessels, TP 1332](https://tc.canada.ca/sites/default/files/2023-11/TP1332E.pdf), compliance-notice construction standards
@@ -34580,7 +34580,7 @@ That sequence separates this article from the plate decoder: the notice supplies
 
 ## Sources
 
-- [Transport Canada 2026 Safe Boating Guide](https://tc.canada.ca/sites/default/files/2026-05/boating_guide_2026_en_acc.pdf), compliance notices and recommended maximum safe limits
+- [Transport Canada boating safety](https://tc.canada.ca/en/marine-transportation/marine-safety/boating-safety), compliance notices and recommended maximum safe limits
 - [Small Vessel Regulations, section 802](https://laws-lois.justice.gc.ca/eng/regulations/SOR-2010-91/section-802.html), required notice information
 - [Small Vessel Regulations, section 811](https://laws-lois.justice.gc.ca/eng/regulations/SOR-2010-91/section-811.html), replacement of an illegible notice
 - [Mercury Marine Canada](https://www.mercurymarine.com/ca/en/), current engine-family specifications and owner resources
