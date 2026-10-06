@@ -45,7 +45,7 @@ Rice Lake 属于安省 Fisheries Management Zone 17（FMZ 17）。常见目标�
 - 透明加元价格，无需讨价还价
 - 从 GTA 多数地区经 401 + 115 高速约 60 到 120 分钟车程
 
-[在线获取报价](/quote)
+[在线获取报价](/quote/motor-selection)
 
 ---
 
