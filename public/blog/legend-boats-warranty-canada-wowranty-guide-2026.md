@@ -71,7 +71,7 @@ For a used boat, confirm transfer eligibility, deadlines, inspection requirement
 | Trolling motor and charger | Brand, model, serial number, receipt and installation details |
 | Navigation, audio and other electronics | Provider, model, serial number and purchase records |
 
-![Legend detail images of helm instruments and a boat fitting](/lovable-uploads/inline/inline-legend-pontoon-tech-warranty.png "Legend component illustrations. Confirm the applicable provider and written coverage for each component.")
+![Table showing that a Legend boat package is covered by several providers: Legend WOWranty for the hull and structure, and separate written warranties for the Mercury outboard, trailer, electronics and other components.](/lovable-uploads/inline/legend-package-warranty-providers-2026-09.webp "Coverage summary only. The written model-year warranty for the exact boat governs.")
 
 Factory-installed equipment and accessories fitted later may follow different claim routes. Confirm the provider for the failed component before authorizing repairs. For motor-specific background, see our [Mercury warranty guide](/blog/mercury-outboard-warranty-canada-2026).
 
@@ -141,8 +141,8 @@ Complete the service request at hbw.wiki/service, then drop off anytime, includi
 
 ## Related guides
 
-- [How Your Mercury Warranty Works After a Repower](/blog/mercury-warranty-after-repower-ontario), how warranty works after a repower
-- [Mercury Extended Warranty Ontario](/blog/mercury-extended-warranty-platinum-ontario), Product Protection Platinum extended coverage
+- [How Your Mercury Warranty Works After a Repower](/blog/mercury-warranty-after-repower-ontario): how warranty works after a repower
+- [Mercury Extended Warranty Ontario](/blog/mercury-extended-warranty-platinum-ontario): Product Protection Platinum extended coverage
 
 ## Next steps
 

@@ -176,11 +176,11 @@ For new motors (under 8 years), repair almost always makes sense unless the dama
 
 We do this math with customers at HBW. Not every problem is a repower trigger. Some are.
 
-- [Mercury Repower Cost Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad), full HP class pricing
-- [Boat Hull Replacement vs Repower Decision](/blog/boat-hull-replacement-vs-repower-decision), the honest decision tree
-- [Evinrude to Mercury Repower Ontario Guide](/blog/evinrude-to-mercury-repower-ontario-guide), brand conversion
-- [Mercury Motor Maintenance: Seasonal Care Tips](/blog/mercury-motor-maintenance-seasonal-tips), keeping motors going longer
-- [Mercury Outboard Won't Start Troubleshooting](/blog/mercury-outboard-wont-start-troubleshooting), early diagnostic
+- [Mercury Repower Cost Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad): full HP class pricing
+- [Boat Hull Replacement vs Repower Decision](/blog/boat-hull-replacement-vs-repower-decision): the honest decision tree
+- [Evinrude to Mercury Repower Ontario Guide](/blog/evinrude-to-mercury-repower-ontario-guide): brand conversion
+- [Mercury Motor Maintenance: Seasonal Care Tips](/blog/mercury-motor-maintenance-seasonal-tips): keeping motors going longer
+- [Mercury Outboard Won't Start Troubleshooting](/blog/mercury-outboard-wont-start-troubleshooting): early diagnostic
 
 Build a quote on the [motor selection page](/quote/motor-selection) if you've decided. Live Mercury pricing in CAD with full configuration including rigging.
 
@@ -242,11 +242,11 @@ Compare an itemized repair quote with the full installed repower cost over the t
 
 ## Related guides
 
-- [Boat Repower in the Kawarthas: Complete Guide](/blog/complete-guide-boat-repower-kawarthas), the full Kawarthas repower playbook
-- [Is Your Boat Worth Repowering? 5 Checks Before You Quote](/blog/mercury-repower-eligibility-guide), checking whether your boat is repower-eligible
-- [What Happens During a Mercury Repower (Step-by-Step Process)](/blog/what-happens-during-mercury-repower), what actually happens during the repower
-- [HBW On-Water Load Test: Mercury Repower](/blog/hbw-on-water-load-test-mercury-repower-advantage-2026), the on-water load test after repower
-- [Yamaha to Mercury Repower: Ontario Guide](/blog/yamaha-to-mercury-repower-ontario-guide), switching from Yamaha to Mercury
+- [Boat Repower in the Kawarthas: Complete Guide](/blog/complete-guide-boat-repower-kawarthas): the full Kawarthas repower playbook
+- [Is Your Boat Worth Repowering? 5 Checks Before You Quote](/blog/mercury-repower-eligibility-guide): checking whether your boat is repower-eligible
+- [What Happens During a Mercury Repower (Step-by-Step Process)](/blog/what-happens-during-mercury-repower): what actually happens during the repower
+- [HBW On-Water Load Test: Mercury Repower](/blog/hbw-on-water-load-test-mercury-repower-advantage-2026): the on-water load test after repower
+- [Yamaha to Mercury Repower: Ontario Guide](/blog/yamaha-to-mercury-repower-ontario-guide): switching from Yamaha to Mercury
 
 ## Next steps
 

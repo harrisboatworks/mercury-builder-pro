@@ -154,11 +154,11 @@ For high-hour use, the hour trigger can arrive before the calendar. Commercial-d
 
 For exact intervals on your specific motor model, the Mercury owner's manual is the authoritative source. We follow Mercury's published schedules at HBW.
 
-- [Spring Outboard Commissioning Checklist](/blog/spring-outboard-commissioning-checklist), what to do at spring service
-- [How Much Does Boat Winterization Cost?](/blog/boat-winterization-cost-ontario-2026), winterization pricing and what's included
-- [DIY Mercury Outboard Winterization Guide](/blog/diy-mercury-outboard-winterization-guide), step-by-step DIY walkthrough
-- [Breaking In Your New Mercury Motor](/blog/breaking-in-new-mercury-motor-guide), first-year service for repowered or new motors
-- [Mercury Outboard Won't Start Troubleshooting](/blog/mercury-outboard-wont-start-troubleshooting), spring start-up diagnostics
+- [Spring Outboard Commissioning Checklist](/blog/spring-outboard-commissioning-checklist): what to do at spring service
+- [How Much Does Boat Winterization Cost?](/blog/boat-winterization-cost-ontario-2026): winterization pricing and what's included
+- [DIY Mercury Outboard Winterization Guide](/blog/diy-mercury-outboard-winterization-guide): step-by-step DIY walkthrough
+- [Breaking In Your New Mercury Motor](/blog/breaking-in-new-mercury-motor-guide): first-year service for repowered or new motors
+- [Mercury Outboard Won't Start Troubleshooting](/blog/mercury-outboard-wont-start-troubleshooting): spring start-up diagnostics
 
 ## Ready to request service?
 
@@ -220,10 +220,10 @@ The price depends on the exact engine, the items due in its manual, service hist
 
 ## Related guides
 
-- [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule), the model-specific Mercury service schedule
-- [Shrinkwrap vs Indoor Boat Storage Ontario](/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario), shrink-wrap vs indoor winter storage
-- [Winter Boat Storage Near Toronto HBW](/blog/winter-storage-near-toronto-hbw), winter storage options near Toronto
-- [Mercury Spring Run-Up Checklist](/blog/mercury-outboard-spring-run-up-checklist-ontario), spring run-up checklist
+- [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule): the model-specific Mercury service schedule
+- [Shrinkwrap vs Indoor Boat Storage Ontario](/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario): shrink-wrap vs indoor winter storage
+- [Winter Boat Storage Near Toronto HBW](/blog/winter-storage-near-toronto-hbw): winter storage options near Toronto
+- [Mercury Spring Run-Up Checklist](/blog/mercury-outboard-spring-run-up-checklist-ontario): spring run-up checklist
 
 ## Next steps
 

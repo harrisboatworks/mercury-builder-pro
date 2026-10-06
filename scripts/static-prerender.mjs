@@ -1001,7 +1001,7 @@ function renderRelatedGuidesHtml(currentSlug, contentMarkdown, explicitRelatedSl
   const items = picked.map(s => {
     const title = blogClusterData.titles[s] || s;
     const ctx = blogClusterData.contexts[s];
-    const ctxHtml = ctx ? ` — ${escapeHtml(ctx)}` : '';
+    const ctxHtml = ctx ? `: ${escapeHtml(ctx)}` : '';
     return `<li><a href="/blog/${s}"><strong>${escapeHtml(title)}</strong></a>${ctxHtml}</li>`;
   }).join('');
   return `<aside aria-labelledby="related-guides-heading-ssg"><h2 id="related-guides-heading-ssg">Related guides</h2><ul>${items}</ul></aside>`;
@@ -3233,15 +3233,16 @@ const blogArticleRoutes = dedupedBlogArticles.map(article => ({
 // ============================================================
 
 function buildTranslatedBlogRoutes(articles, langCode, dealerStripHtml, ogLocale, inLanguage) {
-  return articles.map(article => ({
-    path: `/blog/${langCode}/${article.slug}`,
-    title: buildBlogHeadTitle(article.title),
-    description: article.description,
-    ogImage: article.socialImage || article.image
-      ? (getBlogOgImagePath(article.socialImage || article.image).startsWith('http')
-        ? getBlogOgImagePath(article.socialImage || article.image)
-        : `${SITE_URL}${getBlogOgImagePath(article.socialImage || article.image)}`)
-      : undefined,
+  return articles.map(article => {
+    const shareImage = getBlogOgImagePath(article.socialImage || article.image);
+    const absoluteShareImage = shareImage
+      ? (shareImage.startsWith('http') ? shareImage : `${SITE_URL}${shareImage}`)
+      : undefined;
+    return {
+      path: `/blog/${langCode}/${article.slug}`,
+      title: buildBlogHeadTitle(article.title),
+      description: article.description,
+      ogImage: absoluteShareImage,
     ogType: 'article',
     ogLocale,
     h1: article.title,
@@ -3259,6 +3260,7 @@ function buildTranslatedBlogRoutes(articles, langCode, dealerStripHtml, ogLocale
         "@type": "BlogPosting",
         "headline": article.title,
         "description": article.description,
+        ...(absoluteShareImage ? { "image": absoluteShareImage } : {}),
         "inLanguage": inLanguage,
         "datePublished": article.datePublished,
         "dateModified": article.dateModified || article.datePublished,
@@ -3303,7 +3305,8 @@ function buildTranslatedBlogRoutes(articles, langCode, dealerStripHtml, ogLocale
         : '';
       return `${heroHtml}${bylineHtml}${lastReviewedHtml}${dealerStripHtml}<article>${bodyHtml}</article>${faqHtml}`;
     }
-  }));
+    };
+  });
 }
 
 const frDealerStripHtml = '<div class="dealer-confidence-strip"><span>Concessionnaire Mercury Premier</span><span>·</span><span>Gores Landing, ON</span><span>·</span><a href="/quote/motor-selection">Constructeur de devis disponible</a></div>';

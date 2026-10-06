@@ -75,7 +75,7 @@ If your boat has a built-in console with windshield, you want remote. If your bo
 | Rice Lake pick | 60 HP EFI tiller (standard gearcase); ProKicker 9.9 | 90-115 HP remote |
 | Tiller-to-remote conversion | $500-$1,500+ parts + labour | - |
 
-_Prices here are planning figures as of September 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are planning figures as of October 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 ## The simple version
 
@@ -230,11 +230,11 @@ For a 16-foot aluminum boat on Rice Lake or the Kawarthas, the Mercury 60HP EFI 
 
 ## Related guides
 
-- [How to Choose the Right Boat Horsepower](/blog/how-to-choose-right-horsepower-boat), matching HP to boat size and use
-- [Boat Motor HP Size Guide Ontario](/blog/boat-motor-size-calculator-guide), sizing calculator walkthrough
-- [Mercury 115 vs 150 HP (Honest Ontario Dealer Guide, 2026)](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026), the 115 vs 150 decision, dealer take
-- [Mercury 90 vs 115 vs 75 HP: Which Outboard to Pick (2026)](/blog/mercury-75-vs-90-vs-115-comparison), mid-range Mercury head-to-head
-- [Mercury 40 vs 60 HP Ontario Guide](/blog/mercury-40-vs-60-hp-outboard-ontario), 40 vs 60 HP for Ontario boats
+- [How to Choose the Right Boat Horsepower](/blog/how-to-choose-right-horsepower-boat): matching HP to boat size and use
+- [Boat Motor HP Size Guide Ontario](/blog/boat-motor-size-calculator-guide): sizing calculator walkthrough
+- [Mercury 115 vs 150 HP (Honest Ontario Dealer Guide, 2026)](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026): the 115 vs 150 decision, dealer take
+- [Mercury 90 vs 115 vs 75 HP: Which Outboard to Pick (2026)](/blog/mercury-75-vs-90-vs-115-comparison): mid-range Mercury head-to-head
+- [Mercury 40 vs 60 HP Ontario Guide](/blog/mercury-40-vs-60-hp-outboard-ontario): 40 vs 60 HP for Ontario boats
 
 ## Next steps
 

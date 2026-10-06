@@ -194,11 +194,11 @@ All three make legitimate motors. Avator's edge is the Mercury dealer network be
 
 ## Related guides
 
-- [Mercury Pro XS vs Verado vs FourStroke Compared](/blog/fourstroke-vs-pro-xs), FourStroke vs Pro XS side-by-side
-- [Mercury FourStroke Buyer Guide for Ontario (2026)](/blog/mercury-fourstroke-buyer-guide-ontario), FourStroke buyer guide for Ontario
-- [Mercury Pro XS Buyer Guide for Ontario (2026)](/blog/mercury-pro-xs-buyer-guide-ontario), Pro XS buyer guide for Ontario
-- [Mercury Command Thrust Guide 2026](/blog/mercury-command-thrust-complete-guide-2026), complete Command Thrust guide
-- [Mercury 115 FourStroke Review 2026: Fit, Features and Performance](/blog/mercury-115-hp-fourstroke-review-ontario), 115 HP FourStroke review
+- [Mercury Pro XS vs Verado vs FourStroke Compared](/blog/fourstroke-vs-pro-xs): FourStroke vs Pro XS side-by-side
+- [Mercury FourStroke Buyer Guide for Ontario (2026)](/blog/mercury-fourstroke-buyer-guide-ontario): FourStroke buyer guide for Ontario
+- [Mercury Pro XS Buyer Guide for Ontario (2026)](/blog/mercury-pro-xs-buyer-guide-ontario): Pro XS buyer guide for Ontario
+- [Mercury Command Thrust Guide 2026](/blog/mercury-command-thrust-complete-guide-2026): complete Command Thrust guide
+- [Mercury 115 FourStroke Review 2026: Fit, Features and Performance](/blog/mercury-115-hp-fourstroke-review-ontario): 115 HP FourStroke review
 
 ## Next steps
 

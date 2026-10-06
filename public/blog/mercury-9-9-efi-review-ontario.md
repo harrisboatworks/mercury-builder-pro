@@ -202,11 +202,11 @@ For a new Mercury 9.9 FourStroke purchased in Canada for recreational use, the s
 
 ## Related guides
 
-- [Mercury Pro XS vs Verado vs FourStroke Compared](/blog/fourstroke-vs-pro-xs), FourStroke vs Pro XS side-by-side
+- [Mercury Pro XS vs Verado vs FourStroke Compared](/blog/fourstroke-vs-pro-xs): FourStroke vs Pro XS side-by-side
 - [Mercury 150 HP Review: FourStroke vs Pro XS](/blog/mercury-150-hp-fourstroke-pro-xs-review-ontario)
 - [Mercury 200 HP Review: FourStroke vs Pro XS](/blog/mercury-200-hp-fourstroke-pro-xs-review-ontario)
 - [Mercury 250 HP Review: FourStroke vs Pro XS](/blog/mercury-250-hp-fourstroke-pro-xs-review-ontario)
-- [Mercury Outboard Weight Chart 2026: 2.5–300 HP Dry Weights](/blog/mercury-outboard-weight-chart), Mercury outboard weight chart
+- [Mercury Outboard Weight Chart 2026: 2.5–300 HP Dry Weights](/blog/mercury-outboard-weight-chart): Mercury outboard weight chart
 
 ## Next steps
 

@@ -193,11 +193,11 @@ Pro XS is the right call when:
 
 For typical recreational use (fishing, family, mixed), FourStroke at the same HP is the better value. Pro XS earns the price difference on tournament hulls, not on family aluminum consoles. See our [Mercury motor families guide](/blog/fourstroke-vs-pro-xs) for the full FourStroke vs Pro XS picture.
 
-- [Mercury 115 vs 150 HP for Ontario Boats](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026), the next step-up question
-- [How to Choose the Right Horsepower for Your Boat](/blog/how-to-choose-right-horsepower-boat), full HP class guide
-- [Best Mercury Outboard for Aluminum Fishing Boats](/blog/best-mercury-outboard-aluminum-fishing-boats), aluminum-specific recommendations
-- [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/fourstroke-vs-pro-xs), which family fits your use
-- [Mercury Propeller Selection Guide](/blog/mercury-propeller-selection-guide), prop selection meaningfully changes performance
+- [Mercury 115 vs 150 HP for Ontario Boats](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026): the next step-up question
+- [How to Choose the Right Horsepower for Your Boat](/blog/how-to-choose-right-horsepower-boat): full HP class guide
+- [Best Mercury Outboard for Aluminum Fishing Boats](/blog/best-mercury-outboard-aluminum-fishing-boats): aluminum-specific recommendations
+- [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/fourstroke-vs-pro-xs): which family fits your use
+- [Mercury Propeller Selection Guide](/blog/mercury-propeller-selection-guide): prop selection meaningfully changes performance
 
 ## Ready to pick your motor?
 
@@ -278,11 +278,11 @@ For most 16 to 18 ft aluminum boats that carry two or more people, yes. The 90 g
 
 ## Related guides
 
-- [Mercury 40 vs 60 HP Ontario Guide](/blog/mercury-40-vs-60-hp-outboard-ontario), 40 vs 60 HP for Ontario boats
-- [Mercury 9.9 vs 15 HP Tiller for Ontario](/blog/mercury-9-9-vs-15-hp-tiller-ontario), 9.9 vs 15 HP tiller comparison
-- [Mercury Pro XS 150–300 HP: What Runs Best on Ontario Boats](/blog/mercury-150-300hp-pro-xs-performance-guide), 150–300 HP Pro XS performance
-- [Pontoon HP Sizing: The Rice Lake Decision Tree by Length](/blog/pontoon-hp-sizing-decision-tree-ontario), pontoon HP sizing decision tree
-- [Outboard Shaft Length Guide: 15, 20, 25 Inch (2026)](/blog/outboard-shaft-length-guide), shaft length by transom height
+- [Mercury 40 vs 60 HP Ontario Guide](/blog/mercury-40-vs-60-hp-outboard-ontario): 40 vs 60 HP for Ontario boats
+- [Mercury 9.9 vs 15 HP Tiller for Ontario](/blog/mercury-9-9-vs-15-hp-tiller-ontario): 9.9 vs 15 HP tiller comparison
+- [Mercury Pro XS 150–300 HP: What Runs Best on Ontario Boats](/blog/mercury-150-300hp-pro-xs-performance-guide): 150–300 HP Pro XS performance
+- [Pontoon HP Sizing: The Rice Lake Decision Tree by Length](/blog/pontoon-hp-sizing-decision-tree-ontario): pontoon HP sizing decision tree
+- [Outboard Shaft Length Guide: 15, 20, 25 Inch (2026)](/blog/outboard-shaft-length-guide): shaft length by transom height
 
 ## Next steps
 

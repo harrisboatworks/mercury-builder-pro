@@ -280,11 +280,11 @@ Yes, small aluminum fishing boat (under $15K), trailer-launched, DIY winterized,
 
 ## Related guides
 
-- [Mercury Outboard Prices Ontario (2026): CAD Guide](/blog/ontario-mercury-outboard-price-guide), Ontario Mercury outboard price guide
-- [Why Mercury Dealers Hide Prices (HBW Doesn't)](/blog/why-mercury-dealers-hide-prices-online), why most Mercury dealers hide prices online
-- [Mercury Outboard Rigging Costs Explained (Ontario 2026)](/blog/mercury-outboard-rigging-costs-ontario), rigging and install cost breakdown
-- [Is 2026 a Good Year to Buy a Boat in Ontario? (Honest Take)](/blog/2026-boating-market-ontario-boat-buyers), what 2026 looks like for Ontario buyers
-- [Mercury Outboard Financing Ontario (2026): Rates](/blog/mercury-outboard-financing-ontario-2026), current Mercury financing rates and terms
+- [Mercury Outboard Prices Ontario (2026): CAD Guide](/blog/ontario-mercury-outboard-price-guide): Ontario Mercury outboard price guide
+- [Why Mercury Dealers Hide Prices (HBW Doesn't)](/blog/why-mercury-dealers-hide-prices-online): why most Mercury dealers hide prices online
+- [Mercury Outboard Rigging Costs Explained (Ontario 2026)](/blog/mercury-outboard-rigging-costs-ontario): rigging and install cost breakdown
+- [Is 2026 a Good Year to Buy a Boat in Ontario? (Honest Take)](/blog/2026-boating-market-ontario-boat-buyers): what 2026 looks like for Ontario buyers
+- [Mercury Outboard Financing Ontario (2026): Rates](/blog/mercury-outboard-financing-ontario-2026): current Mercury financing rates and terms
 
 ## Next steps
 

@@ -180,11 +180,11 @@ TD "Always On": The current headline rate is 5.48% APR through December 31, 2026
 
 ## Related guides
 
-- [Mercury Outboard Prices Ontario (2026): CAD Guide](/blog/ontario-mercury-outboard-price-guide), Ontario Mercury outboard price guide
-- [2026 Mercury Buying: Pricing, Promotions and Smart Timing](/blog/mercury-pricing-promotions-2026), live 2026 promotions and rebates
-- [Cheapest Mercury Outboards in Canada (2026)](/blog/cheapest-mercury-outboard-canada-2026), lowest-cost Mercury models in Canada
-- [Mercury Boost Canada 2026: Eligibility, Performance, and Pricing](/blog/mercury-boost-cost-canada-2026), what a Mercury Boost upgrade costs
-- [Cost of Owning a Boat Ontario 2026](/blog/total-cost-of-owning-a-boat-ontario-2026), total cost of owning a boat in Ontario
+- [Mercury Outboard Prices Ontario (2026): CAD Guide](/blog/ontario-mercury-outboard-price-guide): Ontario Mercury outboard price guide
+- [2026 Mercury Buying: Pricing, Promotions and Smart Timing](/blog/mercury-pricing-promotions-2026): live 2026 promotions and rebates
+- [Cheapest Mercury Outboards in Canada (2026)](/blog/cheapest-mercury-outboard-canada-2026): lowest-cost Mercury models in Canada
+- [Mercury Boost Canada 2026: Eligibility, Performance, and Pricing](/blog/mercury-boost-cost-canada-2026): what a Mercury Boost upgrade costs
+- [Cost of Owning a Boat Ontario 2026](/blog/total-cost-of-owning-a-boat-ontario-2026): total cost of owning a boat in Ontario
 
 ## Next steps
 

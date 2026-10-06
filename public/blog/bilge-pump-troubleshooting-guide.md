@@ -404,11 +404,11 @@ Coverage depends on your boat's model year, original warranty terms, the install
 
 ## Related guides
 
-- [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide), choosing the right propeller
-- [Mercury Outboard Repair Guide: Troubleshooting and Maintenance](/blog/mercury-outboard-repair-guide), repair symptoms, triage, and service next steps
-- [Mercury Fuel Burn by HP: 5 Ways to Cut Gas Costs (2026)](/blog/mercury-outboard-fuel-efficiency-guide), maximizing fuel efficiency
-- [Mercury Ethanol & Octane Rules 2026 (V10 Verado Update)](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), ethanol, octane and Mercury fuel
-- [Mercury Boost Software Eligibility 2026](/blog/mercury-boost-software-upgrade-eligibility-2026), Boost software upgrade eligibility
+- [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide): choosing the right propeller
+- [Mercury Outboard Repair Guide: Troubleshooting and Maintenance](/blog/mercury-outboard-repair-guide): repair symptoms, triage, and service next steps
+- [Mercury Fuel Burn by HP: 5 Ways to Cut Gas Costs (2026)](/blog/mercury-outboard-fuel-efficiency-guide): maximizing fuel efficiency
+- [Mercury Ethanol & Octane Rules 2026 (V10 Verado Update)](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario): ethanol, octane and Mercury fuel
+- [Mercury Boost Software Eligibility 2026](/blog/mercury-boost-software-upgrade-eligibility-2026): Boost software upgrade eligibility
 
 ## Next steps
 

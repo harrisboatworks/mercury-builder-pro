@@ -117,7 +117,7 @@ Most Ontario recreational buyers do not need SeaPro. If you are not earning inco
 
 ---
 
-![Black Mercury SeaPro outboard on a rugged aluminum work boat, illustrating commercial-grade reliability for guides.](/lovable-uploads/inline/inline-mercury-seapro-commercial.png)
+![Infographic: what differs between Mercury SeaPro and a standard FourStroke, the typical price premium, and which annual-hours bands actually need SeaPro.](/lovable-uploads/inline/seapro-vs-fourstroke-2026-09.webp)
 
 ## Does SeaPro make sense for recreational boaters?
 
@@ -182,11 +182,11 @@ Different applications. Pro XS is the performance variant (higher RPM, sport gea
 
 ## Related guides
 
-- [Mercury Pro XS vs Verado vs FourStroke Compared](/blog/fourstroke-vs-pro-xs), FourStroke vs Pro XS side-by-side
-- [Mercury Avator Electric Outboards: Cost & Range (Canada)](/blog/mercury-avator-electric-boating-ontario), Mercury Avator electric outboards
-- [Mercury Avator 7.5e: Review, Range, and Best Uses (2026)](/blog/mercury-avator-7-5e-review), Avator 7.5e review
-- [Mercury Avator vs Torqeedo Ontario](/blog/mercury-avator-vs-torqeedo), Avator vs Torqeedo
-- [Charging a Mercury Avator at Your Cottage Dock (2026)](/blog/mercury-avator-charging-cottage-dock), charging the Avator at a cottage dock
+- [Mercury Pro XS vs Verado vs FourStroke Compared](/blog/fourstroke-vs-pro-xs): FourStroke vs Pro XS side-by-side
+- [Mercury Avator Electric Outboards: Cost & Range (Canada)](/blog/mercury-avator-electric-boating-ontario): Mercury Avator electric outboards
+- [Mercury Avator 7.5e: Review, Range, and Best Uses (2026)](/blog/mercury-avator-7-5e-review): Avator 7.5e review
+- [Mercury Avator vs Torqeedo Ontario](/blog/mercury-avator-vs-torqeedo): Avator vs Torqeedo
+- [Charging a Mercury Avator at Your Cottage Dock (2026)](/blog/mercury-avator-charging-cottage-dock): charging the Avator at a cottage dock
 
 ## Next steps
 

@@ -109,7 +109,7 @@ When in doubt, weigh the rig at a CAT scale before a long trip. Knowing the actu
 
 ---
 
-![Pickup truck towing an aluminum fishing boat eastbound on Highway 401 at golden hour](/lovable-uploads/inline/inline-401-east-trailering.png)
+![Infographic: six pre-trip trailer checks before towing: tires, bearings, lights, coupler and chains, boat tie-downs and drain plug, and brakes.](/lovable-uploads/inline/trailer-pre-trip-check-2026-09.webp)
 
 ## What to Do at the Launch in Gores Landing
 
@@ -193,11 +193,11 @@ Use the trailering position and support method specified for your exact Mercury 
 
 ## Related guides
 
-- [Best Mercury Outboard Setup for Rice Lake Fishing](/blog/best-mercury-outboard-rice-lake-fishing), best Mercury for Rice Lake fishing
-- [Mercury Setup for Simcoe Walleye 2026](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing), Lake Simcoe walleye picks
-- [Best Mercury Outboard for Lake Ontario Salmon & Trout](/blog/best-mercury-outboard-lake-ontario-salmon-trout), best Mercury main outboard for Lake Ontario salmon
-- [Lake Ontario Salmon Boat Rigging: Kicker, Charging & Troll Control](/blog/lake-ontario-salmon-mercury-setup-guide-2026), Lake Ontario salmon rigging setup
-- [Best Motors for Kawartha Musky Fishing](/blog/musky-boat-motor-guide-kawarthas), musky-boat motor guide
+- [Best Mercury Outboard Setup for Rice Lake Fishing](/blog/best-mercury-outboard-rice-lake-fishing): best Mercury for Rice Lake fishing
+- [Mercury Setup for Simcoe Walleye 2026](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing): Lake Simcoe walleye picks
+- [Best Mercury Outboard for Lake Ontario Salmon & Trout](/blog/best-mercury-outboard-lake-ontario-salmon-trout): best Mercury main outboard for Lake Ontario salmon
+- [Lake Ontario Salmon Boat Rigging: Kicker, Charging & Troll Control](/blog/lake-ontario-salmon-mercury-setup-guide-2026): Lake Ontario salmon rigging setup
+- [Best Motors for Kawartha Musky Fishing](/blog/musky-boat-motor-guide-kawarthas): musky-boat motor guide
 
 ## Next steps
 

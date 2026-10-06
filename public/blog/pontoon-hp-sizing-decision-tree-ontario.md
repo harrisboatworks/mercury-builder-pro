@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/pontoon-hp-sizing-decision-tree-ontario.md
-last_updated: 2026-10-02
+last_updated: 2026-10-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Pontoon HP Sizing: The Rice Lake Decision Tree by Length"
 description: "Pontoon HP by load, use, and the boat's documented limits. 25 HP through 300-plus bands are examples to compare, not an HP-per-foot or length chart."
 category: "Mercury Outboards"
 date_published: 2026-03-26
-date_modified: 2026-10-02
+date_modified: 2026-10-06
 keywords: ["pontoon hp","horsepower sizing","mercury","command thrust","tritoon"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Mercury Outboards  
 **Published:** 2026-03-26  
-**Last reviewed:** 2026-10-02  
+**Last reviewed:** 2026-10-06  
 **Read time:** ~12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/pontoon-hp-sizing-decision-tree-ontario
 
@@ -65,7 +65,7 @@ Pontoon buyers coming from fishing boats or runabouts always underestimate how m
 
 **Drag.** Pontoon tubes create significant drag compared to a V-hull. You're not cutting through the water, you're pushing it out of the way with cylindrical aluminum logs. It takes real power to overcome that resistance and get the boat up on cruise.
 
-**Passenger load.** A family load can add hundreds of kilograms. Use the exact boat's capacity/owner documentation, count people and gear, and stay within both people and weight limits, whichever is reached first. If illustrating 10 adults, that is only a hypothetical boat rated for that load. Transport Canada's 2026 boating guide requires attention to those limits and reductions for conditions. Length alone cannot establish legal capacity. [Transport Canada Safe Boating Guide (2026)](https://tc.canada.ca/sites/default/files/2026-05/boating_guide_2026_en_acc.pdf).
+**Passenger load.** A family load can add hundreds of kilograms. Use the exact boat's capacity/owner documentation, count people and gear, and stay within both people and weight limits, whichever is reached first. If illustrating 10 adults, that is only a hypothetical boat rated for that load. Transport Canada's 2026 boating guide requires attention to those limits and reductions for conditions. Length alone cannot establish legal capacity. [Transport Canada boating safety](https://tc.canada.ca/en/marine-transportation/marine-safety/boating-safety).
 
 **Windage.** Pontoons have enormous freeboard and surface area. A side wind on Rice Lake or the Kawarthas can push your boat around hard. You need power in reserve to hold a line and handle unexpected conditions, not just to get up on cruise on a flat morning.
 
@@ -303,11 +303,11 @@ For regular tube pulling, 150 HP on a 22-foot two-tube and 200 HP on a tritoon a
 
 ## Related guides
 
-- [How to Choose the Right Boat Horsepower](/blog/how-to-choose-right-horsepower-boat), matching HP to boat size and use
-- [Outboard Shaft Length Guide: 15, 20, 25 Inch (2026)](/blog/outboard-shaft-length-guide), shaft length by transom height
-- [How to Read a Boat Capacity Plate in Ontario](/blog/how-to-read-boat-capacity-plate-ontario), how to read the capacity plate
-- [How to Choose Repower Horsepower From Your Capacity Plate](/blog/repower-horsepower-capacity-plate-guide), choose repower HP from the hull rating
-- [Mercury Main + Trolling Motor: How to Pair Them](/blog/mercury-main-and-trolling-motor), main outboard plus trolling motor setups
+- [How to Choose the Right Boat Horsepower](/blog/how-to-choose-right-horsepower-boat): matching HP to boat size and use
+- [Outboard Shaft Length Guide: 15, 20, 25 Inch (2026)](/blog/outboard-shaft-length-guide): shaft length by transom height
+- [How to Read a Boat Capacity Plate in Ontario](/blog/how-to-read-boat-capacity-plate-ontario): how to read the capacity plate
+- [How to Choose Repower Horsepower From Your Capacity Plate](/blog/repower-horsepower-capacity-plate-guide): choose repower HP from the hull rating
+- [Mercury Main + Trolling Motor: How to Pair Them](/blog/mercury-main-and-trolling-motor): main outboard plus trolling motor setups
 
 ## Next steps
 

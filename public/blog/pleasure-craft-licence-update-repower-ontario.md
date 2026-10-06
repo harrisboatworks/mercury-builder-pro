@@ -161,11 +161,11 @@ We provide all the motor data you need and walk you through the process. The act
 
 ## Related guides
 
-- [Boat Repower in the Kawarthas: Complete Guide](/blog/complete-guide-boat-repower-kawarthas), the full Kawarthas repower playbook
-- [Ordering Your Mercury: What to Expect](/blog/mercury-ordering-process), how Mercury motors are ordered and delivered
-- [Best Time to Buy Boat Motor Ontario](/blog/year-end-boat-motor-buying-guide), year-end timing and incentives
-- [Repair, Repower or Sell? Ontario Decision Guide](/blog/repair-repower-or-sell-boat-ontario-decision-guide), repair, repower, or sell decision framework
-- [Repower vs Buy New Boat: Compare the Total Cost](/blog/repower-vs-new-boat), repower vs buying a new boat
+- [Boat Repower in the Kawarthas: Complete Guide](/blog/complete-guide-boat-repower-kawarthas): the full Kawarthas repower playbook
+- [Ordering Your Mercury: What to Expect](/blog/mercury-ordering-process): how Mercury motors are ordered and delivered
+- [Best Time to Buy Boat Motor Ontario](/blog/year-end-boat-motor-buying-guide): year-end timing and incentives
+- [Repair, Repower or Sell? Ontario Decision Guide](/blog/repair-repower-or-sell-boat-ontario-decision-guide): repair, repower, or sell decision framework
+- [Repower vs Buy New Boat: Compare the Total Cost](/blog/repower-vs-new-boat): repower vs buying a new boat
 
 ## Next steps
 

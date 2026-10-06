@@ -184,11 +184,11 @@ Boost is available for eligible motors through Mercury's supported app flow on s
 
 ## Related guides
 
-- [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide), choosing the right propeller
-- [Mercury DTS Retrofit Eligibility 2026](/blog/mercury-dts-retrofit-eligibility-2026), DTS retrofit eligibility
-- [Mercury Controls Rigging Guide 2026](/blog/mercury-controls-rigging-guide-ontario), controls and rigging basics
-- [Mercury SmartCraft Connect: Features, App & Installation](/blog/mercury-smartcraft-connect-guide-ontario), SmartCraft Connect walkthrough
-- [Mercury VesselView vs SmartCraft Explained (Ontario)](/blog/mercury-vesselview-smartcraft-plain-english-guide), VesselView and SmartCraft explained
+- [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide): choosing the right propeller
+- [Mercury DTS Retrofit Eligibility 2026](/blog/mercury-dts-retrofit-eligibility-2026): DTS retrofit eligibility
+- [Mercury Controls Rigging Guide 2026](/blog/mercury-controls-rigging-guide-ontario): controls and rigging basics
+- [Mercury SmartCraft Connect: Features, App & Installation](/blog/mercury-smartcraft-connect-guide-ontario): SmartCraft Connect walkthrough
+- [Mercury VesselView vs SmartCraft Explained (Ontario)](/blog/mercury-vesselview-smartcraft-plain-english-guide): VesselView and SmartCraft explained
 
 ## Next steps
 

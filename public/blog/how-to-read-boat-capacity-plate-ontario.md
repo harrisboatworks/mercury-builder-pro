@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/how-to-read-boat-capacity-plate-ontario.md
-last_updated: 2026-09-07
+last_updated: 2026-10-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "How to Read a Boat Capacity Plate in Ontario"
 description: "Decode a Canadian compliance notice: maximum recommended safe horsepower, people and load limits, where to find it, and what to do if it is missing."
 category: "Buying Guides"
 date_published: 2026-05-16
-date_modified: 2026-09-07
+date_modified: 2026-10-06
 keywords: ["boat capacity plate","capacity plate ontario","transport canada compliance notice","boat maximum horsepower","boat capacity decoder","boat hin number","used boat inspection ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guides  
 **Published:** 2026-05-16  
-**Last reviewed:** 2026-09-07  
+**Last reviewed:** 2026-10-06  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/how-to-read-boat-capacity-plate-ontario
 
@@ -113,7 +113,7 @@ Jay Harris helps run Harris Boat Works, a third-generation family marina in Gore
 
 ## Sources
 
-- [Transport Canada 2026 Safe Boating Guide](https://tc.canada.ca/sites/default/files/2026-05/boating_guide_2026_en_acc.pdf), compliance notices and recommended maximum safe limits
+- [Transport Canada boating safety](https://tc.canada.ca/en/marine-transportation/marine-safety/boating-safety), compliance notices and recommended maximum safe limits
 - [Small Vessel Regulations, section 802](https://laws-lois.justice.gc.ca/eng/regulations/SOR-2010-91/section-802.html), information required on compliance notices
 - [Small Vessel Regulations, section 811](https://laws-lois.justice.gc.ca/eng/regulations/SOR-2010-91/section-811.html), replacement of an illegible compliance notice
 - [Construction Standards for Small Vessels, TP 1332](https://tc.canada.ca/sites/default/files/2023-11/TP1332E.pdf), compliance-notice construction standards
@@ -146,11 +146,11 @@ The persons figure limits headcount, while the load figure accounts for the comb
 
 ## Related guides
 
-- [How to Choose the Right Boat Horsepower](/blog/how-to-choose-right-horsepower-boat), matching HP to boat size and use
-- [How to Choose Repower Horsepower From Your Capacity Plate](/blog/repower-horsepower-capacity-plate-guide), choose repower HP from the hull rating
-- [Mercury Main + Trolling Motor: How to Pair Them](/blog/mercury-main-and-trolling-motor), main outboard plus trolling motor setups
-- [Portable Mercury Outboard Guide: 2.5 to 20 HP (2026)](/blog/portable-outboard-mercury-guide-2-20hp), portable 2–20 HP options
-- [Tiller vs Remote Steering Outboard: Which to Choose (2026)](/blog/tiller-vs-remote-steering-outboard-guide), tiller vs remote steering
+- [How to Choose the Right Boat Horsepower](/blog/how-to-choose-right-horsepower-boat): matching HP to boat size and use
+- [How to Choose Repower Horsepower From Your Capacity Plate](/blog/repower-horsepower-capacity-plate-guide): choose repower HP from the hull rating
+- [Mercury Main + Trolling Motor: How to Pair Them](/blog/mercury-main-and-trolling-motor): main outboard plus trolling motor setups
+- [Portable Mercury Outboard Guide: 2.5 to 20 HP (2026)](/blog/portable-outboard-mercury-guide-2-20hp): portable 2–20 HP options
+- [Tiller vs Remote Steering Outboard: Which to Choose (2026)](/blog/tiller-vs-remote-steering-outboard-guide): tiller vs remote steering
 
 ## Next steps
 

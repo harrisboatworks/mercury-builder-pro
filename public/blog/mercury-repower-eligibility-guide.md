@@ -177,11 +177,11 @@ No. It is a useful starting point based on the selections entered. Final fit, sc
 
 ## Related guides
 
-- [Boat Repower in the Kawarthas: Complete Guide](/blog/complete-guide-boat-repower-kawarthas), the full Kawarthas repower playbook
-- [What Happens During a Mercury Repower (Step-by-Step Process)](/blog/what-happens-during-mercury-repower), what actually happens during the repower
-- [HBW On-Water Load Test: Mercury Repower](/blog/hbw-on-water-load-test-mercury-repower-advantage-2026), the on-water load test after repower
-- [Evinrude to Mercury Repower: The Ontario Guide (2026)](/blog/evinrude-to-mercury-repower-ontario-guide), switching from Evinrude to Mercury
-- [Yamaha to Mercury Repower: Ontario Guide](/blog/yamaha-to-mercury-repower-ontario-guide), switching from Yamaha to Mercury
+- [Boat Repower in the Kawarthas: Complete Guide](/blog/complete-guide-boat-repower-kawarthas): the full Kawarthas repower playbook
+- [What Happens During a Mercury Repower (Step-by-Step Process)](/blog/what-happens-during-mercury-repower): what actually happens during the repower
+- [HBW On-Water Load Test: Mercury Repower](/blog/hbw-on-water-load-test-mercury-repower-advantage-2026): the on-water load test after repower
+- [Evinrude to Mercury Repower: The Ontario Guide (2026)](/blog/evinrude-to-mercury-repower-ontario-guide): switching from Evinrude to Mercury
+- [Yamaha to Mercury Repower: Ontario Guide](/blog/yamaha-to-mercury-repower-ontario-guide): switching from Yamaha to Mercury
 
 ## Next steps
 

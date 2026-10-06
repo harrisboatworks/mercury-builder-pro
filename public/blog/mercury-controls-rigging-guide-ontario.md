@@ -278,11 +278,11 @@ Yes. If your old Mercury is in workable condition we'll value it at trade-in tim
 
 ## Related guides
 
-- [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide), choosing the right propeller
-- [Mercury SmartCraft Connect: Features, App & Installation](/blog/mercury-smartcraft-connect-guide-ontario), SmartCraft Connect walkthrough
-- [Mercury VesselView vs SmartCraft Explained (Ontario)](/blog/mercury-vesselview-smartcraft-plain-english-guide), VesselView and SmartCraft explained
-- [Mercury Alarm Codes List Ontario](/blog/mercury-smartcraft-alarm-codes-encyclopedia), SmartCraft alarm code reference
-- [Mercury Outboard Beep & Alarm Codes: What Each Means](/blog/mercury-outboard-beeping-codes-guide), beeping code guide
+- [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide): choosing the right propeller
+- [Mercury SmartCraft Connect: Features, App & Installation](/blog/mercury-smartcraft-connect-guide-ontario): SmartCraft Connect walkthrough
+- [Mercury VesselView vs SmartCraft Explained (Ontario)](/blog/mercury-vesselview-smartcraft-plain-english-guide): VesselView and SmartCraft explained
+- [Mercury Engine Data on Your Garmin, Lowrance or Humminbird: Which Gateway and How to Wire It](/blog/mercury-nmea-2000-lowrance-garmin-guide): which Mercury gateway your plotter needs and how to wire it
+- [Mercury Alarm Codes List Ontario](/blog/mercury-smartcraft-alarm-codes-encyclopedia): SmartCraft alarm code reference
 
 ## Next steps
 

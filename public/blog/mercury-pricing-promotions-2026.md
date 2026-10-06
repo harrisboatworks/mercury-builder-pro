@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-pricing-promotions-2026.md
-last_updated: 2026-10-05
+last_updated: 2026-10-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "2026 Mercury Buying: Pricing, Promotions and Smart Timing"
 description: "Work through 2026 Mercury outboard pricing. Understand MSRP vs dealer pricing, seasonal promotions, winter buying advantages."
 category: "Buying Guide"
 date_published: 2026-05-08
-date_modified: 2026-10-05
+date_modified: 2026-10-06
 keywords: ["mercury outboard price 2026","mercury promotions","mercury dealer pricing","best time buy outboard","mercury financing options"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-05-08  
-**Last reviewed:** 2026-10-05  
+**Last reviewed:** 2026-10-06  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-pricing-promotions-2026
 
@@ -244,13 +244,13 @@ As of October 5, 2026, **Chase the Savings** runs **September 14–October 30, 2
 
 **Total Rigged Cost**: Add $2,000-5,000+ to motor price
 
-**[Get Current Pricing](/quote)**
+**[Get Current Pricing](/quote/motor-selection)**
 
 For complete installed-repower pricing in CAD, including the rigging, controls, prop, and labour components above, see our canonical [2026 Mercury repower cost guide for Ontario](https://www.mercuryrepower.ca/blog/mercury-repower-cost-ontario-2026-cad).
 
-- [Mercury Outboard Financing in Ontario: Your Complete 2026 Guide](/blog/mercury-outboard-financing-ontario-2026), current financing rates and terms
-- [What's the Cheapest Mercury Outboard in Canada in 2026? (Full Price Guide by HP)](/blog/cheapest-mercury-outboard-canada-2026), lowest-cost Mercury models in Canada
-- [What the 2026 Boating Market Means for Ontario Boat Buyers](/blog/2026-boating-market-ontario-boat-buyers), what 2026 looks like for Ontario buyers
+- [Mercury Outboard Financing in Ontario: Your Complete 2026 Guide](/blog/mercury-outboard-financing-ontario-2026): current financing rates and terms
+- [What's the Cheapest Mercury Outboard in Canada in 2026? (Full Price Guide by HP)](/blog/cheapest-mercury-outboard-canada-2026): lowest-cost Mercury models in Canada
+- [What the 2026 Boating Market Means for Ontario Boat Buyers](/blog/2026-boating-market-ontario-boat-buyers): what 2026 looks like for Ontario buyers
 
 ## FAQs
 
@@ -272,11 +272,11 @@ MSRP is motor only. Rigging (controls, gauges, prop, wiring, installation) adds 
 
 ## Related guides
 
-- [Mercury Outboard Prices Ontario (2026): CAD Guide](/blog/ontario-mercury-outboard-price-guide), Ontario Mercury outboard price guide
-- [Mercury Boost Canada 2026: Eligibility, Performance, and Pricing](/blog/mercury-boost-cost-canada-2026), what a Mercury Boost upgrade costs
-- [Cost of Owning a Boat Ontario 2026](/blog/total-cost-of-owning-a-boat-ontario-2026), total cost of owning a boat in Ontario
-- [Why Mercury Dealers Hide Prices (HBW Doesn't)](/blog/why-mercury-dealers-hide-prices-online), why most Mercury dealers hide prices online
-- [Boat Insurance in Ontario: What You Actually Need (2026)](/blog/boat-insurance-ontario-guide-2026), boat insurance basics for Ontario owners
+- [Mercury Outboard Prices Ontario (2026): CAD Guide](/blog/ontario-mercury-outboard-price-guide): Ontario Mercury outboard price guide
+- [Mercury Boost Canada 2026: Eligibility, Performance, and Pricing](/blog/mercury-boost-cost-canada-2026): what a Mercury Boost upgrade costs
+- [Cost of Owning a Boat Ontario 2026](/blog/total-cost-of-owning-a-boat-ontario-2026): total cost of owning a boat in Ontario
+- [Why Mercury Dealers Hide Prices (HBW Doesn't)](/blog/why-mercury-dealers-hide-prices-online): why most Mercury dealers hide prices online
+- [Boat Insurance in Ontario: What You Actually Need (2026)](/blog/boat-insurance-ontario-guide-2026): boat insurance basics for Ontario owners
 
 ## Next steps
 

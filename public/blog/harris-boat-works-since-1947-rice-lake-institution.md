@@ -179,11 +179,11 @@ Yes. We're a working marina. Walk the docks, fuel up, look at the water. The sna
 
 ## Related guides
 
-- [Why Mercury Makes Practical Sense for Ontario Boaters (2026)](/blog/why-mercury-dominates-outboard-market), why Mercury leads the outboard market
-- [Mercury Quote via AI at Harris Boat Works](/blog/first-marine-dealer-ucp-agentic-commerce), first marine dealer live on UCP
-- [Is Mercury Still Reliable in 2026? A Dealer's Honest Answer](/blog/mercury-outboard-reliability-2026), how Mercury reliability holds up in 2026
-- [Mercury vs Yamaha Outboards: Honest Comparison](/blog/mercury-vs-yamaha-outboards-ontario), Mercury vs Yamaha for Ontario
-- [Mercury vs Yamaha vs Honda: Reliability 2026](/blog/mercury-vs-yamaha-vs-honda-reliability-2026), Mercury vs Yamaha vs Honda reliability
+- [Why Mercury Makes Practical Sense for Ontario Boaters (2026)](/blog/why-mercury-dominates-outboard-market): why Mercury leads the outboard market
+- [Mercury Quote via AI at Harris Boat Works](/blog/first-marine-dealer-ucp-agentic-commerce): first marine dealer live on UCP
+- [Is Mercury Still Reliable in 2026? A Dealer's Honest Answer](/blog/mercury-outboard-reliability-2026): how Mercury reliability holds up in 2026
+- [Mercury vs Yamaha Outboards: Honest Comparison](/blog/mercury-vs-yamaha-outboards-ontario): Mercury vs Yamaha for Ontario
+- [Mercury vs Yamaha vs Honda: Reliability 2026](/blog/mercury-vs-yamaha-vs-honda-reliability-2026): Mercury vs Yamaha vs Honda reliability
 
 ## Next steps
 

@@ -186,11 +186,11 @@ With the boat stationary and safe, photograph the display message, engine serial
 
 ## Related guides
 
-- [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule), the model-specific Mercury service schedule
-- [Walleye Opener Boat Prep Checklist (2026)](/blog/walleye-opener-boat-prep), walleye-opener boat prep
-- [Cold-Water Boating Safety in Ontario: What to Know](/blog/late-season-boating-safety), late-season safety tips
-- [Ontario Boating Season Tips 2026](/blog/ontario-boating-season-tips), Ontario boating-season tips
-- [Milky Gearcase Oil in Ontario: Causes, Diagnosis, and Next Steps (2026)](/blog/milky-gearcase-oil-meaning-cost-ontario), what milky gearcase oil means and costs
+- [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule): the model-specific Mercury service schedule
+- [Walleye Opener Boat Prep Checklist (2026)](/blog/walleye-opener-boat-prep): walleye-opener boat prep
+- [Cold-Water Boating Safety in Ontario: What to Know](/blog/late-season-boating-safety): late-season safety tips
+- [Ontario Boating Season Tips 2026](/blog/ontario-boating-season-tips): Ontario boating-season tips
+- [Milky Gearcase Oil in Ontario: Causes, Diagnosis, and Next Steps (2026)](/blog/milky-gearcase-oil-meaning-cost-ontario): what milky gearcase oil means and costs
 
 ## Next steps
 
