@@ -4579,7 +4579,7 @@ rightCriteria:
   - Bigger lakes with chop (Simcoe, Scugog, Lake Ontario shoreline)
 rightOutcome: Stay within manufacturer limits; assess performance with the full planned load and towing needs.
 rightVariant: recommended
-whenInDoubt: Underpowered boats are the #1 complaint we hear. Step up before you step down. 
+whenInDoubt: Underpowered boats are the #1 complaint we hear. Step up before you step down.
 ::
 
 ---
