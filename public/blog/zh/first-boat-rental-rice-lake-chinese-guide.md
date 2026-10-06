@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/first-boat-rental-rice-lake-chinese-guide.md
-last_updated: 2026-10-04
+last_updated: 2026-10-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "多伦多华人第一次租船钓鱼：证件、安全和当天流程"
 description: "多伦多华人第一次到 Rice Lake 租船钓鱼指南：加拿大租船清单的一般规则、HBW 更严格的 PCOC 政策、安全简报和安省钓鱼证。"
 category: "mandarin"
 date_published: 2026-06-12
-date_modified: 2026-10-04
+date_modified: 2026-10-06
 keywords: ["Rice Lake 租船","中文 多伦多","第一次 租船 钓鱼","安省 钓鱼证","Harris Boat Works"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: rentals
 
 **Category:** mandarin  
 **Published:** 2026-06-12  
-**最后审核:** 2026-10-04  
+**最后审核:** 2026-10-06  
 **Read time:** 8 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/first-boat-rental-rice-lake-chinese-guide
 
@@ -60,7 +60,7 @@ revenue_driver: rentals
 1. **到店登记（约 15-20 分钟）**：出示证件，签租船合同，刷信用卡押金。
 2. **安全简报和租船检查清单**：HBW 工作人员会讲解船只控制、安全设备、救生衣、紧急联系方式和允许航行的水域。清单属于安全流程，但不能替代 HBW 要求每位驾驶者出示的有效 PCOC。
 3. **船只交接和试机**：工作人员把船开到码头，演示启动、变速、停泊。第一次开建议在码头边试一次起步停止。
-4. **下水使用**：按约定时长（半天 / 全天）使用。Rice Lake 是浅湖（平均 25 英尺深），适合新手，但**注意中央有部分浅滩和草甸区域**，简报时会标出。
+4. **下水使用**：按约定时长（半天 / 全天）使用。莱斯湖是浅湖（最深约 8 米 / 27 英尺），有大片浅水和水草区域，适合新手，但**注意中央有部分浅滩和草甸区域**，简报时会标出。
 5. **返航和归还**：按约定时间回到 HBW 码头。工作人员检查船况、燃油，结清燃油费用，退还押金。
 
 > **典型时间：** 上午 10 点到店、10:30 下水、下午 4 点返航、4:30 离场，足够完成一次完整的钓鱼日。
@@ -79,7 +79,7 @@ revenue_driver: rentals
 - **居民 / 非居民价格不同。**
 - **官方页面（含繁体中文版）：** [安省钓鱼规章摘要（繁体中文）](http://www.ontario.ca/page/ontario-fishing-regulations-summary-traditional-chinese)。
 
-> 重要：14 岁以下儿童和持 Resident Senior 卡的部分老人有豁免，**但具体规则每年都可能更新**，出发前请查 MNRF 当年的规则。
+> 重要：安省及加拿大居民中，未满 18 岁或年满 65 岁的人可凭政府签发的身份证件免钓鱼证，适用 Conservation 限额。不需要 Resident Senior 卡；非加拿大居民没有 65 岁以上的年龄豁免，**但具体规则每年都可能更新**，出发前请查 MNRF 当年的规则。
 
 ## 安全提示（湖上常见情况）
 
@@ -115,7 +115,7 @@ revenue_driver: rentals
 
 ### 从万锦/士嘉堡到 Rice Lake 多久？
 
-万锦经 404 + 115 约 75-90 分钟，士嘉堡经 401 + 115 约 90-110 分钟。建议早上 8-9 点出发以利用上午黄金钓鱼时段。
+从万锦或士嘉堡接 Highway 401 东向，到 Cobourg 的 Exit 472（County Road 18 / Burnham Street）下高速，再沿 County Road 18 北行约 16 公里到 Gores Landing。车程随出发点和交通情况而变。建议早上 8-9 点出发以利用上午黄金钓鱼时段。
 
 ### 钓鱼证可以当天在 HBW 买吗？
 
@@ -123,7 +123,7 @@ revenue_driver: rentals
 
 ### 14 岁以下儿童钓鱼要证吗？
 
-通常豁免，但具体规则每年可能更新，出发前以 MNRF 当年说明为准。
+未满 18 岁的安省及加拿大居民可凭政府签发的身份证件免钓鱼证，适用 Conservation 限额。非加拿大居民未满 18 岁可与持证成人一起钓鱼，渔获计入成人限额；如需自己的限额，应另办钓鱼证。出发前请核对 MNRF 当前规则。
 
 ## Next steps
 

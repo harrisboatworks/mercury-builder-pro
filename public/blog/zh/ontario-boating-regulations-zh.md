@@ -29,7 +29,7 @@ revenue_driver: repower
 **Read time:** 9 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/ontario-boating-regulations-zh
 
-> **简短答案：** 操作动力休闲船的人需要随船携带 PCOC 或其他合资格的操作能力证明。主要在加拿大使用、发动机总功率至少 10 HP（7.5 kW）的合资格休闲船通常需要 PCL，除非已经注册。钓鱼证不是“开船证”：只有钓鱼时才需要按年龄、居住身份和牌照类型确认安省钓鱼资格。船上安全装备则按船型、船长和使用条件决定，不能用一张万能清单代替 [Transport Canada boating safety](https://tc.canada.ca/en/marine-transportation/marine-safety/boating-safety)。
+> **简短答案：** 操作动力休闲船的人需要随船携带 PCOC 或其他合资格的操作能力证明。主要在加拿大使用、发动机总功率至少 10 HP（7.5 kW）的合资格休闲船通常需要 PCL，除非已经注册。钓鱼证不是“开船证”：只有钓鱼时才需要按年龄、居住身份和牌照类型确认安省钓鱼资格。船上安全装备则按船型、船长和使用条件决定，不能用一张万能清单代替 [加拿大交通部船艇安全页面](https://tc.canada.ca/en/marine-transportation/marine-safety/boating-safety)。
 
 需要考取 PCOC？通过 [HBW 的 MyBoatCard 推荐链接](https://myboatcard.com/card/harrisboat)参加在线课程，使用优惠码 **HARRIS15** 可享 **15% 折扣**。
 
@@ -55,7 +55,7 @@ revenue_driver: repower
 
 最低装备取决于船型、船长、是否有发动机或燃油设备，以及是否在夜间或低能见度航行。常见项目包括每人一件合身并获认可的 lifejacket／PFD、浮力抛绳、重新登船装置、发声设备、照明、舀水或抽水设备；灭火器、照明、信号弹、指南针和雷达反射器等要求并非对每艘船都完全相同。
 
-最可靠做法是按自己船的类型和长度查看 [Transport Canada boating safety](https://tc.canada.ca/en/marine-transportation/marine-safety/boating-safety)，并确保装备状态良好、容易取用。只有“船上有”还不够。
+最可靠做法是按自己船的类型和长度查看 [加拿大交通部船艇安全页面](https://tc.canada.ca/en/marine-transportation/marine-safety/boating-safety)，并确保装备状态良好、容易取用。只有“船上有”还不够。
 
 ## 莱斯湖钓鱼法规
 
@@ -73,7 +73,7 @@ Rice Lake 属于安大略 Fisheries Management Zone 17（FMZ 17）。Walleye（�
 
 ## 官方来源
 
-- [Transport Canada boating safety](https://tc.canada.ca/en/marine-transportation/marine-safety/boating-safety)
+- [加拿大交通部船艇安全页面](https://tc.canada.ca/en/marine-transportation/marine-safety/boating-safety)
 - [Transport Canada：申请或管理 PCL](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl)
 - [Ontario：Fishing licence 资格](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees)
 - [Ontario：Fisheries Management Zone 17](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17)

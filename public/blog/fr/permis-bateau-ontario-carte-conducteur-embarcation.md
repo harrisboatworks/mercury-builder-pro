@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/permis-bateau-ontario-carte-conducteur-embarcation.md
-last_updated: 2026-10-04
+last_updated: 2026-10-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Permis de conduire une embarcation au Canada : Ce que vous devez savoir"
 description: "Guide sur la Carte de conducteur d'embarcation de plaisance (CCEP) : qui en a besoin, comment l'obtenir, coût, équipements obligatoires et réglementation en Ontario."
 category: "Réglementation"
 date_published: 2026-04-12
-date_modified: 2026-10-04
+date_modified: 2026-10-06
 keywords: ["permis bateau Ontario","carte de conducteur embarcation plaisance","permis navigation Canada","CCEP Canada","boating licence Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Catégorie :** Réglementation\
 **Publié le :** 2026-04-12\
-**Dernière révision :** 2026-10-04\
+**Dernière révision :** 2026-10-06\
 **Temps de lecture :** 8 min\
 **URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/permis-bateau-ontario-carte-conducteur-embarcation
 
@@ -111,7 +111,7 @@ Avoir votre carte ne suffit pas, votre embarcation doit aussi être équipée co
 - **Moyen de propulsion manuel ou ancre avec ligne**
 - **Feux de navigation :** si vous naviguez entre le coucher et le lever du soleil
 - **Extincteur :** obligatoire pour certaines embarcations (avec moteur intérieur ou compartiment carburant fermé)
-- **Dispositif de flottaison jetable :** bouée annulaire ou coussin, pour les embarcations de plus de 6 mètres
+- **Équipement de sauvetage :** pour une embarcation de plus de 6 m et jusqu'à 9 m, une ligne d'attrape flottante d'au moins 15 m OU une bouée de sauvetage attachée à une ligne flottante d'au moins 15 m. Au-delà de 9 m et jusqu'à 12 m, les deux sont requis. Un coussin ne remplace pas cet équipement.
 
 ---
 

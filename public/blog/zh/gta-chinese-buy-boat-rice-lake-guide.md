@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/gta-chinese-buy-boat-rice-lake-guide.md
-last_updated: 2026-10-04
+last_updated: 2026-10-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "多伦多华人在 Rice Lake 买船完整指南：从选型到交付"
 description: "多伦多华人家庭买船完整流程：船型选择（钓鱼船/家庭船/Pontoon）、新船 vs 二手、Mercury 发动机匹配、HBW 英语服务与沟通方式、贷款方案、提车与售后。"
 category: "mandarin"
 date_published: 2026-05-15
-date_modified: 2026-10-04
+date_modified: 2026-10-06
 keywords: ["多伦多华人买船","GTA 华人 Rice Lake 买船","安省买船指南","Pontoon 浮筒船购买","Mercury 发动机匹配","HBW GTA 华人买家","Toronto Chinese buy boat Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** mandarin  
 **Published:** 2026-05-15  
-**最后审核:** 2026-10-04  
+**最后审核:** 2026-10-06  
 **Read time:** 12 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/gta-chinese-buy-boat-rice-lake-guide
 
@@ -247,7 +247,7 @@ Harris Boat Works 自 1947 年起一直由 Harris 家族在 Rice Lake 经营。�
 
 ### 从多伦多开车到 Rice Lake 要多久？路线推荐？
 
-多伦多市中心到 Gores Landing 约 90 分钟，Markham 75 分钟，Pickering 60 分钟。最简单的路线是 Highway 401 东向，在 Exit 461（Port Hope / Highway 28）下高速，再走 County Road 28 北上约 15 分钟。
+多伦多市中心到 Gores Landing 约 90 分钟，Markham 75 分钟，Pickering 60 分钟。最简单的路线是沿 Highway 401 东向，到 Cobourg 的 Exit 472（County Road 18 / Burnham Street，路牌指向 Gores Landing）下高速，再沿 County Road 18 北行约 16 公里到 Gores Landing。
 
 ### GTA 华人家庭第一艘船，建议是 Pontoon 还是钓鱼船？
 

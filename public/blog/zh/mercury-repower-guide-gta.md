@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/mercury-repower-guide-gta.md
-last_updated: 2026-09-07
+last_updated: 2026-10-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "安大略省 Mercury 换新船外机完整指南：GTA 华人船主必�
 description: "你的船外机还值得维修吗？GTA 华人船主的 Mercury Repower 完整指南：换机时机、选马力、透明报价，以及 Harris Boat Works 的完整安装流程。"
 category: "成本分析"
 date_published: 2026-05-12
-date_modified: 2026-09-07
+date_modified: 2026-10-06
 keywords: ["mercury repower gta","gta 华人 mercury","mercury 换机 安省","gta chinese boater mercury","rice lake mercury repower"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** 成本分析  
 **Published:** 2026-05-12  
-**最后审核:** 2026-09-07  
+**最后审核:** 2026-10-06  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/mercury-repower-guide-gta
 
@@ -215,7 +215,7 @@ A：视时间段和库存情况而定，旺季等待时间可能较长。建议�
 
 ### Repower 之后保固怎么算？
 
-通过 HBW Premier 授权经销商购买的 Mercury 新机，享有完整 Mercury 原厂保固。保固期从安装完成日起算，详细条款请在购买时确认。
+通过 HBW Premier 授权经销商购买的 Mercury 新机，享有完整 Mercury 原厂保固。保固期从首次零售售出日或首次投入使用日（以先到者为准）起算，并由授权经销商向 Mercury 登记，详细条款请在购买时确认。
 
 ### 旧机可以 trade-in 吗？
 

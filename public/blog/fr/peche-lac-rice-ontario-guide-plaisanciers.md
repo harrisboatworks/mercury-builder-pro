@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/peche-lac-rice-ontario-guide-plaisanciers.md
-last_updated: 2026-09-06
+last_updated: 2026-10-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Pêche sur le lac Rice, Ontario : Guide pratique pour les plaisanciers"
 description: "Guide complet de la pêche sur le lac Rice : espèces (doré, achigan, maskinongé), saisons, zones à explorer et location d'embarcations chez Harris Boat Works."
 category: "Destination"
 date_published: 2026-04-12
-date_modified: 2026-09-06
+date_modified: 2026-10-06
 keywords: ["pêche lac Rice Ontario","pêche Kawarthas Ontario","meilleur lac pêche Ontario","Rice Lake fishing guide"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Catégorie :** Destination\
 **Publié le :** 2026-04-12\
-**Dernière révision :** 2026-09-06\
+**Dernière révision :** 2026-10-06\
 **Temps de lecture :** 7 min\
 **URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/peche-lac-rice-ontario-guide-plaisanciers
 
@@ -35,7 +35,7 @@ Le lac Rice, dans les Kawarthas, est l'un des meilleurs lacs à doré jaune de l
 
 ---
 
-Si vous cherchez un lac de pêche en Ontario sans avoir à conduire six heures vers le nord, le lac Rice mérite votre attention. Situé dans les Kawarthas, à environ une heure et demie à l'est de Toronto et à moins de trois heures de Montréal, ce plan d'eau s'étend sur environ 37 kilomètres de long et offre une diversité de poissons qui en fait l'un des favoris des pêcheurs de la province.
+Si vous cherchez un lac de pêche en Ontario sans avoir à conduire six heures vers le nord, le lac Rice mérite votre attention. Situé dans les Kawarthas, à environ une heure et demie à l'est de Toronto et à environ 4 h 30 de Montréal (environ 445 km), ce plan d'eau s'étend sur environ 37 kilomètres de long et offre une diversité de poissons qui en fait l'un des favoris des pêcheurs de la province.
 
 Le lac Rice fait partie du réseau de la Voie navigable Trent-Severn et est alimenté par la rivière Otonabee à l'extrémité ouest. Harris Boat Works est établi directement sur le lac, à Gores Landing, depuis 1947. Trois générations de la même famille. Si quelqu'un connaît ces eaux, c'est bien nous.
 
@@ -77,7 +77,7 @@ Le lac Rice accueille aussi le brochet, la perchaude, la barbotte et d'autres pe
 |---|---|---|---|
 | Doré jaune | 2e samedi de mai | 15 novembre | 4 |
 | Achigan (grande et petite bouche) | 3e samedi de juin | 15 décembre | 6 |
-| Maskinongé | 3e samedi de juin | 15 décembre | 1 |
+| Maskinongé | 1er samedi de juin | 15 décembre | Sport : 1 de plus de 112 cm; Conservation : 0 |
 | Perchaude | Toute l'année | aucune | 50 |
 
 **Vérifiez toujours les règlements en vigueur pour l'année courante sur ontario.ca.** Les dates et limites de prise peuvent changer d'une année à l'autre.
@@ -150,7 +150,7 @@ Doré jaune, achigan (grande et petite bouche), maskinongé.
 
 ### Rice Lake est-il loin de Toronto?
 
-Environ 1 h 30 par la 401 Est puis la 115 Nord.
+Environ 1 h 30 par la 401 Est jusqu'à la sortie 472 (County Road 18 / Burnham Street, Cobourg), puis County Road 18 vers le nord sur environ 16 km jusqu'à Gores Landing.
 
 ## Prochaines étapes
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/ur/used-boat-buying-checklist-urdu.md
-last_updated: 2026-09-11
+last_updated: 2026-10-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Canada mein purani kashti kharidne ki checklist | استعمال شدہ 
 description: "Canada mein purani kashti kharidne ki checklist: motor، transom، storage aur repower جانچ اردو میں۔ Rice Lake کے تجربہ کار marina کی طرف سے مکمل رہنمائی۔"
 category: "اردو گائیڈ"
 date_published: 2026-06-12
-date_modified: 2026-09-11
+date_modified: 2026-10-06
 keywords: ["یوزڈ بوٹ خریدتے وقت کیا دیکھیں (What to check when buying a used boat)","سیکنڈ ہینڈ کشتی کی خریدی میں دھوکہ (Scams in buying a used boat)","پرانے بوٹ انجن کی حالت کیسے چیک کریں (How to check condition of an old boat engine)","استعمال شدہ کشتی کی قیمت کا اندازہ (Estimating price of a used boat)","اونٹاریو میں یوزڈ بوٹ مارکیٹ (Used boat market Ontario)"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** اردو گائیڈ  
 **Published:** 2026-06-12  
-**آخری جائزہ:** 2026-09-11  
+**آخری جائزہ:** 2026-10-06  
 **Read time:** 8 منٹ  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ur/used-boat-buying-checklist-urdu
 
@@ -57,7 +57,7 @@ Mississauga، Markham یا برامپٹن جیسے شہروں میں بیٹھے 
 
 ## کاغذی کارروائی: PCL (Pleasure Craft Licence) کی منتقلی | Paperwork
 
-Ontario میں ہر موٹر والی کشتی کے لیے Pleasure Craft Licence (PCL) ضروری ہے۔ یہ وہ نمبر ہے جو کشتی کے دونوں طرف بڑے حروف میں لکھا ہوتا ہے۔ بیچنے والا جب آپ کو فروخت کرے تو اسے PCL کی پشت پر دستخط کر کے منتقلی کا حصہ بھرنا ہوگا۔ آپ پھر اسے Transport Canada کو بھیجیں گے۔ اگر بیچنے والے کے پاس PCL نہیں ہے، یا نمبر مشکوک لگتا ہے، تو مت خریدیں۔ یہ چوری یا قانونی پریشانی کا سبب بن سکتا ہے۔
+ایک یا زیادہ انجنوں کی مجموعی طاقت 10 HP (7.5 kW) یا اس سے زیادہ ہو تو کشتی کے لیے Pleasure Craft Licence (PCL) درکار ہوتا ہے۔ یہ Transport Canada کا وفاقی لائسنس ہے، Ontario کا نہیں۔ اس سے چھوٹے انجن والی کشتی کے پاس قانونی طور پر PCL نہ بھی ہو سکتا ہے۔ یہ وہ نمبر ہے جو کشتی کے دونوں طرف بڑے حروف میں لکھا ہوتا ہے۔ بیچنے والے سے دستخط شدہ فروخت کی رسید لیں۔ پھر خریدار کو ملکیت بدلنے کے 30 دن کے اندر شناختی دستاویز اور ملکیت کے ثبوت کے ساتھ Transport Canada کو آن لائن یا فارم کے ذریعے PCL اپنے نام منتقل کرنے کی درخواست دینی چاہیے۔ اگر کشتی کے لیے PCL ضروری ہے مگر بیچنے والے کے پاس نہیں، یا نمبر مشکوک لگتا ہے، تو خریدنے سے پہلے تصدیق کریں۔ یہ چوری یا قانونی پریشانی کا سبب بن سکتا ہے۔
 
 اس کے علاوہ، فروخت کی رسید (bill of sale) ضرور بنوائیں جس پر ہل کا شناختی نمبر (HIN)، قیمت، اور دونوں فریقوں کے دستخط ہوں۔
 
@@ -99,7 +99,7 @@ Harris Boat Works
 
 ### بیچنے والے کی طرف سے دھوکے سے کیسے بچا جائے؟
 
-کبھی بھی PCL (Pleasure Craft Licence) کے بغیر کشتی نہ خریدیں، جب تک بیچنے والا اسے منتقل کرنے اور درست نشانات دکھانے کو تیار نہ ہو۔ بہت زیادہ جلدی کرانے والے بیچنے والے، پانی میں ٹیسٹ سے انکار، یا بہت کم قیمت پر اعلیٰ ماڈل، یہ عام دھوکے کی نشانیاں ہیں۔
+اگر انجنوں کی مجموعی طاقت 10 HP (7.5 kW) یا زیادہ ہے تو PCL (Pleasure Craft Licence)، درست نشانات اور منتقلی کے کاغذات کی تصدیق کریں۔ اس سے چھوٹے انجن والی کشتی کے پاس PCL نہ ہونا بذات خود دھوکے کی نشانی نہیں۔ بہت زیادہ جلدی کرانے والے بیچنے والے، پانی میں ٹیسٹ سے انکار، یا بہت کم قیمت پر اعلیٰ ماڈل، یہ عام دھوکے کی نشانیاں ہیں۔
 
 ### پرانے کشتی کے انجن کی صحت خود کیسے جانچی جا سکتی ہے؟
 

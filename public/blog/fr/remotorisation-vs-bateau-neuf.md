@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/remotorisation-vs-bateau-neuf.md
-last_updated: 2026-08-19
+last_updated: 2026-10-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Remotorisation ou achat d'un bateau neuf : Quelle est la meilleure optio
 description: "Remotoriser ou acheter un bateau neuf? Guide pratique pour comparer coûts, délais et état de la coque avec l'expertise honnête de Harris Boat Works, Gores Landing."
 category: "Guide d'achat"
 date_published: 2026-04-12
-date_modified: 2026-08-19
+date_modified: 2026-10-06
 keywords: ["remotorisation vs bateau neuf","changer moteur ou acheter nouveau bateau","remotorisation avantages","repower vs new boat"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Catégorie :** Guide d'achat\
 **Publié le :** 2026-04-12\
-**Dernière révision :** 2026-08-19\
+**Dernière révision :** 2026-10-06\
 **Temps de lecture :** 7 min\
 **URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/remotorisation-vs-bateau-neuf
 
@@ -85,7 +85,7 @@ Prix de remotorisation en ligne : **mercuryrepower.ca**
 Magasiner un bateau neuf : **harrisboatworks.ca**
 Demande de service : **hbw.wiki/service**
 Téléphone : **905-342-2153**
-En personne : **Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0** (1 h 30 à l'est de Toronto; moins de 3 heures de Montréal)
+En personne : **Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0** (1 h 30 à l'est de Toronto; environ 4 h 30 de Montréal)
 
 ## Questions fréquentes
 

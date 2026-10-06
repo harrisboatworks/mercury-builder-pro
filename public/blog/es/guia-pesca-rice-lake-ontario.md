@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/es/guia-pesca-rice-lake-ontario.md
-last_updated: 2026-10-04
+last_updated: 2026-10-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Guía de pesca en Rice Lake, Ontario"
 description: "Guía completa de pesca en Rice Lake: especies (walleye, bass, muskie, perch), temporadas FMZ 17, licencias, mejores zonas y alquiler de botes en Harris."
 category: "Pesca"
 date_published: 2026-04-12
-date_modified: 2026-10-04
+date_modified: 2026-10-06
 keywords: ["pesca Rice Lake Ontario","guía pesca Ontario","pescar walleye Ontario","lago cerca de Toronto para pescar"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,13 +25,13 @@ revenue_driver: repower
 
 **Category:** Pesca  
 **Published:** 2026-04-12  
-**Última revisión:** 2026-10-04  
+**Última revisión:** 2026-10-06  
 **Read time:** 12 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/es/guia-pesca-rice-lake-ontario
 
 ### Respuesta rápida
 
-Rice Lake es uno de los mejores lagos para pescar walleye (lucioperca / doré) en toda Ontario. Está a aproximadamente **1.5 horas al este de Toronto** por la Hwy 401E + Hwy 115N. La temporada de walleye en la Zona de Gestión de Pesca 17 (FMZ 17) abre el segundo sábado de mayo y cierra el 15 de noviembre, con un límite de 4 peces. Las licencias de pesca son obligatorias para personas de 18 a 64 años. Verifica siempre las fechas y límites actuales en ontario.ca antes de salir.
+Rice Lake es uno de los mejores lagos para pescar walleye (lucioperca / doré) en toda Ontario. Está a aproximadamente **1.5 horas al este de Toronto** por la Hwy 401 Este, salida 472 en Cobourg, y County Road 18 al norte. La temporada de walleye en la Zona de Gestión de Pesca 17 (FMZ 17) abre el segundo sábado de mayo y cierra el 15 de noviembre, con límites combinados de walleye y sauger de 4 con Sport y 1 con Conservation, solo de 35–50 cm. Los lagos Balsam y Mitchell tienen reglas propias. Las licencias de pesca son obligatorias para personas de 18 a 64 años. Verifica siempre las fechas y límites actuales en ontario.ca antes de salir.
 
 ¿Necesita su PCOC? Haga el curso en línea con [el enlace de recomendación de HBW a MyBoatCard](https://myboatcard.com/card/harrisboat) y use el código **HARRIS15** para obtener **15% de descuento**.
 
@@ -50,8 +50,8 @@ Rice Lake tiene aproximadamente **37 km de longitud** y forma parte del sistema 
 El fondo variable del lago, mezclas de arena, grava, barro y vegetación acuática, crea hábitats ideales para múltiples especies. La visibilidad es moderada, lo que favorece la pesca de walleye (que prefiere condiciones de poca luz y fondos con cover).
 
 **Cómo llegar desde Toronto:**
-- Toma la Hwy 401 Este hasta la salida de la Hwy 115N (aproximadamente 110 km)
-- Sigue por 115N hacia Campbellford / Gores Landing
+- Toma la Hwy 401 Este hasta la salida 472 en Cobourg (County Road 18 / Burnham Street)
+- Sigue por County Road 18 al norte unos 16 km hasta Gores Landing; el recorrido completo desde Toronto es de unos 130 km
 - Tiempo total: **~1.5 horas** sin tráfico desde el centro de Toronto
 - Desde el área de Mississauga o Brampton: similar o ligeramente más largo por la 401
 
@@ -63,14 +63,14 @@ Las siguientes fechas y límites corresponden a la Zona de Gestión de Pesca 17,
 
 | Especie | Temporada típica | Límite diario |
 |---------|-----------------|--------------|
-| Walleye (lucioperca / doré) | 2.º sábado de mayo–15 de noviembre | 4 |
+| Walleye y sauger (lucioperca / doré) | 2.º sábado de mayo–15 de noviembre; solo de 35–50 cm | Sport: 4; Conservation: 1, combinados |
 | Bass de boca grande (largemouth) | 3.er sábado de junio–15 de diciembre | 6 |
 | Bass de boca pequeña (smallmouth) | 3.er sábado de junio–15 de diciembre | 6 |
 | Muskie (lucio almizclero) | 1.er sábado de junio–15 de diciembre | 1 |
 | Perca amarilla (yellow perch) | Todo el año | 50 |
 | Lucio norteño (northern pike) | Consultar reglamento FMZ 17 | Consultar |
 
-> **Importante:** Los límites y fechas anteriores son de referencia. El gobierno de Ontario actualiza las regulaciones anualmente. Consulta la guía oficial antes de cada temporada.
+> **Importante:** Los límites y fechas anteriores son de referencia. Los lagos Balsam y Mitchell tienen reglas propias. El gobierno de Ontario actualiza las regulaciones anualmente. Consulta la guía oficial antes de cada temporada.
 
 ---
 
@@ -181,7 +181,7 @@ Sí. Harris Boat Works tiene una flota de 9 botes de alquiler. Consulte harrisbo
 
 ### ¿Qué tan lejos está Rice Lake de Toronto?
 
-Aproximadamente 1,5 horas por la 401 Este y luego la 115 Norte.
+Aproximadamente 1,5 horas por la 401 Este hasta la salida 472 en Cobourg y luego County Road 18 al norte unos 16 km hasta Gores Landing.
 
 ### ¿Necesito la PCOC (licencia de navegación) para alquilar un bote?
 

@@ -102,7 +102,7 @@ Les modalités dépendent du produit, de l'usage et de la date d'achat. Consulte
     image: '/lovable-uploads/hero-mercury-repower-cost-ontario.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-09-06',
+    dateModified: '2026-10-06',
     publishDate: '2026-04-12',
     category: 'Guide d\'achat',
     readTime: '7 min',
@@ -145,7 +145,7 @@ C'est le facteur le plus évident. Un moteur Mercury de 9,9 HP coûte une fracti
 
 ### 2. La longueur de l'arbre
 
-Il existe principalement deux longueurs : arbre court (20 pouces) et arbre long (25 pouces). Un arbre long coûte légèrement plus cher. Pour certaines embarcations, un arbre ultra-long (30 pouces) est nécessaire. Choisir la bonne longueur pour votre tableau arrière est important : une erreur peut affecter les performances et causer des problèmes mécaniques.
+Pour une remotorisation, les deux longueurs courantes sont le pied long L (20 pouces) et le pied extra-long XL (25 pouces). Le pied court mesure 15 pouces et le XXL, 30 pouces. Un arbre long coûte légèrement plus cher. Pour certaines embarcations, un arbre ultra-long (30 pouces) est nécessaire. Choisir la bonne longueur pour votre tableau arrière est important : une erreur peut affecter les performances et causer des problèmes mécaniques.
 
 ### 3. Le câblage et le tableau de bord
 
@@ -195,7 +195,7 @@ Un moteur Mercury FourStroke neuf, c'est aussi un départ sur une nouvelle base 
 
 ## Harris Boat Works : concessionnaire Mercury Premier à Gores Landing
 
-Nous sommes situés à Gores Landing, sur le lac Rice, à environ 1 h 30 à l'est de Toronto par l'autoroute 401 et la 115 Nord. Les clients de Montréal font le trajet en environ 3 heures.
+Nous sommes situés à Gores Landing, sur le lac Rice, à environ 1 h 30 à l'est de Toronto par la 401 Est jusqu'à la sortie 472 (County Road 18 / Burnham Street, Cobourg), puis County Road 18 vers le nord sur environ 16 km jusqu'à Gores Landing. Les clients de Montréal font le trajet en environ 4 h 30 (environ 445 km).
 
 Notre équipe travaille principalement en anglais, nous ne parlons pas français couramment, mais nous accueillons chaleureusement les clients francophones et nous trouverons une façon de communiquer efficacement. Le configurateur en ligne sur mercuryrepower.ca fonctionne sans barrière linguistique : vous entrez les informations sur votre embarcation, choisissez la puissance, et obtenez un vrai prix en dollars canadiens, pas un « appelez-nous pour en savoir plus ».
 
@@ -610,7 +610,7 @@ Pour les réparations de moteurs, nous ne servons que Mercury et Mercruiser.
     image: '/lovable-uploads/hero-boat-repowering-guide-when-to-replace-motor.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-08-19',
+    dateModified: '2026-10-06',
     publishDate: '2026-04-12',
     category: 'Guide d\'achat',
     readTime: '7 min',
@@ -671,7 +671,7 @@ Prix de remotorisation en ligne : **mercuryrepower.ca**
 Magasiner un bateau neuf : **harrisboatworks.ca**
 Demande de service : **hbw.wiki/service**
 Téléphone : **905-342-2153**
-En personne : **Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0** (1 h 30 à l'est de Toronto; moins de 3 heures de Montréal)`,
+En personne : **Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0** (1 h 30 à l'est de Toronto; environ 4 h 30 de Montréal)`,
     faqs: [
       {
         question: "Combien coûte une remotorisation Mercury en Ontario?",
@@ -707,7 +707,7 @@ En personne : **Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON 
     image: '/lovable-uploads/hero-rice-lake-boating-guide.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-09-06',
+    dateModified: '2026-10-06',
     publishDate: '2026-04-12',
     category: 'Destination',
     readTime: '7 min',
@@ -718,7 +718,7 @@ Le lac Rice, dans les Kawarthas, est l'un des meilleurs lacs à doré jaune de l
 
 ---
 
-Si vous cherchez un lac de pêche en Ontario sans avoir à conduire six heures vers le nord, le lac Rice mérite votre attention. Situé dans les Kawarthas, à environ une heure et demie à l'est de Toronto et à moins de trois heures de Montréal, ce plan d'eau s'étend sur environ 37 kilomètres de long et offre une diversité de poissons qui en fait l'un des favoris des pêcheurs de la province.
+Si vous cherchez un lac de pêche en Ontario sans avoir à conduire six heures vers le nord, le lac Rice mérite votre attention. Situé dans les Kawarthas, à environ une heure et demie à l'est de Toronto et à environ 4 h 30 de Montréal (environ 445 km), ce plan d'eau s'étend sur environ 37 kilomètres de long et offre une diversité de poissons qui en fait l'un des favoris des pêcheurs de la province.
 
 Le lac Rice fait partie du réseau de la Voie navigable Trent-Severn et est alimenté par la rivière Otonabee à l'extrémité ouest. Harris Boat Works est établi directement sur le lac, à Gores Landing, depuis 1947. Trois générations de la même famille. Si quelqu'un connaît ces eaux, c'est bien nous.
 
@@ -760,7 +760,7 @@ Le lac Rice accueille aussi le brochet, la perchaude, la barbotte et d'autres pe
 |---|---|---|---|
 | Doré jaune | 2e samedi de mai | 15 novembre | 4 |
 | Achigan (grande et petite bouche) | 3e samedi de juin | 15 décembre | 6 |
-| Maskinongé | 3e samedi de juin | 15 décembre | 1 |
+| Maskinongé | 1er samedi de juin | 15 décembre | Sport : 1 de plus de 112 cm; Conservation : 0 |
 | Perchaude | Toute l'année | aucune | 50 |
 
 **Vérifiez toujours les règlements en vigueur pour l'année courante sur ontario.ca.** Les dates et limites de prise peuvent changer d'une année à l'autre.
@@ -822,7 +822,7 @@ Oui. Nous louons des pontons et des bateaux de pêche sur le lac Rice. Visitez [
 Oui, pour les 18 à 64 ans. Les moins de 18 ans résidents canadiens et les 65 ans et plus résidents canadiens sont exemptés.
 
 **Le lac Rice est-il accessible depuis Montréal?** 
-Oui. Le lac se trouve à moins de trois heures de Montréal via l'autoroute 401 vers l'ouest et la 115 vers le nord jusqu'à Gores Landing.
+Oui. Le lac se trouve à environ 4 h 30 de Montréal (environ 445 km) par la 401 vers l'ouest jusqu'à la sortie 472 (County Road 18 / Burnham Street, Cobourg), puis County Road 18 vers le nord sur environ 16 km jusqu'à Gores Landing.
 
 ---
 
@@ -854,7 +854,7 @@ Harris Boat Works, Gores Landing, Ontario, sur le lac Rice. En affaires depuis 1
       },
       {
         question: 'Rice Lake est-il loin de Toronto?',
-        answer: 'Environ 1 h 30 par la 401 Est puis la 115 Nord.'
+        answer: 'Environ 1 h 30 par la 401 Est jusqu\'à la sortie 472 (County Road 18 / Burnham Street, Cobourg), puis County Road 18 vers le nord sur environ 16 km jusqu\'à Gores Landing.'
       }
     ]
   },
@@ -867,7 +867,7 @@ Harris Boat Works, Gores Landing, Ontario, sur le lac Rice. En affaires depuis 1
     imageAlt: 'Pleasure Craft Licence form on a workbench next to an aluminum boat undergoing a Mercury outboard motor repower.',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-10-04',
+    dateModified: '2026-10-06',
     publishDate: '2026-04-12',
     category: 'Réglementation',
     readTime: '8 min',
@@ -954,7 +954,7 @@ Avoir votre carte ne suffit pas, votre embarcation doit aussi être équipée co
 - **Moyen de propulsion manuel ou ancre avec ligne**
 - **Feux de navigation :** si vous naviguez entre le coucher et le lever du soleil
 - **Extincteur :** obligatoire pour certaines embarcations (avec moteur intérieur ou compartiment carburant fermé)
-- **Dispositif de flottaison jetable :** bouée annulaire ou coussin, pour les embarcations de plus de 6 mètres
+- **Équipement de sauvetage :** pour une embarcation de plus de 6 m et jusqu'à 9 m, une ligne d'attrape flottante d'au moins 15 m OU une bouée de sauvetage attachée à une ligne flottante d'au moins 15 m. Au-delà de 9 m et jusqu'à 12 m, les deux sont requis. Un coussin ne remplace pas cet équipement.
 
 ---
 
@@ -1303,7 +1303,7 @@ Pour les réparations de moteurs, nous ne servons que Mercury et Mercruiser.
     image: '/lovable-uploads/hero-mercury-repower-gta.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-13',
-    dateModified: '2026-09-12',
+    dateModified: '2026-10-06',
     publishDate: '2026-05-13',
     category: 'Guide d\'achat',
     readTime: '12 min',
@@ -1496,7 +1496,7 @@ Oui. 401 vers l'est jusqu'à Cobourg, vers le nord sur la route régionale 18 ju
 Le ramassage du bateau peut être organisé, sous réserve de confirmation de l'embarcation et du lieu. HBW n'offre pas de livraison.
 
 **Mon Mercury sera-t-il admissible à la garantie si je l'ai acheté ailleurs et que je veux le faire entretenir chez Harris Boat Works ?**
-Oui. Le réseau de garantie canadien Mercury honore la couverture chez n'importe quel concessionnaire autorisé peu importe où le moteur a été acheté. Apportez les papiers d'achat; nous enregistrons le travail dans le système central de Mercury.
+Oui, si le moteur a été acheté neuf chez un concessionnaire Mercury autorisé au Canada et enregistré : tout concessionnaire autorisé peut effectuer une réparation sous garantie. Un moteur acheté par petites annonces, aux enchères ou importé des États-Unis n'est généralement pas couvert. Apportez les papiers d'achat; nous enregistrons le travail dans le système central de Mercury.
 
 **Puis-je choisir un Pro XS plutôt qu'un FourStroke pour la remotorisation ?**
 Cela dépend de l'usage. Pro XS pour les applications de performance (ski, sports nautiques, opération à haut régime, vitesse de pointe maximale). FourStroke pour la croisière, l'efficacité énergétique, l'usage familial.
@@ -1524,7 +1524,7 @@ Très variable. Un Mercury 150 de 5 ans à faible heures s'échange pour 5 500 $
       { question: 'Combien de temps prend une remotorisation chez Harris Boat Works ?', answer: 'Votre bateau reste chez nous 2 à 5 jours, du dépôt à la reprise. Le délai du moteur dépend du modèle et de la disponibilité actuelle chez Mercury ; nous vous donnons une date réelle au moment de la commande, et votre bateau reste chez vous jusqu\'à ce que le moteur arrive.' },
       { question: 'Puis-je remorquer mon bateau de Toronto à Harris Boat Works moi-même ?', answer: 'Oui. 401 vers l\'est jusqu\'à Cobourg, vers le nord sur la route régionale 18 jusqu\'à Gores Landing. Environ 90 minutes du centre-ville de Toronto. Nous avons du stationnement pour remorques sur place.' },
       { question: 'Organisez-vous le transport de bateau depuis la GTA ?', answer: 'Le ramassage du bateau peut être organisé, sous réserve de confirmation de l\'embarcation et du lieu. HBW n\'offre pas de livraison.' },
-      { question: 'Mon Mercury sera-t-il admissible à la garantie si je l\'ai acheté ailleurs ?', answer: 'Oui. Le réseau de garantie canadien Mercury honore la couverture chez n\'importe quel concessionnaire autorisé peu importe où le moteur a été acheté. Apportez les papiers d\'achat; nous enregistrons le travail dans le système central de Mercury.' },
+      { question: 'Mon Mercury sera-t-il admissible à la garantie si je l\'ai acheté ailleurs ?', answer: 'Oui, si le moteur a été acheté neuf chez un concessionnaire Mercury autorisé au Canada et enregistré : tout concessionnaire autorisé peut effectuer une réparation sous garantie. Un moteur acheté par petites annonces, aux enchères ou importé des États-Unis n\'est généralement pas couvert. Apportez les papiers d\'achat; nous enregistrons le travail dans le système central de Mercury.' },
       { question: 'Puis-je choisir un Pro XS plutôt qu\'un FourStroke pour la remotorisation ?', answer: 'Cela dépend de l\'usage. Pro XS pour les applications de performance (ski, sports nautiques, opération à haut régime, vitesse de pointe maximale). FourStroke pour la croisière, l\'efficacité énergétique, l\'usage familial.' },
       { question: 'Que se passe-t-il si mon bateau a besoin de plus qu\'un moteur ?', answer: 'Scénario fréquent. Les remotoriations font souvent émerger d\'autres travaux : mises à niveau de câblage (direction hydraulique, jauges, commandes), renforcement du tableau arrière, remplacement du système de carburant, mises à jour électriques. Nous spécifions tout dans la soumission et vous décidez ce qui est inclus ou reporté.' },
       { question: 'Faites-vous des remotoriations à deux moteurs ?', answer: 'Oui, configurations V6 ou V8 jumelées sur les plus gros bateaux (en mer, bass boats, deck boats). Même configurateur, même processus, temps d\'installation plus long (généralement 2 à 3 semaines pour les jumelés). Les installations Pro XS V6 jumelées sont fréquentes à notre atelier.' },
@@ -1541,7 +1541,7 @@ Très variable. Un Mercury 150 de 5 ans à faible heures s'échange pour 5 500 $
     image: '/lovable-uploads/hero-mercury-90-shop-shot.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-13',
-    dateModified: '2026-09-11',
+    dateModified: '2026-10-06',
     publishDate: '2026-05-13',
     category: 'Avis produit',
     readTime: '7 min',
@@ -1622,7 +1622,7 @@ Trois scénarios réels :
 | Bateau de pêche en aluminium 14 à 17 pi | 90 ELPT FourStroke, embase standard. Plane plus facilement, croisière plus rapide au même régime. |
 | Petit ponton sous 20 pi | 90 ELPT Command Thrust, l'embase CT fait une différence significative sur les coques à fond plat. |
 | Petite vedette de chalet | 90 ELPT FourStroke, même logique que le bateau de pêche. |
-| Remotorisation d'un vieux 60 à 75 HP deux temps | 90 ELPT FourStroke, plus léger, plus silencieux, plus propre, plus efficace. |
+| Remotorisation d'un vieux 60 à 75 HP deux temps | 90 ELPT FourStroke, plus silencieux, plus propre et plus économique, mais plus lourd (environ 165 kg). Vérifiez la capacité du tableau arrière et la plaque : un 90 convient à une plaque de 115 HP, un modèle sous le maximum. |
 
 Si votre coque est cotée pour un maximum de 60 HP, vous êtes dans la conversation du Mercury 60 ELPT FourStroke, pas celle-ci. Le 60 fonctionne sur un bloc plus petit de 1,0 L, un moteur entièrement différent.
 
@@ -2201,7 +2201,7 @@ Pour les réparations de moteurs, nous ne servons que Mercury et Mercruiser.
     imageAlt: 'Boat trailer on jack stands with maintenance tools like a grease gun and torque wrench at an Ontario marina.',
     author: 'Harris Boat Works',
     datePublished: '2026-05-13',
-    dateModified: '2026-10-04',
+    dateModified: '2026-10-06',
     publishDate: '2026-05-13',
     category: 'Entretien',
     readTime: '10 min',
@@ -2254,7 +2254,7 @@ Les roulements sont des cartouches de graisse scellées qui permettent aux roues
 
 ### 2. Freins (à inertie ou électriques)
 
-La plupart des remorques ontariennes sous 2 500 lb brut utilisent des freins à inertie. Les remorques plus grandes utilisent des freins électriques contrôlés depuis le véhicule remorqueur.
+En Ontario, les remorques d'un poids brut de 1 360 kg (environ 3 000 lb) ou plus doivent avoir des freins selon l'article 64(5) du Code de la route. Sous ce seuil, la plupart des remorques de bateau n'en ont pas. Les freins à inertie sont courants au-dessus du seuil; les freins électriques équipent les plus grosses remorques.
 
 **Action :**
 - À inertie : utilisez uniquement le liquide de freins prescrit par le fabricant de votre actionneur et de vos freins. Ne mélangez pas des types de liquide non compatibles; suivez la procédure et l'intervalle d'entretien du fabricant.
@@ -2268,7 +2268,7 @@ La plupart des remorques ontariennes sous 2 500 lb brut utilisent des freins à 
 Les pneus de remorque de bateau (cotés ST) sont différents des pneus d'auto. Ils ont des flancs plus rigides mais se dégradent plus vite à cause des UV et de l'ozone.
 
 **Action :**
-- Vérifier la pression à froid avant chaque sortie (cible 50 à 65 PSI selon la taille)
+- Vérifier la pression à froid avant chaque sortie (gonfler les pneus ST à la pression maximale inscrite sur le flanc, selon leur taille et leur catégorie de charge : généralement 50 PSI pour C, 65 pour D et 80 pour E; certains petits pneus diagonaux exigent davantage)
 - Remplacer les pneus tous les 5 à 6 ans peu importe la profondeur de la bande de roulement
 - Transporter une roue de secours pleine taille
 - Vérifier le code de date DOT (les 4 derniers chiffres = semaine/année de fabrication)
