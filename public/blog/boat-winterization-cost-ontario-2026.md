@@ -213,11 +213,11 @@ As of September 2026, spring commissioning is included for HBW winter-storage cu
 
 ## Related guides
 
-- [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule): the model-specific Mercury service schedule
-- [Shrinkwrap vs Indoor Boat Storage Ontario](/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario): shrink-wrap vs indoor winter storage
-- [HBW Outdoor Winter Boat Storage & Shrinkwrap](/blog/outdoor-boat-storage-shrinkwrap-rice-lake): HBW outdoor winter storage and shrink-wrap scope
-- [Winter Boat Storage Near Toronto HBW](/blog/winter-storage-near-toronto-hbw): winter storage options near Toronto
-- [Spring Outboard Commissioning Checklist (2026 Ontario)](/blog/spring-outboard-commissioning-checklist): spring commissioning checklist
+- [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule), the model-specific Mercury service schedule
+- [Shrinkwrap vs Indoor Boat Storage Ontario](/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario), shrink-wrap vs indoor winter storage
+- [HBW Outdoor Winter Boat Storage & Shrinkwrap](/blog/outdoor-boat-storage-shrinkwrap-rice-lake), HBW outdoor winter storage and shrink-wrap scope
+- [Winter Boat Storage Near Toronto HBW](/blog/winter-storage-near-toronto-hbw), winter storage options near Toronto
+- [Spring Outboard Commissioning Checklist (2026 Ontario)](/blog/spring-outboard-commissioning-checklist), spring commissioning checklist
 
 ## Next steps
 

@@ -223,11 +223,11 @@ Contact HBW with the serial number and symptoms so we can confirm service scope 
 
 ## Related guides
 
-- [Best Mercury for Aluminum Boats 2026](/blog/best-mercury-outboard-aluminum-fishing-boats): best Mercury for aluminum fishing boats
-- [New vs Used Mercury Outboard in Ontario, by the Numbers](/blog/new-vs-used-mercury-outboard-ontario): new vs used Mercury tradeoffs
-- [Bad Used Boats to Avoid Ontario](/blog/bad-used-boats-to-avoid-ontario): used boats to avoid in Ontario
-- [Used Boat Walkaround Ontario Guide](/blog/used-boat-walkaround-inspection-ontario): used-boat walkaround inspection
-- [New vs. Used Pontoon Boats in Ontario: What Actually Determines Value](/blog/new-vs-used-pontoon-boats-ontario): new vs used pontoon value comparison
+- [Best Mercury for Aluminum Boats 2026](/blog/best-mercury-outboard-aluminum-fishing-boats), best Mercury for aluminum fishing boats
+- [New vs Used Mercury Outboard in Ontario, by the Numbers](/blog/new-vs-used-mercury-outboard-ontario), new vs used Mercury tradeoffs
+- [Bad Used Boats to Avoid Ontario](/blog/bad-used-boats-to-avoid-ontario), used boats to avoid in Ontario
+- [Used Boat Walkaround Ontario Guide](/blog/used-boat-walkaround-inspection-ontario), used-boat walkaround inspection
+- [New vs. Used Pontoon Boats in Ontario: What Actually Determines Value](/blog/new-vs-used-pontoon-boats-ontario), new vs used pontoon value comparison
 
 ## Next steps
 

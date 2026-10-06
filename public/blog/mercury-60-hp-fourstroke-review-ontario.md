@@ -281,8 +281,8 @@ For eligible Canadian pleasure-use purchases, Mercury publishes a three-year lim
 
 ## Related guides
 
-- [Mercury Pro XS vs Verado vs FourStroke Compared](/blog/fourstroke-vs-pro-xs): FourStroke vs Pro XS side-by-side
-- [Mercury 9.9 EFI Review Ontario](/blog/mercury-9-9-efi-review-ontario): 9.9 EFI review for Ontario
+- [Mercury Pro XS vs Verado vs FourStroke Compared](/blog/fourstroke-vs-pro-xs), FourStroke vs Pro XS side-by-side
+- [Mercury 9.9 EFI Review Ontario](/blog/mercury-9-9-efi-review-ontario), 9.9 EFI review for Ontario
 - [Mercury 150 HP Review: FourStroke vs Pro XS](/blog/mercury-150-hp-fourstroke-pro-xs-review-ontario)
 - [Mercury 200 HP Review: FourStroke vs Pro XS](/blog/mercury-200-hp-fourstroke-pro-xs-review-ontario)
 - [Mercury 250 HP Review: FourStroke vs Pro XS](/blog/mercury-250-hp-fourstroke-pro-xs-review-ontario)

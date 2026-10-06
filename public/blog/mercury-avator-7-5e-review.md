@@ -137,10 +137,10 @@ Warranty coverage is confirmed for the exact motor and battery package when HBW 
 
 ## Related guides
 
-- [Mercury Pro XS vs Verado vs FourStroke Compared](/blog/fourstroke-vs-pro-xs): FourStroke vs Pro XS side-by-side
-- [Mercury Avator vs Torqeedo Ontario](/blog/mercury-avator-vs-torqeedo): Avator vs Torqeedo
-- [Charging a Mercury Avator at Your Cottage Dock (2026)](/blog/mercury-avator-charging-cottage-dock): charging the Avator at a cottage dock
-- [Mercury Avator Electric Outboard Range on Rice Lake (2026)](/blog/mercury-avator-range-rice-lake-cottage): Avator range on Rice Lake
+- [Mercury Pro XS vs Verado vs FourStroke Compared](/blog/fourstroke-vs-pro-xs), FourStroke vs Pro XS side-by-side
+- [Mercury Avator vs Torqeedo Ontario](/blog/mercury-avator-vs-torqeedo), Avator vs Torqeedo
+- [Charging a Mercury Avator at Your Cottage Dock (2026)](/blog/mercury-avator-charging-cottage-dock), charging the Avator at a cottage dock
+- [Mercury Avator Electric Outboard Range on Rice Lake (2026)](/blog/mercury-avator-range-rice-lake-cottage), Avator range on Rice Lake
 - [Electric or Gas Repower? An Honest Guide for Rice Lake Boaters (Mercury Avator Included)](/blog/electric-vs-gas-repower-guide-rice-lake)
 
 ## Next steps

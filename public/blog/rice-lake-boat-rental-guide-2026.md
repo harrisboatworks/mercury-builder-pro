@@ -207,10 +207,10 @@ Yes, multi-day rentals can stay at your cottage dock for the duration, and you c
 
 ## Related guides
 
-- [First Time Renting a Boat? What We Tell Every Renter at Our Dock](/blog/first-time-boat-rental-rice-lake-guide): first-time renter's guide to Rice Lake
-- [Do You Need a Licence to Rent a Boat in Ontario? (2026)](/blog/boat-rental-licence-ontario-guide): licence rules for renting a boat in Ontario
-- [Group Boat Rentals on Rice Lake: Reunions, Fishing Weekends, and Big Days Out](/blog/group-boat-rentals-rice-lake): renting for a group on Rice Lake
-- [Renting vs Owning a Boat in Ontario: The Honest Math (2026)](/blog/renting-vs-owning-boat-ontario-math): the rent vs own math for Ontario boaters
+- [First Time Renting a Boat? What We Tell Every Renter at Our Dock](/blog/first-time-boat-rental-rice-lake-guide), first-time renter's guide to Rice Lake
+- [Do You Need a Licence to Rent a Boat in Ontario? (2026)](/blog/boat-rental-licence-ontario-guide), licence rules for renting a boat in Ontario
+- [Group Boat Rentals on Rice Lake: Reunions, Fishing Weekends, and Big Days Out](/blog/group-boat-rentals-rice-lake), renting for a group on Rice Lake
+- [Renting vs Owning a Boat in Ontario: The Honest Math (2026)](/blog/renting-vs-owning-boat-ontario-math), the rent vs own math for Ontario boaters
 
 ## Next steps
 

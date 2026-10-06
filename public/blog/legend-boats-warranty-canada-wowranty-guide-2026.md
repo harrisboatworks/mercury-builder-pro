@@ -141,8 +141,8 @@ Complete the service request at hbw.wiki/service, then drop off anytime, includi
 
 ## Related guides
 
-- [How Your Mercury Warranty Works After a Repower](/blog/mercury-warranty-after-repower-ontario): how warranty works after a repower
-- [Mercury Extended Warranty Ontario](/blog/mercury-extended-warranty-platinum-ontario): Product Protection Platinum extended coverage
+- [How Your Mercury Warranty Works After a Repower](/blog/mercury-warranty-after-repower-ontario), how warranty works after a repower
+- [Mercury Extended Warranty Ontario](/blog/mercury-extended-warranty-platinum-ontario), Product Protection Platinum extended coverage
 
 ## Next steps
 

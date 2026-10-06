@@ -244,11 +244,11 @@ List the concern in the service request. Repairs require assessment and approval
 
 ## Related guides
 
-- [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule): the model-specific Mercury service schedule
-- [Winter Boat Storage Near Toronto HBW](/blog/winter-storage-near-toronto-hbw): winter storage options near Toronto
-- [Spring Outboard Commissioning Checklist (2026 Ontario)](/blog/spring-outboard-commissioning-checklist): spring commissioning checklist
-- [Mercury Spring Run-Up Checklist](/blog/mercury-outboard-spring-run-up-checklist-ontario): spring run-up checklist
-- [How to Break In a New Mercury Outboard](/blog/breaking-in-new-mercury-motor-guide): breaking in a new Mercury
+- [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule), the model-specific Mercury service schedule
+- [Winter Boat Storage Near Toronto HBW](/blog/winter-storage-near-toronto-hbw), winter storage options near Toronto
+- [Spring Outboard Commissioning Checklist (2026 Ontario)](/blog/spring-outboard-commissioning-checklist), spring commissioning checklist
+- [Mercury Spring Run-Up Checklist](/blog/mercury-outboard-spring-run-up-checklist-ontario), spring run-up checklist
+- [How to Break In a New Mercury Outboard](/blog/breaking-in-new-mercury-motor-guide), breaking in a new Mercury
 
 ## Next steps
 

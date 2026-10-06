@@ -303,11 +303,11 @@ For regular tube pulling, 150 HP on a 22-foot two-tube and 200 HP on a tritoon a
 
 ## Related guides
 
-- [How to Choose the Right Boat Horsepower](/blog/how-to-choose-right-horsepower-boat): matching HP to boat size and use
-- [Outboard Shaft Length Guide: 15, 20, 25 Inch (2026)](/blog/outboard-shaft-length-guide): shaft length by transom height
-- [How to Read a Boat Capacity Plate in Ontario](/blog/how-to-read-boat-capacity-plate-ontario): how to read the capacity plate
-- [How to Choose Repower Horsepower From Your Capacity Plate](/blog/repower-horsepower-capacity-plate-guide): choose repower HP from the hull rating
-- [Mercury Main + Trolling Motor: How to Pair Them](/blog/mercury-main-and-trolling-motor): main outboard plus trolling motor setups
+- [How to Choose the Right Boat Horsepower](/blog/how-to-choose-right-horsepower-boat), matching HP to boat size and use
+- [Outboard Shaft Length Guide: 15, 20, 25 Inch (2026)](/blog/outboard-shaft-length-guide), shaft length by transom height
+- [How to Read a Boat Capacity Plate in Ontario](/blog/how-to-read-boat-capacity-plate-ontario), how to read the capacity plate
+- [How to Choose Repower Horsepower From Your Capacity Plate](/blog/repower-horsepower-capacity-plate-guide), choose repower HP from the hull rating
+- [Mercury Main + Trolling Motor: How to Pair Them](/blog/mercury-main-and-trolling-motor), main outboard plus trolling motor setups
 
 ## Next steps
 

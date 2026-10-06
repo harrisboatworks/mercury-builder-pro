@@ -154,11 +154,11 @@ If you troll with a kicker and run electronics, a dedicated cranking battery for
 
 ## Related guides
 
-- [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide): choosing the right propeller
-- [Boat Electrical Safety Ontario](/blog/boat-electrical-safety-checklist-ontario-freshwater): freshwater electrical safety checklist
-- [How to Trim a Boat With a Mercury Outboard: Read the Boat, Not Just the Gauge](/blog/how-to-trim-boat-mercury-outboard): how to trim your Mercury outboard
-- [Read Mercury Outboard Serial Number](/blog/how-to-read-mercury-outboard-serial-number): decoding the Mercury serial number
-- [Outboard Trade-In Value in Ontario (2026)](/blog/outboard-trade-in-value-ontario-hbw): what your outboard is worth on trade
+- [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide), choosing the right propeller
+- [Boat Electrical Safety Ontario](/blog/boat-electrical-safety-checklist-ontario-freshwater), freshwater electrical safety checklist
+- [How to Trim a Boat With a Mercury Outboard: Read the Boat, Not Just the Gauge](/blog/how-to-trim-boat-mercury-outboard), how to trim your Mercury outboard
+- [Read Mercury Outboard Serial Number](/blog/how-to-read-mercury-outboard-serial-number), decoding the Mercury serial number
+- [Outboard Trade-In Value in Ontario (2026)](/blog/outboard-trade-in-value-ontario-hbw), what your outboard is worth on trade
 
 ## Next steps
 

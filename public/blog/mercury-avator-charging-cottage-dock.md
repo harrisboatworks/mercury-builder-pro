@@ -166,11 +166,11 @@ Charging stops, the battery stays at whatever level it reached. When power retur
 
 ## Related guides
 
-- [Mercury Pro XS vs Verado vs FourStroke Compared](/blog/fourstroke-vs-pro-xs): FourStroke vs Pro XS side-by-side
+- [Mercury Pro XS vs Verado vs FourStroke Compared](/blog/fourstroke-vs-pro-xs), FourStroke vs Pro XS side-by-side
 - [Electric or Gas Repower? An Honest Guide for Rice Lake Boaters (Mercury Avator Included)](/blog/electric-vs-gas-repower-guide-rice-lake)
-- [Mercury FourStroke Buyer Guide for Ontario (2026)](/blog/mercury-fourstroke-buyer-guide-ontario): FourStroke buyer guide for Ontario
-- [Mercury Pro XS Buyer Guide for Ontario (2026)](/blog/mercury-pro-xs-buyer-guide-ontario): Pro XS buyer guide for Ontario
-- [Mercury Command Thrust Guide 2026](/blog/mercury-command-thrust-complete-guide-2026): complete Command Thrust guide
+- [Mercury FourStroke Buyer Guide for Ontario (2026)](/blog/mercury-fourstroke-buyer-guide-ontario), FourStroke buyer guide for Ontario
+- [Mercury Pro XS Buyer Guide for Ontario (2026)](/blog/mercury-pro-xs-buyer-guide-ontario), Pro XS buyer guide for Ontario
+- [Mercury Command Thrust Guide 2026](/blog/mercury-command-thrust-complete-guide-2026), complete Command Thrust guide
 
 ## Next steps
 

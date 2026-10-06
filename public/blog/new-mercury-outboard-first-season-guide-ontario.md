@@ -173,11 +173,11 @@ A good PDI and careful break-in make an extra inspection unnecessary, but if you
 
 ## Related guides
 
-- [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule): the model-specific Mercury service schedule
+- [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule), the model-specific Mercury service schedule
 - [Mercury Outboard Oil Capacity Chart: Model and Year Lookup](/blog/mercury-outboard-oil-capacity-chart)
-- [Why Mercury FourStrokes Make Oil (and What Actually Fixes It)](/blog/mercury-fourstroke-making-oil-guide): why oil levels rise after trolling and how to fix it
-- [Mercury Outboard Maintenance Parts List: Filters, Plugs, Kits and Part Numbers (2.5 to 600 HP)](/blog/mercury-outboard-maintenance-parts-list): the full Mercury maintenance parts and part-number list
-- [The Five-Minute Boat-Trailer Check Before Every Trip](/blog/boat-trailer-maintenance-guide-ontario): boat trailer maintenance guide
+- [Why Mercury FourStrokes Make Oil (and What Actually Fixes It)](/blog/mercury-fourstroke-making-oil-guide), why oil levels rise after trolling and how to fix it
+- [Mercury Outboard Maintenance Parts List: Filters, Plugs, Kits and Part Numbers (2.5 to 600 HP)](/blog/mercury-outboard-maintenance-parts-list), the full Mercury maintenance parts and part-number list
+- [The Five-Minute Boat-Trailer Check Before Every Trip](/blog/boat-trailer-maintenance-guide-ontario), boat trailer maintenance guide
 
 ## Next steps
 

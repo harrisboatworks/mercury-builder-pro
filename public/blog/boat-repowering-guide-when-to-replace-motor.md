@@ -242,11 +242,11 @@ Compare an itemized repair quote with the full installed repower cost over the t
 
 ## Related guides
 
-- [Boat Repower in the Kawarthas: Complete Guide](/blog/complete-guide-boat-repower-kawarthas): the full Kawarthas repower playbook
-- [Is Your Boat Worth Repowering? 5 Checks Before You Quote](/blog/mercury-repower-eligibility-guide): checking whether your boat is repower-eligible
-- [What Happens During a Mercury Repower (Step-by-Step Process)](/blog/what-happens-during-mercury-repower): what actually happens during the repower
-- [HBW On-Water Load Test: Mercury Repower](/blog/hbw-on-water-load-test-mercury-repower-advantage-2026): the on-water load test after repower
-- [Yamaha to Mercury Repower: Ontario Guide](/blog/yamaha-to-mercury-repower-ontario-guide): switching from Yamaha to Mercury
+- [Boat Repower in the Kawarthas: Complete Guide](/blog/complete-guide-boat-repower-kawarthas), the full Kawarthas repower playbook
+- [Is Your Boat Worth Repowering? 5 Checks Before You Quote](/blog/mercury-repower-eligibility-guide), checking whether your boat is repower-eligible
+- [What Happens During a Mercury Repower (Step-by-Step Process)](/blog/what-happens-during-mercury-repower), what actually happens during the repower
+- [HBW On-Water Load Test: Mercury Repower](/blog/hbw-on-water-load-test-mercury-repower-advantage-2026), the on-water load test after repower
+- [Yamaha to Mercury Repower: Ontario Guide](/blog/yamaha-to-mercury-repower-ontario-guide), switching from Yamaha to Mercury
 
 ## Next steps
 

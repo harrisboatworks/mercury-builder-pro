@@ -191,11 +191,11 @@ Clean out the boat, document any electrical issues, gather all paperwork, and en
 
 ## Related guides
 
-- [Pleasure Craft Licence Update During Repower (Ontario 2026)](/blog/pleasure-craft-licence-update-repower-ontario): updating your PCL after a repower
-- [Ordering Your Mercury: What to Expect](/blog/mercury-ordering-process): how Mercury motors are ordered and delivered
-- [Best Time to Buy Boat Motor Ontario](/blog/year-end-boat-motor-buying-guide): year-end timing and incentives
-- [Repair, Repower or Sell? Ontario Decision Guide](/blog/repair-repower-or-sell-boat-ontario-decision-guide): repair, repower, or sell decision framework
-- [Repower vs Buy New Boat: Compare the Total Cost](/blog/repower-vs-new-boat): repower vs buying a new boat
+- [Pleasure Craft Licence Update During Repower (Ontario 2026)](/blog/pleasure-craft-licence-update-repower-ontario), updating your PCL after a repower
+- [Ordering Your Mercury: What to Expect](/blog/mercury-ordering-process), how Mercury motors are ordered and delivered
+- [Best Time to Buy Boat Motor Ontario](/blog/year-end-boat-motor-buying-guide), year-end timing and incentives
+- [Repair, Repower or Sell? Ontario Decision Guide](/blog/repair-repower-or-sell-boat-ontario-decision-guide), repair, repower, or sell decision framework
+- [Repower vs Buy New Boat: Compare the Total Cost](/blog/repower-vs-new-boat), repower vs buying a new boat
 
 ## Next steps
 

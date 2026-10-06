@@ -188,11 +188,11 @@ Do not assume a standard reversal or refund path. Confirm the current purchase, 
 
 ## Related guides
 
-- [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide): choosing the right propeller
-- [Mercury Boost and 150 HP Pontoons: Check Eligibility First](/blog/mercury-boost-upgrade-150hp-pontoon-analysis): 150 HP Boost upgrade analysis
-- [Mercury DTS Retrofit Eligibility 2026](/blog/mercury-dts-retrofit-eligibility-2026): DTS retrofit eligibility
-- [Mercury Controls Rigging Guide 2026](/blog/mercury-controls-rigging-guide-ontario): controls and rigging basics
-- [Mercury SmartCraft Connect: Features, App & Installation](/blog/mercury-smartcraft-connect-guide-ontario): SmartCraft Connect walkthrough
+- [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide), choosing the right propeller
+- [Mercury Boost and 150 HP Pontoons: Check Eligibility First](/blog/mercury-boost-upgrade-150hp-pontoon-analysis), 150 HP Boost upgrade analysis
+- [Mercury DTS Retrofit Eligibility 2026](/blog/mercury-dts-retrofit-eligibility-2026), DTS retrofit eligibility
+- [Mercury Controls Rigging Guide 2026](/blog/mercury-controls-rigging-guide-ontario), controls and rigging basics
+- [Mercury SmartCraft Connect: Features, App & Installation](/blog/mercury-smartcraft-connect-guide-ontario), SmartCraft Connect walkthrough
 
 ## Next steps
 

@@ -233,11 +233,11 @@ Yes, on repowers above $5,000 CAD. We offer financing through Mercury's repower 
 
 ## Related guides
 
-- [Boat Repower in the Kawarthas: Complete Guide](/blog/complete-guide-boat-repower-kawarthas): the full Kawarthas repower playbook
-- [Ontario Cottage Boat Motor Repower Guide (2026)](/blog/ontario-cottage-boat-motor-repower-guide): cottage-specific repower considerations
-- [The 4-Point Aluminum Transom Check Before You Repower](/blog/aluminum-boat-transom-inspection-guide): the four transom checks to run before you repower
-- [Winter Repower Planning: Get Ready for Spring](/blog/winter-repower-planning-guide): why winter is the smart time to plan
-- [Pleasure Craft Licence Update During Repower (Ontario 2026)](/blog/pleasure-craft-licence-update-repower-ontario): updating your PCL after a repower
+- [Boat Repower in the Kawarthas: Complete Guide](/blog/complete-guide-boat-repower-kawarthas), the full Kawarthas repower playbook
+- [Ontario Cottage Boat Motor Repower Guide (2026)](/blog/ontario-cottage-boat-motor-repower-guide), cottage-specific repower considerations
+- [The 4-Point Aluminum Transom Check Before You Repower](/blog/aluminum-boat-transom-inspection-guide), the four transom checks to run before you repower
+- [Winter Repower Planning: Get Ready for Spring](/blog/winter-repower-planning-guide), why winter is the smart time to plan
+- [Pleasure Craft Licence Update During Repower (Ontario 2026)](/blog/pleasure-craft-licence-update-repower-ontario), updating your PCL after a repower
 
 ## Next steps
 

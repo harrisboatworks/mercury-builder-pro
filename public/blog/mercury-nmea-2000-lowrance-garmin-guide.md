@@ -138,11 +138,11 @@ Lowrance uses Mercury's VesselView Link, not SmartCraft Connect. Check that your
 
 ## Related guides
 
-- [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide): choosing the right propeller
-- [Mercury Alarm Codes List Ontario](/blog/mercury-smartcraft-alarm-codes-encyclopedia): SmartCraft alarm code reference
+- [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide), choosing the right propeller
+- [Mercury Alarm Codes List Ontario](/blog/mercury-smartcraft-alarm-codes-encyclopedia), SmartCraft alarm code reference
 - [Mercury Outboard Fault Codes: Legacy VesselView and Modern UFC Lookup](/blog/mercury-outboard-fault-codes-lookup)
-- [Mercury Outboard Won't Start (Ontario Dealer Guide, 2026)](/blog/mercury-outboard-wont-start-troubleshooting): won't-start troubleshooting
-- [Mercury Overheat Alarm Decoder: Beep Meanings](/blog/mercury-outboard-overheat-alarm-decoder): overheat alarm decoder
+- [Mercury Outboard Won't Start (Ontario Dealer Guide, 2026)](/blog/mercury-outboard-wont-start-troubleshooting), won't-start troubleshooting
+- [Mercury Overheat Alarm Decoder: Beep Meanings](/blog/mercury-outboard-overheat-alarm-decoder), overheat alarm decoder
 
 ## Next steps
 

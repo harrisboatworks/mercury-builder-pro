@@ -220,10 +220,10 @@ The price depends on the exact engine, the items due in its manual, service hist
 
 ## Related guides
 
-- [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule): the model-specific Mercury service schedule
-- [Shrinkwrap vs Indoor Boat Storage Ontario](/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario): shrink-wrap vs indoor winter storage
-- [Winter Boat Storage Near Toronto HBW](/blog/winter-storage-near-toronto-hbw): winter storage options near Toronto
-- [Mercury Spring Run-Up Checklist](/blog/mercury-outboard-spring-run-up-checklist-ontario): spring run-up checklist
+- [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule), the model-specific Mercury service schedule
+- [Shrinkwrap vs Indoor Boat Storage Ontario](/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario), shrink-wrap vs indoor winter storage
+- [Winter Boat Storage Near Toronto HBW](/blog/winter-storage-near-toronto-hbw), winter storage options near Toronto
+- [Mercury Spring Run-Up Checklist](/blog/mercury-outboard-spring-run-up-checklist-ontario), spring run-up checklist
 
 ## Next steps
 

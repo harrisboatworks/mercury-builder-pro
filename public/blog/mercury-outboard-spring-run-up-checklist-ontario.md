@@ -147,11 +147,11 @@ Running an engine with inadequate cooling can damage it. Follow the exact engine
 
 ## Related guides
 
-- [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule): the model-specific Mercury service schedule
-- [How to Break In a New Mercury Outboard](/blog/breaking-in-new-mercury-motor-guide): breaking in a new Mercury
+- [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule), the model-specific Mercury service schedule
+- [How to Break In a New Mercury Outboard](/blog/breaking-in-new-mercury-motor-guide), breaking in a new Mercury
 - [Your New Mercury Outboard's First Season: What to Expect From PDI to First Service](/blog/new-mercury-outboard-first-season-guide-ontario)
 - [Mercury Outboard Oil Capacity Chart: Model and Year Lookup](/blog/mercury-outboard-oil-capacity-chart)
-- [Why Mercury FourStrokes Make Oil (and What Actually Fixes It)](/blog/mercury-fourstroke-making-oil-guide): why oil levels rise after trolling and how to fix it
+- [Why Mercury FourStrokes Make Oil (and What Actually Fixes It)](/blog/mercury-fourstroke-making-oil-guide), why oil levels rise after trolling and how to fix it
 
 ## Next steps
 

@@ -204,11 +204,11 @@ FMZ 20. Confirm current Lake Ontario regulations directly with the Ontario MNRF 
 
 ## Related guides
 
-- [Best Mercury Outboard Setup for Rice Lake Fishing](/blog/best-mercury-outboard-rice-lake-fishing): best Mercury for Rice Lake fishing
-- [Best Motors for Kawartha Musky Fishing](/blog/musky-boat-motor-guide-kawarthas): musky-boat motor guide
-- [Best Outboards for Ontario Small Lakes](/blog/best-motor-small-lakes-ontario): best motor for small Ontario lakes
-- [Rice Lake Fishing Outlook 2026: Species, Seasons & Conditions](/blog/2026-rice-lake-fishing-season-outlook): 2026 Rice Lake season outlook
-- [Trailering a Boat: Toronto to Rice Lake](/blog/trailer-boat-toronto-to-rice-lake-guide): trailering from Toronto to Rice Lake
+- [Best Mercury Outboard Setup for Rice Lake Fishing](/blog/best-mercury-outboard-rice-lake-fishing), best Mercury for Rice Lake fishing
+- [Best Motors for Kawartha Musky Fishing](/blog/musky-boat-motor-guide-kawarthas), musky-boat motor guide
+- [Best Outboards for Ontario Small Lakes](/blog/best-motor-small-lakes-ontario), best motor for small Ontario lakes
+- [Rice Lake Fishing Outlook 2026: Species, Seasons & Conditions](/blog/2026-rice-lake-fishing-season-outlook), 2026 Rice Lake season outlook
+- [Trailering a Boat: Toronto to Rice Lake](/blog/trailer-boat-toronto-to-rice-lake-guide), trailering from Toronto to Rice Lake
 
 ## Next steps
 

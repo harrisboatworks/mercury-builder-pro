@@ -1001,7 +1001,7 @@ function renderRelatedGuidesHtml(currentSlug, contentMarkdown, explicitRelatedSl
   const items = picked.map(s => {
     const title = blogClusterData.titles[s] || s;
     const ctx = blogClusterData.contexts[s];
-    const ctxHtml = ctx ? `: ${escapeHtml(ctx)}` : '';
+    const ctxHtml = ctx ? `, ${escapeHtml(ctx)}` : '';
     return `<li><a href="/blog/${s}"><strong>${escapeHtml(title)}</strong></a>${ctxHtml}</li>`;
   }).join('');
   return `<aside aria-labelledby="related-guides-heading-ssg"><h2 id="related-guides-heading-ssg">Related guides</h2><ul>${items}</ul></aside>`;

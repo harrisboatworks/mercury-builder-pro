@@ -187,11 +187,11 @@ Not during the physical closure. The marina is closed December 1 through April 1
 
 ## Related guides
 
-- [Best Mercury Dealer in Ontario: The HBW Difference (2026)](/blog/best-mercury-dealer-ontario-hbw-difference): what makes HBW different
-- [Mercury Dealer for Bowmanville: 35 Minutes to Rice Lake](/blog/mercury-dealer-bowmanville-ontario-hbw): Mercury dealer for Bowmanville
-- [Mercury Dealer for Whitby: Only 45 Minutes to Rice Lake](/blog/mercury-dealer-whitby-ontario-hbw): Mercury dealer for Whitby
-- [Mercury Dealer Toronto: Why Drive to HBW](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw): why Toronto buyers drive to HBW
-- [Toronto to Rice Lake: How HBW Drive-In Service Works](/blog/toronto-to-rice-lake-drive-in-process): the Toronto to Rice Lake drive-in process
+- [Best Mercury Dealer in Ontario: The HBW Difference (2026)](/blog/best-mercury-dealer-ontario-hbw-difference), what makes HBW different
+- [Mercury Dealer for Bowmanville: 35 Minutes to Rice Lake](/blog/mercury-dealer-bowmanville-ontario-hbw), Mercury dealer for Bowmanville
+- [Mercury Dealer for Whitby: Only 45 Minutes to Rice Lake](/blog/mercury-dealer-whitby-ontario-hbw), Mercury dealer for Whitby
+- [Mercury Dealer Toronto: Why Drive to HBW](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw), why Toronto buyers drive to HBW
+- [Toronto to Rice Lake: How HBW Drive-In Service Works](/blog/toronto-to-rice-lake-drive-in-process), the Toronto to Rice Lake drive-in process
 
 ## Next steps
 

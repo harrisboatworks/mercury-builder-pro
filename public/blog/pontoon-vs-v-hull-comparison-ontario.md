@@ -155,11 +155,11 @@ Compare current written quotes for a smaller Legend pontoon and Mercury package,
 
 ## Related guides
 
-- [Best Mercury for Aluminum Boats 2026](/blog/best-mercury-outboard-aluminum-fishing-boats): best Mercury for aluminum fishing boats
-- [Aluminum vs Fiberglass Hull Ontario](/blog/aluminum-vs-fiberglass-hull-ontario): aluminum vs fibreglass hulls
-- [Best Boats for Rice Lake Under $30,000 (2026 Buyer's Guide)](/blog/best-boats-rice-lake-under-30000): Rice Lake boats under $30K
-- [Best Pontoon Boats for Rice Lake Cottage Use (2026)](/blog/best-pontoon-boats-rice-lake-cottage-use): pontoons suited to Rice Lake cottage use
-- [Common Pontoon Problems on Rice Lake](/blog/common-pontoon-boat-problems-rice-lake): common pontoon issues on Rice Lake
+- [Best Mercury for Aluminum Boats 2026](/blog/best-mercury-outboard-aluminum-fishing-boats), best Mercury for aluminum fishing boats
+- [Aluminum vs Fiberglass Hull Ontario](/blog/aluminum-vs-fiberglass-hull-ontario), aluminum vs fibreglass hulls
+- [Best Boats for Rice Lake Under $30,000 (2026 Buyer's Guide)](/blog/best-boats-rice-lake-under-30000), Rice Lake boats under $30K
+- [Best Pontoon Boats for Rice Lake Cottage Use (2026)](/blog/best-pontoon-boats-rice-lake-cottage-use), pontoons suited to Rice Lake cottage use
+- [Common Pontoon Problems on Rice Lake](/blog/common-pontoon-boat-problems-rice-lake), common pontoon issues on Rice Lake
 
 ## Next steps
 

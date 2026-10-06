@@ -193,11 +193,11 @@ Use the trailering position and support method specified for your exact Mercury 
 
 ## Related guides
 
-- [Best Mercury Outboard Setup for Rice Lake Fishing](/blog/best-mercury-outboard-rice-lake-fishing): best Mercury for Rice Lake fishing
-- [Mercury Setup for Simcoe Walleye 2026](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing): Lake Simcoe walleye picks
-- [Best Mercury Outboard for Lake Ontario Salmon & Trout](/blog/best-mercury-outboard-lake-ontario-salmon-trout): best Mercury main outboard for Lake Ontario salmon
-- [Lake Ontario Salmon Boat Rigging: Kicker, Charging & Troll Control](/blog/lake-ontario-salmon-mercury-setup-guide-2026): Lake Ontario salmon rigging setup
-- [Best Motors for Kawartha Musky Fishing](/blog/musky-boat-motor-guide-kawarthas): musky-boat motor guide
+- [Best Mercury Outboard Setup for Rice Lake Fishing](/blog/best-mercury-outboard-rice-lake-fishing), best Mercury for Rice Lake fishing
+- [Mercury Setup for Simcoe Walleye 2026](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing), Lake Simcoe walleye picks
+- [Best Mercury Outboard for Lake Ontario Salmon & Trout](/blog/best-mercury-outboard-lake-ontario-salmon-trout), best Mercury main outboard for Lake Ontario salmon
+- [Lake Ontario Salmon Boat Rigging: Kicker, Charging & Troll Control](/blog/lake-ontario-salmon-mercury-setup-guide-2026), Lake Ontario salmon rigging setup
+- [Best Motors for Kawartha Musky Fishing](/blog/musky-boat-motor-guide-kawarthas), musky-boat motor guide
 
 ## Next steps
 

@@ -244,11 +244,11 @@ Yes. If the hull is solid and the motor is the weak link, that's exactly what we
 
 ## Related guides
 
-- [Best Mercury for Aluminum Boats 2026](/blog/best-mercury-outboard-aluminum-fishing-boats): best Mercury for aluminum fishing boats
-- [New vs. Used Pontoon Boats in Ontario: What Actually Determines Value](/blog/new-vs-used-pontoon-boats-ontario): new vs used pontoon value comparison
-- [Pontoon vs V-Hull, Honestly Compared for Ontario Boaters](/blog/pontoon-vs-v-hull-comparison-ontario): pontoon vs V-hull comparison
-- [Aluminum vs Fiberglass Hull Ontario](/blog/aluminum-vs-fiberglass-hull-ontario): aluminum vs fibreglass hulls
-- [Best Boats for Rice Lake Under $30,000 (2026 Buyer's Guide)](/blog/best-boats-rice-lake-under-30000): Rice Lake boats under $30K
+- [Best Mercury for Aluminum Boats 2026](/blog/best-mercury-outboard-aluminum-fishing-boats), best Mercury for aluminum fishing boats
+- [New vs. Used Pontoon Boats in Ontario: What Actually Determines Value](/blog/new-vs-used-pontoon-boats-ontario), new vs used pontoon value comparison
+- [Pontoon vs V-Hull, Honestly Compared for Ontario Boaters](/blog/pontoon-vs-v-hull-comparison-ontario), pontoon vs V-hull comparison
+- [Aluminum vs Fiberglass Hull Ontario](/blog/aluminum-vs-fiberglass-hull-ontario), aluminum vs fibreglass hulls
+- [Best Boats for Rice Lake Under $30,000 (2026 Buyer's Guide)](/blog/best-boats-rice-lake-under-30000), Rice Lake boats under $30K
 
 ## Next steps
 

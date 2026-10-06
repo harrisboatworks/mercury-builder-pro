@@ -154,11 +154,11 @@ Once you factor in cross-border duties, exchange rates, and the loss of Canadian
 
 ## Related guides
 
-- [Best Mercury for Aluminum Boats 2026](/blog/best-mercury-outboard-aluminum-fishing-boats): best Mercury for aluminum fishing boats
-- [Bad Used Boats to Avoid Ontario](/blog/bad-used-boats-to-avoid-ontario): used boats to avoid in Ontario
-- [New vs. Used Pontoon Boats in Ontario: What Actually Determines Value](/blog/new-vs-used-pontoon-boats-ontario): new vs used pontoon value comparison
-- [Pontoon vs V-Hull, Honestly Compared for Ontario Boaters](/blog/pontoon-vs-v-hull-comparison-ontario): pontoon vs V-hull comparison
-- [Aluminum vs Fiberglass Hull Ontario](/blog/aluminum-vs-fiberglass-hull-ontario): aluminum vs fibreglass hulls
+- [Best Mercury for Aluminum Boats 2026](/blog/best-mercury-outboard-aluminum-fishing-boats), best Mercury for aluminum fishing boats
+- [Bad Used Boats to Avoid Ontario](/blog/bad-used-boats-to-avoid-ontario), used boats to avoid in Ontario
+- [New vs. Used Pontoon Boats in Ontario: What Actually Determines Value](/blog/new-vs-used-pontoon-boats-ontario), new vs used pontoon value comparison
+- [Pontoon vs V-Hull, Honestly Compared for Ontario Boaters](/blog/pontoon-vs-v-hull-comparison-ontario), pontoon vs V-hull comparison
+- [Aluminum vs Fiberglass Hull Ontario](/blog/aluminum-vs-fiberglass-hull-ontario), aluminum vs fibreglass hulls
 
 ## Next steps
 

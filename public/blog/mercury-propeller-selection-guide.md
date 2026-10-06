@@ -203,11 +203,11 @@ Over-pitched: WOT RPM is below the manufacturer's spec range. The motor cannot r
 
 ## Related guides
 
-- [Mercury Fuel Burn by HP: 5 Ways to Cut Gas Costs (2026)](/blog/mercury-outboard-fuel-efficiency-guide): maximizing fuel efficiency
-- [Mercury Ethanol & Octane Rules 2026 (V10 Verado Update)](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario): ethanol, octane and Mercury fuel
-- [Mercury Boost Software Eligibility 2026](/blog/mercury-boost-software-upgrade-eligibility-2026): Boost software upgrade eligibility
-- [Mercury Boost and 150 HP Pontoons: Check Eligibility First](/blog/mercury-boost-upgrade-150hp-pontoon-analysis): 150 HP Boost upgrade analysis
-- [Mercury DTS Retrofit Eligibility 2026](/blog/mercury-dts-retrofit-eligibility-2026): DTS retrofit eligibility
+- [Mercury Fuel Burn by HP: 5 Ways to Cut Gas Costs (2026)](/blog/mercury-outboard-fuel-efficiency-guide), maximizing fuel efficiency
+- [Mercury Ethanol & Octane Rules 2026 (V10 Verado Update)](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), ethanol, octane and Mercury fuel
+- [Mercury Boost Software Eligibility 2026](/blog/mercury-boost-software-upgrade-eligibility-2026), Boost software upgrade eligibility
+- [Mercury Boost and 150 HP Pontoons: Check Eligibility First](/blog/mercury-boost-upgrade-150hp-pontoon-analysis), 150 HP Boost upgrade analysis
+- [Mercury DTS Retrofit Eligibility 2026](/blog/mercury-dts-retrofit-eligibility-2026), DTS retrofit eligibility
 
 ## Next steps
 

@@ -177,11 +177,11 @@ HBW can assess Mercury service and warranty requests regardless of the selling d
 
 ## Related guides
 
-- [Best Mercury Dealer in Ontario: The HBW Difference (2026)](/blog/best-mercury-dealer-ontario-hbw-difference): what makes HBW different
-- [Toronto to Rice Lake: How HBW Drive-In Service Works](/blog/toronto-to-rice-lake-drive-in-process): the Toronto to Rice Lake drive-in process
-- [Mercury Repower GTA Toronto Guide](/blog/mercury-repower-gta-toronto-destination): GTA and Toronto repower destination guide
-- [Boat Service Near Toronto HBW Reach](/blog/boat-service-near-toronto-hbw-reach): boat service reach from Toronto
-- [Mercury Dealer for Bowmanville: 35 Minutes to Rice Lake](/blog/mercury-dealer-bowmanville-ontario-hbw): Mercury dealer for Bowmanville
+- [Best Mercury Dealer in Ontario: The HBW Difference (2026)](/blog/best-mercury-dealer-ontario-hbw-difference), what makes HBW different
+- [Toronto to Rice Lake: How HBW Drive-In Service Works](/blog/toronto-to-rice-lake-drive-in-process), the Toronto to Rice Lake drive-in process
+- [Mercury Repower GTA Toronto Guide](/blog/mercury-repower-gta-toronto-destination), GTA and Toronto repower destination guide
+- [Boat Service Near Toronto HBW Reach](/blog/boat-service-near-toronto-hbw-reach), boat service reach from Toronto
+- [Mercury Dealer for Bowmanville: 35 Minutes to Rice Lake](/blog/mercury-dealer-bowmanville-ontario-hbw), Mercury dealer for Bowmanville
 
 ## Next steps
 

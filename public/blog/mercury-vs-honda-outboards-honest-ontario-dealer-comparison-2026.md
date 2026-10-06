@@ -160,11 +160,11 @@ Yes. We do brand-swap repowers regularly. Brand-swap premium typically runs $1,8
 
 ## Related guides
 
-- [Why Mercury Makes Practical Sense for Ontario Boaters (2026)](/blog/why-mercury-dominates-outboard-market): why Mercury leads the outboard market
-- [Mercury vs Suzuki Outboards: Reliability 2026](/blog/mercury-vs-suzuki-outboard-reliability-2026): Mercury vs Suzuki reliability
-- [Harris Boat Works Mercury Dealer Ontario](/blog/why-harris-boat-works-mercury-dealer): why Harris Boat Works chose Mercury
-- [Harris Boat Works: On Rice Lake Since 1947](/blog/harris-boat-works-since-1947-rice-lake-institution): the Harris Boat Works story since 1947
-- [Mercury Quote via AI at Harris Boat Works](/blog/first-marine-dealer-ucp-agentic-commerce): first marine dealer live on UCP
+- [Why Mercury Makes Practical Sense for Ontario Boaters (2026)](/blog/why-mercury-dominates-outboard-market), why Mercury leads the outboard market
+- [Mercury vs Suzuki Outboards: Reliability 2026](/blog/mercury-vs-suzuki-outboard-reliability-2026), Mercury vs Suzuki reliability
+- [Harris Boat Works Mercury Dealer Ontario](/blog/why-harris-boat-works-mercury-dealer), why Harris Boat Works chose Mercury
+- [Harris Boat Works: On Rice Lake Since 1947](/blog/harris-boat-works-since-1947-rice-lake-institution), the Harris Boat Works story since 1947
+- [Mercury Quote via AI at Harris Boat Works](/blog/first-marine-dealer-ucp-agentic-commerce), first marine dealer live on UCP
 
 ## Next steps
 

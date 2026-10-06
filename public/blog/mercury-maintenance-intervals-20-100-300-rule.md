@@ -165,11 +165,11 @@ Mercury recommends genuine parts, but its written limited warranty does not say 
 
 ## Related guides
 
-- [Mercury Motor Seasonal Care Ontario](/blog/mercury-motor-maintenance-seasonal-tips): seasonal maintenance tips
-- [DIY Mercury Outboard Winterization](/blog/diy-mercury-outboard-winterization-guide): DIY winterization steps
-- [Boat Winterization Cost Ontario 2026](/blog/boat-winterization-cost-ontario-2026): boat winterization cost in Ontario
-- [Shrinkwrap vs Indoor Boat Storage Ontario](/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario): shrink-wrap vs indoor winter storage
-- [HBW Outdoor Winter Boat Storage & Shrinkwrap](/blog/outdoor-boat-storage-shrinkwrap-rice-lake): HBW outdoor winter storage and shrink-wrap scope
+- [Mercury Motor Seasonal Care Ontario](/blog/mercury-motor-maintenance-seasonal-tips), seasonal maintenance tips
+- [DIY Mercury Outboard Winterization](/blog/diy-mercury-outboard-winterization-guide), DIY winterization steps
+- [Boat Winterization Cost Ontario 2026](/blog/boat-winterization-cost-ontario-2026), boat winterization cost in Ontario
+- [Shrinkwrap vs Indoor Boat Storage Ontario](/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario), shrink-wrap vs indoor winter storage
+- [HBW Outdoor Winter Boat Storage & Shrinkwrap](/blog/outdoor-boat-storage-shrinkwrap-rice-lake), HBW outdoor winter storage and shrink-wrap scope
 
 ## Next steps
 

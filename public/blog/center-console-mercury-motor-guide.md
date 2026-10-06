@@ -219,11 +219,11 @@ Yes, for the right hull size. A 20 to 24 ft trailerable center console is one of
 
 ## Related guides
 
-- [Best Mercury for Aluminum Boats 2026](/blog/best-mercury-outboard-aluminum-fishing-boats): best Mercury for aluminum fishing boats
-- [Best Mercury for Family Runabout 2026](/blog/best-mercury-for-family-runabouts): family-runabout recommendations
-- [Best Mercury for Ski Boats 2026](/blog/best-mercury-for-ski-wakeboard-boats): ski and wakeboard motor picks
-- [Electric Trolling Motor vs Kicker Guide](/blog/electric-trolling-motor-kicker-guide): electric trolling and kicker setups
-- [Used Outboard Buying Guide Ontario](/blog/used-outboard-buying-guide-ontario): buying a used outboard in Ontario
+- [Best Mercury for Aluminum Boats 2026](/blog/best-mercury-outboard-aluminum-fishing-boats), best Mercury for aluminum fishing boats
+- [Best Mercury for Family Runabout 2026](/blog/best-mercury-for-family-runabouts), family-runabout recommendations
+- [Best Mercury for Ski Boats 2026](/blog/best-mercury-for-ski-wakeboard-boats), ski and wakeboard motor picks
+- [Electric Trolling Motor vs Kicker Guide](/blog/electric-trolling-motor-kicker-guide), electric trolling and kicker setups
+- [Used Outboard Buying Guide Ontario](/blog/used-outboard-buying-guide-ontario), buying a used outboard in Ontario
 
 ## Next steps
 

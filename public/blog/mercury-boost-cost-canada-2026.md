@@ -207,11 +207,11 @@ Buy the correctly rated motor for the boat today. Confirm factory-equipped statu
 
 ## Related guides
 
-- [Mercury Outboard Prices Ontario (2026): CAD Guide](/blog/ontario-mercury-outboard-price-guide): Ontario Mercury outboard price guide
-- [Cost of Owning a Boat Ontario 2026](/blog/total-cost-of-owning-a-boat-ontario-2026): total cost of owning a boat in Ontario
-- [Why Mercury Dealers Hide Prices (HBW Doesn't)](/blog/why-mercury-dealers-hide-prices-online): why most Mercury dealers hide prices online
-- [Boat Insurance in Ontario: What You Actually Need (2026)](/blog/boat-insurance-ontario-guide-2026): boat insurance basics for Ontario owners
-- [Mercury Outboard Rigging Costs Explained (Ontario 2026)](/blog/mercury-outboard-rigging-costs-ontario): rigging and install cost breakdown
+- [Mercury Outboard Prices Ontario (2026): CAD Guide](/blog/ontario-mercury-outboard-price-guide), Ontario Mercury outboard price guide
+- [Cost of Owning a Boat Ontario 2026](/blog/total-cost-of-owning-a-boat-ontario-2026), total cost of owning a boat in Ontario
+- [Why Mercury Dealers Hide Prices (HBW Doesn't)](/blog/why-mercury-dealers-hide-prices-online), why most Mercury dealers hide prices online
+- [Boat Insurance in Ontario: What You Actually Need (2026)](/blog/boat-insurance-ontario-guide-2026), boat insurance basics for Ontario owners
+- [Mercury Outboard Rigging Costs Explained (Ontario 2026)](/blog/mercury-outboard-rigging-costs-ontario), rigging and install cost breakdown
 
 ## Next steps
 

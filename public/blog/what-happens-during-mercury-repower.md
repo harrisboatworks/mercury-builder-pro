@@ -236,11 +236,11 @@ Motor lead times vary by model and season, and spring is busy. If you are planni
 
 ## Related guides
 
-- [Boat Repower in the Kawarthas: Complete Guide](/blog/complete-guide-boat-repower-kawarthas): the full Kawarthas repower playbook
-- [HBW On-Water Load Test: Mercury Repower](/blog/hbw-on-water-load-test-mercury-repower-advantage-2026): the on-water load test after repower
-- [Evinrude to Mercury Repower: The Ontario Guide (2026)](/blog/evinrude-to-mercury-repower-ontario-guide): switching from Evinrude to Mercury
-- [Yamaha to Mercury Repower: Ontario Guide](/blog/yamaha-to-mercury-repower-ontario-guide): switching from Yamaha to Mercury
-- [Honda to Mercury Repower: Ontario Guide](/blog/honda-to-mercury-repower-ontario-guide): switching from Honda to Mercury
+- [Boat Repower in the Kawarthas: Complete Guide](/blog/complete-guide-boat-repower-kawarthas), the full Kawarthas repower playbook
+- [HBW On-Water Load Test: Mercury Repower](/blog/hbw-on-water-load-test-mercury-repower-advantage-2026), the on-water load test after repower
+- [Evinrude to Mercury Repower: The Ontario Guide (2026)](/blog/evinrude-to-mercury-repower-ontario-guide), switching from Evinrude to Mercury
+- [Yamaha to Mercury Repower: Ontario Guide](/blog/yamaha-to-mercury-repower-ontario-guide), switching from Yamaha to Mercury
+- [Honda to Mercury Repower: Ontario Guide](/blog/honda-to-mercury-repower-ontario-guide), switching from Honda to Mercury
 
 ## Next steps
 

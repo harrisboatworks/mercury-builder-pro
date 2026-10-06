@@ -265,11 +265,11 @@ Back in slowly until the bunks are just below the surface and the boat floats. T
 
 ## Related guides
 
-- [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule): the model-specific Mercury service schedule
-- [Five Boat Problems That Get Expensive When You Keep Running](/blog/accidentally-increase-boat-service-bills-ontario): habits that inflate your service bill
-- [Cold-Water Boating Safety in Ontario: What to Know](/blog/late-season-boating-safety): late-season safety tips
-- [Ontario Boating Season Tips 2026](/blog/ontario-boating-season-tips): Ontario boating-season tips
-- [Milky Gearcase Oil in Ontario: Causes, Diagnosis, and Next Steps (2026)](/blog/milky-gearcase-oil-meaning-cost-ontario): what milky gearcase oil means and costs
+- [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule), the model-specific Mercury service schedule
+- [Five Boat Problems That Get Expensive When You Keep Running](/blog/accidentally-increase-boat-service-bills-ontario), habits that inflate your service bill
+- [Cold-Water Boating Safety in Ontario: What to Know](/blog/late-season-boating-safety), late-season safety tips
+- [Ontario Boating Season Tips 2026](/blog/ontario-boating-season-tips), Ontario boating-season tips
+- [Milky Gearcase Oil in Ontario: Causes, Diagnosis, and Next Steps (2026)](/blog/milky-gearcase-oil-meaning-cost-ontario), what milky gearcase oil means and costs
 
 ## Next steps
 

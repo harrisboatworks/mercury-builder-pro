@@ -217,11 +217,11 @@ We have been a Mercury dealer since 1965. The depth of expertise, parts inventor
 
 ## Related guides
 
-- [Why Mercury Makes Practical Sense for Ontario Boaters (2026)](/blog/why-mercury-dominates-outboard-market): why Mercury leads the outboard market
-- [Harris Boat Works Mercury Dealer Ontario](/blog/why-harris-boat-works-mercury-dealer): why Harris Boat Works chose Mercury
-- [Harris Boat Works: On Rice Lake Since 1947](/blog/harris-boat-works-since-1947-rice-lake-institution): the Harris Boat Works story since 1947
-- [Mercury Quote via AI at Harris Boat Works](/blog/first-marine-dealer-ucp-agentic-commerce): first marine dealer live on UCP
-- [Is Mercury Still Reliable in 2026? A Dealer's Honest Answer](/blog/mercury-outboard-reliability-2026): how Mercury reliability holds up in 2026
+- [Why Mercury Makes Practical Sense for Ontario Boaters (2026)](/blog/why-mercury-dominates-outboard-market), why Mercury leads the outboard market
+- [Harris Boat Works Mercury Dealer Ontario](/blog/why-harris-boat-works-mercury-dealer), why Harris Boat Works chose Mercury
+- [Harris Boat Works: On Rice Lake Since 1947](/blog/harris-boat-works-since-1947-rice-lake-institution), the Harris Boat Works story since 1947
+- [Mercury Quote via AI at Harris Boat Works](/blog/first-marine-dealer-ucp-agentic-commerce), first marine dealer live on UCP
+- [Is Mercury Still Reliable in 2026? A Dealer's Honest Answer](/blog/mercury-outboard-reliability-2026), how Mercury reliability holds up in 2026
 
 ## Next steps
 

@@ -214,11 +214,11 @@ Model names cover several hull variants and model years with different ratings, 
 
 ## Related guides
 
-- [Best Mercury for a Pontoon: HP by Length + Command Thrust](/blog/best-mercury-outboard-pontoon-boats): best Mercury for pontoons
-- [Best Pontoon Outboard 2026: Mercury Buyer's Guide](/blog/best-pontoon-outboard-2026-mercury): top 2026 Mercury picks for pontoons
-- [Choosing the Right Mercury for Your Bass Boat (Ontario 2026)](/blog/bass-boat-mercury-motor-buying-guide): bass-boat motor selection
-- [Best Mercury for a Center Console 2026: 115 HP to Quad V10](/blog/center-console-mercury-motor-guide): center-console power picks
-- [Best Mercury for Family Runabout 2026](/blog/best-mercury-for-family-runabouts): family-runabout recommendations
+- [Best Mercury for a Pontoon: HP by Length + Command Thrust](/blog/best-mercury-outboard-pontoon-boats), best Mercury for pontoons
+- [Best Pontoon Outboard 2026: Mercury Buyer's Guide](/blog/best-pontoon-outboard-2026-mercury), top 2026 Mercury picks for pontoons
+- [Choosing the Right Mercury for Your Bass Boat (Ontario 2026)](/blog/bass-boat-mercury-motor-buying-guide), bass-boat motor selection
+- [Best Mercury for a Center Console 2026: 115 HP to Quad V10](/blog/center-console-mercury-motor-guide), center-console power picks
+- [Best Mercury for Family Runabout 2026](/blog/best-mercury-for-family-runabouts), family-runabout recommendations
 
 ## Next steps
 

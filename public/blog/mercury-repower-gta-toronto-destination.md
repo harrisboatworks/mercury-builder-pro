@@ -189,11 +189,11 @@ HBW can assess the boat and proposed Mercury configuration, but the motor, warra
 
 ## Related guides
 
-- [Best Mercury Dealer in Ontario: The HBW Difference (2026)](/blog/best-mercury-dealer-ontario-hbw-difference): what makes HBW different
-- [Boat Service Near Toronto HBW Reach](/blog/boat-service-near-toronto-hbw-reach): boat service reach from Toronto
-- [Mercury Dealer for Bowmanville: 35 Minutes to Rice Lake](/blog/mercury-dealer-bowmanville-ontario-hbw): Mercury dealer for Bowmanville
-- [Mercury Dealer for Whitby: Only 45 Minutes to Rice Lake](/blog/mercury-dealer-whitby-ontario-hbw): Mercury dealer for Whitby
-- [Mercury Dealer Toronto: Why Drive to HBW](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw): why Toronto buyers drive to HBW
+- [Best Mercury Dealer in Ontario: The HBW Difference (2026)](/blog/best-mercury-dealer-ontario-hbw-difference), what makes HBW different
+- [Boat Service Near Toronto HBW Reach](/blog/boat-service-near-toronto-hbw-reach), boat service reach from Toronto
+- [Mercury Dealer for Bowmanville: 35 Minutes to Rice Lake](/blog/mercury-dealer-bowmanville-ontario-hbw), Mercury dealer for Bowmanville
+- [Mercury Dealer for Whitby: Only 45 Minutes to Rice Lake](/blog/mercury-dealer-whitby-ontario-hbw), Mercury dealer for Whitby
+- [Mercury Dealer Toronto: Why Drive to HBW](/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw), why Toronto buyers drive to HBW
 
 ## Next steps
 

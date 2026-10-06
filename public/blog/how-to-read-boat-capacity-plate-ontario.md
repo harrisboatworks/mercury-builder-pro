@@ -146,11 +146,11 @@ The persons figure limits headcount, while the load figure accounts for the comb
 
 ## Related guides
 
-- [How to Choose the Right Boat Horsepower](/blog/how-to-choose-right-horsepower-boat): matching HP to boat size and use
-- [How to Choose Repower Horsepower From Your Capacity Plate](/blog/repower-horsepower-capacity-plate-guide): choose repower HP from the hull rating
-- [Mercury Main + Trolling Motor: How to Pair Them](/blog/mercury-main-and-trolling-motor): main outboard plus trolling motor setups
-- [Portable Mercury Outboard Guide: 2.5 to 20 HP (2026)](/blog/portable-outboard-mercury-guide-2-20hp): portable 2–20 HP options
-- [Tiller vs Remote Steering Outboard: Which to Choose (2026)](/blog/tiller-vs-remote-steering-outboard-guide): tiller vs remote steering
+- [How to Choose the Right Boat Horsepower](/blog/how-to-choose-right-horsepower-boat), matching HP to boat size and use
+- [How to Choose Repower Horsepower From Your Capacity Plate](/blog/repower-horsepower-capacity-plate-guide), choose repower HP from the hull rating
+- [Mercury Main + Trolling Motor: How to Pair Them](/blog/mercury-main-and-trolling-motor), main outboard plus trolling motor setups
+- [Portable Mercury Outboard Guide: 2.5 to 20 HP (2026)](/blog/portable-outboard-mercury-guide-2-20hp), portable 2–20 HP options
+- [Tiller vs Remote Steering Outboard: Which to Choose (2026)](/blog/tiller-vs-remote-steering-outboard-guide), tiller vs remote steering
 
 ## Next steps
 

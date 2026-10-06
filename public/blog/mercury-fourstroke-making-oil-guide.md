@@ -143,11 +143,11 @@ Any noticeable rise between weekly checks is worth an oil change. Don't wait unt
 
 ## Related guides
 
-- [Mercury Outboard Maintenance Parts List: Filters, Plugs, Kits and Part Numbers (2.5 to 600 HP)](/blog/mercury-outboard-maintenance-parts-list): the full Mercury maintenance parts and part-number list
-- [The Five-Minute Boat-Trailer Check Before Every Trip](/blog/boat-trailer-maintenance-guide-ontario): boat trailer maintenance guide
-- [Boat Trailering Mistakes to Avoid, Ontario](/blog/boat-trailering-mistakes-ontario): common trailering mistakes
-- [Five Boat Problems That Get Expensive When You Keep Running](/blog/accidentally-increase-boat-service-bills-ontario): habits that inflate your service bill
-- [Walleye Opener Boat Prep Checklist (2026)](/blog/walleye-opener-boat-prep): walleye-opener boat prep
+- [Mercury Outboard Maintenance Parts List: Filters, Plugs, Kits and Part Numbers (2.5 to 600 HP)](/blog/mercury-outboard-maintenance-parts-list), the full Mercury maintenance parts and part-number list
+- [The Five-Minute Boat-Trailer Check Before Every Trip](/blog/boat-trailer-maintenance-guide-ontario), boat trailer maintenance guide
+- [Boat Trailering Mistakes to Avoid, Ontario](/blog/boat-trailering-mistakes-ontario), common trailering mistakes
+- [Five Boat Problems That Get Expensive When You Keep Running](/blog/accidentally-increase-boat-service-bills-ontario), habits that inflate your service bill
+- [Walleye Opener Boat Prep Checklist (2026)](/blog/walleye-opener-boat-prep), walleye-opener boat prep
 
 ## Next steps
 

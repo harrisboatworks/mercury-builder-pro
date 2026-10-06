@@ -188,11 +188,11 @@ Don’t start the trip with a failed required light. Repair the lamp, wiring, co
 
 ## Related guides
 
-- [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule): the model-specific Mercury service schedule
-- [Boat Trailering Mistakes to Avoid, Ontario](/blog/boat-trailering-mistakes-ontario): common trailering mistakes
-- [Five Boat Problems That Get Expensive When You Keep Running](/blog/accidentally-increase-boat-service-bills-ontario): habits that inflate your service bill
-- [Walleye Opener Boat Prep Checklist (2026)](/blog/walleye-opener-boat-prep): walleye-opener boat prep
-- [Cold-Water Boating Safety in Ontario: What to Know](/blog/late-season-boating-safety): late-season safety tips
+- [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule), the model-specific Mercury service schedule
+- [Boat Trailering Mistakes to Avoid, Ontario](/blog/boat-trailering-mistakes-ontario), common trailering mistakes
+- [Five Boat Problems That Get Expensive When You Keep Running](/blog/accidentally-increase-boat-service-bills-ontario), habits that inflate your service bill
+- [Walleye Opener Boat Prep Checklist (2026)](/blog/walleye-opener-boat-prep), walleye-opener boat prep
+- [Cold-Water Boating Safety in Ontario: What to Know](/blog/late-season-boating-safety), late-season safety tips
 
 ## Next steps
 

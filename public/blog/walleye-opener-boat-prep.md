@@ -236,11 +236,11 @@ A weak or dead battery is one of the most common opener-morning failures we see,
 
 ## Related guides
 
-- [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule): the model-specific Mercury service schedule
-- [Cold-Water Boating Safety in Ontario: What to Know](/blog/late-season-boating-safety): late-season safety tips
-- [Ontario Boating Season Tips 2026](/blog/ontario-boating-season-tips): Ontario boating-season tips
-- [Milky Gearcase Oil in Ontario: Causes, Diagnosis, and Next Steps (2026)](/blog/milky-gearcase-oil-meaning-cost-ontario): what milky gearcase oil means and costs
-- [Mercury Water Pump Replacement Cost in Ontario: 112 Shop Jobs (2026)](/blog/mercury-water-pump-replacement-cost-ontario): water pump replacement timing and cost
+- [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule), the model-specific Mercury service schedule
+- [Cold-Water Boating Safety in Ontario: What to Know](/blog/late-season-boating-safety), late-season safety tips
+- [Ontario Boating Season Tips 2026](/blog/ontario-boating-season-tips), Ontario boating-season tips
+- [Milky Gearcase Oil in Ontario: Causes, Diagnosis, and Next Steps (2026)](/blog/milky-gearcase-oil-meaning-cost-ontario), what milky gearcase oil means and costs
+- [Mercury Water Pump Replacement Cost in Ontario: 112 Shop Jobs (2026)](/blog/mercury-water-pump-replacement-cost-ontario), water pump replacement timing and cost
 
 ## Next steps
 

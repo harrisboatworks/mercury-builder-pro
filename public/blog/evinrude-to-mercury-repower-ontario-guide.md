@@ -221,11 +221,11 @@ No. BRP stopped producing Evinrude outboard motors in May 2020, and Johnson outb
 
 ## Related guides
 
-- [Boat Repower in the Kawarthas: Complete Guide](/blog/complete-guide-boat-repower-kawarthas): the full Kawarthas repower playbook
-- [Yamaha to Mercury Repower: Ontario Guide](/blog/yamaha-to-mercury-repower-ontario-guide): switching from Yamaha to Mercury
-- [Honda to Mercury Repower: Ontario Guide](/blog/honda-to-mercury-repower-ontario-guide): switching from Honda to Mercury
-- [2-Stroke vs 4-Stroke Repower: What to Know](/blog/two-stroke-vs-four-stroke-repower): two-stroke to four-stroke repower notes
-- [Outboard vs Sterndrive 2026 Ontario](/blog/outboard-vs-sterndrive-2026-ontario-repower): outboard vs sterndrive when repowering
+- [Boat Repower in the Kawarthas: Complete Guide](/blog/complete-guide-boat-repower-kawarthas), the full Kawarthas repower playbook
+- [Yamaha to Mercury Repower: Ontario Guide](/blog/yamaha-to-mercury-repower-ontario-guide), switching from Yamaha to Mercury
+- [Honda to Mercury Repower: Ontario Guide](/blog/honda-to-mercury-repower-ontario-guide), switching from Honda to Mercury
+- [2-Stroke vs 4-Stroke Repower: What to Know](/blog/two-stroke-vs-four-stroke-repower), two-stroke to four-stroke repower notes
+- [Outboard vs Sterndrive 2026 Ontario](/blog/outboard-vs-sterndrive-2026-ontario-repower), outboard vs sterndrive when repowering
 
 ## Next steps
 

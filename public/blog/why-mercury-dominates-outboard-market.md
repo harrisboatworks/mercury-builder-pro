@@ -111,11 +111,11 @@ Yes. Most cottage boats in this region came from the factory or previous owners 
 
 ## Related guides
 
-- [Mercury vs Yamaha Outboards: Honest Comparison](/blog/mercury-vs-yamaha-outboards-ontario): Mercury vs Yamaha for Ontario
-- [Mercury vs Yamaha vs Honda: Reliability 2026](/blog/mercury-vs-yamaha-vs-honda-reliability-2026): Mercury vs Yamaha vs Honda reliability
-- [Mercury vs Suzuki Outboards: Reliability 2026](/blog/mercury-vs-suzuki-outboard-reliability-2026): Mercury vs Suzuki reliability
-- [Harris Boat Works Mercury Dealer Ontario](/blog/why-harris-boat-works-mercury-dealer): why Harris Boat Works chose Mercury
-- [Harris Boat Works: On Rice Lake Since 1947](/blog/harris-boat-works-since-1947-rice-lake-institution): the Harris Boat Works story since 1947
+- [Mercury vs Yamaha Outboards: Honest Comparison](/blog/mercury-vs-yamaha-outboards-ontario), Mercury vs Yamaha for Ontario
+- [Mercury vs Yamaha vs Honda: Reliability 2026](/blog/mercury-vs-yamaha-vs-honda-reliability-2026), Mercury vs Yamaha vs Honda reliability
+- [Mercury vs Suzuki Outboards: Reliability 2026](/blog/mercury-vs-suzuki-outboard-reliability-2026), Mercury vs Suzuki reliability
+- [Harris Boat Works Mercury Dealer Ontario](/blog/why-harris-boat-works-mercury-dealer), why Harris Boat Works chose Mercury
+- [Harris Boat Works: On Rice Lake Since 1947](/blog/harris-boat-works-since-1947-rice-lake-institution), the Harris Boat Works story since 1947
 
 ## Next steps
 

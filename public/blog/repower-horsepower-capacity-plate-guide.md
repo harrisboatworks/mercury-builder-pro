@@ -145,11 +145,11 @@ No. The listed maximum is a limit, not a target. Motor weight, transom condition
 
 ## Related guides
 
-- [Mercury Main + Trolling Motor: How to Pair Them](/blog/mercury-main-and-trolling-motor): main outboard plus trolling motor setups
-- [Portable Mercury Outboard Guide: 2.5 to 20 HP (2026)](/blog/portable-outboard-mercury-guide-2-20hp): portable 2–20 HP options
-- [Tiller vs Remote Steering Outboard: Which to Choose (2026)](/blog/tiller-vs-remote-steering-outboard-guide): tiller vs remote steering
-- [Boat Motor HP Size Guide Ontario](/blog/boat-motor-size-calculator-guide): sizing calculator walkthrough
-- [Mercury 115 vs 150 HP (Honest Ontario Dealer Guide, 2026)](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026): the 115 vs 150 decision, dealer take
+- [Mercury Main + Trolling Motor: How to Pair Them](/blog/mercury-main-and-trolling-motor), main outboard plus trolling motor setups
+- [Portable Mercury Outboard Guide: 2.5 to 20 HP (2026)](/blog/portable-outboard-mercury-guide-2-20hp), portable 2–20 HP options
+- [Tiller vs Remote Steering Outboard: Which to Choose (2026)](/blog/tiller-vs-remote-steering-outboard-guide), tiller vs remote steering
+- [Boat Motor HP Size Guide Ontario](/blog/boat-motor-size-calculator-guide), sizing calculator walkthrough
+- [Mercury 115 vs 150 HP (Honest Ontario Dealer Guide, 2026)](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026), the 115 vs 150 decision, dealer take
 
 ## Next steps
 
