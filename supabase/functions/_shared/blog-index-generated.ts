@@ -4173,7 +4173,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   {
     "slug": "mercury-75-hp-fourstroke-review-ontario",
     "title": "Mercury 75 HP FourStroke: Buy the 90 Instead?",
-    "description": "Mercury 75 hp FourStroke: why HBW doesn't stock it. Same weight and price as 90 hp, so 90 is the smarter buy. Ontario dealer's honest take on this motor.",
+    "description": "Mercury 75 HP 4-stroke outboard: same 2.1L block and 163 kg dry weight as the 90, a small price gap, and when the 75 is still the right call in Ontario.",
     "category": "Mercury Buying Guides",
     "publishDate": "2026-05-10",
     "keywords": [

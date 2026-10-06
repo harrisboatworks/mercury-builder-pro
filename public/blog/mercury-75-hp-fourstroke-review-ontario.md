@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-75-hp-fourstroke-review-ontario.md
-last_updated: 2026-09-11
+last_updated: 2026-10-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -8,10 +8,10 @@ final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
 title: "Mercury 75 HP FourStroke: Buy the 90 Instead?"
-description: "Mercury 75 hp FourStroke: why HBW doesn't stock it. Same weight and price as 90 hp, so 90 is the smarter buy. Ontario dealer's honest take on this motor."
+description: "Mercury 75 HP 4-stroke outboard: same 2.1L block and 163 kg dry weight as the 90, a small price gap, and when the 75 is still the right call in Ontario."
 category: "Mercury Buying Guides"
 date_published: 2026-05-10
-date_modified: 2026-09-11
+date_modified: 2026-10-06
 keywords: ["mercury 75 hp review","mercury 75 hp fourstroke","mercury 75 vs 90","mercury 75 elpt ontario","why dealers dont sell 75 hp","mercury 90 better than 75"]
 author: Harris Boat Works
 content_type: blog_article
@@ -21,11 +21,11 @@ revenue_driver: repower
 
 # Mercury 75 HP FourStroke: Buy the 90 Instead?
 
-> Mercury 75 hp FourStroke: why HBW doesn't stock it. Same weight and price as 90 hp, so 90 is the smarter buy. Ontario dealer's honest take on this motor.
+> Mercury 75 HP 4-stroke outboard: same 2.1L block and 163 kg dry weight as the 90, a small price gap, and when the 75 is still the right call in Ontario.
 
 **Category:** Mercury Buying Guides  
 **Published:** 2026-05-10  
-**Last reviewed:** 2026-09-11  
+**Last reviewed:** 2026-10-06  
 **Read time:** 7 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-75-hp-fourstroke-review-ontario
 
@@ -173,6 +173,18 @@ Technically yes for smaller pontoons under 20 ft with light loads. We don't reco
 ### Can I get a 75 Mercury used?
 
 Sometimes, yes. Used 75s come through the market. We can help assess condition and decide if a used 75 makes more sense than a new 90 for your situation.
+
+### How much does a Mercury 75 HP outboard cost in Canada?
+
+HBW lists the current CAD price for the Mercury 75 ELPT FourStroke on our pricing reference at mercuryrepower.ca/pricing-reference, and you can build a live CAD quote for it in the online configurator. We don't keep the 75 on the shelf, so it is ordered in, and we confirm the exact price, rigging and timing before you commit. If your boat is rated for 90 HP, price the 90 beside it, because the gap is usually smaller than people expect. Questions: 905-342-2153.
+
+### Is the Mercury 75 HP a 4-stroke outboard?
+
+Yes. Mercury's current 75 HP is a FourStroke: a 2.1L inline four-cylinder with electronic fuel injection, built on the same block as the 90 and weighing 163 kg (359 lb) dry. If you are replacing an older 75 HP two-stroke, expect a quieter, cleaner-running motor, and check your transom and capacity plate before you order.
+
+### What does 75 ELPT mean on a Mercury outboard?
+
+ELPT is Mercury's model code: E for electric start, L for a long 20-inch shaft, and PT for power trim. The 75 ELPT FourStroke is the version on HBW's pricing reference. Measure your transom before you order, because the shaft length has to match it. Call 905-342-2153 or build a quote at mercuryrepower.ca.
 
 ## Related guides
 
