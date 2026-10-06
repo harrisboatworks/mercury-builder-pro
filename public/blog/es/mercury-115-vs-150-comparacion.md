@@ -143,7 +143,7 @@ Para servicio técnico: Harris Boat Works solo da servicio a motores Mercury y M
 
 Usa el configurador en **mercuryrepower.ca** para ver precios reales del 115 y 150 HP, comparar opciones de rigging, y armar tu presupuesto completo, sin llamadas previas, sin presión.
 
-¿Quieres hablar con alguien? Llama al **905-342-2153** o escríbenos en **hbw.wiki/service**.
+¿Quieres hablar con alguien? Llama al **905-342-2153** o escríbenos en **hbwservice.ca**.
 
 Harris Boat Works, Gores Landing, Ontario
 harrisboatworks.ca | Rice Lake

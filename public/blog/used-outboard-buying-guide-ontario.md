@@ -31,7 +31,7 @@ revenue_driver: repower
 
 *Hero image: AI-generated editorial scene of a buyer reviewing documents beside a Mercury-powered boat. It does not depict an HBW customer, facility or completed inspection.*
 
-> **Quick answer:** Before you pay for a used outboard, verify its identity and service history, arrange a qualified inspection using the exact model's procedures, and agree on a suitable running test. Ask for written findings and a repair estimate before deciding. Complete a service request at [hbw.wiki/service](https://hbw.wiki/service); boats can be dropped off anytime, including after hours.
+> **Quick answer:** Before you pay for a used outboard, verify its identity and service history, arrange a qualified inspection using the exact model's procedures, and agree on a suitable running test. Ask for written findings and a repair estimate before deciding. Complete a service request at [hbwservice.ca](https://hbwservice.ca); boats can be dropped off anytime, including after hours.
 
 Harris Boat Works has been on Rice Lake since 1947 and a Mercury dealer since 1965. My dad ran the service side for decades, and he spent a lot of those years pulling cowls off motors that people bought without asking the right questions first. He had a phrase for it: cheap at the dock, expensive in the shop.
 
@@ -154,7 +154,7 @@ Before buying, send HBW the serial number, model information and your concerns. 
 
 The smart play on any private-sale outboard worth real money is to make your offer conditional on passing a dealer inspection. Honest sellers agree to it without hesitation. The ones who refuse have just told you what you needed to know.
 
-Complete the [service request](https://hbw.wiki/service), then drop the boat off anytime, including after hours. Confirm inspection scope and cost with HBW before authorizing the work.
+Complete the [service request](https://hbwservice.ca), then drop the boat off anytime, including after hours. Confirm inspection scope and cost with HBW before authorizing the work.
 
 ---
 
@@ -170,12 +170,12 @@ We will tell you which one you are looking at, even when the honest answer point
 
 If you have looked at the used market and the numbers do not work, or you just want to know what new actually costs, build a live quote at **mercuryrepower.ca**. Real Canadian pricing, configured for your hull, in about three minutes.
 
-Book a pre-purchase inspection at hbw.wiki/service before you commit to a private-sale motor.
+Book a pre-purchase inspection at hbwservice.ca before you commit to a private-sale motor.
 
 **Phone:** 905-342-2153
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 **Configurator:** [mercuryrepower.ca](https://mercuryrepower.ca)
-**Service:** [hbw.wiki/service](https://hbw.wiki/service)
+**Service:** [hbwservice.ca](https://hbwservice.ca)
 
 ---
 

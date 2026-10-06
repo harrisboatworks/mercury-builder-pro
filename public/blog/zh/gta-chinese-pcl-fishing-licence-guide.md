@@ -222,7 +222,7 @@ Rice Lake 属于安省 Fisheries Management Zone（FMZ），具体的鱼种季�
 2. **如果船符合条件，办理 Pleasure Craft Licence（PCL 船只牌照）**：在线申请并支付当前服务费（2026-09-05 为 $24.41 CAD）。
 3. **出发钓鱼前确认自己的年龄和居住身份规则**：需要购买时，在 Ontario.ca 办好 Outdoors Card + Fishing Licence。
 4. **每年春天复查最新钓鱼规则**：Ontario Recreational Fishing Regulations Summary。
-5. **如需维修服务**：HBW 只为 Mercury 和 Mercruiser 发动机提供维修服务，请通过 [https://hbw.wiki/service](https://hbw.wiki/service) 提交请求。
+5. **如需维修服务**：HBW 只为 Mercury 和 Mercruiser 发动机提供维修服务，请通过 [https://hbwservice.ca](https://hbwservice.ca) 提交请求。
 
 水上安全比省下几十加元更重要。证齐了，PFD 穿好了，再出门。
 

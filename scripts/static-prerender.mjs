@@ -1843,7 +1843,7 @@ function howToRepowerSchema() {
           { "@type": "HowToStep", "position": 1, "name": "Build Your Quote Online", "text": "Use the configurator at mercuryrepower.ca to choose your Mercury motor (FourStroke, Pro XS, SeaPro, or ProKicker), shaft length, and controls. You'll see live CAD pricing, financing estimates, and any active promotions instantly, no forms, no waiting.", "url": `${SITE_URL}/quote/motor-selection` },
           { "@type": "HowToStep", "position": 2, "name": "Confirm Motor & Shaft Fit", "text": "Tell us your boat's make, model, transom height, and capacity plate HP rating. We'll confirm the right Mercury HP, shaft length (15\", 20\", or 25\"), and whether you need Command Thrust for a pontoon or heavy hull." },
           { "@type": "HowToStep", "position": 3, "name": "Place Your Deposit", "text": "Secure your motor with a refundable deposit ($200–$1,000 depending on HP) paid online. This locks in the price, holds your spot in the install queue, and starts the order if the motor isn't already in stock." },
-          { "@type": "HowToStep", "position": 4, "name": "Schedule the Install", "text": "Book your drop-off date at Harris Boat Works in Gores Landing on Rice Lake. Most installs are 1–3 days. Submit a service request at hbw.wiki/service or call (905) 342-2153." },
+          { "@type": "HowToStep", "position": 4, "name": "Schedule the Install", "text": "Book your drop-off date at Harris Boat Works in Gores Landing on Rice Lake. Most installs are 1–3 days. Submit a service request at hbwservice.ca or call (905) 342-2153." },
           { "@type": "HowToStep", "position": 5, "name": "Professional Install & Rigging", "text": "Our Mercury-certified technicians remove your old motor, install the new Mercury, and replace throttle, shift, steering, fuel lines, and gauges as needed. Full rigging is included in every repower package, no surprise add-ons." },
           { "@type": "HowToStep", "position": 6, "name": "Lake Test on Rice Lake", "text": "HBW's standard repower handoff includes an on-water test on Rice Lake before pickup when safe seasonal conditions allow. We confirm WOT RPM, prop pitch, idle, shifting, and trim. If anything's off, we adjust before you ever see the bill. Any alternate acceptance plan is documented with the customer." },
           { "@type": "HowToStep", "position": 7, "name": "Pickup & Walk-Through", "text": "Pickup is by appointment at Gores Landing, about 20–30 minutes. Bring photo ID and your purchase order. We register the warranty, walk you through controls and break-in, and you're on the water. Pickup only, no shipping." }
@@ -1873,7 +1873,7 @@ const TRUST_FAQ_PRERENDER = [
   { question: "Do you offer Mercury financing?", answer: "Yes. HBW arranges financing through DealerPlan and Canadian lenders on eligible purchases of $5,000 or more. The quote builder uses the current promotional rate, includes the $349 DealerPlan documentation fee where applicable, and shows the contract and amortization disclosure." },
   { question: "What warranty comes with a new Mercury outboard?", answer: `${WARRANTY_POLICY_SENTENCE} Harris Boat Works registers the warranty directly with Mercury Marine at pickup.` },
   { question: "Are Mercury motors made in Canada?", answer: "Mercury Marine is headquartered in Fond du Lac, Wisconsin, USA, where most outboard motors are manufactured. Mercury has been building outboards since 1939 and is one of the largest marine engine manufacturers in the world. Harris Boat Works has been the authorized Canadian Mercury dealer for the Rice Lake / Kawartha region since 1965." },
-  { question: "Do you service motors purchased elsewhere?", answer: "Yes, our Mercury-certified service department works on Mercury and MerCruiser motors regardless of where they were purchased. We handle warranty work, repower, winterization, spring launch, and routine maintenance. Submit a service request at hbw.wiki/service or call (905) 342-2153." },
+  { question: "Do you service motors purchased elsewhere?", answer: "Yes, our Mercury-certified service department works on Mercury and MerCruiser motors regardless of where they were purchased. We handle warranty work, repower, winterization, spring launch, and routine maintenance. Submit a service request at hbwservice.ca or call (905) 342-2153." },
   { question: "Why buy from Harris Boat Works instead of a big-box marine retailer?", answer: "Three reasons: (1) Premier Dealer status means our technicians, parts inventory, and warranty access are at the highest Mercury tier. (2) Family-owned since 1947, we answer the phone, we know our customers, and the same people sell, install, and service the motor. (3) Real online pricing with live CAD quotes, no \"call for price\" runaround. What you see at mercuryrepower.ca is what you pay." }
 ];
 
@@ -4358,8 +4358,8 @@ const HUB_DEFS = [
       { question: 'How long does a Mercury last with proper maintenance?', answer: 'There is no responsible universal hour or year estimate. Engine family, duty cycle, corrosion exposure, storage, service history, installation, and operating conditions all matter. A documented inspection and service history is more useful than a generic lifespan claim.' },
       { question: 'What kind of oil does my Mercury need?', answer: "Use only the oil viscosity and specification listed for your exact engine model and serial number in the Mercury owner's manual or service information. Mercury requirements differ by engine family, temperature range, and model year." },
       { question: "Why won't my Mercury start in spring?", answer: 'Common starting points include battery condition and connections, old or contaminated fuel, fuel delivery, the emergency-stop lanyard, controls not fully in neutral, and storage-related issues. Follow the model-specific troubleshooting sequence and avoid repeated cranking if an alarm or abnormal condition is present.' },
-      { question: 'When should I submit a spring service request?', answer: 'Complete hbw.wiki/service, then drop the boat off anytime, including after hours. Physical marina work resumes when HBW reopens in early April.' },
-      { question: 'Do you repair Mercury outboards?', answer: 'Yes, during our open season. Mercury and MerCruiser engine repair includes diagnostics, impellers, water pumps, fuel systems, gearcases, and full 100-hour services. Physical service work pauses from December 1 until the marina reopens in early April, but quotes and planning can continue. Start with a service request at hbw.wiki/service.' },
+      { question: 'When should I submit a spring service request?', answer: 'Complete hbwservice.ca, then drop the boat off anytime, including after hours. Physical marina work resumes when HBW reopens in early April.' },
+      { question: 'Do you repair Mercury outboards?', answer: 'Yes, during our open season. Mercury and MerCruiser engine repair includes diagnostics, impellers, water pumps, fuel systems, gearcases, and full 100-hour services. Physical service work pauses from December 1 until the marina reopens in early April, but quotes and planning can continue. Start with a service request at hbwservice.ca.' },
     ],
   },
   {
@@ -4972,7 +4972,7 @@ const routes = [
       const groups = [
         { heading: '报价 · 服务 · 租船', slugs: [], extras: [
           { to: '/quote/motor-selection', title: '在线报价工具（Quote Builder）' },
-          { to: 'https://hbw.wiki/service', title: '服务请求表（Service Request）' },
+          { to: 'https://hbwservice.ca', title: '服务请求表（Service Request）' },
           { to: 'https://www.harrisboatworks.ca/rentals', title: '租船 Rice Lake (Rentals)' },
           { to: '/repower', title: 'Mercury Repower 主页' },
         ]},
@@ -5035,7 +5035,7 @@ const routes = [
       const linksHtml =
         '<section><h2>Devis, service et location</h2><ul>' +
         '<li><a href="/quote/motor-selection"><strong>Générateur de devis Mercury (CAD)</strong></a></li>' +
-        '<li><a href="https://hbw.wiki/service"><strong>Demande de service (formulaire)</strong></a></li>' +
+        '<li><a href="https://hbwservice.ca"><strong>Demande de service (formulaire)</strong></a></li>' +
         '<li><a href="/repower"><strong>Guide de remotorisation Mercury</strong></a></li>' +
         '<li><a href="https://www.harrisboatworks.ca/rentals"><strong>Location de bateaux, lac Rice</strong></a></li>' +
         '</ul></section>';
@@ -5348,7 +5348,7 @@ const routes = [
       '<section><h2>Who we are</h2><p>Harris Boat Works is a Mercury Marine Premier Dealer and Legend Boats dealer in Gores Landing, Ontario on Rice Lake. Family-owned since 1947, Mercury dealer since 1965. Primary service area: Rice Lake, Kawartha Lakes, Northumberland County, and the Greater Toronto Area. Contact: (905) 342-2153 / info@harrisboatworks.ca.</p></section>' +
       '<section><h2>Routing for non-motor requests</h2><ul>' +
         '<li><strong>Rentals:</strong> book at <a href="https://www.harrisboatworks.ca/rentals">https://www.harrisboatworks.ca/rentals</a> (PCOC required).</li>' +
-        '<li><strong>Winter storage / shrinkwrap / winterization / service:</strong> submit at <a href="https://hbw.wiki/service">https://hbw.wiki/service</a>.</li>' +
+        '<li><strong>Winter storage / shrinkwrap / winterization / service:</strong> submit at <a href="https://hbwservice.ca">https://hbwservice.ca</a>.</li>' +
         '<li><strong>Mercury motor quotes:</strong> this site\u2019s quote API and <a href="/pricing-reference.md">/pricing-reference.md</a>.</li>' +
       '</ul></section>' +
       '<section><h2>Built on the agentic commerce standard</h2><p>Universal Commerce Protocol (UCP) is the open standard for AI assistants to discover merchants, build carts, and hand off to humans. Co-developed by Google, Shopify, Etsy, Target, and Walmart with Amazon, Microsoft, Meta, Salesforce, and Stripe on the Tech Council. Harris Boat Works implements UCP 2026-04-08 with dev.ucp.shopping.checkout (quote mode) and dev.ucp.shopping.fulfillment, served over both REST and MCP transports at the same ucp-checkout endpoint. Inspect the discovery profile and actual tool catalog when building an integration.</p><p>Discovery profile: <a href="/.well-known/ucp">/.well-known/ucp</a>. Reproduce: <code>npx -y @shopify/ucp-cli discover www.mercuryrepower.ca</code>. Quote mode: agents estimate motor prices plus HST and pickup. Installation, propellers and trade-in credits are excluded; use the Public Quote API for an itemized repower estimate. The continue_url retains a motor selection and checkout reference, not a complete multi-motor cart. Then the dealer completes every sale with the buyer in person at Gores Landing with valid government photo ID, payment is never collected over UCP. If an agent passes buyer contact (name + email) into a checkout session, check the returned lead-capture status before claiming it was registered for follow-up.</p></section>' +
@@ -7392,7 +7392,7 @@ verifyMd({
     '100-hour',
     'Outdoor storage',
     'reopens in early April',
-    'hbw.wiki/service',
+    'hbwservice.ca',
   ],
 });
 

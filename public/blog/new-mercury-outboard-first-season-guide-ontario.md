@@ -120,7 +120,7 @@ It helps to know what's supposed to happen and what's a red flag.
 
 **Not normal, period:** Sudden power loss, rough running that doesn't clear up, repeated stalling, or any warning lights that stay on. These are not break-in quirks; they're reasons to pull the engine out of service and have us look at it.
 
-If any of those not-normal signs show up, stop using the motor as the symptom requires and submit one service request at [hbw.wiki/service](https://hbw.wiki/service).
+If any of those not-normal signs show up, stop using the motor as the symptom requires and submit one service request at [hbwservice.ca](https://hbwservice.ca).
 
 ## Rice Lake and Kawarthas Reality Check
 
@@ -142,7 +142,7 @@ Running a new outboard around here comes with a few realities that first-time bo
 
 Coming up on 100 hours, considering the optional early check or seeing something that doesn't feel right? A clear service request gives the shop the motor details before the boat arrives.
 
-**Service:** [hbw.wiki/service](https://hbw.wiki/service)  
+**Service:** [hbwservice.ca](https://hbwservice.ca)  
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 
 ## FAQs
@@ -181,12 +181,12 @@ A good PDI and careful break-in make an extra inspection unnecessary, but if you
 
 ## Next steps
 
-- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbw.wiki/service
+- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbwservice.ca
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
-- The only commercial next step for this article is the HBW service request at https://hbw.wiki/service.
+- The only commercial next step for this article is the HBW service request at https://hbwservice.ca.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

@@ -131,7 +131,7 @@ Build the repower configuration at **[mercuryrepower.ca](https://www.mercuryrepo
 
 **Phone:** 905-342-2153
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
-**Service:** [hbw.wiki/service](https://hbw.wiki/service)
+**Service:** [hbwservice.ca](https://hbwservice.ca)
 
 ---
 
@@ -163,7 +163,7 @@ A documented repower may improve buyer confidence and value relative to the same
 
 ### How long does a repower take?
 
-There are two clocks: motor and rigging availability, then the scheduled shop work. HBW confirms the installation window after reviewing the boat, required parts, current shop capacity, and safe test conditions. Complete the service request at hbw.wiki/service, then drop off your boat anytime, including after hours. HBW confirms the work schedule separately.
+There are two clocks: motor and rigging availability, then the scheduled shop work. HBW confirms the installation window after reviewing the boat, required parts, current shop capacity, and safe test conditions. Complete the service request at hbwservice.ca, then drop off your boat anytime, including after hours. HBW confirms the work schedule separately.
 
 ### Can I repower a 20-year-old boat?
 

@@ -29,7 +29,7 @@ revenue_driver: service
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/spring-outboard-commissioning-checklist
 
-> **Quick answer:** Spring commissioning brings your Mercury back to operational condition after winter storage. The core work: fuel system inspection, cooling system and impeller check, battery load test, fresh gear lube verification, spark plug inspection, propeller check, and a test run on muffs before the boat goes in the water. Book early, by late April, shops are running behind. Schedule at [hbw.wiki/service](https://hbw.wiki/service).
+> **Quick answer:** Spring commissioning brings your Mercury back to operational condition after winter storage. The core work: fuel system inspection, cooling system and impeller check, battery load test, fresh gear lube verification, spark plug inspection, propeller check, and a test run on muffs before the boat goes in the water. Book early, by late April, shops are running behind. Schedule at [hbwservice.ca](https://hbwservice.ca).
 
 Need your PCOC? Take the online course through [HBW's MyBoatCard referral link](https://myboatcard.com/card/harrisboat) and use **HARRIS15** for **15% off**.
 
@@ -147,7 +147,7 @@ Below the rated band means prop, fouling, or a fuel issue. Above the band means 
 
 #### Want us to handle it?
 
-Spring commissioning at HBW is free for HBW winter storage customers, $99 otherwise. Includes all five steps above plus a lake test when possible. Book at hbw.wiki/service.
+Spring commissioning at HBW is free for HBW winter storage customers, $99 otherwise. Includes all five steps above plus a lake test when possible. Book at hbwservice.ca.
 
 ### Step 5, Lubrication
 
@@ -213,7 +213,7 @@ If you'd rather have us handle commissioning:
 
 We cover the full checklist above plus computer diagnostics on Mercury SmartCraft systems, lake-test after the bench work, and a written record of everything done. For engine repairs, we only service Mercury and MerCruiser.
 
-Schedule at [hbw.wiki/service](https://hbw.wiki/service). Book before April if May launch timing matters. After the May long weekend, spring service demand usually gets heavier, so earlier requests are easier to plan around.
+Schedule at [hbwservice.ca](https://hbwservice.ca). Book before April if May launch timing matters. After the May long weekend, spring service demand usually gets heavier, so earlier requests are easier to plan around.
 
 ---
 
@@ -227,7 +227,7 @@ The spring no-starts that fill our May schedule almost all trace back to the sam
 
 ## Ready to Book Spring Service?
 
-Want the boat ready for the long weekend? Book spring service at **[hbw.wiki/service](https://hbw.wiki/service)**.
+Want the boat ready for the long weekend? Book spring service at **[hbwservice.ca](https://hbwservice.ca)**.
 
 Harris Boat Works | Since 1947 | Mercury Marine Premier Dealer | Gores Landing, ON
 
@@ -251,7 +251,7 @@ The primary indicator is milky or coffee-coloured gear oil when you remove the d
 
 ### How much does professional spring commissioning cost in Ontario?
 
-Ontario shops typically charge $150-$350 CAD. At HBW the spring check is free for our winter storage customers and $99 for everyone else. A basic commissioning is at the lower end; a commissioning that includes gear oil change, spark plug inspection, impeller check, and fuel filter replacement costs more. Harris Boat Works provides an upfront scope before starting, request service at hbw.wiki/service.
+Ontario shops typically charge $150-$350 CAD. At HBW the spring check is free for our winter storage customers and $99 for everyone else. A basic commissioning is at the lower end; a commissioning that includes gear oil change, spark plug inspection, impeller check, and fuel filter replacement costs more. Harris Boat Works provides an upfront scope before starting, request service at hbwservice.ca.
 
 ### What's the best time to book spring commissioning near Rice Lake or the Kawarthas?
 
@@ -279,12 +279,12 @@ Yes. Ethanol-blended fuel (E10) can cause issues if it wasn't treated before sto
 
 ## Next steps
 
-- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbw.wiki/service
+- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbwservice.ca
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
-- The only commercial next step for this article is the HBW service request at https://hbw.wiki/service.
+- The only commercial next step for this article is the HBW service request at https://hbwservice.ca.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

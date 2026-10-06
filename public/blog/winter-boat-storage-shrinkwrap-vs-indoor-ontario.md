@@ -31,7 +31,7 @@ revenue_driver: service
 
 ## Shrinkwrap vs. Indoor Boat Storage in Ontario: The Honest Comparison
 
-> **Quick answer:** HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. We also don't offer climate-controlled or year-round storage. We can generally arrange boat pickup; ask about availability. HBW does not deliver boats. You can also complete [hbw.wiki/service](https://hbw.wiki/service), then drop off anytime, including after hours. The marina is closed December 1 through April 1. Compare storage quotes by written scope and the [current HBW 2026–27 rate card](https://www.harrisboatworks.ca/winter-storage), not an old per-foot number. The full transport limits are in Access, Transport, and the Winter Closure.
+> **Quick answer:** HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. We also don't offer climate-controlled or year-round storage. We can generally arrange boat pickup; ask about availability. HBW does not deliver boats. You can also complete [hbwservice.ca](https://hbwservice.ca), then drop off anytime, including after hours. The marina is closed December 1 through April 1. Compare storage quotes by written scope and the [current HBW 2026–27 rate card](https://www.harrisboatworks.ca/winter-storage), not an old per-foot number. The full transport limits are in Access, Transport, and the Winter Closure.
 
 The storage label is only the start of the decision. "Outdoor," "indoor," and "heated indoor" describe where the boat sits. They don't tell you whether the quote includes shrinkwrap, engine winterization, battery handling, spring commissioning, or any work on the trailer.
 
@@ -81,7 +81,7 @@ The most common storage misunderstanding is simple: a customer hears one price a
 
 It might cover only a parking space. It might include shrinkwrap but not engine winterization. It might include fall work but charge separately for spring commissioning.
 
-HBW records the approved scope on the work order. The current quote depends on the boat, trailer, length, shrinkwrap requirements, engine configuration, and the work you authorize. Use [hbw.wiki/service](https://hbw.wiki/service) for the current written scope and price.
+HBW records the approved scope on the work order. The current quote depends on the boat, trailer, length, shrinkwrap requirements, engine configuration, and the work you authorize. Use [hbwservice.ca](https://hbwservice.ca) for the current written scope and price.
 
 Don't use an old blog rate as a budget.
 
@@ -141,7 +141,7 @@ HBW does not offer either indoor tier. We also don't promise referrals, availabi
 
 ## Spring Commissioning
 
-Spring commissioning is included for HBW winter-storage customers. As of September 2026, it is $99 for non-storage customers. Confirm the current scope and price when you book at [hbw.wiki/service](https://hbw.wiki/service).
+Spring commissioning is included for HBW winter-storage customers. As of September 2026, it is $99 for non-storage customers. Confirm the current scope and price when you book at [hbwservice.ca](https://hbwservice.ca).
 
 Physical commissioning begins after the marina reopens. A spring work order may still need separate authorization for repairs, parts, or model-specific service beyond the commissioning scope.
 
@@ -160,7 +160,7 @@ Physical commissioning begins after the marina reopens. A spring work order may 
 
 Submit the boat details once. HBW will confirm whether the outdoor-storage model fits and put the approved fall and spring work in writing.
 
-**Service request:** [hbw.wiki/service](https://hbw.wiki/service)
+**Service request:** [hbwservice.ca](https://hbwservice.ca)
 **Phone:** 905-342-2153
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 
@@ -188,7 +188,7 @@ We can generally arrange boat pickup. Ask us about availability for your boat an
 
 ### How much does HBW outdoor winter storage cost?
 
-The current quote depends on the boat, trailer, length, shrinkwrap requirements, engine configuration, and authorized work. Request the current written scope and price at hbw.wiki/service.
+The current quote depends on the boat, trailer, length, shrinkwrap requirements, engine configuration, and authorized work. Request the current written scope and price at hbwservice.ca.
 
 ### Is spring commissioning included?
 
@@ -204,12 +204,12 @@ It is included for HBW winter-storage customers. As of September 2026, the price
 
 ## Next steps
 
-- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbw.wiki/service
+- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbwservice.ca
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
-- The only commercial next step for this article is the HBW service request at https://hbw.wiki/service.
+- The only commercial next step for this article is the HBW service request at https://hbwservice.ca.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

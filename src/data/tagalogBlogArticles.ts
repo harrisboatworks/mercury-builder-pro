@@ -123,7 +123,7 @@ Ang unang family fishing trip ay mas madali kaysa sa iniisip ninyo. Bisitahin an
 **Makipag-ugnayan sa amin**  
 Telepono: (905) 342-2153  
 Text: (647) 952-2153  
-Service requests: [hbw.wiki/service](https://hbw.wiki/service)  
+Service requests: [hbwservice.ca](https://hbwservice.ca)  
 Address: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 
 Hatid namin ang karanasan sa lawa na maaalala ng inyong pamilya, tunay, simple, at walang kaba.`
@@ -252,7 +252,7 @@ Tingnan ang aming rental fleet at magpareserba dito: [https://harrisboatworks.ca
 Para sa ibang tanong, tawagan o i-text kami:  
 📞 (905) 342-2153  
 📱 Text: (647) 952-2153  
-Para sa service requests: [hbw.wiki/service](https://hbw.wiki/service)
+Para sa service requests: [hbwservice.ca](https://hbwservice.ca)
 
 Matatagpuan kami sa: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. Tandaan lang, sarado ang marina mula December 1 hanggang April 1. Inaasahan ka namin, magkita tayo sa Rice Lake!`
   },
@@ -272,13 +272,13 @@ Matatagpuan kami sa: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. Tanda
       { question: 'Saan makakahanap ng mekaniko ng bangka sa Toronto?', answer: 'Ang HBW ay nasa Gores Landing, malapit sa Rice Lake, mga 90 minutong biyahe mula Brampton, Mississauga, Scarborough, at Markham. Walang malapit na shop sa loob ng Toronto na mare-rekomenda namin, pero maraming may-ari ng Mercury ang pumipiling mag-drive papunta sa amin dahil sa aming kadalubhasaan. Kung gusto mong makasigurado sa certified service, puntahan kami.' },
       { question: 'May marine mechanic ba na Pilipino sa Toronto?', answer: 'Wala pong Pilipinong mechanic sa HBW. Ang lahat ng aming technician ay bihasa sa Mercury pero ang lengguwahe ng shop ay English. Ang serbisyo namin ay sa English, kaya magdala ng kasamang marunong mag-English o gumamit ng translation app; matiyaga naming aasikasuhin ang kailangan mo.' },
       { question: 'Paano i-winterize ang bangka?', answer: 'Ang tamang winterization ay depende sa eksaktong modelo ng motor. Sundin ang mga hakbang sa manual na tumutugma sa serial number nito. Puwede mong gawin ito nang sarili kung may tamang manual, tools, at karanasan ka. Kung bago ka pa lang o hindi sigurado sa hakbang ng iyong makina, ipagawa sa qualified Mercury technician at sundin ang serial-specific manual.' },
-      { question: 'Saan ang winter storage ng bangka sa Ontario?', answer: 'Nag-aalok ang HBW ng outdoor storage na may propesyonal na shrink wrap, outdoor storage na walang takip, at serbisyong shrink wrap lamang sa Gores Landing. Hindi kami nag-aalok ng indoor o heated na boat storage. Kumpletuhin ang https://hbw.wiki/service, tapos i-drop off kahit kailan, kahit lampas sa oras ng opisina.' },
+      { question: 'Saan ang winter storage ng bangka sa Ontario?', answer: 'Nag-aalok ang HBW ng outdoor storage na may propesyonal na shrink wrap, outdoor storage na walang takip, at serbisyong shrink wrap lamang sa Gores Landing. Hindi kami nag-aalok ng indoor o heated na boat storage. Kumpletuhin ang https://hbwservice.ca, tapos i-drop off kahit kailan, kahit lampas sa oras ng opisina.' },
       { question: 'Paano ayusin ang Mercury outboard?', answer: 'Kung Mercury o Mercruiser ang motor mo, dalhin mo sa amin. Umpisahan namin ito ng computer diagnostic kung applicable, visual inspection, at pag-check ng fuel, spark, at compression. Certified technicians ang gagawa, at purong Mercury parts lang ang gagamitin. Kung may warranty ka, protektado ito kapag sa amin ka nagpagawa.' },
       { question: 'Saan ang pagawaan ng motor ng bangka malapit sa Mississauga?', answer: 'Walang partikular na shop sa Mississauga na mare-rekomenda namin. Ang HBW ay mula sa Gores Landing, mga 90 minuto ang biyahe, pero marami kaming customer na galing Mississauga dahil sa kumpiyansa nila sa aming Mercury expertise. Kung handa kang mag-drive, welcome ka rito.' },
       { question: 'Puwede ba akong makakuha ng serbisyo sa Tagalog sa HBW?', answer: 'Hindi po. Ang aming team ay nagsisilbi sa English lamang. Pero huwag mahiya: magsama ng kaibigan o pamilya na marunong mag-Ingles, o gumamit ng translation app. Magiging matiyaga kami sa pagpapaliwanag hanggang maintindihan mo nang lubos.' }
     ],
     nativeReview: 'pending',
-    internalLinks: ['https://hbw.wiki/service'],
+    internalLinks: ['https://hbwservice.ca'],
     officialSources: [],
     content: `Alam namin: nakakapanibago magmay-ari ng bangka dito sa Canada. ‘Yung mga tanong tungkol sa makina, sa pag-iingat tuwing taglamig, at kung sino ang mapagkakatiwalaang mag-ayos, normal lang ‘yan lalo na kung bagong salta sa boating scene. Kami sa Harris Boat Works (HBW), pamilya ang nagpapatakbo ng marina sa Rice Lake mula pa noong 1947, at Mercury dealer na kami simula 1965. Kaya sa gabay na ito, ipapaliwanag namin sa paraang parang kaibigan lang ang kailangan mong malaman tungkol sa serbisyo ng outboard motor, winterization, at kung paano panatilihing malusog ang makina mo sa klima ng Ontario.
 
@@ -305,7 +305,7 @@ Dito pumapasok ang aming winterization service. May **584 kaming nakumpletong wi
 
 Ang lahat ng ito ay ginagawa gamit ang OEM Mercury parts at procedures. Kung hindi Mercury ang outboard mo, pasensya na, sa engine repairs, **Mercury at Mercruiser lang** ang sineserbisyuhan namin. Pero kung Mercury ang dala mo, you’re in good hands.
 
-At tandaan: sarado ang HBW mula December 1 hanggang April 1. Kumpletuhin ang https://hbw.wiki/service, tapos i-drop off kahit kailan, kahit lampas sa oras ng opisina.
+At tandaan: sarado ang HBW mula December 1 hanggang April 1. Kumpletuhin ang https://hbwservice.ca, tapos i-drop off kahit kailan, kahit lampas sa oras ng opisina.
 
 ## Spring Commissioning: Paggising ng Bangka Pagkatapos ng Taglamig
 
@@ -336,7 +336,7 @@ Mahalagang tandaan: **ang base warranty ng Mercury ay 3 taon**. Kung under warra
 
 ## Paano Mag-book ng Serbisyo
 
-Hindi namin pinapahirapan ang booking. Pumunta lang sa aming service page: https://hbw.wiki/service at sagutan ang form. Puwede ring tumawag o mag-text:
+Hindi namin pinapahirapan ang booking. Pumunta lang sa aming service page: https://hbwservice.ca at sagutan ang form. Puwede ring tumawag o mag-text:
 
 - 📞 Telepono: (905) 342-2153  
 - 📱 Text: (647) 952-2153  
@@ -361,7 +361,7 @@ Wala pong Pilipinong mechanic sa HBW. Ang lahat ng aming technician ay bihasa sa
 Ang tamang winterization ay depende sa eksaktong modelo ng motor. Sundin ang mga hakbang sa manual na tumutugma sa serial number nito. Puwede mong gawin ito nang sarili kung may tamang manual, tools, at karanasan ka. Kung bago ka pa lang o hindi sigurado sa hakbang ng iyong makina, ipagawa sa qualified Mercury technician at sundin ang serial-specific manual.
 
 **Saan ang winter storage ng bangka sa Ontario?**  
-Nag-aalok ang HBW ng outdoor storage na may propesyonal na shrink wrap, outdoor storage na walang takip, at serbisyong shrink wrap lamang sa Gores Landing. Hindi kami nag-aalok ng indoor o heated na boat storage. Kumpletuhin ang https://hbw.wiki/service, tapos i-drop off kahit kailan, kahit lampas sa oras ng opisina.
+Nag-aalok ang HBW ng outdoor storage na may propesyonal na shrink wrap, outdoor storage na walang takip, at serbisyong shrink wrap lamang sa Gores Landing. Hindi kami nag-aalok ng indoor o heated na boat storage. Kumpletuhin ang https://hbwservice.ca, tapos i-drop off kahit kailan, kahit lampas sa oras ng opisina.
 
 **Paano ayusin ang Mercury outboard?**  
 Kung Mercury o Mercruiser ang motor mo, dalhin mo sa amin. Umpisahan namin ito ng computer diagnostic kung applicable, visual inspection, at pag-check ng fuel, spark, at compression. Certified technicians ang gagawa, at purong Mercury parts lang ang gagamitin. Kung may warranty ka, protektado ito kapag sa amin ka nagpagawa.
@@ -379,7 +379,7 @@ Handa na ang bangka mo para sa summer? O kailangan na ng winterization bago huma
 - 📍 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 - 📞 Telepono: (905) 342-2153
 - 📱 Text: (647) 952-2153
-- 🔧 Mag-book ng serbisyo: https://hbw.wiki/service
+- 🔧 Mag-book ng serbisyo: https://hbwservice.ca
 
 Mula pa noong 1947, nagsisilbi na kami sa mga boat owner sa Ontario. Family-owned, Mercury-certified, at kayang maghintay kahit may kaunting translation challenge. Sama-sama nating siguraduhing laging handang umandar ang bangka mo.`
   }

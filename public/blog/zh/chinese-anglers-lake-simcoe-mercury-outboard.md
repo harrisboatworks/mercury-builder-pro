@@ -35,7 +35,7 @@ revenue_driver: repower
 
 我们知道用中文查资料买船外机不容易。这篇指南是 HBW 团队用中文写给你看的，希望能帮 GTA 华人钓友把决定做得更清楚。
 
-团队日常沟通主要是英文。你可以透过 hbw.wiki/service 用中文提交需求，我们会尽力沟通清楚，必要时会请你身边会英文的家人朋友一起对话；或者你可以先在 mercuryrepower.ca 用配置器自己看加币报价，比来电更直接。
+团队日常沟通主要是英文。你可以透过 hbwservice.ca 用中文提交需求，我们会尽力沟通清楚，必要时会请你身边会英文的家人朋友一起对话；或者你可以先在 mercuryrepower.ca 用配置器自己看加币报价，比来电更直接。
 
 ### Why GTA Chinese buyers come to Rice Lake / 为什么 GTA 华人船主愿意到 Rice Lake
 
@@ -120,7 +120,7 @@ Lake Simcoe属于**FMZ 16**（渔业管理区16）。FMZ 16有特定的鱼种季
 
 ## 下一步
 
-**为Lake Simcoe或安省其他湖区选Mercury船外机？** 到 **mercuryrepower.ca** 看当前加币报价，再至 **hbw.wiki/service** 让HBW帮你确认配置是否适合你的钓鱼船。
+**为Lake Simcoe或安省其他湖区选Mercury船外机？** 到 **mercuryrepower.ca** 看当前加币报价，再至 **hbwservice.ca** 让HBW帮你确认配置是否适合你的钓鱼船。
 
 Harris Boat Works，自1947年家族经营，自1965年起为 Mercury 授权经销商，Mercury Premier Dealer，位于Rice Lake南岸Gores Landing。
 

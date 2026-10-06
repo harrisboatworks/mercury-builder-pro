@@ -141,7 +141,7 @@ If your boat needs a motor, put together a real quote with real prices at mercur
 
 **Phone:** 905-342-2153
 **Configurator:** [mercuryrepower.ca](https://mercuryrepower.ca)
-**Service:** [hbw.wiki/service](https://hbw.wiki/service)
+**Service:** [hbwservice.ca](https://hbwservice.ca)
 
 ## FAQs
 

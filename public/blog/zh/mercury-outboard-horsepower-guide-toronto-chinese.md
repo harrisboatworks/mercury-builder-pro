@@ -79,7 +79,7 @@ Pro XS 不是“普通 FourStroke 加贴纸”。Mercury Canada 把 Pro XS 列�
 
 ## 下一步
 
-想给现有船换 Mercury 船外机或比较换装发动机方案，可以到 MercuryRepower.ca 先看透明报价。需要保养维修，请使用 [hbw.wiki/service](https://hbw.wiki/service)。
+想给现有船换 Mercury 船外机或比较换装发动机方案，可以到 MercuryRepower.ca 先看透明报价。需要保养维修，请使用 [hbwservice.ca](https://hbwservice.ca)。
 
 ## 常见问题
 

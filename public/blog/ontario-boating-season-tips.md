@@ -41,7 +41,7 @@ This post is the HBW seasonal hub. Three phases of the year, what HBW handles, w
 
 ## Quick recommendation
 
-If you want one rule that solves most seasonal headaches: complete [hbw.wiki/service](https://hbw.wiki/service), then drop off anytime, including after hours. You can request fall winterization and spring commissioning in the same form.
+If you want one rule that solves most seasonal headaches: complete [hbwservice.ca](https://hbwservice.ca), then drop off anytime, including after hours. You can request fall winterization and spring commissioning in the same form.
 
 ## Spring (March to Early May): Commissioning
 
@@ -131,7 +131,7 @@ A few things don't follow the seasons.
 
 The cleanest seasonal flow we see at HBW:
 
-- **Fall:** Complete [hbw.wiki/service](https://hbw.wiki/service), then drop the boat off anytime, including after hours, for the approved winterization and storage plan.
+- **Fall:** Complete [hbwservice.ca](https://hbwservice.ca), then drop the boat off anytime, including after hours, for the approved winterization and storage plan.
 - **Winter:** Follow the approved storage plan. The physical marina is closed December 1 through April 1.
 - **Spring:** Complete the standard commissioning check and list any additional concerns on the service request.
 - **Boating season:** Use the boat and follow the maintenance schedule for the exact engine and serial number.
@@ -140,7 +140,7 @@ The cleanest seasonal flow we see at HBW:
 
 The work that makes the season feel easy happens between seasons. Booked once, planned out, locked in.
 
-**Book service (commissioning, winterization, mid-season):** [hbw.wiki/service](https://hbw.wiki/service)
+**Book service (commissioning, winterization, mid-season):** [hbwservice.ca](https://hbwservice.ca)
 **Repower quote builder:** [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection)
 **Trade-in estimate:** [mercuryrepower.ca/trade-in-value](/trade-in-value)
 **Call us:** 905-342-2153
@@ -159,7 +159,7 @@ The previous October, ideally. We book spring slots from October onward and the 
 
 ### Do I really need winterization every year?
 
-Yes. Even a mild Ontario winter is a long storage period for fuel, gearcase lubricant, the battery, corrosion protection, and cooling-water drainage. Follow the exact engine procedure before layup; request the current HBW scope and price at hbw.wiki/service.
+Yes. Even a mild Ontario winter is a long storage period for fuel, gearcase lubricant, the battery, corrosion protection, and cooling-water drainage. Follow the exact engine procedure before layup; request the current HBW scope and price at hbwservice.ca.
 
 ### Is fall service cheaper than spring service?
 
@@ -167,7 +167,7 @@ Slightly, on labour rates. The bigger advantage of fall service is that any prob
 
 ### Can I do my own winterization?
 
-Some steps are DIY-friendly if you follow the exact manual. Fuel preparation, internal protection, flushing, gearcase service, and storage position vary by engine. If you see water or metal in the gearcase lubricant or cannot complete the procedure exactly, request service at hbw.wiki/service.
+Some steps are DIY-friendly if you follow the exact manual. Fuel preparation, internal protection, flushing, gearcase service, and storage position vary by engine. If you see water or metal in the gearcase lubricant or cannot complete the procedure exactly, request service at hbwservice.ca.
 
 ### What's HBW's spring backlog like?
 

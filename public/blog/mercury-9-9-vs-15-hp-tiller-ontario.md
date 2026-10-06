@@ -185,7 +185,7 @@ Build a quote for either motor in Canadian dollars at the configurator.
 
 **Configurator:** [mercuryrepower.ca](https://www.mercuryrepower.ca/quote/motor-selection)
 
-**Service:** [hbw.wiki/service](https://hbw.wiki/service)
+**Service:** [hbwservice.ca](https://hbwservice.ca)
 
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 

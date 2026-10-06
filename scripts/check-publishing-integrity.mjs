@@ -129,9 +129,9 @@ check(
   'Mandarin service guide must retain freshwater anode guidance and the corrected service table.',
 );
 check(
-  !/https:\/\/hbw\.wiki\/service。/.test(`${mandarinServiceGuide}\n${mandarinHorsepowerTwin}`) &&
-    /\[hbw\.wiki\/service\]\(https:\/\/hbw\.wiki\/service\)。/.test(`${mandarinServiceGuide}\n${mandarinHorsepowerTwin}`),
-  'Mandarin service links must keep Chinese punctuation outside the explicit hbw.wiki/service anchor.',
+  !/https:\/\/hbwservice\.ca。/.test(`${mandarinServiceGuide}\n${mandarinHorsepowerTwin}`) &&
+    /\[hbwservice\.ca\]\(https:\/\/hbwservice\.ca\)。/.test(`${mandarinServiceGuide}\n${mandarinHorsepowerTwin}`),
+  'Mandarin service links must keep Chinese punctuation outside the explicit hbwservice.ca anchor.',
 );
 check(
   !maintenanceTwin.includes('\n## Sources\n') &&

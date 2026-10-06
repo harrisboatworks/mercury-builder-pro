@@ -39,7 +39,7 @@ See [why boaters across Ontario choose Harris Boat Works](/blog/best-mercury-dea
 
 ### Plan Your Service Drop-Off
 
-1. **Complete the request:** use [hbw.wiki/service](https://hbw.wiki/service) and describe the boat, motor and work needed.
+1. **Complete the request:** use [hbwservice.ca](https://hbwservice.ca) and describe the boat, motor and work needed.
 2. **Drop off anytime:** after completing the request, bring the boat to **5369 Harris Boat Works Rd, Gores Landing**, including after hours.
 3. **Confirm the work:** agree on scope and cost with HBW. A repower quote uses the [Mercury quote builder](/quote/motor-selection).
 
@@ -106,7 +106,7 @@ HBW offers outdoor storage with professional shrink wrap, outdoor uncovered stor
 
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 **Phone:** 905-342-2153
-**Service requests:** [hbw.wiki/service](https://hbw.wiki/service)
+**Service requests:** [hbwservice.ca](https://hbwservice.ca)
 **Motor pricing:** [mercuryrepower.ca](https://www.mercuryrepower.ca)
 
 ---
@@ -117,7 +117,7 @@ At 45 to 50 minutes, you don't need to front-load every visit with hours of rese
 
 1. **Build your quote** at [mercuryrepower.ca](https://www.mercuryrepower.ca). Know the installed price.
 
-3. **Submit service requests** at [hbw.wiki/service](https://hbw.wiki/service), that's how we schedule most service work.
+3. **Submit service requests** at [hbwservice.ca](https://hbwservice.ca), that's how we schedule most service work.
 4. **Come up when you're ready.** At 45 to 50 minutes, "ready" is a lower bar than it is for someone driving from Mississauga.
 
 ---
@@ -129,7 +129,7 @@ You're 45 to 50 minutes away. The price is online. The rigging conversation happ
 This is what a dealer relationship is supposed to feel like.
 
 **Build your quote:** [mercuryrepower.ca](https://www.mercuryrepower.ca)
-**Request service:** [hbw.wiki/service](https://hbw.wiki/service)
+**Request service:** [hbwservice.ca](https://hbwservice.ca)
 **Call or text:** 905-342-2153
 **Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Premier dealer.
 

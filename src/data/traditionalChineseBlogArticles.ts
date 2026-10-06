@@ -46,7 +46,7 @@ export const traditionalChineseBlogArticles: BlogArticle[] = [
     category: 'mandarin',
     readTime: '9 分鐘',
     keywords: ['冬季保養', '冬儲', '安省', '繁體', 'winterization', 'Mercury'],
-    content: `> **簡短答案：** 安省冬天會反覆結冰解凍，冷卻系統或齒輪箱內的水結冰膨脹，可能造成嚴重而昂貴的損壞；能否維修、需要更換哪個部件，要由技師檢查後判斷。完整冬化包括按機型手冊處理燃油、冷卻、齒輪油和電瓶方案，再加上核准的覆蓋或存放。先完成 [hbw.wiki/service](https://hbw.wiki/service)，然後隨時送船，包括下班後。HBW 在 Gores Landing 提供冬化，以及室外專業收縮膜、室外無遮蓋和僅收縮膜服務，**不提供室內或加熱存放**，**12 月 1 日至 4 月 1 日停業**。
+    content: `> **簡短答案：** 安省冬天會反覆結冰解凍，冷卻系統或齒輪箱內的水結冰膨脹，可能造成嚴重而昂貴的損壞；能否維修、需要更換哪個部件，要由技師檢查後判斷。完整冬化包括按機型手冊處理燃油、冷卻、齒輪油和電瓶方案，再加上核准的覆蓋或存放。先完成 [hbwservice.ca](https://hbwservice.ca)，然後隨時送船，包括下班後。HBW 在 Gores Landing 提供冬化，以及室外專業收縮膜、室外無遮蓋和僅收縮膜服務，**不提供室內或加熱存放**，**12 月 1 日至 4 月 1 日停業**。
 
 ## 為何安省冬天必須冬化
 
@@ -76,7 +76,7 @@ export const traditionalChineseBlogArticles: BlogArticle[] = [
 
 ## 何時送船？
 
-先完成 [hbw.wiki/service](https://hbw.wiki/service)，然後隨時送船，包括下班後。
+先完成 [hbwservice.ca](https://hbwservice.ca)，然後隨時送船，包括下班後。
 
 | 狀態 | 建議 |
 |---|---|
@@ -103,7 +103,7 @@ HBW 不提供室內或加熱存放。
 - 我們通常可以安排取船。請向我們確認您的船和地點是否可安排。HBW 不運送船隻、不郵寄發動機、不上門／碼頭服務，也不推薦運輸商或報價第三方運輸。
 - 服務：[引擎冬化（Mercury 認證技師）](https://www.mercurymarine.com/ca/en) + 室外專業收縮膜、室外無遮蓋或僅收縮膜 + 春季開機
 - 價格：見 [現行冬儲價目](https://www.harrisboatworks.ca/winter-storage)
-- 聯絡方式：先完成 [hbw.wiki/service](https://hbw.wiki/service)，然後隨時送船，包括下班後；(905) 342-2153 / info@harrisboatworks.ca
+- 聯絡方式：先完成 [hbwservice.ca](https://hbwservice.ca)，然後隨時送船，包括下班後；(905) 342-2153 / info@harrisboatworks.ca
 
 ::pull-quote
 quote: ${ZH_HANT_LANGUAGE_NOTE}
@@ -127,7 +127,7 @@ quote: ${ZH_HANT_LANGUAGE_NOTE}
 `,
     faqs: [
       { question: 'HBW 提供室內冬儲嗎？', answer: '不提供。HBW 提供室外專業收縮膜存放、室外無遮蓋存放，以及僅收縮膜服務。不提供室內或加熱存放。' },
-      { question: '甚麼時候必須送過去？', answer: '先完成 hbw.wiki/service，然後隨時送船，包括下班後。HBW 12 月 1 日至 4 月 1 日完全停業。' },
+      { question: '甚麼時候必須送過去？', answer: '先完成 hbwservice.ca，然後隨時送船，包括下班後。HBW 12 月 1 日至 4 月 1 日完全停業。' },
       { question: '自己做冬化最容易漏的是哪一步？', answer: '先核對該引擎型號和序列號的冬化手冊。Mercury 的一般冬儲指南建議將引擎保持垂直，讓殘留水自行排出；但排水、霧化及防凍液要求仍須按機型確認，不應把同一套步驟套用到所有引擎。' },
       { question: 'HBW 有中文服務嗎？', answer: ZH_HANT_LANGUAGE_NOTE },
     ],

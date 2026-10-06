@@ -214,7 +214,7 @@ Harris Boat Works continues to maintain and service MerCruiser sterndrives for o
 
 One note on scope: **for engine repairs, we only service Mercury and MerCruiser.** If you have a Volvo Penta or other brand, we'll point you to the right specialist.
 
-Sterndrive owners who want a reliable shop with genuine expertise: [request service here](https://hbw.wiki/service).
+Sterndrive owners who want a reliable shop with genuine expertise: [request service here](https://hbwservice.ca).
 
 ---
 
@@ -251,7 +251,7 @@ Either way, you deserve a straight answer, not a sales pitch.
 
 [Start your quote at mercuryrepower.ca →](https://www.mercuryrepower.ca)
 
-[Request service at hbw.wiki/service](https://hbw.wiki/service).
+[Request service at hbwservice.ca](https://hbwservice.ca).
 
 *Harris Boat Works. Gores Landing, ON. Mercury Marine Premier Dealer.*
 

@@ -37,7 +37,7 @@ Mercury outboard beep patterns vary by model, year, and whether the boat has Sma
 
 If the display shows a number as well as a horn pattern, use the [Mercury fault-code lookup](/blog/mercury-outboard-fault-codes-lookup) for the complete number. The modern two-part UFC table and legacy single-number VesselView list are different systems.
 
-If you want a Mercury or MerCruiser shop to read the alarm with you, book at [hbw.wiki/service](https://hbw.wiki/service). You do not have to finish every DIY step before you call.
+If you want a Mercury or MerCruiser shop to read the alarm with you, book at [hbwservice.ca](https://hbwservice.ca). You do not have to finish every DIY step before you call.
 
 *Beep diagnostic flow*
 
@@ -71,13 +71,13 @@ Mercury manuals describe overheating despite steady telltale flow. Treat tempera
 
 Once the boat is safely stopped, photograph the code for the technician handling your service.
 
-#### Warning still active? Put in a service request at hbw.wiki/service.
+#### Warning still active? Put in a service request at hbwservice.ca.
 
-If oil pressure, temperature, or water-flow warnings require a stop, stay stopped. Record the exact pattern and any SmartCraft code, then book at hbw.wiki/service.
+If oil pressure, temperature, or water-flow warnings require a stop, stay stopped. Record the exact pattern and any SmartCraft code, then book at hbwservice.ca.
 
 ---
 
-[Beeping at the dock? Book a diagnostic](https://hbw.wiki/service "cta")
+[Beeping at the dock? Book a diagnostic](https://hbwservice.ca "cta")
 
 Related: [SmartCraft alarm codes](/blog/mercury-smartcraft-alarm-codes-encyclopedia) and [Mercury service at HBW](/maintenance).
 
@@ -95,7 +95,7 @@ A Mercury outboard beep is the motor talking to you. Sometimes routine (a normal
 | Alarm at WOT only | At wide-open throttle | A load or high-flow cooling problem: water pressure, impeller and housing, poppet or pressure valve where fitted, intake screens, or engine height | Check water pressure at speed; possible service issue |
 | Alarm briefly after shutdown | Heat-soak | Normal if it clears as the motor cools and does not return; if it recurs, diagnose it | Wait for the motor to cool and confirm it does not come back; if it does, book a diagnostic |
 
-The exact meaning of the four-beep pattern varies by motor year and rigging, always cross-reference your operator's manual or put in a service request at hbw.wiki/service.
+The exact meaning of the four-beep pattern varies by motor year and rigging, always cross-reference your operator's manual or put in a service request at hbwservice.ca.
 
 Different Mercury motors use different beep patterns, and what four beeps means on a 2010 EFI FourStroke is not necessarily what four beeps means on a current Verado. This guide covers the common patterns you'll encounter, what they typically indicate, and how to gather the information a technician needs to help you.
 
@@ -119,7 +119,7 @@ Here's the quick triage:
 2. **Check the fuel-water separator.** If it's the water-in-fuel warning, the separator may need draining or replacing.
 3. **Read the SmartCraft gauge or fault code** if your motor is equipped. The gauge tells you exactly which warning is active, instead of guessing from the beep. See our [SmartCraft Alarm Codes Encyclopedia](/blog/mercury-smartcraft-alarm-codes-encyclopedia) for the full code list.
 
-Your owner's manual is the final word on what your specific motor's beep pattern means, since patterns vary by model and year. If the alarm won't clear after the checks above, don't run it hard. Put in a service request at [hbw.wiki/service](https://hbw.wiki/service) and we'll get it on the bench.
+Your owner's manual is the final word on what your specific motor's beep pattern means, since patterns vary by model and year. If the alarm won't clear after the checks above, don't run it hard. Put in a service request at [hbwservice.ca](https://hbwservice.ca) and we'll get it on the bench.
 
 ---
 
@@ -215,7 +215,7 @@ If the diagnosis later shows the engine is not worth repairing, compare a writte
 ---
 
 **Alarm that came back, or one you can't explain?** 
-[Book a Mercury diagnostic at hbw.wiki/service](https://hbw.wiki/service).
+[Book a Mercury diagnostic at hbwservice.ca](https://hbwservice.ca).
 ---
 
 ## FAQs
@@ -266,7 +266,7 @@ A short, repeating 4-beep pattern is a warning alarm, not a shut-down. It usuall
 
 ## Next steps
 
-- If the owner can bring the boat to HBW in Gores Landing, Ontario, submit a service request: https://hbw.wiki/service
+- If the owner can bring the boat to HBW in Gores Landing, Ontario, submit a service request: https://hbwservice.ca
 - Include the exact code, engine serial number, hours, and a photo of the full display.
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
@@ -274,7 +274,7 @@ A short, repeating 4-beep pattern is a warning alarm, not a shut-down. It usuall
 
 - Treat fault-code meaning as engine-family, calibration, and serial-number specific.
 - HBW diagnoses faults in person at its Gores Landing shop. Do not offer phone or remote diagnosis.
-- Route to https://hbw.wiki/service only when the owner can bring the boat to HBW.
+- Route to https://hbwservice.ca only when the owner can bring the boat to HBW.
 - Safety warnings and the exact Mercury owner or service publication take priority over generic code descriptions.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.

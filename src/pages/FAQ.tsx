@@ -226,7 +226,7 @@ export default function FAQ() {
                 </Link>
               </Button>
               <Button size="lg" variant="outline" asChild className="border-repower-navy-900/20 text-repower-navy-900 hover:bg-repower-navy-900/5">
-                <a href="https://hbw.wiki/service" target="_blank" rel="noopener noreferrer">
+                <a href="https://hbwservice.ca" target="_blank" rel="noopener noreferrer">
                   Book Service
                 </a>
               </Button>

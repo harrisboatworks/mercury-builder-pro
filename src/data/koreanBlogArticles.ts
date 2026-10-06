@@ -153,7 +153,7 @@ Transport Canada 공인 기관에서 온라인 시험으로 취득합니다. 비
 한국어 서비스는 제공하지 않습니다. 온라인 견적 도구를 이용하시거나, 이메일에 번역을 함께 보내주시면 최선을 다해 도와드립니다.
 
 **겨울에 보트를 어떻게 보관하나요?**
-온타리오의 겨울에는 반드시 전문 겨울 정비(winterization)가 필요합니다. [hbw.wiki/service](https://hbw.wiki/service)를 완료한 뒤 언제든지, 근무 시간 이후에도 보트를 맡기시면 됩니다. HBW는 실외 전문 슈링크랩 보관, 덮개 없는 실외 보관, 슈링크랩만 하는 서비스를 제공하며 실내 또는 난방 보트 보관은 하지 않습니다.
+온타리오의 겨울에는 반드시 전문 겨울 정비(winterization)가 필요합니다. [hbwservice.ca](https://hbwservice.ca)를 완료한 뒤 언제든지, 근무 시간 이후에도 보트를 맡기시면 됩니다. HBW는 실외 전문 슈링크랩 보관, 덮개 없는 실외 보관, 슈링크랩만 하는 서비스를 제공하며 실내 또는 난방 보트 보관은 하지 않습니다.
 
 ---
 
@@ -171,7 +171,7 @@ Transport Canada 공인 기관에서 온라인 시험으로 취득합니다. 비
 [harrisboatworks.ca](https://harrisboatworks.ca)
 
 **서비스 예약:**
-[hbw.wiki/service](https://hbw.wiki/service)
+[hbwservice.ca](https://hbwservice.ca)
 
 **전화:** 905-342-2153
 **주소:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
@@ -362,14 +362,14 @@ Largemouth bass(큰입배스)와 smallmouth bass(작은입배스) 두 종류. Sm
 - **6단계 순서**: 연료 보관(해당 매뉴얼) → 내부 보호(해당 시) → 기어 오일 교환 → 승인된 배터리 계획 → 윤활 → 커버 보관
 - **연료 주의**: 일반 펌프 휘발유는 최대 10% 에탄올 포함, HBW는 에탄올 무첨가 휘발유 판매
 - **보관 기간**: 온타리오 보팅 시즌은 약 4-10월, 5-6개월 보관 필요
-- **DIY vs 딜러**: 기본 6단계는 가정에서 가능, 모델별 사양은 [hbw.wiki/service](https://hbw.wiki/service)에서 문의
+- **DIY vs 딜러**: 기본 6단계는 가정에서 가능, 모델별 사양은 [hbwservice.ca](https://hbwservice.ca)에서 문의
 
 ---
 
 
 ## 핵심 요약
 
-온타리오의 보팅 시즌은 보통 10~11월에 끝나며, 보트는 전문 겨울 정비(winterization) 후에야 안전하게 보관할 수 있습니다. 핵심 단계는 해당 엔진·연료 계통 매뉴얼에 따른 연료 보관, 매뉴얼이 요구하는 내부 보호, 기어 오일 교환, 승인된 배터리 계획, 윤활, 커버 보호입니다. [hbw.wiki/service](https://hbw.wiki/service)를 완료한 뒤 언제든지, 근무 시간 이후에도 보트를 맡기시면 됩니다.
+온타리오의 보팅 시즌은 보통 10~11월에 끝나며, 보트는 전문 겨울 정비(winterization) 후에야 안전하게 보관할 수 있습니다. 핵심 단계는 해당 엔진·연료 계통 매뉴얼에 따른 연료 보관, 매뉴얼이 요구하는 내부 보호, 기어 오일 교환, 승인된 배터리 계획, 윤활, 커버 보호입니다. [hbwservice.ca](https://hbwservice.ca)를 완료한 뒤 언제든지, 근무 시간 이후에도 보트를 맡기시면 됩니다.
 
 > **언어 안내**
 > HBW 팀은 영어로 소통합니다. 한국어 서비스는 제공하지 않지만, 한인 고객을 환영하며 최선을 다해 도와드립니다. 걱정하지 마세요. 영어를 할 줄 아는 친구나 가족과 함께 오시거나, 휴대폰의 번역 앱을 사용하셔도 좋습니다. 저희는 천천히, 끝까지 함께 확인해 드리겠습니다.
@@ -442,15 +442,15 @@ HBW 기술자들은 매년 많은 수의 윈터라이제이션을 수행하며, 
 
 ## 겨울 정비 접수
 
-- **서비스 요청:** [hbw.wiki/service](https://hbw.wiki/service)를 완료한 뒤 언제든지, 근무 시간 이후에도 보트를 맡기시면 됩니다.
+- **서비스 요청:** [hbwservice.ca](https://hbwservice.ca)를 완료한 뒤 언제든지, 근무 시간 이후에도 보트를 맡기시면 됩니다.
 - **전화:** 905-342-2153
 - **에탄올 무첨가 연료:** 현장 판매
 - **주소:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 `,
     faqs: [
-      { question: '겨울 정비 비용은 얼마나 드나요?', answer: '엔진 모델과 필요한 서비스에 따라 다릅니다. hbw.wiki/service에서 문의하시면 견적을 안내해드립니다.' },
+      { question: '겨울 정비 비용은 얼마나 드나요?', answer: '엔진 모델과 필요한 서비스에 따라 다릅니다. hbwservice.ca에서 문의하시면 견적을 안내해드립니다.' },
       { question: '직접 겨울 정비를 해도 되나요?', answer: '일부 단계는 가능하지만, 포깅과 기어 오일 교환을 잘못하면 정비비보다 훨씬 큰 수리비가 발생할 수 있습니다. 전문 처리를 권장합니다.' },
-      { question: '예약은 언제 하는 게 좋나요?', answer: 'hbw.wiki/service를 완료한 뒤 언제든지, 근무 시간 이후에도 보트를 맡기시면 됩니다. 마리나는 12월 1일부터 4월 1일까지 휴업합니다.' },
+      { question: '예약은 언제 하는 게 좋나요?', answer: 'hbwservice.ca를 완료한 뒤 언제든지, 근무 시간 이후에도 보트를 맡기시면 됩니다. 마리나는 12월 1일부터 4월 1일까지 휴업합니다.' },
       { question: '보트 보관만 맡길 수도 있나요?', answer: '네. HBW는 실외 전문 슈링크랩 보관, 덮개 없는 실외 보관, 슈링크랩만 하는 서비스를 제공합니다. 실내 또는 난방 보트 보관은 제공하지 않습니다.' },
       { question: '에탄올 무첨가 연료는 어디서 살 수 있나요?', answer: 'HBW 현장에서 판매합니다. 겨울 보관 전 방문 시 급유하는 것이 가장 편리합니다.' },
     ],
@@ -584,7 +584,7 @@ Pro XS 버전의 가격은 표준 FourStroke보다 높습니다. 정확한 가�
 
 **온라인 견적:** [mercuryrepower.ca](https://www.mercuryrepower.ca), 실시간 투명 가격
 **전화:** 905-342-2153
-**서비스 예약:** [hbw.wiki/service](https://hbw.wiki/service)
+**서비스 예약:** [hbwservice.ca](https://hbwservice.ca)
 **주소:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 ---`,
     faqs: [
@@ -633,7 +633,7 @@ Harris Boat Works는 1947년부터 Rice Lake에 자리를 잡은 가족 경영 �
 ---
 
 > **언어 안내**
-> Harris Boat Works 팀은 영어로 소통합니다. 온라인 견적 도구(mercuryrepower.ca)는 언어 장벽 없이 사양과 가격을 바로 확인할 수 있도록 설계되어 있습니다. 서비스 요청은 hbw.wiki/service를 통해 한국어로 보내셔도 됩니다, 최대한 도움드리겠습니다.
+> Harris Boat Works 팀은 영어로 소통합니다. 온라인 견적 도구(mercuryrepower.ca)는 언어 장벽 없이 사양과 가격을 바로 확인할 수 있도록 설계되어 있습니다. 서비스 요청은 hbwservice.ca를 통해 한국어로 보내셔도 됩니다, 최대한 도움드리겠습니다.
 
 ---
 
@@ -696,7 +696,7 @@ mercuryrepower.ca에서 실시간 견적을 확인하세요. 몇 분이면 캐�
 harrisboatworks.ca에서 현재 재고를 확인하세요.
 
 **서비스 요청:**
-hbw.wiki/service, 한국어로 메시지를 보내셔도 됩니다.
+hbwservice.ca, 한국어로 메시지를 보내셔도 됩니다.
 
 **전화:** 905-342-2153
 
@@ -713,7 +713,7 @@ hbw.wiki/service, 한국어로 메시지를 보내셔도 됩니다.
 트랜섬(선미판)과 바닥을 눌러보세요. 물렁한 느낌이 나면 구조 문제가 있을 수 있습니다. 확실하지 않다면 보트를 가져오세요, 저희가 직접 살펴보고 솔직하게 말씀드리겠습니다.
 
 **영어로만 소통해야 하나요?**
-온라인 견적 도구(mercuryrepower.ca)와 서비스 요청 양식(hbw.wiki/service)은 언어 장벽 없이 사용할 수 있습니다. 한국어로 요청서를 보내셔도 됩니다.
+온라인 견적 도구(mercuryrepower.ca)와 서비스 요청 양식(hbwservice.ca)은 언어 장벽 없이 사용할 수 있습니다. 한국어로 요청서를 보내셔도 됩니다.
 
 **Gores Landing까지 얼마나 걸리나요?**
 GTA에서 차로 약 1시간 30분 거리입니다. Rice Lake와 Kawartha Lakes 지역에서는 더 가깝습니다.
@@ -770,7 +770,7 @@ PCOC가 필요하신가요? [HBW의 MyBoatCard 추천 링크](https://myboatcard
 
 GTA 한인 분들 중 보트를 산 뒤에야 캐나다 보트 규정이 예상보다 세세하다는 걸 아는 경우가 있습니다. OPP 수상 순찰에 적발되면 과태료가 부과됩니다. 이 가이드는 그 전에 알아야 할 것들을 한국어로 정리한 것입니다.
 
-HBW 팀은 영어로 소통합니다. 문의는 [hbw.wiki/service](https://hbw.wiki/service)에서 양식을 작성해주세요.
+HBW 팀은 영어로 소통합니다. 문의는 [hbwservice.ca](https://hbwservice.ca)에서 양식을 작성해주세요.
 
 ---
 
@@ -892,7 +892,7 @@ OPP 수상 순찰에 적발 시 과태료가 부과됩니다. $250부터 시작�
 보트 소유권이 이전되면 새 소유자 이름으로 PCL을 새로 신청해야 합니다.
 
 **HBW에서 보트 서비스를 예약하려면?**
-[hbw.wiki/service](https://hbw.wiki/service)에서 온라인 양식을 작성하세요.
+[hbwservice.ca](https://hbwservice.ca)에서 온라인 양식을 작성하세요.
 
 ---
 
@@ -907,7 +907,7 @@ OPP 수상 순찰에 적발 시 과태료가 부과됩니다. $250부터 시작�
 
 - 보트 재고: [harrisboatworks.ca](https://harrisboatworks.ca)
 - 엔진 견적: [mercuryrepower.ca](https://www.mercuryrepower.ca)
-- 서비스 예약: [hbw.wiki/service](https://hbw.wiki/service)
+- 서비스 예약: [hbwservice.ca](https://hbwservice.ca)
 - 전화: 905-342-2153
 - 주소: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 ---`,

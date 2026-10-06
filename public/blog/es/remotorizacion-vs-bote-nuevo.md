@@ -133,7 +133,7 @@ Si la respuesta es sí, y el casco está en buen estado, remotorizar probablemen
 
 **Botes nuevos:** [harrisboatworks.ca](https://www.harrisboatworks.ca), inventario Legend Boats.
 
-**Solicitud de servicio:** [hbw.wiki/service](https://hbw.wiki/service), puede enviarnos su consulta (le responderemos en inglés).
+**Solicitud de servicio:** [hbwservice.ca](https://hbwservice.ca), puede enviarnos su consulta (le responderemos en inglés).
 
 **Por teléfono:** 905-342-2153
 

@@ -117,7 +117,7 @@ Two things worth knowing:
 1. **This is about the cranking battery.** A lithium house bank for electronics is a separate conversation.
 2. **Per Mercury's bulletin, a battery that meets the spec on an approved engine doesn't void the engine warranty.** Anything off-spec, or lithium on a non-approved engine, is a different story.
 
-Not sure which side of the line your motor is on? Ask us through the [service form](https://hbw.wiki/service), or when you [build a repower quote](/quote/motor-selection). We'd rather answer it before you buy a battery than after.
+Not sure which side of the line your motor is on? Ask us through the [service form](https://hbwservice.ca), or when you [build a repower quote](/quote/motor-selection). We'd rather answer it before you buy a battery than after.
 
 ## Sources
 
@@ -162,12 +162,12 @@ If you troll with a kicker and run electronics, a dedicated cranking battery for
 
 ## Next steps
 
-- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbw.wiki/service
+- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbwservice.ca
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
-- The only commercial next step for this article is the HBW service request at https://hbw.wiki/service.
+- The only commercial next step for this article is the HBW service request at https://hbwservice.ca.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

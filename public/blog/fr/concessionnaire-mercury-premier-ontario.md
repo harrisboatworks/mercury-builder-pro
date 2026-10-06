@@ -59,7 +59,7 @@ Le statut du concessionnaire ne remplace toutefois pas la vérification du batea
 
 ## Service, hivernisation et entreposage
 
-Les travaux sont pris selon le principe du premier arrivé, premier servi. Remplissez [hbw.wiki/service](https://hbw.wiki/service), puis déposez le bateau en tout temps, y compris en dehors des heures d'ouverture. Harris Boat Works ferme le 1er décembre; la marina reste fermée jusqu'au 1er avril.
+Les travaux sont pris selon le principe du premier arrivé, premier servi. Remplissez [hbwservice.ca](https://hbwservice.ca), puis déposez le bateau en tout temps, y compris en dehors des heures d'ouverture. Harris Boat Works ferme le 1er décembre; la marina reste fermée jusqu'au 1er avril.
 
 ## Garantie Mercury
 
@@ -67,7 +67,7 @@ Les modalités dépendent du produit, de l'usage et de la date d'achat. Consulte
 
 ---
 
-**Commencez avec les faits de votre bateau :** [bâtissez une soumission en CAD](/quote/motor-selection) ou envoyez les détails de votre bateau dans la [demande de service](https://hbw.wiki/service). Les moteurs et les projets sont ramassés à Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, Ontario.
+**Commencez avec les faits de votre bateau :** [bâtissez une soumission en CAD](/quote/motor-selection) ou envoyez les détails de votre bateau dans la [demande de service](https://hbwservice.ca). Les moteurs et les projets sont ramassés à Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, Ontario.
 
 ## Questions fréquentes
 
@@ -85,7 +85,7 @@ Soumettez une demande de service avec le modèle, le numéro de série et les sy
 
 ### Comment planifier une hivernisation ou un entreposage?
 
-HBW prend les travaux selon le principe du premier arrivé, premier servi. Remplissez hbw.wiki/service, puis déposez le bateau en tout temps, y compris en dehors des heures d'ouverture. L'entreprise ferme le 1er décembre; la marina reste fermée jusqu'au 1er avril.
+HBW prend les travaux selon le principe du premier arrivé, premier servi. Remplissez hbwservice.ca, puis déposez le bateau en tout temps, y compris en dehors des heures d'ouverture. L'entreprise ferme le 1er décembre; la marina reste fermée jusqu'au 1er avril.
 
 ### Expédiez-vous ou livrez-vous les moteurs?
 

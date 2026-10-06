@@ -53,7 +53,7 @@ Walleye trolling is why the [Mercury 9.9 ProKicker](/blog/mercury-prokicker-rice
 - **April to early May:** Prime commissioning and repower window at HBW before the May rush.
 - **Walleye season:** Check actual trolling speed with the usual load. Some main-motor setups can hold a suitable presentation, especially with compatible Troll Control; a ProKicker adds dedicated low-speed control when the main motor cannot.
 - **Summer afternoons:** The 32 km east-west fetch has nothing to break a westerly. By 1 PM a calm morning can turn into two-foot chop. Horsepower that matches the loaded hull is a boat-control decision on this lake, not a comfort extra. Plan the ride home before the wind builds.
-- **November into lay-up:** Cold mornings and heavier clothing do not forgive an unreliable motor. Complete the [service request](https://hbw.wiki/service) for fall lay-up or [winterization](/blog/boat-winterization-cost-ontario-2026). FourStroke and ProKicker models can use different fuel, internal-protection, and storage-position procedures. The physical marina is closed December 1 through April 1.
+- **November into lay-up:** Cold mornings and heavier clothing do not forgive an unreliable motor. Complete the [service request](https://hbwservice.ca) for fall lay-up or [winterization](/blog/boat-winterization-cost-ontario-2026). FourStroke and ProKicker models can use different fuel, internal-protection, and storage-position procedures. The physical marina is closed December 1 through April 1.
 
 ---
 

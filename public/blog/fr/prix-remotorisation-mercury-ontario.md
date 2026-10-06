@@ -135,7 +135,7 @@ Harris Boat Works offre du contenu disponible en français pour les clients fran
 
 **En ligne :** mercuryrepower.ca, configurez votre remotorisation et obtenez un prix réel en dollars canadiens, disponible 24 h/24, sans rendez-vous ni barrière linguistique.
 
-**Par demande de service :** hbw.wiki/service, vous pouvez nous envoyer votre demande (nous répondrons en anglais).
+**Par demande de service :** hbwservice.ca, vous pouvez nous envoyer votre demande (nous répondrons en anglais).
 
 **Par téléphone :** 905-342-2153
 
@@ -174,7 +174,7 @@ Faites inspecter la coque par un technicien expérimenté avant de décider. Che
 
 ### L'équipe peut-elle communiquer en français?
 
-L'équipe travaille en anglais. Vous pouvez nous envoyer votre demande via hbw.wiki/service et nous vous répondrons en anglais. Si vous préférez, utilisez Google Traduction ou demandez à un proche bilingue de vous aider.
+L'équipe travaille en anglais. Vous pouvez nous envoyer votre demande via hbwservice.ca et nous vous répondrons en anglais. Si vous préférez, utilisez Google Traduction ou demandez à un proche bilingue de vous aider.
 
 ### Faut-il amener le bateau sur place pour obtenir un devis?
 

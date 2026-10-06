@@ -217,7 +217,7 @@ const unsupportedOperationalClaims = [
   {
     label: 'incorrect Mandarin rental booking through the service form',
     pattern:
-      /(?:(?:订船|租船|预订)[^\n。]{0,160}hbw\.wiki\/service|hbw\.wiki\/service[^\n。]{0,160}(?:订船|租船|预订))/i,
+      /(?:(?:订船|租船|预订)[^\n。]{0,160}hbwservice\.ca|hbwservice\.ca[^\n。]{0,160}(?:订船|租船|预订))/i,
   },
   {
     label: 'unsupported fixed Mandarin rental-orientation duration',

@@ -171,7 +171,7 @@ We rig both setups regularly:
 
 For engine repairs, we only service Mercury and MerCruiser.
 
-Request service at [hbw.wiki/service](https://hbw.wiki/service) or price a new ProKicker at [mercuryrepower.ca](https://www.mercuryrepower.ca).
+Request service at [hbwservice.ca](https://hbwservice.ca) or price a new ProKicker at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 ---
 
@@ -199,7 +199,7 @@ Not necessarily to start. Most anglers are better served by picking the right fi
 
 ### Where can I get a kicker or trolling motor installed near Rice Lake?
 
-Request service at hbw.wiki/service or call us at 905-342-2153. We are on Rice Lake in Gores Landing, ON.
+Request service at hbwservice.ca or call us at 905-342-2153. We are on Rice Lake in Gores Landing, ON.
 
 ## Related guides
 

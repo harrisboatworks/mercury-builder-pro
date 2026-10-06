@@ -759,7 +759,7 @@ The Mercury guide says its capacities are based on information believed accurate
 
 ## Need the Right Service Scope?
 
-If you can bring the boat to HBW in Gores Landing, submit a request at [hbw.wiki/service](https://hbw.wiki/service) with a photo of the engine label and the current hours. We will build the service scope from the exact engine and its documented history.
+If you can bring the boat to HBW in Gores Landing, submit a request at [hbwservice.ca](https://hbwservice.ca) with a photo of the engine label and the current hours. We will build the service scope from the exact engine and its documented history.
 `,
     faqs: [
       {
@@ -838,7 +838,7 @@ If you can bring the boat to HBW in Gores Landing, submit a request at [hbw.wiki
       },
       {
         question: 'What should I send with a Mercury service request?',
-        answer: 'If you can bring the boat to HBW in Gores Landing, send a clear photo of the complete code and message, the affected engine, serial number, engine hours, horn pattern, whether the alert is active or history, and what the boat was doing when it appeared. At hbw.wiki/service, choose “Various Boat / Motor Repairs (See Details),” put the record in Details, and use the photo upload for the display image. HBW does not diagnose fault codes remotely. If the boat cannot come here, take the same record to your local authorized Mercury dealer.',
+        answer: 'If you can bring the boat to HBW in Gores Landing, send a clear photo of the complete code and message, the affected engine, serial number, engine hours, horn pattern, whether the alert is active or history, and what the boat was doing when it appeared. At hbwservice.ca, choose “Various Boat / Motor Repairs (See Details),” put the record in Details, and use the photo upload for the display image. HBW does not diagnose fault codes remotely. If the boat cannot come here, take the same record to your local authorized Mercury dealer.',
       },
     ],
     citations: [
@@ -853,7 +853,7 @@ If you can bring the boat to HBW in Gores Landing, submit a request at [hbw.wiki
     ],
     content: `> **Quick answer:** Search the complete code, then match the result to the engine family. Single-number alerts may come from Mercury's legacy VesselView list. A two-part code such as **621-5** is a Universal Fault Code that must be checked against the correct family publication. This lookup separates the current covered V6/V8 table from the mixed-product legacy list.
 
-If the display shows low oil pressure, oil-pump failure, an active overheat, fuel leakage or overflow, loss of steering, or a gear that does not match the control command, skip the lookup and follow the stop-now guidance below. If the table does not resolve the alert, take the photo and serial number to your local authorized Mercury dealer. If you can bring the boat to HBW in Gores Landing, submit that record at [hbw.wiki/service](https://hbw.wiki/service) so we can prepare for an in-shop diagnosis. HBW does not diagnose fault codes remotely.
+If the display shows low oil pressure, oil-pump failure, an active overheat, fuel leakage or overflow, loss of steering, or a gear that does not match the control command, skip the lookup and follow the stop-now guidance below. If the table does not resolve the alert, take the photo and serial number to your local authorized Mercury dealer. If you can bring the boat to HBW in Gores Landing, submit that record at [hbwservice.ca](https://hbwservice.ca) so we can prepare for an in-shop diagnosis. HBW does not diagnose fault codes remotely.
 
 This is the code-number companion to our [Mercury beep and alarm guide](/blog/mercury-outboard-beeping-codes-guide). The horn tells you the alert class on supported systems; the screen identifies the actual fault. Both strategies vary by engine family and year.
 
@@ -1217,7 +1217,7 @@ If you can bring the boat to HBW in Gores Landing, collect the following before 
 6. Any recent battery, rigging, control, fuel-system, or service work.
 7. Whether Guardian limited power, water flow changed, steering changed, or indicated gear disagreed with the control.
 
-Do not clear or repeatedly restart just to make the message disappear. Preserve the evidence. For an in-shop diagnosis at HBW, submit the record at [hbw.wiki/service](https://hbw.wiki/service) and bring the boat to Gores Landing.
+Do not clear or repeatedly restart just to make the message disappear. Preserve the evidence. For an in-shop diagnosis at HBW, submit the record at [hbwservice.ca](https://hbwservice.ca) and bring the boat to Gores Landing.
 
 ## From the Shop
 
@@ -1546,7 +1546,7 @@ Real maintenance, no upsell:
 
 **Fuel stabilizer if the boat sits.** Add it before the end of the season, run the motor long enough to circulate it through the fuel system. Thirty dollars of stabilizer prevents hundreds of dollars of injector cleaning.
 
-**Annual service.** Gear oil, filters, zincs, visual inspection. Mercury recommends annual service or service by hours, whichever comes first. Follow the schedule. It exists because engineers determined what wears and when. [Book your annual service at hbw.wiki/service.](https://hbw.wiki/service)
+**Annual service.** Gear oil, filters, zincs, visual inspection. Mercury recommends annual service or service by hours, whichever comes first. Follow the schedule. It exists because engineers determined what wears and when. [Book your annual service at hbwservice.ca.](https://hbwservice.ca)
 
 **Store dry.** Flush with fresh water, fog the cylinders if long-term storage, store with the motor trimmed down so water drains. Rice Lake winters are long. A dry motor stored properly costs nothing. A corroded motor stored poorly costs real money.
 
@@ -1571,7 +1571,7 @@ If you're thinking about a new Mercury rather than servicing your current one: [
 - [Boat Battery Guide for Ontario Boaters](/blog/mercury-boat-battery-guide-ontario)
 - [Breaking In a New Mercury Motor: The Complete Guide](/blog/breaking-in-new-mercury-motor-guide)
 
-*Family-owned since 1947, Mercury dealer since 1965, Mercury Premier Dealer. For annual service, visit [hbw.wiki/service](https://hbw.wiki/service). For new Mercury repowers, visit [mercuryrepower.ca](https://www.mercuryrepower.ca).*
+*Family-owned since 1947, Mercury dealer since 1965, Mercury Premier Dealer. For annual service, visit [hbwservice.ca](https://hbwservice.ca). For new Mercury repowers, visit [mercuryrepower.ca](https://www.mercuryrepower.ca).*
 `,
   },
   {
@@ -1589,10 +1589,10 @@ If you're thinking about a new Mercury rather than servicing your current one: [
     faqs: [
       { question: "What does milky gearcase oil mean?", answer: "Water has gotten into your lower unit and emulsified with the gear oil, almost always past a worn prop shaft, driveshaft, or shift shaft seal. It needs a pressure test to locate the leak and a reseal, and the earlier it's caught, the cheaper it stays." },
       { question: "Can I just change the oil and keep boating?", answer: "No. Refilling does not identify or repair the source of water intrusion. Mercury warns that water-contaminated lubricant can damage bearings and can freeze inside the gearcase. Have the gearcase inspected before further operation." },
-      { question: "How much does a gearcase pressure test cost?", answer: "The test pressurizes and vacuum-checks the case to identify which seal leaks; it's quoted work, confirmed when you book. It's the step that turns 'there's water in it somewhere' into a precise, priced repair instead of a guess. Start at hbw.wiki/service." },
+      { question: "How much does a gearcase pressure test cost?", answer: "The test pressurizes and vacuum-checks the case to identify which seal leaks; it's quoted work, confirmed when you book. It's the step that turns 'there's water in it somewhere' into a precise, priced repair instead of a guess. Start at hbwservice.ca." },
       { question: "What causes gearcase seals to fail?", answer: "Fishing line wrapped behind the prop is the classic killer; age, impact, and corrosion do the rest. Pulling the prop periodically to check for line is the cheapest prevention there is, and it's part of every annual service." },
       { question: "How often should gearcase oil be changed?", answer: "Follow the schedule for your exact engine and serial number. Many Mercury FourStroke schedules include gearcase lubricant at the 100-hour or annual service, and fall is a practical time for seasonal Ontario boats because the drained lubricant can be checked before freezing weather." },
-      { question: "Is milky oil covered by warranty?", answer: "Sometimes, depending on cause, age, and coverage; seal failures from fishing line or impact generally aren't defects. Bring it in, we'll read the situation honestly and handle any warranty conversation with Mercury for you. Start at hbw.wiki/service." }
+      { question: "Is milky oil covered by warranty?", answer: "Sometimes, depending on cause, age, and coverage; seal failures from fishing line or impact generally aren't defects. Bring it in, we'll read the situation honestly and handle any warranty conversation with Mercury for you. Start at hbwservice.ca." }
     ],
     content: `# Milky Gearcase Oil in Ontario: Causes, Diagnosis, and Next Steps (2026)
 
@@ -1646,7 +1646,7 @@ There is no responsible fixed price from oil colour alone. The scope depends on 
 - **Seal repair:** labour changes with the failed seal, the gearcase design, corrosion, and whether a shaft or bearing carrier must be removed.
 - **Internal damage:** water-contaminated lubricant, metal particles, or freeze damage can move the job beyond seals into bearings, gears, or gearcase replacement.
 
-The useful cost answer comes after the gearcase is identified and tested. Submit the serial number and symptoms at [hbw.wiki/service](https://hbw.wiki/service); HBW confirms the scope before repair work is approved.
+The useful cost answer comes after the gearcase is identified and tested. Submit the serial number and symptoms at [hbwservice.ca](https://hbwservice.ca); HBW confirms the scope before repair work is approved.
 
 ---
 
@@ -1701,7 +1701,7 @@ Water has gotten into your lower unit and emulsified with the gear oil, almost a
 No. Refilling does not identify or repair the source of water intrusion. Mercury warns that water-contaminated lubricant can damage bearings and can freeze inside the gearcase. Have the gearcase inspected before further operation.
 
 **How much does a gearcase pressure test cost?**
-The test pressurizes and vacuum-checks the case to identify which seal leaks; it's quoted work, confirmed when you book. It's the step that turns "there's water in it somewhere" into a precise, priced repair instead of a guess. Start at hbw.wiki/service.
+The test pressurizes and vacuum-checks the case to identify which seal leaks; it's quoted work, confirmed when you book. It's the step that turns "there's water in it somewhere" into a precise, priced repair instead of a guess. Start at hbwservice.ca.
 
 **What causes gearcase seals to fail?**
 Fishing line wrapped behind the prop is the classic killer; age, impact, and corrosion do the rest. Pulling the prop periodically to check for line is the cheapest prevention there is, and it's part of every annual service.
@@ -1710,7 +1710,7 @@ Fishing line wrapped behind the prop is the classic killer; age, impact, and cor
 Follow the schedule for your exact engine and serial number. Many Mercury FourStroke schedules include gearcase lubricant at the 100-hour or annual service, and fall is a practical time for seasonal Ontario boats because the drained lubricant can be checked before freezing weather.
 
 **Is milky oil covered by warranty?**
-Sometimes, depending on cause, age, and coverage; seal failures from fishing line or impact generally aren't defects. Bring it in, we'll read the situation honestly and handle any warranty conversation with Mercury for you. Start at [hbw.wiki/service](https://hbw.wiki/service).
+Sometimes, depending on cause, age, and coverage; seal failures from fishing line or impact generally aren't defects. Bring it in, we'll read the situation honestly and handle any warranty conversation with Mercury for you. Start at [hbwservice.ca](https://hbwservice.ca).
 
 ---
 
@@ -1718,7 +1718,7 @@ Sometimes, depending on cause, age, and coverage; seal failures from fishing lin
 
 If the boat can come to HBW in Gores Landing and the oil looked wrong, or nobody has looked in over a year, that is the whole booking reason.
 
-**Service requests:** [hbw.wiki/service](https://hbw.wiki/service)
+**Service requests:** [hbwservice.ca](https://hbwservice.ca)
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 
 HBW does not diagnose gearcase faults remotely. Include the engine serial number, current hours and a photo of the drained lubricant with the request so the shop has a useful starting record.
@@ -1860,7 +1860,7 @@ A completed pump job should include correct reassembly, cooling-flow verificatio
 ## Frequently Asked Questions
 
 **How much does a Mercury water pump replacement cost in Ontario?**
-There is no one price across the Mercury range. The engine and gearcase, impeller-only versus full-kit scope, corrosion, seized fasteners, and any cooling-system diagnosis all affect parts and labour. Submit the serial number at [hbw.wiki/service](https://hbw.wiki/service) for a motor-specific scope.
+There is no one price across the Mercury range. The engine and gearcase, impeller-only versus full-kit scope, corrosion, seized fasteners, and any cooling-system diagnosis all affect parts and labour. Submit the serial number at [hbwservice.ca](https://hbwservice.ca) for a motor-specific scope.
 
 **How often should the water pump be serviced?**
 Use the maintenance schedule for your exact engine and serial number. Mercury includes water-pump parts in many longer-interval maintenance kits, but schedules vary. Overheating, reduced water pressure, or an abnormal telltale should be investigated sooner.
@@ -1883,7 +1883,7 @@ Scheduled pump work is easiest to combine with planned maintenance before peak b
 
 Tell us the motor, the hours, and the last time anyone was in there.
 
-**Service requests:** [hbw.wiki/service](https://hbw.wiki/service)
+**Service requests:** [hbwservice.ca](https://hbwservice.ca)
 **Phone:** 905-342-2153
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 
@@ -1916,14 +1916,14 @@ Tell us the motor, the hours, and the last time anyone was in there.
     readTime: "~8 min read",
     keywords: ["mercury 100 hour service cost", "outboard annual service cost ontario", "mercury service cost", "100 hour service what's included", "boat motor service cost ontario"],
     faqs: [
-      { question: "How much does a Mercury 100-hour service cost in Ontario?", answer: "There is no honest one-price answer across the Mercury range. Cost depends on the exact engine, its serial-number-specific maintenance schedule, the parts due, its condition, and whether winterization is added. Submit the motor details at hbw.wiki/service, then drop the boat off anytime you want, including after hours." },
+      { question: "How much does a Mercury 100-hour service cost in Ontario?", answer: "There is no honest one-price answer across the Mercury range. Cost depends on the exact engine, its serial-number-specific maintenance schedule, the parts due, its condition, and whether winterization is added. Submit the motor details at hbwservice.ca, then drop the boat off anytime you want, including after hours." },
       { question: "Is the 100-hour service the same as winterization?", answer: "No. They can overlap, which is why Ontario shops often combine them. Scheduled service follows the exact maintenance table; winterization adds the model-specific fuel, internal-protection, battery, drainage, and storage-position steps. The scope varies by engine." },
       { question: "My motor only ran 40 hours this year. Do I still need the service?", answer: "Possibly. Mercury says most FourStroke outboards require an oil change annually or every 100 hours, and some other items have different intervals. Follow the owner's manual and serial-specific schedule rather than hours alone." },
       { question: "What parts get replaced at a typical annual service?", answer: "There is no one replacement list. Engine oil and filter, gearcase lubricant, fuel filters, plugs, water-pump parts, and storage supplies depend on the exact engine schedule, condition, and whether fall layup is included. HBW scopes the job from the serial number." },
       { question: "Can I skip a year to save money?", answer: "Follow the maintenance schedule for your exact engine and serial number. Deferring scheduled work can allow small issues such as contaminated gear lube, worn anodes, or seized hardware to go unnoticed, but the correct interval and parts list come from the Mercury schedule for your motor." },
-      { question: "Do you service motors bought somewhere else?", answer: "Yes. HBW services Mercury outboards regardless of where they were purchased. Complete hbw.wiki/service, then you may drop the boat off anytime you want, including after hours. The physical marina is closed December 1 through April 1." }
+      { question: "Do you service motors bought somewhere else?", answer: "Yes. HBW services Mercury outboards regardless of where they were purchased. Complete hbwservice.ca, then you may drop the boat off anytime you want, including after hours. The physical marina is closed December 1 through April 1." }
     ],
-    content: `> **Quick answer:** There is no honest one-price answer across the Mercury range. The invoice depends on the exact engine, its serial-number-specific maintenance schedule, the parts due, its condition, and whether winterization is included. Complete the [service request](https://hbw.wiki/service), then you may drop the boat off anytime you want, including after hours. The physical marina is closed December 1 through April 1.
+    content: `> **Quick answer:** There is no honest one-price answer across the Mercury range. The invoice depends on the exact engine, its serial-number-specific maintenance schedule, the parts due, its condition, and whether winterization is included. Complete the [service request](https://hbwservice.ca), then you may drop the boat off anytime you want, including after hours. The physical marina is closed December 1 through April 1.
 
 Search "100-hour service cost" and you'll get American answers: year-round boating states, different labour rates, different math.
 
@@ -1971,7 +1971,7 @@ A portable tiller and a large multi-cylinder outboard do not share the same oil 
 - **What the inspection finds.** Milky gear lube, damaged anodes, seized prop hardware, or a fuel-system concern changes the scope only after it is identified.
 - **Whether fall layup is included.** Annual service and winterization overlap, but they are not identical.
 
-HBW scopes the job from the motor details on the [service request](https://hbw.wiki/service). That is more useful than publishing one package price that fits some engines and misleads everyone else.
+HBW scopes the job from the motor details on the [service request](https://hbwservice.ca). That is more useful than publishing one package price that fits some engines and misleads everyone else.
 
 What moves the number up: skipped previous services, a water-separating filter that's never been changed, seized prop hardware, and anything the tech finds in the "while it's open" category. Our [service-bill guide](/blog/accidentally-increase-boat-service-bills-ontario) covers the habits that quietly inflate invoices.
 
@@ -2008,14 +2008,14 @@ Every winterize-and-service at our shop ends with the tech recording recommendat
 
 ## When Should You Submit an HBW Service Request?
 
-Send the exact engine, hours, and the work you want covered on the [service request](https://hbw.wiki/service). After-hours drop-off and the December 1 through April 1 marina closure are in the quick answer.
+Send the exact engine, hours, and the work you want covered on the [service request](https://hbwservice.ca). After-hours drop-off and the December 1 through April 1 marina closure are in the quick answer.
 
 ---
 
 ## Frequently Asked Questions
 
 **How much does a Mercury 100-hour service cost in Ontario?**
-There is no honest one-price answer across the Mercury range. Cost depends on the exact engine, its serial-number-specific maintenance schedule, the parts due, its condition, and whether winterization is included. Submit the motor details at [hbw.wiki/service](https://hbw.wiki/service), then drop the boat off anytime you want, including after hours.
+There is no honest one-price answer across the Mercury range. Cost depends on the exact engine, its serial-number-specific maintenance schedule, the parts due, its condition, and whether winterization is included. Submit the motor details at [hbwservice.ca](https://hbwservice.ca), then drop the boat off anytime you want, including after hours.
 
 **Is the 100-hour service the same as winterization?**
 They can overlap, which is why Ontario shops often combine them. Scheduled service follows the exact maintenance table; winterization adds the model-specific fuel, internal-protection, battery, drainage, and storage-position steps. Doing both in one fall appointment can avoid duplicate work.
@@ -2030,13 +2030,13 @@ There is no one replacement list. Engine oil and filter, gearcase lubricant, fue
 Follow the maintenance schedule for your exact engine and serial number. Deferring scheduled work can allow small issues such as contaminated gear lube, worn anodes, or seized hardware to go unnoticed.
 
 **Do you service motors bought somewhere else?**
-Yes. HBW services Mercury outboards regardless of where they were purchased. Complete [hbw.wiki/service](https://hbw.wiki/service), then drop off anytime, including after hours.
+Yes. HBW services Mercury outboards regardless of where they were purchased. Complete [hbwservice.ca](https://hbwservice.ca), then drop off anytime, including after hours.
 
 ---
 
 ## Ready to Book Your Service?
 
-**Service requests:** [hbw.wiki/service](https://hbw.wiki/service)
+**Service requests:** [hbwservice.ca](https://hbwservice.ca)
 **Phone:** 905-342-2153
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 
@@ -2073,7 +2073,7 @@ Yes. HBW services Mercury outboards regardless of where they were purchased. Com
       { question: "What's included in a spring startup?", answer: "Battery reconnect and test, fuel check, start and warm-up, telltale and idle verification, controls check, and a look at lines, bilge, and safety gear, plus anything flagged on your fall recommendations. Repairs, deferred annual service, and needed parts are separate from the standard check." },
       { question: "Do I need spring commissioning if I winterized properly?", answer: "The fall work is what makes spring cheap, but the startup still matters: batteries, fuel, and rubber parts all age over five months. An hour of checks before your first family outing is how you find the small problem before it becomes the stranded-Saturday problem." },
       { question: "Can I do spring commissioning myself?", answer: "Most of it, yes; our spring checklist walks every step. The shop earns its hour when something's off: hard starts, weak telltale, rough idle. If the wake-up reveals a problem, that's the moment for professional eyes." },
-      { question: "When should I submit a spring service request?", answer: "Complete hbw.wiki/service, then drop the boat off anytime, including after hours. Physical marina work resumes when HBW reopens in early April." },
+      { question: "When should I submit a spring service request?", answer: "Complete hbwservice.ca, then drop the boat off anytime, including after hours. Physical marina work resumes when HBW reopens in early April." },
       { question: "Why is my neighbour's spring bill higher than mine?", answer: "The standard check is the small part. The total rises when the startup also needs deferred annual service, a battery, fuel-system work, or another repair. A properly completed fall service narrows the spring scope; the winterization cost guide explains that side of the cycle." }
     ],
     content: `# Spring Commissioning Cost in Ontario: What 9,540 Spring Jobs Taught Us (2026)
@@ -2171,7 +2171,7 @@ The fall work is what makes spring cheap, but the startup still matters: batteri
 Most of it, yes; our [spring checklist](/blog/spring-outboard-commissioning-checklist) walks every step. The shop earns its hour when something's off: hard starts, weak telltale, rough idle. If the wake-up reveals a problem, that's the moment for professional eyes.
 
 **When should I submit a spring service request?**
-Complete [hbw.wiki/service](https://hbw.wiki/service), then drop the boat off anytime, including after hours. Physical marina work resumes when HBW reopens in early April.
+Complete [hbwservice.ca](https://hbwservice.ca), then drop the boat off anytime, including after hours. Physical marina work resumes when HBW reopens in early April.
 
 **Why is my neighbour's spring bill higher than mine?**
 The standard check is the small part. The total rises when the startup also needs deferred annual service, a battery, fuel-system work, or another repair. A properly completed fall service narrows the spring scope; the [winterization cost guide](/blog/boat-winterization-cost-ontario-2026) explains that side of the cycle.
@@ -2180,9 +2180,9 @@ The standard check is the small part. The total rises when the startup also need
 
 ## Ready for Launch Day?
 
-Complete [hbw.wiki/service](https://hbw.wiki/service), then drop the boat off anytime, including after hours. If the boat spent winter at HBW, the standard spring check is free; list any additional concerns so they reach the repair order before the check begins.
+Complete [hbwservice.ca](https://hbwservice.ca), then drop the boat off anytime, including after hours. If the boat spent winter at HBW, the standard spring check is free; list any additional concerns so they reach the repair order before the check begins.
 
-**Service requests:** [hbw.wiki/service](https://hbw.wiki/service)
+**Service requests:** [hbwservice.ca](https://hbwservice.ca)
 **Phone:** 905-342-2153
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 
@@ -3147,7 +3147,7 @@ Family-owned on Rice Lake since 1947.`
       { question: "Can I keep boating if the telltale stream is weak?", answer: "Do not assume a weak stream is harmless. Stop, check the intake for weeds or debris, and follow the owner's manual. If water flow remains abnormal or an overheat alarm sounds, shut the engine down and have the cooling system inspected." },
       { question: "Why can impeller trouble appear in summer?", answer: "A short spring idle check does not reproduce a long run under load. In HBW's frozen 766-part-line Lightspeed snapshot, June and July together had 287 matching parts records versus 207 in April and May. Those records include scheduled replacements as well as repairs, so they show when pump work reached the shop, not a failure rate." },
       { question: "Does a spring start-up test catch a dying impeller?", answer: "Only sometimes. A short idle test can confirm that water is moving, but it cannot guarantee normal cooling under every speed and load. If water pressure drops, the telltale changes, or an overheat alarm sounds, stop and investigate." },
-      { question: "Does HBW stock Mercury impellers and water pump kits?", answer: "HBW can identify the correct Mercury water-pump parts and check current availability from the engine serial number and gearcase. Include the serial number in the request at hbw.wiki/service." }
+      { question: "Does HBW stock Mercury impellers and water pump kits?", answer: "HBW can identify the correct Mercury water-pump parts and check current availability from the engine serial number and gearcase. Include the serial number in the request at hbwservice.ca." }
     ],
     content: `## Quick answer
 
@@ -3203,7 +3203,7 @@ Not every failure announces itself in this order; a telltale can keep flowing wh
 2. Check the telltale stream.
 3. When safe, tilt the motor and clear visible weeds or debris from the water intake.
 4. Follow the owner's manual before restarting. Do not treat a restored telltale alone as proof that the cooling system is healthy.
-5. If water flow is still weak or absent, the alarm continues, or you are unsure, shut down and do not keep running it. Put in a service request at [hbw.wiki/service](https://hbw.wiki/service).
+5. If water flow is still weak or absent, the alarm continues, or you are unsure, shut down and do not keep running it. Put in a service request at [hbwservice.ca](https://hbwservice.ca).
 
 ## What We See at HBW
 
@@ -3229,7 +3229,7 @@ The pattern we'd love to break is the boater who notices a weak telltale, keeps 
 
 If water flow has changed, an overheat alarm has sounded, or you cannot identify the last pump service in the maintenance record, submit the serial number and symptoms for review.
 
-[Book service at hbw.wiki/service](https://hbw.wiki/service "cta")
+[Book service at hbwservice.ca](https://hbwservice.ca "cta")
 `,
   },
   // ============================================
@@ -3912,7 +3912,7 @@ A motor with an overheat alarm is one of the easiest things to diagnose if you b
 - **Recent maintenance history.** When was the impeller last replaced? Thermostat? Last full service?
 - **Motor model, year, and serial number.** This is on the transom bracket or under the cowling.
 
-A clean photo of the display and a sentence about when it happens will save us 30 minutes of diagnostic time. For engine repairs, we only service Mercury and MerCruiser. Book at [hbw.wiki/service](https://hbw.wiki/service).
+A clean photo of the display and a sentence about when it happens will save us 30 minutes of diagnostic time. For engine repairs, we only service Mercury and MerCruiser. Book at [hbwservice.ca](https://hbwservice.ca).
 
 ## Related at HBW
 
@@ -3925,7 +3925,7 @@ This page is the SmartCraft Alarm Codes hub. Companion pages in the same diagnos
 
 ## CTA
 
-Alarm that came back, or one you can't explain on the water? Book a diagnostic at [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Mercury Premier dealer in Gores Landing on Rice Lake. Mercury dealer since 1965, family marina since 1947. For engine repairs, we only service Mercury and MerCruiser.
+Alarm that came back, or one you can't explain on the water? Book a diagnostic at [hbwservice.ca](https://hbwservice.ca). Harris Boat Works, Mercury Premier dealer in Gores Landing on Rice Lake. Mercury dealer since 1965, family marina since 1947. For engine repairs, we only service Mercury and MerCruiser.
 
 Phone: (905) 342-2153
 
@@ -4265,7 +4265,7 @@ Those details let us identify the open questions before anyone assumes the motor
 
 Start with a [live Mercury repower quote](/quote/motor-selection). It is a planning tool, not final installation approval.
 
-If you want HBW to review the actual boat, complete the [online service check-in](https://hbw.wiki/service) with the photos and identifiers above. The form is not an appointment; our team confirms the next step after reviewing the submission.
+If you want HBW to review the actual boat, complete the [online service check-in](https://hbwservice.ca) with the photos and identifiers above. The form is not an appointment; our team confirms the next step after reviewing the submission.
 
 Harris Boat Works is a family-owned Mercury Premier Dealer in Gores Landing on Rice Lake, serving boaters across the Kawarthas, Northumberland, Durham Region, and the eastern GTA.`,
   },
@@ -4484,7 +4484,7 @@ Build a quote for either motor in Canadian dollars at the configurator.
 
 **Configurator:** [mercuryrepower.ca](https://www.mercuryrepower.ca/quote/motor-selection)
 
-**Service:** [hbw.wiki/service](https://hbw.wiki/service)
+**Service:** [hbwservice.ca](https://hbwservice.ca)
 
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 
@@ -4780,9 +4780,9 @@ Significantly. A fully loaded family boat behaves like a different machine than 
     category: 'Maintenance',
     readTime: '10 min read',
     keywords: ['mercury motor maintenance', 'outboard winterization', 'boat motor service', 'mercury service schedule', 'outboard maintenance tips'],
-    content: `> **Quick answer:** For most current Mercury FourStrokes, scheduled maintenance is due at 100 engine hours or annually, with expanded work commonly due around 300 hours or three seasons. Ontario owners should combine that manual-based schedule with spring checks and proper fall storage preparation. There is no universal Mercury 20-hour oil-change requirement. For fall work at HBW, complete hbw.wiki/service, then drop off anytime, including after hours.
+    content: `> **Quick answer:** For most current Mercury FourStrokes, scheduled maintenance is due at 100 engine hours or annually, with expanded work commonly due around 300 hours or three seasons. Ontario owners should combine that manual-based schedule with spring checks and proper fall storage preparation. There is no universal Mercury 20-hour oil-change requirement. For fall work at HBW, complete hbwservice.ca, then drop off anytime, including after hours.
 
-Mercury motor maintenance in Ontario follows the seasonal cycle: spring commissioning (April-May), summer mid-season check (July), fall winterization (October-November), and a winter storage period. We do all of these at HBW. For a scope based on your specific motor, [request service](https://hbw.wiki/service).
+Mercury motor maintenance in Ontario follows the seasonal cycle: spring commissioning (April-May), summer mid-season check (July), fall winterization (October-November), and a winter storage period. We do all of these at HBW. For a scope based on your specific motor, [request service](https://hbwservice.ca).
 
 ## Quick recommendation
 
@@ -4845,7 +4845,7 @@ Fall preparation at HBW can include:
 - Lubrication of cables and pivot points
 - Battery test, disconnect, and maintenance plan
 
-Some boaters DIY winterization, which is fine for confident owners on smaller motors. The [DIY winterization guide](/blog/diy-mercury-outboard-winterization-guide) walks through the procedure. For bigger motors or owners who want it done right without doing it themselves, [request service at HBW](https://hbw.wiki/service).
+Some boaters DIY winterization, which is fine for confident owners on smaller motors. The [DIY winterization guide](/blog/diy-mercury-outboard-winterization-guide) walks through the procedure. For bigger motors or owners who want it done right without doing it themselves, [request service at HBW](https://hbwservice.ca).
 
 For pricing context, see the [boat winterization cost guide](/blog/boat-winterization-cost-ontario-2026).
 
@@ -4917,11 +4917,11 @@ For exact intervals on your specific motor model, the Mercury owner's manual is 
 
 ## Ready to request service?
 
-HBW handles fall winterization and outdoor storage first come, first served. Complete [hbw.wiki/service](https://hbw.wiki/service), then drop off anytime, including after hours. The marina is closed December 1 through April 1.
+HBW handles fall winterization and outdoor storage first come, first served. Complete [hbwservice.ca](https://hbwservice.ca), then drop off anytime, including after hours. The marina is closed December 1 through April 1.
 
-[**Request Service**](https://hbw.wiki/service)
+[**Request Service**](https://hbwservice.ca)
 
-Not sure what your specific motor needs? Put in a service request at [hbw.wiki/service](https://hbw.wiki/service) with your motor details and we'll lay it out.
+Not sure what your specific motor needs? Put in a service request at [hbwservice.ca](https://hbwservice.ca) with your motor details and we'll lay it out.
 
 ## Sources
 
@@ -4983,7 +4983,7 @@ Mercury warranty covers manufacturing defects and material failures, not normal 
 Highly variable. Skipped winterization can cost a destroyed motor (multiple thousands). Skipped impeller replacement can cost a damaged cylinder head ($1,000 to $3,000 repair). Skipped fuel system service can cost spring start-up problems ($200 to $800). Skipped anode replacement can cost corrosion damage ($500 to $2,000). The math always favors regular service.
 
 **Can I bring a non-Mercury motor to HBW for service?**
-HBW repairs Mercury outboards and MerCruiser sterndrives. Other engine brands are accepted only as part of winterization and storage work, not general mechanical repair. Submit the exact engine and boat details at [hbw.wiki/service](https://hbw.wiki/service) before bringing it in.
+HBW repairs Mercury outboards and MerCruiser sterndrives. Other engine brands are accepted only as part of winterization and storage work, not general mechanical repair. Submit the exact engine and boat details at [hbwservice.ca](https://hbwservice.ca) before bringing it in.
 
 ---
 
@@ -5038,7 +5038,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         question: 'How long does a professional outboard winterization take?',
-        answer: 'The shop time depends on the engine, boat access, annual service items, and any issues found. A small portable and a V6 do not use the same procedure. Submit the serial number and service history at hbw.wiki/service so HBW can scope the correct fall work.'
+        answer: 'The shop time depends on the engine, boat access, annual service items, and any issues found. A small portable and a V6 do not use the same procedure. Submit the serial number and service history at hbwservice.ca so HBW can scope the correct fall work.'
       },
       {
         question: 'Does doing my own winterization void my Mercury warranty?',
@@ -5046,7 +5046,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         question: 'What does annual Mercury outboard service cost in Ontario?',
-        answer: 'The price depends on the exact engine, the items due in its manual, service history, access, and what inspection finds. Spark plugs, water-pump parts, filters, and other wear items are not one universal annual replacement package. Request the current HBW scope and price at hbw.wiki/service with the serial number and engine hours.'
+        answer: 'The price depends on the exact engine, the items due in its manual, service history, access, and what inspection finds. Spark plugs, water-pump parts, filters, and other wear items are not one universal annual replacement package. Request the current HBW scope and price at hbwservice.ca with the serial number and engine hours.'
       }
     ]
   },
@@ -5213,7 +5213,7 @@ You can [build a repower quote yourself in a few minutes](/blog/mercury-repower-
 **Phone:** 905-342-2153
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 **Configurator:** [mercuryrepower.ca](https://mercuryrepower.ca)
-**Service:** [hbw.wiki/service](https://hbw.wiki/service)
+**Service:** [hbwservice.ca](https://hbwservice.ca)
 
 ## Sources
 
@@ -5466,7 +5466,7 @@ Often yes, especially during brand conversions. Mercury-to-Mercury repowers some
 The PCL must be updated when motor HP, brand, or model changes. We handle the paperwork for HBW customers. See our [PCL update guide](/blog/pleasure-craft-licence-update-repower-ontario).
 
 **How long does a typical repower take?**
-There are two clocks: motor and rigging availability, then the scheduled shop work. The written work plan should identify the parts on hand, the remaining dependencies, and the current installation window. Complete the service request at hbw.wiki/service, then drop off your boat anytime, including after hours. HBW confirms the work schedule separately. Plan early for spring, but use the current written schedule rather than a generic turnaround promise.
+There are two clocks: motor and rigging availability, then the scheduled shop work. The written work plan should identify the parts on hand, the remaining dependencies, and the current installation window. Complete the service request at hbwservice.ca, then drop off your boat anytime, including after hours. HBW confirms the work schedule separately. Plan early for spring, but use the current written schedule rather than a generic turnaround promise.
 
 ---
 
@@ -5620,7 +5620,7 @@ source: Cobourg
 
 ---
 
-Want HBW's optional early check, or due for scheduled service? Put in a request at [hbw.wiki/service](https://hbw.wiki/service).
+Want HBW's optional early check, or due for scheduled service? Put in a request at [hbwservice.ca](https://hbwservice.ca).
 
 ## What we do on new motor delivery at HBW
 
@@ -5664,7 +5664,7 @@ Follow the model-specific break-in procedure in the owner's manual. Mercury says
 
 ## Need service on your Mercury?
 
-Book online at [hbw.wiki/service](https://hbw.wiki/service). Or call **905-342-2153**. If you're looking at a new motor rather than servicing the current one, build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
+Book online at [hbwservice.ca](https://hbwservice.ca). Or call **905-342-2153**. If you're looking at a new motor rather than servicing the current one, build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 ---
 
@@ -5696,7 +5696,7 @@ For modern Mercury FourStrokes, no. Use Mercury-approved four-stroke oil from da
 **Can I tow my new Mercury home from HBW and break it in on my own lake?**
 Yes. Many customers do this. Follow the throttle and load instructions for your motor from the first launch, while also observing local speed and no-wake limits.
 
-Want HBW's optional early check, or due for scheduled service? Put in a request at [hbw.wiki/service](https://hbw.wiki/service).
+Want HBW's optional early check, or due for scheduled service? Put in a request at [hbwservice.ca](https://hbwservice.ca).
 `,
     howToSteps: [
       {
@@ -5720,7 +5720,7 @@ Want HBW's optional early check, or due for scheduled service? Put in a request 
     faqs: [
       {
         question: 'When is the first oil change on a new Mercury outboard?',
-        answer: 'Mercury\'s published schedule for most current FourStrokes is oil and filter at 100 hours or annually. HBW recommends an optional early oil-and-filter change around 20 hours as dealer best practice and an early ownership check-in. It is not a Mercury warranty requirement. Check the manual for the exact model and request service at hbw.wiki/service.'
+        answer: 'Mercury\'s published schedule for most current FourStrokes is oil and filter at 100 hours or annually. HBW recommends an optional early oil-and-filter change around 20 hours as dealer best practice and an early ownership check-in. It is not a Mercury warranty requirement. Check the manual for the exact model and request service at hbwservice.ca.'
       },
       {
         question: 'What happens if I don\'t break in my Mercury motor properly?',
@@ -5748,7 +5748,7 @@ Want HBW's optional early check, or due for scheduled service? Put in a request 
       },
       {
         question: 'Where can I book HBW\'s optional early service near Gores Landing or Rice Lake?',
-        answer: 'Harris Boat Works at 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0 offers an optional early oil-and-filter change around 20 hours as dealer best practice. Mercury\'s published first scheduled service for most current FourStrokes is at 100 hours or annually. Request service at hbw.wiki/service.'
+        answer: 'Harris Boat Works at 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0 offers an optional early oil-and-filter change around 20 hours as dealer best practice. Mercury\'s published first scheduled service for most current FourStrokes is at 100 hours or annually. Request service at hbwservice.ca.'
       },
       {
         question: 'What is the Mercury factory warranty on a new outboard motor?',
@@ -5933,7 +5933,7 @@ The Mercury 9.9 EFI ProKicker is easy to live with. The EFI powerhead has no oil
 - **Water pump and impeller:** Follow the exact ProKicker manual. Expanded water-pump service is commonly around 300 hours or three years, while Rice Lake weeds, silt, reduced water pressure, or an overheat warning can justify earlier inspection.
 - **EFI throttle body:** inspect and clean every few seasons if you run ethanol-blended fuel regularly.
 
-HBW services Mercury and MerCruiser. Book kicker service at hbw.wiki/service. The best time is fall lay-up or early spring before the walleye opener, so your kicker is ready and you are not waiting in the May queue. Our [spring commissioning checklist](/blog/spring-outboard-commissioning-checklist) walks through the rest of the pre-season list.
+HBW services Mercury and MerCruiser. Book kicker service at hbwservice.ca. The best time is fall lay-up or early spring before the walleye opener, so your kicker is ready and you are not waiting in the May queue. Our [spring commissioning checklist](/blog/spring-outboard-commissioning-checklist) walks through the rest of the pre-season list.
 
 ---
 
@@ -5961,7 +5961,7 @@ Very little. At typical walleye trolling speeds it sips fuel, so a main tank run
 Low, by design. The high-thrust prop and gearing trade top speed for slow-speed control. The ProKicker is not built to cover distance. To move between spots, tilt the kicker up and run on your main motor.
 
 **Does HBW service ProKickers it did not install?**
-Yes. We service any Mercury or MerCruiser regardless of where it was bought. Book at hbw.wiki/service.
+Yes. We service any Mercury or MerCruiser regardless of where it was bought. Book at hbwservice.ca.
 
 **Does the ProKicker work on the Trent-Severn?**
 Yes. It is used for trolling on the connecting lakes and as a backup motor on cruising routes, and it gives precise low-speed control on lock approaches.
@@ -5977,7 +5977,7 @@ Live pricing, motor only or fully installed, is at **mercuryrepower.ca**. The qu
 **Phone:** 905-342-2153
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 **Configurator:** [mercuryrepower.ca](https://mercuryrepower.ca)
-**Service:** [hbw.wiki/service](https://hbw.wiki/service)
+**Service:** [hbwservice.ca](https://hbwservice.ca)
 
 ---
 
@@ -6044,7 +6044,7 @@ Live pricing, motor only or fully installed, is at **mercuryrepower.ca**. The qu
       },
       {
         question: 'Does HBW service ProKickers it did not install?',
-        answer: 'Yes. We service any Mercury or MerCruiser regardless of where it was bought. Book at hbw.wiki/service.'
+        answer: 'Yes. We service any Mercury or MerCruiser regardless of where it was bought. Book at hbwservice.ca.'
       },
       {
         question: 'Does the ProKicker work on the Trent-Severn?',
@@ -7298,7 +7298,7 @@ Walleye trolling is why the [Mercury 9.9 ProKicker](/blog/mercury-prokicker-rice
 - **April to early May:** Prime commissioning and repower window at HBW before the May rush.
 - **Walleye season:** Check actual trolling speed with the usual load. Some main-motor setups can hold a suitable presentation, especially with compatible Troll Control; a ProKicker adds dedicated low-speed control when the main motor cannot.
 - **Summer afternoons:** The 32 km east-west fetch has nothing to break a westerly. By 1 PM a calm morning can turn into two-foot chop. Horsepower that matches the loaded hull is a boat-control decision on this lake, not a comfort extra. Plan the ride home before the wind builds.
-- **November into lay-up:** Cold mornings and heavier clothing do not forgive an unreliable motor. Complete the [service request](https://hbw.wiki/service) for fall lay-up or [winterization](/blog/boat-winterization-cost-ontario-2026). FourStroke and ProKicker models can use different fuel, internal-protection, and storage-position procedures. The physical marina is closed December 1 through April 1.
+- **November into lay-up:** Cold mornings and heavier clothing do not forgive an unreliable motor. Complete the [service request](https://hbwservice.ca) for fall lay-up or [winterization](/blog/boat-winterization-cost-ontario-2026). FourStroke and ProKicker models can use different fuel, internal-protection, and storage-position procedures. The physical marina is closed December 1 through April 1.
 
 ---
 
@@ -7540,7 +7540,7 @@ The boaters who regret a repower are almost always the ones who put a new motor 
 
 ### From request to handover
 
-1. **Share the boat details.** Use the [quote builder](/quote/motor-selection) to explore a repower and submit the [service request](https://hbw.wiki/service) before dropping off the boat.
+1. **Share the boat details.** Use the [quote builder](/quote/motor-selection) to explore a repower and submit the [service request](https://hbwservice.ca) before dropping off the boat.
 2. **Confirm fit and scope.** HBW reviews the hull, intended use, compatible equipment and work required.
 3. **Review the written quote.** Confirm the configuration, included work, availability, payment terms and scheduling with HBW.
 4. **Drop off when convenient.** Once the service request is complete, drop off anytime, including after hours.
@@ -7673,7 +7673,7 @@ For most current recreational Mercury FourStrokes, scheduled service is due annu
 
 A word on protecting your warranty. Mercury warranty claims require documentation of proper maintenance, so keep your service records. Running the wrong prop pitch, neglecting annual service, or using the motor outside its rated application can create warranty problems, and in some cases insurance and liability problems too. None of that is exotic. It is the ordinary care any motor needs, and it is one more reason we test the prop before you leave the dock.
 
-HBW services Mercury and MerCruiser. Book at hbw.wiki/service. The most efficient slot is fall: combine annual service with winterization in one appointment, everything sorted before the motor sits for the cold months.
+HBW services Mercury and MerCruiser. Book at hbwservice.ca. The most efficient slot is fall: combine annual service with winterization in one appointment, everything sorted before the motor sits for the cold months.
 
 ---
 
@@ -7733,7 +7733,7 @@ It depends entirely on the hull. Aluminum hulls with solid transoms can run for 
 For a hull in solid structural condition, a repower almost always wins on the math. You keep a boat you know and spend a fraction of the cost of a comparable new package. The exception is a hull with a soft transom or multiple failing systems, where the numbers can favour a clean used boat instead.
 
 **How long does a Kawartha repower take?**
-There are two clocks: motor and rigging availability, then the scheduled shop work. HBW confirms the applicable installation window after reviewing the boat, required parts, and current shop capacity. Complete the service request at hbw.wiki/service, then drop off your boat anytime, including after hours. HBW confirms the work schedule separately.
+There are two clocks: motor and rigging availability, then the scheduled shop work. HBW confirms the applicable installation window after reviewing the boat, required parts, and current shop capacity. Complete the service request at hbwservice.ca, then drop off your boat anytime, including after hours. HBW confirms the work schedule separately.
 
 **Do I need new controls?**
 A Mercury-to-Mercury repower can often keep recent, good-condition controls. Older equipment, or a conversion from another brand, needs new controls and harness throughout. The walk-around tells us which case you are in.
@@ -7764,7 +7764,7 @@ Start at **mercuryrepower.ca** for live pricing on every Mercury we sell, real C
 **Phone:** 905-342-2153
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 **Configurator:** [Build Your Quote](/quote/motor-selection)
-**Service:** [hbw.wiki/service](https://hbw.wiki/service)
+**Service:** [hbwservice.ca](https://hbwservice.ca)
 
 ### Keep reading
 
@@ -7795,7 +7795,7 @@ Jay Harris helps run Harris Boat Works, a third-generation family marina in Gore
       { question: 'What is a boat repower?', answer: 'Replacing your existing outboard with a new Mercury while keeping the hull. The job covers motor selection, rigging (controls, cables, gauges), a new prop, installation, and a lake-test. What it costs depends on horsepower class, motor family, and the condition of your existing rigging.' },
       { question: 'Is repowering worth it on an older boat?', answer: 'It depends entirely on the hull. Aluminum hulls with solid transoms can run for decades more, and sound fiberglass is similar. The motor is the wear part. We do a proper hull walk-around before recommending anything, because a new motor only makes sense on a hull worth keeping.' },
       { question: 'Repower or buy new?', answer: 'For a hull in solid structural condition, a repower almost always wins on the math. You keep a boat you know and spend a fraction of the cost of a comparable new package. The exception is a hull with a soft transom or multiple failing systems, where the numbers can favour a clean used boat instead.' },
-      { question: 'How long does a Kawartha repower take?', answer: 'There are two clocks: motor and rigging availability, then the scheduled shop work. HBW confirms the applicable installation window after reviewing the boat, required parts, and current shop capacity. Complete the service request at hbw.wiki/service, then drop off your boat anytime, including after hours. HBW confirms the work schedule separately.' },
+      { question: 'How long does a Kawartha repower take?', answer: 'There are two clocks: motor and rigging availability, then the scheduled shop work. HBW confirms the applicable installation window after reviewing the boat, required parts, and current shop capacity. Complete the service request at hbwservice.ca, then drop off your boat anytime, including after hours. HBW confirms the work schedule separately.' },
       { question: 'Do I need new controls?', answer: 'A Mercury-to-Mercury repower can often keep recent, good-condition controls. Older equipment, or a conversion from another brand, needs new controls and harness throughout. The walk-around tells us which case you are in.' },
       { question: 'Do I need hydraulic steering?', answer: 'At 150 HP and above, yes. Hydraulic steering at that power is about safe, comfortable control, and it is standard practice on higher-HP rigs. From 40 to 115 HP, cable steering is fine.' },
       { question: 'Do I need to update my Pleasure Craft Licence?', answer: 'Review the information recorded on your Pleasure Craft Licence after a repower. Transport Canada requires changed licence information to be updated within 30 days, and updates are free. Check the current requirements for your boat and authorize any dealer help; do not assume that the fee for a new or renewed licence applies to an update.' },
@@ -8178,7 +8178,7 @@ HBW's standard repower handoff includes an on-water setup check on Rice Lake bef
 
 For engine repairs, we only service Mercury and MerCruiser.
 
-Build a package quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), or request service at [hbw.wiki/service](https://hbw.wiki/service).
+Build a package quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), or request service at [hbwservice.ca](https://hbwservice.ca).
 
 ---
 
@@ -8223,7 +8223,7 @@ Often yes, prop tuning, fresh plugs, cleaned injectors or carburettor, and fresh
 ## CTA
 
 **Ready to dial in your Mercury?** 
-Whether you want a prop check, a full service, or a quote on a new motor package: [hbw.wiki/service](https://hbw.wiki/service) is where to start. Or build a motor quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
+Whether you want a prop check, a full service, or a quote on a new motor package: [hbwservice.ca](https://hbwservice.ca) is where to start. Or build a motor quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 Harris Boat Works, Gores Landing, ON | Since 1947
 
@@ -8487,7 +8487,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     category: 'Maintenance',
     readTime: '9 min read',
     keywords: ['spring boat commissioning', 'outboard commissioning', 'spring boat startup', 'mercury spring maintenance', 'boat season prep'],
-    content: `> **Quick answer:** Spring commissioning brings your Mercury back to operational condition after winter storage. The core work: fuel system inspection, cooling system and impeller check, battery load test, fresh gear lube verification, spark plug inspection, propeller check, and a test run on muffs before the boat goes in the water. Book early, by late April, shops are running behind. Schedule at [hbw.wiki/service](https://hbw.wiki/service).
+    content: `> **Quick answer:** Spring commissioning brings your Mercury back to operational condition after winter storage. The core work: fuel system inspection, cooling system and impeller check, battery load test, fresh gear lube verification, spark plug inspection, propeller check, and a test run on muffs before the boat goes in the water. Book early, by late April, shops are running behind. Schedule at [hbwservice.ca](https://hbwservice.ca).
 
 Need your PCOC? Take the online course through [HBW's MyBoatCard referral link](https://myboatcard.com/card/harrisboat) and use **HARRIS15** for **15% off**.
 
@@ -8589,7 +8589,7 @@ step5Label: First water trial
 step5Question: Does the motor reach its rated WOT RPM with normal load?
 step5Tip: Below the rated band means prop, fouling, or a fuel issue. Above the band means under-propped. Either way, fix before a full day out.
 escalationLabel: Want us to handle it?
-escalationBody: Spring commissioning at HBW is free for HBW winter storage customers, $99 otherwise. Includes all five steps above plus a lake test when possible. Book at hbw.wiki/service.
+escalationBody: Spring commissioning at HBW is free for HBW winter storage customers, $99 otherwise. Includes all five steps above plus a lake test when possible. Book at hbwservice.ca.
 ::
 
 ### Step 5, Lubrication
@@ -8658,7 +8658,7 @@ If you'd rather have us handle commissioning:
 
 We cover the full checklist above plus computer diagnostics on Mercury SmartCraft systems, lake-test after the bench work, and a written record of everything done. For engine repairs, we only service Mercury and MerCruiser.
 
-Schedule at [hbw.wiki/service](https://hbw.wiki/service). Book before April if May launch timing matters. After the May long weekend, spring service demand usually gets heavier, so earlier requests are easier to plan around.
+Schedule at [hbwservice.ca](https://hbwservice.ca). Book before April if May launch timing matters. After the May long weekend, spring service demand usually gets heavier, so earlier requests are easier to plan around.
 
 ---
 
@@ -8710,7 +8710,7 @@ We sell ethanol-free marine gas on-site at Harris Boat Works in Gores Landing. I
 
 ## Ready to Book Spring Service?
 
-Want the boat ready for the long weekend? Book spring service at **[hbw.wiki/service](https://hbw.wiki/service)**.
+Want the boat ready for the long weekend? Book spring service at **[hbwservice.ca](https://hbwservice.ca)**.
 
 Harris Boat Works | Since 1947 | Mercury Marine Premier Dealer | Gores Landing, ON`,
     howToSteps: [
@@ -8746,7 +8746,7 @@ Harris Boat Works | Since 1947 | Mercury Marine Premier Dealer | Gores Landing, 
       },
       {
         question: 'How much does professional spring commissioning cost in Ontario?',
-        answer: 'Ontario shops typically charge $150-$350 CAD. At HBW the spring check is free for our winter storage customers and $99 for everyone else. A basic commissioning is at the lower end; a commissioning that includes gear oil change, spark plug inspection, impeller check, and fuel filter replacement costs more. Harris Boat Works provides an upfront scope before starting, request service at hbw.wiki/service.'
+        answer: 'Ontario shops typically charge $150-$350 CAD. At HBW the spring check is free for our winter storage customers and $99 for everyone else. A basic commissioning is at the lower end; a commissioning that includes gear oil change, spark plug inspection, impeller check, and fuel filter replacement costs more. Harris Boat Works provides an upfront scope before starting, request service at hbwservice.ca.'
       },
       {
         question: 'What\'s the best time to book spring commissioning near Rice Lake or the Kawarthas?',
@@ -9584,7 +9584,7 @@ We rig both setups regularly:
 
 For engine repairs, we only service Mercury and MerCruiser.
 
-Request service at [hbw.wiki/service](https://hbw.wiki/service) or price a new ProKicker at [mercuryrepower.ca](https://www.mercuryrepower.ca).
+Request service at [hbwservice.ca](https://hbwservice.ca) or price a new ProKicker at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 *Last reviewed: 2026-05-11.*
 
@@ -9599,7 +9599,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       { question: 'Can I run an electric trolling motor on Rice Lake?', answer: 'Yes, and many anglers do, especially in the shallow bays and weed flats. Battery range becomes a factor on Rice Lake open water. A lithium battery upgrade substantially extends range if you plan to fish the whole lake.' },
       { question: 'What size trolling motor do I need for my fishing boat?', answer: 'General starting point: 2 lbs of thrust per 100 lbs of loaded boat weight, then round up. A 1,800 lb loaded aluminum boat needs roughly 36 lbs of thrust minimum. Most anglers opt for 25 to 36 kg (55 to 80 lb) units to handle wind.' },
       { question: 'Do I need both a trolling motor and a kicker?', answer: 'Not necessarily to start. Most anglers are better served by picking the right first unit for their primary fishery and adding the second unit later.' },
-      { question: 'Where can I get a kicker or trolling motor installed near Rice Lake?', answer: 'Request service at hbw.wiki/service or call us at 905-342-2153. We are on Rice Lake in Gores Landing, ON.' },
+      { question: 'Where can I get a kicker or trolling motor installed near Rice Lake?', answer: 'Request service at hbwservice.ca or call us at 905-342-2153. We are on Rice Lake in Gores Landing, ON.' },
     ]
   },
 
@@ -10148,7 +10148,7 @@ Five factors affect how thorough your opener prep needs to be:
 ### Two Weeks Before Opener
 
 - Confirm spring commissioning is complete. If it is not, book it now. Service slots fill in May.
-- Schedule any final service at [hbw.wiki/service](https://hbw.wiki/service) if needed.
+- Schedule any final service at [hbwservice.ca](https://hbwservice.ca) if needed.
 - Check your fishing licence is valid for the new season. Renew online if not.
 - Confirm your [Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc) (PCOC) is on the boat. It is a lifetime certification, you should have the original card.
 - Confirm your [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl) (PCL) is displayed on the bow and current. As of August 8, 2026, a renewal costs $24.41 and is valid for five years. Transport Canada adjusts the fee for inflation each April 1, so verify the current amount before applying. Without a valid PCL, you can be fined.
@@ -10184,7 +10184,7 @@ step5Label: Live well, nav lights, electronics
 step5Question: Does the live well fill and drain, and do nav lights work on both bow and stern?
 step5Tip: Walleye opener often means early starts and late returns in low light. Nav lights are not optional at dusk. Test the live well pump before you need it for keepers.
 escalationLabel: Want HBW to do the opener prep?
-escalationBody: We run a pre-opener service every spring, typically $200 to $350 depending on motor size. Covers all five steps above plus a lake test. Book early at hbw.wiki/service or call (905) 342-2153.
+escalationBody: We run a pre-opener service every spring, typically $200 to $350 depending on motor size. Covers all five steps above plus a lake test. Book early at hbwservice.ca or call (905) 342-2153.
 ::
 
 ### Three Days Before Opener
@@ -10219,7 +10219,7 @@ If you book opener prep at Harris Boat Works, the service includes:
 
 You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
-Book through [hbw.wiki/service](https://hbw.wiki/service). If you are considering a new motor rather than prepping the old one, build a Mercury repower quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
+Book through [hbwservice.ca](https://hbwservice.ca). If you are considering a new motor rather than prepping the old one, build a Mercury repower quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 For engine repairs, we only service Mercury and MerCruiser.
 
@@ -10275,7 +10275,7 @@ Usually sunrise for Zone 17. Confirm current year regulations, some lakes have s
 If it is over four to five years old, yes. A weak battery causes hard starts, stresses the starter motor, and fails on the worst possible morning. The cost of a new battery is nothing compared to a lost opener.
 
 **Can HBW pick up my boat for opener prep?** 
-No. Service is drop-off: you trailer the boat to us at Gores Landing and most opener-prep jobs turn around fast. Book at [hbw.wiki/service](https://hbw.wiki/service) or 905-342-2153.
+No. Service is drop-off: you trailer the boat to us at Gores Landing and most opener-prep jobs turn around fast. Book at [hbwservice.ca](https://hbwservice.ca) or 905-342-2153.
 
 ---
 
@@ -10293,7 +10293,7 @@ No. Service is drop-off: you trailer the boat to us at Gores Landing and most op
 ## CTA
 
 **Book opener prep now.** Service slots fill in May, and there is no such thing as a last-minute walleye opener fix. 
-[Book service at hbw.wiki/service](https://hbw.wiki/service), or call 905-342-2153. 
+[Book service at hbwservice.ca](https://hbwservice.ca), or call 905-342-2153. 
 Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. 
 Mercury Premier dealer. Est. 1947.
 
@@ -10346,7 +10346,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         question: 'Can HBW pick up my boat for opener prep?',
-        answer: 'We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport. You can also complete hbw.wiki/service, then drop off anytime, including after hours.'
+        answer: 'We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport. You can also complete hbwservice.ca, then drop off anytime, including after hours.'
       },
       {
         question: 'What\'s the most common opener morning failure?',
@@ -10444,7 +10444,7 @@ A running motor gets you home. A failed motor in October on a cold lake is not t
 
 Cold starts are harder than warm-weather starts. Allow proper warm-up time. Check fuel lines for stiffness. Carry spare spark plugs.
 
-If you are not sure about your motor's reliability heading into fall, book a pre-fall inspection through [hbw.wiki/service](https://hbw.wiki/service). For engine repairs, we only service Mercury and MerCruiser.
+If you are not sure about your motor's reliability heading into fall, book a pre-fall inspection through [hbwservice.ca](https://hbwservice.ca). For engine repairs, we only service Mercury and MerCruiser.
 
 ---
 
@@ -10476,7 +10476,7 @@ Don't panic and don't try to swim immediately. Cold-water shock makes the first 
 
 When you call it a season, follow the storage procedure for the exact engine. That can include fuel preparation, gearcase service, model-specific internal protection, battery disconnection and maintenance, lubrication, and the specified drainage position. A healthy battery may remain aboard only if fully charged, disconnected, secured, and permitted by the approved storage plan. The model/serial manual and approved storage plan control.
 
-Complete [hbw.wiki/service](https://hbw.wiki/service), then drop off anytime, including after hours. Harris Boat Works has 584 completed winterization records from August through November 2025. It is one of our core services.
+Complete [hbwservice.ca](https://hbwservice.ca), then drop off anytime, including after hours. Harris Boat Works has 584 completed winterization records from August through November 2025. It is one of our core services.
 
 ---
 
@@ -10495,7 +10495,7 @@ Yes. The time to put on a PFD is before you need it. In cold water, there is no 
 Channel 16. This is the distress and calling channel. [Parks Canada](https://parks.canada.ca/lhn-nhs/on/trentsevern) and Coast Guard monitor it. Murray Canal swing bridges use Channel 14 specifically.
 
 **When should I book fall winterization?** 
-Complete hbw.wiki/service, then drop off anytime, including after hours. The marina is closed December 1 through April 1.
+Complete hbwservice.ca, then drop off anytime, including after hours. The marina is closed December 1 through April 1.
 
 **Does HBW pick up boats for winterization?** 
 We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport.
@@ -10516,7 +10516,7 @@ We can generally arrange boat pickup. Ask us about availability for your boat an
 ## CTA
 
 **End the season right.** Proper winterization in October means a ready boat in May. 
-[Book fall service at hbw.wiki/service](https://hbw.wiki/service), or call 905-342-2153. 
+[Book fall service at hbwservice.ca](https://hbwservice.ca), or call 905-342-2153. 
 Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
@@ -10573,7 +10573,7 @@ This post is the HBW seasonal hub. Three phases of the year, what HBW handles, w
 
 ## Quick recommendation
 
-If you want one rule that solves most seasonal headaches: complete [hbw.wiki/service](https://hbw.wiki/service), then drop off anytime, including after hours. You can request fall winterization and spring commissioning in the same form.
+If you want one rule that solves most seasonal headaches: complete [hbwservice.ca](https://hbwservice.ca), then drop off anytime, including after hours. You can request fall winterization and spring commissioning in the same form.
 
 ## Spring (March to Early May): Commissioning
 
@@ -10663,7 +10663,7 @@ A few things don't follow the seasons.
 
 The cleanest seasonal flow we see at HBW:
 
-- **Fall:** Complete [hbw.wiki/service](https://hbw.wiki/service), then drop the boat off anytime, including after hours, for the approved winterization and storage plan.
+- **Fall:** Complete [hbwservice.ca](https://hbwservice.ca), then drop the boat off anytime, including after hours, for the approved winterization and storage plan.
 - **Winter:** Follow the approved storage plan. The physical marina is closed December 1 through April 1.
 - **Spring:** Complete the standard commissioning check and list any additional concerns on the service request.
 - **Boating season:** Use the boat and follow the maintenance schedule for the exact engine and serial number.
@@ -10677,7 +10677,7 @@ Practically speaking, ice-out in the Kawarthas is mid-to-late April, depending o
 The previous October, ideally. We book spring slots from October onward and the early bookers get the prime mid-April through early May slots. Booking in March means you're taking what's left.
 
 **Do I really need winterization every year?**
-Yes. Even a mild Ontario winter is a long storage period for fuel, gearcase lubricant, the battery, corrosion protection, and cooling-water drainage. Follow the exact engine procedure before layup; request the current HBW scope and price at hbw.wiki/service.
+Yes. Even a mild Ontario winter is a long storage period for fuel, gearcase lubricant, the battery, corrosion protection, and cooling-water drainage. Follow the exact engine procedure before layup; request the current HBW scope and price at hbwservice.ca.
 
 _Prices here are planning figures as of {{PRICING_ASOF}}. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
@@ -10700,7 +10700,7 @@ Fall is the busiest trade-in window because customers swap before winter storage
 
 The work that makes the season feel easy happens between seasons. Booked once, planned out, locked in.
 
-**Book service (commissioning, winterization, mid-season):** [hbw.wiki/service](https://hbw.wiki/service)
+**Book service (commissioning, winterization, mid-season):** [hbwservice.ca](https://hbwservice.ca)
 **Repower quote builder:** [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection)
 **Trade-in estimate:** [mercuryrepower.ca/trade-in-value](/trade-in-value)
 **Call us:** 905-342-2153
@@ -10718,7 +10718,7 @@ The work that makes the season feel easy happens between seasons. Booked once, p
       },
       {
         question: 'Do I really need winterization every year?',
-        answer: 'Yes. Even a mild Ontario winter is a long storage period for fuel, gearcase lubricant, the battery, corrosion protection, and cooling-water drainage. Follow the exact engine procedure before layup; request the current HBW scope and price at hbw.wiki/service.'
+        answer: 'Yes. Even a mild Ontario winter is a long storage period for fuel, gearcase lubricant, the battery, corrosion protection, and cooling-water drainage. Follow the exact engine procedure before layup; request the current HBW scope and price at hbwservice.ca.'
       },
       {
         question: 'Is fall service cheaper than spring service?',
@@ -10726,7 +10726,7 @@ The work that makes the season feel easy happens between seasons. Booked once, p
       },
       {
         question: 'Can I do my own winterization?',
-        answer: 'Some steps are DIY-friendly if you follow the exact manual. Fuel preparation, internal protection, flushing, gearcase service, and storage position vary by engine. If you see water or metal in the gearcase lubricant or cannot complete the procedure exactly, request service at hbw.wiki/service.'
+        answer: 'Some steps are DIY-friendly if you follow the exact manual. Fuel preparation, internal protection, flushing, gearcase service, and storage position vary by engine. If you see water or metal in the gearcase lubricant or cannot complete the procedure exactly, request service at hbwservice.ca.'
       },
       {
         question: 'What\'s HBW\'s spring backlog like?',
@@ -12157,7 +12157,7 @@ Harris Boat Works has been a Mercury dealer since 1965.
     faqs: [
       {
         question: 'How long does the whole process take?',
-        answer: "Timing depends on the exact motor and rigging availability, the approved work, findings, current shop capacity, and safe test conditions. Complete the service request at hbw.wiki/service, then drop off your boat anytime, including after hours. HBW confirms the work plan and schedule separately."
+        answer: "Timing depends on the exact motor and rigging availability, the approved work, findings, current shop capacity, and safe test conditions. Complete the service request at hbwservice.ca, then drop off your boat anytime, including after hours. HBW confirms the work plan and schedule separately."
       },
       {
         question: 'What deposit is required?',
@@ -14114,7 +14114,7 @@ HBW's standard repower handoff includes an on-water test on Rice Lake before pic
 **Email:** info@harrisboatworks.ca
 **Main site:** harrisboatworks.ca
 **Configurator:** mercuryrepower.ca
-**Service booking:** hbw.wiki/service
+**Service booking:** hbwservice.ca
 
 Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Family-owned since 1947, Mercury dealer since 1965, current Premier Dealer.
 
@@ -14277,7 +14277,7 @@ It depends on the hull. A 22+ ft deep-V rigged for Lake Ontario is over-gunned a
 FourStroke. The Pro XS earns its premium for tournament use. For recreational fishing, the FourStroke is quieter and the fuel economy is comparable.
 
 **Do you service Lake Ontario boats?**
-For engine repairs, we only service Mercury and MerCruiser. Schedule at [hbw.wiki/service](https://hbw.wiki/service).
+For engine repairs, we only service Mercury and MerCruiser. Schedule at [hbwservice.ca](https://hbwservice.ca).
 
 **How do I get a Lake Ontario repower quote?**
 [mercuryrepower.ca](https://www.mercuryrepower.ca), configure your motor, get a real number.
@@ -14369,9 +14369,9 @@ Harris Boat Works | Mercury Marine Premier Dealer | Family-owned since 1947 | Me
         url: 'https://www.mercurymarine.com/us/en/service-and-support/owners-resources/maintenance-made-easy/battery-basics',
       },
     ],
-    content: `> **Quick answer:** Harris Boat Works publishes its current 2026–27 winterization and storage rates on the [HBW rate card](https://www.harrisboatworks.ca/winter-storage). The boat-specific quote depends on the exact engine and serial number, maintenance due, engine and gearcase condition, onboard systems, number of engines, and whether shrinkwrap or outdoor winter storage is included. Submit the boat details at [hbw.wiki/service](https://hbw.wiki/service).
+    content: `> **Quick answer:** Harris Boat Works publishes its current 2026–27 winterization and storage rates on the [HBW rate card](https://www.harrisboatworks.ca/winter-storage). The boat-specific quote depends on the exact engine and serial number, maintenance due, engine and gearcase condition, onboard systems, number of engines, and whether shrinkwrap or outdoor winter storage is included. Submit the boat details at [hbwservice.ca](https://hbwservice.ca).
 
-The physical marina is closed December 1 through April 1. There is no on-site service, inspection, commissioning, installation, or customer access during that period. We can generally arrange boat pickup. Ask us about availability for your boat and location. You can also complete hbw.wiki/service, then drop off anytime, including after hours.
+The physical marina is closed December 1 through April 1. There is no on-site service, inspection, commissioning, installation, or customer access during that period. We can generally arrange boat pickup. Ask us about availability for your boat and location. You can also complete hbwservice.ca, then drop off anytime, including after hours.
 
 *HBW operating scope and pricing references verified August 27, 2026. All amounts are CAD before HST unless stated otherwise.*
 
@@ -14469,7 +14469,7 @@ We can generally arrange boat pickup. Ask us about availability for your boat an
 
 ## How to Start
 
-Complete [hbw.wiki/service](https://hbw.wiki/service), then drop off anytime, including after hours.
+Complete [hbwservice.ca](https://hbwservice.ca), then drop off anytime, including after hours.
 
 HBW is closed December 1 through April 1:
 
@@ -14506,7 +14506,7 @@ For Mercury owners, start with Mercury's official guidance and then follow the e
 
 ## Request the Current Scope
 
-Submit the boat, engine, trailer, storage, and requested-work details at [hbw.wiki/service](https://hbw.wiki/service). HBW will confirm whether the requested work is accepted and what the current quote includes.
+Submit the boat, engine, trailer, storage, and requested-work details at [hbwservice.ca](https://hbwservice.ca). HBW will confirm whether the requested work is accepted and what the current quote includes.
 
 ## Official Sources
 
@@ -14516,7 +14516,7 @@ Submit the boat, engine, trailer, storage, and requested-work details at [hbw.wi
     faqs: [
       {
         question: 'What does boat winterization cost at Harris Boat Works?',
-        answer: 'HBW publishes its current 2026–27 winterization and storage rates on the HBW rate card. The boat-specific quote depends on the exact engine and serial number, maintenance due, condition found, onboard systems, engine count, and any approved shrinkwrap or outdoor-storage scope. Submit the details at hbw.wiki/service.',
+        answer: 'HBW publishes its current 2026–27 winterization and storage rates on the HBW rate card. The boat-specific quote depends on the exact engine and serial number, maintenance due, condition found, onboard systems, engine count, and any approved shrinkwrap or outdoor-storage scope. Submit the details at hbwservice.ca.',
       },
       {
         question: 'What does a proper Mercury winterization include?',
@@ -14577,7 +14577,7 @@ Submit the boat, engine, trailer, storage, and requested-work details at [hbw.wi
 
 ## Quick Answer
 
-You can winterize your own Mercury outboard only after identifying the exact storage procedure in the operation and maintenance manual for its serial number. Fuel treatment, internal engine protection, flushing, gearcase service, and storage position vary by engine family. Do not assume every FourStroke should be fogged through the intake, and never run the motor without a cooling-water supply. If the procedure or inspection is outside your ability, submit the motor details at hbw.wiki/service.
+You can winterize your own Mercury outboard only after identifying the exact storage procedure in the operation and maintenance manual for its serial number. Fuel treatment, internal engine protection, flushing, gearcase service, and storage position vary by engine family. Do not assume every FourStroke should be fogged through the intake, and never run the motor without a cooling-water supply. If the procedure or inspection is outside your ability, submit the motor details at hbwservice.ca.
 
 ::cta
 variant: inline
@@ -14587,7 +14587,7 @@ primaryLabel: Download fall checklist (PDF)
 primaryHref: /downloads/fall-storage-winterization-checklist-hbw.pdf
 ::
 
-For professional winterization and [winter boat storage in the Kawarthas](/blog/outdoor-boat-storage-shrinkwrap-rice-lake): [hbw.wiki/service](https://hbw.wiki/service).
+For professional winterization and [winter boat storage in the Kawarthas](/blog/outdoor-boat-storage-shrinkwrap-rice-lake): [hbwservice.ca](https://hbwservice.ca).
 
 ---
 
@@ -14611,7 +14611,7 @@ step5Label: Battery and position
 step5Question: Is the battery disconnected and maintained, and is the motor stored in the position the manual specifies?
 step5Tip: A healthy battery may remain aboard only if fully charged, disconnected, secured, and permitted by the approved storage plan. The model/serial manual and approved storage plan control. The exact engine position must allow proper drainage.
 escalationLabel: Need the model-specific scope?
-escalationBody: Submit the serial number, engine hours, and service history at hbw.wiki/service. HBW is closed December 1 through April 1.
+escalationBody: Submit the serial number, engine hours, and service history at hbwservice.ca. HBW is closed December 1 through April 1.
 ::
 
 ---
@@ -14764,7 +14764,7 @@ Based on what we see in spring diagnostics at HBW:
 
 The guide above is a decision framework, not a substitute for the serial-number manual. If you find water or metal in the gearcase lubricant, damaged seals, alarms, fuel contamination, corrosion, or a procedure you cannot complete exactly, stop and request professional service.
 
-If you want professional winterization: [hbw.wiki/service](https://hbw.wiki/service). The shop knows these motors.
+If you want professional winterization: [hbwservice.ca](https://hbwservice.ca). The shop knows these motors.
 
 ---
 
@@ -14817,7 +14817,7 @@ Reviewed by the Harris Boat Works service team. HBW handles Mercury and MerCruis
 ## CTA
 
 **Want it done right without the Saturday morning?** 
-Request professional winterization at [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Gores Landing, Mercury Premier dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947.
+Request professional winterization at [hbwservice.ca](https://hbwservice.ca). Harris Boat Works, Gores Landing, Mercury Premier dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947.
 
 Phone: 905-342-2153
 
@@ -15663,7 +15663,7 @@ Same as the posted limit, but never above 110 km/h on most highways. Some traile
 Bewdley is about the same drive from Toronto (slightly less on the 401, slightly more on rural roads). Hastings is east, longer. Roseneath is closer for east-Toronto residents.
 
 **Can you receive my boat at HBW for service or repower?**
-Yes. Trailer it to 5369 Harris Boat Works Rd, Gores Landing. We have space to receive boats on trailers. Submit a service request first at [hbw.wiki/service](https://hbw.wiki/service) so we know you're coming.
+Yes. Trailer it to 5369 Harris Boat Works Rd, Gores Landing. We have space to receive boats on trailers. Submit a service request first at [hbwservice.ca](https://hbwservice.ca) so we know you're coming.
 
 ---
 
@@ -15680,7 +15680,7 @@ Yes. Trailer it to 5369 Harris Boat Works Rd, Gores Landing. We have space to re
 
 Build a quote for your Mercury motor, before or after the trip, at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**. Live installed pricing in CAD.
 
-Service requests for HBW: **[hbw.wiki/service](https://hbw.wiki/service)**.
+Service requests for HBW: **[hbwservice.ca](https://hbwservice.ca)**.
 
 Phone: **905-342-2153**.
 
@@ -15750,7 +15750,7 @@ Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | Since 1947`,
     keywords: ['mercury outboard wont start', 'outboard troubleshooting', 'mercury starting problems'],
     content: `## Quick answer
 
-Start with the operator checks in the manual for your exact Mercury, including the controls and power supply. Note whether the motor does not crank, cranks slowly, cranks without starting, or starts and stops. That symptom helps the service team choose the next test; it does not identify the failed part by itself. For help, complete a service request at [hbw.wiki/service](https://hbw.wiki/service).
+Start with the operator checks in the manual for your exact Mercury, including the controls and power supply. Note whether the motor does not crank, cranks slowly, cranks without starting, or starts and stops. That symptom helps the service team choose the next test; it does not identify the failed part by itself. For help, complete a service request at [hbwservice.ca](https://hbwservice.ca).
 
 *Last reviewed: 2026-08-02*
 
@@ -15761,7 +15761,7 @@ Start with the operator checks in the manual for your exact Mercury, including t
 - **Warnings:** exact displayed message or observed horn pattern.
 - **Recent changes:** last successful run, storage history and recent work.
 
-Use the starting checks in the exact engine manual. Do not bypass a safety interlock or open the fuel system to follow a generic picture. If the issue remains unresolved, complete a [service request](https://hbw.wiki/service).
+Use the starting checks in the exact engine manual. Do not bypass a safety interlock or open the fuel system to follow a generic picture. If the issue remains unresolved, complete a [service request](https://hbwservice.ca).
 
 It happens at the worst time. Your Mercury sat all winter. The dock is clear, the family is in the truck, you turn the key, and you get a slow grinding click. Or it cranks beautifully but won't catch. Or it fires for two seconds and dies.
 
@@ -15949,7 +15949,7 @@ Once the boat is on the bench, many no-start jobs are quick to isolate. Parts av
 
 ## Ready for HBW to look at it?
 
-[Book a Mercury diagnostic at hbw.wiki/service](https://hbw.wiki/service).
+[Book a Mercury diagnostic at hbwservice.ca](https://hbwservice.ca).
 
 ## Sources
 
@@ -16858,7 +16858,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 ### From request to handover
 
-1. **Share the boat details.** Use the [quote builder](/quote/motor-selection) to explore a repower and submit the [service request](https://hbw.wiki/service) before dropping off the boat.
+1. **Share the boat details.** Use the [quote builder](/quote/motor-selection) to explore a repower and submit the [service request](https://hbwservice.ca) before dropping off the boat.
 2. **Confirm fit and scope.** HBW reviews the hull, intended use, compatible equipment and work required.
 3. **Review the written quote.** Confirm the configuration, included work, availability, payment terms and scheduling with HBW.
 4. **Drop off when convenient.** Once the service request is complete, drop off anytime, including after hours.
@@ -16920,7 +16920,7 @@ Customer builds a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) or
 
 #### Step 3: Deposit and Booking
 
-A fixed deposit holds the motor and booking slot. The online quote shows the exact amount for the selected motor, currently $200, $500, or $1,000 based on horsepower. It is not a percentage of the repower total. HBW confirms the motor and quote details before anything is ordered, and HBW confirms the work schedule and target completion date separately. Complete the service request at hbw.wiki/service, then drop off your boat anytime, including after hours.
+A fixed deposit holds the motor and booking slot. The online quote shows the exact amount for the selected motor, currently $200, $500, or $1,000 based on horsepower. It is not a percentage of the repower total. HBW confirms the motor and quote details before anything is ordered, and HBW confirms the work schedule and target completion date separately. Complete the service request at hbwservice.ca, then drop off your boat anytime, including after hours.
 
 If you want financing, HBW can help arrange boat repower financing through Canadian marine lenders, on approved credit. The application, rate, term, and approval are handled separately from the deposit.
 
@@ -17027,7 +17027,7 @@ Two related guides in the same cluster:
 ## FAQs
 
 **How long does a Mercury repower take?** 
-There are two clocks: motor and rigging availability, then the scheduled shop work. HBW confirms the applicable installation window after reviewing the boat, required parts, and current shop capacity. Complete the service request at hbw.wiki/service, then drop off your boat anytime, including after hours. HBW confirms the work schedule separately.
+There are two clocks: motor and rigging availability, then the scheduled shop work. HBW confirms the applicable installation window after reviewing the boat, required parts, and current shop capacity. Complete the service request at hbwservice.ca, then drop off your boat anytime, including after hours. HBW confirms the work schedule separately.
 
 **When is the fastest time to book a repower?** 
 November through March. Shortest wait times, first pick of motors, and sometimes promotional financing rates. By late March, spring booking is in full swing.
@@ -17074,7 +17074,7 @@ Harris Boat Works has been a Mercury dealer since 1965.
     faqs: [
       {
         question: 'How long does a Mercury repower take?',
-        answer: 'There are two clocks: motor and rigging availability, then the scheduled shop work. HBW confirms the applicable installation window after reviewing the boat, required parts, and current shop capacity. Complete the service request at hbw.wiki/service, then drop off your boat anytime, including after hours. HBW confirms the work schedule separately.'
+        answer: 'There are two clocks: motor and rigging availability, then the scheduled shop work. HBW confirms the applicable installation window after reviewing the boat, required parts, and current shop capacity. Complete the service request at hbwservice.ca, then drop off your boat anytime, including after hours. HBW confirms the work schedule separately.'
       },
       {
         question: 'Do I need to bring my boat to HBW for the walk-around?',
@@ -17328,7 +17328,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 *Last reviewed: 2026-09-07*
 
-> **Quick answer:** Before you pay for a used outboard, verify its identity and service history, arrange a qualified inspection using the exact model's procedures, and agree on a suitable running test. Ask for written findings and a repair estimate before deciding. Complete a service request at [hbw.wiki/service](https://hbw.wiki/service); boats can be dropped off anytime, including after hours.
+> **Quick answer:** Before you pay for a used outboard, verify its identity and service history, arrange a qualified inspection using the exact model's procedures, and agree on a suitable running test. Ask for written findings and a repair estimate before deciding. Complete a service request at [hbwservice.ca](https://hbwservice.ca); boats can be dropped off anytime, including after hours.
 
 Harris Boat Works has been on Rice Lake since 1947 and a Mercury dealer since 1965. My dad ran the service side for decades, and he spent a lot of those years pulling cowls off motors that people bought without asking the right questions first. He had a phrase for it: cheap at the dock, expensive in the shop.
 
@@ -17453,7 +17453,7 @@ Before buying, send HBW the serial number, model information and your concerns. 
 
 The smart play on any private-sale outboard worth real money is to make your offer conditional on passing a dealer inspection. Honest sellers agree to it without hesitation. The ones who refuse have just told you what you needed to know.
 
-Complete the [service request](https://hbw.wiki/service), then drop the boat off anytime, including after hours. Confirm inspection scope and cost with HBW before authorizing the work.
+Complete the [service request](https://hbwservice.ca), then drop the boat off anytime, including after hours. Confirm inspection scope and cost with HBW before authorizing the work.
 
 ---
 
@@ -17491,12 +17491,12 @@ Contact HBW with the serial number and symptoms so we can confirm service scope 
 
 If you have looked at the used market and the numbers do not work, or you just want to know what new actually costs, build a live quote at **mercuryrepower.ca**. Real Canadian pricing, configured for your hull, in about three minutes.
 
-Book a pre-purchase inspection at hbw.wiki/service before you commit to a private-sale motor.
+Book a pre-purchase inspection at hbwservice.ca before you commit to a private-sale motor.
 
 **Phone:** 905-342-2153
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 **Configurator:** [mercuryrepower.ca](https://mercuryrepower.ca)
-**Service:** [hbw.wiki/service](https://hbw.wiki/service)
+**Service:** [hbwservice.ca](https://hbwservice.ca)
 
 ---
 
@@ -17845,7 +17845,7 @@ step5Label: Alarm persists
 step5Question: Is the overheat alarm still active or coming back at low RPM?
 step5Tip: Shut down. Continuing to run a Mercury with an active overheat alarm risks major powerhead damage. Tow in or trailer back.
 escalationLabel: Alarm still on? Don't push it.
-escalationBody: Cooling-system failures get expensive fast. Tow in or trailer the boat, then book a Mercury diagnostic at hbw.wiki/service.
+escalationBody: Cooling-system failures get expensive fast. Tow in or trailer the boat, then book a Mercury diagnostic at hbwservice.ca.
 ::
 
 ---
@@ -17953,13 +17953,13 @@ After any overheating event, even one that resolved itself on the water, have th
 
 For engine repairs, we only service Mercury and MerCruiser.
 
-If you suspect a cooling system problem, book before your next run: [hbw.wiki/service](https://hbw.wiki/service).
+If you suspect a cooling system problem, book before your next run: [hbwservice.ca](https://hbwservice.ca).
 
 ---
 
 ## Ready to Book a Cooling-System Inspection?
 
-After any overheating event, get it checked before the next run. [Book a Mercury diagnostic at hbw.wiki/service](https://hbw.wiki/service).
+After any overheating event, get it checked before the next run. [Book a Mercury diagnostic at hbwservice.ca](https://hbwservice.ca).
 ---`,
     howToSteps: [
       { name: 'Reduce throttle and read the warning', text: 'Reduce throttle immediately. Read the SmartCraft or VesselView message if equipped, and follow the warning procedure in the serial-specific Mercury owner\'s manual. Do not use one generic timer for every engine and warning.' },
@@ -17994,7 +17994,7 @@ After any overheating event, get it checked before the next run. [Book a Mercury
   },
   {
     "question": "My boat is on the water and I'm panicking. What do I do?",
-    "answer": "Reduce throttle, get the boat into a safe position, and follow the warning instructions on the display or in the serial-specific Mercury owner's manual. If the warning persists, the telltale is weak or absent, or the instructions say to stop, shut down and arrange a tow. Then submit a service request at hbw.wiki/service."
+    "answer": "Reduce throttle, get the boat into a safe position, and follow the warning instructions on the display or in the serial-specific Mercury owner's manual. If the warning persists, the telltale is weak or absent, or the instructions say to stop, shut down and arrange a tow. Then submit a service request at hbwservice.ca."
   }
 ],
   },
@@ -18121,7 +18121,7 @@ Other rental options exist around Bewdley, but availability and quality vary. Ca
 
 **HBW (Gores Landing)** sells ethanol-free 89-octane marine fuel directly at our dock. Easier on outboards than the 10% ethanol you get at most pump stations. We're open daily during boating season.
 
-For Mercury service, parts, or repower questions, we're a Mercury Marine Premier dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947. Service requests at [hbw.wiki/service](https://hbw.wiki/service). Phone 905-342-2153.
+For Mercury service, parts, or repower questions, we're a Mercury Marine Premier dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947. Service requests at [hbwservice.ca](https://hbwservice.ca). Phone 905-342-2153.
 
 ---
 
@@ -18442,7 +18442,7 @@ What we handle:
 - Repowers, remanufactured drop-ins, full new engine + drive, or outboard conversions
 - [Storage](/blog/outdoor-boat-storage-shrinkwrap-rice-lake) (outdoor storage with professional shrink wrap, outdoor uncovered storage, or shrink-wrap-only service; sterndrives included)
 
-Book at **[hbw.wiki/service](https://hbw.wiki/service)**.
+Book at **[hbwservice.ca](https://hbwservice.ca)**.
 
 ---
 
@@ -18638,7 +18638,7 @@ We install SmartCraft Connect modules, configure the Mercury Marine App, set up 
 
 Most installs are 2-3 hours and run **$300-$500 plus parts**. We can do them as part of a service visit or as a standalone service request.
 
-Book at **[hbw.wiki/service](https://hbw.wiki/service)**.
+Book at **[hbwservice.ca](https://hbwservice.ca)**.
 
 ---
 
@@ -19080,7 +19080,7 @@ No service history? Start with an inspection and establish a new baseline. If th
 
 ## Ready to Book the Right Service?
 
-Put in a service request at [hbw.wiki/service](https://hbw.wiki/service) with the motor serial number and current hours. We'll build the job from the correct Mercury schedule and the boat's actual history.
+Put in a service request at [hbwservice.ca](https://hbwservice.ca) with the motor serial number and current hours. We'll build the job from the correct Mercury schedule and the boat's actual history.
 `,
     faqs: [
       {
@@ -19125,7 +19125,7 @@ Put in a service request at [hbw.wiki/service](https://hbw.wiki/service) with th
 
 *Last reviewed: 2026-08-27*
 
-> **Quick answer:** HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. We also don't offer climate-controlled or year-round storage. We can generally arrange boat pickup; ask about availability. HBW does not deliver boats. You can also complete [hbw.wiki/service](https://hbw.wiki/service), then drop off anytime, including after hours. The marina is closed December 1 through April 1. Compare storage quotes by written scope and the [current HBW 2026–27 rate card](https://www.harrisboatworks.ca/winter-storage), not an old per-foot number. The full transport limits are in Access, Transport, and the Winter Closure.
+> **Quick answer:** HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. We also don't offer climate-controlled or year-round storage. We can generally arrange boat pickup; ask about availability. HBW does not deliver boats. You can also complete [hbwservice.ca](https://hbwservice.ca), then drop off anytime, including after hours. The marina is closed December 1 through April 1. Compare storage quotes by written scope and the [current HBW 2026–27 rate card](https://www.harrisboatworks.ca/winter-storage), not an old per-foot number. The full transport limits are in Access, Transport, and the Winter Closure.
 
 The storage label is only the start of the decision. "Outdoor," "indoor," and "heated indoor" describe where the boat sits. They don't tell you whether the quote includes shrinkwrap, engine winterization, battery handling, spring commissioning, or any work on the trailer.
 
@@ -19175,7 +19175,7 @@ The most common storage misunderstanding is simple: a customer hears one price a
 
 It might cover only a parking space. It might include shrinkwrap but not engine winterization. It might include fall work but charge separately for spring commissioning.
 
-HBW records the approved scope on the work order. The current quote depends on the boat, trailer, length, shrinkwrap requirements, engine configuration, and the work you authorize. Use [hbw.wiki/service](https://hbw.wiki/service) for the current written scope and price.
+HBW records the approved scope on the work order. The current quote depends on the boat, trailer, length, shrinkwrap requirements, engine configuration, and the work you authorize. Use [hbwservice.ca](https://hbwservice.ca) for the current written scope and price.
 
 Don't use an old blog rate as a budget.
 
@@ -19235,7 +19235,7 @@ HBW does not offer either indoor tier. We also don't promise referrals, availabi
 
 ## Spring Commissioning
 
-Spring commissioning is included for HBW winter-storage customers. As of September 2026, it is $99 for non-storage customers. Confirm the current scope and price when you book at [hbw.wiki/service](https://hbw.wiki/service).
+Spring commissioning is included for HBW winter-storage customers. As of September 2026, it is $99 for non-storage customers. Confirm the current scope and price when you book at [hbwservice.ca](https://hbwservice.ca).
 
 Physical commissioning begins after the marina reopens. A spring work order may still need separate authorization for repairs, parts, or model-specific service beyond the commissioning scope.
 
@@ -19259,7 +19259,7 @@ No. A healthy battery may remain aboard only if fully charged, disconnected, sec
 We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport.
 
 **How much does HBW outdoor winter storage cost?**
-The current quote depends on the boat, trailer, length, shrinkwrap requirements, engine configuration, and authorized work. Request the current written scope and price at [hbw.wiki/service](https://hbw.wiki/service).
+The current quote depends on the boat, trailer, length, shrinkwrap requirements, engine configuration, and authorized work. Request the current written scope and price at [hbwservice.ca](https://hbwservice.ca).
 
 **Is spring commissioning included?**
 It is included for HBW winter-storage customers. As of September 2026, the price for non-storage customers is $99. Confirm the current scope when booking.
@@ -19279,7 +19279,7 @@ It is included for HBW winter-storage customers. As of September 2026, the price
 
 Submit the boat details once. HBW will confirm whether the outdoor-storage model fits and put the approved fall and spring work in writing.
 
-**Service request:** [hbw.wiki/service](https://hbw.wiki/service)
+**Service request:** [hbwservice.ca](https://hbwservice.ca)
 **Phone:** 905-342-2153
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 
@@ -19313,7 +19313,7 @@ Submit the boat details once. HBW will confirm whether the outdoor-storage model
       },
       {
         question: "How much does HBW outdoor winter storage cost?",
-        answer: "The current quote depends on the boat, trailer, length, shrinkwrap requirements, engine configuration, and authorized work. Request the current written scope and price at hbw.wiki/service."
+        answer: "The current quote depends on the boat, trailer, length, shrinkwrap requirements, engine configuration, and authorized work. Request the current written scope and price at hbwservice.ca."
       },
       {
         question: "Is spring commissioning included?",
@@ -19985,14 +19985,14 @@ We've been a Mercury dealer in Ontario since 1965. Every new Mercury we sell get
 
 If you bought a Mercury elsewhere and want warranty work done in our shop, we can do that too, bring your purchase paperwork and we'll get the Mercury claim moving.
 
-Service requests: [hbw.wiki/service](https://hbw.wiki/service).
+Service requests: [hbwservice.ca](https://hbwservice.ca).
 
 New Mercury motor quotes: [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 ---
 
 **Phone:** 905-342-2153
-**Service requests:** [hbw.wiki/service](https://hbw.wiki/service)
+**Service requests:** [hbwservice.ca](https://hbwservice.ca)
 **New Mercury quotes:** [mercuryrepower.ca](https://www.mercuryrepower.ca)
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 ---
@@ -20063,7 +20063,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     relatedSlugs: ['mercury-outboard-fault-codes-lookup', 'mercury-outboard-beeping-codes-guide', 'mercury-outboard-overheat-alarm-decoder', 'mercury-smartcraft-connect-guide-ontario', 'mercury-boat-battery-guide-ontario'],
     content: `*Last reviewed: 2026-08-02*
 
-> **Quick answer:** Mercury SmartCraft alarms communicate engine faults two ways: beep patterns through the warning horn and numeric codes on VesselView (now rebranded SmartCraft Connect Mobile). The most common codes we see at HBW are low battery voltage, water in fuel (4 beeps every 2 minutes, the #1 spring first-start alarm), engine over-temperature, low oil pressure, and Guardian faults. If you hear an alarm, read the display first, then count the beep pattern, then put in a service request at hbw.wiki/service.
+> **Quick answer:** Mercury SmartCraft alarms communicate engine faults two ways: beep patterns through the warning horn and numeric codes on VesselView (now rebranded SmartCraft Connect Mobile). The most common codes we see at HBW are low battery voltage, water in fuel (4 beeps every 2 minutes, the #1 spring first-start alarm), engine over-temperature, low oil pressure, and Guardian faults. If you hear an alarm, read the display first, then count the beep pattern, then put in a service request at hbwservice.ca.
 
 If the display shows a complete number such as **621-5**, start with the [Mercury fault-code lookup](/blog/mercury-outboard-fault-codes-lookup). It keeps the modern engine-family table separate from the older single-number VesselView list.
 
@@ -20079,7 +20079,7 @@ When a customer calls with a Guardian alarm active or a code on the screen, the 
 
 That single question routes the call. The display text tells us the system involved (fuel, charging, oil, temperature, communication). The beep pattern tells us severity and the specific subsystem. A continuous tone is different from 4 beeps every 2 minutes is different from 6 beeps once.
 
-[Beeping at the dock? Book a diagnostic](https://hbw.wiki/service "cta")
+[Beeping at the dock? Book a diagnostic](https://hbwservice.ca "cta")
 
 Related: [Mercury service at HBW](/maintenance).
 
@@ -20157,7 +20157,7 @@ HBW uses [SmartCraft Connect Mobile](/blog/mercury-smartcraft-connect-guide-onta
 
 ## Ready for HBW to look at it?
 
-**Service appointment:** [hbw.wiki/service](https://hbw.wiki/service)  
+**Service appointment:** [hbwservice.ca](https://hbwservice.ca)  
 **Email:** info@harrisboatworks.ca  
 **Phone:** 905-342-2153
 
@@ -20302,7 +20302,7 @@ If your boat is stored at HBW, it remains inaccessible during the closure. HBW o
 
 ## What to Send Before You Tow
 
-Submit the following at [hbw.wiki/service](https://hbw.wiki/service):
+Submit the following at [hbwservice.ca](https://hbwservice.ca):
 
 1. Boat make, model, year, and length
 2. A clear photo of the capacity label or compliance notice
@@ -20344,7 +20344,7 @@ HBW can assess Mercury service and warranty requests regardless of the selling d
 Start with the [Mercury pricing reference](/pricing-reference), build an installed starting quote, then submit the boat details before making the drive.
 
 **Quote builder:** [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection)
-**Service request:** [hbw.wiki/service](https://hbw.wiki/service)
+**Service request:** [hbwservice.ca](https://hbwservice.ca)
 **Phone:** 905-342-2153
 **Pickup location:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 
@@ -20551,7 +20551,7 @@ Ontario boaters come to Gores Landing from the Kawarthas, Northumberland County,
 ---
 **Phone:** 905-342-2153
 **Configurator:** [mercuryrepower.ca](https://www.mercuryrepower.ca)
-**Service:** [hbw.wiki/service](https://hbw.wiki/service)
+**Service:** [hbwservice.ca](https://hbwservice.ca)
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 
 Ready to price it out? Build a current CAD quote online at the [Mercury Repower Centre](/quote/motor-selection).
@@ -20653,7 +20653,7 @@ The marina is closed December 1 through April 1. During that closure, planning a
 
 ## From the Shop: Stage 4, Customer Drop-Off
 
-Complete the service request at [hbw.wiki/service](https://hbw.wiki/service), then bring the boat and trailer to 5369 Harris Boat Works Rd in Gores Landing anytime, including after hours. If you cannot bring the boat, ask whether pickup is available for your boat and location.
+Complete the service request at [hbwservice.ca](https://hbwservice.ca), then bring the boat and trailer to 5369 Harris Boat Works Rd in Gores Landing anytime, including after hours. If you cannot bring the boat, ask whether pickup is available for your boat and location.
 
 HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport.
 
@@ -20734,7 +20734,7 @@ HBW can assess the boat and proposed Mercury configuration, but the motor, warra
 Send the capacity label, current motor serial number, and rigging photos. HBW will confirm whether the project fits, build the correct Mercury configuration, and put the scope in writing.
 
 **Quote builder:** [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection)
-**Service request:** [hbw.wiki/service](https://hbw.wiki/service)
+**Service request:** [hbwservice.ca](https://hbwservice.ca)
 **Phone:** 905-342-2153
 **Drop-off and pickup:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 
@@ -20840,7 +20840,7 @@ HBW can assess Mercury warranty concerns even when the motor was sold by another
 
 Repowers require the boat's capacity label or manufacturer's rating, a hull and transom assessment, the exact Mercury configuration, controls, steering, instruments, propeller selection, installation, and an on-water test.
 
-Use the [quote builder](/quote/motor-selection) for a starting number and [hbw.wiki/service](https://hbw.wiki/service) for the boat-specific work order.
+Use the [quote builder](/quote/motor-selection) for a starting number and [hbwservice.ca](https://hbwservice.ca) for the boat-specific work order.
 
 ### Winter storage and spring commissioning
 
@@ -20871,7 +20871,7 @@ HBW confirms the current price for the actual job. For motor pricing, the canoni
 
 ## From the Shop: The Drive-In Service Model
 
-We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport. You can also complete [hbw.wiki/service](https://hbw.wiki/service), then drop off anytime, including after hours.
+We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport. You can also complete [hbwservice.ca](https://hbwservice.ca), then drop off anytime, including after hours.
 
 HBW documents the complaint and approved work. You return after the job is complete and the pickup window is confirmed.
 
@@ -20937,7 +20937,7 @@ Not during the physical closure. The marina is closed December 1 through April 1
 
 Include the serial number, current hours, alarm or symptom, prior work, boat location, and whether you need HBW to confirm pickup availability or can bring it to Gores Landing.
 
-**Service request:** [hbw.wiki/service](https://hbw.wiki/service)
+**Service request:** [hbwservice.ca](https://hbwservice.ca)
 **Phone:** 905-342-2153
 **Drop-off and pickup:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 
@@ -20996,7 +20996,7 @@ Include the serial number, current hours, alarm or symptom, prior work, boat loc
 
 *Last reviewed: 2026-08-27*
 
-> **Quick answer:** HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. We can generally arrange boat pickup; ask about availability. HBW does not deliver boats. You can also complete [hbw.wiki/service](https://hbw.wiki/service), then drop off anytime, including after hours. The marina is closed December 1 through April 1, so no service, repower, install, inspection, or customer access happens during that period. Winter is for remote planning and approvals; physical work starts after the marina reopens in early April. See the [current HBW 2026–27 rate card](https://www.harrisboatworks.ca/winter-storage), then request the boat-specific scope at [hbw.wiki/service](https://hbw.wiki/service). The full transport limits are in The Transport Reality.
+> **Quick answer:** HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. We can generally arrange boat pickup; ask about availability. HBW does not deliver boats. You can also complete [hbwservice.ca](https://hbwservice.ca), then drop off anytime, including after hours. The marina is closed December 1 through April 1, so no service, repower, install, inspection, or customer access happens during that period. Winter is for remote planning and approvals; physical work starts after the marina reopens in early April. See the [current HBW 2026–27 rate card](https://www.harrisboatworks.ca/winter-storage), then request the boat-specific scope at [hbwservice.ca](https://hbwservice.ca). The full transport limits are in The Transport Reality.
 
 Every fall, GTA boaters face the same decision: [where do I store the boat for winter](/blog/outdoor-boat-storage-shrinkwrap-rice-lake)? The useful comparison is not a generic per-foot number. It is whether the quoted package includes outdoor storage, shrinkwrap, engine winterization, spring commissioning, trailer handling, and any model-specific work your boat actually needs.
 
@@ -21013,7 +21013,7 @@ HBW is a fit when you want outdoor storage at Gores Landing and the same Mercury
 | **Indoor heated storage** | Heated indoor space with different layup requirements | **No. HBW does not offer heated storage.** |
 | **Pickup, delivery, or mobile storage service** | A provider moves or services the boat off-site | **Pickup may be arranged. HBW does not deliver. Full limits are in The Transport Reality.** |
 
-Ask every provider for a written scope. A low storage number is not comparable to a package that also includes shrinkwrap, engine winterization, or spring commissioning. HBW confirms the current scope and price on the service work order; use [hbw.wiki/service](https://hbw.wiki/service) rather than an old blog figure.
+Ask every provider for a written scope. A low storage number is not comparable to a package that also includes shrinkwrap, engine winterization, or spring commissioning. HBW confirms the current scope and price on the service work order; use [hbwservice.ca](https://hbwservice.ca) rather than an old blog figure.
 
 ---
 
@@ -21041,7 +21041,7 @@ Do not assume every storage contract includes every item. HBW records the approv
 
 We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport.
 
-- Complete [hbw.wiki/service](https://hbw.wiki/service), then drop off anytime, including after hours, or ask about boat pickup.
+- Complete [hbwservice.ca](https://hbwservice.ca), then drop off anytime, including after hours, or ask about boat pickup.
 - Leave it on the approved trailer or follow the handling instructions on the work order.
 - Collect it after the marina reopens and the authorized spring work is complete.
 
@@ -21059,7 +21059,7 @@ When a GTA customer's boat lives at HBW year-round (slip in summer, storage in w
 
 ### 3. Spring commissioning is planned before pickup
 
-As of September 2026, HBW spring commissioning is included for winter-storage customers; the current price for non-storage customers is $99. Confirm the current scope when booking at [hbw.wiki/service](https://hbw.wiki/service). Physical commissioning begins only after the marina reopens in early April.
+As of September 2026, HBW spring commissioning is included for winter-storage customers; the current price for non-storage customers is $99. Confirm the current scope when booking at [hbwservice.ca](https://hbwservice.ca). Physical commissioning begins only after the marina reopens in early April.
 
 ---
 
@@ -21082,7 +21082,7 @@ For everyone else, particularly GTA boaters who travel to Rice Lake or the Kawar
 
 Walking through the actual timeline for a GTA boater wintering with us:
 
-**Fall drop-off.** Complete [hbw.wiki/service](https://hbw.wiki/service), then drop off anytime, including after hours, or ask about boat pickup. HBW confirms the approved scope and price.
+**Fall drop-off.** Complete [hbwservice.ca](https://hbwservice.ca), then drop off anytime, including after hours, or ask about boat pickup. HBW confirms the approved scope and price.
 
 **Approved fall work.** HBW completes the model-specific winterization and storage work on the repair order. Documentation stays in your file.
 
@@ -21100,7 +21100,7 @@ Walking through the actual timeline for a GTA boater wintering with us:
 
 HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. The current outdoor-storage quote depends on the boat, trailer, length, cover requirements, engine configuration, and authorized fall work.
 
-Use [hbw.wiki/service](https://hbw.wiki/service) for the current written scope and price. Do not budget from an old per-foot rate or a generic Ontario range.
+Use [hbwservice.ca](https://hbwservice.ca) for the current written scope and price. Do not budget from an old per-foot rate or a generic Ontario range.
 
 As of September 2026, spring commissioning is included for HBW winter-storage customers and is $99 for non-storage customers. Confirm that this remains current when booking.
 
@@ -21113,7 +21113,7 @@ Reviewed by the Harris Boat Works service team. HBW handles Mercury and MerCruis
 ## Frequently Asked Questions
 
 **How much does winter boat storage cost at HBW?**
-The current price depends on boat length, trailer and cover requirements, engine configuration, and the approved winterization scope. HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. Request the current written scope and price at [hbw.wiki/service](https://hbw.wiki/service).
+The current price depends on boat length, trailer and cover requirements, engine configuration, and the approved winterization scope. HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. Request the current written scope and price at [hbwservice.ca](https://hbwservice.ca).
 
 **How do I get my boat from the GTA to HBW for storage?**
 We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport.
@@ -21131,7 +21131,7 @@ No customer access is available while the marina is closed from December 1 throu
 Planning, quoting, and approvals can happen remotely over winter. Physical service, repower, and installation work starts after the marina reopens in early April.
 
 **When should I book winter storage?**
-Complete [hbw.wiki/service](https://hbw.wiki/service), then drop off anytime, including after hours. The marina is closed December 1 through April 1.
+Complete [hbwservice.ca](https://hbwservice.ca), then drop off anytime, including after hours. The marina is closed December 1 through April 1.
 
 **What's the difference between HBW shrinkwrap and a tarp?**
 Massive. Professional shrinkwrap uses 7-12 mil polyethylene film, custom-fitted with a structural frame and vents, heat-shrunk for tightness. A tarp flaps in wind (chafes gelcoat), pools water in the middle (snowmelt + re-freezing), and traps moisture (mold). Tarps are emergency cover; shrinkwrap is real winter storage.
@@ -21143,27 +21143,27 @@ Your existing boat insurance typically covers winter storage; some policies requ
 
 ## Sources and Review Notes
 
-- HBW service intake and current work-order scope: [hbw.wiki/service](https://hbw.wiki/service)
+- HBW service intake and current work-order scope: [hbwservice.ca](https://hbwservice.ca)
 - HBW operating rule verified August 26, 2026: outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service; no indoor or heated boat storage; boat pickup can generally be arranged; marina closed December 1 through April 1
 - Spring commissioning price verified September 2026: included for HBW winter-storage customers; $99 for non-storage customers
 - Mercury winterization procedures vary by engine. Follow the exact owner's manual and authorized service literature.
 
 ---
 
-**Booking:** [hbw.wiki/service](https://hbw.wiki/service)
+**Booking:** [hbwservice.ca](https://hbwservice.ca)
 **Phone:** 905-342-2153
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 
 Ready to price it out? Build a live CAD quote for your repower online at the [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 `,
     faqs: [
-      { question: "How much does winter boat storage cost at HBW?", answer: "The current price depends on boat length, trailer and cover requirements, engine configuration, and the approved winterization scope. HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. Request the current written scope and price at hbw.wiki/service." },
+      { question: "How much does winter boat storage cost at HBW?", answer: "The current price depends on boat length, trailer and cover requirements, engine configuration, and the approved winterization scope. HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. Request the current written scope and price at hbwservice.ca." },
       { question: "How do I get my boat from the GTA to HBW for storage?", answer: "We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport." },
       { question: "Does HBW offer indoor or heated winter storage?", answer: "No. HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage." },
       { question: "Do I need to do anything if my boat is shrinkwrapped and winterized?", answer: "Follow the approved work order and keep your contact information current. The marina is closed December 1 through April 1; no physical service or customer access happens during that period." },
       { question: "Can I access my boat during winter for any reason?", answer: "No customer access is available while the marina is closed from December 1 through April 1. Remove anything you will need before the closure." },
       { question: "What if I want to upgrade or repair the boat during winter?", answer: "Planning, quoting, and approvals can happen remotely over winter. Physical service, repower, and installation work starts after the marina reopens in early April." },
-      { question: "When should I book winter storage?", answer: "Complete hbw.wiki/service, then drop off anytime, including after hours. The marina is closed December 1 through April 1." },
+      { question: "When should I book winter storage?", answer: "Complete hbwservice.ca, then drop off anytime, including after hours. The marina is closed December 1 through April 1." },
       { question: "What's the difference between HBW shrinkwrap and a tarp?", answer: "Massive. Professional shrinkwrap uses 7-12 mil polyethylene film, custom-fitted with a structural frame and vents, heat-shrunk for tightness. A tarp flaps in wind (chafes gelcoat), pools water in the middle (snowmelt + re-freezing), and traps moisture (mold). Tarps are emergency cover; shrinkwrap is real winter storage." },
       { question: "Is the boat insured during winter storage?", answer: "Your existing boat insurance typically covers winter storage; some policies require notification. Check with your insurer. We don't insure stored boats, that's owner responsibility. We document storage location, shrinkwrap quality, and winterization completion for any insurance documentation needs." },
     ],
@@ -21324,7 +21324,7 @@ If your boat needs a motor, put together a real quote with real prices at mercur
 
 **Phone:** 905-342-2153
 **Configurator:** [mercuryrepower.ca](https://mercuryrepower.ca)
-**Service:** [hbw.wiki/service](https://hbw.wiki/service)
+**Service:** [hbwservice.ca](https://hbwservice.ca)
 
 **Related guides:**
 - [Why Mercury Dominates the Outboard Market](/blog/why-mercury-dominates-outboard-market)
@@ -21464,7 +21464,7 @@ step4Label: Tube damage from grounding
 step4Question: With the pontoon out of the water, inspect both tubes for dents, weld cracks, or unusual streaking near the nose cones.
 step4Tip: Rice Lake has rock shelves. A hard grounding can crack a weld without obvious leakage. If a tube sits lower in the water than the others, get it pressure-tested before next season.
 escalationLabel: Found something or unsure?
-escalationBody: Bring it in for a pontoon inspection. We diagnose tube, deck, wiring, and motor on the same visit. Book at hbw.wiki/service or call (905) 342-2153.
+escalationBody: Bring it in for a pontoon inspection. We diagnose tube, deck, wiring, and motor on the same visit. Book at hbwservice.ca or call (905) 342-2153.
 ::
 
 ---
@@ -21562,7 +21562,7 @@ None of these require a mechanical background. They just require paying attentio
 
 If your pontoon is showing any of these signs, or if you're running an undersized motor and you're done settling for mediocre performance, we can help.
 
-**Book service:** [hbw.wiki/service](https://hbw.wiki/service)
+**Book service:** [hbwservice.ca](https://hbwservice.ca)
 
 **Get a repower quote:** [mercuryrepower.ca](https://www.mercuryrepower.ca)
 
@@ -21989,7 +21989,7 @@ No. A gauge helps you repeat a known setting, but it cannot tell you whether tod
 
 If sensible trim changes do not stop porpoising, ventilation or poor handling, have the boat inspected by a qualified marine technician before further operation.
 
-**Request service:** [hbw.wiki/service](https://hbw.wiki/service)
+**Request service:** [hbwservice.ca](https://hbwservice.ca)
 
 Family-owned since 1947, Mercury dealer since 1965, Mercury Premier Dealer.
 
@@ -22211,7 +22211,7 @@ Making the drive from the GTA for the first time? [The Toronto to Rice Lake trai
 
 It happens. Submerged connectors, corrosion, water intrusion, trailer problems become motor problems faster than most people expect.
 
-We do Mercury repowers and full electrical service at Harris Boat Works. If your outboard came back from the season worse than it went in, [book service at hbw.wiki/service](https://hbw.wiki/service) and we'll take a look.
+We do Mercury repowers and full electrical service at Harris Boat Works. If your outboard came back from the season worse than it went in, [book service at hbwservice.ca](https://hbwservice.ca) and we'll take a look.
 
 ---
 
@@ -22429,7 +22429,7 @@ Harris Boat Works continues to maintain and service MerCruiser sterndrives for o
 
 One note on scope: **for engine repairs, we only service Mercury and MerCruiser.** If you have a Volvo Penta or other brand, we'll point you to the right specialist.
 
-Sterndrive owners who want a reliable shop with genuine expertise: [request service here](https://hbw.wiki/service).
+Sterndrive owners who want a reliable shop with genuine expertise: [request service here](https://hbwservice.ca).
 
 ---
 
@@ -22466,7 +22466,7 @@ Either way, you deserve a straight answer, not a sales pitch.
 
 [Start your quote at mercuryrepower.ca →](https://www.mercuryrepower.ca)
 
-[Request service at hbw.wiki/service](https://hbw.wiki/service).
+[Request service at hbwservice.ca](https://hbwservice.ca).
 
 *Harris Boat Works. Gores Landing, ON. Mercury Marine Premier Dealer.*
 
@@ -22676,7 +22676,7 @@ Work through the walkaround in order. Take notes. Don't let the drive, the askin
 
 A 30-minute inspection won't catch everything, but it will catch the things that matter most. The deals that go sideways are almost always the ones where someone moved too fast to look carefully.
 
-**Found a boat with a tired motor but a sound hull? That's exactly what we repower.** Build your quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), real prices, no runaround. Need a hand evaluating what you're looking at? Reach out through [hbw.wiki/service](https://hbw.wiki/service).
+**Found a boat with a tired motor but a sound hull? That's exactly what we repower.** Build your quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), real prices, no runaround. Need a hand evaluating what you're looking at? Reach out through [hbwservice.ca](https://hbwservice.ca).
 
 ---
 
@@ -22702,7 +22702,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       { question: "What does milky or grey gear oil mean?", answer: "Water in the lower unit, from a failed seal or cracked housing. Left alone, it destroys the gears. Drain a sample on white paper towel: fresh gear oil is translucent gold or green. Milky, grey, or chocolate-brown is a deal-breaker until the lower unit is rebuilt." },
       { question: "Should I get a compression test on a used outboard?", answer: "Yes, on any motor over 5 years old. All cylinders should read within 10% of each other. Low or uneven compression points to rings, valves, or worse. A seller who refuses a compression test is hiding something. Auto parts stores rent or sell marine compression testers." },
       { question: "How can I tell if a used boat's floor is rotten?", answer: "Stomp test. Walk the full floor from transom to bow, pressing firmly with each step. Soft spots, sponginess, or flex mean the plywood sub-floor is saturated and stringers below may be compromised too. Stringer rot is a full restoration job, not a repair." },
-      { question: "What about the boat I just looked at? Can HBW help me decide?", answer: "Yes. If the hull is solid and the motor is the weak link, that's exactly what we repower. Build a quote at mercuryrepower.ca, or reach out through hbw.wiki/service if you want a second set of eyes on what you're looking at." },
+      { question: "What about the boat I just looked at? Can HBW help me decide?", answer: "Yes. If the hull is solid and the motor is the weak link, that's exactly what we repower. Build a quote at mercuryrepower.ca, or reach out through hbwservice.ca if you want a second set of eyes on what you're looking at." },
     ],
   },
   {
@@ -22907,7 +22907,7 @@ Most Rice Lake boaters are running a single outboard on a pontoon, bowrider, or 
 
 ---
 
-Thinking about a digital throttle upgrade or a Command Thrust gearcase? Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), or request service at [hbw.wiki/service](https://hbw.wiki/service).
+Thinking about a digital throttle upgrade or a Command Thrust gearcase? Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), or request service at [hbwservice.ca](https://hbwservice.ca).
 
 No pressure. But if you want to stop having that heart-rate moment every time you come back into Bewdley or Gores Landing with a southwest breeze on your beam, it's worth knowing your options.
 
@@ -23277,7 +23277,7 @@ step4Label: Age and replacement
 step4Question: Is the battery 5+ years old, or did it spend a winter without a maintainer?
 step4Tip: Even a "good" 5-year-old AGM is on borrowed time. Replace proactively instead of stranded at the launch ramp on May 24 weekend.
 escalationLabel: Want HBW to diagnose?
-escalationBody: We test batteries, charging systems, and parasitic drain in one appointment. Book at hbw.wiki/service.
+escalationBody: We test batteries, charging systems, and parasitic drain in one appointment. Book at hbwservice.ca.
 ::
 
 ## Why Batteries Are Our #1 Spring Service Call
@@ -23495,12 +23495,12 @@ For more on how on-board monitoring tools can help you track your boat's electri
 
 Battery problems are fixable. They're also preventable, if you know what to check and when.
 
-[Book a service appointment at hbw.wiki/service](https://hbw.wiki/service) and our techs will load test your battery, inspect your terminals, check your alternator output, and give you a straight answer on what it actually needs, before the season starts.
+[Book a service appointment at hbwservice.ca](https://hbwservice.ca) and our techs will load test your battery, inspect your terminals, check your alternator output, and give you a straight answer on what it actually needs, before the season starts.
 
 Looking for a replacement battery, smart charger, terminal hardware, or switch components? Check [marinecatalogue.ca](https://www.marinecatalogue.ca/), real prices, no phone tag.
 
 Harris Boat Works. Gores Landing, ON. Est. 1947.  
-[hbw.wiki/service](https://hbw.wiki/service)
+[hbwservice.ca](https://hbwservice.ca)
 
 Phone: 905-342-2153
 
@@ -23791,7 +23791,7 @@ There isn't one safe shelf-life promise. Mercury says fuel components can begin 
 
 Send the serial number and the exact fuel label with your service request. We'll identify the Mercury application and start with the right specification instead of a pump-grade guess.
 
-[Start a Mercury service request](https://hbw.wiki/service)
+[Start a Mercury service request](https://hbwservice.ca)
 
 ## Sources
 
@@ -25152,7 +25152,7 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 
 **Bring it to HBW if:** You have never opened the cowl, you want the module integrated cleanly with no loose wiring, you want app pairing tested and confirmed before you leave, and you want it on the service log for the rest of the motor's life. HBW installs the module and verifies it pairs correctly, usually about a 30-minute add-on to a service visit.
 
-Since it's a fast 30-minute install, this is the perfect upgrade to add onto your spring prep or winterization service. Book your install at [hbw.wiki/service](https://hbw.wiki/service).
+Since it's a fast 30-minute install, this is the perfect upgrade to add onto your spring prep or winterization service. Book your install at [hbwservice.ca](https://hbwservice.ca).
 
 The most common DIY mistake: missing the SmartCraft service connector and splicing into the analog tach signal instead. This does not work and creates a confusing failure mode. HBW has done dozens of these installs. The fee is set up-front and includes the module, the install, app pairing, and a brief walkthrough.
 
@@ -25206,7 +25206,7 @@ The app shows eligibility once SmartCraft Connect is paired. HBW can also check 
 
 **If you are repowering:** Add the module to your quote at [mercuryrepower.ca](https://www.mercuryrepower.ca). HBW installs it during rigging and you leave with the app already paired.
 
-**If you already have a compatible motor:** Put in a service request at [hbw.wiki/service](https://hbw.wiki/service) with your serial number. HBW confirms compatibility, quotes the module, and books an install slot, about 30 minutes of shop time.
+**If you already have a compatible motor:** Put in a service request at [hbwservice.ca](https://hbwservice.ca) with your serial number. HBW confirms compatibility, quotes the module, and books an install slot, about 30 minutes of shop time.
 
 ---
 
@@ -25223,7 +25223,7 @@ Jay Harris helps run Harris Boat Works, a third-generation family marina in Gore
 ## CTA
 
 **Add SmartCraft Connect to your repower quote.** 
-[mercuryrepower.ca](https://www.mercuryrepower.ca). For install booking, submit a service request at [hbw.wiki/service](https://hbw.wiki/service) with your motor's serial number. 
+[mercuryrepower.ca](https://www.mercuryrepower.ca). For install booking, submit a service request at [hbwservice.ca](https://hbwservice.ca) with your motor's serial number. 
 Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. 
 Mercury Premier dealer. Est. 1947.
 
@@ -25262,11 +25262,11 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     ],
     content: `## Quick Answer
 
-Harris Boat Works offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. We also do not offer climate-controlled or year-round storage. We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport. You can also complete [hbw.wiki/service](https://hbw.wiki/service), then drop off anytime, including after hours.
+Harris Boat Works offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. We also do not offer climate-controlled or year-round storage. We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport. You can also complete [hbwservice.ca](https://hbwservice.ca), then drop off anytime, including after hours.
 
 The physical marina is closed December 1 through April 1. There is no service, installation, inspection, or customer access during that period. Planning and approvals can continue remotely, and physical spring work begins after the marina reopens.
 
-See the [current HBW 2026–27 rate card](https://www.harrisboatworks.ca/winter-storage), then request the boat-specific storage scope at [hbw.wiki/service](https://hbw.wiki/service).
+See the [current HBW 2026–27 rate card](https://www.harrisboatworks.ca/winter-storage), then request the boat-specific storage scope at [hbwservice.ca](https://hbwservice.ca).
 
 ---
 
@@ -25318,7 +25318,7 @@ Do not compare two storage prices until the scopes match.
 
 ## From the Shop: The Fall Drop-Off
 
-Complete [hbw.wiki/service](https://hbw.wiki/service), then drop off anytime, including after hours. Or ask about boat pickup.
+Complete [hbwservice.ca](https://hbwservice.ca), then drop off anytime, including after hours. Or ask about boat pickup.
 
 Bring or submit:
 
@@ -25417,7 +25417,7 @@ The current quote can depend on:
 - Spring commissioning scope
 - HST and stated exclusions
 
-Submit the boat details at [hbw.wiki/service](https://hbw.wiki/service). Do not budget from an old article range or an assumed package discount.
+Submit the boat details at [hbwservice.ca](https://hbwservice.ca). Do not budget from an old article range or an assumed package discount.
 
 ---
 
@@ -25466,7 +25466,7 @@ List the concern in the service request. Repairs require assessment and approval
 
 ## Sources and Scope
 
-- [HBW service request](https://hbw.wiki/service), current drop-off workflow and Mercury/MerCruiser repair boundary
+- [HBW service request](https://hbwservice.ca), current drop-off workflow and Mercury/MerCruiser repair boundary
 - HBW operating rules reviewed August 26, 2026: offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport.
 - HBW seasonal closure reviewed July 24, 2026: physical marina closed December 1 through April 1
 - HBW spring commissioning price reviewed July 2026: included for winter-storage customers; $99 for non-storage customers
@@ -25474,7 +25474,7 @@ List the concern in the service request. Repairs require assessment and approval
 
 ## Ready to Request Storage?
 
-Submit the boat, motor, trailer, and requested work at [hbw.wiki/service](https://hbw.wiki/service).
+Submit the boat, motor, trailer, and requested work at [hbwservice.ca](https://hbwservice.ca).
 
 **Phone:** 905-342-2153
 
@@ -25669,7 +25669,7 @@ Designated lots at each ramp. Gores Landing has the largest and most reliable pa
 You need a PCOC to operate the boat, yes. Launching the boat (driving the trailer) doesn't require a PCOC, but the moment you have the motor running on the water, you do.
 
 **Can I leave my trailer overnight at a public launch?**
-Most public launches don't allow overnight parking. Check signage. HBW customers may have trailer storage options, contact us at [hbw.wiki/service](https://hbw.wiki/service).
+Most public launches don't allow overnight parking. Check signage. HBW customers may have trailer storage options, contact us at [hbwservice.ca](https://hbwservice.ca).
 
 **What if my boat is bigger than the public ramps can handle?**
 HBW's 2-lane concrete ramp at Gores Landing handles most recreational boats up to about 26 ft. For anything bigger, call us first: 905-342-2153.
@@ -28213,7 +28213,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 A Mercury that overheats at idle but runs fine at speed is a classic symptom of a worn water pump impeller. The impeller can generate enough vacuum at high RPM to move cooling water adequately, but loses suction at low RPM. It needs replacement, and the longer you wait, the more likely you are to turn a routine impeller job into a powerhead job. Other causes: blocked cooling intake, thermostat issue, or a sensor fault. Check the tell-tale first.
 
-For engine repairs, we only service Mercury and MerCruiser. Book at [hbw.wiki/service](https://hbw.wiki/service).
+For engine repairs, we only service Mercury and MerCruiser. Book at [hbwservice.ca](https://hbwservice.ca).
 
 ---
 
@@ -28330,7 +28330,7 @@ After any overheating event, have the motor inspected before the next run. Heat 
 
 For engine repairs, we only service Mercury and MerCruiser.
 
-Book at [hbw.wiki/service](https://hbw.wiki/service).
+Book at [hbwservice.ca](https://hbwservice.ca).
 
 ---
 
@@ -28363,7 +28363,7 @@ Because pump flow is lowest at low RPM. A worn impeller can keep up at cruise RP
 Not a safe long-term answer. A worn impeller can fail completely at any time, and then you have no cooling at any RPM. Arrange service rather than managing around the symptom.
 
 **How much does impeller replacement cost?** 
-We don't publish service pricing remotely. Contact us through [hbw.wiki/service](https://hbw.wiki/service) for current service rates. What we can tell you is that impeller replacement is substantially less expensive than powerhead repair.
+We don't publish service pricing remotely. Contact us through [hbwservice.ca](https://hbwservice.ca) for current service rates. What we can tell you is that impeller replacement is substantially less expensive than powerhead repair.
 
 **Can I test the impeller without removing the lower unit?** 
 Not definitively. The tell-tale behaviour is the best external indicator. If the tell-tale is weak at idle and the intake is clear, the impeller needs to come out for inspection or replacement.
@@ -28384,7 +28384,7 @@ Impeller wear is a maintenance item, not a defect, unless the impeller fails ver
 ## CTA
 
 **Overheating at idle needs to be looked at before your next run.** 
-[Book a Mercury diagnostic at hbw.wiki/service](https://hbw.wiki/service).
+[Book a Mercury diagnostic at hbwservice.ca](https://hbwservice.ca).
 ---`,
     faqs: [
       { question: 'Why is my Mercury overheating only at idle?', answer: 'Almost always a partially-blocked or worn water pump impeller. At cruise RPM, enough water gets through to keep temps OK; at idle, there isn\'t enough flow. Standard fix is impeller replacement (1-2 hour service job).' },
@@ -28418,7 +28418,7 @@ See [why boaters across Ontario choose Harris Boat Works](/blog/best-mercury-dea
 
 ### Plan Your Service Drop-Off
 
-1. **Complete the request:** use [hbw.wiki/service](https://hbw.wiki/service) and describe the boat, motor and work needed.
+1. **Complete the request:** use [hbwservice.ca](https://hbwservice.ca) and describe the boat, motor and work needed.
 2. **Drop off anytime:** after completing the request, bring the boat to **5369 Harris Boat Works Rd, Gores Landing**, including after hours.
 3. **Confirm the work:** agree on scope and cost with HBW. A repower quote uses the [Mercury quote builder](/quote/motor-selection).
 
@@ -28481,7 +28481,7 @@ Whitby Harbour Marina is a city-owned launch with 200+ slips, and Whitby Yacht C
 
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 **Phone:** 905-342-2153
-**Service requests:** [hbw.wiki/service](https://hbw.wiki/service)
+**Service requests:** [hbwservice.ca](https://hbwservice.ca)
 **Motor pricing:** [mercuryrepower.ca](https://www.mercuryrepower.ca)
 
 ---
@@ -28490,7 +28490,7 @@ Whitby Harbour Marina is a city-owned launch with 200+ slips, and Whitby Yacht C
 
 1. **Build a quote** at [mercuryrepower.ca](https://www.mercuryrepower.ca). Know the real installed price before you leave.
 2. **Consider whether you want an ongoing service relationship, not just a purchase.** At 45 minutes, the math on using us for commissioning, service, and winterization works.
-3. **Submit a service request** at [hbw.wiki/service](https://hbw.wiki/service) if you're starting with a service job rather than a purchase.
+3. **Submit a service request** at [hbwservice.ca](https://hbwservice.ca) if you're starting with a service job rather than a purchase.
 4. **Call or text ahead:** 905-342-2153. We'll have someone ready for you.
 
 ---
@@ -28521,7 +28521,7 @@ Transparent installed pricing before you leave Whitby. A service relationship th
 That's the deal. Has been since 1947.
 
 **Build your quote:** [mercuryrepower.ca](https://www.mercuryrepower.ca)
-**Request service:** [hbw.wiki/service](https://hbw.wiki/service)
+**Request service:** [hbwservice.ca](https://hbwservice.ca)
 **Call or text:** 905-342-2153
 **Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Premier dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947.
 
@@ -28529,7 +28529,7 @@ That's the deal. Has been since 1947.
 `,
     faqs: [
       { question: 'How far is HBW from Whitby?', answer: 'About 45 minutes via Highway 401 east and Highway 115 north. Roughly 70 km. One of the closer GTA cities to Rice Lake.' },
-      { question: 'Can HBW be my primary Mercury dealer if I live in Whitby?', answer: 'Yes. Whitby owners can book eligible Mercury and MerCruiser work at HBW in Gores Landing. Complete the service request at hbw.wiki/service, then drop off your boat anytime, including after hours; boat pickup may be arranged, subject to confirmation. HBW does not deliver boats after service, so customers arrange collection.' },
+      { question: 'Can HBW be my primary Mercury dealer if I live in Whitby?', answer: 'Yes. Whitby owners can book eligible Mercury and MerCruiser work at HBW in Gores Landing. Complete the service request at hbwservice.ca, then drop off your boat anytime, including after hours; boat pickup may be arranged, subject to confirmation. HBW does not deliver boats after service, so customers arrange collection.' },
       { question: 'Do you serve Brooklin and north Whitby?', answer: 'Yes. Boat owners from Brooklin and north Whitby can book eligible work at HBW in Gores Landing. Drive time varies by the starting point and traffic.' },
     ],
   },
@@ -28557,7 +28557,7 @@ See [why boaters across Ontario choose Harris Boat Works](/blog/best-mercury-dea
 
 ### Plan Your Service Drop-Off
 
-1. **Complete the request:** use [hbw.wiki/service](https://hbw.wiki/service) and describe the boat, motor and work needed.
+1. **Complete the request:** use [hbwservice.ca](https://hbwservice.ca) and describe the boat, motor and work needed.
 2. **Drop off anytime:** after completing the request, bring the boat to **5369 Harris Boat Works Rd, Gores Landing**, including after hours.
 3. **Confirm the work:** agree on scope and cost with HBW. A repower quote uses the [Mercury quote builder](/quote/motor-selection).
 
@@ -28626,7 +28626,7 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 **Phone:** 905-342-2153
-**Service requests:** [hbw.wiki/service](https://hbw.wiki/service)
+**Service requests:** [hbwservice.ca](https://hbwservice.ca)
 **Motor pricing:** [mercuryrepower.ca](https://www.mercuryrepower.ca)
 
 ---
@@ -28637,7 +28637,7 @@ At 45 to 50 minutes, you don't need to front-load every visit with hours of rese
 
 1. **Build your quote** at [mercuryrepower.ca](https://www.mercuryrepower.ca). Know the installed price.
 
-3. **Submit service requests** at [hbw.wiki/service](https://hbw.wiki/service), that's how we schedule most service work.
+3. **Submit service requests** at [hbwservice.ca](https://hbwservice.ca), that's how we schedule most service work.
 4. **Come up when you're ready.** At 45 to 50 minutes, "ready" is a lower bar than it is for someone driving from Mississauga.
 
 ---
@@ -28654,7 +28654,7 @@ Yes. [mercuryrepower.ca](https://www.mercuryrepower.ca). Installed pricing. Thre
 No. For engine repairs, we only service Mercury and MerCruiser. Yamaha, Honda, and Suzuki are outside our scope. If you're running something else and want to discuss switching to Mercury on a repower, that's a conversation we're happy to have.
 
 **I want to winterize and store here, what's the process?**
-Complete [hbw.wiki/service](https://hbw.wiki/service), then drop off anytime, including after hours. HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage.
+Complete [hbwservice.ca](https://hbwservice.ca), then drop off anytime, including after hours. HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage.
 
 **What if I just need a part?**
 For parts, start at [marinecatalogue.ca](https://www.marinecatalogue.ca) or call us at 905-342-2153. If we have it in stock, you could be here and back in under an hour.
@@ -28671,7 +28671,7 @@ You're 45 to 50 minutes away. The price is online. The rigging conversation happ
 This is what a dealer relationship is supposed to feel like.
 
 **Build your quote:** [mercuryrepower.ca](https://www.mercuryrepower.ca)
-**Request service:** [hbw.wiki/service](https://hbw.wiki/service)
+**Request service:** [hbwservice.ca](https://hbwservice.ca)
 **Call or text:** 905-342-2153
 **Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Premier dealer.
 `,
@@ -28708,7 +28708,7 @@ Mercury outboard beep patterns vary by model, year, and whether the boat has Sma
 
 If the display shows a number as well as a horn pattern, use the [Mercury fault-code lookup](/blog/mercury-outboard-fault-codes-lookup) for the complete number. The modern two-part UFC table and legacy single-number VesselView list are different systems.
 
-If you want a Mercury or MerCruiser shop to read the alarm with you, book at [hbw.wiki/service](https://hbw.wiki/service). You do not have to finish every DIY step before you call.
+If you want a Mercury or MerCruiser shop to read the alarm with you, book at [hbwservice.ca](https://hbwservice.ca). You do not have to finish every DIY step before you call.
 
 ::diagnostic-flow
 heading: What to do when your Mercury starts beeping
@@ -28727,13 +28727,13 @@ step4Question: Oil level and oil pressure are different warnings. Low oil pressu
 step5Label: Record the display or fault before calling
 step5Question: VesselView or SmartCraft-linked plotters show fault text that the horn alone cannot. Photograph the exact code and conditions before calling the shop.
 step5Tip: Once the boat is safely stopped, photograph the code for the technician handling your service.
-escalationLabel: Warning still active? Put in a service request at hbw.wiki/service.
-escalationBody: If oil pressure, temperature, or water-flow warnings require a stop, stay stopped. Record the exact pattern and any SmartCraft code, then book at hbw.wiki/service.
+escalationLabel: Warning still active? Put in a service request at hbwservice.ca.
+escalationBody: If oil pressure, temperature, or water-flow warnings require a stop, stay stopped. Record the exact pattern and any SmartCraft code, then book at hbwservice.ca.
 ::
 
 ---
 
-[Beeping at the dock? Book a diagnostic](https://hbw.wiki/service "cta")
+[Beeping at the dock? Book a diagnostic](https://hbwservice.ca "cta")
 
 Related: [SmartCraft alarm codes](/blog/mercury-smartcraft-alarm-codes-encyclopedia) and [Mercury service at HBW](/maintenance).
 
@@ -28751,7 +28751,7 @@ A Mercury outboard beep is the motor talking to you. Sometimes routine (a normal
 | Alarm at WOT only | At wide-open throttle | A load or high-flow cooling problem: water pressure, impeller and housing, poppet or pressure valve where fitted, intake screens, or engine height | Check water pressure at speed; possible service issue |
 | Alarm briefly after shutdown | Heat-soak | Normal if it clears as the motor cools and does not return; if it recurs, diagnose it | Wait for the motor to cool and confirm it does not come back; if it does, book a diagnostic |
 
-The exact meaning of the four-beep pattern varies by motor year and rigging, always cross-reference your operator's manual or put in a service request at hbw.wiki/service.
+The exact meaning of the four-beep pattern varies by motor year and rigging, always cross-reference your operator's manual or put in a service request at hbwservice.ca.
 
 Different Mercury motors use different beep patterns, and what four beeps means on a 2010 EFI FourStroke is not necessarily what four beeps means on a current Verado. This guide covers the common patterns you'll encounter, what they typically indicate, and how to gather the information a technician needs to help you.
 
@@ -28776,7 +28776,7 @@ Here's the quick triage:
 2. **Check the fuel-water separator.** If it's the water-in-fuel warning, the separator may need draining or replacing.
 3. **Read the SmartCraft gauge or fault code** if your motor is equipped. The gauge tells you exactly which warning is active, instead of guessing from the beep. See our [SmartCraft Alarm Codes Encyclopedia](/blog/mercury-smartcraft-alarm-codes-encyclopedia) for the full code list.
 
-Your owner's manual is the final word on what your specific motor's beep pattern means, since patterns vary by model and year. If the alarm won't clear after the checks above, don't run it hard. Put in a service request at [hbw.wiki/service](https://hbw.wiki/service) and we'll get it on the bench.
+Your owner's manual is the final word on what your specific motor's beep pattern means, since patterns vary by model and year. If the alarm won't clear after the checks above, don't run it hard. Put in a service request at [hbwservice.ca](https://hbwservice.ca) and we'll get it on the bench.
 
 ---
 
@@ -28915,7 +28915,7 @@ A sensor fault can trigger a false alarm, yes. But the correct response to a fal
 ## CTA
 
 **Alarm that came back, or one you can't explain?** 
-[Book a Mercury diagnostic at hbw.wiki/service](https://hbw.wiki/service).
+[Book a Mercury diagnostic at hbwservice.ca](https://hbwservice.ca).
 ---`,
     faqs: [
       { question: 'What does a continuous beep mean on a Mercury outboard?', answer: 'A continuous beep can indicate a serious warning such as overheating, overspeed, Guardian activation, or a sensor-related issue. Reduce throttle and diagnose safely.' },
@@ -29108,7 +29108,7 @@ Don't start the trip with a failed required light. Repair the lamp, wiring, conn
 
 If a trailer concern appears while you're preparing the boat for Mercury service, add it to the service request. We'll confirm what's within current shop scope and point you the right way. If the trailer isn't safe to tow, don't bring it down the road for an inspection.
 
-[Start a service request](https://hbw.wiki/service)
+[Start a service request](https://hbwservice.ca)
 
 ## Sources
 
@@ -29507,7 +29507,7 @@ By Harris Boat Works, Mercury Premier Dealer, family marina since 1947 on Rice L
     faqs: [
       {
         question: "Where is Harris Boat Works?",
-        answer: "HBW is at 5369 Harris Boat Works Rd in Gores Landing, Ontario, on Rice Lake. Complete the service request at hbw.wiki/service, then drop off your boat anytime, including after hours."
+        answer: "HBW is at 5369 Harris Boat Works Rd in Gores Landing, Ontario, on Rice Lake. Complete the service request at hbwservice.ca, then drop off your boat anytime, including after hours."
       },
       {
         question: "How long has Harris Boat Works operated in Gores Landing?",
@@ -29515,7 +29515,7 @@ By Harris Boat Works, Mercury Premier Dealer, family marina since 1947 on Rice L
       },
       {
         question: "What engine brands does HBW repair?",
-        answer: "HBW engine repairs are limited to Mercury and MerCruiser. Submit the serial number and requested work at hbw.wiki/service."
+        answer: "HBW engine repairs are limited to Mercury and MerCruiser. Submit the serial number and requested work at hbwservice.ca."
       },
       {
         question: "Does HBW pick up or deliver boats?",
@@ -29535,10 +29535,10 @@ By Harris Boat Works, Mercury Premier Dealer, family marina since 1947 on Rice L
       },
       {
         question: "How long is the drive from the GTA?",
-        answer: "It varies with the starting point, traffic, weather, road work, and towing conditions. Use current navigation. Complete the service request at hbw.wiki/service before dropping off your boat; drop-off is available anytime, including after hours."
+        answer: "It varies with the starting point, traffic, weather, road work, and towing conditions. Use current navigation. Complete the service request at hbwservice.ca before dropping off your boat; drop-off is available anytime, including after hours."
       },
     ],
-    content: `> **Quick answer:** The right Rice Lake marina is the one that matches how you use, service, store, and move your boat. Harris Boat Works has operated in Gores Landing since 1947 and is a Mercury Marine Premier dealer. For Mercury repower, Mercury or MerCruiser repair, and outdoor winter storage requests, start at [hbw.wiki/service](https://hbw.wiki/service). We can generally arrange boat pickup; ask about availability. HBW does not deliver boats. The full transport limits are in Harris Boat Works Scope.
+    content: `> **Quick answer:** The right Rice Lake marina is the one that matches how you use, service, store, and move your boat. Harris Boat Works has operated in Gores Landing since 1947 and is a Mercury Marine Premier dealer. For Mercury repower, Mercury or MerCruiser repair, and outdoor winter storage requests, start at [hbwservice.ca](https://hbwservice.ca). We can generally arrange boat pickup; ask about availability. HBW does not deliver boats. The full transport limits are in Harris Boat Works Scope.
 
 The physical marina is closed December 1 through April 1. There is no on-site service, installation, inspection, commissioning, or customer access during that period. Remote planning and approvals can continue, and physical work begins after reopening.
 
@@ -29566,7 +29566,7 @@ If you mainly need a nearby slip, location may lead the decision. If you need Me
 HBW's Mercury-facing services on this site are deliberately specific:
 
 - **Mercury repower and motor selection:** build a current CAD configuration in the [Mercury quote builder](/quote/motor-selection). The final installed scope depends on the exact engine, controls, steering, propeller, removal, rigging, boat condition, HST, and approved work.
-- **Engine repair:** the current service intake limits engine repairs to Mercury and MerCruiser. Submit the serial number and symptoms at [hbw.wiki/service](https://hbw.wiki/service).
+- **Engine repair:** the current service intake limits engine repairs to Mercury and MerCruiser. Submit the serial number and symptoms at [hbwservice.ca](https://hbwservice.ca).
 - **Outdoor winter storage:** HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. We also do not offer climate-controlled, summer, or year-round storage. See the [current HBW 2026–27 rate card](https://www.harrisboatworks.ca/winter-storage).
 - **Spring commissioning:** it is included for HBW winter-storage customers. As of September 2026, it is $99 for non-storage customers. Confirm the current scope when booking.
 - **Customer transport:** We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport.
@@ -29582,7 +29582,7 @@ Other marina offerings, including seasonal dockage, launch access, fuel, parts-c
 
 For service, storage, or repower work:
 
-1. Complete the service request at [hbw.wiki/service](https://hbw.wiki/service) with the boat, engine, trailer, and requested-work details.
+1. Complete the service request at [hbwservice.ca](https://hbwservice.ca) with the boat, engine, trailer, and requested-work details.
 2. Drop off your boat anytime, including after hours. You do not need a confirmed drop-off window.
 3. HBW reviews the requested scope and confirms the work plan and schedule.
 4. Review the written quote, inclusions, exclusions, and approvals before work proceeds.
@@ -29619,7 +29619,7 @@ Travel time depends on the starting point, traffic, weather, road work, and whet
 
 Before leaving:
 
-- Complete the service request at [hbw.wiki/service](https://hbw.wiki/service); drop off anytime, including after hours
+- Complete the service request at [hbwservice.ca](https://hbwservice.ca); drop off anytime, including after hours
 - Check the trailer tires, bearings, lights, coupler, safety chains, winch strap, and tie-downs
 - Confirm the tow vehicle's ratings and the boat's travel height
 - Bring the engine serial number, keys, wheel-lock key, and any requested documentation
@@ -29657,7 +29657,7 @@ Read the detailed [outdoor storage and shrinkwrap guide](/blog/outdoor-boat-stor
 
 ### Where is Harris Boat Works?
 
-HBW is at 5369 Harris Boat Works Rd in Gores Landing, Ontario, on Rice Lake. Complete the service request at hbw.wiki/service, then drop off your boat anytime, including after hours.
+HBW is at 5369 Harris Boat Works Rd in Gores Landing, Ontario, on Rice Lake. Complete the service request at hbwservice.ca, then drop off your boat anytime, including after hours.
 
 ### How long has Harris Boat Works operated in Gores Landing?
 
@@ -29665,7 +29665,7 @@ Since 1947, at its Gores Landing location on Rice Lake.
 
 ### What engine brands does HBW repair?
 
-HBW engine repairs are limited to Mercury and MerCruiser. Submit the serial number and requested work at [hbw.wiki/service](https://hbw.wiki/service).
+HBW engine repairs are limited to Mercury and MerCruiser. Submit the serial number and requested work at [hbwservice.ca](https://hbwservice.ca).
 
 ### Does HBW pick up or deliver boats?
 
@@ -29685,17 +29685,17 @@ No. Each job follows its written work order. Plan pickup or launch only after HB
 
 ### How long is the drive from the GTA?
 
-It varies with the starting point, traffic, weather, road work, and towing conditions. Use current navigation. Complete the service request at hbw.wiki/service before dropping off your boat; drop-off is available anytime, including after hours.
+It varies with the starting point, traffic, weather, road work, and towing conditions. Use current navigation. Complete the service request at hbwservice.ca before dropping off your boat; drop-off is available anytime, including after hours.
 
 ---
 
 ## Current Booking and Official Information
 
-- [HBW service intake](https://hbw.wiki/service), current repair scope and service request
+- [HBW service intake](https://hbwservice.ca), current repair scope and service request
 - [Mercury quote builder](/quote/motor-selection), current motor and configured quote path
 - [Parks Canada: Trent-Severn Waterway](https://parks.canada.ca/lhn-nhs/on/trentsevern), official waterway information
 
-Ready to plan a Mercury repower? Build a current CAD configuration in the [Mercury Repower Centre](/quote/motor-selection). For service or storage, submit the boat and engine details at [hbw.wiki/service](https://hbw.wiki/service).
+Ready to plan a Mercury repower? Build a current CAD configuration in the [Mercury Repower Centre](/quote/motor-selection). For service or storage, submit the boat and engine details at [hbwservice.ca](https://hbwservice.ca).
 `,
   },
 
@@ -29728,7 +29728,7 @@ Ready to plan a Mercury repower? Build a current CAD configuration in the [Mercu
     faqs: [
       {
         question: "Do I need an appointment before driving to HBW?",
-        answer: "No appointment is required for drop-off. Complete the service request at hbw.wiki/service with your motor and boat details, then drop off anytime, including after hours. You do not need to wait for a confirmed drop-off window."
+        answer: "No appointment is required for drop-off. Complete the service request at hbwservice.ca with your motor and boat details, then drop off anytime, including after hours. You do not need to wait for a confirmed drop-off window."
       },
       {
         question: "Is drop-off and pickup one trip?",
@@ -29760,7 +29760,7 @@ Ready to plan a Mercury repower? Build a current CAD configuration in the [Mercu
 
 *Last reviewed: 2026-08-27*
 
-> **Quick answer:** Complete [hbw.wiki/service](https://hbw.wiki/service), then drop off anytime, including after hours. We can generally arrange boat pickup; ask about availability. Leave the keys and required records, return home, and come back after HBW confirms the pickup window. HBW does not deliver boats. The full transport limits are in Boat Pickup and Transport Rules.
+> **Quick answer:** Complete [hbwservice.ca](https://hbwservice.ca), then drop off anytime, including after hours. We can generally arrange boat pickup; ask about availability. Leave the keys and required records, return home, and come back after HBW confirms the pickup window. HBW does not deliver boats. The full transport limits are in Boat Pickup and Transport Rules.
 
 HBW's shop is at 5369 Harris Boat Works Rd in Gores Landing, on the south shore of Rice Lake. We are not a Toronto mobile-service operation.
 
@@ -29770,7 +29770,7 @@ The drive-in model works when the boat owner can safely tow the boat to HBW, lea
 
 ## Step 1: Complete the Service Request
 
-Submit a request at [hbw.wiki/service](https://hbw.wiki/service) with:
+Submit a request at [hbwservice.ca](https://hbwservice.ca) with:
 
 - Boat make, model, year, and length
 - Motor model and serial number
@@ -29913,7 +29913,7 @@ Do not attempt a "limp home" procedure based on generic advice when the cause is
 ## Frequently Asked Questions
 
 **Do I need an appointment before driving to HBW?**
-No appointment is required for drop-off. Complete the service request at hbw.wiki/service with your motor and boat details, then drop off anytime, including after hours. You do not need to wait for a confirmed drop-off window.
+No appointment is required for drop-off. Complete the service request at hbwservice.ca with your motor and boat details, then drop off anytime, including after hours. You do not need to wait for a confirmed drop-off window.
 
 **Is drop-off and pickup one trip?**
 If you bring the boat yourself, drop-off and collection after service are separate trips. HBW can generally arrange inbound boat pickup; ask about availability for your boat and location. HBW does not deliver boats after service.
@@ -29939,7 +29939,7 @@ Yes. It is included for HBW winter-storage customers. Non-storage customers shou
 
 Send the boat, motor, serial number, photos, and requested work through the service request, then drop off anytime, including after hours. HBW contacts you about the work scope, approvals, and scheduling.
 
-**Service request:** [hbw.wiki/service](https://hbw.wiki/service)
+**Service request:** [hbwservice.ca](https://hbwservice.ca)
 **Phone:** 905-342-2153
 **Drop-off and pickup:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 
@@ -29998,7 +29998,7 @@ Send the boat, motor, serial number, photos, and requested work through the serv
       },
       {
         question: "How long does a Pro XS repower take at HBW?",
-        answer: "There are two clocks: motor and rigging availability, then the scheduled shop work. HBW confirms the installation window after reviewing the boat, required parts, current shop capacity, and safe test conditions. Complete the service request at hbw.wiki/service, then drop off your boat anytime, including after hours. HBW confirms the work schedule separately."
+        answer: "There are two clocks: motor and rigging availability, then the scheduled shop work. HBW confirms the installation window after reviewing the boat, required parts, current shop capacity, and safe test conditions. Complete the service request at hbwservice.ca, then drop off your boat anytime, including after hours. HBW confirms the work schedule separately."
       },
       {
         question: "Can I repower a 1990s bass boat with a modern Pro XS?",
@@ -30173,7 +30173,7 @@ Jay Harris helps run Harris Boat Works, a third-generation family marina in Gore
 - [Boat Hull Replacement vs Repower Decision](/blog/boat-hull-replacement-vs-repower-decision): when the hull is the limit, not the motor
 - [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide): current planning ranges across the lineup
 
-For a real CAD quote on a Pro XS repower, use the quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca). For service bookings and shop appointments, [hbw.wiki/service](https://hbw.wiki/service).
+For a real CAD quote on a Pro XS repower, use the quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca). For service bookings and shop appointments, [hbwservice.ca](https://hbwservice.ca).
 
 Harris Boat Works  
 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0  
@@ -30985,7 +30985,7 @@ Our [Mercury Outboard Won't Start Troubleshooting Guide](/blog/mercury-outboard-
 
 The single most common spring issue we diagnose is a weak or dead battery. Fuel-related problems, including stale fuel, ethanol separation or damaged fuel lines, and impeller failures are also frequent. Together, those patterns make up a large share of the spring calls we receive, and each starts with a short owner-side check.
 
-For full spring commissioning service where we do the run-up plus a full inspection, our intake is at hbw.wiki/service.
+For full spring commissioning service where we do the run-up plus a full inspection, our intake is at hbwservice.ca.
 
 For engine repairs, we only service Mercury and MerCruiser.
 
@@ -31175,7 +31175,7 @@ With the boat stationary and safe, photograph the display message, engine serial
 
 We diagnose Mercury outboards using the engine identity, symptom history and appropriate tests before recommending a repair. We'd rather find the cause than sell you a guess.
 
-[Start a Mercury service request](https://hbw.wiki/service)
+[Start a Mercury service request](https://hbwservice.ca)
 
 ## Sources
 
@@ -31505,7 +31505,7 @@ The single most common electrical pattern we diagnose is intermittent SmartCraft
 
 The repair: cut out the corroded connection, install proper marine-grade terminals and heat-shrink, retest. Total parts cost: $10. Labour: 30-60 minutes. Total job: quoted at our current shop rate; see /pricing-reference. Compared to what owners spend chasing the gremlins, this is cheap and final.
 
-For a structured electrical inspection or to fix a known issue, our service intake is at hbw.wiki/service.
+For a structured electrical inspection or to fix a known issue, our service intake is at hbwservice.ca.
 
 For engine repairs, we only service Mercury and MerCruiser.
 
@@ -32683,7 +32683,7 @@ Build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)** and we'l
 
 **Phone:** 905-342-2153
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
-**Service:** [hbw.wiki/service](https://hbw.wiki/service)
+**Service:** [hbwservice.ca](https://hbwservice.ca)
 
 ---
 `,
@@ -32710,7 +32710,7 @@ Build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)** and we'l
       { question: 'How long does a Mercury motor last?', answer: 'There is no honest universal hour or year promise. Service life depends on the engine family, maintenance, installation, load, corrosion, storage, use, and operating history. Use the serial-specific maintenance schedule and inspection evidence rather than a generic lifespan in the financial model.' },
       { question: 'What does it cost to fix a soft transom vs buy new?', answer: 'A transom concern needs a boat-specific diagnosis and written repair scope before it can be compared with repower or replacement. Hull material, damage extent, access, related structure, hardware, and finishing all change the work.' },
       { question: 'Will a new motor increase the resale value of my boat?', answer: 'A documented repower may improve buyer confidence and value relative to the same hull with an older motor, but the amount is boat- and market-specific. Get a current as-is value and a documented expected post-repower value before using resale in the decision.' },
-      { question: 'How long does a repower take?', answer: 'There are two clocks: motor and rigging availability, then the scheduled shop work. HBW confirms the installation window after reviewing the boat, required parts, current shop capacity, and safe test conditions. Complete the service request at hbw.wiki/service, then drop off your boat anytime, including after hours. HBW confirms the work schedule separately.' },
+      { question: 'How long does a repower take?', answer: 'There are two clocks: motor and rigging availability, then the scheduled shop work. HBW confirms the installation window after reviewing the boat, required parts, current shop capacity, and safe test conditions. Complete the service request at hbwservice.ca, then drop off your boat anytime, including after hours. HBW confirms the work schedule separately.' },
       { question: 'Can I repower a 20-year-old boat?', answer: 'Possibly. Age alone neither approves nor disqualifies the boat. Inspect the transom, floor, stringers or framing, hull, steering, fuel system, electrical system, and rigging, then compare the complete work scope with the owner\'s use and time horizon.' },
       { question: 'Does Mercury offer Canadian financing on repowers?', answer: 'Do not assume a Mercury USA financing page applies in Canada. HBW can present current Canadian lender options when available. Approval is OAC, and the lender\'s signed disclosure controls the rate, term, amortization, fees, down payment, payment amount, and any balance at the end.' },
       { question: 'What is the trade-in option?', answer: 'Ask for a current written value for the complete boat or the old motor, depending on condition and HBW\'s current acceptance. Do not treat an article range as a guaranteed credit.' },
@@ -32819,7 +32819,7 @@ Build the repower configuration at **[mercuryrepower.ca](https://www.mercuryrepo
 
 **Phone:** 905-342-2153
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
-**Service:** [hbw.wiki/service](https://hbw.wiki/service)
+**Service:** [hbwservice.ca](https://hbwservice.ca)
 
 ---
 `,
@@ -32945,7 +32945,7 @@ Start with the main motor at **[mercuryrepower.ca](https://www.mercuryrepower.ca
 
 **Phone:** 905-342-2153
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
-**Service:** [hbw.wiki/service](https://hbw.wiki/service)
+**Service:** [hbwservice.ca](https://hbwservice.ca)
 
 Family-owned since 1947, Mercury dealer since 1965, Mercury Premier Dealer.
 
@@ -33394,7 +33394,7 @@ HBW's standard repower handoff includes an on-water test on Rice Lake before pic
 **Email:** info@harrisboatworks.ca
 **Website:** harrisboatworks.ca
 **Quote builder:** mercuryrepower.ca
-**Service requests:** hbw.wiki/service
+**Service requests:** hbwservice.ca
 
 Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Current Mercury Marine Premier Dealer, with authorized Mercury service directly on Rice Lake.
 
@@ -33730,7 +33730,7 @@ If you're planning a TSW transit, the prep work matters as much as the route pla
 
 **Phone:** 905-342-2153
 **Email:** info@harrisboatworks.ca
-**Fuel dock + service:** [hbw.wiki/service](https://hbw.wiki/service)
+**Fuel dock + service:** [hbwservice.ca](https://hbwservice.ca)
 
 Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine dealer since 1965, current Premier Dealer, with authorized Mercury service directly on Rice Lake. Call to confirm parts, appointment capacity, and any available on-water help.
 
@@ -33893,7 +33893,7 @@ If you launch from Port Hope, Cobourg, or anywhere on Lake Ontario's north shore
 **Email:** info@harrisboatworks.ca
 **Main site:** harrisboatworks.ca
 **Build a Mercury quote:** mercuryrepower.ca
-**Service booking:** hbw.wiki/service
+**Service booking:** hbwservice.ca
 
 Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Family-owned since 1947, Mercury dealer since 1965, current Premier Dealer. Confirm drive time, the exact part, and service capacity before travelling from Port Hope or Cobourg.
 
@@ -34078,7 +34078,7 @@ A few notes specific to where we do business.
 **Email:** info@harrisboatworks.ca (send cowl plate photos of your Yamaha + photos of helm controls/gauges for a side-by-side quote)
 **Main site:** harrisboatworks.ca
 **Build a Mercury quote:** mercuryrepower.ca
-**Service booking:** hbw.wiki/service
+**Service booking:** hbwservice.ca
 
 Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Family-owned since 1947, Mercury dealer since 1965, current Premier Dealer, with authorized Mercury service directly on Rice Lake.
 
@@ -34711,7 +34711,7 @@ Build your quote at [mercuryrepower.ca](https://mercuryrepower.ca).
       { question: "Does who installs the motor affect my Mercury warranty?", answer: "Yes. Mercury's warranty is tied to proper installation. When a repower is done by a certified Mercury dealer using approved rigging standards, the warranty is registered correctly with no gaps. Harris Boat Works is a Mercury Premier dealer and registers every motor it rigs under your name with Mercury Marine from day one." },
       { question: "Why does a new motor have a break-in period?", answer: "Mercury FourStroke outboards have a break-in period during which you avoid running at continuous wide-open throttle so the internal components seat properly. Running a new motor hard too early can cause wear that affects performance and, in some cases, how a related warranty claim is handled. Harris Boat Works walks every customer through the break-in procedure at pickup." },
       { question: "If I sell my boat, does the Mercury warranty transfer?", answer: "Mercury warranty is tied to the motor's serial number, not the dealership where it was sold, so it follows the motor if you move or sell the boat. Any authorized Mercury dealer can perform warranty work." },
-      { question: "How do I make a Mercury warranty claim?", answer: "Contact Harris Boat Works at 905-342-2153 or submit a service request at hbw.wiki/service. They assess whether the issue falls under warranty, submit the claim to Mercury on your behalf, and perform the work. You pay nothing for covered warranty repairs. Don't attempt repairs or modifications first, unauthorized work can complicate a claim." }
+      { question: "How do I make a Mercury warranty claim?", answer: "Contact Harris Boat Works at 905-342-2153 or submit a service request at hbwservice.ca. They assess whether the issue falls under warranty, submit the claim to Mercury on your behalf, and perform the work. You pay nothing for covered warranty repairs. Don't attempt repairs or modifications first, unauthorized work can complicate a claim." }
     ],
     content: `*Last reviewed: 2026-06-06*
 
@@ -34784,7 +34784,7 @@ We walk every repower customer through the break-in procedure at pickup.
 
 If something goes wrong with your Mercury motor during the warranty period:
 
-1. Contact us at 905-342-2153 or submit a service request at [hbw.wiki/service](https://hbw.wiki/service)
+1. Contact us at 905-342-2153 or submit a service request at [hbwservice.ca](https://hbwservice.ca)
 2. We assess the issue and determine whether it falls under warranty
 3. If it does, we submit the claim to Mercury on your behalf and perform the work
 4. You pay nothing for covered warranty repairs, Mercury pays the dealer
@@ -35094,7 +35094,7 @@ Rent a pontoon first to see whether it suits how your family spends a day on the
       { question: 'Where can I launch a boat near Gores Landing for the long weekend?', answer: 'The Township of Hamilton currently lists a boat launch at Gores Landing Waterfront Park. Check the Township waterfront-parks page for current public access and posted notices before you tow there. Harris Boat Works also has a private $20 launch ramp, with ethanol-free fuel and marina amenities at the water.' },
       { question: 'Can I drink alcohol on my boat while watching fireworks on Rice Lake?', answer: 'Confirm current Ontario liquor and marine enforcement rules before you bring alcohol. A typical fishing boat or pontoon is not automatically a place where open alcohol is legal. A sober operator is required. Police marine units conduct holiday-weekend checks.' },
       { question: 'What kind of fuel does Rice Lake marinas offer, and why should I use ethanol-free?', answer: 'Harris Boat Works marina sells 89-octane ethanol-free gasoline. Ethanol-free fuel resists water absorption and phase separation, making it a better choice for marine engines, especially if your boat sits between uses or has an older outboard.' },
-      { question: 'Does Harris Boat Works service all brands of outboards?', answer: 'For engine repairs, HBW services Mercury and MerCruiser products. You can book service at hbw.wiki/service. For repower quotes, HBW specializes in Mercury outboards, and its standard handoff includes an on-water test when safe seasonal conditions allow.' },
+      { question: 'Does Harris Boat Works service all brands of outboards?', answer: 'For engine repairs, HBW services Mercury and MerCruiser products. You can book service at hbwservice.ca. For repower quotes, HBW specializes in Mercury outboards, and its standard handoff includes an on-water test when safe seasonal conditions allow.' },
     ],
     content: `> **Quick answer:** A good Canada Day run on Rice Lake starts early, before launch lines and afternoon traffic build. Check the marine forecast and current local event notices, fuel before you go, carry a fitted PFD for everyone, confirm your navigation lights, keep a sober operator, and allow extra time getting back to the ramp after dark.
 
@@ -35162,7 +35162,7 @@ If you're on the water after sunset, your navigation lights must be on and funct
 ## Ethanol-Free Fuel and Marina Amenities
 Finding ethanol-free fuel can be a challenge around Rice Lake, but Harris Boat Works stocks 89-octane ethanol-free gasoline at the marina fuel dock. Ethanol-free fuel is easier on older engines, resists phase separation, and reduces the need for frequent fuel-system maintenance, which is a real advantage when you're running your boat hard over a long weekend.
 
-For engine repairs and routine maintenance, Harris Boat Works only services Mercury and MerCruiser products. If you need a last-minute tune-up, impeller change, or a diagnostic check before the weekend, our service team takes intake at hbw.wiki/service. The shop gets busy right before a holiday, so calling ahead gives you the best shot at a quick turnaround.
+For engine repairs and routine maintenance, Harris Boat Works only services Mercury and MerCruiser products. If you need a last-minute tune-up, impeller change, or a diagnostic check before the weekend, our service team takes intake at hbwservice.ca. The shop gets busy right before a holiday, so calling ahead gives you the best shot at a quick turnaround.
 
 If you're considering repowering your boat with a new Mercury outboard, HBW's standard handoff includes an on-water test on Rice Lake before pickup when safe seasonal conditions allow. Any alternate acceptance plan is documented with the customer. You can explore outboard options and build a configuration at mercuryrepower.ca.
 
@@ -35280,10 +35280,10 @@ Treat it as an urgent warning. Follow the engine's warning response, stop when d
 
 ## When to bring it in
 
-Obtain assistance when you cannot establish that the engine may be operated safely under its manual, when the warning returns, or when you would rather not guess. Bring the notes from the warning: text or code, RPM, conditions, and any safe intake observation. Put in a service request at hbw.wiki/service and we will inspect the cooling system for that engine and serial number.
+Obtain assistance when you cannot establish that the engine may be operated safely under its manual, when the warning returns, or when you would rather not guess. Bring the notes from the warning: text or code, RPM, conditions, and any safe intake observation. Put in a service request at hbwservice.ca and we will inspect the cooling system for that engine and serial number.
 
 
-**Service:** [hbw.wiki/service](https://hbw.wiki/service)
+**Service:** [hbwservice.ca](https://hbwservice.ca)
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 **Phone:** 905-342-2153
 **Configurator:** mercuryrepower.ca
@@ -35319,7 +35319,7 @@ Obtain assistance when you cannot establish that the engine may be operated safe
 
 *Last reviewed: 2026-09-02*
 
-> **Quick answer:** A bilge pump system has three failure points: the pump, the float switch, and the wiring between them. Most "dead pump" calls come down to a stuck float switch or a corroded connector, not the motor. Test the manual override first, then the float switch, then check every connector for corrosion. Still not sure? Put in a request at [hbw.wiki/service](https://hbw.wiki/service) and we'll check all three.
+> **Quick answer:** A bilge pump system has three failure points: the pump, the float switch, and the wiring between them. Most "dead pump" calls come down to a stuck float switch or a corroded connector, not the motor. Test the manual override first, then the float switch, then check every connector for corrosion. Still not sure? Put in a request at [hbwservice.ca](https://hbwservice.ca) and we'll check all three.
 
 A bilge system needs more than a working pump motor. The automatic switch, electrical supply, connections, intake, and discharge path all need to function. Follow the installed equipment manuals when checking the system.
 
@@ -35608,7 +35608,7 @@ Identify the installed bilge pump and keep the boat's model year, hull identific
 
 HBW can diagnose the fault, check the applicable written warranty and submit an eligible claim. Legend or the component manufacturer determines whether the cause of failure and the component qualify, including any exclusions and limits. Do not assume that a pump failure guarantees a no-charge repair.
 
-Complete the [service request](https://hbw.wiki/service), then drop off anytime, including after hours. Diagnosis, work approval and claim assessment are separate from drop-off. Keep inspecting and testing the bilge system using the installed equipment manufacturer's instructions.
+Complete the [service request](https://hbwservice.ca), then drop off anytime, including after hours. Diagnosis, work approval and claim assessment are separate from drop-off. Keep inspecting and testing the bilge system using the installed equipment manufacturer's instructions.
 
 ---
 
@@ -35628,7 +35628,7 @@ We also check the manual override circuit separately from the automatic circuit.
 
 If you've tested the manual override and the pump runs, but the float switch test does nothing, or you see visible corrosion at any connector, that's a same-visit fix for us and not worth troubleshooting further on your own. Same goes for a boat that's already taken on water once. Once a bilge system has let you down one time, it's earned a real inspection, not just a part swap and a guess.
 
-Put in a request at hbw.wiki/service and we'll check the pump, the switch, and the wiring in one visit.
+Put in a request at hbwservice.ca and we'll check the pump, the switch, and the wiring in one visit.
 
 ---
 
@@ -35667,7 +35667,7 @@ Coverage depends on your boat's model year, original warranty terms, the install
 
 If your bilge pump has already let you down once, or you just want to know it'll actually work before you need it, we'll check the pump, the float switch, and every connector between them while you wait at the dock.
 
-**Service:** [hbw.wiki/service](https://hbw.wiki/service)
+**Service:** [hbwservice.ca](https://hbwservice.ca)
 **Website:** [harrisboatworks.ca](https://harrisboatworks.ca)
 **Phone:** 905-342-2153
 
@@ -35812,7 +35812,7 @@ It helps to know what's supposed to happen and what's a red flag.
 
 **Not normal, period:** Sudden power loss, rough running that doesn't clear up, repeated stalling, or any warning lights that stay on. These are not break-in quirks; they're reasons to pull the engine out of service and have us look at it.
 
-If any of those not-normal signs show up, stop using the motor as the symptom requires and submit one service request at [hbw.wiki/service](https://hbw.wiki/service).
+If any of those not-normal signs show up, stop using the motor as the symptom requires and submit one service request at [hbwservice.ca](https://hbwservice.ca).
 
 ## Rice Lake and Kawarthas Reality Check
 
@@ -35834,7 +35834,7 @@ Running a new outboard around here comes with a few realities that first-time bo
 
 Coming up on 100 hours, considering the optional early check or seeing something that doesn't feel right? A clear service request gives the shop the motor details before the boat arrives.
 
-**Service:** [hbw.wiki/service](https://hbw.wiki/service)  
+**Service:** [hbwservice.ca](https://hbwservice.ca)  
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 `,
   },
@@ -35885,7 +35885,7 @@ Coming up on 100 hours, considering the optional early check or seeing something
       },
       {
             "question": "Do I need an appointment to drop off the boat?",
-            "answer": "Complete the service request at hbw.wiki/service, then drop off anytime, including after hours. Work scheduling, repair approval and warranty assessment are separate from drop-off."
+            "answer": "Complete the service request at hbwservice.ca, then drop off anytime, including after hours. Work scheduling, repair approval and warranty assessment are separate from drop-off."
       }
 ],
     content: `*Last reviewed: 2026-09-07*
@@ -35956,7 +35956,7 @@ Factory-installed equipment and accessories fitted later may follow different cl
 
 If continued use would be unsafe or could cause further damage, stop using the affected equipment. Record warning messages only when safe. Follow the installed equipment's operating and maintenance instructions.
 
-Complete the [service request](https://hbw.wiki/service), then drop off anytime, including after hours. Work scheduling, repair approval and claim assessment are separate from drop-off.
+Complete the [service request](https://hbwservice.ca), then drop off anytime, including after hours. Work scheduling, repair approval and claim assessment are separate from drop-off.
 
 ## Download the Warranty Claim Checklist
 
@@ -35990,7 +35990,7 @@ Bring the bill of sale, HIN, model year, delivery date, motor serial number, tra
 
 **Do I need an appointment to drop off the boat?**
 
-Complete the service request at hbw.wiki/service, then drop off anytime, including after hours. Work scheduling, repair approval and warranty assessment are separate from drop-off.
+Complete the service request at hbwservice.ca, then drop off anytime, including after hours. Work scheduling, repair approval and warranty assessment are separate from drop-off.
 
 ## Sources and Review Notes
 
@@ -35998,7 +35998,7 @@ This guide explains how to verify the warranty for a specific boat. It does not 
 
 - [Legend warranty information](https://www.legendboats.com/legend-boats-6-year-wowranty/)
 - [Mercury warranty and product protection information](https://www.mercurymarine.com/ca/en/service-and-support/warranty-coverage-and-product-protection)
-- [HBW service request](https://hbw.wiki/service)
+- [HBW service request](https://hbwservice.ca)
 
 `,
   },
@@ -36243,7 +36243,7 @@ On a plate or decal on the transom bracket, usually the port side. It starts wit
 If you know what you need, look it up and order through our [Mercury parts lookup](https://www.harrisboatworks.ca/mercuryparts). If you'd rather have the whole 100-hour or 300-hour service done right in one visit, put in a service request and we'll take it from there.
 
 **Parts:** [harrisboatworks.ca/mercuryparts](https://www.harrisboatworks.ca/mercuryparts)
-**Service:** [hbw.wiki/service](https://hbw.wiki/service)
+**Service:** [hbwservice.ca](https://hbwservice.ca)
 **Phone:** 905-342-2153
 
 ---
@@ -36366,7 +36366,7 @@ Book a service visit if:
 - The motor consistently runs cool
 - You're due for the 100-hour service anyway, which is the natural time to deal with diluted oil and check the thermostat in one visit
 
-Request service at [hbw.wiki/service](https://hbw.wiki/service). We're a Mercury Premier dealer on Rice Lake, and a kicker that makes oil after a fall of walleye trolling is a routine diagnosis here, not a mystery.
+Request service at [hbwservice.ca](https://hbwservice.ca). We're a Mercury Premier dealer on Rice Lake, and a kicker that makes oil after a fall of walleye trolling is a routine diagnosis here, not a mystery.
 
 ## FAQs
 
@@ -36517,7 +36517,7 @@ Two things worth knowing:
 1. **This is about the cranking battery.** A lithium house bank for electronics is a separate conversation.
 2. **Per Mercury's bulletin, a battery that meets the spec on an approved engine doesn't void the engine warranty.** Anything off-spec, or lithium on a non-approved engine, is a different story.
 
-Not sure which side of the line your motor is on? Ask us through the [service form](https://hbw.wiki/service), or when you [build a repower quote](/quote/motor-selection). We'd rather answer it before you buy a battery than after.
+Not sure which side of the line your motor is on? Ask us through the [service form](https://hbwservice.ca), or when you [build a repower quote](/quote/motor-selection). We'd rather answer it before you buy a battery than after.
 
 ## FAQs
 
@@ -36649,7 +36649,7 @@ The generic NMEA 2000 Gateway gives the basics in your display's own engine page
 
 The phone module is a reasonable DIY job if you're comfortable behind a console. The plotter path is where it's worth a conversation: picking the right gateway for your display and engine, running the backbone cleanly, powering it properly, and confirming the display actually reads the data. It's part of a normal [repower rig-out](/blog/mercury-outboard-rigging-costs-ontario), and it's also a standalone job on boats keeping their current motor.
 
-Book it through the [service form](https://hbw.wiki/service). If you're shopping motors with this setup in mind, [build your repower quote](/quote/motor-selection) and we'll spec the rigging with it.
+Book it through the [service form](https://hbwservice.ca). If you're shopping motors with this setup in mind, [build your repower quote](/quote/motor-selection) and we'll spec the rigging with it.
 
 ## FAQs
 
@@ -36785,7 +36785,7 @@ If nothing turns up, you can plan the motor. Two things to get right:
 - **Shaft length and motor weight.** Our [outboard shaft length guide](/blog/outboard-shaft-length-guide) covers the measurement, and the [Mercury outboard weight chart](/blog/mercury-outboard-weight-chart) shows the weight difference between your old motor and the new one.
 - **Horsepower.** Stay within the manufacturer's power limit on the capacity plate. HBW recommends one Mercury model step below the plate maximum; on an older hull, that margin is kind to the transom too. Our [capacity plate guide](/blog/repower-horsepower-capacity-plate-guide) explains how to read it.
 
-Want a second set of eyes? Bring the boat by or book through the [service form](https://hbw.wiki/service), and we'll check the transom before you commit to a motor. When you're ready, [build your repower quote](/quote/motor-selection).
+Want a second set of eyes? Bring the boat by or book through the [service form](https://hbwservice.ca), and we'll check the transom before you commit to a motor. When you're ready, [build your repower quote](/quote/motor-selection).
 
 ## FAQs
 

@@ -240,7 +240,7 @@ What we handle:
 - Repowers, remanufactured drop-ins, full new engine + drive, or outboard conversions
 - [Storage](/blog/outdoor-boat-storage-shrinkwrap-rice-lake) (outdoor storage with professional shrink wrap, outdoor uncovered storage, or shrink-wrap-only service; sterndrives included)
 
-Book at **[hbw.wiki/service](https://hbw.wiki/service)**.
+Book at **[hbwservice.ca](https://hbwservice.ca)**.
 
 ---
 
@@ -280,12 +280,12 @@ Yes, though gas is more common in Ontario recreational boats. Bring the model an
 
 ## Next steps
 
-- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbw.wiki/service
+- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbwservice.ca
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
-- The only commercial next step for this article is the HBW service request at https://hbw.wiki/service.
+- The only commercial next step for this article is the HBW service request at https://hbwservice.ca.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

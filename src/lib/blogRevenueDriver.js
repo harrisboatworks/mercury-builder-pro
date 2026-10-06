@@ -80,7 +80,7 @@ export function getBlogRevenueDriver(category = '', slug = '') {
 
 export function getBlogRevenuePath(driver) {
   switch (driver) {
-    case BLOG_REVENUE_DRIVER.SERVICE: return 'https://hbw.wiki/service';
+    case BLOG_REVENUE_DRIVER.SERVICE: return 'https://hbwservice.ca';
     case BLOG_REVENUE_DRIVER.RENTALS: return 'https://harrisboatworks.ca/rentals';
     case BLOG_REVENUE_DRIVER.REPOWER: return '/quote/motor-selection';
     case BLOG_REVENUE_DRIVER.AVATOR: return '/electric/mercury-avator';

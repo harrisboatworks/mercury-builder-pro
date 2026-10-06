@@ -142,7 +142,7 @@ Rice Lake has rock shelves. A hard grounding can crack a weld without obvious le
 
 #### Found something or unsure?
 
-Bring it in for a pontoon inspection. We diagnose tube, deck, wiring, and motor on the same visit. Book at hbw.wiki/service or call (905) 342-2153.
+Bring it in for a pontoon inspection. We diagnose tube, deck, wiring, and motor on the same visit. Book at hbwservice.ca or call (905) 342-2153.
 
 ---
 
@@ -237,7 +237,7 @@ None of these require a mechanical background. They just require paying attentio
 
 If your pontoon is showing any of these signs, or if you're running an undersized motor and you're done settling for mediocre performance, we can help.
 
-**Book service:** [hbw.wiki/service](https://hbw.wiki/service)
+**Book service:** [hbwservice.ca](https://hbwservice.ca)
 
 **Get a repower quote:** [mercuryrepower.ca](https://www.mercuryrepower.ca)
 
@@ -281,12 +281,12 @@ For any outboard that sits more than a few weeks, yes. Ethanol absorbs moisture,
 
 ## Next steps
 
-- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbw.wiki/service
+- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbwservice.ca
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
-- The only commercial next step for this article is the HBW service request at https://hbw.wiki/service.
+- The only commercial next step for this article is the HBW service request at https://hbwservice.ca.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

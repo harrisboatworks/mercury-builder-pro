@@ -168,7 +168,7 @@ HBW's standard repower handoff includes an on-water setup check on Rice Lake bef
 
 For engine repairs, we only service Mercury and MerCruiser.
 
-Build a package quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), or request service at [hbw.wiki/service](https://hbw.wiki/service).
+Build a package quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), or request service at [hbwservice.ca](https://hbwservice.ca).
 
 ---
 
@@ -200,7 +200,7 @@ Often yes, prop tuning, fresh plugs, cleaned injectors or carburettor, and fresh
 ---
 
 **Ready to dial in your Mercury?** 
-Whether you want a prop check, a full service, or a quote on a new motor package: [hbw.wiki/service](https://hbw.wiki/service) is where to start. Or build a motor quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
+Whether you want a prop check, a full service, or a quote on a new motor package: [hbwservice.ca](https://hbwservice.ca) is where to start. Or build a motor quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 Harris Boat Works, Gores Landing, ON | Since 1947
 

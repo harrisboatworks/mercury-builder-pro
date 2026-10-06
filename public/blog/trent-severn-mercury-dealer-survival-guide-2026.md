@@ -157,7 +157,7 @@ If you're planning a TSW transit, the prep work matters as much as the route pla
 
 **Phone:** 905-342-2153
 **Email:** info@harrisboatworks.ca
-**Fuel dock + service:** [hbw.wiki/service](https://hbw.wiki/service)
+**Fuel dock + service:** [hbwservice.ca](https://hbwservice.ca)
 
 Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine dealer since 1965, current Premier Dealer, with authorized Mercury service directly on Rice Lake. Call to confirm parts, appointment capacity, and any available on-water help.
 

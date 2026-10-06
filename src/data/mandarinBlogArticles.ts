@@ -27,7 +27,7 @@ const allMandarinBlogArticles: BlogArticle[] = [
     category: 'mandarin',
     readTime: '8 分钟',
     keywords: ['冬储', '莱斯湖', 'GTA 华人', '收缩膜', 'Mercury', 'Harris Boat Works'],
-    content: `> **简短答案：** HBW 提供室外专业收缩膜存储、室外无遮盖存储，以及仅收缩膜服务。不提供室内或加热存储。先完成 [hbw.wiki/service](https://hbw.wiki/service)，然后随时送船，包括下班后。我们通常可以安排取船。请向我们确认您的船和地点是否可安排。HBW 不提供送船服务、不邮寄发动机、不上门/码头服务，也不推荐运输商或报价第三方运输。船厂 12 月 1 日至 4 月 1 日关闭。
+    content: `> **简短答案：** HBW 提供室外专业收缩膜存储、室外无遮盖存储，以及仅收缩膜服务。不提供室内或加热存储。先完成 [hbwservice.ca](https://hbwservice.ca)，然后随时送船，包括下班后。我们通常可以安排取船。请向我们确认您的船和地点是否可安排。HBW 不提供送船服务、不邮寄发动机、不上门/码头服务，也不推荐运输商或报价第三方运输。船厂 12 月 1 日至 4 月 1 日关闭。
 
 ## 先确认 HBW 是否适合您的船
 
@@ -50,11 +50,11 @@ HBW 适合需要室外专业收缩膜、室外无遮盖或仅收缩膜冬储，�
 
 ## 从服务请求到送船
 
-先完成 [hbw.wiki/service](https://hbw.wiki/service)，然后随时送船，包括下班后。
+先完成 [hbwservice.ca](https://hbwservice.ca)，然后随时送船，包括下班后。
 
 正常流程很简单：
 
-1. 提交 [HBW 服务请求](https://hbw.wiki/service)。
+1. 提交 [HBW 服务请求](https://hbwservice.ca)。
 2. 提供船的年份、品牌、型号、长度，发动机型号和序列号，拖车情况，以及希望完成的工作。
 3. 等 HBW 确认接受范围和书面报价。
 4. 随时把船送到 Gores Landing（包括下班后），或询问取船安排，并在关闭前取走需要的个人物品。
@@ -109,14 +109,14 @@ HBW 的 Lightspeed 记录显示，有 **2025 年 8 月至 11 月完成的 584 �
 
 ## 下一步
 
-先完成 [hbw.wiki/service](https://hbw.wiki/service)，然后随时送船，包括下班后。 提交船、发动机、拖车和所需工作的完整资料。HBW 会确认接受范围和当前书面报价。
+先完成 [hbwservice.ca](https://hbwservice.ca)，然后随时送船，包括下班后。 提交船、发动机、拖车和所需工作的完整资料。HBW 会确认接受范围和当前书面报价。
 
 **地址：** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 `,
     faqs: [
       { question: 'HBW 提供室内冬储吗？', answer: '不提供。HBW 提供室外专业收缩膜存储、室外无遮盖存储，以及仅收缩膜服务。不提供室内或加热存储。 也不提供恒温、全年或夏季存储。' },
-      { question: '如何开始冬储流程？', answer: '先完成 hbw.wiki/service，然后随时送船，包括下班后。' },
-      { question: '秋季最晚什么时候送船？', answer: '先完成 hbw.wiki/service，然后随时送船，包括下班后。 实体船厂 12 月 1 日至 4 月 1 日关闭。' },
+      { question: '如何开始冬储流程？', answer: '先完成 hbwservice.ca，然后随时送船，包括下班后。' },
+      { question: '秋季最晚什么时候送船？', answer: '先完成 hbwservice.ca，然后随时送船，包括下班后。 实体船厂 12 月 1 日至 4 月 1 日关闭。' },
       { question: 'HBW 可以从 GTA 取船或送船吗？', answer: '我们通常可以安排取船。请向我们确认您的船和地点是否可安排。 HBW 不提供送船服务、不邮寄发动机、不上门/码头服务，也不推荐运输商或报价第三方运输。' },
       { question: '冬储价格是多少？', answer: '请查看 [HBW 当前 2026–27 冬储价格表](https://www.harrisboatworks.ca/winter-storage)。船只专属书面报价取决于船长、船型、发动机、拖车、船上系统，以及批准的冬化、收缩膜、存储和维修范围。' },
       { question: '关闭期间可以取船或做维修吗？', answer: '不可以。实体船厂 12 月 1 日至 4 月 1 日关闭，期间没有现场服务、维修、安装、检查、客户进入或取船。' },
@@ -344,7 +344,7 @@ HBW 要求每位驾驶员出示有效 boat operator licence／PCOC 和带照片�
 
 ## 准备出发？
 
-如果你需要 Mercury 马达，请在 [mercuryrepower.ca](https://www.mercuryrepower.ca) 建立报价；维修请到 [hbw.wiki/service](https://hbw.wiki/service) 提交船、发动机和症状资料。
+如果你需要 Mercury 马达，请在 [mercuryrepower.ca](https://www.mercuryrepower.ca) 建立报价；维修请到 [hbwservice.ca](https://hbwservice.ca) 提交船、发动机和症状资料。
 
 如果你想租船，请浏览 [harrisboatworks.ca/rentals](https://www.harrisboatworks.ca/rentals)。
 
@@ -519,7 +519,7 @@ A：差距在保固、磨损程度和保养历史。一台有完整保养纪录�
 A：115 FourStroke：官方公布的最轻配置干重为 163 公斤（359 磅）；Command Thrust 版本为 165 公斤（363 磅）。具体重量会随轴长和配置变化，干重不等于安装后的总重量。
 
 **Q：我现在的旧发动机是90马力，换115还是150？**
-A：这取决于你的船型和使用方式。如果换发动机的同时想升级动力，建议在 hbw.wiki/service 提交服务申请，让HBW技师评估你的船和使用需求。
+A：这取决于你的船型和使用方式。如果换发动机的同时想升级动力，建议在 hbwservice.ca 提交服务申请，让HBW技师评估你的船和使用需求。
 
 ---
 
@@ -535,7 +535,7 @@ A：这取决于你的船型和使用方式。如果换发动机的同时想升�
 
 **在115和150马力之间拿不定主意？**
 到 **[mercuryrepower.ca](https://www.mercuryrepower.ca)** 看两款发动机的当前加币报价，再联络HBW确认你的船体是否合适。
-或至 **[hbw.wiki/service](https://hbw.wiki/service)** 提交咨询申请。
+或至 **[hbwservice.ca](https://hbwservice.ca)** 提交咨询申请。
 
 > **语言说明**
 > ${ZH_LANGUAGE_NOTE}
@@ -670,7 +670,7 @@ Rice Lake 属于安大略 Fisheries Management Zone 17（FMZ 17）。Walleye（�
 
 我们知道用中文查资料买船外机不容易。这篇指南是 HBW 团队用中文写给你看的，希望能帮 GTA 华人钓友把决定做得更清楚。
 
-团队日常沟通主要是英文。你可以透过 hbw.wiki/service 用中文提交需求，我们会尽力沟通清楚，必要时会请你身边会英文的家人朋友一起对话；或者你可以先在 mercuryrepower.ca 用配置器自己看加币报价，比来电更直接。
+团队日常沟通主要是英文。你可以透过 hbwservice.ca 用中文提交需求，我们会尽力沟通清楚，必要时会请你身边会英文的家人朋友一起对话；或者你可以先在 mercuryrepower.ca 用配置器自己看加币报价，比来电更直接。
 
 ### Why GTA Chinese buyers come to Rice Lake / 为什么 GTA 华人船主愿意到 Rice Lake
 
@@ -755,7 +755,7 @@ Lake Simcoe属于**FMZ 16**（渔业管理区16）。FMZ 16有特定的鱼种季
 
 ## 下一步
 
-**为Lake Simcoe或安省其他湖区选Mercury船外机？** 到 **mercuryrepower.ca** 看当前加币报价，再至 **hbw.wiki/service** 让HBW帮你确认配置是否适合你的钓鱼船。
+**为Lake Simcoe或安省其他湖区选Mercury船外机？** 到 **mercuryrepower.ca** 看当前加币报价，再至 **hbwservice.ca** 让HBW帮你确认配置是否适合你的钓鱼船。
 
 Harris Boat Works，自1947年家族经营，自1965年起为 Mercury 授权经销商，Mercury Premier Dealer，位于Rice Lake南岸Gores Landing。`,
     faqs: [
@@ -889,7 +889,7 @@ Harris Boat Works在Rice Lake服务超过七十年，了解当地水域特性，
 A：不一定。最大马力是上限，不是建议值。你应该根据实际常载人数和使用方式选择合适的马力, 有时候低于上限的马力已经足够，但对Pontoon来说通常建议接近上限以确保余裕。请联络HBW确认你的具体情况。
 
 **Q：已有的Pontoon换Mercury需要什么？**
-A：主要评估：旧发动机的拆除、新发动机的安装、操控系统（线缆、方向盘）的相容性、油路和电路的更新。这不是一个「直接换上去」的过程，需要技师评估。至 hbw.wiki/service 提交申请。
+A：主要评估：旧发动机的拆除、新发动机的安装、操控系统（线缆、方向盘）的相容性、油路和电路的更新。这不是一个「直接换上去」的过程，需要技师评估。至 hbwservice.ca 提交申请。
 
 **Q：Pontoon上装Verado（特殊订购）值得吗？**
 A：对绝大多数家庭 pontoon，FourStroke + Command Thrust 是更务实、更省钱的起点。Verado（特殊订购）在 pontoon 上属于小众选择 - 静音和精致感是真的，但价格溢价对一般家庭用途不划算。HBW 不会日常库存 Verado（特殊订购），可以按需特别订货。如果你的 pontoon 是高级型号、常在更大水域使用、或你对静音有特别要求，可以打电话直接聊。
@@ -914,7 +914,7 @@ A：Pontoon是最适合带小孩的船型之一, 平台式设计稳定，小孩�
 ## 行动呼吁
 
 **不确定Pontoon该配90HP、115HP还是更高？**
-到 **[mercuryrepower.ca](https://www.mercuryrepower.ca)** 建立Mercury报价，再至 **[hbw.wiki/service](https://hbw.wiki/service)** 让HBW帮你确认配置是否适合你的Pontoon和使用情境。
+到 **[mercuryrepower.ca](https://www.mercuryrepower.ca)** 建立Mercury报价，再至 **[hbwservice.ca](https://hbwservice.ca)** 让HBW帮你确认配置是否适合你的Pontoon和使用情境。
 
 Harris Boat Works，自1947年起，Mercury Marine Premier Dealer，位于Rice Lake南岸Gores Landing。
 ---`,
@@ -1216,7 +1216,7 @@ A：是的，9.9HP在技术上属于10HP以下，通常符合10HP限制的规定
 A：Mercury有ProKicker系列，专门为Kicker用途设计，具有特定的Trolling和低速控制功能。具体型号和可用配置请查Mercury当前产品资料，或联络HBW确认当前库存。
 
 **Q：9.9至20HP的服务保养，HBW可以做吗？**
-A：是的。HBW作为Mercury Marine Premier Dealer，提供所有Mercury船外机的保养服务，包括小马力机型。请至 hbw.wiki/service 提交服务申请。
+A：是的。HBW作为Mercury Marine Premier Dealer，提供所有Mercury船外机的保养服务，包括小马力机型。请至 hbwservice.ca 提交服务申请。
 
 **Q：如果买了20HP发现不够用，可以换成更大的吗？**
 A：可以更换，但必须在船体Capacity Plate允许的范围内。建议一开始选择时就根据你的最大使用情境决定，避免二次更换的成本。
@@ -1236,7 +1236,7 @@ A：可以更换，但必须在船体Capacity Plate允许的范围内。建议�
 ## 行动呼吁
 
 **想买Mercury 9.9至20HP？**
-到 **[mercuryrepower.ca](https://www.mercuryrepower.ca)** 看当前加币报价，确认轴长和控制方式后，至 **[hbw.wiki/service](https://hbw.wiki/service)** 提交申请让HBW确认配置是否适合你的船。
+到 **[mercuryrepower.ca](https://www.mercuryrepower.ca)** 看当前加币报价，确认轴长和控制方式后，至 **[hbwservice.ca](https://hbwservice.ca)** 提交申请让HBW确认配置是否适合你的船。
 
 Harris Boat Works，自1947年起，Mercury Marine Premier Dealer，位于Rice Lake南岸Gores Landing。
 ---`,
@@ -1387,7 +1387,7 @@ A：大多数40HP以上的Mercury提供电动启动选项，但具体配置依�
 A：取决于你原来的发动机型号和系统配置。电启动需要电池连接，Remote操控需要相容的控制线。让HBW在Repower评估时一起确认。
 
 **Q：二手40至60HP Mercury值得买吗？**
-A：取决于使用历史和保养状态。如果有完整的服务纪录，某些保养良好的二手Mercury确实值得考虑。请至 hbw.wiki/service 提交评估申请，让HBW技师确认状态。
+A：取决于使用历史和保养状态。如果有完整的服务纪录，某些保养良好的二手Mercury确实值得考虑。请至 hbwservice.ca 提交评估申请，让HBW技师确认状态。
 
 ---
 
@@ -1404,7 +1404,7 @@ A：取决于使用历史和保养状态。如果有完整的服务纪录，某�
 ## 行动呼吁
 
 **在40、50、60HP之间拿不定主意？**
-到 **[mercuryrepower.ca](https://www.mercuryrepower.ca)** 比较当前加币报价，再至 **[hbw.wiki/service](https://hbw.wiki/service)** 让HBW帮你确认哪个配置最适合你的铝船和使用方式。
+到 **[mercuryrepower.ca](https://www.mercuryrepower.ca)** 比较当前加币报价，再至 **[hbwservice.ca](https://hbwservice.ca)** 让HBW帮你确认哪个配置最适合你的铝船和使用方式。
 
 > **语言说明**
 > ${ZH_LANGUAGE_NOTE}
@@ -1983,7 +1983,7 @@ whenInDoubt: 一半华人家庭买了钓鱼船后才发现, 周末其实更想�
     keywords: ['mercury repower gta', 'gta 华人 mercury', 'mercury 换机 安省', 'gta chinese boater mercury', 'rice lake mercury repower'],
     content: `### 服务与换机：先提交资料，再确认具体工作
 
-1. **维修保养：**先填写[服务申请](https://hbw.wiki/service)，说明船只、发动机和需要处理的问题。
+1. **维修保养：**先填写[服务申请](https://hbwservice.ca)，说明船只、发动机和需要处理的问题。
 2. **更换发动机：**使用[Mercury 报价工具](/quote/motor-selection)说明您的需求，HBW 会根据船只情况确认配置和工作范围。
 3. **送船：**完成服务申请后，您可以随时送船，包括营业时间以外；无需等待确认送船时段。
 4. **确认与交接：**HBW 会与您联系，确认所需资料、工作授权和安排。交接时核对已完成的工作和相关文件。
@@ -2175,14 +2175,14 @@ A：视时间段和库存情况而定，旺季等待时间可能较长。建议�
 ## 行动呼吁
 
 → **先看透明加元报价：[mercuryrepower.ca](https://www.mercuryrepower.ca)**
-→ 提交服务请求：[hbw.wiki/service](https://hbw.wiki/service)
+→ 提交服务请求：[hbwservice.ca](https://hbwservice.ca)
 → 电话：905-342-2153
 → 地址：5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 `,
     faqs: [
       { question: 'Repower 之后保固怎么算？', answer: '通过 HBW Premier 授权经销商购买的 Mercury 新机，享有完整 Mercury 原厂保固。保固期从首次零售售出日或首次投入使用日（以先到者为准）起算，并由授权经销商向 Mercury 登记，详细条款请在购买时确认。' },
       { question: '旧机可以 trade-in 吗？', answer: '可以。HBW 接受旧机 trade-in，折抵金额视机型、年份、运作状况而定。建立报价时可同时提交旧机资讯，我们会提供估价。' },
-      { question: '换机需要多久？', answer: '视库存和安装排程而定，旺季（春季）等待时间可能较长。建议提早计划，并通过 https://hbw.wiki/service 提交服务请求。' },
+      { question: '换机需要多久？', answer: '视库存和安装排程而定，旺季（春季）等待时间可能较长。建议提早计划，并通过 https://hbwservice.ca 提交服务请求。' },
       { question: '换机之后需要换螺旋桨吗？', answer: '视情况而定。如果旧螺旋桨匹配新机，可以沿用；如果不匹配，HBW 会在报价中包含适合的螺旋桨选项。' },
     ],
   },
@@ -2213,7 +2213,7 @@ A：视时间段和库存情况而定，旺季等待时间可能较长。建议�
     ],
     content: `## 快速答案
 
-Mercury 和 MerCruiser 的保养周期取决于具体机型、序列号、使用时间和发动机小时数；常见节点包括适用机型的首次保养、年度或 100 小时保养，以及部分 300 小时或 3 年项目。请以对应的 Mercury 手册为准。Harris Boat Works（HBW）是 Rice Lake 上自 1947 年持续家族经营的 **Mercury Marine Premier 经销商**，**发动机维修只限 Mercury 和 MerCruiser**。团队使用英语服务，没有中文母语的销售或翻译；欢迎带会英语的亲友同来或使用翻译软件。服务、冬储和春季工作均按先到先办处理。先完成 [hbw.wiki/service](https://hbw.wiki/service)，然后随时送船，包括下班后。
+Mercury 和 MerCruiser 的保养周期取决于具体机型、序列号、使用时间和发动机小时数；常见节点包括适用机型的首次保养、年度或 100 小时保养，以及部分 300 小时或 3 年项目。请以对应的 Mercury 手册为准。Harris Boat Works（HBW）是 Rice Lake 上自 1947 年持续家族经营的 **Mercury Marine Premier 经销商**，**发动机维修只限 Mercury 和 MerCruiser**。团队使用英语服务，没有中文母语的销售或翻译；欢迎带会英语的亲友同来或使用翻译软件。服务、冬储和春季工作均按先到先办处理。先完成 [hbwservice.ca](https://hbwservice.ca)，然后随时送船，包括下班后。
 
 ---
 
@@ -2279,7 +2279,7 @@ Lower unit gearcase oil 颜色变成奶白色就说明进水了，**必须立即
 | 服务类型 | 保养、诊断、维修、保修工作、冬储、春季开机 | 内燃柴油船机、Mercury 赛车系列（个别评估） |
 | 操作员卡 / 钓鱼证 | 不适用 | 不销售；请到 ontario.ca 办理 |
 
-如果你的船是 Mercury 或 Mercruiser，欢迎通过 [https://hbw.wiki/service](https://hbw.wiki/service) 提交服务请求。如果是其他品牌，请直接找对应授权点，避免来回奔波。
+如果你的船是 Mercury 或 Mercruiser，欢迎通过 [https://hbwservice.ca](https://hbwservice.ca) 提交服务请求。如果是其他品牌，请直接找对应授权点，避免来回奔波。
 
 ---
 
@@ -2316,7 +2316,7 @@ SmartCraft 报警、过热、漏油、燃油味或明显动力下降都需要按
 
 ### 5. 等到关闭后才安排冬化
 
-HBW 不需要客户提前数月抢位置。先完成 [hbw.wiki/service](https://hbw.wiki/service)，然后随时送船，包括下班后。 实体船厂 12 月 1 日至 4 月 1 日关闭。
+HBW 不需要客户提前数月抢位置。先完成 [hbwservice.ca](https://hbwservice.ca)，然后随时送船，包括下班后。 实体船厂 12 月 1 日至 4 月 1 日关闭。
 
 ---
 
@@ -2330,7 +2330,7 @@ HBW 提供室外专业收缩膜存储、室外无遮盖存储，以及仅收缩�
 
 ### 如何送船
 
-HBW 按**先到先办**处理冬化和冬储工作，不需要提前数月预留场地。先完成 [hbw.wiki/service](https://hbw.wiki/service)，然后随时送船，包括下班后。 实体船厂 12 月 1 日至 4 月 1 日关闭。
+HBW 按**先到先办**处理冬化和冬储工作，不需要提前数月预留场地。先完成 [hbwservice.ca](https://hbwservice.ca)，然后随时送船，包括下班后。 实体船厂 12 月 1 日至 4 月 1 日关闭。
 
 ### 自己做行不行？
 
@@ -2362,7 +2362,7 @@ HBW 按**先到先办**处理冬化和冬储工作，不需要提前数月预留
 
 - **欢迎带会英语的亲友同来**，或使用手机翻译软件，我们会耐心沟通、尽力配合
 - **提前用邮件写清楚**：症状、机型、序列号、想要的服务，可以中英文混合，我们能看懂大意
-- **服务请求模板**：[https://hbw.wiki/service](https://hbw.wiki/service) 上提交时同样可以中英文混合
+- **服务请求模板**：[https://hbwservice.ca](https://hbwservice.ca) 上提交时同样可以中英文混合
 - **服务报价邮件**：完工前的修理报价我们会写清楚每一项，避免"做了我才告诉你"
 
 我们不能承诺中文服务，但我们会认真对待每一位华人客户。
@@ -2371,7 +2371,7 @@ HBW 按**先到先办**处理冬化和冬储工作，不需要提前数月预留
 
 ## 预约流程
 
-最快的方式是 [https://hbw.wiki/service](https://hbw.wiki/service) 在线提交。提交时建议包含：
+最快的方式是 [https://hbwservice.ca](https://hbwservice.ca) 在线提交。提交时建议包含：
 
 1. **车主姓名 + 联系方式**（电话 + 邮箱）
 2. **发动机型号 + 序列号**（机壳上的金属铭牌）
@@ -2384,7 +2384,7 @@ HBW 按收到顺序处理请求。如果有漏油、过热、SmartCraft 严重�
 
 ## 下一步
 
-Mercury 或 MerCruiser 需要保养、诊断或维修时，到 [hbw.wiki/service](https://hbw.wiki/service) 提交机型、序列号、小时数、症状和需要的工作。发动机维修只限 Mercury 和 MerCruiser。
+Mercury 或 MerCruiser 需要保养、诊断或维修时，到 [hbwservice.ca](https://hbwservice.ca) 提交机型、序列号、小时数、症状和需要的工作。发动机维修只限 Mercury 和 MerCruiser。
 
 如果维修报价接近换机成本，可以同时在 [mercuryrepower.ca](https://www.mercuryrepower.ca) 建立当前 Mercury 配置，再比较两份完整数字。
 
@@ -2394,7 +2394,7 @@ Mercury 或 MerCruiser 需要保养、诊断或维修时，到 [hbw.wiki/service
       { question: 'HBW 给 Yamaha 或 Honda 发动机做维修吗？', answer: '不做。HBW 的发动机维修只限 Mercury 和 MerCruiser。其他品牌请找对应品牌的授权服务点。HBW 可在接受书面范围后为其他品牌的船提供冬化或室外存储。' },
       { question: '我的 Mercury 还在保修期，HBW 能处理吗？', answer: 'HBW 是 Mercury Marine Premier Dealer，可以检查序列号记录并处理符合 Mercury 当前条款的保修申请。是否承保取决于具体故障、记录、使用情况和 Mercury 的决定。' },
       { question: 'Mercury 的保养间隔都是 20、100 和 300 小时吗？', answer: '不是通用公式。部分机型有这些常见节点，但实际项目和间隔取决于发动机家族、序列号、时间、小时数和使用条件。以对应的 Mercury 手册为准。' },
-      { question: '什么时候提交秋季服务请求？', answer: '先完成 hbw.wiki/service，然后随时送船，包括下班后。 实体船厂 12 月 1 日至 4 月 1 日关闭。' },
+      { question: '什么时候提交秋季服务请求？', answer: '先完成 hbwservice.ca，然后随时送船，包括下班后。 实体船厂 12 月 1 日至 4 月 1 日关闭。' },
       { question: 'HBW 提供什么冬储？', answer: 'HBW 提供室外专业收缩膜存储、室外无遮盖存储，以及仅收缩膜服务。不提供室内或加热存储。 我们通常可以安排取船。请向我们确认您的船和地点是否可安排。 最终范围以当前书面报价和工单为准。' },
       { question: '发动机坏了，修还是换新的更划算？', answer: '先取得故障诊断和书面维修报价，再与 mercuryrepower.ca 的完整新机配置比较。机龄只是一个因素，零件可用性、以前的维修、船体状况和完整安装成本同样重要。' },
       { question: 'HBW 能用中文沟通吗？', answer: ZH_LANGUAGE_NOTE },
@@ -2754,7 +2754,7 @@ Rice Lake 属于安省 Fisheries Management Zone（FMZ），具体的鱼种季�
 2. **如果船符合条件，办理 Pleasure Craft Licence（PCL 船只牌照）**：在线申请并支付当前服务费（2026-09-05 为 $24.41 CAD）。
 3. **出发钓鱼前确认自己的年龄和居住身份规则**：需要购买时，在 Ontario.ca 办好 Outdoors Card + Fishing Licence。
 4. **每年春天复查最新钓鱼规则**：Ontario Recreational Fishing Regulations Summary。
-5. **如需维修服务**：HBW 只为 Mercury 和 Mercruiser 发动机提供维修服务，请通过 [https://hbw.wiki/service](https://hbw.wiki/service) 提交请求。
+5. **如需维修服务**：HBW 只为 Mercury 和 Mercruiser 发动机提供维修服务，请通过 [https://hbwservice.ca](https://hbwservice.ca) 提交请求。
 
 水上安全比省下几十加元更重要。证齐了，PFD 穿好了，再出门。
 
@@ -3005,7 +3005,7 @@ HBW 的在线报价工具 [mercuryrepower.ca](https://www.mercuryrepower.ca) 在
 1. **先租一次：** 看 [试租指南](/blog/zh/gta-chinese-rice-lake-day-trip-plan)，带家人来 Rice Lake 体验一天，确定船型方向。
 2. **生成在线报价：** 在 [mercuryrepower.ca](https://www.mercuryrepower.ca) 选好船型和发动机配置，看到完整价格和贷款选项。
 3. **来店看船：** 通过英文邮件联系我们确认营业时间；欢迎带会英语的亲友同来或使用翻译软件。确认营业时间后再出发。
-4. **如果是已有船想换发动机：** 可以提交 [服务请求](https://hbw.wiki/service)，我们安排评估。
+4. **如果是已有船想换发动机：** 可以提交 [服务请求](https://hbwservice.ca)，我们安排评估。
 
 Harris Boat Works 自 1947 年起一直由 Harris 家族在 Rice Lake 经营。欢迎你带家人过来看看。
 
@@ -3018,8 +3018,8 @@ Harris Boat Works 自 1947 年起一直由 Harris 家族在 Rice Lake 经营。�
       { question: '我没有船的驾驶经验，HBW 会教吗？', answer: '会。第一次买船的家庭，我们在交付时会安排基础操作讲解，包括启动、靠泊、加油、保养注意事项。但要熟练还是需要自己多开几次，建议先在 Rice Lake 内的开阔水面练习。' },
       { question: '加拿大需要什么船驾照？怎么考？', answer: '加拿大操作动力休闲船需要合资格的操作能力证明，适用于所有用发动机驱动的休闲船只（包括电动推进器）。PCOC 是最常见的证明，但不是唯一被接受的证明。考试是在线进行，全部选择题，通过率较高。请通过加拿大政府认可的考试机构报名，证书终身有效。' },
       { question: 'HBW 能用中文沟通吗？', answer: ZH_LANGUAGE_NOTE },
-      { question: '冬季船怎么存放？HBW 提供存储吗？', answer: 'HBW 提供室外专业收缩膜存储、室外无遮盖存储，以及仅收缩膜服务。不提供室内或加热存储。 冬化、收缩膜、室外存储和维修以当前书面报价为准。我们通常可以安排取船。请向我们确认您的船和地点是否可安排。 先完成 hbw.wiki/service，然后随时送船，包括下班后。' },
-      { question: '提车后，发动机保养在哪里做？', answer: '可以直接在 HBW 做。我们只为 Mercury 和 Mercruiser 发动机提供维修服务。常规保养（换机油、火花塞、齿轮油）和季节性服务请通过 https://hbw.wiki/service 提交请求。' },
+      { question: '冬季船怎么存放？HBW 提供存储吗？', answer: 'HBW 提供室外专业收缩膜存储、室外无遮盖存储，以及仅收缩膜服务。不提供室内或加热存储。 冬化、收缩膜、室外存储和维修以当前书面报价为准。我们通常可以安排取船。请向我们确认您的船和地点是否可安排。 先完成 hbwservice.ca，然后随时送船，包括下班后。' },
+      { question: '提车后，发动机保养在哪里做？', answer: '可以直接在 HBW 做。我们只为 Mercury 和 Mercruiser 发动机提供维修服务。常规保养（换机油、火花塞、齿轮油）和季节性服务请通过 https://hbwservice.ca 提交请求。' },
     ],
   },
 
@@ -3204,7 +3204,7 @@ Pro XS 不是“普通 FourStroke 加贴纸”。Mercury Canada 把 Pro XS 列�
 
 ## 下一步
 
-想给现有船换 Mercury 船外机或比较换装发动机方案，可以到 MercuryRepower.ca 先看透明报价。需要保养维修，请使用 [hbw.wiki/service](https://hbw.wiki/service)。
+想给现有船换 Mercury 船外机或比较换装发动机方案，可以到 MercuryRepower.ca 先看透明报价。需要保养维修，请使用 [hbwservice.ca](https://hbwservice.ca)。
 
 ## 常见问题
 
@@ -3311,7 +3311,7 @@ Mercury 船外机不是一次性交易。买完以后，你还有磨合、保养
 
 ## 下一步
 
-想比较 Mercury 船外机或换装发动机报价，可以到 MercuryRepower.ca 先看透明报价。需要 Mercury/Mercruiser 保养维修，请提交 [hbw.wiki/service](https://hbw.wiki/service)。
+想比较 Mercury 船外机或换装发动机报价，可以到 MercuryRepower.ca 先看透明报价。需要 Mercury/Mercruiser 保养维修，请提交 [hbwservice.ca](https://hbwservice.ca)。
 
 ## 常见问题
 
@@ -3337,7 +3337,7 @@ HBW Mercury 页面说明换装发动机价格包括拆除与安装、新 Mercury
 
 ### HBW 的报价下一步在哪里？
 
-Mercury 发动机和换装发动机报价从 MercuryRepower.ca 开始。保养维修请求使用 [hbw.wiki/service](https://hbw.wiki/service)。
+Mercury 发动机和换装发动机报价从 MercuryRepower.ca 开始。保养维修请求使用 [hbwservice.ca](https://hbwservice.ca)。
 
 > 相关指南：[安省华人养船成本中文指南](/blog/zh/boat-ownership-cost-ontario-chinese)。
 
@@ -3584,7 +3584,7 @@ HBW 自 1947 年起就在 Gores Landing、莱斯湖经营家族码头，是 Merc
 
 ## 快速答案
 
-如果 Mercury 船外机无法启动、警报持续响、疑似过热、明显没力、震动、闻到燃油味或冷却水流异常，请先停止硬试，记录症状，再通过 https://hbw.wiki/service 提交服务请求。HBW 位于 Rice Lake 旁，是 Mercury 授权的 repower 与服务枢纽，提供 Mercury 船外机销售、专业安装、厂家认证技师维护、湖测和保修登记等一条龙支持。
+如果 Mercury 船外机无法启动、警报持续响、疑似过热、明显没力、震动、闻到燃油味或冷却水流异常，请先停止硬试，记录症状，再通过 https://hbwservice.ca 提交服务请求。HBW 位于 Rice Lake 旁，是 Mercury 授权的 repower 与服务枢纽，提供 Mercury 船外机销售、专业安装、厂家认证技师维护、湖测和保修登记等一条龙支持。
 
 过度试探才是成本最高的"排查"：反复强行启动只会扩损。船外机不是老电视，拍两下不会更好。
 
@@ -3630,7 +3630,7 @@ Warning beep 的意义不是"提醒你之后有空查一下"。它是在告诉�
 - 减速或停止
 - 观察水流、温度、仪表和声音
 - 记录警报出现时的速度、负载、天气、油量和操作
-- 如果不确定，请通过 hbw.wiki/service 提交 Mercury 服务请求
+- 如果不确定，请通过 hbwservice.ca 提交 Mercury 服务请求
 
 现代船外机的问题常常不只是马达本体，还可能和线束（rigging）、操控线束、仪表或螺旋桨设置有关。Mercury repower 与安装会涉及完整的线束、操控线缆、仪表更换、螺旋桨匹配、湖测和保修登记，这也是为什么单凭一个症状很难下结论。
 
@@ -3663,7 +3663,7 @@ HBW 的 repower 评估会根据船体、载荷和你在 Rice Lake 的实际使�
 
 这不是说每个故障都该换马达。很多问题值得修。但如果老马达每年都来一次新惊喜，repower 就不只是"买新玩具"，而是买回整个夏天的可靠性。
 
-HBW 自 1947 年起就在 Gores Landing、Rice Lake 经营家族 marina，自 1965 年起成为 Mercury 授权经销商，现为 Mercury Marine Premier dealer 与 Legend Boats dealer 双认证。如果你的 Mercury 或 Mercruiser 有启动、警报、过热、没力、震动或燃油味问题，请提交 [HBW service request](https://hbw.wiki/service)。如果你怀疑旧马达已经不值得继续修，到 MercuryRepower.ca 看 repower 方向。
+HBW 自 1947 年起就在 Gores Landing、Rice Lake 经营家族 marina，自 1965 年起成为 Mercury 授权经销商，现为 Mercury Marine Premier dealer 与 Legend Boats dealer 双认证。如果你的 Mercury 或 Mercruiser 有启动、警报、过热、没力、震动或燃油味问题，请提交 [HBW service request](https://hbwservice.ca)。如果你怀疑旧马达已经不值得继续修，到 MercuryRepower.ca 看 repower 方向。
 
 ## FAQ
 
@@ -3673,7 +3673,7 @@ HBW 自 1947 年起就在 Gores Landing、Rice Lake 经营家族 marina，自 19
 
 **Mercury outboard warning beep 可以继续开吗？**
 
-不要默认可以。先减速或停止，记录情况。如果不确定，请通过 hbw.wiki/service 提交 Mercury 服务请求。警报不是背景音乐。
+不要默认可以。先减速或停止，记录情况。如果不确定，请通过 hbwservice.ca 提交 Mercury 服务请求。警报不是背景音乐。
 
 **Mercury 船外机过热怎么办？**
 
@@ -3960,7 +3960,7 @@ HBW 网站说明提供租船、船只销售、保养维修、冬化保养、存�
     category: 'mandarin',
     readTime: '9 分钟',
     keywords: ['冬季保养', '冬储', '安省', '中文', 'winterization', 'Mercury'],
-    content: `> **简短答案：** 安省船只在结冰天气和长期停放前，需要按具体发动机、船上水系统和电瓶方案做好冬化。发动机冬化、收缩膜和室外存船不是同一个项目，最终范围以书面工单为准。HBW 提供室外专业收缩膜存储、室外无遮盖存储，以及仅收缩膜服务。不提供室内或加热存储。 不需要提前几个月抢位置。先完成 [hbw.wiki/service](https://hbw.wiki/service)，然后随时送船，包括下班后。 实体船厂从 12 月 1 日至 4 月 1 日关闭。
+    content: `> **简短答案：** 安省船只在结冰天气和长期停放前，需要按具体发动机、船上水系统和电瓶方案做好冬化。发动机冬化、收缩膜和室外存船不是同一个项目，最终范围以书面工单为准。HBW 提供室外专业收缩膜存储、室外无遮盖存储，以及仅收缩膜服务。不提供室内或加热存储。 不需要提前几个月抢位置。先完成 [hbwservice.ca](https://hbwservice.ca)，然后随时送船，包括下班后。 实体船厂从 12 月 1 日至 4 月 1 日关闭。
 
 ## 为什么安省冬天必须冬化
 
@@ -3986,7 +3986,7 @@ HBW 网站说明提供租船、船只销售、保养维修、冬化保养、存�
 
 ## 什么时候送船？
 
-先完成 [hbw.wiki/service](https://hbw.wiki/service)，然后随时送船，包括下班后。
+先完成 [hbwservice.ca](https://hbwservice.ca)，然后随时送船，包括下班后。
 
 | 状态 | 建议 |
 |---|---|
@@ -4012,7 +4012,7 @@ HBW 不提供室内或加热存储。
 - 我们通常可以安排取船。请向我们确认您的船和地点是否可安排。HBW 不提供送船服务、不邮寄发动机、不上门/码头服务，也不推荐运输商或报价第三方运输。
 - 服务范围：冬化、收缩膜、室外存储和维修是不同工单项目，以当前书面报价为准
 - 春季检查：HBW 冬储客户包含春季检查；非冬储客户按书面报价和已批准的工单执行
-- 办理方式：先完成 [hbw.wiki/service](https://hbw.wiki/service)，然后随时送船，包括下班后。
+- 办理方式：先完成 [hbwservice.ca](https://hbwservice.ca)，然后随时送船，包括下班后。
 
 ### 来自 HBW 工单的数据
 
@@ -4042,7 +4042,7 @@ quote: ${ZH_LANGUAGE_NOTE}
 最常见的问题不是某一个万能步骤，而是没有按具体发动机和船上系统的手册逐项确认。先用序列号找到对应手册，再核对燃油、冷却、齿轮油、电瓶和船上水系统。
 
 **Q：什么时候可以送船？**
-先完成 hbw.wiki/service，然后随时送船，包括下班后。 实体船厂 12 月 1 日至 4 月 1 日关闭。
+先完成 hbwservice.ca，然后随时送船，包括下班后。 实体船厂 12 月 1 日至 4 月 1 日关闭。
 
 ## 官方参考
 
@@ -4056,9 +4056,9 @@ quote: ${ZH_LANGUAGE_NOTE}
 `,
     faqs: [
       { question: '安省 船 冬季保养 中文：HBW 提供室内冬储吗？', answer: '不提供。HBW 提供室外专业收缩膜存储、室外无遮盖存储，以及仅收缩膜服务。不提供室内或加热存储。' },
-      { question: '船 冬储 安省：什么时候必须送过去？', answer: '不需要提前数月预订。先完成 hbw.wiki/service，然后随时送船，包括下班后。 实体船厂 12 月 1 日至 4 月 1 日关闭。' },
+      { question: '船 冬储 安省：什么时候必须送过去？', answer: '不需要提前数月预订。先完成 hbwservice.ca，然后随时送船，包括下班后。 实体船厂 12 月 1 日至 4 月 1 日关闭。' },
       { question: '自己做冬化最容易漏的是哪一步？', answer: '不要寻找一个适用于所有船的万能步骤。应按发动机序列号找到对应手册，并逐项核对燃油、冷却、齿轮油、电瓶和船上水系统。' },
-      { question: '冬化大概多少钱？', answer: '价格取决于发动机、船上系统和书面工单范围。先完成 hbw.wiki/service，然后随时送船，包括下班后。 以当前书面报价为准。' },
+      { question: '冬化大概多少钱？', answer: '价格取决于发动机、船上系统和书面工单范围。先完成 hbwservice.ca，然后随时送船，包括下班后。 以当前书面报价为准。' },
       { question: 'HBW 接受非 Mercury 引擎的冬储吗？', answer: 'HBW 可以在书面确认范围后处理其他品牌船只的冬化或室外冬储；发动机维修只限 Mercury 和 MerCruiser。' },
       { question: 'HBW 有中文服务吗？', answer: ZH_LANGUAGE_NOTE },
     ],
@@ -4352,7 +4352,7 @@ ${ZH_LANGUAGE_NOTE}
 - 透明加元价格，无需讨价还价
 - 从 GTA 经 401 + 115 高速约 60 到 90 分钟车程
 
-[把序列号和油泵照片发给我们](https://hbw.wiki/service)
+[把序列号和油泵照片发给我们](https://hbwservice.ca)
 
 ---
 
@@ -4433,7 +4433,7 @@ Mercury 同时说明了原因：发动机和燃油系统里的金属、橡胶和
 
 1. **不要启动发动机。**
 2. **记下来：** 加了多少升、哪个档位、哪家加油站、哪一天。
-3. **把这些信息和序列号一起发到 [hbw.wiki/service](https://hbw.wiki/service)**，或者打 905-342-2153。
+3. **把这些信息和序列号一起发到 [hbwservice.ca](https://hbwservice.ca)**，或者打 905-342-2153。
 
 在这箱油还没被泵进整个燃油系统之前处理，比事后拆喷油嘴便宜得多。
 
@@ -4597,7 +4597,7 @@ Mercury 自己的燃油护理产品把三件事分开了：
 
 **不确定你那台 Mercury 该加什么油？**
 
-把**发动机序列号**和**泵上燃油标签的照片**一起发到 **[hbw.wiki/service](https://hbw.wiki/service)**，我们帮你确认这台机器的准确燃油规格，而不是让你在「普通还是高级」之间猜。
+把**发动机序列号**和**泵上燃油标签的照片**一起发到 **[hbwservice.ca](https://hbwservice.ca)**，我们帮你确认这台机器的准确燃油规格，而不是让你在「普通还是高级」之间猜。
 
 Harris Boat Works 位于 Rice Lake 南岸 Gores Landing。
 

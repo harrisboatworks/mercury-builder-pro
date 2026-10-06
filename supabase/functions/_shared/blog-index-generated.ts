@@ -233,7 +233,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "How much does a gearcase pressure test cost?",
-        "a": "The test pressurizes and vacuum-checks the case to identify which seal leaks; it's quoted work, confirmed when you book. It's the step that turns 'there's water in it somewhere' into a precise, priced repair instead of a guess. Start at hbw.wiki/service."
+        "a": "The test pressurizes and vacuum-checks the case to identify which seal leaks; it's quoted work, confirmed when you book. It's the step that turns 'there's water in it somewhere' into a precise, priced repair instead of a guess. Start at hbwservice.ca."
       },
       {
         "q": "What causes gearcase seals to fail?",
@@ -289,7 +289,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "How much does a Mercury 100-hour service cost in Ontario?",
-        "a": "There is no honest one-price answer across the Mercury range. Cost depends on the exact engine, its serial-number-specific maintenance schedule, the parts due, its condition, and whether winterization is added. Submit the motor details at hbw.wiki/service, then drop the boat off anytime you want, including after hours."
+        "a": "There is no honest one-price answer across the Mercury range. Cost depends on the exact engine, its serial-number-specific maintenance schedule, the parts due, its condition, and whether winterization is added. Submit the motor details at hbwservice.ca, then drop the boat off anytime you want, including after hours."
       },
       {
         "q": "Is the 100-hour service the same as winterization?",
@@ -1215,7 +1215,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "How long does a Kawartha repower take?",
-        "a": "There are two clocks: motor and rigging availability, then the scheduled shop work. HBW confirms the applicable installation window after reviewing the boat, required parts, and current shop capacity. Complete the service request at hbw.wiki/service, then drop off your boat anytime, including after hours. HBW confirms…"
+        "a": "There are two clocks: motor and rigging availability, then the scheduled shop work. HBW confirms the applicable installation window after reviewing the boat, required parts, and current shop capacity. Complete the service request at hbwservice.ca, then drop off your boat anytime, including after hours. HBW confirms th…"
       }
     ]
   },
@@ -1666,7 +1666,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Do I really need winterization every year?",
-        "a": "Yes. Even a mild Ontario winter is a long storage period for fuel, gearcase lubricant, the battery, corrosion protection, and cooling-water drainage. Follow the exact engine procedure before layup; request the current HBW scope and price at hbw.wiki/service."
+        "a": "Yes. Even a mild Ontario winter is a long storage period for fuel, gearcase lubricant, the battery, corrosion protection, and cooling-water drainage. Follow the exact engine procedure before layup; request the current HBW scope and price at hbwservice.ca."
       },
       {
         "q": "Is fall service cheaper than spring service?",
@@ -1891,7 +1891,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "How long does the whole process take?",
-        "a": "Timing depends on the exact motor and rigging availability, the approved work, findings, current shop capacity, and safe test conditions. Complete the service request at hbw.wiki/service, then drop off your boat anytime, including after hours. HBW confirms the work plan and schedule separately."
+        "a": "Timing depends on the exact motor and rigging availability, the approved work, findings, current shop capacity, and safe test conditions. Complete the service request at hbwservice.ca, then drop off your boat anytime, including after hours. HBW confirms the work plan and schedule separately."
       },
       {
         "q": "What deposit is required?",
@@ -2348,7 +2348,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "What does boat winterization cost at Harris Boat Works?",
-        "a": "HBW publishes its current 2026–27 winterization and storage rates on the HBW rate card. The boat-specific quote depends on the exact engine and serial number, maintenance due, condition found, onboard systems, engine count, and any approved shrinkwrap or outdoor-storage scope. Submit the details at hbw.wiki/service."
+        "a": "HBW publishes its current 2026–27 winterization and storage rates on the HBW rate card. The boat-specific quote depends on the exact engine and serial number, maintenance due, condition found, onboard systems, engine count, and any approved shrinkwrap or outdoor-storage scope. Submit the details at hbwservice.ca."
       },
       {
         "q": "What does a proper Mercury winterization include?",
@@ -2715,7 +2715,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "How long does a Mercury repower take?",
-        "a": "There are two clocks: motor and rigging availability, then the scheduled shop work. HBW confirms the applicable installation window after reviewing the boat, required parts, and current shop capacity. Complete the service request at hbw.wiki/service, then drop off your boat anytime, including after hours. HBW confirms…"
+        "a": "There are two clocks: motor and rigging availability, then the scheduled shop work. HBW confirms the applicable installation window after reviewing the boat, required parts, and current shop capacity. Complete the service request at hbwservice.ca, then drop off your boat anytime, including after hours. HBW confirms th…"
       },
       {
         "q": "Do I need to bring my boat to HBW for the walk-around?",
@@ -4254,7 +4254,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "Can HBW be my primary Mercury dealer if I live in Whitby?",
-        "a": "Yes. Whitby owners can book eligible Mercury and MerCruiser work at HBW in Gores Landing. Complete the service request at hbw.wiki/service, then drop off your boat anytime, including after hours; boat pickup may be arranged, subject to confirmation. HBW does not deliver boats after service, so customers arrange collec…"
+        "a": "Yes. Whitby owners can book eligible Mercury and MerCruiser work at HBW in Gores Landing. Complete the service request at hbwservice.ca, then drop off your boat anytime, including after hours; boat pickup may be arranged, subject to confirmation. HBW does not deliver boats after service, so customers arrange collectio…"
       },
       {
         "q": "Do you serve Brooklin and north Whitby?",
@@ -4440,7 +4440,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "Where is Harris Boat Works?",
-        "a": "HBW is at 5369 Harris Boat Works Rd in Gores Landing, Ontario, on Rice Lake. Complete the service request at hbw.wiki/service, then drop off your boat anytime, including after hours."
+        "a": "HBW is at 5369 Harris Boat Works Rd in Gores Landing, Ontario, on Rice Lake. Complete the service request at hbwservice.ca, then drop off your boat anytime, including after hours."
       },
       {
         "q": "How long has Harris Boat Works operated in Gores Landing?",
@@ -4448,7 +4448,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "What engine brands does HBW repair?",
-        "a": "HBW engine repairs are limited to Mercury and MerCruiser. Submit the serial number and requested work at hbw.wiki/service."
+        "a": "HBW engine repairs are limited to Mercury and MerCruiser. Submit the serial number and requested work at hbwservice.ca."
       },
       {
         "q": "Does HBW pick up or deliver boats?",
@@ -4475,7 +4475,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "Do I need an appointment before driving to HBW?",
-        "a": "No appointment is required for drop-off. Complete the service request at hbw.wiki/service with your motor and boat details, then drop off anytime, including after hours. You do not need to wait for a confirmed drop-off window."
+        "a": "No appointment is required for drop-off. Complete the service request at hbwservice.ca with your motor and boat details, then drop off anytime, including after hours. You do not need to wait for a confirmed drop-off window."
       },
       {
         "q": "Is drop-off and pickup one trip?",

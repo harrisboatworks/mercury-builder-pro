@@ -189,7 +189,7 @@ Jay Harris helps run Harris Boat Works, a third-generation family marina in Gore
 - [Boat Hull Replacement vs Repower Decision](/blog/boat-hull-replacement-vs-repower-decision): when the hull is the limit, not the motor
 - [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide): current planning ranges across the lineup
 
-For a real CAD quote on a Pro XS repower, use the quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca). For service bookings and shop appointments, [hbw.wiki/service](https://hbw.wiki/service).
+For a real CAD quote on a Pro XS repower, use the quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca). For service bookings and shop appointments, [hbwservice.ca](https://hbwservice.ca).
 
 Harris Boat Works  
 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0  
@@ -217,7 +217,7 @@ Pro XS is a performance motor for planing V-hull bass and angler boats. Command 
 
 ### How long does a Pro XS repower take at HBW?
 
-There are two clocks: motor and rigging availability, then the scheduled shop work. HBW confirms the installation window after reviewing the boat, required parts, current shop capacity, and safe test conditions. Complete the service request at hbw.wiki/service, then drop off your boat anytime, including after hours. HBW confirms the work schedule separately.
+There are two clocks: motor and rigging availability, then the scheduled shop work. HBW confirms the installation window after reviewing the boat, required parts, current shop capacity, and safe test conditions. Complete the service request at hbwservice.ca, then drop off your boat anytime, including after hours. HBW confirms the work schedule separately.
 
 ### Can I repower a 1990s bass boat with a modern Pro XS?
 

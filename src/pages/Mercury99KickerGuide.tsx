@@ -181,8 +181,8 @@ export default function Mercury99KickerGuide() {
           <>
             Build an itemized quote in about three minutes, pick the variant, add rigging and prop,
             see live CAD pricing, no email wall. Existing 9.9 needing service? Submit a{' '}
-            <a href="https://hbw.wiki/service" className="text-repower-gold hover:underline">
-              service request at hbw.wiki/service
+            <a href="https://hbwservice.ca" className="text-repower-gold hover:underline">
+              service request at hbwservice.ca
             </a>
             .
           </>

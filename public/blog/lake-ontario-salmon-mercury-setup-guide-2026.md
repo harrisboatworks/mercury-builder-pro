@@ -162,7 +162,7 @@ If you launch from Port Hope, Cobourg, or anywhere on Lake Ontario's north shore
 **Email:** info@harrisboatworks.ca
 **Main site:** harrisboatworks.ca
 **Build a Mercury quote:** mercuryrepower.ca
-**Service booking:** hbw.wiki/service
+**Service booking:** hbwservice.ca
 
 Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Family-owned since 1947, Mercury dealer since 1965, current Premier Dealer. Confirm drive time, the exact part, and service capacity before travelling from Port Hope or Cobourg.
 

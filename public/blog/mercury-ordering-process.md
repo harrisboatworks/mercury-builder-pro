@@ -222,7 +222,7 @@ Harris Boat Works has been a Mercury dealer since 1965.
 
 ### How long does the whole process take?
 
-Timing depends on the exact motor and rigging availability, the approved work, findings, current shop capacity, and safe test conditions. Complete the service request at hbw.wiki/service, then drop off your boat anytime, including after hours. HBW confirms the work plan and schedule separately.
+Timing depends on the exact motor and rigging availability, the approved work, findings, current shop capacity, and safe test conditions. Complete the service request at hbwservice.ca, then drop off your boat anytime, including after hours. HBW confirms the work plan and schedule separately.
 
 ### What deposit is required?
 

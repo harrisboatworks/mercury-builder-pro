@@ -71,7 +71,7 @@ Shut down. Continuing to run a Mercury with an active overheat alarm risks major
 
 #### Alarm still on? Don't push it.
 
-Cooling-system failures get expensive fast. Tow in or trailer the boat, then book a Mercury diagnostic at hbw.wiki/service.
+Cooling-system failures get expensive fast. Tow in or trailer the boat, then book a Mercury diagnostic at hbwservice.ca.
 
 ---
 
@@ -176,13 +176,13 @@ After any overheating event, even one that resolved itself on the water, have th
 
 For engine repairs, we only service Mercury and MerCruiser.
 
-If you suspect a cooling system problem, book before your next run: [hbw.wiki/service](https://hbw.wiki/service).
+If you suspect a cooling system problem, book before your next run: [hbwservice.ca](https://hbwservice.ca).
 
 ---
 
 ## Ready to Book a Cooling-System Inspection?
 
-After any overheating event, get it checked before the next run. [Book a Mercury diagnostic at hbw.wiki/service](https://hbw.wiki/service).
+After any overheating event, get it checked before the next run. [Book a Mercury diagnostic at hbwservice.ca](https://hbwservice.ca).
 ---
 
 ## FAQs
@@ -209,7 +209,7 @@ Not directly. Overheating is a cooling-side problem. Follow the model-specific w
 
 ### My boat is on the water and I'm panicking. What do I do?
 
-Reduce throttle, get the boat into a safe position, and follow the warning instructions on the display or in the serial-specific Mercury owner's manual. If the warning persists, the telltale is weak or absent, or the instructions say to stop, shut down and arrange a tow. Then submit a service request at hbw.wiki/service.
+Reduce throttle, get the boat into a safe position, and follow the warning instructions on the display or in the serial-specific Mercury owner's manual. If the warning persists, the telltale is weak or absent, or the instructions say to stop, shut down and arrange a tow. Then submit a service request at hbwservice.ca.
 
 ## Related guides
 
@@ -221,7 +221,7 @@ Reduce throttle, get the boat into a safe position, and follow the warning instr
 
 ## Next steps
 
-- If the owner can bring the boat to HBW in Gores Landing, Ontario, submit a service request: https://hbw.wiki/service
+- If the owner can bring the boat to HBW in Gores Landing, Ontario, submit a service request: https://hbwservice.ca
 - Include the engine serial number, symptoms, clear photos, and any recent service or rigging changes.
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
@@ -229,7 +229,7 @@ Reduce throttle, get the boat into a safe position, and follow the warning instr
 
 - Start with the safety limits and stop conditions stated in the article and the exact equipment manual.
 - HBW diagnoses faults in person at its Gores Landing shop. Do not offer phone or remote diagnosis.
-- Route to https://hbw.wiki/service only when the owner can bring the boat to HBW.
+- Route to https://hbwservice.ca only when the owner can bring the boat to HBW.
 - A symptom is not a confirmed root cause. Preserve the article's test order and escalation limits.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.

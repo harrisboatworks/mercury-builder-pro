@@ -37,7 +37,7 @@ revenue_driver: service
 
 A Mercury that overheats at idle but runs fine at speed is a classic symptom of a worn water pump impeller. The impeller can generate enough vacuum at high RPM to move cooling water adequately, but loses suction at low RPM. It needs replacement, and the longer you wait, the more likely you are to turn a routine impeller job into a powerhead job. Other causes: blocked cooling intake, thermostat issue, or a sensor fault. Check the tell-tale first.
 
-For engine repairs, we only service Mercury and MerCruiser. Book at [hbw.wiki/service](https://hbw.wiki/service).
+For engine repairs, we only service Mercury and MerCruiser. Book at [hbwservice.ca](https://hbwservice.ca).
 
 ---
 
@@ -152,7 +152,7 @@ After any overheating event, have the motor inspected before the next run. Heat 
 
 For engine repairs, we only service Mercury and MerCruiser.
 
-Book at [hbw.wiki/service](https://hbw.wiki/service).
+Book at [hbwservice.ca](https://hbwservice.ca).
 
 ---
 
@@ -165,7 +165,7 @@ Follow the engine manual before inspecting or clearing intake screens. Do not pr
 ---
 
 **Overheating at idle needs to be looked at before your next run.** 
-[Book a Mercury diagnostic at hbw.wiki/service](https://hbw.wiki/service).
+[Book a Mercury diagnostic at hbwservice.ca](https://hbwservice.ca).
 ---
 
 ## FAQs
@@ -200,7 +200,7 @@ Depends on duration and how you responded. If you reduced load, followed the dis
 
 ## Next steps
 
-- If the owner can bring the boat to HBW in Gores Landing, Ontario, submit a service request: https://hbw.wiki/service
+- If the owner can bring the boat to HBW in Gores Landing, Ontario, submit a service request: https://hbwservice.ca
 - Include the engine serial number, symptoms, clear photos, and any recent service or rigging changes.
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
@@ -208,7 +208,7 @@ Depends on duration and how you responded. If you reduced load, followed the dis
 
 - Start with the safety limits and stop conditions stated in the article and the exact equipment manual.
 - HBW diagnoses faults in person at its Gores Landing shop. Do not offer phone or remote diagnosis.
-- Route to https://hbw.wiki/service only when the owner can bring the boat to HBW.
+- Route to https://hbwservice.ca only when the owner can bring the boat to HBW.
 - A symptom is not a confirmed root cause. Preserve the article's test order and escalation limits.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.

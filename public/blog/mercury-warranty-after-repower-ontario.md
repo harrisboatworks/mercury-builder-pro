@@ -98,7 +98,7 @@ We walk every repower customer through the break-in procedure at pickup.
 
 If something goes wrong with your Mercury motor during the warranty period:
 
-1. Contact us at 905-342-2153 or submit a service request at [hbw.wiki/service](https://hbw.wiki/service)
+1. Contact us at 905-342-2153 or submit a service request at [hbwservice.ca](https://hbwservice.ca)
 2. We assess the issue and determine whether it falls under warranty
 3. If it does, we submit the claim to Mercury on your behalf and perform the work
 4. You pay nothing for covered warranty repairs, Mercury pays the dealer
@@ -142,7 +142,7 @@ Mercury warranty is tied to the motor's serial number, not the dealership where 
 
 ### How do I make a Mercury warranty claim?
 
-Contact Harris Boat Works at 905-342-2153 or submit a service request at hbw.wiki/service. They assess whether the issue falls under warranty, submit the claim to Mercury on your behalf, and perform the work. You pay nothing for covered warranty repairs. Don't attempt repairs or modifications first, unauthorized work can complicate a claim.
+Contact Harris Boat Works at 905-342-2153 or submit a service request at hbwservice.ca. They assess whether the issue falls under warranty, submit the claim to Mercury on your behalf, and perform the work. You pay nothing for covered warranty repairs. Don't attempt repairs or modifications first, unauthorized work can complicate a claim.
 
 ## Next steps
 

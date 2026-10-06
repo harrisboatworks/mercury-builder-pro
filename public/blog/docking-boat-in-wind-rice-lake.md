@@ -223,7 +223,7 @@ Most Rice Lake boaters are running a single outboard on a pontoon, bowrider, or 
 
 ---
 
-Thinking about a digital throttle upgrade or a Command Thrust gearcase? Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), or request service at [hbw.wiki/service](https://hbw.wiki/service).
+Thinking about a digital throttle upgrade or a Command Thrust gearcase? Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), or request service at [hbwservice.ca](https://hbwservice.ca).
 
 No pressure. But if you want to stop having that heart-rate moment every time you come back into Bewdley or Gores Landing with a southwest breeze on your beam, it's worth knowing your options.
 

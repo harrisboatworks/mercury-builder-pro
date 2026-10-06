@@ -16,7 +16,7 @@ function targetsFor(root: HTMLElement): Map<Element, string> {
   bind('aside[aria-label="Quick answer"]', 'quick_answer', 1);
   bind('[data-diagnostic-flow]', 'diagnostic_flow', 1);
   bind('[data-diagnostic-escalation]', 'diagnostic_escalation', 1);
-  bind('a[href="https://hbw.wiki/service"]', 'service', 8);
+  bind('a[href="https://hbwservice.ca"]', 'service', 8);
   root.querySelectorAll('img').forEach((img, index) => {
     if (index < 8) targets.set(img.closest('button') || img, `image_${index + 1}`);
   });

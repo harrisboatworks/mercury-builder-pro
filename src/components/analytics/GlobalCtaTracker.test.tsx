@@ -125,7 +125,7 @@ describe('GlobalCtaTracker customer handoffs', () => {
         >
           Get directions
         </a>
-        <a href="https://hbw.wiki/service" onClick={(event) => event.preventDefault()}>
+        <a href="https://hbwservice.ca" onClick={(event) => event.preventDefault()}>
           Request service
         </a>
         <a href="/contact" onClick={(event) => event.preventDefault()}>

@@ -223,7 +223,7 @@ HBW recorded **584 completed winterization records from August through November 
 If you know what you need, look it up and order through our [Mercury parts lookup](https://www.harrisboatworks.ca/mercuryparts). If you'd rather have the whole 100-hour or 300-hour service done right in one visit, put in a service request and we'll take it from there.
 
 **Parts:** [harrisboatworks.ca/mercuryparts](https://www.harrisboatworks.ca/mercuryparts)
-**Service:** [hbw.wiki/service](https://hbw.wiki/service)
+**Service:** [hbwservice.ca](https://hbwservice.ca)
 **Phone:** 905-342-2153
 
 ---
@@ -274,12 +274,12 @@ On a plate or decal on the transom bracket, usually the port side. It starts wit
 
 ## Next steps
 
-- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbw.wiki/service
+- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbwservice.ca
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
-- The only commercial next step for this article is the HBW service request at https://hbw.wiki/service.
+- The only commercial next step for this article is the HBW service request at https://hbwservice.ca.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

@@ -187,14 +187,14 @@ We've been a Mercury dealer in Ontario since 1965. Every new Mercury we sell get
 
 If you bought a Mercury elsewhere and want warranty work done in our shop, we can do that too, bring your purchase paperwork and we'll get the Mercury claim moving.
 
-Service requests: [hbw.wiki/service](https://hbw.wiki/service).
+Service requests: [hbwservice.ca](https://hbwservice.ca).
 
 New Mercury motor quotes: [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 ---
 
 **Phone:** 905-342-2153
-**Service requests:** [hbw.wiki/service](https://hbw.wiki/service)
+**Service requests:** [hbwservice.ca](https://hbwservice.ca)
 **New Mercury quotes:** [mercuryrepower.ca](https://www.mercuryrepower.ca)
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 ---
@@ -246,12 +246,12 @@ No. Mercury's current guidance permits gasoline containing up to 10% ethanol. Fu
 
 ## Next steps
 
-- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbw.wiki/service
+- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbwservice.ca
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
-- The only commercial next step for this article is the HBW service request at https://hbw.wiki/service.
+- The only commercial next step for this article is the HBW service request at https://hbwservice.ca.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

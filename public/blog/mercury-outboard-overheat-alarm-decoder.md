@@ -136,9 +136,9 @@ A motor with an overheat alarm is one of the easiest things to diagnose if you b
 - **Recent maintenance history.** When was the impeller last replaced? Thermostat? Last full service?
 - **Motor model, year, and serial number.** This is on the transom bracket or under the cowling.
 
-A clean photo of the display and a sentence about when it happens will save us 30 minutes of diagnostic time. For engine repairs, we only service Mercury and MerCruiser. Book at [hbw.wiki/service](https://hbw.wiki/service).
+A clean photo of the display and a sentence about when it happens will save us 30 minutes of diagnostic time. For engine repairs, we only service Mercury and MerCruiser. Book at [hbwservice.ca](https://hbwservice.ca).
 
-Alarm that came back, or one you can't explain on the water? Book a diagnostic at [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Mercury Premier dealer in Gores Landing on Rice Lake. Mercury dealer since 1965, family marina since 1947. For engine repairs, we only service Mercury and MerCruiser.
+Alarm that came back, or one you can't explain on the water? Book a diagnostic at [hbwservice.ca](https://hbwservice.ca). Harris Boat Works, Mercury Premier dealer in Gores Landing on Rice Lake. Mercury dealer since 1965, family marina since 1947. For engine repairs, we only service Mercury and MerCruiser.
 
 Phone: (905) 342-2153
 
@@ -184,7 +184,7 @@ No. Alarm behaviour varies by motor model, year, and whether the boat is SmartCr
 
 ## Next steps
 
-- If the owner can bring the boat to HBW in Gores Landing, Ontario, submit a service request: https://hbw.wiki/service
+- If the owner can bring the boat to HBW in Gores Landing, Ontario, submit a service request: https://hbwservice.ca
 - Include the exact code, engine serial number, hours, and a photo of the full display.
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
@@ -192,7 +192,7 @@ No. Alarm behaviour varies by motor model, year, and whether the boat is SmartCr
 
 - Treat fault-code meaning as engine-family, calibration, and serial-number specific.
 - HBW diagnoses faults in person at its Gores Landing shop. Do not offer phone or remote diagnosis.
-- Route to https://hbw.wiki/service only when the owner can bring the boat to HBW.
+- Route to https://hbwservice.ca only when the owner can bring the boat to HBW.
 - Safety warnings and the exact Mercury owner or service publication take priority over generic code descriptions.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.

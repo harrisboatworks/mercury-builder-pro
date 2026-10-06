@@ -77,7 +77,7 @@ There is no responsible fixed price from oil colour alone. The scope depends on 
 - **Seal repair:** labour changes with the failed seal, the gearcase design, corrosion, and whether a shaft or bearing carrier must be removed.
 - **Internal damage:** water-contaminated lubricant, metal particles, or freeze damage can move the job beyond seals into bearings, gears, or gearcase replacement.
 
-The useful cost answer comes after the gearcase is identified and tested. Submit the serial number and symptoms at [hbw.wiki/service](https://hbw.wiki/service); HBW confirms the scope before repair work is approved.
+The useful cost answer comes after the gearcase is identified and tested. Submit the serial number and symptoms at [hbwservice.ca](https://hbwservice.ca); HBW confirms the scope before repair work is approved.
 
 ---
 
@@ -123,7 +123,7 @@ Every gearcase drain at our shop gets the same basic inspection: lubricant colou
 
 If the boat can come to HBW in Gores Landing and the oil looked wrong, or nobody has looked in over a year, that is the whole booking reason.
 
-**Service requests:** [hbw.wiki/service](https://hbw.wiki/service)
+**Service requests:** [hbwservice.ca](https://hbwservice.ca)
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 
 HBW does not diagnose gearcase faults remotely. Include the engine serial number, current hours and a photo of the drained lubricant with the request so the shop has a useful starting record.
@@ -153,7 +153,7 @@ No. Refilling does not identify or repair the source of water intrusion. Mercury
 
 ### How much does a gearcase pressure test cost?
 
-The test pressurizes and vacuum-checks the case to identify which seal leaks; it's quoted work, confirmed when you book. It's the step that turns 'there's water in it somewhere' into a precise, priced repair instead of a guess. Start at hbw.wiki/service.
+The test pressurizes and vacuum-checks the case to identify which seal leaks; it's quoted work, confirmed when you book. It's the step that turns 'there's water in it somewhere' into a precise, priced repair instead of a guess. Start at hbwservice.ca.
 
 ### What causes gearcase seals to fail?
 
@@ -165,7 +165,7 @@ Follow the schedule for your exact engine and serial number. Many Mercury FourSt
 
 ### Is milky oil covered by warranty?
 
-Sometimes, depending on cause, age, and coverage; seal failures from fishing line or impact generally aren't defects. Bring it in, we'll read the situation honestly and handle any warranty conversation with Mercury for you. Start at hbw.wiki/service.
+Sometimes, depending on cause, age, and coverage; seal failures from fishing line or impact generally aren't defects. Bring it in, we'll read the situation honestly and handle any warranty conversation with Mercury for you. Start at hbwservice.ca.
 
 ## Related guides
 
@@ -177,7 +177,7 @@ Sometimes, depending on cause, age, and coverage; seal failures from fishing lin
 
 ## Next steps
 
-- If the owner can bring the boat to HBW in Gores Landing, Ontario, submit a service request: https://hbw.wiki/service
+- If the owner can bring the boat to HBW in Gores Landing, Ontario, submit a service request: https://hbwservice.ca
 - Include the engine serial number, symptoms, clear photos, and any recent service or rigging changes.
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
@@ -185,7 +185,7 @@ Sometimes, depending on cause, age, and coverage; seal failures from fishing lin
 
 - Start with the safety limits and stop conditions stated in the article and the exact equipment manual.
 - HBW diagnoses faults in person at its Gores Landing shop. Do not offer phone or remote diagnosis.
-- Route to https://hbw.wiki/service only when the owner can bring the boat to HBW.
+- Route to https://hbwservice.ca only when the owner can bring the boat to HBW.
 - A symptom is not a confirmed root cause. Preserve the article's test order and escalation limits.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.

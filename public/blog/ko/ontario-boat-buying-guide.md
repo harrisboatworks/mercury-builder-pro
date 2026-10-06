@@ -161,7 +161,7 @@ HBW에서 이 서비스를 전문으로 제공하며, [mercuryrepower.ca](https:
 [harrisboatworks.ca](https://harrisboatworks.ca)
 
 **서비스 예약:**
-[hbw.wiki/service](https://hbw.wiki/service)
+[hbwservice.ca](https://hbwservice.ca)
 
 **전화:** 905-342-2153
 **주소:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0

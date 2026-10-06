@@ -159,9 +159,9 @@ Harris Boat Works está ubicado en Gores Landing, Ontario, a orillas de Rice Lak
 - Acceso a partes Mercury con prioridad de concesionario Premier
 - Técnicos certificados Mercury
 
-Nuestro equipo responde en inglés. No ofrecemos servicio en español, pero los compradores hispanohablantes son bienvenidos: puedes contactarnos por el configurador en línea, el formulario de servicio en hbw.wiki/service, o por teléfono al **905-342-2153**, y te responderemos en inglés. El configurador en mercuryrepower.ca es visual y muestra los precios claramente en dólares canadienses, así que es fácil de usar en cualquier idioma.
+Nuestro equipo responde en inglés. No ofrecemos servicio en español, pero los compradores hispanohablantes son bienvenidos: puedes contactarnos por el configurador en línea, el formulario de servicio en hbwservice.ca, o por teléfono al **905-342-2153**, y te responderemos en inglés. El configurador en mercuryrepower.ca es visual y muestra los precios claramente en dólares canadienses, así que es fácil de usar en cualquier idioma.
 
-Si tienes preguntas específicas, envíalas por el formulario de hbw.wiki/service. Te responderemos en inglés; si lo prefieres, usa Google Translate o pídele ayuda a un familiar bilingüe.
+Si tienes preguntas específicas, envíalas por el formulario de hbwservice.ca. Te responderemos en inglés; si lo prefieres, usa Google Translate o pídele ayuda a un familiar bilingüe.
 
 ---
 
@@ -170,7 +170,7 @@ Si tienes preguntas específicas, envíalas por el formulario de hbw.wiki/servic
 **¿Listo para configurar tu motor o explorar opciones?**
 Usa el configurador en **mercuryrepower.ca**, precios reales, sin llamadas telefónicas, sin presión.
 
-¿Preguntas sobre inventario o servicio? Escríbenos en **hbw.wiki/service** (puedes escribirnos en español; te responderemos en inglés) o llama al **905-342-2153**.
+¿Preguntas sobre inventario o servicio? Escríbenos en **hbwservice.ca** (puedes escribirnos en español; te responderemos en inglés) o llama al **905-342-2153**.
 
 Harris Boat Works
 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0

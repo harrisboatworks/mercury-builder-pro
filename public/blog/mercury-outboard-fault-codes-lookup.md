@@ -31,7 +31,7 @@ revenue_driver: service
 
 > **Quick answer:** Search the complete code, then match the result to the engine family. Single-number alerts may come from Mercury's legacy VesselView list. A two-part code such as **621-5** is a Universal Fault Code that must be checked against the correct family publication. This lookup separates the current covered V6/V8 table from the mixed-product legacy list.
 
-If the display shows low oil pressure, oil-pump failure, an active overheat, fuel leakage or overflow, loss of steering, or a gear that does not match the control command, skip the lookup and follow the stop-now guidance below. If the table does not resolve the alert, take the photo and serial number to your local authorized Mercury dealer. If you can bring the boat to HBW in Gores Landing, submit that record at [hbw.wiki/service](https://hbw.wiki/service) so we can prepare for an in-shop diagnosis. HBW does not diagnose fault codes remotely.
+If the display shows low oil pressure, oil-pump failure, an active overheat, fuel leakage or overflow, loss of steering, or a gear that does not match the control command, skip the lookup and follow the stop-now guidance below. If the table does not resolve the alert, take the photo and serial number to your local authorized Mercury dealer. If you can bring the boat to HBW in Gores Landing, submit that record at [hbwservice.ca](https://hbwservice.ca) so we can prepare for an in-shop diagnosis. HBW does not diagnose fault codes remotely.
 
 This is the code-number companion to our [Mercury beep and alarm guide](/blog/mercury-outboard-beeping-codes-guide). The horn tells you the alert class on supported systems; the screen identifies the actual fault. Both strategies vary by engine family and year.
 
@@ -395,7 +395,7 @@ If you can bring the boat to HBW in Gores Landing, collect the following before 
 6. Any recent battery, rigging, control, fuel-system, or service work.
 7. Whether Guardian limited power, water flow changed, steering changed, or indicated gear disagreed with the control.
 
-Do not clear or repeatedly restart just to make the message disappear. Preserve the evidence. For an in-shop diagnosis at HBW, submit the record at [hbw.wiki/service](https://hbw.wiki/service) and bring the boat to Gores Landing.
+Do not clear or repeatedly restart just to make the message disappear. Preserve the evidence. For an in-shop diagnosis at HBW, submit the record at [hbwservice.ca](https://hbwservice.ca) and bring the boat to Gores Landing.
 
 ## From the Shop
 
@@ -452,7 +452,7 @@ Use Mercury Marine’s owner-manual lookup with the engine serial number. The se
 
 ### What should I send with a Mercury service request?
 
-If you can bring the boat to HBW in Gores Landing, send a clear photo of the complete code and message, the affected engine, serial number, engine hours, horn pattern, whether the alert is active or history, and what the boat was doing when it appeared. At hbw.wiki/service, choose “Various Boat / Motor Repairs (See Details),” put the record in Details, and use the photo upload for the display image. HBW does not diagnose fault codes remotely. If the boat cannot come here, take the same record to your local authorized Mercury dealer.
+If you can bring the boat to HBW in Gores Landing, send a clear photo of the complete code and message, the affected engine, serial number, engine hours, horn pattern, whether the alert is active or history, and what the boat was doing when it appeared. At hbwservice.ca, choose “Various Boat / Motor Repairs (See Details),” put the record in Details, and use the photo upload for the display image. HBW does not diagnose fault codes remotely. If the boat cannot come here, take the same record to your local authorized Mercury dealer.
 
 ## Related guides
 
@@ -464,7 +464,7 @@ If you can bring the boat to HBW in Gores Landing, send a clear photo of the com
 
 ## Next steps
 
-- If the owner can bring the boat to HBW in Gores Landing, Ontario, submit a service request: https://hbw.wiki/service
+- If the owner can bring the boat to HBW in Gores Landing, Ontario, submit a service request: https://hbwservice.ca
 - Include the exact code, engine serial number, hours, and a photo of the full display.
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
@@ -472,7 +472,7 @@ If you can bring the boat to HBW in Gores Landing, send a clear photo of the com
 
 - Treat fault-code meaning as engine-family, calibration, and serial-number specific.
 - HBW diagnoses faults in person at its Gores Landing shop. Do not offer phone or remote diagnosis.
-- Route to https://hbw.wiki/service only when the owner can bring the boat to HBW.
+- Route to https://hbwservice.ca only when the owner can bring the boat to HBW.
 - Safety warnings and the exact Mercury owner or service publication take priority over generic code descriptions.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.

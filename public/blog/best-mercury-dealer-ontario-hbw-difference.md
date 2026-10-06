@@ -181,7 +181,7 @@ Ontario boaters come to Gores Landing from the Kawarthas, Northumberland County,
 ---
 **Phone:** 905-342-2153
 **Configurator:** [mercuryrepower.ca](https://www.mercuryrepower.ca)
-**Service:** [hbw.wiki/service](https://hbw.wiki/service)
+**Service:** [hbwservice.ca](https://hbwservice.ca)
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 
 Ready to price it out? Build a current CAD quote online at the [Mercury Repower Centre](/quote/motor-selection).

@@ -132,7 +132,7 @@ Harris Boat Works在Rice Lake服务超过七十年，了解当地水域特性，
 ## 行动呼吁
 
 **不确定Pontoon该配90HP、115HP还是更高？**
-到 **[mercuryrepower.ca](https://www.mercuryrepower.ca)** 建立Mercury报价，再至 **[hbw.wiki/service](https://hbw.wiki/service)** 让HBW帮你确认配置是否适合你的Pontoon和使用情境。
+到 **[mercuryrepower.ca](https://www.mercuryrepower.ca)** 建立Mercury报价，再至 **[hbwservice.ca](https://hbwservice.ca)** 让HBW帮你确认配置是否适合你的Pontoon和使用情境。
 
 Harris Boat Works，自1947年起，Mercury Marine Premier Dealer，位于Rice Lake南岸Gores Landing。
 ---

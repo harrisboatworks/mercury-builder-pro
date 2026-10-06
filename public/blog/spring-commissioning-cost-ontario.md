@@ -107,9 +107,9 @@ Spring startup at our shop is a real check, not an invoice line with a hopeful n
 
 ## Ready for Launch Day?
 
-Complete [hbw.wiki/service](https://hbw.wiki/service), then drop the boat off anytime, including after hours. If the boat spent winter at HBW, the standard spring check is free; list any additional concerns so they reach the repair order before the check begins.
+Complete [hbwservice.ca](https://hbwservice.ca), then drop the boat off anytime, including after hours. If the boat spent winter at HBW, the standard spring check is free; list any additional concerns so they reach the repair order before the check begins.
 
-**Service requests:** [hbw.wiki/service](https://hbw.wiki/service)
+**Service requests:** [hbwservice.ca](https://hbwservice.ca)
 **Phone:** 905-342-2153
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 
@@ -141,7 +141,7 @@ Most of it, yes; our spring checklist walks every step. The shop earns its hour 
 
 ### When should I submit a spring service request?
 
-Complete hbw.wiki/service, then drop the boat off anytime, including after hours. Physical marina work resumes when HBW reopens in early April.
+Complete hbwservice.ca, then drop the boat off anytime, including after hours. Physical marina work resumes when HBW reopens in early April.
 
 ### Why is my neighbour's spring bill higher than mine?
 
@@ -157,12 +157,12 @@ The standard check is the small part. The total rises when the startup also need
 
 ## Next steps
 
-- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbw.wiki/service
+- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbwservice.ca
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
-- The only commercial next step for this article is the HBW service request at https://hbw.wiki/service.
+- The only commercial next step for this article is the HBW service request at https://hbwservice.ca.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

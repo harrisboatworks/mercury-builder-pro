@@ -202,7 +202,7 @@ export default function MandarinLanding() {
               <div>
                 <h3 className="font-medium text-foreground">📱 维修预约</h3>
                 <p className="text-muted-foreground text-sm">
-                  通过 <a href="https://hbw.wiki/service" className="text-primary hover:underline">hbw.wiki/service</a> 提交维修申请。
+                  通过 <a href="https://hbwservice.ca" className="text-primary hover:underline">hbwservice.ca</a> 提交维修申请。
                 </p>
               </div>
             </div>

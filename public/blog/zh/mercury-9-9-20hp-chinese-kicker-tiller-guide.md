@@ -138,7 +138,7 @@ Transport Canada规定，有引擎的休闲船如果马力达到特定门槛，�
 ## 行动呼吁
 
 **想买Mercury 9.9至20HP？**
-到 **[mercuryrepower.ca](https://www.mercuryrepower.ca)** 看当前加币报价，确认轴长和控制方式后，至 **[hbw.wiki/service](https://hbw.wiki/service)** 提交申请让HBW确认配置是否适合你的船。
+到 **[mercuryrepower.ca](https://www.mercuryrepower.ca)** 看当前加币报价，确认轴长和控制方式后，至 **[hbwservice.ca](https://hbwservice.ca)** 提交申请让HBW确认配置是否适合你的船。
 
 Harris Boat Works，自1947年起，Mercury Marine Premier Dealer，位于Rice Lake南岸Gores Landing。
 ---

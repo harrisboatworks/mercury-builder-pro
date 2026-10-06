@@ -139,7 +139,7 @@ Si vous achetez chez nous, nous sommes aussi ceux qui l'entretiennent. Pour les 
 
 Bâtissez votre soumission de 90 HP à mercuryrepower.ca, choisissez l'embase standard ou CT, la longueur d'arbre et l'hélice. Voyez de vrais prix CAD en quelques minutes.
 
-Questions? Appelez 905-342-2153 ou soumettez une demande de service à hbw.wiki/service.
+Questions? Appelez 905-342-2153 ou soumettez une demande de service à hbwservice.ca.
 
 Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
 

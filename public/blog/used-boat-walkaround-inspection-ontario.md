@@ -201,7 +201,7 @@ Work through the walkaround in order. Take notes. Don't let the drive, the askin
 
 A 30-minute inspection won't catch everything, but it will catch the things that matter most. The deals that go sideways are almost always the ones where someone moved too fast to look carefully.
 
-**Found a boat with a tired motor but a sound hull? That's exactly what we repower.** Build your quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), real prices, no runaround. Need a hand evaluating what you're looking at? Reach out through [hbw.wiki/service](https://hbw.wiki/service).
+**Found a boat with a tired motor but a sound hull? That's exactly what we repower.** Build your quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), real prices, no runaround. Need a hand evaluating what you're looking at? Reach out through [hbwservice.ca](https://hbwservice.ca).
 
 ---
 
@@ -240,7 +240,7 @@ Stomp test. Walk the full floor from transom to bow, pressing firmly with each s
 
 ### What about the boat I just looked at? Can HBW help me decide?
 
-Yes. If the hull is solid and the motor is the weak link, that's exactly what we repower. Build a quote at mercuryrepower.ca, or reach out through hbw.wiki/service if you want a second set of eyes on what you're looking at.
+Yes. If the hull is solid and the motor is the weak link, that's exactly what we repower. Build a quote at mercuryrepower.ca, or reach out through hbwservice.ca if you want a second set of eyes on what you're looking at.
 
 ## Related guides
 
@@ -252,12 +252,12 @@ Yes. If the hull is solid and the motor is the weak link, that's exactly what we
 
 ## Next steps
 
-- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbw.wiki/service
+- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbwservice.ca
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
-- The only commercial next step for this article is the HBW service request at https://hbw.wiki/service.
+- The only commercial next step for this article is the HBW service request at https://hbwservice.ca.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
