@@ -31,7 +31,7 @@ revenue_driver: repower
 
 ### Quick Answer
 
-The Mercury 75 HP FourStroke is the same physical motor as the 90, same 2.1L inline-4 block, same 163 kg (359 lb) weight, with a lower RPM ceiling and a smaller price difference than most people expect. Harris Boat Works doesn't stock the 75 because the 90 is often the stronger comparison when the hull, load, and capacity plate support it. We'll order the 75 if your capacity plate requires it.
+The Mercury 75 HP FourStroke is the same physical motor as the 90, same 2.1L inline-4 block, same 163 kg (359 lb) weight, with a lower RPM ceiling and a smaller price difference than most people expect. Harris Boat Works doesn't stock the 75 because the 90 is often the stronger comparison when the hull and load suit it and the capacity plate allows 115 HP. We'll order the 75 for a 90 HP plate. Cost aside, one Mercury model below the maximum is the best fit.
 
 ---
 
@@ -43,7 +43,7 @@ We will order 75 HP, but here is why almost every buyer ends up with the 90.
 
 #### Choose 90 HP if
 
-- You are shopping the 75 to 90 HP range for a 16 to 18 ft boat
+- Your capacity plate allows 115 HP; the 90 is one Mercury model below the maximum
 - You want stronger hole shot and a bit more top end
 - The price difference vs 75 HP is typically under $1,500 in 2026
 - Resale value holds better (more buyer demand for 90 HP)
@@ -53,20 +53,19 @@ We will order 75 HP, but here is why almost every buyer ends up with the 90.
 
 #### Choose 75 HP if
 
-- Your boat is rated max 75 HP on the capacity plate
-- You specifically want the lightest powerhead in this range
+- Your capacity plate allows 90 HP; the 75 is one Mercury model below the maximum
 - The budget gap matters more than 15 HP of headroom
 - You are not towing or carrying full passenger loads
 
 **Pick 75 HP FourStroke**
 
-We do not stock 75 HP because, when the hull, load, and capacity plate support 90, the price and weight gap is small and the 90 has more headroom. If you want 75, we will order it. If your plate allows 90, compare the 90 first.
+We do not stock 75 HP because, when the hull and load suit it and the capacity plate allows 115 HP, the price and weight gap is small and the 90 has more headroom. If you want 75, we will order it. If your plate allows 90, choose the 75. A 115 HP plate makes the 90 the best fit.
 
 ---
 
 ### Mercury 75 HP FourStroke: Why We Don't Stock It
 
-We get asked about the Mercury 75 HP FourStroke regularly. Usually the question sounds like: "Is the 75 good enough, or should I go to the 90?" Here's our honest answer: the 90 is almost always the better call, and the reason we don't stock the 75 is that it's the same motor.
+We get asked about the Mercury 75 HP FourStroke regularly. Usually the question sounds like: "Is the 75 good enough, or should I go to the 90?" Here's our honest answer: the 90 is the better call on a hull plated for 115 HP; on a 90 HP plate, the 75 is the best fit, and the reason we don't stock the 75 is that it's the same motor.
 
 We're a Mercury Marine Premier dealer that sells, rigs, water-tests, and services these motors on Rice Lake. This isn't us trying to upsell you, it's us explaining a legitimate engineering reality.
 
@@ -103,7 +102,7 @@ Three reasons:
 2. **The price difference is minimal.** We don't publish exact figures because Mercury pricing and dealer pricing vary, but it's not enough to justify the headroom you give up.
 3. **The 90 holds resale value better.** The 75 sits in a gap between motors people actually want: the 60 below it and the 90 above it.
 
-When the hull, load, and capacity plate support the 90, the 75 is usually the weaker comparison: same physical motor, lower RPM ceiling, and a smaller price difference than most people expect.
+When the hull and load suit it and the capacity plate allows 115 HP, the 75 is usually the weaker comparison: same physical motor, lower RPM ceiling, and a smaller price difference than most people expect.
 
 ---
 
@@ -111,7 +110,7 @@ When the hull, load, and capacity plate support the 90, the 75 is usually the we
 
 There are three real scenarios where the 75 is the right call:
 
-**The capacity plate forces it.** Some 16-17 ft hulls are rated for 75 HP maximum. That plate is the ceiling, not a suggestion, not a starting point for negotiation. If the plate says 75, you get a 75. We'll order it and we won't try to talk you into something illegal.
+**The capacity plate sets the fit.** A 90 HP capacity plate makes the 75 our best-fit size; some smaller hulls are plated for only 60 or 75 HP. That plate is the ceiling, not a suggestion, not a starting point for negotiation. If the plate says 75, the best fit is a 60, one Mercury model below the maximum. We'll order it and we won't try to talk you into something illegal.
 
 **An insurance or licensing constraint applies.** Rare in Ontario, but some commercial or shared-use applications have HP caps that land on 75.
 
@@ -123,7 +122,7 @@ There are three real scenarios where the 75 is the right call:
 
 | Boat Type | Our Recommendation |
 |---|---|
-| 14-17 ft aluminum fishing boat | 90 ELPT FourStroke, standard gearcase. Plans easier, cruises faster at the same throttle, more headroom. |
+| Aluminum fishing boat plated above 90 HP, typically 17-18 ft | 90 ELPT FourStroke, standard gearcase, on a 115 HP plate. On smaller 14-16 ft hulls, pick one Mercury model below the plate maximum: 50 on a 60 HP plate, 60 on a 75 HP plate, or 75 on a 90 HP plate. |
 | Small pontoon under 20 ft | 90 ELPT Command Thrust, [CT gearcase makes a meaningful difference](/blog/mercury-command-thrust-complete-guide-2026) on flat-bottom hulls. A 75 standard would technically work but run harder than ideal. |
 | Lighter cottage runabout | 90 ELPT FourStroke, same logic as fishing boat. |
 | Repowering an old 60-75 HP two-stroke | 90 ELPT FourStroke, lighter, quieter, cleaner, more efficient. Holds resale better than the 75 over the life of the motor. |
@@ -148,11 +147,11 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
 
 ### Why doesn't HBW stock the Mercury 75 HP FourStroke?
 
-Because it's the same physical motor as the 90, same weight, very small price difference, and the 90 has more headroom and holds value better. We point customers at the 90.
+Because it's the same physical motor as the 90, same weight, very small price difference, and the 90 has more headroom and holds value better. We point customers at the 90 when the plate allows 115 HP; on a 90 HP plate, the 75 is the best fit.
 
 ### Can HBW order a Mercury 75 if I really want one?
 
-Yes. We can order any Mercury motor Mercury makes. We just don't keep the 75 on the shelf because we recommend the 90 in almost every case where customers ask about a 75.
+Yes. We can order any Mercury motor Mercury makes. We just don't keep the 75 on the shelf because we recommend the 90 when the plate allows 115 HP. On a 90 HP plate, the 75 is the best fit.
 
 ### What's the actual difference between a 75 and a 90 Mercury FourStroke?
 
@@ -176,7 +175,7 @@ Sometimes, yes. Used 75s come through the market. We can help assess condition a
 
 ### How much does a Mercury 75 HP outboard cost in Canada?
 
-HBW lists the current CAD price for the Mercury 75 ELPT FourStroke on our pricing reference at mercuryrepower.ca/pricing-reference, and you can build a live CAD quote for it in the online configurator. We don't keep the 75 on the shelf, so it is ordered in, and we confirm the exact price, rigging and timing before you commit. If your boat is rated for 90 HP, price the 90 beside it, because the gap is usually smaller than people expect. Questions: 905-342-2153.
+HBW lists the current CAD price for the Mercury 75 ELPT FourStroke on our pricing reference at mercuryrepower.ca/pricing-reference, and you can build a live CAD quote for it in the online configurator. We don't keep the 75 on the shelf, so it is ordered in, and we confirm the exact price, rigging and timing before you commit. If your boat is rated for 115 HP, price the 90 beside it, because the gap is usually smaller than people expect. Questions: 905-342-2153.
 
 ### Is the Mercury 75 HP a 4-stroke outboard?
 

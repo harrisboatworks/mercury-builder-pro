@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/ontario-boating-season-tips.md
-last_updated: 2026-10-04
+last_updated: 2026-10-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Ontario Boating Season Tips 2026"
 description: "How to run an Ontario boat season smart: spring commissioning, peak summer operations, fall layup, and the call-the-shop moments in between."
 category: "Boating Lifestyle"
 date_published: 2026-04-22
-date_modified: 2026-10-04
+date_modified: 2026-10-06
 keywords: ["ontario boating season","boat seasonal maintenance ontario","spring boat commissioning","fall boat layup","ontario boating tips"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Boating Lifestyle  
 **Published:** 2026-04-22  
-**Last reviewed:** 2026-10-04  
+**Last reviewed:** 2026-10-06  
 **Read time:** ~8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ontario-boating-season-tips
 
@@ -79,7 +79,7 @@ Once the motor's running, summer is mostly about running it right, not about hea
 **The peak-season top 5 (what we see most):**
 
 1. **Impeller failures, especially June and July.** Sand and weeds get pulled into intakes. We see the bulk of impeller jobs in summer for this reason. If you boat in shallow weedy water, inspect the intake screens before every launch.
-2. **Steering and trim issues from saltwater corrosion.** Not common on Rice Lake itself, but customers who haul to Lake Ontario for salmon or to the Trent-Severn brackish-influenced sections see it. Fresh-water flushing after every haul is the cheap fix.
+2. **Steering and trim corrosion.** Lake Ontario and the Trent-Severn are fresh water, not salt or brackish water. Galvanic action, trailering and lack of grease can still cause corrosion. Flush, grease and inspect after hauling.
 3. **Battery failures mid-season.** Heat plus deep discharge cycles kills batteries. Carry jumper cables and a portable jump pack.
 4. **Prop damage from groundings.** Rocks, sandbars, deadheads. Carry a spare prop if you fish unfamiliar water.
 5. **Alarm codes and Smart Craft warnings.** Most are advisory, some aren't. Our [Mercury alarm codes guide](/blog/mercury-outboard-overheat-alarm-decoder) covers the ones that matter.
@@ -151,7 +151,7 @@ The work that makes the season feel easy happens between seasons. Booked once, p
 
 ### When does Ontario boating season actually start?
 
-Practically speaking, ice-out in the Kawarthas is mid-to-late April, depending on the year. Lake Ontario opens earlier. Opener for most species is the first weekend of May (walleye, bass varies by zone). Cold-water gear and short trips through mid-May, then full season through early October.
+Practically speaking, ice-out in the Kawarthas is mid-to-late April, depending on the year. Lake Ontario opens earlier. Openers vary by zone. In FMZ 17 (Rice Lake and most of the Kawarthas), walleye and sauger open the second Saturday in May, and bass the third Saturday in June. On Lake Ontario (FMZ 20), walleye open the first Saturday in May. Check the [Ontario Fishing Regulations Summary](https://www.ontario.ca/document/ontario-fishing-regulations-summary) for your zone. Cold-water gear and short trips through mid-May, then full season through early October.
 
 ### When should I book spring commissioning?
 

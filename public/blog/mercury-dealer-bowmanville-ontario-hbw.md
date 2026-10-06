@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dealer-bowmanville-ontario-hbw.md
-last_updated: 2026-09-11
+last_updated: 2026-10-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -8,10 +8,10 @@ final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
 title: "Mercury Dealer for Bowmanville: 35 Minutes to Rice Lake"
-description: "Mercury Premier dealer for Bowmanville: Harris Boat Works on Rice Lake, 35 minutes via 401 and 115. Repower, sales, parts, winter storage practically next door."
+description: "Mercury Premier dealer for Bowmanville: Harris Boat Works on Rice Lake, about 45 to 50 minutes via 401 east to Exit 472 in Cobourg and County Road 18 north."
 category: "Dealer Locations"
 date_published: 2026-05-11
-date_modified: 2026-09-11
+date_modified: 2026-10-06
 keywords: ["mercury dealer bowmanville","mercury repower bowmanville","mercury outboard bowmanville ontario","boat motor service clarington"]
 author: Harris Boat Works
 content_type: blog_article
@@ -21,15 +21,15 @@ revenue_driver: repower
 
 # Mercury Dealer for Bowmanville: 35 Minutes to Rice Lake
 
-> Mercury Premier dealer for Bowmanville: Harris Boat Works on Rice Lake, 35 minutes via 401 and 115. Repower, sales, parts, winter storage practically next door.
+> Mercury Premier dealer for Bowmanville: Harris Boat Works on Rice Lake, about 45 to 50 minutes via 401 east to Exit 472 in Cobourg and County Road 18 north.
 
 **Category:** Dealer Locations  
 **Published:** 2026-05-11  
-**Last reviewed:** 2026-09-11  
+**Last reviewed:** 2026-10-06  
 **Read time:** 4 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dealer-bowmanville-ontario-hbw
 
-> **Quick answer:** Harris Boat Works is a Mercury Marine Premier Dealer in Gores Landing on Rice Lake, approximately 35 minutes north of Bowmanville via Highway 401 east and Highway 115. We handle Mercury outboard sales, repowers, parts, and service. See installed pricing at mercuryrepower.ca. For engine repairs, we only service Mercury and MerCruiser.
+> **Quick answer:** Harris Boat Works is a Mercury Marine Premier Dealer in Gores Landing on Rice Lake, about 45 to 50 minutes (roughly 60 km) northeast of Bowmanville via Highway 401 east to Exit 472 (County Road 18 / Burnham Street, Cobourg), then north on County Road 18 about 16 km to Gores Landing. We handle Mercury outboard sales, repowers, parts, and service. See installed pricing at mercuryrepower.ca. For engine repairs, we only service Mercury and MerCruiser.
 
 See [why boaters across Ontario choose Harris Boat Works](/blog/best-mercury-dealer-ontario-hbw-difference) for the full breakdown of our approach.
 
@@ -47,18 +47,18 @@ Check your route before leaving; travel time varies with your starting point, tr
 
 ## Mercury Dealer for Bowmanville: You're Basically Our Neighbour
 
-Let's be clear about the geography: Bowmanville is the closest significant town to us on the 401 corridor. At approximately 35 minutes north via Highway 115 and County Road 28, we're not a destination for you, we're a nearby option.
+Let's be clear about the geography: Bowmanville is the closest significant town to us on the 401 corridor. At about 45 to 50 minutes northeast via Highway 401 east to Exit 472 in Cobourg, then County Road 18 north about 16 km to Gores Landing, we're not a destination for you, we're a nearby option.
 
 You're not making a sacrifice to access a better dealer. You're just going up the road.
 
-## What 35 Minutes Actually Means
+## What 45 to 50 Minutes Actually Means
 
-Thirty-five minutes is shorter than a lot of Ontario commutes. It's the distance between the supermarket and a trip into Oshawa on a busy Saturday. It's not an event, it's an errand.
+Forty-five to fifty minutes is shorter than a lot of Ontario commutes. It's the distance between the supermarket and a trip into Oshawa on a busy Saturday. It's not an event, it's an errand.
 
 That proximity changes the whole relationship with a dealer. It means:
 
 - **You can use us for everything.** Not just the motor purchase. Spring commissioning, seasonal service, winterization, storage, the entire boat-ownership routine can happen here without rearranging your life.
-- **You can come back if something comes up.** If the service job raises a question, or you want to review the rigging before you launch, 35 minutes means "run up and check" is a legitimate option.
+- **You can come back if something comes up.** If the service job raises a question, or you want to review the rigging before you launch, 45 to 50 minutes means "run up and check" is a legitimate option.
 - **We're the shop that calls you back.** Because if we don't, you're at our door the next morning. Proximity keeps everyone honest.
 
 ## Bowmanville Has a Strong Boating Community
@@ -85,13 +85,13 @@ Top tier in Mercury's dealer program. The business depends on the next customer 
 FourStroke and Pro XS. Verado and SeaPro available by special order. Honest conversation about what fits your hull, your load, and how you actually use the boat.
 
 **Repower service**
-Full job: motor, rigging, controls, throttle and shift cables, prop selection, installation, lake test. For Bowmanville customers, we can realistically handle your complete annual service cycle, it's 35 minutes.
+Full job: motor, rigging, controls, throttle and shift cables, prop selection, installation, lake test. For Bowmanville customers, we can realistically handle your complete annual service cycle, it's 45 to 50 minutes.
 
 **Mercury parts and service**
 HBW stocks common Mercury service parts. The exact part still depends on the engine serial number and current stock. For engine repairs, we only service Mercury and MerCruiser.
 
 **Winter storage**
-HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. We also don't offer climate-controlled, summer, or year-round storage. At 35 minutes, keeping the boat at HBW through winter is a practical arrangement for Bowmanville boat owners. Physical service resumes when we reopen in early April.
+HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. We also don't offer climate-controlled, summer, or year-round storage. At 45 to 50 minutes, keeping the boat at HBW through winter is a practical arrangement for Bowmanville boat owners. Physical service resumes when we reopen in early April.
 
 **Installed pricing online**
 [mercuryrepower.ca](https://www.mercuryrepower.ca), the number is there before you drive up.
@@ -100,9 +100,9 @@ HBW offers outdoor storage with professional shrink wrap, outdoor uncovered stor
 
 ## Getting to Harris Boat Works from Bowmanville
 
-**Route:** Highway 401 east (briefly, if coming from west Bowmanville) or straight to Highway 115 north, then County Road 28 north to Gores Landing. From central or east Bowmanville, you're barely on the 401 before you're heading north on 115. Rural roads start almost immediately after you turn north.
+**Route:** Highway 401 east to Exit 472 (County Road 18 / Burnham Street, Cobourg), then north on County Road 18 about 16 km to Gores Landing. Allow about 50 to 60 minutes, depending on traffic.
 
-**Approximate drive time:** Around 35 minutes. From east Bowmanville, it may be slightly less. It's one of the most straightforward routes of any city we serve from the GTA.
+**Approximate drive time:** About 45 to 50 minutes in light traffic. Allow 50 to 60 minutes depending on your starting point and traffic. It's one of the most straightforward routes of any city we serve from the GTA.
 
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 **Phone:** 905-342-2153
@@ -113,18 +113,18 @@ HBW offers outdoor storage with professional shrink wrap, outdoor uncovered stor
 
 ## You're Close Enough to Just Call First
 
-At 35 minutes, you don't need to front-load every visit with hours of research. But a quick call still makes it more efficient:
+At 45 to 50 minutes, you don't need to front-load every visit with hours of research. But a quick call still makes it more efficient:
 
 1. **Build your quote** at [mercuryrepower.ca](https://www.mercuryrepower.ca). Know the installed price.
 
 3. **Submit service requests** at [hbw.wiki/service](https://hbw.wiki/service), that's how we schedule most service work.
-4. **Come up when you're ready.** At 35 minutes, "ready" is a lower bar than it is for someone driving from Mississauga.
+4. **Come up when you're ready.** At 45 to 50 minutes, "ready" is a lower bar than it is for someone driving from Mississauga.
 
 ---
 
 ## The HBW Promise
 
-You're 35 minutes away. The price is online. The rigging conversation happens before we order anything. The job gets done right. You can come back if anything needs looking at.
+You're 45 to 50 minutes away. The price is online. The rigging conversation happens before we order anything. The job gets done right. You can come back if anything needs looking at.
 
 This is what a dealer relationship is supposed to feel like.
 
@@ -137,11 +137,11 @@ This is what a dealer relationship is supposed to feel like.
 
 ### How far is HBW from Bowmanville?
 
-About 35 minutes via Highway 401 east and Highway 115 north. Roughly 55 km. The closest major GTA-edge city to Rice Lake.
+About 45 to 50 minutes in light traffic, roughly 60 km. Take Highway 401 east to Exit 472 (County Road 18 / Burnham Street, Cobourg), then north on County Road 18 about 16 km to Gores Landing. The closest major GTA-edge city to Rice Lake.
 
 ### Can HBW handle all my Mercury service in Bowmanville?
 
-Yes. The 35-minute drive makes us a realistic primary dealer for everything - spring commissioning, mid-season service, fall winterization, parts, warranty work.
+Yes. The 45-to-50-minute drive makes us a realistic primary dealer for everything - spring commissioning, mid-season service, fall winterization, parts, warranty work.
 
 ### Does HBW serve Clarington and Newcastle?
 

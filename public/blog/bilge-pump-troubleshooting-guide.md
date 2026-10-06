@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/bilge-pump-troubleshooting-guide.md
-last_updated: 2026-10-03
+last_updated: 2026-10-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "The Complete Guide to Boat Bilge Pumps: How They Work, Why They Fail, an
 description: "The complete guide to boat bilge pumps: how the pump, float switch, and wiring work together, why they fail, how to size and test one, and when service is needed."
 category: "Service & Troubleshooting"
 date_published: 2026-07-03
-date_modified: 2026-10-03
+date_modified: 2026-10-06
 keywords: ["bilge pump troubleshooting","float switch not working","bilge pump won't turn on","how to size a bilge pump","bilge pump wiring corrosion"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Category:** Service & Troubleshooting  
 **Published:** 2026-07-03  
-**Last reviewed:** 2026-10-03  
+**Last reviewed:** 2026-10-06  
 **Read time:** ~11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/bilge-pump-troubleshooting-guide
 
@@ -267,7 +267,7 @@ A pump that runs but moves little water is often a hose problem, not a pump prob
 
 A high-water alarm is a separate sensor mounted a couple of inches above the primary pump's trigger point. If water rises to that level, meaning the primary pump has failed or can't keep up, the alarm sounds at the helm.
 
-This is the upgrade that catches the problem before you walk down and find your boat sitting low at the dock. The sensor runs on its own circuit, independent of the pump wiring, so it still works even if the bilge pump circuit has failed completely. Installation is straightforward: a separate float switch wired to a horn or buzzer at the helm, connected directly to the battery so it works even when the main switch is off.
+This is the upgrade that catches the problem before you walk down and find your boat sitting low at the dock. The sensor runs on its own circuit, independent of the pump wiring, so it still works even if the bilge pump circuit has failed completely. Installation is straightforward: a separate float switch wired to a horn or buzzer at the helm, connected directly to the battery (bypassing the main switch) through an inline fuse sized to the wire and mounted as close to the battery as practical.
 
 If your boat sits in the water unattended for any stretch of time, this is worth the hour it takes to install.
 

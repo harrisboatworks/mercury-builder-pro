@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-9-9-vs-15-hp-tiller-ontario.md
-last_updated: 2026-09-11
+last_updated: 2026-10-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury 9.9 vs 15 HP Tiller for Ontario"
 description: "Mercury 9.9 vs 15 HP tiller, licensing, fuel use, real-world performance on Ontario lakes. Build a live quote at mercuryrepower.ca."
 category: "Buying Guide"
 date_published: 2026-05-18
-date_modified: 2026-09-11
+date_modified: 2026-10-06
 keywords: ["Mercury 9.9 vs 15 HP","Mercury tiller motor Ontario","kicker motor 9.9 vs 15","sailboat auxiliary outboard","Mercury 9.9 EFI FourStroke"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-05-18  
-**Last reviewed:** 2026-09-11  
+**Last reviewed:** 2026-10-06  
 **Read time:** ~9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-9-9-vs-15-hp-tiller-ontario
 
@@ -85,7 +85,7 @@ A few things worth knowing if HP restriction is in play:
 - **Tournament kicker rules are event-specific.** Some organizers restrict boat or motor size. That is not a province-wide 9.9 HP ceiling, and a 15 is not automatically legal or illegal. Check the current rules for the derby you actually fish.
 - **Cottage associations are often stricter than provincial rules.** Some Kawartha cottage associations and small lakes near the Trent-Severn have 9.9 HP or even 7.5 HP house rules. Read the association bylaws before buying anything bigger.
 
-If you're unsure whether your lake has a cap, the Ontario [Boating Restrictions database](https://laws-lois.justice.gc.ca/eng/regulations/SOR-2008-120/index.html) lists every federally regulated body of water. But house rules at the cottage association level aren't there. Check both.
+If you're unsure whether your lake has a cap, engine-power caps on specific waters are set under the federal [Vessel Operation Restriction Regulations (SOR/2008-120)](https://laws-lois.justice.gc.ca/eng/regulations/SOR-2008-120/index.html). Restricted waters are listed in Transport Canada's TP 15587 schedules; Schedule 4 covers power limits. These list restricted waters, not every federally regulated body of water. But house rules at the cottage association level aren't there. Check both.
 
 ## The Capacity Plate Question
 
@@ -107,7 +107,7 @@ The capacity plate. We look for the rated horsepower stamp first. Without that n
 
 The use case. A kicker motor for trolling on a bigger bass boat has different priorities than a primary motor on a 14 foot utility hull. A sailboat auxiliary cares about shaft length and weight aft. A cottage dinghy cares about portability. Same two motors, different right answers.
 
-The shaft length. Most small tillers come in short (15 inch) and long (20 inch). Measure your transom from the top edge to the centre of the cavitation plate cut-out. Get this wrong and the motor either ventilates at speed (too long) or overheats and gets seawater in the powerhead (too short).
+The shaft length. Most small tillers come in short (15 inch) and long (20 inch). Measure from the top of the transom at the motor mount straight down to the bottom of the hull at the centreline. A shaft that's too short lets the prop ventilate and can starve the water intake, causing overheating. A shaft that's too long adds drag and spray and costs speed.
 
 The lake. HP restriction or no HP restriction. Cottage association rules. Whether you need the Command Thrust gearcase for slow-speed control on a heavy sailboat or pontoon.
 
@@ -227,7 +227,7 @@ Yes. Both motors have remote-control conversion kits. You can start with a tille
 
 ### What warranty comes with a new Mercury 9.9 or 15?
 
-3 years limited + 3 years corrosion, running concurrently for the same 3-year period. Extended coverage through Mercury Premier Protection is available at purchase. See our Mercury extended warranty guide for details.
+3 years limited + 3 years corrosion, running concurrently for the same 3-year period. Extended coverage through Mercury Product Protection (Gold or Platinum) is available at purchase. See our Mercury extended warranty guide for details.
 
 ## Related guides
 

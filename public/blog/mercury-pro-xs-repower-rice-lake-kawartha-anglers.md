@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-pro-xs-repower-rice-lake-kawartha-anglers.md
-last_updated: 2026-09-06
+last_updated: 2026-10-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Pro XS Repower for Rice Lake & Kawartha Anglers"
 description: "Mercury Pro XS repower guide for serious Rice Lake and Kawartha anglers. Hole-shot, top end, Command Thrust, fuel-burn, real numbers from a Mercury."
 category: "Repower"
 date_published: 2026-05-15
-date_modified: 2026-09-06
+date_modified: 2026-10-06
 keywords: ["Mercury Pro XS repower","Pro XS Rice Lake","Pro XS Kawartha anglers","Mercury 200 Pro XS V8","Pro XS Command Thrust","bass boat repower Ontario","walleye boat Mercury Pro XS","Mercury Premier dealer Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Repower  
 **Published:** 2026-05-15  
-**Last reviewed:** 2026-09-06  
+**Last reviewed:** 2026-10-06  
 **Read time:** 11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-pro-xs-repower-rice-lake-kawartha-anglers
 
@@ -60,7 +60,7 @@ The anglers we see repowering to Pro XS are usually moving from one of three pla
 
 **Tired older Pro XS.** The Optimax-era Pro XS earned a strong reputation. Owners coming out of those motors usually want the modern Pro XS because the response and the sound profile they remember are still there, plus modern reliability and fuel efficiency.
 
-The other reason matters less in marketing copy but a lot in real life: when you're 90 minutes from any other shop, you want a motor and a dealer that can actually fix things. That's why so many Kawartha anglers repower with us specifically.
+The other reason matters less in marketing copy but a lot in real life: having a Mercury Premier Dealer on the lake means you've got a local shop that can actually fix things. That's why so many Kawartha anglers repower with us specifically.
 
 ---
 
@@ -205,7 +205,7 @@ Both are four-stroke outboards, Pro XS is not a two-stroke. The difference is tu
 
 ### Is the Mercury 150 Pro XS a V6?
 
-No. The 150 Pro XS is an inline-4. The remaining Pro XS V6 rating is the 175. The 200, 225, 250, and 300 Pro XS are V8. This matters because the 150 is meaningfully lighter than the V6 and V8 models, roughly 45 kg (100 lb) less rigged, which is why it's popular on smaller bass boats and aluminum tournament hulls where transom weight is a real consideration. If you specifically want a V6 Pro XS, you're looking at 175 HP. If you specifically want the lightest performance Mercury at 150 HP, the inline-4 Pro XS is it.
+No. The 150 Pro XS is an inline-4. The remaining Pro XS V6 rating is the 175. The 200, 225, 250, and 300 Pro XS are V8. The 150 Pro XS weighs 207 kg (456 lb) dry, about 9 kg (19 lb) less than the 175 Pro XS V6 at 216 kg (475 lb), and about 25 kg (55 lb) less than the 200–300 Pro XS V8 at 232 kg (511 lb). That matters on smaller bass boats and aluminum tournament hulls where transom weight is a real consideration. If you specifically want a V6 Pro XS, you're looking at 175 HP. If you specifically want the lightest performance Mercury at 150 HP, the inline-4 Pro XS is it.
 
 ### How much does a Pro XS repower cost in Ontario?
 

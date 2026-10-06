@@ -61,7 +61,7 @@ If you're buying used and the motor is at the low end of that manufacturer's HP 
 
 Pontoon buyers coming from fishing boats or runabouts always underestimate how much power a pontoon needs. Here's why:
 
-**Weight.** Pontoon dry weight varies widely by length, tube count, and build, so check the builder's published dry weight for your exact boat before you add people, gear, and fuel. On a 22-footer actually rated for 10 adults, that passenger load plus a full cooler can easily clear 2,268 kg (5,000 lb). Length does not set how many people you may carry.
+**Weight.** Pontoon dry weight varies widely by length, tube count, and build, so check the builder's published dry weight for your exact boat before you add people, gear, and fuel. On a 22-footer actually rated for 10 adults, those people plus a full cooler weigh roughly 750–1,100 kg (1,650–2,400 lb). Add the pontoon's dry weight, motor, fuel and gear, and the loaded boat can easily clear 2,268 kg (5,000 lb). Length does not set how many people you may carry.
 
 **Drag.** Pontoon tubes create significant drag compared to a V-hull. You're not cutting through the water, you're pushing it out of the way with cylindrical aluminum logs. It takes real power to overcome that resistance and get the boat up on cruise.
 
@@ -291,7 +291,7 @@ For a loaded 22-foot boat, 90 or 115 CT is an occasional-tube example; 150 suits
 
 ### Why do pontoons need more HP than runabouts?
 
-Pontoon dry weight varies widely by length, tube count, and build, so check the builder's published dry weight for the exact boat before adding people, gear, and fuel. On a hypothetical 22-footer actually rated for 10 adults, that passenger load plus a full cooler can easily clear 2,268 kg (5,000 lb). Length alone does not set legal capacity. Pontoon tubes also create more drag than a V-hull because you are pushing water aside rather than cutting through it. Add huge freeboard catching crosswind, and a pontoon needs meaningfully more horsepower than an equivalent-length runabout.
+Pontoon dry weight varies widely by length, tube count, and build, so check the builder's published dry weight for the exact boat before adding people, gear, and fuel. On a hypothetical 22-footer actually rated for 10 adults, those people plus a full cooler weigh roughly 750–1,100 kg (1,650–2,400 lb). Add the pontoon dry weight, motor, fuel and gear, and the loaded boat can easily clear 2,268 kg (5,000 lb). Length alone does not set legal capacity. Pontoon tubes also create more drag than a V-hull because you are pushing water aside rather than cutting through it. Add huge freeboard catching crosswind, and a pontoon needs meaningfully more horsepower than an equivalent-length runabout.
 
 ### When does Command Thrust matter on a pontoon?
 

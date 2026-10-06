@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/late-season-boating-safety.md
-last_updated: 2026-10-04
+last_updated: 2026-10-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Cold-Water Boating Safety in Ontario: What to Know"
 description: "Cold-water boating safety for Ontario waters. Risks, essential gear, weather awareness, and emergency procedures for spring, fall."
 category: "Tips"
 date_published: 2026-05-05
-date_modified: 2026-10-04
+date_modified: 2026-10-06
 keywords: ["cold water boating safety","ontario boating safety","hypothermia prevention","spring boating safety","fall boating safety","pfd cold water"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Tips  
 **Published:** 2026-05-05  
-**Last reviewed:** 2026-10-04  
+**Last reviewed:** 2026-10-06  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/late-season-boating-safety
 
@@ -45,15 +45,7 @@ Ontario waters are cold for more of the year than most boaters think. Lake Ontar
 
 Below 15°C, cold-water shock sets in immediately on immersion, the involuntary gasp reflex, rapid breathing, and increased heart rate that make controlled swimming difficult. Hypothermia follows.
 
-**Cold-water survival time reference (Transport Canada TP 13822):**
-
-| Water Temperature | Time to Exhaustion | Estimated Survival Time |
-|---|---|---|
-| 15°C (59°F) | 30-40 minutes | 1-2 hours |
-| 10°C (50°F) | 15-20 minutes | 30-40 minutes |
-| 5°C (41°F) | 5-10 minutes | 15-20 minutes |
-
-The takeaway: at 10°C, you may have 30 minutes of survival time, and that assumes you can hold on. Verify current guidance at Transport Canada's official boating safety resources.
+Cold water incapacitates swimmers far faster than people expect. Wear a lifejacket before you leave the dock, and read [Transport Canada's cold-water guidance](https://tc.canada.ca/en/marine-transportation/marine-safety/boating-safety). Don't count on a fixed survival time.
 
 ---
 
@@ -165,7 +157,7 @@ Most Ontario boaters wrap up by late October or early November. Key factors: wat
 
 ### What water temperature is dangerous for immersion?
 
-Any water below 21°C (70°F) can cause hypothermia. Below 15°C is dangerous within 30-40 minutes. Below 10°C is immediately dangerous. Ontario fall waters typically range from 10-18°C.
+Any water below 21°C (70°F) can cause hypothermia. Below 15°C, cold-water shock can quickly make swimming impossible. Don't count on a fixed survival time. Below 10°C is immediately dangerous. Ontario fall waters typically range from 10-18°C.
 
 ### What's the most important safety gear for fall boating?
 

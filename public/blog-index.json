@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "sourceVersion": "f268d83e86d3da0bbda8",
+  "sourceVersion": "6ff4b83d632c8d9654e5",
   "count": 183,
   "articles": [
     {
@@ -1007,7 +1007,7 @@
         },
         {
           "q": "What shaft length do I need for an aluminum fishing boat?",
-          "a": "Most aluminum fishing boats with a standard transom use a 20-inch (long) shaft outboard. Taller transoms or boats with a jack plate may require a 25-inch (XL) shaft. To determine the right length: measure from the bottom of the transom mounting bracket to the waterline. If that distance is 15-20 inches, use a 20-inch…"
+          "a": "Most aluminum fishing boats with a standard transom use a 20-inch (long) shaft outboard. Taller transoms or boats with a jack plate may require a 25-inch (XL) shaft. To determine the right length: measure from the top of the transom, where the motor bracket sits, straight down to the bottom of the hull at the centreli…"
         }
       ]
     },
@@ -1419,7 +1419,7 @@
       "faqs": [
         {
           "q": "What's the lightest outboard Mercury makes?",
-          "a": "The Mercury 2.5 MH FourStroke at approximately 19 kg (41 lb) is the lightest. It's designed for yacht tenders where every pound matters and owners need to lift it aboard."
+          "a": "The Mercury 2.5 MH FourStroke weighs about 17 kg (38 lb) and is Mercury's lightest FourStroke. It's designed for yacht tenders where every pound matters and owners need to lift it aboard."
         },
         {
           "q": "Why is 9.9HP so popular?",
@@ -1619,7 +1619,7 @@
         },
         {
           "q": "What water temperature is dangerous for immersion?",
-          "a": "Any water below 21°C (70°F) can cause hypothermia. Below 15°C is dangerous within 30-40 minutes. Below 10°C is immediately dangerous. Ontario fall waters typically range from 10-18°C."
+          "a": "Any water below 21°C (70°F) can cause hypothermia. Below 15°C, cold-water shock can quickly make swimming impossible. Don't count on a fixed survival time. Below 10°C is immediately dangerous. Ontario fall waters typically range from 10-18°C."
         },
         {
           "q": "What's the most important safety gear for fall boating?",
@@ -1647,7 +1647,7 @@
       "faqs": [
         {
           "q": "When does Ontario boating season actually start?",
-          "a": "Practically speaking, ice-out in the Kawarthas is mid-to-late April, depending on the year. Lake Ontario opens earlier. Opener for most species is the first weekend of May (walleye, bass varies by zone). Cold-water gear and short trips through mid-May, then full season through early October."
+          "a": "Practically speaking, ice-out in the Kawarthas is mid-to-late April, depending on the year. Lake Ontario opens earlier. Openers vary by zone. In FMZ 17 (Rice Lake and most of the Kawarthas), walleye and sauger open the second Saturday in May, and bass the third Saturday in June. On Lake Ontario (FMZ 20), walleye open…"
         },
         {
           "q": "When should I book spring commissioning?",
@@ -2518,7 +2518,7 @@
       "faqs": [
         {
           "q": "How long does it take to trailer a boat from Toronto to Rice Lake?",
-          "a": "The drive from central Toronto to Rice Lake takes roughly 1 hour 45 minutes in light traffic via Highway 401 east and Highway 115 north. Summer weekends and long-weekend traffic can make it two hours or more, so check the route before departure."
+          "a": "The drive from central Toronto to Rice Lake takes roughly 1 hour 45 minutes in light traffic via Highway 401 east to Exit 472 in Cobourg, then County Road 18 north about 16 km to Gores Landing. Summer weekends and long-weekend traffic can make it two hours or more, so check the route before departure."
         },
         {
           "q": "Do I need a special licence to tow a boat trailer in Ontario?",
@@ -2530,7 +2530,7 @@
         },
         {
           "q": "How do I prepare my boat trailer before a long drive?",
-          "a": "Before any highway trip, check: coupler locked and safety chains crossed and attached; all trailer lights working (tails, brakes, turn signals); tires inflated to spec and lug nuts torqued; wheel bearings greased or repacked if sitting since last season; at least four tie-down straps securing the boat; outboard tilted…"
+          "a": "Before any highway trip, check: coupler locked and safety chains crossed and attached; all trailer lights working (tails, brakes, turn signals); tires inflated to spec and lug nuts torqued; wheel bearings greased or repacked if sitting since last season; at least four tie-down straps securing the boat; outboard secure…"
         }
       ]
     },
@@ -3622,7 +3622,7 @@
         },
         {
           "q": "Why do pontoons need more HP than runabouts?",
-          "a": "Pontoon dry weight varies widely by length, tube count, and build, so check the builder's published dry weight for the exact boat before adding people, gear, and fuel. On a hypothetical 22-footer actually rated for 10 adults, that passenger load plus a full cooler can easily clear 2,268 kg (5,000 lb). Length alone doe…"
+          "a": "Pontoon dry weight varies widely by length, tube count, and build, so check the builder's published dry weight for the exact boat before adding people, gear, and fuel. On a hypothetical 22-footer actually rated for 10 adults, those people plus a full cooler weigh roughly 750–1,100 kg (1,650–2,400 lb). Add the pontoon…"
         },
         {
           "q": "When does Command Thrust matter on a pontoon?",
@@ -4176,11 +4176,11 @@
       "faqs": [
         {
           "q": "Why doesn't HBW stock the Mercury 75 HP FourStroke?",
-          "a": "Because it's the same physical motor as the 90, same weight, very small price difference, and the 90 has more headroom and holds value better. We point customers at the 90."
+          "a": "Because it's the same physical motor as the 90, same weight, very small price difference, and the 90 has more headroom and holds value better. We point customers at the 90 when the plate allows 115 HP; on a 90 HP plate, the 75 is the best fit."
         },
         {
           "q": "Can HBW order a Mercury 75 if I really want one?",
-          "a": "Yes. We can order any Mercury motor Mercury makes. We just don't keep the 75 on the shelf because we recommend the 90 in almost every case where customers ask about a 75."
+          "a": "Yes. We can order any Mercury motor Mercury makes. We just don't keep the 75 on the shelf because we recommend the 90 when the plate allows 115 HP. On a 90 HP plate, the 75 is the best fit."
         },
         {
           "q": "What's the actual difference between a 75 and a 90 Mercury FourStroke?",
@@ -4254,7 +4254,7 @@
     {
       "slug": "mercury-dealer-bowmanville-ontario-hbw",
       "title": "Mercury Dealer for Bowmanville: 35 Minutes to Rice Lake",
-      "description": "Mercury Premier dealer for Bowmanville: Harris Boat Works on Rice Lake, 35 minutes via 401 and 115. Repower, sales, parts, winter storage practically next door.",
+      "description": "Mercury Premier dealer for Bowmanville: Harris Boat Works on Rice Lake, about 45 to 50 minutes via 401 east to Exit 472 in Cobourg and County Road 18 north. Repower, sales, parts, winter storage practically next door.",
       "category": "Dealer Locations",
       "publishDate": "2026-05-11",
       "keywords": [
@@ -4266,11 +4266,11 @@
       "faqs": [
         {
           "q": "How far is HBW from Bowmanville?",
-          "a": "About 35 minutes via Highway 401 east and Highway 115 north. Roughly 55 km. The closest major GTA-edge city to Rice Lake."
+          "a": "About 45 to 50 minutes in light traffic, roughly 60 km. Take Highway 401 east to Exit 472 (County Road 18 / Burnham Street, Cobourg), then north on County Road 18 about 16 km to Gores Landing. The closest major GTA-edge city to Rice Lake."
         },
         {
           "q": "Can HBW handle all my Mercury service in Bowmanville?",
-          "a": "Yes. The 35-minute drive makes us a realistic primary dealer for everything - spring commissioning, mid-season service, fall winterization, parts, warranty work."
+          "a": "Yes. The 45-to-50-minute drive makes us a realistic primary dealer for everything - spring commissioning, mid-season service, fall winterization, parts, warranty work."
         },
         {
           "q": "Does HBW serve Clarington and Newcastle?",
@@ -4503,7 +4503,7 @@
         },
         {
           "q": "Is the Mercury 150 Pro XS a V6?",
-          "a": "No. The 150 Pro XS is an inline-4. The remaining Pro XS V6 rating is the 175. The 200, 225, 250, and 300 Pro XS are V8. This matters because the 150 is meaningfully lighter than the V6 and V8 models, roughly 45 kg (100 lb) less rigged, which is why it's popular on smaller bass boats and aluminum tournament hulls where…"
+          "a": "No. The 150 Pro XS is an inline-4. The remaining Pro XS V6 rating is the 175. The 200, 225, 250, and 300 Pro XS are V8. The 150 Pro XS weighs 207 kg (456 lb) dry, about 9 kg (19 lb) less than the 175 Pro XS V6 at 216 kg (475 lb), and about 25 kg (55 lb) less than the 200–300 Pro XS V8 at 232 kg (511 lb). That matters…"
         },
         {
           "q": "How much does a Pro XS repower cost in Ontario?",
@@ -4640,7 +4640,7 @@
         },
         {
           "q": "Does aluminum corrode in fresh water?",
-          "a": "Marine-grade aluminum (5052 or 5086 alloy) resists fresh-water corrosion well for decades. The exception is galvanic corrosion at fittings where dissimilar metals contact aluminum without proper isolation. A boat kept in the water year-round needs sacrificial zincs and proper fitting installation. A trailered boat tha…"
+          "a": "Marine-grade aluminum (5052 or 5086 alloy) resists fresh-water corrosion well for decades. The exception is galvanic corrosion at fittings where dissimilar metals contact aluminum without proper isolation. An aluminum hull kept in fresh water needs magnesium anodes (the best freshwater choice) or aluminum anodes, plus…"
         },
         {
           "q": "Can fiberglass survive Ontario winters in outdoor storage?",
