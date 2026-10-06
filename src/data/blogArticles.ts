@@ -33687,7 +33687,7 @@ If you're planning a TSW transit, the prep work matters as much as the route pla
 - Inspect cooling water flow at startup (telltale stream healthy and clean)
 - Confirm bilge pump operation
 - Cell phone fully charged plus a portable backup
-- Contact list with HBW (905-342-2153), local marinas en route, and emergency contacts (VHF Channel 16, *16 on a cell phone, or 911). Transport Canada's 1-800-267-6687 Boating Safety Infoline is for information, not rescue
+- Contact list with HBW (905-342-2153), local marinas en route, and emergency contacts (VHF Channel 16, *16 on a cell phone, 911, or Coast Guard JRCC Trenton at 1-800-267-7270). Transport Canada's 1-800-267-6687 Boating Safety Infoline is for information, not rescue
 
 ## When to call HBW vs. when to keep moving
 
