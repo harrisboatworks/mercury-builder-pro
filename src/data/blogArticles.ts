@@ -6771,7 +6771,7 @@ Pontoon hulls are heavy and blunt-fronted. They need pulling power to get up and
 
 The performance difference between a standard gearcase Mercury and a Command Thrust Mercury on a loaded pontoon is significant, particularly at hole shot and at cruise with a full load. Customers who saved money by skipping Command Thrust routinely wish they had not.
 
-This is not a sales pitch; it is just what we have seen on Rice Lake for years. Pay for Command Thrust once. You will not regret it.
+Match Command Thrust to the exact motor, hull and load. On a loaded pontoon in the 90 to 115 HP class it can help; the 150 to 200 HP tritoon setups here use standard gearcases.
 
 ## Pontoon brands worth knowing
 
@@ -22950,7 +22950,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     faqs: [
       { question: 'What HP do I need for a pontoon boat?', answer: 'It depends on the boat\'s documented power, transom, and motor-weight limits, tube count, hull, load, and use. 25 to 40 HP for some 16 to 18 ft cruise boats, 60 to 90 HP for some 20 to 22 ft cruisers, 115 to 150 HP for some 22 to 24 ft loaded family boats, and 200+ HP for some tritoons and watersports setups are examples to compare, not minima.' },
       { question: 'Is 90 HP enough for a 22 ft pontoon?', answer: 'For a loaded 22-foot boat, 90 or 115 CT is an occasional-tube example; 150 suits regular tube pulling. A 60 HP 20-footer is a lighter-cruise comparison. Use CT only where Mercury offers that model and this boat\'s limits support it. Hole shot still depends on hull, prop, and load.' },
-      { question: 'Why do pontoons need more HP than runabouts?', answer: 'Pontoon dry weight varies widely by length, tube count, and build, so check the builder\'s published dry weight for the exact boat before adding people, gear, and fuel. On a hypothetical 22-footer actually rated for 10 adults, that passenger load plus a full cooler can easily clear 2,268 kg (5,000 lb). Length alone does not set legal capacity. Pontoon tubes also create more drag than a V-hull because you are pushing water aside rather than cutting through it. Add huge freeboard catching crosswind, and a pontoon needs meaningfully more horsepower than an equivalent-length runabout.' },
+      { question: 'Why do pontoons need more HP than runabouts?', answer: 'Pontoon dry weight varies widely by length, tube count, and build, so check the builder\'s published dry weight for the exact boat before adding people, gear, and fuel. On a hypothetical 22-footer actually rated for 10 adults, those people plus a full cooler weigh roughly 750–1,100 kg (1,650–2,400 lb). Add the pontoon dry weight, motor, fuel and gear, and the loaded boat can easily clear 2,268 kg (5,000 lb). Length alone does not set legal capacity. Pontoon tubes also create more drag than a V-hull because you are pushing water aside rather than cutting through it. Add huge freeboard catching crosswind, and a pontoon needs meaningfully more horsepower than an equivalent-length runabout.' },
       { question: 'When does Command Thrust matter on a pontoon?', answer: 'CT is model-specific: check the exact model\'s gearcase specifications before assuming it is available in the horsepower you are considering. Use CT where that exact model is offered and this pontoon\'s documented power, transom, motor-weight, steering, and load accept it, not because the boat is over 20 feet. A larger-diameter prop changes low-speed thrust on some heavy boats; it does not guarantee a given crew will plane.' },
       { question: 'How much horsepower do I need to pull a tube or wakeboard from a pontoon?', answer: 'For regular tube pulling, 150 HP on a 22-foot two-tube and 200 HP on a tritoon are the examples used in the body. For wakeboarding, a tritoon with 250+ HP is an example to compare; 200 HP is a lighter tritoon example. A two-tube pontoon is a different hull.' },
     ],
@@ -28035,20 +28035,20 @@ Online owner material is treated as anecdotal buyer context, not as a warranty s
     readTime: "7 min read",
     keywords: ["mercury 75 hp review", "mercury 75 hp fourstroke", "mercury 75 vs 90", "mercury 75 elpt ontario", "why dealers dont sell 75 hp", "mercury 90 better than 75"],
     faqs: [
-      { question: "Why doesn't HBW stock the Mercury 75 HP FourStroke?", answer: "Because it's the same physical motor as the 90, same weight, very small price difference, and the 90 has more headroom and holds value better. We point customers at the 90." },
-      { question: "Can HBW order a Mercury 75 if I really want one?", answer: "Yes. We can order any Mercury motor Mercury makes. We just don't keep the 75 on the shelf because we recommend the 90 in almost every case where customers ask about a 75." },
+      { question: "Why doesn't HBW stock the Mercury 75 HP FourStroke?", answer: "Because it's the same physical motor as the 90, same weight, very small price difference, and the 90 has more headroom and holds value better. We point customers at the 90 when the plate allows 115 HP; on a 90 HP plate, the 75 is the best fit." },
+      { question: "Can HBW order a Mercury 75 if I really want one?", answer: "Yes. We can order any Mercury motor Mercury makes. We just don't keep the 75 on the shelf because we recommend the 90 when the plate allows 115 HP. On a 90 HP plate, the 75 is the best fit." },
       { question: "What's the actual difference between a 75 and a 90 Mercury FourStroke?", answer: "Same 2.1L block. Same dry weight (163 kg (359 lb)). Different software tuning, different prop calibration. The 75 redlines at 5,500 RPM. The 90 redlines at 6,000 RPM. The 90 has more peak HP for the same physical motor." },
       { question: "Is the Mercury 90 worth the upcharge over the 75?", answer: "For most boats and most buyers, yes. Same motor, more headroom, better resale, marginal cost difference. The math is hard to argue with once you see it laid out." },
       { question: "My compliance notice says 75 HP max. Can I put a 90 on it?", answer: "Do not use an oversized existing setup or an internet example as approval. Treat 75 HP as the manufacturer's maximum recommended safe power unless authoritative documentation for the exact hull says otherwise. A 90 HP setup can create safety, insurance, warranty, liability, financing, and resale problems." },
       { question: "Will a Mercury 75 work on a pontoon?", answer: "Technically yes for smaller pontoons under 20 ft with light loads. We don't recommend it. Pontoons want torque and load-carrying ability, which is what the 90 ELPT Command Thrust delivers." },
       { question: "Can I get a 75 Mercury used?", answer: "Sometimes, yes. Used 75s come through the market. We can help assess condition and decide if a used 75 makes more sense than a new 90 for your situation." },
-      { question: "How much does a Mercury 75 HP outboard cost in Canada?", answer: "HBW lists the current CAD price for the Mercury 75 ELPT FourStroke on our pricing reference at mercuryrepower.ca/pricing-reference, and you can build a live CAD quote for it in the online configurator. We don't keep the 75 on the shelf, so it is ordered in, and we confirm the exact price, rigging and timing before you commit. If your boat is rated for 90 HP, price the 90 beside it, because the gap is usually smaller than people expect. Questions: 905-342-2153." },
+      { question: "How much does a Mercury 75 HP outboard cost in Canada?", answer: "HBW lists the current CAD price for the Mercury 75 ELPT FourStroke on our pricing reference at mercuryrepower.ca/pricing-reference, and you can build a live CAD quote for it in the online configurator. We don't keep the 75 on the shelf, so it is ordered in, and we confirm the exact price, rigging and timing before you commit. If your boat is rated for 115 HP, price the 90 beside it, because the gap is usually smaller than people expect. Questions: 905-342-2153." },
       { question: "Is the Mercury 75 HP a 4-stroke outboard?", answer: "Yes. Mercury's current 75 HP is a FourStroke: a 2.1L inline four-cylinder with electronic fuel injection, built on the same block as the 90 and weighing 163 kg (359 lb) dry. If you are replacing an older 75 HP two-stroke, expect a quieter, cleaner-running motor, and check your transom and capacity plate before you order." },
       { question: "What does 75 ELPT mean on a Mercury outboard?", answer: "ELPT is Mercury's model code: E for electric start, L for a long 20-inch shaft, and PT for power trim. The 75 ELPT FourStroke is the version on HBW's pricing reference. Measure your transom before you order, because the shaft length has to match it. Call 905-342-2153 or build a quote at mercuryrepower.ca." },
     ],
     content: `### Quick Answer
 
-The Mercury 75 HP FourStroke is the same physical motor as the 90, same 2.1L inline-4 block, same 163 kg (359 lb) weight, with a lower RPM ceiling and a smaller price difference than most people expect. Harris Boat Works doesn't stock the 75 because the 90 is often the stronger comparison when the hull, load, and capacity plate support it. We'll order the 75 if your capacity plate requires it.
+The Mercury 75 HP FourStroke is the same physical motor as the 90, same 2.1L inline-4 block, same 163 kg (359 lb) weight, with a lower RPM ceiling and a smaller price difference than most people expect. Harris Boat Works doesn't stock the 75 because the 90 is often the stronger comparison when the hull and load suit it and the capacity plate allows 115 HP. We'll order the 75 for a 90 HP plate. Cost aside, one Mercury model below the maximum is the best fit.
 
 ---
 
@@ -28058,7 +28058,7 @@ eyebrow: Why HBW doesn't stock 75
 subhead: We will order 75 HP, but here is why almost every buyer ends up with the 90.
 leftLabel: Choose 90 HP if
 leftCriteria:
-  - You are shopping the 75 to 90 HP range for a 16 to 18 ft boat
+  - Your capacity plate allows 115 HP; the 90 is one Mercury model below the maximum
   - You want stronger hole shot and a bit more top end
   - The price difference vs 75 HP is typically under $1,500 in 2026
   - Resale value holds better (more buyer demand for 90 HP)
@@ -28072,14 +28072,14 @@ rightCriteria:
   - You are not towing or carrying full passenger loads
 rightOutcome: Pick 75 HP FourStroke
 rightVariant: alternative
-whenInDoubt: We do not stock 75 HP because, when the hull, load, and capacity plate support 90, the price and weight gap is small and the 90 has more headroom. If you want 75, we will order it. If your plate allows 90, compare the 90 first.
+whenInDoubt: We do not stock 75 HP because, when the hull and load suit it and the capacity plate allows 115 HP, the price and weight gap is small and the 90 has more headroom. If you want 75, we will order it. If your plate allows 90, choose the 75. A 115 HP plate makes the 90 the best fit.
 ::
 
 ---
 
 ### Mercury 75 HP FourStroke: Why We Don't Stock It
 
-We get asked about the Mercury 75 HP FourStroke regularly. Usually the question sounds like: "Is the 75 good enough, or should I go to the 90?" Here's our honest answer: the 90 is almost always the better call, and the reason we don't stock the 75 is that it's the same motor.
+We get asked about the Mercury 75 HP FourStroke regularly. Usually the question sounds like: "Is the 75 good enough, or should I go to the 90?" Here's our honest answer: the 90 is the better call on a hull plated for 115 HP; on a 90 HP plate, the 75 is the best fit, and the reason we don't stock the 75 is that it's the same motor.
 
 We're a Mercury Marine Premier dealer that sells, rigs, water-tests, and services these motors on Rice Lake. This isn't us trying to upsell you, it's us explaining a legitimate engineering reality.
 
@@ -28118,7 +28118,7 @@ Three reasons:
 2. **The price difference is minimal.** We don't publish exact figures because Mercury pricing and dealer pricing vary, but it's not enough to justify the headroom you give up.
 3. **The 90 holds resale value better.** The 75 sits in a gap between motors people actually want: the 60 below it and the 90 above it.
 
-When the hull, load, and capacity plate support the 90, the 75 is usually the weaker comparison: same physical motor, lower RPM ceiling, and a smaller price difference than most people expect.
+When the hull and load suit it and the capacity plate allows 115 HP, the 75 is usually the weaker comparison: same physical motor, lower RPM ceiling, and a smaller price difference than most people expect.
 
 ---
 
@@ -28128,7 +28128,7 @@ There are three real scenarios where the 75 is the right call:
 
 You can build a live CAD quote for your repower online at [Mercury Repower Centre](https://www.mercuryrepower.ca/quote/motor-selection).
 
-**The capacity plate forces it.** Some 16-17 ft hulls are rated for 75 HP maximum. That plate is the ceiling, not a suggestion, not a starting point for negotiation. If the plate says 75, you get a 75. We'll order it and we won't try to talk you into something illegal.
+**The capacity plate sets the fit.** A 90 HP capacity plate makes the 75 our best-fit size; some smaller hulls are plated for only 60 or 75 HP. That plate is the ceiling, not a suggestion, not a starting point for negotiation. If the plate says 75, the best fit is a 60, one Mercury model below the maximum. We'll order it and we won't try to talk you into something illegal.
 
 **An insurance or licensing constraint applies.** Rare in Ontario, but some commercial or shared-use applications have HP caps that land on 75.
 
@@ -28156,7 +28156,7 @@ For current Mercury dealer pricing, see the [Mercury pricing reference](/pricing
 ## Frequently Asked Questions
 
 **Is the Mercury 75 HP a bad motor?** 
-No. It's not a bad motor, it's the same motor as the 90 with less headroom in the RPM range. If you need a 75 because the capacity plate requires it, it's the right motor. It's just not the right choice when the 90 is available at minimal additional cost.
+No. It's not a bad motor, it's the same motor as the 90 with less headroom in the RPM range. If the capacity plate allows 90 HP, the 75 is the best fit, one Mercury model below the maximum. A 90 is the best fit on a 115 HP plate, not a 90 HP plate.
 
 **Why doesn't HBW stock the 75?** 
 Because it's the same physical motor as the 90, same weight, minimal price difference, and the 90 has more headroom and better resale value. Stocking the 75 would mean offering customers a worse long-term buy at nearly the same price.
