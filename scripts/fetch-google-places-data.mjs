@@ -13,12 +13,10 @@
 import { writeFileSync, readFileSync, existsSync, mkdirSync } from 'fs';
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
+import { GOOGLE_PLACES_CONTENT_OPTIONS, resolveBuildContentSupabase } from './lib/build-content-supabase.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUT_PATH = resolve(__dirname, '..', 'src', 'data', 'google-places-cache.json');
-
-const SUPABASE_URL = process.env.VITE_SUPABASE_URL || 'https://eutsoqdpjurknjsshxes.supabase.co';
-const ANON_KEY = process.env.VITE_SUPABASE_PUBLISHABLE_KEY || '';
 
 // Google's weekdayText format: "Monday: 8:00 AM – 5:00 PM" / "Closed" / "Open 24 hours"
 const DAY_NAMES = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
@@ -79,13 +77,19 @@ async function main() {
     source: 'fallback',
   };
 
+  const { url: SUPABASE_URL, key: ANON_KEY, source } = resolveBuildContentSupabase(
+    process.env,
+    GOOGLE_PLACES_CONTENT_OPTIONS,
+  );
+
   if (!ANON_KEY) {
-    console.warn('[fetch-google-places] No VITE_SUPABASE_PUBLISHABLE_KEY; keeping existing cache.');
+    console.warn('[fetch-google-places] No BUILD_CONTENT_SUPABASE_PUBLISHABLE_KEY or VITE_SUPABASE_PUBLISHABLE_KEY; keeping existing cache.');
     if (!loadExisting()) writeCache(fallback);
     return;
   }
 
   try {
+    console.log(`[fetch-google-places] via ${source} ${SUPABASE_URL}`);
     const url = `${SUPABASE_URL}/functions/v1/google-places`;
     const res = await fetch(url, {
       method: 'POST',

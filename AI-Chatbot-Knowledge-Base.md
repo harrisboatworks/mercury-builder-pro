@@ -335,9 +335,10 @@ When customers ask about specific motor features (electric start, tiller, shaft 
 ## Reservation & Deposit System
 
 ### Deposit Tiers:
-- $200 deposit for portable motors (0-25HP)
-- $500 deposit for mid-range motors (30-115HP)
-- $1,000 deposit for high-power motors (150HP+)
+- $200 deposit up to 25 HP
+- $500 deposit over 25 through 115 HP
+- $1,000 deposit over 115 HP
+- $100 deposit for the model-specific Mercury 9.9 MH offer (model 1A10201LK). That amount does not change the refund rule.
 
 ### Payment Options at Checkout:
 - Apple Pay (iPhone/Mac users)
@@ -346,9 +347,12 @@ When customers ask about specific motor features (electric start, tiller, shaft 
 - Standard credit/debit card
 
 ### Reservation Policies:
-- Deposit is fully refundable
-- Holds the motor and locks current pricing
-- Balance due at in-person pickup
+- Refundability follows stock status, not the deposit amount.
+- If the motor is in stock, the deposit is refundable.
+- If the motor is out of stock or a special order, the deposit stays refundable until HBW confirms the exact motor, price, availability and ETA, and the customer approves the order in writing.
+- Once HBW places the order after that written approval, the deposit becomes non-refundable and is credited to the final invoice.
+- The deposit holds the quoted price. It does not itself start a factory order.
+- HBW does not pick up or deliver customer boats. Balance is due at in-person pickup in Gores Landing.
 - Confirmation email sent immediately
 
 ---

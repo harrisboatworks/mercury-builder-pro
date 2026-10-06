@@ -26,6 +26,7 @@ type StickySummaryProps = {
   onSaveForLater?: () => void;
   onApplyForFinancing?: () => void;
   isGeneratingPDF?: boolean;
+  reserveDisabled?: boolean;
   // Payment processing prop
   isProcessingPayment?: boolean;
   // Quote expiry
@@ -53,6 +54,7 @@ export default function StickySummary({
   onSaveForLater,
   onApplyForFinancing,
   isGeneratingPDF = false,
+  reserveDisabled = false,
   // Payment processing prop
   isProcessingPayment = false,
   // Quote expiry
@@ -186,8 +188,9 @@ export default function StickySummary({
           </div>
           <button
             onClick={onReserve}
-            disabled={isProcessingPayment}
-            className={`group w-full rounded border border-repower-navy-900 bg-transparent px-6 py-4 text-center font-sans text-[13px] font-bold uppercase tracking-[0.12em] text-repower-navy-900 transition hover:bg-repower-navy-900 hover:text-repower-cream focus:outline-none focus-visible:ring-2 focus-visible:ring-repower-gold/40 disabled:cursor-not-allowed disabled:opacity-50 ${showPulse && !isProcessingPayment ? 'premium-pulse' : ''}`}
+            disabled={isProcessingPayment || reserveDisabled}
+            title={reserveDisabled ? 'Reservation terms could not be verified' : undefined}
+            className={`group w-full rounded border border-repower-navy-900 bg-transparent px-6 py-4 text-center font-sans text-[13px] font-bold uppercase tracking-[0.12em] text-repower-navy-900 transition hover:bg-repower-navy-900 hover:text-repower-cream focus:outline-none focus-visible:ring-2 focus-visible:ring-repower-gold/40 disabled:cursor-not-allowed disabled:opacity-50 ${showPulse && !isProcessingPayment && !reserveDisabled ? 'premium-pulse' : ''}`}
           >
             <span className="inline-flex items-center justify-center gap-2">
               {isProcessingPayment
