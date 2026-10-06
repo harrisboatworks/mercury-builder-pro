@@ -602,6 +602,14 @@ for (const [source, destination] of [
     `vercel.json must permanently consolidate ${source} into ${destination}.`,
   );
 }
+// The financing application deliberately uses useNoIndex(). Both sitemap
+// generators must omit it, and the crawler HTML must agree before hydration.
+check(
+  !/loc:\s*['"]\/financing-application['"]/.test(sitemapGenerator) &&
+    !/loc:\s*['"]\/financing-application['"]/.test(prerenderScript) &&
+    /path: '\/financing-application',\s*robots: 'noindex, nofollow'/.test(prerenderScript),
+  'Financing application must be noindexed in prerender and omitted from both sitemap generators.',
+);
 for (const loc of [
   '/mercury-product-protection.md',
   '/mercury-product-protection.json',

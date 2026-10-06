@@ -9,6 +9,7 @@
 //     this dynamic builder does not trip the check.
 
 import { SITE_URL } from '@/lib/site';
+import { buildMotorProductGroup } from '@/data/motorProductGroups.js';
 
 export interface MotorSchemaInput {
   name: string;                  // model_display / model
@@ -71,17 +72,7 @@ export function buildMotorProductSchema(input: MotorSchemaInput): Record<string,
     `we do not release motors to couriers or third parties. Motor returns are not accepted. Installation work is guaranteed, ` +
     `and new Mercury motors include the applicable Mercury Marine factory warranty.`;
 
-  // Map MotorFamily → stable productGroupID used on /quote/motor-selection.
-  const familyGroupId = family
-    ? (() => {
-        const f = family.toLowerCase();
-        if (f.includes('pro xs') || f.includes('proxs')) return 'mercury-pro-xs-outboards';
-        if (f.includes('seapro') || f.includes('sea pro')) return 'mercury-seapro-outboards';
-        if (f.includes('prokicker') || f.includes('pro kicker')) return 'mercury-prokicker-outboards';
-        if (f.includes('fourstroke') || f.includes('four stroke')) return 'mercury-fourstroke-outboards';
-        return null;
-      })()
-    : null;
+  const productGroup = buildMotorProductGroup(family, name);
 
   const product: Record<string, unknown> = {
     '@type': 'Product',
@@ -95,9 +86,7 @@ export function buildMotorProductSchema(input: MotorSchemaInput): Record<string,
     url,
     ...(image ? { image } : {}),
     ...(modelNumber ? { mpn: modelNumber, sku: modelNumber } : {}),
-    ...(familyGroupId
-      ? { isVariantOf: { '@type': 'ProductGroup', productGroupID: familyGroupId } }
-      : {}),
+    ...(productGroup ? { isVariantOf: productGroup } : {}),
     ...(additionalProperty.length ? { additionalProperty } : {}),
   };
 

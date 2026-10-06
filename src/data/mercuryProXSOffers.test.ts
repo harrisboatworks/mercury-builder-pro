@@ -30,6 +30,7 @@ type HelmetContext = {
 
 type ProXsProduct = {
   name: string;
+  description: string;
   offers: {
     price: number;
     priceCurrency: string;
@@ -108,6 +109,7 @@ describe('buildMercuryProXSOffers', () => {
     const hydratedOffers = (productGroup?.hasVariant ?? []).map(
       (product) => ({
         name: product.name,
+        description: product.description,
         price: product.offers.price,
         priceCurrency: product.offers.priceCurrency,
         availability: product.offers.availability,
@@ -118,6 +120,7 @@ describe('buildMercuryProXSOffers', () => {
 
     expect(hydratedOffers).toEqual(expectedOffers.map((offer) => ({
       name: offer.name,
+      description: offer.description,
       price: offer.startingAt,
       priceCurrency: 'CAD',
       availability: offer.availability,
@@ -127,6 +130,7 @@ describe('buildMercuryProXSOffers', () => {
     expect(hydratedOffers).toHaveLength(4);
     expect(proXsPrerenderSchema).toContain('PRO_XS_STATIC_OFFERS_PRERENDER.map');
     expect(proXsPrerenderSchema).toContain('"validFrom": v.validFrom');
+    expect(proXsPrerenderSchema).toContain('"description": v.description');
     expect(proXsPrerenderSchema).not.toContain('priceValidUntil');
   });
 

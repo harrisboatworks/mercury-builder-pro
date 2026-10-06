@@ -25,6 +25,7 @@ import { normalizeAuthoritativeDate, renderSitemapLastmod } from './lib/sitemap-
 import { MERCURY_OUTBOARDS_ONTARIO_OFFERS } from '../src/data/mercuryOutboardsOffers.js';
 import { getHarrisBoatWorksBrandPagePrerender } from '../src/data/harrisBoatWorksBrandPage.js';
 import { buildMercuryProXSOffers } from '../src/data/mercuryProXSOffers.js';
+import { buildMotorProductGroup } from '../src/data/motorProductGroups.js';
 import { cleanBlogContent } from '../src/lib/cleanBlogContent.js';
 import { filterToOneBlogCredibilityAnchor } from '../src/lib/blogCredibilityAnchorPolicy.js';
 import { stripSuppressedBlogPullQuotes } from '../src/lib/blogPullQuotePolicy.js';
@@ -2536,6 +2537,7 @@ function mercuryProXSSchema() {
         "hasVariant": PRO_XS_STATIC_OFFERS_PRERENDER.map(v => ({
           "@type": "Product",
           "name": v.name,
+          "description": v.description,
           "image": v.image,
           "brand": { "@type": "Brand", "name": "Mercury Marine" },
           "category": "Outboard Motor",
@@ -3510,13 +3512,7 @@ function motorPageSchema(m, slug) {
   if (schemaStart) additionalProperty.push({ "@type": "PropertyValue", "name": "Start", "value": schemaStart });
   if (schemaControl) additionalProperty.push({ "@type": "PropertyValue", "name": "Control", "value": schemaControl });
 
-  const display2 = (m.model_display || m.model || '').toLowerCase();
-  const familyGroupId =
-    display2.includes('prokicker') || display2.includes('pro kicker') ? 'mercury-prokicker-outboards'
-    : family === 'Pro XS' ? 'mercury-pro-xs-outboards'
-    : family === 'SeaPro' ? 'mercury-seapro-outboards'
-    : family === 'FourStroke' ? 'mercury-fourstroke-outboards'
-    : null;
+  const productGroup = buildMotorProductGroup(family, display);
 
   const product = {
     "@type": "Product",
@@ -3530,7 +3526,7 @@ function motorPageSchema(m, slug) {
     "url": url,
     ...(image ? { image } : {}),
     ...(modelNo ? { "mpn": modelNo, "sku": modelNo } : {}),
-    ...(familyGroupId ? { "isVariantOf": { "@type": "ProductGroup", "productGroupID": familyGroupId } } : {}),
+    ...(productGroup ? { "isVariantOf": productGroup } : {}),
     "additionalProperty": additionalProperty,
   };
 
@@ -5837,6 +5833,7 @@ const routes = [
   },
   {
     path: '/financing-application',
+    robots: 'noindex, nofollow',
     title: 'Mercury Outboard Financing Application (CAD) | HBW',
     description: 'Apply for Mercury outboard financing in Canada. Active TD financing uses a contract of up to 60 months with amortization up to 240 months, OAC.',
     h1: 'Mercury Outboard Financing Application',
@@ -6258,7 +6255,6 @@ const staticSitemapEntries = [
   { loc: '/accessories', priority: 0.7, changefreq: 'weekly' },
   { loc: '/compare', priority: 0.7, changefreq: 'weekly' },
   { loc: '/faq', priority: 0.8, changefreq: 'monthly' },
-  { loc: '/financing-application', priority: 0.7, changefreq: 'monthly' },
   { loc: '/finance-calculator', priority: 0.7, changefreq: 'monthly' },
   { loc: '/contact', priority: 0.6, changefreq: 'monthly' },
   { loc: '/about', priority: 0.8, changefreq: 'monthly' },
