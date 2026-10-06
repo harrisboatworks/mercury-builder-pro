@@ -6407,7 +6407,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         question: 'Is EFI worth it over a carbureted motor on an aluminum fishing boat?',
-        answer: 'Mercury's 8 to 20 HP portables and everything larger use EFI. The smallest FourStrokes, 2.5 to 6 HP, are still carbureted. EFI brings instant cold starts, consistent fuel delivery across the RPM range, better fuel economy, and far fewer maintenance issues. If comparing a new EFI to an older carbureted motor you already own, the EFI\'s reliability and lower maintenance costs typically justify the upgrade within a few seasons, especially for anglers running motors in the cold shoulder seasons.'
+        answer: 'Mercury\'s 8 to 20 HP portables and everything larger use EFI. The smallest FourStrokes, 2.5 to 6 HP, are still carbureted. EFI brings instant cold starts, consistent fuel delivery across the RPM range, better fuel economy, and far fewer maintenance issues. If comparing a new EFI to an older carbureted motor you already own, the EFI\'s reliability and lower maintenance costs typically justify the upgrade within a few seasons, especially for anglers running motors in the cold shoulder seasons.'
       },
       {
         question: 'What should I expect when replacing an older two-stroke with a Mercury FourStroke?',
@@ -9410,7 +9410,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     faqs: [
       {
         question: 'What\'s the lightest outboard Mercury makes?',
-        answer: 'The Mercury 2.5 MH FourStroke weighs about 17 kg (38 lb) and is Mercury's lightest FourStroke. It\'s designed for yacht tenders where every pound matters and owners need to lift it aboard.'
+        answer: 'The Mercury 2.5 MH FourStroke weighs about 17 kg (38 lb) and is Mercury\'s lightest FourStroke. It\'s designed for yacht tenders where every pound matters and owners need to lift it aboard.'
       },
       {
         question: 'Why is 9.9HP so popular?',
@@ -10531,7 +10531,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         question: 'What water temperature is dangerous for immersion?',
-        answer: 'Any water below 21°C (70°F) can cause hypothermia. Below 15°C, cold-water shock can quickly make swimming impossible. Don't count on a fixed survival time. Below 10°C is immediately dangerous. Ontario fall waters typically range from 10-18°C.'
+        answer: 'Any water below 21°C (70°F) can cause hypothermia. Below 15°C, cold-water shock can quickly make swimming impossible. Don\'t count on a fixed survival time. Below 10°C is immediately dangerous. Ontario fall waters typically range from 10-18°C.'
       },
       {
         question: "What's the most important safety gear for fall boating?",
@@ -23955,9 +23955,9 @@ We're at 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. Pickup only, we d
     readTime: '~14 min read',
     keywords: ['mercury outboard prices', 'ontario', 'cad pricing', 'repower', 'buying guide'],
     faqs: [
-      { question: 'How much does a Mercury 9.9 HP cost in Ontario?', answer: 'A standard 9.9 MH FourStroke is around ' + '$2,999' /* @canonical:dealer:9-9mh-fourstroke */ + ' CAD dealer price. The 9.9 ELPT Command Thrust ProKicker EFI, the popular trolling kicker, is around $5,000. Add HST, controls if going remote, and any rigging or installation. See the live pricing table for the full 9.9 lineup with shaft, start, and feature variants.' },
-      { question: 'How much is a Mercury 150 HP in Canada?', answer: 'A 150L FourStroke is ' + '$22,242' /* @canonical:dealer:150l-fourstroke */ + ' CAD dealer price. A 150 ELPT Pro XS is ' + '$24,349' /* @canonical:dealer:150elpt-pro-xs */ + '. Both are before HST, install, controls, and prop. All-in installed cost on a typical 19-21 ft bowrider repower generally lands at $25,000-$28,000 CAD.' },
-      { question: 'How much is a Mercury 115 Pro XS?', answer: 'The 115ELPT Pro XS is ' + '$17,490' /* @canonical:dealer:115elpt-pro-xs */ + ' CAD dealer price (vs ' + '$17,083' /* @canonical:dealer:115elpt-fourstroke */ + ' for the 115ELPT FourStroke, about a $400 difference). The 115ELPT Pro XS Command Thrust is $17,941. All before HST, install, controls, and prop.' },
+      { question: 'How much does a Mercury 9.9 HP cost in Ontario?', answer: 'A standard 9.9 MH FourStroke is around \' + \'$2,999\' /* @canonical:dealer:9-9mh-fourstroke */ + \' CAD dealer price. The 9.9 ELPT Command Thrust ProKicker EFI, the popular trolling kicker, is around $5,000. Add HST, controls if going remote, and any rigging or installation. See the live pricing table for the full 9.9 lineup with shaft, start, and feature variants.' },
+      { question: 'How much is a Mercury 150 HP in Canada?', answer: 'A 150L FourStroke is \' + \'$22,242\' /* @canonical:dealer:150l-fourstroke */ + \' CAD dealer price. A 150 ELPT Pro XS is \' + \'$24,349\' /* @canonical:dealer:150elpt-pro-xs */ + \'. Both are before HST, install, controls, and prop. All-in installed cost on a typical 19-21 ft bowrider repower generally lands at $25,000-$28,000 CAD.' },
+      { question: 'How much is a Mercury 115 Pro XS?', answer: 'The 115ELPT Pro XS is \' + \'$17,490\' /* @canonical:dealer:115elpt-pro-xs */ + \' CAD dealer price (vs \' + \'$17,083\' /* @canonical:dealer:115elpt-fourstroke */ + \' for the 115ELPT FourStroke, about a $400 difference). The 115ELPT Pro XS Command Thrust is $17,941. All before HST, install, controls, and prop.' },
       { question: 'What\'s the difference between MSRP and dealer price?', answer: 'MSRP is Mercury Canada\'s suggested retail. Dealer price is what we actually sell for, at or below MSRP. Harris Boat Works publishes both numbers next to every motor so you can see exactly what the difference is.' },
       { question: 'Does the motor price include installation?', answer: 'No. The motor price is the motor, sitting on a pallet at the shop. Installation, rigging, controls, prop, and lake test are quoted separately. For a 60-115 HP repower, expect $1,500-$3,500 in install and rigging on top of the motor price.' },
       { question: 'Can I buy Mercury cheaper in the US?', answer: 'Sometimes the headline price looks lower. But cross-border duty, brokerage, shipping, currency conversion, and Mercury Canada warranty restrictions on grey-market motors typically erase any savings, and then some. Mercury\'s Canadian warranty applies only to motors purchased through Canadian dealers.' },
