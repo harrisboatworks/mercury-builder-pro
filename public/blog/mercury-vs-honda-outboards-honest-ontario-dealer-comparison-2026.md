@@ -126,7 +126,7 @@ HBW's standard repower handoff includes an on-water test on Rice Lake before pic
 **Email:** info@harrisboatworks.ca
 **Website:** harrisboatworks.ca
 **Quote builder:** mercuryrepower.ca
-**Service requests:** hbw.wiki/service
+**Service requests:** hbwservice.ca
 
 Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Current Mercury Marine Premier Dealer, with authorized Mercury service directly on Rice Lake.
 

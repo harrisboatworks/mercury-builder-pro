@@ -137,7 +137,7 @@ Other rental options exist around Bewdley, but availability and quality vary. Ca
 
 **HBW (Gores Landing)** sells ethanol-free 89-octane marine fuel directly at our dock. Easier on outboards than the 10% ethanol you get at most pump stations. We're open daily during boating season.
 
-For Mercury service, parts, or repower questions, we're a Mercury Marine Premier dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947. Service requests at [hbw.wiki/service](https://hbw.wiki/service). Phone 905-342-2153.
+For Mercury service, parts, or repower questions, we're a Mercury Marine Premier dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947. Service requests at [hbwservice.ca](https://hbwservice.ca). Phone 905-342-2153.
 
 ---
 

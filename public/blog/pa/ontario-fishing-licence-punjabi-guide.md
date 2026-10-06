@@ -68,7 +68,7 @@ Rice Lake ’ਤੇ Gores Landing ਆ ਕੇ ਕਿਸ਼ਤੀ ਕਿਰਾਏ ’
 ## Harris Boat Works ton madad lai link | ਹੈਰਿਸ ਬੋਟ ਵਰਕਸ ਤੋਂ ਮਦਦ ਲਈ ਲਿੰਕ
 
 Rice Lake ’ਤੇ fishing day plan ਕਰ ਰਹੇ ਹੋ? ਸਾਡੀ rental boat book ਕਰੋ: https://harrisboatworks.ca/rentals  
-service ਦੀ ਲੋੜ ਹੈ? service requests online: https://hbw.wiki/service  
+service ਦੀ ਲੋੜ ਹੈ? service requests online: https://hbwservice.ca  
 phone: (905) 342-2153  
 text: (647) 952-2153  
 address: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0

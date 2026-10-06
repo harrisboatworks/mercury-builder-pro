@@ -29,7 +29,7 @@ revenue_driver: service
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-smartcraft-alarm-codes-encyclopedia
 
-> **Quick answer:** Mercury SmartCraft alarms communicate engine faults two ways: beep patterns through the warning horn and numeric codes on VesselView (now rebranded SmartCraft Connect Mobile). The most common codes we see at HBW are low battery voltage, water in fuel (4 beeps every 2 minutes, the #1 spring first-start alarm), engine over-temperature, low oil pressure, and Guardian faults. If you hear an alarm, read the display first, then count the beep pattern, then put in a service request at hbw.wiki/service.
+> **Quick answer:** Mercury SmartCraft alarms communicate engine faults two ways: beep patterns through the warning horn and numeric codes on VesselView (now rebranded SmartCraft Connect Mobile). The most common codes we see at HBW are low battery voltage, water in fuel (4 beeps every 2 minutes, the #1 spring first-start alarm), engine over-temperature, low oil pressure, and Guardian faults. If you hear an alarm, read the display first, then count the beep pattern, then put in a service request at hbwservice.ca.
 
 If the display shows a complete number such as **621-5**, start with the [Mercury fault-code lookup](/blog/mercury-outboard-fault-codes-lookup). It keeps the modern engine-family table separate from the older single-number VesselView list.
 
@@ -45,7 +45,7 @@ When a customer calls with a Guardian alarm active or a code on the screen, the 
 
 That single question routes the call. The display text tells us the system involved (fuel, charging, oil, temperature, communication). The beep pattern tells us severity and the specific subsystem. A continuous tone is different from 4 beeps every 2 minutes is different from 6 beeps once.
 
-[Beeping at the dock? Book a diagnostic](https://hbw.wiki/service "cta")
+[Beeping at the dock? Book a diagnostic](https://hbwservice.ca "cta")
 
 Related: [Mercury service at HBW](/maintenance).
 
@@ -123,7 +123,7 @@ HBW uses [SmartCraft Connect Mobile](/blog/mercury-smartcraft-connect-guide-onta
 
 ## Ready for HBW to look at it?
 
-**Service appointment:** [hbw.wiki/service](https://hbw.wiki/service)  
+**Service appointment:** [hbwservice.ca](https://hbwservice.ca)  
 **Email:** info@harrisboatworks.ca  
 **Phone:** 905-342-2153
 
@@ -191,7 +191,7 @@ A warning horn can alert you even without a display that shows fault text. Follo
 
 ## Next steps
 
-- If the owner can bring the boat to HBW in Gores Landing, Ontario, submit a service request: https://hbw.wiki/service
+- If the owner can bring the boat to HBW in Gores Landing, Ontario, submit a service request: https://hbwservice.ca
 - Include the exact code, engine serial number, hours, and a photo of the full display.
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
@@ -199,7 +199,7 @@ A warning horn can alert you even without a display that shows fault text. Follo
 
 - Treat fault-code meaning as engine-family, calibration, and serial-number specific.
 - HBW diagnoses faults in person at its Gores Landing shop. Do not offer phone or remote diagnosis.
-- Route to https://hbw.wiki/service only when the owner can bring the boat to HBW.
+- Route to https://hbwservice.ca only when the owner can bring the boat to HBW.
 - Safety warnings and the exact Mercury owner or service publication take priority over generic code descriptions.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.

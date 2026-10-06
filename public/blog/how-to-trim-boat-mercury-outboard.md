@@ -151,7 +151,7 @@ Our [Mercury propeller selection guide](/blog/mercury-propeller-selection-guide)
 
 If sensible trim changes do not stop porpoising, ventilation or poor handling, have the boat inspected by a qualified marine technician before further operation.
 
-**Request service:** [hbw.wiki/service](https://hbw.wiki/service)
+**Request service:** [hbwservice.ca](https://hbwservice.ca)
 
 Family-owned since 1947, Mercury dealer since 1965, Mercury Premier Dealer.
 

@@ -143,7 +143,7 @@ The return trip can be busier than the trip out. Weekend afternoons on 401 west 
 
 Build a quote for your Mercury motor, before or after the trip, at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**. Live installed pricing in CAD.
 
-Service requests for HBW: **[hbw.wiki/service](https://hbw.wiki/service)**.
+Service requests for HBW: **[hbwservice.ca](https://hbwservice.ca)**.
 
 Phone: **905-342-2153**.
 

@@ -116,7 +116,7 @@ Les permis se délivrent en ligne ou dans les points de vente autorisés. Consul
 
 ## Une petite note honnête
 
-Notre équipe travaille en anglais. Nous ne parlons pas couramment le français, mais nous sommes sincèrement heureux de vous accueillir et nous ferons tout notre possible pour vous aider. Vous pouvez nous écrire par courriel ou via le formulaire de demande de service à **hbw.wiki/service** et nous vous répondrons en anglais. Si vous préférez, utilisez Google Traduction ou demandez à un proche bilingue de vous aider.
+Notre équipe travaille en anglais. Nous ne parlons pas couramment le français, mais nous sommes sincèrement heureux de vous accueillir et nous ferons tout notre possible pour vous aider. Vous pouvez nous écrire par courriel ou via le formulaire de demande de service à **hbwservice.ca** et nous vous répondrons en anglais. Si vous préférez, utilisez Google Traduction ou demandez à un proche bilingue de vous aider.
 
 Harris Boat Works est l'un des rares concessionnaires Mercury en Ontario à offrir du contenu francophone sur la pêche et la navigation.
 
@@ -129,7 +129,7 @@ Harris Boat Works est l'un des rares concessionnaires Mercury en Ontario à offr
 
 **Réservez votre embarcation ou planifiez votre saison.** 
 Location d'embarcations : [harrisboatworks.ca](https://harrisboatworks.ca) 
-Service et entretien : [hbw.wiki/service](https://hbw.wiki/service), vous pouvez nous envoyer votre demande (nous répondrons en anglais). 
+Service et entretien : [hbwservice.ca](https://hbwservice.ca), vous pouvez nous envoyer votre demande (nous répondrons en anglais). 
 Téléphone : **905-342-2153** 
 Harris Boat Works, Gores Landing, Ontario, sur le lac Rice. En affaires depuis 1947.
 ---

@@ -52,7 +52,7 @@ Le statut du concessionnaire ne remplace toutefois pas la vérification du batea
 
 ## Service, hivernisation et entreposage
 
-Les travaux sont pris selon le principe du premier arrivé, premier servi. Remplissez [hbw.wiki/service](https://hbw.wiki/service), puis déposez le bateau en tout temps, y compris en dehors des heures d'ouverture. Harris Boat Works ferme le 1er décembre; la marina reste fermée jusqu'au 1er avril.
+Les travaux sont pris selon le principe du premier arrivé, premier servi. Remplissez [hbwservice.ca](https://hbwservice.ca), puis déposez le bateau en tout temps, y compris en dehors des heures d'ouverture. Harris Boat Works ferme le 1er décembre; la marina reste fermée jusqu'au 1er avril.
 
 ## Garantie Mercury
 
@@ -60,7 +60,7 @@ Les modalités dépendent du produit, de l'usage et de la date d'achat. Consulte
 
 ---
 
-**Commencez avec les faits de votre bateau :** [bâtissez une soumission en CAD](/quote/motor-selection) ou envoyez les détails de votre bateau dans la [demande de service](https://hbw.wiki/service). Les moteurs et les projets sont ramassés à Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, Ontario.
+**Commencez avec les faits de votre bateau :** [bâtissez une soumission en CAD](/quote/motor-selection) ou envoyez les détails de votre bateau dans la [demande de service](https://hbwservice.ca). Les moteurs et les projets sont ramassés à Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, Ontario.
 `,
     faqs: [
       {
@@ -77,7 +77,7 @@ Les modalités dépendent du produit, de l'usage et de la date d'achat. Consulte
       },
       {
         question: 'Comment planifier une hivernisation ou un entreposage?',
-        answer: "HBW prend les travaux selon le principe du premier arrivé, premier servi. Remplissez hbw.wiki/service, puis déposez le bateau en tout temps, y compris en dehors des heures d'ouverture. L'entreprise ferme le 1er décembre; la marina reste fermée jusqu'au 1er avril.",
+        answer: "HBW prend les travaux selon le principe du premier arrivé, premier servi. Remplissez hbwservice.ca, puis déposez le bateau en tout temps, y compris en dehors des heures d'ouverture. L'entreprise ferme le 1er décembre; la marina reste fermée jusqu'au 1er avril.",
       },
       {
         question: 'Expédiez-vous ou livrez-vous les moteurs?',
@@ -213,7 +213,7 @@ Harris Boat Works offre du contenu disponible en français pour les clients fran
 
 **En ligne :** mercuryrepower.ca, configurez votre remotorisation et obtenez un prix réel en dollars canadiens, disponible 24 h/24, sans rendez-vous ni barrière linguistique.
 
-**Par demande de service :** hbw.wiki/service, vous pouvez nous envoyer votre demande (nous répondrons en anglais).
+**Par demande de service :** hbwservice.ca, vous pouvez nous envoyer votre demande (nous répondrons en anglais).
 
 **Par téléphone :** 905-342-2153
 
@@ -250,7 +250,7 @@ Harris Boat Works offre du contenu disponible en français pour les clients fran
       },
       {
         question: 'L\'équipe peut-elle communiquer en français?',
-        answer: 'L\'équipe travaille en anglais. Vous pouvez nous envoyer votre demande via hbw.wiki/service et nous vous répondrons en anglais. Si vous préférez, utilisez Google Traduction ou demandez à un proche bilingue de vous aider.'
+        answer: 'L\'équipe travaille en anglais. Vous pouvez nous envoyer votre demande via hbwservice.ca et nous vous répondrons en anglais. Si vous préférez, utilisez Google Traduction ou demandez à un proche bilingue de vous aider.'
       },
       {
         question: 'Faut-il amener le bateau sur place pour obtenir un devis?',
@@ -394,10 +394,10 @@ Presque toujours oui. La boîte de vitesses Command Thrust est conçue pour les 
 Le FourStroke standard est optimisé pour la croisière confortable, l'économie de carburant, et la longévité. Le Pro XS est optimisé pour la vitesse maximale et la reprise, conçu pour les bateaux de pêche sportive et les amateurs de performance.
 
 **Puis-je obtenir un devis en français ?** 
-Le configurateur sur mercuryrepower.ca fonctionne sans barrière linguistique, les prix sont clairs et accessibles en dollars canadiens. Pour des questions plus détaillées, vous pouvez nous envoyer votre demande via hbw.wiki/service (nous répondrons en anglais).
+Le configurateur sur mercuryrepower.ca fonctionne sans barrière linguistique, les prix sont clairs et accessibles en dollars canadiens. Pour des questions plus détaillées, vous pouvez nous envoyer votre demande via hbwservice.ca (nous répondrons en anglais).
 
 **L'équipe parle-t-elle français ?** 
-Notre personnel répond en anglais. Vous pouvez nous envoyer votre demande via hbw.wiki/service et nous vous répondrons en anglais. Si vous préférez, utilisez Google Traduction ou demandez à un proche bilingue de vous aider.
+Notre personnel répond en anglais. Vous pouvez nous envoyer votre demande via hbwservice.ca et nous vous répondrons en anglais. Si vous préférez, utilisez Google Traduction ou demandez à un proche bilingue de vous aider.
 
 ---
 
@@ -405,7 +405,7 @@ Notre personnel répond en anglais. Vous pouvez nous envoyer votre demande via h
 
 **Outil de comparaison en ligne :** mercuryrepower.ca, comparez les deux moteurs côte à côte avec les prix réels en dollars canadiens.
 
-**Demande de service :** hbw.wiki/service, vous pouvez nous envoyer votre demande (nous répondrons en anglais).
+**Demande de service :** hbwservice.ca, vous pouvez nous envoyer votre demande (nous répondrons en anglais).
 
 **Téléphone :** 905-342-2153
 
@@ -446,7 +446,7 @@ Notre personnel répond en anglais. Vous pouvez nous envoyer votre demande via h
       },
       {
         question: 'L\'équipe parle-t-elle français ?',
-        answer: 'Notre personnel répond en anglais. Vous pouvez nous envoyer votre demande via hbw.wiki/service et nous vous répondrons en anglais. Si vous préférez, utilisez Google Traduction ou demandez à un proche bilingue de vous aider.'
+        answer: 'Notre personnel répond en anglais. Vous pouvez nous envoyer votre demande via hbwservice.ca et nous vous répondrons en anglais. Si vous préférez, utilisez Google Traduction ou demandez à un proche bilingue de vous aider.'
       }
     ]
   },
@@ -465,7 +465,7 @@ Notre personnel répond en anglais. Vous pouvez nous envoyer votre demande via h
     keywords: ['hivernisation moteur Mercury Ontario', 'entretien moteur hors-bord hiver', 'préparation hivernale bateau Ontario', 'winterization Mercury'],
     content: `### Réponse rapide
 
-Pour un moteur Mercury hors-bord, les étapes essentielles suivent le manuel du modèle et du numéro de série : carburant, protection interne, huile d'engrenage, plan de batterie et graissage. Une batterie en bon état peut rester à bord seulement si elle est pleinement chargée, débranchée, sécurisée et autorisée par le plan d'entreposage approuvé. Le manuel du modèle/numéro de série et le plan d'entreposage approuvé font foi. Harris Boat Works a 584 dossiers d'hivernisation complétés d'août à novembre 2025. Remplissez [hbw.wiki/service](https://hbw.wiki/service), puis déposez le bateau en tout temps, y compris en dehors des heures d'ouverture.
+Pour un moteur Mercury hors-bord, les étapes essentielles suivent le manuel du modèle et du numéro de série : carburant, protection interne, huile d'engrenage, plan de batterie et graissage. Une batterie en bon état peut rester à bord seulement si elle est pleinement chargée, débranchée, sécurisée et autorisée par le plan d'entreposage approuvé. Le manuel du modèle/numéro de série et le plan d'entreposage approuvé font foi. Harris Boat Works a 584 dossiers d'hivernisation complétés d'août à novembre 2025. Remplissez [hbwservice.ca](https://hbwservice.ca), puis déposez le bateau en tout temps, y compris en dehors des heures d'ouverture.
 
 ---
 
@@ -531,7 +531,7 @@ Faire l'hivernisation soi-même est possible, mais seulement si vous avez l'exp�
 
 Pour les réparations de moteur, nous entretenons uniquement les moteurs Mercury et Mercruiser.
 
-Notre équipe travaille en anglais. Nous ne parlons pas français, mais nous sommes sincèrement heureux de vous accueillir et nous ferons tout notre possible pour vous aider. Vous pouvez nous envoyer votre demande par courriel ou via notre formulaire en ligne à **hbw.wiki/service** et nous vous répondrons en anglais. Si vous préférez, utilisez Google Traduction ou demandez à un proche bilingue de vous aider.
+Notre équipe travaille en anglais. Nous ne parlons pas français, mais nous sommes sincèrement heureux de vous accueillir et nous ferons tout notre possible pour vous aider. Vous pouvez nous envoyer votre demande par courriel ou via notre formulaire en ligne à **hbwservice.ca** et nous vous répondrons en anglais. Si vous préférez, utilisez Google Traduction ou demandez à un proche bilingue de vous aider.
 
 ---
 
@@ -545,7 +545,7 @@ Notre équipe travaille en anglais. Nous ne parlons pas français, mais nous som
 ## Questions fréquentes
 
 **Quand dois-je hiverniser mon moteur Mercury en Ontario?** 
-Remplissez hbw.wiki/service, puis déposez le bateau en tout temps, y compris en dehors des heures d'ouverture. La marina est fermée du 1er décembre au 1er avril.
+Remplissez hbwservice.ca, puis déposez le bateau en tout temps, y compris en dehors des heures d'ouverture. La marina est fermée du 1er décembre au 1er avril.
 
 **Puis-je hiverniser moi-même mon moteur Mercury?** 
 Oui, si vous avez l'expérience, les bons produits et le manuel du modèle et du numéro de série. Les étapes les plus souvent omises par les propriétaires DIY : la protection interne prévue au manuel et la vidange d'huile d'engrenage.
@@ -554,7 +554,7 @@ Oui, si vous avez l'expérience, les bons produits et le manuel du modèle et du
 L'éthanol absorbe l'humidité et se sépare du carburant lors d'un stockage prolongé. Ce mélange eau-éthanol peut colmater les injecteurs ou le carburateur et causer de la corrosion interne. Carburant sans éthanol ou stabilisant de qualité, ou idéalement les deux.
 
 **Est-ce que Harris Boat Works offre le service d'hivernisation?** 
-Oui. Nous avons 584 dossiers d'hivernisation complétés d'août à novembre 2025 à Gores Landing. Remplissez [hbw.wiki/service](https://hbw.wiki/service), puis déposez le bateau en tout temps, y compris en dehors des heures d'ouverture.
+Oui. Nous avons 584 dossiers d'hivernisation complétés d'août à novembre 2025 à Gores Landing. Remplissez [hbwservice.ca](https://hbwservice.ca), puis déposez le bateau en tout temps, y compris en dehors des heures d'ouverture.
 
 **Est-ce que je dois enlever ma batterie pour l'hiver?** 
 Pas nécessairement. Une batterie en bon état peut rester à bord seulement si elle est pleinement chargée, débranchée, sécurisée et autorisée par le plan d'entreposage approuvé. Le manuel du modèle/numéro de série et le plan d'entreposage approuvé font foi.
@@ -567,7 +567,7 @@ Pas nécessairement. Une batterie en bon état peut rester à bord seulement si 
 
 ## Appel à l'action
 
-Remplissez [hbw.wiki/service](https://hbw.wiki/service), puis déposez le bateau en tout temps, y compris en dehors des heures d'ouverture, ou appelez le **905-342-2153**.
+Remplissez [hbwservice.ca](https://hbwservice.ca), puis déposez le bateau en tout temps, y compris en dehors des heures d'ouverture, ou appelez le **905-342-2153**.
 Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, Ontario. 
 Concessionnaire Mercury Marine Premier. En affaires depuis 1947.
 
@@ -582,11 +582,11 @@ Pour les réparations de moteurs, nous ne servons que Mercury et Mercruiser.
     faqs: [
       {
         question: 'Combien coûte une hivernisation professionnelle?',
-        answer: 'Le prix varie selon le moteur et les services requis. Contactez-nous à hbw.wiki/service pour une estimation.'
+        answer: 'Le prix varie selon le moteur et les services requis. Contactez-nous à hbwservice.ca pour une estimation.'
       },
       {
         question: 'Quand devrais-je demander mon hivernisation?',
-        answer: 'Remplissez hbw.wiki/service, puis déposez le bateau en tout temps, y compris en dehors des heures d\'ouverture. La marina est fermée du 1er décembre au 1er avril.'
+        answer: 'Remplissez hbwservice.ca, puis déposez le bateau en tout temps, y compris en dehors des heures d\'ouverture. La marina est fermée du 1er décembre au 1er avril.'
       },
       {
         question: 'Est-ce que Harris Boat Works offre aussi l\'entreposage?',
@@ -624,7 +624,7 @@ Harris Boat Works, entreprise familiale depuis 1947, vend des bateaux neufs (Leg
 - **Un coût bien inférieur au neuf.** Un bateau neuf complet coûte souvent entre 40 000 $ et 100 000 $ CA et plus. Une remotorisation se chiffre généralement entre 20 et 40 % de ce montant, ce qui laisse une marge confortable pour d'autres projets. Pour connaître le prix exact de votre projet, utilisez le configurateur en ligne sur [mercuryrepower.ca](https://www.mercuryrepower.ca). Vous sélectionnez le type d'embarcation et la puissance, et vous obtenez un prix en dollars canadiens en temps réel, pas de « appelez-nous pour un prix ».
 - **Votre coque a de la valeur.** Une coque en aluminium bien entretenue peut durer facilement 30 à 40 ans; une coque en fibre de verre, plusieurs décennies. Le moteur, lui, vieillit plus vite. Remotoriser, c'est garder une embarcation que vous connaissez, avec un moteur neuf sous garantie Mercury. Vous évitez aussi les tracas administratifs : pas de revente, pas de nouvelle immatriculation, pas de changement d'assureur. Et nous nous occupons de la mise à jour de votre permis d'embarcation de plaisance, sans frais supplémentaires.
 - **La technologie Mercury actuelle, sur votre bateau.** Harris Boat Works propose les gammes FourStroke (2,5 à 300 HP) et Pro XS (pour les pêcheurs). Les moteurs Verado sont disponibles sur commande spéciale pour les applications haute performance. Comparé à un moteur de 15 ans ou plus, un moteur Mercury récent est généralement plus silencieux, plus facile à vivre et plus efficace, vous le sentirez dès la première sortie.
-- **Un délai souvent plus court.** La saison de navigation en Ontario s'étend en gros de mai à octobre. Commander un bateau neuf peut prendre des mois, surtout avec des configurations précises. Une remotorisation bien préparée se planifie à l'avance; commencez par une demande de service à hbw.wiki/service pour votre projet.
+- **Un délai souvent plus court.** La saison de navigation en Ontario s'étend en gros de mai à octobre. Commander un bateau neuf peut prendre des mois, surtout avec des configurations précises. Une remotorisation bien préparée se planifie à l'avance; commencez par une demande de service à hbwservice.ca pour votre projet.
 
 ## Quand le bateau neuf a du sens
 
@@ -669,7 +669,7 @@ Si la réponse est oui et que la coque est saine, la remotorisation est probable
 
 Prix de remotorisation en ligne : **mercuryrepower.ca**
 Magasiner un bateau neuf : **harrisboatworks.ca**
-Demande de service : **hbw.wiki/service**
+Demande de service : **hbwservice.ca**
 Téléphone : **905-342-2153**
 En personne : **Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0** (1 h 30 à l'est de Toronto; environ 4 h 30 de Montréal)`,
     faqs: [
@@ -687,7 +687,7 @@ En personne : **Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON 
       },
       {
         question: "L'équipe parle-t-elle français?",
-        answer: "L'équipe travaille principalement en anglais. Vous pouvez soumettre vos demandes en français via hbw.wiki/service; nous ferons notre possible pour communiquer efficacement."
+        answer: "L'équipe travaille principalement en anglais. Vous pouvez soumettre vos demandes en français via hbwservice.ca; nous ferons notre possible pour communiquer efficacement."
       },
       {
         question: "Faut-il se déplacer à Gores Landing pour obtenir un devis?",
@@ -799,7 +799,7 @@ Les permis se délivrent en ligne ou dans les points de vente autorisés. Consul
 
 ## Une petite note honnête
 
-Notre équipe travaille en anglais. Nous ne parlons pas couramment le français, mais nous sommes sincèrement heureux de vous accueillir et nous ferons tout notre possible pour vous aider. Vous pouvez nous écrire par courriel ou via le formulaire de demande de service à **hbw.wiki/service** et nous vous répondrons en anglais. Si vous préférez, utilisez Google Traduction ou demandez à un proche bilingue de vous aider.
+Notre équipe travaille en anglais. Nous ne parlons pas couramment le français, mais nous sommes sincèrement heureux de vous accueillir et nous ferons tout notre possible pour vous aider. Vous pouvez nous écrire par courriel ou via le formulaire de demande de service à **hbwservice.ca** et nous vous répondrons en anglais. Si vous préférez, utilisez Google Traduction ou demandez à un proche bilingue de vous aider.
 
 Harris Boat Works est l'un des rares concessionnaires Mercury en Ontario à offrir du contenu francophone sur la pêche et la navigation.
 
@@ -835,7 +835,7 @@ Oui. Le lac se trouve à environ 4 h 30 de Montréal (environ 445 km) par la 401
 
 **Réservez votre embarcation ou planifiez votre saison.** 
 Location d'embarcations : [harrisboatworks.ca](https://harrisboatworks.ca) 
-Service et entretien : [hbw.wiki/service](https://hbw.wiki/service), vous pouvez nous envoyer votre demande (nous répondrons en anglais). 
+Service et entretien : [hbwservice.ca](https://hbwservice.ca), vous pouvez nous envoyer votre demande (nous répondrons en anglais). 
 Téléphone : **905-342-2153** 
 Harris Boat Works, Gores Landing, Ontario, sur le lac Rice. En affaires depuis 1947.
 ---`,
@@ -1002,7 +1002,7 @@ Sur le site de Transports Canada. Les exigences varient selon la longueur et le 
 **Prêt à prendre le large en toute légalité?** 
 Pour la location d'embarcations sur le lac Rice : [harrisboatworks.ca](https://harrisboatworks.ca) 
 Pour un nouveau moteur ou une remotorisation : [mercuryrepower.ca](https://www.mercuryrepower.ca) 
-Demande de service : [hbw.wiki/service](https://hbw.wiki/service), vous pouvez nous envoyer votre demande (nous répondrons en anglais). 
+Demande de service : [hbwservice.ca](https://hbwservice.ca), vous pouvez nous envoyer votre demande (nous répondrons en anglais). 
 **905-342-2153** 
 Harris Boat Works, Gores Landing, Ontario, sur le lac Rice. En affaires depuis 1947.
 ---`,
@@ -1060,7 +1060,7 @@ Harris Boat Works, Gores Landing, Ontario, sur le lac Rice. En affaires depuis 1
 
 La plupart des moteurs Mercury hors-bord qui refusent de démarrer ont l'une de trois causes : une batterie faible ou à plat, du carburant vieilli ou contaminé, ou une hivernisation négligée (ou incomplète). Vérifiez ces éléments dans l'ordre. Si le moteur ne démarre toujours pas après les vérifications de base, apportez-le chez nous. Insister sur un moteur en panne pour le forcer à partir peut transformer un simple diagnostic en remplacement de pièces.
 
-Pour réserver un diagnostic : [hbw.wiki/service](https://hbw.wiki/service).
+Pour réserver un diagnostic : [hbwservice.ca](https://hbwservice.ca).
 
 ---
 
@@ -1176,7 +1176,7 @@ Arrêtez le dépannage et réservez un diagnostic professionnel si :
 
 Pour les réparations de moteur, nous ne servons que Mercury et Mercruiser.
 
-Faire tourner un moteur avec un problème non diagnostiqué pour le forcer à démarrer peut transformer un diagnostic de 150 $ en une réparation beaucoup plus sérieuse. Réservez à [hbw.wiki/service](https://hbw.wiki/service).
+Faire tourner un moteur avec un problème non diagnostiqué pour le forcer à démarrer peut transformer un diagnostic de 150 $ en une réparation beaucoup plus sérieuse. Réservez à [hbwservice.ca](https://hbwservice.ca).
 
 ---
 
@@ -1215,7 +1215,7 @@ Un non-démarrage intermittent est souvent un problème de connexion : une borne
 ## Pour nous joindre
 
 **Vous ne trouvez pas le problème ?**
-Réservez un diagnostic à [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Gores Landing, concessionnaire [Mercury Marine](https://www.mercurymarine.com/ca/en) certifié Premier. Concessionnaire Mercury depuis 1965, marina familiale sur le lac Rice depuis 1947. Pour les réparations de moteur, nous ne servons que Mercury et Mercruiser.
+Réservez un diagnostic à [hbwservice.ca](https://hbwservice.ca). Harris Boat Works, Gores Landing, concessionnaire [Mercury Marine](https://www.mercurymarine.com/ca/en) certifié Premier. Concessionnaire Mercury depuis 1965, marina familiale sur le lac Rice depuis 1947. Pour les réparations de moteur, nous ne servons que Mercury et Mercruiser.
 
 Téléphone : 905-342-2153
 
@@ -1278,7 +1278,7 @@ Pour les réparations de moteurs, nous ne servons que Mercury et Mercruiser.
       },
       {
         question: 'Quand devrais-je appeler un concessionnaire Mercury plutôt que de faire le dépannage moi-même ?',
-        answer: 'Appelez un concessionnaire quand : le moteur ne démarre pas après avoir vérifié toutes les causes courantes (carburant, batterie, coupe-circuit, bougies, conduites); un signal sonore d\'avertissement se fait entendre et le moteur s\'arrête en protection; vous soupçonnez que de l\'eau a pénétré dans le moteur; le moteur tourne mais affiche des codes de défaut; ou le moteur est sous garantie et vous voulez protéger la couverture. Chez Harris Boat Works, nous utilisons le logiciel de diagnostic Mercury pour lire les codes de défaut directement à partir de l\'ECM, ce qui ne peut pas se faire sans le bon équipement. Un diagnostic « ne démarre pas » standard se situe en moyenne autour de 540 $ selon notre historique de réparations. Réservez le service à hbw.wiki/service ou appelez au 905-342-2153.'
+        answer: 'Appelez un concessionnaire quand : le moteur ne démarre pas après avoir vérifié toutes les causes courantes (carburant, batterie, coupe-circuit, bougies, conduites); un signal sonore d\'avertissement se fait entendre et le moteur s\'arrête en protection; vous soupçonnez que de l\'eau a pénétré dans le moteur; le moteur tourne mais affiche des codes de défaut; ou le moteur est sous garantie et vous voulez protéger la couverture. Chez Harris Boat Works, nous utilisons le logiciel de diagnostic Mercury pour lire les codes de défaut directement à partir de l\'ECM, ce qui ne peut pas se faire sans le bon équipement. Un diagnostic « ne démarre pas » standard se situe en moyenne autour de 540 $ selon notre historique de réparations. Réservez le service à hbwservice.ca ou appelez au 905-342-2153.'
       },
       {
         question: 'Combien de temps prend le diagnostic d\'un Mercury qui ne démarre pas ?',
@@ -1324,7 +1324,7 @@ C'est la version du parcours que nous donnerions à un plaisancier de Toronto, M
 
 Le temps de trajet varie selon votre point de départ, la circulation et les conditions routières. HBW se trouve à Gores Landing; cette adresse ne désigne pas une zone de service à domicile.
 
-Pour un dépôt de bateau, remplissez d'abord la [demande de service](https://hbw.wiki/service). Vous pouvez ensuite déposer le bateau à tout moment, y compris en dehors des heures d'ouverture.
+Pour un dépôt de bateau, remplissez d'abord la [demande de service](https://hbwservice.ca). Vous pouvez ensuite déposer le bateau à tout moment, y compris en dehors des heures d'ouverture.
 
 ---
 
@@ -1516,7 +1516,7 @@ Très variable. Un Mercury 150 de 5 ans à faible heures s'échange pour 5 500 $
 
 **Téléphone :** 905-342-2153
 **Configurateur :** [mercuryrepower.ca](https://www.mercuryrepower.ca)
-**Demandes de service :** [hbw.wiki/service](https://hbw.wiki/service)
+**Demandes de service :** [hbwservice.ca](https://hbwservice.ca)
 **Adresse :** 5369 Harris Boat Works Rd, Gores Landing, ON
 `,
     faqs: [
@@ -1818,7 +1818,7 @@ Oui.
 
 Bâtissez votre soumission de 90 HP à mercuryrepower.ca, choisissez l'embase standard ou CT, la longueur d'arbre et l'hélice. Voyez de vrais prix CAD en quelques minutes.
 
-Questions? Appelez 905-342-2153 ou soumettez une demande de service à hbw.wiki/service.
+Questions? Appelez 905-342-2153 ou soumettez une demande de service à hbwservice.ca.
 
 Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
 `,
@@ -2028,7 +2028,7 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
     faqs: [
       { question: "Combien de temps puis-je faire fonctionner un hors-bord en surchauffe avant les dommages?", answer: "En cas de surchauffe, suivez immédiatement les consignes d'alarme du manuel de votre moteur. Il n'existe pas de délai universel pendant lequel continuer à tourner serait sans risque. La réponse sécuritaire : arrêtez-le à la première alarme. Ne négociez pas avec la jauge de température." },
       { question: "Mon jet témoin est constant mais mon alarme continue de sonner, qu'est-ce qui se passe?", answer: "Un jet signifie que l'eau bouge, mais cela ne prouve pas que le système de refroidissement circule pleinement à l'interne. Coupables courants : un thermostat coincé, un capteur de température défaillant, ou un blocage interne partiel. Apportez-le pour un vrai diagnostic." },
-      { question: "Devrais-je remplacer la turbine moi-même?", answer: "Cela dépend de votre moteur précis et de votre expérience, pas d'un seuil de puissance universel. Sur les V6 et V8 modernes avec trim électrique, embases sensibles à l'alignement et SmartCraft, le ratio main-d'œuvre/erreur empire nettement. Consultez le manuel de votre moteur et, en cas de doute, faites-le faire. Pour un prix de main-d'œuvre à jour sur votre moteur, écrivez-nous à [hbw.wiki/service](https://hbw.wiki/service)." },
+      { question: "Devrais-je remplacer la turbine moi-même?", answer: "Cela dépend de votre moteur précis et de votre expérience, pas d'un seuil de puissance universel. Sur les V6 et V8 modernes avec trim électrique, embases sensibles à l'alignement et SmartCraft, le ratio main-d'œuvre/erreur empire nettement. Consultez le manuel de votre moteur et, en cas de doute, faites-le faire. Pour un prix de main-d'œuvre à jour sur votre moteur, écrivez-nous à [hbwservice.ca](https://hbwservice.ca)." },
       { question: "À quelle fréquence devrais-je rincer mon moteur?", answer: "Après chaque utilisation est la meilleure pratique. Au minimum, après tout voyage dans des herbes, du limon ou de l'eau peu profonde. La méthode de rinçage varie selon le modèle et le numéro de série : suivez la procédure du manuel de votre moteur. Sur plusieurs Mercury, le raccord de rinçage du capot s'utilise moteur arrêté; ce raccord n'est pas une alimentation en eau pour faire tourner le moteur. Ne présumez pas qu'une seule méthode convient à tous les moteurs." },
       { question: "Le carburant sans éthanol affecte-t-il la surchauffe?", answer: "Pas directement, la surchauffe est un problème du côté refroidissement, pas du côté carburant. Mais l'essence à la pompe avec éthanol stresse le reste du moteur de façons qui aggravent les problèmes." },
       { question: "Mon bateau est sur l'eau et je panique. Que dois-je faire?", answer: "Réduisez à ralenti, vérifiez le jet témoin, coupez le moteur s'il est faible/absent, inclinez vers le haut, dégagez les prises, attendez 15 minutes, redémarrez et vérifiez le jet. Si l'alarme revient, appelez un remorqueur. **905-342-2153** si vous êtes dans notre secteur." }
@@ -2138,7 +2138,7 @@ Après tout événement de surchauffe, même un qui s'est résolu sur l'eau, fai
 
 Pour les réparations de moteur, nous ne servons que Mercury et Mercruiser.
 
-Si vous soupçonnez un problème du système de refroidissement, soumettez une demande de service à hbw.wiki/service avant votre prochaine sortie.
+Si vous soupçonnez un problème du système de refroidissement, soumettez une demande de service à hbwservice.ca avant votre prochaine sortie.
 
 ---
 
@@ -2179,7 +2179,7 @@ Cela peut. Les cycles de chaleur peuvent endommager les joints de culasse.
 ## Appel à l'action
 
 **Après tout événement de surchauffe, faites-le vérifier avant la prochaine sortie.**
-Soumettez une demande de service à [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Gores Landing, concessionnaire [Mercury Marine](https://www.mercurymarine.com/ca/en) certifié Premier. Concessionnaire Mercury depuis 1965, marina familiale sur le lac Rice depuis 1947.
+Soumettez une demande de service à [hbwservice.ca](https://hbwservice.ca). Harris Boat Works, Gores Landing, concessionnaire [Mercury Marine](https://www.mercurymarine.com/ca/en) certifié Premier. Concessionnaire Mercury depuis 1965, marina familiale sur le lac Rice depuis 1947.
 
 Téléphone : 905-342-2153
 
@@ -2330,7 +2330,7 @@ Nous entretenons les remorques que nous vendons et la plupart des grandes marque
 - **Remplacement de tasseaux**, rafraîchissement complet
 - **Inspection avant achat**, achat d'un combo bateau-remorque usagé
 
-Soumettez une demande de service à [hbw.wiki/service](https://hbw.wiki/service) ou appelez (905) 342-2153.
+Soumettez une demande de service à [hbwservice.ca](https://hbwservice.ca) ou appelez (905) 342-2153.
 
 ---
 

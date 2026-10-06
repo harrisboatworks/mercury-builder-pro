@@ -232,7 +232,7 @@ The Mercury guide says its capacities are based on information believed accurate
 
 ## Need the Right Service Scope?
 
-If you can bring the boat to HBW in Gores Landing, submit a request at [hbw.wiki/service](https://hbw.wiki/service) with a photo of the engine label and the current hours. We will build the service scope from the exact engine and its documented history.
+If you can bring the boat to HBW in Gores Landing, submit a request at [hbwservice.ca](https://hbwservice.ca) with a photo of the engine label and the current hours. We will build the service scope from the exact engine and its documented history.
 
 ## FAQs
 
@@ -266,12 +266,12 @@ The 2026 capacity chart generally lists Mercury 80W-90 Premium below 75 HP, SAE 
 
 ## Next steps
 
-- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbw.wiki/service
+- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbwservice.ca
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
-- The only commercial next step for this article is the HBW service request at https://hbw.wiki/service.
+- The only commercial next step for this article is the HBW service request at https://hbwservice.ca.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

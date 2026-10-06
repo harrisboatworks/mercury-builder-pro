@@ -109,7 +109,7 @@ Real maintenance, no upsell:
 
 **Fuel stabilizer if the boat sits.** Add it before the end of the season, run the motor long enough to circulate it through the fuel system. Thirty dollars of stabilizer prevents hundreds of dollars of injector cleaning.
 
-**Annual service.** Gear oil, filters, zincs, visual inspection. Mercury recommends annual service or service by hours, whichever comes first. Follow the schedule. It exists because engineers determined what wears and when. [Book your annual service at hbw.wiki/service.](https://hbw.wiki/service)
+**Annual service.** Gear oil, filters, zincs, visual inspection. Mercury recommends annual service or service by hours, whichever comes first. Follow the schedule. It exists because engineers determined what wears and when. [Book your annual service at hbwservice.ca.](https://hbwservice.ca)
 
 **Store dry.** Flush with fresh water, fog the cylinders if long-term storage, store with the motor trimmed down so water drains. Rice Lake winters are long. A dry motor stored properly costs nothing. A corroded motor stored poorly costs real money.
 

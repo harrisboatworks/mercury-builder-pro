@@ -104,7 +104,7 @@ Mercury outboard ਨਾਲ ਪੁਰਾਣੀ ਕਿਸ਼ਤੀ ਵਿੱਚ �
 
 ### Harris Boat Works da pata ki hai? | Harris Boat Works ਦਾ ਪਤਾ ਕੀ ਹੈ?
 
-ਸਾਡਾ address 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0 ਹੈ। Brampton, Mississauga, Scarborough, Markham ਤੋਂ ਗੱਡੀ ਰਾਹੀਂ ਤਕਰੀਬਨ 90-minute ਲੱਗਦੇ ਨੇ। ਅਸੀਂ 1 December to 1 April ਤੱਕ ਬੰਦ ਰਹਿੰਦੇ ਹਾਂ। Season ਵਿੱਚ ਸਾਨੂੰ phone (905) 342-2153 ਜਾਂ text (647) 952-2153 ਕਰੋ। Service request direct hbw.wiki/service ’ਤੇ ਜਮ੍ਹਾ ਕਰ ਸਕਦੇ ਹੋ।
+ਸਾਡਾ address 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0 ਹੈ। Brampton, Mississauga, Scarborough, Markham ਤੋਂ ਗੱਡੀ ਰਾਹੀਂ ਤਕਰੀਬਨ 90-minute ਲੱਗਦੇ ਨੇ। ਅਸੀਂ 1 December to 1 April ਤੱਕ ਬੰਦ ਰਹਿੰਦੇ ਹਾਂ। Season ਵਿੱਚ ਸਾਨੂੰ phone (905) 342-2153 ਜਾਂ text (647) 952-2153 ਕਰੋ। Service request direct hbwservice.ca ’ਤੇ ਜਮ੍ਹਾ ਕਰ ਸਕਦੇ ਹੋ।
 
 ## Next steps
 

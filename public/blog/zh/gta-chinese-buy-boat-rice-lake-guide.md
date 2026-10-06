@@ -237,7 +237,7 @@ HBW 的在线报价工具 [mercuryrepower.ca](https://www.mercuryrepower.ca) 在
 1. **先租一次：** 看 [试租指南](/blog/zh/gta-chinese-rice-lake-day-trip-plan)，带家人来 Rice Lake 体验一天，确定船型方向。
 2. **生成在线报价：** 在 [mercuryrepower.ca](https://www.mercuryrepower.ca) 选好船型和发动机配置，看到完整价格和贷款选项。
 3. **来店看船：** 通过英文邮件联系我们确认营业时间；欢迎带会英语的亲友同来或使用翻译软件。确认营业时间后再出发。
-4. **如果是已有船想换发动机：** 可以提交 [服务请求](https://hbw.wiki/service)，我们安排评估。
+4. **如果是已有船想换发动机：** 可以提交 [服务请求](https://hbwservice.ca)，我们安排评估。
 
 Harris Boat Works 自 1947 年起一直由 Harris 家族在 Rice Lake 经营。欢迎你带家人过来看看。
 
@@ -271,11 +271,11 @@ Harris Boat Works 自 1947 年起一直由 Harris 家族在 Rice Lake 经营。�
 
 ### 冬季船怎么存放？HBW 提供存储吗？
 
-HBW 提供室外专业收缩膜存储、室外无遮盖存储，以及仅收缩膜服务。不提供室内或加热存储。 冬化、收缩膜、室外存储和维修以当前书面报价为准。我们通常可以安排取船。请向我们确认您的船和地点是否可安排。 先完成 hbw.wiki/service，然后随时送船，包括下班后。
+HBW 提供室外专业收缩膜存储、室外无遮盖存储，以及仅收缩膜服务。不提供室内或加热存储。 冬化、收缩膜、室外存储和维修以当前书面报价为准。我们通常可以安排取船。请向我们确认您的船和地点是否可安排。 先完成 hbwservice.ca，然后随时送船，包括下班后。
 
 ### 提车后，发动机保养在哪里做？
 
-可以直接在 HBW 做。我们只为 Mercury 和 Mercruiser 发动机提供维修服务。常规保养（换机油、火花塞、齿轮油）和季节性服务请通过 https://hbw.wiki/service 提交请求。
+可以直接在 HBW 做。我们只为 Mercury 和 Mercruiser 发动机提供维修服务。常规保养（换机油、火花塞、齿轮油）和季节性服务请通过 https://hbwservice.ca 提交请求。
 
 ## Next steps
 

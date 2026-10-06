@@ -57,7 +57,7 @@ for (const required of [
   'We can generally arrange boat pickup. Ask us about availability for your boat and location.',
   'effective September 2026',
   'reopens in early April',
-  'https://hbw.wiki/service',
+  'https://hbwservice.ca',
   'https://www.harrisboatworks.ca/winter-storage',
   'Mercury Canada service and support',
 ]) {

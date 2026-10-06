@@ -46,7 +46,7 @@ const TRUST_FAQ = [
   },
   {
     question: "Do you service motors purchased elsewhere?",
-    answer: "Yes, our Mercury-certified service department works on Mercury and MerCruiser motors regardless of where they were purchased. We handle warranty work, repower, winterization, spring launch, and routine maintenance. Submit a service request at hbw.wiki/service or call (905) 342-2153."
+    answer: "Yes, our Mercury-certified service department works on Mercury and MerCruiser motors regardless of where they were purchased. We handle warranty work, repower, winterization, spring launch, and routine maintenance. Submit a service request at hbwservice.ca or call (905) 342-2153."
   },
   {
     question: "Why buy from Harris Boat Works instead of a big-box marine retailer?",

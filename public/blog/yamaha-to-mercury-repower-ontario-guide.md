@@ -182,7 +182,7 @@ A few notes specific to where we do business.
 **Email:** info@harrisboatworks.ca (send cowl plate photos of your Yamaha + photos of helm controls/gauges for a side-by-side quote)
 **Main site:** harrisboatworks.ca
 **Build a Mercury quote:** mercuryrepower.ca
-**Service booking:** hbw.wiki/service
+**Service booking:** hbwservice.ca
 
 Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Family-owned since 1947, Mercury dealer since 1965, current Premier Dealer, with authorized Mercury service directly on Rice Lake.
 

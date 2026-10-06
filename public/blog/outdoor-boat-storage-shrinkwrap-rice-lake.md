@@ -31,11 +31,11 @@ revenue_driver: service
 
 ## Quick Answer
 
-Harris Boat Works offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. We also do not offer climate-controlled or year-round storage. We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport. You can also complete [hbw.wiki/service](https://hbw.wiki/service), then drop off anytime, including after hours.
+Harris Boat Works offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. We also do not offer climate-controlled or year-round storage. We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport. You can also complete [hbwservice.ca](https://hbwservice.ca), then drop off anytime, including after hours.
 
 The physical marina is closed December 1 through April 1. There is no service, installation, inspection, or customer access during that period. Planning and approvals can continue remotely, and physical spring work begins after the marina reopens.
 
-See the [current HBW 2026–27 rate card](https://www.harrisboatworks.ca/winter-storage), then request the boat-specific storage scope at [hbw.wiki/service](https://hbw.wiki/service).
+See the [current HBW 2026–27 rate card](https://www.harrisboatworks.ca/winter-storage), then request the boat-specific storage scope at [hbwservice.ca](https://hbwservice.ca).
 
 ---
 
@@ -87,7 +87,7 @@ Do not compare two storage prices until the scopes match.
 
 ## From the Shop: The Fall Drop-Off
 
-Complete [hbw.wiki/service](https://hbw.wiki/service), then drop off anytime, including after hours. Or ask about boat pickup.
+Complete [hbwservice.ca](https://hbwservice.ca), then drop off anytime, including after hours. Or ask about boat pickup.
 
 Bring or submit:
 
@@ -186,13 +186,13 @@ The current quote can depend on:
 - Spring commissioning scope
 - HST and stated exclusions
 
-Submit the boat details at [hbw.wiki/service](https://hbw.wiki/service). Do not budget from an old article range or an assumed package discount.
+Submit the boat details at [hbwservice.ca](https://hbwservice.ca). Do not budget from an old article range or an assumed package discount.
 
 ---
 
 ## Sources and Scope
 
-- [HBW service request](https://hbw.wiki/service), current drop-off workflow and Mercury/MerCruiser repair boundary
+- [HBW service request](https://hbwservice.ca), current drop-off workflow and Mercury/MerCruiser repair boundary
 - HBW operating rules reviewed August 26, 2026: offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport.
 - HBW seasonal closure reviewed July 24, 2026: physical marina closed December 1 through April 1
 - HBW spring commissioning price reviewed July 2026: included for winter-storage customers; $99 for non-storage customers
@@ -200,7 +200,7 @@ Submit the boat details at [hbw.wiki/service](https://hbw.wiki/service). Do not 
 
 ## Ready to Request Storage?
 
-Submit the boat, motor, trailer, and requested work at [hbw.wiki/service](https://hbw.wiki/service).
+Submit the boat, motor, trailer, and requested work at [hbwservice.ca](https://hbwservice.ca).
 
 **Phone:** 905-342-2153
 
@@ -252,12 +252,12 @@ List the concern in the service request. Repairs require assessment and approval
 
 ## Next steps
 
-- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbw.wiki/service
+- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbwservice.ca
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
-- The only commercial next step for this article is the HBW service request at https://hbw.wiki/service.
+- The only commercial next step for this article is the HBW service request at https://hbwservice.ca.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

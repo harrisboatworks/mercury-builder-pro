@@ -39,7 +39,7 @@ export const punjabiBlogArticles: Wave1Article[] = [
       { question: '8. Kawartha lakes fishing map video Punjabi vich mildi hai?', answer: 'video availability Punjabi ਵਿੱਚ official ਤੌਰ ’ਤੇ ਨਹੀਂ, ਪਰ Ontario government fishing map interactive online ਹੈ। Rice Lake ਨੂੰ Kawarthas ਵਿੱਚ select ਕਰਕੇ spots ’ਤੇ information ਮਿਲ ਜਾਵੇਗੀ। regulations summary ਜ਼ਰੂਰ read ਕਰੋ।' }
     ],
     nativeReview: 'pending',
-    internalLinks: ['https://harrisboatworks.ca/rentals', 'https://hbw.wiki/service'],
+    internalLinks: ['https://harrisboatworks.ca/rentals', 'https://hbwservice.ca'],
     officialSources: ['https://www.ontario.ca/page/fishing-licence-ontario-and-canadian-residents', 'https://www.ontario.ca/page/fishing-licence-non-residents-canada', 'https://www.ontario.ca/page/get-outdoors-card-and-licence-summary', 'https://www.ontario.ca/document/ontario-fishing-regulations-summary', 'https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees', 'https://www.ontario.ca/page/learn-fish'],
     content: `ਜੇ ਤੁਸੀਂ Brampton, Mississauga, Scarborough ਜਾਂ Markham ਤੋਂ Rice Lake ਉੱਤੇ ਮੱਛੀ ਫੜਨ ਦੀ ਸੋਚ ਰਹੇ ਹੋ, ਤਾਂ ਇਹ ਗਾਈਡ ਤੁਹਾਡੀ ਮਦਦ ਕਰੇਗੀ। ਸਾਡੀ ਮਰੀਨਾ Gores Landing ਵਿੱਚ Rice Lake ਦੇ ਦੱਖਣੀ ਕੰਢੇ ’ਤੇ ਹੈ। ਯਾਤਰਾ ਦਾ ਸਮਾਂ ਤੁਹਾਡੇ ਰਵਾਨਗੀ ਸਥਾਨ ਅਤੇ ਟ੍ਰੈਫਿਕ ’ਤੇ ਨਿਰਭਰ ਕਰਦਾ ਹੈ। ਪਰਿਵਾਰ ਨਾਲ ਮਜ਼ੇਦਾਰ ਦਿਨ ਬਤੀਤ ਕਰਨ ਤੋਂ ਪਹਿਲਾਂ, Ontario ਦੇ fishing licence ਦੇ ਨਿਯਮਾਂ ਨੂੰ ਸਮਝਣਾ ਜ਼ਰੂਰੀ ਹੈ। ਸਾਡੀ family marina ਨੂੰ ਤੀਜੀ ਪੀੜ੍ਹੀ ਚਲਾ ਰਹੀ ਹੈ, 1947 ਤੋਂ ਇਸੇ ਝੀਲ ਕੰਢੇ ਹਾਂ, ਅਤੇ Punjabi ਭਾਈਚਾਰੇ ਦੇ ਪਰਿਵਾਰਾਂ ਨੂੰ Rice Lake ਦਾ ਆਨੰਦ ਲੈਂਦੇ ਦੇਖਣਾ ਸਾਨੂੰ ਚੰਗਾ ਲੱਗਦਾ ਹੈ। ਇਸ ਪੇਜ ਵਿੱਚ, ਅਸੀਂ ਬਿਨਾਂ ਕਿਸੇ ਔਖੀ ਕਾਨੂੰਨੀ ਭਾਸ਼ਾ ਦੇ, fishing licence, Outdoors Card, conservation licence ਬਨਾਮ sport licence, FMZ 17, ਅਤੇ ਪਹਿਲੀ ਯਾਤਰਾ ਦੀ ਤਿਆਰੀ ਬਾਰੇ ਸਮਝਾਵਾਂਗੇ।
 
@@ -106,7 +106,7 @@ video availability Punjabi ਵਿੱਚ official ਤੌਰ ’ਤੇ ਨਹੀ�
 ## Harris Boat Works ton madad lai link | ਹੈਰਿਸ ਬੋਟ ਵਰਕਸ ਤੋਂ ਮਦਦ ਲਈ ਲਿੰਕ
 
 Rice Lake ’ਤੇ fishing day plan ਕਰ ਰਹੇ ਹੋ? ਸਾਡੀ rental boat book ਕਰੋ: https://harrisboatworks.ca/rentals  
-service ਦੀ ਲੋੜ ਹੈ? service requests online: https://hbw.wiki/service  
+service ਦੀ ਲੋੜ ਹੈ? service requests online: https://hbwservice.ca  
 phone: (905) 342-2153  
 text: (647) 952-2153  
 address: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
@@ -195,7 +195,7 @@ A: ਇਹ guide Punjabi ਵਿੱਚ ਲਿਖੀ ਸੀ, ਪਰ ਸਾਡੀ �
 
 ## Shuru karo apni Rice Lake trip | ਆਪਣੀ ਰਾਈਸ ਲੇਕ ਟ੍ਰਿਪ ਸ਼ੁਰੂ ਕਰੋ
 
-PCOC rules ਨੂੰ ਔਖਾ ਨਾ ਸਮਝੋ; ਪਹਿਲਾ ਕਦਮ safety information ਸਮਝਣਾ ਹੈ। Rice Lake, Gores Landing (5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0) Toronto area ਤੋਂ 90 minutes ਦੂਰ, Brampton, Mississauga, Scarborough, Markham ਵਾਲਿਆਂ ਲਈ simple day trip ਹੈ। ਸਾਡੀ Ethanol-free fuel site ’ਤੇ ਮਿਲੇਗੀ, ਤੇ Mercury outboard engines 3-year warranty ਨਾਲ confident ਰੱਖਣਗੇ, ਜੇ ਨਵੀਂ boat ਦਾ ਸੋਚ ਰਹੇ ਹੋ। rental booking ਲਈ rent page ਖੋਲ੍ਹੋ: [Harris Boat Works rentals](https://harrisboatworks.ca/rentals)। service request ਭੇਜਣੀ ਹੈ: hbw.wiki/service। December 1 to April 1 ਅਸੀਂ winter break ਵਿੱਚ ਬੰਦ ਰਹਿੰਦੇ ਹਾਂ, oh season Rice Lake ’ਤੇ ਨਹੀਂ ਚੱਲਦਾ।`
+PCOC rules ਨੂੰ ਔਖਾ ਨਾ ਸਮਝੋ; ਪਹਿਲਾ ਕਦਮ safety information ਸਮਝਣਾ ਹੈ। Rice Lake, Gores Landing (5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0) Toronto area ਤੋਂ 90 minutes ਦੂਰ, Brampton, Mississauga, Scarborough, Markham ਵਾਲਿਆਂ ਲਈ simple day trip ਹੈ। ਸਾਡੀ Ethanol-free fuel site ’ਤੇ ਮਿਲੇਗੀ, ਤੇ Mercury outboard engines 3-year warranty ਨਾਲ confident ਰੱਖਣਗੇ, ਜੇ ਨਵੀਂ boat ਦਾ ਸੋਚ ਰਹੇ ਹੋ। rental booking ਲਈ rent page ਖੋਲ੍ਹੋ: [Harris Boat Works rentals](https://harrisboatworks.ca/rentals)। service request ਭੇਜਣੀ ਹੈ: hbwservice.ca। December 1 to April 1 ਅਸੀਂ winter break ਵਿੱਚ ਬੰਦ ਰਹਿੰਦੇ ਹਾਂ, oh season Rice Lake ’ਤੇ ਨਹੀਂ ਚੱਲਦਾ।`
   },
   {
     slug: 'mercury-outboard-prices-ontario-punjabi',
@@ -216,7 +216,7 @@ PCOC rules ਨੂੰ ਔਖਾ ਨਾ ਸਮਝੋ; ਪਹਿਲਾ ਕਦਮ sa
       { question: 'Ki tuhade kolo Mercury di doosre brand naal tulna de Punjabi vich video ne? | ਕੀ ਤੁਹਾਡੇ ਕੋਲੋਂ Mercury ਦੀ ਦੂਜੇ brand ਨਾਲ ਤੁਲਨਾ ਦੇ ਪੰਜਾਬੀ ਵਿਚ ਵੀਡੀਓ ਨੇ?', answer: 'ਨਹੀਂ ਜੀ, ਸਾਡੇ ਕੋਲ ਕਿਸੇ brand ਦੇ comparison video ਨਹੀਂ ਨੇ। ਪਰ ਜੇ ਤੁਹਾਨੂੰ Mercury ਦੇ features ਬਾਰੇ ਜਾਣਨਾ ਹੈ ਤਾਂ ਅਸੀਂ ਸਮਝਾ ਸਕਦੇ ਹਾਂ। ਤੁਸੀਂ ਆਪਣੇ ਲਈ ਸਹੀ motor ਦਾ ਫੈਸਲਾ ਖੁਦ ਕਰ ਸਕਦੇ ਹੋ, ਸਾਡੇ quote tool ਦੇ suggest ਅਨੁਸਾਰ। Video ਵੇਖਣੀ ਹੈ ਤਾਂ YouTube ’ਤੇ general “outboard comparison” search ਕਰੋ, ਪਰ ਯਾਦ ਰੱਖੋ, ਲੋਕ ਆਪਣਾ personal opinion ਦਿੰਦੇ ਨੇ, test data ਨਹੀਂ।' },
       { question: 'Main bina dealer nu mile motor da quote labh sakda haan? | ਮੈਂ ਬਿਨਾਂ ਡੀਲਰ ਨੂੰ ਮਿਲੇ ਮੋਟਰ ਦਾ quote ਲੱਭ ਸਕਦਾ ਹਾਂ?', answer: 'ਜੀ ਹਾਂ, ਸਾਡੇ motor selection tool (https://www.mercuryrepower.ca/quote/motor-selection) ’ਤੇ boat details ਪਾ ਕੇ, ਤੁਹਾਨੂੰ ਕੁਝ Mercury model ਦਿਖਾਏ ਜਾਣਗੇ। ਬਾਅਦ ਵਿੱਚ ਸਾਨੂੰ call ਕਰੋ ਤਾਂ installed quote ਦੇ ਸਕਦੇ ਹਾਂ। ਇਹਦੇ ਵਿੱਚ ਕੋਈ loading ਜਾਂ pressure ਨਹੀਂ।' },
       { question: 'Main apni old motor nu trade-in de sakda haan? | ਮੈਂ ਆਪਣੀ ਪੁਰਾਣੀ ਮੋਟਰ ਨੂੰ trade-in ਦੇ ਸਕਦਾ ਹਾਂ?', answer: 'ਕੁਝ ਹਾਲਤਾਂ ਵਿੱਚ ਹੋ ਸਕਦਾ ਹੈ, ਪਰ ਅਸੀਂ ਹਰ ਪੁਰਾਣੀ motor ਨਹੀਂ ਲੈ ਸਕਦੇ। ਪਹਿਲਾਂ photo ਭੇਜ ਕੇ ਪੁੱਛੋ। ਦੂਜੀ ਗੱਲ: trade value installed price ਵਿੱਚ adjust ਕੀਤੀ ਜਾ ਸਕਦੀ ਹੈ, ਜੇ motor ਦੀ condition ਚੰਗੀ ਹੋਵੇ। Phone ’ਤੇ ਇਸ ਲਈ ਸਾਨੂੰ English ਵਿੱਚ ਗੱਲ ਕਰਨੀ ਹੋਵੇਗੀ, ਉੱਤੇ ਦੱਸੇ ਅਨੁਸਾਰ ਦੋਸਤ ਨਾਲ ਆਓ ਜਾਂ translation app use ਕਰੋ।' },
-      { question: 'Harris Boat Works da pata ki hai? | Harris Boat Works ਦਾ ਪਤਾ ਕੀ ਹੈ?', answer: 'ਸਾਡਾ address 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0 ਹੈ। Brampton, Mississauga, Scarborough, Markham ਤੋਂ ਗੱਡੀ ਰਾਹੀਂ ਤਕਰੀਬਨ 90-minute ਲੱਗਦੇ ਨੇ। ਅਸੀਂ 1 December to 1 April ਤੱਕ ਬੰਦ ਰਹਿੰਦੇ ਹਾਂ। Season ਵਿੱਚ ਸਾਨੂੰ phone (905) 342-2153 ਜਾਂ text (647) 952-2153 ਕਰੋ। Service request direct hbw.wiki/service ’ਤੇ ਜਮ੍ਹਾ ਕਰ ਸਕਦੇ ਹੋ।' }
+      { question: 'Harris Boat Works da pata ki hai? | Harris Boat Works ਦਾ ਪਤਾ ਕੀ ਹੈ?', answer: 'ਸਾਡਾ address 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0 ਹੈ। Brampton, Mississauga, Scarborough, Markham ਤੋਂ ਗੱਡੀ ਰਾਹੀਂ ਤਕਰੀਬਨ 90-minute ਲੱਗਦੇ ਨੇ। ਅਸੀਂ 1 December to 1 April ਤੱਕ ਬੰਦ ਰਹਿੰਦੇ ਹਾਂ। Season ਵਿੱਚ ਸਾਨੂੰ phone (905) 342-2153 ਜਾਂ text (647) 952-2153 ਕਰੋ। Service request direct hbwservice.ca ’ਤੇ ਜਮ੍ਹਾ ਕਰ ਸਕਦੇ ਹੋ।' }
     ],
     nativeReview: 'pending',
     internalLinks: ['https://www.mercuryrepower.ca/quote/motor-selection', 'https://www.mercuryrepower.ca/pricing-reference', 'https://www.mercuryrepower.ca/blog/mercury-outboard-financing-ontario-2026'],
@@ -282,7 +282,7 @@ A: ਜੀ ਹਾਂ, ਸਾਡੇ motor selection tool (https://www.mercuryrepow
 A: ਕੁਝ ਹਾਲਤਾਂ ਵਿੱਚ ਹੋ ਸਕਦਾ ਹੈ, ਪਰ ਅਸੀਂ ਹਰ ਪੁਰਾਣੀ motor ਨਹੀਂ ਲੈ ਸਕਦੇ। ਪਹਿਲਾਂ photo ਭੇਜ ਕੇ ਪੁੱਛੋ। ਦੂਜੀ ਗੱਲ: trade value installed price ਵਿੱਚ adjust ਕੀਤੀ ਜਾ ਸਕਦੀ ਹੈ, ਜੇ motor ਦੀ condition ਚੰਗੀ ਹੋਵੇ। Phone ’ਤੇ ਇਸ ਲਈ ਸਾਨੂੰ English ਵਿੱਚ ਗੱਲ ਕਰਨੀ ਹੋਵੇਗੀ, ਉੱਤੇ ਦੱਸੇ ਅਨੁਸਾਰ ਦੋਸਤ ਨਾਲ ਆਓ ਜਾਂ translation app use ਕਰੋ।
 
 **Q: Harris Boat Works da pata ki hai? | Harris Boat Works ਦਾ ਪਤਾ ਕੀ ਹੈ?**
-A: ਸਾਡਾ address 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0 ਹੈ। Brampton, Mississauga, Scarborough, Markham ਤੋਂ ਗੱਡੀ ਰਾਹੀਂ ਤਕਰੀਬਨ 90-minute ਲੱਗਦੇ ਨੇ। ਅਸੀਂ 1 December to 1 April ਤੱਕ ਬੰਦ ਰਹਿੰਦੇ ਹਾਂ। Season ਵਿੱਚ ਸਾਨੂੰ phone (905) 342-2153 ਜਾਂ text (647) 952-2153 ਕਰੋ। Service request direct hbw.wiki/service ’ਤੇ ਜਮ੍ਹਾ ਕਰ ਸਕਦੇ ਹੋ।
+A: ਸਾਡਾ address 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0 ਹੈ। Brampton, Mississauga, Scarborough, Markham ਤੋਂ ਗੱਡੀ ਰਾਹੀਂ ਤਕਰੀਬਨ 90-minute ਲੱਗਦੇ ਨੇ। ਅਸੀਂ 1 December to 1 April ਤੱਕ ਬੰਦ ਰਹਿੰਦੇ ਹਾਂ। Season ਵਿੱਚ ਸਾਨੂੰ phone (905) 342-2153 ਜਾਂ text (647) 952-2153 ਕਰੋ। Service request direct hbwservice.ca ’ਤੇ ਜਮ੍ਹਾ ਕਰ ਸਕਦੇ ਹੋ।
 
 ## Apna quote le ke dekho | ਆਪਣਾ ਕੋਟ ਲੈ ਕੇ ਦੇਖੋ
 

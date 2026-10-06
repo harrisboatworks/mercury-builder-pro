@@ -45,7 +45,7 @@ C'est la version du parcours que nous donnerions à un plaisancier de Toronto, M
 
 Le temps de trajet varie selon votre point de départ, la circulation et les conditions routières. HBW se trouve à Gores Landing; cette adresse ne désigne pas une zone de service à domicile.
 
-Pour un dépôt de bateau, remplissez d'abord la [demande de service](https://hbw.wiki/service). Vous pouvez ensuite déposer le bateau à tout moment, y compris en dehors des heures d'ouverture.
+Pour un dépôt de bateau, remplissez d'abord la [demande de service](https://hbwservice.ca). Vous pouvez ensuite déposer le bateau à tout moment, y compris en dehors des heures d'ouverture.
 
 ---
 
@@ -206,7 +206,7 @@ Si vous envisagez une remotorisation pour le printemps 2026, **commencez le conf
 
 **Téléphone :** 905-342-2153
 **Configurateur :** [mercuryrepower.ca](https://www.mercuryrepower.ca)
-**Demandes de service :** [hbw.wiki/service](https://hbw.wiki/service)
+**Demandes de service :** [hbwservice.ca](https://hbwservice.ca)
 **Adresse :** 5369 Harris Boat Works Rd, Gores Landing, ON
 
 ## Questions fréquentes

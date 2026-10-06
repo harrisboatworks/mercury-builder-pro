@@ -124,7 +124,7 @@ Après tout événement de surchauffe, même un qui s'est résolu sur l'eau, fai
 
 Pour les réparations de moteur, nous ne servons que Mercury et Mercruiser.
 
-Si vous soupçonnez un problème du système de refroidissement, soumettez une demande de service à hbw.wiki/service avant votre prochaine sortie.
+Si vous soupçonnez un problème du système de refroidissement, soumettez une demande de service à hbwservice.ca avant votre prochaine sortie.
 
 ---
 
@@ -138,7 +138,7 @@ Si vous soupçonnez un problème du système de refroidissement, soumettez une d
 > Cela dit, nous devons être honnêtes : notre personnel parle anglais. Si vous nous contactez pour une soumission ou un service, nous vous répondrons en anglais. Si vous préférez, vous pouvez utiliser Google Traduction ou demander à un membre bilingue de votre famille de vous aider avec la communication. Nous nous engageons à vous offrir le meilleur service possible.
 
 **Après tout événement de surchauffe, faites-le vérifier avant la prochaine sortie.**
-Soumettez une demande de service à [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Gores Landing, concessionnaire [Mercury Marine](https://www.mercurymarine.com/ca/en) certifié Premier. Concessionnaire Mercury depuis 1965, marina familiale sur le lac Rice depuis 1947.
+Soumettez une demande de service à [hbwservice.ca](https://hbwservice.ca). Harris Boat Works, Gores Landing, concessionnaire [Mercury Marine](https://www.mercurymarine.com/ca/en) certifié Premier. Concessionnaire Mercury depuis 1965, marina familiale sur le lac Rice depuis 1947.
 
 Téléphone : 905-342-2153
 
@@ -162,7 +162,7 @@ Un jet signifie que l'eau bouge, mais cela ne prouve pas que le système de refr
 
 ### Devrais-je remplacer la turbine moi-même?
 
-Cela dépend de votre moteur précis et de votre expérience, pas d'un seuil de puissance universel. Sur les V6 et V8 modernes avec trim électrique, embases sensibles à l'alignement et SmartCraft, le ratio main-d'œuvre/erreur empire nettement. Consultez le manuel de votre moteur et, en cas de doute, faites-le faire. Pour un prix de main-d'œuvre à jour sur votre moteur, écrivez-nous à [hbw.wiki/service](https://hbw.wiki/service).
+Cela dépend de votre moteur précis et de votre expérience, pas d'un seuil de puissance universel. Sur les V6 et V8 modernes avec trim électrique, embases sensibles à l'alignement et SmartCraft, le ratio main-d'œuvre/erreur empire nettement. Consultez le manuel de votre moteur et, en cas de doute, faites-le faire. Pour un prix de main-d'œuvre à jour sur votre moteur, écrivez-nous à [hbwservice.ca](https://hbwservice.ca).
 
 ### À quelle fréquence devrais-je rincer mon moteur?
 
@@ -178,12 +178,12 @@ Réduisez à ralenti, vérifiez le jet témoin, coupez le moteur s'il est faible
 
 ## Prochaines étapes
 
-- Décrivez le bateau, le moteur et les symptômes, puis joignez des photos à la demande de service HBW : https://hbw.wiki/service
+- Décrivez le bateau, le moteur et les symptômes, puis joignez des photos à la demande de service HBW : https://hbwservice.ca
 - Lieu de ramassage et coordonnées : Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
-- The only commercial next step for this article is the HBW service request at https://hbw.wiki/service.
+- The only commercial next step for this article is the HBW service request at https://hbwservice.ca.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

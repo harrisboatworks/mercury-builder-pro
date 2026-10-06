@@ -196,7 +196,7 @@ Rice Lake 中部的旧水下铁路遗迹是本地著名危险之一，但不是�
 
 ## 准备出发？
 
-如果你需要 Mercury 马达，请在 [mercuryrepower.ca](https://www.mercuryrepower.ca) 建立报价；维修请到 [hbw.wiki/service](https://hbw.wiki/service) 提交船、发动机和症状资料。
+如果你需要 Mercury 马达，请在 [mercuryrepower.ca](https://www.mercuryrepower.ca) 建立报价；维修请到 [hbwservice.ca](https://hbwservice.ca) 提交船、发动机和症状资料。
 
 如果你想租船，请浏览 [harrisboatworks.ca/rentals](https://www.harrisboatworks.ca/rentals)。
 

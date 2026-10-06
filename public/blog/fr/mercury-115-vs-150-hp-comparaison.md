@@ -137,7 +137,7 @@ Le 150 FourStroke coûte plus cher que le 115, pour le moteur lui-même, et pote
 
 **Outil de comparaison en ligne :** mercuryrepower.ca, comparez les deux moteurs côte à côte avec les prix réels en dollars canadiens.
 
-**Demande de service :** hbw.wiki/service, vous pouvez nous envoyer votre demande (nous répondrons en anglais).
+**Demande de service :** hbwservice.ca, vous pouvez nous envoyer votre demande (nous répondrons en anglais).
 
 **Téléphone :** 905-342-2153
 
@@ -180,7 +180,7 @@ Le contenu de ce guide est offert en français, mais notre personnel et nos rép
 
 ### L'équipe parle-t-elle français ?
 
-Notre personnel répond en anglais. Vous pouvez nous envoyer votre demande via hbw.wiki/service et nous vous répondrons en anglais. Si vous préférez, utilisez Google Traduction ou demandez à un proche bilingue de vous aider.
+Notre personnel répond en anglais. Vous pouvez nous envoyer votre demande via hbwservice.ca et nous vous répondrons en anglais. Si vous préférez, utilisez Google Traduction ou demandez à un proche bilingue de vous aider.
 
 ## Prochaines étapes
 

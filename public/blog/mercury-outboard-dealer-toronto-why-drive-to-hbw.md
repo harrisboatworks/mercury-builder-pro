@@ -125,7 +125,7 @@ If your boat is stored at HBW, it remains inaccessible during the closure. HBW o
 
 ## What to Send Before You Tow
 
-Submit the following at [hbw.wiki/service](https://hbw.wiki/service):
+Submit the following at [hbwservice.ca](https://hbwservice.ca):
 
 1. Boat make, model, year, and length
 2. A clear photo of the capacity label or compliance notice
@@ -145,7 +145,7 @@ HBW can then tell you whether the job fits our shop and what must be confirmed i
 Start with the [Mercury pricing reference](/pricing-reference), build an installed starting quote, then submit the boat details before making the drive.
 
 **Quote builder:** [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection)
-**Service request:** [hbw.wiki/service](https://hbw.wiki/service)
+**Service request:** [hbwservice.ca](https://hbwservice.ca)
 **Phone:** 905-342-2153
 **Pickup location:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 

@@ -102,7 +102,7 @@ A running motor gets you home. A failed motor in October on a cold lake is not t
 
 Cold starts are harder than warm-weather starts. Allow proper warm-up time. Check fuel lines for stiffness. Carry spare spark plugs.
 
-If you are not sure about your motor's reliability heading into fall, book a pre-fall inspection through [hbw.wiki/service](https://hbw.wiki/service). For engine repairs, we only service Mercury and MerCruiser.
+If you are not sure about your motor's reliability heading into fall, book a pre-fall inspection through [hbwservice.ca](https://hbwservice.ca). For engine repairs, we only service Mercury and MerCruiser.
 
 ---
 
@@ -134,7 +134,7 @@ Don't panic and don't try to swim immediately. Cold-water shock makes the first 
 
 When you call it a season, follow the storage procedure for the exact engine. That can include fuel preparation, gearcase service, model-specific internal protection, battery disconnection and maintenance, lubrication, and the specified drainage position. A healthy battery may remain aboard only if fully charged, disconnected, secured, and permitted by the approved storage plan. The model/serial manual and approved storage plan control.
 
-Complete [hbw.wiki/service](https://hbw.wiki/service), then drop off anytime, including after hours. Harris Boat Works has 584 completed winterization records from August through November 2025. It is one of our core services.
+Complete [hbwservice.ca](https://hbwservice.ca), then drop off anytime, including after hours. Harris Boat Works has 584 completed winterization records from August through November 2025. It is one of our core services.
 
 ---
 
@@ -144,7 +144,7 @@ Complete [hbw.wiki/service](https://hbw.wiki/service), then drop off anytime, in
 - [Transport Canada - Boating Safety](https://tc.canada.ca/en/marine-transportation/marine-safety/boating-safety) - Late-season operating recommendations.
 
 **End the season right.** Proper winterization in October means a ready boat in May. 
-[Book fall service at hbw.wiki/service](https://hbw.wiki/service), or call 905-342-2153. 
+[Book fall service at hbwservice.ca](https://hbwservice.ca), or call 905-342-2153. 
 Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
 
 ---

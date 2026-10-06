@@ -14,14 +14,14 @@ describe('cleanBlogContent', () => {
 
 ## CTA
 
-Book at hbw.wiki/service.
+Book at hbwservice.ca.
 
 ## Sources
 
 - Mercury`;
 
     expect(cleanBlogContent(content)).toBe(
-      'Book at hbw.wiki/service.\n\n## Sources\n\n- Mercury',
+      'Book at hbwservice.ca.\n\n## Sources\n\n- Mercury',
     );
   });
 

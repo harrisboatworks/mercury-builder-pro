@@ -162,7 +162,7 @@ Llama al **905-342-2153** o visita **harrisboatworks.ca** para disponibilidad de
 **¿Buscas un motor para tu propio bote?**
 Configura tu presupuesto en **mercuryrepower.ca**, 3 minutos, sin presión.
 
-¿Preguntas? Escríbenos en hbw.wiki/service (puedes escribirnos en español; te responderemos en inglés).
+¿Preguntas? Escríbenos en hbwservice.ca (puedes escribirnos en español; te responderemos en inglés).
 
 Harris Boat Works
 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0

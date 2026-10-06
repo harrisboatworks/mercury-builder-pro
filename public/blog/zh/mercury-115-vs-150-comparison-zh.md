@@ -154,7 +154,7 @@ Mercury FourStroke系列两款发动机在巡航速度下都安静。150马力�
 
 **在115和150马力之间拿不定主意？**
 到 **[mercuryrepower.ca](https://www.mercuryrepower.ca)** 看两款发动机的当前加币报价，再联络HBW确认你的船体是否合适。
-或至 **[hbw.wiki/service](https://hbw.wiki/service)** 提交咨询申请。
+或至 **[hbwservice.ca](https://hbwservice.ca)** 提交咨询申请。
 
 > **语言说明**
 > 我们专门为华人朋友准备了这些中文指南，因为我们真心希望帮助华人船主和他们的家人朋友在 Rice Lake 享受划船的乐趣，这是很多其他船行没有做的。说实话：我们的团队使用英语服务。欢迎带会英语的亲友同来，或者用手机翻译软件，我们一定会耐心沟通、尽力配合。

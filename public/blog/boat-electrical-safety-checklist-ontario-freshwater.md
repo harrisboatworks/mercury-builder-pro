@@ -156,7 +156,7 @@ The single most common electrical pattern we diagnose is intermittent SmartCraft
 
 The repair: cut out the corroded connection, install proper marine-grade terminals and heat-shrink, retest. Total parts cost: $10. Labour: 30-60 minutes. Total job: quoted at our current shop rate; see /pricing-reference. Compared to what owners spend chasing the gremlins, this is cheap and final.
 
-For a structured electrical inspection or to fix a known issue, our service intake is at hbw.wiki/service.
+For a structured electrical inspection or to fix a known issue, our service intake is at hbwservice.ca.
 
 For engine repairs, we only service Mercury and MerCruiser.
 
@@ -209,7 +209,7 @@ Yes. Leave the battery in the boat and disconnect it (turn the switch to OFF and
 
 ## Next steps
 
-- If the owner can bring the boat to HBW in Gores Landing, Ontario, submit a service request: https://hbw.wiki/service
+- If the owner can bring the boat to HBW in Gores Landing, Ontario, submit a service request: https://hbwservice.ca
 - Include the engine serial number, symptoms, clear photos, and any recent service or rigging changes.
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
@@ -217,7 +217,7 @@ Yes. Leave the battery in the boat and disconnect it (turn the switch to OFF and
 
 - Start with the safety limits and stop conditions stated in the article and the exact equipment manual.
 - HBW diagnoses faults in person at its Gores Landing shop. Do not offer phone or remote diagnosis.
-- Route to https://hbw.wiki/service only when the owner can bring the boat to HBW.
+- Route to https://hbwservice.ca only when the owner can bring the boat to HBW.
 - A symptom is not a confirmed root cause. Preserve the article's test order and escalation limits.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.

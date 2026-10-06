@@ -148,12 +148,12 @@ export default function AboutJayHarris() {
               <br />
               <strong>Service booking:</strong>{' '}
               <a
-                href="https://hbw.wiki/service"
+                href="https://hbwservice.ca"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-primary hover:underline"
               >
-                hbw.wiki/service
+                hbwservice.ca
               </a>
             </p>
           </div>

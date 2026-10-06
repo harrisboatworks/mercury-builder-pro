@@ -141,7 +141,7 @@ Those details let us identify the open questions before anyone assumes the motor
 
 Start with a [live Mercury repower quote](/quote/motor-selection). It is a planning tool, not final installation approval.
 
-If you want HBW to review the actual boat, complete the [online service check-in](https://hbw.wiki/service) with the photos and identifiers above. The form is not an appointment; our team confirms the next step after reviewing the submission.
+If you want HBW to review the actual boat, complete the [online service check-in](https://hbwservice.ca) with the photos and identifiers above. The form is not an appointment; our team confirms the next step after reviewing the submission.
 
 Harris Boat Works is a family-owned Mercury Premier Dealer in Gores Landing on Rice Lake, serving boaters across the Kawarthas, Northumberland, Durham Region, and the eastern GTA.
 

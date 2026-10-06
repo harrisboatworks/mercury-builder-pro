@@ -31,7 +31,7 @@ revenue_driver: service
 
 ## 快速答案
 
-Mercury 和 MerCruiser 的保养周期取决于具体机型、序列号、使用时间和发动机小时数；常见节点包括适用机型的首次保养、年度或 100 小时保养，以及部分 300 小时或 3 年项目。请以对应的 Mercury 手册为准。Harris Boat Works（HBW）是 Rice Lake 上自 1947 年持续家族经营的 **Mercury Marine Premier 经销商**，**发动机维修只限 Mercury 和 MerCruiser**。团队使用英语服务，没有中文母语的销售或翻译；欢迎带会英语的亲友同来或使用翻译软件。服务、冬储和春季工作均按先到先办处理。先完成 [hbw.wiki/service](https://hbw.wiki/service)，然后随时送船，包括下班后。
+Mercury 和 MerCruiser 的保养周期取决于具体机型、序列号、使用时间和发动机小时数；常见节点包括适用机型的首次保养、年度或 100 小时保养，以及部分 300 小时或 3 年项目。请以对应的 Mercury 手册为准。Harris Boat Works（HBW）是 Rice Lake 上自 1947 年持续家族经营的 **Mercury Marine Premier 经销商**，**发动机维修只限 Mercury 和 MerCruiser**。团队使用英语服务，没有中文母语的销售或翻译；欢迎带会英语的亲友同来或使用翻译软件。服务、冬储和春季工作均按先到先办处理。先完成 [hbwservice.ca](https://hbwservice.ca)，然后随时送船，包括下班后。
 
 ---
 
@@ -97,7 +97,7 @@ Lower unit gearcase oil 颜色变成奶白色就说明进水了，**必须立即
 | 服务类型 | 保养、诊断、维修、保修工作、冬储、春季开机 | 内燃柴油船机、Mercury 赛车系列（个别评估） |
 | 操作员卡 / 钓鱼证 | 不适用 | 不销售；请到 ontario.ca 办理 |
 
-如果你的船是 Mercury 或 Mercruiser，欢迎通过 [https://hbw.wiki/service](https://hbw.wiki/service) 提交服务请求。如果是其他品牌，请直接找对应授权点，避免来回奔波。
+如果你的船是 Mercury 或 Mercruiser，欢迎通过 [https://hbwservice.ca](https://hbwservice.ca) 提交服务请求。如果是其他品牌，请直接找对应授权点，避免来回奔波。
 
 ---
 
@@ -134,7 +134,7 @@ SmartCraft 报警、过热、漏油、燃油味或明显动力下降都需要按
 
 ### 5. 等到关闭后才安排冬化
 
-HBW 不需要客户提前数月抢位置。先完成 [hbw.wiki/service](https://hbw.wiki/service)，然后随时送船，包括下班后。 实体船厂 12 月 1 日至 4 月 1 日关闭。
+HBW 不需要客户提前数月抢位置。先完成 [hbwservice.ca](https://hbwservice.ca)，然后随时送船，包括下班后。 实体船厂 12 月 1 日至 4 月 1 日关闭。
 
 ---
 
@@ -148,7 +148,7 @@ HBW 提供室外专业收缩膜存储、室外无遮盖存储，以及仅收缩�
 
 ### 如何送船
 
-HBW 按**先到先办**处理冬化和冬储工作，不需要提前数月预留场地。先完成 [hbw.wiki/service](https://hbw.wiki/service)，然后随时送船，包括下班后。 实体船厂 12 月 1 日至 4 月 1 日关闭。
+HBW 按**先到先办**处理冬化和冬储工作，不需要提前数月预留场地。先完成 [hbwservice.ca](https://hbwservice.ca)，然后随时送船，包括下班后。 实体船厂 12 月 1 日至 4 月 1 日关闭。
 
 ### 自己做行不行？
 
@@ -180,7 +180,7 @@ HBW 按**先到先办**处理冬化和冬储工作，不需要提前数月预留
 
 - **欢迎带会英语的亲友同来**，或使用手机翻译软件，我们会耐心沟通、尽力配合
 - **提前用邮件写清楚**：症状、机型、序列号、想要的服务，可以中英文混合，我们能看懂大意
-- **服务请求模板**：[https://hbw.wiki/service](https://hbw.wiki/service) 上提交时同样可以中英文混合
+- **服务请求模板**：[https://hbwservice.ca](https://hbwservice.ca) 上提交时同样可以中英文混合
 - **服务报价邮件**：完工前的修理报价我们会写清楚每一项，避免"做了我才告诉你"
 
 我们不能承诺中文服务，但我们会认真对待每一位华人客户。
@@ -189,7 +189,7 @@ HBW 按**先到先办**处理冬化和冬储工作，不需要提前数月预留
 
 ## 预约流程
 
-最快的方式是 [https://hbw.wiki/service](https://hbw.wiki/service) 在线提交。提交时建议包含：
+最快的方式是 [https://hbwservice.ca](https://hbwservice.ca) 在线提交。提交时建议包含：
 
 1. **车主姓名 + 联系方式**（电话 + 邮箱）
 2. **发动机型号 + 序列号**（机壳上的金属铭牌）
@@ -202,7 +202,7 @@ HBW 按收到顺序处理请求。如果有漏油、过热、SmartCraft 严重�
 
 ## 下一步
 
-Mercury 或 MerCruiser 需要保养、诊断或维修时，到 [hbw.wiki/service](https://hbw.wiki/service) 提交机型、序列号、小时数、症状和需要的工作。发动机维修只限 Mercury 和 MerCruiser。
+Mercury 或 MerCruiser 需要保养、诊断或维修时，到 [hbwservice.ca](https://hbwservice.ca) 提交机型、序列号、小时数、症状和需要的工作。发动机维修只限 Mercury 和 MerCruiser。
 
 如果维修报价接近换机成本，可以同时在 [mercuryrepower.ca](https://www.mercuryrepower.ca) 建立当前 Mercury 配置，再比较两份完整数字。
 
@@ -224,7 +224,7 @@ HBW 是 Mercury Marine Premier Dealer，可以检查序列号记录并处理符�
 
 ### 什么时候提交秋季服务请求？
 
-先完成 hbw.wiki/service，然后随时送船，包括下班后。 实体船厂 12 月 1 日至 4 月 1 日关闭。
+先完成 hbwservice.ca，然后随时送船，包括下班后。 实体船厂 12 月 1 日至 4 月 1 日关闭。
 
 ### HBW 提供什么冬储？
 
@@ -240,12 +240,12 @@ HBW 提供室外专业收缩膜存储、室外无遮盖存储，以及仅收缩�
 
 ## Next steps
 
-- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbw.wiki/service
+- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbwservice.ca
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
-- The only commercial next step for this article is the HBW service request at https://hbw.wiki/service.
+- The only commercial next step for this article is the HBW service request at https://hbwservice.ca.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

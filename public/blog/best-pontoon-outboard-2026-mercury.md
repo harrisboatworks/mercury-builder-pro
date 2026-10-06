@@ -118,7 +118,7 @@ Build a quote at **[mercuryrepower.ca](https://www.mercuryrepower.ca)** and we'l
 
 **Phone:** 905-342-2153
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
-**Service:** [hbw.wiki/service](https://hbw.wiki/service)
+**Service:** [hbwservice.ca](https://hbwservice.ca)
 
 ---
 

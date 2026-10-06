@@ -102,7 +102,7 @@ Tingnan ang aming rental fleet at magpareserba dito: [https://harrisboatworks.ca
 Para sa ibang tanong, tawagan o i-text kami:  
 📞 (905) 342-2153  
 📱 Text: (647) 952-2153  
-Para sa service requests: [hbw.wiki/service](https://hbw.wiki/service)
+Para sa service requests: [hbwservice.ca](https://hbwservice.ca)
 
 Matatagpuan kami sa: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. Tandaan lang, sarado ang marina mula December 1 hanggang April 1. Inaasahan ka namin, magkita tayo sa Rice Lake!
 

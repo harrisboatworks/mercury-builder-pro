@@ -50,7 +50,7 @@ revenue_driver: repower
 - 透明加元价格，无需讨价还价
 - 从 GTA 经 401 + 115 高速约 60 到 90 分钟车程
 
-[把序列号和油泵照片发给我们](https://hbw.wiki/service)
+[把序列号和油泵照片发给我们](https://hbwservice.ca)
 
 ---
 
@@ -131,7 +131,7 @@ Mercury 同时说明了原因：发动机和燃油系统里的金属、橡胶和
 
 1. **不要启动发动机。**
 2. **记下来：** 加了多少升、哪个档位、哪家加油站、哪一天。
-3. **把这些信息和序列号一起发到 [hbw.wiki/service](https://hbw.wiki/service)**，或者打 905-342-2153。
+3. **把这些信息和序列号一起发到 [hbwservice.ca](https://hbwservice.ca)**，或者打 905-342-2153。
 
 在这箱油还没被泵进整个燃油系统之前处理，比事后拆喷油嘴便宜得多。
 
@@ -286,7 +286,7 @@ Mercury 自己的燃油护理产品把三件事分开了：
 
 **不确定你那台 Mercury 该加什么油？**
 
-把**发动机序列号**和**泵上燃油标签的照片**一起发到 **[hbw.wiki/service](https://hbw.wiki/service)**，我们帮你确认这台机器的准确燃油规格，而不是让你在「普通还是高级」之间猜。
+把**发动机序列号**和**泵上燃油标签的照片**一起发到 **[hbwservice.ca](https://hbwservice.ca)**，我们帮你确认这台机器的准确燃油规格，而不是让你在「普通还是高级」之间猜。
 
 Harris Boat Works 位于 Rice Lake 南岸 Gores Landing。
 

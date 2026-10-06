@@ -133,7 +133,7 @@ En Ontario, l'application de la loi sur les embarcations de plaisance est assur�
 **Prêt à prendre le large en toute légalité?** 
 Pour la location d'embarcations sur le lac Rice : [harrisboatworks.ca](https://harrisboatworks.ca) 
 Pour un nouveau moteur ou une remotorisation : [mercuryrepower.ca](https://www.mercuryrepower.ca) 
-Demande de service : [hbw.wiki/service](https://hbw.wiki/service), vous pouvez nous envoyer votre demande (nous répondrons en anglais). 
+Demande de service : [hbwservice.ca](https://hbwservice.ca), vous pouvez nous envoyer votre demande (nous répondrons en anglais). 
 **905-342-2153** 
 Harris Boat Works, Gores Landing, Ontario, sur le lac Rice. En affaires depuis 1947.
 ---

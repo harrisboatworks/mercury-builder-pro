@@ -96,7 +96,7 @@ The generic NMEA 2000 Gateway gives the basics in your display's own engine page
 
 The phone module is a reasonable DIY job if you're comfortable behind a console. The plotter path is where it's worth a conversation: picking the right gateway for your display and engine, running the backbone cleanly, powering it properly, and confirming the display actually reads the data. It's part of a normal [repower rig-out](/blog/mercury-outboard-rigging-costs-ontario), and it's also a standalone job on boats keeping their current motor.
 
-Book it through the [service form](https://hbw.wiki/service). If you're shopping motors with this setup in mind, [build your repower quote](/quote/motor-selection) and we'll spec the rigging with it.
+Book it through the [service form](https://hbwservice.ca). If you're shopping motors with this setup in mind, [build your repower quote](/quote/motor-selection) and we'll spec the rigging with it.
 
 ## Sources
 

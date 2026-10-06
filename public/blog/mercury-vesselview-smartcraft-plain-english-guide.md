@@ -172,7 +172,7 @@ We install SmartCraft Connect modules, configure the Mercury Marine App, set up 
 
 Most installs are 2-3 hours and run **$300-$500 plus parts**. We can do them as part of a service visit or as a standalone service request.
 
-Book at **[hbw.wiki/service](https://hbw.wiki/service)**.
+Book at **[hbwservice.ca](https://hbwservice.ca)**.
 
 ---
 

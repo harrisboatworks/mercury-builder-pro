@@ -31,7 +31,7 @@ revenue_driver: service
 
 ## Quick answer
 
-Start with the operator checks in the manual for your exact Mercury, including the controls and power supply. Note whether the motor does not crank, cranks slowly, cranks without starting, or starts and stops. That symptom helps the service team choose the next test; it does not identify the failed part by itself. For help, complete a service request at [hbw.wiki/service](https://hbw.wiki/service).
+Start with the operator checks in the manual for your exact Mercury, including the controls and power supply. Note whether the motor does not crank, cranks slowly, cranks without starting, or starts and stops. That symptom helps the service team choose the next test; it does not identify the failed part by itself. For help, complete a service request at [hbwservice.ca](https://hbwservice.ca).
 
 ## What to Record Before Calling
 
@@ -40,7 +40,7 @@ Start with the operator checks in the manual for your exact Mercury, including t
 - **Warnings:** exact displayed message or observed horn pattern.
 - **Recent changes:** last successful run, storage history and recent work.
 
-Use the starting checks in the exact engine manual. Do not bypass a safety interlock or open the fuel system to follow a generic picture. If the issue remains unresolved, complete a [service request](https://hbw.wiki/service).
+Use the starting checks in the exact engine manual. Do not bypass a safety interlock or open the fuel system to follow a generic picture. If the issue remains unresolved, complete a [service request](https://hbwservice.ca).
 
 It happens at the worst time. Your Mercury sat all winter. The dock is clear, the family is in the truck, you turn the key, and you get a slow grinding click. Or it cranks beautifully but won't catch. Or it fires for two seconds and dies.
 
@@ -225,7 +225,7 @@ Once the boat is on the bench, many no-start jobs are quick to isolate. Parts av
 
 ## Ready for HBW to look at it?
 
-[Book a Mercury diagnostic at hbw.wiki/service](https://hbw.wiki/service).
+[Book a Mercury diagnostic at hbwservice.ca](https://hbwservice.ca).
 
 ## Sources
 
@@ -276,7 +276,7 @@ There is no universal winner. HBW's 537-job-row Lightspeed snapshot confirms the
 
 ## Next steps
 
-- If the owner can bring the boat to HBW in Gores Landing, Ontario, submit a service request: https://hbw.wiki/service
+- If the owner can bring the boat to HBW in Gores Landing, Ontario, submit a service request: https://hbwservice.ca
 - Include the engine serial number, symptoms, clear photos, and any recent service or rigging changes.
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
@@ -284,7 +284,7 @@ There is no universal winner. HBW's 537-job-row Lightspeed snapshot confirms the
 
 - Start with the safety limits and stop conditions stated in the article and the exact equipment manual.
 - HBW diagnoses faults in person at its Gores Landing shop. Do not offer phone or remote diagnosis.
-- Route to https://hbw.wiki/service only when the owner can bring the boat to HBW.
+- Route to https://hbwservice.ca only when the owner can bring the boat to HBW.
 - A symptom is not a confirmed root cause. Preserve the article's test order and escalation limits.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.

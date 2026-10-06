@@ -31,7 +31,7 @@ revenue_driver: repower
 
 ### 服务与换机：先提交资料，再确认具体工作
 
-1. **维修保养：**先填写[服务申请](https://hbw.wiki/service)，说明船只、发动机和需要处理的问题。
+1. **维修保养：**先填写[服务申请](https://hbwservice.ca)，说明船只、发动机和需要处理的问题。
 2. **更换发动机：**使用[Mercury 报价工具](/quote/motor-selection)说明您的需求，HBW 会根据船只情况确认配置和工作范围。
 3. **送船：**完成服务申请后，您可以随时送船，包括营业时间以外；无需等待确认送船时段。
 4. **确认与交接：**HBW 会与您联系，确认所需资料、工作授权和安排。交接时核对已完成的工作和相关文件。
@@ -207,7 +207,7 @@ A：视时间段和库存情况而定，旺季等待时间可能较长。建议�
 ## 行动呼吁
 
 → **先看透明加元报价：[mercuryrepower.ca](https://www.mercuryrepower.ca)**
-→ 提交服务请求：[hbw.wiki/service](https://hbw.wiki/service)
+→ 提交服务请求：[hbwservice.ca](https://hbwservice.ca)
 → 电话：905-342-2153
 → 地址：5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 
@@ -223,7 +223,7 @@ A：视时间段和库存情况而定，旺季等待时间可能较长。建议�
 
 ### 换机需要多久？
 
-视库存和安装排程而定，旺季（春季）等待时间可能较长。建议提早计划，并通过 https://hbw.wiki/service 提交服务请求。
+视库存和安装排程而定，旺季（春季）等待时间可能较长。建议提早计划，并通过 https://hbwservice.ca 提交服务请求。
 
 ### 换机之后需要换螺旋桨吗？
 

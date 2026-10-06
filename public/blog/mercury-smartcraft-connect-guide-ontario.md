@@ -187,7 +187,7 @@ The module installs in roughly 30 minutes on a single-engine boat. It plugs into
 
 **Bring it to HBW if:** You have never opened the cowl, you want the module integrated cleanly with no loose wiring, you want app pairing tested and confirmed before you leave, and you want it on the service log for the rest of the motor's life. HBW installs the module and verifies it pairs correctly, usually about a 30-minute add-on to a service visit.
 
-Since it's a fast 30-minute install, this is the perfect upgrade to add onto your spring prep or winterization service. Book your install at [hbw.wiki/service](https://hbw.wiki/service).
+Since it's a fast 30-minute install, this is the perfect upgrade to add onto your spring prep or winterization service. Book your install at [hbwservice.ca](https://hbwservice.ca).
 
 The most common DIY mistake: missing the SmartCraft service connector and splicing into the analog tach signal instead. This does not work and creates a confusing failure mode. HBW has done dozens of these installs. The fee is set up-front and includes the module, the install, app pairing, and a brief walkthrough.
 
@@ -219,7 +219,7 @@ For Rice Lake walleye trolling, engine-hour tracking on the kicker is the practi
 
 **If you are repowering:** Add the module to your quote at [mercuryrepower.ca](https://www.mercuryrepower.ca). HBW installs it during rigging and you leave with the app already paired.
 
-**If you already have a compatible motor:** Put in a service request at [hbw.wiki/service](https://hbw.wiki/service) with your serial number. HBW confirms compatibility, quotes the module, and books an install slot, about 30 minutes of shop time.
+**If you already have a compatible motor:** Put in a service request at [hbwservice.ca](https://hbwservice.ca) with your serial number. HBW confirms compatibility, quotes the module, and books an install slot, about 30 minutes of shop time.
 
 ---
 
@@ -228,7 +228,7 @@ For Rice Lake walleye trolling, engine-hour tracking on the kicker is the practi
 Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW is a Mercury Marine Premier Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. [Read Jay's full bio](/about/jay-harris).
 
 **Add SmartCraft Connect to your repower quote.** 
-[mercuryrepower.ca](https://www.mercuryrepower.ca). For install booking, submit a service request at [hbw.wiki/service](https://hbw.wiki/service) with your motor's serial number. 
+[mercuryrepower.ca](https://www.mercuryrepower.ca). For install booking, submit a service request at [hbwservice.ca](https://hbwservice.ca) with your motor's serial number. 
 Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. 
 Mercury Premier dealer. Est. 1947.
 
@@ -279,12 +279,12 @@ The Mercury Marine app shows eligibility once SmartCraft Connect is paired. Harr
 
 ## Next steps
 
-- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbw.wiki/service
+- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbwservice.ca
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
-- The only commercial next step for this article is the HBW service request at https://hbw.wiki/service.
+- The only commercial next step for this article is the HBW service request at https://hbwservice.ca.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

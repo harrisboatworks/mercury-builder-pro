@@ -62,7 +62,7 @@ Five factors affect how thorough your opener prep needs to be:
 ### Two Weeks Before Opener
 
 - Confirm spring commissioning is complete. If it is not, book it now. Service slots fill in May.
-- Schedule any final service at [hbw.wiki/service](https://hbw.wiki/service) if needed.
+- Schedule any final service at [hbwservice.ca](https://hbwservice.ca) if needed.
 - Check your fishing licence is valid for the new season. Renew online if not.
 - Confirm your [Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc) (PCOC) is on the boat. It is a lifetime certification, you should have the original card.
 - Confirm your [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl) (PCL) is displayed on the bow and current. As of August 8, 2026, a renewal costs $24.41 and is valid for five years. Transport Canada adjusts the fee for inflation each April 1, so verify the current amount before applying. Without a valid PCL, you can be fined.
@@ -116,7 +116,7 @@ Walleye opener often means early starts and late returns in low light. Nav light
 
 #### Want HBW to do the opener prep?
 
-We run a pre-opener service every spring, typically $200 to $350 depending on motor size. Covers all five steps above plus a lake test. Book early at hbw.wiki/service or call (905) 342-2153.
+We run a pre-opener service every spring, typically $200 to $350 depending on motor size. Covers all five steps above plus a lake test. Book early at hbwservice.ca or call (905) 342-2153.
 
 ### Three Days Before Opener
 
@@ -148,7 +148,7 @@ If you book opener prep at Harris Boat Works, the service includes:
 - Electronics power-up and basic function check
 - Service log entry with notes on anything found
 
-Book through [hbw.wiki/service](https://hbw.wiki/service). If you are considering a new motor rather than prepping the old one, build a Mercury repower quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
+Book through [hbwservice.ca](https://hbwservice.ca). If you are considering a new motor rather than prepping the old one, build a Mercury repower quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 For engine repairs, we only service Mercury and MerCruiser.
 
@@ -186,7 +186,7 @@ A weak or dead battery is one of the most common opener-morning failures we see.
 - [Ontario.ca - Get a Fishing Licence](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees) - Required licence and Outdoors Card for the opener.
 
 **Book opener prep now.** Service slots fill in May, and there is no such thing as a last-minute walleye opener fix. 
-[Book service at hbw.wiki/service](https://hbw.wiki/service), or call 905-342-2153. 
+[Book service at hbwservice.ca](https://hbwservice.ca), or call 905-342-2153. 
 Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. 
 Mercury Premier dealer. Est. 1947.
 
@@ -228,7 +228,7 @@ Run through battery, fuel, ignition basics. See our [troubleshooting guide](/blo
 
 ### Can HBW pick up my boat for opener prep?
 
-We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport. You can also complete hbw.wiki/service, then drop off anytime, including after hours.
+We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport. You can also complete hbwservice.ca, then drop off anytime, including after hours.
 
 ### What's the most common opener morning failure?
 
@@ -244,12 +244,12 @@ A weak or dead battery is one of the most common opener-morning failures we see,
 
 ## Next steps
 
-- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbw.wiki/service
+- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbwservice.ca
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
-- The only commercial next step for this article is the HBW service request at https://hbw.wiki/service.
+- The only commercial next step for this article is the HBW service request at https://hbwservice.ca.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

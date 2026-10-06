@@ -103,7 +103,7 @@ Start with the main motor at **[mercuryrepower.ca](https://www.mercuryrepower.ca
 
 **Phone:** 905-342-2153
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
-**Service:** [hbw.wiki/service](https://hbw.wiki/service)
+**Service:** [hbwservice.ca](https://hbwservice.ca)
 
 Family-owned since 1947, Mercury dealer since 1965, Mercury Premier Dealer.
 

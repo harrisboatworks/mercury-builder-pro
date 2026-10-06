@@ -99,7 +99,7 @@ If nothing turns up, you can plan the motor. Two things to get right:
 - **Shaft length and motor weight.** Our [outboard shaft length guide](/blog/outboard-shaft-length-guide) covers the measurement, and the [Mercury outboard weight chart](/blog/mercury-outboard-weight-chart) shows the weight difference between your old motor and the new one.
 - **Horsepower.** Stay within the manufacturer's power limit on the capacity plate. HBW recommends one Mercury model step below the plate maximum; on an older hull, that margin is kind to the transom too. Our [capacity plate guide](/blog/repower-horsepower-capacity-plate-guide) explains how to read it.
 
-Want a second set of eyes? Bring the boat by or book through the [service form](https://hbw.wiki/service), and we'll check the transom before you commit to a motor. When you're ready, [build your repower quote](/quote/motor-selection).
+Want a second set of eyes? Bring the boat by or book through the [service form](https://hbwservice.ca), and we'll check the transom before you commit to a motor. When you're ready, [build your repower quote](/quote/motor-selection).
 
 ## Sources
 

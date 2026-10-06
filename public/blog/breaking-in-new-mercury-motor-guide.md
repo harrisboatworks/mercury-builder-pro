@@ -110,7 +110,7 @@ HBW recommends an optional early oil-and-filter change around 20 hours as dealer
 
 ---
 
-Want HBW's optional early check, or due for scheduled service? Put in a request at [hbw.wiki/service](https://hbw.wiki/service).
+Want HBW's optional early check, or due for scheduled service? Put in a request at [hbwservice.ca](https://hbwservice.ca).
 
 ## What we do on new motor delivery at HBW
 
@@ -147,7 +147,7 @@ Follow the model-specific break-in procedure in the owner's manual. Mercury says
 
 ## Need service on your Mercury?
 
-Book online at [hbw.wiki/service](https://hbw.wiki/service). Or call **905-342-2153**. If you're looking at a new motor rather than servicing the current one, build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
+Book online at [hbwservice.ca](https://hbwservice.ca). Or call **905-342-2153**. If you're looking at a new motor rather than servicing the current one, build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 ---
 
@@ -155,7 +155,7 @@ Book online at [hbw.wiki/service](https://hbw.wiki/service). Or call **905-342-2
 
 ### When is the first oil change on a new Mercury outboard?
 
-Mercury's published schedule for most current FourStrokes is oil and filter at 100 hours or annually. HBW recommends an optional early oil-and-filter change around 20 hours as dealer best practice and an early ownership check-in. It is not a Mercury warranty requirement. Check the manual for the exact model and request service at hbw.wiki/service.
+Mercury's published schedule for most current FourStrokes is oil and filter at 100 hours or annually. HBW recommends an optional early oil-and-filter change around 20 hours as dealer best practice and an early ownership check-in. It is not a Mercury warranty requirement. Check the manual for the exact model and request service at hbwservice.ca.
 
 ### What happens if I don't break in my Mercury motor properly?
 
@@ -183,7 +183,7 @@ Use the throttle, load, and wide-open limits in the owner's manual for that exac
 
 ### Where can I book HBW's optional early service near Gores Landing or Rice Lake?
 
-Harris Boat Works at 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0 offers an optional early oil-and-filter change around 20 hours as dealer best practice. Mercury's published first scheduled service for most current FourStrokes is at 100 hours or annually. Request service at hbw.wiki/service.
+Harris Boat Works at 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0 offers an optional early oil-and-filter change around 20 hours as dealer best practice. Mercury's published first scheduled service for most current FourStrokes is at 100 hours or annually. Request service at hbwservice.ca.
 
 ### What is the Mercury factory warranty on a new outboard motor?
 

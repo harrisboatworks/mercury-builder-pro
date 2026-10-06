@@ -90,7 +90,7 @@ Mercury 船外机不是一次性交易。买完以后，你还有磨合、保养
 
 ## 下一步
 
-想比较 Mercury 船外机或换装发动机报价，可以到 MercuryRepower.ca 先看透明报价。需要 Mercury/Mercruiser 保养维修，请提交 [hbw.wiki/service](https://hbw.wiki/service)。
+想比较 Mercury 船外机或换装发动机报价，可以到 MercuryRepower.ca 先看透明报价。需要 Mercury/Mercruiser 保养维修，请提交 [hbwservice.ca](https://hbwservice.ca)。
 
 ## 常见问题
 
@@ -116,7 +116,7 @@ HBW Mercury 页面说明换装发动机价格包括拆除与安装、新 Mercury
 
 ### HBW 的报价下一步在哪里？
 
-Mercury 发动机和换装发动机报价从 MercuryRepower.ca 开始。保养维修请求使用 [hbw.wiki/service](https://hbw.wiki/service)。
+Mercury 发动机和换装发动机报价从 MercuryRepower.ca 开始。保养维修请求使用 [hbwservice.ca](https://hbwservice.ca)。
 
 > 相关指南：[安省华人养船成本中文指南](/blog/zh/boat-ownership-cost-ontario-chinese)。
 

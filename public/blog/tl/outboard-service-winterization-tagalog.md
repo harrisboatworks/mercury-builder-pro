@@ -54,7 +54,7 @@ Dito pumapasok ang aming winterization service. May **584 kaming nakumpletong wi
 
 Ang lahat ng ito ay ginagawa gamit ang OEM Mercury parts at procedures. Kung hindi Mercury ang outboard mo, pasensya na, sa engine repairs, **Mercury at Mercruiser lang** ang sineserbisyuhan namin. Pero kung Mercury ang dala mo, you’re in good hands.
 
-At tandaan: sarado ang HBW mula December 1 hanggang April 1. Kumpletuhin ang https://hbw.wiki/service, tapos i-drop off kahit kailan, kahit lampas sa oras ng opisina.
+At tandaan: sarado ang HBW mula December 1 hanggang April 1. Kumpletuhin ang https://hbwservice.ca, tapos i-drop off kahit kailan, kahit lampas sa oras ng opisina.
 
 ## Spring Commissioning: Paggising ng Bangka Pagkatapos ng Taglamig
 
@@ -85,7 +85,7 @@ Mahalagang tandaan: **ang base warranty ng Mercury ay 3 taon**. Kung under warra
 
 ## Paano Mag-book ng Serbisyo
 
-Hindi namin pinapahirapan ang booking. Pumunta lang sa aming service page: https://hbw.wiki/service at sagutan ang form. Puwede ring tumawag o mag-text:
+Hindi namin pinapahirapan ang booking. Pumunta lang sa aming service page: https://hbwservice.ca at sagutan ang form. Puwede ring tumawag o mag-text:
 
 - 📞 Telepono: (905) 342-2153  
 - 📱 Text: (647) 952-2153  
@@ -105,7 +105,7 @@ Handa na ang bangka mo para sa summer? O kailangan na ng winterization bago huma
 - 📍 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 - 📞 Telepono: (905) 342-2153
 - 📱 Text: (647) 952-2153
-- 🔧 Mag-book ng serbisyo: https://hbw.wiki/service
+- 🔧 Mag-book ng serbisyo: https://hbwservice.ca
 
 Mula pa noong 1947, nagsisilbi na kami sa mga boat owner sa Ontario. Family-owned, Mercury-certified, at kayang maghintay kahit may kaunting translation challenge. Sama-sama nating siguraduhing laging handang umandar ang bangka mo.
 
@@ -125,7 +125,7 @@ Ang tamang winterization ay depende sa eksaktong modelo ng motor. Sundin ang mga
 
 ### Saan ang winter storage ng bangka sa Ontario?
 
-Nag-aalok ang HBW ng outdoor storage na may propesyonal na shrink wrap, outdoor storage na walang takip, at serbisyong shrink wrap lamang sa Gores Landing. Hindi kami nag-aalok ng indoor o heated na boat storage. Kumpletuhin ang https://hbw.wiki/service, tapos i-drop off kahit kailan, kahit lampas sa oras ng opisina.
+Nag-aalok ang HBW ng outdoor storage na may propesyonal na shrink wrap, outdoor storage na walang takip, at serbisyong shrink wrap lamang sa Gores Landing. Hindi kami nag-aalok ng indoor o heated na boat storage. Kumpletuhin ang https://hbwservice.ca, tapos i-drop off kahit kailan, kahit lampas sa oras ng opisina.
 
 ### Paano ayusin ang Mercury outboard?
 
@@ -141,12 +141,12 @@ Hindi po. Ang aming team ay nagsisilbi sa English lamang. Pero huwag mahiya: mag
 
 ## Next steps
 
-- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbw.wiki/service
+- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbwservice.ca
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
-- The only commercial next step for this article is the HBW service request at https://hbw.wiki/service.
+- The only commercial next step for this article is the HBW service request at https://hbwservice.ca.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

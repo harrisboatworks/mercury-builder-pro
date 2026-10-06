@@ -95,7 +95,7 @@ Factory-installed equipment and accessories fitted later may follow different cl
 
 If continued use would be unsafe or could cause further damage, stop using the affected equipment. Record warning messages only when safe. Follow the installed equipment's operating and maintenance instructions.
 
-Complete the [service request](https://hbw.wiki/service), then drop off anytime, including after hours. Work scheduling, repair approval and claim assessment are separate from drop-off.
+Complete the [service request](https://hbwservice.ca), then drop off anytime, including after hours. Work scheduling, repair approval and claim assessment are separate from drop-off.
 
 ## Download the Warranty Claim Checklist
 
@@ -107,7 +107,7 @@ This guide explains how to verify the warranty for a specific boat. It does not 
 
 - [Legend warranty information](https://www.legendboats.com/legend-boats-6-year-wowranty/)
 - [Mercury warranty and product protection information](https://www.mercurymarine.com/ca/en/service-and-support/warranty-coverage-and-product-protection)
-- [HBW service request](https://hbw.wiki/service)
+- [HBW service request](https://hbwservice.ca)
 
 ## FAQs
 
@@ -137,7 +137,7 @@ Bring the bill of sale, HIN, model year, delivery date, motor serial number, tra
 
 ### Do I need an appointment to drop off the boat?
 
-Complete the service request at hbw.wiki/service, then drop off anytime, including after hours. Work scheduling, repair approval and warranty assessment are separate from drop-off.
+Complete the service request at hbwservice.ca, then drop off anytime, including after hours. Work scheduling, repair approval and warranty assessment are separate from drop-off.
 
 ## Related guides
 

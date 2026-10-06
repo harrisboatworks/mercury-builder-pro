@@ -50,7 +50,7 @@ PCOC가 필요하신가요? [HBW의 MyBoatCard 추천 링크](https://myboatcard
 
 GTA 한인 분들 중 보트를 산 뒤에야 캐나다 보트 규정이 예상보다 세세하다는 걸 아는 경우가 있습니다. OPP 수상 순찰에 적발되면 과태료가 부과됩니다. 이 가이드는 그 전에 알아야 할 것들을 한국어로 정리한 것입니다.
 
-HBW 팀은 영어로 소통합니다. 문의는 [hbw.wiki/service](https://hbw.wiki/service)에서 양식을 작성해주세요.
+HBW 팀은 영어로 소통합니다. 문의는 [hbwservice.ca](https://hbwservice.ca)에서 양식을 작성해주세요.
 
 ---
 
@@ -166,7 +166,7 @@ PCOC/PCL 위반 시 과태료는 $250부터 시작합니다.
 
 - 보트 재고: [harrisboatworks.ca](https://harrisboatworks.ca)
 - 엔진 견적: [mercuryrepower.ca](https://www.mercuryrepower.ca)
-- 서비스 예약: [hbw.wiki/service](https://hbw.wiki/service)
+- 서비스 예약: [hbwservice.ca](https://hbwservice.ca)
 - 전화: 905-342-2153
 - 주소: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 ---

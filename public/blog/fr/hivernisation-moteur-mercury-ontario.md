@@ -31,7 +31,7 @@ revenue_driver: service
 
 ### Réponse rapide
 
-Pour un moteur Mercury hors-bord, les étapes essentielles suivent le manuel du modèle et du numéro de série : carburant, protection interne, huile d'engrenage, plan de batterie et graissage. Une batterie en bon état peut rester à bord seulement si elle est pleinement chargée, débranchée, sécurisée et autorisée par le plan d'entreposage approuvé. Le manuel du modèle/numéro de série et le plan d'entreposage approuvé font foi. Harris Boat Works a 584 dossiers d'hivernisation complétés d'août à novembre 2025. Remplissez [hbw.wiki/service](https://hbw.wiki/service), puis déposez le bateau en tout temps, y compris en dehors des heures d'ouverture.
+Pour un moteur Mercury hors-bord, les étapes essentielles suivent le manuel du modèle et du numéro de série : carburant, protection interne, huile d'engrenage, plan de batterie et graissage. Une batterie en bon état peut rester à bord seulement si elle est pleinement chargée, débranchée, sécurisée et autorisée par le plan d'entreposage approuvé. Le manuel du modèle/numéro de série et le plan d'entreposage approuvé font foi. Harris Boat Works a 584 dossiers d'hivernisation complétés d'août à novembre 2025. Remplissez [hbwservice.ca](https://hbwservice.ca), puis déposez le bateau en tout temps, y compris en dehors des heures d'ouverture.
 
 ---
 
@@ -97,7 +97,7 @@ Faire l'hivernisation soi-même est possible, mais seulement si vous avez l'exp�
 
 Pour les réparations de moteur, nous entretenons uniquement les moteurs Mercury et Mercruiser.
 
-Notre équipe travaille en anglais. Nous ne parlons pas français, mais nous sommes sincèrement heureux de vous accueillir et nous ferons tout notre possible pour vous aider. Vous pouvez nous envoyer votre demande par courriel ou via notre formulaire en ligne à **hbw.wiki/service** et nous vous répondrons en anglais. Si vous préférez, utilisez Google Traduction ou demandez à un proche bilingue de vous aider.
+Notre équipe travaille en anglais. Nous ne parlons pas français, mais nous sommes sincèrement heureux de vous accueillir et nous ferons tout notre possible pour vous aider. Vous pouvez nous envoyer votre demande par courriel ou via notre formulaire en ligne à **hbwservice.ca** et nous vous répondrons en anglais. Si vous préférez, utilisez Google Traduction ou demandez à un proche bilingue de vous aider.
 
 ---
 
@@ -108,7 +108,7 @@ Notre équipe travaille en anglais. Nous ne parlons pas français, mais nous som
 - [Mercury hors-bord qui ne démarre pas : guide de dépannage (2026)](/blog/fr/mercury-hors-bord-ne-demarre-pas-depannage): La plupart des Mercury qui refusent de démarrer au printemps sont causés par la batterie, le carburant ou une.
 - [Mercury 115 vs 150 HP : Quel moteur choisir pour votre embarcation?](/blog/fr/mercury-115-vs-150-hp-comparaison): Comparaison complète des moteurs Mercury 115 et 150 FourStroke. Cylindrée, poids, performances, consommation.
 
-Remplissez [hbw.wiki/service](https://hbw.wiki/service), puis déposez le bateau en tout temps, y compris en dehors des heures d'ouverture, ou appelez le **905-342-2153**.
+Remplissez [hbwservice.ca](https://hbwservice.ca), puis déposez le bateau en tout temps, y compris en dehors des heures d'ouverture, ou appelez le **905-342-2153**.
 Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, Ontario. 
 Concessionnaire Mercury Marine Premier. En affaires depuis 1947.
 
@@ -125,11 +125,11 @@ Pour les réparations de moteurs, nous ne servons que Mercury et Mercruiser.
 
 ### Combien coûte une hivernisation professionnelle?
 
-Le prix varie selon le moteur et les services requis. Contactez-nous à hbw.wiki/service pour une estimation.
+Le prix varie selon le moteur et les services requis. Contactez-nous à hbwservice.ca pour une estimation.
 
 ### Quand devrais-je demander mon hivernisation?
 
-Remplissez hbw.wiki/service, puis déposez le bateau en tout temps, y compris en dehors des heures d'ouverture. La marina est fermée du 1er décembre au 1er avril.
+Remplissez hbwservice.ca, puis déposez le bateau en tout temps, y compris en dehors des heures d'ouverture. La marina est fermée du 1er décembre au 1er avril.
 
 ### Est-ce que Harris Boat Works offre aussi l'entreposage?
 
@@ -137,12 +137,12 @@ Oui. HBW offre l'entreposage extérieur avec pellicule rétractable professionne
 
 ## Prochaines étapes
 
-- Décrivez le bateau, le moteur et les symptômes, puis joignez des photos à la demande de service HBW : https://hbw.wiki/service
+- Décrivez le bateau, le moteur et les symptômes, puis joignez des photos à la demande de service HBW : https://hbwservice.ca
 - Lieu de ramassage et coordonnées : Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
-- The only commercial next step for this article is the HBW service request at https://hbw.wiki/service.
+- The only commercial next step for this article is the HBW service request at https://hbwservice.ca.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

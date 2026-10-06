@@ -31,7 +31,7 @@ revenue_driver: service
 
 ### Respuesta rápida
 
-La preparación invernal de un motor Mercury en Ontario sigue el manual del modelo y número de serie. Una batería en buen estado puede permanecer a bordo solo si está completamente cargada, desconectada, asegurada y permitida por el plan de almacenamiento aprobado. El manual del modelo/número de serie y el plan de almacenamiento aprobado rigen. Complete hbw.wiki/service y deje el bote en cualquier momento, incluso fuera de horario.
+La preparación invernal de un motor Mercury en Ontario sigue el manual del modelo y número de serie. Una batería en buen estado puede permanecer a bordo solo si está completamente cargada, desconectada, asegurada y permitida por el plan de almacenamiento aprobado. El manual del modelo/número de serie y el plan de almacenamiento aprobado rigen. Complete hbwservice.ca y deje el bote en cualquier momento, incluso fuera de horario.
 
 ---
 
@@ -120,7 +120,7 @@ Haga circular agua dulce por el sistema de enfriamiento del motor para eliminar 
 
 La mayoría de los propietarios de botes en Ontario sacan su embarcación entre mediados de octubre y finales de noviembre. El fin de semana de Thanksgiving es a menudo la fecha límite psicológica. La ventana de lanzamiento en primavera es generalmente entre mediados de abril y finales de mayo, según la región.
 
-Complete hbw.wiki/service y deje el bote en cualquier momento, incluso fuera de horario. La marina cierra del 1 de diciembre al 1 de abril.
+Complete hbwservice.ca y deje el bote en cualquier momento, incluso fuera de horario. La marina cierra del 1 de diciembre al 1 de abril.
 
 ---
 
@@ -134,7 +134,7 @@ En Harris Boat Works tenemos 584 registros de preparación invernal completados 
 
 ## Contáctenos
 
-**Reservar preparación invernal:** hbw.wiki/service, puede enviarnos su consulta (le responderemos en inglés).
+**Reservar preparación invernal:** hbwservice.ca, puede enviarnos su consulta (le responderemos en inglés).
 
 **Por teléfono:** 905-342-2153
 
@@ -149,11 +149,11 @@ En Harris Boat Works tenemos 584 registros de preparación invernal completados 
 
 ### ¿Cuánto cuesta una preparación invernal profesional?
 
-El precio varía según el motor y los servicios requeridos. Contacte a hbw.wiki/service para una estimación.
+El precio varía según el motor y los servicios requeridos. Contacte a hbwservice.ca para una estimación.
 
 ### ¿Cuándo debo reservar?
 
-Complete hbw.wiki/service y deje el bote en cualquier momento, incluso fuera de horario. La marina cierra del 1 de diciembre al 1 de abril.
+Complete hbwservice.ca y deje el bote en cualquier momento, incluso fuera de horario. La marina cierra del 1 de diciembre al 1 de abril.
 
 ### ¿Harris Boat Works ofrece almacenamiento?
 
@@ -165,12 +165,12 @@ En el mejor caso, problemas para arrancar en primavera. En el peor caso, daño i
 
 ## Next steps
 
-- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbw.wiki/service
+- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbwservice.ca
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
-- The only commercial next step for this article is the HBW service request at https://hbw.wiki/service.
+- The only commercial next step for this article is the HBW service request at https://hbwservice.ca.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

@@ -79,7 +79,7 @@ HBW can assess Mercury warranty concerns even when the motor was sold by another
 
 Repowers require the boat's capacity label or manufacturer's rating, a hull and transom assessment, the exact Mercury configuration, controls, steering, instruments, propeller selection, installation, and an on-water test.
 
-Use the [quote builder](/quote/motor-selection) for a starting number and [hbw.wiki/service](https://hbw.wiki/service) for the boat-specific work order.
+Use the [quote builder](/quote/motor-selection) for a starting number and [hbwservice.ca](https://hbwservice.ca) for the boat-specific work order.
 
 ### Winter storage and spring commissioning
 
@@ -110,7 +110,7 @@ HBW confirms the current price for the actual job. For motor pricing, the canoni
 
 ## From the Shop: The Drive-In Service Model
 
-We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport. You can also complete [hbw.wiki/service](https://hbw.wiki/service), then drop off anytime, including after hours.
+We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport. You can also complete [hbwservice.ca](https://hbwservice.ca), then drop off anytime, including after hours.
 
 HBW documents the complaint and approved work. You return after the job is complete and the pickup window is confirmed.
 
@@ -151,7 +151,7 @@ The right shop is the one that can perform the required work safely and accurate
 
 Include the serial number, current hours, alarm or symptom, prior work, boat location, and whether you need HBW to confirm pickup availability or can bring it to Gores Landing.
 
-**Service request:** [hbw.wiki/service](https://hbw.wiki/service)
+**Service request:** [hbwservice.ca](https://hbwservice.ca)
 **Phone:** 905-342-2153
 **Drop-off and pickup:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 
@@ -195,12 +195,12 @@ Not during the physical closure. The marina is closed December 1 through April 1
 
 ## Next steps
 
-- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbw.wiki/service
+- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbwservice.ca
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
-- The only commercial next step for this article is the HBW service request at https://hbw.wiki/service.
+- The only commercial next step for this article is the HBW service request at https://hbwservice.ca.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

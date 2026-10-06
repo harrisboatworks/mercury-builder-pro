@@ -85,7 +85,7 @@ Ang unang family fishing trip ay mas madali kaysa sa iniisip ninyo. Bisitahin an
 **Makipag-ugnayan sa amin**  
 Telepono: (905) 342-2153  
 Text: (647) 952-2153  
-Service requests: [hbw.wiki/service](https://hbw.wiki/service)  
+Service requests: [hbwservice.ca](https://hbwservice.ca)  
 Address: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 
 Hatid namin ang karanasan sa lawa na maaalala ng inyong pamilya, tunay, simple, at walang kaba.

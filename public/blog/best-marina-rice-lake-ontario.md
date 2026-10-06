@@ -29,7 +29,7 @@ revenue_driver: repower
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-marina-rice-lake-ontario
 
-> **Quick answer:** The right Rice Lake marina is the one that matches how you use, service, store, and move your boat. Harris Boat Works has operated in Gores Landing since 1947 and is a Mercury Marine Premier dealer. For Mercury repower, Mercury or MerCruiser repair, and outdoor winter storage requests, start at [hbw.wiki/service](https://hbw.wiki/service). We can generally arrange boat pickup; ask about availability. HBW does not deliver boats. The full transport limits are in Harris Boat Works Scope.
+> **Quick answer:** The right Rice Lake marina is the one that matches how you use, service, store, and move your boat. Harris Boat Works has operated in Gores Landing since 1947 and is a Mercury Marine Premier dealer. For Mercury repower, Mercury or MerCruiser repair, and outdoor winter storage requests, start at [hbwservice.ca](https://hbwservice.ca). We can generally arrange boat pickup; ask about availability. HBW does not deliver boats. The full transport limits are in Harris Boat Works Scope.
 
 The physical marina is closed December 1 through April 1. There is no on-site service, installation, inspection, commissioning, or customer access during that period. Remote planning and approvals can continue, and physical work begins after reopening.
 
@@ -57,7 +57,7 @@ If you mainly need a nearby slip, location may lead the decision. If you need Me
 HBW's Mercury-facing services on this site are deliberately specific:
 
 - **Mercury repower and motor selection:** build a current CAD configuration in the [Mercury quote builder](/quote/motor-selection). The final installed scope depends on the exact engine, controls, steering, propeller, removal, rigging, boat condition, HST, and approved work.
-- **Engine repair:** the current service intake limits engine repairs to Mercury and MerCruiser. Submit the serial number and symptoms at [hbw.wiki/service](https://hbw.wiki/service).
+- **Engine repair:** the current service intake limits engine repairs to Mercury and MerCruiser. Submit the serial number and symptoms at [hbwservice.ca](https://hbwservice.ca).
 - **Outdoor winter storage:** HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. We also do not offer climate-controlled, summer, or year-round storage. See the [current HBW 2026–27 rate card](https://www.harrisboatworks.ca/winter-storage).
 - **Spring commissioning:** it is included for HBW winter-storage customers. As of September 2026, it is $99 for non-storage customers. Confirm the current scope when booking.
 - **Customer transport:** We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport.
@@ -73,7 +73,7 @@ Other marina offerings, including seasonal dockage, launch access, fuel, parts-c
 
 For service, storage, or repower work:
 
-1. Complete the service request at [hbw.wiki/service](https://hbw.wiki/service) with the boat, engine, trailer, and requested-work details.
+1. Complete the service request at [hbwservice.ca](https://hbwservice.ca) with the boat, engine, trailer, and requested-work details.
 2. Drop off your boat anytime, including after hours. You do not need a confirmed drop-off window.
 3. HBW reviews the requested scope and confirms the work plan and schedule.
 4. Review the written quote, inclusions, exclusions, and approvals before work proceeds.
@@ -110,7 +110,7 @@ Travel time depends on the starting point, traffic, weather, road work, and whet
 
 Before leaving:
 
-- Complete the service request at [hbw.wiki/service](https://hbw.wiki/service); drop off anytime, including after hours
+- Complete the service request at [hbwservice.ca](https://hbwservice.ca); drop off anytime, including after hours
 - Check the trailer tires, bearings, lights, coupler, safety chains, winch strap, and tie-downs
 - Confirm the tow vehicle's ratings and the boat's travel height
 - Bring the engine serial number, keys, wheel-lock key, and any requested documentation
@@ -146,17 +146,17 @@ Read the detailed [outdoor storage and shrinkwrap guide](/blog/outdoor-boat-stor
 
 ## Current Booking and Official Information
 
-- [HBW service intake](https://hbw.wiki/service), current repair scope and service request
+- [HBW service intake](https://hbwservice.ca), current repair scope and service request
 - [Mercury quote builder](/quote/motor-selection), current motor and configured quote path
 - [Parks Canada: Trent-Severn Waterway](https://parks.canada.ca/lhn-nhs/on/trentsevern), official waterway information
 
-Ready to plan a Mercury repower? Build a current CAD configuration in the [Mercury Repower Centre](/quote/motor-selection). For service or storage, submit the boat and engine details at [hbw.wiki/service](https://hbw.wiki/service).
+Ready to plan a Mercury repower? Build a current CAD configuration in the [Mercury Repower Centre](/quote/motor-selection). For service or storage, submit the boat and engine details at [hbwservice.ca](https://hbwservice.ca).
 
 ## FAQs
 
 ### Where is Harris Boat Works?
 
-HBW is at 5369 Harris Boat Works Rd in Gores Landing, Ontario, on Rice Lake. Complete the service request at hbw.wiki/service, then drop off your boat anytime, including after hours.
+HBW is at 5369 Harris Boat Works Rd in Gores Landing, Ontario, on Rice Lake. Complete the service request at hbwservice.ca, then drop off your boat anytime, including after hours.
 
 ### How long has Harris Boat Works operated in Gores Landing?
 
@@ -164,7 +164,7 @@ Since 1947, at its Gores Landing location on Rice Lake.
 
 ### What engine brands does HBW repair?
 
-HBW engine repairs are limited to Mercury and MerCruiser. Submit the serial number and requested work at hbw.wiki/service.
+HBW engine repairs are limited to Mercury and MerCruiser. Submit the serial number and requested work at hbwservice.ca.
 
 ### Does HBW pick up or deliver boats?
 
@@ -184,7 +184,7 @@ No. Each job follows its written work order. Plan pickup or launch only after HB
 
 ### How long is the drive from the GTA?
 
-It varies with the starting point, traffic, weather, road work, and towing conditions. Use current navigation. Complete the service request at hbw.wiki/service before dropping off your boat; drop-off is available anytime, including after hours.
+It varies with the starting point, traffic, weather, road work, and towing conditions. Use current navigation. Complete the service request at hbwservice.ca before dropping off your boat; drop-off is available anytime, including after hours.
 
 ## Related guides
 

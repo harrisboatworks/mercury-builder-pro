@@ -147,9 +147,9 @@ Harris Boat Works está ubicado en Gores Landing, Ontario, a orillas de Rice Lak
 - Acceso a partes Mercury con prioridad de concesionario Premier
 - Técnicos certificados Mercury
 
-Nuestro equipo responde en inglés. No ofrecemos servicio en español, pero los compradores hispanohablantes son bienvenidos: puedes contactarnos por el configurador en línea, el formulario de servicio en hbw.wiki/service, o por teléfono al **905-342-2153**, y te responderemos en inglés. El configurador en mercuryrepower.ca es visual y muestra los precios claramente en dólares canadienses, así que es fácil de usar en cualquier idioma.
+Nuestro equipo responde en inglés. No ofrecemos servicio en español, pero los compradores hispanohablantes son bienvenidos: puedes contactarnos por el configurador en línea, el formulario de servicio en hbwservice.ca, o por teléfono al **905-342-2153**, y te responderemos en inglés. El configurador en mercuryrepower.ca es visual y muestra los precios claramente en dólares canadienses, así que es fácil de usar en cualquier idioma.
 
-Si tienes preguntas específicas, envíalas por el formulario de hbw.wiki/service. Te responderemos en inglés; si lo prefieres, usa Google Translate o pídele ayuda a un familiar bilingüe.
+Si tienes preguntas específicas, envíalas por el formulario de hbwservice.ca. Te responderemos en inglés; si lo prefieres, usa Google Translate o pídele ayuda a un familiar bilingüe.
 
 ---
 
@@ -180,7 +180,7 @@ Sí, eso es exactamente para lo que existe mercuryrepower.ca. Construye tu presu
 **¿Listo para configurar tu motor o explorar opciones?**
 Usa el configurador en **mercuryrepower.ca**, precios reales, sin llamadas telefónicas, sin presión.
 
-¿Preguntas sobre inventario o servicio? Escríbenos en **hbw.wiki/service** (puedes escribirnos en español; te responderemos en inglés) o llama al **905-342-2153**.
+¿Preguntas sobre inventario o servicio? Escríbenos en **hbwservice.ca** (puedes escribirnos en español; te responderemos en inglés) o llama al **905-342-2153**.
 
 Harris Boat Works
 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
@@ -346,7 +346,7 @@ No. La temporada cierra el 15 de noviembre y reabre el segundo sábado de mayo. 
 Caña de 6, 7 pies de acción media, carrete de spinning o baitcasting, línea de 8, 12 lbs, variedad de jigs de 1/4, 3/8 oz y señuelos de buceo tipo crankbait. El equipo específico depende de tus preferencias, consulta una tienda de artículos deportivos local para recomendaciones actualizadas.
 
 **¿Harris Boat Works tiene personal que hable español?**
-Nuestro equipo opera principalmente en inglés. Sin embargo, puedes escribirnos en español a través del formulario en hbw.wiki/service y haremos lo posible por ser útiles.
+Nuestro equipo opera principalmente en inglés. Sin embargo, puedes escribirnos en español a través del formulario en hbwservice.ca y haremos lo posible por ser útiles.
 
 ---
 
@@ -358,7 +358,7 @@ Llama al **905-342-2153** o visita **harrisboatworks.ca** para disponibilidad de
 **¿Buscas un motor para tu propio bote?**
 Configura tu presupuesto en **mercuryrepower.ca**, 3 minutos, sin presión.
 
-¿Preguntas? Escríbenos en hbw.wiki/service (puedes escribirnos en español; te responderemos en inglés).
+¿Preguntas? Escríbenos en hbwservice.ca (puedes escribirnos en español; te responderemos en inglés).
 
 Harris Boat Works
 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
@@ -386,7 +386,7 @@ harrisboatworks.ca | 905-342-2153
     keywords: ['preparar motor fuera de borda invierno Ontario', 'winterization motor Mercury', 'preparación invernal bote Ontario'],
     content: `### Respuesta rápida
 
-La preparación invernal de un motor Mercury en Ontario sigue el manual del modelo y número de serie. Una batería en buen estado puede permanecer a bordo solo si está completamente cargada, desconectada, asegurada y permitida por el plan de almacenamiento aprobado. El manual del modelo/número de serie y el plan de almacenamiento aprobado rigen. Complete hbw.wiki/service y deje el bote en cualquier momento, incluso fuera de horario.
+La preparación invernal de un motor Mercury en Ontario sigue el manual del modelo y número de serie. Una batería en buen estado puede permanecer a bordo solo si está completamente cargada, desconectada, asegurada y permitida por el plan de almacenamiento aprobado. El manual del modelo/número de serie y el plan de almacenamiento aprobado rigen. Complete hbwservice.ca y deje el bote en cualquier momento, incluso fuera de horario.
 
 ---
 
@@ -475,7 +475,7 @@ Haga circular agua dulce por el sistema de enfriamiento del motor para eliminar 
 
 La mayoría de los propietarios de botes en Ontario sacan su embarcación entre mediados de octubre y finales de noviembre. El fin de semana de Thanksgiving es a menudo la fecha límite psicológica. La ventana de lanzamiento en primavera es generalmente entre mediados de abril y finales de mayo, según la región.
 
-Complete hbw.wiki/service y deje el bote en cualquier momento, incluso fuera de horario. La marina cierra del 1 de diciembre al 1 de abril.
+Complete hbwservice.ca y deje el bote en cualquier momento, incluso fuera de horario. La marina cierra del 1 de diciembre al 1 de abril.
 
 ---
 
@@ -496,13 +496,13 @@ Sí, si tiene experiencia, los productos correctos y el manual del modelo y del 
 Harris Boat Works vende combustible sin etanol directamente en el sitio en Gores Landing. Es una de las pocas marinas en Ontario que lo ofrece.
 
 **¿Cómo reservo la preparación invernal?**
-La forma más fácil es a través de hbw.wiki/service; puede enviarnos su consulta y le responderemos en inglés. También puede llamarnos al 905-342-2153.
+La forma más fácil es a través de hbwservice.ca; puede enviarnos su consulta y le responderemos en inglés. También puede llamarnos al 905-342-2153.
 
 **¿Los pasos son iguales para todos los motores Mercury?**
 Los pasos descritos aquí son comunes a la mayoría de los motores fuera de borda Mercury. Los detalles exactos varían según el modelo y el año, siempre consulte el manual del motor o contacte al concesionario para su modelo específico.
 
 **¿Cuándo es el mejor momento para hacer la preparación invernal?**
-Complete hbw.wiki/service y deje el bote en cualquier momento, incluso fuera de horario. La marina cierra del 1 de diciembre al 1 de abril.
+Complete hbwservice.ca y deje el bote en cualquier momento, incluso fuera de horario. La marina cierra del 1 de diciembre al 1 de abril.
 
 **¿Cuánto tiempo tarda la preparación invernal?**
 Depende del motor y el bote. En general, entre dos y cuatro horas en taller.
@@ -511,7 +511,7 @@ Depende del motor y el bote. En general, entre dos y cuatro horas en taller.
 
 ## Contáctenos
 
-**Reservar preparación invernal:** hbw.wiki/service, puede enviarnos su consulta (le responderemos en inglés).
+**Reservar preparación invernal:** hbwservice.ca, puede enviarnos su consulta (le responderemos en inglés).
 
 **Por teléfono:** 905-342-2153
 
@@ -522,8 +522,8 @@ Depende del motor y el bote. En general, entre dos y cuatro horas en taller.
 *Guías relacionadas (en inglés): Should I repower or buy a new boat? | Ontario Mercury Outboard Price Guide | Mercury 90 HP FourStroke review*
 ---`,
     faqs: [
-      { question: '¿Cuánto cuesta una preparación invernal profesional?', answer: 'El precio varía según el motor y los servicios requeridos. Contacte a hbw.wiki/service para una estimación.' },
-      { question: '¿Cuándo debo reservar?', answer: 'Complete hbw.wiki/service y deje el bote en cualquier momento, incluso fuera de horario. La marina cierra del 1 de diciembre al 1 de abril.' },
+      { question: '¿Cuánto cuesta una preparación invernal profesional?', answer: 'El precio varía según el motor y los servicios requeridos. Contacte a hbwservice.ca para una estimación.' },
+      { question: '¿Cuándo debo reservar?', answer: 'Complete hbwservice.ca y deje el bote en cualquier momento, incluso fuera de horario. La marina cierra del 1 de diciembre al 1 de abril.' },
       { question: '¿Harris Boat Works ofrece almacenamiento?', answer: 'Sí. HBW ofrece almacenamiento exterior con envoltura retráctil profesional, almacenamiento exterior descubierto y servicio únicamente de envoltura retráctil. No ofrecemos almacenamiento interior ni calefaccionado.' },
       { question: '¿Qué pasa si no hago la preparación invernal?', answer: 'En el mejor caso, problemas para arrancar en primavera. En el peor caso, daño interno severo por corrosión o agua congelada, reparaciones que pueden costar miles de dólares.' },
     ],
@@ -666,7 +666,7 @@ Con servicio regular (cada 100 horas o anualmente), los FourStroke Mercury alcan
 Sí. Mercury ofrece opciones de financiamiento. Verifica las condiciones actuales en mercuryrepower.ca, Harris Boat Works aplica las tasas vigentes al momento de la compra.
 
 **¿El equipo de Harris Boat Works habla español?**
-Nuestro equipo se comunica y presta servicio en inglés. El configurador en mercuryrepower.ca muestra precios claros en un proceso visual, y para preguntas específicas puedes escribirnos en hbw.wiki/service; te responderemos en inglés, así que si lo prefieres pide ayuda a un familiar o amigo que hable inglés o usa una aplicación de traducción.
+Nuestro equipo se comunica y presta servicio en inglés. El configurador en mercuryrepower.ca muestra precios claros en un proceso visual, y para preguntas específicas puedes escribirnos en hbwservice.ca; te responderemos en inglés, así que si lo prefieres pide ayuda a un familiar o amigo que hable inglés o usa una aplicación de traducción.
 
 ---
 
@@ -674,7 +674,7 @@ Nuestro equipo se comunica y presta servicio en inglés. El configurador en merc
 
 Usa el configurador en **mercuryrepower.ca** para ver precios reales del 115 y 150 HP, comparar opciones de rigging, y armar tu presupuesto completo, sin llamadas previas, sin presión.
 
-¿Quieres hablar con alguien? Llama al **905-342-2153** o escríbenos en **hbw.wiki/service**.
+¿Quieres hablar con alguien? Llama al **905-342-2153** o escríbenos en **hbwservice.ca**.
 
 Harris Boat Works, Gores Landing, Ontario
 harrisboatworks.ca | Rice Lake
@@ -824,7 +824,7 @@ Para reparaciones e instalaciones de motores, trabajamos exclusivamente con Merc
 
 **Botes nuevos:** [harrisboatworks.ca](https://www.harrisboatworks.ca), inventario Legend Boats.
 
-**Solicitud de servicio:** [hbw.wiki/service](https://hbw.wiki/service), puede enviarnos su consulta (le responderemos en inglés).
+**Solicitud de servicio:** [hbwservice.ca](https://hbwservice.ca), puede enviarnos su consulta (le responderemos en inglés).
 
 **Por teléfono:** 905-342-2153
 

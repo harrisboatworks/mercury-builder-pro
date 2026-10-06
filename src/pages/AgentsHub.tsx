@@ -139,8 +139,8 @@ export default function AgentsHub() {
             </li>
             <li>
               <strong>Winter storage / shrinkwrap / winterization / service:</strong> submit at{' '}
-              <a href="https://hbw.wiki/service" className="text-primary underline" rel="noopener noreferrer">
-                hbw.wiki/service
+              <a href="https://hbwservice.ca" className="text-primary underline" rel="noopener noreferrer">
+                hbwservice.ca
               </a>
               .
             </li>

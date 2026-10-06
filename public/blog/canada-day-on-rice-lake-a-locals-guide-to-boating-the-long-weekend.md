@@ -95,7 +95,7 @@ If you're on the water after sunset, your navigation lights must be on and funct
 ## Ethanol-Free Fuel and Marina Amenities
 Finding ethanol-free fuel can be a challenge around Rice Lake, but Harris Boat Works stocks 89-octane ethanol-free gasoline at the marina fuel dock. Ethanol-free fuel is easier on older engines, resists phase separation, and reduces the need for frequent fuel-system maintenance, which is a real advantage when you're running your boat hard over a long weekend.
 
-For engine repairs and routine maintenance, Harris Boat Works only services Mercury and MerCruiser products. If you need a last-minute tune-up, impeller change, or a diagnostic check before the weekend, our service team takes intake at hbw.wiki/service. The shop gets busy right before a holiday, so calling ahead gives you the best shot at a quick turnaround.
+For engine repairs and routine maintenance, Harris Boat Works only services Mercury and MerCruiser products. If you need a last-minute tune-up, impeller change, or a diagnostic check before the weekend, our service team takes intake at hbwservice.ca. The shop gets busy right before a holiday, so calling ahead gives you the best shot at a quick turnaround.
 
 If you're considering repowering your boat with a new Mercury outboard, HBW's standard handoff includes an on-water test on Rice Lake before pickup when safe seasonal conditions allow. Any alternate acceptance plan is documented with the customer. You can explore outboard options and build a configuration at mercuryrepower.ca.
 
@@ -136,7 +136,7 @@ Harris Boat Works marina sells 89-octane ethanol-free gasoline. Ethanol-free fue
 
 ### Does Harris Boat Works service all brands of outboards?
 
-For engine repairs, HBW services Mercury and MerCruiser products. You can book service at hbw.wiki/service. For repower quotes, HBW specializes in Mercury outboards, and its standard handoff includes an on-water test when safe seasonal conditions allow.
+For engine repairs, HBW services Mercury and MerCruiser products. You can book service at hbwservice.ca. For repower quotes, HBW specializes in Mercury outboards, and its standard handoff includes an on-water test when safe seasonal conditions allow.
 
 ## Related guides
 

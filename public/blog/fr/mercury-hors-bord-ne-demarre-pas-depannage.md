@@ -33,7 +33,7 @@ revenue_driver: service
 
 La plupart des moteurs Mercury hors-bord qui refusent de démarrer ont l'une de trois causes : une batterie faible ou à plat, du carburant vieilli ou contaminé, ou une hivernisation négligée (ou incomplète). Vérifiez ces éléments dans l'ordre. Si le moteur ne démarre toujours pas après les vérifications de base, apportez-le chez nous. Insister sur un moteur en panne pour le forcer à partir peut transformer un simple diagnostic en remplacement de pièces.
 
-Pour réserver un diagnostic : [hbw.wiki/service](https://hbw.wiki/service).
+Pour réserver un diagnostic : [hbwservice.ca](https://hbwservice.ca).
 
 ---
 
@@ -149,7 +149,7 @@ Arrêtez le dépannage et réservez un diagnostic professionnel si :
 
 Pour les réparations de moteur, nous ne servons que Mercury et Mercruiser.
 
-Faire tourner un moteur avec un problème non diagnostiqué pour le forcer à démarrer peut transformer un diagnostic de 150 $ en une réparation beaucoup plus sérieuse. Réservez à [hbw.wiki/service](https://hbw.wiki/service).
+Faire tourner un moteur avec un problème non diagnostiqué pour le forcer à démarrer peut transformer un diagnostic de 150 $ en une réparation beaucoup plus sérieuse. Réservez à [hbwservice.ca](https://hbwservice.ca).
 
 ---
 
@@ -163,7 +163,7 @@ Faire tourner un moteur avec un problème non diagnostiqué pour le forcer à d�
 ## Pour nous joindre
 
 **Vous ne trouvez pas le problème ?**
-Réservez un diagnostic à [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Gores Landing, concessionnaire [Mercury Marine](https://www.mercurymarine.com/ca/en) certifié Premier. Concessionnaire Mercury depuis 1965, marina familiale sur le lac Rice depuis 1947. Pour les réparations de moteur, nous ne servons que Mercury et Mercruiser.
+Réservez un diagnostic à [hbwservice.ca](https://hbwservice.ca). Harris Boat Works, Gores Landing, concessionnaire [Mercury Marine](https://www.mercurymarine.com/ca/en) certifié Premier. Concessionnaire Mercury depuis 1965, marina familiale sur le lac Rice depuis 1947. Pour les réparations de moteur, nous ne servons que Mercury et Mercruiser.
 
 Téléphone : 905-342-2153
 
@@ -217,7 +217,7 @@ Le cordon de coupure d'urgence Mercury (aussi appelé lanyard du coupe-circuit) 
 
 ### Quand devrais-je appeler un concessionnaire Mercury plutôt que de faire le dépannage moi-même ?
 
-Appelez un concessionnaire quand : le moteur ne démarre pas après avoir vérifié toutes les causes courantes (carburant, batterie, coupe-circuit, bougies, conduites); un signal sonore d'avertissement se fait entendre et le moteur s'arrête en protection; vous soupçonnez que de l'eau a pénétré dans le moteur; le moteur tourne mais affiche des codes de défaut; ou le moteur est sous garantie et vous voulez protéger la couverture. Chez Harris Boat Works, nous utilisons le logiciel de diagnostic Mercury pour lire les codes de défaut directement à partir de l'ECM, ce qui ne peut pas se faire sans le bon équipement. Un diagnostic « ne démarre pas » standard se situe en moyenne autour de 540 $ selon notre historique de réparations. Réservez le service à hbw.wiki/service ou appelez au 905-342-2153.
+Appelez un concessionnaire quand : le moteur ne démarre pas après avoir vérifié toutes les causes courantes (carburant, batterie, coupe-circuit, bougies, conduites); un signal sonore d'avertissement se fait entendre et le moteur s'arrête en protection; vous soupçonnez que de l'eau a pénétré dans le moteur; le moteur tourne mais affiche des codes de défaut; ou le moteur est sous garantie et vous voulez protéger la couverture. Chez Harris Boat Works, nous utilisons le logiciel de diagnostic Mercury pour lire les codes de défaut directement à partir de l'ECM, ce qui ne peut pas se faire sans le bon équipement. Un diagnostic « ne démarre pas » standard se situe en moyenne autour de 540 $ selon notre historique de réparations. Réservez le service à hbwservice.ca ou appelez au 905-342-2153.
 
 ### Combien de temps prend le diagnostic d'un Mercury qui ne démarre pas ?
 
@@ -233,12 +233,12 @@ Un non-démarrage intermittent est souvent un problème de connexion : une borne
 
 ## Prochaines étapes
 
-- Décrivez le bateau, le moteur et les symptômes, puis joignez des photos à la demande de service HBW : https://hbw.wiki/service
+- Décrivez le bateau, le moteur et les symptômes, puis joignez des photos à la demande de service HBW : https://hbwservice.ca
 - Lieu de ramassage et coordonnées : Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
-- The only commercial next step for this article is the HBW service request at https://hbw.wiki/service.
+- The only commercial next step for this article is the HBW service request at https://hbwservice.ca.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

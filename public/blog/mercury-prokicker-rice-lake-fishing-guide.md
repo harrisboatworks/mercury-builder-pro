@@ -186,7 +186,7 @@ The Mercury 9.9 EFI ProKicker is easy to live with. The EFI powerhead has no oil
 - **Water pump and impeller:** Follow the exact ProKicker manual. Expanded water-pump service is commonly around 300 hours or three years, while Rice Lake weeds, silt, reduced water pressure, or an overheat warning can justify earlier inspection.
 - **EFI throttle body:** inspect and clean every few seasons if you run ethanol-blended fuel regularly.
 
-HBW services Mercury and MerCruiser. Book kicker service at hbw.wiki/service. The best time is fall lay-up or early spring before the walleye opener, so your kicker is ready and you are not waiting in the May queue. Our [spring commissioning checklist](/blog/spring-outboard-commissioning-checklist) walks through the rest of the pre-season list.
+HBW services Mercury and MerCruiser. Book kicker service at hbwservice.ca. The best time is fall lay-up or early spring before the walleye opener, so your kicker is ready and you are not waiting in the May queue. Our [spring commissioning checklist](/blog/spring-outboard-commissioning-checklist) walks through the rest of the pre-season list.
 
 ---
 
@@ -197,7 +197,7 @@ Live pricing, motor only or fully installed, is at **mercuryrepower.ca**. The qu
 **Phone:** 905-342-2153
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 **Configurator:** [mercuryrepower.ca](https://mercuryrepower.ca)
-**Service:** [hbw.wiki/service](https://hbw.wiki/service)
+**Service:** [hbwservice.ca](https://hbwservice.ca)
 
 ---
 
@@ -243,7 +243,7 @@ Low, by design. The high-thrust prop and gearing trade top speed for slow-speed 
 
 ### Does HBW service ProKickers it did not install?
 
-Yes. We service any Mercury or MerCruiser regardless of where it was bought. Book at hbw.wiki/service.
+Yes. We service any Mercury or MerCruiser regardless of where it was bought. Book at hbwservice.ca.
 
 ### Does the ProKicker work on the Trent-Severn?
 

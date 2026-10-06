@@ -63,7 +63,7 @@ export default function FrenchLanding() {
             "name": "Offrez-vous la livraison au Québec?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "On peut en discuter. La majorité de nos clients viennent chercher leur moteur en personne, mais si la livraison est une nécessité, appelez-nous au 905-342-2153 ou écrivez-nous via hbw.wiki/service."
+              "text": "On peut en discuter. La majorité de nos clients viennent chercher leur moteur en personne, mais si la livraison est une nécessité, appelez-nous au 905-342-2153 ou écrivez-nous via hbwservice.ca."
             }
           },
           {
@@ -184,7 +184,7 @@ export default function FrenchLanding() {
               <div>
                 <h3 className="font-medium text-foreground">Demandes de service</h3>
                 <p className="text-muted-foreground text-sm">
-                  Soumettez votre demande par formulaire à <a href="https://hbw.wiki/service" className="text-primary hover:underline">hbw.wiki/service</a>.
+                  Soumettez votre demande par formulaire à <a href="https://hbwservice.ca" className="text-primary hover:underline">hbwservice.ca</a>.
                 </p>
               </div>
             </div>
@@ -218,7 +218,7 @@ export default function FrenchLanding() {
             {[
               { q: "Parlez-vous français?", a: "Notre équipe travaille principalement en anglais. On préfère être honnêtes là-dessus plutôt que de vous créer de fausses attentes. Mais on est sincèrement heureux de vous accueillir. Le configurateur en ligne à mercuryrepower.ca n'a pas de barrière linguistique, et le courriel nous permet de gérer les échanges écrits avec soin." },
               { q: "Puis-je obtenir un devis en ligne?", a: "Oui, c'est exactement pour ça qu'on a construit mercuryrepower.ca. Vous choisissez votre moteur, vos options, et vous voyez le prix réel en dollars canadiens, en temps réel." },
-              { q: "Offrez-vous la livraison au Québec?", a: "On peut en discuter. La majorité de nos clients viennent chercher leur moteur en personne, mais si la livraison est une nécessité, appelez-nous au 905-342-2153 ou écrivez-nous via hbw.wiki/service." },
+              { q: "Offrez-vous la livraison au Québec?", a: "On peut en discuter. La majorité de nos clients viennent chercher leur moteur en personne, mais si la livraison est une nécessité, appelez-nous au 905-342-2153 ou écrivez-nous via hbwservice.ca." },
               { q: "Quelles marques de moteurs vendez-vous?", a: "On est concessionnaire exclusif Mercury Marine. Gamme complète : moteurs hors-bord de 2,5 HP à 600 HP, MerCruiser, et moteurs électriques Avator." },
               { q: "Est-ce que vos prix sont en dollars canadiens?", a: "Oui, tous nos prix sont en dollars canadiens (CAD). Pas de surprise à la conversion." },
               { q: "Comment fonctionne la garantie Mercury si j'achète chez vous et que je retourne au Québec?", a: "La garantie Mercury est honorée par n'importe quel concessionnaire agréé Mercury en Amérique du Nord. Votre concessionnaire Mercury local au Québec peut gérer votre garantie." },

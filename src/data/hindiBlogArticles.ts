@@ -38,7 +38,7 @@ export const hindiBlogArticles: Wave1Article[] = [
       { question: 'क्या मुझे HBW पर हिंदी में सेवा मिल सकती है?', answer: 'हम चाहते हैं कि हर कोई सहज महसूस करे, इसलिए यह गाइड हिंदी में बनाई। लेकिन हमारी टीम अंग्रेज़ी में काम करती है। अगर आप अंग्रेज़ी नहीं बोलते, तो साथ में कोई अंग्रेज़ी जानने वाला लाएँ या अनुवाद ऐप इस्तेमाल करें। हम धैर्यपूर्वक सब समझा देंगे और मिलकर हल निकालेंगे।' }
     ],
     nativeReview: 'pending',
-    internalLinks: ['https://harrisboatworks.ca/rentals', 'https://hbw.wiki/service'],
+    internalLinks: ['https://harrisboatworks.ca/rentals', 'https://hbwservice.ca'],
     officialSources: ['https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc', 'https://tc.canada.ca/en/marine-transportation/buying-boat/find-education-resources-recreational-boaters', 'https://www.ontario.ca/page/fishing-licence-ontario-and-canadian-residents', 'https://www.ontario.ca/page/get-outdoors-card-and-licence-summary', 'https://www.ontario.ca/page/learn-fish'],
     content: `अगर आप Greater Toronto Area (GTA) में रहने वाले पहली पीढ़ी के प्रवासी परिवार हैं और आपने कनाडा में कभी नाव नहीं चलाई, तो लाइसेंसों की बात सुनकर घबराहट होना आम है। हम समझते हैं। असल में, दो चीज़ें ज़रूरी हैं: एक आपका अपना ऑपरेटर कार्ड (PCOC) और दूसरा मछली पकड़ने का लाइसेंस। नीचे हम दोनों को आसान हिंदी में समझा रहे हैं ताकि आप बिना डरे Rice Lake पर अपने परिवार के साथ अच्छा समय बिता सकें। यह पूरी जानकारी आम समझ के लिए है, क़ानूनी सलाह नहीं। नियम बदल सकते हैं, हमेशा आधिकारिक स्रोत को अंतिम मानें।
 
@@ -130,7 +130,7 @@ Rice Lake, Toronto के पास की बेहतरीन मछली �
 ## अपनी यात्रा शुरू करें | हमसे जुड़ें
 
 अब बस एक कदम बाकी है। नाव किराए पर लेने के लिए: https://harrisboatworks.ca/rentals  
-नाव की सर्विस या किसी भी सवाल के लिए: https://hbw.wiki/service
+नाव की सर्विस या किसी भी सवाल के लिए: https://hbwservice.ca
 
 हमें फ़ोन करें: (905) 342-2153  
 मैसेज भेजें: (647) 952-2153  

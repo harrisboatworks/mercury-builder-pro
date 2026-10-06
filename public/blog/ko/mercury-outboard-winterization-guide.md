@@ -36,13 +36,13 @@ revenue_driver: service
 - **6단계 순서**: 연료 보관(해당 매뉴얼) → 내부 보호(해당 시) → 기어 오일 교환 → 승인된 배터리 계획 → 윤활 → 커버 보관
 - **연료 주의**: 일반 펌프 휘발유는 최대 10% 에탄올 포함, HBW는 에탄올 무첨가 휘발유 판매
 - **보관 기간**: 온타리오 보팅 시즌은 약 4-10월, 5-6개월 보관 필요
-- **DIY vs 딜러**: 기본 6단계는 가정에서 가능, 모델별 사양은 [hbw.wiki/service](https://hbw.wiki/service)에서 문의
+- **DIY vs 딜러**: 기본 6단계는 가정에서 가능, 모델별 사양은 [hbwservice.ca](https://hbwservice.ca)에서 문의
 
 ---
 
 ## 핵심 요약
 
-온타리오의 보팅 시즌은 보통 10~11월에 끝나며, 보트는 전문 겨울 정비(winterization) 후에야 안전하게 보관할 수 있습니다. 핵심 단계는 해당 엔진·연료 계통 매뉴얼에 따른 연료 보관, 매뉴얼이 요구하는 내부 보호, 기어 오일 교환, 승인된 배터리 계획, 윤활, 커버 보호입니다. [hbw.wiki/service](https://hbw.wiki/service)를 완료한 뒤 언제든지, 근무 시간 이후에도 보트를 맡기시면 됩니다.
+온타리오의 보팅 시즌은 보통 10~11월에 끝나며, 보트는 전문 겨울 정비(winterization) 후에야 안전하게 보관할 수 있습니다. 핵심 단계는 해당 엔진·연료 계통 매뉴얼에 따른 연료 보관, 매뉴얼이 요구하는 내부 보호, 기어 오일 교환, 승인된 배터리 계획, 윤활, 커버 보호입니다. [hbwservice.ca](https://hbwservice.ca)를 완료한 뒤 언제든지, 근무 시간 이후에도 보트를 맡기시면 됩니다.
 
 > **언어 안내**
 > HBW 팀은 영어로 소통합니다. 한국어 서비스는 제공하지 않지만, 한인 고객을 환영하며 최선을 다해 도와드립니다. 걱정하지 마세요. 영어를 할 줄 아는 친구나 가족과 함께 오시거나, 휴대폰의 번역 앱을 사용하셔도 좋습니다. 저희는 천천히, 끝까지 함께 확인해 드리겠습니다.
@@ -115,7 +115,7 @@ HBW 기술자들은 매년 많은 수의 윈터라이제이션을 수행하며, 
 
 ## 겨울 정비 접수
 
-- **서비스 요청:** [hbw.wiki/service](https://hbw.wiki/service)를 완료한 뒤 언제든지, 근무 시간 이후에도 보트를 맡기시면 됩니다.
+- **서비스 요청:** [hbwservice.ca](https://hbwservice.ca)를 완료한 뒤 언제든지, 근무 시간 이후에도 보트를 맡기시면 됩니다.
 - **전화:** 905-342-2153
 - **에탄올 무첨가 연료:** 현장 판매
 - **주소:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
@@ -124,7 +124,7 @@ HBW 기술자들은 매년 많은 수의 윈터라이제이션을 수행하며, 
 
 ### 겨울 정비 비용은 얼마나 드나요?
 
-엔진 모델과 필요한 서비스에 따라 다릅니다. hbw.wiki/service에서 문의하시면 견적을 안내해드립니다.
+엔진 모델과 필요한 서비스에 따라 다릅니다. hbwservice.ca에서 문의하시면 견적을 안내해드립니다.
 
 ### 직접 겨울 정비를 해도 되나요?
 
@@ -132,7 +132,7 @@ HBW 기술자들은 매년 많은 수의 윈터라이제이션을 수행하며, 
 
 ### 예약은 언제 하는 게 좋나요?
 
-hbw.wiki/service를 완료한 뒤 언제든지, 근무 시간 이후에도 보트를 맡기시면 됩니다. 마리나는 12월 1일부터 4월 1일까지 휴업합니다.
+hbwservice.ca를 완료한 뒤 언제든지, 근무 시간 이후에도 보트를 맡기시면 됩니다. 마리나는 12월 1일부터 4월 1일까지 휴업합니다.
 
 ### 보트 보관만 맡길 수도 있나요?
 
@@ -144,12 +144,12 @@ HBW 현장에서 판매합니다. 겨울 보관 전 방문 시 급유하는 것�
 
 ## Next steps
 
-- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbw.wiki/service
+- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbwservice.ca
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
-- The only commercial next step for this article is the HBW service request at https://hbw.wiki/service.
+- The only commercial next step for this article is the HBW service request at https://hbwservice.ca.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.
