@@ -536,14 +536,14 @@ Depende del motor y el bote. En general, entre dos y cuatro horas en taller.
     image: '/lovable-uploads/es-mercury-115-vs-150-comparacion-hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-10-06',
+    dateModified: '2026-09-06',
     publishDate: '2026-04-12',
     category: 'Comparación de motores',
     readTime: '12 min',
     keywords: ['Mercury 115 vs 150', 'motor fuera de borda 115 o 150 HP', 'Mercury FourStroke comparación', 'remotorización Mercury Ontario'],
     content: `### Respuesta rápida
 
-El Mercury FourStroke 115 HP pesa aproximadamente 163 kg, tiene motor de 2.1 litros y encaja desde unos 18 pies con 2–3 personas, según la placa de capacidad; los botes de aluminio de 16–17 pies suelen usar 60–90 HP. El 150 HP pesa ~206 kg (+44 kg / 96 libras), tiene un motor de 3.0 litros, y encaja en botes de 19–20 pies o más, según la placa de capacidad, y brilla con cargas de 4–5 personas o en aguas más abiertas como Lake Simcoe. El 150 no es simplemente "35 HP más", es un motor fundamentalmente diferente con más desplazamiento, más torque y más peso. Para la mayoría del uso familiar en Rice Lake y los Kawarthas, el 115 es suficiente. Si tienes carga máxima o cruzas aguas abiertas regularmente, el 150 importa.
+El Mercury FourStroke 115 HP pesa aproximadamente 163 kg, tiene motor de 2.1 litros y es ideal para botes de 16–19 pies con 2–3 personas. El 150 HP pesa ~206 kg (+44 kg / 96 libras), tiene un motor de 3.0 litros, y brilla en botes de 19–22 pies con cargas de 4–5 personas o en aguas más abiertas como Lake Simcoe. El 150 no es simplemente "35 HP más", es un motor fundamentalmente diferente con más desplazamiento, más torque y más peso. Para la mayoría del uso familiar en Rice Lake y los Kawarthas, el 115 es suficiente. Si tienes carga máxima o cruzas aguas abiertas regularmente, el 150 importa.
 
 ---
 
@@ -565,7 +565,7 @@ Este artículo te da las especificaciones reales, la diferencia práctica en el 
 | Desplazamiento | 2.1 litros (inline-4) | 3.0 litros (inline-4) |
 | Peso aproximado | ~163 kg | ~206 kg (+44 kg / 96 lbs) |
 | RPM máximo (WOT) | 5,000–6,000 RPM | 5,000–5,800 RPM |
-| Rango de botes | Desde unos 18 pies; placa de 150 HP para elegir un modelo por debajo del máximo | 19–20 pies o más; placa de 175 HP para elegir un modelo por debajo del máximo |
+| Rango de botes | 16–19 pies | 19–22 pies |
 | Versión Pro XS | Sí | Sí |
 | Garantía Mercury | 3 años | 3 años |
 
@@ -577,7 +577,7 @@ El 150 tiene un **43% más desplazamiento** que el 115. No es la misma base con 
 
 ### Con carga ligera (2 adultos, equipo básico de pesca)
 
-En un bote de unos 18 pies o más, cuya placa y espejo de popa permitan comparar ambas opciones, con dos adultos y equipo de pesca liviano, la diferencia entre 115 y 150 es **notoria pero no dramática**. El 150 planeará más rápido y llegará a velocidad de crucero con menos esfuerzo. El 115 llega también, un poco más lento en el plano.
+En un bote de 17 pies con dos adultos y equipo de pesca liviano, la diferencia entre 115 y 150 es **notoria pero no dramática**. El 150 planeará más rápido y llegará a velocidad de crucero con menos esfuerzo. El 115 llega también, un poco más lento en el plano.
 
 ### Con carga completa (4 adultos + cooler + equipaje)
 
@@ -616,14 +616,14 @@ Si eres pescador de torneo o buscas máxima aceleración en planeado, el Pro XS 
 ## ¿Cuál motor es para ti?
 
 ### Elige el Mercury 115 FourStroke si:
-- Tu bote mide unos 18 pies o más y la placa permite 150 HP: el 115 queda un modelo por debajo del máximo
+- Tu bote es de 16–19 pies
 - Sales típicamente con 2–3 personas
 - Pescas en Rice Lake, Kawarthas, y lagos interiores similares
 - El precio importa, el 115 es más accesible
 - No buscas rendimiento extremo ni cargas completas regulares
 
 ### Elige el Mercury 150 FourStroke si:
-- Tu bote mide 19–20 pies o más y la placa permite 175 HP: el 150 queda un modelo por debajo del máximo
+- Tu bote es de 19–22 pies
 - Sales regularmente con 4–5 personas o carga completa
 - Navegas en aguas más abiertas con viento y oleaje
 - El planeo rápido importa para salidas de pesca temprana al amanecer
@@ -654,10 +654,10 @@ Para servicio técnico: Harris Boat Works solo da servicio a motores Mercury y M
 ## Preguntas frecuentes (FAQ)
 
 **¿El 150 HP garantiza más velocidad máxima que el 115 HP?**
-Depende del bote, la hélice y el peso. En muchos botes de unos 18 pies o más, según la placa de capacidad, el 115 puede alcanzar velocidades máximas similares al 150 con hélice optimizada, la diferencia real está en el plano bajo carga y en la reserva de potencia.
+Depende del bote, la hélice y el peso. En muchos botes de 17 pies, el 115 puede alcanzar velocidades máximas similares al 150 con hélice optimizada, la diferencia real está en el plano bajo carga y en la reserva de potencia.
 
 **¿Puedo instalar un 150 en un bote que originalmente tenía un 115?**
-La placa de capacidad y el espejo de popa tienen que permitirlo, pero eso no convierte el máximo en la mejor opción. Los botes de aluminio de 16–17 pies suelen usar 60–90 HP. Nuestra regla es un modelo Mercury por debajo del máximo: con una placa de 150 HP, el mejor ajuste es un 115. Para elegir un 150, busca una placa de 175 HP y confirma el peso admisible antes de comprar.
+Siempre que el transom y la placa de capacidad del bote lo permitan. Algunos botes de 17 pies tienen certificación para hasta 150 HP; otros solo para 115. Verifica la placa de capacidad antes de comprar.
 
 **¿Cuánto dura un motor Mercury FourStroke con buen mantenimiento?**
 Con servicio regular (cada 100 horas o anualmente), los FourStroke Mercury alcanzan fácilmente 2,000–3,000 horas. Hemos visto motores bien mantenidos durar muchos más años que eso en Rice Lake.
