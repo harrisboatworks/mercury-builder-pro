@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/proxs-175hp-175-elpt-proxs
-last_updated: 2026-08-19
+last_updated: 2026-10-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -27,6 +27,8 @@ Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Premier Dealer Â
 - **Family:** Mercury Pro XS
 - **Horsepower:** 175 HP
 - **Model number:** 11750001A
+- **Shaft:** L
+- **Control type:** Remote
 
 ## Pricing (CAD)
 
@@ -73,7 +75,7 @@ Programmatic quotes: `POST https://www.mercuryrepower.ca/api/agents/quote`
 
 ## Notes
 
-- Financing is available on eligible totals over $5,000 CAD. Current offer: 5.48% APR (OAC); confirm terms at https://www.mercuryrepower.ca/promotions.
+- Financing: Request build_quote for the selected motor and purchase options. Use its available offers, eligibility, APR, amount financed, fees, amortization and contract term from active financing records. Estimates require lender approval. Do not substitute cached headline rates or treat amortization as the contract term. If financing is unavailable, do not invent a monthly payment. Current promotions: https://www.mercuryrepower.ca/promotions.
 - Standard pleasure-use coverage for eligible new Mercury outboards in Canada includes a 3-year limited warranty and a separate 3-year corrosion warranty. The two periods run concurrently, not as six stacked years. Additional promotional coverage applies only when written promotion terms explicitly include it; check current terms at https://www.mercuryrepower.ca/promotions.
 - We are pickup-only at Gores Landing, ON. Final price confirmed by dealer.
 - Shop-based Mercury service and maintenance guide: https://www.mercuryrepower.ca/maintenance.md

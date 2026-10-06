@@ -162,6 +162,8 @@ Don't buy it as a generic upgrade for a recreational V-hull. The larger case can
 
 [Read the full Command Thrust explanation](/blog/mercury-command-thrust-complete-guide-2026) if another dealer has told you CT simply means “more torque.”
 
+![Infographic comparing the Mercury 115 FourStroke, 115 Pro XS and 115 Command Thrust: rpm range or gear ratio, best fit and trade-off for each.](/lovable-uploads/inline/mercury-115-fourstroke-pro-xs-ct-2026-09.webp)
+
 ![Two anglers fishing from a Ranger aluminum boat powered by a Mercury 115 Pro XS on fresh water.](/lovable-uploads/inline/mercury-115-pro-xs-freshwater-ranger-full.webp)
 
 *Official Mercury freshwater photography: the 115 Pro XS is shown here for comparison. It is a different model from the standard 115 FourStroke reviewed in this article; this photo does not establish the gearcase fitted to your boat.*
@@ -399,10 +401,10 @@ CT stands for Command Thrust. A 115 CT uses a larger gearcase with a lower 2.38:
 
 ## Related guides
 
-- [Mercury Pro XS vs Verado vs FourStroke Compared](/blog/fourstroke-vs-pro-xs), FourStroke vs Pro XS side-by-side
-- [Mercury 75 HP FourStroke: Buy the 90 Instead?](/blog/mercury-75-hp-fourstroke-review-ontario), 75 HP FourStroke review
-- [Mercury 60 HP FourStroke Review: Where It Fits and Where It Doesn't](/blog/mercury-60-hp-fourstroke-review-ontario), 60 HP FourStroke review
-- [Mercury 9.9 EFI Review Ontario](/blog/mercury-9-9-efi-review-ontario), 9.9 EFI review for Ontario
+- [Mercury Pro XS vs Verado vs FourStroke Compared](/blog/fourstroke-vs-pro-xs): FourStroke vs Pro XS side-by-side
+- [Mercury 75 HP FourStroke: Buy the 90 Instead?](/blog/mercury-75-hp-fourstroke-review-ontario): 75 HP FourStroke review
+- [Mercury 60 HP FourStroke Review: Where It Fits and Where It Doesn't](/blog/mercury-60-hp-fourstroke-review-ontario): 60 HP FourStroke review
+- [Mercury 9.9 EFI Review Ontario](/blog/mercury-9-9-efi-review-ontario): 9.9 EFI review for Ontario
 - [Mercury 150 HP Review: FourStroke vs Pro XS](/blog/mercury-150-hp-fourstroke-pro-xs-review-ontario)
 
 ## Next steps

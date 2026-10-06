@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/rice-lake-fishing-guide-toronto-chinese.md
-last_updated: 2026-10-04
+last_updated: 2026-10-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Rice Lake 钓鱼指南（2026）：FMZ 17 鱼种、鱼牌与出发清单
 description: "从 GTA 到 Rice Lake 钓鱼前要知道的 2026 指南：FMZ 17 鱼种与季节、安省鱼牌、PCOC、租船要求、装备和水下危险。"
 category: "钓鱼指南"
 date_published: 2026-04-12
-date_modified: 2026-10-04
+date_modified: 2026-10-06
 keywords: ["Rice Lake钓鱼","多伦多华人钓鱼","安大略省钓鱼攻略","Rice Lake fishing guide Chinese"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** 钓鱼指南  
 **Published:** 2026-04-12  
-**最后审核:** 2026-10-04  
+**最后审核:** 2026-10-06  
 **Read time:** 9 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/rice-lake-fishing-guide-toronto-chinese
 
@@ -157,7 +157,7 @@ Rice Lake 周边有公共和商业下水选择，但设施、收费、停车和�
 **主马达：** 先看船厂 capacity plate、船体重量、负载与原厂适配，不要只按船长套用通用马力范围
 **低速推进：** 电动 trolling motor 或合适的 Mercury ProKicker，选择取决于船体、续航、充电和冗余需求
 **电子设备：** 使用更新的 Chartplotter 与声呐辅助识别湖底结构和旧铁路区域，但仍须观察水面与水深
-**建议装备：** 每人一件合身 PFD、适用的发声和照明设备、锚与锚绳、备用推进方式；法定最低装备仍须按[船型和船长查表](https://tc.canada.ca/sites/default/files/2026-05/boating_guide_2026_en_acc.pdf)
+**建议装备：** 每人一件合身 PFD、适用的发声和照明设备、锚与锚绳、备用推进方式；法定最低装备仍须按[Transport Canada boating safety](https://tc.canada.ca/en/marine-transportation/marine-safety/boating-safety)
 
 ProKicker 的低速控制和充电能力适合认真拖钓，但是否需要 kicker 取决于船体、主机怠速表现、电动拖钓马达、预算和安全冗余。先确认船厂马力标牌、艉板空间、转向和充电需求，再由经销商配型。
 
@@ -188,7 +188,7 @@ Rice Lake 中部的旧水下铁路遗迹是本地著名危险之一，但不是�
 - [Ontario：Fisheries Management Zone 17](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17)
 - [Ontario：Fishing licence 资格](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees)
 - [Ontario：2026 fishing licence fees](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees)
-- [Transport Canada：2026 Safe Boating Guide](https://tc.canada.ca/sites/default/files/2026-05/boating_guide_2026_en_acc.pdf)
+- [Transport Canada boating safety](https://tc.canada.ca/en/marine-transportation/marine-safety/boating-safety)
 - [HBW：当前在线租船页面](https://www.harrisboatworks.ca/rentals)
 
 > **语言说明**
