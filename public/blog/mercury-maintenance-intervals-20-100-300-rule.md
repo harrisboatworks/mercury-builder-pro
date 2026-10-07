@@ -116,7 +116,7 @@ Most Rice Lake recreational owners reach the calendar before they reach 100 hour
 
 At HBW:
 
-- Submit fall service before the marina closes on December 1.
+- Mid-November is last call for fall service, and the marina closes on December 1.
 - The marina is closed from December 1 through April 1.
 - Spring service resumes once the marina reopens in early April.
 - If the motor crosses an hour-based interval mid-season, do not wait for fall.

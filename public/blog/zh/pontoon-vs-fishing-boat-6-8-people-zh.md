@@ -106,7 +106,7 @@ revenue_driver: rentals
 
 **Legend Pulse 17-19 英尺** ， 入门级铝制钓鱼船。Mercury 75-90 FourStroke。莱斯湖 angler 最常买。
 
-**Legend Xterminator 18-21 英尺** ， 中级专业级。Mercury 115-150 Pro XS。如果想认真钓 musky 或 bass,这是选择。
+**Legend XT Series 17-20 英尺** ， 中级专业级。Mercury 115-150 Pro XS。如果想认真钓 musky 或 bass,这是选择。
 
 ## 我们在 HBW 看到的实地见证
 
