@@ -99,7 +99,7 @@ At comparable HP and trim, pricing is similar. Total cost of ownership tends to 
 
 ### What is a common Mercury model in Ontario?
 
-The Mercury 9.9 ProKicker is a common kicker choice on Canadian fishing boats. In the main-motor class, the 90 EXLPT FourStroke and 115 EXLPT FourStroke are common on 16 to 18 ft aluminum console boats.
+The Mercury 9.9 ProKicker is a common kicker choice on Canadian fishing boats. In the main-motor class, the 90 and 115 FourStroke are common on 16 to 18 ft aluminum console boats, in the 20 in or 25 in shaft length that matches the transom.
 
 ### Should I switch from Yamaha or Honda to Mercury?
 

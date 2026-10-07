@@ -29,9 +29,9 @@ revenue_driver: repower
 **Read time:** 4 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-warranty-after-repower-ontario
 
-> **Quick answer:** Your Mercury warranty starts the day the motor is rigged and registered. Current FourStroke outboards carry a 3-year factory limited warranty for recreational use, plus a separate 3-year corrosion warranty that runs concurrently, not stacked on the end. Current promotions can extend total coverage; see [current offers](/promotions). We're a Mercury Premier dealer, so the warranty is registered correctly and claims are handled in-house.
+> **Quick answer:** Your Mercury warranty starts on the date of retail sale or first use, whichever comes first, once the motor is registered with Mercury. Current FourStroke outboards carry a 3-year factory limited warranty for recreational use, plus a separate 3-year corrosion warranty that runs concurrently, not stacked on the end. Current promotions can extend total coverage; see [current offers](/promotions). We're a Mercury Premier dealer, so the warranty is registered correctly and claims are handled in-house.
 
-## Your Mercury warranty starts the day the motor is rigged and registered, here's what it covers.
+## Your Mercury warranty starts on the date of retail sale or first use. Here's what it covers.
 
 A Mercury outboard repower comes with a factory warranty. How long that warranty runs, what it covers, and how it's registered depends on the motor model and how the installation is done. This page explains the key facts clearly.
 
@@ -78,7 +78,7 @@ Mercury offers extended warranty programs beyond the factory coverage period.
 
 Mercury's extended-coverage program is [Mercury Product Protection (MPP)](/blog/mercury-extended-warranty-platinum-ontario). Terms and pricing vary by model and are quoted at the time of sale. Current promotions may also extend factory-backed coverage on top of the 3-year base; see [current offers](/promotions) for what is active right now.
 
-Extended warranty coverage is easiest to add at the time of the repower, before the motor is first registered. Ask about this when you're building your quote.
+Extended warranty coverage is easiest to add at the time of the repower, though Mercury Product Protection can also be added later while the factory limited warranty is still in effect. Ask about this when you're building your quote.
 
 ---
 
@@ -109,7 +109,7 @@ Do not attempt to repair or modify the motor before contacting us. Unauthorized 
 
 ## What changes if you move to a different Mercury dealer
 
-Mercury warranty is tied to the motor's serial number, not to the dealership where it was sold. If you move or sell the boat, the warranty follows the motor. Any authorized Mercury dealer can perform warranty work.
+Mercury warranty is tied to the motor's serial number, not to the dealership where it was sold. If you sell the boat, the unused warranty can transfer to the next pleasure-use owner once the transfer is registered with Mercury. Any authorized Mercury dealer can perform warranty work.
 
 ---
 
@@ -138,7 +138,7 @@ Mercury FourStroke outboards have a break-in period during which you avoid runni
 
 ### If I sell my boat, does the Mercury warranty transfer?
 
-Mercury warranty is tied to the motor's serial number, not the dealership where it was sold, so it follows the motor if you move or sell the boat. Any authorized Mercury dealer can perform warranty work.
+Mercury warranty is tied to the motor's serial number, not the dealership where it was sold, so the unused portion can transfer to the next pleasure-use owner if you sell the boat, once the transfer is registered with Mercury. Any authorized Mercury dealer can perform warranty work.
 
 ### How do I make a Mercury warranty claim?
 

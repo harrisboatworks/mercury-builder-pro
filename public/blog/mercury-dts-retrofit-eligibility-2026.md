@@ -43,7 +43,7 @@ This post is the eligibility decision tree. It covers what DTS actually is, how 
 |---|---|---|
 | Current Verado V8/V10/V12 (250-600 HP, 2020+) | **Already has DTS** | You already have it. Check your throttle handle. |
 | Current Pro XS 150-300 HP (2018+) | **Depends on configuration** | Mercury lists both mechanical and DTS versions in this range. Verify by serial number. |
-| Current FourStroke 200-300 HP (2018+) | **Most are DTS-equipped** | Verify by serial number, usually yes. |
+| Current FourStroke 200-300 HP (2018+) | **Depends on configuration** | Many are mechanical; Mercury lists both versions at 300 HP. Verify by serial number. |
 | Older Verado I6 (2006-2017, 200-350 HP) | **DTS-equipped, harness compatibility varies** | Often workable for harness/controls upgrade |
 | Mechanical Mercury 150 HP+ (any age) | **Retrofit possible but rarely worth it** | Quote a repower side-by-side. |
 | Mechanical Mercury under 150 HP | **Rarely eligible** | Check Mercury's current specifications for your exact model before assuming either way |

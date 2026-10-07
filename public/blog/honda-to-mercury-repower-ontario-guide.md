@@ -109,7 +109,7 @@ The fifth pattern: tournament bass anglers and Pro XS curious customers. The Hon
 | Honda BF9.9 / BF15 / BF20 | Mercury 9.9 / 15 / 20 FourStroke (ProKicker variants for kicker apps) |
 | Honda BF25 / BF30 | Mercury 25 / 30 FourStroke |
 | Honda BF40 / BF50 / BF60 | Mercury 40 / 50 / 60 FourStroke (Command Thrust for pontoon) |
-| Honda BF75 / BF90 / BF115 | Mercury 75 / 90 / 115 FourStroke (Command Thrust on pontoon) |
+| Honda BF75 / BF90 / BF115 | Mercury 75 / 90 / 115 FourStroke (Command Thrust 90 and 115 on pontoon) |
 | Honda BF150 / BF175 / BF200 | Mercury 150 / 175 / 200 FourStroke or Pro XS |
 | Honda BF225 / BF250 | Mercury 225 / 250 FourStroke, Pro XS, or Verado depending on the boat |
 | Honda BF350 | Mercury 350 Verado (special-order at HBW); compare the full hull, controls, steering, and use case |

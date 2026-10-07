@@ -47,7 +47,7 @@ A few facts that matter:
 
 - **Legend is a Canadian company** headquartered in Whitefish, Ontario, near Sudbury. Boats are designed by Canadians for Canadian boating conditions.
 - **Sells exclusively in Canada.** Legend isn't trying to be a global brand, every model is sized, equipped, and warrantied for Canadian buyers.
-- **[Mercury Marine](https://www.mercurymarine.com/ca/en) is Legend's exclusive engine partner.** Every Legend ships with a Mercury outboard, eligible for Mercury's standard 3-year warranty (extendable to 8 years).
+- **[Mercury Marine](https://www.mercurymarine.com/ca/en) is Legend's exclusive engine partner.** Most Legends are sold with a Mercury outboard, eligible for Mercury's standard 3-year warranty (extendable with Mercury Product Protection).
 - Legend's warranty coverage on components, hull, and floor differs by model line; check the current warranty terms for the boat you're looking at.
 - **All-In Pricing** in Ontario includes freight, prep, and most essential equipment. The number on the page is close to the number that drives away.
 
@@ -61,7 +61,7 @@ Five series in the V-hull lineup, ranked roughly entry-level to top-tier.
 
 **Pricing note:** Legend's website now lists the R, XF, XT and Titanium series as 2027 models and the Pulse, LE, Q and Halo as 2026 models. The starting prices below are Legend's published Ontario all-in starting prices, checked September 25, 2026. A 2026 boat still in dealer inventory can be priced differently from a 2027 catalog start, and the included motor and length depend on the exact package, so confirm the configuration with us before you compare.
 
-### Pulse, entry-level, 10 ft
+### Pulse, rotomolded plastic, 10 ft
 
 The Pulse is built differently from anything else in the lineup, **rotomolded HDPE plastic hull**, virtually unsinkable. Single 10-foot length only, max 15 HP. Legend's published starting price for the 2026 Pulse is **$5,999 CAD**.
 
@@ -85,7 +85,7 @@ The XF Series moves up to **welded aluminum** with a deeper-V hull (17° deadris
 
 ### XT Series, 17-20 ft, premium fishing/family hybrid
 
-The XT Series is **brand-new for 2026** and the most-talked-about Legend lineup we've seen in years. Four lengths: **17 XT, 18 XT, 19 XT, 20 XT.** Legend's published starting price for the 2027 XT Series is **$59,999 CAD**. Longer hulls and bigger Mercury motors cost more.
+The XT Series is one of Legend's newest lineups and the most-talked-about Legend lineup we've seen in years. Four lengths: **17 XT, 18 XT, 19 XT, 20 XT.** Legend's published starting price for the 2027 XT Series is **$59,999 CAD**. Longer hulls and bigger Mercury motors cost more.
 
 What's new on the XT:
 
@@ -152,7 +152,7 @@ The standard motor on each Legend hull is sized for the typical use case, but th
 
 **Pro XS** matters on the XT 18 and up. [Performance-tuned variants of the FourStroke](/blog/fourstroke-vs-pro-xs) with sport gearcases and higher RPM ceilings. Adds 3-5 mph top end and quicker hole shot. Worth it on a tournament-spec hull.
 
-**Verado** is the premium option on bigger Halo and Q Series pontoons, naturally aspirated V8/V10s, the smoothest and quietest Mercury platform, though at HBW it's special-order only rather than stock. Significant cost step; for higher-end boats only.
+**Verado** is the premium option on bigger Halo and Q Series pontoons, V8 and V10 power built for a smoother, quieter ride, though at HBW it's special-order only rather than stock. Significant cost step; for higher-end boats only.
 
 ---
 
@@ -186,9 +186,9 @@ Jay Harris helps run Harris Boat Works, a third-generation family marina in Gore
 
 A few things that aren't on the Legend website:
 
-**Mercury repower path is built-in.** Every Legend ships with a Mercury outboard, and we're a Mercury Premier dealer. When [the original engine eventually needs replacement](/blog/mercury-repower-cost-ontario-2026-cad) (10-15 years out, typically), we already have your records, your boat history, and the right rigging knowledge. No starting over with a new dealer.
+**Mercury repower path is built-in.** Most Legends are sold with a Mercury outboard, and we're a Mercury Premier dealer. When [the original engine eventually needs replacement](/blog/mercury-repower-cost-ontario-2026-cad) (10-15 years out, typically), we already have your records, your boat history, and the right rigging knowledge. No starting over with a new dealer.
 
-**On-water service.** We're at Gores Landing on Rice Lake. If your Legend needs warranty work or service, you don't have to trailer it 90 minutes to a dealer in another county. Drop it at our slip, pick it up running.
+**On-water service.** We're at Gores Landing on Rice Lake. If your Legend needs warranty work or service, you don't have to trailer it 90 minutes to a dealer in another county. Request service at [hbwservice.ca](https://hbwservice.ca) and bring it to us.
 
 **Trade-in math.** [We take Legend trade-ins](/blog/outboard-trade-in-value-ontario-hbw) (and most other brands). Single-transaction trade saves the Kijiji hassle and gives you tax-on-difference savings on the new boat (you only pay HST on the price difference between trade and new, not the full new price).
 
@@ -212,7 +212,7 @@ Depends on the model. The LE Series is 2-tube standard with optional 3-tube on t
 
 ### What's the Legend WOWranty?
 
-6-year warranty on Legend boat components, Leakproof for Life hull warranty (transferable up to 10 years), and Lifetime Floor Warranty. Legend's warranty is one of the strongest in the aluminum boat market.
+The 6-Year WOWranty covers most components on All-Welded and R-Series boats. All-Welded models also carry Leakproof for Life (transferable to a second owner for up to 10 years), riveted R-Series boats carry a Lifetime Main Seam hull warranty, and the Lifetime Floor Warranty covers both. Pontoons use a different warranty program, so check the terms for your model. Legend's warranty is one of the strongest in the aluminum boat market.
 
 ### Can I order any Legend through HBW?
 

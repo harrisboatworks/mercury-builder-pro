@@ -39,7 +39,7 @@ Need your PCOC? Take the online course through [HBW's MyBoatCard referral link](
 - **Hull coverage**: damage to the boat itself; motor and trailer often need their own riders or scheduled amounts
 - **Agreed value**: the policy's agreed insured amount ([Marine Insurance Act s. 30](https://laws-lois.justice.gc.ca/eng/acts/M-0.6/section-30.html?wbdisable=true)), not an automatic full replacement-cost promise on every partial loss
 - **Actual cash value**: replacement value minus depreciation. Deductible, partial-loss depreciation, machinery limits, and endorsements remain policy-specific
-- **Most home policies do NOT cover boats over 16 ft or over 25 HP**: above that, you need a marine policy
+- **Home policies cover small boats at best, and limits vary by insurer**: for larger or more powerful boats, you need a marine policy
 - **Cost factors**: boat value, engine size, claim history, navigational area (Lake Ontario vs Rice Lake matters)
 
 *Annual premium by boat type*
@@ -94,7 +94,7 @@ Practical answer: yes, you want it. Three reasons:
 
 1. **Marinas, yacht clubs, and many launch facilities require proof of liability before you can dock.** No insurance, no slip.
 2. **Lenders require it if you financed your boat.** Most boat lenders write insurance into the loan terms.
-3. **Liability lawsuits in Canada do not have caps.** A serious injury at the helm can result in a $500,000+ settlement. Without insurance, that is a personal bankruptcy.
+3. **Liability claims can be very large.** A serious injury at the helm can result in a $500,000+ settlement. Without insurance, that is a personal bankruptcy.
 
 A few Ontario fishing tournaments and most cottage docks also require proof of insurance to participate or moor.
 
@@ -116,7 +116,7 @@ Common exclusions to read carefully before signing:
 - **Mechanical breakdown**: Engine seizing because of wear or skipped maintenance. (This is what extended warranty covers, see our [Mercury extended warranty guide](/blog/mercury-extended-warranty-platinum-ontario).)
 - **Manufacturer defects**: Covered by the factory warranty, not insurance.
 - **Racing or commercial use**: Standard pleasure-craft policies exclude tournament prize-money fishing, charters, and commercial work.
-- **Boats stored in unsafe conditions**: Outdoor storage during winter without cover voids some hull coverage.
+- **Boats stored in unsafe conditions**: Some policies set conditions on how and where a boat is stored, so check your wording.
 - **Boats older than 25-30 years**: Many insurers will not underwrite older fiberglass hulls without a marine survey.
 
 ## What Does It Cost in Ontario?
@@ -139,7 +139,7 @@ Cost factors:
 - **Where you boat**: Lake Ontario (open water, weather risk) costs more than inland lakes like Rice Lake
 - **Claim history**: clean record gets best rates
 - **Operator experience**: [PCOC](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc) alone is minimum; documented experience helps
-- **Storage location**: indoor storage discounts are real
+- **Storage location**: ask your broker whether where you store the boat affects your rate
 
 ## Who Insures Boats in Ontario?
 
@@ -192,7 +192,7 @@ Not legally, but most marinas require it for any slip. A small basic policy runs
 
 ### Is my boat covered under my homeowners policy?
 
-Maybe, but only for boats under 16 ft and under 25 HP. Anything bigger needs a separate marine policy.
+Maybe. Some homeowners policies extend limited cover to small boats, often with outboards of about 25 HP or less, but limits vary by insurer, so confirm with your broker. Larger or faster boats need a separate marine policy.
 
 ### What is the difference between agreed value and actual cash value?
 
@@ -200,7 +200,7 @@ Agreed value pays the value you and the insurer agreed on at policy start, regar
 
 ### Does my insurance cover the boat during winter storage?
 
-Most policies cover storage at any approved location. Outdoor storage without proper cover may have reduced coverage, check your wording.
+Most policies cover storage at any approved location. Ask your insurer about any storage conditions, such as where and how the boat is stored, and check your wording.
 
 ### Can I insure my boat through Mercury or HBW?
 

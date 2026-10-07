@@ -53,8 +53,8 @@ Harris Boat Works（HBW）是 Rice Lake 上家族经营·1947 年至今 的 mari
 
 ### 谁需要
 
-- **任何年龄、任何水域、操作发动机船的人。** 不分加拿大公民、永久居民、留学生、游客。
-- 包括小型铝合金钓鱼船、Pontoon、橡皮艇带挂机、电动船马力超过法规阈值的情况。
+- **任何年龄、操作带发动机船的人。** 不分加拿大公民、永久居民、留学生；访客自带船在加拿大水域少于 45 个连续日可豁免，租用的船可使用已完成的租船安全清单（仅限该租期）。
+- 包括小型铝合金钓鱼船、Pontoon、橡皮艇带挂机，以及电动马达船（包括小马力电动马达）。
 - **加拿大驾照（G、G2、G1）不能代替 PCOC 或其他合格的操作员资格证明。** 这是两个完全不同的体系。
 
 ### 怎么考
@@ -254,7 +254,7 @@ Rice Lake 属于安省 Fisheries Management Zone（FMZ），具体的鱼种季�
 
 安省钓鱼证由 Outdoors Card（3 年有效）和 Fishing Licence Tag（年度）两部分组成，分 Sport（运动证，限额高）和 Conservation（保育证，限额减半，价格较低）。具体价格每年由 MNRF 调整，请到 ontario.ca/page/fishing-licence 查询当下价格。
 
-### Rice Lake 的 walleye / 黄金鲈鱼 规定是什么？
+### Rice Lake 的 walleye / 碧古鱼 规定是什么？
 
 建议查询安省最新钓鱼规则，因为尺寸与时段每年可能调整。Ontario.ca 上的官方钓鱼条例摘要（Recreational Fishing Regulations Summary）是最可靠来源，按 Fisheries Management Zone 查询 Rice Lake 所属区域即可看到当年的 walleye 季节、slot size 和持有量。
 

@@ -41,7 +41,7 @@ revenue_driver: rentals
 
 - [Mercury Marine](https://www.mercurymarine.com/ca/en) Premier 认证经销商
 - 透明加元价格，无需讨价还价
-- 从 GTA 经 401 + 115 高速约 60 到 90 分钟车程
+- 从多伦多经 401 向东约 90 分钟车程
 
 [在线获取报价](/quote/motor-selection)
 
@@ -55,7 +55,7 @@ revenue_driver: rentals
 
 **但有一个重要例外：**
 
-许多租船公司可以提供「临时 PCOC 免除」（Rental Boat Safety Checklist），允许承租人在没有 PCOC 的情况下操作租用的船。这个免除是针对该次特定的租用，不可转用于其他船或其他次。
+按联邦规则，有些租船公司可以让承租人用「租船安全清单」（Rental Boat Safety Checklist）代替 PCOC，操作该次租用的船。HBW 不这样做：每位驾驶者都需要有效的 PCOC。这个免除是针对该次特定的租用，不可转用于其他船或其他次。
 
 这个免除需要：
 - 完成租船公司的安全简报（Safety Briefing）
@@ -66,13 +66,13 @@ revenue_driver: rentals
 
 ## 哪些租船公司提供 PCOC 免除？
 
-不是所有的租船公司都提供这个。提供的需要：
+不是所有的租船公司都提供这个。按 Transport Canada 的说明，这份清单的用法是：
 
-1. 持有有效的营业执照
-2. 员工经过培训，能进行 Safety Briefing
-3. 有书面的 Safety Checklist 流程
+1. 租船公司在出租前与承租人逐项讲解清单（船只操作、安全规则、当地水域危险和紧急情况）
+2. 承租人逐项勾选，确认已经理解
+3. 完成的清单只在该次租用期间有效
 
-HBW 的租船在你预订时会告知当前要求。请致电 905-342-2153 或在预订时询问。
+HBW 的租船要求每位驾驶者出示有效 PCOC。如有疑问，请致电 905-342-2153。
 
 如果你在大多伦多区考虑多个租船选择，建议事先询问每家公司关于 PCOC 的政策。
 
@@ -101,7 +101,7 @@ HBW 的租船在你预订时会告知当前要求。请致电 905-342-2153 或�
 
 ## 租船 Safety Briefing 通常包含什么？
 
-如果你选择用临时免除，租船公司的 Safety Briefing 通常涵盖：
+租船公司的 Safety Briefing 通常涵盖以下内容（在 HBW，安全讲解不能替代 PCOC）：
 
 **1. 船只操作基础**
 - 启动与停止马达

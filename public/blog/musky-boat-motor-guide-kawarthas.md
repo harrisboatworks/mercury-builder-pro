@@ -145,7 +145,7 @@ Most serious musky anglers prefer remote. Boats are larger, and helm position gi
 
 ### How important is Command Thrust for musky?
 
-Command Thrust fit is model- and application-specific. On a typical planing musky V-hull the standard gearcase is usually the right call: CT's taller gear ratio and larger gearcase are built for heavy, slow-planing loads like pontoons and workboats, and on a fast V-hull they add drag and cost top speed. If your rig is unusually heavy or you troll at planing speed with big loads, ask us; that one is a case-by-case fit.
+Command Thrust fit is model- and application-specific. On a typical planing musky V-hull the standard gearcase is usually the right call: CT's lower gearing (a numerically higher gear ratio) and larger gearcase are built for heavy, slow-planing loads like pontoons and workboats, and on a fast V-hull they add drag and cost top speed. If your rig is unusually heavy or you troll at planing speed with big loads, ask us; that one is a case-by-case fit.
 
 ## Related guides
 

@@ -29,7 +29,7 @@ revenue_driver: repower
 **Read time:** 11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/two-stroke-vs-four-stroke-repower
 
-> **Quick answer:** Mercury no longer builds recreational 2-stroke outboards, so a 2-stroke repower today means a modern Mercury FourStroke. You can gain quieter running, a cleaner idle, and better cruise efficiency. Weight and performance differences depend on the exact old and new models, so transom capacity, trim, propeller, and rigging need a boat-specific review. Installed cost depends on the motor, controls, rigging, and what we find on your boat, so start from the live Mercury pricing reference and quote builder at mercuryrepower.ca.
+> **Quick answer:** Mercury no longer lists 2-stroke outboards in its Canadian lineup, so a 2-stroke repower today means a modern Mercury FourStroke. You can gain quieter running, a cleaner idle, and better cruise efficiency. Weight and performance differences depend on the exact old and new models, so transom capacity, trim, propeller, and rigging need a boat-specific review. Installed cost depends on the motor, controls, rigging, and what we find on your boat, so start from the live Mercury pricing reference and quote builder at mercuryrepower.ca.
 
 Your old 2-stroke still starts. That is exactly what makes this a hard call. It fires on the second pull, it gets the boat on plane, and a new FourStroke is real money out of pocket. So the honest question is not whether a 4-stroke is better. Everyone knows it is. The question is what changes on your boat the day you make the swap, and whether the math fits the way you actually use the water.
 
@@ -41,7 +41,7 @@ A 2-stroke fires the spark plug on every turn of the crankshaft. Power on every 
 
 A 4-stroke fires every second turn. It keeps its oil separate, in a sump or oil-injected, so it burns clean, idles smooth, and sips fuel by comparison. The trade is weight and a few more moving parts: valves, a camshaft, a timing chain.
 
-For a repower today, Mercury has already settled most of the debate. The OptiMax had its run, but the current lineup is FourStroke and Pro XS, both four-stroke, plus the electric Avator. Repower now and you are going FourStroke. The real decisions are downstream: weight, rigging, and prop.
+For a repower today, Mercury has already settled most of the debate. The OptiMax had its run, but the current lineup is FourStroke, Pro XS, SeaPro and Verado, all four-stroke, plus the electric Avator. Repower now and you are going FourStroke. The real decisions are downstream: weight, rigging, and prop.
 
 ## How does a FourStroke compare to the 2-stroke I am replacing?
 

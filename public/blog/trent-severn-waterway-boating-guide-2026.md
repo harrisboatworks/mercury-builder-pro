@@ -39,7 +39,7 @@ Need your PCOC? Take the online course through [HBW's MyBoatCard referral link](
 
 ---
 
-The Trent-Severn is one of those places where a 20-foot aluminum boat built for walleye fishing can lock through a hydraulic lift designed in 1904, anchor beside a 19th-century lock keeper's cottage, and pull into a small-town pub for lunch. The New York Times called it one of the best travel experiences of 2025. Three generations of this family have watched the waterway from the dock at Gores Landing without needing the Times to confirm it.
+The Trent-Severn is one of those places where a 20-foot aluminum boat built for walleye fishing can lock through a hydraulic lift designed in 1904, anchor beside a 19th-century lock keeper's cottage, and pull into a small-town pub for lunch. The New York Times named it to its 52 Places to Go in 2025 list. Three generations of this family have watched the waterway from the dock at Gores Landing without needing the Times to confirm it.
 
 Harris Boat Works [sits on Rice Lake, roughly between Locks 18 and 19](/blog/rice-lake-boating-guide-2026). We have been here since 1947. This is the guide we would give a friend who was doing their first trip.
 
@@ -124,8 +124,8 @@ In 2026, free lockage from June 19 to September 7 means more boats will try the 
 #### If you plan to run the full lock system
 
 - Long-distance transit from Trenton to Port Severn or vice versa
-- Beam under 8.5 feet clears all locks without issue
-- Draft under 3 feet handles the shallowest chambers
+- Beam up to about 23 feet fits every lock (Port Severn, Lock 45, is the narrowest)
+- Draft under 5 feet: channel depth is about 8 feet to Lock 19 and about 6 feet beyond (less in a few spots), and Parks Canada asks boats drawing 5 feet or more to call ahead
 - Length 21 to 25 feet is the practical sweet spot
 
 **Check your dimensions**
@@ -171,7 +171,7 @@ Most people do not transit all 386 kilometres. They take three or four locks at 
 
 **Weekend run (2 days, 2 lockages):** East from Rice Lake to Hastings (Lock 18), the first lock east of the lake. One lockage each way, or none if you tie up above the lock. Overnight at Hastings. Lunch at one of the pubs. Return Sunday. Quiet and scenic. No commercial harbor traffic.
 
-**Long weekend (4 days, ~10 locks):** West from Rice Lake up the Otonabee through Lock 19 (Scott's Mills) and the Peterborough Lift Lock (Lock 21). Continue to Lakefield and back.
+**Long weekend (4 days, 8 locks each way):** West from Rice Lake up the Otonabee through Lock 19 (Scott's Mills) and the Peterborough Lift Lock (Lock 21). Continue to Lakefield and back.
 
 **Full Kawartha tour (7 days, 14 locks each way):** Rice Lake to Bobcaygeon and back takes you through Locks 19 to 32, or 28 lockages round trip. Includes the Peterborough Lift Lock, Lakefield and Buckhorn. Healey Falls is downstream of Hastings on the Trent River, not on this route. The most relaxed pace, best for first-timers wanting to see the system.
 
@@ -225,7 +225,7 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Est. 1947.
 
 ### Do I need a special licence to lock through the Trent-Severn?
 
-No special lockage licence is required. The legal operator rule is accepted proof of competency, which may be a Pleasure Craft Operator Card or another qualifying document such as an older course or professional certificate, a rental checklist in some rental situations, or visitor documentation. A Pleasure Craft Licence is required where the craft qualifies; it is not required for every boat. Confirm current [PCOC](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc) and [PCL](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl) rules. If you rent from HBW, our rental-driver policy still requires a valid PCOC and photo ID. The 2026 PCL changes converted lifetime licences to 5-year renewals at the current Transport Canada fee, so check yours before you go.
+No special lockage licence is required. The legal operator rule is accepted proof of competency, which may be a Pleasure Craft Operator Card or another qualifying document such as an older course or professional certificate, a rental checklist in some rental situations, or visitor documentation. A Pleasure Craft Licence is required where the craft qualifies; it is not required for every boat. Confirm current [PCOC](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc) and [PCL](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl) rules. If you rent from HBW, our rental-driver policy still requires a valid PCOC and photo ID. Since December 31, 2025, new and renewed PCLs are valid for 5 years and lifetime licences are being gradually replaced, so check your licence before you go.
 
 ### How long does it take to lock through?
 

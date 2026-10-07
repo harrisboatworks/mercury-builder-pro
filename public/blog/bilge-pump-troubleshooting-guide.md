@@ -346,7 +346,7 @@ Put in a request at hbwservice.ca and we'll check the pump, the switch, and the 
 
 ## Ready to Get This Checked?
 
-If your bilge pump has already let you down once, or you just want to know it'll actually work before you need it, we'll check the pump, the float switch, and every connector between them while you wait at the dock.
+If your bilge pump has already let you down once, or you just want to know it'll actually work before you need it, we'll check the pump, the float switch, and every connector between them when you bring the boat in.
 
 **Service:** [hbwservice.ca](https://hbwservice.ca)
 **Website:** [harrisboatworks.ca](https://harrisboatworks.ca)

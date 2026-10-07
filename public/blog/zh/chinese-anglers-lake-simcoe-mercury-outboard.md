@@ -43,7 +43,7 @@ revenue_driver: repower
 - Family marina since 1947 / 自1947年家族经营的码头
 - Mercury dealer since 1965 / 自1965年起的 Mercury 授权经销商
 - Transparent CAD pricing, no haggling / 透明加元价格，无需讨价还价
-- 60 to 90 minutes from GTA via 401 + 115 / 从 GTA 经 401 + 115 高速约 60 到 90 分钟车程
+- About 90 minutes east of Toronto via Highway 401 / 从多伦多经 401 向东约 90 分钟车程
 - Build your quote / 在线获取报价
 
 ## 为什么Lake Simcoe对GTA华人钓友很有吸引力

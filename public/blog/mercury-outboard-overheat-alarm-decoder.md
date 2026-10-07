@@ -57,7 +57,7 @@ Work through this in order. Most alarms fall into one of these patterns:
 | Alarm pattern | When it happens | Likely cause | Urgency | First action |
 |---|---|---|---|---|
 | Continuous alarm at cruise | Underway, mid-RPM or higher | Possible real heat or other critical engine condition | High | Reduce throttle, read the display and manual, check flow, and shut down if the alarm persists |
-| Continuous alarm at startup / key-on | Right after a hot shutdown | Heat soak (usually) | Low | Wait 5 to 10 minutes for motor to cool, restart, confirm it clears |
+| Continuous alarm at startup / key-on | Right after a hot shutdown | Heat soak (usually) | Low | Wait 5 to 10 minutes for the motor to cool, restart once, confirm it clears. If it returns, do not keep running it; book service |
 | Alarm + power reduction (Guardian mode) | Any RPM, sudden drop in power | ECM-detected protective action | High | Do not override. Follow the display and manual; shut down if overheat persists and diagnose before restarting. |
 | Alarm only at WOT | At wide-open throttle, clears at cruise RPM | A load or high-flow cooling problem: water pressure, impeller and housing, poppet or pressure valve where fitted, intake screens, or engine height | Medium | Check water pressure. Possible service issue. Schedule diagnostic. |
 | Intermittent / random alarm | No clear correlation with RPM or load | Non-critical condition varies by model and year; sensor or wiring is one possibility | Medium | Read the display and manual. Note the exact pattern and conditions for service. |
@@ -122,7 +122,7 @@ These observations do not prove a sensor fault and never justify ignoring an act
 
 ## Freshwater vs. Saltwater Overheat Patterns
 
-Most Mercury motors HBW services run on Rice Lake, the Kawarthas, and Lake Ontario. These are freshwater, low-sediment lakes most of the season. Overheat patterns we see are usually intake blockages (weeds), impeller wear, and sensor faults. Saltwater corrosion of the cooling passages is not a typical Ontario freshwater failure mode.
+Most Mercury motors HBW services run on Rice Lake, the Kawarthas, and Lake Ontario. These are freshwater lakes, and Rice Lake in particular is shallow and weedy. Overheat patterns we see are usually intake blockages (weeds), impeller wear, and sensor faults. Saltwater corrosion of the cooling passages is not a typical Ontario freshwater failure mode.
 
 If you operate the same motor in saltwater (a coastal trip, for example) and the motor sees overheat alarms after the trip, salt deposits in the cooling passages may be the cause. The fix is a thorough flush and possibly a cooling system service. We can do this at HBW but it is not what most Ontario customers will run into.
 

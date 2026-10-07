@@ -64,7 +64,7 @@ The Ontario customers who do benefit from Pro XS:
 
 **Fast fibreglass runabouts.** 19-21 ft fibreglass cruisers running 200-250 HP for water-ski, wakeboarding, fast lake-running.
 
-**Boats with capacity for it.** If your boat's capacity plate is rated for 200 HP and you spec a 150 FourStroke, you're leaving performance on the table. The Pro XS might be the right answer up to your boat's rated maximum.
+**Boats with capacity for it.** If your boat's capacity plate is rated for 200 HP and you spec a 150 FourStroke, you're leaving performance on the table. The Pro XS can make sense on those hulls, but the best fit is usually one model below the capacity-plate maximum.
 
 If you don't see your use case on this list, FourStroke is probably the right answer for you.
 

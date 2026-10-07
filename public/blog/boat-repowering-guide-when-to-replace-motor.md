@@ -59,7 +59,7 @@ The customers who plan and order over the off-season (our shop is closed Decembe
 Five things move the right repower timing:
 
 - **Motor age.** A 25-year-old motor is closer to end of life than a 5-year-old motor regardless of hours.
-- **Hours of use.** A motor with 1,500+ hours has limited remaining life. A modern Mercury at 500 hours has years left.
+- **Hours of use.** Hours alone don't decide it, so read them alongside compression, service history and corrosion. A modern Mercury at 500 hours has years left.
 - **Maintenance history.** Well-maintained motors last longer. Skipped winterization shortens motor life dramatically.
 - **Symptom severity.** Hard starts and minor fuel issues are early warnings. Compression problems and metal in the gearcase oil are end-stage.
 - **Repair cost trajectory.** $200 spring service every year is normal. $500-plus repair bills two years running is a sign.
@@ -210,7 +210,7 @@ Often yes, but HBW recommends one Mercury model step below the maximum HP on the
 
 ### Do I need new controls when repowering?
 
-Not always. If your controls are 2004 or newer Mercury controls, they're likely compatible. Older controls may need replacement. We assess this during our repower consultation.
+Not always. Whether your controls carry over depends on the control type (mechanical or digital) and the exact motor, and older or worn controls may need replacement. We assess this during our repower consultation.
 
 ### What warranty comes with a repower?
 

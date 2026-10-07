@@ -48,7 +48,7 @@ revenue_driver: service
 
 - [Mercury Marine](https://www.mercurymarine.com/ca/en) Premier 认证经销商
 - 透明加元价格，无需讨价还价
-- 从 GTA 经 401 + 115 高速约 60 到 90 分钟车程
+- 从多伦多向东约 90 分钟车程，出发前请用实时导航确认路线和路况
 
 [把序列号和油泵照片发给我们](https://hbwservice.ca)
 

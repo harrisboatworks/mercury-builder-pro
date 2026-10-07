@@ -31,7 +31,7 @@ revenue_driver: repower
 
 ### Réponse rapide
 
-Le Mercury 115 FourStroke est le bon choix pour la plupart des embarcations de 16 à 19 pieds naviguant sur les lacs intérieurs de l'Ontario, il est léger, économique et amplement puissant. Le Mercury 150 FourStroke est justifié lorsque l'embarcation fait 19 à 22 pieds, que la charge est régulièrement importante, ou que vous voulez une marge de puissance confortable sur un grand ponton ou une grosse embarcation familiale. Pour voir les prix des deux moteurs côte à côte en dollars canadiens, utilisez mercuryrepower.ca.
+Le Mercury 115 FourStroke convient à de nombreuses embarcations de 16 à 19 pieds naviguant sur les lacs intérieurs de l'Ontario, selon la plaque de capacité; il est léger, économique et amplement puissant. Le Mercury 150 FourStroke est justifié lorsque l'embarcation fait 19 à 22 pieds, que la charge est régulièrement importante, ou que vous voulez une marge de puissance confortable sur un grand ponton ou une grosse embarcation familiale. Pour voir les prix des deux moteurs côte à côte en dollars canadiens, utilisez mercuryrepower.ca.
 
 Besoin de votre CCEP (PCOC)? Suivez le cours en ligne avec [le lien de parrainage MyBoatCard de HBW](https://myboatcard.com/card/harrisboat) et utilisez le code **HARRIS15** pour obtenir **15% de réduction**.
 
@@ -99,7 +99,7 @@ Le 150 est environ 43 kg (95 lb) plus lourd que le 115. Pour certaines embarcati
 - Vous transportez régulièrement quatre personnes ou plus, ou une charge importante
 - Vous avez un grand ponton ou un tritoon
 - Vous voulez une marge de puissance pour la reprise et la vitesse de croisière
-- Vous remplacez un moteur de 135 HP ou plus
+- La plaque de capacité de votre coque permet plus de 150 HP (dimensionnez selon la plaque, pas selon l'ancien moteur)
 
 ---
 
@@ -115,7 +115,7 @@ Le prix du Pro XS est légèrement plus élevé que le FourStroke standard du m�
 
 Sur les lacs des Kawartha, le lac Rice, ou le lac Simcoe, la navigation se fait principalement à des vitesses de croisière modérées. La plupart des journées, vous n'êtes pas à pleine puissance, vous vous déplacez entre les îles, vous remorquez un tube, ou vous cherchez un bon spot de pêche.
 
-Dans ce contexte, le 115 est amplement suffisant pour la grande majorité des embarcations familiales de 16 à 19 pieds.
+Dans ce contexte, le 115 est amplement suffisant pour de nombreuses embarcations familiales de 16 à 19 pieds, selon la plaque de capacité.
 
 Le 150 fait vraiment la différence dans deux situations spécifiques : les matins de pêche sportive où vous voulez traverser un grand lac rapidement avant que le vent se lève, et lorsque vous avez un ponton de 22 pieds avec six passagers et des glacières pleines.
 
@@ -141,7 +141,7 @@ Le 150 FourStroke coûte plus cher que le 115, pour le moteur lui-même, et pote
 
 **Téléphone :** 905-342-2153
 
-**En personne :** Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0 (environ 1 h 30 à l'est de Toronto; moins de 3 heures de Montréal).
+**En personne :** Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0 (environ 1 h 30 à l'est de Toronto).
 
 ---
 
@@ -168,7 +168,7 @@ Oui, pour un ponton de 20 pieds avec une charge normale (3–4 personnes). Pour 
 
 ### Dois-je prendre la version Command Thrust sur un ponton ?
 
-Presque toujours oui. La boîte de vitesses Command Thrust est conçue pour les coques plates et les embarcations lourdes. Elle améliore significativement la mise sur plan avec une charge complète.
+Souvent oui, mais ce n'est pas une mise à niveau automatique : tout dépend de la coque, de la charge et de l'hélice. La boîte de vitesses Command Thrust est conçue pour les coques plates et les embarcations lourdes. Elle améliore significativement la mise sur plan avec une charge complète.
 
 ### Quelle est la différence entre le FourStroke standard et le Pro XS ?
 

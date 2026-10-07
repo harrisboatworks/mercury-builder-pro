@@ -33,7 +33,7 @@ revenue_driver: repower
 
 My grandfather built cedar strip canoes and boats on Rice Lake's south shore. My dad spent his career as the mechanic, repairing and rigging Mercury outboards. I run the marina now. Three generations, same dock, same lake.
 
-In close to 80 seasons of watching people fish this water, we have learned one thing above all the rest: Rice Lake makes anglers look like geniuses or like amateurs, and it comes down almost entirely to whether they showed up set up right.
+Since 1947 we have watched people fish this water, and we have learned one thing above all the rest: Rice Lake makes anglers look like geniuses or like amateurs, and it comes down almost entirely to whether they showed up set up right.
 
 It is shallow. It is weedy. It runs 32 km east to west with nothing to stop the wind. It has a sunken 19th-century railway across the middle of it, underwater, waiting for your lower unit. And it holds some of the best walleye, muskie, bass, and crappie in Southern Ontario.
 
@@ -96,7 +96,7 @@ We have set up a lot of fishing boats over the years, and the same pattern repea
 | Your fishing | Boat | Recommended Mercury |
 |---|---|---|
 | Walleye trolling | 16-18 ft aluminum console | 60-90 HP FourStroke + 9.9 ProKicker |
-| Smallmouth & largemouth bass | 17-19 ft fishing boat | 90-115 HP FourStroke or Pro XS + trolling motor |
+| Smallmouth & largemouth bass | 17-19 ft fishing boat | 90-115 HP FourStroke or 115 HP Pro XS + trolling motor |
 | Muskie | 18-21 ft deep-V | 115-150 HP + 9.9 ProKicker |
 | Tournament bass | 19-21 ft bass boat | Pro XS V8 (200-250 HP) |
 | Family / mixed use | 16-18 ft aluminum console | 90-115 HP FourStroke (HBW usually specs the standard gearcase on this planing V-hull; CT is hull/load/prop specific) |
@@ -109,7 +109,7 @@ Without the kicker, here is what actually happens. You put the main in gear at i
 
 ### Best fit: Smallmouth and Largemouth Bass
 
-A 17-19 ft fishing boat with a Mercury 90-115 HP [FourStroke or Pro XS](/blog/mercury-fourstroke-buyer-guide-ontario) and a bow-mount electric trolling motor. You are running and gunning between the railway structure, weed flats, and island edges. A bow-mount electric handles precise weed-edge positioning better than a kicker for bass. The main motor choice depends on hull weight and how often you run the full length of the lake.
+A 17-19 ft fishing boat with a Mercury 90-115 HP [FourStroke or 115 HP Pro XS](/blog/mercury-fourstroke-buyer-guide-ontario) and a bow-mount electric trolling motor. You are running and gunning between the railway structure, weed flats, and island edges. A bow-mount electric handles precise weed-edge positioning better than a kicker for bass. The main motor choice depends on hull weight and how often you run the full length of the lake.
 
 ### Best fit: Muskie Fishing
 

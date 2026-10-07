@@ -35,11 +35,11 @@ Pontoon选Mercury船外机，**用你最重的使用情境来选，不是用展�
 
 *HBW 信任要点*
 
-### 为什么 GTA 华人船主愿意到 Rice Lake
+### 为什么 GTA 华人船主愿意到莱斯湖（Rice Lake）
 
 - [Mercury Marine](https://www.mercurymarine.com/ca/en) Premier 认证经销商
 - 透明加元价格，无需讨价还价
-- 从 GTA 经 401 + 115 高速约 60 到 90 分钟车程
+- 从 GTA 经 401 高速东行约 60 到 90 分钟车程
 
 [在线获取报价](/quote/motor-selection)
 
@@ -115,7 +115,7 @@ Pontoon换机或新配置可能涉及：Rigging（接线）、操控系统、螺
 
 ## Pontoon在Rice Lake和Kawarthas的使用说明
 
-Rice Lake和Kawarthas是GTA华人家庭租船或自有Pontoon最常使用的水域之一。几个在地知识点：
+莱斯湖（Rice Lake）和Kawarthas是GTA华人家庭租船或自有Pontoon最常使用的水域之一。几个在地知识点：
 
 - **靠近码头和浅水区时要慢速**, Rice Lake有多个保护区和限速区
 - **夏季周末人多**, 安全意识和码头礼仪很重要

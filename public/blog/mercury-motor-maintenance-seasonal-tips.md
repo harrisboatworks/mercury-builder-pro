@@ -96,7 +96,7 @@ Some boaters DIY winterization, which is fine for confident owners on smaller mo
 
 For pricing context, see the [boat winterization cost guide](/blog/boat-winterization-cost-ontario-2026).
 
-### Winter storage (December 1 to April 1)
+### Winter storage
 
 If winterization is done correctly, the motor mostly takes care of itself over winter. A few things to do or avoid:
 

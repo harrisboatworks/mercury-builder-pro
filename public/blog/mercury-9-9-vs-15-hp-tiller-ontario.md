@@ -145,7 +145,7 @@ Translation: pick the motor that fits the boat and the use case. Don't pick the 
 
 ## What We See at HBW
 
-After decades of small-motor sales on Rice Lake and across the Kawarthas, here's the pattern:
+Here's the pattern we see in small-motor sales on Rice Lake and across the Kawarthas:
 
 In our shop experience, the 15 HP is the more common choice for small boats that are plated for it. Typical buyers are rigging a 14 foot aluminum jon boat, replacing a tired 9.9 on a 16 foot tiller skiff and wanting more headroom, or running a heavier pontoon kicker that needs extra push into the wind.
 
@@ -223,7 +223,7 @@ About 95 to 190 L (25 to 50 US gal) of regular 87-octane for a typical recreatio
 
 ### Can I rig either as a remote-throttle setup later?
 
-Yes. Both motors have remote-control conversion kits. You can start with a tiller and add remote later if your boat use changes. Bring the motor and your console setup to HBW and we'll quote the conversion.
+Often, but it depends on the exact model. Mercury lists a tiller-to-remote conversion kit for some manual-start 8 and 9.9 HP FourStroke tillers, and the 15 HP needs to be checked by model and year. If you already know you want a console, a remote-ready electric-start model is the cleaner route. Bring the motor and your console setup to HBW and we'll confirm what fits.
 
 ### What warranty comes with a new Mercury 9.9 or 15?
 

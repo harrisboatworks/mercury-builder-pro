@@ -54,7 +54,7 @@ Ask to see the requirement in writing. HBW publishes its Mercury motor prices on
 Motor prices and promotional offers can change. Check the current price list, offer dates, and expiry on the written quote. A dated price is more useful than an undated verbal estimate.
 
 **3. "Configuration affects price"** 
-This one is partially true. A Mercury 90 ELPT FourStroke has a base motor price, but the all-in cost depends on shaft length, controls, prop, rigging, and install labor. The honest answer to this is a configurator that handles all of it in real time, not a gatekept phone call.
+This one is partially true. A Mercury 90 ELPT FourStroke has a base motor price, but the all-in cost depends on controls, prop, rigging, and install labor. The honest answer to this is a configurator that handles all of it in real time, not a gatekept phone call.
 
 **4. "We want to talk to you about your needs"** 
 Fine. But the right order is: show the price, then have a conversation about whether it is the right motor. Not: gatekeep the price until after the conversation.

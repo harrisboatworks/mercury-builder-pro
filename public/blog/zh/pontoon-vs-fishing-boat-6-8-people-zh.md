@@ -45,7 +45,7 @@ revenue_driver: rentals
 
 ## 为什么大部分 GTA 华人家庭选 Pontoon
 
-我们在 HBW 售卖 Legend pontoon 给 GTA 华人客户已经十多年。最常见的购买理由：
+在 HBW，GTA 华人客户选择 Legend pontoon 最常见的购买理由：
 
 **1. 家庭聚会场所** ， Pontoon 平台够大,能放餐桌、椅子、烧烤架。一家三代 (爷爷奶奶、父母、孩子) 周末聚会在湖上不挤。
 
@@ -133,7 +133,7 @@ revenue_driver: rentals
 
 > 相关指南：[买 pontoon：家庭、钓鱼、Rice Lake 怎么配](/blog/zh/chinese-family-pontoon-mercury-outboard)。
 
-[Mercury Premier 经销商](https://www.mercurymarine.com/ca/en) · 莱斯湖 Gores Landing · 自 1947 年
+[Mercury Premier 经销商](https://www.mercurymarine.com/ca/en) · 莱斯湖 Gores Landing · 自 1947 年家族经营
 
 ---
 

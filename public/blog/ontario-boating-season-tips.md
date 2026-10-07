@@ -31,7 +31,7 @@ revenue_driver: service
 
 ## Ontario Boating Season Tips: A Seasonal Operations Hub (Spring, Summer, Fall)
 
-> **Quick answer:** Ontario boating season runs roughly mid-April (ice-out) through late October (winterization). The three phases that matter are spring commissioning (March-April), peak summer operations (May-September), and fall layup (October-November). Most expensive surprises happen in the gaps when boaters skip steps or push past the season. This post is the HBW seasonal hub, what to do, when to do it, and what to skip the DIY on.
+> **Quick answer:** Ontario boating season runs roughly mid-April (ice-out) through late October (winterization). The three phases that matter are spring commissioning (April to early May), peak summer operations (May-September), and fall layup (October-November). Most expensive surprises happen in the gaps when boaters skip steps or push past the season. This post is the HBW seasonal hub, what to do, when to do it, and what to skip the DIY on.
 
 Need your PCOC? Take the online course through [HBW's MyBoatCard referral link](https://myboatcard.com/card/harrisboat) and use **HARRIS15** for **15% off**.
 
@@ -43,7 +43,7 @@ This post is the HBW seasonal hub. Three phases of the year, what HBW handles, w
 
 If you want one rule that solves most seasonal headaches: complete [hbwservice.ca](https://hbwservice.ca), then drop off anytime, including after hours. You can request fall winterization and spring commissioning in the same form.
 
-## Spring (March to Early May): Commissioning
+## Spring (April to Early May): Commissioning
 
 Spring is the high-stakes phase. The first run of the year reveals every shortcut taken in fall, plus winter damage from condensation, rodents, and freeze events.
 
@@ -97,12 +97,12 @@ Fall is where the season ends well or starts the next one badly. Skip winterizat
 - Cooling system flush and drain
 - Block drain on inboard or sterndrive applications
 - Battery prep: a healthy battery may remain aboard only if fully charged, disconnected, secured, and permitted by the approved storage plan. The model/serial manual and approved storage plan control.
-- Cover or shrinkwrap (HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage.)
+- Not included: storage and shrink wrap, which are separate services (HBW offers outdoor storage with professional shrink wrap and a shrink-wrap-only service. We do not offer indoor or heated boat storage.)
 - Note any spring service that should be queued
 
 Full cost breakdown for Ontario: [Boat Winterization Cost Ontario 2026](/blog/boat-winterization-cost-ontario-2026). DIY guide if you're handling it yourself: [DIY Mercury Outboard Winterization Guide](/blog/diy-mercury-outboard-winterization-guide).
 
-**The cracked-block math:** Skipping winterization and running into a hard freeze can crack the cylinder block or the lower unit. We see one or two of these every spring. Average repair runs $2,000-$5,000+, sometimes the motor doesn't come back at all. A $250-$400 full winterization is the cheapest insurance you'll buy all year.
+**The cracked-block math:** Skipping winterization and running into a hard freeze can crack the cylinder block or the lower unit. We see one or two of these every spring. Average repair runs $2,000-$5,000+, sometimes the motor doesn't come back at all. A full winterization is the cheapest insurance you'll buy all year.
 
 **Late-season safety considerations.** Once water temps drop below 15°C, your survival window in the water shortens dramatically. Late October and early November runs need cold-water gear, a float plan, and someone who knows where you went. Detailed guide: [Late-Season Boating Safety](/blog/late-season-boating-safety).
 
@@ -138,9 +138,9 @@ The cleanest seasonal flow we see at HBW:
 
 ## Ready for the Next Season?
 
-The work that makes the season feel easy happens between seasons. Booked once, planned out, locked in.
+The work that makes the season feel easy happens between seasons. One request at [hbwservice.ca](https://hbwservice.ca), and our crew handles the rest.
 
-**Book service (commissioning, winterization, mid-season):** [hbwservice.ca](https://hbwservice.ca)
+**Request service (commissioning, winterization, mid-season):** [hbwservice.ca](https://hbwservice.ca)
 **Repower quote builder:** [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection)
 **Trade-in estimate:** [mercuryrepower.ca/trade-in-value](/trade-in-value)
 **Call us:** 905-342-2153
@@ -153,9 +153,9 @@ The work that makes the season feel easy happens between seasons. Booked once, p
 
 Practically speaking, ice-out in the Kawarthas is mid-to-late April, depending on the year. Lake Ontario opens earlier. Openers vary by zone. In FMZ 17 (Rice Lake and most of the Kawarthas), walleye and sauger open the second Saturday in May, and bass the third Saturday in June. On Lake Ontario (FMZ 20), walleye open the first Saturday in May. Check the [Ontario Fishing Regulations Summary](https://www.ontario.ca/document/ontario-fishing-regulations-summary) for your zone. Cold-water gear and short trips through mid-May, then full season through early October.
 
-### When should I book spring commissioning?
+### When should I request spring commissioning?
 
-The previous October, ideally. We book spring slots from October onward and the early bookers get the prime mid-April through early May slots. Booking in March means you're taking what's left.
+You can send your request at hbwservice.ca any time, including over the winter for April work. We're closed for service from December 1 to April 1, and the shop gets busy quickly once we reopen.
 
 ### Do I really need winterization every year?
 
@@ -171,7 +171,7 @@ Some steps are DIY-friendly if you follow the exact manual. Fuel preparation, in
 
 ### What's HBW's spring backlog like?
 
-By March, our April calendar is mostly booked from prior-October commitments. We can usually fit walk-ins, but the wait stretches longer at the spring peak. Booking in fall avoids the queue entirely.
+We're closed for service from December 1 to April 1, and the wait stretches longer at the April and May peak once we reopen. A request sent at [hbwservice.ca](https://hbwservice.ca) over the winter is already on our list when the shop opens.
 
 ### Are there parts of the Ontario boating season that get worse if I extend?
 

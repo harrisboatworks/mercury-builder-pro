@@ -8,7 +8,7 @@ final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
 title: "Mercury Repower GTA Toronto Guide"
-description: "How a GTA boater repowers a boat at Harris Boat Works: logistics, pricing, timeline, and transport from the dealer that handles this route every week."
+description: "How a GTA boater repowers a boat at Harris Boat Works: logistics, pricing, timeline, and what to expect on boat pickup."
 category: "Mercury Outboards"
 date_published: 2026-05-19
 date_modified: 2026-09-06
@@ -21,7 +21,7 @@ revenue_driver: repower
 
 # Mercury Repower GTA Toronto Guide
 
-> How a GTA boater repowers a boat at Harris Boat Works: logistics, pricing, timeline, and transport from the dealer that handles this route every week.
+> How a GTA boater repowers a boat at Harris Boat Works: logistics, pricing, timeline, and what to expect on boat pickup.
 
 **Category:** Mercury Outboards  
 **Published:** 2026-05-19  

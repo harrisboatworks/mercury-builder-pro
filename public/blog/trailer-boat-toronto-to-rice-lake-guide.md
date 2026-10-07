@@ -83,7 +83,7 @@ Going through this once at home saves you a bad day on the side of the 401. Spen
 
 **Toronto to Whitby (about 30 minutes)**: Highway 401 east. Watch for construction, the worst weekday morning rush hour stretch in Canada. Saturday mornings before 9 a.m. are reliably clear.
 
-**Whitby to Port Hope (about 20 minutes)**: Continuing east on 401. Lighter traffic, faster pace. Watch for OPP enforcement, this stretch has been known for speed checks.
+**Whitby to Port Hope (about 35 minutes)**: Continuing east on 401. Lighter traffic, faster pace. Watch for OPP enforcement, this stretch has been known for speed checks.
 
 **Port Hope to Cobourg**: Stay on Highway 401 east to Exit 472 (County Road 18 / Burnham Street).
 

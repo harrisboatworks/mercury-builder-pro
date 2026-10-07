@@ -143,9 +143,9 @@ The line is: if the system is working, an owner can inspect it and do the listed
 
 Most Rice Lake and Kawartha boaters don't run shore power on their boats, but if you have a larger cruiser with AC outlets and a marina slip with 30-amp service, the rules are different:
 
-- Shore power systems require galvanic isolators or isolation transformers to prevent stray current corrosion
+- Shore power systems should have a galvanic isolator or isolation transformer (recommended ABYC practice) to prevent stray current corrosion
 - A reverse-polarity indicator should be visible at the panel
-- GFCI protection on all AC outlets is mandatory in marine applications
+- GFCI protection on boat AC outlets is standard ABYC E-11 practice, and a marine electrician can tell you which outlets need it
 - ABYC E-11 is the recognized best-practice baseline for AC and DC systems. These standards are voluntary for owners; Transport Canada accepts them as a compliance route for builders. The legal construction baseline is Transport Canada's TP 1332
 
 If you have shore power and aren't 100 percent sure your boat's setup is compliant, have a marine electrician inspect it. This is an area where a small mistake can be fatal.
@@ -166,7 +166,7 @@ For engine repairs, we only service Mercury and MerCruiser.
 - Transport Canada Construction Standards for Small Vessels (TP 1332)
 - Mercury Marine electrical installation guidelines (dealer technical reference, 2026)
 - HBW service shop records, 2018-2026
-- [Transport Canada - Safe Boating Guide (TP 511)](https://tc.canada.ca/sites/default/files/2026-07/tp-511-boating-guide-2026-EN-acc.pdf) - Federal guidance on small-vessel electrical safety and required equipment.
+- [Transport Canada - Safe Boating Guide (TP 511)](https://tc.canada.ca/sites/default/files/2026-07/tp-511-boating-guide-2026-EN-acc.pdf) - Federal guidance on required safety equipment and rules, including ignition-protected equipment on gasoline-powered boats.
 - [Mercury Marine Canada](https://www.mercurymarine.com/ca/en) - Manufacturer guidance on rigging, batteries, and ignition-protected equipment.
 
 ## About the author

@@ -105,8 +105,8 @@ Current V8/V10/V12 Verados are naturally aspirated. Older supercharged inline-si
 
 ## Ontario boater alarm patterns
 
-- **Water-in-fuel alarms are disproportionately common in Ontario.** Long winter storage pulls more atmospheric moisture into tanks than the southern US sees.
-- **Low-battery alarms are disproportionately common in Ontario.** Cold storage at -10C to -20C is hard on batteries.
+- **Water-in-fuel alarms are disproportionately common in Ontario.** A part-full vented tank collects condensation as temperatures swing over a long Ontario winter, and that water can end up in the fuel.
+- **Low-battery alarms are disproportionately common in Ontario.** A battery left partly discharged through a -10C to -20C winter loses capacity and can freeze, which shows up as low-voltage alarms in spring.
 - **Rice Lake-specific:** anchor mud and zebra mussel buildup on raw water intakes trigger the same over-temperature alarms the engine uses for any cooling restriction. Diagnosis at HBW includes intake cleaning before assuming impeller failure.
 
 ## SmartCraft Connect Mobile (formerly VesselView Mobile)

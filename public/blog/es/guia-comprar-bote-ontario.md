@@ -41,7 +41,7 @@ Comprar un bote en Ontario no es complicado, pero tampoco es comprar un electrod
 
 Esta guía está escrita para compradores hispanohablantes que se acercan al mercado de embarcaciones en Ontario por primera vez, o que regresan después de años sin botar. No asumimos conocimiento previo.
 
-Harris Boat Works lleva 79 años en Rice Lake, Ontario, tercera generación, concesionario Mercury Marine Premier y concesionario Legend Boats. Publicamos esta información porque creemos que un comprador bien informado toma mejores decisiones, y eso es bueno para todos.
+Harris Boat Works es una marina familiar en Rice Lake, Ontario, desde 1947. Publicamos esta información porque creemos que un comprador bien informado toma mejores decisiones, y eso es bueno para todos.
 
 ---
 
@@ -109,7 +109,7 @@ El pontón es excelente para familias que buscan comodidad y espacio. No es el m
 **Ventajas:** garantía completa, sin historial desconocido, motor nuevo, configuración a tu medida
 **Desventajas:** costo inicial más alto, depreciación en los primeros años
 
-En Harris Boat Works manejamos embarcaciones Legend Boats nuevas, precio de inicio aproximado $6,999 CAD para un V-hull de aluminio de entrada, hasta $79,999 para paquetes de pontón premium. Las combinaciones más populares incluyen motor Mercury incluido. Revisa el inventario actual en harrisboatworks.ca.
+En Harris Boat Works manejamos embarcaciones Legend Boats nuevas, con precios que varían según el modelo y el paquete. Las combinaciones más populares incluyen motor Mercury incluido. Revisa el inventario actual en harrisboatworks.ca.
 
 ### Opción 2: Bote usado
 
@@ -155,7 +155,7 @@ Harris Boat Works está ubicado en Gores Landing, Ontario, a orillas de Rice Lak
 **Lo que nos diferencia:**
 - Precios publicados en línea, sin juegos de "llame para cotizar"
 - Configurador de presupuesto en **mercuryrepower.ca**, 3 minutos, sin presión
-- 79 años de operación continua en Rice Lake
+- Operación continua en Rice Lake desde 1947
 - Acceso a partes Mercury con prioridad de concesionario Premier
 - Técnicos certificados Mercury
 

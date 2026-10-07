@@ -35,7 +35,7 @@ Le lac Rice, dans les Kawarthas, est l'un des meilleurs lacs à doré jaune de l
 
 ---
 
-Si vous cherchez un lac de pêche en Ontario sans avoir à conduire six heures vers le nord, le lac Rice mérite votre attention. Situé dans les Kawarthas, à environ une heure et demie à l'est de Toronto et à environ 4 h 30 de Montréal (environ 445 km), ce plan d'eau s'étend sur environ 37 kilomètres de long et offre une diversité de poissons qui en fait l'un des favoris des pêcheurs de la province.
+Si vous cherchez un lac de pêche en Ontario sans avoir à conduire six heures vers le nord, le lac Rice mérite votre attention. Situé dans les Kawarthas, à environ une heure et demie à l'est de Toronto et à environ 4 h 30 de Montréal (environ 445 km), ce plan d'eau s'étend sur environ 30 kilomètres de long et offre une diversité de poissons qui en fait l'un des favoris des pêcheurs de la province.
 
 Le lac Rice fait partie du réseau de la Voie navigable Trent-Severn et est alimenté par la rivière Otonabee à l'extrémité ouest. Harris Boat Works est établi directement sur le lac, à Gores Landing, depuis 1947. Trois générations de la même famille. Si quelqu'un connaît ces eaux, c'est bien nous.
 
@@ -107,8 +107,8 @@ On vend aussi du carburant sans éthanol sur place, un détail que les propriét
 
 Pour pêcher en Ontario, vous avez besoin d'un permis de pêche sportive valide :
 
-- **Obligatoire** pour les 18 à 64 ans : Outdoors Card (~9 $) + permis de pêche sportive (~27 $ pour les résidents de l'Ontario)
-- **Exemptés** : les moins de 18 ans résidents canadiens accompagnés d'un adulte licencié, et les 65 ans et plus résidents canadiens
+- **Obligatoire** pour les 18 à 64 ans, et pour la plupart des non-résidents du Canada même à 65 ans et plus : Outdoors Card (~9 $) + permis de pêche sportive (~27 $ pour les résidents de l'Ontario)
+- **Exemptés** : les résidents canadiens de moins de 18 ans et de 65 ans et plus (avec une pièce d'identité gouvernementale indiquant leur nom et leur date de naissance)
 
 Les permis se délivrent en ligne ou dans les points de vente autorisés. Consultez ontario.ca pour les tailles minimales, les limites de prise, et les périodes d'ouverture actuelles.
 
@@ -138,7 +138,7 @@ Harris Boat Works, Gores Landing, Ontario, sur le lac Rice. En affaires depuis 1
 
 ### Faut-il un permis de pêche?
 
-Oui, pour les 18 à 64 ans. Les moins de 18 ans accompagnés d'un adulte licencié et les 65 ans et plus sont exemptés.
+Oui, pour les résidents de l'Ontario et du Canada de 18 à 64 ans, et pour la plupart des non-résidents du Canada, même à 65 ans et plus. Les résidents canadiens de moins de 18 ans ou de 65 ans et plus sont exemptés; portez une pièce d'identité gouvernementale indiquant votre nom et votre date de naissance. Les résidents canadiens ont aussi quatre périodes de pêche sans permis par année (la fin de semaine de la pêche en famille, les fins de semaine de la fête des Mères et de la fête des Pères, et la Semaine de la pêche en famille de l'Ontario). HBW ne vend pas de permis de pêche.
 
 ### Peut-on louer un bateau sur place?
 

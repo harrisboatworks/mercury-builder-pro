@@ -125,7 +125,7 @@ Different Kawartha water rewards different things:
 - **Rice Lake:** weed lines and shallow flats. Hole-shot dominates. You're up-and-over, not flat-out. **Pro XS shines.**
 - **Stoney, Buckhorn, Pigeon:** bigger water, longer spot-to-spot runs. Top-end matters more. **A 200 or 225 Pro XS V8 is the sweet spot.**
 - **Trent-Severn cruising:** lock-to-lock running with fuel range as a constraint. Top-end and fuel range both matter. **A 200 or 225 Pro XS sized to your hull is hard to beat.**
-- **Cold-water muskie water:** heavier rigs, bigger props, harder to plane. **225 HP and up on the standard gearcase.**
+- **Cold-water muskie water:** heavier rigs, bigger props, harder to plane. **Size to your hull's capacity plate, and the best fit is usually one model below the plate maximum.**
 
 Match the HP to the water you actually fish, not the water you fished once on a road trip.
 

@@ -51,7 +51,7 @@ Don't waste a long drive. A quick call filters the listings that aren't worth sh
 
 **Ask the seller:**
 
-- **What's the HIN?** (12 digits, stamped on the transom, look it up before you leave)
+- **What's the HIN?** (12 characters, letters and digits, marked on the upper starboard side of the transom, look it up before you leave)
 - **Do you have maintenance records?** On any boat over 5 years old, this matters. No records on an older boat means you're assuming the worst.
 - **Can you send a cold-start video?** Cold start, not a warm idle. A seller who won't do this has a reason.
 - **When was it last in the water?** A boat that's been sitting for two seasons needs extra scrutiny.
@@ -101,7 +101,7 @@ Look at the hull near the waterline. Clusters of small bubbles or pocks in the g
 
 ### Walk every inch of the floor
 
-Start at the transom and walk slowly toward the bow, pressing firmly with each step. You're feeling for softness, flex, or sponginess. A solid floor doesn't move. Soft spots mean the plywood sub-floor is saturated and rotting, which often means the stringers below are compromised too. Stringer rot is a full boat restoration, not a repair.
+Start at the transom and walk slowly toward the bow, pressing firmly with each step. You're feeling for softness, flex, or sponginess. A solid floor doesn't move. Soft spots mean the plywood sub-floor is saturated and rotting, which often means the stringers below are compromised too. Stringer rot is a major structural repair, not a quick fix.
 
 Don't stand in one place. Walk the full floor. Soft spots cluster near the bilge drain, live well, and anywhere water tends to pool.
 
@@ -175,7 +175,7 @@ Some findings are negotiating points. These are not.
 > 5. **No maintenance records on a 10+ year old boat**, you're assuming the worst because you have no evidence of the best
 > 6. **Fresh paint on the lower unit or powerhead**, ask what's underneath
 > 7. **Compression is low or inconsistent**, or the seller refuses the test
-> 8. **Ownership documentation is unclear or missing**, unclear title becomes your problem the moment you sign
+> 8. **Ownership documentation is unclear or missing**, unclear ownership becomes your problem the moment you sign
 
 ---
 
@@ -185,7 +185,7 @@ Some findings are negotiating points. These are not.
 
 **Cracked block or blown head gasket.** A motor that's overheated has potentially warped heads, scored cylinders, or a cracked block. In many cases, a repower is more cost-effective than rebuilding an old motor with unknown history. More on that in our [boat motor trade-in guide](https://www.mercuryrepower.ca/blog/outboard-trade-in-value-ontario-hbw).
 
-**Stringer rot.** The floor comes out, the stringers get rebuilt, everything goes back together. This is a full restoration project.
+**Stringer rot.** The floor comes out, the stringers get rebuilt, everything goes back together. This is a major structural repair.
 
 **Hub failure.** Replaceable, but repeated impact damage may mean other lower unit or driveshaft issues underneath.
 
@@ -236,7 +236,7 @@ Yes, on any motor over 5 years old. All cylinders should read within 10% of each
 
 ### How can I tell if a used boat's floor is rotten?
 
-Stomp test. Walk the full floor from transom to bow, pressing firmly with each step. Soft spots, sponginess, or flex mean the plywood sub-floor is saturated and stringers below may be compromised too. Stringer rot is a full restoration job, not a repair.
+Stomp test. Walk the full floor from transom to bow, pressing firmly with each step. Soft spots, sponginess, or flex mean the plywood sub-floor is saturated and stringers below may be compromised too. Stringer rot is a major structural repair, not a quick fix.
 
 ### What about the boat I just looked at? Can HBW help me decide?
 

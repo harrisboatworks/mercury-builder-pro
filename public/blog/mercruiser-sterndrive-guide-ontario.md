@@ -59,7 +59,7 @@ Each has trade-offs. Sterndrives give you a full-width swim platform, lower nois
 
 **Alpha One (Gen 1 and Gen 2)**, the most common MerCruiser drive in this part of the country. Found behind 4.3L V6, 5.0L V8, and 5.7L V8 engines from roughly 1985 through current production. Up to about 300 HP. Most aluminum-prop family boats.
 
-**Bravo (1, 2, and 3)**, heavier-duty, larger gearcase. Bravo 1 for performance applications. Bravo 2 for big pontoon-style hulls. Bravo 3 has dual counter-rotating props for low-speed control on heavy cruisers. Behind bigger V8s and V10s.
+**Bravo (1, 2, and 3)**, heavier-duty, larger gearcase. Bravo 1 for performance applications. Bravo 2 for larger, heavier boats. Bravo 3 has dual counter-rotating props for better low-speed steering control and acceleration. Behind bigger V8s and V10s.
 
 If you don't know which drive you have, the data plate on the upper drive housing has the model. Take a photo and bring it in, we can also pull it from your boat's serial.
 
@@ -72,7 +72,7 @@ If you don't know which drive you have, the data plate on the upper drive housin
 | Bellows at the gimbal housing | The rubber sleeves crack at the folds and let water in through the transom. This is the boat-sinker. |
 | Gimbal bearing | Growls on hard low-speed turns, then takes out the U-joint, the bellows and the engine coupler. |
 | Drive seals | Milky gear lube means water has passed the prop shaft seal or the upper drive shaft seal. |
-| Raw water pump and impeller | The drive is raw-water cooled, so a worn impeller overheats the engine the same way it does on an outboard. |
+| Raw water pump and impeller | Raw water cools the engine or its heat exchanger, so a worn impeller overheats the engine the same way it does on an outboard. |
 | Engine block and manifolds | An incomplete fall drain cracks the block. A sterndrive does not self-drain the way a tilted outboard does. |
 
 Alpha One and Bravo share these failure points. The difference between them is gearcase size and duty rating.
@@ -115,7 +115,7 @@ Same warning sign as an outboard, same severity. Gear lube should be amber. [Mil
 
 ### 4. Raw water pump and impeller
 
-MerCruiser sterndrives are **raw-water cooled**, same as outboards. Lake water in, through the engine, back out. The impeller lives in the drive (Alpha) or in an engine-mounted pump (Bravo + most newer Alphas). Cheaper to replace, harder to ignore, same overheat consequences as an outboard.
+Many MerCruiser sterndrives are **raw-water cooled**, like outboards: lake water in, through the engine, back out. Others are closed-cooled, with a coolant loop and heat exchanger that raw water still cools, so check which you have. The impeller lives in the drive (Alpha) or in an engine-mounted pump (Bravo + most newer Alphas). Cheaper to replace, harder to ignore, same overheat consequences as an outboard.
 
 **Replace every 2-3 years**, or when the engine starts running hotter than normal at cruise.
 

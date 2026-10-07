@@ -47,13 +47,13 @@ Check your route before leaving; travel time varies with your starting point, tr
 
 ## Mercury Dealer for Bowmanville: You're Basically Our Neighbour
 
-Let's be clear about the geography: Bowmanville is the closest significant town to us on the 401 corridor. At about 45 to 50 minutes northeast via Highway 401 east to Exit 472 in Cobourg, then County Road 18 north about 16 km to Gores Landing, we're not a destination for you, we're a nearby option.
+Let's be clear about the geography: Bowmanville is one of the closer GTA-edge communities to us on the 401 corridor. At about 45 to 50 minutes northeast via Highway 401 east to Exit 472 in Cobourg, then County Road 18 north about 16 km to Gores Landing, we're not a destination for you, we're a nearby option.
 
 You're not making a sacrifice to access a better dealer. You're just going up the road.
 
 ## What 45 to 50 Minutes Actually Means
 
-Forty-five to fifty minutes is shorter than a lot of Ontario commutes. It's the distance between the supermarket and a trip into Oshawa on a busy Saturday. It's not an event, it's an errand.
+Forty-five to fifty minutes is shorter than a lot of Ontario commutes. It's not an event, it's an errand.
 
 That proximity changes the whole relationship with a dealer. It means:
 
@@ -69,7 +69,7 @@ Our quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca) gives yo
 
 ## The Repower Capital of the Region
 
-Most of what we do is repower, replacing aging motors on hulls that still have years left. Bowmanville-area boats tend to be well-maintained, often aluminum or fibreglass boats that owners are committed to. Repowering a boat you've maintained well for years makes financial and practical sense, and we can walk through that decision honestly.
+Repowering is a big part of what we do, replacing aging motors on hulls that still have years left. Bowmanville-area boats tend to be well-maintained, often aluminum or fibreglass boats that owners are committed to. Repowering a boat you've maintained well for years makes financial and practical sense, and we can walk through that decision honestly.
 
 The rigging conversation matters here: what HP, what controls, what prop for your hull and how you use it. We have that conversation before we order anything. The result is a motor that performs the way Mercury designed it to for your specific application.
 
@@ -137,7 +137,7 @@ This is what a dealer relationship is supposed to feel like.
 
 ### How far is HBW from Bowmanville?
 
-About 45 to 50 minutes in light traffic, roughly 60 km. Take Highway 401 east to Exit 472 (County Road 18 / Burnham Street, Cobourg), then north on County Road 18 about 16 km to Gores Landing. The closest major GTA-edge city to Rice Lake.
+About 45 to 50 minutes in light traffic, roughly 60 km. Take Highway 401 east to Exit 472 (County Road 18 / Burnham Street, Cobourg), then north on County Road 18 about 16 km to Gores Landing. Bowmanville, in Clarington, is one of the closest Durham communities to Rice Lake.
 
 ### Can HBW handle all my Mercury service in Bowmanville?
 
@@ -145,7 +145,7 @@ Yes. The 45-to-50-minute drive makes us a realistic primary dealer for everythin
 
 ### Does HBW serve Clarington and Newcastle?
 
-Yes. Clarington and Newcastle are within the same drive time. We have customers across the whole east-Durham area.
+Yes. Newcastle is a little closer than Bowmanville, and the drive from elsewhere in Clarington varies with where you start. We have customers across the whole east-Durham area.
 
 ## Related guides
 

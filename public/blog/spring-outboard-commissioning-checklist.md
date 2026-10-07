@@ -29,7 +29,7 @@ revenue_driver: service
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/spring-outboard-commissioning-checklist
 
-> **Quick answer:** Spring commissioning brings your Mercury back to operational condition after winter storage. The core work: fuel system inspection, cooling system and impeller check, battery load test, fresh gear lube verification, spark plug inspection, propeller check, and a test run on muffs before the boat goes in the water. Book early, by late April, shops are running behind. Schedule at [hbwservice.ca](https://hbwservice.ca).
+> **Quick answer:** Spring commissioning brings your Mercury back to operational condition after winter storage. The core work: fuel system inspection, cooling system and impeller check, battery load test, fresh gear lube verification, spark plug inspection, propeller check, and a test run on muffs before the boat goes in the water. Request service at [hbwservice.ca](https://hbwservice.ca) in February or March if you want the boat ready for the May long weekend.
 
 Need your PCOC? Take the online course through [HBW's MyBoatCard referral link](https://myboatcard.com/card/harrisboat) and use **HARRIS15** for **15% off**.
 
@@ -160,7 +160,7 @@ Spring commissioning at HBW is free for HBW winter storage customers, $99 otherw
 
 ### Step 6, Spark Plugs and Ignition
 
-- **Inspect spark plugs.** Replace at interval (typically every 200 hours or 2 years for FourStrokes). Fouled plugs are a common cause of hard-starting and misfires after storage.
+- **Inspect spark plugs.** Replace at the interval in your owner's manual, which varies by model. Fouled plugs are a common cause of hard-starting and misfires after storage.
 - **Check plug wires** for cracks or damage on older motors with plug wires (not applicable to modern direct-ignition motors).
 - **Test ignition** by starting on muffs, see Step 8.
 

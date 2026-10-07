@@ -31,7 +31,7 @@ revenue_driver: service
 
 ### Quick Answer
 
-Mercury SmartCraft Connect Mobile, the product that replaced VesselView Mobile in Mercury's 2024 rebrand, is a small module that streams engine data to the Mercury Marine app on your phone. It is not included with a new motor, it is sold separately. Compatible with Mercury 4-strokes from model year 2004 and up, 40 HP and up. The 25 HP and 30 HP class is only compatible from model year 2022 onward. Sub-25 HP motors are not compatible. Module part numbers: 8M0173128 (under-cowl, single engine) and 8M0173129 (under-helm, one to four engines). The Mercury Marine app is free on iOS and Android. No subscription.
+Mercury SmartCraft Connect Mobile, the product that replaced VesselView Mobile in Mercury's 2024 rebrand, is a small module that streams engine data to the Mercury Marine app on your phone. It is not included with a new motor, it is sold separately. Compatible with Mercury outboards and MerCruiser engines from model year 2004 and up, 40 HP and up. The 25 HP and 30 HP class is only compatible from model year 2022 onward. Sub-25 HP motors are not compatible. Module part numbers: 8M0173128 (under-cowl, single engine) and 8M0173129 (under-helm, one to four engines). The Mercury Marine app is free on iOS and Android. No subscription.
 
 SmartCraft Connect Mobile is the current name for what Mercury used to call VesselView Mobile (rebranded in 2024). If you are shopping for the old name, this is the same product line.
 
@@ -81,7 +81,7 @@ Most Mercury motors from 2004 onward are SmartCraft-compatible. Mercury 9.9, 15,
 
 **Twin and triple setups.** SmartCraft Connect handles up to four engines, each reporting independently in the app. For a triple or quad, ask before assuming, because gateway hardware can carry an engine-count limit depending on the year.
 
-**Optimax (2004 and newer).** Optimax was Mercury's direct-injection 2-stroke family from 1997 through 2017, and unlike the carbureted and EFI 2-strokes it runs the SmartCraft data bus. Mercury lists SmartCraft-capable engines 40 HP and up, 2004 and newer, as Connect-compatible, which takes in most Optimax rigs still on Kawartha water. Confirm by serial before buying the module.
+**Optimax (2004 and newer).** Optimax was Mercury's direct-injection 2-stroke family from the late 1990s until the late 2010s, and unlike the carbureted and EFI 2-strokes it runs the SmartCraft data bus. Mercury lists SmartCraft-capable engines 40 HP and up, 2004 and newer, as Connect-compatible, which takes in most Optimax rigs still on Kawartha water. Confirm by serial before buying the module.
 
 ## Motors With No Connect Path
 

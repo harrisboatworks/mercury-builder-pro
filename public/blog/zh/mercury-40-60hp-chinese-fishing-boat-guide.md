@@ -39,7 +39,7 @@ revenue_driver: repower
 
 - [Mercury Marine](https://www.mercurymarine.com/ca/en) Premier 认证经销商
 - 透明加元价格，无需讨价还价
-- 从 GTA 经 401 + 115 高速约 60 到 90 分钟车程
+- 从多伦多向东约 90 分钟车程，出发前请用实时导航确认路线和路况
 
 [在线获取报价](/quote/motor-selection)
 
@@ -128,7 +128,7 @@ Command Thrust通常被认为是Pontoon的配置，但在某些情况下，40至
 
 - 如果你的船比同尺寸平均更重
 - 如果你常载大量装备或需要更强的低速推力
-- 如果你在有波浪的情况下需要更好的控制
+- 如果你希望重载时更容易上滑行，并能在较低速度下保持滑行
 
 这不是每个人都需要的配置，但值得在选择时和HBW讨论。
 

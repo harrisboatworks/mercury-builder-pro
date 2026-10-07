@@ -116,7 +116,7 @@ We sell ethanol-free 89 marine gas at the dock in Gores Landing. Pick the HP tha
 - **Power steering**, On anything over 115 HP, get hydraulic or electric power steering. Manual steering on bigger motors is tiring after an hour of driving.
 - **Power trim**, Standard on nearly every Mercury 25 HP and up (look for PT in the model code). Manual-start tillers like the 25MLH use manual tilt. You'll use it constantly as load and conditions change.
 - **SmartCraft / [Mercury Marine](https://www.mercurymarine.com/ca/en) App**, Real-time fuel flow lets you find the efficient cruise RPM for your boat. Saves real money over a season.
-- **Active Trim**, Available on V8 Verados and select V6s. Worth it if your driver is still learning; the engine trims itself for conditions.
+- **Active Trim**, Available on compatible Mercury FourStroke outboards from 40 HP up. Worth it if your driver is still learning; the engine trims itself for conditions.
 
 **What you don't need:** Mercury's premium Verado V8/V10 lineup on a family runabout under 22 feet. They're excellent motors built for performance boats and big cruisers, overkill on a 19-foot bowrider that mostly goes to the swim spot.
 
@@ -167,7 +167,7 @@ For serious watersports, see our dedicated Best Mercury for Ski & Wakeboard Boat
 
 ### Will my boat be safe with the maximum-rated HP?
 
-Generally yes, manufacturers test and certify the max HP rating. Going to max is safe but expensive (fuel, insurance) and not always necessary. Most family use lives well below max.
+Generally yes, the boat builder determines the max HP rating, by Transport Canada's calculation or by testing, and declares it on the capacity plate. Going to the maximum adds purchase price and weight and is not always necessary. The best fit is usually one Mercury model below the capacity plate maximum. Most family use lives well below max.
 
 ### Is a 4-stroke quieter than a 2-stroke?
 

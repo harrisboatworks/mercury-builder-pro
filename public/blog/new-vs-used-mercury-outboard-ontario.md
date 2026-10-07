@@ -35,7 +35,7 @@ A new Mercury outboard costs more upfront but comes with a 3-year factory limite
 
 ## What "new" actually buys you
 
-The headline difference is warranty. A new Mercury FourStroke or Pro XS purchased through an authorized dealer comes with a 3-year factory limited warranty. Current promotions can extend total coverage; see [current offers](/promotions). Mercury Product Protection (the factory extended program) is available beyond that and is quoted at time of sale. That window covers the engine, the powerhead, and most of the components that fail catastrophically.
+The headline difference is warranty. A new Mercury FourStroke or Pro XS purchased through an authorized dealer comes with a 3-year factory limited warranty. Current promotions can extend total coverage; see [current offers](/promotions). Mercury Product Protection (the factory extended program) is available beyond that and is quoted at time of sale. That window covers defects in materials and workmanship, including the powerhead. It does not cover abuse, neglect, water ingestion or normal wear.
 
 The less obvious benefit is **known maintenance horizon**. With a new motor you know:
 - The model-specific break-in and first scheduled service are documented
@@ -49,7 +49,7 @@ The downside is the price. A new Mercury 90 ELPT FourStroke is $14,960 bare, and
 
 ## What "used" actually buys you
 
-A clean, well-documented used Mercury from a known dealer or a careful private seller will run 50-60% of the new price for the same horsepower class. A 2018 Mercury 90 FourStroke with under 400 hours and a service history might sell in southern Ontario in that half-of-new territory, but used prices move season to season; check current listings before you set a budget. That is real money you keep in your account.
+A clean, well-documented used Mercury from a known dealer or a careful private seller will run 50-60% of the new price for the same horsepower class. A 2018 Mercury 90 FourStroke with under 400 hours and a service history might sell in southern Ontario well below new, but used prices move season to season; check current listings before you set a budget. That is real money you keep in your account.
 
 The catch is what you do not get:
 - **Warranty.** Once the factory window has expired, you own every repair.

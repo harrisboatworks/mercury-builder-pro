@@ -39,7 +39,7 @@ Mercury outboards range from 19 kg (41 lb) for the 2.5 and 3.5 HP portables to 2
 
 How much a motor weighs is not trivia. It decides whether your transom can carry it, how your boat sits at rest, and how it planes. Here's what Mercury outboards weigh according to Mercury's own specifications, why it matters, and how to use the number.
 
-This chart covers the FourStroke and Pro XS families we sell and install every week. Verado is special-order territory at HBW and its weights vary significantly by model and rigging; if you are considering a Verado, verify the exact model number against Mercury's spec sheet.
+This chart covers the FourStroke and Pro XS families we sell and install through the season. Verado is special-order territory at HBW and its weights vary significantly by model and rigging; if you are considering a Verado, verify the exact model number against Mercury's spec sheet.
 
 Also useful: [current Mercury outboard prices in Canada](/pricing-reference) and the [outboard shaft length guide](/blog/outboard-shaft-length-guide).
 

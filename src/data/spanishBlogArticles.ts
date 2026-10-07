@@ -29,7 +29,7 @@ Comprar un bote en Ontario no es complicado, pero tampoco es comprar un electrod
 
 Esta guía está escrita para compradores hispanohablantes que se acercan al mercado de embarcaciones en Ontario por primera vez, o que regresan después de años sin botar. No asumimos conocimiento previo.
 
-Harris Boat Works lleva 79 años en Rice Lake, Ontario, tercera generación, concesionario Mercury Marine Premier y concesionario Legend Boats. Publicamos esta información porque creemos que un comprador bien informado toma mejores decisiones, y eso es bueno para todos.
+Harris Boat Works es una marina familiar en Rice Lake, Ontario, desde 1947. Publicamos esta información porque creemos que un comprador bien informado toma mejores decisiones, y eso es bueno para todos.
 
 ---
 
@@ -97,7 +97,7 @@ El pontón es excelente para familias que buscan comodidad y espacio. No es el m
 **Ventajas:** garantía completa, sin historial desconocido, motor nuevo, configuración a tu medida
 **Desventajas:** costo inicial más alto, depreciación en los primeros años
 
-En Harris Boat Works manejamos embarcaciones Legend Boats nuevas, precio de inicio aproximado $6,999 CAD para un V-hull de aluminio de entrada, hasta $79,999 para paquetes de pontón premium. Las combinaciones más populares incluyen motor Mercury incluido. Revisa el inventario actual en harrisboatworks.ca.
+En Harris Boat Works manejamos embarcaciones Legend Boats nuevas, con precios que varían según el modelo y el paquete. Las combinaciones más populares incluyen motor Mercury incluido. Revisa el inventario actual en harrisboatworks.ca.
 
 ### Opción 2: Bote usado
 
@@ -143,7 +143,7 @@ Harris Boat Works está ubicado en Gores Landing, Ontario, a orillas de Rice Lak
 **Lo que nos diferencia:**
 - Precios publicados en línea, sin juegos de "llame para cotizar"
 - Configurador de presupuesto en **mercuryrepower.ca**, 3 minutos, sin presión
-- 79 años de operación continua en Rice Lake
+- Operación continua en Rice Lake desde 1947
 - Acceso a partes Mercury con prioridad de concesionario Premier
 - Técnicos certificados Mercury
 
@@ -208,7 +208,7 @@ harrisboatworks.ca
     keywords: ['pesca Rice Lake Ontario', 'guía pesca Ontario', 'pescar walleye Ontario', 'lago cerca de Toronto para pescar'],
     content: `### Respuesta rápida
 
-Rice Lake es uno de los mejores lagos para pescar walleye (lucioperca / doré) en toda Ontario. Está a aproximadamente **1.5 horas al este de Toronto** por la Hwy 401 Este, salida 472 en Cobourg, y County Road 18 al norte. La temporada de walleye en la Zona de Gestión de Pesca 17 (FMZ 17) abre el segundo sábado de mayo y cierra el 15 de noviembre, con límites combinados de walleye y sauger de 4 con Sport y 1 con Conservation, solo de 35–50 cm. Los lagos Balsam y Mitchell tienen reglas propias. Las licencias de pesca son obligatorias para personas de 18 a 64 años. Verifica siempre las fechas y límites actuales en ontario.ca antes de salir.
+Rice Lake es uno de los mejores lagos para pescar walleye (lucioperca / doré) en toda Ontario. Está a aproximadamente **1.5 horas al este de Toronto** por la Hwy 401 Este, salida 472 en Cobourg, y County Road 18 al norte. La temporada de walleye en la Zona de Gestión de Pesca 17 (FMZ 17) abre el segundo sábado de mayo y cierra el 15 de noviembre, con límites combinados de walleye y sauger de 4 con Sport y 1 con Conservation, solo de 35–50 cm. Los lagos Balsam y Mitchell tienen reglas propias. Las licencias de pesca son obligatorias para residentes de Canadá de 18 a 64 años y para la mayoría de los no residentes de Canadá, incluso a los 65 años o más. Verifica siempre las fechas y límites actuales en ontario.ca antes de salir.
 
 ¿Necesita su PCOC? Haga el curso en línea con [el enlace de recomendación de HBW a MyBoatCard](https://myboatcard.com/card/harrisboat) y use el código **HARRIS15** para obtener **15% de descuento**.
 
@@ -216,13 +216,13 @@ Rice Lake es uno de los mejores lagos para pescar walleye (lucioperca / doré) e
 
 Hay muchos lagos en Ontario. Rice Lake no es el más grande ni el más profundo, pero para quienes saben pescar, tiene una reputación que pocos lagos del interior pueden igualar. Walleye abundante, bass de boca grande y pequeña, muskie, perca amarilla, y un acceso práctico desde el área metropolitana de Toronto que lo hace realista para una excursión de un día.
 
-Harris Boat Works lleva 79 años a orillas de este lago, en Gores Landing. Vendemos motores, rentamos botes y damos servicio a embarcaciones aquí. Esta guía la escribimos para pescadores hispanohablantes que quieren aprovechar bien Rice Lake sin perder tiempo buscando información fragmentada en inglés.
+Harris Boat Works es una empresa familiar desde 1947, a orillas de este lago, en Gores Landing. Vendemos motores, rentamos botes y damos servicio a embarcaciones aquí. Esta guía la escribimos para pescadores hispanohablantes que quieren aprovechar bien Rice Lake sin perder tiempo buscando información fragmentada en inglés.
 
 ---
 
 ## Sobre Rice Lake
 
-Rice Lake tiene aproximadamente **37 km de longitud** y forma parte del sistema fluvial Trent-Severn. El río Otonabee alimenta el extremo oeste del lago, conectándolo con Peterborough y los lagos Kawartha.
+Rice Lake tiene entre **28 y 32 km de longitud** y forma parte del sistema fluvial Trent-Severn. El río Otonabee alimenta el extremo oeste del lago, conectándolo con Peterborough y los lagos Kawartha.
 
 El fondo variable del lago, mezclas de arena, grava, barro y vegetación acuática, crea hábitats ideales para múltiples especies. La visibilidad es moderada, lo que favorece la pesca de walleye (que prefiere condiciones de poca luz y fondos con cover).
 
@@ -290,7 +290,7 @@ Para pescar en Ontario se requiere:
 1. **Tarjeta Outdoors Card**, identificación del sistema de licencias de Ontario, aproximadamente $9–$11 CAD, válida 3 años
 2. **Licencia deportiva de pesca**, para residentes de Ontario: aproximadamente $25–$30 CAD anuales (varía según categoría)
 
-Las personas de **18 a 64 años** necesitan licencia. Los menores de 18 y los mayores de 65 residentes en Ontario pueden pescar sin licencia en ciertas condiciones, consulta las reglas actuales en ontario.ca/fishing.
+Los residentes de Canadá de **18 a 64 años** necesitan licencia. Los residentes de Canadá menores de 18 años o de 65 o más no necesitan comprarla si llevan una identificación oficial con su nombre y fecha de nacimiento. Los no residentes de Canadá necesitan Outdoors Card y licencia incluso a los 65 años o más. Los residentes de Canadá también pueden pescar sin licencia durante cuatro periodos al año, entre ellos los fines de semana del Día de la Familia, del Día de las Madres y del Día del Padre, y la Semana de Pesca Familiar de Ontario; consulta las fechas y reglas actuales en ontario.ca/fishing.
 
 Las licencias se compran en línea (ontario.ca), en tiendas de artículos deportivos (Canadian Tire, Bass Pro), o en algunas marinas locales.
 
@@ -365,7 +365,7 @@ Harris Boat Works
 harrisboatworks.ca | 905-342-2153
 ---`,
     faqs: [
-      { question: '¿Necesito una licencia de pesca?', answer: 'Sí, si tiene entre 18 y 64 años. Los menores de 18 años (residentes canadienses) están exentos sin condiciones. Los mayores de 65 también están exentos.' },
+      { question: '¿Necesito una licencia de pesca?', answer: 'Sí, si es residente de Canadá y tiene entre 18 y 64 años. La mayoría de los no residentes de Canadá también la necesitan, incluso a los 65 años o más. Los residentes de Canadá menores de 18 años o de 65 o más están exentos si llevan una identificación oficial con su nombre y fecha de nacimiento.' },
       { question: '¿Puedo alquilar un bote en Rice Lake?', answer: 'Sí. Harris Boat Works tiene una flota de 9 botes de alquiler. Consulte harrisboatworks.ca.' },
       { question: '¿Qué tan lejos está Rice Lake de Toronto?', answer: 'Aproximadamente 1,5 horas por la 401 Este hasta la salida 472 en Cobourg y luego County Road 18 al norte unos 16 km hasta Gores Landing.' },
       { question: '¿Necesito la PCOC (licencia de navegación) para alquilar un bote?', answer: 'Transport Canada exige una prueba de competencia reconocida para operar una embarcación de recreo motorizada; la Pleasure Craft Operator Card (PCOC) es la prueba más común, no la única. En Harris Boat Works la política de alquiler es más estricta: cada conductor debe presentar una PCOC u otra licencia de operador válida al recoger el bote. La lista de seguridad de alquiler se completa como briefing y no sustituye ese requisito.' },
@@ -523,7 +523,7 @@ Depende del motor y el bote. En general, entre dos y cuatro horas en taller.
 ---`,
     faqs: [
       { question: '¿Cuánto cuesta una preparación invernal profesional?', answer: 'El precio varía según el motor y los servicios requeridos. Contacte a hbwservice.ca para una estimación.' },
-      { question: '¿Cuándo debo reservar?', answer: 'Complete hbwservice.ca y deje el bote en cualquier momento, incluso fuera de horario. La marina cierra del 1 de diciembre al 1 de abril.' },
+      { question: '¿Cuándo debo solicitar la preparación invernal?', answer: 'Complete hbwservice.ca y deje el bote en cualquier momento, incluso fuera de horario. La marina cierra del 1 de diciembre al 1 de abril.' },
       { question: '¿Harris Boat Works ofrece almacenamiento?', answer: 'Sí. HBW ofrece almacenamiento exterior con envoltura retráctil profesional, almacenamiento exterior descubierto y servicio únicamente de envoltura retráctil. No ofrecemos almacenamiento interior ni calefaccionado.' },
       { question: '¿Qué pasa si no hago la preparación invernal?', answer: 'En el mejor caso, problemas para arrancar en primavera. En el peor caso, daño interno severo por corrosión o agua congelada, reparaciones que pueden costar miles de dólares.' },
     ],
@@ -585,7 +585,7 @@ Aquí es donde el 150 demuestra su valor. Con 4 adultos y carga real, el 115 tra
 
 ### En aguas abiertas y viento
 
-Para cruzar aguas como la parte más ancha de Rice Lake, Lake Simcoe o Georgian Bay, el 150 da más margen de seguridad. Puede ajustar la velocidad manteniendo planeado. El 115, especialmente con carga, tiene menos margen de maniobra con viento y oleaje.
+Para cruzar aguas como la parte más ancha de Rice Lake, Lake Simcoe o Georgian Bay, la seguridad depende sobre todo del casco, de las condiciones y de respetar la placa de capacidad, y un 115 en un bote clasificado para 150 es una combinación normal. Aun así, el 150 da más margen de potencia con carga y oleaje. Puede ajustar la velocidad manteniendo planeado. El 115, especialmente con carga, tiene menos margen de maniobra con viento y oleaje.
 
 ### Consumo de combustible
 
@@ -870,7 +870,7 @@ Nuestro personal se comunica y presta servicio en inglés. Si nos escribes o lla
 
 Navegar en Ontario es uno de los mejores pasatiempos que ofrece la provincia. Pero como en el caso de conducir un automóvil, hay reglas claras que necesitas conocer antes de salir al agua.
 
-Esta guía está diseñada para hispanohablantes que quieren entender el sistema de licencias y regulaciones de Ontario sin tener que traducir documentos técnicos del gobierno. Cubrimos los requisitos legales principales, no reemplazamos la consulta de los documentos oficiales de Transporte Canadá ni del Ministerio de Recursos Naturales y Forestales de Ontario (MNRF), que actualizan sus reglamentos periódicamente.
+Esta guía está diseñada para hispanohablantes que quieren entender el sistema de licencias y regulaciones de Ontario sin tener que traducir documentos técnicos del gobierno. Cubrimos los requisitos legales principales, no reemplazamos la consulta de los documentos oficiales de Transporte Canadá ni del Ministerio de Recursos Naturales de Ontario (MNR), que actualizan sus reglamentos periódicamente.
 
 ---
 
@@ -932,7 +932,7 @@ Todos los menores que operen la embarcación necesitan su propia PCOC, incluso s
 
 ## Equipo de seguridad obligatorio
 
-Para embarcaciones de menos de 6 metros (aproximadamente 20 pies), el equipo mínimo requerido por Transporte Canadá incluye:
+Para embarcaciones de menos de 6 metros (aproximadamente 20 pies), el equipo mínimo requerido por Transporte Canadá incluye una linterna impermeable o 3 bengalas aprobadas, además de lo siguiente:
 
 | Equipo | Especificación |
 |--------|---------------|

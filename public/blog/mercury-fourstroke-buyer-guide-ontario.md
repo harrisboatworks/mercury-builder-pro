@@ -35,7 +35,7 @@ Mercury FourStroke is the default Mercury outboard for Ontario freshwater boatin
 
 ## Why FourStroke is the default for Ontario
 
-Most Ontario boats came factory-rigged with a Mercury FourStroke. That's not an accident, the major Canadian aluminum builders (Lund, Crestliner, Princecraft, Lowe) and most fibreglass runabout builders package FourStroke as the standard motor across their lineups. When you repower an Ontario boat, the question is usually "which FourStroke", not "Mercury FourStroke or something else."
+Most Ontario boats came factory-rigged with a Mercury FourStroke. That's not an accident, the major aluminum boat builders (Lund, Crestliner, Princecraft, Lowe) and many fibreglass runabout builders commonly package a Mercury FourStroke across their lineups. When you repower an Ontario boat, the question is usually "which FourStroke", not "Mercury FourStroke or something else."
 
 The reasons are practical, not marketing:
 
@@ -126,14 +126,14 @@ For more detail, see our [Outboard Shaft Length Guide](/blog/outboard-shaft-leng
 
 ## Tiller vs Remote (and ProKicker)
 
-For motors 30 HP and under, tiller is common, you steer with the motor handle directly. For motors 40 HP and up, remote (cable steering + throttle) is standard.
+For motors 30 HP and under, tiller is common, you steer with the motor handle directly. For motors 40 HP and up, remote steering and throttle controls are the usual setup, though 40 to 60 HP tiller models are available.
 
 The ProKicker is a special tiller configuration on the 9.9 HP (and recently 15/25) designed as a kicker motor, a secondary motor used for trolling on a primary-motored boat. ProKickers have:
 
 - Higher gear ratio for low-speed trolling
-- Heavy-duty alternator for accessory power
+- Alternator that keeps the battery charged while you troll
 - Big-foot lower unit for better low-speed thrust
-- Adjustable angle for matched-steering with the primary motor
+- Centering straps on tiller models that straighten and lock the kicker when it is tilted fully up
 
 Most serious Ontario walleye, muskie, and bass setups run a 9.9 ProKicker on the transom alongside their primary motor. If you're shopping the 9.9 to 15 HP tiller class specifically, we have a dedicated [Mercury 9.9 vs 15 HP comparison guide](/blog/mercury-9-9-vs-15-hp-tiller-ontario) that walks through capacity plate, HP-restricted lakes, and kicker motor use.
 

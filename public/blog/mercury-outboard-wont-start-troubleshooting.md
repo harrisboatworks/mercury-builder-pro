@@ -163,7 +163,7 @@ What to check:
 - **Check fuel lines.** Old rubber fuel lines harden and crack. A cracked line lets air in, causing lean running or no-start. Inspect visually and by feel.
 - **Tank vent open?** An unvented tank creates vacuum as fuel draws out. The motor starves.
 
-**If the fuel is suspect:** The cleanest fix is to drain the tank and refill with fresh fuel. On smaller tanks, this is easy. On larger tanks, a quality fuel stabilizer added to the old fuel and running the motor through a flush cycle can help, but fresh fuel is better.
+**If the fuel is suspect:** The cleanest fix is to drain the tank and refill with fresh fuel. On smaller tanks, this is easy. On larger tanks, drain as much of the old fuel as you can and refill with fresh fuel. A stabilizer protects fresh fuel but does not bring stale fuel back, so it is not a substitute for draining.
 
 We sell ethanol-free fuel on-site at HBW. For a motor going into storage, finishing the season with ethanol-free is one of the best things you can do for next year's start.
 

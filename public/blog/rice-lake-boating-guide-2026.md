@@ -37,7 +37,7 @@ Need your PCOC? Take the online course through [HBW's MyBoatCard referral link](
 
 ## Quick Answer
 
-Rice Lake is a 32-km shallow lake on the Trent-Severn, roughly 1 hour 45 minutes from central Toronto in light traffic. Water is 6 to 10 ft deep with heavy summer weeds and a sunken 19th-century railway across the middle (mark it on your chartplotter). Walleye, bass, and muskie are the main species. Check current public-launch access before towing; Harris Boat Works has a private ramp in Gores Landing.
+Rice Lake is a 32-km shallow lake on the Trent-Severn, roughly 1 hour 45 minutes from central Toronto in light traffic. Water is 6 to 10 ft deep with heavy summer weeds and a sunken 19th-century railway across the middle (mark it on your chartplotter). Walleye, bass, and muskie are the main species. Check current public-launch access before towing; Harris Boat Works runs a day-fee ramp in Gores Landing that is open to the public.
 
 ---
 
@@ -53,7 +53,7 @@ Harris Boat Works has been at 5369 Harris Boat Works Rd in Gores Landing on Rice
 
 ## What Makes Rice Lake Different
 
-**Shallow.** Most of the lake is 6–10 ft deep. The deepest spots are around 18 ft. That shallow profile makes it warm quickly in spring, which is great for fishing, but it also means it weeds up significantly through summer.
+**Shallow.** Most of the lake is 6–10 ft deep. There are deeper pockets in the main channels and basin. That shallow profile makes it warm quickly in spring, which is great for fishing, but it also means it weeds up significantly through summer.
 
 **Weed beds.** Summer growth is heavy in most bays and along structure. Bring a weed-cutting tool for the prop. Plan for slower running speeds in shallow weed-choked areas.
 
@@ -125,7 +125,7 @@ Other rental options exist around Bewdley, but availability and quality vary. Ca
 
 **[Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc) (PCOC).** Required for anyone operating a powered boat in Canada. One-time test, not annual.
 
-**Required safety equipment.** Sound-signaling device (whistle or horn), bailer, paddle, anchor, navigation lights for sunset operation. Transport Canada publishes the full list, and CO2-charged life jackets count as PFDs.
+**Required safety equipment.** For a powered boat up to 6 m, that means a lifejacket or PFD for each person, a reboarding device, a 15 m buoyant heaving line, a sound-signalling device (whistle or horn), a bailer or manual bilge pump, a paddle or an anchor with 15 m of line, a watertight flashlight (or flares), navigation lights after dark, and a 5BC fire extinguisher if the boat has an inboard engine or a fixed fuel tank. Longer boats need more. Transport Canada publishes the full list, and CO2-charged life jackets count as PFDs.
 
 **The sunken railway.** Worth mentioning twice. Know where it is on your chartplotter. Slow down across the middle of the lake.
 
@@ -135,7 +135,7 @@ Other rental options exist around Bewdley, but availability and quality vary. Ca
 
 ## Fuel and Services on Rice Lake
 
-**HBW (Gores Landing)** sells ethanol-free 89-octane marine fuel directly at our dock. Easier on outboards than the 10% ethanol you get at most pump stations. We're open daily during boating season.
+**HBW (Gores Landing)** sells ethanol-free 89-octane marine fuel directly at our dock. Easier on outboards than the 10% ethanol you get at most pump stations. Check our Google Business Profile for current hours.
 
 For Mercury service, parts, or repower questions, we're a Mercury Marine Premier dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947. Service requests at [hbwservice.ca](https://hbwservice.ca). Phone 905-342-2153.
 

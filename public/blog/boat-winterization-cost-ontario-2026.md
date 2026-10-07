@@ -123,7 +123,7 @@ That is why the service request asks for the actual boat and engine details befo
 
 HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. We also do not offer climate-controlled, summer, or year-round storage.
 
-Winterization, shrinkwrap, storage, trailer work, and repairs are distinct items. Whether they appear together on a quote depends on what the customer requests and HBW accepts. Do not assume a bundle discount, a per-foot rate, or a service is included unless it is written on the current quote.
+Winterization, shrinkwrap, storage, trailer work, and repairs are distinct items. Whether they appear together on a quote depends on what the customer requests and HBW accepts. Do not assume a bundle discount or that a service is included unless it is written on the current quote.
 
 We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport.
 

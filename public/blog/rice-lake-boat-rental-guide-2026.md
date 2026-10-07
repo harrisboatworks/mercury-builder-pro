@@ -61,7 +61,7 @@ Capacity is per boat and it's a hard limit. [If your group is bigger, book two b
 
 **Booking.** Everything runs through the online system at [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals). Live availability and rates are shown there; pay the booking deposit or full balance as prompted. Required documents are due online one day before the rental date.
 
-**Rental hours.** Monday to Saturday 8:00 am to 5:00 pm, Sunday 9:00 am to 4:00 pm. Multi-day rentals are the exception: keep the boat at our dock or at your cottage dock and use it whenever you like, with lights required after dark.
+**Rental hours.** Rentals run on our regular business hours, which are listed on our Google Business Profile. Multi-day rentals are the exception: keep the boat at our dock or at your cottage dock and use it whenever you like, with lights required after dark.
 
 **Check-in.** Show photo ID and a boat operator's card (permanent or temporary) for whoever's driving. We process a $1,000 damage deposit hold on a credit card; it's an authorization, not a charge. Staff fit life jackets for everyone, then the driver gets [a boat orientation and a lake map](/blog/first-time-boat-rental-rice-lake-guide).
 
@@ -97,7 +97,7 @@ The current signed rental agreement governs responsibility for damage, including
 ## Common mistakes
 
 - **Booking the boat but not the licence.** Complete the required driver-competency process before rental day rather than counting on a last-minute fix at check-in.
-- **Bringing a cooler of beer.** Alcohol on our rental boats is prohibited, full stop. Same rules as a car in Ontario, and the OPP patrol Rice Lake seriously.
+- **Bringing a cooler of beer.** Alcohol on our rental boats is prohibited, full stop. Impaired boating is the same Criminal Code offence as impaired driving, and the OPP patrol Rice Lake seriously.
 - **Ignoring the buoyed channels.** The old Harwood-to-Hiawatha rail causeway left rock just under the surface mid-lake. It's unmarked outside the buoyed passes. Use the map we hand you; it exists because of exactly this.
 - **Planning a shore party.** Your group size is the boat's capacity. Extra people can't hang out on our property while you boat.
 - **Cutting the return time close.** Leave enough time to be back by the stated return time; any late-return terms are set by the current signed rental agreement.
@@ -195,7 +195,7 @@ No. Our boats stay on Rice Lake. If you're headed elsewhere in the Kawarthas, re
 
 ### Can we drink on the boat?
 
-No. Alcohol on the rental boats is prohibited, and Ontario treats a boat like a car: enforcement on Rice Lake is real and the penalties are severe. Save it for dry land after the boat's back.
+No. Alcohol on the rental boats is prohibited, and impaired boating is treated like impaired driving under the Criminal Code: enforcement on Rice Lake is real and the penalties are severe. Save it for dry land after the boat's back.
 
 ### What happens if the weather turns bad?
 

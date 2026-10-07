@@ -100,7 +100,7 @@ Un bateau de 16 pi avec deux pêcheurs est la mission du 90. Quand la coque est 
 
 ### Pontons de taille moyenne à grande, 20 à 24 pi
 
-C'est ici que le 115 CT prouve sa valeur. Un ponton de 22 pi avec une charge familiale complète et une glacière mérite au moins 90 CT. Le 115 CT est la bonne réponse si le ponton est un tritoon.
+C'est ici que le 115 CT prouve sa valeur. Un ponton de 22 pi avec une charge familiale complète et une glacière mérite au moins 90 CT. Le 115 CT convient à un tritoon léger ou de taille moyenne; pour un tritoon lourd ou très chargé, voyez le 150 ou plus, selon la plaque de capacité.
 
 ### Vedettes familiales qui font un peu de tout
 

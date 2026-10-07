@@ -73,11 +73,11 @@ Le SeaPro est calibré pour un usage soutenu lourd : couple maximal à plus bas 
 
 Pour qui : grands center consoles offshore. Installations jumelées/triples sur de plus gros bateaux. Acheteurs qui veulent un raffinement maximal, isolation phonique et puissance pour eau libre ou conditions des Grands Lacs.
 
-Presque aucun plaisancier d'eau douce ontarien sur un lac intérieur typique n'a besoin d'un Verado. Si vous exploitez un bateau de pêche de 20 pi sur le lac Rice, un FourStroke 150 ou 200 est le meilleur choix. Verado est en commande spéciale seulement; contactez HBW pour discuter de votre configuration.
+Presque aucun plaisancier d'eau douce ontarien sur un lac intérieur typique n'a besoin d'un Verado. Si vous exploitez un bateau de pêche de 20 pi sur le lac Rice, un FourStroke dimensionné selon la plaque de capacité de la coque (généralement un modèle sous le maximum indiqué) est le meilleur choix. Verado est en commande spéciale seulement; contactez HBW pour discuter de votre configuration.
 
 ### Avator, électrique (en émergence)
 
-La gamme électrique Mercury Avator couvre les applications portatives plus petites et de moyenne portée. Pour la plupart de la pêche et de la plaisance familiale en Ontario, un FourStroke à essence reste le choix pratique. L'autonomie de la batterie et l'infrastructure de recharge ne sont pas encore là pour un usage de remplacement complet.
+La gamme électrique Mercury Avator va du 7.5e portatif au 110e, assez puissant pour des pontons, de petits runabouts et des bateaux de pêche. Pour la plupart de la pêche et de la plaisance familiale en Ontario, un FourStroke à essence reste le choix pratique. L'autonomie de la batterie et l'infrastructure de recharge ne sont pas encore là pour un usage de remplacement complet.
 
 ## Faire correspondre le moteur au cas d'usage ontarien
 
@@ -134,7 +134,7 @@ Un moteur principal dans la plage FourStroke 60 à 115 HP jumelé à un Mercury 
 
 ### Comment choisir le bon Mercury pour mon bateau ontarien?
 
-Commencez avec le HP maximum de la plaque de capacité de votre coque. Puis considérez votre usage principal. Pour la plupart des bateaux de pêche et familiaux ontariens, la réponse se trouve dans la plage FourStroke 60 à 115 HP.
+Commencez par la plaque de capacité de votre coque : le HP maximum indiqué est une limite, pas une cible, et le meilleur choix est généralement un modèle Mercury sous ce maximum. Puis considérez votre usage principal. Pour la plupart des bateaux de pêche et familiaux ontariens, la réponse se trouve dans la plage FourStroke 60 à 115 HP.
 
 ## Prochaines étapes
 

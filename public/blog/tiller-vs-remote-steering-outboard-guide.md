@@ -110,7 +110,7 @@ We sell both configurations at HBW. The decision comes down to honest analysis o
 **The clear no for tiller:**
 - Console boats over 16 ft, the helm exists; tiller is awkward from it
 - Family boats where the captain needs to talk to people up front
-- Higher HP motors (50+ HP) where the tiller becomes physically demanding
+- Higher HP motors (above about 60 HP) where the tiller becomes physically demanding
 
 ---
 
@@ -218,7 +218,7 @@ For fishing on Rice Lake specifically, tiller is the choice of most serious angl
 
 ### Does Mercury offer electronic or digital tiller steering?
 
-Mercury does not currently offer fully electronic or steer-by-wire tiller systems, the tiller remains a direct mechanical connection to the motor. However, Mercury's tiller-equipped motors do integrate with the SmartCraft digital ecosystem via Bluetooth: SmartCraft Connect Mobile (formerly VesselView Mobile) shows engine data, maintenance schedules, and trip information on a smartphone. The result is mechanical simplicity at the control point with digital monitoring on your phone.
+Mercury does not currently offer fully electronic or steer-by-wire tiller systems, the tiller remains a direct mechanical connection to the motor. However, Many tiller-equipped Mercury motors can connect to the SmartCraft digital ecosystem via Bluetooth with the optional SmartCraft Connect Mobile module (formerly VesselView Mobile). It works with 40 HP and larger engines from model year 2004, and 25 and 30 HP engines from 2022. The Mercury Marine app then shows live engine data, fuel burn, fault alerts and maintenance logs on a smartphone. The result is mechanical simplicity at the control point with digital monitoring on your phone.
 
 ### Is hydraulic steering worth it on a Mercury outboard, and what does it cost?
 

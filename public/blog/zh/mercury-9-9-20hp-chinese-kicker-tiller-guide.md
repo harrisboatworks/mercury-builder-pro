@@ -41,7 +41,7 @@ Mercury 9.9至20HP适合小铝船、轻载钓鱼、Kicker辅助机、Trolling，
 
 - [Mercury Marine](https://www.mercurymarine.com/ca/en) Premier 认证经销商
 - 透明加元价格，无需讨价还价
-- 从 GTA 经 401 + 115 高速约 60 到 90 分钟车程
+- 从多伦多经 401 向东约 90 分钟车程
 
 [在线获取报价](/quote/motor-selection)
 
@@ -140,7 +140,7 @@ Transport Canada规定，有引擎的休闲船如果马力达到特定门槛，�
 **想买Mercury 9.9至20HP？**
 到 **[mercuryrepower.ca](https://www.mercuryrepower.ca)** 看当前加币报价，确认轴长和控制方式后，至 **[hbwservice.ca](https://hbwservice.ca)** 提交申请让HBW确认配置是否适合你的船。
 
-Harris Boat Works，自1947年起，Mercury Marine Premier Dealer，位于Rice Lake南岸Gores Landing。
+Harris Boat Works，自1947年起家族经营，自1965年起为 Mercury 经销商，现为 Mercury Marine Premier Dealer，位于Rice Lake南岸Gores Landing。
 ---
 
 ## FAQs

@@ -159,7 +159,7 @@ Installation isn't terrible on most boats, a couple of hours plus configuration.
 
 Honest take, customer-by-customer:
 
-- **You have a 2010+ Mercury and you've never paired it to your phone:** worth the module + an hour of your time. The fuel flow and hour-tracking alone will pay for it over a season.
+- **You have a SmartCraft-capable Mercury (2004 or newer and 40 HP or more, or 25 to 30 HP from 2022) and you've never paired it to your phone:** worth the module + an hour of your time. The fuel flow and hour-tracking alone will pay for it over a season.
 - **[You're repowering and choosing options](/blog/mercury-repower-cost-ontario-2026-cad):** add the SmartCraft Connect module from day one. Cheaper as part of a rigging job than as a retrofit.
 - **You have a multi-engine boat:** the multi-engine module is genuinely useful, see all engines on one screen, compare RPM trims, catch one engine running hotter than the others before it becomes a problem.
 - **You have a 2003 or older Mercury:** you don't have SmartCraft, and adding it isn't realistic. Skip.

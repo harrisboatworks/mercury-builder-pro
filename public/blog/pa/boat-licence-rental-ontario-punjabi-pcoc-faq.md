@@ -29,7 +29,7 @@ revenue_driver: rentals
 **Read time:** 8 ਮਿੰਟ  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/pa/boat-licence-rental-ontario-punjabi-pcoc-faq
 
-ਜਵਾਬ ਪਹਿਲਾਂ: Ontario ਵਿੱਚ ਕੋਈ ਵੀ ਮੋਟਰ ਵਾਲੀ ਕਿਸ਼ਤੀ (power-driven boat) ਚਲਾਉਣ ਲਈ ਤੁਹਾਡੇ ਕੋਲ PCOC (Pleasure Craft Operator Card) ਜਾਂ ਹੋਰ ਮਾਨਤਾ-ਪ੍ਰਾਪਤ proof of competency ਹੋਣਾ ਲਾਜ਼ਮੀ ਹੈ। ਇਹ ਕਾਰਡ-ਵਰਗਾ ਸਰਟੀਫਿਕੇਟ ਹੈ, ਜਿਵੇਂ ਕਾਰ ਚਲਾਉਣ ਲਈ ਡਰਾਈਵਿੰਗ ਲਾਇਸੰਸ। ਮਾਮੂਲੀ ਪੈਡਲ ਬੋਟਾਂ, ਕਾਇਆਕ, ਜਾਂ ਕੈਨੂਆਂ ਲਈ PCOC ਦੀ ਲੋੜ ਨਹੀਂ, ਬੱਸ ਜੇ ਉਹਨਾਂ ’ਤੇ ਕੋਈ ਮੋਟਰ ਲੱਗੀ ਹੋਵੇ। Harris Boat Works ਵਿੱਚ ਹਰ driver ਨੂੰ check-in ਸਮੇਂ ਵੈਧ boat operator licence ਦਿਖਾਉਣਾ ਲਾਜ਼ਮੀ ਹੈ।
+ਜਵਾਬ ਪਹਿਲਾਂ: Ontario ਵਿੱਚ ਕੋਈ ਵੀ ਮੋਟਰ ਵਾਲੀ ਕਿਸ਼ਤੀ (power-driven boat) ਚਲਾਉਣ ਲਈ ਤੁਹਾਡੇ ਕੋਲ PCOC (Pleasure Craft Operator Card) ਜਾਂ ਹੋਰ ਮਾਨਤਾ-ਪ੍ਰਾਪਤ proof of competency ਹੋਣਾ ਲਾਜ਼ਮੀ ਹੈ। ਇਹ ਕਾਰਡ-ਵਰਗਾ ਸਰਟੀਫਿਕੇਟ ਹੈ, ਜਿਵੇਂ ਕਾਰ ਚਲਾਉਣ ਲਈ ਡਰਾਈਵਿੰਗ ਲਾਇਸੰਸ। ਮਾਮੂਲੀ ਪੈਡਲ ਬੋਟਾਂ, ਕਾਇਆਕ, ਜਾਂ ਕੈਨੂਆਂ ਲਈ PCOC ਦੀ ਲੋੜ ਨਹੀਂ, ਬੱਸ ਜੇ ਉਹਨਾਂ ’ਤੇ ਕੋਈ ਮੋਟਰ ਲੱਗੀ ਹੋਵੇ। Harris Boat Works ਵਿੱਚ ਹਰ driver ਨੂੰ check-in ਸਮੇਂ ਵੈਧ PCOC ਦਿਖਾਉਣਾ ਲਾਜ਼ਮੀ ਹੈ।
 
 PCOC ਚਾਹੀਦਾ ਹੈ? [HBW ਦੇ MyBoatCard ਰੈਫ਼ਰਲ ਲਿੰਕ](https://myboatcard.com/card/harrisboat) ਰਾਹੀਂ ਆਨਲਾਈਨ ਕੋਰਸ ਕਰੋ ਅਤੇ **15% ਛੋਟ** ਲਈ ਕੋਡ **HARRIS15** ਵਰਤੋ।
 
@@ -45,11 +45,11 @@ PCOC ਇੱਕ ਜੀਵਨ-ਭਰ ਦੀ ਯੋਗਤਾ ਹੈ, ਜੋ ਇਹ 
 
 ## HBW ਤੋਂ boat rent ਕਰਨ ਲਈ PCOC ਚਾਹੀਦੀ ਹੈ? | Do I need a PCOC to rent from HBW?
 
-ਹਾਂ। Harris Boat Works ਵਿੱਚ ਹਰ driver ਨੂੰ check-in ਸਮੇਂ ਵੈਧ boat operator licence ਦਿਖਾਉਣਾ ਲਾਜ਼ਮੀ ਹੈ। Rental safety checklist safety briefing ਵਜੋਂ ਫਿਰ ਵੀ ਪੂਰੀ ਹੁੰਦੀ ਹੈ, ਪਰ HBW ਇਸਨੂੰ driver ਦੇ licence ਦੀ ਥਾਂ ਨਹੀਂ ਵਰਤਦਾ। ਜਿਹੜੇ passengers boat ਨਹੀਂ ਚਲਾਉਣਗੇ, ਉਹਨਾਂ ਨੂੰ PCOC ਦੀ ਲੋੜ ਨਹੀਂ। ਕਿਰਾਏ ਦੀ ਪ੍ਰਕਿਰਿਆ ਵਿੱਚ ਸੁਰੱਖਿਆ briefing, ਮੁੱਢਲੀ ਚਲਾਉਣ ਦੀਆਂ ਹਦਾਇਤਾਂ ਅਤੇ ਸਾਜ਼ੋ-ਸਾਮਾਨ ਦੀ ਜਾਂਚ ਵੀ ਸ਼ਾਮਲ ਹਨ। ਮੌਜੂਦਾ requirements ਅਤੇ availability ਲਈ ਵੇਖੋ: https://harrisboatworks.ca/rentals
+ਹਾਂ। Harris Boat Works ਵਿੱਚ ਹਰ driver ਨੂੰ check-in ਸਮੇਂ ਵੈਧ PCOC (Pleasure Craft Operator Card) ਦਿਖਾਉਣਾ ਲਾਜ਼ਮੀ ਹੈ। Rental safety checklist safety briefing ਵਜੋਂ ਫਿਰ ਵੀ ਪੂਰੀ ਹੁੰਦੀ ਹੈ, ਪਰ HBW ਇਸਨੂੰ driver ਦੇ licence ਦੀ ਥਾਂ ਨਹੀਂ ਵਰਤਦਾ। ਜਿਹੜੇ passengers boat ਨਹੀਂ ਚਲਾਉਣਗੇ, ਉਹਨਾਂ ਨੂੰ PCOC ਦੀ ਲੋੜ ਨਹੀਂ। ਕਿਰਾਏ ਦੀ ਪ੍ਰਕਿਰਿਆ ਵਿੱਚ ਸੁਰੱਖਿਆ briefing, ਮੁੱਢਲੀ ਚਲਾਉਣ ਦੀਆਂ ਹਦਾਇਤਾਂ ਅਤੇ ਸਾਜ਼ੋ-ਸਾਮਾਨ ਦੀ ਜਾਂਚ ਵੀ ਸ਼ਾਮਲ ਹਨ। ਮੌਜੂਦਾ requirements ਅਤੇ availability ਲਈ ਵੇਖੋ: https://harrisboatworks.ca/rentals
 
 ## PCOC online ਕਿਵੇਂ ਬਣਾਈਏ? | How to get PCOC online
 
-Transport Canada ਵੱਲੋਂ ਮਾਨਤਾ ਪ੍ਰਾਪਤ ਨਿੱਜੀ ਕੋਰਸ ਪ੍ਰਦਾਤਾ online ਕੋਰਸ ਪੇਸ਼ ਕਰਦੇ ਹਨ। ਪ੍ਰਕਿਰਿਆ ਸੌਖੀ ਹੈ: online ਪੜ੍ਹਾਈ (ਅਧਿਆਏ, ਵੀਡੀਓ, ਕੁਇਜ਼), ਫਿਰ final Transport Canada exam। ਪਾਸ ਹੋਣ ਤੋਂ ਬਾਅਦ provider ਦੇ temporary proof ਦੀਆਂ ਸ਼ਰਤਾਂ ਧਿਆਨ ਨਾਲ ਪੜ੍ਹੋ ਅਤੇ permanent card ਆਉਣ ’ਤੇ ਅਸਲ card ਨਾਲ ਰੱਖੋ; ਆਮ paper ਜਾਂ electronic PCOC copy ਮਨਜ਼ੂਰ ਨਹੀਂ। ਕੀਮਤ ਕੋਰਸ ਪ੍ਰਦਾਤਾ ਤੈਅ ਕਰਦੇ ਹਨ, ਅਸੀਂ ਸਹੀ ਡਾਲਰ ਦੀ ਰਕਮ ਨਹੀਂ ਦੱਸ ਸਕਦੇ। ਅਧਿਕਾਰਤ ਪ੍ਰਵਾਨਤ ਪ੍ਰਦਾਤਾਵਾਂ ਦੀ ਸੂਚੀ ਲਈ TC site ’ਤੇ ਜਾਓ: [Transport Canada education resources](https://tc.canada.ca/en/marine-transportation/buying-boat/find-education-resources-recreational-boaters)। translation app naal study possible hai. official exam language ate approved assistance (interpreter samet) paise laun ton pehlan accredited provider naal unhan de approved protocol heth taiya karo; family nu bina manzoori exam vich bitha ke jawab ya anuvaad na karvao. Punjabi exam har thaon milda hai ya English/French ton bina koi sahaita hi nahi, eh doven dharanavan na banao. Rule: [Transport Canada Quality Assurance and Control Requirements](https://tc.canada.ca/en/marine-transportation/marine-safety/quality-assurance-control-requirements-course-providers-national-pleasure-craft-operator-competency-program). free online "Punjabi PCOC" de daavian te bharosa na karo.
+Transport Canada ਵੱਲੋਂ ਮਾਨਤਾ ਪ੍ਰਾਪਤ ਨਿੱਜੀ ਕੋਰਸ ਪ੍ਰਦਾਤਾ online ਕੋਰਸ ਪੇਸ਼ ਕਰਦੇ ਹਨ। ਪ੍ਰਕਿਰਿਆ ਸੌਖੀ ਹੈ: online ਪੜ੍ਹਾਈ (ਅਧਿਆਏ, ਵੀਡੀਓ, ਕੁਇਜ਼), ਫਿਰ provider ਰਾਹੀਂ final exam। ਪਾਸ ਹੋਣ ਤੋਂ ਬਾਅਦ provider ਦੇ temporary proof ਦੀਆਂ ਸ਼ਰਤਾਂ ਧਿਆਨ ਨਾਲ ਪੜ੍ਹੋ ਅਤੇ permanent card ਆਉਣ ’ਤੇ ਅਸਲ card ਨਾਲ ਰੱਖੋ; ਆਮ paper ਜਾਂ electronic PCOC copy ਮਨਜ਼ੂਰ ਨਹੀਂ। ਕੀਮਤ ਕੋਰਸ ਪ੍ਰਦਾਤਾ ਤੈਅ ਕਰਦੇ ਹਨ, ਅਸੀਂ ਸਹੀ ਡਾਲਰ ਦੀ ਰਕਮ ਨਹੀਂ ਦੱਸ ਸਕਦੇ। ਅਧਿਕਾਰਤ ਪ੍ਰਵਾਨਤ ਪ੍ਰਦਾਤਾਵਾਂ ਦੀ ਸੂਚੀ ਲਈ TC site ’ਤੇ ਜਾਓ: [Transport Canada education resources](https://tc.canada.ca/en/marine-transportation/buying-boat/find-education-resources-recreational-boaters)। translation app naal study possible hai. official exam language ate approved assistance (interpreter samet) paise laun ton pehlan accredited provider naal unhan de approved protocol heth taiya karo; family nu bina manzoori exam vich bitha ke jawab ya anuvaad na karvao. Punjabi exam har thaon milda hai ya English/French ton bina koi sahaita hi nahi, eh doven dharanavan na banao. Rule: [Transport Canada Quality Assurance and Control Requirements](https://tc.canada.ca/en/marine-transportation/marine-safety/quality-assurance-control-requirements-course-providers-national-pleasure-craft-operator-competency-program). free online "Punjabi PCOC" de daavian te bharosa na karo.
 
 ## ਬੱਚੇ ਤੇ supervision: umar ਦੇ rules | Kids and supervision rules
 
@@ -89,7 +89,7 @@ Muft Punjabi course da bharosa na karo; providers keemat mangange. Translation a
 
 ### Mere chacha ji apni boat leke Ontario aaye; kya oh bina card de chala sakde?
 
-ਨਹੀਂ, motor boat operate ਕਰਨ ਲਈ valid PCOC ਹੋਣੀ ਚਾਹੀਦੀ, ਨਹੀਂ ਤਾਂ officer penalty ਲਾ ਸਕਦਾ। Temporary visitor ਵੀ online course ਕੀਤਾ ਜਾ ਸਕਦਾ, ਇਸ ਲਈ planning ਕਰਕੇ ਆਓ।
+ਜੇ ਉਹ Canada ਦੇ visitor ਹਨ ਅਤੇ ਆਪਣੀ ਲਿਆਂਦੀ ਕਿਸ਼ਤੀ 45 ਲਗਾਤਾਰ ਦਿਨਾਂ ਤੋਂ ਘੱਟ ਚਲਾਉਂਦੇ ਹਨ, ਤਾਂ Transport Canada ਮੁਤਾਬਕ ਉਹਨਾਂ ਨੂੰ proof of competency ਦੀ ਲੋੜ ਨਹੀਂ। ਇਸ ਤੋਂ ਵੱਧ ਸਮੇਂ ਲਈ visitor ਕੋਲ ਆਪਣੇ ਦੇਸ਼ ਦੀਆਂ ਸ਼ਰਤਾਂ ਪੂਰੀਆਂ ਕਰਦਾ operator card ਜਾਂ PCOC ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ, ਅਤੇ ਜੇ ਉਹ Canada ਵਿੱਚ ਰਹਿੰਦੇ ਹਨ ਤਾਂ valid PCOC ਹੋਣੀ ਚਾਹੀਦੀ ਹੈ, ਨਹੀਂ ਤਾਂ officer penalty ਲਾ ਸਕਦਾ ਹੈ। Temporary visitor ਵੀ online course ਕਰ ਸਕਦੇ ਹਨ, ਇਸ ਲਈ planning ਕਰਕੇ ਆਓ। ਪੂਰੇ ਨਿਯਮ Transport Canada ਦੇ official ਸਫ਼ੇ ’ਤੇ ਵੇਖੋ।
 
 ### Ki Harris Boat Works te Punjabi vich service mildi hai?
 

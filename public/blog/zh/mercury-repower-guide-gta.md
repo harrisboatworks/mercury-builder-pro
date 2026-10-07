@@ -33,7 +33,7 @@ revenue_driver: repower
 
 1. **维修保养：**先填写[服务申请](https://hbwservice.ca)，说明船只、发动机和需要处理的问题。
 2. **更换发动机：**使用[Mercury 报价工具](/quote/motor-selection)说明您的需求，HBW 会根据船只情况确认配置和工作范围。
-3. **送船：**完成服务申请后，您可以随时送船，包括营业时间以外；无需等待确认送船时段。
+3. **送船：**完成服务申请后，您可以送船，包括营业时间以外；HBW 12 月 1 日至 4 月 1 日停业，期间不接收船只。
 4. **确认与交接：**HBW 会与您联系，确认所需资料、工作授权和安排。交接时核对已完成的工作和相关文件。
 
 Harris Boat Works 是 Mercury Premier 经销商。
@@ -50,7 +50,7 @@ Harris Boat Works 是安大略省 Rice Lake 的 [Mercury Marine](https://www.mer
 
 - Mercury Marine Premier 认证经销商
 - 透明加元价格，无需讨价还价
-- 从 GTA 经 401 + 115 高速约 60 到 90 分钟车程
+- 从多伦多经 401 向东约 90 分钟车程
 
 [在线获取报价](/quote/motor-selection)
 
@@ -105,7 +105,7 @@ Repower 不只是换一台「差不多大」的机器。选对马力对于安全
 |---|---|
 | FourStroke | 大多数家庭和钓鱼用途，安静省油，用途最广 |
 | Pro XS | 注重加速性能和钓鱼操控的人 |
-| Verado | 大型或高端船，追求静音和精细操控 |
+| Verado | 大型或高端船，追求静音和精细操控（仅限特别订购，需先向 HBW 咨询） |
 
 **对大多数 GTA 华人家庭船主来说，FourStroke 系列是最实际的起点。**
 

@@ -218,7 +218,7 @@ Throttle and shift controls, steering system, wiring harness, gauges or displays
 
 ### Can I keep my existing rigging during a Mercury repower?
 
-Often yes for Mercury-to-Mercury repowers with rigging less than 15 years old. Brand conversions need new everything. We assess during the hull walk-around.
+Often yes for Mercury-to-Mercury repowers with rigging less than 15 years old. Brand conversions need most of the rigging replaced. We assess during the hull walk-around.
 
 ### Why do brand conversions cost more in rigging?
 
@@ -230,7 +230,7 @@ For motors 90 HP and up, hydraulic is the modern standard and is worth the upgra
 
 ### What's Mercury SmartCraft and do I need it?
 
-SmartCraft is Mercury's digital data and display system. VesselView 4/7/9 displays show motor data (RPM, fuel, oil, alerts) digitally. For modern Mercury motors, SmartCraft connectivity is built in, and the SmartCraft Connect Mobile app pairs your phone to the motor. Whether you need a dedicated VesselView display depends on whether you want digital gauges or are happy with analog.
+SmartCraft is Mercury's digital data and display system. VesselView 4/7/9 displays show motor data (RPM, fuel, oil, alerts) digitally. Modern Mercury motors carry SmartCraft data, and the SmartCraft Connect Mobile module (a small add-on) lets the Mercury app connect your phone to the motor. Whether you need a dedicated VesselView display depends on whether you want digital gauges or are happy with analog.
 
 ### How much does a new Mercury propeller cost?
 

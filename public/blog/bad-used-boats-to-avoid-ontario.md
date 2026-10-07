@@ -117,7 +117,7 @@ It doesn't mean every E-TEC is a write-off. It means the risk profile is differe
 
 ### Older Force, Chrysler, or Off-Brand Outboards
 
-Short version: parts are either gone or nearly impossible to source. Service technicians who know these motors well are retiring. If the motor fails in a meaningful way, you're likely replacing it, which means the motor has zero value, and you're overpaying for a hull.
+Short version: parts are limited, often aftermarket only, and hard to source. Service technicians who know these motors well are retiring. If the motor fails in a meaningful way, you're likely replacing it, which means the motor has zero value, and you're overpaying for a hull.
 
 If you're seeing these on a listing and the seller is pricing the motor as a selling point, that's a problem.
 
