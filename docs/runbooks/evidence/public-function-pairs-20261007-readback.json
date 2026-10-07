@@ -1,15 +1,16 @@
 {
-  "checkedAt": "2026-10-07T13:03:11.999Z",
+  "checkedAt": "2026-10-07T21:40:43.288086+00:00",
   "project": "eutsoqdpjurknjsshxes",
-  "candidateMain": "fb249449df61cbcc8fca2d99e84bc5a019f0eb89",
+  "candidateMain": "6bcd1134060219a787dffbde27d126ebc5451595",
   "providerVerification": "NOT_REFRESHED",
   "bundles": [
     {
       "slug": "ai-chatbot",
       "status": "ACTIVE",
       "version": 754,
-      "updatedAt": "2026-10-06T15:50:29.383Z",
+      "updatedAt": "2026-10-06T15:50:29.383000+00:00",
       "verifyJwt": false,
+      "bundleSha256": "cefe9eb65b74a5757fa47ee4f7fde72488f53e6181661521e2b1c5b475704ea9",
       "files": [
         {
           "path": "supabase/functions/ai-chatbot/index.ts",
@@ -56,7 +57,7 @@
         {
           "path": "supabase/functions/_shared/blog-index-generated.ts",
           "deployedSha256": "8e856bd74341e694bbdb3597aef00e4365774441bc6ed5b69f4d798209d75dfc",
-          "candidateSha256": "138569fa11ff2cc89119a7c89aa09e1b63a2f5b37c2375c6f5e3e14014a5cc5e",
+          "candidateSha256": "26db91bfce25f92a42d26f4e2ef0afce9b5df84e28facf28ca81dc442ef63244",
           "matches": false
         },
         {
@@ -101,8 +102,9 @@
       "slug": "ai-chatbot-stream",
       "status": "ACTIVE",
       "version": 466,
-      "updatedAt": "2026-10-06T15:50:29.383Z",
+      "updatedAt": "2026-10-06T15:50:29.383000+00:00",
       "verifyJwt": false,
+      "bundleSha256": "80f1228308e96784d28fd1d22fd95b9d8402db8f895edf3350e676ee0b496153",
       "files": [
         {
           "path": "supabase/functions/ai-chatbot-stream/index.ts",
@@ -149,7 +151,7 @@
         {
           "path": "supabase/functions/_shared/blog-index-generated.ts",
           "deployedSha256": "8e856bd74341e694bbdb3597aef00e4365774441bc6ed5b69f4d798209d75dfc",
-          "candidateSha256": "138569fa11ff2cc89119a7c89aa09e1b63a2f5b37c2375c6f5e3e14014a5cc5e",
+          "candidateSha256": "26db91bfce25f92a42d26f4e2ef0afce9b5df84e28facf28ca81dc442ef63244",
           "matches": false
         },
         {
@@ -206,8 +208,9 @@
       "slug": "realtime-session",
       "status": "ACTIVE",
       "version": 411,
-      "updatedAt": "2026-10-06T15:50:29.383Z",
+      "updatedAt": "2026-10-06T15:50:29.383000+00:00",
       "verifyJwt": false,
+      "bundleSha256": "8157a63e52b22b1e75af9b1190108661b956e353ee4d68f564d63a75b2090530",
       "files": [
         {
           "path": "supabase/functions/realtime-session/index.ts",
@@ -266,7 +269,7 @@
         {
           "path": "supabase/functions/_shared/blog-index-generated.ts",
           "deployedSha256": "8e856bd74341e694bbdb3597aef00e4365774441bc6ed5b69f4d798209d75dfc",
-          "candidateSha256": "138569fa11ff2cc89119a7c89aa09e1b63a2f5b37c2375c6f5e3e14014a5cc5e",
+          "candidateSha256": "26db91bfce25f92a42d26f4e2ef0afce9b5df84e28facf28ca81dc442ef63244",
           "matches": false
         },
         {
@@ -311,8 +314,9 @@
       "slug": "realtime-sdp-exchange",
       "status": "ACTIVE",
       "version": 388,
-      "updatedAt": "2026-10-06T15:50:29.383Z",
+      "updatedAt": "2026-10-06T15:50:29.383000+00:00",
       "verifyJwt": false,
+      "bundleSha256": "d6faa6075346e9d8f0646709cbc35065fbf705b378d1511a9e74fe5b68eb139d",
       "files": [
         {
           "path": "supabase/functions/realtime-sdp-exchange/index.ts",
