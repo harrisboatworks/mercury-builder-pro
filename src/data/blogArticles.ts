@@ -28397,7 +28397,7 @@ Impeller wear is a maintenance item, not a defect, unless the impeller fails ver
   {
     slug: 'mercury-dealer-whitby-ontario-hbw',
     title: 'Mercury Dealer for Whitby: Only 45 Minutes to Rice Lake',
-    description: 'Mercury Premier dealer for Whitby: Harris Boat Works on Rice Lake, 45 minutes north via 401 and 115. Repower, sales, parts, winter storage for Durham Region.',
+    description: 'Mercury Premier dealer for Whitby: Harris Boat Works on Rice Lake, 45 minutes via the 401 and County Road 18. Repower, sales, parts, winter storage for Durham Region.',
     image: '/lovable-uploads/blog-heroes-2026-07/batch-b/hero-best-mercury-pontoon-90ct-freshwater-2026-07.webp',
     imageAlt: 'Official Mercury freshwater photography of a family pontoon powered by a 90 HP Command Thrust FourStroke',
     author: 'Jay Harris',
@@ -28407,7 +28407,7 @@ Impeller wear is a maintenance item, not a defect, unless the impeller fails ver
     category: 'Dealer Locations',
     readTime: '4 min',
     keywords: ['mercury dealer whitby', 'mercury repower whitby', 'mercury outboard whitby ontario', 'boat motor service durham region'],
-    content: `> **Quick answer:** Harris Boat Works is a Mercury Marine Premier Dealer in Gores Landing on Rice Lake, approximately 45 minutes north of Whitby via Highway 401 east and Highway 115. We handle Mercury outboard sales, repowers, parts, and service. See installed pricing at mercuryrepower.ca. For engine repairs, we only service Mercury and MerCruiser.
+    content: `> **Quick answer:** Harris Boat Works is a Mercury Marine Premier Dealer in Gores Landing on Rice Lake, approximately 45 minutes northeast of Whitby via Highway 401 east to Exit 472 in Cobourg, then County Road 18 north. We handle Mercury outboard sales, repowers, parts, and service. See installed pricing at mercuryrepower.ca. For engine repairs, we only service Mercury and MerCruiser.
 
 
 See [why boaters across Ontario choose Harris Boat Works](/blog/best-mercury-dealer-ontario-hbw-difference) for the full breakdown of our approach.
@@ -28428,9 +28428,9 @@ Check your route before leaving; travel time varies with your starting point, tr
 
 Whitby sits in that Durham Region sweet spot, far enough east to have cleared most of the GTA congestion, close enough to Rice Lake that a trip up here isn't a production.
 
-At approximately 45 minutes via the 401 and Highway 115, we're within range of being your regular dealer, not just the place you went once for a big purchase.
+At approximately 45 minutes via the 401 and County Road 18, we're within range of being your regular dealer, not just the place you went once for a big purchase.
 
-We're not in Whitby. Harris Boat Works is in Gores Landing on Rice Lake, about 45 minutes northeast via the 401 and 115. Here's why Whitby boaters make the drive.
+We're not in Whitby. Harris Boat Works is in Gores Landing on Rice Lake, about 45 minutes northeast via the 401 and County Road 18. Here's why Whitby boaters make the drive.
 
 ## Why "Regular Dealer" Matters at 45 Minutes
 
@@ -28477,7 +28477,7 @@ HBW offers outdoor storage with professional shrink wrap, outdoor uncovered stor
 
 Whitby Harbour Marina is a city-owned launch with 200+ slips, and Whitby Yacht Club is the other local launch point. Many Whitby boaters trailer inland when Lake Ontario is too exposed.
 
-**Route:** Highway 401 east to Highway 115 north, then County Road 28 north to Gores Landing.
+**Route:** Highway 401 east to Exit 472 (County Road 18 / Burnham Street, Cobourg), then north on County Road 18 about 16 km to Gores Landing.
 
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 **Phone:** 905-342-2153
@@ -28528,7 +28528,7 @@ That's the deal. Has been since 1947.
 ---
 `,
     faqs: [
-      { question: 'How far is HBW from Whitby?', answer: 'About 45 minutes via Highway 401 east and Highway 115 north. Roughly 70 km. One of the closer GTA cities to Rice Lake.' },
+      { question: 'How far is HBW from Whitby?', answer: 'About 45 minutes via Highway 401 east to Exit 472 in Cobourg, then County Road 18 north. Roughly 80 km. One of the closer GTA cities to Rice Lake.' },
       { question: 'Can HBW be my primary Mercury dealer if I live in Whitby?', answer: 'Yes. Whitby owners can book eligible Mercury and MerCruiser work at HBW in Gores Landing. Complete the service request at hbwservice.ca, then drop off your boat anytime, including after hours; boat pickup may be arranged, subject to confirmation. HBW does not deliver boats after service, so customers arrange collection.' },
       { question: 'Do you serve Brooklin and north Whitby?', answer: 'Yes. Boat owners from Brooklin and north Whitby can book eligible work at HBW in Gores Landing. Drive time varies by the starting point and traffic.' },
     ],

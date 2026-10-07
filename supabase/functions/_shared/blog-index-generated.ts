@@ -4238,7 +4238,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   {
     "slug": "mercury-dealer-whitby-ontario-hbw",
     "title": "Mercury Dealer for Whitby: Only 45 Minutes to Rice Lake",
-    "description": "Mercury Premier dealer for Whitby: Harris Boat Works on Rice Lake, 45 minutes north via 401 and 115. Repower, sales, parts, winter storage for Durham Region.",
+    "description": "Mercury Premier dealer for Whitby: Harris Boat Works on Rice Lake, 45 minutes via the 401 and County Road 18. Repower, sales, parts, winter storage for Durham Region.",
     "category": "Dealer Locations",
     "publishDate": "2026-05-11",
     "keywords": [
@@ -4250,7 +4250,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "How far is HBW from Whitby?",
-        "a": "About 45 minutes via Highway 401 east and Highway 115 north. Roughly 70 km. One of the closer GTA cities to Rice Lake."
+        "a": "About 45 minutes via Highway 401 east to Exit 472 in Cobourg, then County Road 18 north. Roughly 80 km. One of the closer GTA cities to Rice Lake."
       },
       {
         "q": "Can HBW be my primary Mercury dealer if I live in Whitby?",
