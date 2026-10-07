@@ -208,13 +208,13 @@ harrisboatworks.ca
     keywords: ['pesca Rice Lake Ontario', 'guía pesca Ontario', 'pescar walleye Ontario', 'lago cerca de Toronto para pescar'],
     content: `### Respuesta rápida
 
-Rice Lake es uno de los mejores lagos para pescar walleye (lucioperca / doré) en toda Ontario. Está a aproximadamente **1.5 horas al este de Toronto** por la Hwy 401 Este, salida 472 en Cobourg, y County Road 18 al norte. La temporada de walleye en la Zona de Gestión de Pesca 17 (FMZ 17) abre el segundo sábado de mayo y cierra el 15 de noviembre, con límites combinados de walleye y sauger de 4 con Sport y 1 con Conservation, solo de 35–50 cm. Los lagos Balsam y Mitchell tienen reglas propias. Las licencias de pesca son obligatorias para residentes de Canadá de 18 a 64 años y para la mayoría de los no residentes de Canadá, incluso a los 65 años o más. Verifica siempre las fechas y límites actuales en ontario.ca antes de salir.
+Rice Lake sigue siendo un buen lago de pesca en 2026: el bass de boca pequeña, el muskie y el crappie son hoy las mejores apuestas, y el walleye (lucioperca) sigue en el lago pero cuesta más capturarlo. Está a aproximadamente **1.5 horas al este de Toronto** por la autopista 401 Este, salida 472 en Cobourg, y County Road 18 al norte. La temporada de walleye en la Zona de Gestión de Pesca 17 (FMZ 17) abre el segundo sábado de mayo y cierra el 15 de noviembre, con límites combinados de walleye y sauger de 4 con Sport y 1 con Conservation, solo de 35–50 cm. Los lagos Balsam y Mitchell tienen reglas propias. Las licencias de pesca son obligatorias para residentes de Canadá de 18 a 64 años y para la mayoría de los no residentes de Canadá, incluso a los 65 años o más. Verifica siempre las fechas y límites actuales en ontario.ca antes de salir.
 
 ¿Necesita su PCOC? Haga el curso en línea con [el enlace de recomendación de HBW a MyBoatCard](https://myboatcard.com/card/harrisboat) y use el código **HARRIS15** para obtener **15% de descuento**.
 
 ---
 
-Hay muchos lagos en Ontario. Rice Lake no es el más grande ni el más profundo, pero para quienes saben pescar, tiene una reputación que pocos lagos del interior pueden igualar. Walleye abundante, bass de boca grande y pequeña, muskie, perca amarilla, y un acceso práctico desde el área metropolitana de Toronto que lo hace realista para una excursión de un día.
+Hay muchos lagos en Ontario. Rice Lake no es el más grande ni el más profundo, pero para quienes saben pescar, tiene una reputación que pocos lagos del interior pueden igualar. Bass de boca grande y pequeña, muskie, crappie, perca amarilla, walleye (hoy más difícil de capturar) y un acceso práctico desde el área metropolitana de Toronto que lo hace realista para una excursión de un día.
 
 Harris Boat Works es una empresa familiar desde 1947, a orillas de este lago, en Gores Landing. Vendemos motores, rentamos botes y damos servicio a embarcaciones aquí. Esta guía la escribimos para pescadores hispanohablantes que quieren aprovechar bien Rice Lake sin perder tiempo buscando información fragmentada en inglés.
 
@@ -222,12 +222,12 @@ Harris Boat Works es una empresa familiar desde 1947, a orillas de este lago, en
 
 ## Sobre Rice Lake
 
-Rice Lake tiene entre **28 y 32 km de longitud** y forma parte del sistema fluvial Trent-Severn. El río Otonabee alimenta el extremo oeste del lago, conectándolo con Peterborough y los lagos Kawartha.
+Rice Lake tiene aproximadamente **32 km de longitud** y forma parte del sistema fluvial Trent-Severn. El río Otonabee alimenta el extremo oeste del lago, conectándolo con Peterborough y los lagos Kawartha.
 
-El fondo variable del lago, mezclas de arena, grava, barro y vegetación acuática, crea hábitats ideales para múltiples especies. La visibilidad es moderada, lo que favorece la pesca de walleye (que prefiere condiciones de poca luz y fondos con cover).
+El fondo variable del lago, mezclas de arena, grava, barro y vegetación acuática, crea hábitats ideales para múltiples especies. La visibilidad es moderada, lo que favorece la pesca de walleye (que prefiere condiciones de poca luz y fondos con refugio).
 
 **Cómo llegar desde Toronto:**
-- Toma la Hwy 401 Este hasta la salida 472 en Cobourg (County Road 18 / Burnham Street)
+- Toma la autopista 401 Este hasta la salida 472 en Cobourg (County Road 18 / Burnham Street)
 - Sigue por County Road 18 al norte unos 16 km hasta Gores Landing; el recorrido completo desde Toronto es de unos 130 km
 - Tiempo total: **~1.5 horas** sin tráfico desde el centro de Toronto
 - Desde el área de Mississauga o Brampton: similar o ligeramente más largo por la 401
@@ -240,25 +240,25 @@ Las siguientes fechas y límites corresponden a la Zona de Gestión de Pesca 17,
 
 | Especie | Temporada típica | Límite diario |
 |---------|-----------------|--------------|
-| Walleye y sauger (lucioperca / doré) | 2.º sábado de mayo–15 de noviembre; solo de 35–50 cm | Sport: 4; Conservation: 1, combinados |
-| Bass de boca grande (largemouth) | 3.er sábado de junio–15 de diciembre | 6 |
-| Bass de boca pequeña (smallmouth) | 3.er sábado de junio–15 de diciembre | 6 |
-| Muskie (lucio almizclero) | 1.er sábado de junio–15 de diciembre | 1 |
-| Perca amarilla (yellow perch) | Todo el año | 50 |
-| Lucio norteño (northern pike) | Consultar reglamento FMZ 17 | Consultar |
+| Walleye y sauger (lucioperca) | 2.º sábado de mayo–15 de noviembre; solo de 35–50 cm | Sport: 4; Conservation: 1, combinados |
+| Bass de boca grande (largemouth) | 3.er sábado de junio–15 de diciembre | Sport: 6; Conservation: 2, combinados con el bass de boca pequeña |
+| Bass de boca pequeña (smallmouth) | 3.er sábado de junio–15 de diciembre | Sport: 6; Conservation: 2, combinados con el bass de boca grande |
+| Muskie (lucio almizclero) | 1.er sábado de junio–15 de diciembre | Sport: 1, solo si mide más de 112 cm; Conservation: 0 |
+| Perca amarilla (yellow perch) | Todo el año | Sport: 50; Conservation: 25 |
+| Lucio norteño (northern pike) | Todo el año | Sport: 6; Conservation: 2 |
 
 > **Importante:** Los límites y fechas anteriores son de referencia. Los lagos Balsam y Mitchell tienen reglas propias. El gobierno de Ontario actualiza las regulaciones anualmente. Consulta la guía oficial antes de cada temporada.
 
 ---
 
-## Walleye: la razón principal para venir a Rice Lake
+## Walleye: el más complicado
 
-El walleye (en inglés: walleye; en francés: doré) es la especie estrella de Rice Lake. Los pescadores de toda Ontario y del norte de Estados Unidos conocen la reputación del lago.
+El walleye (lucioperca) fue la especie que hizo famoso a Rice Lake, aunque hoy es más difícil de capturar. Los pescadores de toda Ontario y del norte de Estados Unidos conocen la reputación del lago.
 
-**Por qué Rice Lake produce walleye consistentemente:**
+**Por qué todavía hay walleye y por qué cuesta más:**
 - Profundidad moderada con áreas de 3–8 metros ideales para walleye
-- Vegetación acuática (cabeza de flecha, nenúfar) que crea cover natural
-- El sistema Trent-Severn mantiene corrientes que el walleye prefiere para desovar
+- Vegetación acuática (cabeza de flecha, nenúfar) que crea refugio natural
+- La gestión del agua del sistema Trent-Severn lleva décadas perjudicando el desove del walleye, y por eso hay menos peces y muchos superan los 50 cm
 
 **Técnicas básicas:**
 - **Jigging vertical** en 8–15 pies con jig de 1/4–1/2 oz en colores chartreuse, blanco o naranja
@@ -271,11 +271,11 @@ El walleye (en inglés: walleye; en francés: doré) es la especie estrella de R
 
 ### Bass de boca grande y pequeña
 
-Rice Lake tiene excelente población de ambas especies. La boca grande prefiere aguas con vegetación y fondos blandos; la boca pequeña prefiere puntas rocosas y gravas. Ambas especies responden bien a plasticos blandos, topwaters en verano y jigs.
+Rice Lake tiene excelente población de ambas especies. La boca grande prefiere aguas con vegetación y fondos blandos; la boca pequeña prefiere puntas rocosas y gravas. Ambas especies responden bien a plásticos blandos, señuelos de superficie en verano y jigs.
 
 ### Muskie (lucio almizclero)
 
-El muskie es el pez más grande y más difícil de capturar en Rice Lake. La temporada abre el primer sábado de junio con un límite de 1 pez. Se recomienda fuertemente la práctica de catch-and-release dado el lento crecimiento de la especie.
+El muskie es el pez más grande y más difícil de capturar en Rice Lake. La temporada abre el primer sábado de junio; con licencia Sport el límite es 1 pez y solo se puede retener si mide más de 112 cm, y con licencia Conservation el límite es 0. Se recomienda fuertemente capturar y liberar al pez, dado el lento crecimiento de la especie.
 
 ### Perca amarilla
 
@@ -292,7 +292,7 @@ Para pescar en Ontario se requiere:
 
 Los residentes de Canadá de **18 a 64 años** necesitan licencia. Los residentes de Canadá menores de 18 años o de 65 o más no necesitan comprarla si llevan una identificación oficial con su nombre y fecha de nacimiento. Los no residentes de Canadá necesitan Outdoors Card y licencia incluso a los 65 años o más. Los residentes de Canadá también pueden pescar sin licencia durante cuatro periodos al año, entre ellos los fines de semana del Día de la Familia, del Día de las Madres y del Día del Padre, y la Semana de Pesca Familiar de Ontario; consulta las fechas y reglas actuales en ontario.ca/fishing.
 
-Las licencias se compran en línea (ontario.ca), en tiendas de artículos deportivos (Canadian Tire, Bass Pro), o en algunas marinas locales.
+Las licencias y la Outdoors Card se obtienen por medio de la provincia en ontario.ca/fishing. Harris Boat Works no vende licencias de pesca.
 
 **No se puede pescar con tarjeta de licencia de otro país.** Los visitantes de EE. UU. u otros países necesitan adquirir licencias de Ontario.
 
@@ -320,7 +320,7 @@ También vendemos **combustible sin etanol (89 octanos)** en el sitio. El etanol
 
 ## Itinerario de un día desde Toronto
 
-**5:30 AM**, Salida de Toronto por 401E
+**5:30 AM**, Salida de Toronto por la autopista 401 Este
 **7:00 AM**, Llegada a Gores Landing, Harris Boat Works
 **7:15 AM**, Salida al lago (equipo propio o renta)
 **7:30–11:00 AM**, Pesca matutina (mejor hora para walleye)
@@ -410,17 +410,17 @@ La mayoría de las gasolineras en Ontario venden gasolina con hasta 10 % de etan
 
 El resultado: esa mezcla de agua y etanol se acumula en el fondo del tanque, entra al sistema de alimentación del motor, y en primavera usted se encuentra con carburador o inyectores obstruidos, corrosión interna, y un motor que no arranca.
 
-Harris Boat Works es una de las pocas marinas en Ontario que vende combustible sin etanol (*ethanol-free fuel*) directamente en el sitio. Si va a guardar el bote para el invierno, usar combustible sin etanol es la mejor protección para el sistema de combustible.
+Harris Boat Works vende combustible sin etanol (*ethanol-free fuel*) directamente en el sitio. Si va a guardar el bote para el invierno, usar combustible sin etanol es la mejor protección para el sistema de combustible.
 
 ---
 
 ## Los pasos de la preparación invernal
 
-Estos pasos cubren lo esencial para la mayoría de los motores fuera de borda Mercury. Los detalles exactos varían según el modelo y el año del motor, esta guía no reemplaza el manual del motor ni el procedimiento del concesionario, pero resume lo más importante.
+Estos pasos resumen los puntos generales del trabajo; el orden y el procedimiento exactos dependen del motor. Los detalles exactos varían según el modelo y el año del motor, esta guía no reemplaza el manual del motor ni el procedimiento del concesionario, pero resume lo más importante.
 
 ### 1. Estabilización del combustible
 
-Si no usa combustible sin etanol, agregue un estabilizante aprobado para motores marinos en su tanque. Luego haga funcionar el motor unos minutos para que el producto circule por todo el sistema de combustible. Idealmente, llene el tanque con combustible sin etanol antes de agregar el estabilizante, un tanque lleno deja menos espacio para el aire húmedo.
+Si el procedimiento de almacenamiento del manual lo indica, agregue el estabilizante que Mercury especifica, en la concentración indicada por el fabricante del producto. Luego haga circular el combustible tratado durante el tiempo y con el método que indica el manual del motor exacto, y nunca haga funcionar ni gire en seco un fuera de borda sin suministro de agua de enfriamiento. No hay una sola regla de tanque lleno o vacío para todos los sistemas: siga la guía de almacenamiento del sistema de combustible de su embarcación.
 
 **¿Qué pasa si lo omite?** Combustible degradado, separación de fase, inyectores obstruidos, motor que no arranca en primavera.
 
@@ -432,7 +432,7 @@ La protección interna depende del modelo y del número de serie. Siga el proced
 
 ### 3. Drenaje del aceite de engranajes (gear lube)
 
-El aceite del pie del motor (*lower unit / gear lube*) debe drenarse y reemplazarse cada otoño. El agua puede infiltrarse en la caja de engranajes a través de sellos desgastados, si esa agua se congela, se expande y puede agrietar la carcasa.
+El aceite del pie del motor (*lower unit / gear lube*) se revisa y se reemplaza según el manual del modelo y del número de serie, con el método de llenado, la cantidad y los sellos que ahí se indican. El agua puede infiltrarse en la caja de engranajes a través de sellos desgastados, si esa agua se congela, se expande y puede agrietar la carcasa.
 
 Al drenar el aceite, observe su color: si sale lechoso o grisáceo, hay infiltración de agua y se necesita una reparación antes de guardar el motor.
 
@@ -446,13 +446,13 @@ Una batería en buen estado puede permanecer a bordo solo si está completamente
 
 ### 5. Engrase de conexiones y puntos de articulación
 
-Aplique una buena capa de grasa marina en el timón, la dirección, los cables de control y los rodamientos de pivote. Este paso toma unos veinte minutos y previene que el frío y la humedad del invierno agarroten las piezas móviles.
+Siga el diagrama de lubricación del manual y aplique la grasa marina que Mercury especifica en el timón, la dirección, los cables de control y los rodamientos de pivote. Este paso previene que el frío y la humedad del invierno agarroten las piezas móviles.
 
 **¿Qué pasa si lo omite?** Piezas trabadas en primavera, cables dañados.
 
 ### 6. Enjuague con agua dulce
 
-Haga circular agua dulce por el sistema de enfriamiento del motor para eliminar depósitos minerales que reducen la eficiencia de enfriamiento y aceleran la corrosión. Para embarcaciones que navegan exclusivamente en lagos como Rice Lake o los Kawartha, esto es generalmente menos crítico que para motores usados en agua salada, pero sigue siendo recomendable.
+Haga circular agua dulce por el sistema de enfriamiento con la conexión de enjuague, el estado del motor, el caudal de agua y la duración que indica el manual del modelo exacto, para eliminar depósitos minerales que reducen la eficiencia de enfriamiento y aceleran la corrosión. No dé por hecho que unas orejeras de enjuague y cinco minutos al ralentí sirven para todos los modelos. Para embarcaciones que navegan exclusivamente en lagos como Rice Lake o los Kawartha, esto es generalmente menos crítico que para motores usados en agua salada, pero sigue siendo recomendable.
 
 **¿Qué pasa si lo omite?** Corrosión acelerada en el sistema de enfriamiento, obstrucción de paso de agua.
 
@@ -463,7 +463,7 @@ Haga circular agua dulce por el sistema de enfriamiento del motor para eliminar 
 | Paso | ¿Qué hace? | ¿Qué pasa si lo omite? |
 |---|---|---|
 | Estabilizar combustible | Previene degradación y separación de fase | Combustible contaminado, motor no arranca |
-| Fogging (lubricación interna) | Protege cilindros contra corrosión | Oxidación interna, reparación costosa |
+| Protección interna (fogging), solo si el manual la indica | Limita la oxidación y la corrosión durante la inactividad | El riesgo depende del motor; el manual indica qué corresponde |
 | Drenar gear lube | Detecta y previene daño por agua congelada | Carcasa agrietada, reparación mayor |
 | Plan de batería aprobado | Solo puede permanecer a bordo si está cargada, desconectada, asegurada y permitida | Descarga por cargas parásitas si queda conectada |
 | Engrasar articulaciones | Previene corrosión en cables y puntos de pivote | Piezas trabadas, cables dañados |
@@ -483,7 +483,7 @@ Complete hbwservice.ca y deje el bote en cualquier momento, incluso fuera de hor
 
 Hacer la preparación invernal usted mismo es posible, pero solo si tiene experiencia, los productos correctos y el manual del modelo y del número de serie. Los pasos que más se olvidan son: la protección interna cuando el manual la exige, la verificación de infiltración de agua en la caja de engranajes, y el engrase completo de los puntos de articulación.
 
-En Harris Boat Works tenemos 584 registros de preparación invernal completados entre agosto y noviembre de 2025. Nuestros técnicos están certificados directamente por [Mercury Marine](https://www.mercurymarine.com/ca/en) y conocen los motores Mercury a fondo.
+En Harris Boat Works tenemos 584 registros de preparación invernal completados entre agosto y noviembre de 2025. Somos un centro de servicio autorizado de [Mercury Marine](https://www.mercurymarine.com/ca/en) y conocemos los motores Mercury a fondo.
 
 ---
 
@@ -511,7 +511,7 @@ Depende del motor y el bote. En general, entre dos y cuatro horas en taller.
 
 ## Contáctenos
 
-**Reservar preparación invernal:** hbwservice.ca, puede enviarnos su consulta (le responderemos en inglés).
+**Solicitar preparación invernal:** hbwservice.ca, puede enviarnos su consulta (le responderemos en inglés).
 
 **Por teléfono:** 905-342-2153
 
@@ -700,7 +700,7 @@ harrisboatworks.ca | Rice Lake
     keywords: ['remotorización vs bote nuevo', 'repower Mercury Ontario', 'cambiar motor bote', 'costo remotorización Ontario'],
     content: `### Respuesta rápida
 
-Si su casco está en buen estado y el problema es el motor, remotorizar. El precio de un bote nuevo con motor depende del tamaño, la categoría y el equipo, y normalmente es mayor que el costo de reemplazar solo el motor. Si el casco está dañado, o si necesita un tipo de embarcación completamente distinto, comprar un bote nuevo tiene sentido. Para ver una estimación detallada de su remotorización, visite [mercuryrepower.ca](https://www.mercuryrepower.ca/quote/motor-selection).
+La remotorización puede ser la mejor opción cuando el casco es estructuralmente adecuado, la embarcación sigue ajustándose a su uso y la cotización completa instalada de la remotorización es menor que el paquete completo de reemplazo. Compare los totales actuales por escrito, no rangos genéricos: HST, remolque, reparaciones estructurales, instalación, dirección, controles, instrumentos, hélice, baterías, electrónica, costo de financiamiento, valor de canje y exclusiones. Si el casco está dañado, o si necesita un tipo de embarcación completamente distinto, comprar un bote nuevo tiene sentido. Para ver una estimación detallada de su remotorización, visite [mercuryrepower.ca](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ---
 
@@ -720,19 +720,19 @@ Harris Boat Works es una marina familiar de tercera generación en Gores Landing
 
 ## Lo que la remotorización le ofrece
 
-### 1. El costo: la diferencia es real
+### 1. El costo: compare los totales por escrito
 
-El precio de un bote nuevo con motor depende del tamaño, la categoría y el equipo, y normalmente es mayor que el costo de reemplazar solo el motor. Para comparar con números reales, consulte el [inventario actual de botes nuevos](https://www.harrisboatworks.ca) y una cotización de remotorización.
+El precio de un bote nuevo con motor depende del tamaño, la categoría y el equipo, y el resultado se define con los dos alcances por escrito: un rango genérico de ahorro no decide por usted. Para comparar con números reales, consulte el [inventario actual de botes nuevos](https://www.harrisboatworks.ca) y una cotización de remotorización.
 
 En [mercuryrepower.ca](https://www.mercuryrepower.ca/quote/motor-selection) puede configurar su remotorización en línea y ver los precios en tiempo real, no hay "llame para cotizar." Usted ingresa el tipo de embarcación, elige la potencia, y ve una estimación detallada en dólares canadienses.
 
-Los precios publicados de los motores son en dólares canadienses, antes del HST, sin controles, hélice ni instalación. El configurador suma esos elementos, y la cotización final por escrito confirma el precio y el alcance del trabajo. Los motores se entregan e instalan únicamente en Harris Boat Works, en Gores Landing: no enviamos motores.
+Los precios publicados de los motores son en dólares canadienses, antes del HST, sin controles, hélice ni instalación. El configurador suma esos elementos, y la cotización final por escrito confirma el precio y el alcance del trabajo. Los motores se instalan o se retiran en persona únicamente en Harris Boat Works, en Gores Landing; no se envían ni se entregan a domicilio.
 
 ### 2. Su casco tiene valor
 
-Un casco de aluminio bien mantenido puede durar 30 a 40 años fácilmente. Un casco de fibra de vidrio bien cuidado puede durar varias décadas. Lo que envejece más rápido es el motor, especialmente si el mantenimiento no fue regular.
+La vida útil de un casco depende de su estructura, su mantenimiento y su uso; no hay una cifra de años que valga para todos, por eso conviene inspeccionarlo antes de decidir. Lo que envejece más rápido es el motor, especialmente si el mantenimiento no fue regular.
 
-Remotorizar significa conservar una embarcación que ya conoce y en la que confía, con un motor nuevo bajo garantía. También significa evitar los trámites de un bote nuevo: nueva matrícula, nuevo financiamiento, posiblemente nuevo seguro, y la venta del anterior.
+Remotorizar significa conservar una embarcación que ya conoce y en la que confía, con un motor nuevo bajo garantía. También significa evitar los trámites de un bote nuevo: nueva licencia de embarcación, nuevo financiamiento, posiblemente nuevo seguro, y la venta del anterior.
 
 ### 3. Tecnología Mercury moderna en su embarcación
 
@@ -742,11 +742,11 @@ Como concesionario Mercury Premier, Harris Boat Works tiene acceso a la gama: Fo
 
 ### 4. Tiempo: usted quiere navegar esta temporada
 
-En Ontario, la temporada de navegación va aproximadamente de mayo a octubre, unos seis meses. Ordenar un bote nuevo puede tomar varios meses, especialmente con preferencias específicas. Una remotorización bien planificada suele ser considerablemente más rápida.
+En Ontario, la temporada de navegación va aproximadamente de mayo a octubre, unos seis meses. Una remotorización tiene dos plazos: la disponibilidad del motor y de los componentes de instalación, y luego el trabajo programado en el taller. La ventana de instalación se confirma después de revisar la embarcación.
 
 ### 5. Menos trámites
 
-Con una remotorización, conserva su embarcación y su matrícula, y vuelve al agua. Un bote nuevo implica nueva matrícula, nuevo financiamiento, posiblemente nuevo seguro, y la venta o disposición del anterior.
+Con una remotorización, conserva su bote y su licencia de embarcación, y vuelve al agua. Un bote nuevo implica nueva licencia de embarcación, nuevo financiamiento, posiblemente nuevo seguro, y la venta o disposición del anterior.
 
 ---
 
@@ -790,8 +790,8 @@ Si la respuesta es sí, y el casco está en buen estado, remotorizar probablemen
 | Casco dañado o muy deteriorado | Bote nuevo |
 | Quiere el mismo tipo de embarcación | Remotorización |
 | Quiere cambiar de tipo (pesca → familiar, etc.) | Bote nuevo |
-| Presupuesto limitado | Remotorización |
-| Necesita navegar esta temporada | Remotorización (plazo más corto) |
+| Presupuesto limitado | Compare los totales escritos de ambas opciones |
+| Necesita navegar esta temporada | Confirme los plazos de ambas opciones |
 | La embarcación ya cumplió su vida útil | Bote nuevo |
 
 ---
@@ -835,8 +835,8 @@ Para reparaciones e instalaciones de motores, trabajamos exclusivamente con Merc
 *Guías relacionadas (en inglés): Should I repower or buy a new boat? | Ontario Mercury Outboard Price Guide | Mercury 90 HP FourStroke review*
 ---`,
     faqs: [
-      { question: '¿Cuánto cuesta una remotorización comparada con un bote nuevo?', answer: 'En muchos casos, una remotorización cuesta considerablemente menos que reemplazar toda la embarcación, pero la diferencia real depende del casco, la potencia y la instalación necesaria. Consulte mercuryrepower.ca para precios actualizados.' },
-      { question: '¿Cuánto tiempo toma una remotorización?', answer: 'El plazo real depende de la temporada, disponibilidad del motor y carga de trabajo del taller. En general, mucho menos que esperar un bote nuevo.' },
+      { question: '¿Cuánto cuesta una remotorización comparada con un bote nuevo?', answer: 'Depende del casco, la potencia y la instalación necesaria, y un rango genérico de ahorro no decide por usted. Compare los totales escritos completos de la remotorización y del paquete de reemplazo. Consulte mercuryrepower.ca para precios actualizados.' },
+      { question: '¿Cuánto tiempo toma una remotorización?', answer: 'El plazo real depende de la temporada, disponibilidad del motor y carga de trabajo del taller. La ventana de instalación se confirma después de revisar la embarcación y las piezas necesarias.' },
       { question: '¿Mercury ofrece garantía en las remotorizaciones?', answer: 'Sí. Los motores Mercury FourStroke nuevos tienen una garantía limitada de 3 años para uso recreativo.' },
       { question: '¿Puedo obtener un precio sin llamar?', answer: 'Sí. En mercuryrepower.ca puede ver un precio en línea, en dólares canadienses, sin compromiso.' },
     ],

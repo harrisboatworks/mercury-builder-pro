@@ -29,7 +29,7 @@ revenue_driver: rentals
 **Read time:** 8 ਮਿੰਟ  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/pa/boat-licence-rental-ontario-punjabi-pcoc-faq
 
-ਜਵਾਬ ਪਹਿਲਾਂ: Ontario ਵਿੱਚ ਕੋਈ ਵੀ ਮੋਟਰ ਵਾਲੀ ਕਿਸ਼ਤੀ (power-driven boat) ਚਲਾਉਣ ਲਈ ਤੁਹਾਡੇ ਕੋਲ PCOC (Pleasure Craft Operator Card) ਜਾਂ ਹੋਰ ਮਾਨਤਾ-ਪ੍ਰਾਪਤ proof of competency ਹੋਣਾ ਲਾਜ਼ਮੀ ਹੈ। ਇਹ ਕਾਰਡ-ਵਰਗਾ ਸਰਟੀਫਿਕੇਟ ਹੈ, ਜਿਵੇਂ ਕਾਰ ਚਲਾਉਣ ਲਈ ਡਰਾਈਵਿੰਗ ਲਾਇਸੰਸ। ਮਾਮੂਲੀ ਪੈਡਲ ਬੋਟਾਂ, ਕਾਇਆਕ, ਜਾਂ ਕੈਨੂਆਂ ਲਈ PCOC ਦੀ ਲੋੜ ਨਹੀਂ, ਬੱਸ ਜੇ ਉਹਨਾਂ ’ਤੇ ਕੋਈ ਮੋਟਰ ਲੱਗੀ ਹੋਵੇ। Harris Boat Works ਵਿੱਚ ਹਰ driver ਨੂੰ check-in ਸਮੇਂ ਵੈਧ PCOC ਦਿਖਾਉਣਾ ਲਾਜ਼ਮੀ ਹੈ।
+ਜਵਾਬ ਪਹਿਲਾਂ: Ontario ਵਿੱਚ ਕੋਈ ਵੀ ਮੋਟਰ ਵਾਲੀ ਕਿਸ਼ਤੀ (power-driven boat) ਚਲਾਉਣ ਲਈ ਤੁਹਾਡੇ ਕੋਲ PCOC (Pleasure Craft Operator Card) ਜਾਂ ਹੋਰ ਮਾਨਤਾ-ਪ੍ਰਾਪਤ proof of competency ਹੋਣਾ ਲਾਜ਼ਮੀ ਹੈ। ਇਹ ਕਾਰਡ-ਵਰਗਾ ਸਰਟੀਫਿਕੇਟ ਹੈ, ਜਿਵੇਂ ਕਾਰ ਚਲਾਉਣ ਲਈ ਡਰਾਈਵਿੰਗ ਲਾਇਸੰਸ। ਮਾਮੂਲੀ ਪੈਡਲ ਬੋਟਾਂ, ਕਾਇਆਕ, ਜਾਂ ਕੈਨੂਆਂ ਲਈ PCOC ਦੀ ਲੋੜ ਨਹੀਂ, ਬੱਸ ਜੇ ਉਹਨਾਂ ’ਤੇ ਕੋਈ ਮੋਟਰ ਲੱਗੀ ਹੋਵੇ। Harris Boat Works ਵਿੱਚ ਹਰ ਉਸ ਵਿਅਕਤੀ ਨੂੰ ਜੋ ਕਿਸ਼ਤੀ ਚਲਾ ਸਕਦਾ ਹੈ, check-in ਸਮੇਂ ਵੈਧ PCOC ਅਤੇ photo ID ਦਿਖਾਉਣਾ ਲਾਜ਼ਮੀ ਹੈ।
 
 PCOC ਚਾਹੀਦਾ ਹੈ? [HBW ਦੇ MyBoatCard ਰੈਫ਼ਰਲ ਲਿੰਕ](https://myboatcard.com/card/harrisboat) ਰਾਹੀਂ ਆਨਲਾਈਨ ਕੋਰਸ ਕਰੋ ਅਤੇ **15% ਛੋਟ** ਲਈ ਕੋਡ **HARRIS15** ਵਰਤੋ।
 
@@ -45,7 +45,7 @@ PCOC ਇੱਕ ਜੀਵਨ-ਭਰ ਦੀ ਯੋਗਤਾ ਹੈ, ਜੋ ਇਹ 
 
 ## HBW ਤੋਂ boat rent ਕਰਨ ਲਈ PCOC ਚਾਹੀਦੀ ਹੈ? | Do I need a PCOC to rent from HBW?
 
-ਹਾਂ। Harris Boat Works ਵਿੱਚ ਹਰ driver ਨੂੰ check-in ਸਮੇਂ ਵੈਧ PCOC (Pleasure Craft Operator Card) ਦਿਖਾਉਣਾ ਲਾਜ਼ਮੀ ਹੈ। Rental safety checklist safety briefing ਵਜੋਂ ਫਿਰ ਵੀ ਪੂਰੀ ਹੁੰਦੀ ਹੈ, ਪਰ HBW ਇਸਨੂੰ driver ਦੇ licence ਦੀ ਥਾਂ ਨਹੀਂ ਵਰਤਦਾ। ਜਿਹੜੇ passengers boat ਨਹੀਂ ਚਲਾਉਣਗੇ, ਉਹਨਾਂ ਨੂੰ PCOC ਦੀ ਲੋੜ ਨਹੀਂ। ਕਿਰਾਏ ਦੀ ਪ੍ਰਕਿਰਿਆ ਵਿੱਚ ਸੁਰੱਖਿਆ briefing, ਮੁੱਢਲੀ ਚਲਾਉਣ ਦੀਆਂ ਹਦਾਇਤਾਂ ਅਤੇ ਸਾਜ਼ੋ-ਸਾਮਾਨ ਦੀ ਜਾਂਚ ਵੀ ਸ਼ਾਮਲ ਹਨ। ਮੌਜੂਦਾ requirements ਅਤੇ availability ਲਈ ਵੇਖੋ: https://harrisboatworks.ca/rentals
+ਹਾਂ। Harris Boat Works ਵਿੱਚ ਹਰ ਉਸ ਵਿਅਕਤੀ ਨੂੰ ਜੋ ਕਿਸ਼ਤੀ ਚਲਾ ਸਕਦਾ ਹੈ, check-in ਸਮੇਂ ਵੈਧ PCOC (Pleasure Craft Operator Card) ਅਤੇ photo ID ਦਿਖਾਉਣਾ ਲਾਜ਼ਮੀ ਹੈ। Rental safety checklist safety briefing ਵਜੋਂ ਫਿਰ ਵੀ ਪੂਰੀ ਹੁੰਦੀ ਹੈ, ਪਰ HBW ਇਸਨੂੰ driver ਦੇ licence ਦੀ ਥਾਂ ਨਹੀਂ ਵਰਤਦਾ। ਜਿਹੜੇ passengers boat ਨਹੀਂ ਚਲਾਉਣਗੇ, ਉਹਨਾਂ ਨੂੰ PCOC ਦੀ ਲੋੜ ਨਹੀਂ। ਕਿਰਾਏ ਦੀ ਪ੍ਰਕਿਰਿਆ ਵਿੱਚ ਸੁਰੱਖਿਆ briefing, ਮੁੱਢਲੀ ਚਲਾਉਣ ਦੀਆਂ ਹਦਾਇਤਾਂ ਅਤੇ ਸਾਜ਼ੋ-ਸਾਮਾਨ ਦੀ ਜਾਂਚ ਵੀ ਸ਼ਾਮਲ ਹਨ। ਮੌਜੂਦਾ requirements ਅਤੇ availability ਲਈ ਵੇਖੋ: https://harrisboatworks.ca/rentals
 
 ## PCOC online ਕਿਵੇਂ ਬਣਾਈਏ? | How to get PCOC online
 
@@ -67,7 +67,7 @@ Supervisor ਕੋਲ ਜ਼ਰੂਰੀ valid PCOC ਹੋਣੀ ਚਾਹੀਦ�
 
 ## Shuru karo apni Rice Lake trip | ਆਪਣੀ ਰਾਈਸ ਲੇਕ ਟ੍ਰਿਪ ਸ਼ੁਰੂ ਕਰੋ
 
-PCOC rules ਨੂੰ ਔਖਾ ਨਾ ਸਮਝੋ; ਪਹਿਲਾ ਕਦਮ safety information ਸਮਝਣਾ ਹੈ। Rice Lake, Gores Landing (5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0) Toronto area ਤੋਂ 90 minutes ਦੂਰ, Brampton, Mississauga, Scarborough, Markham ਵਾਲਿਆਂ ਲਈ simple day trip ਹੈ। ਸਾਡੀ Ethanol-free fuel site ’ਤੇ ਮਿਲੇਗੀ, ਤੇ Mercury outboard engines 3-year warranty ਨਾਲ confident ਰੱਖਣਗੇ, ਜੇ ਨਵੀਂ boat ਦਾ ਸੋਚ ਰਹੇ ਹੋ। rental booking ਲਈ rent page ਖੋਲ੍ਹੋ: [Harris Boat Works rentals](https://harrisboatworks.ca/rentals)। service request ਭੇਜਣੀ ਹੈ: hbwservice.ca। December 1 to April 1 ਅਸੀਂ winter break ਵਿੱਚ ਬੰਦ ਰਹਿੰਦੇ ਹਾਂ, oh season Rice Lake ’ਤੇ ਨਹੀਂ ਚੱਲਦਾ।
+PCOC rules ਨੂੰ ਔਖਾ ਨਾ ਸਮਝੋ; ਪਹਿਲਾ ਕਦਮ safety information ਸਮਝਣਾ ਹੈ। Rice Lake, Gores Landing (5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0) Toronto area ਤੋਂ 90 minutes ਦੂਰ, Brampton, Mississauga, Scarborough, Markham ਵਾਲਿਆਂ ਲਈ simple day trip ਹੈ। rental booking ਲਈ rent page ਖੋਲ੍ਹੋ: [Harris Boat Works rentals](https://harrisboatworks.ca/rentals)। service request ਭੇਜਣੀ ਹੈ: hbwservice.ca। December 1 to April 1 ਅਸੀਂ winter break ਵਿੱਚ ਬੰਦ ਰਹਿੰਦੇ ਹਾਂ, oh season Rice Lake ’ਤੇ ਨਹੀਂ ਚੱਲਦਾ।
 
 ## FAQs
 
@@ -77,7 +77,7 @@ PCOC rules ਨੂੰ ਔਖਾ ਨਾ ਸਮਝੋ; ਪਹਿਲਾ ਕਦਮ sa
 
 ### Je main ik din layi HBW ton boat rent karan, PCOC deni paini hai?
 
-ਹਾਂ। Harris Boat Works ਵਿੱਚ ਹਰ driver ਨੂੰ check-in ਸਮੇਂ ਵੈਧ boat operator licence ਦਿਖਾਉਣਾ ਲਾਜ਼ਮੀ ਹੈ। Rental safety checklist safety briefing ਵਜੋਂ ਫਿਰ ਵੀ ਪੂਰੀ ਹੁੰਦੀ ਹੈ, ਪਰ HBW ਇਸਨੂੰ driver ਦੇ licence ਦੀ ਥਾਂ ਨਹੀਂ ਵਰਤਦਾ। ਜਿਹੜੇ passengers boat ਨਹੀਂ ਚਲਾਉਣਗੇ, ਉਹਨਾਂ ਨੂੰ PCOC ਦੀ ਲੋੜ ਨਹੀਂ।
+ਹਾਂ। Harris Boat Works ਵਿੱਚ ਹਰ ਉਸ ਵਿਅਕਤੀ ਨੂੰ ਜੋ ਕਿਸ਼ਤੀ ਚਲਾ ਸਕਦਾ ਹੈ, check-in ਸਮੇਂ ਵੈਧ operator card ਅਤੇ photo ID ਦਿਖਾਉਣਾ ਲਾਜ਼ਮੀ ਹੈ। Rental safety checklist safety briefing ਵਜੋਂ ਫਿਰ ਵੀ ਪੂਰੀ ਹੁੰਦੀ ਹੈ, ਪਰ HBW ਇਸਨੂੰ driver ਦੇ licence ਦੀ ਥਾਂ ਨਹੀਂ ਵਰਤਦਾ। ਜਿਹੜੇ passengers boat ਨਹੀਂ ਚਲਾਉਣਗੇ, ਉਹਨਾਂ ਨੂੰ PCOC ਦੀ ਲੋੜ ਨਹੀਂ।
 
 ### Kya “boat license” te “boat operator card” different hunde ne?
 

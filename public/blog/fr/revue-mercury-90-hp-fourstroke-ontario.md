@@ -31,7 +31,7 @@ revenue_driver: repower
 
 ### Réponse rapide
 
-Le Mercury 90 HP FourStroke est le choix par défaut pour la plupart des bateaux de pêche en aluminium de 16 à 18 pi et des pontons de taille moyenne jusqu'à environ 22 pi en Ontario. Il fonctionne sur le même bloc 2,1 L 4 cylindres en ligne que les 75 et 115, pèse 359 lb, et est calibré pour une croisière douce et l'économie de carburant plutôt que la performance. Pour les pontons, prenez la version Command Thrust (CT). Pour les bateaux de pêche en aluminium, prenez l'embase standard.
+Le Mercury 90 HP FourStroke est le choix par défaut pour la plupart des bateaux de pêche en aluminium de 16 à 18 pi et des pontons de taille moyenne jusqu'à environ 22 pi en Ontario. Il fonctionne sur le même bloc 2,1 L 4 cylindres en ligne que les 75 et 115, pèse environ 163 kg (359 lb), et est calibré pour une croisière douce et l'économie de carburant plutôt que la performance. Pour les pontons, prenez la version Command Thrust (CT). Pour les bateaux de pêche en aluminium, prenez l'embase standard.
 
 ---
 
@@ -45,9 +45,9 @@ Harris Boat Works est une marina familiale sur le lac Rice depuis 1947 et un con
 
 ## Ce que la famille 90 HP partage réellement
 
-Le Mercury 90 HP FourStroke fait partie d'une famille de cinq moteurs construits sur le même bloc 2,1 L 4 cylindres en ligne : les 75, 80, 90, 100 et 115. Tous utilisent un arbre à cames simple en tête à 8 soupapes avec un train de soupapes sans entretien, pas d'entretien régulier de cames, pas d'ajustements de jeu de soupapes pour la vie du moteur. 
+Le Mercury 90 HP FourStroke fait partie de la famille construite sur le même bloc 2,1 L 4 cylindres en ligne. Les versions 80 et 100 HP que vous voyez peut-être en ligne sont des modèles internationaux; pour un acheteur canadien, la comparaison pratique est 75, 90 ou 115. Tous utilisent un arbre à cames simple en tête à 8 soupapes avec un train de soupapes sans entretien, pas d'entretien régulier de cames, pas d'ajustements de jeu de soupapes pour la vie du moteur. 
 
-Les différences entre les 90, 100 et 115 sont la calibration, le plafond de RPM et le prix. Il n'y a aucune pénalité de poids en montant. Le 90 ELPT et le 115 ELPT pèsent tous les deux 359 lb.
+Les différences entre les 90 et 115 sont la calibration, le plafond de RPM et le prix. Il n'y a aucune pénalité de poids en montant. Le 90 ELPT et le 115 ELPT pèsent tous les deux environ 163 kg (359 lb).
 
 Les moteurs couverts dans cet article sont le **90 ELPT FourStroke** standard et le **90 ELPT Command Thrust**. Il existe aussi un 90 à contre-rotation (pour configurations jumelées) et un 90 EXLPT (arbre 25 po pour tableaux arrière plus hauts).
 
@@ -66,7 +66,7 @@ Les moteurs couverts dans cet article sont le **90 ELPT FourStroke** standard et
 
 ### Bateaux de pêche en aluminium de 16 à 18 pi
 
-Lund, Princecraft, Crestliner, Legend ProSport, ce sont les coques pour lesquelles le 90 ELPT a été conçu. Charge typique : deux à quatre personnes, équipement complet, moteur de pêche à la traîne, deux batteries. Sur ces bateaux, le 90 plane proprement, croisière vers 28 à 32 mi/h, et culmine vers 38 à 42 mi/h selon l'hélice et la charge.
+Lund, Princecraft, Crestliner, Legend ProSport, ce sont les coques pour lesquelles le 90 ELPT a été conçu. Charge typique : deux à quatre personnes, équipement complet, moteur de pêche à la traîne, deux batteries. Sur ces bateaux, le 90 plane proprement. Mercury a mesuré 36,6 mi/h (environ 59 km/h) sur un Crestliner de 16,75 pi, mais la vitesse réelle dépend de la coque, de l'hélice et de la charge.
 
 ### Pontons de taille moyenne jusqu'à environ 22 pi
 
@@ -74,11 +74,11 @@ Pour un ponton transportant quatre à six personnes avec des charges normales de
 
 ### Vedettes familiales en fibre de verre de 16 à 18 pi
 
-Croisière, traction d'une chambre à air, baignade, pêche occasionnelle, le 90 gère tout cela sans travailler fort.
+Croisière, traction d'une bouée, baignade, pêche occasionnelle, le 90 gère tout cela sans travailler fort.
 
 ### Remotorisations remplaçant des deux temps de 70 à 90 HP
 
-Les vieux deux temps Mercury, Yamaha et OMC dans cette classe de puissance sont remplacés chaque saison. Le 90 ELPT FourStroke ressort généralement plus léger que le moteur qu'il remplace, plus silencieux, plus propre, et nettement plus économique en carburant.
+Les vieux deux temps Mercury, Yamaha et OMC dans cette classe de puissance sont remplacés chaque saison. Le 90 ELPT FourStroke est plus silencieux et plus propre. Ne présumez pas qu'il sera plus léger que l'ancien moteur : certains vieux deux-temps l'étaient, et la capacité du tableau arrière doit être vérifiée.
 
 ---
 
@@ -88,7 +88,7 @@ Les vieux deux temps Mercury, Yamaha et OMC dans cette classe de puissance sont 
 
 **Tritoons lourds, pontons de 24 pi et plus, ou maisons flottantes.** Le 90 poussera ces bateaux, mais il travaillera plus fort qu'il ne le devrait. Ces applications ont besoin de 115 CT ou plus.
 
-**Hole-shot de bass boat.** Le 90 ELPT FourStroke n'est pas un Pro XS. Il est calibré pour l'économie de carburant, la croisière douce et la durabilité.
+**Accélération de départ de type bass boat.** Le 90 ELPT FourStroke n'est pas un Pro XS. Il est calibré pour l'économie de carburant, la croisière douce et la durabilité.
 
 **Longueur d'arbre incorrecte.** Un arbre court (15 po) sur un tableau arrière de 20 po met l'hélice trop près de la surface.
 
@@ -100,7 +100,7 @@ Les vieux deux temps Mercury, Yamaha et OMC dans cette classe de puissance sont 
 |---|---|---|
 | Profil de l'embase | Hydrodynamique, moins de traînée à vitesse | Physiquement plus grande |
 | Taille de l'hélice | environ 13 po | 14 à 14,5 po |
-| Force | Vitesse de pointe, efficacité énergétique | Couple à bas régime, hole-shot |
+| Force | Faible traînée, efficacité énergétique | Couple à bas régime, accélération au départ |
 | Idéal pour | Bateaux de pêche aluminium, vedettes légères | Pontons, coques lourdes |
 
 Règle générale : les bateaux de pêche en aluminium par défaut prennent le standard. Les pontons par défaut prennent le CT.
@@ -111,7 +111,7 @@ Règle générale : les bateaux de pêche en aluminium par défaut prennent le s
 
 Le 75, le 90 et le 115 sont le même bloc avec des calibrations différentes. Aucune pénalité de poids en montant. La seule pénalité réelle entre le 75, le 90 et le 115 est le prix et la consommation de carburant pleins gaz.
 
-La plupart des bateaux veulent soit le 90, soit le 115. Le 75 convient aux coques plus petites ou aux situations où la plaque de capacité l'impose, nous ne stockons pas le 75 parce que le 90 est le même moteur physique pour un coût additionnel modeste.
+La plupart des bateaux veulent soit le 90, soit le 115. Le 75 convient aux coques plus petites ou aux situations où la plaque de capacité l'impose.
 
 ---
 
@@ -135,9 +135,9 @@ Si vous achetez chez nous, nous sommes aussi ceux qui l'entretiennent. Pour les 
 - [Mercury 75 HP FourStroke : pourquoi HBW ne le tient pas en stock (et pourquoi vous voulez probablement le 90 à la place)](/blog/fr/revue-mercury-75-hp-fourstroke-ontario): Une réponse honnête d'un concessionnaire Mercury en Ontario. Nous privilégions souvent le 90 HP quand la plaque de capacité le permet. Le 75 HP reste une option à confirmer pour les bateaux qui en ont besoin.
 - [Gamme de hors-bord Mercury 2026 pour les plaisanciers ontariens](/blog/fr/gamme-mercury-hors-bord-2026-ontario): La gamme Mercury 2026 couvre toutes les classes de HP récréatives. FourStroke (2,5 à 300 HP) pour la.
 
-## Bâtissez une soumission
+## Créez votre soumission
 
-Bâtissez votre soumission de 90 HP à mercuryrepower.ca, choisissez l'embase standard ou CT, la longueur d'arbre et l'hélice. Voyez de vrais prix CAD en quelques minutes.
+Créez votre soumission de 90 HP à mercuryrepower.ca, choisissez l'embase standard ou CT, la longueur d'arbre et l'hélice. Voyez de vrais prix CAD en quelques minutes.
 
 Questions? Appelez 905-342-2153 ou soumettez une demande de service à hbwservice.ca.
 
@@ -147,7 +147,7 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
 
 ### Combien pèse le Mercury 90 HP FourStroke?
 
-Mercury indique le 90 ELPT standard à 359 lb à sec. La version Command Thrust est de 363 lb. Plus léger que les vieux deux temps qu'il remplace habituellement.
+Mercury indique le 90 ELPT standard à 163 kg (359 lb) à sec, et la version Command Thrust à 165 kg (363 lb). La longueur d'arbre, l'embase et les spécifications du modèle peuvent changer ce chiffre. Ne présumez pas qu'il est plus léger que l'ancien moteur : certains vieux deux-temps l'étaient.
 
 ### Le 90 HP est-il suffisant pour un bateau d'aluminium de 17 pi?
 
@@ -163,7 +163,7 @@ Cela dépend de la taille du ponton, du style de coque, de la charge et de l'hé
 
 ### Le Mercury 90 a-t-il besoin d'une batterie?
 
-Oui. Le 90 ELPT est à démarrage électrique. Vous avez besoin d'une batterie de démarrage marine (Group 24 ou 27 typique, selon le bateau).
+Oui. Le 90 ELPT est à démarrage électrique. Vous avez besoin d'une batterie de démarrage marine (groupe 24 ou 27 typique, selon le bateau).
 
 ### Le 90 est-il à injection de carburant?
 
@@ -171,7 +171,7 @@ Oui. Tous les Mercury 90 HP FourStroke utilisent l'injection électronique de ca
 
 ### Quelle est la garantie?
 
-Garantie d'usine de 3 ans en standard. Mercury peut ajouter une couverture promotionnelle seulement lorsque l'offre écrite le prévoit; la durée et les conditions varient. Consultez les promotions en vigueur (https://www.mercuryrepower.ca/promotions). Demandez-nous le statut promotionnel actuel lors de la soumission.
+Garantie d'usine de 3 ans en standard. Mercury peut ajouter une couverture promotionnelle seulement lorsque l'offre écrite le prévoit; la durée et les conditions varient. Consultez les [promotions en vigueur](https://www.mercuryrepower.ca/promotions). Demandez-nous le statut promotionnel actuel lors de la soumission.
 
 ## Prochaines étapes
 

@@ -31,7 +31,7 @@ revenue_driver: repower
 
 ### Respuesta rápida
 
-Si su casco está en buen estado y el problema es el motor, remotorizar. El precio de un bote nuevo con motor depende del tamaño, la categoría y el equipo, y normalmente es mayor que el costo de reemplazar solo el motor. Si el casco está dañado, o si necesita un tipo de embarcación completamente distinto, comprar un bote nuevo tiene sentido. Para ver una estimación detallada de su remotorización, visite [mercuryrepower.ca](https://www.mercuryrepower.ca/quote/motor-selection).
+La remotorización puede ser la mejor opción cuando el casco es estructuralmente adecuado, la embarcación sigue ajustándose a su uso y la cotización completa instalada de la remotorización es menor que el paquete completo de reemplazo. Compare los totales actuales por escrito, no rangos genéricos: HST, remolque, reparaciones estructurales, instalación, dirección, controles, instrumentos, hélice, baterías, electrónica, costo de financiamiento, valor de canje y exclusiones. Si el casco está dañado, o si necesita un tipo de embarcación completamente distinto, comprar un bote nuevo tiene sentido. Para ver una estimación detallada de su remotorización, visite [mercuryrepower.ca](https://www.mercuryrepower.ca/quote/motor-selection).
 
 ---
 
@@ -51,19 +51,19 @@ Harris Boat Works es una marina familiar de tercera generación en Gores Landing
 
 ## Lo que la remotorización le ofrece
 
-### 1. El costo: la diferencia es real
+### 1. El costo: compare los totales por escrito
 
-El precio de un bote nuevo con motor depende del tamaño, la categoría y el equipo, y normalmente es mayor que el costo de reemplazar solo el motor. Para comparar con números reales, consulte el [inventario actual de botes nuevos](https://www.harrisboatworks.ca) y una cotización de remotorización.
+El precio de un bote nuevo con motor depende del tamaño, la categoría y el equipo, y el resultado se define con los dos alcances por escrito: un rango genérico de ahorro no decide por usted. Para comparar con números reales, consulte el [inventario actual de botes nuevos](https://www.harrisboatworks.ca) y una cotización de remotorización.
 
 En [mercuryrepower.ca](https://www.mercuryrepower.ca/quote/motor-selection) puede configurar su remotorización en línea y ver los precios en tiempo real, no hay "llame para cotizar." Usted ingresa el tipo de embarcación, elige la potencia, y ve una estimación detallada en dólares canadienses.
 
-Los precios publicados de los motores son en dólares canadienses, antes del HST, sin controles, hélice ni instalación. El configurador suma esos elementos, y la cotización final por escrito confirma el precio y el alcance del trabajo. Los motores se entregan e instalan únicamente en Harris Boat Works, en Gores Landing: no enviamos motores.
+Los precios publicados de los motores son en dólares canadienses, antes del HST, sin controles, hélice ni instalación. El configurador suma esos elementos, y la cotización final por escrito confirma el precio y el alcance del trabajo. Los motores se instalan o se retiran en persona únicamente en Harris Boat Works, en Gores Landing; no se envían ni se entregan a domicilio.
 
 ### 2. Su casco tiene valor
 
-Un casco de aluminio bien mantenido puede durar 30 a 40 años fácilmente. Un casco de fibra de vidrio bien cuidado puede durar varias décadas. Lo que envejece más rápido es el motor, especialmente si el mantenimiento no fue regular.
+La vida útil de un casco depende de su estructura, su mantenimiento y su uso; no hay una cifra de años que valga para todos, por eso conviene inspeccionarlo antes de decidir. Lo que envejece más rápido es el motor, especialmente si el mantenimiento no fue regular.
 
-Remotorizar significa conservar una embarcación que ya conoce y en la que confía, con un motor nuevo bajo garantía. También significa evitar los trámites de un bote nuevo: nueva matrícula, nuevo financiamiento, posiblemente nuevo seguro, y la venta del anterior.
+Remotorizar significa conservar una embarcación que ya conoce y en la que confía, con un motor nuevo bajo garantía. También significa evitar los trámites de un bote nuevo: nueva licencia de embarcación, nuevo financiamiento, posiblemente nuevo seguro, y la venta del anterior.
 
 ### 3. Tecnología Mercury moderna en su embarcación
 
@@ -73,11 +73,11 @@ Como concesionario Mercury Premier, Harris Boat Works tiene acceso a la gama: Fo
 
 ### 4. Tiempo: usted quiere navegar esta temporada
 
-En Ontario, la temporada de navegación va aproximadamente de mayo a octubre, unos seis meses. Ordenar un bote nuevo puede tomar varios meses, especialmente con preferencias específicas. Una remotorización bien planificada suele ser considerablemente más rápida.
+En Ontario, la temporada de navegación va aproximadamente de mayo a octubre, unos seis meses. Una remotorización tiene dos plazos: la disponibilidad del motor y de los componentes de instalación, y luego el trabajo programado en el taller. La ventana de instalación se confirma después de revisar la embarcación.
 
 ### 5. Menos trámites
 
-Con una remotorización, conserva su embarcación y su matrícula, y vuelve al agua. Un bote nuevo implica nueva matrícula, nuevo financiamiento, posiblemente nuevo seguro, y la venta o disposición del anterior.
+Con una remotorización, conserva su bote y su licencia de embarcación, y vuelve al agua. Un bote nuevo implica nueva licencia de embarcación, nuevo financiamiento, posiblemente nuevo seguro, y la venta o disposición del anterior.
 
 ---
 
@@ -121,8 +121,8 @@ Si la respuesta es sí, y el casco está en buen estado, remotorizar probablemen
 | Casco dañado o muy deteriorado | Bote nuevo |
 | Quiere el mismo tipo de embarcación | Remotorización |
 | Quiere cambiar de tipo (pesca → familiar, etc.) | Bote nuevo |
-| Presupuesto limitado | Remotorización |
-| Necesita navegar esta temporada | Remotorización (plazo más corto) |
+| Presupuesto limitado | Compare los totales escritos de ambas opciones |
+| Necesita navegar esta temporada | Confirme los plazos de ambas opciones |
 | La embarcación ya cumplió su vida útil | Bote nuevo |
 
 ---
@@ -148,11 +148,11 @@ Si la respuesta es sí, y el casco está en buen estado, remotorizar probablemen
 
 ### ¿Cuánto cuesta una remotorización comparada con un bote nuevo?
 
-En muchos casos, una remotorización cuesta considerablemente menos que reemplazar toda la embarcación, pero la diferencia real depende del casco, la potencia y la instalación necesaria. Consulte mercuryrepower.ca para precios actualizados.
+Depende del casco, la potencia y la instalación necesaria, y un rango genérico de ahorro no decide por usted. Compare los totales escritos completos de la remotorización y del paquete de reemplazo. Consulte mercuryrepower.ca para precios actualizados.
 
 ### ¿Cuánto tiempo toma una remotorización?
 
-El plazo real depende de la temporada, disponibilidad del motor y carga de trabajo del taller. En general, mucho menos que esperar un bote nuevo.
+El plazo real depende de la temporada, disponibilidad del motor y carga de trabajo del taller. La ventana de instalación se confirma después de revisar la embarcación y las piezas necesarias.
 
 ### ¿Mercury ofrece garantía en las remotorizaciones?
 

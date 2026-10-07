@@ -31,7 +31,7 @@ revenue_driver: service
 
 ## Réponse rapide
 
-Si l'alarme de surchauffe sonne en ce moment : réduisez à ralenti, vérifiez le jet témoin (telltale), et évaluez à partir de là. Pas de jet signifie que la pompe à eau a échoué ou que la prise est bloquée, arrêtez immédiatement. Un jet fort avec une alarme peut être un problème de capteur ou de thermostat, allez au ralenti vers le rivage. En cas de doute, arrêtez. Faire tourner un moteur en surchauffe pour essayer de rentrer, c'est comment une réparation relativement petite devient un remplacement de moteur.
+Si une alarme de surchauffe se déclenche, réduisez immédiatement les gaz, suivez les consignes d'avertissement de l'afficheur ou du manuel d'utilisation de votre moteur (selon le numéro de série), et mettez le bateau en lieu sûr. Vérifiez le jet témoin (telltale) et les prises d'eau de refroidissement seulement quand c'est sécuritaire. Un jet normal ne prouve pas que tout le circuit de refroidissement fonctionne. Si l'alarme persiste, si le jet est faible ou absent, ou si le manuel indique d'arrêter, coupez le moteur et faites-vous remorquer. En cas de doute, arrêtez. Faire tourner un moteur en surchauffe pour essayer de rentrer, c'est comment une réparation relativement petite devient un remplacement de moteur.
 
 ---
 
@@ -45,9 +45,9 @@ Si vous lisez ceci du rivage, tant mieux. Le meilleur moment pour apprendre quoi
 
 ## Sur l'eau maintenant : faites ceci dans l'ordre
 
-### Étape 1 : Réduisez à ralenti, mais ne coupez pas encore
+### Étape 1 : Réduisez les gaz et suivez l'avertissement
 
-Aller des pleins gaz directement à moteur arrêté peut causer ses propres problèmes sur une tête motrice chaude. Descendez d'abord au ralenti. Cela vous donne 30 secondes pour évaluer.
+Réduisez immédiatement les gaz. Lisez le message de SmartCraft ou de VesselView si votre bateau en est équipé, et suivez la procédure d'avertissement du manuel d'utilisation de votre moteur (selon le numéro de série). Dans certains cas, le moteur peut fonctionner de façon limitée pendant que Guardian réduit la puissance; dans d'autres, il faut l'arrêter. N'utilisez pas un même délai pour tous les moteurs et toutes les alarmes.
 
 ### Étape 2 : Vérifiez le jet témoin
 
@@ -55,24 +55,24 @@ Le jet témoin (telltale) est le petit jet d'eau de refroidissement qui sort du 
 
 | État du jet témoin | Ce que cela signifie probablement |
 |---|---|
-| Jet fort et régulier | L'eau coule. Le problème peut être un thermostat, un capteur ou un blocage interne. Allez vers le rivage au ralenti. |
-| Faible ou hésitant | La turbine défaille ou la prise est partiellement bloquée. Ralenti seulement, n'accélérez pas. |
-| Aucun jet | La pompe à eau a échoué ou la prise est complètement bloquée. **Arrêtez maintenant.** |
-| Fort à vitesse de croisière, faible ou absent au ralenti | Turbine usée classique. |
+| Jet fort et régulier | De l'eau circule, mais un problème de thermostat, de capteur, de pression d'eau ou de débit interne peut subsister. Suivez la procédure d'avertissement. |
+| Faible ou hésitant | La prise d'eau est peut-être restreinte ou le circuit de refroidissement a un défaut. Réduisez la charge et suivez la procédure d'avertissement. |
+| Aucun jet | Traitez-le comme un avertissement grave de débit de refroidissement. Arrêtez le moteur si le manuel ou l'afficheur l'indique, puis inspectez seulement quand c'est sécuritaire. |
+| Fort à vitesse de croisière, faible ou absent au ralenti | Le circuit de refroidissement doit être inspecté. Ne diagnostiquez pas la turbine d'après le jet seul. |
 
 ### Étape 3 : Si le jet est faible ou absent, arrêtez
 
 Inclinez le moteur hors de l'eau. Inspectez les grilles de prise d'eau de refroidissement sur l'embase. Dans les lacs ontariens, le coupable le plus courant est les herbes, un sac de plastique ou des débris coincés dans les grilles.
 
-Dégagez la prise à la main. Un crochet à bateau ou un tournevis aide.
+Dégagez à la main les herbes ou débris détachés, moteur arrêté et hélice immobile. N'enfoncez pas de tournevis ni d'autre outil dans les grilles de prise d'eau.
 
 ### Étape 4 : Attendez avant de redémarrer
 
-Laissez la tête motrice refroidir pendant 10 à 15 minutes avant de tenter un redémarrage. Quand vous redémarrez, surveillez le jet témoin immédiatement.
+Suivez la procédure de refroidissement et de redémarrage du manuel d'utilisation de votre moteur. Si vous redémarrez, surveillez immédiatement le jet témoin et l'afficheur. Le retour du jet ne prouve pas que le défaut est réglé. Rendez-vous au point d'accostage sûr le plus proche, seulement à la vitesse permise par la procédure d'avertissement.
 
 ### Étape 5 : Si l'alarme revient, arrêtez
 
-Ne luttez pas. Appelez un remorqueur, dérivez vers le rivage, ou utilisez une autre méthode de propulsion.
+Ne luttez pas. Appelez un service de remorquage, dérivez vers le rivage, ou utilisez une autre méthode de propulsion.
 
 ---
 
@@ -162,7 +162,7 @@ Un jet signifie que l'eau bouge, mais cela ne prouve pas que le système de refr
 
 ### Devrais-je remplacer la turbine moi-même?
 
-Cela dépend de votre moteur précis et de votre expérience, pas d'un seuil de puissance universel. Sur les V6 et V8 modernes avec trim électrique, embases sensibles à l'alignement et SmartCraft, le ratio main-d'œuvre/erreur empire nettement. Consultez le manuel de votre moteur et, en cas de doute, faites-le faire. Pour un prix de main-d'œuvre à jour sur votre moteur, écrivez-nous à [hbwservice.ca](https://hbwservice.ca).
+Cela dépend de votre moteur précis et de votre expérience, pas d'un seuil de puissance universel. Suivez la procédure d'entretien propre au numéro de série de votre moteur. Si l'alignement de l'arbre de sélecteur, les joints, les couples de serrage ou l'engagement des tubes d'eau vous mettent mal à l'aise, confiez la réparation à un atelier. Pour un prix de main-d'œuvre à jour sur votre moteur, écrivez-nous à [hbwservice.ca](https://hbwservice.ca).
 
 ### À quelle fréquence devrais-je rincer mon moteur?
 
@@ -170,11 +170,11 @@ Après chaque utilisation est la meilleure pratique. Au minimum, après tout voy
 
 ### Le carburant sans éthanol affecte-t-il la surchauffe?
 
-Pas directement, la surchauffe est un problème du côté refroidissement, pas du côté carburant. Mais l'essence à la pompe avec éthanol stresse le reste du moteur de façons qui aggravent les problèmes.
+Pas directement, la surchauffe est un problème du côté refroidissement, pas du côté carburant. Suivez la procédure d'avertissement et de redémarrage propre à votre modèle : le type de carburant ne la remplace pas.
 
 ### Mon bateau est sur l'eau et je panique. Que dois-je faire?
 
-Réduisez à ralenti, vérifiez le jet témoin, coupez le moteur s'il est faible/absent, inclinez vers le haut, dégagez les prises, attendez 15 minutes, redémarrez et vérifiez le jet. Si l'alarme revient, appelez un remorqueur. **905-342-2153** si vous êtes dans notre secteur.
+Réduisez les gaz, mettez le bateau en lieu sûr et suivez les consignes d'avertissement de l'afficheur ou du manuel d'utilisation de votre moteur (selon le numéro de série). Si l'alarme persiste, si le jet est faible ou absent, ou si les consignes indiquent d'arrêter, coupez le moteur et faites-vous remorquer. Ensuite, soumettez une demande de service à hbwservice.ca.
 
 ## Prochaines étapes
 

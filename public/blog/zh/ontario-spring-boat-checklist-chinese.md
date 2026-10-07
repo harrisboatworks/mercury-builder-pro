@@ -52,7 +52,7 @@ Harris Boat Works 是 Gores Landing 的莱斯湖家庭码头，提供船只销�
 | 救生衣和安全装备 | 每个人有合适的 PFD 或救生衣，装备按船型和长度准备 | Transport Canada 的 Safe Boating Guide 按船型和长度列出最低安全装备要求 (Transport Canada Safe Boating Guide) |
 | 电池 | 充电、接线干净、固定稳 | 春天很多“不启动”其实是电池和接线问题 |
 | 燃油 | 旧油、油管、油箱通气、燃油味道 | 不要让去年秋天的“应该没事”变成今年六月的“怎么回事” |
-| 引擎 | 正常启动、冷却水流、无异常警报声、无明显漏油 | Mercury 或 Mercruiser 相关问题可以交给专业保养维修检查 |
+| 引擎 | 正常启动、冷却水流、无异常警报声、无明显漏油 | Mercury 或 MerCruiser 相关问题可以交给专业保养维修检查 |
 
 ## PCOC、PCL，不要搞混
 
@@ -93,7 +93,7 @@ Transport Canada 也说明，完成的 Rental Boat Safety Checklist 可以作为
 
 这样做不花哨，但有效。船主春天最需要的不是仪式感，是别在下水坡道上表演。
 
-如果你的 Mercury 或 Mercruiser 需要春季检查、启动异常、警报声、冷却水流不对，先提交 HBW 保养维修请求。如果你正在考虑换 Mercury 船外机，直接去 MercuryRepower.ca 看真实报价方向。
+如果你的 Mercury 或 MerCruiser 需要春季检查、启动异常、警报声、冷却水流不对，先提交 HBW 保养维修请求。如果你正在考虑换 Mercury 船外机，直接去 MercuryRepower.ca 看真实报价方向。
 
 ## 常见问题
 

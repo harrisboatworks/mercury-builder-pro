@@ -31,7 +31,7 @@ revenue_driver: repower
 
 ### Réponse rapide
 
-Dans la grande majorité des cas, oui : remotoriser une embarcation en bon état coûte beaucoup moins cher qu'acheter un nouveau bateau. Une remotorisation bien faite représente souvent 20 à 40 % du prix d'un nouveau bateau équivalent. Pour connaître le prix exact en dollars canadiens pour votre embarcation, utilisez l'outil de configuration en ligne sur mercuryrepower.ca.
+Il n'existe pas de fourchette de prix installé fiable et valable pour tous les bateaux. Ne vous fiez pas à un pourcentage fixe du prix d'un bateau neuf : partez du prix actuel du moteur, puis ajoutez seulement les travaux confirmés pour votre bateau. Pour le total installé, utilisez le configurateur en ligne sur mercuryrepower.ca et la soumission écrite.
 
 ---
 
@@ -43,7 +43,7 @@ Le moteur lâche, ou tient encore à peine. Vous vous posez la question : est-ce
 > Cet article est disponible en français parce que nous voulons que l'information technique sur les moteurs Mercury rejoigne plus de clients. Nous nous efforçons d'offrir du contenu utile dans votre langue.
 > Cela dit, nous devons être honnêtes : notre personnel parle anglais. Si vous nous contactez pour une soumission ou un service, nous vous répondrons en anglais. Si vous préférez, vous pouvez utiliser Google Traduction ou demander à un membre bilingue de votre famille de vous aider avec la communication. Nous nous engageons à vous offrir le meilleur service possible.
 
-La réponse dépend surtout de l'état de votre coque, mais dans la majorité des cas, la remotorisation est la décision la plus économique et la plus sensée.
+La réponse dépend de l'état de votre coque et des travaux que votre bateau exige pour accueillir un nouveau moteur : comparez le total écrit de la remotorisation avec le coût réel d'un bateau de remplacement.
 
 Harris Boat Works est une marina familiale de troisième génération sur le lac Rice. Entreprise familiale depuis 1947, concessionnaire Mercury depuis 1965, concessionnaire Mercury Premier, le niveau de certification le plus élevé chez [Mercury Marine](https://www.mercurymarine.com/ca/en). Nous réalisons des dizaines de remotorisations par saison, sur toutes les catégories d'embarcations courantes en Ontario.
 
@@ -53,7 +53,7 @@ Harris Boat Works est une marina familiale de troisième génération sur le lac
 
 Une remotorisation (« repower » en anglais), c'est le remplacement du moteur hors-bord de votre embarcation existante par un moteur neuf. On garde la coque. On garde le tableau arrière. On garde l'équipement à bord. On change le moteur.
 
-Une coque en aluminium de bonne qualité peut durer 30, 40, voire 50 ans si elle est bien entretenue. Les moteurs, eux, ont une durée de vie beaucoup plus courte, surtout si l'entretien n'a pas été rigoureux. Plutôt que d'investir 40 000 $ ou 80 000 $ dans un nouveau bateau, il est souvent possible de redonner vie à votre embarcation avec un Mercury neuf pour une fraction de ce budget.
+Une coque en aluminium de bonne qualité peut durer 30, 40, voire 50 ans si elle est bien entretenue. Les moteurs, eux, ont une durée de vie beaucoup plus courte, surtout si l'entretien n'a pas été rigoureux. Plutôt que d'investir 40 000 $ ou 80 000 $ dans un nouveau bateau, il est parfois possible de redonner vie à votre embarcation avec un Mercury neuf si la coque est saine, mais comparez toujours les totaux écrits.
 
 ---
 
@@ -107,7 +107,7 @@ Pour les embarcations de 17 à 20 pieds. Le Mercury 115 FourStroke est l'un des 
 
 ## Pourquoi remotoriser plutôt qu'acheter neuf ?
 
-Une remotorisation bien faite représente souvent 20 à 40 % du prix d'un nouveau bateau équivalent. Si votre coque est en bonne condition, l'économie est réelle et substantielle.
+Aucun pourcentage fixe ne résume l'écart avec le prix d'un nouveau bateau équivalent. Si votre coque est en bonne condition, la remotorisation mérite une comparaison de prix, mais le résultat dépend du bateau, de l'ancien et du nouveau moteur, de l'hélice, de la charge, de l'entretien et du marché local des bateaux usagés.
 
 Vous gardez aussi une embarcation que vous connaissez, avec ses habitudes, sa manière de répondre sur l'eau, sa place à la marina. Le marché des bons bateaux usagés est serré. Un bateau bien entretenu avec un vieux moteur peut être une meilleure base qu'un bateau bon marché de qualité inégale.
 
@@ -162,7 +162,7 @@ Oui. Les moteurs Mercury FourStroke neufs sont couverts par une garantie limité
 
 ### Une remotorisation coûte-t-elle moins cher qu'un bateau neuf?
 
-Dans la plupart des cas, oui, si la coque est saine. Une remotorisation bien planifiée représente souvent 20 à 40 % du coût d'un nouveau bateau équivalent.
+Cela dépend du bateau : comparez le total écrit de la remotorisation avec celui d'un bateau de remplacement qui répond au même besoin. Ne vous fiez pas à un pourcentage fixe, comme 20 à 40 % du coût d'un nouveau bateau équivalent.
 
 ### Puis-je obtenir un prix sans appeler?
 
@@ -182,7 +182,7 @@ Non, vous pouvez démarrer le processus en ligne sur mercuryrepower.ca. Pour les
 
 ### Est-ce que vous installez des moteurs d'autres marques?
 
-Non. Pour les réparations et les installations, nous travaillons exclusivement avec Mercury et Mercruiser.
+Non. Pour les réparations et les installations, nous travaillons exclusivement avec Mercury et MerCruiser.
 
 ## Prochaines étapes
 

@@ -31,7 +31,7 @@ revenue_driver: rentals
 
 ### Réponse rapide
 
-Le lac Rice, dans les Kawarthas, est l'un des meilleurs lacs à doré jaune de l'Ontario, à environ une heure et demie à l'est de Toronto. On y trouve aussi l'achigan, le maskinongé, la perchaude, et le brochet. La saison d'ouverture pour le doré (Zone 17) est généralement le 2e samedi de mai. Confirmez les dates et limites de prise actuelles sur ontario.ca avant votre sortie. Harris Boat Works est sur le lac à Gores Landing depuis 1947 et loue des pontons et des bateaux de pêche; consultez la flotte actuelle sur harrisboatworks.ca/rentals.
+Le lac Rice, dans les Kawarthas, à environ une heure et demie à l'est de Toronto, offre encore une bonne pêche, mais il faut ajuster ses attentes. L'achigan à petite bouche, le maskinongé et la marigane noire sont les meilleures valeurs sûres. Le doré jaune est toujours présent, mais plus difficile à garder, car beaucoup de poissons dépassent la fenêtre de conservation de 35 à 50 cm. On y trouve aussi la perchaude et le brochet. La saison d'ouverture pour le doré (Zone 17) est généralement le 2e samedi de mai. Confirmez les dates et limites de prise actuelles sur ontario.ca avant votre sortie. Harris Boat Works est sur le lac à Gores Landing depuis 1947 et loue des pontons et des bateaux de pêche; consultez la flotte actuelle sur harrisboatworks.ca/rentals.
 
 ---
 
@@ -45,7 +45,7 @@ Le lac Rice fait partie du réseau de la Voie navigable Trent-Severn et est alim
 
 ### Doré jaune (walleye)
 
-Le doré est la star du lac Rice, l'espèce pour laquelle le lac est le mieux connu. On le retrouve dans les fonds vaseux et près des herbiers, dans les zones peu profondes au printemps peu après la fraie, et en profondeur durant l'été quand les températures montent. En soirée et par temps couvert, les dorés remontent souvent vers la surface, idéal pour la pêche légère.
+Le doré est l'espèce qui a bâti la réputation du lac Rice, mais la situation est plus nuancée en 2026 : les pêcheurs rapportent moins de poissons, et beaucoup dépassent la fenêtre de conservation de 35 à 50 cm. On le retrouve dans les fonds vaseux et près des herbiers, dans les zones peu profondes au printemps peu après la fraie, et en profondeur durant l'été quand les températures montent. En soirée et par temps couvert, les dorés remontent souvent vers la surface, idéal pour la pêche légère.
 
 ### Achigan à grande bouche et achigan à petite bouche
 
@@ -65,7 +65,7 @@ Le lac Rice accueille aussi le brochet, la perchaude, la barbotte et d'autres pe
 
 **Printemps (mai, juin):** Meilleure période pour le doré, qui se retrouve dans les eaux moins profondes après la fraie. L'achigan devient actif dès que l'eau se réchauffe.
 
-**Été (juillet, août):** Le doré se déplace vers les eaux plus profondes. L'achigan reste actif tôt le matin et en soirée. Saison de pointe pour le maskinongé, cherchez-le près des structures submergées et des herbiers.
+**Été (juillet, août):** Le doré se déplace vers les eaux plus profondes. L'achigan reste actif tôt le matin et en soirée. Le maskinongé est actif; cherchez-le près des structures submergées et des herbiers.
 
 **Automne (septembre, octobre):** Excellent pour l'achigan à petite bouche et le brochet. Les températures plus fraîches rendent les poissons plus agressifs. L'une des périodes les plus agréables pour être sur l'eau au lac Rice.
 
@@ -75,7 +75,7 @@ Le lac Rice accueille aussi le brochet, la perchaude, la barbotte et d'autres pe
 
 | Espèce | Ouverture | Fermeture | Limite (sportive) |
 |---|---|---|---|
-| Doré jaune | 2e samedi de mai | 15 novembre | 4 |
+| Doré jaune | 2e samedi de mai | 15 novembre | Sport : 4; Conservation : 1; conservez seulement les poissons de 35 à 50 cm |
 | Achigan (grande et petite bouche) | 3e samedi de juin | 15 décembre | 6 |
 | Maskinongé | 1er samedi de juin | 15 décembre | Sport : 1 de plus de 112 cm; Conservation : 0 |
 | Perchaude | Toute l'année | aucune | 50 |
@@ -88,7 +88,7 @@ Le lac Rice accueille aussi le brochet, la perchaude, la barbotte et d'autres pe
 
 Sans divulguer tous nos secrets, quelques structures sont reconnues par les pêcheurs locaux :
 
-- **Les herbiers de la partie est du lac:** habitat naturel pour l'achigan à grande bouche et le brochet.
+- **Les herbiers de la partie ouest du lac, au nord de Bewdley:** habitat naturel pour l'achigan à grande bouche et le brochet.
 - **Les pointes et hauts-fonds rocheux:** cherchez-les pour l'achigan à petite bouche, surtout à l'automne.
 - **Les zones de transition profondeur/herbier:** particulièrement productives pour le doré en été, en soirée.
 - **La rivière Otonabee** à l'extrémité ouest du lac crée des zones de courant intéressantes, idéales au printemps pour le doré et le brochet.
@@ -148,7 +148,7 @@ Oui. HBW propose une gamme en ligne actuelle de bateaux pontons et de pêche; co
 
 Doré jaune, achigan (grande et petite bouche), maskinongé.
 
-### Rice Lake est-il loin de Toronto?
+### Le lac Rice est-il loin de Toronto?
 
 Environ 1 h 30 par la 401 Est jusqu'à la sortie 472 (County Road 18 / Burnham Street, Cobourg), puis County Road 18 vers le nord sur environ 16 km jusqu'à Gores Landing.
 

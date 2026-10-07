@@ -33,7 +33,7 @@ revenue_driver: service
 
 ## 为什么安省冬天必须冬化
 
-安省的风险不只是低温，也包括长时间停放、潮气、燃油老化和船上系统内残留的水。结冰会膨胀，可能损坏冷却或淡水系统；不同的 outboard、sterndrive 和船上设备处理步骤并不相同。
+安省的风险不只是低温，也包括长时间停放、潮气、燃油老化和船上系统内残留的水。结冰会膨胀，可能损坏冷却或淡水系统；不同的船外机、尾驱（sterndrive）和船上设备处理步骤并不相同。
 
 最可靠的起点是发动机序列号和对应的 Mercury 手册。Mercury 也建议船主按具体手册确认冬化步骤；不要把论坛里某个机型的做法直接套到所有 Mercury 或 MerCruiser 上。
 
@@ -41,9 +41,9 @@ revenue_driver: service
 
 | 项目 | 为什么要做 | DIY 难度 |
 |---|---|---|
-| 排空冷却水（flush + drain） | 防止缸体冻裂 | 中 |
+| 冲洗并排空冷却水 | 防止缸体冻裂 | 中 |
 | 按手册进行发动机内部防锈处理 | 具体方法因机型而异 | 中 |
-| 按手册处理冷却和船上水系统 | outboard、sterndrive 和淡水系统步骤不同 | 中至难 |
+| 按手册处理冷却和船上水系统 | 船外机、尾驱（sterndrive）和淡水系统步骤不同 | 中至难 |
 | 按书面方案处理燃油 | 油箱类型、燃油和发动机系统会影响做法 | 中 |
 | 齿轮油更换并检查有无乳化（变白说明进水） | 趁早发现密封件失效 | 中 |
 | 更换发动机机油和机滤 | 旧机油酸性会腐蚀轴承 | 中 |
@@ -94,7 +94,7 @@ HBW 的 Lightspeed 记录显示，有 **2025 年 8 月至 11 月完成的 584 �
 ## 官方参考
 
 - [Mercury：如何找到对应发动机的数字版用户手册](https://www.mercurymarine.com/ca/en/lifestyle/dockline/how-to-get-a-digital-copy-of-your-mercury-owner-s-manual-.html)
-- [Mercury：How to Winterize Your Outboard](https://www.mercurymarine.com/an/en/lifestyle/dockline/winterizing-your-outboar)
+- [Mercury：如何冬化你的船外机（英文页面）](https://www.mercurymarine.com/an/en/lifestyle/dockline/winterizing-your-outboar)
 
 ## 相关阅读
 
