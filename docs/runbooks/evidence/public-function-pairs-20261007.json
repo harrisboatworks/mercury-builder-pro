@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "project": "eutsoqdpjurknjsshxes",
+  "sourceSha": "6bcd1134060219a787dffbde27d126ebc5451595",
+  "verifiedBy": "Codex",
+  "date": "2026-10-07",
+  "result": "BLOCKED",
+  "evidenceRoute": "deployed-edge-runtime using server-side production OPENAI_API_KEY; local harness proxy with the allowed production Origin header; no direct-provider credential used",
+  "authorization": "Jay approved bounded runtime checks and conditional staged release on October 7. Stop on any failed or unverified required check.",
+  "productionVersions": {
+    "ai-chatbot": 754,
+    "ai-chatbot-stream": 466,
+    "realtime-session": 411,
+    "realtime-sdp-exchange": 388
+  },
+  "chat": {
+    "phase": "pre-release",
+    "checkedAt": "2026-10-07T21:55:06.570Z",
+    "message": "Reply with exactly pong.",
+    "legacy": {
+      "status": 500,
+      "reply": "I'm sorry, I'm having trouble right now. Please try texting us at 647-952-2153 or call for immediate assistance.",
+      "error": "You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+    },
+    "stream": {
+      "status": 500,
+      "models": [],
+      "answer": "",
+      "done": false
+    }
+  },
+  "realtime": {
+    "result": "NOT_RUN",
+    "reason": "Stopped after the required chat provider check failed. No ephemeral secret or WebRTC peer created."
+  },
+  "release": {
+    "mergePerformed": false,
+    "deploymentPerformed": false,
+    "attestationStatus": "UNVERIFIED",
+    "serviceLinkAcceptance": "NOT_RUN"
+  },
+  "limitations": [
+    "Legacy chat exposes the OpenAI no-credits error. Streaming returned HTTP 500 without model identity or completion; its raw error body was not retained.",
+    "No current successful model/key proof. September 28 success is historical and cannot lift this release hold.",
+    "No Realtime session, SDP, audio, customer-tool, quote, message, credential, migration or hosted ElevenLabs action.",
+    "The source guard is a committed shape/name gate; it does not continuously monitor provider billing or key validity."
+  ],
+  "nextGate": "Restore credits for the OpenAI account behind production OPENAI_API_KEY without changing credentials. Rerun fresh bounded checks, record successful attestations, pass final-head CI, then release openai-realtime followed by site-chat with source readback and runtime/service-link acceptance."
+}

@@ -861,11 +861,12 @@ const ATTESTED_REALTIME = {
 };
 
 describe('public pair release holds', () => {
-  it('selects exactly each committed production-attested pair with mocked deploys', async () => {
+  it('selects exactly each pair with explicit attestation fixtures and mocked deploys', async () => {
     for (const pair of PUBLIC_RELEASE_PAIRS) {
       const seen: string[] = [];
       const code = await runDeploy({
         env: { DEPLOY_PAIR: pair.id, DEPLOY_FROM: 'HEAD', DEPLOY_TO: 'HEAD' },
+        releaseAttestations: { ...ATTESTED_CHAT, ...ATTESTED_REALTIME },
         deployOne: (slug: string) => {
           seen.push(slug);
           return { ok: true, detail: 'mock only' };
@@ -1269,7 +1270,7 @@ describe('public pair release holds', () => {
     expect(result.failed.map((item) => item.slug)).toEqual(['realtime-session', 'realtime-sdp-exchange']);
   });
 
-  it('holds DEPLOY_PAIR=site-chat when production attestation is explicitly UNVERIFIED', async () => {
+  it('holds DEPLOY_PAIR=site-chat under the committed UNVERIFIED attestation', async () => {
     const seen: string[] = [];
     const code = await runDeploy({
       env: {
@@ -1281,14 +1282,13 @@ describe('public pair release holds', () => {
         seen.push(slug);
         return { ok: true, detail: 'ok' };
       },
-      releaseAttestations: UNVERIFIED_PAIRS,
       listAppliedVersions: () => [],
     });
     expect(code).toBe(1);
     expect(seen).toEqual([]);
   });
 
-  it('holds DEPLOY_PAIR=openai-realtime when production attestation is explicitly UNVERIFIED', async () => {
+  it('holds DEPLOY_PAIR=openai-realtime under the committed UNVERIFIED attestation', async () => {
     const seen: string[] = [];
     const code = await runDeploy({
       env: {
@@ -1300,7 +1300,6 @@ describe('public pair release holds', () => {
         seen.push(slug);
         return { ok: true, detail: 'ok' };
       },
-      releaseAttestations: UNVERIFIED_PAIRS,
       listAppliedVersions: () => [],
     });
     expect(code).toBe(1);

@@ -61,12 +61,10 @@ describe('source-derived pair facts', () => {
     expect(PUBLIC_RELEASE_PAIRS[1].requiredModels).toEqual(realtime.models);
   });
 
-  it('records each production-proven pair without changing the unverified fallback', () => {
-    for (const pair of PUBLIC_RELEASE_PAIRS) {
-      expect(pair.attestation).not.toBe(UNVERIFIED_PRODUCTION_ATTESTATION);
-      expect(acceptProductionAttestation(pair, pair.attestation).ok).toBe(true);
-      expect(pair.attestation.productionKeyProvenance).toContain('public-function-pairs-20260928.json');
-    }
+  it('keeps the committed production attestation UNVERIFIED', () => {
+    expect(PUBLIC_RELEASE_PAIRS.every((pair) => pair.attestation === UNVERIFIED_PRODUCTION_ATTESTATION)).toBe(
+      true,
+    );
     expect(UNVERIFIED_PRODUCTION_ATTESTATION.status).toBe('UNVERIFIED');
     expect(PUBLIC_BACKLOG_SOLOS.map((item) => item.slug)).toEqual([
       'sync-elevenlabs-static-kb',
@@ -119,7 +117,6 @@ describe('pair skip reasons', () => {
   it('holds a complete pair when attestation is unverified and ignores a local env key', () => {
     const reasons = skipReasonsForSelectedSlugs(['ai-chatbot', 'ai-chatbot-stream', 'send-sms'], {
       env: { OPENAI_API_KEY: 'sk-local-not-production-proof' },
-      attestations: { 'site-chat': UNVERIFIED_PRODUCTION_ATTESTATION },
     });
     expect(reasons.get('ai-chatbot')).toMatch(/attestation is unverified/);
     expect(reasons.get('ai-chatbot-stream')).toMatch(/A local key is not production proof/);
