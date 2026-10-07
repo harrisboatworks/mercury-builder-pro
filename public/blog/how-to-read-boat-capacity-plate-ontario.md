@@ -51,7 +51,7 @@ The sections below explain maximum persons, recommended engine power, gross load
 This is the largest number of people included in the manufacturer's recommended safe limits for the boat. It is separate from the weight limit. Transport Canada says the craft reaches capacity when either the people limit or the weight limit is reached, whichever comes first.
 
 ### 2. Maximum recommended engine horsepower
-This is the highest motor power the hull was designed and tested to handle safely. It is set by the manufacturer based on hull dynamics, weight distribution, and transom strength.
+This is the highest motor power the builder rated the hull for, calculated under Transport Canada’s construction standards. It is set by the manufacturer based on hull dynamics, weight distribution, and transom strength.
 
 **Important:** this is not a target and it is not a recommendation to buy the biggest motor. It is the manufacturer's maximum recommended safe power for that hull. An engine choice still has to account for motor weight, transom condition, steering, rigging, load, and use.
 
@@ -92,7 +92,7 @@ For a boat built after April 29, 2010, contact the manufacturer or importer and 
 | Field on the notice | What it tells you |
 |---|---|
 | Maximum number of persons | The largest number of people included in the manufacturer's recommended safe limits. It is a count, separate from the weight limit, and capacity is reached when either the people limit or the weight limit is reached, whichever comes first. |
-| Maximum recommended engine power | The highest motor power the hull was designed and tested to handle safely. It is a limit to respect, not a shopping target. |
+| Maximum recommended engine power | The highest motor power the builder rated the hull for, calculated under Transport Canada’s construction standards. It is a limit to respect, not a shopping target. |
 | Maximum gross load | The total weight the boat can safely carry: people, fuel, gear, motor, batteries, and everything that is not the empty hull. Usually shown in both kilograms and pounds. |
 | Manufacturer or importer, and model | Who built or imported the hull and which model it is. This is what you quote when you ask for a replacement notice. |
 | Declaration of compliance | The statement that the product complied with the applicable Canadian construction requirements when it was built or imported. |

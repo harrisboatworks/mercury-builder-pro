@@ -142,7 +142,7 @@ Rice Lake 属于安省 Fisheries Management Zone 17（FMZ 17）。常见目标�
 
 需要考取 PCOC？通过 [HBW 的 MyBoatCard 推荐链接](https://myboatcard.com/card/harrisboat)参加在线课程，使用优惠码 **HARRIS15** 可享 **15% 折扣**。
 
-从 GTA 多数地区开车通常约 60–120 分钟，实际时间取决于出发点、401／115 路况和你使用的下水点。出发前先做三件事：查 [FMZ 17 当年规则](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17)、确认自己的[安省钓鱼资格](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees)，再核对天气、下水点和船上安全装备。
+从 GTA 多数地区开车通常约 60–120 分钟，实际时间取决于出发点、401 路况和你使用的下水点。出发前先做三件事：查 [FMZ 17 当年规则](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17)、确认自己的[安省钓鱼资格](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees)，再核对天气、下水点和船上安全装备。
 
 ::bilingual-trust
 heading: Why GTA Chinese buyers come to Rice Lake
@@ -154,8 +154,8 @@ item2En: Family marina since 1947
 item2Zh: 自1947年家族经营的码头
 item3En: Transparent CAD pricing, no haggling
 item3Zh: 透明加元价格，无需讨价还价
-item5En: 60 to 120 minutes from most GTA areas via 401 + 115
-item5Zh: 从 GTA 多数地区经 401 + 115 高速约 60 到 120 分钟车程
+item5En: 60 to 120 minutes from most GTA areas via Highway 401
+item5Zh: 从 GTA 多数地区经 401 高速约 60 到 120 分钟车程
 item6En: Mercury dealer since 1965
 item6Zh: 自1965年起的 Mercury 经销商
 ctaEn: Build your quote
@@ -169,7 +169,7 @@ ctaHref: /quote/motor-selection
 
 Rice Lake 是大多伦多钓友的近距离选择。从多伦多开车：
 
-- **路线：** 通常经 401 东向和 Highway 115；最后一段请按你确认的码头或租船地点导航
+- **路线：** 通常经 401 东向；最后一段请按你确认的码头或租船地点导航
 - **时间：** 多数 GTA 地区约 60–120 分钟，周末和施工会明显改变车程
 - **不需要过夜：** 早上去，傍晚回，一天搞定
 - **下水点要先确认：** 船坡、停车、费用、开放时间和拖车空间会因地点与季节改变
@@ -188,7 +188,7 @@ Walleye 在安大略省渔业管理区 17（FMZ 17）有特定的尺寸限制（
 
 ### Smallmouth Bass（小嘴鲈）
 
-晚春到初夏的主要钓鱼对象。在岩石结构、水草边缘特别活跃。可以用 jig、软虫、顶水饵等多种方式。
+6 月第三个星期六开季后，初夏到秋季的主要钓鱼对象。在岩石结构、水草边缘特别活跃。可以用 jig、软虫、顶水饵等多种方式。
 
 ### Muskellunge / Muskie（中文俗名不一）
 
@@ -390,8 +390,8 @@ item2En: Family marina since 1947
 item2Zh: 自1947年家族经营的码头
 item3En: Transparent CAD pricing, no haggling
 item3Zh: 透明加元价格，无需讨价还价
-item5En: 60 to 90 minutes from GTA via 401 + 115
-item5Zh: 从 GTA 经 401 + 115 高速约 60 到 90 分钟车程
+item5En: About 90 minutes east of Toronto via Highway 401
+item5Zh: 从多伦多向东约 90 分钟车程，出发前请用实时导航确认路线和路况
 item6En: Mercury dealer since 1965
 item6Zh: 自1965年起的 Mercury 经销商
 ctaEn: Build your quote
@@ -413,7 +413,7 @@ Mercury FourStroke 115和150都属于同一个可靠的四冲程系列，油耗�
 |----------|------------------------|------------------------|
 | 排量 | 2.1升 | 3.0升 |
 | 汽缸数 | 4缸 | 4缸 |
-| 重量 | 163 公斤（359 磅）；Command Thrust 165 公斤（363 磅） | 约204公斤 |
+| 重量 | 163 公斤（359 磅）；Command Thrust 165 公斤（363 磅） | 206 公斤（455 磅），最轻配置干重 |
 | 适配船长参考（仅供参考，最终以 Capacity Plate 标示为准） | 16–19英尺 | 18–22英尺 |
 
 115 FourStroke：官方公布的最轻配置干重为 163 公斤（359 磅）；Command Thrust 版本为 165 公斤（363 磅）。具体重量会随轴长和配置变化，干重不等于安装后的总重量。
@@ -678,7 +678,7 @@ Rice Lake 属于安大略 Fisheries Management Zone 17（FMZ 17）。Walleye（�
 - Family marina since 1947 / 自1947年家族经营的码头
 - Mercury dealer since 1965 / 自1965年起的 Mercury 授权经销商
 - Transparent CAD pricing, no haggling / 透明加元价格，无需讨价还价
-- 60 to 90 minutes from GTA via 401 + 115 / 从 GTA 经 401 + 115 高速约 60 到 90 分钟车程
+- About 90 minutes east of Toronto via Highway 401 / 从多伦多经 401 向东约 90 分钟车程
 - Build your quote / 在线获取报价
 
 ## 为什么Lake Simcoe对GTA华人钓友很有吸引力
@@ -783,7 +783,7 @@ Pontoon选Mercury船外机，**用你最重的使用情境来选，不是用展�
 
 ::bilingual-trust
 heading: Why GTA Chinese buyers come to Rice Lake
-headingTranslated: 为什么 GTA 华人船主愿意到 Rice Lake
+headingTranslated: 为什么 GTA 华人船主愿意到莱斯湖（Rice Lake）
 eyebrow: HBW Trust Points / HBW 信任要点
 item1En: Mercury Marine Premier certified dealer
 item1Zh: [Mercury Marine](https://www.mercurymarine.com/ca/en) Premier 认证经销商
@@ -791,8 +791,8 @@ item2En: Family marina since 1947
 item2Zh: 自1947年家族经营的码头
 item3En: Transparent CAD pricing, no haggling
 item3Zh: 透明加元价格，无需讨价还价
-item4En: 60 to 90 minutes from GTA via 401 + 115
-item4Zh: 从 GTA 经 401 + 115 高速约 60 到 90 分钟车程
+item4En: About 90 minutes east of Toronto via Highway 401
+item4Zh: 从 GTA 经 401 高速东行约 60 到 90 分钟车程
 item5En: Mercury dealer since 1965
 item5Zh: 自1965年起的 Mercury 经销商
 ctaEn: Build your quote
@@ -873,7 +873,7 @@ Pontoon换机或新配置可能涉及：Rigging（接线）、操控系统、螺
 
 ## Pontoon在Rice Lake和Kawarthas的使用说明
 
-Rice Lake和Kawarthas是GTA华人家庭租船或自有Pontoon最常使用的水域之一。几个在地知识点：
+莱斯湖（Rice Lake）和Kawarthas是GTA华人家庭租船或自有Pontoon最常使用的水域之一。几个在地知识点：
 
 - **靠近码头和浅水区时要慢速**, Rice Lake有多个保护区和限速区
 - **夏季周末人多**, 安全意识和码头礼仪很重要
@@ -1110,8 +1110,8 @@ item2En: Family marina since 1947
 item2Zh: 自1947年家族经营的码头
 item3En: Transparent CAD pricing, no haggling
 item3Zh: 透明加元价格，无需讨价还价
-item5En: 60 to 90 minutes from GTA via 401 + 115
-item5Zh: 从 GTA 经 401 + 115 高速约 60 到 90 分钟车程
+item5En: About 90 minutes east of Toronto via Highway 401
+item5Zh: 从多伦多经 401 向东约 90 分钟车程
 item6En: Mercury dealer since 1965
 item6Zh: 自1965年起的 Mercury 经销商
 ctaEn: Build your quote
@@ -1238,7 +1238,7 @@ A：可以更换，但必须在船体Capacity Plate允许的范围内。建议�
 **想买Mercury 9.9至20HP？**
 到 **[mercuryrepower.ca](https://www.mercuryrepower.ca)** 看当前加币报价，确认轴长和控制方式后，至 **[hbwservice.ca](https://hbwservice.ca)** 提交申请让HBW确认配置是否适合你的船。
 
-Harris Boat Works，自1947年起，Mercury Marine Premier Dealer，位于Rice Lake南岸Gores Landing。
+Harris Boat Works，自1947年起家族经营，自1965年起为 Mercury 经销商，现为 Mercury Marine Premier Dealer，位于Rice Lake南岸Gores Landing。
 ---`,
     faqs: [
       { question: '9.9HP 适合两个人钓鱼吗？', answer: '可能适合，但要看船长、船重、水况和装备。' },
@@ -1272,8 +1272,8 @@ item2En: Family marina since 1947
 item2Zh: 自1947年家族经营的码头
 item3En: Transparent CAD pricing, no haggling
 item3Zh: 透明加元价格，无需讨价还价
-item5En: 60 to 90 minutes from GTA via 401 + 115
-item5Zh: 从 GTA 经 401 + 115 高速约 60 到 90 分钟车程
+item5En: About 90 minutes east of Toronto via Highway 401
+item5Zh: 从多伦多向东约 90 分钟车程，出发前请用实时导航确认路线和路况
 item6En: Mercury dealer since 1965
 item6Zh: 自1965年起的 Mercury 经销商
 ctaEn: Build your quote
@@ -1366,7 +1366,7 @@ Command Thrust通常被认为是Pontoon的配置，但在某些情况下，40至
 
 - 如果你的船比同尺寸平均更重
 - 如果你常载大量装备或需要更强的低速推力
-- 如果你在有波浪的情况下需要更好的控制
+- 如果你希望重载时更容易上滑行，并能在较低速度下保持滑行
 
 这不是每个人都需要的配置，但值得在选择时和HBW讨论。
 
@@ -1581,8 +1581,8 @@ item2En: Family marina since 1947
 item2Zh: 自1947年家族经营的码头
 item3En: Transparent CAD pricing, no haggling
 item3Zh: 透明加元价格，无需讨价还价
-item5En: 60 to 90 minutes from GTA via 401 + 115
-item5Zh: 从 GTA 经 401 + 115 高速约 60 到 90 分钟车程
+item5En: About 90 minutes east of Toronto via Highway 401
+item5Zh: 从多伦多经 401 向东约 90 分钟车程
 item6En: Mercury dealer since 1965
 item6Zh: 自1965年起的 Mercury 经销商
 ctaEn: Build your quote
@@ -1600,7 +1600,7 @@ ctaHref: /quote/motor-selection
 
 **但有一个重要例外：**
 
-许多租船公司可以提供「临时 PCOC 免除」（Rental Boat Safety Checklist），允许承租人在没有 PCOC 的情况下操作租用的船。这个免除是针对该次特定的租用，不可转用于其他船或其他次。
+按联邦规则，有些租船公司可以让承租人用「租船安全清单」（Rental Boat Safety Checklist）代替 PCOC，操作该次租用的船。HBW 不这样做：每位驾驶者都需要有效的 PCOC。这个免除是针对该次特定的租用，不可转用于其他船或其他次。
 
 这个免除需要：
 - 完成租船公司的安全简报（Safety Briefing）
@@ -1611,13 +1611,13 @@ ctaHref: /quote/motor-selection
 
 ## 哪些租船公司提供 PCOC 免除？
 
-不是所有的租船公司都提供这个。提供的需要：
+不是所有的租船公司都提供这个。按 Transport Canada 的说明，这份清单的用法是：
 
-1. 持有有效的营业执照
-2. 员工经过培训，能进行 Safety Briefing
-3. 有书面的 Safety Checklist 流程
+1. 租船公司在出租前与承租人逐项讲解清单（船只操作、安全规则、当地水域危险和紧急情况）
+2. 承租人逐项勾选，确认已经理解
+3. 完成的清单只在该次租用期间有效
 
-HBW 的租船在你预订时会告知当前要求。请致电 905-342-2153 或在预订时询问。
+HBW 的租船要求每位驾驶者出示有效 PCOC。如有疑问，请致电 905-342-2153。
 
 如果你在大多伦多区考虑多个租船选择，建议事先询问每家公司关于 PCOC 的政策。
 
@@ -1646,7 +1646,7 @@ HBW 的租船在你预订时会告知当前要求。请致电 905-342-2153 或�
 
 ## 租船 Safety Briefing 通常包含什么？
 
-如果你选择用临时免除，租船公司的 Safety Briefing 通常涵盖：
+租船公司的 Safety Briefing 通常涵盖以下内容（在 HBW，安全讲解不能替代 PCOC）：
 
 **1. 船只操作基础**
 - 启动与停止马达
@@ -1843,7 +1843,7 @@ Harris Boat Works 目前是 Mercury Marine Premier 认证经销商。`,
 
 ## 为什么大部分 GTA 华人家庭选 Pontoon
 
-我们在 HBW 售卖 Legend pontoon 给 GTA 华人客户已经十多年。最常见的购买理由：
+在 HBW，GTA 华人客户选择 Legend pontoon 最常见的购买理由：
 
 **1. 家庭聚会场所** ， Pontoon 平台够大,能放餐桌、椅子、烧烤架。一家三代 (爷爷奶奶、父母、孩子) 周末聚会在湖上不挤。
 
@@ -1947,7 +1947,7 @@ whenInDoubt: 一半华人家庭买了钓鱼船后才发现, 周末其实更想�
 
 > 相关指南：[买 pontoon：家庭、钓鱼、Rice Lake 怎么配](/blog/zh/chinese-family-pontoon-mercury-outboard)。
 
-[Mercury Premier 经销商](https://www.mercurymarine.com/ca/en) · 莱斯湖 Gores Landing · 自 1947 年
+[Mercury Premier 经销商](https://www.mercurymarine.com/ca/en) · 莱斯湖 Gores Landing · 自 1947 年家族经营
 
 ---
 
@@ -1985,7 +1985,7 @@ whenInDoubt: 一半华人家庭买了钓鱼船后才发现, 周末其实更想�
 
 1. **维修保养：**先填写[服务申请](https://hbwservice.ca)，说明船只、发动机和需要处理的问题。
 2. **更换发动机：**使用[Mercury 报价工具](/quote/motor-selection)说明您的需求，HBW 会根据船只情况确认配置和工作范围。
-3. **送船：**完成服务申请后，您可以随时送船，包括营业时间以外；无需等待确认送船时段。
+3. **送船：**完成服务申请后，您可以送船，包括营业时间以外；HBW 12 月 1 日至 4 月 1 日停业，期间不接收船只。
 4. **确认与交接：**HBW 会与您联系，确认所需资料、工作授权和安排。交接时核对已完成的工作和相关文件。
 
 Harris Boat Works 是 Mercury Premier 经销商。
@@ -2006,8 +2006,8 @@ item2En: Family marina since 1947
 item2Zh: 自1947年家族经营的码头
 item3En: Transparent CAD pricing, no haggling
 item3Zh: 透明加元价格，无需讨价还价
-item5En: 60 to 90 minutes from GTA via 401 + 115
-item5Zh: 从 GTA 经 401 + 115 高速约 60 到 90 分钟车程
+item5En: About 90 minutes east of Toronto via Highway 401
+item5Zh: 从多伦多经 401 向东约 90 分钟车程
 item6En: Mercury dealer since 1965
 item6Zh: 自1965年起的 Mercury 经销商
 ctaEn: Build your quote
@@ -2066,7 +2066,7 @@ Repower 不只是换一台「差不多大」的机器。选对马力对于安全
 |---|---|
 | FourStroke | 大多数家庭和钓鱼用途，安静省油，用途最广 |
 | Pro XS | 注重加速性能和钓鱼操控的人 |
-| Verado | 大型或高端船，追求静音和精细操控 |
+| Verado | 大型或高端船，追求静音和精细操控（仅限特别订购，需先向 HBW 咨询） |
 
 **对大多数 GTA 华人家庭船主来说，FourStroke 系列是最实际的起点。**
 
@@ -2227,15 +2227,15 @@ Harris Boat Works 是 Rice Lake 上自 1947 年持续家族经营的 marina，�
 
 ---
 
-## Mercury 保养周期：20 / 100 / 300 三档
+## Mercury 保养周期：磨合 / 100 / 300 三档
 
 Mercury 把发动机保养按使用小时数分成几个关键节点。下面是简化版（具体以你的 Owner's Manual 为准）：
 
 | 节点 | 时机 | 主要内容 | 为什么重要 |
 |---|---|---|---|
-| **20 小时初次保养** | 新机或大修后第一次 | 第一次换机油、检查紧固件、调整化油器/喷油（视机型）、检查冷却水道 | 新机磨合期金属碎屑最多，必须及时清除；不做可能影响保修 |
+| **10 小时磨合期** | 新机或大修后 | 按手册完成磨合（多数机型：前 2 小时变化油门且不超过 4500 rpm，之后 8 小时避免连续全油门超过 5 分钟）；是否另有早期检查或换油，以机型手册为准 | 磨合方式不当造成的故障可能不在保修范围内 |
 | **100 小时年度保养** | 每年一次（即使时数不足） | 换机油 + 滤芯、检查火花塞、齿轮油、燃油滤、冷却系统、阳极 | 安省湖泊使用强度低，但季节性温差大，年度检查是底线 |
-| **300 小时大保养** | 每 300 小时或 3 年（取较早者） | 上面所有 + 换水泵叶轮、火花塞、燃油泵检查、节温器 | 水泵叶轮老化是 Mercury 故障最常见原因，过期不换风险高 |
+| **300 小时大保养** | 部分机型（如 150 FourStroke）为每 300 小时或 3 年（取较早者），其他机型以手册为准 | 按机型手册加做：换水泵叶轮、检查动力倾斜液、润滑传动轴花键、更换发电机皮带；火花塞和节温器的间隔也以手册为准 | 水泵叶轮老化是 Mercury 故障最常见原因，过期不换风险高 |
 
 **注意：** 这是 Mercury 通用框架，**确切周期视机型（FourStroke、Pro XS、SeaPro、Verado、Mercruiser）和使用环境（淡水 / 咸水）而定**。HBW 在每次服务时会按你的具体型号给出下一次推荐时间。
 
@@ -2245,9 +2245,9 @@ Mercury 把发动机保养按使用小时数分成几个关键节点。下面是
 
 ### 机油 + 滤芯（年度必换）
 
-四冲程 Mercury 请使用 Mercury 4-Stroke Marine Oil（FC-W 认证），**不能用汽车机油代替**。在加拿大按马力区分：0 至 30 hp 用 10W-30，40/50/60 hp 用 25W-40，75 hp 及以上用 10W-30。确切以用户手册为准。每 100 小时或每年一次（取较早者）。如果你只在 5 月到 10 月用船 20–30 小时，仍然建议每年换一次。
+四冲程 Mercury 请使用 Mercury 4-Stroke Marine Oil（FC-W 认证），**不能用汽车机油代替**。Mercury 提供 10W-30 和 25W-40 两种 FC-W 认证的四冲程机油，具体用哪一种取决于机型、年份和使用温度，请以你那台发动机的用户手册为准。每 100 小时或每年一次（取较早者）。如果你只在 5 月到 10 月用船 20–30 小时，仍然建议每年换一次。
 
-### 火花塞（300 小时或 3 年）
+### 火花塞（间隔以机型手册为准）
 
 Mercury 指定 NGK 或 Champion 特定型号，更换间距和扭矩有标准。开始有点火不稳、怠速抖动、油耗上升，多数情况换火花塞就好。
 
@@ -2288,7 +2288,7 @@ Lower unit gearcase oil 颜色变成奶白色就说明进水了，**必须立即
 新 Mercury 外挂机出厂通常带 **3 年消费者有限保修**（具体视机型和市场，可能有延保选项）。保修期内最重要的几件事：
 
 - **保修维修必须由授权经销商完成。** 非授权点的修理记录可能影响保修索赔。
-- **关键服务必须按时完成。** 跳过 20 小时初保、跳过 100 小时年度服务，可能导致 **特定相关项目的保修被拒**（不是"整个保修作废"，但具体项目可能受影响）。
+- **磨合和定期保养必须按手册完成。** 磨合不当、跳过手册要求的定期保养（如 100 小时或年度服务），可能导致 **特定相关项目的保修被拒**（不是"整个保修作废"，但具体项目可能受影响）。
 - **保留所有服务记录。** HBW 在 Mercury 系统里保留电子记录，你也应该自己留一份纸质或邮件副本。
 - **客户自带非 Mercury 零件可能影响保修。** 如机油、火花塞、滤芯使用非 Mercury 推荐型号，相关故障可能被排除在保修之外。
 
@@ -2601,8 +2601,8 @@ Harris Boat Works（HBW）是 Rice Lake 上家族经营·1947 年至今 的 mari
 
 ### 谁需要
 
-- **任何年龄、任何水域、操作发动机船的人。** 不分加拿大公民、永久居民、留学生、游客。
-- 包括小型铝合金钓鱼船、Pontoon、橡皮艇带挂机、电动船马力超过法规阈值的情况。
+- **任何年龄、操作带发动机船的人。** 不分加拿大公民、永久居民、留学生；访客自带船在加拿大水域少于 45 个连续日可豁免，租用的船可使用已完成的租船安全清单（仅限该租期）。
+- 包括小型铝合金钓鱼船、Pontoon、橡皮艇带挂机，以及电动马达船（包括小马力电动马达）。
 - **加拿大驾照（G、G2、G1）不能代替 PCOC 或其他合格的操作员资格证明。** 这是两个完全不同的体系。
 
 ### 怎么考
@@ -2767,7 +2767,7 @@ Rice Lake 属于安省 Fisheries Management Zone（FMZ），具体的鱼种季�
       { question: '14 岁的孩子能自己开船吗？', answer: '12 至 15 岁在没有合格成人直接监督时，最多可操作 40 HP（30 kW）的船；仍须携带有效资格证明。16 岁以下不能操作个人水上摩托。请在出发前核对 Transport Canada 当前规则。' },
       { question: '我从 HBW 租船，需要自己带 PCOC 吗？', answer: '需要。HBW 的内部政策要求每位驾驶员在 check-in 时出示有效的 boat operator licence / PCOC。安全清单仍会作为 briefing 完成，但 HBW 不把它当作驾驶员牌照的替代品。' },
       { question: '安省钓鱼证多少钱？分几种？', answer: '安省钓鱼证由 Outdoors Card（3 年有效）和 Fishing Licence Tag（年度）两部分组成，分 Sport（运动证，限额高）和 Conservation（保育证，限额减半，价格较低）。具体价格每年由 MNRF 调整，请到 ontario.ca/page/fishing-licence 查询当下价格。' },
-      { question: 'Rice Lake 的 walleye / 黄金鲈鱼 规定是什么？', answer: '建议查询安省最新钓鱼规则，因为尺寸与时段每年可能调整。Ontario.ca 上的官方钓鱼条例摘要（Recreational Fishing Regulations Summary）是最可靠来源，按 Fisheries Management Zone 查询 Rice Lake 所属区域即可看到当年的 walleye 季节、slot size 和持有量。' },
+      { question: 'Rice Lake 的 walleye / 碧古鱼 规定是什么？', answer: '建议查询安省最新钓鱼规则，因为尺寸与时段每年可能调整。Ontario.ca 上的官方钓鱼条例摘要（Recreational Fishing Regulations Summary）是最可靠来源，按 Fisheries Management Zone 查询 Rice Lake 所属区域即可看到当年的 walleye 季节、slot size 和持有量。' },
       { question: '没有船驾照或钓鱼证被查到会怎样？', answer: '可能被加拿大海岸警卫队、OPP 海上巡逻或 MNRF 巡查员开告票，罚款可达数百加元，严重情况下还可能没收渔获或暂时禁止使用船只。具体金额以 Transport Canada 和 Ontario MNRF 官方为准。' },
     ],
   },
@@ -3980,7 +3980,7 @@ HBW 网站说明提供租船、船只销售、保养维修、冬化保养、存�
 | 更换发动机机油和机滤 | 旧机油酸性会腐蚀轴承 | 中 |
 | 电瓶按手册和批准方案处理 | 健康电瓶只有在完全充电、断开连接、固定妥当，并获得批准的存储方案允许时，才可以留在船上。具体以机型/序列号手册和批准的存储方案为准。 | 易至中 |
 | 检查火花塞 / 接头 / 防水油脂 | 顺手做，省春天的钱 | 中 |
-| 收缩膜或室内存储 | 防止积雪压塌船篷、防止雨水进船 | 难（建议交给船坞） |
+| 收缩膜 | 防止积雪压塌船篷、防止雨水进船 | 难（建议交给船坞） |
 
 > **DIY 还是交给经销商？** 如果你有对应的官方手册、合适的工具，而且能逐项核对，部分船主可以自己做。第一次处理、机型不清楚、船上还有水系统，或已经出现进水、报警、乳化齿轮油等情况时，交给合格技师更稳妥。
 
@@ -4083,8 +4083,8 @@ quote: ${ZH_LANGUAGE_NOTE}
 
 ## 多伦多出发：路线和时间
 
-- **万锦（Markham）/ 列治文山 / 北约克：** 经 404 北上转 115，约 75-90 分钟。
-- **士嘉堡（Scarborough）/ 密西沙加：** 经 401 东行转 115，约 90-110 分钟。
+- **万锦（Markham）/ 列治文山 / 北约克：** 经 404 南下接 401 东行，在 Cobourg 的 Exit 472 下高速，沿 County Road 18 北上，约 75-90 分钟。
+- **士嘉堡（Scarborough）/ 密西沙加：** 经 401 东行，在 Cobourg 的 Exit 472 下高速，沿 County Road 18 北上，约 90-110 分钟。
 - **目的地：** Harris Boat Works，5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0。
 
 建议早上 8 至 9 点出门，9:30 至 10:30 到达。**钓鱼最佳时段是日出后 2 小时和日落前 2 小时**，越早越好。
@@ -4121,13 +4121,13 @@ quote: ${ZH_LANGUAGE_NOTE}
 
 钓鱼证和船证是**两套完全独立的系统**：
 
-- **机构不同：** 钓鱼证由安省自然资源与林业部（MNRF）管，船证由加拿大交通部管。
+- **机构不同：** 钓鱼证由安省自然资源部（MNR）管，船证由加拿大交通部管。
 - **需要分别办：** 有 PCOC 不代表可以钓鱼；有钓鱼证不代表可以开船。
 - **结构：** 先办一张 **Outdoors Card**（户外活动卡，3 年有效），再加一张 **Fishing Licence**（钓鱼许可，1 年 / 1 天 / 8 天等多种）。
 - **居民 / 非居民价格不同。**
 - **官方页面（含繁体中文版）：** [安省钓鱼规章摘要（繁体中文）](http://www.ontario.ca/page/ontario-fishing-regulations-summary-traditional-chinese)。
 
-> 重要：安省及加拿大居民中，未满 18 岁或年满 65 岁的人可凭政府签发的身份证件免钓鱼证，适用 Conservation 限额。不需要 Resident Senior 卡；非加拿大居民没有 65 岁以上的年龄豁免，**但具体规则每年都可能更新**，出发前请查 MNRF 当年的规则。
+> 重要：安省及加拿大居民中，未满 18 岁或年满 65 岁的人可凭政府签发的身份证件免钓鱼证，适用 Conservation 限额。不需要 Resident Senior 卡；非加拿大居民没有 65 岁以上的年龄豁免，**但具体规则每年都可能更新**，出发前请查 MNR 当年的规则。
 
 ## 安全提示（湖上常见情况）
 
@@ -4162,7 +4162,7 @@ quote: ${ZH_LANGUAGE_NOTE}
 是。按租船人数和体型搭配，不需要自己买。
 
 **Q：钓鱼证可以当天在 HBW 买吗？**
-钓鱼证由安省 MNRF 在线或在 Service Ontario 站点出售。**出发前在 [安省官方页面](http://www.ontario.ca/page/ontario-fishing-regulations-summary-traditional-chinese) 办好**，HBW 不代售钓鱼证。
+钓鱼证由安省自然资源部（MNR）在线或在 Service Ontario 站点出售。**出发前在 [安省官方页面](http://www.ontario.ca/page/ontario-fishing-regulations-summary-traditional-chinese) 办好**，HBW 不代售钓鱼证。
 
 **Q：14 岁以下儿童钓鱼要证吗？**
 通常豁免，但规则可能更新。出发前以 MNRF 当年说明为准。
@@ -4180,8 +4180,8 @@ ${ZH_LANGUAGE_NOTE}
       { question: 'Rice Lake 租船 中文：必须有 PCOC 吗？', answer: '根据加拿大的一般规定，填写完整的 Rental Boat Safety Checklist 可作为该次租赁的能力证明。但 HBW 政策更严格：每位可能驾驶 HBW 租赁船的人员都必须在办理手续时出示有效的 PCOC 和带照片身份证件；清单不能替代该卡。' },
       { question: '第一次 租船 钓鱼 要带什么？', answer: '带政府签发带照片的证件、信用卡（押金）、安省钓鱼证（如果要钓鱼）、防风衣物、防晒霜、饮用水。救生衣 HBW 提供。' },
       { question: '从万锦/士嘉堡到 Rice Lake 多久？', answer: '从万锦或士嘉堡接 Highway 401 东向，到 Cobourg 的 Exit 472（County Road 18 / Burnham Street）下高速，再沿 County Road 18 北行约 16 公里到 Gores Landing。车程随出发点和交通情况而变。建议早上 8-9 点出发以利用上午黄金钓鱼时段。' },
-      { question: '钓鱼证可以当天在 HBW 买吗？', answer: '不可以。钓鱼证由安省 MNRF 在线或 Service Ontario 站点出售。出发前请先在官方页面办好。' },
-      { question: '14 岁以下儿童钓鱼要证吗？', answer: '未满 18 岁的安省及加拿大居民可凭政府签发的身份证件免钓鱼证，适用 Conservation 限额。非加拿大居民未满 18 岁可与持证成人一起钓鱼，渔获计入成人限额；如需自己的限额，应另办钓鱼证。出发前请核对 MNRF 当前规则。' },
+      { question: '钓鱼证可以当天在 HBW 买吗？', answer: '不可以。钓鱼证由安省自然资源部（MNR）在线或 Service Ontario 站点出售。出发前请先在官方页面办好。' },
+      { question: '14 岁以下儿童钓鱼要证吗？', answer: '未满 18 岁的安省及加拿大居民可凭政府签发的身份证件免钓鱼证，适用 Conservation 限额。非加拿大居民未满 18 岁可与持证成人一起钓鱼，渔获计入成人限额；如需自己的限额，应另办钓鱼证。出发前请核对 MNR 当前规则。' },
     ],
   },
 
@@ -4350,7 +4350,7 @@ ${ZH_LANGUAGE_NOTE}
 
 - [Mercury Marine](https://www.mercurymarine.com/ca/en) Premier 认证经销商
 - 透明加元价格，无需讨价还价
-- 从 GTA 经 401 + 115 高速约 60 到 90 分钟车程
+- 从多伦多向东约 90 分钟车程，出发前请用实时导航确认路线和路况
 
 [把序列号和油泵照片发给我们](https://hbwservice.ca)
 

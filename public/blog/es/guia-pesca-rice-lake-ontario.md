@@ -31,7 +31,7 @@ revenue_driver: rentals
 
 ### Respuesta rápida
 
-Rice Lake es uno de los mejores lagos para pescar walleye (lucioperca / doré) en toda Ontario. Está a aproximadamente **1.5 horas al este de Toronto** por la Hwy 401 Este, salida 472 en Cobourg, y County Road 18 al norte. La temporada de walleye en la Zona de Gestión de Pesca 17 (FMZ 17) abre el segundo sábado de mayo y cierra el 15 de noviembre, con límites combinados de walleye y sauger de 4 con Sport y 1 con Conservation, solo de 35–50 cm. Los lagos Balsam y Mitchell tienen reglas propias. Las licencias de pesca son obligatorias para personas de 18 a 64 años. Verifica siempre las fechas y límites actuales en ontario.ca antes de salir.
+Rice Lake es uno de los mejores lagos para pescar walleye (lucioperca / doré) en toda Ontario. Está a aproximadamente **1.5 horas al este de Toronto** por la Hwy 401 Este, salida 472 en Cobourg, y County Road 18 al norte. La temporada de walleye en la Zona de Gestión de Pesca 17 (FMZ 17) abre el segundo sábado de mayo y cierra el 15 de noviembre, con límites combinados de walleye y sauger de 4 con Sport y 1 con Conservation, solo de 35–50 cm. Los lagos Balsam y Mitchell tienen reglas propias. Las licencias de pesca son obligatorias para residentes de Canadá de 18 a 64 años y para la mayoría de los no residentes de Canadá, incluso a los 65 años o más. Verifica siempre las fechas y límites actuales en ontario.ca antes de salir.
 
 ¿Necesita su PCOC? Haga el curso en línea con [el enlace de recomendación de HBW a MyBoatCard](https://myboatcard.com/card/harrisboat) y use el código **HARRIS15** para obtener **15% de descuento**.
 
@@ -39,13 +39,13 @@ Rice Lake es uno de los mejores lagos para pescar walleye (lucioperca / doré) e
 
 Hay muchos lagos en Ontario. Rice Lake no es el más grande ni el más profundo, pero para quienes saben pescar, tiene una reputación que pocos lagos del interior pueden igualar. Walleye abundante, bass de boca grande y pequeña, muskie, perca amarilla, y un acceso práctico desde el área metropolitana de Toronto que lo hace realista para una excursión de un día.
 
-Harris Boat Works lleva 79 años a orillas de este lago, en Gores Landing. Vendemos motores, rentamos botes y damos servicio a embarcaciones aquí. Esta guía la escribimos para pescadores hispanohablantes que quieren aprovechar bien Rice Lake sin perder tiempo buscando información fragmentada en inglés.
+Harris Boat Works es una empresa familiar desde 1947, a orillas de este lago, en Gores Landing. Vendemos motores, rentamos botes y damos servicio a embarcaciones aquí. Esta guía la escribimos para pescadores hispanohablantes que quieren aprovechar bien Rice Lake sin perder tiempo buscando información fragmentada en inglés.
 
 ---
 
 ## Sobre Rice Lake
 
-Rice Lake tiene aproximadamente **37 km de longitud** y forma parte del sistema fluvial Trent-Severn. El río Otonabee alimenta el extremo oeste del lago, conectándolo con Peterborough y los lagos Kawartha.
+Rice Lake tiene entre **28 y 32 km de longitud** y forma parte del sistema fluvial Trent-Severn. El río Otonabee alimenta el extremo oeste del lago, conectándolo con Peterborough y los lagos Kawartha.
 
 El fondo variable del lago, mezclas de arena, grava, barro y vegetación acuática, crea hábitats ideales para múltiples especies. La visibilidad es moderada, lo que favorece la pesca de walleye (que prefiere condiciones de poca luz y fondos con cover).
 
@@ -113,7 +113,7 @@ Para pescar en Ontario se requiere:
 1. **Tarjeta Outdoors Card**, identificación del sistema de licencias de Ontario, aproximadamente $9–$11 CAD, válida 3 años
 2. **Licencia deportiva de pesca**, para residentes de Ontario: aproximadamente $25–$30 CAD anuales (varía según categoría)
 
-Las personas de **18 a 64 años** necesitan licencia. Los menores de 18 y los mayores de 65 residentes en Ontario pueden pescar sin licencia en ciertas condiciones, consulta las reglas actuales en ontario.ca/fishing.
+Los residentes de Canadá de **18 a 64 años** necesitan licencia. Los residentes de Canadá menores de 18 años o de 65 o más no necesitan comprarla si llevan una identificación oficial con su nombre y fecha de nacimiento. Los no residentes de Canadá necesitan Outdoors Card y licencia incluso a los 65 años o más. Los residentes de Canadá también pueden pescar sin licencia durante cuatro periodos al año, entre ellos los fines de semana del Día de la Familia, del Día de las Madres y del Día del Padre, y la Semana de Pesca Familiar de Ontario; consulta las fechas y reglas actuales en ontario.ca/fishing.
 
 Las licencias se compran en línea (ontario.ca), en tiendas de artículos deportivos (Canadian Tire, Bass Pro), o en algunas marinas locales.
 
@@ -173,7 +173,7 @@ harrisboatworks.ca | 905-342-2153
 
 ### ¿Necesito una licencia de pesca?
 
-Sí, si tiene entre 18 y 64 años. Los menores de 18 años (residentes canadienses) están exentos sin condiciones. Los mayores de 65 también están exentos.
+Sí, si es residente de Canadá y tiene entre 18 y 64 años. La mayoría de los no residentes de Canadá también la necesitan, incluso a los 65 años o más. Los residentes de Canadá menores de 18 años o de 65 o más están exentos si llevan una identificación oficial con su nombre y fecha de nacimiento.
 
 ### ¿Puedo alquilar un bote en Rice Lake?
 

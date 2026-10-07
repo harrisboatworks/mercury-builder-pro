@@ -91,11 +91,11 @@ If anything feels wrong during this sequence, stop. Don't push through. Most spr
 
 **Won't start at all:** dead battery, bad ground, flooded engine, or a fuel system issue. In that order, check those four.
 
-**Starts but won't stay running:** stale fuel, clogged carb or fuel injector (less common on modern Mercury FourStrokes with EFI), or a fuel filter that needs replacing.
+**Starts but won't stay running:** stale fuel, clogged carb or fuel injector (EFI covers the larger FourStrokes, while the small portable models can still be carbureted), or a fuel filter that needs replacing.
 
 **Starts but runs rough:** ethanol-related fuel issue, weak spark from old plugs, or a vacuum leak somewhere in the air intake.
 
-**Starts but no water flow:** impeller failure. Stop the motor. Do not run. We've seen impellers go from "fine in November" to "failed in May" sitting through one winter, especially if the boat was stored with the lower unit slightly tilted up and the impeller compressed against the housing.
+**Starts but no water flow:** impeller failure. Stop the motor. Do not run. We've seen impellers go from "fine in November" to "failed in May" sitting through one winter, because the rubber vanes can take a set and stiffen after months without running.
 
 **Overheats within 5 minutes:** impeller, blocked water intake (mud, weeds, mouse nest), or a stuck thermostat. Same rule: stop the motor.
 

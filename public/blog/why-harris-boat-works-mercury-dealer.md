@@ -111,9 +111,9 @@ Ready to repower? [Build your Mercury quote online](/quote/motor-selection).
 ## What HBW does not do
 - Saltwater servicing
 - Sailboat-specific outfitting
-- Personal watercraft (PWC)
+- Personal watercraft (PWC) repairs or sales
 - Jet boats or jet drives
-- Most non-Mercury repowers
+- Non-Mercury repowers
 
 If the work falls outside our core, we'll tell you that and point you toward a shop that's better set up for it. We'd rather you get the right service than take a job we can't deliver at our standard.
 
@@ -145,7 +145,7 @@ Yes. HBW offers outdoor storage with professional shrink wrap, outdoor uncovered
 
 ### Can I bring a non-Mercury motor to Harris Boat Works for service?
 
-Some non-Mercury service we handle, but our engine repair depth is Mercury and MerCruiser. Because our parts inventory and tooling are Mercury-focused, non-Mercury repairs can take longer.
+For repairs, we work on Mercury and MerCruiser engines only, because our parts inventory and tooling are Mercury-focused. We do winterize and store boats with any brand of motor.
 
 ### What if I bought my boat or motor somewhere else?
 

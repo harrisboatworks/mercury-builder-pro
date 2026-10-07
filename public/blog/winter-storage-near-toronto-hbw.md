@@ -182,7 +182,7 @@ No customer access is available while the marina is closed from December 1 throu
 
 Planning, quoting, and approvals can happen remotely over winter. Physical service, repower, and installation work starts after the marina reopens in early April.
 
-### When should I book winter storage?
+### When should I request winter storage?
 
 Complete hbwservice.ca, then drop off anytime, including after hours. The marina is closed December 1 through April 1.
 

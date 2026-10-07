@@ -234,7 +234,7 @@ Mercury's SmartCraft system displays fuel economy in several formats: instantane
 
 ### What fuel should I use in my Mercury outboard in Ontario?
 
-Mercury recommends regular unleaded gasoline with a minimum 87 octane rating for most FourStroke and Pro XS outboards; Verado models may recommend 89 octane, check your owner's manual. In Ontario, most marina fuel is E10 (10% ethanol blend), which is approved by Mercury for current models. Ethanol-free premium marine fuel, when available, offers slightly better efficiency (3-5%) and is preferable for long-term storage situations. Never use E15 or higher ethanol blends, these are not approved for Marine use and can damage fuel system components.
+Mercury recommends regular unleaded gasoline with a minimum 87 octane rating for most FourStroke and Pro XS outboards; Verado models may recommend 89 octane, check your owner's manual. In Ontario, most marina fuel is E10 (10% ethanol blend), which is approved by Mercury for current models. Ethanol-free premium marine fuel, when available, offers slightly better efficiency (about 3% more energy per litre than E10) and is preferable for long-term storage situations. Never use E15 or higher ethanol blends, these are not approved for Marine use and can damage fuel system components.
 
 ### How much fuel does a Mercury outboard use per hour?
 
@@ -242,7 +242,7 @@ It depends mostly on horsepower, throttle setting, prop, and load, not on the ba
 
 ### Do 2-stroke or 4-stroke Mercury outboards burn less fuel?
 
-Four-strokes burn noticeably less fuel than carburetted two-strokes of the same horsepower, often a large difference at cruise, because a four-stroke does not lose unburned fuel out the exhaust the way an older two-stroke does. Mercury's current FourStroke and Pro XS engines are all four-stroke EFI designs. If you are running an older two-stroke and watching your fuel-dock bill climb, repowering to a current Mercury FourStroke is the single biggest consumption drop available. Build a repower quote at mercuryrepower.ca.
+Four-strokes burn noticeably less fuel than carburetted two-strokes of the same horsepower, often a large difference at cruise, because a four-stroke does not lose unburned fuel out the exhaust the way an older two-stroke does. Mercury's current FourStroke and Pro XS engines are all four-strokes, with electronic fuel injection on most models; the smallest portables are carbureted. If you are running an older two-stroke and watching your fuel-dock bill climb, repowering to a current Mercury FourStroke can cut consumption substantially, though the saving depends on the hull, load and prop. Build a repower quote at mercuryrepower.ca.
 
 ### What are the best fuel efficiency tips for outboard motors?
 

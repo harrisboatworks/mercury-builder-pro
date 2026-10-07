@@ -73,7 +73,7 @@ This is the version of "what should I put on my tow boat?" we'd give if you walk
 | **Slalom water-skiing serious** | 18-20 ft | **175 HP Pro XS** (V6) or 200 HP Pro XS (V8) |
 | **Wakeboarding** | 19-21 ft | **200 HP Pro XS** (V8) or 225 HP Pro XS (V8) |
 | **Wakesurfing** | 21-23 ft | **250-300 HP V8** + ballast system |
-| **Big-wake everything (multi-sport)** | 22-24 ft | **300 HP V8 or 350-425 HP V10 Verado** (special-order at HBW) |
+| **Big-wake everything (multi-sport)** | 22-24 ft | **300 HP Pro XS V8** |
 
 If you're running a dedicated inboard tow boat, this guide doesn't directly apply, you're locked into the manufacturer's engine choice. But a growing group of tow-boat builders now offers outboard models specifically powered by Mercury V8s and V10s.
 
@@ -101,7 +101,7 @@ For outboard tow boats specifically:
 
 **Wakesurfing**, wake needs to be **massive** (you're surfing the wake without a rope). Requires significant ballast (680-1,361 kg (1,500-3,000 lbs) of water in the bilge) plus a hull designed for surf wakes. **250 HP minimum, 300-350 HP preferred.** And honestly: outboard tow boats can wakesurf, but they don't do it as well as inboard surf-specific boats. The wake-shaping technology (Surf Gate, Surf Tab, etc.) is mostly inboard-only territory.
 
-If wakesurfing is the primary use, consider an inboard tow boat instead. We'll be honest with you about this, we're not going to sell you a 300 HP outboard tow boat if you'd be happier with a Malibu inboard.
+If wakesurfing is the primary use, consider an inboard tow boat instead. We'll be honest with you about this, we'd rather tell you an outboard is the wrong fit than sell you a 300 HP motor for a hull that wants an inboard.
 
 ## Real Pricing for Mercury Pro XS Tow Outboards
 

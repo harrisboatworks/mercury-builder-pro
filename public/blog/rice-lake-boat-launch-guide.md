@@ -169,9 +169,9 @@ This makes the multi-day Trent-Severn trip much more accessible. See [Trent-Seve
 
 ## Fishing Regulations and Licences
 
-You need a valid [Ontario fishing licence](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees) to fish on Rice Lake or anywhere else in Ontario:
+Most anglers need a valid [Ontario fishing licence](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees) to fish on Rice Lake or anywhere else in Ontario. Ontario and Canadian residents under 18 or 65 and older can fish with government-issued ID instead, and Canadian residents also get four licence-free periods each year. Everyone else needs:
 
-- Outdoor Card (one-time purchase)
+- Outdoors Card (valid for 3 calendar years; not needed for a one-day licence)
 - Fishing licence (annual or short-term)
 
 HBW does not sell fishing licences. Get yours online at ontario.ca/fishing or at a local licence vendor before you leave.

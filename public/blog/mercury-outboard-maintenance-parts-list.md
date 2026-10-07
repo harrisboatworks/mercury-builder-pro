@@ -189,14 +189,14 @@ If your gear lube comes out looking like coffee with cream, stop and read our [m
 
 ---
 
-## Anodes: Aluminum for Rice Lake
+## Anodes: Magnesium or Aluminum for Rice Lake
 
 Anodes are the one item on Mercury's chart where the answer depends on your water, not just your motor.
 
-- **Aluminum anodes** work in fresh, brackish, and salt water. They're the right call for Rice Lake and the Kawarthas.
-- **Magnesium anodes** are freshwater-only and more active. Fine here, wrong the moment the boat sees salt.
+- **Aluminum anodes** work in fresh, brackish, and salt water. They're fine for Rice Lake and the Kawarthas.
+- **Magnesium anodes** are freshwater-only and more active. They're the best choice for Rice Lake, but wrong the moment the boat sees salt.
 
-Mid-range motors (40-115 HP) use anode kit 8M0107547. Larger families split by gearcase and trim configuration, and the anode list gets long enough that we'd rather confirm against your serial number than have you order three wrong ones. The rule that matters: replace anodes when they're half gone, and never paint them.
+Select mid-range motors (40-115 HP) use anode kit 8M0107547, and fitment depends on the model and serial number. Larger families split by gearcase and trim configuration, and the anode list gets long enough that we'd rather confirm against your serial number than have you order three wrong ones. The rule that matters: replace anodes when they're half gone, and never paint them.
 
 ---
 

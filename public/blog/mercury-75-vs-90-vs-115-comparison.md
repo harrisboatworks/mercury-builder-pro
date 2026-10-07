@@ -118,7 +118,7 @@ The 75 HP FourStroke is the right call when:
 - **Sheltered water, calm conditions.** Rice Lake bays, smaller Kawartha lakes, sheltered cottage water.
 - **Budget is tight and the next class up does not justify the difference for your specific situation.**
 
-The 75 saves real money on a budget-tight repower. The downside shows up when the boat is loaded or when wind comes up. If you regularly run with a full crew or in choppy water, the 75 will leave you wishing for more.
+The price gap to the 90 is small, so the 75 saves only a little on a budget-tight repower. The downside shows up when the boat is loaded or when wind comes up. If you regularly run with a full crew or in choppy water, the 75 will leave you wishing for more.
 
 ## Mercury 90 EXLPT FourStroke: the sweet spot
 
@@ -140,7 +140,7 @@ The 115 HP FourStroke is the right call when:
 - **Hull is 17 to 19 ft aluminum or light fiberglass.** Bigger hulls justify the bigger motor.
 - **Use is family of four or five with gear, or active fishing with multiple anglers.**
 - **You launch on bigger water (Lake Simcoe, Lake Ontario, Bay of Quinte) or run the Trent-Severn system.**
-- **Capacity plate rating is 115 HP or higher.**
+- **Capacity plate rating is above 115 HP**, so the 115 stays under the maximum.
 - **You want the option of running Pro XS later** (115 Pro XS slots into the same gearcase footprint as the 115 FourStroke).
 
 The 115 step-up over the 90 is meaningful in real-world performance: better hole shot when loaded, better cruise speed, more headroom in chop. The price premium over the 90 is real but not enormous. Most customers who step up do not regret it. Most customers who buy 90 also do not regret it. There is no wrong answer if the boat fits both.
@@ -242,7 +242,7 @@ About 163 kg (359 lb) dry for the lightest model. The 75, 90, and 115 FourStroke
 
 ### Can I put a 115 on a boat rated for 90 HP?
 
-No. The capacity plate maximum is a legal and safety ceiling, not a suggestion. If your plate says 90 HP, 90 is the most you can rig. If you want 115, the boat itself has to be rated for it. We check the plate before we quote.
+No. The capacity plate shows the maximum recommended safe limit for engine power under Transport Canada's rules, and going over it creates safety, compliance, liability and insurance problems. If your plate says 90 HP, 90 is the most you should rig. If you want 115, the boat itself has to be rated for it. We check the plate before we quote.
 
 ### Is the 90 HP Mercury a four-stroke?
 

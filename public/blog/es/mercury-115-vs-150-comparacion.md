@@ -73,7 +73,7 @@ Aquí es donde el 150 demuestra su valor. Con 4 adultos y carga real, el 115 tra
 
 ### En aguas abiertas y viento
 
-Para cruzar aguas como la parte más ancha de Rice Lake, Lake Simcoe o Georgian Bay, el 150 da más margen de seguridad. Puede ajustar la velocidad manteniendo planeado. El 115, especialmente con carga, tiene menos margen de maniobra con viento y oleaje.
+Para cruzar aguas como la parte más ancha de Rice Lake, Lake Simcoe o Georgian Bay, la seguridad depende sobre todo del casco, de las condiciones y de respetar la placa de capacidad, y un 115 en un bote clasificado para 150 es una combinación normal. Aun así, el 150 da más margen de potencia con carga y oleaje. Puede ajustar la velocidad manteniendo planeado. El 115, especialmente con carga, tiene menos margen de maniobra con viento y oleaje.
 
 ### Consumo de combustible
 

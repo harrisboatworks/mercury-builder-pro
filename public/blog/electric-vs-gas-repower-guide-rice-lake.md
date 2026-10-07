@@ -45,7 +45,7 @@ Three things changed.
 
 **The motors got serious.** Mercury put real engineering and a full dealer network behind Avator. This isn't a gadget anymore. It's a propulsion line with warranty, parts, and service behind it.
 
-**The silence is real.** Mercury measured the Avator 35e at 63% quieter at full throttle than a comparable gas four-stroke. On a calm morning you hear the loons, not the motor. No fumes at the transom, no pull-cord theatrics on a cold May morning, no oil changes.
+**The silence is real.** Mercury measured the Avator 35e at 63% quieter at full throttle than a 6 HP four-stroke outboard. On a calm morning you hear the loons, not the motor. No fumes at the transom, no pull-cord theatrics on a cold May morning, no oil changes.
 
 **The rules are moving.** Some smaller Ontario lakes already restrict gas motors, and residents on lakes like Clark Lake near Huntsville have applied to Ottawa for outright gas motorboat bans. That trend is not going backward. Rice Lake isn't there, but plenty of second-boat and small-lake situations already are.
 

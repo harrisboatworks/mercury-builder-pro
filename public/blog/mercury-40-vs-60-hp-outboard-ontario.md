@@ -150,7 +150,7 @@ If the boat is a 16 ft aluminum fishing boat that lives at WOT chasing walleye, 
 
 It exists. The 50 ELPT FourStroke runs the same 4-cylinder powerhead as the 60 with a different ECU map. It makes sense in two narrow situations: your capacity plate maxes out at 50 HP (not 60), or you want the 4-cylinder smoothness and amperage of the 60 but your hull is marginal for it.
 
-For most repowers, customers pick the 40 or the 60. The 50 is a niche pick, but we stock and quote it. Shopping smaller? Our [Mercury 9.9 vs 15 HP tiller comparison](/blog/mercury-9-9-vs-15-hp-tiller-ontario) covers the small-motor decision points for jon boats, kickers, and sailboat auxiliaries.
+For most repowers, customers pick the 40 or the 60. The 50 is a niche pick, but we can order and quote it. Shopping smaller? Our [Mercury 9.9 vs 15 HP tiller comparison](/blog/mercury-9-9-vs-15-hp-tiller-ontario) covers the small-motor decision points for jon boats, kickers, and sailboat auxiliaries.
 
 ---
 
@@ -174,7 +174,7 @@ A working older motor typically adds $1,000 to $3,000 in trade-in credit dependi
 
 Rice Lake is shallow and weedy. A 40 HP on a loaded 16 ft aluminum that should have had a 60 can overheat its impeller pulling weeds in the south basin. We replace those impellers in July and August every season.
 
-Wind picks up fast out here. By the time you're punching home into a 15-knot west wind off Hiawatha Island, an underpowered motor is the difference between a 30-minute run and a 60-minute one.
+Wind picks up fast out here. By the time you're punching home into a 15-knot west wind off Hiawatha, an underpowered motor is the difference between a 30-minute run and a 60-minute one.
 
 And for anyone locking through the Trent-Severn, a 16 ft aluminum with a 60 HP is a near-perfect size: light enough to handle in the chamber, fast enough to make Peterborough and back in a day.
 

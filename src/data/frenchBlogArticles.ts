@@ -277,7 +277,7 @@ Harris Boat Works offre du contenu disponible en français pour les clients fran
     keywords: ['Mercury 115 vs 150', 'moteur hors-bord 115 ou 150 chevaux', 'Mercury FourStroke comparaison', 'Mercury 115 150 HP'],
     content: `### Réponse rapide
 
-Le Mercury 115 FourStroke est le bon choix pour la plupart des embarcations de 16 à 19 pieds naviguant sur les lacs intérieurs de l'Ontario, il est léger, économique et amplement puissant. Le Mercury 150 FourStroke est justifié lorsque l'embarcation fait 19 à 22 pieds, que la charge est régulièrement importante, ou que vous voulez une marge de puissance confortable sur un grand ponton ou une grosse embarcation familiale. Pour voir les prix des deux moteurs côte à côte en dollars canadiens, utilisez mercuryrepower.ca.
+Le Mercury 115 FourStroke convient à de nombreuses embarcations de 16 à 19 pieds naviguant sur les lacs intérieurs de l'Ontario, selon la plaque de capacité; il est léger, économique et amplement puissant. Le Mercury 150 FourStroke est justifié lorsque l'embarcation fait 19 à 22 pieds, que la charge est régulièrement importante, ou que vous voulez une marge de puissance confortable sur un grand ponton ou une grosse embarcation familiale. Pour voir les prix des deux moteurs côte à côte en dollars canadiens, utilisez mercuryrepower.ca.
 
 Besoin de votre CCEP (PCOC)? Suivez le cours en ligne avec [le lien de parrainage MyBoatCard de HBW](https://myboatcard.com/card/harrisboat) et utilisez le code **HARRIS15** pour obtenir **15% de réduction**.
 
@@ -345,7 +345,7 @@ Le 150 est environ 43 kg (95 lb) plus lourd que le 115. Pour certaines embarcati
 - Vous transportez régulièrement quatre personnes ou plus, ou une charge importante
 - Vous avez un grand ponton ou un tritoon
 - Vous voulez une marge de puissance pour la reprise et la vitesse de croisière
-- Vous remplacez un moteur de 135 HP ou plus
+- La plaque de capacité de votre coque permet plus de 150 HP (dimensionnez selon la plaque, pas selon l'ancien moteur)
 
 ---
 
@@ -361,7 +361,7 @@ Le prix du Pro XS est légèrement plus élevé que le FourStroke standard du m�
 
 Sur les lacs des Kawartha, le lac Rice, ou le lac Simcoe, la navigation se fait principalement à des vitesses de croisière modérées. La plupart des journées, vous n'êtes pas à pleine puissance, vous vous déplacez entre les îles, vous remorquez un tube, ou vous cherchez un bon spot de pêche.
 
-Dans ce contexte, le 115 est amplement suffisant pour la grande majorité des embarcations familiales de 16 à 19 pieds.
+Dans ce contexte, le 115 est amplement suffisant pour de nombreuses embarcations familiales de 16 à 19 pieds, selon la plaque de capacité.
 
 Le 150 fait vraiment la différence dans deux situations spécifiques : les matins de pêche sportive où vous voulez traverser un grand lac rapidement avant que le vent se lève, et lorsque vous avez un ponton de 22 pieds avec six passagers et des glacières pleines.
 
@@ -388,7 +388,7 @@ Oui, pour un ponton de 20 pieds avec une charge normale (3–4 personnes). Pour 
 À vitesse de croisière normale, les deux peuvent être proches. Le 150 utilisé à 65–70 % de sa capacité sur une grosse embarcation n'est pas nécessairement plus gourmand qu'un 115 poussé à fond sur une plus petite.
 
 **Dois-je prendre la version Command Thrust sur un ponton ?** 
-Presque toujours oui. La boîte de vitesses Command Thrust est conçue pour les coques plates et les embarcations lourdes. Elle améliore significativement la mise sur plan avec une charge complète.
+Souvent oui, mais ce n'est pas une mise à niveau automatique : tout dépend de la coque, de la charge et de l'hélice. La boîte de vitesses Command Thrust est conçue pour les coques plates et les embarcations lourdes. Elle améliore significativement la mise sur plan avec une charge complète.
 
 **Quelle est la différence entre le FourStroke standard et le Pro XS ?** 
 Le FourStroke standard est optimisé pour la croisière confortable, l'économie de carburant, et la longévité. Le Pro XS est optimisé pour la vitesse maximale et la reprise, conçu pour les bateaux de pêche sportive et les amateurs de performance.
@@ -409,7 +409,7 @@ Notre personnel répond en anglais. Vous pouvez nous envoyer votre demande via h
 
 **Téléphone :** 905-342-2153
 
-**En personne :** Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0 (environ 1 h 30 à l'est de Toronto; moins de 3 heures de Montréal).
+**En personne :** Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0 (environ 1 h 30 à l'est de Toronto).
 
 ---
 
@@ -434,7 +434,7 @@ Notre personnel répond en anglais. Vous pouvez nous envoyer votre demande via h
       },
       {
         question: 'Dois-je prendre la version Command Thrust sur un ponton ?',
-        answer: 'Presque toujours oui. La boîte de vitesses Command Thrust est conçue pour les coques plates et les embarcations lourdes. Elle améliore significativement la mise sur plan avec une charge complète.'
+        answer: 'Souvent oui, mais ce n\'est pas une mise à niveau automatique : tout dépend de la coque, de la charge et de l\'hélice. La boîte de vitesses Command Thrust est conçue pour les coques plates et les embarcations lourdes. Elle améliore significativement la mise sur plan avec une charge complète.'
       },
       {
         question: 'Quelle est la différence entre le FourStroke standard et le Pro XS ?',
@@ -481,7 +481,7 @@ Avant même de parler de technique, parlons carburant. La majorité des stations
 
 L'éthanol absorbe l'humidité. Avec le temps, l'eau et l'éthanol se séparent du reste du carburant, c'est ce qu'on appelle la séparation de phase. Ce mélange eau-éthanol se retrouve au fond du réservoir, puis dans le système d'alimentation du moteur. Résultat : carburateur ou injecteurs colmatés, corrosion interne, moteur qui refuse de partir au printemps.
 
-Harris Boat Works est l'une des rares marinas en Ontario à vendre du carburant sans éthanol sur place. Si vous faites le plein ici avant de ranger l'embarcation, vous éliminez ce risque à la source. Sinon, l'ajout d'un stabilisant de carburant de qualité dans le réservoir, suivi d'une courte mise en marche pour faire circuler le mélange, est une étape obligatoire.
+Harris Boat Works est l'une des rares marinas en Ontario à vendre du carburant sans éthanol sur place. Si vous faites le plein ici avant de ranger l'embarcation, vous éliminez ce risque à la source. Sinon, l'ajout d'un stabilisant de carburant de qualité dans le réservoir, suivi d'une courte mise en marche pour faire circuler le mélange, est fortement recommandé.
 
 ---
 
@@ -582,7 +582,7 @@ Pour les réparations de moteurs, nous ne servons que Mercury et Mercruiser.
     faqs: [
       {
         question: 'Combien coûte une hivernisation professionnelle?',
-        answer: 'Le prix varie selon le moteur et les services requis. Contactez-nous à hbwservice.ca pour une estimation.'
+        answer: 'Le prix varie selon le moteur et les services requis. Consultez la [grille de tarifs d\'hivernisation et d\'entreposage de HBW](https://www.harrisboatworks.ca/winter-storage), puis remplissez la demande de service à hbwservice.ca pour une estimation de votre bateau.'
       },
       {
         question: 'Quand devrais-je demander mon hivernisation?',
@@ -718,7 +718,7 @@ Le lac Rice, dans les Kawarthas, est l'un des meilleurs lacs à doré jaune de l
 
 ---
 
-Si vous cherchez un lac de pêche en Ontario sans avoir à conduire six heures vers le nord, le lac Rice mérite votre attention. Situé dans les Kawarthas, à environ une heure et demie à l'est de Toronto et à environ 4 h 30 de Montréal (environ 445 km), ce plan d'eau s'étend sur environ 37 kilomètres de long et offre une diversité de poissons qui en fait l'un des favoris des pêcheurs de la province.
+Si vous cherchez un lac de pêche en Ontario sans avoir à conduire six heures vers le nord, le lac Rice mérite votre attention. Situé dans les Kawarthas, à environ une heure et demie à l'est de Toronto et à environ 4 h 30 de Montréal (environ 445 km), ce plan d'eau s'étend sur environ 30 kilomètres de long et offre une diversité de poissons qui en fait l'un des favoris des pêcheurs de la province.
 
 Le lac Rice fait partie du réseau de la Voie navigable Trent-Severn et est alimenté par la rivière Otonabee à l'extrémité ouest. Harris Boat Works est établi directement sur le lac, à Gores Landing, depuis 1947. Trois générations de la même famille. Si quelqu'un connaît ces eaux, c'est bien nous.
 
@@ -790,8 +790,8 @@ On vend aussi du carburant sans éthanol sur place, un détail que les propriét
 
 Pour pêcher en Ontario, vous avez besoin d'un permis de pêche sportive valide :
 
-- **Obligatoire** pour les 18 à 64 ans : Outdoors Card (~9 $) + permis de pêche sportive (~27 $ pour les résidents de l'Ontario)
-- **Exemptés** : les moins de 18 ans résidents canadiens accompagnés d'un adulte licencié, et les 65 ans et plus résidents canadiens
+- **Obligatoire** pour les 18 à 64 ans, et pour la plupart des non-résidents du Canada même à 65 ans et plus : Outdoors Card (~9 $) + permis de pêche sportive (~27 $ pour les résidents de l'Ontario)
+- **Exemptés** : les résidents canadiens de moins de 18 ans et de 65 ans et plus (avec une pièce d'identité gouvernementale indiquant leur nom et leur date de naissance)
 
 Les permis se délivrent en ligne ou dans les points de vente autorisés. Consultez ontario.ca pour les tailles minimales, les limites de prise, et les périodes d'ouverture actuelles.
 
@@ -819,7 +819,7 @@ Généralement le 2e samedi de mai pour la Zone 17. Vérifiez la date exacte pou
 Oui. Nous louons des pontons et des bateaux de pêche sur le lac Rice. Visitez [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals) pour consulter la flotte actuelle, les tarifs, les disponibilités et réserver en ligne.
 
 **A-t-on besoin d'un permis de pêche pour le lac Rice?** 
-Oui, pour les 18 à 64 ans. Les moins de 18 ans résidents canadiens et les 65 ans et plus résidents canadiens sont exemptés.
+Oui, pour les résidents de l'Ontario et du Canada de 18 à 64 ans, et pour la plupart des non-résidents du Canada, même à 65 ans et plus. Les moins de 18 ans résidents canadiens et les 65 ans et plus résidents canadiens sont exemptés.
 
 **Le lac Rice est-il accessible depuis Montréal?** 
 Oui. Le lac se trouve à environ 4 h 30 de Montréal (environ 445 km) par la 401 vers l'ouest jusqu'à la sortie 472 (County Road 18 / Burnham Street, Cobourg), puis County Road 18 vers le nord sur environ 16 km jusqu'à Gores Landing.
@@ -842,7 +842,7 @@ Harris Boat Works, Gores Landing, Ontario, sur le lac Rice. En affaires depuis 1
     faqs: [
       {
         question: 'Faut-il un permis de pêche?',
-        answer: 'Oui, pour les 18 à 64 ans. Les moins de 18 ans accompagnés d\'un adulte licencié et les 65 ans et plus sont exemptés.'
+        answer: 'Oui, pour les résidents de l\'Ontario et du Canada de 18 à 64 ans, et pour la plupart des non-résidents du Canada, même à 65 ans et plus. Les résidents canadiens de moins de 18 ans ou de 65 ans et plus sont exemptés; portez une pièce d\'identité gouvernementale indiquant votre nom et votre date de naissance. Les résidents canadiens ont aussi quatre périodes de pêche sans permis par année (la fin de semaine de la pêche en famille, les fins de semaine de la fête des Mères et de la fête des Pères, et la Semaine de la pêche en famille de l\'Ontario). HBW ne vend pas de permis de pêche.'
       },
       {
         question: 'Peut-on louer un bateau sur place?',
@@ -1397,9 +1397,9 @@ Le vieux moteur sort, le nouveau Mercury entre. Le travail comprend :
 
 Nous appelons quand c'est prêt. Vous revenez. Nous vous expliquons le nouveau moteur au quai : commandes, jauges, instructions de rodage, calendrier d'entretien, paperasse MPP.
 
-**Important : la période de rodage de 10 heures.** Votre Mercury neuf n'est pas prêt au plein régime pour les 10 premières heures. Nous vous expliquons :
-- Premières 2 heures : variez les gaz, pas de plein gaz prolongé, pas de régime élevé soutenu
-- Prochaines 8 heures : élargissez progressivement la plage d'utilisation
+**Important : la période de rodage de 10 heures.** Pendant les 10 premières heures, votre Mercury neuf ne doit pas tourner à plein régime de façon soutenue. Nous vous expliquons :
+- Premières 2 heures : variez les gaz, jusqu'à environ 4 500 tr/min, sans plein gaz ni régime élevé soutenu
+- Prochaines 8 heures : utilisation normale, mais jamais plus de cinq minutes de suite à plein gaz (les limites exactes varient selon le modèle, suivez le manuel)
 - Ensuite : suivez le calendrier de rodage et d'entretien du manuel correspondant au numéro de série. Ne supposez pas qu'un service à 20 heures s'applique à tous les moteurs Mercury.
 
 Vous pouvez essayer le moteur sur le lac Rice avant de partir, ou aller doucement sur la remorque jusqu'à la GTA et faire le rodage sur votre plan d'eau habituel.
@@ -1438,9 +1438,9 @@ Une remotorisation à Toronto chez un concessionnaire Mercury de la GTA est thé
 
 **3. Évaluation de l'échange.** Nous avons des données de service réelles en Ontario sur les valeurs de Mercury usagés. Certains concessionnaires urbains sous-évaluent les échanges. La soumission d'échange du configurateur est honnête.
 
-**4. Relation de service sur la prochaine décennie.** Nous documentons tout. L'historique de service de votre moteur reste à notre atelier. Quand des réclamations MPP surviennent dans 5 ans, le concessionnaire qui a vendu le moteur traite la réclamation, c'est ainsi que le système fonctionne le mieux.
+**4. Relation de service sur la prochaine décennie.** Nous documentons tout. L'historique de service de votre moteur reste à notre atelier. Quand une réclamation MPP survient dans 5 ans, tout concessionnaire Mercury autorisé peut la traiter, mais un atelier qui connaît déjà votre moteur et son historique vous fait gagner du temps.
 
-**5. Expertise en réglage d'hélice.** La plupart des problèmes de remotorisation 6 mois plus tard sont des problèmes de choix d'hélice. Nous faisons un essai sur l'eau de chaque installation sur le lac Rice avant la récupération et nous ajustons le pas de l'hélice au besoin. Les concessionnaires locaux sans accès à l'eau à l'atelier ne peuvent pas toujours le faire, ils installent sur la remorque et vous découvrez plus tard si l'hélice est mauvaise.
+**5. Expertise en réglage d'hélice.** La plupart des problèmes de remotorisation 6 mois plus tard sont des problèmes de choix d'hélice. Quand les conditions le permettent, nous faisons un essai sur l'eau de l'installation sur le lac Rice avant la récupération et nous ajustons le pas de l'hélice au besoin. Les concessionnaires locaux sans accès à l'eau à l'atelier ne peuvent pas toujours le faire, ils installent sur la remorque et vous découvrez plus tard si l'hélice est mauvaise.
 
 ---
 
@@ -1454,7 +1454,7 @@ Erreurs que nous voyons chez des plaisanciers de la GTA :
 
 **3. Ne pas planifier comment le bateau arrive à l'atelier.** Si vous n'avez pas de remorque, demandez si un ramassage peut être organisé pour votre bateau et votre lieu. HBW n'offre pas de livraison.
 
-**4. Choisir une puissance Mercury inadaptée à la coque.** Les acheteurs de la GTA surdimensionnent parfois « par sécurité ». Aller à la puissance maximale ou au-dessus crée des problèmes de tenue, des coûts de carburant et du marsouinage sur certaines coques. Adaptez la puissance au design de la coque.
+**4. Choisir une puissance Mercury inadaptée à la coque.** Les acheteurs de la GTA surdimensionnent parfois « par sécurité ». Viser la puissance maximale de la plaque de capacité n'est généralement pas le meilleur choix (le bon moteur est souvent un modèle sous le maximum), et dépasser la plaque crée des problèmes de conformité, d'assurance et de responsabilité. Adaptez la puissance au design de la coque.
 
 **5. Sauter l'essai sur l'eau.** Certains concessionnaires (pas nous) livrent sans test sur l'eau. Insistez toujours pour un essai; les problèmes de performance sont beaucoup plus faciles à régler à l'atelier qu'à votre quai.
 
@@ -1468,7 +1468,7 @@ La saison de navigation en Ontario est courte. Le moment de réservation compte 
 - **Début du printemps (avril)** : encore bon. L'horaire se remplit d'ici la fin avril.
 - **Pleine saison (mai à juin)** : serré. Souvent 3 à 4 semaines d'attente. Possible de mettre à l'eau avec le nouveau moteur en plein été.
 - **Mi-saison (juillet à août)** : vous perdrez 2 à 3 semaines de navigation pour l'installation, généralement pas la peine sauf si votre vieux moteur lâche.
-- **Automne (septembre à novembre)** : bon, l'atelier est actif mais pas saturé. Moteur prêt pour le printemps suivant.
+- **Automne (septembre à novembre)** : l'atelier est très occupé par l'hivernage et le remisage, alors gardez de la souplesse sur les dates. Moteur prêt pour le printemps suivant.
 
 Si vous envisagez une remotorisation pour le printemps 2026, **commencez le configurateur maintenant et préparez votre projet pendant l'hiver, puis confirmez une date d'installation pendant la saison d'ouverture.**
 
@@ -1551,7 +1551,7 @@ Très variable. Un Mercury 150 de 5 ans à faible heures s'échange pour 5 500 $
       { question: "HBW peut-il commander un Mercury 75 si je le veux vraiment?", answer: "Oui. Nous pouvons commander n'importe quel moteur Mercury que Mercury fabrique. Nous ne gardons simplement pas le 75 sur l'étagère parce que nous recommandons le 90 dans presque tous les cas." },
       { question: "Quelle est la différence réelle entre un 75 et un 90 Mercury FourStroke?", answer: "Même bloc 2,1 L. Même poids à sec (359 lb). Différente calibration logicielle, différent ajustement d'hélice. Le 75 est limité à 5 500 RPM. Le 90 est limité à 6 000 RPM. Le 90 a plus de puissance maximale pour le même moteur physique." },
       { question: "Le Mercury 90 vaut-il le supplément par rapport au 75?", answer: "Pour la plupart des bateaux et des acheteurs, oui. Même moteur, plus de marge, meilleure valeur de revente, différence de coût marginale. Le calcul est difficile à contester une fois exposé." },
-      { question: "Ma plaque de capacité indique 75 HP max. Puis-je y mettre un 90?", answer: "Non. La plaque de capacité est le plafond légal. Un 90 sur une coque de 75 HP est en surpuissance, annule votre assurance dans la plupart des cas, et crée un vrai risque de sécurité. Achetez le 75 si la plaque dit 75. Nous vous aiderons." },
+      { question: "Ma plaque de capacité indique 75 HP max. Puis-je y mettre un 90?", answer: "Non. La plaque de capacité indique le maximum de puissance prévu par le constructeur pour la coque. Un 90 sur une coque de 75 HP est en surpuissance, peut permettre à votre assureur de refuser une réclamation (confirmez avec lui), et crée un vrai risque de sécurité. Achetez le 75 si la plaque dit 75. Nous vous aiderons." },
       { question: "Un Mercury 75 fonctionnera-t-il sur un ponton?", answer: "Techniquement oui pour les plus petits pontons sous 20 pi avec des charges légères. Nous ne le recommandons pas. Les pontons demandent du couple et une capacité de charge, ce que le 90 ELPT Command Thrust offre." },
       { question: "Puis-je obtenir le 75 en version Command Thrust?", answer: "La page canadienne actuelle de Mercury indique l'option Command Thrust pour les 90 et 115 ch de cette gamme, pas pour le 75 ch. Avant de commander, confirmez avec le concessionnaire le code de modèle canadien et la configuration exacte; ne présumez pas qu'un 75 Command Thrust est offert." },
       { question: "Puis-je obtenir un 75 Mercury usagé?", answer: "Parfois, oui. Des 75 usagés se présentent sur le marché. Nous pouvons aider à évaluer l'état et décider si un 75 usagé a plus de sens qu'un 90 neuf pour votre situation." },
@@ -1607,7 +1607,7 @@ Pour la grande majorité des clients, le 75 est le mauvais moteur à acheter qua
 
 Trois scénarios réels :
 
-**La plaque de capacité l'impose.** Certaines coques de 16 à 17 pi sont cotées pour 75 HP maximum. Si la plaque dit 75, vous obtenez un 75. Nous le commanderons et nous n'essaierons pas de vous convaincre d'acheter quelque chose d'illégal.
+**La plaque de capacité l'impose.** Certaines coques de 16 à 17 pi sont cotées pour 75 HP maximum. Si la plaque dit 75, vous obtenez un 75. Nous le commanderons et nous n'essaierons pas de vous convaincre d'acheter un moteur plus puissant que ce qu'indique la plaque.
 
 **Une contrainte d'assurance ou de licence s'applique.** Rare en Ontario, mais certaines applications commerciales ont des plafonds de HP qui atterrissent à 75.
 
@@ -1919,7 +1919,7 @@ Un bateau de 16 pi avec deux pêcheurs est la mission du 90. Quand la coque est 
 
 ### Pontons de taille moyenne à grande, 20 à 24 pi
 
-C'est ici que le 115 CT prouve sa valeur. Un ponton de 22 pi avec une charge familiale complète et une glacière mérite au moins 90 CT. Le 115 CT est la bonne réponse si le ponton est un tritoon.
+C'est ici que le 115 CT prouve sa valeur. Un ponton de 22 pi avec une charge familiale complète et une glacière mérite au moins 90 CT. Le 115 CT convient à un tritoon léger ou de taille moyenne; pour un tritoon lourd ou très chargé, voyez le 150 ou plus, selon la plaque de capacité.
 
 ### Vedettes familiales qui font un peu de tout
 
@@ -2322,11 +2322,11 @@ La limite affichée de 100 km/h en Ontario signifie que la plupart des plaisanci
 
 ## Quand apporter votre remorque chez HBW
 
-Nous entretenons les remorques que nous vendons et la plupart des grandes marques. Raisons courantes pour lesquelles les clients apportent leurs remorques :
+Si une préoccupation concernant la remorque survient pendant que vous préparez le bateau pour un service Mercury, ajoutez-la à votre demande de service. Nous confirmerons ce qui relève de la portée actuelle de l'atelier et vous orienterons au besoin. Travaux souvent demandés pour les remorques :
 
 - **Regraissage annuel des roulements**, le service le plus rapide, habituellement complété rapidement
-- **Conversion ou amélioration des freins**, à inertie vers électrique
-- **Réparation de cadre**, soudure de membrures fissurées
+- **Conversion ou amélioration des freins**, à inertie vers électrique (à confirmer selon la portée actuelle de l'atelier)
+- **Réparation de cadre**, soudure de membrures fissurées (à confirmer selon la portée actuelle de l'atelier)
 - **Remplacement de tasseaux**, rafraîchissement complet
 - **Inspection avant achat**, achat d'un combo bateau-remorque usagé
 
@@ -2399,7 +2399,7 @@ Réponse pratique : oui, vous la voulez. Trois raisons :
 
 1. **Marinas, clubs nautiques et plusieurs installations de mise à l'eau exigent une preuve de responsabilité avant que vous puissiez accoster.** Pas d'assurance, pas de quai.
 2. **Les prêteurs l'exigent si vous avez financé votre bateau.** La plupart des prêteurs marins inscrivent l'assurance dans les conditions du prêt.
-3. **Les poursuites en responsabilité au Canada n'ont pas de plafonds.** Une blessure grave au poste de pilotage peut entraîner un règlement de plus de 500 000 $. Sans assurance, c'est une faillite personnelle.
+3. **Les poursuites en responsabilité au Canada n'ont pas de plafond général pour les pertes financières.** Une blessure grave au poste de pilotage peut entraîner un règlement de plus de 500 000 $. Sans assurance, c'est une faillite personnelle.
 
 Quelques tournois de pêche ontariens et la plupart des quais de chalet exigent aussi une preuve d'assurance pour participer ou amarrer.
 
@@ -2425,7 +2425,7 @@ Exclusions courantes à lire attentivement avant de signer :
 - **Bris mécanique**, moteur qui se grippe à cause d'usure ou d'entretien sauté. (C'est ce que la garantie prolongée couvre, voir notre [guide de garantie prolongée Mercury](/blog/fr/garantie-prolongee-mercury-platinum-ontario).)
 - **Défauts de fabrication**, couverts par la garantie d'usine, pas l'assurance.
 - **Course ou usage commercial**, les polices standard d'embarcations de plaisance excluent les tournois avec bourses, les nolisements et le travail commercial.
-- **Bateaux entreposés dans des conditions non sécuritaires**, l'entreposage extérieur durant l'hiver sans housse annule certaines couvertures de coque.
+- **Bateaux entreposés dans des conditions non sécuritaires**, l'entreposage extérieur durant l'hiver sans protection adéquate (par exemple, une pellicule thermorétractable) peut annuler certaines couvertures de coque; vérifiez le libellé de votre police.
 - **Bateaux de plus de 25 à 30 ans**, plusieurs assureurs ne souscriront pas de coques en fibre de verre plus vieilles sans inspection maritime.
 
 ---
@@ -2441,7 +2441,7 @@ Facteurs de coût :
 - **Où vous naviguez**, le lac Ontario (eau libre, risque météo) coûte plus cher que les lacs intérieurs comme le lac Rice
 - **Historique de réclamations**, dossier propre obtient les meilleurs taux
 - **Expérience de l'opérateur**, la CCEP seule est le minimum
-- **Lieu d'entreposage**, les rabais pour entreposage intérieur sont réels
+- **Lieu d'entreposage**, les rabais pour entreposage intérieur existent chez certains assureurs; chez HBW, l'entreposage est extérieur, habituellement sous pellicule thermorétractable, alors demandez à votre assureur comment il le tarife
 
 ---
 
@@ -2503,7 +2503,7 @@ Par Harris Boat Works, marina familiale depuis 1947 sur le lac Rice, concessionn
       { question: "Ai-je besoin d'assurance pour un bateau de 9,9 HP en Ontario?", answer: "Pas légalement, mais la plupart des marinas l'exigent pour tout quai. Demandez une soumission datée à un courtier; le coût dépend de la valeur, de l'usage et des protections choisies." },
       { question: "Mon bateau est-il couvert par ma police habitation?", answer: "Peut-être, mais seulement pour les bateaux de moins de 16 pi et moins de 25 HP. Tout ce qui est plus grand a besoin d'une police maritime distincte." },
       { question: "Quelle est la différence entre valeur convenue et valeur au comptant réelle?", answer: "La valeur convenue paie la valeur que vous et l'assureur avez convenue au début de la police, peu importe la dépréciation. La valeur au comptant réelle déprécie chaque année. La valeur convenue coûte légèrement plus mais paie correctement après une perte totale." },
-      { question: "Mon assurance couvre-t-elle le bateau pendant l'entreposage hivernal?", answer: "La plupart des polices couvrent l'entreposage à tout endroit approuvé. L'entreposage extérieur sans housse appropriée peut avoir une couverture réduite, vérifiez le libellé." },
+      { question: "Mon assurance couvre-t-elle le bateau pendant l'entreposage hivernal?", answer: "La plupart des polices couvrent l'entreposage à tout endroit approuvé. L'entreposage extérieur sans protection adéquate (par exemple, une pellicule thermorétractable) peut avoir une couverture réduite, vérifiez le libellé." },
       { question: "Puis-je assurer mon bateau via Mercury ou HBW?", answer: "Non. L'assurance est vendue par des courtiers autorisés. Nous pouvons recommander de trouver un courtier spécialiste maritime, mais nous n'écrivons pas de polices." },
     ],
   },
@@ -2696,11 +2696,11 @@ Le SeaPro est calibré pour un usage soutenu lourd : couple maximal à plus bas 
 
 Pour qui : grands center consoles offshore. Installations jumelées/triples sur de plus gros bateaux. Acheteurs qui veulent un raffinement maximal, isolation phonique et puissance pour eau libre ou conditions des Grands Lacs.
 
-Presque aucun plaisancier d'eau douce ontarien sur un lac intérieur typique n'a besoin d'un Verado. Si vous exploitez un bateau de pêche de 20 pi sur le lac Rice, un FourStroke 150 ou 200 est le meilleur choix. Verado est en commande spéciale seulement; contactez HBW pour discuter de votre configuration.
+Presque aucun plaisancier d'eau douce ontarien sur un lac intérieur typique n'a besoin d'un Verado. Si vous exploitez un bateau de pêche de 20 pi sur le lac Rice, un FourStroke dimensionné selon la plaque de capacité de la coque (généralement un modèle sous le maximum indiqué) est le meilleur choix. Verado est en commande spéciale seulement; contactez HBW pour discuter de votre configuration.
 
 ### Avator, électrique (en émergence)
 
-La gamme électrique Mercury Avator couvre les applications portatives plus petites et de moyenne portée. Pour la plupart de la pêche et de la plaisance familiale en Ontario, un FourStroke à essence reste le choix pratique. L'autonomie de la batterie et l'infrastructure de recharge ne sont pas encore là pour un usage de remplacement complet.
+La gamme électrique Mercury Avator va du 7.5e portatif au 110e, assez puissant pour des pontons, de petits runabouts et des bateaux de pêche. Pour la plupart de la pêche et de la plaisance familiale en Ontario, un FourStroke à essence reste le choix pratique. L'autonomie de la batterie et l'infrastructure de recharge ne sont pas encore là pour un usage de remplacement complet.
 
 ## Faire correspondre le moteur au cas d'usage ontarien
 
@@ -2742,7 +2742,7 @@ Tarification CAD en direct sur chaque famille Mercury (sauf Verado, qui est soum
       { question: "Le Mercury Verado est-il pertinent pour la navigation intérieure ontarienne?", answer: "Pour la plupart des lacs intérieurs ontariens (lac Rice, Kawarthas, lac Simcoe), non. Verado est conçu pour les applications offshore. Pour les bateaux de pêche et familiaux intérieurs typiques, un FourStroke jusqu'à 300 HP fait le travail." },
       { question: "Quels moteurs Mercury Harris Boat Works tient-il en stock pour 2026?", answer: "La disponibilité dépend du modèle et de la saison. Demandez une soumission pour le moteur souhaité. Verado est en commande spéciale seulement." },
       { question: "Quel est le meilleur hors-bord Mercury pour la pêche du doré à la traîne sur le lac Rice?", answer: "Un moteur principal dans la plage FourStroke 60 à 115 HP jumelé à un Mercury ProKicker 9,9 HP dédié. Le ProKicker est conçu spécifiquement pour la traîne à bas régime." },
-      { question: "Comment choisir le bon Mercury pour mon bateau ontarien?", answer: "Commencez avec le HP maximum de la plaque de capacité de votre coque. Puis considérez votre usage principal. Pour la plupart des bateaux de pêche et familiaux ontariens, la réponse se trouve dans la plage FourStroke 60 à 115 HP." },
+      { question: "Comment choisir le bon Mercury pour mon bateau ontarien?", answer: "Commencez par la plaque de capacité de votre coque : le HP maximum indiqué est une limite, pas une cible, et le meilleur choix est généralement un modèle Mercury sous ce maximum. Puis considérez votre usage principal. Pour la plupart des bateaux de pêche et familiaux ontariens, la réponse se trouve dans la plage FourStroke 60 à 115 HP." },
     ],
   },
   {
@@ -2934,7 +2934,7 @@ Tous les chiffres sont les poids secs publiés par Mercury pour la configuration
 
 ### Pourquoi le poids compte plus qu'on le pense
 
-**Votre tableau arrière a une limite.** La plaque de capacité indique un poids de moteur maximal en plus de la puissance. Les deux comptent. Un moteur dans la limite de puissance mais au-dessus de la limite de poids repose quand même mal.
+**Votre tableau arrière a une limite.** La plaque de capacité indique la puissance maximale, le nombre maximal de personnes et une limite de charge totale (personnes, moteur et équipement). Elles comptent toutes. Un moteur dans la limite de puissance qui fait dépasser la limite de charge pose quand même problème.
 
 **Le poids change l'assiette.** Trop lourd à l'arrière et la poupe s'enfonce : la proue se relève, le bateau marsouine, et vous brûlez du carburant à vous battre contre ça. C'est l'un des problèmes qu'on voit le plus souvent quand quelqu'un remotorise plus lourd que l'ancien moteur.
 
@@ -2954,7 +2954,7 @@ Harris Boat Works : entreprise familiale depuis 1947, concessionnaire Mercury de
       { question: 'Combien pèse un hors-bord Mercury de 90 ch ?', answer: '163 kg (359 lb) de poids sec pour le modèle le plus léger, ou 165 kg (363 lb) avec le boîtier Command Thrust. Les 75, 90 et 115 partagent le même bloc de 2,1 L, c\'est pourquoi leurs poids sont identiques.' },
       { question: 'Quel est le 115 ch le plus léger sur le marché ?', answer: 'Le Mercury 115 Pro XS à 163 kg (359 lb), que Mercury présente comme le 115 de performance le plus léger de sa catégorie par environ 9 kg (20 lb). Le 115 FourStroke standard fait le même 163 kg dans sa configuration la plus légère.' },
       { question: 'Combien pèse un Mercury 250 ?', answer: 'Ça dépend de la famille : le 250 Pro XS V8 fait 232 kg (511 lb) de poids sec, et le 250 FourStroke V8 fait 239 kg (527 lb), tous deux dans leur configuration la plus légère.' },
-      { question: 'Pourquoi le poids compte-t-il pour une remotorisation ?', answer: 'Votre plaque de capacité indique un poids de moteur maximal en plus de la puissance. Un moteur plus lourd change l\'assiette et le déjaugeage, et les quatre-temps modernes pèsent souvent plus que les vieux deux-temps qu\'ils remplacent. Vérifiez la capacité du tableau arrière avant d\'acheter.' }
+      { question: 'Pourquoi le poids compte-t-il pour une remotorisation ?', answer: 'Votre plaque de capacité indique une limite de charge totale (personnes, moteur et équipement) en plus de la puissance. Un moteur plus lourd change l\'assiette et le déjaugeage, et les quatre-temps modernes pèsent souvent plus que les vieux deux-temps qu\'ils remplacent. Vérifiez la capacité du tableau arrière avant d\'acheter.' }
     ]
   },
 ];

@@ -111,7 +111,7 @@ The right HP target depends as much on how well you know the boat as on what the
 
 **Compare those same limits to how this hull is loaded and used**
 
-The under-powered complaint is the #1 thing we hear on resale day. If you're on the fence, step up, not down.
+The under-powered complaint is the #1 thing we hear on resale day. If you're on the fence between two sizes, check the plate limit and your real load, and ask us before you decide.
 
 ## Load inventory
 
@@ -199,7 +199,7 @@ Yes, significantly, but do not assume a newer motor is lighter. Installed weight
 
 ### How does altitude affect motor sizing?
 
-Engines lose about 3% power per 1,000 feet elevation. At sea level (Ontario), this isn't a factor. Mountain lake boaters may need to size up.
+Engines lose about 3% power per 1,000 feet elevation. Rice Lake sits about 187 m (614 ft) above sea level, so the loss is under 2% and isn't a factor in sizing. Mountain lake boaters may need to size up.
 
 ### Should I size for today or future needs?
 

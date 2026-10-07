@@ -50,7 +50,7 @@ Réponse pratique : oui, vous la voulez. Trois raisons :
 
 1. **Marinas, clubs nautiques et plusieurs installations de mise à l'eau exigent une preuve de responsabilité avant que vous puissiez accoster.** Pas d'assurance, pas de quai.
 2. **Les prêteurs l'exigent si vous avez financé votre bateau.** La plupart des prêteurs marins inscrivent l'assurance dans les conditions du prêt.
-3. **Les poursuites en responsabilité au Canada n'ont pas de plafonds.** Une blessure grave au poste de pilotage peut entraîner un règlement de plus de 500 000 $. Sans assurance, c'est une faillite personnelle.
+3. **Les poursuites en responsabilité au Canada n'ont pas de plafond général pour les pertes financières.** Une blessure grave au poste de pilotage peut entraîner un règlement de plus de 500 000 $. Sans assurance, c'est une faillite personnelle.
 
 Quelques tournois de pêche ontariens et la plupart des quais de chalet exigent aussi une preuve d'assurance pour participer ou amarrer.
 
@@ -76,7 +76,7 @@ Exclusions courantes à lire attentivement avant de signer :
 - **Bris mécanique**, moteur qui se grippe à cause d'usure ou d'entretien sauté. (C'est ce que la garantie prolongée couvre, voir notre [guide de garantie prolongée Mercury](/blog/fr/garantie-prolongee-mercury-platinum-ontario).)
 - **Défauts de fabrication**, couverts par la garantie d'usine, pas l'assurance.
 - **Course ou usage commercial**, les polices standard d'embarcations de plaisance excluent les tournois avec bourses, les nolisements et le travail commercial.
-- **Bateaux entreposés dans des conditions non sécuritaires**, l'entreposage extérieur durant l'hiver sans housse annule certaines couvertures de coque.
+- **Bateaux entreposés dans des conditions non sécuritaires**, l'entreposage extérieur durant l'hiver sans protection adéquate (par exemple, une pellicule thermorétractable) peut annuler certaines couvertures de coque; vérifiez le libellé de votre police.
 - **Bateaux de plus de 25 à 30 ans**, plusieurs assureurs ne souscriront pas de coques en fibre de verre plus vieilles sans inspection maritime.
 
 ---
@@ -92,7 +92,7 @@ Facteurs de coût :
 - **Où vous naviguez**, le lac Ontario (eau libre, risque météo) coûte plus cher que les lacs intérieurs comme le lac Rice
 - **Historique de réclamations**, dossier propre obtient les meilleurs taux
 - **Expérience de l'opérateur**, la CCEP seule est le minimum
-- **Lieu d'entreposage**, les rabais pour entreposage intérieur sont réels
+- **Lieu d'entreposage**, les rabais pour entreposage intérieur existent chez certains assureurs; chez HBW, l'entreposage est extérieur, habituellement sous pellicule thermorétractable, alors demandez à votre assureur comment il le tarife
 
 ---
 
@@ -165,7 +165,7 @@ La valeur convenue paie la valeur que vous et l'assureur avez convenue au début
 
 ### Mon assurance couvre-t-elle le bateau pendant l'entreposage hivernal?
 
-La plupart des polices couvrent l'entreposage à tout endroit approuvé. L'entreposage extérieur sans housse appropriée peut avoir une couverture réduite, vérifiez le libellé.
+La plupart des polices couvrent l'entreposage à tout endroit approuvé. L'entreposage extérieur sans protection adéquate (par exemple, une pellicule thermorétractable) peut avoir une couverture réduite, vérifiez le libellé.
 
 ### Puis-je assurer mon bateau via Mercury ou HBW?
 

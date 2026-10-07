@@ -55,7 +55,7 @@ The Avator 7.5e is worth considering when silence matters and the boat, load and
 
 ## When should you choose a bow electric trolling motor instead?
 
-A bow-mounted electric trolling motor is a different category from a kicker. It is a small electric motor (usually 24V or 36V) mounted on the bow of the boat, controlled by foot pedal or wireless remote with GPS spot-lock features. It is not a get-home backup. It is a fishing tool for spot-locking, casting drift, and shallow-water finesse.
+A bow-mounted electric trolling motor is a different category from a kicker. It is a small electric motor (commonly 12V, 24V or 36V, depending on thrust) mounted on the bow of the boat, controlled by foot pedal or wireless remote with GPS spot-lock features. It is not a get-home backup. It is a fishing tool for spot-locking, casting drift, and shallow-water finesse.
 
 Choose the bow electric first when your fishing is about boat position more than travel endurance. Bass, panfish, shallow-water walleye drifting, and weed-edge work all lean this way. The ability to move quietly, hold a line on a drop-off, and keep your hands free changes the day.
 

@@ -144,11 +144,11 @@ La limite affichée de 100 km/h en Ontario signifie que la plupart des plaisanci
 
 ## Quand apporter votre remorque chez HBW
 
-Nous entretenons les remorques que nous vendons et la plupart des grandes marques. Raisons courantes pour lesquelles les clients apportent leurs remorques :
+Si une préoccupation concernant la remorque survient pendant que vous préparez le bateau pour un service Mercury, ajoutez-la à votre demande de service. Nous confirmerons ce qui relève de la portée actuelle de l'atelier et vous orienterons au besoin. Travaux souvent demandés pour les remorques :
 
 - **Regraissage annuel des roulements**, le service le plus rapide, habituellement complété rapidement
-- **Conversion ou amélioration des freins**, à inertie vers électrique
-- **Réparation de cadre**, soudure de membrures fissurées
+- **Conversion ou amélioration des freins**, à inertie vers électrique (à confirmer selon la portée actuelle de l'atelier)
+- **Réparation de cadre**, soudure de membrures fissurées (à confirmer selon la portée actuelle de l'atelier)
 - **Remplacement de tasseaux**, rafraîchissement complet
 - **Inspection avant achat**, achat d'un combo bateau-remorque usagé
 

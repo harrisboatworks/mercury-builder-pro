@@ -73,7 +73,7 @@ We're a Mercury Marine Premier dealer that sells, rigs, water-tests, and service
 
 ## What the Mercury 75 HP Actually Is
 
-The Mercury 75 HP FourStroke is [part of the same family as the 80, 90, 100, and 115](/blog/mercury-75-vs-90-vs-115-comparison). All five motors run on the same 2.1L inline-4 block with an 8-valve single overhead cam, maintenance-free valve train, and the same alternator, dimensions, and factory testing.
+The Mercury 75 HP FourStroke is [part of the same family as the 90 and 115](/blog/mercury-75-vs-90-vs-115-comparison). All three motors run on the same 2.1L inline-4 block with an 8-valve single overhead cam, maintenance-free valve train, and the same alternator, dimensions, and factory testing.
 
 **Compare fit and complete cost.** Use the [75, 90 and 115 HP comparison](/blog/mercury-75-vs-90-vs-115-comparison) with your boat's capacity plate and loaded use. Check [current motor pricing](/pricing-reference); confirm the exact configuration and availability with HBW.
 
@@ -151,7 +151,7 @@ Because it's the same physical motor as the 90, same weight, very small price di
 
 ### Can HBW order a Mercury 75 if I really want one?
 
-Yes. We can order any Mercury motor Mercury makes. We just don't keep the 75 on the shelf because we recommend the 90 when the plate allows 115 HP. On a 90 HP plate, the 75 is the best fit.
+Yes. We can order the 75 and most other current Mercury outboards. We just don't keep the 75 on the shelf because we recommend the 90 when the plate allows 115 HP. On a 90 HP plate, the 75 is the best fit.
 
 ### What's the actual difference between a 75 and a 90 Mercury FourStroke?
 

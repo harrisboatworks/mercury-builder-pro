@@ -80,7 +80,7 @@ Pour la grande majorité des clients, le 75 est le mauvais moteur à acheter qua
 
 Trois scénarios réels :
 
-**La plaque de capacité l'impose.** Certaines coques de 16 à 17 pi sont cotées pour 75 HP maximum. Si la plaque dit 75, vous obtenez un 75. Nous le commanderons et nous n'essaierons pas de vous convaincre d'acheter quelque chose d'illégal.
+**La plaque de capacité l'impose.** Certaines coques de 16 à 17 pi sont cotées pour 75 HP maximum. Si la plaque dit 75, vous obtenez un 75. Nous le commanderons et nous n'essaierons pas de vous convaincre d'acheter un moteur plus puissant que ce qu'indique la plaque.
 
 **Une contrainte d'assurance ou de licence s'applique.** Rare en Ontario, mais certaines applications commerciales ont des plafonds de HP qui atterrissent à 75.
 
@@ -134,7 +134,7 @@ Pour la plupart des bateaux et des acheteurs, oui. Même moteur, plus de marge, 
 
 ### Ma plaque de capacité indique 75 HP max. Puis-je y mettre un 90?
 
-Non. La plaque de capacité est le plafond légal. Un 90 sur une coque de 75 HP est en surpuissance, annule votre assurance dans la plupart des cas, et crée un vrai risque de sécurité. Achetez le 75 si la plaque dit 75. Nous vous aiderons.
+Non. La plaque de capacité indique le maximum de puissance prévu par le constructeur pour la coque. Un 90 sur une coque de 75 HP est en surpuissance, peut permettre à votre assureur de refuser une réclamation (confirmez avec lui), et crée un vrai risque de sécurité. Achetez le 75 si la plaque dit 75. Nous vous aiderons.
 
 ### Un Mercury 75 fonctionnera-t-il sur un ponton?
 

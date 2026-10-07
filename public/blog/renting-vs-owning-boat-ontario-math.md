@@ -47,7 +47,7 @@ Renting and owning aren't two prices for the same thing. They're two completely 
 
 **Renting is 100% variable cost.** You pay for the days you boat. Zero days on the water = zero dollars. Every cost item (rental rate, fuel, worms) exists only when you're actually using it.
 
-**Owning is mostly fixed cost.** The purchase or financing payment, insurance, storage, winterization, spring commissioning, and depreciation all run whether you boat 60 days or 6. The only truly variable costs of ownership are fuel and wear.
+**Owning is mostly fixed cost.** The purchase or financing payment, insurance, storage, winterization, spring commissioning, and depreciation all run whether you boat 60 days or 6. What does scale with use is mostly fuel, wear, hours-based servicing, and launch or trailering costs.
 
 That's why the same boat budget can be brilliant for one family and painful for another. The question is never "which is cheaper." It's "how many days will you actually use it," answered honestly.
 
@@ -120,7 +120,7 @@ The pattern is simple: the fewer genuine boat days you log, the more renting win
 
 ## What HBW checks before you buy from us
 
-If your worksheet says "own," we're not going to talk you out of it; we'd love to build the package. But we will ask the same questions this article does: how many days, which lake, who's aboard, where does it sleep in winter. Over decades we've watched the happiest owners be the ones whose usage matched their boat, and the unhappiest be the ones who bought a spreadsheet-perfect boat for a life they didn't have. Rent first if you're not sure. The boats will still be here.
+If your worksheet says "own," we're not going to talk you out of it; we'd love to build the package. But we will ask the same questions this article does: how many days, which lake, who's aboard, where does it sleep in winter. We've watched the happiest owners be the ones whose usage matched their boat, and the unhappiest be the ones who bought a spreadsheet-perfect boat for a life they didn't have. Rent first if you're not sure. The boats will still be here.
 
 ---
 

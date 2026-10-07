@@ -50,7 +50,7 @@ export const traditionalChineseBlogArticles: BlogArticle[] = [
 
 ## 為何安省冬天必須冬化
 
-安省的問題不是「冷」，是**反覆結冰解凍**。每年 11 月到 3 月，氣溫會在零度上下來回波動幾十次。每一次水結成冰，體積膨脹約 9%。
+安省的問題不只是「冷」，還有**反覆結冰解凍**；只要冷卻系統或齒輪箱內還有積水，一次嚴寒就可能造成損壞。每年 11 月到 3 月，氣溫會在零度上下來回波動幾十次。每一次水結成冰，體積膨脹約 9%。
 
 冷卻系統或齒輪箱內的水結冰膨脹，可能造成嚴重而昂貴的損壞。能否維修、需要更換哪個部件，要由技師檢查後判斷；下機箱損壞不等於必須更換整台引擎。
 
@@ -70,7 +70,7 @@ export const traditionalChineseBlogArticles: BlogArticle[] = [
 | 更換引擎機油和機油濾芯 | 舊機油酸性會腐蝕軸承 | 中 |
 | 健康電池只有在完全充電、斷開連接、固定妥當，並獲核准存放方案允許時，才可留在船上；以型號／序列號手冊和核准方案為準 | 防止寄生耗電 | 易 |
 | 檢查火咀 / 接頭 / 防水油脂 | 順手做，省春天的錢 | 中 |
-| 收縮膜或室內存放 | 防止積雪壓塌船篷、防止雨水入船 | 難（建議交給船廠） |
+| 收縮膜（室外存放） | 防止積雪壓塌船篷、防止雨水入船 | 難（建議交給船廠） |
 
 > **DIY 還是交給經銷商？** 漏掉該機型必要的冬化步驟可能造成嚴重損壞。第一次過冬，或不確定手冊要求時，請讓 Mercury 技師檢查並說明適合這台引擎的程序。
 
@@ -146,14 +146,14 @@ quote: ${ZH_HANT_LANGUAGE_NOTE}
     category: 'mandarin',
     readTime: '8 分鐘',
     keywords: ['Rice Lake 租船', '繁體 多倫多', '第一次 租船 釣魚', '安省 釣魚證', 'Harris Boat Works'],
-    content: `> **簡短答案：** 多倫多出發到 Rice Lake 約 90 分鐘車程。HBW 要求操作租賃船隻的人持有有效的 PCOC（Pleasure Craft Operator Card）。租船當天還需要政府簽發的有相片證件、信用卡（按金用），如果要釣魚，還要有效的安省釣魚證。HBW 亦會完成租船安全檢查清單；這份清單不能代替 HBW 的 PCOC 要求。出發前請在 [HBW 租船頁面](https://www.harrisboatworks.ca/rentals) 確認最新要求。
+    content: `> **簡短答案：** 多倫多出發到 Rice Lake 約 90 分鐘車程。HBW 要求操作租賃船隻的人持有有效的 PCOC（Pleasure Craft Operator Card）。租船當天還需要政府簽發的有相片證件、信用卡（按金用），如果要釣魚，還要有效的安省釣魚證（符合豁免條件者除外，見下文）。HBW 亦會完成租船安全檢查清單；這份清單不能代替 HBW 的 PCOC 要求。出發前請在 [HBW 租船頁面](https://www.harrisboatworks.ca/rentals) 確認最新要求。
 
 需要考取 PCOC？透過 [HBW 的 MyBoatCard 推薦連結](https://myboatcard.com/card/harrisboat)參加網上課程，使用優惠碼 **HARRIS15** 可享 **15% 折扣**。
 
 ## 多倫多出發：路線和時間
 
-- **萬錦（Markham）/ 列治文山 / 北約克：** 經 404 北上轉 115，約 75-90 分鐘。
-- **士嘉堡（Scarborough）/ 密西沙加：** 經 401 東行轉 115，約 90-110 分鐘。
+- **萬錦（Markham）/ 列治文山 / 北約克：** 經 404 南下接 401 東行，在 Cobourg 的 Exit 472 下高速，沿 County Road 18 北上，約 75-90 分鐘。
+- **士嘉堡（Scarborough）/ 密西沙加：** 經 401 東行，在 Cobourg 的 Exit 472 下高速，沿 County Road 18 北上，約 90-110 分鐘。
 - **目的地：** Harris Boat Works，5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0。
 
 建議早上 8 至 9 點出門，9:30 至 10:30 到達。**釣魚最佳時段是日出後 2 小時和日落前 2 小時**。
@@ -163,7 +163,7 @@ quote: ${ZH_HANT_LANGUAGE_NOTE}
 | 類別 | 物品 | 備註 |
 |---|---|---|
 | 證件 | 政府簽發的有相片身份證件 | 駕駛執照或護照 |
-| 證件 | 安省釣魚證 + Outdoors Card（如果要釣魚） | 見下文 |
+| 證件 | 安省釣魚證 + Outdoors Card（如果要釣魚；符合豁免條件者除外） | 見下文 |
 | 按金 | 信用卡（不是扣賬卡） | 用於按金預授權 |
 | 衣物 | 防風外套、太陽眼鏡、帽、備用衣物 | 湖上比岸邊冷 5-10°C |
 | 裝備 | 防曬霜、飲用水、午餐、零食 | 湖上無補給點 |
@@ -189,8 +189,8 @@ quote: ${ZH_HANT_LANGUAGE_NOTE}
 
 釣魚證和船證是**兩套完全獨立的系統**：
 
-- **機構不同：** 釣魚證由安省自然資源與林業部（MNRF）管，船證由加拿大運輸部管。
-- **結構：** 先辦一張 **Outdoors Card**（戶外活動卡，3 年有效），再加一張 **Fishing Licence**。
+- **機構不同：** 釣魚證由安省自然資源部（MNR）管，船證由加拿大運輸部管。
+- **結構：** 多數 18 至 64 歲的釣客先辦一張 **Outdoors Card**（戶外活動卡，3 年有效），再加一張 **Fishing Licence**。安省及加拿大居民未滿 18 歲或年滿 65 歲可憑政府簽發的身份證件免辦；加拿大居民在每年四個免證釣魚時段也不需要；非加拿大居民即使年滿 65 歲，通常仍需要兩者。HBW 不售賣釣魚證，請出發前在安省官方頁面辦好。
 - **官方頁面（含繁體中文版）：** [安省釣魚規章摘要（繁體中文）](http://www.ontario.ca/page/ontario-fishing-regulations-summary-traditional-chinese)。
 
 ::pull-quote
@@ -227,7 +227,7 @@ quote: ${ZH_HANT_LANGUAGE_NOTE}
     category: 'mandarin',
     readTime: '7 分鐘',
     keywords: ['安省 船牌', '繁體 PCOC', 'PCL', '船隻操作員卡', '釣魚證'],
-    content: `> **簡短答案：** **PCOC**（Pleasure Craft Operator Card，船隻操作員卡）是操作動力休閒船時常用的資格證明，卡片終身有效。**PCL**（Pleasure Craft Licence，船隻牌照）是符合條件船隻的識別號；2026 年 9 月 5 日新辦、續期、轉讓或補發為 **$24.41 CAD**，新辦、轉讓或續期後有效 5 年；資料更新或取消免費，每年 4 月 1 日按通脹調整。舊牌並非全部終身，請按到期批次核對。**釣魚證**完全獨立，由安省自然資源與林業部（MNRF）管理。在 HBW 租船，每位駕駛員必須持有有效 PCOC 或符合 HBW 要求的有效 boat operator licence。
+    content: `> **簡短答案：** **PCOC**（Pleasure Craft Operator Card，船隻操作員卡）是操作動力休閒船時常用的資格證明，卡片終身有效。**PCL**（Pleasure Craft Licence，船隻牌照）是符合條件船隻的識別號；2026 年 9 月 5 日新辦、續期、轉讓或補發為 **$24.41 CAD**，新辦、轉讓或續期後有效 5 年；資料更新或取消免費，每年 4 月 1 日按通脹調整。舊牌並非全部終身，請按到期批次核對。**釣魚證**完全獨立，由安省自然資源部（MNR）管理。在 HBW 租船，每位駕駛員必須持有有效 PCOC 或符合 HBW 要求的有效 boat operator licence。
 
 需要考取 PCOC？透過 [HBW 的 MyBoatCard 推薦連結](https://myboatcard.com/card/harrisboat)參加網上課程，使用優惠碼 **HARRIS15** 可享 **15% 折扣**。
 
@@ -237,7 +237,7 @@ quote: ${ZH_HANT_LANGUAGE_NOTE}
 |---|---|---|---|
 | 中文名 | 船隻操作員卡 | 船隻牌照 | 釣魚證 |
 | 全稱 | Pleasure Craft Operator Card | Pleasure Craft Licence | Outdoors Card + Fishing Licence |
-| 管理機構 | 加拿大運輸部 | 加拿大運輸部 | 安省自然資源與林業部 (MNRF) |
+| 管理機構 | 加拿大運輸部 | 加拿大運輸部 | 安省自然資源部 (MNR) |
 | 是關於甚麼 | **人**：會不會安全開船 | **船**：船身的註冊號 | **行為**：允不允許釣魚 |
 | 費用 | 由 Transport Canada 認可提供商決定 | 新辦/續期/轉讓/補發 **$24.41 CAD**（2026-09-05）；資料更新或取消免費 | 視類型而定 |
 | 有效期 | **終身** | 新辦或轉讓後 **5 年** | Outdoors Card 3 年 |
@@ -260,7 +260,7 @@ quote: ${ZH_HANT_LANGUAGE_NOTE}
 
 ## 安省釣魚證
 
-- **結構：** 先辦 **Outdoors Card**（3 年有效），再加 **Fishing Licence**。
+- **結構：** 多數 18 至 64 歲的釣客先辦 **Outdoors Card**（3 年有效），再加 **Fishing Licence**。安省及加拿大居民未滿 18 歲或年滿 65 歲可憑政府簽發的身份證件免辦；加拿大居民在每年四個免證釣魚時段也不需要；非加拿大居民即使年滿 65 歲，通常仍需要兩者。
 - **官方頁面（含繁體中文摘要）：** [安省釣魚規章摘要（繁體中文）](http://www.ontario.ca/page/ontario-fishing-regulations-summary-traditional-chinese)。
 - **完全獨立於 PCOC / PCL。**
 
@@ -268,7 +268,7 @@ quote: ${ZH_HANT_LANGUAGE_NOTE}
 
 | 情況 | PCOC | PCL | 釣魚證 |
 |---|---|---|---|
-| Rice Lake 在 HBW 短期租船一天，釣魚 | **要** | 不用 | **要** |
+| Rice Lake 在 HBW 短期租船一天，釣魚 | **要** | 不用 | **要**（安省及加拿大居民未滿 18 歲或年滿 65 歲可憑身份證件豁免） |
 | 自家船（15 HP）在 Lake Simcoe 釣一天 | **要** | **要** | **要** |
 | 換了一台 90 HP Mercury 引擎 | 已有就夠 | **要更新** | 不影響 |
 

@@ -155,7 +155,7 @@ Another dealer may make more sense if:
 - You want Yamaha, Honda, Suzuki, or another non-Mercury brand
 - You need a shop within a few minutes for a small portable-motor purchase
 - You want a high-end showroom experience rather than a working family marina
-- You need a specialty we do not handle, such as personal watercraft or inboard tow boats
+- You need repair work on something other than Mercury or MerCruiser power, such as a personal watercraft
 - You cannot bring the boat and HBW cannot confirm pickup availability for your boat and location
 
 The best dealer is not automatically the closest, oldest, biggest, or highest-tier shop. It is the dealer whose capabilities and way of working fit the relationship you want.

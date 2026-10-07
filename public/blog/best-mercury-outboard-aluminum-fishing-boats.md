@@ -127,7 +127,7 @@ Whichever family you land in, the horsepower still has to sit inside what your p
 
 ## The kicker question
 
-For serious fishing on Rice Lake or the Kawarthas, a kicker motor isn't optional, it's the standard fishing setup. The reasons:
+For serious fishing on Rice Lake or the Kawarthas, a kicker motor is the standard fishing setup. The reasons:
 
 **Trolling speed control.** A main motor at idle is almost always too fast for walleye trolling at 1–2 mph. The 9.9 ProKicker idles down to true trolling speed.
 
@@ -190,7 +190,7 @@ It follows the boat and how you fish, not the length. Many serious anglers prefe
 
 ### Should I get Command Thrust on my Mercury outboard?
 
-Usually not, though it is model- and application-specific rather than a blanket rule. On a typical planing aluminum fishing boat, CT trades top-end speed for low-speed push you will rarely use, so the standard gearcase is our shop preference on the aluminum fishing boats we see around Rice Lake and the Kawarthas. If you want more low-speed control for trolling, add a 9.9 or 15 HP ProKicker (the ProKicker CT is a legitimate trolling-motor configuration). Command Thrust on the main motor makes sense on pontoons, tritoons, and heavy workboats.
+Usually not, though it is model- and application-specific rather than a blanket rule. On a typical planing aluminum fishing boat, CT adds low-speed push you will rarely use, so the standard gearcase is our shop preference on the aluminum fishing boats we see around Rice Lake and the Kawarthas. If you want more low-speed control for trolling, add a 9.9 or 15 HP ProKicker (the ProKicker CT is a legitimate trolling-motor configuration). Command Thrust on the main motor makes sense on pontoons, tritoons, and heavy workboats.
 
 ### What shaft length do I need for an aluminum fishing boat?
 

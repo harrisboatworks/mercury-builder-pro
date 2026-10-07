@@ -41,7 +41,7 @@ Here is the map we walk customers through at the shop.
 
 If gas motors are prohibited, the Avator line is the answer we can actually stand behind, because we sell and support it.
 
-A real example: a 12-foot aluminum boat with two adults and fishing gear on a kilometre-wide electric-only lake runs happily on an Avator 7.5e. It replaces a 3.5 HP gas outboard, the battery swaps like a power-tool pack, and there is no fuel to haul in or store at the cottage.
+A real example: a 12-foot aluminum boat with two adults and fishing gear on a kilometre-wide electric-only lake runs happily on an Avator 7.5e. Mercury rates the Avator by power in kW and thrust rather than horsepower, and there is no fuel to haul in or store at the cottage.
 
 Things to size before ordering:
 
@@ -98,7 +98,7 @@ Family-owned since 1947, Mercury dealer since 1965, Mercury Premier Dealer.
 
 ### How do I find out if my lake has HP restrictions?
 
-Check with your local municipality, MNR, or cottage association. Restrictions are typically posted at public launches. Some lakes have informal "expectations" even without formal limits.
+Check the Transport Canada Vessel Operation Restriction Regulations schedules for your lake, then ask your local municipality or cottage association about local rules. Restrictions are typically posted at public launches. Some lakes have informal "expectations" even without formal limits.
 
 ### Can I use a bigger motor at lower speeds?
 

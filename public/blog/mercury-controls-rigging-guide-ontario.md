@@ -270,7 +270,7 @@ Match the shaft length to your transom height. 20" transom = long shaft (L). 25"
 
 ### Do you offer financing on rigging, or just the motor?
 
-Both. Mercury's financing programs apply to the full repower package, motor plus rigging plus install. We work through Mercury Canada's finance partner, with rates that change with their promo windows. Ask during the quote process and we'll match you to the right program.
+Financing is arranged through DealerPlan, on approved credit, with a $5,000 minimum financed amount. Ask during the quote process whether rigging and install can be included in the amount financed, and check [current financing terms](/promotions) before relying on any rate or payment estimate.
 
 ### Does HBW handle the trade-in on my old motor?
 

@@ -29,7 +29,7 @@ revenue_driver: rentals
 **Read time:** 8 منٹ  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ur/ontario-fishing-licence-rice-lake-urdu
 
-Rice Lake پر مچھلی پکڑنے کا خواب دیکھ رہے ہیں؟ Ontario میں پہلا قدم بہت سیدھا ہے: آپ کو ایک Outdoors Card اور ایک fishing licence درکار ہے۔ یہ گائیڈ خاص طور پر Mississauga، Brampton اور Scarborough سے آنے والے اردو بولنے والے خاندانوں کے لیے بنائی گئی ہے، تاکہ بغیر کسی گھبراہٹ کے تفریحی مچھلی کا شکار ممکن ہو سکے۔ Harris Boat Works سے نکلنے والی کشتیوں کی بدولت آپ تقریباً 90 منٹ کی ڈرائیو کے بعد Gores Landing پہنچ کر سیدھے پانی پر ہوتے ہیں۔
+Rice Lake پر مچھلی پکڑنے کا خواب دیکھ رہے ہیں؟ Ontario میں پہلا قدم بہت سیدھا ہے: آپ کو ایک Outdoors Card اور ایک fishing licence درکار ہے۔ یہ گائیڈ خاص طور پر Mississauga، Brampton اور Scarborough سے آنے والے اردو بولنے والے خاندانوں کے لیے بنائی گئی ہے، تاکہ بغیر کسی گھبراہٹ کے تفریحی مچھلی کا شکار ممکن ہو سکے۔ Harris Boat Works سے نکلنے والی کشتیوں کی بدولت آپ عام طور پر 90 سے 120 منٹ کی ڈرائیو (آپ کے علاقے اور ٹریفک کے مطابق) کے بعد Gores Landing پہنچ کر سیدھے پانی پر ہوتے ہیں۔
 
 ## لائسنس کا ڈھانچہ | Outdoors Card & Fishing Licence
 
@@ -86,7 +86,7 @@ Harris Boat Works 1947 سے خاندانی مرینا ہے، 1965 سے Mercury �
 
 ### ٹورنٹو کے قریب مچھلی پکڑنے کی بہترین جگہیں کون سی ہیں؟
 
-Rice Lake آپ کے لیے Mississauga، Brampton اور Scarborough سے صرف 90 منٹ کی دوری پر ایک پرسکون جھیل ہے۔ یہاں سے کشتی رینٹل لے کر آپ فیملی کے ساتھ بہترین وقت گزار سکتے ہیں۔
+Rice Lake آپ کے لیے Mississauga، Brampton اور Scarborough سے عام طور پر 90 سے 120 منٹ کی دوری پر ایک پرسکون جھیل ہے۔ یہاں سے کشتی رینٹل لے کر آپ فیملی کے ساتھ بہترین وقت گزار سکتے ہیں۔
 
 ### کیا پاکستانیوں یا نئے آنے والوں کے لیے الگ فشنگ رولز ہیں؟
 

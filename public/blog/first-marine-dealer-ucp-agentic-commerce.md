@@ -39,7 +39,7 @@ We turned that standard on at Harris Boat Works today.
 
 The Universal Commerce Protocol (UCP) is the standard that lets your AI assistant talk to a merchant’s store the same way a browser talks to a website. Same shape, same rules, same vocabulary, no matter who built the assistant or who runs the store.
 
-It’s co-developed by **Google, Shopify, Etsy, Target, and Walmart**, with **Amazon, Microsoft, Meta, Salesforce, and Stripe** on the Tech Council. That’s most of the consumer internet at one table. The point of UCP is simple: stop building one custom integration per assistant. Publish a discovery profile, declare what your store supports, and let any UCP-aware agent shop the same way.
+It’s co-developed by **Google, Shopify, Etsy, Target, Wayfair, and Walmart**, with **Amazon, Microsoft, Meta, Salesforce, and Stripe** joining the Tech Council in April 2026. That’s most of the consumer internet at one table. The point of UCP is simple: stop building one custom integration per assistant. Publish a discovery profile, declare what your store supports, and let any UCP-aware agent shop the same way.
 
 UCP defines two things merchants care about:
 
@@ -52,7 +52,7 @@ A few things, all of them live as of June 11, 2026:
 
 1. **A UCP discovery profile** at [https://www.mercuryrepower.ca/.well-known/ucp](/.well-known/ucp), spec version **2026-04-08**.
 2. **Checkout in quote mode** (`dev.ucp.shopping.checkout`) and **fulfillment** (`dev.ucp.shopping.fulfillment`) capabilities, served at our `ucp-checkout` endpoint over **both REST and MCP** transports.
-3. **Verified end-to-end with Shopify’s official `ucp-cli`**, the same command-line tool Shopify uses to certify their own merchants. You can reproduce it in one line:
+3. **Verified end-to-end with Shopify’s official `ucp-cli`**, a command-line shopping tool for AI agents built on UCP. You can reproduce it in one line:
 
 ```bash
 npx -y @shopify/ucp-cli discover www.mercuryrepower.ca
@@ -76,7 +76,7 @@ For the full agent surface (REST APIs, MCP tools, discovery URLs, deep-link temp
 This is the part most agentic-commerce articles skip, so it’s the part we want to be loudest about.
 
 - **No completed sale through UCP.** `complete_checkout` returns a quote and a handoff URL. It never places an order.
-- **No payment collection.** We don’t take a card through the AI. Quote mode is spec-sanctioned for exactly this case.
+- **No payment collection.** We don’t take a card through the AI. The spec allows checkout without payment for cases like quote generation.
 - **No shipping. No delivery. No courier release.** Pickup only at Gores Landing, Ontario, by the buyer in person with valid government photo ID. Same policy as the rest of the site.
 - **No final price without a human.** The dealer confirms the out-the-door price on every deal, every time. The AI quote is a starting line, not a finish line.
 
@@ -116,7 +116,7 @@ Not buy. Build a quote, yes. A UCP-aware assistant can search our live Mercury i
 
 ### What is the Universal Commerce Protocol?
 
-UCP is an open standard for AI assistants to discover merchants and shop on a buyer’s behalf. It’s co-developed by Google, Shopify, Etsy, Target, and Walmart, with Amazon, Microsoft, Meta, Salesforce, and Stripe on the Tech Council. Harris Boat Works implements UCP 2026-04-08, verified June 11, 2026 with Shopify’s official ucp-cli. To our knowledge, the first marine dealer doing so.
+UCP is an open standard for AI assistants to discover merchants and shop on a buyer’s behalf. It’s co-developed by Google, Shopify, Etsy, Target, Wayfair, and Walmart, with Amazon, Microsoft, Meta, Salesforce, and Stripe joining the Tech Council in April 2026. Harris Boat Works implements UCP 2026-04-08, verified June 11, 2026 with Shopify’s official ucp-cli. To our knowledge, the first marine dealer doing so.
 
 ### Is my contact information safe if my AI assistant shares it?
 

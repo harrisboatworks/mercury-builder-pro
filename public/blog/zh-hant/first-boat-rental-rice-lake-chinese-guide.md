@@ -29,14 +29,14 @@ revenue_driver: rentals
 **Read time:** 8 分鐘  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh-hant/first-boat-rental-rice-lake-chinese-guide
 
-> **簡短答案：** 多倫多出發到 Rice Lake 約 90 分鐘車程。HBW 要求操作租賃船隻的人持有有效的 PCOC（Pleasure Craft Operator Card）。租船當天還需要政府簽發的有相片證件、信用卡（按金用），如果要釣魚，還要有效的安省釣魚證。HBW 亦會完成租船安全檢查清單；這份清單不能代替 HBW 的 PCOC 要求。出發前請在 [HBW 租船頁面](https://www.harrisboatworks.ca/rentals) 確認最新要求。
+> **簡短答案：** 多倫多出發到 Rice Lake 約 90 分鐘車程。HBW 要求操作租賃船隻的人持有有效的 PCOC（Pleasure Craft Operator Card）。租船當天還需要政府簽發的有相片證件、信用卡（按金用），如果要釣魚，還要有效的安省釣魚證（符合豁免條件者除外，見下文）。HBW 亦會完成租船安全檢查清單；這份清單不能代替 HBW 的 PCOC 要求。出發前請在 [HBW 租船頁面](https://www.harrisboatworks.ca/rentals) 確認最新要求。
 
 需要考取 PCOC？透過 [HBW 的 MyBoatCard 推薦連結](https://myboatcard.com/card/harrisboat)參加網上課程，使用優惠碼 **HARRIS15** 可享 **15% 折扣**。
 
 ## 多倫多出發：路線和時間
 
-- **萬錦（Markham）/ 列治文山 / 北約克：** 經 404 北上轉 115，約 75-90 分鐘。
-- **士嘉堡（Scarborough）/ 密西沙加：** 經 401 東行轉 115，約 90-110 分鐘。
+- **萬錦（Markham）/ 列治文山 / 北約克：** 經 404 南下接 401 東行，在 Cobourg 的 Exit 472 下高速，沿 County Road 18 北上，約 75-90 分鐘。
+- **士嘉堡（Scarborough）/ 密西沙加：** 經 401 東行，在 Cobourg 的 Exit 472 下高速，沿 County Road 18 北上，約 90-110 分鐘。
 - **目的地：** Harris Boat Works，5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0。
 
 建議早上 8 至 9 點出門，9:30 至 10:30 到達。**釣魚最佳時段是日出後 2 小時和日落前 2 小時**。
@@ -46,7 +46,7 @@ revenue_driver: rentals
 | 類別 | 物品 | 備註 |
 |---|---|---|
 | 證件 | 政府簽發的有相片身份證件 | 駕駛執照或護照 |
-| 證件 | 安省釣魚證 + Outdoors Card（如果要釣魚） | 見下文 |
+| 證件 | 安省釣魚證 + Outdoors Card（如果要釣魚；符合豁免條件者除外） | 見下文 |
 | 按金 | 信用卡（不是扣賬卡） | 用於按金預授權 |
 | 衣物 | 防風外套、太陽眼鏡、帽、備用衣物 | 湖上比岸邊冷 5-10°C |
 | 裝備 | 防曬霜、飲用水、午餐、零食 | 湖上無補給點 |
@@ -72,8 +72,8 @@ revenue_driver: rentals
 
 釣魚證和船證是**兩套完全獨立的系統**：
 
-- **機構不同：** 釣魚證由安省自然資源與林業部（MNRF）管，船證由加拿大運輸部管。
-- **結構：** 先辦一張 **Outdoors Card**（戶外活動卡，3 年有效），再加一張 **Fishing Licence**。
+- **機構不同：** 釣魚證由安省自然資源部（MNR）管，船證由加拿大運輸部管。
+- **結構：** 多數 18 至 64 歲的釣客先辦一張 **Outdoors Card**（戶外活動卡，3 年有效），再加一張 **Fishing Licence**。安省及加拿大居民未滿 18 歲或年滿 65 歲可憑政府簽發的身份證件免辦；加拿大居民在每年四個免證釣魚時段也不需要；非加拿大居民即使年滿 65 歲，通常仍需要兩者。HBW 不售賣釣魚證，請出發前在安省官方頁面辦好。
 - **官方頁面（含繁體中文版）：** [安省釣魚規章摘要（繁體中文）](http://www.ontario.ca/page/ontario-fishing-regulations-summary-traditional-chinese)。
 
 > 我們專門為華人朋友準備了這些中文指南，因為我們真心希望幫助華人船主和他們的家人朋友在 Rice Lake 享受划船的樂趣，這是很多其他船行沒有做的。說實話：我們的團隊使用英語服務。歡迎帶會英語的親友同來，或者用手機翻譯軟件，我們一定會耐心溝通、盡力配合。

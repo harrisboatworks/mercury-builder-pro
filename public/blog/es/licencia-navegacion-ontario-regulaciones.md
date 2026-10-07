@@ -45,7 +45,7 @@ Nuestro personal se comunica y presta servicio en inglés. Si nos escribes o lla
 
 Navegar en Ontario es uno de los mejores pasatiempos que ofrece la provincia. Pero como en el caso de conducir un automóvil, hay reglas claras que necesitas conocer antes de salir al agua.
 
-Esta guía está diseñada para hispanohablantes que quieren entender el sistema de licencias y regulaciones de Ontario sin tener que traducir documentos técnicos del gobierno. Cubrimos los requisitos legales principales, no reemplazamos la consulta de los documentos oficiales de Transporte Canadá ni del Ministerio de Recursos Naturales y Forestales de Ontario (MNRF), que actualizan sus reglamentos periódicamente.
+Esta guía está diseñada para hispanohablantes que quieren entender el sistema de licencias y regulaciones de Ontario sin tener que traducir documentos técnicos del gobierno. Cubrimos los requisitos legales principales, no reemplazamos la consulta de los documentos oficiales de Transporte Canadá ni del Ministerio de Recursos Naturales de Ontario (MNR), que actualizan sus reglamentos periódicamente.
 
 ---
 
@@ -107,7 +107,7 @@ Todos los menores que operen la embarcación necesitan su propia PCOC, incluso s
 
 ## Equipo de seguridad obligatorio
 
-Para embarcaciones de menos de 6 metros (aproximadamente 20 pies), el equipo mínimo requerido por Transporte Canadá incluye:
+Para embarcaciones de menos de 6 metros (aproximadamente 20 pies), el equipo mínimo requerido por Transporte Canadá incluye una linterna impermeable o 3 bengalas aprobadas, además de lo siguiente:
 
 | Equipo | Especificación |
 |--------|---------------|

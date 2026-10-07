@@ -29,7 +29,7 @@ revenue_driver: repower
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-pricing-promotions-2026
 
-> **Quick answer:** Mercury controls promotions; dealers can't invent discounts. Real 2026 deals can include Mercury rebates, financing incentives, and additional coverage when the written offer says so. Current terms are reflected in our configurator at mercuryrepower.ca and on the [promotions page](/promotions).
+> **Quick answer:** Mercury sets the factory rebate and financing programs, and dealers can run their own promotions on top. Real 2026 deals can include Mercury rebates, financing incentives, and additional coverage when the written offer says so. Current terms are reflected in our configurator at mercuryrepower.ca and on the [promotions page](/promotions).
 
 ## How Mercury Pricing Works in 2026
 
@@ -40,7 +40,7 @@ Understanding how Mercury pricing works helps you make smarter buying decisions.
 **MSRP (Manufacturer Suggested Retail Price)**:
 - Published pricing baseline
 - Rarely what you actually pay
-- Starting point for negotiation
+- - A reference point for comparing quotes
 - Does not include rigging/installation
 
 **MAP (Minimum Advertised Price)**:
@@ -50,7 +50,7 @@ Understanding how Mercury pricing works helps you make smarter buying decisions.
 - Online pricing typically at MAP
 
 **Street Price (What You Actually Pay)**:
-- Negotiated between you and dealer
+- Set by each dealer; HBW posts its selling price in the [live pricing reference](/pricing-reference)
 - Below MAP for in-stock units
 - Includes installation and rigging
 - Varies by season and inventory
@@ -87,13 +87,13 @@ _Prices here are planning figures as of October 2026. For live Mercury motor pri
 
 **Fall (September-November)**:
 - End-of-year clearance begins
-- Good negotiation window
+- Check the live pricing reference and current promotions
 - Less buyer competition
 - Winter repower planning starts
 
 **Winter (December-February)**:
-- Strongest negotiation position
-- Lowest demand = best deals
+- Time to compare written quotes and current promotions
+- HBW is closed December 1 to April 1
 - Ready for pickup at spring launch
 - Ideal for planning a spring repower
 
@@ -144,14 +144,14 @@ Oil, gear lube, plugs, water pump check. Keep the records; documented service pr
 ### The Winter Buying Advantage
 
 **Why Winter Is Often Best**:
-- Dealers have time to negotiate
+- Time to plan and book early for spring
 - Inventory from fall remains
 - No urgency from other buyers
 - First pick of install slots for spring reopening
 - Early spring installation
 
 **What You Might Get**:
-- Better pricing flexibility
+- Time to compare written quotes and current promotions
 - Priority spring installation
 - Time to do your homework
 - Extras sometimes included
@@ -260,7 +260,7 @@ As of October 5, 2026, Chase the Savings runs September 14–October 30, 2026: e
 
 ### Can I negotiate below advertised price?
 
-Often yes, especially for in-stock motors in the off-season. Dealers have more flexibility when inventory is high and demand is low. Always ask - the worst they can say is no.
+HBW posts its selling price for each model in the [live pricing reference](/pricing-reference). Compare that price with your written quote, and check current [promotions](/promotions), since a Mercury rebate or financing offer may apply to your motor.
 
 ### Is Mercury financing worth it vs my bank?
 

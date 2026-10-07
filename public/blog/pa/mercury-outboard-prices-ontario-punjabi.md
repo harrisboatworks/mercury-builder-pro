@@ -41,10 +41,10 @@ Mercury outboard ਬਹੁਤ ਸਾਰੇ horsepower (HP) ranges ਵਿੱਚ �
 
 * **ਛੋਟੀਆਂ fishing boats (12-14 ft), tin boats, ਜਾਂ tenders:** 6 HP ਤੋਂ 20 HP। ਇੰਜ ਬਿਨਾਂ ਜ਼ਿਆਦਾ ਭਾਰ ਦੇ fish ਕਰਦਾ ਆਰਾਮ ਨਾਲ ਸਵੇਰਾ ਕੀਤਾ ਜਾ ਸਕਦਾ ਹੈ। Portability ਵੀ ਚੰਗੀ ਹੈ।
 * **Family fishing/recreational (16-18 ft aluminum ਜਾਂ fiberglass):** 40 HP ਤੋਂ 115 HP। ਇਹ range ਸਾਡੇ top sellers ਵਿੱਚੋਂ ਹੈ। Mercury 90hp ਇੱਕ ਬਹੁਤ ਭਰੋਸੇਮੰਦ motor ਹੈ ਜੋ 16-18 ft boats ਲਈ ਆਮ ਤੌਰ ’ਤੇ ਢੁਕਵੀਂ ਰਹਿੰਦੀ ਹੈ; ਅਸਲ performance boat, load ਅਤੇ propeller ’ਤੇ ਨਿਰਭਰ ਕਰਦੀ ਹੈ। ਇਸ ਲਈ ਅਕਸਰ Brampton ਵਾਲੇ “Mercury 90hp outboard price Ontario” ਪੁੱਛਦੇ ਨੇ, ਪਰ ਯਾਦ ਰੱਖੋ, ਸਿਰਫ਼ motor ਨਹੀਂ, ਪੂਰੀ installed ਕੀਮਤ ਪੁੱਛਣੀ ਹੈ। 115 HP ਮਿਲਦੀ ਹੈ ਉਨ੍ਹਾਂ ਲਈ ਜਿਹੜੇ full family ਪਾਣੀ ਦੇ toys ਨਾਲ ਨਿਕਲਣਾ ਚਾਹੁੰਦੇ ਨੇ।
-* **Pontoon boats ਜਾਂ ਭਾਰੀ ਕਿਸ਼ਤੀਆਂ:** 150 HP and up। ਚੰਗੀ planning ਤੇ pulling power ਲਈ।
+* **Pontoon boats ਜਾਂ ਭਾਰੀ ਕਿਸ਼ਤੀਆਂ:** ਆਮ ਤੌਰ ’ਤੇ 90 ਤੋਂ 150 HP, ਅਤੇ ਜਿੱਥੇ ਮਿਲਦਾ ਹੋਵੇ ਉੱਥੇ Command Thrust ਮਾਡਲ। ਚੰਗੀ planning ਤੇ pulling power ਲਈ, ਪਰ ਆਖ਼ਰੀ ਚੋਣ boat ਦੀ capacity plate ਮੁਤਾਬਕ ਕਰੋ।
 * **Bass boats ਜਾਂ performance ਵਾਲਿਆਂ ਲਈ:** 200 HP ਤੋਂ 300 Pro XS series।
 
-ਜੇ ਤੁਹਾਨੂੰ ਪਤਾ ਨਹੀਂ ਕਿ ਤੁਹਾਡੀ ਕਿਸ਼ਤੀ ਕਿੰਨੀ HP ਝੱਲ ਸਕਦੀ ਹੈ, boat ਦੀ maximum rating plate (transom ਦੇ ਕੋਲ) ਵੇਖੋ। ਉਹਦੀ ਹੱਦ ਤੋਂ ਵੱਧ motor ਲਗਾਉਣੀ illegal ਅਤੇ danger ਹੈ। ਅਸੀਂ ਦੇਖ ਕੇ ਦੱਸ ਸਕਦੇ ਹਾਂ ਕਿ Mercury ਦਾ ਕਿਹੜਾ model fit ਹੋਵੇਗਾ। ਜੇ motor ਦੀ ਚੋਣ ਦਾ matter ਹੈ, ਸਾਡੇ online quote tool (Motor Selection) ’ਤੇ ਜਾ ਕੇ boat ਦਾ year, make, ਅਤੇ ਆਮ load ਚੁਣੋ, ਤੇ ਉਹ ਤੁਹਾਨੂੰ suggest ਕਰੇਗਾ। ਬਾਅਦ ਵਿੱਚ ਅਸੀਂ phone ’ਤੇ estimate ਦੇਵਾਂਗੇ।
+ਜੇ ਤੁਹਾਨੂੰ ਪਤਾ ਨਹੀਂ ਕਿ ਤੁਹਾਡੀ ਕਿਸ਼ਤੀ ਕਿੰਨੀ HP ਝੱਲ ਸਕਦੀ ਹੈ, boat ਦੀ maximum rating plate (transom ਦੇ ਕੋਲ) ਵੇਖੋ। ਉਹਦੀ ਹੱਦ ਤੋਂ ਵੱਧ motor ਲਗਾਉਣੀ danger ਹੈ, ਕਿਉਂਕਿ ਇਹ Transport Canada ਦੀ ਸਿਫ਼ਾਰਸ਼ ਕੀਤੀ ਵੱਧ ਤੋਂ ਵੱਧ ਸੁਰੱਖਿਅਤ limit ਹੈ। ਅਸੀਂ ਦੇਖ ਕੇ ਦੱਸ ਸਕਦੇ ਹਾਂ ਕਿ Mercury ਦਾ ਕਿਹੜਾ model fit ਹੋਵੇਗਾ। ਜੇ motor ਦੀ ਚੋਣ ਦਾ matter ਹੈ, ਸਾਡੇ online quote tool (Motor Selection) ’ਤੇ ਜਾ ਕੇ boat ਦਾ year, make, ਅਤੇ ਆਮ load ਚੁਣੋ, ਤੇ ਉਹ ਤੁਹਾਨੂੰ suggest ਕਰੇਗਾ। ਬਾਅਦ ਵਿੱਚ ਅਸੀਂ phone ’ਤੇ estimate ਦੇਵਾਂਗੇ।
 
 ## Purani motor badalni hai? Repower di salah | ਪੁਰਾਣੀ ਮੋਟਰ ਬਦਲਣੀ ਹੈ? ਰੀਪਾਵਰ ਦੀ ਸਲਾਹ
 
@@ -52,7 +52,7 @@ Mercury outboard ਬਹੁਤ ਸਾਰੇ horsepower (HP) ranges ਵਿੱਚ �
 
 ## Mercury warranty: man di shanti | Mercury ਵਾਰੰਟੀ: ਮਨ ਦੀ ਸ਼ਾਂਤੀ
 
-ਹਰ ਨਵੀਂ Mercury outboard ’ਤੇ factory 3-year base warranty ਆਉਂਦੀ ਹੈ। ਇਸ ਦਾ ਮਤਲਬ, ਜੇ ਕੋਈ material ਜਾਂ workmanship ਦਾ fault ਹੋਇਆ, Mercury ਉਸਨੂੰ cover ਕਰਦੀ ਹੈ, ਚਾਹੇ ਤੁਸੀਂ ਕਿਸੇ ਵੀ authorized dealer ਤੋਂ ਲਓ। Premier dealer ਹੋਣ ਦਾ ਫਾਇਦਾ ਇਹ ਹੈ ਕਿ ਸਾਡੇ technicians ਹਰ training ਦੀ training ਪਾਸ ਕਰ ਚੁੱਕੇ ਨੇ, service genuine parts ਨਾਲ ਕਰਦੇ ਨੇ, ਅਤੇ warranty ਦਾ claim ਆਸਾਨੀ ਨਾਲ ਸਾਨੂੰ ਹੀ ਕਰਨਾ ਪੈਂਦਾ ਹੈ, ਤੁਹਾਨੂੰ ਸਿਰਫ਼ motor ਚਲਾਉਣੀ ਹੈ। ਕੁਝ ਲੋਕ extended warranty ਬਾਰੇ ਵੀ ਪੁੱਛਦੇ ਨੇ; ਤਾਜ਼ਾ options ਲਈ ਸਾਨੂੰ ਪੁੱਛ ਲਓ। ਉਹ ਬਾਰੇ ਵਿਚਾਰ ਕਰੋ ਜੇ ਤੁਸੀਂ ਬਹੁਤ ਘੰਟੇ ਪਾਣੀ ’ਤੇ ਹੁੰਦੇ ਹੋ। ਇੱਕ ਪੱਕੀ ਗੱਲ: warranty ਦੀ ਸ਼ਰਤ ਸਿਰਫ authorized installation ਅਤੇ scheduled service ਨਾਲ ਹੀ ਪੂਰੀ ਹੁੰਦੀ ਹੈ। ਸਾਨੂੰ ਇਹ free ਵਿੱਚ guide ਕਰਕੇ ਦੱਸਾਂਗੇ ਕਿ ਤੁਹਾਡੀ motor ਦੀ warranty ਕਦੋਂ ਤੱਕ ਅਤੇ ਕਿਵੇਂ valid ਰੱਖਣੀ ਹੈ।
+ਹਰ ਨਵੀਂ Mercury outboard ’ਤੇ factory 3-year base warranty ਆਉਂਦੀ ਹੈ। ਇਸ ਦਾ ਮਤਲਬ, ਜੇ ਕੋਈ material ਜਾਂ workmanship ਦਾ fault ਹੋਇਆ, Mercury ਉਸਨੂੰ cover ਕਰਦੀ ਹੈ, ਚਾਹੇ ਤੁਸੀਂ ਕਿਸੇ ਵੀ authorized dealer ਤੋਂ ਲਓ। Premier dealer ਹੋਣ ਦਾ ਫਾਇਦਾ ਇਹ ਹੈ ਕਿ ਸਾਡੇ technicians ਹਰ training ਦੀ training ਪਾਸ ਕਰ ਚੁੱਕੇ ਨੇ, service genuine parts ਨਾਲ ਕਰਦੇ ਨੇ, ਅਤੇ warranty ਦਾ claim ਆਸਾਨੀ ਨਾਲ ਸਾਨੂੰ ਹੀ ਕਰਨਾ ਪੈਂਦਾ ਹੈ, ਤੁਹਾਨੂੰ ਸਿਰਫ਼ motor ਚਲਾਉਣੀ ਹੈ। ਕੁਝ ਲੋਕ extended warranty ਬਾਰੇ ਵੀ ਪੁੱਛਦੇ ਨੇ; ਤਾਜ਼ਾ options ਲਈ ਸਾਨੂੰ ਪੁੱਛ ਲਓ। ਉਹ ਬਾਰੇ ਵਿਚਾਰ ਕਰੋ ਜੇ ਤੁਸੀਂ ਬਹੁਤ ਘੰਟੇ ਪਾਣੀ ’ਤੇ ਹੁੰਦੇ ਹੋ। ਇੱਕ ਪੱਕੀ ਗੱਲ: warranty authorized dealer ਤੋਂ ਖਰੀਦਣ ਅਤੇ dealer ਵੱਲੋਂ registration ਹੋਣ ’ਤੇ ਹੀ ਮਿਲਦੀ ਹੈ, ਅਤੇ ਇਹ ਸਹੀ installation ਅਤੇ manual ਦੇ schedule ਮੁਤਾਬਕ maintenance (service records ਸਮੇਤ) ’ਤੇ ਨਿਰਭਰ ਕਰਦੀ ਹੈ। ਸਾਨੂੰ ਇਹ free ਵਿੱਚ guide ਕਰਕੇ ਦੱਸਾਂਗੇ ਕਿ ਤੁਹਾਡੀ motor ਦੀ warranty ਕਦੋਂ ਤੱਕ ਅਤੇ ਕਿਵੇਂ valid ਰੱਖਣੀ ਹੈ।
 
 ## Ik sahi quote kiven laini hai | ਇੱਕ ਸਹੀ ਕੋਟ ਕਿਵੇਂ ਲੈਣੀ ਹੈ
 
@@ -104,7 +104,7 @@ Mercury outboard ਨਾਲ ਪੁਰਾਣੀ ਕਿਸ਼ਤੀ ਵਿੱਚ �
 
 ### Harris Boat Works da pata ki hai? | Harris Boat Works ਦਾ ਪਤਾ ਕੀ ਹੈ?
 
-ਸਾਡਾ address 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0 ਹੈ। Brampton, Mississauga, Scarborough, Markham ਤੋਂ ਗੱਡੀ ਰਾਹੀਂ ਤਕਰੀਬਨ 90-minute ਲੱਗਦੇ ਨੇ। ਅਸੀਂ 1 December to 1 April ਤੱਕ ਬੰਦ ਰਹਿੰਦੇ ਹਾਂ। Season ਵਿੱਚ ਸਾਨੂੰ phone (905) 342-2153 ਜਾਂ text (647) 952-2153 ਕਰੋ। Service request direct hbwservice.ca ’ਤੇ ਜਮ੍ਹਾ ਕਰ ਸਕਦੇ ਹੋ।
+ਸਾਡਾ address 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0 ਹੈ। ਅਸੀਂ Toronto ਵਿੱਚ ਨਹੀਂ ਹਾਂ: Gores Landing, Toronto ਤੋਂ ਲਗਭਗ 90 ਮਿੰਟ ਪੂਰਬ ਵੱਲ ਹੈ। Brampton ਅਤੇ Mississauga ਤੋਂ ਟ੍ਰੈਫ਼ਿਕ ’ਤੇ ਨਿਰਭਰ ਕਰਦਿਆਂ ਲਗਭਗ 1 ਘੰਟਾ 45 ਮਿੰਟ ਤੋਂ 2 ਘੰਟੇ ਲੱਗ ਸਕਦੇ ਹਨ। ਅਸੀਂ 1 December to 1 April ਤੱਕ ਬੰਦ ਰਹਿੰਦੇ ਹਾਂ। Season ਵਿੱਚ ਸਾਨੂੰ phone (905) 342-2153 ਜਾਂ text (647) 952-2153 ਕਰੋ। Service request direct hbwservice.ca ’ਤੇ ਜਮ੍ਹਾ ਕਰ ਸਕਦੇ ਹੋ।
 
 ## Next steps
 

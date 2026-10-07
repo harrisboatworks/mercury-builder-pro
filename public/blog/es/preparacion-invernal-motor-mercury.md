@@ -151,7 +151,7 @@ En Harris Boat Works tenemos 584 registros de preparación invernal completados 
 
 El precio varía según el motor y los servicios requeridos. Contacte a hbwservice.ca para una estimación.
 
-### ¿Cuándo debo reservar?
+### ¿Cuándo debo solicitar la preparación invernal?
 
 Complete hbwservice.ca y deje el bote en cualquier momento, incluso fuera de horario. La marina cierra del 1 de diciembre al 1 de abril.
 

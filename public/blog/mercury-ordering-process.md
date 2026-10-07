@@ -230,7 +230,7 @@ HBW uses a fixed deposit based on the selected motor, not a percentage of the re
 
 ### Can I install my own motor?
 
-Yes, but warranty may require dealer installation. DIY installation also means you handle rigging, programming, and any issues. Professional installation is recommended for most owners.
+Yes, but Mercury's warranty applies only to motors bought from an authorized dealer, with the pre-delivery inspection done and the warranty registered, and it excludes damage from improper installation. DIY installation also means you handle rigging, programming, and any issues. Professional installation is recommended for most owners.
 
 ### What if there is a problem during water test?
 

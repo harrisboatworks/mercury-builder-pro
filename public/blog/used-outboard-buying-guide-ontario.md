@@ -128,7 +128,7 @@ Compression testing is also a dry-land step. It is not part of the on-water chec
 
 **Ethanol damage.** [Ontario regular pump gas carries up to 10 percent ethanol](/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario), which degrades fuel lines, dries out carburettor diaphragms, and absorbs water during storage. HBW sells ethanol-free marine gas at Gores Landing for exactly this reason. A motor stored over several winters with ethanol pump gas in the system often has soft fuel lines and a gummed-up carb.
 
-**Winter freeze damage.** A motor that was not properly winterized in Ontario may have frozen. A cracked block, a blown welch plug, or a hairline crack in a cylinder head does not show up on a casual walk-around. A pressure test catches it. A cold-running test will not.
+**Winter freeze damage.** A motor that was not properly winterized in Ontario may have frozen. A cracked block, a blown welch plug, or a hairline crack in a cylinder head does not show up on a casual walk-around. A pressure test catches it. A short cold-running test may not, so ask for both.
 
 **Stored outside without a cover.** UV-damaged cowls, faded plastic, dried-out rubber. These tell you how the rest of the motor was treated. If the outside was neglected, assume the service schedule was too.
 

@@ -47,7 +47,7 @@ https://www.youtube.com/watch?v=ydFfxwUz5yc
 
 Follow the break-in procedure in the owner's manual for your exact motor. Mercury's published 150 Pro XS example covers 10 hours. For your motor, vary RPM and follow the throttle limits and duration in its own manual. Once break-in is complete, operate normally within Mercury's rated RPM band. For most current FourStrokes, the published first scheduled service is 100 hours or annually.
 
-Booking ahead: [first service and rigging at HBW](/maintenance).
+Need your first service? [Request it at HBW](/maintenance).
 
 ## Why break-in actually matters
 
@@ -120,7 +120,7 @@ When a customer picks up a new Mercury from us:
 - We walk through the break-in protocol for the specific motor model
 - We explain Mercury's 100-hour or annual schedule and HBW's optional early check
 - We complete Mercury warranty registration with serial number and customer info
-- We offer to book HBW's optional early check before the customer leaves
+- We show you how to request HBW's optional early check at hbwservice.ca
 
 ---
 

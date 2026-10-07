@@ -118,9 +118,9 @@ Le vieux moteur sort, le nouveau Mercury entre. Le travail comprend :
 
 Nous appelons quand c'est prêt. Vous revenez. Nous vous expliquons le nouveau moteur au quai : commandes, jauges, instructions de rodage, calendrier d'entretien, paperasse MPP.
 
-**Important : la période de rodage de 10 heures.** Votre Mercury neuf n'est pas prêt au plein régime pour les 10 premières heures. Nous vous expliquons :
-- Premières 2 heures : variez les gaz, pas de plein gaz prolongé, pas de régime élevé soutenu
-- Prochaines 8 heures : élargissez progressivement la plage d'utilisation
+**Important : la période de rodage de 10 heures.** Pendant les 10 premières heures, votre Mercury neuf ne doit pas tourner à plein régime de façon soutenue. Nous vous expliquons :
+- Premières 2 heures : variez les gaz, jusqu'à environ 4 500 tr/min, sans plein gaz ni régime élevé soutenu
+- Prochaines 8 heures : utilisation normale, mais jamais plus de cinq minutes de suite à plein gaz (les limites exactes varient selon le modèle, suivez le manuel)
 - Ensuite : suivez le calendrier de rodage et d'entretien du manuel correspondant au numéro de série. Ne supposez pas qu'un service à 20 heures s'applique à tous les moteurs Mercury.
 
 Vous pouvez essayer le moteur sur le lac Rice avant de partir, ou aller doucement sur la remorque jusqu'à la GTA et faire le rodage sur votre plan d'eau habituel.
@@ -159,9 +159,9 @@ Une remotorisation à Toronto chez un concessionnaire Mercury de la GTA est thé
 
 **3. Évaluation de l'échange.** Nous avons des données de service réelles en Ontario sur les valeurs de Mercury usagés. Certains concessionnaires urbains sous-évaluent les échanges. La soumission d'échange du configurateur est honnête.
 
-**4. Relation de service sur la prochaine décennie.** Nous documentons tout. L'historique de service de votre moteur reste à notre atelier. Quand des réclamations MPP surviennent dans 5 ans, le concessionnaire qui a vendu le moteur traite la réclamation, c'est ainsi que le système fonctionne le mieux.
+**4. Relation de service sur la prochaine décennie.** Nous documentons tout. L'historique de service de votre moteur reste à notre atelier. Quand une réclamation MPP survient dans 5 ans, tout concessionnaire Mercury autorisé peut la traiter, mais un atelier qui connaît déjà votre moteur et son historique vous fait gagner du temps.
 
-**5. Expertise en réglage d'hélice.** La plupart des problèmes de remotorisation 6 mois plus tard sont des problèmes de choix d'hélice. Nous faisons un essai sur l'eau de chaque installation sur le lac Rice avant la récupération et nous ajustons le pas de l'hélice au besoin. Les concessionnaires locaux sans accès à l'eau à l'atelier ne peuvent pas toujours le faire, ils installent sur la remorque et vous découvrez plus tard si l'hélice est mauvaise.
+**5. Expertise en réglage d'hélice.** La plupart des problèmes de remotorisation 6 mois plus tard sont des problèmes de choix d'hélice. Quand les conditions le permettent, nous faisons un essai sur l'eau de l'installation sur le lac Rice avant la récupération et nous ajustons le pas de l'hélice au besoin. Les concessionnaires locaux sans accès à l'eau à l'atelier ne peuvent pas toujours le faire, ils installent sur la remorque et vous découvrez plus tard si l'hélice est mauvaise.
 
 ---
 
@@ -175,7 +175,7 @@ Erreurs que nous voyons chez des plaisanciers de la GTA :
 
 **3. Ne pas planifier comment le bateau arrive à l'atelier.** Si vous n'avez pas de remorque, demandez si un ramassage peut être organisé pour votre bateau et votre lieu. HBW n'offre pas de livraison.
 
-**4. Choisir une puissance Mercury inadaptée à la coque.** Les acheteurs de la GTA surdimensionnent parfois « par sécurité ». Aller à la puissance maximale ou au-dessus crée des problèmes de tenue, des coûts de carburant et du marsouinage sur certaines coques. Adaptez la puissance au design de la coque.
+**4. Choisir une puissance Mercury inadaptée à la coque.** Les acheteurs de la GTA surdimensionnent parfois « par sécurité ». Viser la puissance maximale de la plaque de capacité n'est généralement pas le meilleur choix (le bon moteur est souvent un modèle sous le maximum), et dépasser la plaque crée des problèmes de conformité, d'assurance et de responsabilité. Adaptez la puissance au design de la coque.
 
 **5. Sauter l'essai sur l'eau.** Certains concessionnaires (pas nous) livrent sans test sur l'eau. Insistez toujours pour un essai; les problèmes de performance sont beaucoup plus faciles à régler à l'atelier qu'à votre quai.
 
@@ -189,7 +189,7 @@ La saison de navigation en Ontario est courte. Le moment de réservation compte 
 - **Début du printemps (avril)** : encore bon. L'horaire se remplit d'ici la fin avril.
 - **Pleine saison (mai à juin)** : serré. Souvent 3 à 4 semaines d'attente. Possible de mettre à l'eau avec le nouveau moteur en plein été.
 - **Mi-saison (juillet à août)** : vous perdrez 2 à 3 semaines de navigation pour l'installation, généralement pas la peine sauf si votre vieux moteur lâche.
-- **Automne (septembre à novembre)** : bon, l'atelier est actif mais pas saturé. Moteur prêt pour le printemps suivant.
+- **Automne (septembre à novembre)** : l'atelier est très occupé par l'hivernage et le remisage, alors gardez de la souplesse sur les dates. Moteur prêt pour le printemps suivant.
 
 Si vous envisagez une remotorisation pour le printemps 2026, **commencez le configurateur maintenant et préparez votre projet pendant l'hiver, puis confirmez une date d'installation pendant la saison d'ouverture.**
 

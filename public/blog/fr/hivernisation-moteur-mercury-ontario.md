@@ -47,7 +47,7 @@ Avant même de parler de technique, parlons carburant. La majorité des stations
 
 L'éthanol absorbe l'humidité. Avec le temps, l'eau et l'éthanol se séparent du reste du carburant, c'est ce qu'on appelle la séparation de phase. Ce mélange eau-éthanol se retrouve au fond du réservoir, puis dans le système d'alimentation du moteur. Résultat : carburateur ou injecteurs colmatés, corrosion interne, moteur qui refuse de partir au printemps.
 
-Harris Boat Works est l'une des rares marinas en Ontario à vendre du carburant sans éthanol sur place. Si vous faites le plein ici avant de ranger l'embarcation, vous éliminez ce risque à la source. Sinon, l'ajout d'un stabilisant de carburant de qualité dans le réservoir, suivi d'une courte mise en marche pour faire circuler le mélange, est une étape obligatoire.
+Harris Boat Works est l'une des rares marinas en Ontario à vendre du carburant sans éthanol sur place. Si vous faites le plein ici avant de ranger l'embarcation, vous éliminez ce risque à la source. Sinon, l'ajout d'un stabilisant de carburant de qualité dans le réservoir, suivi d'une courte mise en marche pour faire circuler le mélange, est fortement recommandé.
 
 ---
 
@@ -125,7 +125,7 @@ Pour les réparations de moteurs, nous ne servons que Mercury et Mercruiser.
 
 ### Combien coûte une hivernisation professionnelle?
 
-Le prix varie selon le moteur et les services requis. Contactez-nous à hbwservice.ca pour une estimation.
+Le prix varie selon le moteur et les services requis. Consultez la [grille de tarifs d'hivernisation et d'entreposage de HBW](https://www.harrisboatworks.ca/winter-storage), puis remplissez la demande de service à hbwservice.ca pour une estimation de votre bateau.
 
 ### Quand devrais-je demander mon hivernisation?
 

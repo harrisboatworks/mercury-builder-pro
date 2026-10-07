@@ -89,7 +89,7 @@ The plate max is the ceiling, not the recommendation. Pick inside that range bas
 
 - Solo or two-person fishing most outings
 - Light tackle, no tow toys, half tank
-- Calm protected water (Rice Lake, small Kawarthas)
+- Calm or sheltered water (small Kawarthas, Rice Lake on a calm day)
 - You care more about fuel economy than hole shot
 
 **Stay within manufacturer limits; check your everyday load and occasional fully loaded trips.**

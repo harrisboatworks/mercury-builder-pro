@@ -45,7 +45,7 @@ This checklist is the final pass. It assumes you already did spring commissionin
 
 Five factors affect how thorough your opener prep needs to be:
 
-**1. How you stored the boat over winter.** Indoor, heated storage versus outdoor uncovered changes what you are walking into.
+**1. How you stored the boat over winter.** Shrink-wrapped storage versus sitting uncovered changes what you are walking into.
 
 **2. How recently you ran the motor.** A motor that ran in October is different from one that has not turned over in eight months.
 
@@ -212,7 +212,7 @@ For most Kawartha lake fishing, no, but the kicker functions as backup propulsio
 
 ### What safety gear is required for walleye fishing in Ontario?
 
-PFD for each person on board (Transport Canada-approved), a buoyant heaving line at least 15 m long, anchor and rope, paddle or oar, bailer, sound signaling device, lights for navigation after sunset, fire extinguisher (depending on boat type), watertight flashlight.
+The required gear comes from Transport Canada's boating rules, not fishing rules. For a powered boat up to 6 m: a PFD for each person on board (Transport Canada-approved), a buoyant heaving line at least 15 m long, anchor and rope, paddle or oar, bailer, sound signaling device, lights for navigation after sunset, fire extinguisher (depending on boat type), and a watertight flashlight or three approved flares. Boats 6 to 9 m need a watertight flashlight and six flares.
 
 ### How do I prevent stale fuel from ruining my opener?
 

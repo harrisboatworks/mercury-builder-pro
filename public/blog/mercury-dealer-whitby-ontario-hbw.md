@@ -96,7 +96,7 @@ HBW offers outdoor storage with professional shrink wrap, outdoor uncovered stor
 
 ## Getting to Harris Boat Works from Whitby
 
-Whitby Harbour Marina is a city-owned launch with 200+ slips, and Whitby Yacht Club is the other local launch point. Many Whitby boaters trailer inland when Lake Ontario is too exposed.
+Port Whitby Marina is a town-operated marina with 420 slips, and Whitby Yacht Club is the other local launch point. Many Whitby boaters trailer inland when Lake Ontario is too exposed.
 
 **Route:** Highway 401 east to Exit 472 (County Road 18 / Burnham Street, Cobourg), then north on County Road 18 about 16 km to Gores Landing.
 
@@ -120,7 +120,7 @@ Whitby Harbour Marina is a city-owned launch with 200+ slips, and Whitby Yacht C
 
 Transparent installed pricing before you leave Whitby. A service relationship that makes sense at 45 minutes. No phone-tag, no call-for-quote, no runaround.
 
-That's the deal. Has been since 1947.
+That's the deal.
 
 **Build your quote:** [mercuryrepower.ca](https://www.mercuryrepower.ca)
 **Request service:** [hbwservice.ca](https://hbwservice.ca)

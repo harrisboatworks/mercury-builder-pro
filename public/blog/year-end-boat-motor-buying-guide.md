@@ -39,7 +39,7 @@ This post is the HBW calendar, month by month. What's typically happening with M
 
 ## Quick recommendation
 
-If you want the boat on the water for opener (early May in the Kawarthas), the practical ordering window is October through February. That is when spring install slots are bookable, current pricing is locked, and trade math is clean. If you do not need the boat until next summer or later, the cheapest order month is probably August (post-flip Mercury closeouts) or January (winter dealer promos). Get your starting number at [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection) and decide from there.
+If you want the boat on the water for opener (walleye opens the second Saturday in May in the Kawarthas), the practical ordering window is October through February. That is when spring install slots are bookable, current pricing is locked, and trade math is clean. If you do not need the boat until next summer or later, the cheapest order month is probably August (post-flip Mercury closeouts) or January (winter dealer promos). Get your starting number at [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection) and decide from there.
 
 ## The HBW Buying Calendar, Month by Month
 
@@ -75,13 +75,13 @@ The November-to-February window is what most customers mean by "year-end buying.
 
 **November.** Spring install slots start filling for the customers who want to be on the water at opener. Mercury's winter promotional calendar is sometimes announced this month, sometimes a few weeks later. We are still finishing fall winterizations before the shop closes.
 
-**December.** Shop closed for in-person service, but order books are open. Trade-in inventory builds as customers swap before storing for winter. Pricing on completed quotes is locked, no model year confusion. Christmas closure mid-month to early January.
+**December.** Shop closed for in-person service, but order books are open. Trade-in inventory builds as customers swap before storing for winter. Pricing on completed quotes is locked, no model year confusion. The shop reopens in early April.
 
 **January.** Mercury winter promotions are typically live by mid-month. Boat show season starts (Toronto International Boat Show is the big one). Quote volume rises. This is the prime month to lock in a spring install slot at the best stacked pricing of the year.
 
 **February.** Shoulder of the ordering window. Quotes locked now still get a spring install slot. Last good month for the winter promotional pricing.
 
-**March.** Shop still closed for the first few weeks. Spring crunch begins as soon as we reopen in early April. Late-bookers compete for the install slots that have not already been booked. Pricing tightens.
+**March.** Shop still closed all month. Spring crunch begins as soon as we reopen in early April. Late-bookers compete for the install slots that have not already been booked. Pricing tightens.
 
 If you are going to buy in the year-end window, the actionable window is January and February. November and December are slower because of the holidays.
 

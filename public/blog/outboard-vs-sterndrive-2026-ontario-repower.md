@@ -33,7 +33,7 @@ revenue_driver: repower
 
 > **Quick answer:** Compare a replacement sterndrive with an outboard conversion for your specific hull. Have a qualified marine professional assess the transom, structure, weight distribution, and installation requirements, then compare complete written quotes. Neither approach is automatically the better choice.
 
-We sell both. We service both. We have no axe to grind.
+We service MerCruiser sterndrives and Mercury outboards, and we'll tell you plainly when keeping your sterndrive is the better call.
 
 Start with the condition and design of your existing boat. An outboard conversion and a replacement sterndrive can involve different structural and installation work; price the complete scope before comparing them.
 
@@ -65,7 +65,7 @@ For most Ontario bowriders and runabouts, the math points one way. Big hulls and
 
 **Sterndrive or inboard can still make sense**
 
-Bring the boat in for an honest look. We rig both. Most 18 to 22 ft bowriders coming for sterndrive repower leave with an outboard quote.
+Bring the boat in for an honest look. We repower with Mercury outboards and service MerCruiser sterndrives. Most 18 to 22 ft bowriders coming for sterndrive repower leave with an outboard quote.
 
 ## Outboard vs sterndrive at a glance
 
@@ -125,7 +125,7 @@ Consider these factors when comparing the two installations.
 
 ### Reliability and Service Intervals
 
-Modern 4-stroke outboards are genuinely durable. Mercury's V6 and V8 FourStroke engines run on extended service intervals, and their track records over a decade-plus of Ontario freshwater use are excellent. Fewer wear parts. No coolant system. No bellows. No gimbal bearing to fail.
+Modern 4-stroke outboards are genuinely durable. Mercury's V6 and V8 FourStroke platforms have been in Ontario freshwater use since 2018 and follow the service schedule in the Mercury owner's manual. Fewer wear parts. No coolant system. No bellows. No gimbal bearing to fail.
 
 ### No Engine Box, No Hidden Problems
 
@@ -198,7 +198,7 @@ A sterndrive-to-outboard conversion is not just bolting on a motor. The project 
 - **Exhaust and coolant system decommissioning**, the old inboard exhaust system is removed.
 - **Lake test and commissioning**, you should expect a proper break-in run with documentation.
 
-Budget range varies meaningfully based on engine size, hull complexity, transom condition, and the rigging choices you make. We don't publish a flat price because it wouldn't be honest, the number changes case by case.
+Budget range varies meaningfully based on engine size, hull complexity, transom condition, and the rigging choices you make. The total changes case by case. Start with the [motor quote builder](/quote/motor-selection) for the outboard itself, and we confirm the final price for the full conversion.
 
 The right question isn't "how much does a conversion cost?" It's "does the total cost make sense for this hull, and what does the break-even look like over the years I plan to keep it?"
 
@@ -269,7 +269,7 @@ Dedicated watersports inboards where wake shape is the whole point, big 22+ ft c
 
 ### How much does a sterndrive-to-outboard conversion cost?
 
-We don't publish a flat price because it would not be honest. The scope typically includes an outboard bracket, motor and outdrive removal, new Mercury Digital Throttle and Shift controls, wiring harness, gauges, VesselView integration, fuel system updates, exhaust decommissioning, transom work if needed, and a proper lake test. The number changes case by case; the right question is whether the total cost makes sense for your hull over the years you plan to keep it.
+The outboard itself can be quoted in the [motor quote builder](/quote/motor-selection), and we confirm the final price for the full conversion. The scope typically includes an outboard bracket, motor and outdrive removal, new Mercury Digital Throttle and Shift controls, wiring harness, gauges, VesselView integration, fuel system updates, exhaust decommissioning, transom work if needed, and a proper lake test. The number changes case by case; the right question is whether the total cost makes sense for your hull over the years you plan to keep it.
 
 ### Does HBW still service MerCruiser sterndrives?
 
@@ -277,7 +277,7 @@ Yes. If you have a sterndrive and you want to keep it, we support that decision.
 
 ### Why are outboards better for Ontario freshwater than sterndrives?
 
-Modern 4-stroke outboards trim up in seconds, which lets you pick through shallow Kawartha bays and rocky shoals that put an outdrive at risk. They tilt fully out of the water for cleaner storage, have no bellows or gimbal bearing to fail, run on extended service intervals, and Mercury's V6 and V8 FourStrokes are measurably more fuel-efficient than most carbureted or early EFI sterndrives at cruise.
+Modern 4-stroke outboards trim up in seconds, which lets you pick through shallow Kawartha bays and rocky shoals that put an outdrive at risk. They tilt fully out of the water for cleaner storage, have no bellows or gimbal bearing to fail, and Mercury's V6 and V8 FourStrokes are measurably more fuel-efficient than most carbureted or early EFI sterndrives at cruise.
 
 ## Related guides
 

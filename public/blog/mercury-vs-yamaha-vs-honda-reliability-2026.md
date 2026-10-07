@@ -44,7 +44,7 @@ Mercury, Yamaha, and Honda all make reliable modern four-stroke outboards. None 
 | Freshwater reputation | Excellent | Excellent | Excellent |
 | Extended service contract | Mercury Product Protection (Gold / Platinum) | Yamaha YES | Honda Protection Plan |
 | SmartCraft / digital integration | Yes (current/full lineup) | Yes (proprietary) | Yes (proprietary) |
-| Software upgrade roadmap (Boost-style retrofits) | Yes | Limited | Limited |
+| Software upgrade options | Mercury Boost on select engines, mostly 175 HP and up | Not compared here | Not compared here |
 | Parts shelf availability (Ontario) | Strong | Strong | Moderate |
 | Rigging cost if switching brand | n/a (already on brand) | $2,000 to $3,000 CAD | $2,000 to $3,000 CAD |
 | Resale in Ontario | Strong | Strong | Strong, smaller buyer pool |
@@ -168,7 +168,7 @@ For most Ontario boaters switching to Mercury, the timing is a full repower, whe
 
 ## What we see at HBW
 
-After three generations of running this shop, we've serviced every major outboard brand. Mercury is what we sell new because the platform, the rigging compatibility, and the parts pipeline beat the competition. But honestly, late-model Yamaha and Honda are reliable motors -- the difference at the powerhead level is small.
+After three generations of running this shop, we've seen every major outboard brand come through the yard. Mercury is what we sell new because the platform, the rigging compatibility, and the parts pipeline beat the competition. But honestly, late-model Yamaha and Honda are reliable motors -- the difference at the powerhead level is small.
 
 The bigger reliability swing is who installed and rigged the motor, and whether the owner kept up with the 100-hour service. A botched install kills a perfect motor faster than the brand badge ever does.
 
@@ -192,7 +192,7 @@ For Ontario freshwater fishing boats, Mercury often has practical dealer-support
 
 ### Is Mercury better than Honda for pontoon boats?
 
-Mercury Command Thrust gearcase, available on FourStroke models from 40 to 115 HP, is purpose-built for pontoon torque and load profiles. For pontoons specifically in Ontario, Mercury FourStroke Command Thrust is our standard recommendation.
+Mercury Command Thrust gearcase, available on select FourStroke models from 9.9 to 115 HP, is purpose-built for pontoon torque and load profiles. For pontoons specifically in Ontario, Mercury FourStroke Command Thrust is our standard recommendation.
 
 ### What is the most reliable Mercury outboard?
 

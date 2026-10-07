@@ -72,7 +72,7 @@ When you're staring at a shiny new motor, it's easy to forget that some things h
 
 | Milestone | What to do |
 |---|---|
-| Day one | Pair the Mercury Marine app via SmartCraft Connect (see our [SmartCraft Connect Guide](/blog/mercury-smartcraft-connect-guide-ontario)), verify the key-on horn self-test, and watch the cooling water telltale at idle. |
+| Day one | If your motor is SmartCraft-capable (40 HP and up, or 25 and 30 HP from 2022), pair the Mercury Marine app via SmartCraft Connect (see our [SmartCraft Connect Guide](/blog/mercury-smartcraft-connect-guide-ontario)), verify the key-on horn self-test, and watch the cooling water telltale at idle. |
 | First weeks (break-in period) | Follow the break-in routine in your owner's manual and our break-in guide. Check for unusual noise, vibration, or warning signals after each outing. |
 | Around 20 hours (optional, dealer-recommended) | Many owners do an early oil and filter change as cheap insurance. Mercury does not require this, but it's a common practice that flushes out break-in particulates. Book it if you go this route. |
 | 100 hours or end of season (whichever comes first) | Change engine oil and filter, inspect anodes, check propeller condition, and give the motor a thorough once-over. Mercury's published schedule calls for this at 100 hours or annually. Do not let this slide past the season end. |
@@ -157,7 +157,7 @@ Mercury's published maintenance schedule calls for oil and filter service at 100
 
 ### Do I need to use the Mercury Marine app with my new outboard?
 
-It's not required for basic operation, but pairing the Mercury Marine app via SmartCraft Connect gives you engine hours, fault codes, maintenance reminders, and digital gauges on your phone. Worth doing in the first week.
+It's not required for basic operation, but on SmartCraft-capable motors (40 HP and up, or 25 and 30 HP from 2022) pairing the Mercury Marine app via SmartCraft Connect gives you engine hours, fault codes, maintenance reminders, and digital gauges on your phone. Worth doing in the first week.
 
 ### What does a beep from my Mercury outboard mean at startup?
 

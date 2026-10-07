@@ -62,7 +62,7 @@ HBW does sell new Legend Boats and used boats, but we are not trying to be a hig
 
 This is the cleanest path for someone who wants no unknowns and a straightforward buying experience. You get a brand-new 14 to 16 ft aluminum console or tiller boat with a current Mercury motor, trailer, and basic electronics.
 
-**What it is good for:** Solo or two-person fishing on Rice Lake and smaller Kawartha lakes. The 25 to 60 HP class is the right range for this hull size, enough to plane reliably with two people and gear without over-powering the hull.
+**What it is good for:** Solo or two-person fishing on Rice Lake and smaller Kawartha lakes. Your capacity plate sets the maximum horsepower for the hull, and a Mercury one model below that maximum is usually the best fit, enough to plane reliably with two people and gear.
 
 **Trade-off:** You are buying a smaller boat and a smaller motor than the same money would get you in the used market. For many solo anglers, that is fine, but it is worth knowing going in.
 

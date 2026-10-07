@@ -46,7 +46,7 @@ Simcoe rewards more boat and more motor than Rice Lake or the smaller Kawartha l
 - **Travel distance.** Simcoe is roughly 740 km² with multiple fishing zones. Travel from Cook's Bay to Kempenfelt Bay or to the deeper basins takes real time.
 - **Boat traffic.** Heavy summer recreational traffic. Faster cruise speeds reduce time exposed to wakes.
 - **Tournament fishing.** Simcoe hosts walleye and bass tournaments. Tournament-grade hulls and performance motors are common.
-- **Regulatory zone.** Lake Simcoe is in **Fisheries Management Zone 16**. Confirm current limits and seasons with the Ontario MNRF Fishing Regulations Summary each year.
+- **Regulatory zone.** Lake Simcoe is in **Fisheries Management Zone 16**. Confirm current limits and seasons with the Ontario Fishing Regulations Summary each year.
 
 ## Recommended Mercury for Simcoe walleye by use case
 

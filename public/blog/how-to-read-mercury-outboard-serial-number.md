@@ -72,7 +72,7 @@ For older Mercurys, the model code usually reads as horsepower + letter combinat
 
 - **M**: Manual start
 - **E**: Electric start
-- **L / XL / CXL / XXL**: Long, extra-long, counter-rotation long, extra-extra-long shaft
+- **L / XL / CXL / XXL**: Long, extra-long, counter-rotation extra-long, extra-extra-long shaft
 - **H**: Tiller handle
 - **RC**: Remote control steering
 - **PT**: Power trim/tilt
@@ -250,7 +250,7 @@ No, but identification gets harder. We can usually decode it from secondary stam
 
 ### Can I look up my serial myself online?
 
-Not really. Crowley Marine, MarineEngine.com, and OBParts publish serial-range charts and parts finders, which get you close enough to order the right parts. They are not a model-year or spec lookup, and they show nothing about warranty, service bulletins, or service history. The exact year and build spec for a specific serial live in Mercury's dealer system.
+Not really. Crowley Marine, MarineEngine.com, and OBParts publish serial-range charts and parts finders, which get you close enough to order the right parts. They are not a model-year or spec lookup, and they show nothing about warranty, service bulletins, or service history. A Mercury dealer can confirm the exact year and build spec for a specific serial.
 
 ### Do older 2-stroke Mercurys (pre-2000) follow the same format?
 

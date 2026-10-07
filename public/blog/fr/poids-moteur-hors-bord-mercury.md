@@ -68,7 +68,7 @@ Tous les chiffres sont les poids secs publiés par Mercury pour la configuration
 
 ### Pourquoi le poids compte plus qu'on le pense
 
-**Votre tableau arrière a une limite.** La plaque de capacité indique un poids de moteur maximal en plus de la puissance. Les deux comptent. Un moteur dans la limite de puissance mais au-dessus de la limite de poids repose quand même mal.
+**Votre tableau arrière a une limite.** La plaque de capacité indique la puissance maximale, le nombre maximal de personnes et une limite de charge totale (personnes, moteur et équipement). Elles comptent toutes. Un moteur dans la limite de puissance qui fait dépasser la limite de charge pose quand même problème.
 
 **Le poids change l'assiette.** Trop lourd à l'arrière et la poupe s'enfonce : la proue se relève, le bateau marsouine, et vous brûlez du carburant à vous battre contre ça. C'est l'un des problèmes qu'on voit le plus souvent quand quelqu'un remotorise plus lourd que l'ancien moteur.
 
@@ -104,7 +104,7 @@ Le Mercury 115 Pro XS à 163 kg (359 lb), que Mercury présente comme le 115 de 
 
 ### Pourquoi le poids compte-t-il pour une remotorisation ?
 
-Votre plaque de capacité indique un poids de moteur maximal en plus de la puissance. Un moteur plus lourd change l'assiette et le déjaugeage, et les quatre-temps modernes pèsent souvent plus que les vieux deux-temps qu'ils remplacent. Vérifiez la capacité du tableau arrière avant d'acheter.
+Votre plaque de capacité indique une limite de charge totale (personnes, moteur et équipement) en plus de la puissance. Un moteur plus lourd change l'assiette et le déjaugeage, et les quatre-temps modernes pèsent souvent plus que les vieux deux-temps qu'ils remplacent. Vérifiez la capacité du tableau arrière avant d'acheter.
 
 ## Prochaines étapes
 

@@ -92,7 +92,7 @@ The 150 isn't a dramatic top-end difference. Where you actually feel it:
 - 115: 4,200-4,500 RPM (working harder)
 - 150: 3,500-3,800 RPM (relaxed)
 
-**Fuel burn at 25 MPH cruise:**
+**Fuel burn at 25 MPH cruise (rough planning figures; they vary with hull, load and prop):**
 - 115: roughly 25-28 L/h (6.5-7.5 GPH)
 - 150: roughly 28-32 L/h (7.5-8.5 GPH)
 

@@ -35,7 +35,7 @@ Rice Lake 属于安省 Fisheries Management Zone 17（FMZ 17）。常见目标�
 
 需要考取 PCOC？通过 [HBW 的 MyBoatCard 推荐链接](https://myboatcard.com/card/harrisboat)参加在线课程，使用优惠码 **HARRIS15** 可享 **15% 折扣**。
 
-从 GTA 多数地区开车通常约 60–120 分钟，实际时间取决于出发点、401／115 路况和你使用的下水点。出发前先做三件事：查 [FMZ 17 当年规则](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17)、确认自己的[安省钓鱼资格](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees)，再核对天气、下水点和船上安全装备。
+从 GTA 多数地区开车通常约 60–120 分钟，实际时间取决于出发点、401 路况和你使用的下水点。出发前先做三件事：查 [FMZ 17 当年规则](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17)、确认自己的[安省钓鱼资格](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees)，再核对天气、下水点和船上安全装备。
 
 *HBW 信任要点*
 
@@ -43,7 +43,7 @@ Rice Lake 属于安省 Fisheries Management Zone 17（FMZ 17）。常见目标�
 
 - [Mercury Marine](https://www.mercurymarine.com/ca/en) Premier 认证经销商
 - 透明加元价格，无需讨价还价
-- 从 GTA 多数地区经 401 + 115 高速约 60 到 120 分钟车程
+- 从 GTA 多数地区经 401 高速约 60 到 120 分钟车程
 
 [在线获取报价](/quote/motor-selection)
 
@@ -53,7 +53,7 @@ Rice Lake 属于安省 Fisheries Management Zone 17（FMZ 17）。常见目标�
 
 Rice Lake 是大多伦多钓友的近距离选择。从多伦多开车：
 
-- **路线：** 通常经 401 东向和 Highway 115；最后一段请按你确认的码头或租船地点导航
+- **路线：** 通常经 401 东向；最后一段请按你确认的码头或租船地点导航
 - **时间：** 多数 GTA 地区约 60–120 分钟，周末和施工会明显改变车程
 - **不需要过夜：** 早上去，傍晚回，一天搞定
 - **下水点要先确认：** 船坡、停车、费用、开放时间和拖车空间会因地点与季节改变
@@ -72,7 +72,7 @@ Walleye 在安大略省渔业管理区 17（FMZ 17）有特定的尺寸限制（
 
 ### Smallmouth Bass（小嘴鲈）
 
-晚春到初夏的主要钓鱼对象。在岩石结构、水草边缘特别活跃。可以用 jig、软虫、顶水饵等多种方式。
+6 月第三个星期六开季后，初夏到秋季的主要钓鱼对象。在岩石结构、水草边缘特别活跃。可以用 jig、软虫、顶水饵等多种方式。
 
 ### Muskellunge / Muskie（中文俗名不一）
 

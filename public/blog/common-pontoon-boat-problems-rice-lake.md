@@ -227,7 +227,7 @@ Here's what our techs would tell you if you asked them after a long week in the 
 - **Cover the boat.** Sun and rain destroy furniture and canvas.
 - **Know Rice Lake's bottom.** Shallow areas are shallower than you think.
 - **Check the prop.** Wrong pitch costs you power and costs the engine.
-- **Use good fuel.** Ethanol-free isn't optional if you want a reliable start.
+- **Use good fuel.** Mercury approves fuel with up to 10% ethanol (E10), but ethanol-free is the better choice for a motor that sits.
 
 None of these require a mechanical background. They just require paying attention.
 
@@ -269,7 +269,7 @@ Aluminum, moisture, dissimilar metals, and marine electrical current are an idea
 
 ### Do I need ethanol-free fuel in a pontoon outboard?
 
-For any outboard that sits more than a few weeks, yes. Ethanol absorbs moisture, phase-separates from the gasoline, and leaves gum and varnish in carburettors and fuel injectors. Harris Boat Works sells ethanol-free fuel for this reason. Use fresh fuel at the start of every season and run stabilizer through the system before any storage period longer than 30 days.
+Not required, since Mercury approves fuel with up to 10% ethanol (E10), but it's the better choice for any outboard that sits for a long stretch. Ethanol absorbs moisture, phase-separates from the gasoline, and leaves gum and varnish in carburettors and fuel injectors. Harris Boat Works sells ethanol-free fuel for this reason. Use fresh fuel at the start of every season and run stabilizer through the system before any storage period longer than 30 days.
 
 ## Related guides
 

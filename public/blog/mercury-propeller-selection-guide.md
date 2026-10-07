@@ -63,7 +63,7 @@ Material is the fourth variable. Aluminum or stainless steel. Covered below.
 
 Aluminum and stainless are the two main material categories. They are not equivalent.
 
-**Aluminum** is the default for most fishing boats, pontoons under 150 HP, and any application where strike damage from rocks, logs, or deadheads is a real possibility. Aluminum props are less expensive, they flex slightly before catastrophic failure, and they are usually field-repairable. The downside is they wear faster, they lose efficiency over time, and they cannot deliver the top-end of a comparable stainless prop.
+**Aluminum** is the default for most fishing boats, a budget-friendly choice on smaller pontoons, and the safer pick anywhere strike damage from rocks, logs, or deadheads is a real possibility. Aluminum props are less expensive, they flex slightly before catastrophic failure, and replacing a damaged one is often cheaper than repairing it. The downside is they wear faster, they lose efficiency over time, and they cannot deliver the top-end of a comparable stainless prop.
 
 **Stainless steel** is the default for higher-HP applications, performance hulls, and any setup where the small efficiency gain matters. Stainless is stiffer, holds its shape under load, and transfers more of the motor's power to forward thrust. The downside is cost, weight, and the fact that a hard strike can damage the hub or the gearcase rather than the prop. Stainless is usually professional repair rather than field-repair.
 
@@ -127,7 +127,7 @@ If you bought your motor at HBW or another Mercury dealer, the dealer demo run s
 
 Quick reference for the prop families you will see on Ontario Mercury motors:
 
-**Black Max** is Mercury's basic 3-blade aluminum prop. Standard equipment on many lower-HP fishing motors. Good general-purpose prop. Field-repairable.
+**Black Max** is Mercury's basic 3-blade aluminum prop. Standard equipment on many lower-HP fishing motors. Good general-purpose prop. Inexpensive to replace if damaged.
 
 **Spitfire** is Mercury's 4-blade aluminum family. **Spitfire X7** is a separate 4-blade stainless family, not an aluminum option. Confirm hub and gearcase before treating X7 as the automatic Command Thrust prop.
 
@@ -187,7 +187,7 @@ Each inch of pitch change is worth roughly 150 to 200 RPM at wide-open throttle.
 
 ### Should I choose aluminum or stainless steel for my Mercury prop?
 
-Aluminum is the default for most fishing boats, pontoons under 150 HP, and any application where strike damage from rocks or deadheads is a real possibility. Aluminum is less expensive and field-repairable. Stainless is the default for higher-HP applications and performance hulls. Stainless holds shape under load and delivers more efficient power transfer but costs more upfront.
+Aluminum is the default for most fishing boats, a budget-friendly choice on smaller pontoons, and the safer pick anywhere strike damage from rocks or deadheads is a real possibility. Aluminum is less expensive, and replacing a damaged one is often cheaper than repairing it. Stainless is the default for higher-HP applications and performance hulls. Stainless holds shape under load and delivers more efficient power transfer but costs more upfront.
 
 ### What is the WOT RPM test and why does it matter?
 

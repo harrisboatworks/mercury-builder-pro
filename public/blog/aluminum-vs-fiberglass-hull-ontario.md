@@ -95,7 +95,7 @@ If you have ever talked to a fiberglass repair tech about a serious blister job,
 
 Aluminum repair is more democratic. A good local welder can fix most aluminum hull issues in a few hours. We see Ontario boaters keep aluminum boats running for 30-40 years through accumulated small repairs that would have totalled a fiberglass equivalent.
 
-For DIY-minded owners, this matters a lot. For owners who want a clean boat that just works and don't want to think about hull material, fiberglass + a good maintenance routine + indoor storage is the cleaner path.
+For DIY-minded owners, this matters a lot. For owners who want a clean boat that just works and don't want to think about hull material, fiberglass + a good maintenance routine + proper shrink-wrapped winter storage is the cleaner path.
 
 ## What we recommend at Harris Boat Works
 
@@ -132,7 +132,7 @@ Marine-grade aluminum (5052 or 5086 alloy) resists fresh-water corrosion well fo
 
 ### Can fiberglass survive Ontario winters in outdoor storage?
 
-Yes, with proper preparation. Drain all water, cover with shrinkwrap or a quality cover, keep the cockpit drains clear so meltwater drains out. Cracked gelcoat and water intrusion from a winter of standing water is the most common avoidable fiberglass damage we see.
+Yes, with proper preparation. Drain all water, have the boat shrink-wrapped, keep the cockpit drains clear so meltwater drains out. Cracked gelcoat and water intrusion from a winter of standing water is the most common avoidable fiberglass damage we see.
 
 ### Are aluminum boats colder to fish from in shoulder seasons?
 

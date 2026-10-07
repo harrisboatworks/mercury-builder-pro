@@ -96,7 +96,7 @@ For a lot of Ontario boaters, neither hull is "wrong." The decision comes down t
 
 ## How Rice Lake and the Kawarthas fit in
 
-Rice Lake is a warm, shallow, fish-friendly lake. The maximum sustained chop on Rice Lake even in a windy afternoon is generally manageable for both hulls (occasionally 1-2 feet, rarely more). The Trent-Severn locks connecting the Kawarthas don't impose hull-type restrictions, but pontoon owners need to plan for the more constrained lock spaces.
+Rice Lake is a warm, shallow, fish-friendly lake. The maximum sustained chop on Rice Lake even in a windy afternoon is generally manageable for both hulls (occasionally 1-2 feet, rarely more). The Trent-Severn locks connecting the Kawarthas don't impose hull-type restrictions, but check your draft and the 6.1 m (20 ft) minimum fixed bridge clearance, including any canopy or bimini, with [Parks Canada](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/navigation/points-retenir-navigation-facts) before you plan a trip.
 
 For a Rice Lake primary boater who plans to occasionally trailer to bigger water (Lake Simcoe, Lake Ontario, larger Kawartha lakes during shoulder seasons), the V-hull buys flexibility. For a Rice Lake primary boater who plans to stay on Rice Lake and have people on the boat regularly, the pontoon is hard to beat.
 
