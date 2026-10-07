@@ -1,5 +1,7 @@
 # Public chat / Realtime backlog release (#533)
 
+**Current evidence (2026-09-28):** See [the production runtime attestation and release boundary](public-function-pairs-20260928.md). The dated UNVERIFIED/source-drift findings below are historical. The current branch records per-pair production runtime evidence; it does not authorize merge or deployment.
+
 Source-only safety work. This document does not authorize a production deploy, migration, ElevenLabs refresh, or live smoke test.
 
 **Pinned candidate source:** `1c9c2603f1b0f542e9048d41f0284730adc711ff` (`main` at implementation). Re-pin the exact merge SHA before any later release. Do not infer a deployed commit from a registry timestamp or version number.

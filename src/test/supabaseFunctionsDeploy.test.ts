@@ -16,9 +16,10 @@ import {
   resolveProjectRef,
   requiredMigrationsForDispatch,
   buildDispatchPairTargets,
+  completeAutomaticPairTargets,
   runDeploy,
 } from '../../scripts/deploy-supabase-functions.mjs';
-import { PUBLIC_RELEASE_PAIRS } from '../../scripts/lib/public-function-release-guards.mjs';
+import { PUBLIC_RELEASE_PAIRS, UNVERIFIED_PRODUCTION_ATTESTATION } from '../../scripts/lib/public-function-release-guards.mjs';
 import { listAppliedMigrationsFromManagementApi } from '../../scripts/lib/supabase-management-api.mjs';
 import { isMigrationApplied, appliedVersionSet } from '../../scripts/lib/supabase-deploy-required.mjs';
 import {
@@ -834,6 +835,11 @@ describe('deploy summary', () => {
   });
 });
 
+const UNVERIFIED_PAIRS = {
+  'site-chat': UNVERIFIED_PRODUCTION_ATTESTATION,
+  'openai-realtime': UNVERIFIED_PRODUCTION_ATTESTATION,
+};
+
 const ATTESTED_CHAT = {
   'site-chat': {
     status: 'ATTESTED',
@@ -855,6 +861,23 @@ const ATTESTED_REALTIME = {
 };
 
 describe('public pair release holds', () => {
+  it('selects exactly each pair with explicit attestation fixtures and mocked deploys', async () => {
+    for (const pair of PUBLIC_RELEASE_PAIRS) {
+      const seen: string[] = [];
+      const code = await runDeploy({
+        env: { DEPLOY_PAIR: pair.id, DEPLOY_FROM: 'HEAD', DEPLOY_TO: 'HEAD' },
+        releaseAttestations: { ...ATTESTED_CHAT, ...ATTESTED_REALTIME },
+        deployOne: (slug: string) => {
+          seen.push(slug);
+          return { ok: true, detail: 'mock only' };
+        },
+        listAppliedVersions: () => [],
+      });
+      expect(code).toBe(0);
+      expect(seen.sort()).toEqual([...pair.slugs].sort());
+    }
+  });
+
   it('invokes zero deploy calls when attestation is unverified for a complete chat pair', async () => {
     const seen: string[] = [];
     const { succeeded, failed } = await deployWithMigrationGate({
@@ -862,6 +885,7 @@ describe('public pair release holds', () => {
         { slug: 'ai-chatbot', requiredMigrations: [] },
         { slug: 'ai-chatbot-stream', requiredMigrations: [] },
       ],
+      releaseAttestations: UNVERIFIED_PAIRS,
       listAppliedVersions: () => [],
       env: { OPENAI_API_KEY: 'sk-local-not-production-proof' },
       deployOne: (slug: string) => {
@@ -996,6 +1020,7 @@ describe('public pair release holds', () => {
         { slug: 'ai-chatbot', requiredMigrations: [] },
         { slug: 'ai-chatbot-stream', requiredMigrations: [] },
       ],
+      releaseAttestations: UNVERIFIED_PAIRS,
       listAppliedVersions: () => [],
       deployOne: (slug: string) => {
         seen.push(slug);
@@ -1017,7 +1042,7 @@ describe('public pair release holds', () => {
         { slug: 'realtime-sdp-exchange', requiredMigrations: [] },
       ],
       listAppliedVersions: () => [],
-      releaseAttestations: ATTESTED_CHAT,
+      releaseAttestations: { ...UNVERIFIED_PAIRS, ...ATTESTED_CHAT },
       deployOne: (slug: string) => {
         seen.push(slug);
         return { ok: true, detail: 'Deployed' };
@@ -1084,7 +1109,7 @@ describe('public pair release holds', () => {
     expect(seen).toEqual(['send-sms']);
   });
 
-  it('holds a normal one-sided chat diff and still deploys an unprotected sibling', async () => {
+  it('completes a normal chat diff after attestation and still deploys an unprotected sibling', async () => {
     const seen: string[] = [];
     const code = await runDeploy({
       env: {
@@ -1095,14 +1120,15 @@ describe('public pair release holds', () => {
         { status: 'M', path: 'supabase/functions/ai-chatbot/index.ts' },
         { status: 'M', path: 'supabase/functions/send-sms/index.ts' },
       ],
+      releaseAttestations: ATTESTED_CHAT,
       deployOne: (slug: string) => {
         seen.push(slug);
         return { ok: true, detail: 'ok' };
       },
       listAppliedVersions: () => [],
     });
-    expect(code).toBe(1);
-    expect(seen).toEqual(['send-sms']);
+    expect(code).toBe(0);
+    expect(seen.sort()).toEqual(['ai-chatbot', 'ai-chatbot-stream', 'send-sms']);
   });
 
   it('holds a normal complete chat selection until production attestation exists', async () => {
@@ -1120,6 +1146,7 @@ describe('public pair release holds', () => {
         seen.push(slug);
         return { ok: true, detail: 'ok' };
       },
+      releaseAttestations: UNVERIFIED_PAIRS,
       listAppliedVersions: () => [],
     });
     expect(code).toBe(1);
@@ -1160,6 +1187,7 @@ describe('public pair release holds', () => {
         seen.push(slug);
         return { ok: true, detail: 'ok' };
       },
+      releaseAttestations: UNVERIFIED_PAIRS,
       listAppliedVersions: () => [],
     });
     expect(seen).not.toContain('ai-chatbot');
@@ -1170,7 +1198,79 @@ describe('public pair release holds', () => {
     expect(code).toBe(1);
   });
 
-  it('holds DEPLOY_PAIR=site-chat under the default UNVERIFIED attestation', async () => {
+  it('completes the Realtime pair for a shared blog change after attestation', async () => {
+    const seen: string[] = [];
+    const code = await runDeploy({
+      env: { DEPLOY_FROM: 'HEAD', DEPLOY_TO: 'HEAD' },
+      diffEntries: [{ status: 'M', path: 'supabase/functions/_shared/blog-index-generated.ts' }],
+      releaseAttestations: { ...ATTESTED_CHAT, ...ATTESTED_REALTIME },
+      deployOne: (slug: string) => {
+        seen.push(slug);
+        return { ok: true, detail: 'mocked' };
+      },
+      listAppliedVersions: () => [],
+    });
+    expect(code).toBe(0);
+    expect(seen.filter((slug) => /chatbot|realtime/.test(slug)).sort()).toEqual([
+      'ai-chatbot', 'ai-chatbot-stream', 'realtime-sdp-exchange', 'realtime-session',
+    ]);
+    expect(new Set(seen).size).toBe(seen.length);
+  });
+
+  it('still holds completed automatic blog pairs when attestation is unverified', async () => {
+    const seen: string[] = [];
+    const code = await runDeploy({
+      env: { DEPLOY_FROM: 'HEAD', DEPLOY_TO: 'HEAD' },
+      diffEntries: [{ status: 'M', path: 'supabase/functions/_shared/blog-index-generated.ts' }],
+      releaseAttestations: UNVERIFIED_PAIRS,
+      deployOne: (slug: string) => {
+        seen.push(slug);
+        return { ok: true, detail: 'mocked' };
+      },
+      listAppliedVersions: () => [],
+    });
+    expect(code).toBe(1);
+    expect(seen.filter((slug) => /chatbot|realtime/.test(slug))).toEqual([]);
+  });
+
+  it('leaves a missing or removed automatic partner incomplete', () => {
+    const targets = { functions: [{ slug: 'realtime-session', requiredMigrations: [] }], removed: [] };
+    const sessionOnly = { 'supabase/functions/realtime-session/index.ts': 'export {}' };
+    expect(completeAutomaticPairTargets(targets, sessionOnly).functions).toEqual(targets.functions);
+    const pairFiles = { ...sessionOnly, 'supabase/functions/realtime-sdp-exchange/index.ts': 'export {}' };
+    expect(completeAutomaticPairTargets({ ...targets, removed: ['realtime-sdp-exchange'] }, pairFiles).functions)
+      .toEqual(targets.functions);
+  });
+
+  it('holds the entire completed automatic pair when the added member needs a migration', async () => {
+    const migration = 'supabase/migrations/20260101000001_create_rtc_calls.sql';
+    const tree = {
+      'supabase/functions/realtime-session/index.ts': 'export {}',
+      'supabase/functions/realtime-sdp-exchange/index.ts': 'await supabase.from("rtc_calls").insert({});',
+      [migration]: 'CREATE TABLE public.rtc_calls (id uuid PRIMARY KEY);',
+    };
+    const targets = completeAutomaticPairTargets({
+      functions: [{ slug: 'realtime-session', reasons: ['changed'], requiredMigrations: [] }],
+      migrations: [migration],
+    }, tree);
+    expect(targets.functions[1].requiredMigrations).toEqual([
+      expect.objectContaining({ path: migration, version: '20260101000001' }),
+    ]);
+    const seen: string[] = [];
+    const result = await deployWithMigrationGate({
+      functions: targets.functions,
+      listAppliedVersions: () => [],
+      releaseAttestations: ATTESTED_REALTIME,
+      deployOne: (slug: string) => {
+        seen.push(slug);
+        return { ok: true, detail: 'mocked' };
+      },
+    });
+    expect(seen).toEqual([]);
+    expect(result.failed.map((item) => item.slug)).toEqual(['realtime-session', 'realtime-sdp-exchange']);
+  });
+
+  it('holds DEPLOY_PAIR=site-chat when production attestation is explicitly UNVERIFIED', async () => {
     const seen: string[] = [];
     const code = await runDeploy({
       env: {
@@ -1178,6 +1278,7 @@ describe('public pair release holds', () => {
         DEPLOY_FROM: 'HEAD',
         DEPLOY_TO: 'HEAD',
       },
+      releaseAttestations: UNVERIFIED_PAIRS,
       deployOne: (slug: string) => {
         seen.push(slug);
         return { ok: true, detail: 'ok' };
@@ -1188,7 +1289,7 @@ describe('public pair release holds', () => {
     expect(seen).toEqual([]);
   });
 
-  it('holds DEPLOY_PAIR=openai-realtime under the default UNVERIFIED attestation', async () => {
+  it('holds DEPLOY_PAIR=openai-realtime when production attestation is explicitly UNVERIFIED', async () => {
     const seen: string[] = [];
     const code = await runDeploy({
       env: {
@@ -1196,6 +1297,7 @@ describe('public pair release holds', () => {
         DEPLOY_FROM: 'HEAD',
         DEPLOY_TO: 'HEAD',
       },
+      releaseAttestations: UNVERIFIED_PAIRS,
       deployOne: (slug: string) => {
         seen.push(slug);
         return { ok: true, detail: 'ok' };
