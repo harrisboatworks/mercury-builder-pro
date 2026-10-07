@@ -562,7 +562,7 @@ def fall_check(path, root):
     c.save()
 
 
-def generate_all(output_dir: Path, root: Path):
+def generate_all(output_dir: Path, root: Path, only=None):
     output_dir.mkdir(parents=True, exist_ok=True)
     jobs = [
         ("mercury-service-request-prep-sheet-hbw.pdf", service_prep),
@@ -573,6 +573,11 @@ def generate_all(output_dir: Path, root: Path):
         ("mercury-repower-planning-worksheet-hbw.pdf", repower_sheet),
         ("fall-storage-winterization-checklist-hbw.pdf", fall_check),
     ]
+    if only:
+        unknown = set(only) - {filename for filename, _ in jobs}
+        if unknown:
+            raise ValueError(f"Unknown resource PDFs: {', '.join(sorted(unknown))}")
+        jobs = [(filename, builder) for filename, builder in jobs if filename in only]
     for filename, builder in jobs:
         path = output_dir / filename
         builder(path, root)
@@ -583,9 +588,10 @@ def main():
     root = Path(__file__).resolve().parents[1]
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output-dir", type=Path, default=root / "public/downloads")
+    parser.add_argument("--only", nargs="+", metavar="PDF", help="Generate only the named resource PDF filenames")
     args = parser.parse_args()
     setup_fonts()
-    generate_all(args.output_dir.resolve(), root)
+    generate_all(args.output_dir.resolve(), root, args.only)
 
 
 if __name__ == "__main__":
