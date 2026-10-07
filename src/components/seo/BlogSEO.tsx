@@ -25,16 +25,12 @@ export function BlogSEO({ article }: BlogSEOProps) {
   const hasGeneratedShareImage = shareImage?.startsWith('/generated-og/');
   const dealerCity = getDealerCityFromSlug(article.slug);
   const cleanDescription = getCleanDescription(article);
-  // Head <title> prefers the article's explicit `seoTitle` when provided (so the
-  // <title> tag can be tuned independently of the on-page H1). Otherwise it
-  // falls back to `article.title` and appends " | Harris Boat Works" only when
-  // the combined length stays <=65 chars, to avoid SERP truncation.
+  // Use article.title for raw and hydrated titles; legacy seoTitle stays inert.
+  // Match buildBlogHeadTitle() in static-prerender.mjs, including its brand limit.
   const BRAND_SUFFIX = ' | Harris Boat Works';
-  const renderedTitle = article.seoTitle
-    ? article.seoTitle
-    : (article.title + BRAND_SUFFIX).length <= 65
-      ? article.title + BRAND_SUFFIX
-      : article.title;
+  const renderedTitle = (article.title + BRAND_SUFFIX).length <= 65
+    ? article.title + BRAND_SUFFIX
+    : article.title;
 
   // Calculate word count from content
   const wordCount = article.content.trim().split(/\s+/).length;
