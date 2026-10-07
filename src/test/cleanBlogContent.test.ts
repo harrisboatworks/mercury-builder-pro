@@ -129,7 +129,7 @@ describe('French FAQ migration', () => {
   it('preserves the protected 115-vs-150 load and throttle ranges', () => {
     const article = getFrenchArticleBySlug('mercury-115-vs-150-hp-comparaison');
     expect(article?.content).toContain('60–70 %');
-    expect(article?.faqs?.some(faq => faq.answer.includes('3–4 personnes'))).toBe(true);
+    expect(article?.faqs?.some(faq => faq.answer.includes('18 à 20 pieds'))).toBe(true);
     expect(article?.faqs?.some(faq => faq.answer.includes('65–70 %'))).toBe(true);
     const frenchQuoteFaq = article?.faqs?.find(faq => faq.question === 'Puis-je obtenir un devis en français ?');
     expect(frenchQuoteFaq?.answer).toContain('notre personnel et nos réponses sont en anglais');
