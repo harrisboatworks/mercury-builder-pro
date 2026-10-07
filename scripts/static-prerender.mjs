@@ -2985,6 +2985,19 @@ function fallbackPriceRow(model) {
   if (!sku) return '';
   return `<tr><th scope="row">${escapeHtml(sku.model)}</th><td>${sku.hp}</td><td>${fmtCadPrerender(sku.msrp)}</td><td>${fmtCadPrerender(sku.dealer)}</td></tr>`;
 }
+function seriesRangeRow(label, match, bestUse) {
+  const rows = canonicalPricingSkus.filter(match);
+  if (!rows.length) return '';
+  const hps = rows.map((m) => m.hp);
+  const msrps = rows.map((m) => m.msrp).filter((n) => Number.isFinite(n) && n > 0);
+  const lo = Math.min(...hps);
+  const hi = Math.max(...hps);
+  const hpText = lo === hi ? `${lo} HP` : `${lo}–${hi} HP`;
+  const priceText = msrps.length
+    ? `${fmtCadPrerender(Math.min(...msrps))}–${fmtCadPrerender(Math.max(...msrps))}`
+    : '<a href="/pricing-reference">See live pricing</a>';
+  return `<tr><th scope="row">${escapeHtml(label)}</th><td>${hpText}</td><td>${priceText}</td><td>${escapeHtml(bestUse)}</td></tr>`;
+}
 function fallbackDealerPrice(model) {
   const sku = canonicalSkuByModel.get(model);
   return sku ? fmtCadPrerender(sku.dealer) : '<a href="/pricing-reference">See live pricing</a>';
@@ -5561,15 +5574,15 @@ const routes = [
     intro: 'The full Mercury Marine outboard lineup at Harris Boat Works: Premier Dealer on Rice Lake. Real CAD pricing online, family-owned since 1947, Mercury dealer since 1965. Serving Peterborough, Cobourg, the GTA, the Kawarthas, and Northumberland County.',
     schemas: [mercuryOutboardsOntarioSchema()],
     extraNoscript: () =>
-      '<table><caption>Mercury Outboard Lineup: HP, MSRP, and Best Use (CAD, Ontario, 2026)</caption>' +
+      `<table><caption>Mercury Outboard Lineup: HP, MSRP, and Best Use (CAD, Ontario, ${fallbackAsOf})</caption>` +
       '<thead><tr><th scope="col">Series</th><th scope="col">HP range</th><th scope="col">MSRP range (CAD)</th><th scope="col">Best use</th></tr></thead>' +
       '<tbody>' +
-      '<tr><th scope="row">FourStroke</th><td>2.5–150 HP</td><td>$1,385–$22,000</td><td>Recreation, fishing, family boating, kickers</td></tr>' +
-      '<tr><th scope="row">FourStroke Command Thrust</th><td>25–150 HP</td><td>$5,400–$23,500</td><td>Pontoons and heavy aluminum boats</td></tr>' +
-      '<tr><th scope="row">Pro XS</th><td>115–300 HP</td><td>$15,500–$32,000</td><td>Bass boats, tournament fishing, performance</td></tr>' +
-      '<tr><th scope="row">SeaPro</th><td>15–300 HP</td><td>$4,500–$33,000</td><td>Commercial, charter, heavy-duty use</td></tr>' +
-      '<tr><th scope="row">ProKicker</th><td>9.9–25 HP</td><td>$4,500–$6,500</td><td>Trolling/kicker on larger fishing boats</td></tr>' +
-      '<tr><th scope="row">V8 / V10 (350–400 HP)</th><td>350–400 HP</td><td>$36,000–$48,000</td><td>Offshore, large center consoles</td></tr>' +
+      seriesRangeRow('FourStroke', (m) => m.family === 'FourStroke' && !/Command Thrust|ProKicker/i.test(m.model), 'Recreation, fishing, family boating, kickers') +
+      seriesRangeRow('FourStroke Command Thrust', (m) => m.family === 'FourStroke' && /Command Thrust/i.test(m.model) && !/ProKicker/i.test(m.model), 'Pontoons and heavy aluminum boats') +
+      seriesRangeRow('Pro XS', (m) => m.family === 'ProXS', 'Bass boats, tournament fishing, performance') +
+      seriesRangeRow('ProKicker', (m) => /ProKicker/i.test(m.model), 'Trolling/kicker on larger fishing boats') +
+      '<tr><th scope="row">SeaPro</th><td>15–300 HP</td><td><a href="/pricing-reference">Quoted on request</a></td><td>Commercial, charter, heavy-duty use</td></tr>' +
+      '<tr><th scope="row">V8 / V10 (350–400 HP)</th><td>350–400 HP</td><td><a href="/pricing-reference">Quoted on request</a></td><td>Offshore, large center consoles</td></tr>' +
       '</tbody></table>' +
       '<dl>' +
       ONTARIO_HUB_FAQ_PRERENDER.map(i =>

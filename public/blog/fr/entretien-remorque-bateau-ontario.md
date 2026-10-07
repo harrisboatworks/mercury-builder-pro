@@ -102,7 +102,7 @@ Les lumières de remorque échouent parce que les connecteurs corrodent et la fl
 **Action :**
 - Les feux DEL scellés avec un seul connecteur durent 10 fois plus longtemps que les ampoules standard
 - Appliquer de la graisse diélectrique sur le connecteur 4 ou 7 broches chaque printemps
-- Tester chaque sortie, un testeur enfichable de 10 $ vous évite une contravention de 250 $ de l'OPP
+- Tester chaque sortie, un testeur enfichable de 10 $ vous évite une contravention d'environ 110 $ de l'OPP
 
 ### 5. Tasseaux, rouleaux et cadre
 
