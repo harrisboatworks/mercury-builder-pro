@@ -81,7 +81,7 @@ Oui. Harris Boat Works est un concessionnaire Mercury Marine Premier à Gores La
 
 ### Puis-je faire entretenir mon Mercury chez vous si je ne l'ai pas acheté chez HBW?
 
-Soumettez une demande de service avec le modèle, le numéro de série et les symptômes. L'équipe confirmera si le travail entre dans notre champ de service et la marche à suivre.
+Oui. Nous entretenons les moteurs Mercury peu importe où ils ont été achetés. Soumettez une demande de service avec le modèle, le numéro de série et les symptômes, et l'équipe confirmera la marche à suivre.
 
 ### Comment planifier une hivernisation ou un entreposage?
 

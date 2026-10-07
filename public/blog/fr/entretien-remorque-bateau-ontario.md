@@ -35,11 +35,11 @@ revenue_driver: service
 
 Besoin de votre CCEP (PCOC)? Suivez le cours en ligne avec [le lien de parrainage MyBoatCard de HBW](https://myboatcard.com/card/harrisboat) et utilisez le code **HARRIS15** pour obtenir **15% de réduction**.
 
-- **Roulements** : regraisser annuellement OU tous les 12 000 km; remplacer au premier signe de changement de couleur de la graisse ou de jeu
+- **Roulements** : suivre la procédure et l'intervalle d'entretien du fabricant du moyeu et de l'essieu; remplacer au premier signe de changement de couleur de la graisse ou de jeu
 - **Freins** : rinçage annuel et inspection des plaquettes; à inertie ou électriques, les deux échouent de la même façon
 - **Pneus** : vérifier la pression à froid avant chaque sortie; remplacer tous les 5 à 6 ans même si la bande de roulement semble bonne (le caoutchouc se dégrade plus vite que la bande s'use)
 - **Lumières et câblage** : tester avant chaque sortie; les feux DEL scellés durent 10 fois plus longtemps que les ampoules standard
-- **Tasseaux et rouleaux** : tapis tous les 4 à 5 ans; les supports rouillés sont la défaillance numéro un que HBW voit
+- **Tasseaux et rouleaux** : tapis tous les 4 à 5 ans; surveillez les supports rouillés
 
 ## Avant chaque trajet
 
@@ -68,8 +68,8 @@ Les trois sont évitables avec une inspection annuelle de 30 minutes.
 Les roulements sont des cartouches de graisse scellées qui permettent aux roues de tourner librement. Submerger des roulements chauds dans l'eau froide du lac crée un vide qui aspire l'eau dans le moyeu.
 
 **Action :**
-- Regraisser annuellement (les Bearing Buddies facilitent cela)
-- Remplacer les roulements complètement tous les 4 à 5 ans peu importe l'apparence
+- Regraisser selon la procédure et l'intervalle du fabricant de votre système de moyeu (les Bearing Buddies facilitent cela)
+- Remplacer les roulements selon l'intervalle et les critères d'usure du fabricant du moyeu
 - Vérifier le jeu avec la roue soulevée
 
 **Coût chez HBW :** 80 $ à 120 $ par essieu pour le regraissage, 250 $ à 350 $ pour le remplacement complet incluant les pièces.
@@ -90,7 +90,7 @@ En Ontario, les remorques d'un poids brut de 1 360 kg (environ 3 000 lb) ou plus
 Les pneus de remorque de bateau (cotés ST) sont différents des pneus d'auto. Ils ont des flancs plus rigides mais se dégradent plus vite à cause des UV et de l'ozone.
 
 **Action :**
-- Vérifier la pression à froid avant chaque sortie (gonfler les pneus ST à la pression maximale inscrite sur le flanc, selon leur taille et leur catégorie de charge : généralement 50 PSI pour C, 65 pour D et 80 pour E; certains petits pneus diagonaux exigent davantage)
+- Vérifier la pression à froid avant chaque sortie, selon la valeur précisée pour le pneu de remorque installé et les instructions du fabricant de la remorque
 - Remplacer les pneus tous les 5 à 6 ans peu importe la profondeur de la bande de roulement
 - Transporter une roue de secours pleine taille
 - Vérifier le code de date DOT (les 4 derniers chiffres = semaine/année de fabrication)
@@ -110,7 +110,7 @@ Les tasseaux (les planches recouvertes de tapis sur lesquelles repose votre coqu
 
 **Action :**
 - Remplacer le tapis sur les tasseaux tous les 4 à 5 ans
-- Les supports de tasseaux rouillés sont la défaillance numéro un que HBW voit, rincez la remorque après chaque trempette
+- Surveillez les supports de tasseaux rouillés et rincez la remorque après chaque trempette
 - Inspecter le cadre pour fissures aux points de soudure
 
 ### 6. Treuil, sangles et chaînes de sécurité
@@ -180,7 +180,7 @@ Par Harris Boat Works, marina familiale depuis 1947 sur le lac Rice, concessionn
 
 ### À quelle fréquence devrais-je regraisser les roulements de remorque?
 
-Annuellement pour les bateaux qui sont utilisés 10 fois ou plus par saison, ou tous les 12 000 km de remorquage. Si vos roulements sont submergés en eau froide après une route chaude (très courant), regraissez aussi à la fin de la saison.
+Cela dépend du système de moyeu : suivez l'intervalle et la procédure du fabricant de l'essieu, du moyeu et de la remorque. Si vos roulements sont submergés en eau froide après une route chaude (très courant), faites aussi vérifier les moyeux à la fin de la saison.
 
 ### Les pneus de remorque sont-ils différents des pneus d'auto?
 

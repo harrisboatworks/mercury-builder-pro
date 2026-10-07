@@ -33,7 +33,7 @@ revenue_driver: repower
 
 ## Réponse rapide
 
-La gamme Mercury 2026 couvre quatre familles principales : FourStroke (2,5 à 300 HP) pour l'usage quotidien en Ontario, Pro XS pour la pêche de performance, SeaPro pour usage commercial, et Verado pour les applications haut de gamme en haute mer. Pour la plupart des bateaux du lac Rice et des Kawarthas, la réponse se trouve dans la plage FourStroke 40 à 150 HP. Bâtissez une soumission CAD en direct à [mercuryrepower.ca](https://www.mercuryrepower.ca).
+Ce guide compare quatre familles Mercury à essence : FourStroke (2,5 à 300 HP) pour l'usage quotidien en Ontario, Pro XS (115 à 300 HP) pour la pêche de performance, SeaPro pour usage commercial et Verado (commande spéciale seulement). Pour la plupart des bateaux du lac Rice et des Kawarthas, la réponse se trouve dans la plage FourStroke 40 à 150 HP. Bâtissez une soumission CAD en direct à [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 ## Pourquoi nous écrivons ceci
 
@@ -49,19 +49,19 @@ Plage HP : 2,5 à 300 HP
 
 Pour qui : Plaisanciers récréatifs. Bateaux de pêche, pontons familiaux, vedettes, bateaux de chalet.
 
-La gamme FourStroke est le best-seller de Mercury en volume en Ontario parce qu'elle couvre toute la plage d'usage récréatif. Un 2,5 HP à barre franche pour un bateau sur le toit. Un 9,9 pour un kicker. Un 25 pour un bateau d'aluminium léger. Un 40, 60 ou 75 pour des configurations de pêche moyennes. Un 90, 115 ou 150 pour des bateaux d'aluminium ou de fibre de verre plus grands. Un 200 ou 250 pour des center consoles. Jusqu'à 300 HP pour les applications en grande eau.
+La gamme FourStroke est le best-seller de Mercury en volume en Ontario parce qu'elle couvre toute la plage d'usage récréatif. Un 2,5 HP à barre franche pour un bateau sur le toit. Un 9,9 pour un kicker. Un 25 pour un bateau d'aluminium léger. Un 40, 60 ou 75 pour des configurations de pêche moyennes. Un 90, 115 ou 150 pour des bateaux d'aluminium ou de fibre de verre plus grands. Un 200 ou 250 pour des bateaux à console centrale. Jusqu'à 300 HP pour les applications en grande eau.
 
 **FourStroke Command Thrust** mérite une mention spécifique pour les plaisanciers ontariens. Command Thrust est offert de 9,9 à 115 HP (9,9, 40, 50, 60, 90 et 115 HP). Il s'agit d'une option de boîtier d'engrenages, avec hélice à plus grand diamètre et rapport de démultiplication plus court, et non d'un palier de puissance. Il est conçu pour les charges de couple plus élevées que les pontons et coques plus lourdes imposent à l'embase. Si vous remotorisez un ponton, demandez spécifiquement Command Thrust.
 
 Ce que FourStroke fait bien : efficacité énergétique en croisière, ralenti doux, fonctionnement silencieux, démarrage à froid facile, longs intervalles d'entretien.
 
-Ce que FourStroke n'est pas : rapide à sortir du trou.
+Ce que FourStroke n'est pas : rapide à déjauger.
 
 ### Pro XS, pêche de performance et applications de vitesse
 
 Pour qui : pêcheurs de bass, compétiteurs de tournois de doré, quiconque veut atteindre l'autre bout du lac le plus vite possible.
 
-Pro XS est calibré pour la performance. Hole-shot plus rapide, plafond de RPM plus élevé, accélération plus forte que le FourStroke équivalent en HP. Dans le monde de la pêche de tournoi en Ontario, Pro XS est la norme.
+Pro XS (115 à 300 HP) est calibré pour la performance. Déjaugeage plus rapide, plafond de RPM plus élevé, accélération plus forte que le FourStroke équivalent en HP. Dans le monde de la pêche de tournoi en Ontario, Pro XS est la norme.
 
 ### SeaPro, usage commercial
 
@@ -71,13 +71,13 @@ Le SeaPro est calibré pour un usage soutenu lourd : couple maximal à plus bas 
 
 ### Verado, haut de gamme à haute puissance pour le large
 
-Pour qui : grands center consoles offshore. Installations jumelées/triples sur de plus gros bateaux. Acheteurs qui veulent un raffinement maximal, isolation phonique et puissance pour eau libre ou conditions des Grands Lacs.
+Pour qui : grands bateaux à console centrale hauturiers. Installations jumelées/triples sur de plus gros bateaux. Acheteurs qui veulent un raffinement maximal, isolation phonique et puissance pour eau libre ou conditions des Grands Lacs.
 
 Presque aucun plaisancier d'eau douce ontarien sur un lac intérieur typique n'a besoin d'un Verado. Si vous exploitez un bateau de pêche de 20 pi sur le lac Rice, un FourStroke dimensionné selon la plaque de capacité de la coque (généralement un modèle sous le maximum indiqué) est le meilleur choix. Verado est en commande spéciale seulement; contactez HBW pour discuter de votre configuration.
 
 ### Avator, électrique (en émergence)
 
-La gamme électrique Mercury Avator va du 7.5e portatif au 110e, assez puissant pour des pontons, de petits runabouts et des bateaux de pêche. Pour la plupart de la pêche et de la plaisance familiale en Ontario, un FourStroke à essence reste le choix pratique. L'autonomie de la batterie et l'infrastructure de recharge ne sont pas encore là pour un usage de remplacement complet.
+La gamme électrique actuelle de Mercury Avator comprend les 7.5e, 20e, 35e, 75e et 110e. Mercury cote ces modèles selon la puissance à l'arbre d'hélice : 0,75, 2,2, 3,7, 7,5 et 11 kW respectivement. Pour la plupart de la pêche et de la plaisance familiale en Ontario, un FourStroke à essence reste le choix pratique. Le choix d'un Avator dépend du bateau, de la charge, du trajet, de la configuration des batteries et de l'accès à la recharge.
 
 ## Faire correspondre le moteur au cas d'usage ontarien
 
@@ -86,9 +86,9 @@ La gamme électrique Mercury Avator va du 7.5e portatif au 110e, assez puissant 
 | Bateau de pêche en aluminium léger, 14 à 16 pi | FourStroke | 25 à 60 HP |
 | Bateau de pêche/famille moyen, 16 à 18 pi | FourStroke | 60 à 115 HP |
 | Bateau de pêche ou famille plus grand, 18 à 20 pi | FourStroke | 115 à 150 HP |
-| Ponton, 22 à 24 pi | FourStroke | 115 à 150 HP |
-| Bass boat de tournoi | Pro XS | 200 à 250 HP |
-| Center console, grande eau ontarienne | FourStroke ou Verado | 200 à 300+ HP |
+| Ponton, 22 à 24 pi | FourStroke (Command Thrust jusqu'à 115; boîtier standard à 150) | 115 CT ou 150 |
+| Bateau de pêche de tournoi (bass boat) | Pro XS | 200 à 250 HP |
+| Bateau à console centrale, grande eau ontarienne | FourStroke ou Verado | 200 à 300+ HP |
 | Guide commercial ou location | SeaPro | Selon la cote de la coque |
 | Kicker de bateau sur le toit | FourStroke | 9,9 à 15 HP |
 | Kicker dédié à la traîne | FourStroke ProKicker | 9,9 HP |
@@ -118,7 +118,7 @@ Pour la plupart des bateaux de pêche de 14 à 18 pi sur le lac Rice, un Mercury
 
 ### Quelle est la différence entre Mercury FourStroke et Mercury Pro XS?
 
-FourStroke est calibré pour l'efficacité, la croisière douce et la polyvalence. Pro XS est calibré pour la performance : hole-shot plus rapide, plafond de RPM plus élevé, accélération plus forte. Pour la plupart des usages de chalet et de pêche occasionnelle en Ontario, FourStroke est le meilleur choix tout-usage.
+FourStroke est calibré pour l'efficacité, la croisière douce et la polyvalence. Pro XS est calibré pour la performance : déjaugeage plus rapide, plafond de RPM plus élevé, accélération plus forte. Pour la plupart des usages de chalet et de pêche occasionnelle en Ontario, FourStroke est le meilleur choix tout-usage.
 
 ### Le Mercury Verado est-il pertinent pour la navigation intérieure ontarienne?
 
