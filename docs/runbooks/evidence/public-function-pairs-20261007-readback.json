@@ -1,0 +1,344 @@
+{
+  "checkedAt": "2026-10-07T13:03:11.999Z",
+  "project": "eutsoqdpjurknjsshxes",
+  "candidateMain": "fb249449df61cbcc8fca2d99e84bc5a019f0eb89",
+  "providerVerification": "NOT_REFRESHED",
+  "bundles": [
+    {
+      "slug": "ai-chatbot",
+      "status": "ACTIVE",
+      "version": 754,
+      "updatedAt": "2026-10-06T15:50:29.383Z",
+      "verifyJwt": false,
+      "files": [
+        {
+          "path": "supabase/functions/ai-chatbot/index.ts",
+          "deployedSha256": "720bda3b2509d9e78b6b78f2d08d58854d0cd6361d15df54bff2226c71bd8f59",
+          "candidateSha256": "720bda3b2509d9e78b6b78f2d08d58854d0cd6361d15df54bff2226c71bd8f59",
+          "matches": true
+        },
+        {
+          "path": "supabase/functions/_shared/rate-limit.ts",
+          "deployedSha256": "1117bd1856c37e6c883999f7feefd3ff0b705304daaa60c74250f4d3d915d7a0",
+          "candidateSha256": "1117bd1856c37e6c883999f7feefd3ff0b705304daaa60c74250f4d3d915d7a0",
+          "matches": true
+        },
+        {
+          "path": "supabase/functions/_shared/rate-limit-probe.ts",
+          "deployedSha256": "fdf69309bb51f1abf46f7ef3930c6166af9a5e5e1da912355ac8673d3d3ffa18",
+          "candidateSha256": "fdf69309bb51f1abf46f7ef3930c6166af9a5e5e1da912355ac8673d3d3ffa18",
+          "matches": true
+        },
+        {
+          "path": "supabase/functions/_shared/format-kb-documents.ts",
+          "deployedSha256": "eda2645d75f7d174d25e48f20267948f4fd5b820a9c5ec99af3f844b25a7acdc",
+          "candidateSha256": "eda2645d75f7d174d25e48f20267948f4fd5b820a9c5ec99af3f844b25a7acdc",
+          "matches": true
+        },
+        {
+          "path": "supabase/functions/_shared/harris-knowledge.ts",
+          "deployedSha256": "4d552adf8250059f802e2968e13735f8657a8426e4c1e5e9ed456bead474d69d",
+          "candidateSha256": "6e24c497acbbd5974978d598bdd40db92e423705eb485614ff60de59b3ff29d7",
+          "matches": false
+        },
+        {
+          "path": "supabase/functions/_shared/blog-knowledge.ts",
+          "deployedSha256": "609a3c1bad909757f1c6b05a659c1bee3e6b3d3ad386cefd0797833d52c19f8f",
+          "candidateSha256": "609a3c1bad909757f1c6b05a659c1bee3e6b3d3ad386cefd0797833d52c19f8f",
+          "matches": true
+        },
+        {
+          "path": "supabase/functions/_shared/mercury-knowledge.ts",
+          "deployedSha256": "deb008cf1e619358b72abcc1308de38ba7cb061344537ce3005b95d4421e51d0",
+          "candidateSha256": "deb008cf1e619358b72abcc1308de38ba7cb061344537ce3005b95d4421e51d0",
+          "matches": true
+        },
+        {
+          "path": "supabase/functions/_shared/blog-index-generated.ts",
+          "deployedSha256": "8e856bd74341e694bbdb3597aef00e4365774441bc6ed5b69f4d798209d75dfc",
+          "candidateSha256": "138569fa11ff2cc89119a7c89aa09e1b63a2f5b37c2375c6f5e3e14014a5cc5e",
+          "matches": false
+        },
+        {
+          "path": "supabase/functions/_shared/promotion-context.ts",
+          "deployedSha256": "2b8c6d891a6db756cbc98011b95624828526be36bc3fd40efe1e2dec14521b4e",
+          "candidateSha256": "2b8c6d891a6db756cbc98011b95624828526be36bc3fd40efe1e2dec14521b4e",
+          "matches": true
+        },
+        {
+          "path": "supabase/functions/_shared/promo-dates.ts",
+          "deployedSha256": "ffeb2a4171d35e3192b87c1d06b513da91249cd8f497d8cb9638f0633ec2e53b",
+          "candidateSha256": "ffeb2a4171d35e3192b87c1d06b513da91249cd8f497d8cb9638f0633ec2e53b",
+          "matches": true
+        },
+        {
+          "path": "supabase/functions/_shared/verified-hbw-authority-facts.ts",
+          "deployedSha256": "a697b0a34c2736f8bf2bd530ab92291880b70ef245e173ecf6eddbfebc422574",
+          "candidateSha256": "a697b0a34c2736f8bf2bd530ab92291880b70ef245e173ecf6eddbfebc422574",
+          "matches": true
+        },
+        {
+          "path": "supabase/functions/_shared/customer-knowledge-context.ts",
+          "deployedSha256": "9d75c2ad324953392828fa3d09003828680edff9ad7fc0f92e63870afaabfef9",
+          "candidateSha256": "9d75c2ad324953392828fa3d09003828680edff9ad7fc0f92e63870afaabfef9",
+          "matches": true
+        },
+        {
+          "path": "supabase/functions/_shared/verified-mercury-technical-facts.ts",
+          "deployedSha256": "58e4cf6c8f2f6fecf3d998fe13e20347cd9d3e6a43185edfa8694ed72ea40160",
+          "candidateSha256": "58e4cf6c8f2f6fecf3d998fe13e20347cd9d3e6a43185edfa8694ed72ea40160",
+          "matches": true
+        },
+        {
+          "path": "supabase/functions/deno.json",
+          "deployedSha256": "d8f0ae9ea07f95815906bc83a916d0be04b3af11a7eee910a879a880fa8679ce",
+          "candidateSha256": "d8f0ae9ea07f95815906bc83a916d0be04b3af11a7eee910a879a880fa8679ce",
+          "matches": true
+        }
+      ]
+    },
+    {
+      "slug": "ai-chatbot-stream",
+      "status": "ACTIVE",
+      "version": 466,
+      "updatedAt": "2026-10-06T15:50:29.383Z",
+      "verifyJwt": false,
+      "files": [
+        {
+          "path": "supabase/functions/ai-chatbot-stream/index.ts",
+          "deployedSha256": "9b3dc655d532a7891874b73830c3067dbb68672ab709dc95cbfeb203d92c354d",
+          "candidateSha256": "37a95559f88035bc618b3602d39ebaabff47c1c9613802022bef077f4112969f",
+          "matches": false
+        },
+        {
+          "path": "supabase/functions/_shared/rate-limit.ts",
+          "deployedSha256": "1117bd1856c37e6c883999f7feefd3ff0b705304daaa60c74250f4d3d915d7a0",
+          "candidateSha256": "1117bd1856c37e6c883999f7feefd3ff0b705304daaa60c74250f4d3d915d7a0",
+          "matches": true
+        },
+        {
+          "path": "supabase/functions/_shared/rate-limit-probe.ts",
+          "deployedSha256": "fdf69309bb51f1abf46f7ef3930c6166af9a5e5e1da912355ac8673d3d3ffa18",
+          "candidateSha256": "fdf69309bb51f1abf46f7ef3930c6166af9a5e5e1da912355ac8673d3d3ffa18",
+          "matches": true
+        },
+        {
+          "path": "supabase/functions/_shared/mercury-knowledge.ts",
+          "deployedSha256": "deb008cf1e619358b72abcc1308de38ba7cb061344537ce3005b95d4421e51d0",
+          "candidateSha256": "deb008cf1e619358b72abcc1308de38ba7cb061344537ce3005b95d4421e51d0",
+          "matches": true
+        },
+        {
+          "path": "supabase/functions/_shared/harris-knowledge.ts",
+          "deployedSha256": "4d552adf8250059f802e2968e13735f8657a8426e4c1e5e9ed456bead474d69d",
+          "candidateSha256": "6e24c497acbbd5974978d598bdd40db92e423705eb485614ff60de59b3ff29d7",
+          "matches": false
+        },
+        {
+          "path": "supabase/functions/_shared/format-kb-documents.ts",
+          "deployedSha256": "eda2645d75f7d174d25e48f20267948f4fd5b820a9c5ec99af3f844b25a7acdc",
+          "candidateSha256": "eda2645d75f7d174d25e48f20267948f4fd5b820a9c5ec99af3f844b25a7acdc",
+          "matches": true
+        },
+        {
+          "path": "supabase/functions/_shared/blog-knowledge.ts",
+          "deployedSha256": "609a3c1bad909757f1c6b05a659c1bee3e6b3d3ad386cefd0797833d52c19f8f",
+          "candidateSha256": "609a3c1bad909757f1c6b05a659c1bee3e6b3d3ad386cefd0797833d52c19f8f",
+          "matches": true
+        },
+        {
+          "path": "supabase/functions/_shared/blog-index-generated.ts",
+          "deployedSha256": "8e856bd74341e694bbdb3597aef00e4365774441bc6ed5b69f4d798209d75dfc",
+          "candidateSha256": "138569fa11ff2cc89119a7c89aa09e1b63a2f5b37c2375c6f5e3e14014a5cc5e",
+          "matches": false
+        },
+        {
+          "path": "supabase/functions/_shared/promotion-context.ts",
+          "deployedSha256": "2b8c6d891a6db756cbc98011b95624828526be36bc3fd40efe1e2dec14521b4e",
+          "candidateSha256": "2b8c6d891a6db756cbc98011b95624828526be36bc3fd40efe1e2dec14521b4e",
+          "matches": true
+        },
+        {
+          "path": "supabase/functions/_shared/promo-dates.ts",
+          "deployedSha256": "ffeb2a4171d35e3192b87c1d06b513da91249cd8f497d8cb9638f0633ec2e53b",
+          "candidateSha256": "ffeb2a4171d35e3192b87c1d06b513da91249cd8f497d8cb9638f0633ec2e53b",
+          "matches": true
+        },
+        {
+          "path": "supabase/functions/_shared/verified-hbw-authority-facts.ts",
+          "deployedSha256": "a697b0a34c2736f8bf2bd530ab92291880b70ef245e173ecf6eddbfebc422574",
+          "candidateSha256": "a697b0a34c2736f8bf2bd530ab92291880b70ef245e173ecf6eddbfebc422574",
+          "matches": true
+        },
+        {
+          "path": "supabase/functions/_shared/customer-knowledge-context.ts",
+          "deployedSha256": "9d75c2ad324953392828fa3d09003828680edff9ad7fc0f92e63870afaabfef9",
+          "candidateSha256": "9d75c2ad324953392828fa3d09003828680edff9ad7fc0f92e63870afaabfef9",
+          "matches": true
+        },
+        {
+          "path": "supabase/functions/_shared/verified-mercury-technical-facts.ts",
+          "deployedSha256": "58e4cf6c8f2f6fecf3d998fe13e20347cd9d3e6a43185edfa8694ed72ea40160",
+          "candidateSha256": "58e4cf6c8f2f6fecf3d998fe13e20347cd9d3e6a43185edfa8694ed72ea40160",
+          "matches": true
+        },
+        {
+          "path": "supabase/functions/_shared/mercury-product-protection-rates.ts",
+          "deployedSha256": "7db65e774aa7d3f4fbd5f16a0bbffd7c3819015c52dbce63c72fd12022a8f7be",
+          "candidateSha256": "7db65e774aa7d3f4fbd5f16a0bbffd7c3819015c52dbce63c72fd12022a8f7be",
+          "matches": true
+        },
+        {
+          "path": "supabase/functions/_shared/nearby-horsepowers.ts",
+          "deployedSha256": "7c9a9f03ea98978881fb97f8cec38c0395198d3c1be15ee42cd7e5943ded8df4",
+          "candidateSha256": "7c9a9f03ea98978881fb97f8cec38c0395198d3c1be15ee42cd7e5943ded8df4",
+          "matches": true
+        },
+        {
+          "path": "supabase/functions/deno.json",
+          "deployedSha256": "d8f0ae9ea07f95815906bc83a916d0be04b3af11a7eee910a879a880fa8679ce",
+          "candidateSha256": "d8f0ae9ea07f95815906bc83a916d0be04b3af11a7eee910a879a880fa8679ce",
+          "matches": true
+        }
+      ]
+    },
+    {
+      "slug": "realtime-session",
+      "status": "ACTIVE",
+      "version": 411,
+      "updatedAt": "2026-10-06T15:50:29.383Z",
+      "verifyJwt": false,
+      "files": [
+        {
+          "path": "supabase/functions/realtime-session/index.ts",
+          "deployedSha256": "b1a7279ff619d2df3fac1aa225be7657fbfa0d6a0e4188add338ce24c67c4cbd",
+          "candidateSha256": "b1a7279ff619d2df3fac1aa225be7657fbfa0d6a0e4188add338ce24c67c4cbd",
+          "matches": true
+        },
+        {
+          "path": "supabase/functions/_shared/rate-limit.ts",
+          "deployedSha256": "1117bd1856c37e6c883999f7feefd3ff0b705304daaa60c74250f4d3d915d7a0",
+          "candidateSha256": "1117bd1856c37e6c883999f7feefd3ff0b705304daaa60c74250f4d3d915d7a0",
+          "matches": true
+        },
+        {
+          "path": "supabase/functions/_shared/rate-limit-probe.ts",
+          "deployedSha256": "fdf69309bb51f1abf46f7ef3930c6166af9a5e5e1da912355ac8673d3d3ffa18",
+          "candidateSha256": "fdf69309bb51f1abf46f7ef3930c6166af9a5e5e1da912355ac8673d3d3ffa18",
+          "matches": true
+        },
+        {
+          "path": "supabase/functions/_shared/origin-check.ts",
+          "deployedSha256": "77409181a9a626e81cb4efcbe08abfdbbe87fce0f543d5716905f569463e056f",
+          "candidateSha256": "77409181a9a626e81cb4efcbe08abfdbbe87fce0f543d5716905f569463e056f",
+          "matches": true
+        },
+        {
+          "path": "supabase/functions/_shared/browser-origin.ts",
+          "deployedSha256": "7a46811a1dc7c7f613098a7cd876a6eceafae4d20881e176b851b4bdae778dbd",
+          "candidateSha256": "7a46811a1dc7c7f613098a7cd876a6eceafae4d20881e176b851b4bdae778dbd",
+          "matches": true
+        },
+        {
+          "path": "supabase/functions/_shared/format-kb-documents.ts",
+          "deployedSha256": "eda2645d75f7d174d25e48f20267948f4fd5b820a9c5ec99af3f844b25a7acdc",
+          "candidateSha256": "eda2645d75f7d174d25e48f20267948f4fd5b820a9c5ec99af3f844b25a7acdc",
+          "matches": true
+        },
+        {
+          "path": "supabase/functions/_shared/harris-knowledge.ts",
+          "deployedSha256": "4d552adf8250059f802e2968e13735f8657a8426e4c1e5e9ed456bead474d69d",
+          "candidateSha256": "6e24c497acbbd5974978d598bdd40db92e423705eb485614ff60de59b3ff29d7",
+          "matches": false
+        },
+        {
+          "path": "supabase/functions/_shared/blog-knowledge.ts",
+          "deployedSha256": "609a3c1bad909757f1c6b05a659c1bee3e6b3d3ad386cefd0797833d52c19f8f",
+          "candidateSha256": "609a3c1bad909757f1c6b05a659c1bee3e6b3d3ad386cefd0797833d52c19f8f",
+          "matches": true
+        },
+        {
+          "path": "supabase/functions/_shared/mercury-knowledge.ts",
+          "deployedSha256": "deb008cf1e619358b72abcc1308de38ba7cb061344537ce3005b95d4421e51d0",
+          "candidateSha256": "deb008cf1e619358b72abcc1308de38ba7cb061344537ce3005b95d4421e51d0",
+          "matches": true
+        },
+        {
+          "path": "supabase/functions/_shared/blog-index-generated.ts",
+          "deployedSha256": "8e856bd74341e694bbdb3597aef00e4365774441bc6ed5b69f4d798209d75dfc",
+          "candidateSha256": "138569fa11ff2cc89119a7c89aa09e1b63a2f5b37c2375c6f5e3e14014a5cc5e",
+          "matches": false
+        },
+        {
+          "path": "supabase/functions/_shared/promotion-context.ts",
+          "deployedSha256": "2b8c6d891a6db756cbc98011b95624828526be36bc3fd40efe1e2dec14521b4e",
+          "candidateSha256": "2b8c6d891a6db756cbc98011b95624828526be36bc3fd40efe1e2dec14521b4e",
+          "matches": true
+        },
+        {
+          "path": "supabase/functions/_shared/promo-dates.ts",
+          "deployedSha256": "ffeb2a4171d35e3192b87c1d06b513da91249cd8f497d8cb9638f0633ec2e53b",
+          "candidateSha256": "ffeb2a4171d35e3192b87c1d06b513da91249cd8f497d8cb9638f0633ec2e53b",
+          "matches": true
+        },
+        {
+          "path": "supabase/functions/_shared/verified-hbw-authority-facts.ts",
+          "deployedSha256": "a697b0a34c2736f8bf2bd530ab92291880b70ef245e173ecf6eddbfebc422574",
+          "candidateSha256": "a697b0a34c2736f8bf2bd530ab92291880b70ef245e173ecf6eddbfebc422574",
+          "matches": true
+        },
+        {
+          "path": "supabase/functions/_shared/customer-knowledge-context.ts",
+          "deployedSha256": "9d75c2ad324953392828fa3d09003828680edff9ad7fc0f92e63870afaabfef9",
+          "candidateSha256": "9d75c2ad324953392828fa3d09003828680edff9ad7fc0f92e63870afaabfef9",
+          "matches": true
+        },
+        {
+          "path": "supabase/functions/_shared/verified-mercury-technical-facts.ts",
+          "deployedSha256": "58e4cf6c8f2f6fecf3d998fe13e20347cd9d3e6a43185edfa8694ed72ea40160",
+          "candidateSha256": "58e4cf6c8f2f6fecf3d998fe13e20347cd9d3e6a43185edfa8694ed72ea40160",
+          "matches": true
+        },
+        {
+          "path": "supabase/functions/deno.json",
+          "deployedSha256": "d8f0ae9ea07f95815906bc83a916d0be04b3af11a7eee910a879a880fa8679ce",
+          "candidateSha256": "d8f0ae9ea07f95815906bc83a916d0be04b3af11a7eee910a879a880fa8679ce",
+          "matches": true
+        }
+      ]
+    },
+    {
+      "slug": "realtime-sdp-exchange",
+      "status": "ACTIVE",
+      "version": 388,
+      "updatedAt": "2026-10-06T15:50:29.383Z",
+      "verifyJwt": false,
+      "files": [
+        {
+          "path": "supabase/functions/realtime-sdp-exchange/index.ts",
+          "deployedSha256": "dc28683729c51ea3e597e3269ad0242424beb4b9e6779af864bcbb1f611e455e",
+          "candidateSha256": "dc28683729c51ea3e597e3269ad0242424beb4b9e6779af864bcbb1f611e455e",
+          "matches": true
+        },
+        {
+          "path": "supabase/functions/_shared/rate-limit.ts",
+          "deployedSha256": "1117bd1856c37e6c883999f7feefd3ff0b705304daaa60c74250f4d3d915d7a0",
+          "candidateSha256": "1117bd1856c37e6c883999f7feefd3ff0b705304daaa60c74250f4d3d915d7a0",
+          "matches": true
+        },
+        {
+          "path": "supabase/functions/_shared/rate-limit-probe.ts",
+          "deployedSha256": "fdf69309bb51f1abf46f7ef3930c6166af9a5e5e1da912355ac8673d3d3ffa18",
+          "candidateSha256": "fdf69309bb51f1abf46f7ef3930c6166af9a5e5e1da912355ac8673d3d3ffa18",
+          "matches": true
+        },
+        {
+          "path": "supabase/functions/deno.json",
+          "deployedSha256": "d8f0ae9ea07f95815906bc83a916d0be04b3af11a7eee910a879a880fa8679ce",
+          "candidateSha256": "d8f0ae9ea07f95815906bc83a916d0be04b3af11a7eee910a879a880fa8679ce",
+          "matches": true
+        }
+      ]
+    }
+  ]
+}
