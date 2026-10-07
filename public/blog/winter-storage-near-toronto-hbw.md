@@ -184,7 +184,7 @@ Planning, quoting, and approvals can happen remotely over winter. Physical servi
 
 ### When should I request winter storage?
 
-Complete hbwservice.ca, then drop off anytime, including after hours. The marina is closed December 1 through April 1.
+Complete hbwservice.ca, then drop off anytime, including after hours. Mid-November is last call, and the marina is closed December 1 through April 1.
 
 ### What's the difference between HBW shrinkwrap and a tarp?
 

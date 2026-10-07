@@ -176,7 +176,7 @@ const unsupportedOperationalClaims = [
   {
     label: 'incorrect HBW winterization or storage reservation pressure',
     pattern:
-      /\b(?:book your winterize-and-service in late summer|book (?:now|early) (?:to )?(?:reserve|secure) (?:a )?(?:winterization|storage) (?:slot|space|spot)|(?:winterization|storage) (?:slots|spaces|spots) (?:fill|are limited)|reserve (?:your )?(?:fall )?(?:winterization|storage) (?:slot|space|spot)|mid-November (?:is )?(?:the )?(?:actual )?(?:fall )?(?:last|final) (?:receiving|intake|call)|(?:winterization|storage) slots fill in October|Submit a request at [^\n]{0,80} in September or early October|one to two weeks before (?:your )?(?:planned |intended )?drop-off|book fall lay-up or winterization in October|book before the December 1 closure)\b/i,
+      /\b(?:book your winterize-and-service in late summer|book (?:now|early) (?:to )?(?:reserve|secure) (?:a )?(?:winterization|storage) (?:slot|space|spot)|(?:winterization|storage) (?:slots|spaces|spots) (?:fill|are limited)|reserve (?:your )?(?:fall )?(?:winterization|storage) (?:slot|space|spot)|(?:winterization|storage) slots fill in October|Submit a request at [^\n]{0,80} in September or early October|one to two weeks before (?:your )?(?:planned |intended )?drop-off|book fall lay-up or winterization in October|book before the December 1 closure)\b/i,
   },
   {
     label: 'hard-no HBW boat pickup policy',

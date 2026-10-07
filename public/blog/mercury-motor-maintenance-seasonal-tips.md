@@ -204,7 +204,7 @@ You can handle several tasks yourself: checking and changing oil, replacing fuel
 
 ### When should I winterize my outboard in Ontario?
 
-Complete the model-specific storage procedure before the boat is laid up and before freezing conditions. At HBW, fall service runs through November and the marina closes on December 1. Treat fresh fuel, service the gearcase lubricant, and follow the exact owner's manual for internal engine protection and storage position.
+Complete the model-specific storage procedure before the boat is laid up and before freezing conditions. At HBW, mid-November is last call for fall service and the marina closes on December 1. Treat fresh fuel, service the gearcase lubricant, and follow the exact owner's manual for internal engine protection and storage position.
 
 ### How long does a professional outboard winterization take?
 

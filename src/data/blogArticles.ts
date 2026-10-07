@@ -5034,7 +5034,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         question: 'When should I winterize my outboard in Ontario?',
-        answer: 'Complete the model-specific storage procedure before the boat is laid up and before freezing conditions. At HBW, fall service runs through November and the marina closes on December 1. Treat fresh fuel, service the gearcase lubricant, and follow the exact owner\'s manual for internal engine protection and storage position.'
+        answer: 'Complete the model-specific storage procedure before the boat is laid up and before freezing conditions. At HBW, mid-November is last call for fall service and the marina closes on December 1. Treat fresh fuel, service the gearcase lubricant, and follow the exact owner\'s manual for internal engine protection and storage position.'
       },
       {
         question: 'How long does a professional outboard winterization take?',
@@ -10495,7 +10495,7 @@ Yes. The time to put on a PFD is before you need it. In cold water, there is no 
 Channel 16. This is the distress and calling channel. [Parks Canada](https://parks.canada.ca/lhn-nhs/on/trentsevern) and Coast Guard monitor it. Murray Canal swing bridges use Channel 14 specifically.
 
 **When should I book fall winterization?** 
-Complete hbwservice.ca, then drop off anytime, including after hours. The marina is closed December 1 through April 1.
+Complete hbwservice.ca, then drop off anytime, including after hours. Mid-November is last call, and the marina is closed December 1 through April 1.
 
 **Does HBW pick up boats for winterization?** 
 We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport.
@@ -18233,7 +18233,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 *Last reviewed: 2026-05-14*
 
-> **Quick answer:** MerCruiser sterndrives are still serviceable and parts are available, but the market has shifted toward outboards for Ontario freshwater use. Repowering a sterndrive boat to outboard is a significant project, we quote both paths honestly. Get a real number at mercuryrepower.ca.
+> **Quick answer:** MerCruiser sterndrives are still serviceable and parts are available, but the market has shifted toward outboards for Ontario freshwater use. Repowering a sterndrive boat to outboard is a significant project, and we will tell you honestly which path the numbers favour. Get a real number at mercuryrepower.ca.
 
 Considering converting to outboard power? See [Mercury Repower Cost: Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad), the [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide), and [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/fourstroke-vs-pro-xs). The [Mercury Controls & Rigging Guide (Ontario)](/blog/mercury-controls-rigging-guide-ontario) covers what a sterndrive-to-outboard conversion needs at the helm.
 
@@ -18382,15 +18382,12 @@ A MerCruiser sterndrive engine doesn't last forever. Most we see hit the wall at
 - The drive needs major work AND the engine has 1,500+ hours
 - Estimated repair exceeds 50% of the boat's value
 
-**Three repower paths:**
+**Two ways forward:**
 
-### 1. Remanufactured MerCruiser crate engine + existing drive
-$8,000-$15,000 installed for a typical 4.3L or 5.0L. The cheapest path. Comes with a 1-2 year warranty. Good if your drive is still healthy.
+### 1. Replace the engine or drive
+A remanufactured MerCruiser engine on your existing drive, or a new engine and drive package, keeps the boat as it was designed. HBW doesn't sell replacement sterndrive engines or drives. We service and repair MerCruiser, so we can tell you what's wrong and whether the rest of the boat justifies the spend before you price a replacement elsewhere.
 
-### 2. New MerCruiser engine + new Bravo drive
-$30,000-$40,000+ installed for a complete new V8 + Bravo combo. Full new warranty. Most expensive path, and harder to justify on an older hull unless it's a special boat.
-
-### 3. Sterndrive-to-outboard conversion
+### 2. Sterndrive-to-outboard conversion
 $20,000-$35,000+ depending on hull and HP. Cuts out the drive and transom assembly, installs a fabricated transom bracket and a modern Mercury outboard. Why people do it:
 
 - **Simpler maintenance**, no bellows, no gimbal bearing, no manifolds
@@ -18401,7 +18398,7 @@ $20,000-$35,000+ depending on hull and HP. Cuts out the drive and transom assemb
 
 The trade-offs: higher upfront cost than a remanufactured drop-in, swim platform gets reduced (the outboard takes up part of it), and the boat looks different. For some hulls, especially classic '80s and '90s designs, that last point matters; for others it's a clean improvement.
 
-We do both. We'll quote both. We're not a "convert everything to outboards" shop and we're not a "stick with what you've got" shop. The math depends on the boat.
+We're not a "convert everything to outboards" shop and we're not a "stick with what you've got" shop. The math depends on the boat.
 
 ---
 
@@ -18439,7 +18436,7 @@ What we handle:
 - Raw water pump, thermostat, manifolds, risers
 - Engine diagnostics and repairs (gas MerCruiser, all sizes)
 - Drive rebuilds (Alpha and Bravo)
-- Repowers, remanufactured drop-ins, full new engine + drive, or outboard conversions
+- Outboard conversions on suitable hulls (we don't sell replacement sterndrive engines or drives)
 - [Storage](/blog/outdoor-boat-storage-shrinkwrap-rice-lake) (outdoor storage with professional shrink wrap, outdoor uncovered storage, or shrink-wrap-only service; sterndrives included)
 
 Book at **[hbwservice.ca](https://hbwservice.ca)**.
@@ -18468,7 +18465,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       },
       {
         "question": "Is converting from sterndrive to outboard always worth it?",
-        "answer": "Not always. If your current MerCruiser is healthy and your hull was designed around the sterndrive look, the conversion math may not work. But if you're staring at a major repair bill and the boat's value can support a $25K+ investment, the outboard route gives you a fresh warranty and better resale. We'll quote both, straight numbers."
+        "answer": "Not always. If your current MerCruiser is healthy and your hull was designed around the sterndrive look, the conversion math may not work. But if you're staring at a major repair bill and the boat's value can support a $25K+ investment, the outboard route gives you a fresh warranty and better resale. We'll tell you straight which way the numbers point."
       },
       {
         "question": "Do you service MerCruiser diesel?",
@@ -19057,7 +19054,7 @@ Most Rice Lake recreational owners reach the calendar before they reach 100 hour
 
 At HBW:
 
-- Submit fall service before the marina closes on December 1.
+- Mid-November is last call for fall service, and the marina closes on December 1.
 - The marina is closed from December 1 through April 1.
 - Spring service resumes once the marina reopens in early April.
 - If the motor crosses an hour-based interval mid-season, do not wait for fall.
@@ -21163,7 +21160,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       { question: "Do I need to do anything if my boat is shrinkwrapped and winterized?", answer: "Follow the approved work order and keep your contact information current. The marina is closed December 1 through April 1; no physical service or customer access happens during that period." },
       { question: "Can I access my boat during winter for any reason?", answer: "No customer access is available while the marina is closed from December 1 through April 1. Remove anything you will need before the closure." },
       { question: "What if I want to upgrade or repair the boat during winter?", answer: "Planning, quoting, and approvals can happen remotely over winter. Physical service, repower, and installation work starts after the marina reopens in early April." },
-      { question: "When should I request winter storage?", answer: "Complete hbwservice.ca, then drop off anytime, including after hours. The marina is closed December 1 through April 1." },
+      { question: "When should I request winter storage?", answer: "Complete hbwservice.ca, then drop off anytime, including after hours. Mid-November is last call, and the marina is closed December 1 through April 1." },
       { question: "What's the difference between HBW shrinkwrap and a tarp?", answer: "Massive. Professional shrinkwrap uses 7-12 mil polyethylene film, custom-fitted with a structural frame and vents, heat-shrunk for tightness. A tarp flaps in wind (chafes gelcoat), pools water in the middle (snowmelt + re-freezing), and traps moisture (mold). Tarps are emergency cover; shrinkwrap is real winter storage." },
       { question: "Is the boat insured during winter storage?", answer: "Your existing boat insurance typically covers winter storage; some policies require notification. Check with your insurer. We don't insure stored boats, that's owner responsibility. We document storage location, shrinkwrap quality, and winterization completion for any insurance documentation needs." },
     ],
