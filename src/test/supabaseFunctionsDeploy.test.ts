@@ -1270,7 +1270,7 @@ describe('public pair release holds', () => {
     expect(result.failed.map((item) => item.slug)).toEqual(['realtime-session', 'realtime-sdp-exchange']);
   });
 
-  it('holds DEPLOY_PAIR=site-chat under the committed UNVERIFIED attestation', async () => {
+  it('holds DEPLOY_PAIR=site-chat when production attestation is explicitly UNVERIFIED', async () => {
     const seen: string[] = [];
     const code = await runDeploy({
       env: {
@@ -1278,6 +1278,7 @@ describe('public pair release holds', () => {
         DEPLOY_FROM: 'HEAD',
         DEPLOY_TO: 'HEAD',
       },
+      releaseAttestations: UNVERIFIED_PAIRS,
       deployOne: (slug: string) => {
         seen.push(slug);
         return { ok: true, detail: 'ok' };
@@ -1288,7 +1289,7 @@ describe('public pair release holds', () => {
     expect(seen).toEqual([]);
   });
 
-  it('holds DEPLOY_PAIR=openai-realtime under the committed UNVERIFIED attestation', async () => {
+  it('holds DEPLOY_PAIR=openai-realtime when production attestation is explicitly UNVERIFIED', async () => {
     const seen: string[] = [];
     const code = await runDeploy({
       env: {
@@ -1296,6 +1297,7 @@ describe('public pair release holds', () => {
         DEPLOY_FROM: 'HEAD',
         DEPLOY_TO: 'HEAD',
       },
+      releaseAttestations: UNVERIFIED_PAIRS,
       deployOne: (slug: string) => {
         seen.push(slug);
         return { ok: true, detail: 'ok' };

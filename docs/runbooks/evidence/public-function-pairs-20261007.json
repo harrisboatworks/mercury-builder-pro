@@ -4,46 +4,113 @@
   "sourceSha": "6bcd1134060219a787dffbde27d126ebc5451595",
   "verifiedBy": "Codex",
   "date": "2026-10-07",
-  "result": "BLOCKED",
-  "evidenceRoute": "deployed-edge-runtime using server-side production OPENAI_API_KEY; local harness proxy with the allowed production Origin header; no direct-provider credential used",
-  "authorization": "Jay approved bounded runtime checks and conditional staged release on October 7. Stop on any failed or unverified required check.",
+  "result": "ATTESTED",
+  "evidenceRoute": "deployed-edge-runtime using server-side production OPENAI_API_KEY; harness proxy supplies the allowed production Origin header; not direct-provider credentials",
+  "authorization": "Jay approved bounded runtime checks, exact-head CI, merge and conditional staged release. Jay restored OpenAI credits after the first failed ping.",
   "productionVersions": {
     "ai-chatbot": 754,
     "ai-chatbot-stream": 466,
     "realtime-session": 411,
     "realtime-sdp-exchange": 388
   },
+  "provenance": {
+    "deployedProviderCallSourceChecked": true,
+    "sourceReadsProductionSecret": true,
+    "workstationOpenAIKeyUsed": false,
+    "secretValuesOrDigestsRecorded": false,
+    "completeRollbackBundlesPreserved": true,
+    "registryBundleIdentitiesRecheckedBeforeProbe": true
+  },
   "chat": {
-    "phase": "pre-release",
-    "checkedAt": "2026-10-07T21:55:06.570Z",
+    "phase": "pre-release-after-credits",
+    "checkedAt": "2026-10-07T22:07:02.776Z",
     "message": "Reply with exactly pong.",
     "legacy": {
-      "status": 500,
-      "reply": "I'm sorry, I'm having trouble right now. Please try texting us at 647-952-2153 or call for immediate assistance.",
-      "error": "You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+      "status": 200,
+      "reply": "pong",
+      "error": null
     },
     "stream": {
-      "status": 500,
-      "models": [],
-      "answer": "",
-      "done": false
+      "status": 200,
+      "models": [
+        "gpt-5.6-luna"
+      ],
+      "answer": "pong",
+      "done": true
     }
   },
   "realtime": {
-    "result": "NOT_RUN",
-    "reason": "Stopped after the required chat provider check failed. No ephemeral secret or WebRTC peer created."
+    "layer": "deployed-edge-runtime",
+    "checkedAt": "2026-10-07T22:08:56.246Z",
+    "sessionStatus": 200,
+    "model": "gpt-realtime-2.1-mini",
+    "secretPresent": true,
+    "originHeader": "https://www.mercuryrepower.ca",
+    "phase": "pre-release-after-credits-transport-cleanup",
+    "sdpStatus": 200,
+    "answerFields": true,
+    "answerDiffers": true,
+    "peerAccepted": true,
+    "peerConnected": true,
+    "dataChannelOpened": true,
+    "peerClosed": true,
+    "dataChannelClosed": true,
+    "ephemeralCleared": true,
+    "microphoneRequested": false,
+    "responseCreateSent": false,
+    "elapsedMs": 3240,
+    "error": null
   },
+  "earlierChecks": [
+    {
+      "phase": "pre-release",
+      "checkedAt": "2026-10-07T21:55:06.570Z",
+      "message": "Reply with exactly pong.",
+      "legacy": {
+        "status": 500,
+        "reply": "I'm sorry, I'm having trouble right now. Please try texting us at 647-952-2153 or call for immediate assistance.",
+        "error": "You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+      },
+      "stream": {
+        "status": 500,
+        "models": [],
+        "answer": "",
+        "done": false
+      }
+    },
+    {
+      "layer": "deployed-edge-runtime",
+      "checkedAt": "2026-10-07T22:07:27.607Z",
+      "sessionStatus": 200,
+      "model": "gpt-realtime-2.1-mini",
+      "secretPresent": true,
+      "originHeader": "https://www.mercuryrepower.ca",
+      "phase": "pre-release-after-credits",
+      "sdpStatus": 200,
+      "answerFields": true,
+      "answerDiffers": true,
+      "peerAccepted": true,
+      "peerClosed": true,
+      "dataChannelClosed": false,
+      "ephemeralCleared": true,
+      "microphoneRequested": false,
+      "responseCreateSent": false,
+      "elapsedMs": 2912,
+      "error": null
+    }
+  ],
   "release": {
     "mergePerformed": false,
     "deploymentPerformed": false,
-    "attestationStatus": "UNVERIFIED",
-    "serviceLinkAcceptance": "NOT_RUN"
+    "postDeployAcceptance": "PENDING"
   },
   "limitations": [
-    "Legacy chat exposes the OpenAI no-credits error. Streaming returned HTTP 500 without model identity or completion; its raw error body was not retained.",
-    "No current successful model/key proof. September 28 success is historical and cannot lift this release hold.",
-    "No Realtime session, SDP, audio, customer-tool, quote, message, credential, migration or hosted ElevenLabs action.",
-    "The source guard is a committed shape/name gate; it does not continuously monitor provider billing or key validity."
-  ],
-  "nextGate": "Restore credits for the OpenAI account behind production OPENAI_API_KEY without changing credentials. Rerun fresh bounded checks, record successful attestations, pass final-head CI, then release openai-realtime followed by site-chat with source readback and runtime/service-link acceptance."
+    "The first chat ping failed for exhausted OpenAI credits. After Jay added credits, both chat functions succeeded and provider SSE confirmed gpt-5.6-luna.",
+    "The first SDP cleanup observation read data-channel readyState synchronously. A corrected check awaited real transport open and asynchronous channel close; all acceptance/cleanup fields passed.",
+    "No claim of satisfying PR #542 digest-matched direct-provider protocol.",
+    "No microphone, audio response request, transcription, interruption or customer-tool acceptance.",
+    "Peer and data channel closed; no separate provider hangup receipt is exposed by the production SDP relay.",
+    "Registry and bundle comparison are in public-function-pairs-20261007-readback.json. The known service/blog source differences require staged deployment and post-deploy acceptance.",
+    "The committed guard validates attestation shape/names; it does not continuously monitor credits or model access."
+  ]
 }

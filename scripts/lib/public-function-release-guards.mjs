@@ -1,9 +1,9 @@
 /**
- * Explicit release holds for the unreviewed public chat and Realtime pairs.
+ * Production attestations and fail-closed release guards for public chat and Realtime.
  *
  * Production key presence and model access are not inferred from the
  * environment, a local key, or a deploy timestamp. The committed
- * attestation is UNVERIFIED until a production-proven record is written.
+ * attestations record the bounded production evidence referenced by each pair.
  * Pair membership refuses a one-sided or half-blocked release.
  *
  * No network. Never prints secret values — only key and model names.
@@ -43,7 +43,13 @@ export const PUBLIC_RELEASE_PAIRS = Object.freeze([
     slugs: Object.freeze(['ai-chatbot', 'ai-chatbot-stream']),
     requiredModels: Object.freeze(['gpt-5.6-luna']),
     requiredKeys: Object.freeze(['OPENAI_API_KEY']),
-    attestation: UNVERIFIED_PRODUCTION_ATTESTATION,
+    attestation: Object.freeze({
+      status: 'ATTESTED',
+      productionKeyProvenance:
+        'Supabase production OPENAI_API_KEY@eutsoqdpjurknjsshxes; deployed runtime calls after credits restored 2026-10-07; ai-chatbot v754 pong; ai-chatbot-stream v466 provider SSE model identity; evidence docs/runbooks/evidence/public-function-pairs-20261007.json',
+      attestedModels: Object.freeze(['gpt-5.6-luna']),
+      attestedKeys: Object.freeze(['OPENAI_API_KEY']),
+    }),
   }),
   Object.freeze({
     id: PUBLIC_RELEASE_PAIR_IDS.OPENAI_REALTIME,
@@ -51,7 +57,13 @@ export const PUBLIC_RELEASE_PAIRS = Object.freeze([
     slugs: Object.freeze(['realtime-session', 'realtime-sdp-exchange']),
     requiredModels: Object.freeze(['gpt-realtime-2.1-mini']),
     requiredKeys: Object.freeze(['OPENAI_API_KEY']),
-    attestation: UNVERIFIED_PRODUCTION_ATTESTATION,
+    attestation: Object.freeze({
+      status: 'ATTESTED',
+      productionKeyProvenance:
+        'Supabase production OPENAI_API_KEY@eutsoqdpjurknjsshxes; deployed runtime calls after credits restored 2026-10-07; realtime-session v411 model identity; realtime-sdp-exchange v388 browser-accepted SDP and connected receive-only transport; peer and data channel closed; evidence docs/runbooks/evidence/public-function-pairs-20261007.json',
+      attestedModels: Object.freeze(['gpt-realtime-2.1-mini']),
+      attestedKeys: Object.freeze(['OPENAI_API_KEY']),
+    }),
   }),
 ]);
 
