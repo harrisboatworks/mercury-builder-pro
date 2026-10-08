@@ -27,6 +27,8 @@ describe('service booking answers', () => {
     'Can I schedule a repower installation?',
     'What are your service department hours?',
     'What is the status of my service request?',
+    'What is my service request status?',
+    'Can you check my service request status?',
     'I already booked a service appointment.',
     'How can I reschedule a service appointment?',
     'Book a rental. What are Mercury service intervals?',

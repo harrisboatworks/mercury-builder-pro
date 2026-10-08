@@ -9,7 +9,7 @@ export function buildServiceBookingAnswer(question: string): string | null {
   if (/\b(?:how often|intervals?|procedures?|instructions|steps|maintenance schedule|service schedule|schedule (?:look|for|of)|first service|first oil change|break[ -]?in|oil grade|oil type|what oil|which oil|rpm|\d+[ -]?hours?)\b/i.test(question)) {
     return null;
   }
-  if (/\b(?:status of|cancel|reschedule|already booked|existing appointment)\b/i.test(question)) {
+  if (/\b(?:status|cancel|reschedule|already booked|existing appointment)\b/i.test(question)) {
     return null;
   }
   if (!BOOK_SERVICE.test(question) && !SERVICE_REQUEST.test(question)) return null;
