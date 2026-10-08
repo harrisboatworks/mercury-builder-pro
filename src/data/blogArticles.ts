@@ -8542,7 +8542,7 @@ A mouse that wintered in your boat can do more damage than a winter freeze. Chec
 
 ### Step 2, Battery and Electrical
 
-- **Reinstall battery** if you removed it for storage.
+- **Reconnect the battery** if it was disconnected for storage.
 - **Load test the battery.** A battery that drops below 10.5V under load is at end of life. Replace it now, not mid-July.
 - **Clean and tighten terminals.** Corrosion at the terminal is an invisible source of hard-starting and charging problems.
 - **Test electrical systems** with key on, engine off: bilge pump, lights, gauges, electronics, fish finder, VHF.
@@ -10115,7 +10115,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     category: 'Tips',
     readTime: '8 min read',
     keywords: ['walleye opener', 'ontario walleye season', 'boat prep checklist', 'fishing opener prep', 'walleye opener checklist'],
-    content: `> **Quick answer:** The Ontario walleye opener for Zone 17 (Kawarthas, Rice Lake area) is the second Saturday of May, confirm the exact date each year in the Ontario (MNRF) Fishing Regulations Summary. The most common opener failures, dead battery, gummed kicker, stale fuel, are all preventable. Start your final prep two weeks before opener day, not the night before.
+    content: `> **Quick answer:** The Ontario walleye opener for Zone 17 (Kawarthas, Rice Lake area) is the second Saturday of May, confirm the exact date each year in the Ontario (MNR) Fishing Regulations Summary. The most common opener failures, dead battery, gummed kicker, stale fuel, are all preventable. Start your final prep two weeks before opener day, not the night before.
 
 Need your PCOC? Take the online course through [HBW's MyBoatCard referral link](https://myboatcard.com/card/harrisboat) and use **HARRIS15** for **15% off**.
 
@@ -10200,7 +10200,7 @@ escalationBody: We run a pre-opener service every spring, typically $200 to $350
 - Pre-launch checks: safety gear in the boat, drain plug installed, lights working.
 - Launch and run the motor briefly before going far from the dock.
 - Verify fish finder and GPS are on and reading before you reach your zone.
-- Confirm the season dates and any sanctuary or slot rules for your exact water in the current year's regulations from the MNRF before opener day.
+- Confirm the season dates and any sanctuary or slot rules for your exact water in the current year's regulations from the MNR before opener day.
 
 ---
 
@@ -10235,7 +10235,7 @@ A weak or dead battery is one of the most common opener-morning failures we see.
 
 **Missing safety gear** turns an opener into an OPP stop. Marine patrols are active on opener weekend.
 
-**Unfamiliar regulations** can cost you fish. Slot limits and possession limits change. Read the current MNRF regulations before opener.
+**Unfamiliar regulations** can cost you fish. Slot limits and possession limits change. Read the current MNR regulations before opener.
 
 ---
 
@@ -10254,7 +10254,7 @@ A weak or dead battery is one of the most common opener-morning failures we see.
 ## FAQs
 
 **When is the Ontario walleye opener for Zone 17?** 
-The second Saturday of May. Confirm the exact date each year in the Ontario (MNRF) Fishing Regulations Summary. Do not assume it is the same date as last year.
+The second Saturday of May. Confirm the exact date each year in the Ontario (MNR) Fishing Regulations Summary. Do not assume it is the same date as last year.
 
 **What should I do two weeks before walleye opener?** 
 Confirm spring commissioning is done, schedule any final service, and check your fishing licence and PCL. Two weeks gives you time to fix anything that comes up.
@@ -10307,14 +10307,14 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       { name: 'Inspect fishing gear and stock essentials', text: 'Check rods, reels, lines, lures, and terminal tackle. Stock licences, current-standard PFDs, a buoyant heaving line at least 15 m long, anchor and rope, paddle, first aid kit, fire extinguisher, and emergency radio.' },
       { name: 'Top off fresh fuel', text: 'Top off the tank with fresh gas. Avoid running the tank to empty. If you skipped fall stabilizer, run a dose now to treat residual old gas as you transition to fresh fuel.' },
       { name: 'Verify weather and pre-rig', text: 'Three days before opener, verify the weather forecast for opener morning. Pre-tie leaders and rig rods. Charge electronics, phones, and batteries. Confirm partners and meet point.' },
-      { name: 'Opener morning launch checks', text: 'Arrive at the launch early; public ramps are busy on opener morning. Confirm safety equipment is on board, plug installed, lights working. Launch and run the motor briefly to confirm operation before going far from the dock. Verify the opener date and current rules for your zone (confirm the current MNRF regulations).' },
+      { name: 'Opener morning launch checks', text: 'Arrive at the launch early; public ramps are busy on opener morning. Confirm safety equipment is on board, plug installed, lights working. Launch and run the motor briefly to confirm operation before going far from the dock. Verify the opener date and current rules for your zone (confirm the current MNR regulations).' },
     ],
     howToTotalTime: 'PT60M',
     howToTools: ['Battery charger', 'Fresh fuel', 'Fuel stabilizer', 'PFDs (Transport Canada-approved)', 'Buoyant heaving line (at least 15 m)', 'Fire extinguisher'],
     faqs: [
       {
         question: 'When is the Ontario walleye opener?',
-        answer: 'The second Saturday of May for Zone 17 (Kawarthas, Rice Lake area). Confirm the current year date in the Ontario (MNRF) Fishing Regulations Summary.'
+        answer: 'The second Saturday of May for Zone 17 (Kawarthas, Rice Lake area). Confirm the current year date in the Ontario (MNR) Fishing Regulations Summary.'
       },
       {
         question: 'What should I do 2 weeks before walleye opener?',
@@ -15002,7 +15002,7 @@ Real situations where the smallest Mercury is genuinely the perfect call:
 The cheapest Mercury is the 2.5 HP FourStroke portable, built for tenders, dinghies, and small inflatables. For current 2026 CAD pricing, see the motor selection page at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 **What's the cheapest Mercury with electric start?** 
-Mercury offers electric start on motors as small as the 9.9 EH. For specific pricing, see the motor selection page.
+Mercury offers electric start on motors as small as the 8 EH. For specific pricing, see the motor selection page.
 
 **Should I buy the cheapest motor I can afford?** 
 Only if it actually fits your boat and use. Buying too small is the most common expensive mistake we see. The cheapest motor that genuinely fits your hull and use is what you want.
@@ -15043,7 +15043,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     faqs: [
       { question: 'What is the cheapest Mercury outboard in Canada in 2026?', answer: 'The cheapest Mercury is the 2.5 MH, a small portable tiller motor built for tenders, dinghies, and small inflatables. For specific 2026 CAD pricing on the 2.5 MH and every other Mercury we sell, see the [motor selection page](/quote/motor-selection).' },
       { question: 'How much does a 2.5 HP Mercury cost in Canada?', answer: "Use the [motor selection page](/quote/motor-selection) for the current exact-model price. Confirm supplied accessories, preparation, tax, and any additional charges in the written offer." },
-      { question: 'What is the cheapest Mercury with electric start?', answer: 'Mercury offers electric start on motors as small as the 9.9 EH (Electric, Hand-tiller) and 9.9 ELH (Electric, Long-shaft Hand-tiller). For specific CAD pricing on each, see the [motor selection page](/quote/motor-selection).' },
+      { question: 'What is the cheapest Mercury with electric start?', answer: 'Mercury offers electric start on motors as small as the 8 EH (Electric, Hand-tiller) and 8 ELH (Electric, Long-shaft Hand-tiller). For specific CAD pricing on each, see the [motor selection page](/quote/motor-selection).' },
       { question: 'Is a small Mercury good enough for fishing?', answer: "It can be suitable for some sheltered-water and low-speed uses. Confirm the exact hull rating, load, required range, and expected conditions. Do not assume that one horsepower figure guarantees planing or safe performance on every boat." },
       { question: 'Should I buy the cheapest motor I can afford?', answer: "Choose a motor that fits the hull rating, motor-weight limit, loaded boat, and intended use. Compare the complete written purchase and installation scope before choosing by price." },
       { question: 'Can I finance a small Mercury outboard?', answer: canonicalBlogFinancingFaqCopy },
@@ -15915,7 +15915,7 @@ If the motor wasn't properly winterized last fall, some of the causes above are 
 - **Unstabilized fuel** in the system gummed up injectors or carburettor passages
 - **The wrong internal-protection procedure** can leave corrosion or fuel-system storage problems
 - **Cooling system water not fully drained**, if it froze, there may be physical damage
-- **Battery not tendered or removed**, compromised battery from winter discharge
+- **Battery left connected or not on a tender**, compromised battery from winter discharge
 
 If you're not sure the motor was properly winterized, tell the dealer. It's relevant to the diagnostic.
 
@@ -18363,7 +18363,7 @@ A reasonable annual routine for an Ontario sterndrive:
 ### Every fall (winterization, the non-negotiable one)
 - Stabilize fuel
 - Drain block, manifolds, risers, drives, every single petcock
-- Pull battery, store on tender
+- Disconnect the battery and leave it in the boat
 - Fog cylinders
 - Drain or refill drive with fresh gear lube
 - Cover or shrinkwrap
@@ -30007,7 +30007,7 @@ Send the boat, motor, serial number, photos, and requested work through the serv
       },
       {
         question: "Does HBW finance repowers?",
-        answer: "Yes, on repowers above $5,000 CAD. We offer financing through Mercury\'s repower financing program, with rates that depend on the financed amount and the current offer. There's also a small DealerPlan fee added to the financed total. Repowers under $5,000 don't qualify for financing through this program. The fastest way to see your actual numbers, payment, term options, total interest, is to run a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) and select the financing option."
+        answer: "Yes, on repowers above $5,000 CAD. We arrange financing through DealerPlan, with rates that depend on the financed amount and the current offer. There's also a small DealerPlan fee added to the financed total. Repowers under $5,000 don't qualify for financing through this program. The fastest way to see your actual numbers, payment, term options, total interest, is to run a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) and select the financing option."
       },
     ],
     content: `> **Quick answer:** Mercury Pro XS is the angler-focused outboard family across 115–300 HP. For Rice Lake and Kawartha bass, walleye, and muskie boats, the sweet spot is usually 175 HP V6 or 200–225 HP V8 Pro XS, strong hole-shot, fuel-efficient cruise, and proven reliability. The 150 Pro XS is inline-4 (lighter); 200 and above are V8. The right choice depends on hull rating, fishing style, and budget. Quote: [mercuryrepower.ca](https://www.mercuryrepower.ca).
@@ -31541,7 +31541,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
       { question: "Is FourStroke better than Pro XS?", answer: "Neither is \"better\", they're tuned for different use cases. FourStroke prioritizes fuel efficiency, quiet operation, and longevity. Pro XS prioritizes acceleration, top-end speed, and tournament-grade performance. For most Ontario freshwater boating, FourStroke is the right tool." },
       { question: "How long does a Mercury FourStroke last?", answer: "Properly maintained, 15-25 years of useful service is realistic. The motor that fails early is almost always one that missed oil changes, skipped impeller replacements, or got winterized improperly. Brand matters less than service habits." },
       { question: "Do I need Command Thrust?", answer: "For pontoons running 90 or 115 HP, almost always yes. For aluminum fishing boats at the same HP, usually no unless you're consistently running heavy loads." },
-      { question: "What's the price difference between a 75 and a 90 FourStroke?", answer: "Typically $800-$1,500 at MSRP. Smaller than most buyers expect, given the 75 and 90 are the same physical motor. The 90 is the better long-term value in most cases." },
+      { question: "What's the price difference between a 75 and a 90 FourStroke?", answer: "Smaller than most buyers expect, given the 75 and 90 are the same physical motor. The 90 is the better long-term value in most cases. Check mercuryrepower.ca/pricing-reference for today's figures." },
       { question: "Can I tow water-ski with a FourStroke?", answer: "Yes, larger FourStrokes can handle ski and wake boats when the hull, load, and prop match. The 150 FourStroke is a 3.0 L inline-four, 175-225 are 3.4 L V6, and 250-300 are 4.6 L V8. For tournament-grade ski performance, the Pro XS variants offer more aggressive throttle response, but a 200 HP FourStroke V6 pulls skiers without any drama." },
       { question: "How do I match the prop to a new FourStroke?", answer: "The right prop depends on the motor, hull, load, intended use, and target RPM range. When safe seasonal conditions allow, an on-water check can help verify the result. The work order and documented acceptance plan control any prop change and the final scope." },
       { question: "Does Mercury warranty come with a new FourStroke?", answer: "Yes, the applicable Mercury limited warranty comes with a new FourStroke. Optional Mercury Product Protection Platinum covers eligible mechanical and electrical failures after that warranty, subject to the program\'s current maximum combined coverage. See the [Mercury Warranty Guide](/blog/mercury-outboard-warranty-canada-2026) and [current Platinum pricing](/mercury-product-protection)." },

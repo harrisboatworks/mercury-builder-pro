@@ -2662,7 +2662,7 @@ escalationBody: ${ZH_LANGUAGE_NOTE}
 
 ## 三、安省钓鱼证（Ontario Fishing Licence）
 
-颁发机构：**Ontario Ministry of Natural Resources and Forestry（MNRF）**，购买入口：[ontario.ca/page/fishing-licence](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees)。
+颁发机构：**Ontario Ministry of Natural Resources（MNR）**，购买入口：[ontario.ca/page/fishing-licence](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees)。
 
 ### 常见组合：Outdoors Card + Fishing Licence
 
@@ -2682,7 +2682,7 @@ escalationBody: ${ZH_LANGUAGE_NOTE}
 - **Sport Licence（运动证）：** 持有量和日捕量限额较高，适合认真钓鱼的人。
 - **Conservation Licence（保育证）：** 限额减半，价格较低，适合偶尔钓的家庭。
 
-具体价格每年由 MNRF 调整，请以 Ontario.ca 上的当下价格为准。
+具体价格每年由 MNR 调整，请以 Ontario.ca 上的当下价格为准。
 
 ### 哪里买
 
@@ -2694,7 +2694,7 @@ escalationBody: ${ZH_LANGUAGE_NOTE}
 
 ## 四、Rice Lake 特定钓鱼规则
 
-Rice Lake 属于安省 Fisheries Management Zone（FMZ），具体的鱼种季节、尺寸限制、持有量每年由 MNRF 更新。最常见的目标鱼种：
+Rice Lake 属于安省 Fisheries Management Zone（FMZ），具体的鱼种季节、尺寸限制、持有量每年由 MNR 更新。最常见的目标鱼种：
 
 - **碧古鱼 (Walleye)：** 有季节窗口和尺寸限制（slot size），具体数字每年可能调整
 - **Smallmouth / Largemouth Bass（鲈鱼）：** 通常有禁渔期（春季产卵期）和持有量限制
@@ -2719,7 +2719,7 @@ Rice Lake 属于安省 Fisheries Management Zone（FMZ），具体的鱼种季�
 
 ## 六、罚款与风险
 
-被检查时拿不出有效的操作员资格证明、需要的 Pleasure Craft Licence 或安省钓鱼资格，可能被开告票或面临其他执法后果。具体项目和金额请参考 [Transport Canada](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc) 和 [Ontario MNRF](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees) 的当前官方信息。
+被检查时拿不出有效的操作员资格证明、需要的 Pleasure Craft Licence 或安省钓鱼资格，可能被开告票或面临其他执法后果。具体项目和金额请参考 [Transport Canada](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc) 和 [Ontario MNR](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees) 的当前官方信息。
 
 不要用旧帖中的课程价格或罚款金额做决定。先把需要的证件、船牌和当年钓鱼规则确认清楚，再出发。
 
@@ -2766,9 +2766,9 @@ Rice Lake 属于安省 Fisheries Management Zone（FMZ），具体的鱼种季�
       { question: '外国船证在加拿大能用吗？', answer: '访客可接受的资格证明取决于 Transport Canada 的当前规则和具体情况。不要假设任何外国证件自动有效；出发前在官方页面核对。' },
       { question: '14 岁的孩子能自己开船吗？', answer: '12 至 15 岁在没有合格成人直接监督时，最多可操作 40 HP（30 kW）的船；仍须携带有效资格证明。16 岁以下不能操作个人水上摩托。请在出发前核对 Transport Canada 当前规则。' },
       { question: '我从 HBW 租船，需要自己带 PCOC 吗？', answer: '需要。HBW 的内部政策要求每位驾驶员在 check-in 时出示有效的 boat operator licence / PCOC。安全清单仍会作为 briefing 完成，但 HBW 不把它当作驾驶员牌照的替代品。' },
-      { question: '安省钓鱼证多少钱？分几种？', answer: '安省钓鱼证由 Outdoors Card（3 年有效）和 Fishing Licence Tag（年度）两部分组成，分 Sport（运动证，限额高）和 Conservation（保育证，限额减半，价格较低）。具体价格每年由 MNRF 调整，请到 ontario.ca/page/fishing-licence 查询当下价格。' },
+      { question: '安省钓鱼证多少钱？分几种？', answer: '安省钓鱼证由 Outdoors Card（3 年有效）和 Fishing Licence Tag（年度）两部分组成，分 Sport（运动证，限额高）和 Conservation（保育证，限额减半，价格较低）。具体价格每年由 MNR 调整，请到 ontario.ca/page/fishing-licence 查询当下价格。' },
       { question: 'Rice Lake 的 walleye / 碧古鱼 规定是什么？', answer: '建议查询安省最新钓鱼规则，因为尺寸与时段每年可能调整。Ontario.ca 上的官方钓鱼条例摘要（Recreational Fishing Regulations Summary）是最可靠来源，按 Fisheries Management Zone 查询 Rice Lake 所属区域即可看到当年的 walleye 季节、slot size 和持有量。' },
-      { question: '没有船驾照或钓鱼证被查到会怎样？', answer: '可能被加拿大海岸警卫队、OPP 海上巡逻或 MNRF 巡查员开告票，罚款可达数百加元，严重情况下还可能没收渔获或暂时禁止使用船只。具体金额以 Transport Canada 和 Ontario MNRF 官方为准。' },
+      { question: '没有船驾照或钓鱼证被查到会怎样？', answer: '可能被加拿大海岸警卫队、OPP 海上巡逻或 MNR 巡查员开告票，罚款可达数百加元，严重情况下还可能没收渔获或暂时禁止使用船只。具体金额以 Transport Canada 和 Ontario MNR 官方为准。' },
     ],
   },
 
@@ -4165,7 +4165,7 @@ quote: ${ZH_LANGUAGE_NOTE}
 钓鱼证由安省自然资源部（MNR）在线或在 Service Ontario 站点出售。**出发前在 [安省官方页面](http://www.ontario.ca/page/ontario-fishing-regulations-summary-traditional-chinese) 办好**，HBW 不代售钓鱼证。
 
 **Q：18 岁以下的孩子钓鱼要证吗？**
-通常豁免，但规则可能更新。出发前以 MNRF 当年说明为准。
+通常豁免，但规则可能更新。出发前以 MNR 当年说明为准。
 
 **Q：HBW 有中文服务吗？**
 ${ZH_LANGUAGE_NOTE}
@@ -4189,7 +4189,7 @@ ${ZH_LANGUAGE_NOTE}
     slug: 'pcoc-pcl-fishing-licence-difference-ontario',
     title: 'PCOC、PCL、钓鱼证区别：安省新手别搞混',
     seoTitle: '安省 船牌 中文 PCOC vs PCL vs 钓鱼证',
-    description: '安省新手常把三个证件搞混：PCOC（船只操作员卡，终身有效，开动力船必须）、PCL（船只牌照，船身的注册号，免费，换引擎要更新）、安省钓鱼证（独立系统，由 MNRF 管理）。三者对比表 + 官方申请链接。',
+    description: '安省新手常把三个证件搞混：PCOC（船只操作员卡，终身有效，开动力船必须）、PCL（船只牌照，船身的注册号，免费，换引擎要更新）、安省钓鱼证（独立系统，由 MNR 管理）。三者对比表 + 官方申请链接。',
     image: '/lovable-uploads/hero-boat-rental-licence-ontario.webp',
     author: 'Jay Harris',
     datePublished: '2026-06-12',
@@ -4198,7 +4198,7 @@ ${ZH_LANGUAGE_NOTE}
     category: 'mandarin',
     readTime: '7 分钟',
     keywords: ['安省 船牌', '中文 PCOC', 'PCL', '船只操作员卡', '钓鱼证', '安省'],
-    content: `> **简短答案：** 三个证件管的是完全不同的事。**PCOC**（Pleasure Craft Operator Card，船只操作员卡）是终身有效的"驾照"，只要操作配动力的船就必须有。**PCL**（Pleasure Craft Licence，船只牌照）是船身上那串字母数字注册号，**免费**，登记给加拿大交通部，换引擎或换船主时要更新。**钓鱼证**完全独立，由安省自然资源与林业部（MNRF）管，先办 Outdoors Card 再加 Fishing Licence。短期租船通常不需要 PCOC（用 Rental Boat Safety Checklist 代替）。
+    content: `> **简短答案：** 三个证件管的是完全不同的事。**PCOC**（Pleasure Craft Operator Card，船只操作员卡）是终身有效的"驾照"，只要操作配动力的船就必须有。**PCL**（Pleasure Craft Licence，船只牌照）是船身上那串字母数字注册号，**免费**，登记给加拿大交通部，换引擎或换船主时要更新。**钓鱼证**完全独立，由安省自然资源部（MNR）管，先办 Outdoors Card 再加 Fishing Licence。短期租船通常不需要 PCOC（用 Rental Boat Safety Checklist 代替）。
 
 需要考取 PCOC？通过 [HBW 的 MyBoatCard 推荐链接](https://myboatcard.com/card/harrisboat)参加在线课程，使用优惠码 **HARRIS15** 可享 **15% 折扣**。
 
@@ -4208,12 +4208,12 @@ ${ZH_LANGUAGE_NOTE}
 |---|---|---|---|
 | 中文名 | 船只操作员卡 | 船只牌照 | 钓鱼证 |
 | 全称 | Pleasure Craft Operator Card | Pleasure Craft Licence | Outdoors Card + Fishing Licence |
-| 管理机构 | 加拿大交通部 (Transport Canada) | 加拿大交通部 | 安省自然资源与林业部 (MNRF) |
+| 管理机构 | 加拿大交通部 (Transport Canada) | 加拿大交通部 | 安省自然资源部 (MNR) |
 | 是关于什么 | **人**：会不会安全开船 | **船**：船身的注册号 | **行为**：允不允许钓鱼 |
 | 谁必须有 | 操作配动力的休闲船的人 | 配 10 HP 以上引擎的休闲船船主 | 18 至 64 岁安省居民 / 非居民垂钓者 |
 | 费用 | 考试 + 卡片 \$40-\$60 不等（视提供商） | **免费** | Outdoors Card + Licence 视类型而定 |
 | 有效期 | **终身** | 10 年（到期续期） | Outdoors Card 3 年，Licence 1 年 / 1 天 / 8 天等 |
-| 在哪办 | Transport Canada 认可的考试提供商 | Transport Canada 官网在线申请 | 安省 MNRF 在线 / Service Ontario |
+| 在哪办 | Transport Canada 认可的考试提供商 | Transport Canada 官网在线申请 | 安省 MNR 在线 / Service Ontario |
 | 中文支持 | 视提供商而定（建议查询 Transport Canada 认可名单） | 英 / 法文 | **有官方繁体中文摘要** |
 | 换引擎要更新吗 | 不用 | **要**（注册号挂的是船+引擎组合） | 不影响 |
 | 短期租船是否必须 | 否（用 Rental Boat Safety Checklist 代替） | 看出租船，通常船主已办 | 钓鱼就要，不钓鱼就不用 |
@@ -4242,10 +4242,10 @@ ${ZH_LANGUAGE_NOTE}
 
 ## 安省钓鱼证：Outdoors Card + Fishing Licence
 
-- **谁必须有：** 18 至 64 岁的钓鱼者（居民和非居民价格不同；部分老人有 Resident Senior 优惠；14 岁以下通常豁免，以 MNRF 当年规则为准）。
+- **谁必须有：** 18 至 64 岁的钓鱼者（居民和非居民价格不同；部分老人有 Resident Senior 优惠；14 岁以下通常豁免，以 MNR 当年规则为准）。
 - **结构：** 先办一张 **Outdoors Card**（户外活动卡，3 年有效），再加一张 **Fishing Licence**（1 年 / 8 天 / 1 天等多种类型）。
 - **官方页面（含繁体中文摘要）：** [安省钓鱼规章摘要（繁体中文）](http://www.ontario.ca/page/ontario-fishing-regulations-summary-traditional-chinese)。
-- **怎么办：** 安省 MNRF 在线申请，或在 Service Ontario / 大型户外用品店现场办理。
+- **怎么办：** 安省 MNR 在线申请，或在 Service Ontario / 大型户外用品店现场办理。
 - **关键规则：** 钓鱼时必须携带证件（电子版可接受），并遵守鱼种、季节、捕获量、长度限制。这些每年更新，必查官方页面。
 - **完全独立于 PCOC / PCL**：有钓鱼证不代表可以开船，有 PCOC 不代表可以钓鱼。
 
@@ -4292,7 +4292,7 @@ PCL = Pleasure Craft Licence，中文译为"船只牌照"，是贴在船头的�
 通常不需要。加拿大交通部允许租船公司用《Rental Boat Safety Checklist》代替 PCOC 完成短租。具体以租船公司流程为准。
 
 **Q：钓鱼证和船证可以一起办吗？**
-不可以：两套完全独立的系统，不同政府机构管理。PCOC / PCL 由加拿大交通部管，钓鱼证由安省 MNRF 管。
+不可以：两套完全独立的系统，不同政府机构管理。PCOC / PCL 由加拿大交通部管，钓鱼证由安省 MNR 管。
 
 **Q：换引擎后 PCL 一定要更新吗？**
 要。引擎 HP 变化、船主变更、地址变更都需要在 Transport Canada 在线更新 PCL 信息，免费。
@@ -4311,9 +4311,9 @@ ${ZH_LANGUAGE_NOTE}
       { question: 'PCL 中文是什么意思？', answer: 'PCL = Pleasure Craft Licence，中文译为"船只牌照"，是贴在船头的注册号，由 Transport Canada 免费签发，约 4 至 6 周下卡。' },
       { question: '船只操作员卡（PCOC）中文考试有吗？', answer: '视 Transport Canada 认可提供商而定。请直接查认可名单并联系提供商确认，我们不能保证所有提供商都有中文版考试。' },
       { question: '短期租船一定要 PCOC 吗？', answer: '通常不需要。加拿大交通部允许租船公司用《Rental Boat Safety Checklist》代替 PCOC 完成短租。具体以租船公司流程为准。' },
-      { question: '钓鱼证和船证可以一起办吗？', answer: '不可以：两套独立系统。PCOC / PCL 由加拿大交通部管，钓鱼证由安省自然资源与林业部（MNRF）管。' },
+      { question: '钓鱼证和船证可以一起办吗？', answer: '不可以：两套独立系统。PCOC / PCL 由加拿大交通部管，钓鱼证由安省自然资源部（MNR）管。' },
       { question: '换引擎后 PCL 一定要更新吗？', answer: '要。引擎 HP 变化、船主变更、地址变更都需要在 Transport Canada 在线更新 PCL 信息，仍然免费。' },
-      { question: '14 岁以下儿童钓鱼要证吗？', answer: '通常豁免，但规则每年可能更新，出发前以 MNRF 当年规章为准。' },
+      { question: '14 岁以下儿童钓鱼要证吗？', answer: '通常豁免，但规则每年可能更新，出发前以 MNR 当年规章为准。' },
     ],
   },
 

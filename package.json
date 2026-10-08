@@ -31,6 +31,7 @@
     "check:blog-hreflang-registry": "tsx scripts/check-blog-hreflang-registry.ts",
     "check:blog-section-cards": "tsx scripts/check-blog-section-card-headings.ts",
     "check:blog-range-integrity": "node scripts/check-blog-range-integrity.mjs",
+    "check:blog-fact-drift": "node scripts/check-blog-fact-drift.mjs",
     "check:blog-internal-links": "tsx scripts/check-blog-internal-link-graph.ts",
     "rewrite:agent-urls": "node scripts/rewrite-agent-urls.mjs",
     "check:blog-assets": "node scripts/check-blog-asset-existence.mjs",

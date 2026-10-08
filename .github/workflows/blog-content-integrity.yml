@@ -75,6 +75,8 @@ jobs:
         run: npm run check:blog-section-cards
       - name: Range integrity
         run: npm run check:blog-range-integrity
+      - name: Fact drift
+        run: npm run check:blog-fact-drift
       - name: Internal link graph
         run: npm run check:blog-internal-links
       - name: Mandarin Markdown structure

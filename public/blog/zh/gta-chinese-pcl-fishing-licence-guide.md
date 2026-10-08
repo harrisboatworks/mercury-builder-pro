@@ -131,7 +131,7 @@ Outdoors Card 3 年有效, Fishing Licence 1 年。Sport (运动) 还是 Conserv
 
 ## 三、安省钓鱼证（Ontario Fishing Licence）
 
-颁发机构：**Ontario Ministry of Natural Resources and Forestry（MNRF）**，购买入口：[ontario.ca/page/fishing-licence](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees)。
+颁发机构：**Ontario Ministry of Natural Resources（MNR）**，购买入口：[ontario.ca/page/fishing-licence](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees)。
 
 ### 常见组合：Outdoors Card + Fishing Licence
 
@@ -151,7 +151,7 @@ Outdoors Card 3 年有效, Fishing Licence 1 年。Sport (运动) 还是 Conserv
 - **Sport Licence（运动证）：** 持有量和日捕量限额较高，适合认真钓鱼的人。
 - **Conservation Licence（保育证）：** 限额减半，价格较低，适合偶尔钓的家庭。
 
-具体价格每年由 MNRF 调整，请以 Ontario.ca 上的当下价格为准。
+具体价格每年由 MNR 调整，请以 Ontario.ca 上的当下价格为准。
 
 ### 哪里买
 
@@ -163,7 +163,7 @@ Outdoors Card 3 年有效, Fishing Licence 1 年。Sport (运动) 还是 Conserv
 
 ## 四、Rice Lake 特定钓鱼规则
 
-Rice Lake 属于安省 Fisheries Management Zone（FMZ），具体的鱼种季节、尺寸限制、持有量每年由 MNRF 更新。最常见的目标鱼种：
+Rice Lake 属于安省 Fisheries Management Zone（FMZ），具体的鱼种季节、尺寸限制、持有量每年由 MNR 更新。最常见的目标鱼种：
 
 - **碧古鱼 (Walleye)：** 有季节窗口和尺寸限制（slot size），具体数字每年可能调整
 - **Smallmouth / Largemouth Bass（鲈鱼）：** 通常有禁渔期（春季产卵期）和持有量限制
@@ -188,7 +188,7 @@ Rice Lake 属于安省 Fisheries Management Zone（FMZ），具体的鱼种季�
 
 ## 六、罚款与风险
 
-被检查时拿不出有效的操作员资格证明、需要的 Pleasure Craft Licence 或安省钓鱼资格，可能被开告票或面临其他执法后果。具体项目和金额请参考 [Transport Canada](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc) 和 [Ontario MNRF](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees) 的当前官方信息。
+被检查时拿不出有效的操作员资格证明、需要的 Pleasure Craft Licence 或安省钓鱼资格，可能被开告票或面临其他执法后果。具体项目和金额请参考 [Transport Canada](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc) 和 [Ontario MNR](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees) 的当前官方信息。
 
 不要用旧帖中的课程价格或罚款金额做决定。先把需要的证件、船牌和当年钓鱼规则确认清楚，再出发。
 
@@ -252,7 +252,7 @@ Rice Lake 属于安省 Fisheries Management Zone（FMZ），具体的鱼种季�
 
 ### 安省钓鱼证多少钱？分几种？
 
-安省钓鱼证由 Outdoors Card（3 年有效）和 Fishing Licence Tag（年度）两部分组成，分 Sport（运动证，限额高）和 Conservation（保育证，限额减半，价格较低）。具体价格每年由 MNRF 调整，请到 ontario.ca/page/fishing-licence 查询当下价格。
+安省钓鱼证由 Outdoors Card（3 年有效）和 Fishing Licence Tag（年度）两部分组成，分 Sport（运动证，限额高）和 Conservation（保育证，限额减半，价格较低）。具体价格每年由 MNR 调整，请到 ontario.ca/page/fishing-licence 查询当下价格。
 
 ### Rice Lake 的 walleye / 碧古鱼 规定是什么？
 
@@ -260,7 +260,7 @@ Rice Lake 属于安省 Fisheries Management Zone（FMZ），具体的鱼种季�
 
 ### 没有船驾照或钓鱼证被查到会怎样？
 
-可能被加拿大海岸警卫队、OPP 海上巡逻或 MNRF 巡查员开告票，罚款可达数百加元，严重情况下还可能没收渔获或暂时禁止使用船只。具体金额以 Transport Canada 和 Ontario MNRF 官方为准。
+可能被加拿大海岸警卫队、OPP 海上巡逻或 MNR 巡查员开告票，罚款可达数百加元，严重情况下还可能没收渔获或暂时禁止使用船只。具体金额以 Transport Canada 和 Ontario MNR 官方为准。
 
 ## Next steps
 
