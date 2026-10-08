@@ -26659,12 +26659,12 @@ Harris Boat Works sells, installs and services Mercury outboards in Gores Landin
     relatedSlugs: ['mercury-115-hp-fourstroke-review-ontario', 'mercury-150-300hp-pro-xs-performance-guide', 'fourstroke-vs-pro-xs', 'mercury-propeller-selection-guide', 'how-to-choose-right-horsepower-boat'],
     title: 'Mercury 150 HP Review: FourStroke vs Pro XS',
     seoTitle: 'Mercury 150 HP Review: FourStroke vs Pro XS',
-    description: "An honest Mercury 150 HP review for Ontario, comparing the current FourStroke and Pro XS with exact specs, freshwater tests and candid buyer advice.",
+    description: "Mercury 150 Pro XS vs 150 FourStroke: same 3.0L inline-four, near-identical weight, different gearing and rpm range, and which one suits your Ontario boat.",
     image: "/lovable-uploads/blog-heroes-2026-07/batch-c/hero-mercury-150-fourstroke-pro-xs-review-2026-07.webp",
     imageAlt: "Mercury 150 Pro XS powering a Ranger 1782 aluminum fishing boat on fresh water",
     author: "Harris Boat Works",
     datePublished: "2026-07-26",
-    dateModified: "2026-09-11",
+    dateModified: "2026-10-08",
     publishDate: "2026-07-26",
     category: "Mercury Buying Guides",
     readTime: "18 min read",
@@ -26678,6 +26678,8 @@ Harris Boat Works sells, installs and services Mercury outboards in Gores Landin
       { question: "Can Mercury Boost be installed on a 150 FourStroke or 150 Pro XS?", answer: "No. Mercury's current Boost compatibility begins at 175 HP in the recreational FourStroke and Pro XS ranges. Mercury Racing's 150R is listed separately and is not the same motor as the recreational 150 Pro XS." },
       { question: "Is the Mercury 150 reliable?", answer: "The standard 3.0-litre platform reached the North American market in 2012, and the 150 Pro XS version arrived in 2018. Public owner material includes serious individual failures as well as many trouble-free reports, but we did not find documented evidence establishing a recurring current-generation defect strong enough to warn buyers away. That is not a guarantee, and service history, warranty status, maintenance, fuel, battery capacity, propeller setup and cooling-system care still matter." },
       { question: "What does a Mercury 150 cost in Canada?", answer: "The price depends on model, shaft length, rigging and current Canadian programs. The Pro XS generally carries a premium over the standard FourStroke, so compare the current difference against the performance hardware your boat can actually use. This review does not freeze a price that will go stale. Use the live HBW Canadian pricing reference, then build a complete quote that includes the actual controls, propeller, installation and eligible programs." },
+      { question: "How much does a Mercury 150 Pro XS weigh?", answer: "Mercury lists the lightest 150 Pro XS configuration at 207 kg (456 lb), essentially the same as the lightest standard 150 FourStroke at 206 kg (455 lb). Shaft length and configuration change the exact number, so check the quoted model code against your boat's capacity plate and transom rating before you buy." },
+      { question: "Is an older Mercury 150 Pro XS, like a 2022, the same engine as a new one?", answer: "The 150 Pro XS has been built on the same 3.0-litre inline-four platform since it arrived in 2018, so a recent used one shares the core engine family with a new one. The individual motor is what you are buying, though: verify the serial number, remaining warranty, service records, engine hours and fault history, then inspect and water test it. If you would rather repower with a new 150 and a 3-year factory warranty, build a quote at mercuryrepower.ca or call 905-342-2153." },
     ],
     citations: [
       {
