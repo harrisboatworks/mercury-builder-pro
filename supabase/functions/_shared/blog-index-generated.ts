@@ -3754,7 +3754,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "How much does Mercury rigging cost in Ontario?",
-        "a": "For a typical mid-range repower (60-115 HP), expect CAD $2,000-$4,000 in rigging on top of the motor price. For a V6 repower (150-225 HP), expect CAD $3,500-$7,500. The range covers controls, steering, gauges, wiring, and prop. See the matrix above for per-HP-class detail. Real all-in costs are at [mercury-outboard-ri…"
+        "a": "For a typical mid-range repower (60-115 HP), expect CAD $2,000-$4,000 in rigging on top of the motor price. For a 150 to 225 HP repower, expect CAD $3,500-$7,500. The range covers controls, steering, gauges, wiring, and prop. See the matrix above for per-HP-class detail. Real all-in costs are at [mercury-outboard-rigg…"
       },
       {
         "q": "Do I need DTS on a single-engine V6?",
