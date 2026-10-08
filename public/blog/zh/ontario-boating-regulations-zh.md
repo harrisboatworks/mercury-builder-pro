@@ -96,6 +96,11 @@ Rice Lake 属于安大略 Fisheries Management Zone 17（FMZ 17）。Walleye（�
 - [GTA 华人船主冬储完整指南](/blog/zh/gta-chinese-rice-lake-winter-storage-complete-guide)
 - [GTA 华人 Mercury 服务与换机指南](/blog/zh/mercury-repower-guide-gta)
 
+## 相关指南
+
+- [GTA 华人 PCOC 操作员卡、PCL 船牌与安省钓鱼证指南](/blog/zh/gta-chinese-pcl-fishing-licence-guide)
+- [莱斯湖 钓鱼指南（2026）：FMZ 17 鱼种、鱼牌与出发清单](/blog/zh/rice-lake-fishing-guide-toronto-chinese)
+
 ## FAQs
 
 ### PCOC考试难吗？

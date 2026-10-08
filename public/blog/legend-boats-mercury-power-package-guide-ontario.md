@@ -116,7 +116,7 @@ Best-value pontoon line. **2-tube standard** with optional 3-tube on the 21. Mer
 
 **Best for:** First-time pontoon buyers, weekend cottage families, anyone who wants the pontoon experience without premium pricing.
 
-![Legend pontoon with Mercury 115 Command Thrust cruising Kawartha lake](/lovable-uploads/inline/inline-legend-pontoon-cruising.png)
+![Navy and white pontoon with a tan bimini top planing across a lake at sunset, small black Mercury outboard on the stern](/lovable-uploads/inline/inline-legend-pontoon-cruising.png)
 
 ### Q Series, premium comfort pontoons, 21-23 ft
 

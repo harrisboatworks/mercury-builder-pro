@@ -10,6 +10,7 @@ export const spanishBlogArticles: BlogArticle[] = [
     title: 'Guía completa para comprar un bote en Ontario',
     description: 'Guía práctica para comprar un bote en Ontario: requisitos legales (PCOC, PCL), tipos de embarcación, opciones de compra y costos anuales reales en dólares.',
     image: '/lovable-uploads/es-guia-comprar-bote-ontario-hero.png',
+    imageAlt: 'Mujer con polo azul marino muestra a una familia de tres un bote de aluminio con motor Mercury FourStroke negro en una marina',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
     dateModified: '2026-10-04',
@@ -185,7 +186,16 @@ Usa el configurador en **mercuryrepower.ca**, precios reales, sin llamadas telef
 Harris Boat Works
 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 harrisboatworks.ca
----`,
+---
+
+## Guías relacionadas
+
+- [Guía de pesca en Rice Lake, Ontario](/blog/es/guia-pesca-rice-lake-ontario)
+- [Licencia de navegación y regulaciones de seguridad en Ontario](/blog/es/licencia-navegacion-ontario-regulaciones)
+- [Mercury 115 vs 150 HP: Comparación completa para remotorización](/blog/es/mercury-115-vs-150-comparacion)
+- [Guía de preparación invernal para motores Mercury en Ontario](/blog/es/preparacion-invernal-motor-mercury)
+- [Remotorización vs bote nuevo: ¿Cuál es la mejor inversión?](/blog/es/remotorizacion-vs-bote-nuevo)
+`,
     faqs: [
       { question: '¿Necesito una licencia para conducir un bote en Ontario?', answer: 'Para manejar una embarcación de recreo motorizada necesita una prueba de competencia reconocida. La PCOC (Pleasure Craft Operator Card) es la forma más habitual; Transport Canada también acepta otras pruebas en determinados casos. Se obtiene una sola vez y es válida de por vida.' },
       { question: '¿Cuánto cuesta mantener un bote al año?', answer: 'Depende del tamaño y el uso, pero para un bote típico de 16-18 pies, considere entre $3,000 y $7,000 CAD al año incluyendo almacenamiento, combustible, seguro y mantenimiento.' },
@@ -199,6 +209,7 @@ harrisboatworks.ca
     title: 'Guía de pesca en Rice Lake, Ontario',
     description: 'Guía completa de pesca en Rice Lake: especies (walleye, bass, muskie, perch), temporadas FMZ 17, licencias, mejores zonas y alquiler de botes en Harris.',
     image: '/lovable-uploads/es-guia-pesca-rice-lake-ontario-hero.png',
+    imageAlt: 'Manos sostienen un walleye sobre la tabla de medir de un bote de aluminio con motor Mercury FourStroke negro',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
     dateModified: '2026-10-06',
@@ -363,7 +374,16 @@ Configura tu presupuesto en **mercuryrepower.ca**, 3 minutos, sin presión.
 Harris Boat Works
 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 harrisboatworks.ca | 905-342-2153
----`,
+---
+
+## Guías relacionadas
+
+- [Guía completa para comprar un bote en Ontario](/blog/es/guia-comprar-bote-ontario)
+- [Licencia de navegación y regulaciones de seguridad en Ontario](/blog/es/licencia-navegacion-ontario-regulaciones)
+- [Mercury 115 vs 150 HP: Comparación completa para remotorización](/blog/es/mercury-115-vs-150-comparacion)
+- [Guía de preparación invernal para motores Mercury en Ontario](/blog/es/preparacion-invernal-motor-mercury)
+- [Remotorización vs bote nuevo: ¿Cuál es la mejor inversión?](/blog/es/remotorizacion-vs-bote-nuevo)
+`,
     faqs: [
       { question: '¿Necesito una licencia de pesca?', answer: 'Sí, si es residente de Canadá y tiene entre 18 y 64 años. La mayoría de los no residentes de Canadá también la necesitan, incluso a los 65 años o más. Los residentes de Canadá menores de 18 años o de 65 o más están exentos si llevan una identificación oficial con su nombre y fecha de nacimiento.' },
       { question: '¿Puedo alquilar un bote en Rice Lake?', answer: 'Sí. Harris Boat Works tiene una flota de 9 botes de alquiler. Consulte harrisboatworks.ca.' },
@@ -377,6 +397,7 @@ harrisboatworks.ca | 905-342-2153
     title: 'Guía de preparación invernal para motores Mercury en Ontario',
     description: 'Guía paso a paso para la preparación invernal (winterization) de motores Mercury en Ontario: estabilización de combustible, fogging.',
     image: '/lovable-uploads/es-preparacion-invernal-motor-mercury-hero.png',
+    imageAlt: 'Hombre con gorro y chaqueta marrón junto a un motor Mercury FourStroke en un soporte, con botes envueltos al fondo',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
     dateModified: '2026-09-06',
@@ -520,7 +541,16 @@ Depende del motor y el bote. En general, entre dos y cuatro horas en taller.
 ---
 
 *Guías relacionadas (en inglés): Should I repower or buy a new boat? | Ontario Mercury Outboard Price Guide | Mercury 90 HP FourStroke review*
----`,
+---
+
+## Guías relacionadas
+
+- [Guía completa para comprar un bote en Ontario](/blog/es/guia-comprar-bote-ontario)
+- [Guía de pesca en Rice Lake, Ontario](/blog/es/guia-pesca-rice-lake-ontario)
+- [Licencia de navegación y regulaciones de seguridad en Ontario](/blog/es/licencia-navegacion-ontario-regulaciones)
+- [Mercury 115 vs 150 HP: Comparación completa para remotorización](/blog/es/mercury-115-vs-150-comparacion)
+- [Remotorización vs bote nuevo: ¿Cuál es la mejor inversión?](/blog/es/remotorizacion-vs-bote-nuevo)
+`,
     faqs: [
       { question: '¿Cuánto cuesta una preparación invernal profesional?', answer: 'El precio varía según el motor y los servicios requeridos. Contacte a hbwservice.ca para una estimación.' },
       { question: '¿Cuándo debo solicitar la preparación invernal?', answer: 'Complete hbwservice.ca y deje el bote en cualquier momento, incluso fuera de horario. La marina cierra del 1 de diciembre al 1 de abril.' },
@@ -534,6 +564,7 @@ Depende del motor y el bote. En general, entre dos y cuatro horas en taller.
     seoTitle: 'Mercury 115 vs 150 HP: comparación completa',
     description: 'Comparación detallada entre Mercury 115 FourStroke (2,1L) y 150 FourStroke (3,0L): especificaciones, rendimiento, peso.',
     image: '/lovable-uploads/es-mercury-115-vs-150-comparacion-hero.png',
+    imageAlt: 'Dos motores fuera de borda Mercury FourStroke de 115 y 150 HP sobre soportes cromados en una sala luminosa',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
     dateModified: '2026-09-06',
@@ -678,7 +709,16 @@ Usa el configurador en **mercuryrepower.ca** para ver precios reales del 115 y 1
 
 Harris Boat Works, Gores Landing, Ontario
 harrisboatworks.ca | Rice Lake
----`,
+---
+
+## Guías relacionadas
+
+- [Guía completa para comprar un bote en Ontario](/blog/es/guia-comprar-bote-ontario)
+- [Guía de pesca en Rice Lake, Ontario](/blog/es/guia-pesca-rice-lake-ontario)
+- [Licencia de navegación y regulaciones de seguridad en Ontario](/blog/es/licencia-navegacion-ontario-regulaciones)
+- [Guía de preparación invernal para motores Mercury en Ontario](/blog/es/preparacion-invernal-motor-mercury)
+- [Remotorización vs bote nuevo: ¿Cuál es la mejor inversión?](/blog/es/remotorizacion-vs-bote-nuevo)
+`,
     faqs: [
       { question: '¿El 150 consume mucho más que el 115?', answer: 'En la práctica, el 150 suele consumir más combustible, pero la diferencia real depende mucho del casco, la hélice, la carga y la velocidad de crucero. Un 115 sobrecargado puede consumir tanto como un 150 con carga normal.' },
       { question: '¿Los dos motores usan las mismas piezas?', answer: 'No. Los bloques son diferentes. Pero ambos son de la familia Mercury FourStroke y comparten la misma red de servicio.' },
@@ -691,6 +731,7 @@ harrisboatworks.ca | Rice Lake
     title: 'Remotorización vs bote nuevo: ¿Cuál es la mejor inversión?',
     description: 'Análisis completo: remotorización (repower) con motor Mercury nuevo vs comprar un bote nuevo.',
     image: '/lovable-uploads/es-remotorizacion-vs-bote-nuevo-hero.png',
+    imageAlt: 'Motor Mercury FourStroke 150 montado en una lancha antigua blanca y azul sobre soportes dentro de un taller',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
     dateModified: '2026-10-02',
@@ -833,7 +874,16 @@ Para reparaciones e instalaciones de motores, trabajamos exclusivamente con Merc
 ---
 
 *Guías relacionadas (en inglés): Should I repower or buy a new boat? | Ontario Mercury Outboard Price Guide | Mercury 90 HP FourStroke review*
----`,
+---
+
+## Guías relacionadas
+
+- [Guía completa para comprar un bote en Ontario](/blog/es/guia-comprar-bote-ontario)
+- [Guía de pesca en Rice Lake, Ontario](/blog/es/guia-pesca-rice-lake-ontario)
+- [Licencia de navegación y regulaciones de seguridad en Ontario](/blog/es/licencia-navegacion-ontario-regulaciones)
+- [Mercury 115 vs 150 HP: Comparación completa para remotorización](/blog/es/mercury-115-vs-150-comparacion)
+- [Guía de preparación invernal para motores Mercury en Ontario](/blog/es/preparacion-invernal-motor-mercury)
+`,
     faqs: [
       { question: '¿Cuánto cuesta una remotorización comparada con un bote nuevo?', answer: 'Depende del casco, la potencia y la instalación necesaria, y un rango genérico de ahorro no decide por usted. Compare los totales escritos completos de la remotorización y del paquete de reemplazo. Consulte mercuryrepower.ca para precios actualizados.' },
       { question: '¿Cuánto tiempo toma una remotorización?', answer: 'El plazo real depende de la temporada, disponibilidad del motor y carga de trabajo del taller. La ventana de instalación se confirma después de revisar la embarcación y las piezas necesarias.' },
@@ -847,6 +897,7 @@ Para reparaciones e instalaciones de motores, trabajamos exclusivamente con Merc
     seoTitle: 'Licencia de navegación y seguridad en Ontario',
     description: 'Guía completa sobre la PCOC, PCL, equipo de seguridad obligatorio y regulaciones de navegación en Ontario.',
     image: '/lovable-uploads/hero-boating-safety-gear-es-2026.png',
+    imageAlt: 'Dos chalecos salvavidas rojo y azul, cuerda amarilla, silbato naranja y linterna sobre una cubierta de madera gastada',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
     dateModified: '2026-10-04',
@@ -1040,7 +1091,16 @@ Si estás pensando en un motor nuevo o en repotenciar tu embarcación, usa el co
 Harris Boat Works
 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 harrisboatworks.ca
----`,
+---
+
+## Guías relacionadas
+
+- [Guía completa para comprar un bote en Ontario](/blog/es/guia-comprar-bote-ontario)
+- [Guía de pesca en Rice Lake, Ontario](/blog/es/guia-pesca-rice-lake-ontario)
+- [Mercury 115 vs 150 HP: Comparación completa para remotorización](/blog/es/mercury-115-vs-150-comparacion)
+- [Guía de preparación invernal para motores Mercury en Ontario](/blog/es/preparacion-invernal-motor-mercury)
+- [Remotorización vs bote nuevo: ¿Cuál es la mejor inversión?](/blog/es/remotorizacion-vs-bote-nuevo)
+`,
     faqs: [
       { question: '¿Mi licencia de conducir de vehículo reemplaza la PCOC?', answer: 'No. Son dos certificaciones distintas. Su licencia de conducir no tiene validez en el agua.' },
       { question: '¿La PCOC es válida en otras provincias?', answer: 'Sí. Es una certificación federal, válida en todo Canadá.' },

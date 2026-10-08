@@ -208,6 +208,13 @@ Mercury 或 MerCruiser 需要保养、诊断或维修时，到 [hbwservice.ca](h
 
 地址：5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 
+## 相关指南
+
+- [Mercury 船外机故障排查中文指南](/blog/zh/mercury-outboard-troubleshooting-chinese-ontario)
+- [安省船主冬化与室外冬储清单：什么时候送、要做什么](/blog/zh/ontario-boat-winterization-guide-chinese)
+- [安省华人船主春季开船检查清单](/blog/zh/ontario-spring-boat-checklist-chinese)
+- [加拿大加油指南：Mercury 船外机加 87 还是 91？国内 92 号汽油怎么换算](/blog/zh/mercury-fuel-octane-ethanol-chinese-guide)
+
 ## FAQs
 
 ### HBW 给 Yamaha 或 Honda 发动机做维修吗？

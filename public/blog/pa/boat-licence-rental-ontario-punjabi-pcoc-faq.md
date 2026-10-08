@@ -69,6 +69,11 @@ Supervisor ਕੋਲ ਜ਼ਰੂਰੀ valid PCOC ਹੋਣੀ ਚਾਹੀਦ�
 
 PCOC rules ਨੂੰ ਔਖਾ ਨਾ ਸਮਝੋ; ਪਹਿਲਾ ਕਦਮ safety information ਸਮਝਣਾ ਹੈ। Rice Lake, Gores Landing (5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0) Toronto area ਤੋਂ 90 minutes ਦੂਰ, Brampton, Mississauga, Scarborough, Markham ਵਾਲਿਆਂ ਲਈ simple day trip ਹੈ। rental booking ਲਈ rent page ਖੋਲ੍ਹੋ: [Harris Boat Works rentals](https://harrisboatworks.ca/rentals)। service request ਭੇਜਣੀ ਹੈ: hbwservice.ca। December 1 to April 1 ਅਸੀਂ winter break ਵਿੱਚ ਬੰਦ ਰਹਿੰਦੇ ਹਾਂ, oh season Rice Lake ’ਤੇ ਨਹੀਂ ਚੱਲਦਾ।
 
+## ਸੰਬੰਧਿਤ ਗਾਈਡ
+
+- [Mercury outboard motor di keemat Canada vich | ਮਰਕਰੀ ਆਊਟਬੋਰਡ ਕੀਮਤ ਗਾਈਡ Ontario](/blog/pa/mercury-outboard-prices-ontario-punjabi)
+- [Ontario Fishing Licence ki hai te kiven laiye | ਓਨਟਾਰੀਓ ਫਿਸ਼ਿੰਗ ਲਾਇਸੰਸ ਗਾਈਡ](/blog/pa/ontario-fishing-licence-punjabi-guide)
+
 ## FAQs
 
 ### Ontario vich boat chalaun lai license kinj banayiye?

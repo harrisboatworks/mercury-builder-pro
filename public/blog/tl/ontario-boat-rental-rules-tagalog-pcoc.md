@@ -106,6 +106,11 @@ Para sa service requests: [hbwservice.ca](https://hbwservice.ca)
 
 Matatagpuan kami sa: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. Tandaan lang, sarado ang marina mula December 1 hanggang April 1. Inaasahan ka namin, magkita tayo sa Rice Lake!
 
+## Mga kaugnay na gabay
+
+- [First-time fishing sa Rice Lake mula Toronto: Family Guide](/blog/tl/first-time-fishing-rice-lake-tagalog-family-guide)
+- [Outboard motor service at winterization sa Ontario (Tagalog Guide)](/blog/tl/outboard-service-winterization-tagalog)
+
 ## FAQs
 
 ### Kailangan ba ng boat license para magmaneho ng HBW rental boat?

@@ -125,7 +125,7 @@ For engine-specific requirements, use the owner’s manual for the exact serial 
 
 ---
 
-![Fiberglass bowrider mid-shrinkwrap in a Canadian marina yard](/lovable-uploads/inline/inline-shrinkwrap-process.png)
+![Boat on a trailer in a leafy yard, loosely draped in white wrap, with a heat tool and toolbox on the gravel](/lovable-uploads/inline/inline-shrinkwrap-process.png)
 
 ## What Happens During the Winter Closure
 

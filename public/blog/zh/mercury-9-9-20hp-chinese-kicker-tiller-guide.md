@@ -143,6 +143,12 @@ Transport Canada规定，有引擎的休闲船如果马力达到特定门槛，�
 Harris Boat Works，自1947年起家族经营，自1965年起为 Mercury 经销商，现为 Mercury Marine Premier Dealer，位于Rice Lake南岸Gores Landing。
 ---
 
+## 相关指南
+
+- [40 到 60 匹 Mercury：铝船与华人钓友最常问的马力区间](/blog/zh/mercury-40-60hp-chinese-fishing-boat-guide)
+- [加拿大加油指南：Mercury 船外机加 87 还是 91？国内 92 号汽油怎么换算](/blog/zh/mercury-fuel-octane-ethanol-chinese-guide)
+- [Mercury 引擎家族对比 (中文版)：FourStroke vs Pro XS vs Verado](/blog/zh/mercury-fourstroke-pro-xs-verado-chinese-comparison)
+
 ## FAQs
 
 ### 9.9HP 适合两个人钓鱼吗？

@@ -101,6 +101,11 @@ HBW 的 Lightspeed 记录显示，有 **2025 年 8 月至 11 月完成的 584 �
 - [GTA 华人船主冬储完整指南（HBW 收缩膜方案、价格、流程）](/blog/zh/gta-chinese-rice-lake-winter-storage-complete-guide)
 - [GTA 华人 Mercury 服务与换机指南](/blog/zh/gta-chinese-mercury-service-guide)
 
+## 相关指南
+
+- [安省华人船主春季开船检查清单](/blog/zh/ontario-spring-boat-checklist-chinese)
+- [Mercury 船外机故障排查中文指南](/blog/zh/mercury-outboard-troubleshooting-chinese-ontario)
+
 ## FAQs
 
 ### 安省 船 冬季保养 中文：HBW 提供室内冬储吗？

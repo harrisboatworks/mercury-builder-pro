@@ -225,6 +225,13 @@ Harris Boat Works 自 1947 年起由家族经营，现已传至第三代。
 
 Harris Boat Works 目前是 Mercury Marine Premier 认证经销商。
 
+## 相关指南
+
+- [GTA 华人 PCOC 操作员卡、PCL 船牌与安省钓鱼证指南](/blog/zh/gta-chinese-pcl-fishing-licence-guide)
+- [安省驾船法规中文指南（2026）：PCOC、PCL、安全装备与钓鱼证](/blog/zh/ontario-boating-regulations-zh)
+- [多伦多华人第一次租船钓鱼：证件、安全和当天流程](/blog/zh/first-boat-rental-rice-lake-chinese-guide)
+- [GTA 到 莱斯湖 租船一日游：预订、证件与当天清单](/blog/zh/gta-chinese-rice-lake-day-trip-plan)
+
 ## FAQs
 
 ### 在安省租船一定要有 PCOC 吗？

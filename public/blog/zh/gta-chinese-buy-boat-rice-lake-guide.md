@@ -243,6 +243,10 @@ Harris Boat Works 自 1947 年起一直由 Harris 家族在 Rice Lake 经营。�
 
 地址：5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 
+## 相关指南
+
+- [Pontoon 还是钓鱼船？6-8 人 GTA 华人家庭船型选择指南](/blog/zh/pontoon-vs-fishing-boat-6-8-people-zh)
+
 ## FAQs
 
 ### 从多伦多开车到 Rice Lake 要多久？路线推荐？

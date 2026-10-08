@@ -84,6 +84,13 @@ Si vous remotorisez et que vous n'êtes pas certain que votre tableau arrière p
 
 Harris Boat Works : entreprise familiale depuis 1947, concessionnaire Mercury depuis 1965, et actuellement concessionnaire Mercury Premier. Gores Landing, Ontario, sur le lac Rice.
 
+## Guides connexes
+
+- [Gamme de hors-bord Mercury 2026 pour les plaisanciers ontariens](/blog/fr/gamme-mercury-hors-bord-2026-ontario)
+- [Mercury 115 vs 150 HP : Quel moteur choisir pour votre embarcation?](/blog/fr/mercury-115-vs-150-hp-comparaison)
+- [Mercury Pro XS, FourStroke ou Verado : lequel choisir ?](/blog/fr/mercury-pro-xs-fourstroke-verado)
+- [Revue du Mercury 115 HP FourStroke : le 115 HP le plus léger disponible, et pourquoi cela compte](/blog/fr/revue-mercury-115-hp-fourstroke-ontario)
+
 ## Questions fréquentes
 
 ### Combien pèse un Mercury 115 quatre-temps ?

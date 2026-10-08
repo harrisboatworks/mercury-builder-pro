@@ -131,6 +131,13 @@ Mercury 150은 115보다 약 43kg(96lb) 무겁습니다. 수상에서 조종 특
 **주소:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 ---
 
+## 관련 가이드
+
+- [머큐리 Pro XS, FourStroke, Verado: 무엇을 고를까?](/blog/ko/mercury-pro-xs-fourstroke-verado)
+- [머큐리 선외기 무게표 (2.5~300마력)](/blog/ko/mercury-seonoegi-muge)
+- [선외기 교체(Repower) vs 새 보트 구매: 온타리오 보트 오너를 위한 현실적 비교](/blog/ko/repower-vs-new-boat)
+- [온타리오 보트 구매 완전 가이드: 첫 보트부터 엔진 교체까지](/blog/ko/ontario-boat-buying-guide)
+
 ## FAQs
 
 ### 115와 150의 연비 차이가 얼마나 되나요?

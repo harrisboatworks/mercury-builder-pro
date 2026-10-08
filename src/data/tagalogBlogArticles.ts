@@ -22,6 +22,7 @@ export const tagalogBlogArticles: Wave1Article[] = [
     seoTitle: 'First-time fishing sa Rice Lake mula Toronto: Family Guide',
     description: 'First-time fishing sa Rice Lake mula Toronto: fishing licence, boat rental, ano ang dadalhin, at mga family tip. Kumpletong Tagalog guide para sa pamilya.',
     image: '/lovable-uploads/hero-rice-lake-fishing-morning.png',
+    imageAlt: 'Lalaking naka-plaid at cap na nag-aayos ng gamit sa pangingisda sa aluminum na bangka na may Mercury 20 sa mahamog na lawa',
     author: 'Harris Boat Works',
     datePublished: '2026-06-12',
     dateModified: '2026-10-04',
@@ -126,7 +127,13 @@ Text: (647) 952-2153
 Service requests: [hbwservice.ca](https://hbwservice.ca)  
 Address: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 
-Hatid namin ang karanasan sa lawa na maaalala ng inyong pamilya, tunay, simple, at walang kaba.`
+Hatid namin ang karanasan sa lawa na maaalala ng inyong pamilya, tunay, simple, at walang kaba.
+
+## Mga kaugnay na gabay
+
+- [Boat rental rules sa Ontario: PCOC, checklist, lifejackets (Tagalog Guide)](/blog/tl/ontario-boat-rental-rules-tagalog-pcoc)
+- [Outboard motor service at winterization sa Ontario (Tagalog Guide)](/blog/tl/outboard-service-winterization-tagalog)
+`
   },
   {
     slug: 'ontario-boat-rental-rules-tagalog-pcoc',
@@ -134,6 +141,7 @@ Hatid namin ang karanasan sa lawa na maaalala ng inyong pamilya, tunay, simple, 
     seoTitle: 'Boat rental rules sa Ontario: PCOC, checklist, lifejackets (Tagalog Guide)',
     description: 'Kailangan ba ng PCOC para mag-rent ng boat sa Ontario? Rental rules, lifejacket requirements, at checklist bago bumangka. Tagalog guide para sa pamilya mo.',
     image: '/lovable-uploads/hero-first-time-boat-rental.webp',
+    imageAlt: 'Amang nasa timon ng pontoon boat na may mapa sa console, at ina at tatlong batang naka-orange na lifejacket sa harap',
     author: 'Harris Boat Works',
     datePublished: '2026-06-12',
     dateModified: '2026-10-04',
@@ -254,7 +262,13 @@ Para sa ibang tanong, tawagan o i-text kami:
 📱 Text: (647) 952-2153  
 Para sa service requests: [hbwservice.ca](https://hbwservice.ca)
 
-Matatagpuan kami sa: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. Tandaan lang, sarado ang marina mula December 1 hanggang April 1. Inaasahan ka namin, magkita tayo sa Rice Lake!`
+Matatagpuan kami sa: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. Tandaan lang, sarado ang marina mula December 1 hanggang April 1. Inaasahan ka namin, magkita tayo sa Rice Lake!
+
+## Mga kaugnay na gabay
+
+- [First-time fishing sa Rice Lake mula Toronto: Family Guide](/blog/tl/first-time-fishing-rice-lake-tagalog-family-guide)
+- [Outboard motor service at winterization sa Ontario (Tagalog Guide)](/blog/tl/outboard-service-winterization-tagalog)
+`
   },
   {
     slug: 'outboard-service-winterization-tagalog',
@@ -262,6 +276,7 @@ Matatagpuan kami sa: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. Tanda
     seoTitle: 'Outboard motor service at winterization sa Ontario (Tagalog Guide)',
     description: 'Outboard motor service at winterization sa Ontario: kailan, bakit, at saan magpapa-service ng Mercury motor mo. Tagalog guide mula sa Rice Lake na marina.',
     image: '/lovable-uploads/diy-mercury-winterization-hero.jpg',
+    imageAlt: 'Lalaking naka-pulang plaid sa garahe na nag-aalis ng langis sa Mercury FourStroke na nasa stand, may torque wrench sa mesa',
     author: 'Harris Boat Works',
     datePublished: '2026-06-12',
     dateModified: '2026-09-06',
@@ -381,7 +396,12 @@ Handa na ang bangka mo para sa summer? O kailangan na ng winterization bago huma
 - 📱 Text: (647) 952-2153
 - 🔧 Mag-request ng serbisyo: https://hbwservice.ca
 
-Mula pa noong 1947, nagsisilbi na kami sa mga boat owner sa Ontario. Family-owned, Mercury-certified, at kayang maghintay kahit may kaunting translation challenge. Sama-sama nating siguraduhing laging handang umandar ang bangka mo.`
+Mula pa noong 1947, nagsisilbi na kami sa mga boat owner sa Ontario. Family-owned, Mercury-certified, at kayang maghintay kahit may kaunting translation challenge. Sama-sama nating siguraduhing laging handang umandar ang bangka mo.
+
+## Mga kaugnay na gabay
+
+- [First-time fishing sa Rice Lake mula Toronto: Family Guide](/blog/tl/first-time-fishing-rice-lake-tagalog-family-guide)
+`
   }
 ];
 

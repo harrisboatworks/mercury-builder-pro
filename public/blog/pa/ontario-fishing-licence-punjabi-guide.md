@@ -75,6 +75,10 @@ address: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 
 Harris Boat Works 1947 ਤੋਂ family-owned marina ਹੈ, Mercury ਡੀਲਰ 1965 ਤੋਂ, Premier Dealer। winter (1 Dec ਤੋਂ 1 Apr) ਅਸੀਂ closed ਹੁੰਦੇ ਹਾਂ। ਫ਼ਿਰ spring ’ਚ ਜ਼ਰੂਰ ਆਉਣਾ।
 
+## ਸੰਬੰਧਿਤ ਗਾਈਡ
+
+- [Mercury outboard motor di keemat Canada vich | ਮਰਕਰੀ ਆਊਟਬੋਰਡ ਕੀਮਤ ਗਾਈਡ Ontario](/blog/pa/mercury-outboard-prices-ontario-punjabi)
+
 ## FAQs
 
 ### 1. Ontario fishing license di keemat kinna hai online?

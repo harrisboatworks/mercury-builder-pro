@@ -69,6 +69,13 @@ Les modalités dépendent du produit, de l'usage et de la date d'achat. Consulte
 
 **Commencez avec les faits de votre bateau :** [bâtissez une soumission en CAD](/quote/motor-selection) ou envoyez les détails de votre bateau dans la [demande de service](https://hbwservice.ca). Les moteurs et les projets sont ramassés à Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, Ontario.
 
+## Guides connexes
+
+- [Remotorisation Mercury dans la GTA : comment un plaisancier de Toronto remotorise chez Harris Boat Works (2026)](/blog/fr/remotorisation-mercury-gta-toronto)
+- [Gamme de hors-bord Mercury 2026 pour les plaisanciers ontariens](/blog/fr/gamme-mercury-hors-bord-2026-ontario)
+- [Mercury Product Protection Platinum : couverture et prix canadiens](/blog/fr/garantie-prolongee-mercury-platinum-ontario)
+- [Guide de remotorisation Mercury : prix, délais, rentabilité](/blog/fr/prix-remotorisation-mercury-ontario)
+
 ## Questions fréquentes
 
 ### Parlez-vous français chez Harris Boat Works?

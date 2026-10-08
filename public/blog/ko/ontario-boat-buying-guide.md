@@ -168,6 +168,13 @@ HBW에서 이 서비스를 전문으로 제공하며, [mercuryrepower.ca](https:
 Harris Boat Works, Mercury Marine Premier 딜러. 1947년 창립.
 ---
 
+## 관련 가이드
+
+- [선외기 교체(Repower) vs 새 보트 구매: 온타리오 보트 오너를 위한 현실적 비교](/blog/ko/repower-vs-new-boat)
+- [온타리오 보트 면허 및 안전 규정 완전 가이드: 한인 보트 오너가 반드시 알아야 할 것들](/blog/ko/ontario-boating-licence-regulations)
+- [Mercury 115 vs 150 HP 비교 가이드: 어떤 선외기가 내 보트에 맞을까?](/blog/ko/mercury-115-vs-150-comparison)
+- [Mercury 선외기 겨울 보관 가이드: 온타리오 보트 오너를 위한 필수 정비 매뉴얼](/blog/ko/mercury-outboard-winterization-guide)
+
 ## FAQs
 
 ### 보트를 사려면 운전면허 외에 별도 면허가 필요한가요?

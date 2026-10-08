@@ -132,6 +132,13 @@ HBW 页面列出船只销售、保养维修、租船服务、冬化保养、存�
 
 HBW 自 1947 年起就在 Gores Landing、莱斯湖经营家族码头，是 Mercury Marine Premier dealer 与 Legend Boats 经销商。
 
+## 相关指南
+
+- [多伦多华人二手船购买检查清单](/blog/zh/used-boat-buying-checklist-toronto-chinese)
+- [多伦多华人在 莱斯湖 买船完整指南：从选型到交付](/blog/zh/gta-chinese-buy-boat-rice-lake-guide)
+- [GTA 华人船主冬储完整指南：HBW 室外收缩膜冬储方案、价格、流程](/blog/zh/gta-chinese-rice-lake-winter-storage-complete-guide)
+- [为什么 GTA 华人船主选择 Harris Boat Works？](/blog/zh/why-chinese-boaters-choose-harris-boat-works)
+
 ## Next steps
 
 - Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection

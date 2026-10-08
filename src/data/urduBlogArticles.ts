@@ -22,6 +22,7 @@ export const urduBlogArticles: Wave1Article[] = [
     seoTitle: 'Ontario fishing licence aur Rice Lake ke usool | اونٹاریو فشنگ لائسنس گائیڈ',
     description: 'Ontario fishing licence Urdu guide: Outdoors Card، conservation بمقابلہ sport licence، اور Rice Lake FMZ 17 کے اصول۔ اردو میں مکمل اور آسان رہنمائی پڑھیں۔',
     image: '/lovable-uploads/hero-boat-rental-licence-ontario.webp',
+    imageAlt: 'دھوپ میں پانی کے کنارے لکڑی کے پرانے ڈاک پر رکھی نارنجی لائف جیکٹ، دھوپ کا چشمہ، چابی والا فوم فلوٹ اور اسمارٹ فون',
     author: 'Harris Boat Works',
     datePublished: '2026-06-12',
     dateModified: '2026-10-06',
@@ -106,7 +107,13 @@ Harris Boat Works سے کشتی رینٹل لینا بہت آسان ہے۔ اپ�
 
 ہمارا پتہ: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 
-Harris Boat Works 1947 سے خاندانی مرینا ہے، 1965 سے Mercury کا ڈیلر اور اب Mercury Marine Premier Dealer۔ ہمارے یہاں ethanol-free ایندھن ملتا ہے اور موسم سرما میں 1 دسمبر سے 1 اپریل تک بند رہتے ہیں۔ جھیل پر ملتے ہیں، انشاء اللہ!`
+Harris Boat Works 1947 سے خاندانی مرینا ہے، 1965 سے Mercury کا ڈیلر اور اب Mercury Marine Premier Dealer۔ ہمارے یہاں ethanol-free ایندھن ملتا ہے اور موسم سرما میں 1 دسمبر سے 1 اپریل تک بند رہتے ہیں۔ جھیل پر ملتے ہیں، انشاء اللہ!
+
+## متعلقہ گائیڈز
+
+- [Boat winterization aur storage Toronto ke qareeb | کشتی کی ونٹرائزیشن اور اسٹوریج](/blog/ur/boat-winterization-storage-toronto-urdu)
+- [Canada mein purani kashti kharidne ki checklist | استعمال شدہ کشتی خریدنے کی مکمل چیک لسٹ](/blog/ur/used-boat-buying-checklist-urdu)
+`
   },
   {
     slug: 'used-boat-buying-checklist-urdu',
@@ -114,6 +121,7 @@ Harris Boat Works 1947 سے خاندانی مرینا ہے، 1965 سے Mercury �
     seoTitle: 'Canada mein purani kashti kharidne ki checklist | استعمال شدہ کشتی خریدنے کی مکمل چیک لسٹ',
     description: 'Canada mein purani kashti kharidne ki checklist: motor، transom، storage aur repower جانچ اردو میں۔ Rice Lake کے تجربہ کار marina کی طرف سے مکمل رہنمائی۔',
     image: '/lovable-uploads/hero-used-boat-walkaround.png',
+    imageAlt: 'گہری نیلی شرٹ اور کلپ بورڈ والا شخص ٹریلر پر کھڑی سفید و نیلی کشتی کے ٹرانسم اور اسٹرن ڈرائیو کو دیکھ رہا ہے',
     author: 'Harris Boat Works',
     datePublished: '2026-06-12',
     dateModified: '2026-10-06',
@@ -215,7 +223,13 @@ GTA اور اس کے ارد گرد استعمال شدہ کشتیوں کی بہ�
 
 Harris Boat Works
 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
-1947 سے خاندانی کاروبار، 1965 سے Mercury ڈیلر، آپ کی کشتی کی سمجھ بوجھ رکھنے والی جگہ۔`
+1947 سے خاندانی کاروبار، 1965 سے Mercury ڈیلر، آپ کی کشتی کی سمجھ بوجھ رکھنے والی جگہ۔
+
+## متعلقہ گائیڈز
+
+- [Boat winterization aur storage Toronto ke qareeb | کشتی کی ونٹرائزیشن اور اسٹوریج](/blog/ur/boat-winterization-storage-toronto-urdu)
+- [Ontario fishing licence aur Rice Lake ke usool | اونٹاریو فشنگ لائسنس گائیڈ](/blog/ur/ontario-fishing-licence-rice-lake-urdu)
+`
   },
   {
     slug: 'boat-winterization-storage-toronto-urdu',
@@ -223,6 +237,7 @@ Harris Boat Works
     seoTitle: 'Boat winterization aur storage Toronto ke qareeb | کشتی کی ونٹرائزیشن اور اسٹوریج',
     description: 'Boat winterization aur storage Toronto ke qareeb: کب کروائیں، کیا شامل ہوتا ہے، اور Mercury motor کی ماہر service۔ Rice Lake marina کی اردو گائیڈ پڑھیں۔',
     image: '/lovable-uploads/hero-winter-storage-shrinkwrap-vs-indoor.png',
+    imageAlt: 'برف کی ہلکی تہہ والے بجری کے صحن میں ٹریلرز پر کھڑی سفید شرنک ریپ والی کشتیوں کی قطار، پیچھے لکڑی کا کھلا شیڈ',
     author: 'Harris Boat Works',
     datePublished: '2026-06-12',
     dateModified: '2026-09-25',
@@ -315,7 +330,13 @@ HBW آؤٹ ڈور پروفیشنل shrink wrap اسٹوریج، آؤٹ ڈور ب
 سروس کی درخواست کے لیے تشریف لائیں [https://hbwservice.ca](https://hbwservice.ca)  
 فون: (905) 342-2153  
 ٹیکسٹ: (647) 952-2153  
-پتہ: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0`
+پتہ: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
+
+## متعلقہ گائیڈز
+
+- [Ontario fishing licence aur Rice Lake ke usool | اونٹاریو فشنگ لائسنس گائیڈ](/blog/ur/ontario-fishing-licence-rice-lake-urdu)
+- [Canada mein purani kashti kharidne ki checklist | استعمال شدہ کشتی خریدنے کی مکمل چیک لسٹ](/blog/ur/used-boat-buying-checklist-urdu)
+`
   }
 ];
 

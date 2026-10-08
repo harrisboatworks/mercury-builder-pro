@@ -82,6 +82,11 @@ Harris Boat Works آؤٹ ڈور پروفیشنل shrink wrap اسٹوریج، آ
 ٹیکسٹ: (647) 952-2153  
 پتہ: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 
+## متعلقہ گائیڈز
+
+- [Ontario fishing licence aur Rice Lake ke usool | اونٹاریو فشنگ لائسنس گائیڈ](/blog/ur/ontario-fishing-licence-rice-lake-urdu)
+- [Canada mein purani kashti kharidne ki checklist | استعمال شدہ کشتی خریدنے کی مکمل چیک لسٹ](/blog/ur/used-boat-buying-checklist-urdu)
+
 ## FAQs
 
 ### کشتی کی winterization کیسے ہوتی ہے؟

@@ -90,6 +90,11 @@ Address: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 
 Hatid namin ang karanasan sa lawa na maaalala ng inyong pamilya, tunay, simple, at walang kaba.
 
+## Mga kaugnay na gabay
+
+- [Boat rental rules sa Ontario: PCOC, checklist, lifejackets (Tagalog Guide)](/blog/tl/ontario-boat-rental-rules-tagalog-pcoc)
+- [Outboard motor service at winterization sa Ontario (Tagalog Guide)](/blog/tl/outboard-service-winterization-tagalog)
+
 ## FAQs
 
 ### Paano kumuha ng fishing license sa Ontario?

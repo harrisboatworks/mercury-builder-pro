@@ -126,6 +126,13 @@ harrisboatworks.ca에서 현재 재고를 확인하세요.
 
 ---
 
+## 관련 가이드
+
+- [온타리오 보트 구매 완전 가이드: 첫 보트부터 엔진 교체까지](/blog/ko/ontario-boat-buying-guide)
+- [Mercury 115 vs 150 HP 비교 가이드: 어떤 선외기가 내 보트에 맞을까?](/blog/ko/mercury-115-vs-150-comparison)
+- [머큐리 Pro XS, FourStroke, Verado: 무엇을 고를까?](/blog/ko/mercury-pro-xs-fourstroke-verado)
+- [Mercury 선외기 겨울 보관 가이드: 온타리오 보트 오너를 위한 필수 정비 매뉴얼](/blog/ko/mercury-outboard-winterization-guide)
+
 ## FAQs
 
 ### 선체 상태를 어떻게 판단하나요?

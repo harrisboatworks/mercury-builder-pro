@@ -147,6 +147,12 @@ Command Thrust主要是为Pontoon和工作船设计的齿轮箱，会牺牲一�
 Harris Boat Works，自1965年起的 Mercury 经销商，位于莱斯湖南岸Gores Landing。
 ---
 
+## 相关指南
+
+- [Lake Simcoe 华人钓友船外机指南](/blog/zh/chinese-anglers-lake-simcoe-mercury-outboard)
+- [9.9 到 20 匹 Mercury：钓鱼小船、kicker、tiller 中文指南](/blog/zh/mercury-9-9-20hp-chinese-kicker-tiller-guide)
+- [Mercury 引擎家族对比 (中文版)：FourStroke vs Pro XS vs Verado](/blog/zh/mercury-fourstroke-pro-xs-verado-chinese-comparison)
+
 ## FAQs
 
 ### 40HP 和 60HP 差很多吗？

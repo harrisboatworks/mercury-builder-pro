@@ -74,6 +74,11 @@ Harris Boat Works سے کشتی رینٹل لینا بہت آسان ہے۔ اپ�
 
 Harris Boat Works 1947 سے خاندانی مرینا ہے، 1965 سے Mercury کا ڈیلر اور اب Mercury Marine Premier Dealer۔ ہمارے یہاں ethanol-free ایندھن ملتا ہے اور موسم سرما میں 1 دسمبر سے 1 اپریل تک بند رہتے ہیں۔ جھیل پر ملتے ہیں، انشاء اللہ!
 
+## متعلقہ گائیڈز
+
+- [Boat winterization aur storage Toronto ke qareeb | کشتی کی ونٹرائزیشن اور اسٹوریج](/blog/ur/boat-winterization-storage-toronto-urdu)
+- [Canada mein purani kashti kharidne ki checklist | استعمال شدہ کشتی خریدنے کی مکمل چیک لسٹ](/blog/ur/used-boat-buying-checklist-urdu)
+
 ## FAQs
 
 ### کیا میں ہیرس بوٹ ورکس میں اردو میں سروس لے سکتا ہوں؟

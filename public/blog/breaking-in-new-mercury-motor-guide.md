@@ -124,7 +124,7 @@ When a customer picks up a new Mercury from us:
 
 ---
 
-![Black Mercury FourStroke outboard on an aluminum boat during the 10-hour engine break-in period on calm Ontario water.](/lovable-uploads/inline/inline-mercury-break-in.png)
+![Black Mercury FourStroke outboard on the transom of an aluminum boat with prop wash behind it on a misty morning lake](/lovable-uploads/inline/inline-mercury-break-in.png)
 
 ## What about used motors?
 

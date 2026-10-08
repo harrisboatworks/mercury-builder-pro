@@ -153,6 +153,13 @@ GTA 华人船主用 Verado 的场景较少 (因为大部分船 < 25 英尺)。�
 - [Pontoon 还是钓鱼船：6-8 人船型选择](/blog/zh/pontoon-vs-fishing-boat-6-8-people-zh)
 - [为什么 GTA 华人船主选择 Harris Boat Works](/blog/zh/why-chinese-boaters-choose-harris-boat-works)
 
+## 相关指南
+
+- [多伦多华人 Mercury 船外机马力选择指南：9.9、20、60、115、150HP 怎么选？](/blog/zh/mercury-outboard-horsepower-guide-toronto-chinese)
+- [Mercury 115马力 vs 150马力舷外机：如何选择？](/blog/zh/mercury-115-vs-150-comparison-zh)
+- [多伦多华人买 Mercury 船外机：为什么不要只问“最低价”？](/blog/zh/mercury-outboard-price-dealer-guide-toronto-chinese)
+- [40 到 60 匹 Mercury：铝船与华人钓友最常问的马力区间](/blog/zh/mercury-40-60hp-chinese-fishing-boat-guide)
+
 ## FAQs
 
 ### Pro XS 比 FourStroke 好吗？

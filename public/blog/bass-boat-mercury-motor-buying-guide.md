@@ -130,7 +130,7 @@ If you're considering a kicker for a backup or occasional slow-trolling use, not
 
 ---
 
-![Tournament bass boat with Mercury Pro XS and 9.9 ProKicker on a calm Ontario lake at dawn.](/lovable-uploads/inline/inline-bass-tournament.png)
+![Dark aluminum fishing boat on a misty lake at dawn with a Mercury Pro XS, a 9.9 ProKicker, rods and console electronics](/lovable-uploads/inline/inline-bass-tournament.png)
 
 ## Warranty
 

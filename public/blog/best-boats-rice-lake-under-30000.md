@@ -78,7 +78,7 @@ Used pontoons in the 18 to 22 ft range at a price that leaves repower room are c
 
 **Trade-off:** A used pontoon at this price will likely have an older motor. That is not a problem if you have accounted for a repower, but it is a problem if you assumed the motor was included in the deal.
 
-![16-foot aluminum boat with Mercury 40 outboard on Rice Lake, representing an affordable repower option under $30,000.](/lovable-uploads/inline/inline-affordable-rice-lake-boat.png)
+![Riveted aluminum fishing boat with a small black Mercury outboard, rods and a tackle box, drifting by cattails at sunset](/lovable-uploads/inline/inline-affordable-rice-lake-boat.png)
 
 ### Path 3: Clean used hull plus a Mercury repower at HBW
 

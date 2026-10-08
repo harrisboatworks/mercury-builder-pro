@@ -128,6 +128,11 @@ HBW 不做：
 - [GTA 华人船主冬储完整指南](/blog/zh/gta-chinese-rice-lake-winter-storage-complete-guide)
 - [安大略船只法规完整指南 (中文版)](/blog/zh/ontario-boating-regulations-zh)
 
+## 相关指南
+
+- [多伦多华人在 莱斯湖 买船完整指南：从选型到交付](/blog/zh/gta-chinese-buy-boat-rice-lake-guide)
+- [多伦多华人 Mercury 发动机维修保养完整指南：从机油到大修](/blog/zh/gta-chinese-mercury-service-guide)
+
 ## FAQs
 
 ### HBW 有中文销售吗？
