@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/tiller-vs-remote-steering-outboard-guide.md
-last_updated: 2026-09-11
+last_updated: 2026-10-03
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -8,10 +8,10 @@ final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
 title: "Tiller vs Remote Steering Outboard: Which to Choose (2026)"
-description: "Choose tiller or remote from helm layout, how you handle the boat, and normal use. Kickers and solo transom fishing often stay tiller; console and family boats..."
+description: "Choose tiller or remote from helm layout and how you handle the boat. Kickers and solo transom fishing often stay tiller; console and family boats usually want remote."
 category: "Buying Guide"
 date_published: 2026-04-06
-date_modified: 2026-09-11
+date_modified: 2026-10-03
 keywords: ["tiller vs remote outboard","tiller steering boat","outboard remote steering","boat steering options","mercury tiller motor"]
 author: Harris Boat Works
 content_type: blog_article
@@ -21,11 +21,11 @@ revenue_driver: repower
 
 # Tiller vs Remote Steering Outboard: Which to Choose (2026)
 
-> Choose tiller or remote from helm layout, how you handle the boat, and normal use. Kickers and solo transom fishing often stay tiller; console and family boats...
+> Choose tiller or remote from helm layout and how you handle the boat. Kickers and solo transom fishing often stay tiller; console and family boats usually want remote.
 
 **Category:** Buying Guide  
 **Published:** 2026-04-06  
-**Last reviewed:** 2026-09-11  
+**Last reviewed:** 2026-10-03  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/tiller-vs-remote-steering-outboard-guide
 
@@ -75,7 +75,7 @@ If your boat has a built-in console with windshield, you want remote. If your bo
 | Rice Lake pick | 60 HP EFI tiller (standard gearcase); ProKicker 9.9 | 90-115 HP remote |
 | Tiller-to-remote conversion | $500-$1,500+ parts + labour | - |
 
-_Prices here are planning figures as of September 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are planning figures as of October 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 ## The simple version
 
@@ -110,7 +110,7 @@ We sell both configurations at HBW. The decision comes down to honest analysis o
 **The clear no for tiller:**
 - Console boats over 16 ft, the helm exists; tiller is awkward from it
 - Family boats where the captain needs to talk to people up front
-- Higher HP motors (50+ HP) where the tiller becomes physically demanding
+- Higher HP motors (above about 60 HP) where the tiller becomes physically demanding
 
 ---
 
@@ -218,7 +218,7 @@ For fishing on Rice Lake specifically, tiller is the choice of most serious angl
 
 ### Does Mercury offer electronic or digital tiller steering?
 
-Mercury does not currently offer fully electronic or steer-by-wire tiller systems, the tiller remains a direct mechanical connection to the motor. However, Mercury's tiller-equipped motors do integrate with the SmartCraft digital ecosystem via Bluetooth: SmartCraft Connect Mobile (formerly VesselView Mobile) shows engine data, maintenance schedules, and trip information on a smartphone. The result is mechanical simplicity at the control point with digital monitoring on your phone.
+Mercury does not currently offer fully electronic or steer-by-wire tiller systems, the tiller remains a direct mechanical connection to the motor. However, Many tiller-equipped Mercury motors can connect to the SmartCraft digital ecosystem via Bluetooth with the optional SmartCraft Connect Mobile module (formerly VesselView Mobile). It works with 40 HP and larger engines from model year 2004, and 25 and 30 HP engines from 2022. The Mercury Marine app then shows live engine data, fuel burn, fault alerts and maintenance logs on a smartphone. The result is mechanical simplicity at the control point with digital monitoring on your phone.
 
 ### Is hydraulic steering worth it on a Mercury outboard, and what does it cost?
 

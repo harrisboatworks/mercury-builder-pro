@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-fuel-efficiency-guide.md
-last_updated: 2026-09-11
+last_updated: 2026-10-03
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -8,10 +8,10 @@ final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
 title: "Mercury Fuel Burn by HP: 5 Ways to Cut Gas Costs (2026)"
-description: "Real Mercury fuel burn by HP class and the five levers we adjust first at the shop. The right prop depends on hull, load, and the engine's specified WOT range..."
+description: "Mercury fuel burn by HP class and five levers we adjust first. The right prop depends on hull, load, and the engine's specified WOT range, confirmed on a measured trial."
 category: "Tips"
 date_published: 2026-03-16
-date_modified: 2026-09-11
+date_modified: 2026-10-03
 keywords: ["outboard fuel efficiency","mercury mpg","boat fuel economy","save fuel boating","outboard consumption"]
 author: Harris Boat Works
 content_type: blog_article
@@ -21,11 +21,11 @@ revenue_driver: repower
 
 # Mercury Fuel Burn by HP: 5 Ways to Cut Gas Costs (2026)
 
-> Real Mercury fuel burn by HP class and the five levers we adjust first at the shop. The right prop depends on hull, load, and the engine's specified WOT range...
+> Mercury fuel burn by HP class and five levers we adjust first. The right prop depends on hull, load, and the engine's specified WOT range, confirmed on a measured trial.
 
 **Category:** Tips  
 **Published:** 2026-03-16  
-**Last reviewed:** 2026-09-11  
+**Last reviewed:** 2026-10-03  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-fuel-efficiency-guide
 
@@ -168,7 +168,7 @@ HBW's standard repower handoff includes an on-water setup check on Rice Lake bef
 
 For engine repairs, we only service Mercury and MerCruiser.
 
-Build a package quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), or request service at [hbw.wiki/service](https://hbw.wiki/service).
+Build a package quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), or request service at [hbwservice.ca](https://hbwservice.ca).
 
 ---
 
@@ -200,7 +200,7 @@ Often yes, prop tuning, fresh plugs, cleaned injectors or carburettor, and fresh
 ---
 
 **Ready to dial in your Mercury?** 
-Whether you want a prop check, a full service, or a quote on a new motor package: [hbw.wiki/service](https://hbw.wiki/service) is where to start. Or build a motor quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
+Whether you want a prop check, a full service, or a quote on a new motor package: [hbwservice.ca](https://hbwservice.ca) is where to start. Or build a motor quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 Harris Boat Works, Gores Landing, ON | Since 1947
 
@@ -234,7 +234,7 @@ Mercury's SmartCraft system displays fuel economy in several formats: instantane
 
 ### What fuel should I use in my Mercury outboard in Ontario?
 
-Mercury recommends regular unleaded gasoline with a minimum 87 octane rating for most FourStroke and Pro XS outboards; Verado models may recommend 89 octane, check your owner's manual. In Ontario, most marina fuel is E10 (10% ethanol blend), which is approved by Mercury for current models. Ethanol-free premium marine fuel, when available, offers slightly better efficiency (3-5%) and is preferable for long-term storage situations. Never use E15 or higher ethanol blends, these are not approved for Marine use and can damage fuel system components.
+Mercury recommends regular unleaded gasoline with a minimum 87 octane rating for most FourStroke and Pro XS outboards; Verado models may recommend 89 octane, check your owner's manual. In Ontario, most marina fuel is E10 (10% ethanol blend), which is approved by Mercury for current models. Ethanol-free premium marine fuel, when available, offers slightly better efficiency (about 3% more energy per litre than E10) and is preferable for long-term storage situations. Never use E15 or higher ethanol blends, these are not approved for Marine use and can damage fuel system components.
 
 ### How much fuel does a Mercury outboard use per hour?
 
@@ -242,7 +242,7 @@ It depends mostly on horsepower, throttle setting, prop, and load, not on the ba
 
 ### Do 2-stroke or 4-stroke Mercury outboards burn less fuel?
 
-Four-strokes burn noticeably less fuel than carburetted two-strokes of the same horsepower, often a large difference at cruise, because a four-stroke does not lose unburned fuel out the exhaust the way an older two-stroke does. Mercury's current FourStroke and Pro XS engines are all four-stroke EFI designs. If you are running an older two-stroke and watching your fuel-dock bill climb, repowering to a current Mercury FourStroke is the single biggest consumption drop available. Build a repower quote at mercuryrepower.ca.
+Four-strokes burn noticeably less fuel than carburetted two-strokes of the same horsepower, often a large difference at cruise, because a four-stroke does not lose unburned fuel out the exhaust the way an older two-stroke does. Mercury's current FourStroke and Pro XS engines are all four-strokes, with electronic fuel injection on most models; the smallest portables are carbureted. If you are running an older two-stroke and watching your fuel-dock bill climb, repowering to a current Mercury FourStroke can cut consumption substantially, though the saving depends on the hull, load and prop. Build a repower quote at mercuryrepower.ca.
 
 ### What are the best fuel efficiency tips for outboard motors?
 

@@ -30,7 +30,7 @@ GOLD, INK, MUTED = HexColor("#E6B43C"), HexColor("#152536"), HexColor("#526273")
 PALE, LINE, WHITE = HexColor("#F2F6F9"), HexColor("#CFD9E2"), white
 PALE_RED, PALE_GOLD = HexColor("#FFF0F1"), HexColor("#FFF6DA")
 
-SERVICE_URL = "https://hbw.wiki/service"
+SERVICE_URL = "https://hbwservice.ca"
 QUOTE_URL = "https://www.mercuryrepower.ca/quote/motor-selection"
 MANUAL_URL = "https://www.mercurymarine.com/ca/en/service-and-support/owners-resources"
 FUEL_URL = "https://www.mercuryrepower.ca/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario"
@@ -261,7 +261,7 @@ def service_prep(path, root):
         "A new severe noise, seized engine or water intrusion.",
     ], kind="stop", note="Move people to safety first. Use emergency services when required.")
     action_box(c, 30, 53, W - 60, 88, "Ready to send it in?",
-               "Submit the serial number, hours, symptoms and files at hbw.wiki/service. One complete request beats several partial messages.",
+               "Submit the serial number, hours, symptoms and files at hbwservice.ca. One complete request beats several partial messages.",
                SERVICE_URL, "Start service request")
     footer(c, 1, 1, SERIAL_URL, "HBW serial-number guide")
     c.save()
@@ -436,7 +436,7 @@ def alarm_card(path, root):
         "Where the boat is and whether it can come to Gores Landing.",
     ])
     action_box(c, 30, 49, W - 60, 74, "Need Mercury diagnosis?",
-               "Submit the facts once at hbw.wiki/service. We'll start with the exact engine, not a generic beep-code chart.",
+               "Submit the facts once at hbwservice.ca. We'll start with the exact engine, not a generic beep-code chart.",
                SERVICE_URL, "Start service request")
     footer(c, 1, 1, ALARM_URL, "HBW Mercury alarm guide")
     c.save()

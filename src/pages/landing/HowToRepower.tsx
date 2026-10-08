@@ -31,7 +31,7 @@ const steps = [
   {
     icon: CalendarDays,
     title: 'Schedule the Install',
-    body: 'Book your drop-off date at Harris Boat Works in Gores Landing on Rice Lake. Most installs are 1–3 days. Submit a service request at hbw.wiki/service or call (905) 342-2153.'
+    body: 'Book your drop-off date at Harris Boat Works in Gores Landing on Rice Lake. Most installs are 1–3 days. Submit a service request at hbwservice.ca or call (905) 342-2153.'
   },
   {
     icon: Wrench,

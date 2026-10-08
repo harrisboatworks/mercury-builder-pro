@@ -29,7 +29,7 @@ revenue_driver: repower
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/lake-ontario-salmon-mercury-setup-guide-2026
 
-> **Quick answer:** Lake Ontario salmon setups match the main motor to hull length (150 to 200 HP for 19 to 20 ft V-hulls, 200 to 250 HP for 21 to 22 ft), add a Mercury 9.9 ProKicker for hours of slow trolling, and need a 40 to 60 amp alternator floor for a four-downrigger electrical load. Port Hope is about 20 minutes from HBW; Cobourg about 15.
+> **Quick answer:** Lake Ontario salmon setups match the main motor to hull length (150 to 200 HP for 19 to 20 ft V-hulls, 200 to 250 HP for 21 to 22 ft), add a Mercury 9.9 ProKicker for hours of slow trolling, and need a 40 to 60 amp alternator floor for a four-downrigger electrical load. Cobourg is about 25 minutes from HBW; Port Hope about 30.
 
 - Mercury Premier Dealer
 - Family-owned since 1947
@@ -39,11 +39,11 @@ revenue_driver: repower
 
 Lake Ontario salmon fishing puts heavy, specific demands on a Mercury outboard setup. Long days at trolling speed. Heavy electrical load from electric downriggers, sonar, chartplotter, and lights. Charging system has to hold voltage at idle. Kicker needs to run for hours at consistent low RPM. Dual-battery management matters.
 
-This is the dealer-side perspective on rigging a Lake Ontario salmon boat for the work it actually does. Written from HBW's position on Rice Lake, 15 to 20 minutes from the Port Hope and Cobourg ports that most north-shore charter and recreational anglers launch from.
+This is the dealer-side perspective on rigging a Lake Ontario salmon boat for the work it actually does. Written from HBW's position on Rice Lake, 25 to 30 minutes from the Cobourg and Port Hope ports that most north-shore charter and recreational anglers launch from.
 
 ## Drive time from HBW to Lake Ontario ports
 
-A clarification because we hear this misread: **Port Hope is approximately 20 minutes drive from HBW. Cobourg is approximately 15 minutes.** Both ports are well within practical service-destination range for Lake Ontario north-shore salmon anglers. HBW services Lake Ontario boats regularly. We do not provide service calls away from Rice Lake; boats come to us.
+A clarification because we hear this misread: **Cobourg is approximately 25 minutes drive from HBW. Port Hope is approximately 30 minutes.** Both ports are well within practical service-destination range for Lake Ontario north-shore salmon anglers. HBW services Lake Ontario boats regularly. We do not provide service calls away from Rice Lake; boats come to us.
 
 For Port Hope and Cobourg boat owners specifically, HBW may be the closer Mercury Premier service option than GTA-area dealers, depending on where you launch and store the boat.
 
@@ -76,7 +76,7 @@ For salmon trolling, the kicker is genuinely critical. Slow trolling for hours o
 
 ## Mercury SmartCraft Troll Control
 
-Mercury SmartCraft Troll Control allows fine-grained control of trolling speed through the main motor's SmartCraft network. For boats with the right engine family, it helps maintain fine trolling-speed control toward a target speed (e.g., 2.4 MPH for spoon trolling). Wind, waves, and current still affect speed over ground, no system overrides physics on the lake.
+Mercury SmartCraft Troll Control locks engine RPM and lets you adjust it in 10 RPM steps through the main motor's SmartCraft network. For boats with the right engine family, it holds a steady trolling RPM, and you use GPS or a speed log to find the RPM that gives your target speed (e.g., 2.4 MPH for spoon trolling). Wind, waves, and current still affect speed over ground, no system overrides physics on the lake.
 
 **HBW has installed Mercury SmartCraft Troll Control for Lake Ontario salmon anglers.** It's not the right choice for every setup. For boats where the kicker handles all the trolling work, SmartCraft Troll Control usually isn't necessary. For boats running only a main motor for trolling (uncommon but real), it can replace the kicker setup at significantly lower cost.
 
@@ -92,7 +92,7 @@ The electrical math matters. Electric downriggers draw significant current durin
 
 **Practical alternator minimum:** A 40 to 60 amp alternator at 12V on the main motor is the realistic floor for a 4-downrigger Lake Ontario setup, assuming typical cycling patterns and a separate cranking battery.
 
-**Comfortable headroom:** For boats that want "everything on, everything works" without voltage drop concerns, a 70 to 90 amp main alternator is the safer target. Many Verado V8 and V10 setups provide higher alternator capacity, but exact output should be confirmed by model and serial number. For Mercury 150 to 200 FourStroke, alternator output is typically in the 35-65 A range stock, depending on model year.
+**Comfortable headroom:** For boats that want "everything on, everything works" without voltage drop concerns, a 70 to 90 amp main alternator is the safer target. Many Verado V8 and V10 setups provide higher alternator capacity, but exact output should be confirmed by model and serial number. For Mercury FourStroke outboards, Mercury lists 60 A on the 150 and 85 A on the V6 175 and 200.
 
 If you're running heavy electrical loads, factor alternator capacity into the main motor selection.
 
@@ -114,7 +114,7 @@ This is rigging work we do regularly. Bring your boat, we'll spec and install.
 
 ## Fishing regulations: zone awareness
 
-Lake Ontario fishing falls under **Fisheries Management Zone (FMZ) 20**. Confirm current regulations on the Ontario MNRF Fishing Regulations Summary before each season, limits and seasons can change year to year.
+Lake Ontario fishing falls under **Fisheries Management Zone (FMZ) 20**. Confirm current regulations on the [Ontario Fishing Regulations Summary](https://www.ontario.ca/document/ontario-fishing-regulations-summary) before each season, limits and seasons can change year to year.
 
 A separate note for Rice Lake anglers: Rice Lake itself is in FMZ 17, which has its own rules. Don't carry FMZ 20 limits into FMZ 17 water, or vice versa.
 
@@ -162,7 +162,7 @@ If you launch from Port Hope, Cobourg, or anywhere on Lake Ontario's north shore
 **Email:** info@harrisboatworks.ca
 **Main site:** harrisboatworks.ca
 **Build a Mercury quote:** mercuryrepower.ca
-**Service booking:** hbw.wiki/service
+**Service booking:** hbwservice.ca
 
 Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Family-owned since 1947, Mercury dealer since 1965, current Premier Dealer. Confirm drive time, the exact part, and service capacity before travelling from Port Hope or Cobourg.
 
@@ -172,7 +172,7 @@ Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Family-owned s
 
 ### Does HBW service Lake Ontario salmon boats?
 
-Yes. We service Lake Ontario boats regularly, particularly from Port Hope (approximately 20 minutes drive) and Cobourg (approximately 15 minutes drive). We do not provide off-Rice-Lake service calls; boats come to us. For boat owners launching from north-shore Lake Ontario ports, HBW may be the closer Mercury Premier service option than GTA-area dealers, depending on launch and storage location.
+Yes. We service Lake Ontario boats regularly, particularly from Cobourg (approximately 25 minutes drive) and Port Hope (approximately 30 minutes drive). We do not provide off-Rice-Lake service calls; boats come to us. For boat owners launching from north-shore Lake Ontario ports, HBW may be the closer Mercury Premier service option than GTA-area dealers, depending on launch and storage location.
 
 ### What main motor HP do you recommend for Lake Ontario salmon?
 
@@ -184,11 +184,11 @@ The current Canadian ProKicker line is 9.9, 15, and 25 HP. The 9.9 is the volume
 
 ### What alternator output do I need for 4 electric downriggers?
 
-40-60 A minimum at 12 V is the practical floor. 70-90 A is the comfortable target for boats running "everything on" without voltage sag. For Mercury 150-200 FourStroke, stock alternator output is typically in the 35-65 A range. Verado V8 and V10 are higher. Factor alternator into main motor selection if you're running heavy.
+40-60 A minimum at 12 V is the practical floor. 70-90 A is the comfortable target for boats running "everything on" without voltage sag. For Mercury FourStroke, stock alternator output is 60 A on the 150 and 85 A on the V6 175 and 200. Verado V8 and V10 are higher. Factor alternator into main motor selection if you're running heavy.
 
 ### Has HBW installed Mercury SmartCraft Troll Control?
 
-Yes. We have installed Mercury SmartCraft Troll Control for Lake Ontario salmon anglers. It works well for boats that don't run a kicker (uncommon but real) or for boats where automatic main-motor trolling speed control is preferred. For boats with a 9.9 ProKicker, the kicker handles the trolling work and SmartCraft Troll Control usually isn't necessary.
+Yes. We have installed Mercury SmartCraft Troll Control for Lake Ontario salmon anglers. It works well for boats that don't run a kicker (uncommon but real) or for boats where a locked main-motor trolling RPM is preferred. For boats with a 9.9 ProKicker, the kicker handles the trolling work and SmartCraft Troll Control usually isn't necessary.
 
 ### Which boat brands does HBW most commonly install Mercury kickers on for Lake Ontario customers?
 
@@ -200,7 +200,7 @@ For modern Lake Ontario salmon rigs, we generally recommend an Automatic Chargin
 
 ### Which Fisheries Management Zone is Lake Ontario in?
 
-FMZ 20. Confirm current Lake Ontario regulations directly with the Ontario MNRF Fishing Regulations Summary each season.
+FMZ 20. Confirm current Lake Ontario regulations directly with the [Ontario Fishing Regulations Summary](https://www.ontario.ca/document/ontario-fishing-regulations-summary) each season.
 
 ## Related guides
 

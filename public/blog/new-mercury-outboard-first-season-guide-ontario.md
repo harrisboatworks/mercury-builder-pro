@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/new-mercury-outboard-first-season-guide-ontario.md
-last_updated: 2026-09-06
+last_updated: 2026-10-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Your New Mercury Outboard's First Season: What to Expect From PDI to Fir
 description: "New Mercury outboard? What the dealer PDI covers, how break-in really works, when the first oil change is due, and what's normal in season one."
 category: "Maintenance"
 date_published: 2026-07-27
-date_modified: 2026-09-06
+date_modified: 2026-10-02
 keywords: ["new Mercury outboard first season","Mercury outboard PDI","Mercury break-in Ontario","Mercury first oil change","SmartCraft Connect app","Mercury alarm codes"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Category:** Maintenance  
 **Published:** 2026-07-27  
-**Last reviewed:** 2026-09-06  
+**Last reviewed:** 2026-10-02  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/new-mercury-outboard-first-season-guide-ontario
 
@@ -72,7 +72,7 @@ When you're staring at a shiny new motor, it's easy to forget that some things h
 
 | Milestone | What to do |
 |---|---|
-| Day one | Pair the Mercury Marine app via SmartCraft Connect (see our [SmartCraft Connect Guide](/blog/mercury-smartcraft-connect-guide-ontario)), verify the key-on horn self-test, and watch the cooling water telltale at idle. |
+| Day one | If your motor is SmartCraft-capable (40 HP and up, or 25 and 30 HP from 2022), pair the Mercury Marine app via SmartCraft Connect (see our [SmartCraft Connect Guide](/blog/mercury-smartcraft-connect-guide-ontario)), verify the key-on horn self-test, and watch the cooling water telltale at idle. |
 | First weeks (break-in period) | Follow the break-in routine in your owner's manual and our break-in guide. Check for unusual noise, vibration, or warning signals after each outing. |
 | Around 20 hours (optional, dealer-recommended) | Many owners do an early oil and filter change as cheap insurance. Mercury does not require this, but it's a common practice that flushes out break-in particulates. Book it if you go this route. |
 | 100 hours or end of season (whichever comes first) | Change engine oil and filter, inspect anodes, check propeller condition, and give the motor a thorough once-over. Mercury's published schedule calls for this at 100 hours or annually. Do not let this slide past the season end. |
@@ -104,7 +104,7 @@ Even smart boaters can make a few unforced errors. Here are the ones we see most
 
 **Running hard on day one.** Following break-in means holding off on the wide-open throttle sprints until the manual says so. Rushing this does not create hidden performance; it just skips a step that protects the engine's long-term health.
 
-**Skipping fall winterization.** In Ontario, a first-season owner might think they'll be back on the water in a few weeks. When January hits and the boat hasn't been fogged or drained, that's a big bill. HBW closes December 1 and reopens April 1. Winterize before the first deep freeze.
+**Skipping fall winterization.** In Ontario, a first-season owner might think they'll be back on the water in a few weeks. When January hits and the boat hasn't been fogged or drained, that's a big bill. HBW is closed from December 1 through April 1 and reopens in early April, so confirm the current season's opening date before you plan spring work. Winterize before the first deep freeze.
 
 ## Normal vs. Not Normal: Key Things to Watch For
 
@@ -120,7 +120,7 @@ It helps to know what's supposed to happen and what's a red flag.
 
 **Not normal, period:** Sudden power loss, rough running that doesn't clear up, repeated stalling, or any warning lights that stay on. These are not break-in quirks; they're reasons to pull the engine out of service and have us look at it.
 
-If any of those not-normal signs show up, stop using the motor as the symptom requires and submit one service request at [hbw.wiki/service](https://hbw.wiki/service).
+If any of those not-normal signs show up, stop using the motor as the symptom requires and submit one service request at [hbwservice.ca](https://hbwservice.ca).
 
 ## Rice Lake and Kawarthas Reality Check
 
@@ -130,9 +130,9 @@ Running a new outboard around here comes with a few realities that first-time bo
 
 **Sandbars and prop dings.** The Kawarthas are full of surprises below the surface. A small prop ding on a new stainless or aluminum prop isn't the end of the world, but it should be looked at. A bent blade can cause vibration that stresses the gearcase. Get into the habit of trimming up in shallow water and checking the prop visually before you trailer home. If you tag something hard, book a service check to make sure the prop shaft didn't get tweaked.
 
-**Seasonal reality: fall sneaks up.** The Rice Lake boating season doesn't last all year. By late October, the nights get cold. If you're not winterized, a freeze can crack a block or housing. Many first-season owners assume they'll get one more weekend and end up calling us in a panic. We close December 1 and reopen April 1. Plan the winterization appointment while the weather is still pleasant.
+**Seasonal reality: fall sneaks up.** The Rice Lake boating season doesn't last all year. By late October, the nights get cold. If you're not winterized, a freeze can crack a block or housing. Many first-season owners assume they'll get one more weekend and end up calling us in a panic. We are closed from December 1 through April 1 and reopen in early April. Call or text to confirm the exact opening date each spring. Plan the winterization appointment while the weather is still pleasant.
 
-## Sources
+---
 
 - [Mercury Marine maintenance and service guidance](https://www.mercurymarine.com/ca/en/service-and-support/owners-resources/maintenance-made-easy)
 - [Mercury Marine owner resources and serial-specific manual lookup](https://www.mercurymarine.com/ca/en/service-and-support/owners-resources)
@@ -142,7 +142,7 @@ Running a new outboard around here comes with a few realities that first-time bo
 
 Coming up on 100 hours, considering the optional early check or seeing something that doesn't feel right? A clear service request gives the shop the motor details before the boat arrives.
 
-**Service:** [hbw.wiki/service](https://hbw.wiki/service)  
+**Service:** [hbwservice.ca](https://hbwservice.ca)  
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 
 ## FAQs
@@ -157,7 +157,7 @@ Mercury's published maintenance schedule calls for oil and filter service at 100
 
 ### Do I need to use the Mercury Marine app with my new outboard?
 
-It's not required for basic operation, but pairing the Mercury Marine app via SmartCraft Connect gives you engine hours, fault codes, maintenance reminders, and digital gauges on your phone. Worth doing in the first week.
+It's not required for basic operation, but on SmartCraft-capable motors (40 HP and up, or 25 and 30 HP from 2022) pairing the Mercury Marine app via SmartCraft Connect gives you engine hours, fault codes, maintenance reminders, and digital gauges on your phone. Worth doing in the first week.
 
 ### What does a beep from my Mercury outboard mean at startup?
 
@@ -175,18 +175,18 @@ A good PDI and careful break-in make an extra inspection unnecessary, but if you
 
 - [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule), the model-specific Mercury service schedule
 - [Mercury Outboard Oil Capacity Chart: Model and Year Lookup](/blog/mercury-outboard-oil-capacity-chart)
+- [Why Mercury FourStrokes Make Oil (and What Actually Fixes It)](/blog/mercury-fourstroke-making-oil-guide), why oil levels rise after trolling and how to fix it
 - [Mercury Outboard Maintenance Parts List: Filters, Plugs, Kits and Part Numbers (2.5 to 600 HP)](/blog/mercury-outboard-maintenance-parts-list), the full Mercury maintenance parts and part-number list
 - [The Five-Minute Boat-Trailer Check Before Every Trip](/blog/boat-trailer-maintenance-guide-ontario), boat trailer maintenance guide
-- [Boat Trailering Mistakes to Avoid, Ontario](/blog/boat-trailering-mistakes-ontario), common trailering mistakes
 
 ## Next steps
 
-- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbw.wiki/service
+- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbwservice.ca
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
-- The only commercial next step for this article is the HBW service request at https://hbw.wiki/service.
+- The only commercial next step for this article is the HBW service request at https://hbwservice.ca.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

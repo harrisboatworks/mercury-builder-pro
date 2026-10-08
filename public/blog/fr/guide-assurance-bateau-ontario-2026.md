@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/guide-assurance-bateau-ontario-2026.md
-last_updated: 2026-09-12
+last_updated: 2026-10-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -8,10 +8,10 @@ final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
 title: "Assurance bateau en Ontario : ce dont vous avez réellement besoin (2026)"
-description: "Bases de l'assurance bateau en Ontario. Couverture responsabilité vs coque, ce qui est couvert vs ce qui ne l'est pas, fourchettes de primes annuelles réelles par..."
+description: "Bases de l'assurance bateau en Ontario. Responsabilité vs coque, fourchettes de primes annuelles par type de bateau, pourquoi assurance et garantie prolongée diffèrent."
 category: "Assurance"
 date_published: 2026-05-13
-date_modified: 2026-09-12
+date_modified: 2026-10-04
 keywords: ["assurance bateau Ontario","assurance maritime","coût assurance bateau","couverture responsabilité bateaux","assurance bateau valeur convenue","assurance embarcation de plaisance"]
 author: Harris Boat Works
 content_type: blog_article
@@ -21,17 +21,19 @@ revenue_driver: repower
 
 # Assurance bateau en Ontario : ce dont vous avez réellement besoin (2026)
 
-> Bases de l'assurance bateau en Ontario. Couverture responsabilité vs coque, ce qui est couvert vs ce qui ne l'est pas, fourchettes de primes annuelles réelles par...
+> Bases de l'assurance bateau en Ontario. Responsabilité vs coque, fourchettes de primes annuelles par type de bateau, pourquoi assurance et garantie prolongée diffèrent.
 
 **Catégorie :** Assurance\
 **Publié le :** 2026-05-13\
-**Dernière révision :** 2026-09-12\
+**Dernière révision :** 2026-10-04\
 **Temps de lecture :** 9 min\
 **URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/guide-assurance-bateau-ontario-2026
 
 ## Réponse rapide
 
 **En Ontario, l'assurance bateau n'est généralement pas obligatoire pour toutes les embarcations de plaisance, mais elle peut être exigée par un prêteur, une marina, un programme de financement ou une installation d'entreposage. Pour tout bateau d'une valeur supérieure à 5 000 $, ou tout bateau transportant des passagers, une couverture de base responsabilité et coque est ce que tout concessionnaire honnête recommande. Le vrai coût dépend de la valeur du bateau, du moteur, du remorquage, de l'usage, du dossier du conducteur et des protections choisies. Demandez des soumissions à un courtier ou à votre assureur.**
+
+Besoin de votre CCEP (PCOC)? Suivez le cours en ligne avec [le lien de parrainage MyBoatCard de HBW](https://myboatcard.com/card/harrisboat) et utilisez le code **HARRIS15** pour obtenir **15% de réduction**.
 
 - **Responsabilité** : 1 M$ à 2 M$ minimum (couvre dommages à d'autres bateaux, quais ou blessures)
 - **Coque / valeur convenue** : coût de remplacement moins dépréciation, avec avenants pour moteur et remorque
@@ -48,7 +50,7 @@ Réponse pratique : oui, vous la voulez. Trois raisons :
 
 1. **Marinas, clubs nautiques et plusieurs installations de mise à l'eau exigent une preuve de responsabilité avant que vous puissiez accoster.** Pas d'assurance, pas de quai.
 2. **Les prêteurs l'exigent si vous avez financé votre bateau.** La plupart des prêteurs marins inscrivent l'assurance dans les conditions du prêt.
-3. **Les poursuites en responsabilité au Canada n'ont pas de plafonds.** Une blessure grave au poste de pilotage peut entraîner un règlement de plus de 500 000 $. Sans assurance, c'est une faillite personnelle.
+3. **Les poursuites en responsabilité au Canada n'ont pas de plafond général pour les pertes financières.** Une blessure grave au poste de pilotage peut entraîner un règlement de plus de 500 000 $. Sans assurance, c'est une faillite personnelle.
 
 Quelques tournois de pêche ontariens et la plupart des quais de chalet exigent aussi une preuve d'assurance pour participer ou amarrer.
 
@@ -74,7 +76,7 @@ Exclusions courantes à lire attentivement avant de signer :
 - **Bris mécanique**, moteur qui se grippe à cause d'usure ou d'entretien sauté. (C'est ce que la garantie prolongée couvre, voir notre [guide de garantie prolongée Mercury](/blog/fr/garantie-prolongee-mercury-platinum-ontario).)
 - **Défauts de fabrication**, couverts par la garantie d'usine, pas l'assurance.
 - **Course ou usage commercial**, les polices standard d'embarcations de plaisance excluent les tournois avec bourses, les nolisements et le travail commercial.
-- **Bateaux entreposés dans des conditions non sécuritaires**, l'entreposage extérieur durant l'hiver sans housse annule certaines couvertures de coque.
+- **Bateaux entreposés dans des conditions non sécuritaires**, l'entreposage extérieur durant l'hiver sans protection adéquate (par exemple, une pellicule thermorétractable) peut annuler certaines couvertures de coque; vérifiez le libellé de votre police.
 - **Bateaux de plus de 25 à 30 ans**, plusieurs assureurs ne souscriront pas de coques en fibre de verre plus vieilles sans inspection maritime.
 
 ---
@@ -90,7 +92,7 @@ Facteurs de coût :
 - **Où vous naviguez**, le lac Ontario (eau libre, risque météo) coûte plus cher que les lacs intérieurs comme le lac Rice
 - **Historique de réclamations**, dossier propre obtient les meilleurs taux
 - **Expérience de l'opérateur**, la CCEP seule est le minimum
-- **Lieu d'entreposage**, les rabais pour entreposage intérieur sont réels
+- **Lieu d'entreposage**, les rabais pour entreposage intérieur existent chez certains assureurs; chez HBW, l'entreposage est extérieur, habituellement sous pellicule thermorétractable, alors demandez à votre assureur comment il le tarife
 
 ---
 
@@ -163,7 +165,7 @@ La valeur convenue paie la valeur que vous et l'assureur avez convenue au début
 
 ### Mon assurance couvre-t-elle le bateau pendant l'entreposage hivernal?
 
-La plupart des polices couvrent l'entreposage à tout endroit approuvé. L'entreposage extérieur sans housse appropriée peut avoir une couverture réduite, vérifiez le libellé.
+La plupart des polices couvrent l'entreposage à tout endroit approuvé. L'entreposage extérieur sans protection adéquate (par exemple, une pellicule thermorétractable) peut avoir une couverture réduite, vérifiez le libellé.
 
 ### Puis-je assurer mon bateau via Mercury ou HBW?
 

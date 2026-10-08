@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-smartcraft-connect-guide-ontario.md
-last_updated: 2026-09-11
+last_updated: 2026-10-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury SmartCraft Connect: Features, App & Installation"
 description: "See what SmartCraft Connect shows in the Mercury Marine app, how the module is installed, and how it differs from helm-display integrations."
 category: "Mercury Outboards"
 date_published: 2026-05-09
-date_modified: 2026-09-11
+date_modified: 2026-10-06
 keywords: ["Mercury SmartCraft Connect","Mercury Marine app setup","SmartCraft Connect compatibility","VesselView Mobile vs SmartCraft Connect","SmartCraft Connect Mobile install"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,13 +25,13 @@ revenue_driver: service
 
 **Category:** Mercury Outboards  
 **Published:** 2026-05-09  
-**Last reviewed:** 2026-09-11  
+**Last reviewed:** 2026-10-06  
 **Read time:** ~11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-smartcraft-connect-guide-ontario
 
 ### Quick Answer
 
-Mercury SmartCraft Connect Mobile, the product that replaced VesselView Mobile in Mercury's 2024 rebrand, is a small module that streams engine data to the Mercury Marine app on your phone. It is not included with a new motor, it is sold separately. Compatible with Mercury 4-strokes from model year 2004 and up, 40 HP and up. The 25 HP and 30 HP class is only compatible from model year 2022 onward. Sub-25 HP motors are not compatible. Module part numbers: 8M0173128 (under-cowl, single engine) and 8M0173129 (under-helm, one to four engines). The Mercury Marine app is free on iOS and Android. No subscription.
+Mercury SmartCraft Connect Mobile, the product that replaced VesselView Mobile in Mercury's 2024 rebrand, is a small module that streams engine data to the Mercury Marine app on your phone. It is not included with a new motor, it is sold separately. Compatible with Mercury outboards and MerCruiser engines from model year 2004 and up, 40 HP and up. The 25 HP and 30 HP class is only compatible from model year 2022 onward. Sub-25 HP motors are not compatible. Module part numbers: 8M0173128 (under-cowl, single engine) and 8M0173129 (under-helm, one to four engines). The Mercury Marine app is free on iOS and Android. No subscription.
 
 SmartCraft Connect Mobile is the current name for what Mercury used to call VesselView Mobile (rebranded in 2024). If you are shopping for the old name, this is the same product line.
 
@@ -81,7 +81,7 @@ Most Mercury motors from 2004 onward are SmartCraft-compatible. Mercury 9.9, 15,
 
 **Twin and triple setups.** SmartCraft Connect handles up to four engines, each reporting independently in the app. For a triple or quad, ask before assuming, because gateway hardware can carry an engine-count limit depending on the year.
 
-**Optimax (2004 and newer).** Optimax was Mercury's direct-injection 2-stroke family from 1997 through 2017, and unlike the carbureted and EFI 2-strokes it runs the SmartCraft data bus. Mercury lists SmartCraft-capable engines 40 HP and up, 2004 and newer, as Connect-compatible, which takes in most Optimax rigs still on Kawartha water. Confirm by serial before buying the module.
+**Optimax (2004 and newer).** Optimax was Mercury's direct-injection 2-stroke family from the late 1990s until the late 2010s, and unlike the carbureted and EFI 2-strokes it runs the SmartCraft data bus. Mercury lists SmartCraft-capable engines 40 HP and up, 2004 and newer, as Connect-compatible, which takes in most Optimax rigs still on Kawartha water. Confirm by serial before buying the module.
 
 ## Motors With No Connect Path
 
@@ -91,7 +91,7 @@ Most Mercury motors from 2004 onward are SmartCraft-compatible. Mercury 9.9, 15,
 
 **Carbureted and EFI 2-strokes.** The classic 2-strokes, including the high-output 200 EFI, 225 EFI, and 250 EFI, use a different engine management protocol. Connect cannot read them and there is no software workaround.
 
-**If your motor has no path** and you want connectivity specifically, [the answer is a repower](/blog/mercury-repower-cost-ontario-2026-cad). Customers who repower from a pre-2004 motor to a current FourStroke pick up SmartCraft Connect on the new motor day one.
+**If your motor has no path** and you want connectivity specifically, [the answer is a repower](/blog/mercury-repower-cost-ontario-2026-cad). Customers who repower to a current FourStroke get a SmartCraft-capable motor. A separate SmartCraft Connect module can be added at the repower.
 
 ## Find Your Serial to Confirm
 
@@ -187,7 +187,7 @@ The module installs in roughly 30 minutes on a single-engine boat. It plugs into
 
 **Bring it to HBW if:** You have never opened the cowl, you want the module integrated cleanly with no loose wiring, you want app pairing tested and confirmed before you leave, and you want it on the service log for the rest of the motor's life. HBW installs the module and verifies it pairs correctly, usually about a 30-minute add-on to a service visit.
 
-Since it's a fast 30-minute install, this is the perfect upgrade to add onto your spring prep or winterization service. Book your install at [hbw.wiki/service](https://hbw.wiki/service).
+Since it's a fast 30-minute install, this is the perfect upgrade to add onto your spring prep or winterization service. Book your install at [hbwservice.ca](https://hbwservice.ca).
 
 The most common DIY mistake: missing the SmartCraft service connector and splicing into the analog tach signal instead. This does not work and creates a confusing failure mode. HBW has done dozens of these installs. The fee is set up-front and includes the module, the install, app pairing, and a brief walkthrough.
 
@@ -219,7 +219,7 @@ For Rice Lake walleye trolling, engine-hour tracking on the kicker is the practi
 
 **If you are repowering:** Add the module to your quote at [mercuryrepower.ca](https://www.mercuryrepower.ca). HBW installs it during rigging and you leave with the app already paired.
 
-**If you already have a compatible motor:** Put in a service request at [hbw.wiki/service](https://hbw.wiki/service) with your serial number. HBW confirms compatibility, quotes the module, and books an install slot, about 30 minutes of shop time.
+**If you already have a compatible motor:** Put in a service request at [hbwservice.ca](https://hbwservice.ca) with your serial number. HBW confirms compatibility, quotes the module, and books an install slot, about 30 minutes of shop time.
 
 ---
 
@@ -228,7 +228,7 @@ For Rice Lake walleye trolling, engine-hour tracking on the kicker is the practi
 Jay Harris helps run Harris Boat Works, a third-generation family marina in Gores Landing on Rice Lake, established in 1947. HBW is a Mercury Marine Premier Dealer and Legend Boats dealer serving Rice Lake, the Kawarthas, and Ontario boaters who want straight answers before spending real money. [Read Jay's full bio](/about/jay-harris).
 
 **Add SmartCraft Connect to your repower quote.** 
-[mercuryrepower.ca](https://www.mercuryrepower.ca). For install booking, submit a service request at [hbw.wiki/service](https://hbw.wiki/service) with your motor's serial number. 
+[mercuryrepower.ca](https://www.mercuryrepower.ca). For install booking, submit a service request at [hbwservice.ca](https://hbwservice.ca) with your motor's serial number. 
 Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. 
 Mercury Premier dealer. Est. 1947.
 
@@ -272,19 +272,19 @@ The Mercury Marine app shows eligibility once SmartCraft Connect is paired. Harr
 ## Related guides
 
 - [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide), choosing the right propeller
+- [Mercury Engine Data on Your Garmin, Lowrance or Humminbird: Which Gateway and How to Wire It](/blog/mercury-nmea-2000-lowrance-garmin-guide), which Mercury gateway your plotter needs and how to wire it
 - [Mercury Alarm Codes List Ontario](/blog/mercury-smartcraft-alarm-codes-encyclopedia), SmartCraft alarm code reference
 - [Mercury Outboard Beep & Alarm Codes: What Each Means](/blog/mercury-outboard-beeping-codes-guide), beeping code guide
 - [Mercury Outboard Won't Start (Ontario Dealer Guide, 2026)](/blog/mercury-outboard-wont-start-troubleshooting), won't-start troubleshooting
-- [Mercury Overheat Alarm Decoder: Beep Meanings](/blog/mercury-outboard-overheat-alarm-decoder), overheat alarm decoder
 
 ## Next steps
 
-- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbw.wiki/service
+- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbwservice.ca
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
-- The only commercial next step for this article is the HBW service request at https://hbw.wiki/service.
+- The only commercial next step for this article is the HBW service request at https://hbwservice.ca.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

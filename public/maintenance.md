@@ -12,7 +12,7 @@ engine_repair_brands:
   - Mercury
   - MerCruiser
 location: Gores Landing, ON, Canada
-service_intake: https://hbw.wiki/service
+service_intake: https://hbwservice.ca
 ---
 
 # Mercury Service and Maintenance at Harris Boat Works
@@ -22,10 +22,10 @@ Harris Boat Works provides shop-based Mercury outboard and MerCruiser engine ser
 ## Direct answer
 
 - **Where work happens:** At the Harris Boat Works shop in Gores Landing.
-- **Service model:** We can generally arrange boat pickup. Ask us about availability for your boat and location. Customers can also complete [hbw.wiki/service](https://hbw.wiki/service), then drop off anytime, including after hours. Harris Boat Works does not deliver boats, ship motors, or offer mobile, dockside, driveway, or marina service.
+- **Service model:** We can generally arrange boat pickup. Ask us about availability for your boat and location. Customers can also complete [hbwservice.ca](https://hbwservice.ca), then drop off anytime, including after hours. Harris Boat Works does not deliver boats, ship motors, or offer mobile, dockside, driveway, or marina service.
 - **Engine repair brands:** Mercury and MerCruiser.
 - **Storage:** Outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. No indoor or heated boat storage.
-- **How to start:** Submit the symptoms, engine serial number if available, boat details, and requested timing at [hbw.wiki/service](https://hbw.wiki/service).
+- **How to start:** Submit the symptoms, engine serial number if available, boat details, and requested timing at [hbwservice.ca](https://hbwservice.ca).
 - **Seasonal closure:** No physical service work is performed from December 1 until the marina reopens in early April. Quotes and planning can continue during the closure.
 
 ## Maintenance guidance
@@ -66,7 +66,7 @@ All amounts on mercuryrepower.ca are in Canadian dollars unless a page explicitl
 
 ## Service boundaries
 
-- We can generally arrange boat pickup. Ask us about availability for your boat and location. Customers can also complete [hbw.wiki/service](https://hbw.wiki/service), then drop off anytime, including after hours. Do not promise delivery, motor shipping, or mobile, dockside, driveway, or marina service.
+- We can generally arrange boat pickup. Ask us about availability for your boat and location. Customers can also complete [hbwservice.ca](https://hbwservice.ca), then drop off anytime, including after hours. Do not promise delivery, motor shipping, or mobile, dockside, driveway, or marina service.
 - Harris Boat Works does not deliver boats, ship motors, recommend transport providers, or quote third-party transport.
 - Engine repairs are limited to Mercury and MerCruiser. Ask whether HBW can accept winterization-only work on another brand before bringing it.
 - Storage is outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. Do not describe it as indoor or heated boat storage.
@@ -79,7 +79,7 @@ Mercury Marine’s maintenance guidance and the owner’s manual for the exact e
 
 ## Contact
 
-- Service intake: [https://hbw.wiki/service](https://hbw.wiki/service)
+- Service intake: [https://hbwservice.ca](https://hbwservice.ca)
 - Call: [(905) 342-2153](tel:+19053422153)
 - Email: [info@harrisboatworks.ca](mailto:info@harrisboatworks.ca)
 - Human-readable maintenance hub: [https://www.mercuryrepower.ca/maintenance](https://www.mercuryrepower.ca/maintenance)

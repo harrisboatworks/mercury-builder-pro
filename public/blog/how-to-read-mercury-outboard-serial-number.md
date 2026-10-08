@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/how-to-read-mercury-outboard-serial-number.md
-last_updated: 2026-09-11
+last_updated: 2026-10-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Read Mercury Outboard Serial Number"
 description: "A practical guide to finding, reading, and decoding your Mercury outboard's serial number, model year, shaft length, features."
 category: "Buying Guide"
 date_published: 2026-05-17
-date_modified: 2026-09-11
+date_modified: 2026-10-04
 keywords: ["how to read Mercury serial number","decode Mercury outboard model number","Mercury outboard year by serial number","Mercury serial number lookup Ontario","find Mercury outboard model code"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-05-17  
-**Last reviewed:** 2026-09-11  
+**Last reviewed:** 2026-10-04  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/how-to-read-mercury-outboard-serial-number
 
@@ -72,7 +72,7 @@ For older Mercurys, the model code usually reads as horsepower + letter combinat
 
 - **M**: Manual start
 - **E**: Electric start
-- **L / XL / CXL / XXL**: Long, extra-long, counter-rotation long, extra-extra-long shaft
+- **L / XL / CXL / XXL**: Long, extra-long, counter-rotation extra-long, extra-extra-long shaft
 - **H**: Tiller handle
 - **RC**: Remote control steering
 - **PT**: Power trim/tilt
@@ -214,7 +214,7 @@ The exact model year, warranty status, service bulletins, and dealer service his
 If the bracket plate is gone and the freeze-plug stamp is unreadable:
 
 - **Check service receipts**, any prior service work would have referenced the serial.
-- **Check the boat's [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences)**, sometimes the serial was recorded.
+- **Check the boat's [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl)**, sometimes the serial was recorded.
 - **Check insurance documents**, same.
 - **Bring it to us**, we can sometimes identify the motor from the casting numbers and other markings, but this is detective work, not a quick lookup.
 - **Worst case**, we can pressure-test, compression-test, and document the actual current condition without the serial. It's a less complete picture, but it's something.
@@ -250,7 +250,7 @@ No, but identification gets harder. We can usually decode it from secondary stam
 
 ### Can I look up my serial myself online?
 
-Not really. Crowley Marine, MarineEngine.com, and OBParts publish serial-range charts and parts finders, which get you close enough to order the right parts. They are not a model-year or spec lookup, and they show nothing about warranty, service bulletins, or service history. The exact year and build spec for a specific serial live in Mercury's dealer system.
+Not really. Crowley Marine, MarineEngine.com, and OBParts publish serial-range charts and parts finders, which get you close enough to order the right parts. They are not a model-year or spec lookup, and they show nothing about warranty, service bulletins, or service history. A Mercury dealer can confirm the exact year and build spec for a specific serial.
 
 ### Do older 2-stroke Mercurys (pre-2000) follow the same format?
 

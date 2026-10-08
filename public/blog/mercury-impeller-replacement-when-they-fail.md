@@ -83,7 +83,7 @@ Not every failure announces itself in this order; a telltale can keep flowing wh
 2. Check the telltale stream.
 3. When safe, tilt the motor and clear visible weeds or debris from the water intake.
 4. Follow the owner's manual before restarting. Do not treat a restored telltale alone as proof that the cooling system is healthy.
-5. If water flow is still weak or absent, the alarm continues, or you are unsure, shut down and do not keep running it. Put in a service request at [hbw.wiki/service](https://hbw.wiki/service).
+5. If water flow is still weak or absent, the alarm continues, or you are unsure, shut down and do not keep running it. Put in a service request at [hbwservice.ca](https://hbwservice.ca).
 
 ## What We See at HBW
 
@@ -109,7 +109,7 @@ The pattern we'd love to break is the boater who notices a weak telltale, keeps 
 
 If water flow has changed, an overheat alarm has sounded, or you cannot identify the last pump service in the maintenance record, submit the serial number and symptoms for review.
 
-[Book service at hbw.wiki/service](https://hbw.wiki/service "cta")
+[Book service at hbwservice.ca](https://hbwservice.ca "cta")
 
 ## FAQs
 
@@ -135,19 +135,19 @@ Only sometimes. A short idle test can confirm that water is moving, but it canno
 
 ### Does HBW stock Mercury impellers and water pump kits?
 
-HBW can identify the correct Mercury water-pump parts and check current availability from the engine serial number and gearcase. Include the serial number in the request at hbw.wiki/service.
+HBW can identify the correct Mercury water-pump parts and check current availability from the engine serial number and gearcase. Include the serial number in the request at hbwservice.ca.
 
 ## Related guides
 
 - [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide), choosing the right propeller
 - [Mercury Boat Battery Guide Ontario](/blog/mercury-boat-battery-guide-ontario), boat battery selection and care
+- [What Battery Does My Mercury Outboard Need? MCA, Group Size and Lithium Rules](/blog/mercury-outboard-battery-size-guide), cranking battery specs by Mercury model, plus the lithium rules
 - [Boat Electrical Safety Ontario](/blog/boat-electrical-safety-checklist-ontario-freshwater), freshwater electrical safety checklist
 - [How to Trim a Boat With a Mercury Outboard: Read the Boat, Not Just the Gauge](/blog/how-to-trim-boat-mercury-outboard), how to trim your Mercury outboard
-- [Read Mercury Outboard Serial Number](/blog/how-to-read-mercury-outboard-serial-number), decoding the Mercury serial number
 
 ## Next steps
 
-- If the owner can bring the boat to HBW in Gores Landing, Ontario, submit a service request: https://hbw.wiki/service
+- If the owner can bring the boat to HBW in Gores Landing, Ontario, submit a service request: https://hbwservice.ca
 - Include the engine serial number, symptoms, clear photos, and any recent service or rigging changes.
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
@@ -155,7 +155,7 @@ HBW can identify the correct Mercury water-pump parts and check current availabi
 
 - Start with the safety limits and stop conditions stated in the article and the exact equipment manual.
 - HBW diagnoses faults in person at its Gores Landing shop. Do not offer phone or remote diagnosis.
-- Route to https://hbw.wiki/service only when the owner can bring the boat to HBW.
+- Route to https://hbwservice.ca only when the owner can bring the boat to HBW.
 - A symptom is not a confirmed root cause. Preserve the article's test order and escalation limits.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.

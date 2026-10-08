@@ -31,7 +31,7 @@ revenue_driver: service
 
 ## 快速答案
 
-Mercury 和 MerCruiser 的保养周期取决于具体机型、序列号、使用时间和发动机小时数；常见节点包括适用机型的首次保养、年度或 100 小时保养，以及部分 300 小时或 3 年项目。请以对应的 Mercury 手册为准。Harris Boat Works（HBW）是 Rice Lake 上自 1947 年持续家族经营的 **Mercury Marine Premier 经销商**，**发动机维修只限 Mercury 和 MerCruiser**。团队使用英语服务，没有中文母语的销售或翻译；欢迎带会英语的亲友同来或使用翻译软件。服务、冬储和春季工作均按先到先办处理。先完成 [hbw.wiki/service](https://hbw.wiki/service)，然后随时送船，包括下班后。
+Mercury 和 MerCruiser 的保养周期取决于具体机型、序列号、使用时间和发动机小时数；常见节点包括适用机型的首次保养、年度或 100 小时保养，以及部分 300 小时或 3 年项目。请以对应的 Mercury 手册为准。Harris Boat Works（HBW）是 Rice Lake 上自 1947 年持续家族经营的 **Mercury Marine Premier 经销商**，**发动机维修只限 Mercury 和 MerCruiser**。团队使用英语服务，没有中文母语的销售或翻译；欢迎带会英语的亲友同来或使用翻译软件。服务、冬储和春季工作均按先到先办处理。先完成 [hbwservice.ca](https://hbwservice.ca)，然后随时送船，包括下班后。
 
 ---
 
@@ -45,15 +45,15 @@ Harris Boat Works 是 Rice Lake 上自 1947 年持续家族经营的 marina，�
 
 ---
 
-## Mercury 保养周期：20 / 100 / 300 三档
+## Mercury 保养周期：磨合 / 100 / 300 三档
 
 Mercury 把发动机保养按使用小时数分成几个关键节点。下面是简化版（具体以你的 Owner's Manual 为准）：
 
 | 节点 | 时机 | 主要内容 | 为什么重要 |
 |---|---|---|---|
-| **20 小时初次保养** | 新机或大修后第一次 | 第一次换机油、检查紧固件、调整化油器/喷油（视机型）、检查冷却水道 | 新机磨合期金属碎屑最多，必须及时清除；不做可能影响保修 |
+| **10 小时磨合期** | 新机或大修后 | 按手册完成磨合（多数机型：前 2 小时变化油门且不超过 4500 rpm，之后 8 小时避免连续全油门超过 5 分钟）；是否另有早期检查或换油，以机型手册为准 | 磨合方式不当造成的故障可能不在保修范围内 |
 | **100 小时年度保养** | 每年一次（即使时数不足） | 换机油 + 滤芯、检查火花塞、齿轮油、燃油滤、冷却系统、阳极 | 安省湖泊使用强度低，但季节性温差大，年度检查是底线 |
-| **300 小时大保养** | 每 300 小时或 3 年（取较早者） | 上面所有 + 换水泵叶轮、火花塞、燃油泵检查、节温器 | 水泵叶轮老化是 Mercury 故障最常见原因，过期不换风险高 |
+| **300 小时大保养** | 部分机型（如 150 FourStroke）为每 300 小时或 3 年（取较早者），其他机型以手册为准 | 按机型手册加做：换水泵叶轮、检查动力倾斜液、润滑传动轴花键、更换发电机皮带；火花塞和节温器的间隔也以手册为准 | 水泵叶轮老化是 Mercury 故障最常见原因，过期不换风险高 |
 
 **注意：** 这是 Mercury 通用框架，**确切周期视机型（FourStroke、Pro XS、SeaPro、Verado、Mercruiser）和使用环境（淡水 / 咸水）而定**。HBW 在每次服务时会按你的具体型号给出下一次推荐时间。
 
@@ -63,9 +63,9 @@ Mercury 把发动机保养按使用小时数分成几个关键节点。下面是
 
 ### 机油 + 滤芯（年度必换）
 
-四冲程 Mercury 请使用 Mercury 4-Stroke Marine Oil（FC-W 认证），**不能用汽车机油代替**。在加拿大按马力区分：0 至 30 hp 用 10W-30，40/50/60 hp 用 25W-40，75 hp 及以上用 10W-30。确切以用户手册为准。每 100 小时或每年一次（取较早者）。如果你只在 5 月到 10 月用船 20–30 小时，仍然建议每年换一次。
+四冲程 Mercury 请使用 Mercury 4-Stroke Marine Oil（FC-W 认证），**不能用汽车机油代替**。Mercury 提供 10W-30 和 25W-40 两种 FC-W 认证的四冲程机油，具体用哪一种取决于机型、年份和使用温度，请以你那台发动机的用户手册为准。每 100 小时或每年一次（取较早者）。如果你只在 5 月到 10 月用船 20–30 小时，仍然建议每年换一次。
 
-### 火花塞（300 小时或 3 年）
+### 火花塞（间隔以机型手册为准）
 
 Mercury 指定 NGK 或 Champion 特定型号，更换间距和扭矩有标准。开始有点火不稳、怠速抖动、油耗上升，多数情况换火花塞就好。
 
@@ -97,7 +97,7 @@ Lower unit gearcase oil 颜色变成奶白色就说明进水了，**必须立即
 | 服务类型 | 保养、诊断、维修、保修工作、冬储、春季开机 | 内燃柴油船机、Mercury 赛车系列（个别评估） |
 | 操作员卡 / 钓鱼证 | 不适用 | 不销售；请到 ontario.ca 办理 |
 
-如果你的船是 Mercury 或 Mercruiser，欢迎通过 [https://hbw.wiki/service](https://hbw.wiki/service) 提交服务请求。如果是其他品牌，请直接找对应授权点，避免来回奔波。
+如果你的船是 Mercury 或 Mercruiser，欢迎通过 [https://hbwservice.ca](https://hbwservice.ca) 提交服务请求。如果是其他品牌，请直接找对应授权点，避免来回奔波。
 
 ---
 
@@ -106,7 +106,7 @@ Lower unit gearcase oil 颜色变成奶白色就说明进水了，**必须立即
 新 Mercury 外挂机出厂通常带 **3 年消费者有限保修**（具体视机型和市场，可能有延保选项）。保修期内最重要的几件事：
 
 - **保修维修必须由授权经销商完成。** 非授权点的修理记录可能影响保修索赔。
-- **关键服务必须按时完成。** 跳过 20 小时初保、跳过 100 小时年度服务，可能导致 **特定相关项目的保修被拒**（不是"整个保修作废"，但具体项目可能受影响）。
+- **磨合和定期保养必须按手册完成。** 磨合不当、跳过手册要求的定期保养（如 100 小时或年度服务），可能导致 **特定相关项目的保修被拒**（不是"整个保修作废"，但具体项目可能受影响）。
 - **保留所有服务记录。** HBW 在 Mercury 系统里保留电子记录，你也应该自己留一份纸质或邮件副本。
 - **客户自带非 Mercury 零件可能影响保修。** 如机油、火花塞、滤芯使用非 Mercury 推荐型号，相关故障可能被排除在保修之外。
 
@@ -134,7 +134,7 @@ SmartCraft 报警、过热、漏油、燃油味或明显动力下降都需要按
 
 ### 5. 等到关闭后才安排冬化
 
-HBW 不需要客户提前数月抢位置。先完成 [hbw.wiki/service](https://hbw.wiki/service)，然后随时送船，包括下班后。 实体船厂 12 月 1 日至 4 月 1 日关闭。
+HBW 不需要客户提前数月抢位置。先完成 [hbwservice.ca](https://hbwservice.ca)，然后随时送船，包括下班后。 实体船厂 12 月 1 日至 4 月 1 日关闭。
 
 ---
 
@@ -148,7 +148,7 @@ HBW 提供室外专业收缩膜存储、室外无遮盖存储，以及仅收缩�
 
 ### 如何送船
 
-HBW 按**先到先办**处理冬化和冬储工作，不需要提前数月预留场地。先完成 [hbw.wiki/service](https://hbw.wiki/service)，然后随时送船，包括下班后。 实体船厂 12 月 1 日至 4 月 1 日关闭。
+HBW 按**先到先办**处理冬化和冬储工作，不需要提前数月预留场地。先完成 [hbwservice.ca](https://hbwservice.ca)，然后随时送船，包括下班后。 实体船厂 12 月 1 日至 4 月 1 日关闭。
 
 ### 自己做行不行？
 
@@ -180,7 +180,7 @@ HBW 按**先到先办**处理冬化和冬储工作，不需要提前数月预留
 
 - **欢迎带会英语的亲友同来**，或使用手机翻译软件，我们会耐心沟通、尽力配合
 - **提前用邮件写清楚**：症状、机型、序列号、想要的服务，可以中英文混合，我们能看懂大意
-- **服务请求模板**：[https://hbw.wiki/service](https://hbw.wiki/service) 上提交时同样可以中英文混合
+- **服务请求模板**：[https://hbwservice.ca](https://hbwservice.ca) 上提交时同样可以中英文混合
 - **服务报价邮件**：完工前的修理报价我们会写清楚每一项，避免"做了我才告诉你"
 
 我们不能承诺中文服务，但我们会认真对待每一位华人客户。
@@ -189,7 +189,7 @@ HBW 按**先到先办**处理冬化和冬储工作，不需要提前数月预留
 
 ## 预约流程
 
-最快的方式是 [https://hbw.wiki/service](https://hbw.wiki/service) 在线提交。提交时建议包含：
+最快的方式是 [https://hbwservice.ca](https://hbwservice.ca) 在线提交。提交时建议包含：
 
 1. **车主姓名 + 联系方式**（电话 + 邮箱）
 2. **发动机型号 + 序列号**（机壳上的金属铭牌）
@@ -202,7 +202,7 @@ HBW 按收到顺序处理请求。如果有漏油、过热、SmartCraft 严重�
 
 ## 下一步
 
-Mercury 或 MerCruiser 需要保养、诊断或维修时，到 [hbw.wiki/service](https://hbw.wiki/service) 提交机型、序列号、小时数、症状和需要的工作。发动机维修只限 Mercury 和 MerCruiser。
+Mercury 或 MerCruiser 需要保养、诊断或维修时，到 [hbwservice.ca](https://hbwservice.ca) 提交机型、序列号、小时数、症状和需要的工作。发动机维修只限 Mercury 和 MerCruiser。
 
 如果维修报价接近换机成本，可以同时在 [mercuryrepower.ca](https://www.mercuryrepower.ca) 建立当前 Mercury 配置，再比较两份完整数字。
 
@@ -224,7 +224,7 @@ HBW 是 Mercury Marine Premier Dealer，可以检查序列号记录并处理符�
 
 ### 什么时候提交秋季服务请求？
 
-先完成 hbw.wiki/service，然后随时送船，包括下班后。 实体船厂 12 月 1 日至 4 月 1 日关闭。
+先完成 hbwservice.ca，然后随时送船，包括下班后。 实体船厂 12 月 1 日至 4 月 1 日关闭。
 
 ### HBW 提供什么冬储？
 
@@ -240,12 +240,12 @@ HBW 提供室外专业收缩膜存储、室外无遮盖存储，以及仅收缩�
 
 ## Next steps
 
-- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbw.wiki/service
+- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbwservice.ca
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
-- The only commercial next step for this article is the HBW service request at https://hbw.wiki/service.
+- The only commercial next step for this article is the HBW service request at https://hbwservice.ca.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

@@ -48,6 +48,7 @@ export function buildMercuryProXSOffers({ skus, lastUpdated, siteUrl }) {
     return {
       hp,
       name: `Mercury ${hp} Pro XS`,
+      description: `Mercury ${hp} HP Pro XS outboard motor with Canadian-dollar bare-motor pricing from Harris Boat Works in Gores Landing, Ontario. Local pickup or professional installation only; no shipping.`,
       startingAt: startingSku.dealer,
       image: `${normalizedSiteUrl}${PRO_XS_IMAGE_PATHS[hp]}`,
       availability: startingSku.status.toLowerCase() === 'in stock'

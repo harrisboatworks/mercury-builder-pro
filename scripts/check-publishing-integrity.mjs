@@ -25,6 +25,16 @@ const proXsOffers = read('src/data/mercuryProXSOffers.js');
 const proXsPage = read('src/pages/landing/MercuryProXS.tsx');
 const vercelConfig = read('vercel.json');
 const prerenderScript = read('scripts/static-prerender.mjs');
+const blogSeo = read('src/components/seo/BlogSEO.tsx');
+const titleRule = /const renderedTitle\s*=\s*\(article\.title\s*\+\s*BRAND_SUFFIX\)\.length\s*<=\s*65\s*\?\s*article\.title\s*\+\s*BRAND_SUFFIX\s*:\s*article\.title\s*;/;
+check(
+  !/article\.seoTitle/.test(blogSeo) && titleRule.test(blogSeo) &&
+    /const BRAND_SUFFIX\s*=\s*['"] \| Harris Boat Works['"]/.test(blogSeo) &&
+    /const suffix\s*=\s*['"] \| Harris Boat Works['"]/.test(prerenderScript) &&
+    /const withSuffix\s*=\s*`\$\{title\}\$\{suffix\}`;\s*return withSuffix\.length\s*<=\s*65\s*\?\s*withSuffix\s*:\s*title;/.test(prerenderScript) &&
+    /title: buildBlogHeadTitle\(article\.title\)/.test(prerenderScript),
+  'Raw and hydrated blog titles must come from article.title with the same brand suffix and 65-character rule; BlogSEO must not prefer legacy seoTitle.',
+);
 const brandMetadata = read('public/.well-known/brand.json');
 const blogArticles = read('src/data/blogArticles.ts');
 const frenchBlogArticles = read('src/data/frenchBlogArticles.ts');
@@ -129,9 +139,9 @@ check(
   'Mandarin service guide must retain freshwater anode guidance and the corrected service table.',
 );
 check(
-  !/https:\/\/hbw\.wiki\/service。/.test(`${mandarinServiceGuide}\n${mandarinHorsepowerTwin}`) &&
-    /\[hbw\.wiki\/service\]\(https:\/\/hbw\.wiki\/service\)。/.test(`${mandarinServiceGuide}\n${mandarinHorsepowerTwin}`),
-  'Mandarin service links must keep Chinese punctuation outside the explicit hbw.wiki/service anchor.',
+  !/https:\/\/hbwservice\.ca。/.test(`${mandarinServiceGuide}\n${mandarinHorsepowerTwin}`) &&
+    /\[hbwservice\.ca\]\(https:\/\/hbwservice\.ca\)。/.test(`${mandarinServiceGuide}\n${mandarinHorsepowerTwin}`),
+  'Mandarin service links must keep Chinese punctuation outside the explicit hbwservice.ca anchor.',
 );
 check(
   !maintenanceTwin.includes('\n## Sources\n') &&
@@ -602,6 +612,14 @@ for (const [source, destination] of [
     `vercel.json must permanently consolidate ${source} into ${destination}.`,
   );
 }
+// The financing application deliberately uses useNoIndex(). Both sitemap
+// generators must omit it, and the crawler HTML must agree before hydration.
+check(
+  !/loc:\s*['"]\/financing-application['"]/.test(sitemapGenerator) &&
+    !/loc:\s*['"]\/financing-application['"]/.test(prerenderScript) &&
+    /path: '\/financing-application',\s*robots: 'noindex, nofollow'/.test(prerenderScript),
+  'Financing application must be noindexed in prerender and omitted from both sitemap generators.',
+);
 for (const loc of [
   '/mercury-product-protection.md',
   '/mercury-product-protection.json',

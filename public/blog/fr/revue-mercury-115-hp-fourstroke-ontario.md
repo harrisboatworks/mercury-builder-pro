@@ -31,7 +31,7 @@ revenue_driver: repower
 
 ### Réponse rapide
 
-Le Mercury 115 HP FourStroke appartient à la famille 2,1 L 4 cylindres en ligne des 75 et 90. Mercury le présente comme le hors-bord 115 HP le plus léger disponible; le poids à sec publié dépend de la configuration. Il est calibré à 6 000 RPM. C'est le bon moteur pour les bateaux de pêche en aluminium de 17 à 20 pi et les pontons de taille moyenne à grande (avec Command Thrust), et c'est le choix par défaut pour les plaisanciers ontariens qui veulent une vraie marge sans entrer dans le territoire des V6.
+Le Mercury 115 HP FourStroke actuel est un 4 cylindres en ligne de 2,1 L silencieux et relativement léger, qui fonctionne très bien quand le bateau, l'embase et l'hélice sont bien assortis. Choisissez l'embase standard pour une coque en V de plaisance, Command Thrust pour un ponton ou certains bateaux de travail lourds, et le Pro XS quand la coque et le propriétaire peuvent profiter de sa plage de régime plus élevée.
 
 ---
 
@@ -65,7 +65,7 @@ Ce qu'ils partagent tous :
 - Compatibilité SmartCraft
 - Garantie standard d'usine de 3 ans
 
-Le 115 est la calibration la plus élevée de cette famille. Il monte à 6 000 RPM. Le passage du 90 au 115 est une calibration, pas un moteur différent. Aucune pénalité de poids.
+Le 115 est la calibration la plus élevée de cette famille. Sa plage de régime à pleins gaz est de 5 000 à 6 000 RPM, avec un rapport d'embase standard de 2,07:1. Le passage du 90 au 115 est une calibration, pas un moteur différent. Aucune pénalité de poids.
 
 ---
 
@@ -80,7 +80,7 @@ Cet article couvre le **115 ELPT FourStroke** et le **115 ELPT Command Thrust**.
 
 ---
 
-## Quand prendre l'amélioration Command Thrust
+## Quand choisir Command Thrust
 
 | Type de bateau | Prendre CT? |
 |---|---|
@@ -88,7 +88,7 @@ Cet article couvre le **115 ELPT FourStroke** et le **115 ELPT Command Thrust**.
 | Bateau de pêche en aluminium | Rarement |
 | Vedette en fibre de verre | Cas par cas |
 
-Le CT vous donne plus de puissance de traction à bas régime et de hole-shot au prix d'une certaine vitesse de pointe.
+Le CT change l'embase, le rapport (2,38:1) et les hélices possibles : il aide à porter une charge, mais l'embase plus grande ajoute de la traînée. Il n'ajoute pas de puissance.
 
 ---
 
@@ -100,11 +100,11 @@ Un bateau de 16 pi avec deux pêcheurs est la mission du 90. Quand la coque est 
 
 ### Pontons de taille moyenne à grande, 20 à 24 pi
 
-C'est ici que le 115 CT prouve sa valeur. Un ponton de 22 pi avec une charge familiale complète et une glacière mérite au moins 90 CT. Le 115 CT est la bonne réponse si le ponton est un tritoon.
+C'est ici que le 115 CT prouve sa valeur. Un ponton de 22 pi avec une charge familiale complète et une glacière mérite au moins 90 CT. Le 115 CT convient à un tritoon léger ou de taille moyenne; pour un tritoon lourd ou très chargé, voyez le 150 ou plus, selon la plaque de capacité.
 
 ### Vedettes familiales qui font un peu de tout
 
-Croisière, pêche, traction de chambre à air, sports nautiques occasionnels, le 115 gère tout cela sans travailler fort.
+Croisière, pêche, remorquage de bouées, sports nautiques occasionnels, le 115 gère tout cela sans travailler fort.
 
 ### Remotorisations à partir de vieux deux temps
 
@@ -114,7 +114,7 @@ Les candidats les plus courants à la remotorisation pour le 115 ELPT sont les v
 
 ## Où le 115 HP FourStroke est le mauvais choix
 
-**Hole-shot de bass boat.** Le 115 ELPT FourStroke est calibré pour l'économie, la croisière douce et la fiabilité.
+**Accélération de bass boat.** Le 115 ELPT FourStroke est calibré pour l'économie, la croisière douce et la fiabilité.
 
 **Tritoons lourds, pontons de 24 pi et plus, maisons flottantes.** Ces applications ont besoin du 150 ou plus.
 
@@ -136,7 +136,7 @@ Les candidats les plus courants à la remotorisation pour le 115 ELPT sont les v
 
 **90 vs 115 :** Calibration, pas un moteur différent. Aucun changement de poids.
 
-**115 vs 150 :** Famille complètement différente. Le 150 FourStroke est un 4 cylindres en ligne de 3,0 L, plus lourd d'environ 100 lb.
+**115 vs 150 :** Famille complètement différente. Le 150 FourStroke est un 4 cylindres en ligne de 3,0 L, plus lourd d'environ 45 kg (100 lb).
 
 ---
 
@@ -146,9 +146,9 @@ Les candidats les plus courants à la remotorisation pour le 115 ELPT sont les v
 
 **Ponton de taille moyenne à grande, 20 à 24 pi, charges normales de chalet :** 115 ELPT Command Thrust.
 
-**Même bateau mais vous voulez le hole-shot et exploitez une plateforme de pêche de tournoi :** 115 Pro XS. Moteur différent, prix différent.
+**Même bateau, mais vous voulez une accélération plus vive pour la pêche de tournoi :** 115 Pro XS. Moteur différent, prix différent.
 
-Si vous achetez chez nous, nous l'entretenons. Pour les réparations de moteur, nous ne travaillons que sur Mercury et Mercruiser.
+Si vous achetez chez nous, nous l'entretenons. Pour les réparations de moteur, nous ne travaillons que sur Mercury et MerCruiser.
 
 ---
 
@@ -176,7 +176,7 @@ Le poids à sec publié dépend de la configuration (arbre, embase). Mercury pr�
 
 ### Quelle est la différence entre le 115 FourStroke et le 115 Pro XS?
 
-Même tête motrice 2,1 L, calibration différente. Le Pro XS est calibré pour le hole-shot et la performance à haut régime; Mercury l'offre dans plusieurs configurations d'embase, dont Command Thrust. Le FourStroke standard est la calibration de tous les jours.
+Même tête motrice 2,1 L, calibration différente. Le Pro XS est calibré pour l'accélération et la performance à haut régime; Mercury l'offre dans plusieurs configurations d'embase, dont Command Thrust. Le FourStroke standard est la calibration de tous les jours.
 
 ### Le 115 est-il suffisant pour un bateau d'aluminium de 19 pi?
 
@@ -184,7 +184,7 @@ Pour la plupart des bateaux de pêche en aluminium de 19 pi avec des charges nor
 
 ### Un 115 fera-t-il planer mon ponton de 22 pi?
 
-Avec l'amélioration Command Thrust et une charge normale de chalet, oui. Le 115 CT est la réponse standard pour les pontons de 20 à 22 pi. 24 pi et plus, vous voulez le 150.
+Avec Command Thrust et une charge normale de chalet, oui. Le 115 CT est la réponse standard pour les pontons de 20 à 22 pi. 24 pi et plus, vous voulez le 150.
 
 ### Quelle est la garantie?
 

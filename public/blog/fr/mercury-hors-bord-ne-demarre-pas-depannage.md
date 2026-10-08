@@ -31,9 +31,9 @@ revenue_driver: service
 
 ## Réponse rapide
 
-La plupart des moteurs Mercury hors-bord qui refusent de démarrer ont l'une de trois causes : une batterie faible ou à plat, du carburant vieilli ou contaminé, ou une hivernisation négligée (ou incomplète). Vérifiez ces éléments dans l'ordre. Si le moteur ne démarre toujours pas après les vérifications de base, apportez-le chez nous. Insister sur un moteur en panne pour le forcer à partir peut transformer un simple diagnostic en remplacement de pièces.
+Commencez par les vérifications de l'opérateur décrites dans le manuel de votre moteur Mercury exact, y compris les commandes et l'alimentation électrique. Notez si le moteur ne tourne pas, tourne lentement, tourne sans démarrer ou démarre puis s'arrête. Ce symptôme aide l'équipe de service à choisir le prochain test; il n'identifie pas à lui seul la pièce défectueuse. Si le moteur ne démarre toujours pas après les vérifications de base, apportez-le chez nous. Insister sur un moteur en panne pour le forcer à partir peut transformer un simple diagnostic en remplacement de pièces.
 
-Pour réserver un diagnostic : [hbw.wiki/service](https://hbw.wiki/service).
+Pour réserver un diagnostic : [hbwservice.ca](https://hbwservice.ca).
 
 ---
 
@@ -54,7 +54,7 @@ Ce guide présente la séquence de diagnostic que nous recommandons à tout prop
 
 C'est embarrassant quand c'est la cause, et c'est la cause assez souvent pour qu'on commence toujours par là.
 
-Le cordon de sécurité rouge (lanyard du coupe-circuit) doit être physiquement attaché au commutateur pour que le moteur démarre. Si quelqu'un l'a retiré pour l'entreposage ou s'il s'est détaché lors de la manutention, le moteur est désactivé électroniquement. Il ne tournera pas, ne fera rien, et ne donnera aucune indication que c'est la raison.
+Le cordon rouge du coupe-circuit doit être physiquement attaché au commutateur pour que le moteur démarre. Si quelqu'un l'a retiré pour l'entreposage ou s'il s'est détaché lors de la manutention, le moteur est désactivé électroniquement. Il ne tournera pas, ne fera rien, et ne donnera aucune indication que c'est la raison.
 
 Vérifiez :
 - Le clip du cordon est attaché au coupe-circuit sur le tableau de bord ou la barre franche
@@ -72,8 +72,8 @@ Après le cordon, une batterie faible ou à plat est la cause la plus fréquente
 Les Mercury FourStroke modernes sont sensibles à la tension. Le système de gestion du moteur a besoin d'une tension solide pour seulement tenter de démarrer. Une batterie qui semble avoir un peu de charge peut tout de même être insuffisante.
 
 Vérifiez :
-- **Tension au repos :** doit être de 12,4 V ou plus. Sous 12,0 V, c'est une batterie faible qui doit être rechargée avant tout autre diagnostic.
-- **Tension en démarrage :** doit rester au-dessus de 9,5 à 10 V pendant que vous lancez le démarreur. Si elle descend plus bas, la batterie ne peut pas soutenir l'appel de courant du démarreur, remplacez-la.
+- **Tension au repos :** une batterie au plomb de 12 V entièrement chargée lit environ 12,6 V; 12,4 V est acceptable, mais rechargez avant d'utiliser. Sous 12,2 V, la batterie est sérieusement compromise et doit être rechargée avant tout autre diagnostic.
+- **Tension en démarrage :** c'est le test qui compte. Si la tension chute fortement, si le démarreur peine ou si un câble chauffe, arrêtez-vous et corrigez la batterie ou la connexion avant de chercher du côté du carburant et de l'allumage. Les exigences de batterie de démarrage de Mercury varient selon la famille de moteur; consultez le manuel du propriétaire propre à votre numéro de série.
 - **État des bornes :** la corrosion (poudre verte ou blanche sur les bornes) crée de la résistance. Nettoyez les bornes avant de tirer une conclusion d'un test de tension.
 - **Connexions de câbles :** des câbles desserrés ou corrodés causent des symptômes intermittents. Resserrez et nettoyez.
 - **Âge de la batterie :** les batteries marines au plomb-acide durent généralement 4 à 6 ans. Si la vôtre est plus vieille, elle est suspecte peu importe les résultats des tests à vide.
@@ -119,7 +119,7 @@ Si la batterie et le carburant sont bons, l'étincelle est la prochaine étape.
 3. Vérifiez l'écartement par rapport à la spécification de votre moteur
 4. Remplacez toute bougie qui semble douteuse
 
-**Noyage :** Si le moteur a été lancé à plusieurs reprises sans démarrer, les cylindres peuvent être noyés. Avec les bougies retirées, faites tourner le moteur brièvement pour purger les cylindres, puis réinstallez des bougies neuves.
+**Noyage :** Si le moteur a été lancé à plusieurs reprises sans démarrer, les cylindres peuvent être noyés. Les moteurs EFI modernes noient rarement. Sur un moteur à carburateur noyé, retirez les bougies, mettez les fils de bougie à la masse (ou débranchez les bobines) et gardez le cordon du coupe-circuit retiré pendant que vous lancez brièvement le moteur pour purger les cylindres. Gardez étincelles et flammes loin du jet de carburant. Laissez reposer 15 à 20 minutes bougies retirées, puis réinstallez des bougies neuves, rebranchez les fils et le cordon, et réessayez.
 
 Ne continuez pas à lancer un moteur noyé avec les bougies installées, cela aggrave le noyage et peut pousser le carburant dans l'huile.
 
@@ -149,7 +149,7 @@ Arrêtez le dépannage et réservez un diagnostic professionnel si :
 
 Pour les réparations de moteur, nous ne servons que Mercury et Mercruiser.
 
-Faire tourner un moteur avec un problème non diagnostiqué pour le forcer à démarrer peut transformer un diagnostic de 150 $ en une réparation beaucoup plus sérieuse. Réservez à [hbw.wiki/service](https://hbw.wiki/service).
+Faire tourner un moteur avec un problème non diagnostiqué pour le forcer à démarrer peut transformer un diagnostic de 150 $ en une réparation beaucoup plus sérieuse. Réservez à [hbwservice.ca](https://hbwservice.ca).
 
 ---
 
@@ -163,7 +163,7 @@ Faire tourner un moteur avec un problème non diagnostiqué pour le forcer à d�
 ## Pour nous joindre
 
 **Vous ne trouvez pas le problème ?**
-Réservez un diagnostic à [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Gores Landing, concessionnaire [Mercury Marine](https://www.mercurymarine.com/ca/en) certifié Premier. Concessionnaire Mercury depuis 1965, marina familiale sur le lac Rice depuis 1947. Pour les réparations de moteur, nous ne servons que Mercury et Mercruiser.
+Réservez un diagnostic à [hbwservice.ca](https://hbwservice.ca). Harris Boat Works, Gores Landing, concessionnaire [Mercury Marine](https://www.mercurymarine.com/ca/en) certifié Premier. Concessionnaire Mercury depuis 1965, marina familiale sur le lac Rice depuis 1947. Pour les réparations de moteur, nous ne servons que Mercury et Mercruiser.
 
 Téléphone : 905-342-2153
 
@@ -197,15 +197,15 @@ Le fluide de démarrage (aérosol à base d'éther) n'est généralement pas rec
 
 ### Comment savoir si la batterie de mon hors-bord est assez forte pour démarrer le moteur ?
 
-Une batterie de bateau qui lit 12,4 à 12,6 V au repos peut tout de même échouer sous la charge de démarrage d'un hors-bord à injection. Le test fiable est un test sous charge, pas une lecture de tension au repos. La plupart des magasins de pièces automobiles (Canadian Tire, Napa) feront un test sous charge gratuitement. Une batterie marine en santé doit maintenir au moins 9,6 V sous pleine charge de démarrage pendant 15 secondes. Si la vôtre tombe sous ce seuil, elle ne démarrera pas un Mercury FourStroke de façon fiable, surtout par temps froid. Une batterie de plus de 4 à 5 ans qui échoue les tests sous charge doit être remplacée, pas rechargée et espérée.
+Une batterie de bateau qui lit 12,4 à 12,6 V au repos peut tout de même échouer sous la charge de démarrage d'un hors-bord à injection. Le test fiable est un test sous charge, pas une lecture de tension au repos. La plupart des magasins de pièces automobiles (Canadian Tire, Napa) feront un test sous charge gratuitement. Les exigences de batterie de démarrage de Mercury varient selon la famille de moteur; confirmez la valeur exacte dans le manuel du propriétaire propre à votre numéro de série. Si la vôtre échoue au test sous charge, elle ne démarrera pas un Mercury FourStroke de façon fiable, surtout par temps froid. Une batterie de plus de 4 à 5 ans qui échoue les tests sous charge doit être remplacée, pas rechargée et espérée.
 
 ### Pourquoi mon Mercury démarre bien mais tourne irrégulièrement ?
 
-Une marche irrégulière après le démarrage pointe souvent vers des problèmes partiels d'alimentation en carburant : filtre partiellement obstrué, poire d'amorçage avec un clapet faible, eau dans le carburant, ou injecteur encrassé. Sur les moteurs à carburateur, des dépôts de vernis dans les gicleurs sont fréquents après l'entreposage hivernal. Sur les moteurs à injection, une lecture de pression de pompe défaillante ou un mauvais injecteur peut causer un ralenti irrégulier et des hésitations. Autre possibilité : un cylindre qui rate à cause d'une bougie encrassée. Retirez les bougies et inspectez; remplacez celles qui semblent douteuses. Une marche irrégulière peut aussi indiquer une surchauffe, vérifiez que le témoin d'eau (tell-tale) coule. Selon nos données de bons de travail, les interventions de surchauffe chez Harris Boat Works se situent en moyenne autour de 370 $.
+Une marche irrégulière après le démarrage pointe souvent vers des problèmes partiels d'alimentation en carburant : filtre partiellement obstrué, poire d'amorçage avec un clapet faible, eau dans le carburant, ou injecteur encrassé. Sur les moteurs à carburateur, des dépôts de vernis dans les gicleurs sont fréquents après l'entreposage hivernal. Sur les moteurs à injection, une lecture de pression de pompe défaillante ou un mauvais injecteur peut causer un ralenti irrégulier et des hésitations. Autre possibilité : un cylindre qui rate à cause d'une bougie encrassée. Retirez les bougies et inspectez; remplacez celles qui semblent douteuses. Une marche irrégulière peut aussi indiquer une surchauffe, vérifiez que le témoin d'eau coule. Selon nos données de bons de travail, les interventions de surchauffe chez Harris Boat Works se situent en moyenne autour de 370 $.
 
 ### Comment réinitialiser un Mercury qui s'est arrêté sur l'eau ?
 
-Si un Mercury a déclenché un arrêt sur l'eau à cause d'une surchauffe, d'une pression d'huile ou d'un défaut de capteur, ne le redémarrez pas simplement pour le faire fonctionner. Le défaut qui a causé l'arrêt est toujours présent. Tournez la clé à off, attendez 5 minutes et tentez un seul redémarrage. S'il démarre et que le signal sonore s'arrête, surveillez attentivement le reste de la sortie. Si le signal se déclenche à nouveau, arrêtez immédiatement et appelez à l'aide. Continuer à faire tourner un moteur qui avertit activement d'un défaut risque de causer des dommages sérieux. Faites lire les codes de défaut par un concessionnaire avant la prochaine sortie.
+Si un Mercury a déclenché un arrêt sur l'eau à cause d'une surchauffe, d'une pression d'huile ou d'un défaut de capteur, ne le redémarrez pas simplement pour le faire fonctionner. Le défaut qui a causé l'arrêt est toujours présent. Notez le message affiché ou le motif du signal sonore, puis suivez les vérifications du manuel du propriétaire de votre moteur exact. Si le signal sonore retentit de nouveau, arrêtez immédiatement et appelez à l'aide. Continuer à faire tourner un moteur qui avertit activement d'un défaut risque de causer des dommages sérieux. Faites lire les codes de défaut par un concessionnaire avant la prochaine sortie.
 
 ### Est-ce mauvais de lancer le démarreur d'un moteur qui ne part pas, à répétition ?
 
@@ -213,11 +213,11 @@ Oui. Lancer un moteur qui ne démarre pas à répétition cause plusieurs probl�
 
 ### C'est quoi le cordon du coupe-circuit Mercury et où s'attache-t-il ?
 
-Le cordon de coupure d'urgence Mercury (aussi appelé lanyard du coupe-circuit) est un câble de sécurité spiralé avec un clip à un bout qui s'attache au conducteur. L'autre bout se branche dans le commutateur d'arrêt d'urgence sur le côté du panneau de commande ou de la barre franche. Si le clip est retiré, soit volontairement, soit parce que le conducteur est tombé à l'eau, le circuit s'ouvre et le moteur s'arrête. Cela empêche aussi le moteur de démarrer si le clip n'est pas en place. Le clip doit être complètement inséré dans le boîtier du commutateur, pas simplement appuyé légèrement. C'est l'une des causes les plus souvent négligées d'une situation « ne démarre pas ».
+Le cordon de coupure d'urgence Mercury (aussi appelé cordon du coupe-circuit) est un câble de sécurité spiralé avec un clip à un bout qui s'attache au conducteur. L'autre bout se branche dans le commutateur d'arrêt d'urgence sur le côté du panneau de commande ou de la barre franche. Si le clip est retiré, soit volontairement, soit parce que le conducteur est tombé à l'eau, le circuit s'ouvre et le moteur s'arrête. Cela empêche aussi le moteur de démarrer si le clip n'est pas en place. Le clip doit être complètement inséré dans le boîtier du commutateur, pas simplement appuyé légèrement. C'est l'une des causes les plus souvent négligées d'une situation « ne démarre pas ».
 
 ### Quand devrais-je appeler un concessionnaire Mercury plutôt que de faire le dépannage moi-même ?
 
-Appelez un concessionnaire quand : le moteur ne démarre pas après avoir vérifié toutes les causes courantes (carburant, batterie, coupe-circuit, bougies, conduites); un signal sonore d'avertissement se fait entendre et le moteur s'arrête en protection; vous soupçonnez que de l'eau a pénétré dans le moteur; le moteur tourne mais affiche des codes de défaut; ou le moteur est sous garantie et vous voulez protéger la couverture. Chez Harris Boat Works, nous utilisons le logiciel de diagnostic Mercury pour lire les codes de défaut directement à partir de l'ECM, ce qui ne peut pas se faire sans le bon équipement. Un diagnostic « ne démarre pas » standard se situe en moyenne autour de 540 $ selon notre historique de réparations. Réservez le service à hbw.wiki/service ou appelez au 905-342-2153.
+Appelez un concessionnaire quand : le moteur ne démarre pas après avoir vérifié toutes les causes courantes (carburant, batterie, coupe-circuit, bougies, conduites); un signal sonore d'avertissement se fait entendre et le moteur s'arrête en protection; vous soupçonnez que de l'eau a pénétré dans le moteur; le moteur tourne mais affiche des codes de défaut; ou le moteur est sous garantie et vous voulez protéger la couverture. Chez Harris Boat Works, nous utilisons le logiciel de diagnostic Mercury pour lire les codes de défaut directement à partir de l'ECM, ce qui ne peut pas se faire sans le bon équipement. Un diagnostic « ne démarre pas » standard se situe en moyenne autour de 540 $ selon notre historique de réparations. Réservez le service à hbwservice.ca ou appelez au 905-342-2153.
 
 ### Combien de temps prend le diagnostic d'un Mercury qui ne démarre pas ?
 
@@ -233,12 +233,12 @@ Un non-démarrage intermittent est souvent un problème de connexion : une borne
 
 ## Prochaines étapes
 
-- Décrivez le bateau, le moteur et les symptômes, puis joignez des photos à la demande de service HBW : https://hbw.wiki/service
+- Décrivez le bateau, le moteur et les symptômes, puis joignez des photos à la demande de service HBW : https://hbwservice.ca
 - Lieu de ramassage et coordonnées : Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
-- The only commercial next step for this article is the HBW service request at https://hbw.wiki/service.
+- The only commercial next step for this article is the HBW service request at https://hbwservice.ca.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

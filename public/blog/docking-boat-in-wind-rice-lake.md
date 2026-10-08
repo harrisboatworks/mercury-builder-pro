@@ -61,7 +61,7 @@ Before you point the bow at the dock, spend 60 seconds doing recon.
 
 Watch boats already docked, if they're leaning hard to one side, that tells you exactly what the wind is doing. Check nearby flags. Note whether the wind is pushing you onto the dock or away from it. Each scenario needs a different approach.
 
-The southwest wind that funnels in off Harwood toward Gores Landing every afternoon is predictable enough to plan around before you even leave in the morning. The [Rice Lake boating guide](https://www.mercuryrepower.ca/blog/rice-lake-boating-guide-2026) covers typical wind patterns by area of the lake.
+A southwest wind commonly builds on Rice Lake on summer afternoons, which is predictable enough to plan around before you even leave in the morning. The [Rice Lake boating guide](https://www.mercuryrepower.ca/blog/rice-lake-boating-guide-2026) covers typical wind patterns by area of the lake.
 
 ---
 
@@ -143,7 +143,7 @@ Pontoons need **more throttle into the wind** than people expect. All that winda
 
 The fix: carry a bit more speed, maintain steerage until you're closer, then cut to neutral and use a short reverse burst just before the dock. The same wind drag that fought you at speed now helps you stop.
 
-A [Mercury Command Thrust gearcase](https://www.mercuryrepower.ca/blog/mercury-command-thrust-complete-guide-2026) helps significantly here. The larger prop diameter gives better thrust at low RPM, so you can hold steerage without revving as high. If you're babysitting throttle inputs on every docking, this is worth a look.
+A [Mercury Command Thrust gearcase](https://www.mercuryrepower.ca/blog/mercury-command-thrust-complete-guide-2026) can help here on the models that offer it. It is built to turn a larger prop, which helps heavy boats at lower speeds, though wind and technique still matter most. If you're babysitting throttle inputs on every docking, this is worth a look.
 
 ---
 
@@ -215,15 +215,15 @@ Technique is the foundation. But some equipment makes a real difference.
 
 **Digital throttle and shift (DTS):** Removes cable lag from throttle input. What you feel in your hand is what the engine does, immediately. The precision at slow speed is meaningfully better than a cable system, and slow-speed precision is exactly what matters near a dock. The [VesselView / SmartCraft guide](https://www.mercuryrepower.ca/blog/mercury-vesselview-smartcraft-plain-english-guide) covers real-time engine data that DTS systems surface.
 
-**Mercury Command Thrust gearcase:** Purpose-built for pontoons. Better low-RPM thrust, easier to hold position in wind. If every docking feels like a workout, this addresses the actual cause.
+**Mercury Command Thrust gearcase:** Purpose-built for pontoons. More low-end thrust from a larger prop, offered on select models. It can help with low-speed control on heavy boats, but docking in wind is still mostly technique and windage.
 
 **Mercury Joystick Piloting (eligible packages):** Point the joystick where you want the boat to go. Conventional outboard packages use multiple DTS-equipped engines. Mercury also offers [Joystick Piloting for Single-Engine Outboards with Thruster](https://www.mercurymarine.com/us/en/about-us/news/mercury-introduces-joystick-piloting-for-single-engine-outboards.html) for an electric-steering Verado or SeaPro V8, V10, or V12 from 250 to 600 HP paired with a compatible CAN-based variable-speed thruster. Most single-engine rigs do not qualify, so the exact engine, steering, controls, and thruster package must be confirmed.
 
-Most Rice Lake boaters are running a single outboard on a pontoon, bowrider, or fishing boat. For that setup, technique plus a Command Thrust gearcase covers 95% of docking situations.
+Most Rice Lake boaters are running a single outboard on a pontoon, bowrider, or fishing boat. For that setup, good technique handles most docking situations.
 
 ---
 
-Thinking about a digital throttle upgrade or a Command Thrust gearcase? Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), or request service at [hbw.wiki/service](https://hbw.wiki/service).
+Thinking about a digital throttle upgrade or a Command Thrust gearcase? Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), or request service at [hbwservice.ca](https://hbwservice.ca).
 
 No pressure. But if you want to stop having that heart-rate moment every time you come back into Bewdley or Gores Landing with a southwest breeze on your beam, it's worth knowing your options.
 

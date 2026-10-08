@@ -35,13 +35,14 @@ const SRC_SEO_GLOB_DIRS = ['src/components/seo', 'src/pages/landing', 'src/pages
 
 const REQUIRED_FIELDS = {
   Product: ['name'],
+  ProductGroup: ['name'],
   LocalBusiness: ['name', 'address'],
   AutoRepair: ['name', 'address'],
   BoatDealer: ['name', 'address'],
   Store: ['name', 'address'],
   Organization: ['name'],
   Article: ['headline', 'datePublished'],
-  BlogPosting: ['headline', 'datePublished'],
+  BlogPosting: ['headline', 'datePublished', 'image'],
   NewsArticle: ['headline', 'datePublished'],
   BreadcrumbList: ['itemListElement'],
   FAQPage: ['mainEntity'],

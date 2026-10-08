@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-repowering-guide-when-to-replace-motor.md
-last_updated: 2026-09-11
+last_updated: 2026-10-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "When to Replace Your Boat Motor. A Repowering Guide for Ontario Boat Own
 description: "When is it time to repower? Honest Ontario cost ranges ($6.5K-$40K CAD), signs your motor is done, and a Mercury repower framework from HBW."
 category: "Repowering"
 date_published: 2024-03-05
-date_modified: 2026-09-11
+date_modified: 2026-10-04
 keywords: ["boat repowering","when to replace outboard","repower cost","new boat vs repower","outboard motor replacement"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Repowering  
 **Published:** 2024-03-05  
-**Last reviewed:** 2026-09-11  
+**Last reviewed:** 2026-10-04  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-repowering-guide-when-to-replace-motor
 
@@ -59,7 +59,7 @@ The customers who plan and order over the off-season (our shop is closed Decembe
 Five things move the right repower timing:
 
 - **Motor age.** A 25-year-old motor is closer to end of life than a 5-year-old motor regardless of hours.
-- **Hours of use.** A motor with 1,500+ hours has limited remaining life. A modern Mercury at 500 hours has years left.
+- **Hours of use.** Hours alone don't decide it, so read them alongside compression, service history and corrosion. A modern Mercury at 500 hours has years left.
 - **Maintenance history.** Well-maintained motors last longer. Skipped winterization shortens motor life dramatically.
 - **Symptom severity.** Hard starts and minor fuel issues are early warnings. Compression problems and metal in the gearcase oil are end-stage.
 - **Repair cost trajectory.** $200 spring service every year is normal. $500-plus repair bills two years running is a sign.
@@ -176,11 +176,11 @@ For new motors (under 8 years), repair almost always makes sense unless the dama
 
 We do this math with customers at HBW. Not every problem is a repower trigger. Some are.
 
-- [Mercury Repower Cost Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad), full HP class pricing
-- [Boat Hull Replacement vs Repower Decision](/blog/boat-hull-replacement-vs-repower-decision), the honest decision tree
-- [Evinrude to Mercury Repower Ontario Guide](/blog/evinrude-to-mercury-repower-ontario-guide), brand conversion
-- [Mercury Motor Maintenance: Seasonal Care Tips](/blog/mercury-motor-maintenance-seasonal-tips), keeping motors going longer
-- [Mercury Outboard Won't Start Troubleshooting](/blog/mercury-outboard-wont-start-troubleshooting), early diagnostic
+- [Mercury Repower Cost Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad): full HP class pricing
+- [Boat Hull Replacement vs Repower Decision](/blog/boat-hull-replacement-vs-repower-decision): the honest decision tree
+- [Evinrude to Mercury Repower Ontario Guide](/blog/evinrude-to-mercury-repower-ontario-guide): brand conversion
+- [Mercury Motor Maintenance: Seasonal Care Tips](/blog/mercury-motor-maintenance-seasonal-tips): keeping motors going longer
+- [Mercury Outboard Won't Start Troubleshooting](/blog/mercury-outboard-wont-start-troubleshooting): early diagnostic
 
 Build a quote on the [motor selection page](/quote/motor-selection) if you've decided. Live Mercury pricing in CAD with full configuration including rigging.
 
@@ -206,11 +206,11 @@ If your hull, transom, and interior are in good condition, repowering almost alw
 
 ### Can I increase HP when repowering?
 
-Often yes, up to your boat's maximum rated HP. Modern motors are lighter and more efficient, so a higher HP motor may work well where it wouldn't have before. We'll help you choose the right size.
+Often yes, but HBW recommends one Mercury model step below the maximum HP on the capacity plate. If the plate says 150 HP, the best fit is a 115. Max rated is overkill: more power and more weight on the transom than the boat performs well with. We'll help you choose the right size.
 
 ### Do I need new controls when repowering?
 
-Not always. If your controls are 2004 or newer Mercury controls, they're likely compatible. Older controls may need replacement. We assess this during our repower consultation.
+Not always. Whether your controls carry over depends on the control type (mechanical or digital) and the exact motor, and older or worn controls may need replacement. We assess this during our repower consultation.
 
 ### What warranty comes with a repower?
 

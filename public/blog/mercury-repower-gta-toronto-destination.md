@@ -8,7 +8,7 @@ final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
 title: "Mercury Repower GTA Toronto Guide"
-description: "How a GTA boater repowers a boat at Harris Boat Works: logistics, pricing, timeline, and transport from the dealer that handles this route every week."
+description: "How a GTA boater repowers a boat at Harris Boat Works: logistics, pricing, timeline, and what to expect on boat pickup."
 category: "Mercury Outboards"
 date_published: 2026-05-19
 date_modified: 2026-09-06
@@ -21,7 +21,7 @@ revenue_driver: repower
 
 # Mercury Repower GTA Toronto Guide
 
-> How a GTA boater repowers a boat at Harris Boat Works: logistics, pricing, timeline, and transport from the dealer that handles this route every week.
+> How a GTA boater repowers a boat at Harris Boat Works: logistics, pricing, timeline, and what to expect on boat pickup.
 
 **Category:** Mercury Outboards  
 **Published:** 2026-05-19  
@@ -98,7 +98,7 @@ The marina is closed December 1 through April 1. During that closure, planning a
 
 ## From the Shop: Stage 4, Customer Drop-Off
 
-Complete the service request at [hbw.wiki/service](https://hbw.wiki/service), then bring the boat and trailer to 5369 Harris Boat Works Rd in Gores Landing anytime, including after hours. If you cannot bring the boat, ask whether pickup is available for your boat and location.
+Complete the service request at [hbwservice.ca](https://hbwservice.ca), then bring the boat and trailer to 5369 Harris Boat Works Rd in Gores Landing anytime, including after hours. If you cannot bring the boat, ask whether pickup is available for your boat and location.
 
 HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport.
 
@@ -157,7 +157,7 @@ Follow the exact owner's manual for break-in and maintenance. There is no univer
 Send the capacity label, current motor serial number, and rigging photos. HBW will confirm whether the project fits, build the correct Mercury configuration, and put the scope in writing.
 
 **Quote builder:** [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection)
-**Service request:** [hbw.wiki/service](https://hbw.wiki/service)
+**Service request:** [hbwservice.ca](https://hbwservice.ca)
 **Phone:** 905-342-2153
 **Drop-off and pickup:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 

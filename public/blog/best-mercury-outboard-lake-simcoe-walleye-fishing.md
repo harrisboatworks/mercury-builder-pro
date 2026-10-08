@@ -46,7 +46,7 @@ Simcoe rewards more boat and more motor than Rice Lake or the smaller Kawartha l
 - **Travel distance.** Simcoe is roughly 740 km² with multiple fishing zones. Travel from Cook's Bay to Kempenfelt Bay or to the deeper basins takes real time.
 - **Boat traffic.** Heavy summer recreational traffic. Faster cruise speeds reduce time exposed to wakes.
 - **Tournament fishing.** Simcoe hosts walleye and bass tournaments. Tournament-grade hulls and performance motors are common.
-- **Regulatory zone.** Lake Simcoe is in **Fisheries Management Zone 16**. Confirm current limits and seasons with the Ontario MNRF Fishing Regulations Summary each year.
+- **Regulatory zone.** Lake Simcoe is in **Fisheries Management Zone 16**. Confirm current limits and seasons with the Ontario Fishing Regulations Summary each year.
 
 ## Recommended Mercury for Simcoe walleye by use case
 
@@ -139,7 +139,7 @@ HBW's standard repower handoff includes an on-water test on Rice Lake before pic
 **Email:** info@harrisboatworks.ca
 **Main site:** harrisboatworks.ca
 **Configurator:** mercuryrepower.ca
-**Service booking:** hbw.wiki/service
+**Service booking:** hbwservice.ca
 
 Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Family-owned since 1947, Mercury dealer since 1965, current Premier Dealer.
 

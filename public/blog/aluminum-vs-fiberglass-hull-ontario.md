@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/aluminum-vs-fiberglass-hull-ontario.md
-last_updated: 2026-09-11
+last_updated: 2026-10-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Aluminum vs Fiberglass Hull Ontario"
 description: "Aluminum or fiberglass? A Mercury Premier dealer's straight take on which hull material fits which kind of Ontario boater."
 category: "Buying Guides"
 date_published: 2026-05-16
-date_modified: 2026-09-11
+date_modified: 2026-10-06
 keywords: ["aluminum vs fiberglass boat","aluminum hull ontario","fiberglass hull ontario","boat hull material guide","legend aluminum boat","boat material comparison","rice lake boat material"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guides  
 **Published:** 2026-05-16  
-**Last reviewed:** 2026-09-11  
+**Last reviewed:** 2026-10-06  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/aluminum-vs-fiberglass-hull-ontario
 
@@ -95,7 +95,7 @@ If you have ever talked to a fiberglass repair tech about a serious blister job,
 
 Aluminum repair is more democratic. A good local welder can fix most aluminum hull issues in a few hours. We see Ontario boaters keep aluminum boats running for 30-40 years through accumulated small repairs that would have totalled a fiberglass equivalent.
 
-For DIY-minded owners, this matters a lot. For owners who want a clean boat that just works and don't want to think about hull material, fiberglass + a good maintenance routine + indoor storage is the cleaner path.
+For DIY-minded owners, this matters a lot. For owners who want a clean boat that just works and don't want to think about hull material, fiberglass + a good maintenance routine + proper shrink-wrapped winter storage is the cleaner path.
 
 ## What we recommend at Harris Boat Works
 
@@ -128,11 +128,11 @@ Yes, marginally. Aluminum transmits more wake-slap and rivet noise. Modern welde
 
 ### Does aluminum corrode in fresh water?
 
-Marine-grade aluminum (5052 or 5086 alloy) resists fresh-water corrosion well for decades. The exception is galvanic corrosion at fittings where dissimilar metals contact aluminum without proper isolation. A boat kept in the water year-round needs sacrificial zincs and proper fitting installation. A trailered boat that comes home dry has almost no corrosion risk.
+Marine-grade aluminum (5052 or 5086 alloy) resists fresh-water corrosion well for decades. The exception is galvanic corrosion at fittings where dissimilar metals contact aluminum without proper isolation. An aluminum hull kept in fresh water needs magnesium anodes (the best freshwater choice) or aluminum anodes, plus proper fitting installation. Zinc is for salt water and stops protecting in fresh water. A trailered boat that comes home dry has almost no corrosion risk.
 
 ### Can fiberglass survive Ontario winters in outdoor storage?
 
-Yes, with proper preparation. Drain all water, cover with shrinkwrap or a quality cover, keep the cockpit drains clear so meltwater drains out. Cracked gelcoat and water intrusion from a winter of standing water is the most common avoidable fiberglass damage we see.
+Yes, with proper preparation. Drain all water, have the boat shrink-wrapped, keep the cockpit drains clear so meltwater drains out. Cracked gelcoat and water intrusion from a winter of standing water is the most common avoidable fiberglass damage we see.
 
 ### Are aluminum boats colder to fish from in shoulder seasons?
 
@@ -140,7 +140,7 @@ Aluminum decks transmit cold more than fiberglass decks. A carpeted aluminum boa
 
 ### What's the right Mercury for an aluminum vs a fiberglass boat?
 
-Same rules either way: match the motor to the capacity plate maximum, factor in your typical load, and consider Command Thrust when the hull, load, and propeller need it. HBW often prefers the standard gearcase on planing V-hulls. Our Mercury 40 vs 60 HP comparison and the broader Ontario Mercury price guide cover the matching logic.
+Same rules either way: size the motor one Mercury model below the capacity plate maximum, factor in your typical load, and consider Command Thrust when the hull, load, and propeller need it. Max rated is overkill because it adds power and transom weight the boat may not perform well with. HBW often prefers the standard gearcase on planing V-hulls. Our Mercury 40 vs 60 HP comparison and the broader Ontario Mercury price guide cover the matching logic.
 
 ### Is buying a used aluminum boat safer than buying a used fiberglass boat?
 

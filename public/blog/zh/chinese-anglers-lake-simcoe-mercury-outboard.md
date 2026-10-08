@@ -8,7 +8,7 @@ final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
 title: "Lake Simcoe 华人钓友船外机指南"
-description: "针对GTA华人钓友在Lake Simcoe选择Mercury船外机的实用指南，包含马力参考、Kicker必要性、与Rice Lake的差异及FMZ 16规则提醒。"
+description: "针对GTA华人钓友在Lake Simcoe选择Mercury船外机的实用指南，包含马力参考、Kicker必要性、与莱斯湖的差异及FMZ 16规则提醒。"
 category: "钓鱼指南"
 date_published: 2026-05-10
 date_modified: 2026-09-06
@@ -21,7 +21,7 @@ revenue_driver: repower
 
 # Lake Simcoe 华人钓友船外机指南
 
-> 针对GTA华人钓友在Lake Simcoe选择Mercury船外机的实用指南，包含马力参考、Kicker必要性、与Rice Lake的差异及FMZ 16规则提醒。
+> 针对GTA华人钓友在Lake Simcoe选择Mercury船外机的实用指南，包含马力参考、Kicker必要性、与莱斯湖的差异及FMZ 16规则提醒。
 
 **Category:** 钓鱼指南  
 **Published:** 2026-05-10  
@@ -29,28 +29,28 @@ revenue_driver: repower
 **Read time:** 7 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/chinese-anglers-lake-simcoe-mercury-outboard
 
-> **简短答案：** Lake Simcoe的船外机选择不能只看「能不能跑」。你需要考虑开放水面、风浪、低速Trolling、季节变化、载重，以及你是否需要Kicker机或更可靠的主机。Lake Simcoe比Rice Lake水面更开阔，风起来时对动力和稳定性的要求更高。钓鱼规则方面，请直接查安大略省官方钓鱼规则当年版本，不要依赖旧文章或社群截图。
+> **简短答案：** Lake Simcoe的船外机选择不能只看「能不能跑」。你需要考虑开放水面、风浪、低速Trolling、季节变化、载重，以及你是否需要Kicker机或更可靠的主机。Lake Simcoe比莱斯湖水面更开阔，风起来时对动力和稳定性的要求更高。钓鱼规则方面，请直接查安大略省官方钓鱼规则当年版本，不要依赖旧文章或社群截图。
 
 ## HBW Trust Points / HBW 信任要点
 
 我们知道用中文查资料买船外机不容易。这篇指南是 HBW 团队用中文写给你看的，希望能帮 GTA 华人钓友把决定做得更清楚。
 
-团队日常沟通主要是英文。你可以透过 hbw.wiki/service 用中文提交需求，我们会尽力沟通清楚，必要时会请你身边会英文的家人朋友一起对话；或者你可以先在 mercuryrepower.ca 用配置器自己看加币报价，比来电更直接。
+团队日常沟通主要是英文。你可以通过 hbwservice.ca 用中文提交需求，我们会尽力沟通清楚，必要时会请你身边会英文的家人朋友一起对话；或者你可以先在 mercuryrepower.ca 用配置器自己看加币报价，比来电更直接。
 
-### Why GTA Chinese buyers come to Rice Lake / 为什么 GTA 华人船主愿意到 Rice Lake
+### Why GTA Chinese buyers come to Rice Lake / 为什么 GTA 华人船主愿意到莱斯湖
 
 - Mercury Premier certified dealer / Mercury Premier 认证经销商
 - Family marina since 1947 / 自1947年家族经营的码头
 - Mercury dealer since 1965 / 自1965年起的 Mercury 授权经销商
 - Transparent CAD pricing, no haggling / 透明加元价格，无需讨价还价
-- 60 to 90 minutes from GTA via 401 + 115 / 从 GTA 经 401 + 115 高速约 60 到 90 分钟车程
+- About 90 minutes east of Toronto via Highway 401 / 从多伦多经 401 向东约 90 分钟车程
 - Build your quote / 在线获取报价
 
 ## 为什么Lake Simcoe对GTA华人钓友很有吸引力
 
 Lake Simcoe距离多伦多相对便利，有丰富的钓鱼文化，四季都有不同的钓鱼活动（包括冬季冰钓）。许多GTA华人钓友在Lake Simcoe有自己的钓点或固定的出湖路线。
 
-但这也是一个对发动机有更多要求的水域，比Rice Lake更大、更开阔、风浪的影响更明显。周末下午湖中心的浪，跟你早晨出发时的平静完全不同。
+但这也是一个对发动机有更多要求的水域，比莱斯湖更大、更开阔、风浪的影响更明显。周末下午湖中心的浪，跟你早晨出发时的平静完全不同。
 
 ## Lake Simcoe买发动机的思考方式
 
@@ -75,9 +75,9 @@ Lake Simcoe距离多伦多相对便利，有丰富的钓鱼文化，四季都有
 
 *以上为参考区间，最终须以船体Capacity Plate标示的最大马力为准。*
 
-## Lake Simcoe和Rice Lake的差异
+## Lake Simcoe和莱斯湖的差异
 
-| 重点 | Lake Simcoe | Rice Lake / Kawarthas |
+| 重点 | Lake Simcoe | 莱斯湖 / Kawarthas |
 | -- | -- | -- |
 | 水面特性 | 更开阔，风浪影响更明显 | 湖区与水道多样，较受遮蔽 |
 | 对发动机的要求 | 可靠回航、低速控制、应对风浪 | 多用途、本地服务、Repower适配 |
@@ -89,11 +89,11 @@ Lake Simcoe距离多伦多相对便利，有丰富的钓鱼文化，四季都有
 Kicker不是每个人都需要，但对在Lake Simcoe长时间出湖的钓友来说，它提供两个重要功能：
 
 1. **长时间低速控制**，Trolling时保持稳定速度，比调低主机油门更细腻
-2. **安全备援**，主机万一在湖中心出问题，你有办法把船开回去
+2. **备用动力**，主机万一在湖中心出问题，你有办法把船开回去
 
 在一个开阔水面、距离岸边可能较远的湖区，这份安心感是真实的。
 
-选择Kicker时要确认：轴长（Shaft Length）、转向连动设置、燃油接头、安装架规格，以及与主机系统的相容性。不要只看马力数字。
+选择Kicker时要确认：轴长（Shaft Length）、转向连动设置、燃油接头、安装架规格，以及与主机系统的兼容性。不要只看马力数字。
 
 ## FMZ 16规则与钓鱼证
 
@@ -109,8 +109,6 @@ Lake Simcoe属于**FMZ 16**（渔业管理区16）。FMZ 16有特定的鱼种季
 4. **确认钓鱼证**，有效的Ontario fishing licence是法律要求
 5. **查当年FMZ 16规则**，每年出湖前确认，不要靠去年的记忆
 
-值得一提的是，HBW 码头有 89 号无乙醇燃油（ethanol-free 89），长期停放和春季启动更稳定，特别适合 Lake Simcoe 出湖前后加油。
-
 ## 相关指南
 
 - [多伦多华人钓友：钓鱼船马力怎么选](/blog/zh/mercury-outboard-horsepower-guide-toronto-chinese)
@@ -120,13 +118,13 @@ Lake Simcoe属于**FMZ 16**（渔业管理区16）。FMZ 16有特定的鱼种季
 
 ## 下一步
 
-**为Lake Simcoe或安省其他湖区选Mercury船外机？** 到 **mercuryrepower.ca** 看当前加币报价，再至 **hbw.wiki/service** 让HBW帮你确认配置是否适合你的钓鱼船。
+**为Lake Simcoe或安省其他湖区选Mercury船外机？** 到 **mercuryrepower.ca** 看当前加币报价，再至 **hbwservice.ca** 让HBW帮你确认配置是否适合你的钓鱼船。
 
-Harris Boat Works，自1947年家族经营，自1965年起为 Mercury 授权经销商，Mercury Premier Dealer，位于Rice Lake南岸Gores Landing。
+Harris Boat Works，自1947年家族经营，自1965年起为 Mercury 授权经销商，Mercury Premier Dealer，位于莱斯湖南岸Gores Landing。
 
 ## FAQs
 
-### Lake Simcoe和Rice Lake，同一台发动机适用吗？
+### Lake Simcoe和莱斯湖，同一台发动机适用吗？
 
 技术上可能，但Lake Simcoe的开放水面对发动机的稳定性和回航能力要求更高。如果你同时在两个湖使用，选择时要以要求更高的情况（Lake Simcoe）为标准。
 

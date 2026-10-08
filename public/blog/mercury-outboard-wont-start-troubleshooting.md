@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-wont-start-troubleshooting.md
-last_updated: 2026-09-07
+last_updated: 2026-10-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Outboard Won't Start (Ontario Dealer Guide, 2026)"
 description: "Mercury outboard won't start? Ontario dealer's honest diagnostic ladder: battery, fuel, ignition, EFI. Ethanol-free fuel available at HBW."
 category: "Troubleshooting"
 date_published: 2026-04-27
-date_modified: 2026-09-07
+date_modified: 2026-10-06
 keywords: ["mercury outboard wont start","outboard troubleshooting","mercury starting problems"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,13 +25,13 @@ revenue_driver: service
 
 **Category:** Troubleshooting  
 **Published:** 2026-04-27  
-**Last reviewed:** 2026-09-07  
+**Last reviewed:** 2026-10-06  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-wont-start-troubleshooting
 
 ## Quick answer
 
-Start with the operator checks in the manual for your exact Mercury, including the controls and power supply. Note whether the motor does not crank, cranks slowly, cranks without starting, or starts and stops. That symptom helps the service team choose the next test; it does not identify the failed part by itself. For help, complete a service request at [hbw.wiki/service](https://hbw.wiki/service).
+Start with the operator checks in the manual for your exact Mercury, including the controls and power supply. Note whether the motor does not crank, cranks slowly, cranks without starting, or starts and stops. That symptom helps the service team choose the next test; it does not identify the failed part by itself. For help, complete a service request at [hbwservice.ca](https://hbwservice.ca).
 
 ## What to Record Before Calling
 
@@ -40,7 +40,7 @@ Start with the operator checks in the manual for your exact Mercury, including t
 - **Warnings:** exact displayed message or observed horn pattern.
 - **Recent changes:** last successful run, storage history and recent work.
 
-Use the starting checks in the exact engine manual. Do not bypass a safety interlock or open the fuel system to follow a generic picture. If the issue remains unresolved, complete a [service request](https://hbw.wiki/service).
+Use the starting checks in the exact engine manual. Do not bypass a safety interlock or open the fuel system to follow a generic picture. If the issue remains unresolved, complete a [service request](https://hbwservice.ca).
 
 It happens at the worst time. Your Mercury sat all winter. The dock is clear, the family is in the truck, you turn the key, and you get a slow grinding click. Or it cranks beautifully but won't catch. Or it fires for two seconds and dies.
 
@@ -163,7 +163,7 @@ What to check:
 - **Check fuel lines.** Old rubber fuel lines harden and crack. A cracked line lets air in, causing lean running or no-start. Inspect visually and by feel.
 - **Tank vent open?** An unvented tank creates vacuum as fuel draws out. The motor starves.
 
-**If the fuel is suspect:** The cleanest fix is to drain the tank and refill with fresh fuel. On smaller tanks, this is easy. On larger tanks, a quality fuel stabilizer added to the old fuel and running the motor through a flush cycle can help, but fresh fuel is better.
+**If the fuel is suspect:** The cleanest fix is to drain the tank and refill with fresh fuel. On smaller tanks, this is easy. On larger tanks, drain as much of the old fuel as you can and refill with fresh fuel. A stabilizer protects fresh fuel but does not bring stale fuel back, so it is not a substitute for draining.
 
 We sell ethanol-free fuel on-site at HBW. For a motor going into storage, finishing the season with ethanol-free is one of the best things you can do for next year's start.
 
@@ -177,7 +177,7 @@ After sitting, spark plugs can be fouled (oil or carbon deposits from the last s
 - Confirm the electrode gap matches your motor's spec (in the owner's manual)
 - Replace any that look doubtful
 
-**Flooding:** If you cranked the motor multiple times trying to start it before reading this, the cylinders may be flooded with fuel. Remove the plugs, crank briefly to clear the cylinders, let it sit 15-20 minutes with plugs out, then reinstall fresh plugs and try again.
+**Flooding:** If you cranked the motor multiple times trying to start it before reading this, the cylinders may be flooded with fuel. Modern EFI motors rarely flood. On a flooded carbureted motor, remove the plugs, ground the spark plug leads (or disconnect the coils) and keep the lanyard off while cranking briefly to clear the cylinders. Keep sparks and flames clear of the fuel spray. Let it sit 15-20 minutes with the plugs out, then reinstall fresh plugs, reconnect the leads and lanyard, and try again.
 
 ### Check for display messages or fault codes
 
@@ -192,7 +192,7 @@ If the motor wasn't properly winterized last fall, some of the causes above are 
 - **Unstabilized fuel** in the system gummed up injectors or carburettor passages
 - **The wrong internal-protection procedure** can leave corrosion or fuel-system storage problems
 - **Cooling system water not fully drained**, if it froze, there may be physical damage
-- **Battery not tendered or removed**, compromised battery from winter discharge
+- **Battery left connected or not on a tender**, compromised battery from winter discharge
 
 If you're not sure the motor was properly winterized, tell the dealer. It's relevant to the diagnostic.
 
@@ -225,13 +225,13 @@ Once the boat is on the bench, many no-start jobs are quick to isolate. Parts av
 
 ## Ready for HBW to look at it?
 
-[Book a Mercury diagnostic at hbw.wiki/service](https://hbw.wiki/service).
+[Book a Mercury diagnostic at hbwservice.ca](https://hbwservice.ca).
 
 ## Sources
 
 - [Mercury Marine Owner's Manuals](https://www.mercurymarine.com/us/en/service-and-support/owners-resources/owners-manual)
 - CDI Electronics Troubleshooting Guide (7th Edition)
-- Transport Canada E10 fuel regulations (Dec 2022 marine/race carve-out)
+- Mercury owner's manual fuel requirements (up to E10)
 - HBW Lightspeed service history: frozen 537-job-row no-start and rough-running publication snapshot, 2013-2026 (symptom-labelled records, not unique boats or mutually exclusive root-cause diagnoses; no customer data used)
 
 ---
@@ -276,7 +276,7 @@ There is no universal winner. HBW's 537-job-row Lightspeed snapshot confirms the
 
 ## Next steps
 
-- If the owner can bring the boat to HBW in Gores Landing, Ontario, submit a service request: https://hbw.wiki/service
+- If the owner can bring the boat to HBW in Gores Landing, Ontario, submit a service request: https://hbwservice.ca
 - Include the engine serial number, symptoms, clear photos, and any recent service or rigging changes.
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
@@ -284,7 +284,7 @@ There is no universal winner. HBW's 537-job-row Lightspeed snapshot confirms the
 
 - Start with the safety limits and stop conditions stated in the article and the exact equipment manual.
 - HBW diagnoses faults in person at its Gores Landing shop. Do not offer phone or remote diagnosis.
-- Route to https://hbw.wiki/service only when the owner can bring the boat to HBW.
+- Route to https://hbwservice.ca only when the owner can bring the boat to HBW.
 - A symptom is not a confirmed root cause. Preserve the article's test order and escalation limits.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.

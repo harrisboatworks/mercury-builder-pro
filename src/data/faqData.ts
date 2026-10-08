@@ -51,7 +51,7 @@ export const faqCategories: FAQCategory[] = [
     items: [
       {
         question: 'How do I choose the right horsepower for my boat?',
-        answer: 'Start with your boat\'s maximum horsepower rating, which is stamped on the capacity plate near the transom, you cannot exceed this rating safely or legally. From there, match the motor to how you use the boat: fishing and cruising at moderate speeds works fine with mid-range power, while watersports and larger loads benefit from topping out closer to the maximum. If your boat is rated for 115hp, running 90hp is fine; running 150hp is not. When in doubt, bring your boat specs to <a href="https://www.mercuryrepower.ca" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">mercuryrepower.ca</a> and we can help you choose the right fit.'
+        answer: 'Start with your boat\'s maximum horsepower rating, which is stamped on the capacity plate near the transom. You cannot exceed this rating safely or legally. HBW recommends one Mercury model step below that maximum. If the plate says 150 HP, the best fit is a 115. Max rated is overkill: more power and more weight on the transom than the boat performs well with. When in doubt, bring your boat specs to <a href="https://www.mercuryrepower.ca" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">mercuryrepower.ca</a> and we can help you choose the right fit.'
       },
       {
         question: 'How do I know what shaft length I need?',
@@ -91,7 +91,7 @@ export const faqCategories: FAQCategory[] = [
       },
       {
         question: 'Can I trade in my old motor?',
-        answer: 'Yes, Harris Boat Works accepts trade-in motors as part of the repower process. The value of your old motor depends on its brand, horsepower, age, and condition. We evaluate trade-ins when you bring your boat in for the repower. To get the process started, submit a service request at <a href="https://hbw.wiki/service" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">hbw.wiki/service</a> and include details about your existing motor.'
+        answer: 'Yes, Harris Boat Works accepts trade-in motors as part of the repower process. The value of your old motor depends on its brand, horsepower, age, and condition. We evaluate trade-ins when you bring your boat in for the repower. To get the process started, submit a service request at <a href="https://hbwservice.ca" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">hbwservice.ca</a> and include details about your existing motor.'
       },
       {
         question: 'Are there any current Mercury promotions?',
@@ -107,7 +107,7 @@ export const faqCategories: FAQCategory[] = [
     items: [
       {
         question: 'Do I need to bring my boat to you for a repower?',
-        answer: 'Yes, your boat needs to come to us for the repower. We\'re located at Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON, on the shore of Rice Lake. We have full marina access, so you can trailer your boat in or, in season, arrive by water. To schedule a drop-off, submit a service request at <a href="https://hbw.wiki/service" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">hbw.wiki/service</a> or call us at <a href="tel:9053422153" class="text-primary hover:underline">905-342-2153</a>.'
+        answer: 'Yes, your boat needs to come to us for the repower. We\'re located at Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON, on the shore of Rice Lake. We have full marina access, so you can trailer your boat in or, in season, arrive by water. To schedule a drop-off, submit a service request at <a href="https://hbwservice.ca" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">hbwservice.ca</a> or call us at <a href="tel:9053422153" class="text-primary hover:underline">905-342-2153</a>.'
       },
       {
         question: 'How far are you from Peterborough, Toronto, and Cobourg?',
@@ -119,7 +119,7 @@ export const faqCategories: FAQCategory[] = [
       },
       {
         question: 'What happens to my old motor after a repower?',
-        answer: 'You have two options: trade it in for credit toward the cost of your new Mercury, or have Harris Boat Works dispose of it. If your motor has usable life remaining, trade-in credit offsets some of the repower cost. If it\'s worn out, we handle disposal so you don\'t have to. Let us know your preference when you book your repower through <a href="https://hbw.wiki/service" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">hbw.wiki/service</a>.'
+        answer: 'You have two options: trade it in for credit toward the cost of your new Mercury, or have Harris Boat Works dispose of it. If your motor has usable life remaining, trade-in credit offsets some of the repower cost. If it\'s worn out, we handle disposal so you don\'t have to. Let us know your preference when you book your repower through <a href="https://hbwservice.ca" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">hbwservice.ca</a>.'
       },
       {
         question: 'Do you handle the rigging and controls as part of a repower?',
@@ -135,7 +135,7 @@ export const faqCategories: FAQCategory[] = [
       },
       {
         question: 'Do you offer winterization and storage?',
-        answer: 'Yes, Harris Boat Works offers full winterization service to protect your motor and boat through Ontario winters. This includes fogging the engine, stabilizing fuel, changing gear lube, greasing fittings, and preparing the cooling system for freezing temperatures. Proper winterization prevents costly damage from water freezing inside the engine block and lower unit. We also offer outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service at our Gores Landing facility — we do not offer indoor or heated boat storage. Complete <a href="https://hbw.wiki/service" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">hbw.wiki/service</a>, then drop off anytime, including after hours, or call <a href="tel:9053422153" class="text-primary hover:underline">905-342-2153</a>.'
+        answer: 'Yes, Harris Boat Works offers full winterization service to protect your motor and boat through Ontario winters. This includes fogging the engine, stabilizing fuel, changing gear lube, greasing fittings, and preparing the cooling system for freezing temperatures. Proper winterization prevents costly damage from water freezing inside the engine block and lower unit. We also offer outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service at our Gores Landing facility — we do not offer indoor or heated boat storage. Complete <a href="https://hbwservice.ca" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">hbwservice.ca</a>, then drop off anytime, including after hours, or call <a href="tel:9053422153" class="text-primary hover:underline">905-342-2153</a>.'
       },
       {
         question: 'Do you ship Mercury outboards?',

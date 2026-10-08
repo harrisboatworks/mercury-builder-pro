@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/new-vs-used-pontoon-boats-ontario.md
-last_updated: 2026-09-07
+last_updated: 2026-10-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "New vs. Used Pontoon Boats in Ontario: What Actually Determines Value"
 description: "Compare new and used pontoon boats in Ontario by condition, motor history, documentation, tax, warranty and total ownership risk before you buy."
 category: "Buying Guide"
 date_published: 2026-08-04
-date_modified: 2026-09-07
+date_modified: 2026-10-04
 keywords: ["new vs used pontoon boat Ontario","used pontoon boat inspection","pontoon boat value","buying a pontoon in Ontario","pontoon boat ownership cost"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-08-04  
-**Last reviewed:** 2026-09-07  
+**Last reviewed:** 2026-10-04  
 **Read time:** 13 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/new-vs-used-pontoon-boats-ontario
 

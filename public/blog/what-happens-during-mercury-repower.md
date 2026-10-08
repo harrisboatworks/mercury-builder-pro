@@ -33,7 +33,7 @@ revenue_driver: repower
 
 ### From request to handover
 
-1. **Share the boat details.** Use the [quote builder](/quote/motor-selection) to explore a repower and submit the [service request](https://hbw.wiki/service) before dropping off the boat.
+1. **Share the boat details.** Use the [quote builder](/quote/motor-selection) to explore a repower and submit the [service request](https://hbwservice.ca) before dropping off the boat.
 2. **Confirm fit and scope.** HBW reviews the hull, intended use, compatible equipment and work required.
 3. **Review the written quote.** Confirm the configuration, included work, availability, payment terms and scheduling with HBW.
 4. **Drop off when convenient.** Once the service request is complete, drop off anytime, including after hours.
@@ -93,7 +93,7 @@ Customer builds a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) or
 
 #### Step 3: Deposit and Booking
 
-A fixed deposit holds the motor and booking slot. The online quote shows the exact amount for the selected motor, currently $200, $500, or $1,000 based on horsepower. It is not a percentage of the repower total. HBW confirms the motor and quote details before anything is ordered, and HBW confirms the work schedule and target completion date separately. Complete the service request at hbw.wiki/service, then drop off your boat anytime, including after hours.
+A fixed deposit holds the motor and booking slot. The online quote shows the exact amount for the selected motor, currently $200, $500, or $1,000 based on horsepower. It is not a percentage of the repower total. HBW confirms the motor and quote details before anything is ordered, and HBW confirms the work schedule and target completion date separately. Complete the service request at hbwservice.ca, then drop off your boat anytime, including after hours.
 
 If you want financing, HBW can help arrange boat repower financing through Canadian marine lenders, on approved credit. The application, rate, term, and approval are handled separately from the deposit.
 
@@ -192,7 +192,7 @@ Harris Boat Works has been a Mercury dealer since 1965.
 
 ### How long does a Mercury repower take?
 
-There are two clocks: motor and rigging availability, then the scheduled shop work. HBW confirms the applicable installation window after reviewing the boat, required parts, and current shop capacity. Complete the service request at hbw.wiki/service, then drop off your boat anytime, including after hours. HBW confirms the work schedule separately.
+There are two clocks: motor and rigging availability, then the scheduled shop work. HBW confirms the applicable installation window after reviewing the boat, required parts, and current shop capacity. Complete the service request at hbwservice.ca, then drop off your boat anytime, including after hours. HBW confirms the work schedule separately.
 
 ### Do I need to bring my boat to HBW for the walk-around?
 

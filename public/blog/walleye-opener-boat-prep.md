@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/walleye-opener-boat-prep.md
-last_updated: 2026-09-06
+last_updated: 2026-10-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Walleye Opener Boat Prep Checklist (2026)"
 description: "Ontario walleye opener boat prep checklist: battery, fuel, motor, trailer and safety checks so opening morning goes smoothly, from the crew on Rice Lake."
 category: "Tips"
 date_published: 2026-05-01
-date_modified: 2026-09-06
+date_modified: 2026-10-06
 keywords: ["walleye opener","ontario walleye season","boat prep checklist","fishing opener prep","walleye opener checklist"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,11 +25,13 @@ revenue_driver: service
 
 **Category:** Tips  
 **Published:** 2026-05-01  
-**Last reviewed:** 2026-09-06  
+**Last reviewed:** 2026-10-06  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/walleye-opener-boat-prep
 
-> **Quick answer:** The Ontario walleye opener for Zone 17 (Kawarthas, Rice Lake area) is the second Saturday of May, confirm the exact date each year in the Ontario (MNRF) Fishing Regulations Summary. The most common opener failures, dead battery, gummed kicker, stale fuel, are all preventable. Start your final prep two weeks before opener day, not the night before.
+> **Quick answer:** The Ontario walleye opener for Zone 17 (Kawarthas, Rice Lake area) is the second Saturday of May, confirm the exact date each year in the Ontario (MNR) Fishing Regulations Summary. The most common opener failures, dead battery, gummed kicker, stale fuel, are all preventable. Start your final prep two weeks before opener day, not the night before.
+
+Need your PCOC? Take the online course through [HBW's MyBoatCard referral link](https://myboatcard.com/card/harrisboat) and use **HARRIS15** for **15% off**.
 
 ---
 
@@ -43,7 +45,7 @@ This checklist is the final pass. It assumes you already did spring commissionin
 
 Five factors affect how thorough your opener prep needs to be:
 
-**1. How you stored the boat over winter.** Indoor, heated storage versus outdoor uncovered changes what you are walking into.
+**1. How you stored the boat over winter.** Shrink-wrapped storage versus sitting uncovered changes what you are walking into.
 
 **2. How recently you ran the motor.** A motor that ran in October is different from one that has not turned over in eight months.
 
@@ -60,10 +62,10 @@ Five factors affect how thorough your opener prep needs to be:
 ### Two Weeks Before Opener
 
 - Confirm spring commissioning is complete. If it is not, book it now. Service slots fill in May.
-- Schedule any final service at [hbw.wiki/service](https://hbw.wiki/service) if needed.
+- Schedule any final service at [hbwservice.ca](https://hbwservice.ca) if needed.
 - Check your fishing licence is valid for the new season. Renew online if not.
-- Confirm your [Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency) (PCOC) is on the boat. It is a lifetime certification, you should have the original card.
-- Confirm your [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences) (PCL) is displayed on the bow and current. As of August 8, 2026, a renewal costs $24.41 and is valid for five years. Transport Canada adjusts the fee for inflation each April 1, so verify the current amount before applying. Without a valid PCL, you can be fined.
+- Confirm your [Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc) (PCOC) is on the boat. It is a lifetime certification, you should have the original card.
+- Confirm your [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl) (PCL) is displayed on the bow and current. As of August 8, 2026, a renewal costs $24.41 and is valid for five years. Transport Canada adjusts the fee for inflation each April 1, so verify the current amount before applying. Without a valid PCL, you can be fined.
 
 ### One Week Before Opener
 
@@ -73,7 +75,7 @@ Five factors affect how thorough your opener prep needs to be:
 - **Test all electronics:** GPS, sonar, VHF, lights, stereo.
 - **Check the live well:** pump, drain, valves all working.
 - **Inspect fishing gear:** rods, reels, lines, lures, terminal tackle.
-- **Check all required safety gear:** a Transport Canada-approved PFD for every person on board, throwable cushion, anchor and rope, paddle, bailer, sound device, lights, fire extinguisher.
+- **Check all required safety gear:** a Transport Canada-approved PFD for every person on board, a buoyant heaving line at least 15 m long, anchor and rope, paddle, bailer, sound device, lights, fire extinguisher.
 - **Top off fuel with fresh gas.** If you treated your tank last fall with stabilizer and ran it through the system, you are in better shape. If not, fill with fresh and add stabilizer before any long storage.
 
 *Walleye opener checklist*
@@ -114,7 +116,7 @@ Walleye opener often means early starts and late returns in low light. Nav light
 
 #### Want HBW to do the opener prep?
 
-We run a pre-opener service every spring, typically $200 to $350 depending on motor size. Covers all five steps above plus a lake test. Book early at hbw.wiki/service or call (905) 342-2153.
+We run a pre-opener service every spring, typically $200 to $350 depending on motor size. Covers all five steps above plus a lake test. Book early at hbwservice.ca or call (905) 342-2153.
 
 ### Three Days Before Opener
 
@@ -129,11 +131,11 @@ We run a pre-opener service every spring, typically $200 to $350 depending on mo
 - Pre-launch checks: safety gear in the boat, drain plug installed, lights working.
 - Launch and run the motor briefly before going far from the dock.
 - Verify fish finder and GPS are on and reading before you reach your zone.
-- Confirm the season dates and any sanctuary or slot rules for your exact water in the current year's regulations from the MNRF before opener day.
+- Confirm the season dates and any sanctuary or slot rules for your exact water in the current year's regulations from the MNR before opener day.
 
 ---
 
-![Aluminum fishing boat with Mercury outboard docked on a misty lake, ready for the Ontario walleye opener.](/lovable-uploads/inline/inline-walleye-opener-dawn.png)
+![Infographic: five walleye opener prep checks in order: battery, fuel system, motor flush and telltale, trailer bearings and tires, and live well, lights and electronics.](/lovable-uploads/inline/walleye-opener-prep-order-2026-09.webp)
 
 ## What HBW Does for Opener Prep Customers
 
@@ -146,7 +148,7 @@ If you book opener prep at Harris Boat Works, the service includes:
 - Electronics power-up and basic function check
 - Service log entry with notes on anything found
 
-Book through [hbw.wiki/service](https://hbw.wiki/service). If you are considering a new motor rather than prepping the old one, build a Mercury repower quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
+Book through [hbwservice.ca](https://hbwservice.ca). If you are considering a new motor rather than prepping the old one, build a Mercury repower quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 For engine repairs, we only service Mercury and MerCruiser.
 
@@ -162,7 +164,7 @@ A weak or dead battery is one of the most common opener-morning failures we see.
 
 **Missing safety gear** turns an opener into an OPP stop. Marine patrols are active on opener weekend.
 
-**Unfamiliar regulations** can cost you fish. Slot limits and possession limits change. Read the current MNRF regulations before opener.
+**Unfamiliar regulations** can cost you fish. Slot limits and possession limits change. Read the current MNR regulations before opener.
 
 ---
 
@@ -184,7 +186,7 @@ A weak or dead battery is one of the most common opener-morning failures we see.
 - [Ontario.ca - Get a Fishing Licence](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees) - Required licence and Outdoors Card for the opener.
 
 **Book opener prep now.** Service slots fill in May, and there is no such thing as a last-minute walleye opener fix. 
-[Book service at hbw.wiki/service](https://hbw.wiki/service), or call 905-342-2153. 
+[Book service at hbwservice.ca](https://hbwservice.ca), or call 905-342-2153. 
 Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. 
 Mercury Premier dealer. Est. 1947.
 
@@ -194,7 +196,7 @@ Mercury Premier dealer. Est. 1947.
 
 ### When is the Ontario walleye opener?
 
-The second Saturday of May for Zone 17 (Kawarthas, Rice Lake area). Confirm the current year date in the Ontario (MNRF) Fishing Regulations Summary.
+The second Saturday of May for Zone 17 (Kawarthas, Rice Lake area). Confirm the current year date in the Ontario (MNR) Fishing Regulations Summary.
 
 ### What should I do 2 weeks before walleye opener?
 
@@ -210,7 +212,7 @@ For most Kawartha lake fishing, no, but the kicker functions as backup propulsio
 
 ### What safety gear is required for walleye fishing in Ontario?
 
-PFD for each person on board (Transport Canada-approved), throwable cushion, anchor and rope, paddle or oar, bailer, sound signaling device, lights for navigation after sunset, fire extinguisher (depending on boat type), watertight flashlight.
+The required gear comes from Transport Canada's boating rules, not fishing rules. For a powered boat up to 6 m: a PFD for each person on board (Transport Canada-approved), a buoyant heaving line at least 15 m long, anchor and rope, paddle or oar, bailer, sound signaling device, lights for navigation after sunset, fire extinguisher (depending on boat type), and a watertight flashlight or three approved flares. Boats 6 to 9 m need a watertight flashlight and six flares.
 
 ### How do I prevent stale fuel from ruining my opener?
 
@@ -226,7 +228,7 @@ Run through battery, fuel, ignition basics. See our [troubleshooting guide](/blo
 
 ### Can HBW pick up my boat for opener prep?
 
-We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport. You can also complete hbw.wiki/service, then drop off anytime, including after hours.
+We can generally arrange boat pickup. Ask us about availability for your boat and location. HBW does not deliver boats, ship motors, offer mobile, dockside, or on-site service, recommend transport providers, or quote third-party transport. You can also complete hbwservice.ca, then drop off anytime, including after hours.
 
 ### What's the most common opener morning failure?
 
@@ -242,12 +244,12 @@ A weak or dead battery is one of the most common opener-morning failures we see,
 
 ## Next steps
 
-- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbw.wiki/service
+- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbwservice.ca
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
-- The only commercial next step for this article is the HBW service request at https://hbw.wiki/service.
+- The only commercial next step for this article is the HBW service request at https://hbwservice.ca.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

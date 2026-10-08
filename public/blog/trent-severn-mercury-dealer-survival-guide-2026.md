@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/trent-severn-mercury-dealer-survival-guide-2026.md
-last_updated: 2026-09-06
+last_updated: 2026-10-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Trent-Severn Mercury Dealer Guide"
 description: "Trent-Severn transit guide: how to confirm Mercury or MerCruiser service, exact parts, fuel, water access, and breakdown options near Rice Lake."
 category: "Trent-Severn / Local"
 date_published: 2026-05-28
-date_modified: 2026-09-06
+date_modified: 2026-10-06
 keywords: ["Trent-Severn Mercury dealer","Trent-Severn boat service","Rice Lake marina service","Trent-Severn Waterway boating","Mercury parts Kawarthas","Trent-Severn breakdown planning","Canada Strong Pass 2026","Trent-Severn transit"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Trent-Severn / Local  
 **Published:** 2026-05-28  
-**Last reviewed:** 2026-09-06  
+**Last reviewed:** 2026-10-06  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/trent-severn-mercury-dealer-survival-guide-2026
 
@@ -113,7 +113,7 @@ If you're planning a TSW transit, the prep work matters as much as the route pla
 - Inspect cooling water flow at startup (telltale stream healthy and clean)
 - Confirm bilge pump operation
 - Cell phone fully charged plus a portable backup
-- Contact list with HBW (905-342-2153), local marinas en route, and Canadian Coast Guard (1-800-267-6687 or VHF Channel 16)
+- Contact list with HBW (905-342-2153), local marinas en route, and emergency contacts (VHF Channel 16, *16 on a cell phone, 911, or Coast Guard JRCC Trenton at 1-800-267-7270). Transport Canada's 1-800-267-6687 Boating Safety Infoline is for information, not rescue
 
 ## When to call HBW vs. when to keep moving
 
@@ -157,7 +157,7 @@ If you're planning a TSW transit, the prep work matters as much as the route pla
 
 **Phone:** 905-342-2153
 **Email:** info@harrisboatworks.ca
-**Fuel dock + service:** [hbw.wiki/service](https://hbw.wiki/service)
+**Fuel dock + service:** [hbwservice.ca](https://hbwservice.ca)
 
 Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury Marine dealer since 1965, current Premier Dealer, with authorized Mercury service directly on Rice Lake. Call to confirm parts, appointment capacity, and any available on-water help.
 

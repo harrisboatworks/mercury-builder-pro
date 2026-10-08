@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/es/licencia-navegacion-ontario-regulaciones.md
-last_updated: 2026-09-11
+last_updated: 2026-10-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Licencia de navegación y regulaciones de seguridad en Ontario"
 description: "Guía completa sobre la PCOC, PCL, equipo de seguridad obligatorio y regulaciones de navegación en Ontario."
 category: "Regulaciones"
 date_published: 2026-04-12
-date_modified: 2026-09-11
+date_modified: 2026-10-04
 keywords: ["licencia navegación Ontario","PCOC Ontario","regulaciones bote Ontario","permiso de navegación Canadá","seguridad embarcación Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,13 +25,15 @@ revenue_driver: repower
 
 **Category:** Regulaciones  
 **Published:** 2026-04-12  
-**Última revisión:** 2026-09-11  
+**Última revisión:** 2026-10-04  
 **Read time:** 12 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/es/licencia-navegacion-ontario-regulaciones
 
 ### Respuesta rápida
 
-Para navegar legalmente en Ontario, la **PCOC** ([Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency) / Carta de Operador de Embarcaciones) es una de las pruebas de competencia aceptadas; la emite un proveedor acreditado y su costo varía. La **PCL** ([Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences)) es la licencia de la embarcación misma si tiene motor de 10 HP o más. Las PCL nuevas, transferidas o renovadas tienen una vigencia de 5 años (el duplicado no renueva la vigencia); al 5 de septiembre de 2026 la tarifa federal es de **$24.41 CAD**; actualizar datos o cancelar es gratuito. La tarifa se ajusta cada 1 de abril. La multa por no llevar la PCOC en la embarcación comienza en **$250 CAD**. Siempre lleva el original, no se aceptan copias ni fotos en pantalla.
+Para navegar legalmente en Ontario, la **PCOC** ([Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc) / Carta de Operador de Embarcaciones) es una de las pruebas de competencia aceptadas; la emite un proveedor acreditado y su costo varía. La **PCL** ([Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl)) es la licencia de la embarcación misma si tiene motor de 10 HP o más. Las PCL nuevas, transferidas o renovadas tienen una vigencia de 5 años (el duplicado no renueva la vigencia); al 5 de septiembre de 2026 la tarifa federal es de **$24.41 CAD**; actualizar datos o cancelar es gratuito. La tarifa se ajusta cada 1 de abril. La multa por no llevar la PCOC en la embarcación comienza en **$250 CAD**. Siempre lleva el original, no se aceptan copias ni fotos en pantalla.
+
+¿Necesita su PCOC? Haga el curso en línea con [el enlace de recomendación de HBW a MyBoatCard](https://myboatcard.com/card/harrisboat) y use el código **HARRIS15** para obtener **15% de descuento**.
 
 ---
 
@@ -43,7 +45,7 @@ Nuestro personal se comunica y presta servicio en inglés. Si nos escribes o lla
 
 Navegar en Ontario es uno de los mejores pasatiempos que ofrece la provincia. Pero como en el caso de conducir un automóvil, hay reglas claras que necesitas conocer antes de salir al agua.
 
-Esta guía está diseñada para hispanohablantes que quieren entender el sistema de licencias y regulaciones de Ontario sin tener que traducir documentos técnicos del gobierno. Cubrimos los requisitos legales principales, no reemplazamos la consulta de los documentos oficiales de Transporte Canadá ni del Ministerio de Recursos Naturales y Forestales de Ontario (MNRF), que actualizan sus reglamentos periódicamente.
+Esta guía está diseñada para hispanohablantes que quieren entender el sistema de licencias y regulaciones de Ontario sin tener que traducir documentos técnicos del gobierno. Cubrimos los requisitos legales principales, no reemplazamos la consulta de los documentos oficiales de Transporte Canadá ni del Ministerio de Recursos Naturales de Ontario (MNR), que actualizan sus reglamentos periódicamente.
 
 ---
 
@@ -105,7 +107,7 @@ Todos los menores que operen la embarcación necesitan su propia PCOC, incluso s
 
 ## Equipo de seguridad obligatorio
 
-Para embarcaciones de menos de 6 metros (aproximadamente 20 pies), el equipo mínimo requerido por Transporte Canadá incluye:
+Para embarcaciones de menos de 6 metros (aproximadamente 20 pies), el equipo mínimo requerido por Transporte Canadá incluye una linterna impermeable o 3 bengalas aprobadas, además de lo siguiente:
 
 | Equipo | Especificación |
 |--------|---------------|

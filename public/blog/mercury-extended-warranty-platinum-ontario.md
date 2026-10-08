@@ -68,7 +68,7 @@ Best value tier. One blown injector pump or ECU on a V6 covers the cost of the w
 
 **$4,612 - $6,579**
 
-V8 and V10 outboards. Repair labour alone on a V10 powerhead can exceed $4K, parts are extra.
+V6, V8 and V10 outboards. Repair labour alone on a V10 powerhead can exceed $4K, parts are extra.
 
 #### Current Canadian deductible
 
@@ -114,7 +114,7 @@ The actual Canadian Platinum contract controls what is covered or excluded. We v
 
 **Fuel system:**
 - Fuel pump, injection pump, fuel/air injectors
-- Air compressor (Verado), flame arrestor
+- Air compressor (where fitted), flame arrestor
 
 **Electrical (the Gold exclusion):**
 - ECU, ETC, EBC, CDM modules
@@ -202,7 +202,7 @@ Platinum coverage is transferable to a subsequent recreational-use buyer when Me
 
 Remaining transferable coverage can be useful to a buyer because it makes the engine's protection status easier to document. The serial record and approved transfer determine what coverage actually follows the engine.
 
-The motor must transfer to another recreational user (not commercial, not a dealer-purchased trade-in) for the warranty to follow it.
+The motor must transfer to another recreational user (not a commercial user), within 30 business days of the sale, for the coverage to follow it. Confirm how a trade-in is handled with Mercury before you rely on it.
 
 ## What Happens When You File a Claim
 

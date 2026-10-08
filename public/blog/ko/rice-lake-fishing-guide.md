@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/ko/rice-lake-fishing-guide.md
-last_updated: 2026-09-06
+last_updated: 2026-10-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -8,33 +8,35 @@ final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
 title: "Rice Lake 낚시 완전 가이드: 토론토 한인을 위한 온타리오 최고의 숨은 명소"
-description: "Rice Lake는 토론토에서 약 1.5시간 거리에 있는 온타리오 최고의 walleye 낚시터입니다. 어종, FMZ 17 시즌 일정, 낚시 면허, 렌탈 보트 정보까지 한 번에 정리했습니다."
+description: "Rice Lake는 토론토 시내에서 약 1시간 45분 거리에 있는 온타리오 최고의 walleye 낚시터입니다. 어종, FMZ 17 시즌 일정, 낚시 면허, 렌탈 보트 정보까지 한 번에 정리했습니다."
 category: "낚시 가이드"
 date_published: 2026-04-12
-date_modified: 2026-09-06
+date_modified: 2026-10-06
 keywords: ["Rice Lake 낚시 가이드","온타리오 낚시","토론토 근처 낚시","Rice Lake fishing guide Korean"]
 author: Harris Boat Works
 content_type: blog_article
 language: ko-KR
-revenue_driver: repower
+revenue_driver: rentals
 ---
 
 # Rice Lake 낚시 완전 가이드: 토론토 한인을 위한 온타리오 최고의 숨은 명소
 
-> Rice Lake는 토론토에서 약 1.5시간 거리에 있는 온타리오 최고의 walleye 낚시터입니다. 어종, FMZ 17 시즌 일정, 낚시 면허, 렌탈 보트 정보까지 한 번에 정리했습니다.
+> Rice Lake는 토론토 시내에서 약 1시간 45분 거리에 있는 온타리오 최고의 walleye 낚시터입니다. 어종, FMZ 17 시즌 일정, 낚시 면허, 렌탈 보트 정보까지 한 번에 정리했습니다.
 
 **Category:** 낚시 가이드  
 **Published:** 2026-04-12  
-**마지막 검토:** 2026-09-06  
+**마지막 검토:** 2026-10-06  
 **Read time:** 10 분  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ko/rice-lake-fishing-guide
 
 ## 빠른 답변
 
-**Rice Lake는 토론토에서 약 1.5시간(401번 → 115번 도로) 거리의 숨은 walleye·bass 명소. Lake Simcoe보다 한적하고, GTA 한인 가족이 당일치기로 다녀오기 좋습니다.**
+**Rice Lake는 토론토 시내에서 약 1시간 45분 거리의 숨은 walleye·bass 명소. 401번 고속도로 동쪽 방향으로 가다가 Cobourg의 472번 출구(County Road 18 / Burnham Street)로 나와 County Road 18을 따라 북쪽으로 약 16 km 가면 Gores Landing에 도착합니다. Lake Simcoe보다 한적하고, GTA 한인 가족이 당일치기로 다녀오기 좋습니다.**
 
-- **거리**: 토론토에서 약 1.5시간, FMZ 17 구역
-- **주요 어종**: Walleye, Smallmouth Bass, Northern Pike, Perch. 시즌·한도는 당해 공식 FMZ 17 규정을 확인
+PCOC가 필요하신가요? [HBW의 MyBoatCard 추천 링크](https://myboatcard.com/card/harrisboat)에서 온라인 과정을 수강하고 할인 코드 **HARRIS15**로 **15% 할인**을 받으세요.
+
+- **거리**: 토론토 시내에서 약 1시간 45분, FMZ 17 구역
+- **주요 어종**: Walleye, Smallmouth Bass, Largemouth Bass, Muskie, Perch. 시즌·한도는 당해 공식 FMZ 17 규정을 확인
 - **면허 비용**: Outdoors Card $9 + Sportfishing licence 약 $27/년 (ontario.ca/fishing에서 온라인 신청)
 - **렌탈**: HBW(Gores Landing)에서 보트 렌탈 가능
 
@@ -42,7 +44,7 @@ revenue_driver: repower
 
 ### 핵심 요약
 
-Rice Lake는 토론토에서 약 1.5시간(401 동쪽 → 115 북쪽) 거리에 있으며, 온타리오에서 손꼽히는 walleye(월아이) 산지입니다. Bass, muskie, yellow perch도 풍부합니다. Harris Boat Works가 호숫가(Gores Landing)에 위치해 당일 렌탈 보트로 바로 출발할 수 있습니다. 낚시를 하려면 낚시 면허(18~64세 필수)가 필요합니다. 어종별 시즌과 어획 한도는 매년 온타리오 정부 사이트에서 확인하세요.
+Rice Lake는 토론토 시내에서 약 1시간 45분 거리에 있으며, 온타리오에서 손꼽히는 walleye(월아이) 산지입니다. 401번 고속도로 동쪽 방향으로 가다가 Cobourg의 472번 출구(County Road 18 / Burnham Street)로 나와 County Road 18을 따라 북쪽으로 약 16 km 가면 Gores Landing에 도착합니다. Bass, muskie, yellow perch도 풍부합니다. Harris Boat Works가 호숫가(Gores Landing)에 위치해 당일 렌탈 보트로 바로 출발할 수 있습니다. 낚시 면허는 캐나다 거주자의 경우 18~64세에게 필요하며(18세 미만과 65세 이상은 면제), 비캐나다 거주자는 65세 이상도 대부분 필요합니다. 거주자에게는 연 4회 면허 없이 낚시할 수 있는 기간도 있습니다. 어종별 시즌과 어획 한도는 매년 온타리오 정부 사이트에서 확인하세요.
 
 ---
 
@@ -54,7 +56,7 @@ Rice Lake는 토론토에서 약 1.5시간(401 동쪽 → 115 북쪽) 거리에 
 
 Rice Lake는 온타리오 Kawarthas 지역에 위치합니다. 남쪽 호숫가 Gores Landing이라는 작은 마을에 Harris Boat Works가 1947년부터 자리 잡고 있습니다.
 
-**토론토에서 오는 길:** 401 동쪽 → 115/35번 북쪽 → Gores Landing으로 내비게이션. 약 1.5시간 소요.
+**토론토에서 오는 길:** 401번 고속도로를 타고 동쪽으로 가다가 Cobourg의 472번 출구(County Road 18 / Burnham Street)로 나와 County Road 18을 따라 북쪽으로 약 16 km 가면 Gores Landing에 도착합니다. 토론토 시내에서 약 1시간 45분 걸립니다.
 
 ---
 
@@ -63,7 +65,7 @@ Rice Lake는 온타리오 Kawarthas 지역에 위치합니다. 남쪽 호숫가 
 | 항목 | Rice Lake | Lake Simcoe |
 |---|---|---|
 | 한적함 | 주말 피크를 제외하면 더 한적 | 주말 혼잡 |
-| 어종 다양성 | Walleye, bass, muskie 모두 풍부 | 주로 lake trout, whitefish, perch |
+| 어종 다양성 | Walleye, bass, muskie 모두 풍부 | lake trout, whitefish, perch 외에 smallmouth bass, largemouth bass, northern pike도 유명 |
 | HBW 렌탈 보트 | 바로 이용 가능 | HBW 위치 아님 |
 | "진짜 캐나다 시골" 경험 | 상업화 덜 됨 | 더 상업적 |
 
@@ -78,7 +80,7 @@ Rice Lake의 대표 어종. 북미 담수어 중 가장 맛있는 생선으로 �
 Largemouth bass(큰입배스)와 smallmouth bass(작은입배스) 두 종류. Smallmouth bass는 힘이 세고 점프를 해서 스포츠 낚시 마니아에게 인기가 높습니다.
 
 ### Muskie(머스키)
-북미 담수어 중 가장 크고 잡기 어려운 어종. 대형 루어와 인내심이 필요합니다. 결과가 나올 때 평생 기억에 남습니다.
+북미 담수 낚시어 중 가장 큰 축에 들고 인기가 높은 어종으로, '1만 번 캐스팅의 물고기'라 불릴 만큼 잡기 어렵습니다. 대형 루어와 인내심이 필요합니다. 결과가 나올 때 평생 기억에 남습니다.
 
 ### Yellow Perch(옐로 퍼치)
 아이들과 함께 입문하기에 흔히 추천되는 어종입니다. 개장 여부와 한도는 당해 FMZ 17 규정을 확인하세요.
@@ -151,7 +153,7 @@ Largemouth bass(큰입배스)와 smallmouth bass(작은입배스) 두 종류. Sm
 
 ### 토론토에서 얼마나 걸리나요?
 
-약 1.5시간입니다 (401 동쪽 → 115 북쪽).
+토론토 시내에서 약 1시간 45분입니다. 401번 고속도로 동쪽 방향으로 가다가 Cobourg의 472번 출구(County Road 18 / Burnham Street)로 나와 County Road 18을 따라 북쪽으로 약 16 km 가면 Gores Landing에 도착합니다.
 
 ### 렌탈 보트에 낚시 장비가 포함되나요?
 
@@ -159,7 +161,7 @@ Largemouth bass(큰입배스)와 smallmouth bass(작은입배스) 두 종류. Sm
 
 ### 낚시 면허 없이 낚시하면 어떻게 되나요?
 
-벌금 대상입니다. 18~64세는 반드시 면허가 필요합니다.
+벌금 대상입니다. 캐나다 거주자는 18~64세라면 면허가 필요하고, 비캐나다 거주자는 65세 이상도 대부분 필요합니다. 거주자에게는 연 4회 면허 없이 낚시할 수 있는 기간이 있으니 온타리오 공식 사이트에서 날짜를 확인하세요.
 
 ### 보트 없이 Rice Lake에서 낚시할 수 있나요?
 
@@ -167,16 +169,16 @@ Largemouth bass(큰입배스)와 smallmouth bass(작은입배스) 두 종류. Sm
 
 ### Rice Lake에서 낚시하려면 보트 면허(PCOC)도 필요한가요?
 
-엔진 달린 보트를 조종하려면 PCOC가 필요합니다. 다만 렌탈 보트 이용 시, PCOC가 없더라도 렌탈업체가 제공하는 rental boat safety checklist를 작성하면 법적 요건을 충족할 수 있는 경우도 있습니다.
+엔진 달린 보트를 조종하려면 PCOC가 필요합니다. HBW 렌탈 보트를 운전하려면 렌탈 시에도 유효한 PCOC가 필요하니, 방문 전에 미리 취득해 두세요.
 
 ## Next steps
 
-- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
+- Check the current Rice Lake rental fleet and availability: https://harrisboatworks.ca/rentals
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
-- The only commercial next step for this article is the Mercury quote configurator.
+- The only commercial next step for this article is Rice Lake rental availability at https://harrisboatworks.ca/rentals.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

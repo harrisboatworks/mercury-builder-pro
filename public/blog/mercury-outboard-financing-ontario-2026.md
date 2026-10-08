@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-financing-ontario-2026.md
-last_updated: 2026-09-02
+last_updated: 2026-10-05
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Outboard Financing Ontario (2026): Rates"
 description: "How to finance a Mercury outboard or full repower in Ontario: current rate, monthly payments, terms, and the honest fine print."
 category: "Financing & Value"
 date_published: 2026-04-20
-date_modified: 2026-09-02
+date_modified: 2026-10-05
 keywords: ["mercury outboard financing Ontario","boat repower financing Ontario","finance boat motor Ontario","mercury financing rate 2026","mercury outboard monthly payment"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,13 +25,13 @@ revenue_driver: repower
 
 **Category:** Financing & Value  
 **Published:** 2026-04-20  
-**Last reviewed:** 2026-09-02  
+**Last reviewed:** 2026-10-05  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-financing-ontario-2026
 
 ## Quick answer
 
-Yes, eligible Mercury outboard and repower purchases can be financed through DealerPlan and participating Canadian lenders. The current headline rate is 5.48% APR (OAC). Under the active TD program, the contract term is up to 60 months and payment examples may use amortization up to 240 months, which can leave a balance due at maturity. Qualified buyers may be eligible for $0 down; the lender confirms approval, down payment, timing, and final terms in writing.
+Yes, eligible Mercury outboard and repower purchases can be financed through DealerPlan and participating Canadian lenders. TD "Always On" is 5.48% APR (OAC) through December 31, 2026. Chase the Savings also advertises TD financing as low as 2.99% for 24 months [5.49% APR], on approved credit, for an eligible Canadian repower of at least $5,000 during September 14–October 30, 2026. Under TD "Always On", the contract term is up to 60 months and payment examples may use amortization up to 240 months, which can leave a balance due at maturity. Qualified buyers may be eligible for $0 down; the lender confirms approval, down payment, timing, and final terms in writing.
 
 Family-owned since 1947.
 
@@ -43,11 +43,13 @@ Here is the whole thing laid out plainly: how the financing works, what the rate
 
 Anyone in Ontario buying a new Mercury outboard, repowering an older boat, or putting together a boat-and-motor package and wondering whether to pay cash or finance it. Whether you're spending $8,000 on a tiller kicker or $40,000 on a twin-V8 repower, the process is the same. This covers Rice Lake, the Kawarthas, the Trent-Severn, and anywhere in the province customers can trailer to us at Gores Landing, or ask about boat pickup.
 
-_Prices here are planning figures as of September 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are planning figures as of October 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 ## How HBW financing actually works
 
-**One Mercury financing program is live right now.** TD "Always On" promotional financing is 5.48% APR (OAC) through December 31, 2026, arranged via DealerPlan, with contract terms up to 60 months. The Mercury Summer Savings rebate and its 2.99% short-term financing ended August 31, 2026 and are no longer available. Financing minimum $5,000 before tax. The lender confirms approval, eligibility, and final terms in writing. Current offers always at [the promotions page](https://www.mercuryrepower.ca/promotions).
+As of October 5, 2026, **Chase the Savings** runs **September 14–October 30, 2026** for eligible Canadian purchases. Mercury advertises TD financing as low as **2.99% for 24 months [5.49% APR]**, on approved credit, for an eligible repower of at least $5,000. The advertised rate and APR are different disclosures; ask HBW for the written lender terms before comparing payments. See [current promotions](/promotions) for eligibility and exclusions. Do not assume financing and cash rebates can be combined.
+
+**TD "Always On" is a separate program:** 5.48% APR (OAC) through December 31, 2026, arranged via DealerPlan, with contract terms up to 60 months and amortization up to 240 months. The lender confirms final terms in writing. **Historical offer:** Mercury Summer Savings and its short-term financing ended August 31, 2026; that expiry does not describe the later Chase the Savings offer.
 
 We don't lend the money ourselves, and we're not a bank. HBW arranges eligible applications through DealerPlan and participating Canadian lenders. The current headline program is through TD Auto Finance; the signed lender disclosure identifies the actual lender and controls the approval and terms.
 
@@ -65,20 +67,20 @@ You apply once, the broker does the shopping, and you get an answer. That's the 
 
 This is where most financing articles get vague, so let's be specific.
 
-The current headline financing rate is 5.48% APR on approved credit through December 31, 2026. It is not an approval promise. Eligibility, lender, contract term, amortization, amount financed, and any balance due at maturity are confirmed in the written disclosure. Check the [promotions page](/promotions) for the current program dates before applying.
+The TD "Always On" financing rate is 5.48% APR on approved credit through December 31, 2026. It is not an approval promise. Eligibility, lender, contract term, amortization, amount financed, and any balance due at maturity are confirmed in the written disclosure. Check the [promotions page](/promotions) for the current program dates before applying.
 
 Now, the word "promo rate" gets thrown around a lot, so here's the honest distinction:
 
-- The current headline rate (5.48% APR) is the active HBW program shown on the promotions page, subject to approval and program terms.
+- The TD "Always On" rate (5.48% APR) is one HBW program shown on the promotions page, subject to approval and program terms.
 - A separate seasonal offer may apply only to eligible models, purchase dates, contract lengths, or applicants. Use the dated offer and signed lender disclosure rather than an example rate from an old article.
 
-The practical takeaway: the rate you see in our quote builder and on our promotions page is the live one. We don't bury an old number in a blog post and let it rot. Which brings us to the question everyone actually has.
+The practical takeaway: the quote builder estimates payments using the standing program. Compare the separate dated seasonal offer on our promotions page with your written lender quote. Which brings us to the question everyone actually has.
 
 ## "How do I know the rate I'm reading is still real?"
 
 Fair, because half the financing pages on the internet are quoting rates from two years ago. Here's how we keep it honest:
 
-- The rate shown above (5.48% APR) is pulled live from the same source that drives the monthly-payment math in our quote builder. When the rate changes, that number changes everywhere automatically. It is not typed into this article by hand.
+- The TD "Always On" rate shown above (5.48% APR) is pulled live from the same source that drives the monthly-payment math in our quote builder. When the rate changes, that number changes everywhere automatically. It is not typed into this article by hand.
 - Active seasonal promotions live on one page: [mercuryrepower.ca/promotions](https://mercuryrepower.ca/promotions). If Mercury Canada has something running that beats the standing rate, that's where it shows up, current and dated.
 - A site quote shows the current estimate for the selected amount and amortization. The approved lender offer and signed disclosure control the actual rate, payment, contract term, and maturity balance.
 
@@ -154,7 +156,7 @@ Yes. HBW arranges eligible applications through DealerPlan and participating Can
 
 ### What's the current financing rate?
 
-The current headline rate is 5.48% APR through December 31, 2026 on eligible purchases (OAC). HBW arranges applications through DealerPlan, primarily with TD Auto Finance; the signed lender disclosure controls the actual approval and terms.
+TD "Always On": The current headline rate is 5.48% APR through December 31, 2026 on eligible purchases (OAC). HBW arranges applications through DealerPlan, primarily with TD Auto Finance; the signed lender disclosure controls the actual approval and terms. As of October 5, 2026, Chase the Savings runs September 14–October 30, 2026 and advertises TD financing as low as 2.99% for 24 months [5.49% APR], OAC, for an eligible Canadian repower of at least $5,000. The signed lender disclosure controls the actual terms. Check mercuryrepower.ca/promotions for eligibility and exclusions; do not assume offers combine.
 
 ### What's the difference between the standing rate and a "promo rate"?
 

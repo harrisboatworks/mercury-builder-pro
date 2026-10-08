@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/cheapest-mercury-outboard-canada-2026.md
-last_updated: 2026-09-11
+last_updated: 2026-10-05
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Cheapest Mercury Outboards in Canada (2026)"
 description: "The cheapest Mercury outboards in Canada for 2026: real CAD prices from 2.5 HP up, what each budget tier gets you, and where the value sweet spot sits."
 category: "Buying Guide"
 date_published: 2026-04-23
-date_modified: 2026-09-11
+date_modified: 2026-10-05
 keywords: ["cheapest mercury outboard canada","mercury 2.5hp price","small mercury outboard cad"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-04-23  
-**Last reviewed:** 2026-09-11  
+**Last reviewed:** 2026-10-05  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/cheapest-mercury-outboard-canada-2026
 
@@ -94,6 +94,10 @@ Six things determine where your real floor is:
 
 **Skipping rigging on a remote-control install.** Saving $2,000 by reusing 22-year-old controls isn't savings if the throttle sticks at full speed on Rice Lake. Mercury-to-Mercury repowers can often keep existing controls in good condition, that's part of what makes Mercury-to-Mercury the cheapest repower path.
 
+### Chase the Savings portable rebates
+
+As of October 5, 2026, **Chase the Savings** runs **September 14–October 30, 2026** and offers eligible Canadian portable buyers these CAD rebates: **2.5–3.5 HP: $250; 4–9.9 HP: $300; 15–20 HP: $350; 25–30 HP: $400**. Available eligible new dealer stock must be sold and delivered during the window. Portable rebates are unavailable in Newfoundland and Labrador. Model, use, registration and other exclusions apply; confirm [current promotions](/promotions) on the written quote. Do not assume a rebate can be combined with promotional financing.
+
 ### Cheap That Is Actually Cheap
 
 **Buy in winter.** The shop closes December 1 through April 1, but we quote and take orders all winter. Ask about exact-model availability and the installation schedule before planning a spring launch. Mercury sometimes runs promotional financing rates below the standard rate, check the promotions page on [mercuryrepower.ca](https://www.mercuryrepower.ca) for current terms.
@@ -144,7 +148,7 @@ Use the [motor selection page](/quote/motor-selection) for the current exact-mod
 
 ### What is the cheapest Mercury with electric start?
 
-Mercury offers electric start on motors as small as the 9.9 EH (Electric, Hand-tiller) and 9.9 ELH (Electric, Long-shaft Hand-tiller). For specific CAD pricing on each, see the [motor selection page](/quote/motor-selection).
+Mercury offers electric start on motors as small as the 8 EH (Electric, Hand-tiller) and 8 ELH (Electric, Long-shaft Hand-tiller). For specific CAD pricing on each, see the [motor selection page](/quote/motor-selection).
 
 ### Is a small Mercury good enough for fishing?
 

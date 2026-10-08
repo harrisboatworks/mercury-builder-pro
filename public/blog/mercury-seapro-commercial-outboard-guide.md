@@ -52,7 +52,7 @@ SeaPro is a [commercial-spec variant of Mercury's FourStroke outboards](/blog/me
 - Reinforced lower unit, heavier-gauge gearcase castings, beefier bearings, larger oil capacity
 - Enhanced cooling system, more cooling passages, designed for continuous running without heat-soaking
 - Service intervals set by the manual for your exact engine (matched by serial number), with hour limits, calendar limits (whichever comes first), and shorter intervals under adverse conditions like extended trolling
-- Stainless steel hardware throughout, saltwater-rated, even on freshwater models
+- Proprietary corrosion-resistant alloys and durable coatings, with a freshwater flush system
 - Heavy-duty mounting and bracketry
 - Counter-rotation options for twin installations
 - Commercial warranty eligibility
@@ -117,7 +117,7 @@ Most Ontario recreational buyers do not need SeaPro. If you are not earning inco
 
 ---
 
-![Black Mercury SeaPro outboard on a rugged aluminum work boat, illustrating commercial-grade reliability for guides.](/lovable-uploads/inline/inline-mercury-seapro-commercial.png)
+![Infographic: what differs between Mercury SeaPro and a standard FourStroke, the typical price premium, and which annual-hours bands actually need SeaPro.](/lovable-uploads/inline/seapro-vs-fourstroke-2026-09.webp)
 
 ## Does SeaPro make sense for recreational boaters?
 

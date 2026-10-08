@@ -31,7 +31,7 @@ revenue_driver: service
 
 ### Respuesta rápida
 
-La preparación invernal de un motor Mercury en Ontario sigue el manual del modelo y número de serie. Una batería en buen estado puede permanecer a bordo solo si está completamente cargada, desconectada, asegurada y permitida por el plan de almacenamiento aprobado. El manual del modelo/número de serie y el plan de almacenamiento aprobado rigen. Complete hbw.wiki/service y deje el bote en cualquier momento, incluso fuera de horario.
+La preparación invernal de un motor Mercury en Ontario sigue el manual del modelo y número de serie. Una batería en buen estado puede permanecer a bordo solo si está completamente cargada, desconectada, asegurada y permitida por el plan de almacenamiento aprobado. El manual del modelo/número de serie y el plan de almacenamiento aprobado rigen. Complete hbwservice.ca y deje el bote en cualquier momento, incluso fuera de horario.
 
 ---
 
@@ -55,17 +55,17 @@ La mayoría de las gasolineras en Ontario venden gasolina con hasta 10 % de etan
 
 El resultado: esa mezcla de agua y etanol se acumula en el fondo del tanque, entra al sistema de alimentación del motor, y en primavera usted se encuentra con carburador o inyectores obstruidos, corrosión interna, y un motor que no arranca.
 
-Harris Boat Works es una de las pocas marinas en Ontario que vende combustible sin etanol (*ethanol-free fuel*) directamente en el sitio. Si va a guardar el bote para el invierno, usar combustible sin etanol es la mejor protección para el sistema de combustible.
+Harris Boat Works vende combustible sin etanol (*ethanol-free fuel*) directamente en el sitio. Si va a guardar el bote para el invierno, usar combustible sin etanol es la mejor protección para el sistema de combustible.
 
 ---
 
 ## Los pasos de la preparación invernal
 
-Estos pasos cubren lo esencial para la mayoría de los motores fuera de borda Mercury. Los detalles exactos varían según el modelo y el año del motor, esta guía no reemplaza el manual del motor ni el procedimiento del concesionario, pero resume lo más importante.
+Estos pasos resumen los puntos generales del trabajo; el orden y el procedimiento exactos dependen del motor. Los detalles exactos varían según el modelo y el año del motor, esta guía no reemplaza el manual del motor ni el procedimiento del concesionario, pero resume lo más importante.
 
 ### 1. Estabilización del combustible
 
-Si no usa combustible sin etanol, agregue un estabilizante aprobado para motores marinos en su tanque. Luego haga funcionar el motor unos minutos para que el producto circule por todo el sistema de combustible. Idealmente, llene el tanque con combustible sin etanol antes de agregar el estabilizante, un tanque lleno deja menos espacio para el aire húmedo.
+Si el procedimiento de almacenamiento del manual lo indica, agregue el estabilizante que Mercury especifica, en la concentración indicada por el fabricante del producto. Luego haga circular el combustible tratado durante el tiempo y con el método que indica el manual del motor exacto, y nunca haga funcionar ni gire en seco un fuera de borda sin suministro de agua de enfriamiento. No hay una sola regla de tanque lleno o vacío para todos los sistemas: siga la guía de almacenamiento del sistema de combustible de su embarcación.
 
 **¿Qué pasa si lo omite?** Combustible degradado, separación de fase, inyectores obstruidos, motor que no arranca en primavera.
 
@@ -77,7 +77,7 @@ La protección interna depende del modelo y del número de serie. Siga el proced
 
 ### 3. Drenaje del aceite de engranajes (gear lube)
 
-El aceite del pie del motor (*lower unit / gear lube*) debe drenarse y reemplazarse cada otoño. El agua puede infiltrarse en la caja de engranajes a través de sellos desgastados, si esa agua se congela, se expande y puede agrietar la carcasa.
+El aceite del pie del motor (*lower unit / gear lube*) se revisa y se reemplaza según el manual del modelo y del número de serie, con el método de llenado, la cantidad y los sellos que ahí se indican. El agua puede infiltrarse en la caja de engranajes a través de sellos desgastados, si esa agua se congela, se expande y puede agrietar la carcasa.
 
 Al drenar el aceite, observe su color: si sale lechoso o grisáceo, hay infiltración de agua y se necesita una reparación antes de guardar el motor.
 
@@ -91,13 +91,13 @@ Una batería en buen estado puede permanecer a bordo solo si está completamente
 
 ### 5. Engrase de conexiones y puntos de articulación
 
-Aplique una buena capa de grasa marina en el timón, la dirección, los cables de control y los rodamientos de pivote. Este paso toma unos veinte minutos y previene que el frío y la humedad del invierno agarroten las piezas móviles.
+Siga el diagrama de lubricación del manual y aplique la grasa marina que Mercury especifica en el timón, la dirección, los cables de control y los rodamientos de pivote. Este paso previene que el frío y la humedad del invierno agarroten las piezas móviles.
 
 **¿Qué pasa si lo omite?** Piezas trabadas en primavera, cables dañados.
 
 ### 6. Enjuague con agua dulce
 
-Haga circular agua dulce por el sistema de enfriamiento del motor para eliminar depósitos minerales que reducen la eficiencia de enfriamiento y aceleran la corrosión. Para embarcaciones que navegan exclusivamente en lagos como Rice Lake o los Kawartha, esto es generalmente menos crítico que para motores usados en agua salada, pero sigue siendo recomendable.
+Haga circular agua dulce por el sistema de enfriamiento con la conexión de enjuague, el estado del motor, el caudal de agua y la duración que indica el manual del modelo exacto, para eliminar depósitos minerales que reducen la eficiencia de enfriamiento y aceleran la corrosión. No dé por hecho que unas orejeras de enjuague y cinco minutos al ralentí sirven para todos los modelos. Para embarcaciones que navegan exclusivamente en lagos como Rice Lake o los Kawartha, esto es generalmente menos crítico que para motores usados en agua salada, pero sigue siendo recomendable.
 
 **¿Qué pasa si lo omite?** Corrosión acelerada en el sistema de enfriamiento, obstrucción de paso de agua.
 
@@ -108,7 +108,7 @@ Haga circular agua dulce por el sistema de enfriamiento del motor para eliminar 
 | Paso | ¿Qué hace? | ¿Qué pasa si lo omite? |
 |---|---|---|
 | Estabilizar combustible | Previene degradación y separación de fase | Combustible contaminado, motor no arranca |
-| Fogging (lubricación interna) | Protege cilindros contra corrosión | Oxidación interna, reparación costosa |
+| Protección interna (fogging), solo si el manual la indica | Limita la oxidación y la corrosión durante la inactividad | El riesgo depende del motor; el manual indica qué corresponde |
 | Drenar gear lube | Detecta y previene daño por agua congelada | Carcasa agrietada, reparación mayor |
 | Plan de batería aprobado | Solo puede permanecer a bordo si está cargada, desconectada, asegurada y permitida | Descarga por cargas parásitas si queda conectada |
 | Engrasar articulaciones | Previene corrosión en cables y puntos de pivote | Piezas trabadas, cables dañados |
@@ -120,7 +120,7 @@ Haga circular agua dulce por el sistema de enfriamiento del motor para eliminar 
 
 La mayoría de los propietarios de botes en Ontario sacan su embarcación entre mediados de octubre y finales de noviembre. El fin de semana de Thanksgiving es a menudo la fecha límite psicológica. La ventana de lanzamiento en primavera es generalmente entre mediados de abril y finales de mayo, según la región.
 
-Complete hbw.wiki/service y deje el bote en cualquier momento, incluso fuera de horario. La marina cierra del 1 de diciembre al 1 de abril.
+Complete hbwservice.ca y deje el bote en cualquier momento, incluso fuera de horario. La marina cierra del 1 de diciembre al 1 de abril.
 
 ---
 
@@ -128,13 +128,13 @@ Complete hbw.wiki/service y deje el bote en cualquier momento, incluso fuera de 
 
 Hacer la preparación invernal usted mismo es posible, pero solo si tiene experiencia, los productos correctos y el manual del modelo y del número de serie. Los pasos que más se olvidan son: la protección interna cuando el manual la exige, la verificación de infiltración de agua en la caja de engranajes, y el engrase completo de los puntos de articulación.
 
-En Harris Boat Works tenemos 584 registros de preparación invernal completados entre agosto y noviembre de 2025. Nuestros técnicos están certificados directamente por [Mercury Marine](https://www.mercurymarine.com/ca/en) y conocen los motores Mercury a fondo.
+En Harris Boat Works tenemos 584 registros de preparación invernal completados entre agosto y noviembre de 2025. Somos un centro de servicio autorizado de [Mercury Marine](https://www.mercurymarine.com/ca/en) y conocemos los motores Mercury a fondo.
 
 ---
 
 ## Contáctenos
 
-**Reservar preparación invernal:** hbw.wiki/service, puede enviarnos su consulta (le responderemos en inglés).
+**Solicitar preparación invernal:** hbwservice.ca, puede enviarnos su consulta (le responderemos en inglés).
 
 **Por teléfono:** 905-342-2153
 
@@ -149,11 +149,11 @@ En Harris Boat Works tenemos 584 registros de preparación invernal completados 
 
 ### ¿Cuánto cuesta una preparación invernal profesional?
 
-El precio varía según el motor y los servicios requeridos. Contacte a hbw.wiki/service para una estimación.
+El precio varía según el motor y los servicios requeridos. Contacte a hbwservice.ca para una estimación.
 
-### ¿Cuándo debo reservar?
+### ¿Cuándo debo solicitar la preparación invernal?
 
-Complete hbw.wiki/service y deje el bote en cualquier momento, incluso fuera de horario. La marina cierra del 1 de diciembre al 1 de abril.
+Complete hbwservice.ca y deje el bote en cualquier momento, incluso fuera de horario. La marina cierra del 1 de diciembre al 1 de abril.
 
 ### ¿Harris Boat Works ofrece almacenamiento?
 
@@ -165,12 +165,12 @@ En el mejor caso, problemas para arrancar en primavera. En el peor caso, daño i
 
 ## Next steps
 
-- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbw.wiki/service
+- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbwservice.ca
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
-- The only commercial next step for this article is the HBW service request at https://hbw.wiki/service.
+- The only commercial next step for this article is the HBW service request at https://hbwservice.ca.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

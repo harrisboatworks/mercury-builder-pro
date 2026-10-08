@@ -77,7 +77,7 @@ The motor is half the conversation. The other half is the hull.
 
 **The hull is solid and the boat fits you:** repair or repower based on Question 1. Both are reasonable.
 
-**The hull has serious issues** (rotten transom, soft floor, structural cracks, major gelcoat failure on fiberglass): selling becomes more attractive, because pouring repower money into a hull with structural problems is the worst of both worlds. Transport Canada's construction standards for small vessels (TP 1332) exist because hull structure is a safety system, not cosmetics; a compromised transom is a safety problem, not just a resale problem.
+**The hull has serious issues** (rotten transom, soft floor, structural cracks, major gelcoat failure on fiberglass): selling becomes more attractive, because pouring repower money into a hull with structural problems is the worst of both worlds. Hull structure is a safety system, not cosmetics (Transport Canada's TP 1332 sets construction requirements for small pleasure craft); a compromised transom is a safety problem, not just a resale problem.
 
 **The boat doesn't fit your current life:** maybe the kids grew up and you don't water-ski anymore. Maybe you want a pontoon for cottage entertaining instead of the fishing boat you bought when you were single. Maybe you've upgraded fishing platforms and the current boat is too small. In these cases, even a perfectly-functional boat is the wrong answer to the next 5-10 years of your boating.
 
@@ -135,7 +135,7 @@ For the full new-vs-used cost comparison, our [New vs Used Mercury Outboard Guid
 
 **Make-it-saleable repair:** sometimes spending $500-$1,500 to fix the headline problem doubles the resale price. Worth doing if the repair is minor and the price gap is large.
 
-**Trade-in:** lowest cash value but fastest and cleanest. A dealer takes the boat and rolls the value into your next purchase. Our [Boat Trade-In Value Guide](/blog/outboard-trade-in-value-ontario-hbw) covers what to expect. One number private sellers miss: for a typical private recreational trade through an Ontario dealer, HST applies to the difference between the new purchase and your trade value, not the full price. Taxable-business or GST/HST-registrant trades are a separate case. On a larger qualifying purchase that tax savings can close most of the gap between trade value and private-sale value.
+**Trade-in:** lowest cash value but fastest and cleanest. A dealer takes the boat and rolls the value into your next purchase. Our [Boat Trade-In Value Guide](/blog/outboard-trade-in-value-ontario-hbw) covers what to expect. One number private sellers miss: for a typical private recreational trade through an Ontario dealer, HST applies to the difference between the new purchase and your trade value, not the full price. Taxable-business or GST/HST-registrant trades are a separate case. On a larger qualifying purchase that tax saving can narrow the gap between trade value and private-sale value.
 
 ![Aging aluminum boat transom with surface oxidation around motor mount](/lovable-uploads/inline/inline-aging-boat-transom.webp)
 

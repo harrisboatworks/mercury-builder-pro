@@ -81,8 +81,10 @@ export function GlobalCtaTracker() {
             entry_cta: explicitLocation || 'untagged_directions_link',
           });
         } else if (
-          destination.hostname === 'hbw.wiki' &&
-          destination.pathname.startsWith('/service')
+          destination.hostname === 'hbwservice.ca' ||
+          destination.hostname === 'www.hbwservice.ca' ||
+          (destination.hostname === 'hbw.wiki' &&
+            destination.pathname.startsWith('/service'))
         ) {
           trackEvent('appointment_click', {
             ...commonParams,

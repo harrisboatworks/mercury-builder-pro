@@ -1379,7 +1379,7 @@ export function MarkdownSectionCards({ content, markdownComponents, articleSlug 
         </div>
         {section.kind === 'when-to-service' && (
           <a
-            href="https://hbw.wiki/service"
+            href="https://hbwservice.ca"
             className="mt-3 inline-flex items-center gap-2 rounded-md bg-[hsl(45_85%_55%)] px-4 py-2 font-semibold !text-[hsl(220_25%_10%)] no-underline shadow-sm hover:bg-[hsl(45_85%_50%)]"
           >
             <Wrench className="h-4 w-4" aria-hidden="true" />

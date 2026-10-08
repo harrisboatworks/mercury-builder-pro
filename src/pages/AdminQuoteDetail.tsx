@@ -7,12 +7,12 @@ import { Badge } from '@/components/ui/badge';
 import { Textarea } from '@/components/ui/textarea';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Edit2, Save, Loader2, FileText, AlertTriangle, Download, Copy, Check, Gift, Calendar, Link, Plus, Mail } from 'lucide-react';
+import { Edit2, Save, Loader2, FileText, AlertTriangle, Download, Copy, Check, Link, Plus, Mail } from 'lucide-react';
 import { useQuote } from '@/contexts/QuoteContext';
 import { useToast } from '@/hooks/use-toast';
 import { useAuth } from '@/components/auth/AuthProvider';
 import AdminNav from '@/components/admin/AdminNav';
-import { useActivePromotions } from '@/hooks/useActivePromotions';
+import { AdminQuotePromotionCard } from '@/components/admin/AdminQuotePromotionCard';
 import { SITE_URL } from '@/lib/site';
 import { buildLegacyQuotePdfSnapshot } from '@/lib/quote-pdf-data';
 import { QuoteChangeLog } from '@/components/admin/QuoteChangeLog';
@@ -126,9 +126,6 @@ const AdminQuoteDetail = () => {
   const [isDownloadingCanonical, setIsDownloadingCanonical] = useState(false);
   const [isRetryingEmail, setIsRetryingEmail] = useState(false);
   const [linkCopied, setLinkCopied] = useState(false);
-  
-  // Promo data
-  const { promotions } = useActivePromotions();
   
   // Editable fields
   const [adminDiscount, setAdminDiscount] = useState(0);
@@ -644,15 +641,6 @@ const AdminQuoteDetail = () => {
     }
   };
 
-  const getPromoLabel = (option: string | null): string => {
-    switch (option) {
-      case 'no_payments': return '6 Months Deferred Payments';
-      case 'special_financing': return 'Special Financing Rate';
-      case 'cash_rebate': return 'Factory Rebate';
-      default: return 'Standard Warranty';
-    }
-  };
-
   const handleCopyLink = async () => {
     if (!q) return;
     const shareUrl = `${SITE_URL}/quote/saved/${savedQuoteDealId || q.id}`;
@@ -817,29 +805,6 @@ const AdminQuoteDetail = () => {
     } finally {
       setIsGeneratingPDF(false);
     }
-  };
-
-  // Extract promo info from quote_data
-  const getPromoInfo = () => {
-    if (!q?.quote_data) return null;
-    const selectedOption = q.quote_data.selectedPromoOption;
-    const selectedValue = q.quote_data.selectedPromoValue;
-    
-    // Get active promotion for expiry date, regardless of whether its benefits
-    // are layered or require a customer choice.
-    const activePromo = promotions.find(p => (p.promo_options?.options?.length ?? 0) > 0 || p.warranty_extra_years);
-    const expiryDate = activePromo?.end_date ? new Date(activePromo.end_date) : null;
-    const warrantyYears = activePromo?.warranty_extra_years || 0;
-    
-    return {
-      hasPromo: !!selectedOption,
-      option: selectedOption,
-      value: selectedValue,
-      label: getPromoLabel(selectedOption),
-      expiryDate,
-      warrantyYears,
-      totalWarranty: 3 + warrantyYears
-    };
   };
 
   return (
@@ -1179,45 +1144,7 @@ const AdminQuoteDetail = () => {
             )}
           </Card>
 
-          {/* Applied Promotion Card */}
-          {(() => {
-            const promo = getPromoInfo();
-            if (!promo?.hasPromo) return null;
-            
-            return (
-              <Card className="p-4 border-emerald-500 bg-emerald-50/50 dark:bg-emerald-950/20">
-                <h2 className="font-semibold mb-3 flex items-center gap-2 text-emerald-800 dark:text-emerald-200">
-                  <Gift className="w-4 h-4" />
-                  Applied Promotion
-                </h2>
-                <div className="space-y-2 text-sm">
-                  <div className="font-medium text-emerald-700 dark:text-emerald-300">
-                    {promo.warrantyYears > 0
-                      ? `${promo.totalWarranty}-Year Factory-Backed Warranty`
-                      : 'Current Mercury Promotion'}
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Check className="w-4 h-4 text-emerald-600" />
-                    <span>{promo.label}</span>
-                    {promo.value && <Badge variant="secondary">{promo.value}</Badge>}
-                  </div>
-                  {promo.warrantyYears > 0 && (
-                    <div className="flex items-center gap-2">
-                      <Check className="w-4 h-4 text-emerald-600" />
-                      <span>{promo.totalWarranty}-Year Factory Warranty</span>
-                      <Badge variant="outline" className="text-xs">3 + {promo.warrantyYears} FREE</Badge>
-                    </div>
-                  )}
-                  {promo.expiryDate && (
-                    <div className="flex items-center gap-2 text-muted-foreground pt-1 border-t mt-2">
-                      <Calendar className="w-4 h-4" />
-                      <span>Offer Expires: {promo.expiryDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
-                    </div>
-                  )}
-                </div>
-              </Card>
-            );
-          })()}
+          <AdminQuotePromotionCard snapshot={buildLegacyQuotePdfSnapshot(q.quote_data, q.created_at || undefined)} />
 
           <Card className="p-4" data-section="canonical-document">
             <h2 className="font-semibold mb-2">Canonical reservation PDF</h2>

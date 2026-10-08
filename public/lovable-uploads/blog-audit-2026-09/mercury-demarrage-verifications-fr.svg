@@ -38,6 +38,6 @@
   <line x1="180" y1="634" x2="1020" y2="634" stroke="#0B1F3A" stroke-width="2"/>
   <text text-anchor="middle" fill="#0B1F3A" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="34" font-weight="600">
     <tspan x="600" y="682">Réserver un diagnostic :</tspan>
-    <tspan x="600" dy="46">hbw.wiki/service</tspan>
+    <tspan x="600" dy="46">hbwservice.ca</tspan>
   </text>
 </svg>

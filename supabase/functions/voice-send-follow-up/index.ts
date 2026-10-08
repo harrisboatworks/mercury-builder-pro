@@ -15,7 +15,7 @@ const SUPABASE_URL = Deno.env.get("SUPABASE_URL")!;
 const SUPABASE_SERVICE_ROLE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
 
 const COMPANY_PHONE = "(905) 342-2153";
-const SERVICE_URL = "hbw.wiki/service";
+const SERVICE_URL = "hbwservice.ca";
 
 // Message templates
 const MESSAGE_TEMPLATES = {

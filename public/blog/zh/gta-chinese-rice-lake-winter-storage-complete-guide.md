@@ -16,7 +16,7 @@ keywords: ["冬储","莱斯湖","GTA 华人","收缩膜","Mercury","Harris Boat 
 author: Harris Boat Works
 content_type: blog_article
 language: zh-CN
-revenue_driver: repower
+revenue_driver: service
 ---
 
 # GTA 华人船主冬储完整指南：HBW 室外收缩膜冬储方案、价格、流程
@@ -29,7 +29,7 @@ revenue_driver: repower
 **Read time:** 8 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/gta-chinese-rice-lake-winter-storage-complete-guide
 
-> **简短答案：** HBW 提供室外专业收缩膜存储、室外无遮盖存储，以及仅收缩膜服务。不提供室内或加热存储。先完成 [hbw.wiki/service](https://hbw.wiki/service)，然后随时送船，包括下班后。我们通常可以安排取船。请向我们确认您的船和地点是否可安排。HBW 不提供送船服务、不邮寄发动机、不上门/码头服务，也不推荐运输商或报价第三方运输。船厂 12 月 1 日至 4 月 1 日关闭。
+> **简短答案：** HBW 提供室外专业收缩膜存储、室外无遮盖存储，以及仅收缩膜服务。不提供室内或加热存储。先完成 [hbwservice.ca](https://hbwservice.ca)，然后随时送船，包括下班后。我们通常可以安排取船。请向我们确认您的船和地点是否可安排。HBW 不提供送船服务、不邮寄发动机、不上门/码头服务，也不推荐运输商或报价第三方运输。船厂 12 月 1 日至 4 月 1 日关闭。
 
 ## 先确认 HBW 是否适合您的船
 
@@ -52,11 +52,11 @@ HBW 适合需要室外专业收缩膜、室外无遮盖或仅收缩膜冬储，�
 
 ## 从服务请求到送船
 
-先完成 [hbw.wiki/service](https://hbw.wiki/service)，然后随时送船，包括下班后。
+先完成 [hbwservice.ca](https://hbwservice.ca)，然后随时送船，包括下班后。
 
 正常流程很简单：
 
-1. 提交 [HBW 服务请求](https://hbw.wiki/service)。
+1. 提交 [HBW 服务请求](https://hbwservice.ca)。
 2. 提供船的年份、品牌、型号、长度，发动机型号和序列号，拖车情况，以及希望完成的工作。
 3. 等 HBW 确认接受范围和书面报价。
 4. 随时把船送到 Gores Landing（包括下班后），或询问取船安排，并在关闭前取走需要的个人物品。
@@ -111,7 +111,7 @@ HBW 的 Lightspeed 记录显示，有 **2025 年 8 月至 11 月完成的 584 �
 
 ## 下一步
 
-先完成 [hbw.wiki/service](https://hbw.wiki/service)，然后随时送船，包括下班后。 提交船、发动机、拖车和所需工作的完整资料。HBW 会确认接受范围和当前书面报价。
+先完成 [hbwservice.ca](https://hbwservice.ca)，然后随时送船，包括下班后。 提交船、发动机、拖车和所需工作的完整资料。HBW 会确认接受范围和当前书面报价。
 
 **地址：** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 
@@ -123,11 +123,11 @@ HBW 的 Lightspeed 记录显示，有 **2025 年 8 月至 11 月完成的 584 �
 
 ### 如何开始冬储流程？
 
-先完成 hbw.wiki/service，然后随时送船，包括下班后。
+先完成 hbwservice.ca，然后随时送船，包括下班后。
 
 ### 秋季最晚什么时候送船？
 
-先完成 hbw.wiki/service，然后随时送船，包括下班后。 实体船厂 12 月 1 日至 4 月 1 日关闭。
+先完成 hbwservice.ca，然后随时送船，包括下班后。 实体船厂 12 月 1 日至 4 月 1 日关闭。
 
 ### HBW 可以从 GTA 取船或送船吗？
 
@@ -147,12 +147,12 @@ HBW 的 Lightspeed 记录显示，有 **2025 年 8 月至 11 月完成的 584 �
 
 ## Next steps
 
-- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
+- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbwservice.ca
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
-- The only commercial next step for this article is the Mercury quote configurator.
+- The only commercial next step for this article is the HBW service request at https://hbwservice.ca.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

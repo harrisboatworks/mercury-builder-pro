@@ -3,6 +3,8 @@
 // Run via: node scripts/import-wave1-drafts.mjs
 import fs from 'node:fs';
 import path from 'node:path';
+import { execFileSync } from 'node:child_process';
+import { fileURLToPath } from 'node:url';
 // Custom permissive frontmatter parser (the drafts contain unquoted ":" inside
 // FAQ answers which strict YAML rejects).
 
@@ -268,6 +270,10 @@ for (const lang of ['pa', 'ur', 'tl', 'hi']) {
   fs.writeFileSync(out, emitFile(lang), 'utf8');
   console.log(`wrote ${out} (${grouped[lang].length} articles)`);
 }
+
+// Keep the verified referral offer and official destinations when upstream
+// drafts are imported again. The reconciler preserves all other article copy.
+execFileSync(process.execPath, [fileURLToPath(new URL('./reconcile-blog-pcoc-referrals.mjs', import.meta.url))], { stdio: 'inherit' });
 
 console.log('LANGUAGE_NOTE preview (first 80 chars per language):');
 for (const [l, n] of Object.entries(allLanguageNotes)) {

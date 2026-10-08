@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-rigging-costs-ontario.md
-last_updated: 2026-09-11
+last_updated: 2026-09-26
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -8,10 +8,10 @@ final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
 title: "Mercury Outboard Rigging Costs Explained (Ontario 2026)"
-description: "Mercury rigging costs: throttle, steering, harness, gauges, hose, cables, prop. Typical repower with post-2010 controls: $500-$1,500 CAD."
+description: "Mercury rigging costs: throttle, steering, harness, gauges, hose, cables. Typical repower with post-2010 controls: $500-$1,500 CAD before prop and installation labour."
 category: "Repower"
 date_published: 2026-05-05
-date_modified: 2026-09-11
+date_modified: 2026-09-26
 keywords: ["mercury rigging cost","outboard rigging ontario","boat repower rigging","hydraulic steering upgrade","mercury install cost"]
 author: Harris Boat Works
 content_type: blog_article
@@ -21,17 +21,17 @@ revenue_driver: repower
 
 # Mercury Outboard Rigging Costs Explained (Ontario 2026)
 
-> Mercury rigging costs: throttle, steering, harness, gauges, hose, cables, prop. Typical repower with post-2010 controls: $500-$1,500 CAD.
+> Mercury rigging costs: throttle, steering, harness, gauges, hose, cables. Typical repower with post-2010 controls: $500-$1,500 CAD before prop and installation labour.
 
 **Category:** Repower  
 **Published:** 2026-05-05  
-**Last reviewed:** 2026-09-11  
+**Last reviewed:** 2026-09-26  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-rigging-costs-ontario
 
 ## Quick Answer
 
-Rigging costs vary significantly by job. A like-for-like Mercury-to-Mercury swap on post-2010 controls can land under $1,500. A full re-rig, new gauges, harness, controls, and steering, runs $2,500 to $6,000. We quote rigging line by line, no surprises. Build an installed quote with rigging spelled out at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**.
+Rigging costs vary significantly by job. A like-for-like Mercury-to-Mercury swap on post-2010 controls can land under $1,500. A full re-rig, new gauges, harness, controls, and steering, runs $2,500 to $6,000. Both figures are before prop and installation labour. We quote rigging line by line, no surprises. Build an installed quote with rigging spelled out at **[mercuryrepower.ca](https://www.mercuryrepower.ca)**.
 
 ---
 
@@ -210,7 +210,7 @@ Ready for an honest rigging quote? Build a quote at **[mercuryrepower.ca](https:
 
 ### How much does Mercury rigging cost?
 
-For Mercury-to-Mercury repowers with post-2010 controls in good shape, rigging lands $500 to $1,500 CAD. Brand conversions add $1,500 to $3,000. Full rerigs (everything new) run $2,500 to $6,000. Specific quote at [/quote/motor-selection](/quote/motor-selection).
+For Mercury-to-Mercury repowers with post-2010 controls in good shape, rigging lands $500 to $1,500 CAD. Brand conversions add $1,500 to $3,000. Full rerigs (everything new) run $2,500 to $6,000, all before prop, installation labour and HST. Specific quote at [/quote/motor-selection](/quote/motor-selection).
 
 ### What's included in rigging?
 
@@ -218,7 +218,7 @@ Throttle and shift controls, steering system, wiring harness, gauges or displays
 
 ### Can I keep my existing rigging during a Mercury repower?
 
-Often yes for Mercury-to-Mercury repowers with rigging less than 15 years old. Brand conversions need new everything. We assess during the hull walk-around.
+Often yes for Mercury-to-Mercury repowers with rigging less than 15 years old. Brand conversions need most of the rigging replaced. We assess during the hull walk-around.
 
 ### Why do brand conversions cost more in rigging?
 
@@ -230,7 +230,7 @@ For motors 90 HP and up, hydraulic is the modern standard and is worth the upgra
 
 ### What's Mercury SmartCraft and do I need it?
 
-SmartCraft is Mercury's digital data and display system. VesselView 4/7/9 displays show motor data (RPM, fuel, oil, alerts) digitally. For modern Mercury motors, SmartCraft connectivity is built in, and the SmartCraft Connect Mobile app pairs your phone to the motor. Whether you need a dedicated VesselView display depends on whether you want digital gauges or are happy with analog.
+SmartCraft is Mercury's digital data and display system. VesselView 4/7/9 displays show motor data (RPM, fuel, oil, alerts) digitally. Modern Mercury motors carry SmartCraft data, and the SmartCraft Connect Mobile module (a small add-on) lets the Mercury app connect your phone to the motor. Whether you need a dedicated VesselView display depends on whether you want digital gauges or are happy with analog.
 
 ### How much does a new Mercury propeller cost?
 

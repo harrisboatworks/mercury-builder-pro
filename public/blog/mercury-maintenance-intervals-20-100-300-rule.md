@@ -116,7 +116,7 @@ Most Rice Lake recreational owners reach the calendar before they reach 100 hour
 
 At HBW:
 
-- Submit fall service before the marina closes on December 1.
+- Mid-November is last call for fall service, and the marina closes on December 1.
 - The marina is closed from December 1 through April 1.
 - Spring service resumes once the marina reopens in early April.
 - If the motor crosses an hour-based interval mid-season, do not wait for fall.
@@ -139,7 +139,7 @@ No service history? Start with an inspection and establish a new baseline. If th
 
 ## Ready to Book the Right Service?
 
-Put in a service request at [hbw.wiki/service](https://hbw.wiki/service) with the motor serial number and current hours. We'll build the job from the correct Mercury schedule and the boat's actual history.
+Put in a service request at [hbwservice.ca](https://hbwservice.ca) with the motor serial number and current hours. We'll build the job from the correct Mercury schedule and the boat's actual history.
 
 ## FAQs
 
@@ -173,12 +173,12 @@ Mercury recommends genuine parts, but its written limited warranty does not say 
 
 ## Next steps
 
-- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbw.wiki/service
+- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbwservice.ca
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
-- The only commercial next step for this article is the HBW service request at https://hbw.wiki/service.
+- The only commercial next step for this article is the HBW service request at https://hbwservice.ca.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

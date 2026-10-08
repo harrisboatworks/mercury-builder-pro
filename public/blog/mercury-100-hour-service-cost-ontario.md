@@ -29,7 +29,7 @@ revenue_driver: service
 **Read time:** ~8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-100-hour-service-cost-ontario
 
-> **Quick answer:** There is no honest one-price answer across the Mercury range. The invoice depends on the exact engine, its serial-number-specific maintenance schedule, the parts due, its condition, and whether winterization is included. Complete the [service request](https://hbw.wiki/service), then you may drop the boat off anytime you want, including after hours. The physical marina is closed December 1 through April 1.
+> **Quick answer:** There is no honest one-price answer across the Mercury range. The invoice depends on the exact engine, its serial-number-specific maintenance schedule, the parts due, its condition, and whether winterization is included. Complete the [service request](https://hbwservice.ca), then you may drop the boat off anytime you want, including after hours. The physical marina is closed December 1 through April 1.
 
 Search "100-hour service cost" and you'll get American answers: year-round boating states, different labour rates, different math.
 
@@ -76,7 +76,7 @@ A portable tiller and a large multi-cylinder outboard do not share the same oil 
 - **What the inspection finds.** Milky gear lube, damaged anodes, seized prop hardware, or a fuel-system concern changes the scope only after it is identified.
 - **Whether fall layup is included.** Annual service and winterization overlap, but they are not identical.
 
-HBW scopes the job from the motor details on the [service request](https://hbw.wiki/service). That is more useful than publishing one package price that fits some engines and misleads everyone else.
+HBW scopes the job from the motor details on the [service request](https://hbwservice.ca). That is more useful than publishing one package price that fits some engines and misleads everyone else.
 
 What moves the number up: skipped previous services, a water-separating filter that's never been changed, seized prop hardware, and anything the tech finds in the "while it's open" category. Our [service-bill guide](/blog/accidentally-increase-boat-service-bills-ontario) covers the habits that quietly inflate invoices.
 
@@ -113,13 +113,13 @@ Every winterize-and-service at our shop ends with the tech recording recommendat
 
 ## When Should You Submit an HBW Service Request?
 
-Send the exact engine, hours, and the work you want covered on the [service request](https://hbw.wiki/service). After-hours drop-off and the December 1 through April 1 marina closure are in the quick answer.
+Send the exact engine, hours, and the work you want covered on the [service request](https://hbwservice.ca). After-hours drop-off and the December 1 through April 1 marina closure are in the quick answer.
 
 ---
 
 ## Ready to Book Your Service?
 
-**Service requests:** [hbw.wiki/service](https://hbw.wiki/service)
+**Service requests:** [hbwservice.ca](https://hbwservice.ca)
 **Phone:** 905-342-2153
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 
@@ -135,7 +135,7 @@ Send the exact engine, hours, and the work you want covered on the [service requ
 
 ### How much does a Mercury 100-hour service cost in Ontario?
 
-There is no honest one-price answer across the Mercury range. Cost depends on the exact engine, its serial-number-specific maintenance schedule, the parts due, its condition, and whether winterization is added. Submit the motor details at hbw.wiki/service, then drop the boat off anytime you want, including after hours.
+There is no honest one-price answer across the Mercury range. Cost depends on the exact engine, its serial-number-specific maintenance schedule, the parts due, its condition, and whether winterization is added. Submit the motor details at hbwservice.ca, then drop the boat off anytime you want, including after hours.
 
 ### Is the 100-hour service the same as winterization?
 
@@ -155,7 +155,7 @@ Follow the maintenance schedule for your exact engine and serial number. Deferri
 
 ### Do you service motors bought somewhere else?
 
-Yes. HBW services Mercury outboards regardless of where they were purchased. Complete hbw.wiki/service, then you may drop the boat off anytime you want, including after hours. The physical marina is closed December 1 through April 1.
+Yes. HBW services Mercury outboards regardless of where they were purchased. Complete hbwservice.ca, then you may drop the boat off anytime you want, including after hours. The physical marina is closed December 1 through April 1.
 
 ## Related guides
 
@@ -167,12 +167,12 @@ Yes. HBW services Mercury outboards regardless of where they were purchased. Com
 
 ## Next steps
 
-- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbw.wiki/service
+- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbwservice.ca
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
-- The only commercial next step for this article is the HBW service request at https://hbw.wiki/service.
+- The only commercial next step for this article is the HBW service request at https://hbwservice.ca.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

@@ -35,13 +35,13 @@ Pontoon选Mercury船外机，**用你最重的使用情境来选，不是用展�
 
 *HBW 信任要点*
 
-### 为什么 GTA 华人船主愿意到 Rice Lake
+### 为什么 GTA 华人船主愿意到莱斯湖（Rice Lake）
 
 - [Mercury Marine](https://www.mercurymarine.com/ca/en) Premier 认证经销商
 - 透明加元价格，无需讨价还价
-- 从 GTA 经 401 + 115 高速约 60 到 90 分钟车程
+- 从 GTA 经 401 高速东行约 60 到 90 分钟车程
 
-[在线获取报价](/quote)
+[在线获取报价](/quote/motor-selection)
 
 > **关于语言的说明**
 > 我们用中文制作这些内容，是因为我们真心希望帮助讲中文的船主。请注意：Harris Boat Works 的团队以英语提供服务。为了获得最顺畅的体验，欢迎带一位会讲英语的朋友，或使用翻译应用。我们很乐意为您服务。
@@ -115,7 +115,7 @@ Pontoon换机或新配置可能涉及：Rigging（接线）、操控系统、螺
 
 ## Pontoon在Rice Lake和Kawarthas的使用说明
 
-Rice Lake和Kawarthas是GTA华人家庭租船或自有Pontoon最常使用的水域之一。几个在地知识点：
+莱斯湖（Rice Lake）和Kawarthas是GTA华人家庭租船或自有Pontoon最常使用的水域之一。几个在地知识点：
 
 - **靠近码头和浅水区时要慢速**, Rice Lake有多个保护区和限速区
 - **夏季周末人多**, 安全意识和码头礼仪很重要
@@ -132,7 +132,7 @@ Harris Boat Works在Rice Lake服务超过七十年，了解当地水域特性，
 ## 行动呼吁
 
 **不确定Pontoon该配90HP、115HP还是更高？**
-到 **[mercuryrepower.ca](https://www.mercuryrepower.ca)** 建立Mercury报价，再至 **[hbw.wiki/service](https://hbw.wiki/service)** 让HBW帮你确认配置是否适合你的Pontoon和使用情境。
+到 **[mercuryrepower.ca](https://www.mercuryrepower.ca)** 建立Mercury报价，再至 **[hbwservice.ca](https://hbwservice.ca)** 让HBW帮你确认配置是否适合你的Pontoon和使用情境。
 
 Harris Boat Works，自1947年起，Mercury Marine Premier Dealer，位于Rice Lake南岸Gores Landing。
 ---

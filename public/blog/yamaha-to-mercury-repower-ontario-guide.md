@@ -133,7 +133,7 @@ For customers who want the brand-to-brand HP equivalency check, here's the lineu
 | Yamaha F75 / F90 / F115 | Mercury 75 / 90 / 115 FourStroke (incl. Command Thrust on pontoon) |
 | Yamaha F150 / F175 / F200 | Mercury 150 / 175 / 200 FourStroke or Pro XS |
 | Yamaha F225 / F250 | Mercury 225 / 250 FourStroke or Pro XS |
-| Yamaha F300 / F350 / F425 XTO | Mercury 300 Pro XS / 300-450R / 400-450 Verado |
+| Yamaha F300 / F350 / F425 XTO | Mercury 300 Pro XS / 300-450R / 350-425 Verado (special order) |
 | Yamaha VMAX SHO | Mercury Pro XS (closest performance match) |
 
 This isn't a one-to-one performance guarantee. Specific prop selection and boat-side load conditions can shift the ranking. We dial that in during the quote process.
@@ -182,7 +182,7 @@ A few notes specific to where we do business.
 **Email:** info@harrisboatworks.ca (send cowl plate photos of your Yamaha + photos of helm controls/gauges for a side-by-side quote)
 **Main site:** harrisboatworks.ca
 **Build a Mercury quote:** mercuryrepower.ca
-**Service booking:** hbw.wiki/service
+**Service booking:** hbwservice.ca
 
 Harris Boat Works - 5369 Harris Boat Works Rd, Gores Landing, ON. Family-owned since 1947, Mercury dealer since 1965, current Premier Dealer, with authorized Mercury service directly on Rice Lake.
 

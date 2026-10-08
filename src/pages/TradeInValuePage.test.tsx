@@ -2,6 +2,9 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import type { ReactNode } from 'react';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import type { TradeInInfo } from '@/lib/trade-valuation';
+import { trackStandaloneTrade } from '@/lib/trade-in-analytics';
+
+vi.mock('@/lib/trade-in-analytics', () => ({ trackStandaloneTrade: vi.fn() }));
 
 const navigateMock = vi.fn();
 const dispatchMock = vi.fn();
@@ -63,6 +66,7 @@ beforeEach(() => {
   localStorage.clear();
   navigateMock.mockClear();
   dispatchMock.mockClear();
+  vi.mocked(trackStandaloneTrade).mockClear();
 });
 
 describe('TradeInValuePage', () => {
@@ -82,5 +86,15 @@ describe('TradeInValuePage', () => {
       payload: unavailableValuation,
     });
     expect(navigateMock).toHaveBeenCalledWith('/quote/motor-selection');
+    expect(trackStandaloneTrade).toHaveBeenCalledWith('standalone_trade_quote_started', expect.any(String));
+  });
+
+  it('keeps reset available after entries are made and removes the quote handoff', () => {
+    render(<TradeInValuePage />);
+    fireEvent.click(screen.getByRole('button', { name: 'Simulate unavailable valuation' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Start over' }));
+    expect(screen.queryByRole('button', { name: /start a quote/i })).not.toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: 'Start over' })).not.toBeInTheDocument();
+    expect(trackStandaloneTrade).toHaveBeenCalledWith('standalone_trade_reset', expect.any(String));
   });
 });

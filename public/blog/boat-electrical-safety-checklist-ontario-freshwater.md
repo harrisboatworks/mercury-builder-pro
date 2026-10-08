@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-electrical-safety-checklist-ontario-freshwater.md
-last_updated: 2026-09-07
+last_updated: 2026-10-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Boat Electrical Safety Ontario"
 description: "Marine electrical safety checklist for Ontario freshwater boats: corrosion, fuses, bilge pump, battery switch, amateur wiring traps."
 category: "Maintenance"
 date_published: 2026-05-17
-date_modified: 2026-09-07
+date_modified: 2026-10-06
 keywords: ["boat electrical safety checklist","marine electrical ontario","boat wiring inspection","bilge pump check","harris boat works"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Category:** Maintenance  
 **Published:** 2026-05-17  
-**Last reviewed:** 2026-09-07  
+**Last reviewed:** 2026-10-06  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-electrical-safety-checklist-ontario-freshwater
 
@@ -143,10 +143,10 @@ The line is: if the system is working, an owner can inspect it and do the listed
 
 Most Rice Lake and Kawartha boaters don't run shore power on their boats, but if you have a larger cruiser with AC outlets and a marina slip with 30-amp service, the rules are different:
 
-- Shore power systems require galvanic isolators or isolation transformers to prevent stray current corrosion
+- Shore power systems should have a galvanic isolator or isolation transformer (recommended ABYC practice) to prevent stray current corrosion
 - A reverse-polarity indicator should be visible at the panel
-- GFCI protection on all AC outlets is mandatory in marine applications
-- ABYC compliance is not optional, it's the safety baseline
+- GFCI protection on boat AC outlets is standard ABYC E-11 practice, and a marine electrician can tell you which outlets need it
+- ABYC E-11 is the recognized best-practice baseline for AC and DC systems. These standards are voluntary for owners; Transport Canada accepts them as a compliance route for builders. The legal construction baseline is Transport Canada's TP 1332
 
 If you have shore power and aren't 100 percent sure your boat's setup is compliant, have a marine electrician inspect it. This is an area where a small mistake can be fatal.
 
@@ -156,7 +156,7 @@ The single most common electrical pattern we diagnose is intermittent SmartCraft
 
 The repair: cut out the corroded connection, install proper marine-grade terminals and heat-shrink, retest. Total parts cost: $10. Labour: 30-60 minutes. Total job: quoted at our current shop rate; see /pricing-reference. Compared to what owners spend chasing the gremlins, this is cheap and final.
 
-For a structured electrical inspection or to fix a known issue, our service intake is at hbw.wiki/service.
+For a structured electrical inspection or to fix a known issue, our service intake is at hbwservice.ca.
 
 For engine repairs, we only service Mercury and MerCruiser.
 
@@ -166,7 +166,7 @@ For engine repairs, we only service Mercury and MerCruiser.
 - Transport Canada Construction Standards for Small Vessels (TP 1332)
 - Mercury Marine electrical installation guidelines (dealer technical reference, 2026)
 - HBW service shop records, 2018-2026
-- [Transport Canada - Safe Boating Guide (TP 511)](https://tc.canada.ca/en/marine-transportation/marine-safety/transport-canada-boating-safety-guide-tp-511) - Federal guidance on small-vessel electrical safety and required equipment.
+- [Transport Canada - Safe Boating Guide (TP 511)](https://tc.canada.ca/sites/default/files/2026-07/tp-511-boating-guide-2026-EN-acc.pdf) - Federal guidance on required safety equipment and rules, including ignition-protected equipment on gasoline-powered boats.
 - [Mercury Marine Canada](https://www.mercurymarine.com/ca/en) - Manufacturer guidance on rigging, batteries, and ignition-protected equipment.
 
 ## About the author
@@ -209,7 +209,7 @@ Yes. Leave the battery in the boat and disconnect it (turn the switch to OFF and
 
 ## Next steps
 
-- If the owner can bring the boat to HBW in Gores Landing, Ontario, submit a service request: https://hbw.wiki/service
+- If the owner can bring the boat to HBW in Gores Landing, Ontario, submit a service request: https://hbwservice.ca
 - Include the engine serial number, symptoms, clear photos, and any recent service or rigging changes.
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
@@ -217,7 +217,7 @@ Yes. Leave the battery in the boat and disconnect it (turn the switch to OFF and
 
 - Start with the safety limits and stop conditions stated in the article and the exact equipment manual.
 - HBW diagnoses faults in person at its Gores Landing shop. Do not offer phone or remote diagnosis.
-- Route to https://hbw.wiki/service only when the owner can bring the boat to HBW.
+- Route to https://hbwservice.ca only when the owner can bring the boat to HBW.
 - A symptom is not a confirmed root cause. Preserve the article's test order and escalation limits.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.

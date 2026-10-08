@@ -31,17 +31,17 @@ revenue_driver: repower
 
 ## 简短答案
 
-40至60HP是安省铝船和钓鱼船的黄金马力区间, 比小马力有更好的载重和起步能力，比大马力更容易控制预算。**对大多数GTA华人钓友的16英尺铝船，这个区间是「真正开始好用」的起点。14英尺铝船通常只到25至30HP，15英尺多在30至40HP，一切以船身 Capacity Plate 标示为准。** 但40、50、60HP的差异不只是马力数字, 你要看船体Capacity Rating、常载人数、是否Tiller、是否需要Command Thrust，以及你常去的湖区。
+40至60HP是安省铝船和钓鱼船的黄金马力区间, 比小马力有更好的载重和起步能力，比大马力更容易控制预算。**对15至16英尺、两位成年人的铝制钓鱼船，40HP就够用；如果会再加第三个人、拖曳充气滑水圈，或想要满载时更充足的余量，60HP是更稳妥的长期选择。一切以船身 Capacity Plate 标示为准。** 但40、50、60HP的差异不只是马力数字, 你要看船体Capacity Rating、常载人数、是否Tiller、是否需要Command Thrust，以及你常去的湖区。
 
 *HBW 信任要点*
 
-### 为什么 GTA 华人船主愿意到 Rice Lake
+### 为什么 GTA 华人船主愿意到莱斯湖
 
 - [Mercury Marine](https://www.mercurymarine.com/ca/en) Premier 认证经销商
 - 透明加元价格，无需讨价还价
-- 从 GTA 经 401 + 115 高速约 60 到 90 分钟车程
+- 从多伦多向东约 90 分钟车程，出发前请用实时导航确认路线和路况
 
-[在线获取报价](/quote)
+[在线获取报价](/quote/motor-selection)
 
 ---
 
@@ -66,7 +66,7 @@ revenue_driver: repower
 
 **使用方式：** 纯钓鱼、慢速巡航，还是偶尔需要跑远距离？
 
-**水域：** Rice Lake的相对平静，还是更开放的湖面？
+**水域：** 莱斯湖相对平静的水面，还是更开放的湖面？
 
 **这些答案决定了你在40和60HP之间的合理选择。**
 
@@ -98,7 +98,7 @@ HBW的观察：**40至60HP区间最常见的错误不是买太大，而是买到
 - 16英尺铝船，Capacity Plate允许60HP
 - 常载两至三人加上钓鱼装备
 - 需要可靠的滑行能力（不想让船在起步时拖沓）
-- 在Rice Lake或Kawarthas偶尔跑较长距离
+- 在莱斯湖或Kawarthas偶尔跑较长距离
 - 计划这台发动机使用8至10年以上
 
 ---
@@ -124,11 +124,11 @@ Mercury在40至60HP范围内提供Tiller和Remote配置选项，具体可选型�
 
 ## Command Thrust在这个马力区间值得考虑吗？
 
-Command Thrust通常被认为是Pontoon的配置，但在某些情况下，40至60HP的重载铝船也可能受益：
+Command Thrust主要是为Pontoon和工作船设计的齿轮箱，会牺牲一些极速。如果是16英尺左右、大部分时间接近全油门航行的轻型铝制钓鱼船，建议不要选，把预算省下来。以下情况可以考虑：
 
 - 如果你的船比同尺寸平均更重
 - 如果你常载大量装备或需要更强的低速推力
-- 如果你在有波浪的情况下需要更好的控制
+- 如果你希望重载时更容易上滑行，并能在较低速度下保持滑行
 
 这不是每个人都需要的配置，但值得在选择时和HBW讨论。
 
@@ -139,12 +139,12 @@ Command Thrust通常被认为是Pontoon的配置，但在某些情况下，40至
 ## 行动呼吁
 
 **在40、50、60HP之间拿不定主意？**
-到 **[mercuryrepower.ca](https://www.mercuryrepower.ca)** 比较当前加币报价，再至 **[hbw.wiki/service](https://hbw.wiki/service)** 让HBW帮你确认哪个配置最适合你的铝船和使用方式。
+到 **[mercuryrepower.ca](https://www.mercuryrepower.ca)** 比较当前加币报价，再至 **[hbwservice.ca](https://hbwservice.ca)** 让HBW帮你确认哪个配置最适合你的铝船和使用方式。
 
 > **语言说明**
 > 我们专门为华人朋友准备了这些中文指南，因为我们真心希望帮助华人船主和他们的家人朋友在 Rice Lake 享受划船的乐趣，这是很多其他船行没有做的。说实话：我们的团队使用英语服务。欢迎带会英语的亲友同来，或者用手机翻译软件，我们一定会耐心沟通、尽力配合。
 
-Harris Boat Works，自1965年起的 Mercury 经销商，位于Rice Lake南岸Gores Landing。
+Harris Boat Works，自1965年起的 Mercury 经销商，位于莱斯湖南岸Gores Landing。
 ---
 
 ## FAQs

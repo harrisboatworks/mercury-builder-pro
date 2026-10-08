@@ -29,7 +29,7 @@ revenue_driver: service
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/toronto-to-rice-lake-drive-in-process
 
-> **Quick answer:** Complete [hbw.wiki/service](https://hbw.wiki/service), then drop off anytime, including after hours. We can generally arrange boat pickup; ask about availability. Leave the keys and required records, return home, and come back after HBW confirms the pickup window. HBW does not deliver boats. The full transport limits are in Boat Pickup and Transport Rules.
+> **Quick answer:** Complete [hbwservice.ca](https://hbwservice.ca), then drop off anytime, including after hours. We can generally arrange boat pickup; ask about availability. Leave the keys and required records, return home, and come back after HBW confirms the pickup window. HBW does not deliver boats. The full transport limits are in Boat Pickup and Transport Rules.
 
 HBW's shop is at 5369 Harris Boat Works Rd in Gores Landing, on the south shore of Rice Lake. We are not a Toronto mobile-service operation.
 
@@ -39,7 +39,7 @@ The drive-in model works when the boat owner can safely tow the boat to HBW, lea
 
 ## Step 1: Complete the Service Request
 
-Submit a request at [hbw.wiki/service](https://hbw.wiki/service) with:
+Submit a request at [hbwservice.ca](https://hbwservice.ca) with:
 
 - Boat make, model, year, and length
 - Motor model and serial number
@@ -183,7 +183,7 @@ Do not attempt a "limp home" procedure based on generic advice when the cause is
 
 Send the boat, motor, serial number, photos, and requested work through the service request, then drop off anytime, including after hours. HBW contacts you about the work scope, approvals, and scheduling.
 
-**Service request:** [hbw.wiki/service](https://hbw.wiki/service)
+**Service request:** [hbwservice.ca](https://hbwservice.ca)
 **Phone:** 905-342-2153
 **Drop-off and pickup:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 
@@ -191,7 +191,7 @@ Send the boat, motor, serial number, photos, and requested work through the serv
 
 ### Do I need an appointment before driving to HBW?
 
-No appointment is required for drop-off. Complete the service request at hbw.wiki/service with your motor and boat details, then drop off anytime, including after hours. You do not need to wait for a confirmed drop-off window.
+No appointment is required for drop-off. Complete the service request at hbwservice.ca with your motor and boat details, then drop off anytime, including after hours. You do not need to wait for a confirmed drop-off window.
 
 ### Is drop-off and pickup one trip?
 
@@ -227,12 +227,12 @@ Yes. It is included for HBW winter-storage customers. Non-storage customers shou
 
 ## Next steps
 
-- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbw.wiki/service
+- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbwservice.ca
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
-- The only commercial next step for this article is the HBW service request at https://hbw.wiki/service.
+- The only commercial next step for this article is the HBW service request at https://hbwservice.ca.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

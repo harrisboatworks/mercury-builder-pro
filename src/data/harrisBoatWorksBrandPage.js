@@ -23,7 +23,7 @@ export const HARRIS_BOAT_WORKS_HISTORY_HREF =
 export const HARRIS_BOAT_WORKS_HISTORY_LABEL =
   'Harris Boat Works since 1947: the Rice Lake institution';
 export const HARRIS_BOAT_WORKS_QUOTE_HREF = '/quote/motor-selection';
-export const HARRIS_BOAT_WORKS_SERVICE_HREF = 'https://hbw.wiki/service';
+export const HARRIS_BOAT_WORKS_SERVICE_HREF = 'https://hbwservice.ca';
 export const HARRIS_BOAT_WORKS_RENTALS_HREF = 'https://www.harrisboatworks.ca/rentals';
 export const HARRIS_BOAT_WORKS_DIRECTIONS_HREF =
   'https://www.google.com/maps/dir/?api=1&destination=5369+Harris+Boat+Works+Rd,+Gores+Landing,+ON+K0K+2E0';

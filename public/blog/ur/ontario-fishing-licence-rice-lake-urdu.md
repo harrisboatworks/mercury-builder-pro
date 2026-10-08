@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/ur/ontario-fishing-licence-rice-lake-urdu.md
-last_updated: 2026-09-06
+last_updated: 2026-10-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,12 +11,12 @@ title: "Ontario fishing licence aur Rice Lake ke usool | اونٹاریو فشن
 description: "Ontario fishing licence Urdu guide: Outdoors Card، conservation بمقابلہ sport licence، اور Rice Lake FMZ 17 کے اصول۔ اردو میں مکمل اور آسان رہنمائی پڑھیں۔"
 category: "اردو گائیڈ"
 date_published: 2026-06-12
-date_modified: 2026-09-06
+date_modified: 2026-10-06
 keywords: ["اونٹاریو میں مچھلی پکڑنے کا لائسنس (Fishing license Ontario)","ٹورنٹو کے قریب مچھلی پکڑنے کی جگہیں (Fishing spots near Toronto)","اونٹاریو فشنگ سیزن کیلنڈر (Ontario fishing season calendar)","مچھلی کی اقسام اونٹاریو جھیلوں میں (Fish species in Ontario lakes)","فشنگ رولز اونٹاریو برائے پاکستانی (Fishing rules Ontario for Pakistanis)"]
 author: Harris Boat Works
 content_type: blog_article
 language: ur
-revenue_driver: repower
+revenue_driver: rentals
 ---
 
 # Ontario fishing licence aur Rice Lake ke usool | اونٹاریو فشنگ لائسنس گائیڈ
@@ -25,11 +25,11 @@ revenue_driver: repower
 
 **Category:** اردو گائیڈ  
 **Published:** 2026-06-12  
-**آخری جائزہ:** 2026-09-06  
+**آخری جائزہ:** 2026-10-06  
 **Read time:** 8 منٹ  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ur/ontario-fishing-licence-rice-lake-urdu
 
-Rice Lake پر مچھلی پکڑنے کا خواب دیکھ رہے ہیں؟ Ontario میں پہلا قدم بہت سیدھا ہے: آپ کو ایک Outdoors Card اور ایک fishing licence درکار ہے۔ یہ گائیڈ خاص طور پر Mississauga، Brampton اور Scarborough سے آنے والے اردو بولنے والے خاندانوں کے لیے بنائی گئی ہے، تاکہ بغیر کسی گھبراہٹ کے تفریحی مچھلی کا شکار ممکن ہو سکے۔ Harris Boat Works سے نکلنے والی کشتیوں کی بدولت آپ تقریباً 90 منٹ کی ڈرائیو کے بعد Gores Landing پہنچ کر سیدھے پانی پر ہوتے ہیں۔
+Rice Lake پر مچھلی پکڑنے کا خواب دیکھ رہے ہیں؟ Ontario میں پہلا قدم بہت سیدھا ہے: آپ کو ایک Outdoors Card اور ایک fishing licence درکار ہے۔ یہ گائیڈ خاص طور پر Mississauga، Brampton اور Scarborough سے آنے والے اردو بولنے والے خاندانوں کے لیے بنائی گئی ہے، تاکہ بغیر کسی گھبراہٹ کے تفریحی مچھلی کا شکار ممکن ہو سکے۔ Harris Boat Works سے نکلنے والی کشتیوں کی بدولت آپ عام طور پر 90 سے 120 منٹ کی ڈرائیو (آپ کے علاقے اور ٹریفک کے مطابق) کے بعد Gores Landing پہنچ کر سیدھے پانی پر ہوتے ہیں۔
 
 ## لائسنس کا ڈھانچہ | Outdoors Card & Fishing Licence
 
@@ -45,7 +45,7 @@ Rice Lake، جہاں ہماری مرینا واقع ہے، Fisheries Management 
 
 ## خاندانی مواقع اور مفت پروگرام | Free Fishing & Family Days
 
-Ontario میں سال کے کچھ مخصوص دنوں پر licence-free fishing کے مواقع ملتے ہیں۔ تازہ تفصیل ہمیشہ official صفحے پر دیکھیں: [Ontario fishing licence for residents](https://www.ontario.ca/page/fishing-licence-ontario-and-canadian-residents)۔ یہ Family Fishing Weekends کہلاتے ہیں؛ تازہ تاریخیں ہمیشہ official صفحے پر دیکھیں۔ اپنے کیلنڈر پر نشان لگائیں اور پہلی بار آزمانے کے لیے یہ بہترین وقت ہوتا ہے۔ اس کے علاوہ، **Learn to Fish** پروگرام بالکل مفت beginners کو سکھاتا ہے: کاسٹ کرنا، چارہ لگانا، حفاظتی اصول اور اخلاقی شکار۔ تفصیلات اور رجسٹریشن کے لیے یہ دیکھیں: [Learn to Fish](https://www.ontario.ca/page/learn-fish)۔ اس میں شامل ہو کر آپ آسان اور واضح انداز میں، فطرت سے جڑتے ہیں۔
+Ontario اور کینیڈا کے رہائشی سال میں چار مواقع پر بغیر لائسنس مچھلی پکڑ سکتے ہیں: فیملی ڈے، مدرز ڈے اور فادرز ڈے کے ویک اینڈ، اور کینیڈا ڈے کے آس پاس Ontario Family Fishing Week۔ سرکاری شناختی دستاویز ساتھ رکھیں؛ Conservation کی حدود لاگو ہوتی ہیں۔ گزشتہ 12 ماہ میں کینیڈا میں مسلسل 6 ماہ نہ رہنے والے نئے آنے والوں کو ان مواقع پر بھی لائسنس چاہیے۔ تازہ تفصیل ہمیشہ official صفحے پر دیکھیں: [Ontario fishing licence for residents](https://www.ontario.ca/page/fishing-licence-ontario-and-canadian-residents)۔ یہ Family Fishing Weekends کہلاتے ہیں؛ تازہ تاریخیں ہمیشہ official صفحے پر دیکھیں۔ اپنے کیلنڈر پر نشان لگائیں اور پہلی بار آزمانے کے لیے یہ بہترین وقت ہوتا ہے۔ اس کے علاوہ، **Learn to Fish** پروگرام بالکل مفت beginners کو سکھاتا ہے: کاسٹ کرنا، چارہ لگانا، حفاظتی اصول اور اخلاقی شکار۔ تفصیلات اور رجسٹریشن کے لیے یہ دیکھیں: [Learn to Fish](https://www.ontario.ca/page/learn-fish)۔ اس میں شامل ہو کر آپ آسان اور واضح انداز میں، فطرت سے جڑتے ہیں۔
 
 ## پہلی بار جانے والوں کی چیک لسٹ | First-Trip Checklist
 
@@ -66,7 +66,7 @@ Rice Lake کی طرف نکلنے سے پہلے یہ یقینی بنائیں:
 
 ## پہلا قدم | آج ہی پلان بنائیں
 
-Harris Boat Works سے کشتی رینٹل لینا بہت آسان ہے۔ اپنی پسند کی ڈیٹ چنیں اور محفوظ کریں: https://harrisboatworks.ca/rentals ۔ اگر کشتی یا انجن کی سروس درکار ہو تو براہِ کرم آگے بڑھیں: https://hbw.wiki/service
+Harris Boat Works سے کشتی رینٹل لینا بہت آسان ہے۔ اپنی پسند کی ڈیٹ چنیں اور محفوظ کریں: https://harrisboatworks.ca/rentals ۔ اگر کشتی یا انجن کی سروس درکار ہو تو براہِ کرم آگے بڑھیں: https://hbwservice.ca
 
 مزید کسی سوال کے لیے ہم سے رابطہ کریں: فون (905) 342-2153 یا ٹیکسٹ (647) 952-2153 پر دستیاب ہیں۔
 
@@ -86,11 +86,11 @@ Harris Boat Works 1947 سے خاندانی مرینا ہے، 1965 سے Mercury �
 
 ### ٹورنٹو کے قریب مچھلی پکڑنے کی بہترین جگہیں کون سی ہیں؟
 
-Rice Lake آپ کے لیے Mississauga، Brampton اور Scarborough سے صرف 90 منٹ کی دوری پر ایک پرسکون جھیل ہے۔ یہاں سے کشتی رینٹل لے کر آپ فیملی کے ساتھ بہترین وقت گزار سکتے ہیں۔
+Rice Lake آپ کے لیے Mississauga، Brampton اور Scarborough سے عام طور پر 90 سے 120 منٹ کی دوری پر ایک پرسکون جھیل ہے۔ یہاں سے کشتی رینٹل لے کر آپ فیملی کے ساتھ بہترین وقت گزار سکتے ہیں۔
 
 ### کیا پاکستانیوں یا نئے آنے والوں کے لیے الگ فشنگ رولز ہیں؟
 
-بالکل نہیں۔ Ontario کے قوانین ہر کینیڈین رہائشی کے لیے یکساں ہیں۔ چاہے آپ پاکستان سے ہوں یا کہیں سے، آپ کو وہی Outdoors Card اور لائسنس درکار ہے۔ کوئی خاص چھوٹ نہیں۔
+قومیت کی بنیاد پر الگ اصول نہیں ہیں، لیکن عمر اور رہائشی حیثیت اہم ہیں۔ Ontario اور کینیڈا کے رہائشی جو 18 سال سے کم یا 65 سال یا اس سے زیادہ عمر کے ہیں، سرکاری شناختی دستاویز کے ساتھ بغیر لائسنس مچھلی پکڑ سکتے ہیں۔ کینیڈا میں گزشتہ 12 ماہ میں مسلسل 6 ماہ نہ رہنے والے نئے آنے والوں کو غیر رہائشی سمجھا جاتا ہے؛ انہیں غیر رہائشی لائسنس درکار ہے اور رہائشیوں کی یہ چھوٹ نہیں ملتی۔ غیر کینیڈین رہائشی 18 سال سے کم بچے لائسنس یافتہ بالغ کے ساتھ مچھلی پکڑ سکتے ہیں؛ ان کی پکڑ بالغ کی حد میں شامل ہوتی ہے۔ زیادہ تر غیر کینیڈین رہائشیوں کو 65 سال یا اس سے زیادہ عمر میں بھی Outdoors Card اور لائسنس چاہیے۔ رہائشیوں کے لیے سال میں چار لائسنس سے آزاد مواقع بھی ہیں۔
 
 ### میں مچھلی کے موسم کا کیلنڈر کہاں دیکھ سکتا ہوں؟
 
@@ -98,7 +98,7 @@ FMZ 17 کے تحت ہر مچھلی کا الگ موسم اور حدود ہیں۔
 
 ### فیملی کے ساتھ پہلی بار مچھلی پکڑنے جاؤں تو کون سا پروگرام بہتر ہے؟
 
-مفت Learn to Fish پروگرام بہت مفید ہے، یا کسی Family Fishing Weekend پر بغیر لائسنس کے مفت میں شروع کریں۔
+مفت Learn to Fish پروگرام بہت مفید ہے۔ Ontario اور کینیڈا کے رہائشی سال میں چار مواقع پر بغیر لائسنس مچھلی پکڑ سکتے ہیں: فیملی ڈے، مدرز ڈے اور فادرز ڈے کے ویک اینڈ، اور کینیڈا ڈے کے آس پاس Ontario Family Fishing Week۔ سرکاری شناختی دستاویز ساتھ رکھیں؛ Conservation کی حدود لاگو ہوتی ہیں۔ گزشتہ 12 ماہ میں کینیڈا میں مسلسل 6 ماہ نہ رہنے والے نئے آنے والوں کو ان مواقع پر بھی لائسنس چاہیے۔
 
 ### رائس لیک میں کون سی مچھلیاں ملتی ہیں؟
 
@@ -106,12 +106,12 @@ FMZ 17 کے تحت ہر مچھلی کا الگ موسم اور حدود ہیں۔
 
 ## Next steps
 
-- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
+- Check the current Rice Lake rental fleet and availability: https://harrisboatworks.ca/rentals
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
-- The only commercial next step for this article is the Mercury quote configurator.
+- The only commercial next step for this article is Rice Lake rental availability at https://harrisboatworks.ca/rentals.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

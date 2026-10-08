@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh-hant/pcoc-pcl-fishing-licence-difference-ontario.md
-last_updated: 2026-09-06
+last_updated: 2026-10-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,12 +11,12 @@ title: "PCOC、PCL、釣魚證區別：安省新手別搞混"
 description: "安省新手分清 PCOC 操作員資格、PCL 船隻牌照與安省釣魚證：誰需要、有效期、官方申請入口與 HBW 租船政策。"
 category: "mandarin"
 date_published: 2026-06-12
-date_modified: 2026-09-06
+date_modified: 2026-10-04
 keywords: ["安省 船牌","繁體 PCOC","PCL","船隻操作員卡","釣魚證"]
 author: Harris Boat Works
 content_type: blog_article
 language: zh-Hant
-revenue_driver: repower
+revenue_driver: rentals
 ---
 
 # PCOC、PCL、釣魚證區別：安省新手別搞混
@@ -25,11 +25,13 @@ revenue_driver: repower
 
 **Category:** mandarin  
 **Published:** 2026-06-12  
-**最後審核:** 2026-09-06  
+**最後審核:** 2026-10-04  
 **Read time:** 7 分鐘  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh-hant/pcoc-pcl-fishing-licence-difference-ontario
 
-> **簡短答案：** **PCOC**（Pleasure Craft Operator Card，船隻操作員卡）是操作動力休閒船時常用的資格證明，卡片終身有效。**PCL**（Pleasure Craft Licence，船隻牌照）是符合條件船隻的識別號；2026 年 9 月 5 日新辦、續期、轉讓或補發為 **$24.41 CAD**，新辦、轉讓或續期後有效 5 年；資料更新或取消免費，每年 4 月 1 日按通脹調整。舊牌並非全部終身，請按到期批次核對。**釣魚證**完全獨立，由安省自然資源與林業部（MNRF）管理。在 HBW 租船，每位駕駛員必須持有有效 PCOC 或符合 HBW 要求的有效 boat operator licence。
+> **簡短答案：** **PCOC**（Pleasure Craft Operator Card，船隻操作員卡）是操作動力休閒船時常用的資格證明，卡片終身有效。**PCL**（Pleasure Craft Licence，船隻牌照）是符合條件船隻的識別號；2026 年 9 月 5 日新辦、續期、轉讓或補發為 **$24.41 CAD**，新辦、轉讓或續期後有效 5 年；資料更新或取消免費，每年 4 月 1 日按通脹調整。舊牌並非全部終身，請按到期批次核對。**釣魚證**完全獨立，由安省自然資源部（MNR）管理。在 HBW 租船，每位駕駛員必須持有有效 PCOC 或符合 HBW 要求的有效 boat operator licence。
+
+需要考取 PCOC？透過 [HBW 的 MyBoatCard 推薦連結](https://myboatcard.com/card/harrisboat)參加網上課程，使用優惠碼 **HARRIS15** 可享 **15% 折扣**。
 
 ## 一張表看懂三者區別
 
@@ -37,7 +39,7 @@ revenue_driver: repower
 |---|---|---|---|
 | 中文名 | 船隻操作員卡 | 船隻牌照 | 釣魚證 |
 | 全稱 | Pleasure Craft Operator Card | Pleasure Craft Licence | Outdoors Card + Fishing Licence |
-| 管理機構 | 加拿大運輸部 | 加拿大運輸部 | 安省自然資源與林業部 (MNRF) |
+| 管理機構 | 加拿大運輸部 | 加拿大運輸部 | 安省自然資源部 (MNR) |
 | 是關於甚麼 | **人**：會不會安全開船 | **船**：船身的註冊號 | **行為**：允不允許釣魚 |
 | 費用 | 由 Transport Canada 認可提供商決定 | 新辦/續期/轉讓/補發 **$24.41 CAD**（2026-09-05）；資料更新或取消免費 | 視類型而定 |
 | 有效期 | **終身** | 新辦或轉讓後 **5 年** | Outdoors Card 3 年 |
@@ -47,7 +49,7 @@ revenue_driver: repower
 ## PCOC：船隻操作員卡
 
 - **誰必須有：** 任何在加拿大水域操作配動力（包括電動推進器）的休閒船的人都需要合資格的操作能力證明；PCOC 是最常見的證明，但不是唯一被接受的證明。
-- **官方認可名單：** [Transport Canada PCOC 認可提供商](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency-program)。
+- **官方認可名單：** [Transport Canada PCOC 認可提供商](https://tc.canada.ca/en/marine-transportation/buying-boat/find-education-resources-recreational-boaters)。
 - **學習材料與正式考試語言可能不同：** 中文複習資料可以用於學習。正式考試語言和經批准的協助（包括口譯）須在付款前向認可提供商確認，並按其批准規則安排。不要假定一定有獲批的中文線上考試，也不要假定所有考試都沒有中文。規則見 [Transport Canada Quality Assurance and Control Requirements](https://tc.canada.ca/en/marine-transportation/marine-safety/quality-assurance-control-requirements-course-providers-national-pleasure-craft-operator-competency-program)。
 - **有效期：** 終身。
 
@@ -60,7 +62,7 @@ revenue_driver: repower
 
 ## 安省釣魚證
 
-- **結構：** 先辦 **Outdoors Card**（3 年有效），再加 **Fishing Licence**。
+- **結構：** 多數 18 至 64 歲的釣客先辦 **Outdoors Card**（3 年有效），再加 **Fishing Licence**。安省及加拿大居民未滿 18 歲或年滿 65 歲可憑政府簽發的身份證件免辦；加拿大居民在每年四個免證釣魚時段也不需要；非加拿大居民即使年滿 65 歲，通常仍需要兩者。
 - **官方頁面（含繁體中文摘要）：** [安省釣魚規章摘要（繁體中文）](http://www.ontario.ca/page/ontario-fishing-regulations-summary-traditional-chinese)。
 - **完全獨立於 PCOC / PCL。**
 
@@ -68,7 +70,7 @@ revenue_driver: repower
 
 | 情況 | PCOC | PCL | 釣魚證 |
 |---|---|---|---|
-| Rice Lake 在 HBW 短期租船一天，釣魚 | **要** | 不用 | **要** |
+| Rice Lake 在 HBW 短期租船一天，釣魚 | **要** | 不用 | **要**（安省及加拿大居民未滿 18 歲或年滿 65 歲可憑身份證件豁免） |
 | 自家船（15 HP）在 Lake Simcoe 釣一天 | **要** | **要** | **要** |
 | 換了一台 90 HP Mercury 引擎 | 已有就夠 | **要更新** | 不影響 |
 
@@ -90,12 +92,12 @@ PCOC 是操作人的資格證明，卡片終身有效。PCL 是符合條件船�
 
 ## Next steps
 
-- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
+- Check the current Rice Lake rental fleet and availability: https://harrisboatworks.ca/rentals
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
-- The only commercial next step for this article is the Mercury quote configurator.
+- The only commercial next step for this article is Rice Lake rental availability at https://harrisboatworks.ca/rentals.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

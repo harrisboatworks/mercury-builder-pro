@@ -44,7 +44,7 @@ const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
 export function useActivePromotions(options?: { forceRefresh?: boolean; motor?: PromotionMotor | null }) {
   const forceRefresh = options?.forceRefresh ?? false;
   const [allPromotions, setPromotions] = useState<ActivePromotion[]>([]);
-  const hasMotorContext = Boolean(options && 'motor' in options);
+  const hasMotorContext = Boolean(options?.motor);
   const motor = options?.motor;
   const promotions = useMemo(() => hasMotorContext
     ? allPromotions.filter(p => isPromotionMotorEligible(p.details, motor))

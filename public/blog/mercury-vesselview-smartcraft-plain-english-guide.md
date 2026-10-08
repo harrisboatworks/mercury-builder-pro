@@ -159,7 +159,7 @@ Installation isn't terrible on most boats, a couple of hours plus configuration.
 
 Honest take, customer-by-customer:
 
-- **You have a 2010+ Mercury and you've never paired it to your phone:** worth the module + an hour of your time. The fuel flow and hour-tracking alone will pay for it over a season.
+- **You have a SmartCraft-capable Mercury (2004 or newer and 40 HP or more, or 25 to 30 HP from 2022) and you've never paired it to your phone:** worth the module + an hour of your time. The fuel flow and hour-tracking alone will pay for it over a season.
 - **[You're repowering and choosing options](/blog/mercury-repower-cost-ontario-2026-cad):** add the SmartCraft Connect module from day one. Cheaper as part of a rigging job than as a retrofit.
 - **You have a multi-engine boat:** the multi-engine module is genuinely useful, see all engines on one screen, compare RPM trims, catch one engine running hotter than the others before it becomes a problem.
 - **You have a 2003 or older Mercury:** you don't have SmartCraft, and adding it isn't realistic. Skip.
@@ -172,7 +172,7 @@ We install SmartCraft Connect modules, configure the Mercury Marine App, set up 
 
 Most installs are 2-3 hours and run **$300-$500 plus parts**. We can do them as part of a service visit or as a standalone service request.
 
-Book at **[hbw.wiki/service](https://hbw.wiki/service)**.
+Book at **[hbwservice.ca](https://hbwservice.ca)**.
 
 ---
 
@@ -221,10 +221,10 @@ Most Mercury outboards from 2004 or newer at 40 HP and up are SmartCraft-capable
 ## Related guides
 
 - [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide), choosing the right propeller
+- [Mercury Engine Data on Your Garmin, Lowrance or Humminbird: Which Gateway and How to Wire It](/blog/mercury-nmea-2000-lowrance-garmin-guide), which Mercury gateway your plotter needs and how to wire it
 - [Mercury Alarm Codes List Ontario](/blog/mercury-smartcraft-alarm-codes-encyclopedia), SmartCraft alarm code reference
 - [Mercury Outboard Beep & Alarm Codes: What Each Means](/blog/mercury-outboard-beeping-codes-guide), beeping code guide
 - [Mercury Outboard Fault Codes: Legacy VesselView and Modern UFC Lookup](/blog/mercury-outboard-fault-codes-lookup)
-- [Mercury Outboard Won't Start (Ontario Dealer Guide, 2026)](/blog/mercury-outboard-wont-start-troubleshooting), won't-start troubleshooting
 
 ## Next steps
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/why-chinese-boaters-choose-harris-boat-works.md
-last_updated: 2026-09-06
+last_updated: 2026-10-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "为什么 GTA 华人船主选择 Harris Boat Works？"
 description: "Harris Boat Works 是莱斯湖南岸三代家族船坞，自 1947 年。Mercury Premier 认证。GTA 华人船主选择 HBW 的 5 个原因：距离、价格、Mercury 认证、传承、对华人客户的友好接待。"
 category: "HBW 中文介绍"
 date_published: 2026-05-10
-date_modified: 2026-09-06
+date_modified: 2026-10-06
 keywords: ["Harris Boat Works 中文","GTA 华人船主","Mercury Dealer Ontario 中文","Rice Lake marina 中文","MercuryRepower.ca 中文"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,11 +25,13 @@ revenue_driver: repower
 
 **Category:** HBW 中文介绍  
 **Published:** 2026-05-10  
-**最后审核:** 2026-09-06  
+**最后审核:** 2026-10-06  
 **Read time:** 5 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/why-chinese-boaters-choose-harris-boat-works
 
 > **简短答案：** Harris Boat Works (HBW) 是莱斯湖南岸的家族经营船坞,自 1947 年至今,已经传承三代。Mercury Premier 认证经销商。距离多伦多 1-1.5 小时车程,加元价格公开发布、您可以自行对比 (详见 [Mercury 加元定价参考](/pricing-reference))，Mercury 维修和冬储一体化。团队使用英语服务，欢迎带会英语的亲友同来或使用手机翻译软件，我们会耐心沟通、尽力配合 (info@harrisboatworks.ca)。我们通常可以安排取船。请向我们确认您的船和地点是否可安排。 HBW 不提供送船服务、不邮寄发动机、不上门/码头服务，也不推荐运输商或报价第三方运输。
+
+需要考取 PCOC？通过 [HBW 的 MyBoatCard 推荐链接](https://myboatcard.com/card/harrisboat)参加在线课程，使用优惠码 **HARRIS15** 可享 **15% 折扣**。
 
 ## 三代华人船主的选择
 
@@ -37,7 +39,7 @@ revenue_driver: repower
 
 ## 1. 距离 + 路况
 
-多伦多到 HBW 的标准路线：401 东到 Cobourg (约 1 小时),然后 Highway 28 北到 Gores Landing (15-20 分钟)。总车程 1-1.5 小时。比北上 Muskoka (2.5-3 小时) 近。比 Lake Ontario 沿岸船坞选择多。
+多伦多到 HBW 的标准路线：401 东到 Cobourg 的 Exit 472（County Road 18 / Burnham Street，约 1 小时），然后沿 County Road 18 北行约 16 公里到 Gores Landing（约 20 分钟）。总车程 1-1.5 小时。比北上 Muskoka (2.5-3 小时) 近。比 Lake Ontario 沿岸船坞选择多。
 
 ## 2. 价格透明
 

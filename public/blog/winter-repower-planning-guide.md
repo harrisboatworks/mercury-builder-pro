@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/winter-repower-planning-guide.md
-last_updated: 2026-09-06
+last_updated: 2026-10-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Winter Repower Planning: Get Ready for Spring"
 description: "Plan your winter repower project now for a spring-ready boat. Timeline, considerations, and benefits of off-season motor replacement."
 category: "Repowering"
 date_published: 2026-04-27
-date_modified: 2026-09-06
+date_modified: 2026-10-06
 keywords: ["winter repower","off season repower","plan boat repower","repower timeline","spring ready boat"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Repowering  
 **Published:** 2026-04-27  
-**Last reviewed:** 2026-09-06  
+**Last reviewed:** 2026-10-06  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/winter-repower-planning-guide
 
@@ -164,12 +164,12 @@ If yes to most, repower makes sense.
 - Realistic timeline
 - No pressure decisions
 
-**[Start Your Repower Conversation](/quote)**
+**[Start Your Repower Conversation](/quote/motor-selection)**
 
-- [Complete Guide to Repowering Your Boat in the Kawarthas](/blog/complete-guide-boat-repower-kawarthas), the full Kawarthas repower playbook
-- [How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)](/blog/mercury-repower-cost-ontario-2026-cad), transparent 2026 CAD repower pricing
-- [Boat Repowering 101: When to Replace Your Outboard Motor](/blog/boat-repowering-guide-when-to-replace-motor), how to know it's time to replace your motor
-- [Ontario Cottage Owner's Guide: Is It Time to Repower Your Boat?](/blog/ontario-cottage-boat-motor-repower-guide), cottage-specific repower considerations
+- [Complete Guide to Repowering Your Boat in the Kawarthas](/blog/complete-guide-boat-repower-kawarthas): the full Kawarthas repower playbook
+- [How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)](/blog/mercury-repower-cost-ontario-2026-cad): transparent 2026 CAD repower pricing
+- [Boat Repowering 101: When to Replace Your Outboard Motor](/blog/boat-repowering-guide-when-to-replace-motor): how to know it's time to replace your motor
+- [Ontario Cottage Owner's Guide: Is It Time to Repower Your Boat?](/blog/ontario-cottage-boat-motor-repower-guide): cottage-specific repower considerations
 
 ## FAQs
 

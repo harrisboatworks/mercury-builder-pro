@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-dts-retrofit-eligibility-2026.md
-last_updated: 2026-09-18
+last_updated: 2026-10-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury DTS Retrofit Eligibility 2026"
 description: "Check if your Mercury outboard supports DTS retrofit. Covers Verado, Pro XS, FourStroke, multi-engine joystick eligibility, and motors needing repower."
 category: "Mercury Technology"
 date_published: 2026-05-28
-date_modified: 2026-09-18
+date_modified: 2026-10-06
 keywords: ["mercury dts retrofit eligibility","mercury digital throttle shift","dts compatibility mercury","joystick piloting eligibility","mercury fly-by-wire","dts retrofit cost"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Mercury Technology  
 **Published:** 2026-05-28  
-**Last reviewed:** 2026-09-18  
+**Last reviewed:** 2026-10-06  
 **Read time:** 10 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-dts-retrofit-eligibility-2026
 
@@ -43,7 +43,7 @@ This post is the eligibility decision tree. It covers what DTS actually is, how 
 |---|---|---|
 | Current Verado V8/V10/V12 (250-600 HP, 2020+) | **Already has DTS** | You already have it. Check your throttle handle. |
 | Current Pro XS 150-300 HP (2018+) | **Depends on configuration** | Mercury lists both mechanical and DTS versions in this range. Verify by serial number. |
-| Current FourStroke 200-300 HP (2018+) | **Most are DTS-equipped** | Verify by serial number, usually yes. |
+| Current FourStroke 200-300 HP (2018+) | **Depends on configuration** | Many are mechanical; Mercury lists both versions at 300 HP. Verify by serial number. |
 | Older Verado I6 (2006-2017, 200-350 HP) | **DTS-equipped, harness compatibility varies** | Often workable for harness/controls upgrade |
 | Mechanical Mercury 150 HP+ (any age) | **Retrofit possible but rarely worth it** | Quote a repower side-by-side. |
 | Mechanical Mercury under 150 HP | **Rarely eligible** | Check Mercury's current specifications for your exact model before assuming either way |
@@ -112,17 +112,18 @@ The honest decision matrix:
 
 ## Step 3: HP class eligibility
 
-Mercury offers DTS on the following motor classes (current model year 2026):
+Here is where DTS versions show up on our current price list (2026 model year):
 
-| HP class | Motor family | DTS availability |
+| HP class | Motor family | On our current price list |
 |---|---|---|
-| 250-600 HP | Verado V8/V10/V12 | **Standard on all** |
-| 150-300 HP | Pro XS | **Standard on most current** |
-| 200-300 HP | FourStroke V8 | **Standard on most current** |
-| 75-150 HP | FourStroke I4 | **Optional on select models** |
-| Under 75 HP | All families | **Not available** |
+| 250-600 HP | Verado V8/V10/V12 | **Standard on all** (Verado is a special order at HBW) |
+| 200, 250, 300 HP | Pro XS | **DTS and mechanical versions both listed** |
+| 150, 175, 225 HP | Pro XS | **Mechanical versions listed** |
+| 300 HP | FourStroke | **DTS and mechanical versions both listed** |
+| 150-250 HP | FourStroke | **Mechanical versions listed** |
+| Under 150 HP | FourStroke, Pro XS | **No DTS versions listed** |
 
-The numbers shift slightly model year to model year (Mercury sometimes adds or drops DTS as a standard feature on a given HP). The safe rule: 150 HP and up, plan on DTS being standard or available. Under 150 HP, check before assuming.
+Mercury can add or drop DTS versions between model years, and our list shows what we price, not every model Mercury builds. The safe rule: confirm DTS fitment by exact model and serial before you plan the helm.
 
 For the official source, Mercury's product pages at [mercurymarine.com](https://www.mercurymarine.com/) list DTS as a feature on each model.
 
@@ -147,7 +148,7 @@ If you have twins or triples, joystick is the real eligibility question. DTS is 
 
 Five things to confirm before you commit money.
 
-1. **Current motor model and year.** From the cowl plate (lower starboard side of the motor) or VesselView display.
+1. **Current motor model and year.** From the serial/model label on the starboard side of the transom (clamp) bracket, or the VesselView display.
 2. **Current motor serial number.** This tells us which DTS configurations are available for that motor year.
 3. **Helm controls.** Are your current controls mechanical (visible cables) or already DTS (sealed binnacle with wiring harness)?
 4. **Multi-engine rig?** Single, twin, or triple. Joystick eligibility lives here.
@@ -197,13 +198,13 @@ Quote both paths if your mechanical motor is under 5 years old, low hours, and o
 
 A few Ontario-specific notes that make DTS hit different here.
 
-**Multi-engine boats are common on bigger water.** Lake Ontario, Simcoe, Couchiching, and the Trent-Severn run a lot of twin-engine setups. DTS standard equipment on the motors that fit those boats. Customers in those markets either already have DTS or are repowering into it on the next motor change.
+**Multi-engine boats are common on bigger water.** Lake Ontario, Simcoe, Couchiching, and the Trent-Severn run a lot of twin-engine setups. DTS versions are common on the motors that fit those boats. Customers in those markets either already have DTS or are repowering into it on the next motor change.
 
 **Single-engine pontoons rarely need DTS.** Most Rice Lake and Kawartha Lakes pontoons run a single motor in the 90-200 HP range. The DTS conversation rarely applies. Mechanical is correct for most pontoon repowers.
 
 **Late-season docking conditions.** Ontario boaters often run into October. Cross-winds, current at lock approaches, tight cottage docks. Joystick piloting (which requires DTS) is the real upgrade story here, not DTS for its own sake.
 
-**Verado lineup matters.** All current Verado V8/V10/V12 (naturally aspirated, 250-600 HP) come standard with DTS. If your boat is in that class, you don't have a DTS retrofit decision. You have a Verado vs Pro XS vs FourStroke decision, and DTS comes with all three at that HP.
+**Verado lineup matters.** All current Verado V8/V10/V12 (naturally aspirated, 250-600 HP) come standard with DTS. If your boat is in that class, you don't have a DTS retrofit decision. You have a Verado vs Pro XS vs FourStroke decision. At 200, 250, and 300 HP our current price list carries both DTS and mechanical Pro XS versions, and at 300 HP both FourStroke versions, so confirm the exact model before assuming DTS comes with it.
 
 ## Ready to confirm DTS eligibility?
 
@@ -249,9 +250,9 @@ No. Current Verado V8/V10/V12 (250-600 HP) are naturally aspirated, not supercha
 
 - [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide), choosing the right propeller
 - [Mercury SmartCraft Connect: Features, App & Installation](/blog/mercury-smartcraft-connect-guide-ontario), SmartCraft Connect walkthrough
+- [Mercury Engine Data on Your Garmin, Lowrance or Humminbird: Which Gateway and How to Wire It](/blog/mercury-nmea-2000-lowrance-garmin-guide), which Mercury gateway your plotter needs and how to wire it
 - [Mercury Alarm Codes List Ontario](/blog/mercury-smartcraft-alarm-codes-encyclopedia), SmartCraft alarm code reference
 - [Mercury Outboard Beep & Alarm Codes: What Each Means](/blog/mercury-outboard-beeping-codes-guide), beeping code guide
-- [Mercury Outboard Fault Codes: Legacy VesselView and Modern UFC Lookup](/blog/mercury-outboard-fault-codes-lookup)
 
 ## Next steps
 

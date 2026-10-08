@@ -73,7 +73,7 @@ You've got three ways out for the old motor, and the right one depends on what i
 
 | Option | What you get | Effort | The catch |
 |--------|--------------|--------|-----------|
-| Trade-in | Instant credit toward the new motor, plus the HST reduction | None, we handle it at repower time | The credit may be below a private-sale sticker price |
+| Trade-in | Instant credit toward the new motor, plus the HST reduction | Low, hand it over at repower time and we handle the rest | The credit may be below a private-sale sticker price |
 | Private sale | Potentially a higher sticker price | Weeks of listings, no-shows, and lowball offers | You lose the HST offset, and your time isn't free |
 | Recycling | A clean, responsible end for the motor | Minimal | No money back, this is for motors with no remaining value |
 

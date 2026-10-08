@@ -42,7 +42,7 @@ describe('Harris Boat Works brand page render', () => {
     expect(html).toContain('Build a Mercury quote');
     expect(html).toContain('Request service');
     expect(html).toContain('/quote/motor-selection');
-    expect(html).toContain('https://hbw.wiki/service');
+    expect(html).toContain('https://hbwservice.ca');
     expect(html).toContain('/blog/harris-boat-works-since-1947-rice-lake-institution');
     expect(html).toContain('not the family history');
     expect(html).toContain('Google-synced hours');

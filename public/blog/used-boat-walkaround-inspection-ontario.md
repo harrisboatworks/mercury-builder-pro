@@ -51,7 +51,7 @@ Don't waste a long drive. A quick call filters the listings that aren't worth sh
 
 **Ask the seller:**
 
-- **What's the HIN?** (12 digits, stamped on the transom, look it up before you leave)
+- **What's the HIN?** (12 characters, letters and digits, marked on the upper starboard side of the transom, look it up before you leave)
 - **Do you have maintenance records?** On any boat over 5 years old, this matters. No records on an older boat means you're assuming the worst.
 - **Can you send a cold-start video?** Cold start, not a warm idle. A seller who won't do this has a reason.
 - **When was it last in the water?** A boat that's been sitting for two seasons needs extra scrutiny.
@@ -101,7 +101,7 @@ Look at the hull near the waterline. Clusters of small bubbles or pocks in the g
 
 ### Walk every inch of the floor
 
-Start at the transom and walk slowly toward the bow, pressing firmly with each step. You're feeling for softness, flex, or sponginess. A solid floor doesn't move. Soft spots mean the plywood sub-floor is saturated and rotting, which often means the stringers below are compromised too. Stringer rot is a full boat restoration, not a repair.
+Start at the transom and walk slowly toward the bow, pressing firmly with each step. You're feeling for softness, flex, or sponginess. A solid floor doesn't move. Soft spots mean the plywood sub-floor is saturated and rotting, which often means the stringers below are compromised too. Stringer rot is a major structural repair, not a quick fix.
 
 Don't stand in one place. Walk the full floor. Soft spots cluster near the bilge drain, live well, and anywhere water tends to pool.
 
@@ -175,7 +175,7 @@ Some findings are negotiating points. These are not.
 > 5. **No maintenance records on a 10+ year old boat**, you're assuming the worst because you have no evidence of the best
 > 6. **Fresh paint on the lower unit or powerhead**, ask what's underneath
 > 7. **Compression is low or inconsistent**, or the seller refuses the test
-> 8. **Ownership documentation is unclear or missing**, unclear title becomes your problem the moment you sign
+> 8. **Ownership documentation is unclear or missing**, unclear ownership becomes your problem the moment you sign
 
 ---
 
@@ -185,7 +185,7 @@ Some findings are negotiating points. These are not.
 
 **Cracked block or blown head gasket.** A motor that's overheated has potentially warped heads, scored cylinders, or a cracked block. In many cases, a repower is more cost-effective than rebuilding an old motor with unknown history. More on that in our [boat motor trade-in guide](https://www.mercuryrepower.ca/blog/outboard-trade-in-value-ontario-hbw).
 
-**Stringer rot.** The floor comes out, the stringers get rebuilt, everything goes back together. This is a full restoration project.
+**Stringer rot.** The floor comes out, the stringers get rebuilt, everything goes back together. This is a major structural repair.
 
 **Hub failure.** Replaceable, but repeated impact damage may mean other lower unit or driveshaft issues underneath.
 
@@ -201,7 +201,7 @@ Work through the walkaround in order. Take notes. Don't let the drive, the askin
 
 A 30-minute inspection won't catch everything, but it will catch the things that matter most. The deals that go sideways are almost always the ones where someone moved too fast to look carefully.
 
-**Found a boat with a tired motor but a sound hull? That's exactly what we repower.** Build your quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), real prices, no runaround. Need a hand evaluating what you're looking at? Reach out through [hbw.wiki/service](https://hbw.wiki/service).
+**Found a boat with a tired motor but a sound hull? That's exactly what we repower.** Build your quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), real prices, no runaround. Need a hand evaluating what you're looking at? Reach out through [hbwservice.ca](https://hbwservice.ca).
 
 ---
 
@@ -236,11 +236,11 @@ Yes, on any motor over 5 years old. All cylinders should read within 10% of each
 
 ### How can I tell if a used boat's floor is rotten?
 
-Stomp test. Walk the full floor from transom to bow, pressing firmly with each step. Soft spots, sponginess, or flex mean the plywood sub-floor is saturated and stringers below may be compromised too. Stringer rot is a full restoration job, not a repair.
+Stomp test. Walk the full floor from transom to bow, pressing firmly with each step. Soft spots, sponginess, or flex mean the plywood sub-floor is saturated and stringers below may be compromised too. Stringer rot is a major structural repair, not a quick fix.
 
 ### What about the boat I just looked at? Can HBW help me decide?
 
-Yes. If the hull is solid and the motor is the weak link, that's exactly what we repower. Build a quote at mercuryrepower.ca, or reach out through hbw.wiki/service if you want a second set of eyes on what you're looking at.
+Yes. If the hull is solid and the motor is the weak link, that's exactly what we repower. Build a quote at mercuryrepower.ca, or reach out through hbwservice.ca if you want a second set of eyes on what you're looking at.
 
 ## Related guides
 
@@ -252,12 +252,12 @@ Yes. If the hull is solid and the motor is the weak link, that's exactly what we
 
 ## Next steps
 
-- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbw.wiki/service
+- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbwservice.ca
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
-- The only commercial next step for this article is the HBW service request at https://hbw.wiki/service.
+- The only commercial next step for this article is the HBW service request at https://hbwservice.ca.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

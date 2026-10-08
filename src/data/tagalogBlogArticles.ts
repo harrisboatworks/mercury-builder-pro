@@ -24,14 +24,14 @@ export const tagalogBlogArticles: Wave1Article[] = [
     image: '/lovable-uploads/hero-rice-lake-fishing-morning.png',
     author: 'Harris Boat Works',
     datePublished: '2026-06-12',
-    dateModified: '2026-09-06',
+    dateModified: '2026-10-04',
     category: 'Tagalog Guide',
     readTime: '8 min basa',
     keywords: ['bangkang mura sa Ontario (cheap boat in Ontario)', 'paano bumili ng bangka sa Canada (how to buy a boat in Canada)', 'magkano ang bangka sa Toronto (how much is a boat in Toronto)', 'tips sa pagbili ng unang bangka (tips for buying first boat)', 'fishing license Ontario paano kumuha (fishing license Ontario how to get)', 'saan mangisda malapit sa Toronto (where to fish near Toronto)', 'Ontario fishing rules Tagalog (Ontario fishing rules Tagalog)', 'panahon ng pangingisda sa Ontario (fishing season in Ontario)', 'magkano fishing license sa Ontario (how much fishing license in Ontario)', 'pangingisda sa Rice Lake Ontario (fishing at Rice Lake Ontario)'],
     faqs: [
       { question: 'Paano kumuha ng fishing license sa Ontario?', answer: 'Pumunta sa ServiceOntario o mag-online sa official website. Kailangan ng Outdoors Card (plastic card o paper temporary) at pagkatapos ay piliin ang conservation o sport fishing licence na babagay sa pamilya ninyo. Ang buong process ay nasa [page ng Ontario fishing licence](https://www.ontario.ca/page/fishing-licence-ontario-and-canadian-residents).' },
       { question: 'Magkano ang fishing license sa Ontario?', answer: 'Ang istruktura ng bayad ay: hiwalay ang bayad para sa Outdoors Card, at hiwalay ang bayad para sa fishing licence (conservation licence ay mas mura, sport licence mas mahal). Ang updated at eksaktong dollar amounts ay palaging nasa opisyal na website, kaya imbes na magbigay kami ng number na baka luma na, please check ang [Outdoors Card at licence summary](https://www.ontario.ca/page/get-outdoors-card-and-licence-summary) at ang [fishing licence page](https://www.ontario.ca/page/fishing-licence-ontario-and-canadian-residents).' },
-      { question: 'Saan pwedeng mangisda malapit sa Toronto?', answer: 'Ang Rice Lake sa Gores Landing ay isa sa pinaka-accessible, mga 90 minutos lang mula sa Mississauga, Scarborough, Brampton, o Markham. Hindi tulad ng malalim na Lake Ontario, mababaw at beginner-friendly ito, kaya safe para sa pamilya.' },
+      { question: 'Saan pwedeng mangisda malapit sa Toronto?', answer: 'Ang Rice Lake sa Gores Landing ay isa sa pinaka-accessible, karaniwang 90 hanggang 120 minuto mula sa Mississauga, Scarborough, Brampton, o Markham, depende sa traffic. Hindi tulad ng malalim na Lake Ontario, mababaw ito at karaniwang banayad, pero tingnan palagi ang lagay ng panahon at isuot ang lifejacket.' },
       { question: 'Ano ang mga fishing rules sa Ontario para sa Rice Lake?', answer: 'Ang Rice Lake ay bahagi ng FMZ 17. Ang bawat uri ng isda ay may sariling season, daily catch limit, at size restrictions. Halimbawa, magkaiba ang rules para sa panfish (crappie, bluegill) at sa walleye. Dahil taun-taon itong pwedeng magbago, kailangang i-check ninyo ang opisyal na [Ontario Fishing Regulations Summary](https://www.ontario.ca/document/ontario-fishing-regulations-summary) bago kayo mangisda. Iyan ang laging tama.' },
       { question: 'Kailangan ko ba ng sariling bangka para mangisda sa Rice Lake?', answer: 'Hindi. May pontoon at fishing boat rentals ang Harris Boat Works. Dapat magpakita ng wastong boat operator licence ang driver sa check-in; hindi kailangan ng PCOC ang mga pasaherong hindi magmamaneho. Tingnan ang kasalukuyang availability at requirements sa aming [rentals page](https://harrisboatworks.ca/rentals).' },
       { question: 'Paano kung hindi ako marunong mag-drive ng bangka?', answer: 'Okay lang. Kasama sa rental ang basic orientation, kontrol sa throttle, steering, at safety. Ang mga bangka namin ay simple at stable, perpekto para sa first-timer. Tuturuan namin kayo hanggang maging komportable.' },
@@ -41,15 +41,17 @@ export const tagalogBlogArticles: Wave1Article[] = [
     nativeReview: 'pending',
     internalLinks: ['https://harrisboatworks.ca/rentals'],
     officialSources: ['https://www.ontario.ca/page/fishing-licence-ontario-and-canadian-residents', 'https://www.ontario.ca/page/get-outdoors-card-and-licence-summary', 'https://www.ontario.ca/page/learn-fish', 'https://www.ontario.ca/document/ontario-fishing-regulations-summary'],
-    content: `Rice Lake ang pinakamagandang unang subok na pangingisda para sa pamilyang Pilipino sa Toronto. Mga 90 minuto ang biyahe mula Brampton, Mississauga, Scarborough, o Markham, at dito sa Harris Boat Works, gagawin naming simple at masaya ang inyong araw kahit baguhan kayo, may rental boat na, lifejacket para sa kids, at fishing license guidance.
+    content: `Rice Lake ang pinakamagandang unang subok na pangingisda para sa pamilyang Pilipino sa Toronto. Karaniwang 90 hanggang 120 minuto ang biyahe mula Brampton, Mississauga, Scarborough, o Markham, depende sa pinanggalingan at traffic, at dito sa Harris Boat Works, gagawin naming simple at masaya ang inyong araw kahit baguhan kayo, may rental boat na, lifejacket para sa kids, at fishing license guidance.
+
+Kailangan ng PCOC? Kunin ang online course gamit ang [MyBoatCard referral link ng HBW](https://myboatcard.com/card/harrisboat) at gamitin ang code na **HARRIS15** para sa **15% diskuwento**.
 
 ## Bakit Rice Lake?
 
-Ang Rice Lake ay mababaw, kalmado, at kilala bilang beginner-friendly na lawa para sa mga bata, perpekto para sa unang family fishing trip. Sa halip na malalim at nakakatakot na lawa, ito ay warm, protected, at hindi mo kailangan ng malaking bangka. Matatagpuan ito sa Gores Landing, na nasa FMZ 17 (Fisheries Management Zone 17), at kilala sa panfish tulad ng bluegill at crappie, pati na rin sa walleye, pero walang pwedeng mangako kung gaano karami ang mahuhuli ninyo. Ang importante, masaya ang experience at maraming matututunan ang pamilya.
+Ang Rice Lake ay mababaw at karaniwang mas banayad kaysa sa malalalim na lawa, kaya magandang unang lugar para sa family fishing trip. Pero malawak ang lawa at puwedeng lumakas ang hangin at umalon, kaya laging naka-lifejacket ang mga bata at tingnan ang lagay ng panahon bago umalis. Sa halip na malalim at nakakatakot na lawa, ito ay warm at hindi mo kailangan ng malaking bangka. Matatagpuan ito sa Gores Landing, na nasa FMZ 17 (Fisheries Management Zone 17), at kilala sa panfish tulad ng bluegill at crappie, pati na rin sa walleye, pero walang pwedeng mangako kung gaano karami ang mahuhuli ninyo. Ang importante, masaya ang experience at maraming matututunan ang pamilya.
 
 ## Ang biyahe mula Toronto, Mississauga, o Scarborough
 
-Halos 90 minuto lang ang biyahe. Mula sa Brampton, Mississauga, Scarborough, o Markham, pare-pareho ang tagal, gamitin ang GPS papunta sa aming address sa Gores Landing. Ang marina namin ay nasa 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. May parking, at sasalubungin kayo ng team namin pagdating ninyo.
+Karaniwang 90 hanggang 120 minuto ang biyahe, depende sa pinanggalingan at traffic: mas maikli mula Scarborough at Markham, mas matagal mula Brampton at Mississauga. Gamitin ang GPS papunta sa aming address sa Gores Landing. Ang marina namin ay nasa 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. May parking, at sasalubungin kayo ng team namin pagdating ninyo.
 
 ## Ano ang kailangan ninyong dalhin
 
@@ -97,7 +99,7 @@ Pumunta sa ServiceOntario o mag-online sa official website. Kailangan ng Outdoor
 Ang istruktura ng bayad ay: hiwalay ang bayad para sa Outdoors Card, at hiwalay ang bayad para sa fishing licence (conservation licence ay mas mura, sport licence mas mahal). Ang updated at eksaktong dollar amounts ay palaging nasa opisyal na website, kaya imbes na magbigay kami ng number na baka luma na, please check ang [Outdoors Card at licence summary](https://www.ontario.ca/page/get-outdoors-card-and-licence-summary) at ang [fishing licence page](https://www.ontario.ca/page/fishing-licence-ontario-and-canadian-residents).
 
 **Saan pwedeng mangisda malapit sa Toronto?**
-Ang Rice Lake sa Gores Landing ay isa sa pinaka-accessible, mga 90 minutos lang mula sa Mississauga, Scarborough, Brampton, o Markham. Hindi tulad ng malalim na Lake Ontario, mababaw at beginner-friendly ito, kaya safe para sa pamilya.
+Ang Rice Lake sa Gores Landing ay isa sa pinaka-accessible, karaniwang 90 hanggang 120 minuto mula sa Mississauga, Scarborough, Brampton, o Markham, depende sa traffic. Hindi tulad ng malalim na Lake Ontario, mababaw ito at karaniwang banayad, pero tingnan palagi ang lagay ng panahon at isuot ang lifejacket.
 
 **Ano ang mga fishing rules sa Ontario para sa Rice Lake?**
 Ang Rice Lake ay bahagi ng FMZ 17. Ang bawat uri ng isda ay may sariling season, daily catch limit, at size restrictions. Halimbawa, magkaiba ang rules para sa panfish (crappie, bluegill) at sa walleye. Dahil taun-taon itong pwedeng magbago, kailangang i-check ninyo ang opisyal na [Ontario Fishing Regulations Summary](https://www.ontario.ca/document/ontario-fishing-regulations-summary) bago kayo mangisda. Iyan ang laging tama.
@@ -121,7 +123,7 @@ Ang unang family fishing trip ay mas madali kaysa sa iniisip ninyo. Bisitahin an
 **Makipag-ugnayan sa amin**  
 Telepono: (905) 342-2153  
 Text: (647) 952-2153  
-Service requests: [hbw.wiki/service](https://hbw.wiki/service)  
+Service requests: [hbwservice.ca](https://hbwservice.ca)  
 Address: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 
 Hatid namin ang karanasan sa lawa na maaalala ng inyong pamilya, tunay, simple, at walang kaba.`
@@ -134,7 +136,7 @@ Hatid namin ang karanasan sa lawa na maaalala ng inyong pamilya, tunay, simple, 
     image: '/lovable-uploads/hero-first-time-boat-rental.webp',
     author: 'Harris Boat Works',
     datePublished: '2026-06-12',
-    dateModified: '2026-09-06',
+    dateModified: '2026-10-04',
     category: 'Tagalog Guide',
     readTime: '8 min basa',
     keywords: ['paano kumuha ng boat license sa Ontario (how to get a boat license in Ontario)', 'kailangan ba ng boat license sa Ontario (is a boat license required in Ontario)', 'boat operator card Ontario paano (boat operator card Ontario how)', 'online boat license Ontario Tagalog (online boat license Ontario Tagalog)', 'PCOC exam Tagalog (PCOC exam Tagalog)'],
@@ -146,12 +148,14 @@ Hatid namin ang karanasan sa lawa na maaalala ng inyong pamilya, tunay, simple, 
       { question: 'Ano ang mangyayari kapag nahuli akong may bukas na alak sa bangka?', answer: 'Malaking problema ito. Ang open alcohol sa recreational boat ay ilegal, at ang pagmamaneho habang nakainom ay criminal offense, pwedeng maaresto, mawalan ng lisensya, matiketan ng malaking multa, at ma-impound ang bangka. Huwag nang subukan. Gawin ang inuman sa pampang pagkatapos ng biyahe.' },
       { question: 'Kailangan bang may lifejacket ang bata kahit marunong siyang lumangoy?', answer: 'Oo. Dapat may Canadian-approved lifejacket o PFD na tamang sukat para sa bawat tao sa bangka. Mariin naming inirerekomenda na isuot ito ng mga bata habang nasa tubig, hindi lang itago sa ilalim ng upuan.' },
       { question: 'Pwede bang mag-rent ng bangka kahit wala akong experience?', answer: 'Siyempre. Ito mismo ang dahilan kung bakit may rental boat safety checklist. Gagabayan ka namin mula pagdating hanggang sa maging komportable ka. Pakiusap lang, maging tapat sa amin tungkol sa experience level mo para mas maayos ang briefing.' },
-      { question: 'Gaano katagal ang biyahe mula Toronto papuntang Harris Boat Works?', answer: 'Mga 90 minuto mula sa Brampton, Mississauga, Scarborough, o Markham. Malapit lang ito para sa isang araw ng pamilya, umaga kang aalis, buong araw sa lawa, at hapon ang uwi.' }
+      { question: 'Gaano katagal ang biyahe mula Toronto papuntang Harris Boat Works?', answer: 'Karaniwang 90 hanggang 120 minuto mula sa Brampton, Mississauga, Scarborough, o Markham, depende sa traffic. Malapit lang ito para sa isang araw ng pamilya, umaga kang aalis, buong araw sa lawa, at hapon ang uwi.' }
     ],
     nativeReview: 'pending',
     internalLinks: ['https://harrisboatworks.ca/rentals'],
     officialSources: ['https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc', 'https://tc.canada.ca/en/marine-transportation/buying-boat/find-education-resources-recreational-boaters'],
-    content: `Sa Harris Boat Works, dapat magpakita ng wastong boat operator licence ang bawat driver sa check-in. Ginagawa pa rin ang rental safety checklist bilang safety briefing, ngunit hindi ito ginagamit ng HBW kapalit ng licence ng driver. Mula sa pamilya ng Harris Boat Works sa Gores Landing, gusto ka naming tulungan, lalo na ang mga kababayan nating Filipino sa Toronto, Mississauga, at buong GTA, na ma-enjoy ang Rice Lake nang walang kaba. Malapit lang kami: mga 90 minutong drive mula sa Brampton, Mississauga, Scarborough, o Markham. Kahit never ka pa sumakay ng bangka sa Canada, dito ka safe na magsisimula. Ito ang dapat mong malaman tungkol sa boat rental rules, lifejackets, at kung paano gumagana ang sistema dito.
+    content: `Sa Harris Boat Works, dapat magpakita ng wastong boat operator licence ang bawat driver sa check-in. Ginagawa pa rin ang rental safety checklist bilang safety briefing, ngunit hindi ito ginagamit ng HBW kapalit ng licence ng driver. Mula sa pamilya ng Harris Boat Works sa Gores Landing, gusto ka naming tulungan, lalo na ang mga kababayan nating Filipino sa Toronto, Mississauga, at buong GTA, na ma-enjoy ang Rice Lake nang walang kaba. Malapit lang kami: karaniwang 90 hanggang 120 minutong drive mula sa Brampton, Mississauga, Scarborough, o Markham, depende sa pinanggalingan at traffic. Kahit never ka pa sumakay ng bangka sa Canada, dito ka safe na magsisimula. Ito ang dapat mong malaman tungkol sa boat rental rules, lifejackets, at kung paano gumagana ang sistema dito.
+
+Kailangan ng PCOC? Kunin ang online course gamit ang [MyBoatCard referral link ng HBW](https://myboatcard.com/card/harrisboat) at gamitin ang code na **HARRIS15** para sa **15% diskuwento**.
 
 ## Kailangan ng boat operator licence para sa HBW rental
 
@@ -176,11 +180,11 @@ Pagkatapos ng briefing, pipirmahan mo na naiintindihan mo lahat. Simple lang, pe
 
 Sa Ontario, ang lifejacket o personal flotation device (PFD) ay hindi optional. Bawat tao na nasa bangka, bata man o matanda, ay dapat may sariling lifejacket na tamang-tama ang sukat. Dito sa amin, may mga lifejackets kami para sa iba't ibang sukat, kasama ang pambata, at tinitiyak naming malinis at nasa ayos ang mga ito.
 
-Para sa bata: kailangan naka-lifejacket na may crotch strap (yung pumapagitna sa legs) at akma sa timbang ng bata. I-che-check ng staff namin ang fit bago umalis. Ayon sa batas, kailangang may tamang-sukat na lifejacket o PFD para sa bawat tao sa bangka. Mariin naming inirerekomenda na **suot ito palagi** habang umaandar ang bangka, lalo na ng mga bata. Simple lang ang rason: sa emergency, hindi na magkakaroon ng oras para maghanap at magsuot ng lifejacket.
+Para sa bata: pumili ng lifejacket na akma sa timbang at laki ng bata. Para sa maliliit na bata, mas mainam ang may crotch strap (yung pumapagitna sa legs). I-che-check ng staff namin ang fit bago umalis. Ayon sa batas, kailangang may tamang-sukat na lifejacket o PFD para sa bawat tao sa bangka. Mariin naming inirerekomenda na **suot ito palagi** habang umaandar ang bangka, lalo na ng mga bata. Simple lang ang rason: sa emergency, hindi na magkakaroon ng oras para maghanap at magsuot ng lifejacket.
 
 ## Alcohol sa bangka: Seryosong babala
 
-Please, pakinggan ito nang buong atensyon. Ang alcohol sa bangka ay tinatrato ng batas na kapareho ng pag-inom habang nagmamaneho ng kotse. Bawal ang open liquor sa loob ng recreational boat, maliban lang kung ang bangka ay may permanenteng kusina, CR, at higaan (malalaking yate lang ito, hindi ang nire-rent na maliliit na fishing boat). Ang pagmamaneho ng bangka habang lasing ay isang criminal offense: pwedeng magresulta sa pagkakaaresto, suspensyon ng driver's license mo, malaking multa, at impound ng bangka.
+Please, pakinggan ito nang buong atensyon. Ang alcohol sa bangka ay tinatrato ng batas na kapareho ng pag-inom habang nagmamaneho ng kotse. Bawal ang open liquor sa loob ng recreational boat, maliban lang kung ang bangka ay may permanenteng kusina, CR, at higaan, at naka-angkla o naka-dock ito (malalaking yate lang ito, hindi ang nire-rent na maliliit na fishing boat). Ang pagmamaneho ng bangka habang lasing ay isang criminal offense: pwedeng magresulta sa pagkakaaresto, suspensyon ng driver's license mo, malaking multa, at impound ng bangka.
 
 Mas mabuti na ang inuman gawin sa pampang, pagkatapos ng boating trip, hindi habang nasa tubig. Iniisip namin ang pamilya mo, ang passengers mo, at ang ibang tao sa lawa. Seryosohin ito.
 
@@ -239,7 +243,7 @@ Oo. Dapat may Canadian-approved lifejacket o PFD na tamang sukat para sa bawat t
 Siyempre. Ito mismo ang dahilan kung bakit may rental boat safety checklist. Gagabayan ka namin mula pagdating hanggang sa maging komportable ka. Pakiusap lang, maging tapat sa amin tungkol sa experience level mo para mas maayos ang briefing.
 
 **Gaano katagal ang biyahe mula Toronto papuntang Harris Boat Works?**  
-Mga 90 minuto mula sa Brampton, Mississauga, Scarborough, o Markham. Malapit lang ito para sa isang araw ng pamilya, umaga kang aalis, buong araw sa lawa, at hapon ang uwi.
+Karaniwang 90 hanggang 120 minuto mula sa Brampton, Mississauga, Scarborough, o Markham, depende sa traffic. Malapit lang ito para sa isang araw ng pamilya, umaga kang aalis, buong araw sa lawa, at hapon ang uwi.
 
 ## Handa nang mag-boat?
 
@@ -248,7 +252,7 @@ Tingnan ang aming rental fleet at magpareserba dito: [https://harrisboatworks.ca
 Para sa ibang tanong, tawagan o i-text kami:  
 📞 (905) 342-2153  
 📱 Text: (647) 952-2153  
-Para sa service requests: [hbw.wiki/service](https://hbw.wiki/service)
+Para sa service requests: [hbwservice.ca](https://hbwservice.ca)
 
 Matatagpuan kami sa: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. Tandaan lang, sarado ang marina mula December 1 hanggang April 1. Inaasahan ka namin, magkita tayo sa Rice Lake!`
   },
@@ -265,22 +269,22 @@ Matatagpuan kami sa: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. Tanda
     readTime: '8 min basa',
     keywords: ['mekaniko ng bangka sa Toronto (boat mechanic in Toronto)', 'pagawaan ng motor ng bangka malapit sa Mississauga (boat motor repair shop near Mississauga)', 'marine mechanic Pilipino Toronto (Filipino marine mechanic Toronto)', 'paano i-winterize ang bangka (how to winterize a boat)', 'paghahanda ng bangka sa taglamig (preparing boat for winter)', 'winter storage ng bangka Ontario (winter storage of boat Ontario)', 'winterization service bangka Toronto (winterization service boat Toronto)', 'paano ayusin ang Mercury outboard (how to fix Mercury outboard)'],
     faqs: [
-      { question: 'Saan makakahanap ng mekaniko ng bangka sa Toronto?', answer: 'Ang HBW ay nasa Gores Landing, malapit sa Rice Lake, mga 90 minutong biyahe mula Brampton, Mississauga, Scarborough, at Markham. Walang malapit na shop sa loob ng Toronto na mare-rekomenda namin, pero maraming may-ari ng Mercury ang pumipiling mag-drive papunta sa amin dahil sa aming kadalubhasaan. Kung gusto mong makasigurado sa certified service, puntahan kami.' },
+      { question: 'Saan makakahanap ng mekaniko ng bangka sa Toronto?', answer: 'Ang HBW ay nasa Gores Landing, malapit sa Rice Lake, karaniwang 90 hanggang 120 minutong biyahe mula Brampton, Mississauga, Scarborough, at Markham, depende sa pinanggalingan at traffic. Walang malapit na shop sa loob ng Toronto na mare-rekomenda namin, pero maraming may-ari ng Mercury ang pumipiling mag-drive papunta sa amin dahil sa aming kadalubhasaan. Kung gusto mong makasigurado sa certified service, puntahan kami.' },
       { question: 'May marine mechanic ba na Pilipino sa Toronto?', answer: 'Wala pong Pilipinong mechanic sa HBW. Ang lahat ng aming technician ay bihasa sa Mercury pero ang lengguwahe ng shop ay English. Ang serbisyo namin ay sa English, kaya magdala ng kasamang marunong mag-English o gumamit ng translation app; matiyaga naming aasikasuhin ang kailangan mo.' },
       { question: 'Paano i-winterize ang bangka?', answer: 'Ang tamang winterization ay depende sa eksaktong modelo ng motor. Sundin ang mga hakbang sa manual na tumutugma sa serial number nito. Puwede mong gawin ito nang sarili kung may tamang manual, tools, at karanasan ka. Kung bago ka pa lang o hindi sigurado sa hakbang ng iyong makina, ipagawa sa qualified Mercury technician at sundin ang serial-specific manual.' },
-      { question: 'Saan ang winter storage ng bangka sa Ontario?', answer: 'Nag-aalok ang HBW ng outdoor storage na may propesyonal na shrink wrap, outdoor storage na walang takip, at serbisyong shrink wrap lamang sa Gores Landing. Hindi kami nag-aalok ng indoor o heated na boat storage. Kumpletuhin ang https://hbw.wiki/service, tapos i-drop off kahit kailan, kahit lampas sa oras ng opisina.' },
+      { question: 'Saan ang winter storage ng bangka sa Ontario?', answer: 'Nag-aalok ang HBW ng outdoor storage na may propesyonal na shrink wrap, outdoor storage na walang takip, at serbisyong shrink wrap lamang sa Gores Landing. Hindi kami nag-aalok ng indoor o heated na boat storage. Kumpletuhin ang https://hbwservice.ca, tapos i-drop off kahit kailan, kahit lampas sa oras ng opisina.' },
       { question: 'Paano ayusin ang Mercury outboard?', answer: 'Kung Mercury o Mercruiser ang motor mo, dalhin mo sa amin. Umpisahan namin ito ng computer diagnostic kung applicable, visual inspection, at pag-check ng fuel, spark, at compression. Certified technicians ang gagawa, at purong Mercury parts lang ang gagamitin. Kung may warranty ka, protektado ito kapag sa amin ka nagpagawa.' },
-      { question: 'Saan ang pagawaan ng motor ng bangka malapit sa Mississauga?', answer: 'Walang partikular na shop sa Mississauga na mare-rekomenda namin. Ang HBW ay mula sa Gores Landing, mga 90 minuto ang biyahe, pero marami kaming customer na galing Mississauga dahil sa kumpiyansa nila sa aming Mercury expertise. Kung handa kang mag-drive, welcome ka rito.' },
+      { question: 'Saan ang pagawaan ng motor ng bangka malapit sa Mississauga?', answer: 'Walang partikular na shop sa Mississauga na mare-rekomenda namin. Ang HBW ay mula sa Gores Landing, karaniwang 90 hanggang 120 minuto ang biyahe depende sa traffic, pero marami kaming customer na galing Mississauga dahil sa kumpiyansa nila sa aming Mercury expertise. Kung handa kang mag-drive, welcome ka rito.' },
       { question: 'Puwede ba akong makakuha ng serbisyo sa Tagalog sa HBW?', answer: 'Hindi po. Ang aming team ay nagsisilbi sa English lamang. Pero huwag mahiya: magsama ng kaibigan o pamilya na marunong mag-Ingles, o gumamit ng translation app. Magiging matiyaga kami sa pagpapaliwanag hanggang maintindihan mo nang lubos.' }
     ],
     nativeReview: 'pending',
-    internalLinks: ['https://hbw.wiki/service'],
+    internalLinks: ['https://hbwservice.ca'],
     officialSources: [],
     content: `Alam namin: nakakapanibago magmay-ari ng bangka dito sa Canada. ‘Yung mga tanong tungkol sa makina, sa pag-iingat tuwing taglamig, at kung sino ang mapagkakatiwalaang mag-ayos, normal lang ‘yan lalo na kung bagong salta sa boating scene. Kami sa Harris Boat Works (HBW), pamilya ang nagpapatakbo ng marina sa Rice Lake mula pa noong 1947, at Mercury dealer na kami simula 1965. Kaya sa gabay na ito, ipapaliwanag namin sa paraang parang kaibigan lang ang kailangan mong malaman tungkol sa serbisyo ng outboard motor, winterization, at kung paano panatilihing malusog ang makina mo sa klima ng Ontario.
 
 ## Bakit Kailangan ng Taunang Serbisyo ng Outboard Motor?
 
-Isipin mo na parang kotse ang outboard motor: kahit ilang beses mo lang ginamit sa isang summer, kailangan pa rin ng regular na maintenance para umandar nang maayos. Ang tubig sa lawa ay may dumi at minerals na pwedeng makasira sa cooling system. ‘Yung impeller, isang rubber part na parang water pump, natutuyo at nababasag kung hindi napapalitan taon-taon. Ang lower unit oil ay pwedeng mag-contaminate ng tubig, kaya sa annual service ay dini-drain namin at pinapalitan. Pati spark plugs, fuel filter, at timing ay chini-check para iwas biglaang tigil ng makina sa gitna ng lawa.
+Isipin mo na parang kotse ang outboard motor: kahit ilang beses mo lang ginamit sa isang summer, kailangan pa rin ng regular na maintenance para umandar nang maayos. Ang tubig sa lawa ay may dumi at minerals na pwedeng makasira sa cooling system. ‘Yung impeller, isang rubber part na parang water pump, natutuyo at nababasag kapag napabayaan, kaya dapat itong i-inspect taon-taon at palitan ayon sa maintenance schedule ng Mercury. Ang lower unit oil ay pwedeng mag-contaminate ng tubig, kaya sa annual service ay dini-drain namin at pinapalitan. Pati spark plugs, fuel filter, at timing ay chini-check para iwas biglaang tigil ng makina sa gitna ng lawa.
 
 Sa HBW, sanay na sanay kami sa Mercury outboards. Bilang Mercury Marine Premier Dealer, certified technicians ang gumagawa ng service ayon sa latest standards ng Mercury. Kapag nagpa-taunang serbisyo ka sa amin, hindi lang basic lang ang ginagawa, ini-inspect din namin ang propeller, steering system, at electrical para siguradong handa ang bangka sa susunod mong labas.
 
@@ -301,7 +305,7 @@ Dito pumapasok ang aming winterization service. May **584 kaming nakumpletong wi
 
 Ang lahat ng ito ay ginagawa gamit ang OEM Mercury parts at procedures. Kung hindi Mercury ang outboard mo, pasensya na, sa engine repairs, **Mercury at Mercruiser lang** ang sineserbisyuhan namin. Pero kung Mercury ang dala mo, you’re in good hands.
 
-At tandaan: sarado ang HBW mula December 1 hanggang April 1. Kumpletuhin ang https://hbw.wiki/service, tapos i-drop off kahit kailan, kahit lampas sa oras ng opisina.
+At tandaan: sarado ang HBW mula December 1 hanggang April 1. Kumpletuhin ang https://hbwservice.ca, tapos i-drop off kahit kailan, kahit lampas sa oras ng opisina.
 
 ## Spring Commissioning: Paggising ng Bangka Pagkatapos ng Taglamig
 
@@ -326,13 +330,13 @@ Hindi mo kailangang maghintay ng malaking sira bago pumunta sa shop. Mas mainam 
 - May oil leak o usok na hindi normal.
 - Hindi consistent ang shifting ng gears.
 
-Dahil Mercury Premier Dealer kami na may halos 60 taon nang karanasan, alam namin ang mga common issues ng Mercury outboards, pati na ang mga bagong four-stroke models. May direct access kami sa technical support ng Mercury at sa genuine parts. Ibig sabihin, mas mabilis at mas tama ang diagnosis.
+Dahil Mercury dealer kami mula pa noong 1965 at Mercury Premier Dealer ngayon, alam namin ang mga common issues ng Mercury outboards, pati na ang mga bagong four-stroke models. May direct access kami sa technical support ng Mercury at sa genuine parts. Ibig sabihin, mas mabilis at mas tama ang diagnosis.
 
-Mahalagang tandaan: **ang base warranty ng Mercury ay 3 taon**. Kung under warranty pa ang motor mo, hindi ka dapat magpagawa sa hindi certified, baka ma-void ang warranty. Sa HBW, authorized warranty center kami.
+Mahalagang tandaan: **ang base warranty ng Mercury ay 3 taon**. Kung under warranty pa ang motor mo, kailangang idaan ang warranty repairs sa authorized Mercury dealer, at hindi saklaw ng warranty ang pinsalang dulot ng maling serbisyo. Sa HBW, authorized warranty center kami.
 
-## Paano Mag-book ng Serbisyo
+## Paano Mag-request ng Serbisyo
 
-Hindi namin pinapahirapan ang booking. Pumunta lang sa aming service page: https://hbw.wiki/service at sagutan ang form. Puwede ring tumawag o mag-text:
+Hindi namin pinapahirapan ang pag-request. Pumunta lang sa aming service page: https://hbwservice.ca at sagutan ang form. Puwede ring tumawag o mag-text:
 
 - 📞 Telepono: (905) 342-2153  
 - 📱 Text: (647) 952-2153  
@@ -348,7 +352,7 @@ Pero kailangan naming maging diretso: ang aming team ay nagsisilbi sa English. W
 ## FAQs (Mga Madalas Itanong)
 
 **Saan makakahanap ng mekaniko ng bangka sa Toronto?**  
-Ang HBW ay nasa Gores Landing, malapit sa Rice Lake, mga 90 minutong biyahe mula Brampton, Mississauga, Scarborough, at Markham. Walang malapit na shop sa loob ng Toronto na mare-rekomenda namin, pero maraming may-ari ng Mercury ang pumipiling mag-drive papunta sa amin dahil sa aming kadalubhasaan. Kung gusto mong makasigurado sa certified service, puntahan kami.
+Ang HBW ay nasa Gores Landing, malapit sa Rice Lake, karaniwang 90 hanggang 120 minutong biyahe mula Brampton, Mississauga, Scarborough, at Markham, depende sa pinanggalingan at traffic. Walang malapit na shop sa loob ng Toronto na mare-rekomenda namin, pero maraming may-ari ng Mercury ang pumipiling mag-drive papunta sa amin dahil sa aming kadalubhasaan. Kung gusto mong makasigurado sa certified service, puntahan kami.
 
 **May marine mechanic ba na Pilipino sa Toronto?**  
 Wala pong Pilipinong mechanic sa HBW. Ang lahat ng aming technician ay bihasa sa Mercury pero ang lengguwahe ng shop ay English. Ang serbisyo namin ay sa English, kaya magdala ng kasamang marunong mag-English o gumamit ng translation app; matiyaga naming aasikasuhin ang kailangan mo.
@@ -357,13 +361,13 @@ Wala pong Pilipinong mechanic sa HBW. Ang lahat ng aming technician ay bihasa sa
 Ang tamang winterization ay depende sa eksaktong modelo ng motor. Sundin ang mga hakbang sa manual na tumutugma sa serial number nito. Puwede mong gawin ito nang sarili kung may tamang manual, tools, at karanasan ka. Kung bago ka pa lang o hindi sigurado sa hakbang ng iyong makina, ipagawa sa qualified Mercury technician at sundin ang serial-specific manual.
 
 **Saan ang winter storage ng bangka sa Ontario?**  
-Nag-aalok ang HBW ng outdoor storage na may propesyonal na shrink wrap, outdoor storage na walang takip, at serbisyong shrink wrap lamang sa Gores Landing. Hindi kami nag-aalok ng indoor o heated na boat storage. Kumpletuhin ang https://hbw.wiki/service, tapos i-drop off kahit kailan, kahit lampas sa oras ng opisina.
+Nag-aalok ang HBW ng outdoor storage na may propesyonal na shrink wrap, outdoor storage na walang takip, at serbisyong shrink wrap lamang sa Gores Landing. Hindi kami nag-aalok ng indoor o heated na boat storage. Kumpletuhin ang https://hbwservice.ca, tapos i-drop off kahit kailan, kahit lampas sa oras ng opisina.
 
 **Paano ayusin ang Mercury outboard?**  
 Kung Mercury o Mercruiser ang motor mo, dalhin mo sa amin. Umpisahan namin ito ng computer diagnostic kung applicable, visual inspection, at pag-check ng fuel, spark, at compression. Certified technicians ang gagawa, at purong Mercury parts lang ang gagamitin. Kung may warranty ka, protektado ito kapag sa amin ka nagpagawa.
 
 **Saan ang pagawaan ng motor ng bangka malapit sa Mississauga?**  
-Walang partikular na shop sa Mississauga na mare-rekomenda namin. Ang HBW ay mula sa Gores Landing, mga 90 minuto ang biyahe, pero marami kaming customer na galing Mississauga dahil sa kumpiyansa nila sa aming Mercury expertise. Kung handa kang mag-drive, welcome ka rito.
+Walang partikular na shop sa Mississauga na mare-rekomenda namin. Ang HBW ay mula sa Gores Landing, karaniwang 90 hanggang 120 minuto ang biyahe depende sa traffic, pero marami kaming customer na galing Mississauga dahil sa kumpiyansa nila sa aming Mercury expertise. Kung handa kang mag-drive, welcome ka rito.
 
 **Puwede ba akong makakuha ng serbisyo sa Tagalog sa HBW?**  
 Hindi po. Ang aming team ay nagsisilbi sa English lamang. Pero huwag mahiya: magsama ng kaibigan o pamilya na marunong mag-Ingles, o gumamit ng translation app. Magiging matiyaga kami sa pagpapaliwanag hanggang maintindihan mo nang lubos.
@@ -375,7 +379,7 @@ Handa na ang bangka mo para sa summer? O kailangan na ng winterization bago huma
 - 📍 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 - 📞 Telepono: (905) 342-2153
 - 📱 Text: (647) 952-2153
-- 🔧 Mag-book ng serbisyo: https://hbw.wiki/service
+- 🔧 Mag-request ng serbisyo: https://hbwservice.ca
 
 Mula pa noong 1947, nagsisilbi na kami sa mga boat owner sa Ontario. Family-owned, Mercury-certified, at kayang maghintay kahit may kaunting translation challenge. Sama-sama nating siguraduhing laging handang umandar ang bangka mo.`
   }
