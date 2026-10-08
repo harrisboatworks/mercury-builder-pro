@@ -1,3 +1,5 @@
+import SubmittedQuote from '@/components/quote-builder/SubmittedQuote';
+import { adminConsultationDocument } from '@/lib/consultation-document-client';
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
@@ -126,6 +128,8 @@ const AdminQuoteDetail = () => {
   const [isDownloadingCanonical, setIsDownloadingCanonical] = useState(false);
   const [isRetryingEmail, setIsRetryingEmail] = useState(false);
   const [linkCopied, setLinkCopied] = useState(false);
+  const [privateShareUrl, setPrivateShareUrl] = useState('');
+  const isSubmitted = q?.quote_data?.source === 'consultation-submit';
   
   // Editable fields
   const [adminDiscount, setAdminDiscount] = useState(0);
@@ -143,6 +147,7 @@ const AdminQuoteDetail = () => {
     setLoadError(null);
     setJoinedDepositError(null);
     setDeliveryLoadError(null);
+    setPrivateShareUrl('');
   }, [id]);
 
   useEffect(() => {
@@ -643,8 +648,11 @@ const AdminQuoteDetail = () => {
 
   const handleCopyLink = async () => {
     if (!q) return;
-    const shareUrl = `${SITE_URL}/quote/saved/${savedQuoteDealId || q.id}`;
     try {
+      const shareUrl = isSubmitted
+        ? (await adminConsultationDocument(q.id, 'admin-share')).documentAccessUrl
+        : `${SITE_URL}/quote/saved/${savedQuoteDealId || q.id}`;
+      if (isSubmitted) setPrivateShareUrl(shareUrl);
       await navigator.clipboard.writeText(shareUrl);
       setLinkCopied(true);
       toast({ title: 'Link copied!', description: 'Share URL copied to clipboard.' });
@@ -764,6 +772,15 @@ const AdminQuoteDetail = () => {
     
     setIsGeneratingPDF(true);
     try {
+      if (isSubmitted) {
+        const { signedUrl } = await adminConsultationDocument(q.id, 'admin-download');
+        const anchor = document.createElement('a');
+        anchor.href = signedUrl;
+        anchor.rel = 'noreferrer';
+        anchor.click();
+        toast({ title: 'PDF ready', description: 'Opening the original submitted quote PDF.' });
+        return;
+      }
       const qd = q.quote_data;
       const snapshot = buildLegacyQuotePdfSnapshot(qd, q.created_at || undefined);
       if (!snapshot) {
@@ -842,7 +859,7 @@ const AdminQuoteDetail = () => {
             <Plus className="w-4 h-4 mr-2" />
             New Quote for Customer
           </Button>
-          {q?.quote_data && (
+          {q?.quote_data && !isSubmitted && (
             <Button variant="default" onClick={handleEditQuote} disabled={!customerQuoteId}>
               <Edit2 className="w-4 h-4 mr-2" />
               Edit Full Quote
@@ -933,6 +950,8 @@ const AdminQuoteDetail = () => {
             </div>
           </Card>
           
+          {isSubmitted && <SubmittedQuote quote={q.quote_data} />}
+          {!isSubmitted && <>
           {/* Trade-In */}
           <Card className="p-4">
             {(() => {
@@ -1217,6 +1236,7 @@ const AdminQuoteDetail = () => {
               Retry failed/missing deliveries
             </Button>
           </Card>
+          </>}
 
           {/* Share & Download Card */}
           <Card className="p-4 border-blue-500 bg-blue-50/50 dark:bg-blue-950/20">
@@ -1226,7 +1246,20 @@ const AdminQuoteDetail = () => {
             </h2>
             <div className="space-y-3">
               <div className="flex gap-2">
-                {hasCanonicalDocument ? (
+                {isSubmitted ? (
+                  <Button
+                    onClick={handleDownloadPDF}
+                    disabled={isGeneratingPDF || !q?.quote_data}
+                    className="flex-1"
+                  >
+                    {isGeneratingPDF ? (
+                      <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                    ) : (
+                      <Download className="w-4 h-4 mr-2" />
+                    )}
+                    Download PDF
+                  </Button>
+                ) : hasCanonicalDocument ? (
                   <Button
                     onClick={handleDownloadCanonicalPdf}
                     disabled={isDownloadingCanonical}
@@ -1266,7 +1299,17 @@ const AdminQuoteDetail = () => {
                   {linkCopied ? 'Copied!' : 'Copy Link'}
                 </Button>
               </div>
-              {isAuthoritativeDepositPaid({
+              {isSubmitted ? (
+                <SendQuoteEmail
+                  isSubmitted
+                  quoteId={q.id}
+                  customerName={q.customer_name}
+                  customerEmail={q.customer_email}
+                  motorModel={q.quote_data?.motor?.model || 'Mercury Motor'}
+                  totalPrice={q.final_price}
+                  onDeliverySettled={() => setEmailHistoryKey((key) => key + 1)}
+                />
+              ) : isAuthoritativeDepositPaid({
                 customerQuotePaymentStatus: q.payment_status,
                 savedQuoteDepositStatus: q.lead_status === 'deposit_paid' ? 'paid' : null,
               }) ? (
@@ -1286,7 +1329,9 @@ const AdminQuoteDetail = () => {
                 <p className="text-sm text-muted-foreground">Email quote is unavailable because this saved quote has no customer quote record.</p>
               )}
               <div className="text-xs text-muted-foreground bg-muted/50 p-2 rounded font-mono truncate">
-                {SITE_URL}/quote/saved/{(savedQuoteDealId || q.id).slice(0, 8)}...
+                {isSubmitted
+                  ? (privateShareUrl || 'Copy Link creates a private link to the original PDF, valid for 30 days.')
+                  : `${SITE_URL}/quote/saved/${(savedQuoteDealId || q.id).slice(0, 8)}...`}
               </div>
             </div>
           </Card>
