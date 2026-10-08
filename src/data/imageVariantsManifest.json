@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-13T00:26:27.198Z",
-  "count": 452,
+  "generatedAt": "2026-10-08T12:13:52.579Z",
+  "count": 456,
   "bases": [
     "/images/shop/boat-drop-off-hbw-yard-bowrider-trailer",
     "/images/shop/harris-boat-works-shop-exterior-rice-lake",
@@ -50,6 +50,10 @@
     "/lovable-uploads/blog-heroes-2026-08/hero-lake-ontario-salmon-main-prokicker-reference-locked-2026-08",
     "/lovable-uploads/blog-heroes-2026-08/hero-mercury-vs-honda-250-official-comparison-2026-08",
     "/lovable-uploads/blog-heroes-2026-08/p0p1/hero-family-runabout-mercury-115-real-2026-08",
+    "/lovable-uploads/blog-photos-2026-10/avator-7-5e-cottage-dock",
+    "/lovable-uploads/blog-photos-2026-10/family-bowrider-mercury-fourstroke",
+    "/lovable-uploads/blog-photos-2026-10/lake-ontario-salmon-troller-mercury-pro-xs",
+    "/lovable-uploads/blog-photos-2026-10/used-aluminum-boat-outboard-inspection",
     "/lovable-uploads/blog-two-stroke-vs-four-stroke-repower-hero",
     "/lovable-uploads/Boat_Repowering_101_Hero",
     "/lovable-uploads/Boat_Repowering_In_Progress",
@@ -695,6 +699,26 @@
       640,
       1024,
       1600
+    ],
+    "/lovable-uploads/blog-photos-2026-10/avator-7-5e-cottage-dock": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/blog-photos-2026-10/family-bowrider-mercury-fourstroke": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/blog-photos-2026-10/lake-ontario-salmon-troller-mercury-pro-xs": [
+      640,
+      1024,
+      1920
+    ],
+    "/lovable-uploads/blog-photos-2026-10/used-aluminum-boat-outboard-inspection": [
+      640,
+      1024,
+      1920
     ],
     "/lovable-uploads/blog-two-stroke-vs-four-stroke-repower-hero": [
       640,
