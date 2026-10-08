@@ -10,6 +10,10 @@ describe('service booking answers', () => {
     'Please send me the service booking link.',
     'Where can I start a service request online?',
     'How do I book winterisation?',
+    'Can I book my 100-hour service?',
+    'Can I book my first service?',
+    'I need an oil change and want to book it',
+    'I need repairs and want to arrange them',
   ])('returns the canonical request link for %s', (question) => {
     const answer = buildServiceBookingAnswer(question);
     expect(answer).toContain('https://hbwservice.ca');
@@ -37,6 +41,7 @@ describe('service booking answers', () => {
     'What does the schedule look like for a 100-hour service?',
     'What does the schedule look like for Mercury service?',
     'When should I book first service at 20 hours or 100 hours?',
+    'Do I need to book a first service at 20 hours?',
     'Do I need to book an oil change, and what oil grade does my F150 take?',
   ])('keeps the existing answer path for %s', (question) => {
     expect(buildServiceBookingAnswer(question)).toBeNull();
