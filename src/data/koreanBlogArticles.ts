@@ -980,7 +980,7 @@ OPP 수상 순찰에 적발 시 과태료가 부과됩니다. $250부터 시작�
     imageAlt: '안개 낀 호수 별장 부두에 묶인 알루미늄 보트의 흰색 Mercury Avator 7.5e 전기 선외기',
     author: 'Harris Boat Works',
     datePublished: '2026-06-08',
-    dateModified: '2026-10-08',
+    dateModified: '2026-10-06',
     publishDate: '2026-06-08',
     category: '구매 가이드',
     readTime: '8 분',

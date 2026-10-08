@@ -124,7 +124,7 @@ Harris Boat Works 1947 سے خاندانی مرینا ہے، 1965 سے Mercury �
     imageAlt: 'ڈرائیو وے میں ٹریلر پر کھڑی استعمال شدہ ایلومینیم کشتی کے سیاہ Mercury FourStroke آؤٹ بورڈ کا کلپ بورڈ کے ساتھ معائنہ کرتا خریدار',
     author: 'Harris Boat Works',
     datePublished: '2026-06-12',
-    dateModified: '2026-10-08',
+    dateModified: '2026-10-06',
     category: 'اردو گائیڈ',
     readTime: '8 منٹ',
     keywords: ['یوزڈ بوٹ خریدتے وقت کیا دیکھیں (What to check when buying a used boat)', 'سیکنڈ ہینڈ کشتی کی خریدی میں دھوکہ (Scams in buying a used boat)', 'پرانے بوٹ انجن کی حالت کیسے چیک کریں (How to check condition of an old boat engine)', 'استعمال شدہ کشتی کی قیمت کا اندازہ (Estimating price of a used boat)', 'اونٹاریو میں یوزڈ بوٹ مارکیٹ (Used boat market Ontario)'],
