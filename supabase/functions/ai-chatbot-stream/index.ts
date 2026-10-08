@@ -64,6 +64,7 @@ import {
   buildVerifiedHbwAuthorityAnswer,
 } from '../_shared/verified-hbw-authority-facts.ts';
 import { nearbyAvailableHorsepowers } from '../_shared/nearby-horsepowers.ts';
+import { buildServiceBookingAnswer } from '../_shared/service-booking-answer.ts';
 
 // OpenAI chat model for the site assistant.
 // gpt-5.6-luna replaced gpt-4o-mini on 2026-09-04. Note the 5.6+ API contract:
@@ -1906,6 +1907,19 @@ serve(async (req) => {
     // so we can run the function-calling loop reliably.
     const hasQuoteIntent = detectQuoteIntent(message);
     const useStreaming = stream && !hasQuoteIntent;
+
+    const serviceBookingReply = buildServiceBookingAnswer(message);
+    if (serviceBookingReply) {
+      if (useStreaming) {
+        const event = JSON.stringify({ choices: [{ delta: { content: serviceBookingReply } }] });
+        return new Response(`data: ${event}\n\ndata: [DONE]\n\n`, {
+          headers: { ...corsHeaders, 'Content-Type': 'text/event-stream', 'Cache-Control': 'no-cache', 'Connection': 'keep-alive' },
+        });
+      }
+      return new Response(JSON.stringify({ reply: serviceBookingReply }), {
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
+    }
 
     const verifiedAuthorityReply = buildVerifiedHbwAuthorityAnswer(message);
     if (verifiedAuthorityReply) {
