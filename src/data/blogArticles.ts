@@ -33473,19 +33473,21 @@ The 150 isn't a dramatic top-end difference. Where you actually feel it:
 - 115 on a 19ft V-hull with full crew: 6-8 seconds to plane, noticeable bow rise
 - 150 on the same setup: 4-5 seconds, cleaner transition
 
-**Cruising RPM at 25 MPH:**
-- 115: 4,200-4,500 RPM (working harder)
-- 150: 3,500-3,800 RPM (relaxed)
+**Cruising RPM at 25 MPH** (Mercury's own tests of one 18.8 ft Crestliner XFC 189 with each motor, run the same day):
+- 115 Pro XS: about 3,550 RPM (working harder)
+- 150 FourStroke: about 3,150 RPM (relaxed)
 
 **Fuel burn at 25 MPH cruise (rough planning figures; they vary with hull, load and prop):**
-- 115: roughly 25-28 L/h (6.5-7.5 GPH)
-- 150: roughly 28-32 L/h (7.5-8.5 GPH)
+- 115 Pro XS: about 16 L/h (4.2 GPH) in that test
+- 150 FourStroke: about 18.6 L/h (4.9 GPH) in that test
+
+Across Mercury's published tests on 17.5 to 20 ft aluminum hulls, both motors land between roughly 13 and 20 L/h at that speed. A boat loaded for a real day burns more than a test boat. See the Mercury test sheets for the [115](https://performancedata.mercurymarine.com/performance-test/157) and the [150](https://performancedata.mercurymarine.com/performance-test/158).
 
 The 150 burns slightly more fuel per hour at the same cruise speed but runs at lower RPM, which is easier on the engine and on your ears. Over 200 hours of use, the fuel delta is real but not catastrophic.
 
 **Cruising RPM at 35 MPH:**
-- 115: 5,200-5,500 RPM (at the top of comfortable cruise)
-- 150: 4,200-4,500 RPM (still comfortable)
+- 115 Pro XS: about 4,700 RPM in the same test (near the top of comfortable cruise)
+- 150 FourStroke: about 4,000 RPM in the same test (still comfortable)
 
 This is the practical "ceiling speed" difference. The 150 gives you more usable cruising range above 30 MPH.
 
@@ -33496,14 +33498,14 @@ Online comparisons often assume 100 hours of use per season. The examples below 
 Using two illustrative Ontario use patterns:
 
 **20-hour light-use scenario (115 vs 150 at 25 MPH cruise, using a sample Ontario marine fuel price):**
-- 115 fuel: 20 hr × 26.5 L/h (7 GPH) × $1.85 = $980
-- 150 fuel: 20 hr × 30.3 L/h (8 GPH) × $1.85 = $1,120
-- Annual delta: $140
+- 115 fuel: 20 hr × 16 L/h (4.2 GPH) × $1.85 = $592
+- 150 fuel: 20 hr × 18.6 L/h (4.9 GPH) × $1.85 = $688
+- Annual delta: about $96
 
 **100-hour season fuel cost delta (heavy use):**
-- 115 fuel: 100 hr × 26.5 L/h (7 GPH) × $1.85 = $4,900
-- 150 fuel: 100 hr × 30.3 L/h (8 GPH) × $1.85 = $5,600
-- Annual delta: $700
+- 115 fuel: 100 hr × 16 L/h (4.2 GPH) × $1.85 = $2,960
+- 150 fuel: 100 hr × 18.6 L/h (4.9 GPH) × $1.85 = $3,441
+- Annual delta: about $481
 
 In the 20-hour illustration, fuel cost isn't the deciding factor. The motor price delta matters more.
 
@@ -33587,7 +33589,7 @@ See live CAD pricing for every Mercury we stock at the [Mercury pricing referenc
       { question: "Should I get a 115 Command Thrust for my aluminum V-hull?", answer: "Usually not for the planing aluminum V-hulls we see. Command Thrust is engineered for pontoons and specific work-boat applications. HBW's shop recommendation is the standard 115 ELPT or 115 Pro XS; that is a hull, load, and propeller decision, not a universal exclusion. We see other dealers rig V-hulls with Command Thrust based on a \"more thrust is better\" pitch. Ask for the actual boat, prop, and test result rather than a universal speed claim." },
       { question: "Will a 115 plane my 19ft aluminum V-hull with 4 people?", answer: "Yes, but it works hard. A 19ft V-hull with 4 adults and gear is right at the edge of the 115's comfortable envelope. It will plane but with longer time-to-plane and the motor running at higher cruise RPM. A 150 cruises easier on the same load. If you'll regularly run with 4+ people, the 150 is the smarter call." },
       { question: "How much faster is the 150 than the 115?", answer: "On a 19ft aluminum V-hull with 3 adults plus gear, top speed difference is typically 4-6 MPH (38-42 for the 115 ProXS, 44-48 for the 150 ProXS). The bigger practical difference is cruise behaviour: the 115 cruises at higher RPM and works harder above 30 MPH, while the 150 cruises easily through 35 MPH." },
-      { question: "What's the fuel cost difference between 115 and 150?", answer: "In an illustrative 20-hour light-use season, the fuel-cost delta is roughly $140 per year. In the 100-hour heavy-use scenario, it is roughly $700 per year. They're planning examples, not an average-use claim. The motor price delta of about $6,900 is more significant." },
+      { question: "What's the fuel cost difference between 115 and 150?", answer: "In an illustrative 20-hour light-use season, the fuel-cost delta is roughly $100 per year. In the 100-hour heavy-use scenario, it is roughly $480 per year. They're planning examples, not an average-use claim. The motor price delta of about $6,900 is more significant." },
       { question: "What's the right pontoon answer if I'm not sure between 115 and 150?", answer: "For some 18 to 20 ft pontoons, 60 CT is a comparison where that exact model and the boat's limits support it. 115 CT and 150 suit heavier loads or a larger, rated tritoon. Confirm the actual tube configuration of the hull, and check the rated limits rather than deciding by deck length." },
       { question: "Can I run a Mercury 150 on a boat rated up to 115 HP?", answer: "No. HBW will not rig above the boat manufacturer's maximum recommended horsepower. Doing so creates safety, compliance, insurance, financing, resale, liability, and potential warranty problems. If the plate says 115 HP maximum, the honest answer is 115 HP or lower." }
     ]
