@@ -147,7 +147,7 @@ Parks Canada lists a minimum overhead fixed bridge clearance of 20 feet (6.1 m).
 
 ---
 
-![Varnished wooden vintage runabout with a white outboard tied to a stone lock wall in front of weathered wooden gates](/lovable-uploads/inline/inline-trent-severn-lock-chamber.png)
+![White runabout with a Mercury 60 outboard waits in a stone lock chamber as a person in a lifejacket holds the lock cable](/lovable-uploads/blog-photos-2026-10/inline-trent-severn-lock-chamber-nb21.jpg)
 
 ## Fees Outside the Free Window
 

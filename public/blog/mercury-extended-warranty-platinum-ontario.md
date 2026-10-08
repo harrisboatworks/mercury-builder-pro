@@ -144,7 +144,7 @@ The actual Canadian Platinum contract controls what is covered or excluded. We v
 - Damage from accident, abuse, racing, or non-recreational use
 - Used motors imported from outside US/Canada
 
-![Mercury Product Protection warranty document with FourStroke outboard](/lovable-uploads/inline/inline-warranty-documents.png)
+![Wooden shop counter with a navy binder, an envelope, keys and a torque wrench, and a black Mercury outboard on a stand behind](/lovable-uploads/blog-photos-2026-10/inline-warranty-documents-nb21.jpg)
 
 ## Eligibility, When You Can Buy It
 

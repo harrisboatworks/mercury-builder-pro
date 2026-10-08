@@ -73,7 +73,7 @@ No limit does not mean maximum power. It means the load decides.
 
 Stay inside the boat's capacity plate, match the motor to what you actually carry, and remember that on a small lake you spend most of your time well below wide-open throttle.
 
-![Person fishing from an aluminum boat with a Mercury 9.9 FourStroke outboard at a cottage dock on an Ontario lake.](/lovable-uploads/Ontario_Small_Lakes_Cottage_Fishing.png)
+![Angler in a lifejacket fishes from a small aluminum boat near a red cottage at sunset, with a Mercury 9.9 tiller outboard](/lovable-uploads/blog-photos-2026-10/ontario-small-lakes-cottage-fishing-nb21.jpg)
 
 ### Our Small Lake Recommendations
 

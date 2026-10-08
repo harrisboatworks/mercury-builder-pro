@@ -104,7 +104,7 @@ The used-Mercury decision usually wins when at least two of these are true:
 
 Customers we steer toward used: occasional weekenders who do not log many hours, buyers replacing a tired motor on a boat they plan to flip in a few years, and people who genuinely enjoy the wrench-it-yourself side of boating.
 
-![New and used Mercury FourStroke powerheads side-by-side on a workshop bench](/lovable-uploads/inline/inline-new-vs-used-powerheads.png)
+![Two Mercury outboards on stands in a shop, a glossy new one beside an older faded one with a technician's hand on it](/lovable-uploads/blog-photos-2026-10/inline-new-vs-used-powerheads-nb21.jpg)
 
 ## What we do at Harris Boat Works
 
