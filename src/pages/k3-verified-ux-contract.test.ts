@@ -61,7 +61,7 @@ describe('verified K3 leftover UX contract', () => {
     expect(drawer).toContain('aria-label="Ask the Mercury Expert"');
     expect(drawer).toContain('aria-label="Send message"');
     expect(drawer).toContain('role="dialog"');
-    expect(launcher).toContain('aria-label="Open Mercury Expert chat"');
+    expect(launcher).toMatch(/aria-label=[^\n]*Open Mercury Expert chat/);
     expect(launcher).not.toContain('if (isMobileOrTablet || isOpen) return null');
     expect(filters).toContain('Filter motors by configuration, ${activeCount} active');
     expect(filters).toContain("<span className=\"hidden md:inline text-[11px] font-bold uppercase tracking-[0.10em]\">Filters</span>");

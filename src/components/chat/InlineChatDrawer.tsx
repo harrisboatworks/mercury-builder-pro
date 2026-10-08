@@ -985,8 +985,8 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
                     <p className="text-[9px] text-muted-foreground mb-1 uppercase tracking-wide">
                       {currentMotorLabel ? 'Quick Questions' : 'Suggested'}
                     </p>
-                    <div className="flex gap-1.5 overflow-x-auto scrollbar-hide -mx-1 px-1 pb-0.5">
-                      {smartPrompts.slice(0, 3).map((prompt, index) => (
+                    <div className={`flex gap-1.5 -mx-1 px-1 pb-0.5 ${location.pathname === '/' ? 'flex-wrap' : 'overflow-x-auto scrollbar-hide'}`}>
+                      {smartPrompts.slice(0, location.pathname === '/' ? 4 : 3).map((prompt, index) => (
                         <motion.button
                           key={`${prompt}-${index}`}
                           initial={{ opacity: 0, scale: 0.95 }}
