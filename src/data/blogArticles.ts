@@ -24099,11 +24099,11 @@ Mercury's color touchscreen displays, the hardwired version of what SmartCraft C
 
 | HP | Diameter | Pitch Range | Material |
 |---|---|---|---|
-| 40, 50 | 12, 13" | 11, 15" | Aluminum standard, stainless optional |
-| 60, 90 | 13, 14" | 13, 19" | Aluminum standard, stainless for performance |
-| 115 | 14" | 15, 21" | Stainless recommended for sport use |
-| 150 | 14, 15" | 17, 23" | Stainless standard |
-| 175, 225 | 14, 16" | 19, 25" | Stainless strongly recommended |
+| 40–50 | 12–13" | 11–15" | Aluminum standard, stainless optional |
+| 60–90 | 13–14" | 13–19" | Aluminum standard, stainless for performance |
+| 115 | 14" | 15–21" | Stainless recommended for sport use |
+| 150 | 14–15" | 17–23" | Stainless standard |
+| 175–225 | 14–16" | 19–25" | Stainless strongly recommended |
 
 These are starting points. Hull weight and intended use change the correct pitch. Wrong pitch: motor lugs (pitch too high) or revs out without making power (pitch too low). Both wear the motor faster than they should.
 
@@ -24195,7 +24195,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     faqs: [
       {
         question: 'How much does Mercury rigging cost in Ontario?',
-        answer: 'For a typical mid-range repower (60-115 HP), expect CAD $2,000-$4,000 in rigging on top of the motor price. For a V6 repower (150-225 HP), expect CAD $3,500-$7,500. The range covers controls, steering, gauges, wiring, and prop. See the matrix above for per-HP-class detail. Real all-in costs are at [mercury-outboard-rigging-costs-ontario](https://www.mercuryrepower.ca/blog/mercury-outboard-rigging-costs-ontario).',
+        answer: 'For a typical mid-range repower (60-115 HP), expect CAD $2,000-$4,000 in rigging on top of the motor price. For a 150 to 225 HP repower, expect CAD $3,500-$7,500. The range covers controls, steering, gauges, wiring, and prop. See the matrix above for per-HP-class detail. Real all-in costs are at [mercury-outboard-rigging-costs-ontario](https://www.mercuryrepower.ca/blog/mercury-outboard-rigging-costs-ontario).',
       },
       {
         question: 'Do I need DTS on a single-engine V6?',
