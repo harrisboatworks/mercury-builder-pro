@@ -8542,7 +8542,7 @@ A mouse that wintered in your boat can do more damage than a winter freeze. Chec
 
 ### Step 2, Battery and Electrical
 
-- **Reinstall battery** if you removed it for storage.
+- **Reconnect the battery** if it was disconnected for storage.
 - **Load test the battery.** A battery that drops below 10.5V under load is at end of life. Replace it now, not mid-July.
 - **Clean and tighten terminals.** Corrosion at the terminal is an invisible source of hard-starting and charging problems.
 - **Test electrical systems** with key on, engine off: bilge pump, lights, gauges, electronics, fish finder, VHF.
@@ -15915,7 +15915,7 @@ If the motor wasn't properly winterized last fall, some of the causes above are 
 - **Unstabilized fuel** in the system gummed up injectors or carburettor passages
 - **The wrong internal-protection procedure** can leave corrosion or fuel-system storage problems
 - **Cooling system water not fully drained**, if it froze, there may be physical damage
-- **Battery not tendered or removed**, compromised battery from winter discharge
+- **Battery left connected or not on a tender**, compromised battery from winter discharge
 
 If you're not sure the motor was properly winterized, tell the dealer. It's relevant to the diagnostic.
 
@@ -18363,7 +18363,7 @@ A reasonable annual routine for an Ontario sterndrive:
 ### Every fall (winterization, the non-negotiable one)
 - Stabilize fuel
 - Drain block, manifolds, risers, drives, every single petcock
-- Pull battery, store on tender
+- Disconnect the battery and leave it in the boat
 - Fog cylinders
 - Drain or refill drive with fresh gear lube
 - Cover or shrinkwrap

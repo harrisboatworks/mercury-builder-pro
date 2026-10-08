@@ -192,7 +192,7 @@ If the motor wasn't properly winterized last fall, some of the causes above are 
 - **Unstabilized fuel** in the system gummed up injectors or carburettor passages
 - **The wrong internal-protection procedure** can leave corrosion or fuel-system storage problems
 - **Cooling system water not fully drained**, if it froze, there may be physical damage
-- **Battery not tendered or removed**, compromised battery from winter discharge
+- **Battery left connected or not on a tender**, compromised battery from winter discharge
 
 If you're not sure the motor was properly winterized, tell the dealer. It's relevant to the diagnostic.
 

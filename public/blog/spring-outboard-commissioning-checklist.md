@@ -82,7 +82,7 @@ A mouse that wintered in your boat can do more damage than a winter freeze. Chec
 
 ### Step 2, Battery and Electrical
 
-- **Reinstall battery** if you removed it for storage.
+- **Reconnect the battery** if it was disconnected for storage.
 - **Load test the battery.** A battery that drops below 10.5V under load is at end of life. Replace it now, not mid-July.
 - **Clean and tighten terminals.** Corrosion at the terminal is an invisible source of hard-starting and charging problems.
 - **Test electrical systems** with key on, engine off: bilge pump, lights, gauges, electronics, fish finder, VHF.

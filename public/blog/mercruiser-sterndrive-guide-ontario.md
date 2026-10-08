@@ -161,7 +161,7 @@ A reasonable annual routine for an Ontario sterndrive:
 ### Every fall (winterization, the non-negotiable one)
 - Stabilize fuel
 - Drain block, manifolds, risers, drives, every single petcock
-- Pull battery, store on tender
+- Disconnect the battery and leave it in the boat
 - Fog cylinders
 - Drain or refill drive with fresh gear lube
 - Cover or shrinkwrap
