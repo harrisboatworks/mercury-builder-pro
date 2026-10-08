@@ -1257,7 +1257,9 @@ check(
 const dealerHeroCanon = [
   {
     slug: 'mercury-dealer-whitby-ontario-hbw',
-    image: '/lovable-uploads/blog-heroes-2026-07/batch-b/hero-best-mercury-pontoon-90ct-freshwater-2026-07.webp',
+    // Real HBW photo (Pro XS on a pallet outside the Gores Landing shop). Replaced the
+    // official Mercury pontoon photo in Oct 2026 because a third-party boat brand was visible.
+    image: '/lovable-uploads/hero-proxs-outside-hbw-shop.jpg',
   },
 ];
 for (const { slug, image } of dealerHeroCanon) {
