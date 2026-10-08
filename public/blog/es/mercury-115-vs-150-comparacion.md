@@ -77,7 +77,7 @@ Para cruzar aguas como la parte más ancha de Rice Lake, Lake Simcoe o Georgian 
 
 ### Consumo de combustible
 
-A la misma velocidad de crucero, el 150 consume algo más de combustible por hora que el 115 (cifras orientativas a unas 25 mph: unos 28–32 L/h frente a 25–28 L/h, según casco, carga y hélice), aunque gira a menos RPM. Si el 115 trabaja al 90% de su capacidad para llevar una carga que el 150 maneja al 60–70%, la diferencia de consumo se reduce, pero a igual velocidad de crucero el 150 sigue gastando algo más. Dicho esto, para uso ligero con poca gente, el 115 consumirá menos.
+A la misma velocidad de crucero, el 150 consume algo más de combustible por hora que el 115 (en pruebas de Mercury con un mismo casco de aluminio de 18.8 pies, a unas 25 mph: unos 18.6 L/h frente a 16 L/h; el casco, la carga y la hélice cambian la cifra), aunque gira a menos RPM. Si el 115 trabaja al 90% de su capacidad para llevar una carga que el 150 maneja al 60–70%, la diferencia de consumo se reduce, pero a igual velocidad de crucero el 150 sigue gastando algo más. Dicho esto, para uso ligero con poca gente, el 115 consumirá menos.
 
 ---
 
