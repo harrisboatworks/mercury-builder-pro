@@ -4071,7 +4071,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   {
     "slug": "mercury-150-hp-fourstroke-pro-xs-review-ontario",
     "title": "Mercury 150 HP Review: FourStroke vs Pro XS",
-    "description": "An honest Mercury 150 HP review for Ontario, comparing the current FourStroke and Pro XS with exact specs, freshwater tests and candid buyer advice.",
+    "description": "Mercury 150 Pro XS vs 150 FourStroke: same 3.0L inline-four, near-identical weight, different gearing and rpm range, and which one suits your Ontario boat.",
     "category": "Mercury Buying Guides",
     "publishDate": "2026-07-26",
     "keywords": [
