@@ -42,6 +42,24 @@ interface ActiveSession {
   creation: Promise<string | null>;
 }
 
+async function writeSessionUpdate(session: ActiveSession, id: string, updates: Record<string, unknown>) {
+  if (session.userId) {
+    try {
+      const { data: { user } } = await supabase.auth.getUser();
+      if (user?.id === session.userId) {
+        const { data, error } = await supabase.from('voice_sessions')
+          .update(updates).eq('id', id).select('id').single();
+        if (!error && data?.id === id) return { error: null };
+      }
+    } catch {
+      // Authentication can change during a call or between the check and write.
+    }
+  }
+  return supabase.functions.invoke('voice-sessions-proxy', {
+    body: { action: 'update', session_id: session.key, record_id: id, updates },
+  });
+}
+
 export function useVoiceSessionPersistence() {
   const [currentSessionId, setCurrentSessionId] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -202,11 +220,7 @@ export function useVoiceSessionPersistence() {
     try {
       const id = await session.creation;
       if (!id) return;
-      const { error } = session.userId
-        ? await supabase.from('voice_sessions').update(updates).eq('id', id)
-        : await supabase.functions.invoke('voice-sessions-proxy', {
-            body: { action: 'update', session_id: session.key, record_id: id, updates },
-          });
+      const { error } = await writeSessionUpdate(session, id, updates);
       if (error) console.warn('[VoiceSession] Could not save session completion');
     } catch {
       console.warn('[VoiceSession] Could not save session completion');
@@ -221,11 +235,7 @@ export function useVoiceSessionPersistence() {
     try {
       const id = await session.creation;
       if (!id || session.closing) return;
-      const { error } = session.userId
-        ? await supabase.from('voice_sessions').update({ motor_context: motorContext }).eq('id', id)
-        : await supabase.functions.invoke('voice-sessions-proxy', {
-            body: { action: 'update', session_id: session.key, record_id: id, updates: { motor_context: motorContext } },
-          });
+      const { error } = await writeSessionUpdate(session, id, { motor_context: motorContext });
       if (error) console.warn('[VoiceSession] Could not save motor context');
     } catch {
       console.warn('[VoiceSession] Could not save motor context');

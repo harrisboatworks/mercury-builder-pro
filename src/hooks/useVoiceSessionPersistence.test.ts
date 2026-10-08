@@ -102,7 +102,7 @@ describe('voice session persistence lifecycle', () => {
   it('keeps authenticated creation and completion under owner RLS', async () => {
     mock.getUser.mockResolvedValue({data: {user: {id: 'owner'}}});
     const insert = vi.fn().mockReturnValue({select: () => ({single: async () => ({data: {id}, error: null})})});
-    const eq = vi.fn().mockResolvedValue({error: null});
+    const eq = vi.fn().mockReturnValue({select: () => ({single: async () => ({data: {id}, error: null})})});
     const update = vi.fn().mockReturnValue({eq});
     mock.from.mockReturnValue({insert, update});
     const {result} = renderHook(() => useVoiceSessionPersistence());
@@ -111,5 +111,51 @@ describe('voice session persistence lifecycle', () => {
     expect(update.mock.calls[0][0].messages_exchanged).toBe(1);
     expect(eq).toHaveBeenCalledWith('id', id);
     expect(mock.invoke).not.toHaveBeenCalled();
+  });
+  it.each([null, {id: 'different-owner'}])('uses the captured session key after authentication changes to %j', async user => {
+    mock.getUser.mockResolvedValueOnce({data: {user: {id: 'owner'}}}).mockResolvedValue({data: {user}});
+    const insert = vi.fn().mockReturnValue({select: () => ({single: async () => ({data: {id}, error: null})})});
+    const update = vi.fn();
+    mock.from.mockReturnValue({insert, update});
+    const {result} = renderHook(() => useVoiceSessionPersistence());
+    await act(async () => {await result.current.startSession();});
+    const key = localStorage.getItem('voice_session_id');
+    await act(async () => {
+      await result.current.updateMotorContext({model: '90 ELPT', hp: 90});
+      result.current.incrementMessageCount();
+      await result.current.endSession();
+    });
+    expect(update).not.toHaveBeenCalled();
+    expect(mock.invoke).toHaveBeenCalledTimes(2);
+    expect(mock.invoke.mock.calls[0][1].body).toMatchObject({action: 'update', session_id: key, record_id: id,
+      updates: {motor_context: {model: '90 ELPT', hp: 90}}});
+    expect(mock.invoke.mock.calls[1][1].body).toMatchObject({action: 'update', session_id: key, record_id: id,
+      updates: {messages_exchanged: 1, end_reason: 'user_ended'}});
+  });
+  it.each([
+    {data: null, error: null},
+    {data: null, error: new Error('RLS rejected the changed identity')},
+  ])('retries an unconfirmed owner update through the session proxy', async response => {
+    mock.getUser.mockResolvedValue({data: {user: {id: 'owner'}}});
+    const insert = vi.fn().mockReturnValue({select: () => ({single: async () => ({data: {id}, error: null})})});
+    const update = vi.fn().mockReturnValue({eq: () => ({select: () => ({single: async () => response})})});
+    mock.from.mockReturnValue({insert, update});
+    const {result} = renderHook(() => useVoiceSessionPersistence());
+    await act(async () => {await result.current.startSession(); result.current.incrementMessageCount(); await result.current.endSession('error');});
+    expect(update).toHaveBeenCalledTimes(1);
+    expect(mock.invoke).toHaveBeenCalledTimes(1);
+    expect(mock.invoke.mock.calls[0][1].body).toMatchObject({action: 'update', record_id: id,
+      session_id: localStorage.getItem('voice_session_id'), updates: {messages_exchanged: 1, end_reason: 'error'}});
+  });
+  it('saves completion through the session proxy when the current authentication check fails', async () => {
+    mock.getUser.mockResolvedValueOnce({data: {user: {id: 'owner'}}}).mockRejectedValue(new Error('auth unavailable'));
+    const insert = vi.fn().mockReturnValue({select: () => ({single: async () => ({data: {id}, error: null})})});
+    const update = vi.fn();
+    mock.from.mockReturnValue({insert, update});
+    const {result} = renderHook(() => useVoiceSessionPersistence());
+    await act(async () => {await result.current.startSession(); await result.current.endSession();});
+    expect(update).not.toHaveBeenCalled();
+    expect(mock.invoke.mock.calls[0][1].body).toMatchObject({action: 'update', record_id: id, updates: {end_reason: 'user_ended'}});
+    expect(result.current.currentSessionId).toBeNull();
   });
 });
