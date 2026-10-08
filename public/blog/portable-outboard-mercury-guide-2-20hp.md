@@ -138,7 +138,7 @@ At HBW, we measure transom depth before recommending shaft length on any portabl
 
 ---
 
-![Portable Mercury FourStroke outboard on small aluminum boat at lake shore](/lovable-uploads/inline/inline-portable-mercury-dinghy.png)
+![Small aluminum boat on a pebble beach at sunset with a portable Mercury outboard tilted up, lifejackets and rods inside](/lovable-uploads/blog-photos-2026-10/inline-portable-mercury-dinghy-nb21.jpg)
 
 ## Storage and transport
 
