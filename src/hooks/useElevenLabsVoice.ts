@@ -1382,7 +1382,7 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
         }
       
       // Agent response received - mark as responded and clear watchdog
-      if (msg.type === 'agent_response') {
+      if (msg.type === 'agent_response' || (msg.source === 'ai' && typeof msg.message === 'string')) {
         console.log('%c🤖 Agent response received', 'color: #4CAF50; font-weight: bold;');
         markAgentResponded();
         voiceSession.incrementMessageCount();
