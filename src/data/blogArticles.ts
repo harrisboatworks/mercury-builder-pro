@@ -11108,7 +11108,7 @@ Honest version: the right month to buy is the month you actually need the boat o
     seoTitle: "Best Mercury Outboard for Family Runabouts (2026)",
     description: "A Mercury Premier dealer's straight answer on the right Mercury for a family runabout, by boat length, by use case.",
     image: '/lovable-uploads/blog-photos-2026-10/family-bowrider-mercury-fourstroke.jpg',
-    imageAlt: 'Family of four in lifejackets cruising a lake in a white and navy bowrider powered by a black Mercury FourStroke outboard',
+    imageAlt: 'Family of five in lifejackets cruising a lake in a white and navy bowrider powered by a black Mercury FourStroke outboard',
     author: 'Harris Boat Works',
     datePublished: '2026-05-06',
     dateModified: '2026-10-06',
