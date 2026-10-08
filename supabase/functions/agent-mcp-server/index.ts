@@ -35,6 +35,7 @@ import {
   PUBLIC_SITE_URL,
   resolvePublicSellingPrice,
   toPublicImageUrl,
+  publicAvailabilityLabel,
 } from "../_shared/public-motor-contract.ts";
 import {
   fetchActiveFinancing,
@@ -212,7 +213,7 @@ async function searchMotors(supabase: any, args: any) {
         shaftLength: m.shaft_code,
         sellingPrice: resolvePublicSellingPrice(m),
         currency: "CAD",
-        availability: m.availability || (m.in_stock ? "In Stock" : "Special Order"),
+        availability: publicAvailabilityLabel(m.availability, Boolean(m.in_stock)),
         imageUrl: toPublicImageUrl(m.hero_image_url || m.image_url),
         url: slug ? `${SITE_URL}/motors/${slug}` : null,
         quoteUrl: `${SITE_URL}/quote/motor-selection?motor=${m.id}`,
@@ -256,7 +257,7 @@ async function getMotor(supabase: any, args: any) {
     sellingPrice: resolvePublicSellingPrice(m),
     msrp: m.msrp,
     currency: "CAD",
-    availability: m.availability || (m.in_stock ? "In Stock" : "Special Order"),
+    availability: publicAvailabilityLabel(m.availability, Boolean(m.in_stock)),
     imageUrl: toPublicImageUrl(m.hero_image_url || m.image_url),
     description: m.description,
     features: m.features,

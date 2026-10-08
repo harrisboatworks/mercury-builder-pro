@@ -196,7 +196,7 @@ As of July 2026, every eligible new Mercury purchased through HBW comes with 7 y
 
 **Phone:** (905) 342-2153
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
-**Service:** [hbw.wiki/service](https://hbw.wiki/service)
+**Service:** [hbwservice.ca](https://hbwservice.ca)
 
 Family-owned since 1947. Mercury dealer since 1965.
 
@@ -323,7 +323,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     { question: 'Is the Mercury Verado relevant for Ontario inland boating?', answer: 'For most Ontario inland lakes (Rice Lake, Kawarthas, Lake Simcoe), no. Verado is engineered for offshore applications. For typical inland fishing and family boats, a FourStroke up to 300 HP handles the job.' },
     { question: 'What Mercury motors does Harris Boat Works stock for 2026?', answer: 'We stock and order the full FourStroke range, Pro XS performance motors, and SeaPro commercial motors. Verado is special-order only, and Avator electric outboards are build-to-order from the brochure rather than stocked on the floor.' },
     { question: 'What is the best Mercury outboard for trolling walleye on Rice Lake?', answer: 'A main motor in the 60 to 115 HP FourStroke range paired with a dedicated Mercury ProKicker 9.9 HP. The ProKicker is purpose-built for low-RPM trolling.' },
-    { question: 'How do I choose the right Mercury for my Ontario boat?', answer: 'Start with your hull capacity plate maximum HP. Then consider your primary use. For most Ontario fishing and family boats, the answer lands in the 60 to 115 HP FourStroke range.' },
+    { question: 'How do I choose the right Mercury for my Ontario boat?', answer: 'Start one Mercury model step below the maximum HP on your hull capacity plate. Max rated is overkill because it adds power and transom weight the boat may not perform well with. For most Ontario fishing and family boats, the answer lands in the 60 to 115 HP FourStroke range.' },
   ],
   },
   {
@@ -1127,7 +1127,7 @@ If you're not sure whether your boat is a push boat or a plane boat, send the hu
 
 **Phone:** 905-342-2153
 **Configurator:** [mercuryrepower.ca](https://mercuryrepower.ca)
-**Service:** [hbw.wiki/service](https://hbw.wiki/service)
+**Service:** [hbwservice.ca](https://hbwservice.ca)
 
 ## Sources
 
@@ -1226,7 +1226,7 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 **Phone:** 905-342-2153
-**Service requests:** [hbw.wiki/service](https://hbw.wiki/service)
+**Service requests:** [hbwservice.ca](https://hbwservice.ca)
 **Motor pricing:** [mercuryrepower.ca](https://www.mercuryrepower.ca)
 
 ---
@@ -1235,7 +1235,7 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 
 1. **Build your quote** at [mercuryrepower.ca](https://www.mercuryrepower.ca). Know the installed price before you leave Ajax.
 2. **Think about the service relationship.** At 45 minutes, commissioning and winterization here makes sense. Think through whether you want to build that into your routine.
-3. **Submit a service request** at [hbw.wiki/service](https://hbw.wiki/service) if service is the starting point.
+3. **Submit a service request** at [hbwservice.ca](https://hbwservice.ca) if service is the starting point.
 4. **Call or text us:** 905-342-2153. We'll make sure the right conversation is ready.
 
 ---
@@ -1252,7 +1252,7 @@ Yes. [mercuryrepower.ca](https://www.mercuryrepower.ca). Installed pricing. No p
 No. For engine repairs, we only service Mercury and MerCruiser. We can't help with Yamaha, Honda, or Suzuki service.
 
 **I have a service issue right now, what do I do?**
-Submit a request at [hbw.wiki/service](https://hbw.wiki/service). That's how 90% of our service intake works. Faster than calling, and it means the right person sees the details right away.
+Submit a request at [hbwservice.ca](https://hbwservice.ca). That's how 90% of our service intake works. Faster than calling, and it means the right person sees the details right away.
 
 **What if I'm not sure whether to repower or buy new?**
 Build a repower quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) and call us: 905-342-2153. We'll talk through the decision honestly, including cases where repowering doesn't make sense.
@@ -1266,7 +1266,7 @@ You see the price before you leave Ajax. The rigging gets discussed before we or
 About 45 minutes from Ajax. Straight pricing before you leave home.
 
 **Build your quote:** [mercuryrepower.ca](https://www.mercuryrepower.ca)
-**Request service:** [hbw.wiki/service](https://hbw.wiki/service)
+**Request service:** [hbwservice.ca](https://hbwservice.ca)
 **Call or text:** 905-342-2153
 **Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Premier dealer.
 
@@ -1375,7 +1375,7 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 **Phone:** 905-342-2153
-**Service requests:** [hbw.wiki/service](https://hbw.wiki/service)
+**Service requests:** [hbwservice.ca](https://hbwservice.ca)
 **Motor pricing:** [mercuryrepower.ca](https://www.mercuryrepower.ca)
 
 ---
@@ -1416,7 +1416,7 @@ You see the price before you make the drive. We have the rigging conversation be
 No fog machine. No runaround. Since 1947.
 
 **Build your quote:** [mercuryrepower.ca](https://www.mercuryrepower.ca)
-**Request service:** [hbw.wiki/service](https://hbw.wiki/service)
+**Request service:** [hbwservice.ca](https://hbwservice.ca)
 **Call or text:** 905-342-2153
 **Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Premier dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947.
 
@@ -1527,7 +1527,7 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 **Phone:** 905-342-2153
-**Service requests:** [hbw.wiki/service](https://hbw.wiki/service)
+**Service requests:** [hbwservice.ca](https://hbwservice.ca)
 **Motor pricing:** [mercuryrepower.ca](https://www.mercuryrepower.ca)
 
 ---
@@ -1568,7 +1568,7 @@ The price is at [mercuryrepower.ca](https://www.mercuryrepower.ca) before any co
 That's been true since 1947. It's still true.
 
 **Build your quote:** [mercuryrepower.ca](https://www.mercuryrepower.ca)
-**Request service:** [hbw.wiki/service](https://hbw.wiki/service)
+**Request service:** [hbwservice.ca](https://hbwservice.ca)
 **Call or text:** 905-342-2153
 **Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Premier dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947.
 
@@ -1663,7 +1663,7 @@ Approximate drive time: 25 minutes outside rush hour. From the Cobourg harbour o
 
 Address: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 Phone: 905-342-2153
-Service requests: hbw.wiki/service
+Service requests: hbwservice.ca
 Motor pricing: mercuryrepower.ca
 
 ## What HBW handles for Cobourg customers
@@ -1699,7 +1699,7 @@ The other thing we see specifically with Cobourg customers: many of them have al
 
 Build a starting quote at mercuryrepower.ca with current Canadian pricing. The written boat-specific quote controls the final scope and total.
 
-If you have a service issue, submit a request at hbw.wiki/service. That routes directly to the right tech.
+If you have a service issue, submit a request at hbwservice.ca. That routes directly to the right tech.
 
 For a motor purchase conversation, call: 905-342-2153.
 
@@ -1798,7 +1798,7 @@ Approximate drive time: 45 minutes outside peak summer traffic. From east Lindsa
 
 Address: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 Phone: 905-342-2153
-Service requests: hbw.wiki/service
+Service requests: hbwservice.ca
 Motor pricing: mercuryrepower.ca
 
 ## What HBW handles for Lindsay customers
@@ -1834,7 +1834,7 @@ The other observation: Lindsay-area cottagers often have older Mercury outboards
 
 Build your quote at mercuryrepower.ca. Real installed CAD pricing in three minutes.
 
-If you have a service issue, submit a request at hbw.wiki/service.
+If you have a service issue, submit a request at hbwservice.ca.
 
 For a motor purchase or repower conversation, call: 905-342-2153.
 
@@ -1958,7 +1958,7 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0  
 **Phone:** 905-342-2153  
-**Service requests:** [hbw.wiki/service](https://hbw.wiki/service)  
+**Service requests:** [hbwservice.ca](https://hbwservice.ca)  
 **Motor pricing:** [mercuryrepower.ca](https://www.mercuryrepower.ca)  
 
 ---
@@ -1983,7 +1983,7 @@ Markham has one of the largest Chinese-Canadian communities in the country, and 
 ## Frequently Asked Questions, Markham
 
 **Do you need to make an appointment to come in?**
-For service and repowers, yes, submit a request at [hbw.wiki/service](https://hbw.wiki/service) before showing up. For a motor purchase conversation, call ahead so we know you're coming and we can give you the full attention the trip deserves.
+For service and repowers, yes, submit a request at [hbwservice.ca](https://hbwservice.ca) before showing up. For a motor purchase conversation, call ahead so we know you're coming and we can give you the full attention the trip deserves.
 
 **Can I get a price without calling?**
 Yes. That's the whole point of the quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca). Real installed pricing, no phone call required.
@@ -2011,7 +2011,7 @@ You see the installed price. We talk through the rigging. We do the job properly
 That's the model. It still works.
 
 **Build your quote:** [mercuryrepower.ca](https://www.mercuryrepower.ca)  
-**Request service:** [hbw.wiki/service](https://hbw.wiki/service)  
+**Request service:** [hbwservice.ca](https://hbwservice.ca)  
 **Call or text:** 905-342-2153  
 **Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Premier dealer.
 
@@ -2126,7 +2126,7 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0  
 **Phone:** 905-342-2153  
-**Service requests:** [hbw.wiki/service](https://hbw.wiki/service)  
+**Service requests:** [hbwservice.ca](https://hbwservice.ca)  
 **Motor pricing:** [mercuryrepower.ca](https://www.mercuryrepower.ca)  
 
 ---
@@ -2176,7 +2176,7 @@ We're going to rig the motor the right way, not the fast way.
 That's the deal.
 
 **Build your quote:** [mercuryrepower.ca](https://www.mercuryrepower.ca)  
-**Request service:** [hbw.wiki/service](https://hbw.wiki/service)  
+**Request service:** [hbwservice.ca](https://hbwservice.ca)  
 **Call or text:** 905-342-2153  
 **Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Premier dealer.
 
@@ -2307,7 +2307,7 @@ For repower decisions specifically, the most common Northumberland scenario we s
 
 Build your quote at mercuryrepower.ca. Real installed CAD pricing. For [Mercury pricing without a quote](/pricing-reference), see our published price list.
 
-If you have a service issue, submit a request at hbw.wiki/service.
+If you have a service issue, submit a request at hbwservice.ca.
 
 For a motor purchase or [repower conversation](/blog/mercury-repower-cost-ontario-2026-cad), call: 905-342-2153.
 
@@ -2427,7 +2427,7 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 **Phone:** 905-342-2153
-**Service requests:** [hbw.wiki/service](https://hbw.wiki/service)
+**Service requests:** [hbwservice.ca](https://hbwservice.ca)
 **Motor pricing:** [mercuryrepower.ca](https://www.mercuryrepower.ca)
 
 ---
@@ -2470,7 +2470,7 @@ You see the installed price before you commit to anything, including the drive. 
 That's the deal.
 
 **Build your quote:** [mercuryrepower.ca](https://www.mercuryrepower.ca)
-**Request service:** [hbw.wiki/service](https://hbw.wiki/service)
+**Request service:** [hbwservice.ca](https://hbwservice.ca)
 **Call or text:** 905-342-2153
 **Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Premier dealer.
 
@@ -2585,7 +2585,7 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 **Phone:** 905-342-2153
-**Service requests:** [hbw.wiki/service](https://hbw.wiki/service)
+**Service requests:** [hbwservice.ca](https://hbwservice.ca)
 **Motor pricing:** [mercuryrepower.ca](https://www.mercuryrepower.ca)
 
 ---
@@ -2594,7 +2594,7 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 
 1. **Build your quote** at [mercuryrepower.ca](https://www.mercuryrepower.ca). Know the real installed price, it takes three minutes.
 2. **Think about the full service relationship.** At 40 minutes, you're close enough for commissioning, mid-season service, and winterization to all happen here. That simplifies your life.
-3. **Submit service requests** at [hbw.wiki/service](https://hbw.wiki/service), faster than calling, right format, routes to the right person.
+3. **Submit service requests** at [hbwservice.ca](https://hbwservice.ca), faster than calling, right format, routes to the right person.
 4. **Call or text:** 905-342-2153 for questions about a specific job or purchase.
 
 ---
@@ -2611,7 +2611,7 @@ Yes. [mercuryrepower.ca](https://www.mercuryrepower.ca). Installed pricing. Thre
 No. For engine repairs, we only service Mercury and MerCruiser. Yamaha, Honda, and Suzuki are outside our scope.
 
 **I want to winterize and store my boat here, how do I get started?**
-Complete the [service request](https://hbw.wiki/service), then drop the boat off anytime you want, including after hours. HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service; we do not offer indoor or heated boat storage.
+Complete the [service request](https://hbwservice.ca), then drop the boat off anytime you want, including after hours. HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service; we do not offer indoor or heated boat storage.
 
 **What if I'm in a hurry and need a part quickly?**
 Parts can be ordered through [marinecatalogue.ca](https://www.marinecatalogue.ca) or by calling us at 905-342-2153. If you need something urgently, call, we'll tell you what we have in stock and what the timeline looks like.
@@ -2628,7 +2628,7 @@ You're 40 minutes away. The price is already online. The rigging conversation ha
 You're practically in our neighbourhood. Let's work together.
 
 **Build your quote:** [mercuryrepower.ca](https://www.mercuryrepower.ca)
-**Request service:** [hbw.wiki/service](https://hbw.wiki/service)
+**Request service:** [hbwservice.ca](https://hbwservice.ca)
 **Call or text:** 905-342-2153
 **Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Premier dealer.
 
@@ -2717,7 +2717,7 @@ Approximate drive time: 35 minutes outside rush hour. From east Peterborough (ar
 
 Address: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 Phone: 905-342-2153
-Service requests: hbw.wiki/service
+Service requests: hbwservice.ca
 Motor pricing: mercuryrepower.ca
 
 ## What HBW handles for Peterborough customers
@@ -2753,7 +2753,7 @@ For Peterborough customers, continuity can be useful: the installing dealer can 
 
 Build your quote at mercuryrepower.ca first. Takes about three minutes. You'll see real installed pricing for the motor and rigging options you're considering.
 
-If you have a specific service issue, submit a request at hbw.wiki/service. That's how 90% of our service intake starts, faster than a phone call, and it routes directly to the right person.
+If you have a specific service issue, submit a request at hbwservice.ca. That's how 90% of our service intake starts, faster than a phone call, and it routes directly to the right person.
 
 For a motor purchase conversation, call ahead: 905-342-2153. We'll have someone ready when you arrive.
 
@@ -2868,7 +2868,7 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 **Phone:** 905-342-2153
-**Service requests:** [hbw.wiki/service](https://hbw.wiki/service)
+**Service requests:** [hbwservice.ca](https://hbwservice.ca)
 **Motor pricing:** [mercuryrepower.ca](https://www.mercuryrepower.ca)
 
 ---
@@ -2908,7 +2908,7 @@ Transparent pricing before you leave Pickering. The rigging conversation before 
 50 minutes. Worth it.
 
 **Build your quote:** [mercuryrepower.ca](https://www.mercuryrepower.ca)
-**Request service:** [hbw.wiki/service](https://hbw.wiki/service)
+**Request service:** [hbwservice.ca](https://hbwservice.ca)
 **Call or text:** 905-342-2153
 **Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Premier dealer.
 
@@ -3005,7 +3005,7 @@ Approximate drive time: 30 minutes outside rush hour. From the Port Hope waterfr
 
 Address: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 Phone: 905-342-2153
-Service requests: hbw.wiki/service
+Service requests: hbwservice.ca
 Motor pricing: mercuryrepower.ca
 
 ## What HBW handles for Port Hope customers
@@ -3041,7 +3041,7 @@ The other thing we see consistently: the Mercury 9.9 ProKicker installs are disp
 
 Build your quote at mercuryrepower.ca. Real installed CAD pricing in three minutes. For [real Mercury prices in Canadian dollars](/pricing-reference) on every model, see our published price list.
 
-If you have a service issue, submit a request at hbw.wiki/service.
+If you have a service issue, submit a request at hbwservice.ca.
 
 For a motor purchase conversation, call: 905-342-2153.
 
@@ -3165,7 +3165,7 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0  
 **Phone:** 905-342-2153  
-**Service requests:** [hbw.wiki/service](https://hbw.wiki/service)  
+**Service requests:** [hbwservice.ca](https://hbwservice.ca)  
 **Motor pricing:** [mercuryrepower.ca](https://www.mercuryrepower.ca)  
 
 ---
@@ -3196,7 +3196,7 @@ No. For engine repairs, we only service Mercury and MerCruiser. We won't touch a
 Full installation: motor, rigging, controls, throttle and shift cables, prop selection, lake test. We don't just bolt a motor on and call it done.
 
 **Can I store my boat with you even if I'm buying the motor elsewhere?**
-Storage is available for existing HBW service customers. If you're a first-time customer, start with a service request at [hbw.wiki/service](https://hbw.wiki/service) so we can understand what you need.
+Storage is available for existing HBW service customers. If you're a first-time customer, start with a service request at [hbwservice.ca](https://hbwservice.ca) so we can understand what you need.
 
 **What if the closer dealers have the same motor in stock?**
 Genuine answer: if a local dealer has it in stock, is a Premier dealer, and will give you an honest installed price, go there. We're not going to tell you we're worth driving 75 minutes to when the answer is genuinely that straightforward. Call us if you're not sure.
@@ -3210,7 +3210,7 @@ Straight pricing. Proper rigging conversation. No fog machine.
 You see the number before you leave Richmond Hill. You come up when you're decided. We do the job right. You get back on the water knowing the motor was installed the way Mercury intended it to be installed.
 
 **Build your quote:** [mercuryrepower.ca](https://www.mercuryrepower.ca)  
-**Request service:** [hbw.wiki/service](https://hbw.wiki/service)  
+**Request service:** [hbwservice.ca](https://hbwservice.ca)  
 **Call or text:** 905-342-2153  
 **Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Premier dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947.
 
@@ -3319,7 +3319,7 @@ You can build a live CAD quote for your repower online at [Mercury Repower Centr
 
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0  
 **Phone:** 905-342-2153  
-**Service requests:** [hbw.wiki/service](https://hbw.wiki/service)  
+**Service requests:** [hbwservice.ca](https://hbwservice.ca)  
 **Motor pricing:** [mercuryrepower.ca](https://www.mercuryrepower.ca)  
 
 ---
@@ -3359,7 +3359,7 @@ Price is on the site. Rigging conversation happens before we order. Job gets don
 That's the deal.
 
 **Build your quote:** [mercuryrepower.ca](https://www.mercuryrepower.ca)  
-**Request service:** [hbw.wiki/service](https://hbw.wiki/service)  
+**Request service:** [hbwservice.ca](https://hbwservice.ca)  
 **Call or text:** 905-342-2153  
 **Harris Boat Works**, Gores Landing on Rice Lake. Mercury Marine Premier dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947.
 
@@ -3409,7 +3409,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 A Mercury that ran fine in October and won't start in May didn't randomly break. Something changed over the off-season. In Ontario, the most common causes are: battery discharge and sulfation from cold [winter storage](/blog/outdoor-boat-storage-shrinkwrap-rice-lake), stale or contaminated fuel, corroded electrical connections, and fuel system issues from sitting. Start with the battery, then fuel, those two causes account for the majority of spring no-starts. The safety lanyard check comes first because it's fastest.
 
-For engine repairs, we only service Mercury and MerCruiser. Book at [hbw.wiki/service](https://hbw.wiki/service).
+For engine repairs, we only service Mercury and MerCruiser. Book at [hbwservice.ca](https://hbwservice.ca).
 
 ---
 
@@ -3433,7 +3433,7 @@ step5Label: Engine cutoff and spark
 step5Question: Is the lanyard attached, and does the engine crank without firing?
 step5Tip: Cranking but no fire usually points to spark or fuel delivery. Pull a plug to check spark, confirm fuel reaches the rail. If both are present and it still will not fire, that is our cue to step in.
 escalationLabel: Tried everything?
-escalationBody: After storage, the most common no-start fixes we see are carb cleaning, fuel system flush, and battery replacement, all priced at our current published rates. Book at hbw.wiki/service.
+escalationBody: After storage, the most common no-start fixes we see are carb cleaning, fuel system flush, and battery replacement, all priced at our current published rates. Book at hbwservice.ca.
 ::
 
 ---
@@ -3546,7 +3546,7 @@ DIY troubleshooting makes sense when you can identify and fix the problem. It st
 
 For engine repairs, we only service Mercury and MerCruiser.
 
-Book at [hbw.wiki/service](https://hbw.wiki/service). Our shop handles a consistent volume of spring diagnostic work every May, the sooner you book, the sooner you're on the water.
+Book at [hbwservice.ca](https://hbwservice.ca). Our shop handles a consistent volume of spring diagnostic work every May, the sooner you book, the sooner you're on the water.
 
 ---
 
@@ -3580,7 +3580,7 @@ Often yes, the motor started on fuel already in the system but couldn't maintain
 ## CTA
 
 **Can't find the problem?** 
-Book a spring diagnostic at [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Gores Landing, Mercury Premier dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947. For engine repairs, we only service Mercury and MerCruiser.
+Book a spring diagnostic at [hbwservice.ca](https://hbwservice.ca). Harris Boat Works, Gores Landing, Mercury Premier dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947. For engine repairs, we only service Mercury and MerCruiser.
 
 Phone: 905-342-2153
 
@@ -3599,7 +3599,7 @@ Phone: 905-342-2153
     image: '/lovable-uploads/pontoon-family-rice-lake-hero.png',
     author: 'Jay Harris',
     datePublished: "2026-05-16",
-    dateModified: '2026-08-02',
+    dateModified: '2026-10-04',
     publishDate: "2026-05-16",
     category: "Boating Lifestyle",
     readTime: '12 min read',
@@ -3609,6 +3609,8 @@ Phone: 905-342-2153
 *Last reviewed: 2026-08-02*
 
 > **Quick answer:** A Toronto-to-Rice Lake rental day trip works: plan roughly 1 hour 45 minutes from central Toronto in light traffic to Harris Boat Works in Gores Landing, and allow more time during GTA or summer-weekend traffic. Check the live listings, rates, and availability at harrisboatworks.ca/rentals before planning the rest of the day.
+
+Need your PCOC? Take the online course through [HBW's MyBoatCard referral link](https://myboatcard.com/card/harrisboat) and use **HARRIS15** for **15% off**.
 
 You're in Toronto, you don't own a boat, but you'd like to have one for a day. Harris Boat Works operates a current online rental lineup from its Gores Landing dock on Rice Lake. HBW has served boaters here since 1947; current rentals and their availability are listed online.
 

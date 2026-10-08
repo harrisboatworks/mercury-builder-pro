@@ -1,5 +1,3 @@
-import * as ZStreamModule from '../../../node_modules/pako/lib/zlib/zstream.js';
-
-const ZStream = (ZStreamModule as { default?: unknown }).default || ZStreamModule;
+import { ZStream } from 'pako';
 
 export default ZStream;

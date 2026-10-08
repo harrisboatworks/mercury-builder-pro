@@ -75,6 +75,23 @@ export default function MercuryLineupLanding({ config }: { config: LandingConfig
                 </a>
               </Button>
             </div>
+
+            {/* Cluster links: up to the full price list, forward to the quote
+                builder. Kept directly under the hero CTAs so both are above the
+                fold on a phone. */}
+            <p className="mt-4 flex flex-col sm:flex-row sm:gap-6 gap-2 text-sm font-medium">
+              <Link to="/pricing-reference" className="text-primary underline underline-offset-4">
+                All Mercury outboard prices &rarr;
+              </Link>
+              <Link
+                to="/quote/motor-selection"
+                data-cta="quote-start"
+                data-cta-location="mercury_family_hero_links"
+                className="text-primary underline underline-offset-4"
+              >
+                Build the installed quote &rarr;
+              </Link>
+            </p>
           </div>
           <div className="rounded-2xl overflow-hidden border border-border bg-card">
             <img

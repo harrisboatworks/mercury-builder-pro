@@ -35,7 +35,7 @@ GOLD, INK, MUTED = HexColor("#E6B43C"), HexColor("#152536"), HexColor("#526273")
 PALE, LINE, WHITE = HexColor("#F2F6F9"), HexColor("#CFD9E2"), white
 MANUAL_URL = "https://www.mercurymarine.com/ca/en/service-and-support/owners-resources"
 CAPACITY_URL = "https://www.mercuryrepower.ca/blog/mercury-outboard-oil-capacity-chart"
-SERVICE_URL = "https://hbw.wiki/service"
+SERVICE_URL = "https://hbwservice.ca"
 
 
 def setup_fonts():
@@ -276,7 +276,7 @@ def page_two(c, root):
     c.setFillColor(NAVY)
     c.setFont("HBW-Bold", 10.5)
     c.drawString(43, 133, "Need local Mercury service?")
-    body = "If the boat can come to Harris Boat Works in Gores Landing, submit the serial number, current hours and symptoms at hbw.wiki/service."
+    body = "If the boat can come to Harris Boat Works in Gores Landing, submit the serial number, current hours and symptoms at hbwservice.ca."
     text_lines(c, wrap(body, 357, size=8.2), 43, 116, size=8.2, leading=10)
     c.setFillColor(MUTED)
     c.setFont("HBW-Italic", 7.3)
@@ -287,7 +287,7 @@ def page_two(c, root):
     c.setFont("HBW-Bold", 9.2)
     c.drawCentredString(501.5, 108, "START A SERVICE REQUEST")
     c.setFont("HBW", 8.2)
-    c.drawCentredString(501.5, 92, "hbw.wiki/service")
+    c.drawCentredString(501.5, 92, "hbwservice.ca")
     c.linkURL(SERVICE_URL, (435, 81, 568, 126), relative=0)
     footer(c, 2)
     c.showPage()

@@ -332,7 +332,7 @@ export const HARRIS_PARTNERS = {
     description: "Apply for motor financing online - get pre-approved or complete after selecting a motor"
   },
   service_request: {
-    url: "http://hbw.wiki/service",
+    url: "https://hbwservice.ca",
     description: "Start a service request online for motor repairs and maintenance"
   },
   marine_catalogue: {

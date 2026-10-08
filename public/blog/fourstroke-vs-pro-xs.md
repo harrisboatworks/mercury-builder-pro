@@ -138,7 +138,7 @@ You can [build a repower quote yourself in a few minutes](/blog/mercury-repower-
 **Phone:** 905-342-2153
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 **Configurator:** [mercuryrepower.ca](https://mercuryrepower.ca)
-**Service:** [hbw.wiki/service](https://hbw.wiki/service)
+**Service:** [hbwservice.ca](https://hbwservice.ca)
 
 ## Sources
 
@@ -166,7 +166,7 @@ In the right boat, yes. Pro XS spins a couple hundred more RPM at the top and us
 
 ### Do the three families have different warranties?
 
-They all carry Mercury Canada's standard limited warranty (coverage plus corrosion protection running concurrently, not stacked). We almost always have an extended-coverage promotion running on new outboards. Ask us for the current terms before you assume. Call 905-342-2153 or see our Mercury warranty guide.
+They all carry Mercury Canada's standard limited warranty (coverage plus corrosion protection running concurrently, not stacked). Extended-coverage promotions come and go, so check [current promotions](/promotions) before you assume one applies. Call 905-342-2153 or see our Mercury warranty guide.
 
 ### Can I repower my boat with a Verado?
 

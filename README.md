@@ -10,7 +10,7 @@ Mercury Repower is Harris Boat Works' public Mercury outboard catalogue and quot
 
 ## Local setup
 
-Use Node 22, as declared in `engines.node`.
+Use Node 22.22.2 or newer on the 22 line, as declared in `engines.node`.
 
 ```sh
 npm ci --ignore-scripts
@@ -55,6 +55,8 @@ npx vitest run path/to/file.test.ts
 ## Generated artifacts
 
 Do not hand-edit files marked as generated. Change the owning source or generator, run the relevant `generate:*`, `rewrite:agent-urls`, or other named generator script from `package.json`, and review the resulting diff before committing it.
+
+For PCOC blog referrals, run `npm run reconcile:blog-pcoc-referrals` after editing or importing copy, then regenerate the blog index and Markdown twins. This incremental generator preserves the current article blocks, including corrections since the one-shot Wave 1 import. It adds the localized MyBoatCard referral paragraph and repairs the verified stale Transport Canada destinations; the Wave 1 importer also runs it. Edit the referral and URL rules in `scripts/reconcile-blog-pcoc-referrals.mjs`, rather than hand-editing its generated offer paragraphs. `npm run check:blog-pcoc-referrals` checks every language, scheduled/pilot articles and the archive; prebuild and Blog content integrity CI reject an operator-card reference without a clickable HBW referral, HARRIS15 and 15% in the same visible paragraph. Working official citations remain separate. The offer was verified on [HBW's rental page](https://www.harrisboatworks.ca/rentals) on October 4, 2026; provider pricing and checkout acceptance are outside this editorial check.
 
 ## Environment and secrets
 

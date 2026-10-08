@@ -32,7 +32,7 @@ function pickCTA(category = '', slug = ''): CTAConfig | null {
       title: 'Need an In-Shop Diagnosis?',
       description:
         "HBW diagnoses faults at our Gores Landing shop. If you can bring the boat to us, include the code, engine serial number, hours, and a photo of the display with your service request. We don't diagnose faults remotely.",
-      href: 'https://hbw.wiki/service',
+      href: 'https://hbwservice.ca',
       external: true,
       buttonLabel: 'Request Service in Gores Landing',
     };
@@ -55,7 +55,7 @@ function pickCTA(category = '', slug = ''): CTAConfig | null {
     return {
       title: 'Request Service',
       description: 'Submit the boat, motor, symptoms, and photos before bringing it to our Gores Landing shop.',
-      href: 'https://hbw.wiki/service',
+      href: 'https://hbwservice.ca',
       external: true,
       buttonLabel: 'Request Service in Gores Landing',
     };

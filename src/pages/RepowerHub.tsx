@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { Award, Users, MapPin, Wrench } from 'lucide-react';
 import { HubPage } from '@/components/hub/HubPage';
 import { BlogInlineCTA } from '@/components/blog/BlogInlineCTA';
+import seoPageMetadata from '@/data/seoPageMetadata.json';
 
 
 
@@ -55,7 +56,7 @@ const DIRECTORY: DirGroup[] = [
     heading: 'Rigging, Controls & Fit',
     cards: [
       { title: 'Mercury DTS vs Mechanical Controls', description: 'When digital throttle and shift is worth the rigging cost.', to: '/blog/mercury-dts-vs-mechanical-controls-ontario-repower' },
-      { title: 'Horsepower & Capacity Plate Guide', description: 'Use the hull manufacturer\'s maximum recommended safe power, then match the motor to the actual boat.', to: '/blog/repower-horsepower-capacity-plate-guide' },
+      { title: 'Horsepower & Capacity Plate Guide', description: 'Start one Mercury model below the hull\'s maximum rated HP, then confirm the motor against the actual boat.', to: '/blog/repower-horsepower-capacity-plate-guide' },
       { title: 'Pontoon vs Aluminum vs V-Hull Repower Differences', description: 'How hull type changes HP, gearcase, and rigging choices.', to: '/blog/repower-pontoon-aluminum-v-hull-differences' },
     ],
   },
@@ -93,18 +94,28 @@ export default function RepowerHub() {
   return (
     <HubPage
       path="/repower"
-      metaTitle="Boat Repower in Ontario | Mercury Outboard Repowering | Harris Boat Works"
-      metaDescription="Mercury repower in Ontario: real Canadian pricing, a clear process, and a live quote in about two minutes. Mercury Premier dealer, Rice Lake since 1947."
+      metaTitle={seoPageMetadata.repowerHub.title}
+      metaDescription={seoPageMetadata.repowerHub.description}
       breadcrumbName="Boat Repower Guide"
       lastReviewedISO="2026-06-12"
       lastReviewedLabel="June 2026"
-      h1="Boat Repower in Ontario. Mercury Outboard Repowering by Harris Boat Works."
+      h1={seoPageMetadata.repowerHub.h1}
       subhead="Real Canadian pricing, a clear process, and a live quote in about two minutes. Mercury Premier dealer, Rice Lake since 1947."
       primaryCTA={{ label: 'Build Your Quote', to: '/quote/motor-selection' }}
       phoneNumber="(905) 342-2153"
 
       directAnswer={
         <>
+          <p className="mb-4">
+            <Link
+              to="/quote/motor-selection"
+              data-cta="quote-start"
+              data-cta-location="repower_hub_direct_answer"
+              className="font-semibold text-repower-gold underline-offset-4 hover:underline"
+            >
+              Ready for numbers? Build your itemized CAD quote &rarr;
+            </Link>
+          </p>
           <p className="mb-4">
             Harris Boat Works is a <strong>Mercury Marine Premier dealer</strong> and Legend Boats dealer on Rice Lake in Gores Landing, Ontario. Family-owned since 1947, Mercury dealer since 1965, with a full-service shop for outboard repair, repower and winterization. Bring your boat to Gores Landing and we will get you back on the water with a new Mercury outboard.
           </p>

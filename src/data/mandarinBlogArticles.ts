@@ -20,6 +20,7 @@ const allMandarinBlogArticles: BlogArticle[] = [
     seoTitle: 'GTA 华人船主冬储完整指南 (2026)',
     description: '多伦多到莱斯湖：Harris Boat Works 室外专业收缩膜、室外无遮盖和仅收缩膜冬储服务详解。送船时间、价格区间、冬储期间运作、春季返还流程。HBW 不提供室内或加热存储。我们通常可以安排取船。船坞 12 月 1 日至 4 月 1 日停业。',
     image: '/lovable-uploads/hero-gta-chinese-winter-storage.png',
+    imageAlt: '积雪院子里成排的收缩膜包裹船只，有 pontoon 和支架上的小艇，背后是光秃的树和金属建筑',
     author: 'Jay Harris',
     datePublished: '2026-05-16',
     dateModified: '2026-09-06',
@@ -27,7 +28,7 @@ const allMandarinBlogArticles: BlogArticle[] = [
     category: 'mandarin',
     readTime: '8 分钟',
     keywords: ['冬储', '莱斯湖', 'GTA 华人', '收缩膜', 'Mercury', 'Harris Boat Works'],
-    content: `> **简短答案：** HBW 提供室外专业收缩膜存储、室外无遮盖存储，以及仅收缩膜服务。不提供室内或加热存储。先完成 [hbw.wiki/service](https://hbw.wiki/service)，然后随时送船，包括下班后。我们通常可以安排取船。请向我们确认您的船和地点是否可安排。HBW 不提供送船服务、不邮寄发动机、不上门/码头服务，也不推荐运输商或报价第三方运输。船厂 12 月 1 日至 4 月 1 日关闭。
+    content: `> **简短答案：** HBW 提供室外专业收缩膜存储、室外无遮盖存储，以及仅收缩膜服务。不提供室内或加热存储。先完成 [hbwservice.ca](https://hbwservice.ca)，然后随时送船，包括下班后。我们通常可以安排取船。请向我们确认您的船和地点是否可安排。HBW 不提供送船服务、不邮寄发动机、不上门/码头服务，也不推荐运输商或报价第三方运输。船厂 12 月 1 日至 4 月 1 日关闭。
 
 ## 先确认 HBW 是否适合您的船
 
@@ -50,11 +51,11 @@ HBW 适合需要室外专业收缩膜、室外无遮盖或仅收缩膜冬储，�
 
 ## 从服务请求到送船
 
-先完成 [hbw.wiki/service](https://hbw.wiki/service)，然后随时送船，包括下班后。
+先完成 [hbwservice.ca](https://hbwservice.ca)，然后随时送船，包括下班后。
 
 正常流程很简单：
 
-1. 提交 [HBW 服务请求](https://hbw.wiki/service)。
+1. 提交 [HBW 服务请求](https://hbwservice.ca)。
 2. 提供船的年份、品牌、型号、长度，发动机型号和序列号，拖车情况，以及希望完成的工作。
 3. 等 HBW 确认接受范围和书面报价。
 4. 随时把船送到 Gores Landing（包括下班后），或询问取船安排，并在关闭前取走需要的个人物品。
@@ -109,14 +110,21 @@ HBW 的 Lightspeed 记录显示，有 **2025 年 8 月至 11 月完成的 584 �
 
 ## 下一步
 
-先完成 [hbw.wiki/service](https://hbw.wiki/service)，然后随时送船，包括下班后。 提交船、发动机、拖车和所需工作的完整资料。HBW 会确认接受范围和当前书面报价。
+先完成 [hbwservice.ca](https://hbwservice.ca)，然后随时送船，包括下班后。 提交船、发动机、拖车和所需工作的完整资料。HBW 会确认接受范围和当前书面报价。
 
 **地址：** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
+
+## 相关指南
+
+- [安省船主冬化与室外冬储清单：什么时候送、要做什么](/blog/zh/ontario-boat-winterization-guide-chinese)
+- [安省华人船主春季开船检查清单](/blog/zh/ontario-spring-boat-checklist-chinese)
+- [多伦多华人 Mercury 发动机维修保养完整指南：从机油到大修](/blog/zh/gta-chinese-mercury-service-guide)
+- [安省华人养船成本指南](/blog/zh/boat-ownership-cost-ontario-chinese)
 `,
     faqs: [
       { question: 'HBW 提供室内冬储吗？', answer: '不提供。HBW 提供室外专业收缩膜存储、室外无遮盖存储，以及仅收缩膜服务。不提供室内或加热存储。 也不提供恒温、全年或夏季存储。' },
-      { question: '如何开始冬储流程？', answer: '先完成 hbw.wiki/service，然后随时送船，包括下班后。' },
-      { question: '秋季最晚什么时候送船？', answer: '先完成 hbw.wiki/service，然后随时送船，包括下班后。 实体船厂 12 月 1 日至 4 月 1 日关闭。' },
+      { question: '如何开始冬储流程？', answer: '先完成 hbwservice.ca，然后随时送船，包括下班后。' },
+      { question: '秋季最晚什么时候送船？', answer: '先完成 hbwservice.ca，然后随时送船，包括下班后。 实体船厂 12 月 1 日至 4 月 1 日关闭。' },
       { question: 'HBW 可以从 GTA 取船或送船吗？', answer: '我们通常可以安排取船。请向我们确认您的船和地点是否可安排。 HBW 不提供送船服务、不邮寄发动机、不上门/码头服务，也不推荐运输商或报价第三方运输。' },
       { question: '冬储价格是多少？', answer: '请查看 [HBW 当前 2026–27 冬储价格表](https://www.harrisboatworks.ca/winter-storage)。船只专属书面报价取决于船长、船型、发动机、拖车、船上系统，以及批准的冬化、收缩膜、存储和维修范围。' },
       { question: '关闭期间可以取船或做维修吗？', answer: '不可以。实体船厂 12 月 1 日至 4 月 1 日关闭，期间没有现场服务、维修、安装、检查、客户进入或取船。' },
@@ -129,9 +137,10 @@ HBW 的 Lightspeed 记录显示，有 **2025 年 8 月至 11 月完成的 584 �
     title: 'Rice Lake 钓鱼指南（2026）：FMZ 17 鱼种、鱼牌与出发清单',
     description: '从 GTA 到 Rice Lake 钓鱼前要知道的 2026 指南：FMZ 17 鱼种与季节、安省鱼牌、PCOC、租船要求、装备和水下危险。',
     image: '/lovable-uploads/aluminum-fishing-hero-real.webp',
+    imageAlt: '日落平静湖面上的铝制钓鱼艇，船头有电动推进器，船尾装黑色 Mercury FourStroke，背景是木屋和松树',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-09-06',
+    dateModified: '2026-10-06',
     publishDate: '2026-04-12',
     category: '钓鱼指南',
     readTime: '9 分钟',
@@ -140,7 +149,9 @@ HBW 的 Lightspeed 记录显示，有 **2025 年 8 月至 11 月完成的 584 �
 
 Rice Lake 属于安省 Fisheries Management Zone 17（FMZ 17）。常见目标鱼包括 walleye（梭鲈／玻璃眼）、largemouth 和 smallmouth bass（大嘴鲈／小嘴鲈）、muskellunge（muskie）以及 yellow perch（黄鲈）等 panfish。不要把 walleye 和 yellow perch 都翻成“黄鲈”：它们是不同鱼种，季节、尺寸和限额也可能不同。
 
-从 GTA 多数地区开车通常约 60–120 分钟，实际时间取决于出发点、401／115 路况和你使用的下水点。出发前先做三件事：查 [FMZ 17 当年规则](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17)、确认自己的[安省钓鱼资格](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees)，再核对天气、下水点和船上安全装备。
+需要考取 PCOC？通过 [HBW 的 MyBoatCard 推荐链接](https://myboatcard.com/card/harrisboat)参加在线课程，使用优惠码 **HARRIS15** 可享 **15% 折扣**。
+
+从 GTA 多数地区开车通常约 60–120 分钟，实际时间取决于出发点、401 路况和你使用的下水点。出发前先做三件事：查 [FMZ 17 当年规则](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17)、确认自己的[安省钓鱼资格](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees)，再核对天气、下水点和船上安全装备。
 
 ::bilingual-trust
 heading: Why GTA Chinese buyers come to Rice Lake
@@ -152,13 +163,13 @@ item2En: Family marina since 1947
 item2Zh: 自1947年家族经营的码头
 item3En: Transparent CAD pricing, no haggling
 item3Zh: 透明加元价格，无需讨价还价
-item5En: 60 to 120 minutes from most GTA areas via 401 + 115
-item5Zh: 从 GTA 多数地区经 401 + 115 高速约 60 到 120 分钟车程
+item5En: 60 to 120 minutes from most GTA areas via Highway 401
+item5Zh: 从 GTA 多数地区经 401 高速约 60 到 120 分钟车程
 item6En: Mercury dealer since 1965
 item6Zh: 自1965年起的 Mercury 经销商
 ctaEn: Build your quote
 ctaZh: 在线获取报价
-ctaHref: /quote
+ctaHref: /quote/motor-selection
 ::
 
 ---
@@ -167,7 +178,7 @@ ctaHref: /quote
 
 Rice Lake 是大多伦多钓友的近距离选择。从多伦多开车：
 
-- **路线：** 通常经 401 东向和 Highway 115；最后一段请按你确认的码头或租船地点导航
+- **路线：** 通常经 401 东向；最后一段请按你确认的码头或租船地点导航
 - **时间：** 多数 GTA 地区约 60–120 分钟，周末和施工会明显改变车程
 - **不需要过夜：** 早上去，傍晚回，一天搞定
 - **下水点要先确认：** 船坡、停车、费用、开放时间和拖车空间会因地点与季节改变
@@ -186,7 +197,7 @@ Walleye 在安大略省渔业管理区 17（FMZ 17）有特定的尺寸限制（
 
 ### Smallmouth Bass（小嘴鲈）
 
-晚春到初夏的主要钓鱼对象。在岩石结构、水草边缘特别活跃。可以用 jig、软虫、顶水饵等多种方式。
+6 月第三个星期六开季后，初夏到秋季的主要钓鱼对象。在岩石结构、水草边缘特别活跃。可以用 jig、软虫、顶水饵等多种方式。
 
 ### Muskellunge / Muskie（中文俗名不一）
 
@@ -250,7 +261,7 @@ Rice Lake 也有 yellow perch、crappie、sunfish 和 northern pike。中文俗�
 - HBW 不销售钓鱼证
 
 **操作船需要**
-- [Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/boating-safety/pleasure-craft-operator-card-pcoc)（PCOC）或其他合资格证明：操作动力休闲船的人需要随船携带
+- [Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc)（PCOC）或其他合资格证明：操作动力休闲船的人需要随船携带
 - [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl)（PCL）：主要在加拿大使用、发动机总功率至少 10 HP 的合资格休闲船通常需要；PCL 属于船，不是驾驶员
 - 租 HBW 船时，每位驾驶员都必须出示有效 boat operator licence／PCOC 和带照片身份证件；请以[在线租船页面](https://www.harrisboatworks.ca/rentals)与租赁协议为准
 
@@ -271,7 +282,7 @@ Rice Lake 周边有公共和商业下水选择，但设施、收费、停车和�
 **主马达：** 先看船厂 capacity plate、船体重量、负载与原厂适配，不要只按船长套用通用马力范围
 **低速推进：** 电动 trolling motor 或合适的 Mercury ProKicker，选择取决于船体、续航、充电和冗余需求
 **电子设备：** 使用更新的 Chartplotter 与声呐辅助识别湖底结构和旧铁路区域，但仍须观察水面与水深
-**建议装备：** 每人一件合身 PFD、适用的发声和照明设备、锚与锚绳、备用推进方式；法定最低装备仍须按[船型和船长查表](https://tc.canada.ca/sites/default/files/2026-05/boating_guide_2026_en_acc.pdf)
+**建议装备：** 每人一件合身 PFD、适用的发声和照明设备、锚与锚绳、备用推进方式；法定最低装备仍须按[加拿大交通部船艇安全页面](https://tc.canada.ca/en/marine-transportation/marine-safety/boating-safety)
 
 ProKicker 的低速控制和充电能力适合认真拖钓，但是否需要 kicker 取决于船体、主机怠速表现、电动拖钓马达、预算和安全冗余。先确认船厂马力标牌、艉板空间、转向和充电需求，再由经销商配型。
 
@@ -334,7 +345,7 @@ HBW 要求每位驾驶员出示有效 boat operator licence／PCOC 和带照片�
 - [Ontario：Fisheries Management Zone 17](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17)
 - [Ontario：Fishing licence 资格](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees)
 - [Ontario：2026 fishing licence fees](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees)
-- [Transport Canada：2026 Safe Boating Guide](https://tc.canada.ca/sites/default/files/2026-05/boating_guide_2026_en_acc.pdf)
+- [加拿大交通部船艇安全页面](https://tc.canada.ca/en/marine-transportation/marine-safety/boating-safety)
 - [HBW：当前在线租船页面](https://www.harrisboatworks.ca/rentals)
 
 > **语言说明**
@@ -342,7 +353,7 @@ HBW 要求每位驾驶员出示有效 boat operator licence／PCOC 和带照片�
 
 ## 准备出发？
 
-如果你需要 Mercury 马达，请在 [mercuryrepower.ca](https://www.mercuryrepower.ca) 建立报价；维修请到 [hbw.wiki/service](https://hbw.wiki/service) 提交船、发动机和症状资料。
+如果你需要 Mercury 马达，请在 [mercuryrepower.ca](https://www.mercuryrepower.ca) 建立报价；维修请到 [hbwservice.ca](https://hbwservice.ca) 提交船、发动机和症状资料。
 
 如果你想租船，请浏览 [harrisboatworks.ca/rentals](https://www.harrisboatworks.ca/rentals)。
 
@@ -352,7 +363,13 @@ Harris Boat Works 自 1947 年起由家族经营，现已传至第三代。
 
 自 1965 年起，Harris Boat Works 一直是 Mercury 授权经销商。
 
-Harris Boat Works 目前是 Mercury Marine Premier 认证经销商。`,
+Harris Boat Works 目前是 Mercury Marine Premier 认证经销商。
+
+## 相关指南
+
+- [多伦多出发钓鱼去哪：莱斯湖、Lake Simcoe、Kawarthas 怎么选](/blog/zh/toronto-fishing-rice-lake-vs-lake-simcoe-kawarthas)
+- [Lake Simcoe 华人钓友船外机指南](/blog/zh/chinese-anglers-lake-simcoe-mercury-outboard)
+`,
     faqs: [
       { question: 'Rice Lake可以吃到的鱼安全吗？', answer: '食用建议取决于水域、鱼种、鱼体大小和食用者类别。留鱼和进食前请查 Ontario 的 Guide to Eating Ontario Fish，不要用“大部分都安全”代替当前建议。' },
       { question: '没有船可以钓鱼吗？', answer: '可以，但岸钓点的合法进入、停车和开放状态会变化。出发前请向当地政府或经营者确认，不要把私人岸线当作公共入口。' },
@@ -376,11 +393,11 @@ Harris Boat Works 目前是 Mercury Marine Premier 认证经销商。`,
 
 115和150马力是安大略省中型船主最常纠结的两个选择。**先看船身 Capacity Plate 标示的最大马力，这是硬性上限。在标示允许的前提下：船身较轻、常载1至2人、主要钓鱼，115马力通常够用；常载家人、需要拖曳水上玩具、经常满载出行，150马力的冗余动力会更从容。船长只是参考，真正决定的是 Capacity Plate、船体型式和你的常用载重。**
 
-犹豫的时候，通常选大一个。
+以铝制V型船为例：18英尺船身多数情况下115马力就是最合适的选择；19至20英尺且常满载时，150马力更合适。
 
 ::bilingual-trust
 heading: Why GTA Chinese buyers come to Rice Lake
-headingTranslated: 为什么 GTA 华人船主愿意到 Rice Lake
+headingTranslated: 为什么 GTA 华人船主愿意到莱斯湖
 eyebrow: HBW Trust Points / HBW 信任要点
 item1En: Mercury Marine Premier certified dealer
 item1Zh: [Mercury Marine](https://www.mercurymarine.com/ca/en) Premier 认证经销商
@@ -388,13 +405,13 @@ item2En: Family marina since 1947
 item2Zh: 自1947年家族经营的码头
 item3En: Transparent CAD pricing, no haggling
 item3Zh: 透明加元价格，无需讨价还价
-item5En: 60 to 90 minutes from GTA via 401 + 115
-item5Zh: 从 GTA 经 401 + 115 高速约 60 到 90 分钟车程
+item5En: About 90 minutes east of Toronto via Highway 401
+item5Zh: 从多伦多向东约 90 分钟车程，出发前请用实时导航确认路线和路况
 item6En: Mercury dealer since 1965
 item6Zh: 自1965年起的 Mercury 经销商
 ctaEn: Build your quote
 ctaZh: 在线获取报价
-ctaHref: /quote
+ctaHref: /quote/motor-selection
 ::
 
 ---
@@ -411,8 +428,8 @@ Mercury FourStroke 115和150都属于同一个可靠的四冲程系列，油耗�
 |----------|------------------------|------------------------|
 | 排量 | 2.1升 | 3.0升 |
 | 汽缸数 | 4缸 | 4缸 |
-| 重量 | 163 公斤（359 磅）；Command Thrust 165 公斤（363 磅） | 约204公斤 |
-| 适配船长参考（仅供参考，最终以 Capacity Plate 标示为准） | 16–19英尺 | 18–22英尺 |
+| 重量 | 163 公斤（359 磅）；Command Thrust 165 公斤（363 磅） | 206 公斤（455 磅），最轻配置干重 |
+| 适配船长参考（仅供参考，最终以 Capacity Plate 标示为准） | 18英尺铝制V型船最合适 | 19–20英尺铝制V型船、22–24英尺三体浮筒船更合适 |
 
 115 FourStroke：官方公布的最轻配置干重为 163 公斤（359 磅）；Command Thrust 版本为 165 公斤（363 磅）。具体重量会随轴长和配置变化，干重不等于安装后的总重量。
 
@@ -430,11 +447,11 @@ Mercury FourStroke 115和150都属于同一个可靠的四冲程系列，油耗�
 
 ### 油耗：不是你想的那样
 
-很多人以为115马力一定比150马力省油。实际上取决于**工作转速**：
+115马力每小时油耗通常略低，但差距没有很多人以为的那么大；**工作转速**同样会影响油耗、噪音和寿命：
 
-- 如果115马力需要开到80, 90%油门才能维持舒适速度，油耗并不低
-- 150马力在同样速度下可能只需60, 70%油门，反而更省油
-- **关键原则：发动机在60, 75%油门巡航比全油门运转更省油、更静音、寿命更长**
+- 如果115马力需要开到80–90%油门才能维持舒适速度，油耗并不低
+- 150马力在同样速度下转速较低（例如只需60–70%油门），更轻松，但每小时油耗仍略高于115马力
+- **关键原则：发动机在60–75%油门巡航比全油门运转更省油、更静音、寿命更长**
 
 ### 噪音
 
@@ -447,14 +464,14 @@ Mercury FourStroke系列两款发动机在巡航速度下都安静。150马力�
 以下情况115马力是合理选择：
 
 - Capacity Plate 允许，且船身较轻、载重较少
-- 主要钓鱼，通常只有1, 2人
+- 主要钓鱼，通常只有1至2人
 - 不拖曳滑水板或水上充气玩具
-- 船的最大马力标牌（Capacity Plate）在115, 150之间，且你不需要接近上限
+- 船的最大马力标牌（Capacity Plate）在115至150之间，且你不需要接近上限
 - 预算考量较重
 
 ### 实际案例
 
-**16英尺铝合金钓鱼船，主要2人使用：** 115马力是合理的。船轻、人少、钓鱼节奏慢，115马力在这个使用情境下表现自然。
+**18英尺铝合金V型钓鱼船，主要2人使用：** 115马力是合理的。船轻、人少、钓鱼节奏慢，115马力在这个使用情境下表现自然。
 
 ---
 
@@ -490,9 +507,9 @@ Mercury FourStroke系列两款发动机在巡航速度下都安静。150马力�
 
 ## 一个简单的决策框架
 
-> 如果你需要问「115够不够」，答案往往是「150更好」。
+> 看船身：18英尺铝制V型船，115马力通常就是最合适的选择；19至20英尺且常满载，再考虑150马力。
 
-真正适合115马力的人，通常不需要问这个问题, 他们的船小、使用方式轻、答案很清楚。在115和150之间犹豫的人，多半是有家庭使用需求、偶尔载多人、想拖点东西, 那就是150马力的使用情境。
+18英尺V型船、一到两位成年人加钓具，115马力就够用。船在19至20英尺、经常满载或常遇逆风，150马力巡航更轻松，也留有余量。
 
 ---
 
@@ -517,7 +534,7 @@ A：差距在保固、磨损程度和保养历史。一台有完整保养纪录�
 A：115 FourStroke：官方公布的最轻配置干重为 163 公斤（359 磅）；Command Thrust 版本为 165 公斤（363 磅）。具体重量会随轴长和配置变化，干重不等于安装后的总重量。
 
 **Q：我现在的旧发动机是90马力，换115还是150？**
-A：这取决于你的船型和使用方式。如果换发动机的同时想升级动力，建议在 hbw.wiki/service 提交服务申请，让HBW技师评估你的船和使用需求。
+A：这取决于你的船型和使用方式。如果换发动机的同时想升级动力，建议在 hbwservice.ca 提交服务申请，让HBW技师评估你的船和使用需求。
 
 ---
 
@@ -533,13 +550,21 @@ A：这取决于你的船型和使用方式。如果换发动机的同时想升�
 
 **在115和150马力之间拿不定主意？**
 到 **[mercuryrepower.ca](https://www.mercuryrepower.ca)** 看两款发动机的当前加币报价，再联络HBW确认你的船体是否合适。
-或至 **[hbw.wiki/service](https://hbw.wiki/service)** 提交咨询申请。
+或至 **[hbwservice.ca](https://hbwservice.ca)** 提交咨询申请。
 
 > **语言说明**
 > ${ZH_LANGUAGE_NOTE}
 
 Harris Boat Works，自1965年起的 Mercury 经销商。
----`,
+---
+
+## 相关指南
+
+- [多伦多华人 Mercury 船外机马力选择指南：9.9、20、60、115、150HP 怎么选？](/blog/zh/mercury-outboard-horsepower-guide-toronto-chinese)
+- [Mercury 引擎家族对比 (中文版)：FourStroke vs Pro XS vs Verado](/blog/zh/mercury-fourstroke-pro-xs-verado-chinese-comparison)
+- [安大略省 Mercury 换新船外机完整指南：GTA 华人船主必读](/blog/zh/mercury-repower-guide-gta)
+- [多伦多华人买 Mercury 船外机：为什么不要只问“最低价”？](/blog/zh/mercury-outboard-price-dealer-guide-toronto-chinese)
+`,
     faqs: [
       { question: 'Mercury 115 FourStroke 有多重？', answer: '115 FourStroke：官方公布的最轻配置干重为 163 公斤（359 磅）；Command Thrust 版本为 165 公斤（363 磅）。具体重量会随轴长和配置变化，干重不等于安装后的总重量。' },
       { question: '115马力够用吗？', answer: '先确认船身 Capacity Plate 标示的最大马力。在标示允许的前提下，船身较轻、主要1至2人使用的情况，115马力通常够用。关键是匹配 Capacity Plate、船体型式和您的常用载重，而不是只看船长。' },
@@ -554,20 +579,23 @@ Harris Boat Works，自1965年起的 Mercury 经销商。
     seoTitle: '安省驾船法规中文指南（2026）',
     description: '分清操作员证明 PCOC、船只牌照 PCL、按船型与船长决定的安全装备，以及钓鱼时才涉及的安省钓鱼资格。',
     image: '/lovable-uploads/home-step3-rice-lake-water-test.webp',
+    imageAlt: '穿灰衬衫和红色救生衣的男子在日落时驾驶深色钓鱼艇，船尾装有黑色 Mercury Pro XS 250 船外机',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-09-11',
+    dateModified: '2026-10-06',
     publishDate: '2026-04-12',
     category: '法规安全',
     readTime: '9 分钟',
     keywords: ['安大略省船只法规', '加拿大快艇驾照', '船只安全装备要求', 'Ontario boating regulations Chinese'],
-    content: `> **简短答案：** 操作动力休闲船的人需要随船携带 PCOC 或其他合资格的操作能力证明。主要在加拿大使用、发动机总功率至少 10 HP（7.5 kW）的合资格休闲船通常需要 PCL，除非已经注册。钓鱼证不是“开船证”：只有钓鱼时才需要按年龄、居住身份和牌照类型确认安省钓鱼资格。船上安全装备则按船型、船长和使用条件决定，不能用一张万能清单代替 [Transport Canada 2026 Safe Boating Guide](https://tc.canada.ca/sites/default/files/2026-05/boating_guide_2026_en_acc.pdf)。
+    content: `> **简短答案：** 操作动力休闲船的人需要随船携带 PCOC 或其他合资格的操作能力证明。主要在加拿大使用、发动机总功率至少 10 HP（7.5 kW）的合资格休闲船通常需要 PCL，除非已经注册。钓鱼证不是“开船证”：只有钓鱼时才需要按年龄、居住身份和牌照类型确认安省钓鱼资格。船上安全装备则按船型、船长和使用条件决定，不能用一张万能清单代替 [加拿大交通部船艇安全页面](https://tc.canada.ca/en/marine-transportation/marine-safety/boating-safety)。
+
+需要考取 PCOC？通过 [HBW 的 MyBoatCard 推荐链接](https://myboatcard.com/card/harrisboat)参加在线课程，使用优惠码 **HARRIS15** 可享 **15% 折扣**。
 
 ## 三大必备证件
 
 ### 1. Pleasure Craft Operator Card (PCOC) 船只操作员证
 
-任何操作动力休闲船的人都需要携带合资格的 proof of competency，包括电动马达。PCOC 是最常见的证明；也可能是 1999 年 4 月 1 日前通过加拿大安全课程的证明、指定海事证书，或符合条件的租赁船安全清单。PCOC 本身终身有效。课程语言、费用和上课方式由 Transport Canada 认可提供商决定，请查[当前认可名单](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/boating-safety/boating-safety-courses-across-canada)。
+任何操作动力休闲船的人都需要携带合资格的 proof of competency，包括电动马达。PCOC 是最常见的证明；也可能是 1999 年 4 月 1 日前通过加拿大安全课程的证明、指定海事证书，或符合条件的租赁船安全清单。PCOC 本身终身有效。课程语言、费用和上课方式由 Transport Canada 认可提供商决定，请查[当前认可名单](https://tc.canada.ca/en/marine-transportation/buying-boat/find-education-resources-recreational-boaters)。
 
 ### 2. Pleasure Craft Licence (PCL) 船只牌照
 
@@ -585,7 +613,7 @@ Harris Boat Works，自1965年起的 Mercury 经销商。
 
 最低装备取决于船型、船长、是否有发动机或燃油设备，以及是否在夜间或低能见度航行。常见项目包括每人一件合身并获认可的 lifejacket／PFD、浮力抛绳、重新登船装置、发声设备、照明、舀水或抽水设备；灭火器、照明、信号弹、指南针和雷达反射器等要求并非对每艘船都完全相同。
 
-最可靠做法是按自己船的类型和长度查看 [2026 Safe Boating Guide 的装备表](https://tc.canada.ca/sites/default/files/2026-05/boating_guide_2026_en_acc.pdf)，并确保装备状态良好、容易取用。只有“船上有”还不够。
+最可靠做法是按自己船的类型和长度查看 [加拿大交通部船艇安全页面](https://tc.canada.ca/en/marine-transportation/marine-safety/boating-safety)，并确保装备状态良好、容易取用。只有“船上有”还不够。
 
 ## 莱斯湖钓鱼法规
 
@@ -615,7 +643,7 @@ Rice Lake 属于安大略 Fisheries Management Zone 17（FMZ 17）。Walleye（�
 
 ## 官方来源
 
-- [Transport Canada：2026 Safe Boating Guide](https://tc.canada.ca/sites/default/files/2026-05/boating_guide_2026_en_acc.pdf)
+- [加拿大交通部船艇安全页面](https://tc.canada.ca/en/marine-transportation/marine-safety/boating-safety)
 - [Transport Canada：申请或管理 PCL](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl)
 - [Ontario：Fishing licence 资格](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees)
 - [Ontario：Fisheries Management Zone 17](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17)
@@ -640,6 +668,11 @@ Rice Lake 属于安大略 Fisheries Management Zone 17（FMZ 17）。Walleye（�
 同系列:
 - [GTA 华人船主冬储完整指南](/blog/zh/gta-chinese-rice-lake-winter-storage-complete-guide)
 - [GTA 华人 Mercury 服务与换机指南](/blog/zh/mercury-repower-guide-gta)
+
+## 相关指南
+
+- [GTA 华人 PCOC 操作员卡、PCL 船牌与安省钓鱼证指南](/blog/zh/gta-chinese-pcl-fishing-licence-guide)
+- [莱斯湖 钓鱼指南（2026）：FMZ 17 鱼种、鱼牌与出发清单](/blog/zh/rice-lake-fishing-guide-toronto-chinese)
 `,
     faqs: [
       { question: 'PCOC考试难吗？', answer: '认可课程会讲加拿大水上规则、安全装备和紧急处理。难度因人而异，应完成课程并理解内容，不要只为拿卡背答案。' },
@@ -651,8 +684,9 @@ Rice Lake 属于安大略 Fisheries Management Zone 17（FMZ 17）。Walleye（�
   {
     slug: 'chinese-anglers-lake-simcoe-mercury-outboard',
     title: 'Lake Simcoe 华人钓友船外机指南',
-    description: '针对GTA华人钓友在Lake Simcoe选择Mercury船外机的实用指南，包含马力参考、Kicker必要性、与Rice Lake的差异及FMZ 16规则提醒。',
+    description: '针对GTA华人钓友在Lake Simcoe选择Mercury船外机的实用指南，包含马力参考、Kicker必要性、与莱斯湖的差异及FMZ 16规则提醒。',
     image: '/lovable-uploads/zh-chinese-anglers-lake-simcoe-hero.png',
+    imageAlt: '铝制中控台钓鱼船在灰蓝开阔水面上滑行，装有 Mercury 90 船外机，男子掌舵，旁边是穿救生衣的孩子',
     author: 'Harris Boat Works',
     datePublished: '2026-05-10',
     dateModified: '2026-09-06',
@@ -660,28 +694,28 @@ Rice Lake 属于安大略 Fisheries Management Zone 17（FMZ 17）。Walleye（�
     category: '钓鱼指南',
     readTime: '7 分钟',
     keywords: ['Lake Simcoe 华人钓鱼 Mercury', 'Lake Simcoe Chinese anglers', 'Mercury kicker 中文', '安省华人钓友'],
-    content: `> **简短答案：** Lake Simcoe的船外机选择不能只看「能不能跑」。你需要考虑开放水面、风浪、低速Trolling、季节变化、载重，以及你是否需要Kicker机或更可靠的主机。Lake Simcoe比Rice Lake水面更开阔，风起来时对动力和稳定性的要求更高。钓鱼规则方面，请直接查安大略省官方钓鱼规则当年版本，不要依赖旧文章或社群截图。
+    content: `> **简短答案：** Lake Simcoe的船外机选择不能只看「能不能跑」。你需要考虑开放水面、风浪、低速Trolling、季节变化、载重，以及你是否需要Kicker机或更可靠的主机。Lake Simcoe比莱斯湖水面更开阔，风起来时对动力和稳定性的要求更高。钓鱼规则方面，请直接查安大略省官方钓鱼规则当年版本，不要依赖旧文章或社群截图。
 
 ## HBW Trust Points / HBW 信任要点
 
 我们知道用中文查资料买船外机不容易。这篇指南是 HBW 团队用中文写给你看的，希望能帮 GTA 华人钓友把决定做得更清楚。
 
-团队日常沟通主要是英文。你可以透过 hbw.wiki/service 用中文提交需求，我们会尽力沟通清楚，必要时会请你身边会英文的家人朋友一起对话；或者你可以先在 mercuryrepower.ca 用配置器自己看加币报价，比来电更直接。
+团队日常沟通主要是英文。你可以通过 hbwservice.ca 用中文提交需求，我们会尽力沟通清楚，必要时会请你身边会英文的家人朋友一起对话；或者你可以先在 mercuryrepower.ca 用配置器自己看加币报价，比来电更直接。
 
-### Why GTA Chinese buyers come to Rice Lake / 为什么 GTA 华人船主愿意到 Rice Lake
+### Why GTA Chinese buyers come to Rice Lake / 为什么 GTA 华人船主愿意到莱斯湖
 
 - Mercury Premier certified dealer / Mercury Premier 认证经销商
 - Family marina since 1947 / 自1947年家族经营的码头
 - Mercury dealer since 1965 / 自1965年起的 Mercury 授权经销商
 - Transparent CAD pricing, no haggling / 透明加元价格，无需讨价还价
-- 60 to 90 minutes from GTA via 401 + 115 / 从 GTA 经 401 + 115 高速约 60 到 90 分钟车程
+- About 90 minutes east of Toronto via Highway 401 / 从多伦多经 401 向东约 90 分钟车程
 - Build your quote / 在线获取报价
 
 ## 为什么Lake Simcoe对GTA华人钓友很有吸引力
 
 Lake Simcoe距离多伦多相对便利，有丰富的钓鱼文化，四季都有不同的钓鱼活动（包括冬季冰钓）。许多GTA华人钓友在Lake Simcoe有自己的钓点或固定的出湖路线。
 
-但这也是一个对发动机有更多要求的水域，比Rice Lake更大、更开阔、风浪的影响更明显。周末下午湖中心的浪，跟你早晨出发时的平静完全不同。
+但这也是一个对发动机有更多要求的水域，比莱斯湖更大、更开阔、风浪的影响更明显。周末下午湖中心的浪，跟你早晨出发时的平静完全不同。
 
 ## Lake Simcoe买发动机的思考方式
 
@@ -706,9 +740,9 @@ Lake Simcoe距离多伦多相对便利，有丰富的钓鱼文化，四季都有
 
 *以上为参考区间，最终须以船体Capacity Plate标示的最大马力为准。*
 
-## Lake Simcoe和Rice Lake的差异
+## Lake Simcoe和莱斯湖的差异
 
-| 重点 | Lake Simcoe | Rice Lake / Kawarthas |
+| 重点 | Lake Simcoe | 莱斯湖 / Kawarthas |
 | -- | -- | -- |
 | 水面特性 | 更开阔，风浪影响更明显 | 湖区与水道多样，较受遮蔽 |
 | 对发动机的要求 | 可靠回航、低速控制、应对风浪 | 多用途、本地服务、Repower适配 |
@@ -720,11 +754,11 @@ Lake Simcoe距离多伦多相对便利，有丰富的钓鱼文化，四季都有
 Kicker不是每个人都需要，但对在Lake Simcoe长时间出湖的钓友来说，它提供两个重要功能：
 
 1. **长时间低速控制**，Trolling时保持稳定速度，比调低主机油门更细腻
-2. **安全备援**，主机万一在湖中心出问题，你有办法把船开回去
+2. **备用动力**，主机万一在湖中心出问题，你有办法把船开回去
 
 在一个开阔水面、距离岸边可能较远的湖区，这份安心感是真实的。
 
-选择Kicker时要确认：轴长（Shaft Length）、转向连动设置、燃油接头、安装架规格，以及与主机系统的相容性。不要只看马力数字。
+选择Kicker时要确认：轴长（Shaft Length）、转向连动设置、燃油接头、安装架规格，以及与主机系统的兼容性。不要只看马力数字。
 
 ## FMZ 16规则与钓鱼证
 
@@ -740,7 +774,7 @@ Lake Simcoe属于**FMZ 16**（渔业管理区16）。FMZ 16有特定的鱼种季
 4. **确认钓鱼证**，有效的Ontario fishing licence是法律要求
 5. **查当年FMZ 16规则**，每年出湖前确认，不要靠去年的记忆
 
-值得一提的是，HBW 码头有 89 号无乙醇燃油（ethanol-free 89），长期停放和春季启动更稳定，特别适合 Lake Simcoe 出湖前后加油。
+
 
 ## 相关指南
 
@@ -751,11 +785,11 @@ Lake Simcoe属于**FMZ 16**（渔业管理区16）。FMZ 16有特定的鱼种季
 
 ## 下一步
 
-**为Lake Simcoe或安省其他湖区选Mercury船外机？** 到 **mercuryrepower.ca** 看当前加币报价，再至 **hbw.wiki/service** 让HBW帮你确认配置是否适合你的钓鱼船。
+**为Lake Simcoe或安省其他湖区选Mercury船外机？** 到 **mercuryrepower.ca** 看当前加币报价，再至 **hbwservice.ca** 让HBW帮你确认配置是否适合你的钓鱼船。
 
-Harris Boat Works，自1947年家族经营，自1965年起为 Mercury 授权经销商，Mercury Premier Dealer，位于Rice Lake南岸Gores Landing。`,
+Harris Boat Works，自1947年家族经营，自1965年起为 Mercury 授权经销商，Mercury Premier Dealer，位于莱斯湖南岸Gores Landing。`,
     faqs: [
-      { question: 'Lake Simcoe和Rice Lake，同一台发动机适用吗？', answer: '技术上可能，但Lake Simcoe的开放水面对发动机的稳定性和回航能力要求更高。如果你同时在两个湖使用，选择时要以要求更高的情况（Lake Simcoe）为标准。' },
+      { question: 'Lake Simcoe和莱斯湖，同一台发动机适用吗？', answer: '技术上可能，但Lake Simcoe的开放水面对发动机的稳定性和回航能力要求更高。如果你同时在两个湖使用，选择时要以要求更高的情况（Lake Simcoe）为标准。' },
       { question: 'Lake Simcoe冬季冰钓需要什么特别的发动机注意事项？', answer: '冬季冰钓不使用发动机，但每年春季启动前需要完整的季节性保养。确保你的Mercury在冬季正确越冬（Winterization），冰钓季过后春天才能顺利启动。' },
       { question: '我从多伦多去Lake Simcoe，有什么要注意的？', answer: '行程前确认天气预报（风速特别重要），带足够的燃油，确认手机有信号覆盖或带VHF无线电。Lake Simcoe开放水面，天气变化时要谨慎。' },
       { question: 'Lake Simcoe有特别严格的水上法规吗？', answer: '基本上遵守Transport Canada一般休闲船规定和安大略省省级规定。部分区域可能有特定速限或保护区限制，建议查 Lake Simcoe Region Conservation Authority（LSRCA）、当地市政公告和官方水域规则的最新说明。' },
@@ -766,6 +800,7 @@ Harris Boat Works，自1947年家族经营，自1965年起为 Mercury 授权经�
     title: '华人家庭买 pontoon：Mercury 船外机怎么配才不后悔',
     description: '给 GTA 华人家庭的 pontoon 船外机中文指南：马力、Command Thrust、载重、家庭安全、Rice Lake/Kawarthas 使用情境与 Mercury 报价。',
     image: '/lovable-uploads/hero-chinese-family-pontoon-mercury-outboard.png',
+    imageAlt: '秋色湖岸沙滩上靠岸的深蓝色 pontoon，旁有折叠椅、毛巾和冷藏箱，船尾装黑色 Mercury 船外机',
     author: 'Harris Boat Works',
     datePublished: '2026-05-10',
     dateModified: '2026-09-06',
@@ -779,7 +814,7 @@ Pontoon选Mercury船外机，**用你最重的使用情境来选，不是用展�
 
 ::bilingual-trust
 heading: Why GTA Chinese buyers come to Rice Lake
-headingTranslated: 为什么 GTA 华人船主愿意到 Rice Lake
+headingTranslated: 为什么 GTA 华人船主愿意到莱斯湖（Rice Lake）
 eyebrow: HBW Trust Points / HBW 信任要点
 item1En: Mercury Marine Premier certified dealer
 item1Zh: [Mercury Marine](https://www.mercurymarine.com/ca/en) Premier 认证经销商
@@ -787,13 +822,13 @@ item2En: Family marina since 1947
 item2Zh: 自1947年家族经营的码头
 item3En: Transparent CAD pricing, no haggling
 item3Zh: 透明加元价格，无需讨价还价
-item4En: 60 to 90 minutes from GTA via 401 + 115
-item4Zh: 从 GTA 经 401 + 115 高速约 60 到 90 分钟车程
+item4En: About 90 minutes east of Toronto via Highway 401
+item4Zh: 从 GTA 经 401 高速东行约 60 到 90 分钟车程
 item5En: Mercury dealer since 1965
 item5Zh: 自1965年起的 Mercury 经销商
 ctaEn: Build your quote
 ctaZh: 在线获取报价
-ctaHref: /quote
+ctaHref: /quote/motor-selection
 ::
 
 > **关于语言的说明**
@@ -869,7 +904,7 @@ Pontoon换机或新配置可能涉及：Rigging（接线）、操控系统、螺
 
 ## Pontoon在Rice Lake和Kawarthas的使用说明
 
-Rice Lake和Kawarthas是GTA华人家庭租船或自有Pontoon最常使用的水域之一。几个在地知识点：
+莱斯湖（Rice Lake）和Kawarthas是GTA华人家庭租船或自有Pontoon最常使用的水域之一。几个在地知识点：
 
 - **靠近码头和浅水区时要慢速**, Rice Lake有多个保护区和限速区
 - **夏季周末人多**, 安全意识和码头礼仪很重要
@@ -885,7 +920,7 @@ Harris Boat Works在Rice Lake服务超过七十年，了解当地水域特性，
 A：不一定。最大马力是上限，不是建议值。你应该根据实际常载人数和使用方式选择合适的马力, 有时候低于上限的马力已经足够，但对Pontoon来说通常建议接近上限以确保余裕。请联络HBW确认你的具体情况。
 
 **Q：已有的Pontoon换Mercury需要什么？**
-A：主要评估：旧发动机的拆除、新发动机的安装、操控系统（线缆、方向盘）的相容性、油路和电路的更新。这不是一个「直接换上去」的过程，需要技师评估。至 hbw.wiki/service 提交申请。
+A：主要评估：旧发动机的拆除、新发动机的安装、操控系统（线缆、方向盘）的相容性、油路和电路的更新。这不是一个「直接换上去」的过程，需要技师评估。至 hbwservice.ca 提交申请。
 
 **Q：Pontoon上装Verado（特殊订购）值得吗？**
 A：对绝大多数家庭 pontoon，FourStroke + Command Thrust 是更务实、更省钱的起点。Verado（特殊订购）在 pontoon 上属于小众选择 - 静音和精致感是真的，但价格溢价对一般家庭用途不划算。HBW 不会日常库存 Verado（特殊订购），可以按需特别订货。如果你的 pontoon 是高级型号、常在更大水域使用、或你对静音有特别要求，可以打电话直接聊。
@@ -910,10 +945,17 @@ A：Pontoon是最适合带小孩的船型之一, 平台式设计稳定，小孩�
 ## 行动呼吁
 
 **不确定Pontoon该配90HP、115HP还是更高？**
-到 **[mercuryrepower.ca](https://www.mercuryrepower.ca)** 建立Mercury报价，再至 **[hbw.wiki/service](https://hbw.wiki/service)** 让HBW帮你确认配置是否适合你的Pontoon和使用情境。
+到 **[mercuryrepower.ca](https://www.mercuryrepower.ca)** 建立Mercury报价，再至 **[hbwservice.ca](https://hbwservice.ca)** 让HBW帮你确认配置是否适合你的Pontoon和使用情境。
 
 Harris Boat Works，自1947年起，Mercury Marine Premier Dealer，位于Rice Lake南岸Gores Landing。
----`,
+---
+
+## 相关指南
+
+- [多伦多华人在 莱斯湖 买船完整指南：从选型到交付](/blog/zh/gta-chinese-buy-boat-rice-lake-guide)
+- [多伦多华人 Mercury 船外机马力选择指南：9.9、20、60、115、150HP 怎么选？](/blog/zh/mercury-outboard-horsepower-guide-toronto-chinese)
+- [Mercury 引擎家族对比 (中文版)：FourStroke vs Pro XS vs Verado](/blog/zh/mercury-fourstroke-pro-xs-verado-chinese-comparison)
+`,
     faqs: [
       { question: 'Pontoon 配低马力会比较省油吗？', answer: '不一定。马力太小导致长时间高负荷运转，实际油耗和体验可能都不好。' },
       { question: 'Command Thrust 一定需要吗？', answer: '不是每艘 pontoon 都需要，但重载、家庭使用、想要更好推力时很值得比较。' },
@@ -926,6 +968,7 @@ Harris Boat Works，自1947年起，Mercury Marine Premier Dealer，位于Rice L
     seoTitle: 'Mercury 引擎家族对比 (中文版)',
     description: 'Mercury 三大引擎家族 (FourStroke / Pro XS / Verado) 中文对比。HP 范围、最佳用途、典型配置。GTA 华人船主如何选择。',
     image: '/lovable-uploads/zh-mercury-fourstroke-pro-xs-verado-hero.png',
+    imageAlt: '空旷混凝土展厅里三台 Mercury 船外机：白色 FourStroke、Pro XS 200 和 Verado 350',
     author: 'Harris Boat Works',
     datePublished: '2026-05-10',
     dateModified: '2026-09-06',
@@ -944,12 +987,12 @@ Harris Boat Works，自1947年起，Mercury Marine Premier Dealer，位于Rice L
 **最佳用途：** Pontoon、家庭 runabout、入门级钓鱼船
 **优势：** 安静、省油、可靠、保养间隔长
 
-FourStroke 是大部分 GTA 华人船主第一台 Mercury 引擎。原因：
+FourStroke 是家庭船和铝制钓鱼船最常见的 Mercury 选择。原因：
 
-- **安静** ， 运行明显比 Pro XS 安静
-- **省油** ， 四冲程比传统二冲程明显更省油
-- **可靠** ， 100 小时维护周期,10-15 年使用寿命
-- **保养便宜** ， 火花塞、机油、滤芯都是常规件
+- **安静**：运行明显比 Pro XS 安静
+- **省油**：四冲程比传统二冲程明显更省油
+- **可靠**：适合日常使用，省心，不需要特别照顾
+- **保养便宜**：火花塞、机油、滤芯都是常规件
 
 最常见的购买配置：
 
@@ -965,15 +1008,15 @@ FourStroke 是大部分 GTA 华人船主第一台 Mercury 引擎。原因：
 
 Pro XS 是 Mercury 的"运动型"FourStroke。在 FourStroke 基础上做了：
 
-- 高 RPM 调校 (Pro XS WOT 范围大致 5200-6200 RPM，依型号而定：150 Pro XS 约 5200-6000 RPM；V8 Pro XS 200-300hp 约 5600-6200 RPM)
-- 强化气缸 (针对高负载长时间运行)
+- 高 RPM 调校 (最高转速通常比同马力的 FourStroke 高出两三百转)
+- Transient Spark 等性能调校，加速更有力，并且比同马力的 FourStroke 略轻
 - 红色 Pro XS 涂装 (品牌识别)
 
 GTA 华人 angler 中常见购买理由：
 
 - 想要莱斯湖 musky tournament 速度
 - 拖滑水 + tube 时起步快
-- 偶尔去 Lake Ontario 钓鱼 (海况要求功率)
+- 偶尔去安大略湖钓鱼 (大水面对功率要求更高)
 
 最常见配置：
 
@@ -1019,12 +1062,12 @@ Verado 是 Mercury 最豪华、功率最大的家族。V8、V10、V12 配置（�
 GTA 华人船主用 Verado 的场景较少 (因为大部分船 < 25 英尺)。常见使用：
 
 - 30 英尺以上 cabin cruiser (双 Verado 250)
-- Lake Ontario 深海钓鱼 (Trolling 配 Verado 250-300)
+- 安大略湖离岸钓鱼 (Trolling 配 Verado 250-300)
 - 商业 charter 用船 (按船体和用途选择单引擎或双引擎 Verado)
 
 ## 我们在 HBW 看到的实地观察
 
-在 HBW，FourStroke 60-150 HP 多用于 pontoon 和家庭船；Pro XS 150-300 HP 多见于钓鱼和运动型用户。GTA 华人客户偏好 FourStroke 较多，因为家庭船选 pontoon 居多。
+在 HBW，FourStroke 60-150 HP 多用于 pontoon 和家庭船；Pro XS 150-300 HP 多见于钓鱼和运动型用户。莱斯湖和 Kawarthas 一带的船大多是 pontoon 和铝制钓鱼船，所以 FourStroke 更常见。
 
 
 
@@ -1066,16 +1109,23 @@ GTA 华人船主用 Verado 的场景较少 (因为大部分船 < 25 英尺)。�
 同系列：
 - [Pontoon 还是钓鱼船：6-8 人船型选择](/blog/zh/pontoon-vs-fishing-boat-6-8-people-zh)
 - [为什么 GTA 华人船主选择 Harris Boat Works](/blog/zh/why-chinese-boaters-choose-harris-boat-works)
+
+## 相关指南
+
+- [多伦多华人 Mercury 船外机马力选择指南：9.9、20、60、115、150HP 怎么选？](/blog/zh/mercury-outboard-horsepower-guide-toronto-chinese)
+- [Mercury 115马力 vs 150马力舷外机：如何选择？](/blog/zh/mercury-115-vs-150-comparison-zh)
+- [多伦多华人买 Mercury 船外机：为什么不要只问“最低价”？](/blog/zh/mercury-outboard-price-dealer-guide-toronto-chinese)
+- [40 到 60 匹 Mercury：铝船与华人钓友最常问的马力区间](/blog/zh/mercury-40-60hp-chinese-fishing-boat-guide)
 `,
     faqs: [
       { question: 'Pro XS 比 FourStroke 好吗？', answer: '不是「好或不好」，而是用途不同。Pro XS 偏性能，FourStroke 更通用。' },
-      { question: 'Verado 值得多花钱吗？', answer: '如果你重视安静、精致操控和 premium 体验，值得比较。如果只是小铝船日常钓鱼，可能不是第一选择。' },
+      { question: 'Verado 值得多花钱吗？', answer: '如果你重视安静、精致操控和高端体验，值得比较。如果只是小铝船日常钓鱼，可能不是第一选择。' },
       { question: 'Command Thrust 是另一个系列吗？', answer: '不是。它是特定配置/齿轮箱方向，常见价值在重载和 pontoon 使用。' },
       { question: 'Mercury FourStroke 和 Pro XS 最大区别是什么？', answer: 'FourStroke 更偏安静、稳定、日常使用和家庭场景。Pro XS 更偏 performance、快速反应和钓鱼性能。实际选择要看船体、用途、马力范围、rigging 和预算。' },
       { question: 'Pontoon boat 应该选 FourStroke 还是 Pro XS？', answer: '大多数家庭 pontoon 更适合 FourStroke，因为舒适、稳定和日常使用更重要。但具体仍要看 boat size、载重、最大马力和使用方式。' },
       { question: 'Bass boat 更适合 Pro XS 吗？', answer: '很多 bass boat 和 performance fishing boat 会考虑 Pro XS，因为这类船主更重视 hole shot、throttle response 和速度表现。是否适合还要看 hull rating、rigging 和 prop setup。' },
       { question: 'Repower 可以只换 motor，不换 rigging 吗？', answer: '不一定。Repower 可能涉及 controls、cables、gauges、prop、steering、battery 和 SmartCraft compatibility。HBW 的 repower 页面也把 rigging、controls/cables、gauges as applicable、prop、installation 和 lake test 列为常见组成 (HBW Mercury Outboards)。' },
-      { question: '我应该买最大 horsepower 吗？', answer: '不一定。你应该买适合 hull rating、使用方式、载重和预算的 horsepower。最大不等于最好。船也有自己的脾气，别把它当健身房 PR 来挑战。' },
+      { question: '我应该买最大马力吗？', answer: '不一定。你应该买适合船体额定马力、使用方式、载重和预算的马力。最大不等于最好。' },
     ],
   },
   {
@@ -1083,9 +1133,10 @@ GTA 华人船主用 Verado 的场景较少 (因为大部分船 < 25 英尺)。�
     title: '9.9 到 20 匹 Mercury：钓鱼小船、kicker、tiller 中文指南',
     description: 'Mercury 9.9HP、15HP、20HP 船外机中文指南：小铝船、kicker、tiller、钓鱼、trolling、安省华人钓友怎么选。',
     image: '/lovable-uploads/zh-mercury-9-9-20hp-kicker-tiller-hero.png',
+    imageAlt: '手握黑色 Mercury 9.9 FourStroke 的舵柄，机器夹在灰色水面木码头边一艘旧铝制平底船的船尾',
     author: 'Harris Boat Works',
     datePublished: '2026-05-10',
-    dateModified: '2026-09-06',
+    dateModified: '2026-10-04',
     publishDate: '2026-05-10',
     category: '小马力指南',
     readTime: '6 分钟',
@@ -1106,13 +1157,13 @@ item2En: Family marina since 1947
 item2Zh: 自1947年家族经营的码头
 item3En: Transparent CAD pricing, no haggling
 item3Zh: 透明加元价格，无需讨价还价
-item5En: 60 to 90 minutes from GTA via 401 + 115
-item5Zh: 从 GTA 经 401 + 115 高速约 60 到 90 分钟车程
+item5En: About 90 minutes east of Toronto via Highway 401
+item5Zh: 从多伦多经 401 向东约 90 分钟车程
 item6En: Mercury dealer since 1965
 item6Zh: 自1965年起的 Mercury 经销商
 ctaEn: Build your quote
 ctaZh: 在线获取报价
-ctaHref: /quote
+ctaHref: /quote/motor-selection
 ::
 
 ---
@@ -1186,7 +1237,7 @@ HBW的经验：9.9HP最容易被高估, 「感觉应该够了」的直觉，在�
 
 ## PCL（船只牌照）与马力门槛
 
-Transport Canada规定，有引擎的休闲船如果马力达到特定门槛，需要办理[Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences)（PCL）。具体门槛请查Transport Canada当前规定。
+Transport Canada规定，有引擎的休闲船如果马力达到特定门槛，需要办理[Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl)（PCL）。具体门槛请查Transport Canada当前规定。
 
 9.9HP、15HP、20HP之间的选择，不只是性能问题，可能也牵涉文件要求，买之前确认清楚。
 
@@ -1212,7 +1263,7 @@ A：是的，9.9HP在技术上属于10HP以下，通常符合10HP限制的规定
 A：Mercury有ProKicker系列，专门为Kicker用途设计，具有特定的Trolling和低速控制功能。具体型号和可用配置请查Mercury当前产品资料，或联络HBW确认当前库存。
 
 **Q：9.9至20HP的服务保养，HBW可以做吗？**
-A：是的。HBW作为Mercury Marine Premier Dealer，提供所有Mercury船外机的保养服务，包括小马力机型。请至 hbw.wiki/service 提交服务申请。
+A：是的。HBW作为Mercury Marine Premier Dealer，提供所有Mercury船外机的保养服务，包括小马力机型。请至 hbwservice.ca 提交服务申请。
 
 **Q：如果买了20HP发现不够用，可以换成更大的吗？**
 A：可以更换，但必须在船体Capacity Plate允许的范围内。建议一开始选择时就根据你的最大使用情境决定，避免二次更换的成本。
@@ -1232,10 +1283,17 @@ A：可以更换，但必须在船体Capacity Plate允许的范围内。建议�
 ## 行动呼吁
 
 **想买Mercury 9.9至20HP？**
-到 **[mercuryrepower.ca](https://www.mercuryrepower.ca)** 看当前加币报价，确认轴长和控制方式后，至 **[hbw.wiki/service](https://hbw.wiki/service)** 提交申请让HBW确认配置是否适合你的船。
+到 **[mercuryrepower.ca](https://www.mercuryrepower.ca)** 看当前加币报价，确认轴长和控制方式后，至 **[hbwservice.ca](https://hbwservice.ca)** 提交申请让HBW确认配置是否适合你的船。
 
-Harris Boat Works，自1947年起，Mercury Marine Premier Dealer，位于Rice Lake南岸Gores Landing。
----`,
+Harris Boat Works，自1947年起家族经营，自1965年起为 Mercury 经销商，现为 Mercury Marine Premier Dealer，位于Rice Lake南岸Gores Landing。
+---
+
+## 相关指南
+
+- [40 到 60 匹 Mercury：铝船与华人钓友最常问的马力区间](/blog/zh/mercury-40-60hp-chinese-fishing-boat-guide)
+- [加拿大加油指南：Mercury 船外机加 87 还是 91？国内 92 号汽油怎么换算](/blog/zh/mercury-fuel-octane-ethanol-chinese-guide)
+- [Mercury 引擎家族对比 (中文版)：FourStroke vs Pro XS vs Verado](/blog/zh/mercury-fourstroke-pro-xs-verado-chinese-comparison)
+`,
     faqs: [
       { question: '9.9HP 适合两个人钓鱼吗？', answer: '可能适合，但要看船长、船重、水况和装备。' },
       { question: 'Kicker 要不要电启？', answer: '如果常用、想省力，电启值得考虑。但也要看电池和安装配置。' },
@@ -1247,6 +1305,7 @@ Harris Boat Works，自1947年起，Mercury Marine Premier Dealer，位于Rice L
     title: '40 到 60 匹 Mercury：铝船与华人钓友最常问的马力区间',
     description: 'Mercury 40HP、50HP、60HP 船外机中文指南：安省铝船、钓鱼船、tiller/remote、Command Thrust、华人钓友怎么选。',
     image: '/lovable-uploads/zh-mercury-40-60hp-fishing-boat-hero.png',
+    imageAlt: '明亮仓库里两台黑色 Mercury FourStroke 船外机立在镀铬支架上，分别标有 40 和 60',
     author: 'Harris Boat Works',
     datePublished: '2026-05-10',
     dateModified: '2026-09-11',
@@ -1256,11 +1315,11 @@ Harris Boat Works，自1947年起，Mercury Marine Premier Dealer，位于Rice L
     keywords: ['Mercury 40 60HP 中文', '铝船 Mercury 60HP', '华人钓友船外机', '安省 fishing boat Mercury'],
     content: `## 简短答案
 
-40至60HP是安省铝船和钓鱼船的黄金马力区间, 比小马力有更好的载重和起步能力，比大马力更容易控制预算。**对大多数GTA华人钓友的16英尺铝船，这个区间是「真正开始好用」的起点。14英尺铝船通常只到25至30HP，15英尺多在30至40HP，一切以船身 Capacity Plate 标示为准。** 但40、50、60HP的差异不只是马力数字, 你要看船体Capacity Rating、常载人数、是否Tiller、是否需要Command Thrust，以及你常去的湖区。
+40至60HP是安省铝船和钓鱼船的黄金马力区间, 比小马力有更好的载重和起步能力，比大马力更容易控制预算。**对15至16英尺、两位成年人的铝制钓鱼船，40HP就够用；如果会再加第三个人、拖曳充气滑水圈，或想要满载时更充足的余量，60HP是更稳妥的长期选择。一切以船身 Capacity Plate 标示为准。** 但40、50、60HP的差异不只是马力数字, 你要看船体Capacity Rating、常载人数、是否Tiller、是否需要Command Thrust，以及你常去的湖区。
 
 ::bilingual-trust
 heading: Why GTA Chinese buyers come to Rice Lake
-headingTranslated: 为什么 GTA 华人船主愿意到 Rice Lake
+headingTranslated: 为什么 GTA 华人船主愿意到莱斯湖
 eyebrow: HBW Trust Points / HBW 信任要点
 item1En: Mercury Marine Premier certified dealer
 item1Zh: [Mercury Marine](https://www.mercurymarine.com/ca/en) Premier 认证经销商
@@ -1268,13 +1327,13 @@ item2En: Family marina since 1947
 item2Zh: 自1947年家族经营的码头
 item3En: Transparent CAD pricing, no haggling
 item3Zh: 透明加元价格，无需讨价还价
-item5En: 60 to 90 minutes from GTA via 401 + 115
-item5Zh: 从 GTA 经 401 + 115 高速约 60 到 90 分钟车程
+item5En: About 90 minutes east of Toronto via Highway 401
+item5Zh: 从多伦多向东约 90 分钟车程，出发前请用实时导航确认路线和路况
 item6En: Mercury dealer since 1965
 item6Zh: 自1965年起的 Mercury 经销商
 ctaEn: Build your quote
 ctaZh: 在线获取报价
-ctaHref: /quote
+ctaHref: /quote/motor-selection
 ::
 
 ---
@@ -1300,7 +1359,7 @@ ctaHref: /quote
 
 **使用方式：** 纯钓鱼、慢速巡航，还是偶尔需要跑远距离？
 
-**水域：** Rice Lake的相对平静，还是更开放的湖面？
+**水域：** 莱斯湖相对平静的水面，还是更开放的湖面？
 
 **这些答案决定了你在40和60HP之间的合理选择。**
 
@@ -1332,7 +1391,7 @@ HBW的观察：**40至60HP区间最常见的错误不是买太大，而是买到
 - 16英尺铝船，Capacity Plate允许60HP
 - 常载两至三人加上钓鱼装备
 - 需要可靠的滑行能力（不想让船在起步时拖沓）
-- 在Rice Lake或Kawarthas偶尔跑较长距离
+- 在莱斯湖或Kawarthas偶尔跑较长距离
 - 计划这台发动机使用8至10年以上
 
 ---
@@ -1358,11 +1417,11 @@ Mercury在40至60HP范围内提供Tiller和Remote配置选项，具体可选型�
 
 ## Command Thrust在这个马力区间值得考虑吗？
 
-Command Thrust通常被认为是Pontoon的配置，但在某些情况下，40至60HP的重载铝船也可能受益：
+Command Thrust主要是为Pontoon和工作船设计的齿轮箱，会牺牲一些极速。如果是16英尺左右、大部分时间接近全油门航行的轻型铝制钓鱼船，建议不要选，把预算省下来。以下情况可以考虑：
 
 - 如果你的船比同尺寸平均更重
 - 如果你常载大量装备或需要更强的低速推力
-- 如果你在有波浪的情况下需要更好的控制
+- 如果你希望重载时更容易上滑行，并能在较低速度下保持滑行
 
 这不是每个人都需要的配置，但值得在选择时和HBW讨论。
 
@@ -1383,7 +1442,7 @@ A：大多数40HP以上的Mercury提供电动启动选项，但具体配置依�
 A：取决于你原来的发动机型号和系统配置。电启动需要电池连接，Remote操控需要相容的控制线。让HBW在Repower评估时一起确认。
 
 **Q：二手40至60HP Mercury值得买吗？**
-A：取决于使用历史和保养状态。如果有完整的服务纪录，某些保养良好的二手Mercury确实值得考虑。请至 hbw.wiki/service 提交评估申请，让HBW技师确认状态。
+A：取决于使用历史和保养状态。如果有完整的服务纪录，某些保养良好的二手Mercury确实值得考虑。请至 hbwservice.ca 提交评估申请，让HBW技师确认状态。
 
 ---
 
@@ -1400,13 +1459,20 @@ A：取决于使用历史和保养状态。如果有完整的服务纪录，某�
 ## 行动呼吁
 
 **在40、50、60HP之间拿不定主意？**
-到 **[mercuryrepower.ca](https://www.mercuryrepower.ca)** 比较当前加币报价，再至 **[hbw.wiki/service](https://hbw.wiki/service)** 让HBW帮你确认哪个配置最适合你的铝船和使用方式。
+到 **[mercuryrepower.ca](https://www.mercuryrepower.ca)** 比较当前加币报价，再至 **[hbwservice.ca](https://hbwservice.ca)** 让HBW帮你确认哪个配置最适合你的铝船和使用方式。
 
 > **语言说明**
 > ${ZH_LANGUAGE_NOTE}
 
-Harris Boat Works，自1965年起的 Mercury 经销商，位于Rice Lake南岸Gores Landing。
----`,
+Harris Boat Works，自1965年起的 Mercury 经销商，位于莱斯湖南岸Gores Landing。
+---
+
+## 相关指南
+
+- [Lake Simcoe 华人钓友船外机指南](/blog/zh/chinese-anglers-lake-simcoe-mercury-outboard)
+- [9.9 到 20 匹 Mercury：钓鱼小船、kicker、tiller 中文指南](/blog/zh/mercury-9-9-20hp-chinese-kicker-tiller-guide)
+- [Mercury 引擎家族对比 (中文版)：FourStroke vs Pro XS vs Verado](/blog/zh/mercury-fourstroke-pro-xs-verado-chinese-comparison)
+`,
     faqs: [
       { question: '40HP 和 60HP 差很多吗？', answer: '在空船时可能觉得还好，满载后差异会更明显。' },
       { question: '60HP 会不会太耗油？', answer: '不一定。马力不足导致长时间高负荷运转，也可能不省油。' },
@@ -1419,14 +1485,17 @@ Harris Boat Works，自1965年起的 Mercury 经销商，位于Rice Lake南岸Go
     seoTitle: '为什么 GTA 华人船主选择 HBW？',
     description: 'Harris Boat Works 是莱斯湖南岸三代家族船坞，自 1947 年。Mercury Premier 认证。GTA 华人船主选择 HBW 的 5 个原因：距离、价格、Mercury 认证、传承、对华人客户的友好接待。',
     image: '/lovable-uploads/hero-chinese-buyers-rice-lake-marina.png',
+    imageAlt: '一对夫妇和一位穿工作夹克的年长男子在平静湖边码头察看一艘深色 pontoon，船尾装黑色 Mercury 船外机',
     author: 'Harris Boat Works',
     datePublished: '2026-05-10',
-    dateModified: '2026-09-06',
+    dateModified: '2026-10-06',
     publishDate: '2026-05-10',
     category: 'HBW 中文介绍',
     readTime: '5 分钟',
     keywords: ['Harris Boat Works 中文', 'GTA 华人船主', 'Mercury Dealer Ontario 中文', 'Rice Lake marina 中文', 'MercuryRepower.ca 中文'],
     content: `> **简短答案：** Harris Boat Works (HBW) 是莱斯湖南岸的家族经营船坞,自 1947 年至今,已经传承三代。Mercury Premier 认证经销商。距离多伦多 1-1.5 小时车程,加元价格公开发布、您可以自行对比 (详见 [Mercury 加元定价参考](/pricing-reference))，Mercury 维修和冬储一体化。团队使用英语服务，欢迎带会英语的亲友同来或使用手机翻译软件，我们会耐心沟通、尽力配合 (info@harrisboatworks.ca)。我们通常可以安排取船。请向我们确认您的船和地点是否可安排。 HBW 不提供送船服务、不邮寄发动机、不上门/码头服务，也不推荐运输商或报价第三方运输。
+
+需要考取 PCOC？通过 [HBW 的 MyBoatCard 推荐链接](https://myboatcard.com/card/harrisboat)参加在线课程，使用优惠码 **HARRIS15** 可享 **15% 折扣**。
 
 ## 三代华人船主的选择
 
@@ -1434,7 +1503,7 @@ Harris Boat Works，自1965年起的 Mercury 经销商，位于Rice Lake南岸Go
 
 ## 1. 距离 + 路况
 
-多伦多到 HBW 的标准路线：401 东到 Cobourg (约 1 小时),然后 Highway 28 北到 Gores Landing (15-20 分钟)。总车程 1-1.5 小时。比北上 Muskoka (2.5-3 小时) 近。比 Lake Ontario 沿岸船坞选择多。
+多伦多到 HBW 的标准路线：401 东到 Cobourg 的 Exit 472（County Road 18 / Burnham Street，约 1 小时），然后沿 County Road 18 北行约 16 公里到 Gores Landing（约 20 分钟）。总车程 1-1.5 小时。比北上 Muskoka (2.5-3 小时) 近。比 Lake Ontario 沿岸船坞选择多。
 
 ## 2. 价格透明
 
@@ -1540,6 +1609,11 @@ HBW 不做：
 同系列：
 - [GTA 华人船主冬储完整指南](/blog/zh/gta-chinese-rice-lake-winter-storage-complete-guide)
 - [安大略船只法规完整指南 (中文版)](/blog/zh/ontario-boating-regulations-zh)
+
+## 相关指南
+
+- [多伦多华人在 莱斯湖 买船完整指南：从选型到交付](/blog/zh/gta-chinese-buy-boat-rice-lake-guide)
+- [多伦多华人 Mercury 发动机维修保养完整指南：从机油到大修](/blog/zh/gta-chinese-mercury-service-guide)
 `,
     faqs: [
       { question: 'HBW 有中文销售吗？', answer: '目前主要营运语言是英文，但这个中文内容枢纽可以帮华人客户先理解重点。报价与规格仍会以正式英文型号和文档确认。' },
@@ -1552,20 +1626,23 @@ HBW 不做：
     title: '安省租船需要驾照吗？PCOC 与租船安全清单一次讲清',
     description: '安省租船华人指南：PCOC（船只操作员卡）与 Rental Boat Safety Checklist 的差别、何时需要哪一个、罚款风险、如何合法上水。',
     image: '/lovable-uploads/zh-pcoc-vs-rental-boat-safety-hero.png',
+    imageAlt: '码头柜台后，戴海军蓝帽的女员工把写着安全检查清单的写字板递给穿蓝 T 恤的微笑男子',
     author: 'Harris Boat Works',
     datePublished: '2026-05-11',
-    dateModified: '2026-09-06',
+    dateModified: '2026-10-04',
     publishDate: '2026-05-11',
     category: '安省法规中文',
     readTime: '6 分钟',
     keywords: ['安省租船 驾照 中文', 'PCOC 租船 中文', 'Rental Boat Safety Checklist 中文', '多伦多 租船 不需要驾照', '华人 租船 安省 规则'],
     content: `## 快速答案
 
-在加拿大租船，**通常需要 PCOC（船只操作员卡）**。部分租船公司会在你前往时提供「临时免除 PCOC」的 Safety Briefing（限该次租用），但这不是法律默认。即使有临时免除，安全责任仍然在操作者身上。如果你计划多次租船或将来买船，建议直接取得 PCOC，因为它一次性终身有效。
+在加拿大租船，**通常需要 PCOC（船只操作员卡）**。按联邦规则，部分租船可以用填写完整的租船安全清单满足能力证明要求，但这只是法律最低标准。HBW 的政策更严格：每位可能驾驶租船的人都必须出示有效 PCOC 和带照片身份证，乘客不需要。如果你计划多次租船或将来买船，建议直接取得 PCOC，因为它一次性终身有效。
+
+需要考取 PCOC？通过 [HBW 的 MyBoatCard 推荐链接](https://myboatcard.com/card/harrisboat)参加在线课程，使用优惠码 **HARRIS15** 可享 **15% 折扣**。
 
 ::bilingual-trust
 heading: Why GTA Chinese buyers come to Rice Lake
-headingTranslated: 为什么 GTA 华人船主愿意到 Rice Lake
+headingTranslated: 为什么 GTA 华人船主愿意到莱斯湖
 eyebrow: HBW Trust Points / HBW 信任要点
 item1En: Mercury Marine Premier certified dealer
 item1Zh: [Mercury Marine](https://www.mercurymarine.com/ca/en) Premier 认证经销商
@@ -1573,26 +1650,26 @@ item2En: Family marina since 1947
 item2Zh: 自1947年家族经营的码头
 item3En: Transparent CAD pricing, no haggling
 item3Zh: 透明加元价格，无需讨价还价
-item5En: 60 to 90 minutes from GTA via 401 + 115
-item5Zh: 从 GTA 经 401 + 115 高速约 60 到 90 分钟车程
+item5En: About 90 minutes east of Toronto via Highway 401
+item5Zh: 从多伦多经 401 向东约 90 分钟车程
 item6En: Mercury dealer since 1965
 item6Zh: 自1965年起的 Mercury 经销商
 ctaEn: Build your quote
 ctaZh: 在线获取报价
-ctaHref: /quote
+ctaHref: /quote/motor-selection
 ::
 
 ---
 
 ## PCOC 与租船的关系
 
-**PCOC（[Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency)，船只操作员卡）** 是 Transport Canada 规定的证件。法律规定：任何在加拿大水域操作有马达的休闲船的人，必须持有 PCOC 或同等证明。
+**PCOC（[Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc)，船只操作员卡）** 是 Transport Canada 规定的证件。法律规定：任何在加拿大水域操作有马达的休闲船的人，必须持有 PCOC 或同等证明。
 
 **这个规定适用于租船吗？** 一般来说，**是的**。
 
 **但有一个重要例外：**
 
-许多租船公司可以提供「临时 PCOC 免除」（Rental Boat Safety Checklist），允许承租人在没有 PCOC 的情况下操作租用的船。这个免除是针对该次特定的租用，不可转用于其他船或其他次。
+按联邦规则，有些租船公司可以让承租人用「租船安全清单」（Rental Boat Safety Checklist）代替 PCOC，操作该次租用的船。HBW 不这样做：每位驾驶者都需要有效的 PCOC。这个免除是针对该次特定的租用，不可转用于其他船或其他次。
 
 这个免除需要：
 - 完成租船公司的安全简报（Safety Briefing）
@@ -1603,13 +1680,13 @@ ctaHref: /quote
 
 ## 哪些租船公司提供 PCOC 免除？
 
-不是所有的租船公司都提供这个。提供的需要：
+不是所有的租船公司都提供这个。按 Transport Canada 的说明，这份清单的用法是：
 
-1. 持有有效的营业执照
-2. 员工经过培训，能进行 Safety Briefing
-3. 有书面的 Safety Checklist 流程
+1. 租船公司在出租前与承租人逐项讲解清单（船只操作、安全规则、当地水域危险和紧急情况）
+2. 承租人逐项勾选，确认已经理解
+3. 完成的清单只在该次租用期间有效
 
-HBW 的租船在你预订时会告知当前要求。请致电 905-342-2153 或在预订时询问。
+HBW 的租船要求每位驾驶者出示有效 PCOC。如有疑问，请致电 905-342-2153。
 
 如果你在大多伦多区考虑多个租船选择，建议事先询问每家公司关于 PCOC 的政策。
 
@@ -1638,7 +1715,7 @@ HBW 的租船在你预订时会告知当前要求。请致电 905-342-2153 或�
 
 ## 租船 Safety Briefing 通常包含什么？
 
-如果你选择用临时免除，租船公司的 Safety Briefing 通常涵盖：
+租船公司的 Safety Briefing 通常涵盖以下内容（在 HBW，安全讲解不能替代 PCOC）：
 
 **1. 船只操作基础**
 - 启动与停止马达
@@ -1654,11 +1731,11 @@ HBW 的租船在你预订时会告知当前要求。请致电 905-342-2153 或�
 
 **3. 通讯与紧急程序**
 - 无线电（VHF）使用基础
-- 拨打 911 / 加拿大海岸防卫
+- 拨打 911 / 加拿大海岸警卫队
 - 何时呼救
 - 信号灯与闪光灯
 
-**4. 水域特定资讯**
+**4. 水域特定信息**
 - 该水域的危险（暗礁、浅水、强流）
 - 主要航行通道
 - 港口与避难所
@@ -1673,9 +1750,9 @@ HBW 的租船在你预订时会告知当前要求。请致电 905-342-2153 或�
 **6. 文件**
 - 你必须随身带的证件
 - 随船文件（保险、注册）
-- 紧急联络资讯
+- 紧急联络信息
 
-简报时间：**通常 30-60 分钟**，取决于水域复杂度与你的经验。
+简报时间取决于租船公司、水域复杂度与你的经验。
 
 ---
 
@@ -1703,12 +1780,12 @@ HBW 的租船在你预订时会告知当前要求。请致电 905-342-2153 或�
 - [ ] 排水塞已安装
 - [ ] 马达运转正常
 - [ ] 通讯设备测试
-- [ ] 镜子与仪表正常
-- [ ] 船帆/锚绳可用
+- [ ] 仪表正常
+- [ ] 锚和锚绳可用
 - [ ] 知道返航路线
 
 **水上：**
-- [ ] 随时穿著 PFD（或至少触手可及）
+- [ ] 随时穿着 PFD（或至少触手可及）
 - [ ] 保持安全速度
 - [ ] 避开禁航区
 - [ ] 监听 VHF 16 频道（如果可能）
@@ -1723,14 +1800,14 @@ HBW 的租船在你预订时会告知当前要求。请致电 905-342-2153 或�
 
 ---
 
-## Rice Lake 特定的安全须知
+## 莱斯湖特定的安全须知
 
-如果你计划在 Rice Lake 租船：
+如果你计划在莱斯湖租船：
 
 **沉没铁路**
-- 跨越湖中段，深度约 4 英尺
+- 位于 Harwood 与 Hiawatha 之间的旧铁路堤道，设有浮标标示的通道
 - Chartplotter（Navionics、Garmin、C-MAP）会标示
-- 过湖中段时减速
+- 请走浮标标示的通道并减速
 
 **夏季水草**
 - 大部分湖区水草茂盛
@@ -1789,7 +1866,7 @@ HBW 要求每位可能驾驶租船的人在取船时出示有效 PCOC 和带照�
 
 **租船：** [harrisboatworks.ca/rentals](https://www.harrisboatworks.ca/rentals) 或拨打 **905-342-2153**
 
-**PCOC：** 在 Transport Canada 认证机构线上完成（搜寻 "PCOC online")
+**PCOC：** 在 Transport Canada 认证机构线上完成（搜索 "PCOC online")
 
 Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON
 
@@ -1797,7 +1874,15 @@ Harris Boat Works 自 1947 年起由家族经营，现已传至第三代。
 
 自 1965 年起，Harris Boat Works 一直是 Mercury 授权经销商。
 
-Harris Boat Works 目前是 Mercury Marine Premier 认证经销商。`,
+Harris Boat Works 目前是 Mercury Marine Premier 认证经销商。
+
+## 相关指南
+
+- [GTA 华人 PCOC 操作员卡、PCL 船牌与安省钓鱼证指南](/blog/zh/gta-chinese-pcl-fishing-licence-guide)
+- [安省驾船法规中文指南（2026）：PCOC、PCL、安全装备与钓鱼证](/blog/zh/ontario-boating-regulations-zh)
+- [多伦多华人第一次租船钓鱼：证件、安全和当天流程](/blog/zh/first-boat-rental-rice-lake-chinese-guide)
+- [GTA 到 莱斯湖 租船一日游：预订、证件与当天清单](/blog/zh/gta-chinese-rice-lake-day-trip-plan)
+`,
     faqs: [
       { question: '在安省租船一定要有 PCOC 吗？', answer: '联邦规则认可填写完整的租船安全检查表作为该次租赁的能力证明。HBW 要求每位可能驾驶租船的人在取船时出示有效 PCOC 和带照片身份证；检查表不能替代 HBW 的取船证件要求。' },
       { question: 'Rental Boat Safety Checklist 跟 PCOC 有什么不同？', answer: 'PCOC 终身有效、全国通用、需要在线课程通过测验、费用约 $50。Rental Boat Safety Checklist 仅当次租船有效。HBW 不把检查表当作取船时的 PCOC 替代。' },
@@ -1812,9 +1897,10 @@ Harris Boat Works 目前是 Mercury Marine Premier 认证经销商。`,
     seoTitle: 'Pontoon 还是钓鱼船？6-8 人船型选择',
     description: '莱斯湖 GTA 华人家庭船型选择：pontoon 平台船 vs 钓鱼船。稳定性、人数、油耗和配置对比。HBW 提供 Legend 船型选择。',
     image: '/lovable-uploads/zh-pontoon-vs-fishing-boat-hero.png',
+    imageAlt: '一家老小在黑色遮阳顶 pontoon 上用餐，旁边两名钓客在红色船体的小铝艇上钓鱼，两船都装 Mercury 船外机',
     author: 'Harris Boat Works',
     datePublished: '2026-05-11',
-    dateModified: '2026-09-06',
+    dateModified: '2026-10-06',
     publishDate: '2026-05-11',
     category: '租船与钓鱼',
     readTime: '6 分钟',
@@ -1826,8 +1912,8 @@ Harris Boat Works 目前是 Mercury Marine Premier 认证经销商。`,
 | 项目 | Pontoon 平台船 | Fishing Boat 钓鱼船 |
 |---|---|---|
 | 最佳人数 | 6-10 人 | 1-4 人 |
-| 稳定性 | 非常稳 (湖面波涛不晃) | 较稳但比 pontoon 差 |
-| 速度 | 中等 (一般 20-35 km/h) | 快 (35-55 km/h) |
+| 稳定性 | 非常稳（通常比同级钓鱼船更稳，但大风浪时仍会晃动） | 较稳但比 pontoon 差 |
+| 速度 | 较低，以巡航为主（巡航约 24-32 km/h） | 较快，适合跑远 |
 | 油耗 | 中-高 | 低 |
 | 钓鱼适应性 | 一般 (有钓鱼版可选) | 专业级 |
 | 新船价格 | 按船型、布局和动力配置报价 | 按船型、布局和动力配置报价 |
@@ -1835,15 +1921,15 @@ Harris Boat Works 目前是 Mercury Marine Premier 认证经销商。`,
 
 ## 为什么大部分 GTA 华人家庭选 Pontoon
 
-我们在 HBW 售卖 Legend pontoon 给 GTA 华人客户已经十多年。最常见的购买理由：
+在 HBW，GTA 华人客户选择 Legend pontoon 最常见的购买理由：
 
 **1. 家庭聚会场所** ， Pontoon 平台够大,能放餐桌、椅子、烧烤架。一家三代 (爷爷奶奶、父母、孩子) 周末聚会在湖上不挤。
 
 **特别一提：父母从中国来探亲住 2-3 个月时，pontoon 是"全家共度"最实在的答案。** 长辈不开车也能一起出门，孙辈在湖上跑来跑去，一家人在船上吃饭、看日落。比起每周末轮流找去哪吃饭，这是一个能让长辈真正放松、也能让你"尽到孝心"的方式。很多 GTA 华人家庭买 pontoon 的真实动机，就是这个场景。
 
-**2. 稳定不晃** ， Rice Lake 夏天周末游艇多，浪不大但稳定性差的船仍会晃。Pontoon 平台船有两个浮筒，有些是三浮筒，通常比同级钓鱼船更稳定。
+**2. 稳定不晃** ， 莱斯湖夏天周末游艇多，浪不大但稳定性差的船仍会晃。Pontoon 平台船有两个浮筒，有些是三浮筒，通常比同级钓鱼船更稳定。
 
-**3. 安全 + 不晕船** ， 老人和小孩对船晃敏感。Pontoon 不晃。
+**3. 稳定性与舒适度** ， 老人和小孩对船晃敏感。Pontoon 在平静或小浪时比一般小船稳得多，比较不容易晕船；风浪大时仍可能晃动，出行前看天气。
 
 **4. 多功能** ， 游泳、烧烤、看日落、钓鱼 (轻度)、cruising。同一条船覆盖所有家庭活动。
 
@@ -1852,8 +1938,8 @@ Harris Boat Works 目前是 Mercury Marine Premier 认证经销商。`,
 如果您的主要使用模式是：
 
 - 1-3 人专业钓鱼 (主要是 angler,家人偶尔陪)
-- 想去 Rice Lake 外的其他湖钓 (拖船能力很关键)
-- 主要在 5-7 月禁渔前的早晨和傍晚出钓
+- 想去莱斯湖外的其他湖钓 (拖船能力很关键)
+- 主要在 5-7 月的早晨和傍晚出钓。FMZ 17 没有全区夏季禁渔期：walleye 从 5 月第二个星期六开放至 11 月 15 日，bass 从 6 月第三个星期六开放至 12 月 15 日
 - 想花钱省油 (钓鱼船油耗是 pontoon 的 60-70%)
 
 钓鱼船更适合。
@@ -1885,15 +1971,15 @@ whenInDoubt: 一半华人家庭买了钓鱼船后才发现, 周末其实更想�
 
 ### Pontoon 平台船推荐 (HBW 销售 Legend 船型)
 
-**Legend Splash 18-22 英尺** ， GTA 华人家庭最常买。6-8 人能舒服坐。Mercury 90-115 FourStroke 引擎够用。
+**Legend pontoon（LE Series、Q Series、Halo）** ， GTA 华人家庭最常买。6-8 人能舒服坐。Mercury 90-115 FourStroke 引擎够用。
 
-**Legend Splash 23-25 英尺 + 三浮筒** ， 想要更稳定和更多空间的升级版。Mercury 150-200 FourStroke。
+**Legend 三浮筒 pontoon** ， 想要更稳定和更多空间的升级版。Mercury 150-200 FourStroke。
 
 ### 钓鱼船推荐
 
 **Legend Pulse 17-19 英尺** ， 入门级铝制钓鱼船。Mercury 75-90 FourStroke。莱斯湖 angler 最常买。
 
-**Legend Xterminator 18-21 英尺** ， 中级专业级。Mercury 115-150 Pro XS。如果想认真钓 musky 或 bass,这是选择。
+**Legend XT Series 17-20 英尺** ， 中级专业级。Mercury 115-150 Pro XS。如果想认真钓 musky 或 bass,这是选择。
 
 ## 我们在 HBW 看到的实地见证
 
@@ -1939,7 +2025,7 @@ whenInDoubt: 一半华人家庭买了钓鱼船后才发现, 周末其实更想�
 
 > 相关指南：[买 pontoon：家庭、钓鱼、Rice Lake 怎么配](/blog/zh/chinese-family-pontoon-mercury-outboard)。
 
-[Mercury Premier 经销商](https://www.mercurymarine.com/ca/en) · 莱斯湖 Gores Landing · 自 1947 年
+[Mercury Premier 经销商](https://www.mercurymarine.com/ca/en) · 莱斯湖 Gores Landing · 自 1947 年家族经营
 
 ---
 
@@ -1952,6 +2038,12 @@ whenInDoubt: 一半华人家庭买了钓鱼船后才发现, 周末其实更想�
 同系列：
 - [为什么 GTA 华人船主选择 Harris Boat Works](/blog/zh/why-chinese-boaters-choose-harris-boat-works)
 - [GTA 华人 Mercury 服务与换机指南](/blog/zh/mercury-repower-guide-gta)
+
+## 相关指南
+
+- [多伦多华人在 莱斯湖 买船完整指南：从选型到交付](/blog/zh/gta-chinese-buy-boat-rice-lake-guide)
+- [多伦多华人 Mercury 船外机马力选择指南：9.9、20、60、115、150HP 怎么选？](/blog/zh/mercury-outboard-horsepower-guide-toronto-chinese)
+- [安省华人养船成本指南](/blog/zh/boat-ownership-cost-ontario-chinese)
 `,
     faqs: [
       { question: '6 人租钓鱼船还是 pontoon？', answer: '几乎一定 pontoon。6 人挤在钓鱼船里全员不舒服，一日下来腰酸背痛。Pontoon 是平台式，空间大，老人小孩都友好。' },
@@ -1966,18 +2058,19 @@ whenInDoubt: 一半华人家庭买了钓鱼船后才发现, 周末其实更想�
     title: '安大略省 Mercury 换新船外机完整指南：GTA 华人船主必读',
     description: '你的船外机还值得维修吗？GTA 华人船主的 Mercury Repower 完整指南：换机时机、选马力、透明报价，以及 Harris Boat Works 的完整安装流程。',
     image: '/lovable-uploads/zh-mercury-repower-guide-gta-hero.png',
+    imageAlt: '男子在车道上拍摄拖车上米色小艇的船尾，艇上装着黑色 Mercury FourStroke 船外机',
     author: 'Harris Boat Works',
     datePublished: '2026-05-12',
-    dateModified: '2026-09-07',
+    dateModified: '2026-10-06',
     publishDate: '2026-05-12',
     category: '成本分析',
     readTime: '10 min read',
     keywords: ['mercury repower gta', 'gta 华人 mercury', 'mercury 换机 安省', 'gta chinese boater mercury', 'rice lake mercury repower'],
     content: `### 服务与换机：先提交资料，再确认具体工作
 
-1. **维修保养：**先填写[服务申请](https://hbw.wiki/service)，说明船只、发动机和需要处理的问题。
+1. **维修保养：**先填写[服务申请](https://hbwservice.ca)，说明船只、发动机和需要处理的问题。
 2. **更换发动机：**使用[Mercury 报价工具](/quote/motor-selection)说明您的需求，HBW 会根据船只情况确认配置和工作范围。
-3. **送船：**完成服务申请后，您可以随时送船，包括营业时间以外；无需等待确认送船时段。
+3. **送船：**完成服务申请后，您可以送船，包括营业时间以外；HBW 12 月 1 日至 4 月 1 日停业，期间不接收船只。
 4. **确认与交接：**HBW 会与您联系，确认所需资料、工作授权和安排。交接时核对已完成的工作和相关文件。
 
 Harris Boat Works 是 Mercury Premier 经销商。
@@ -1998,13 +2091,13 @@ item2En: Family marina since 1947
 item2Zh: 自1947年家族经营的码头
 item3En: Transparent CAD pricing, no haggling
 item3Zh: 透明加元价格，无需讨价还价
-item5En: 60 to 90 minutes from GTA via 401 + 115
-item5Zh: 从 GTA 经 401 + 115 高速约 60 到 90 分钟车程
+item5En: About 90 minutes east of Toronto via Highway 401
+item5Zh: 从多伦多经 401 向东约 90 分钟车程
 item6En: Mercury dealer since 1965
 item6Zh: 自1965年起的 Mercury 经销商
 ctaEn: Build your quote
 ctaZh: 在线获取报价
-ctaHref: /quote
+ctaHref: /quote/motor-selection
 ::
 
 ---
@@ -2058,7 +2151,7 @@ Repower 不只是换一台「差不多大」的机器。选对马力对于安全
 |---|---|
 | FourStroke | 大多数家庭和钓鱼用途，安静省油，用途最广 |
 | Pro XS | 注重加速性能和钓鱼操控的人 |
-| Verado | 大型或高端船，追求静音和精细操控 |
+| Verado | 大型或高端船，追求静音和精细操控（仅限特别订购，需先向 HBW 咨询） |
 
 **对大多数 GTA 华人家庭船主来说，FourStroke 系列是最实际的起点。**
 
@@ -2167,14 +2260,18 @@ A：视时间段和库存情况而定，旺季等待时间可能较长。建议�
 ## 行动呼吁
 
 → **先看透明加元报价：[mercuryrepower.ca](https://www.mercuryrepower.ca)**
-→ 提交服务请求：[hbw.wiki/service](https://hbw.wiki/service)
+→ 提交服务请求：[hbwservice.ca](https://hbwservice.ca)
 → 电话：905-342-2153
 → 地址：5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
+
+## 相关指南
+
+- [Mercury 115马力 vs 150马力舷外机：如何选择？](/blog/zh/mercury-115-vs-150-comparison-zh)
 `,
     faqs: [
-      { question: 'Repower 之后保固怎么算？', answer: '通过 HBW Premier 授权经销商购买的 Mercury 新机，享有完整 Mercury 原厂保固。保固期从安装完成日起算，详细条款请在购买时确认。' },
+      { question: 'Repower 之后保固怎么算？', answer: '通过 HBW Premier 授权经销商购买的 Mercury 新机，享有完整 Mercury 原厂保固。保固期从首次零售售出日或首次投入使用日（以先到者为准）起算，并由授权经销商向 Mercury 登记，详细条款请在购买时确认。' },
       { question: '旧机可以 trade-in 吗？', answer: '可以。HBW 接受旧机 trade-in，折抵金额视机型、年份、运作状况而定。建立报价时可同时提交旧机资讯，我们会提供估价。' },
-      { question: '换机需要多久？', answer: '视库存和安装排程而定，旺季（春季）等待时间可能较长。建议提早计划，并通过 https://hbw.wiki/service 提交服务请求。' },
+      { question: '换机需要多久？', answer: '视库存和安装排程而定，旺季（春季）等待时间可能较长。建议提早计划，并通过 https://hbwservice.ca 提交服务请求。' },
       { question: '换机之后需要换螺旋桨吗？', answer: '视情况而定。如果旧螺旋桨匹配新机，可以沿用；如果不匹配，HBW 会在报价中包含适合的螺旋桨选项。' },
     ],
   },
@@ -2188,6 +2285,7 @@ A：视时间段和库存情况而定，旺季等待时间可能较长。建议�
     seoTitle: '多伦多华人 Mercury 维修保养指南｜HBW',
     description: '多伦多华人 Mercury 发动机维修保养完整指南：保养周期、机油、火花塞、水泵、磁电、冬储、大修，由 Mercury Marine Premier 经销商 Harris Boat Works 整理。',
     image: '/lovable-uploads/hero-mandarin-mercury-service.png',
+    imageAlt: '明亮车间里，戴海军蓝帽的技师手持工具站在黑色船外机旁，两名男子查看工作台上拆开的发动机缸体',
     author: 'Harris Boat Works',
     datePublished: '2026-05-15',
     dateModified: '2026-09-11',
@@ -2205,7 +2303,7 @@ A：视时间段和库存情况而定，旺季等待时间可能较长。建议�
     ],
     content: `## 快速答案
 
-Mercury 和 MerCruiser 的保养周期取决于具体机型、序列号、使用时间和发动机小时数；常见节点包括适用机型的首次保养、年度或 100 小时保养，以及部分 300 小时或 3 年项目。请以对应的 Mercury 手册为准。Harris Boat Works（HBW）是 Rice Lake 上自 1947 年持续家族经营的 **Mercury Marine Premier 经销商**，**发动机维修只限 Mercury 和 MerCruiser**。团队使用英语服务，没有中文母语的销售或翻译；欢迎带会英语的亲友同来或使用翻译软件。服务、冬储和春季工作均按先到先办处理。先完成 [hbw.wiki/service](https://hbw.wiki/service)，然后随时送船，包括下班后。
+Mercury 和 MerCruiser 的保养周期取决于具体机型、序列号、使用时间和发动机小时数；常见节点包括适用机型的首次保养、年度或 100 小时保养，以及部分 300 小时或 3 年项目。请以对应的 Mercury 手册为准。Harris Boat Works（HBW）是 Rice Lake 上自 1947 年持续家族经营的 **Mercury Marine Premier 经销商**，**发动机维修只限 Mercury 和 MerCruiser**。团队使用英语服务，没有中文母语的销售或翻译；欢迎带会英语的亲友同来或使用翻译软件。服务、冬储和春季工作均按先到先办处理。先完成 [hbwservice.ca](https://hbwservice.ca)，然后随时送船，包括下班后。
 
 ---
 
@@ -2219,15 +2317,15 @@ Harris Boat Works 是 Rice Lake 上自 1947 年持续家族经营的 marina，�
 
 ---
 
-## Mercury 保养周期：20 / 100 / 300 三档
+## Mercury 保养周期：磨合 / 100 / 300 三档
 
 Mercury 把发动机保养按使用小时数分成几个关键节点。下面是简化版（具体以你的 Owner's Manual 为准）：
 
 | 节点 | 时机 | 主要内容 | 为什么重要 |
 |---|---|---|---|
-| **20 小时初次保养** | 新机或大修后第一次 | 第一次换机油、检查紧固件、调整化油器/喷油（视机型）、检查冷却水道 | 新机磨合期金属碎屑最多，必须及时清除；不做可能影响保修 |
+| **10 小时磨合期** | 新机或大修后 | 按手册完成磨合（多数机型：前 2 小时变化油门且不超过 4500 rpm，之后 8 小时避免连续全油门超过 5 分钟）；是否另有早期检查或换油，以机型手册为准 | 磨合方式不当造成的故障可能不在保修范围内 |
 | **100 小时年度保养** | 每年一次（即使时数不足） | 换机油 + 滤芯、检查火花塞、齿轮油、燃油滤、冷却系统、阳极 | 安省湖泊使用强度低，但季节性温差大，年度检查是底线 |
-| **300 小时大保养** | 每 300 小时或 3 年（取较早者） | 上面所有 + 换水泵叶轮、火花塞、燃油泵检查、节温器 | 水泵叶轮老化是 Mercury 故障最常见原因，过期不换风险高 |
+| **300 小时大保养** | 部分机型（如 150 FourStroke）为每 300 小时或 3 年（取较早者），其他机型以手册为准 | 按机型手册加做：换水泵叶轮、检查动力倾斜液、润滑传动轴花键、更换发电机皮带；火花塞和节温器的间隔也以手册为准 | 水泵叶轮老化是 Mercury 故障最常见原因，过期不换风险高 |
 
 **注意：** 这是 Mercury 通用框架，**确切周期视机型（FourStroke、Pro XS、SeaPro、Verado、Mercruiser）和使用环境（淡水 / 咸水）而定**。HBW 在每次服务时会按你的具体型号给出下一次推荐时间。
 
@@ -2237,9 +2335,9 @@ Mercury 把发动机保养按使用小时数分成几个关键节点。下面是
 
 ### 机油 + 滤芯（年度必换）
 
-四冲程 Mercury 请使用 Mercury 4-Stroke Marine Oil（FC-W 认证），**不能用汽车机油代替**。在加拿大按马力区分：0 至 30 hp 用 10W-30，40/50/60 hp 用 25W-40，75 hp 及以上用 10W-30。确切以用户手册为准。每 100 小时或每年一次（取较早者）。如果你只在 5 月到 10 月用船 20–30 小时，仍然建议每年换一次。
+四冲程 Mercury 请使用 Mercury 4-Stroke Marine Oil（FC-W 认证），**不能用汽车机油代替**。Mercury 提供 10W-30 和 25W-40 两种 FC-W 认证的四冲程机油，具体用哪一种取决于机型、年份和使用温度，请以你那台发动机的用户手册为准。每 100 小时或每年一次（取较早者）。如果你只在 5 月到 10 月用船 20–30 小时，仍然建议每年换一次。
 
-### 火花塞（300 小时或 3 年）
+### 火花塞（间隔以机型手册为准）
 
 Mercury 指定 NGK 或 Champion 特定型号，更换间距和扭矩有标准。开始有点火不稳、怠速抖动、油耗上升，多数情况换火花塞就好。
 
@@ -2271,7 +2369,7 @@ Lower unit gearcase oil 颜色变成奶白色就说明进水了，**必须立即
 | 服务类型 | 保养、诊断、维修、保修工作、冬储、春季开机 | 内燃柴油船机、Mercury 赛车系列（个别评估） |
 | 操作员卡 / 钓鱼证 | 不适用 | 不销售；请到 ontario.ca 办理 |
 
-如果你的船是 Mercury 或 Mercruiser，欢迎通过 [https://hbw.wiki/service](https://hbw.wiki/service) 提交服务请求。如果是其他品牌，请直接找对应授权点，避免来回奔波。
+如果你的船是 Mercury 或 Mercruiser，欢迎通过 [https://hbwservice.ca](https://hbwservice.ca) 提交服务请求。如果是其他品牌，请直接找对应授权点，避免来回奔波。
 
 ---
 
@@ -2280,7 +2378,7 @@ Lower unit gearcase oil 颜色变成奶白色就说明进水了，**必须立即
 新 Mercury 外挂机出厂通常带 **3 年消费者有限保修**（具体视机型和市场，可能有延保选项）。保修期内最重要的几件事：
 
 - **保修维修必须由授权经销商完成。** 非授权点的修理记录可能影响保修索赔。
-- **关键服务必须按时完成。** 跳过 20 小时初保、跳过 100 小时年度服务，可能导致 **特定相关项目的保修被拒**（不是"整个保修作废"，但具体项目可能受影响）。
+- **磨合和定期保养必须按手册完成。** 磨合不当、跳过手册要求的定期保养（如 100 小时或年度服务），可能导致 **特定相关项目的保修被拒**（不是"整个保修作废"，但具体项目可能受影响）。
 - **保留所有服务记录。** HBW 在 Mercury 系统里保留电子记录，你也应该自己留一份纸质或邮件副本。
 - **客户自带非 Mercury 零件可能影响保修。** 如机油、火花塞、滤芯使用非 Mercury 推荐型号，相关故障可能被排除在保修之外。
 
@@ -2308,7 +2406,7 @@ SmartCraft 报警、过热、漏油、燃油味或明显动力下降都需要按
 
 ### 5. 等到关闭后才安排冬化
 
-HBW 不需要客户提前数月抢位置。先完成 [hbw.wiki/service](https://hbw.wiki/service)，然后随时送船，包括下班后。 实体船厂 12 月 1 日至 4 月 1 日关闭。
+HBW 不需要客户提前数月抢位置。先完成 [hbwservice.ca](https://hbwservice.ca)，然后随时送船，包括下班后。 实体船厂 12 月 1 日至 4 月 1 日关闭。
 
 ---
 
@@ -2322,7 +2420,7 @@ HBW 提供室外专业收缩膜存储、室外无遮盖存储，以及仅收缩�
 
 ### 如何送船
 
-HBW 按**先到先办**处理冬化和冬储工作，不需要提前数月预留场地。先完成 [hbw.wiki/service](https://hbw.wiki/service)，然后随时送船，包括下班后。 实体船厂 12 月 1 日至 4 月 1 日关闭。
+HBW 按**先到先办**处理冬化和冬储工作，不需要提前数月预留场地。先完成 [hbwservice.ca](https://hbwservice.ca)，然后随时送船，包括下班后。 实体船厂 12 月 1 日至 4 月 1 日关闭。
 
 ### 自己做行不行？
 
@@ -2354,7 +2452,7 @@ HBW 按**先到先办**处理冬化和冬储工作，不需要提前数月预留
 
 - **欢迎带会英语的亲友同来**，或使用手机翻译软件，我们会耐心沟通、尽力配合
 - **提前用邮件写清楚**：症状、机型、序列号、想要的服务，可以中英文混合，我们能看懂大意
-- **服务请求模板**：[https://hbw.wiki/service](https://hbw.wiki/service) 上提交时同样可以中英文混合
+- **服务请求模板**：[https://hbwservice.ca](https://hbwservice.ca) 上提交时同样可以中英文混合
 - **服务报价邮件**：完工前的修理报价我们会写清楚每一项，避免"做了我才告诉你"
 
 我们不能承诺中文服务，但我们会认真对待每一位华人客户。
@@ -2363,7 +2461,7 @@ HBW 按**先到先办**处理冬化和冬储工作，不需要提前数月预留
 
 ## 预约流程
 
-最快的方式是 [https://hbw.wiki/service](https://hbw.wiki/service) 在线提交。提交时建议包含：
+最快的方式是 [https://hbwservice.ca](https://hbwservice.ca) 在线提交。提交时建议包含：
 
 1. **车主姓名 + 联系方式**（电话 + 邮箱）
 2. **发动机型号 + 序列号**（机壳上的金属铭牌）
@@ -2376,17 +2474,24 @@ HBW 按收到顺序处理请求。如果有漏油、过热、SmartCraft 严重�
 
 ## 下一步
 
-Mercury 或 MerCruiser 需要保养、诊断或维修时，到 [hbw.wiki/service](https://hbw.wiki/service) 提交机型、序列号、小时数、症状和需要的工作。发动机维修只限 Mercury 和 MerCruiser。
+Mercury 或 MerCruiser 需要保养、诊断或维修时，到 [hbwservice.ca](https://hbwservice.ca) 提交机型、序列号、小时数、症状和需要的工作。发动机维修只限 Mercury 和 MerCruiser。
 
 如果维修报价接近换机成本，可以同时在 [mercuryrepower.ca](https://www.mercuryrepower.ca) 建立当前 Mercury 配置，再比较两份完整数字。
 
 地址：5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
+
+## 相关指南
+
+- [Mercury 船外机故障排查中文指南](/blog/zh/mercury-outboard-troubleshooting-chinese-ontario)
+- [安省船主冬化与室外冬储清单：什么时候送、要做什么](/blog/zh/ontario-boat-winterization-guide-chinese)
+- [安省华人船主春季开船检查清单](/blog/zh/ontario-spring-boat-checklist-chinese)
+- [加拿大加油指南：Mercury 船外机加 87 还是 91？国内 92 号汽油怎么换算](/blog/zh/mercury-fuel-octane-ethanol-chinese-guide)
 `,
     faqs: [
       { question: 'HBW 给 Yamaha 或 Honda 发动机做维修吗？', answer: '不做。HBW 的发动机维修只限 Mercury 和 MerCruiser。其他品牌请找对应品牌的授权服务点。HBW 可在接受书面范围后为其他品牌的船提供冬化或室外存储。' },
       { question: '我的 Mercury 还在保修期，HBW 能处理吗？', answer: 'HBW 是 Mercury Marine Premier Dealer，可以检查序列号记录并处理符合 Mercury 当前条款的保修申请。是否承保取决于具体故障、记录、使用情况和 Mercury 的决定。' },
       { question: 'Mercury 的保养间隔都是 20、100 和 300 小时吗？', answer: '不是通用公式。部分机型有这些常见节点，但实际项目和间隔取决于发动机家族、序列号、时间、小时数和使用条件。以对应的 Mercury 手册为准。' },
-      { question: '什么时候提交秋季服务请求？', answer: '先完成 hbw.wiki/service，然后随时送船，包括下班后。 实体船厂 12 月 1 日至 4 月 1 日关闭。' },
+      { question: '什么时候提交秋季服务请求？', answer: '先完成 hbwservice.ca，然后随时送船，包括下班后。 实体船厂 12 月 1 日至 4 月 1 日关闭。' },
       { question: 'HBW 提供什么冬储？', answer: 'HBW 提供室外专业收缩膜存储、室外无遮盖存储，以及仅收缩膜服务。不提供室内或加热存储。 我们通常可以安排取船。请向我们确认您的船和地点是否可安排。 最终范围以当前书面报价和工单为准。' },
       { question: '发动机坏了，修还是换新的更划算？', answer: '先取得故障诊断和书面维修报价，再与 mercuryrepower.ca 的完整新机配置比较。机龄只是一个因素，零件可用性、以前的维修、船体状况和完整安装成本同样重要。' },
       { question: 'HBW 能用中文沟通吗？', answer: ZH_LANGUAGE_NOTE },
@@ -2402,9 +2507,10 @@ Mercury 或 MerCruiser 需要保养、诊断或维修时，到 [hbw.wiki/service
     seoTitle: 'GTA 到 Rice Lake 租船一日游中文指南｜HBW',
     description: '从 GTA 到 Rice Lake 租船的一日游实用指南：在线预订、每位驾驶员证件、实时路线、天气判断、check-in 和安全出发清单。',
     image: '/lovable-uploads/blog-heroes-2026-07/hero-why-harris-mercury-dealer-hbw-aerial-2026-07.webp',
+    imageAlt: '从空中俯瞰码头和靠泊的船只、修理车间建筑，以及树林间的碎石停车场',
     author: 'Harris Boat Works',
     datePublished: '2026-05-15',
-    dateModified: '2026-09-06',
+    dateModified: '2026-10-04',
     publishDate: '2026-05-15',
     category: 'mandarin',
     readTime: '8 分钟',
@@ -2417,6 +2523,8 @@ Mercury 或 MerCruiser 需要保养、诊断或维修时，到 [hbw.wiki/service
       'Toronto Chinese day trip Rice Lake',
     ],
     content: `> **简短答案：** 先在 [HBW 在线租船页面](https://www.harrisboatworks.ca/rentals) 选日期、船型和时段并完成预订，再用确认单上的报到时间倒推当天行程。每位可能驾驶的人都必须带有效 boat operator licence／PCOC 和带照片身份证件。出发当天重新查路线、天气和租赁条件；不要把博客里的示例当作预订或天气保证。
+
+需要考取 PCOC？通过 [HBW 的 MyBoatCard 推荐链接](https://myboatcard.com/card/harrisboat)参加在线课程，使用优惠码 **HARRIS15** 可享 **15% 折扣**。
 
 ## 最容易犯的错，不是在保温箱里少放一瓶水
 
@@ -2440,7 +2548,7 @@ Rice Lake 一日游并不复杂。把顺序做对就行：**先订船，再确�
 
 ## 第二步：把每位驾驶员的证件一次准备好
 
-加拿大一般规则要求动力休闲船操作者随船携带 proof of competency。[Transport Canada](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/boating-safety/pleasure-craft-operator-card-pcoc) 也说明，合资格的 Rental Boat Safety Checklist 在某些租赁情境下可作为该租期的证明。
+加拿大一般规则要求动力休闲船操作者随船携带 proof of competency。[Transport Canada](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc) 也说明，合资格的 Rental Boat Safety Checklist 在某些租赁情境下可作为该租期的证明。
 
 **HBW 的内部政策更严格：每位可能驾驶的人都必须出示有效 boat operator licence／PCOC 和带照片身份证件。** 不要假设到了码头再做一张临时清单就可以代替 HBW 要求的驾驶资格。
 
@@ -2518,7 +2626,7 @@ GTA 多数地区到 Gores Landing 通常约 60–120 分钟，但起点、401／
 
 - [HBW 在线租船与实时可订船型](https://www.harrisboatworks.ca/rentals)
 - [Transport Canada：Rental boats](https://tc.canada.ca/en/marine-transportation/marine-safety/boating-safety/rental-boats)
-- [Transport Canada：PCOC 与其他 proof of competency](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/boating-safety/pleasure-craft-operator-card-pcoc)
+- [Transport Canada：PCOC 与其他 proof of competency](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc)
 - [Transport Canada：出发前安全检查](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/maintaining-safe-pleasure-craft)
 - [Ontario：FMZ 17 当前钓鱼规定](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17)
 
@@ -2530,6 +2638,12 @@ GTA 多数地区到 Gores Landing 通常约 60–120 分钟，但起点、401／
 4. 租过几次后想买船，可比较 [pontoon 与 fishing boat](/blog/zh/pontoon-vs-fishing-boat-6-8-people-zh)；已有船想换 Mercury，则在 [mercuryrepower.ca](https://www.mercuryrepower.ca) 建立报价。
 
 计划要认真，行程不必僵硬。湖况不读你的时间表，所以给安全和天气留一点余量。
+
+## 相关指南
+
+- [多伦多华人第一次租船钓鱼：证件、安全和当天流程](/blog/zh/first-boat-rental-rice-lake-chinese-guide)
+- [安省租船需要驾照吗？PCOC 与租船安全清单一次讲清](/blog/zh/pcoc-vs-rental-boat-safety-checklist-zh)
+- [莱斯湖 钓鱼指南（2026）：FMZ 17 鱼种、鱼牌与出发清单](/blog/zh/rice-lake-fishing-guide-toronto-chinese)
 `,
     faqs: [
       { question: '从多伦多出发到 Rice Lake 实际需要多少时间？', answer: 'GTA 多数地区通常约 60–120 分钟，但起点、交通和施工会改变结果。出发当天使用实时导航，并按租赁确认的报到时间倒推。' },
@@ -2551,9 +2665,10 @@ GTA 多数地区到 Gores Landing 通常约 60–120 分钟，但起点、401／
     seoTitle: '华人 PCOC、PCL 与安省钓鱼证指南｜HBW',
     description: '分清 PCOC 操作员资格、PCL 船只牌照和安省钓鱼证：谁需要、有效期、官方申请入口与 Rice Lake 出发前检查。',
     image: '/lovable-uploads/hero-mandarin-pcl-licence.png',
+    imageAlt: '穿橙色救生衣的男子和女孩站在铝艇操纵台旁，船行驶在日落时平静的森林湖面上',
     author: 'Harris Boat Works',
     datePublished: '2026-05-15',
-    dateModified: '2026-09-06',
+    dateModified: '2026-10-06',
     publishDate: '2026-05-15',
     category: 'mandarin',
     readTime: '11 分钟',
@@ -2571,6 +2686,8 @@ GTA 多数地区到 Gores Landing 通常约 60–120 分钟，但起点、401／
 
 如果你是 GTA 华人，准备买船、租船或在 Rice Lake 钓鱼，需要分清三件事：（1）PCOC（Pleasure Craft Operator Card）是操作动力休闲船的人的常见资格证明，卡终身有效；（2）[PCL 船只牌照](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl)（Pleasure Craft Licence）用于符合条件的船，发动机总功率达到 10 HP（7.5 kW）或以上时通常需要，新办、续期、转让或补发现为 $24.41 CAD（2026-09-05）；新办、转让或续期后有效 5 年（补发不延长有效期），资料更新免费；（3）安省钓鱼资格取决于年龄和居住身份。费用和规则会变，请使用 Transport Canada 与 Ontario.ca 的当前官方页面。
 
+需要考取 PCOC？通过 [HBW 的 MyBoatCard 推荐链接](https://myboatcard.com/card/harrisboat)参加在线课程，使用优惠码 **HARRIS15** 可享 **15% 折扣**。
+
 ---
 
 ## 写在前面：为什么 GTA 华人最容易混淆
@@ -2585,12 +2702,12 @@ Harris Boat Works（HBW）是 Rice Lake 上家族经营·1947 年至今 的 mari
 
 ## 一、PCOC 操作员卡（Pleasure Craft Operator Card）
 
-**这是最常被忽略的一项。** 在加拿大水域操作任何带发动机的休闲船只（包括小马力电动船）时，操作人必须随身携带 Transport Canada 认可的操作能力证明；PCOC 是最常见的证明，但不是唯一被接受的证明。颁发机构是 [Transport Canada](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency)。
+**这是最常被忽略的一项。** 在加拿大水域操作任何带发动机的休闲船只（包括小马力电动船）时，操作人必须随身携带 Transport Canada 认可的操作能力证明；PCOC 是最常见的证明，但不是唯一被接受的证明。颁发机构是 [Transport Canada](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc)。
 
 ### 谁需要
 
-- **任何年龄、任何水域、操作发动机船的人。** 不分加拿大公民、永久居民、留学生、游客。
-- 包括小型铝合金钓鱼船、Pontoon、橡皮艇带挂机、电动船马力超过法规阈值的情况。
+- **任何年龄、操作带发动机船的人。** 不分加拿大公民、永久居民、留学生；访客自带船在加拿大水域少于 45 个连续日可豁免，租用的船可使用已完成的租船安全清单（仅限该租期）。
+- 包括小型铝合金钓鱼船、Pontoon、橡皮艇带挂机，以及电动马达船（包括小马力电动马达）。
 - **加拿大驾照（G、G2、G1）不能代替 PCOC 或其他合格的操作员资格证明。** 这是两个完全不同的体系。
 
 ### 怎么考
@@ -2650,7 +2767,7 @@ escalationBody: ${ZH_LANGUAGE_NOTE}
 
 ## 三、安省钓鱼证（Ontario Fishing Licence）
 
-颁发机构：**Ontario Ministry of Natural Resources and Forestry（MNRF）**，购买入口：[ontario.ca/page/fishing-licence](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees)。
+颁发机构：**Ontario Ministry of Natural Resources（MNR）**，购买入口：[ontario.ca/page/fishing-licence](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees)。
 
 ### 常见组合：Outdoors Card + Fishing Licence
 
@@ -2670,7 +2787,7 @@ escalationBody: ${ZH_LANGUAGE_NOTE}
 - **Sport Licence（运动证）：** 持有量和日捕量限额较高，适合认真钓鱼的人。
 - **Conservation Licence（保育证）：** 限额减半，价格较低，适合偶尔钓的家庭。
 
-具体价格每年由 MNRF 调整，请以 Ontario.ca 上的当下价格为准。
+具体价格每年由 MNR 调整，请以 Ontario.ca 上的当下价格为准。
 
 ### 哪里买
 
@@ -2682,11 +2799,11 @@ escalationBody: ${ZH_LANGUAGE_NOTE}
 
 ## 四、Rice Lake 特定钓鱼规则
 
-Rice Lake 属于安省 Fisheries Management Zone（FMZ），具体的鱼种季节、尺寸限制、持有量每年由 MNRF 更新。最常见的目标鱼种：
+Rice Lake 属于安省 Fisheries Management Zone（FMZ），具体的鱼种季节、尺寸限制、持有量每年由 MNR 更新。最常见的目标鱼种：
 
 - **碧古鱼 (Walleye)：** 有季节窗口和尺寸限制（slot size），具体数字每年可能调整
 - **Smallmouth / Largemouth Bass（鲈鱼）：** 通常有禁渔期（春季产卵期）和持有量限制
-- **Muskie（北方狗鱼）：** 严格的最小尺寸和持有量限制
+- **Muskie（北美狗鱼，Esox masquinongy）：** 严格的最小尺寸和持有量限制
 - **Perch、Sunfish、Crappie（杂鱼）：** 限制较宽松，适合带小孩
 
 **关键提醒：** 上面这些规则每年可能调整，**建议查询安省最新钓鱼规则，因为尺寸与时段每年可能调整。Ontario.ca 上的官方钓鱼条例摘要（Recreational Fishing Regulations Summary）是最可靠来源。** 不要依赖网上的旧帖或别人的口头建议。
@@ -2707,7 +2824,7 @@ Rice Lake 属于安省 Fisheries Management Zone（FMZ），具体的鱼种季�
 
 ## 六、罚款与风险
 
-被检查时拿不出有效的操作员资格证明、需要的 Pleasure Craft Licence 或安省钓鱼资格，可能被开告票或面临其他执法后果。具体项目和金额请参考 [Transport Canada](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency) 和 [Ontario MNRF](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees) 的当前官方信息。
+被检查时拿不出有效的操作员资格证明、需要的 Pleasure Craft Licence 或安省钓鱼资格，可能被开告票或面临其他执法后果。具体项目和金额请参考 [Transport Canada](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc) 和 [Ontario MNR](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees) 的当前官方信息。
 
 不要用旧帖中的课程价格或罚款金额做决定。先把需要的证件、船牌和当年钓鱼规则确认清楚，再出发。
 
@@ -2742,11 +2859,15 @@ Rice Lake 属于安省 Fisheries Management Zone（FMZ），具体的鱼种季�
 2. **如果船符合条件，办理 Pleasure Craft Licence（PCL 船只牌照）**：在线申请并支付当前服务费（2026-09-05 为 $24.41 CAD）。
 3. **出发钓鱼前确认自己的年龄和居住身份规则**：需要购买时，在 Ontario.ca 办好 Outdoors Card + Fishing Licence。
 4. **每年春天复查最新钓鱼规则**：Ontario Recreational Fishing Regulations Summary。
-5. **如需维修服务**：HBW 只为 Mercury 和 Mercruiser 发动机提供维修服务，请通过 [https://hbw.wiki/service](https://hbw.wiki/service) 提交请求。
+5. **如需维修服务**：HBW 只为 Mercury 和 Mercruiser 发动机提供维修服务，请通过 [https://hbwservice.ca](https://hbwservice.ca) 提交请求。
 
 水上安全比省下几十加元更重要。证齐了，PFD 穿好了，再出门。
 
 地址：5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
+
+## 相关指南
+
+- [安省驾船法规中文指南（2026）：PCOC、PCL、安全装备与钓鱼证](/blog/zh/ontario-boating-regulations-zh)
 `,
     faqs: [
       { question: '我有安省 G 牌驾照，是不是就不用考 PCOC 了？', answer: '不行。安省汽车驾照和动力船操作员资格是两个不同体系。在加拿大水域操作动力休闲船时必须携带 Transport Canada 接受的资格证明；G 牌不能代替。' },
@@ -2754,9 +2875,9 @@ Rice Lake 属于安省 Fisheries Management Zone（FMZ），具体的鱼种季�
       { question: '外国船证在加拿大能用吗？', answer: '访客可接受的资格证明取决于 Transport Canada 的当前规则和具体情况。不要假设任何外国证件自动有效；出发前在官方页面核对。' },
       { question: '14 岁的孩子能自己开船吗？', answer: '12 至 15 岁在没有合格成人直接监督时，最多可操作 40 HP（30 kW）的船；仍须携带有效资格证明。16 岁以下不能操作个人水上摩托。请在出发前核对 Transport Canada 当前规则。' },
       { question: '我从 HBW 租船，需要自己带 PCOC 吗？', answer: '需要。HBW 的内部政策要求每位驾驶员在 check-in 时出示有效的 boat operator licence / PCOC。安全清单仍会作为 briefing 完成，但 HBW 不把它当作驾驶员牌照的替代品。' },
-      { question: '安省钓鱼证多少钱？分几种？', answer: '安省钓鱼证由 Outdoors Card（3 年有效）和 Fishing Licence Tag（年度）两部分组成，分 Sport（运动证，限额高）和 Conservation（保育证，限额减半，价格较低）。具体价格每年由 MNRF 调整，请到 ontario.ca/page/fishing-licence 查询当下价格。' },
-      { question: 'Rice Lake 的 walleye / 黄金鲈鱼 规定是什么？', answer: '建议查询安省最新钓鱼规则，因为尺寸与时段每年可能调整。Ontario.ca 上的官方钓鱼条例摘要（Recreational Fishing Regulations Summary）是最可靠来源，按 Fisheries Management Zone 查询 Rice Lake 所属区域即可看到当年的 walleye 季节、slot size 和持有量。' },
-      { question: '没有船驾照或钓鱼证被查到会怎样？', answer: '可能被加拿大海岸警卫队、OPP 海上巡逻或 MNRF 巡查员开告票，罚款可达数百加元，严重情况下还可能没收渔获或暂时禁止使用船只。具体金额以 Transport Canada 和 Ontario MNRF 官方为准。' },
+      { question: '安省钓鱼证多少钱？分几种？', answer: '安省钓鱼证由 Outdoors Card（3 年有效）和 Fishing Licence Tag（年度）两部分组成，分 Sport（运动证，限额高）和 Conservation（保育证，限额减半，价格较低）。具体价格每年由 MNR 调整，请到 ontario.ca/page/fishing-licence 查询当下价格。' },
+      { question: 'Rice Lake 的 walleye / 碧古鱼 规定是什么？', answer: '建议查询安省最新钓鱼规则，因为尺寸与时段每年可能调整。Ontario.ca 上的官方钓鱼条例摘要（Recreational Fishing Regulations Summary）是最可靠来源，按 Fisheries Management Zone 查询 Rice Lake 所属区域即可看到当年的 walleye 季节、slot size 和持有量。' },
+      { question: '没有船驾照或钓鱼证被查到会怎样？', answer: '可能被加拿大海岸警卫队、OPP 海上巡逻或 MNR 巡查员开告票，罚款可达数百加元，严重情况下还可能没收渔获或暂时禁止使用船只。具体金额以 Transport Canada 和 Ontario MNR 官方为准。' },
     ],
   },
 
@@ -2769,9 +2890,10 @@ Rice Lake 属于安省 Fisheries Management Zone（FMZ），具体的鱼种季�
     seoTitle: '多伦多华人 Rice Lake 买船指南｜HBW',
     description: '多伦多华人家庭买船完整流程：船型选择（钓鱼船/家庭船/Pontoon）、新船 vs 二手、Mercury 发动机匹配、HBW 英语服务与沟通方式、贷款方案、提车与售后。',
     image: '/lovable-uploads/hero-mandarin-buying-guide.png',
+    imageAlt: '三代同堂的一家人在码头上看奶油色与海军蓝相间的 pontoon，穿海军蓝 polo 衫的男子指向船',
     author: 'Harris Boat Works',
     datePublished: '2026-05-15',
-    dateModified: '2026-09-06',
+    dateModified: '2026-10-06',
     publishDate: '2026-05-15',
     category: 'mandarin',
     readTime: '12 分钟',
@@ -2787,6 +2909,8 @@ Rice Lake 属于安省 Fisheries Management Zone（FMZ），具体的鱼种季�
     content: `## 快速答案
 
 如果你是住在 GTA 的华人家庭，正准备买人生第一艘船：**先决定用途（家庭出游 vs 认真钓鱼），再决定船型，最后再谈发动机和预算**。Rice Lake 离多伦多约 90 分钟车程，是 GTA 最近的"真湖"，也是新手家庭买船最合理的落脚点。Harris Boat Works（HBW）是 Rice Lake 上家族经营·1947 年至今 的 marina，Mercury 经销商始于 1965 年，也是 Mercury Marine Premier 经销商，提供看船、报价、交付和冬季存储一条龙服务（团队使用英语服务，欢迎带会英语的亲友同来或使用手机翻译软件）。建议先在 [试租指南](/blog/zh/gta-chinese-rice-lake-day-trip-plan) 中租一两次，确定真的喜欢，再回来看这篇买船指南。
+
+需要考取 PCOC？通过 [HBW 的 MyBoatCard 推荐链接](https://myboatcard.com/card/harrisboat)参加在线课程，使用优惠码 **HARRIS15** 可享 **15% 折扣**。
 
 ---
 
@@ -2991,21 +3115,25 @@ HBW 的在线报价工具 [mercuryrepower.ca](https://www.mercuryrepower.ca) 在
 1. **先租一次：** 看 [试租指南](/blog/zh/gta-chinese-rice-lake-day-trip-plan)，带家人来 Rice Lake 体验一天，确定船型方向。
 2. **生成在线报价：** 在 [mercuryrepower.ca](https://www.mercuryrepower.ca) 选好船型和发动机配置，看到完整价格和贷款选项。
 3. **来店看船：** 通过英文邮件联系我们确认营业时间；欢迎带会英语的亲友同来或使用翻译软件。确认营业时间后再出发。
-4. **如果是已有船想换发动机：** 可以提交 [服务请求](https://hbw.wiki/service)，我们安排评估。
+4. **如果是已有船想换发动机：** 可以提交 [服务请求](https://hbwservice.ca)，我们安排评估。
 
 Harris Boat Works 自 1947 年起一直由 Harris 家族在 Rice Lake 经营。欢迎你带家人过来看看。
 
 地址：5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
+
+## 相关指南
+
+- [Pontoon 还是钓鱼船？6-8 人 GTA 华人家庭船型选择指南](/blog/zh/pontoon-vs-fishing-boat-6-8-people-zh)
 `,
     faqs: [
-      { question: '从多伦多开车到 Rice Lake 要多久？路线推荐？', answer: '多伦多市中心到 Gores Landing 约 90 分钟，Markham 75 分钟，Pickering 60 分钟。最简单的路线是 Highway 401 东向，在 Exit 461（Port Hope / Highway 28）下高速，再走 County Road 28 北上约 15 分钟。' },
+      { question: '从多伦多开车到 Rice Lake 要多久？路线推荐？', answer: '多伦多市中心到 Gores Landing 约 90 分钟，Markham 75 分钟，Pickering 60 分钟。最简单的路线是沿 Highway 401 东向，到 Cobourg 的 Exit 472（County Road 18 / Burnham Street，路牌指向 Gores Landing）下高速，再沿 County Road 18 北行约 16 公里到 Gores Landing。' },
       { question: 'GTA 华人家庭第一艘船，建议是 Pontoon 还是钓鱼船？', answer: '如果家里有老人或小孩、需要多人出游、希望在船上吃饭聊天，选 Pontoon。如果只是夫妻两人、主要目的是认真钓 walleye 或 bass，选铝合金钓鱼船。多数 GTA 华人家庭的第一艘船是 20–22 尺 Pontoon。' },
       { question: '买新船还是二手船更划算？', answer: '看你的优先级。新船有完整保固、可以自己配置、转手残值可控；二手船同预算可以买更大更高配，但需要懂行或带懂行的朋友看船。预算允许且想省心，建议买新；预算紧且愿意花时间挑，可以考虑 1–4 年的二手。' },
       { question: '我没有船的驾驶经验，HBW 会教吗？', answer: '会。第一次买船的家庭，我们在交付时会安排基础操作讲解，包括启动、靠泊、加油、保养注意事项。但要熟练还是需要自己多开几次，建议先在 Rice Lake 内的开阔水面练习。' },
       { question: '加拿大需要什么船驾照？怎么考？', answer: '加拿大操作动力休闲船需要合资格的操作能力证明，适用于所有用发动机驱动的休闲船只（包括电动推进器）。PCOC 是最常见的证明，但不是唯一被接受的证明。考试是在线进行，全部选择题，通过率较高。请通过加拿大政府认可的考试机构报名，证书终身有效。' },
       { question: 'HBW 能用中文沟通吗？', answer: ZH_LANGUAGE_NOTE },
-      { question: '冬季船怎么存放？HBW 提供存储吗？', answer: 'HBW 提供室外专业收缩膜存储、室外无遮盖存储，以及仅收缩膜服务。不提供室内或加热存储。 冬化、收缩膜、室外存储和维修以当前书面报价为准。我们通常可以安排取船。请向我们确认您的船和地点是否可安排。 先完成 hbw.wiki/service，然后随时送船，包括下班后。' },
-      { question: '提车后，发动机保养在哪里做？', answer: '可以直接在 HBW 做。我们只为 Mercury 和 Mercruiser 发动机提供维修服务。常规保养（换机油、火花塞、齿轮油）和季节性服务请通过 https://hbw.wiki/service 提交请求。' },
+      { question: '冬季船怎么存放？HBW 提供存储吗？', answer: 'HBW 提供室外专业收缩膜存储、室外无遮盖存储，以及仅收缩膜服务。不提供室内或加热存储。 冬化、收缩膜、室外存储和维修以当前书面报价为准。我们通常可以安排取船。请向我们确认您的船和地点是否可安排。 先完成 hbwservice.ca，然后随时送船，包括下班后。' },
+      { question: '提车后，发动机保养在哪里做？', answer: '可以直接在 HBW 做。我们只为 Mercury 和 Mercruiser 发动机提供维修服务。常规保养（换机油、火花塞、齿轮油）和季节性服务请通过 https://hbwservice.ca 提交请求。' },
     ],
   },
 
@@ -3019,14 +3147,17 @@ Harris Boat Works 自 1947 年起一直由 Harris 家族在 Rice Lake 经营。�
     seoTitle: '多伦多出发钓鱼：莱斯湖与 Simcoe 对比',
     description: '多伦多华人钓鱼去哪？比较莱斯湖、Lake Simcoe 和 Kawarthas：家庭租船、岸钓、冰钓、规则、车程和第一次驾船或钓鱼的选择。',
     image: '/lovable-uploads/hero-zh-toronto-fishing-rice-lake-vs-lake-simcoe-kawarthas.png',
+    imageAlt: '俯瞰平静的小湾，松树间有船屋和码头，浅水处停着几艘小钓鱼艇和一艘 pontoon',
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
-    dateModified: '2026-09-06',
+    dateModified: '2026-10-04',
     publishDate: '2026-05-17',
     category: 'Buying Guides',
     readTime: '16 分钟',
     keywords: ['Rice Lake', 'Lake Simcoe', 'Kawarthas', '多伦多钓鱼', '湖区对比', '华人钓友'],
     content: `如果你从 GTA 出发，莱斯湖更适合家庭租船、浮筒船一日行程、第一次湖上钓鱼和后续买船或换装发动机的需求；Lake Simcoe 更适合很多人熟悉的开放水域钓鱼和冰钓话题，但规则和水体例外需要认真查；Kawarthas 更像一个大区域，适合已经愿意花时间探索不同湖泊、船闸、湖边度假屋和用船场景的人。无论去哪，都不要只看别人群里一句“这里好钓”，要查 Ontario 钓鱼法规、FMZ 和当年水体例外 (Ontario Traditional Chinese fishing regulations, Ontario FMZ 16, Ontario FMZ 17).
+
+需要考取 PCOC？通过 [HBW 的 MyBoatCard 推荐链接](https://myboatcard.com/card/harrisboat)参加在线课程，使用优惠码 **HARRIS15** 可享 **15% 折扣**。
 
 ## 先问自己：你要的是钓鱼，还是湖上一天？
 
@@ -3123,6 +3254,13 @@ Ontario FMZ 16 页面列出 Lake Simcoe 和相关水体的特定水体例外规�
 中文攻略适合理解问题和做计划，但规则、日期和限制应以 Ontario 和 Transport Canada 官方页面为准 (Ontario free family fishing, Transport Canada PCOC).
 
 HBW 自 1947 年起就在 Gores Landing、莱斯湖经营家族码头，是 Mercury Marine Premier dealer 与 Legend Boats 经销商。
+
+## 相关指南
+
+- [莱斯湖 钓鱼指南（2026）：FMZ 17 鱼种、鱼牌与出发清单](/blog/zh/rice-lake-fishing-guide-toronto-chinese)
+- [Lake Simcoe 华人钓友船外机指南](/blog/zh/chinese-anglers-lake-simcoe-mercury-outboard)
+- [多伦多华人第一次租船钓鱼：证件、安全和当天流程](/blog/zh/first-boat-rental-rice-lake-chinese-guide)
+- [40 到 60 匹 Mercury：铝船与华人钓友最常问的马力区间](/blog/zh/mercury-40-60hp-chinese-fishing-boat-guide)
 `,
   },
   {
@@ -3131,6 +3269,7 @@ HBW 自 1947 年起就在 Gores Landing、莱斯湖经营家族码头，是 Merc
     seoTitle: '华人 Mercury 船外机马力选择指南',
     description: '多伦多和安省华人船主如何选择 Mercury 船外机马力？从 9.9、20、60、115、150HP 到 Pro XS，按船型、用途、10HP 门槛和莱斯湖使用场景解释。',
     image: '/lovable-uploads/hero-zh-mercury-outboard-horsepower-guide-toronto-chinese.png',
+    imageAlt: '停车场里四辆拖车上的船，配有从小到大的船外机，包括铝制舵柄小艇和一艘 pontoon',
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
     dateModified: '2026-08-17',
@@ -3151,7 +3290,7 @@ HBW 自 1947 年起就在 Gores Landing、莱斯湖经营家族码头，是 Merc
 | 马力段 | 常见用途 | 注意事项 |
 |---|---|---|
 | 2.5-20 HP | 小艇、便携式辅助发动机、轻量钓鱼用途 | Mercury Canada 2.5-20 HP FourStroke 页面强调紧凑、轻量化、易于安装和操作简单 (Mercury FourStroke 2.5-20hp). |
-| 25-60 HP | 小到中型钓鱼船、作业船、部分轻型家庭用船 | HBW 页面把 FourStroke 25-60 HP 列为主要系列；Mercury Canada 也有 25-30 HP 和 40-60 HP 分页，不要使用错误的 25-60 官方网址 (Harris Boat Works Mercury Outboards, Mercury FourStroke 25-30hp). |
+| 25-60 HP | 小到中型钓鱼船、作业船、部分轻型家庭用船 | HBW 页面把 FourStroke 25-60 HP 列为主要系列；Mercury Canada 另有 25-30 HP 和 40-60 HP 两个分页 (Harris Boat Works Mercury Outboards, Mercury FourStroke 25-30hp). |
 | 75-115 HP | 家庭钓鱼船、部分浮筒船、中型船体 | Mercury Canada 75-150 HP 页面说明这些发动机采用高效、轻量化设计，并列出 75-115 HP 的 35 安培发电机；90/115 HP 可选 Command Thrust 齿轮箱 (Mercury FourStroke 75-150hp). |
 | 150 HP | 较大的家庭休闲船、浮筒船、休闲快艇、大型换装发动机项目 | Mercury Canada 75-150 HP 页面列出 150 HP 的 60 安培发电机和 Idle Charge 电池管理技术 (Mercury FourStroke 75-150hp). |
 | 115-300 HP Pro XS | 性能型钓鱼用途、鲈鱼及多鱼种、部分浮筒船 | Mercury Canada Pro XS 页面把 Pro XS 定位为性能船外机，并列出 115-300 HP 系列 (Mercury Pro XS). |
@@ -3188,7 +3327,7 @@ Pro XS 不是“普通 FourStroke 加贴纸”。Mercury Canada 把 Pro XS 列�
 
 ## 下一步
 
-想给现有船换 Mercury 船外机或比较换装发动机方案，可以到 MercuryRepower.ca 先看透明报价。需要保养维修，请使用 [hbw.wiki/service](https://hbw.wiki/service)。
+想给现有船换 Mercury 船外机或比较换装发动机方案，可以到 MercuryRepower.ca 先看透明报价。需要保养维修，请使用 [hbwservice.ca](https://hbwservice.ca)。
 
 ## 常见问题
 
@@ -3219,6 +3358,12 @@ Pro XS 不是“普通 FourStroke 加贴纸”。Mercury Canada 把 Pro XS 列�
 > 相关指南：[FourStroke vs Pro XS 中文对比指南](/blog/zh/mercury-fourstroke-pro-xs-verado-chinese-comparison)。
 
 HBW 自 1947 年起就在 Gores Landing、莱斯湖经营家族码头，是 Mercury Marine Premier dealer 与 Legend Boats 经销商。
+
+## 相关指南
+
+- [Mercury 115马力 vs 150马力舷外机：如何选择？](/blog/zh/mercury-115-vs-150-comparison-zh)
+- [40 到 60 匹 Mercury：铝船与华人钓友最常问的马力区间](/blog/zh/mercury-40-60hp-chinese-fishing-boat-guide)
+- [9.9 到 20 匹 Mercury：钓鱼小船、kicker、tiller 中文指南](/blog/zh/mercury-9-9-20hp-chinese-kicker-tiller-guide)
 `,
   },
   {
@@ -3227,6 +3372,7 @@ HBW 自 1947 年起就在 Gores Landing、莱斯湖经营家族码头，是 Merc
     seoTitle: '华人买 Mercury 船外机别只问最低价',
     description: '多伦多华人买 Mercury 船外机前，别只问最低价。要看清安装、舾装、螺旋桨、保修、湖测、售后服务、经销商信誉和落地报价。',
     image: '/lovable-uploads/hero-zh-mercury-outboard-price-dealer-guide-toronto-chinese.png',
+    imageAlt: '经销商服务台上有支架上的黑色 Mercury 90 FourStroke、螺旋桨、扭力扳手、保修册和报价文件',
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
     dateModified: '2026-08-17',
@@ -3295,7 +3441,7 @@ Mercury 船外机不是一次性交易。买完以后，你还有磨合、保养
 
 ## 下一步
 
-想比较 Mercury 船外机或换装发动机报价，可以到 MercuryRepower.ca 先看透明报价。需要 Mercury/Mercruiser 保养维修，请提交 [hbw.wiki/service](https://hbw.wiki/service)。
+想比较 Mercury 船外机或换装发动机报价，可以到 MercuryRepower.ca 先看透明报价。需要 Mercury/Mercruiser 保养维修，请提交 [hbwservice.ca](https://hbwservice.ca)。
 
 ## 常见问题
 
@@ -3321,11 +3467,18 @@ HBW Mercury 页面说明换装发动机价格包括拆除与安装、新 Mercury
 
 ### HBW 的报价下一步在哪里？
 
-Mercury 发动机和换装发动机报价从 MercuryRepower.ca 开始。保养维修请求使用 [hbw.wiki/service](https://hbw.wiki/service)。
+Mercury 发动机和换装发动机报价从 MercuryRepower.ca 开始。保养维修请求使用 [hbwservice.ca](https://hbwservice.ca)。
 
 > 相关指南：[安省华人养船成本中文指南](/blog/zh/boat-ownership-cost-ontario-chinese)。
 
 HBW 自 1947 年起就在 Gores Landing、莱斯湖经营家族码头，是 Mercury Marine Premier dealer 与 Legend Boats 经销商。
+
+## 相关指南
+
+- [安大略省 Mercury 换新船外机完整指南：GTA 华人船主必读](/blog/zh/mercury-repower-guide-gta)
+- [多伦多华人 Mercury 船外机马力选择指南：9.9、20、60、115、150HP 怎么选？](/blog/zh/mercury-outboard-horsepower-guide-toronto-chinese)
+- [为什么 GTA 华人船主选择 Harris Boat Works？](/blog/zh/why-chinese-boaters-choose-harris-boat-works)
+- [Mercury 115马力 vs 150马力舷外机：如何选择？](/blog/zh/mercury-115-vs-150-comparison-zh)
 `,
   },
   {
@@ -3334,14 +3487,17 @@ HBW 自 1947 年起就在 Gores Landing、莱斯湖经营家族码头，是 Merc
     seoTitle: '安省华人春季开船检查清单',
     description: '多伦多和安省华人船主春季下水前要检查什么？HBW 用中文讲清 PCOC、安全装备、船牌、发动机、燃油、电池和第一次湖测。',
     image: '/lovable-uploads/hero-zh-ontario-spring-boat-checklist-chinese.png',
+    imageAlt: '晨雾湖面上码头边的小铝艇，船尾有黑色 Mercury FourStroke 舵柄船外机，座位上有救生衣和检查清单',
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
-    dateModified: '2026-08-08',
+    dateModified: '2026-10-04',
     publishDate: '2026-05-17',
     category: 'Maintenance',
     readTime: '10 分钟',
     keywords: ['安省春季开船', 'spring boat checklist', 'GTA 华人船主', 'Rice Lake spring', 'Mercury 春季检查', 'Harris Boat Works'],
     content: `> **快速答案：** 安省春季开船前，华人船主至少要检查六件事：驾驶资格证明、船牌或船只文件、安全装备、电池、燃油系统、引擎启动和冷却情况。加拿大操作有马达的休闲船需要操作能力证明，PCOC 是常见证明，而且 Transport Canada 明确说纸质或电子复印件不能代替实体 PCOC 卡；租船时，完成 Rental Boat Safety Checklist 只在租船期间有效 (Transport Canada PCOC)。
+
+需要考取 PCOC？通过 [HBW 的 MyBoatCard 推荐链接](https://myboatcard.com/card/harrisboat)参加在线课程，使用优惠码 **HARRIS15** 可享 **15% 折扣**。
 
 如果你不确定船外机能不能放心下水，不要在私家车道里硬试到冒烟。春天第一天已经够忙了，别给自己加一个“为什么马达在咳嗽”的悬疑剧。
 
@@ -3362,7 +3518,7 @@ Harris Boat Works 是 Gores Landing 的莱斯湖家庭码头，提供船只销�
 | 救生衣和安全装备 | 每个人有合适的 PFD 或救生衣，装备按船型和长度准备 | Transport Canada 的 Safe Boating Guide 按船型和长度列出最低安全装备要求 (Transport Canada Safe Boating Guide) |
 | 电池 | 充电、接线干净、固定稳 | 春天很多“不启动”其实是电池和接线问题 |
 | 燃油 | 旧油、油管、油箱通气、燃油味道 | 不要让去年秋天的“应该没事”变成今年六月的“怎么回事” |
-| 引擎 | 正常启动、冷却水流、无异常警报声、无明显漏油 | Mercury 或 Mercruiser 相关问题可以交给专业保养维修检查 |
+| 引擎 | 正常启动、冷却水流、无异常警报声、无明显漏油 | Mercury 或 MerCruiser 相关问题可以交给专业保养维修检查 |
 
 ## PCOC、PCL，不要搞混
 
@@ -3403,7 +3559,7 @@ Transport Canada 也说明，完成的 Rental Boat Safety Checklist 可以作为
 
 这样做不花哨，但有效。船主春天最需要的不是仪式感，是别在下水坡道上表演。
 
-如果你的 Mercury 或 Mercruiser 需要春季检查、启动异常、警报声、冷却水流不对，先提交 HBW 保养维修请求。如果你正在考虑换 Mercury 船外机，直接去 MercuryRepower.ca 看真实报价方向。
+如果你的 Mercury 或 MerCruiser 需要春季检查、启动异常、警报声、冷却水流不对，先提交 HBW 保养维修请求。如果你正在考虑换 Mercury 船外机，直接去 MercuryRepower.ca 看真实报价方向。
 
 ## 常见问题
 
@@ -3428,6 +3584,13 @@ Transport Canada 也说明，完成的 Rental Boat Safety Checklist 可以作为
 HBW 的发动机维修只服务 Mercury 和 MerCruiser。
 
 HBW 自 1947 年起就经营家族码头，是 Mercury Marine Premier dealer 与 Legend Boats 经销商。
+
+## 相关指南
+
+- [安省船主冬化与室外冬储清单：什么时候送、要做什么](/blog/zh/ontario-boat-winterization-guide-chinese)
+- [多伦多华人 Mercury 发动机维修保养完整指南：从机油到大修](/blog/zh/gta-chinese-mercury-service-guide)
+- [GTA 华人船主冬储完整指南：HBW 室外收缩膜冬储方案、价格、流程](/blog/zh/gta-chinese-rice-lake-winter-storage-complete-guide)
+- [加拿大加油指南：Mercury 船外机加 87 还是 91？国内 92 号汽油怎么换算](/blog/zh/mercury-fuel-octane-ethanol-chinese-guide)
 `,
   },
   {
@@ -3436,14 +3599,17 @@ HBW 自 1947 年起就经营家族码头，是 Mercury Marine Premier dealer 与
     seoTitle: '多伦多华人二手船购买检查清单',
     description: '多伦多华人买二手船前要检查什么？HBW 用中文讲清船体、艉板、拖车、Mercury 船外机、PCL、PCOC、湖测和常见风险。',
     image: '/lovable-uploads/hero-zh-used-boat-buying-checklist-toronto-chinese.png',
+    imageAlt: '拖车上的铝制钓鱼艇，Mercury 船外机罩盖已拆下，艇边放着检查清单、手电筒和气缸压力测试仪',
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
-    dateModified: '2026-08-08',
+    dateModified: '2026-10-04',
     publishDate: '2026-05-17',
     category: 'Buying Guides',
     readTime: '9 分钟',
     keywords: ['二手船购买', 'used boat checklist', '多伦多华人买二手船', '船只检查清单', 'Mercury 二手 inspection', 'Harris Boat Works'],
     content: `> **快速答案：** 多伦多华人买二手船，最重要不是先问“能不能再便宜一点”，而是先确认船体、艉板、地板、拖车、发动机、操控系统、PCL 文件、所有权文件和湖测。Transport Canada 说明，10 HP 或以上、主要在加拿大水域使用的休闲船通常需要 Pleasure Craft Licence，但 PCL 只是识别文件，不是所有权证明 (Transport Canada PCL)。
+
+需要考取 PCOC？通过 [HBW 的 MyBoatCard 推荐链接](https://myboatcard.com/card/harrisboat)参加在线课程，使用优惠码 **HARRIS15** 可享 **15% 折扣**。
 
 二手船可以买得很聪明，也可以买成一个漂浮的翻新工程。区别通常不在运气，在检查。
 
@@ -3463,7 +3629,7 @@ HBW 自 1947 年起就经营家族码头，是 Mercury Marine Premier dealer 与
 | 拖车 | 轮胎、灯具、绞盘、托架、滚轮、轴承 | 轮胎老化、灯不亮、轴承噪音 |
 | 发动机 | 冷启动、怠速、冷却水、警报声、压缩测试和记录 | 卖家只愿意热机启动，不愿冷机启动 |
 | 操控系统 | 油门、换挡、转向是否顺畅 | 卡顿、发硬、异响 |
-| 螺旋桨 / 下部传动箱 | 螺旋桨损坏、齿轮油状态、撞击痕 | 螺旋桨伤很重、下部传动箱有油迹 |
+| 螺旋桨 / 下部传动箱 | 螺旋桨损坏、齿轮油状态、撞击痕 | 螺旋桨伤很重、下部传动箱齿轮油呈乳白、灰色或巧克力色（进水） |
 
 如果你不懂机械，不丢人。丢人的是明明不懂，还装得像自己懂，然后把问题带回家。
 
@@ -3501,7 +3667,7 @@ Transport Canada 说明，Pleasure Craft Licence 需要显示在船头两侧，�
 
 ## Mercury 船外机买家特别要注意什么
 
-如果二手船配的是 Mercury 船外机，检查序列号、型号、运行小时数、保养维修记录、螺旋桨、操控系统、警报系统、SmartCraft 兼容性和过去是否有重大维修。HBW 的 Mercury 页面说明，Mercury 船外机系列包括便携式 2.5-20 HP、FourStroke 25-60 HP、EFI FourStroke 75-150 HP、Pro XS 115-300 HP、Verado 250-600 HP 等 (HBW Mercury Outboards)。
+如果二手船配的是 Mercury 船外机，检查序列号、型号、运行小时数、保养维修记录、螺旋桨、操控系统、警报系统、SmartCraft 兼容性和过去是否有重大维修。HBW 的 Mercury 页面说明，Mercury 船外机系列包括便携式 2.5-20 HP、FourStroke 25-60 HP、EFI FourStroke 75-150 HP、Pro XS 115-400 HP、Verado 250-600 HP 等 (HBW Mercury Outboards)。
 
 如果你最后发现船体很好，但发动机老、贵、难修，换装发动机可能比继续修更合理。HBW 的 Mercury 换装发动机页面说明换装发动机价格通常包括发动机、舾装系统、操控系统和线缆、适用的仪表、螺旋桨、拆除、安装、湖测和保修登记 (HBW Mercury Outboards)。
 
@@ -3511,7 +3677,7 @@ Transport Canada 说明，Pleasure Craft Licence 需要显示在船头两侧，�
 
 如果你住 GTA，第一次买船，建议先租一次你想买的类型。HBW 在莱斯湖提供浮筒船和钓鱼船租船服务 (HBW Rice Lake Boat Rentals)。租一天比买错三年便宜很多。
 
-如果你已经买了 Mercury 或 Mercruiser，需要检查或保养维修，提交 HBW 保养维修请求。如果你有一条好船体，但旧发动机不再值得投入，去 MercuryRepower.ca 看换装发动机选择。
+如果你已经买了 Mercury 或 MerCruiser，需要检查或保养维修，提交 HBW 保养维修请求。如果你有一条好船体，但旧发动机不再值得投入，去 MercuryRepower.ca 看换装发动机选择。
 
 ## 常见问题
 
@@ -3545,6 +3711,12 @@ HBW 自 1947 年起就在 Gores Landing、莱斯湖经营家族码头，是 Merc
 - [6–8 人家庭：浮筒船还是钓鱼船更合适？](/blog/zh/pontoon-vs-fishing-boat-6-8-people-zh)
 - [Mercury 船外机马力怎么选（读懂载荷铭牌）](/blog/zh/mercury-outboard-horsepower-guide-toronto-chinese)
 
+## 相关指南
+
+- [多伦多华人在 莱斯湖 买船完整指南：从选型到交付](/blog/zh/gta-chinese-buy-boat-rice-lake-guide)
+- [安省华人养船成本指南](/blog/zh/boat-ownership-cost-ontario-chinese)
+- [GTA 华人从租船到买船路线图](/blog/zh/gta-chinese-rent-to-buy-boat-roadmap)
+- [多伦多华人 Mercury 发动机维修保养完整指南：从机油到大修](/blog/zh/gta-chinese-mercury-service-guide)
 `,
   },
   {
@@ -3553,6 +3725,7 @@ HBW 自 1947 年起就在 Gores Landing、莱斯湖经营家族码头，是 Merc
     seoTitle: 'Mercury 船外机故障排查中文指南',
     description: 'Mercury 船外机无法启动、beeping、过热、没力怎么办？HBW 用中文讲清安全排查、什么时候停止尝试、什么时候预约 Mercury/Mercruiser service。',
     image: '/lovable-uploads/hero-zh-mercury-outboard-troubleshooting-chinese-ontario.png',
+    imageAlt: '车间内船尾上的黑色 Mercury FourStroke 已打开机罩，旁边有万用表、故障排查清单、压力表和诊断平板',
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
      dateModified: '2026-09-06',
@@ -3564,7 +3737,7 @@ HBW 自 1947 年起就在 Gores Landing、莱斯湖经营家族码头，是 Merc
 
 ## 快速答案
 
-如果 Mercury 船外机无法启动、警报持续响、疑似过热、明显没力、震动、闻到燃油味或冷却水流异常，请先停止硬试，记录症状，再通过 https://hbw.wiki/service 提交服务请求。HBW 位于 Rice Lake 旁，是 Mercury 授权的 repower 与服务枢纽，提供 Mercury 船外机销售、专业安装、厂家认证技师维护、湖测和保修登记等一条龙支持。
+如果 Mercury 船外机无法启动、警报持续响、疑似过热、明显没力、震动、闻到燃油味或冷却水流异常，请先停止硬试，记录症状，再通过 https://hbwservice.ca 提交服务请求。HBW 位于莱斯湖畔，提供厂家授权的 Mercury 服务。
 
 过度试探才是成本最高的"排查"：反复强行启动只会扩损。船外机不是老电视，拍两下不会更好。
 
@@ -3582,7 +3755,7 @@ HBW 自 1947 年起就在 Gores Landing、莱斯湖经营家族码头，是 Merc
 | 震动 | 检查螺旋桨是否明显受损 | 不要忽略传动箱或螺旋桨问题 |
 | 闻到燃油味 | 立刻重视，避免一切火源 | 不要继续启动 |
 
-这不是让你自己修引擎。是让你给 service team 一个清楚的起点。清楚描述症状，通常比"它怪怪的"有用很多。
+这不是让你自己修引擎。是让你给维修团队一个清楚的起点。清楚描述症状，通常比"它怪怪的"有用很多。
 
 ## 无法启动：先看简单的
 
@@ -3603,16 +3776,16 @@ Mercury 船外机无法启动，常见第一步不是拆东西，而是确认基
 
 ## 警报响（Warning beep）：不要忽略
 
-Warning beep 的意义不是"提醒你之后有空查一下"。它是在告诉你系统发现了某种需要注意的情况。不同型号、线束配置和系统的警报含义可能不同，所以不要在网上随便找一个答案就套用到自己的马达。
+Warning beep 的意义不是"提醒你之后有空查一下"。它是在告诉你系统发现了某种需要注意的情况。不同型号、年份和 SmartCraft 安装配置的警报含义可能不同，所以不要在网上随便找一个答案就套用到自己的马达。
 
 正确做法：
 
 - 减速或停止
 - 观察水流、温度、仪表和声音
 - 记录警报出现时的速度、负载、天气、油量和操作
-- 如果不确定，请通过 hbw.wiki/service 提交 Mercury 服务请求
+- 如果不确定，请通过 hbwservice.ca 提交 Mercury 服务请求
 
-现代船外机的问题常常不只是马达本体，还可能和线束（rigging）、操控线束、仪表或螺旋桨设置有关。Mercury repower 与安装会涉及完整的线束、操控线缆、仪表更换、螺旋桨匹配、湖测和保修登记，这也是为什么单凭一个症状很难下结论。
+现代船外机的问题常常不只是马达本体，还可能和整套安装配置（rigging）、操控线缆、仪表或螺旋桨设置有关。Mercury repower 与安装会涉及完整的线束、操控线缆、仪表更换、螺旋桨匹配、湖测和保修登记，这也是为什么单凭一个症状很难下结论。
 
 ## 疑似过热：立刻停
 
@@ -3627,23 +3800,23 @@ Warning beep 的意义不是"提醒你之后有空查一下"。它是在告诉�
 - 是否有水草、淤泥、浅水或杂物可能影响进水口
 - 是否同时有警报响
 
-这些信息比"它热了"更有用。Service team 不在船上，只能靠你带回来的线索开始。
+这些信息比"它热了"更有用。维修团队不在船上，只能靠你带回来的线索开始。
 
 ## 没力、起步慢、速度上不去
 
-动力损失不一定是引擎故障。它可能和螺旋桨、负载、燃油、纵倾（trim）、船体状况、船底污损、线束或马达健康有关。不要急着下结论。
+动力损失不一定是引擎故障。它可能和螺旋桨、负载、燃油、纵倾（trim）、船体状况、船底污损、安装配置或马达状态有关。不要急着下结论。
 
-HBW 的 repower 评估会根据船体、载荷和你在 Rice Lake 的实际使用方式来选配马力；同时也提醒：动手前请先查看船身的载荷铭牌（capacity plate）确认最大马力。
+HBW 的 repower 评估会根据船体、载荷和你在莱斯湖的实际使用方式来选配马力；同时也提醒：动手前请先查看船身的载荷铭牌（capacity plate）确认最大马力。
 
-这也是为什么 troubleshooting 不能只看马力数字。船、马达、螺旋桨和负载是一套系统。一个环节不对，整条船都会开始摆脸色。
+这也是为什么故障排查不能只看马力数字。船、马达、螺旋桨和负载是一套系统。一个环节不对，整条船都会开始摆脸色。
 
 ## 什么时候该考虑 repower
 
-如果维修成本开始接近新马达成本的一大部分，继续修不一定划算。原则上：当 repair 成本接近一台新 Mercury 的一半，repower 通常更聪明，你换回的不只是马力，还有 modern reliability、warranty 覆盖和更低油耗。
+如果维修成本开始接近新马达成本的一大部分，继续修不一定划算。原则上：先诊断清楚，再比较方案。当几处主要问题叠在一起、腐蚀严重、配件难找、可靠性问题成了主要开销，或者旧马达已经不适合现在的用法时，换装新马达（repower）值得认真考虑。
 
 这不是说每个故障都该换马达。很多问题值得修。但如果老马达每年都来一次新惊喜，repower 就不只是"买新玩具"，而是买回整个夏天的可靠性。
 
-HBW 自 1947 年起就在 Gores Landing、Rice Lake 经营家族 marina，自 1965 年起成为 Mercury 授权经销商，现为 Mercury Marine Premier dealer 与 Legend Boats dealer 双认证。如果你的 Mercury 或 Mercruiser 有启动、警报、过热、没力、震动或燃油味问题，请提交 [HBW service request](https://hbw.wiki/service)。如果你怀疑旧马达已经不值得继续修，到 MercuryRepower.ca 看 repower 方向。
+HBW 是家族经营的码头，自 1947 年起就在莱斯湖畔的 Gores Landing，也是 Mercury Marine Premier 经销商。如果你的 Mercury 或 MerCruiser 有启动、警报、过热、没力、震动或燃油味问题，请提交 [HBW service request](https://hbwservice.ca)。如果你怀疑旧马达已经不值得继续修，到 MercuryRepower.ca 看 repower 方向。
 
 ## FAQ
 
@@ -3653,7 +3826,7 @@ HBW 自 1947 年起就在 Gores Landing、Rice Lake 经营家族 marina，自 19
 
 **Mercury outboard warning beep 可以继续开吗？**
 
-不要默认可以。先减速或停止，记录情况。如果不确定，请通过 hbw.wiki/service 提交 Mercury 服务请求。警报不是背景音乐。
+不要默认可以。先减速或停止，记录情况。如果不确定，请通过 hbwservice.ca 提交 Mercury 服务请求。警报不是背景音乐。
 
 **Mercury 船外机过热怎么办？**
 
@@ -3661,11 +3834,19 @@ HBW 自 1947 年起就在 Gores Landing、Rice Lake 经营家族 marina，自 19
 
 **没力是不是一定要换马达？**
 
-不一定。动力损失可能和螺旋桨、负载、燃油、纵倾、船体、线束或引擎健康有关。先诊断，再决定 repair 或 repower。
+不一定。动力损失可能和螺旋桨、负载、燃油、纵倾、船体、安装配置或引擎状态有关。先诊断，再决定 repair 或 repower。
 
 **HBW 维修哪些引擎？**
 
-针对船外机维修，HBW 专注 Mercury 与 Mercruiser 全系。`,
+针对船外机维修，HBW 专注 Mercury 与 Mercruiser 全系。
+
+## 相关指南
+
+- [多伦多华人 Mercury 发动机维修保养完整指南：从机油到大修](/blog/zh/gta-chinese-mercury-service-guide)
+- [加拿大加油指南：Mercury 船外机加 87 还是 91？国内 92 号汽油怎么换算](/blog/zh/mercury-fuel-octane-ethanol-chinese-guide)
+- [安省船主冬化与室外冬储清单：什么时候送、要做什么](/blog/zh/ontario-boat-winterization-guide-chinese)
+- [安大略省 Mercury 换新船外机完整指南：GTA 华人船主必读](/blog/zh/mercury-repower-guide-gta)
+`,
   },
   {
     slug: 'boat-ownership-cost-ontario-chinese',
@@ -3673,14 +3854,17 @@ HBW 自 1947 年起就在 Gores Landing、Rice Lake 经营家族 marina，自 19
     seoTitle: '安省华人船主养船成本指南',
     description: '安省买船后到底有哪些成本？HBW 用中文讲清购船价格、PCOC、PCL、保险、燃油、保养、存放、冬化、拖车和换装发动机。',
     image: '/lovable-uploads/hero-zh-boat-ownership-cost-ontario-chinese.png',
+    imageAlt: '木码头上平铺的船主用品：Mercury 发动机罩、电池、螺旋桨、红色油桶、机油和保险文件夹',
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
-    dateModified: '2026-08-08',
+    dateModified: '2026-10-04',
     publishDate: '2026-05-17',
     category: 'Buying Guides',
     readTime: '10 分钟',
     keywords: ['船只持有成本', 'boat ownership cost Ontario', '华人船主预算', 'winterization 费用', 'HBW service cost', 'Mercury 维护成本'],
     content: `> **快速答案：** 安省买船后的真实成本不只是买船价格。还要考虑 PCOC、Pleasure Craft Licence、保险、安全装备、燃油、拖车、保养维修、冬化保养、存放、船位、下水、维修和未来换装发动机。HBW 提供船只销售、保养维修、租船服务、冬化保养、存放、船位、Mercury 船外机和 MerCruiser 支持 (Harris Boat Works)。
+
+需要考取 PCOC？通过 [HBW 的 MyBoatCard 推荐链接](https://myboatcard.com/card/harrisboat)参加在线课程，使用优惠码 **HARRIS15** 可享 **15% 折扣**。
 
 如果一个船交易看起来便宜得像捡到宝，先别急着开心。船很少免费送你惊喜，但它很擅长晚一点给你账单。
 
@@ -3699,7 +3883,7 @@ HBW 自 1947 年起就在 Gores Landing、Rice Lake 经营家族 marina，自 19
 | 燃油 | 使用越多越明显 |
 | 保养维修 | 保养和问题处理 |
 | 冬化保养 | 安省冬天不能忽略 |
-| 存放 | 室外、室内、码头、拖车都不同 |
+| 存放 | 室外、码头、拖车等方式各不相同 |
 | 拖车 | 轮胎、轴承、灯具、所有权文件 |
 | 换装发动机 | 旧发动机或长期升级计划 |
 
@@ -3737,7 +3921,7 @@ Transport Canada 的 Safe Boating Guide 按船型和长度列出最低安全装�
 
 ## 换装发动机是长期成本，也是机会
 
-如果船体很好但老旧船外机不可靠，换装发动机可能比买新船更合理。HBW 的 Mercury 页面说明，如果船体状况良好，换装发动机是提升可靠性、燃油经济性和性能的方式之一，不用买整条新船；页面还列出换装发动机价格通常包括发动机、舾装系统、操控系统和线缆、适用的仪表、螺旋桨、拆除、安装、湖测和保修登记 (HBW Mercury Outboards)。
+如果船体很好但老旧船外机不可靠，换装发动机可能比买新船更合理。HBW 的 Mercury 页面说明，如果船体状况良好，换装发动机是提升可靠性、燃油经济性和性能的方式之一，不用买整条新船；页面还说明换装发动机包括拆除、安装、湖测和保修登记等内容 (HBW Mercury Outboards)。
 
 这就是为什么养船成本不能只看今年。买船时就要想：这条船三年后、五年后还值不值得继续维护？如果答案是肯定的，换装发动机可能是未来选项。
 
@@ -3755,7 +3939,7 @@ Transport Canada 的 Safe Boating Guide 按船型和长度列出最低安全装�
 
 HBW 的 Mercury 页面说明换装发动机包括拆除、安装、湖测和保修登记等内容，透明列出包含项比一句“好交易”更有用 (HBW Mercury Outboards)。
 
-想看 Mercury 换装发动机方向，去 MercuryRepower.ca。需要保养维修、冬化保养或存放，提交 HBW 保养维修请求。还没确定要不要买船，先看 HBW 莱斯湖租船服务。
+想看 Mercury 换装发动机方向，去 MercuryRepower.ca。需要保养维修、冬化保养或存放，通过 [hbwservice.ca](https://hbwservice.ca) 提交 HBW 保养维修请求。还没确定要不要买船，先看 [HBW 莱斯湖租船服务](https://harrisboatworks.ca/rentals)，可在线查看可订船型并预订。
 
 ## 常见问题
 
@@ -3780,6 +3964,13 @@ Transport Canada 说明 PCOC 终身有效，但纸质或电子副本不被接受
 HBW 页面列出船只销售、保养维修、租船服务、冬化保养、存放、船位、Mercury 船外机和 MerCruiser 支持 (Harris Boat Works)。
 
 HBW 自 1947 年起就在 Gores Landing、莱斯湖经营家族码头，是 Mercury Marine Premier dealer 与 Legend Boats 经销商。
+
+## 相关指南
+
+- [多伦多华人二手船购买检查清单](/blog/zh/used-boat-buying-checklist-toronto-chinese)
+- [多伦多华人在 莱斯湖 买船完整指南：从选型到交付](/blog/zh/gta-chinese-buy-boat-rice-lake-guide)
+- [GTA 华人船主冬储完整指南：HBW 室外收缩膜冬储方案、价格、流程](/blog/zh/gta-chinese-rice-lake-winter-storage-complete-guide)
+- [为什么 GTA 华人船主选择 Harris Boat Works？](/blog/zh/why-chinese-boaters-choose-harris-boat-works)
 `,
   },
   {
@@ -3788,14 +3979,17 @@ HBW 自 1947 年起就在 Gores Landing、莱斯湖经营家族码头，是 Merc
     seoTitle: 'GTA 华人从租船到买船路线图',
     description: 'GTA 华人想从租船升级到买船？HBW 用中文讲清先租浮筒船或钓鱼船、拿 PCOC、选船型、选 Mercury、规划保养、存放和换装发动机。',
     image: '/lovable-uploads/hero-zh-gta-chinese-rent-to-buy-boat-roadmap.png',
+    imageAlt: '三幅拼图：码头边的出租铝艇、拖车上挂出售牌的钓鱼艇、展厅前装 Mercury 船外机的 pontoon',
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
-    dateModified: '2026-08-08',
+    dateModified: '2026-10-04',
     publishDate: '2026-05-17',
     category: 'Buying Guides',
     readTime: '11 分钟',
     keywords: ['rent to buy boat', 'GTA 华人租到买', 'first boat roadmap', 'rental experience', 'HBW rentals', 'Mercury buying path'],
     content: `> **快速答案：** GTA 华人从租船升级到买船，最聪明的路线是：先在莱斯湖租浮筒船或钓鱼船，确认家人真的喜欢，再准备 PCOC，比较船型，了解 PCL 和所有权文件，规划保养维修、冬化保养、存放和保险，最后再选择 Mercury 发动机或换装发动机方案。HBW 的莱斯湖租船服务页面提供浮筒船和钓鱼船，并要求驾驶者持有操船证件 (HBW Rice Lake Boat Rentals)。
+
+需要考取 PCOC？通过 [HBW 的 MyBoatCard 推荐链接](https://myboatcard.com/card/harrisboat)参加在线课程，使用优惠码 **HARRIS15** 可享 **15% 折扣**。
 
 先租不是犹豫。先租是聪明。尤其是当一条船的价格比一次租船高很多的时候，这个逻辑应该不难。
 
@@ -3915,6 +4109,11 @@ HBW 网站说明提供租船、船只销售、保养维修、冬化保养、存�
 - [第一次买船：买新船，还是买二手后换装发动机？](/blog/zh/mercury-repower-guide-gta)
 - [买二手船避坑清单（GTA 地区适用）](/blog/zh/used-boat-buying-checklist-toronto-chinese)
 
+## 相关指南
+
+- [多伦多华人在 莱斯湖 买船完整指南：从选型到交付](/blog/zh/gta-chinese-buy-boat-rice-lake-guide)
+- [多伦多华人第一次租船钓鱼：证件、安全和当天流程](/blog/zh/first-boat-rental-rice-lake-chinese-guide)
+- [安省华人养船成本指南](/blog/zh/boat-ownership-cost-ontario-chinese)
 `,
   },
 
@@ -3929,18 +4128,19 @@ HBW 网站说明提供租船、船只销售、保养维修、冬化保养、存�
     seoTitle: '安省船只冬化与室外冬储中文清单｜HBW',
     description: '安省船主冬化与室外冬储中文指南：分清发动机冬化和存船，按机型确认项目，并了解 HBW 先到先办、随时送船（包括下班后）和 12 月 1 日至 4 月 1 日停业。',
     image: '/lovable-uploads/Ontario_Short_Boating_Season_Fall.png',
+    imageAlt: '秋色湖面上，两人乘白色与棕褐色小艇驶离镜头，经过橙红树林岸边和插着加拿大国旗的岩石小岛',
     author: 'Jay Harris',
     datePublished: '2026-06-12',
-    dateModified: '2026-09-06',
+    dateModified: '2026-09-26',
     publishDate: '2026-06-12',
     category: 'mandarin',
     readTime: '9 分钟',
     keywords: ['冬季保养', '冬储', '安省', '中文', 'winterization', 'Mercury'],
-    content: `> **简短答案：** 安省船只在结冰天气和长期停放前，需要按具体发动机、船上水系统和电瓶方案做好冬化。发动机冬化、收缩膜和室外存船不是同一个项目，最终范围以书面工单为准。HBW 提供室外专业收缩膜存储、室外无遮盖存储，以及仅收缩膜服务。不提供室内或加热存储。 不需要提前几个月抢位置。先完成 [hbw.wiki/service](https://hbw.wiki/service)，然后随时送船，包括下班后。 实体船厂从 12 月 1 日至 4 月 1 日关闭。
+    content: `> **简短答案：** 安省船只在结冰天气和长期停放前，需要按具体发动机、船上水系统和电瓶方案做好冬化。发动机冬化、收缩膜和室外存船不是同一个项目，最终范围以书面工单为准。HBW 提供室外专业收缩膜存储、室外无遮盖存储，以及仅收缩膜服务。不提供室内或加热存储。 不需要提前几个月抢位置。先完成 [hbwservice.ca](https://hbwservice.ca)，然后随时送船，包括下班后。 实体船厂从 12 月 1 日至 4 月 1 日关闭。
 
 ## 为什么安省冬天必须冬化
 
-安省的风险不只是低温，也包括长时间停放、潮气、燃油老化和船上系统内残留的水。结冰会膨胀，可能损坏冷却或淡水系统；不同的 outboard、sterndrive 和船上设备处理步骤并不相同。
+安省的风险不只是低温，也包括长时间停放、潮气、燃油老化和船上系统内残留的水。结冰会膨胀，可能损坏冷却或淡水系统；不同的船外机、尾驱（sterndrive）和船上设备处理步骤并不相同。
 
 最可靠的起点是发动机序列号和对应的 Mercury 手册。Mercury 也建议船主按具体手册确认冬化步骤；不要把论坛里某个机型的做法直接套到所有 Mercury 或 MerCruiser 上。
 
@@ -3948,21 +4148,21 @@ HBW 网站说明提供租船、船只销售、保养维修、冬化保养、存�
 
 | 项目 | 为什么要做 | DIY 难度 |
 |---|---|---|
-| 排空冷却水（flush + drain） | 防止缸体冻裂 | 中 |
+| 冲洗并排空冷却水 | 防止缸体冻裂 | 中 |
 | 按手册进行发动机内部防锈处理 | 具体方法因机型而异 | 中 |
-| 按手册处理冷却和船上水系统 | outboard、sterndrive 和淡水系统步骤不同 | 中至难 |
+| 按手册处理冷却和船上水系统 | 船外机、尾驱（sterndrive）和淡水系统步骤不同 | 中至难 |
 | 按书面方案处理燃油 | 油箱类型、燃油和发动机系统会影响做法 | 中 |
 | 齿轮油更换并检查有无乳化（变白说明进水） | 趁早发现密封件失效 | 中 |
 | 更换发动机机油和机滤 | 旧机油酸性会腐蚀轴承 | 中 |
 | 电瓶按手册和批准方案处理 | 健康电瓶只有在完全充电、断开连接、固定妥当，并获得批准的存储方案允许时，才可以留在船上。具体以机型/序列号手册和批准的存储方案为准。 | 易至中 |
 | 检查火花塞 / 接头 / 防水油脂 | 顺手做，省春天的钱 | 中 |
-| 收缩膜或室内存储 | 防止积雪压塌船篷、防止雨水进船 | 难（建议交给船坞） |
+| 收缩膜 | 防止积雪压塌船篷、防止雨水进船 | 难（建议交给船坞） |
 
 > **DIY 还是交给经销商？** 如果你有对应的官方手册、合适的工具，而且能逐项核对，部分船主可以自己做。第一次处理、机型不清楚、船上还有水系统，或已经出现进水、报警、乳化齿轮油等情况时，交给合格技师更稳妥。
 
 ## 什么时候送船？
 
-先完成 [hbw.wiki/service](https://hbw.wiki/service)，然后随时送船，包括下班后。
+先完成 [hbwservice.ca](https://hbwservice.ca)，然后随时送船，包括下班后。
 
 | 状态 | 建议 |
 |---|---|
@@ -3978,7 +4178,6 @@ HBW **12 月 1 日至 4 月 1 日关闭**，期间不接收船只，也不进行
 | 防雪压 | 配骨架支撑可以 | 当然可以 |
 | 防漆面氧化 | 收缩膜下温差大，但日晒最少 | 最好 |
 | 防鼠 | 室外鼠害低于无遮蔽 | 视设施而定 |
-| 价格 | 较低 | 高 30-100% |
 | HBW 提供吗 | **是（室外专业收缩膜、室外无遮盖或仅收缩膜）** | **否：不提供室内或加热存储** |
 
 HBW 不提供室内或加热存储。
@@ -3989,7 +4188,7 @@ HBW 不提供室内或加热存储。
 - 我们通常可以安排取船。请向我们确认您的船和地点是否可安排。HBW 不提供送船服务、不邮寄发动机、不上门/码头服务，也不推荐运输商或报价第三方运输。
 - 服务范围：冬化、收缩膜、室外存储和维修是不同工单项目，以当前书面报价为准
 - 春季检查：HBW 冬储客户包含春季检查；非冬储客户按书面报价和已批准的工单执行
-- 办理方式：先完成 [hbw.wiki/service](https://hbw.wiki/service)，然后随时送船，包括下班后。
+- 办理方式：先完成 [hbwservice.ca](https://hbwservice.ca)，然后随时送船，包括下班后。
 
 ### 来自 HBW 工单的数据
 
@@ -4019,23 +4218,28 @@ quote: ${ZH_LANGUAGE_NOTE}
 最常见的问题不是某一个万能步骤，而是没有按具体发动机和船上系统的手册逐项确认。先用序列号找到对应手册，再核对燃油、冷却、齿轮油、电瓶和船上水系统。
 
 **Q：什么时候可以送船？**
-先完成 hbw.wiki/service，然后随时送船，包括下班后。 实体船厂 12 月 1 日至 4 月 1 日关闭。
+先完成 hbwservice.ca，然后随时送船，包括下班后。 实体船厂 12 月 1 日至 4 月 1 日关闭。
 
 ## 官方参考
 
 - [Mercury：如何找到对应发动机的数字版用户手册](https://www.mercurymarine.com/ca/en/lifestyle/dockline/how-to-get-a-digital-copy-of-your-mercury-owner-s-manual-.html)
-- [Mercury：How to Winterize Your Outboard](https://www.mercurymarine.com/an/en/lifestyle/dockline/winterizing-your-outboar)
+- [Mercury：如何冬化你的船外机（英文页面）](https://www.mercurymarine.com/an/en/lifestyle/dockline/winterizing-your-outboar)
 
 ## 相关阅读
 
 - [GTA 华人船主冬储完整指南（HBW 收缩膜方案、价格、流程）](/blog/zh/gta-chinese-rice-lake-winter-storage-complete-guide)
 - [GTA 华人 Mercury 服务与换机指南](/blog/zh/gta-chinese-mercury-service-guide)
+
+## 相关指南
+
+- [安省华人船主春季开船检查清单](/blog/zh/ontario-spring-boat-checklist-chinese)
+- [Mercury 船外机故障排查中文指南](/blog/zh/mercury-outboard-troubleshooting-chinese-ontario)
 `,
     faqs: [
       { question: '安省 船 冬季保养 中文：HBW 提供室内冬储吗？', answer: '不提供。HBW 提供室外专业收缩膜存储、室外无遮盖存储，以及仅收缩膜服务。不提供室内或加热存储。' },
-      { question: '船 冬储 安省：什么时候必须送过去？', answer: '不需要提前数月预订。先完成 hbw.wiki/service，然后随时送船，包括下班后。 实体船厂 12 月 1 日至 4 月 1 日关闭。' },
+      { question: '船 冬储 安省：什么时候必须送过去？', answer: '不需要提前数月预订。先完成 hbwservice.ca，然后随时送船，包括下班后。 实体船厂 12 月 1 日至 4 月 1 日关闭。' },
       { question: '自己做冬化最容易漏的是哪一步？', answer: '不要寻找一个适用于所有船的万能步骤。应按发动机序列号找到对应手册，并逐项核对燃油、冷却、齿轮油、电瓶和船上水系统。' },
-      { question: '冬化大概多少钱？', answer: '价格取决于发动机、船上系统和书面工单范围。先完成 hbw.wiki/service，然后随时送船，包括下班后。 以当前书面报价为准。' },
+      { question: '冬化大概多少钱？', answer: '价格取决于发动机、船上系统和书面工单范围。先完成 hbwservice.ca，然后随时送船，包括下班后。 以当前书面报价为准。' },
       { question: 'HBW 接受非 Mercury 引擎的冬储吗？', answer: 'HBW 可以在书面确认范围后处理其他品牌船只的冬化或室外冬储；发动机维修只限 Mercury 和 MerCruiser。' },
       { question: 'HBW 有中文服务吗？', answer: ZH_LANGUAGE_NOTE },
     ],
@@ -4045,21 +4249,24 @@ quote: ${ZH_LANGUAGE_NOTE}
     slug: 'first-boat-rental-rice-lake-chinese-guide',
     title: '多伦多华人第一次租船钓鱼：证件、安全和当天流程',
     seoTitle: 'Rice Lake 租船 中文 多伦多 (第一次完整流程)',
-    description: '多伦多华人第一次到 Rice Lake 租船钓鱼指南：加拿大租船清单的一般规则、HBW 更严格的 PCOC 政策、安全简报和安省钓鱼证。',
+    description: '多伦多华人第一次到莱斯湖租船钓鱼指南：加拿大租船清单的一般规则、HBW 更严格的 PCOC 政策、安全简报和安省钓鱼证。',
     image: '/lovable-uploads/hero-first-time-boat-rental.webp',
+    imageAlt: '平静湖面上，穿橙色救生衣的男子在 pontoon 上掌舵，操纵台上放着纸质湖图，前方坐着女士和三个孩子',
     author: 'Jay Harris',
     datePublished: '2026-06-12',
-    dateModified: '2026-09-06',
+    dateModified: '2026-10-06',
     publishDate: '2026-06-12',
     category: 'mandarin',
     readTime: '8 分钟',
     keywords: ['Rice Lake 租船', '中文 多伦多', '第一次 租船 钓鱼', '安省 钓鱼证', 'Harris Boat Works'],
     content: `> **简短答案：** 根据加拿大的一般规定，填写完整的 Rental Boat Safety Checklist 可作为该次租赁的能力证明。Harris Boat Works 有更严格的政策：每位可能驾驶 HBW 租赁船的人员在办理手续时必须出示有效的 Pleasure Craft Operator Card (PCOC) 和带照片身份证件；该清单不能替代 HBW 要求的 PCOC。
 
+需要考取 PCOC？通过 [HBW 的 MyBoatCard 推荐链接](https://myboatcard.com/card/harrisboat)参加在线课程，使用优惠码 **HARRIS15** 可享 **15% 折扣**。
+
 ## 多伦多出发：路线和时间
 
-- **万锦（Markham）/ 列治文山 / 北约克：** 经 404 北上转 115，约 75-90 分钟。
-- **士嘉堡（Scarborough）/ 密西沙加：** 经 401 东行转 115，约 90-110 分钟。
+- **万锦（Markham）/ 列治文山 / 北约克：** 经 404 南下接 401 东行，在 Cobourg 的 Exit 472 下高速，沿 County Road 18 北上，约 75-90 分钟。
+- **士嘉堡（Scarborough）/ 密西沙加：** 经 401 东行，在 Cobourg 的 Exit 472 下高速，沿 County Road 18 北上，约 90-110 分钟。
 - **目的地：** Harris Boat Works，5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0。
 
 建议早上 8 至 9 点出门，9:30 至 10:30 到达。**钓鱼最佳时段是日出后 2 小时和日落前 2 小时**，越早越好。
@@ -4070,7 +4277,7 @@ quote: ${ZH_LANGUAGE_NOTE}
 |---|---|---|
 | 证件 | 政府签发的带照片身份证件 | 驾照或护照 |
 | 证件 | 安省钓鱼证 + Outdoors Card（如果要钓鱼） | 见下文 |
-| 押金 | 信用卡（不是借记卡） | 用于押金预授权 |
+| 押金 | 信用卡 | 用于押金预授权（只是冻结额度，不会扣款） |
 | 衣物 | 防风外套、太阳镜、帽子、备用衣物 | 湖上比岸边冷 5-10°C |
 | 装备 | 防晒霜、饮用水、午餐、零食 | 湖上无补给点 |
 | 钓具 | 鱼竿、鱼线、鱼饵（如果钓鱼） | HBW 也可询问能否租 |
@@ -4080,13 +4287,13 @@ quote: ${ZH_LANGUAGE_NOTE}
 
 ## 当天流程（典型一日租船）
 
-1. **到店登记（约 15-20 分钟）**：出示证件，签租船合同，刷信用卡押金。
+1. **到店登记（约 15-20 分钟）**：出示证件，签租船合同，用信用卡办理押金预授权（只是授权，不是扣款）。
 2. **安全简报和租船检查清单**：HBW 工作人员会讲解船只控制、安全设备、救生衣、紧急联系方式和允许航行的水域。清单属于安全流程，但不能替代 HBW 要求每位驾驶者出示的有效 PCOC。
 3. **船只交接和试机**：工作人员把船开到码头，演示启动、变速、停泊。第一次开建议在码头边试一次起步停止。
-4. **下水使用**：按约定时长（半天 / 全天）使用。Rice Lake 是浅湖（平均 25 英尺深），适合新手，但**注意中央有部分浅滩和草甸区域**，简报时会标出。
-5. **返航和归还**：按约定时间回到 HBW 码头。工作人员检查船况、燃油，结清燃油费用，退还押金。
+4. **下水使用**：按约定时长（半天 / 全天）使用。莱斯湖是浅湖（最深约 8 米 / 27 英尺），有大片浅水和水草区域，适合新手，但**注意湖中央 Harwood 与 Hiawatha 之间，水面下有一条旧铁路堤道，只能从有浮标标记的通道通过**，简报时会发给你湖区地图并讲解。
+5. **返航和归还**：按约定时间回到 HBW 码头。工作人员检查船况、燃油，结清燃油费用，解除押金预授权。
 
-> **典型时间：** 上午 10 点到店、10:30 下水、下午 4 点返航、4:30 离场，足够完成一次完整的钓鱼日。
+
 
 ## 关于 PCOC（船只操作员卡）
 
@@ -4096,18 +4303,18 @@ quote: ${ZH_LANGUAGE_NOTE}
 
 钓鱼证和船证是**两套完全独立的系统**：
 
-- **机构不同：** 钓鱼证由安省自然资源与林业部（MNRF）管，船证由加拿大交通部管。
+- **机构不同：** 钓鱼证由安省自然资源部（MNR）管，船证由加拿大交通部管。
 - **需要分别办：** 有 PCOC 不代表可以钓鱼；有钓鱼证不代表可以开船。
 - **结构：** 先办一张 **Outdoors Card**（户外活动卡，3 年有效），再加一张 **Fishing Licence**（钓鱼许可，1 年 / 1 天 / 8 天等多种）。
 - **居民 / 非居民价格不同。**
 - **官方页面（含繁体中文版）：** [安省钓鱼规章摘要（繁体中文）](http://www.ontario.ca/page/ontario-fishing-regulations-summary-traditional-chinese)。
 
-> 重要：14 岁以下儿童和持 Resident Senior 卡的部分老人有豁免，**但具体规则每年都可能更新**，出发前请查 MNRF 当年的规则。
+> 重要：安省及加拿大居民中，未满 18 岁或年满 65 岁的人可凭政府签发的身份证件免钓鱼证，适用 Conservation 限额。不需要 Resident Senior 卡；非加拿大居民没有 65 岁以上的年龄豁免，**但具体规则每年都可能更新**，出发前请查 MNR 当年的规则。
 
 ## 安全提示（湖上常见情况）
 
 - **天气变化快：** 出发前查 Environment Canada 当日预报，雷暴一律返航。
-- **手机信号：** Rice Lake 中央部分区域信号弱，建议提前下载离线地图。
+- **手机信号：** 莱斯湖中央部分区域信号弱，建议提前下载离线地图。
 - **下水后 30 分钟内：** 适应船感，慢速绕一圈，熟悉视野盲区。
 - **燃油：** HBW 通常按用量结算，开船时注意油表，回到码头前 1/4 油量打回头是稳健做法。
 
@@ -4124,10 +4331,10 @@ quote: ${ZH_LANGUAGE_NOTE}
 
 ## 常见问题
 
-**Q：Rice Lake 租船 中文：必须有 PCOC 吗？**
+**Q：在莱斯湖租船，必须有 PCOC 吗？**
 根据加拿大的一般规定，填写完整的 Rental Boat Safety Checklist 可作为该次租赁的能力证明。但 HBW 政策更严格：每位可能驾驶 HBW 租赁船的人员都必须在办理手续时出示有效的 PCOC 和带照片身份证件；清单不能替代该卡。
 
-**Q：第一次 租船 钓鱼 要带什么？**
+**Q：第一次租船钓鱼要带什么？**
 带照片证件、信用卡（押金）、安省钓鱼证（如果要钓鱼）、防风衣物、防晒霜、饮用水。救生衣 HBW 提供。
 
 **Q：从万锦到 Rice Lake 多久？**
@@ -4137,10 +4344,10 @@ quote: ${ZH_LANGUAGE_NOTE}
 是。按租船人数和体型搭配，不需要自己买。
 
 **Q：钓鱼证可以当天在 HBW 买吗？**
-钓鱼证由安省 MNRF 在线或在 Service Ontario 站点出售。**出发前在 [安省官方页面](http://www.ontario.ca/page/ontario-fishing-regulations-summary-traditional-chinese) 办好**，HBW 不代售钓鱼证。
+钓鱼证由安省自然资源部（MNR）在线或在 Service Ontario 站点出售。**出发前在 [安省官方页面](http://www.ontario.ca/page/ontario-fishing-regulations-summary-traditional-chinese) 办好**，HBW 不代售钓鱼证。
 
-**Q：14 岁以下儿童钓鱼要证吗？**
-通常豁免，但规则可能更新。出发前以 MNRF 当年说明为准。
+**Q：18 岁以下的孩子钓鱼要证吗？**
+通常豁免，但规则可能更新。出发前以 MNR 当年说明为准。
 
 **Q：HBW 有中文服务吗？**
 ${ZH_LANGUAGE_NOTE}
@@ -4150,13 +4357,18 @@ ${ZH_LANGUAGE_NOTE}
 - [PCOC、PCL、钓鱼证完整指南](/blog/zh/gta-chinese-pcl-fishing-licence-guide)
 - [GTA → 莱斯湖 一日游地图](/blog/zh/gta-chinese-rice-lake-day-trip-plan)
 - [Rice Lake 钓鱼完整攻略：多伦多华人钓友必读](/blog/zh/rice-lake-fishing-guide-toronto-chinese)
+
+## 相关指南
+
+- [安省租船需要驾照吗？PCOC 与租船安全清单一次讲清](/blog/zh/pcoc-vs-rental-boat-safety-checklist-zh)
+- [GTA 华人从租船到买船路线图](/blog/zh/gta-chinese-rent-to-buy-boat-roadmap)
 `,
     faqs: [
-      { question: 'Rice Lake 租船 中文：必须有 PCOC 吗？', answer: '根据加拿大的一般规定，填写完整的 Rental Boat Safety Checklist 可作为该次租赁的能力证明。但 HBW 政策更严格：每位可能驾驶 HBW 租赁船的人员都必须在办理手续时出示有效的 PCOC 和带照片身份证件；清单不能替代该卡。' },
-      { question: '第一次 租船 钓鱼 要带什么？', answer: '带政府签发带照片的证件、信用卡（押金）、安省钓鱼证（如果要钓鱼）、防风衣物、防晒霜、饮用水。救生衣 HBW 提供。' },
-      { question: '从万锦/士嘉堡到 Rice Lake 多久？', answer: '万锦经 404 + 115 约 75-90 分钟，士嘉堡经 401 + 115 约 90-110 分钟。建议早上 8-9 点出发以利用上午黄金钓鱼时段。' },
-      { question: '钓鱼证可以当天在 HBW 买吗？', answer: '不可以。钓鱼证由安省 MNRF 在线或 Service Ontario 站点出售。出发前请先在官方页面办好。' },
-      { question: '14 岁以下儿童钓鱼要证吗？', answer: '通常豁免，但具体规则每年可能更新，出发前以 MNRF 当年说明为准。' },
+      { question: '在莱斯湖租船，必须有 PCOC 吗？', answer: '根据加拿大的一般规定，填写完整的 Rental Boat Safety Checklist 可作为该次租赁的能力证明。但 HBW 政策更严格：每位可能驾驶 HBW 租赁船的人员都必须在办理手续时出示有效的 PCOC 和带照片身份证件；清单不能替代该卡。' },
+      { question: '第一次租船钓鱼要带什么？', answer: '带政府签发带照片的证件、信用卡（押金）、安省钓鱼证（如果要钓鱼）、防风衣物、防晒霜、饮用水。救生衣 HBW 提供。' },
+      { question: '从万锦/士嘉堡到莱斯湖多久？', answer: '从万锦或士嘉堡接 Highway 401 东向，到 Cobourg 的 Exit 472（County Road 18 / Burnham Street）下高速，再沿 County Road 18 北行约 16 公里到 Gores Landing。车程随出发点和交通情况而变。建议早上 8-9 点出发以利用上午黄金钓鱼时段。' },
+      { question: '钓鱼证可以当天在 HBW 买吗？', answer: '不可以。钓鱼证由安省自然资源部（MNR）在线或 Service Ontario 站点出售。出发前请先在官方页面办好。' },
+      { question: '18 岁以下的孩子钓鱼要证吗？', answer: '未满 18 岁的安省及加拿大居民可凭政府签发的身份证件免钓鱼证，适用 Conservation 限额。非加拿大居民未满 18 岁可与持证成人一起钓鱼，渔获计入成人限额；如需自己的限额，应另办钓鱼证。出发前请核对 MNR 当前规则。' },
     ],
   },
 
@@ -4164,16 +4376,18 @@ ${ZH_LANGUAGE_NOTE}
     slug: 'pcoc-pcl-fishing-licence-difference-ontario',
     title: 'PCOC、PCL、钓鱼证区别：安省新手别搞混',
     seoTitle: '安省 船牌 中文 PCOC vs PCL vs 钓鱼证',
-    description: '安省新手常把三个证件搞混：PCOC（船只操作员卡，终身有效，开动力船必须）、PCL（船只牌照，船身的注册号，免费，换引擎要更新）、安省钓鱼证（独立系统，由 MNRF 管理）。三者对比表 + 官方申请链接。',
+    description: '安省新手常把三个证件搞混：PCOC（船只操作员卡，终身有效，开动力船必须）、PCL（船只牌照，船身的注册号，免费，换引擎要更新）、安省钓鱼证（独立系统，由 MNR 管理）。三者对比表 + 官方申请链接。',
     image: '/lovable-uploads/hero-boat-rental-licence-ontario.webp',
     author: 'Jay Harris',
     datePublished: '2026-06-12',
-    dateModified: '2026-08-19',
+    dateModified: '2026-10-04',
     publishDate: '2026-06-12',
     category: 'mandarin',
     readTime: '7 分钟',
     keywords: ['安省 船牌', '中文 PCOC', 'PCL', '船只操作员卡', '钓鱼证', '安省'],
-    content: `> **简短答案：** 三个证件管的是完全不同的事。**PCOC**（Pleasure Craft Operator Card，船只操作员卡）是终身有效的"驾照"，只要操作配动力的船就必须有。**PCL**（Pleasure Craft Licence，船只牌照）是船身上那串字母数字注册号，**免费**，登记给加拿大交通部，换引擎或换船主时要更新。**钓鱼证**完全独立，由安省自然资源与林业部（MNRF）管，先办 Outdoors Card 再加 Fishing Licence。短期租船通常不需要 PCOC（用 Rental Boat Safety Checklist 代替）。
+    content: `> **简短答案：** 三个证件管的是完全不同的事。**PCOC**（Pleasure Craft Operator Card，船只操作员卡）是终身有效的"驾照"，只要操作配动力的船就必须有。**PCL**（Pleasure Craft Licence，船只牌照）是船身上那串字母数字注册号，**免费**，登记给加拿大交通部，换引擎或换船主时要更新。**钓鱼证**完全独立，由安省自然资源部（MNR）管，先办 Outdoors Card 再加 Fishing Licence。短期租船通常不需要 PCOC（用 Rental Boat Safety Checklist 代替）。
+
+需要考取 PCOC？通过 [HBW 的 MyBoatCard 推荐链接](https://myboatcard.com/card/harrisboat)参加在线课程，使用优惠码 **HARRIS15** 可享 **15% 折扣**。
 
 ## 一张表看懂三者区别
 
@@ -4181,12 +4395,12 @@ ${ZH_LANGUAGE_NOTE}
 |---|---|---|---|
 | 中文名 | 船只操作员卡 | 船只牌照 | 钓鱼证 |
 | 全称 | Pleasure Craft Operator Card | Pleasure Craft Licence | Outdoors Card + Fishing Licence |
-| 管理机构 | 加拿大交通部 (Transport Canada) | 加拿大交通部 | 安省自然资源与林业部 (MNRF) |
+| 管理机构 | 加拿大交通部 (Transport Canada) | 加拿大交通部 | 安省自然资源部 (MNR) |
 | 是关于什么 | **人**：会不会安全开船 | **船**：船身的注册号 | **行为**：允不允许钓鱼 |
 | 谁必须有 | 操作配动力的休闲船的人 | 配 10 HP 以上引擎的休闲船船主 | 18 至 64 岁安省居民 / 非居民垂钓者 |
 | 费用 | 考试 + 卡片 \$40-\$60 不等（视提供商） | **免费** | Outdoors Card + Licence 视类型而定 |
 | 有效期 | **终身** | 10 年（到期续期） | Outdoors Card 3 年，Licence 1 年 / 1 天 / 8 天等 |
-| 在哪办 | Transport Canada 认可的考试提供商 | Transport Canada 官网在线申请 | 安省 MNRF 在线 / Service Ontario |
+| 在哪办 | Transport Canada 认可的考试提供商 | Transport Canada 官网在线申请 | 安省 MNR 在线 / Service Ontario |
 | 中文支持 | 视提供商而定（建议查询 Transport Canada 认可名单） | 英 / 法文 | **有官方繁体中文摘要** |
 | 换引擎要更新吗 | 不用 | **要**（注册号挂的是船+引擎组合） | 不影响 |
 | 短期租船是否必须 | 否（用 Rental Boat Safety Checklist 代替） | 看出租船，通常船主已办 | 钓鱼就要，不钓鱼就不用 |
@@ -4195,7 +4409,7 @@ ${ZH_LANGUAGE_NOTE}
 
 - **谁必须有：** 任何在加拿大水域操作配动力（包括电动马达）的休闲船的人。
 - **怎么办：** 选一家 Transport Canada 认可的提供商，在线学习 + 在线或现场考试 + 出卡片。
-- **官方认可名单：** [Transport Canada PCOC 认可提供商](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency-program)。
+- **官方认可名单：** [Transport Canada PCOC 认可提供商](https://tc.canada.ca/en/marine-transportation/buying-boat/find-education-resources-recreational-boaters)。
 - **中文考试是否提供：** 视提供商而定，**不能保证所有提供商都有中文版**，请直接联系认可名单上的提供商确认。
 - **有效期：** 终身，不需要续期。
 - **携带：** 操作船只时必须在船上带着卡或带着电子版。
@@ -4206,7 +4420,7 @@ ${ZH_LANGUAGE_NOTE}
 
 - **谁必须有：** 配 10 HP（7.5 kW）以上引擎的休闲船船主。
 - **是什么：** 一串字母+数字（例如 \`ON 12345 AB\`），按规定**必须用至少 7.5 cm 高的字母**贴在船头两侧。
-- **怎么办：** [Transport Canada Pleasure Craft Licence 在线申请](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences)：**免费**，约 4 至 6 周下卡。
+- **怎么办：** [Transport Canada Pleasure Craft Licence 在线申请](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl)：**免费**，约 4 至 6 周下卡。
 - **有效期：** 10 年。
 - **何时必须更新：** 换引擎（HP 变化时）、卖船给新主、地址变更、船只丢失或被偷。
 - **常见误解：** PCL ≠ PCOC。PCL 是船的"车牌"，PCOC 是您的"驾照"。两个都要。
@@ -4215,10 +4429,10 @@ ${ZH_LANGUAGE_NOTE}
 
 ## 安省钓鱼证：Outdoors Card + Fishing Licence
 
-- **谁必须有：** 18 至 64 岁的钓鱼者（居民和非居民价格不同；部分老人有 Resident Senior 优惠；14 岁以下通常豁免，以 MNRF 当年规则为准）。
+- **谁必须有：** 18 至 64 岁的钓鱼者（居民和非居民价格不同；部分老人有 Resident Senior 优惠；14 岁以下通常豁免，以 MNR 当年规则为准）。
 - **结构：** 先办一张 **Outdoors Card**（户外活动卡，3 年有效），再加一张 **Fishing Licence**（1 年 / 8 天 / 1 天等多种类型）。
 - **官方页面（含繁体中文摘要）：** [安省钓鱼规章摘要（繁体中文）](http://www.ontario.ca/page/ontario-fishing-regulations-summary-traditional-chinese)。
-- **怎么办：** 安省 MNRF 在线申请，或在 Service Ontario / 大型户外用品店现场办理。
+- **怎么办：** 安省 MNR 在线申请，或在 Service Ontario / 大型户外用品店现场办理。
 - **关键规则：** 钓鱼时必须携带证件（电子版可接受），并遵守鱼种、季节、捕获量、长度限制。这些每年更新，必查官方页面。
 - **完全独立于 PCOC / PCL**：有钓鱼证不代表可以开船，有 PCOC 不代表可以钓鱼。
 
@@ -4236,7 +4450,7 @@ ${ZH_LANGUAGE_NOTE}
 
 **"我在中国有船证，加拿大能用吗？"** 不能。PCOC 是加拿大体系，需要在加拿大重新考。
 
-**"PCOC 中文考试在哪里？"** 视 Transport Canada 认可提供商而定。**请直接查 [Transport Canada 认可名单](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency-program) 并联系提供商**——我们不能保证所有提供商都有中文版。
+**"PCOC 中文考试在哪里？"** 视 Transport Canada 认可提供商而定。**请直接查 [Transport Canada 认可名单](https://tc.canada.ca/en/marine-transportation/buying-boat/find-education-resources-recreational-boaters) 并联系提供商**——我们不能保证所有提供商都有中文版。
 
 **"换了引擎，PCL 要重新申请吗？"** 不是重新申请，是**更新**。在 Transport Canada 在线表单上提交新的引擎信息即可，仍然免费。
 
@@ -4265,7 +4479,7 @@ PCL = Pleasure Craft Licence，中文译为"船只牌照"，是贴在船头的�
 通常不需要。加拿大交通部允许租船公司用《Rental Boat Safety Checklist》代替 PCOC 完成短租。具体以租船公司流程为准。
 
 **Q：钓鱼证和船证可以一起办吗？**
-不可以：两套完全独立的系统，不同政府机构管理。PCOC / PCL 由加拿大交通部管，钓鱼证由安省 MNRF 管。
+不可以：两套完全独立的系统，不同政府机构管理。PCOC / PCL 由加拿大交通部管，钓鱼证由安省 MNR 管。
 
 **Q：换引擎后 PCL 一定要更新吗？**
 要。引擎 HP 变化、船主变更、地址变更都需要在 Transport Canada 在线更新 PCL 信息，免费。
@@ -4284,9 +4498,9 @@ ${ZH_LANGUAGE_NOTE}
       { question: 'PCL 中文是什么意思？', answer: 'PCL = Pleasure Craft Licence，中文译为"船只牌照"，是贴在船头的注册号，由 Transport Canada 免费签发，约 4 至 6 周下卡。' },
       { question: '船只操作员卡（PCOC）中文考试有吗？', answer: '视 Transport Canada 认可提供商而定。请直接查认可名单并联系提供商确认，我们不能保证所有提供商都有中文版考试。' },
       { question: '短期租船一定要 PCOC 吗？', answer: '通常不需要。加拿大交通部允许租船公司用《Rental Boat Safety Checklist》代替 PCOC 完成短租。具体以租船公司流程为准。' },
-      { question: '钓鱼证和船证可以一起办吗？', answer: '不可以：两套独立系统。PCOC / PCL 由加拿大交通部管，钓鱼证由安省自然资源与林业部（MNRF）管。' },
+      { question: '钓鱼证和船证可以一起办吗？', answer: '不可以：两套独立系统。PCOC / PCL 由加拿大交通部管，钓鱼证由安省自然资源部（MNR）管。' },
       { question: '换引擎后 PCL 一定要更新吗？', answer: '要。引擎 HP 变化、船主变更、地址变更都需要在 Transport Canada 在线更新 PCL 信息，仍然免费。' },
-      { question: '14 岁以下儿童钓鱼要证吗？', answer: '通常豁免，但规则每年可能更新，出发前以 MNRF 当年规章为准。' },
+      { question: '14 岁以下儿童钓鱼要证吗？', answer: '通常豁免，但规则每年可能更新，出发前以 MNR 当年规章为准。' },
     ],
   },
 
@@ -4296,10 +4510,10 @@ ${ZH_LANGUAGE_NOTE}
     seoTitle: '加拿大加油指南：Mercury 船外机加 87 还是 91？',
     description: '安省 Mercury 船外机中文加油指南：RON 与 AKI 标号换算、E10 乙醇上限、E15 已在安省出现、无乙醇汽油怎么选。',
     image: '/lovable-uploads/home-step3-rice-lake-water-test.webp',
-    imageAlt: 'Rice Lake 水面上的 Mercury 船外机测试',
+    imageAlt: '金色夕阳下，男子驾驶深色钓鱼艇在湖面高速行驶，船尾装有黑色 Mercury Pro XS 250 船外机',
     author: 'Harris Boat Works',
     datePublished: '2026-08-24',
-    dateModified: '2026-09-06',
+    dateModified: '2026-10-04',
     publishDate: '2026-08-24',
     category: '保养与使用',
     readTime: '10 分钟',
@@ -4307,6 +4521,8 @@ ${ZH_LANGUAGE_NOTE}
     content: `## 简短答案
 
 **辛烷值达标就行，真正要选的是乙醇。**
+
+需要考取 PCOC？通过 [HBW 的 MyBoatCard 推荐链接](https://myboatcard.com/card/harrisboat)参加在线课程，使用优惠码 **HARRIS15** 可享 **15% 折扣**。
 
 这两件事里，只有一件算得上「选择」：
 
@@ -4321,9 +4537,9 @@ ${ZH_LANGUAGE_NOTE}
 
 - [Mercury Marine](https://www.mercurymarine.com/ca/en) Premier 认证经销商
 - 透明加元价格，无需讨价还价
-- 从 GTA 经 401 + 115 高速约 60 到 90 分钟车程
+- 从多伦多向东约 90 分钟车程，出发前请用实时导航确认路线和路况
 
-[把序列号和油泵照片发给我们](https://hbw.wiki/service)
+[把序列号和油泵照片发给我们](https://hbwservice.ca)
 
 ---
 
@@ -4404,7 +4620,7 @@ Mercury 同时说明了原因：发动机和燃油系统里的金属、橡胶和
 
 1. **不要启动发动机。**
 2. **记下来：** 加了多少升、哪个档位、哪家加油站、哪一天。
-3. **把这些信息和序列号一起发到 [hbw.wiki/service](https://hbw.wiki/service)**，或者打 905-342-2153。
+3. **把这些信息和序列号一起发到 [hbwservice.ca](https://hbwservice.ca)**，或者打 905-342-2153。
 
 在这箱油还没被泵进整个燃油系统之前处理，比事后拆喷油嘴便宜得多。
 
@@ -4568,7 +4784,7 @@ Mercury 自己的燃油护理产品把三件事分开了：
 
 **不确定你那台 Mercury 该加什么油？**
 
-把**发动机序列号**和**泵上燃油标签的照片**一起发到 **[hbw.wiki/service](https://hbw.wiki/service)**，我们帮你确认这台机器的准确燃油规格，而不是让你在「普通还是高级」之间猜。
+把**发动机序列号**和**泵上燃油标签的照片**一起发到 **[hbwservice.ca](https://hbwservice.ca)**，我们帮你确认这台机器的准确燃油规格，而不是让你在「普通还是高级」之间猜。
 
 Harris Boat Works 位于 Rice Lake 南岸 Gores Landing。
 
@@ -4617,6 +4833,13 @@ Harris Boat Works 目前是 Mercury Marine Premier Dealer。
 ### 燃油放在船上能放多久？
 
 没有一个安全的保质期承诺。Mercury 说短至两周燃油成分就可能开始氧化。用新鲜油、勤周转，停放前加稳定剂。无乙醇汽油避免了乙醇相关的问题，但一样会氧化并生成胶质和漆膜。
+
+## 相关指南
+
+- [多伦多华人 Mercury 发动机维修保养完整指南：从机油到大修](/blog/zh/gta-chinese-mercury-service-guide)
+- [Mercury 船外机故障排查中文指南](/blog/zh/mercury-outboard-troubleshooting-chinese-ontario)
+- [安省华人船主春季开船检查清单](/blog/zh/ontario-spring-boat-checklist-chinese)
+- [多伦多华人 Mercury 船外机马力选择指南：9.9、20、60、115、150HP 怎么选？](/blog/zh/mercury-outboard-horsepower-guide-toronto-chinese)
 `,
     faqs: [
       { question: '我的 Mercury 手册写 91 号，在加拿大要加 premium 吗？', answer: '多半不用。先确认那是哪套标号。加拿大和美国用 AKI，泵上是 87、89、91、94；中国和世界多数地区用 RON，是 92、95、98。Mercury 经常两套一起写，例如 `87 Octane Minimum (R+M/2) or 91 RON`。手册要求 91 RON 的话，加拿大加 87 号普通汽油就满足了。不确定就把序列号发给我们。' },

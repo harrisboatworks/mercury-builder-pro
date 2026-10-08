@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-motor-size-calculator-guide.md
-last_updated: 2026-09-11
+last_updated: 2026-09-18
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Boat Motor HP Size Guide Ontario"
 description: "Use our boat motor sizing guide. Inventory hull, engine, fuel, equipment, people, and gear, stay within manufacturer limits, and compare examples."
 category: "Buying Guide"
 date_published: 2026-05-11
-date_modified: 2026-09-11
+date_modified: 2026-09-18
 keywords: ["boat motor size","outboard motor calculator","hp for boat weight","motor sizing guide","boat horsepower"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,13 +25,13 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-05-11  
-**Last reviewed:** 2026-09-11  
+**Last reviewed:** 2026-09-18  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-motor-size-calculator-guide
 
 ---
 
-> **Quick answer:** There is no single formula that spits out the right HP. Read the hull's documented power and weight limits from the capacity plate and manufacturer documentation, then inventory hull, engine, fuel, equipment, people, and gear for a normal trip and the heaviest planned trip, without double-counting anything already included in a listed weight. Stay inside those limits. Length, percent-of-plate, and weight-per-HP shortcuts are not a verified method.
+> **Quick answer:** Start one Mercury model step below the maximum HP on the capacity plate. If the plate says 150 HP, the best fit is a 115. Max rated is overkill: more power and more weight on the transom than the boat performs well with. Then confirm the hull's documented power and weight limits, the exact motor weight, and the boat's normal load. Never exceed the plate.
 
 > **Pick the right shaft:** Try our [Shaft Length Picker](/tools#shaft-length) to check if you need a 20" or 25" shaft for your boat. Free, no email.
 ---
@@ -83,7 +83,7 @@ Protected Kawartha bays: lower HP works fine. Open Rice Lake in the afternoon wi
 - Cruising: mid-range HP is efficient and appropriate
 - Fishing: consider trolling needs alongside main-motor requirements
 - Water sports: more HP for pulling people on tubes and skis
-- Speed-focused use: HP at or near the capacity plate maximum makes sense
+- Speed-focused use: Choose one Mercury model below the capacity plate maximum. Max rated is still overkill, even when speed matters.
 
 ---
 
@@ -111,7 +111,7 @@ The right HP target depends as much on how well you know the boat as on what the
 
 **Compare those same limits to how this hull is loaded and used**
 
-The under-powered complaint is the #1 thing we hear on resale day. If you're on the fence, step up, not down.
+The under-powered complaint is the #1 thing we hear on resale day. If you're on the fence between two sizes, check the plate limit and your real load, and ask us before you decide.
 
 ## Load inventory
 
@@ -191,15 +191,15 @@ Build a real installed quote at [mercuryrepower.ca](https://www.mercuryrepower.c
 
 ### Why not just max out the HP rating?
 
-Maximum HP often provides more power than needed for typical use. Mid-range HP usually offers better efficiency, adequate performance, and lower cost. Max HP makes sense for specific applications.
+Do not max out the rating. HBW recommends one Mercury model step below the maximum HP on the capacity plate. The maximum is overkill: more power and more weight on the transom than the boat performs well with.
 
 ### Does motor weight affect boat performance?
 
-Yes, significantly. Modern Mercury motors are lighter than older designs, so you may be able to run higher HP than before. We factor motor weight into recommendations.
+Yes, significantly, but do not assume a newer motor is lighter. Installed weight varies by exact model and configuration, and a modern four-stroke can outweigh the older two-stroke it replaces. Check the exact proposed motor weight against the hull's documented power and motor-weight limits independently, rather than inferring one from the other. We factor motor weight into recommendations.
 
 ### How does altitude affect motor sizing?
 
-Engines lose about 3% power per 1,000 feet elevation. At sea level (Ontario), this isn't a factor. Mountain lake boaters may need to size up.
+Engines lose about 3% power per 1,000 feet elevation. Rice Lake sits about 187 m (614 ft) above sea level, so the loss is under 2% and isn't a factor in sizing. Mountain lake boaters may need to size up.
 
 ### Should I size for today or future needs?
 

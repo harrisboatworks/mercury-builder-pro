@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/pcoc-vs-rental-boat-safety-checklist-zh.md
-last_updated: 2026-09-06
+last_updated: 2026-10-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "安省租船需要驾照吗？PCOC 与租船安全清单一次讲清"
 description: "安省租船华人指南：PCOC（船只操作员卡）与 Rental Boat Safety Checklist 的差别、何时需要哪一个、罚款风险、如何合法上水。"
 category: "安省法规中文"
 date_published: 2026-05-11
-date_modified: 2026-09-06
+date_modified: 2026-10-04
 keywords: ["安省租船 驾照 中文","PCOC 租船 中文","Rental Boat Safety Checklist 中文","多伦多 租船 不需要驾照","华人 租船 安省 规则"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,35 +25,37 @@ revenue_driver: rentals
 
 **Category:** 安省法规中文  
 **Published:** 2026-05-11  
-**最后审核:** 2026-09-06  
+**最后审核:** 2026-10-04  
 **Read time:** 6 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/pcoc-vs-rental-boat-safety-checklist-zh
 
 ## 快速答案
 
-在加拿大租船，**通常需要 PCOC（船只操作员卡）**。部分租船公司会在你前往时提供「临时免除 PCOC」的 Safety Briefing（限该次租用），但这不是法律默认。即使有临时免除，安全责任仍然在操作者身上。如果你计划多次租船或将来买船，建议直接取得 PCOC，因为它一次性终身有效。
+在加拿大租船，**通常需要 PCOC（船只操作员卡）**。按联邦规则，部分租船可以用填写完整的租船安全清单满足能力证明要求，但这只是法律最低标准。HBW 的政策更严格：每位可能驾驶租船的人都必须出示有效 PCOC 和带照片身份证，乘客不需要。如果你计划多次租船或将来买船，建议直接取得 PCOC，因为它一次性终身有效。
+
+需要考取 PCOC？通过 [HBW 的 MyBoatCard 推荐链接](https://myboatcard.com/card/harrisboat)参加在线课程，使用优惠码 **HARRIS15** 可享 **15% 折扣**。
 
 *HBW 信任要点*
 
-### 为什么 GTA 华人船主愿意到 Rice Lake
+### 为什么 GTA 华人船主愿意到莱斯湖
 
 - [Mercury Marine](https://www.mercurymarine.com/ca/en) Premier 认证经销商
 - 透明加元价格，无需讨价还价
-- 从 GTA 经 401 + 115 高速约 60 到 90 分钟车程
+- 从多伦多经 401 向东约 90 分钟车程
 
-[在线获取报价](/quote)
+[在线获取报价](/quote/motor-selection)
 
 ---
 
 ## PCOC 与租船的关系
 
-**PCOC（[Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency)，船只操作员卡）** 是 Transport Canada 规定的证件。法律规定：任何在加拿大水域操作有马达的休闲船的人，必须持有 PCOC 或同等证明。
+**PCOC（[Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc)，船只操作员卡）** 是 Transport Canada 规定的证件。法律规定：任何在加拿大水域操作有马达的休闲船的人，必须持有 PCOC 或同等证明。
 
 **这个规定适用于租船吗？** 一般来说，**是的**。
 
 **但有一个重要例外：**
 
-许多租船公司可以提供「临时 PCOC 免除」（Rental Boat Safety Checklist），允许承租人在没有 PCOC 的情况下操作租用的船。这个免除是针对该次特定的租用，不可转用于其他船或其他次。
+按联邦规则，有些租船公司可以让承租人用「租船安全清单」（Rental Boat Safety Checklist）代替 PCOC，操作该次租用的船。HBW 不这样做：每位驾驶者都需要有效的 PCOC。这个免除是针对该次特定的租用，不可转用于其他船或其他次。
 
 这个免除需要：
 - 完成租船公司的安全简报（Safety Briefing）
@@ -64,13 +66,13 @@ revenue_driver: rentals
 
 ## 哪些租船公司提供 PCOC 免除？
 
-不是所有的租船公司都提供这个。提供的需要：
+不是所有的租船公司都提供这个。按 Transport Canada 的说明，这份清单的用法是：
 
-1. 持有有效的营业执照
-2. 员工经过培训，能进行 Safety Briefing
-3. 有书面的 Safety Checklist 流程
+1. 租船公司在出租前与承租人逐项讲解清单（船只操作、安全规则、当地水域危险和紧急情况）
+2. 承租人逐项勾选，确认已经理解
+3. 完成的清单只在该次租用期间有效
 
-HBW 的租船在你预订时会告知当前要求。请致电 905-342-2153 或在预订时询问。
+HBW 的租船要求每位驾驶者出示有效 PCOC。如有疑问，请致电 905-342-2153。
 
 如果你在大多伦多区考虑多个租船选择，建议事先询问每家公司关于 PCOC 的政策。
 
@@ -99,7 +101,7 @@ HBW 的租船在你预订时会告知当前要求。请致电 905-342-2153 或�
 
 ## 租船 Safety Briefing 通常包含什么？
 
-如果你选择用临时免除，租船公司的 Safety Briefing 通常涵盖：
+租船公司的 Safety Briefing 通常涵盖以下内容（在 HBW，安全讲解不能替代 PCOC）：
 
 **1. 船只操作基础**
 - 启动与停止马达
@@ -115,11 +117,11 @@ HBW 的租船在你预订时会告知当前要求。请致电 905-342-2153 或�
 
 **3. 通讯与紧急程序**
 - 无线电（VHF）使用基础
-- 拨打 911 / 加拿大海岸防卫
+- 拨打 911 / 加拿大海岸警卫队
 - 何时呼救
 - 信号灯与闪光灯
 
-**4. 水域特定资讯**
+**4. 水域特定信息**
 - 该水域的危险（暗礁、浅水、强流）
 - 主要航行通道
 - 港口与避难所
@@ -134,9 +136,9 @@ HBW 的租船在你预订时会告知当前要求。请致电 905-342-2153 或�
 **6. 文件**
 - 你必须随身带的证件
 - 随船文件（保险、注册）
-- 紧急联络资讯
+- 紧急联络信息
 
-简报时间：**通常 30-60 分钟**，取决于水域复杂度与你的经验。
+简报时间取决于租船公司、水域复杂度与你的经验。
 
 ---
 
@@ -164,12 +166,12 @@ HBW 的租船在你预订时会告知当前要求。请致电 905-342-2153 或�
 - [ ] 排水塞已安装
 - [ ] 马达运转正常
 - [ ] 通讯设备测试
-- [ ] 镜子与仪表正常
-- [ ] 船帆/锚绳可用
+- [ ] 仪表正常
+- [ ] 锚和锚绳可用
 - [ ] 知道返航路线
 
 **水上：**
-- [ ] 随时穿著 PFD（或至少触手可及）
+- [ ] 随时穿着 PFD（或至少触手可及）
 - [ ] 保持安全速度
 - [ ] 避开禁航区
 - [ ] 监听 VHF 16 频道（如果可能）
@@ -184,14 +186,14 @@ HBW 的租船在你预订时会告知当前要求。请致电 905-342-2153 或�
 
 ---
 
-## Rice Lake 特定的安全须知
+## 莱斯湖特定的安全须知
 
-如果你计划在 Rice Lake 租船：
+如果你计划在莱斯湖租船：
 
 **沉没铁路**
-- 跨越湖中段，深度约 4 英尺
+- 位于 Harwood 与 Hiawatha 之间的旧铁路堤道，设有浮标标示的通道
 - Chartplotter（Navionics、Garmin、C-MAP）会标示
-- 过湖中段时减速
+- 请走浮标标示的通道并减速
 
 **夏季水草**
 - 大部分湖区水草茂盛
@@ -213,7 +215,7 @@ HBW 的租船在你预订时会告知当前要求。请致电 905-342-2153 或�
 
 **租船：** [harrisboatworks.ca/rentals](https://www.harrisboatworks.ca/rentals) 或拨打 **905-342-2153**
 
-**PCOC：** 在 Transport Canada 认证机构线上完成（搜寻 "PCOC online")
+**PCOC：** 在 Transport Canada 认证机构线上完成（搜索 "PCOC online")
 
 Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON
 
@@ -222,6 +224,13 @@ Harris Boat Works 自 1947 年起由家族经营，现已传至第三代。
 自 1965 年起，Harris Boat Works 一直是 Mercury 授权经销商。
 
 Harris Boat Works 目前是 Mercury Marine Premier 认证经销商。
+
+## 相关指南
+
+- [GTA 华人 PCOC 操作员卡、PCL 船牌与安省钓鱼证指南](/blog/zh/gta-chinese-pcl-fishing-licence-guide)
+- [安省驾船法规中文指南（2026）：PCOC、PCL、安全装备与钓鱼证](/blog/zh/ontario-boating-regulations-zh)
+- [多伦多华人第一次租船钓鱼：证件、安全和当天流程](/blog/zh/first-boat-rental-rice-lake-chinese-guide)
+- [GTA 到 莱斯湖 租船一日游：预订、证件与当天清单](/blog/zh/gta-chinese-rice-lake-day-trip-plan)
 
 ## FAQs
 

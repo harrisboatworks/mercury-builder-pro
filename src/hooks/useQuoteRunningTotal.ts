@@ -168,7 +168,7 @@ export function useQuoteRunningTotal(
   motorOverride?: { price?: number; basePrice?: number; msrp?: number; model?: string; hp?: number } | null
 ) {
   const { state } = useQuote();
-  const { getRebateForHP } = useActivePromotions();
+  const { getRebateForHP } = useActivePromotions({ motor: motorOverride !== undefined ? motorOverride : state.motor });
 
   const motor = motorOverride !== undefined ? motorOverride : state.motor;
 

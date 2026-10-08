@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/rice-lake-fishing-guide-toronto-chinese.md
-last_updated: 2026-09-06
+last_updated: 2026-10-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,12 +11,12 @@ title: "Rice Lake 钓鱼指南（2026）：FMZ 17 鱼种、鱼牌与出发清单
 description: "从 GTA 到 Rice Lake 钓鱼前要知道的 2026 指南：FMZ 17 鱼种与季节、安省鱼牌、PCOC、租船要求、装备和水下危险。"
 category: "钓鱼指南"
 date_published: 2026-04-12
-date_modified: 2026-09-06
+date_modified: 2026-10-06
 keywords: ["Rice Lake钓鱼","多伦多华人钓鱼","安大略省钓鱼攻略","Rice Lake fishing guide Chinese"]
 author: Harris Boat Works
 content_type: blog_article
 language: zh-CN
-revenue_driver: repower
+revenue_driver: rentals
 ---
 
 # Rice Lake 钓鱼指南（2026）：FMZ 17 鱼种、鱼牌与出发清单
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** 钓鱼指南  
 **Published:** 2026-04-12  
-**最后审核:** 2026-09-06  
+**最后审核:** 2026-10-06  
 **Read time:** 9 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/rice-lake-fishing-guide-toronto-chinese
 
@@ -33,7 +33,9 @@ revenue_driver: repower
 
 Rice Lake 属于安省 Fisheries Management Zone 17（FMZ 17）。常见目标鱼包括 walleye（梭鲈／玻璃眼）、largemouth 和 smallmouth bass（大嘴鲈／小嘴鲈）、muskellunge（muskie）以及 yellow perch（黄鲈）等 panfish。不要把 walleye 和 yellow perch 都翻成“黄鲈”：它们是不同鱼种，季节、尺寸和限额也可能不同。
 
-从 GTA 多数地区开车通常约 60–120 分钟，实际时间取决于出发点、401／115 路况和你使用的下水点。出发前先做三件事：查 [FMZ 17 当年规则](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17)、确认自己的[安省钓鱼资格](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees)，再核对天气、下水点和船上安全装备。
+需要考取 PCOC？通过 [HBW 的 MyBoatCard 推荐链接](https://myboatcard.com/card/harrisboat)参加在线课程，使用优惠码 **HARRIS15** 可享 **15% 折扣**。
+
+从 GTA 多数地区开车通常约 60–120 分钟，实际时间取决于出发点、401 路况和你使用的下水点。出发前先做三件事：查 [FMZ 17 当年规则](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17)、确认自己的[安省钓鱼资格](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees)，再核对天气、下水点和船上安全装备。
 
 *HBW 信任要点*
 
@@ -41,9 +43,9 @@ Rice Lake 属于安省 Fisheries Management Zone 17（FMZ 17）。常见目标�
 
 - [Mercury Marine](https://www.mercurymarine.com/ca/en) Premier 认证经销商
 - 透明加元价格，无需讨价还价
-- 从 GTA 多数地区经 401 + 115 高速约 60 到 120 分钟车程
+- 从 GTA 多数地区经 401 高速约 60 到 120 分钟车程
 
-[在线获取报价](/quote)
+[在线获取报价](/quote/motor-selection)
 
 ---
 
@@ -51,7 +53,7 @@ Rice Lake 属于安省 Fisheries Management Zone 17（FMZ 17）。常见目标�
 
 Rice Lake 是大多伦多钓友的近距离选择。从多伦多开车：
 
-- **路线：** 通常经 401 东向和 Highway 115；最后一段请按你确认的码头或租船地点导航
+- **路线：** 通常经 401 东向；最后一段请按你确认的码头或租船地点导航
 - **时间：** 多数 GTA 地区约 60–120 分钟，周末和施工会明显改变车程
 - **不需要过夜：** 早上去，傍晚回，一天搞定
 - **下水点要先确认：** 船坡、停车、费用、开放时间和拖车空间会因地点与季节改变
@@ -70,7 +72,7 @@ Walleye 在安大略省渔业管理区 17（FMZ 17）有特定的尺寸限制（
 
 ### Smallmouth Bass（小嘴鲈）
 
-晚春到初夏的主要钓鱼对象。在岩石结构、水草边缘特别活跃。可以用 jig、软虫、顶水饵等多种方式。
+6 月第三个星期六开季后，初夏到秋季的主要钓鱼对象。在岩石结构、水草边缘特别活跃。可以用 jig、软虫、顶水饵等多种方式。
 
 ### Muskellunge / Muskie（中文俗名不一）
 
@@ -134,7 +136,7 @@ Rice Lake 也有 yellow perch、crappie、sunfish 和 northern pike。中文俗�
 - HBW 不销售钓鱼证
 
 **操作船需要**
-- [Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/boating-safety/pleasure-craft-operator-card-pcoc)（PCOC）或其他合资格证明：操作动力休闲船的人需要随船携带
+- [Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc)（PCOC）或其他合资格证明：操作动力休闲船的人需要随船携带
 - [Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl)（PCL）：主要在加拿大使用、发动机总功率至少 10 HP 的合资格休闲船通常需要；PCL 属于船，不是驾驶员
 - 租 HBW 船时，每位驾驶员都必须出示有效 boat operator licence／PCOC 和带照片身份证件；请以[在线租船页面](https://www.harrisboatworks.ca/rentals)与租赁协议为准
 
@@ -155,7 +157,7 @@ Rice Lake 周边有公共和商业下水选择，但设施、收费、停车和�
 **主马达：** 先看船厂 capacity plate、船体重量、负载与原厂适配，不要只按船长套用通用马力范围
 **低速推进：** 电动 trolling motor 或合适的 Mercury ProKicker，选择取决于船体、续航、充电和冗余需求
 **电子设备：** 使用更新的 Chartplotter 与声呐辅助识别湖底结构和旧铁路区域，但仍须观察水面与水深
-**建议装备：** 每人一件合身 PFD、适用的发声和照明设备、锚与锚绳、备用推进方式；法定最低装备仍须按[船型和船长查表](https://tc.canada.ca/sites/default/files/2026-05/boating_guide_2026_en_acc.pdf)
+**建议装备：** 每人一件合身 PFD、适用的发声和照明设备、锚与锚绳、备用推进方式；法定最低装备仍须按[加拿大交通部船艇安全页面](https://tc.canada.ca/en/marine-transportation/marine-safety/boating-safety)
 
 ProKicker 的低速控制和充电能力适合认真拖钓，但是否需要 kicker 取决于船体、主机怠速表现、电动拖钓马达、预算和安全冗余。先确认船厂马力标牌、艉板空间、转向和充电需求，再由经销商配型。
 
@@ -186,7 +188,7 @@ Rice Lake 中部的旧水下铁路遗迹是本地著名危险之一，但不是�
 - [Ontario：Fisheries Management Zone 17](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17)
 - [Ontario：Fishing licence 资格](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees)
 - [Ontario：2026 fishing licence fees](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees)
-- [Transport Canada：2026 Safe Boating Guide](https://tc.canada.ca/sites/default/files/2026-05/boating_guide_2026_en_acc.pdf)
+- [加拿大交通部船艇安全页面](https://tc.canada.ca/en/marine-transportation/marine-safety/boating-safety)
 - [HBW：当前在线租船页面](https://www.harrisboatworks.ca/rentals)
 
 > **语言说明**
@@ -194,7 +196,7 @@ Rice Lake 中部的旧水下铁路遗迹是本地著名危险之一，但不是�
 
 ## 准备出发？
 
-如果你需要 Mercury 马达，请在 [mercuryrepower.ca](https://www.mercuryrepower.ca) 建立报价；维修请到 [hbw.wiki/service](https://hbw.wiki/service) 提交船、发动机和症状资料。
+如果你需要 Mercury 马达，请在 [mercuryrepower.ca](https://www.mercuryrepower.ca) 建立报价；维修请到 [hbwservice.ca](https://hbwservice.ca) 提交船、发动机和症状资料。
 
 如果你想租船，请浏览 [harrisboatworks.ca/rentals](https://www.harrisboatworks.ca/rentals)。
 
@@ -205,6 +207,11 @@ Harris Boat Works 自 1947 年起由家族经营，现已传至第三代。
 自 1965 年起，Harris Boat Works 一直是 Mercury 授权经销商。
 
 Harris Boat Works 目前是 Mercury Marine Premier 认证经销商。
+
+## 相关指南
+
+- [多伦多出发钓鱼去哪：莱斯湖、Lake Simcoe、Kawarthas 怎么选](/blog/zh/toronto-fishing-rice-lake-vs-lake-simcoe-kawarthas)
+- [Lake Simcoe 华人钓友船外机指南](/blog/zh/chinese-anglers-lake-simcoe-mercury-outboard)
 
 ## FAQs
 
@@ -226,12 +233,12 @@ Harris Boat Works 目前是 Mercury Marine Premier 认证经销商。
 
 ## Next steps
 
-- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
+- Check the current Rice Lake rental fleet and availability: https://harrisboatworks.ca/rentals
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
-- The only commercial next step for this article is the Mercury quote configurator.
+- The only commercial next step for this article is Rice Lake rental availability at https://harrisboatworks.ca/rentals.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

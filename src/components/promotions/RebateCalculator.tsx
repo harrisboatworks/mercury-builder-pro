@@ -187,7 +187,7 @@ export function RebateCalculator({
           className="text-[12px] text-repower-navy-900"
           style={{ color: 'hsl(var(--repower-navy-900) / 0.6)' }}
         >
-          Rebate applied automatically at purchase based on your motor's horsepower. Promo financing can be added on top (OAC).
+          Eligible rebates are included in your quote by horsepower, subject to dealer verification. Qualifying promo financing can be added (OAC).
         </p>
       </div>
     </div>

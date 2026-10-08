@@ -51,7 +51,7 @@ This is where pontoons earn their reputation, and it is not hype.
 
 **Swimming and lounging.** A boarding ladder off the back, a wide deck to towel off on, and shade if you add a bimini. For a family that mostly wants to anchor in a bay, swim, and have lunch, nothing beats it.
 
-**It handles the everyday stuff.** Cottage errands, sunset cruises, a few rods over the side for the kids. A pontoon does the calm, social 80 percent of family boating better than any other boat on the lake.
+**It handles the everyday stuff.** Cottage errands, sunset cruises, a few rods over the side for the kids. A pontoon suits calm, social family days well.
 
 ![Angler wearing flotation and fishing from the stern of a Legend pontoon beside a Mercury outboard.](/lovable-uploads/blog-photos-2026-09/legend-mercury-fishing-detail.webp)
 
@@ -73,7 +73,7 @@ We would rather you hear this from us than find out in July.
 
 Yes. This is the question we get most, and the answer is yes, with a caveat about power.
 
-![Kids tubing behind a pontoon boat on Rice Lake](/lovable-uploads/pontoon-family-tubing.png)
+![Three children in life jackets on a yellow and blue tube in the wake of a pontoon boat on a calm lake with forested islands](/lovable-uploads/pontoon-family-tubing.png)
 
 There is no useful one-number horsepower formula for tubing. The right setup depends on the boat's capacity plate, total people and gear, tube design, water conditions, propeller, and the riders' size and experience. A properly powered pontoon can tow a tube, but choose the engine for the whole loaded boat and the manufacturer's rating, not the tube's weight alone. In practice:
 
@@ -154,7 +154,7 @@ Yes. With enough power you can pull tubes comfortably, and many families do exac
 
 ### Is a pontoon safe for young kids?
 
-It is one of the safest family boats on the water. High rails and wide gates keep little ones from going overboard, the deck is flat and non-slip, and the boat is very stable. Everyone still wears a properly fitted PFD, but parents consistently tell us the pontoon feels secure.
+It is a stable, forgiving family boat. High rails and wide gates keep little ones from going overboard, the deck is flat and non-slip, and the boat is very stable. Everyone still wears a properly fitted PFD, but parents consistently tell us the pontoon feels secure.
 
 ### Pontoon or tritoon for a family?
 

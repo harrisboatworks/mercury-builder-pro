@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/ontario-spring-boat-checklist-chinese.md
-last_updated: 2026-08-08
+last_updated: 2026-10-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "安省华人船主春季开船检查清单"
 description: "多伦多和安省华人船主春季下水前要检查什么？HBW 用中文讲清 PCOC、安全装备、船牌、发动机、燃油、电池和第一次湖测。"
 category: "Maintenance"
 date_published: 2026-05-17
-date_modified: 2026-08-08
+date_modified: 2026-10-04
 keywords: ["安省春季开船","spring boat checklist","GTA 华人船主","Rice Lake spring","Mercury 春季检查","Harris Boat Works"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,11 +25,13 @@ revenue_driver: service
 
 **Category:** Maintenance  
 **Published:** 2026-05-17  
-**最后审核:** 2026-08-08  
+**最后审核:** 2026-10-04  
 **Read time:** 10 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/ontario-spring-boat-checklist-chinese
 
 > **快速答案：** 安省春季开船前，华人船主至少要检查六件事：驾驶资格证明、船牌或船只文件、安全装备、电池、燃油系统、引擎启动和冷却情况。加拿大操作有马达的休闲船需要操作能力证明，PCOC 是常见证明，而且 Transport Canada 明确说纸质或电子复印件不能代替实体 PCOC 卡；租船时，完成 Rental Boat Safety Checklist 只在租船期间有效 (Transport Canada PCOC)。
+
+需要考取 PCOC？通过 [HBW 的 MyBoatCard 推荐链接](https://myboatcard.com/card/harrisboat)参加在线课程，使用优惠码 **HARRIS15** 可享 **15% 折扣**。
 
 如果你不确定船外机能不能放心下水，不要在私家车道里硬试到冒烟。春天第一天已经够忙了，别给自己加一个“为什么马达在咳嗽”的悬疑剧。
 
@@ -50,7 +52,7 @@ Harris Boat Works 是 Gores Landing 的莱斯湖家庭码头，提供船只销�
 | 救生衣和安全装备 | 每个人有合适的 PFD 或救生衣，装备按船型和长度准备 | Transport Canada 的 Safe Boating Guide 按船型和长度列出最低安全装备要求 (Transport Canada Safe Boating Guide) |
 | 电池 | 充电、接线干净、固定稳 | 春天很多“不启动”其实是电池和接线问题 |
 | 燃油 | 旧油、油管、油箱通气、燃油味道 | 不要让去年秋天的“应该没事”变成今年六月的“怎么回事” |
-| 引擎 | 正常启动、冷却水流、无异常警报声、无明显漏油 | Mercury 或 Mercruiser 相关问题可以交给专业保养维修检查 |
+| 引擎 | 正常启动、冷却水流、无异常警报声、无明显漏油 | Mercury 或 MerCruiser 相关问题可以交给专业保养维修检查 |
 
 ## PCOC、PCL，不要搞混
 
@@ -91,7 +93,7 @@ Transport Canada 也说明，完成的 Rental Boat Safety Checklist 可以作为
 
 这样做不花哨，但有效。船主春天最需要的不是仪式感，是别在下水坡道上表演。
 
-如果你的 Mercury 或 Mercruiser 需要春季检查、启动异常、警报声、冷却水流不对，先提交 HBW 保养维修请求。如果你正在考虑换 Mercury 船外机，直接去 MercuryRepower.ca 看真实报价方向。
+如果你的 Mercury 或 MerCruiser 需要春季检查、启动异常、警报声、冷却水流不对，先提交 HBW 保养维修请求。如果你正在考虑换 Mercury 船外机，直接去 MercuryRepower.ca 看真实报价方向。
 
 ## 常见问题
 
@@ -117,14 +119,21 @@ HBW 的发动机维修只服务 Mercury 和 MerCruiser。
 
 HBW 自 1947 年起就经营家族码头，是 Mercury Marine Premier dealer 与 Legend Boats 经销商。
 
+## 相关指南
+
+- [安省船主冬化与室外冬储清单：什么时候送、要做什么](/blog/zh/ontario-boat-winterization-guide-chinese)
+- [多伦多华人 Mercury 发动机维修保养完整指南：从机油到大修](/blog/zh/gta-chinese-mercury-service-guide)
+- [GTA 华人船主冬储完整指南：HBW 室外收缩膜冬储方案、价格、流程](/blog/zh/gta-chinese-rice-lake-winter-storage-complete-guide)
+- [加拿大加油指南：Mercury 船外机加 87 还是 91？国内 92 号汽油怎么换算](/blog/zh/mercury-fuel-octane-ethanol-chinese-guide)
+
 ## Next steps
 
-- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbw.wiki/service
+- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbwservice.ca
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
-- The only commercial next step for this article is the HBW service request at https://hbw.wiki/service.
+- The only commercial next step for this article is the HBW service request at https://hbwservice.ca.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

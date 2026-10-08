@@ -76,7 +76,7 @@ export function CategoryCTA({ category, className }: CategoryCTAProps) {
         body="Request service if you can bring your boat to our Gores Landing shop."
         className={className}
       >
-        <a href="https://hbw.wiki/service" target="_blank" rel="noopener noreferrer" className={primaryBtn}>
+        <a href="https://hbwservice.ca" target="_blank" rel="noopener noreferrer" className={primaryBtn}>
           Book service
         </a>
       </CardShell>
@@ -90,7 +90,7 @@ export function CategoryCTA({ category, className }: CategoryCTAProps) {
         body="Spring commissioning, winterization, mid-season checks. Lock the slot before the rush."
         className={className}
       >
-        <a href="https://hbw.wiki/service" target="_blank" rel="noopener noreferrer" className={primaryBtn}>
+        <a href="https://hbwservice.ca" target="_blank" rel="noopener noreferrer" className={primaryBtn}>
           Book service
         </a>
         <Link to="/quote/motor-selection" className={secondaryBtn}>

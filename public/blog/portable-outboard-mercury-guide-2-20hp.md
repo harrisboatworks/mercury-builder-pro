@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/portable-outboard-mercury-guide-2-20hp.md
-last_updated: 2026-09-11
+last_updated: 2026-10-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Portable Mercury Outboard Guide: 2.5 to 20 HP (2026)"
 description: "Mercury portable outboards 2.5 to 20 hp for small boats: 8-14 ft tinners, dinghies, sailboat auxiliaries, kickers. Mercury 9.9 MH is most popular."
 category: "Buying Guide"
 date_published: 2026-04-27
-date_modified: 2026-09-11
+date_modified: 2026-10-06
 keywords: ["portable outboard","small boat motor","dinghy motor","mercury portable","tender motor"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-04-27  
-**Last reviewed:** 2026-09-11  
+**Last reviewed:** 2026-10-06  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/portable-outboard-mercury-guide-2-20hp
 
@@ -175,7 +175,7 @@ Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), live pricin
 
 ### What's the lightest outboard Mercury makes?
 
-The Mercury 2.5 MH FourStroke at approximately 19 kg (41 lb) is the lightest. It's designed for yacht tenders where every pound matters and owners need to lift it aboard.
+The Mercury 2.5 MH FourStroke weighs about 17 kg (38 lb) and is Mercury's lightest FourStroke. It's designed for yacht tenders where every pound matters and owners need to lift it aboard.
 
 ### Why is 9.9HP so popular?
 

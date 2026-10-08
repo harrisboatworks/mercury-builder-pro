@@ -16,7 +16,7 @@ keywords: ["mercury motor break in","new outboard break in procedure","mercury b
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
-revenue_driver: repower
+revenue_driver: service
 ---
 
 # How to Break In a New Mercury Outboard
@@ -46,6 +46,8 @@ https://www.youtube.com/watch?v=ydFfxwUz5yc
 ## How Do I Break In a New Mercury Outboard? (Quick Answer)
 
 Follow the break-in procedure in the owner's manual for your exact motor. Mercury's published 150 Pro XS example covers 10 hours. For your motor, vary RPM and follow the throttle limits and duration in its own manual. Once break-in is complete, operate normally within Mercury's rated RPM band. For most current FourStrokes, the published first scheduled service is 100 hours or annually.
+
+Need your first service? [Request it at HBW](/maintenance).
 
 ## Why break-in actually matters
 
@@ -108,7 +110,7 @@ HBW recommends an optional early oil-and-filter change around 20 hours as dealer
 
 ---
 
-Want HBW's optional early check, or due for scheduled service? Put in a request at [hbw.wiki/service](https://hbw.wiki/service).
+Want HBW's optional early check, or due for scheduled service? Put in a request at [hbwservice.ca](https://hbwservice.ca).
 
 ## What we do on new motor delivery at HBW
 
@@ -118,11 +120,11 @@ When a customer picks up a new Mercury from us:
 - We walk through the break-in protocol for the specific motor model
 - We explain Mercury's 100-hour or annual schedule and HBW's optional early check
 - We complete Mercury warranty registration with serial number and customer info
-- We offer to book HBW's optional early check before the customer leaves
+- We show you how to request HBW's optional early check at hbwservice.ca
 
 ---
 
-![Black Mercury FourStroke outboard on an aluminum boat during the 10-hour engine break-in period on calm Ontario water.](/lovable-uploads/inline/inline-mercury-break-in.png)
+![Black Mercury FourStroke outboard on the transom of an aluminum boat with prop wash behind it on a misty morning lake](/lovable-uploads/inline/inline-mercury-break-in.png)
 
 ## What about used motors?
 
@@ -145,7 +147,7 @@ Follow the model-specific break-in procedure in the owner's manual. Mercury says
 
 ## Need service on your Mercury?
 
-Book online at [hbw.wiki/service](https://hbw.wiki/service). Or call **905-342-2153**. If you're looking at a new motor rather than servicing the current one, build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
+Book online at [hbwservice.ca](https://hbwservice.ca). Or call **905-342-2153**. If you're looking at a new motor rather than servicing the current one, build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 ---
 
@@ -153,7 +155,7 @@ Book online at [hbw.wiki/service](https://hbw.wiki/service). Or call **905-342-2
 
 ### When is the first oil change on a new Mercury outboard?
 
-Mercury's published schedule for most current FourStrokes is oil and filter at 100 hours or annually. HBW recommends an optional early oil-and-filter change around 20 hours as dealer best practice and an early ownership check-in. It is not a Mercury warranty requirement. Check the manual for the exact model and request service at hbw.wiki/service.
+Mercury's published schedule for most current FourStrokes is oil and filter at 100 hours or annually. HBW recommends an optional early oil-and-filter change around 20 hours as dealer best practice and an early ownership check-in. It is not a Mercury warranty requirement. Check the manual for the exact model and request service at hbwservice.ca.
 
 ### What happens if I don't break in my Mercury motor properly?
 
@@ -181,7 +183,7 @@ Use the throttle, load, and wide-open limits in the owner's manual for that exac
 
 ### Where can I book HBW's optional early service near Gores Landing or Rice Lake?
 
-Harris Boat Works at 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0 offers an optional early oil-and-filter change around 20 hours as dealer best practice. Mercury's published first scheduled service for most current FourStrokes is at 100 hours or annually. Request service at hbw.wiki/service.
+Harris Boat Works at 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0 offers an optional early oil-and-filter change around 20 hours as dealer best practice. Mercury's published first scheduled service for most current FourStrokes is at 100 hours or annually. Request service at hbwservice.ca.
 
 ### What is the Mercury factory warranty on a new outboard motor?
 
@@ -196,17 +198,17 @@ You don't need to add fuel stabilizer during normal break-in use. Stabilizer is 
 - [Mercury Outboard Maintenance: 100 and 300 Hours](/blog/mercury-maintenance-intervals-20-100-300-rule), the model-specific Mercury service schedule
 - [Your New Mercury Outboard's First Season: What to Expect From PDI to First Service](/blog/new-mercury-outboard-first-season-guide-ontario)
 - [Mercury Outboard Oil Capacity Chart: Model and Year Lookup](/blog/mercury-outboard-oil-capacity-chart)
+- [Why Mercury FourStrokes Make Oil (and What Actually Fixes It)](/blog/mercury-fourstroke-making-oil-guide), why oil levels rise after trolling and how to fix it
 - [Mercury Outboard Maintenance Parts List: Filters, Plugs, Kits and Part Numbers (2.5 to 600 HP)](/blog/mercury-outboard-maintenance-parts-list), the full Mercury maintenance parts and part-number list
-- [The Five-Minute Boat-Trailer Check Before Every Trip](/blog/boat-trailer-maintenance-guide-ontario), boat trailer maintenance guide
 
 ## Next steps
 
-- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
+- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbwservice.ca
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
-- The only commercial next step for this article is the Mercury quote configurator.
+- The only commercial next step for this article is the HBW service request at https://hbwservice.ca.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

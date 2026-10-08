@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/mercury-9-9-20hp-chinese-kicker-tiller-guide.md
-last_updated: 2026-09-06
+last_updated: 2026-10-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "9.9 到 20 匹 Mercury：钓鱼小船、kicker、tiller 中文指南"
 description: "Mercury 9.9HP、15HP、20HP 船外机中文指南：小铝船、kicker、tiller、钓鱼、trolling、安省华人钓友怎么选。"
 category: "小马力指南"
 date_published: 2026-05-10
-date_modified: 2026-09-06
+date_modified: 2026-10-04
 keywords: ["Mercury 9.9 20HP 中文","Mercury kicker 中文","tiller 船外机中文","小铝船 Mercury"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** 小马力指南  
 **Published:** 2026-05-10  
-**最后审核:** 2026-09-06  
+**最后审核:** 2026-10-04  
 **Read time:** 6 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/mercury-9-9-20hp-chinese-kicker-tiller-guide
 
@@ -41,9 +41,9 @@ Mercury 9.9至20HP适合小铝船、轻载钓鱼、Kicker辅助机、Trolling，
 
 - [Mercury Marine](https://www.mercurymarine.com/ca/en) Premier 认证经销商
 - 透明加元价格，无需讨价还价
-- 从 GTA 经 401 + 115 高速约 60 到 90 分钟车程
+- 从多伦多经 401 向东约 90 分钟车程
 
-[在线获取报价](/quote)
+[在线获取报价](/quote/motor-selection)
 
 ---
 
@@ -116,7 +116,7 @@ HBW的经验：9.9HP最容易被高估, 「感觉应该够了」的直觉，在�
 
 ## PCL（船只牌照）与马力门槛
 
-Transport Canada规定，有引擎的休闲船如果马力达到特定门槛，需要办理[Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences)（PCL）。具体门槛请查Transport Canada当前规定。
+Transport Canada规定，有引擎的休闲船如果马力达到特定门槛，需要办理[Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl)（PCL）。具体门槛请查Transport Canada当前规定。
 
 9.9HP、15HP、20HP之间的选择，不只是性能问题，可能也牵涉文件要求，买之前确认清楚。
 
@@ -138,10 +138,16 @@ Transport Canada规定，有引擎的休闲船如果马力达到特定门槛，�
 ## 行动呼吁
 
 **想买Mercury 9.9至20HP？**
-到 **[mercuryrepower.ca](https://www.mercuryrepower.ca)** 看当前加币报价，确认轴长和控制方式后，至 **[hbw.wiki/service](https://hbw.wiki/service)** 提交申请让HBW确认配置是否适合你的船。
+到 **[mercuryrepower.ca](https://www.mercuryrepower.ca)** 看当前加币报价，确认轴长和控制方式后，至 **[hbwservice.ca](https://hbwservice.ca)** 提交申请让HBW确认配置是否适合你的船。
 
-Harris Boat Works，自1947年起，Mercury Marine Premier Dealer，位于Rice Lake南岸Gores Landing。
+Harris Boat Works，自1947年起家族经营，自1965年起为 Mercury 经销商，现为 Mercury Marine Premier Dealer，位于Rice Lake南岸Gores Landing。
 ---
+
+## 相关指南
+
+- [40 到 60 匹 Mercury：铝船与华人钓友最常问的马力区间](/blog/zh/mercury-40-60hp-chinese-fishing-boat-guide)
+- [加拿大加油指南：Mercury 船外机加 87 还是 91？国内 92 号汽油怎么换算](/blog/zh/mercury-fuel-octane-ethanol-chinese-guide)
+- [Mercury 引擎家族对比 (中文版)：FourStroke vs Pro XS vs Verado](/blog/zh/mercury-fourstroke-pro-xs-verado-chinese-comparison)
 
 ## FAQs
 

@@ -92,7 +92,7 @@ export function HowToRepowerSEO() {
             "@type": "HowToStep",
             "position": 4,
             "name": "Schedule the Install",
-            "text": "Book your drop-off date at Harris Boat Works in Gores Landing on Rice Lake. Most installs are 1–3 days. Submit a service request at hbw.wiki/service or call (905) 342-2153."
+            "text": "Book your drop-off date at Harris Boat Works in Gores Landing on Rice Lake. Most installs are 1–3 days. Submit a service request at hbwservice.ca or call (905) 342-2153."
           },
           {
             "@type": "HowToStep",

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-boost-upgrade-150hp-pontoon-analysis.md
-last_updated: 2026-09-11
+last_updated: 2026-10-03
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -8,24 +8,24 @@ final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
 title: "Mercury Boost and 150 HP Pontoons: Check Eligibility First"
-description: "Most standard Mercury 150 FourStroke pontoon motors are not on the published Boost retrofit list. Check the engine family and serial number before comparing..."
+description: "Most standard Mercury 150 FourStroke pontoon motors are not on the published Boost list. Check the engine family and serial number before comparing performance or cost."
 category: "Performance"
 date_published: 2026-04-30
-date_modified: 2026-09-11
+date_modified: 2026-10-03
 keywords: ["mercury boost upgrade pontoon","mercury boost 150hp","mercury software upgrade"]
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
-revenue_driver: repower
+revenue_driver: service
 ---
 
 # Mercury Boost and 150 HP Pontoons: Check Eligibility First
 
-> Most standard Mercury 150 FourStroke pontoon motors are not on the published Boost retrofit list. Check the engine family and serial number before comparing...
+> Most standard Mercury 150 FourStroke pontoon motors are not on the published Boost list. Check the engine family and serial number before comparing performance or cost.
 
 **Category:** Performance  
 **Published:** 2026-04-30  
-**Last reviewed:** 2026-09-11  
+**Last reviewed:** 2026-10-03  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-boost-upgrade-150hp-pontoon-analysis
 
@@ -45,7 +45,7 @@ For a typical 150 HP pontoon owner in 2026, the honest answer is to check eligib
 
 Mercury Boost is an authorized software calibration installed on an eligible motor through Mercury's dealer process. It is not an aftermarket tune or owner-installed download.
 
-Mercury's published dealer-installed list includes FourStroke and Pro XS models from 175 to 300 HP, specified Verado models, and the Mercury Racing 150R, subject to serial-number rules. A standard 150 FourStroke is not the 150R. Send HBW a clear photo of the serial-number plate through the [contact page](/contact) for a written eligibility and price check.
+Mercury's published dealer-installed list includes FourStroke 175, 200, 250 and 300 HP, Pro XS models from 175 to 300 HP, specified Verado models, and the Mercury Racing 150R, subject to serial-number rules. A standard 150 FourStroke is not the 150R. Send HBW a clear photo of the serial-number plate through the [contact page](/contact) for a written eligibility and price check.
 
 Because warranty coverage depends on the exact product, installation record, and current Mercury terms, HBW confirms warranty treatment for the specific motor before work is authorized.
 
@@ -104,7 +104,7 @@ There are real scenarios where Boost can be worth discussing on an eligible moto
 
 Mercury has described Boost as part of a broader software-upgrade capability, but future modes, eligibility expansions, prices, and compatibility are not promises to a current buyer. Buy the motor that correctly powers the boat today. Treat any later software option as a separate decision only after Mercury publishes the terms for that exact serial number.
 
-![Mercury Pro XS outboard with Boost decal on a pontoon boat transom, illustrating the software upgrade performance.](/lovable-uploads/inline/inline-boost-150hp-pontoon.png)
+![Black Mercury Pro XS outboard with a Boost badge hanging off the end of a pontoon tube, forest and calm water behind](/lovable-uploads/inline/inline-boost-150hp-pontoon.png)
 
 ### What We Check Before Recommending Boost
 
@@ -192,12 +192,12 @@ Boost is available for eligible motors through Mercury's supported app flow on s
 
 ## Next steps
 
-- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
+- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbwservice.ca
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
-- The only commercial next step for this article is the Mercury quote configurator.
+- The only commercial next step for this article is the HBW service request at https://hbwservice.ca.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

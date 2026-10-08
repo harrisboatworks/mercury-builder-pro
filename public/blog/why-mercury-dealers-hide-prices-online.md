@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/why-mercury-dealers-hide-prices-online.md
-last_updated: 2026-09-11
+last_updated: 2026-10-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Why Mercury Dealers Hide Prices (HBW Doesn't)"
 description: "Most Mercury dealers hide prices online to control the sales conversation. HBW publishes Mercury prices live so you can compare without a phone call."
 category: "Buying Guide"
 date_published: 2026-05-05
-date_modified: 2026-09-11
+date_modified: 2026-10-02
 keywords: ["mercury outboard pricing","mercury dealer transparency","boat motor prices ontario","mercury price online","harris boat works pricing"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,13 +25,13 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-05-05  
-**Last reviewed:** 2026-09-11  
+**Last reviewed:** 2026-10-02  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/why-mercury-dealers-hide-prices-online
 
 ### Quick Answer
 
-Most Mercury dealers hide prices to force a phone call. That call gives them your name, your boat, your budget, and control of the negotiation before you have a number to compare. [Mercury Marine](https://www.mercurymarine.com/ca/en) does not require dealers to hide prices. HBW posts live installed prices in CAD at [mercuryrepower.ca](https://www.mercuryrepower.ca). You can build a full configured quote, motor, controls, steering, prop, rigging, install labor, in about three minutes, without talking to anyone.
+Most Mercury dealers hide prices to force a phone call. That call gives them your name, your boat, your budget, and control of the negotiation before you have a number to compare. HBW publishes bare-motor Mercury prices in CAD before HST at [mercuryrepower.ca](https://www.mercuryrepower.ca). The configurator then builds an itemized estimate for the motor, controls, steering, prop, rigging, and install labor in about three minutes, without talking to anyone. Final pricing and scope are confirmed in the written quote.
 
 ---
 
@@ -48,13 +48,13 @@ That is not a coincidence. It is a business model.
 Here are the five most common explanations dealers offer, ranked from most to least defensible:
 
 **1. "Manufacturer pricing requirements"** 
-False. Mercury Marine sets MSRP. Dealers can sell at, above, or below MSRP. Mercury does not require dealers to hide prices online. Any dealer who says otherwise is telling you something that is not true.
+Ask to see the requirement in writing. HBW publishes its Mercury motor prices online, so you can compare that dealer's number against a published one.
 
 **2. "Prices change too frequently"** 
 Motor prices and promotional offers can change. Check the current price list, offer dates, and expiry on the written quote. A dated price is more useful than an undated verbal estimate.
 
 **3. "Configuration affects price"** 
-This one is partially true. A Mercury 90 ELPT FourStroke has a base motor price, but the all-in cost depends on shaft length, controls, prop, rigging, and install labor. The honest answer to this is a configurator that handles all of it in real time, not a gatekept phone call.
+This one is partially true. A Mercury 90 ELPT FourStroke has a base motor price, but the all-in cost depends on controls, prop, rigging, and install labor. The honest answer to this is a configurator that handles all of it in real time, not a gatekept phone call.
 
 **4. "We want to talk to you about your needs"** 
 Fine. But the right order is: show the price, then have a conversation about whether it is the right motor. Not: gatekeep the price until after the conversation.
@@ -80,7 +80,7 @@ HBW has listed prices from the start of [mercuryrepower.ca](https://www.mercuryr
 
 **It is faster.** Three minutes to a configured quote beats a 30-minute phone call you did not want to make.
 
-**It builds trust.** The price you see online is the price you pay. No surprises at the counter.
+**It builds trust.** You see the bare-motor price and an itemized package estimate before you call, and the written quote confirms the final price and scope. No surprises at the counter.
 
 **It filters the right customers.** Serious buyers build quotes. Buyers who need a conversation still call, but they call with a number in hand.
 
@@ -133,11 +133,11 @@ Harris Boat Works, Mercury dealer since 1965. Gores Landing, ON.
 
 ### Why don't most marine dealers list prices online?
 
-Three real reasons: information asymmetry is profitable for them, phone calls capture leads more reliably than web visits, and industry inertia. The reasons they say out loud (manufacturer requirements, prices change too fast, configuration is too complex) are mostly excuses.
+Three real reasons: information asymmetry is profitable for them, phone calls capture leads more reliably than web visits, and industry inertia. The reasons they say out loud, like prices changing or configuration being complex, are only partly true. A dated, itemized written number answers both.
 
 ### Does Mercury Marine require dealers to hide prices?
 
-No. Mercury sets MSRP and dealers can publish, sell at, above, or below it. Any dealer claiming Mercury prohibits price publication is misinformed or being dishonest.
+HBW publishes its Mercury motor prices online. If a dealer says a manufacturer rule stops them from publishing, ask them to show you that requirement in writing.
 
 ### Do Mercury prices actually change frequently?
 

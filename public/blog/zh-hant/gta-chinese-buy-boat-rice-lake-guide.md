@@ -43,6 +43,12 @@ revenue_driver: repower
 
 完整版內容（包括各船型對比表、HP 計算、買船清單）請看 [簡體版](/blog/zh/gta-chinese-buy-boat-rice-lake-guide)。
 
+## 相關指南
+
+- [多倫多華人第一次租船釣魚：證件、安全和當天流程](/blog/zh-hant/first-boat-rental-rice-lake-chinese-guide)
+- [GTA → 萊斯湖 一日遊地圖（繁體版）](/blog/zh-hant/gta-chinese-rice-lake-day-trip-plan)
+- [安省船主冬季保養和冬儲清單：第一次過冬怎麼做](/blog/zh-hant/ontario-boat-winterization-guide-chinese)
+
 ## FAQs
 
 ### HBW 有中文服務嗎？

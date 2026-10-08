@@ -43,7 +43,7 @@ Rice Lake runs roughly 32 km from Bewdley at the west end to Hastings at the eas
 
 The lake sits at the south end of the Kawartha chain and drains through the Trent-Severn Waterway. The Otonabee River feeds in from the north near Peterborough, and the Trent River flows out to the east at Hastings. Hiawatha First Nation occupies the north shore and Alderville First Nation the southeast shore. Both communities were here long before the anglers.
 
-Rice Lake takes its name from the wild rice that the Mississauga Anishinaabe harvested from these waters for generations. When the Trent-Severn Waterway raised water levels in the 1920s, most of that wild rice was lost. It was a permanent change to the lake's ecology, and as you will see in the walleye section, the same water management that drowned the rice still shapes the fishing today.
+Rice Lake takes its name from the wild rice that the Mississauga Anishinaabe harvested from these waters for generations. When a dam at Hastings raised the lake by several feet in the 1830s, most of that wild rice was lost. It was a permanent change to the lake's ecology, and as you will see in the walleye section, the same water management that drowned the rice still shapes the fishing today.
 
 ## Rice Lake Fishing Regulations for 2026
 
@@ -67,7 +67,7 @@ A few things worth spelling out:
 
 **The Otonabee River sanctuary.** The stretch of the Otonabee from the Trent-Severn dam at Peterborough down to Bensfort Bridge remains closed through Friday May 15, 2026 and reopens Saturday May 16, subject to species seasons and limits. There is also sanctuary water around the dam at Hastings. Watch for posted signs. Confirm the current [FMZ 17 sanctuary wording](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17).
 
-**Licence-free weekends.** In 2026 you can fish Ontario without a licence on May 9 to 10, June 20 to 21, and June 27 to July 5. Conservation limits and all size and sanctuary rules still apply on those days.
+**Licence-free weekends.** In 2026 Canadian residents can fish Ontario without a licence on February 14 to 16 (Family Day weekend), May 9 to 10, June 20 to 21, and June 27 to July 5. Conservation limits and all size and sanctuary rules still apply on those days.
 
 ## Walleye: The Complicated One
 
@@ -168,7 +168,7 @@ Rice Lake does not ask for an exotic boat. It asks for a sensible one.
 
 The standard Rice Lake fishing rig is a 16 to 18 foot aluminum console boat, a Mercury 90 HP FourStroke as the main motor, and a Mercury 9.9 ProKicker for trolling. The 90 handles the open-water runs and the afternoon chop. The kicker handles the slow walleye trolls without running your main engine for hours at low RPM. Together they cover everything the lake throws at you.
 
-Most Rice Lake fishing boats are correctly powered at 90 HP. Step up to 115 HP if you regularly run with four or more people aboard. Your capacity plate sets the legal maximum horsepower, so check it before you shop. If you are weighing a [kicker against an electric trolling motor](/blog/electric-trolling-motor-kicker-guide), or thinking about [the right main motor for Rice Lake fishing](/blog/best-mercury-outboard-rice-lake-fishing), we have separate guides on both.
+A 90 HP is a common fit on 16 to 18 foot fishing boats, and 115 HP suits boats that regularly carry four or more people. The best fit is usually one Mercury model below your capacity plate maximum. Your capacity plate sets the legal maximum horsepower, so check it before you shop. If you are weighing a [kicker against an electric trolling motor](/blog/electric-trolling-motor-kicker-guide), or thinking about [the right main motor for Rice Lake fishing](/blog/best-mercury-outboard-rice-lake-fishing), we have separate guides on both.
 
 ## What We See at HBW
 
@@ -259,7 +259,7 @@ No. Ontario fishing licences and the Outdoors Card are sold through the province
 
 ### Can I fish Rice Lake without a licence in 2026?
 
-Ontario has licence-free fishing weekends on May 9 to 10, June 20 to 21, and June 27 to July 5, 2026. Conservation limits and all size and sanctuary rules still apply on those days.
+Canadian residents can fish Ontario without a licence on February 14 to 16 (Family Day weekend), May 9 to 10, June 20 to 21, and June 27 to July 5, 2026. Conservation limits and all size and sanctuary rules still apply on those days.
 
 ## Related guides
 

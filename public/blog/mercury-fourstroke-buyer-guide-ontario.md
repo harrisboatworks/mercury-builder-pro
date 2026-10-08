@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-fourstroke-buyer-guide-ontario.md
-last_updated: 2026-09-10
+last_updated: 2026-10-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury FourStroke Buyer Guide for Ontario (2026)"
 description: "Mercury FourStroke buyer guide for Ontario: 2.5-300 hp coverage, HP recommendations by boat, prices, options, install considerations."
 category: "Buying Guide"
 date_published: 2026-05-17
-date_modified: 2026-09-10
+date_modified: 2026-10-06
 keywords: ["mercury fourstroke buyer guide","mercury fourstroke ontario","mercury fourstroke pricing","mercury outboard buyer guide ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-05-17  
-**Last reviewed:** 2026-09-10  
+**Last reviewed:** 2026-10-06  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-fourstroke-buyer-guide-ontario
 
@@ -35,7 +35,7 @@ Mercury FourStroke is the default Mercury outboard for Ontario freshwater boatin
 
 ## Why FourStroke is the default for Ontario
 
-Most Ontario boats came factory-rigged with a Mercury FourStroke. That's not an accident, the major Canadian aluminum builders (Lund, Crestliner, Princecraft, Lowe) and most fibreglass runabout builders package FourStroke as the standard motor across their lineups. When you repower an Ontario boat, the question is usually "which FourStroke", not "Mercury FourStroke or something else."
+Most Ontario boats came factory-rigged with a Mercury FourStroke. That's not an accident, the major aluminum boat builders (Lund, Crestliner, Princecraft, Lowe) and many fibreglass runabout builders commonly package a Mercury FourStroke across their lineups. When you repower an Ontario boat, the question is usually "which FourStroke", not "Mercury FourStroke or something else."
 
 The reasons are practical, not marketing:
 
@@ -99,13 +99,13 @@ For Ontario aluminum fishing boats (16-19 ft) and mid-size pontoons, this is the
 
 - **75 HP**: RPM-limited to 5,500. Same motor as the 90, less performance. The price gap to the 90 is smaller than most buyers expect. We rarely recommend the 75 unless your capacity plate maxes at 75.
 - **90 HP**: RPM-limited to 6,000. Same physical motor as the 75 with more performance headroom. The default recommendation for most 16-19 ft Ontario boats.
-- **115 HP**: RPM-limited to 6,300. Same motor with full performance turned on. Worth the upgrade when the boat is heavier or you want full planing margin.
+- **115 HP**: Full-throttle range 5,000–6,000 rpm, the same as the 90. The 5,300–6,300 rpm range belongs to the 115 Pro XS. Same motor with full performance turned on. Worth the upgrade when the boat is heavier or you want full planing margin.
 
 This is why most factory-rigged Ontario 16-19 ft aluminum boats come with the 90 HP. It's the right answer most of the time.
 
 ## Command Thrust (CT) on the 90 and 115
 
-The Command Thrust gearcase is a larger-diameter lower unit with a different prop range. It's available on the 90 and 115 HP FourStroke. The benefit is more torque for moving heavy hulls, particularly pontoons.
+The Command Thrust gearcase is a larger-diameter lower unit with a different prop range. Command Thrust is offered on several FourStrokes: 9.9 (including ProKicker), 40, 50, 60, 90 and 115 HP. This section covers the 90 and 115. The benefit is more torque for moving heavy hulls, particularly pontoons.
 
 The rule of thumb: **if you're putting a 90 or 115 on a pontoon, you almost certainly want CT.** The standard gearcase works on a planing hull; the CT is engineered for the displacement loads a pontoon presents. The price gap is usually $400-700 over the standard gearcase, and the performance difference on a loaded pontoon is meaningful.
 
@@ -126,14 +126,14 @@ For more detail, see our [Outboard Shaft Length Guide](/blog/outboard-shaft-leng
 
 ## Tiller vs Remote (and ProKicker)
 
-For motors 30 HP and under, tiller is common, you steer with the motor handle directly. For motors 40 HP and up, remote (cable steering + throttle) is standard.
+For motors 30 HP and under, tiller is common, you steer with the motor handle directly. For motors 40 HP and up, remote steering and throttle controls are the usual setup, though 40 to 60 HP tiller models are available.
 
 The ProKicker is a special tiller configuration on the 9.9 HP (and recently 15/25) designed as a kicker motor, a secondary motor used for trolling on a primary-motored boat. ProKickers have:
 
 - Higher gear ratio for low-speed trolling
-- Heavy-duty alternator for accessory power
+- Alternator that keeps the battery charged while you troll
 - Big-foot lower unit for better low-speed thrust
-- Adjustable angle for matched-steering with the primary motor
+- Centering straps on tiller models that straighten and lock the kicker when it is tilted fully up
 
 Most serious Ontario walleye, muskie, and bass setups run a 9.9 ProKicker on the transom alongside their primary motor. If you're shopping the 9.9 to 15 HP tiller class specifically, we have a dedicated [Mercury 9.9 vs 15 HP comparison guide](/blog/mercury-9-9-vs-15-hp-tiller-ontario) that walks through capacity plate, HP-restricted lakes, and kicker motor use.
 
@@ -163,7 +163,7 @@ Our standard repower includes a rigging assessment. If the controls are tired, w
 
 The other observation: customers consistently under-spec horsepower when they own their first boat, and over-spec on the second one. Match the motor to your actual use case, not the spec sheet aspirations.
 
-- [Mercury Pro XS Buyer Guide](/blog/mercury-pro-xs-buyer-guide-ontario), the performance-tuned alternative
+- [Mercury Pro XS Buyer Guide](/blog/mercury-pro-xs-buyer-guide-ontario): the performance-tuned alternative
 - [Mercury 40 vs 60 HP comparison](/blog/mercury-40-vs-60-hp-outboard-ontario)
 - [Mercury 75 vs 90 vs 115 comparison](/blog/mercury-75-vs-90-vs-115-comparison)
 - [Mercury 115 vs 150 HP comparison](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026)
@@ -198,7 +198,7 @@ For pontoons running 90 or 115 HP, almost always yes. For aluminum fishing boats
 
 ### What's the price difference between a 75 and a 90 FourStroke?
 
-Typically $800-$1,500 at MSRP. Smaller than most buyers expect, given the 75 and 90 are the same physical motor. The 90 is the better long-term value in most cases.
+Smaller than most buyers expect, given the 75 and 90 are the same physical motor. The 90 is the better long-term value in most cases. Check mercuryrepower.ca/pricing-reference for today's figures.
 
 ### Can I tow water-ski with a FourStroke?
 

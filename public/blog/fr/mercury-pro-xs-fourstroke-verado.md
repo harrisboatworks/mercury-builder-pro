@@ -37,7 +37,7 @@ Trois familles Mercury, plein de chiffres de puissance qui se chevauchent, et un
 
 - **FourStroke** : le polyvalent. Silencieux, économe, fiable. La bonne réponse pour la plupart des pontons, chaloupes de pêche et bateaux familiaux.
 - **Pro XS** : la famille quatre-temps haute performance de Mercury. Même base quatre-temps, réglée pour l'accélération au départ et la vitesse de pointe. Conçue pour les pêcheurs et les bateaux de performance.
-- **Verado** : le raffiné. Le plus doux, le plus silencieux, le plus équipé (commande numérique des gaz, direction assistée offerte sur les plus gros). Conçu pour les plus gros bateaux où le confort compte. À savoir d'emblée : chez Harris Boat Works, le Verado est un moteur sur commande spéciale. On ne le garde pas en inventaire et il n'est pas dans notre configurateur en ligne. Si c'est le bon choix pour vous, appelez-nous et on le commandera pour votre bateau.
+- **Verado** : le raffiné. Le plus doux, le plus silencieux, le plus équipé (commande numérique des gaz et du changement de vitesse de série). Conçu pour les plus gros bateaux où le confort compte. À savoir d'emblée : chez Harris Boat Works, le Verado est un moteur sur commande spéciale. On ne le garde pas en inventaire et il n'est pas dans notre configurateur en ligne. Si c'est le bon choix pour vous, appelez-nous et on le commandera pour votre bateau.
 
 ### « Est-ce que le Pro XS est un quatre-temps ? »
 
@@ -50,7 +50,7 @@ Oui. Le Verado aussi. Le FourStroke aussi (c'est dans le nom). Les anciens Pro X
 | Réglé pour | Économie et fiabilité | Accélération et vitesse de pointe | Douceur et raffinement |
 | Acheteur type | Ponton, pêche, bateau familial | Pêcheur de performance (bass) | Plus gros bateaux, grands plans d'eau, luxe |
 | Sonorité | Silencieux | Un peu plus mordant | Le plus silencieux |
-| Commande des gaz | Mécanique ou numérique | Mécanique ou numérique | Numérique courante; à confirmer selon ch/config |
+| Commande des gaz | Mécanique ou numérique | Mécanique ou numérique | Numérique de série |
 | Disponibilité chez HBW | Dans le configurateur | Dans le configurateur | Commande spéciale : appelez-nous |
 | Prix | $ | $$ | $$$ |
 
@@ -72,11 +72,18 @@ Oubliez les débats de fidélité de marque. Posez trois questions :
 
 ### En résumé
 
-On vend du Mercury. La section sur Mercury n'a pas été écrite par la Suisse. La comparaison doit quand même rester honnête, alors la voici : la plupart des gens sur le lac Rice sont bien servis par un FourStroke. Le Pro XS si vous chassez la performance. Le Verado si vous avez un plus gros bateau et voulez du raffinement (et un coup de téléphone, puisqu'on le commande spécialement). Adaptez le moteur à votre coque et à votre usage réel, pas à l'opinion la plus forte à la rampe de mise à l'eau.
+On vend du Mercury. Cela dit, la comparaison doit rester honnête, alors la voici : la plupart des gens sur le lac Rice sont bien servis par un FourStroke. Le Pro XS si vous chassez la performance. Le Verado si vous avez un plus gros bateau et voulez du raffinement (et un coup de téléphone, puisqu'on le commande spécialement). Adaptez le moteur à votre coque et à votre usage réel, pas à l'opinion la plus forte à la rampe de mise à l'eau.
 
 **Vous voulez le vrai prix d'un FourStroke ou d'un Pro XS ? [Obtenez une soumission en 2 minutes](https://www.mercuryrepower.ca)**.
 
 Harris Boat Works : entreprise familiale depuis 1947, concessionnaire Mercury depuis 1965, et actuellement concessionnaire Mercury Premier. Gores Landing, Ontario, sur le lac Rice.
+
+## Guides connexes
+
+- [Gamme de hors-bord Mercury 2026 pour les plaisanciers ontariens](/blog/fr/gamme-mercury-hors-bord-2026-ontario)
+- [Mercury Avator électrique : prix et autonomie](/blog/fr/moteur-hors-bord-electrique-mercury-avator)
+- [Mercury 115 vs 150 HP : Quel moteur choisir pour votre embarcation?](/blog/fr/mercury-115-vs-150-hp-comparaison)
+- [Poids des hors-bord Mercury (2,5 à 300 ch)](/blog/fr/poids-moteur-hors-bord-mercury)
 
 ## Questions fréquentes
 

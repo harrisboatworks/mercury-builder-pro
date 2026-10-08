@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/ko/ontario-boating-licence-regulations.md
-last_updated: 2026-09-06
+last_updated: 2026-10-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "온타리오 보트 면허 및 안전 규정 완전 가이드: 한인 �
 description: "PCOC 취득, PCL 등록, 필수 안전 장비, 낚시 면허, 미성년자 규정까지, 온타리오에서 보트를 운행하기 전에 알아야 할 모든 규정을 한국어로 정리했습니다."
 category: "규정 가이드"
 date_published: 2026-04-12
-date_modified: 2026-09-06
+date_modified: 2026-10-04
 keywords: ["온타리오 보트 면허 규정","캐나다 보트 면허","PCOC 한국어","Ontario boating regulations Korean"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** 규정 가이드  
 **Published:** 2026-04-12  
-**마지막 검토:** 2026-09-06  
+**마지막 검토:** 2026-10-04  
 **Read time:** 11 분  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ko/ontario-boating-licence-regulations
 
@@ -33,8 +33,10 @@ revenue_driver: repower
 
 **동력 레저 보트 운항자는 PCOC 등 인정되는 조종 자격 증명을 소지해야 합니다. 선박 면허(PCL)는 보트의 엔진 출력 등 등록 조건에 따라 필요합니다. HBW 렌털 조건은 예약 전에 별도로 확인하세요. 미면허 운항은 OPP 단속 시 $250부터 과태료가 시작됩니다.**
 
-- **PCOC ([Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency))**: 약 $40-50, 평생 유효, 가장 흔한 조종 자격 증명, 원본 카드 휴대
-- **PCL ([Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-licences))**: 엔진 출력 등 등록 조건에 따라 필요. 신규·이전·갱신 면허는 5년 유효. 신규·이전·갱신·재발급 수수료는 2026년 9월 5일 기준 **$24.41 CAD**(재발급은 유효기간을 갱신하지 않음). 기재사항 변경·취소는 무료. hull에 7.5cm 이상으로 표시
+PCOC가 필요하신가요? [HBW의 MyBoatCard 추천 링크](https://myboatcard.com/card/harrisboat)에서 온라인 과정을 수강하고 할인 코드 **HARRIS15**로 **15% 할인**을 받으세요.
+
+- **PCOC ([Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc))**: 약 $40-50, 평생 유효, 가장 흔한 조종 자격 증명, 원본 카드 휴대
+- **PCL ([Pleasure Craft Licence](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl))**: 엔진 출력 등 등록 조건에 따라 필요. 신규·이전·갱신 면허는 5년 유효. 신규·이전·갱신·재발급 수수료는 2026년 9월 5일 기준 **$24.41 CAD**(재발급은 유효기간을 갱신하지 않음). 기재사항 변경·취소는 무료. hull에 7.5cm 이상으로 표시
 - **미성년자 규정**: 12세 미만 ≤10HP, 12-15세 ≤40HP, 16세 미만 PWC 운항 금지
 - **PCL 자료 변경**: 엔진 변경 등 기재사항 업데이트는 수수료 없음. HBW가 repower 시 함께 안내
 
@@ -48,7 +50,7 @@ revenue_driver: repower
 
 GTA 한인 분들 중 보트를 산 뒤에야 캐나다 보트 규정이 예상보다 세세하다는 걸 아는 경우가 있습니다. OPP 수상 순찰에 적발되면 과태료가 부과됩니다. 이 가이드는 그 전에 알아야 할 것들을 한국어로 정리한 것입니다.
 
-HBW 팀은 영어로 소통합니다. 문의는 [hbw.wiki/service](https://hbw.wiki/service)에서 양식을 작성해주세요.
+HBW 팀은 영어로 소통합니다. 문의는 [hbwservice.ca](https://hbwservice.ca)에서 양식을 작성해주세요.
 
 ---
 
@@ -101,7 +103,7 @@ HBW 팀은 영어로 소통합니다. 문의는 [hbw.wiki/service](https://hbw.w
 | 음향 신호 장치 | 호루라기 또는 에어 혼 |
 | 배수 도구 | 바가지 또는 수동 펌프 |
 | 항해등 | 일몰 후~일출 전 운항 시 필수 |
-| 소화기 | 밀폐 선실이나 연료 탱크가 있는 보트에 필수 |
+| 소화기 | 선내기 엔진, 고정식 연료 탱크, 연료를 쓰는 조리·난방·냉장 기구 중 하나라도 있으면 5BC 소화기 필수 |
 | 닻 또는 수동 추진 | 밧줄 달린 닻 또는 노 |
 
 ---
@@ -164,10 +166,17 @@ PCOC/PCL 위반 시 과태료는 $250부터 시작합니다.
 
 - 보트 재고: [harrisboatworks.ca](https://harrisboatworks.ca)
 - 엔진 견적: [mercuryrepower.ca](https://www.mercuryrepower.ca)
-- 서비스 예약: [hbw.wiki/service](https://hbw.wiki/service)
+- 서비스 예약: [hbwservice.ca](https://hbwservice.ca)
 - 전화: 905-342-2153
 - 주소: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 ---
+
+## 관련 가이드
+
+- [온타리오 보트 구매 완전 가이드: 첫 보트부터 엔진 교체까지](/blog/ko/ontario-boat-buying-guide)
+- [Rice Lake 낚시 완전 가이드: 토론토 한인을 위한 온타리오 최고의 숨은 명소](/blog/ko/rice-lake-fishing-guide)
+- [Mercury 선외기 겨울 보관 가이드: 온타리오 보트 오너를 위한 필수 정비 매뉴얼](/blog/ko/mercury-outboard-winterization-guide)
+- [선외기 교체(Repower) vs 새 보트 구매: 온타리오 보트 오너를 위한 현실적 비교](/blog/ko/repower-vs-new-boat)
 
 ## FAQs
 

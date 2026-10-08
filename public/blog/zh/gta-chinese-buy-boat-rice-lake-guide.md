@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/gta-chinese-buy-boat-rice-lake-guide.md
-last_updated: 2026-09-06
+last_updated: 2026-10-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "多伦多华人在 Rice Lake 买船完整指南：从选型到交付"
 description: "多伦多华人家庭买船完整流程：船型选择（钓鱼船/家庭船/Pontoon）、新船 vs 二手、Mercury 发动机匹配、HBW 英语服务与沟通方式、贷款方案、提车与售后。"
 category: "mandarin"
 date_published: 2026-05-15
-date_modified: 2026-09-06
+date_modified: 2026-10-06
 keywords: ["多伦多华人买船","GTA 华人 Rice Lake 买船","安省买船指南","Pontoon 浮筒船购买","Mercury 发动机匹配","HBW GTA 华人买家","Toronto Chinese buy boat Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,13 +25,15 @@ revenue_driver: repower
 
 **Category:** mandarin  
 **Published:** 2026-05-15  
-**最后审核:** 2026-09-06  
+**最后审核:** 2026-10-06  
 **Read time:** 12 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/gta-chinese-buy-boat-rice-lake-guide
 
 ## 快速答案
 
 如果你是住在 GTA 的华人家庭，正准备买人生第一艘船：**先决定用途（家庭出游 vs 认真钓鱼），再决定船型，最后再谈发动机和预算**。Rice Lake 离多伦多约 90 分钟车程，是 GTA 最近的"真湖"，也是新手家庭买船最合理的落脚点。Harris Boat Works（HBW）是 Rice Lake 上家族经营·1947 年至今 的 marina，Mercury 经销商始于 1965 年，也是 Mercury Marine Premier 经销商，提供看船、报价、交付和冬季存储一条龙服务（团队使用英语服务，欢迎带会英语的亲友同来或使用手机翻译软件）。建议先在 [试租指南](/blog/zh/gta-chinese-rice-lake-day-trip-plan) 中租一两次，确定真的喜欢，再回来看这篇买船指南。
+
+需要考取 PCOC？通过 [HBW 的 MyBoatCard 推荐链接](https://myboatcard.com/card/harrisboat)参加在线课程，使用优惠码 **HARRIS15** 可享 **15% 折扣**。
 
 ---
 
@@ -235,17 +237,21 @@ HBW 的在线报价工具 [mercuryrepower.ca](https://www.mercuryrepower.ca) 在
 1. **先租一次：** 看 [试租指南](/blog/zh/gta-chinese-rice-lake-day-trip-plan)，带家人来 Rice Lake 体验一天，确定船型方向。
 2. **生成在线报价：** 在 [mercuryrepower.ca](https://www.mercuryrepower.ca) 选好船型和发动机配置，看到完整价格和贷款选项。
 3. **来店看船：** 通过英文邮件联系我们确认营业时间；欢迎带会英语的亲友同来或使用翻译软件。确认营业时间后再出发。
-4. **如果是已有船想换发动机：** 可以提交 [服务请求](https://hbw.wiki/service)，我们安排评估。
+4. **如果是已有船想换发动机：** 可以提交 [服务请求](https://hbwservice.ca)，我们安排评估。
 
 Harris Boat Works 自 1947 年起一直由 Harris 家族在 Rice Lake 经营。欢迎你带家人过来看看。
 
 地址：5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 
+## 相关指南
+
+- [Pontoon 还是钓鱼船？6-8 人 GTA 华人家庭船型选择指南](/blog/zh/pontoon-vs-fishing-boat-6-8-people-zh)
+
 ## FAQs
 
 ### 从多伦多开车到 Rice Lake 要多久？路线推荐？
 
-多伦多市中心到 Gores Landing 约 90 分钟，Markham 75 分钟，Pickering 60 分钟。最简单的路线是 Highway 401 东向，在 Exit 461（Port Hope / Highway 28）下高速，再走 County Road 28 北上约 15 分钟。
+多伦多市中心到 Gores Landing 约 90 分钟，Markham 75 分钟，Pickering 60 分钟。最简单的路线是沿 Highway 401 东向，到 Cobourg 的 Exit 472（County Road 18 / Burnham Street，路牌指向 Gores Landing）下高速，再沿 County Road 18 北行约 16 公里到 Gores Landing。
 
 ### GTA 华人家庭第一艘船，建议是 Pontoon 还是钓鱼船？
 
@@ -269,11 +275,11 @@ Harris Boat Works 自 1947 年起一直由 Harris 家族在 Rice Lake 经营。�
 
 ### 冬季船怎么存放？HBW 提供存储吗？
 
-HBW 提供室外专业收缩膜存储、室外无遮盖存储，以及仅收缩膜服务。不提供室内或加热存储。 冬化、收缩膜、室外存储和维修以当前书面报价为准。我们通常可以安排取船。请向我们确认您的船和地点是否可安排。 先完成 hbw.wiki/service，然后随时送船，包括下班后。
+HBW 提供室外专业收缩膜存储、室外无遮盖存储，以及仅收缩膜服务。不提供室内或加热存储。 冬化、收缩膜、室外存储和维修以当前书面报价为准。我们通常可以安排取船。请向我们确认您的船和地点是否可安排。 先完成 hbwservice.ca，然后随时送船，包括下班后。
 
 ### 提车后，发动机保养在哪里做？
 
-可以直接在 HBW 做。我们只为 Mercury 和 Mercruiser 发动机提供维修服务。常规保养（换机油、火花塞、齿轮油）和季节性服务请通过 https://hbw.wiki/service 提交请求。
+可以直接在 HBW 做。我们只为 Mercury 和 Mercruiser 发动机提供维修服务。常规保养（换机油、火花塞、齿轮油）和季节性服务请通过 https://hbwservice.ca 提交请求。
 
 ## Next steps
 

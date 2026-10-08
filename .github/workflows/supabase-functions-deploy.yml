@@ -3,6 +3,8 @@ name: Deploy Supabase edge functions
 # Deploys edge functions that this merge (or a manual dispatch) made stale.
 # Detection uses scripts/lib/supabase-deploy-required.mjs — the same mapping
 # as the advisory supabase-deploy-required report, including _shared/ fan-out.
+# Automatic diff targets are then completed to the declared public pairs;
+# explicit single-function selectors are still refused for paired functions.
 #
 # NEVER add `supabase db push`, `supabase migration up`, or any other
 # migration-apply step here. That omission is intentional. A migration can

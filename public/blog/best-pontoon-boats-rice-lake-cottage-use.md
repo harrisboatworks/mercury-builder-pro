@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-pontoon-boats-rice-lake-cottage-use.md
-last_updated: 2026-09-11
+last_updated: 2026-10-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Best Pontoon Boats for Rice Lake Cottage Use (2026)"
 description: "Best pontoon for Rice Lake cottage use: 18 to 22 ft Legend or similar with a Mercury 90 to 115 hp Command Thrust (or 150 HP standard gearcase above 115)."
 category: "Buying Guide"
 date_published: 2026-05-04
-date_modified: 2026-09-11
+date_modified: 2026-10-06
 keywords: ["rice lake pontoon","best pontoon rice lake","legend pontoon ontario","cottage pontoon boat","kawartha pontoon"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-05-04  
-**Last reviewed:** 2026-09-11  
+**Last reviewed:** 2026-10-06  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-pontoon-boats-rice-lake-cottage-use
 
@@ -100,15 +100,15 @@ If tubing, skiing, and wakeboarding are a regular part of summer at the cottage,
 ### Rental fleet or charter operation
 **What works:** 20 to 24 ft pontoons configured for high-use cycles. Sometimes Mercury SeaPro variants for commercial-duty ratings.
 
-## Why Mercury Command Thrust is not optional on a pontoon
+## Why Command Thrust matters on a loaded pontoon
 
-Command Thrust is the single biggest performance factor for pontoon Mercurys, and skipping it is the most common pontoon repower mistake we see.
+Command Thrust is worth considering on heavy or loaded pontoons where Mercury offers it, typically in the 90 to 115 HP class. It's model-specific, not an automatic upgrade. The 150 to 200 HP tritoon setups here use standard gearcases.
 
 Pontoon hulls are heavy and blunt-fronted. They need pulling power to get up and move with any load aboard. Command Thrust delivers that pulling power through a larger-diameter prop and a lower-gear gearcase.
 
 The performance difference between a standard gearcase Mercury and a Command Thrust Mercury on a loaded pontoon is significant, particularly at hole shot and at cruise with a full load. Customers who saved money by skipping Command Thrust routinely wish they had not.
 
-This is not a sales pitch; it is just what we have seen on Rice Lake for years. Pay for Command Thrust once. You will not regret it.
+Match Command Thrust to the exact motor, hull and load. On a loaded pontoon in the 90 to 115 HP class it can help; the 150 to 200 HP tritoon setups here use standard gearcases.
 
 ## Pontoon brands worth knowing
 
@@ -122,7 +122,7 @@ For Rice Lake cottage use, brand matters less than configuration. The right leng
 
 **Underbuying length.** A 16 ft pontoon feels fine at the dealership and uncomfortable with six adults aboard. Right-size for actual use.
 
-**Skipping Command Thrust.** Already mentioned. Pay for it.
+**Skipping the gearcase check.** On a loaded 90 to 115 HP pontoon, consider Command Thrust where Mercury offers it. Don't add it automatically; match the exact model, hull and load.
 
 **Buying a tritoon for a use case that does not need one.** Cruising, fishing, and casual family use on Rice Lake does not require the third tube.
 

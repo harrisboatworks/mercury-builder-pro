@@ -420,12 +420,13 @@ describe('public artifact regression', () => {
   it('finishes leftover Korean 115-vs-150 hull-length dashes in the quick answer', () => {
     const source = read('src/data/koreanBlogArticles.ts');
     const twin = read('public/blog/ko/mercury-115-vs-150-comparison.md');
-    const leftoverHyphen = /16-19피트|19-22피트/;
+    // October 2026: owner confirmed 18 to 20 ft as the typical 115 to 150 HP range.
+    const leftoverHyphen = /19-20피트|22-24피트|19~20피트|22~24피트|16–19피트|19–22피트/;
 
     for (const text of [source, twin]) {
-      expect(text).toContain('16–19피트');
-      expect(text).toContain('19–22피트');
-      expect(text).toContain('16–19피트 알루미늄');
+      expect(text).toContain('19–20피트');
+      expect(text).toContain('22–24피트');
+      expect(text).toContain('19–20피트 알루미늄');
       expect(text).not.toMatch(leftoverHyphen);
     }
   });

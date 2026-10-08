@@ -13,13 +13,13 @@ const checks = [
   },
   {
     file: 'public/blog/es/mercury-115-vs-150-comparacion.md',
-    expected: ['5,000–6,000 RPM', '16–19 pies', '2–3 personas', '60–70%'],
+    expected: ['5,000–6,000 RPM', '19–20 pies', '2–3 personas', '60–70%'],
     // September audit removed the unsupported rigging price range.
     forbidden: ['$2,000–$5,000+ CAD'],
   },
   {
     file: 'public/blog/fr/mercury-115-vs-150-hp-comparaison.md',
-    expected: ['5 000–6 000 tr/min', '16–19 pieds', '60–70 %', '3–4 personnes'],
+    expected: ['5 000–6 000 tr/min', '19–20 pieds', '60–70 %'],
   },
   {
     file: 'public/blog/best-mercury-outboard-lake-ontario-salmon-trout.md',
@@ -43,12 +43,13 @@ const checks = [
   },
   {
     file: 'public/blog/ko/mercury-115-vs-150-comparison.md',
-    expected: ['5,000–6,000', '5,000–5,800', '16–19피트', '19–22피트', '16–19피트 알루미늄'],
-    forbidden: ['16~19피트 알루미늄', '19~22피트의 더 큰', '16-19피트', '19-22피트'],
+    // October 2026: owner confirmed 18 to 20 ft as the typical 115 to 150 HP range.
+    expected: ['5,000–6,000', '5,000–5,800', '19–20피트', '22–24피트'],
+    forbidden: ['16~19피트 알루미늄', '19~22피트의 더 큰', '16-19피트', '19-22피트', '19~20피트', '22~24피트'],
   },
   {
     file: 'public/blog/zh/mercury-115-vs-150-comparison-zh.md',
-    expected: ['16–19英尺', '18–22英尺'],
+    expected: ['19–20英尺', '22–24英尺'],
   },
   {
     file: 'public/blog/mercury-dts-vs-mechanical-controls-ontario-repower.md',

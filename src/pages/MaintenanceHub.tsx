@@ -13,7 +13,7 @@ export default function MaintenanceHub() {
       lastReviewedLabel="July 2026"
       h1="Mercury Outboard Repair & Maintenance Guide for Ontario (2026)"
       subhead="Mercury outboard repair, seasonal service, and troubleshooting. A practical Ontario cycle for protecting reliability and catching problems before summer."
-      primaryCTA={{ label: 'Submit a service request', to: 'https://hbw.wiki/service' }}
+      primaryCTA={{ label: 'Submit a service request', to: 'https://hbwservice.ca' }}
       phoneNumber="(905) 342-2153"
       directAnswer={
         <>
@@ -101,8 +101,8 @@ export default function MaintenanceHub() {
         { question: 'How long does a Mercury last with proper maintenance?', answer: "There is no responsible universal hour or year estimate. Engine family, duty cycle, corrosion exposure, storage, service history, installation, and operating conditions all matter. A documented inspection and service history is more useful than a generic lifespan claim." },
         { question: 'What kind of oil does my Mercury need?', answer: "Use only the oil viscosity and specification listed for your exact engine model and serial number in the Mercury owner's manual or service information. Mercury requirements differ by engine family, temperature range, and model year." },
         { question: "Why won't my Mercury start in spring?", answer: 'Common starting points include battery condition and connections, old or contaminated fuel, fuel delivery, the emergency-stop lanyard, controls not fully in neutral, and storage-related issues. Follow the model-specific troubleshooting sequence and avoid repeated cranking if an alarm or abnormal condition is present.' },
-        { question: 'When should I submit a spring service request?', answer: 'Complete hbw.wiki/service, then drop the boat off anytime, including after hours. Physical marina work resumes when HBW reopens in early April.' },
-        { question: 'Do you repair Mercury outboards?', answer: "Yes, during our open season. Mercury and MerCruiser engine repair includes diagnostics, impellers, water pumps, fuel systems, gearcases, and full 100-hour services. Physical service work pauses from December 1 until the marina reopens in early April, but quotes and planning can continue. Start with a service request at hbw.wiki/service." },
+        { question: 'When should I submit a spring service request?', answer: 'Complete hbwservice.ca, then drop the boat off anytime, including after hours. Physical marina work resumes when HBW reopens in early April.' },
+        { question: 'Do you repair Mercury outboards?', answer: "Yes, during our open season. Mercury and MerCruiser engine repair includes diagnostics, impellers, water pumps, fuel systems, gearcases, and full 100-hour services. Physical service work pauses from December 1 until the marina reopens in early April, but quotes and planning can continue. Start with a service request at hbwservice.ca." },
       ]}
       secondaryCTA={{
         heading: 'Considering a repower instead of more service?',

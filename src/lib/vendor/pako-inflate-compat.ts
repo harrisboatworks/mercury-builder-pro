@@ -1,5 +1,17 @@
-import * as InflateModule from '../../../node_modules/pako/lib/zlib/inflate.js';
+import {
+  zlibInflate,
+  zlibInflateEnd,
+  zlibInflateInit2,
+  zlibInflateReset,
+  zlibInflateSetDictionary,
+} from 'pako';
 
-const inflate = (InflateModule as { default?: unknown }).default || InflateModule;
+const inflate = {
+  inflate: zlibInflate,
+  inflateEnd: zlibInflateEnd,
+  inflateInit2: zlibInflateInit2,
+  inflateReset: zlibInflateReset,
+  inflateSetDictionary: zlibInflateSetDictionary,
+};
 
 export default inflate;

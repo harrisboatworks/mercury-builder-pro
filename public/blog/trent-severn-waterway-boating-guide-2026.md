@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/trent-severn-waterway-boating-guide-2026.md
-last_updated: 2026-09-11
+last_updated: 2026-10-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Trent-Severn 2026: Free Lockage Dates, Rules & Trip Plan"
 description: "Free lockage runs June 19 to September 7, 2026, roughly $45 a day saved on a 20-footer. Our marina sits on the waterway; here's how we'd run it."
 category: "Lifestyle"
 date_published: 2026-05-08
-date_modified: 2026-09-11
+date_modified: 2026-10-06
 keywords: ["Trent-Severn Waterway 2026 guide","Trent-Severn free lockage 2026","Canada Strong Pass boating","Trent-Severn locks hours 2026","Rice Lake Trent-Severn","boating Trent-Severn for beginners"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: rentals
 
 **Category:** Lifestyle  
 **Published:** 2026-05-08  
-**Last reviewed:** 2026-09-11  
+**Last reviewed:** 2026-10-06  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/trent-severn-waterway-boating-guide-2026
 
@@ -33,11 +33,13 @@ revenue_driver: rentals
 
 The [Trent-Severn Waterway](https://parks.canada.ca/lhn-nhs/on/trentsevern) is a 386-kilometre navigable system running from Trenton to Port Severn through 44 locks. In 2026, lockage is free under the Canada Strong Pass from June 19 to September 7. For a 20-foot boat, that is roughly $45 per day in fees not paid. Mooring at lockstations is still $1.50 per foot per night. Harris Boat Works sits on Rice Lake between Locks 18 and 19. Navigation season runs May 15 to October 12, 2026.
 
+Need your PCOC? Take the online course through [HBW's MyBoatCard referral link](https://myboatcard.com/card/harrisboat) and use **HARRIS15** for **15% off**.
+
 **Verify all lock hours, fees, and program dates directly with Parks Canada before your trip, as these details are subject to change.**
 
 ---
 
-The Trent-Severn is one of those places where a 20-foot aluminum boat built for walleye fishing can lock through a hydraulic lift designed in 1904, anchor beside a 19th-century lock keeper's cottage, and pull into a small-town pub for lunch. The New York Times called it one of the best travel experiences of 2025. Three generations of this family have watched the waterway from the dock at Gores Landing without needing the Times to confirm it.
+The Trent-Severn is one of those places where a 20-foot aluminum boat built for walleye fishing can lock through a hydraulic lift designed in 1904, anchor beside a 19th-century lock keeper's cottage, and pull into a small-town pub for lunch. The New York Times named it to its 52 Places to Go in 2025 list. Three generations of this family have watched the waterway from the dock at Gores Landing without needing the Times to confirm it.
 
 Harris Boat Works [sits on Rice Lake, roughly between Locks 18 and 19](/blog/rice-lake-boating-guide-2026). We have been here since 1947. This is the guide we would give a friend who was doing their first trip.
 
@@ -122,30 +124,30 @@ In 2026, free lockage from June 19 to September 7 means more boats will try the 
 #### If you plan to run the full lock system
 
 - Long-distance transit from Trenton to Port Severn or vice versa
-- Beam under 8.5 feet clears all locks without issue
-- Draft under 3 feet handles the shallowest chambers
+- Beam up to about 23 feet fits every lock (Port Severn, Lock 45, is the narrowest)
+- Draft under 5 feet: channel depth is about 8 feet to Lock 19 and about 6 feet beyond (less in a few spots), and Parks Canada asks boats drawing 5 feet or more to call ahead
 - Length 21 to 25 feet is the practical sweet spot
 
 **Check your dimensions**
 
-Measure beam and draft before you plan a full transit. Most 18 to 20 foot aluminum fishing boats and smaller pontoons clear everything. Wide cruisers and sailboats need to check the 22 foot vertical clearance at fixed bridges too.
+Measure beam and draft before you plan a full transit. Most 18 to 20 foot aluminum fishing boats and smaller pontoons clear everything. Wide cruisers and sailboats need to check the 20 foot minimum overhead clearance at fixed bridges too.
 
 ## Vessel Constraints, Will Your Boat Fit?
 
 | Constraint | Detail |
 |---|---|
-| Vertical clearance (lowest fixed bridge) | 22 feet (6.7 m) |
+| Vertical clearance (lowest fixed bridge) | 20 feet (6.1 m) |
 | Water depth at Locks 1, 19 | 8 feet |
 | Water depth at Locks 20, 45 | 6 feet |
 | Big Chute Marine Railway max length | 99.2 feet |
 | Big Chute max beam | 24 feet |
 | Big Chute max weight | 99 tons |
 
-Anything taller than 22 feet, radar arches, tall biminis, sailboat masts, needs to come down. Most sailors un-step at Trenton or Frankford before the transit.
+Parks Canada lists a minimum overhead fixed bridge clearance of 20 feet (6.1 m). Measure your vessel's full air draft, including radar arches, biminis and masts, and confirm current route conditions before transit. Do not attempt passage unless your vessel clears the confirmed overhead height. Most sailors un-step at Trenton or Frankford before the transit.
 
 ---
 
-![Pleasure boat in Trent-Severn Waterway lock chamber mid-fill](/lovable-uploads/inline/inline-trent-severn-lock-chamber.png)
+![Varnished wooden vintage runabout with a white outboard tied to a stone lock wall in front of weathered wooden gates](/lovable-uploads/inline/inline-trent-severn-lock-chamber.png)
 
 ## Fees Outside the Free Window
 
@@ -167,11 +169,11 @@ For a 20-foot boat: $45 for a day, $225 for a seasonal pass. **Confirm current f
 
 Most people do not transit all 386 kilometres. They take three or four locks at a time, anchor for the night, eat lunch in a small town, and come back. Here are three trip types from HBW at Gores Landing.
 
-**Weekend run (2 days, 4 locks):** East from Rice Lake to Lock 18 at Hastings. Overnight at Hastings. Lunch at one of the pubs. Return Sunday. Quiet and scenic. No commercial harbor traffic.
+**Weekend run (2 days, 2 lockages):** East from Rice Lake to Hastings (Lock 18), the first lock east of the lake. One lockage each way, or none if you tie up above the lock. Overnight at Hastings. Lunch at one of the pubs. Return Sunday. Quiet and scenic. No commercial harbor traffic.
 
-**Long weekend (4 days, ~10 locks):** West from Rice Lake up the Otonabee through Lock 19 (Scott's Mills) and the Peterborough Lift Lock (Lock 21). Continue to Lakefield and back.
+**Long weekend (4 days, 8 locks each way):** West from Rice Lake up the Otonabee through Lock 19 (Scott's Mills) and the Peterborough Lift Lock (Lock 21). Continue to Lakefield and back.
 
-**Full Kawartha tour (7 days, 17 locks):** Rice Lake to Bobcaygeon and back. Includes the Lift Lock, the flight at Healey Falls, Lakefield, and Buckhorn. The most relaxed pace, best for first-timers wanting to see the system.
+**Full Kawartha tour (7 days, 14 locks each way):** Rice Lake to Bobcaygeon and back takes you through Locks 19 to 32, or 28 lockages round trip. Includes the Peterborough Lift Lock, Lakefield and Buckhorn. Healey Falls is downstream of Hastings on the Trent River, not on this route. The most relaxed pace, best for first-timers wanting to see the system.
 
 For a full Trenton-to-Port-Severn transit, plan at least 5 to 7 days at a relaxed pace.
 
@@ -223,7 +225,7 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON. Est. 1947.
 
 ### Do I need a special licence to lock through the Trent-Severn?
 
-No special lockage licence is required. The legal operator rule is accepted proof of competency, which may be a Pleasure Craft Operator Card or another qualifying document such as an older course or professional certificate, a rental checklist in some rental situations, or visitor documentation. A Pleasure Craft Licence is required where the craft qualifies; it is not required for every boat. Confirm current [PCOC](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc) and [PCL](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl) rules. If you rent from HBW, our rental-driver policy still requires a valid PCOC and photo ID. The 2026 PCL changes converted lifetime licences to 5-year renewals at the current Transport Canada fee, so check yours before you go.
+No special lockage licence is required. The legal operator rule is accepted proof of competency, which may be a Pleasure Craft Operator Card or another qualifying document such as an older course or professional certificate, a rental checklist in some rental situations, or visitor documentation. A Pleasure Craft Licence is required where the craft qualifies; it is not required for every boat. Confirm current [PCOC](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc) and [PCL](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl) rules. If you rent from HBW, our rental-driver policy still requires a valid PCOC and photo ID. Since December 31, 2025, new and renewed PCLs are valid for 5 years and lifetime licences are being gradually replaced, so check your licence before you go.
 
 ### How long does it take to lock through?
 

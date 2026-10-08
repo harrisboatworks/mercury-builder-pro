@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/mercury-115-vs-150-hp-comparaison.md
-last_updated: 2026-09-06
+last_updated: 2026-10-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury 115 vs 150 HP : Quel moteur choisir pour votre embarcation?"
 description: "Comparaison des Mercury 115 et 150 FourStroke : cylindrée, poids, performances, consommation et prix pour choisir votre moteur."
 category: "Comparaison"
 date_published: 2026-04-12
-date_modified: 2026-09-06
+date_modified: 2026-10-04
 keywords: ["Mercury 115 vs 150","moteur hors-bord 115 ou 150 chevaux","Mercury FourStroke comparaison","Mercury 115 150 HP"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,13 +25,15 @@ revenue_driver: repower
 
 **Catégorie :** Comparaison\
 **Publié le :** 2026-04-12\
-**Dernière révision :** 2026-09-06\
+**Dernière révision :** 2026-10-04\
 **Temps de lecture :** 7 min\
 **URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/mercury-115-vs-150-hp-comparaison
 
 ### Réponse rapide
 
-Le Mercury 115 FourStroke est le bon choix pour la plupart des embarcations de 16 à 19 pieds naviguant sur les lacs intérieurs de l'Ontario, il est léger, économique et amplement puissant. Le Mercury 150 FourStroke est justifié lorsque l'embarcation fait 19 à 22 pieds, que la charge est régulièrement importante, ou que vous voulez une marge de puissance confortable sur un grand ponton ou une grosse embarcation familiale. Pour voir les prix des deux moteurs côte à côte en dollars canadiens, utilisez mercuryrepower.ca.
+Sur certaines coques en aluminium en V de 18 pieds, le Mercury 115 FourStroke est une très bonne option; à 19 ou 20 pieds avec un équipage plus lourd, le 150 en est une autre. Sur certains pontons de 18 à 20 pieds, le 60 Command Thrust vaut la peine d'être comparé lorsque ce modèle exact et les limites du bateau le permettent; sur certains tritoons de 22 à 24 pieds, le 150 en est une autre. La longueur seule ne décide pas : la plaque de capacité, la charge et le type de coque comptent davantage. Pour voir les prix des deux moteurs côte à côte en dollars canadiens, utilisez mercuryrepower.ca.
+
+Besoin de votre CCEP (PCOC)? Suivez le cours en ligne avec [le lien de parrainage MyBoatCard de HBW](https://myboatcard.com/card/harrisboat) et utilisez le code **HARRIS15** pour obtenir **15% de réduction**.
 
 ---
 
@@ -39,7 +41,7 @@ Le Mercury 115 FourStroke est le bon choix pour la plupart des embarcations de 1
 
 C'est une des comparaisons les plus courantes que nous faisons chez Harris Boat Works. Les deux moteurs sont fiables, bien établis, et disponibles en version standard FourStroke ou Pro XS performance. Mais ils ne correspondent pas aux mêmes embarcations ni aux mêmes besoins.
 
-Harris Boat Works est une marina familiale de troisième génération, sur le lac Rice depuis 1947. Nous sommes concessionnaire Mercury Marine Premier, le niveau de certification le plus élevé, et nous connaissons les eaux de l'Ontario et les embarcations qui y naviguent saison après saison.
+Harris Boat Works est une marina familiale de troisième génération, sur le lac Rice depuis 1947. Nous sommes concessionnaire Mercury Marine Premier, et nous connaissons les eaux de l'Ontario et les embarcations qui y naviguent saison après saison.
 
 ---
 
@@ -63,7 +65,7 @@ Le Mercury 150 FourStroke est une famille entièrement différente, un bloc 4 cy
 | Cylindres | 4 en ligne | 4 en ligne |
 | Poids (arbre 20") | ~163 kg (359 lb) | ~206 kg (455 lb) |
 | Plage de régime | 5 000–6 000 tr/min | 5 000–5 800 tr/min |
-| Embarcations idéales | 16–19 pieds | 19–22 pieds |
+| Exemples d'usage | Certaines coques en V de 18 pieds | Certaines coques en V de 19–20 pieds et certains tritoons de 22–24 pieds |
 
 ---
 
@@ -86,18 +88,18 @@ Le 150 est environ 43 kg (95 lb) plus lourd que le 115. Pour certaines embarcati
 ### Quel bateau pour quel moteur ?
 
 **Le Mercury 115 FourStroke est le bon choix si :**
-- Votre embarcation fait entre 16 et 19 pieds
+- Votre embarcation est une coque en V en aluminium d'environ 18 pieds (à 16 ou 17 pieds, un 60 à 90 HP convient presque toujours mieux)
 - Vous naviguez en famille sur des lacs intérieurs (Kawartha, Rice Lake, lac Simcoe)
 - Votre charge typique est deux à trois personnes avec équipement standard
-- Vous avez un ponton de taille standard
+- Vous avez un ponton dont la plaque et la charge conviennent à un 115 (comparez aussi le 60 Command Thrust sur certains pontons de 18 à 20 pieds)
 - Vous recherchez un bon équilibre entre coût, poids, et performance
 
 **Le Mercury 150 FourStroke est le bon choix si :**
-- Votre embarcation fait entre 19 et 22 pieds
+- Votre embarcation est une coque en V en aluminium de 19 à 20 pieds, ou un tritoon de 22 à 24 pieds
 - Vous transportez régulièrement quatre personnes ou plus, ou une charge importante
 - Vous avez un grand ponton ou un tritoon
 - Vous voulez une marge de puissance pour la reprise et la vitesse de croisière
-- Vous remplacez un moteur de 135 HP ou plus
+- La plaque de capacité de votre coque permet plus de 150 HP (dimensionnez selon la plaque, pas selon l'ancien moteur)
 
 ---
 
@@ -113,7 +115,7 @@ Le prix du Pro XS est légèrement plus élevé que le FourStroke standard du m�
 
 Sur les lacs des Kawartha, le lac Rice, ou le lac Simcoe, la navigation se fait principalement à des vitesses de croisière modérées. La plupart des journées, vous n'êtes pas à pleine puissance, vous vous déplacez entre les îles, vous remorquez un tube, ou vous cherchez un bon spot de pêche.
 
-Dans ce contexte, le 115 est amplement suffisant pour la grande majorité des embarcations familiales de 16 à 19 pieds.
+Dans ce contexte, le 115 convient à certaines embarcations familiales, selon la plaque de capacité et la charge.
 
 Le 150 fait vraiment la différence dans deux situations spécifiques : les matins de pêche sportive où vous voulez traverser un grand lac rapidement avant que le vent se lève, et lorsque vous avez un ponton de 22 pieds avec six passagers et des glacières pleines.
 
@@ -135,11 +137,11 @@ Le 150 FourStroke coûte plus cher que le 115, pour le moteur lui-même, et pote
 
 **Outil de comparaison en ligne :** mercuryrepower.ca, comparez les deux moteurs côte à côte avec les prix réels en dollars canadiens.
 
-**Demande de service :** hbw.wiki/service, vous pouvez nous envoyer votre demande (nous répondrons en anglais).
+**Demande de service :** hbwservice.ca, vous pouvez nous envoyer votre demande (nous répondrons en anglais).
 
 **Téléphone :** 905-342-2153
 
-**En personne :** Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0 (environ 1 h 30 à l'est de Toronto; moins de 3 heures de Montréal).
+**En personne :** Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0 (environ 1 h 30 à l'est de Toronto).
 
 ---
 
@@ -162,11 +164,11 @@ Réponse courte : si votre bateau est à la limite entre les deux, choisissez se
 
 ### Le 115 HP suffit-il pour un ponton de 20 pieds ?
 
-Oui, pour un ponton de 20 pieds avec une charge normale (3–4 personnes). Pour un ponton de 22 pieds ou un tritoon avec six passagers et des glacières, le 150 ou le 115 Command Thrust méritent d'être considérés.
+Cela dépend de la plaque, de la charge et des modèles offerts. Sur certains pontons de 18 à 20 pieds, le 60 Command Thrust vaut la peine d'être comparé lorsque ce modèle exact et les limites du bateau le permettent. Pour un tritoon de 22 à 24 pieds, le 150 est la bonne base et le 115 est sous-dimensionné.
 
 ### Dois-je prendre la version Command Thrust sur un ponton ?
 
-Presque toujours oui. La boîte de vitesses Command Thrust est conçue pour les coques plates et les embarcations lourdes. Elle améliore significativement la mise sur plan avec une charge complète.
+Pas automatiquement. Command Thrust est un choix de coque, de charge et d'hélice, pas un réglage réservé aux pontons. HBW privilégie Command Thrust sur de nombreux pontons et certains bateaux de travail lorsqu'un modèle CT actuel existe, mais ce choix ne convient pas à tous les pontons et ne garantit pas la mise sur plan. Vérifiez les spécifications du modèle exact et les limites du bateau.
 
 ### Quelle est la différence entre le FourStroke standard et le Pro XS ?
 
@@ -178,7 +180,7 @@ Le contenu de ce guide est offert en français, mais notre personnel et nos rép
 
 ### L'équipe parle-t-elle français ?
 
-Notre personnel répond en anglais. Vous pouvez nous envoyer votre demande via hbw.wiki/service et nous vous répondrons en anglais. Si vous préférez, utilisez Google Traduction ou demandez à un proche bilingue de vous aider.
+Notre personnel répond en anglais. Vous pouvez nous envoyer votre demande via hbwservice.ca et nous vous répondrons en anglais. Si vous préférez, utilisez Google Traduction ou demandez à un proche bilingue de vous aider.
 
 ## Prochaines étapes
 

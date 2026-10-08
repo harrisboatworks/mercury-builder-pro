@@ -102,7 +102,7 @@ describe('Harris Boat Works brand-search landing page', () => {
     expect(globalSeo).toContain('"openingHoursSpecification": LIVE_OPENING_HOURS');
     expect(data).toContain(HISTORY);
     expect(data).toContain('/quote/motor-selection');
-    expect(data).toContain('https://hbw.wiki/service');
+    expect(data).toContain('https://hbwservice.ca');
   });
 
   it('adds the page to AI discovery surfaces without duplicating full copy', () => {

@@ -16,7 +16,7 @@ keywords: ["renting vs owning a boat","is buying a boat worth it ontario","boat 
 author: Harris Boat Works
 content_type: blog_article
 language: en-CA
-revenue_driver: repower
+revenue_driver: rentals
 ---
 
 # Renting vs Owning a Boat in Ontario: The Honest Math (2026)
@@ -47,7 +47,7 @@ Renting and owning aren't two prices for the same thing. They're two completely 
 
 **Renting is 100% variable cost.** You pay for the days you boat. Zero days on the water = zero dollars. Every cost item (rental rate, fuel, worms) exists only when you're actually using it.
 
-**Owning is mostly fixed cost.** The purchase or financing payment, insurance, storage, winterization, spring commissioning, and depreciation all run whether you boat 60 days or 6. The only truly variable costs of ownership are fuel and wear.
+**Owning is mostly fixed cost.** The purchase or financing payment, insurance, storage, winterization, spring commissioning, and depreciation all run whether you boat 60 days or 6. What does scale with use is mostly fuel, wear, hours-based servicing, and launch or trailering costs.
 
 That's why the same boat budget can be brilliant for one family and painful for another. The question is never "which is cheaper." It's "how many days will you actually use it," answered honestly.
 
@@ -120,7 +120,7 @@ The pattern is simple: the fewer genuine boat days you log, the more renting win
 
 ## What HBW checks before you buy from us
 
-If your worksheet says "own," we're not going to talk you out of it; we'd love to build the package. But we will ask the same questions this article does: how many days, which lake, who's aboard, where does it sleep in winter. Over decades we've watched the happiest owners be the ones whose usage matched their boat, and the unhappiest be the ones who bought a spreadsheet-perfect boat for a life they didn't have. Rent first if you're not sure. The boats will still be here.
+If your worksheet says "own," we're not going to talk you out of it; we'd love to build the package. But we will ask the same questions this article does: how many days, which lake, who's aboard, where does it sleep in winter. We've watched the happiest owners be the ones whose usage matched their boat, and the unhappiest be the ones who bought a spreadsheet-perfect boat for a life they didn't have. Rent first if you're not sure. The boats will still be here.
 
 ---
 
@@ -174,12 +174,12 @@ Start with the live boat rate at [harrisboatworks.ca/rentals](https://harrisboat
 
 ## Next steps
 
-- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
+- Check the current Rice Lake rental fleet and availability: https://harrisboatworks.ca/rentals
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
-- The only commercial next step for this article is the Mercury quote configurator.
+- The only commercial next step for this article is Rice Lake rental availability at https://harrisboatworks.ca/rentals.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

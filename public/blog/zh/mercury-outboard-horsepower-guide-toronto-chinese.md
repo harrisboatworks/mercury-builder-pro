@@ -42,7 +42,7 @@ Mercury 船外机马力不是越大越好，而是要按船体载荷铭牌、船
 | 马力段 | 常见用途 | 注意事项 |
 |---|---|---|
 | 2.5-20 HP | 小艇、便携式辅助发动机、轻量钓鱼用途 | Mercury Canada 2.5-20 HP FourStroke 页面强调紧凑、轻量化、易于安装和操作简单 (Mercury FourStroke 2.5-20hp). |
-| 25-60 HP | 小到中型钓鱼船、作业船、部分轻型家庭用船 | HBW 页面把 FourStroke 25-60 HP 列为主要系列；Mercury Canada 也有 25-30 HP 和 40-60 HP 分页，不要使用错误的 25-60 官方网址 (Harris Boat Works Mercury Outboards, Mercury FourStroke 25-30hp). |
+| 25-60 HP | 小到中型钓鱼船、作业船、部分轻型家庭用船 | HBW 页面把 FourStroke 25-60 HP 列为主要系列；Mercury Canada 另有 25-30 HP 和 40-60 HP 两个分页 (Harris Boat Works Mercury Outboards, Mercury FourStroke 25-30hp). |
 | 75-115 HP | 家庭钓鱼船、部分浮筒船、中型船体 | Mercury Canada 75-150 HP 页面说明这些发动机采用高效、轻量化设计，并列出 75-115 HP 的 35 安培发电机；90/115 HP 可选 Command Thrust 齿轮箱 (Mercury FourStroke 75-150hp). |
 | 150 HP | 较大的家庭休闲船、浮筒船、休闲快艇、大型换装发动机项目 | Mercury Canada 75-150 HP 页面列出 150 HP 的 60 安培发电机和 Idle Charge 电池管理技术 (Mercury FourStroke 75-150hp). |
 | 115-300 HP Pro XS | 性能型钓鱼用途、鲈鱼及多鱼种、部分浮筒船 | Mercury Canada Pro XS 页面把 Pro XS 定位为性能船外机，并列出 115-300 HP 系列 (Mercury Pro XS). |
@@ -79,7 +79,7 @@ Pro XS 不是“普通 FourStroke 加贴纸”。Mercury Canada 把 Pro XS 列�
 
 ## 下一步
 
-想给现有船换 Mercury 船外机或比较换装发动机方案，可以到 MercuryRepower.ca 先看透明报价。需要保养维修，请使用 [hbw.wiki/service](https://hbw.wiki/service)。
+想给现有船换 Mercury 船外机或比较换装发动机方案，可以到 MercuryRepower.ca 先看透明报价。需要保养维修，请使用 [hbwservice.ca](https://hbwservice.ca)。
 
 ## 常见问题
 
@@ -110,6 +110,12 @@ Pro XS 不是“普通 FourStroke 加贴纸”。Mercury Canada 把 Pro XS 列�
 > 相关指南：[FourStroke vs Pro XS 中文对比指南](/blog/zh/mercury-fourstroke-pro-xs-verado-chinese-comparison)。
 
 HBW 自 1947 年起就在 Gores Landing、莱斯湖经营家族码头，是 Mercury Marine Premier dealer 与 Legend Boats 经销商。
+
+## 相关指南
+
+- [Mercury 115马力 vs 150马力舷外机：如何选择？](/blog/zh/mercury-115-vs-150-comparison-zh)
+- [40 到 60 匹 Mercury：铝船与华人钓友最常问的马力区间](/blog/zh/mercury-40-60hp-chinese-fishing-boat-guide)
+- [9.9 到 20 匹 Mercury：钓鱼小船、kicker、tiller 中文指南](/blog/zh/mercury-9-9-20hp-chinese-kicker-tiller-guide)
 
 ## Next steps
 

@@ -226,6 +226,7 @@ function sanitizePdfSnapshot(value: unknown): JsonRecord | undefined {
 }
 
 const CONSULTATION_SUBMITTED_SOURCE = "consultation-submit";
+const CANONICAL_REFERENCE_PATTERN = /^HBW-\d{5}$/;
 
 function isConsultationSubmittedSource(value: JsonRecord): boolean {
   return value.source === CONSULTATION_SUBMITTED_SOURCE;
@@ -245,6 +246,12 @@ export function buildPublicQuoteData(value: unknown): JsonRecord {
   const isConsultationSubmitted = isConsultationSubmittedSource(value);
   const result = copyPrimitives(value, PUBLIC_SCALAR_KEYS);
   result.isConsultationSubmitted = isConsultationSubmitted;
+  // The canonical HBW quote number is customer-visible: it is printed on the
+  // PDF next to the QR code, so a resumed quote must show the same number
+  // instead of minting a new one for the scanning device's session.
+  if (typeof value.reference_number === "string" && CANONICAL_REFERENCE_PATTERN.test(value.reference_number)) {
+    result.reference_number = value.reference_number;
+  }
   const motor = sanitizeMotor(value.motor);
   const selectedMotor = sanitizeMotor(value.selectedMotor);
   const boatInfo = sanitizeBoat(value.boatInfo);

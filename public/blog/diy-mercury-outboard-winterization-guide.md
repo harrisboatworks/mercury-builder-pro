@@ -33,7 +33,7 @@ revenue_driver: service
 
 ## Quick Answer
 
-You can winterize your own Mercury outboard only after identifying the exact storage procedure in the operation and maintenance manual for its serial number. Fuel treatment, internal engine protection, flushing, gearcase service, and storage position vary by engine family. Do not assume every FourStroke should be fogged through the intake, and never run the motor without a cooling-water supply. If the procedure or inspection is outside your ability, submit the motor details at hbw.wiki/service.
+You can winterize your own Mercury outboard only after identifying the exact storage procedure in the operation and maintenance manual for its serial number. Fuel treatment, internal engine protection, flushing, gearcase service, and storage position vary by engine family. Do not assume every FourStroke should be fogged through the intake, and never run the motor without a cooling-water supply. If the procedure or inspection is outside your ability, submit the motor details at hbwservice.ca.
 
 ### Keep the fall storage work together
 
@@ -41,7 +41,7 @@ This one-page checklist covers appointment prep, fuel and engine work, onboard s
 
 [Download fall checklist (PDF)](/downloads/fall-storage-winterization-checklist-hbw.pdf)
 
-For professional winterization and [winter boat storage in the Kawarthas](/blog/outdoor-boat-storage-shrinkwrap-rice-lake): [hbw.wiki/service](https://hbw.wiki/service).
+For professional winterization and [winter boat storage in the Kawarthas](/blog/outdoor-boat-storage-shrinkwrap-rice-lake): [hbwservice.ca](https://hbwservice.ca).
 
 ---
 
@@ -83,7 +83,7 @@ A healthy battery may remain aboard only if fully charged, disconnected, secured
 
 #### Need the model-specific scope?
 
-Submit the serial number, engine hours, and service history at hbw.wiki/service. HBW is closed December 1 through April 1.
+Submit the serial number, engine hours, and service history at hbwservice.ca. HBW is closed December 1 through April 1.
 
 ---
 
@@ -230,7 +230,7 @@ Based on what we see in spring diagnostics at HBW:
 
 The guide above is a decision framework, not a substitute for the serial-number manual. If you find water or metal in the gearcase lubricant, damaged seals, alarms, fuel contamination, corrosion, or a procedure you cannot complete exactly, stop and request professional service.
 
-If you want professional winterization: [hbw.wiki/service](https://hbw.wiki/service). The shop knows these motors.
+If you want professional winterization: [hbwservice.ca](https://hbwservice.ca). The shop knows these motors.
 
 ---
 
@@ -239,7 +239,7 @@ If you want professional winterization: [hbw.wiki/service](https://hbw.wiki/serv
 Reviewed by the Harris Boat Works service team. HBW handles Mercury and MerCruiser service from Gores Landing on Rice Lake. For engine repairs, we only service Mercury and MerCruiser. [About Harris Boat Works](/about/jay-harris).
 
 **Want it done right without the Saturday morning?** 
-Request professional winterization at [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Gores Landing, Mercury Premier dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947.
+Request professional winterization at [hbwservice.ca](https://hbwservice.ca). Harris Boat Works, Gores Landing, Mercury Premier dealer. Mercury dealer since 1965, family marina on Rice Lake since 1947.
 
 Phone: 905-342-2153
 
@@ -297,12 +297,12 @@ Fuel preparation, internal engine protection, oil service, flushing, and storage
 
 ## Next steps
 
-- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbw.wiki/service
+- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbwservice.ca
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
-- The only commercial next step for this article is the HBW service request at https://hbw.wiki/service.
+- The only commercial next step for this article is the HBW service request at https://hbwservice.ca.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

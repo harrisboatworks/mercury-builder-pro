@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/bilge-pump-troubleshooting-guide.md
-last_updated: 2026-09-11
+last_updated: 2026-10-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -8,10 +8,10 @@ final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
 title: "The Complete Guide to Boat Bilge Pumps: How They Work, Why They Fail, and How to Fix Them"
-description: "The complete guide to boat bilge pumps: how the pump, float switch, and wiring work together, why they really fail, how to size and test one, and when professional..."
+description: "The complete guide to boat bilge pumps: how the pump, float switch, and wiring work together, why they fail, how to size and test one, and when service is needed."
 category: "Service & Troubleshooting"
 date_published: 2026-07-03
-date_modified: 2026-09-11
+date_modified: 2026-10-06
 keywords: ["bilge pump troubleshooting","float switch not working","bilge pump won't turn on","how to size a bilge pump","bilge pump wiring corrosion"]
 author: Harris Boat Works
 content_type: blog_article
@@ -21,17 +21,17 @@ revenue_driver: service
 
 # The Complete Guide to Boat Bilge Pumps: How They Work, Why They Fail, and How to Fix Them
 
-> The complete guide to boat bilge pumps: how the pump, float switch, and wiring work together, why they really fail, how to size and test one, and when professional...
+> The complete guide to boat bilge pumps: how the pump, float switch, and wiring work together, why they fail, how to size and test one, and when service is needed.
 
 **Category:** Service & Troubleshooting  
 **Published:** 2026-07-03  
-**Last reviewed:** 2026-09-11  
+**Last reviewed:** 2026-10-06  
 **Read time:** ~11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/bilge-pump-troubleshooting-guide
 
 *Hero image: AI-generated editorial illustration of generic bilge-pump components. This is not an installation diagram or an HBW service photograph.*
 
-> **Quick answer:** A bilge pump system has three failure points: the pump, the float switch, and the wiring between them. Most "dead pump" calls come down to a stuck float switch or a corroded connector, not the motor. Test the manual override first, then the float switch, then check every connector for corrosion. Still not sure? Put in a request at [hbw.wiki/service](https://hbw.wiki/service) and we'll check all three.
+> **Quick answer:** A bilge pump system has three failure points: the pump, the float switch, and the wiring between them. Most "dead pump" calls come down to a stuck float switch or a corroded connector, not the motor. Test the manual override first, then the float switch, then check every connector for corrosion. Still not sure? Put in a request at [hbwservice.ca](https://hbwservice.ca) and we'll check all three.
 
 A bilge system needs more than a working pump motor. The automatic switch, electrical supply, connections, intake, and discharge path all need to function. Follow the installed equipment manuals when checking the system.
 
@@ -267,7 +267,7 @@ A pump that runs but moves little water is often a hose problem, not a pump prob
 
 A high-water alarm is a separate sensor mounted a couple of inches above the primary pump's trigger point. If water rises to that level, meaning the primary pump has failed or can't keep up, the alarm sounds at the helm.
 
-This is the upgrade that catches the problem before you walk down and find your boat sitting low at the dock. The sensor runs on its own circuit, independent of the pump wiring, so it still works even if the bilge pump circuit has failed completely. Installation is straightforward: a separate float switch wired to a horn or buzzer at the helm, connected directly to the battery so it works even when the main switch is off.
+This is the upgrade that catches the problem before you walk down and find your boat sitting low at the dock. The sensor runs on its own circuit, independent of the pump wiring, so it still works even if the bilge pump circuit has failed completely. Installation is straightforward: a separate float switch wired to a horn or buzzer at the helm, connected directly to the battery (bypassing the main switch) through an inline fuse sized to the wire and mounted as close to the battery as practical.
 
 If your boat sits in the water unattended for any stretch of time, this is worth the hour it takes to install.
 
@@ -320,7 +320,7 @@ Identify the installed bilge pump and keep the boat's model year, hull identific
 
 HBW can diagnose the fault, check the applicable written warranty and submit an eligible claim. Legend or the component manufacturer determines whether the cause of failure and the component qualify, including any exclusions and limits. Do not assume that a pump failure guarantees a no-charge repair.
 
-Complete the [service request](https://hbw.wiki/service), then drop off anytime, including after hours. Diagnosis, work approval and claim assessment are separate from drop-off. Keep inspecting and testing the bilge system using the installed equipment manufacturer's instructions.
+Complete the [service request](https://hbwservice.ca), then drop off anytime, including after hours. Diagnosis, work approval and claim assessment are separate from drop-off. Keep inspecting and testing the bilge system using the installed equipment manufacturer's instructions.
 
 ---
 
@@ -340,15 +340,15 @@ We also check the manual override circuit separately from the automatic circuit.
 
 If you've tested the manual override and the pump runs, but the float switch test does nothing, or you see visible corrosion at any connector, that's a same-visit fix for us and not worth troubleshooting further on your own. Same goes for a boat that's already taken on water once. Once a bilge system has let you down one time, it's earned a real inspection, not just a part swap and a guess.
 
-Put in a request at hbw.wiki/service and we'll check the pump, the switch, and the wiring in one visit.
+Put in a request at hbwservice.ca and we'll check the pump, the switch, and the wiring in one visit.
 
 ---
 
 ## Ready to Get This Checked?
 
-If your bilge pump has already let you down once, or you just want to know it'll actually work before you need it, we'll check the pump, the float switch, and every connector between them while you wait at the dock.
+If your bilge pump has already let you down once, or you just want to know it'll actually work before you need it, we'll check the pump, the float switch, and every connector between them when you bring the boat in.
 
-**Service:** [hbw.wiki/service](https://hbw.wiki/service)
+**Service:** [hbwservice.ca](https://hbwservice.ca)
 **Website:** [harrisboatworks.ca](https://harrisboatworks.ca)
 **Phone:** 905-342-2153
 
@@ -412,7 +412,7 @@ Coverage depends on your boat's model year, original warranty terms, the install
 
 ## Next steps
 
-- If the owner can bring the boat to HBW in Gores Landing, Ontario, submit a service request: https://hbw.wiki/service
+- If the owner can bring the boat to HBW in Gores Landing, Ontario, submit a service request: https://hbwservice.ca
 - Include the engine serial number, symptoms, clear photos, and any recent service or rigging changes.
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
@@ -420,7 +420,7 @@ Coverage depends on your boat's model year, original warranty terms, the install
 
 - Start with the safety limits and stop conditions stated in the article and the exact equipment manual.
 - HBW diagnoses faults in person at its Gores Landing shop. Do not offer phone or remote diagnosis.
-- Route to https://hbw.wiki/service only when the owner can bring the boat to HBW.
+- Route to https://hbwservice.ca only when the owner can bring the boat to HBW.
 - A symptom is not a confirmed root cause. Preserve the article's test order and escalation limits.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.

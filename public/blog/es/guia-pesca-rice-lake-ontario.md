@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/es/guia-pesca-rice-lake-ontario.md
-last_updated: 2026-09-06
+last_updated: 2026-10-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,12 +11,12 @@ title: "Guía de pesca en Rice Lake, Ontario"
 description: "Guía completa de pesca en Rice Lake: especies (walleye, bass, muskie, perch), temporadas FMZ 17, licencias, mejores zonas y alquiler de botes en Harris."
 category: "Pesca"
 date_published: 2026-04-12
-date_modified: 2026-09-06
+date_modified: 2026-10-06
 keywords: ["pesca Rice Lake Ontario","guía pesca Ontario","pescar walleye Ontario","lago cerca de Toronto para pescar"]
 author: Harris Boat Works
 content_type: blog_article
 language: es
-revenue_driver: repower
+revenue_driver: rentals
 ---
 
 # Guía de pesca en Rice Lake, Ontario
@@ -25,31 +25,33 @@ revenue_driver: repower
 
 **Category:** Pesca  
 **Published:** 2026-04-12  
-**Última revisión:** 2026-09-06  
+**Última revisión:** 2026-10-06  
 **Read time:** 12 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/es/guia-pesca-rice-lake-ontario
 
 ### Respuesta rápida
 
-Rice Lake es uno de los mejores lagos para pescar walleye (lucioperca / doré) en toda Ontario. Está a aproximadamente **1.5 horas al este de Toronto** por la Hwy 401E + Hwy 115N. La temporada de walleye en la Zona de Gestión de Pesca 17 (FMZ 17) abre el segundo sábado de mayo y cierra el 15 de noviembre, con un límite de 4 peces. Las licencias de pesca son obligatorias para personas de 18 a 64 años. Verifica siempre las fechas y límites actuales en ontario.ca antes de salir.
+Rice Lake sigue siendo un buen lago de pesca en 2026: el bass de boca pequeña, el muskie y el crappie son hoy las mejores apuestas, y el walleye (lucioperca) sigue en el lago pero cuesta más capturarlo. Está a aproximadamente **1.5 horas al este de Toronto** por la autopista 401 Este, salida 472 en Cobourg, y County Road 18 al norte. La temporada de walleye en la Zona de Gestión de Pesca 17 (FMZ 17) abre el segundo sábado de mayo y cierra el 15 de noviembre, con límites combinados de walleye y sauger de 4 con Sport y 1 con Conservation, solo de 35–50 cm. Los lagos Balsam y Mitchell tienen reglas propias. Las licencias de pesca son obligatorias para residentes de Canadá de 18 a 64 años y para la mayoría de los no residentes de Canadá, incluso a los 65 años o más. Verifica siempre las fechas y límites actuales en ontario.ca antes de salir.
+
+¿Necesita su PCOC? Haga el curso en línea con [el enlace de recomendación de HBW a MyBoatCard](https://myboatcard.com/card/harrisboat) y use el código **HARRIS15** para obtener **15% de descuento**.
 
 ---
 
-Hay muchos lagos en Ontario. Rice Lake no es el más grande ni el más profundo, pero para quienes saben pescar, tiene una reputación que pocos lagos del interior pueden igualar. Walleye abundante, bass de boca grande y pequeña, muskie, perca amarilla, y un acceso práctico desde el área metropolitana de Toronto que lo hace realista para una excursión de un día.
+Hay muchos lagos en Ontario. Rice Lake no es el más grande ni el más profundo, pero para quienes saben pescar, tiene una reputación que pocos lagos del interior pueden igualar. Bass de boca grande y pequeña, muskie, crappie, perca amarilla, walleye (hoy más difícil de capturar) y un acceso práctico desde el área metropolitana de Toronto que lo hace realista para una excursión de un día.
 
-Harris Boat Works lleva 79 años a orillas de este lago, en Gores Landing. Vendemos motores, rentamos botes y damos servicio a embarcaciones aquí. Esta guía la escribimos para pescadores hispanohablantes que quieren aprovechar bien Rice Lake sin perder tiempo buscando información fragmentada en inglés.
+Harris Boat Works es una empresa familiar desde 1947, a orillas de este lago, en Gores Landing. Vendemos motores, rentamos botes y damos servicio a embarcaciones aquí. Esta guía la escribimos para pescadores hispanohablantes que quieren aprovechar bien Rice Lake sin perder tiempo buscando información fragmentada en inglés.
 
 ---
 
 ## Sobre Rice Lake
 
-Rice Lake tiene aproximadamente **37 km de longitud** y forma parte del sistema fluvial Trent-Severn. El río Otonabee alimenta el extremo oeste del lago, conectándolo con Peterborough y los lagos Kawartha.
+Rice Lake tiene aproximadamente **32 km de longitud** y forma parte del sistema fluvial Trent-Severn. El río Otonabee alimenta el extremo oeste del lago, conectándolo con Peterborough y los lagos Kawartha.
 
-El fondo variable del lago, mezclas de arena, grava, barro y vegetación acuática, crea hábitats ideales para múltiples especies. La visibilidad es moderada, lo que favorece la pesca de walleye (que prefiere condiciones de poca luz y fondos con cover).
+El fondo variable del lago, mezclas de arena, grava, barro y vegetación acuática, crea hábitats ideales para múltiples especies. La visibilidad es moderada, lo que favorece la pesca de walleye (que prefiere condiciones de poca luz y fondos con refugio).
 
 **Cómo llegar desde Toronto:**
-- Toma la Hwy 401 Este hasta la salida de la Hwy 115N (aproximadamente 110 km)
-- Sigue por 115N hacia Campbellford / Gores Landing
+- Toma la autopista 401 Este hasta la salida 472 en Cobourg (County Road 18 / Burnham Street)
+- Sigue por County Road 18 al norte unos 16 km hasta Gores Landing; el recorrido completo desde Toronto es de unos 130 km
 - Tiempo total: **~1.5 horas** sin tráfico desde el centro de Toronto
 - Desde el área de Mississauga o Brampton: similar o ligeramente más largo por la 401
 
@@ -61,25 +63,25 @@ Las siguientes fechas y límites corresponden a la Zona de Gestión de Pesca 17,
 
 | Especie | Temporada típica | Límite diario |
 |---------|-----------------|--------------|
-| Walleye (lucioperca / doré) | 2.º sábado de mayo–15 de noviembre | 4 |
-| Bass de boca grande (largemouth) | 3.er sábado de junio–15 de diciembre | 6 |
-| Bass de boca pequeña (smallmouth) | 3.er sábado de junio–15 de diciembre | 6 |
-| Muskie (lucio almizclero) | 1.er sábado de junio–15 de diciembre | 1 |
-| Perca amarilla (yellow perch) | Todo el año | 50 |
-| Lucio norteño (northern pike) | Consultar reglamento FMZ 17 | Consultar |
+| Walleye y sauger (lucioperca) | 2.º sábado de mayo–15 de noviembre; solo de 35–50 cm | Sport: 4; Conservation: 1, combinados |
+| Bass de boca grande (largemouth) | 3.er sábado de junio–15 de diciembre | Sport: 6; Conservation: 2, combinados con el bass de boca pequeña |
+| Bass de boca pequeña (smallmouth) | 3.er sábado de junio–15 de diciembre | Sport: 6; Conservation: 2, combinados con el bass de boca grande |
+| Muskie (lucio almizclero) | 1.er sábado de junio–15 de diciembre | Sport: 1, solo si mide más de 112 cm; Conservation: 0 |
+| Perca amarilla (yellow perch) | Todo el año | Sport: 50; Conservation: 25 |
+| Lucio norteño (northern pike) | Todo el año | Sport: 6; Conservation: 2 |
 
-> **Importante:** Los límites y fechas anteriores son de referencia. El gobierno de Ontario actualiza las regulaciones anualmente. Consulta la guía oficial antes de cada temporada.
+> **Importante:** Los límites y fechas anteriores son de referencia. Los lagos Balsam y Mitchell tienen reglas propias. El gobierno de Ontario actualiza las regulaciones anualmente. Consulta la guía oficial antes de cada temporada.
 
 ---
 
-## Walleye: la razón principal para venir a Rice Lake
+## Walleye: el más complicado
 
-El walleye (en inglés: walleye; en francés: doré) es la especie estrella de Rice Lake. Los pescadores de toda Ontario y del norte de Estados Unidos conocen la reputación del lago.
+El walleye (lucioperca) fue la especie que hizo famoso a Rice Lake, aunque hoy es más difícil de capturar. Los pescadores de toda Ontario y del norte de Estados Unidos conocen la reputación del lago.
 
-**Por qué Rice Lake produce walleye consistentemente:**
+**Por qué todavía hay walleye y por qué cuesta más:**
 - Profundidad moderada con áreas de 3–8 metros ideales para walleye
-- Vegetación acuática (cabeza de flecha, nenúfar) que crea cover natural
-- El sistema Trent-Severn mantiene corrientes que el walleye prefiere para desovar
+- Vegetación acuática (cabeza de flecha, nenúfar) que crea refugio natural
+- La gestión del agua del sistema Trent-Severn lleva décadas perjudicando el desove del walleye, y por eso hay menos peces y muchos superan los 50 cm
 
 **Técnicas básicas:**
 - **Jigging vertical** en 8–15 pies con jig de 1/4–1/2 oz en colores chartreuse, blanco o naranja
@@ -92,11 +94,11 @@ El walleye (en inglés: walleye; en francés: doré) es la especie estrella de R
 
 ### Bass de boca grande y pequeña
 
-Rice Lake tiene excelente población de ambas especies. La boca grande prefiere aguas con vegetación y fondos blandos; la boca pequeña prefiere puntas rocosas y gravas. Ambas especies responden bien a plasticos blandos, topwaters en verano y jigs.
+Rice Lake tiene excelente población de ambas especies. La boca grande prefiere aguas con vegetación y fondos blandos; la boca pequeña prefiere puntas rocosas y gravas. Ambas especies responden bien a plásticos blandos, señuelos de superficie en verano y jigs.
 
 ### Muskie (lucio almizclero)
 
-El muskie es el pez más grande y más difícil de capturar en Rice Lake. La temporada abre el primer sábado de junio con un límite de 1 pez. Se recomienda fuertemente la práctica de catch-and-release dado el lento crecimiento de la especie.
+El muskie es el pez más grande y más difícil de capturar en Rice Lake. La temporada abre el primer sábado de junio; con licencia Sport el límite es 1 pez y solo se puede retener si mide más de 112 cm, y con licencia Conservation el límite es 0. Se recomienda fuertemente capturar y liberar al pez, dado el lento crecimiento de la especie.
 
 ### Perca amarilla
 
@@ -111,9 +113,9 @@ Para pescar en Ontario se requiere:
 1. **Tarjeta Outdoors Card**, identificación del sistema de licencias de Ontario, aproximadamente $9–$11 CAD, válida 3 años
 2. **Licencia deportiva de pesca**, para residentes de Ontario: aproximadamente $25–$30 CAD anuales (varía según categoría)
 
-Las personas de **18 a 64 años** necesitan licencia. Los menores de 18 y los mayores de 65 residentes en Ontario pueden pescar sin licencia en ciertas condiciones, consulta las reglas actuales en ontario.ca/fishing.
+Los residentes de Canadá de **18 a 64 años** necesitan licencia. Los residentes de Canadá menores de 18 años o de 65 o más no necesitan comprarla si llevan una identificación oficial con su nombre y fecha de nacimiento. Los no residentes de Canadá necesitan Outdoors Card y licencia incluso a los 65 años o más. Los residentes de Canadá también pueden pescar sin licencia durante cuatro periodos al año, entre ellos los fines de semana del Día de la Familia, del Día de las Madres y del Día del Padre, y la Semana de Pesca Familiar de Ontario; consulta las fechas y reglas actuales en ontario.ca/fishing.
 
-Las licencias se compran en línea (ontario.ca), en tiendas de artículos deportivos (Canadian Tire, Bass Pro), o en algunas marinas locales.
+Las licencias y la Outdoors Card se obtienen por medio de la provincia en ontario.ca/fishing. Harris Boat Works no vende licencias de pesca.
 
 **No se puede pescar con tarjeta de licencia de otro país.** Los visitantes de EE. UU. u otros países necesitan adquirir licencias de Ontario.
 
@@ -141,7 +143,7 @@ También vendemos **combustible sin etanol (89 octanos)** en el sitio. El etanol
 
 ## Itinerario de un día desde Toronto
 
-**5:30 AM**, Salida de Toronto por 401E
+**5:30 AM**, Salida de Toronto por la autopista 401 Este
 **7:00 AM**, Llegada a Gores Landing, Harris Boat Works
 **7:15 AM**, Salida al lago (equipo propio o renta)
 **7:30–11:00 AM**, Pesca matutina (mejor hora para walleye)
@@ -160,18 +162,26 @@ Llama al **905-342-2153** o visita **harrisboatworks.ca** para disponibilidad de
 **¿Buscas un motor para tu propio bote?**
 Configura tu presupuesto en **mercuryrepower.ca**, 3 minutos, sin presión.
 
-¿Preguntas? Escríbenos en hbw.wiki/service (puedes escribirnos en español; te responderemos en inglés).
+¿Preguntas? Escríbenos en hbwservice.ca (puedes escribirnos en español; te responderemos en inglés).
 
 Harris Boat Works
 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 harrisboatworks.ca | 905-342-2153
 ---
 
+## Guías relacionadas
+
+- [Guía completa para comprar un bote en Ontario](/blog/es/guia-comprar-bote-ontario)
+- [Licencia de navegación y regulaciones de seguridad en Ontario](/blog/es/licencia-navegacion-ontario-regulaciones)
+- [Mercury 115 vs 150 HP: Comparación completa para remotorización](/blog/es/mercury-115-vs-150-comparacion)
+- [Guía de preparación invernal para motores Mercury en Ontario](/blog/es/preparacion-invernal-motor-mercury)
+- [Remotorización vs bote nuevo: ¿Cuál es la mejor inversión?](/blog/es/remotorizacion-vs-bote-nuevo)
+
 ## FAQs
 
 ### ¿Necesito una licencia de pesca?
 
-Sí, si tiene entre 18 y 64 años. Los menores de 18 años (residentes canadienses) están exentos sin condiciones. Los mayores de 65 también están exentos.
+Sí, si es residente de Canadá y tiene entre 18 y 64 años. La mayoría de los no residentes de Canadá también la necesitan, incluso a los 65 años o más. Los residentes de Canadá menores de 18 años o de 65 o más están exentos si llevan una identificación oficial con su nombre y fecha de nacimiento.
 
 ### ¿Puedo alquilar un bote en Rice Lake?
 
@@ -179,7 +189,7 @@ Sí. Harris Boat Works tiene una flota de 9 botes de alquiler. Consulte harrisbo
 
 ### ¿Qué tan lejos está Rice Lake de Toronto?
 
-Aproximadamente 1,5 horas por la 401 Este y luego la 115 Norte.
+Aproximadamente 1,5 horas por la 401 Este hasta la salida 472 en Cobourg y luego County Road 18 al norte unos 16 km hasta Gores Landing.
 
 ### ¿Necesito la PCOC (licencia de navegación) para alquilar un bote?
 
@@ -191,12 +201,12 @@ La perca amarilla (perch) se pesca todo el año y es la más accesible para prin
 
 ## Next steps
 
-- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
+- Check the current Rice Lake rental fleet and availability: https://harrisboatworks.ca/rentals
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
-- The only commercial next step for this article is the Mercury quote configurator.
+- The only commercial next step for this article is Rice Lake rental availability at https://harrisboatworks.ca/rentals.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

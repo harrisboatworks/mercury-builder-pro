@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-insurance-ontario-guide-2026.md
-last_updated: 2026-09-06
+last_updated: 2026-10-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Boat Insurance in Ontario: What You Actually Need (2026)"
 description: "Ontario boat insurance basics: liability vs hull coverage, what is covered, and real annual premiums by boat type. Plain-language guide."
 category: "Boating"
 date_published: 2026-05-13
-date_modified: 2026-09-06
+date_modified: 2026-10-04
 keywords: ["boat insurance Ontario","marine insurance","boat insurance cost","liability coverage boats","agreed value boat insurance","Ontario boat liability","pleasure craft insurance"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Boating  
 **Published:** 2026-05-13  
-**Last reviewed:** 2026-09-06  
+**Last reviewed:** 2026-10-04  
 **Read time:** ~9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-insurance-ontario-guide-2026
 
@@ -33,11 +33,13 @@ revenue_driver: repower
 
 **Ontario does not legally require boat insurance for most pleasure craft. But for any boat worth more than $5,000, or any boat carrying passengers, basic liability and hull coverage is what every honest dealer recommends. Premiums vary widely by boat, value, and coverage; the ranges in the table below show what 2026 Ontario policies realistically run.**
 
+Need your PCOC? Take the online course through [HBW's MyBoatCard referral link](https://myboatcard.com/card/harrisboat) and use **HARRIS15** for **15% off**.
+
 - **Liability**: $1M-$2M minimum (covers damage to other boats, docks, or injuries)
 - **Hull coverage**: damage to the boat itself; motor and trailer often need their own riders or scheduled amounts
 - **Agreed value**: the policy's agreed insured amount ([Marine Insurance Act s. 30](https://laws-lois.justice.gc.ca/eng/acts/M-0.6/section-30.html?wbdisable=true)), not an automatic full replacement-cost promise on every partial loss
 - **Actual cash value**: replacement value minus depreciation. Deductible, partial-loss depreciation, machinery limits, and endorsements remain policy-specific
-- **Most home policies do NOT cover boats over 16 ft or over 25 HP**: above that, you need a marine policy
+- **Home policies cover small boats at best, and limits vary by insurer**: for larger or more powerful boats, you need a marine policy
 - **Cost factors**: boat value, engine size, claim history, navigational area (Lake Ontario vs Rice Lake matters)
 
 *Annual premium by boat type*
@@ -92,7 +94,7 @@ Practical answer: yes, you want it. Three reasons:
 
 1. **Marinas, yacht clubs, and many launch facilities require proof of liability before you can dock.** No insurance, no slip.
 2. **Lenders require it if you financed your boat.** Most boat lenders write insurance into the loan terms.
-3. **Liability lawsuits in Canada do not have caps.** A serious injury at the helm can result in a $500,000+ settlement. Without insurance, that is a personal bankruptcy.
+3. **Liability claims can be very large.** A serious injury at the helm can result in a $500,000+ settlement. Without insurance, that is a personal bankruptcy.
 
 A few Ontario fishing tournaments and most cottage docks also require proof of insurance to participate or moor.
 
@@ -114,7 +116,7 @@ Common exclusions to read carefully before signing:
 - **Mechanical breakdown**: Engine seizing because of wear or skipped maintenance. (This is what extended warranty covers, see our [Mercury extended warranty guide](/blog/mercury-extended-warranty-platinum-ontario).)
 - **Manufacturer defects**: Covered by the factory warranty, not insurance.
 - **Racing or commercial use**: Standard pleasure-craft policies exclude tournament prize-money fishing, charters, and commercial work.
-- **Boats stored in unsafe conditions**: Outdoor storage during winter without cover voids some hull coverage.
+- **Boats stored in unsafe conditions**: Some policies set conditions on how and where a boat is stored, so check your wording.
 - **Boats older than 25-30 years**: Many insurers will not underwrite older fiberglass hulls without a marine survey.
 
 ## What Does It Cost in Ontario?
@@ -128,7 +130,7 @@ Ranges based on typical 2026 Ontario quotes:
 | 18-22 ft pontoon or runabout + 90-150 HP | $2M liability, agreed value | $400-$700 |
 | 22-26 ft cruiser or center console + 150-300 HP | $2M liability, agreed value | $700-$1,500 |
 
-_Prices here are planning figures as of September 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are planning figures as of October 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 Cost factors:
 
@@ -136,8 +138,8 @@ Cost factors:
 - **Engine HP**: over 150 HP increases premium meaningfully
 - **Where you boat**: Lake Ontario (open water, weather risk) costs more than inland lakes like Rice Lake
 - **Claim history**: clean record gets best rates
-- **Operator experience**: [PCOC](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency) alone is minimum; documented experience helps
-- **Storage location**: indoor storage discounts are real
+- **Operator experience**: [PCOC](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc) alone is minimum; documented experience helps
+- **Storage location**: ask your broker whether where you store the boat affects your rate
 
 ## Who Insures Boats in Ontario?
 
@@ -190,7 +192,7 @@ Not legally, but most marinas require it for any slip. A small basic policy runs
 
 ### Is my boat covered under my homeowners policy?
 
-Maybe, but only for boats under 16 ft and under 25 HP. Anything bigger needs a separate marine policy.
+Maybe. Some homeowners policies extend limited cover to small boats, often with outboards of about 25 HP or less, but limits vary by insurer, so confirm with your broker. Larger or faster boats need a separate marine policy.
 
 ### What is the difference between agreed value and actual cash value?
 
@@ -198,7 +200,7 @@ Agreed value pays the value you and the insurer agreed on at policy start, regar
 
 ### Does my insurance cover the boat during winter storage?
 
-Most policies cover storage at any approved location. Outdoor storage without proper cover may have reduced coverage, check your wording.
+Most policies cover storage at any approved location. Ask your insurer about any storage conditions, such as where and how the boat is stored, and check your wording.
 
 ### Can I insure my boat through Mercury or HBW?
 

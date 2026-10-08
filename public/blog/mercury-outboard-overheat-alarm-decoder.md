@@ -57,7 +57,7 @@ Work through this in order. Most alarms fall into one of these patterns:
 | Alarm pattern | When it happens | Likely cause | Urgency | First action |
 |---|---|---|---|---|
 | Continuous alarm at cruise | Underway, mid-RPM or higher | Possible real heat or other critical engine condition | High | Reduce throttle, read the display and manual, check flow, and shut down if the alarm persists |
-| Continuous alarm at startup / key-on | Right after a hot shutdown | Heat soak (usually) | Low | Wait 5 to 10 minutes for motor to cool, restart, confirm it clears |
+| Continuous alarm at startup / key-on | Right after a hot shutdown | Heat soak (usually) | Low | Wait 5 to 10 minutes for the motor to cool, restart once, confirm it clears. If it returns, do not keep running it; book service |
 | Alarm + power reduction (Guardian mode) | Any RPM, sudden drop in power | ECM-detected protective action | High | Do not override. Follow the display and manual; shut down if overheat persists and diagnose before restarting. |
 | Alarm only at WOT | At wide-open throttle, clears at cruise RPM | A load or high-flow cooling problem: water pressure, impeller and housing, poppet or pressure valve where fitted, intake screens, or engine height | Medium | Check water pressure. Possible service issue. Schedule diagnostic. |
 | Intermittent / random alarm | No clear correlation with RPM or load | Non-critical condition varies by model and year; sensor or wiring is one possibility | Medium | Read the display and manual. Note the exact pattern and conditions for service. |
@@ -122,7 +122,7 @@ These observations do not prove a sensor fault and never justify ignoring an act
 
 ## Freshwater vs. Saltwater Overheat Patterns
 
-Most Mercury motors HBW services run on Rice Lake, the Kawarthas, and Lake Ontario. These are freshwater, low-sediment lakes most of the season. Overheat patterns we see are usually intake blockages (weeds), impeller wear, and sensor faults. Saltwater corrosion of the cooling passages is not a typical Ontario freshwater failure mode.
+Most Mercury motors HBW services run on Rice Lake, the Kawarthas, and Lake Ontario. These are freshwater lakes, and Rice Lake in particular is shallow and weedy. Overheat patterns we see are usually intake blockages (weeds), impeller wear, and sensor faults. Saltwater corrosion of the cooling passages is not a typical Ontario freshwater failure mode.
 
 If you operate the same motor in saltwater (a coastal trip, for example) and the motor sees overheat alarms after the trip, salt deposits in the cooling passages may be the cause. The fix is a thorough flush and possibly a cooling system service. We can do this at HBW but it is not what most Ontario customers will run into.
 
@@ -136,9 +136,9 @@ A motor with an overheat alarm is one of the easiest things to diagnose if you b
 - **Recent maintenance history.** When was the impeller last replaced? Thermostat? Last full service?
 - **Motor model, year, and serial number.** This is on the transom bracket or under the cowling.
 
-A clean photo of the display and a sentence about when it happens will save us 30 minutes of diagnostic time. For engine repairs, we only service Mercury and MerCruiser. Book at [hbw.wiki/service](https://hbw.wiki/service).
+A clean photo of the display and a sentence about when it happens will save us 30 minutes of diagnostic time. For engine repairs, we only service Mercury and MerCruiser. Book at [hbwservice.ca](https://hbwservice.ca).
 
-Alarm that came back, or one you can't explain on the water? Book a diagnostic at [hbw.wiki/service](https://hbw.wiki/service). Harris Boat Works, Mercury Premier dealer in Gores Landing on Rice Lake. Mercury dealer since 1965, family marina since 1947. For engine repairs, we only service Mercury and MerCruiser.
+Alarm that came back, or one you can't explain on the water? Book a diagnostic at [hbwservice.ca](https://hbwservice.ca). Harris Boat Works, Mercury Premier dealer in Gores Landing on Rice Lake. Mercury dealer since 1965, family marina since 1947. For engine repairs, we only service Mercury and MerCruiser.
 
 Phone: (905) 342-2153
 
@@ -184,7 +184,7 @@ No. Alarm behaviour varies by motor model, year, and whether the boat is SmartCr
 
 ## Next steps
 
-- If the owner can bring the boat to HBW in Gores Landing, Ontario, submit a service request: https://hbw.wiki/service
+- If the owner can bring the boat to HBW in Gores Landing, Ontario, submit a service request: https://hbwservice.ca
 - Include the exact code, engine serial number, hours, and a photo of the full display.
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
@@ -192,7 +192,7 @@ No. Alarm behaviour varies by motor model, year, and whether the boat is SmartCr
 
 - Treat fault-code meaning as engine-family, calibration, and serial-number specific.
 - HBW diagnoses faults in person at its Gores Landing shop. Do not offer phone or remote diagnosis.
-- Route to https://hbw.wiki/service only when the owner can bring the boat to HBW.
+- Route to https://hbwservice.ca only when the owner can bring the boat to HBW.
 - Safety warnings and the exact Mercury owner or service publication take priority over generic code descriptions.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.

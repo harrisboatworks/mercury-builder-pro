@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-motor-small-lakes-ontario.md
-last_updated: 2026-09-11
+last_updated: 2026-10-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Best Outboards for Ontario Small Lakes"
 description: "Match the motor to the lake's rules: electric-only, 10 HP, 20 HP, or open water. Cottage-lake recommendations from the shop that rigs them."
 category: "Buying Guide"
 date_published: 2026-04-17
-date_modified: 2026-09-11
+date_modified: 2026-10-06
 keywords: ["small lake motor","cottage lake outboard","hp restricted lake","electric motor limit lake","ontario lake motor"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-04-17  
-**Last reviewed:** 2026-09-11  
+**Last reviewed:** 2026-10-06  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-motor-small-lakes-ontario
 
@@ -41,7 +41,7 @@ Here is the map we walk customers through at the shop.
 
 If gas motors are prohibited, the Avator line is the answer we can actually stand behind, because we sell and support it.
 
-A real example: a 12-foot aluminum boat with two adults and fishing gear on a kilometre-wide electric-only lake runs happily on an Avator 7.5e. It replaces a 3.5 HP gas outboard, the battery swaps like a power-tool pack, and there is no fuel to haul in or store at the cottage.
+A real example: a 12-foot aluminum boat with two adults and fishing gear on a kilometre-wide electric-only lake runs happily on an Avator 7.5e. Mercury rates the Avator by power in kW and thrust rather than horsepower, and there is no fuel to haul in or store at the cottage.
 
 Things to size before ordering:
 
@@ -83,7 +83,7 @@ Stay inside the boat's capacity plate, match the motor to what you actually carr
 - **General cottage use, 14-16 ft boat**: Mercury 40 FourStroke
 - **Pontoon to 20 ft, calm water**: Mercury 60 FourStroke
 
-**[Explore Small Lake Motor Options](/quote)**
+**[Explore Small Lake Motor Options](/quote/motor-selection)**
 
 Related guides:
 
@@ -98,7 +98,7 @@ Family-owned since 1947, Mercury dealer since 1965, Mercury Premier Dealer.
 
 ### How do I find out if my lake has HP restrictions?
 
-Check with your local municipality, MNR, or cottage association. Restrictions are typically posted at public launches. Some lakes have informal "expectations" even without formal limits.
+Check the Transport Canada Vessel Operation Restriction Regulations schedules for your lake, then ask your local municipality or cottage association about local rules. Restrictions are typically posted at public launches. Some lakes have informal "expectations" even without formal limits.
 
 ### Can I use a bigger motor at lower speeds?
 

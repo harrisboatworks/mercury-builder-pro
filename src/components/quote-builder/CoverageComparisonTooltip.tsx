@@ -10,7 +10,7 @@ const MAX_YEARS = 8;
 
 export default function CoverageComparisonTooltip() {
   const { state, dispatch } = useQuote();
-  const { promotions } = useActivePromotions();
+  const { promotions } = useActivePromotions({ motor: state.motor });
 
   const promo = getAppliedWarrantyExtraYears(getAppliedPromotion(promotions));
   const selectedTotal = state?.warrantyConfig?.totalYears ?? (BASE_YEARS + promo);

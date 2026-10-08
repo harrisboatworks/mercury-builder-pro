@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/boat-ownership-cost-ontario-chinese.md
-last_updated: 2026-08-08
+last_updated: 2026-10-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "安省华人养船成本指南"
 description: "安省买船后到底有哪些成本？HBW 用中文讲清购船价格、PCOC、PCL、保险、燃油、保养、存放、冬化、拖车和换装发动机。"
 category: "Buying Guides"
 date_published: 2026-05-17
-date_modified: 2026-08-08
+date_modified: 2026-10-04
 keywords: ["船只持有成本","boat ownership cost Ontario","华人船主预算","winterization 费用","HBW service cost","Mercury 维护成本"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,11 +25,13 @@ revenue_driver: repower
 
 **Category:** Buying Guides  
 **Published:** 2026-05-17  
-**最后审核:** 2026-08-08  
+**最后审核:** 2026-10-04  
 **Read time:** 10 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/boat-ownership-cost-ontario-chinese
 
 > **快速答案：** 安省买船后的真实成本不只是买船价格。还要考虑 PCOC、Pleasure Craft Licence、保险、安全装备、燃油、拖车、保养维修、冬化保养、存放、船位、下水、维修和未来换装发动机。HBW 提供船只销售、保养维修、租船服务、冬化保养、存放、船位、Mercury 船外机和 MerCruiser 支持 (Harris Boat Works)。
+
+需要考取 PCOC？通过 [HBW 的 MyBoatCard 推荐链接](https://myboatcard.com/card/harrisboat)参加在线课程，使用优惠码 **HARRIS15** 可享 **15% 折扣**。
 
 如果一个船交易看起来便宜得像捡到宝，先别急着开心。船很少免费送你惊喜，但它很擅长晚一点给你账单。
 
@@ -48,7 +50,7 @@ revenue_driver: repower
 | 燃油 | 使用越多越明显 |
 | 保养维修 | 保养和问题处理 |
 | 冬化保养 | 安省冬天不能忽略 |
-| 存放 | 室外、室内、码头、拖车都不同 |
+| 存放 | 室外、码头、拖车等方式各不相同 |
 | 拖车 | 轮胎、轴承、灯具、所有权文件 |
 | 换装发动机 | 旧发动机或长期升级计划 |
 
@@ -86,7 +88,7 @@ Transport Canada 的 Safe Boating Guide 按船型和长度列出最低安全装�
 
 ## 换装发动机是长期成本，也是机会
 
-如果船体很好但老旧船外机不可靠，换装发动机可能比买新船更合理。HBW 的 Mercury 页面说明，如果船体状况良好，换装发动机是提升可靠性、燃油经济性和性能的方式之一，不用买整条新船；页面还列出换装发动机价格通常包括发动机、舾装系统、操控系统和线缆、适用的仪表、螺旋桨、拆除、安装、湖测和保修登记 (HBW Mercury Outboards)。
+如果船体很好但老旧船外机不可靠，换装发动机可能比买新船更合理。HBW 的 Mercury 页面说明，如果船体状况良好，换装发动机是提升可靠性、燃油经济性和性能的方式之一，不用买整条新船；页面还说明换装发动机包括拆除、安装、湖测和保修登记等内容 (HBW Mercury Outboards)。
 
 这就是为什么养船成本不能只看今年。买船时就要想：这条船三年后、五年后还值不值得继续维护？如果答案是肯定的，换装发动机可能是未来选项。
 
@@ -104,7 +106,7 @@ Transport Canada 的 Safe Boating Guide 按船型和长度列出最低安全装�
 
 HBW 的 Mercury 页面说明换装发动机包括拆除、安装、湖测和保修登记等内容，透明列出包含项比一句“好交易”更有用 (HBW Mercury Outboards)。
 
-想看 Mercury 换装发动机方向，去 MercuryRepower.ca。需要保养维修、冬化保养或存放，提交 HBW 保养维修请求。还没确定要不要买船，先看 HBW 莱斯湖租船服务。
+想看 Mercury 换装发动机方向，去 MercuryRepower.ca。需要保养维修、冬化保养或存放，通过 [hbwservice.ca](https://hbwservice.ca) 提交 HBW 保养维修请求。还没确定要不要买船，先看 [HBW 莱斯湖租船服务](https://harrisboatworks.ca/rentals)，可在线查看可订船型并预订。
 
 ## 常见问题
 
@@ -129,6 +131,13 @@ Transport Canada 说明 PCOC 终身有效，但纸质或电子副本不被接受
 HBW 页面列出船只销售、保养维修、租船服务、冬化保养、存放、船位、Mercury 船外机和 MerCruiser 支持 (Harris Boat Works)。
 
 HBW 自 1947 年起就在 Gores Landing、莱斯湖经营家族码头，是 Mercury Marine Premier dealer 与 Legend Boats 经销商。
+
+## 相关指南
+
+- [多伦多华人二手船购买检查清单](/blog/zh/used-boat-buying-checklist-toronto-chinese)
+- [多伦多华人在 莱斯湖 买船完整指南：从选型到交付](/blog/zh/gta-chinese-buy-boat-rice-lake-guide)
+- [GTA 华人船主冬储完整指南：HBW 室外收缩膜冬储方案、价格、流程](/blog/zh/gta-chinese-rice-lake-winter-storage-complete-guide)
+- [为什么 GTA 华人船主选择 Harris Boat Works？](/blog/zh/why-chinese-boaters-choose-harris-boat-works)
 
 ## Next steps
 

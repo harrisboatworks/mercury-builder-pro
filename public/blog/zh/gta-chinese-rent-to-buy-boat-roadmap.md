@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/gta-chinese-rent-to-buy-boat-roadmap.md
-last_updated: 2026-08-08
+last_updated: 2026-10-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "GTA 华人从租船到买船路线图"
 description: "GTA 华人想从租船升级到买船？HBW 用中文讲清先租浮筒船或钓鱼船、拿 PCOC、选船型、选 Mercury、规划保养、存放和换装发动机。"
 category: "Buying Guides"
 date_published: 2026-05-17
-date_modified: 2026-08-08
+date_modified: 2026-10-04
 keywords: ["rent to buy boat","GTA 华人租到买","first boat roadmap","rental experience","HBW rentals","Mercury buying path"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,11 +25,13 @@ revenue_driver: repower
 
 **Category:** Buying Guides  
 **Published:** 2026-05-17  
-**最后审核:** 2026-08-08  
+**最后审核:** 2026-10-04  
 **Read time:** 11 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/gta-chinese-rent-to-buy-boat-roadmap
 
 > **快速答案：** GTA 华人从租船升级到买船，最聪明的路线是：先在莱斯湖租浮筒船或钓鱼船，确认家人真的喜欢，再准备 PCOC，比较船型，了解 PCL 和所有权文件，规划保养维修、冬化保养、存放和保险，最后再选择 Mercury 发动机或换装发动机方案。HBW 的莱斯湖租船服务页面提供浮筒船和钓鱼船，并要求驾驶者持有操船证件 (HBW Rice Lake Boat Rentals)。
+
+需要考取 PCOC？通过 [HBW 的 MyBoatCard 推荐链接](https://myboatcard.com/card/harrisboat)参加在线课程，使用优惠码 **HARRIS15** 可享 **15% 折扣**。
 
 先租不是犹豫。先租是聪明。尤其是当一条船的价格比一次租船高很多的时候，这个逻辑应该不难。
 
@@ -148,6 +150,12 @@ HBW 网站说明提供租船、船只销售、保养维修、冬化保养、存�
 - [还不确定要不要买船？先租一天试试看](/blog/zh/gta-chinese-rice-lake-day-trip-plan)
 - [第一次买船：买新船，还是买二手后换装发动机？](/blog/zh/mercury-repower-guide-gta)
 - [买二手船避坑清单（GTA 地区适用）](/blog/zh/used-boat-buying-checklist-toronto-chinese)
+
+## 相关指南
+
+- [多伦多华人在 莱斯湖 买船完整指南：从选型到交付](/blog/zh/gta-chinese-buy-boat-rice-lake-guide)
+- [多伦多华人第一次租船钓鱼：证件、安全和当天流程](/blog/zh/first-boat-rental-rice-lake-chinese-guide)
+- [安省华人养船成本指南](/blog/zh/boat-ownership-cost-ontario-chinese)
 
 ## Next steps
 

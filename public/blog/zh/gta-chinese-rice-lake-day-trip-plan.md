@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/gta-chinese-rice-lake-day-trip-plan.md
-last_updated: 2026-09-06
+last_updated: 2026-10-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,12 +11,12 @@ title: "GTA 到 Rice Lake 租船一日游：预订、证件与当天清单"
 description: "从 GTA 到 Rice Lake 租船的一日游实用指南：在线预订、每位驾驶员证件、实时路线、天气判断、check-in 和安全出发清单。"
 category: "mandarin"
 date_published: 2026-05-15
-date_modified: 2026-09-06
+date_modified: 2026-10-04
 keywords: ["多伦多 Rice Lake 一日游","GTA 华人周末出游","Rice Lake 自驾路线","安省一日游中文","Gores Landing 行程","Toronto Chinese day trip Rice Lake"]
 author: Harris Boat Works
 content_type: blog_article
 language: zh-CN
-revenue_driver: repower
+revenue_driver: rentals
 ---
 
 # GTA 到 Rice Lake 租船一日游：预订、证件与当天清单
@@ -25,11 +25,13 @@ revenue_driver: repower
 
 **Category:** mandarin  
 **Published:** 2026-05-15  
-**最后审核:** 2026-09-06  
+**最后审核:** 2026-10-04  
 **Read time:** 8 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/gta-chinese-rice-lake-day-trip-plan
 
 > **简短答案：** 先在 [HBW 在线租船页面](https://www.harrisboatworks.ca/rentals) 选日期、船型和时段并完成预订，再用确认单上的报到时间倒推当天行程。每位可能驾驶的人都必须带有效 boat operator licence／PCOC 和带照片身份证件。出发当天重新查路线、天气和租赁条件；不要把博客里的示例当作预订或天气保证。
+
+需要考取 PCOC？通过 [HBW 的 MyBoatCard 推荐链接](https://myboatcard.com/card/harrisboat)参加在线课程，使用优惠码 **HARRIS15** 可享 **15% 折扣**。
 
 ## 最容易犯的错，不是在保温箱里少放一瓶水
 
@@ -53,7 +55,7 @@ Rice Lake 一日游并不复杂。把顺序做对就行：**先订船，再确�
 
 ## 第二步：把每位驾驶员的证件一次准备好
 
-加拿大一般规则要求动力休闲船操作者随船携带 proof of competency。[Transport Canada](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/boating-safety/pleasure-craft-operator-card-pcoc) 也说明，合资格的 Rental Boat Safety Checklist 在某些租赁情境下可作为该租期的证明。
+加拿大一般规则要求动力休闲船操作者随船携带 proof of competency。[Transport Canada](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc) 也说明，合资格的 Rental Boat Safety Checklist 在某些租赁情境下可作为该租期的证明。
 
 **HBW 的内部政策更严格：每位可能驾驶的人都必须出示有效 boat operator licence／PCOC 和带照片身份证件。** 不要假设到了码头再做一张临时清单就可以代替 HBW 要求的驾驶资格。
 
@@ -131,7 +133,7 @@ GTA 多数地区到 Gores Landing 通常约 60–120 分钟，但起点、401／
 
 - [HBW 在线租船与实时可订船型](https://www.harrisboatworks.ca/rentals)
 - [Transport Canada：Rental boats](https://tc.canada.ca/en/marine-transportation/marine-safety/boating-safety/rental-boats)
-- [Transport Canada：PCOC 与其他 proof of competency](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/boating-safety/pleasure-craft-operator-card-pcoc)
+- [Transport Canada：PCOC 与其他 proof of competency](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc)
 - [Transport Canada：出发前安全检查](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/maintaining-safe-pleasure-craft)
 - [Ontario：FMZ 17 当前钓鱼规定](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17)
 
@@ -143,6 +145,12 @@ GTA 多数地区到 Gores Landing 通常约 60–120 分钟，但起点、401／
 4. 租过几次后想买船，可比较 [pontoon 与 fishing boat](/blog/zh/pontoon-vs-fishing-boat-6-8-people-zh)；已有船想换 Mercury，则在 [mercuryrepower.ca](https://www.mercuryrepower.ca) 建立报价。
 
 计划要认真，行程不必僵硬。湖况不读你的时间表，所以给安全和天气留一点余量。
+
+## 相关指南
+
+- [多伦多华人第一次租船钓鱼：证件、安全和当天流程](/blog/zh/first-boat-rental-rice-lake-chinese-guide)
+- [安省租船需要驾照吗？PCOC 与租船安全清单一次讲清](/blog/zh/pcoc-vs-rental-boat-safety-checklist-zh)
+- [莱斯湖 钓鱼指南（2026）：FMZ 17 鱼种、鱼牌与出发清单](/blog/zh/rice-lake-fishing-guide-toronto-chinese)
 
 ## FAQs
 
@@ -176,12 +184,12 @@ HBW 的内部政策要求每位可能驾驶的人出示有效 boat operator lice
 
 ## Next steps
 
-- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
+- Check the current Rice Lake rental fleet and availability: https://harrisboatworks.ca/rentals
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
-- The only commercial next step for this article is the Mercury quote configurator.
+- The only commercial next step for this article is Rice Lake rental availability at https://harrisboatworks.ca/rentals.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

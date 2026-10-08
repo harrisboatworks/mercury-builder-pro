@@ -90,7 +90,7 @@ Mercury 船外机不是一次性交易。买完以后，你还有磨合、保养
 
 ## 下一步
 
-想比较 Mercury 船外机或换装发动机报价，可以到 MercuryRepower.ca 先看透明报价。需要 Mercury/Mercruiser 保养维修，请提交 [hbw.wiki/service](https://hbw.wiki/service)。
+想比较 Mercury 船外机或换装发动机报价，可以到 MercuryRepower.ca 先看透明报价。需要 Mercury/Mercruiser 保养维修，请提交 [hbwservice.ca](https://hbwservice.ca)。
 
 ## 常见问题
 
@@ -116,11 +116,18 @@ HBW Mercury 页面说明换装发动机价格包括拆除与安装、新 Mercury
 
 ### HBW 的报价下一步在哪里？
 
-Mercury 发动机和换装发动机报价从 MercuryRepower.ca 开始。保养维修请求使用 [hbw.wiki/service](https://hbw.wiki/service)。
+Mercury 发动机和换装发动机报价从 MercuryRepower.ca 开始。保养维修请求使用 [hbwservice.ca](https://hbwservice.ca)。
 
 > 相关指南：[安省华人养船成本中文指南](/blog/zh/boat-ownership-cost-ontario-chinese)。
 
 HBW 自 1947 年起就在 Gores Landing、莱斯湖经营家族码头，是 Mercury Marine Premier dealer 与 Legend Boats 经销商。
+
+## 相关指南
+
+- [安大略省 Mercury 换新船外机完整指南：GTA 华人船主必读](/blog/zh/mercury-repower-guide-gta)
+- [多伦多华人 Mercury 船外机马力选择指南：9.9、20、60、115、150HP 怎么选？](/blog/zh/mercury-outboard-horsepower-guide-toronto-chinese)
+- [为什么 GTA 华人船主选择 Harris Boat Works？](/blog/zh/why-chinese-boaters-choose-harris-boat-works)
+- [Mercury 115马力 vs 150马力舷外机：如何选择？](/blog/zh/mercury-115-vs-150-comparison-zh)
 
 ## Next steps
 

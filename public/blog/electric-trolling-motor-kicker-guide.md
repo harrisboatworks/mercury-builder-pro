@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/electric-trolling-motor-kicker-guide.md
-last_updated: 2026-09-07
+last_updated: 2026-10-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Electric Trolling Motor vs Kicker Guide"
 description: "An HBW take on trolling motors vs kicker motors, when each wins on Rice Lake and the Kawarthas, the math on running both, and why most serious anglers do."
 category: "Comparison"
 date_published: 2026-05-04
-date_modified: 2026-09-07
+date_modified: 2026-10-06
 keywords: ["trolling motor vs kicker","kicker motor fishing","trolling motor boat","mercury kicker","auxiliary outboard","Mercury 9.9 ProKicker","electric trolling motor vs gas","bow mount trolling motor","auxiliary outboard motor"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Comparison  
 **Published:** 2026-05-04  
-**Last reviewed:** 2026-09-07  
+**Last reviewed:** 2026-10-06  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/electric-trolling-motor-kicker-guide
 
@@ -68,7 +68,7 @@ An **electric trolling motor** is battery-powered, rated in pounds of thrust (no
 
 Brands you will see: Minn Kota, Garmin Force, MotorGuide.
 
-A **gas kicker** is a small outboard mounted alongside your main motor. It runs on gasoline, gives you real propulsion at trolling speeds, and is rated in horsepower like any outboard. [The Mercury 9.9 ProKicker](/blog/mercury-prokicker-rice-lake-fishing-guide) is the king of this category, purpose-built for kicker duty with a low-RPM idle, sailboat-mode programming, and a gear ratio tuned for thrust at slow speed rather than top-end speed.
+A **gas kicker** is a small outboard mounted alongside your main motor. It runs on gasoline, gives you real propulsion at trolling speeds, and is rated in horsepower like any outboard. [The Mercury 9.9 ProKicker](/blog/mercury-prokicker-rice-lake-fishing-guide) is the king of this category, purpose-built for kicker duty with a low-RPM idle, adjustable throttle friction that keeps your hands free, and a gear ratio tuned for thrust at slow speed rather than top-end speed.
 
 These are not competing tools. They are complementary. But they cost real money, so most boaters pick one first.
 
@@ -89,7 +89,7 @@ These are not competing tools. They are complementary. But they cost real money,
 | Upfront cost (CAD, approx.) | $500 to $3,500 (before batteries) | $4,000 to $7,500 installed |
 | Emergency backup propulsion | Limited (battery-dependent) | Full backup |
 
-_Prices here are planning figures as of September 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are planning figures as of October 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 ## When an electric trolling motor wins
 
@@ -127,7 +127,6 @@ Mercury makes both [a standard 9.9 FourStroke](/blog/mercury-9-9-efi-review-onta
 
 - Idle drops to ~600 RPM vs ~750 on the standard
 - Achieves slower, steadier trolling speeds
-- "Sailboat mode" programming for hands-off running
 - Gear ratio optimized for thrust at low speed, not top-end
 - Available with electric start and power tilt
 
@@ -172,7 +171,7 @@ We rig both setups regularly:
 
 For engine repairs, we only service Mercury and MerCruiser.
 
-Request service at [hbw.wiki/service](https://hbw.wiki/service) or price a new ProKicker at [mercuryrepower.ca](https://www.mercuryrepower.ca).
+Request service at [hbwservice.ca](https://hbwservice.ca) or price a new ProKicker at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 ---
 
@@ -200,7 +199,7 @@ Not necessarily to start. Most anglers are better served by picking the right fi
 
 ### Where can I get a kicker or trolling motor installed near Rice Lake?
 
-Request service at hbw.wiki/service or call us at 905-342-2153. We are on Rice Lake in Gores Landing, ON.
+Request service at hbwservice.ca or call us at 905-342-2153. We are on Rice Lake in Gores Landing, ON.
 
 ## Related guides
 

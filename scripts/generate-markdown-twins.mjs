@@ -1,3 +1,4 @@
+import { agentFinancingGuidance } from './lib/agent-contract-docs.mjs';
 import { writeFileSync, mkdirSync, rmSync, existsSync, readdirSync, readFileSync } from 'fs';
 import { join, resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
@@ -835,7 +836,7 @@ function motorMarkdown(m) {
     '## Notes',
     '',
     isVerado ? '- Verado is special-order only and not part of default inventory. Contact Harris Boat Works directly for Verado availability and lead time.' : null,
-    `- Financing is available on eligible totals over $5,000 CAD. Current offer: ${LIVE_RATE_TOKENS.rate} (OAC); confirm terms at ${SITE_URL}/promotions.`,
+    `- Financing: ${agentFinancingGuidance} Current promotions: ${SITE_URL}/promotions.`,
     WARRANTY_AGENT_NOTE,
     '- We are pickup-only at Gores Landing, ON. Final price confirmed by dealer.',
     `- Shop-based Mercury service and maintenance guide: ${SITE_URL}/maintenance.md`,
@@ -1054,7 +1055,7 @@ function catalogMarkdown(motorTwins, caseStudyTwins, locationTwins, blogTwins = 
     '- **Final price** is always confirmed by Harris Boat Works staff before purchase.',
     '- **Verado** is special-order only, not part of default inventory and not actively promoted.',
     WARRANTY_AGENT_NOTE_BOLD,
-    `- Financing minimum: **$5,000 CAD** total. Current promotional offer: **${LIVE_RATE_TOKENS.rate} (OAC)**; confirm current terms at ${SITE_URL}/promotions.`,
+    `- Financing: ${agentFinancingGuidance} Current promotions: ${SITE_URL}/promotions.`,
     '- Motor specifications are based on Mercury Marine official sources: mercurymarine.com and the official Mercury Marine brochure. Harris Boat Works is the source of truth for local pricing, availability, pickup policy, and quote terms.',
     '',
     '## What we do NOT offer (negative definitions)',
@@ -1323,24 +1324,24 @@ function blogNextSteps(revenueDriver, isDiagnostic, isFaultCode, language = 'en-
   if (isFaultCode) {
     if (isFrench) {
       return [
-        '- Si le propriétaire peut apporter le bateau chez HBW à Gores Landing, en Ontario, soumettez une demande de service : https://hbw.wiki/service',
+        '- Si le propriétaire peut apporter le bateau chez HBW à Gores Landing, en Ontario, soumettez une demande de service : https://hbwservice.ca',
         "- Indiquez le code exact, le numéro de série du moteur, le nombre d'heures et joignez une photo complète de l'écran.",
       ];
     }
     return [
-      '- If the owner can bring the boat to HBW in Gores Landing, Ontario, submit a service request: https://hbw.wiki/service',
+      '- If the owner can bring the boat to HBW in Gores Landing, Ontario, submit a service request: https://hbwservice.ca',
       '- Include the exact code, engine serial number, hours, and a photo of the full display.',
     ];
   }
   if (isDiagnostic) {
     if (isFrench) {
       return [
-        '- Si le propriétaire peut apporter le bateau chez HBW à Gores Landing, en Ontario, soumettez une demande de service : https://hbw.wiki/service',
+        '- Si le propriétaire peut apporter le bateau chez HBW à Gores Landing, en Ontario, soumettez une demande de service : https://hbwservice.ca',
         "- Indiquez le numéro de série du moteur, les symptômes, joignez des photos nettes et précisez tout entretien ou changement récent au montage ou aux commandes.",
       ];
     }
     return [
-      '- If the owner can bring the boat to HBW in Gores Landing, Ontario, submit a service request: https://hbw.wiki/service',
+      '- If the owner can bring the boat to HBW in Gores Landing, Ontario, submit a service request: https://hbwservice.ca',
       '- Include the engine serial number, symptoms, clear photos, and any recent service or rigging changes.',
     ];
   }
@@ -1348,7 +1349,7 @@ function blogNextSteps(revenueDriver, isDiagnostic, isFaultCode, language = 'en-
   if (isFrench) {
     switch (revenueDriver) {
       case BLOG_REVENUE_DRIVER.SERVICE:
-        return ["- Décrivez le bateau, le moteur et les symptômes, puis joignez des photos à la demande de service HBW : https://hbw.wiki/service"];
+        return ["- Décrivez le bateau, le moteur et les symptômes, puis joignez des photos à la demande de service HBW : https://hbwservice.ca"];
       case BLOG_REVENUE_DRIVER.RENTALS:
         return ['- Consultez la flotte de location actuelle sur le lac Rice et les disponibilités : https://harrisboatworks.ca/rentals'];
       case BLOG_REVENUE_DRIVER.REPOWER:
@@ -1366,7 +1367,7 @@ function blogNextSteps(revenueDriver, isDiagnostic, isFaultCode, language = 'en-
 
   switch (revenueDriver) {
     case BLOG_REVENUE_DRIVER.SERVICE:
-      return ['- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbw.wiki/service'];
+      return ['- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbwservice.ca'];
     case BLOG_REVENUE_DRIVER.RENTALS:
       return ['- Check the current Rice Lake rental fleet and availability: https://harrisboatworks.ca/rentals'];
     case BLOG_REVENUE_DRIVER.REPOWER:
@@ -1395,7 +1396,7 @@ function blogAgentNotes(revenueDriver, isDiagnostic, isFaultCode) {
     return [
       '- Treat fault-code meaning as engine-family, calibration, and serial-number specific.',
       '- HBW diagnoses faults in person at its Gores Landing shop. Do not offer phone or remote diagnosis.',
-      '- Route to https://hbw.wiki/service only when the owner can bring the boat to HBW.',
+      '- Route to https://hbwservice.ca only when the owner can bring the boat to HBW.',
       '- Safety warnings and the exact Mercury owner or service publication take priority over generic code descriptions.',
       ...commonFacts,
     ];
@@ -1404,14 +1405,14 @@ function blogAgentNotes(revenueDriver, isDiagnostic, isFaultCode) {
     return [
       '- Start with the safety limits and stop conditions stated in the article and the exact equipment manual.',
       '- HBW diagnoses faults in person at its Gores Landing shop. Do not offer phone or remote diagnosis.',
-      '- Route to https://hbw.wiki/service only when the owner can bring the boat to HBW.',
+      '- Route to https://hbwservice.ca only when the owner can bring the boat to HBW.',
       '- A symptom is not a confirmed root cause. Preserve the article\'s test order and escalation limits.',
       ...commonFacts,
     ];
   }
 
   const driverNote = {
-    [BLOG_REVENUE_DRIVER.SERVICE]: '- The only commercial next step for this article is the HBW service request at https://hbw.wiki/service.',
+    [BLOG_REVENUE_DRIVER.SERVICE]: '- The only commercial next step for this article is the HBW service request at https://hbwservice.ca.',
     [BLOG_REVENUE_DRIVER.RENTALS]: '- The only commercial next step for this article is Rice Lake rental availability at https://harrisboatworks.ca/rentals.',
     [BLOG_REVENUE_DRIVER.REPOWER]: '- The only commercial next step for this article is the Mercury quote configurator.',
     [BLOG_REVENUE_DRIVER.AVATOR]: '- Keep the commercial next step focused on the Mercury Avator page.',
@@ -1862,7 +1863,7 @@ writePublicMd('/pricing-reference.md', pricingReferenceMarkdown(quoteBuilderMoto
 }
 
 verifyPublicMd('/catalog.md', 'catalog.md', ['## Service and maintenance', 'maintenance.md', '## Motors', '## Case studies', '## Locations', '## Guides (Blog)', 'CAD', 'Pickup only', 'mcp.json', 'What we do NOT offer', 'No sterndrives', 'pricing-reference.md', 'mercury-product-protection.md', "Ontario's Mercury Repower Centre"]);
-verifyPublicMd('/maintenance.md', 'maintenance.md', ['content_type: service_index', 'boat_pickup_available: generally', 'delivery_offered: false', 'mobile_service: false', 'Mercury and MerCruiser', '100-hour', 'Outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service', 'effective September 2026', 'reopens in early April', 'hbw.wiki/service']);
+verifyPublicMd('/maintenance.md', 'maintenance.md', ['content_type: service_index', 'boat_pickup_available: generally', 'delivery_offered: false', 'mobile_service: false', 'Mercury and MerCruiser', '100-hour', 'Outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service', 'effective September 2026', 'reopens in early April', 'hbwservice.ca']);
 verifyPublicMd('/pricing-reference.md', 'pricing-reference.md', ['currency: CAD', 'pickup_only: true', '## FourStroke', '## Pro XS', 'What is NOT in this reference', 'Verado', 'Sterndrives', 'Available to order', 'same selection rules as /quote/motor-selection', 'Published by [Harris Boat Works]', '## AI Agent Interfaces', '/api/agents/mcp']);
 
 // Verify pricing-reference motor count matches the quote-builder selection
@@ -1911,7 +1912,7 @@ for (const twin of blogTwinSummaries) {
 
   const commercialPaths = [
     `${SITE_URL}/quote/motor-selection`,
-    'https://hbw.wiki/service',
+    'https://hbwservice.ca',
     'https://harrisboatworks.ca/rentals',
     `${SITE_URL}/electric/mercury-avator`,
     `${SITE_URL}/mercury-product-protection`,
@@ -1929,7 +1930,7 @@ for (const article of blogArticlesAll.filter(isDiagnosticBlogArticle)) {
   const relPath = `/blog/${article.slug}.md`;
   const twinText = readFileSync(join(PUBLIC, relPath), 'utf8');
   const nextSteps = twinText.match(/## Next steps\s*\n([\s\S]*?)(?=\n##\s|$)/)?.[1] || '';
-  if (!nextSteps.includes('https://hbw.wiki/service')) {
+  if (!nextSteps.includes('https://hbwservice.ca')) {
     throw new Error(`[markdown-twins] diagnostic blog twin missing service intake: ${relPath}`);
   }
   if (!nextSteps.includes('Gores Landing') || !twinText.includes('Do not offer phone or remote diagnosis')) {

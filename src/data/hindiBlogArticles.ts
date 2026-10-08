@@ -22,9 +22,10 @@ export const hindiBlogArticles: Wave1Article[] = [
     seoTitle: 'Ontario boat licence aur fishing licence: PCOC kya hai | पूरी जानकारी Hindi mein',
     description: 'PCOC kya hai? Ontario boat licence aur fishing licence में अंतर, दोनों कैसे बनवाएं, fee structure और Rice Lake के नियम। पूरी जानकारी Hindi में यहां पढ़ें।',
     image: '/lovable-uploads/hero-boat-rental-licence-ontario.webp',
+    imageAlt: 'लकड़ी के घाट पर पानी के पास रखे नारंगी लाइफ जैकेट, धूप का चश्मा, नारंगी फ्लोट वाली चाबी और खाली स्क्रीन वाला फोन',
     author: 'Harris Boat Works',
     datePublished: '2026-06-12',
-    dateModified: '2026-09-06',
+    dateModified: '2026-10-06',
     category: 'हिन्दी गाइड',
     readTime: '8 मिनट',
     keywords: ['pcoc kya hai Ontario (What is PCOC in Ontario)', 'boat operator license kaise banwayein Canada (How to get boat operator license in Canada)', 'Ontario boat license online hindi (Ontario boat license online in Hindi)', 'pcoc ka exam pass karne ke tips (Tips to pass PCOC exam)', 'boat chalane ka license kitne din mein milta hai (How many days to get a boating license)', 'Ontario fishing license hindi mein jaankari (Information about Ontario fishing license in Hindi)', 'Toronto ke paas machli pakadne ki jagahein (Fishing spots near Toronto)', 'Ontario fishing rules 2024 hindi (Ontario fishing rules 2024 Hindi)', 'fishing season Ontario kab se hai (When does fishing season start in Ontario)', 'best fishing spots near Toronto hindi (Best fishing spots near Toronto in Hindi)'],
@@ -32,15 +33,17 @@ export const hindiBlogArticles: Wave1Article[] = [
       { question: 'PCOC क्या है और क्या मुझे सचमुच इसकी ज़रूरत है?', answer: 'PCOC यानी Pleasure Craft Operator Card बताता है कि आपने नाव सुरक्षा का प्रशिक्षण ले लिया है। मोटर वाली मनोरंजन नाव चलाने के लिए मान्य योग्यता-प्रमाण चाहिए। PCOC इसका सबसे आम रूप है; Transport Canada कुछ अन्य प्रमाण भी स्वीकार करता है। HBW पर किराए की नाव के लिए अलग शर्तें लागू हैं। यह जीवनभर चलता है और रिन्यू नहीं कराना पड़ता।' },
       { question: 'boat operator license kaise banwayein Canada?', answer: 'कनाडा में बोट ऑपरेटर लाइसेंस (PCOC) बनवाना बहुत सीधा है: Transport Canada की सूची में से कोई ऑनलाइन कोर्स खरीदें, पाठ्यक्रम पूरा करें, और ऑनलाइन परीक्षा पास करें। भुगतान से पहले परीक्षा की भाषा और स्वीकृत सहायता मान्यता-प्राप्त प्रदाता से पूछ लें। पास होते ही कार्ड मिल जाता है।' },
       { question: 'PCOC ka exam pass karne ke tips?', answer: 'कोर्स को ध्यान से पढ़ें, खासकर बुआय और चिन्हों के बारे में। अभ्यास के लिए मॉक टेस्ट ज़रूर दें (अधिकतर प्रदाता यह सुविधा देते हैं)। पढ़ाई में परिवार या अनुवाद ऐप मदद कर सकते हैं। परीक्षा सहायता या दुभाषिया मान्यता-प्राप्त प्रदाता से स्वीकृत नियमों के तहत पहले तय करें; परिवार को बिना मंज़ूरी साथ बैठाकर जवाब या अनुवाद न करवाएँ। भुगतान से पहले परीक्षा की भाषा पूछ लें। शांत दिमाग़ से बैठें।' },
-      { question: 'Ontario fishing license hindi mein jaankari kahan milegi?', answer: 'हमने ऊपर पूरी जानकारी हिंदी में दे दी है। मुख्य बात: पहले Outdoors Card बनवाएँ (हर तीन साल में), फिर हर साल उस पर एक मछली पकड़ने का लाइसेंस खरीदें, आप कंज़र्वेशन या स्पोर्ट लाइसेंस चुन सकते हैं। सब कुछ आधिकारिक वेबसाइट पर ऑनलाइन मिलता है: https://www.ontario.ca/page/fishing-licence-ontario-and-canadian-residents' },
+      { question: 'Ontario fishing license hindi mein jaankari kahan milegi?', answer: 'हमने ऊपर पूरी जानकारी हिंदी में दे दी है। मुख्य बात: पहले Outdoors Card बनवाएँ (हर तीन साल में), फिर हर साल उस पर एक मछली पकड़ने का लाइसेंस खरीदें, आप कंज़र्वेशन या स्पोर्ट लाइसेंस चुन सकते हैं। छूट याद रखें: Ontario और कनाडा के निवासी जो 18 साल से कम या 65 या उससे अधिक उम्र के हैं, उन्हें लाइसेंस की ज़रूरत नहीं है (साथ में सरकारी पहचान दस्तावेज़ रखें), और residents के लिए हर साल चार लाइसेंस-मुफ़्त मछली पकड़ने के अवधि होते हैं। सब कुछ आधिकारिक वेबसाइट पर ऑनलाइन मिलता है: https://www.ontario.ca/page/fishing-licence-ontario-and-canadian-residents' },
       { question: 'fishing season Ontario kab se hai?', answer: 'कोई पूरी झील के लिए एक तारीख नहीं होती। हर मछली (जैसे वॉलआई, बास, मस्की) का अपना मौसम होता है और वह FMZ 17 के हिसाब से तय होता है। पूरी सूची के लिए आधिकारिक Ontario Fishing Regulations Summary खोलें, वहाँ तारीखों के साथ सब लिखा है।' },
-      { question: 'Toronto ke paas machli pakadne ki jagahein kaun si hain?', answer: 'Rice Lake, Toronto के पास की बेहतरीन मछली पकड़ने की जगहों में से एक है। यहाँ से लगभग 90 मिनट की ड्राइव (Brampton, Mississauga, Scarborough, Markham सब जगह से) और आप Gores Landing पहुँच जाते हैं। हमारी किराए की नावों से झील पर उतरें और परिवार के साथ अच्छा दिन बिताएँ।' },
+      { question: 'Toronto ke paas machli pakadne ki jagahein kaun si hain?', answer: 'Rice Lake, Toronto के पास की बेहतरीन मछली पकड़ने की जगहों में से एक है। Toronto से लगभग 90 मिनट पूर्व की ड्राइव और आप Gores Landing पहुँच जाते हैं। हमारी किराए की नावों से झील पर उतरें और परिवार के साथ अच्छा दिन बिताएँ।' },
       { question: 'क्या मुझे HBW पर हिंदी में सेवा मिल सकती है?', answer: 'हम चाहते हैं कि हर कोई सहज महसूस करे, इसलिए यह गाइड हिंदी में बनाई। लेकिन हमारी टीम अंग्रेज़ी में काम करती है। अगर आप अंग्रेज़ी नहीं बोलते, तो साथ में कोई अंग्रेज़ी जानने वाला लाएँ या अनुवाद ऐप इस्तेमाल करें। हम धैर्यपूर्वक सब समझा देंगे और मिलकर हल निकालेंगे।' }
     ],
     nativeReview: 'pending',
-    internalLinks: ['https://harrisboatworks.ca/rentals', 'https://hbw.wiki/service'],
+    internalLinks: ['https://harrisboatworks.ca/rentals', 'https://hbwservice.ca'],
     officialSources: ['https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc', 'https://tc.canada.ca/en/marine-transportation/buying-boat/find-education-resources-recreational-boaters', 'https://www.ontario.ca/page/fishing-licence-ontario-and-canadian-residents', 'https://www.ontario.ca/page/get-outdoors-card-and-licence-summary', 'https://www.ontario.ca/page/learn-fish'],
     content: `अगर आप Greater Toronto Area (GTA) में रहने वाले पहली पीढ़ी के प्रवासी परिवार हैं और आपने कनाडा में कभी नाव नहीं चलाई, तो लाइसेंसों की बात सुनकर घबराहट होना आम है। हम समझते हैं। असल में, दो चीज़ें ज़रूरी हैं: एक आपका अपना ऑपरेटर कार्ड (PCOC) और दूसरा मछली पकड़ने का लाइसेंस। नीचे हम दोनों को आसान हिंदी में समझा रहे हैं ताकि आप बिना डरे Rice Lake पर अपने परिवार के साथ अच्छा समय बिता सकें। यह पूरी जानकारी आम समझ के लिए है, क़ानूनी सलाह नहीं। नियम बदल सकते हैं, हमेशा आधिकारिक स्रोत को अंतिम मानें।
+
+PCOC चाहिए? [HBW के MyBoatCard रेफ़रल लिंक](https://myboatcard.com/card/harrisboat) से ऑनलाइन कोर्स करें और **15% छूट** के लिए कोड **HARRIS15** इस्तेमाल करें।
 
 ## PCOC kya hai Ontario | PCOC क्या है
 
@@ -67,7 +70,7 @@ Harris Boat Works पर हम नावों की रजिस्ट्र�
 
 ## Ontario fishing license: Outdoors Card aur licence | ओंटेरियो फिशिंग लाइसेंस: आउटडोर्स कार्ड और लाइसेंस
 
-मछली पकड़ने के लिए दो चीज़ें चाहिए: एक प्लास्टिक का Outdoors Card और एक मछली पकड़ने का लाइसेंस टैग। Outdoors Card आपकी पहचान का कार्ड है, जो हर तीन साल में बनवाना होता है (या रिन्यू कराना होता है)। फिर हर साल आप उस कार्ड पर एक मछली पकड़ने का लाइसेंस खरीदते हैं। लाइसेंस दो तरह के होते हैं:
+मछली पकड़ने के लिए दो चीज़ें चाहिए: एक प्लास्टिक का Outdoors Card और एक मछली पकड़ने का लाइसेंस। Outdoors Card आपकी पहचान का कार्ड है, जो हर तीन साल में बनवाना होता है (या रिन्यू कराना होता है)। फिर हर साल आप उस कार्ड पर एक मछली पकड़ने का लाइसेंस खरीदते हैं। छूट भी जान लें: Ontario और कनाडा के निवासी जो 18 साल से कम या 65 या उससे अधिक उम्र के हैं, उन्हें लाइसेंस की ज़रूरत नहीं है, बस साथ में सरकारी पहचान दस्तावेज़ रखें। Residents के लिए हर साल चार लाइसेंस-मुफ़्त मछली पकड़ने के अवधि होते हैं: Family Day weekend, Mother's Day weekend, Father's Day weekend, और Canada Day के आसपास Ontario Family Fishing Week। लाइसेंस दो तरह के होते हैं:
 
 - Sport Fishing Licence (स्पोर्ट लाइसेंस): इसमें मछली रखने की सीमा ज़्यादा होती है।
 - Conservation Fishing Licence (कंज़र्वेशन लाइसेंस): सीमा कम होती है और यह सस्ता होता है।
@@ -92,7 +95,7 @@ Harris Boat Works में pontoon और fishing boat rental विकल्�
 
 ## Family day Rice Lake par | Rice Lake पर परिवार के साथ एक दिन
 
-Rice Lake, GTA के किसी भी कोने से लगभग 90 मिनट की ड्राइव पर है, चाहे आप Brampton, Mississauga, Scarborough, या Markham में हों। सड़क आसान है और सीन बहुत सुंदर। सुबह निकलें, हमारे यहाँ Gores Landing पहुँचें, और पानी पर दिन का आनंद लें।
+Rice Lake, Toronto से लगभग 90 मिनट पूर्व में है। Scarborough और Markham जैसे पूर्वी हिस्सों से यह थोड़ा पास पड़ता है, जबकि Brampton और Mississauga से ट्रैफ़िक के हिसाब से ज़्यादा समय लगता है। सड़क आसान है और सीन बहुत सुंदर। सुबह निकलें, हमारे यहाँ Gores Landing पहुँचें, और पानी पर दिन का आनंद लें।
 
 हमारी मरीना में आपको एथेनॉल-मुक्त ईंधन मिलता है, हमारी टीम मदद के लिए मौजूद है, और हम 1947 से परिवार द्वारा चलाए जा रहे हैं। हम Mercury के डीलर 1965 से हैं और Premier Dealer का दर्जा रखते हैं। चाहे आप खुद की Mercury नाव चला रहे हों या हमारी किराए की नाव, आपका स्वागत है।
 
@@ -120,7 +123,7 @@ PCOC यानी Pleasure Craft Operator Card बताता है कि आ
 कोई पूरी झील के लिए एक तारीख नहीं होती। हर मछली (जैसे वॉलआई, बास, मस्की) का अपना मौसम होता है और वह FMZ 17 के हिसाब से तय होता है। पूरी सूची के लिए आधिकारिक Ontario Fishing Regulations Summary खोलें, वहाँ तारीखों के साथ सब लिखा है।
 
 **Toronto ke paas machli pakadne ki jagahein kaun si hain?**  
-Rice Lake, Toronto के पास की बेहतरीन मछली पकड़ने की जगहों में से एक है। यहाँ से लगभग 90 मिनट की ड्राइव (Brampton, Mississauga, Scarborough, Markham सब जगह से) और आप Gores Landing पहुँच जाते हैं। हमारी किराए की नावों से झील पर उतरें और परिवार के साथ अच्छा दिन बिताएँ।
+Rice Lake, Toronto के पास की बेहतरीन मछली पकड़ने की जगहों में से एक है। Toronto से लगभग 90 मिनट पूर्व की ड्राइव और आप Gores Landing पहुँच जाते हैं। हमारी किराए की नावों से झील पर उतरें और परिवार के साथ अच्छा दिन बिताएँ।
 
 **क्या मुझे HBW पर हिंदी में सेवा मिल सकती है?**  
 हम चाहते हैं कि हर कोई सहज महसूस करे, इसलिए यह गाइड हिंदी में बनाई। लेकिन हमारी टीम अंग्रेज़ी में काम करती है। अगर आप अंग्रेज़ी नहीं बोलते, तो साथ में कोई अंग्रेज़ी जानने वाला लाएँ या अनुवाद ऐप इस्तेमाल करें। हम धैर्यपूर्वक सब समझा देंगे और मिलकर हल निकालेंगे।
@@ -128,7 +131,7 @@ Rice Lake, Toronto के पास की बेहतरीन मछली �
 ## अपनी यात्रा शुरू करें | हमसे जुड़ें
 
 अब बस एक कदम बाकी है। नाव किराए पर लेने के लिए: https://harrisboatworks.ca/rentals  
-नाव की सर्विस या किसी भी सवाल के लिए: https://hbw.wiki/service
+नाव की सर्विस या किसी भी सवाल के लिए: https://hbwservice.ca
 
 हमें फ़ोन करें: (905) 342-2153  
 मैसेज भेजें: (647) 952-2153  

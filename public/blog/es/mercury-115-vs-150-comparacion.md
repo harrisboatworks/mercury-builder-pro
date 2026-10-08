@@ -31,7 +31,7 @@ revenue_driver: repower
 
 ### Respuesta rápida
 
-El Mercury FourStroke 115 HP pesa aproximadamente 163 kg, tiene motor de 2.1 litros y es ideal para botes de 16–19 pies con 2–3 personas. El 150 HP pesa ~206 kg (+44 kg / 96 libras), tiene un motor de 3.0 litros, y brilla en botes de 19–22 pies con cargas de 4–5 personas o en aguas más abiertas como Lake Simcoe. El 150 no es simplemente "35 HP más", es un motor fundamentalmente diferente con más desplazamiento, más torque y más peso. Para la mayoría del uso familiar en Rice Lake y los Kawarthas, el 115 es suficiente. Si tienes carga máxima o cruzas aguas abiertas regularmente, el 150 importa.
+El Mercury FourStroke 115 HP pesa aproximadamente 163 kg, tiene motor de 2.1 litros y suele ser una buena opción en cascos de aluminio en V de unos 18 pies con 2–3 personas. El 150 HP pesa ~206 kg (+44 kg / 96 libras), tiene un motor de 3.0 litros, y es la opción más cómoda en cascos de aluminio en V de 19 a 20 pies con cargas de 4–5 personas o en aguas más abiertas como Lake Simcoe (la eslora sola no decide: pesan el tipo de casco, la carga y la placa de capacidad). El 150 no es simplemente "35 HP más", es un motor fundamentalmente diferente con más desplazamiento, más torque y más peso. Para la mayoría del uso familiar en Rice Lake y los Kawarthas, el 115 es suficiente. Si tienes carga máxima o cruzas aguas abiertas regularmente, el 150 importa.
 
 ---
 
@@ -53,7 +53,7 @@ Este artículo te da las especificaciones reales, la diferencia práctica en el 
 | Desplazamiento | 2.1 litros (inline-4) | 3.0 litros (inline-4) |
 | Peso aproximado | ~163 kg | ~206 kg (+44 kg / 96 lbs) |
 | RPM máximo (WOT) | 5,000–6,000 RPM | 5,000–5,800 RPM |
-| Rango de botes | 16–19 pies | 19–22 pies |
+| Casco de aluminio en V típico | Unos 18 pies | 19–20 pies |
 | Versión Pro XS | Sí | Sí |
 | Garantía Mercury | 3 años | 3 años |
 
@@ -67,17 +67,17 @@ El 150 tiene un **43% más desplazamiento** que el 115. No es la misma base con 
 
 En un bote de 17 pies con dos adultos y equipo de pesca liviano, la diferencia entre 115 y 150 es **notoria pero no dramática**. El 150 planeará más rápido y llegará a velocidad de crucero con menos esfuerzo. El 115 llega también, un poco más lento en el plano.
 
-### Con carga completa (4 adultos + cooler + equipaje)
+### Con carga completa (4 adultos + hielera + equipaje)
 
 Aquí es donde el 150 demuestra su valor. Con 4 adultos y carga real, el 115 trabaja cerca de su límite para planearse. El tiempo de planeo aumenta, el consumo de combustible sube, y el motor trabaja con menor margen. El 150 maneja esa carga con facilidad.
 
 ### En aguas abiertas y viento
 
-Para cruzar aguas como la parte más ancha de Rice Lake, Lake Simcoe o Georgian Bay, el 150 da más margen de seguridad. Puede ajustar la velocidad manteniendo planeado. El 115, especialmente con carga, tiene menos margen de maniobra con viento y oleaje.
+Para cruzar aguas como la parte más ancha de Rice Lake, Lake Simcoe o Georgian Bay, la seguridad depende sobre todo del casco, de las condiciones y de respetar la placa de capacidad, y un 115 en un bote clasificado para 150 es una combinación normal. Aun así, el 150 da más margen de potencia con carga y oleaje. Puede ajustar la velocidad manteniendo planeado. El 115, especialmente con carga, tiene menos margen de maniobra con viento y oleaje.
 
 ### Consumo de combustible
 
-Contrariamente a lo que mucha gente asume, el 150 no siempre consume más que el 115. Si el 115 trabaja al 90% de su capacidad para llevar una carga que el 150 maneja al 60–70%, el consumo puede ser similar o hasta superior en el 115. Dicho esto, para uso ligero con poca gente, el 115 consumirá menos.
+A la misma velocidad de crucero, el 150 consume algo más de combustible por hora que el 115 (en pruebas de Mercury con un mismo casco de aluminio de 18.8 pies, a unas 25 mph: unos 18.6 L/h frente a 16 L/h; el casco, la carga y la hélice cambian la cifra), aunque gira a menos RPM. Si el 115 trabaja al 90% de su capacidad para llevar una carga que el 150 maneja al 60–70%, la diferencia de consumo se reduce, pero a igual velocidad de crucero el 150 sigue gastando algo más. Dicho esto, para uso ligero con poca gente, el 115 consumirá menos.
 
 ---
 
@@ -85,9 +85,9 @@ Contrariamente a lo que mucha gente asume, el 150 no siempre consume más que el
 
 El 150 pesa **44 kg más** (96 libras) que el 115. Eso puede parecer poco, pero en la popa de un bote tiene efecto real:
 
-1. **Límite de peso del transom**, verifica la placa de capacidad de tu bote. Si ya estás cerca del límite de la popa, el 150 puede excederlo.
+1. **Límite de peso del espejo de popa**, verifica la placa de capacidad de tu bote. Si ya estás cerca del límite de la popa, el 150 puede excederlo.
 2. **Manejo en agua**, más peso en la popa eleva la proa y puede afectar el plano ideal.
-3. **Remolque**, el GVWR (peso bruto) de tu trailer y vehículo debe incluir el motor.
+3. **Remolque**, el peso bruto (GVWR) de tu remolque y de tu vehículo debe incluir el motor.
 
 Antes de comprar el 150 para un bote de 17 pies o menos, verifica la capacidad máxima de motor del fabricante.
 
@@ -104,14 +104,14 @@ Si eres pescador de torneo o buscas máxima aceleración en planeado, el Pro XS 
 ## ¿Cuál motor es para ti?
 
 ### Elige el Mercury 115 FourStroke si:
-- Tu bote es de 16–19 pies
+- Tu casco de aluminio en V mide unos 18 pies
 - Sales típicamente con 2–3 personas
 - Pescas en Rice Lake, Kawarthas, y lagos interiores similares
 - El precio importa, el 115 es más accesible
 - No buscas rendimiento extremo ni cargas completas regulares
 
 ### Elige el Mercury 150 FourStroke si:
-- Tu bote es de 19–22 pies
+- Tu casco de aluminio en V mide entre 19 y 20 pies
 - Sales regularmente con 4–5 personas o carga completa
 - Navegas en aguas más abiertas con viento y oleaje
 - El planeo rápido importa para salidas de pesca temprana al amanecer
@@ -123,31 +123,39 @@ Si eres pescador de torneo o buscas máxima aceleración en planeado, el Pro XS 
 
 Harris Boat Works publica precios en línea, algo que la mayoría de los concesionarios no hacen. Para ver los precios actuales en CAD de los motores Mercury 115 y 150, usa el configurador en **mercuryrepower.ca**.
 
-El configurador incluye opciones de rigging, controles, y hélice, para que el presupuesto final sea real, no solo el precio del motor. El rigging, los controles y la hélice cambian el total; compare cotizaciones escritas con las mismas fechas y supuestos.
+El configurador incluye opciones de instalación, controles, y hélice, para que el presupuesto final sea real, no solo el precio del motor. La instalación, los controles y la hélice cambian el total; compare cotizaciones escritas con las mismas fechas y supuestos.
 
 ---
 
 ## Sobre Harris Boat Works
 
-Harris Boat Works es un negocio familiar desde 1947 en Rice Lake, Gores Landing, Ontario. Somos concesionario Mercury Marine Premier, el nivel más alto de certificación Mercury, lo que significa acceso prioritario a partes, técnicos certificados, y manejo directo de garantías con Mercury.
+Harris Boat Works es un negocio familiar desde 1947 en Rice Lake, Gores Landing, Ontario. Somos concesionario Mercury desde 1965 y actualmente concesionario Mercury Marine Premier, con servicio autorizado de Mercury directamente en Rice Lake.
 
-Vendemos aproximadamente **65 motores Mercury nuevos al año**. Sabemos qué funciona en estos lagos.
+En 2025 vendimos unos **65 motores Mercury nuevos**. Sabemos qué funciona en estos lagos.
 
-Rice Lake es uno de los mejores lagos de walleye en Ontario. Nuestros clientes lo saben porque llevan generaciones lanzando aquí.
+Rice Lake tiene una larga historia como lago de walleye. Nuestros clientes lo saben porque llevan generaciones lanzando aquí.
 
-Para servicio técnico: Harris Boat Works solo da servicio a motores Mercury y Mercruiser.
+Para servicio técnico: Harris Boat Works solo da servicio a motores Mercury y MerCruiser.
 
 ---
 
 ## Compara precios y configura tu motor
 
-Usa el configurador en **mercuryrepower.ca** para ver precios reales del 115 y 150 HP, comparar opciones de rigging, y armar tu presupuesto completo, sin llamadas previas, sin presión.
+Usa el configurador en **mercuryrepower.ca** para ver precios reales del 115 y 150 HP, comparar opciones de instalación, y armar tu presupuesto completo, sin llamadas previas, sin presión.
 
-¿Quieres hablar con alguien? Llama al **905-342-2153** o escríbenos en **hbw.wiki/service**.
+¿Quieres hablar con alguien? Llama al **905-342-2153** o escríbenos en **hbwservice.ca**.
 
 Harris Boat Works, Gores Landing, Ontario
 harrisboatworks.ca | Rice Lake
 ---
+
+## Guías relacionadas
+
+- [Guía completa para comprar un bote en Ontario](/blog/es/guia-comprar-bote-ontario)
+- [Guía de pesca en Rice Lake, Ontario](/blog/es/guia-pesca-rice-lake-ontario)
+- [Licencia de navegación y regulaciones de seguridad en Ontario](/blog/es/licencia-navegacion-ontario-regulaciones)
+- [Guía de preparación invernal para motores Mercury en Ontario](/blog/es/preparacion-invernal-motor-mercury)
+- [Remotorización vs bote nuevo: ¿Cuál es la mejor inversión?](/blog/es/remotorizacion-vs-bote-nuevo)
 
 ## FAQs
 

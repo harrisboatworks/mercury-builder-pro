@@ -29,9 +29,9 @@ revenue_driver: service
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-motor-maintenance-seasonal-tips
 
-> **Quick answer:** For most current Mercury FourStrokes, scheduled maintenance is due at 100 engine hours or annually, with expanded work commonly due around 300 hours or three seasons. Ontario owners should combine that manual-based schedule with spring checks and proper fall storage preparation. There is no universal Mercury 20-hour oil-change requirement. For fall work at HBW, complete hbw.wiki/service, then drop off anytime, including after hours.
+> **Quick answer:** For most current Mercury FourStrokes, scheduled maintenance is due at 100 engine hours or annually, with expanded work commonly due around 300 hours or three seasons. Ontario owners should combine that manual-based schedule with spring checks and proper fall storage preparation. There is no universal Mercury 20-hour oil-change requirement. For fall work at HBW, complete hbwservice.ca, then drop off anytime, including after hours.
 
-Mercury motor maintenance in Ontario follows the seasonal cycle: spring commissioning (April-May), summer mid-season check (July), fall winterization (October-November), and a winter storage period. We do all of these at HBW. For a scope based on your specific motor, [request service](https://hbw.wiki/service).
+Mercury motor maintenance in Ontario follows the seasonal cycle: spring commissioning (April-May), summer mid-season check (July), fall winterization (October-November), and a winter storage period. We do all of these at HBW. For a scope based on your specific motor, [request service](https://hbwservice.ca).
 
 ## Quick recommendation
 
@@ -92,11 +92,11 @@ Fall preparation at HBW can include:
 - Lubrication of cables and pivot points
 - Battery test, disconnect, and maintenance plan
 
-Some boaters DIY winterization, which is fine for confident owners on smaller motors. The [DIY winterization guide](/blog/diy-mercury-outboard-winterization-guide) walks through the procedure. For bigger motors or owners who want it done right without doing it themselves, [request service at HBW](https://hbw.wiki/service).
+Some boaters DIY winterization, which is fine for confident owners on smaller motors. The [DIY winterization guide](/blog/diy-mercury-outboard-winterization-guide) walks through the procedure. For bigger motors or owners who want it done right without doing it themselves, [request service at HBW](https://hbwservice.ca).
 
 For pricing context, see the [boat winterization cost guide](/blog/boat-winterization-cost-ontario-2026).
 
-### Winter storage (December 1 to April 1)
+### Winter storage
 
 If winterization is done correctly, the motor mostly takes care of itself over winter. A few things to do or avoid:
 
@@ -154,19 +154,19 @@ For high-hour use, the hour trigger can arrive before the calendar. Commercial-d
 
 For exact intervals on your specific motor model, the Mercury owner's manual is the authoritative source. We follow Mercury's published schedules at HBW.
 
-- [Spring Outboard Commissioning Checklist](/blog/spring-outboard-commissioning-checklist), what to do at spring service
-- [How Much Does Boat Winterization Cost?](/blog/boat-winterization-cost-ontario-2026), winterization pricing and what's included
-- [DIY Mercury Outboard Winterization Guide](/blog/diy-mercury-outboard-winterization-guide), step-by-step DIY walkthrough
-- [Breaking In Your New Mercury Motor](/blog/breaking-in-new-mercury-motor-guide), first-year service for repowered or new motors
-- [Mercury Outboard Won't Start Troubleshooting](/blog/mercury-outboard-wont-start-troubleshooting), spring start-up diagnostics
+- [Spring Outboard Commissioning Checklist](/blog/spring-outboard-commissioning-checklist): what to do at spring service
+- [How Much Does Boat Winterization Cost?](/blog/boat-winterization-cost-ontario-2026): winterization pricing and what's included
+- [DIY Mercury Outboard Winterization Guide](/blog/diy-mercury-outboard-winterization-guide): step-by-step DIY walkthrough
+- [Breaking In Your New Mercury Motor](/blog/breaking-in-new-mercury-motor-guide): first-year service for repowered or new motors
+- [Mercury Outboard Won't Start Troubleshooting](/blog/mercury-outboard-wont-start-troubleshooting): spring start-up diagnostics
 
 ## Ready to request service?
 
-HBW handles fall winterization and outdoor storage first come, first served. Complete [hbw.wiki/service](https://hbw.wiki/service), then drop off anytime, including after hours. The marina is closed December 1 through April 1.
+HBW handles fall winterization and outdoor storage first come, first served. Complete [hbwservice.ca](https://hbwservice.ca), then drop off anytime, including after hours. The marina is closed December 1 through April 1.
 
-[**Request Service**](https://hbw.wiki/service)
+[**Request Service**](https://hbwservice.ca)
 
-Not sure what your specific motor needs? Put in a service request at [hbw.wiki/service](https://hbw.wiki/service) with your motor details and we'll lay it out.
+Not sure what your specific motor needs? Put in a service request at [hbwservice.ca](https://hbwservice.ca) with your motor details and we'll lay it out.
 
 ## Sources
 
@@ -204,11 +204,11 @@ You can handle several tasks yourself: checking and changing oil, replacing fuel
 
 ### When should I winterize my outboard in Ontario?
 
-Complete the model-specific storage procedure before the boat is laid up and before freezing conditions. At HBW, fall service runs through November and the marina closes on December 1. Treat fresh fuel, service the gearcase lubricant, and follow the exact owner's manual for internal engine protection and storage position.
+Complete the model-specific storage procedure before the boat is laid up and before freezing conditions. At HBW, mid-November is last call for fall service and the marina closes on December 1. Treat fresh fuel, service the gearcase lubricant, and follow the exact owner's manual for internal engine protection and storage position.
 
 ### How long does a professional outboard winterization take?
 
-The shop time depends on the engine, boat access, annual service items, and any issues found. A small portable and a V6 do not use the same procedure. Submit the serial number and service history at hbw.wiki/service so HBW can scope the correct fall work.
+The shop time depends on the engine, boat access, annual service items, and any issues found. A small portable and a V6 do not use the same procedure. Submit the serial number and service history at hbwservice.ca so HBW can scope the correct fall work.
 
 ### Does doing my own winterization void my Mercury warranty?
 
@@ -216,7 +216,7 @@ Doing your own winterization does not automatically void your Mercury warranty, 
 
 ### What does annual Mercury outboard service cost in Ontario?
 
-The price depends on the exact engine, the items due in its manual, service history, access, and what inspection finds. Spark plugs, water-pump parts, filters, and other wear items are not one universal annual replacement package. Request the current HBW scope and price at hbw.wiki/service with the serial number and engine hours.
+The price depends on the exact engine, the items due in its manual, service history, access, and what inspection finds. Spark plugs, water-pump parts, filters, and other wear items are not one universal annual replacement package. Request the current HBW scope and price at hbwservice.ca with the serial number and engine hours.
 
 ## Related guides
 
@@ -227,12 +227,12 @@ The price depends on the exact engine, the items due in its manual, service hist
 
 ## Next steps
 
-- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbw.wiki/service
+- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbwservice.ca
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
-- The only commercial next step for this article is the HBW service request at https://hbw.wiki/service.
+- The only commercial next step for this article is the HBW service request at https://hbwservice.ca.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

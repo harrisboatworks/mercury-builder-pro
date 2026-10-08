@@ -49,9 +49,9 @@ Tongue weight, the downward force the trailer puts on the hitch ball, should sit
 
 Too light: the trailer rear lifts and you get sway at highway speed. Once a loaded boat trailer starts swaying, most tow vehicles have a hard time correcting it.
 
-Too heavy: the front wheels of the tow vehicle lift, wrecking your steering and loading the trailer axle unevenly over the long haul north.
+Too heavy: the rear of the tow vehicle sags, the front wheels get light, steering suffers, and the hitch and rear axle are overloaded over the long haul north.
 
-Keep heavier gear forward in the boat. A simple bathroom scale and some math will tell you where you stand.
+Keep heavier gear forward in the boat. A dedicated tongue-weight scale will tell you where you stand. A bathroom scale only works on lighter trailers or with a lever setup.
 
 ---
 
@@ -230,7 +230,7 @@ Making the drive from the GTA for the first time? [The Toronto to Rice Lake trai
 
 It happens. Submerged connectors, corrosion, water intrusion, trailer problems become motor problems faster than most people expect.
 
-We do Mercury repowers and full electrical service at Harris Boat Works. If your outboard came back from the season worse than it went in, [book service at hbw.wiki/service](https://hbw.wiki/service) and we'll take a look.
+We do Mercury repowers and full electrical service at Harris Boat Works. If your outboard came back from the season worse than it went in, [book service at hbwservice.ca](https://hbwservice.ca) and we'll take a look.
 
 ---
 
@@ -241,7 +241,7 @@ We do Mercury repowers and full electrical service at Harris Boat Works. If your
 
 ### What is the right tongue weight for a boat trailer?
 
-Tongue weight, the downward force the trailer puts on the hitch ball, should sit at 10 to 15 percent of your total loaded trailer weight. Too light and the trailer rear lifts and the rig sways at highway speed. Too heavy and the tow vehicle's front wheels lift, wrecking steering and loading the trailer axle unevenly. Keep heavier gear forward in the boat and check with a bathroom scale.
+Tongue weight, the downward force the trailer puts on the hitch ball, should sit at 10 to 15 percent of your total loaded trailer weight. Too light and the trailer rear lifts and the rig sways at highway speed. Too heavy and the tow vehicle's rear sags, the front wheels get light, steering suffers, and the hitch and rear axle are overloaded. Keep heavier gear forward in the boat and check with a tongue-weight scale.
 
 ### How often should boat trailer tires be replaced?
 
@@ -273,12 +273,12 @@ Back in slowly until the bunks are just below the surface and the boat floats. T
 
 ## Next steps
 
-- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbw.wiki/service
+- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbwservice.ca
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
-- The only commercial next step for this article is the HBW service request at https://hbw.wiki/service.
+- The only commercial next step for this article is the HBW service request at https://hbwservice.ca.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

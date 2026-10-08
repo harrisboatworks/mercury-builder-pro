@@ -76,7 +76,7 @@ Verado (250 to 600 hp, naturally aspirated V8/V10/V12) is engineered for large o
 | Car-topper or kicker | FourStroke | 9.9-15 hp |
 | Dedicated trolling kicker | FourStroke ProKicker | 9.9 hp |
 
-This table is a starting point, not a prescription. The right HP for your hull depends on the capacity plate, total load, and how you actually use the boat. When in doubt, start with the plate maximum and work backward from your use case.
+This table is a starting point, not a prescription. The right HP for your hull depends on the capacity plate, total load, and how you actually use the boat. When in doubt, start one Mercury model below the plate maximum and work from your use case.
 
 ## What to Confirm for the Exact Model
 

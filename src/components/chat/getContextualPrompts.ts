@@ -125,6 +125,15 @@ export function getContextualPrompts(
     ];
   }
 
+  if (currentPage === '/' && !motor) {
+    return [
+      "Help me choose a motor",
+      "What is the installed price?",
+      "What is in stock?",
+      "What offers are available?"
+    ];
+  }
+
   // Motor selection page
   if (currentPage === '/' || currentPage === '/quote' || currentPage.includes('/quote/motor-selection') || currentPage.includes('/quote/motor')) {
     if (!motor) {

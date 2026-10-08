@@ -109,7 +109,7 @@ The useful lesson is less dramatic. If a 60 suddenly loses top-end rpm, overheat
 
 Command Thrust doesn't add horsepower. It gives the 60 a larger gearcase, a 2.33:1 ratio and the ability to turn a larger-diameter propeller.
 
-![Mercury 60 HP Command Thrust FourStroke powering a Tracker fishing boat on freshwater.](/lovable-uploads/inline/mercury-60-command-thrust-freshwater.webp)
+![Infographic comparing the Mercury 60 FourStroke standard gearcase with Command Thrust: which boats and loads suit each, with gear ratio and dry weight.](/lovable-uploads/inline/mercury-60-standard-vs-command-thrust-2026-09.webp)
 
 *Mercury 60 HP Command Thrust FourStroke on a freshwater fishing boat. Photo: Mercury Marine.*
 

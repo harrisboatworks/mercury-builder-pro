@@ -47,7 +47,7 @@ describe('blog contact boundaries', () => {
     expect(screen.getByRole('link', { name: 'View Product Protection' }))
       .toHaveAttribute('href', '/mercury-product-protection');
     expect(screen.getByRole('link', { name: 'Request Service in Gores Landing' }))
-      .toHaveAttribute('href', 'https://hbw.wiki/service');
+      .toHaveAttribute('href', 'https://hbwservice.ca');
     expect(getArticleBySlug('mercury-extended-warranty-platinum-ontario')?.content)
       .toContain('then contact HBW for confirmation');
   });

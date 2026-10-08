@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/mercury-fuel-octane-ethanol-chinese-guide.md
-last_updated: 2026-09-06
+last_updated: 2026-10-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,12 +11,12 @@ title: "加拿大加油指南：Mercury 船外机加 87 还是 91？国内 92 �
 description: "安省 Mercury 船外机中文加油指南：RON 与 AKI 标号换算、E10 乙醇上限、E15 已在安省出现、无乙醇汽油怎么选。"
 category: "保养与使用"
 date_published: 2026-08-24
-date_modified: 2026-09-06
+date_modified: 2026-10-04
 keywords: ["Mercury 船外机 加油 中文","加拿大 汽油 标号 87 91","RON AKI 换算","E10 乙醇 船外机","安省 无乙醇汽油"]
 author: Harris Boat Works
 content_type: blog_article
 language: zh-CN
-revenue_driver: repower
+revenue_driver: service
 ---
 
 # 加拿大加油指南：Mercury 船外机加 87 还是 91？国内 92 号汽油怎么换算
@@ -25,13 +25,15 @@ revenue_driver: repower
 
 **Category:** 保养与使用  
 **Published:** 2026-08-24  
-**最后审核:** 2026-09-06  
+**最后审核:** 2026-10-04  
 **Read time:** 10 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/mercury-fuel-octane-ethanol-chinese-guide
 
 ## 简短答案
 
 **辛烷值达标就行，真正要选的是乙醇。**
+
+需要考取 PCOC？通过 [HBW 的 MyBoatCard 推荐链接](https://myboatcard.com/card/harrisboat)参加在线课程，使用优惠码 **HARRIS15** 可享 **15% 折扣**。
 
 这两件事里，只有一件算得上「选择」：
 
@@ -46,9 +48,9 @@ revenue_driver: repower
 
 - [Mercury Marine](https://www.mercurymarine.com/ca/en) Premier 认证经销商
 - 透明加元价格，无需讨价还价
-- 从 GTA 经 401 + 115 高速约 60 到 90 分钟车程
+- 从多伦多向东约 90 分钟车程，出发前请用实时导航确认路线和路况
 
-[把序列号和油泵照片发给我们](https://hbw.wiki/service)
+[把序列号和油泵照片发给我们](https://hbwservice.ca)
 
 ---
 
@@ -129,7 +131,7 @@ Mercury 同时说明了原因：发动机和燃油系统里的金属、橡胶和
 
 1. **不要启动发动机。**
 2. **记下来：** 加了多少升、哪个档位、哪家加油站、哪一天。
-3. **把这些信息和序列号一起发到 [hbw.wiki/service](https://hbw.wiki/service)**，或者打 905-342-2153。
+3. **把这些信息和序列号一起发到 [hbwservice.ca](https://hbwservice.ca)**，或者打 905-342-2153。
 
 在这箱油还没被泵进整个燃油系统之前处理，比事后拆喷油嘴便宜得多。
 
@@ -284,7 +286,7 @@ Mercury 自己的燃油护理产品把三件事分开了：
 
 **不确定你那台 Mercury 该加什么油？**
 
-把**发动机序列号**和**泵上燃油标签的照片**一起发到 **[hbw.wiki/service](https://hbw.wiki/service)**，我们帮你确认这台机器的准确燃油规格，而不是让你在「普通还是高级」之间猜。
+把**发动机序列号**和**泵上燃油标签的照片**一起发到 **[hbwservice.ca](https://hbwservice.ca)**，我们帮你确认这台机器的准确燃油规格，而不是让你在「普通还是高级」之间猜。
 
 Harris Boat Works 位于 Rice Lake 南岸 Gores Landing。
 
@@ -295,6 +297,13 @@ Harris Boat Works 的家族经营始于 1947 年。
 Harris Boat Works 目前是 Mercury Marine Premier Dealer。
 
 电话：905-342-2153
+
+## 相关指南
+
+- [多伦多华人 Mercury 发动机维修保养完整指南：从机油到大修](/blog/zh/gta-chinese-mercury-service-guide)
+- [Mercury 船外机故障排查中文指南](/blog/zh/mercury-outboard-troubleshooting-chinese-ontario)
+- [安省华人船主春季开船检查清单](/blog/zh/ontario-spring-boat-checklist-chinese)
+- [多伦多华人 Mercury 船外机马力选择指南：9.9、20、60、115、150HP 怎么选？](/blog/zh/mercury-outboard-horsepower-guide-toronto-chinese)
 
 ## FAQs
 
@@ -336,12 +345,12 @@ Harris Boat Works 目前是 Mercury Marine Premier Dealer。
 
 ## Next steps
 
-- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
+- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbwservice.ca
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
-- The only commercial next step for this article is the Mercury quote configurator.
+- The only commercial next step for this article is the HBW service request at https://hbwservice.ca.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/toronto-fishing-rice-lake-vs-lake-simcoe-kawarthas.md
-last_updated: 2026-09-06
+last_updated: 2026-10-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,12 +11,12 @@ title: "多伦多出发钓鱼去哪：莱斯湖、Lake Simcoe、Kawarthas 怎么
 description: "多伦多华人钓鱼去哪？比较莱斯湖、Lake Simcoe 和 Kawarthas：家庭租船、岸钓、冰钓、规则、车程和第一次驾船或钓鱼的选择。"
 category: "Buying Guides"
 date_published: 2026-05-17
-date_modified: 2026-09-06
+date_modified: 2026-10-04
 keywords: ["Rice Lake","Lake Simcoe","Kawarthas","多伦多钓鱼","湖区对比","华人钓友"]
 author: Harris Boat Works
 content_type: blog_article
 language: zh-CN
-revenue_driver: repower
+revenue_driver: rentals
 ---
 
 # 多伦多出发钓鱼去哪：莱斯湖、Lake Simcoe、Kawarthas 怎么选
@@ -25,11 +25,13 @@ revenue_driver: repower
 
 **Category:** Buying Guides  
 **Published:** 2026-05-17  
-**最后审核:** 2026-09-06  
+**最后审核:** 2026-10-04  
 **Read time:** 16 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/toronto-fishing-rice-lake-vs-lake-simcoe-kawarthas
 
 如果你从 GTA 出发，莱斯湖更适合家庭租船、浮筒船一日行程、第一次湖上钓鱼和后续买船或换装发动机的需求；Lake Simcoe 更适合很多人熟悉的开放水域钓鱼和冰钓话题，但规则和水体例外需要认真查；Kawarthas 更像一个大区域，适合已经愿意花时间探索不同湖泊、船闸、湖边度假屋和用船场景的人。无论去哪，都不要只看别人群里一句“这里好钓”，要查 Ontario 钓鱼法规、FMZ 和当年水体例外 (Ontario Traditional Chinese fishing regulations, Ontario FMZ 16, Ontario FMZ 17).
+
+需要考取 PCOC？通过 [HBW 的 MyBoatCard 推荐链接](https://myboatcard.com/card/harrisboat)参加在线课程，使用优惠码 **HARRIS15** 可享 **15% 折扣**。
 
 ## 先问自己：你要的是钓鱼，还是湖上一天？
 
@@ -127,14 +129,21 @@ Ontario FMZ 16 页面列出 Lake Simcoe 和相关水体的特定水体例外规�
 
 HBW 自 1947 年起就在 Gores Landing、莱斯湖经营家族码头，是 Mercury Marine Premier dealer 与 Legend Boats 经销商。
 
+## 相关指南
+
+- [莱斯湖 钓鱼指南（2026）：FMZ 17 鱼种、鱼牌与出发清单](/blog/zh/rice-lake-fishing-guide-toronto-chinese)
+- [Lake Simcoe 华人钓友船外机指南](/blog/zh/chinese-anglers-lake-simcoe-mercury-outboard)
+- [多伦多华人第一次租船钓鱼：证件、安全和当天流程](/blog/zh/first-boat-rental-rice-lake-chinese-guide)
+- [40 到 60 匹 Mercury：铝船与华人钓友最常问的马力区间](/blog/zh/mercury-40-60hp-chinese-fishing-boat-guide)
+
 ## Next steps
 
-- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
+- Check the current Rice Lake rental fleet and availability: https://harrisboatworks.ca/rentals
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
-- The only commercial next step for this article is the Mercury quote configurator.
+- The only commercial next step for this article is Rice Lake rental availability at https://harrisboatworks.ca/rentals.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

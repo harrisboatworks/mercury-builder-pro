@@ -31,11 +31,11 @@ revenue_driver: service
 
 ### Réponse rapide
 
-Pour un moteur Mercury hors-bord, les étapes essentielles suivent le manuel du modèle et du numéro de série : carburant, protection interne, huile d'engrenage, plan de batterie et graissage. Une batterie en bon état peut rester à bord seulement si elle est pleinement chargée, débranchée, sécurisée et autorisée par le plan d'entreposage approuvé. Le manuel du modèle/numéro de série et le plan d'entreposage approuvé font foi. Harris Boat Works a 584 dossiers d'hivernisation complétés d'août à novembre 2025. Remplissez [hbw.wiki/service](https://hbw.wiki/service), puis déposez le bateau en tout temps, y compris en dehors des heures d'ouverture.
+Pour un moteur Mercury hors-bord, les étapes essentielles suivent le manuel du modèle et du numéro de série : carburant, protection interne, huile d'engrenage, plan de batterie et graissage. Une batterie en bon état peut rester à bord seulement si elle est pleinement chargée, débranchée, sécurisée et autorisée par le plan d'entreposage approuvé. Le manuel du modèle/numéro de série et le plan d'entreposage approuvé font foi. Harris Boat Works a 584 dossiers d'hivernisation complétés d'août à novembre 2025. Remplissez [hbwservice.ca](https://hbwservice.ca), puis déposez le bateau en tout temps, y compris en dehors des heures d'ouverture.
 
 ---
 
-L'Ontario vous offre une saison de navigation courte et intense, de mai jusqu'en octobre, chaque heure sur l'eau compte. Mais quand vient le temps de ranger l'embarcation pour l'hiver, il n'y a pas de place pour l'improvisation. Un moteur Mercury mal préparé pour la saison froide, c'est souvent des milliers de dollars de réparations au printemps.
+L'Ontario vous offre une saison de navigation courte et intense, de mai jusqu'en octobre, chaque heure sur l'eau compte. Mais quand vient le temps de ranger l'embarcation pour l'hiver, il n'y a pas de place pour l'improvisation. Un moteur Mercury mal préparé pour la saison froide peut laisser des problèmes à régler au printemps.
 
 Voici ce que vous devez savoir, et ce que Harris Boat Works fait pour ses clients à Gores Landing, entreprise familiale depuis 1947.
 
@@ -47,7 +47,7 @@ Avant même de parler de technique, parlons carburant. La majorité des stations
 
 L'éthanol absorbe l'humidité. Avec le temps, l'eau et l'éthanol se séparent du reste du carburant, c'est ce qu'on appelle la séparation de phase. Ce mélange eau-éthanol se retrouve au fond du réservoir, puis dans le système d'alimentation du moteur. Résultat : carburateur ou injecteurs colmatés, corrosion interne, moteur qui refuse de partir au printemps.
 
-Harris Boat Works est l'une des rares marinas en Ontario à vendre du carburant sans éthanol sur place. Si vous faites le plein ici avant de ranger l'embarcation, vous éliminez ce risque à la source. Sinon, l'ajout d'un stabilisant de carburant de qualité dans le réservoir, suivi d'une courte mise en marche pour faire circuler le mélange, est une étape obligatoire.
+Du carburant sans éthanol est offert sur place chez Harris Boat Works; en faire le plein en fin de saison réduit ce risque. Si vous utilisez de l'essence avec éthanol, suivez les consignes d'entreposage du manuel de votre moteur, y compris le stabilisant lorsque la procédure le prévoit.
 
 ---
 
@@ -57,15 +57,15 @@ Le détail exact varie selon le modèle Mercury et sa configuration. Les étapes
 
 ### 1. Stabilisation du carburant
 
-Ajoutez un stabilisant approuvé pour moteur marin dans votre réservoir, puis faites tourner le moteur quelques minutes pour que le produit circule dans tout le système. Idéalement, faites le plein avec du carburant sans éthanol avant d'ajouter le stabilisant.
+Partez de carburant frais conforme aux spécifications du manuel. Ajoutez le stabilisant précisé par Mercury, à la concentration indiquée sur le produit, lorsque la procédure d'entreposage le prévoit, puis faites circuler le carburant traité pendant la durée et selon la méthode du manuel de votre moteur.
 
-### 2. Lubrification interne (fogging)
+### 2. Protection interne du moteur
 
 La protection interne dépend du modèle et du numéro de série. Suivez la procédure du manuel Mercury correspondant; ne vaporisez pas d'huile dans l'admission ou les cylindres sur la seule base d'un guide général. Quand le manuel prévoit cette protection, elle aide à limiter la rouille et la corrosion pendant les mois d'inactivité.
 
 ### 3. Vidange de l'huile d'engrenage
 
-L'huile du pied de moteur doit être vidangée et remplacée chaque automne. Si de l'eau s'est infiltrée dans la boîte via des joints usés, ce qui arrive plus souvent qu'on ne le croit, elle va geler, se dilater, et fissurer le carter. Une vidange régulière permet aussi de détecter si l'huile est laiteuse ou grisâtre, signe d'une infiltration d'eau à corriger.
+Le pied de moteur contient une huile à engrenages qui absorbe l'eau par les joints au fil d'une saison d'utilisation. Suivez le manuel de votre moteur pour la vidange et le remplissage. Laissée en place pendant l'hiver, une huile contaminée par l'eau peut geler, se dilater et endommager le carter ou les joints. Une vidange régulière permet aussi de détecter si l'huile est laiteuse ou grisâtre, signe d'une infiltration d'eau à corriger.
 
 ### 4. Batterie : plan approuvé
 
@@ -73,11 +73,11 @@ Une batterie en bon état peut rester à bord seulement si elle est pleinement c
 
 ### 5. Graissage des raccords et points d'articulation
 
-Gouvernail, timonerie, câbles de commande, roulement de pivot, tous ces points ont besoin d'une bonne couche de graisse marine avant l'hiver. Ça prend vingt minutes et ça vous évite des pièces grippées ou corrodées au printemps.
+Suivez le schéma de lubrification du manuel. Les points courants : tube et pivot de relevage et d'assiette, extrémité du câble de direction (s'il y a lieu), support pivotant et arbre d'hélice. Appliquez le lubrifiant précisé par Mercury avant l'entreposage; des points d'articulation secs ou mal graissés peuvent gripper pendant l'hiver.
 
-### 6. Rinçage à l'eau douce (si eau salée ou eau dure)
+### 6. Rinçage du circuit de refroidissement
 
-Pour les embarcations utilisées en eau salée ou dans des lacs très calcaires, un rinçage interne du circuit de refroidissement est essentiel. Si vous naviguez exclusivement sur des lacs d'eau douce comme le lac Rice ou les Kawartha, cette étape est généralement moins critique, mais elle reste recommandée si votre lac a une eau particulièrement dure.
+Utilisez le raccord de rinçage, l'état du moteur, le débit d'eau et la durée indiqués dans le manuel de votre moteur. Certaines procédures se font moteur arrêté, d'autres exigent un moteur en marche avec une alimentation continue en eau. Ne faites jamais tourner un moteur sans eau de refroidissement.
 
 ---
 
@@ -95,9 +95,9 @@ Faire l'hivernisation soi-même est possible, mais seulement si vous avez l'exp�
 
 À Harris Boat Works, nous avons 584 dossiers d'hivernisation complétés d'août à novembre 2025. Nos techniciens connaissent les moteurs Mercury à fond et savent exactement quoi chercher, quoi remplacer, et quoi noter pour le printemps.
 
-Pour les réparations de moteur, nous entretenons uniquement les moteurs Mercury et Mercruiser.
+Pour les réparations de moteur, nous entretenons uniquement les moteurs Mercury et MerCruiser.
 
-Notre équipe travaille en anglais. Nous ne parlons pas français, mais nous sommes sincèrement heureux de vous accueillir et nous ferons tout notre possible pour vous aider. Vous pouvez nous envoyer votre demande par courriel ou via notre formulaire en ligne à **hbw.wiki/service** et nous vous répondrons en anglais. Si vous préférez, utilisez Google Traduction ou demandez à un proche bilingue de vous aider.
+Notre équipe travaille en anglais. Nous ne parlons pas français, mais nous sommes sincèrement heureux de vous accueillir et nous ferons tout notre possible pour vous aider. Vous pouvez nous envoyer votre demande par courriel ou via notre formulaire en ligne à **hbwservice.ca** et nous vous répondrons en anglais. Si vous préférez, utilisez Google Traduction ou demandez à un proche bilingue de vous aider.
 
 ---
 
@@ -108,7 +108,7 @@ Notre équipe travaille en anglais. Nous ne parlons pas français, mais nous som
 - [Mercury hors-bord qui ne démarre pas : guide de dépannage (2026)](/blog/fr/mercury-hors-bord-ne-demarre-pas-depannage): La plupart des Mercury qui refusent de démarrer au printemps sont causés par la batterie, le carburant ou une.
 - [Mercury 115 vs 150 HP : Quel moteur choisir pour votre embarcation?](/blog/fr/mercury-115-vs-150-hp-comparaison): Comparaison complète des moteurs Mercury 115 et 150 FourStroke. Cylindrée, poids, performances, consommation.
 
-Remplissez [hbw.wiki/service](https://hbw.wiki/service), puis déposez le bateau en tout temps, y compris en dehors des heures d'ouverture, ou appelez le **905-342-2153**.
+Remplissez [hbwservice.ca](https://hbwservice.ca), puis déposez le bateau en tout temps, y compris en dehors des heures d'ouverture, ou appelez le **905-342-2153**.
 Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, Ontario. 
 Concessionnaire Mercury Marine Premier. En affaires depuis 1947.
 
@@ -118,18 +118,18 @@ Concessionnaire Mercury Marine Premier. En affaires depuis 1947.
 
 Si vous soumettez une demande de service chez HBW, voici la limite importante à connaître :
 
-Pour les réparations de moteurs, nous ne servons que Mercury et Mercruiser.
+Pour les réparations de moteurs, nous ne servons que Mercury et MerCruiser.
 ---
 
 ## Questions fréquentes
 
 ### Combien coûte une hivernisation professionnelle?
 
-Le prix varie selon le moteur et les services requis. Contactez-nous à hbw.wiki/service pour une estimation.
+Le prix varie selon le moteur et les services requis. Consultez la [grille de tarifs d'hivernisation et d'entreposage de HBW](https://www.harrisboatworks.ca/winter-storage), puis remplissez la demande de service à hbwservice.ca pour une estimation de votre bateau.
 
 ### Quand devrais-je demander mon hivernisation?
 
-Remplissez hbw.wiki/service, puis déposez le bateau en tout temps, y compris en dehors des heures d'ouverture. La marina est fermée du 1er décembre au 1er avril.
+Remplissez hbwservice.ca, puis déposez le bateau en tout temps, y compris en dehors des heures d'ouverture. La marina est fermée du 1er décembre au 1er avril.
 
 ### Est-ce que Harris Boat Works offre aussi l'entreposage?
 
@@ -137,12 +137,12 @@ Oui. HBW offre l'entreposage extérieur avec pellicule rétractable professionne
 
 ## Prochaines étapes
 
-- Décrivez le bateau, le moteur et les symptômes, puis joignez des photos à la demande de service HBW : https://hbw.wiki/service
+- Décrivez le bateau, le moteur et les symptômes, puis joignez des photos à la demande de service HBW : https://hbwservice.ca
 - Lieu de ramassage et coordonnées : Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
-- The only commercial next step for this article is the HBW service request at https://hbw.wiki/service.
+- The only commercial next step for this article is the HBW service request at https://hbwservice.ca.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

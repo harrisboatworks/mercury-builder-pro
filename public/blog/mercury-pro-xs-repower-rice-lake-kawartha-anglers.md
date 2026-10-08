@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-pro-xs-repower-rice-lake-kawartha-anglers.md
-last_updated: 2026-09-06
+last_updated: 2026-10-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Pro XS Repower for Rice Lake & Kawartha Anglers"
 description: "Mercury Pro XS repower guide for serious Rice Lake and Kawartha anglers. Hole-shot, top end, Command Thrust, fuel-burn, real numbers from a Mercury."
 category: "Repower"
 date_published: 2026-05-15
-date_modified: 2026-09-06
+date_modified: 2026-10-06
 keywords: ["Mercury Pro XS repower","Pro XS Rice Lake","Pro XS Kawartha anglers","Mercury 200 Pro XS V8","Pro XS Command Thrust","bass boat repower Ontario","walleye boat Mercury Pro XS","Mercury Premier dealer Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Repower  
 **Published:** 2026-05-15  
-**Last reviewed:** 2026-09-06  
+**Last reviewed:** 2026-10-06  
 **Read time:** 11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-pro-xs-repower-rice-lake-kawartha-anglers
 
@@ -60,7 +60,7 @@ The anglers we see repowering to Pro XS are usually moving from one of three pla
 
 **Tired older Pro XS.** The Optimax-era Pro XS earned a strong reputation. Owners coming out of those motors usually want the modern Pro XS because the response and the sound profile they remember are still there, plus modern reliability and fuel efficiency.
 
-The other reason matters less in marketing copy but a lot in real life: when you're 90 minutes from any other shop, you want a motor and a dealer that can actually fix things. That's why so many Kawartha anglers repower with us specifically.
+The other reason matters less in marketing copy but a lot in real life: having a Mercury Premier Dealer on the lake means you've got a local shop that can actually fix things. That's why so many Kawartha anglers repower with us specifically.
 
 ---
 
@@ -116,7 +116,7 @@ Honest framing matters. We sell both because they're both right for different pe
 
 ---
 
-![Mercury Pro XS V6 outboard on a bass boat cruising through misty Ontario lake waters at sunrise.](/lovable-uploads/inline/inline-pro-xs-action.png)
+![Black Pro XS outboard on the transom of a silver bass boat on misty water at sunrise, with spray trailing behind](/lovable-uploads/inline/inline-pro-xs-action.png)
 
 ## Hole-shot, top-end, and where they matter
 
@@ -125,7 +125,7 @@ Different Kawartha water rewards different things:
 - **Rice Lake:** weed lines and shallow flats. Hole-shot dominates. You're up-and-over, not flat-out. **Pro XS shines.**
 - **Stoney, Buckhorn, Pigeon:** bigger water, longer spot-to-spot runs. Top-end matters more. **A 200 or 225 Pro XS V8 is the sweet spot.**
 - **Trent-Severn cruising:** lock-to-lock running with fuel range as a constraint. Top-end and fuel range both matter. **A 200 or 225 Pro XS sized to your hull is hard to beat.**
-- **Cold-water muskie water:** heavier rigs, bigger props, harder to plane. **225 HP and up on the standard gearcase.**
+- **Cold-water muskie water:** heavier rigs, bigger props, harder to plane. **Size to your hull's capacity plate, and the best fit is usually one model below the plate maximum.**
 
 Match the HP to the water you actually fish, not the water you fished once on a road trip.
 
@@ -185,11 +185,11 @@ Jay Harris helps run Harris Boat Works, a third-generation family marina in Gore
 
 ## More from HBW on Mercury performance and repowers
 
-- [Mercury 150–300 HP Pro XS Performance Guide](/blog/mercury-150-300hp-pro-xs-performance-guide), full lineup walk-through with HP, weights, and use cases
-- [Boat Hull Replacement vs Repower Decision](/blog/boat-hull-replacement-vs-repower-decision), when the hull is the limit, not the motor
-- [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide), current planning ranges across the lineup
+- [Mercury 150–300 HP Pro XS Performance Guide](/blog/mercury-150-300hp-pro-xs-performance-guide): full lineup walk-through with HP, weights, and use cases
+- [Boat Hull Replacement vs Repower Decision](/blog/boat-hull-replacement-vs-repower-decision): when the hull is the limit, not the motor
+- [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide): current planning ranges across the lineup
 
-For a real CAD quote on a Pro XS repower, use the quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca). For service bookings and shop appointments, [hbw.wiki/service](https://hbw.wiki/service).
+For a real CAD quote on a Pro XS repower, use the quote builder at [mercuryrepower.ca](https://www.mercuryrepower.ca). For service bookings and shop appointments, [hbwservice.ca](https://hbwservice.ca).
 
 Harris Boat Works  
 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0  
@@ -205,7 +205,7 @@ Both are four-stroke outboards, Pro XS is not a two-stroke. The difference is tu
 
 ### Is the Mercury 150 Pro XS a V6?
 
-No. The 150 Pro XS is an inline-4. The remaining Pro XS V6 rating is the 175. The 200, 225, 250, and 300 Pro XS are V8. This matters because the 150 is meaningfully lighter than the V6 and V8 models, roughly 45 kg (100 lb) less rigged, which is why it's popular on smaller bass boats and aluminum tournament hulls where transom weight is a real consideration. If you specifically want a V6 Pro XS, you're looking at 175 HP. If you specifically want the lightest performance Mercury at 150 HP, the inline-4 Pro XS is it.
+No. The 150 Pro XS is an inline-4. The remaining Pro XS V6 rating is the 175. The 200, 225, 250, and 300 Pro XS are V8. The 150 Pro XS weighs 207 kg (456 lb) dry, about 9 kg (19 lb) less than the 175 Pro XS V6 at 216 kg (475 lb), and about 25 kg (55 lb) less than the 200–300 Pro XS V8 at 232 kg (511 lb). That matters on smaller bass boats and aluminum tournament hulls where transom weight is a real consideration. If you specifically want a V6 Pro XS, you're looking at 175 HP. If you specifically want the lightest performance Mercury at 150 HP, the inline-4 Pro XS is it.
 
 ### How much does a Pro XS repower cost in Ontario?
 
@@ -217,7 +217,7 @@ Pro XS is a performance motor for planing V-hull bass and angler boats. Command 
 
 ### How long does a Pro XS repower take at HBW?
 
-There are two clocks: motor and rigging availability, then the scheduled shop work. HBW confirms the installation window after reviewing the boat, required parts, current shop capacity, and safe test conditions. Complete the service request at hbw.wiki/service, then drop off your boat anytime, including after hours. HBW confirms the work schedule separately.
+There are two clocks: motor and rigging availability, then the scheduled shop work. HBW confirms the installation window after reviewing the boat, required parts, current shop capacity, and safe test conditions. Complete the service request at hbwservice.ca, then drop off your boat anytime, including after hours. HBW confirms the work schedule separately.
 
 ### Can I repower a 1990s bass boat with a modern Pro XS?
 
@@ -229,15 +229,15 @@ Mercury Pro XS comes with the applicable Mercury limited warranty in Canada. Opt
 
 ### Does HBW finance repowers?
 
-Yes, on repowers above $5,000 CAD. We offer financing through Mercury's repower financing program, with rates that depend on the financed amount and the current offer. There's also a small DealerPlan fee added to the financed total. Repowers under $5,000 don't qualify for financing through this program. The fastest way to see your actual numbers, payment, term options, total interest, is to run a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) and select the financing option.
+Yes, on repowers above $5,000 CAD. We arrange financing through DealerPlan, with rates that depend on the financed amount and the current offer. There's also a small DealerPlan fee added to the financed total. Repowers under $5,000 don't qualify for financing through this program. The fastest way to see your actual numbers, payment, term options, total interest, is to run a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) and select the financing option.
 
 ## Related guides
 
 - [Boat Repower in the Kawarthas: Complete Guide](/blog/complete-guide-boat-repower-kawarthas), the full Kawarthas repower playbook
 - [Ontario Cottage Boat Motor Repower Guide (2026)](/blog/ontario-cottage-boat-motor-repower-guide), cottage-specific repower considerations
+- [The 4-Point Aluminum Transom Check Before You Repower](/blog/aluminum-boat-transom-inspection-guide), the four transom checks to run before you repower
 - [Winter Repower Planning: Get Ready for Spring](/blog/winter-repower-planning-guide), why winter is the smart time to plan
 - [Pleasure Craft Licence Update During Repower (Ontario 2026)](/blog/pleasure-craft-licence-update-repower-ontario), updating your PCL after a repower
-- [Ordering Your Mercury: What to Expect](/blog/mercury-ordering-process), how Mercury motors are ordered and delivered
 
 ## Next steps
 

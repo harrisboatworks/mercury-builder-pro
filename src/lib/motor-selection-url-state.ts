@@ -13,6 +13,8 @@ const FILTER_PARAMS = {
   shaftLength: 'shaft',
 } as const;
 
+const DEFAULT_HP_RANGE: MotorHpRangeId = 'core-repower';
+
 const VALID_HP_RANGES = new Set<MotorHpRangeId>(
   MOTOR_HP_RANGES.map((range) => range.id),
 );
@@ -42,6 +44,18 @@ function normalizedQuery(value: string | null): string {
   return value.slice(0, 80);
 }
 
+function hasFilterInstruction(searchParams: URLSearchParams): boolean {
+  return (
+    searchParams.has(FILTER_PARAMS.query)
+    || searchParams.has(FILTER_PARAMS.hpRange)
+    || searchParams.has('model')
+    || searchParams.has(FILTER_PARAMS.inStock)
+    || searchParams.has(FILTER_PARAMS.startType)
+    || searchParams.has(FILTER_PARAMS.controlType)
+    || searchParams.has(FILTER_PARAMS.shaftLength)
+  );
+}
+
 export function readMotorSelectionUrlState(
   searchParams: URLSearchParams,
 ): MotorSelectionUrlState {
@@ -66,9 +80,16 @@ export function readMotorSelectionUrlState(
     configFilters.shaftLength = shaftParam;
   }
 
+  // Default to the popular 75-115 HP range only when the visitor lands with no
+  // other instruction. Any explicit filter, search, model deep-link, or config
+  // filter keeps the previous "show all" behaviour so nothing is hidden.
+  const fallbackHpRange: MotorHpRangeId = hasFilterInstruction(searchParams)
+    ? 'all'
+    : DEFAULT_HP_RANGE;
+
   return {
     searchQuery: normalizedQuery(searchParams.get(FILTER_PARAMS.query)),
-    hpRange: hpParam && VALID_HP_RANGES.has(hpParam) ? hpParam : 'all',
+    hpRange: hpParam && VALID_HP_RANGES.has(hpParam) ? hpParam : fallbackHpRange,
     configFilters: Object.keys(configFilters).length > 0 ? configFilters : null,
   };
 }
@@ -82,7 +103,9 @@ export function writeMotorSelectionUrlState(
 
   const query = normalizedQuery(state.searchQuery);
   if (query) nextParams.set(FILTER_PARAMS.query, query);
-  if (state.hpRange !== 'all' && VALID_HP_RANGES.has(state.hpRange)) {
+  // The default 75-115 HP range is represented by a clean URL. Any other
+  // range, including an explicit "All HP" choice, is written out.
+  if (state.hpRange !== DEFAULT_HP_RANGE && VALID_HP_RANGES.has(state.hpRange)) {
     nextParams.set(FILTER_PARAMS.hpRange, state.hpRange);
   }
 

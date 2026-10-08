@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/gta-chinese-pcl-fishing-licence-guide.md
-last_updated: 2026-09-06
+last_updated: 2026-10-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,12 +11,12 @@ title: "GTA 华人 PCOC 操作员卡、PCL 船牌与安省钓鱼证指南"
 description: "分清 PCOC 操作员资格、PCL 船只牌照和安省钓鱼证：谁需要、有效期、官方申请入口与 Rice Lake 出发前检查。"
 category: "mandarin"
 date_published: 2026-05-15
-date_modified: 2026-09-06
+date_modified: 2026-10-06
 keywords: ["PCOC 操作员卡","PCL 船只牌照","加拿大船驾照中文","Pleasure Craft Operator Card 华人","安省钓鱼证","Ontario 钓鱼证 中文","Rice Lake 钓鱼规则","GTA Chinese boating licence"]
 author: Harris Boat Works
 content_type: blog_article
 language: zh-CN
-revenue_driver: repower
+revenue_driver: rentals
 ---
 
 # GTA 华人 PCOC 操作员卡、PCL 船牌与安省钓鱼证指南
@@ -25,13 +25,15 @@ revenue_driver: repower
 
 **Category:** mandarin  
 **Published:** 2026-05-15  
-**最后审核:** 2026-09-06  
+**最后审核:** 2026-10-06  
 **Read time:** 11 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/gta-chinese-pcl-fishing-licence-guide
 
 ## 快速答案
 
 如果你是 GTA 华人，准备买船、租船或在 Rice Lake 钓鱼，需要分清三件事：（1）PCOC（Pleasure Craft Operator Card）是操作动力休闲船的人的常见资格证明，卡终身有效；（2）[PCL 船只牌照](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl)（Pleasure Craft Licence）用于符合条件的船，发动机总功率达到 10 HP（7.5 kW）或以上时通常需要，新办、续期、转让或补发现为 $24.41 CAD（2026-09-05）；新办、转让或续期后有效 5 年（补发不延长有效期），资料更新免费；（3）安省钓鱼资格取决于年龄和居住身份。费用和规则会变，请使用 Transport Canada 与 Ontario.ca 的当前官方页面。
+
+需要考取 PCOC？通过 [HBW 的 MyBoatCard 推荐链接](https://myboatcard.com/card/harrisboat)参加在线课程，使用优惠码 **HARRIS15** 可享 **15% 折扣**。
 
 ---
 
@@ -47,12 +49,12 @@ Harris Boat Works（HBW）是 Rice Lake 上家族经营·1947 年至今 的 mari
 
 ## 一、PCOC 操作员卡（Pleasure Craft Operator Card）
 
-**这是最常被忽略的一项。** 在加拿大水域操作任何带发动机的休闲船只（包括小马力电动船）时，操作人必须随身携带 Transport Canada 认可的操作能力证明；PCOC 是最常见的证明，但不是唯一被接受的证明。颁发机构是 [Transport Canada](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency)。
+**这是最常被忽略的一项。** 在加拿大水域操作任何带发动机的休闲船只（包括小马力电动船）时，操作人必须随身携带 Transport Canada 认可的操作能力证明；PCOC 是最常见的证明，但不是唯一被接受的证明。颁发机构是 [Transport Canada](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc)。
 
 ### 谁需要
 
-- **任何年龄、任何水域、操作发动机船的人。** 不分加拿大公民、永久居民、留学生、游客。
-- 包括小型铝合金钓鱼船、Pontoon、橡皮艇带挂机、电动船马力超过法规阈值的情况。
+- **任何年龄、操作带发动机船的人。** 不分加拿大公民、永久居民、留学生；访客自带船在加拿大水域少于 45 个连续日可豁免，租用的船可使用已完成的租船安全清单（仅限该租期）。
+- 包括小型铝合金钓鱼船、Pontoon、橡皮艇带挂机，以及电动马达船（包括小马力电动马达）。
 - **加拿大驾照（G、G2、G1）不能代替 PCOC 或其他合格的操作员资格证明。** 这是两个完全不同的体系。
 
 ### 怎么考
@@ -129,7 +131,7 @@ Outdoors Card 3 年有效, Fishing Licence 1 年。Sport (运动) 还是 Conserv
 
 ## 三、安省钓鱼证（Ontario Fishing Licence）
 
-颁发机构：**Ontario Ministry of Natural Resources and Forestry（MNRF）**，购买入口：[ontario.ca/page/fishing-licence](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees)。
+颁发机构：**Ontario Ministry of Natural Resources（MNR）**，购买入口：[ontario.ca/page/fishing-licence](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees)。
 
 ### 常见组合：Outdoors Card + Fishing Licence
 
@@ -149,7 +151,7 @@ Outdoors Card 3 年有效, Fishing Licence 1 年。Sport (运动) 还是 Conserv
 - **Sport Licence（运动证）：** 持有量和日捕量限额较高，适合认真钓鱼的人。
 - **Conservation Licence（保育证）：** 限额减半，价格较低，适合偶尔钓的家庭。
 
-具体价格每年由 MNRF 调整，请以 Ontario.ca 上的当下价格为准。
+具体价格每年由 MNR 调整，请以 Ontario.ca 上的当下价格为准。
 
 ### 哪里买
 
@@ -161,11 +163,11 @@ Outdoors Card 3 年有效, Fishing Licence 1 年。Sport (运动) 还是 Conserv
 
 ## 四、Rice Lake 特定钓鱼规则
 
-Rice Lake 属于安省 Fisheries Management Zone（FMZ），具体的鱼种季节、尺寸限制、持有量每年由 MNRF 更新。最常见的目标鱼种：
+Rice Lake 属于安省 Fisheries Management Zone（FMZ），具体的鱼种季节、尺寸限制、持有量每年由 MNR 更新。最常见的目标鱼种：
 
 - **碧古鱼 (Walleye)：** 有季节窗口和尺寸限制（slot size），具体数字每年可能调整
 - **Smallmouth / Largemouth Bass（鲈鱼）：** 通常有禁渔期（春季产卵期）和持有量限制
-- **Muskie（北方狗鱼）：** 严格的最小尺寸和持有量限制
+- **Muskie（北美狗鱼，Esox masquinongy）：** 严格的最小尺寸和持有量限制
 - **Perch、Sunfish、Crappie（杂鱼）：** 限制较宽松，适合带小孩
 
 **关键提醒：** 上面这些规则每年可能调整，**建议查询安省最新钓鱼规则，因为尺寸与时段每年可能调整。Ontario.ca 上的官方钓鱼条例摘要（Recreational Fishing Regulations Summary）是最可靠来源。** 不要依赖网上的旧帖或别人的口头建议。
@@ -186,7 +188,7 @@ Rice Lake 属于安省 Fisheries Management Zone（FMZ），具体的鱼种季�
 
 ## 六、罚款与风险
 
-被检查时拿不出有效的操作员资格证明、需要的 Pleasure Craft Licence 或安省钓鱼资格，可能被开告票或面临其他执法后果。具体项目和金额请参考 [Transport Canada](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency) 和 [Ontario MNRF](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees) 的当前官方信息。
+被检查时拿不出有效的操作员资格证明、需要的 Pleasure Craft Licence 或安省钓鱼资格，可能被开告票或面临其他执法后果。具体项目和金额请参考 [Transport Canada](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc) 和 [Ontario MNR](https://www.ontario.ca/document/ontario-fishing-regulations-summary/recreational-fishing-licences-and-fees) 的当前官方信息。
 
 不要用旧帖中的课程价格或罚款金额做决定。先把需要的证件、船牌和当年钓鱼规则确认清楚，再出发。
 
@@ -220,11 +222,15 @@ Rice Lake 属于安省 Fisheries Management Zone（FMZ），具体的鱼种季�
 2. **如果船符合条件，办理 Pleasure Craft Licence（PCL 船只牌照）**：在线申请并支付当前服务费（2026-09-05 为 $24.41 CAD）。
 3. **出发钓鱼前确认自己的年龄和居住身份规则**：需要购买时，在 Ontario.ca 办好 Outdoors Card + Fishing Licence。
 4. **每年春天复查最新钓鱼规则**：Ontario Recreational Fishing Regulations Summary。
-5. **如需维修服务**：HBW 只为 Mercury 和 Mercruiser 发动机提供维修服务，请通过 [https://hbw.wiki/service](https://hbw.wiki/service) 提交请求。
+5. **如需维修服务**：HBW 只为 Mercury 和 Mercruiser 发动机提供维修服务，请通过 [https://hbwservice.ca](https://hbwservice.ca) 提交请求。
 
 水上安全比省下几十加元更重要。证齐了，PFD 穿好了，再出门。
 
 地址：5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
+
+## 相关指南
+
+- [安省驾船法规中文指南（2026）：PCOC、PCL、安全装备与钓鱼证](/blog/zh/ontario-boating-regulations-zh)
 
 ## FAQs
 
@@ -250,24 +256,24 @@ Rice Lake 属于安省 Fisheries Management Zone（FMZ），具体的鱼种季�
 
 ### 安省钓鱼证多少钱？分几种？
 
-安省钓鱼证由 Outdoors Card（3 年有效）和 Fishing Licence Tag（年度）两部分组成，分 Sport（运动证，限额高）和 Conservation（保育证，限额减半，价格较低）。具体价格每年由 MNRF 调整，请到 ontario.ca/page/fishing-licence 查询当下价格。
+安省钓鱼证由 Outdoors Card（3 年有效）和 Fishing Licence Tag（年度）两部分组成，分 Sport（运动证，限额高）和 Conservation（保育证，限额减半，价格较低）。具体价格每年由 MNR 调整，请到 ontario.ca/page/fishing-licence 查询当下价格。
 
-### Rice Lake 的 walleye / 黄金鲈鱼 规定是什么？
+### Rice Lake 的 walleye / 碧古鱼 规定是什么？
 
 建议查询安省最新钓鱼规则，因为尺寸与时段每年可能调整。Ontario.ca 上的官方钓鱼条例摘要（Recreational Fishing Regulations Summary）是最可靠来源，按 Fisheries Management Zone 查询 Rice Lake 所属区域即可看到当年的 walleye 季节、slot size 和持有量。
 
 ### 没有船驾照或钓鱼证被查到会怎样？
 
-可能被加拿大海岸警卫队、OPP 海上巡逻或 MNRF 巡查员开告票，罚款可达数百加元，严重情况下还可能没收渔获或暂时禁止使用船只。具体金额以 Transport Canada 和 Ontario MNRF 官方为准。
+可能被加拿大海岸警卫队、OPP 海上巡逻或 MNR 巡查员开告票，罚款可达数百加元，严重情况下还可能没收渔获或暂时禁止使用船只。具体金额以 Transport Canada 和 Ontario MNR 官方为准。
 
 ## Next steps
 
-- Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
+- Check the current Rice Lake rental fleet and availability: https://harrisboatworks.ca/rentals
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
-- The only commercial next step for this article is the Mercury quote configurator.
+- The only commercial next step for this article is Rice Lake rental availability at https://harrisboatworks.ca/rentals.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

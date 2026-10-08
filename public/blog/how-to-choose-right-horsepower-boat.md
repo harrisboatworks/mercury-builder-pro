@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/how-to-choose-right-horsepower-boat.md
-last_updated: 2026-09-11
+last_updated: 2026-10-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "How to Choose the Right Boat Horsepower"
 description: "Choose outboard horsepower for your boat's limits, hull, usual and heaviest planned loads, and intended use. A fixed percentage cannot decide the right fit."
 category: "Buying Guide"
 date_published: 2024-06-15
-date_modified: 2026-09-11
+date_modified: 2026-10-06
 keywords: ["boat motor horsepower","how to choose outboard motor","mercury motor sizing","boat hp guide","outboard motor selection"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2024-06-15  
-**Last reviewed:** 2026-09-11  
+**Last reviewed:** 2026-10-06  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/how-to-choose-right-horsepower-boat
 
@@ -89,7 +89,7 @@ The plate max is the ceiling, not the recommendation. Pick inside that range bas
 
 - Solo or two-person fishing most outings
 - Light tackle, no tow toys, half tank
-- Calm protected water (Rice Lake, small Kawarthas)
+- Calm or sheltered water (small Kawarthas, Rice Lake on a calm day)
 - You care more about fuel economy than hole shot
 
 **Stay within manufacturer limits; check your everyday load and occasional fully loaded trips.**
@@ -103,7 +103,7 @@ The plate max is the ceiling, not the recommendation. Pick inside that range bas
 
 **Stay within manufacturer limits; assess performance with the full planned load and towing needs.**
 
-Underpowered boats are the #1 complaint we hear. Step up before you step down. Resale on a maxed-out rig is also stronger.
+Underpowered boats are the #1 complaint we hear. Step up before you step down.
 
 ---
 
@@ -176,7 +176,7 @@ We won't over-power your boat. We also won't recommend the cheapest option if we
 
 ---
 
-![Mercury 25 HP and 90 HP outboards on aluminum boats to illustrate different horsepower needs for boat sizing.](/lovable-uploads/inline/inline-horsepower-selection.png)
+![Infographic: start one Mercury model step below the capacity plate maximum, then adjust for hull, load, use and where you run the boat.](/lovable-uploads/inline/hp-one-step-below-max-2026-09.webp)
 
 ## When to step up, when to stay
 
@@ -225,7 +225,7 @@ For a 16-18 ft aluminum fishing boat on Rice Lake or the Kawarthas, the most pra
 
 ### Should I choose the maximum HP my boat is rated for?
 
-The labelled maximum is a safety ceiling, not a performance goal. Stay within your boat's documented power, transom, and weight limits, then size for the hull, your usual and heaviest planned loads, and how you use it. Watersports, full passenger loads in rough conditions, or bigger lakes may call for a different choice within those limits.
+No. HBW recommends one Mercury model step below the maximum HP on the capacity plate. If the plate says 150 HP, the best fit is a 115. Max rated is overkill: more power and more weight on the transom than the boat performs well with. Never exceed the documented power, transom, or weight limits.
 
 ### What horsepower do I need for a pontoon boat in Ontario?
 

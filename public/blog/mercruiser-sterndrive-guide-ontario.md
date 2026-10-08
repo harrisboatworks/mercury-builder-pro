@@ -33,7 +33,7 @@ revenue_driver: service
 
 ## The Ontario Boater's Guide to MerCruiser Sterndrives. Maintenance, Repairs, and Repower
 
-> **Quick answer:** MerCruiser sterndrives are still serviceable and parts are available, but the market has shifted toward outboards for Ontario freshwater use. Repowering a sterndrive boat to outboard is a significant project, we quote both paths honestly. Get a real number at mercuryrepower.ca.
+> **Quick answer:** MerCruiser sterndrives are still serviceable and parts are available, but the market has shifted toward outboards for Ontario freshwater use. Repowering a sterndrive boat to outboard is a significant project, and we will tell you honestly which path the numbers favour. Get a real number at mercuryrepower.ca.
 
 Considering converting to outboard power? See [Mercury Repower Cost: Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad), the [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide), and [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/fourstroke-vs-pro-xs). The [Mercury Controls & Rigging Guide (Ontario)](/blog/mercury-controls-rigging-guide-ontario) covers what a sterndrive-to-outboard conversion needs at the helm.
 
@@ -59,7 +59,7 @@ Each has trade-offs. Sterndrives give you a full-width swim platform, lower nois
 
 **Alpha One (Gen 1 and Gen 2)**, the most common MerCruiser drive in this part of the country. Found behind 4.3L V6, 5.0L V8, and 5.7L V8 engines from roughly 1985 through current production. Up to about 300 HP. Most aluminum-prop family boats.
 
-**Bravo (1, 2, and 3)**, heavier-duty, larger gearcase. Bravo 1 for performance applications. Bravo 2 for big pontoon-style hulls. Bravo 3 has dual counter-rotating props for low-speed control on heavy cruisers. Behind bigger V8s and V10s.
+**Bravo (1, 2, and 3)**, heavier-duty, larger gearcase. Bravo 1 for performance applications. Bravo 2 for larger, heavier boats. Bravo 3 has dual counter-rotating props for better low-speed steering control and acceleration. Behind bigger V8s and V10s.
 
 If you don't know which drive you have, the data plate on the upper drive housing has the model. Take a photo and bring it in, we can also pull it from your boat's serial.
 
@@ -72,7 +72,7 @@ If you don't know which drive you have, the data plate on the upper drive housin
 | Bellows at the gimbal housing | The rubber sleeves crack at the folds and let water in through the transom. This is the boat-sinker. |
 | Gimbal bearing | Growls on hard low-speed turns, then takes out the U-joint, the bellows and the engine coupler. |
 | Drive seals | Milky gear lube means water has passed the prop shaft seal or the upper drive shaft seal. |
-| Raw water pump and impeller | The drive is raw-water cooled, so a worn impeller overheats the engine the same way it does on an outboard. |
+| Raw water pump and impeller | Raw water cools the engine or its heat exchanger, so a worn impeller overheats the engine the same way it does on an outboard. |
 | Engine block and manifolds | An incomplete fall drain cracks the block. A sterndrive does not self-drain the way a tilted outboard does. |
 
 Alpha One and Bravo share these failure points. The difference between them is gearcase size and duty rating.
@@ -115,7 +115,7 @@ Same warning sign as an outboard, same severity. Gear lube should be amber. [Mil
 
 ### 4. Raw water pump and impeller
 
-MerCruiser sterndrives are **raw-water cooled**, same as outboards. Lake water in, through the engine, back out. The impeller lives in the drive (Alpha) or in an engine-mounted pump (Bravo + most newer Alphas). Cheaper to replace, harder to ignore, same overheat consequences as an outboard.
+Many MerCruiser sterndrives are **raw-water cooled**, like outboards: lake water in, through the engine, back out. Others are closed-cooled, with a coolant loop and heat exchanger that raw water still cools, so check which you have. The impeller lives in the drive (Alpha) or in an engine-mounted pump (Bravo + most newer Alphas). Cheaper to replace, harder to ignore, same overheat consequences as an outboard.
 
 **Replace every 2-3 years**, or when the engine starts running hotter than normal at cruise.
 
@@ -161,7 +161,7 @@ A reasonable annual routine for an Ontario sterndrive:
 ### Every fall (winterization, the non-negotiable one)
 - Stabilize fuel
 - Drain block, manifolds, risers, drives, every single petcock
-- Pull battery, store on tender
+- Disconnect the battery and leave it in the boat
 - Fog cylinders
 - Drain or refill drive with fresh gear lube
 - Cover or shrinkwrap
@@ -180,15 +180,12 @@ A MerCruiser sterndrive engine doesn't last forever. Most we see hit the wall at
 - The drive needs major work AND the engine has 1,500+ hours
 - Estimated repair exceeds 50% of the boat's value
 
-**Three repower paths:**
+**Two ways forward:**
 
-### 1. Remanufactured MerCruiser crate engine + existing drive
-$8,000-$15,000 installed for a typical 4.3L or 5.0L. The cheapest path. Comes with a 1-2 year warranty. Good if your drive is still healthy.
+### 1. Replace the engine or drive
+A remanufactured MerCruiser engine on your existing drive, or a new engine and drive package, keeps the boat as it was designed. HBW doesn't sell replacement sterndrive engines or drives. We service and repair MerCruiser, so we can tell you what's wrong and whether the rest of the boat justifies the spend before you price a replacement elsewhere.
 
-### 2. New MerCruiser engine + new Bravo drive
-$30,000-$40,000+ installed for a complete new V8 + Bravo combo. Full new warranty. Most expensive path, and harder to justify on an older hull unless it's a special boat.
-
-### 3. Sterndrive-to-outboard conversion
+### 2. Sterndrive-to-outboard conversion
 $20,000-$35,000+ depending on hull and HP. Cuts out the drive and transom assembly, installs a fabricated transom bracket and a modern Mercury outboard. Why people do it:
 
 - **Simpler maintenance**, no bellows, no gimbal bearing, no manifolds
@@ -199,7 +196,7 @@ $20,000-$35,000+ depending on hull and HP. Cuts out the drive and transom assemb
 
 The trade-offs: higher upfront cost than a remanufactured drop-in, swim platform gets reduced (the outboard takes up part of it), and the boat looks different. For some hulls, especially classic '80s and '90s designs, that last point matters; for others it's a clean improvement.
 
-We do both. We'll quote both. We're not a "convert everything to outboards" shop and we're not a "stick with what you've got" shop. The math depends on the boat.
+We're not a "convert everything to outboards" shop and we're not a "stick with what you've got" shop. The math depends on the boat.
 
 ---
 
@@ -237,10 +234,10 @@ What we handle:
 - Raw water pump, thermostat, manifolds, risers
 - Engine diagnostics and repairs (gas MerCruiser, all sizes)
 - Drive rebuilds (Alpha and Bravo)
-- Repowers, remanufactured drop-ins, full new engine + drive, or outboard conversions
+- Outboard conversions on suitable hulls (we don't sell replacement sterndrive engines or drives)
 - [Storage](/blog/outdoor-boat-storage-shrinkwrap-rice-lake) (outdoor storage with professional shrink wrap, outdoor uncovered storage, or shrink-wrap-only service; sterndrives included)
 
-Book at **[hbw.wiki/service](https://hbw.wiki/service)**.
+Book at **[hbwservice.ca](https://hbwservice.ca)**.
 
 ---
 
@@ -264,7 +261,7 @@ Within reason, yes. We see well-maintained 25-year-old MerCruisers that run perf
 
 ### Is converting from sterndrive to outboard always worth it?
 
-Not always. If your current MerCruiser is healthy and your hull was designed around the sterndrive look, the conversion math may not work. But if you're staring at a major repair bill and the boat's value can support a $25K+ investment, the outboard route gives you a fresh warranty and better resale. We'll quote both, straight numbers.
+Not always. If your current MerCruiser is healthy and your hull was designed around the sterndrive look, the conversion math may not work. But if you're staring at a major repair bill and the boat's value can support a $25K+ investment, the outboard route gives you a fresh warranty and better resale. We'll tell you straight which way the numbers point.
 
 ### Do you service MerCruiser diesel?
 
@@ -280,12 +277,12 @@ Yes, though gas is more common in Ontario recreational boats. Bring the model an
 
 ## Next steps
 
-- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbw.wiki/service
+- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbwservice.ca
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
-- The only commercial next step for this article is the HBW service request at https://hbw.wiki/service.
+- The only commercial next step for this article is the HBW service request at https://hbwservice.ca.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

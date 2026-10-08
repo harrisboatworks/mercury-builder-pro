@@ -3,6 +3,8 @@ import {render,screen,fireEvent,act,cleanup} from '@testing-library/react';
 import {describe,it,expect,vi,afterEach} from 'vitest';
 import {TradeInValuation} from '@/components/quote-builder/TradeInValuation';
 import {fetchHBWValuation} from '@/lib/trade-valuation';
+import {trackStandaloneTrade} from '@/lib/trade-in-analytics';
+vi.mock('@/lib/trade-in-analytics',()=>({trackStandaloneTrade:vi.fn()}));
 vi.mock('@/lib/trade-valuation',async original=>({...await original<any>(),fetchHBWValuation:vi.fn()}));
 vi.mock('@/hooks/useHapticFeedback',()=>({useHapticFeedback:()=>({triggerHaptic:vi.fn()})}));
 const info={hasTradeIn:true,brand:'Mercury',year:2020,horsepower:9.9,model:'9.9 FourStroke',serialNumber:'',condition:'good' as const,engineType:'4-stroke' as const,estimatedValue:0,confidenceLevel:'medium' as const};
@@ -22,5 +24,20 @@ describe('customer trade behavior',()=>{
  });
  it('keeps zero distinct from blank in the editable hours field',()=>{
   const changed=vi.fn();render(<TradeInValuation standalone tradeInInfo={{...info,engineHours:0}} onTradeInChange={changed}/>);fireEvent.click(screen.getByRole('button',{name:/More details/i}));const input=screen.getByLabelText('Engine Hours');expect(input).toHaveValue(0);fireEvent.change(input,{target:{value:''}});expect(changed).toHaveBeenCalledWith(expect.objectContaining({engineHours:undefined,estimatedValue:0}));
+ });
+ it('measures standalone estimates before a new motor is selected without sending asset details',async()=>{
+  vi.mocked(fetchHBWValuation).mockResolvedValue(success);
+  render(<TradeInValuation standalone tradeInInfo={{...info,serialNumber:'PRIVATE-SERIAL'}} onTradeInChange={vi.fn()}/>);
+  await act(async()=>fireEvent.click(screen.getByRole('button',{name:'Get My Estimate'})));
+  expect(trackStandaloneTrade).toHaveBeenNthCalledWith(1,'standalone_trade_estimate_requested',expect.any(String));
+  expect(trackStandaloneTrade).toHaveBeenNthCalledWith(2,'standalone_trade_estimate_succeeded',expect.any(String));
+  expect(JSON.stringify(vi.mocked(trackStandaloneTrade).mock.calls)).not.toContain('PRIVATE-SERIAL');
+ });
+ it('records an unavailable standalone attempt honestly',async()=>{
+  vi.mocked(fetchHBWValuation).mockResolvedValue({ok:false,reason:'unavailable'});
+  render(<TradeInValuation standalone tradeInInfo={info} onTradeInChange={vi.fn()}/>);
+  await act(async()=>fireEvent.click(screen.getByRole('button',{name:'Get My Estimate'})));
+  expect(trackStandaloneTrade).toHaveBeenLastCalledWith('standalone_trade_estimate_failed',expect.any(String),'unavailable');
+  expect(vi.mocked(trackStandaloneTrade).mock.calls.some(([event])=>event==='standalone_trade_estimate_succeeded')).toBe(false);
  });
 });

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-75-vs-90-vs-115-comparison.md
-last_updated: 2026-09-11
+last_updated: 2026-09-26
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury 90 vs 115 vs 75 HP: Which Outboard to Pick (2026)"
 description: "Compare Mercury 75, 90 and 115 FourStroke outboards by boat fit, loading, tiller and Command Thrust availability, pricing and performance tradeoffs."
 category: "Comparison"
 date_published: 2026-01-26
-date_modified: 2026-09-11
+date_modified: 2026-09-26
 keywords: ["90 hp mercury motor","mercury 75 vs 90","mercury 90 vs 115","best mercury hp","mercury 75hp review","mercury 115 fourstroke"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Comparison  
 **Published:** 2026-01-26  
-**Last reviewed:** 2026-09-11  
+**Last reviewed:** 2026-09-26  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-75-vs-90-vs-115-comparison
 
@@ -50,6 +50,8 @@ For most 16 to 18 ft aluminum console boats on Kawartha and Ontario freshwater, 
 For most 16 to 18 ft aluminum console boats carrying two or more people on Kawartha lakes, yes. The 90 gives you stronger loaded planing and acceleration on the same 2.1L block and mounting footprint. The exact speed gain depends on hull, load, prop, mounting height, and conditions, so we do not promise a fixed mph increase. If you mostly run light and single-handed, the 75 is a fine motor. If the boat fills up on weekends, the 90 is the one you are less likely to outgrow.
 
 Real-world performance varies with hull, load, prop, mounting height, water conditions, and rigging. Numbers below are typical ranges from boats we've rigged at HBW; treat them as ballpark, not guarantees.
+
+See [Mercury 90 & 115 HP prices in Canada](/mercury/mid-power-90-115hp), or [build an installed quote](/quote/motor-selection).
 
 ## Quick recommendation
 
@@ -116,7 +118,7 @@ The 75 HP FourStroke is the right call when:
 - **Sheltered water, calm conditions.** Rice Lake bays, smaller Kawartha lakes, sheltered cottage water.
 - **Budget is tight and the next class up does not justify the difference for your specific situation.**
 
-The 75 saves real money on a budget-tight repower. The downside shows up when the boat is loaded or when wind comes up. If you regularly run with a full crew or in choppy water, the 75 will leave you wishing for more.
+The price gap to the 90 is small, so the 75 saves only a little on a budget-tight repower. The downside shows up when the boat is loaded or when wind comes up. If you regularly run with a full crew or in choppy water, the 75 will leave you wishing for more.
 
 ## Mercury 90 EXLPT FourStroke: the sweet spot
 
@@ -138,7 +140,7 @@ The 115 HP FourStroke is the right call when:
 - **Hull is 17 to 19 ft aluminum or light fiberglass.** Bigger hulls justify the bigger motor.
 - **Use is family of four or five with gear, or active fishing with multiple anglers.**
 - **You launch on bigger water (Lake Simcoe, Lake Ontario, Bay of Quinte) or run the Trent-Severn system.**
-- **Capacity plate rating is 115 HP or higher.**
+- **Capacity plate rating is above 115 HP**, so the 115 stays under the maximum.
 - **You want the option of running Pro XS later** (115 Pro XS slots into the same gearcase footprint as the 115 FourStroke).
 
 The 115 step-up over the 90 is meaningful in real-world performance: better hole shot when loaded, better cruise speed, more headroom in chop. The price premium over the 90 is real but not enormous. Most customers who step up do not regret it. Most customers who buy 90 also do not regret it. There is no wrong answer if the boat fits both.
@@ -191,11 +193,11 @@ Pro XS is the right call when:
 
 For typical recreational use (fishing, family, mixed), FourStroke at the same HP is the better value. Pro XS earns the price difference on tournament hulls, not on family aluminum consoles. See our [Mercury motor families guide](/blog/fourstroke-vs-pro-xs) for the full FourStroke vs Pro XS picture.
 
-- [Mercury 115 vs 150 HP for Ontario Boats](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026), the next step-up question
-- [How to Choose the Right Horsepower for Your Boat](/blog/how-to-choose-right-horsepower-boat), full HP class guide
-- [Best Mercury Outboard for Aluminum Fishing Boats](/blog/best-mercury-outboard-aluminum-fishing-boats), aluminum-specific recommendations
-- [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/fourstroke-vs-pro-xs), which family fits your use
-- [Mercury Propeller Selection Guide](/blog/mercury-propeller-selection-guide), prop selection meaningfully changes performance
+- [Mercury 115 vs 150 HP for Ontario Boats](/blog/mercury-115-vs-150-hp-honest-ontario-dealer-guide-2026): the next step-up question
+- [How to Choose the Right Horsepower for Your Boat](/blog/how-to-choose-right-horsepower-boat): full HP class guide
+- [Best Mercury Outboard for Aluminum Fishing Boats](/blog/best-mercury-outboard-aluminum-fishing-boats): aluminum-specific recommendations
+- [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/fourstroke-vs-pro-xs): which family fits your use
+- [Mercury Propeller Selection Guide](/blog/mercury-propeller-selection-guide): prop selection meaningfully changes performance
 
 ## Ready to pick your motor?
 
@@ -205,7 +207,7 @@ Build a quote for 75, 90, or 115 HP on the [motor selection page](/quote/motor-s
 
 ---
 
-_Pricing ranges in this article are HBW's working 2026 estimates, last reviewed 2026-08-19. The actual price for your specific motor and configuration is on the [motor selection page](/quote/motor-selection), which is the source of truth and updates as Mercury pricing and HBW promotions change. Mercury model years change every July 1, and we refresh ranges in articles annually._
+_This article does not quote prices. Current Mercury CAD pricing is on the [pricing reference](/pricing-reference); the [motor selection page](/quote/motor-selection) builds the exact configuration._
 
 ---
 
@@ -240,7 +242,7 @@ About 163 kg (359 lb) dry for the lightest model. The 75, 90, and 115 FourStroke
 
 ### Can I put a 115 on a boat rated for 90 HP?
 
-No. The capacity plate maximum is a legal and safety ceiling, not a suggestion. If your plate says 90 HP, 90 is the most you can rig. If you want 115, the boat itself has to be rated for it. We check the plate before we quote.
+No. The capacity plate shows the maximum recommended safe limit for engine power under Transport Canada's rules, and going over it creates safety, compliance, liability and insurance problems. If your plate says 90 HP, 90 is the most you should rig. If you want 115, the boat itself has to be rated for it. We check the plate before we quote.
 
 ### Is the 90 HP Mercury a four-stroke?
 

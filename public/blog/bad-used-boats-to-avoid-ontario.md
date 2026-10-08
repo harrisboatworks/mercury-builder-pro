@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/bad-used-boats-to-avoid-ontario.md
-last_updated: 2026-09-11
+last_updated: 2026-10-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Bad Used Boats to Avoid Ontario"
 description: "An Ontario Mercury dealer's honest rundown of the used boats and motors you should walk away from, and what's actually worth buying on Kijiji."
 category: "Buying Guide"
 date_published: 2026-02-17
-date_modified: 2026-09-11
+date_modified: 2026-10-06
 keywords: ["used boats","buying guide","ontario","red flags","marine inspection"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-02-17  
-**Last reviewed:** 2026-09-11  
+**Last reviewed:** 2026-10-06  
 **Read time:** ~12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/bad-used-boats-to-avoid-ontario
 
@@ -109,7 +109,7 @@ This one is delicate, so we'll be direct without being unfair. Evinrude made tec
 
 Then BRP exited the outboard market in 2020.
 
-That decision left a large installed base of motors without a manufacturer-supported parts pipeline. Aftermarket support exists, but it's shrinking. Dealers who specialize in Evinrude service are fewer every year. If something specific fails on an older G1 E-TEC, you may be hunting for parts from multiple suppliers with no guarantee of availability or timeline.
+BRP stopped building Evinrude outboards in 2020, but still supplies genuine Evinrude parts, oils and warranty support through its dealer network. Stock for older models, especially electronics, is thinning, and Evinrude-focused service dealers are fewer. Price that risk into any offer. If something specific fails on an older G1 E-TEC, you may be hunting for parts from multiple suppliers with no guarantee of availability or timeline.
 
 It doesn't mean every E-TEC is a write-off. It means the risk profile is different than it was five years ago, and that needs to be priced into any offer you make. We cover this in detail in our [Evinrude to Mercury repower guide for Ontario](https://www.mercuryrepower.ca/blog/evinrude-to-mercury-repower-ontario-guide).
 
@@ -117,7 +117,7 @@ It doesn't mean every E-TEC is a write-off. It means the risk profile is differe
 
 ### Older Force, Chrysler, or Off-Brand Outboards
 
-Short version: parts are either gone or nearly impossible to source. Service technicians who know these motors well are retiring. If the motor fails in a meaningful way, you're likely replacing it, which means the motor has zero value, and you're overpaying for a hull.
+Short version: parts are limited, often aftermarket only, and hard to source. Service technicians who know these motors well are retiring. If the motor fails in a meaningful way, you're likely replacing it, which means the motor has zero value, and you're overpaying for a hull.
 
 If you're seeing these on a listing and the seller is pricing the motor as a selling point, that's a problem.
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-boat-battery-guide-ontario.md
-last_updated: 2026-09-07
+last_updated: 2026-09-26
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Boat Battery Guide Ontario"
 description: "Marine battery guide for Ontario boaters: types, switches, wiring, winter storage, and spring startup so you're not stranded on the May long weekend."
 category: "Service"
 date_published: 2026-04-01
-date_modified: 2026-09-07
+date_modified: 2026-09-26
 keywords: ["marine battery","mercury","winter storage","battery switch","agm"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Category:** Service  
 **Published:** 2026-04-01  
-**Last reviewed:** 2026-09-07  
+**Last reviewed:** 2026-09-26  
 **Read time:** ~12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-boat-battery-guide-ontario
 
@@ -59,7 +59,7 @@ Resting voltage lies. A tired battery can read 12.4V at rest and collapse to 8V 
 
 **Are the terminals clean and the cable connections tight?**
 
-White or green powder means corrosion, which means resistance, which mimics a dead battery. Clean with baking soda and water, then dielectric grease.
+White or green powder means corrosion, which means resistance, which mimics a dead battery. Clean with baking soda and water, reconnect and tighten, then coat the finished connection with dielectric grease.
 
 #### Charging system (alternator output)
 
@@ -75,7 +75,7 @@ Even a "good" 5-year-old AGM is on borrowed time. Replace proactively instead of
 
 #### Want HBW to diagnose?
 
-We test batteries, charging systems, and parasitic drain in one appointment. Book at hbw.wiki/service.
+We test batteries, charging systems, and parasitic drain in one appointment. Book at hbwservice.ca.
 
 ## Why Batteries Are Our #1 Spring Service Call
 
@@ -227,7 +227,7 @@ For the full winterization picture, see our [DIY Mercury Outboard Winterization 
 
 1. **Check resting voltage.** After an hour off charge: 12.6V+ = healthy. 12.4-12.5V = okay. Below 12.4V = recharge and retest. Below 12.2V after a full charge = replace it.
 2. **Load test.** Voltage alone isn't the whole picture, a battery can read 12.6V and still fail under cranking load. Our shop load tests, and most auto parts stores will test for free.
-3. **Inspect terminals.** White or green crust is corrosion. Clean with a paste of baking soda and water, rinse, dry, and apply dielectric grease before reconnecting. This prevents recurrence.
+3. **Inspect terminals.** White or green crust is corrosion. Clean with a paste of baking soda and water, rinse, dry, reconnect and tighten, then coat the finished connection with dielectric grease. This prevents recurrence.
 4. **Check water levels (flooded batteries only).** Top up with distilled water, never tap water.
 5. **Confirm switch position.** Make sure it's in the correct operating position, not OFF.
 6. **Reconnect and crank.** A healthy battery on a healthy engine starts in 2 to 3 seconds.
@@ -290,12 +290,12 @@ For more on how on-board monitoring tools can help you track your boat's electri
 
 Battery problems are fixable. They're also preventable, if you know what to check and when.
 
-[Book a service appointment at hbw.wiki/service](https://hbw.wiki/service) and our techs will load test your battery, inspect your terminals, check your alternator output, and give you a straight answer on what it actually needs, before the season starts.
+[Book a service appointment at hbwservice.ca](https://hbwservice.ca) and our techs will load test your battery, inspect your terminals, check your alternator output, and give you a straight answer on what it actually needs, before the season starts.
 
 Looking for a replacement battery, smart charger, terminal hardware, or switch components? Check [marinecatalogue.ca](https://www.marinecatalogue.ca/), real prices, no phone tag.
 
 Harris Boat Works. Gores Landing, ON. Est. 1947.  
-[hbw.wiki/service](https://hbw.wiki/service)
+[hbwservice.ca](https://hbwservice.ca)
 
 Phone: 905-342-2153
 
@@ -335,19 +335,19 @@ Bring a suitable battery to a full charge before storage and follow the manufact
 ## Related guides
 
 - [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide), choosing the right propeller
+- [What Battery Does My Mercury Outboard Need? MCA, Group Size and Lithium Rules](/blog/mercury-outboard-battery-size-guide), cranking battery specs by Mercury model, plus the lithium rules
 - [How to Trim a Boat With a Mercury Outboard: Read the Boat, Not Just the Gauge](/blog/how-to-trim-boat-mercury-outboard), how to trim your Mercury outboard
 - [Read Mercury Outboard Serial Number](/blog/how-to-read-mercury-outboard-serial-number), decoding the Mercury serial number
 - [Outboard Trade-In Value in Ontario (2026)](/blog/outboard-trade-in-value-ontario-hbw), what your outboard is worth on trade
-- [The Complete Guide to Boat Bilge Pumps: How They Work, Why They Fail, and How to Fix Them](/blog/bilge-pump-troubleshooting-guide), diagnosing a bilge pump that won't run
 
 ## Next steps
 
-- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbw.wiki/service
+- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbwservice.ca
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
-- The only commercial next step for this article is the HBW service request at https://hbw.wiki/service.
+- The only commercial next step for this article is the HBW service request at https://hbwservice.ca.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

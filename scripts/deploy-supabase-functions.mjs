@@ -19,6 +19,8 @@
  * migrations are skipped; functions with an empty requiredMigrations
  * list still deploy. The job fails if anything was skipped.
  *
+ * Automatic diff selections include the available partner of each affected
+ * public pair. Explicit single-function selectors are not expanded.
  * After that migration gate, public chat (`ai-chatbot` +
  * `ai-chatbot-stream`) and OpenAI Realtime (`realtime-session` +
  * `realtime-sdp-exchange`) also fail closed as pairs: one-sided
@@ -61,6 +63,7 @@ import {
   toPosix,
 } from './lib/supabase-deploy-required.mjs';
 import {
+  PUBLIC_RELEASE_PAIRS,
   allowlistedPairIds,
   pairById,
   skipReasonsForSelectedSlugs,
@@ -119,6 +122,31 @@ export function buildDispatchPairTargets(pair, files, rangeTargets) {
     reasons: [`workflow_dispatch pair ${pair.id}`],
     requiredMigrations: requiredMigrationsForDispatch(slug, files, rangeTargets),
   }));
+}
+
+/** Complete automatic diff selections without weakening explicit selectors or release gates. */
+export function completeAutomaticPairTargets(targets, files, pairs = PUBLIC_RELEASE_PAIRS) {
+  const functions = [...targets.functions];
+  const selected = new Set(functions.map((item) => item.slug));
+  const removed = new Set(targets.removed || []);
+  for (const pair of pairs) {
+    const selectedMembers = pair.slugs.filter((slug) => selected.has(slug));
+    if (!selectedMembers.length) continue;
+    // Leave an unavailable pair incomplete so the existing guard holds it.
+    if (pair.slugs.some((slug) => removed.has(slug) || files[`supabase/functions/${slug}/index.ts`] == null)) {
+      continue;
+    }
+    for (const slug of pair.slugs) {
+      if (selected.has(slug)) continue;
+      functions.push({
+        slug,
+        reasons: [`automatic pair ${pair.id} (required with ${selectedMembers.join(', ')})`],
+        requiredMigrations: requiredMigrationsForDispatch(slug, files, targets),
+      });
+      selected.add(slug);
+    }
+  }
+  return { ...targets, functions };
 }
 
 export function resolveForcedSlug(raw, files) {
@@ -842,6 +870,10 @@ export async function runDeploy({
       return 0;
     }
     targets = ranged.targets;
+  }
+
+  if (!forced && !forcedPair) {
+    targets = completeAutomaticPairTargets(targets, files, releasePairs);
   }
 
   if (!targets.functions.length) {

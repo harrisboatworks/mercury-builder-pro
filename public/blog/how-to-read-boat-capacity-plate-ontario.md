@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/how-to-read-boat-capacity-plate-ontario.md
-last_updated: 2026-09-07
+last_updated: 2026-10-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "How to Read a Boat Capacity Plate in Ontario"
 description: "Decode a Canadian compliance notice: maximum recommended safe horsepower, people and load limits, where to find it, and what to do if it is missing."
 category: "Buying Guides"
 date_published: 2026-05-16
-date_modified: 2026-09-07
+date_modified: 2026-10-06
 keywords: ["boat capacity plate","capacity plate ontario","transport canada compliance notice","boat maximum horsepower","boat capacity decoder","boat hin number","used boat inspection ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guides  
 **Published:** 2026-05-16  
-**Last reviewed:** 2026-09-07  
+**Last reviewed:** 2026-10-06  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/how-to-read-boat-capacity-plate-ontario
 
@@ -35,7 +35,7 @@ A Canadian compliance notice confirms that the builder or importer declared the 
 
 ## Where to find the plate
 
-On boats manufactured in Canada or imported and Transport Canada-compliant, the Compliance Notice is permanently affixed in one of three places:
+Transport Canada requires the Compliance Notice to be displayed where it can be seen from the helm. You'll usually find it in one of these places:
 
 1. **Inside the transom** at the rear of the boat, often on the splashwell.
 2. **At the helm** on the side of the console (typical on bowriders and runabouts).
@@ -51,7 +51,7 @@ The sections below explain maximum persons, recommended engine power, gross load
 This is the largest number of people included in the manufacturer's recommended safe limits for the boat. It is separate from the weight limit. Transport Canada says the craft reaches capacity when either the people limit or the weight limit is reached, whichever comes first.
 
 ### 2. Maximum recommended engine horsepower
-This is the highest motor power the hull was designed and tested to handle safely. It is set by the manufacturer based on hull dynamics, weight distribution, and transom strength.
+This is the highest motor power the builder rated the hull for, calculated under Transport Canada’s construction standards. It is set by the manufacturer based on hull dynamics, weight distribution, and transom strength.
 
 **Important:** this is not a target and it is not a recommendation to buy the biggest motor. It is the manufacturer's maximum recommended safe power for that hull. An engine choice still has to account for motor weight, transom condition, steering, rigging, load, and use.
 
@@ -92,7 +92,7 @@ For a boat built after April 29, 2010, contact the manufacturer or importer and 
 | Field on the notice | What it tells you |
 |---|---|
 | Maximum number of persons | The largest number of people included in the manufacturer's recommended safe limits. It is a count, separate from the weight limit, and capacity is reached when either the people limit or the weight limit is reached, whichever comes first. |
-| Maximum recommended engine power | The highest motor power the hull was designed and tested to handle safely. It is a limit to respect, not a shopping target. |
+| Maximum recommended engine power | The highest motor power the builder rated the hull for, calculated under Transport Canada’s construction standards. It is a limit to respect, not a shopping target. |
 | Maximum gross load | The total weight the boat can safely carry: people, fuel, gear, motor, batteries, and everything that is not the empty hull. Usually shown in both kilograms and pounds. |
 | Manufacturer or importer, and model | Who built or imported the hull and which model it is. This is what you quote when you ask for a replacement notice. |
 | Declaration of compliance | The statement that the product complied with the applicable Canadian construction requirements when it was built or imported. |
@@ -113,7 +113,7 @@ Jay Harris helps run Harris Boat Works, a third-generation family marina in Gore
 
 ## Sources
 
-- [Transport Canada 2026 Safe Boating Guide](https://tc.canada.ca/sites/default/files/2026-05/boating_guide_2026_en_acc.pdf), compliance notices and recommended maximum safe limits
+- [Transport Canada boating safety](https://tc.canada.ca/en/marine-transportation/marine-safety/boating-safety), compliance notices and recommended maximum safe limits
 - [Small Vessel Regulations, section 802](https://laws-lois.justice.gc.ca/eng/regulations/SOR-2010-91/section-802.html), information required on compliance notices
 - [Small Vessel Regulations, section 811](https://laws-lois.justice.gc.ca/eng/regulations/SOR-2010-91/section-811.html), replacement of an illegible compliance notice
 - [Construction Standards for Small Vessels, TP 1332](https://tc.canada.ca/sites/default/files/2023-11/TP1332E.pdf), compliance-notice construction standards

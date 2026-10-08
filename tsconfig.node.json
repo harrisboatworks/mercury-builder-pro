@@ -18,6 +18,6 @@
     "noUnusedParameters": false,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["vite.config.ts"],
+  "include": ["vite.config.ts", "vite.chart-evidence.config.ts"],
   "exclude": ["supabase"]
 }

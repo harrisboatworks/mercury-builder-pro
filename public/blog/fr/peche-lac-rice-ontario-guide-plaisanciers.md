@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/peche-lac-rice-ontario-guide-plaisanciers.md
-last_updated: 2026-09-06
+last_updated: 2026-10-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,12 +11,12 @@ title: "Pêche sur le lac Rice, Ontario : Guide pratique pour les plaisanciers"
 description: "Guide complet de la pêche sur le lac Rice : espèces (doré, achigan, maskinongé), saisons, zones à explorer et location d'embarcations chez Harris Boat Works."
 category: "Destination"
 date_published: 2026-04-12
-date_modified: 2026-09-06
+date_modified: 2026-10-06
 keywords: ["pêche lac Rice Ontario","pêche Kawarthas Ontario","meilleur lac pêche Ontario","Rice Lake fishing guide"]
 author: Harris Boat Works
 content_type: blog_article
 language: fr-CA
-revenue_driver: repower
+revenue_driver: rentals
 ---
 
 # Pêche sur le lac Rice, Ontario : Guide pratique pour les plaisanciers
@@ -25,17 +25,17 @@ revenue_driver: repower
 
 **Catégorie :** Destination\
 **Publié le :** 2026-04-12\
-**Dernière révision :** 2026-09-06\
+**Dernière révision :** 2026-10-06\
 **Temps de lecture :** 7 min\
 **URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/peche-lac-rice-ontario-guide-plaisanciers
 
 ### Réponse rapide
 
-Le lac Rice, dans les Kawarthas, est l'un des meilleurs lacs à doré jaune de l'Ontario, à environ une heure et demie à l'est de Toronto. On y trouve aussi l'achigan, le maskinongé, la perchaude, et le brochet. La saison d'ouverture pour le doré (Zone 17) est généralement le 2e samedi de mai. Confirmez les dates et limites de prise actuelles sur ontario.ca avant votre sortie. Harris Boat Works est sur le lac à Gores Landing depuis 1947 et loue des pontons et des bateaux de pêche; consultez la flotte actuelle sur harrisboatworks.ca/rentals.
+Le lac Rice, dans les Kawarthas, à environ une heure et demie à l'est de Toronto, offre encore une bonne pêche, mais il faut ajuster ses attentes. L'achigan à petite bouche, le maskinongé et la marigane noire sont les meilleures valeurs sûres. Le doré jaune est toujours présent, mais plus difficile à garder, car beaucoup de poissons dépassent la fenêtre de conservation de 35 à 50 cm. On y trouve aussi la perchaude et le brochet. La saison d'ouverture pour le doré (Zone 17) est généralement le 2e samedi de mai. Confirmez les dates et limites de prise actuelles sur ontario.ca avant votre sortie. Harris Boat Works est sur le lac à Gores Landing depuis 1947 et loue des pontons et des bateaux de pêche; consultez la flotte actuelle sur harrisboatworks.ca/rentals.
 
 ---
 
-Si vous cherchez un lac de pêche en Ontario sans avoir à conduire six heures vers le nord, le lac Rice mérite votre attention. Situé dans les Kawarthas, à environ une heure et demie à l'est de Toronto et à moins de trois heures de Montréal, ce plan d'eau s'étend sur environ 37 kilomètres de long et offre une diversité de poissons qui en fait l'un des favoris des pêcheurs de la province.
+Si vous cherchez un lac de pêche en Ontario sans avoir à conduire six heures vers le nord, le lac Rice mérite votre attention. Situé dans les Kawarthas, à environ une heure et demie à l'est de Toronto et à environ 4 h 30 de Montréal (environ 445 km), ce plan d'eau s'étend sur environ 30 kilomètres de long et offre une diversité de poissons qui en fait l'un des favoris des pêcheurs de la province.
 
 Le lac Rice fait partie du réseau de la Voie navigable Trent-Severn et est alimenté par la rivière Otonabee à l'extrémité ouest. Harris Boat Works est établi directement sur le lac, à Gores Landing, depuis 1947. Trois générations de la même famille. Si quelqu'un connaît ces eaux, c'est bien nous.
 
@@ -45,7 +45,7 @@ Le lac Rice fait partie du réseau de la Voie navigable Trent-Severn et est alim
 
 ### Doré jaune (walleye)
 
-Le doré est la star du lac Rice, l'espèce pour laquelle le lac est le mieux connu. On le retrouve dans les fonds vaseux et près des herbiers, dans les zones peu profondes au printemps peu après la fraie, et en profondeur durant l'été quand les températures montent. En soirée et par temps couvert, les dorés remontent souvent vers la surface, idéal pour la pêche légère.
+Le doré est l'espèce qui a bâti la réputation du lac Rice, mais la situation est plus nuancée en 2026 : les pêcheurs rapportent moins de poissons, et beaucoup dépassent la fenêtre de conservation de 35 à 50 cm. On le retrouve dans les fonds vaseux et près des herbiers, dans les zones peu profondes au printemps peu après la fraie, et en profondeur durant l'été quand les températures montent. En soirée et par temps couvert, les dorés remontent souvent vers la surface, idéal pour la pêche légère.
 
 ### Achigan à grande bouche et achigan à petite bouche
 
@@ -65,7 +65,7 @@ Le lac Rice accueille aussi le brochet, la perchaude, la barbotte et d'autres pe
 
 **Printemps (mai, juin):** Meilleure période pour le doré, qui se retrouve dans les eaux moins profondes après la fraie. L'achigan devient actif dès que l'eau se réchauffe.
 
-**Été (juillet, août):** Le doré se déplace vers les eaux plus profondes. L'achigan reste actif tôt le matin et en soirée. Saison de pointe pour le maskinongé, cherchez-le près des structures submergées et des herbiers.
+**Été (juillet, août):** Le doré se déplace vers les eaux plus profondes. L'achigan reste actif tôt le matin et en soirée. Le maskinongé est actif; cherchez-le près des structures submergées et des herbiers.
 
 **Automne (septembre, octobre):** Excellent pour l'achigan à petite bouche et le brochet. Les températures plus fraîches rendent les poissons plus agressifs. L'une des périodes les plus agréables pour être sur l'eau au lac Rice.
 
@@ -75,9 +75,9 @@ Le lac Rice accueille aussi le brochet, la perchaude, la barbotte et d'autres pe
 
 | Espèce | Ouverture | Fermeture | Limite (sportive) |
 |---|---|---|---|
-| Doré jaune | 2e samedi de mai | 15 novembre | 4 |
+| Doré jaune | 2e samedi de mai | 15 novembre | Sport : 4; Conservation : 1; conservez seulement les poissons de 35 à 50 cm |
 | Achigan (grande et petite bouche) | 3e samedi de juin | 15 décembre | 6 |
-| Maskinongé | 3e samedi de juin | 15 décembre | 1 |
+| Maskinongé | 1er samedi de juin | 15 décembre | Sport : 1 de plus de 112 cm; Conservation : 0 |
 | Perchaude | Toute l'année | aucune | 50 |
 
 **Vérifiez toujours les règlements en vigueur pour l'année courante sur ontario.ca.** Les dates et limites de prise peuvent changer d'une année à l'autre.
@@ -88,7 +88,7 @@ Le lac Rice accueille aussi le brochet, la perchaude, la barbotte et d'autres pe
 
 Sans divulguer tous nos secrets, quelques structures sont reconnues par les pêcheurs locaux :
 
-- **Les herbiers de la partie est du lac:** habitat naturel pour l'achigan à grande bouche et le brochet.
+- **Les herbiers de la partie ouest du lac, au nord de Bewdley:** habitat naturel pour l'achigan à grande bouche et le brochet.
 - **Les pointes et hauts-fonds rocheux:** cherchez-les pour l'achigan à petite bouche, surtout à l'automne.
 - **Les zones de transition profondeur/herbier:** particulièrement productives pour le doré en été, en soirée.
 - **La rivière Otonabee** à l'extrémité ouest du lac crée des zones de courant intéressantes, idéales au printemps pour le doré et le brochet.
@@ -107,8 +107,8 @@ On vend aussi du carburant sans éthanol sur place, un détail que les propriét
 
 Pour pêcher en Ontario, vous avez besoin d'un permis de pêche sportive valide :
 
-- **Obligatoire** pour les 18 à 64 ans : Outdoors Card (~9 $) + permis de pêche sportive (~27 $ pour les résidents de l'Ontario)
-- **Exemptés** : les moins de 18 ans résidents canadiens accompagnés d'un adulte licencié, et les 65 ans et plus résidents canadiens
+- **Obligatoire** pour les 18 à 64 ans, et pour la plupart des non-résidents du Canada même à 65 ans et plus : Outdoors Card (~9 $) + permis de pêche sportive (~27 $ pour les résidents de l'Ontario)
+- **Exemptés** : les résidents canadiens de moins de 18 ans et de 65 ans et plus (avec une pièce d'identité gouvernementale indiquant leur nom et leur date de naissance)
 
 Les permis se délivrent en ligne ou dans les points de vente autorisés. Consultez ontario.ca pour les tailles minimales, les limites de prise, et les périodes d'ouverture actuelles.
 
@@ -116,7 +116,7 @@ Les permis se délivrent en ligne ou dans les points de vente autorisés. Consul
 
 ## Une petite note honnête
 
-Notre équipe travaille en anglais. Nous ne parlons pas couramment le français, mais nous sommes sincèrement heureux de vous accueillir et nous ferons tout notre possible pour vous aider. Vous pouvez nous écrire par courriel ou via le formulaire de demande de service à **hbw.wiki/service** et nous vous répondrons en anglais. Si vous préférez, utilisez Google Traduction ou demandez à un proche bilingue de vous aider.
+Notre équipe travaille en anglais. Nous ne parlons pas couramment le français, mais nous sommes sincèrement heureux de vous accueillir et nous ferons tout notre possible pour vous aider. Vous pouvez nous écrire par courriel ou via le formulaire de demande de service à **hbwservice.ca** et nous vous répondrons en anglais. Si vous préférez, utilisez Google Traduction ou demandez à un proche bilingue de vous aider.
 
 Harris Boat Works est l'un des rares concessionnaires Mercury en Ontario à offrir du contenu francophone sur la pêche et la navigation.
 
@@ -129,7 +129,7 @@ Harris Boat Works est l'un des rares concessionnaires Mercury en Ontario à offr
 
 **Réservez votre embarcation ou planifiez votre saison.** 
 Location d'embarcations : [harrisboatworks.ca](https://harrisboatworks.ca) 
-Service et entretien : [hbw.wiki/service](https://hbw.wiki/service), vous pouvez nous envoyer votre demande (nous répondrons en anglais). 
+Service et entretien : [hbwservice.ca](https://hbwservice.ca), vous pouvez nous envoyer votre demande (nous répondrons en anglais). 
 Téléphone : **905-342-2153** 
 Harris Boat Works, Gores Landing, Ontario, sur le lac Rice. En affaires depuis 1947.
 ---
@@ -138,7 +138,7 @@ Harris Boat Works, Gores Landing, Ontario, sur le lac Rice. En affaires depuis 1
 
 ### Faut-il un permis de pêche?
 
-Oui, pour les 18 à 64 ans. Les moins de 18 ans accompagnés d'un adulte licencié et les 65 ans et plus sont exemptés.
+Oui, pour les résidents de l'Ontario et du Canada de 18 à 64 ans, et pour la plupart des non-résidents du Canada, même à 65 ans et plus. Les résidents canadiens de moins de 18 ans ou de 65 ans et plus sont exemptés; portez une pièce d'identité gouvernementale indiquant votre nom et votre date de naissance. Les résidents canadiens ont aussi quatre périodes de pêche sans permis par année (la fin de semaine de la pêche en famille, les fins de semaine de la fête des Mères et de la fête des Pères, et la Semaine de la pêche en famille de l'Ontario). HBW ne vend pas de permis de pêche.
 
 ### Peut-on louer un bateau sur place?
 
@@ -148,18 +148,18 @@ Oui. HBW propose une gamme en ligne actuelle de bateaux pontons et de pêche; co
 
 Doré jaune, achigan (grande et petite bouche), maskinongé.
 
-### Rice Lake est-il loin de Toronto?
+### Le lac Rice est-il loin de Toronto?
 
-Environ 1 h 30 par la 401 Est puis la 115 Nord.
+Environ 1 h 30 par la 401 Est jusqu'à la sortie 472 (County Road 18 / Burnham Street, Cobourg), puis County Road 18 vers le nord sur environ 16 km jusqu'à Gores Landing.
 
 ## Prochaines étapes
 
-- Bâtissez votre soumission Mercury : https://www.mercuryrepower.ca/quote/motor-selection
+- Consultez la flotte de location actuelle sur le lac Rice et les disponibilités : https://harrisboatworks.ca/rentals
 - Lieu de ramassage et coordonnées : Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
-- The only commercial next step for this article is the Mercury quote configurator.
+- The only commercial next step for this article is Rice Lake rental availability at https://harrisboatworks.ca/rentals.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

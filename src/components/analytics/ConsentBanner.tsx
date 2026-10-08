@@ -41,8 +41,17 @@ export function ConsentBanner() {
       aria-label="Cookie consent"
       className="fixed bottom-0 left-0 right-0 z-[80] border-t border-[#20384d]/20 bg-white shadow-[0_-4px_20px_rgba(32,56,77,0.08)]"
     >
-      <div className="mx-auto flex max-w-[1400px] flex-col gap-3 px-4 py-3 md:flex-row md:items-center md:justify-between md:gap-6 md:px-8 md:py-4">
-        <p className="m-0 text-sm leading-snug text-[#20384d]">
+      <div className="mx-auto flex max-w-[1400px] flex-row items-center justify-between gap-2 px-3 py-2 md:gap-6 md:px-8 md:py-4">
+        <p className="m-0 block text-[13px] leading-none text-[#20384d] whitespace-nowrap md:hidden">
+          We use analytics cookies.{' '}
+          <a
+            href="/privacy"
+            className="underline decoration-[#20384d]/40 underline-offset-2 hover:decoration-[#20384d]"
+          >
+            Privacy
+          </a>
+        </p>
+        <p className="m-0 hidden text-sm leading-snug text-[#20384d] md:block">
           We use cookies to understand site traffic and improve mercuryrepower.ca.
           You can accept or decline analytics cookies.{' '}
           <a
@@ -52,18 +61,18 @@ export function ConsentBanner() {
             Privacy
           </a>
         </p>
-        <div className="flex shrink-0 items-center gap-2">
+        <div className="flex shrink-0 items-center gap-1 md:gap-2">
           <button
             type="button"
             onClick={() => choose('denied')}
-            className="rounded-md border border-[#20384d]/30 bg-white px-4 py-2 text-sm font-medium text-[#20384d] transition-colors hover:bg-[#20384d]/5"
+            className="h-10 rounded-md border border-[#20384d]/30 bg-white px-2 text-[13px] font-medium text-[#20384d] transition-colors hover:bg-[#20384d]/5 md:h-auto md:px-4 md:py-2 md:text-sm"
           >
             Decline
           </button>
           <button
             type="button"
             onClick={() => choose('granted')}
-            className="rounded-md bg-[#20384d] px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-[#2a4660]"
+            className="h-10 rounded-md bg-[#20384d] px-2 text-[13px] font-semibold text-white transition-colors hover:bg-[#2a4660] md:h-auto md:px-4 md:py-2 md:text-sm"
           >
             Accept
           </button>
@@ -71,7 +80,7 @@ export function ConsentBanner() {
             type="button"
             aria-label="Dismiss cookie banner (declines analytics cookies)"
             onClick={() => choose('denied')}
-            className="ml-1 rounded-md p-2 text-lg leading-none text-[#20384d]/60 transition-colors hover:bg-[#20384d]/5 hover:text-[#20384d]"
+            className="ml-1 hidden rounded-md p-2 text-lg leading-none text-[#20384d]/60 transition-colors hover:bg-[#20384d]/5 hover:text-[#20384d] md:inline-flex"
           >
             &times;
           </button>

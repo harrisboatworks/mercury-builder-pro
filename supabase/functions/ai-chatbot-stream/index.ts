@@ -64,6 +64,7 @@ import {
   buildVerifiedHbwAuthorityAnswer,
 } from '../_shared/verified-hbw-authority-facts.ts';
 import { nearbyAvailableHorsepowers } from '../_shared/nearby-horsepowers.ts';
+import { buildServiceBookingAnswer } from '../_shared/service-booking-answer.ts';
 
 // OpenAI chat model for the site assistant.
 // gpt-5.6-luna replaced gpt-4o-mini on 2026-09-04. Note the 5.6+ API contract:
@@ -761,7 +762,7 @@ async function searchWithPerplexity(query: string, category: QueryCategory, cont
     if (content) {
       // Add special disclaimer for troubleshooting
       if (category === 'troubleshooting') {
-        return `\n\n${config.header}\n${content}\n\n**Note:** These are general troubleshooting suggestions. For Mercury motors, our certified techs can diagnose it properly. Start a service request: http://hbw.wiki/service`;
+        return `\n\n${config.header}\n${content}\n\n**Note:** These are general troubleshooting suggestions. For Mercury motors, our certified techs can diagnose it properly. Start a service request: https://hbwservice.ca`;
       }
       return `\n\n${config.header}\n${content}${citations.length > 0 ? `\n\nSources: ${citations.slice(0, 2).join(', ')}` : ''}`;
     }
@@ -1391,7 +1392,7 @@ Installation is plug-and-play via 10-pin SmartCraft diagnostic port. DIY-friendl
 
 - Give a break-in or first-service schedule only when it is supported by the exact motor's official Mercury manual.
 - Ask for the full model/year or serial-number range when the current motor context is not enough to identify the correct manual.
-- If exact manual-backed instructions are unavailable, explain that Mercury procedures vary and direct the customer to Mercury's manual lookup or Harris Boat Works service: [Harris Service](http://hbw.wiki/service).
+- If exact manual-backed instructions are unavailable, explain that Mercury procedures vary and direct the customer to Mercury's manual lookup or Harris Boat Works service: [Harris Service](https://hbwservice.ca).
 - Never improvise RPM limits, hour phases, oil-change timing, or warranty consequences.
 
 ## RESPONSE LENGTH GUIDE
@@ -1409,12 +1410,12 @@ After answering a question, if it naturally leads somewhere, offer the next step
 | **Fuel economy/consumption** | "Want me to compare running costs between the models you're looking at?" |
 | **Props/propellers** | "Our techs do lake tests to dial in the perfect prop. Want me to get you on the list?" |
 | **Break-in procedure** | Give steps only from the exact manual-backed fact layer; otherwise ask for model/year or serial number. |
-| **Maintenance/oil/service** | Provide the info, then: "Want to book a service appointment? Here's the link: http://hbw.wiki/service" |
+| **Maintenance/oil/service** | Provide the info, then: "Want to book a service appointment? Here's the link: https://hbwservice.ca" |
 | **Winterization** | Walk through the steps, then: "We can handle winterization for you if you'd rather - want me to get you on the service calendar?" |
 | **Comparisons (2+ motors)** | After comparing: "If these are your finalists, want me to have someone call with real-world insights?" |
 | **Warranty questions** | After explaining: "Want to see the Canadian rate card? https://www.mercuryrepower.ca/mercury-product-protection" |
 | **Pricing/budget** | "We've got financing if that helps - 5-minute application. Want the link? /financing" |
-| **Troubleshooting** | Always end with: "For proper diagnosis, our certified techs should take a look: http://hbw.wiki/service" |
+| **Troubleshooting** | Always end with: "For proper diagnosis, our certified techs should take a look: https://hbwservice.ca" |
 | **Spec sheet request** | If we have one for that motor, offer to link it: "Want the official Mercury spec sheet?" |
 
 ### HOW TO OFFER FOLLOW-UPS
@@ -1426,7 +1427,7 @@ After answering a question, if it naturally leads somewhere, offer the next step
 ### LEAD CAPTURE FOR FOLLOW-UP OFFERS
 When a customer accepts an offer that needs contact info:
 1. **Callbacks/Personal help**: "Sure! What's your name and phone so someone can reach out?"
-2. **Service scheduling**: Link to http://hbw.wiki/service OR collect name/phone for callback
+2. **Service scheduling**: Link to https://hbwservice.ca OR collect name/phone for callback
 3. **Lake test scheduling**: "I'll have our team reach out. Name and phone?"
 4. After collecting info, use: [LEAD_CAPTURE: {"name": "...", "phone": "...", "email": "..."}]
 
@@ -1438,7 +1439,7 @@ When a customer accepts an offer that needs contact info:
 
 **Break-In Question:**
 > User: "What's the break-in process?"
-> You: "Mercury's break-in procedure varies by engine family and model year. I don't want to give you the wrong RPM or hour limits—send me the full model/year (or serial range), and I'll point you to the exact Mercury manual. Harris can also confirm it here: http://hbw.wiki/service."
+> You: "Mercury's break-in procedure varies by engine family and model year. I don't want to give you the wrong RPM or hour limits—send me the full model/year (or serial range), and I'll point you to the exact Mercury manual. Harris can also confirm it here: https://hbwservice.ca."
 
 **Comparison with callback offer:**
 > User: "What's the difference between the 60 and 75?"
@@ -1450,7 +1451,7 @@ When a customer accepts an offer that needs contact info:
 
 **Troubleshooting:**
 > User: "My motor keeps overheating"
-> You: "Usually that's water pump impeller, thermostat, or a blockage. When did you last service it? Check if there's good water flow from the tell-tale. For proper diagnosis though, our certified techs should take a look - they'll pinpoint exactly what's up: http://hbw.wiki/service"
+> You: "Usually that's water pump impeller, thermostat, or a blockage. When did you last service it? Check if there's good water flow from the tell-tale. For proper diagnosis though, our certified techs should take a look - they'll pinpoint exactly what's up: https://hbwservice.ca"
 
 ## LISTING MOTORS BY HP
 When asked "what X HP motors do you have?" or "list the X HP options":
@@ -1906,6 +1907,19 @@ serve(async (req) => {
     // so we can run the function-calling loop reliably.
     const hasQuoteIntent = detectQuoteIntent(message);
     const useStreaming = stream && !hasQuoteIntent;
+
+    const serviceBookingReply = buildServiceBookingAnswer(message);
+    if (serviceBookingReply) {
+      if (useStreaming) {
+        const event = JSON.stringify({ choices: [{ delta: { content: serviceBookingReply } }] });
+        return new Response(`data: ${event}\n\ndata: [DONE]\n\n`, {
+          headers: { ...corsHeaders, 'Content-Type': 'text/event-stream', 'Cache-Control': 'no-cache', 'Connection': 'keep-alive' },
+        });
+      }
+      return new Response(JSON.stringify({ reply: serviceBookingReply }), {
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
+    }
 
     const verifiedAuthorityReply = buildVerifiedHbwAuthorityAnswer(message);
     if (verifiedAuthorityReply) {

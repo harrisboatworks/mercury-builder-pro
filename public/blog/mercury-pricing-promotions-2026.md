@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-pricing-promotions-2026.md
-last_updated: 2026-09-06
+last_updated: 2026-10-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "2026 Mercury Buying: Pricing, Promotions and Smart Timing"
 description: "Work through 2026 Mercury outboard pricing. Understand MSRP vs dealer pricing, seasonal promotions, winter buying advantages."
 category: "Buying Guide"
 date_published: 2026-05-08
-date_modified: 2026-09-06
+date_modified: 2026-10-06
 keywords: ["mercury outboard price 2026","mercury promotions","mercury dealer pricing","best time buy outboard","mercury financing options"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,11 +25,11 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-05-08  
-**Last reviewed:** 2026-09-06  
+**Last reviewed:** 2026-10-06  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-pricing-promotions-2026
 
-> **Quick answer:** Mercury controls promotions; dealers can't invent discounts. Real 2026 deals can include Mercury rebates, financing incentives, and additional coverage when the written offer says so. Current terms are reflected in our configurator at mercuryrepower.ca and on the [promotions page](/promotions).
+> **Quick answer:** Mercury sets the factory rebate and financing programs, and dealers can run their own promotions on top. Real 2026 deals can include Mercury rebates, financing incentives, and additional coverage when the written offer says so. Current terms are reflected in our configurator at mercuryrepower.ca and on the [promotions page](/promotions).
 
 ## How Mercury Pricing Works in 2026
 
@@ -40,7 +40,7 @@ Understanding how Mercury pricing works helps you make smarter buying decisions.
 **MSRP (Manufacturer Suggested Retail Price)**:
 - Published pricing baseline
 - Rarely what you actually pay
-- Starting point for negotiation
+- - A reference point for comparing quotes
 - Does not include rigging/installation
 
 **MAP (Minimum Advertised Price)**:
@@ -50,7 +50,7 @@ Understanding how Mercury pricing works helps you make smarter buying decisions.
 - Online pricing typically at MAP
 
 **Street Price (What You Actually Pay)**:
-- Negotiated between you and dealer
+- Set by each dealer; HBW posts its selling price in the [live pricing reference](/pricing-reference)
 - Below MAP for in-stock units
 - Includes installation and rigging
 - Varies by season and inventory
@@ -67,7 +67,7 @@ Understanding how Mercury pricing works helps you make smarter buying decisions.
 | 175-250hp FourStroke / Pro XS | $30,685-$41,740 |
 | 300hp FourStroke | $40,575-$42,935 |
 
-_Prices here are planning figures as of September 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are planning figures as of October 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 *The figures above are dated planning references, not today's source of truth. Use the [live pricing reference](/pricing-reference) and [configured quote builder](/quote/motor-selection) for current FourStroke and Pro XS pricing. Verado is special-order; request a written configuration through the [contact page](/contact).*
 
@@ -87,13 +87,13 @@ _Prices here are planning figures as of September 2026. For live Mercury motor p
 
 **Fall (September-November)**:
 - End-of-year clearance begins
-- Good negotiation window
+- Check the live pricing reference and current promotions
 - Less buyer competition
 - Winter repower planning starts
 
 **Winter (December-February)**:
-- Strongest negotiation position
-- Lowest demand = best deals
+- Time to compare written quotes and current promotions
+- HBW is closed December 1 to April 1
 - Ready for pickup at spring launch
 - Ideal for planning a spring repower
 
@@ -107,7 +107,7 @@ Motor MSRP is one line on the invoice. Here is the full picture across Mercury's
 
 **$2,999 - $5,200**
 
-Motor only. ProKicker remote variants land at the top of the range.
+Motor only.
 
 #### FourStroke 60 to 115 (mid-range main)
 
@@ -144,14 +144,14 @@ Oil, gear lube, plugs, water pump check. Keep the records; documented service pr
 ### The Winter Buying Advantage
 
 **Why Winter Is Often Best**:
-- Dealers have time to negotiate
+- Time to plan and book early for spring
 - Inventory from fall remains
 - No urgency from other buyers
 - First pick of install slots for spring reopening
 - Early spring installation
 
 **What You Might Get**:
-- Better pricing flexibility
+- Time to compare written quotes and current promotions
 - Priority spring installation
 - Time to do your homework
 - Extras sometimes included
@@ -165,7 +165,7 @@ Oil, gear lube, plugs, water pump check. Keep the records; documented service pr
 
 Manufacturer-level programs come and go through the year, so the only list that matters is the live one on [the promotions page](https://www.mercuryrepower.ca/promotions). Individual dealers like Harris Boat Works also run their own promotions. Family-owned since 1947, Mercury dealer since 1965, Mercury Premier Dealer.
 
-**Current warranty position (verified July 2026)**:
+**Standard warranty position**:
 - Mercury's standard Canadian limited factory warranty is 3 years
 - Additional promotional coverage applies only when a current promotion explicitly includes it
 - See the [Mercury outboard warranty in Canada](/blog/mercury-outboard-warranty-canada-2026) and [current promotions](https://www.mercuryrepower.ca/promotions)
@@ -177,7 +177,10 @@ Manufacturer-level programs come and go through the year, so the only list that 
 
 ### Financing Your Mercury
 
-**Current promotional financing**:
+**Canadian financing programs (reviewed October 5, 2026)**:
+
+As of October 5, 2026, **Chase the Savings** runs **September 14–October 30, 2026** for eligible Canadian purchases. Mercury advertises TD financing as low as **2.99% for 24 months [5.49% APR]**, on approved credit, for an eligible repower of at least $5,000. The advertised rate and APR are different disclosures; ask HBW for the written lender terms before comparing payments. See [current promotions](/promotions) for eligibility and exclusions. Do not assume financing and cash rebates can be combined.
+
 - TD "Always On" promotional financing at 5.48% APR (OAC), arranged via DealerPlan, through December 31, 2026
 - Standard tiered rates (8.99% APR under $10,000 / 7.99% APR at $10,000 and up) apply outside the promo
 - Financing minimum $5,000 before tax
@@ -241,23 +244,23 @@ Manufacturer-level programs come and go through the year, so the only list that 
 
 **Total Rigged Cost**: Add $2,000-5,000+ to motor price
 
-**[Get Current Pricing](/quote)**
+**[Get Current Pricing](/quote/motor-selection)**
 
 For complete installed-repower pricing in CAD, including the rigging, controls, prop, and labour components above, see our canonical [2026 Mercury repower cost guide for Ontario](https://www.mercuryrepower.ca/blog/mercury-repower-cost-ontario-2026-cad).
 
-- [Mercury Outboard Financing in Ontario: Your Complete 2026 Guide](/blog/mercury-outboard-financing-ontario-2026), current financing rates and terms
-- [What's the Cheapest Mercury Outboard in Canada in 2026? (Full Price Guide by HP)](/blog/cheapest-mercury-outboard-canada-2026), lowest-cost Mercury models in Canada
-- [What the 2026 Boating Market Means for Ontario Boat Buyers](/blog/2026-boating-market-ontario-boat-buyers), what 2026 looks like for Ontario buyers
+- [Mercury Outboard Financing in Ontario: Your Complete 2026 Guide](/blog/mercury-outboard-financing-ontario-2026): current financing rates and terms
+- [What's the Cheapest Mercury Outboard in Canada in 2026? (Full Price Guide by HP)](/blog/cheapest-mercury-outboard-canada-2026): lowest-cost Mercury models in Canada
+- [What the 2026 Boating Market Means for Ontario Boat Buyers](/blog/2026-boating-market-ontario-boat-buyers): what 2026 looks like for Ontario buyers
 
 ## FAQs
 
 ### Are there current promotions available?
 
-Mercury promotions change over time. The standard Canadian warranty is 3 years, while the current TD financing offer runs separately. See [current promotions](https://www.mercuryrepower.ca/promotions) for the live offer and eligibility.
+As of October 5, 2026, Chase the Savings runs September 14–October 30, 2026: eligible Canadian purchases may qualify for 2.5–30 HP portable rebates (unavailable in Newfoundland and Labrador), 3-year limited warranty plus 2 years MPP Gold, or TD financing as low as 2.99% for 24 months [5.49% APR], OAC. TD "Always On" is separate. Check current promotions at mercuryrepower.ca/promotions for each benefit's eligibility; do not assume offers combine.
 
 ### Can I negotiate below advertised price?
 
-Often yes, especially for in-stock motors in the off-season. Dealers have more flexibility when inventory is high and demand is low. Always ask - the worst they can say is no.
+HBW posts its selling price for each model in the [live pricing reference](/pricing-reference). Compare that price with your written quote, and check current [promotions](/promotions), since a Mercury rebate or financing offer may apply to your motor.
 
 ### Is Mercury financing worth it vs my bank?
 

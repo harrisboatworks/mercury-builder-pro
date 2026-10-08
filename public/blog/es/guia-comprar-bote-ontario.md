@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/es/guia-comprar-bote-ontario.md
-last_updated: 2026-09-06
+last_updated: 2026-10-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Guía completa para comprar un bote en Ontario"
 description: "Guía práctica para comprar un bote en Ontario: requisitos legales (PCOC, PCL), tipos de embarcación, opciones de compra y costos anuales reales en dólares."
 category: "Guía de compra"
 date_published: 2026-04-12
-date_modified: 2026-09-06
+date_modified: 2026-10-04
 keywords: ["guía comprar bote Ontario","comprar bote en Canadá","primer bote Ontario","licencia de navegación Ontario"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Guía de compra  
 **Published:** 2026-04-12  
-**Última revisión:** 2026-09-06  
+**Última revisión:** 2026-10-04  
 **Read time:** 12 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/es/guia-comprar-bote-ontario
 
@@ -33,13 +33,15 @@ revenue_driver: repower
 
 Para comprar y operar un bote motorizado en Ontario, la Carta de Operador de Embarcaciones de Placer (PCOC/COEP) es la forma más habitual de demostrar la competencia; Transport Canada también acepta otras pruebas en determinados casos. El costo del curso varía según el proveedor acreditado. La Licencia de Embarcaciones de Placer (PCL) aplica según los criterios de la embarcación, incluso para motores de 10 HP o más. Las PCL nuevas, transferidas o renovadas tienen una vigencia de 5 años (el duplicado no renueva la vigencia); al 5 de septiembre de 2026 la tarifa federal es de $24.41 CAD ([tabla oficial](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/fees-service-standards)); actualizar datos o cancelar es gratuito. La tarifa se ajusta cada 1 de abril. El seguro no es obligatorio, pero sí muy recomendable. Más abajo encontrarás todo lo que necesitas saber para tomar una buena decisión.
 
+¿Necesita su PCOC? Haga el curso en línea con [el enlace de recomendación de HBW a MyBoatCard](https://myboatcard.com/card/harrisboat) y use el código **HARRIS15** para obtener **15% de descuento**.
+
 ---
 
 Comprar un bote en Ontario no es complicado, pero tampoco es comprar un electrodoméstico. Hay requisitos legales, costos recurrentes que muchos compradores no anticipan, y decisiones técnicas que afectan si el bote será fácil de usar o una fuente constante de frustraciones.
 
 Esta guía está escrita para compradores hispanohablantes que se acercan al mercado de embarcaciones en Ontario por primera vez, o que regresan después de años sin botar. No asumimos conocimiento previo.
 
-Harris Boat Works lleva 79 años en Rice Lake, Ontario, tercera generación, concesionario Mercury Marine Premier y concesionario Legend Boats. Publicamos esta información porque creemos que un comprador bien informado toma mejores decisiones, y eso es bueno para todos.
+Harris Boat Works es una marina familiar en Rice Lake, Ontario, desde 1947. Publicamos esta información porque creemos que un comprador bien informado toma mejores decisiones, y eso es bueno para todos.
 
 ---
 
@@ -47,7 +49,7 @@ Harris Boat Works lleva 79 años en Rice Lake, Ontario, tercera generación, con
 
 ### PCOC, Carta de Operador de Embarcaciones de Placer
 
-La PCOC (en inglés: [Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency), también conocida como "boating licence") es la forma más habitual de demostrar la competencia para manejar una embarcación de recreo motorizada. Transport Canada también acepta otras pruebas en determinados casos.
+La PCOC (en inglés: [Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc), también conocida como "boating licence") es la forma más habitual de demostrar la competencia para manejar una embarcación de recreo motorizada. Transport Canada también acepta otras pruebas en determinados casos.
 
 **Puntos clave:**
 - Es federal, la misma tarjeta es válida en toda provincia y territorio canadiense
@@ -107,7 +109,7 @@ El pontón es excelente para familias que buscan comodidad y espacio. No es el m
 **Ventajas:** garantía completa, sin historial desconocido, motor nuevo, configuración a tu medida
 **Desventajas:** costo inicial más alto, depreciación en los primeros años
 
-En Harris Boat Works manejamos embarcaciones Legend Boats nuevas, precio de inicio aproximado $6,999 CAD para un V-hull de aluminio de entrada, hasta $79,999 para paquetes de pontón premium. Las combinaciones más populares incluyen motor Mercury incluido. Revisa el inventario actual en harrisboatworks.ca.
+En Harris Boat Works manejamos embarcaciones Legend Boats nuevas, con precios que varían según el modelo y el paquete. Las combinaciones más populares incluyen motor Mercury incluido. Revisa el inventario actual en harrisboatworks.ca.
 
 ### Opción 2: Bote usado
 
@@ -148,18 +150,18 @@ Harris Boat Works tiene **584 registros de preparación invernal completados ent
 
 ## ¿Por qué considerar a Harris Boat Works?
 
-Harris Boat Works está ubicado en Gores Landing, Ontario, a orillas de Rice Lake, aproximadamente **1.5 horas al este de Toronto** vía 401E + Hwy 115N. Es una marina de tercera generación establecida en 1947, concesionario Mercury Marine Premier y concesionario Legend Boats.
+Harris Boat Works está ubicado en Gores Landing, Ontario, a orillas de Rice Lake, aproximadamente **1.5 horas al este de Toronto** por la autopista 401 Este, salida 472 en Cobourg, y County Road 18 al norte. Es una marina de tercera generación establecida en 1947, concesionario Mercury Marine Premier y concesionario Legend Boats.
 
 **Lo que nos diferencia:**
 - Precios publicados en línea, sin juegos de "llame para cotizar"
 - Configurador de presupuesto en **mercuryrepower.ca**, 3 minutos, sin presión
-- 79 años de operación continua en Rice Lake
+- Operación continua en Rice Lake desde 1947
 - Acceso a partes Mercury con prioridad de concesionario Premier
 - Técnicos certificados Mercury
 
-Nuestro equipo responde en inglés. No ofrecemos servicio en español, pero los compradores hispanohablantes son bienvenidos: puedes contactarnos por el configurador en línea, el formulario de servicio en hbw.wiki/service, o por teléfono al **905-342-2153**, y te responderemos en inglés. El configurador en mercuryrepower.ca es visual y muestra los precios claramente en dólares canadienses, así que es fácil de usar en cualquier idioma.
+Nuestro equipo responde en inglés. No ofrecemos servicio en español, pero los compradores hispanohablantes son bienvenidos: puedes contactarnos por el configurador en línea, el formulario de servicio en hbwservice.ca, o por teléfono al **905-342-2153**, y te responderemos en inglés. El configurador en mercuryrepower.ca es visual y muestra los precios claramente en dólares canadienses, así que es fácil de usar en cualquier idioma.
 
-Si tienes preguntas específicas, envíalas por el formulario de hbw.wiki/service. Te responderemos en inglés; si lo prefieres, usa Google Translate o pídele ayuda a un familiar bilingüe.
+Si tienes preguntas específicas, envíalas por el formulario de hbwservice.ca. Te responderemos en inglés; si lo prefieres, usa Google Translate o pídele ayuda a un familiar bilingüe.
 
 ---
 
@@ -168,12 +170,20 @@ Si tienes preguntas específicas, envíalas por el formulario de hbw.wiki/servic
 **¿Listo para configurar tu motor o explorar opciones?**
 Usa el configurador en **mercuryrepower.ca**, precios reales, sin llamadas telefónicas, sin presión.
 
-¿Preguntas sobre inventario o servicio? Escríbenos en **hbw.wiki/service** (puedes escribirnos en español; te responderemos en inglés) o llama al **905-342-2153**.
+¿Preguntas sobre inventario o servicio? Escríbenos en **hbwservice.ca** (puedes escribirnos en español; te responderemos en inglés) o llama al **905-342-2153**.
 
 Harris Boat Works
 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 harrisboatworks.ca
 ---
+
+## Guías relacionadas
+
+- [Guía de pesca en Rice Lake, Ontario](/blog/es/guia-pesca-rice-lake-ontario)
+- [Licencia de navegación y regulaciones de seguridad en Ontario](/blog/es/licencia-navegacion-ontario-regulaciones)
+- [Mercury 115 vs 150 HP: Comparación completa para remotorización](/blog/es/mercury-115-vs-150-comparacion)
+- [Guía de preparación invernal para motores Mercury en Ontario](/blog/es/preparacion-invernal-motor-mercury)
+- [Remotorización vs bote nuevo: ¿Cuál es la mejor inversión?](/blog/es/remotorizacion-vs-bote-nuevo)
 
 ## FAQs
 

@@ -1,6 +1,7 @@
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
 import { corsHeaders } from "../_shared/cors.ts";
 import { buildPublicVoiceSessionsResponse } from "./public-sessions.ts";
+import { createVoiceSession } from "./create-session.ts";
 
 /**
  * Edge function proxy for anonymous voice session access.
@@ -10,6 +11,7 @@ import { buildPublicVoiceSessionsResponse } from "./public-sessions.ts";
  * querying with service_role.
  * 
  * Actions:
+ *   - create: Save a connected session and return its id
  *   - list:   Load previous sessions by session_id
  *   - update: End a session / update motor context (requires record id + session_id match)
  */
@@ -23,7 +25,12 @@ Deno.serve(async (req) => {
   }
 
   try {
-    const body = await req.json();
+    const body = await req.json().catch(() => null);
+    if (!body || typeof body !== "object" || Array.isArray(body)) {
+      return new Response(JSON.stringify({ error: "Invalid request body" }), {
+        status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
     const { action, session_id } = body;
 
     // ── Validate session_id ──────────────────────────────────
@@ -48,6 +55,14 @@ Deno.serve(async (req) => {
       });
       const { data } = await userClient.auth.getUser();
       userId = data?.user?.id ?? null;
+    }
+
+    if (action === "create") {
+      const result = await createVoiceSession(body, userId, (row) =>
+        admin.from("voice_sessions").insert(row).select("id").single());
+      return new Response(JSON.stringify(result.body), {
+        status: result.status, headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
     }
 
     // ── LIST: load previous sessions ─────────────────────────
@@ -165,7 +180,7 @@ Deno.serve(async (req) => {
     }
 
     return new Response(
-      JSON.stringify({ error: "Unknown action. Use 'list' or 'update'." }),
+        JSON.stringify({ error: "Unknown action. Use 'create', 'list' or 'update'." }),
       { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } },
     );
   } catch (error) {

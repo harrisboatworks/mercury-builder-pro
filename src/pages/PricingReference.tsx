@@ -4,11 +4,28 @@ import { marked } from "marked";
 import { RepowerHeader } from "@/components/repower/RepowerHeader";
 import { SiteFooter } from "@/components/ui/site-footer";
 import { BlogInlineCTA } from "@/components/blog/BlogInlineCTA";
+import { GoogleReviewsInline } from "@/components/reviews/GoogleReviewsInline";
 import { ALL_SEGMENTS } from "@/data/landing/mercuryLineupLandings";
 import { CANONICAL_LAST_UPDATED } from "@/lib/canonical-pricing";
+import seoPageMetadata from "@/data/seoPageMetadata.json";
+
+const PAGE_SEO = seoPageMetadata.pricingReference;
 
 
 marked.setOptions({ gfm: true, breaks: false });
+
+// HP bands that have their own landing page. Each band owns its HP-specific
+// queries; this page owns the generic "Mercury outboard prices" query.
+const HP_BAND_LINKS = [
+  { min: 9.9, max: 20, proXs: false, label: 'See the 9.9 to 20 HP page', to: '/mercury/portable-9-20hp' },
+  { min: 40, max: 60, proXs: false, label: 'See the 40, 50 and 60 HP page', to: '/mercury/mid-range-40-60hp' },
+  { min: 90, max: 115, proXs: false, label: 'See the 90 and 115 HP page', to: '/mercury/mid-power-90-115hp' },
+  { min: 150, max: 150, proXs: false, label: 'See the 150 HP page', to: '/mercury/150-hp' },
+  { min: 115, max: 115, proXs: true, label: 'See the 115 Pro XS page', to: '/mercury/115-pro-xs' },
+  { min: 250, max: 250, proXs: true, label: 'See the 250 Pro XS page', to: '/mercury/pro-xs-250' },
+] as const;
+
+type HpBandLink = (typeof HP_BAND_LINKS)[number];
 
 function annotatePricingReferenceCtas(rawHtml: string) {
   if (typeof DOMParser === 'undefined') return rawHtml;
@@ -59,6 +76,34 @@ function annotatePricingReferenceCtas(rawHtml: string) {
     if (index === 0) wrapper.id = 'current-prices';
     table.parentNode?.insertBefore(wrapper, table);
     wrapper.appendChild(table);
+
+    // One cross-link per HP band, placed after the last row of that band, so a
+    // reader scanning for "150 HP" lands on the page that owns that query.
+    const isProXsTable = index > 0;
+    const rows = Array.from(table.querySelectorAll('tbody tr'));
+    const colCount = table.querySelectorAll('thead th').length || 1;
+    const bandFor = (hp: number) => HP_BAND_LINKS.find(
+      (b) => b.proXs === isProXsTable && hp >= b.min && hp <= b.max,
+    );
+    let previous: HpBandLink | undefined;
+    rows.forEach((row, rowIndex) => {
+      const hp = Number((row.querySelector('td')?.textContent || '').replace(/[^\d.]/g, ''));
+      const band = Number.isFinite(hp) ? bandFor(hp) : undefined;
+      const isLastOfBand = band && band !== bandFor(
+        Number((rows[rowIndex + 1]?.querySelector('td')?.textContent || '').replace(/[^\d.]/g, '')),
+      );
+      if (!band || !isLastOfBand || band === previous) return;
+      previous = band;
+      const linkRow = doc.createElement('tr');
+      const cell = doc.createElement('td');
+      cell.setAttribute('colspan', String(colCount));
+      const anchor = doc.createElement('a');
+      anchor.setAttribute('href', band.to);
+      anchor.textContent = `${band.label} \u2192`;
+      cell.appendChild(anchor);
+      linkRow.appendChild(cell);
+      row.parentNode?.insertBefore(linkRow, row.nextSibling);
+    });
   });
   return doc.body.innerHTML;
 }
@@ -112,27 +157,18 @@ export default function PricingReference() {
   return (
     <div className="min-h-screen bg-repower-paper">
       <Helmet>
-        <title>Mercury Outboard Prices Ontario (CAD) | Harris Boat Works</title>
-        <meta
-          name="description"
-          content="Live Mercury outboard prices in CAD, listed FourStroke and Pro XS models, 2.5-300 HP. MSRP vs dealer price, drop-off at our Gores Landing shop."
-        />
+        <title>{PAGE_SEO.title}</title>
+        <meta name="description" content={PAGE_SEO.description} />
         <link rel="alternate" type="text/markdown" href="https://www.mercuryrepower.ca/pricing-reference.md" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Harris Boat Works" />
         <meta property="og:locale" content="en_CA" />
-        <meta property="og:title" content="Mercury Outboard Prices Ontario (CAD) | Harris Boat Works" />
-        <meta
-          property="og:description"
-          content="Live Mercury outboard prices in CAD, listed FourStroke and Pro XS models, 2.5-300 HP. MSRP vs dealer price, drop-off at our Gores Landing shop."
-        />
+        <meta property="og:title" content={PAGE_SEO.title} />
+        <meta property="og:description" content={PAGE_SEO.description} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:url" content="https://www.mercuryrepower.ca/pricing-reference" />
-        <meta name="twitter:title" content="Mercury Outboard Prices Ontario (CAD) | Harris Boat Works" />
-        <meta
-          name="twitter:description"
-          content="Live Mercury outboard prices in CAD, listed FourStroke and Pro XS models, 2.5-300 HP. MSRP vs dealer price, drop-off at our Gores Landing shop."
-        />
+        <meta name="twitter:title" content={PAGE_SEO.title} />
+        <meta name="twitter:description" content={PAGE_SEO.description} />
         {schemaJson && (
           <script type="application/ld+json">{schemaJson}</script>
         )}
@@ -160,6 +196,8 @@ export default function PricingReference() {
           primaryHref="/quote/motor-selection"
           
         />
+
+        <GoogleReviewsInline />
 
         {loading ? (
           <p>Loading current pricing…</p>

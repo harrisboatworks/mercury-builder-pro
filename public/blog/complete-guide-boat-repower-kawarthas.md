@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/complete-guide-boat-repower-kawarthas.md
-last_updated: 2026-09-11
+last_updated: 2026-10-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Boat Repower in the Kawarthas: Complete Guide"
 description: "A step-by-step guide to repowering your boat in the Kawarthas: is your hull worth it, picking the motor, what the install involves."
 category: "Repowering"
 date_published: 2026-02-23
-date_modified: 2026-09-11
+date_modified: 2026-10-06
 keywords: ["boat repower Kawarthas","repower boat Ontario","Mercury repower process","repower vs buy new boat","Kawartha lakes repower","boat repower steps"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Repowering  
 **Published:** 2026-02-23  
-**Last reviewed:** 2026-09-11  
+**Last reviewed:** 2026-10-06  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/complete-guide-boat-repower-kawarthas
 
@@ -59,7 +59,7 @@ The boaters who regret a repower are almost always the ones who put a new motor 
 
 ### From request to handover
 
-1. **Share the boat details.** Use the [quote builder](/quote/motor-selection) to explore a repower and submit the [service request](https://hbw.wiki/service) before dropping off the boat.
+1. **Share the boat details.** Use the [quote builder](/quote/motor-selection) to explore a repower and submit the [service request](https://hbwservice.ca) before dropping off the boat.
 2. **Confirm fit and scope.** HBW reviews the hull, intended use, compatible equipment and work required.
 3. **Review the written quote.** Confirm the configuration, included work, availability, payment terms and scheduling with HBW.
 4. **Drop off when convenient.** Once the service request is complete, drop off anytime, including after hours.
@@ -102,7 +102,7 @@ This is the decision that anchors everything else.
 
 | Hull | HP range | HBW recommendation |
 |---|---|---|
-| 14-16 ft aluminum console | 40-60 HP | Mercury 60 FourStroke, standard gearcase |
+| 14-16 ft aluminum console | Match the capacity plate | One Mercury model below the plate maximum: 50 HP on a 60 HP plate, or 60 HP on a 75 HP plate. Standard gearcase; never exceed the plate |
 | 16-18 ft aluminum fishing boat | 75-115 HP | Mercury 90 or 115 FourStroke, 90 for lighter use, 115 for regular full loads |
 | 18-20 ft aluminum or fiberglass console | 115-150 HP | Mercury 115 or 150 FourStroke, standard gearcase (HBW often prefers standard on these planing V-hulls; CT is hull/load/prop specific) |
 | 18-22 ft pontoon | 60-115 HP | Mercury 60-115 Command Thrust (60 CT is the hero pick for 18-20 ft two-log pontoons; 150-class pontoons run the standard gearcase, subject to exact-model specification checks) |
@@ -192,7 +192,7 @@ For most current recreational Mercury FourStrokes, scheduled service is due annu
 
 A word on protecting your warranty. Mercury warranty claims require documentation of proper maintenance, so keep your service records. Running the wrong prop pitch, neglecting annual service, or using the motor outside its rated application can create warranty problems, and in some cases insurance and liability problems too. None of that is exotic. It is the ordinary care any motor needs, and it is one more reason we test the prop before you leave the dock.
 
-HBW services Mercury and MerCruiser. Book at hbw.wiki/service. The most efficient slot is fall: combine annual service with winterization in one appointment, everything sorted before the motor sits for the cold months.
+HBW services Mercury and MerCruiser. Book at hbwservice.ca. The most efficient slot is fall: combine annual service with winterization in one appointment, everything sorted before the motor sits for the cold months.
 
 ---
 
@@ -247,7 +247,7 @@ Start at **mercuryrepower.ca** for live pricing on every Mercury we sell, real C
 **Phone:** 905-342-2153
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
 **Configurator:** [Build Your Quote](/quote/motor-selection)
-**Service:** [hbw.wiki/service](https://hbw.wiki/service)
+**Service:** [hbwservice.ca](https://hbwservice.ca)
 
 ### Keep reading
 
@@ -290,7 +290,7 @@ For a hull in solid structural condition, a repower almost always wins on the ma
 
 ### How long does a Kawartha repower take?
 
-There are two clocks: motor and rigging availability, then the scheduled shop work. HBW confirms the applicable installation window after reviewing the boat, required parts, and current shop capacity. Complete the service request at hbw.wiki/service, then drop off your boat anytime, including after hours. HBW confirms the work schedule separately.
+There are two clocks: motor and rigging availability, then the scheduled shop work. HBW confirms the applicable installation window after reviewing the boat, required parts, and current shop capacity. Complete the service request at hbwservice.ca, then drop off your boat anytime, including after hours. HBW confirms the work schedule separately.
 
 ### Do I need new controls?
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-40-vs-60-hp-outboard-ontario.md
-last_updated: 2026-09-11
+last_updated: 2026-10-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury 40 vs 60 HP Ontario Guide"
 description: "Mercury 40 vs 60 HP for Ontario boats. Real CAD prices, weight, fuel economy, Command Thrust availability, and which one your boat actually needs."
 category: "Mercury Outboards"
 date_published: 2026-05-09
-date_modified: 2026-09-11
+date_modified: 2026-10-06
 keywords: ["Mercury 40 vs 60 HP","Mercury 40 vs 60 HP comparison","best outboard for 16 ft aluminum boat Ontario","Mercury 40 ELPT vs 60 ELPT","Mercury 60 Command Thrust pontoon"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Mercury Outboards  
 **Published:** 2026-05-09  
-**Last reviewed:** 2026-09-11  
+**Last reviewed:** 2026-10-06  
 **Read time:** ~10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-40-vs-60-hp-outboard-ontario
 
@@ -48,7 +48,7 @@ For 14 to 18 ft aluminum boats, the answer usually comes down to capacity plate 
 - Boat is 14 to 16 ft aluminum (Lund, Princecraft, Smoker Craft, etc.)
 - Capacity plate caps you at 40 HP
 - Use is fishing, calm-water cruising, 2 to 3 people max
-- You want lighter weight on the transom (16 to 18 kg (35 to 40 lb) savings vs 60)
+- You want lighter weight on the transom (about 10 to 14 kg (23 to 31 lb) savings vs 60)
 - Tiller is preferred and 40 HP tiller models suit your setup
 
 **Pick 40 HP FourStroke**
@@ -150,7 +150,7 @@ If the boat is a 16 ft aluminum fishing boat that lives at WOT chasing walleye, 
 
 It exists. The 50 ELPT FourStroke runs the same 4-cylinder powerhead as the 60 with a different ECU map. It makes sense in two narrow situations: your capacity plate maxes out at 50 HP (not 60), or you want the 4-cylinder smoothness and amperage of the 60 but your hull is marginal for it.
 
-For most repowers, customers pick the 40 or the 60. The 50 is a niche pick, but we stock and quote it. Shopping smaller? Our [Mercury 9.9 vs 15 HP tiller comparison](/blog/mercury-9-9-vs-15-hp-tiller-ontario) covers the small-motor decision points for jon boats, kickers, and sailboat auxiliaries.
+For most repowers, customers pick the 40 or the 60. The 50 is a niche pick, but we can order and quote it. Shopping smaller? Our [Mercury 9.9 vs 15 HP tiller comparison](/blog/mercury-9-9-vs-15-hp-tiller-ontario) covers the small-motor decision points for jon boats, kickers, and sailboat auxiliaries.
 
 ---
 
@@ -174,7 +174,7 @@ A working older motor typically adds $1,000 to $3,000 in trade-in credit dependi
 
 Rice Lake is shallow and weedy. A 40 HP on a loaded 16 ft aluminum that should have had a 60 can overheat its impeller pulling weeds in the south basin. We replace those impellers in July and August every season.
 
-Wind picks up fast out here. By the time you're punching home into a 15-knot west wind off Hiawatha Island, an underpowered motor is the difference between a 30-minute run and a 60-minute one.
+Wind picks up fast out here. By the time you're punching home into a 15-knot west wind off Hiawatha, an underpowered motor is the difference between a 30-minute run and a 60-minute one.
 
 And for anyone locking through the Trent-Severn, a 16 ft aluminum with a 60 HP is a near-perfect size: light enough to handle in the chamber, fast enough to make Peterborough and back in a day.
 

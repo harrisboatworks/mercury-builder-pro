@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-controls-rigging-guide-ontario.md
-last_updated: 2026-09-11
+last_updated: 2026-09-26
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Controls Rigging Guide 2026"
 description: "What controls, steering, gauges, wiring, and prop you actually need for a Mercury 40-225 HP repower in Ontario."
 category: "Mercury Outboards"
 date_published: 2026-05-08
-date_modified: 2026-09-11
+date_modified: 2026-09-26
 keywords: ["mercury rigging","boat controls","hydraulic steering","vesselview","ontario repower"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Mercury Outboards  
 **Published:** 2026-05-08  
-**Last reviewed:** 2026-09-11  
+**Last reviewed:** 2026-09-26  
 **Read time:** ~16 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-controls-rigging-guide-ontario
 
@@ -76,7 +76,7 @@ Single lever that mounts on top of the helm console. Push forward for forward ge
 
 **Binnacle Gen II Single Lever (mechanical):** CAD $700 to $1,200. The workhorse. Connects via push-pull cables. Works reliably on single-engine setups up to 200 HP.
 
-**Binnacle Gen II Single Lever DTS (Digital Throttle & Shift):** CAD $1,400 to $2,400. Same physical lever, but cables are replaced by an electronic harness. Smoother shifting, supports multi-engine sync, integrates with SmartCraft. Standard for 250+ HP, twin-engine setups, or when VesselView integration needs to feel clean.
+**Binnacle Gen II Single Lever DTS (Digital Throttle & Shift):** CAD $1,400 to $2,400. Same physical lever, but cables are replaced by an electronic harness. Smoother shifting, supports multi-engine sync, integrates with SmartCraft. Standard on current Mercury Verado V8/V10/V12 packages, and the right call for twin-engine setups or when VesselView integration needs to feel clean.
 
 ### Side-Mount Controls
 
@@ -84,7 +84,7 @@ Mounts on the side of the helm console or a pedestal. Same function as a binnacl
 
 ### DTS (Digital Throttle & Shift)
 
-Mercury's electronic control system. Replaces mechanical throttle and shift cables with a wiring harness. Smoother shifting, no "clunk" between gears, multi-engine sync, cruise control, SmartTow integration. Standard on Mercury's V8 and V12 motors, but confirm the requirement for your specific model. Optional on some V6 models. For most single-engine Ontario repowers under 250 HP, mechanical controls are the right call.
+Mercury's electronic control system. Replaces mechanical throttle and shift cables with a wiring harness. Smoother shifting, no "clunk" between gears, multi-engine sync, cruise control, SmartTow integration. DTS is standard on current Mercury Verado V8/V10/V12 packages in the 250-600 HP range. Confirm DTS fitment on the exact Pro XS or FourStroke model rather than inferring it from horsepower. For most single-engine Ontario repowers under 250 HP, mechanical controls are the right call.
 
 ---
 
@@ -162,11 +162,11 @@ Mercury's color touchscreen displays, the hardwired version of what SmartCraft C
 
 | HP | Diameter | Pitch Range | Material |
 |---|---|---|---|
-| 40, 50 | 12, 13" | 11, 15" | Aluminum standard, stainless optional |
-| 60, 90 | 13, 14" | 13, 19" | Aluminum standard, stainless for performance |
-| 115 | 14" | 15, 21" | Stainless recommended for sport use |
-| 150 | 14, 15" | 17, 23" | Stainless standard |
-| 175, 225 | 14, 16" | 19, 25" | Stainless strongly recommended |
+| 40–50 | 12–13" | 11–15" | Aluminum standard, stainless optional |
+| 60–90 | 13–14" | 13–19" | Aluminum standard, stainless for performance |
+| 115 | 14" | 15–21" | Stainless recommended for sport use |
+| 150 | 14–15" | 17–23" | Stainless standard |
+| 175–225 | 14–16" | 19–25" | Stainless strongly recommended |
 
 These are starting points. Hull weight and intended use change the correct pitch. Wrong pitch: motor lugs (pitch too high) or revs out without making power (pitch too low). Both wear the motor faster than they should.
 
@@ -238,11 +238,11 @@ If you're spec'ing a pontoon or heavy-load setup, our [Command Thrust vs standar
 
 ### How much does Mercury rigging cost in Ontario?
 
-For a typical mid-range repower (60-115 HP), expect CAD $2,000-$4,000 in rigging on top of the motor price. For a V6 repower (150-225 HP), expect CAD $3,500-$7,500. The range covers controls, steering, gauges, wiring, and prop. See the matrix above for per-HP-class detail. Real all-in costs are at [mercury-outboard-rigging-costs-ontario](https://www.mercuryrepower.ca/blog/mercury-outboard-rigging-costs-ontario).
+For a typical mid-range repower (60-115 HP), expect CAD $2,000-$4,000 in rigging on top of the motor price. For a 150 to 225 HP repower, expect CAD $3,500-$7,500. The range covers controls, steering, gauges, wiring, and prop. See the matrix above for per-HP-class detail. Real all-in costs are at [mercury-outboard-rigging-costs-ontario](https://www.mercuryrepower.ca/blog/mercury-outboard-rigging-costs-ontario).
 
 ### Do I need DTS on a single-engine V6?
 
-No. Mechanical controls work fine on a single-engine 150-225 HP motor and save you CAD $1,500-$2,500. DTS becomes the right call on twin-engine setups, V8+ motors (where it's mandatory), or if you specifically want VesselView integration to feel clean.
+No. Mechanical controls work fine on a single-engine 150-225 HP motor and save you CAD $1,500-$2,500. DTS becomes the right call on twin-engine setups, on current Verado models (where DTS is standard), or if you specifically want VesselView integration to feel clean.
 
 ### Is hydraulic steering worth it for 90 HP?
 
@@ -270,7 +270,7 @@ Match the shaft length to your transom height. 20" transom = long shaft (L). 25"
 
 ### Do you offer financing on rigging, or just the motor?
 
-Both. Mercury's financing programs apply to the full repower package, motor plus rigging plus install. We work through Mercury Canada's finance partner, with rates that change with their promo windows. Ask during the quote process and we'll match you to the right program.
+Financing is arranged through DealerPlan, on approved credit, with a $5,000 minimum financed amount. Ask during the quote process whether rigging and install can be included in the amount financed, and check [current financing terms](/promotions) before relying on any rate or payment estimate.
 
 ### Does HBW handle the trade-in on my old motor?
 
@@ -281,8 +281,8 @@ Yes. If your old Mercury is in workable condition we'll value it at trade-in tim
 - [Mercury Propeller Selection Guide 2026](/blog/mercury-propeller-selection-guide), choosing the right propeller
 - [Mercury SmartCraft Connect: Features, App & Installation](/blog/mercury-smartcraft-connect-guide-ontario), SmartCraft Connect walkthrough
 - [Mercury VesselView vs SmartCraft Explained (Ontario)](/blog/mercury-vesselview-smartcraft-plain-english-guide), VesselView and SmartCraft explained
+- [Mercury Engine Data on Your Garmin, Lowrance or Humminbird: Which Gateway and How to Wire It](/blog/mercury-nmea-2000-lowrance-garmin-guide), which Mercury gateway your plotter needs and how to wire it
 - [Mercury Alarm Codes List Ontario](/blog/mercury-smartcraft-alarm-codes-encyclopedia), SmartCraft alarm code reference
-- [Mercury Outboard Beep & Alarm Codes: What Each Means](/blog/mercury-outboard-beeping-codes-guide), beeping code guide
 
 ## Next steps
 

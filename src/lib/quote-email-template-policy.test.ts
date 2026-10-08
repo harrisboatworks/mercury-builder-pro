@@ -150,36 +150,8 @@ describe("outbound email HTML interpolation", () => {
     expect(html).not.toContain("&amp;lt;img");
   });
 
-  it("escapes weekly-report quote and activity strings in table cells", () => {
-    const q = { customer_name: XSS, customer_email: XSS };
-    const model = XSS;
-    const page = XSS;
-    const source = XSS;
-    const campaign = XSS;
-    const cells = [
-      `<td style="padding:8px 12px;border-bottom:1px solid #e5e7eb;">${esc(q.customer_name)}</td>`,
-      `<td style="padding:8px 12px;border-bottom:1px solid #e5e7eb;">${esc(q.customer_email)}</td>`,
-      `<td style="padding:8px 12px;border-bottom:1px solid #e5e7eb;">${esc(model)}</td>`,
-      `<td style="padding:8px 12px;border-bottom:1px solid #e5e7eb;">${esc(page)}</td>`,
-      `<td style="padding:8px 12px;border-bottom:1px solid #e5e7eb;">${esc(source)}</td>`,
-      `<td style="padding:8px 12px;border-bottom:1px solid #e5e7eb;">${esc(campaign)}</td>`,
-    ].join("");
-
-    expect(cells).toContain(ESCAPED_XSS);
-    expect(cells).not.toContain(XSS);
-    expect(cells).not.toContain("<img");
-    expect(cells).not.toContain("&amp;lt;");
-  });
-
-  it("escapes the weekly-report LLM summary before converting newlines", () => {
-    const aiText = `Line one\n${XSS}`;
-    const escapedText = esc(aiText).replace(/\n/g, "<br>");
-
-    expect(escapedText).toBe(`Line one<br>${ESCAPED_XSS}`);
-    expect(escapedText).not.toContain("<img");
-    expect(escapedText).not.toContain("&lt;br&gt;");
-    expect(escapedText).not.toContain("&amp;lt;");
-  });
+  // Weekly report escaping is exercised against the actual renderer in
+  // src/test/weekly-report-v2.test.ts, including every untrusted breakdown.
 
   it("rejects non-https articleImage URLs and escapes https src attributes", () => {
     const injected = `https://cdn.example.com/hero.png?q=${XSS}`;
@@ -222,7 +194,7 @@ describe("outbound email HTML interpolation", () => {
       readFileSync(join(process.cwd(), relative), "utf8");
     const repower = read("supabase/functions/send-repower-guide-email/index.ts");
     const subscribe = read("supabase/functions/subscribe-blog/index.ts");
-    const weekly = read("supabase/functions/weekly-quote-report/index.ts");
+    const weekly = read("supabase/functions/weekly-quote-report/report.ts");
     const blog = read("supabase/functions/send-blog-notification/index.ts");
     const layout = read("supabase/functions/_shared/email-layout.ts");
 
@@ -230,13 +202,11 @@ describe("outbound email HTML interpolation", () => {
     expect(repower).not.toContain("Hi ${name}");
     expect(subscribe).toContain("${name ? `Hi ${esc(name)},` : \"Hi there,\"}");
     expect(subscribe).not.toContain("Hi ${name}");
-    expect(weekly).toContain("const escapedText = esc(aiText).replace(/\\n/g, '<br>');");
-    expect(weekly).toContain("${esc(q.customer_name)}");
-    expect(weekly).toContain("${esc(q.customer_email)}");
-    expect(weekly).toContain("${esc(model)}");
-    expect(weekly).toContain("${esc(page)}");
-    expect(weekly).toContain("${esc(source)}");
-    expect(weekly).toContain("${esc(campaign)}");
+    expect(weekly).toContain("${esc(take)}");
+    expect(weekly).toContain("${esc(action)}");
+    expect(weekly).toContain("${esc(line)}");
+    expect(weekly).toContain("${esc(heading)}");
+    expect(weekly).toContain("${esc(row)}");
     expect(weekly).not.toContain("${q.customer_name}");
     expect(weekly).not.toContain("${q.customer_email}");
     expect(blog).toContain("const safeImage = articleImage ? safeHttpsUrl(articleImage) : null;");

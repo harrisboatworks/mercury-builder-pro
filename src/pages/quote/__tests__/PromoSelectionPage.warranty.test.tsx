@@ -98,6 +98,15 @@ beforeEach(() => {
 });
 
 describe('PromoSelectionPage — warranty copy + saved-quote contract', () => {
+  it('distinguishes total coverage from factory warranty for MPP campaigns', () => {
+    const coverage = '3-year limited factory warranty + 2 years MPP Gold = 5 years total coverage.';
+    currentPromotions = [makePromo({ warranty_extra_years: 2, details: { coverage_summary: coverage } })];
+    render(<PromoSelectionPage />);
+    expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('5 Years Total Mercury Coverage');
+    expect(screen.queryByText('5-Year Factory-Backed Warranty')).not.toBeInTheDocument();
+    expect(screen.getByText(coverage)).toBeInTheDocument();
+  });
+
   it('renders "{3+bonus} Years Factory Warranty" when the promo has bonus years', () => {
     currentPromotions = [makePromo({ warranty_extra_years: 2 })];
 

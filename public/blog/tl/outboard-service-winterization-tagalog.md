@@ -33,7 +33,7 @@ Alam namin: nakakapanibago magmay-ari ng bangka dito sa Canada. ‘Yung mga tano
 
 ## Bakit Kailangan ng Taunang Serbisyo ng Outboard Motor?
 
-Isipin mo na parang kotse ang outboard motor: kahit ilang beses mo lang ginamit sa isang summer, kailangan pa rin ng regular na maintenance para umandar nang maayos. Ang tubig sa lawa ay may dumi at minerals na pwedeng makasira sa cooling system. ‘Yung impeller, isang rubber part na parang water pump, natutuyo at nababasag kung hindi napapalitan taon-taon. Ang lower unit oil ay pwedeng mag-contaminate ng tubig, kaya sa annual service ay dini-drain namin at pinapalitan. Pati spark plugs, fuel filter, at timing ay chini-check para iwas biglaang tigil ng makina sa gitna ng lawa.
+Isipin mo na parang kotse ang outboard motor: kahit ilang beses mo lang ginamit sa isang summer, kailangan pa rin ng regular na maintenance para umandar nang maayos. Ang tubig sa lawa ay may dumi at minerals na pwedeng makasira sa cooling system. ‘Yung impeller, isang rubber part na parang water pump, natutuyo at nababasag kapag napabayaan, kaya dapat itong i-inspect taon-taon at palitan ayon sa maintenance schedule ng Mercury. Ang lower unit oil ay pwedeng mag-contaminate ng tubig, kaya sa annual service ay dini-drain namin at pinapalitan. Pati spark plugs, fuel filter, at timing ay chini-check para iwas biglaang tigil ng makina sa gitna ng lawa.
 
 Sa HBW, sanay na sanay kami sa Mercury outboards. Bilang Mercury Marine Premier Dealer, certified technicians ang gumagawa ng service ayon sa latest standards ng Mercury. Kapag nagpa-taunang serbisyo ka sa amin, hindi lang basic lang ang ginagawa, ini-inspect din namin ang propeller, steering system, at electrical para siguradong handa ang bangka sa susunod mong labas.
 
@@ -54,7 +54,7 @@ Dito pumapasok ang aming winterization service. May **584 kaming nakumpletong wi
 
 Ang lahat ng ito ay ginagawa gamit ang OEM Mercury parts at procedures. Kung hindi Mercury ang outboard mo, pasensya na, sa engine repairs, **Mercury at Mercruiser lang** ang sineserbisyuhan namin. Pero kung Mercury ang dala mo, you’re in good hands.
 
-At tandaan: sarado ang HBW mula December 1 hanggang April 1. Kumpletuhin ang https://hbw.wiki/service, tapos i-drop off kahit kailan, kahit lampas sa oras ng opisina.
+At tandaan: sarado ang HBW mula December 1 hanggang April 1. Kumpletuhin ang https://hbwservice.ca, tapos i-drop off kahit kailan, kahit lampas sa oras ng opisina.
 
 ## Spring Commissioning: Paggising ng Bangka Pagkatapos ng Taglamig
 
@@ -79,13 +79,13 @@ Hindi mo kailangang maghintay ng malaking sira bago pumunta sa shop. Mas mainam 
 - May oil leak o usok na hindi normal.
 - Hindi consistent ang shifting ng gears.
 
-Dahil Mercury Premier Dealer kami na may halos 60 taon nang karanasan, alam namin ang mga common issues ng Mercury outboards, pati na ang mga bagong four-stroke models. May direct access kami sa technical support ng Mercury at sa genuine parts. Ibig sabihin, mas mabilis at mas tama ang diagnosis.
+Dahil Mercury dealer kami mula pa noong 1965 at Mercury Premier Dealer ngayon, alam namin ang mga common issues ng Mercury outboards, pati na ang mga bagong four-stroke models. May direct access kami sa technical support ng Mercury at sa genuine parts. Ibig sabihin, mas mabilis at mas tama ang diagnosis.
 
-Mahalagang tandaan: **ang base warranty ng Mercury ay 3 taon**. Kung under warranty pa ang motor mo, hindi ka dapat magpagawa sa hindi certified, baka ma-void ang warranty. Sa HBW, authorized warranty center kami.
+Mahalagang tandaan: **ang base warranty ng Mercury ay 3 taon**. Kung under warranty pa ang motor mo, kailangang idaan ang warranty repairs sa authorized Mercury dealer, at hindi saklaw ng warranty ang pinsalang dulot ng maling serbisyo. Sa HBW, authorized warranty center kami.
 
-## Paano Mag-book ng Serbisyo
+## Paano Mag-request ng Serbisyo
 
-Hindi namin pinapahirapan ang booking. Pumunta lang sa aming service page: https://hbw.wiki/service at sagutan ang form. Puwede ring tumawag o mag-text:
+Hindi namin pinapahirapan ang pag-request. Pumunta lang sa aming service page: https://hbwservice.ca at sagutan ang form. Puwede ring tumawag o mag-text:
 
 - 📞 Telepono: (905) 342-2153  
 - 📱 Text: (647) 952-2153  
@@ -105,15 +105,19 @@ Handa na ang bangka mo para sa summer? O kailangan na ng winterization bago huma
 - 📍 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 - 📞 Telepono: (905) 342-2153
 - 📱 Text: (647) 952-2153
-- 🔧 Mag-book ng serbisyo: https://hbw.wiki/service
+- 🔧 Mag-request ng serbisyo: https://hbwservice.ca
 
 Mula pa noong 1947, nagsisilbi na kami sa mga boat owner sa Ontario. Family-owned, Mercury-certified, at kayang maghintay kahit may kaunting translation challenge. Sama-sama nating siguraduhing laging handang umandar ang bangka mo.
+
+## Mga kaugnay na gabay
+
+- [First-time fishing sa Rice Lake mula Toronto: Family Guide](/blog/tl/first-time-fishing-rice-lake-tagalog-family-guide)
 
 ## FAQs
 
 ### Saan makakahanap ng mekaniko ng bangka sa Toronto?
 
-Ang HBW ay nasa Gores Landing, malapit sa Rice Lake, mga 90 minutong biyahe mula Brampton, Mississauga, Scarborough, at Markham. Walang malapit na shop sa loob ng Toronto na mare-rekomenda namin, pero maraming may-ari ng Mercury ang pumipiling mag-drive papunta sa amin dahil sa aming kadalubhasaan. Kung gusto mong makasigurado sa certified service, puntahan kami.
+Ang HBW ay nasa Gores Landing, malapit sa Rice Lake, karaniwang 90 hanggang 120 minutong biyahe mula Brampton, Mississauga, Scarborough, at Markham, depende sa pinanggalingan at traffic. Walang malapit na shop sa loob ng Toronto na mare-rekomenda namin, pero maraming may-ari ng Mercury ang pumipiling mag-drive papunta sa amin dahil sa aming kadalubhasaan. Kung gusto mong makasigurado sa certified service, puntahan kami.
 
 ### May marine mechanic ba na Pilipino sa Toronto?
 
@@ -125,7 +129,7 @@ Ang tamang winterization ay depende sa eksaktong modelo ng motor. Sundin ang mga
 
 ### Saan ang winter storage ng bangka sa Ontario?
 
-Nag-aalok ang HBW ng outdoor storage na may propesyonal na shrink wrap, outdoor storage na walang takip, at serbisyong shrink wrap lamang sa Gores Landing. Hindi kami nag-aalok ng indoor o heated na boat storage. Kumpletuhin ang https://hbw.wiki/service, tapos i-drop off kahit kailan, kahit lampas sa oras ng opisina.
+Nag-aalok ang HBW ng outdoor storage na may propesyonal na shrink wrap, outdoor storage na walang takip, at serbisyong shrink wrap lamang sa Gores Landing. Hindi kami nag-aalok ng indoor o heated na boat storage. Kumpletuhin ang https://hbwservice.ca, tapos i-drop off kahit kailan, kahit lampas sa oras ng opisina.
 
 ### Paano ayusin ang Mercury outboard?
 
@@ -133,7 +137,7 @@ Kung Mercury o Mercruiser ang motor mo, dalhin mo sa amin. Umpisahan namin ito n
 
 ### Saan ang pagawaan ng motor ng bangka malapit sa Mississauga?
 
-Walang partikular na shop sa Mississauga na mare-rekomenda namin. Ang HBW ay mula sa Gores Landing, mga 90 minuto ang biyahe, pero marami kaming customer na galing Mississauga dahil sa kumpiyansa nila sa aming Mercury expertise. Kung handa kang mag-drive, welcome ka rito.
+Walang partikular na shop sa Mississauga na mare-rekomenda namin. Ang HBW ay mula sa Gores Landing, karaniwang 90 hanggang 120 minuto ang biyahe depende sa traffic, pero marami kaming customer na galing Mississauga dahil sa kumpiyansa nila sa aming Mercury expertise. Kung handa kang mag-drive, welcome ka rito.
 
 ### Puwede ba akong makakuha ng serbisyo sa Tagalog sa HBW?
 
@@ -141,12 +145,12 @@ Hindi po. Ang aming team ay nagsisilbi sa English lamang. Pero huwag mahiya: mag
 
 ## Next steps
 
-- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbw.wiki/service
+- Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbwservice.ca
 - Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
-- The only commercial next step for this article is the HBW service request at https://hbw.wiki/service.
+- The only commercial next step for this article is the HBW service request at https://hbwservice.ca.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

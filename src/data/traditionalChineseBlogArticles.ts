@@ -39,18 +39,19 @@ export const traditionalChineseBlogArticles: BlogArticle[] = [
     seoTitle: '安省 船 冬季保養 繁體 (2026 第一次過冬指南)',
     description: '第一次在安省過冬的船主指南：為什麼必須冬化（結冰會裂缸體）、完整冬化清單、DIY vs 經銷商服務、隨時送船（包括下班後）、HBW 在 Gores Landing 的冬儲服務（12 月 1 日至 4 月 1 日停業）。',
     image: '/lovable-uploads/Ontario_Short_Boating_Season_Fall.png',
+    imageAlt: '秋日湖面上，一對男女乘著米色與棕褐色小艇，駛過島上插著加拿大國旗的小屋與橙色秋葉',
     author: 'Jay Harris',
     datePublished: '2026-06-12',
-    dateModified: '2026-09-06',
+    dateModified: '2026-10-02',
     publishDate: '2026-06-12',
     category: 'mandarin',
     readTime: '9 分鐘',
     keywords: ['冬季保養', '冬儲', '安省', '繁體', 'winterization', 'Mercury'],
-    content: `> **簡短答案：** 安省冬天會反覆結冰解凍，冷卻系統或齒輪箱內的水結冰膨脹，可能造成嚴重而昂貴的損壞；能否維修、需要更換哪個部件，要由技師檢查後判斷。完整冬化包括按機型手冊處理燃油、冷卻、齒輪油和電瓶方案，再加上核准的覆蓋或存放。先完成 [hbw.wiki/service](https://hbw.wiki/service)，然後隨時送船，包括下班後。HBW 在 Gores Landing 提供冬化，以及室外專業收縮膜、室外無遮蓋和僅收縮膜服務，**不提供室內或加熱存放**，**12 月 1 日至 4 月 1 日停業**。
+    content: `> **簡短答案：** 安省冬天會反覆結冰解凍，冷卻系統或齒輪箱內的水結冰膨脹，可能造成嚴重而昂貴的損壞；能否維修、需要更換哪個部件，要由技師檢查後判斷。完整冬化包括按機型手冊處理燃油、冷卻、齒輪油和電瓶方案，再加上核准的覆蓋或存放。先完成 [hbwservice.ca](https://hbwservice.ca)，然後隨時送船，包括下班後。HBW 在 Gores Landing 提供冬化，以及室外專業收縮膜、室外無遮蓋和僅收縮膜服務，**不提供室內或加熱存放**，**12 月 1 日至 4 月 1 日停業**。
 
 ## 為何安省冬天必須冬化
 
-安省的問題不是「冷」，是**反覆結冰解凍**。每年 11 月到 3 月，氣溫會在零度上下來回波動幾十次。每一次水結成冰，體積膨脹約 9%。
+安省的問題不只是「冷」，還有**反覆結冰解凍**；只要冷卻系統或齒輪箱內還有積水，一次嚴寒就可能造成損壞。每年 11 月到 3 月，氣溫會在零度上下來回波動幾十次。每一次水結成冰，體積膨脹約 9%。
 
 冷卻系統或齒輪箱內的水結冰膨脹，可能造成嚴重而昂貴的損壞。能否維修、需要更換哪個部件，要由技師檢查後判斷；下機箱損壞不等於必須更換整台引擎。
 
@@ -70,13 +71,13 @@ export const traditionalChineseBlogArticles: BlogArticle[] = [
 | 更換引擎機油和機油濾芯 | 舊機油酸性會腐蝕軸承 | 中 |
 | 健康電池只有在完全充電、斷開連接、固定妥當，並獲核准存放方案允許時，才可留在船上；以型號／序列號手冊和核准方案為準 | 防止寄生耗電 | 易 |
 | 檢查火咀 / 接頭 / 防水油脂 | 順手做，省春天的錢 | 中 |
-| 收縮膜或室內存放 | 防止積雪壓塌船篷、防止雨水入船 | 難（建議交給船廠） |
+| 收縮膜（室外存放） | 防止積雪壓塌船篷、防止雨水入船 | 難（建議交給船廠） |
 
 > **DIY 還是交給經銷商？** 漏掉該機型必要的冬化步驟可能造成嚴重損壞。第一次過冬，或不確定手冊要求時，請讓 Mercury 技師檢查並說明適合這台引擎的程序。
 
 ## 何時送船？
 
-先完成 [hbw.wiki/service](https://hbw.wiki/service)，然後隨時送船，包括下班後。
+先完成 [hbwservice.ca](https://hbwservice.ca)，然後隨時送船，包括下班後。
 
 | 狀態 | 建議 |
 |---|---|
@@ -92,7 +93,7 @@ HBW **12 月 1 日至 4 月 1 日完全停業**：沒有員工在場、不接收
 | 防雪壓 | 配骨架支撐可以 | 當然可以 |
 | 防漆面氧化 | 收縮膜下溫差大，但日曬最少 | 最好 |
 | 防鼠 | 室外鼠害低於無遮蔽 | 視設施而定 |
-| 價格 | 較低 | 高 30-100% |
+| 價格 | 較低 | 通常較高，視設施而定 |
 | HBW 提供嗎 | **是（室外專業收縮膜、室外無遮蓋或僅收縮膜）** | **否：不提供室內或加熱存放** |
 
 HBW 不提供室內或加熱存放。
@@ -103,7 +104,7 @@ HBW 不提供室內或加熱存放。
 - 我們通常可以安排取船。請向我們確認您的船和地點是否可安排。HBW 不運送船隻、不郵寄發動機、不上門／碼頭服務，也不推薦運輸商或報價第三方運輸。
 - 服務：[引擎冬化（Mercury 認證技師）](https://www.mercurymarine.com/ca/en) + 室外專業收縮膜、室外無遮蓋或僅收縮膜 + 春季開機
 - 價格：見 [現行冬儲價目](https://www.harrisboatworks.ca/winter-storage)
-- 聯絡方式：先完成 [hbw.wiki/service](https://hbw.wiki/service)，然後隨時送船，包括下班後；(905) 342-2153 / info@harrisboatworks.ca
+- 聯絡方式：先完成 [hbwservice.ca](https://hbwservice.ca)，然後隨時送船，包括下班後；(905) 342-2153 / info@harrisboatworks.ca
 
 ::pull-quote
 quote: ${ZH_HANT_LANGUAGE_NOTE}
@@ -124,10 +125,16 @@ quote: ${ZH_HANT_LANGUAGE_NOTE}
 先核對該引擎型號和序列號的冬化手冊。Mercury 的一般冬儲指南建議將引擎保持垂直，讓殘留水自行排出；但排水、霧化及防凍液要求仍須按機型確認，不應把同一套步驟套用到所有引擎。
 
 > 完整簡體版：[/blog/zh/ontario-boat-winterization-guide-chinese](/blog/zh/ontario-boat-winterization-guide-chinese)
+
+## 相關指南
+
+- [多倫多華人第一次租船釣魚：證件、安全和當天流程](/blog/zh-hant/first-boat-rental-rice-lake-chinese-guide)
+- [GTA 華人萊斯湖買船完整指南（繁體版）](/blog/zh-hant/gta-chinese-buy-boat-rice-lake-guide)
+- [GTA → 萊斯湖 一日遊地圖（繁體版）](/blog/zh-hant/gta-chinese-rice-lake-day-trip-plan)
 `,
     faqs: [
       { question: 'HBW 提供室內冬儲嗎？', answer: '不提供。HBW 提供室外專業收縮膜存放、室外無遮蓋存放，以及僅收縮膜服務。不提供室內或加熱存放。' },
-      { question: '甚麼時候必須送過去？', answer: '先完成 hbw.wiki/service，然後隨時送船，包括下班後。HBW 12 月 1 日至 4 月 1 日完全停業。' },
+      { question: '甚麼時候必須送過去？', answer: '先完成 hbwservice.ca，然後隨時送船，包括下班後。HBW 12 月 1 日至 4 月 1 日完全停業。' },
       { question: '自己做冬化最容易漏的是哪一步？', answer: '先核對該引擎型號和序列號的冬化手冊。Mercury 的一般冬儲指南建議將引擎保持垂直，讓殘留水自行排出；但排水、霧化及防凍液要求仍須按機型確認，不應把同一套步驟套用到所有引擎。' },
       { question: 'HBW 有中文服務嗎？', answer: ZH_HANT_LANGUAGE_NOTE },
     ],
@@ -139,19 +146,22 @@ quote: ${ZH_HANT_LANGUAGE_NOTE}
     seoTitle: 'Rice Lake 租船 繁體 多倫多 (第一次完整流程)',
     description: '多倫多華人第一次到 Rice Lake 租船釣魚的完整指南：需要帶甚麼證件、HBW 要求的有效 PCOC、租船安全檢查清單、當天到達流程、安省釣魚證，以及從萬錦或士嘉堡前往 Rice Lake 的路線。',
     image: '/lovable-uploads/hero-first-time-boat-rental.webp',
+    imageAlt: '平靜湖面上的浮筒船，戴帽的父親掌舵，駕駛台上放著湖圖，母親與三名穿橘色救生衣的孩子坐在前方座椅上',
     author: 'Jay Harris',
     datePublished: '2026-06-12',
-    dateModified: '2026-08-02',
+    dateModified: '2026-10-04',
     publishDate: '2026-06-12',
     category: 'mandarin',
     readTime: '8 分鐘',
     keywords: ['Rice Lake 租船', '繁體 多倫多', '第一次 租船 釣魚', '安省 釣魚證', 'Harris Boat Works'],
-    content: `> **簡短答案：** 多倫多出發到 Rice Lake 約 90 分鐘車程。HBW 要求操作租賃船隻的人持有有效的 PCOC（Pleasure Craft Operator Card）。租船當天還需要政府簽發的有相片證件、信用卡（按金用），如果要釣魚，還要有效的安省釣魚證。HBW 亦會完成租船安全檢查清單；這份清單不能代替 HBW 的 PCOC 要求。出發前請在 [HBW 租船頁面](https://www.harrisboatworks.ca/rentals) 確認最新要求。
+    content: `> **簡短答案：** 多倫多出發到 Rice Lake 約 90 分鐘車程。HBW 要求操作租賃船隻的人持有有效的 PCOC（Pleasure Craft Operator Card）。租船當天還需要政府簽發的有相片證件、信用卡（按金用），如果要釣魚，還要有效的安省釣魚證（符合豁免條件者除外，見下文）。HBW 亦會完成租船安全檢查清單；這份清單不能代替 HBW 的 PCOC 要求。出發前請在 [HBW 租船頁面](https://www.harrisboatworks.ca/rentals) 確認最新要求。
+
+需要考取 PCOC？透過 [HBW 的 MyBoatCard 推薦連結](https://myboatcard.com/card/harrisboat)參加網上課程，使用優惠碼 **HARRIS15** 可享 **15% 折扣**。
 
 ## 多倫多出發：路線和時間
 
-- **萬錦（Markham）/ 列治文山 / 北約克：** 經 404 北上轉 115，約 75-90 分鐘。
-- **士嘉堡（Scarborough）/ 密西沙加：** 經 401 東行轉 115，約 90-110 分鐘。
+- **萬錦（Markham）/ 列治文山 / 北約克：** 經 404 南下接 401 東行，在 Cobourg 的 Exit 472 下高速，沿 County Road 18 北上，約 75-90 分鐘。
+- **士嘉堡（Scarborough）/ 密西沙加：** 經 401 東行，在 Cobourg 的 Exit 472 下高速，沿 County Road 18 北上，約 90-110 分鐘。
 - **目的地：** Harris Boat Works，5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0。
 
 建議早上 8 至 9 點出門，9:30 至 10:30 到達。**釣魚最佳時段是日出後 2 小時和日落前 2 小時**。
@@ -161,7 +171,7 @@ quote: ${ZH_HANT_LANGUAGE_NOTE}
 | 類別 | 物品 | 備註 |
 |---|---|---|
 | 證件 | 政府簽發的有相片身份證件 | 駕駛執照或護照 |
-| 證件 | 安省釣魚證 + Outdoors Card（如果要釣魚） | 見下文 |
+| 證件 | 安省釣魚證 + Outdoors Card（如果要釣魚；符合豁免條件者除外） | 見下文 |
 | 按金 | 信用卡（不是扣賬卡） | 用於按金預授權 |
 | 衣物 | 防風外套、太陽眼鏡、帽、備用衣物 | 湖上比岸邊冷 5-10°C |
 | 裝備 | 防曬霜、飲用水、午餐、零食 | 湖上無補給點 |
@@ -187,8 +197,8 @@ quote: ${ZH_HANT_LANGUAGE_NOTE}
 
 釣魚證和船證是**兩套完全獨立的系統**：
 
-- **機構不同：** 釣魚證由安省自然資源與林業部（MNRF）管，船證由加拿大運輸部管。
-- **結構：** 先辦一張 **Outdoors Card**（戶外活動卡，3 年有效），再加一張 **Fishing Licence**。
+- **機構不同：** 釣魚證由安省自然資源部（MNR）管，船證由加拿大運輸部管。
+- **結構：** 多數 18 至 64 歲的釣客先辦一張 **Outdoors Card**（戶外活動卡，3 年有效），再加一張 **Fishing Licence**。安省及加拿大居民未滿 18 歲或年滿 65 歲可憑政府簽發的身份證件免辦；加拿大居民在每年四個免證釣魚時段也不需要；非加拿大居民即使年滿 65 歲，通常仍需要兩者。HBW 不售賣釣魚證，請出發前在安省官方頁面辦好。
 - **官方頁面（含繁體中文版）：** [安省釣魚規章摘要（繁體中文）](http://www.ontario.ca/page/ontario-fishing-regulations-summary-traditional-chinese)。
 
 ::pull-quote
@@ -204,6 +214,13 @@ quote: ${ZH_HANT_LANGUAGE_NOTE}
 **Q：釣魚證可以當天在 HBW 買嗎？** 不可以。請在出發前於 [安省官方頁面](http://www.ontario.ca/page/ontario-fishing-regulations-summary-traditional-chinese) 辦好。
 
 > 完整簡體版：[/blog/zh/first-boat-rental-rice-lake-chinese-guide](/blog/zh/first-boat-rental-rice-lake-chinese-guide)
+
+## 相關指南
+
+- [GTA 華人萊斯湖買船完整指南（繁體版）](/blog/zh-hant/gta-chinese-buy-boat-rice-lake-guide)
+- [GTA → 萊斯湖 一日遊地圖（繁體版）](/blog/zh-hant/gta-chinese-rice-lake-day-trip-plan)
+- [安省船主冬季保養和冬儲清單：第一次過冬怎麼做](/blog/zh-hant/ontario-boat-winterization-guide-chinese)
+- [PCOC、PCL、釣魚證區別：安省新手別搞混](/blog/zh-hant/pcoc-pcl-fishing-licence-difference-ontario)
 `,
     faqs: [
       { question: '必須有 PCOC 嗎？', answer: '必須。HBW 要求操作租賃船隻的人持有有效 PCOC；安全檢查清單不能代替。' },
@@ -218,14 +235,17 @@ quote: ${ZH_HANT_LANGUAGE_NOTE}
     seoTitle: '安省 船牌 繁體 PCOC vs PCL vs 釣魚證',
     description: '安省新手分清 PCOC 操作員資格、PCL 船隻牌照與安省釣魚證：誰需要、有效期、官方申請入口與 HBW 租船政策。',
     image: '/lovable-uploads/hero-boat-rental-licence-ontario.webp',
+    imageAlt: '碼頭舊木板上放著橘色救生衣、太陽眼鏡、橘色浮標鑰匙和一部智慧型手機，旁邊是湖水',
     author: 'Jay Harris',
     datePublished: '2026-06-12',
-    dateModified: '2026-09-06',
+    dateModified: '2026-10-04',
     publishDate: '2026-06-12',
     category: 'mandarin',
     readTime: '7 分鐘',
     keywords: ['安省 船牌', '繁體 PCOC', 'PCL', '船隻操作員卡', '釣魚證'],
-    content: `> **簡短答案：** **PCOC**（Pleasure Craft Operator Card，船隻操作員卡）是操作動力休閒船時常用的資格證明，卡片終身有效。**PCL**（Pleasure Craft Licence，船隻牌照）是符合條件船隻的識別號；2026 年 9 月 5 日新辦、續期、轉讓或補發為 **$24.41 CAD**，新辦、轉讓或續期後有效 5 年；資料更新或取消免費，每年 4 月 1 日按通脹調整。舊牌並非全部終身，請按到期批次核對。**釣魚證**完全獨立，由安省自然資源與林業部（MNRF）管理。在 HBW 租船，每位駕駛員必須持有有效 PCOC 或符合 HBW 要求的有效 boat operator licence。
+    content: `> **簡短答案：** **PCOC**（Pleasure Craft Operator Card，船隻操作員卡）是操作動力休閒船時常用的資格證明，卡片終身有效。**PCL**（Pleasure Craft Licence，船隻牌照）是符合條件船隻的識別號；2026 年 9 月 5 日新辦、續期、轉讓或補發為 **$24.41 CAD**，新辦、轉讓或續期後有效 5 年；資料更新或取消免費，每年 4 月 1 日按通脹調整。舊牌並非全部終身，請按到期批次核對。**釣魚證**完全獨立，由安省自然資源部（MNR）管理。在 HBW 租船，每位駕駛員必須持有有效 PCOC 或符合 HBW 要求的有效 boat operator licence。
+
+需要考取 PCOC？透過 [HBW 的 MyBoatCard 推薦連結](https://myboatcard.com/card/harrisboat)參加網上課程，使用優惠碼 **HARRIS15** 可享 **15% 折扣**。
 
 ## 一張表看懂三者區別
 
@@ -233,7 +253,7 @@ quote: ${ZH_HANT_LANGUAGE_NOTE}
 |---|---|---|---|
 | 中文名 | 船隻操作員卡 | 船隻牌照 | 釣魚證 |
 | 全稱 | Pleasure Craft Operator Card | Pleasure Craft Licence | Outdoors Card + Fishing Licence |
-| 管理機構 | 加拿大運輸部 | 加拿大運輸部 | 安省自然資源與林業部 (MNRF) |
+| 管理機構 | 加拿大運輸部 | 加拿大運輸部 | 安省自然資源部 (MNR) |
 | 是關於甚麼 | **人**：會不會安全開船 | **船**：船身的註冊號 | **行為**：允不允許釣魚 |
 | 費用 | 由 Transport Canada 認可提供商決定 | 新辦/續期/轉讓/補發 **$24.41 CAD**（2026-09-05）；資料更新或取消免費 | 視類型而定 |
 | 有效期 | **終身** | 新辦或轉讓後 **5 年** | Outdoors Card 3 年 |
@@ -243,7 +263,7 @@ quote: ${ZH_HANT_LANGUAGE_NOTE}
 ## PCOC：船隻操作員卡
 
 - **誰必須有：** 任何在加拿大水域操作配動力（包括電動推進器）的休閒船的人都需要合資格的操作能力證明；PCOC 是最常見的證明，但不是唯一被接受的證明。
-- **官方認可名單：** [Transport Canada PCOC 認可提供商](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency-program)。
+- **官方認可名單：** [Transport Canada PCOC 認可提供商](https://tc.canada.ca/en/marine-transportation/buying-boat/find-education-resources-recreational-boaters)。
 - **學習材料與正式考試語言可能不同：** 中文複習資料可以用於學習。正式考試語言和經批准的協助（包括口譯）須在付款前向認可提供商確認，並按其批准規則安排。不要假定一定有獲批的中文線上考試，也不要假定所有考試都沒有中文。規則見 [Transport Canada Quality Assurance and Control Requirements](https://tc.canada.ca/en/marine-transportation/marine-safety/quality-assurance-control-requirements-course-providers-national-pleasure-craft-operator-competency-program)。
 - **有效期：** 終身。
 
@@ -256,7 +276,7 @@ quote: ${ZH_HANT_LANGUAGE_NOTE}
 
 ## 安省釣魚證
 
-- **結構：** 先辦 **Outdoors Card**（3 年有效），再加 **Fishing Licence**。
+- **結構：** 多數 18 至 64 歲的釣客先辦 **Outdoors Card**（3 年有效），再加 **Fishing Licence**。安省及加拿大居民未滿 18 歲或年滿 65 歲可憑政府簽發的身份證件免辦；加拿大居民在每年四個免證釣魚時段也不需要；非加拿大居民即使年滿 65 歲，通常仍需要兩者。
 - **官方頁面（含繁體中文摘要）：** [安省釣魚規章摘要（繁體中文）](http://www.ontario.ca/page/ontario-fishing-regulations-summary-traditional-chinese)。
 - **完全獨立於 PCOC / PCL。**
 
@@ -264,7 +284,7 @@ quote: ${ZH_HANT_LANGUAGE_NOTE}
 
 | 情況 | PCOC | PCL | 釣魚證 |
 |---|---|---|---|
-| Rice Lake 在 HBW 短期租船一天，釣魚 | **要** | 不用 | **要** |
+| Rice Lake 在 HBW 短期租船一天，釣魚 | **要** | 不用 | **要**（安省及加拿大居民未滿 18 歲或年滿 65 歲可憑身份證件豁免） |
 | 自家船（15 HP）在 Lake Simcoe 釣一天 | **要** | **要** | **要** |
 | 換了一台 90 HP Mercury 引擎 | 已有就夠 | **要更新** | 不影響 |
 
@@ -274,11 +294,18 @@ quote: ${ZH_HANT_LANGUAGE_NOTE}
 
 ## 常見問題
 
-**Q：PCOC 中文考試在哪裡？** 中文複習資料可以用於學習，但正式考試語言可能不同。付款前向 [認可提供商](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-competency-program) 確認考試語言和經批准的協助，不要假定一定有獲批的中文線上考試。
+**Q：PCOC 中文考試在哪裡？** 中文複習資料可以用於學習，但正式考試語言可能不同。付款前向 [認可提供商](https://tc.canada.ca/en/marine-transportation/buying-boat/find-education-resources-recreational-boaters) 確認考試語言和經批准的協助，不要假定一定有獲批的中文線上考試。
 
 **Q：換引擎後 PCL 一定要更新嗎？** 引擎資料或 HP 變更時應按 Transport Canada 當前規則更新 PCL 資料；資料更新本身免費。
 
 > 完整簡體版：[/blog/zh/gta-chinese-pcl-fishing-licence-guide](/blog/zh/gta-chinese-pcl-fishing-licence-guide)
+
+## 相關指南
+
+- [多倫多華人第一次租船釣魚：證件、安全和當天流程](/blog/zh-hant/first-boat-rental-rice-lake-chinese-guide)
+- [GTA 華人萊斯湖買船完整指南（繁體版）](/blog/zh-hant/gta-chinese-buy-boat-rice-lake-guide)
+- [GTA → 萊斯湖 一日遊地圖（繁體版）](/blog/zh-hant/gta-chinese-rice-lake-day-trip-plan)
+- [安省船主冬季保養和冬儲清單：第一次過冬怎麼做](/blog/zh-hant/ontario-boat-winterization-guide-chinese)
 `,
     faqs: [
       { question: 'PCOC 和 PCL 有甚麼區別？', answer: 'PCOC 是操作人的資格證明，卡片終身有效。PCL 是符合條件船隻的識別牌照；新辦、續期、轉讓或補發現為 $24.41 CAD（2026-09-05）；新辦、轉讓或續期後有效 5 年（補發不延長有效期）；資料更新免費。' },
@@ -295,6 +322,7 @@ quote: ${ZH_HANT_LANGUAGE_NOTE}
     title: 'GTA → 萊斯湖 一日遊地圖（繁體版）',
     description: '從多倫多到萊斯湖的一日遊規劃：駕車路線、租船預訂、安全與證件、回程時段。完整簡體版內容詳見對應頁面。',
     image: '/lovable-uploads/blog-audit-2026-09/zh-first-rental-hero.png',
+    imageAlt: '穿紅色救生衣的一家四口從白色浮筒船踏上木碼頭，藍色Polo衫男子迎接，日出時湖面有薄霧和松樹',
     author: 'Jay Harris',
     datePublished: '2026-06-12',
     dateModified: '2026-09-06',
@@ -317,6 +345,12 @@ quote: ${ZH_HANT_LANGUAGE_NOTE}
 ::
 
 完整版內容（包括預訂方式、出發前的法規與安全檢查，以及租船與自帶船的選擇）請看 [簡體版](/blog/zh/gta-chinese-rice-lake-day-trip-plan)。
+
+## 相關指南
+
+- [多倫多華人第一次租船釣魚：證件、安全和當天流程](/blog/zh-hant/first-boat-rental-rice-lake-chinese-guide)
+- [GTA 華人萊斯湖買船完整指南（繁體版）](/blog/zh-hant/gta-chinese-buy-boat-rice-lake-guide)
+- [安省船主冬季保養和冬儲清單：第一次過冬怎麼做](/blog/zh-hant/ontario-boat-winterization-guide-chinese)
 `,
     faqs: [
       { question: 'HBW 有中文服務嗎？', answer: ZH_HANT_LANGUAGE_NOTE },
@@ -328,6 +362,7 @@ quote: ${ZH_HANT_LANGUAGE_NOTE}
     title: 'GTA 華人萊斯湖買船完整指南（繁體版）',
     description: 'GTA 華人家庭第一次買船：用途決定船型、新船 vs 二手船、Mercury 引擎選擇、貸款方式、交付前要做的功課。完整簡體版內容詳見對應頁面。',
     image: '/lovable-uploads/blog-audit-2026-09/zh-first-rental-hero.png',
+    imageAlt: '微笑的一家四口穿著紅色救生衣，從浮筒船走上木碼頭，藍色Polo衫男子迎接，湖面晨霧瀰漫',
     author: 'Jay Harris',
     datePublished: '2026-06-12',
     dateModified: '2026-09-06',
@@ -350,6 +385,12 @@ quote: ${ZH_HANT_LANGUAGE_NOTE}
 ::
 
 完整版內容（包括各船型對比表、HP 計算、買船清單）請看 [簡體版](/blog/zh/gta-chinese-buy-boat-rice-lake-guide)。
+
+## 相關指南
+
+- [多倫多華人第一次租船釣魚：證件、安全和當天流程](/blog/zh-hant/first-boat-rental-rice-lake-chinese-guide)
+- [GTA → 萊斯湖 一日遊地圖（繁體版）](/blog/zh-hant/gta-chinese-rice-lake-day-trip-plan)
+- [安省船主冬季保養和冬儲清單：第一次過冬怎麼做](/blog/zh-hant/ontario-boat-winterization-guide-chinese)
 `,
     faqs: [
       { question: 'HBW 有中文服務嗎？', answer: ZH_HANT_LANGUAGE_NOTE },

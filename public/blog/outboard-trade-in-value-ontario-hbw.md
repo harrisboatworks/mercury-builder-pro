@@ -61,7 +61,7 @@ There is no magic database for outboard residuals. What we do, and what any hone
 ### 1. Brand
 **[Mercury and Yamaha hold value best](/blog/mercury-vs-yamaha-outboards-ontario).** Honda holds value but moves more slowly on resale. Suzuki and Tohatsu have followings but smaller secondary markets.
 
-**[Evinrude/OMC motors have very limited trade value](/blog/evinrude-to-mercury-repower-ontario-guide)** as of 2026. BRP shut down outboard production in 2020. Parts availability has tightened every year since, and many models are no longer supported by certified service. We will not penalize you for owning one, but we cannot credit much against a motor with a shrinking resale market.
+**[Evinrude/OMC motors have very limited trade value](/blog/evinrude-to-mercury-repower-ontario-guide)** as of 2026. BRP shut down outboard production in 2020. Some parts, especially electronics, have become harder to source since. We will not penalize you for owning one, but we cannot credit much against a motor with a shrinking resale market.
 
 ### 2. Hours
 On a Mercury or Yamaha 4-stroke in working condition with no major issues, the value curve looks like this:
@@ -75,7 +75,7 @@ On a Mercury or Yamaha 4-stroke in working condition with no major issues, the v
 Hours alone do not tell the full story. A well-maintained 1,500-hour Yamaha can outvalue a neglected 600-hour anything.
 
 ### 3. Age and electronic generation
-Mercury 4-strokes built 2014 and later are SmartCraft-compatible with the modern 14-pin connector. Older motors predate that standard, meaning the next owner typically needs to replace controls and cabling to install the motor on a different boat. We factor in that install cost.
+Mercury SmartCraft outboards with mechanical (non-DTS) controls moved to the 14-pin key switch harness in 2006. Older motors use earlier harnesses, so installing one on a different boat may need adapters or new controls and cabling. We factor in that install cost.
 
 ### 4. Visible condition
 We look at:
@@ -176,11 +176,11 @@ We also publish all our Mercury pricing live at [mercuryrepower.ca](https://www.
 
 ### Is there a blue book for outboard motors?
 
-No. Mercury, Yamaha, and other manufacturers do not publish residual value tables. Dealers evaluate trades based on brand, hours, age, condition, and market demand.
+Not an official one. Mercury, Yamaha, and other manufacturers do not publish residual value tables, though a Canadian publisher puts out an annual Outboard Motor Dealers Blue Book. Dealers evaluate trades based on brand, hours, age, condition, and market demand.
 
 ### How much is my Evinrude worth on trade?
 
-Very little in 2026. BRP stopped outboard production in 2020, parts availability is shrinking, and certified service is harder to find. We will not make it zero if the motor runs, but expect a significant discount from older value guides.
+Very little in 2026. BRP stopped outboard production in 2020, and some parts, especially electronics, are getting harder to source. We will not make it zero if the motor runs, but expect a significant discount from older value guides.
 
 ### Does trade-in actually save me money vs selling privately?
 

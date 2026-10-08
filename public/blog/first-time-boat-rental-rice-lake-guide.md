@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/first-time-boat-rental-rice-lake-guide.md
-last_updated: 2026-09-06
+last_updated: 2026-10-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "First Time Renting a Boat? What We Tell Every Renter at Our Dock"
 description: "Never driven a boat? Review the core handling and safety guidance for a first Rice Lake rental: controls, docking, wind, hazards, and what to do if something goes wrong."
 category: "Boating Lifestyle"
 date_published: 2026-07-02
-date_modified: 2026-09-06
+date_modified: 2026-10-04
 keywords: ["first time renting a boat","how to drive a pontoon boat","first time boat rental tips","pontoon boat rental for beginners","rice lake boat rental beginners"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,11 +25,13 @@ revenue_driver: rentals
 
 **Category:** Boating Lifestyle  
 **Published:** 2026-07-02  
-**Last reviewed:** 2026-09-06  
+**Last reviewed:** 2026-10-04  
 **Read time:** ~8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/first-time-boat-rental-rice-lake-guide
 
 > **Quick answer:** A pontoon can be a beginner-friendly rental when you stay slow, leave extra stopping distance, and follow the dock orientation. Harris Boat Works fits life jackets, supplies the required safety gear, and reviews the boat and Rice Lake map before departure. Every driver must bring a valid Pleasure Craft Operator Card and photo ID; passengers do not need one.
+
+Need your PCOC? Take the online course through [HBW's MyBoatCard referral link](https://myboatcard.com/card/harrisboat) and use **HARRIS15** for **15% off**.
 
 A lot of the people stepping onto our rental dock have never driven anything without brakes. Some have never been on a boat that wasn't a ferry.
 
@@ -85,7 +87,7 @@ Docking causes a lot of first-timer anxiety, but the basic approach is simple:
 - Neutral early, glide, short reverse burst to stop.
 - Let the crew step off with lines. Nobody jumps, nobody pulls the boat by hand while it's moving.
 
-![A rental pontoon easing up to the dock at low speed](/lovable-uploads/inline-pontoon-docking-approach.webp)
+![Top-down diagram of a four-step docking approach: line up at idle, come in at a shallow angle, shift to neutral early with a short reverse burst, then crew steps off with lines.](/lovable-uploads/inline/pontoon-docking-steps-2026-09.webp)
 
 And here's the part we mean sincerely: come in slow and crooked and bump a fender, and that's a normal Tuesday. The fenders exist because everyone was new once. And at day's end you're landing back at our dock, where staff handle the return check anyway.
 
@@ -138,7 +140,7 @@ Motor won't start after your swim stop? Confirm the kill-switch clip is seated a
 ## Sources
 
 - [Harris Boat Works rental FAQ and policies](https://harrisboatworks.ca/boat-rentals)
-- [Transport Canada: Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/marine-safety/pleasure-craft-operator-card)
+- [Transport Canada: Pleasure Craft Operator Card](https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc)
 
 ## FAQs
 

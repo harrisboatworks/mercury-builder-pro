@@ -40,12 +40,12 @@ revenue_driver: repower
 **最佳用途：** Pontoon、家庭 runabout、入门级钓鱼船
 **优势：** 安静、省油、可靠、保养间隔长
 
-FourStroke 是大部分 GTA 华人船主第一台 Mercury 引擎。原因：
+FourStroke 是家庭船和铝制钓鱼船最常见的 Mercury 选择。原因：
 
-- **安静** ， 运行明显比 Pro XS 安静
-- **省油** ， 四冲程比传统二冲程明显更省油
-- **可靠** ， 100 小时维护周期,10-15 年使用寿命
-- **保养便宜** ， 火花塞、机油、滤芯都是常规件
+- **安静**：运行明显比 Pro XS 安静
+- **省油**：四冲程比传统二冲程明显更省油
+- **可靠**：适合日常使用，省心，不需要特别照顾
+- **保养便宜**：火花塞、机油、滤芯都是常规件
 
 最常见的购买配置：
 
@@ -61,15 +61,15 @@ FourStroke 是大部分 GTA 华人船主第一台 Mercury 引擎。原因：
 
 Pro XS 是 Mercury 的"运动型"FourStroke。在 FourStroke 基础上做了：
 
-- 高 RPM 调校 (Pro XS WOT 范围大致 5200-6200 RPM，依型号而定：150 Pro XS 约 5200-6000 RPM；V8 Pro XS 200-300hp 约 5600-6200 RPM)
-- 强化气缸 (针对高负载长时间运行)
+- 高 RPM 调校 (最高转速通常比同马力的 FourStroke 高出两三百转)
+- Transient Spark 等性能调校，加速更有力，并且比同马力的 FourStroke 略轻
 - 红色 Pro XS 涂装 (品牌识别)
 
 GTA 华人 angler 中常见购买理由：
 
 - 想要莱斯湖 musky tournament 速度
 - 拖滑水 + tube 时起步快
-- 偶尔去 Lake Ontario 钓鱼 (海况要求功率)
+- 偶尔去安大略湖钓鱼 (大水面对功率要求更高)
 
 最常见配置：
 
@@ -118,12 +118,12 @@ Verado 是 Mercury 最豪华、功率最大的家族。V8、V10、V12 配置（�
 GTA 华人船主用 Verado 的场景较少 (因为大部分船 < 25 英尺)。常见使用：
 
 - 30 英尺以上 cabin cruiser (双 Verado 250)
-- Lake Ontario 深海钓鱼 (Trolling 配 Verado 250-300)
+- 安大略湖离岸钓鱼 (Trolling 配 Verado 250-300)
 - 商业 charter 用船 (按船体和用途选择单引擎或双引擎 Verado)
 
 ## 我们在 HBW 看到的实地观察
 
-在 HBW，FourStroke 60-150 HP 多用于 pontoon 和家庭船；Pro XS 150-300 HP 多见于钓鱼和运动型用户。GTA 华人客户偏好 FourStroke 较多，因为家庭船选 pontoon 居多。
+在 HBW，FourStroke 60-150 HP 多用于 pontoon 和家庭船；Pro XS 150-300 HP 多见于钓鱼和运动型用户。莱斯湖和 Kawarthas 一带的船大多是 pontoon 和铝制钓鱼船，所以 FourStroke 更常见。
 
 ## 如何选择？
 
@@ -153,6 +153,13 @@ GTA 华人船主用 Verado 的场景较少 (因为大部分船 < 25 英尺)。�
 - [Pontoon 还是钓鱼船：6-8 人船型选择](/blog/zh/pontoon-vs-fishing-boat-6-8-people-zh)
 - [为什么 GTA 华人船主选择 Harris Boat Works](/blog/zh/why-chinese-boaters-choose-harris-boat-works)
 
+## 相关指南
+
+- [多伦多华人 Mercury 船外机马力选择指南：9.9、20、60、115、150HP 怎么选？](/blog/zh/mercury-outboard-horsepower-guide-toronto-chinese)
+- [Mercury 115马力 vs 150马力舷外机：如何选择？](/blog/zh/mercury-115-vs-150-comparison-zh)
+- [多伦多华人买 Mercury 船外机：为什么不要只问“最低价”？](/blog/zh/mercury-outboard-price-dealer-guide-toronto-chinese)
+- [40 到 60 匹 Mercury：铝船与华人钓友最常问的马力区间](/blog/zh/mercury-40-60hp-chinese-fishing-boat-guide)
+
 ## FAQs
 
 ### Pro XS 比 FourStroke 好吗？
@@ -161,7 +168,7 @@ GTA 华人船主用 Verado 的场景较少 (因为大部分船 < 25 英尺)。�
 
 ### Verado 值得多花钱吗？
 
-如果你重视安静、精致操控和 premium 体验，值得比较。如果只是小铝船日常钓鱼，可能不是第一选择。
+如果你重视安静、精致操控和高端体验，值得比较。如果只是小铝船日常钓鱼，可能不是第一选择。
 
 ### Command Thrust 是另一个系列吗？
 
@@ -183,9 +190,9 @@ FourStroke 更偏安静、稳定、日常使用和家庭场景。Pro XS 更偏 p
 
 不一定。Repower 可能涉及 controls、cables、gauges、prop、steering、battery 和 SmartCraft compatibility。HBW 的 repower 页面也把 rigging、controls/cables、gauges as applicable、prop、installation 和 lake test 列为常见组成 (HBW Mercury Outboards)。
 
-### 我应该买最大 horsepower 吗？
+### 我应该买最大马力吗？
 
-不一定。你应该买适合 hull rating、使用方式、载重和预算的 horsepower。最大不等于最好。船也有自己的脾气，别把它当健身房 PR 来挑战。
+不一定。你应该买适合船体额定马力、使用方式、载重和预算的马力。最大不等于最好。
 
 ## Next steps
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/tl/ontario-boat-rental-rules-tagalog-pcoc.md
-last_updated: 2026-09-06
+last_updated: 2026-10-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Boat rental rules sa Ontario: PCOC, checklist, lifejackets (Tagalog Guid
 description: "Kailangan ba ng PCOC para mag-rent ng boat sa Ontario? Rental rules, lifejacket requirements, at checklist bago bumangka. Tagalog guide para sa pamilya mo."
 category: "Tagalog Guide"
 date_published: 2026-06-12
-date_modified: 2026-09-06
+date_modified: 2026-10-04
 keywords: ["paano kumuha ng boat license sa Ontario (how to get a boat license in Ontario)","kailangan ba ng boat license sa Ontario (is a boat license required in Ontario)","boat operator card Ontario paano (boat operator card Ontario how)","online boat license Ontario Tagalog (online boat license Ontario Tagalog)","PCOC exam Tagalog (PCOC exam Tagalog)"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,11 +25,13 @@ revenue_driver: rentals
 
 **Category:** Tagalog Guide  
 **Published:** 2026-06-12  
-**Huling sinuri:** 2026-09-06  
+**Huling sinuri:** 2026-10-04  
 **Read time:** 8 min basa  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/tl/ontario-boat-rental-rules-tagalog-pcoc
 
-Sa Harris Boat Works, dapat magpakita ng wastong boat operator licence ang bawat driver sa check-in. Ginagawa pa rin ang rental safety checklist bilang safety briefing, ngunit hindi ito ginagamit ng HBW kapalit ng licence ng driver. Mula sa pamilya ng Harris Boat Works sa Gores Landing, gusto ka naming tulungan, lalo na ang mga kababayan nating Filipino sa Toronto, Mississauga, at buong GTA, na ma-enjoy ang Rice Lake nang walang kaba. Malapit lang kami: mga 90 minutong drive mula sa Brampton, Mississauga, Scarborough, o Markham. Kahit never ka pa sumakay ng bangka sa Canada, dito ka safe na magsisimula. Ito ang dapat mong malaman tungkol sa boat rental rules, lifejackets, at kung paano gumagana ang sistema dito.
+Sa Harris Boat Works, dapat magpakita ng wastong boat operator licence ang bawat driver sa check-in. Ginagawa pa rin ang rental safety checklist bilang safety briefing, ngunit hindi ito ginagamit ng HBW kapalit ng licence ng driver. Mula sa pamilya ng Harris Boat Works sa Gores Landing, gusto ka naming tulungan, lalo na ang mga kababayan nating Filipino sa Toronto, Mississauga, at buong GTA, na ma-enjoy ang Rice Lake nang walang kaba. Malapit lang kami: karaniwang 90 hanggang 120 minutong drive mula sa Brampton, Mississauga, Scarborough, o Markham, depende sa pinanggalingan at traffic. Kahit never ka pa sumakay ng bangka sa Canada, dito ka safe na magsisimula. Ito ang dapat mong malaman tungkol sa boat rental rules, lifejackets, at kung paano gumagana ang sistema dito.
+
+Kailangan ng PCOC? Kunin ang online course gamit ang [MyBoatCard referral link ng HBW](https://myboatcard.com/card/harrisboat) at gamitin ang code na **HARRIS15** para sa **15% diskuwento**.
 
 ## Kailangan ng boat operator licence para sa HBW rental
 
@@ -54,11 +56,11 @@ Pagkatapos ng briefing, pipirmahan mo na naiintindihan mo lahat. Simple lang, pe
 
 Sa Ontario, ang lifejacket o personal flotation device (PFD) ay hindi optional. Bawat tao na nasa bangka, bata man o matanda, ay dapat may sariling lifejacket na tamang-tama ang sukat. Dito sa amin, may mga lifejackets kami para sa iba't ibang sukat, kasama ang pambata, at tinitiyak naming malinis at nasa ayos ang mga ito.
 
-Para sa bata: kailangan naka-lifejacket na may crotch strap (yung pumapagitna sa legs) at akma sa timbang ng bata. I-che-check ng staff namin ang fit bago umalis. Ayon sa batas, kailangang may tamang-sukat na lifejacket o PFD para sa bawat tao sa bangka. Mariin naming inirerekomenda na **suot ito palagi** habang umaandar ang bangka, lalo na ng mga bata. Simple lang ang rason: sa emergency, hindi na magkakaroon ng oras para maghanap at magsuot ng lifejacket.
+Para sa bata: pumili ng lifejacket na akma sa timbang at laki ng bata. Para sa maliliit na bata, mas mainam ang may crotch strap (yung pumapagitna sa legs). I-che-check ng staff namin ang fit bago umalis. Ayon sa batas, kailangang may tamang-sukat na lifejacket o PFD para sa bawat tao sa bangka. Mariin naming inirerekomenda na **suot ito palagi** habang umaandar ang bangka, lalo na ng mga bata. Simple lang ang rason: sa emergency, hindi na magkakaroon ng oras para maghanap at magsuot ng lifejacket.
 
 ## Alcohol sa bangka: Seryosong babala
 
-Please, pakinggan ito nang buong atensyon. Ang alcohol sa bangka ay tinatrato ng batas na kapareho ng pag-inom habang nagmamaneho ng kotse. Bawal ang open liquor sa loob ng recreational boat, maliban lang kung ang bangka ay may permanenteng kusina, CR, at higaan (malalaking yate lang ito, hindi ang nire-rent na maliliit na fishing boat). Ang pagmamaneho ng bangka habang lasing ay isang criminal offense: pwedeng magresulta sa pagkakaaresto, suspensyon ng driver's license mo, malaking multa, at impound ng bangka.
+Please, pakinggan ito nang buong atensyon. Ang alcohol sa bangka ay tinatrato ng batas na kapareho ng pag-inom habang nagmamaneho ng kotse. Bawal ang open liquor sa loob ng recreational boat, maliban lang kung ang bangka ay may permanenteng kusina, CR, at higaan, at naka-angkla o naka-dock ito (malalaking yate lang ito, hindi ang nire-rent na maliliit na fishing boat). Ang pagmamaneho ng bangka habang lasing ay isang criminal offense: pwedeng magresulta sa pagkakaaresto, suspensyon ng driver's license mo, malaking multa, at impound ng bangka.
 
 Mas mabuti na ang inuman gawin sa pampang, pagkatapos ng boating trip, hindi habang nasa tubig. Iniisip namin ang pamilya mo, ang passengers mo, at ang ibang tao sa lawa. Seryosohin ito.
 
@@ -100,9 +102,14 @@ Tingnan ang aming rental fleet at magpareserba dito: [https://harrisboatworks.ca
 Para sa ibang tanong, tawagan o i-text kami:  
 📞 (905) 342-2153  
 📱 Text: (647) 952-2153  
-Para sa service requests: [hbw.wiki/service](https://hbw.wiki/service)
+Para sa service requests: [hbwservice.ca](https://hbwservice.ca)
 
 Matatagpuan kami sa: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0. Tandaan lang, sarado ang marina mula December 1 hanggang April 1. Inaasahan ka namin, magkita tayo sa Rice Lake!
+
+## Mga kaugnay na gabay
+
+- [First-time fishing sa Rice Lake mula Toronto: Family Guide](/blog/tl/first-time-fishing-rice-lake-tagalog-family-guide)
+- [Outboard motor service at winterization sa Ontario (Tagalog Guide)](/blog/tl/outboard-service-winterization-tagalog)
 
 ## FAQs
 
@@ -136,7 +143,7 @@ Siyempre. Ito mismo ang dahilan kung bakit may rental boat safety checklist. Gag
 
 ### Gaano katagal ang biyahe mula Toronto papuntang Harris Boat Works?
 
-Mga 90 minuto mula sa Brampton, Mississauga, Scarborough, o Markham. Malapit lang ito para sa isang araw ng pamilya, umaga kang aalis, buong araw sa lawa, at hapon ang uwi.
+Karaniwang 90 hanggang 120 minuto mula sa Brampton, Mississauga, Scarborough, o Markham, depende sa traffic. Malapit lang ito para sa isang araw ng pamilya, umaga kang aalis, buong araw sa lawa, at hapon ang uwi.
 
 ## Next steps
 

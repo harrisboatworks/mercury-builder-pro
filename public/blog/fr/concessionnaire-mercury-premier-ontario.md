@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/concessionnaire-mercury-premier-ontario.md
-last_updated: 2026-09-06
+last_updated: 2026-10-03
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -8,10 +8,10 @@ final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
 title: "Concessionnaire Mercury Premier en Ontario"
-description: "Harris Boat Works est un concessionnaire Mercury Marine Premier à Gores Landing, sur le lac Rice. Prix Mercury en CAD, remotorisation et service pour les plaisanciers..."
+description: "Harris Boat Works est un concessionnaire Mercury Premier à Gores Landing, lac Rice. Prix Mercury en CAD, remotorisation et service pour les plaisanciers de l'Ontario."
 category: "Concessionnaire Mercury"
 date_published: 2026-04-12
-date_modified: 2026-09-06
+date_modified: 2026-10-03
 keywords: ["concessionnaire Mercury Premier Ontario","concessionnaire Mercury Gores Landing","moteur Mercury Ontario","remotorisation Mercury Ontario","prix Mercury CAD"]
 author: Harris Boat Works
 content_type: blog_article
@@ -21,11 +21,11 @@ revenue_driver: repower
 
 # Concessionnaire Mercury Premier en Ontario
 
-> Harris Boat Works est un concessionnaire Mercury Marine Premier à Gores Landing, sur le lac Rice. Prix Mercury en CAD, remotorisation et service pour les plaisanciers...
+> Harris Boat Works est un concessionnaire Mercury Premier à Gores Landing, lac Rice. Prix Mercury en CAD, remotorisation et service pour les plaisanciers de l'Ontario.
 
 **Catégorie :** Concessionnaire Mercury\
 **Publié le :** 2026-04-12\
-**Dernière révision :** 2026-09-06\
+**Dernière révision :** 2026-10-03\
 **Temps de lecture :** 5 min\
 **URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/concessionnaire-mercury-premier-ontario
 
@@ -59,7 +59,7 @@ Le statut du concessionnaire ne remplace toutefois pas la vérification du batea
 
 ## Service, hivernisation et entreposage
 
-Les travaux sont pris selon le principe du premier arrivé, premier servi. Remplissez [hbw.wiki/service](https://hbw.wiki/service), puis déposez le bateau en tout temps, y compris en dehors des heures d'ouverture. Harris Boat Works ferme le 1er décembre; la marina reste fermée jusqu'au 1er avril.
+Les travaux sont pris selon le principe du premier arrivé, premier servi. Remplissez [hbwservice.ca](https://hbwservice.ca), puis déposez le bateau en tout temps, y compris en dehors des heures d'ouverture. Harris Boat Works ferme le 1er décembre; la marina reste fermée jusqu'au 1er avril.
 
 ## Garantie Mercury
 
@@ -67,7 +67,14 @@ Les modalités dépendent du produit, de l'usage et de la date d'achat. Consulte
 
 ---
 
-**Commencez avec les faits de votre bateau :** [bâtissez une soumission en CAD](/quote/motor-selection) ou envoyez les détails de votre bateau dans la [demande de service](https://hbw.wiki/service). Les moteurs et les projets sont ramassés à Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, Ontario.
+**Commencez avec les faits de votre bateau :** [bâtissez une soumission en CAD](/quote/motor-selection) ou envoyez les détails de votre bateau dans la [demande de service](https://hbwservice.ca). Les moteurs et les projets sont ramassés à Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, Ontario.
+
+## Guides connexes
+
+- [Remotorisation Mercury dans la GTA : comment un plaisancier de Toronto remotorise chez Harris Boat Works (2026)](/blog/fr/remotorisation-mercury-gta-toronto)
+- [Gamme de hors-bord Mercury 2026 pour les plaisanciers ontariens](/blog/fr/gamme-mercury-hors-bord-2026-ontario)
+- [Mercury Product Protection Platinum : couverture et prix canadiens](/blog/fr/garantie-prolongee-mercury-platinum-ontario)
+- [Guide de remotorisation Mercury : prix, délais, rentabilité](/blog/fr/prix-remotorisation-mercury-ontario)
 
 ## Questions fréquentes
 
@@ -81,11 +88,11 @@ Oui. Harris Boat Works est un concessionnaire Mercury Marine Premier à Gores La
 
 ### Puis-je faire entretenir mon Mercury chez vous si je ne l'ai pas acheté chez HBW?
 
-Soumettez une demande de service avec le modèle, le numéro de série et les symptômes. L'équipe confirmera si le travail entre dans notre champ de service et la marche à suivre.
+Oui. Nous entretenons les moteurs Mercury peu importe où ils ont été achetés. Soumettez une demande de service avec le modèle, le numéro de série et les symptômes, et l'équipe confirmera la marche à suivre.
 
 ### Comment planifier une hivernisation ou un entreposage?
 
-HBW prend les travaux selon le principe du premier arrivé, premier servi. Remplissez hbw.wiki/service, puis déposez le bateau en tout temps, y compris en dehors des heures d'ouverture. L'entreprise ferme le 1er décembre; la marina reste fermée jusqu'au 1er avril.
+HBW prend les travaux selon le principe du premier arrivé, premier servi. Remplissez hbwservice.ca, puis déposez le bateau en tout temps, y compris en dehors des heures d'ouverture. L'entreprise ferme le 1er décembre; la marina reste fermée jusqu'au 1er avril.
 
 ### Expédiez-vous ou livrez-vous les moteurs?
 

@@ -1,4 +1,14 @@
-import React, { Children, cloneElement, isValidElement, ReactElement, ReactNode } from 'react';
+import React, {
+  Children,
+  cloneElement,
+  isValidElement,
+  ReactElement,
+  ReactNode,
+  useId,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from 'react';
 import { motion } from 'framer-motion';
 
 // Heuristic: leading $, optional minus, then digits (with optional commas/decimals).
@@ -45,7 +55,57 @@ function styleCell(cell: ReactElement, opts: CellOpts): ReactElement {
   return cloneElement(cell, { className });
 }
 
-export function BlogTable({ children }: { children?: ReactNode }) {
+function useHorizontalOverflow(enabled: boolean) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [overflowing, setOverflowing] = useState(false);
+  const [canScrollMore, setCanScrollMore] = useState(false);
+
+  useLayoutEffect(() => {
+    if (!enabled) {
+      setOverflowing(false);
+      setCanScrollMore(false);
+      return;
+    }
+
+    const node = ref.current;
+    if (!node) return;
+
+    const update = () => {
+      const overflowPx = node.scrollWidth - node.clientWidth;
+      const hasOverflow = overflowPx > 1;
+      setOverflowing(hasOverflow);
+      setCanScrollMore(hasOverflow && overflowPx - node.scrollLeft > 1);
+    };
+
+    update();
+
+    const observer = new ResizeObserver(update);
+    observer.observe(node);
+    const table = node.querySelector('table');
+    if (table) observer.observe(table);
+    node.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+
+    return () => {
+      observer.disconnect();
+      node.removeEventListener('scroll', update);
+      window.removeEventListener('resize', update);
+    };
+  }, [enabled]);
+
+  return { ref, overflowing, canScrollMore };
+}
+
+export function BlogTable({
+  children,
+  overflowHint = false,
+}: {
+  children?: ReactNode;
+  overflowHint?: boolean;
+}) {
+  const hintId = useId();
+  const { ref: scrollRef, overflowing, canScrollMore } = useHorizontalOverflow(overflowHint);
+
   // children: <thead>, <tbody> (and possibly <tfoot>)
   const sections = Children.toArray(children).filter(isValidElement) as ReactElement[];
   const thead = sections.find((s) => s.type === 'thead');
@@ -168,6 +228,23 @@ export function BlogTable({ children }: { children?: ReactNode }) {
     ? 'w-full min-w-[640px] border-collapse lg:min-w-0'
     : 'w-full min-w-[640px] border-collapse md:min-w-full';
 
+  const showHint = overflowHint && overflowing;
+  const scrollRegion = (
+    <div
+      ref={overflowHint ? scrollRef : undefined}
+      tabIndex={0}
+      role="region"
+      aria-label="Scrollable table"
+      aria-describedby={showHint ? hintId : undefined}
+      className={`blog-table-scroll w-full overflow-x-auto overflow-y-visible rounded-xl bg-card ${isWide ? 'lg:overflow-x-visible' : ''}`}
+    >
+      <table className={tableClass}>
+        {newThead}
+        {newTbody}
+      </table>
+    </div>
+  );
+
   return (
     <motion.div
       initial={{ y: 8 }}
@@ -177,12 +254,30 @@ export function BlogTable({ children }: { children?: ReactNode }) {
       className={wrapperClass}
       data-blog-table-wide={isWide ? 'true' : undefined}
     >
-      <div tabIndex={0} role="region" aria-label="Scrollable table" className={`blog-table-scroll w-full overflow-x-auto overflow-y-visible rounded-xl bg-card ${isWide ? 'lg:overflow-x-visible' : ''}`}>
-        <table className={tableClass}>
-          {newThead}
-          {newTbody}
-        </table>
-      </div>
+      {showHint && (
+        <p
+          id={hintId}
+          data-table-overflow-hint=""
+          className="mt-0 mb-2 text-xs font-medium text-repower-navy-900/70"
+        >
+          Scroll sideways for more columns
+        </p>
+      )}
+      {overflowHint ? (
+        <div className="relative">
+          {scrollRegion}
+          {canScrollMore && (
+            <div
+              className="pointer-events-none absolute inset-y-0 right-0 w-8 rounded-r-xl bg-gradient-to-l from-card to-transparent"
+              aria-hidden="true"
+              data-table-overflow-fade=""
+            />
+          )}
+        </div>
+      ) : (
+        scrollRegion
+      )}
+
     </motion.div>
   );
 }

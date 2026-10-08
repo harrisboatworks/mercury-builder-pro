@@ -1,6 +1,7 @@
 import { Award, Users, MapPin, Wrench, Phone, MessageSquare, Mail } from 'lucide-react';
 import { HubPage } from '@/components/hub/HubPage';
 import { SITE_URL } from '@/lib/site';
+import seoPageMetadata from '@/data/seoPageMetadata.json';
 
 const PATH = '/electric/mercury-avator';
 const LAST_REVIEWED_ISO = '2026-07-13';
@@ -142,8 +143,8 @@ export default function AvatorLanding() {
   return (
     <HubPage
       path={PATH}
-      metaTitle="Mercury Avator Electric Outboards Ontario | Harris Boat Works"
-      metaDescription="Mercury Avator electric outboards are coming to Harris Boat Works on Rice Lake. Lineup, use cases for Kawartha waters, and honest answers. Pricing coming soon."
+      metaTitle={seoPageMetadata.avator.title}
+      metaDescription={seoPageMetadata.avator.description}
       breadcrumbName="Mercury Avator Electric"
       lastReviewedISO={LAST_REVIEWED_ISO}
       lastReviewedLabel={LAST_REVIEWED_LABEL}

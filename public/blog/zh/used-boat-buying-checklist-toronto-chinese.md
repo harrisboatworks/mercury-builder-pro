@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/used-boat-buying-checklist-toronto-chinese.md
-last_updated: 2026-08-08
+last_updated: 2026-10-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "多伦多华人二手船购买检查清单"
 description: "多伦多华人买二手船前要检查什么？HBW 用中文讲清船体、艉板、拖车、Mercury 船外机、PCL、PCOC、湖测和常见风险。"
 category: "Buying Guides"
 date_published: 2026-05-17
-date_modified: 2026-08-08
+date_modified: 2026-10-04
 keywords: ["二手船购买","used boat checklist","多伦多华人买二手船","船只检查清单","Mercury 二手 inspection","Harris Boat Works"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,11 +25,13 @@ revenue_driver: repower
 
 **Category:** Buying Guides  
 **Published:** 2026-05-17  
-**最后审核:** 2026-08-08  
+**最后审核:** 2026-10-04  
 **Read time:** 9 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/used-boat-buying-checklist-toronto-chinese
 
 > **快速答案：** 多伦多华人买二手船，最重要不是先问“能不能再便宜一点”，而是先确认船体、艉板、地板、拖车、发动机、操控系统、PCL 文件、所有权文件和湖测。Transport Canada 说明，10 HP 或以上、主要在加拿大水域使用的休闲船通常需要 Pleasure Craft Licence，但 PCL 只是识别文件，不是所有权证明 (Transport Canada PCL)。
+
+需要考取 PCOC？通过 [HBW 的 MyBoatCard 推荐链接](https://myboatcard.com/card/harrisboat)参加在线课程，使用优惠码 **HARRIS15** 可享 **15% 折扣**。
 
 二手船可以买得很聪明，也可以买成一个漂浮的翻新工程。区别通常不在运气，在检查。
 
@@ -49,7 +51,7 @@ revenue_driver: repower
 | 拖车 | 轮胎、灯具、绞盘、托架、滚轮、轴承 | 轮胎老化、灯不亮、轴承噪音 |
 | 发动机 | 冷启动、怠速、冷却水、警报声、压缩测试和记录 | 卖家只愿意热机启动，不愿冷机启动 |
 | 操控系统 | 油门、换挡、转向是否顺畅 | 卡顿、发硬、异响 |
-| 螺旋桨 / 下部传动箱 | 螺旋桨损坏、齿轮油状态、撞击痕 | 螺旋桨伤很重、下部传动箱有油迹 |
+| 螺旋桨 / 下部传动箱 | 螺旋桨损坏、齿轮油状态、撞击痕 | 螺旋桨伤很重、下部传动箱齿轮油呈乳白、灰色或巧克力色（进水） |
 
 如果你不懂机械，不丢人。丢人的是明明不懂，还装得像自己懂，然后把问题带回家。
 
@@ -87,7 +89,7 @@ Transport Canada 说明，Pleasure Craft Licence 需要显示在船头两侧，�
 
 ## Mercury 船外机买家特别要注意什么
 
-如果二手船配的是 Mercury 船外机，检查序列号、型号、运行小时数、保养维修记录、螺旋桨、操控系统、警报系统、SmartCraft 兼容性和过去是否有重大维修。HBW 的 Mercury 页面说明，Mercury 船外机系列包括便携式 2.5-20 HP、FourStroke 25-60 HP、EFI FourStroke 75-150 HP、Pro XS 115-300 HP、Verado 250-600 HP 等 (HBW Mercury Outboards)。
+如果二手船配的是 Mercury 船外机，检查序列号、型号、运行小时数、保养维修记录、螺旋桨、操控系统、警报系统、SmartCraft 兼容性和过去是否有重大维修。HBW 的 Mercury 页面说明，Mercury 船外机系列包括便携式 2.5-20 HP、FourStroke 25-60 HP、EFI FourStroke 75-150 HP、Pro XS 115-400 HP、Verado 250-600 HP 等 (HBW Mercury Outboards)。
 
 如果你最后发现船体很好，但发动机老、贵、难修，换装发动机可能比继续修更合理。HBW 的 Mercury 换装发动机页面说明换装发动机价格通常包括发动机、舾装系统、操控系统和线缆、适用的仪表、螺旋桨、拆除、安装、湖测和保修登记 (HBW Mercury Outboards)。
 
@@ -97,7 +99,7 @@ Transport Canada 说明，Pleasure Craft Licence 需要显示在船头两侧，�
 
 如果你住 GTA，第一次买船，建议先租一次你想买的类型。HBW 在莱斯湖提供浮筒船和钓鱼船租船服务 (HBW Rice Lake Boat Rentals)。租一天比买错三年便宜很多。
 
-如果你已经买了 Mercury 或 Mercruiser，需要检查或保养维修，提交 HBW 保养维修请求。如果你有一条好船体，但旧发动机不再值得投入，去 MercuryRepower.ca 看换装发动机选择。
+如果你已经买了 Mercury 或 MerCruiser，需要检查或保养维修，提交 HBW 保养维修请求。如果你有一条好船体，但旧发动机不再值得投入，去 MercuryRepower.ca 看换装发动机选择。
 
 ## 常见问题
 
@@ -130,6 +132,13 @@ HBW 自 1947 年起就在 Gores Landing、莱斯湖经营家族码头，是 Merc
 - [买新船还是换装发动机旧船？两种情况分别什么时候更值](/blog/zh/mercury-repower-guide-gta)
 - [6–8 人家庭：浮筒船还是钓鱼船更合适？](/blog/zh/pontoon-vs-fishing-boat-6-8-people-zh)
 - [Mercury 船外机马力怎么选（读懂载荷铭牌）](/blog/zh/mercury-outboard-horsepower-guide-toronto-chinese)
+
+## 相关指南
+
+- [多伦多华人在 莱斯湖 买船完整指南：从选型到交付](/blog/zh/gta-chinese-buy-boat-rice-lake-guide)
+- [安省华人养船成本指南](/blog/zh/boat-ownership-cost-ontario-chinese)
+- [GTA 华人从租船到买船路线图](/blog/zh/gta-chinese-rent-to-buy-boat-roadmap)
+- [多伦多华人 Mercury 发动机维修保养完整指南：从机油到大修](/blog/zh/gta-chinese-mercury-service-guide)
 
 ## Next steps
 

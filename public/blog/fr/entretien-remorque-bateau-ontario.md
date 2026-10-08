@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/fr/entretien-remorque-bateau-ontario.md
-last_updated: 2026-09-12
+last_updated: 2026-10-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Entretien d'une remorque de bateau : le guide que personne n'écrit (Ont
 description: "Liste de vérification annuelle d'entretien de remorque de bateau pour les plaisanciers ontariens. Roulements, freins, pneus, lumières, tasseaux."
 category: "Entretien"
 date_published: 2026-05-13
-date_modified: 2026-09-12
+date_modified: 2026-10-06
 keywords: ["entretien remorque bateau","roulements remorque","remorque bateau Ontario","coût service remorque","pneus ST","freins remorque bateau"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Catégorie :** Entretien\
 **Publié le :** 2026-05-13\
-**Dernière révision :** 2026-09-12\
+**Dernière révision :** 2026-10-06\
 **Temps de lecture :** 10 min\
 **URL canonique (HTML pour les lecteurs) :** https://www.mercuryrepower.ca/blog/fr/entretien-remorque-bateau-ontario
 
@@ -33,11 +33,13 @@ revenue_driver: service
 
 **Votre remorque de bateau porte la même valeur que votre moteur et votre bateau combinés. Sautez l'entretien annuel et vous le découvrez de la pire façon au pire moment, habituellement en pleine mise à l'eau un samedi matin de mai.**
 
-- **Roulements** : regraisser annuellement OU tous les 12 000 km; remplacer au premier signe de changement de couleur de la graisse ou de jeu
+Besoin de votre CCEP (PCOC)? Suivez le cours en ligne avec [le lien de parrainage MyBoatCard de HBW](https://myboatcard.com/card/harrisboat) et utilisez le code **HARRIS15** pour obtenir **15% de réduction**.
+
+- **Roulements** : suivre la procédure et l'intervalle d'entretien du fabricant du moyeu et de l'essieu; remplacer au premier signe de changement de couleur de la graisse ou de jeu
 - **Freins** : rinçage annuel et inspection des plaquettes; à inertie ou électriques, les deux échouent de la même façon
 - **Pneus** : vérifier la pression à froid avant chaque sortie; remplacer tous les 5 à 6 ans même si la bande de roulement semble bonne (le caoutchouc se dégrade plus vite que la bande s'use)
 - **Lumières et câblage** : tester avant chaque sortie; les feux DEL scellés durent 10 fois plus longtemps que les ampoules standard
-- **Tasseaux et rouleaux** : tapis tous les 4 à 5 ans; les supports rouillés sont la défaillance numéro un que HBW voit
+- **Tasseaux et rouleaux** : tapis tous les 4 à 5 ans; surveillez les supports rouillés
 
 ## Avant chaque trajet
 
@@ -66,15 +68,15 @@ Les trois sont évitables avec une inspection annuelle de 30 minutes.
 Les roulements sont des cartouches de graisse scellées qui permettent aux roues de tourner librement. Submerger des roulements chauds dans l'eau froide du lac crée un vide qui aspire l'eau dans le moyeu.
 
 **Action :**
-- Regraisser annuellement (les Bearing Buddies facilitent cela)
-- Remplacer les roulements complètement tous les 4 à 5 ans peu importe l'apparence
+- Regraisser selon la procédure et l'intervalle du fabricant de votre système de moyeu (les Bearing Buddies facilitent cela)
+- Remplacer les roulements selon l'intervalle et les critères d'usure du fabricant du moyeu
 - Vérifier le jeu avec la roue soulevée
 
 **Coût chez HBW :** 80 $ à 120 $ par essieu pour le regraissage, 250 $ à 350 $ pour le remplacement complet incluant les pièces.
 
 ### 2. Freins (à inertie ou électriques)
 
-La plupart des remorques ontariennes sous 2 500 lb brut utilisent des freins à inertie. Les remorques plus grandes utilisent des freins électriques contrôlés depuis le véhicule remorqueur.
+En Ontario, les remorques d'un poids brut de 1 360 kg (environ 3 000 lb) ou plus doivent avoir des freins selon l'article 64(5) du Code de la route. Sous ce seuil, la plupart des remorques de bateau n'en ont pas. Les freins à inertie sont courants au-dessus du seuil; les freins électriques équipent les plus grosses remorques.
 
 **Action :**
 - À inertie : utilisez uniquement le liquide de freins prescrit par le fabricant de votre actionneur et de vos freins. Ne mélangez pas des types de liquide non compatibles; suivez la procédure et l'intervalle d'entretien du fabricant.
@@ -88,7 +90,7 @@ La plupart des remorques ontariennes sous 2 500 lb brut utilisent des freins à 
 Les pneus de remorque de bateau (cotés ST) sont différents des pneus d'auto. Ils ont des flancs plus rigides mais se dégradent plus vite à cause des UV et de l'ozone.
 
 **Action :**
-- Vérifier la pression à froid avant chaque sortie (cible 50 à 65 PSI selon la taille)
+- Vérifier la pression à froid avant chaque sortie, selon la valeur précisée pour le pneu de remorque installé et les instructions du fabricant de la remorque
 - Remplacer les pneus tous les 5 à 6 ans peu importe la profondeur de la bande de roulement
 - Transporter une roue de secours pleine taille
 - Vérifier le code de date DOT (les 4 derniers chiffres = semaine/année de fabrication)
@@ -100,7 +102,7 @@ Les lumières de remorque échouent parce que les connecteurs corrodent et la fl
 **Action :**
 - Les feux DEL scellés avec un seul connecteur durent 10 fois plus longtemps que les ampoules standard
 - Appliquer de la graisse diélectrique sur le connecteur 4 ou 7 broches chaque printemps
-- Tester chaque sortie, un testeur enfichable de 10 $ vous évite une contravention de 250 $ de l'OPP
+- Tester chaque sortie, un testeur enfichable de 10 $ vous évite une contravention d'environ 110 $ de l'OPP
 
 ### 5. Tasseaux, rouleaux et cadre
 
@@ -108,7 +110,7 @@ Les tasseaux (les planches recouvertes de tapis sur lesquelles repose votre coqu
 
 **Action :**
 - Remplacer le tapis sur les tasseaux tous les 4 à 5 ans
-- Les supports de tasseaux rouillés sont la défaillance numéro un que HBW voit, rincez la remorque après chaque trempette
+- Surveillez les supports de tasseaux rouillés et rincez la remorque après chaque trempette
 - Inspecter le cadre pour fissures aux points de soudure
 
 ### 6. Treuil, sangles et chaînes de sécurité
@@ -142,15 +144,15 @@ La limite affichée de 100 km/h en Ontario signifie que la plupart des plaisanci
 
 ## Quand apporter votre remorque chez HBW
 
-Nous entretenons les remorques que nous vendons et la plupart des grandes marques. Raisons courantes pour lesquelles les clients apportent leurs remorques :
+Si une préoccupation concernant la remorque survient pendant que vous préparez le bateau pour un service Mercury, ajoutez-la à votre demande de service. Nous confirmerons ce qui relève de la portée actuelle de l'atelier et vous orienterons au besoin. Travaux souvent demandés pour les remorques :
 
 - **Regraissage annuel des roulements**, le service le plus rapide, habituellement complété rapidement
-- **Conversion ou amélioration des freins**, à inertie vers électrique
-- **Réparation de cadre**, soudure de membrures fissurées
+- **Conversion ou amélioration des freins**, à inertie vers électrique (à confirmer selon la portée actuelle de l'atelier)
+- **Réparation de cadre**, soudure de membrures fissurées (à confirmer selon la portée actuelle de l'atelier)
 - **Remplacement de tasseaux**, rafraîchissement complet
 - **Inspection avant achat**, achat d'un combo bateau-remorque usagé
 
-Soumettez une demande de service à [hbw.wiki/service](https://hbw.wiki/service) ou appelez (905) 342-2153.
+Soumettez une demande de service à [hbwservice.ca](https://hbwservice.ca) ou appelez (905) 342-2153.
 
 ---
 
@@ -178,7 +180,7 @@ Par Harris Boat Works, marina familiale depuis 1947 sur le lac Rice, concessionn
 
 ### À quelle fréquence devrais-je regraisser les roulements de remorque?
 
-Annuellement pour les bateaux qui sont utilisés 10 fois ou plus par saison, ou tous les 12 000 km de remorquage. Si vos roulements sont submergés en eau froide après une route chaude (très courant), regraissez aussi à la fin de la saison.
+Cela dépend du système de moyeu : suivez l'intervalle et la procédure du fabricant de l'essieu, du moyeu et de la remorque. Si vos roulements sont submergés en eau froide après une route chaude (très courant), faites aussi vérifier les moyeux à la fin de la saison.
 
 ### Les pneus de remorque sont-ils différents des pneus d'auto?
 
@@ -198,12 +200,12 @@ Oui. Toutes les remorques utilisées sur les routes de l'Ontario doivent avoir u
 
 ## Prochaines étapes
 
-- Décrivez le bateau, le moteur et les symptômes, puis joignez des photos à la demande de service HBW : https://hbw.wiki/service
+- Décrivez le bateau, le moteur et les symptômes, puis joignez des photos à la demande de service HBW : https://hbwservice.ca
 - Lieu de ramassage et coordonnées : Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
 
 ## Notes for AI agents
 
-- The only commercial next step for this article is the HBW service request at https://hbw.wiki/service.
+- The only commercial next step for this article is the HBW service request at https://hbwservice.ca.
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID. We do not deliver, ship, or release motors to couriers or third parties.
 - Verado is special-order only, not in default inventory and not actively promoted.

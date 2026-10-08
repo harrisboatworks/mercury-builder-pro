@@ -16,7 +16,7 @@ export function GlobalStickyQuoteBar() {
   const isMobile = useIsMobile();
   const navigate = useNavigate();
   const { promo } = useActiveFinancingPromo();
-  const { getRebateForHP, getSpecialFinancingRates, getPromotionOptions } = useActivePromotions();
+  const { getRebateForHP, getSpecialFinancingRates, getPromotionOptions } = useActivePromotions({ motor: state.motor });
 
   // Pages where bar should NOT show
   const hideOnPages = [
@@ -100,8 +100,8 @@ export function GlobalStickyQuoteBar() {
         return '6 Mo. No Payments';
       case 'special_financing': {
         const rates = getSpecialFinancingRates?.();
-        const lowestRate = rates?.[0]?.rate ?? 2.99;
-        return `${lowestRate}% APR`;
+        const lowestRate = rates?.[0]?.rate;
+        return isUsableFinancingRate(lowestRate) ? `${lowestRate}% APR (OAC)` : null;
       }
       case 'cash_rebate': {
         const rebate = getRebateForHP?.(hp);

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-reliability-2026.md
-last_updated: 2026-09-06
+last_updated: 2026-10-03
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -8,10 +8,10 @@ final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
 title: "Is Mercury Still Reliable in 2026? A Dealer's Honest Answer"
-description: "Is Mercury still reliable in 2026? An Ontario Mercury Premier Dealer's honest shop answer: what actually fails, what the maintenance record shows, and how long a..."
+description: "Is Mercury reliable in 2026? An Ontario Mercury Premier Dealer's shop answer: what fails, what the maintenance record shows, and how long a maintained outboard lasts."
 category: "Mercury Outboards"
 date_published: 2026-07-13
-date_modified: 2026-09-06
+date_modified: 2026-10-03
 keywords: ["mercury outboard reliability 2026","are mercury outboards reliable","mercury outboard dealer","Mercury Marine Premier Dealer"]
 author: Harris Boat Works
 content_type: blog_article
@@ -21,11 +21,11 @@ revenue_driver: repower
 
 # Is Mercury Still Reliable in 2026? A Dealer's Honest Answer
 
-> Is Mercury still reliable in 2026? An Ontario Mercury Premier Dealer's honest shop answer: what actually fails, what the maintenance record shows, and how long a...
+> Is Mercury reliable in 2026? An Ontario Mercury Premier Dealer's shop answer: what fails, what the maintenance record shows, and how long a maintained outboard lasts.
 
 **Category:** Mercury Outboards  
 **Published:** 2026-07-13  
-**Last reviewed:** 2026-09-06  
+**Last reviewed:** 2026-10-03  
 **Read time:** ~8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-reliability-2026
 
@@ -109,7 +109,7 @@ Real maintenance, no upsell:
 
 **Fuel stabilizer if the boat sits.** Add it before the end of the season, run the motor long enough to circulate it through the fuel system. Thirty dollars of stabilizer prevents hundreds of dollars of injector cleaning.
 
-**Annual service.** Gear oil, filters, zincs, visual inspection. Mercury recommends annual service or service by hours, whichever comes first. Follow the schedule. It exists because engineers determined what wears and when. [Book your annual service at hbw.wiki/service.](https://hbw.wiki/service)
+**Annual service.** Gear oil, filters, anodes (magnesium or aluminum in fresh water), visual inspection. Mercury recommends annual service or service by hours, whichever comes first. Follow the schedule. It exists because engineers determined what wears and when. [Book your annual service at hbwservice.ca.](https://hbwservice.ca)
 
 **Store dry.** Flush with fresh water, fog the cylinders if long-term storage, store with the motor trimmed down so water drains. Rice Lake winters are long. A dry motor stored properly costs nothing. A corroded motor stored poorly costs real money.
 

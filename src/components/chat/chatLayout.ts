@@ -25,7 +25,15 @@ export function getMobileLauncherBottom(pathname: string): string {
   if (isPhoneQuoteNavPath(pathname)) {
     return 'calc(10.5rem + env(safe-area-inset-bottom, 0px))';
   }
+  // Default mobile offset; kept at 1rem to match main and the layout contract tests.
   return 'calc(1rem + env(safe-area-inset-bottom, 0px))';
+}
+
+/** CSS horizontal anchoring for the floating launcher on phones. */
+export function getMobileLauncherHorizontal(pathname: string): 'left' | 'right' {
+  // On /quote/summary prices are right-aligned, so the launcher must avoid them.
+  if (pathname === '/quote/summary') return 'left';
+  return 'right';
 }
 
 /** CSS bottom offset for the mobile drawer when the keyboard is closed. */

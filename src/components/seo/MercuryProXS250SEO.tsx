@@ -1,5 +1,8 @@
 import { Helmet } from '@/lib/helmet';
 import { SITE_URL } from '@/lib/site';
+import seoPageMetadata from '@/data/seoPageMetadata.json';
+
+const PRO_XS_250_SEO = seoPageMetadata.mercuryFamilies['/mercury/pro-xs-250'];
 
 // Mercury Pro XS 250 landing page — high-intent "Pro XS 250 price Canada" SEO/AEO.
 // Page lives at /mercury/pro-xs-250 and is prerendered via static-prerender.mjs.
@@ -147,9 +150,9 @@ export function MercuryProXS250SEO() {
 
   // Meta copy is intentionally price-free so it never drifts from the live
   // Offer prices in the JSON-LD (which pull from PRO_XS_250_VARIANTS).
-  const titleStr = 'Mercury Pro XS 250 Price Canada (CAD) | Harris Boat Works';
-  const shortTitle = 'Mercury Pro XS 250 Price Canada (CAD)';
-  const metaDesc = 'Mercury 250 Pro XS with live CAD pricing and real repower costs. What it fits, what it weighs, what it runs. Ontario Mercury Premier dealer.';
+  const titleStr = PRO_XS_250_SEO.title;
+  const shortTitle = PRO_XS_250_SEO.title;
+  const metaDesc = PRO_XS_250_SEO.description;
   const ogDesc = metaDesc;
 
   return (

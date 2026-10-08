@@ -35,7 +35,7 @@ Evinrude stopped building outboards in 2020, and six years on, parts and service
 
 Evinrude stopped making outboards in May 2020. It has been six years. Parts are getting harder to find, the technicians who know these motors are aging out, and resale value is sliding. The Evinrude owners who switched in 2022 and 2023 got ahead of the problem. The owners switching now are still making the right call. They are just doing it a little later.
 
-This guide gives you the honest math: why the switch matters now, what the conversion actually involves, and, just as important, when you should not switch yet. Harris Boat Works does Evinrude-to-Mercury conversions all season long, and some of our best conversations are the ones where we talk someone out of a repower they do not need this year.
+This guide gives you the honest math: why the switch matters now, what the conversion actually involves, and, just as important, when you should not switch yet. Harris Boat Works does Evinrude-to-Mercury conversions from April through November, and some of our best conversations are the ones where we talk someone out of a repower they do not need this year.
 
 If you are already decided, build a quote at **mercuryrepower.ca**, configured for your hull in a few minutes. Still weighing options? Start with our [repair, repower, or sell decision guide](/blog/repair-repower-or-sell-boat-ontario-decision-guide) first.
 
@@ -47,7 +47,7 @@ When BRP shut down Evinrude production in May 2020, the practical result for Ont
 
 Six years in, here is what Evinrude owners actually run into.
 
-**Parts are getting harder to find.** Common service items, filters, plugs, anodes, are still around. But specialty parts, the proprietary electronics and fuel-injection components for E-TEC G1 and G2, are increasingly on long backorder or simply gone. The window for "we can fix that" is narrowing every season.
+**Parts are getting harder to find.** Common service items, filters, plugs, anodes, are still around. But specialty parts, the proprietary electronics and fuel-injection components for E-TEC G1 and G2, are increasingly hard to find, and lead times on some can stretch into months. The window for "we can fix that" is narrowing every season.
 
 **The technicians who know these motors are disappearing.** Evinrude expertise lives in the hands of people who have been turning wrenches on them for 20 years and more. Those technicians are retiring. New techs entering the marine trade learn Mercury, Yamaha, and Suzuki. Nobody is training on a motor that is no longer made, because there is no certification program for it.
 
@@ -80,7 +80,7 @@ Not everyone should switch this year. Here is the real framework.
 
 ## What the Conversion Actually Involves
 
-A Mercury-to-Mercury repower keeps your existing controls, harness, and gauges, so the rigging is straightforward. An Evinrude-to-Mercury conversion is different: the entire control system has to swap, because Evinrude and Mercury systems do not speak the same language. That means a one-time rigging premium on top of a standard repower. It is real money, but you pay it once. Every repower after this one is Mercury-to-Mercury and the rigging cost drops back down.
+A Mercury-to-Mercury repower can often reuse your existing controls, harness, and gauges when the old and new engines share compatible interfaces, so the rigging is usually more straightforward. An Evinrude-to-Mercury conversion is different: the entire control system has to swap, because Evinrude and Mercury systems do not speak the same language. That means a one-time rigging premium on top of a standard repower. It is real money, but you pay it once. Every repower after this one is Mercury-to-Mercury and the rigging cost drops back down.
 
 Here is what actually changes:
 
@@ -217,7 +217,7 @@ The E-TEC was a well-engineered engine, and a healthy late-model G2 is mechanica
 
 ### Are Evinrude and Johnson outboards still made?
 
-No. BRP stopped producing Evinrude outboard motors in May 2020, and Johnson outboards have not been manufactured under that name since the early 2000s. For both brands, parts availability is patchy and shrinking, and fewer shops are qualified to service them each year. For engine repairs, HBW only services Mercury and MerCruiser, so if your Evinrude or Johnson needs work, we cannot be your shop, which is part of why so many owners are converting now.
+No. BRP stopped producing Evinrude outboard motors in May 2020, and Johnson outboards have not been sold new under that name since 2007. For both brands, parts availability is patchy and shrinking, and fewer shops are qualified to service them each year. For engine repairs, HBW only services Mercury and MerCruiser, so if your Evinrude or Johnson needs work, we cannot be your shop, which is part of why so many owners are converting now.
 
 ## Related guides
 

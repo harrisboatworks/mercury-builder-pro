@@ -18,7 +18,9 @@ export const useNotifications = () => {
   const { user } = useAuth()
   const [notifications, setNotifications] = useState<Notification[]>([])
   const [loading, setLoading] = useState(true)
-  const [unreadCount, setUnreadCount] = useState(0)
+  // Derived so every hook instance stays correct when realtime events change
+  // rows it did not modify itself.
+  const unreadCount = notifications.filter(n => !n.read).length
 
   const fetchNotifications = async () => {
     if (!user) return
@@ -36,7 +38,6 @@ export const useNotifications = () => {
     }
 
     setNotifications(data || [])
-    setUnreadCount(data?.filter(n => !n.read).length || 0)
     setLoading(false)
   }
 
@@ -57,7 +58,6 @@ export const useNotifications = () => {
         n.id === notificationId ? { ...n, read: true } : n
       )
     )
-    setUnreadCount(prev => Math.max(0, prev - 1))
   }
 
   const markAllAsRead = async () => {
@@ -77,7 +77,6 @@ export const useNotifications = () => {
     setNotifications(prev => 
       prev.map(n => ({ ...n, read: true }))
     )
-    setUnreadCount(0)
   }
 
   const deleteNotification = async (notificationId: string) => {
@@ -92,12 +91,7 @@ export const useNotifications = () => {
       return
     }
 
-    const notification = notifications.find(n => n.id === notificationId)
     setNotifications(prev => prev.filter(n => n.id !== notificationId))
-    
-    if (notification && !notification.read) {
-      setUnreadCount(prev => Math.max(0, prev - 1))
-    }
   }
 
   useEffect(() => {
@@ -119,9 +113,6 @@ export const useNotifications = () => {
         (payload) => {
           if (payload.eventType === 'INSERT') {
             setNotifications(prev => [payload.new as Notification, ...prev])
-            if (!(payload.new as Notification).read) {
-              setUnreadCount(prev => prev + 1)
-            }
           } else if (payload.eventType === 'UPDATE') {
             setNotifications(prev =>
               prev.map(n =>
@@ -129,11 +120,7 @@ export const useNotifications = () => {
               )
             )
           } else if (payload.eventType === 'DELETE') {
-            const deletedNotification = notifications.find(n => n.id === payload.old.id)
             setNotifications(prev => prev.filter(n => n.id !== payload.old.id))
-            if (deletedNotification && !deletedNotification.read) {
-              setUnreadCount(prev => Math.max(0, prev - 1))
-            }
           }
         }
       )

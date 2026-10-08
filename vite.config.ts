@@ -8,6 +8,7 @@ import { componentTagger } from "lovable-tagger";
 // onto other routes. Re-enable only when there's a real offline use case.
 // import { VitePWA } from "vite-plugin-pwa";
 import { writeFileSync } from "fs";
+import { staleChunkHarnessReloadPlugin } from "./src/lib/stale-chunk-recovery-harness-plugin";
 
 const buildId =
   process.env.VERCEL_GIT_COMMIT_SHA ||
@@ -74,6 +75,7 @@ export default defineConfig(({ mode }) => ({
   },
   plugins: [
     react(),
+    mode === 'development' && staleChunkHarnessReloadPlugin(),
     mode === 'development' && componentTagger(),
     mode === 'production' && sitemapPlugin(),
     mode === 'production' && buildVersionPlugin(),

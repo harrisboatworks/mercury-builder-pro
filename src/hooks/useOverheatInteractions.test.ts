@@ -34,10 +34,10 @@ beforeEach(() => {
     <img src="/hero.png" alt="Private-looking alt" />
     <button><img src="/inline.png" /><span class="overlay">Expand</span></button>
     <div data-blog-share="inline"><button data-share-control="copy"><svg></svg>Copy</button></div>
-    <a href="https://hbw.wiki/service"><span>Service</span></a>
-    <form><a href="https://hbw.wiki/service">Private form</a></form>
-    <div contenteditable><a href="https://hbw.wiki/service">Editable</a></div>
-    <a href="https://hbw.wiki/service?customer=private">Not allowlisted</a>`;
+    <a href="https://hbwservice.ca"><span>Service</span></a>
+    <form><a href="https://hbwservice.ca">Private form</a></form>
+    <div contenteditable><a href="https://hbwservice.ca">Editable</a></div>
+    <a href="https://hbwservice.ca?customer=private">Not allowlisted</a>`;
   document.body.append(root);
   stop = observeOverheatInteractions(root);
 });

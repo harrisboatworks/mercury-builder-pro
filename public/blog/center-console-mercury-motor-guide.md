@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/center-console-mercury-motor-guide.md
-last_updated: 2026-09-06
+last_updated: 2026-10-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Best Mercury for a Center Console 2026: 115 HP to Quad V10"
 description: "How we'd power a center console by hull length: a single 115 inshore, twin V6s and V8s midrange, up to triple and quad V10s for offshore hulls."
 category: "Buying Guide"
 date_published: 2026-03-23
-date_modified: 2026-09-06
+date_modified: 2026-10-06
 keywords: ["center console outboard","twin mercury outboard","mercury 300 verado","offshore motor","center console motor choice"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-03-23  
-**Last reviewed:** 2026-09-06  
+**Last reviewed:** 2026-10-06  
 **Read time:** 11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/center-console-mercury-motor-guide
 
@@ -60,7 +60,7 @@ Most 22 to 25 ft center consoles run great on a single. Twins are about redundan
 
 **Twin Mercury V8 outboards**
 
-Single 300 HP Verado handles most 22 to 25 ft center consoles beautifully. Twins are only worth it if you fish offshore or want the safety net of redundancy.
+A single Pro XS V8, sized one Mercury model below the capacity-plate maximum, handles most 22 to 25 ft center consoles beautifully. Twins are only worth it if you fish offshore or want the safety net of redundancy.
 
 ## Why this guide is different
 
@@ -80,12 +80,12 @@ Ontario center console buyers are overwhelmingly trailerable. The boats that com
 | 25 to 28 ft | 250 to 400 HP (twin) | Premium Lake Ontario / Great Lakes setup |
 | 28+ ft | Triple or quad | Rare in Ontario, mostly U.S.-import boats |
 
-The 20 to 24 foot trailerable class is where most of the real buying decisions happen. A 22-foot Boston Whaler Dauntless with a Mercury 250 Pro XS V8 is the most common center-console repower configuration we see.
+The 20 to 24 foot trailerable class is where most of the real buying decisions happen. Whatever the hull, the best fit is usually one Mercury model below the capacity-plate maximum, so check the plate before choosing a motor.
 
 ## Mercury motor families: which one for a center console?
 
 ### FourStroke (90 to 150 HP)
-Mercury's base FourStroke range fits the small end of center consoles: 17 to 20 feet, lighter hulls, moderate use. These motors are quieter and smoother than Pro XS at the cost of slightly less hole-shot and top speed.
+Mercury's 90 to 150 HP FourStroke models fit the small end of center consoles: 17 to 20 feet, lighter hulls, moderate use. These motors are quieter and smoother than Pro XS at the cost of slightly less hole-shot and top speed.
 
 **Best for:** 17 to 20 ft hulls, mixed fishing and recreation, customers who prioritize smoothness and fuel economy over peak performance.
 
@@ -103,7 +103,7 @@ For Ontario center consoles, Pro XS is the default recommendation for fishing-fo
 ### Verado (250 to 600 HP)
 Mercury's premium outboard. Quieter, smoother, and more refined than Pro XS at comparable HP. The current [Mercury Verado lineup](https://www.mercurymarine.com/ca/en/engines/outboard/verado) runs from 250 to 600 HP across V8, V10, and V12 configurations. Verado is special-order at HBW, so check our [live pricing reference](/pricing-reference) before planning availability.
 
-For most Ontario fishing-focused center consoles, Verado is more motor than the job requires and adds significant cost. We recommend Verado for twin-engine setups where the ride quality and noise difference actually matters across multiple hours at cruise.
+For most Ontario fishing-focused center consoles, Verado is more motor than the job requires and adds significant cost. It earns its cost mainly on twin-engine setups, where the ride quality and noise difference actually matters across multiple hours at cruise.
 
 **Best for:** Premium builds, twin-engine setups, buyers prioritizing ride quality and quiet operation.
 
@@ -122,21 +122,21 @@ For most Ontario fishing-focused center consoles, Verado is more motor than the 
 This is the most common Ontario center console application.
 
 ### 23 to 25 ft single engine
-**Motor:** Mercury 250 Pro XS V8 (4.6L) for fishing; 300 Verado V8 if quiet ride at cruise matters more than hole-shot.
+**Motor:** Mercury 250 Pro XS V8 (4.6L) for fishing; Verado V8 (special order) if quiet ride at cruise matters more than hole-shot.
 **Performance:** 50 to 60 mph two-up.
 **Use case:** Lake Ontario salmon tournament days, bigger-water Bay of Quinte.
 
-![24-foot center-console fishing boat with twin Mercury Verado V8 outboards](/lovable-uploads/inline/inline-center-console-twin-verados.png)
+![Infographic comparing a single Mercury with twin outboards on a center console: twins buy get-home redundancy and total power, not extra speed, and typically cost substantially more.](/lovable-uploads/inline/center-console-single-vs-twin-2026-09.webp)
 
 ### 25 to 28 ft twin-engine
-**Motor:** Twin 250 Pro XS V8 for performance; twin 300 Verado V8 for premium ride.
+**Motor:** Twin 250 Pro XS V8 for performance; twin Verado V8 (special order) for premium ride.
 **Performance:** 55 to 65 mph two-up.
 **Use case:** Offshore Lake Ontario, premium fishing or family use.
 
 If you are buying a 25 to 28 ft center console in Ontario and you plan to run it in October salmon season, twin engines are not a luxury.
 
 ### 28+ ft (rare in Ontario)
-**Motor:** Triple Mercury 350 Verado V10, or triple/quad 400+ Verado V10 for peak performance.
+**Motor:** Triple or quad Mercury Verado V10 (special order) for peak performance.
 **Use case:** Top-tier Great Lakes setups; most of these boats are U.S. imports.
 
 ## Single vs twin: how to actually decide
@@ -159,7 +159,7 @@ Conventional Joystick Piloting controls thrust direction across multiple motors,
 **Conventional multi-engine package requirements:**
 - Twin or more matched Mercury outboards (same family, same HP, same generation where possible)
 - Electronic shift and throttle (no mechanical cable)
-- Compatible Mercury motors from 2014 onward
+- DTS-compatible Mercury motors; confirm the exact engines and package before planning around joystick
 
 Single-engine joystick is a narrow, package-specific exception, not a general feature of single-engine Mercury rigs. Mercury's [Joystick Piloting for Single-Engine Outboards with Thruster](https://www.mercurymarine.com/us/en/about-us/news/mercury-introduces-joystick-piloting-for-single-engine-outboards.html) requires an electric-steering Verado or SeaPro V8, V10, or V12 outboard from 250 to 600 HP plus a compatible CAN-based variable-speed thruster. Mercury also lists Joystick Steering for Single-Engine Vessels as a separate system. Most single-engine center consoles do not qualify, so confirm the complete package before treating joystick as part of the repower plan.
 
@@ -167,7 +167,7 @@ Single-engine joystick is a narrow, package-specific exception, not a general fe
 
 ## Rigging details that matter for center consoles
 
-**Prop selection:** Aluminum props on a 200+ HP center console are a false economy. Mercury Bravo 1 FS, Bravo 1 XS, or Fury 4 in the right pitch is a common starting point for these higher-HP families. Confirm hub, gearcase, and part number before ordering. Budget for a quality stainless prop on a fresh repower; current prop pricing is on our /pricing-reference page.
+**Prop selection:** Aluminum props on a 200+ HP center console are a false economy. Mercury Bravo I FS or Fury 4 in the right pitch is a common starting point for these higher-HP families. Confirm hub, gearcase, and part number before ordering. Budget for a quality stainless prop on a fresh repower; current prop pricing is on our /pricing-reference page.
 
 **Hydraulic steering:** Required on many of these higher-HP motors. SeaStar Pro hydraulic is our default. Confirm the exact engine and control option.
 
@@ -175,13 +175,13 @@ Single-engine joystick is a narrow, package-specific exception, not a general fe
 
 **Transom bracket check:** Modern center consoles use transom brackets that move the motor 12 to 30 inches aft of the transom. Verify bracket rating before we quote a motor size.
 
-**Spring commissioning:** Center consoles tend to be stored covered, not shrink-wrapped. Annual pre-launch service at our current published rate will prevent a cooked impeller from ruining your first week of salmon season.
+**Spring commissioning:** Boats stored with us are kept outdoors and shrink-wrapped as standard. Annual pre-launch service helps prevent a cooked impeller from ruining your first week of salmon season.
 
 ## Why Ontario center console buyers come to us
 
-We have been a Mercury dealer on Rice Lake for decades. Center-console repowers are a real part of our shop volume because we know the Ontario use case: Lake Ontario salmon, Bay of Quinte walleye, and the occasional Georgian Bay day trip.
+We have been a Mercury dealer since 1965. Center-console repowers are a real part of our shop volume because we know the Ontario use case: Lake Ontario salmon, Bay of Quinte walleye, and the occasional Georgian Bay day trip.
 
-We do not oversell Verado to fishing-focused buyers. Pro XS is the right motor for most Ontario fishing-focused center consoles. We recommend Verado when the premium is actually justified by how the boat is being used.
+We do not oversell Verado to fishing-focused buyers. Pro XS is the right motor for most Ontario fishing-focused center consoles. When the premium is actually justified by how the boat is being used, Verado is available by special order.
 
 Pickup is at Gores Landing, and your motor was rigged by a tech who has put a lot of Lake Ontario and Bay of Quinte center consoles in the water.
 
@@ -199,7 +199,7 @@ It depends on the hull and how you use it. Most Ontario trailerable center conso
 
 ### What is the difference between Mercury Pro XS and Verado for a center console?
 
-Pro XS is Mercury performance-fishing motor, more aggressive hole-shot, optimized for hard-use fishing, louder at cruise. Verado is the premium outboard, quieter, smoother at cruise, more refined ride, and compatible with Joystick Piloting. For a fishing-focused trailerable Ontario center console, Pro XS is the right answer for most buyers.
+Pro XS is Mercury performance-fishing motor, more aggressive hole-shot, optimized for hard-use fishing, louder at cruise. Verado is the premium outboard, quieter, smoother at cruise, with a more refined ride. Joystick Piloting depends on DTS-compatible engines and the right package, not on Verado alone. For a fishing-focused trailerable Ontario center console, Pro XS is the right answer for most buyers.
 
 ### Can I run mixed motor sizes on a twin center console setup?
 

@@ -7,11 +7,29 @@ import {
 } from './motor-selection-url-state';
 
 describe('motor selection URL state', () => {
-  it('uses default filters for an empty URL', () => {
+  it('uses the popular 75-115 HP range for a clean landing URL', () => {
     expect(readMotorSelectionUrlState(new URLSearchParams())).toEqual({
+      searchQuery: '',
+      hpRange: 'core-repower',
+      configFilters: null,
+    });
+  });
+
+  it('falls back to all motors when any explicit instruction is present', () => {
+    expect(readMotorSelectionUrlState(new URLSearchParams('q=pro+xs'))).toEqual({
+      searchQuery: 'pro xs',
+      hpRange: 'all',
+      configFilters: null,
+    });
+    expect(readMotorSelectionUrlState(new URLSearchParams('model=60-elpt'))).toEqual({
       searchQuery: '',
       hpRange: 'all',
       configFilters: null,
+    });
+    expect(readMotorSelectionUrlState(new URLSearchParams('stock=1'))).toEqual({
+      searchQuery: '',
+      hpRange: 'all',
+      configFilters: { inStock: true },
     });
   });
 
@@ -56,12 +74,27 @@ describe('motor selection URL state', () => {
     });
 
     const canonical = writeMotorSelectionUrlState(current, state);
-    expect(canonical.toString()).toBe('utm_medium=cpc');
+    // Invalid HP falls back to an explicit "all" so the URL reflects the
+    // actual state rather than silently re-applying the default range.
+    expect(canonical.toString()).toBe('utm_medium=cpc&hp=all');
   });
 
-  it('omits default values so unfiltered URLs stay compact', () => {
+  it('omits the default 75-115 HP range so clean landing URLs stay compact', () => {
     const params = writeMotorSelectionUrlState(
       new URLSearchParams('q=old&hp=portable&stock=1&ref=agent'),
+      {
+        searchQuery: '',
+        hpRange: 'core-repower',
+        configFilters: null,
+      },
+    );
+
+    expect(params.toString()).toBe('ref=agent');
+  });
+
+  it('writes an explicit All HP choice so it survives a refresh', () => {
+    const params = writeMotorSelectionUrlState(
+      new URLSearchParams(),
       {
         searchQuery: '',
         hpRange: 'all',
@@ -69,6 +102,6 @@ describe('motor selection URL state', () => {
       },
     );
 
-    expect(params.toString()).toBe('ref=agent');
+    expect(params.toString()).toBe('hp=all');
   });
 });

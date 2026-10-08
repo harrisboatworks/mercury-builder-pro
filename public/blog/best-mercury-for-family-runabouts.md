@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-mercury-for-family-runabouts.md
-last_updated: 2026-09-11
+last_updated: 2026-10-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Best Mercury for Family Runabout 2026"
 description: "A Mercury Premier dealer's straight answer on the right Mercury for a family runabout, by boat length, by use case."
 category: "Buying Guide"
 date_published: 2026-05-06
-date_modified: 2026-09-11
+date_modified: 2026-10-06
 keywords: ["mercury family boat motor","family runabout outboard","mercury for pontoon","best mercury for recreation","family boat motor size","best Mercury outboard family runabout","Mercury 90 HP family boat","Mercury 150 HP runabout","family runabout horsepower","watersports family boat motor","quiet outboard family"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-05-06  
-**Last reviewed:** 2026-09-11  
+**Last reviewed:** 2026-10-06  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-mercury-for-family-runabouts
 
@@ -114,9 +114,9 @@ We sell ethanol-free 89 marine gas at the dock in Gores Landing. Pick the HP tha
 ### Features Worth Paying For on a Family Runabout
 
 - **Power steering**, On anything over 115 HP, get hydraulic or electric power steering. Manual steering on bigger motors is tiring after an hour of driving.
-- **Power trim**, Standard on every Mercury 25 HP and up. You'll use it constantly as load and conditions change.
+- **Power trim**, Standard on nearly every Mercury 25 HP and up (look for PT in the model code). Manual-start tillers like the 25MLH use manual tilt. You'll use it constantly as load and conditions change.
 - **SmartCraft / [Mercury Marine](https://www.mercurymarine.com/ca/en) App**, Real-time fuel flow lets you find the efficient cruise RPM for your boat. Saves real money over a season.
-- **Active Trim**, Available on V8 Verados and select V6s. Worth it if your driver is still learning; the engine trims itself for conditions.
+- **Active Trim**, Available on compatible Mercury FourStroke outboards from 40 HP up. Worth it if your driver is still learning; the engine trims itself for conditions.
 
 **What you don't need:** Mercury's premium Verado V8/V10 lineup on a family runabout under 22 feet. They're excellent motors built for performance boats and big cruisers, overkill on a 19-foot bowrider that mostly goes to the swim spot.
 
@@ -132,7 +132,7 @@ These are planning-level ranges for a motor with rigging, prop, and installation
 | 175 HP V6 FourStroke | $27,544–$27,676 | $4,500 to $6,500 |
 | 200 HP V6 FourStroke | $27,858–$29,623 | $4,500 to $6,500 |
 
-_Prices here are planning figures as of September 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
+_Prices here are planning figures as of October 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 Your all-in cost is the two columns added together: motor plus rigging, prop, and installation. Every model and shaft variant is on our [Live motor price](/pricing-reference) page. If you're repowering, the trade-in value on your existing motor, typically $1,500 to $5,000 depending on age and condition, applies against the total.
 
@@ -167,7 +167,7 @@ For serious watersports, see our dedicated Best Mercury for Ski & Wakeboard Boat
 
 ### Will my boat be safe with the maximum-rated HP?
 
-Generally yes, manufacturers test and certify the max HP rating. Going to max is safe but expensive (fuel, insurance) and not always necessary. Most family use lives well below max.
+Generally yes, the boat builder determines the max HP rating, by Transport Canada's calculation or by testing, and declares it on the capacity plate. Going to the maximum adds purchase price and weight and is not always necessary. The best fit is usually one Mercury model below the capacity plate maximum. Most family use lives well below max.
 
 ### Is a 4-stroke quieter than a 2-stroke?
 

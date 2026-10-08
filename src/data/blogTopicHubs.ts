@@ -47,7 +47,7 @@ export const BLOG_TOPIC_HUBS: BlogTopicHub[] = [
     intro: [
       "Most \"dead\" outboards we see aren't dead. They're telling you exactly what's wrong, in beeps, codes and warning horns, and most people just never got the chart.",
       "These guides collect what our techs check first: alarm and beep codes, overheating at idle and at speed, fuel trouble after a winter of sitting, impellers, oil capacities and honest maintenance intervals. If your motor is talking to you, start with the beep code guide. If it's saying nothing at all, start with the won't-start guide.",
-      "When a guide points to a repair beyond a driveway fix, book it at hbw.wiki/service and we'll get you on the schedule. One note before you plan: the marina is closed December 1 to April 1, so anything you find over the winter gets booked for a spring slot.",
+      "When a guide points to a repair beyond a driveway fix, book it at hbwservice.ca and we'll get you on the schedule. One note before you plan: the marina is closed December 1 to April 1, so anything you find over the winter gets booked for a spring slot.",
     ],
     anchorSlugs: [
       'mercury-outboard-beeping-codes-guide',
@@ -169,6 +169,7 @@ export const HUB_ASSIGNMENTS: Record<string, BlogTopicHubId> = {
   // --- diagnostics ---
   'mercury-outboard-repair-guide': 'diagnostics',
   'mercury-outboard-oil-capacity-chart': 'diagnostics',
+  'mercury-fourstroke-making-oil-guide': 'diagnostics',
   'mercury-outboard-fault-codes-lookup': 'diagnostics',
   'mercury-impeller-replacement-when-they-fail': 'diagnostics',
   'mercury-outboard-overheat-alarm-decoder': 'diagnostics',
@@ -182,6 +183,7 @@ export const HUB_ASSIGNMENTS: Record<string, BlogTopicHubId> = {
   'mercury-smartcraft-alarm-codes-encyclopedia': 'diagnostics',
   'how-to-trim-boat-mercury-outboard': 'diagnostics',
   'mercury-boat-battery-guide-ontario': 'diagnostics',
+  'mercury-outboard-battery-size-guide': 'diagnostics',
   'mercury-outboard-overheating-at-idle-fix-ontario': 'diagnostics',
   'mercury-outboard-beeping-codes-guide': 'diagnostics',
   'boat-trailer-maintenance-guide-ontario': 'diagnostics',
@@ -204,6 +206,7 @@ export const HUB_ASSIGNMENTS: Record<string, BlogTopicHubId> = {
   'mercury-vs-yamaha-vs-honda-reliability-2026': 'reviews',
   'mercury-vs-suzuki-outboard-reliability-2026': 'reviews',
   'mercury-vesselview-smartcraft-plain-english-guide': 'reviews',
+  'mercury-nmea-2000-lowrance-garmin-guide': 'diagnostics',
   'outboard-vs-sterndrive-2026-ontario-repower': 'reviews',
   'mercury-40-vs-60-hp-outboard-ontario': 'reviews',
   'mercury-smartcraft-connect-guide-ontario': 'reviews',
@@ -250,6 +253,7 @@ export const HUB_ASSIGNMENTS: Record<string, BlogTopicHubId> = {
   'pleasure-craft-licence-update-repower-ontario': 'repower',
   'evinrude-to-mercury-repower-ontario-guide': 'repower',
   'boat-hull-replacement-vs-repower-decision': 'repower',
+  'aluminum-boat-transom-inspection-guide': 'repower',
   'mercury-boost-upgrade-150hp-pontoon-analysis': 'repower',
   'what-happens-during-mercury-repower': 'repower',
   'outboard-shaft-length-guide': 'repower',

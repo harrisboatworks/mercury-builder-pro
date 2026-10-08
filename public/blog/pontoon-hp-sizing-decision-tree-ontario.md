@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/pontoon-hp-sizing-decision-tree-ontario.md
-last_updated: 2026-09-11
+last_updated: 2026-10-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Pontoon HP Sizing: The Rice Lake Decision Tree by Length"
 description: "Pontoon HP by load, use, and the boat's documented limits. 25 HP through 300-plus bands are examples to compare, not an HP-per-foot or length chart."
 category: "Mercury Outboards"
 date_published: 2026-03-26
-date_modified: 2026-09-11
+date_modified: 2026-10-06
 keywords: ["pontoon hp","horsepower sizing","mercury","command thrust","tritoon"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Mercury Outboards  
 **Published:** 2026-03-26  
-**Last reviewed:** 2026-09-11  
+**Last reviewed:** 2026-10-06  
 **Read time:** ~12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/pontoon-hp-sizing-decision-tree-ontario
 
@@ -61,11 +61,11 @@ If you're buying used and the motor is at the low end of that manufacturer's HP 
 
 Pontoon buyers coming from fishing boats or runabouts always underestimate how much power a pontoon needs. Here's why:
 
-**Weight.** A typical pontoon sits 816 to 1,588 kg (1,800 to 3,500 lbs) dry before you add people, gear, and fuel. On a 22-footer actually rated for 10 adults, that passenger load plus a full cooler can easily clear 2,268 kg (5,000 lb). Length does not set how many people you may carry.
+**Weight.** Pontoon dry weight varies widely by length, tube count, and build, so check the builder's published dry weight for your exact boat before you add people, gear, and fuel. On a 22-footer actually rated for 10 adults, those people plus a full cooler weigh roughly 750–1,100 kg (1,650–2,400 lb). Add the pontoon's dry weight, motor, fuel and gear, and the loaded boat can easily clear 2,268 kg (5,000 lb). Length does not set how many people you may carry.
 
 **Drag.** Pontoon tubes create significant drag compared to a V-hull. You're not cutting through the water, you're pushing it out of the way with cylindrical aluminum logs. It takes real power to overcome that resistance and get the boat up on cruise.
 
-**Passenger load.** A family load can add hundreds of kilograms. Use the exact boat's capacity/owner documentation, count people and gear, and stay within both people and weight limits, whichever is reached first. If illustrating 10 adults, that is only a hypothetical boat rated for that load. Transport Canada's 2026 boating guide requires attention to those limits and reductions for conditions. Length alone cannot establish legal capacity. [Transport Canada Safe Boating Guide (2026)](https://tc.canada.ca/sites/default/files/2026-05/boating_guide_2026_en_acc.pdf).
+**Passenger load.** A family load can add hundreds of kilograms. Use the exact boat's capacity/owner documentation, count people and gear, and stay within both people and weight limits, whichever is reached first. If illustrating 10 adults, that is only a hypothetical boat rated for that load. Transport Canada's 2026 boating guide requires attention to those limits and reductions for conditions. Length alone cannot establish legal capacity. [Transport Canada boating safety](https://tc.canada.ca/en/marine-transportation/marine-safety/boating-safety).
 
 **Windage.** Pontoons have enormous freeboard and surface area. A side wind on Rice Lake or the Kawarthas can push your boat around hard. You need power in reserve to hold a line and handle unexpected conditions, not just to get up on cruise on a flat morning.
 
@@ -172,7 +172,7 @@ Bigger boat, bigger load, bigger water. A 250 or 300 HP Mercury handles this cat
 
 **Mercury 300-400+ HP**
 
-At this size, you're in Verado or high-output V8 territory. A 400R or twin-motor setup gives you the performance these boats are capable of. If you're spending this much on a pontoon, don't pair it with a motor that makes it feel slow.
+At this size, the right power depends on the exact boat. Check its capacity plate and builder documentation for maximum horsepower, transom and motor-weight limits, steering requirements, and whether it is rigged for one motor or two, then size for your planned load. Higher-horsepower options in this range include Verado, which is a special order at HBW, not part of our default inventory. Bring the boat's documented limits to the quote so we can match the motor to them.
 
 ---
 
@@ -291,7 +291,7 @@ For a loaded 22-foot boat, 90 or 115 CT is an occasional-tube example; 150 suits
 
 ### Why do pontoons need more HP than runabouts?
 
-A typical pontoon sits 816 to 1,588 kg (1,800 to 3,500 lbs) dry before people, gear, and fuel. On a hypothetical 22-footer actually rated for 10 adults, that passenger load plus a full cooler can easily clear 2,268 kg (5,000 lb). Length alone does not set legal capacity. Pontoon tubes also create more drag than a V-hull because you are pushing water aside rather than cutting through it. Add huge freeboard catching crosswind, and a pontoon needs meaningfully more horsepower than an equivalent-length runabout.
+Pontoon dry weight varies widely by length, tube count, and build, so check the builder's published dry weight for the exact boat before adding people, gear, and fuel. On a hypothetical 22-footer actually rated for 10 adults, those people plus a full cooler weigh roughly 750–1,100 kg (1,650–2,400 lb). Add the pontoon dry weight, motor, fuel and gear, and the loaded boat can easily clear 2,268 kg (5,000 lb). Length alone does not set legal capacity. Pontoon tubes also create more drag than a V-hull because you are pushing water aside rather than cutting through it. Add huge freeboard catching crosswind, and a pontoon needs meaningfully more horsepower than an equivalent-length runabout.
 
 ### When does Command Thrust matter on a pontoon?
 

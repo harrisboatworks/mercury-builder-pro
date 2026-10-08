@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-mercury-outboard-lake-ontario-salmon-trout.md
-last_updated: 2026-09-11
+last_updated: 2026-10-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Best Mercury Outboard for Lake Ontario Salmon & Trout"
 description: "Choose a Mercury main outboard for a Lake Ontario salmon or trout boat by hull rating, loaded weight, use, range, and offshore conditions."
 category: "Fishing & Local"
 date_published: 2026-04-22
-date_modified: 2026-09-11
+date_modified: 2026-10-06
 keywords: ["Lake Ontario salmon fishing motor","best outboard Lake Ontario","Mercury outboard salmon trolling","Lake Ontario chinook king salmon","salmon fishing boat Ontario","Mercury 150 200 salmon","Lake Ontario fishing charter motor"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Fishing & Local  
 **Published:** 2026-04-22  
-**Last reviewed:** 2026-09-11  
+**Last reviewed:** 2026-10-06  
 **Read time:** 15 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-mercury-outboard-lake-ontario-salmon-trout
 
@@ -33,7 +33,7 @@ revenue_driver: repower
 
 ## Quick Answer
 
-Lake Ontario salmon and trout trolling typically calls for a Mercury 200–300 HP V8 FourStroke on a 21–26 ft deep-V hull, often paired with a 15 HP ProKicker for the slow downrigger trolling speeds. Lake Ontario is not Rice Lake, it's open, cold, and capable of serious swells. Pick the bigger end of your hull's power range. Quote installed at [mercuryrepower.ca](https://www.mercuryrepower.ca).
+Lake Ontario salmon and trout trolling typically calls for a Mercury 200–300 HP FourStroke (3.4 L V6 at 200–225 HP, 4.6 L V8 at 250–300 HP) on a 21–26 ft deep-V hull, often paired with a 15 HP ProKicker for the slow downrigger trolling speeds. Lake Ontario is not Rice Lake, it's open, cold, and capable of serious swells. Start with the capacity plate and pick one Mercury model below its maximum: a 250 HP on a 300 HP plate, for example. Don't go underpowered on Lake Ontario, but don't pick the max by default. Quote installed at [mercuryrepower.ca](https://www.mercuryrepower.ca).
 
 ---
 
@@ -85,7 +85,7 @@ Charter operations push motors through hard daily cycles. Mercury SeaPro variant
 
 ### Multi-Species Sport Fishing (Salmon, Walleye, Bass)
 
-**Recommended:** 21–24 ft deep-V + Mercury 200–250 HP V8 FourStroke + 15 HP ProKicker.
+**Recommended:** 21–24 ft deep-V + Mercury 200–250 HP FourStroke (V6 at 200–225 HP, V8 at 250 HP) + 15 HP ProKicker.
 
 The same boat handles salmon trolling offshore, walleye fishing on Bay of Quinte, and bass fishing on connected waters. Versatile setup for anglers who move between species across the season.
 
@@ -115,7 +115,7 @@ Lake Ontario is two different fisheries. Be honest about the one you fish most.
 
 **Pro XS or FourStroke V8 (200 to 300 HP) plus 15 HP ProKicker**
 
-If you have ever been caught out when Lake Ontario turned, size up the main and add the kicker. The lake does not negotiate.
+If you've been caught out when Lake Ontario turned, check the main against the capacity plate: one Mercury model below the maximum is the best fit. Add the kicker. The lake does not negotiate.
 
 ---
 
@@ -123,7 +123,7 @@ If you have ever been caught out when Lake Ontario turned, size up the main and 
 
 Both are capable on Lake Ontario. Here's the honest comparison:
 
-**V8 FourStroke (200–300 HP):** Smoother running, slightly better fuel economy at cruise and trolling speeds. The right choice for recreational fishing with an emphasis on fishing comfort over top-end performance.
+**FourStroke (V6 at 200–225 HP, V8 at 250–300 HP):** Smoother running, slightly better fuel economy at cruise and trolling speeds. The right choice for recreational fishing with an emphasis on fishing comfort over top-end performance.
 
 **Pro XS V8 (200–300 HP):** Faster acceleration, slightly higher top speed, tournament-tuned throttle response. Worth the premium for tournament fishing. Harder to justify for recreational use where the FourStroke is quieter and comparably efficient.
 

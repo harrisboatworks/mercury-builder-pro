@@ -1,3 +1,4 @@
+import { meetsPromotionFinancingMinimum } from '@/lib/promotion-financing';
 import { useState, useEffect, useMemo, useRef, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
@@ -38,7 +39,7 @@ interface FinancingRate {
 export default function PromoSelectionPage() {
   const navigate = useNavigate();
   const { state, dispatch } = useQuote();
-  const { promotions, loading: promoLoading, getRebateForHP, getPromotionSavingsForMotor, getSpecialFinancingRates } = useActivePromotions();
+  const { promotions, loading: promoLoading, getRebateForHP, getPromotionSavingsForMotor, getSpecialFinancingRates } = useActivePromotions({ motor: state.motor });
   const { triggerHaptic } = useHapticFeedback();
   const prefersReducedMotion = useReducedMotion();
 
@@ -133,6 +134,10 @@ export default function PromoSelectionPage() {
   // Match the summary CTA gate: DealerPlan's fee is financed, but it does not
   // turn an otherwise below-minimum purchase into an eligible application.
   const isEligibleForFinancing = financingEligibilityAmount >= FINANCING_MINIMUM;
+  const isEligibleForPromoFinancing = isEligibleForFinancing && meetsPromotionFinancingMinimum(
+    activePromo?.promo_options?.options.find(option => option.id === 'special_financing'),
+    estimatedFinancingAmount,
+  );
 
   const options = useMemo<PromoOption[]>(() => [
       {
@@ -168,11 +173,11 @@ export default function PromoSelectionPage() {
   // Filter to only eligible options - hide financing-only options if not eligible
   const eligibleOptions = useMemo(() => {
     return options.filter(option => {
-      if (option.id === 'special_financing' && financingRates.length === 0) return false;
+      if (option.id === 'special_financing' && (financingRates.length === 0 || !isEligibleForPromoFinancing)) return false;
       if ((option.id === 'special_financing' || option.id === 'standard_financing') && !isEligibleForFinancing) return false;
       return true;
     });
-  }, [options, isEligibleForFinancing, financingRates.length]);
+  }, [options, isEligibleForFinancing, isEligibleForPromoFinancing, financingRates.length]);
 
   const persistFinancingRate = useCallback((rate: FinancingRate) => {
     dispatch({ type: 'SET_PAYMENT_METHOD', payload: 'special_financing' });
@@ -285,6 +290,7 @@ export default function PromoSelectionPage() {
   const handleContinue = () => {
     // Final persistence guard: continuing with a visibly selected promo rate
     // must save that exact rate even if the customer never clicks its tile.
+    if (selectedOption === 'special_financing' && !isEligibleForPromoFinancing) return;
     if (selectedOption === 'special_financing' && selectedRate) {
       persistFinancingRate(selectedRate);
     }
@@ -348,13 +354,15 @@ export default function PromoSelectionPage() {
               style={{ opacity: 1 }}
             >
               {appliedWarrantyExtraYears > 0
-                ? `${appliedWarrantyTotalYears}-Year Factory-Backed Warranty`
+                ? (activePromo.details?.coverage_summary
+                  ? `${appliedWarrantyTotalYears} Years Total Mercury Coverage`
+                  : `${appliedWarrantyTotalYears}-Year Factory-Backed Warranty`)
                 : (activePromo.bonus_title || activePromo.name || 'Current Mercury Promotion')}
             </motion.h1>
 
             <p className="text-muted-foreground text-lg mb-8 max-w-2xl mx-auto">
               {appliedWarrantyExtraYears > 0
-                ? `Every new Mercury outboard from Harris Boat Works during this promotion comes with ${appliedWarrantyTotalYears} years of factory warranty.`
+                ? `Eligible Mercury outboards include 3 years of limited factory warranty plus ${appliedWarrantyExtraYears} years of Mercury Product Protection Gold. Stock, manufacture-date and program conditions apply.`
                 : (activePromo.bonus_description || 'Choose the bonus that works best for you.')}
             </p>
 
@@ -381,10 +389,10 @@ export default function PromoSelectionPage() {
                 </motion.div>
                 <div className="text-left">
                   <div className="text-foreground font-bold text-lg">
-                    {appliedWarrantyTotalYears} Years Factory Warranty
+                    {appliedWarrantyTotalYears} Years {activePromo.details?.coverage_summary ? 'Coverage' : 'Factory Warranty'}
                   </div>
                   <div className="text-muted-foreground text-sm">
-                    3 years standard + {appliedWarrantyExtraYears} years FREE extension
+                    {activePromo.details?.coverage_summary || `3 years standard + ${appliedWarrantyExtraYears} years FREE extension`}
                   </div>
                 </div>
                 {/* Pulsing INCLUDED Badge */}
@@ -578,7 +586,7 @@ export default function PromoSelectionPage() {
               <Button
                 size="lg"
                 onClick={handleContinue}
-                disabled={!selectedOption || (selectedOption === 'special_financing' && !selectedRate)}
+                disabled={!selectedOption || (selectedOption === 'special_financing' && (!selectedRate || !isEligibleForPromoFinancing))}
                 className={`px-8 py-6 text-lg font-semibold transition-all ${hasJustSelected ? 'animate-pulse-glow' : ''}`}
               >
                 Continue to Quote
