@@ -229,7 +229,7 @@ Mercury Pro XS comes with the applicable Mercury limited warranty in Canada. Opt
 
 ### Does HBW finance repowers?
 
-Yes, on repowers above $5,000 CAD. We offer financing through Mercury's repower financing program, with rates that depend on the financed amount and the current offer. There's also a small DealerPlan fee added to the financed total. Repowers under $5,000 don't qualify for financing through this program. The fastest way to see your actual numbers, payment, term options, total interest, is to run a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) and select the financing option.
+Yes, on repowers above $5,000 CAD. We arrange financing through DealerPlan, with rates that depend on the financed amount and the current offer. There's also a small DealerPlan fee added to the financed total. Repowers under $5,000 don't qualify for financing through this program. The fastest way to see your actual numbers, payment, term options, total interest, is to run a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca) and select the financing option.
 
 ## Related guides
 

@@ -1593,7 +1593,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "When is the Ontario walleye opener?",
-        "a": "The second Saturday of May for Zone 17 (Kawarthas, Rice Lake area). Confirm the current year date in the Ontario (MNRF) Fishing Regulations Summary."
+        "a": "The second Saturday of May for Zone 17 (Kawarthas, Rice Lake area). Confirm the current year date in the Ontario (MNR) Fishing Regulations Summary."
       },
       {
         "q": "What should I do 2 weeks before walleye opener?",
@@ -2416,7 +2416,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
       },
       {
         "q": "What is the cheapest Mercury with electric start?",
-        "a": "Mercury offers electric start on motors as small as the 9.9 EH (Electric, Hand-tiller) and 9.9 ELH (Electric, Long-shaft Hand-tiller). For specific CAD pricing on each, see the [motor selection page](/quote/motor-selection)."
+        "a": "Mercury offers electric start on motors as small as the 8 EH (Electric, Hand-tiller) and 8 ELH (Electric, Long-shaft Hand-tiller). For specific CAD pricing on each, see the [motor selection page](/quote/motor-selection)."
       },
       {
         "q": "Is a small Mercury good enough for fishing?",

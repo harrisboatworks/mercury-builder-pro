@@ -148,7 +148,7 @@ Use the [motor selection page](/quote/motor-selection) for the current exact-mod
 
 ### What is the cheapest Mercury with electric start?
 
-Mercury offers electric start on motors as small as the 9.9 EH (Electric, Hand-tiller) and 9.9 ELH (Electric, Long-shaft Hand-tiller). For specific CAD pricing on each, see the [motor selection page](/quote/motor-selection).
+Mercury offers electric start on motors as small as the 8 EH (Electric, Hand-tiller) and 8 ELH (Electric, Long-shaft Hand-tiller). For specific CAD pricing on each, see the [motor selection page](/quote/motor-selection).
 
 ### Is a small Mercury good enough for fishing?
 

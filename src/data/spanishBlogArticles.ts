@@ -138,7 +138,7 @@ Harris Boat Works tiene **584 registros de preparación invernal completados ent
 
 ## ¿Por qué considerar a Harris Boat Works?
 
-Harris Boat Works está ubicado en Gores Landing, Ontario, a orillas de Rice Lake, aproximadamente **1.5 horas al este de Toronto** vía 401E + Hwy 115N. Es una marina de tercera generación establecida en 1947, concesionario Mercury Marine Premier y concesionario Legend Boats.
+Harris Boat Works está ubicado en Gores Landing, Ontario, a orillas de Rice Lake, aproximadamente **1.5 horas al este de Toronto** por la autopista 401 Este, salida 472 en Cobourg, y County Road 18 al norte. Es una marina de tercera generación establecida en 1947, concesionario Mercury Marine Premier y concesionario Legend Boats.
 
 **Lo que nos diferencia:**
 - Precios publicados en línea, sin juegos de "llame para cotizar"

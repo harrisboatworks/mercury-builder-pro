@@ -198,7 +198,7 @@ For pontoons running 90 or 115 HP, almost always yes. For aluminum fishing boats
 
 ### What's the price difference between a 75 and a 90 FourStroke?
 
-Typically $800-$1,500 at MSRP. Smaller than most buyers expect, given the 75 and 90 are the same physical motor. The 90 is the better long-term value in most cases.
+Smaller than most buyers expect, given the 75 and 90 are the same physical motor. The 90 is the better long-term value in most cases. Check mercuryrepower.ca/pricing-reference for today's figures.
 
 ### Can I tow water-ski with a FourStroke?
 
