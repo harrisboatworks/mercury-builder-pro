@@ -1,5 +1,6 @@
 import { useState, useCallback, useRef } from 'react';
 import { supabase } from '@/integrations/supabase/client';
+import { getOrCreateVoiceSessionId } from './voiceSessionId';
 
 interface VoiceSessionData {
   id: string;
@@ -32,35 +33,43 @@ export interface VoiceSessionContext {
   recentMotorsViewed: string[];
 }
 
-const SESSION_ID_KEY = 'chat_session_id';
-
-// Generate cryptographically secure session ID
-function generateSecureSessionId(): string {
-  const array = new Uint8Array(16);
-  crypto.getRandomValues(array);
-  return `voice_${Array.from(array, b => b.toString(16).padStart(2, '0')).join('')}`;
+interface ActiveSession {
+  key: string;
+  userId: string | null;
+  startedAt: number;
+  messages: number;
+  closing: boolean;
+  creation: Promise<string | null>;
 }
 
-function getOrCreateSessionId(): string {
-  let sessionId = localStorage.getItem(SESSION_ID_KEY);
-  if (!sessionId) {
-    sessionId = generateSecureSessionId();
-    localStorage.setItem(SESSION_ID_KEY, sessionId);
+async function writeSessionUpdate(session: ActiveSession, id: string, updates: Record<string, unknown>) {
+  if (session.userId) {
+    try {
+      const { data: { user } } = await supabase.auth.getUser();
+      if (user?.id === session.userId) {
+        const { data, error } = await supabase.from('voice_sessions')
+          .update(updates).eq('id', id).select('id').single();
+        if (!error && data?.id === id) return { error: null };
+      }
+    } catch {
+      // Authentication can change during a call or between the check and write.
+    }
   }
-  return sessionId;
+  return supabase.functions.invoke('voice-sessions-proxy', {
+    body: { action: 'update', session_id: session.key, record_id: id, updates },
+  });
 }
 
 export function useVoiceSessionPersistence() {
   const [currentSessionId, setCurrentSessionId] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
-  const messageCountRef = useRef(0);
-  const sessionStartTimeRef = useRef<Date | null>(null);
+  const activeSessionRef = useRef<ActiveSession | null>(null);
 
   // Load previous voice sessions for context (for returning customers)
   // Uses edge function proxy for anonymous users (RLS cannot read HTTP headers)
   const loadPreviousSessionContext = useCallback(async (): Promise<VoiceSessionContext | null> => {
     try {
-      const sessionId = getOrCreateSessionId();
+      const sessionId = getOrCreateVoiceSessionId();
       const { data: { user } } = await supabase.auth.getUser();
       
       let sessions: VoiceSessionData[] | null = null;
@@ -128,145 +137,110 @@ export function useVoiceSessionPersistence() {
     }
   }, []);
 
-  // Start a new voice session
-  // INSERT is allowed for anonymous users via RLS (no header check needed)
-  const startSession = useCallback(async (
+  // Called after the provider connects. Keep the pending write in a ref so
+  // quick disconnects and callback closures cannot lose the session cleanup.
+  const startSession = useCallback((
     motorContext?: { model: string; hp: number; price?: number } | null,
     pageContext?: string,
     conversationId?: string
   ): Promise<string | null> => {
+    if (activeSessionRef.current) return activeSessionRef.current.creation;
+    let key: string;
     try {
-      setIsLoading(true);
-      messageCountRef.current = 0;
-      sessionStartTimeRef.current = new Date();
-      
-      const sessionId = getOrCreateSessionId();
-      const { data: { user } } = await supabase.auth.getUser();
-      
-      const { data, error } = await supabase
-        .from('voice_sessions')
-        .insert({
-          session_id: sessionId,
-          user_id: user?.id || null,
-          conversation_id: conversationId || null,
-          context: {
-            page: pageContext,
-            startedAt: new Date().toISOString(),
-          },
-          motor_context: motorContext || null,
-          messages_exchanged: 0,
-        })
-        .select('id')
-        .single();
-      
-      if (error) {
-        console.error('Error creating voice session:', error);
-        return null;
-      }
-      
-      setCurrentSessionId(data.id);
-      console.log('[VoiceSession] Started session:', data.id);
-      return data.id;
-    } catch (err) {
-      console.error('Error starting voice session:', err);
-      return null;
-    } finally {
-      setIsLoading(false);
+      key = getOrCreateVoiceSessionId();
+    } catch {
+      console.warn('[VoiceSession] Browser storage is unavailable');
+      return Promise.resolve(null);
     }
+    const session: ActiveSession = {
+      key,
+      userId: null,
+      startedAt: Date.now(),
+      messages: 0,
+      closing: false,
+      creation: Promise.resolve(null),
+    };
+    activeSessionRef.current = session;
+    setIsLoading(true);
+    session.creation = (async () => {
+      try {
+        const { data: { user } } = await supabase.auth.getUser();
+        session.userId = user?.id ?? null;
+        const result = user
+          ? await supabase.from('voice_sessions').insert({
+              session_id: session.key,
+              user_id: user.id,
+              conversation_id: conversationId || null,
+              context: { page: pageContext, startedAt: new Date(session.startedAt).toISOString() },
+              motor_context: motorContext || null,
+              messages_exchanged: 0,
+            }).select('id').single()
+          : await supabase.functions.invoke('voice-sessions-proxy', {
+              body: { action: 'create', session_id: session.key, page: pageContext, motor_context: motorContext || null },
+            });
+        if (result.error || typeof result.data?.id !== 'string') {
+          console.warn('[VoiceSession] Could not save the connected session');
+          return null;
+        }
+        if (activeSessionRef.current === session) setCurrentSessionId(result.data.id);
+        return result.data.id;
+      } catch {
+        console.warn('[VoiceSession] Could not save the connected session');
+        return null;
+      } finally {
+        if (activeSessionRef.current === session) setIsLoading(false);
+      }
+    })();
+    return session.creation;
   }, []);
 
-  // Increment message count
   const incrementMessageCount = useCallback(() => {
-    messageCountRef.current += 1;
+    const session = activeSessionRef.current;
+    if (session && !session.closing) session.messages += 1;
   }, []);
 
-  // End the current voice session
-  // Uses edge function proxy for anonymous users (RLS UPDATE requires auth)
   const endSession = useCallback(async (
     endReason: 'user_ended' | 'timeout' | 'goodbye' | 'error' = 'user_ended',
     summary?: string
   ) => {
-    if (!currentSessionId) return;
-    
+    const session = activeSessionRef.current;
+    if (!session || session.closing) return;
+    session.closing = true;
+    activeSessionRef.current = null;
+    setCurrentSessionId(null);
+    setIsLoading(false);
+    const endedAt = new Date();
+    const updates = {
+      ended_at: endedAt.toISOString(),
+      duration_seconds: Math.max(0, Math.floor((endedAt.getTime() - session.startedAt) / 1000)),
+      messages_exchanged: session.messages,
+      end_reason: endReason,
+      summary: summary || null,
+    };
     try {
-      const duration = sessionStartTimeRef.current
-        ? Math.floor((Date.now() - sessionStartTimeRef.current.getTime()) / 1000)
-        : 0;
-      
-      const updates = {
-        ended_at: new Date().toISOString(),
-        duration_seconds: duration,
-        messages_exchanged: messageCountRef.current,
-        end_reason: endReason,
-        summary: summary || null,
-      };
-
-      const { data: { user } } = await supabase.auth.getUser();
-
-      if (user) {
-        // Authenticated: direct RLS update
-        const { error } = await supabase
-          .from('voice_sessions')
-          .update(updates)
-          .eq('id', currentSessionId);
-        
-        if (error) {
-          console.error('Error ending voice session:', error);
-        }
-      } else {
-        // Anonymous: go through edge function proxy
-        const { error } = await supabase.functions.invoke('voice-sessions-proxy', {
-          body: {
-            action: 'update',
-            session_id: getOrCreateSessionId(),
-            record_id: currentSessionId,
-            updates,
-          },
-        });
-
-        if (error) {
-          console.error('Error ending voice session via proxy:', error);
-        }
-      }
-
-      console.log('[VoiceSession] Ended session:', currentSessionId, { endReason, duration, messages: messageCountRef.current });
-    } catch (err) {
-      console.error('Error ending voice session:', err);
-    } finally {
-      setCurrentSessionId(null);
-      messageCountRef.current = 0;
-      sessionStartTimeRef.current = null;
+      const id = await session.creation;
+      if (!id) return;
+      const { error } = await writeSessionUpdate(session, id, updates);
+      if (error) console.warn('[VoiceSession] Could not save session completion');
+    } catch {
+      console.warn('[VoiceSession] Could not save session completion');
     }
-  }, [currentSessionId]);
+  }, []);
 
-  // Update motor context mid-session
   const updateMotorContext = useCallback(async (
     motorContext: { model: string; hp: number; price?: number }
   ) => {
-    if (!currentSessionId) return;
-    
+    const session = activeSessionRef.current;
+    if (!session || session.closing) return;
     try {
-      const { data: { user } } = await supabase.auth.getUser();
-
-      if (user) {
-        await supabase
-          .from('voice_sessions')
-          .update({ motor_context: motorContext })
-          .eq('id', currentSessionId);
-      } else {
-        await supabase.functions.invoke('voice-sessions-proxy', {
-          body: {
-            action: 'update',
-            session_id: getOrCreateSessionId(),
-            record_id: currentSessionId,
-            updates: { motor_context: motorContext },
-          },
-        });
-      }
-    } catch (err) {
-      console.error('Error updating motor context:', err);
+      const id = await session.creation;
+      if (!id || session.closing) return;
+      const { error } = await writeSessionUpdate(session, id, { motor_context: motorContext });
+      if (error) console.warn('[VoiceSession] Could not save motor context');
+    } catch {
+      console.warn('[VoiceSession] Could not save motor context');
     }
-  }, [currentSessionId]);
+  }, []);
 
   return {
     currentSessionId,

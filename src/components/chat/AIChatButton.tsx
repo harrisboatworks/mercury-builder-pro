@@ -51,6 +51,7 @@ export const AIChatButton: React.FC<AIChatButtonProps> = ({ onOpenChat, isOpen }
   const bottom = isSmallScreen
     ? getMobileLauncherBottom(location.pathname)
     : '1rem';
+  const launcherLabel = isSmallScreen ? 'Ask about motors' : 'Need help choosing a Mercury?';
 
   return (
     <motion.button
@@ -61,8 +62,8 @@ export const AIChatButton: React.FC<AIChatButtonProps> = ({ onOpenChat, isOpen }
       transition={{ type: 'spring', stiffness: 300, damping: 25 }}
       onClick={handleClick}
       style={{ bottom }}
-      className={`fixed ${positionClass} z-40 flex items-center justify-center h-12 w-12 bg-foreground text-background rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 active:scale-95 group`}
-      aria-label="Open Mercury Expert chat"
+      className={`fixed ${positionClass} z-40 flex items-center justify-center gap-2 h-12 px-4 max-w-[calc(100vw-2rem)] bg-foreground text-background rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 active:scale-95 group`}
+      aria-label={`${launcherLabel} Open Mercury Expert chat`}
     >
       {showPulse && (
         <span className="absolute inset-0 rounded-full bg-foreground/30 animate-ping" />
@@ -97,6 +98,9 @@ export const AIChatButton: React.FC<AIChatButtonProps> = ({ onOpenChat, isOpen }
           </>
         )}
       </div>
+      <span className="text-xs sm:text-sm font-medium whitespace-nowrap">
+        {launcherLabel}
+      </span>
     </motion.button>
   );
 };

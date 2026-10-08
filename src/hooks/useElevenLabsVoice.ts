@@ -894,7 +894,7 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
     }
     
     // End session with goodbye reason
-    await voiceSession.endSession('goodbye');
+    void voiceSession.endSession('goodbye');
     
     // Disconnect
     if (conversationRef.current) {
@@ -1028,6 +1028,7 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
   const conversation = useConversation({
     onConnect: () => {
       console.log('ElevenLabs: Connected to agent');
+      void voiceSession.startSession(options.motorContext, options.currentPage);
       setState(prev => ({
         ...prev,
         isConnected: true,
@@ -1046,6 +1047,7 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
     },
     onDisconnect: () => {
       console.log('ElevenLabs: Disconnected from agent');
+      void voiceSession.endSession('error');
       clearInactivityTimers();
       clearThinkingWatchdog();
       setState(prev => ({
@@ -1340,7 +1342,7 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
             setTimeout(async () => {
               if (conversationRef.current?.status === 'connected') {
                 console.log('[Farewell] Auto-ending session after goodbye');
-                await voiceSession.endSession('goodbye');
+                void voiceSession.endSession('goodbye');
                 await conversationRef.current.endSession();
                 setState(prev => ({
                   ...prev,
@@ -1380,7 +1382,7 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
         }
       
       // Agent response received - mark as responded and clear watchdog
-      if (msg.type === 'agent_response') {
+      if (msg.type === 'agent_response' || (msg.source === 'ai' && typeof msg.message === 'string')) {
         console.log('%c🤖 Agent response received', 'color: #4CAF50; font-weight: bold;');
         markAgentResponded();
         voiceSession.incrementMessageCount();
@@ -2211,13 +2213,6 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
         throw new Error('Unable to get voice session. Please check your connection and try again.');
       }
 
-      // Start voice session in database (fire-and-forget, don't block)
-      voiceSession.startSession(
-        options.motorContext,
-        options.currentPage,
-        undefined
-      ).catch(err => console.warn('[Voice] Session start failed:', err));
-
       // Retry WebRTC connection with exponential backoff
       const MAX_RETRIES = 3;
       let lastError: Error | null = null;
@@ -2307,7 +2302,7 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
     }
     
     // End the voice session in database
-    await voiceSession.endSession(endReason);
+    void voiceSession.endSession(endReason);
     
     await conversation.endSession();
     setState({

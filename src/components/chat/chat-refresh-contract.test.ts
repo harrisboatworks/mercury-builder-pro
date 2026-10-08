@@ -12,7 +12,7 @@ describe('AI chat refresh contract', () => {
     expect(launcher).toContain('getMobileLauncherBottom');
     expect(launcher).toContain('useIsMobileOrTablet');
     expect(launcher).not.toContain('useIsMobile();');
-    expect(launcher).toContain('aria-label="Open Mercury Expert chat"');
+    expect(launcher).toMatch(/aria-label=[^\n]*Open Mercury Expert chat/);
     expect(launcher).toContain('buttonRef.current?.focus()');
     expect(launcher).not.toContain('if (isMobileOrTablet || isOpen) return null');
     expect(globalChat).toContain('<AIChatButton');

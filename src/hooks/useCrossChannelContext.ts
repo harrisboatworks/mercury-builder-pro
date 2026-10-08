@@ -1,5 +1,6 @@
 import { useCallback } from 'react';
 import { supabase } from '@/integrations/supabase/client';
+import { getOrCreateVoiceSessionId } from './voiceSessionId';
 
 const SESSION_KEY = 'chat_session_id';
 const SUPABASE_URL = 'https://eutsoqdpjurknjsshxes.supabase.co';
@@ -49,10 +50,7 @@ export function useCrossChannelContext() {
    */
   const loadVoiceContextForText = useCallback(async (): Promise<VoiceContextForText> => {
     try {
-      const sessionId = localStorage.getItem(SESSION_KEY);
-      if (!sessionId) {
-        return { hasRecentVoice: false, summary: null, motorsDiscussed: [], lastVoiceAt: null, messageCount: 0 };
-      }
+      const sessionId = getOrCreateVoiceSessionId();
 
       const twoHoursAgo = new Date(Date.now() - 2 * 60 * 60 * 1000).toISOString();
       
