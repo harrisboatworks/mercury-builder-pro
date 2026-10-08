@@ -537,6 +537,18 @@ describe('authoritative quote totals for internal deposit emails', () => {
 });
 
 describe('live deposit copy drift tripwires', () => {
+  it('keeps the prerender HowTo deposit step and the current service URL together', () => {
+    const prerender = readFileSync('scripts/static-prerender.mjs', 'utf8');
+    expect(prerender).toContain(
+      'Special-order deposits stay refundable until written approval, then they are credited to the invoice.',
+    );
+    expect(prerender).toContain(
+      'Submit a service request at hbwservice.ca or call (905) 342-2153.',
+    );
+    expect(prerender).not.toContain('hbw.wiki/service');
+    expect(prerender).not.toContain('starts the order if the motor');
+  });
+
   const liveFiles = [
     'src/pages/Terms.tsx',
     'src/pages/PaymentSuccess.tsx',
