@@ -15,9 +15,9 @@ const variantBaseSet = new Set(manifest.bases ?? []);
  */
 export function getResponsiveWebpSrcSet(image?: string): string | null {
   if (!image) return null;
-  const match = /^(\/.+)\.(png|jpe?g)$/i.exec(image);
+  const match = /^(\/.+)\.(png|jpe?g|webp)$/i.exec(image);
   const base = match?.[1];
-  if (!base || !variantBaseSet.has(base)) return null;
+  if (!base || /-(?:640|1024)$/.test(base) || !variantBaseSet.has(base)) return null;
 
   const widths = manifest.widths?.[base];
   if (!widths || widths.length !== 3 || widths.some((width) => !Number.isFinite(width))) {

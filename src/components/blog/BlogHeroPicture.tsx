@@ -29,7 +29,8 @@ const DEFAULT_SIZES = '(min-width: 1280px) 1024px, (min-width: 768px) 80vw, 100v
 /**
  * Shared hero <picture> for blog articles (English + all translated variants).
  * Emits pre-generated responsive WebP variants (-640, -1024, full) when the
- * source is a same-origin PNG/JPG, with a graceful <img srcSet> fallback.
+ * source is a same-origin PNG/JPG/WebP listed in the variants manifest, with
+ * a graceful <img srcSet> fallback.
  *
  * Keeping this in one place prevents drift across the 9 blog article
  * components — any future hero pipeline change happens here only.
