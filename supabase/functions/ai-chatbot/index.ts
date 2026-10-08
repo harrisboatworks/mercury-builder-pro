@@ -30,6 +30,7 @@ import {
 import {
   buildVerifiedHbwAuthorityAnswer,
 } from "../_shared/verified-hbw-authority-facts.ts";
+import { buildServiceBookingAnswer } from "../_shared/service-booking-answer.ts";
 
 // OpenAI chat model for the site assistant.
 // gpt-5.6-luna replaced gpt-4o-mini on 2026-09-04. Note the 5.6+ API contract:
@@ -759,6 +760,18 @@ serve(async (req) => {
 
     if (!message) {
       throw new Error('Message is required');
+    }
+
+    const serviceBookingReply = buildServiceBookingAnswer(message);
+    if (serviceBookingReply) {
+      return new Response(JSON.stringify({
+        reply: serviceBookingReply,
+        conversationHistory: [
+          ...conversationHistory,
+          { role: 'user', content: message },
+          { role: 'assistant', content: serviceBookingReply },
+        ],
+      }), { headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
     }
 
     const verifiedAuthorityReply = buildVerifiedHbwAuthorityAnswer(message);
