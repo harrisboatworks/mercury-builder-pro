@@ -177,6 +177,14 @@ Harris Boat Works
 harrisboatworks.ca
 ---
 
+## Guías relacionadas
+
+- [Guía de pesca en Rice Lake, Ontario](/blog/es/guia-pesca-rice-lake-ontario)
+- [Licencia de navegación y regulaciones de seguridad en Ontario](/blog/es/licencia-navegacion-ontario-regulaciones)
+- [Mercury 115 vs 150 HP: Comparación completa para remotorización](/blog/es/mercury-115-vs-150-comparacion)
+- [Guía de preparación invernal para motores Mercury en Ontario](/blog/es/preparacion-invernal-motor-mercury)
+- [Remotorización vs bote nuevo: ¿Cuál es la mejor inversión?](/blog/es/remotorizacion-vs-bote-nuevo)
+
 ## FAQs
 
 ### ¿Necesito una licencia para conducir un bote en Ontario?

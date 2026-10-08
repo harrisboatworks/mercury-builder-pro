@@ -120,6 +120,13 @@ HBW 기술자들은 매년 많은 수의 윈터라이제이션을 수행하며, 
 - **에탄올 무첨가 연료:** 현장 판매
 - **주소:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 
+## 관련 가이드
+
+- [선외기 교체(Repower) vs 새 보트 구매: 온타리오 보트 오너를 위한 현실적 비교](/blog/ko/repower-vs-new-boat)
+- [온타리오 보트 구매 완전 가이드: 첫 보트부터 엔진 교체까지](/blog/ko/ontario-boat-buying-guide)
+- [온타리오 보트 면허 및 안전 규정 완전 가이드: 한인 보트 오너가 반드시 알아야 할 것들](/blog/ko/ontario-boating-licence-regulations)
+- [Rice Lake 낚시 완전 가이드: 토론토 한인을 위한 온타리오 최고의 숨은 명소](/blog/ko/rice-lake-fishing-guide)
+
 ## FAQs
 
 ### 겨울 정비 비용은 얼마나 드나요?

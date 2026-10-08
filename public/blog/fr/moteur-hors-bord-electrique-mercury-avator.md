@@ -82,6 +82,13 @@ Pour les moteurs à essence, le configurateur fait ce qu'il fait toujours : **[o
 
 Harris Boat Works : entreprise familiale depuis 1947, concessionnaire Mercury depuis 1965, et actuellement concessionnaire Mercury Premier. Gores Landing, Ontario, sur le lac Rice.
 
+## Guides connexes
+
+- [Mercury Pro XS, FourStroke ou Verado : lequel choisir ?](/blog/fr/mercury-pro-xs-fourstroke-verado)
+- [Gamme de hors-bord Mercury 2026 pour les plaisanciers ontariens](/blog/fr/gamme-mercury-hors-bord-2026-ontario)
+- [Poids des hors-bord Mercury (2,5 à 300 ch)](/blog/fr/poids-moteur-hors-bord-mercury)
+- [Guide de remotorisation Mercury : prix, délais, rentabilité](/blog/fr/prix-remotorisation-mercury-ontario)
+
 ## Questions fréquentes
 
 ### Quelle est l'autonomie d'un moteur électrique Mercury Avator ?

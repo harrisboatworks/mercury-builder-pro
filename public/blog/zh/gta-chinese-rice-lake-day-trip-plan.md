@@ -146,6 +146,12 @@ GTA 多数地区到 Gores Landing 通常约 60–120 分钟，但起点、401／
 
 计划要认真，行程不必僵硬。湖况不读你的时间表，所以给安全和天气留一点余量。
 
+## 相关指南
+
+- [多伦多华人第一次租船钓鱼：证件、安全和当天流程](/blog/zh/first-boat-rental-rice-lake-chinese-guide)
+- [安省租船需要驾照吗？PCOC 与租船安全清单一次讲清](/blog/zh/pcoc-vs-rental-boat-safety-checklist-zh)
+- [莱斯湖 钓鱼指南（2026）：FMZ 17 鱼种、鱼牌与出发清单](/blog/zh/rice-lake-fishing-guide-toronto-chinese)
+
 ## FAQs
 
 ### 从多伦多出发到 Rice Lake 实际需要多少时间？

@@ -110,7 +110,7 @@ For the broader battery conversation, our [Mercury Boat Battery Guide](/blog/mer
 
 ## The marine-grade vs automotive-grade trap
 
-![Comparison of corroded household wire nut vs. sealed marine-grade connection for boat electrical safety inspections.](/lovable-uploads/inline/inline-marine-vs-automotive-wiring.png)
+![Wiring comparison: taped wire nut with corroded copper on the left, red wires in clear heat-shrink connectors on the right](/lovable-uploads/inline/inline-marine-vs-automotive-wiring.png)
 
 Here's the part most owners don't know: a marine-grade tinned-copper terminal looks almost identical to an automotive crimp connector at first glance. The differences:
 

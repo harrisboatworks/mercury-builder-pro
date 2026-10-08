@@ -136,6 +136,13 @@ HBW 是家族经营的码头，自 1947 年起就在莱斯湖畔的 Gores Landin
 
 针对船外机维修，HBW 专注 Mercury 与 Mercruiser 全系。
 
+## 相关指南
+
+- [多伦多华人 Mercury 发动机维修保养完整指南：从机油到大修](/blog/zh/gta-chinese-mercury-service-guide)
+- [加拿大加油指南：Mercury 船外机加 87 还是 91？国内 92 号汽油怎么换算](/blog/zh/mercury-fuel-octane-ethanol-chinese-guide)
+- [安省船主冬化与室外冬储清单：什么时候送、要做什么](/blog/zh/ontario-boat-winterization-guide-chinese)
+- [安大略省 Mercury 换新船外机完整指南：GTA 华人船主必读](/blog/zh/mercury-repower-guide-gta)
+
 ## Next steps
 
 - Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbwservice.ca

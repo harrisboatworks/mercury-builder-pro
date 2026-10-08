@@ -133,6 +133,13 @@ HBW 自 1947 年起就在 Gores Landing、莱斯湖经营家族码头，是 Merc
 - [6–8 人家庭：浮筒船还是钓鱼船更合适？](/blog/zh/pontoon-vs-fishing-boat-6-8-people-zh)
 - [Mercury 船外机马力怎么选（读懂载荷铭牌）](/blog/zh/mercury-outboard-horsepower-guide-toronto-chinese)
 
+## 相关指南
+
+- [多伦多华人在 莱斯湖 买船完整指南：从选型到交付](/blog/zh/gta-chinese-buy-boat-rice-lake-guide)
+- [安省华人养船成本指南](/blog/zh/boat-ownership-cost-ontario-chinese)
+- [GTA 华人从租船到买船路线图](/blog/zh/gta-chinese-rent-to-buy-boat-roadmap)
+- [多伦多华人 Mercury 发动机维修保养完整指南：从机油到大修](/blog/zh/gta-chinese-mercury-service-guide)
+
 ## Next steps
 
 - Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection

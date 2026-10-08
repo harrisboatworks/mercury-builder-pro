@@ -61,6 +61,13 @@ Les modalités dépendent du produit, de l'usage et de la date d'achat. Consulte
 ---
 
 **Commencez avec les faits de votre bateau :** [bâtissez une soumission en CAD](/quote/motor-selection) ou envoyez les détails de votre bateau dans la [demande de service](https://hbwservice.ca). Les moteurs et les projets sont ramassés à Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, Ontario.
+
+## Guides connexes
+
+- [Remotorisation Mercury dans la GTA : comment un plaisancier de Toronto remotorise chez Harris Boat Works (2026)](/blog/fr/remotorisation-mercury-gta-toronto)
+- [Gamme de hors-bord Mercury 2026 pour les plaisanciers ontariens](/blog/fr/gamme-mercury-hors-bord-2026-ontario)
+- [Mercury Product Protection Platinum : couverture et prix canadiens](/blog/fr/garantie-prolongee-mercury-platinum-ontario)
+- [Guide de remotorisation Mercury : prix, délais, rentabilité](/blog/fr/prix-remotorisation-mercury-ontario)
 `,
     faqs: [
       {
@@ -100,6 +107,7 @@ Les modalités dépendent du produit, de l'usage et de la date d'achat. Consulte
     title: 'Guide de remotorisation Mercury : prix, délais, rentabilité',
     description: 'Ce qu\'une remotorisation Mercury coûte vraiment, combien de temps ça prend, et quand ça vaut mieux que d\'acheter neuf.',
     image: '/lovable-uploads/hero-mercury-repower-cost-ontario.png',
+    imageAlt: 'Hors-bord Mercury 90 FourStroke noir à l\'arrière d\'un bateau en aluminium argenté, au coucher du soleil sur un lac',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
     dateModified: '2026-10-06',
@@ -268,6 +276,7 @@ Harris Boat Works offre du contenu disponible en français pour les clients fran
     seoTitle: 'Mercury 115 vs 150 HP : quel moteur choisir?',
     description: 'Comparaison des Mercury 115 et 150 FourStroke : cylindrée, poids, performances, consommation et prix pour choisir votre moteur.',
     image: '/lovable-uploads/hero-mercury-115-vs-150-comparison.png',
+    imageAlt: 'Deux hors-bord Mercury noirs sur des supports en acier dans un atelier lumineux, étiquetés 150 FourStroke et Verado 300',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
     dateModified: '2026-10-04',
@@ -456,6 +465,7 @@ Notre personnel répond en anglais. Vous pouvez nous envoyer votre demande via h
     seoTitle: 'Hivernisation de votre moteur Mercury en Ontario',
     description: 'Les étapes essentielles pour préparer votre moteur Mercury pour l\'hiver ontarien : stabilisation du carburant, lubrification interne.',
     image: '/lovable-uploads/Ontario_Short_Boating_Season_Fall.png',
+    imageAlt: 'Deux personnes dans une embarcation blanche et beige sur un lac calme, devant un feuillage d\'automne et un chalet',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
     dateModified: '2026-09-06',
@@ -608,6 +618,7 @@ Pour les réparations de moteurs, nous ne servons que Mercury et MerCruiser.
     seoTitle: 'Remotorisation ou bateau neuf : que choisir?',
     description: "Remotoriser ou acheter un bateau neuf? Guide pratique pour comparer coûts, délais et état de la coque avec l'expertise honnête de Harris Boat Works, Gores Landing.",
     image: '/lovable-uploads/hero-boat-repowering-guide-when-to-replace-motor.png',
+    imageAlt: 'Atelier avec un vieux hors-bord corrodé sur un support, un bateau en aluminium sur remorque et un Mercury FourStroke neuf',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
     dateModified: '2026-10-06',
@@ -705,6 +716,7 @@ En personne : **Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON 
     seoTitle: 'Pêche sur le lac Rice, Ontario : guide pratique',
     description: 'Guide complet de la pêche sur le lac Rice : espèces (doré, achigan, maskinongé), saisons, zones à explorer et location d\'embarcations chez Harris Boat Works.',
     image: '/lovable-uploads/hero-rice-lake-boating-guide.png',
+    imageAlt: 'Deux pêcheurs debout dans un petit bateau en aluminium sur un lac calme au coucher du soleil, avec des quenouilles devant',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
     dateModified: '2026-10-06',
@@ -864,7 +876,7 @@ Harris Boat Works, Gores Landing, Ontario, sur le lac Rice. En affaires depuis 1
     seoTitle: 'Permis d\'embarcation au Canada : l\'essentiel',
     description: 'Guide sur la Carte de conducteur d\'embarcation de plaisance (CCEP) : qui en a besoin, comment l\'obtenir, coût, équipements obligatoires et réglementation en Ontario.',
     image: '/lovable-uploads/hero-pcl-repower-licence.png',
-    imageAlt: 'Pleasure Craft Licence form on a workbench next to an aluminum boat undergoing a Mercury outboard motor repower.',
+    imageAlt: 'Atelier avec un bateau de pêche en aluminium, un hors-bord Mercury noir soulevé par une grue et un formulaire sur planchette',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
     dateModified: '2026-10-06',
@@ -1301,6 +1313,7 @@ Pour les réparations de moteurs, nous ne servons que Mercury et Mercruiser.
     seoTitle: 'Remotorisation Mercury dans la GTA (2026)',
     description: 'Un parcours étape par étape sur la façon dont un plaisancier de la GTA remotorise un bateau chez Harris Boat Works : logistique, prix, échéancier et transport. Du concessionnaire qui le fait à longueur d\'année.',
     image: '/lovable-uploads/hero-mercury-repower-gta.png',
+    imageAlt: 'Atelier de bateaux lumineux avec un bateau blanc sur support, un hors-bord Mercury 200 V6 sur un chariot et des câbles',
     author: 'Harris Boat Works',
     datePublished: '2026-05-13',
     dateModified: '2026-10-06',
@@ -1476,6 +1489,7 @@ Si vous envisagez une remotorisation pour le printemps 2027, **commencez le conf
 
 ## Guides connexes
 
+- [Concessionnaire Mercury Premier en Ontario](/blog/fr/concessionnaire-mercury-premier-ontario)
 - [Combien coûte une remotorisation Mercury en Ontario?](/blog/fr/prix-remotorisation-mercury-ontario): Le prix d'une remotorisation Mercury en Ontario varie selon la puissance, la longueur de l'arbre, le câblage.
 - [Remotorisation ou achat d'un bateau neuf : Quelle est la meilleure option?](/blog/fr/remotorisation-vs-bateau-neuf): Guide comparatif pour vous aider à décider entre remotoriser votre embarcation actuelle avec un moteur.
 - [Gamme de hors-bord Mercury 2026 pour les plaisanciers ontariens](/blog/fr/gamme-mercury-hors-bord-2026-ontario): La gamme Mercury 2026 couvre toutes les classes de HP récréatives. FourStroke (2,5 à 300 HP) pour la.
@@ -1539,6 +1553,7 @@ Très variable. La valeur dépend du moteur exact, du numéro de série, de l'é
     seoTitle: "Mercury 75 HP FourStroke : pourquoi HBW ne le stocke pas",
     description: "Une réponse honnête d'un concessionnaire Mercury en Ontario. Nous privilégions souvent le 90 HP quand la plaque de capacité le permet. Le 75 HP reste une option à confirmer pour les bateaux qui en ont besoin. Voici pourquoi, ce qu'il est réellement, et pourquoi le Mercury 90 est l'achat plus avisé à presque le même prix pour le même moteur.",
     image: '/lovable-uploads/hero-mercury-90-shop-shot.png',
+    imageAlt: 'Hors-bord Mercury 90 FourStroke noir sur un support dans un atelier propre, devant une bannière Mercury Marine Service Bay',
     author: 'Harris Boat Works',
     datePublished: '2026-05-13',
     dateModified: '2026-10-06',
@@ -1670,6 +1685,7 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
     seoTitle: 'Revue Mercury 90 HP FourStroke (Ontario 2026)',
     description: "Guide d'achat pour le Mercury 90 HP FourStroke. Ce que le bloc 2,1 L fait bien, où il est le mauvais choix, comment il s'intègre aux bateaux et pontons du lac Rice.",
     image: '/lovable-uploads/Best_Mercury_Outboard_Aluminum_Fishing_Boats.png',
+    imageAlt: 'Vue aérienne de deux pêcheurs dans un petit bateau en aluminium argenté sur un lac calme, avec un hors-bord Mercury marqué 20',
     author: 'Harris Boat Works',
     datePublished: '2026-05-13',
     dateModified: '2026-10-03',
@@ -1830,7 +1846,7 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
     seoTitle: 'Revue Mercury 115 HP FourStroke (Ontario 2026)',
     description: "Un guide d'achat honnête en Ontario pour le Mercury 115 HP FourStroke. Le moteur de moyenne gamme phare de Mercury avec le même bloc 2,1 L que les 75 et 90, calibré chaud. Pour quoi il est bon et où le 115 Pro XS ou un V6 a plus de sens.",
     image: '/lovable-uploads/hero-mercury-115-aluminum-boat-cruising.png',
-    imageAlt: 'Mercury 115 HP FourStroke on an aluminum fishing boat during a misty morning on an Ontario lake.',
+    imageAlt: 'Deux hommes en veste dans un bateau en aluminium gris sur une eau brumeuse près d\'une rive boisée, hors-bord noir marqué 115',
     author: 'Harris Boat Works',
     datePublished: '2026-05-13',
     dateModified: '2026-09-11',
@@ -2018,6 +2034,7 @@ Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0.
     seoTitle: "Votre Mercury surchauffe : quoi faire",
     description: "Le guide d'urgence d'un concessionnaire Mercury Premier pour la surchauffe d'un hors-bord : quoi faire dans les 60 prochaines secondes, quoi vérifier au quai.",
     image: '/lovable-uploads/hero-outboard-overheating.png',
+    imageAlt: 'Homme sur un quai retirant des algues de l\'hélice d\'un hors-bord Mercury relevé, sur un bateau de pêche en aluminium',
     author: 'Harris Boat Works',
     datePublished: '2026-05-13',
     dateModified: '2026-09-26',
@@ -2198,7 +2215,7 @@ Pour les réparations de moteurs, nous ne servons que Mercury et Mercruiser.
     title: "Entretien d'une remorque de bateau : le guide que personne n'écrit (Ontario 2026)",
     description: "Liste de vérification annuelle d'entretien de remorque de bateau pour les plaisanciers ontariens. Roulements, freins, pneus, lumières, tasseaux. Coûts de service chez HBW, défaillances courantes, et quand réparer ou remplacer.",
     image: '/lovable-uploads/hero-boat-trailer-maintenance-guide-ontario.png',
-    imageAlt: 'Boat trailer on jack stands with maintenance tools like a grease gun and torque wrench at an Ontario marina.',
+    imageAlt: 'Remorque noire avec clé dynamométrique et boîte à outils ouverte sur du gravier, près d\'un bateau en aluminium sur des blocs',
     author: 'Harris Boat Works',
     datePublished: '2026-05-13',
     dateModified: '2026-10-06',
@@ -2369,7 +2386,7 @@ Par Harris Boat Works, marina familiale depuis 1947 sur le lac Rice, concessionn
     title: "Assurance bateau en Ontario : ce dont vous avez réellement besoin (2026)",
     description: "Bases de l'assurance bateau en Ontario. Responsabilité vs coque, fourchettes de primes annuelles par type de bateau, pourquoi assurance et garantie prolongée diffèrent.",
     image: '/lovable-uploads/hero-boat-insurance-ontario-guide-2026.png',
-    imageAlt: 'Marine insurance policy on a dock beside a boat with a Mercury outboard, illustrating Ontario boat insurance coverage.',
+    imageAlt: 'Embarcation blanche et bleu marine avec hors-bord Mercury noir amarrée à un quai, avec un formulaire d\'assurance et une carte',
     author: 'Harris Boat Works',
     datePublished: '2026-05-13',
     dateModified: '2026-10-04',
@@ -2513,6 +2530,7 @@ Par Harris Boat Works, marina familiale depuis 1947 sur le lac Rice, concessionn
     title: 'Mercury Product Protection Platinum : couverture et prix canadiens',
     description: "Mercury Product Protection Platinum est un contrat de service prolongé. Consultez les prix canadiens par puissance et durée, les règles d'admissibilité et les exclusions.",
     image: '/lovable-uploads/hero-best-mercury-dealer-ontario.png',
+    imageAlt: 'Quatre hors-bord Mercury noirs sur des supports, posés sur un quai en bois au crépuscule au bord d\'un lac calme',
     author: 'Harris Boat Works',
     datePublished: '2026-05-13',
     dateModified: '2026-10-03',
@@ -2623,6 +2641,7 @@ Commencez avec la page des [prix Mercury Product Protection](/mercury-product-pr
 Par Harris Boat Works, marina familiale depuis 1947 sur le lac Rice, concessionnaire Mercury Marine depuis 1965 et concessionnaire Mercury Premier.
 ## Guides connexes
 
+- [Concessionnaire Mercury Premier en Ontario](/blog/fr/concessionnaire-mercury-premier-ontario)
 - [Gamme de hors-bord Mercury 2026 pour les plaisanciers ontariens](/blog/fr/gamme-mercury-hors-bord-2026-ontario): La gamme Mercury 2026 couvre toutes les classes de HP récréatives. FourStroke (2,5 à 300 HP) pour la.
 - [Pêche sur le lac Rice, Ontario : Guide pratique pour les plaisanciers](/blog/fr/peche-lac-rice-ontario-guide-plaisanciers): Guide complet de la pêche sur le lac Rice : espèces (doré, achigan, maskinongé), saisons, zones à explorer et.
 - [Revue du Mercury 115 HP FourStroke : le 115 HP le plus léger disponible, et pourquoi cela compte](/blog/fr/revue-mercury-115-hp-fourstroke-ontario): Un guide d'achat honnête en Ontario pour le Mercury 115 HP FourStroke. Le moteur de moyenne gamme phare de.
@@ -2644,7 +2663,7 @@ Par Harris Boat Works, marina familiale depuis 1947 sur le lac Rice, concessionn
     seoTitle: "Gamme Mercury hors-bord 2026 pour l'Ontario",
     description: "La gamme Mercury 2026 couvre toutes les classes de HP récréatives. FourStroke (2,5 à 300 HP) pour la croisière, la pêche et l'usage familial. Pro XS (115 à 300 HP) pour la pêche de performance. SeaPro (25 à 300 HP) pour usage commercial. Verado (250 à 600+ HP) pour le large (commande spéciale chez HBW). Avator pour l'électrique.",
     image: '/lovable-uploads/blog-heroes-2026-07/hero-mercury-75-90-115-official-freshwater-2026-07.webp',
-    imageAlt: 'Trois scènes de navigation en eau douce avec des hors-bord Mercury.',
+    imageAlt: 'Trois photos côte à côte : équipage en camouflage dans un bateau en aluminium, famille sur un ponton, enfant qui pêche',
     author: 'Harris Boat Works',
     datePublished: '2026-05-13',
     dateModified: '2026-09-12',
@@ -2730,6 +2749,7 @@ Tarification CAD en direct sur chaque famille Mercury (sauf Verado, qui est soum
 
 ## Guides connexes
 
+- [Concessionnaire Mercury Premier en Ontario](/blog/fr/concessionnaire-mercury-premier-ontario)
 - [Combien coûte une remotorisation Mercury en Ontario?](/blog/fr/prix-remotorisation-mercury-ontario): Le prix d'une remotorisation Mercury en Ontario varie selon la puissance, la longueur de l'arbre, le câblage.
 - [Remotorisation Mercury dans la GTA : comment un plaisancier de Toronto remotorise chez Harris Boat Works (2026)](/blog/fr/remotorisation-mercury-gta-toronto): Un parcours étape par étape sur la façon dont un plaisancier de la GTA remotorise un bateau chez Harris Boat.
 - [Remotorisation ou achat d'un bateau neuf : Quelle est la meilleure option?](/blog/fr/remotorisation-vs-bateau-neuf): Guide comparatif pour vous aider à décider entre remotoriser votre embarcation actuelle avec un moteur.
@@ -2750,6 +2770,7 @@ Tarification CAD en direct sur chaque famille Mercury (sauf Verado, qui est soum
     title: 'Mercury Avator électrique : prix et autonomie',
     description: 'Moteurs électriques Mercury Avator : prix, autonomie réelle, et s\'ils conviennent au lac Rice. Avis honnête d\'un concessionnaire Mercury Premier.',
     image: '/lovable-uploads/hero-avator-range-rice-lake.png',
+    imageAlt: 'Pêcheur à la mouche en veste à carreaux dans un petit bateau en aluminium avec hors-bord Mercury, sur un lac brumeux à l\'aube',
     author: 'Harris Boat Works',
     datePublished: '2026-06-08',
     dateModified: '2026-09-06',
@@ -2808,7 +2829,15 @@ Le prix total de l'Avator dépend du modèle, du nombre de batteries, du chargeu
 
 Pour les moteurs à essence, le configurateur fait ce qu'il fait toujours : **[obtenez une vraie soumission Mercury en 2 minutes sur mercuryrepower.ca](https://www.mercuryrepower.ca)**. On vend les deux. On vous dira franchement lequel convient à votre bateau.
 
-Harris Boat Works : entreprise familiale depuis 1947, concessionnaire Mercury depuis 1965, et actuellement concessionnaire Mercury Premier. Gores Landing, Ontario, sur le lac Rice.`,
+Harris Boat Works : entreprise familiale depuis 1947, concessionnaire Mercury depuis 1965, et actuellement concessionnaire Mercury Premier. Gores Landing, Ontario, sur le lac Rice.
+
+## Guides connexes
+
+- [Mercury Pro XS, FourStroke ou Verado : lequel choisir ?](/blog/fr/mercury-pro-xs-fourstroke-verado)
+- [Gamme de hors-bord Mercury 2026 pour les plaisanciers ontariens](/blog/fr/gamme-mercury-hors-bord-2026-ontario)
+- [Poids des hors-bord Mercury (2,5 à 300 ch)](/blog/fr/poids-moteur-hors-bord-mercury)
+- [Guide de remotorisation Mercury : prix, délais, rentabilité](/blog/fr/prix-remotorisation-mercury-ontario)
+`,
     faqs: [
       { question: 'Quelle est l\'autonomie d\'un moteur électrique Mercury Avator ?', answer: 'Dans l\'essai publié par Mercury du Avator 7.5e sur un bateau de 13 pieds (382 lb) avec une batterie de 1 kWh, le moteur a tenu environ 60 minutes ou 5 milles à plein régime, et jusqu\'à 19 heures ou 34 milles à 25 % des gaz. L\'autonomie réelle dépend de votre bateau, de la charge et des conditions.' },
       { question: 'Quelle est la puissance de chaque Mercury Avator ?', answer: 'Mercury publie la puissance à l\'arbre d\'hélice : 0,75 kW pour le 7.5e, 2,2 kW pour le 20e, 3,7 kW pour le 35e, 7,5 kW pour le 75e et 11 kW pour le 110e. Nous ne les convertissons pas en HP essence; le bateau, la charge, l\'autonomie et les conditions comptent dans le choix.' },
@@ -2821,6 +2850,7 @@ Harris Boat Works : entreprise familiale depuis 1947, concessionnaire Mercury de
     title: 'Mercury Pro XS, FourStroke ou Verado : lequel choisir ?',
     description: 'Pro XS, FourStroke ou Verado ? Ce qui distingue les trois familles Mercury, et lequel convient à votre bateau. Réponses franches d\'un concessionnaire Mercury.',
     image: '/lovable-uploads/hero-mercury-motor-families.png',
+    imageAlt: 'Trois hors-bord Mercury noirs sur des supports, étiquetés FourStroke 90, Pro XS 150 et Verado 250, dans une salle claire',
     author: 'Harris Boat Works',
     datePublished: '2026-06-08',
     dateModified: '2026-09-11',
@@ -2875,7 +2905,15 @@ On vend du Mercury. Cela dit, la comparaison doit rester honnête, alors la voic
 
 **Vous voulez le vrai prix d'un FourStroke ou d'un Pro XS ? [Obtenez une soumission en 2 minutes](https://www.mercuryrepower.ca)**.
 
-Harris Boat Works : entreprise familiale depuis 1947, concessionnaire Mercury depuis 1965, et actuellement concessionnaire Mercury Premier. Gores Landing, Ontario, sur le lac Rice.`,
+Harris Boat Works : entreprise familiale depuis 1947, concessionnaire Mercury depuis 1965, et actuellement concessionnaire Mercury Premier. Gores Landing, Ontario, sur le lac Rice.
+
+## Guides connexes
+
+- [Gamme de hors-bord Mercury 2026 pour les plaisanciers ontariens](/blog/fr/gamme-mercury-hors-bord-2026-ontario)
+- [Mercury Avator électrique : prix et autonomie](/blog/fr/moteur-hors-bord-electrique-mercury-avator)
+- [Mercury 115 vs 150 HP : Quel moteur choisir pour votre embarcation?](/blog/fr/mercury-115-vs-150-hp-comparaison)
+- [Poids des hors-bord Mercury (2,5 à 300 ch)](/blog/fr/poids-moteur-hors-bord-mercury)
+`,
     faqs: [
       { question: 'Est-ce que le Mercury Pro XS est un quatre-temps ?', answer: 'Oui. La gamme Mercury Pro XS actuelle est entièrement quatre-temps, tout comme les familles FourStroke et Verado. Les anciens Pro XS étaient des deux-temps OptiMax, d\'où la confusion, mais le Pro XS qu\'on peut acheter aujourd\'hui est un quatre-temps réglé pour l\'accélération au départ et la vitesse de pointe.' },
       { question: 'Quelle est la différence entre le Mercury 115 et le 115 Pro XS ?', answer: 'Les deux partagent la même base quatre-temps de 2,1 L, et Mercury publie le même poids sec le plus léger pour les deux : 163 kg (359 lb). Le Pro XS a une calibration de performance pour une accélération plus vive et plus de vitesse de pointe, avec des options de boîtier d\'engrenage de performance. Pour un ponton ou une chaloupe de pêche, le 115 FourStroke standard est habituellement le choix le plus intelligent; pour une coque de performance plus légère, le Pro XS vaut la différence.' },
@@ -2948,7 +2986,15 @@ Si vous remotorisez et que vous n'êtes pas certain que votre tableau arrière p
 
 **Obtenez une vraie soumission de remotorisation, moteur, poids, gréage et tout, sur [mercuryrepower.ca](https://www.mercuryrepower.ca)**.
 
-Harris Boat Works : entreprise familiale depuis 1947, concessionnaire Mercury depuis 1965, et actuellement concessionnaire Mercury Premier. Gores Landing, Ontario, sur le lac Rice.`,
+Harris Boat Works : entreprise familiale depuis 1947, concessionnaire Mercury depuis 1965, et actuellement concessionnaire Mercury Premier. Gores Landing, Ontario, sur le lac Rice.
+
+## Guides connexes
+
+- [Gamme de hors-bord Mercury 2026 pour les plaisanciers ontariens](/blog/fr/gamme-mercury-hors-bord-2026-ontario)
+- [Mercury 115 vs 150 HP : Quel moteur choisir pour votre embarcation?](/blog/fr/mercury-115-vs-150-hp-comparaison)
+- [Mercury Pro XS, FourStroke ou Verado : lequel choisir ?](/blog/fr/mercury-pro-xs-fourstroke-verado)
+- [Revue du Mercury 115 HP FourStroke : le 115 HP le plus léger disponible, et pourquoi cela compte](/blog/fr/revue-mercury-115-hp-fourstroke-ontario)
+`,
     faqs: [
       { question: 'Combien pèse un Mercury 115 quatre-temps ?', answer: 'Mercury publie 163 kg (359 lb) de poids sec pour le modèle le plus léger du 115 FourStroke; la version Command Thrust fait 165 kg (363 lb). Le 115 Pro XS pèse aussi 163 kg. Les arbres plus longs ajoutent du poids.' },
       { question: 'Combien pèse un hors-bord Mercury de 90 ch ?', answer: '163 kg (359 lb) de poids sec pour le modèle le plus léger, ou 165 kg (363 lb) avec le boîtier Command Thrust. Les 75, 90 et 115 partagent le même bloc de 2,1 L, c\'est pourquoi leurs poids sont identiques.' },

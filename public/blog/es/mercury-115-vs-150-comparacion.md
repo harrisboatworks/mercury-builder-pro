@@ -149,6 +149,14 @@ Harris Boat Works, Gores Landing, Ontario
 harrisboatworks.ca | Rice Lake
 ---
 
+## Guías relacionadas
+
+- [Guía completa para comprar un bote en Ontario](/blog/es/guia-comprar-bote-ontario)
+- [Guía de pesca en Rice Lake, Ontario](/blog/es/guia-pesca-rice-lake-ontario)
+- [Licencia de navegación y regulaciones de seguridad en Ontario](/blog/es/licencia-navegacion-ontario-regulaciones)
+- [Guía de preparación invernal para motores Mercury en Ontario](/blog/es/preparacion-invernal-motor-mercury)
+- [Remotorización vs bote nuevo: ¿Cuál es la mejor inversión?](/blog/es/remotorizacion-vs-bote-nuevo)
+
 ## FAQs
 
 ### ¿El 150 consume mucho más que el 115?

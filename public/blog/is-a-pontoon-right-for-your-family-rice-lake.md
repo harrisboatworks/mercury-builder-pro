@@ -73,7 +73,7 @@ We would rather you hear this from us than find out in July.
 
 Yes. This is the question we get most, and the answer is yes, with a caveat about power.
 
-![Kids tubing behind a pontoon boat on Rice Lake](/lovable-uploads/pontoon-family-tubing.png)
+![Three children in life jackets on a yellow and blue tube in the wake of a pontoon boat on a calm lake with forested islands](/lovable-uploads/pontoon-family-tubing.png)
 
 There is no useful one-number horsepower formula for tubing. The right setup depends on the boat's capacity plate, total people and gear, tube design, water conditions, propeller, and the riders' size and experience. A properly powered pontoon can tow a tube, but choose the engine for the whole loaded boat and the manufacturer's rating, not the tube's weight alone. In practice:
 

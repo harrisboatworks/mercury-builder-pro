@@ -211,6 +211,10 @@ A：视时间段和库存情况而定，旺季等待时间可能较长。建议�
 → 电话：905-342-2153
 → 地址：5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 
+## 相关指南
+
+- [Mercury 115马力 vs 150马力舷外机：如何选择？](/blog/zh/mercury-115-vs-150-comparison-zh)
+
 ## FAQs
 
 ### Repower 之后保固怎么算？

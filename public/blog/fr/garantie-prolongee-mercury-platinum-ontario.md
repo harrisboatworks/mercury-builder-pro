@@ -131,6 +131,7 @@ Commencez avec la page des [prix Mercury Product Protection](/mercury-product-pr
 Par Harris Boat Works, marina familiale depuis 1947 sur le lac Rice, concessionnaire Mercury Marine depuis 1965 et concessionnaire Mercury Premier.
 ## Guides connexes
 
+- [Concessionnaire Mercury Premier en Ontario](/blog/fr/concessionnaire-mercury-premier-ontario)
 - [Gamme de hors-bord Mercury 2026 pour les plaisanciers ontariens](/blog/fr/gamme-mercury-hors-bord-2026-ontario): La gamme Mercury 2026 couvre toutes les classes de HP récréatives. FourStroke (2,5 à 300 HP) pour la.
 - [Pêche sur le lac Rice, Ontario : Guide pratique pour les plaisanciers](/blog/fr/peche-lac-rice-ontario-guide-plaisanciers): Guide complet de la pêche sur le lac Rice : espèces (doré, achigan, maskinongé), saisons, zones à explorer et.
 - [Revue du Mercury 115 HP FourStroke : le 115 HP le plus léger disponible, et pourquoi cela compte](/blog/fr/revue-mercury-115-hp-fourstroke-ontario): Un guide d'achat honnête en Ontario pour le Mercury 115 HP FourStroke. Le moteur de moyenne gamme phare de.

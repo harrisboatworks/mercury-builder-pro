@@ -129,6 +129,13 @@ Ontario FMZ 16 页面列出 Lake Simcoe 和相关水体的特定水体例外规�
 
 HBW 自 1947 年起就在 Gores Landing、莱斯湖经营家族码头，是 Mercury Marine Premier dealer 与 Legend Boats 经销商。
 
+## 相关指南
+
+- [莱斯湖 钓鱼指南（2026）：FMZ 17 鱼种、鱼牌与出发清单](/blog/zh/rice-lake-fishing-guide-toronto-chinese)
+- [Lake Simcoe 华人钓友船外机指南](/blog/zh/chinese-anglers-lake-simcoe-mercury-outboard)
+- [多伦多华人第一次租船钓鱼：证件、安全和当天流程](/blog/zh/first-boat-rental-rice-lake-chinese-guide)
+- [40 到 60 匹 Mercury：铝船与华人钓友最常问的马力区间](/blog/zh/mercury-40-60hp-chinese-fishing-boat-guide)
+
 ## Next steps
 
 - Check the current Rice Lake rental fleet and availability: https://harrisboatworks.ca/rentals

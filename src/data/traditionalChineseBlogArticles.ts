@@ -39,6 +39,7 @@ export const traditionalChineseBlogArticles: BlogArticle[] = [
     seoTitle: '安省 船 冬季保養 繁體 (2026 第一次過冬指南)',
     description: '第一次在安省過冬的船主指南：為什麼必須冬化（結冰會裂缸體）、完整冬化清單、DIY vs 經銷商服務、隨時送船（包括下班後）、HBW 在 Gores Landing 的冬儲服務（12 月 1 日至 4 月 1 日停業）。',
     image: '/lovable-uploads/Ontario_Short_Boating_Season_Fall.png',
+    imageAlt: '秋日湖面上，一對男女乘著米色與棕褐色小艇，駛過島上插著加拿大國旗的小屋與橙色秋葉',
     author: 'Jay Harris',
     datePublished: '2026-06-12',
     dateModified: '2026-10-02',
@@ -124,6 +125,12 @@ quote: ${ZH_HANT_LANGUAGE_NOTE}
 先核對該引擎型號和序列號的冬化手冊。Mercury 的一般冬儲指南建議將引擎保持垂直，讓殘留水自行排出；但排水、霧化及防凍液要求仍須按機型確認，不應把同一套步驟套用到所有引擎。
 
 > 完整簡體版：[/blog/zh/ontario-boat-winterization-guide-chinese](/blog/zh/ontario-boat-winterization-guide-chinese)
+
+## 相關指南
+
+- [多倫多華人第一次租船釣魚：證件、安全和當天流程](/blog/zh-hant/first-boat-rental-rice-lake-chinese-guide)
+- [GTA 華人萊斯湖買船完整指南（繁體版）](/blog/zh-hant/gta-chinese-buy-boat-rice-lake-guide)
+- [GTA → 萊斯湖 一日遊地圖（繁體版）](/blog/zh-hant/gta-chinese-rice-lake-day-trip-plan)
 `,
     faqs: [
       { question: 'HBW 提供室內冬儲嗎？', answer: '不提供。HBW 提供室外專業收縮膜存放、室外無遮蓋存放，以及僅收縮膜服務。不提供室內或加熱存放。' },
@@ -139,6 +146,7 @@ quote: ${ZH_HANT_LANGUAGE_NOTE}
     seoTitle: 'Rice Lake 租船 繁體 多倫多 (第一次完整流程)',
     description: '多倫多華人第一次到 Rice Lake 租船釣魚的完整指南：需要帶甚麼證件、HBW 要求的有效 PCOC、租船安全檢查清單、當天到達流程、安省釣魚證，以及從萬錦或士嘉堡前往 Rice Lake 的路線。',
     image: '/lovable-uploads/hero-first-time-boat-rental.webp',
+    imageAlt: '平靜湖面上的浮筒船，戴帽的父親掌舵，駕駛台上放著湖圖，母親與三名穿橘色救生衣的孩子坐在前方座椅上',
     author: 'Jay Harris',
     datePublished: '2026-06-12',
     dateModified: '2026-10-04',
@@ -206,6 +214,13 @@ quote: ${ZH_HANT_LANGUAGE_NOTE}
 **Q：釣魚證可以當天在 HBW 買嗎？** 不可以。請在出發前於 [安省官方頁面](http://www.ontario.ca/page/ontario-fishing-regulations-summary-traditional-chinese) 辦好。
 
 > 完整簡體版：[/blog/zh/first-boat-rental-rice-lake-chinese-guide](/blog/zh/first-boat-rental-rice-lake-chinese-guide)
+
+## 相關指南
+
+- [GTA 華人萊斯湖買船完整指南（繁體版）](/blog/zh-hant/gta-chinese-buy-boat-rice-lake-guide)
+- [GTA → 萊斯湖 一日遊地圖（繁體版）](/blog/zh-hant/gta-chinese-rice-lake-day-trip-plan)
+- [安省船主冬季保養和冬儲清單：第一次過冬怎麼做](/blog/zh-hant/ontario-boat-winterization-guide-chinese)
+- [PCOC、PCL、釣魚證區別：安省新手別搞混](/blog/zh-hant/pcoc-pcl-fishing-licence-difference-ontario)
 `,
     faqs: [
       { question: '必須有 PCOC 嗎？', answer: '必須。HBW 要求操作租賃船隻的人持有有效 PCOC；安全檢查清單不能代替。' },
@@ -220,6 +235,7 @@ quote: ${ZH_HANT_LANGUAGE_NOTE}
     seoTitle: '安省 船牌 繁體 PCOC vs PCL vs 釣魚證',
     description: '安省新手分清 PCOC 操作員資格、PCL 船隻牌照與安省釣魚證：誰需要、有效期、官方申請入口與 HBW 租船政策。',
     image: '/lovable-uploads/hero-boat-rental-licence-ontario.webp',
+    imageAlt: '碼頭舊木板上放著橘色救生衣、太陽眼鏡、橘色浮標鑰匙和一部智慧型手機，旁邊是湖水',
     author: 'Jay Harris',
     datePublished: '2026-06-12',
     dateModified: '2026-10-04',
@@ -283,6 +299,13 @@ quote: ${ZH_HANT_LANGUAGE_NOTE}
 **Q：換引擎後 PCL 一定要更新嗎？** 引擎資料或 HP 變更時應按 Transport Canada 當前規則更新 PCL 資料；資料更新本身免費。
 
 > 完整簡體版：[/blog/zh/gta-chinese-pcl-fishing-licence-guide](/blog/zh/gta-chinese-pcl-fishing-licence-guide)
+
+## 相關指南
+
+- [多倫多華人第一次租船釣魚：證件、安全和當天流程](/blog/zh-hant/first-boat-rental-rice-lake-chinese-guide)
+- [GTA 華人萊斯湖買船完整指南（繁體版）](/blog/zh-hant/gta-chinese-buy-boat-rice-lake-guide)
+- [GTA → 萊斯湖 一日遊地圖（繁體版）](/blog/zh-hant/gta-chinese-rice-lake-day-trip-plan)
+- [安省船主冬季保養和冬儲清單：第一次過冬怎麼做](/blog/zh-hant/ontario-boat-winterization-guide-chinese)
 `,
     faqs: [
       { question: 'PCOC 和 PCL 有甚麼區別？', answer: 'PCOC 是操作人的資格證明，卡片終身有效。PCL 是符合條件船隻的識別牌照；新辦、續期、轉讓或補發現為 $24.41 CAD（2026-09-05）；新辦、轉讓或續期後有效 5 年（補發不延長有效期）；資料更新免費。' },
@@ -299,6 +322,7 @@ quote: ${ZH_HANT_LANGUAGE_NOTE}
     title: 'GTA → 萊斯湖 一日遊地圖（繁體版）',
     description: '從多倫多到萊斯湖的一日遊規劃：駕車路線、租船預訂、安全與證件、回程時段。完整簡體版內容詳見對應頁面。',
     image: '/lovable-uploads/blog-audit-2026-09/zh-first-rental-hero.png',
+    imageAlt: '穿紅色救生衣的一家四口從白色浮筒船踏上木碼頭，藍色Polo衫男子迎接，日出時湖面有薄霧和松樹',
     author: 'Jay Harris',
     datePublished: '2026-06-12',
     dateModified: '2026-09-06',
@@ -321,6 +345,12 @@ quote: ${ZH_HANT_LANGUAGE_NOTE}
 ::
 
 完整版內容（包括預訂方式、出發前的法規與安全檢查，以及租船與自帶船的選擇）請看 [簡體版](/blog/zh/gta-chinese-rice-lake-day-trip-plan)。
+
+## 相關指南
+
+- [多倫多華人第一次租船釣魚：證件、安全和當天流程](/blog/zh-hant/first-boat-rental-rice-lake-chinese-guide)
+- [GTA 華人萊斯湖買船完整指南（繁體版）](/blog/zh-hant/gta-chinese-buy-boat-rice-lake-guide)
+- [安省船主冬季保養和冬儲清單：第一次過冬怎麼做](/blog/zh-hant/ontario-boat-winterization-guide-chinese)
 `,
     faqs: [
       { question: 'HBW 有中文服務嗎？', answer: ZH_HANT_LANGUAGE_NOTE },
@@ -332,6 +362,7 @@ quote: ${ZH_HANT_LANGUAGE_NOTE}
     title: 'GTA 華人萊斯湖買船完整指南（繁體版）',
     description: 'GTA 華人家庭第一次買船：用途決定船型、新船 vs 二手船、Mercury 引擎選擇、貸款方式、交付前要做的功課。完整簡體版內容詳見對應頁面。',
     image: '/lovable-uploads/blog-audit-2026-09/zh-first-rental-hero.png',
+    imageAlt: '微笑的一家四口穿著紅色救生衣，從浮筒船走上木碼頭，藍色Polo衫男子迎接，湖面晨霧瀰漫',
     author: 'Jay Harris',
     datePublished: '2026-06-12',
     dateModified: '2026-09-06',
@@ -354,6 +385,12 @@ quote: ${ZH_HANT_LANGUAGE_NOTE}
 ::
 
 完整版內容（包括各船型對比表、HP 計算、買船清單）請看 [簡體版](/blog/zh/gta-chinese-buy-boat-rice-lake-guide)。
+
+## 相關指南
+
+- [多倫多華人第一次租船釣魚：證件、安全和當天流程](/blog/zh-hant/first-boat-rental-rice-lake-chinese-guide)
+- [GTA → 萊斯湖 一日遊地圖（繁體版）](/blog/zh-hant/gta-chinese-rice-lake-day-trip-plan)
+- [安省船主冬季保養和冬儲清單：第一次過冬怎麼做](/blog/zh-hant/ontario-boat-winterization-guide-chinese)
 `,
     faqs: [
       { question: 'HBW 有中文服務嗎？', answer: ZH_HANT_LANGUAGE_NOTE },

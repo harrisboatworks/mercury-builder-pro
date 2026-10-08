@@ -119,6 +119,13 @@ HBW 的发动机维修只服务 Mercury 和 MerCruiser。
 
 HBW 自 1947 年起就经营家族码头，是 Mercury Marine Premier dealer 与 Legend Boats 经销商。
 
+## 相关指南
+
+- [安省船主冬化与室外冬储清单：什么时候送、要做什么](/blog/zh/ontario-boat-winterization-guide-chinese)
+- [多伦多华人 Mercury 发动机维修保养完整指南：从机油到大修](/blog/zh/gta-chinese-mercury-service-guide)
+- [GTA 华人船主冬储完整指南：HBW 室外收缩膜冬储方案、价格、流程](/blog/zh/gta-chinese-rice-lake-winter-storage-complete-guide)
+- [加拿大加油指南：Mercury 船外机加 87 还是 91？国内 92 号汽油怎么换算](/blog/zh/mercury-fuel-octane-ethanol-chinese-guide)
+
 ## Next steps
 
 - Submit the boat, motor, symptoms, and photos in the HBW service request: https://hbwservice.ca

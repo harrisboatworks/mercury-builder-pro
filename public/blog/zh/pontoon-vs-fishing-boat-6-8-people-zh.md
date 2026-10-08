@@ -145,6 +145,12 @@ revenue_driver: rentals
 - [为什么 GTA 华人船主选择 Harris Boat Works](/blog/zh/why-chinese-boaters-choose-harris-boat-works)
 - [GTA 华人 Mercury 服务与换机指南](/blog/zh/mercury-repower-guide-gta)
 
+## 相关指南
+
+- [多伦多华人在 莱斯湖 买船完整指南：从选型到交付](/blog/zh/gta-chinese-buy-boat-rice-lake-guide)
+- [多伦多华人 Mercury 船外机马力选择指南：9.9、20、60、115、150HP 怎么选？](/blog/zh/mercury-outboard-horsepower-guide-toronto-chinese)
+- [安省华人养船成本指南](/blog/zh/boat-ownership-cost-ontario-chinese)
+
 ## FAQs
 
 ### 6 人租钓鱼船还是 pontoon？

@@ -115,6 +115,13 @@ HBW 的 Lightspeed 记录显示，有 **2025 年 8 月至 11 月完成的 584 �
 
 **地址：** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 
+## 相关指南
+
+- [安省船主冬化与室外冬储清单：什么时候送、要做什么](/blog/zh/ontario-boat-winterization-guide-chinese)
+- [安省华人船主春季开船检查清单](/blog/zh/ontario-spring-boat-checklist-chinese)
+- [多伦多华人 Mercury 发动机维修保养完整指南：从机油到大修](/blog/zh/gta-chinese-mercury-service-guide)
+- [安省华人养船成本指南](/blog/zh/boat-ownership-cost-ontario-chinese)
+
 ## FAQs
 
 ### HBW 提供室内冬储吗？

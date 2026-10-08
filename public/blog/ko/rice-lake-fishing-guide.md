@@ -149,6 +149,13 @@ Largemouth bass(큰입배스)와 smallmouth bass(작은입배스) 두 종류. Sm
 **주소:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 ---
 
+## 관련 가이드
+
+- [온타리오 보트 면허 및 안전 규정 완전 가이드: 한인 보트 오너가 반드시 알아야 할 것들](/blog/ko/ontario-boating-licence-regulations)
+- [온타리오 보트 구매 완전 가이드: 첫 보트부터 엔진 교체까지](/blog/ko/ontario-boat-buying-guide)
+- [Mercury 선외기 겨울 보관 가이드: 온타리오 보트 오너를 위한 필수 정비 매뉴얼](/blog/ko/mercury-outboard-winterization-guide)
+- [선외기 교체(Repower) vs 새 보트 구매: 온타리오 보트 오너를 위한 현실적 비교](/blog/ko/repower-vs-new-boat)
+
 ## FAQs
 
 ### 토론토에서 얼마나 걸리나요?

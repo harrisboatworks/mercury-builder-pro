@@ -22,6 +22,7 @@ export const punjabiBlogArticles: Wave1Article[] = [
     seoTitle: 'Ontario Fishing Licence ki hai te kiven laiye | ਓਨਟਾਰੀਓ ਫਿਸ਼ਿੰਗ ਲਾਇਸੰਸ ਗਾਈਡ',
     description: 'Ontario fishing licence ki kiven laiye? Outdoors Card, conservation vs sport licence, FMZ 17 Rice Lake rules te free Learn to Fish program, sab Punjabi vich.',
     image: '/lovable-uploads/hero-boat-rental-licence-ontario.webp',
+    imageAlt: 'ਪੁਰਾਣੇ ਲੱਕੜ ਦੇ ਡੌਕ ਉੱਤੇ ਪਾਣੀ ਕੋਲ ਰੱਖੀ ਸੰਤਰੀ ਲਾਈਫ ਜੈਕਟ, ਐਨਕਾਂ, ਸਮਾਰਟਫੋਨ ਅਤੇ ਸੰਤਰੀ ਫਲੋਟ ਵਾਲੀ ਕਿਸ਼ਤੀ ਦੀ ਚਾਬੀ',
     author: 'Harris Boat Works',
     datePublished: '2026-06-12',
     dateModified: '2026-10-06',
@@ -111,7 +112,12 @@ phone: (905) 342-2153
 text: (647) 952-2153  
 address: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 
-Harris Boat Works 1947 ਤੋਂ family-owned marina ਹੈ, Mercury ਡੀਲਰ 1965 ਤੋਂ, Premier Dealer। winter (1 Dec ਤੋਂ 1 Apr) ਅਸੀਂ closed ਹੁੰਦੇ ਹਾਂ। ਫ਼ਿਰ spring ’ਚ ਜ਼ਰੂਰ ਆਉਣਾ।`
+Harris Boat Works 1947 ਤੋਂ family-owned marina ਹੈ, Mercury ਡੀਲਰ 1965 ਤੋਂ, Premier Dealer। winter (1 Dec ਤੋਂ 1 Apr) ਅਸੀਂ closed ਹੁੰਦੇ ਹਾਂ। ਫ਼ਿਰ spring ’ਚ ਜ਼ਰੂਰ ਆਉਣਾ।
+
+## ਸੰਬੰਧਿਤ ਗਾਈਡ
+
+- [Mercury outboard motor di keemat Canada vich | ਮਰਕਰੀ ਆਊਟਬੋਰਡ ਕੀਮਤ ਗਾਈਡ Ontario](/blog/pa/mercury-outboard-prices-ontario-punjabi)
+`
   },
   {
     slug: 'boat-licence-rental-ontario-punjabi-pcoc-faq',
@@ -119,6 +125,7 @@ Harris Boat Works 1947 ਤੋਂ family-owned marina ਹੈ, Mercury ਡੀਲ�
     seoTitle: 'Ontario vich boat chalaun layi licence chahida? PCOC FAQ | ਕਿਸ਼ਤੀ ਲਾਇਸੰਸ ਸਵਾਲ-ਜਵਾਬ',
     description: 'Ki Ontario vich boat rent karan layi licence chahida? HBW de PCOC rules, rental safety briefing te lifejacket rules. Punjabi vich poori jaankari ethe lao.',
     image: '/lovable-uploads/hero-boat-rental-licence-ontario.webp',
+    imageAlt: 'ਲੱਕੜ ਦੇ ਡੌਕ ਉੱਤੇ ਰੱਖੀ ਸੰਤਰੀ ਲਾਈਫ ਜੈਕਟ, ਧੁੱਪ ਦੀਆਂ ਐਨਕਾਂ, ਸੰਤਰੀ ਫਲੋਟ ਵਾਲੀ ਚਾਬੀ ਅਤੇ ਖਾਲੀ ਸਕਰੀਨ ਵਾਲਾ ਫ਼ੋਨ',
     author: 'Harris Boat Works',
     datePublished: '2026-06-12',
     dateModified: '2026-10-06',
@@ -195,7 +202,13 @@ A: ਇਹ guide Punjabi ਵਿੱਚ ਲਿਖੀ ਸੀ, ਪਰ ਸਾਡੀ �
 
 ## Shuru karo apni Rice Lake trip | ਆਪਣੀ ਰਾਈਸ ਲੇਕ ਟ੍ਰਿਪ ਸ਼ੁਰੂ ਕਰੋ
 
-PCOC rules ਨੂੰ ਔਖਾ ਨਾ ਸਮਝੋ; ਪਹਿਲਾ ਕਦਮ safety information ਸਮਝਣਾ ਹੈ। Rice Lake, Gores Landing (5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0) Toronto area ਤੋਂ 90 minutes ਦੂਰ, Brampton, Mississauga, Scarborough, Markham ਵਾਲਿਆਂ ਲਈ simple day trip ਹੈ। rental booking ਲਈ rent page ਖੋਲ੍ਹੋ: [Harris Boat Works rentals](https://harrisboatworks.ca/rentals)। service request ਭੇਜਣੀ ਹੈ: hbwservice.ca। December 1 to April 1 ਅਸੀਂ winter break ਵਿੱਚ ਬੰਦ ਰਹਿੰਦੇ ਹਾਂ, oh season Rice Lake ’ਤੇ ਨਹੀਂ ਚੱਲਦਾ।`
+PCOC rules ਨੂੰ ਔਖਾ ਨਾ ਸਮਝੋ; ਪਹਿਲਾ ਕਦਮ safety information ਸਮਝਣਾ ਹੈ। Rice Lake, Gores Landing (5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0) Toronto area ਤੋਂ 90 minutes ਦੂਰ, Brampton, Mississauga, Scarborough, Markham ਵਾਲਿਆਂ ਲਈ simple day trip ਹੈ। rental booking ਲਈ rent page ਖੋਲ੍ਹੋ: [Harris Boat Works rentals](https://harrisboatworks.ca/rentals)। service request ਭੇਜਣੀ ਹੈ: hbwservice.ca। December 1 to April 1 ਅਸੀਂ winter break ਵਿੱਚ ਬੰਦ ਰਹਿੰਦੇ ਹਾਂ, oh season Rice Lake ’ਤੇ ਨਹੀਂ ਚੱਲਦਾ।
+
+## ਸੰਬੰਧਿਤ ਗਾਈਡ
+
+- [Mercury outboard motor di keemat Canada vich | ਮਰਕਰੀ ਆਊਟਬੋਰਡ ਕੀਮਤ ਗਾਈਡ Ontario](/blog/pa/mercury-outboard-prices-ontario-punjabi)
+- [Ontario Fishing Licence ki hai te kiven laiye | ਓਨਟਾਰੀਓ ਫਿਸ਼ਿੰਗ ਲਾਇਸੰਸ ਗਾਈਡ](/blog/pa/ontario-fishing-licence-punjabi-guide)
+`
   },
   {
     slug: 'mercury-outboard-prices-ontario-punjabi',
@@ -203,6 +216,7 @@ PCOC rules ਨੂੰ ਔਖਾ ਨਾ ਸਮਝੋ; ਪਹਿਲਾ ਕਦਮ sa
     seoTitle: 'Mercury outboard motor di keemat Canada vich | ਮਰਕਰੀ ਆਊਟਬੋਰਡ ਕੀਮਤ ਗਾਈਡ Ontario',
     description: 'Mercury outboard motor di keemat Canada vich: HP class anusar price structure, repower cost te live quote tool. Punjabi guide, koi lukiyan hoiyan fees nahi.',
     image: '/lovable-uploads/hero-cheapest-mercury-canada-lineup.png',
+    imageAlt: 'ਲੱਕੜ ਦੇ ਕਾਊਂਟਰ ਪਿੱਛੇ ਘੋੜੀਆਂ ਉੱਤੇ ਰੱਖੇ ਆਕਾਰ ਵਿੱਚ ਵਧਦੇ ਚਾਰ ਕਾਲੇ Mercury ਆਊਟਬੋਰਡ ਮੋਟਰ, ਕਾਊਂਟਰ ਉੱਤੇ ਕਲਿੱਪਬੋਰਡ ਤੇ ਚਾਬੀਆਂ',
     author: 'Harris Boat Works',
     datePublished: '2026-06-12',
     dateModified: '2026-09-11',
@@ -290,6 +304,10 @@ Mercury outboard ਨਾਲ ਪੁਰਾਣੀ ਕਿਸ਼ਤੀ ਵਿੱਚ �
 • **Motor suggestion tool:** https://www.mercuryrepower.ca/quote/motor-selection
 • **Pricing reference page:** https://www.mercuryrepower.ca/pricing-reference
 • **Financing guide (English vich):** https://www.mercuryrepower.ca/blog/mercury-outboard-financing-ontario-2026
+
+## ਸੰਬੰਧਿਤ ਗਾਈਡ
+
+- [Ontario Fishing Licence ki hai te kiven laiye | ਓਨਟਾਰੀਓ ਫਿਸ਼ਿੰਗ ਲਾਇਸੰਸ ਗਾਈਡ](/blog/pa/ontario-fishing-licence-punjabi-guide)
 `
   }
 ];

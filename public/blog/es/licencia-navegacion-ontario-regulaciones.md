@@ -193,6 +193,14 @@ Harris Boat Works
 harrisboatworks.ca
 ---
 
+## Guías relacionadas
+
+- [Guía completa para comprar un bote en Ontario](/blog/es/guia-comprar-bote-ontario)
+- [Guía de pesca en Rice Lake, Ontario](/blog/es/guia-pesca-rice-lake-ontario)
+- [Mercury 115 vs 150 HP: Comparación completa para remotorización](/blog/es/mercury-115-vs-150-comparacion)
+- [Guía de preparación invernal para motores Mercury en Ontario](/blog/es/preparacion-invernal-motor-mercury)
+- [Remotorización vs bote nuevo: ¿Cuál es la mejor inversión?](/blog/es/remotorizacion-vs-bote-nuevo)
+
 ## FAQs
 
 ### ¿Mi licencia de conducir de vehículo reemplaza la PCOC?

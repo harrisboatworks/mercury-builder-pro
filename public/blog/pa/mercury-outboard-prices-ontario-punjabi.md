@@ -76,6 +76,10 @@ Mercury outboard ਨਾਲ ਪੁਰਾਣੀ ਕਿਸ਼ਤੀ ਵਿੱਚ �
 • **Pricing reference page:** https://www.mercuryrepower.ca/pricing-reference
 • **Financing guide (English vich):** https://www.mercuryrepower.ca/blog/mercury-outboard-financing-ontario-2026
 
+## ਸੰਬੰਧਿਤ ਗਾਈਡ
+
+- [Ontario Fishing Licence ki hai te kiven laiye | ਓਨਟਾਰੀਓ ਫਿਸ਼ਿੰਗ ਲਾਇਸੰਸ ਗਾਈਡ](/blog/pa/ontario-fishing-licence-punjabi-guide)
+
 ## FAQs
 
 ### Mercury 90hp outboard di Ontario vich keemat kitni hai? | ਮਰਕਰੀ 90hp ਆਊਟਬੋਰਡ ਦੀ Ontario ਵਿਚ ਕੀਮਤ ਕਿੰਨੀ ਹੈ?

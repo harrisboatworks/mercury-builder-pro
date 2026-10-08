@@ -10,6 +10,7 @@ export const koreanBlogArticles: BlogArticle[] = [
     title: '온타리오 보트 구매 완전 가이드: 첫 보트부터 엔진 교체까지',
     description: '온타리오에서 보트를 처음 구매하려는 한인을 위한 실용 가이드. PCOC 취득, 보트 종류, 보관 방법, 연간 유지비, 신규 구매 vs 중고 vs 엔진 교체(repower)까지 한 번에 정리했습니다.',
     image: '/lovable-uploads/ko-ontario-boat-buying-guide-hero.png',
+    imageAlt: '가을 부두의 가족과 남성, Mercury 20 선외기가 달린 알루미늄 보트',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
     dateModified: '2026-10-04',
@@ -176,7 +177,15 @@ Transport Canada 공인 기관에서 온라인 시험으로 취득합니다. 비
 **전화:** 905-342-2153
 **주소:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 Harris Boat Works, Mercury Marine Premier 딜러. 1947년 창립.
----`,
+---
+
+## 관련 가이드
+
+- [선외기 교체(Repower) vs 새 보트 구매: 온타리오 보트 오너를 위한 현실적 비교](/blog/ko/repower-vs-new-boat)
+- [온타리오 보트 면허 및 안전 규정 완전 가이드: 한인 보트 오너가 반드시 알아야 할 것들](/blog/ko/ontario-boating-licence-regulations)
+- [Mercury 115 vs 150 HP 비교 가이드: 어떤 선외기가 내 보트에 맞을까?](/blog/ko/mercury-115-vs-150-comparison)
+- [Mercury 선외기 겨울 보관 가이드: 온타리오 보트 오너를 위한 필수 정비 매뉴얼](/blog/ko/mercury-outboard-winterization-guide)
+`,
     faqs: [
       { question: '보트를 사려면 운전면허 외에 별도 면허가 필요한가요?', answer: '네. 동력 보트(전기 트롤링 모터 포함)를 조종하려면 조종 자격 증명이 필요합니다. PCOC(여가용 선박 조종 자격증)가 가장 흔한 증명이며 온라인 시험으로 취득할 수 있고 한 번 취득하면 평생 유효하지만, 연방 규칙상 유일한 증명은 아닙니다.' },
       { question: '보트를 처음 사는데 새 보트와 중고 보트 중 어떤 게 나을까요?', answer: '복잡한 것을 피하고 싶으면 새 보트, 예산을 아끼고 싶으면 중고 보트 + 전문 점검이 좋습니다. 선체가 좋은 중고 보트에 엔진만 새로 교체하는 repower도 비용 대비 효율이 높은 방법입니다.' },
@@ -189,6 +198,7 @@ Harris Boat Works, Mercury Marine Premier 딜러. 1947년 창립.
     title: 'Rice Lake 낚시 완전 가이드: 토론토 한인을 위한 온타리오 최고의 숨은 명소',
     description: 'Rice Lake는 토론토 시내에서 약 1시간 45분 거리에 있는 온타리오 최고의 walleye 낚시터입니다. 어종, FMZ 17 시즌 일정, 낚시 면허, 렌탈 보트 정보까지 한 번에 정리했습니다.',
     image: '/lovable-uploads/ko-rice-lake-fishing-guide-hero.png',
+    imageAlt: '안개 낀 일출에 Mercury 9.9 FourStroke 선외기 보트에서 낚시하는 두 사람',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
     dateModified: '2026-10-06',
@@ -333,7 +343,15 @@ Largemouth bass(큰입배스)와 smallmouth bass(작은입배스) 두 종류. Sm
 
 **전화:** 905-342-2153
 **주소:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
----`,
+---
+
+## 관련 가이드
+
+- [온타리오 보트 면허 및 안전 규정 완전 가이드: 한인 보트 오너가 반드시 알아야 할 것들](/blog/ko/ontario-boating-licence-regulations)
+- [온타리오 보트 구매 완전 가이드: 첫 보트부터 엔진 교체까지](/blog/ko/ontario-boat-buying-guide)
+- [Mercury 선외기 겨울 보관 가이드: 온타리오 보트 오너를 위한 필수 정비 매뉴얼](/blog/ko/mercury-outboard-winterization-guide)
+- [선외기 교체(Repower) vs 새 보트 구매: 온타리오 보트 오너를 위한 현실적 비교](/blog/ko/repower-vs-new-boat)
+`,
     faqs: [
       { question: '토론토에서 얼마나 걸리나요?', answer: '토론토 시내에서 약 1시간 45분입니다. 401번 고속도로 동쪽 방향으로 가다가 Cobourg의 472번 출구(County Road 18 / Burnham Street)로 나와 County Road 18을 따라 북쪽으로 약 16 km 가면 Gores Landing에 도착합니다.' },
       { question: '렌탈 보트에 낚시 장비가 포함되나요?', answer: '아니요. 보트만 대여되며, 낚싯대·줄·루어 등은 직접 준비해야 합니다.' },
@@ -347,6 +365,7 @@ Largemouth bass(큰입배스)와 smallmouth bass(작은입배스) 두 종류. Sm
     title: 'Mercury 선외기 겨울 보관 가이드: 온타리오 보트 오너를 위한 필수 정비 매뉴얼',
     description: '온타리오의 겨울은 보트 엔진에 치명적입니다. Mercury 선외기 겨울 정비의 6단계 핵심 과정을 설명합니다. 연료 안정화, 포깅, 기어 오일, 배터리, 윤활, 보관까지.',
     image: '/lovable-uploads/ko-mercury-outboard-winterization-guide-hero.png',
+    imageAlt: '작업대 옆 스탠드에 놓인 Mercury 60 FourStroke 선외기를 점검하는 정비사',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
     dateModified: '2026-09-06',
@@ -446,6 +465,13 @@ HBW 기술자들은 매년 많은 수의 윈터라이제이션을 수행하며, 
 - **전화:** 905-342-2153
 - **에탄올 무첨가 연료:** 현장 판매
 - **주소:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
+
+## 관련 가이드
+
+- [선외기 교체(Repower) vs 새 보트 구매: 온타리오 보트 오너를 위한 현실적 비교](/blog/ko/repower-vs-new-boat)
+- [온타리오 보트 구매 완전 가이드: 첫 보트부터 엔진 교체까지](/blog/ko/ontario-boat-buying-guide)
+- [온타리오 보트 면허 및 안전 규정 완전 가이드: 한인 보트 오너가 반드시 알아야 할 것들](/blog/ko/ontario-boating-licence-regulations)
+- [Rice Lake 낚시 완전 가이드: 토론토 한인을 위한 온타리오 최고의 숨은 명소](/blog/ko/rice-lake-fishing-guide)
 `,
     faqs: [
       { question: '겨울 정비 비용은 얼마나 드나요?', answer: '엔진 모델과 필요한 서비스에 따라 다릅니다. hbwservice.ca에서 문의하시면 견적을 안내해드립니다.' },
@@ -460,6 +486,7 @@ HBW 기술자들은 매년 많은 수의 윈터라이제이션을 수행하며, 
     title: 'Mercury 115 vs 150 HP 비교 가이드: 어떤 선외기가 내 보트에 맞을까?',
     description: 'Mercury 115 FourStroke와 150 FourStroke의 실질적 차이를 비교합니다. 배기량, 무게, 연비, 적합 보트 크기까지, 한국어로 쉽게 설명합니다.',
     image: '/lovable-uploads/ko-mercury-115-vs-150-comparison-hero.png',
+    imageAlt: '콘크리트 바닥에 나란히 선 Mercury FourStroke 115와 150 선외기 두 대',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
     dateModified: '2026-09-06',
@@ -586,7 +613,15 @@ Pro XS 버전의 가격은 표준 FourStroke보다 높습니다. 정확한 가�
 **전화:** 905-342-2153
 **서비스 예약:** [hbwservice.ca](https://hbwservice.ca)
 **주소:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
----`,
+---
+
+## 관련 가이드
+
+- [머큐리 Pro XS, FourStroke, Verado: 무엇을 고를까?](/blog/ko/mercury-pro-xs-fourstroke-verado)
+- [머큐리 선외기 무게표 (2.5~300마력)](/blog/ko/mercury-seonoegi-muge)
+- [선외기 교체(Repower) vs 새 보트 구매: 온타리오 보트 오너를 위한 현실적 비교](/blog/ko/repower-vs-new-boat)
+- [온타리오 보트 구매 완전 가이드: 첫 보트부터 엔진 교체까지](/blog/ko/ontario-boat-buying-guide)
+`,
     faqs: [
       { question: '115와 150의 연비 차이가 얼마나 되나요?', answer: '일반적으로 같은 조건에서는 150이 더 많은 연료를 사용하지만, 실제 차이는 보트 무게와 적재량 등에 따라 달라집니다. 115로 과부하 운전하면 연비 차이가 줄어들면서 엔진 마모만 가속됩니다.' },
       { question: '내 보트에 둘 다 장착 가능한데, 어떻게 선택하나요?', answer: '평소 실제 탑승 인원과 적재량을 기준으로 판단하세요. 자주 만석이거나 한계에 가깝다면 150이 안정적입니다.' },
@@ -599,6 +634,7 @@ Pro XS 버전의 가격은 표준 FourStroke보다 높습니다. 정확한 가�
     title: '선외기 교체(Repower) vs 새 보트 구매: 온타리오 보트 오너를 위한 현실적 비교',
     description: '보트 엔진이 낡았을 때, 엔진만 교체하는 게 나을까 아니면 새 보트를 사는 게 나을까? 비용, 선체 상태, 타이밍 등 현실적인 판단 기준을 정리했습니다.',
     image: '/lovable-uploads/ko-repower-vs-new-boat-hero.png',
+    imageAlt: '알루미늄 보트에 Mercury 선외기를 다는 모습과 Mercury 30을 단 완성 보트의 분할 이미지',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
     dateModified: '2026-09-11',
@@ -727,7 +763,15 @@ harrisboatworks.ca에서 현재 재고를 확인하실 수 있습니다.
 ---
 
 *관련 자료 (영어): Should I repower or buy a new boat? | Ontario Mercury Outboard Price Guide | Mercury 90 HP FourStroke review*
----`,
+---
+
+## 관련 가이드
+
+- [온타리오 보트 구매 완전 가이드: 첫 보트부터 엔진 교체까지](/blog/ko/ontario-boat-buying-guide)
+- [Mercury 115 vs 150 HP 비교 가이드: 어떤 선외기가 내 보트에 맞을까?](/blog/ko/mercury-115-vs-150-comparison)
+- [머큐리 Pro XS, FourStroke, Verado: 무엇을 고를까?](/blog/ko/mercury-pro-xs-fourstroke-verado)
+- [Mercury 선외기 겨울 보관 가이드: 온타리오 보트 오너를 위한 필수 정비 매뉴얼](/blog/ko/mercury-outboard-winterization-guide)
+`,
     faqs: [
       { question: '선체 상태를 어떻게 판단하나요?', answer: '선체 상태는 사진만으로 확정할 수 없습니다. 구매 전에 전문가의 현장 점검을 받으세요.' },
       { question: '엔진 교체에 걸리는 시간은?', answer: '작업 기간은 시즌, 부품 수급, 현재 작업량에 따라 달라집니다. 구체적인 일정은 문의 시 확인하세요.' },
@@ -741,6 +785,7 @@ harrisboatworks.ca에서 현재 재고를 확인하실 수 있습니다.
     title: '온타리오 보트 면허 및 안전 규정 완전 가이드: 한인 보트 오너가 반드시 알아야 할 것들',
     description: 'PCOC 취득, PCL 등록, 필수 안전 장비, 낚시 면허, 미성년자 규정까지, 온타리오에서 보트를 운행하기 전에 알아야 할 모든 규정을 한국어로 정리했습니다.',
     image: '/lovable-uploads/ko-ontario-boating-licence-regulations-hero.png',
+    imageAlt: '구명조끼를 입은 남자가 Mercury 선외기와 구명환이 있는 알루미늄 보트에 앉은 모습',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
     dateModified: '2026-10-04',
@@ -910,7 +955,15 @@ OPP 수상 순찰에 적발 시 과태료가 부과됩니다. $250부터 시작�
 - 서비스 예약: [hbwservice.ca](https://hbwservice.ca)
 - 전화: 905-342-2153
 - 주소: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
----`,
+---
+
+## 관련 가이드
+
+- [온타리오 보트 구매 완전 가이드: 첫 보트부터 엔진 교체까지](/blog/ko/ontario-boat-buying-guide)
+- [Rice Lake 낚시 완전 가이드: 토론토 한인을 위한 온타리오 최고의 숨은 명소](/blog/ko/rice-lake-fishing-guide)
+- [Mercury 선외기 겨울 보관 가이드: 온타리오 보트 오너를 위한 필수 정비 매뉴얼](/blog/ko/mercury-outboard-winterization-guide)
+- [선외기 교체(Repower) vs 새 보트 구매: 온타리오 보트 오너를 위한 현실적 비교](/blog/ko/repower-vs-new-boat)
+`,
     faqs: [
       { question: 'PCOC는 온라인으로 시험 볼 수 있나요?', answer: '네. Transport Canada 공인 기관에서 온라인으로 응시하며, 비용은 약 $40~$50입니다. 한 번 취득하면 평생 유효합니다.' },
       { question: '보트 면허(PCL) 비용이 바뀌었나요?', answer: '네. 2025년 12월 31일부터 신규·이전·갱신 면허는 5년 유효입니다. 당시 최초 안내 수수료는 $24였고, 현재 Transport Canada 요금표(2026년 9월 5일)는 신규·이전·갱신·재발급 $24.41 CAD입니다. 기재사항 변경과 취소는 무료이며, 매년 4월 1일 물가 연동됩니다. 예전 면허가 모두 평생이었던 것은 아니므로 본인 만료 시점을 확인하세요.' },
@@ -924,6 +977,7 @@ OPP 수상 순찰에 적발 시 과태료가 부과됩니다. $250부터 시작�
     title: '머큐리 Avator 전동 선외기: 가격과 항속거리',
     description: '머큐리 Avator 전동 선외기: 가격, 실제 항속거리, 그리고 라이스 레이크에 적합한지. 머큐리 Premier 딜러의 정직한 평가.',
     image: '/lovable-uploads/hero-avator-range-rice-lake.png',
+    imageAlt: '일출 무렵 Mercury 선외기가 달린 작은 알루미늄 보트에서 플라이 낚시하는 남자',
     author: 'Harris Boat Works',
     datePublished: '2026-06-08',
     dateModified: '2026-10-06',
@@ -1010,7 +1064,15 @@ Avator는 매장에 상시 재고로 두지 않는 주문 제작 제품이고, �
 ---
 
 Harris Boat Works는 1947년부터 운영된 가족 기업이며, 1965년부터 머큐리 딜러, 현재 머큐리 Premier 딜러입니다. 온타리오주 고어스 랜딩, 라이스 레이크.
----`,
+---
+
+## 관련 가이드
+
+- [머큐리 Pro XS, FourStroke, Verado: 무엇을 고를까?](/blog/ko/mercury-pro-xs-fourstroke-verado)
+- [머큐리 선외기 무게표 (2.5~300마력)](/blog/ko/mercury-seonoegi-muge)
+- [Mercury 115 vs 150 HP 비교 가이드: 어떤 선외기가 내 보트에 맞을까?](/blog/ko/mercury-115-vs-150-comparison)
+- [선외기 교체(Repower) vs 새 보트 구매: 온타리오 보트 오너를 위한 현실적 비교](/blog/ko/repower-vs-new-boat)
+`,
     faqs: [
       { question: '머큐리 Avator 전동 선외기는 한 번 충전으로 얼마나 가나요?', answer: '머큐리의 7.5e 자체 테스트(약 4 m, 약 173 kg 선체, 1 kWh 배터리)에서 전속력으로 약 1시간(약 8 km), 25% 출력에서 최대 약 19시간(약 55 km)을 주행했습니다. 실제 항속거리는 보트, 적재, 환경에 따라 달라집니다.' },
       { question: '머큐리 Avator의 출력은 어떻게 표시되나요?', answer: '머큐리는 Avator를 프로펠러 축 출력으로 표시합니다. 7.5e는 0.75 kW, 20e는 2.2 kW, 35e는 3.7 kW, 75e는 7.5 kW, 110e는 11 kW입니다. 추력, 가속, 항속거리, 운항 시간은 선체, 적재, 프로펠러, 배터리 구성, 날씨, 스로틀 설정에 따라 달라집니다.' },
@@ -1023,6 +1085,7 @@ Harris Boat Works는 1947년부터 운영된 가족 기업이며, 1965년부터 
     title: '머큐리 Pro XS, FourStroke, Verado: 무엇을 고를까?',
     description: 'Pro XS, FourStroke, Verado? 머큐리 세 계열의 차이와 내 보트에 맞는 선택. 머큐리 딜러의 정직한 답변.',
     image: '/lovable-uploads/hero-mercury-motor-families.png',
+    imageAlt: '전시 스탠드에 놓인 Mercury FourStroke 90, Pro XS 150, Verado 250 선외기',
     author: 'Harris Boat Works',
     datePublished: '2026-06-08',
     dateModified: '2026-09-06',
@@ -1087,7 +1150,15 @@ Verado는 슈퍼차저(구형 직렬 6기통) 또는 자연 흡기 V8/V10/V12(�
 ---
 
 Harris Boat Works는 1947년부터 운영된 가족 기업이며, 1965년부터 머큐리 딜러, 현재 머큐리 Premier 딜러입니다. 온타리오주 고어스 랜딩, 라이스 레이크.
----`,
+---
+
+## 관련 가이드
+
+- [Mercury 115 vs 150 HP 비교 가이드: 어떤 선외기가 내 보트에 맞을까?](/blog/ko/mercury-115-vs-150-comparison)
+- [머큐리 선외기 무게표 (2.5~300마력)](/blog/ko/mercury-seonoegi-muge)
+- [머큐리 Avator 전동 선외기: 가격과 항속거리](/blog/ko/mercury-avator-jeondong-seonoegi)
+- [선외기 교체(Repower) vs 새 보트 구매: 온타리오 보트 오너를 위한 현실적 비교](/blog/ko/repower-vs-new-boat)
+`,
     faqs: [
       { question: '머큐리 Pro XS와 FourStroke의 차이는 무엇인가요?', answer: 'Pro XS는 같은 4행정 블록을 베이스로 더 높은 RPM, 강화된 흡배기, 토너먼트용 기어비를 적용해 가속과 최고 속도를 끌어올린 버전입니다. FourStroke는 부드러움, 정숙성, 연비에 최적화돼 있어 가족 보트, 폰툰, 일반 낚시 보트에 적합합니다.' },
       { question: '머큐리 115 Pro XS와 115 FourStroke는 무게가 다른가요?', answer: '아니요. 머큐리의 공식 사양상 두 모델 모두 가장 가벼운 구성에서 약 163 kg(359 lb)으로 동일합니다. 머큐리는 115 Pro XS를 동급 최경량 퍼포먼스 115라고 소개합니다.' },
@@ -1174,7 +1245,15 @@ Harris Boat Works는 1947년부터 운영된 가족 기업이며, 1965년부터 
 ---
 
 Harris Boat Works는 1947년부터 운영된 가족 기업이며, 1965년부터 머큐리 딜러, 현재 머큐리 Premier 딜러입니다. 온타리오주 고어스 랜딩, 라이스 레이크.
----`,
+---
+
+## 관련 가이드
+
+- [Mercury 115 vs 150 HP 비교 가이드: 어떤 선외기가 내 보트에 맞을까?](/blog/ko/mercury-115-vs-150-comparison)
+- [머큐리 Pro XS, FourStroke, Verado: 무엇을 고를까?](/blog/ko/mercury-pro-xs-fourstroke-verado)
+- [머큐리 Avator 전동 선외기: 가격과 항속거리](/blog/ko/mercury-avator-jeondong-seonoegi)
+- [온타리오 보트 구매 완전 가이드: 첫 보트부터 엔진 교체까지](/blog/ko/ontario-boat-buying-guide)
+`,
     faqs: [
       { question: '머큐리 115 4행정의 무게는 얼마인가요?', answer: '머큐리 공식 사양상 115 FourStroke는 가장 가벼운 구성에서 약 163 kg(359 lb)이며, Command Thrust 버전은 약 165 kg(363 lb)입니다. 115 Pro XS도 동일한 약 163 kg(359 lb)입니다. 샤프트 길이가 길어지면 무게가 늘어납니다.' },
       { question: '머큐리 90마력 선외기 무게는 얼마인가요?', answer: '가장 가벼운 구성에서 약 163 kg(359 lb), Command Thrust 기어케이스 적용 시 약 165 kg(363 lb)입니다. 75, 90, 115는 동일한 2.1 L 블록을 공유해 무게가 같습니다.' },

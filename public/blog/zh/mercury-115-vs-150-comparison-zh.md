@@ -162,6 +162,13 @@ Mercury FourStroke系列两款发动机在巡航速度下都安静。150马力�
 Harris Boat Works，自1965年起的 Mercury 经销商。
 ---
 
+## 相关指南
+
+- [多伦多华人 Mercury 船外机马力选择指南：9.9、20、60、115、150HP 怎么选？](/blog/zh/mercury-outboard-horsepower-guide-toronto-chinese)
+- [Mercury 引擎家族对比 (中文版)：FourStroke vs Pro XS vs Verado](/blog/zh/mercury-fourstroke-pro-xs-verado-chinese-comparison)
+- [安大略省 Mercury 换新船外机完整指南：GTA 华人船主必读](/blog/zh/mercury-repower-guide-gta)
+- [多伦多华人买 Mercury 船外机：为什么不要只问“最低价”？](/blog/zh/mercury-outboard-price-dealer-guide-toronto-chinese)
+
 ## FAQs
 
 ### Mercury 115 FourStroke 有多重？

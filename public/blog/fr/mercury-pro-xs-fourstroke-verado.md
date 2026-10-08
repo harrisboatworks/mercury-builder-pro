@@ -78,6 +78,13 @@ On vend du Mercury. Cela dit, la comparaison doit rester honnête, alors la voic
 
 Harris Boat Works : entreprise familiale depuis 1947, concessionnaire Mercury depuis 1965, et actuellement concessionnaire Mercury Premier. Gores Landing, Ontario, sur le lac Rice.
 
+## Guides connexes
+
+- [Gamme de hors-bord Mercury 2026 pour les plaisanciers ontariens](/blog/fr/gamme-mercury-hors-bord-2026-ontario)
+- [Mercury Avator électrique : prix et autonomie](/blog/fr/moteur-hors-bord-electrique-mercury-avator)
+- [Mercury 115 vs 150 HP : Quel moteur choisir pour votre embarcation?](/blog/fr/mercury-115-vs-150-hp-comparaison)
+- [Poids des hors-bord Mercury (2,5 à 300 ch)](/blog/fr/poids-moteur-hors-bord-mercury)
+
 ## Questions fréquentes
 
 ### Est-ce que le Mercury Pro XS est un quatre-temps ?

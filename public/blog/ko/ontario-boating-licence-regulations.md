@@ -171,6 +171,13 @@ PCOC/PCL 위반 시 과태료는 $250부터 시작합니다.
 - 주소: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 ---
 
+## 관련 가이드
+
+- [온타리오 보트 구매 완전 가이드: 첫 보트부터 엔진 교체까지](/blog/ko/ontario-boat-buying-guide)
+- [Rice Lake 낚시 완전 가이드: 토론토 한인을 위한 온타리오 최고의 숨은 명소](/blog/ko/rice-lake-fishing-guide)
+- [Mercury 선외기 겨울 보관 가이드: 온타리오 보트 오너를 위한 필수 정비 매뉴얼](/blog/ko/mercury-outboard-winterization-guide)
+- [선외기 교체(Repower) vs 새 보트 구매: 온타리오 보트 오너를 위한 현실적 비교](/blog/ko/repower-vs-new-boat)
+
 ## FAQs
 
 ### PCOC는 온라인으로 시험 볼 수 있나요?

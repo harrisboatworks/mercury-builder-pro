@@ -101,6 +101,11 @@ revenue_driver: rentals
 - [GTA → 莱斯湖 一日游地图](/blog/zh/gta-chinese-rice-lake-day-trip-plan)
 - [Rice Lake 钓鱼完整攻略：多伦多华人钓友必读](/blog/zh/rice-lake-fishing-guide-toronto-chinese)
 
+## 相关指南
+
+- [安省租船需要驾照吗？PCOC 与租船安全清单一次讲清](/blog/zh/pcoc-vs-rental-boat-safety-checklist-zh)
+- [GTA 华人从租船到买船路线图](/blog/zh/gta-chinese-rent-to-buy-boat-roadmap)
+
 ## FAQs
 
 ### 在莱斯湖租船，必须有 PCOC 吗？

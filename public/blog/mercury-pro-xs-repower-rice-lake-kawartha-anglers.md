@@ -116,7 +116,7 @@ Honest framing matters. We sell both because they're both right for different pe
 
 ---
 
-![Mercury Pro XS V6 outboard on a bass boat cruising through misty Ontario lake waters at sunrise.](/lovable-uploads/inline/inline-pro-xs-action.png)
+![Black Pro XS outboard on the transom of a silver bass boat on misty water at sunrise, with spray trailing behind](/lovable-uploads/inline/inline-pro-xs-action.png)
 
 ## Hole-shot, top-end, and where they matter
 

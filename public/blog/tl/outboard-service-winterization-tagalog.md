@@ -109,6 +109,10 @@ Handa na ang bangka mo para sa summer? O kailangan na ng winterization bago huma
 
 Mula pa noong 1947, nagsisilbi na kami sa mga boat owner sa Ontario. Family-owned, Mercury-certified, at kayang maghintay kahit may kaunting translation challenge. Sama-sama nating siguraduhing laging handang umandar ang bangka mo.
 
+## Mga kaugnay na gabay
+
+- [First-time fishing sa Rice Lake mula Toronto: Family Guide](/blog/tl/first-time-fishing-rice-lake-tagalog-family-guide)
+
 ## FAQs
 
 ### Saan makakahanap ng mekaniko ng bangka sa Toronto?

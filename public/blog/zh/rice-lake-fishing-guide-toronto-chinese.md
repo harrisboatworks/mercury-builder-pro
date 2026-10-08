@@ -208,6 +208,11 @@ Harris Boat Works 自 1947 年起由家族经营，现已传至第三代。
 
 Harris Boat Works 目前是 Mercury Marine Premier 认证经销商。
 
+## 相关指南
+
+- [多伦多出发钓鱼去哪：莱斯湖、Lake Simcoe、Kawarthas 怎么选](/blog/zh/toronto-fishing-rice-lake-vs-lake-simcoe-kawarthas)
+- [Lake Simcoe 华人钓友船外机指南](/blog/zh/chinese-anglers-lake-simcoe-mercury-outboard)
+
 ## FAQs
 
 ### Rice Lake可以吃到的鱼安全吗？

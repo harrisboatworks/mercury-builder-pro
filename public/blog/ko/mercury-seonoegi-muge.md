@@ -97,6 +97,13 @@ revenue_driver: repower
 Harris Boat Works는 1947년부터 운영된 가족 기업이며, 1965년부터 머큐리 딜러, 현재 머큐리 Premier 딜러입니다. 온타리오주 고어스 랜딩, 라이스 레이크.
 ---
 
+## 관련 가이드
+
+- [Mercury 115 vs 150 HP 비교 가이드: 어떤 선외기가 내 보트에 맞을까?](/blog/ko/mercury-115-vs-150-comparison)
+- [머큐리 Pro XS, FourStroke, Verado: 무엇을 고를까?](/blog/ko/mercury-pro-xs-fourstroke-verado)
+- [머큐리 Avator 전동 선외기: 가격과 항속거리](/blog/ko/mercury-avator-jeondong-seonoegi)
+- [온타리오 보트 구매 완전 가이드: 첫 보트부터 엔진 교체까지](/blog/ko/ontario-boat-buying-guide)
+
 ## FAQs
 
 ### 머큐리 115 4행정의 무게는 얼마인가요?

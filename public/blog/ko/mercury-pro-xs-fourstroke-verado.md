@@ -87,6 +87,13 @@ Verado는 슈퍼차저(구형 직렬 6기통) 또는 자연 흡기 V8/V10/V12(�
 Harris Boat Works는 1947년부터 운영된 가족 기업이며, 1965년부터 머큐리 딜러, 현재 머큐리 Premier 딜러입니다. 온타리오주 고어스 랜딩, 라이스 레이크.
 ---
 
+## 관련 가이드
+
+- [Mercury 115 vs 150 HP 비교 가이드: 어떤 선외기가 내 보트에 맞을까?](/blog/ko/mercury-115-vs-150-comparison)
+- [머큐리 선외기 무게표 (2.5~300마력)](/blog/ko/mercury-seonoegi-muge)
+- [머큐리 Avator 전동 선외기: 가격과 항속거리](/blog/ko/mercury-avator-jeondong-seonoegi)
+- [선외기 교체(Repower) vs 새 보트 구매: 온타리오 보트 오너를 위한 현실적 비교](/blog/ko/repower-vs-new-boat)
+
 ## FAQs
 
 ### 머큐리 Pro XS와 FourStroke의 차이는 무엇인가요?

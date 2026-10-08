@@ -298,6 +298,13 @@ Harris Boat Works 目前是 Mercury Marine Premier Dealer。
 
 电话：905-342-2153
 
+## 相关指南
+
+- [多伦多华人 Mercury 发动机维修保养完整指南：从机油到大修](/blog/zh/gta-chinese-mercury-service-guide)
+- [Mercury 船外机故障排查中文指南](/blog/zh/mercury-outboard-troubleshooting-chinese-ontario)
+- [安省华人船主春季开船检查清单](/blog/zh/ontario-spring-boat-checklist-chinese)
+- [多伦多华人 Mercury 船外机马力选择指南：9.9、20、60、115、150HP 怎么选？](/blog/zh/mercury-outboard-horsepower-guide-toronto-chinese)
+
 ## FAQs
 
 ### 我的 Mercury 手册写 91 号，在加拿大要加 premium 吗？

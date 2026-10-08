@@ -105,6 +105,7 @@ Tarification CAD en direct sur chaque famille Mercury (sauf Verado, qui est soum
 
 ## Guides connexes
 
+- [Concessionnaire Mercury Premier en Ontario](/blog/fr/concessionnaire-mercury-premier-ontario)
 - [Combien coûte une remotorisation Mercury en Ontario?](/blog/fr/prix-remotorisation-mercury-ontario): Le prix d'une remotorisation Mercury en Ontario varie selon la puissance, la longueur de l'arbre, le câblage.
 - [Remotorisation Mercury dans la GTA : comment un plaisancier de Toronto remotorise chez Harris Boat Works (2026)](/blog/fr/remotorisation-mercury-gta-toronto): Un parcours étape par étape sur la façon dont un plaisancier de la GTA remotorise un bateau chez Harris Boat.
 - [Remotorisation ou achat d'un bateau neuf : Quelle est la meilleure option?](/blog/fr/remotorisation-vs-bateau-neuf): Guide comparatif pour vous aider à décider entre remotoriser votre embarcation actuelle avec un moteur.

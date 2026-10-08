@@ -147,7 +147,7 @@ Parks Canada lists a minimum overhead fixed bridge clearance of 20 feet (6.1 m).
 
 ---
 
-![Pleasure boat in Trent-Severn Waterway lock chamber mid-fill](/lovable-uploads/inline/inline-trent-severn-lock-chamber.png)
+![Varnished wooden vintage runabout with a white outboard tied to a stone lock wall in front of weathered wooden gates](/lovable-uploads/inline/inline-trent-severn-lock-chamber.png)
 
 ## Fees Outside the Free Window
 

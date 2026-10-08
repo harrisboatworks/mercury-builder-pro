@@ -43,6 +43,12 @@ revenue_driver: rentals
 
 完整版內容（包括預訂方式、出發前的法規與安全檢查，以及租船與自帶船的選擇）請看 [簡體版](/blog/zh/gta-chinese-rice-lake-day-trip-plan)。
 
+## 相關指南
+
+- [多倫多華人第一次租船釣魚：證件、安全和當天流程](/blog/zh-hant/first-boat-rental-rice-lake-chinese-guide)
+- [GTA 華人萊斯湖買船完整指南（繁體版）](/blog/zh-hant/gta-chinese-buy-boat-rice-lake-guide)
+- [安省船主冬季保養和冬儲清單：第一次過冬怎麼做](/blog/zh-hant/ontario-boat-winterization-guide-chinese)
+
 ## FAQs
 
 ### HBW 有中文服務嗎？

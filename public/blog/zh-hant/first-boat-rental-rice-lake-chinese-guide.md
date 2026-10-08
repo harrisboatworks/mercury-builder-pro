@@ -78,6 +78,13 @@ revenue_driver: rentals
 
 > 我們專門為華人朋友準備了這些中文指南，因為我們真心希望幫助華人船主和他們的家人朋友在 Rice Lake 享受划船的樂趣，這是很多其他船行沒有做的。說實話：我們的團隊使用英語服務。歡迎帶會英語的親友同來，或者用手機翻譯軟件，我們一定會耐心溝通、盡力配合。
 
+## 相關指南
+
+- [GTA 華人萊斯湖買船完整指南（繁體版）](/blog/zh-hant/gta-chinese-buy-boat-rice-lake-guide)
+- [GTA → 萊斯湖 一日遊地圖（繁體版）](/blog/zh-hant/gta-chinese-rice-lake-day-trip-plan)
+- [安省船主冬季保養和冬儲清單：第一次過冬怎麼做](/blog/zh-hant/ontario-boat-winterization-guide-chinese)
+- [PCOC、PCL、釣魚證區別：安省新手別搞混](/blog/zh-hant/pcoc-pcl-fishing-licence-difference-ontario)
+
 ## FAQs
 
 ### 必須有 PCOC 嗎？

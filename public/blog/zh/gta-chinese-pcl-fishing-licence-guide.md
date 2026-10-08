@@ -228,6 +228,10 @@ Rice Lake 属于安省 Fisheries Management Zone（FMZ），具体的鱼种季�
 
 地址：5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 
+## 相关指南
+
+- [安省驾船法规中文指南（2026）：PCOC、PCL、安全装备与钓鱼证](/blog/zh/ontario-boating-regulations-zh)
+
 ## FAQs
 
 ### 我有安省 G 牌驾照，是不是就不用考 PCOC 了？

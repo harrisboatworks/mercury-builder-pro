@@ -91,6 +91,11 @@ Harris Boat Works
 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 1947 سے خاندانی کاروبار، 1965 سے Mercury ڈیلر، آپ کی کشتی کی سمجھ بوجھ رکھنے والی جگہ۔
 
+## متعلقہ گائیڈز
+
+- [Boat winterization aur storage Toronto ke qareeb | کشتی کی ونٹرائزیشن اور اسٹوریج](/blog/ur/boat-winterization-storage-toronto-urdu)
+- [Ontario fishing licence aur Rice Lake ke usool | اونٹاریو فشنگ لائسنس گائیڈ](/blog/ur/ontario-fishing-licence-rice-lake-urdu)
+
 ## FAQs
 
 ### یوزڈ کشتی خریدتے وقت سب سے اہم چیز کیا ہے جسے چیک کیا جائے؟

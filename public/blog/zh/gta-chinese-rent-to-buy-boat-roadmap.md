@@ -151,6 +151,12 @@ HBW 网站说明提供租船、船只销售、保养维修、冬化保养、存�
 - [第一次买船：买新船，还是买二手后换装发动机？](/blog/zh/mercury-repower-guide-gta)
 - [买二手船避坑清单（GTA 地区适用）](/blog/zh/used-boat-buying-checklist-toronto-chinese)
 
+## 相关指南
+
+- [多伦多华人在 莱斯湖 买船完整指南：从选型到交付](/blog/zh/gta-chinese-buy-boat-rice-lake-guide)
+- [多伦多华人第一次租船钓鱼：证件、安全和当天流程](/blog/zh/first-boat-rental-rice-lake-chinese-guide)
+- [安省华人养船成本指南](/blog/zh/boat-ownership-cost-ontario-chinese)
+
 ## Next steps
 
 - Build your own Mercury quote: https://www.mercuryrepower.ca/quote/motor-selection
