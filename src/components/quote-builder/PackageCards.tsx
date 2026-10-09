@@ -2,6 +2,10 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { money } from "@/lib/money";
 import { calculateMonthlyPayment, DEALERPLAN_FEE, formatFinancingEstimateLine } from "@/lib/finance";
+import {
+  resolveSelectedPromotionFinancing,
+  type PromotionFinancingMinimum,
+} from "@/lib/promotion-financing";
 import { cn } from "@/lib/utils";
 import { useHapticFeedback } from '@/hooks/useHapticFeedback';
 import { useSound } from '@/contexts/SoundContext';
@@ -54,8 +58,11 @@ type PackageCardsProps = {
   options: PackageOption[];
   onSelect: (id: string) => void;
   selectedId?: string;
-  promoRate?: number | null; // Promotional financing rate (null = use tiered defaults)
-  promoTerm?: number | null; // Required when a short-term promo rate is selected
+  promoRate?: number | null; // Selected special-financing rate (gated per card amount)
+  promoTerm?: number | null; // Selected special-financing term (gated per card amount)
+  selectedPromoOption?: string | null;
+  specialFinancingOption?: PromotionFinancingMinimum;
+  standingRate?: number | null;
   showUpgradeDeltas?: boolean; // Enable comparison mode
   basePackageId?: string; // Package to compare against (default: first package)
   revealComplete?: boolean; // Whether cinematic reveal has completed (triggers stagger animation)
@@ -69,6 +76,9 @@ export function PackageCards({
   selectedId,
   promoRate = null,
   promoTerm = null,
+  selectedPromoOption = null,
+  specialFinancingOption,
+  standingRate = null,
   showUpgradeDeltas = true,
   basePackageId,
   revealComplete = true,
@@ -78,11 +88,23 @@ export function PackageCards({
   const { triggerHaptic } = useHapticFeedback();
   const { playPackageSelect } = useSound();
   const isDark = variant === 'dark';
+
+  const estimateForAmount = (amountToFinance: number) => {
+    const resolved = resolveSelectedPromotionFinancing({
+      selectedPromoOption,
+      selectedPromoRate: promoRate,
+      selectedPromoTerm: promoTerm,
+      specialFinancingOption,
+      amount: amountToFinance,
+      standingRate,
+    });
+    return calculateMonthlyPayment(amountToFinance, resolved.rate, resolved.term);
+  };
   
   // Find base package for comparison (default to first/Essential)
   const basePackage = options.find(p => p.id === (basePackageId || 'good')) || options[0];
   const baseAmountToFinance = (basePackage.priceBeforeTax * 1.13) + DEALERPLAN_FEE;
-  const baseMonthly = basePackage.monthly ?? calculateMonthlyPayment(baseAmountToFinance, promoRate, promoTerm).payment;
+  const baseMonthly = basePackage.monthly ?? estimateForAmount(baseAmountToFinance).payment;
   const baseCoverageYears = basePackage.coverageYears || 3;
 
   return (
@@ -95,7 +117,7 @@ export function PackageCards({
     >
       {options.map((p) => {
         const amountToFinance = (p.priceBeforeTax * 1.13) + DEALERPLAN_FEE;
-        const estimate = calculateMonthlyPayment(amountToFinance, promoRate, promoTerm);
+        const estimate = estimateForAmount(amountToFinance);
         const monthly = p.monthly ?? estimate.payment;
         const isSelected = selectedId === p.id;
         const isBase = p.id === (basePackageId || 'good');

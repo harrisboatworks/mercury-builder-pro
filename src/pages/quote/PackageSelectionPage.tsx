@@ -13,6 +13,7 @@ import { useQuote } from '@/contexts/QuoteContext';
 import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { calculateMonthlyPayment, DEALERPLAN_FEE, isUsableFinancingRate } from '@/lib/finance';
+import { resolveSelectedPromotionFinancing } from '@/lib/promotion-financing';
 import { calculateQuotePricing, promoEndOfDay } from '@/lib/quote-utils';
 import { resolveAppliedTradeValue } from '@/lib/trade-credit';
 import {
@@ -63,7 +64,7 @@ export default function PackageSelectionPage() {
     error: promotionsError,
     getPromotionSavingsForMotor,
     getRebateForHP,
-    getSpecialFinancingRates,
+    getPromotionOptions,
   } = useActivePromotions({ motor: state.motor });
   const promotionsReady = !promotionsLoading && !promotionsError;
   
@@ -77,39 +78,20 @@ export default function PackageSelectionPage() {
     dispatch({ type: 'SET_SELECTED_PACKAGE', payload: null });
   }, [dispatch]);
 
-  // Calculate effective promo rate based on user's promo selection
-  const effectivePromoRate = useMemo(() => {
-    if (state.selectedPromoOption === 'special_financing') {
-      const rates = getSpecialFinancingRates();
-      return isUsableFinancingRate(rates?.[0]?.rate) ? rates[0].rate : null;
-    }
-    return isUsableFinancingRate(promo?.rate) ? promo.rate : null;
-  }, [state.selectedPromoOption, getSpecialFinancingRates, promo?.rate]);
-  const effectivePromoTerm = useMemo(() => {
-    if (state.selectedPromoOption === 'special_financing') {
-      const months = getSpecialFinancingRates()?.[0]?.months;
-      return typeof months === 'number' && Number.isFinite(months) ? months : null;
-    }
-    return null;
-  }, [state.selectedPromoOption, getSpecialFinancingRates]);
+  const specialFinancingOption = getPromotionOptions().find(option => option.id === 'special_financing');
+  const standingRate = isUsableFinancingRate(promo?.rate) ? promo.rate : null;
 
-  // Create promo message for nudge bars
-  const promoMessage = useMemo(() => {
-    switch (state.selectedPromoOption) {
-      case 'special_financing': {
-        const rates = getSpecialFinancingRates();
-        return `Keeps ${isUsableFinancingRate(rates?.[0]?.rate) ? rates[0].rate : 2.99}% APR`;
-      }
-      case 'no_payments':
-        return 'Keeps 6 Mo. No Payments';
-      case 'cash_rebate':
-        return hasEligibleFactoryRebate(getRebateForHP(state.motor?.hp || 0))
-          ? 'Keeps your rebate'
-          : undefined;
-      default:
-        return undefined;
-    }
-  }, [getRebateForHP, state.motor?.hp, state.selectedPromoOption, getSpecialFinancingRates]);
+  const resolvePackageFinancing = (priceBeforeTax: number) => {
+    const amountToFinance = (priceBeforeTax * 1.13) + DEALERPLAN_FEE;
+    return resolveSelectedPromotionFinancing({
+      selectedPromoOption: state.selectedPromoOption,
+      selectedPromoRate: state.selectedPromoRate,
+      selectedPromoTerm: state.selectedPromoTerm,
+      specialFinancingOption,
+      amount: amountToFinance,
+      standingRate,
+    });
+  };
 
   // Get promo end date for countdown
   const promoEndDate = promotions?.[0]?.end_date ? promoEndOfDay(promotions[0].end_date) : null;
@@ -324,23 +306,37 @@ export default function PackageSelectionPage() {
   const completePackage = packages.find(p => p.id === 'better') || essentialPackage;
   const premiumPackage = packages.find(p => p.id === 'best') || completePackage;
 
-  const essentialMonthly = calculateMonthlyPayment(
-    (essentialPackage.priceBeforeTax * 1.13) + DEALERPLAN_FEE,
-    effectivePromoRate,
-    effectivePromoTerm,
-  ).payment;
-  
-  const completeMonthly = calculateMonthlyPayment(
-    (completePackage.priceBeforeTax * 1.13) + DEALERPLAN_FEE,
-    effectivePromoRate,
-    effectivePromoTerm,
-  ).payment;
-  
-  const premiumMonthly = calculateMonthlyPayment(
-    (premiumPackage.priceBeforeTax * 1.13) + DEALERPLAN_FEE,
-    effectivePromoRate,
-    effectivePromoTerm,
-  ).payment;
+  const paymentForPackage = (priceBeforeTax: number) => {
+    const amountToFinance = (priceBeforeTax * 1.13) + DEALERPLAN_FEE;
+    const resolved = resolvePackageFinancing(priceBeforeTax);
+    return calculateMonthlyPayment(amountToFinance, resolved.rate, resolved.term).payment;
+  };
+
+  const essentialMonthly = paymentForPackage(essentialPackage.priceBeforeTax);
+  const completeMonthly = paymentForPackage(completePackage.priceBeforeTax);
+  const premiumMonthly = paymentForPackage(premiumPackage.priceBeforeTax);
+
+  const promoMessage = (() => {
+    switch (state.selectedPromoOption) {
+      case 'special_financing': {
+        const selectedPkg = packages.find(p => p.id === selectedPackage);
+        if (!selectedPkg || !resolvePackageFinancing(selectedPkg.priceBeforeTax).usesSpecialFinancing) {
+          return undefined;
+        }
+        return isUsableFinancingRate(state.selectedPromoRate)
+          ? `Keeps ${state.selectedPromoRate}% APR`
+          : undefined;
+      }
+      case 'no_payments':
+        return 'Keeps 6 Mo. No Payments';
+      case 'cash_rebate':
+        return hasEligibleFactoryRebate(getRebateForHP(state.motor?.hp || 0))
+          ? 'Keeps your rebate'
+          : undefined;
+      default:
+        return undefined;
+    }
+  })();
 
   const monthlyDeltaToComplete = completeMonthly - essentialMonthly;
   const coverageGainToComplete = (completePackage.coverageYears || COMPLETE_TARGET_YEARS) - (essentialPackage.coverageYears || currentCoverageYears);
@@ -529,8 +525,11 @@ export default function PackageSelectionPage() {
                   options={packages}
                   selectedId={selectedPackage}
                   onSelect={handlePackageSelect}
-                  promoRate={effectivePromoRate}
-                  promoTerm={effectivePromoTerm}
+                  selectedPromoOption={state.selectedPromoOption}
+                  promoRate={state.selectedPromoRate}
+                  promoTerm={state.selectedPromoTerm}
+                  specialFinancingOption={specialFinancingOption}
+                  standingRate={standingRate}
                   showUpgradeDeltas={true}
                   revealComplete={true}
                   variant="dark"

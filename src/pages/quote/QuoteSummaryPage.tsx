@@ -1,4 +1,4 @@
-import { meetsPromotionFinancingMinimum } from '@/lib/promotion-financing';
+import { meetsPromotionFinancingMinimum, resolveSelectedPromotionFinancing } from '@/lib/promotion-financing';
 import { formatFactoryRebateDisplayAmount } from '@/lib/factory-rebate-copy';
 import { useEffect, useState, useMemo, useRef, useCallback } from 'react';
 import { calculateRunningTotal } from '@/hooks/useQuoteRunningTotal';
@@ -33,7 +33,7 @@ import { useQuote } from '@/contexts/QuoteContext';
 import { useAuth } from '@/components/auth/AuthProvider';
 import { AdminQuoteControls } from '@/components/admin/AdminQuoteControls';
 import { Bookmark, CreditCard, Download } from 'lucide-react';
-import { computeTotals, calculateMonthlyPayment, getFinancingTerm, DEALERPLAN_FEE, FINANCING_MINIMUM, isUsableFinancingRate } from '@/lib/finance';
+import { computeTotals, calculateMonthlyPayment, getFinancingTerm, DEALERPLAN_FEE, FINANCING_MINIMUM } from '@/lib/finance';
 import { calculateQuotePricing, getFinanceableAmount, promoEndOfDay } from '@/lib/quote-utils';
 import { resolveAppliedTradeValue } from '@/lib/trade-credit';
 import { calculateFinancingPurchase, FINANCING_PRICE_BASIS_ALL_IN_AFTER_TRADE } from '@/lib/financing-purchase';
@@ -475,13 +475,18 @@ export default function QuoteSummaryPage() {
   // If the customer opted in to promotional financing on PromoSelectionPage,
   // use that rate/term for the monthly payment displayed in the summary.
   // Otherwise fall back to the TD "Always On" promo rate (unchanged).
-  const usePromoFinancing =
-    state.selectedPromoOption === 'special_financing' &&
-    state.selectedPromoRate != null &&
-    state.selectedPromoTerm != null &&
-    meetsPromotionFinancingMinimum(getPromotionOptions().find(option => option.id === 'special_financing'), amountToFinance);
-  const effectiveRate = usePromoFinancing ? state.selectedPromoRate : (isUsableFinancingRate(promo?.rate) ? promo.rate : null);
-  const effectiveTerm = usePromoFinancing ? state.selectedPromoTerm : null;
+  const {
+    rate: effectiveRate,
+    term: effectiveTerm,
+    usesSpecialFinancing: usePromoFinancing,
+  } = resolveSelectedPromotionFinancing({
+    selectedPromoOption: state.selectedPromoOption,
+    selectedPromoRate: state.selectedPromoRate,
+    selectedPromoTerm: state.selectedPromoTerm,
+    specialFinancingOption: getPromotionOptions().find(option => option.id === 'special_financing'),
+    amount: amountToFinance,
+    standingRate: promo?.rate,
+  });
   const { payment: monthlyPayment, termMonths, rate: financingRate } = calculateMonthlyPayment(amountToFinance, effectiveRate, effectiveTerm);
 
   const quoteValidUntil = useMemo(() => {

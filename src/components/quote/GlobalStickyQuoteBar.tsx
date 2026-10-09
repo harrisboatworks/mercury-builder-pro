@@ -4,6 +4,7 @@ import { useQuote } from '@/contexts/QuoteContext';
 import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { calculateMonthlyPayment, DEALERPLAN_FEE, FINANCING_MINIMUM, isUsableFinancingRate } from '@/lib/finance';
+import { resolveSelectedPromotionFinancing } from '@/lib/promotion-financing';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { useQuoteRunningTotal } from '@/hooks/useQuoteRunningTotal';
 import StickyQuoteBar from './StickyQuoteBar';
@@ -63,18 +64,22 @@ export function GlobalStickyQuoteBar() {
 
     // Add Dealerplan fee
     const priceWithFee = runningTotal + DEALERPLAN_FEE;
-    const useSelectedPromo =
-      state.selectedPromoOption === 'special_financing' &&
-      isUsableFinancingRate(state.selectedPromoRate) &&
-      typeof state.selectedPromoTerm === 'number';
-    const promoRate = useSelectedPromo
-      ? state.selectedPromoRate
-      : (isUsableFinancingRate(promo?.rate) ? promo.rate : null);
-    const promoTerm = useSelectedPromo ? state.selectedPromoTerm : null;
+    const resolved = resolveSelectedPromotionFinancing({
+      selectedPromoOption: state.selectedPromoOption,
+      selectedPromoRate: state.selectedPromoRate,
+      selectedPromoTerm: state.selectedPromoTerm,
+      specialFinancingOption: getPromotionOptions().find(option => option.id === 'special_financing'),
+      amount: priceWithFee,
+      standingRate: promo?.rate,
+    });
 
-    return calculateMonthlyPayment(priceWithFee, promoRate, promoTerm);
-  }, [runningTotal, promo, state.selectedPaymentMethod, state.selectedPromoOption, state.selectedPromoRate, state.selectedPromoTerm]);
+    return {
+      ...calculateMonthlyPayment(priceWithFee, resolved.rate, resolved.term),
+      usesSpecialFinancing: resolved.usesSpecialFinancing,
+    };
+  }, [runningTotal, promo, state.selectedPaymentMethod, state.selectedPromoOption, state.selectedPromoRate, state.selectedPromoTerm, getPromotionOptions]);
   const monthlyPayment = financingEstimate?.payment ?? null;
+  const usesSpecialFinancing = financingEstimate?.usesSpecialFinancing === true;
 
   // Financing unavailable when total is valid but below threshold
   const financingUnavailable = useMemo(() => {
@@ -105,6 +110,7 @@ export function GlobalStickyQuoteBar() {
       case 'no_payments':
         return '6 Mo. No Payments';
       case 'special_financing': {
+        if (!usesSpecialFinancing) return null;
         const rates = getSpecialFinancingRates?.();
         const lowestRate = rates?.[0]?.rate;
         return isUsableFinancingRate(lowestRate) ? `${lowestRate}% APR (OAC)` : null;
@@ -114,7 +120,7 @@ export function GlobalStickyQuoteBar() {
       default:
         return null;
     }
-  }, [state.selectedPromoOption, state.motor?.hp, getRebateForHP, getSpecialFinancingRates]);
+  }, [state.selectedPromoOption, state.motor?.hp, getRebateForHP, getSpecialFinancingRates, usesSpecialFinancing]);
 
   // Determine promo-or-summary destination
   const hasActivePromotionOptions = getPromotionOptions().length > 0;
@@ -168,7 +174,7 @@ export function GlobalStickyQuoteBar() {
       onPrimary={handlePrimary}
       secondaryLabel="View Summary"
       onSecondary={handleSecondary}
-      selectedPromoOption={state.selectedPromoOption}
+      selectedPromoOption={state.selectedPromoOption === 'special_financing' && !usesSpecialFinancing ? null : state.selectedPromoOption}
       selectedPromoDisplay={selectedPromoDisplay}
       financingUnavailable={financingUnavailable}
       primaryDisabled={gate.disabled}

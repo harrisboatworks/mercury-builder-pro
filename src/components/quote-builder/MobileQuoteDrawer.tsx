@@ -6,7 +6,8 @@ import { useQuote } from '@/contexts/QuoteContext';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { useQuoteRunningTotal } from '@/hooks/useQuoteRunningTotal';
-import { calculateMonthlyPayment, DEALERPLAN_FEE, FINANCING_MINIMUM, formatFinancingEstimateLine, isUsableFinancingRate } from '@/lib/finance';
+import { calculateMonthlyPayment, DEALERPLAN_FEE, FINANCING_MINIMUM, formatFinancingEstimateLine } from '@/lib/finance';
+import { resolveSelectedPromotionFinancing } from '@/lib/promotion-financing';
 import { money } from '@/lib/money';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
@@ -28,7 +29,7 @@ export const MobileQuoteDrawer: React.FC<MobileQuoteDrawerProps> = ({ isOpen, on
   const navigate = useNavigate();
   const location = useLocation();
   const { state } = useQuote();
-  const { promotions, getRebateForHP } = useActivePromotions({ motor: state.motor });
+  const { promotions, getRebateForHP, getPromotionOptions } = useActivePromotions({ motor: state.motor });
   const { promo: financingPromo } = useActiveFinancingPromo();
   const { triggerHaptic } = useHapticFeedback();
 
@@ -50,14 +51,14 @@ export const MobileQuoteDrawer: React.FC<MobileQuoteDrawerProps> = ({ isOpen, on
     if (!displayMotor || total === 0) return null;
 
     const totalWithFee = total + DEALERPLAN_FEE;
-    const useSelectedPromo =
-      state.selectedPromoOption === 'special_financing' &&
-      isUsableFinancingRate(state.selectedPromoRate) &&
-      typeof state.selectedPromoTerm === 'number';
-    const promoRate = useSelectedPromo
-      ? state.selectedPromoRate
-      : (isUsableFinancingRate(financingPromo?.rate) ? financingPromo.rate : null);
-    const promoTerm = useSelectedPromo ? state.selectedPromoTerm : null;
+    const { rate: promoRate, term: promoTerm } = resolveSelectedPromotionFinancing({
+      selectedPromoOption: state.selectedPromoOption,
+      selectedPromoRate: state.selectedPromoRate,
+      selectedPromoTerm: state.selectedPromoTerm,
+      specialFinancingOption: getPromotionOptions().find(option => option.id === 'special_financing'),
+      amount: totalWithFee,
+      standingRate: financingPromo?.rate,
+    });
     const { payment: monthly, termMonths, rate } = calculateMonthlyPayment(totalWithFee, promoRate, promoTerm);
 
     return {
@@ -71,7 +72,7 @@ export const MobileQuoteDrawer: React.FC<MobileQuoteDrawerProps> = ({ isOpen, on
       rate,
       financingUnavailable: total < FINANCING_MINIMUM,
     };
-  }, [displayMotor, total, subtotal, hst, taxSaving, lineItems, financingPromo, state.selectedPromoOption, state.selectedPromoRate, state.selectedPromoTerm]);
+  }, [displayMotor, total, subtotal, hst, taxSaving, lineItems, financingPromo, state.selectedPromoOption, state.selectedPromoRate, state.selectedPromoTerm, getPromotionOptions]);
 
   // Get package info - dynamically based on promo years
   const packageInfo = useMemo(() => {
