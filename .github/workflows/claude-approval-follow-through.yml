@@ -32,6 +32,8 @@ jobs:
         with:
           ref: refs/heads/main
           persist-credentials: false
+          sparse-checkout: scripts/claude-approved-automerge.cjs
+          sparse-checkout-cone-mode: false
       - uses: actions/github-script@v7
         with:
           script: |
