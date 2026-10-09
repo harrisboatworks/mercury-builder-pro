@@ -20,6 +20,8 @@ import { COMPANY_INFO } from '@/lib/companyInfo';
 import { RepowerHeader } from '@/components/repower/RepowerHeader';
 import { ContactPageSEO } from '@/components/seo/ContactPageSEO';
 import { SiteFooter } from '@/components/ui/site-footer';
+import { OpeningHoursDisplay } from '@/components/business/OpeningHoursDisplay';
+import { useGooglePlaceData } from '@/hooks/useGooglePlaceData';
 import {
   Mail,
   Phone,
@@ -65,6 +67,7 @@ const inquiryTypes = [
 
 export default function Contact() {
   const { user } = useAuth();
+  const { data: placeData, isLoading: hoursLoading, error: hoursError } = useGooglePlaceData();
   const [step, setStep] = useState(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -423,7 +426,6 @@ export default function Contact() {
                   <Phone className="w-5 h-5 text-repower-mercury-red mt-0.5" strokeWidth={1.5} />
                   <div>
                     <p className="font-medium text-repower-navy-900">{COMPANY_INFO.contact.phone}</p>
-                    <p className="text-sm text-repower-navy-900/60">Mon–Sat 8 AM – 5 PM · Sun 9 AM – 4 PM (in-season)</p>
                   </div>
                 </div>
 
@@ -434,6 +436,22 @@ export default function Contact() {
                   <div>
                     <p className="font-medium text-repower-navy-900">{COMPANY_INFO.contact.email}</p>
                     <p className="text-sm text-repower-navy-900/60">We respond within 1 business day</p>
+                  </div>
+                </div>
+
+                <Separator className="bg-repower-navy-900/10" />
+
+                <div className="flex items-start gap-3">
+                  <Clock className="w-5 h-5 text-repower-mercury-red mt-0.5" strokeWidth={1.5} />
+                  <div>
+                    <p className="font-medium text-repower-navy-900">Hours</p>
+                    <div className="mt-1">
+                      <OpeningHoursDisplay
+                        openingHours={placeData?.openingHours}
+                        loading={hoursLoading}
+                        error={!!hoursError}
+                      />
+                    </div>
                   </div>
                 </div>
 
