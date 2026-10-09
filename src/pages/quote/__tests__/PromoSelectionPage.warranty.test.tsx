@@ -57,12 +57,13 @@ vi.mock('@/contexts/QuoteContext', () => ({
 }));
 
 let currentPromotions: any[] = [];
+let rebateForHP: number | null = 500;
 vi.mock('@/hooks/useActivePromotions', () => ({
   useActivePromotions: () => ({
     promotions: currentPromotions,
     loading: false,
-    getRebateForHP: () => 500,
-    getPromotionSavingsForMotor: () => 500,
+    getRebateForHP: () => rebateForHP,
+    getPromotionSavingsForMotor: () => rebateForHP || 0,
     getSpecialFinancingRates: () => [
       { months: 24, rate: 2.99 },
       { months: 36, rate: 3.99 },
@@ -94,6 +95,7 @@ function makePromo(overrides: Partial<any> = {}) {
 beforeEach(() => {
   dispatchMock.mockClear();
   navigateMock.mockClear();
+  rebateForHP = 500;
   currentQuoteState = { ...baseQuoteState };
 });
 
@@ -374,5 +376,82 @@ describe('PromoSelectionPage — warranty copy + saved-quote contract', () => {
     render(<PromoSelectionPage />);
 
     expect(screen.getByText(/Offer ends August 31, 2026/i)).toBeInTheDocument();
+  });
+
+  it('never claims a factory rebate is applied for a 115 Pro XS without a tier', () => {
+    rebateForHP = 0;
+    currentQuoteState = {
+      ...baseQuoteState,
+      motor: { hp: 115, model: '115 Pro XS', salePrice: 17490, price: 17490 },
+    };
+    currentPromotions = [makePromo({
+      warranty_extra_years: 0,
+      promo_options: {
+        type: 'layered',
+        options: [{ id: 'cash_rebate' }, { id: 'special_financing' }],
+      },
+    })];
+
+    render(<PromoSelectionPage />);
+
+    expect(screen.queryByText(/remains fully applied/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/auto-applied/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/your rebate/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/factory rebate/i)).not.toBeInTheDocument();
+    expect(screen.getByRole('radio', { name: /Cash Purchase/i })).toHaveTextContent('Pay without financing.');
+    expect(screen.getByRole('radio', { name: /Promotional Financing/i })).toHaveTextContent(
+      'Pick promo financing to lock in a low promotional rate',
+    );
+    expect(screen.getByRole('radio', { name: /^Standard TD Financing/i })).toHaveTextContent(
+      'Use the standard TD "Always On" program.',
+    );
+
+    fireEvent.click(screen.getByRole('radio', { name: /Cash Purchase/i }));
+    expect(dispatchMock).toHaveBeenCalledWith({
+      type: 'SET_PROMO_DETAILS',
+      payload: {
+        option: null,
+        rate: null,
+        term: null,
+        value: null,
+      },
+    });
+  });
+
+  it('still shows the applied factory rebate and amount for a 2.5–30 hp motor with a tier', () => {
+    rebateForHP = 400;
+    currentQuoteState = {
+      ...baseQuoteState,
+      motor: { hp: 25, model: '25 ELH FourStroke', salePrice: 6200, price: 6200 },
+    };
+    currentPromotions = [makePromo({
+      warranty_extra_years: 0,
+      promo_options: {
+        type: 'layered',
+        options: [{ id: 'cash_rebate' }, { id: 'special_financing' }],
+      },
+    })];
+
+    render(<PromoSelectionPage />);
+
+    expect(screen.getByText(/Factory Rebate: \$400 auto-applied/i)).toBeInTheDocument();
+    expect(screen.getByText(/Based on 25 HP/i)).toBeInTheDocument();
+    expect(screen.getByRole('radio', { name: /Cash Purchase/i })).toHaveTextContent(
+      'eligible factory rebate remains fully applied',
+    );
+    expect(screen.getByRole('radio', { name: /^Standard TD Financing/i })).toHaveTextContent(
+      'eligible factory rebate remains fully applied',
+    );
+
+    fireEvent.click(screen.getByRole('radio', { name: /Cash Purchase/i }));
+    expect(dispatchMock).toHaveBeenCalledWith({
+      type: 'SET_PROMO_DETAILS',
+      payload: {
+        option: 'cash_rebate',
+        rate: null,
+        term: null,
+        value: '$400 rebate',
+      },
+    });
   });
 });

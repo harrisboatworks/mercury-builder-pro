@@ -34,7 +34,7 @@ const getPromoLabel = (option: string, value: string): string => {
   switch (option) {
     case 'no_payments': return '6 Mo. Deferred';
     case 'special_financing': return `${value} APR`;
-    case 'cash_rebate': return `${value} Rebate`;
+    case 'cash_rebate': return value && !/^\$?0(?:\.0+)?$/.test(value.trim()) ? `${value} Rebate` : '';
     default: return value;
   }
 };

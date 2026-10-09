@@ -1628,7 +1628,7 @@ ${financingPromo
 - Financing is ONLY available for purchases of $5,000 or more (before tax).
 - This standard offer does NOT cancel or supersede promotional financing listed in CURRENT PROMOTIONS.
 - When a customer asks about a financing rate named in CURRENT PROMOTIONS, quote that exact promotional APR and term and explain its relationship to the rebate from the offer structure. Use this standard offer for customers who do not qualify for the promotion or want a different term.
-- Example: if CURRENT PROMOTIONS says a layered rebate plus 2.99% APR for 24 months, answer that the eligible rebate applies and 2.99% for 24 months is optional OAC. Never call that promotion rate inactive because the standard rate is also loaded.
+- Example: if CURRENT PROMOTIONS says a layered rebate plus 2.99% APR for 24 months, answer that a factory rebate applies only when the motor matches a published tier, and 2.99% for 24 months is optional OAC. Never say a factory rebate is applied for a motor with no matching tier. Never call that promotion rate inactive because the standard rate is also loaded.
 
 ## BOAT LICENSE / PCOC
 If anyone asks about boat licenses, PCOC, or operator cards:

@@ -17,6 +17,7 @@ import {
 } from '@/components/ui/drawer';
 import { formatMotorTitle } from '@/lib/card-title';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
+import { hasEligibleFactoryRebate } from '@/lib/factory-rebate-copy';
 import { formatPromoCalendarDate } from '@/lib/quote-utils';
 import { useQuote } from '@/contexts/QuoteContext';
 import {
@@ -49,7 +50,7 @@ export function FinanceCalculatorDrawer({ open, onOpenChange, motor }: FinanceCa
 
   // Use Quote context and Active Promotions for correct promo data
   const { state } = useQuote();
-  const { getSpecialFinancingRates, promotions } = useActivePromotions({ motor: motor });
+  const { getRebateForHP, getSpecialFinancingRates, promotions } = useActivePromotions({ motor: motor });
 
   // Get effective promo rate based on user's selection
   const effectivePromoRate = useMemo(() => {
@@ -266,7 +267,7 @@ export function FinanceCalculatorDrawer({ open, onOpenChange, motor }: FinanceCa
                 </div>
               </div>
             )}
-            {state.selectedPromoOption === 'cash_rebate' && (
+            {state.selectedPromoOption === 'cash_rebate' && hasEligibleFactoryRebate(getRebateForHP(motor.hp ?? 0)) && (
               <div className="p-3 bg-amber-500/10 rounded-lg text-sm border border-amber-500/20">
                 <div className="flex items-center gap-2 font-medium text-amber-600">
                   <DollarSign className="w-4 h-4" />

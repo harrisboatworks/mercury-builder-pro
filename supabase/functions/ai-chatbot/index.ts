@@ -564,7 +564,7 @@ Gores Landing, ON K0K 2E0
 - Use ONLY the active promotion data shown above (name, dates, bonus details). Do NOT reference retired promos by name.
 - If a rebate matrix is present, match the customer's HP to the exact amount listed.
 - If promotional financing is listed, quote its exact APR and term from the promotion data. A separate standard financing offer does not make it inactive.
-- Respect the offer structure: layered means the eligible rebate applies and financing is optional; choose-one means the customer must select one benefit.
+- Respect the offer structure: layered means a factory rebate applies only when the motor matches a published rebate tier, and financing is then optional; choose-one means the customer must select one benefit. Never say a factory rebate is applied when the motor has no matching tier.
 - Direct to /promotions for full details or the quote builder to see it applied.
 
 ### Rebate Questions:

@@ -5,6 +5,7 @@ import { CountdownTimer } from '@/components/ui/countdown-timer';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { getAppliedPromotion, getWarrantyDisplayFromAppliedPromotion } from '@/lib/warranty-display';
 import { cn } from '@/lib/utils';
+import { formatFactoryRebateBadgeValue } from '@/lib/factory-rebate-copy';
 import { isUsableFinancingRate } from '@/lib/finance';
 import mercuryLogo from '@/assets/mercury-logo.png';
 
@@ -61,8 +62,7 @@ export function PromoSelectionBadge({
         const lowestRate = isUsableFinancingRate(rates?.[0]?.rate) ? rates[0].rate : 2.99;
         return `${lowestRate}% APR`;
       case 'cash_rebate':
-        const rebate = getRebateForHP(motorHP) || 250;
-        return `$${rebate.toLocaleString()} Back`;
+        return formatFactoryRebateBadgeValue(getRebateForHP(motorHP));
       default:
         return '';
     }

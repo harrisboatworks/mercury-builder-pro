@@ -71,6 +71,39 @@ describe('promotion context', () => {
     expect(answer).toContain('loans over $5,000');
     expect(answer).toContain('60 HP');
     expect(answer).not.toContain('$400 CAD');
+    expect(answer).not.toMatch(/rebate applies automatically/i);
+    expect(answer).not.toMatch(/remains fully applied/i);
+  });
+
+  it('never claims a factory rebate is applied for a mid/high-HP motor without a tier', () => {
+    const portableOnly: PromotionRecord = {
+      ...summerSavings,
+      name: 'Chase the Savings',
+      promo_options: {
+        type: 'layered',
+        options: [
+          { id: 'cash_rebate', matrix: [
+            { hp_min: 2.5, hp_max: 3.5, rebate: 250 },
+            { hp_min: 4, hp_max: 9.9, rebate: 300 },
+            { hp_min: 15, hp_max: 20, rebate: 350 },
+            { hp_min: 25, hp_max: 30, rebate: 400 },
+          ] },
+          { id: 'special_financing', rates: [{ rate: 2.99, months: 24 }] },
+        ],
+      },
+    };
+
+    const answer = buildPromotionCustomerAnswer(
+      [portableOnly],
+      'Can I combine the 115 HP Pro XS rebate with financing?',
+    );
+
+    expect(answer).toContain('115 HP');
+    expect(answer).toContain('does not offer a portable rebate');
+    expect(answer).toContain('does not create a factory rebate for this horsepower');
+    expect(answer).not.toMatch(/rebate applies automatically/i);
+    expect(answer).not.toMatch(/remains fully applied/i);
+    expect(answer).not.toMatch(/\$\d/);
   });
   it('uses the canonical layered relationship and complete live facts', () => {
     const context = formatPromotionContext([summerSavings]);
@@ -78,11 +111,11 @@ describe('promotion context', () => {
     expect(getPromotionCombinationMode(summerSavings)).toBe('layered');
     expect(getPromotionRebateMatrix(summerSavings)).toHaveLength(2);
     expect(context).toContain('Offer structure: layered');
-    expect(context).toContain('The eligible rebate is automatic');
+    expect(context).toContain('A factory rebate is automatic only when the motor matches a published rebate tier');
     expect(context).toContain('30-115 HP: $250 CAD');
     expect(context).toContain('2.99% APR for 24 months (OAC');
     expect(context).toContain('A separate standard financing offer does not cancel');
-    expect(context).toContain('the eligible rebate applies and the customer may also choose');
+    expect(context).toContain('a factory rebate applies only when the motor matches a published rebate tier');
     expect(context).toContain('Warranty registration deadline: September 15, 2026');
     expect(context).toContain('Backorders do not qualify');
     expect(context).toContain('Avator');

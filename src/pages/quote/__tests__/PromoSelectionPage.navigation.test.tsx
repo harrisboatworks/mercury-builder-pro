@@ -55,6 +55,9 @@ describe('cash purchase routed navigation', () => {
     }
     render(<QuoteProvider><MemoryRouter initialEntries={['/quote/promo-selection']}><RoutedQuote /></MemoryRouter></QuoteProvider>);
     const cash = await screen.findByRole('radio', { name: /Cash Purchase/i });
+    expect(screen.queryByText(/remains fully applied/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/auto-applied/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/factory rebate/i)).not.toBeInTheDocument();
     expect(screen.getByTestId('route')).toHaveTextContent('/quote/promo-selection');
     expect(screen.queryByRole('radio', { name: /^Promotional Financing/i })).not.toBeInTheDocument();
     fireEvent.click(cash);

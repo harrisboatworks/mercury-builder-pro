@@ -38,6 +38,11 @@ const daysUntil = (dateStr: string | null): number => {
 
 const greeting = (name: string | null) => (name ? `Hi ${esc(name)},` : "Hi there,");
 
+function factoryRebateDisplayValue(metadata: { promoDisplayValue?: unknown } | null | undefined): string | null {
+  const value = typeof metadata?.promoDisplayValue === "string" ? metadata.promoDisplayValue.trim() : "";
+  return value && /\d/.test(value) ? value : null;
+}
+
 // ============ TEMPLATE BUILDERS ============
 
 // Step 2 (repower_guide): Day 3 - Winter Repower Benefits
@@ -133,7 +138,10 @@ function buildQuoteReminder(name: string | null, token: string, metadata: any): 
   let bonusLabel = "";
   if (metadata?.selectedPromoOption === "no_payments") bonusLabel = "6 months no payments";
   else if (metadata?.selectedPromoOption === "special_financing") bonusLabel = `Special financing at ${metadata.promoDisplayValue || "2.99% APR"}`;
-  else if (metadata?.selectedPromoOption === "cash_rebate") bonusLabel = `Factory cash rebate: ${metadata.promoDisplayValue || "up to $750"}`;
+  else if (metadata?.selectedPromoOption === "cash_rebate") {
+    const rebate = factoryRebateDisplayValue(metadata);
+    bonusLabel = rebate ? `Factory cash rebate: ${rebate}` : "";
+  }
 
   const rows = [
     { label: "Motor", valueHtml: motor },
@@ -190,13 +198,16 @@ function buildBonusFocus(name: string | null, token: string, metadata: any): { s
   let highlightValue = "Mercury bonus offer";
 
   if (option === "cash_rebate") {
-    const amt = esc(metadata?.promoDisplayValue || "$500");
-    subject = `Your ${amt} Mercury rebate is reserved`;
-    eyebrow = "Cash rebate";
-    heading = `Your ${amt} rebate is reserved`;
-    lead = `Quick reminder. Your ${esc(String(metadata?.motorHP || ""))}HP motor qualifies for a <strong>${amt} factory cash rebate</strong> as part of Mercury's ${esc(metadata?.promoName || "current")} promotion.`;
-    highlightLabel = "Cash rebate";
-    highlightValue = `${amt} applied directly to your purchase`;
+    const rebate = factoryRebateDisplayValue(metadata);
+    if (rebate) {
+      const amt = esc(rebate);
+      subject = `Your ${amt} Mercury rebate is reserved`;
+      eyebrow = "Cash rebate";
+      heading = `Your ${amt} rebate is reserved`;
+      lead = `Quick reminder. Your ${esc(String(metadata?.motorHP || ""))}HP motor qualifies for a <strong>${amt} factory cash rebate</strong> as part of Mercury's ${esc(metadata?.promoName || "current")} promotion.`;
+      highlightLabel = "Cash rebate";
+      highlightValue = `${amt} applied directly to your purchase`;
+    }
   } else if (option === "no_payments") {
     subject = "On the water now, pay later";
     eyebrow = "No payments";
@@ -251,7 +262,10 @@ function buildLastChance(name: string | null, token: string, metadata: any): { s
   let bonusLabel = "";
   if (metadata?.selectedPromoOption === "no_payments") bonusLabel = "6 months no payments";
   else if (metadata?.selectedPromoOption === "special_financing") bonusLabel = `${esc(metadata.promoDisplayValue || "2.99%")} APR financing`;
-  else if (metadata?.selectedPromoOption === "cash_rebate") bonusLabel = `${esc(metadata.promoDisplayValue || "$500")} factory rebate`;
+  else if (metadata?.selectedPromoOption === "cash_rebate") {
+    const rebate = factoryRebateDisplayValue(metadata);
+    bonusLabel = rebate ? `${esc(rebate)} factory rebate` : "";
+  }
 
   const rows = [
     { label: "Motor", valueHtml: motor },

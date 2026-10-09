@@ -7,6 +7,7 @@ import { cn } from '@/lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { FINANCING_MINIMUM } from '@/lib/finance';
+import { hasEligibleFactoryRebate } from '@/lib/factory-rebate-copy';
 
 export type PromoOptionType = 'no_payments' | 'special_financing' | 'cash_rebate';
 
@@ -50,7 +51,7 @@ export function PromoOptionSelector({
   const recommendedOption = useMemo((): PromoOptionType => {
     // If not eligible for financing, only rebate is available
     if (!isEligibleForFinancing) {
-      return 'cash_rebate';
+      return hasEligibleFactoryRebate(rebateAmount) ? 'cash_rebate' : 'no_payments';
     }
     // High HP motors benefit most from rebate
     if (motorHP >= 150 && rebateAmount >= 500) {
@@ -102,10 +103,12 @@ export function PromoOptionSelector({
       description: 'Instant savings based on motor horsepower',
       icon: DollarSign,
       color: 'green',
-      detail: rebateAmount > 0 
+      detail: hasEligibleFactoryRebate(rebateAmount)
         ? `Your ${motorHP}HP motor qualifies for a $${rebateAmount.toLocaleString()} rebate!`
-        : 'Rebate amount based on motor HP',
-      value: rebateAmount > 0 ? `$${rebateAmount.toLocaleString()}` : 'Up to $1,500'
+        : 'This motor does not have a published factory rebate tier.',
+      value: hasEligibleFactoryRebate(rebateAmount)
+        ? `$${rebateAmount.toLocaleString()}`
+        : 'Not available'
     }
   ];
 
@@ -161,6 +164,9 @@ export function PromoOptionSelector({
         {options.filter(opt => {
           // Filter out financing-dependent options if not eligible
           if ((opt.id === 'no_payments' || opt.id === 'special_financing') && !isEligibleForFinancing) {
+            return false;
+          }
+          if (opt.id === 'cash_rebate' && !hasEligibleFactoryRebate(rebateAmount)) {
             return false;
           }
           return true;

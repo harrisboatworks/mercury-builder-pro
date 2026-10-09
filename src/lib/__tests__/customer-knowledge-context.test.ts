@@ -101,7 +101,7 @@ describe('shared customer knowledge', () => {
 
     const financing = buildFinancingCustomerAnswer(knowledge.financing, knowledge.promotions);
     expect(financing).toContain('2.99% APR for 24 months');
-    expect(financing).toContain('layers with the eligible factory rebate');
+    expect(financing).toContain('can layer with a factory rebate when the motor matches a published tier');
     expect(financing).toContain('5.48% APR');
     expect(financing).toContain('60-month term');
 

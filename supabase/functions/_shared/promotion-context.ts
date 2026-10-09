@@ -191,7 +191,13 @@ export function buildPromotionCustomerAnswer(
 
   if (apr !== null && months !== null) {
     if (mode === 'layered') {
-      lines.push(`**Yes — the rebate and promotional financing layer together.** The eligible rebate applies automatically, and **${apr}% APR for ${months} months** is optional on approved credit, subject to the promotion terms.`);
+      if (rebate) {
+        lines.push(`**Yes — the rebate and promotional financing layer together.** The eligible rebate applies automatically, and **${apr}% APR for ${months} months** is optional on approved credit, subject to the promotion terms.`);
+      } else if (horsepower !== null && matrix.length) {
+        lines.push(`Promotional financing is **${apr}% APR for ${months} months** on approved credit, subject to the promotion terms. It does not create a factory rebate for this horsepower.`);
+      } else {
+        lines.push(`Promotional financing is **${apr}% APR for ${months} months** on approved credit, subject to the promotion terms. A factory rebate applies only when the motor matches a published rebate tier.`);
+      }
     } else if (mode === 'choose_one') {
       lines.push(`The offer requires a choice between the listed benefits; promotional financing is **${apr}% APR for ${months} months** on approved credit, subject to terms.`);
     } else {
@@ -284,7 +290,7 @@ function formatPromotion(promotion: PromotionRecord): string {
   }
 
   if (mode === 'layered') {
-    lines.push('- Offer structure: layered. The eligible rebate is automatic; promotional financing is optional and does not replace the rebate.');
+    lines.push('- Offer structure: layered. A factory rebate is automatic only when the motor matches a published rebate tier; promotional financing is optional and does not replace or invent a rebate.');
   } else if (mode === 'choose_one') {
     lines.push('- Offer structure: choose one. The customer must select one listed benefit.');
   }
@@ -363,7 +369,7 @@ export function formatPromotionContext(promotions: PromotionRecord[]): string {
     '## CURRENT PROMOTIONS & SPECIAL OFFERS',
     'This block is generated from the live promotions database. Use only these facts for current-offer answers.',
     'Promotion financing precedence: an APR and term listed inside an active promotion are canonical for that promotion. A separate standard financing offer does not cancel, replace, or make the promotion rate inactive.',
-    'For a layered offer, state that the eligible rebate applies and the customer may also choose the listed promotional financing, subject to the offer eligibility, approved credit, and terms.',
+    'For a layered offer, state that a factory rebate applies only when the motor matches a published rebate tier. When it does, the customer may also choose the listed promotional financing, subject to eligibility, approved credit, and terms. Never say a factory rebate is applied for a motor that has no matching tier.',
     ...active.slice(0, 5).map(formatPromotion),
   ].join('\n\n');
 }

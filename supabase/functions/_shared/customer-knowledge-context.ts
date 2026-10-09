@@ -455,7 +455,7 @@ export function buildFinancingCustomerAnswer(
   const factoryOffers = extractPromotionFinancing(promotions);
   for (const offer of factoryOffers) {
     const relationship = offer.mode === "layered"
-      ? "It layers with the eligible factory rebate"
+      ? "It can layer with a factory rebate when the motor matches a published tier"
       : offer.mode === "choose_one"
       ? "It is one of the promotion choices"
       : "It is subject to the promotion terms";

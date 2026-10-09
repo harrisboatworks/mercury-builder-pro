@@ -1,4 +1,5 @@
 import { meetsPromotionFinancingMinimum } from '@/lib/promotion-financing';
+import { formatFactoryRebateDisplayAmount } from '@/lib/factory-rebate-copy';
 import { useEffect, useState, useMemo, useRef, useCallback } from 'react';
 import { calculateRunningTotal } from '@/hooks/useQuoteRunningTotal';
 import { useNavigate } from 'react-router-dom';
@@ -259,8 +260,7 @@ export default function QuoteSummaryPage() {
         const rates = getSpecialFinancingRates();
         return rates?.[0]?.rate ? `${rates[0].rate}%` : '2.99%';
       case 'cash_rebate':
-        const rebate = getRebateForHP(motorHP);
-        return rebate ? `$${rebate.toLocaleString()}` : '$0';
+        return formatFactoryRebateDisplayAmount(getRebateForHP(motorHP));
       default:
         return '';
     }

@@ -220,7 +220,7 @@ ${liveCustomerKnowledge}
 PROMOTION RULES:
 - Never claim a rebate or financing benefit unless it appears in LIVE CUSTOMER KNOWLEDGE.
 - Treat any APR and term listed in CURRENT PROMOTIONS as active for that promotion. A separate standard financing offer must never be used as evidence that the promotion rate is inactive.
-- If the offer is layered, say the eligible rebate applies and promotional financing is optional, subject to approved credit and the listed terms.
+- If the offer is layered, say a factory rebate applies only when the motor matches a published rebate tier, and promotional financing is then optional, subject to approved credit and the listed terms. Never say a factory rebate is applied for a motor with no matching tier.
 - Direct them to the quote builder or /promotions for full details
 - If unsure about specific rebate amounts, check the data above or direct to /promotions
 

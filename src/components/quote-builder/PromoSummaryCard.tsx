@@ -6,6 +6,7 @@ import { isUsableFinancingRate } from '@/lib/finance';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { getAppliedPromotion, getWarrantyDisplayFromAppliedPromotion } from '@/lib/warranty-display';
 import mercuryLogo from '@/assets/mercury-logo.png';
+import { hasEligibleFactoryRebate } from '@/lib/factory-rebate-copy';
 import type { PromoOptionType } from './PromoOptionSelector';
 
 interface PromoSummaryCardProps {
@@ -59,12 +60,12 @@ export function PromoSummaryCard({
       title: `${lowestRate}%`,
       subtitle: 'APR',
     },
-    {
+    ...(hasEligibleFactoryRebate(rebateAmount) ? [{
       id: 'cash_rebate' as PromoOptionType,
       icon: Banknote,
       title: `$${rebateAmount}`,
       subtitle: 'Rebate',
-    },
+    }] : []),
   ];
 
   return (
