@@ -11,6 +11,9 @@ Actions bot comment cannot grant approval. A new head removes the old approval.
 Labels predating installation have no approval artifact: remove and reapply the
 label after reviewing the current head. Artifacts expire after 90 days, requiring
 a fresh label cycle if a PR remains held that long.
+The separate Claude approval follow-through workflow makes one refresh after the
+label handler publishes its artifact. GitHub forbids listening to one's own
+workflow completion; the separate listener has no completion loop.
 
 Frontend typecheck, Edge typecheck and test must all succeed in the real Test suite
 workflow on the reviewed head. The latest Vercel status must succeed and belong to
@@ -53,3 +56,7 @@ actionlint .github/workflows/claude-approved-automerge.yml .github/workflows/tes
 The tests run in Test suite alongside the existing unit suite. No repository
 secret, personal token, branch-protection bypass or new scheduled polling job is
 needed for this workflow.
+
+Actionlint 1.7.12 predates GitHub's documented `concurrency.queue: max`. For that
+version, lint temporary copies omitting only that field, and verify the complete
+workflow with GitHub's current validator. Do not remove the queue from production.
