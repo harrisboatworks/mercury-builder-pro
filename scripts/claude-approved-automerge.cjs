@@ -54,8 +54,8 @@ function blockingReview(reviews) {
 function body(marker, value, text) { return `${marker}${JSON.stringify(value)} -->\n${text}`; }
 
 async function run({ github, context, core, pullNumber, writeApproval = value => {
-  require('node:fs').mkdirSync('.approval-artifact', { recursive: true });
-  require('node:fs').writeFileSync('.approval-artifact/approval.json', JSON.stringify(value));
+  require('node:fs').mkdirSync('approval-artifact', { recursive: true });
+  require('node:fs').writeFileSync('approval-artifact/approval.json', JSON.stringify(value));
 } }) {
   const { owner, repo } = context.repo;
   const repoName = `${owner}/${repo}`;

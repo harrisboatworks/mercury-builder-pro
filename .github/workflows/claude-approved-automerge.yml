@@ -31,7 +31,11 @@ permissions:
 
 jobs:
   merge:
-    if: github.repository == 'harrisboatworks/mercury-builder-pro' && (github.event_name != 'workflow_run' || github.event.workflow_run.event == 'pull_request' || github.event.workflow_run.event == 'pull_request_target')
+    if: >-
+      github.repository == 'harrisboatworks/mercury-builder-pro' &&
+      (github.event_name != 'status' || (github.event.context == 'Vercel' && github.event.state != 'pending')) &&
+      (github.event_name != 'pull_request_target' || github.event.action == 'synchronize' || github.event.label.name == 'claude-approved') &&
+      (github.event_name != 'workflow_run' || github.event.workflow_run.event == 'pull_request' || github.event.workflow_run.event == 'pull_request_target')
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -53,6 +57,6 @@ jobs:
         if: always() && steps.controller.outputs.approval_artifact != ''
         with:
           name: ${{ steps.controller.outputs.approval_artifact }}
-          path: .approval-artifact/approval.json
+          path: approval-artifact/approval.json
           retention-days: 90
           overwrite: true
