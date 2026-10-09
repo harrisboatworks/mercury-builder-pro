@@ -5,6 +5,40 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 
 import { MarkdownSectionCards } from './MarkdownSectionCards';
+import { extractHeaders, slugify } from '@/utils/slugify';
+
+describe('MarkdownSectionCards contents anchors', () => {
+  it('preserves targets when section headings are replaced with card labels', () => {
+    const content = `## Quick answer
+Measure the transom before choosing a shaft.
+
+## Common shaft length mistakes we see every season
+Do not guess from the old motor.
+
+## Dealer note
+Confirm the exact specification.
+
+## Ontario context
+Measure the specific hull.
+
+## What we see at HBW
+The ordinary heading remains visible.`;
+    const { container } = render(
+      <MarkdownSectionCards content={content} markdownComponents={{
+        h2: ({ children }) => <h2 id={slugify(String(children))}>{children}</h2>,
+      }} />,
+    );
+
+    for (const item of extractHeaders(content)) {
+      expect(container.querySelectorAll(`[id="${item.id}"]`)).toHaveLength(1);
+      expect(document.getElementById(item.id)).toBeInTheDocument();
+    }
+    expect(screen.getByRole('note', { name: 'Quick answer' })).toHaveAttribute('id', 'quick-answer');
+    expect(screen.getByRole('note', { name: 'Common mistakes' })).toHaveAttribute(
+      'id', 'common-shaft-length-mistakes-we-see-every-season',
+    );
+  });
+});
 
 describe('MarkdownSectionCards bilingual trust directives', () => {
   it('renders the legacy bilingual-trust-card alias instead of exposing directive source', () => {

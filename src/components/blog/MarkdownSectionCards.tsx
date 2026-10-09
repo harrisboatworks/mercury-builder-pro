@@ -19,6 +19,7 @@ import { CostStack, type CostStackProps, type CostStackItem } from './CostStack'
 import { BilingualTrustCard, type BilingualTrustCardProps, type BilingualTrustItem } from './BilingualTrustCard';
 import { PullQuote, type PullQuoteProps } from './PullQuote';
 import { filterToOneBlogCredibilityAnchor } from '@/lib/blogCredibilityAnchorPolicy';
+import { slugify } from '@/utils/slugify';
 
 const PHONE_LINK_RE = /^(?:tel|sms):\+?[0-9().\s-]+$/i;
 
@@ -1350,9 +1351,10 @@ export function MarkdownSectionCards({ content, markdownComponents, articleSlug 
     return (
       <aside
         key={idx}
+        id={suppressInnerHeading ? slugify(section.heading) : undefined}
         role={cfg.role}
         aria-label={cfg.aria}
-        className={cfg.wrapper}
+        className={`${cfg.wrapper}${suppressInnerHeading ? ' scroll-mt-24' : ''}`}
         style={cfg.style}
       >
         <span
