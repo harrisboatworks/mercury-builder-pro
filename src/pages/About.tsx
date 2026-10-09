@@ -273,19 +273,20 @@ export default function About() {
           </div>
         </section>
 
-        {/* Google Reviews Section */}
-        <section aria-labelledby="reviews" className="py-20 md:py-24 bg-white border-t border-repower-navy-900/10">
-          <div className="max-w-[1100px] mx-auto px-6 md:px-14">
-            <h2 id="reviews" className="font-display font-bold text-[clamp(28px,3.5vw,40px)] text-repower-navy-900 text-center mb-3" style={{ letterSpacing: '-0.025em' }}>
-              What Our <span className="italic text-repower-mercury-red">Customers Say</span>
-            </h2>
-            <p className="font-sans text-repower-navy-900/65 text-center max-w-2xl mx-auto mb-10">
-              Real reviews from real boaters in the Kawartha Lakes region.
-            </p>
+        {placeData?.reviews?.some((review) => review.text?.trim()) && (
+          <section aria-labelledby="reviews" className="py-20 md:py-24 bg-white border-t border-repower-navy-900/10">
+            <div className="max-w-[1100px] mx-auto px-6 md:px-14">
+              <h2 id="reviews" className="font-display font-bold text-[clamp(28px,3.5vw,40px)] text-repower-navy-900 text-center mb-3" style={{ letterSpacing: '-0.025em' }}>
+                What Our <span className="italic text-repower-mercury-red">Customers Say</span>
+              </h2>
+              <p className="font-sans text-repower-navy-900/65 text-center max-w-2xl mx-auto mb-10">
+                Real Google reviews from boaters in the Kawartha Lakes region.
+              </p>
 
-            <GoogleReviewsCarousel />
-          </div>
-        </section>
+              <GoogleReviewsCarousel />
+            </div>
+          </section>
+        )}
 
         {/* Location Section */}
         <section aria-labelledby="visit-us" className="py-20 md:py-24 bg-repower-paper border-t border-repower-navy-900/10">

@@ -37,6 +37,9 @@ export function GoogleReviewsCarousel() {
   }
 
   const { reviews } = placeData;
+  if (!reviews?.length) {
+    return null;
+  }
 
   return (
     <div className="space-y-6">

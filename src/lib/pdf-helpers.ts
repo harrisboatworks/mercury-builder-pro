@@ -1,5 +1,5 @@
 import { mercuryMotorsData, type MercuryMotor } from './data/mercury-motors';
-import { mercuryReviewsExpanded, type CustomerReview } from './data/mercury-reviews';
+import { type CustomerReview } from './data/mercury-reviews';
 import { calculateMonthlyPayment } from './finance';
 import type { ReactPdfQuoteData } from './react-pdf-generator';
 
@@ -19,31 +19,10 @@ export const findMotorSpecs = (hp: number, model: string): MercuryMotor | null =
 };
 
 /**
- * Get a relevant customer review for the motor
+ * Motor-specific customer quotes are not invented for PDFs.
+ * Live Google reviews are shown on the website, not attached to a quote motor.
  */
-export const getRelevantReview = (hp: number): CustomerReview | null => {
-  // Find reviews for the exact HP
-  let relevantReviews = mercuryReviewsExpanded.filter(review => review.motorHP === hp);
-  
-  // If no exact match, find reviews for similar HP range
-  if (relevantReviews.length === 0) {
-    const hpRange = 25; // ±25 HP range
-    relevantReviews = mercuryReviewsExpanded.filter(review => 
-      Math.abs(review.motorHP - hp) <= hpRange
-    );
-  }
-  
-  // If still no match, get any high-rated review
-  if (relevantReviews.length === 0) {
-    relevantReviews = mercuryReviewsExpanded.filter(review => review.rating >= 5);
-  }
-  
-  // Return a random review from the filtered list
-  if (relevantReviews.length > 0) {
-    const randomIndex = Math.floor(Math.random() * relevantReviews.length);
-    return relevantReviews[randomIndex];
-  }
-  
+export const getRelevantReview = (_hp: number): CustomerReview | null => {
   return null;
 };
 

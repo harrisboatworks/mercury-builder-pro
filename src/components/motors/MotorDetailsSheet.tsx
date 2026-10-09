@@ -31,7 +31,6 @@ import {
 } from "../../lib/motor-spec-generators";
 import { MotorDetailsImageSection } from './MotorDetailsImageSection';
 import { findMotorSpecs, getMotorSpecs, type MercuryMotor } from "../../lib/data/mercury-motors";
-import { getReviewCount } from "../../lib/data/mercury-reviews";
 import { useSmartReviewRotation } from "../../lib/smart-review-rotation";
 import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
@@ -116,15 +115,6 @@ export default function MotorDetailsSheet({
   // Get smart review for this motor with rotation logic
   const hpValue = typeof hp === 'string' ? parseInt(hp) : hp || 0;
   const smartReview = useSmartReviewRotation(hpValue, title);
-  const reviewCount = getReviewCount(hpValue, title);
-  
-  // Debug logging to help troubleshoot review display
-  console.log('Motor review debug:', { 
-    hpValue, 
-    title, 
-    smartReview: smartReview ? { reviewer: smartReview.reviewer, hp: smartReview.motorHP } : null,
-    reviewCount
-  });
 
   // Section refs for navigation
   const scrollContainerRef = useRef<HTMLDivElement>(null);
@@ -943,40 +933,21 @@ export default function MotorDetailsSheet({
                 </div>
               )}
 
-              {/* Customer Reviews Section */}
-              <div className="space-y-4">
-                <h2 className="text-xl font-bold text-slate-900 border-b border-slate-200 pb-2">
-                  Customer Review
-                </h2>
-                
-                {smartReview ? (
-                  <div className="space-y-3">
-                    <div className="flex items-center gap-1 text-yellow-500 text-sm">
-                      <span>★★★★★</span>
-                      <span className="text-muted-foreground ml-2">
-                        Verified Purchase
-                      </span>
-                    </div>
-                    
-                    <blockquote className="text-sm italic border-l-2 border-muted pl-3">
-                      <p className="text-foreground/90">
-                        "{smartReview.comment}"
-                      </p>
-                      <footer className="text-xs text-muted-foreground mt-2">
-                       , {smartReview.reviewer}, {smartReview.location}
-                      </footer>
-                    </blockquote>
-                  </div>
-                ) : (
-                  <p className="text-sm text-muted-foreground">
-                    New model - contact us for customer experiences
-                  </p>
-                )}
-                
-                <div className="text-xs text-muted-foreground pt-2 border-t">
-                  Available at Harris Boat Works • (905) 342-2153
+              {smartReview && (
+                <div className="space-y-4">
+                  <h2 className="text-xl font-bold text-slate-900 border-b border-slate-200 pb-2">
+                    Customer Review
+                  </h2>
+                  <blockquote className="text-sm italic border-l-2 border-muted pl-3">
+                    <p className="text-foreground/90">
+                      "{smartReview.comment}"
+                    </p>
+                    <footer className="text-xs text-muted-foreground mt-2">
+                      {smartReview.reviewer}, {smartReview.location}
+                    </footer>
+                  </blockquote>
                 </div>
-              </div>
+              )}
             </div>
           </div>
 
