@@ -53,7 +53,6 @@ import {
 } from "../../lib/motor-spec-generators";
 import { findMotorSpecs } from "../../lib/data/mercury-motors";
 import { formatMotorDisplayName } from "@/lib/motor-display-formatter";
-import { useSmartReviewRotation } from "../../lib/smart-review-rotation";
 import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
 import MotorDocumentsSection from './MotorDocumentsSection';
@@ -121,7 +120,6 @@ export default function MotorDetailsPremiumModal({
   const [canScrollMore, setCanScrollMore] = useState(true);
   const [hasScrolled, setHasScrolled] = useState(false);
   const hpValue = typeof hp === 'string' ? parseInt(hp) : hp || 0;
-  const smartReview = useSmartReviewRotation(hpValue, title);
   const motorSpecs = motor ? findMotorSpecs(hpValue, title) : undefined;
   const decoded = decodeModelName(motor?.model || title, hpValue);
   // Display-only: guarantees proper spacing, e.g. "9.9 MLH FourStroke" never "9.9MLH FourStroke"
@@ -750,26 +748,6 @@ export default function MotorDetailsPremiumModal({
                               <span className="text-base text-gray-700">{feature}</span>
                             </div>
                           ))}
-                        </div>
-                      </div>
-                    )}
-
-                    {/* Customer Review */}
-                    {smartReview && (
-                      <div className="border-t border-gray-100 pt-6">
-                        <h3 className="font-display text-lg font-semibold tracking-[-0.015em] text-[#050E1C] mb-4">
-                          Customer Review
-                        </h3>
-                        <div className="space-y-3">
-                          <div className="flex items-center gap-1 text-[#C9A24A] text-sm">
-                            <span>★★★★★</span>
-                          </div>
-                          <blockquote className="text-sm font-normal italic text-gray-700 pl-4 border-l-2 border-gray-200">
-                            "{smartReview.comment}"
-                          </blockquote>
-                          <footer className="text-xs text-gray-500">
-                           , {smartReview.reviewer}, {smartReview.location}
-                          </footer>
                         </div>
                       </div>
                     )}
