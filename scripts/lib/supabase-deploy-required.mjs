@@ -6,6 +6,9 @@
  */
 
 import path from 'node:path';
+import { mergeReleasePrerequisites } from './cron-auth-release-prerequisites.mjs';
+
+export { mergeReleasePrerequisites } from './cron-auth-release-prerequisites.mjs';
 
 const posix = path.posix;
 
@@ -434,11 +437,15 @@ export function buildDeployRequiredReport({ diffEntries, files, from = '', to = 
       const matched = entry.removed
         ? { required: [], orderingUnknown: false, unknownReason: null }
         : matchRequiredMigrations(refs, migrations);
+      const merged = entry.removed
+        ? { requiredMigrations: [], explicitDeployBlock: null }
+        : mergeReleasePrerequisites(entry.slug, matched.required, files);
       return {
         slug: entry.slug,
         reasons: unique(entry.reasons),
         removed: entry.removed,
-        requiredMigrations: matched.required,
+        requiredMigrations: merged.requiredMigrations,
+        explicitDeployBlock: merged.explicitDeployBlock,
         orderingUnknown: matched.orderingUnknown,
         unknownReason: matched.unknownReason,
       };
@@ -512,6 +519,9 @@ export function formatDeployRequiredMarkdown(report) {
         lines.push(`  - newly required migrations: ${ORDERING_UNKNOWN}${fn.unknownReason ? ` (${fn.unknownReason})` : ''}`);
       } else {
         lines.push('  - newly required migrations: none detected');
+      }
+      if (fn.explicitDeployBlock) {
+        lines.push(`  - release prerequisite: blocked (${fn.explicitDeployBlock})`);
       }
     }
   }
@@ -604,6 +614,15 @@ export function requiredMigrationsForSlug(slug, files, addedMigrationPaths) {
     objects: extractMigrationObjects(files[filePath] || ''),
   }));
   return matchRequiredMigrations(refs, migrations).required;
+}
+
+/**
+ * Inferred RPC/table matches plus the explicit cron-auth prerequisite.
+ * Inference is unchanged; unresolved protected slugs get a deploy block
+ * instead of a fabricated migration path.
+ */
+export function releaseRequirementsForSlug(slug, files, addedMigrationPaths) {
+  return mergeReleasePrerequisites(slug, requiredMigrationsForSlug(slug, files, addedMigrationPaths), files);
 }
 
 export function unappliedRequiredMigrations(requiredMigrations, appliedSet) {
@@ -883,6 +902,7 @@ export function deployTargetsFromDiff({ diffEntries, files, from = '', to = '' }
       slug: fn.slug,
       reasons: fn.reasons,
       requiredMigrations: fn.requiredMigrations || [],
+      explicitDeployBlock: fn.explicitDeployBlock || null,
     });
   }
   return {
