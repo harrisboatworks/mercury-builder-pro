@@ -1,0 +1,57 @@
+name: Claude approved auto-merge
+
+on:
+  pull_request_target:
+    types: [labeled, unlabeled, synchronize]
+  check_suite:
+    types: [completed]
+  workflow_run:
+    workflows: [Test suite, Claude approved auto-merge]
+    types: [completed]
+  status: {}
+  workflow_dispatch:
+    inputs:
+      pull_number:
+        description: Optional PR number (also retries post-merge pipeline dispatch)
+        required: false
+        type: string
+
+concurrency:
+  group: claude-approved-automerge
+  cancel-in-progress: false
+
+# No PAT or PR source checkout. Approval is restricted to the existing owner.
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+  checks: read
+  actions: write
+
+jobs:
+  merge:
+    if: github.repository == 'harrisboatworks/mercury-builder-pro' && (github.event_name != 'workflow_run' || github.event.workflow_run.event == 'pull_request' || github.event.workflow_run.event == 'pull_request_target')
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: refs/heads/main
+          persist-credentials: false
+      - uses: actions/github-script@v7
+        id: controller
+        env:
+          PULL_NUMBER: ${{ inputs.pull_number }}
+        with:
+          script: |
+            const { run } = require('./scripts/claude-approved-automerge.cjs');
+            const pullNumber = process.env.PULL_NUMBER;
+            if (pullNumber && !/^[1-9][0-9]*$/.test(pullNumber)) throw new Error('Invalid PR number');
+            await run({ github, context, core, pullNumber });
+      - uses: actions/upload-artifact@v4
+        if: always() && steps.controller.outputs.approval_artifact != ''
+        with:
+          name: ${{ steps.controller.outputs.approval_artifact }}
+          path: .approval-artifact/approval.json
+          retention-days: 90
+          overwrite: true
