@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/zh/mercury-fourstroke-pro-xs-verado-chinese-comparison.md
-last_updated: 2026-09-06
+last_updated: 2026-10-09
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury 引擎家族对比 (中文版)：FourStroke vs Pro XS vs Verado"
 description: "Mercury 三大引擎家族 (FourStroke / Pro XS / Verado) 中文对比。HP 范围、最佳用途、典型配置。GTA 华人船主如何选择。"
 category: "Mercury 型号比较"
 date_published: 2026-05-10
-date_modified: 2026-09-06
+date_modified: 2026-10-09
 keywords: ["Mercury FourStroke Pro XS Verado 中文","Mercury 船外机比较","Pro XS 中文","Verado 中文"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Mercury 型号比较  
 **Published:** 2026-05-10  
-**最后审核:** 2026-09-06  
+**最后审核:** 2026-10-09  
 **Read time:** 7 分钟  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/zh/mercury-fourstroke-pro-xs-verado-chinese-comparison
 
@@ -110,7 +110,7 @@ GTA 华人 angler 中常见购买理由：
 
 Verado 是 Mercury 最豪华、功率最大的家族。V8、V10、V12 配置（现行机型自然进气，老款 I6 才是增压）：
 
-- 平稳运行 (V8 比同 HP Pro XS 平稳 50%)
+- 平稳运行（设计上注重平顺和低噪音，实际感受因船型和配置而异）
 - 完整 SmartCraft 集成
 - 双引擎设置容易 (digital throttle + shift)
 - 现行家族可选至 600 HP

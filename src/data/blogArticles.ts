@@ -10933,7 +10933,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Concept diagram of two buying levers: when you order versus when the shop can install, with promotions confirmed separately.',
     author: 'Harris Boat Works',
     datePublished: '2026-05-24',
-    dateModified: '2026-09-06',
+    dateModified: '2026-10-09',
     publishDate: '2026-05-24',
     category: 'Buying Guide',
     readTime: '~8 min read',
@@ -10943,7 +10943,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
 
 *Last reviewed: 2026-07-18*
 
-> **Quick answer:** The best months to ORDER a new Mercury in Ontario are typically late summer (model year closeouts after July 1) and November through February (off-season dealer promos, full inventory, first pick of spring install slots). The most expensive months to buy are March through May, when everyone is rushing to be on the water for opener. Note: our shop is closed December 1 through April 1, so any install work happens once we reopen in early April. The right month for YOU is whichever one matches your spring install plan and trade timing. Start with the math at [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection).
+> **Quick answer:** The best months to ORDER a new Mercury in Ontario are typically late summer (possible model year closeouts once Mercury's next model year arrives) and November through February (off-season dealer promos, full inventory, first pick of spring install slots). The most expensive months to buy are March through May, when everyone is rushing to be on the water for opener. Note: our shop is closed December 1 through April 1, so any install work happens once we reopen in early April. The right month for YOU is whichever one matches your spring install plan and trade timing. Start with the math at [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection).
 
 Conventional wisdom says winter is deal time. Half right. The honest answer is more useful: pricing flexibility is one piece of the timing puzzle, and it's rarely the biggest piece. Install slots, trade values, and Mercury's model year cycle all move with the calendar too.
 
@@ -10971,13 +10971,13 @@ The pattern: pricing flex peaks at model year closeouts (late summer) and during
 
 The calendar isn't random. Each window reflects something real about how Mercury, the dealer, and you interact.
 
-**Mercury's model year cycle.** Mercury flips model years July 1. The August window is when remaining 2026 inventory may carry closeout incentives, and when fresh 2027 stock arrives. Whether the closeout is actually offered depends on Mercury's promotional calendar, not every year has a 2026 closeout. We covered the full flip dynamics in [Mercury Outboard Lineup for Ontario (2027 Model Year)](/blog/mercury-outboard-lineup-ontario).
+**Mercury's model year cycle.** Mercury sets its model year changeover date, and it is not the same every year, so we confirm the timing for your motor when we quote it. The weeks after that changeover are when remaining 2026 inventory may carry closeout incentives, and when fresh 2027 stock arrives. Whether the closeout is actually offered depends on Mercury's promotional calendar, not every year has a 2026 closeout. We covered the full flip dynamics in [Mercury Outboard Lineup for Ontario (2027 Model Year)](/blog/mercury-outboard-lineup-ontario).
 
 **Off-season dealer economics.** Our shop is closed December 1 through April 1, so install work does not happen in those months, but ordering does. Mercury runs winter promotional cycles, and customers who lock orders in over winter get first pick of motors and first call on spring install slots. The combination of winter promo pricing plus an early-spring install is the real value of buying in the off-season.
 
 **Spring install crunch.** From early April through opener, every boat that has been sitting in storage wants to be on the water yesterday. We are rigging, swapping, and water-testing as fast as we can. There is less flexibility on pricing in spring because there is less margin in our schedule. The customers who locked their quote in October are the ones who got the slot they wanted.
 
-**Trade values through the calendar.** Get a current valuation for the exact motor and condition when comparing purchase dates. A seasonal rule of thumb cannot establish what your trade will be worth. The HST savings on the trade work the same way year-round.
+**Trade values through the calendar.** Get a current valuation for the exact motor and condition when comparing purchase dates. A seasonal rule of thumb cannot establish what your trade will be worth. The tax treatment of a trade-in does not change with the calendar either; it depends on the confirmed trade allowance.
 
 **Dealer promotional calendar.** Mercury runs promotional cycles year-round but the big ones tend to land in winter (January-March) and at model year flip (July-September). Additional promotional coverage is time-limited, not permanent; confirm the live offer on our [promotions page](/promotions).
 
@@ -11005,7 +11005,7 @@ These are the patterns we see in shop-floor repower conversations.
 - **Chasing a perfect deal indefinitely.** The customer who waited 18 months for a $1,500 closeout missed two summers of running the boat. The math on lost lake time rarely beats the savings.
 - **Treating "spring" as one big window.** March is not the same as May. The earlier in spring you buy, the better the slot and the cleaner the trade. By May, you're in crisis-install territory.
 - **Assuming an expired promotion still applies.** Mercury's standard Canadian warranty is 3 years. Additional promotional coverage can add value when written terms include it, but it should never be treated as permanent. Confirm the current offer before comparing quotes.
-- **Ignoring the trade math.** The HST savings on the trade-in scale with the new motor price. Bigger motor, bigger HST savings. Customers who buy the small motor "to save money" sometimes leave more on the table in HST than they save in cash.
+- **Getting the trade-in tax math backwards.** When the person trading in is not required to charge tax on the trade (for example, most individuals trading a personal boat or motor), GST/HST is calculated on the new price minus the confirmed trade allowance. The tax reduction comes from the trade allowance, not the size of the new motor: with the same trade value, a bigger motor does not increase it. Business owners who must charge tax on their own trade-in follow different rules, so check with your accountant. CRA explains both cases in its [trade-in guidance](https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/charge-collect-special-cases.html).
 
 ## Pricing and Install Timing Together: The Two Levers
 
@@ -11039,8 +11039,8 @@ Boat shows can have show-specific promotions, but they are often similar to what
 **When's the worst time to negotiate?**
 Late April through early June. Demand is at peak, inventory is tightest, and the install schedule has zero flex. If you walk in with no quote and no booking on May 15, you're going to pay top dollar AND wait. The opposite end is January through February, when the same configuration carries more pricing flex and a clean install slot.
 
-**Does the Mercury model year flip on July 1 change my buying decision?**
-It can. If you wait until August, you might catch a 2026 closeout discount or get an early shot at a 2027 SKU. If you buy in June before the flip, you lock current pricing without waiting on 2027 announcements. The right call depends on what you're after: a specific feature or the best price. If you just want the motor, compare the written numbers and availability. Full breakdown in our [Mercury Outboard Lineup for Ontario (2027 Model Year)](/blog/mercury-outboard-lineup-ontario).
+**Does the Mercury model year changeover change my buying decision?**
+It can. If you wait until after the changeover, you might catch a 2026 closeout discount or get an early shot at a 2027 SKU. If you buy before the changeover, you lock current pricing without waiting on 2027 announcements. The right call depends on what you're after: a specific feature or the best price. If you just want the motor, compare the written numbers and availability. Full breakdown in our [Mercury Outboard Lineup for Ontario (2027 Model Year)](/blog/mercury-outboard-lineup-ontario).
 
 **What's actually negotiable on a new Mercury purchase?**
 The price has some flexibility, especially on in-stock units and at the right time of year. Trade allowance has flex too, particularly on clean documented motors. Bundling install timing, MPP coverage, and rigging can move the total. Mercury's standard Canadian warranty is 3 years; additional promotional coverage applies only when written terms include it. The thing that's not negotiable is the install slot if it's not available, you can't buy time we don't have.
@@ -11079,8 +11079,8 @@ Honest version: the right month to buy is the month you actually need the boat o
         answer: 'Late April through early June. Demand is at peak, inventory is tightest, and the install schedule has zero flex. If you walk in with no quote and no booking on May 15, you\'re going to pay top dollar AND wait. The opposite end is January through February, when the same configuration carries more pricing flex and a clean install slot.'
       },
       {
-        question: 'Does the Mercury model year flip on July 1 change my buying decision?',
-        answer: 'It can. If you wait until August, you might catch a 2026 closeout discount or get an early shot at a 2027 SKU. If you buy in June before the flip, you lock current pricing without waiting on 2027 announcements. The right call depends on whether you\'re chasing a specific feature or just want the motor. Full breakdown in our Mercury 2027 Outboard Preview.'
+        question: 'Does the Mercury model year changeover change my buying decision?',
+        answer: 'It can. If you wait until after the changeover, you might catch a 2026 closeout discount or get an early shot at a 2027 SKU. If you buy before the changeover, you lock current pricing without waiting on 2027 announcements. The right call depends on whether you\'re chasing a specific feature or just want the motor. Full breakdown in our Mercury 2027 Outboard Preview.'
       },
       {
         question: 'What\'s actually negotiable on a new Mercury purchase?',
@@ -36595,12 +36595,12 @@ Jay Harris runs Harris Boat Works in Gores Landing, Ontario, a third-generation 
     slug: "mercury-nmea-2000-lowrance-garmin-guide",
     title: "Mercury Engine Data on Your Garmin, Lowrance or Humminbird: Which Gateway and How to Wire It",
     seoTitle: "Mercury Engine Data on Lowrance, Garmin or Humminbird (2026)",
-    description: "How to get Mercury engine data onto your fishfinder or chartplotter. Which Mercury gateway matches your screen brand, real part numbers, and how the NMEA 2000 wiring works.",
+    description: "Which Mercury gateway matches your Garmin, Lowrance, Simrad or Humminbird screen, the real part numbers, and how the NMEA 2000 wiring works.",
     image: "/lovable-uploads/blog-heroes-2026-09/nmea-2000-mercury-backbone.webp",
     imageAlt: "Infographic: top view of a boat with a NMEA 2000 backbone linking the Mercury engine gateway, display and 12 V feed, plus which Mercury module matches Garmin, Raymarine, Simrad, Lowrance and Humminbird screens.",
     author: 'Jay Harris',
     datePublished: '2026-09-26',
-    dateModified: '2026-09-26',
+    dateModified: '2026-10-09',
     publishDate: '2026-09-26',
     category: "Mercury Technology",
     readTime: "~5 min read",
@@ -36608,6 +36608,7 @@ Jay Harris runs Harris Boat Works in Gores Landing, Ontario, a third-generation 
     citations: [
       { name: "Mercury Marine: SmartCraft Connect (engine and display compatibility)", url: "https://www.mercurymarine.com/us/en/smartcraft/vessel-intelligence/smartcraft-connect" },
       { name: "Garmin support: SmartCraft Connect integration and part numbers", url: "https://support.garmin.com/en-US/?faq=3MdGIQcQhC2Y2F05PmVbo8" },
+      { name: "Garmin support: Mercury SmartCraft systems (MercMonitor and VesselView Link warning)", url: "https://support.garmin.com/en-US/?faq=8JFTtJielR8Yny4BXb83z9" },
       { name: "Humminbird: NMEA 2000 compatibility and required hardware", url: "https://humminbird-help.johnsonoutdoors.com/hc/en-us/articles/4412797910423-NMEA-2000-Compatibility" },
       { name: "MercruiserParts: VesselView Link vs SmartCraft Connect vs NMEA 2000 Gateway", url: "https://www.mercruiserparts.com/vesselview-link-vs-smartcraft-connect" },
       { name: "Energy Power Sports: Mercury SmartCraft Connect pricing (Canada)", url: "https://shop.energypowersports.ca/collections/mercury-smartcraft-connect" },
@@ -36619,12 +36620,13 @@ Jay Harris runs Harris Boat Works in Gores Landing, Ontario, a third-generation 
       { question: "Does adding a gateway affect my Mercury warranty?", answer: "These are Mercury's own SmartCraft accessories, not aftermarket add-ons. Install them to Mercury's instructions and confirm the right part for your serial number with your dealer." },
       { question: "Will my Humminbird show Mercury data?", answer: "Yes, through Mercury's NMEA 2000 Gateway (8M0165589) and a Humminbird NMEA 2000 kit. Expect basic engine data rather than the full Mercury feature set that SmartCraft Connect or VesselView Link gives other brands." },
       { question: "What about my Lowrance?", answer: "Lowrance uses Mercury's VesselView Link, not SmartCraft Connect. Check that your Lowrance model and software support it before ordering." },
+      { question: "Can I add SmartCraft Connect if my boat already has MercMonitor?", answer: "Not on the same SmartCraft network. Garmin's support notes say not to install a SmartCraft Connect gateway on the same SmartCraft network as MercMonitor or an older VesselView Link system, because they may interfere with one another. Tell us what is already on the boat before ordering and we'll confirm the right path for your engine." },
     ],
     content: `# Mercury Engine Data on Your Garmin, Lowrance or Humminbird: Which Gateway and How to Wire It
 
 *Last reviewed: 2026-09-26*
 
-> **Quick answer:** Yes, a SmartCraft-capable Mercury can put its engine data on the screen you already own, but the Mercury module you need depends on the brand of that screen. **Garmin, Raymarine and newer Simrad** use SmartCraft Connect. **Lowrance and Simrad** use VesselView Link. **Humminbird and other brands** use Mercury's NMEA 2000 Gateway, which sends basic engine data only. All three join your boat's NMEA 2000 network. If you just want engine data on your phone, the SmartCraft Connect Mobile module does that for about $300 CAD.
+> **Quick answer:** Yes, a SmartCraft-capable Mercury can put its engine data on the screen you already own, but the Mercury module you need depends on the brand of that screen. **Garmin, Raymarine and newer Simrad (NSX, NSS 4)** use SmartCraft Connect. **Lowrance and other Simrad models** use VesselView Link, so confirm your Simrad model and software before ordering. **Humminbird and other brands** use Mercury's NMEA 2000 Gateway, which sends basic engine data only. All three join your boat's NMEA 2000 network. If you just want engine data on your phone, the SmartCraft Connect Mobile module does that for about $300 CAD.
 
 ## Why bother
 
@@ -36645,10 +36647,12 @@ This is where most online advice goes wrong. Mercury makes three different ways 
 | Garmin GPSMAP / TD50 (software 24.1+), NMEA 2000-capable ECHOMAP (17.1+) | **SmartCraft Connect** | Full native Mercury integration |
 | Raymarine plotters on LightHouse 4.1 | **SmartCraft Connect** | Full native Mercury integration |
 | Simrad NSX, NSX Ultrawide, NSS 4 | **SmartCraft Connect** | Full native Mercury integration |
-| Lowrance (and Simrad) | **VesselView Link** | Full native Mercury integration |
+| Lowrance, and Simrad models not listed above (confirm model and software) | **VesselView Link** | Full native Mercury integration |
 | Humminbird, Furuno and other NMEA 2000 displays | **NMEA 2000 Gateway** (8M0165589) | Basic engine data: no Mercury fault descriptions, Troll Control or software updates |
 
 Humminbird's own compatibility chart lists the Mercury 8M0165589 gateway plus a Humminbird NMEA 2000 starter kit for Mercury engines, and some Humminbird models need an extra adapter cable. Check your model's page before ordering.
+
+**Already running MercMonitor or an older VesselView Link?** Don't add SmartCraft Connect to the same SmartCraft network. Garmin's support notes say a SmartCraft Connect gateway should not share a SmartCraft network with MercMonitor or an older VesselView Link system, because the devices may interfere with one another. If your boat already has one, tell us before you order and we'll confirm which path fits your engine and display.
 
 **Phone instead of plotter?** The SmartCraft Connect Mobile module sends engine data over Bluetooth to the Mercury app on your phone or tablet. It's the cheapest way in and a good fit for occasional checks.
 
@@ -36714,10 +36718,14 @@ Yes, through Mercury's NMEA 2000 Gateway (8M0165589) and a Humminbird NMEA 2000 
 **What about my Lowrance?**
 Lowrance uses Mercury's VesselView Link, not SmartCraft Connect. Check that your Lowrance model and software support it before ordering.
 
+**Can I add SmartCraft Connect if my boat already has MercMonitor?**
+Not on the same SmartCraft network. Garmin's support notes say not to install a SmartCraft Connect gateway on the same SmartCraft network as MercMonitor or an older VesselView Link system, because they may interfere with one another. Tell us what is already on the boat before ordering and we'll confirm the right path for your engine.
+
 ## Sources
 
 - [Mercury Marine: SmartCraft Connect (engine and display compatibility)](https://www.mercurymarine.com/us/en/smartcraft/vessel-intelligence/smartcraft-connect)
 - [Garmin support: SmartCraft Connect integration and part numbers](https://support.garmin.com/en-US/?faq=3MdGIQcQhC2Y2F05PmVbo8)
+- [Garmin support: Mercury SmartCraft systems (MercMonitor and VesselView Link warning)](https://support.garmin.com/en-US/?faq=8JFTtJielR8Yny4BXb83z9)
 - [Humminbird: NMEA 2000 compatibility and required hardware](https://humminbird-help.johnsonoutdoors.com/hc/en-us/articles/4412797910423-NMEA-2000-Compatibility)
 - [MercruiserParts: VesselView Link vs SmartCraft Connect vs NMEA 2000 Gateway](https://www.mercruiserparts.com/vesselview-link-vs-smartcraft-connect)
 - [Energy Power Sports: Mercury SmartCraft Connect pricing (Canada)](https://shop.energypowersports.ca/collections/mercury-smartcraft-connect)
