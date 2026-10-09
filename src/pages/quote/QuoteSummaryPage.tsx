@@ -1427,6 +1427,8 @@ export default function QuoteSummaryPage() {
                   totalWithTax={displayPricing.total}
                   totalSavings={displayPricing.savings}
                   monthly={isCashPurchase ? undefined : monthlyPayment}
+                  financingTermMonths={isCashPurchase ? undefined : termMonths}
+                  financingRate={isCashPurchase ? undefined : financingRate}
                   bullets={selectedPackageFeatures}
                   onReserve={handleReserveDeposit}
                   onReview={handleStepComplete}

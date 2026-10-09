@@ -24,7 +24,7 @@ import { isTillerMotor, getMotorImageByPriority, getMotorImageGallery, decodeMod
 import { useIsMobile } from '@/hooks/use-mobile';
 import { formatMotorDisplayName } from '@/lib/motor-display-formatter';
 import { getDisplayPrices } from '@/lib/pricing';
-import { calculateMotorFinancingEstimate } from '@/lib/finance';
+import { calculateMotorFinancingEstimate, formatFinancingEstimateLine } from '@/lib/finance';
 import { trackEvent } from '@/lib/analytics';
 
 import { preloadConfiguratorImagesHighPriority } from '@/lib/configurator-preload';
@@ -391,7 +391,9 @@ function MotorCardPreviewInner({
   const financingEstimate = typeof price === 'number'
     ? calculateMotorFinancingEstimate(price, sharedData?.financingRate ?? null)
     : null;
-  const monthlyPayment = financingEstimate?.payment ?? null;
+  const financingLine = financingEstimate
+    ? formatFinancingEstimateLine(financingEstimate)
+    : null;
 
   // Build slug for individual motor URL (same logic as ShareLinkButton)
   const buildMotorSlug = (source: string): string => {
@@ -635,9 +637,9 @@ function MotorCardPreviewInner({
             </button>
 
             {/* Monthly payment estimate (kept, secondary) */}
-            {monthlyPayment && (
+            {financingLine && (
               <p className="mt-3 text-[12px] font-light text-repower-navy-900/55 text-center">
-                or ${monthlyPayment}/mo*
+                or {financingLine}*
               </p>
             )}
           </div>

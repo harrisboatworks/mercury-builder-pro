@@ -13,6 +13,7 @@ import { parseMercuryRigCodes } from '@/lib/mercury-codes';
 import { formatPromoCalendarDate, promoEndOfDay } from '@/lib/quote-utils';
 import { getRecommendedDeposit } from '@/lib/deposit';
 import { resolveFinancingContractTermMonths } from '@/lib/quote-pdf-data';
+import { formatFinancingEstimateLine } from '@/lib/finance';
 import { groupAccessoryItems } from '@/lib/quote-accessory-groups';
 import harrisLogoBlack from '@/assets/harris-logo.png?inline';
 import mercuryLogoBlack from '@/assets/mercury-logo.png';
@@ -712,7 +713,11 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
             <Text style={[styles.cardEyebrow, spaciousLayout ? styles.cardEyebrowSpacious : {}]}>{hasFinancing ? 'FINANCING ESTIMATE' : 'PURCHASE METHOD'}</Text>
             {hasFinancing ? (
               <>
-                <Text style={[styles.cardLead, spaciousLayout ? styles.cardLeadSpacious : {}]}>${money(quoteData.monthlyPayment).replace('.00', '')}/month</Text>
+                <Text style={[styles.cardLead, spaciousLayout ? styles.cardLeadSpacious : {}]}>{formatFinancingEstimateLine({
+                  payment: Math.round(Number(quoteData.monthlyPayment)),
+                  termMonths: quoteData.financingTerm!,
+                  rate: quoteData.financingRate!,
+                })}</Text>
                 <Text style={[styles.cardBody, spaciousLayout ? styles.cardBodySpacious : {}]}>{financingTermsLine(
                   quoteData.financingRate!,
                   financingContractTerm,

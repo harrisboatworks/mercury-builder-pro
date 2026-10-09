@@ -16,6 +16,9 @@ describe("motor-card financing wiring", () => {
     expect(cardSource).toContain(
       "calculateMotorFinancingEstimate(price, sharedData?.financingRate ?? null)",
     );
+    expect(cardSource).toContain("formatFinancingEstimateLine(financingEstimate)");
+    expect(cardSource).toContain("or {financingLine}*");
+    expect(cardSource).not.toContain("or ${monthlyPayment}/mo*");
     expect(cardSource).not.toMatch(/\+\s*299/);
     expect(cardSource).not.toMatch(/totalFinanced\s*\/\s*term/);
   });
@@ -27,6 +30,26 @@ describe("motor-card financing wiring", () => {
     expect(pageSource).toContain("formatFinancingRate(financingRate)");
     expect(pageSource).toContain("formatFinancingRate(MERCURY_PROMO_APR)");
     expect(pageSource).not.toContain("const monthlyPayments");
+  });
+
+  it("keeps the calculator and quote summary on the same teaser line", () => {
+    const calculator = readFileSync(
+      new URL("../../pages/FinanceCalculator.tsx", import.meta.url),
+      "utf8",
+    );
+    const summary = readFileSync(
+      new URL("../../pages/quote/QuoteSummaryPage.tsx", import.meta.url),
+      "utf8",
+    );
+    const callout = readFileSync(
+      new URL("../quote-builder/FinancingCallout.tsx", import.meta.url),
+      "utf8",
+    );
+
+    expect(calculator).toContain("formatFinancingEstimateLine({");
+    expect(summary).toContain("financingTermMonths={isCashPurchase ? undefined : termMonths}");
+    expect(summary).toContain("financingRate={isCashPurchase ? undefined : financingRate}");
+    expect(callout).toContain("From {formatFinancingEstimateLine(financingDetails)}");
   });
 
   it("discloses the policy fee and lender term limits", () => {

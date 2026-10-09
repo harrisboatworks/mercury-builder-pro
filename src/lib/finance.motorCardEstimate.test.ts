@@ -5,6 +5,7 @@ import {
   FINANCING_CONTRACT_TERM_MONTHS,
   FINANCING_MAXIMUM_AMORTIZATION_MONTHS,
   FINANCING_MINIMUM,
+  formatFinancingEstimateLine,
   formatFinancingRate,
   isMercuryPromoActive,
   MERCURY_PROMO_APR,
@@ -84,6 +85,34 @@ describe("calculateMotorFinancingEstimate", () => {
     expect(isMercuryPromoActive()).toBe(false);
     expect(calculateMotorFinancingEstimate(8_000)?.rate).toBe(8.99);
     expect(calculateMotorFinancingEstimate(12_342)?.rate).toBe(7.99);
+  });
+
+  it("prints payment, amortization, and APR on one comparable teaser line", () => {
+    expect(formatFinancingEstimateLine({
+      payment: 328,
+      termMonths: 72,
+      rate: 5.48,
+    })).toBe("$328/mo · 72 mo · 5.48% OAC");
+    expect(formatFinancingEstimateLine({
+      payment: 375,
+      termMonths: 60,
+      rate: 5.48,
+    })).toBe("$375/mo · 60 mo · 5.48% OAC");
+    expect(formatFinancingEstimateLine({
+      payment: 864,
+      termMonths: 24,
+      rate: 2.99,
+    })).toBe("$864/mo · 24 mo · 2.99% OAC");
+  });
+
+  it("matches the live 90 / 115 FourStroke / 115 Pro XS card teasers", () => {
+    const ninety = calculateMotorFinancingEstimate(14_960, 5.48);
+    const fourStroke = calculateMotorFinancingEstimate(17_083, 5.48);
+    const proXs = calculateMotorFinancingEstimate(17_490, 5.48);
+
+    expect(formatFinancingEstimateLine(ninety!)).toBe("$329/mo · 60 mo · 5.48% OAC");
+    expect(formatFinancingEstimateLine(fourStroke!)).toBe("$375/mo · 60 mo · 5.48% OAC");
+    expect(formatFinancingEstimateLine(proXs!)).toBe("$328/mo · 72 mo · 5.48% OAC");
   });
 
   it("uses the financed amount for post-promo rate and amortization tiers", () => {

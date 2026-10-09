@@ -307,6 +307,16 @@ export type MotorFinancingEstimate = ReturnType<typeof calculateMonthlyPayment> 
 };
 
 /**
+ * Compact teaser used on motor cards, calculators, and quote summaries so
+ * the same estimate always discloses payment, amortization, and APR together.
+ * Example: "$328/mo · 72 mo · 5.48% OAC"
+ */
+export const formatFinancingEstimateLine = (
+  estimate: Pick<MotorFinancingEstimate, 'payment' | 'termMonths' | 'rate'>,
+): string =>
+  `$${estimate.payment}/mo · ${estimate.termMonths} mo · ${estimate.rate.toFixed(2)}% OAC`;
+
+/**
  * Build the monthly estimate shown beside a bare-motor price.
  *
  * Eligibility is checked against the before-tax motor price. The payment is

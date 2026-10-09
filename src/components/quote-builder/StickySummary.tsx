@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from 'react';
 import { money } from "@/lib/money";
+import { formatFinancingEstimateLine } from "@/lib/finance";
 import { Download, CreditCard, Bookmark } from "lucide-react";
 import { PaymentMethodBadges } from "@/components/payments/PaymentMethodBadges";
 import { useAuth } from '@/components/auth/AuthProvider';
@@ -11,6 +12,8 @@ type StickySummaryProps = {
   totalWithTax?: number;
   totalSavings: number;
   monthly?: number;
+  financingTermMonths?: number;
+  financingRate?: number;
   bullets?: string[];
   onReserve: () => void;
   onReview?: () => void;
@@ -38,6 +41,8 @@ export default function StickySummary({
   totalWithTax,
   totalSavings,
   monthly,
+  financingTermMonths,
+  financingRate,
   bullets = [],
   onReserve,
   onReview,
@@ -90,7 +95,10 @@ export default function StickySummary({
         <div className="my-5 h-px w-full bg-repower-navy-900/10" aria-hidden />
 
         <div className="font-sans text-[14px] text-repower-navy-900/70">
-          {monthly != null && (
+          {monthly != null && financingTermMonths != null && financingRate != null && (
+            <>From <span className="font-display font-semibold text-repower-gold tabular-nums">{formatFinancingEstimateLine({ payment: Math.round(monthly), termMonths: financingTermMonths, rate: financingRate })}</span> · </>
+          )}
+          {monthly != null && (financingTermMonths == null || financingRate == null) && (
             <>From <span className="font-display font-semibold text-repower-gold tabular-nums">{money(Math.round(monthly))}/mo</span> · </>
           )}
           You save <span className="font-display font-semibold text-repower-navy-900 tabular-nums">{money(totalSavings)}</span>

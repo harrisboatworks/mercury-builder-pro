@@ -1,5 +1,5 @@
 import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
-import { calculateMonthlyPayment, DEALERPLAN_FEE, FINANCING_MINIMUM, isUsableFinancingRate } from '@/lib/finance';
+import { calculateMonthlyPayment, DEALERPLAN_FEE, FINANCING_MINIMUM, formatFinancingEstimateLine, isUsableFinancingRate } from '@/lib/finance';
 import { useMemo } from 'react';
 
 interface FinancingCalloutProps {
@@ -38,10 +38,7 @@ export function FinancingCallout({ totalPrice, onApplyForFinancing, financingTer
   return (
     <div className="flex items-center justify-between">
       <div className="text-base text-repower-navy-900 font-medium">
-        From ${financingDetails.payment}/month
-        <span className="ml-2 text-xs text-repower-gold font-normal">
-          {financingDetails.rate}% APR · {financingDetails.termMonths} months
-        </span>
+        From {formatFinancingEstimateLine(financingDetails)}
       </div>
       
       {onApplyForFinancing && (
