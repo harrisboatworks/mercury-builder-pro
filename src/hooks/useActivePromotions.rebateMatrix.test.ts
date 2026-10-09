@@ -5,6 +5,7 @@ import {
   getPromotionRebateForHP,
   getRebateTierForHP,
   getTotalPromotionDiscount,
+  hasEligibleFactoryRebate,
   resolveRebateForHP,
   type RebateTier,
 } from '@/lib/promotion-discounts';
@@ -87,5 +88,7 @@ describe('production promotion discount calculator', () => {
     expect(getPromotionRebateForHP(SUMMER_SAVINGS, 60)).toBe(250);
     expect(getFirstPromotionRebateForHP([SUMMER_SAVINGS], 60)).toBe(250);
     expect(getFirstPromotionRebateForHP([SUMMER_SAVINGS], 500)).toBeNull();
+    expect(hasEligibleFactoryRebate(getFirstPromotionRebateForHP([SUMMER_SAVINGS], 60))).toBe(true);
+    expect(hasEligibleFactoryRebate(getFirstPromotionRebateForHP([SUMMER_SAVINGS], 500))).toBe(false);
   });
 });

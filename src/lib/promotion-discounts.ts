@@ -63,6 +63,16 @@ export function resolveRebateForHP(
   return rebate > 0 ? rebate : null;
 }
 
+/**
+ * True only when a motor has an explicit rebate tier with a positive amount.
+ * Never treat a missing, zero, or nearest-tier guess as an applied rebate.
+ */
+export function hasEligibleFactoryRebate(
+  amount: number | null | undefined,
+): amount is number {
+  return Number.isFinite(amount) && Number(amount) > 0;
+}
+
 export function getRebateTierForHP(
   matrix: RebateTier[],
   horsepower: number,

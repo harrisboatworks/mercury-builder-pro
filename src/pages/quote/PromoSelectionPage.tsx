@@ -18,6 +18,12 @@ import { formatPromoCalendarDate, promoEndOfDay } from '@/lib/quote-utils';
 import { calculateQuoteFinancingEstimate } from '@/lib/quote-financing-estimate';
 import { reconcileWarrantyConfig } from '@/lib/quote-product-protection';
 import { getAppliedPromotion, getAppliedWarrantyExtraYears } from '@/lib/warranty-display';
+import {
+  cashPurchasePaymentDescription,
+  persistFactoryRebatePromoDetails,
+  specialFinancingPaymentDescription,
+  standardFinancingPaymentDescription,
+} from '@/lib/factory-rebate-copy';
 
 type PaymentOptionId = 'cash_purchase' | 'special_financing' | 'standard_financing';
 
@@ -144,7 +150,7 @@ export default function PromoSelectionPage() {
         id: 'cash_purchase',
         title: 'Cash Purchase',
         subtitle: 'No financing',
-        description: 'Pay without financing. Your eligible factory rebate remains fully applied to the quote.',
+        description: cashPurchasePaymentDescription(rebateAmount),
         highlight: 'No Loan',
         icon: Banknote,
       },
@@ -154,7 +160,7 @@ export default function PromoSelectionPage() {
         subtitle: shortestPromoTerm
           ? `${shortestPromoTerm.rate}% for ${shortestPromoTerm.months} months (OAC)`
           : `As Low As ${lowestRate}% APR (OAC)`,
-        description: 'Layered on top of your rebate. Pick promo financing to lock in a low promotional rate, or keep standard TD financing.',
+        description: specialFinancingPaymentDescription(rebateAmount),
         highlight: 'Optional Add-On',
         icon: Percent,
       },
@@ -162,12 +168,12 @@ export default function PromoSelectionPage() {
         id: 'standard_financing',
         title: 'Standard TD Financing',
         subtitle: 'As low as 5.48% APR',
-        description: 'Use the standard TD "Always On" program. Your eligible factory rebate remains fully applied.',
+        description: standardFinancingPaymentDescription(rebateAmount),
         highlight: 'Flexible Terms',
         icon: CreditCard,
       },
     ],
-    [lowestRate, shortestPromoTerm],
+    [lowestRate, rebateAmount, shortestPromoTerm],
   );
 
   // Filter to only eligible options - hide financing-only options if not eligible
@@ -262,16 +268,11 @@ export default function PromoSelectionPage() {
     dispatch({ type: 'SET_PAYMENT_METHOD', payload: optionId });
 
     if (optionId === 'cash_purchase' || optionId === 'standard_financing') {
-      // Cash and standard financing both keep the independently layered rebate.
+      // Cash and standard financing keep a layered rebate only when this motor has a tier.
       setSelectedRate(null);
       dispatch({
         type: 'SET_PROMO_DETAILS',
-        payload: {
-          option: 'cash_rebate',
-          rate: null,
-          term: null,
-          value: rebateAmount > 0 ? `$${rebateAmount.toLocaleString()} rebate` : null,
-        },
+        payload: persistFactoryRebatePromoDetails(rebateAmount),
       });
     }
 

@@ -90,10 +90,10 @@ serve(async (req: Request): Promise<Response> => {
       } else if (selectedPromoOption === 'special_financing') {
         promoDisplayValue = '2.99% APR';
       } else if (selectedPromoOption === 'cash_rebate') {
-        if (hp >= 200) promoDisplayValue = '$750';
-        else if (hp >= 115) promoDisplayValue = '$500';
-        else if (hp >= 40) promoDisplayValue = '$300';
-        else promoDisplayValue = '$200';
+        const storedValue = typeof quoteState.selectedPromoValue === 'string'
+          ? quoteState.selectedPromoValue.trim()
+          : '';
+        promoDisplayValue = storedValue && /\d/.test(storedValue) ? storedValue : '';
       }
 
       // Generate unsubscribe token

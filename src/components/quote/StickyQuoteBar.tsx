@@ -81,7 +81,7 @@ export default function StickyQuoteBar({
               </span>
             ))}
             {/* Selected Promo Option Badge */}
-            {selectedPromoOption && (
+            {selectedPromoOption && (selectedPromoOption !== 'cash_rebate' || selectedPromoDisplay) && (
               <span className={`hidden sm:inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-semibold ${
                 selectedPromoOption === 'no_payments' 
                   ? 'bg-blue-50 text-blue-700 ring-1 ring-blue-200'
@@ -91,12 +91,12 @@ export default function StickyQuoteBar({
               }`}>
                 {selectedPromoOption === 'no_payments' && <Calendar className="w-3 h-3" />}
                 {selectedPromoOption === 'special_financing' && <Percent className="w-3 h-3" />}
-                {selectedPromoOption === 'cash_rebate' && <DollarSign className="w-3 h-3" />}
+                {selectedPromoOption === 'cash_rebate' && selectedPromoDisplay && <DollarSign className="w-3 h-3" />}
                 <span className="hidden md:inline">{selectedPromoDisplay}</span>
                 <span className="md:hidden">
                   {selectedPromoOption === 'no_payments' && 'No Payments'}
                   {selectedPromoOption === 'special_financing' && 'Low APR'}
-                  {selectedPromoOption === 'cash_rebate' && 'Rebate'}
+                  {selectedPromoOption === 'cash_rebate' && selectedPromoDisplay && 'Rebate'}
                 </span>
               </span>
             )}

@@ -24,6 +24,7 @@ import { isTillerMotor, requiresMercuryControls, includesPropeller, canAddExtern
 import { getPackageRecommendation, getRecommendationExplanation } from '@/lib/package-recommendation';
 import { getPropellerAllowance } from '@/lib/propeller-allowance';
 import { resolvePropellerDecision } from '@/lib/propeller-selection';
+import { hasEligibleFactoryRebate } from '@/lib/factory-rebate-copy';
 import { getAppliedPromotion, getAppliedWarrantyExtraYears } from '@/lib/warranty-display';
 import mercuryLogo from '@/assets/mercury-logo.png';
 
@@ -61,6 +62,7 @@ export default function PackageSelectionPage() {
     loading: promotionsLoading,
     error: promotionsError,
     getPromotionSavingsForMotor,
+    getRebateForHP,
     getSpecialFinancingRates,
   } = useActivePromotions({ motor: state.motor });
   const promotionsReady = !promotionsLoading && !promotionsError;
@@ -94,11 +96,13 @@ export default function PackageSelectionPage() {
       case 'no_payments':
         return 'Keeps 6 Mo. No Payments';
       case 'cash_rebate':
-        return 'Keeps your rebate';
+        return hasEligibleFactoryRebate(getRebateForHP(state.motor?.hp || 0))
+          ? 'Keeps your rebate'
+          : undefined;
       default:
         return undefined;
     }
-  }, [state.selectedPromoOption, getSpecialFinancingRates]);
+  }, [getRebateForHP, state.motor?.hp, state.selectedPromoOption, getSpecialFinancingRates]);
 
   // Get promo end date for countdown
   const promoEndDate = promotions?.[0]?.end_date ? promoEndOfDay(promotions[0].end_date) : null;

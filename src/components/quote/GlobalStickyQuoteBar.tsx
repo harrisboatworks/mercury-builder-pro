@@ -7,6 +7,7 @@ import { calculateMonthlyPayment, DEALERPLAN_FEE, FINANCING_MINIMUM, isUsableFin
 import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { useQuoteRunningTotal } from '@/hooks/useQuoteRunningTotal';
 import StickyQuoteBar from './StickyQuoteBar';
+import { formatFactoryRebateStickyLabel } from '@/lib/factory-rebate-copy';
 import { getQuoteStepGate } from '@/lib/quote-step-gate';
 import { toast } from 'sonner';
 
@@ -103,10 +104,8 @@ export function GlobalStickyQuoteBar() {
         const lowestRate = rates?.[0]?.rate;
         return isUsableFinancingRate(lowestRate) ? `${lowestRate}% APR (OAC)` : null;
       }
-      case 'cash_rebate': {
-        const rebate = getRebateForHP?.(hp);
-        return rebate ? `$${rebate} Rebate` : 'Cash Rebate';
-      }
+      case 'cash_rebate':
+        return formatFactoryRebateStickyLabel(getRebateForHP?.(hp));
       default:
         return null;
     }
