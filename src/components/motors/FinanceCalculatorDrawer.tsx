@@ -29,6 +29,7 @@ import {
   isUsableFinancingRate,
   type PaymentFrequency,
 } from '@/lib/finance';
+import { resolveSelectedPromotionFinancing } from '@/lib/promotion-financing';
 import { DollarSign, Calculator, Sparkles } from 'lucide-react';
 
 interface FinanceCalculatorDrawerProps {
@@ -52,25 +53,23 @@ export function FinanceCalculatorDrawer({ open, onOpenChange, motor }: FinanceCa
 
   // Use Quote context and Active Promotions for correct promo data
   const { state } = useQuote();
-  const { getRebateForHP, getSpecialFinancingRates, promotions } = useActivePromotions({ motor: motor });
+  const { getRebateForHP, getPromotionOptions, promotions } = useActivePromotions({ motor: motor });
+  const specialFinancingOption = getPromotionOptions().find(option => option.id === 'special_financing');
 
-  // Get effective promo rate based on user's selection
-  const effectivePromoRate = useMemo(() => {
-    if (state.selectedPromoOption === 'special_financing') {
-      const rates = getSpecialFinancingRates();
-      return isUsableFinancingRate(rates?.[0]?.rate) ? rates[0].rate : null;
-    }
-    return null; // Use the current standing Mercury rate below
-  }, [state.selectedPromoOption, getSpecialFinancingRates]);
-  const effectivePromoTerm = useMemo(() => {
-    if (state.selectedPromoOption !== 'special_financing') return null;
-    const months = getSpecialFinancingRates()?.[0]?.months;
-    return typeof months === 'number' && Number.isFinite(months) ? months : null;
-  }, [state.selectedPromoOption, getSpecialFinancingRates]);
+  const resolveCalculatorFinancing = useCallback((amount: number) => (
+    resolveSelectedPromotionFinancing({
+      selectedPromoOption: state.selectedPromoOption,
+      selectedPromoRate: state.selectedPromoRate,
+      selectedPromoTerm: state.selectedPromoTerm,
+      specialFinancingOption,
+      amount,
+      standingRate: null,
+    })
+  ), [state.selectedPromoOption, state.selectedPromoRate, state.selectedPromoTerm, specialFinancingOption]);
 
   const getCalculatorApr = useCallback((amount: number) => {
-    return getMotorCalculatorApr(amount, effectivePromoRate);
-  }, [effectivePromoRate]);
+    return getMotorCalculatorApr(amount, resolveCalculatorFinancing(amount).rate);
+  }, [resolveCalculatorFinancing]);
 
   const handleApplyForFinancing = () => {
     navigate('/financing-application', {
@@ -116,9 +115,14 @@ export function FinanceCalculatorDrawer({ open, onOpenChange, motor }: FinanceCa
 
     if (!principal || principal <= 0) return { amount: 0, frequency, termPeriods: 0 };
 
-    const result = calculatePaymentWithFrequency(principal, frequency, apr, effectivePromoTerm);
+    const result = calculatePaymentWithFrequency(
+      principal,
+      frequency,
+      apr,
+      resolveCalculatorFinancing(totalFinanced).term,
+    );
     return { amount: result.payment, frequency, termPeriods: result.termPeriods, termMonths: result.termMonths, rate: result.rate };
-  }, [totalFinanced, down, apr, frequency, effectivePromoTerm]);
+  }, [totalFinanced, down, apr, frequency, resolveCalculatorFinancing]);
 
   const breakdown = useMemo(() => {
     const motorPrice = Math.max(0, Math.round((totalFinanced - DEALERPLAN_FEE) / 1.13));
@@ -247,11 +251,11 @@ export function FinanceCalculatorDrawer({ open, onOpenChange, motor }: FinanceCa
             </div>
 
             {/* Promo Alert - Shows based on selected promo option */}
-            {state.selectedPromoOption === 'special_financing' && isUsableFinancingRate(effectivePromoRate) && (
+            {resolveCalculatorFinancing(totalFinanced).usesSpecialFinancing && isUsableFinancingRate(state.selectedPromoRate) && (
               <div className="p-3 bg-primary/10 rounded-lg text-sm border border-primary/20">
                 <div className="flex items-center gap-2 font-medium">
                   <Sparkles className="w-4 h-4 text-primary" />
-                  Special Financing: {effectivePromoRate}% APR
+                  Special Financing: {state.selectedPromoRate}% APR
                 </div>
                 <div className="text-muted-foreground mt-0.5">
                   Promotional rate applied
