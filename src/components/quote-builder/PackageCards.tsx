@@ -1,7 +1,7 @@
 "use client";
 import { motion, AnimatePresence } from 'framer-motion';
 import { money } from "@/lib/money";
-import { calculateMonthlyPayment, DEALERPLAN_FEE } from "@/lib/finance";
+import { calculateMonthlyPayment, DEALERPLAN_FEE, formatFinancingEstimateLine } from "@/lib/finance";
 import { cn } from "@/lib/utils";
 import { useHapticFeedback } from '@/hooks/useHapticFeedback';
 import { useSound } from '@/contexts/SoundContext';
@@ -55,6 +55,7 @@ type PackageCardsProps = {
   onSelect: (id: string) => void;
   selectedId?: string;
   promoRate?: number | null; // Promotional financing rate (null = use tiered defaults)
+  promoTerm?: number | null; // Required when a short-term promo rate is selected
   showUpgradeDeltas?: boolean; // Enable comparison mode
   basePackageId?: string; // Package to compare against (default: first package)
   revealComplete?: boolean; // Whether cinematic reveal has completed (triggers stagger animation)
@@ -67,6 +68,7 @@ export function PackageCards({
   onSelect,
   selectedId,
   promoRate = null,
+  promoTerm = null,
   showUpgradeDeltas = true,
   basePackageId,
   revealComplete = true,
@@ -80,7 +82,7 @@ export function PackageCards({
   // Find base package for comparison (default to first/Essential)
   const basePackage = options.find(p => p.id === (basePackageId || 'good')) || options[0];
   const baseAmountToFinance = (basePackage.priceBeforeTax * 1.13) + DEALERPLAN_FEE;
-  const baseMonthly = basePackage.monthly ?? calculateMonthlyPayment(baseAmountToFinance, promoRate).payment;
+  const baseMonthly = basePackage.monthly ?? calculateMonthlyPayment(baseAmountToFinance, promoRate, promoTerm).payment;
   const baseCoverageYears = basePackage.coverageYears || 3;
 
   return (
@@ -93,7 +95,8 @@ export function PackageCards({
     >
       {options.map((p) => {
         const amountToFinance = (p.priceBeforeTax * 1.13) + DEALERPLAN_FEE;
-        const monthly = p.monthly ?? calculateMonthlyPayment(amountToFinance, promoRate).payment;
+        const estimate = calculateMonthlyPayment(amountToFinance, promoRate, promoTerm);
+        const monthly = p.monthly ?? estimate.payment;
         const isSelected = selectedId === p.id;
         const isBase = p.id === (basePackageId || 'good');
         
@@ -169,7 +172,11 @@ export function PackageCards({
             </div>
 
             <div className="mt-1 text-sm text-repower-navy-900/65">
-              From <span className="font-semibold text-primary">{money(Math.round(monthly))}/mo</span>
+              From <span className="font-semibold text-primary">{formatFinancingEstimateLine({
+                payment: Math.round(monthly),
+                termMonths: estimate.termMonths,
+                rate: estimate.rate,
+              })}</span>
             </div>
 
             {/* Upgrade delta badges - show for non-base packages */}

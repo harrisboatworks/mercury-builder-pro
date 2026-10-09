@@ -30,8 +30,7 @@ describe('PricingTable financing terms', () => {
       />,
     );
 
-    expect(screen.getByText(/From \$605\/month/i)).toBeInTheDocument();
-    expect(screen.getByText(/2\.99% APR · 24 months/i)).toBeInTheDocument();
+    expect(screen.getByText(/From \$605\/mo · 24 mo · 2\.99% OAC/i)).toBeInTheDocument();
     expect(screen.getByText(/your selected promotional terms/i)).toBeInTheDocument();
     expect(screen.queryByText(/5\.48% APR/i)).not.toBeInTheDocument();
   });
@@ -65,7 +64,7 @@ describe('PricingTable financing terms', () => {
     expect(screen.getByText('Cash purchase selected')).toBeInTheDocument();
     expect(screen.getByText(/No financing is included/i)).toBeInTheDocument();
     expect(screen.getByText('Mercury Rebate')).toBeInTheDocument();
-    expect(screen.queryByText(/From \$255\/month/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/From \$255\/mo · 60 mo · 5\.48% OAC/i)).not.toBeInTheDocument();
     expect(screen.queryByRole('button', { name: /Apply for Financing/i })).not.toBeInTheDocument();
   });
 

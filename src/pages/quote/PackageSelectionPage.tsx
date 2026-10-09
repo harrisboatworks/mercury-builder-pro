@@ -83,6 +83,13 @@ export default function PackageSelectionPage() {
     }
     return isUsableFinancingRate(promo?.rate) ? promo.rate : null;
   }, [state.selectedPromoOption, getSpecialFinancingRates, promo?.rate]);
+  const effectivePromoTerm = useMemo(() => {
+    if (state.selectedPromoOption === 'special_financing') {
+      const months = getSpecialFinancingRates()?.[0]?.months;
+      return typeof months === 'number' && Number.isFinite(months) ? months : null;
+    }
+    return null;
+  }, [state.selectedPromoOption, getSpecialFinancingRates]);
 
   // Create promo message for nudge bars
   const promoMessage = useMemo(() => {
@@ -315,17 +322,20 @@ export default function PackageSelectionPage() {
 
   const essentialMonthly = calculateMonthlyPayment(
     (essentialPackage.priceBeforeTax * 1.13) + DEALERPLAN_FEE,
-    effectivePromoRate
+    effectivePromoRate,
+    effectivePromoTerm,
   ).payment;
   
   const completeMonthly = calculateMonthlyPayment(
     (completePackage.priceBeforeTax * 1.13) + DEALERPLAN_FEE,
-    effectivePromoRate
+    effectivePromoRate,
+    effectivePromoTerm,
   ).payment;
   
   const premiumMonthly = calculateMonthlyPayment(
     (premiumPackage.priceBeforeTax * 1.13) + DEALERPLAN_FEE,
-    effectivePromoRate
+    effectivePromoRate,
+    effectivePromoTerm,
   ).payment;
 
   const monthlyDeltaToComplete = completeMonthly - essentialMonthly;
@@ -515,7 +525,8 @@ export default function PackageSelectionPage() {
                   options={packages}
                   selectedId={selectedPackage}
                   onSelect={handlePackageSelect}
-                  promoRate={isUsableFinancingRate(promo?.rate) ? promo.rate : null}
+                  promoRate={effectivePromoRate}
+                  promoTerm={effectivePromoTerm}
                   showUpgradeDeltas={true}
                   revealComplete={true}
                   variant="dark"

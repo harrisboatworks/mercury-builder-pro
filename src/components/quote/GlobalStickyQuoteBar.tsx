@@ -56,19 +56,24 @@ export function GlobalStickyQuoteBar() {
   const runningTotal = runningTotalRaw > 0 ? runningTotalRaw : null;
 
   // Calculate monthly payment - only for amounts >= $5,000
-  const monthlyPayment = useMemo(() => {
+  const financingEstimate = useMemo(() => {
     if (state.selectedPaymentMethod === 'cash_purchase') return null;
     if (!runningTotal || runningTotal < FINANCING_MINIMUM) return null;
 
     // Add Dealerplan fee
     const priceWithFee = runningTotal + DEALERPLAN_FEE;
+    const useSelectedPromo =
+      state.selectedPromoOption === 'special_financing' &&
+      isUsableFinancingRate(state.selectedPromoRate) &&
+      typeof state.selectedPromoTerm === 'number';
+    const promoRate = useSelectedPromo
+      ? state.selectedPromoRate
+      : (isUsableFinancingRate(promo?.rate) ? promo.rate : null);
+    const promoTerm = useSelectedPromo ? state.selectedPromoTerm : null;
 
-    // Use active promo rate or default
-    const promoRate = isUsableFinancingRate(promo?.rate) ? promo.rate : null;
-    const { payment } = calculateMonthlyPayment(priceWithFee, promoRate);
-
-    return payment;
-  }, [runningTotal, promo, state.selectedPaymentMethod]);
+    return calculateMonthlyPayment(priceWithFee, promoRate, promoTerm);
+  }, [runningTotal, promo, state.selectedPaymentMethod, state.selectedPromoOption, state.selectedPromoRate, state.selectedPromoTerm]);
+  const monthlyPayment = financingEstimate?.payment ?? null;
 
   // Financing unavailable when total is valid but below threshold
   const financingUnavailable = useMemo(() => {
@@ -156,6 +161,8 @@ export function GlobalStickyQuoteBar() {
       model={state.motor?.model}
       total={runningTotal}
       monthly={monthlyPayment}
+      financingTermMonths={financingEstimate?.termMonths}
+      financingRate={financingEstimate?.rate}
       coverageYears={state.warrantyConfig?.totalYears}
       stepLabel={stepLabel}
       primaryLabel="Continue"

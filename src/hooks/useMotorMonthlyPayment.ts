@@ -1,36 +1,37 @@
 import { useMemo } from 'react';
 import { useActiveFinancingPromo } from './useActiveFinancingPromo';
-import { calculateMonthlyPayment, getFinancingTerm, isUsableFinancingRate } from '@/lib/finance';
+import {
+  calculateMotorFinancingEstimate,
+  formatFinancingEstimateLine,
+  isUsableFinancingRate,
+} from '@/lib/finance';
 
 interface UseMotorMonthlyPaymentProps {
   motorPrice: number;
   minimumThreshold?: number;
 }
 
-export function useMotorMonthlyPayment({ 
-  motorPrice, 
-  minimumThreshold = 5000 
+export function useMotorMonthlyPayment({
+  motorPrice,
+  minimumThreshold = 5000,
 }: UseMotorMonthlyPaymentProps) {
   const { promo } = useActiveFinancingPromo();
-  
+
   const monthlyPayment = useMemo(() => {
-    // Only calculate for motors above threshold
     if (motorPrice <= minimumThreshold || motorPrice <= 0) {
       return null;
     }
 
-    // Calculate price including HST (13% for Canada)
-    const priceWithHST = motorPrice * 1.13;
-    
-    // Use smart term selection and promotional rate
     const promoRate = isUsableFinancingRate(promo?.rate) ? promo.rate : null;
-    const { payment, termMonths, rate } = calculateMonthlyPayment(priceWithHST, promoRate);
-    
+    const estimate = calculateMotorFinancingEstimate(motorPrice, promoRate);
+    if (!estimate) return null;
+
     return {
-      amount: payment,
-      rate: rate,
+      amount: estimate.payment,
+      rate: estimate.rate,
       isPromoRate: !!promo,
-      termMonths: termMonths
+      termMonths: estimate.termMonths,
+      line: formatFinancingEstimateLine(estimate),
     };
   }, [motorPrice, minimumThreshold, promo]);
 

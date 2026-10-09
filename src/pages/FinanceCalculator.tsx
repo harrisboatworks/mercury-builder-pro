@@ -10,6 +10,7 @@ import { findMotorSpecs } from '@/lib/data/mercury-motors';
 import {
   calculatePaymentWithFrequency,
   DEALERPLAN_FEE,
+  formatFinancingEstimateLine,
   getFinancingTerm,
   getMotorCalculatorApr,
   type PaymentFrequency,
@@ -474,6 +475,15 @@ export default function FinanceCalculator() {
                   <div className="font-display font-bold text-repower-navy-900 mb-2" style={{ fontSize: 'clamp(36px, 5vw, 48px)', letterSpacing: '-0.025em', lineHeight: 1 }}>
                     ${paymentCalculation.amount.toLocaleString()}
                   </div>
+                  {frequency === 'monthly' && paymentCalculation.amount > 0 && (
+                    <div className="font-sans text-[13px] text-repower-navy-900/65 mb-2">
+                      {formatFinancingEstimateLine({
+                        payment: paymentCalculation.amount,
+                        termMonths: normalizedAmortization,
+                        rate: apr,
+                      })}
+                    </div>
+                  )}
                   {paymentCalculation.termPeriods && (
                     <div className="font-sans text-[13px] text-repower-navy-900/65 mb-6">
                       Payment calculated on a {normalizedAmortization}-month amortization

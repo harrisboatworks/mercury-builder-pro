@@ -6,7 +6,7 @@ import { useQuote } from '@/contexts/QuoteContext';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { useQuoteRunningTotal } from '@/hooks/useQuoteRunningTotal';
-import { calculateMonthlyPayment, DEALERPLAN_FEE, FINANCING_MINIMUM, isUsableFinancingRate } from '@/lib/finance';
+import { calculateMonthlyPayment, DEALERPLAN_FEE, FINANCING_MINIMUM, formatFinancingEstimateLine, isUsableFinancingRate } from '@/lib/finance';
 import { money } from '@/lib/money';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
@@ -50,8 +50,15 @@ export const MobileQuoteDrawer: React.FC<MobileQuoteDrawerProps> = ({ isOpen, on
     if (!displayMotor || total === 0) return null;
 
     const totalWithFee = total + DEALERPLAN_FEE;
-    const promoRate = isUsableFinancingRate(financingPromo?.rate) ? financingPromo.rate : null;
-    const { payment: monthly, termMonths, rate } = calculateMonthlyPayment(totalWithFee, promoRate);
+    const useSelectedPromo =
+      state.selectedPromoOption === 'special_financing' &&
+      isUsableFinancingRate(state.selectedPromoRate) &&
+      typeof state.selectedPromoTerm === 'number';
+    const promoRate = useSelectedPromo
+      ? state.selectedPromoRate
+      : (isUsableFinancingRate(financingPromo?.rate) ? financingPromo.rate : null);
+    const promoTerm = useSelectedPromo ? state.selectedPromoTerm : null;
+    const { payment: monthly, termMonths, rate } = calculateMonthlyPayment(totalWithFee, promoRate, promoTerm);
 
     return {
       lineItems,
@@ -64,7 +71,7 @@ export const MobileQuoteDrawer: React.FC<MobileQuoteDrawerProps> = ({ isOpen, on
       rate,
       financingUnavailable: total < FINANCING_MINIMUM,
     };
-  }, [displayMotor, total, subtotal, hst, taxSaving, lineItems, financingPromo]);
+  }, [displayMotor, total, subtotal, hst, taxSaving, lineItems, financingPromo, state.selectedPromoOption, state.selectedPromoRate, state.selectedPromoTerm]);
 
   // Get package info - dynamically based on promo years
   const packageInfo = useMemo(() => {
@@ -214,10 +221,11 @@ export const MobileQuoteDrawer: React.FC<MobileQuoteDrawerProps> = ({ isOpen, on
                 ) : (
                   <>
                     <p className="text-2xl font-semibold">
-                      ≈ {money(pricing.monthly)}<span className="text-sm font-normal text-muted-foreground">/mo</span>
-                    </p>
-                    <p className="text-xs text-muted-foreground mt-1">
-                      {pricing.termMonths} months @ {pricing.rate}% APR OAC
+                      ≈ {formatFinancingEstimateLine({
+                        payment: pricing.monthly,
+                        termMonths: pricing.termMonths,
+                        rate: pricing.rate,
+                      })}
                     </p>
                   </>
                 )}

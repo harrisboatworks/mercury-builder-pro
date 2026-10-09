@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { money } from "@/lib/money";
+import { formatFinancingEstimateLine } from "@/lib/finance";
 import { useActivePromotions } from "@/hooks/useActivePromotions";
 import { Calendar, Percent, DollarSign } from "lucide-react";
 
@@ -8,6 +9,8 @@ type Props = {
   model?: string;
   total?: number | null;
   monthly?: number | null;
+  financingTermMonths?: number | null;
+  financingRate?: number | null;
   coverageYears?: number | null;
   stepLabel?: string | null;
   primaryLabel?: string;
@@ -29,6 +32,8 @@ export default function StickyQuoteBar({
   model,
   total,
   monthly,
+  financingTermMonths,
+  financingRate,
   coverageYears,
   stepLabel,
   primaryLabel = "Continue",
@@ -65,7 +70,9 @@ export default function StickyQuoteBar({
           <div className="mt-0.5 flex flex-wrap items-center gap-1.5 md:gap-2 text-xs md:text-sm text-slate-700 font-light">
             {typeof total === "number" && <span><span className="hidden md:inline">Total: </span><span className="font-semibold">{money(total)}</span></span>}
             {typeof monthly === "number" && monthly > 0 ? (
-              <span>≈ {money(Math.round(monthly))}/mo<span className="hidden md:inline"> OAC</span></span>
+              <span>≈ {typeof financingTermMonths === "number" && typeof financingRate === "number"
+                ? formatFinancingEstimateLine({ payment: Math.round(monthly), termMonths: financingTermMonths, rate: financingRate })
+                : `${money(Math.round(monthly))}/mo OAC`}</span>
             ) : financingUnavailable ? (
               <span className="text-muted-foreground text-[10px] md:text-xs">Financing N/A</span>
             ) : null}

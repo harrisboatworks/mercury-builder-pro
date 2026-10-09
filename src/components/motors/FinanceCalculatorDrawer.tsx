@@ -22,6 +22,8 @@ import { useQuote } from '@/contexts/QuoteContext';
 import {
   calculatePaymentWithFrequency,
   DEALERPLAN_FEE,
+  formatFinancingEstimateLine,
+  getFinancingTerm,
   getMotorCalculatorApr,
   isUsableFinancingRate,
   type PaymentFrequency,
@@ -58,6 +60,11 @@ export function FinanceCalculatorDrawer({ open, onOpenChange, motor }: FinanceCa
       return isUsableFinancingRate(rates?.[0]?.rate) ? rates[0].rate : null;
     }
     return null; // Use the current standing Mercury rate below
+  }, [state.selectedPromoOption, getSpecialFinancingRates]);
+  const effectivePromoTerm = useMemo(() => {
+    if (state.selectedPromoOption !== 'special_financing') return null;
+    const months = getSpecialFinancingRates()?.[0]?.months;
+    return typeof months === 'number' && Number.isFinite(months) ? months : null;
   }, [state.selectedPromoOption, getSpecialFinancingRates]);
 
   const getCalculatorApr = useCallback((amount: number) => {
@@ -108,9 +115,9 @@ export function FinanceCalculatorDrawer({ open, onOpenChange, motor }: FinanceCa
 
     if (!principal || principal <= 0) return { amount: 0, frequency, termPeriods: 0 };
 
-    const result = calculatePaymentWithFrequency(principal, frequency, apr);
-    return { amount: result.payment, frequency, termPeriods: result.termPeriods };
-  }, [totalFinanced, down, apr, frequency]);
+    const result = calculatePaymentWithFrequency(principal, frequency, apr, effectivePromoTerm);
+    return { amount: result.payment, frequency, termPeriods: result.termPeriods, termMonths: result.termMonths, rate: result.rate };
+  }, [totalFinanced, down, apr, frequency, effectivePromoTerm]);
 
   const breakdown = useMemo(() => {
     const motorPrice = Math.max(0, Math.round((totalFinanced - DEALERPLAN_FEE) / 1.13));
@@ -286,11 +293,21 @@ export function FinanceCalculatorDrawer({ open, onOpenChange, motor }: FinanceCa
                   <span>Estimated {frequency === 'bi-weekly' ? 'Bi-weekly' : frequency === 'weekly' ? 'Weekly' : 'Monthly'} Payment</span>
                 </div>
                 <div className="text-4xl font-bold">${paymentCalculation.amount.toLocaleString()}</div>
-                {paymentCalculation.termPeriods > 0 && (
+                {frequency === 'monthly' && paymentCalculation.termMonths ? (
+                  <div className="mt-2 text-sm text-muted-foreground">
+                    {formatFinancingEstimateLine({
+                      payment: paymentCalculation.amount,
+                      termMonths: paymentCalculation.termMonths,
+                      rate: apr,
+                    })}
+                  </div>
+                ) : paymentCalculation.termPeriods > 0 ? (
                   <div className="mt-2 text-sm text-muted-foreground">
                     {paymentCalculation.termPeriods} {frequency === 'bi-weekly' ? 'bi-weekly' : frequency === 'weekly' ? 'weekly' : 'monthly'} payments
+                    {' · '}{paymentCalculation.termMonths ?? getFinancingTerm(Math.max(0, totalFinanced - down))} mo
+                    {' · '}{apr.toFixed(2)}% OAC
                   </div>
-                )}
+                ) : null}
                 <div className="mt-3 text-xs text-muted-foreground">
                   * Includes 13% HST and ${DEALERPLAN_FEE} finance fee. Estimates only, not a credit offer.
                 </div>
