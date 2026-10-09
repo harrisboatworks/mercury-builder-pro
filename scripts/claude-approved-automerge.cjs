@@ -77,7 +77,7 @@ async function run({ github, context, core, pullNumber, writeApproval = value =>
     // trusted workflow run. A PR workflow can impersonate the Actions comment
     // author, but cannot upload an artifact into this trusted run.
     const ancestry = (await api.repos.compareCommitsWithBasehead({ ...args, basehead: `${source.head_sha}...main` })).data;
-    if (!['behind', 'identical'].includes(ancestry.status)) return false;
+    if (!['ahead', 'identical'].includes(ancestry.status)) return false;
     const artifacts = await list(api.actions.listWorkflowRunArtifacts, { run_id: candidate.value.runId });
     return artifacts.some(a => !a.expired && a.name === artifactName(number, cycle, candidate.value.sha));
   }

@@ -14,6 +14,10 @@ a fresh label cycle if a PR remains held that long.
 The separate Claude approval follow-through workflow makes one refresh after the
 label handler publishes its artifact. GitHub forbids listening to one's own
 workflow completion; the separate listener has no completion loop.
+Changes to PR reviews trigger a read-only notifier; its completion wakes the
+trusted main controller to reread review state and the existing approval artifact.
+An unrelated main advance preserves an ancestor approval workflow run: GitHub's
+`BASE...HEAD` comparison reports `ahead` when current main is ahead of that base.
 
 Frontend typecheck, Edge typecheck and test must all succeed in the real Test suite
 workflow on the reviewed head. The latest Vercel status must succeed and belong to

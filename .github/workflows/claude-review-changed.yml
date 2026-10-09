@@ -1,0 +1,18 @@
+name: Claude review changed
+
+# Read-only notification. The privileged workflow_run listener loads main,
+# validates the existing approval artifact, and rereads the actual review state.
+on:
+  pull_request_review:
+    types: [submitted, edited, dismissed]
+
+permissions:
+  contents: read
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 1
+    steps:
+      - name: Notify the trusted approval controller
+        run: 'true'

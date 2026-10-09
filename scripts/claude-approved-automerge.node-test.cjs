@@ -21,7 +21,7 @@ function stamp(sha = SHA, runId = 42) { return { id: 1, user: { login: 'github-a
 function fixture({ event = 'status', stamped = true } = {}) {
   const current = pr(), calls = [], data = { checks: checks(), statuses: statuses(), comments: stamped ? [stamp()] : [],
     events: [cycle()], reviews: [], artifacts: [{ name: `claude-approval-9-101-${SHA}`, expired: false }],
-    sourceEvent: 'pull_request_target', sourceActor: 'harrisboatworks', ancestry: 'behind' };
+    sourceEvent: 'pull_request_target', sourceActor: 'harrisboatworks', ancestry: 'ahead' };
   const listMethod = name => Object.assign(async () => {}, { listName: name });
   const github = { rest: { pulls: {}, issues: {}, checks: {}, repos: {}, actions: {} },
     graphql: async (_, args) => { calls.push(['ready', args]); current.draft = false; },
@@ -114,8 +114,14 @@ test('new push invalidates approval; old label event cannot stamp newer head', a
 test('missing stamp, forged Actions comment/artifact, wrong ancestry and new cycle fail closed', async () => {
   for (const mutate of [f=>f.data.comments=[], f=>f.data.artifacts=[],
     f=>f.data.sourceEvent='pull_request',f=>f.data.sourceActor='attacker',f=>f.data.ancestry='diverged',
+    f=>f.data.ancestry='behind',
     f=>f.data.events.push({...cycle(),id:102}),f=>f.data.artifacts[0].expired=true]) {
     const f=fixture(); mutate(f); await f.execute(); assert.ok(!f.calls.some(c=>c[0]==='merge'));
+  }
+});
+test('trusted artifact survives unrelated main advances; identical main is also valid', async () => {
+  for(const ancestry of ['ahead','identical']) {
+    const f=fixture(); f.data.ancestry=ancestry; await f.execute(); assert.ok(f.calls.some(c=>c[0]==='merge'));
   }
 });
 test('delayed/relabelled label event does not bind to a newer cycle', async () => {

@@ -6,7 +6,7 @@ on:
   check_suite:
     types: [completed]
   workflow_run:
-    workflows: [Test suite]
+    workflows: [Test suite, Claude review changed]
     types: [completed]
   status: {}
   workflow_dispatch:
@@ -35,7 +35,7 @@ jobs:
       github.repository == 'harrisboatworks/mercury-builder-pro' &&
       (github.event_name != 'status' || (github.event.context == 'Vercel' && github.event.state != 'pending')) &&
       (github.event_name != 'pull_request_target' || github.event.action == 'synchronize' || github.event.label.name == 'claude-approved') &&
-      (github.event_name != 'workflow_run' || github.event.workflow_run.event == 'pull_request' || github.event.workflow_run.event == 'pull_request_target')
+      (github.event_name != 'workflow_run' || github.event.workflow_run.event == 'pull_request' || github.event.workflow_run.event == 'pull_request_review')
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
