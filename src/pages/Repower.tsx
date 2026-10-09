@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { useState, useMemo } from 'react';
+import { useState } from 'react';
 import { RepowerLayout } from '@/components/repower/RepowerLayout';
 import { RepowerHero } from '@/components/repower/RepowerHero';
 import { RepowerMath } from '@/components/repower/RepowerMath';
@@ -16,13 +16,11 @@ import { RepowerGuideDownloadDialog } from '@/components/repower/RepowerGuideDow
 import { Button } from '@/components/ui/button';
 import {
   AlertTriangle, Zap, Fuel, Volume2, Wrench, Calendar, Award,
-  MapPin, Phone, Download, Play, ChevronRight, Snowflake, BadgeCheck, Star,
+  MapPin, Phone, Download, Play, ChevronRight, Snowflake, BadgeCheck,
   Check, X
 } from 'lucide-react';
 import mercuryLogo from '@/assets/mercury-logo.png';
-import { generateDailyTestimonials } from '@/lib/activityGenerator';
-import { useGoogleReviewStats } from '@/hooks/useGoogleReviewStats';
-import { allTestimonials } from '@/lib/testimonialData';
+import { GoogleReviewsTestimonials } from '@/components/reviews/GoogleReviewsTestimonials';
 
 const warningSignsData = [
   { icon: AlertTriangle, title: "Hard Starting or Stalling", description: "Unreliable starts, especially when warm" },
@@ -53,8 +51,6 @@ const whyHarrisData = [
 
 export default function Repower() {
   const [guideDialogOpen, setGuideDialogOpen] = useState(false);
-  const dailyTestimonials = useMemo(() => generateDailyTestimonials(allTestimonials, 3), []);
-  const { totalReviews: reviewCount } = useGoogleReviewStats();
 
   return (
     <RepowerLayout>
@@ -423,43 +419,14 @@ export default function Repower() {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="py-24 md:py-32 px-6 md:px-14 bg-repower-navy-900 text-repower-cream">
-        <div className="max-w-[1400px] mx-auto">
-          <div className="max-w-3xl mb-14 md:mb-20">
-            <p className="font-sans font-semibold text-[13px] md:text-sm uppercase tracking-[0.24em] text-repower-mercury-red mb-4 flex items-center gap-3">
-              <span className="inline-block h-px w-8 bg-repower-mercury-red/60" />
-              Customer Stories
-            </p>
-            <h2
-              className="font-display font-bold text-[clamp(36px,4.5vw,64px)] tracking-[-0.03em] leading-[1.05] mb-4"
-            >
-              What customers <em className="not-italic italic text-repower-mercury-red">say.</em>
-            </h2>
-            <p className="font-sans text-base text-repower-cream/65">
-              Rated <span className="font-medium text-repower-cream">4.7 stars</span> across <span className="font-medium text-repower-cream">{reviewCount}</span> Google reviews from Ontario boaters
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            {dailyTestimonials.map((testimonial, index) => (
-              <div key={index} className="border border-repower-cream/10 bg-repower-cream/[0.03] rounded p-8">
-                <div className="flex gap-1 mb-4">
-                  {Array.from({ length: testimonial.rating }).map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-repower-gold text-repower-gold" />
-                  ))}
-                </div>
-                <p className="font-display text-lg text-repower-cream mb-6 leading-relaxed italic tracking-[-0.01em]">
-                  "{testimonial.quote}"
-                </p>
-                <p className="font-sans text-xs uppercase tracking-[0.18em] text-repower-cream/55">
-                  <span className="text-repower-gold">{testimonial.name}</span> · {testimonial.location}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <GoogleReviewsTestimonials
+        variant="dark-grid"
+        heading={
+          <>
+            What customers <em className="not-italic italic text-repower-mercury-red">say.</em>
+          </>
+        }
+      />
       {/* Final CTA, restyled */}
       <FinalCTARepower />
       <SiteFooter />

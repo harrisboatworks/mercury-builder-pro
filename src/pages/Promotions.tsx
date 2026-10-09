@@ -1,11 +1,11 @@
-import React, { useState, useEffect, useCallback, useMemo } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
 import { RepowerHeader } from '@/components/repower/RepowerHeader';
 import { SiteFooter } from '@/components/ui/site-footer';
 import {
-  Bell, ChevronRight, Calendar, Tag, Gift, Sparkles, Mail, MessageSquare,
-  Award, Wrench, Waves, MapPin, Star, ChevronLeft, ChevronDown, BadgeCheck, Shield
+  Bell, Calendar, Mail, MessageSquare,
+  Wrench, Waves, MapPin
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -13,14 +13,11 @@ import { Label } from '@/components/ui/label';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { toast } from 'sonner';
-import useEmblaCarousel from 'embla-carousel-react';
 import mercuryLogo from '@/assets/mercury-logo.png';
-import { generateDailyTestimonials } from '@/lib/activityGenerator';
-import { useGoogleReviewStats } from '@/hooks/useGoogleReviewStats';
-import { allTestimonials } from '@/lib/testimonialData';
 import { PromotionsPageSEO } from '@/components/seo/PromotionsPageSEO';
 import { PromotionHero } from '@/components/promotions/PromotionHero';
 import { ChooseOneSection } from '@/components/promotions/ChooseOneSection';
+import { GoogleReviewsTestimonials } from '@/components/reviews/GoogleReviewsTestimonials';
 
 import { RebateCalculator } from '@/components/promotions/RebateCalculator';
 import { TDAlwaysOnCard, isTDAlwaysOnActive } from '@/components/promotions/TDAlwaysOnOffer';
@@ -193,155 +190,6 @@ export default function Promotions() {
     }
   };
 
-  // Testimonials Carousel Component
-  const TestimonialsSection = () => {
-    const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: 'start' });
-    const [selectedIndex, setSelectedIndex] = useState(0);
-    const [isHovered, setIsHovered] = useState(false);
-    const [isFocusWithin, setIsFocusWithin] = useState(false);
-    const [prefersReducedMotion, setPrefersReducedMotion] = useState(() =>
-      typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    );
-
-    const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
-    const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
-
-    const onSelect = useCallback(() => {
-      if (!emblaApi) return;
-      setSelectedIndex(emblaApi.selectedScrollSnap());
-    }, [emblaApi]);
-
-    useEffect(() => {
-      if (!emblaApi) return;
-      emblaApi.on('select', onSelect);
-
-      return () => {
-        emblaApi.off('select', onSelect);
-      };
-    }, [emblaApi, onSelect]);
-
-    useEffect(() => {
-      const media = window.matchMedia('(prefers-reduced-motion: reduce)');
-      const updatePreference = () => setPrefersReducedMotion(media.matches);
-      media.addEventListener('change', updatePreference);
-      return () => media.removeEventListener('change', updatePreference);
-    }, []);
-
-    useEffect(() => {
-      if (!emblaApi || prefersReducedMotion || isHovered || isFocusWithin) return;
-      const interval = window.setInterval(() => emblaApi.scrollNext(), 6000);
-      return () => window.clearInterval(interval);
-    }, [emblaApi, isFocusWithin, isHovered, prefersReducedMotion]);
-
-    const dailyTestimonials = useMemo(() =>
-      generateDailyTestimonials(allTestimonials, 6),
-      []
-    );
-    const { totalReviews: reviewCount } = useGoogleReviewStats();
-
-    return (
-      <section className="bg-white py-20 md:py-24 px-6 md:px-14 border-t border-repower-navy-900/10">
-        <div
-          className="max-w-[1100px] mx-auto"
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-          onFocusCapture={() => setIsFocusWithin(true)}
-          onBlurCapture={(event) => {
-            if (!event.currentTarget.contains(event.relatedTarget as Node | null)) setIsFocusWithin(false);
-          }}
-        >
-          <div className="text-center mb-12">
-            <h2 className="font-display font-bold text-[clamp(28px,3.5vw,40px)] text-repower-navy-900 mb-3" style={{ letterSpacing: '-0.025em' }}>
-              What Our Customers Say
-            </h2>
-            <p className="font-sans text-repower-navy-900/65">
-              Rated <span className="font-medium text-repower-navy-900">4.7 stars</span> across <span className="font-medium text-repower-navy-900">{reviewCount}</span> Google reviews from Ontario boaters
-            </p>
-          </div>
-
-          <div className="relative">
-            <div className="overflow-hidden" ref={emblaRef}>
-              <div className="flex gap-6">
-                {dailyTestimonials.map((testimonial, index) => (
-                  <div
-                    key={index}
-                    className="flex-[0_0_100%] md:flex-[0_0_calc(50%-12px)] lg:flex-[0_0_calc(33.333%-16px)] min-w-0"
-                  >
-                    <div className="bg-white border border-repower-navy-900/10 rounded-lg p-6 h-full card-hover">
-                      <div className="flex gap-1 mb-4">
-                        {Array.from({ length: testimonial.rating }).map((_, i) => (
-                          <Star key={i} className="w-4 h-4 fill-repower-gold text-repower-gold" />
-                        ))}
-                      </div>
-
-                      <p className="font-sans text-repower-navy-900 mb-4 italic">
-                        "{testimonial.quote}"
-                      </p>
-
-                      <div className="text-sm">
-                        <span className="font-medium text-repower-navy-900">{testimonial.name}</span>
-                        <span className="text-repower-navy-900/60">, {testimonial.location}</span>
-                      </div>
-
-                      <p className="text-xs text-repower-navy-900/60 mt-1 mb-3">
-                        {testimonial.dateLabel}
-                      </p>
-
-                      <div className="flex items-center justify-between pt-3 border-t border-repower-navy-900/10">
-                        <div className="flex items-center gap-2">
-                          <img src={mercuryLogo} alt="Mercury" className="h-4" />
-                          <span className="text-xs text-repower-navy-900/60">Mercury Owner</span>
-                        </div>
-                        <div className="flex items-center gap-1 text-repower-navy-900">
-                          <BadgeCheck className="w-3.5 h-3.5" strokeWidth={1.5} />
-                          <span className="text-xs font-medium">Verified</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <button
-              onClick={scrollPrev}
-              aria-label="Previous customer testimonial"
-              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 w-10 h-10 bg-white rounded-full border border-repower-navy-900/10 shadow-sm hidden md:flex items-center justify-center hover:border-repower-navy-900/30 transition-colors"
-            >
-              <ChevronLeft className="w-5 h-5 text-repower-navy-900" />
-            </button>
-            <button
-              onClick={scrollNext}
-              aria-label="Next customer testimonial"
-              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 w-10 h-10 bg-white rounded-full border border-repower-navy-900/10 shadow-sm hidden md:flex items-center justify-center hover:border-repower-navy-900/30 transition-colors"
-            >
-              <ChevronRight className="w-5 h-5 text-repower-navy-900" />
-            </button>
-          </div>
-
-          <div className="flex flex-row keep-flex justify-center gap-2 mt-6">
-            {dailyTestimonials.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => emblaApi?.scrollTo(index)}
-                aria-label={`Go to testimonial ${index + 1}`}
-                aria-current={selectedIndex === index ? 'true' : undefined}
-                className="w-11 h-11 p-0 rounded-full inline-flex items-center justify-center"
-              >
-                <span
-                  aria-hidden="true"
-                  className={`w-2 h-2 rounded-full transition-colors ${
-                    selectedIndex === index ? 'bg-repower-gold' : 'bg-repower-navy-900/20'
-                  }`}
-                />
-              </button>
-            ))}
-          </div>
-        </div>
-      </section>
-    );
-  };
-
   const hasActivePromos = promotions.length > 0;
   const mainName = `${mainPromotion?.name || ''} ${mainPromotion?.bonus_title || ''}`;
   const mainIsSummerSavings = /summer savings/i.test(mainName);
@@ -501,8 +349,10 @@ export default function Promotions() {
         </section>
       )}
 
-      {/* Testimonials Carousel */}
-      <TestimonialsSection />
+      <GoogleReviewsTestimonials
+        variant="light-carousel"
+        heading="What Our Customers Say"
+      />
 
       {/* Why Buy from Harris */}
       <section className="bg-repower-paper py-20 md:py-24 px-6 md:px-14 border-t border-repower-navy-900/10">

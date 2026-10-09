@@ -12,7 +12,6 @@ import { MotorFinderWizard } from './MotorFinderWizard';
 import { TestimonialCarousel } from './TestimonialCarousel';
 import { PromoDetailsModal } from './PromoDetailsModal';
 import { ActivityTicker } from './ActivityTicker';
-import { RotatingTestimonials } from './RotatingTestimonials';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { getPriceDisplayState } from '@/lib/pricing';
@@ -1217,14 +1216,7 @@ export const MotorSelection = ({
                 <ActivityTicker />
               </div>
 
-              {/* Customer Reviews Section */}
-              <div className="mt-6">
-                <h4 className="text-sm font-semibold text-foreground mb-3 flex items-center gap-2">
-                  <Star className="w-4 h-4 text-repower-gold0" />
-                  Customer Reviews (4.6/5 ⭐)
-                </h4>
-                <TestimonialCarousel />
-              </div>
+              <TestimonialCarousel />
             </>
           ) : (
             <div className="bg-background border border-border rounded-lg flex flex-col items-center py-4 space-y-4 h-fit">

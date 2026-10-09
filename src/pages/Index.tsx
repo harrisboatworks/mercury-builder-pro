@@ -26,7 +26,8 @@ import { GoogleRatingBadge } from '@/components/business/GoogleRatingBadge';
 import heroImage from '@/assets/hero-proxs-sunset.jpg';
 import jimHarrisHeritage from '@/assets/heritage/jim-harris-mercury-1960s.jpg';
 import ctaLakeImage from '@/assets/landing-cta-lake.jpg';
-import { useGooglePlaceData, type GoogleReview } from '@/hooks/useGooglePlaceData';
+import { useGooglePlaceData } from '@/hooks/useGooglePlaceData';
+import { formatReviewerName, selectFeaturedReviews } from '@/lib/googleReviewsDisplay';
 
 const HOW_IT_WORKS = [
   {
@@ -53,26 +54,6 @@ const HOW_IT_WORKS = [
     body: 'Every Mercury we install gets a real water test on Rice Lake before you pick it up. You drive home with a motor that has been run, tuned, and verified, not a dyno number on a spec sheet.',
   },
 ];
-
-// Live Google review selection: 5-star only, substantial text, prefer repower/Mercury/motor/service mentions.
-const REVIEW_KEYWORDS = /repower|mercury|motor|service/i;
-
-function formatReviewerName(fullName: string): string {
-  const parts = fullName.trim().split(/\s+/).filter(Boolean);
-  if (parts.length === 0) return 'Google user';
-  if (parts.length === 1) return parts[0];
-  return `${parts[0]} ${parts[parts.length - 1].charAt(0).toUpperCase()}.`;
-}
-
-function selectFeaturedReviews(reviews: GoogleReview[] | undefined): GoogleReview[] {
-  if (!reviews || reviews.length === 0) return [];
-  const eligible = reviews.filter(
-    r => r.rating === 5 && (r.text?.trim().length ?? 0) >= 100
-  );
-  const preferred = eligible.filter(r => REVIEW_KEYWORDS.test(r.text));
-  const rest = eligible.filter(r => !REVIEW_KEYWORDS.test(r.text));
-  return [...preferred, ...rest].slice(0, 3);
-}
 
 export default function Index() {
   const navigate = useNavigate();
