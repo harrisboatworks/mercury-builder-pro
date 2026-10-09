@@ -18,6 +18,10 @@ the Vercel integration. Pending, skipped, cancelled and failed checks hold the P
 as do changes-requested reviews. After checks pass, drafts are made ready and the
 head, label cycle and checks are reread. The squash merge supplies the reviewed SHA
 to GitHub's atomic merge guard. Only trusted main source executes with write access.
+The merge and function-deploy concurrency groups use `queue: max` so later events
+do not replace a pending approval or deployment (GitHub's default single-pending
+behavior). GitHub caps each queue at 100 pending runs; a full-queue cancellation
+remains a visible retry gate.
 
 ## Post-merge validation and deployment
 

@@ -18,6 +18,7 @@ on:
 
 concurrency:
   group: claude-approved-automerge
+  queue: max
   cancel-in-progress: false
 
 # No PAT or PR source checkout. Approval is restricted to the existing owner.
