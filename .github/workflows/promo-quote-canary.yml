@@ -29,6 +29,8 @@ jobs:
         run: npm ci --ignore-scripts --engine-strict
       - name: Install Chromium
         run: npx playwright install --with-deps chromium
+      # Asserts Chase 2.99% and 24 mo on the same compact financing line
+      # (`$311/mo · 24 mo · 2.99% OAC`), not the retired "2.99% APR · 24 months" copy.
       - name: Check live 25 HP promo quote
         run: npm run check:promo-quote-live
         env:

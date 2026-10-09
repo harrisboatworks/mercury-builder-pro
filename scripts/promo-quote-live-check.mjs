@@ -1,3 +1,5 @@
+import { resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { chromium } from 'playwright';
 
 const baseUrl = (process.env.PROMO_CANARY_BASE_URL || 'https://www.mercuryrepower.ca')
@@ -7,24 +9,68 @@ const expiresAt = process.env.PROMO_CANARY_EXPIRES_AT;
 const retiresAt = process.env.PROMO_CANARY_RETIRES_AT;
 const now = Date.now();
 
-if (retiresAt && now >= Date.parse(retiresAt)) {
-  console.log(JSON.stringify({ status: 'skipped', reason: 'rollover window ended', retiresAt }));
-  process.exit(0);
+export const PROMO_RATE = 2.99;
+export const PROMO_TERM_MONTHS = 24;
+
+const promoRateSource = String(PROMO_RATE).replace('.', '\\.');
+const promoTermSource = String(PROMO_TERM_MONTHS);
+
+/**
+ * Same-line match for the Chase promo rate and 24-month term.
+ * Accepts the compact #674 teaser (`$311/mo · 24 mo · 2.99% OAC`) and older
+ * wording (`2.99% APR · 24 months`) so small copy tweaks do not flake.
+ * Fails when the rate or term is missing, split across lines, or wrong.
+ */
+export const PROMO_FINANCING_LINE_PATTERN = new RegExp(
+  String.raw`(?:${promoRateSource}\s*%[^\n]{0,80}${promoTermSource}(?:\s*|-)?mo(?:nths?)?\b|${promoTermSource}(?:\s*|-)?mo(?:nths?)?\b[^\n]{0,80}${promoRateSource}\s*%)`,
+  'i',
+);
+
+export const FROM_MONTHLY_PAYMENT_PATTERN = /From\s+\$([\d,]+)\/(?:mo(?:nths?)?)/i;
+
+export function findPromoFinancingLine(text) {
+  const match = String(text).match(PROMO_FINANCING_LINE_PATTERN);
+  return match?.[0] ?? null;
 }
 
-const phase = process.env.PROMO_CANARY_PHASE ||
-  (expiresAt && now >= Date.parse(expiresAt) ? 'expired' : 'active');
-
-if (!['active', 'expired'].includes(phase)) {
-  throw new Error(`Invalid PROMO_CANARY_PHASE: ${phase}`);
-}
-
-function requireMatch(text, pattern, description) {
-  const match = text.match(pattern);
-  if (!match) {
-    throw new Error(`Missing ${description}. Expected ${pattern}, received: ${text.slice(0, 1_000)}`);
+export function requirePromoFinancingLine(text) {
+  const line = findPromoFinancingLine(text);
+  if (!line) {
+    throw new Error(
+      `Missing promotional financing line with ${PROMO_RATE}% and ${PROMO_TERM_MONTHS} mo. Received: ${String(text).slice(0, 1_000)}`,
+    );
   }
-  return Number(match[1].replaceAll(',', ''));
+  return line;
+}
+
+export function collectFromPayments(text) {
+  return [...String(text).matchAll(new RegExp(FROM_MONTHLY_PAYMENT_PATTERN, 'gi'))].map((match) =>
+    Number(match[1].replaceAll(',', '')),
+  );
+}
+
+export function requireFromPayments(text, { minimum = 2 } = {}) {
+  const payments = collectFromPayments(text);
+  if (payments.length < minimum) {
+    throw new Error(
+      `Expected at least ${minimum} From $…/mo financing payments, found ${payments.length}. Received: ${String(text).slice(0, 1_000)}`,
+    );
+  }
+  const [first, ...rest] = payments;
+  const mismatch = rest.find((payment) => payment !== first);
+  if (mismatch !== undefined) {
+    throw new Error(`Payment mismatch: From $…/mo values were ${payments.map((amount) => `$${amount}`).join(', ')}`);
+  }
+  return first;
+}
+
+function canaryUrl(pathWithQuery) {
+  const url = new URL(pathWithQuery, `${baseUrl}/`);
+  const utmSource = process.env.PROMO_CANARY_UTM_SOURCE;
+  if (utmSource) {
+    url.searchParams.set('utm_source', utmSource);
+  }
+  return url.toString();
 }
 
 async function clickVisible(locator, description) {
@@ -81,7 +127,7 @@ function assertNoExpiredChaseSavings(text, location) {
 }
 
 async function checkActivePromotion(page) {
-  await page.goto(`${baseUrl}/quote/motor-selection?promo_canary=1&hp=all`, {
+  await page.goto(canaryUrl('/quote/motor-selection?promo_canary=1&hp=all'), {
     waitUntil: 'domcontentloaded',
   });
   await acceptCookies(page);
@@ -111,7 +157,7 @@ async function checkActivePromotion(page) {
   if (!/Mercury Rebate[\s\S]{0,160}(?:−|-)\$400/.test(cashPageText)) {
     throw new Error('Cash summary did not retain the $400 Mercury rebate line item');
   }
-  if (/From \$[\d,]+\/(?:month|mo)/.test(cashPageText)) {
+  if (FROM_MONTHLY_PAYMENT_PATTERN.test(cashPageText)) {
     throw new Error('Cash summary still displayed a monthly financing payment');
   }
   if (await page.getByRole('button', { name: /Apply for Financing/i }).count()) {
@@ -144,28 +190,18 @@ async function checkActivePromotion(page) {
   }
 
   await page.getByText('Mercury Rebate + 2.99% APR', { exact: false }).first().waitFor();
-  await page.getByText('2.99% APR · 24 months', { exact: false }).first().waitFor();
+  await page.waitForFunction(
+    (source) => new RegExp(source, 'i').test(document.body.innerText),
+    PROMO_FINANCING_LINE_PATTERN.source,
+  );
 
   const pageText = await page.locator('body').innerText();
+  requirePromoFinancingLine(pageText);
   if (!/Mercury Rebate[\s\S]{0,160}(?:−|-)\$400/.test(pageText)) {
     throw new Error('Summary did not show a $400 Mercury rebate line item');
   }
 
-  const pricingPayment = requireMatch(
-    pageText,
-    /From \$([\d,]+)\/month/,
-    'main financing payment',
-  );
-  const stickyPayment = requireMatch(
-    pageText,
-    /From \$([\d,]+)\/mo/,
-    'sticky summary payment',
-  );
-  if (pricingPayment !== stickyPayment) {
-    throw new Error(
-      `Payment mismatch: pricing table is $${pricingPayment}/month, sticky summary is $${stickyPayment}/mo`,
-    );
-  }
+  const pricingPayment = requireFromPayments(pageText);
 
   return {
     status: 'pass',
@@ -173,13 +209,13 @@ async function checkActivePromotion(page) {
     baseUrl,
     motor: '25 ELPT FourStroke',
     rebate: 400,
-    financing: { rate: 2.99, months: 24, monthlyPayment: pricingPayment },
+    financing: { rate: PROMO_RATE, months: PROMO_TERM_MONTHS, monthlyPayment: pricingPayment },
     offerEnds: '2026-10-30',
   };
 }
 
 async function checkExpiredPromotion(page) {
-  await page.goto(`${baseUrl}/promotions?promo_canary=1`, {
+  await page.goto(canaryUrl('/promotions?promo_canary=1'), {
     waitUntil: 'domcontentloaded',
   });
   await acceptCookies(page);
@@ -193,7 +229,7 @@ async function checkExpiredPromotion(page) {
     throw new Error('Expired Chase the Savings social image remained in /promotions metadata');
   }
 
-  await page.goto(`${baseUrl}/quote/motor-selection?promo_canary=1&hp=all`, {
+  await page.goto(canaryUrl('/quote/motor-selection?promo_canary=1&hp=all'), {
     waitUntil: 'domcontentloaded',
   });
   await page.getByRole('heading', { name: /^25 ELPT FourStroke$/i }).first().waitFor();
@@ -226,41 +262,62 @@ async function checkExpiredPromotion(page) {
   };
 }
 
-const browser = await chromium.launch({ headless: true });
-const context = await browser.newContext({
-  viewport: { width: 1440, height: 1_000 },
-  locale: 'en-CA',
-});
+async function run() {
+  if (retiresAt && now >= Date.parse(retiresAt)) {
+    console.log(JSON.stringify({ status: 'skipped', reason: 'rollover window ended', retiresAt }));
+    return;
+  }
 
-// Local verification hook: simulate the post-expiry Supabase response without
-// changing production data. The scheduled workflow never sets this flag.
-if (process.env.PROMO_CANARY_MOCK_EXPIRED === '1') {
-  await context.route('**/rest/v1/promotions**', async (route) => {
-    await route.fulfill({
-      status: 200,
-      contentType: 'application/json',
-      headers: { 'content-range': '*/0' },
-      body: '[]',
-    });
+  if (!['active', 'expired'].includes(phase)) {
+    throw new Error(`Invalid PROMO_CANARY_PHASE: ${phase}`);
+  }
+
+  const browser = await chromium.launch({ headless: true });
+  const context = await browser.newContext({
+    viewport: { width: 1440, height: 1_000 },
+    locale: 'en-CA',
   });
+
+  // Local verification hook: simulate the post-expiry Supabase response without
+  // changing production data. The scheduled workflow never sets this flag.
+  if (process.env.PROMO_CANARY_MOCK_EXPIRED === '1') {
+    await context.route('**/rest/v1/promotions**', async (route) => {
+      await route.fulfill({
+        status: 200,
+        contentType: 'application/json',
+        headers: { 'content-range': '*/0' },
+        body: '[]',
+      });
+    });
+  }
+
+  const page = await context.newPage();
+  page.setDefaultTimeout(30_000);
+
+  try {
+    const result = phase === 'expired'
+      ? await checkExpiredPromotion(page)
+      : await checkActivePromotion(page);
+    console.log(JSON.stringify(result));
+  } catch (error) {
+    const failureText = await page.locator('body').innerText().catch(() => '');
+    await page.screenshot({ path: screenshotPath, fullPage: true }).catch(() => {});
+    console.error(`Failed at ${page.url()}`);
+    console.error(failureText.slice(0, 2_000));
+    console.error(`Promo quote canary failed. Screenshot: ${screenshotPath}`);
+    throw error;
+  } finally {
+    await context.close();
+    await browser.close();
+  }
 }
 
-const page = await context.newPage();
-page.setDefaultTimeout(30_000);
+const phase = process.env.PROMO_CANARY_PHASE ||
+  (expiresAt && now >= Date.parse(expiresAt) ? 'expired' : 'active');
 
-try {
-  const result = phase === 'expired'
-    ? await checkExpiredPromotion(page)
-    : await checkActivePromotion(page);
-  console.log(JSON.stringify(result));
-} catch (error) {
-  const failureText = await page.locator('body').innerText().catch(() => '');
-  await page.screenshot({ path: screenshotPath, fullPage: true }).catch(() => {});
-  console.error(`Failed at ${page.url()}`);
-  console.error(failureText.slice(0, 2_000));
-  console.error(`Promo quote canary failed. Screenshot: ${screenshotPath}`);
-  throw error;
-} finally {
-  await context.close();
-  await browser.close();
+const isDirectRun = Boolean(process.argv[1]) &&
+  resolve(process.argv[1]) === fileURLToPath(import.meta.url);
+
+if (isDirectRun) {
+  await run();
 }
