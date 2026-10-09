@@ -4,28 +4,65 @@ on:
   pull_request: {}
   push:
     branches: [main]
+  workflow_dispatch:
+    inputs:
+      merge_sha:
+        description: Exact approved bot merge to validate (must be on main)
+        required: false
+        type: string
+
+permissions:
+  contents: read
 
 jobs:
+  dispatch-guard:
+    name: Dispatch target guard
+    runs-on: ubuntu-latest
+    outputs:
+      checkout_sha: ${{ steps.guard.outputs.checkout_sha }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+          sparse-checkout: scripts/validate-automerge-dispatch.cjs
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.22.2'
+      - id: guard
+        env:
+          MERGE_SHA: ${{ inputs.merge_sha }}
+        run: node scripts/validate-automerge-dispatch.cjs
+
   test:
+    needs: dispatch-guard
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.dispatch-guard.outputs.checkout_sha }}
       - uses: actions/setup-node@v4
         with:
           node-version: '22.22.2'
           cache: npm
       - name: Install dependencies
         run: npm ci --ignore-scripts --engine-strict
+      - name: Test approval and dispatch safeguards
+        run: node --test scripts/claude-approved-automerge.node-test.cjs scripts/validate-automerge-dispatch.node-test.cjs
       - name: Run Vitest
         run: npm test
 
   frontend-typecheck:
+    needs: dispatch-guard
     name: Frontend typecheck
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.dispatch-guard.outputs.checkout_sha }}
       - uses: actions/setup-node@v4
         with:
           node-version: '22.22.2'
@@ -36,11 +73,14 @@ jobs:
         run: npm run typecheck
 
   edge-typecheck:
+    needs: dispatch-guard
     name: Edge typecheck
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.dispatch-guard.outputs.checkout_sha }}
       - uses: actions/setup-node@v4
         with:
           node-version: '22.22.2'
@@ -51,15 +91,18 @@ jobs:
         run: npm run typecheck:edge -- --all
 
   financing-integration:
+    needs: dispatch-guard
     # This test signs in as a real Supabase user and writes a financing submission
     # log, so it is deliberately excluded from `npm test` (see scripts/run-financing-integration.mjs)
     # and runs only on pushes to main, and only once the credentials below exist.
     name: Financing integration
     runs-on: ubuntu-latest
     timeout-minutes: 10
-    if: github.event_name == 'push'
+    if: github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && inputs.merge_sha != '')
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.dispatch-guard.outputs.checkout_sha }}
       - uses: actions/setup-node@v4
         with:
           node-version: '22.22.2'

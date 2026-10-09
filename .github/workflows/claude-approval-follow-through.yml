@@ -1,0 +1,52 @@
+name: Claude approval follow-through
+
+# GitHub forbids a workflow_run listener for its own workflow. This separate
+# one-shot listener refreshes gates after the trusted approval artifact exists.
+on:
+  workflow_run:
+    workflows: [Claude approved auto-merge]
+    types: [completed]
+
+concurrency:
+  group: claude-approved-automerge
+  queue: max
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+  checks: read
+  actions: write
+
+jobs:
+  follow-through:
+    if: >-
+      github.repository == 'harrisboatworks/mercury-builder-pro' &&
+      github.event.workflow_run.event == 'pull_request_target' &&
+      contains(fromJSON('["success","failure"]'), github.event.workflow_run.conclusion)
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: refs/heads/main
+          persist-credentials: false
+          sparse-checkout: scripts/claude-approved-automerge.cjs
+          sparse-checkout-cone-mode: false
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const { run } = require('./scripts/claude-approved-automerge.cjs');
+            if (context.payload.workflow_run.conclusion === 'failure') {
+              // One recovery attempt for a failed approval job, including a
+              // merge that completed before a post-merge dispatch failed.
+              const artifacts = await github.paginate(github.rest.actions.listWorkflowRunArtifacts, {
+                ...context.repo, run_id: context.payload.workflow_run.id, per_page: 100,
+              });
+              const numbers = new Set(artifacts.filter(a => !a.expired).map(a =>
+                a.name.match(/^claude-approval-([1-9][0-9]*)-[0-9]+-[0-9a-f]{40}$/)?.[1]).filter(Boolean));
+              for (const pullNumber of numbers) await run({ github, context, core, pullNumber });
+            } else {
+              await run({ github, context, core });
+            }
