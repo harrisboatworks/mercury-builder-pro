@@ -92,17 +92,32 @@ describe("calculateMotorFinancingEstimate", () => {
       payment: 328,
       termMonths: 72,
       rate: 5.48,
-    })).toBe("$328/mo · 72 mo · 5.48% OAC");
+    })).toBe("$328/mo · 72-mo amortization · 5.48% OAC");
     expect(formatFinancingEstimateLine({
       payment: 375,
       termMonths: 60,
       rate: 5.48,
-    })).toBe("$375/mo · 60 mo · 5.48% OAC");
+    })).toBe("$375/mo · 60-mo amortization · 5.48% OAC");
     expect(formatFinancingEstimateLine({
       payment: 864,
       termMonths: 24,
       rate: 2.99,
     })).toBe("$864/mo · 24 mo · 2.99% OAC");
+    expect(formatFinancingEstimateLine({
+      payment: 311,
+      termMonths: 24,
+      rate: 2.99,
+    })).toBe("$311/mo · 24 mo · 2.99% OAC");
+    expect(formatFinancingEstimateLine({
+      payment: 410,
+      termMonths: 84,
+      rate: 5.48,
+    })).toBe("$410/mo · 84-mo amortization · 5.48% OAC");
+    expect(formatFinancingEstimateLine({
+      payment: 295,
+      termMonths: 120,
+      rate: 5.48,
+    })).toBe("$295/mo · 120-mo amortization · 5.48% OAC");
   });
 
   it("matches the live 90 / 115 FourStroke / 115 Pro XS card teasers", () => {
@@ -110,9 +125,9 @@ describe("calculateMotorFinancingEstimate", () => {
     const fourStroke = calculateMotorFinancingEstimate(17_083, 5.48);
     const proXs = calculateMotorFinancingEstimate(17_490, 5.48);
 
-    expect(formatFinancingEstimateLine(ninety!)).toBe("$329/mo · 60 mo · 5.48% OAC");
-    expect(formatFinancingEstimateLine(fourStroke!)).toBe("$375/mo · 60 mo · 5.48% OAC");
-    expect(formatFinancingEstimateLine(proXs!)).toBe("$328/mo · 72 mo · 5.48% OAC");
+    expect(formatFinancingEstimateLine(ninety!)).toBe("$329/mo · 60-mo amortization · 5.48% OAC");
+    expect(formatFinancingEstimateLine(fourStroke!)).toBe("$375/mo · 60-mo amortization · 5.48% OAC");
+    expect(formatFinancingEstimateLine(proXs!)).toBe("$328/mo · 72-mo amortization · 5.48% OAC");
   });
 
   it("uses the financed amount for post-promo rate and amortization tiers", () => {

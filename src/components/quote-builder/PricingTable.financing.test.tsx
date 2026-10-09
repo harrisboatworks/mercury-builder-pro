@@ -64,7 +64,7 @@ describe('PricingTable financing terms', () => {
     expect(screen.getByText('Cash purchase selected')).toBeInTheDocument();
     expect(screen.getByText(/No financing is included/i)).toBeInTheDocument();
     expect(screen.getByText('Mercury Rebate')).toBeInTheDocument();
-    expect(screen.queryByText(/From \$255\/mo · 60 mo · 5\.48% OAC/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/From \$255\/mo · 60-mo amortization · 5\.48% OAC/i)).not.toBeInTheDocument();
     expect(screen.queryByRole('button', { name: /Apply for Financing/i })).not.toBeInTheDocument();
   });
 

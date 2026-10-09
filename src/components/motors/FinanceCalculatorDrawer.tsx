@@ -24,6 +24,7 @@ import {
   calculatePaymentWithFrequency,
   DEALERPLAN_FEE,
   formatFinancingEstimateLine,
+  formatFinancingTermLabel,
   getFinancingTerm,
   getMotorCalculatorApr,
   isUsableFinancingRate,
@@ -305,7 +306,7 @@ export function FinanceCalculatorDrawer({ open, onOpenChange, motor }: FinanceCa
                 ) : paymentCalculation.termPeriods > 0 ? (
                   <div className="mt-2 text-sm text-muted-foreground">
                     {paymentCalculation.termPeriods} {frequency === 'bi-weekly' ? 'bi-weekly' : frequency === 'weekly' ? 'weekly' : 'monthly'} payments
-                    {' · '}{paymentCalculation.termMonths ?? getFinancingTerm(Math.max(0, totalFinanced - down))} mo
+                    {' · '}{formatFinancingTermLabel(paymentCalculation.termMonths ?? getFinancingTerm(Math.max(0, totalFinanced - down)))}
                     {' · '}{apr.toFixed(2)}% OAC
                   </div>
                 ) : null}
