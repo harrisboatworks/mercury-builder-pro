@@ -307,14 +307,32 @@ export type MotorFinancingEstimate = ReturnType<typeof calculateMonthlyPayment> 
 };
 
 /**
+ * Chase the Savings special financing is a 24-month contract. A bare
+ * "72 mo" on a TD Always On estimate reads like a contract term the
+ * program does not offer (contract caps at 60 months; amortization
+ * may run longer).
+ */
+const SPECIAL_FINANCING_CONTRACT_MONTHS = 24;
+
+/**
+ * Label the teaser term so standing-rate estimates name amortization
+ * and 24-month promotional financing keeps its contract wording.
+ */
+export const formatFinancingTermLabel = (termMonths: number): string =>
+  termMonths === SPECIAL_FINANCING_CONTRACT_MONTHS
+    ? `${termMonths} mo`
+    : `${termMonths}-mo amortization`;
+
+/**
  * Compact teaser used on motor cards, calculators, and quote summaries so
  * the same estimate always discloses payment, amortization, and APR together.
- * Example: "$328/mo · 72 mo · 5.48% OAC"
+ * Standing-rate example: "$328/mo · 72-mo amortization · 5.48% OAC"
+ * Special-financing example: "$311/mo · 24 mo · 2.99% OAC"
  */
 export const formatFinancingEstimateLine = (
   estimate: Pick<MotorFinancingEstimate, 'payment' | 'termMonths' | 'rate'>,
 ): string =>
-  `$${estimate.payment}/mo · ${estimate.termMonths} mo · ${estimate.rate.toFixed(2)}% OAC`;
+  `$${estimate.payment}/mo · ${formatFinancingTermLabel(estimate.termMonths)} · ${estimate.rate.toFixed(2)}% OAC`;
 
 /**
  * Build the monthly estimate shown beside a bare-motor price.
