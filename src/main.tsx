@@ -5,12 +5,14 @@ import { HelmetProvider } from '@/lib/helmet'
 import App from './App.tsx'
 import './index.css'
 import { startSiteFreshnessMonitor } from '@/lib/siteFreshness'
+import { clearStaleSmartReviewCache } from '@/lib/data/mercury-reviews'
 
 const queryClient = new QueryClient()
 
 console.log('🚀 Main.tsx executing...');
 
 startSiteFreshnessMonitor();
+clearStaleSmartReviewCache();
 
 // Helper to create error fallback using safe DOM methods (no innerHTML)
 function createErrorFallback(isRootMissing: boolean, errorDetails?: string) {

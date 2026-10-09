@@ -39,3 +39,19 @@ export function getAverageRating(_hp: number, _model?: string): number | null {
 export function getReviewCount(_hp: number, _model?: string): number {
   return 0;
 }
+
+/** Same-day cache key used by the deleted smart-review rotator. */
+export const STALE_SMART_REVIEW_STORAGE_KEY = 'hbw_review_rotation';
+
+/**
+ * Drop leftover daily rotation entries so a returning visitor cannot
+ * replay a pre-#673 placeholder from localStorage.
+ */
+export function clearStaleSmartReviewCache(): void {
+  if (typeof localStorage === 'undefined') return;
+  try {
+    localStorage.removeItem(STALE_SMART_REVIEW_STORAGE_KEY);
+  } catch {
+    // Storage can be unavailable in private/restricted browser modes.
+  }
+}

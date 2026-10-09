@@ -31,7 +31,6 @@ import {
 } from "../../lib/motor-spec-generators";
 import { MotorDetailsImageSection } from './MotorDetailsImageSection';
 import { findMotorSpecs, getMotorSpecs, type MercuryMotor } from "../../lib/data/mercury-motors";
-import { useSmartReviewRotation } from "../../lib/smart-review-rotation";
 import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { enhanceImageUrls } from "@/lib/image-utils";
@@ -111,10 +110,6 @@ export default function MotorDetailsSheet({
   const { promo: activePromo } = useActiveFinancingPromo();
   const { promotions: activePromotions } = useActivePromotions({ motor: motor });
   const { setScrollLock } = useScrollCoordination();
-
-  // Get smart review for this motor with rotation logic
-  const hpValue = typeof hp === 'string' ? parseInt(hp) : hp || 0;
-  const smartReview = useSmartReviewRotation(hpValue, title);
 
   // Section refs for navigation
   const scrollContainerRef = useRef<HTMLDivElement>(null);
@@ -930,22 +925,6 @@ export default function MotorDetailsSheet({
                     motorId={motor.id} 
                     motorFamily={motor.family || motor.model} 
                   />
-                </div>
-              )}
-
-              {smartReview && (
-                <div className="space-y-4">
-                  <h2 className="text-xl font-bold text-slate-900 border-b border-slate-200 pb-2">
-                    Customer Review
-                  </h2>
-                  <blockquote className="text-sm italic border-l-2 border-muted pl-3">
-                    <p className="text-foreground/90">
-                      "{smartReview.comment}"
-                    </p>
-                    <footer className="text-xs text-muted-foreground mt-2">
-                      {smartReview.reviewer}, {smartReview.location}
-                    </footer>
-                  </blockquote>
                 </div>
               )}
             </div>
