@@ -971,7 +971,7 @@ Harris Boat Works，自1947年起，Mercury Marine Premier Dealer，位于Rice L
     imageAlt: '展厅里三台Mercury舷外机,分别是90、Pro XS 115和Pro XS 250 V8',
     author: 'Harris Boat Works',
     datePublished: '2026-05-10',
-    dateModified: '2026-09-06',
+    dateModified: '2026-10-09',
     publishDate: '2026-05-10',
     category: 'Mercury 型号比较',
     readTime: '7 分钟',
@@ -1054,7 +1054,7 @@ whenInDoubt: 大部分客户买 Pro XS 是看名字, 实际 FourStroke 完全够
 
 Verado 是 Mercury 最豪华、功率最大的家族。V8、V10、V12 配置（现行机型自然进气，老款 I6 才是增压）：
 
-- 平稳运行 (V8 比同 HP Pro XS 平稳 50%)
+- 平稳运行（设计上注重平顺和低噪音，实际感受因船型和配置而异）
 - 完整 SmartCraft 集成
 - 双引擎设置容易 (digital throttle + shift)
 - 现行家族可选至 600 HP

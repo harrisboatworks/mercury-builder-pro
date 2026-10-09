@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/year-end-boat-motor-buying-guide.md
-last_updated: 2026-09-06
+last_updated: 2026-10-09
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Best Time to Buy Boat Motor Ontario"
 description: "When does it actually pay to buy a new Mercury outboard in Ontario? An honest month-by-month calendar of pricing, inventory, install timing, and trade math."
 category: "Buying Guide"
 date_published: 2026-05-24
-date_modified: 2026-09-06
+date_modified: 2026-10-09
 keywords: ["best time to buy boat motor","when to buy mercury outboard","year end boat motor deals","boat motor buying calendar ontario","winter boat motor pricing"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,13 +25,13 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-05-24  
-**Last reviewed:** 2026-09-06  
+**Last reviewed:** 2026-10-09  
 **Read time:** ~8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/year-end-boat-motor-buying-guide
 
 ## When's the Best Time to Buy a Boat Motor in Ontario? (HBW's Honest Calendar)
 
-> **Quick answer:** The best months to ORDER a new Mercury in Ontario are typically late summer (model year closeouts after July 1) and November through February (off-season dealer promos, full inventory, first pick of spring install slots). The most expensive months to buy are March through May, when everyone is rushing to be on the water for opener. Note: our shop is closed December 1 through April 1, so any install work happens once we reopen in early April. The right month for YOU is whichever one matches your spring install plan and trade timing. Start with the math at [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection).
+> **Quick answer:** The best months to ORDER a new Mercury in Ontario are typically late summer (possible model year closeouts once Mercury's next model year arrives) and November through February (off-season dealer promos, full inventory, first pick of spring install slots). The most expensive months to buy are March through May, when everyone is rushing to be on the water for opener. Note: our shop is closed December 1 through April 1, so any install work happens once we reopen in early April. The right month for YOU is whichever one matches your spring install plan and trade timing. Start with the math at [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection).
 
 Conventional wisdom says winter is deal time. Half right. The honest answer is more useful: pricing flexibility is one piece of the timing puzzle, and it's rarely the biggest piece. Install slots, trade values, and Mercury's model year cycle all move with the calendar too.
 
@@ -59,13 +59,13 @@ The pattern: pricing flex peaks at model year closeouts (late summer) and during
 
 The calendar isn't random. Each window reflects something real about how Mercury, the dealer, and you interact.
 
-**Mercury's model year cycle.** Mercury flips model years July 1. The August window is when remaining 2026 inventory may carry closeout incentives, and when fresh 2027 stock arrives. Whether the closeout is actually offered depends on Mercury's promotional calendar, not every year has a 2026 closeout. We covered the full flip dynamics in [Mercury Outboard Lineup for Ontario (2027 Model Year)](/blog/mercury-outboard-lineup-ontario).
+**Mercury's model year cycle.** Mercury sets its model year changeover date, and it is not the same every year, so we confirm the timing for your motor when we quote it. The weeks after that changeover are when remaining 2026 inventory may carry closeout incentives, and when fresh 2027 stock arrives. Whether the closeout is actually offered depends on Mercury's promotional calendar, not every year has a 2026 closeout. We covered the full flip dynamics in [Mercury Outboard Lineup for Ontario (2027 Model Year)](/blog/mercury-outboard-lineup-ontario).
 
 **Off-season dealer economics.** Our shop is closed December 1 through April 1, so install work does not happen in those months, but ordering does. Mercury runs winter promotional cycles, and customers who lock orders in over winter get first pick of motors and first call on spring install slots. The combination of winter promo pricing plus an early-spring install is the real value of buying in the off-season.
 
 **Spring install crunch.** From early April through opener, every boat that has been sitting in storage wants to be on the water yesterday. We are rigging, swapping, and water-testing as fast as we can. There is less flexibility on pricing in spring because there is less margin in our schedule. The customers who locked their quote in October are the ones who got the slot they wanted.
 
-**Trade values through the calendar.** Get a current valuation for the exact motor and condition when comparing purchase dates. A seasonal rule of thumb cannot establish what your trade will be worth. The HST savings on the trade work the same way year-round.
+**Trade values through the calendar.** Get a current valuation for the exact motor and condition when comparing purchase dates. A seasonal rule of thumb cannot establish what your trade will be worth. The tax treatment of a trade-in does not change with the calendar either; it depends on the confirmed trade allowance.
 
 **Dealer promotional calendar.** Mercury runs promotional cycles year-round but the big ones tend to land in winter (January-March) and at model year flip (July-September). Additional promotional coverage is time-limited, not permanent; confirm the live offer on our [promotions page](/promotions).
 
@@ -93,7 +93,7 @@ These are the patterns we see in shop-floor repower conversations.
 - **Chasing a perfect deal indefinitely.** The customer who waited 18 months for a $1,500 closeout missed two summers of running the boat. The math on lost lake time rarely beats the savings.
 - **Treating "spring" as one big window.** March is not the same as May. The earlier in spring you buy, the better the slot and the cleaner the trade. By May, you're in crisis-install territory.
 - **Assuming an expired promotion still applies.** Mercury's standard Canadian warranty is 3 years. Additional promotional coverage can add value when written terms include it, but it should never be treated as permanent. Confirm the current offer before comparing quotes.
-- **Ignoring the trade math.** The HST savings on the trade-in scale with the new motor price. Bigger motor, bigger HST savings. Customers who buy the small motor "to save money" sometimes leave more on the table in HST than they save in cash.
+- **Getting the trade-in tax math backwards.** When the person trading in is not required to charge tax on the trade (for example, most individuals trading a personal boat or motor), GST/HST is calculated on the new price minus the confirmed trade allowance. The tax reduction comes from the trade allowance, not the size of the new motor: with the same trade value, a bigger motor does not increase it. Business owners who must charge tax on their own trade-in follow different rules, so check with your accountant. CRA explains both cases in its [trade-in guidance](https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/charge-collect-special-cases.html).
 
 ## Pricing and Install Timing Together: The Two Levers
 
@@ -141,9 +141,9 @@ Boat shows can have show-specific promotions, but they are often similar to what
 
 Late April through early June. Demand is at peak, inventory is tightest, and the install schedule has zero flex. If you walk in with no quote and no booking on May 15, you're going to pay top dollar AND wait. The opposite end is January through February, when the same configuration carries more pricing flex and a clean install slot.
 
-### Does the Mercury model year flip on July 1 change my buying decision?
+### Does the Mercury model year changeover change my buying decision?
 
-It can. If you wait until August, you might catch a 2026 closeout discount or get an early shot at a 2027 SKU. If you buy in June before the flip, you lock current pricing without waiting on 2027 announcements. The right call depends on whether you're chasing a specific feature or just want the motor. Full breakdown in our Mercury 2027 Outboard Preview.
+It can. If you wait until after the changeover, you might catch a 2026 closeout discount or get an early shot at a 2027 SKU. If you buy before the changeover, you lock current pricing without waiting on 2027 announcements. The right call depends on whether you're chasing a specific feature or just want the motor. Full breakdown in our Mercury 2027 Outboard Preview.
 
 ### What's actually negotiable on a new Mercury purchase?
 

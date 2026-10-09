@@ -1733,8 +1733,8 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
         "a": "Late April through early June. Demand is at peak, inventory is tightest, and the install schedule has zero flex. If you walk in with no quote and no booking on May 15, you're going to pay top dollar AND wait. The opposite end is January through February, when the same configuration carries more pricing flex and a clea…"
       },
       {
-        "q": "Does the Mercury model year flip on July 1 change my buying decision?",
-        "a": "It can. If you wait until August, you might catch a 2026 closeout discount or get an early shot at a 2027 SKU. If you buy in June before the flip, you lock current pricing without waiting on 2027 announcements. The right call depends on whether you're chasing a specific feature or just want the motor. Full breakdown i…"
+        "q": "Does the Mercury model year changeover change my buying decision?",
+        "a": "It can. If you wait until after the changeover, you might catch a 2026 closeout discount or get an early shot at a 2027 SKU. If you buy before the changeover, you lock current pricing without waiting on 2027 announcements. The right call depends on whether you're chasing a specific feature or just want the motor. Full…"
       }
     ]
   },
@@ -5903,7 +5903,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   {
     "slug": "mercury-nmea-2000-lowrance-garmin-guide",
     "title": "Mercury Engine Data on Your Garmin, Lowrance or Humminbird: Which Gateway and How to Wire It",
-    "description": "How to get Mercury engine data onto your fishfinder or chartplotter. Which Mercury gateway matches your screen brand, real part numbers, and how the NMEA 2000 wiring works.",
+    "description": "Which Mercury gateway matches your Garmin, Lowrance, Simrad or Humminbird screen, the real part numbers, and how the NMEA 2000 wiring works.",
     "category": "Mercury Technology",
     "publishDate": "2026-09-26",
     "keywords": [

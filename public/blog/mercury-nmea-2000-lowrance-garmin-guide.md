@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-nmea-2000-lowrance-garmin-guide.md
-last_updated: 2026-09-26
+last_updated: 2026-10-09
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -8,10 +8,10 @@ final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
 title: "Mercury Engine Data on Your Garmin, Lowrance or Humminbird: Which Gateway and How to Wire It"
-description: "How to get Mercury engine data onto your fishfinder or chartplotter. Which Mercury gateway matches your screen brand, real part numbers, and how the NMEA 2000 wiring..."
+description: "Which Mercury gateway matches your Garmin, Lowrance, Simrad or Humminbird screen, the real part numbers, and how the NMEA 2000 wiring works."
 category: "Mercury Technology"
 date_published: 2026-09-26
-date_modified: 2026-09-26
+date_modified: 2026-10-09
 keywords: ["Mercury engine data Lowrance","Mercury SmartCraft Connect Garmin","Mercury NMEA 2000 gateway Humminbird","VesselView Link Lowrance","connect Mercury outboard to fishfinder"]
 author: Harris Boat Works
 content_type: blog_article
@@ -21,15 +21,15 @@ revenue_driver: service
 
 # Mercury Engine Data on Your Garmin, Lowrance or Humminbird: Which Gateway and How to Wire It
 
-> How to get Mercury engine data onto your fishfinder or chartplotter. Which Mercury gateway matches your screen brand, real part numbers, and how the NMEA 2000 wiring...
+> Which Mercury gateway matches your Garmin, Lowrance, Simrad or Humminbird screen, the real part numbers, and how the NMEA 2000 wiring works.
 
 **Category:** Mercury Technology  
 **Published:** 2026-09-26  
-**Last reviewed:** 2026-09-26  
+**Last reviewed:** 2026-10-09  
 **Read time:** ~5 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-nmea-2000-lowrance-garmin-guide
 
-> **Quick answer:** Yes, a SmartCraft-capable Mercury can put its engine data on the screen you already own, but the Mercury module you need depends on the brand of that screen. **Garmin, Raymarine and newer Simrad** use SmartCraft Connect. **Lowrance and Simrad** use VesselView Link. **Humminbird and other brands** use Mercury's NMEA 2000 Gateway, which sends basic engine data only. All three join your boat's NMEA 2000 network. If you just want engine data on your phone, the SmartCraft Connect Mobile module does that for about $300 CAD.
+> **Quick answer:** Yes, a SmartCraft-capable Mercury can put its engine data on the screen you already own, but the Mercury module you need depends on the brand of that screen. **Garmin, Raymarine and newer Simrad (NSX, NSS 4)** use SmartCraft Connect. **Lowrance and other Simrad models** use VesselView Link, so confirm your Simrad model and software before ordering. **Humminbird and other brands** use Mercury's NMEA 2000 Gateway, which sends basic engine data only. All three join your boat's NMEA 2000 network. If you just want engine data on your phone, the SmartCraft Connect Mobile module does that for about $300 CAD.
 
 ## Why bother
 
@@ -50,10 +50,12 @@ This is where most online advice goes wrong. Mercury makes three different ways 
 | Garmin GPSMAP / TD50 (software 24.1+), NMEA 2000-capable ECHOMAP (17.1+) | **SmartCraft Connect** | Full native Mercury integration |
 | Raymarine plotters on LightHouse 4.1 | **SmartCraft Connect** | Full native Mercury integration |
 | Simrad NSX, NSX Ultrawide, NSS 4 | **SmartCraft Connect** | Full native Mercury integration |
-| Lowrance (and Simrad) | **VesselView Link** | Full native Mercury integration |
+| Lowrance, and Simrad models not listed above (confirm model and software) | **VesselView Link** | Full native Mercury integration |
 | Humminbird, Furuno and other NMEA 2000 displays | **NMEA 2000 Gateway** (8M0165589) | Basic engine data: no Mercury fault descriptions, Troll Control or software updates |
 
 Humminbird's own compatibility chart lists the Mercury 8M0165589 gateway plus a Humminbird NMEA 2000 starter kit for Mercury engines, and some Humminbird models need an extra adapter cable. Check your model's page before ordering.
+
+**Already running MercMonitor or an older VesselView Link?** Don't add SmartCraft Connect to the same SmartCraft network. Garmin's support notes say a SmartCraft Connect gateway should not share a SmartCraft network with MercMonitor or an older VesselView Link system, because the devices may interfere with one another. If your boat already has one, tell us before you order and we'll confirm which path fits your engine and display.
 
 **Phone instead of plotter?** The SmartCraft Connect Mobile module sends engine data over Bluetooth to the Mercury app on your phone or tablet. It's the cheapest way in and a good fit for occasional checks.
 
@@ -102,6 +104,7 @@ Book it through the [service form](https://hbwservice.ca). If you're shopping mo
 
 - [Mercury Marine: SmartCraft Connect (engine and display compatibility)](https://www.mercurymarine.com/us/en/smartcraft/vessel-intelligence/smartcraft-connect)
 - [Garmin support: SmartCraft Connect integration and part numbers](https://support.garmin.com/en-US/?faq=3MdGIQcQhC2Y2F05PmVbo8)
+- [Garmin support: Mercury SmartCraft systems (MercMonitor and VesselView Link warning)](https://support.garmin.com/en-US/?faq=8JFTtJielR8Yny4BXb83z9)
 - [Humminbird: NMEA 2000 compatibility and required hardware](https://humminbird-help.johnsonoutdoors.com/hc/en-us/articles/4412797910423-NMEA-2000-Compatibility)
 - [MercruiserParts: VesselView Link vs SmartCraft Connect vs NMEA 2000 Gateway](https://www.mercruiserparts.com/vesselview-link-vs-smartcraft-connect)
 - [Energy Power Sports: Mercury SmartCraft Connect pricing (Canada)](https://shop.energypowersports.ca/collections/mercury-smartcraft-connect)
@@ -135,6 +138,10 @@ Yes, through Mercury's NMEA 2000 Gateway (8M0165589) and a Humminbird NMEA 2000 
 ### What about my Lowrance?
 
 Lowrance uses Mercury's VesselView Link, not SmartCraft Connect. Check that your Lowrance model and software support it before ordering.
+
+### Can I add SmartCraft Connect if my boat already has MercMonitor?
+
+Not on the same SmartCraft network. Garmin's support notes say not to install a SmartCraft Connect gateway on the same SmartCraft network as MercMonitor or an older VesselView Link system, because they may interfere with one another. Tell us what is already on the boat before ordering and we'll confirm the right path for your engine.
 
 ## Related guides
 
