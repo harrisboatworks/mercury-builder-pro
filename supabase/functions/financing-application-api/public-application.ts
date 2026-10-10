@@ -20,7 +20,7 @@ const compactArray = <T>(values: Array<T | undefined>): T[] =>
 
 const PURCHASE_KEYS = [
   'motorModel', 'motorPrice', 'downPayment', 'tradeInValue', 'amountToFinance',
-  'priceBasis', 'includedTradeInValue', 'preTradeSubtotal', 'preferredTerm',
+  'priceBasis', 'includedTradeInValue', 'preTradeSubtotal', 'dealerFee', 'preferredTerm',
   'promoOption', 'promoRate', 'promoTerm', 'promoValue', 'promoName',
   'promoSavings', 'promoCombinationMode',
 ] as const;

@@ -31,7 +31,7 @@ export default function FinancingResume() {
         dispatch({ type: 'LOAD_FROM_DATABASE', payload: application });
         
         // Navigate to application page
-        navigate('/financing-application', { replace: true });
+        navigate('/financing-application', { replace: true, state: { fromFinancingResume: true } });
       } catch (err) {
         console.error('Failed to load application:', err);
         setError('This private resume link is invalid, expired, or has already been submitted.');

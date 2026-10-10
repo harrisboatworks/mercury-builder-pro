@@ -470,7 +470,8 @@ export default function QuoteSummaryPage() {
       state.selectedPromoOption, getRebateForHP, includesProp, propAllowance, selectedPackage,
       canAddFuelTank]);
 
-  const amountToFinance = getFinanceableAmount(displayPricing.subtotal, 0.13, DEALERPLAN_FEE);
+  const financingDealerFee = state.frozenPricing?.dealerFee ?? state.pdfSnapshot?.financing?.dealerFee ?? DEALERPLAN_FEE;
+  const amountToFinance = Math.round((displayPricing.total + financingDealerFee) * 100) / 100;
   const isCashPurchase = state.selectedPaymentMethod === 'cash_purchase';
   // If the customer opted in to promotional financing on PromoSelectionPage,
   // use that rate/term for the monthly payment displayed in the summary.
@@ -845,14 +846,15 @@ export default function QuoteSummaryPage() {
       preTradeSubtotal: displayPricing.subtotal + (displayPricing.appliedTradeCredit ?? 0),
       estimatedValue: state.tradeInInfo?.estimatedValue,
       hasTradeIn: state.tradeInInfo?.hasTradeIn,
-      dealerFee: DEALERPLAN_FEE,
+      dealerFee: financingDealerFee,
+      frozenTotal: displayPricing.total,
     });
     const financingData = {
       ...state,
       financingAmount: {
         packageSubtotal: displayPricing.subtotal,
         hst: purchase.tax,
-        financingFee: DEALERPLAN_FEE,
+        financingFee: financingDealerFee,
         totalWithFees: purchase.motorPrice,
         motorModel: quoteData.motor?.model || motorName,
         packageName: selectedPackageLabel,
@@ -862,8 +864,8 @@ export default function QuoteSummaryPage() {
         priceBasis: FINANCING_PRICE_BASIS_ALL_IN_AFTER_TRADE,
         // Include promo details for financing application
         promoOption: state.selectedPromoOption,
-        promoRate: state.selectedPromoRate,
-        promoTerm: state.selectedPromoTerm,
+        promoRate: state.frozenPricing?.financingRate ?? state.selectedPromoRate,
+        promoTerm: state.frozenPricing?.financingAmortizationMonths ?? state.selectedPromoTerm,
         promoValue: state.selectedPromoValue,
         promoName: appliedPromotion?.name || null,
         promoSavings,

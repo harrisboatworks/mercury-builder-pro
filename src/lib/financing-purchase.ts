@@ -51,6 +51,7 @@ export function financingPurchaseFromQuote(quote: any, dealerFee = 349): Financi
   const frozen=quote.frozenPricing;
   const trade=quote.tradeInInfo;
   const handoff=quote.financingAmount;
+  dealerFee = frozen?.dealerFee ?? quote.pdfSnapshot?.financing?.dealerFee ?? handoff?.financingFee ?? dealerFee;
   const cashRebate=quote.selectedPromoOption==='cash_rebate'
     ? Number(String(quote.selectedPromoValue || '').match(/\$?([\d,]+)/)?.[1]?.replace(/,/g,'')) || 0 : 0;
   const estimate=calculateQuoteFinancingEstimate({

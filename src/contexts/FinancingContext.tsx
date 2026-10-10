@@ -1,4 +1,5 @@
-import React, { createContext, useContext, useReducer, useEffect, useCallback, useRef } from 'react';
+import { prepareFinancingResume } from '@/lib/financing-draft';
+import React, { createContext, useContext, useReducer, useEffect, useCallback, useRef, useState } from 'react';
 import {
   clearFinancingStorage,
   saveFinancingDraft,
@@ -111,9 +112,9 @@ function financingReducer(state: FinancingState, action: FinancingAction): Finan
     case 'SET_SAVING':
       return { ...state, isSaving: action.payload };
     case 'LOAD_FROM_STORAGE':
-      return { ...state, ...action.payload, isLoading: false };
+      return { ...state, ...prepareFinancingResume(action.payload), isLoading: false };
     case 'LOAD_FROM_DATABASE':
-      return {
+      return prepareFinancingResume({
         ...state,
         applicationId: action.payload.id,
         resumeToken: action.payload.resume_token,
@@ -128,7 +129,7 @@ function financingReducer(state: FinancingState, action: FinancingAction): Finan
         references: action.payload.references_data || null,
         quoteId: action.payload.quote_id || null,
         isLoading: false,
-      };
+      });
     case 'RESET_APPLICATION':
       return { ...initialState };
     default:
@@ -137,6 +138,7 @@ function financingReducer(state: FinancingState, action: FinancingAction): Finan
 }
 
 interface FinancingContextType {
+  isHydrated: boolean;
   state: FinancingState;
   dispatch: React.Dispatch<FinancingAction>;
   saveToDatabase: (email: string) => Promise<FinancingApiSaveResult>;
@@ -149,6 +151,7 @@ const FinancingContext = createContext<FinancingContextType | null>(null);
 
 export const FinancingProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [state, dispatch] = useReducer(financingReducer, initialState);
+  const [isHydrated, setIsHydrated] = useState(false);
   const saveTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const inactivityTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const lastActivityRef = useRef<number>(Date.now());
@@ -197,6 +200,7 @@ export const FinancingProvider: React.FC<{ children: React.ReactNode }> = ({ chi
       }
     }
 
+    setIsHydrated(true);
     return () => {
       if (inactivityTimeoutRef.current) {
         clearTimeout(inactivityTimeoutRef.current);
@@ -298,6 +302,7 @@ export const FinancingProvider: React.FC<{ children: React.ReactNode }> = ({ chi
       value={{
         state,
         dispatch,
+        isHydrated,
         saveToDatabase,
         isStepComplete,
         canAccessStep,

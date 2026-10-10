@@ -56,6 +56,7 @@ export function FinancialStep() {
     resolver: zodResolver(financialSchema),
     mode: 'onChange',
     defaultValues: {
+      hasBankruptcy: false,
       ...state.financial,
       monthlyHousingPayment: state.financial?.monthlyHousingPayment || housingPaymentFromStep2 || 0,
     },
@@ -191,7 +192,7 @@ export function FinancialStep() {
               <div className="relative">
                 <Input
                   id="monthlyCarPayment"
-                  {...register('monthlyCarPayment', { valueAsNumber: true })}
+                  {...register('monthlyCarPayment', { setValueAs: value => value === '' ? undefined : Number(value) })}
                   type="number"
                   inputMode="numeric"
                   placeholder="0"
@@ -211,7 +212,7 @@ export function FinancialStep() {
               <div className="relative">
                 <Input
                   id="monthlyCreditCardPayments"
-                  {...register('monthlyCreditCardPayments', { valueAsNumber: true })}
+                  {...register('monthlyCreditCardPayments', { setValueAs: value => value === '' ? undefined : Number(value) })}
                   type="number"
                   inputMode="numeric"
                   placeholder="0"
@@ -231,7 +232,7 @@ export function FinancialStep() {
               <div className="relative">
                 <Input
                   id="otherMonthlyDebt"
-                  {...register('otherMonthlyDebt', { valueAsNumber: true })}
+                  {...register('otherMonthlyDebt', { setValueAs: value => value === '' ? undefined : Number(value) })}
                   type="number"
                   inputMode="numeric"
                   placeholder="0"
@@ -374,6 +375,7 @@ export function FinancialStep() {
               value={hasBankruptcy ? 'yes' : 'no'}
               onValueChange={(value) => {
                 const hasIt = value === 'yes';
+                if (!hasIt) setValue('bankruptcyDetails', undefined);
                 setValue('hasBankruptcy', hasIt, { shouldValidate: true });
                 setShowBankruptcyDetails(hasIt);
               }}
@@ -410,7 +412,10 @@ export function FinancialStep() {
                       <Calendar
                         mode="single"
                         selected={bankruptcyDate}
-                        onSelect={setBankruptcyDate}
+                        onSelect={(date) => {
+                          setBankruptcyDate(date);
+                          setValue('bankruptcyDetails.date', date as Date, { shouldValidate: true });
+                        }}
                         initialFocus
                       />
                     </PopoverContent>
@@ -421,7 +426,7 @@ export function FinancialStep() {
                   <Label>Current Status</Label>
                   <Select
                     value={watch('bankruptcyDetails.status')}
-                    onValueChange={(value) => setValue('bankruptcyDetails.status', value as any)}
+                    onValueChange={(value) => setValue('bankruptcyDetails.status', value as any, { shouldValidate: true })}
                   >
                     <SelectTrigger>
                       <SelectValue placeholder="Select status" />

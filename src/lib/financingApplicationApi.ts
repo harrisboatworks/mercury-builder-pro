@@ -1,3 +1,4 @@
+import { z } from 'zod';
 import { supabase } from '@/integrations/supabase/client';
 
 export const FINANCING_STORAGE_KEYS = [
@@ -106,7 +107,7 @@ export async function submitFinancingApplication(params: {
   resumeToken?: string | null;
   submissionId: string;
 }): Promise<FinancingApiSubmitResult> {
-  return invokeFinancingApi<FinancingApiSubmitResult>({
+  const result = await invokeFinancingApi<FinancingApiSubmitResult>({
     action: 'submit',
     applicationId: params.applicationId || undefined,
     resumeToken: params.resumeToken || undefined,
@@ -119,4 +120,8 @@ export async function submitFinancingApplication(params: {
       coApplicant: stripSin(params.application.coApplicant),
     },
   });
+  if (!z.object({ applicationId: z.string().uuid() }).safeParse(result).success) {
+    throw new Error('The financing service did not confirm that your application was saved. Please try again.');
+  }
+  return result;
 }

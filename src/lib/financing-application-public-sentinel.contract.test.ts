@@ -49,6 +49,7 @@ const populatedApplication = {
   purchase_data: {
     motorModel: '150 Pro XS',
     motorPrice: 27120,
+    dealerFee: 199.50,
     downPayment: 2000,
     tradeInValue: 1500,
     amountToFinance: 23620,
@@ -197,6 +198,7 @@ const PUBLIC_APPLICATION_KEYS = [
   'current_step',
   'date',
   'dateOfBirth',
+  'dealerFee',
   'downPayment',
   'email',
   'employerName',
@@ -286,6 +288,7 @@ describe('public financing application DTO', () => {
       purchase_data: {
         motorModel: '150 Pro XS',
         motorPrice: 27120,
+        dealerFee: 199.50,
         preferredTerm: '60',
       },
       applicant_data: {
