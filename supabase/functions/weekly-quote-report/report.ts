@@ -7,6 +7,7 @@ export interface Week {
   phone_clicks: number; sms_clicks: number; fast_builder_sessions: number;
   customer_quote_records: number; contactable_quote_records: number; quote_value: number;
   api_quote_records: number; api_test_records: number; test_quote_records: number; admin_quote_records: number;
+  guide_leads: number; chat_leads: number;
   quote_sources: { source: string; records: number }[];
   top_motors: { model: string; records: number }[];
   viewed_motors: { model: string; sessions: number }[];
@@ -18,7 +19,7 @@ export interface Week {
   saved_snapshots: number; anonymous_pdf_snapshots: number;
 }
 export interface Report { version: 2; weeks: Week[] }
-const numericKeys = ['events','raw_events','sessions','excluded_sessions','unlinked_events','quote_starts','saw_price','summary_sessions','submitted_sessions','phone_clicks','sms_clicks','fast_builder_sessions','customer_quote_records','contactable_quote_records','quote_value','api_quote_records','api_test_records','test_quote_records','admin_quote_records','trade_valuations','trade_pending','contact_inquiries','contact_pending','chats','chats_with_phone','paid_deposits','paid_deposit_amount','saved_snapshots','anonymous_pdf_snapshots'] as const;
+const numericKeys = ['guide_leads','chat_leads','events','raw_events','sessions','excluded_sessions','unlinked_events','quote_starts','saw_price','summary_sessions','submitted_sessions','phone_clicks','sms_clicks','fast_builder_sessions','customer_quote_records','contactable_quote_records','quote_value','api_quote_records','api_test_records','test_quote_records','admin_quote_records','trade_valuations','trade_pending','contact_inquiries','contact_pending','chats','chats_with_phone','paid_deposits','paid_deposit_amount','saved_snapshots','anonymous_pdf_snapshots'] as const;
 
 export function parseReport(value: unknown): Report {
   if (!value || typeof value !== 'object') throw new Error('Report aggregate unavailable');
@@ -53,13 +54,14 @@ export function renderReport(report: Report) {
     `• Website quotes with contact details: ${w.contactable_quote_records} (${change >= 0 ? '+' : ''}${change} vs previous week); quoted value ${money(w.quote_value)}, not revenue`,
     `• Trade valuations: ${w.trade_valuations} (${w.trade_pending} still new)`,
     `• Contact inquiries: ${w.contact_inquiries} (${w.contact_pending} still new)`,
+    `• Guide download leads: ${w.guide_leads}; captured chat leads: ${w.chat_leads} (excluded from quote totals)`,
     `• Chat conversations: ${w.chats}; ${w.chats_with_phone} with a phone recorded`,
     `• Paid motor deposits: ${w.paid_deposits}, ${money(w.paid_deposit_amount)} (paid-date basis)`,
     'Source counts may overlap; they are not unique customers. Other payment flows and offline deals are not included.', '',
     'BROWSING & INTENT',
     `• ${w.sessions} sessions → ${w.quote_starts} motor-selection sessions → ${w.saw_price} of those reached price`,
     `• ${w.submitted_sessions} sessions emitted quote_submitted (telemetry, not a verified lead total)`,
-    `• Phone clicks: ${w.phone_clicks}; text clicks: ${w.sms_clicks} (not confirmed calls/messages)`,
+    `• Quote-summary sessions with phone clicks: ${w.phone_clicks}; with text clicks: ${w.sms_clicks} (not site-wide totals or confirmed calls/messages)`,
     `• Anonymous PDF snapshots: ${w.anonymous_pdf_snapshots} (not confirmed completed downloads)`, '',
     'API & EXCLUSIONS',
     `• Public API quotes: ${w.api_quote_records}, including ${w.api_test_records} explicitly flagged/reserved-domain test records`,
@@ -84,10 +86,10 @@ export function renderReport(report: Report) {
     subject: `Weekly Report: ${w.contactable_quote_records} quotes with contact details, ${w.trade_valuations} valuations, ${w.paid_deposits} paid deposits (${period})`,
     sms: [
       `📊 Weekly Report (${period})`, '', take, '', action, '',
-      `INTENT: ${w.phone_clicks} phone / ${w.sms_clicks} text clicks; ${w.anonymous_pdf_snapshots} anonymous PDF snapshots. These are not confirmed contacts or downloads.`,
+      `INTENT: quote-summary sessions with phone/text clicks: ${w.phone_clicks}/${w.sms_clicks} (not site-wide); ${w.anonymous_pdf_snapshots} anonymous PDF snapshots. These are not confirmed contacts or downloads.`,
       `DATA CHECK: ${w.raw_events} events counted; ${w.excluded_sessions} marked test/bot sessions excluded. ${w.fast_builder_sessions} sub-second builder sessions remain included; untagged automation may remain. ${w.api_test_records} of the API quotes have explicit test/reserved-domain markers.`,
       `4-WEEK TREND (old → new): quotes with contact details ${[...report.weeks].reverse().map(x => x.contactable_quote_records).join(' → ')}; paid deposits ${[...report.weeks].reverse().map(x => x.paid_deposits).join(' → ')}.`,
-      'Source counts can overlap. Full breakdown and blog attribution are in the email.',
+      'Guide/chat leads are excluded from quote totals. Source counts can overlap. Full breakdown and blog attribution are in the email.',
     ].join('\n'),
     html: buildAdminEmail({ heading: `Weekly website report | ${period}`, preheader: take, bodyHtml }),
     summary: take,
