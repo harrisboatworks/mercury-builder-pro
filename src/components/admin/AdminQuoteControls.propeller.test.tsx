@@ -95,6 +95,19 @@ describe('admin custom propeller quotes', () => {
     expect(screen.queryByLabelText('Propeller')).not.toBeInTheDocument();
   });
 
+  it.each([
+    { items: [] },
+    { items: [{ name: 'Heated grip', price: 300 }, { name: 'Hub kit', price: 125 }] },
+    { items: [{ name: 'Stainless propeller', price: -1 }] },
+  ])('blocks saving a custom choice without a valid propeller line: $items', ({ items }) => {
+    mocks.state.installConfig.propellerDecision = 'custom_propeller';
+    mocks.state.adminCustomItems = items;
+    render(<AdminQuoteControls />);
+    fireEvent.click(screen.getByRole('button', { name: /Save Quote/i }));
+    expect(mocks.insert).not.toHaveBeenCalled();
+    expect(mocks.toast).toHaveBeenCalledWith(expect.objectContaining({ title: 'Add the custom propeller', variant: 'destructive' }));
+  });
+
   it('leaves factory-included propellers alone', () => {
     mocks.state.motor = { model: '20 ELH', hp: 20, price: 4000 };
     render(<AdminQuoteControls />);
