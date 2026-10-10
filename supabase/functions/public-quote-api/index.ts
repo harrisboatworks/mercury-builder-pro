@@ -37,6 +37,7 @@ import {
   PUBLIC_CATALOG_AVAILABILITY_OR,
   PUBLIC_SITE_URL,
   PUBLIC_VERADO_POLICY,
+  publicAvailabilityLabel,
   resolvePublicQuoteDeposit,
   resolvePublicSellingPrice,
   toPublicImageUrl,
@@ -634,7 +635,10 @@ async function listMotors(supabase: any, body: any) {
     .gte("horsepower", minHp)
     .lte("horsepower", maxHp)
     .order("horsepower", { ascending: true })
-    .limit(textSearch ? 500 : limit);
+    // Candidate page stays 500. Caller limit is applied after eligibility,
+    // normalized stock, and text filters so in_stock_only cannot lose later
+    // in-stock rows inside that page. This is not unbounded enumeration.
+    .limit(500);
 
   if (search) {
     if (!Number.isNaN(hpSearch)) q = q.eq("horsepower", hpSearch);
@@ -680,7 +684,7 @@ async function listMotors(supabase: any, body: any) {
         year: m.year,
         sellingPrice: price,
         msrp: Number(m.msrp) || null,
-        availability: isPublicMotorInStock(m) ? "In Stock" : "Available to Order",
+        availability: publicAvailabilityLabel(m.availability, isPublicMotorInStock(m)),
         imageUrl: toPublicImageUrl(m.hero_image_url || m.image_url),
         url: slug ? `${SITE_URL}/motors/${slug}` : null,
         quoteUrl: `${SITE_URL}/quote/motor-selection?motor=${m.id}`,
