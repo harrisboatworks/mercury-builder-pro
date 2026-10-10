@@ -15,6 +15,9 @@ import { useToast } from '@/hooks/use-toast';
 
 import { SITE_URL } from '@/lib/site';
 import { buildAccessoryBreakdown } from '@/lib/build-accessory-breakdown';
+import { includesPropeller } from '@/lib/motor-helpers';
+import { getPropellerAllowance } from '@/lib/propeller-allowance';
+import { resolvePropellerDecision, type PropellerDecision } from '@/lib/propeller-selection';
 
 interface AdminQuoteControlsProps {
   onSave?: () => void;
@@ -439,6 +442,32 @@ export function AdminQuoteControls({ onSave, className = '' }: AdminQuoteControl
         
         {/* Custom Line Items */}
         <div>
+          {state.isAdminQuote && state.motor && !includesPropeller(state.motor) && getPropellerAllowance(Number(state.motor.hp)) ? (
+            <div className="mb-4">
+              <Label htmlFor="adminPropellerDecision" className="text-sm">Propeller</Label>
+              <select
+                id="adminPropellerDecision"
+                className="mt-1 flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
+                value={resolvePropellerDecision({
+                  hp: Number(state.motor.hp),
+                  installConfig: state.installConfig,
+                  boatInfo: state.boatInfo,
+                  tradeInInfo: state.tradeInInfo,
+                })}
+                onChange={(event) => dispatch({
+                  type: 'SET_INSTALL_CONFIG',
+                  payload: { ...state.installConfig, propellerDecision: event.target.value as PropellerDecision },
+                })}
+              >
+                <option value="include_allowance">Include standard propeller allowance</option>
+                <option value="reuse_existing">Use existing propeller</option>
+                <option value="custom_propeller">Custom propeller (add separately)</option>
+              </select>
+              <p className="mt-1 text-xs text-muted-foreground">
+                Custom propeller removes the standard allowance. Add the specific propeller and hub below.
+              </p>
+            </div>
+          ) : null}
           <Label className="text-sm">Custom Line Items</Label>
           <p className="text-xs text-muted-foreground mb-2">
             Add custom items to the quote (e.g., "Battery box — $0.00")

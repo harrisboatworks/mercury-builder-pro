@@ -157,7 +157,14 @@ export function buildAccessoryBreakdown(params: BuildAccessoryBreakdownParams): 
   });
 
   if (!includesProp && propAllowance) {
-    if (propellerDecision === 'reuse_existing') {
+    if (propellerDecision === 'custom_propeller') {
+      breakdown.push({
+        name: 'Propeller: Custom',
+        price: 0,
+        description: 'See custom accessories for propeller selection and pricing. No standard propeller allowance.',
+        category: 'equipment',
+      });
+    } else if (propellerDecision === 'reuse_existing') {
       breakdown.push({
         name: 'Propeller: Use Existing',
         price: 0,

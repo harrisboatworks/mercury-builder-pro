@@ -216,7 +216,9 @@ export default function PackageSelectionPage() {
   const propFeatureText = !includesProp && propAllowance
     ? propellerDecision === 'include_allowance'
       ? `${propAllowance.name} ($${propAllowance.price.toLocaleString()})`
-      : 'Use existing propeller (verified during water test)'
+      : propellerDecision === 'custom_propeller'
+        ? 'Custom propeller (quoted separately)'
+        : 'Use existing propeller (verified during water test)'
     : null;
 
   const packages: PackageOption[] = useMemo(() => [

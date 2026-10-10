@@ -3,6 +3,18 @@ import { buildAccessoryBreakdown } from '@/lib/build-accessory-breakdown';
 import { includesPropeller } from '@/lib/motor-helpers';
 
 describe('propeller quote selection', () => {
+  it.each([60, 150])('excludes the %i HP allowance for a separately priced custom propeller', (hp) => {
+    const breakdown = buildAccessoryBreakdown({
+      motor: { model: `${hp} ELPT FourStroke`, hp },
+      purchasePath: 'loose',
+      installConfig: { propellerDecision: 'custom_propeller' },
+      adminCustomItems: [{ name: 'Specific propeller', price: 650 }, { name: 'Hub kit', price: 125 }],
+    });
+    expect(breakdown).toContainEqual(expect.objectContaining({ name: 'Propeller: Custom', price: 0 }));
+    expect(breakdown.some((item) => /Use Existing|Propeller Allowance/.test(item.name))).toBe(false);
+    expect(breakdown.reduce((sum, item) => sum + item.price, 0)).toBe(775);
+  });
+
   it('includes the allowance by default for a 60 HP motor', () => {
     const breakdown = buildAccessoryBreakdown({
       motor: { model: '60 ELPT FourStroke', hp: 60 },
