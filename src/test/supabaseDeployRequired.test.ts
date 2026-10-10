@@ -563,6 +563,32 @@ describe('drift migration matching rule', () => {
     );
   });
 
+  it('treats the Twilio tracking file as applied from the production name ledger, not the source timestamp', () => {
+    const tracking = 'supabase/migrations/20260830230000_add_twilio_sms_status_tracking.sql';
+    const productionLedger = appliedVersionSet([
+      { version: '20260910005522', name: 'add_twilio_sms_status_tracking' },
+    ]);
+    expect(migrationNameFromFilename(tracking)).toBe('add_twilio_sms_status_tracking');
+    expect(isMigrationApplied(tracking, productionLedger)).toBe(true);
+    expect(isMigrationApplied(tracking, appliedVersionSet(['20260910005522']))).toBe(false);
+    expect(isMigrationApplied(tracking, appliedVersionSet(['20260830230000']))).toBe(true);
+    expect(
+      blockedDeployReason(
+        'notification-webhook',
+        [{ path: tracking, version: '20260830230000' }],
+        productionLedger,
+      ),
+    ).toBeNull();
+    expect(
+      blockedDeployReason(
+        'notification-webhook',
+        [{ path: tracking, version: '20260830230000' }],
+        appliedVersionSet(['20260910005522']),
+        { source: 'cli-fallback' },
+      ),
+    ).toMatch(/not applied[\s\S]*CLI applied list/);
+  });
+
   it('does not treat a newer latest version as applied when the listing has versions only', () => {
     const versionsOnly = appliedVersionSet(['20260909164256', '20260909194905']);
     expect(

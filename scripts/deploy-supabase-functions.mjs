@@ -43,6 +43,14 @@
  *   SUPABASE_ACCESS_TOKEN     required by the CLI (workflow gates this)
  *   SUPABASE_PROJECT_REF      optional; otherwise supabase/config.toml project_id
  *   SUPABASE_CLI              optional binary name (default: supabase)
+ *   SUPABASE_EDGE_SECRET_NAMES
+ *                             optional name-only override for unit tests of
+ *                             deployWithMigrationGate. The runDeploy entrypoint
+ *                             does not use this as the production source.
+ *                             It lists secret **names** for the resolved
+ *                             project via Management API or CLI and fails
+ *                             closed on lookup failure / wrong project.
+ *                             Never prints values or digests.
  */
 
 import { execFileSync } from 'node:child_process';
@@ -69,6 +77,12 @@ import {
   skipReasonsForSelectedSlugs,
 } from './lib/public-function-release-guards.mjs';
 import { projectRefFromConfig, resolveProjectRef } from './lib/supabase-project-ref.mjs';
+import {
+  applyTwilioWebhookUrlPreflight,
+  isTwilioWebhookDeploySlug,
+  parseEdgeSecretNames,
+} from './lib/twilio-webhook-deploy-preflight.mjs';
+import { listEdgeSecretNamesForProject } from './lib/supabase-edge-secret-names.mjs';
 
 export { projectRefFromConfig, resolveProjectRef };
 
@@ -422,15 +436,33 @@ export async function deployWithMigrationGate({
   log,
   releaseAttestations,
   releasePairs,
+  secretNames,
+  listSecretNames,
 } = {}) {
   const targets = functions.map((item) =>
     typeof item === 'string' ? { slug: item, requiredMigrations: [] } : item,
   );
   const selectedSlugs = targets.map((item) => item.slug);
+  let resolvedSecretNames = secretNames;
+  if (resolvedSecretNames === undefined && typeof listSecretNames === 'function') {
+    try {
+      resolvedSecretNames = await listSecretNames();
+    } catch {
+      resolvedSecretNames = null;
+    }
+  }
+  if (resolvedSecretNames === undefined) {
+    resolvedSecretNames = parseEdgeSecretNames(
+      env.SUPABASE_EDGE_SECRET_NAMES ?? process.env.SUPABASE_EDGE_SECRET_NAMES,
+    );
+  }
+
+  const withTwilioPreflight = (preconditionSkipBySlug) =>
+    applyTwilioWebhookUrlPreflight(preconditionSkipBySlug, selectedSlugs, resolvedSecretNames);
 
   const deployGuarded = (preconditionSkipBySlug, extra) => {
     const reasons = skipReasonsForSelectedSlugs(selectedSlugs, {
-      preconditionSkipBySlug,
+      preconditionSkipBySlug: withTwilioPreflight(preconditionSkipBySlug),
       attestations: releaseAttestations,
       pairs: releasePairs,
       env,
@@ -749,6 +781,10 @@ export async function runDeploy({
   diffEntries,
   releaseAttestations,
   releasePairs,
+  secretNames,
+  listSecretNames,
+  listSecretNamesFromApi,
+  listSecretNamesFromCli,
 } = {}) {
   const files = {
     ...loadTextTree('supabase/functions'),
@@ -911,6 +947,20 @@ export async function runDeploy({
       }
     });
 
+  const selectedSlugs = targets.functions.map((item) => item.slug);
+  const twilioSelected = selectedSlugs.some((slug) => isTwilioWebhookDeploySlug(slug));
+  const resolveSecretNames = listSecretNames || (twilioSelected
+    ? () => listEdgeSecretNamesForProject({
+        projectRef,
+        expectedProjectRef: projectRef,
+        token: env.SUPABASE_ACCESS_TOKEN,
+        cli,
+        env,
+        listFromApi: listSecretNamesFromApi,
+        listFromCli: listSecretNamesFromCli,
+      })
+    : undefined);
+
   const { succeeded, failed } = await deployWithMigrationGate({
     functions: targets.functions,
     ...(listAppliedVersions
@@ -927,6 +977,8 @@ export async function runDeploy({
     env,
     releaseAttestations,
     releasePairs,
+    secretNames,
+    listSecretNames: resolveSecretNames,
   });
   writeSummary(
     formatFunctionsDeployMarkdown({
