@@ -134,7 +134,7 @@ export function ApplicantStep() {
 
         <div className="space-y-2">
           <Label htmlFor="suffix">Suffix</Label>
-          <Select onValueChange={(value) => setValue('suffix', value as any)}>
+          <Select value={watch('suffix')} onValueChange={(value) => setValue('suffix', value as any)}>
             <SelectTrigger id="suffix">
               <SelectValue placeholder="None" />
             </SelectTrigger>
@@ -335,7 +335,7 @@ export function ApplicantStep() {
 
           <div className="space-y-2">
             <Label htmlFor="province">Province <RequiredMark /></Label>
-            <Select onValueChange={(value) => setValue('currentAddress.province', value, { shouldValidate: true })}>
+            <Select value={watch('currentAddress.province')} onValueChange={(value) => setValue('currentAddress.province', value, { shouldValidate: true })}>
               <SelectTrigger
                 id="province"
                 aria-required="true"
@@ -387,7 +387,7 @@ export function ApplicantStep() {
 
         <div className="space-y-2">
           <Label htmlFor="timeAtAddress">Time at Address <RequiredMark /></Label>
-          <Select onValueChange={(value) => setValue('currentAddress.timeAtAddress', value as any, { shouldValidate: true })}>
+          <Select value={watch('currentAddress.timeAtAddress')} onValueChange={(value) => setValue('currentAddress.timeAtAddress', value as any, { shouldValidate: true })}>
             <SelectTrigger
               id="timeAtAddress"
               aria-required="true"
@@ -414,6 +414,7 @@ export function ApplicantStep() {
       <div className="space-y-3 pt-4">
         <Label id="housing-status-label">Housing Status <RequiredMark /></Label>
         <RadioGroup
+          value={housingStatus}
           aria-labelledby="housing-status-label"
           aria-required="true"
           aria-invalid={Boolean(errors.housingStatus)}

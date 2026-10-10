@@ -14,10 +14,12 @@ export const postalCodeSchema = z.string()
 
 // Helper for phone numbers
 export const phoneSchema = z.string()
+  .transform(val => val.replace(/[ ()-]/g, ''))
+  .pipe(z.string()
   .min(10, 'Phone number must be at least 10 digits')
   .max(15, 'Phone number must not exceed 15 digits')
   .regex(/^[\+]?[1-9][\d]{9,14}$/, 'Please enter a valid phone number')
-  .transform(formatPhoneNumber);
+  .transform(formatPhoneNumber));
 
 // Step 1: Purchase Details
 export const purchaseDetailsSchema = z.object({
@@ -29,6 +31,7 @@ export const purchaseDetailsSchema = z.object({
   priceBasis: z.enum(['all_in_after_trade']).optional(),
   includedTradeInValue: z.number().min(0).optional(),
   preTradeSubtotal: z.number().min(0).optional(),
+  dealerFee: z.number().min(0).optional(),
   preferredTerm: z.enum(['24', '36', '48', '60', '72', '84', '120', '180', '240']).optional(),
   // Promo fields for active promotion
   promoOption: z.enum(['no_payments', 'special_financing', 'cash_rebate']).nullable().optional(),
@@ -113,7 +116,7 @@ export const financialSchema = z.object({
   hasBankruptcy: z.boolean(),
   bankruptcyDetails: z.object({
     date: z.date(),
-    status: z.enum(['discharged', 'active']),
+    status: z.enum(['discharged', 'active', 'undischarged', 'consumer_proposal_active', 'consumer_proposal_completed']),
   }).optional(),
 }).refine(data => {
   // If bankruptcy declared, details are required
@@ -220,7 +223,7 @@ export const completeApplicationSchema = z.object({
   applicant: applicantSchema,
   employment: employmentSchema,
   financial: financialSchema,
-  coApplicant: coApplicantSchema.optional(),
+  coApplicant: coApplicantSchema.nullable().optional(),
   references: referencesSchema,
   consent: consentSchema,
 });

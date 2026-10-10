@@ -1,3 +1,4 @@
+import { moneyWithCents } from '@/lib/money';
 import { RequiredMark } from "@/components/ui/required-mark";
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -37,7 +38,7 @@ export function ReviewSubmitStep() {
   const { register, handleSubmit, watch, setValue, formState: { errors, isValid } } = useForm<Consent>({
     resolver: zodResolver(consentSchema),
     mode: 'onChange',
-    defaultValues: {},
+    defaultValues: { signatureDate: new Date(), creditCheckConsent: false, accuracyConfirmation: false, termsAgreement: false },
   });
 
   const creditCheckConsent = watch('creditCheckConsent');
@@ -308,16 +309,16 @@ export function ReviewSubmitStep() {
                     <span className="font-medium">{state.purchaseDetails?.motorModel || 'N/A'}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-muted-foreground">Purchase Price:</span>
-                    <span className="font-medium">${state.purchaseDetails?.motorPrice?.toLocaleString() || 'N/A'}</span>
+                    <span className="text-muted-foreground">Purchase Total Including Financing Fee:</span>
+                    <span className="font-medium">{state.purchaseDetails?.motorPrice != null ? moneyWithCents(state.purchaseDetails.motorPrice) : 'N/A'}</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Down Payment:</span>
-                    <span className="font-medium">${state.purchaseDetails?.downPayment?.toLocaleString() || 'N/A'}</span>
+                    <span className="font-medium">{state.purchaseDetails?.downPayment != null ? moneyWithCents(state.purchaseDetails.downPayment) : 'N/A'}</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Amount to Finance:</span>
-                    <span className="font-medium">${state.purchaseDetails?.amountToFinance?.toLocaleString() || 'N/A'}</span>
+                    <span className="font-medium">{state.purchaseDetails?.amountToFinance != null ? moneyWithCents(state.purchaseDetails.amountToFinance) : 'N/A'}</span>
                   </div>
                   {state.purchaseDetails?.promoOption && (
                     <div className="flex justify-between gap-4">
@@ -540,8 +541,8 @@ export function ReviewSubmitStep() {
             <div className="flex items-start space-x-3">
               <Checkbox
                 id="creditCheckConsent"
-                {...register('creditCheckConsent')}
-                onCheckedChange={(checked) => setValue('creditCheckConsent', checked as boolean)}
+                checked={creditCheckConsent}
+                onCheckedChange={(checked) => setValue('creditCheckConsent', checked === true, { shouldValidate: true })}
               />
               <div className="space-y-1">
                 <Label htmlFor="creditCheckConsent" className="font-medium cursor-pointer">
@@ -557,8 +558,8 @@ export function ReviewSubmitStep() {
             <div className="flex items-start space-x-3">
               <Checkbox
                 id="accuracyConfirmation"
-                {...register('accuracyConfirmation')}
-                onCheckedChange={(checked) => setValue('accuracyConfirmation', checked as boolean)}
+                checked={accuracyConfirmation}
+                onCheckedChange={(checked) => setValue('accuracyConfirmation', checked === true, { shouldValidate: true })}
               />
               <div className="space-y-1">
                 <Label htmlFor="accuracyConfirmation" className="font-medium cursor-pointer">
@@ -574,8 +575,8 @@ export function ReviewSubmitStep() {
             <div className="flex items-start space-x-3">
               <Checkbox
                 id="termsAndPrivacy"
-                {...register('termsAgreement')}
-                onCheckedChange={(checked) => setValue('termsAgreement', checked as boolean)}
+                checked={termsAndPrivacy}
+                onCheckedChange={(checked) => setValue('termsAgreement', checked === true, { shouldValidate: true })}
               />
               <div className="space-y-1">
                 <Label htmlFor="termsAndPrivacy" className="font-medium cursor-pointer">

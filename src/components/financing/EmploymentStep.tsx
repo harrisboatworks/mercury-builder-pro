@@ -52,6 +52,15 @@ export function EmploymentStep() {
   const showEmployerFields = status === 'employed' || status === 'self_employed';
   const showPreviousEmployer = timeAtJob && ['<1', '1-2'].includes(timeAtJob);
 
+  const onStatusChange = (value: string) => {
+    if (value === 'retired' || value === 'other') {
+      for (const field of ['employerName', 'employerPhone', 'jobTitle', 'timeAtJob', 'previousEmployer'] as const) {
+        setValue(field, undefined, { shouldValidate: true });
+      }
+    }
+    setValue('status', value as any, { shouldValidate: true });
+  };
+
   const onSubmit = (data: any) => {
     dispatch({ type: 'SET_EMPLOYMENT', payload: data });
     dispatch({ type: 'COMPLETE_STEP', payload: 3 });
@@ -74,7 +83,7 @@ export function EmploymentStep() {
             <Label className="text-lg font-semibold">Employment Status</Label>
             <RadioGroup
               value={status}
-              onValueChange={(value) => setValue('status', value as any, { shouldValidate: true })}
+              onValueChange={onStatusChange}
               className="grid grid-cols-2 gap-4"
             >
               {[
@@ -90,7 +99,7 @@ export function EmploymentStep() {
                       ? 'border-primary bg-primary/5 shadow-md'
                       : 'hover:border-primary/50'
                   }`}
-                  onClick={() => setValue('status', value as any, { shouldValidate: true })}
+                  onClick={() => onStatusChange(value)}
                 >
                   <Label htmlFor={value} className="flex items-center gap-3 p-4 cursor-pointer">
                     <RadioGroupItem value={value} id={value} className="sr-only" />

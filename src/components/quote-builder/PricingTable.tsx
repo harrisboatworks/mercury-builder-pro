@@ -1,3 +1,4 @@
+import { moneyWithCents } from '@/lib/money';
 import { cn } from '@/lib/utils';
 import { Card } from '@/components/ui/card';
 import { LineItemRow } from './LineItemRow';
@@ -94,7 +95,7 @@ export function PricingTable({
             <div className="font-sans font-medium text-repower-navy-900" style={{ fontSize: 16 }}>MSRP</div>
             <div className="text-right">
               <s className="font-display font-semibold tabular-nums text-repower-navy-900/50" style={{ fontSize: 18, letterSpacing: '-0.01em' }}>
-                ${pricing.msrp.toLocaleString()}
+                {moneyWithCents(pricing.msrp)}
               </s>
             </div>
           </div>
@@ -204,7 +205,7 @@ export function PricingTable({
                 />
                 <div className="pl-2 border-l-2 border-repower-mercury-red/30 py-1">
                   <div className="text-xs text-repower-mercury-red font-medium">
-                    💡 Tax Savings from Trade-In: ${Math.round((pricing.tradeTaxSaving ?? (pricing.appliedTradeCredit ?? tradeInValue) * 0.13)).toLocaleString()}
+                    💡 Tax Savings from Trade-In: {moneyWithCents(pricing.tradeTaxSaving ?? (pricing.appliedTradeCredit ?? tradeInValue) * 0.13)}
                   </div>
                   <div className="text-xs text-muted-foreground">
                     HST not charged on trade-in portion
@@ -288,7 +289,7 @@ export function PricingTable({
           All prices in Canadian dollars. Installation, rigging, and trade-in values subject to inspection and verification.
           {pricing.savings > 0 && (
             <span className="inline-block mt-2 px-2 py-1 bg-repower-mercury-red/10 text-repower-mercury-red rounded-md text-xs font-semibold">
-              {tradeInValue > 0 ? `Dealer + Promo Savings` : 'Total savings'} of ${pricing.savings.toLocaleString()} vs MSRP
+              {tradeInValue > 0 ? `Dealer + Promo Savings` : 'Total savings'} of ${pricing.savings.toLocaleString("en-CA", { minimumFractionDigits: 2, maximumFractionDigits: 2 })} vs MSRP
             </span>
           )}
         </div>

@@ -1,5 +1,5 @@
 import { cn } from '@/lib/utils';
-import { money } from '@/lib/quote-utils';
+import { moneyWithCents as money } from '@/lib/money';
 
 interface LineItemRowProps {
   label: string;

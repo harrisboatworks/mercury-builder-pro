@@ -1,3 +1,4 @@
+import { draftMatchesQuote } from '@/lib/financing-draft';
 import { useEffect, useRef, useState, lazy, Suspense } from 'react';
 import { useSearchParams, useNavigate, useLocation } from 'react-router-dom';
 import { useFinancing } from '@/contexts/FinancingContext';
@@ -71,7 +72,7 @@ export default function FinancingApplication() {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
   const location = useLocation();
-  const { state: financingState, dispatch: financingDispatch } = useFinancing();
+  const { state: financingState, dispatch: financingDispatch, isHydrated } = useFinancing();
   const { state: quoteState } = useQuote();
   const { toast } = useToast();
   const [showSaveDialog, setShowSaveDialog] = useState(false);
@@ -91,6 +92,15 @@ export default function FinancingApplication() {
 
   // Detect saved drafts and handle auto-resume
   useEffect(() => {
+    if (isHydrated === false) return;
+    if ((location.state as any)?.fromFinancingResume) {
+      setIsLoading(false);
+      return;
+    }
+    let pendingQuote: any = null;
+    try { pendingQuote = JSON.parse(localStorage.getItem('quote_state') || 'null'); } catch { /* Ignore malformed legacy handoffs. */ }
+    const incomingQuote = (location.state as any)?.savedQuoteState || pendingQuote;
+    const hasExplicitSource = Boolean(incomingQuote || (location.state as any)?.fromCalculator || ((searchParams.get('motorModel') || searchParams.get('motor')) && (searchParams.get('motorPrice') || searchParams.get('price'))));
     const detectSavedDraft = (): SavedDraft | null => {
       // Priority 1: Check 'financing_draft' (from Back to Quote)
       const backToQuoteDraft = localStorage.getItem('financing_draft');
@@ -141,7 +151,8 @@ export default function FinancingApplication() {
     // Check for saved draft first
     const draft = detectSavedDraft();
 
-    if (draft) {
+    if (draft && (!hasExplicitSource || (incomingQuote && draftMatchesQuote(draft.data.purchaseDetails, incomingQuote)))) {
+      if (pendingQuote) localStorage.removeItem('quote_state');
       // Show resume dialog
       setSavedDraft(draft);
       setShowResumeDialog(true);
@@ -149,11 +160,15 @@ export default function FinancingApplication() {
       return;
     }
 
+    if (hasExplicitSource) {
+      clearFinancingStorage();
+      financingDispatch({ type: 'RESET_APPLICATION' });
+    }
+
     // Check for calculator pre-fill (from Finance Calculator)
     const calculatorState = (location.state as any)?.fromCalculator ? location.state : null;
 
     if (calculatorState) {
-      console.log('Loading financing data from calculator:', calculatorState);
 
       // Preserve the calculator's amortization choice. Payment frequency must
       // never silently change the term handed into the application.
@@ -190,7 +205,7 @@ export default function FinancingApplication() {
     const restoredQuoteState = (location.state as any)?.savedQuoteState;
 
     if (savedQuoteIdParam && restoredQuoteState) {
-      console.log('Restoring full quote state from database:', restoredQuoteState);
+      financingDispatch({ type: 'SET_QUOTE_ID', payload: savedQuoteIdParam });
 
       const motorData = restoredQuoteState.motor || restoredQuoteState.selectedMotor;
       const purchase = financingPurchaseFromQuote(restoredQuoteState, DEALERPLAN_FEE);
@@ -213,6 +228,11 @@ export default function FinancingApplication() {
           priceBasis: purchase.priceBasis,
           includedTradeInValue: purchase.includedTradeInValue,
           preTradeSubtotal: purchase.preTradeSubtotal,
+          dealerFee: purchase.dealerFee,
+          promoOption: restoredQuoteState.selectedPromoOption ?? null,
+          promoRate: firstUsableFinancingRate(restoredQuoteState.selectedPromoRate, restoredQuoteState.frozenPricing?.financingRate),
+          promoTerm: restoredQuoteState.selectedPromoTerm ?? restoredQuoteState.frozenPricing?.financingAmortizationMonths ?? null,
+          preferredTerm: String(restoredQuoteState.selectedPromoTerm ?? restoredQuoteState.frozenPricing?.financingAmortizationMonths ?? 60) as NonNullable<import('@/lib/financingValidation').PurchaseDetails['preferredTerm']>,
         }
       });
 
@@ -250,7 +270,7 @@ export default function FinancingApplication() {
         motorModel:packageName ? `${motorModel} (${packageName})` : motorModel,
         motorPrice:purchase.motorPrice,downPayment:purchase.downPayment,tradeInValue:purchase.tradeInValue,
         amountToFinance:purchase.amountToFinance,priceBasis:purchase.priceBasis,
-        includedTradeInValue:purchase.includedTradeInValue,preTradeSubtotal:purchase.preTradeSubtotal,
+        includedTradeInValue:purchase.includedTradeInValue,preTradeSubtotal:purchase.preTradeSubtotal,dealerFee:purchase.dealerFee,
       }});
 
       // Show confirmation toast if user came from QR code
@@ -285,7 +305,7 @@ export default function FinancingApplication() {
     }
 
     // Pre-fill if we have motor data
-    if (quoteData?.motor && !financingState.purchaseDetails?.motorModel) {
+    if (quoteData?.motor && (hasExplicitSource || !financingState.purchaseDetails?.motorModel)) {
       if (quoteId) {
         financingDispatch({ type: 'SET_QUOTE_ID', payload: quoteId });
       }
@@ -306,10 +326,12 @@ export default function FinancingApplication() {
                           (quoteData as any).selectedPromoOption || null;
       const promoRate = firstUsableFinancingRate(
         (quoteData as any).financingAmount?.promoRate,
+        (quoteData as any).frozenPricing?.financingRate,
         (quoteData as any).selectedPromoRate,
       );
-      const promoTerm = (quoteData as any).financingAmount?.promoTerm ||
-                        (quoteData as any).selectedPromoTerm || null;
+      const promoTerm = (quoteData as any).financingAmount?.promoTerm ??
+                        (quoteData as any).frozenPricing?.financingAmortizationMonths ??
+                        (quoteData as any).selectedPromoTerm ?? null;
       const promoValue = (quoteData as any).financingAmount?.promoValue ||
                          (quoteData as any).selectedPromoValue || null;
       const promoName = (quoteData as any).financingAmount?.promoName ||
@@ -329,11 +351,13 @@ export default function FinancingApplication() {
           amountToFinance: purchase.amountToFinance,
           includedTradeInValue: purchase.includedTradeInValue,
           preTradeSubtotal: purchase.preTradeSubtotal,
+          dealerFee: purchase.dealerFee,
           priceBasis,
           // Include promo details
           promoOption: promoOption,
           promoRate: promoRate,
           promoTerm: promoTerm,
+          preferredTerm: String(promoTerm ?? 60) as NonNullable<import('@/lib/financingValidation').PurchaseDetails['preferredTerm']>,
           promoValue: promoValue,
           promoName,
           promoSavings,
@@ -345,7 +369,7 @@ export default function FinancingApplication() {
     // Simulate loading state for better UX
     const timer = setTimeout(() => setIsLoading(false), 800);
     return () => clearTimeout(timer);
-  }, [searchParams, financingDispatch, initializationKey]);
+  }, [searchParams, financingDispatch, initializationKey, isHydrated]);
 
   const handleBackToQuote = () => {
     // Only save if user has made progress (not on step 1)

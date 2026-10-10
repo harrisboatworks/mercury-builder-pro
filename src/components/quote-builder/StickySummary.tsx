@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from 'react';
-import { money } from "@/lib/money";
+import { moneyWithCents as money, money as wholeDollarMoney } from "@/lib/money";
 import { formatFinancingEstimateLine } from "@/lib/finance";
 import { Download, CreditCard, Bookmark } from "lucide-react";
 import { PaymentMethodBadges } from "@/components/payments/PaymentMethodBadges";
@@ -99,7 +99,7 @@ export default function StickySummary({
             <>From <span className="font-display font-semibold text-repower-gold tabular-nums">{formatFinancingEstimateLine({ payment: Math.round(monthly), termMonths: financingTermMonths, rate: financingRate })}</span> · </>
           )}
           {monthly != null && (financingTermMonths == null || financingRate == null) && (
-            <>From <span className="font-display font-semibold text-repower-gold tabular-nums">{money(Math.round(monthly))}/mo</span> · </>
+            <>From <span className="font-display font-semibold text-repower-gold tabular-nums">{wholeDollarMoney(Math.round(monthly))}/mo</span> · </>
           )}
           You save <span className="font-display font-semibold text-repower-navy-900 tabular-nums">{money(totalSavings)}</span>
         </div>

@@ -9,7 +9,7 @@ import { Slider } from '@/components/ui/slider';
 import { Button } from '@/components/ui/button';
 import { Check, Pencil, Percent, CalendarOff, Banknote, AlertCircle, Info, X } from 'lucide-react';
 import { useState, useEffect } from 'react';
-import { money } from '@/lib/money';
+import { moneyWithCents as money } from '@/lib/money';
 import {
   calculateMonthlyPayment,
   calculateMonthly,
@@ -59,6 +59,7 @@ export function PurchaseDetailsStep() {
       priceBasis: state.purchaseDetails?.priceBasis,
       includedTradeInValue: state.purchaseDetails?.includedTradeInValue ?? state.purchaseDetails?.tradeInValue ?? 0,
       preTradeSubtotal: state.purchaseDetails?.preTradeSubtotal,
+      dealerFee: state.purchaseDetails?.dealerFee ?? 349,
     },
   });
 
@@ -68,7 +69,8 @@ export function PurchaseDetailsStep() {
   const tradeInValue = watch('tradeInValue') || 0;
   const preferredTerm = watch('preferredTerm');
   const priceBasis = watch('priceBasis') || state.purchaseDetails?.priceBasis;
-  const amountToFinance = financingAmountToFinance(motorPrice, downPayment, tradeInValue, priceBasis, { includedTradeInValue: watch('includedTradeInValue'), preTradeSubtotal: watch('preTradeSubtotal') });
+  const dealerFee = watch('dealerFee') ?? 349;
+  const amountToFinance = financingAmountToFinance(motorPrice, downPayment, tradeInValue, priceBasis, { includedTradeInValue: watch('includedTradeInValue'), preTradeSubtotal: watch('preTradeSubtotal'), dealerFee });
 
   // Keep the derived amount inside react-hook-form as well as on screen.
   // Without this synchronization the schema continues validating the initial
@@ -378,13 +380,13 @@ export function PurchaseDetailsStep() {
 
       {/* Motor Price */}
       <div className="space-y-2">
-        <Label htmlFor="motorPrice">All-in Purchase Total</Label>
+        <Label htmlFor="motorPrice">Purchase Total Including Financing Fee</Label>
         <div className="relative">
           <Input
             id="motorPrice"
             type="number"
             inputMode="decimal"
-            step="1"
+            step="0.01"
             {...register('motorPrice', {
               valueAsNumber: true,
               setValueAs: (v) => Number(Number(v).toFixed(2))
@@ -404,13 +406,18 @@ export function PurchaseDetailsStep() {
             className="absolute right-3 top-1/2 -translate-y-1/2"
           />
         </div>
-        <FormErrorMessage error={errors.motorPrice?.message} field="All-in purchase total" />
+        <FormErrorMessage error={errors.motorPrice?.message} field="Purchase total including financing fee" />
         <p className="text-sm text-muted-foreground font-light">
           {motorPrice > 0
-            ? `${money(motorPrice)} total — 13% HST and the $349 DealerPlan fee are already included.`
-            : 'Use the total from your quote, including 13% HST and the $349 DealerPlan fee. This form does not add them again.'}
+            ? `${money(motorPrice)} includes HST and the ${money(dealerFee)} DealerPlan fee.`
+            : `Enter the purchase total including HST and the ${money(dealerFee)} DealerPlan fee. These are not added again.`}
         </p>
       </div>
+
+      {motorPrice > 0 && <dl className="rounded-sm border border-border bg-muted/40 p-4 space-y-2 text-sm" aria-label="Financing price breakdown">
+        <div className="flex justify-between gap-4"><dt>Quote total including HST</dt><dd className="tabular-nums">{money(Math.max(0, motorPrice - dealerFee))}</dd></div>
+        <div className="flex justify-between gap-4"><dt>DealerPlan financing fee</dt><dd className="tabular-nums">{money(dealerFee)}</dd></div>
+      </dl>}
 
       {/* Down Payment Slider */}
       {motorPrice > 0 && <div className="space-y-4">
@@ -489,7 +496,7 @@ export function PurchaseDetailsStep() {
           </span>
         </div>
         <p className="text-xs text-muted-foreground font-light">
-          Includes 13% HST and $349 Dealerplan processing fee
+          Includes HST and {money(dealerFee)} DealerPlan financing fee
         </p>
         {hasSpecialFinancing && isEligibleForSpecialFinancing && (
           <p className="text-xs text-green-600 font-medium">
