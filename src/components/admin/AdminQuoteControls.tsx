@@ -15,6 +15,9 @@ import { useToast } from '@/hooks/use-toast';
 
 import { SITE_URL } from '@/lib/site';
 import { buildAccessoryBreakdown } from '@/lib/build-accessory-breakdown';
+import { includesPropeller } from '@/lib/motor-helpers';
+import { getPropellerAllowance } from '@/lib/propeller-allowance';
+import { resolvePropellerDecision, type PropellerDecision } from '@/lib/propeller-selection';
 
 interface AdminQuoteControlsProps {
   onSave?: () => void;
@@ -38,6 +41,14 @@ export function AdminQuoteControls({ onSave, className = '' }: AdminQuoteControl
   const [customItems, setCustomItems] = useState<Array<{ name: string; price: number }>>(state.adminCustomItems || []);
   const [newItemName, setNewItemName] = useState('');
   const [newItemPrice, setNewItemPrice] = useState(0);
+  const motorHp = Number(state.motor?.hp || 0);
+  const hasPropellerAllowance = Boolean(state.motor && !includesPropeller(state.motor) && getPropellerAllowance(motorHp));
+  const propellerDecision = resolvePropellerDecision({
+    hp: motorHp,
+    installConfig: state.installConfig,
+    boatInfo: state.boatInfo,
+    tradeInInfo: state.tradeInInfo,
+  });
 
   // Sync customer info from context when editing existing quote
   useEffect(() => {
@@ -78,6 +89,17 @@ export function AdminQuoteControls({ onSave, className = '' }: AdminQuoteControl
         title: 'Missing Information',
         description: 'Please enter customer name and email.',
         variant: 'destructive'
+      });
+      return;
+    }
+
+    if (hasPropellerAllowance && propellerDecision === 'custom_propeller'
+      && !customItems.some((item) => /\bprop(?:eller)?s?\b/i.test(item.name)
+        && Number.isFinite(item.price) && item.price >= 0)) {
+      toast({
+        title: 'Add the custom propeller',
+        description: 'Add a custom line item with “propeller” or “prop” in its description and a valid selling price before saving.',
+        variant: 'destructive',
       });
       return;
     }
@@ -439,6 +461,27 @@ export function AdminQuoteControls({ onSave, className = '' }: AdminQuoteControl
         
         {/* Custom Line Items */}
         <div>
+          {state.isAdminQuote && hasPropellerAllowance ? (
+            <div className="mb-4">
+              <Label htmlFor="adminPropellerDecision" className="text-sm">Propeller</Label>
+              <select
+                id="adminPropellerDecision"
+                className="mt-1 flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
+                value={propellerDecision}
+                onChange={(event) => dispatch({
+                  type: 'SET_INSTALL_CONFIG',
+                  payload: { ...state.installConfig, propellerDecision: event.target.value as PropellerDecision },
+                })}
+              >
+                <option value="include_allowance">Include standard propeller allowance</option>
+                <option value="reuse_existing">Use existing propeller</option>
+                <option value="custom_propeller">Custom propeller (add separately)</option>
+              </select>
+              <p className="mt-1 text-xs text-muted-foreground">
+                Custom propeller removes the standard allowance. Add the specific propeller and hub below; include “propeller” or “prop” in the propeller description.
+              </p>
+            </div>
+          ) : null}
           <Label className="text-sm">Custom Line Items</Label>
           <p className="text-xs text-muted-foreground mb-2">
             Add custom items to the quote (e.g., "Battery box — $0.00")

@@ -4,6 +4,7 @@ import { findMotorSpecs, type MercuryMotor } from '@/lib/data/mercury-motors';
 import { trackEvent } from '@/lib/analytics';
 import { clearTradeInValuation, tradeInPricingIdentity } from '@/lib/trade-in-state';
 import type { QuotePdfSnapshot } from '@/lib/quote-pdf-data';
+import { resolvePropellerDecision } from '@/lib/propeller-selection';
 
 export interface WarrantyConfig {
   extendedYears: number;
@@ -342,8 +343,24 @@ export function quoteReducer(state: QuoteState, action: QuoteAction): QuoteState
       };
     case 'SET_FUEL_TANK_CONFIG':
       return { ...state, fuelTankConfig: action.payload };
-    case 'SET_INSTALL_CONFIG':
-      return { ...state, installConfig: action.payload };
+    case 'SET_INSTALL_CONFIG': {
+      const propellerInputs = {
+        hp: Number(state.motor?.hp || 0),
+        boatInfo: state.boatInfo,
+        tradeInInfo: state.tradeInInfo,
+      };
+      const hadAllowance = resolvePropellerDecision({ ...propellerInputs, installConfig: state.installConfig }) === 'include_allowance';
+      const hasAllowance = resolvePropellerDecision({ ...propellerInputs, installConfig: action.payload }) === 'include_allowance';
+      return {
+        ...state,
+        installConfig: action.payload,
+        // A wording-only change between existing and custom props retains
+        // the saved commercial terms. Recalculate when the allowance changes.
+        ...(hadAllowance !== hasAllowance
+          ? { frozenPricing: undefined, pdfSnapshot: undefined }
+          : {}),
+      };
+    }
     case 'SET_LOOSE_MOTOR_BATTERY':
       return { ...state, looseMotorBattery: action.payload };
     case 'SET_FINANCING':

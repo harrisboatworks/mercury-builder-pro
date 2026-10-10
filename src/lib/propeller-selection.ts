@@ -1,4 +1,4 @@
-export type PropellerDecision = 'include_allowance' | 'reuse_existing';
+export type PropellerDecision = 'include_allowance' | 'reuse_existing' | 'custom_propeller';
 
 interface PropellerDecisionInput {
   hp: number;
