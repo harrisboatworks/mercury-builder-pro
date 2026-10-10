@@ -74,7 +74,17 @@ describe('professional quote PDF normalization', () => {
     expect(result.recommendedDepositAmount).toBe(200);
   });
 
-  it('carries the express 9.9 reservation amount and confirmation wording flag', () => {
+  it('carries the express 9.9 reservation amount and persisted deposit policy snapshot', () => {
+    const depositPolicySnapshot = {
+      schema: 'deposit-policy/v1' as const,
+      motorId: '11111111-1111-4111-8111-111111111111',
+      stockClassification: 'in_stock' as const,
+      policyCode: 'in_stock_refundable' as const,
+      stockQuantity: 2,
+      inStock: true,
+      availability: 'In Stock',
+      purchasePath: 'motor_only' as const,
+    };
     const result = buildProfessionalQuotePdfData({
       quoteNumber: 'HBW-99-EXPRESS',
       customerName: 'Express Customer',
@@ -82,11 +92,12 @@ describe('professional quote PDF normalization', () => {
       motor: { model: '9.9 MH FourStroke', hp: 9.9, msrp: 3860 },
       pricing: { msrp: 3860, discount: 861, promoValue: 0, motorSubtotal: 2999, subtotal: 2999, hst: 389.87, totalCashPrice: 3388.87, savings: 861 },
       recommendedDepositAmount: 100,
-      reservationRequiresConfirmation: true,
+      depositPolicySnapshot,
     });
 
     expect(result.recommendedDepositAmount).toBe(100);
-    expect(result.reservationRequiresConfirmation).toBe(true);
+    expect(result.depositPolicySnapshot).toEqual(depositPolicySnapshot);
+    expect(result.reservationRequiresConfirmation).toBe(false);
   });
 
   it('normalizes a stale 60-month contract default to a selected 24-month promotion', () => {
