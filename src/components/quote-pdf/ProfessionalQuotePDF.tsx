@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
   heroMain: { paddingTop: 3 },
   heroCopy: { width: '100%' },
   heroEyebrow: { color: colors.red, fontSize: 7.2, fontWeight: 'bold', letterSpacing: 2, marginBottom: 6 },
-  heroProduct: { color: colors.ink, fontSize: 27, lineHeight: 1.02, fontWeight: 'bold', letterSpacing: -0.6 },
+  heroProduct: { color: colors.ink, fontSize: 25, lineHeight: 1.15, fontWeight: 'bold', letterSpacing: 0 },
   heroMeta: { color: colors.ink2, fontSize: 8.5, lineHeight: 1.35, marginTop: 7 },
   priceBand: {
     flexDirection: 'row',
@@ -434,11 +434,12 @@ function tradeDescription(info?: QuotePDFProps['quoteData']['tradeInInfo']): str
 }
 
 function LineItemRow({ item, compact }: { item: LineItem; compact: boolean }) {
+  const description = item.description?.trim().toLowerCase() === 'custom item' ? undefined : item.description;
   return (
     <View style={[styles.row, compact ? styles.rowCompact : styles.rowSpacious]} wrap={false}>
       <View style={styles.rowText}>
         <Text style={[styles.rowPrimary, compact ? {} : styles.rowPrimarySpacious]}>{item.name}</Text>
-        {item.description ? <Text style={[styles.rowDescription, compact ? {} : styles.rowDescriptionSpacious]}>{item.description}</Text> : null}
+        {description ? <Text style={[styles.rowDescription, compact ? {} : styles.rowDescriptionSpacious]}>{description}</Text> : null}
       </View>
       <Text style={[styles.rowValue, compact ? {} : styles.rowValueSpacious]}>${money(item.price)}</Text>
     </View>
