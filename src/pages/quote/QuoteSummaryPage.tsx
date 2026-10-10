@@ -506,7 +506,7 @@ export default function QuoteSummaryPage() {
     const financingAmortization = frozen?.financingAmortizationMonths ?? termMonths;
     const financingApr = frozen?.financingRate ?? financingRate;
     const financingAmount = frozen?.amountFinanced ?? amountToFinance;
-    const financingDealerFee = frozen?.dealerFee ?? DEALERPLAN_FEE;
+    const financingDealerFee = frozen?.dealerFee ?? existing?.financing?.dealerFee ?? DEALERPLAN_FEE;
     const planPrice = state.warrantyConfig?.warrantyPrice || 0;
     const canShowFinancing = paymentMethod !== 'cash_purchase' && displayPricing.total >= FINANCING_MINIMUM;
     const selectedPromoValue = frozen?.selectedPromoValue

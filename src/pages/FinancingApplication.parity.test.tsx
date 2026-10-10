@@ -2,6 +2,7 @@ import { cleanup, render, screen, waitFor, fireEvent } from '@testing-library/re
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { MemoryRouter } from 'react-router-dom';
 import { FinancingProvider } from '@/contexts/FinancingContext';
+import { financingPurchaseFromQuote } from '@/lib/financing-purchase';
 
 const fixture = vi.hoisted(() => ({ quote: { motor: null } as any }));
 vi.mock('@/contexts/QuoteContext', () => ({ useQuote: () => ({ state: fixture.quote }) }));
@@ -28,6 +29,20 @@ beforeEach(() => { localStorage.clear(); fixture.quote = { motor: null }; });
 afterEach(() => { cleanup(); localStorage.clear(); });
 
 describe('financing application quote precedence', () => {
+  it('retains a matching pending quote when starting fresh without quote context', async () => {
+    const purchaseDetails = { ...financingPurchaseFromQuote(freshQuote), motorModel: freshQuote.motor.model };
+    localStorage.setItem('financingApplication', JSON.stringify({ state: { applicationId: 'matching-synthetic-draft', purchaseDetails, currentStep: 1 }, timestamp: Date.now(), lastActivity: Date.now() }));
+    localStorage.setItem('quote_state', JSON.stringify(freshQuote));
+    mount();
+    await screen.findByText('Welcome back');
+    expect(localStorage.getItem('quote_state')).not.toBeNull();
+    fireEvent.click(screen.getByRole('button', { name: /start fresh/i }));
+    await waitFor(() => expect(state().purchaseDetails.motorModel).toBe(freshQuote.motor.model));
+    expect(state().purchaseDetails.motorPrice).toBe(12545.17);
+    expect(state().purchaseDetails.dealerFee).toBe(199.50);
+    expect(state().applicationId).toBeNull();
+  });
+
   it('loads a newly selected quote instead of a previous auto-saved application', async () => {
     localStorage.setItem('financingApplication', JSON.stringify({ state: { applicationId: "previous-synthetic-draft", purchaseDetails: oldPurchase, currentStep: 1 }, timestamp: Date.now(), lastActivity: Date.now() }));
     localStorage.setItem('quote_state', JSON.stringify(freshQuote));

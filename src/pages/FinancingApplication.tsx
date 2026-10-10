@@ -152,7 +152,6 @@ export default function FinancingApplication() {
     const draft = detectSavedDraft();
 
     if (draft && (!hasExplicitSource || (incomingQuote && draftMatchesQuote(draft.data.purchaseDetails, incomingQuote)))) {
-      if (pendingQuote) localStorage.removeItem('quote_state');
       // Show resume dialog
       setSavedDraft(draft);
       setShowResumeDialog(true);
@@ -388,6 +387,7 @@ export default function FinancingApplication() {
 
   const handleContinue = () => {
     if (savedDraft) {
+      localStorage.removeItem('quote_state');
       // Use LOAD_FROM_STORAGE since localStorage data uses camelCase format
       financingDispatch({
         type: 'LOAD_FROM_STORAGE',
