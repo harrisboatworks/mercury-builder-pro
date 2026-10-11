@@ -3252,7 +3252,7 @@ If water flow has changed, an overheat alarm has sounded, or you cannot identify
     imageAlt: "Infographic: Command Thrust keeps the same powerhead and horsepower but adds a larger gearcase, a larger prop and a lower gear ratio; best fit for heavy pontoons, tritoons and commercial boats.",
     author: 'Jay Harris',
     datePublished: '2026-05-28',
-    dateModified: '2026-09-11',
+    dateModified: '2026-10-11',
     publishDate: '2026-05-28',
     category: 'Mercury Technology',
     readTime: '12 min',
