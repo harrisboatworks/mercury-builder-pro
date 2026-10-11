@@ -30,6 +30,7 @@ function blogUrlTransform(url: string): string {
 import { MercuryPriceTable, type MercuryPriceTableProps } from './MercuryPriceTable';
 import WalkaroundLeadCapture from './WalkaroundLeadCapture';
 import { MercuryVideo } from './MercuryVideo';
+import { ExplainerFigure, isExplainerPath, type ExplainerFigureProps } from './ExplainerFigure';
 import { CustomerVoice, type CustomerVoiceProps, type CustomerVoiceItem } from './CustomerVoice';
 import { Mythbuster, type MythbusterProps, type MythbusterItem } from './Mythbuster';
 import { BlogInlineCTA, type BlogInlineCTAProps } from './BlogInlineCTA';
@@ -446,7 +447,7 @@ function parseDirective(body: string): ImagePlaceholderProps | null {
 }
 
 interface RenderChunk {
-  kind: 'md' | 'placeholder' | 'motor-pricing' | 'related-posts' | 'decision-card' | 'diagnostic-flow' | 'cost-stack' | 'bilingual-trust' | 'pull-quote' | 'walkaround-lead-capture' | 'boat-card-help' | 'mercury-price-table' | 'mercury-capacity-lookup' | 'youtube-embed' | 'customer-voice' | 'mythbuster' | 'cta';
+  kind: 'md' | 'placeholder' | 'motor-pricing' | 'related-posts' | 'decision-card' | 'diagnostic-flow' | 'cost-stack' | 'bilingual-trust' | 'pull-quote' | 'walkaround-lead-capture' | 'boat-card-help' | 'mercury-price-table' | 'mercury-capacity-lookup' | 'youtube-embed' | 'explainer' | 'customer-voice' | 'mythbuster' | 'cta';
   content: string;
   props?: ImagePlaceholderProps;
   pricingRows?: MotorPricingRow[];
@@ -458,6 +459,7 @@ interface RenderChunk {
   pullQuoteProps?: PullQuoteProps;
   mercuryPriceTableProps?: MercuryPriceTableProps;
   youtubeProps?: { id: string; title?: string };
+  explainerProps?: ExplainerFigureProps;
   customerVoiceProps?: CustomerVoiceProps;
   mythbusterProps?: MythbusterProps;
   ctaProps?: BlogInlineCTAProps;
@@ -465,7 +467,7 @@ interface RenderChunk {
 }
 
 const ANY_DIRECTIVE_RE =
-  /:::(image-placeholder|motor-pricing|related-posts|decision-card|diagnostic-flow|cost-stack|bilingual-trust|pull-quote|walkaround-lead-capture|boat-card-help|mercury-price-table|mercury-capacity-lookup|youtube-embed|customer-voice|mythbuster|cta)\s*\n([\s\S]*?)\n:::/g;
+  /:::(image-placeholder|motor-pricing|related-posts|decision-card|diagnostic-flow|cost-stack|bilingual-trust|pull-quote|walkaround-lead-capture|boat-card-help|mercury-price-table|mercury-capacity-lookup|youtube-embed|explainer|customer-voice|mythbuster|cta)\s*\n([\s\S]*?)\n:::/g;
 
 function parseDecisionCardBody(body: string): DecisionCardProps | null {
   // YAML-ish: top-level `key: value` lines, plus list keys whose values are
@@ -899,6 +901,13 @@ function splitDirectives(md: string): RenderChunk[] {
       chunks.push({ kind: 'mercury-price-table', content: '', mercuryPriceTableProps: props });
     } else if (name === 'mercury-capacity-lookup') {
       chunks.push({ kind: 'mercury-capacity-lookup', content: '' });
+    } else if (name === 'explainer') {
+      const src = /^\s*src\s*:\s*(.+)$/m.exec(body)?.[1]?.trim();
+      const title = /^\s*title\s*:\s*(.+)$/m.exec(body)?.[1]?.trim();
+      const caption = /^\s*caption\s*:\s*(.+)$/m.exec(body)?.[1]?.trim();
+      if (src && isExplainerPath(src) && title && caption) {
+        chunks.push({ kind: 'explainer', content: '', explainerProps: { src, title, caption } });
+      }
     } else if (name === 'youtube-embed') {
       const idMatch = /^\s*id\s*:\s*([A-Za-z0-9_-]{6,})\s*$/m.exec(body);
       const titleMatch = /^\s*title\s*:\s*(.+)$/m.exec(body);
@@ -977,6 +986,9 @@ function renderMarkdownWithDirectives(
     }
     if (chunk.kind === 'mercury-capacity-lookup') {
       return <MercuryCapacityLookup key={`${keyPrefix}-mcl-${i}`} />;
+    }
+    if (chunk.kind === 'explainer' && chunk.explainerProps) {
+      return <ExplainerFigure key={`${keyPrefix}-ex-${i}`} {...chunk.explainerProps} />;
     }
     if (chunk.kind === 'youtube-embed' && chunk.youtubeProps) {
       return (

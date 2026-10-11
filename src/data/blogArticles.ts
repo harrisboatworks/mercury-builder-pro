@@ -3288,6 +3288,12 @@ A Command Thrust gearcase has three engineered changes vs the standard gearcase:
 
 The three changes work together. You cannot get the benefit by [swapping just the prop on a standard gearcase](/blog/mercury-propeller-selection-guide). You cannot get the benefit by swapping just the lower unit without the matched prop. Mercury sells Command Thrust as a complete factory configuration, and that is how the engineering works.
 
+:::explainer
+src: /explainers/command-thrust-vs-standard.html
+title: Interactive: Command Thrust vs standard gearcase
+caption: Drag the throttle, press E to open the cases, S to slow it down. Gear ratios from Mercury literature; tooth counts are illustrative.
+:::
+
 Mercury Marine's own gearcase comparison demo shows the size difference clearly. Worth a minute if you want to see the parts side by side before reading further:
 
 <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;max-width:100%;margin:24px 0;">
