@@ -6667,6 +6667,13 @@ export type Database = {
         }
         Relationships: []
       }
+      service_board_ro_techs: {
+        Row: {
+          ro_no: string | null
+          techs: string[] | null
+        }
+        Relationships: []
+      }
       service_history: {
         Row: {
           action_taken: string | null
@@ -7776,6 +7783,12 @@ export type Database = {
         }
         Returns: string
       }
+      hbw_mercury_communication_evidence_v1: {
+        Args: { p_customer_id: string }
+        Returns: Json
+      }
+      hbw_mercury_customer_context_v1: { Args: never; Returns: Json }
+      hbw_mercury_purchase_feed_v1: { Args: never; Returns: Json }
       hbw_normalize_phone_e164: { Args: { p_phone: string }; Returns: string }
       hbw_phone_digits_match: {
         Args: { p_phone: string; p_query_digits: string }
