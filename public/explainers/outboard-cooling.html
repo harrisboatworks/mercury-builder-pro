@@ -3260,6 +3260,7 @@ function applyTour() {
     syncButtons();
   }
   tTarget = tourThrottle(tourClock % TOUR_LEN);
+  syncThrottleAria();
 }
 
 function tick(now) {
@@ -3342,11 +3343,20 @@ function interact() {
   touring = false;
   resumeLater();
 }
+// Keep the slider's announced value in step with the lever, whether the
+// user or the idle tour moved it. Only touch the DOM when the value changes.
+let ariaShown = "";
+function syncThrottleAria() {
+  const now = String(Math.round(tTarget * 100));
+  if (now === ariaShown) return;
+  ariaShown = now;
+  stage.setAttribute("aria-valuenow", now);
+  stage.setAttribute("aria-valuetext", engineWord(tTarget));
+}
 function steer(share, quiet) {
   interact();
   tTarget = clamp(share, 0, 1);
-  stage.setAttribute("aria-valuenow", String(Math.round(tTarget * 100)));
-  stage.setAttribute("aria-valuetext", engineWord(tTarget));
+  syncThrottleAria();
   if (!quiet) announce("Throttle changed.");
   run();
 }
