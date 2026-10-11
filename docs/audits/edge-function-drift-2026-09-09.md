@@ -5,6 +5,8 @@
 **Production project:** `eutsoqdpjurknjsshxes` (from `supabase/config.toml`)  
 **This document only reports.** It does not deploy functions, apply migrations, or change product code.
 
+**Historical snapshot (as of 2026-09-09).** The drift table, classifications, and findings below record the 2026-09-09T20:34:14Z compare against `origin/main` at `b3c2278ae` (`#514`). They are **not** a live deploy order. A fresh read-only drift check against current `main` is required before any authorized deploy window.
+
 The remembered “about eight functions” from earlier today is **stale**. A fresh Management API compare against current `main` found **20** stale functions. Two of the original [#482](https://github.com/harrisboatworks/mercury-builder-pro/issues/482) eight (`agent-mcp-server`, `public-quote-api`) are no longer stale; they were redeployed today (versions 110 and 106). The other six from that issue are still stale and are classified **individually** below, not as one blob.
 
 ---
@@ -72,6 +74,8 @@ Whether `gpt-5.6-luna` and `gpt-realtime-2.1-mini` are *enabled on the productio
 
 ## Drift table
 
+**Historical snapshot as of 2026-09-09.** This table is the recorded stale list from that compare, not a live deploy order. Re-run the read-only watch against current `main` before any authorized window.
+
 One row per function the watch script called stale. “Commits behind” are reachable-file commits after the deployed timestamp (same rule as the script). “Consequence” for SAFE is what a non-engineer would notice (nothing). For BEHAVIOUR CHANGE it is what changes the moment that one function deploys.
 
 | Slug | Deployed | Commits behind | Bucket | Consequence |
@@ -124,24 +128,100 @@ Deploying it turns on rejecting public-token SMS, audit-message logging, fail-cl
 
 ## Deploy these first (SAFE)
 
-Admin/internal typecheck-only functions first, then the two shared-import SAFEs. Order is “least customer-facing first”, not a dependency graph — none of these need a migration.
+This is a procedure for a **later, explicitly authorized deployment window**. This documentation update does not authorize or perform dispatches, function deployments, migration application, or secret changes. The drift table and SAFE classifications above are the **2026-09-09 snapshot**, not a fresh production assessment and not a live deploy order.
 
-Do **not** run these as part of this PR. One function per command:
+Before starting, refresh the read-only drift and reachable-source comparison against the exact current `main` SHA. Reclassify any changed function and remove functions that are no longer stale. Record the approved SHA, production project, operator, authorization reference, and remaining order in the handoff below. Missing prerequisites are a stop/handoff condition; do not apply migrations or change secrets under this procedure.
 
-```sh
-gh workflow run supabase-functions-deploy.yml --ref main -f function_name=dropbox-chooser-upload
-gh workflow run supabase-functions-deploy.yml --ref main -f function_name=sync-dropbox-folder
-gh workflow run supabase-functions-deploy.yml --ref main -f function_name=auto-image-enhancer
-gh workflow run supabase-functions-deploy.yml --ref main -f function_name=optimize-motor-images
-gh workflow run supabase-functions-deploy.yml --ref main -f function_name=migrate-motor-images
-gh workflow run supabase-functions-deploy.yml --ref main -f function_name=motor-health-monitor
-gh workflow run supabase-functions-deploy.yml --ref main -f function_name=sync-inventory-api
-gh workflow run supabase-functions-deploy.yml --ref main -f function_name=cron-failure-notifications
-gh workflow run supabase-functions-deploy.yml --ref main -f function_name=submit-quote-lead
-gh workflow run supabase-functions-deploy.yml --ref main -f function_name=voice-inventory-lookup
+### Serialized order (2026-09-09 snapshot — refresh before use)
+
+Admin/internal typecheck-only functions first, then the two shared-import SAFEs. This is least customer-facing first, not a dependency graph:
+
+1. `dropbox-chooser-upload`
+2. `sync-dropbox-folder`
+3. `auto-image-enhancer`
+4. `optimize-motor-images`
+5. `migrate-motor-images`
+6. `motor-health-monitor`
+7. `sync-inventory-api`
+8. `cron-failure-notifications`
+9. `submit-quote-lead`
+10. `voice-inventory-lookup`
+
+`voice-inventory-lookup` is last because it is the only customer-facing row in this list; re-diff `isDefaultQuotedMotor` and `resolveCustomerSellingPrice` before including it. The historical classification is that those called helpers did not change.
+
+### One function, one completed run, one recorded result
+
+Reconciled to `.github/workflows/supabase-functions-deploy.yml` on current `main` (workflow name `Deploy Supabase edge functions`). Triggers: `push` to `main`, and `workflow_dispatch` with optional inputs `merge_sha`, `function_name`, and `pair_name`. Job `deploy` has `timeout-minutes: 90`.
+
+Concurrency on that file is:
+
+```yaml
+concurrency:
+  group: supabase-functions-deploy
+  queue: max
+  cancel-in-progress: false
 ```
 
-`voice-inventory-lookup` is last among SAFE because it is the only customer-facing row in this list; the classification is “the helpers it actually calls did not change.” If that ever looks wrong in a follow-up read, stop and re-diff those two functions before touching it.
+`cancel-in-progress: false` keeps an in-flight run from being cancelled. `queue: max` keeps up to 100 pending runs in that group ([GitHub concurrency documentation](https://docs.github.com/en/actions/how-tos/write-workflows/choose-when-workflows-run/control-workflow-concurrency)). Pending runs are processed FIFO by the time each started waiting, not by dispatch time, and ordering is not guaranteed. The workflow comment still applies: later queued runs still win for overlapping slugs, in merge order. Pushes to `main` use the same group and the same `deploy` job.
+
+A burst of dispatches is still unsafe: they share that group with push-triggered deploys, wait-start order is not guaranteed, a later queued run can overwrite overlapping slugs, and a green job can be a missing-token no-op. Coordinate a quiet window. Do not submit the next function while any run of this workflow is still nonterminal.
+
+Repeat these steps manually for **one** approved slug at a time. Do not wrap the dispatch in a loop, paste a batch of dispatch commands, or use background/parallel execution.
+
+1. Inspect the workflow's runs, including push-triggered runs and all refs, and wait for every nonterminal `Deploy Supabase edge functions` run to finish. If another operator or merge starts a run, pause and reconcile it before continuing. Confirm current `main` still equals the approved SHA; if it moved, stop for a fresh source review.
+2. Record the selected slug, dispatching actor, UTC start time, and existing run IDs. After authorization, submit exactly one command from the following template, replacing the placeholder with that slug. Always supply `function_name` with the approved slug; an empty `function_name` deploys functions changed in `HEAD^..HEAD`. Do not supply `pair_name` (that selects the allowlisted `site-chat` or `openai-realtime` pair and cannot be combined with `function_name`). Do not supply `merge_sha` (that is the approved-bot-merge selector; checkout then uses `refs/heads/main` and the `Validate bot merge dispatch` step).
+
+   ```sh
+   # FUTURE AUTHORIZED WINDOW ONLY — run once for the selected function.
+   gh workflow run supabase-functions-deploy.yml \
+     --repo harrisboatworks/mercury-builder-pro --ref main \
+     -f function_name=APPROVED_SINGLE_SLUG
+   ```
+
+3. Identify the newly created run from the workflow's Actions page or the read-only listing below. Match the new ID, `workflow_dispatch` event, actor, creation time, `main` branch, and approved head SHA; confirm the selected `function_name` from `gh run view RUN_ID` (INPUTS) or from the job summary selector line that reads Manual deploy of that slug. Do not choose the latest run blindly. If no run appears or several candidates match, stop and hand off the uncertainty; do not dispatch again.
+
+   ```sh
+   gh run list --repo harrisboatworks/mercury-builder-pro \
+     --workflow supabase-functions-deploy.yml --limit 100 \
+     --json databaseId,url,event,headBranch,headSha,createdAt,status,conclusion
+   ```
+
+   The listing is bounded; inspect additional pages in Actions if needed. Record the exact run ID and URL before waiting.
+
+4. Wait for **that exact run** to reach a terminal result with [`gh run watch --exit-status`](https://cli.github.com/manual/gh_run_watch):
+
+   ```sh
+   gh run watch RUN_ID --repo harrisboatworks/mercury-builder-pro --exit-status
+   ```
+
+   If watching fails or the session is interrupted, inspect the same run and resume watching it. An interrupted watch does not cancel the workflow. Never infer completion from the dispatch returning successfully. Failure, cancellation, timeout (job `deploy` is `timeout-minutes: 90`), a still-pending run, skipped, or an unknown conclusion means stop; record the blocker and do not advance.
+
+5. Read the `deploy` job summary and the `Deploy changed edge functions` step output (the script also writes the same markdown to stdout). Require explicit evidence that the selected function deployed:
+   - Summary heading `## Supabase edge function deploy`
+   - Selector line `Manual deploy of \`<slug>\`.`
+   - `### Targets` includes that slug
+   - `### Result` lists `Succeeded (1): \`<slug>\`` — not `Succeeded (0): none`, not `Nothing deployed.`, and not only a skip
+   The `Check for Supabase access token` step can finish the job green without deploying: notice title `Supabase function deploy skipped` and summary `Skipped: repository secret \`SUPABASE_ACCESS_TOKEN\` is not configured.` A skip from migration or pair gates is not deployment success. `Validate bot merge dispatch` should pass on this single-function path because `merge_sha` is omitted. If the run SHA (`headSha` / `DEPLOY_TO`) differs from the approved SHA, stop and record what actually ran.
+6. Independently read production metadata for the selected slug and record its new version and `updated_at`, then refresh the read-only drift comparison. Preserve the timestamp comparator's source-bundle limitation described above. Use only approved non-mutating/no-send checks; do not invoke image migration, sync, SMS/email, or other write handlers as smoke tests. A green workflow alone does not prove the deployed bundle or customer-visible behavior.
+7. Complete the handoff row, including verification evidence, **before** selecting the next slug. Advance only after successful deployment and verification, with no unresolved blocker and no other nonterminal deployment run.
+
+### Deployment handoff (required at every stop and at completion)
+
+Keep the record with the deployment task or report. Use UTC timestamps and evidence links; never record credentials. Preserve unfinished rows and the exact remaining order when handing over.
+
+- **State:** NOT STARTED / IN PROGRESS / BLOCKED / COMPLETE
+- **Operator and authorization reference:** who is authorized to deploy, and the approved scope
+- **Reviewed main SHA / production project:** exact commit and project ref
+- **Last update (UTC):** timestamp
+- **Current run:** exact ID and URL, or none; include whether it is still queued/running or uncertain
+- **Last verified function / next function / remaining order:** explicit slugs; do not silently skip a failed row
+- **Blocker and next owner/action:** what must be resolved, by whom, before resuming
+
+| Function | Approved SHA | Run ID / URL / attempt | Terminal conclusion and deploy evidence | Production version / updated_at | Read-only verification evidence | Result / next action |
+| --- | --- | --- | --- | --- | --- | --- |
+| Selected slug | Full SHA | Exact run, or NOT DISPATCHED | Pending / success / failure / cancelled / skipped / unknown | Before → after, or unverified | Link and UTC time, or unverified | Verified / blocked; owner and next step |
+
+**Handoff for this documentation change:** NOT STARTED. No workflow was dispatched, no function was deployed, no migration was applied, and no secret was changed. Production drift has not been refreshed by this edit. Next owner: Jay or the authorized deployment operator, to refresh the read-only evidence and approve the exact SHA and scope before starting. The BEHAVIOUR CHANGE functions below, including `send-sms` and the chat/Realtime pairs, remain outside this SAFE procedure.
 
 ---
 
