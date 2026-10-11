@@ -668,6 +668,16 @@ function renderBlogDirectiveMarkdown(name, body, context = {}) {
     assertDirectiveFields(slug, directive, fields, /^(?:eyebrow|heading|headingTranslated|item\d+(?:En|Zh)|cta(?:En|Zh|Href))$/);
     return renderTrustBlockMarkdown(byKey, language);
   }
+  if (directive === 'explainer') {
+    assertDirectiveFields(slug, directive, fields, /^(?:src|title|caption)$/);
+    const src = byKey.src?.value || '';
+    if (!/^\/explainers\/[a-z0-9-]+\.html$/.test(src)) {
+      throw new Error(`[markdown-twins] ${slug}: explainer src must be a same-origin /explainers/*.html path`);
+    }
+    const title = byKey.title?.value || 'Interactive explainer';
+    const caption = byKey.caption?.value ? `\n\n*${byKey.caption.value}*` : '';
+    return `[${title}](${src})${caption}`;
+  }
   if (directive === 'mercury-price-table') {
     assertDirectiveFields(slug, directive, fields, /^(?:group|minHp|maxHp)$/);
     return language === 'en-CA'

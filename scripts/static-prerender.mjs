@@ -157,6 +157,16 @@ function renderYouTubeEmbedHtml(body) {
   return renderYouTubeEmbedLinkHtml({ id: flat.id, title: flat.title });
 }
 
+// Same-origin interactive explainer (ExplainerFigure). Prerender a plain,
+// crawlable link plus caption; the SPA replaces it with the lazy iframe.
+function renderExplainerHtml(body) {
+  const { flat } = parseDirectiveBody(body);
+  if (!flat.src || !/^\/explainers\/[a-z0-9-]+\.html$/.test(flat.src)) return '';
+  const title = flat.title || 'Interactive explainer';
+  const caption = flat.caption ? `<figcaption>${escHtml(flat.caption)}</figcaption>` : '';
+  return `<figure class="my-8"><a href="${escHtml(flat.src)}">${escHtml(title)}</a>${caption}</figure>`;
+}
+
 function renderDecisionCardHtml(body) {
   const { flat, lists } = parseDirectiveBody(body);
   if (!flat.heading) return '';
@@ -436,6 +446,7 @@ function expandVisualDirectives(md) {
   // Preserve a safe, crawlable link for lazy YouTube cards. The SPA upgrades
   // this to the click-to-load MercuryVideo facade after hydration.
   md = sub(/^:::youtube-embed\s*\n([\s\S]*?)\n:::\s*$/gm, renderYouTubeEmbedHtml);
+  md = sub(/^:::explainer\s*\n([\s\S]*?)\n:::\s*$/gm, renderExplainerHtml);
   // Bodiless directive: a single line `::walkaround-lead-capture`.
   md = sub(/^(::walkaround-lead-capture)\s*$/gm, renderWalkaroundLeadCaptureHtml);
   return { md, slots };
