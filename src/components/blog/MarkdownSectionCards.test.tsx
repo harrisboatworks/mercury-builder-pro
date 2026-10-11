@@ -20,8 +20,8 @@ caption: Gear ratios from Mercury literature; tooth counts are illustrative.
     expect(iframe).toHaveAttribute('scrolling', 'no');
     expect(screen.getByRole('link', { name: 'Open full screen' })).toHaveAttribute('target', '_blank');
     expect(container.textContent).toMatch(/Before\.[\s\S]*Gear ratios[\s\S]*After\./);
-    const doc = (iframe as HTMLIFrameElement).contentDocument;
-    if (!doc) throw new Error('Missing iframe document');
+    const doc = document.implementation.createHTMLDocument('Explainer');
+    Object.defineProperty(iframe, 'contentDocument', { configurable: true, value: doc });
     Object.defineProperty(doc.documentElement, 'scrollHeight', { configurable: true, value: 970 });
     fireEvent.load(iframe);
     expect(iframe).toHaveStyle({ height: '970px' });
