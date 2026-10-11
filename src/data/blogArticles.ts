@@ -3252,7 +3252,7 @@ If water flow has changed, an overheat alarm has sounded, or you cannot identify
     imageAlt: "Infographic: Command Thrust keeps the same powerhead and horsepower but adds a larger gearcase, a larger prop and a lower gear ratio; best fit for heavy pontoons, tritoons and commercial boats.",
     author: 'Jay Harris',
     datePublished: '2026-05-28',
-    dateModified: '2026-09-11',
+    dateModified: '2026-10-11',
     publishDate: '2026-05-28',
     category: 'Mercury Technology',
     readTime: '12 min',
@@ -3287,6 +3287,12 @@ A Command Thrust gearcase has three engineered changes vs the standard gearcase:
 3. **Lower gear ratio (numerically higher).** More torque multiplication at the prop. Faster acceleration with heavy loads, but lower top-end speed than the standard gearcase at the same RPM.
 
 The three changes work together. You cannot get the benefit by [swapping just the prop on a standard gearcase](/blog/mercury-propeller-selection-guide). You cannot get the benefit by swapping just the lower unit without the matched prop. Mercury sells Command Thrust as a complete factory configuration, and that is how the engineering works.
+
+:::explainer
+src: /explainers/command-thrust-vs-standard.html
+title: Interactive: Command Thrust vs standard gearcase
+caption: Drag the throttle, press E to open the cases, S to slow it down. Gear ratios from Mercury literature; tooth counts are illustrative.
+:::
 
 Mercury Marine's own gearcase comparison demo shows the size difference clearly. Worth a minute if you want to see the parts side by side before reading further:
 
