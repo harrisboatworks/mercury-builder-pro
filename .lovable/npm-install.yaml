@@ -1,0 +1,7 @@
+apiVersion: exec.lovable.dev/v1
+kind: LifecycleScript
+metadata:
+  name: npm-install
+spec:
+  purpose: install
+  command: npm ci --ignore-scripts --no-audit --no-fund
