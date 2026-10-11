@@ -6,6 +6,37 @@ import { describe, expect, it } from 'vitest';
 
 import { MarkdownSectionCards } from './MarkdownSectionCards';
 
+describe('MarkdownSectionCards same-origin explainers', () => {
+  const directive = (src: string) => `:::explainer
+src: ${src}
+title: Interactive: Command Thrust vs standard gearcase
+caption: Gear ratios from Mercury literature; tooth counts are illustrative.
+:::`;
+
+  it('renders the figure in order and resizes on load and window resize', () => {
+    const { container } = render(<MarkdownSectionCards content={`Before.\n\n${directive('/explainers/command-thrust-vs-standard.html')}\n\nAfter.`} markdownComponents={{}} />);
+    const iframe = screen.getByTitle('Interactive: Command Thrust vs standard gearcase');
+    expect(iframe).toHaveAttribute('loading', 'lazy');
+    expect(iframe).toHaveAttribute('scrolling', 'no');
+    expect(screen.getByRole('link', { name: 'Open full screen' })).toHaveAttribute('target', '_blank');
+    expect(container.textContent).toMatch(/Before\.[\s\S]*Gear ratios[\s\S]*After\./);
+    const doc = (iframe as HTMLIFrameElement).contentDocument;
+    if (!doc) throw new Error('Missing iframe document');
+    Object.defineProperty(doc.documentElement, 'scrollHeight', { configurable: true, value: 970 });
+    fireEvent.load(iframe);
+    expect(iframe).toHaveStyle({ height: '970px' });
+    Object.defineProperty(doc.documentElement, 'scrollHeight', { configurable: true, value: 740 });
+    fireEvent(window, new Event('resize'));
+    expect(iframe).toHaveStyle({ height: '740px' });
+  });
+
+  it.each(['https://example.com/figure.html', '//example.com/figure.html', '/explainers/../index.html'])('rejects non-explainer paths: %s', (src) => {
+    const { container } = render(<MarkdownSectionCards content={directive(src)} markdownComponents={{}} />);
+    expect(container.querySelector('iframe')).not.toBeInTheDocument();
+    expect(container.textContent).not.toContain(':::explainer');
+  });
+});
+
 describe('MarkdownSectionCards bilingual trust directives', () => {
   it('renders the legacy bilingual-trust-card alias instead of exposing directive source', () => {
     const content = `::bilingual-trust-card
