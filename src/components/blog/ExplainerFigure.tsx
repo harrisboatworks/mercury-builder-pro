@@ -22,9 +22,26 @@ export function ExplainerFigure({ src, title, caption }: ExplainerFigureProps) {
     iframe.style.height = `${document.documentElement.scrollHeight}px`;
   }, []);
 
+  const observerRef = useRef<ResizeObserver | null>(null);
+
+  // Content inside the figure can change height (e.g. a <details> opening),
+  // so also follow the framed document's own size, not just window resizes.
+  const handleLoad = useCallback(() => {
+    resize();
+    observerRef.current?.disconnect();
+    const body = iframeRef.current?.contentDocument?.body;
+    if (body && typeof ResizeObserver !== 'undefined') {
+      observerRef.current = new ResizeObserver(() => resize());
+      observerRef.current.observe(body);
+    }
+  }, [resize]);
+
   useEffect(() => {
     window.addEventListener('resize', resize);
-    return () => window.removeEventListener('resize', resize);
+    return () => {
+      window.removeEventListener('resize', resize);
+      observerRef.current?.disconnect();
+    };
   }, [resize]);
 
   if (!isExplainerPath(src)) return null;
@@ -37,7 +54,7 @@ export function ExplainerFigure({ src, title, caption }: ExplainerFigureProps) {
         title={title}
         loading="lazy"
         scrolling="no"
-        onLoad={resize}
+        onLoad={handleLoad}
         className="block h-[1100px] w-full border-0 sm:h-[900px]"
       />
       <figcaption className="mt-3 text-sm leading-relaxed text-muted-foreground">
