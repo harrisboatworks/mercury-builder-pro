@@ -3143,7 +3143,7 @@ Family-owned on Rice Lake since 1947.`
     photoSlot: 'hbw-impeller-photo',
     author: 'Jay Harris',
     datePublished: '2026-06-09',
-    dateModified: "2026-08-02",
+    dateModified: "2026-10-11",
     publishDate: '2026-06-09',
     category: 'Service & Troubleshooting',
     readTime: '7 min read',
@@ -3195,6 +3195,12 @@ Rice Lake is shallow, warm, and famously weedy. That's good habitat and a reason
 Weeds can wrap the lower unit and restrict the intake. Sand and silt can also wear pump components. Mercury warns that operating without an adequate water supply, even briefly, can damage the impeller and overheat the engine.
 
 Use the [maintenance schedule](/blog/mercury-maintenance-intervals-20-100-300-rule) for your exact engine and serial number. Inspect sooner when overheating, reduced water pressure, or abnormal water flow appears.
+
+:::explainer
+src: /explainers/outboard-cooling.html
+title: Interactive: how your outboard stays cool
+caption: Drag the throttle and switch on a fault to see how each one shows up. Values are illustrative.
+:::
 
 ## The Warning Signs, in the Order We See Them
 
@@ -3790,7 +3796,7 @@ Harris Boat Works · 5369 Harris Boat Works Rd, Gores Landing, ON · Mercury Mar
     imageAlt: 'A hand pointing at the water streaming from the telltale on a running Mercury 115 Pro XS.',
     author: 'Jay Harris',
     datePublished: '2026-05-27',
-    dateModified: '2026-09-07',
+    dateModified: '2026-10-11',
     publishDate: '2026-05-27',
     category: 'Service & Troubleshooting',
     readTime: '~9 min read',
@@ -3882,6 +3888,12 @@ If a reliable reading appears inconsistent with the alarm, a sensor, wiring or c
 If the head reads hot: real heat. The problem is somewhere in the cooling system. The next section covers what that usually is.
 
 If you do not have diagnostic tools, use the tell-tale only to identify weak or stopped flow as an immediate shutdown signal. Strong, steady flow does not rule out overheating. Confirm the cause with the display, the operator manual and service diagnostics; an IR reading on a painted head is a sanity check, not a diagnosis.
+
+:::explainer
+src: /explainers/outboard-cooling.html
+title: Interactive: how your outboard stays cool
+caption: Drag the throttle and switch on a fault to see how each one shows up. Values are illustrative.
+:::
 
 ## The Four Most Common Causes of Real Overheating
 
@@ -17839,7 +17851,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Man in a green jacket and cap holding a wrench in an aluminum fishing boat at a dock at sunset, black Mercury outboard ahead',
     author: 'Harris Boat Works',
     datePublished: "2026-05-09",
-    dateModified: "2026-09-06",
+    dateModified: "2026-10-11",
     publishDate: "2026-05-09",
     category: "Troubleshooting",
     readTime: "9 min read",
@@ -17921,6 +17933,12 @@ Don't fight it. Call for a tow, drift to shore, or use another propulsion method
 We've seen both kinds of boats at the shop. Towing protects the motor so the shop can diagnose the cooling fault instead of a damaged powerhead.
 
 ---
+
+:::explainer
+src: /explainers/outboard-cooling.html
+title: Interactive: how your outboard stays cool
+caption: Drag the throttle and switch on a fault to see how each one shows up. Values are illustrative.
+:::
 
 ## The Four Most Common Causes We See
 
@@ -28233,7 +28251,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: 'Man in a grey work shirt and cap in a boat at a dock, pressing a red-lit dash gauge as a Mercury FourStroke outboard steams',
     author: 'Jay Harris',
     datePublished: '2026-05-11',
-    dateModified: '2026-09-07',
+    dateModified: '2026-10-11',
     publishDate: '2026-05-11',
     category: 'Troubleshooting',
     readTime: '7 min',
@@ -28263,6 +28281,12 @@ Most cooling systems work by pumping water through a circuit. If the motor cools
 This is the diagnostic sequence we'd walk through for this specific symptom.
 
 ---
+
+:::explainer
+src: /explainers/outboard-cooling.html
+title: Interactive: how your outboard stays cool
+caption: Drag the throttle and switch on a fault to see how each one shows up. Values are illustrative.
+:::
 
 ## Step 1: Read the Tell-Tale
 
@@ -35241,7 +35265,7 @@ We're a third-generation family marina, this business has been part of Rice Lake
     imageAlt: "Mercury Pro XS outboard powering a bass boat on open water.",
     author: 'Jay Harris',
     datePublished: '2026-06-29',
-    dateModified: '2026-09-07',
+    dateModified: '2026-10-11',
     publishDate: '2026-06-29',
     category: 'Service',
     readTime: '~7 min read',
@@ -35283,6 +35307,12 @@ If you can do so without putting yourself near the propeller or in the water, wr
 - Whether you could see any blockage at the gearcase intakes after the engine was stopped and access was safe
 
 That record helps a technician. It is not a parts identification. Do not run the boat back up to high RPM to watch the telltale or to confirm the fault.
+
+:::explainer
+src: /explainers/outboard-cooling.html
+title: Interactive: how your outboard stays cool
+caption: Drag the throttle and switch on a fault to see how each one shows up. Values are illustrative.
+:::
 
 ## Possible cooling-system checks
 
