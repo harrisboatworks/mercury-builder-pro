@@ -7310,7 +7310,7 @@ Walleye trolling is why the [Mercury 9.9 ProKicker](/blog/mercury-prokicker-rice
 
 ## The Railway: Rice Lake's Most Expensive Tourist Attraction
 
-In the 1850s, a group of optimistic engineers decided to build a railway across the middle of Rice Lake. It sank. They reinforced it and tried again. It sank again, more slowly. The Cobourg and Peterborough Railway was eventually abandoned, and today the roadbed sits roughly **4 feet below the surface**, running through Tick Island across the widest part of the lake.
+In the 1850s, a group of optimistic engineers decided to build a railway across the middle of Rice Lake. It sank. They reinforced it and tried again. It sank again, more slowly. The Cobourg and Peterborough Railway was eventually abandoned, and today the roadbed sits roughly **4 feet below the surface**, running through Tic Island across the widest part of the lake.
 
 It has been collecting lower units, prop blades, and the dignity of confident boat operators for roughly 170 years.
 
@@ -7480,7 +7480,7 @@ Head to **mercuryrepower.ca** for live Mercury pricing in CAD, configured for yo
       },
       {
         question: 'What is the sunken railway on Rice Lake?',
-        answer: 'The 19th-century Cobourg and Peterborough Railway roadbed sits roughly 4 feet below the surface, crossing the lake through Tick Island. It is a real navigation hazard, so mark it on your chartplotter. It is also a premier smallmouth bass area.'
+        answer: 'The 19th-century Cobourg and Peterborough Railway roadbed sits roughly 4 feet below the surface, crossing the lake through Tic Island. It is a real navigation hazard, so mark it on your chartplotter. It is also a premier smallmouth bass area.'
       },
       {
         question: 'What horsepower do I need for a 16 ft aluminum boat on Rice Lake?',
@@ -18013,7 +18013,7 @@ After any overheating event, get it checked before the next run. [Book a Mercury
     image: "/lovable-uploads/hero-rice-lake-boating-guide.png",
     author: 'Harris Boat Works',
     datePublished: "2026-05-10",
-    dateModified: '2026-10-06',
+    dateModified: '2026-10-12',
     publishDate: "2026-05-10",
     category: "Lifestyle",
     readTime: "11 min read",
@@ -18046,7 +18046,7 @@ Harris Boat Works has been at 5369 Harris Boat Works Rd in Gores Landing on Rice
 
 **Weed beds.** Summer growth is heavy in most bays and along structure. Bring a weed-cutting tool for the prop. Plan for slower running speeds in shallow weed-choked areas.
 
-**The sunken railway.** This is the one hazard everyone has to know. There is an abandoned 19th-century railway submerged across the middle of Rice Lake. It sits roughly 4 feet below the surface. It has been wrecking lower units for over a hundred years. Chartplotters (Navionics, Garmin, C-MAP) mark the crossing clearly. Slow down across the middle of the lake until you know exactly where the structure is.
+**The sunken railway.** This is the one hazard everyone has to know. It is the remains of the 1854 Cobourg and Peterborough Railway bridge, stone-filled cribs and all, submerged across the middle of Rice Lake. Depth over it changes with the water level, and in places the old railway bed sits just inches below the surface. It has been wrecking lower units for over a hundred years. Don't trust a phone map or chartplotter basemap here. Use the buoyed channels shown on a current official chart. Slow down across the middle of the lake until you know exactly where the structure is.
 
 **The wind.** Rice Lake runs east-west, which is also the prevailing wind direction. A west wind can build chop quickly across the full 32 km fetch. Underpowered hulls and inexperienced operators can get in trouble fast on a windy afternoon. Check the forecast before you launch.
 
@@ -18136,7 +18136,7 @@ For Mercury service, parts, or repower questions, we're a Mercury Marine Premier
 
 ## What we see at HBW
 
-Rice Lake has its own quirks. Stumps in the central basin, weed mats in late July, and a navigable channel between the islands that catches every first-time boater. Most of our marine-tow callbacks in summer involve someone running aground on Tick Island or Black Island shoals.
+Rice Lake has its own quirks. Stumps in the central basin, weed mats in late July, and a navigable channel between the islands that catches every first-time boater. Most of our marine-tow callbacks in summer involve someone running aground on Tic Island or Black Island shoals.
 
 The good news: the lake is small enough that you can learn the hazards in a season. Slow down in the west end shallows, stay in the marked channel between islands, and pull your prop up at the Hastings end of the lock chamber. Walleye and largemouth fishing are best at sunrise and sunset.
 
@@ -18195,7 +18195,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     faqs: [
   {
     "question": "Where exactly is the sunken railway hazard?",
-    "answer": "It runs roughly north-south across the middle of the lake, between Hiawatha (north shore) and Harwood (south shore). Marine charts on Navionics, Garmin, C-MAP, and Fishing Hot Spots all mark it clearly. Run slowly across that section until you know the line, or use the channels locals use."
+    "answer": "It runs roughly north-south across the middle of the lake, between Hiawatha (north shore) and Harwood (south shore). Don't trust a phone map or chartplotter basemap here. Run slowly across that section until you know the line, or use the buoyed channels through the old railway crossing."
   },
   {
     "question": "What's the launch fee at Harris Boat Works?",
@@ -35143,7 +35143,7 @@ Regardless of where you watch, pack a flashlight or headlamp with fresh batterie
 Rice Lake is a legitimate multi-species fishery, and Canada Day weekend falls right in the sweet spot for walleye, bass, and muskie action.
 
 ### Walleye
-Walleye fishing is typically strong through late June and early July, especially during low-light periods. The main-lake weedlines in 8 to 14 feet of water north of Tick Island and along the edges of the deep basins near Cow Island produce well this time of year. Trolling worm harnesses with bottom bouncers or casting suspending jerkbaits over the tops of weeds in early morning both work. The walleye season is open on Rice Lake, but always check the 2026 Ontario fishing regulations summary for slot size and possession limits before you go.
+Walleye fishing is typically strong through late June and early July, especially during low-light periods. The main-lake weedlines in 8 to 14 feet of water north of Tic Island and along the edges of the deep basins near Cow Island produce well this time of year. Trolling worm harnesses with bottom bouncers or casting suspending jerkbaits over the tops of weeds in early morning both work. The walleye season is open on Rice Lake, but always check the 2026 Ontario fishing regulations summary for slot size and possession limits before you go.
 
 ### Largemouth and smallmouth bass
 Bass are either on beds or just coming off them depending on water temperature and the specific bay. Largemouth will be tight to fallen timber, docks, and the inside edges of pencil reeds in the lake's many bays. Smallmouth tend to relate to rocky points and shoals, particularly around the islands in the central lake. Soft plastics, topwaters early in the day, and square-bill crankbaits all get bites. In Fisheries Management Zone 17, the largemouth and smallmouth bass season runs from the third Saturday in June through December 15, so the regular season is open by Canada Day. Check the [current FMZ 17 regulations](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17) before fishing for current limits and any exceptions.
