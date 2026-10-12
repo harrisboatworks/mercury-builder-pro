@@ -19,8 +19,7 @@ import {
   normalizeHbwStroke,
 } from "../_shared/hbw-valuation.ts";
 import {
-  fetchActiveFinancing,
-  fetchActivePromotions,
+  fetchActiveFinancingAndPromotions,
 } from "../_shared/customer-knowledge-context.ts";
 import {
   buildPublicQuoteFinancing,
@@ -560,6 +559,15 @@ function renderQuoteMarkdown(p: any): string {
     lines.push("");
   }
 
+  if (Array.isArray(p.pricing_warnings) && p.pricing_warnings.length > 0) {
+    lines.push("## Pricing warnings");
+    lines.push("");
+    for (const warning of p.pricing_warnings) {
+      lines.push(`- ${safeText(warning, 300)}`);
+    }
+    lines.push("");
+  }
+
   lines.push("## Continue this quote");
   lines.push("");
   lines.push(`${p.deep_link}`);
@@ -862,17 +870,22 @@ async function buildQuote(supabase: any, body: any) {
   const accessoryCost = items.slice(1).reduce((s, i) => s + i.price, 0);
   const subtotal = items.reduce((s, i) => s + i.price, 0);
 
-  // Financing/promotion policy is loaded live. Pricing still returns if the
-  // lookup fails, but no stale hardcoded rate is substituted.
-  let activeFinancing: Awaited<ReturnType<typeof fetchActiveFinancing>> = [];
-  let activePromotions: Awaited<ReturnType<typeof fetchActivePromotions>> = [];
-  try {
-    [activeFinancing, activePromotions] = await Promise.all([
-      fetchActiveFinancing(supabase),
-      fetchActivePromotions(supabase),
-    ]);
-  } catch (error) {
-    console.error("public quote financing lookup failed:", error);
+  // Financing/promotion policy is loaded live and fetched independently:
+  // a financing failure must not drop promotions (and vice versa). Pricing
+  // still returns if a lookup fails, but no stale hardcoded rate is
+  // substituted, and an unverified rebate is called out in pricing_warnings.
+  const pricingWarnings: string[] = [];
+  const lookups = await fetchActiveFinancingAndPromotions(supabase);
+  const activeFinancing = lookups.financing;
+  const activePromotions = lookups.promotions;
+  if (lookups.financingError) {
+    console.error("public quote financing lookup failed:", lookups.financingError);
+  }
+  if (lookups.promotionsError) {
+    console.error("public quote promotions lookup failed:", lookups.promotionsError);
+    pricingWarnings.push(
+      "Promotional rebates could not be verified, so this quote does not include any factory rebate. Please confirm current promotions with Harris Boat Works before relying on this price.",
+    );
   }
 
   const requestedPromoOption = typeof body?.promo_option === "string"
@@ -1050,6 +1063,7 @@ async function buildQuote(supabase: any, body: any) {
       finance_fee: financing.eligible ? financing.finance_fee : 0,
       amount_financed: financing.eligible ? financing.amount_financed : 0,
     },
+    pricing_warnings: pricingWarnings,
     trade_in: tradeIn,
     financing,
     deep_link: deepLink,

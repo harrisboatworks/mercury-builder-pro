@@ -33,7 +33,7 @@ import { createQuote } from '@/lib/quotesApi';
 import { PaymentMethodBadges } from '@/components/payments/PaymentMethodBadges';
 import { useQuote } from '@/contexts/QuoteContext';
 import { PromoOptionSelector, PromoOptionType } from './PromoOptionSelector';
-import { formatPromoCalendarDate } from '@/lib/quote-utils';
+import { formatPromoCalendarDate, getFinancingGateBeforeTax } from '@/lib/quote-utils';
 import { getAppliedPromotion, getAppliedWarrantyExtraYears } from '@/lib/warranty-display';
 
 interface QuoteDisplayProps {
@@ -215,6 +215,7 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
     const warrantyValue = appliedPromotion?.details?.coverage_summary ? 0 : getAppliedWarrantyExtraYears(appliedPromotion) * 200;
     
     return {
+      priceDiscount,
       warrantyValue,
       totalPromoValue: priceDiscount + warrantyValue,
     };
@@ -225,6 +226,10 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
 
   const installationCost = state.installConfig?.selectedOption?.price || 0;
   const subtotalBeforeTax = motorPrice + accessoryCosts + installationCost - tradeInValue;
+  // Standing $5,000 gate uses the post-rebate, post-trade before-tax
+  // subtotal (price discount only; warranty value is not a price cut).
+  // Displayed subtotal/HST/total above are unchanged.
+  const financingGateBeforeTax = getFinancingGateBeforeTax(subtotalBeforeTax, promotionSavings.priceDiscount);
   const hstAmount = subtotalBeforeTax * 0.13;
   const totalCashPrice = subtotalBeforeTax + hstAmount;
 
@@ -623,7 +628,7 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
             <PromoOptionSelector
               motorHP={quoteData.motor?.hp || 0}
               totalAmount={totalCashPrice}
-              beforeTaxAmount={subtotalBeforeTax}
+              beforeTaxAmount={financingGateBeforeTax}
               selectedOption={state.selectedPromoOption}
               onSelect={handlePromoOptionSelect}
             />

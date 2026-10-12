@@ -58,6 +58,30 @@ export function getLivePromoFinancingRate(
   return null;
 }
 
+/**
+ * Financing-dependent promo options require the standing before-tax
+ * minimum. Below it they fall back to cash_rebate so the factory rebate
+ * still applies. `beforeTaxSubtotal` must be the post-rebate, post-trade
+ * subtotal on the pricing basis (see calcPricing adjustedSubtotal).
+ */
+export function resolveAgentPromoFallback(input: {
+  requestedOption: string | null;
+  beforeTaxSubtotal: number;
+  minimum?: number;
+}): { effectiveOption: string | null; fellBack: boolean; warning: string | null } {
+  const minimum = input.minimum ?? FINANCING_MINIMUM_CAD;
+  const financingDependent = input.requestedOption === "special_financing"
+    || input.requestedOption === "no_payments";
+  if (!financingDependent || !(input.beforeTaxSubtotal < minimum)) {
+    return { effectiveOption: input.requestedOption, fellBack: false, warning: null };
+  }
+  return {
+    effectiveOption: "cash_rebate",
+    fellBack: true,
+    warning: `Financing requires at least $${minimum.toLocaleString("en-CA")} CAD before tax; switched the promotion to cash_rebate so the factory rebate still applies.`,
+  };
+}
+
 export interface AgentFinancingResult {
   financing: {
     rate: number;

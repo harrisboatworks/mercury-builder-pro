@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 import {
   buildAgentFinancing,
   getLivePromoFinancingRate,
+  resolveAgentPromoFallback,
 } from '../../../supabase/functions/_shared/agent-quote-financing';
 import { resolveFactoryRebate } from '../../../supabase/functions/_shared/public-quote-pricing';
 import type { PromotionRecord } from '../../../supabase/functions/_shared/promotion-context';
@@ -135,6 +136,71 @@ describe('country filter (CA market wins)', () => {
       },
     };
     expect(getLivePromoFinancingRate([expired, caPromo], now)?.rate).toBe(2.99);
+  });
+});
+
+describe('agent promo fallback below the standing minimum', () => {
+  it('falls back no_payments to cash_rebate below $5,000 before tax', () => {
+    const result = resolveAgentPromoFallback({ requestedOption: 'no_payments', beforeTaxSubtotal: 4850 });
+    expect(result.effectiveOption).toBe('cash_rebate');
+    expect(result.fellBack).toBe(true);
+    expect(result.warning).toContain('cash_rebate');
+    expect(result.warning).toContain('$5,000');
+  });
+
+  it('falls back special_financing to cash_rebate below $5,000 before tax', () => {
+    const result = resolveAgentPromoFallback({ requestedOption: 'special_financing', beforeTaxSubtotal: 4999.99 });
+    expect(result.effectiveOption).toBe('cash_rebate');
+    expect(result.fellBack).toBe(true);
+  });
+
+  it('keeps financing-dependent options at or above $5,000 before tax', () => {
+    expect(resolveAgentPromoFallback({ requestedOption: 'no_payments', beforeTaxSubtotal: 5000 }).fellBack).toBe(false);
+    expect(resolveAgentPromoFallback({ requestedOption: 'special_financing', beforeTaxSubtotal: 6000 }).effectiveOption).toBe('special_financing');
+  });
+
+  it('never falls back cash_rebate or an unspecified option', () => {
+    expect(resolveAgentPromoFallback({ requestedOption: 'cash_rebate', beforeTaxSubtotal: 100 }).fellBack).toBe(false);
+    expect(resolveAgentPromoFallback({ requestedOption: null, beforeTaxSubtotal: 100 }).effectiveOption).toBeNull();
+  });
+
+  it('applies the fallback when the rebate itself pushes the subtotal below $5,000', () => {
+    // $5,200 configuration with a $350 rebate: post-rebate subtotal $4,850.
+    const postRebateSubtotal = 5200 - 350;
+    const result = resolveAgentPromoFallback({ requestedOption: 'no_payments', beforeTaxSubtotal: postRebateSubtotal });
+    expect(result.fellBack).toBe(true);
+    expect(result.effectiveOption).toBe('cash_rebate');
+    // After the fallback the cash rebate resolves and applies.
+    const now = new Date('2026-10-12T12:00:00Z');
+    expect(resolveFactoryRebate(promo, motor20, { now, selectedPromoOption: 'cash_rebate' })?.amount).toBe(350);
+  });
+});
+
+describe('rebate attribution follows the resolver, not promos[0]', () => {
+  const now = new Date('2026-10-12T12:00:00Z');
+  const firstWithoutTier: PromotionRecord = {
+    id: 'first-no-tier',
+    name: 'First Promo Without This HP Tier',
+    start_date: '2026-09-14',
+    end_date: '2026-10-30',
+    details: { combination_mode: 'layered' },
+    promo_options: { options: [{ id: 'cash_rebate', matrix: [{ hp_min: 100, hp_max: 200, rebate: 900 }] }] },
+  };
+
+  it('names the second promotion when only it carries the rebate tier', () => {
+    const rebate = resolveFactoryRebate([firstWithoutTier, ...promo], motor20, { now });
+    expect(rebate?.amount).toBe(350);
+    expect(rebate?.promotionId).toBe('chase-fin');
+    expect(rebate?.promotionName).toBe('Mercury Chase the Savings!');
+  });
+
+  it('agent API attributes saved promo metadata to the resolver result', async () => {
+    const { readFileSync } = await import('node:fs');
+    const source = readFileSync('supabase/functions/agent-quote-api/index.ts', 'utf8');
+    expect(source).toContain('rebateResult?.promotionId');
+    expect(source).toContain('rebateResult?.promotionName');
+    expect(source).toContain('promotion_id: appliedPromoId');
+    expect(source).toContain('promo_name: appliedPromoName');
   });
 });
 
