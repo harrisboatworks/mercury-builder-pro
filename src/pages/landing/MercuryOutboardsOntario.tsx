@@ -121,7 +121,7 @@ export default function MercuryOutboardsOntario() {
             Mercury Outboards in Ontario
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            The full Mercury Marine outboard lineup at Harris Boat Works, Premier Dealer on Rice Lake. Real CAD pricing online, family-owned since 1947, Mercury dealer since 1965.
+            Explore Mercury outboard families and current Harris Boat Works listings. Check exact models, CAD quotes and special-order availability with our Premier Dealer team on Rice Lake. Family-owned since 1947, Mercury dealer since 1965.
           </p>
 
           <ul className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-3 max-w-3xl mx-auto">
@@ -151,7 +151,7 @@ export default function MercuryOutboardsOntario() {
         {/* Lineup grid */}
         <section className="mb-16">
           <h2 className="text-2xl font-semibold text-foreground mb-2 text-center">
-            The Full Mercury Lineup
+            Explore Mercury Outboard Families
           </h2>
           <p className="text-sm text-muted-foreground text-center mb-6">
             Click any line to configure a quote with real CAD pricing.

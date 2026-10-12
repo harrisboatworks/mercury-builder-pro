@@ -5586,7 +5586,7 @@ const routes = [
     title: 'Mercury Outboards Ontario: Full Lineup & Prices | HBW',
     description: 'Compare current Mercury outboard listings and CAD quotes in Ontario. Verado special orders require a dealer quote. Mercury dealer on Rice Lake since 1965.',
     h1: 'Mercury Outboards in Ontario',
-    intro: 'The full Mercury Marine outboard lineup at Harris Boat Works: Premier Dealer on Rice Lake. Real CAD pricing online, family-owned since 1947, Mercury dealer since 1965. Serving Peterborough, Cobourg, the GTA, the Kawarthas, and Northumberland County.',
+    intro: 'Explore Mercury outboard families and current Harris Boat Works listings. Confirm exact models, CAD quotes and special-order availability with our Premier Dealer team on Rice Lake. Family-owned since 1947, Mercury dealer since 1965. Serving Peterborough, Cobourg, the GTA, the Kawarthas, and Northumberland County.',
     schemas: [mercuryOutboardsOntarioSchema()],
     extraNoscript: () =>
       `<table><caption>Mercury Outboard Lineup: HP, MSRP, and Best Use (CAD, Ontario, ${fallbackAsOf})</caption>` +
