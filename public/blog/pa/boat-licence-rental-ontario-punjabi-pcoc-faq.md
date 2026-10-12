@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/pa/boat-licence-rental-ontario-punjabi-pcoc-faq.md
-last_updated: 2026-10-06
+last_updated: 2026-10-09
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Ontario vich boat chalaun layi licence chahida? PCOC FAQ | ਕਿਸ਼�
 description: "Ki Ontario vich boat rent karan layi licence chahida? HBW de PCOC rules, rental safety briefing te lifejacket rules. Punjabi vich poori jaankari ethe lao."
 category: "ਪੰਜਾਬੀ ਗਾਈਡ"
 date_published: 2026-06-12
-date_modified: 2026-10-06
+date_modified: 2026-10-09
 keywords: ["Ontario vich boat license kinj banaye (how to get a boat license in Ontario)","boat operator card zaroori hai Ontario vich (is boat operator card necessary in Ontario)","PCOC course online free Punjabi (PCOC course online free in Punjabi)","boat chalan layi license di lod hai Canada ch (do you need a license to drive a boat in Canada)"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: rentals
 
 **Category:** ਪੰਜਾਬੀ ਗਾਈਡ  
 **Published:** 2026-06-12  
-**ਆਖਰੀ ਸਮੀਖਿਆ:** 2026-10-06  
+**ਆਖਰੀ ਸਮੀਖਿਆ:** 2026-10-09  
 **Read time:** 8 ਮਿੰਟ  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/pa/boat-licence-rental-ontario-punjabi-pcoc-faq
 
@@ -57,7 +57,7 @@ Transport Canada ਵੱਲੋਂ ਮਾਨਤਾ ਪ੍ਰਾਪਤ ਨਿੱਜ
 - ਤਾਜ਼ਾ ਅਤੇ ਪੂਰੇ age-horsepower rules ਸਿਰਫ਼ Transport Canada ਦੇ official ਸਫ਼ੇ ਤੋਂ ਵੇਖੋ: https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc
 - 16 ਸਾਲ ਤੇ ਇਸ ਤੋਂ ਉੱਤੇ: valid PCOC ਹੋਵੇ ਤਾਂ ਇਕੱਲੇ boat ਚਲਾ ਸਕਦੇ ਹਨ।
 
-Supervisor ਕੋਲ ਜ਼ਰੂਰੀ valid PCOC ਹੋਣੀ ਚਾਹੀਦੀ, boat ’ਤੇ close proximity ਵਿੱਚ। rental checklist option minors ’ਤੇ apply ਨਹੀਂ ਹੁੰਦੀ, young operators ਲਈ PCOC ਜ਼ਰੂਰ ਚਾਹੀਦਾ ਹੈ supervision rules ਨਾਲ। official source ’ਤੇ latest amendments check ਕਰਦੇ ਰਹੋ: https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc
+Transport Canada ਮੁਤਾਬਕ "direct supervision" ਦਾ ਮਤਲਬ ਹੈ ਕਿ 16 ਸਾਲ ਜਾਂ ਵੱਧ ਉਮਰ ਦਾ ਵਿਅਕਤੀ ਕਿਸ਼ਤੀ ਵਿੱਚ ਹੋਵੇ ਅਤੇ ਚਲਾਉਣ ਵਾਲੇ ਦੀ ਸਿੱਧੀ ਨਿਗਰਾਨੀ ਕਰੇ। HBW rental ਲਈ ਵੱਖਰਾ ਨਿਯਮ ਹੈ: ਹਰ ਉਸ ਵਿਅਕਤੀ ਨੂੰ ਜੋ ਕਿਸ਼ਤੀ ਚਲਾ ਸਕਦਾ ਹੈ, check-in ਸਮੇਂ ਆਪਣੀ valid PCOC ਅਤੇ photo ID ਦਿਖਾਉਣੀ ਪੈਂਦੀ ਹੈ। rental checklist option minors ’ਤੇ apply ਨਹੀਂ ਹੁੰਦੀ, young operators ਲਈ PCOC ਜ਼ਰੂਰ ਚਾਹੀਦਾ ਹੈ supervision rules ਨਾਲ। official source ’ਤੇ latest amendments check ਕਰਦੇ ਰਹੋ: https://tc.canada.ca/en/marine-transportation/preparing-operate-your-vessel/pleasure-craft-operator-card-pcoc
 
 ## Punjabi community layi ik imandari wali gall | ਪੰਜਾਬੀ ਭਾਈਚਾਰੇ ਲਈ ਇੱਕ ਇਮਾਨਦਾਰੀ ਵਾਲੀ ਗੱਲ
 
@@ -86,7 +86,7 @@ PCOC rules ਨੂੰ ਔਖਾ ਨਾ ਸਮਝੋ; ਪਹਿਲਾ ਕਦਮ sa
 
 ### Kya “boat license” te “boat operator card” different hunde ne?
 
-Boat license (PCL) ਕਿਸ਼ਤੀ ਦਾ ਪਛਾਣ ਲਾਇਸੰਸ/ਨੰਬਰ ਹੈ, Transport Canada ਤੋਂ, ਜ਼ਰੂਰੀ ਉਹਨਾਂ ਕਿਸ਼ਤੀਆਂ ਲਈ ਜਿਹਨਾਂ ਦੇ ਇੰਜਣ 10 hp (7.5 kW) ਜਾਂ ਵੱਧ ਹਨ; ਇਹ vessel registration ਤੋਂ ਵੱਖਰਾ ਹੈ ਅਤੇ ਮਾਲਕੀ ਦਾ ਸਬੂਤ ਨਹੀਂ ਹੈ। Operator card (PCOC) tuhadi training da saboot hai. New, transfer ya renew PCL hun $24.41 CAD / 5 saal; jaankari update muft. Doven vakt confuse na ho, official terms PCL te PCOC yaad rakho.
+Boat license (PCL) ਕਿਸ਼ਤੀ ਦਾ ਪਛਾਣ ਲਾਇਸੰਸ/ਨੰਬਰ ਹੈ, Transport Canada ਤੋਂ, ਜ਼ਰੂਰੀ ਉਹਨਾਂ ਕਿਸ਼ਤੀਆਂ ਲਈ ਜਿਹਨਾਂ ਦੇ ਇੰਜਣ 10 hp (7.5 kW) ਜਾਂ ਵੱਧ ਹਨ; ਇਹ vessel registration ਤੋਂ ਵੱਖਰਾ ਹੈ ਅਤੇ ਮਾਲਕੀ ਦਾ ਸਬੂਤ ਨਹੀਂ ਹੈ। Operator card (PCOC) tuhadi training da saboot hai. New, transfer ya renew PCL hun $24.41 CAD / 5 saal (31 March 2027 tak; Transport Canada fee har saal 1 April nu badal sakdi hai); jaankari update muft. Doven vakt confuse na ho, official terms PCL te PCOC yaad rakho.
 
 ### PCOC course online muft Punjabi vich mil sakda ae?
 

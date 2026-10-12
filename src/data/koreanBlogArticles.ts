@@ -201,7 +201,7 @@ Harris Boat Works, Mercury Marine Premier 딜러. 1947년 창립.
     imageAlt: '안개 낀 일출에 Mercury 9.9 FourStroke 선외기 보트에서 낚시하는 두 사람',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
-    dateModified: '2026-10-06',
+    dateModified: '2026-10-09',
     publishDate: '2026-04-12',
     category: '낚시 가이드',
     readTime: '10 분',
@@ -222,7 +222,7 @@ PCOC가 필요하신가요? [HBW의 MyBoatCard 추천 링크](https://myboatcard
 
 ### 핵심 요약
 
-Rice Lake는 토론토 시내에서 약 1시간 45분 거리에 있으며, 온타리오에서 손꼽히는 walleye(월아이) 산지입니다. 401번 고속도로 동쪽 방향으로 가다가 Cobourg의 472번 출구(County Road 18 / Burnham Street)로 나와 County Road 18을 따라 북쪽으로 약 16 km 가면 Gores Landing에 도착합니다. Bass, muskie, yellow perch도 풍부합니다. Harris Boat Works가 호숫가(Gores Landing)에 위치해 당일 렌탈 보트로 바로 출발할 수 있습니다. 낚시 면허는 캐나다 거주자의 경우 18~64세에게 필요하며(18세 미만과 65세 이상은 면제), 비캐나다 거주자는 65세 이상도 대부분 필요합니다. 거주자에게는 연 4회 면허 없이 낚시할 수 있는 기간도 있습니다. 어종별 시즌과 어획 한도는 매년 온타리오 정부 사이트에서 확인하세요.
+Rice Lake는 토론토 시내에서 약 1시간 45분 거리에 있으며, 온타리오에서 손꼽히는 walleye(월아이) 산지입니다. 401번 고속도로 동쪽 방향으로 가다가 Cobourg의 472번 출구(County Road 18 / Burnham Street)로 나와 County Road 18을 따라 북쪽으로 약 16 km 가면 Gores Landing에 도착합니다. Bass, muskie, yellow perch도 풍부합니다. Harris Boat Works가 호숫가(Gores Landing)에 있어, 운영 시즌 중 예약 가능한 날에는 렌탈 보트로 바로 호수에 나갈 수 있습니다. 운영 날짜와 예약 가능 여부는 [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals)에서 먼저 확인하세요. 낚시 면허는 캐나다 거주자의 경우 18~64세에게 필요하며(18세 미만과 65세 이상은 면제), 비캐나다 거주자는 65세 이상도 대부분 필요합니다. 거주자에게는 연 4회 면허 없이 낚시할 수 있는 기간도 있습니다. 어종별 시즌과 어획 한도는 매년 온타리오 정부 사이트에서 확인하세요.
 
 ---
 
@@ -244,7 +244,7 @@ Rice Lake는 온타리오 Kawarthas 지역에 위치합니다. 남쪽 호숫가 
 |---|---|---|
 | 한적함 | 주말 피크를 제외하면 더 한적 | 주말 혼잡 |
 | 어종 다양성 | Walleye, bass, muskie 모두 풍부 | lake trout, whitefish, perch 외에 smallmouth bass, largemouth bass, northern pike도 유명 |
-| HBW 렌탈 보트 | 바로 이용 가능 | HBW 위치 아님 |
+| HBW 렌탈 보트 | 운영 시즌 중 예약 가능한 날 이용 (온라인 확인) | HBW 위치 아님 |
 | "진짜 캐나다 시골" 경험 | 상업화 덜 됨 | 더 상업적 |
 
 ---
@@ -356,8 +356,8 @@ Largemouth bass(큰입배스)와 smallmouth bass(작은입배스) 두 종류. Sm
       { question: '토론토에서 얼마나 걸리나요?', answer: '토론토 시내에서 약 1시간 45분입니다. 401번 고속도로 동쪽 방향으로 가다가 Cobourg의 472번 출구(County Road 18 / Burnham Street)로 나와 County Road 18을 따라 북쪽으로 약 16 km 가면 Gores Landing에 도착합니다.' },
       { question: '렌탈 보트에 낚시 장비가 포함되나요?', answer: '아니요. 보트만 대여되며, 낚싯대·줄·루어 등은 직접 준비해야 합니다.' },
       { question: '낚시 면허 없이 낚시하면 어떻게 되나요?', answer: '벌금 대상입니다. 캐나다 거주자는 18~64세라면 면허가 필요하고, 비캐나다 거주자는 65세 이상도 대부분 필요합니다. 거주자에게는 연 4회 면허 없이 낚시할 수 있는 기간이 있으니 온타리오 공식 사이트에서 날짜를 확인하세요.' },
-      { question: '보트 없이 Rice Lake에서 낚시할 수 있나요?', answer: '호숫가에서 뚝방 낚시가 가능한 곳도 있지만, 보트를 이용하면 접근 가능한 포인트가 훨씬 넓어집니다. HBW에서 당일 렌탈이 가능합니다.' },
-      { question: 'Rice Lake에서 낚시하려면 보트 면허(PCOC)도 필요한가요?', answer: '엔진 달린 보트를 조종하려면 PCOC가 필요합니다. HBW 렌탈 보트를 운전하려면 렌탈 시에도 유효한 PCOC가 필요하니, 방문 전에 미리 취득해 두세요.' },
+      { question: '보트 없이 Rice Lake에서 낚시할 수 있나요?', answer: '호숫가에서 뚝방 낚시가 가능한 곳도 있지만, 보트를 이용하면 접근 가능한 포인트가 훨씬 넓어집니다. HBW 렌탈은 운영 시즌 중 예약 가능한 날에 이용할 수 있으니, harrisboatworks.ca/rentals에서 날짜를 먼저 확인하세요.' },
+      { question: 'Rice Lake에서 낚시하려면 보트 면허(PCOC)도 필요한가요?', answer: '캐나다 거주자가 엔진 달린 보트를 조종하려면 보통 PCOC가 필요합니다. 연방 규정상 렌탈 보트는 렌탈 안전 체크리스트로 대신할 수 있는 경우가 있지만, HBW는 체크리스트를 면허 대용으로 받지 않습니다. HBW 렌탈 보트를 운전할 수 있는 모든 사람은 체크인 시 유효한 PCOC(임시 또는 정식)와 사진이 있는 신분증을 보여 주셔야 하며, 운전하지 않는 승객은 필요 없습니다. 방문 전에 미리 취득해 두세요.' },
     ],
   },
   {
