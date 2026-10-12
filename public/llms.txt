@@ -224,7 +224,7 @@ Harris Boat Works exposes UCP quote-mode checkout and pickup fulfillment, declar
 - Transports: REST and MCP, both at https://www.mercuryrepower.ca/api/agents/ucp
 - Verify: `npx -y @shopify/ucp-cli discover www.mercuryrepower.ca`
 
-Checkout tool surface (5 tools): create_checkout, get_checkout, update_checkout, complete_checkout, cancel_checkout.
+Checkout tool surface (6 tools): create_checkout, get_checkout, update_checkout, complete_checkout, cancel_checkout, prepare_motor_reservation.
 
 Quote mode means: UCP estimates motor prices plus HST and pickup only. Installation, propellers and trade-in credits are excluded; use the Public Quote API build_quote action for an itemized repower estimate. A continue_url hands the buyer back to the quote flow with the motor selection and checkout reference; it does not restore a complete multi-motor cart. complete_checkout never places an order or collects payment. The dealer confirms every sale with the buyer in person with valid government photo ID. When contact is supplied, check the returned lead-capture status before claiming the quote was registered for follow-up.
 
@@ -293,6 +293,10 @@ A: Yes. HBW arranges Canadian Mercury outboard financing through DealerPlan. Req
 
 Q: Is Harris Boat Works a certified Mercury dealer?
 A: Yes. Harris Boat Works is a Mercury Marine Premier Dealer and a Mercury Certified Repower Center, and has been a Mercury dealer since 1965. HBW is also a CSI Award winner. Full credentials at https://www.mercuryrepower.ca/about.
+
+<!-- hbw-reservation-guidance:start -->
+For an explicit motor reservation, prepare_motor_reservation accepts an existing active single-motor UCP session (quantity 1) and operation motor_reservation. It returns a separate CAD deposit estimate, payment_status not_started, terms_url and buyer continue_url. It does not charge, save a lead, reserve stock or complete an order. Finish boat/options and review the deposit on the website; Link is offered in Stripe Checkout when eligible. No native UCP payment handler is advertised.
+<!-- hbw-reservation-guidance:end -->
 
 <!-- hbw-agent-blog-guidance:start -->
 ## Blog citations and agent actions
