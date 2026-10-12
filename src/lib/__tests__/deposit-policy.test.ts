@@ -172,6 +172,7 @@ describe('checkout snapshot match and historical protection', () => {
       depositPolicy: snapshot,
     });
     const quoteData = row.quote_data as Record<string, unknown>;
+    expect(quoteData.motor_id).toBe(MOTOR_ID);
     expect(quoteData[DEPOSIT_POLICY_QUOTE_DATA_KEY]).toEqual(snapshot);
     expect(readPersistedDepositPolicy(quoteData)).toEqual(snapshot);
 
@@ -205,6 +206,7 @@ describe('checkout snapshot match and historical protection', () => {
     });
 
     expect(storedDepositPolicyMatches(legacyQuoteData, snapshot)).toBe(false);
+    expect((upgradedRow.quote_data as Record<string, unknown>).motor_id).toBe(MOTOR_ID);
     expect(storedDepositPolicyMatches(upgradedRow.quote_data, snapshot)).toBe(true);
     expect(classifyOpenCheckoutPolicyUpgrade({
       expectedSessionId: sessionId,

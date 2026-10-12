@@ -194,6 +194,8 @@ export function buildDepositCustomerQuoteRow(options: {
       stripe_payment_intent: options.paymentIntentId || null,
       payment_status: options.paymentStatus || "pending",
       saved_quote_id: options.savedQuoteId,
+      // The atomic webhook claim compares this with the locked motor binding.
+      motor_id: options.pricing.motor_model_id,
       motor_info: options.motorInfo || null,
       ...(options.quoteSnapshot ? { quote_snapshot: options.quoteSnapshot } : {}),
       ...(options.depositPolicy ? { [DEPOSIT_POLICY_QUOTE_DATA_KEY]: options.depositPolicy } : {}),
