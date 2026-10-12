@@ -286,3 +286,12 @@ verify_jwt = false
 
 [functions.voice-create-quote]
 verify_jwt = false
+
+[functions.lightspeed-sync]
+verify_jwt = true
+
+[functions.lightspeed-sync-service]
+verify_jwt = true
+
+[functions.lightspeed-sync-new-feeds]
+verify_jwt = true
