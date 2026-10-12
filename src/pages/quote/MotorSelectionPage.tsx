@@ -57,7 +57,9 @@ import { fuzzySearch } from '@/lib/fuzzySearch';
 import { preloadConfiguratorImages, preloadModalChunk } from '@/lib/configurator-preload';
 import '@/styles/premium-motor.css';
 import '@/styles/sticky-quote-mobile.css';
+import { resolveMotorCardTitle } from '@/lib/card-title';
 import { classifyMotorFamily, getMotorFamilyDisplay } from '@/lib/motor-family-classifier';
+import { applyMotorPresentationOverrides } from '@/data/motorPresentationOverrides.js';
 import { getMotorImagesForModel } from '@/lib/mercury-product-images';
 import { VOICE_NAVIGATION_EVENT, type VoiceNavigationEvent } from '@/lib/voiceNavigation';
 import { setVisibleMotors, type VisibleMotor } from '@/lib/visibleMotorsStore';
@@ -813,7 +815,7 @@ if (event.type === 'filter_motors') {
             );
           }
         }
-        return motor;
+        return applyMotorPresentationOverrides(motor);
       });
       
       setMotors(filteredMotors);
@@ -946,7 +948,7 @@ if (event.type === 'filter_motors') {
       // Convert to Motor type (same as original)
       const convertedMotor: Motor = {
         id: dbMotor.id,
-        model: dbMotor.model_display || dbMotor.model, // Use model_display for proper names like "6 MH FourStroke"
+        model: resolveMotorCardTitle(dbMotor) || dbMotor.model_display || dbMotor.model,
         year: dbMotor.year,
         hp: Number(dbMotor.horsepower),
         price: Math.round(effectivePrice),

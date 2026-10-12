@@ -1,5 +1,10 @@
 import { describe, it, expect } from 'vitest';
-import { formatVariantSubtitle, formatMotorTitle } from './card-title';
+import {
+  ensureCommandThrustDisplayName,
+  formatMotorTitle,
+  formatVariantSubtitle,
+  resolveMotorCardTitle,
+} from './card-title';
 
 // Helper to build title
 const title = (year: number, model: string) => `${year} ${model}`;
@@ -51,5 +56,51 @@ describe('formatMotorTitle', () => {
 
   it('keeps product line names', () => {
     expect(formatMotorTitle(2025, 'Verado 350HP HD CXXXL')).toBe('2025 Verado 350HP HD CXXXL');
+  });
+});
+
+describe('resolveMotorCardTitle', () => {
+  it('restores Command Thrust for the stale 90 EXLPT presentation override', () => {
+    expect(
+      resolveMotorCardTitle({
+        model: '90 EXLPT FourStroke',
+        model_display: '90 EXLPT FourStroke',
+        model_number: '1F904632D',
+      }),
+    ).toBe('90 EXLPT Command Thrust FourStroke');
+  });
+
+  it('keeps an already-correct adjacent Command Thrust title unchanged', () => {
+    expect(
+      resolveMotorCardTitle({
+        model: '90 ELPT Command Thrust FourStroke',
+        model_display: '90 ELPT Command Thrust FourStroke',
+        model_number: '1F904532D',
+      }),
+    ).toBe('90 ELPT Command Thrust FourStroke');
+  });
+
+  it('leaves a non-CT FourStroke title unchanged', () => {
+    expect(
+      resolveMotorCardTitle({
+        model: '90 EXLPT FourStroke',
+        model_display: '90 EXLPT FourStroke',
+        model_number: '1F904612D',
+      }),
+    ).toBe('90 EXLPT FourStroke');
+  });
+
+  it('inserts Command Thrust when features mark a motor as CT', () => {
+    expect(
+      ensureCommandThrustDisplayName('115 EXLPT FourStroke', {
+        features: ['Command Thrust', 'Power Trim'],
+      }),
+    ).toBe('115 EXLPT Command Thrust FourStroke');
+  });
+
+  it('inserts Command Thrust when commandThrust is true', () => {
+    expect(
+      ensureCommandThrustDisplayName('90 EXLPT FourStroke', { commandThrust: true }),
+    ).toBe('90 EXLPT Command Thrust FourStroke');
   });
 });

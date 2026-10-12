@@ -8,6 +8,8 @@
 // - Drop words already present in the title (year/brand/model)
 // - Format: words in Title Case, codes in UPPERCASE, joined with " · "
 
+import { applyMotorPresentationOverrides } from '@/data/motorPresentationOverrides.js';
+
 export const FEATURE_WORDS = [
   'Command Thrust',
   'ProKicker',
@@ -127,4 +129,56 @@ export function formatVariantSubtitle(raw: string, title: string): string {
   });
 
   return formatted.join(' · ');
+}
+
+export type MotorCardTitleSource = {
+  model?: string | null;
+  model_display?: string | null;
+  model_number?: string | null;
+  mercury_model_no?: string | null;
+  commandThrust?: boolean | null;
+  features?: unknown;
+};
+
+function featureListIncludesCommandThrust(features: unknown): boolean {
+  if (!Array.isArray(features)) return false;
+  return features.some((feature) => {
+    const text =
+      typeof feature === 'string'
+        ? feature
+        : feature && typeof feature === 'object' && 'title' in feature
+          ? String((feature as { title?: unknown }).title ?? '')
+          : String(feature ?? '');
+    return /\bcommand\s*thrust\b/i.test(text) || /(^|[\s/-])ct([\s/-]|$)/i.test(text);
+  });
+}
+
+export function ensureCommandThrustDisplayName(
+  displayName: string,
+  hints?: { commandThrust?: boolean | null; features?: unknown },
+): string {
+  const name = (displayName || '').replace(/\s+/g, ' ').trim();
+  if (!name) return name;
+  if (/\bcommand\s*thrust\b/i.test(name)) return name;
+
+  const hinted =
+    hints?.commandThrust === true || featureListIncludesCommandThrust(hints?.features);
+  if (!hinted) return name;
+
+  if (/\bFourStroke\b/i.test(name)) {
+    return name.replace(/\bFourStroke\b/i, 'Command Thrust FourStroke');
+  }
+  if (/\bPro\s*XS\b/i.test(name)) {
+    return name.replace(/\bPro\s*XS\b/i, 'Pro XS Command Thrust');
+  }
+  return `${name} Command Thrust`;
+}
+
+/** Card heading / image alt: prefer presentation-corrected model_display, then CT hints. */
+export function resolveMotorCardTitle(motor: MotorCardTitleSource | null | undefined): string {
+  const presented = applyMotorPresentationOverrides(motor || {});
+  return ensureCommandThrustDisplayName(presented.model_display || presented.model || '', {
+    commandThrust: presented.commandThrust,
+    features: presented.features,
+  });
 }
