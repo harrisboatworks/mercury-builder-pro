@@ -87,6 +87,7 @@ import {
   type MotorSelectionUrlState,
 } from '@/lib/motor-selection-url-state';
 import {
+  isReservationPlanningHandoff,
   parseAgentQuoteHandoff,
   useAgentQuoteHandoff,
   UCP_CHECKOUT_REF_FLAG,
@@ -1466,6 +1467,9 @@ if (event.type === 'filter_motors') {
     return baseYears + extendedYears;
   };
 
+  const reservationHandoff = parseAgentQuoteHandoff(searchParams);
+  const showReservationPlanning = isReservationPlanningHandoff(reservationHandoff);
+
   // Set page metadata
   useEffect(() => {
     document.title = 'Select Mercury Outboard Motor | Harris Boat Works';
@@ -1548,6 +1552,21 @@ if (event.type === 'filter_motors') {
             <p className="text-[18px] md:text-[20px] font-normal leading-relaxed text-[#050E1C]/70 text-balance max-w-[58ch] mb-5">
               Start with the horsepower on your current motor, or choose a range below. You will see real Canadian pricing before we ask for contact details.
             </p>
+            {showReservationPlanning ? (
+              <aside
+                role="note"
+                data-reservation-planning="true"
+                className="mb-5 max-w-[66ch] rounded-md border border-[#050E1C]/15 bg-white px-4 py-3 text-[14px] leading-relaxed text-[#050E1C]/80"
+              >
+                <p className="font-semibold text-[#050E1C]">Reservation planning</p>
+                <p className="mt-1">
+                  Continue planning your motor reservation. Finish your boat and options, then review the{' '}
+                  <a className="underline" href="/terms">reservation terms</a>
+                  {' '}on this website. The quote summary shows your deposit amount and lets you open secure checkout when you are ready.
+                  {' '}Choose Link in Stripe Checkout when available. Approve payment there to complete your deposit. Harris Boat Works confirms the final motor sale, fitment, and pickup.
+                </p>
+              </aside>
+            ) : null}
             <div className="flex flex-wrap gap-x-5 gap-y-2 mb-5 text-[12px] font-semibold uppercase tracking-[0.12em] text-[#050E1C]/65">
               <span className="inline-flex items-center gap-2"><span className="text-[#C9A24A]">✓</span> Real CAD pricing</span>
               <span className="inline-flex items-center gap-2"><span className="text-[#C9A24A]">✓</span> No sign-in required</span>

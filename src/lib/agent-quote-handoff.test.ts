@@ -3,6 +3,7 @@ import { describe, expect, it } from 'vitest';
 import type { BoatInfo } from '@/components/QuoteBuilder';
 import { initialState, quoteReducer, type QuoteState } from '@/contexts/QuoteContext';
 import {
+  isReservationPlanningHandoff,
   applyAgentQuoteHandoff,
   buildAgentQuoteHandoffActions,
   canOpenMotorFromHandoff,
@@ -315,5 +316,21 @@ describe('stripConsumedAgentQuoteHandoffParams', () => {
     expect(stripped.get('utm_source')).toBe('agent');
     expect(stripped.get('intent')).toBe('motor-only');
     expect(stripped.get('q')).toBe('115');
+  });
+});
+
+
+describe('reservation handoff approval boundary', () => {
+  it('requires exact reservation=1 plus a valid checkout reference', () => {
+    expect(isReservationPlanningHandoff(parseAgentQuoteHandoff(new URLSearchParams('reservation=1&ucp=chk_synthetic')))).toBe(true);
+    for (const query of ['reservation=true&ucp=chk_synthetic', 'reservation=1', 'reservation=1&ucp=bad reference']) {
+      expect(isReservationPlanningHandoff(parseAgentQuoteHandoff(new URLSearchParams(query)))).toBe(false);
+    }
+    expect(isReservationPlanningHandoff({ reservationPlanning: true, ucpCheckoutRef: 'bad reference' })).toBe(false);
+  });
+  it('does not add quote-submit or payment actions', () => {
+    const plain = parseAgentQuoteHandoff(new URLSearchParams('ucp=chk_synthetic'));
+    const reservation = parseAgentQuoteHandoff(new URLSearchParams('ucp=chk_synthetic&reservation=1'));
+    expect(buildAgentQuoteHandoffActions(initialState, reservation)).toEqual(buildAgentQuoteHandoffActions(initialState, plain));
   });
 });
