@@ -17183,14 +17183,14 @@ Harris Boat Works has been a Mercury dealer since 1965.
     imageAlt: "Common nominal outboard shaft lengths: short 15 inches, long 20 inches, extra long 25 inches. Confirm the exact motor and hull.",
     author: 'Jay Harris',
     datePublished: '2026-05-05',
-    dateModified: '2026-10-06',
+    dateModified: '2026-10-12',
     publishDate: '2026-05-05',
     category: 'Buying Guide',
     readTime: '10 min read',
     keywords: ['outboard shaft length', 'mercury shaft length guide', '20 inch shaft outboard', '25 inch shaft outboard', 'transom height measurement'],
     content: `*Hero graphic: common nominal shaft-length labels, not installation measurements. Use the exact motor and hull instructions to confirm fit.*
 
-_Last updated: May 27, 2026_
+_Last updated: October 12, 2026_
 
 # Outboard Shaft Length Guide: Short, Long, and Extra Long, How to Get It Right
 
@@ -17198,6 +17198,12 @@ _Last updated: May 27, 2026_
 Most Ontario aluminum fishing boats need a 20-inch (long) shaft. Most pontoons over 22 feet need a 25-inch (extra long) shaft. Small tiller boats with low transoms typically take a 15-inch (short) shaft. The only correct way to confirm is to measure transom height, from the top of the transom straight down to the bottom of the hull at the centreline. Mercury's shaft code on the motor (L, XL, XXL, or no length letter for a 15-inch short shaft) tells you the rest. The full decoder and a measurement guide are below.
 
 Ready to price it? [Build your quote, shaft length is a step](/quote/motor-selection).
+
+:::explainer
+src: /explainers/video-shaft-length.html
+title: Video: outboard shaft length, get it right
+caption: Watch: where the prop should sit, what too short and too long do, how to measure your transom, and how 15, 20 and 25 inch shafts match up. 81 seconds, captions available.
+:::
 
 ## Why shaft length matters more than most people think
 
