@@ -10,7 +10,7 @@ export type Database = {
   // Allows to automatically instantiate createClient with right options
   // instead of createClient<Database, { PostgrestVersion: 'XX' }>(URL, KEY)
   __InternalSupabase: {
-    PostgrestVersion: "14.5"
+    PostgrestVersion: "13.0.4"
   }
   public: {
     Tables: {
@@ -7788,6 +7788,7 @@ export type Database = {
         Returns: Json
       }
       hbw_mercury_customer_context_v1: { Args: never; Returns: Json }
+      hbw_mercury_product_prices_v1: { Args: never; Returns: Json }
       hbw_mercury_purchase_feed_v1: { Args: never; Returns: Json }
       hbw_normalize_phone_e164: { Args: { p_phone: string }; Returns: string }
       hbw_phone_digits_match: {
