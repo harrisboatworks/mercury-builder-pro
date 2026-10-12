@@ -70,7 +70,7 @@ export const MobileQuoteDrawer: React.FC<MobileQuoteDrawerProps> = ({ isOpen, on
       monthly,
       termMonths,
       rate,
-      financingUnavailable: total < FINANCING_MINIMUM,
+      financingUnavailable: subtotal < FINANCING_MINIMUM,
     };
   }, [displayMotor, total, subtotal, hst, taxSaving, lineItems, financingPromo, state.selectedPromoOption, state.selectedPromoRate, state.selectedPromoTerm, getPromotionOptions]);
 

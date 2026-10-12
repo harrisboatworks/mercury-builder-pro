@@ -6,7 +6,7 @@ import {
 } from "./promotion-context.ts";
 import { parsePromoCalendarDate, promoEndOfDay, promoStartOfDay } from "./promo-dates.ts";
 
-export const PUBLIC_QUOTE_FINANCING_POLICY_VERSION = "public-quote-financing-v3-2026-09-29";
+export const PUBLIC_QUOTE_FINANCING_POLICY_VERSION = "public-quote-financing-v4-2026-10-12";
 export const DEALERPLAN_FEE_CAD = 349;
 export const FINANCING_MINIMUM_CAD = 5000;
 export const MAXIMUM_AMORTIZATION_MONTHS = 240;
@@ -24,6 +24,8 @@ export interface PublicQuoteFinancingOffer {
   amortization_months: number;
   maximum_amortization_months: number;
   minimum_before_tax_cad: number;
+  minimum_basis: "before_tax" | "amount_financed";
+  minimum_amount_exclusive?: boolean;
   ends_at: string | null;
   combination_mode?: string;
   eligible: boolean;
@@ -81,6 +83,16 @@ function parseDateBoundary(value: string | null | undefined, endOfDay: boolean):
   return Number.isNaN(date.getTime()) ? null : date;
 }
 
+/** Pure amount-financed minimum check: strictly greater when exclusive. */
+export function meetsAmountFinancedMinimum(
+  amountFinanced: number,
+  minimum: number,
+  exclusive: boolean,
+): boolean {
+  if (!Number.isFinite(amountFinanced) || !Number.isFinite(minimum)) return false;
+  return exclusive ? amountFinanced > minimum : amountFinanced >= minimum;
+}
+
 export function monthlyPaymentFromAprPercent(
   principal: number,
   aprPercent: number,
@@ -118,6 +130,7 @@ function standingOffers(
       amortization_months: term,
       maximum_amortization_months: MAXIMUM_AMORTIZATION_MONTHS,
       minimum_before_tax_cad: minimum,
+      minimum_basis: "before_tax" as const,
       ends_at: record.promo_end_date || null,
       eligible,
       ...(eligible ? {} : {
@@ -127,8 +140,13 @@ function standingOffers(
   });
 }
 
+function asBoolean(value: unknown): boolean {
+  return value === true;
+}
+
 function promotionalOffers(
   promotions: PromotionRecord[],
+  amountFinanced: number,
   beforeTaxSubtotal: number,
   now: Date,
 ): PublicQuoteFinancingOffer[] {
@@ -154,12 +172,26 @@ function promotionalOffers(
         const months = asNumber(rate.months);
         if (aprPercent === null || aprPercent < 0 || months === null || months <= 0) continue;
 
-        const minimum = asNumber(rate.minAmount ?? rate.minimum_amount) ?? FINANCING_MINIMUM_CAD;
-        const minimumMet = beforeTaxSubtotal >= minimum;
+        // Promo minimum is on the amount financed (after tax + DealerPlan fee),
+        // mirroring meetsPromotionFinancingMinimum on the client.
+        const minimum = asNumber(
+          rate.minAmount ?? rate.minimum_amount ?? option.minimum_amount ?? option.minAmount,
+        ) ?? FINANCING_MINIMUM_CAD;
+        const exclusive = asBoolean(
+          rate.minimum_amount_exclusive ?? rate.minimumAmountExclusive
+            ?? option.minimum_amount_exclusive ?? option.minimumAmountExclusive,
+        );
+        const minimumMet = meetsAmountFinancedMinimum(amountFinanced, minimum, exclusive);
+        // Promo also requires the standing before-tax minimum (§1 rule).
+        const standingMet = beforeTaxSubtotal >= FINANCING_MINIMUM_CAD;
         // HBW quoting policy applies promotional offers regardless of stock.
-        const eligible = minimumMet;
-        const reason = !minimumMet
-          ? `Promotion requires at least $${minimum.toLocaleString("en-CA")} CAD before tax`
+        const eligible = standingMet && minimumMet;
+        const reason = !standingMet
+          ? `Financing requires at least $${FINANCING_MINIMUM_CAD.toLocaleString("en-CA")} CAD before tax`
+          : !minimumMet
+          ? exclusive
+            ? `Promotion requires a loan above $${minimum.toLocaleString("en-CA")} CAD`
+            : `Promotion requires a loan of at least $${minimum.toLocaleString("en-CA")} CAD`
           : undefined;
         offers.push({
           id: `promotion:${promotion.id || "active"}:${offerIndex}`,
@@ -172,6 +204,8 @@ function promotionalOffers(
           amortization_months: months,
           maximum_amortization_months: months,
           minimum_before_tax_cad: minimum,
+          minimum_basis: "amount_financed" as const,
+          minimum_amount_exclusive: exclusive,
           ends_at: promotion.end_date || null,
           combination_mode: getPromotionCombinationMode(promotion),
           eligible,
@@ -201,7 +235,7 @@ export function buildPublicQuoteFinancing(input: {
   const amountFinanced = round2(input.finalPriceWithTax + DEALERPLAN_FEE_CAD);
   const offers = [
     ...standingOffers(input.financing, input.beforeTaxSubtotal, now),
-    ...promotionalOffers(input.promotions, input.beforeTaxSubtotal, now),
+    ...promotionalOffers(input.promotions, amountFinanced, input.beforeTaxSubtotal, now),
   ].map((offer) => ({
     ...offer,
     ...(offer.eligible
@@ -244,6 +278,8 @@ export function buildPublicQuoteFinancing(input: {
         ? selected.ineligibility_reason
         : onlyBackorderIneligible
         ? "Promotion does not apply to backordered motors"
+        : offers.every((offer) => offer.source === "promotion")
+        ? offers[0]?.ineligibility_reason
         : `Financing requires at least $${minimum.toLocaleString("en-CA")} CAD before tax`,
       selected_offer_id: input.selectedOfferId || undefined,
       selected_offer_applied: false,

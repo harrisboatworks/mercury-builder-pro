@@ -4,6 +4,7 @@ import { useMemo } from 'react';
 
 interface FinancingCalloutProps {
   totalPrice: number;
+  beforeTaxSubtotal?: number;
   onApplyForFinancing?: () => void;
   financingTerms?: {
     payment: number;
@@ -13,7 +14,7 @@ interface FinancingCalloutProps {
   };
 }
 
-export function FinancingCallout({ totalPrice, onApplyForFinancing, financingTerms }: FinancingCalloutProps) {
+export function FinancingCallout({ totalPrice, beforeTaxSubtotal, onApplyForFinancing, financingTerms }: FinancingCalloutProps) {
   const { promo } = useActiveFinancingPromo();
   
   const financingDetails = useMemo(() => {
@@ -29,9 +30,9 @@ export function FinancingCallout({ totalPrice, onApplyForFinancing, financingTer
     return { payment, termMonths, rate, isPromotional: !!promo };
   }, [totalPrice, promo, financingTerms]);
 
-  // Don't show financing for purchases under $5,000. Keep hooks above the
-  // conditional so rerenders cannot change hook order.
-  if (totalPrice < FINANCING_MINIMUM) {
+  // Standing minimum is on the before-tax subtotal; totalPrice (after tax)
+  // still drives the amount financed. Keep hooks above the conditional.
+  if ((beforeTaxSubtotal ?? totalPrice) < FINANCING_MINIMUM) {
     return null;
   }
   

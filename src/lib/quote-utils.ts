@@ -211,6 +211,18 @@ export function calculateWarrantyExtensionCost(
 }
 
 /**
+ * Before-tax amount for the standing financing-minimum gate: the displayed
+ * before-tax subtotal minus the price-type promotion savings (factory
+ * rebate), floored at 0. Warranty value is not a price discount and is
+ * never subtracted here.
+ */
+export function getFinancingGateBeforeTax(subtotalBeforeTax: number, priceDiscount: number): number {
+  const base = Number.isFinite(subtotalBeforeTax) ? subtotalBeforeTax : 0;
+  const discount = Number.isFinite(priceDiscount) ? Math.max(0, priceDiscount) : 0;
+  return Math.max(0, base - discount);
+}
+
+/**
  * Calculate the financeable amount (subtotal + tax + dealer fee)
  * Used by both the summary page and PDF generation to prevent drift.
  */

@@ -5,6 +5,7 @@ import {
   buildCustomerKnowledgeSnapshot,
   buildFinancingCustomerAnswer,
   buildMotorCustomerAnswer,
+  fetchActiveFinancingAndPromotions,
   resolveCustomerSellingPrice,
   type CustomerKnowledge,
 } from '../../../supabase/functions/_shared/customer-knowledge-context';
@@ -117,6 +118,38 @@ describe('shared customer knowledge', () => {
     expect(chat.technicalFactsVersion).toBe(voice.technicalFactsVersion);
     expect(chat.motors.count).toBe(1);
     expect(chat.business.phone).toBe('+1-905-342-2153');
+  });
+
+  it('keeps promotions when the financing lookup fails (independent fetch)', async () => {
+    const result = await fetchActiveFinancingAndPromotions({} as never, {
+      fetchFinancing: async () => { throw new Error('financing down'); },
+      fetchPromotions: async () => [summerSavings],
+    });
+    expect(result.promotions).toEqual([summerSavings]);
+    expect(result.financing).toEqual([]);
+    expect(result.promotionsError).toBeNull();
+    expect((result.financingError as Error).message).toBe('financing down');
+  });
+
+  it('keeps financing when the promotions lookup fails (independent fetch)', async () => {
+    const financing = [{ id: 'td', name: 'TD Auto Finance', rate: 5.48, term_months: 60 }];
+    const result = await fetchActiveFinancingAndPromotions({} as never, {
+      fetchFinancing: async () => financing as never,
+      fetchPromotions: async () => { throw new Error('promotions down'); },
+    });
+    expect(result.financing).toEqual(financing);
+    expect(result.promotions).toEqual([]);
+    expect(result.financingError).toBeNull();
+    expect((result.promotionsError as Error).message).toBe('promotions down');
+  });
+
+  it('public quote API fetches independently and surfaces pricing_warnings', () => {
+    const source = readFileSync('supabase/functions/public-quote-api/index.ts', 'utf8');
+    expect(source).toContain('fetchActiveFinancingAndPromotions(supabase)');
+    expect(source).not.toContain('Promise.all([\n      fetchActiveFinancing(supabase)');
+    expect(source).toContain('pricing_warnings: pricingWarnings');
+    expect(source).toContain('Promotional rebates could not be verified');
+    expect(source).toContain('public quote promotions lookup failed');
   });
 
   it('applies the token endpoint prompt override when the ElevenLabs session starts', () => {

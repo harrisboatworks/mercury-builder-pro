@@ -12,6 +12,9 @@ import {
   TradeInInputError,
 } from "../_shared/trade-in-input.ts";
 import { activePromotionDateOrFilters, dealerToday } from "../_shared/promo-dates.ts";
+import { resolveFactoryRebate } from "../_shared/public-quote-pricing.ts";
+import { buildAgentFinancing, resolveAgentPromoFallback } from "../_shared/agent-quote-financing.ts";
+import type { PromotionRecord } from "../_shared/promotion-context.ts";
 
 const DEALERPLAN_FEE = 349;
 const HST_RATE = 0.13;
@@ -719,9 +722,11 @@ async function createQuote(supabase: any, body: any) {
   const promoOptionProvided = body.promo_option !== undefined;
   let promoOption = body.promo_option || null;
   let rebateAmount = 0;
+  let rebateResult: ReturnType<typeof resolveFactoryRebate> = null;
   let promoData: any = null;
   let promoWarnings: string[] = [];
   let totalPromoWarrantyYears = 0;
+  let livePromotions: PromotionRecord[] = [];
 
   // Always fetch promos — auto-default to cash_rebate if not specified
   {
@@ -729,7 +734,7 @@ async function createQuote(supabase: any, body: any) {
     // Fetch active promo
     const { data: promos, error: promotionsError } = await supabase
       .from("promotions")
-      .select("id, name, promo_options, warranty_extra_years, end_date")
+      .select("id, name, start_date, end_date, details, promo_options, warranty_extra_years")
       .eq("is_active", true)
       .or(startOr)
       .or(endOr)
@@ -739,6 +744,7 @@ async function createQuote(supabase: any, body: any) {
       throw new Error(`active promotion lookup failed: ${promotionsError.message}`);
     }
 
+    livePromotions = (promos || []) as PromotionRecord[];
     const activePromo = (promos || [])[0];
     totalPromoWarrantyYears = (promos || []).reduce(
       (sum: number, promotion: any) => sum + Number(promotion.warranty_extra_years || 0),
@@ -755,31 +761,15 @@ async function createQuote(supabase: any, body: any) {
         promoOption = "cash_rebate";
       }
 
-      // If special_financing requested but below minimum, fall back to cash_rebate
-      if (promoOption === "special_financing" || promoOption === "no_payments") {
-        const estimatedTotal = motorPrice + customItemsTotal;
-        if (estimatedTotal < FINANCING_MINIMUM) {
-          promoWarnings.push(
-            `Financing requires a minimum of $${FINANCING_MINIMUM.toLocaleString()}. ` +
-            `Quote total ($${estimatedTotal.toLocaleString()}) is below this threshold. ` +
-            `Automatically switched to cash_rebate.`
-          );
-          promoOption = "cash_rebate";
-        }
-      }
-
-      // Look up rebate amount from promo_options.options[].matrix
-      if (promoOption === "cash_rebate" && motor.horsepower) {
-        const promoOpts = activePromo.promo_options || {};
-        const cashRebateOpt = (promoOpts.options || []).find((o: any) => o.id === "cash_rebate");
-        const matrix = cashRebateOpt?.matrix || [];
-        for (const bracket of matrix) {
-          if (motor.horsepower >= bracket.hp_min && motor.horsepower <= bracket.hp_max) {
-            rebateAmount = bracket.rebate || 0;
-            break;
-          }
-        }
-      }
+      // Shared rebate rule: live window, motor eligibility, layered; only
+      // no_payments suppresses. Rebate stays pre-tax before trade (calcPricing).
+      rebateResult = resolveFactoryRebate(livePromotions, {
+        horsepower: motor.horsepower,
+        family: motor.family,
+        modelDisplay: motor.model_display,
+        model: motor.model,
+      }, { selectedPromoOption: promoOption });
+      rebateAmount = rebateResult?.amount ?? 0;
     }
   }
 
@@ -868,7 +858,7 @@ async function createQuote(supabase: any, body: any) {
   const propCost = customerHasProp ? 0 : (getPropellerAllowance(motor.horsepower || 0)?.price || 0);
   const accessoryCost = installCost + propCost;
 
-  const pricing = calcPricing({
+  let pricing = calcPricing({
     motorPrice,
     customItemsTotal: customItemsTotal + selectedOptionsTotal,
     warrantyCost,
@@ -878,20 +868,78 @@ async function createQuote(supabase: any, body: any) {
     adminDiscount,
   });
 
-  // Build financing data if applicable
+  // Financing-dependent options below the standing before-tax minimum fall
+  // back to cash_rebate (with a warning) so the rebate still applies. The
+  // gate uses the post-rebate, post-trade subtotal on the pricing basis;
+  // for no_payments the rebate is suppressed, so the gate is priced with
+  // the cash_rebate amount that applies after the fallback.
+  if (promoOption === "no_payments" || promoOption === "special_financing") {
+    const wasNoPayments = promoOption === "no_payments";
+    let gateRebate = rebateResult;
+    let gateSubtotal = pricing.adjustedSubtotal;
+    if (wasNoPayments) {
+      gateRebate = resolveFactoryRebate(livePromotions, {
+        horsepower: motor.horsepower,
+        family: motor.family,
+        modelDisplay: motor.model_display,
+        model: motor.model,
+      }, { selectedPromoOption: "cash_rebate" });
+      gateSubtotal = calcPricing({
+        motorPrice,
+        customItemsTotal: customItemsTotal + selectedOptionsTotal,
+        warrantyCost,
+        accessoryCost,
+        tradeInValue,
+        rebateAmount: gateRebate?.amount ?? 0,
+        adminDiscount,
+      }).adjustedSubtotal;
+    }
+    const fallback = resolveAgentPromoFallback({
+      requestedOption: promoOption,
+      beforeTaxSubtotal: gateSubtotal,
+      minimum: FINANCING_MINIMUM,
+    });
+    if (fallback.fellBack && fallback.warning) {
+      promoWarnings.push(fallback.warning);
+      promoOption = fallback.effectiveOption;
+      if (wasNoPayments && gateRebate) {
+        rebateResult = gateRebate;
+        rebateAmount = gateRebate.amount;
+        pricing = calcPricing({
+          motorPrice,
+          customItemsTotal: customItemsTotal + selectedOptionsTotal,
+          warrantyCost,
+          accessoryCost,
+          tradeInValue,
+          rebateAmount,
+          adminDiscount,
+        });
+      }
+    }
+  }
+
+  // Rebate metadata follows the resolver result, not promos[0].
+  const appliedPromoId = rebateAmount > 0
+    ? (rebateResult?.promotionId ?? promoData?.id ?? null)
+    : (promoData?.id ?? null);
+  const appliedPromoName = rebateAmount > 0
+    ? (rebateResult?.promotionName ?? promoData?.name ?? null)
+    : (promoData?.name ?? null);
+
+  // Build financing data if applicable. Caller-supplied promo_rate/promo_term
+  // are ignored; rate/term come from the live promotion only.
   let financingData: any = null;
-  if (promoOption === "special_financing" && pricing.finalPrice >= FINANCING_MINIMUM) {
-    const rate = body.promo_rate || 2.99;
-    const term = body.promo_term || 120;
-    const monthlyRate = rate / 100 / 12;
-    const monthlyPayment = monthlyRate > 0
-      ? (pricing.finalPrice * monthlyRate) / (1 - Math.pow(1 + monthlyRate, -term))
-      : pricing.finalPrice / term;
-    financingData = {
-      rate, term_months: term,
-      monthly_payment: Math.round(monthlyPayment * 100) / 100,
-      total_cost: Math.round(monthlyPayment * term * 100) / 100,
-    };
+  if (promoOption === "special_financing") {
+    const agentFinancing = buildAgentFinancing({
+      beforeTaxSubtotal: pricing.adjustedSubtotal,
+      finalPrice: pricing.finalPrice,
+      promotions: livePromotions,
+    });
+    if (agentFinancing.financing) {
+      financingData = agentFinancing.financing;
+    } else if (agentFinancing.warning) {
+      promoWarnings.push(agentFinancing.warning);
+    }
   }
 
   // Build warrantyConfig that SavedQuotePage expects
@@ -937,8 +985,8 @@ async function createQuote(supabase: any, body: any) {
     selectedPromoOption: promoOption,
     selectedPromoValue: rebateAmount,
     promoOption,
-    promoName: promoData?.name || null,
-    promoId: promoData?.id || null,
+    promoName: appliedPromoName,
+    promoId: appliedPromoId,
     rebateAmount,
     // Trade-in — use 'tradeInInfo' key that SavedQuotePage restores
     tradeInInfo: tradeInData,
@@ -975,7 +1023,7 @@ async function createQuote(supabase: any, body: any) {
     base_price: motorPrice,
     final_price: pricing.finalPrice,
     deposit_amount: 0,
-    loan_amount: financingData ? pricing.finalPrice : 0,
+    loan_amount: financingData ? financingData.amount_financed : 0,
     monthly_payment: financingData?.monthly_payment || 0,
     term_months: financingData?.term_months || 0,
     total_cost: financingData?.total_cost || pricing.finalPrice,
@@ -988,7 +1036,7 @@ async function createQuote(supabase: any, body: any) {
     lead_status: body.lead_status || "new",
     share_token: generateShareToken(),
     lead_source: body.source || "ai_agent",
-    promotion_id: promoData?.id || null,
+    promotion_id: appliedPromoId,
     tradein_value_final: tradeInValue || null,
     quote_data: quoteData,
   };
@@ -1104,7 +1152,7 @@ async function createQuote(supabase: any, body: any) {
       msrp: motor.msrp,
     },
     pricing,
-    promo_applied: promoOption ? { option: promoOption, rebate_amount: rebateAmount, promo_name: promoData?.name } : null,
+    promo_applied: promoOption ? { option: promoOption, rebate_amount: rebateAmount, promo_name: appliedPromoName } : null,
     trade_in_applied: tradeInData ? { value: tradeInValue, brand: tradeInData.brand, condition: tradeInData.condition } : null,
     warranty: { total_years: totalWarrantyYears, extra_cost: warrantyCost },
   };
@@ -1230,7 +1278,7 @@ async function updateQuote(supabase: any, body: any) {
   updates.admin_discount = adminDiscount;
   updates.final_price = pricing.finalPrice;
   updates.total_cost = pricing.finalPrice;
-  updates.loan_amount = pricing.finalPrice;
+  updates.loan_amount = quoteData.financing ? pricing.finalPrice + DEALERPLAN_FEE : pricing.finalPrice;
   updates.quote_data = { ...quoteData, ...pricing, adminDiscount, accessoryBreakdown: updateBreakdown.items };
 
   const { error } = await supabase.from("customer_quotes").update(updates).eq("id", quote_id);
