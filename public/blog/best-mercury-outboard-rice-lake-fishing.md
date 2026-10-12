@@ -59,7 +59,7 @@ Walleye trolling is why the [Mercury 9.9 ProKicker](/blog/mercury-prokicker-rice
 
 ## The Railway: Rice Lake's Most Expensive Tourist Attraction
 
-In the 1850s, a group of optimistic engineers decided to build a railway across the middle of Rice Lake. It sank. They reinforced it and tried again. It sank again, more slowly. The Cobourg and Peterborough Railway was eventually abandoned, and today the roadbed sits **just inches below the surface** in places, depending on water levels, running through Tic Island across the widest part of the lake.
+In the 1850s, a group of optimistic engineers decided to build a railway across the middle of Rice Lake. It opened at the end of 1854, and three days later the ice started shoving it out of line. They repaired it. The ice came back. After a few winters the ice won, and the Cobourg and Peterborough Railway's lake crossing was abandoned. Today the roadbed sits **just inches below the surface** in places, depending on water levels, running through Tic Island across the widest part of the lake.
 
 It has been collecting lower units, prop blades, and the dignity of confident boat operators for roughly 170 years.
 
