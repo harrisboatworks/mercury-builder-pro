@@ -97,7 +97,9 @@ This guide covers what DIY winterization actually involves, which steps are real
 
 Late-season winterizations, from August through November, are one of the busiest stretches of our service year at HBW. The May and June diagnostic work that follows every spring includes a consistent number of motors that weren't winterized correctly, DIY or otherwise.
 
-[What one Ontario winter does to your outboard](https://www.youtube.com/watch?v=Ch2oFLlA_gg)
+[Video: what one Ontario winter does to your outboard](/explainers/video-outboard-winter.html)
+
+*Watch: what winter does to an outboard that isn't prepared, and why the exact steps come from the manual for your serial number. 79 seconds, captions available.*
 
 ---
 

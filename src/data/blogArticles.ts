@@ -14658,9 +14658,10 @@ This guide covers what DIY winterization actually involves, which steps are real
 
 Late-season winterizations, from August through November, are one of the busiest stretches of our service year at HBW. The May and June diagnostic work that follows every spring includes a consistent number of motors that weren't winterized correctly, DIY or otherwise.
 
-:::youtube-embed
-id: Ch2oFLlA_gg
-title: What one Ontario winter does to your outboard
+:::explainer
+src: /explainers/video-outboard-winter.html
+title: Video: what one Ontario winter does to your outboard
+caption: Watch: what winter does to an outboard that isn't prepared, and why the exact steps come from the manual for your serial number. 79 seconds, captions available.
 :::
 
 ---
@@ -17900,9 +17901,10 @@ If you're reading this from shore, good. The best time to learn what to do when 
 
 This is the on-water response guide and prevention overview we'd walk through with any customer at the shop. Mercury-specific, Ontario conditions, no filler.
 
-:::youtube-embed
-id: MCkkdTb54wE
-title: Why your outboard overheats (and the stuck-thermostat trap)
+:::explainer
+src: /explainers/video-outboard-overheats.html
+title: Video: why your outboard overheats
+caption: Watch: the three causes of overheating we see most on Rice Lake and the Kawarthas, including the stuck-thermostat trap. 74 seconds, captions available.
 :::
 
 ---

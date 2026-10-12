@@ -83,7 +83,9 @@ If you're reading this from shore, good. The best time to learn what to do when 
 
 This is the on-water response guide and prevention overview we'd walk through with any customer at the shop. Mercury-specific, Ontario conditions, no filler.
 
-[Why your outboard overheats (and the stuck-thermostat trap)](https://www.youtube.com/watch?v=MCkkdTb54wE)
+[Video: why your outboard overheats](/explainers/video-outboard-overheats.html)
+
+*Watch: the three causes of overheating we see most on Rice Lake and the Kawarthas, including the stuck-thermostat trap. 74 seconds, captions available.*
 
 ---
 
