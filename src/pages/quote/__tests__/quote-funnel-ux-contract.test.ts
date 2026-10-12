@@ -158,6 +158,26 @@ describe('quote funnel UX contract', () => {
     expect(menuSource).toContain("to: '/pricing-reference'");
   });
 
+  it('keeps a single Ontario quote FAQ and a single pickup-only shipping FAQ', () => {
+    const faqSource = read('src/components/quote-builder/MotorSelectionFAQ.tsx');
+    const questions = [...faqSource.matchAll(/question:\s*'([^']+)'/g)].map((match) => match[1]);
+
+    expect(questions).toEqual([
+      'Can I build a Mercury outboard quote online in Ontario?',
+      'Is the pricing in CAD?',
+      'Do you ship Mercury outboards anywhere in Ontario?',
+      'Where do Ontario customers drive from?',
+      'How do I lock in a Mercury quote price?',
+      'Is the online quote a real price?',
+      'How long does the quote process take?',
+    ]);
+    expect(new Set(questions).size).toBe(questions.length);
+    expect(faqSource).not.toContain('Can I get a Mercury outboard quote online in Ontario?');
+    expect(faqSource).not.toContain('Do you deliver motors or offer shipping?');
+    expect(faqSource).toContain('mainEntity: FAQS.map');
+    expect(faqSource).toContain('pickup-only at our Gores Landing location');
+  });
+
   it('keeps the motor-selection preamble specific to Mercury outboards', () => {
     const motorSelectionSource = read('src/pages/quote/MotorSelectionPage.tsx');
 
