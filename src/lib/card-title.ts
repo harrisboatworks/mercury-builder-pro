@@ -149,7 +149,8 @@ function featureListIncludesCommandThrust(features: unknown): boolean {
         : feature && typeof feature === 'object' && 'title' in feature
           ? String((feature as { title?: unknown }).title ?? '')
           : String(feature ?? '');
-    return /\bcommand\s*thrust\b/i.test(text) || /(^|[\s/-])ct([\s/-]|$)/i.test(text);
+    // Shared family copy can mention variants; only an explicit feature label is a CT hint.
+    return /^(?:command\s*thrust|ct)$/i.test(text.trim());
   });
 }
 
