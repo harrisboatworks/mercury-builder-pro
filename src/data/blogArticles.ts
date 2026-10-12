@@ -23590,7 +23590,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     imageAlt: "Marine fuel pump and red nozzle beside an Ontario lake at sunrise",
     author: "Jay Harris",
     datePublished: "2026-04-11",
-    dateModified: '2026-10-11',
+    dateModified: '2026-09-11',
     publishDate: "2026-04-11",
     category: "Service",
     readTime: "~12 min read",
@@ -23610,7 +23610,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     ],
     content: `# Mercury Outboard Octane and Ethanol Guide for Ontario
 
-*Last reviewed: October 11, 2026*
+*Last reviewed: July 30, 2026*
 
 > **Quick answer:** Octane and ethanol answer different questions, and only one of them is really a decision. Meet the octane minimum in your engine's manual and then stop thinking about octane. Ethanol is the part that decides how long your fuel system lasts. Mercury allows a maximum of E10, but fresh ethanol-free gasoline is the better fuel for a marine engine, which is what ethanol-free marine gas is for. Premium does not mean ethanol-free, and in Ontario it no longer reliably is.
 
