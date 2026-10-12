@@ -18013,7 +18013,7 @@ After any overheating event, get it checked before the next run. [Book a Mercury
     image: "/lovable-uploads/hero-rice-lake-boating-guide.png",
     author: 'Harris Boat Works',
     datePublished: "2026-05-10",
-    dateModified: '2026-10-06',
+    dateModified: '2026-10-12',
     publishDate: "2026-05-10",
     category: "Lifestyle",
     readTime: "11 min read",
@@ -18046,7 +18046,7 @@ Harris Boat Works has been at 5369 Harris Boat Works Rd in Gores Landing on Rice
 
 **Weed beds.** Summer growth is heavy in most bays and along structure. Bring a weed-cutting tool for the prop. Plan for slower running speeds in shallow weed-choked areas.
 
-**The sunken railway.** This is the one hazard everyone has to know. There is an abandoned 19th-century railway submerged across the middle of Rice Lake. It sits roughly 4 feet below the surface. It has been wrecking lower units for over a hundred years. Chartplotters (Navionics, Garmin, C-MAP) mark the crossing clearly. Slow down across the middle of the lake until you know exactly where the structure is.
+**The sunken railway.** This is the one hazard everyone has to know. It is the remains of the 1854 Cobourg and Peterborough Railway bridge, stone-filled cribs and all, submerged across the middle of Rice Lake. Depth over it changes with the water level, and in places the old railway bed sits just inches below the surface. It has been wrecking lower units for over a hundred years. Don't trust a phone map or chartplotter basemap here. Use the buoyed channels shown on a current official chart. Slow down across the middle of the lake until you know exactly where the structure is.
 
 **The wind.** Rice Lake runs east-west, which is also the prevailing wind direction. A west wind can build chop quickly across the full 32 km fetch. Underpowered hulls and inexperienced operators can get in trouble fast on a windy afternoon. Check the forecast before you launch.
 
@@ -18136,7 +18136,7 @@ For Mercury service, parts, or repower questions, we're a Mercury Marine Premier
 
 ## What we see at HBW
 
-Rice Lake has its own quirks. Stumps in the central basin, weed mats in late July, and a navigable channel between the islands that catches every first-time boater. Most of our marine-tow callbacks in summer involve someone running aground on Tick Island or Black Island shoals.
+Rice Lake has its own quirks. Stumps in the central basin, weed mats in late July, and a navigable channel between the islands that catches every first-time boater. Most of our marine-tow callbacks in summer involve someone running aground on Tic Island or Black Island shoals.
 
 The good news: the lake is small enough that you can learn the hazards in a season. Slow down in the west end shallows, stay in the marked channel between islands, and pull your prop up at the Hastings end of the lock chamber. Walleye and largemouth fishing are best at sunrise and sunset.
 
@@ -18195,7 +18195,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     faqs: [
   {
     "question": "Where exactly is the sunken railway hazard?",
-    "answer": "It runs roughly north-south across the middle of the lake, between Hiawatha (north shore) and Harwood (south shore). Marine charts on Navionics, Garmin, C-MAP, and Fishing Hot Spots all mark it clearly. Run slowly across that section until you know the line, or use the channels locals use."
+    "answer": "It runs roughly north-south across the middle of the lake, between Hiawatha (north shore) and Harwood (south shore). Don't trust a phone map or chartplotter basemap here. Run slowly across that section until you know the line, or use the buoyed channels through the old railway crossing."
   },
   {
     "question": "What's the launch fee at Harris Boat Works?",
