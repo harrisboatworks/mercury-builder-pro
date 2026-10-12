@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/rice-lake-boating-guide-2026.md
-last_updated: 2026-10-06
+last_updated: 2026-10-12
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Rice Lake Boating Guide 2026"
 description: "Rice Lake boating guide from the marina that's been on it since 1947: launches, fish, hazards, rentals, and Trent-Severn access."
 category: "Lifestyle"
 date_published: 2026-05-10
-date_modified: 2026-10-06
+date_modified: 2026-10-12
 keywords: ["Rice Lake boating guide","Rice Lake fishing 2026","Rice Lake boat launch","Rice Lake sunken railway","FMZ 17 fishing regulations","Rice Lake walleye opener"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: rentals
 
 **Category:** Lifestyle  
 **Published:** 2026-05-10  
-**Last reviewed:** 2026-10-06  
+**Last reviewed:** 2026-10-12  
 **Read time:** 11 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/rice-lake-boating-guide-2026
 
@@ -37,7 +37,7 @@ Need your PCOC? Take the online course through [HBW's MyBoatCard referral link](
 
 ## Quick Answer
 
-Rice Lake is a 32-km shallow lake on the Trent-Severn, roughly 1 hour 45 minutes from central Toronto in light traffic. Water is 6 to 10 ft deep with heavy summer weeds and a sunken 19th-century railway across the middle (mark it on your chartplotter). Walleye, bass, and muskie are the main species. Check current public-launch access before towing; Harris Boat Works runs a day-fee ramp in Gores Landing that is open to the public.
+Rice Lake is a 32-km shallow lake on the Trent-Severn, roughly 1 hour 45 minutes from central Toronto in light traffic. Water is 6 to 10 ft deep with heavy summer weeds and a sunken 19th-century railway across the middle (use the buoyed channels to cross it). Walleye, bass, and muskie are the main species. Check current public-launch access before towing; Harris Boat Works runs a day-fee ramp in Gores Landing that is open to the public.
 
 ---
 
@@ -57,7 +57,7 @@ Harris Boat Works has been at 5369 Harris Boat Works Rd in Gores Landing on Rice
 
 **Weed beds.** Summer growth is heavy in most bays and along structure. Bring a weed-cutting tool for the prop. Plan for slower running speeds in shallow weed-choked areas.
 
-**The sunken railway.** This is the one hazard everyone has to know. There is an abandoned 19th-century railway submerged across the middle of Rice Lake. It sits roughly 4 feet below the surface. It has been wrecking lower units for over a hundred years. Chartplotters (Navionics, Garmin, C-MAP) mark the crossing clearly. Slow down across the middle of the lake until you know exactly where the structure is.
+**The sunken railway.** This is the one hazard everyone has to know. It is the remains of the 1854 Cobourg and Peterborough Railway bridge, stone-filled cribs and all, submerged across the middle of Rice Lake. Depth over it changes with the water level, and in places the old railway bed sits just inches below the surface. It has been wrecking lower units for over a hundred years. Don't trust a phone map or chartplotter basemap here. Use the buoyed channels shown on a current official chart. Slow down across the middle of the lake until you know exactly where the structure is.
 
 **The wind.** Rice Lake runs east-west, which is also the prevailing wind direction. A west wind can build chop quickly across the full 32 km fetch. Underpowered hulls and inexperienced operators can get in trouble fast on a windy afternoon. Check the forecast before you launch.
 
@@ -127,7 +127,7 @@ Other rental options exist around Bewdley, but availability and quality vary. Ca
 
 **Required safety equipment.** For a powered boat up to 6 m, that means a lifejacket or PFD for each person, a reboarding device, a 15 m buoyant heaving line, a sound-signalling device (whistle or horn), a bailer or manual bilge pump, a paddle or an anchor with 15 m of line, a watertight flashlight (or flares), navigation lights after dark, and a 5BC fire extinguisher if the boat has an inboard engine or a fixed fuel tank. Longer boats need more. Transport Canada publishes the full list, and CO2-charged life jackets count as PFDs.
 
-**The sunken railway.** Worth mentioning twice. Know where it is on your chartplotter. Slow down across the middle of the lake.
+**The sunken railway.** Worth mentioning twice. Use the buoyed channels. Slow down across the middle of the lake.
 
 **Wind and weather.** Check the forecast. A west wind on Rice Lake at 25+ km/h is enough to make smaller boats uncomfortable; over 35 km/h is genuinely dangerous in smaller hulls.
 
@@ -143,7 +143,7 @@ For Mercury service, parts, or repower questions, we're a Mercury Marine Premier
 
 ## What we see at HBW
 
-Rice Lake has its own quirks. Stumps in the central basin, weed mats in late July, and a navigable channel between the islands that catches every first-time boater. Most of our marine-tow callbacks in summer involve someone running aground on Tick Island or Black Island shoals.
+Rice Lake has its own quirks. Stumps in the central basin, weed mats in late July, and a navigable channel between the islands that catches every first-time boater. Most of our marine-tow callbacks in summer involve someone running aground on Tic Island or Black Island shoals.
 
 The good news: the lake is small enough that you can learn the hazards in a season. Slow down in the west end shallows, stay in the marked channel between islands, and pull your prop up at the Hastings end of the lock chamber. Walleye and largemouth fishing are best at sunrise and sunset.
 
@@ -171,7 +171,7 @@ Harris Boat Works | 5369 Harris Boat Works Rd, Gores Landing, ON | Mercury Marin
 
 ### Where exactly is the sunken railway hazard?
 
-It runs roughly north-south across the middle of the lake, between Hiawatha (north shore) and Harwood (south shore). Marine charts on Navionics, Garmin, C-MAP, and Fishing Hot Spots all mark it clearly. Run slowly across that section until you know the line, or use the channels locals use.
+It runs roughly north-south across the middle of the lake, between Hiawatha (north shore) and Harwood (south shore). Don't trust a phone map or chartplotter basemap here. Run slowly across that section until you know the line, or use the buoyed channels through the old railway crossing.
 
 ### What's the launch fee at Harris Boat Works?
 

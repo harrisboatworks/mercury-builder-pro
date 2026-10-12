@@ -59,7 +59,7 @@ Walleye trolling is why the [Mercury 9.9 ProKicker](/blog/mercury-prokicker-rice
 
 ## The Railway: Rice Lake's Most Expensive Tourist Attraction
 
-In the 1850s, a group of optimistic engineers decided to build a railway across the middle of Rice Lake. It sank. They reinforced it and tried again. It sank again, more slowly. The Cobourg and Peterborough Railway was eventually abandoned, and today the roadbed sits roughly **4 feet below the surface**, running through Tick Island across the widest part of the lake.
+In the 1850s, a group of optimistic engineers decided to build a railway across the middle of Rice Lake. It sank. They reinforced it and tried again. It sank again, more slowly. The Cobourg and Peterborough Railway was eventually abandoned, and today the roadbed sits **just inches below the surface** in places, depending on water levels, running through Tic Island across the widest part of the lake.
 
 It has been collecting lower units, prop blades, and the dignity of confident boat operators for roughly 170 years.
 
@@ -227,7 +227,7 @@ Crappie, yellow perch, sunfish, and northern pike are open all year with no clos
 
 ### What is the sunken railway on Rice Lake?
 
-The 19th-century Cobourg and Peterborough Railway roadbed sits roughly 4 feet below the surface, crossing the lake through Tick Island. It is a real navigation hazard, so mark it on your chartplotter. It is also a premier smallmouth bass area.
+The 19th-century Cobourg and Peterborough Railway roadbed crosses the lake through Tic Island, in places just inches below the surface depending on water levels. It is a real navigation hazard, so mark it on your chartplotter. It is also a premier smallmouth bass area.
 
 ### What horsepower do I need for a 16 ft aluminum boat on Rice Lake?
 

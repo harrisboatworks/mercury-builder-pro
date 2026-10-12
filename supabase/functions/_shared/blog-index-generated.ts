@@ -2878,7 +2878,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "Where exactly is the sunken railway hazard?",
-        "a": "It runs roughly north-south across the middle of the lake, between Hiawatha (north shore) and Harwood (south shore). Marine charts on Navionics, Garmin, C-MAP, and Fishing Hot Spots all mark it clearly. Run slowly across that section until you know the line, or use the channels locals use."
+        "a": "It runs roughly north-south across the middle of the lake, between Hiawatha (north shore) and Harwood (south shore). Don't trust a phone map or chartplotter basemap here. Run slowly across that section until you know the line, or use the buoyed channels through the old railway crossing."
       },
       {
         "q": "What's the launch fee at Harris Boat Works?",

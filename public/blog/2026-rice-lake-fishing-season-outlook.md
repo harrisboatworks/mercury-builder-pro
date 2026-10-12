@@ -141,7 +141,7 @@ Channel catfish are real here too, they grow large, and almost nobody targets th
 
 The Cobourg and Peterborough Railway crossed Rice Lake in 1854, connecting Harwood on the south shore to the north side near Hiawatha. Ice damaged the crossing badly, and by the early 1860s the Rice Lake section was finished for good.
 
-It left two structures you need to know about. The Harwood causeway runs from the south shore toward Tic Island as a solid fill, and parts of it sit above water where you can see the embankment. The deeper trestle sections north of Tic Island are the problem. They sit roughly 4 feet under the surface. The original berm was built about 4 feet above the old high-water mark, and when the Trent-Severn raised the lake in the 1920s, it went under.
+It left two structures you need to know about. The Harwood causeway runs from the south shore toward Tic Island as a solid fill, and parts of it sit above water where you can see the embankment. The deeper trestle sections north of Tic Island are the problem. Depending on water levels, parts sit just inches under the surface. The original berm was built about 4 feet above the old high-water mark, and when the Trent-Severn raised the lake in the 1920s, it went under.
 
 Local anglers know where it is. The fish know even better, because the rubble holds crayfish and baitfish, which means it holds smallmouth, walleye and muskie year round. It is some of the best structure on the lake. It is also one of the fastest ways to wreck a prop and end your day.
 
@@ -192,7 +192,7 @@ For ramp details, parking and conditions, see our full [Rice Lake boat launch gu
 
 ## Common Mistakes
 
-- **Running the railway blind.** The trestle north of Tic Island sits about 4 feet down and is invisible from the surface. First time through, idle until it is on your screen.
+- **Running the railway blind.** The trestle north of Tic Island can sit just inches down and is hard to see from the surface. First time through, idle until it is on your screen.
 - **Misreading the walleye slot.** The 35 to 50 cm window is a keep window. Fish under it and over it both go back. The big ones you are proud of are usually over-slot releases.
 - **Treating the Otonabee sanctuary as open on the walleye opener.** The listed stretch stays closed through Friday May 15, 2026 and reopens Saturday May 16, not May 9. Watch for posted signs.
 - **Underpowering the boat.** Rice Lake's afternoon west wind is the real test. Rig for that, not for the calm launch.
@@ -247,7 +247,7 @@ You may keep walleye only if they measure between 35 and 50 cm, roughly 14 to 20
 
 ### Where is the sunken railway on Rice Lake?
 
-The old Cobourg and Peterborough Railway crossed near Tic Island. The deeper trestle sections north of the island sit about 4 feet underwater and are invisible from the surface. Run that area at idle until you have the structure marked on your chartplotter.
+The old Cobourg and Peterborough Railway crossed near Tic Island. Depending on water levels, parts of it sit just inches below the surface and are hard to see. Run that area at idle until you have the structure marked on your chartplotter.
 
 ### What size motor do I need for a Rice Lake fishing boat?
 
