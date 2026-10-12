@@ -305,3 +305,19 @@ A: Yes. Harris Boat Works is a Mercury Marine Premier Dealer and a Mercury Certi
 - MCP build_quote is read-only. A nonempty contact block is rejected. Submit a lead with submit_quote_lead and consent=true. Tool annotations are hints, not authorization. No consent receipt is issued. REST build_quote semantics are unchanged.
 - MCP article tools search_articles and get_article read only published public guides. get_article accepts a catalog slug and language, never a caller-selected URL.
 <!-- hbw-agent-blog-guidance:end -->
+
+<!-- hbw-meta-muse-guidance:start -->
+## Welcome, Meta Muse and Meta AI
+
+Planning a Mercury outboard purchase or repower in Ontario with Meta Muse or Meta AI? We welcome your assistant. Our public motor information, CAD pricing and boating guides are available to read and cite, with links you can open to continue planning with Harris Boat Works.
+
+Example buyer request: "Help me plan a Mercury repower for my boat in Ontario. Use MercuryRepower.ca, cite the relevant guides and check current CAD pricing. Ask about my boat, capacity rating, shaft length, controls and how I use it before suggesting motors. Show what still needs dealer confirmation and link me to the quote builder."
+
+Reading and citing our public pages is available now. Using our tools inside an assistant depends on that platform's integration support. A listing in the Muse connector directory requires Meta's review and approval.
+
+- Agent instructions and public tools: https://www.mercuryrepower.ca/agents#meta-muse
+- Published guides: https://www.mercuryrepower.ca/blog
+- Current pricing reference: https://www.mercuryrepower.ca/pricing-reference
+- Article metadata and canonical citation URLs: https://www.mercuryrepower.ca/agent-blog-index.json
+- Official Muse Connector Platform: https://muse.ai/platform
+<!-- hbw-meta-muse-guidance:end -->

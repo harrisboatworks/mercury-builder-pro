@@ -1,5 +1,6 @@
 import ts from 'typescript';
 import { agentDiscoveryGuidance } from './public-blog-catalog.mjs';
+import { metaMuseMarkdownGuidance } from '../../src/lib/meta-muse-guidance.js';
 
 export const agentFinancingGuidance = 'Request build_quote for the selected motor and purchase options. Use its available offers, eligibility, APR, amount financed, fees, amortization and contract term from active financing records. Estimates require lender approval. Do not substitute cached headline rates or treat amortization as the contract term. If financing is unavailable, do not invent a monthly payment.';
 
@@ -56,7 +57,8 @@ export function synchronizeAgentContractDocs(markdown, ucpSource, mcpSource) {
   if (mcpSource) markdown = markdown.replace(/^Tools: search_motors[^\n]*$/m, `Tools: ${readPublicMcpCatalog(mcpSource).map(tool => tool.name).join(", ")}.`);
   const toolLine = /^Checkout tool surface[^\n]*$/m;
   if (!toolLine.test(markdown)) throw new Error('Missing UCP tool documentation anchor');
-  return markdown.replace(/\n<!-- hbw-agent-blog-guidance:start -->[\s\S]*?<!-- hbw-agent-blog-guidance:end -->\n?/g, '')
+  return markdown.replace(/\n<!-- hbw-meta-muse-guidance:start -->[\s\S]*?<!-- hbw-meta-muse-guidance:end -->\n?/g, '')
+    .replace(/\n<!-- hbw-agent-blog-guidance:start -->[\s\S]*?<!-- hbw-agent-blog-guidance:end -->\n?/g, '')
     .replace(toolLine, `Checkout tool surface (${names.length} tools): ${names.join(', ')}.`)
     .replace(/^Yes\. Financing is arranged through DealerPlan[^\n]*$/m, `Yes. Financing is arranged through DealerPlan across Canadian lenders. ${agentFinancingGuidance}`)
     .replace(/^Authoritative current offers:[^\n]*$/gm, 'Authoritative per-quote financing: https://www.mercuryrepower.ca/api/agents/quote — request build_quote. Current promotions: https://www.mercuryrepower.ca/promotions.')
@@ -65,5 +67,5 @@ export function synchronizeAgentContractDocs(markdown, ucpSource, mcpSource) {
     .replace(/^- Financing minimum:[^\n]*$/m, `- Financing minimum: $5,000 CAD. ${agentFinancingGuidance}`)
     .replace(/^- \[Finance Calculator\][^\n]*$/m, '- [Finance Calculator](https://www.mercuryrepower.ca/finance-calculator): Explore payment estimates; use build_quote for the selected motor and current eligible offers.')
     .replace(/^Harris Boat Works is a live UCP merchant[^\n]*$/m, 'Harris Boat Works exposes UCP quote-mode checkout and pickup fulfillment, declaring spec version 2026-04-08. Inspect the discovery profile and tool catalog when building an integration.')
-    .replace(/^Quote mode means:[^\n]*$/m, 'Quote mode means: UCP estimates motor prices plus HST and pickup only. Installation, propellers and trade-in credits are excluded; use the Public Quote API build_quote action for an itemized repower estimate. A continue_url hands the buyer back to the quote flow with the motor selection and checkout reference; it does not restore a complete multi-motor cart. complete_checkout never places an order or collects payment. The dealer confirms every sale with the buyer in person with valid government photo ID. When contact is supplied, check the returned lead-capture status before claiming the quote was registered for follow-up.') + '\n<!-- hbw-agent-blog-guidance:start -->\n## Blog citations and agent actions\n\n' + agentDiscoveryGuidance('https://www.mercuryrepower.ca').join('\n') + '\n<!-- hbw-agent-blog-guidance:end -->\n';
+    .replace(/^Quote mode means:[^\n]*$/m, 'Quote mode means: UCP estimates motor prices plus HST and pickup only. Installation, propellers and trade-in credits are excluded; use the Public Quote API build_quote action for an itemized repower estimate. A continue_url hands the buyer back to the quote flow with the motor selection and checkout reference; it does not restore a complete multi-motor cart. complete_checkout never places an order or collects payment. The dealer confirms every sale with the buyer in person with valid government photo ID. When contact is supplied, check the returned lead-capture status before claiming the quote was registered for follow-up.') + '\n<!-- hbw-agent-blog-guidance:start -->\n## Blog citations and agent actions\n\n' + agentDiscoveryGuidance('https://www.mercuryrepower.ca').join('\n') + '\n<!-- hbw-agent-blog-guidance:end -->\n' + '\n<!-- hbw-meta-muse-guidance:start -->\n' + metaMuseMarkdownGuidance() + '\n<!-- hbw-meta-muse-guidance:end -->\n';
 }

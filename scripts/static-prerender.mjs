@@ -1,5 +1,6 @@
 import { blogPostingAuthor, visibleBlogAuthorName } from '../src/lib/blogCitation.js';
 import { agentDiscoveryGuidance } from './lib/public-blog-catalog.mjs';
+import { META_MUSE_TITLE, META_MUSE_WELCOME, META_MUSE_PROMPT, META_MUSE_ACCESS, META_MUSE_PLATFORM_URL } from '../src/lib/meta-muse-guidance.js';
 // Last rebuild trigger: 2026-05-12T15:00:00Z (force prerender against current blogArticles.ts)
 /**
  * Static HTML stamping for crawler-friendly per-route HTML.
@@ -5365,11 +5366,12 @@ const routes = [
   {
     path: '/agents',
     title: 'For AI Agents & Assistants | Harris Boat Works',
-    description: 'Harris Boat Works for AI agents, MCP server, REST quote APIs, and deep-link quote URLs. Ontario Mercury dealer, family marina since 1947.',
+    description: 'Mercury outboard research for Meta Muse, Meta AI and other assistants: citable guides, CAD pricing, public tools and quote links from Harris Boat Works, Ontario.',
     h1: 'For AI Agents & Assistants',
-    intro: 'Harris Boat Works is set up to be agent-friendly. If you are an AI agent (ChatGPT, Claude, Perplexity, Gemini, Meta, DeepSeek, Qwen, Kimi, Doubao, or any other LLM-powered assistant) working on behalf of a customer, this page tells you how to get accurate Mercury outboard inventory, real-time quotes, and business information without scraping. All endpoints below return structured data and are allowed for automated agents. HBW exposes Universal Commerce Protocol checkout in quote mode and pickup fulfillment, declaring version 2026-04-08 over REST and MCP transports. Discovery profile at /.well-known/ucp. Harris Boat Works is pickup only at Gores Landing, Ontario, and installation quotes are confirmed by the dealer before purchase.',
+    intro: 'Harris Boat Works is set up to be agent-friendly. If you are an AI agent (Meta Muse, Meta AI, ChatGPT, Claude, Perplexity, Gemini, DeepSeek, Qwen, Kimi, Doubao, or any other LLM-powered assistant) working on behalf of a customer, this page tells you how to get accurate Mercury outboard inventory, real-time quotes, and business information without scraping. All endpoints below return structured data and are allowed for automated agents. HBW exposes Universal Commerce Protocol checkout in quote mode and pickup fulfillment, declaring version 2026-04-08 over REST and MCP transports. Discovery profile at /.well-known/ucp. Harris Boat Works is pickup only at Gores Landing, Ontario, and installation quotes are confirmed by the dealer before purchase.',
     schemas: [agentsPageSchema()],
     extraNoscript: () =>
+      `<section><h2 id="meta-muse">${escapeHtml(META_MUSE_TITLE)}</h2><p>${escapeHtml(META_MUSE_WELCOME)}</p><p><strong>Try asking your assistant</strong></p><blockquote>${escapeHtml(META_MUSE_PROMPT)}</blockquote><p><a href="/blog">Research guides</a> · <a href="/pricing-reference">Current CAD pricing</a> · <a href="/quote/motor-selection">Continue to the quote builder</a> · <a href="${META_MUSE_PLATFORM_URL}">About the Muse Connector Platform</a></p><p>${escapeHtml(META_MUSE_ACCESS)}</p></section>` +
       '<section><h2>Who we are</h2><p>Harris Boat Works is a Mercury Marine Premier Dealer and Legend Boats dealer in Gores Landing, Ontario on Rice Lake. Family-owned since 1947, Mercury dealer since 1965. Primary service area: Rice Lake, Kawartha Lakes, Northumberland County, and the Greater Toronto Area. Contact: (905) 342-2153 / info@harrisboatworks.ca.</p></section>' +
       '<section><h2>Routing for non-motor requests</h2><ul>' +
         '<li><strong>Rentals:</strong> book at <a href="https://www.harrisboatworks.ca/rentals">https://www.harrisboatworks.ca/rentals</a> (PCOC required).</li>' +
