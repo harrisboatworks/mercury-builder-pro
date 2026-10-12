@@ -5561,11 +5561,11 @@ Family-owned since 1947, Mercury dealer since 1965, Mercury Premier Dealer · Ri
     imageAlt: 'Concept diagram: vary throttle, avoid long steady RPM, and follow the serial-specific manual. Break-in is not the first scheduled service.',
     author: 'Harris Boat Works',
     datePublished: '2024-02-20',
-    dateModified: '2026-09-11',
+    dateModified: '2026-10-12',
     category: 'New Owner',
     readTime: '7 min read',
     keywords: ['mercury motor break in', 'new outboard break in procedure', 'mercury break in period', 'outboard motor break in', 'new boat motor care'],
-    content: `_Last updated: 2026-07-23_
+    content: `_Last updated: 2026-10-12_
 
 ---
 
@@ -5573,11 +5573,11 @@ Family-owned since 1947, Mercury dealer since 1965, Mercury Premier Dealer · Ri
 
 [Download Your New Mercury Owner Guide](/downloads/hbw-your-new-mercury-owner-guide.pdf) and keep it with the paperwork for your motor.
 
-**Mercury's own engine care primer for new owners:**
-
-https://www.youtube.com/watch?v=ydFfxwUz5yc
-
-*Video: Engine Care Basics for New Owners (Mercury Marine official).*
+:::explainer
+src: /explainers/video-breaking-in.html
+title: Video: breaking in a new Mercury
+caption: Watch: why your manual has the final say, why varying RPM matters, how to run a new motor, and how break-in differs from your first service. 87 seconds, captions available.
+:::
 
 ---
 
@@ -5686,6 +5686,16 @@ For repower customers buying a new Mercury at HBW, the break-in applies to the n
 ## Break-in and Mercury warranty
 
 Follow the model-specific break-in procedure in the owner's manual. Mercury says a future engine failure caused by improper break-in may not be covered. HBW's optional 20-hour oil-and-filter change is not a Mercury warranty requirement, and proof of that optional service should not be presented as a condition of coverage.
+
+---
+
+## More from Mercury
+
+Mercury's own engine care primer for new owners:
+
+https://www.youtube.com/watch?v=ydFfxwUz5yc
+
+*Video: Engine Care Basics for New Owners (Mercury Marine official).*
 
 ---
 
