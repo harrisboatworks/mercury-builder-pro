@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario.md
-last_updated: 2026-09-11
+last_updated: 2026-10-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Ethanol & Octane Rules 2026 (V10 Verado Update)"
 description: "Octane and ethanol are separate questions. We cover Ontario's new E15 pumps, the E10 limit, the 91 RON trap, and why V10 Verados list 87 octane."
 category: "Service"
 date_published: 2026-04-11
-date_modified: 2026-09-11
+date_modified: 2026-10-11
 keywords: ["Mercury outboard fuel","octane","ethanol","E10","Verado fuel","Ontario marine fuel"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Category:** Service  
 **Published:** 2026-04-11  
-**Last reviewed:** 2026-09-11  
+**Last reviewed:** 2026-10-11  
 **Read time:** ~12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario
 
@@ -171,6 +171,10 @@ The practical translation for 2026:
 - **Ours is one of them.** HBW sells ethanol-free 89 at the Gores Landing dock during the marina season, which is that deduction in physical form.
 
 For a purchase decision, use the pump label. For the engine decision, use the manual.
+
+[Video: why gas goes bad over winter](/explainers/video-fuel-winter.html)
+
+*Watch: how ethanol fuel picks up water and can separate over a long sit, why plain gas still ages, and what to do before storage. 78 seconds, captions available.*
 
 ## Fuel Quality and Storage Are Separate Again
 
