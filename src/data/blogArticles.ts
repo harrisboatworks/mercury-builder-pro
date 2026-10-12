@@ -1582,7 +1582,7 @@ If you're thinking about a new Mercury rather than servicing your current one: [
     imageAlt: 'Man in a grey T-shirt holding a detached gearcase over two clear tubs of milky and amber oil, beside a Mercury FourStroke 90',
     author: "Jay Harris",
     datePublished: "2026-07-02",
-    dateModified: "2026-09-06",
+    dateModified: "2026-10-11",
     publishDate: "2026-07-02",
     category: "Service",
     readTime: "~7 min read",
@@ -1597,7 +1597,7 @@ If you're thinking about a new Mercury rather than servicing your current one: [
     ],
     content: `# Milky Gearcase Oil in Ontario: Causes, Diagnosis, and Next Steps (2026)
 
-*Last reviewed: 2026-08-02*
+*Last reviewed: 2026-10-11*
 
 > **Quick answer:** Milky or coffee-coloured gearcase lubricant can indicate water intrusion. Stop treating it as a routine oil change. A technician needs to identify the source, often with pressure and vacuum testing, then inspect the seals and internal condition before quoting the repair. Mercury warns that water in the lubricant can damage bearings and can freeze inside the gearcase.
 
@@ -1624,6 +1624,12 @@ Water and gear oil don't mix; they emulsify into that milky mess. Emulsified oil
 That's the whole story of why [every winterize-and-service includes a gearcase drain](/blog/boat-winterization-cost-ontario-2026): it's a lubricant change AND the annual pressure check on your seals, disguised as one boring line item.
 
 ---
+
+:::explainer
+src: /explainers/video-milky-gear-oil.html
+title: Video: milky gear oil, what it's telling you
+caption: Watch: what the colour of drained gear oil means, where the lake can get in, and why milky oil means stop and get it tested. 94 seconds, captions available.
+:::
 
 ## Reading the Drain: The Three Colours
 
@@ -23748,6 +23754,12 @@ The practical translation for 2026:
 - **Ours is one of them.** HBW sells ethanol-free 89 at the Gores Landing dock during the marina season, which is that deduction in physical form.
 
 For a purchase decision, use the pump label. For the engine decision, use the manual.
+
+:::explainer
+src: /explainers/video-fuel-winter.html
+title: Video: why gas goes bad over winter
+caption: Watch: how ethanol fuel picks up water and can separate over a long sit, why plain gas still ages, and what to do before storage. 78 seconds, captions available.
+:::
 
 ## Fuel Quality and Storage Are Separate Again
 

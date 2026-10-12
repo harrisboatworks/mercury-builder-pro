@@ -172,6 +172,10 @@ The practical translation for 2026:
 
 For a purchase decision, use the pump label. For the engine decision, use the manual.
 
+[Video: why gas goes bad over winter](/explainers/video-fuel-winter.html)
+
+*Watch: how ethanol fuel picks up water and can separate over a long sit, why plain gas still ages, and what to do before storage. 78 seconds, captions available.*
+
 ## Fuel Quality and Storage Are Separate Again
 
 Fuel can meet both the octane and ethanol specifications and still be a poor choice if it is contaminated or has been stored improperly. Water, debris, oxidation and an unknown storage history are fuel-quality concerns, not octane ratings.
