@@ -1,4 +1,5 @@
 import { Helmet } from '@/lib/helmet';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { RepowerHeader } from '@/components/repower/RepowerHeader';
 import { SiteFooter } from '@/components/ui/site-footer';
@@ -21,6 +22,16 @@ const GET_QUOTE_EXAMPLE_URL =
   '&purchase_path=installed&boat_make=Lund&boat_model=Pro-V&trade_brand=Mercury&trade_year=2010&trade_hp=75&trade_condition=good&trade_engine_type=4-stroke';
 
 export default function AgentsHub() {
+  const [promptCopyState, setPromptCopyState] = useState<'ready' | 'copied' | 'failed'>('ready');
+  const copyMusePrompt = async () => {
+    try {
+      await navigator.clipboard.writeText(META_MUSE_PROMPT);
+      setPromptCopyState('copied');
+    } catch {
+      setPromptCopyState('failed');
+    }
+  };
+
   return (
     <div className="min-h-screen bg-repower-paper">
       <Helmet>
@@ -133,6 +144,18 @@ export default function AgentsHub() {
           <p>{META_MUSE_WELCOME}</p>
           <p className="mt-3 font-semibold">Try asking your assistant</p>
           <blockquote className="mt-2 border-l-4 border-repower-navy-900/20 pl-4">{META_MUSE_PROMPT}</blockquote>
+          <button
+            type="button"
+            onClick={copyMusePrompt}
+            aria-label="Copy prompt"
+            className="not-prose inline-flex min-h-11 items-center rounded-md bg-repower-navy-900 px-4 py-2 font-semibold text-white hover:bg-repower-navy-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-repower-navy-900"
+          >
+            {promptCopyState === 'copied' ? 'Copied!' : 'Copy prompt'}
+          </button>
+          <p role="status" aria-live="polite" className="mt-2 text-sm">
+            {promptCopyState === 'copied' && 'Prompt copied. Paste it into your assistant.'}
+            {promptCopyState === 'failed' && 'Copy was unavailable. Select the prompt above to copy it manually.'}
+          </p>
           <div className="mt-4 flex flex-wrap gap-4">
             <Link className="underline" to="/blog">Research guides</Link>
             <Link className="underline" to="/pricing-reference">Current CAD pricing</Link>
