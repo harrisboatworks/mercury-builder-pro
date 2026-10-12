@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/diy-mercury-outboard-winterization-guide.md
-last_updated: 2026-08-31
+last_updated: 2026-10-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "DIY Mercury Outboard Winterization"
 description: "DIY Mercury outboard winterization: identify the exact model procedure, prepare fuel and gearcase, protect the battery, and know when to stop."
 category: "Maintenance"
 date_published: 2026-04-22
-date_modified: 2026-08-31
+date_modified: 2026-10-11
 keywords: ["diy mercury outboard winterization","how to winterize mercury outboard","winterize 4-stroke outboard"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Category:** Maintenance  
 **Published:** 2026-04-22  
-**Last reviewed:** 2026-08-31  
+**Last reviewed:** 2026-10-11  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/diy-mercury-outboard-winterization-guide
 
@@ -96,6 +96,8 @@ Winterization is storage preparation, not one universal fogging recipe. The exac
 This guide covers what DIY winterization actually involves, which steps are realistic for most owners, which ones are easy to get wrong, and when it makes more sense to bring the motor to a dealer.
 
 Late-season winterizations, from August through November, are one of the busiest stretches of our service year at HBW. The May and June diagnostic work that follows every spring includes a consistent number of motors that weren't winterized correctly, DIY or otherwise.
+
+[What one Ontario winter does to your outboard](https://www.youtube.com/watch?v=Ch2oFLlA_gg)
 
 ---
 

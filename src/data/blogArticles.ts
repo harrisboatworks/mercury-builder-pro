@@ -14594,7 +14594,7 @@ Submit the boat, engine, trailer, storage, and requested-work details at [hbwser
     imageAlt: 'Boat owner kneeling beside a Mercury FourStroke outboard in a garage workshop, draining gear oil into a pan, with Mercury fogging oil and 4-stroke FC-W oil bottles on the workbench.',
     author: 'Harris Boat Works',
     datePublished: '2026-04-22',
-    dateModified: '2026-08-31',
+    dateModified: '2026-10-11',
     publishDate: '2026-04-22',
     category: 'Maintenance',
     readTime: '12 min read',
@@ -14657,6 +14657,11 @@ Winterization is storage preparation, not one universal fogging recipe. The exac
 This guide covers what DIY winterization actually involves, which steps are realistic for most owners, which ones are easy to get wrong, and when it makes more sense to bring the motor to a dealer.
 
 Late-season winterizations, from August through November, are one of the busiest stretches of our service year at HBW. The May and June diagnostic work that follows every spring includes a consistent number of motors that weren't winterized correctly, DIY or otherwise.
+
+:::youtube-embed
+id: Ch2oFLlA_gg
+title: What one Ontario winter does to your outboard
+:::
 
 ---
 
@@ -17894,6 +17899,11 @@ If you're reading this from the water with the alarm going, skip to the emergenc
 If you're reading this from shore, good. The best time to learn what to do when a Mercury overheats is before it happens. Understanding what causes overheating, how to read the telltale, and what the warning system means can be the difference between a straightforward cooling-system repair and a damaged powerhead.
 
 This is the on-water response guide and prevention overview we'd walk through with any customer at the shop. Mercury-specific, Ontario conditions, no filler.
+
+:::youtube-embed
+id: MCkkdTb54wE
+title: Why your outboard overheats (and the stuck-thermostat trap)
+:::
 
 ---
 
