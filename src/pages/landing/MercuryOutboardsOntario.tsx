@@ -9,6 +9,7 @@ import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { RepowerHeader } from '@/components/repower/RepowerHeader';
 import { SiteFooter } from '@/components/ui/site-footer';
+import { ONTARIO_PRO_XS_RANGE, ONTARIO_CT_LABEL, ONTARIO_RESEARCH_GUIDES } from '@/lib/mercury-ontario-facts.js';
 import {
   MercuryOutboardsOntarioSEO,
   ONTARIO_HUB_FAQ,
@@ -45,14 +46,14 @@ const LINEUP = [
   {
     icon: Zap,
     name: 'Pro XS',
-    range: '115, 250 HP',
-    body: 'Performance and tournament use, bass, ski, wake, fast bowriders. Real CAD pricing live.',
+    range: ONTARIO_PRO_XS_RANGE,
+    body: 'Mercury performance outboards. Check current HBW listings for exact models, CAD pricing and availability.',
     href: '/mercury-pro-xs',
   },
   {
     icon: Sailboat,
     name: 'Command Thrust',
-    range: '40, 150 HP',
+    range: ONTARIO_CT_LABEL,
     body: 'Pontoons and heavy hulls. Larger gearcase + prop for more push at slower speeds.',
     href: '/quote/motor-selection',
   },
@@ -74,7 +75,7 @@ const LINEUP = [
     icon: Waves,
     name: 'FourStroke V8',
     range: '250, 300 HP',
-    body: 'Naturally aspirated V8 for offshore, big bowriders, and large pontoons. Premium tier.',
+    body: 'Special-order options for large hulls. Confirm the exact model and availability with HBW.',
     href: '/quote/motor-selection',
   },
 ];
@@ -240,6 +241,22 @@ export default function MercuryOutboardsOntario() {
             <Button asChild variant="outline" size="sm">
               <Link to="/mercury-dealer-gta">GTA page</Link>
             </Button>
+          </div>
+        </section>
+
+        <section className="mb-16" aria-labelledby="ontario-research-guides">
+          <h2 id="ontario-research-guides" className="text-2xl font-semibold text-foreground mb-4 text-center">
+            Research your Mercury repower
+          </h2>
+          <p className="text-muted-foreground text-center mb-6">
+            Compare options and prepare your questions with our public guides. Use the quote builder for current CAD pricing, and confirm exact-model fitment with HBW.
+          </p>
+          <div className="grid gap-3 sm:grid-cols-2">
+            {ONTARIO_RESEARCH_GUIDES.map(({ href, label }) => (
+              <Link key={href} to={href} className="rounded-xl border border-border p-4 text-foreground underline underline-offset-4 hover:text-repower-mercury-red">
+                {label}
+              </Link>
+            ))}
           </div>
         </section>
 
