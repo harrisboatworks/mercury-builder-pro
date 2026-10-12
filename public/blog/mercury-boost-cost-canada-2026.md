@@ -13,7 +13,10 @@ category: "Mercury Technology"
 date_published: 2026-05-28
 date_modified: 2026-09-11
 keywords: ["Mercury Boost","Mercury Boost worth it","Mercury Boost cost","Pro XS Boost","Verado Boost","Mercury Boost software"]
-author: Harris Boat Works
+author: "Jay Harris"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/mercury-boost-cost-canada-2026
+source_url: https://www.mercuryrepower.ca/blog/mercury-boost-cost-canada-2026
 content_type: blog_article
 language: en-CA
 revenue_driver: service

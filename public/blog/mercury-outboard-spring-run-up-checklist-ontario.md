@@ -13,7 +13,10 @@ category: "Maintenance"
 date_published: 2026-05-17
 date_modified: 2026-10-06
 keywords: ["mercury outboard spring run up checklist ontario","mercury outboard spring run up checklist ontario ontario","harris boat works","mercury outboard","rice lake"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/mercury-outboard-spring-run-up-checklist-ontario
+source_url: https://www.mercuryrepower.ca/blog/mercury-outboard-spring-run-up-checklist-ontario
 content_type: blog_article
 language: en-CA
 revenue_driver: service

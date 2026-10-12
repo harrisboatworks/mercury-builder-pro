@@ -13,7 +13,10 @@ category: "Mercury Outboards"
 date_published: 2026-02-22
 date_modified: 2026-09-11
 keywords: ["how to trim a boat","Mercury outboard trim","trim in vs trim out","boat porpoising fix","Mercury Active Trim"]
-author: Harris Boat Works
+author: "Jay Harris"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/how-to-trim-boat-mercury-outboard
+source_url: https://www.mercuryrepower.ca/blog/how-to-trim-boat-mercury-outboard
 content_type: blog_article
 language: en-CA
 revenue_driver: service

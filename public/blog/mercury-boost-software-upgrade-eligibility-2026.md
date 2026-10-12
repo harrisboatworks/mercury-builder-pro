@@ -13,7 +13,10 @@ category: "Mercury Technology"
 date_published: 2026-04-14
 date_modified: 2026-09-11
 keywords: ["Mercury Boost software upgrade","Mercury Boost eligible engines","Mercury software calibration","Mercury acceleration upgrade","Mercury dealer upgrade Ontario"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/mercury-boost-software-upgrade-eligibility-2026
+source_url: https://www.mercuryrepower.ca/blog/mercury-boost-software-upgrade-eligibility-2026
 content_type: blog_article
 language: en-CA
 revenue_driver: service

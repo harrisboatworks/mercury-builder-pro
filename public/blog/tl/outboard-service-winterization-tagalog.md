@@ -13,7 +13,10 @@ category: "Tagalog Guide"
 date_published: 2026-06-12
 date_modified: 2026-09-06
 keywords: ["mekaniko ng bangka sa Toronto (boat mechanic in Toronto)","pagawaan ng motor ng bangka malapit sa Mississauga (boat motor repair shop near Mississauga)","marine mechanic Pilipino Toronto (Filipino marine mechanic Toronto)","paano i-winterize ang bangka (how to winterize a boat)","paghahanda ng bangka sa taglamig (preparing boat for winter)","winter storage ng bangka Ontario (winter storage of boat Ontario)","winterization service bangka Toronto (winterization service boat Toronto)","paano ayusin ang Mercury outboard (how to fix Mercury outboard)"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/tl/outboard-service-winterization-tagalog
+source_url: https://www.mercuryrepower.ca/blog/tl/outboard-service-winterization-tagalog
 content_type: blog_article
 language: tl
 revenue_driver: service

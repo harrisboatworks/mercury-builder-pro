@@ -13,7 +13,10 @@ category: "安省法规中文"
 date_published: 2026-05-11
 date_modified: 2026-10-04
 keywords: ["安省租船 驾照 中文","PCOC 租船 中文","Rental Boat Safety Checklist 中文","多伦多 租船 不需要驾照","华人 租船 安省 规则"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/zh/pcoc-vs-rental-boat-safety-checklist-zh
+source_url: https://www.mercuryrepower.ca/blog/zh/pcoc-vs-rental-boat-safety-checklist-zh
 content_type: blog_article
 language: zh-CN
 revenue_driver: rentals

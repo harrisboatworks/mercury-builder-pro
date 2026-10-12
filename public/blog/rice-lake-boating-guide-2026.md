@@ -13,7 +13,10 @@ category: "Lifestyle"
 date_published: 2026-05-10
 date_modified: 2026-10-12
 keywords: ["Rice Lake boating guide","Rice Lake fishing 2026","Rice Lake boat launch","Rice Lake sunken railway","FMZ 17 fishing regulations","Rice Lake walleye opener"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/rice-lake-boating-guide-2026
+source_url: https://www.mercuryrepower.ca/blog/rice-lake-boating-guide-2026
 content_type: blog_article
 language: en-CA
 revenue_driver: rentals

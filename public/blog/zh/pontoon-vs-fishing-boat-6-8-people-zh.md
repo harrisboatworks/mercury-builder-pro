@@ -13,7 +13,10 @@ category: "租船与钓鱼"
 date_published: 2026-05-11
 date_modified: 2026-10-06
 keywords: ["pontoon vs fishing boat 中文","6-8 人租船 中文","大家庭租船 安省","Rice Lake pontoon 租船","团体租船 多伦多"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/zh/pontoon-vs-fishing-boat-6-8-people-zh
+source_url: https://www.mercuryrepower.ca/blog/zh/pontoon-vs-fishing-boat-6-8-people-zh
 content_type: blog_article
 language: zh-CN
 revenue_driver: rentals

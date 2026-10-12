@@ -13,7 +13,10 @@ category: "Buying Guide"
 date_published: 2026-05-19
 date_modified: 2026-10-04
 keywords: ["cost of owning a boat Ontario","boat ownership cost Canada","Rice Lake marina slip cost","boat insurance Ontario cost","boat winterization cost Ontario"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/total-cost-of-owning-a-boat-ontario-2026
+source_url: https://www.mercuryrepower.ca/blog/total-cost-of-owning-a-boat-ontario-2026
 content_type: blog_article
 language: en-CA
 revenue_driver: repower

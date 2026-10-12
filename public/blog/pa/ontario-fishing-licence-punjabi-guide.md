@@ -13,7 +13,10 @@ category: "ਪੰਜਾਬੀ ਗਾਈਡ"
 date_published: 2026-06-12
 date_modified: 2026-10-06
 keywords: ["Ontario fishing license keemat online (Ontario fishing license price online)","Toronto de nere fishing spots family layi (fishing spots near Toronto for family)","fishing seasons Ontario 2024 Punjabi (fishing seasons Ontario 2024 Punjabi)","Rice Lake fishing rules limits Punjabi (Rice Lake fishing rules and limits in Punjabi)","Brampton waale fishing spot ki ne Punjabi (what are the fishing spots for Brampton people in Punjabi)","Kawartha lakes fishing map Punjabi video (Kawartha lakes fishing map Punjabi video)"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/pa/ontario-fishing-licence-punjabi-guide
+source_url: https://www.mercuryrepower.ca/blog/pa/ontario-fishing-licence-punjabi-guide
 content_type: blog_article
 language: pa
 revenue_driver: rentals

@@ -13,7 +13,10 @@ category: "成本分析"
 date_published: 2026-05-12
 date_modified: 2026-10-06
 keywords: ["mercury repower gta","gta 华人 mercury","mercury 换机 安省","gta chinese boater mercury","rice lake mercury repower"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/zh/mercury-repower-guide-gta
+source_url: https://www.mercuryrepower.ca/blog/zh/mercury-repower-guide-gta
 content_type: blog_article
 language: zh-CN
 revenue_driver: repower

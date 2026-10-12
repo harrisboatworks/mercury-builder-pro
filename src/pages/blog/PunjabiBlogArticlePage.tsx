@@ -1,3 +1,5 @@
+import { formatDateOnly } from '@/lib/formatDateOnly';
+import { blogPostingAuthor, visibleBlogAuthorName } from '@/lib/blogCitation.js';
 import { useState } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { Helmet } from '@/lib/helmet';
@@ -213,7 +215,7 @@ export default function PunjabiBlogArticlePage() {
         "@id": `${url}#article`,
         "headline": article.seoTitle ?? article.title,
         "description": article.description,
-        "author": { "@type": "Organization", "name": "Harris Boat Works", "@id": `${SITE_URL}/#organization` },
+        "author": blogPostingAuthor(article.author, SITE_URL, { translated: true }),
         "publisher": { "@type": "Organization", "name": "Harris Boat Works", "@id": `${SITE_URL}/#organization` },
         "datePublished": article.datePublished,
         "dateModified": article.dateModified,
@@ -289,7 +291,7 @@ export default function PunjabiBlogArticlePage() {
         <div className="flex items-center gap-4 text-sm text-muted-foreground mb-6">
           <span className="flex items-center gap-1">
             <Calendar className="w-4 h-4" />
-            {new Date(article.datePublished).toLocaleDateString('pa-IN', { year: 'numeric', month: 'long', day: 'numeric' })}
+            {formatDateOnly(article.datePublished, 'pa-IN')}
           </span>
           <span className="flex items-center gap-1">
             <Clock className="w-4 h-4" />
@@ -304,7 +306,7 @@ export default function PunjabiBlogArticlePage() {
           {article.title}
         </h1>
         <div className="mb-8 pb-4 border-b border-border">
-          <AuthorByline name="Jay Harris" title="Harris Boat Works ਦੇ ਮਾਲਕ" byLabel="ਲੇਖਕ" bioLabel="ਲੇਖਕ ਬਾਰੇ" />
+          <AuthorByline name={visibleBlogAuthorName(article.author)} authorType={visibleBlogAuthorName(article.author) === 'Jay Harris' ? 'Person' : 'Organization'} title="Harris Boat Works ਦੇ ਮਾਲਕ" byLabel="ਲੇਖਕ" bioLabel="ਲੇਖਕ ਬਾਰੇ" />
         </div>
 
         {tocItems.length > 2 && (

@@ -13,7 +13,10 @@ category: "Service & Maintenance"
 date_published: 2026-07-24
 date_modified: 2026-09-07
 keywords: ["Mercury outboard oil capacity chart","Mercury FourStroke oil capacity","Mercury gearcase oil capacity","Mercury outboard oil filter chart","Mercury 90 oil capacity","Mercury 60 gear oil capacity","Mercury outboard oil lookup"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/mercury-outboard-oil-capacity-chart
+source_url: https://www.mercuryrepower.ca/blog/mercury-outboard-oil-capacity-chart
 content_type: blog_article
 language: en-CA
 revenue_driver: service

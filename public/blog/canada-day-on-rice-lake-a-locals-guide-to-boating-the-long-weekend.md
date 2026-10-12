@@ -13,7 +13,10 @@ category: "Local Guide"
 date_published: 2026-06-29
 date_modified: 2026-09-06
 keywords: ["Rice Lake","Canada Day","boating","fishing","Ontario boating"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/canada-day-on-rice-lake-a-locals-guide-to-boating-the-long-weekend
+source_url: https://www.mercuryrepower.ca/blog/canada-day-on-rice-lake-a-locals-guide-to-boating-the-long-weekend
 content_type: blog_article
 language: en-CA
 revenue_driver: repower

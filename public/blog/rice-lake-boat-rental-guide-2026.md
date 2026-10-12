@@ -13,7 +13,10 @@ category: "Boating Lifestyle"
 date_published: 2026-07-02
 date_modified: 2026-10-04
 keywords: ["rice lake boat rentals","pontoon rental rice lake","boat rental gores landing","fishing boat rental kawarthas","rent a boat rice lake ontario"]
-author: Harris Boat Works
+author: "Jay Harris"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/rice-lake-boat-rental-guide-2026
+source_url: https://www.mercuryrepower.ca/blog/rice-lake-boat-rental-guide-2026
 content_type: blog_article
 language: en-CA
 revenue_driver: rentals

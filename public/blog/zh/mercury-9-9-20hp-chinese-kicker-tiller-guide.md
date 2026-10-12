@@ -13,7 +13,10 @@ category: "小马力指南"
 date_published: 2026-05-10
 date_modified: 2026-10-04
 keywords: ["Mercury 9.9 20HP 中文","Mercury kicker 中文","tiller 船外机中文","小铝船 Mercury"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/zh/mercury-9-9-20hp-chinese-kicker-tiller-guide
+source_url: https://www.mercuryrepower.ca/blog/zh/mercury-9-9-20hp-chinese-kicker-tiller-guide
 content_type: blog_article
 language: zh-CN
 revenue_driver: repower

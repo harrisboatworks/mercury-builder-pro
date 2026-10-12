@@ -13,7 +13,10 @@ category: "中马力指南"
 date_published: 2026-05-10
 date_modified: 2026-09-11
 keywords: ["Mercury 40 60HP 中文","铝船 Mercury 60HP","华人钓友船外机","安省 fishing boat Mercury"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/zh/mercury-40-60hp-chinese-fishing-boat-guide
+source_url: https://www.mercuryrepower.ca/blog/zh/mercury-40-60hp-chinese-fishing-boat-guide
 content_type: blog_article
 language: zh-CN
 revenue_driver: repower

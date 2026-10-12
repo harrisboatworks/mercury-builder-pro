@@ -13,7 +13,10 @@ category: "Maintenance"
 date_published: 2026-03-30
 date_modified: 2026-10-04
 keywords: ["spring boat commissioning","outboard commissioning","spring boat startup","mercury spring maintenance","boat season prep"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/spring-outboard-commissioning-checklist
+source_url: https://www.mercuryrepower.ca/blog/spring-outboard-commissioning-checklist
 content_type: blog_article
 language: en-CA
 revenue_driver: service

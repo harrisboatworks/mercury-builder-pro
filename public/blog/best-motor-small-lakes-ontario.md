@@ -13,7 +13,10 @@ category: "Buying Guide"
 date_published: 2026-04-17
 date_modified: 2026-10-06
 keywords: ["small lake motor","cottage lake outboard","hp restricted lake","electric motor limit lake","ontario lake motor"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/best-motor-small-lakes-ontario
+source_url: https://www.mercuryrepower.ca/blog/best-motor-small-lakes-ontario
 content_type: blog_article
 language: en-CA
 revenue_driver: repower

@@ -13,7 +13,10 @@ category: "Buying Guide"
 date_published: 2026-04-06
 date_modified: 2026-10-03
 keywords: ["tiller vs remote outboard","tiller steering boat","outboard remote steering","boat steering options","mercury tiller motor"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/tiller-vs-remote-steering-outboard-guide
+source_url: https://www.mercuryrepower.ca/blog/tiller-vs-remote-steering-outboard-guide
 content_type: blog_article
 language: en-CA
 revenue_driver: repower

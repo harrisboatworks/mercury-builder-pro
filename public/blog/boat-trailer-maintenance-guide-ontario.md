@@ -13,7 +13,10 @@ category: "Service"
 date_published: 2026-05-26
 date_modified: 2026-09-06
 keywords: ["boat trailer check","boat trailer maintenance","Ontario towing","trailer tires","safety chains"]
-author: Harris Boat Works
+author: "Jay Harris"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/boat-trailer-maintenance-guide-ontario
+source_url: https://www.mercuryrepower.ca/blog/boat-trailer-maintenance-guide-ontario
 content_type: blog_article
 language: en-CA
 revenue_driver: service

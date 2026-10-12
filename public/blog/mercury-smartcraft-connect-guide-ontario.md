@@ -13,7 +13,10 @@ category: "Mercury Outboards"
 date_published: 2026-05-09
 date_modified: 2026-10-06
 keywords: ["Mercury SmartCraft Connect","Mercury Marine app setup","SmartCraft Connect compatibility","VesselView Mobile vs SmartCraft Connect","SmartCraft Connect Mobile install"]
-author: Harris Boat Works
+author: "Jay Harris"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/mercury-smartcraft-connect-guide-ontario
+source_url: https://www.mercuryrepower.ca/blog/mercury-smartcraft-connect-guide-ontario
 content_type: blog_article
 language: en-CA
 revenue_driver: service

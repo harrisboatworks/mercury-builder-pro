@@ -13,7 +13,10 @@ category: "Maintenance"
 date_published: 2026-05-17
 date_modified: 2026-09-06
 keywords: ["Mercury 故障排查","outboard troubleshooting","船外机不启动","SmartCraft alarm","安省 Mercury service","HBW service"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/zh/mercury-outboard-troubleshooting-chinese-ontario
+source_url: https://www.mercuryrepower.ca/blog/zh/mercury-outboard-troubleshooting-chinese-ontario
 content_type: blog_article
 language: zh-CN
 revenue_driver: service

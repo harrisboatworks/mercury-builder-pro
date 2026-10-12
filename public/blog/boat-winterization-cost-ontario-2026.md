@@ -13,7 +13,10 @@ category: "Maintenance"
 date_published: 2026-04-21
 date_modified: 2026-09-06
 keywords: ["boat winterization cost ontario","mercury outboard winterization price","harris boat works winter storage"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/boat-winterization-cost-ontario-2026
+source_url: https://www.mercuryrepower.ca/blog/boat-winterization-cost-ontario-2026
 content_type: blog_article
 language: en-CA
 revenue_driver: service

@@ -13,7 +13,10 @@ category: "Avis produit"
 date_published: 2026-05-13
 date_modified: 2026-10-06
 keywords: ["revue Mercury 75 HP","Mercury 75 HP FourStroke","Mercury 75 vs 90","Mercury 75 ELPT Ontario","Mercury 90 mieux que 75"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/fr/revue-mercury-75-hp-fourstroke-ontario
+source_url: https://www.mercuryrepower.ca/blog/fr/revue-mercury-75-hp-fourstroke-ontario
 content_type: blog_article
 language: fr-CA
 revenue_driver: repower

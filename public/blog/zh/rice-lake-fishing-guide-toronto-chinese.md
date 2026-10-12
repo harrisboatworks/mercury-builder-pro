@@ -13,7 +13,10 @@ category: "钓鱼指南"
 date_published: 2026-04-12
 date_modified: 2026-10-06
 keywords: ["Rice Lake钓鱼","多伦多华人钓鱼","安大略省钓鱼攻略","Rice Lake fishing guide Chinese"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/zh/rice-lake-fishing-guide-toronto-chinese
+source_url: https://www.mercuryrepower.ca/blog/zh/rice-lake-fishing-guide-toronto-chinese
 content_type: blog_article
 language: zh-CN
 revenue_driver: rentals

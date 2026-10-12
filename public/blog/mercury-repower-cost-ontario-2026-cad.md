@@ -13,7 +13,10 @@ category: "Repower Cost & Pricing"
 date_published: 2026-04-17
 date_modified: 2026-09-06
 keywords: ["Mercury repower cost Ontario","Mercury repower cost Canada 2026","Mercury outboard price CAD","boat repower cost Ontario","Mercury engine price Canada"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/mercury-repower-cost-ontario-2026-cad
+source_url: https://www.mercuryrepower.ca/blog/mercury-repower-cost-ontario-2026-cad
 content_type: blog_article
 language: en-CA
 revenue_driver: repower

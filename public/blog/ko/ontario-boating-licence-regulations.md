@@ -13,7 +13,10 @@ category: "규정 가이드"
 date_published: 2026-04-12
 date_modified: 2026-10-04
 keywords: ["온타리오 보트 면허 규정","캐나다 보트 면허","PCOC 한국어","Ontario boating regulations Korean"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/ko/ontario-boating-licence-regulations
+source_url: https://www.mercuryrepower.ca/blog/ko/ontario-boating-licence-regulations
 content_type: blog_article
 language: ko-KR
 revenue_driver: repower

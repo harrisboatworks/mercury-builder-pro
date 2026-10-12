@@ -13,7 +13,10 @@ category: "Service"
 date_published: 2026-07-02
 date_modified: 2026-10-11
 keywords: ["milky gearcase oil","water in lower unit oil","gearcase oil change ontario","outboard gear oil milky","lower unit seal replacement cost"]
-author: Harris Boat Works
+author: "Jay Harris"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/milky-gearcase-oil-meaning-cost-ontario
+source_url: https://www.mercuryrepower.ca/blog/milky-gearcase-oil-meaning-cost-ontario
 content_type: blog_article
 language: en-CA
 revenue_driver: service

@@ -1,4 +1,5 @@
-import { agentFinancingGuidance } from './lib/agent-contract-docs.mjs';
+import { buildAgentBlogIndex, blogCitationFields, agentDiscoveryGuidance } from './lib/public-blog-catalog.mjs';
+import { agentFinancingGuidance, readPublicMcpCatalog } from './lib/agent-contract-docs.mjs';
 import { writeFileSync, mkdirSync, rmSync, existsSync, readdirSync, readFileSync } from 'fs';
 import { join, resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
@@ -19,6 +20,11 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
 const PUBLIC = join(ROOT, 'public');
 const SITE_URL = 'https://www.mercuryrepower.ca';
+const mcpManifestPath = join(PUBLIC, '.well-known/mcp.json');
+const mcpManifest = JSON.parse(readFileSync(mcpManifestPath, 'utf8'));
+mcpManifest.version = '2.0.0';
+mcpManifest.tools = readPublicMcpCatalog(readFileSync(join(ROOT, 'supabase/functions/agent-mcp-server/index.ts'), 'utf8'));
+writeFileSync(mcpManifestPath, JSON.stringify(mcpManifest, null, 2) + '\n');
 const PUBLIC_QUOTE_API = 'https://www.mercuryrepower.ca/api/agents/quote';
 const PUBLIC_MOTORS_API = 'https://www.mercuryrepower.ca/api/agents/motors';
 const AGENT_MCP_SERVER = 'https://www.mercuryrepower.ca/api/agents/mcp';
@@ -1459,7 +1465,7 @@ function blogMarkdown(article, clusterData, routePrefix = '/blog', language = 'e
     `date_published: ${article.datePublished}`,
     `date_modified: ${article.dateModified}`,
     `keywords: ${JSON.stringify(article.keywords || [])}`,
-    `author: Harris Boat Works`,
+    ...blogCitationFields(article, { htmlUrl: url, translated: language !== 'en-CA' }),
     `content_type: blog_article`,
     `language: ${language}`,
     `revenue_driver: ${revenueDriver}`,
@@ -1862,6 +1868,11 @@ for (const group of localizedBlogGroups) {
 console.log(`[markdown-twins] wrote ${blogTwinSummaries.length} blog twins`);
 
 writePublicMd('/catalog.md', catalogMarkdown(motorTwinSummaries, caseStudyTwinSummaries, locationTwinSummaries, blogTwinSummaries));
+writeFileSync(join(PUBLIC, 'agent-blog-index.json'), JSON.stringify(buildAgentBlogIndex({ englishArticles: blogArticlesAll, localizedGroups: localizedBlogGroups, siteUrl: SITE_URL }), null, 2) + '\n');
+const agentGuidance = '\n## Blog citations and agent actions\n\n' + agentDiscoveryGuidance(SITE_URL).join('\n') + '\n';
+const catalogFile = join(PUBLIC, 'catalog.md');
+writeFileSync(catalogFile, readFileSync(catalogFile, 'utf8') + agentGuidance);
+
 writePublicMd('/pricing-reference.md', pricingReferenceMarkdown(quoteBuilderMotorRecords));
 
 // Emit machine-readable Product+Offer schema for AI-search citation parity.

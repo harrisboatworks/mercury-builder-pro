@@ -13,7 +13,10 @@ category: "Winterization"
 date_published: 2026-05-17
 date_modified: 2026-09-06
 keywords: ["winter boat storage near Toronto","boat storage Toronto","winter boat storage Ontario","shrinkwrap GTA","boat winterization Mississauga","off-season boat storage Kawarthas"]
-author: Harris Boat Works
+author: "Jay Harris"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/winter-storage-near-toronto-hbw
+source_url: https://www.mercuryrepower.ca/blog/winter-storage-near-toronto-hbw
 content_type: blog_article
 language: en-CA
 revenue_driver: service

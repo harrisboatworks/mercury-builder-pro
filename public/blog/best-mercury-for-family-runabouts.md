@@ -13,7 +13,10 @@ category: "Buying Guide"
 date_published: 2026-05-06
 date_modified: 2026-10-06
 keywords: ["mercury family boat motor","family runabout outboard","mercury for pontoon","best mercury for recreation","family boat motor size","best Mercury outboard family runabout","Mercury 90 HP family boat","Mercury 150 HP runabout","family runabout horsepower","watersports family boat motor","quiet outboard family"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/best-mercury-for-family-runabouts
+source_url: https://www.mercuryrepower.ca/blog/best-mercury-for-family-runabouts
 content_type: blog_article
 language: en-CA
 revenue_driver: repower

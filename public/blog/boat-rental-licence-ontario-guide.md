@@ -13,7 +13,10 @@ category: "Boating Lifestyle"
 date_published: 2026-07-02
 date_modified: 2026-10-04
 keywords: ["licence to rent a boat ontario","boat rental licence ontario","pcoc for rental boat","boating licence rice lake","temporary boat licence ontario"]
-author: Harris Boat Works
+author: "Jay Harris"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/boat-rental-licence-ontario-guide
+source_url: https://www.mercuryrepower.ca/blog/boat-rental-licence-ontario-guide
 content_type: blog_article
 language: en-CA
 revenue_driver: rentals

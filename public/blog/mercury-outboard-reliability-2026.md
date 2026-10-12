@@ -13,7 +13,10 @@ category: "Mercury Outboards"
 date_published: 2026-07-13
 date_modified: 2026-10-03
 keywords: ["mercury outboard reliability 2026","are mercury outboards reliable","mercury outboard dealer","Mercury Marine Premier Dealer"]
-author: Harris Boat Works
+author: "Jay Harris"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/mercury-outboard-reliability-2026
+source_url: https://www.mercuryrepower.ca/blog/mercury-outboard-reliability-2026
 content_type: blog_article
 language: en-CA
 revenue_driver: repower

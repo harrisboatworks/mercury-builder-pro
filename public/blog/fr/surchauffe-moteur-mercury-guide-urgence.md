@@ -13,7 +13,10 @@ category: "Dépannage"
 date_published: 2026-05-13
 date_modified: 2026-09-26
 keywords: ["surchauffe hors-bord quoi faire","Mercury hors-bord surchauffe","Mercury remplacement turbine","jet témoin faible","lac Rice prise eau bouchée","alarme surchauffe hors-bord"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/fr/surchauffe-moteur-mercury-guide-urgence
+source_url: https://www.mercuryrepower.ca/blog/fr/surchauffe-moteur-mercury-guide-urgence
 content_type: blog_article
 language: fr-CA
 revenue_driver: service

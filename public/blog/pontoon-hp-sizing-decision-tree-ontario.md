@@ -13,7 +13,10 @@ category: "Mercury Outboards"
 date_published: 2026-03-26
 date_modified: 2026-10-06
 keywords: ["pontoon hp","horsepower sizing","mercury","command thrust","tritoon"]
-author: Harris Boat Works
+author: "Jay Harris"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/pontoon-hp-sizing-decision-tree-ontario
+source_url: https://www.mercuryrepower.ca/blog/pontoon-hp-sizing-decision-tree-ontario
 content_type: blog_article
 language: en-CA
 revenue_driver: repower

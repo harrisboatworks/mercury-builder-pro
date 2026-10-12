@@ -13,7 +13,10 @@ category: "Buying Guide"
 date_published: 2026-03-09
 date_modified: 2026-10-06
 keywords: ["bass boat motor","mercury pro xs bass","best bass boat outboard","tournament bass motor","mercury 200 bass boat"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/bass-boat-mercury-motor-buying-guide
+source_url: https://www.mercuryrepower.ca/blog/bass-boat-mercury-motor-buying-guide
 content_type: blog_article
 language: en-CA
 revenue_driver: repower

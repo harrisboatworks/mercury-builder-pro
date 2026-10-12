@@ -13,7 +13,10 @@ category: "Lifestyle"
 date_published: 2026-05-08
 date_modified: 2026-10-06
 keywords: ["Trent-Severn Waterway 2026 guide","Trent-Severn free lockage 2026","Canada Strong Pass boating","Trent-Severn locks hours 2026","Rice Lake Trent-Severn","boating Trent-Severn for beginners"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/trent-severn-waterway-boating-guide-2026
+source_url: https://www.mercuryrepower.ca/blog/trent-severn-waterway-boating-guide-2026
 content_type: blog_article
 language: en-CA
 revenue_driver: rentals

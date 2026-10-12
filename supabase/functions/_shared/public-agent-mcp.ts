@@ -188,16 +188,40 @@ function parseTradeIn(value: unknown, field: string) {
   };
 }
 
-function parseContact(value: unknown) {
-  if (value == null) return undefined;
+export const QUOTE_CONTACT_MIGRATION_ERROR =
+  "build_quote is read-only and does not accept a nonempty contact block. Call submit_quote_lead with consent=true and a contact block containing name and email. consent is the caller's explicit permission to store that contact with the quote. This server does not issue a consent receipt, and tool annotations are hints, not authorization.";
+
+export const SUBMIT_QUOTE_LEAD_CONSENT_ERROR =
+  "submit_quote_lead requires consent=true before any contact is sent to the quote API. Refusing to submit without that explicit consent. This server does not issue a consent receipt.";
+
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+function contactBlockIsNonempty(value: unknown): boolean {
+  if (value == null) return false;
+  if (!isPlainObject(value)) return true;
+  return Object.values(value).some((entry) => {
+    if (entry == null) return false;
+    if (typeof entry === "string") return entry.trim().length > 0;
+    return true;
+  });
+}
+
+function parseRequiredLeadContact(value: unknown) {
   if (!isPlainObject(value)) {
-    throw new McpInvalidParamsError("contact must be an object.");
+    throw new McpInvalidParamsError("submit_quote_lead requires a contact object with name and email.");
   }
+  const name = boundedString(value.name, MCP_MAX_STRING, "contact.name");
+  const email = boundedString(value.email, MCP_MAX_STRING, "contact.email");
+  if (!EMAIL_RE.test(email)) {
+    throw new McpInvalidParamsError("contact.email must be an email address.");
+  }
+  const phone = optionalBoundedString(value.phone, 50, "contact.phone");
+  const referrer = optionalBoundedString(value.referrer, MCP_MAX_NOTE, "contact.referrer");
   return {
-    name: optionalBoundedString(value.name, MCP_MAX_STRING, "contact.name"),
-    email: optionalBoundedString(value.email, MCP_MAX_STRING, "contact.email"),
-    phone: optionalBoundedString(value.phone, 50, "contact.phone"),
-    referrer: optionalBoundedString(value.referrer, MCP_MAX_NOTE, "contact.referrer"),
+    name,
+    email,
+    ...(phone ? { phone } : {}),
+    ...(referrer ? { referrer } : {}),
   };
 }
 
@@ -212,7 +236,7 @@ function parseBoatInfo(value: unknown) {
   };
 }
 
-function parseBuildQuoteArgs(args: Record<string, unknown>) {
+function parseQuoteCalculationArgs(args: Record<string, unknown>) {
   const purchasePath = optionalBoundedString(args.purchase_path, 20, "purchase_path");
   if (purchasePath && !PURCHASE_PATHS.has(purchasePath)) {
     throw new McpInvalidParamsError("purchase_path must be installed or loose.");
@@ -226,12 +250,53 @@ function parseBuildQuoteArgs(args: Record<string, unknown>) {
     customer_has_propeller: optionalBoolean(args.customer_has_propeller, "customer_has_propeller"),
     boat_info: parseBoatInfo(args.boat_info),
     trade_in: parseTradeIn(args.trade_in, "trade_in"),
-    contact: parseContact(args.contact),
   };
   if (!parsed.motor_id && !(parsed.horsepower && parsed.family)) {
     throw new McpInvalidParamsError("Required: motor_id, OR (horsepower + family).");
   }
   return parsed;
+}
+
+function parseBuildQuoteArgs(args: Record<string, unknown>) {
+  if (contactBlockIsNonempty(args.contact)) {
+    throw new McpInvalidParamsError(QUOTE_CONTACT_MIGRATION_ERROR);
+  }
+  return parseQuoteCalculationArgs(args);
+}
+
+function parseSubmitQuoteLeadArgs(args: Record<string, unknown>) {
+  if (args.consent !== true) {
+    throw new McpInvalidParamsError(SUBMIT_QUOTE_LEAD_CONSENT_ERROR);
+  }
+  return {
+    ...parseQuoteCalculationArgs(args),
+    contact: parseRequiredLeadContact(args.contact),
+  };
+}
+
+export function mcpQuoteLeadResult(payload: unknown) {
+  const upstream = mcpUpstreamErrorResult(payload);
+  if (upstream.isError) return upstream;
+  const record = payload !== null && typeof payload === "object"
+    ? payload as Record<string, unknown>
+    : null;
+  if (!record || record.lead_captured !== true) {
+    const reason = record?.lead_capture_error
+      || record?.lead_validation_error
+      || "Lead was not stored. submit_quote_lead did not capture a contact.";
+    return mcpToolResult({ ...(record || {}), error: reason }, true);
+  }
+  return upstream;
+}
+
+export async function runPublicQuoteTool(
+  name: "build_quote" | "submit_quote_lead",
+  rawArgs: unknown,
+  callApi: (action: string, args: Record<string, unknown>) => Promise<unknown>,
+) {
+  const args = parseMcpToolArguments(name, rawArgs);
+  const payload = await callApi("build_quote", args);
+  return name === "submit_quote_lead" ? mcpQuoteLeadResult(payload) : mcpUpstreamErrorResult(payload);
 }
 
 export function parseMcpToolArguments(name: string, rawArgs: unknown): Record<string, unknown> {
@@ -251,6 +316,8 @@ export function parseMcpToolArguments(name: string, rawArgs: unknown): Record<st
       return parseTradeIn(rawArgs, "estimate_trade_in") as Record<string, unknown>;
     case "build_quote":
       return parseBuildQuoteArgs(rawArgs);
+    case "submit_quote_lead":
+      return parseSubmitQuoteLeadArgs(rawArgs);
     case "get_brand_rules":
       return {};
     default:

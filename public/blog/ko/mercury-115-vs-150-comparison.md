@@ -13,7 +13,10 @@ category: "엔진 비교"
 date_published: 2026-04-12
 date_modified: 2026-09-06
 keywords: ["Mercury 115 vs 150 비교","Mercury 선외기 선택","Mercury 마력 비교","Mercury 115 vs 150 Korean"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/ko/mercury-115-vs-150-comparison
+source_url: https://www.mercuryrepower.ca/blog/ko/mercury-115-vs-150-comparison
 content_type: blog_article
 language: ko-KR
 revenue_driver: repower

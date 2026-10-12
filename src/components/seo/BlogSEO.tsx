@@ -1,3 +1,4 @@
+import { blogPostingAuthor } from '@/lib/blogCitation.js';
 import { Helmet } from '@/lib/helmet';
 import { BlogArticle } from '@/data/blogArticles';
 import { SITE_URL } from '@/lib/site';
@@ -68,28 +69,7 @@ export function BlogSEO({ article }: BlogSEOProps) {
         "headline": sanitizeForSchema(article.title),
         "description": cleanDescription,
         ...(absoluteShareImage ? { "image": absoluteShareImage } : {}),
-        "author": /troubleshoot|alarm|wont-start|overheating|winterization|smartcraft-alarm|service-cost|electrical/.test(article.slug)
-          ? {
-              "@type": "Organization",
-              "name": "Harris Boat Works Service Team",
-              "url": `${SITE_URL}/about/jay-harris`,
-              "parentOrganization": {
-                "@type": "Organization",
-                "name": "Harris Boat Works",
-                "url": "https://harrisboatworks.ca"
-              }
-            }
-          : {
-              "@type": "Person",
-              "name": "Jay Harris",
-              "jobTitle": "Owner, Harris Boat Works",
-              "url": `${SITE_URL}/about/jay-harris`,
-              "worksFor": {
-                "@type": "Organization",
-                "name": "Harris Boat Works",
-                "url": "https://harrisboatworks.ca"
-              }
-            },
+        "author": blogPostingAuthor(article.author, SITE_URL),
         "publisher": {
           "@type": "Organization",
           "name": "Harris Boat Works",

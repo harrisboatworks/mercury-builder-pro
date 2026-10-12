@@ -13,7 +13,10 @@ category: "Buying Guides"
 date_published: 2026-05-16
 date_modified: 2026-09-11
 keywords: ["pontoon vs v-hull","pontoon vs fishing boat ontario","pontoon boat ontario","v-hull boat comparison","which boat type ontario","rice lake boat type","legend pontoon vs legend v-hull"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/pontoon-vs-v-hull-comparison-ontario
+source_url: https://www.mercuryrepower.ca/blog/pontoon-vs-v-hull-comparison-ontario
 content_type: blog_article
 language: en-CA
 revenue_driver: repower

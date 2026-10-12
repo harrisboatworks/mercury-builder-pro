@@ -13,7 +13,10 @@ category: "اردو گائیڈ"
 date_published: 2026-06-12
 date_modified: 2026-10-06
 keywords: ["اونٹاریو میں مچھلی پکڑنے کا لائسنس (Fishing license Ontario)","ٹورنٹو کے قریب مچھلی پکڑنے کی جگہیں (Fishing spots near Toronto)","اونٹاریو فشنگ سیزن کیلنڈر (Ontario fishing season calendar)","مچھلی کی اقسام اونٹاریو جھیلوں میں (Fish species in Ontario lakes)","فشنگ رولز اونٹاریو برائے پاکستانی (Fishing rules Ontario for Pakistanis)"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/ur/ontario-fishing-licence-rice-lake-urdu
+source_url: https://www.mercuryrepower.ca/blog/ur/ontario-fishing-licence-rice-lake-urdu
 content_type: blog_article
 language: ur
 revenue_driver: rentals

@@ -13,7 +13,10 @@ category: "mandarin"
 date_published: 2026-05-16
 date_modified: 2026-09-06
 keywords: ["冬储","莱斯湖","GTA 华人","收缩膜","Mercury","Harris Boat Works"]
-author: Harris Boat Works
+author: "Jay Harris"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/zh/gta-chinese-rice-lake-winter-storage-complete-guide
+source_url: https://www.mercuryrepower.ca/blog/zh/gta-chinese-rice-lake-winter-storage-complete-guide
 content_type: blog_article
 language: zh-CN
 revenue_driver: service

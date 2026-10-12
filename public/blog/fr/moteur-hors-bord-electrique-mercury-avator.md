@@ -13,7 +13,10 @@ category: "Guide d'achat"
 date_published: 2026-06-08
 date_modified: 2026-09-06
 keywords: ["Mercury Avator","moteur électrique hors-bord","Avator prix Canada","Avator autonomie"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/fr/moteur-hors-bord-electrique-mercury-avator
+source_url: https://www.mercuryrepower.ca/blog/fr/moteur-hors-bord-electrique-mercury-avator
 content_type: blog_article
 language: fr-CA
 revenue_driver: avator

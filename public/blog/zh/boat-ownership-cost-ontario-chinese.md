@@ -13,7 +13,10 @@ category: "Buying Guides"
 date_published: 2026-05-17
 date_modified: 2026-10-04
 keywords: ["船只持有成本","boat ownership cost Ontario","华人船主预算","winterization 费用","HBW service cost","Mercury 维护成本"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/zh/boat-ownership-cost-ontario-chinese
+source_url: https://www.mercuryrepower.ca/blog/zh/boat-ownership-cost-ontario-chinese
 content_type: blog_article
 language: zh-CN
 revenue_driver: repower

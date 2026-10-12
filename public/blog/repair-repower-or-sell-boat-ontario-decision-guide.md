@@ -13,7 +13,10 @@ category: "Buying Guides"
 date_published: 2026-05-17
 date_modified: 2026-09-11
 keywords: ["repair repower or sell boat ontario decision guide","repair repower or sell boat ontario decision guide ontario","harris boat works","mercury outboard","rice lake"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/repair-repower-or-sell-boat-ontario-decision-guide
+source_url: https://www.mercuryrepower.ca/blog/repair-repower-or-sell-boat-ontario-decision-guide
 content_type: blog_article
 language: en-CA
 revenue_driver: repower

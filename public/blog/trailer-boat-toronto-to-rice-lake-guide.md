@@ -13,7 +13,10 @@ category: "How To"
 date_published: 2026-04-26
 date_modified: 2026-10-06
 keywords: ["trailer boat toronto rice lake","ontario trailer rules","boat launch rice lake"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/trailer-boat-toronto-to-rice-lake-guide
+source_url: https://www.mercuryrepower.ca/blog/trailer-boat-toronto-to-rice-lake-guide
 content_type: blog_article
 language: en-CA
 revenue_driver: service

@@ -13,7 +13,10 @@ category: "Mercury Buying Guides"
 date_published: 2026-07-27
 date_modified: 2026-09-11
 keywords: ["mercury 60 hp review","mercury 60 fourstroke review","mercury 60 hp command thrust","mercury 60 standard vs command thrust","mercury 60 hp real world performance","mercury 60 owner reviews","mercury 60 hp Ontario"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/mercury-60-hp-fourstroke-review-ontario
+source_url: https://www.mercuryrepower.ca/blog/mercury-60-hp-fourstroke-review-ontario
 content_type: blog_article
 language: en-CA
 revenue_driver: repower

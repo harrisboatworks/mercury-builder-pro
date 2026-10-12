@@ -13,7 +13,10 @@ category: "Repowering"
 date_published: 2026-02-23
 date_modified: 2026-10-06
 keywords: ["boat repower Kawarthas","repower boat Ontario","Mercury repower process","repower vs buy new boat","Kawartha lakes repower","boat repower steps"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/complete-guide-boat-repower-kawarthas
+source_url: https://www.mercuryrepower.ca/blog/complete-guide-boat-repower-kawarthas
 content_type: blog_article
 language: en-CA
 revenue_driver: repower

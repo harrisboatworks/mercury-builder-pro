@@ -1,3 +1,4 @@
+import { mcpToolAnnotations } from '../_shared/mcp-tool-annotations.ts';
 // UCP (Universal Commerce Protocol) checkout service for Harris Boat Works.
 // Spec version 2026-04-08 (ucp.dev). QUOTE MODE by design:
 //   - payment is never collected (spec-sanctioned: "e.g., quote generation")
@@ -373,6 +374,7 @@ async function opCancel(supabase: any, existing: any, profileUrl: string | null)
 const MCP_TOOLS = [
   {
     name: "create_checkout",
+    annotations: mcpToolAnnotations("write"),
     description: "Create a UCP checkout session (quote mode) for Mercury outboards at Harris Boat Works. Item ids are HBW motor ids. Include buyer (first_name, last_name, email, phone_number) to register the quote with the dealership. Returns totals in CAD cents, pickup-only fulfillment, and a continue_url for dealer completion.",
     inputSchema: {
       type: "object",
@@ -401,12 +403,14 @@ const MCP_TOOLS = [
   },
   {
     name: "get_checkout",
+    annotations: mcpToolAnnotations("read"),
     description: "Fetch a UCP checkout session by id.",
     inputSchema: { type: "object", properties: { meta: { type: "object" }, id: { type: "string" } }, required: ["id"] },
     outputSchema: { $ref: `https://ucp.dev/${UCP_VERSION}/schemas/shopping/checkout.json` },
   },
   {
     name: "update_checkout",
+    annotations: mcpToolAnnotations("destructive-write"),
     description: "Replace a UCP checkout session (full replacement per spec).",
     inputSchema: {
       type: "object",
@@ -417,12 +421,14 @@ const MCP_TOOLS = [
   },
   {
     name: "complete_checkout",
+    annotations: mcpToolAnnotations("write"),
     description: "Attempt to complete a checkout. Harris Boat Works operates in quote mode: this returns requires_escalation with a continue_url; the dealer completes every sale with the buyer directly.",
     inputSchema: { type: "object", properties: { meta: { type: "object" }, id: { type: "string" }, payment: { type: "object" } }, required: ["id"] },
     outputSchema: { $ref: `https://ucp.dev/${UCP_VERSION}/schemas/shopping/checkout.json` },
   },
   {
     name: "cancel_checkout",
+    annotations: mcpToolAnnotations("destructive-write"),
     description: "Cancel a UCP checkout session.",
     inputSchema: { type: "object", properties: { meta: { type: "object" }, id: { type: "string" } }, required: ["id"] },
     outputSchema: { $ref: `https://ucp.dev/${UCP_VERSION}/schemas/shopping/checkout.json` },

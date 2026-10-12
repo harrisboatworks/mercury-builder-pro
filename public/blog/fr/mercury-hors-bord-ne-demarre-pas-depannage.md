@@ -13,7 +13,10 @@ category: "Dépannage"
 date_published: 2026-05-13
 date_modified: 2026-09-06
 keywords: ["Mercury hors-bord ne démarre pas","dépannage hors-bord Mercury","problème démarrage Mercury","moteur bateau ne part pas printemps","hors-bord Mercury Québec"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/fr/mercury-hors-bord-ne-demarre-pas-depannage
+source_url: https://www.mercuryrepower.ca/blog/fr/mercury-hors-bord-ne-demarre-pas-depannage
 content_type: blog_article
 language: fr-CA
 revenue_driver: service

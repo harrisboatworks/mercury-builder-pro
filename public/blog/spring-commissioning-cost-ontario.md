@@ -13,7 +13,10 @@ category: "Service"
 date_published: 2026-07-02
 date_modified: 2026-08-26
 keywords: ["spring commissioning cost","boat spring startup cost ontario","de-winterize boat cost","spring boat service ontario","boat launch preparation cost"]
-author: Harris Boat Works
+author: "Jay Harris"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/spring-commissioning-cost-ontario
+source_url: https://www.mercuryrepower.ca/blog/spring-commissioning-cost-ontario
 content_type: blog_article
 language: en-CA
 revenue_driver: service

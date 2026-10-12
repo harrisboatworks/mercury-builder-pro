@@ -13,7 +13,10 @@ category: "Troubleshooting"
 date_published: 2026-07-23
 date_modified: 2026-07-28
 keywords: ["mercury outboard fault codes","mercury fault code list","mercury smartcraft fault codes","mercury vesselview fault codes","mercury universal fault codes","mercury outboard error codes","mercury ufc codes"]
-author: Harris Boat Works
+author: "Jay Harris"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/mercury-outboard-fault-codes-lookup
+source_url: https://www.mercuryrepower.ca/blog/mercury-outboard-fault-codes-lookup
 content_type: blog_article
 language: en-CA
 revenue_driver: service

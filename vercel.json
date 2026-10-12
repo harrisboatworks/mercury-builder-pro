@@ -2460,6 +2460,24 @@
           "value": "/"
         }
       ]
+    },
+    {
+      "source": "/api/agents/quote",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-store"
+        }
+      ]
+    },
+    {
+      "source": "/api/agents/quote/:path*",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-store"
+        }
+      ]
     }
   ],
   "images": {

@@ -13,7 +13,10 @@ category: "Service & Maintenance"
 date_published: 2026-05-15
 date_modified: 2026-09-07
 keywords: ["GTA boat service","tow boat to Rice Lake","Mercury service Toronto","Harris Boat Works drive in","boat trailer GTA to Kawarthas","Mercury Premier dealer GTA east","boat storage drop off GTA","repower Ontario drive in"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/toronto-to-rice-lake-drive-in-process
+source_url: https://www.mercuryrepower.ca/blog/toronto-to-rice-lake-drive-in-process
 content_type: blog_article
 language: en-CA
 revenue_driver: service

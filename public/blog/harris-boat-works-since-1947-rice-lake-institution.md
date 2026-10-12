@@ -13,7 +13,10 @@ category: "About HBW"
 date_published: 2026-05-18
 date_modified: 2026-08-30
 keywords: ["Harris Boat Works history","family marina Rice Lake","Mercury dealer since 1965","Gores Landing marina","three generation family business Ontario","Rice Lake boat dealer"]
-author: Harris Boat Works
+author: "Jay Harris"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/harris-boat-works-since-1947-rice-lake-institution
+source_url: https://www.mercuryrepower.ca/blog/harris-boat-works-since-1947-rice-lake-institution
 content_type: blog_article
 language: en-CA
 revenue_driver: none

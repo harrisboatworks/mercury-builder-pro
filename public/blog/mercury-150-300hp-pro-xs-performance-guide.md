@@ -13,7 +13,10 @@ category: "Buying Guide"
 date_published: 2026-05-13
 date_modified: 2026-09-11
 keywords: ["mercury 150 pro xs","mercury 175 pro xs","mercury 200 pro xs","mercury 225 pro xs","mercury 250 pro xs","mercury 300 pro xs","mercury v6 vs v8","mercury pro xs comparison ontario","mercury 150-300 hp guide"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/mercury-150-300hp-pro-xs-performance-guide
+source_url: https://www.mercuryrepower.ca/blog/mercury-150-300hp-pro-xs-performance-guide
 content_type: blog_article
 language: en-CA
 revenue_driver: repower

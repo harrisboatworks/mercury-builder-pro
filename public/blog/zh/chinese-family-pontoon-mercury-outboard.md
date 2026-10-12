@@ -13,7 +13,10 @@ category: "家庭买船指南"
 date_published: 2026-05-10
 date_modified: 2026-09-06
 keywords: ["pontoon Mercury 中文","华人家庭 pontoon","安省 pontoon 船外机","Mercury Command Thrust 中文"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/zh/chinese-family-pontoon-mercury-outboard
+source_url: https://www.mercuryrepower.ca/blog/zh/chinese-family-pontoon-mercury-outboard
 content_type: blog_article
 language: zh-CN
 revenue_driver: repower

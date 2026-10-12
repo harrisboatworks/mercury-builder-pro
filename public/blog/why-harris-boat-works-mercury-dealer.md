@@ -13,7 +13,10 @@ category: "About Us"
 date_published: 2026-05-04
 date_modified: 2026-09-11
 keywords: ["mercury dealer ontario","harris boat works","mercury outboard dealer","mercury sales peterborough","trusted boat dealer ontario"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/why-harris-boat-works-mercury-dealer
+source_url: https://www.mercuryrepower.ca/blog/why-harris-boat-works-mercury-dealer
 content_type: blog_article
 language: en-CA
 revenue_driver: repower

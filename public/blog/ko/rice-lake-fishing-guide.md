@@ -13,7 +13,10 @@ category: "낚시 가이드"
 date_published: 2026-04-12
 date_modified: 2026-10-06
 keywords: ["Rice Lake 낚시 가이드","온타리오 낚시","토론토 근처 낚시","Rice Lake fishing guide Korean"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/ko/rice-lake-fishing-guide
+source_url: https://www.mercuryrepower.ca/blog/ko/rice-lake-fishing-guide
 content_type: blog_article
 language: ko-KR
 revenue_driver: rentals

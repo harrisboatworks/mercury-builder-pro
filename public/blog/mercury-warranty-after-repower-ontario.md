@@ -13,7 +13,10 @@ category: "Warranty & Protection"
 date_published: 2026-06-06
 date_modified: 2026-09-06
 keywords: ["mercury warranty repower","mercury premier dealer warranty","mercury factory warranty","mercury extended warranty","mercury break-in period"]
-author: Harris Boat Works
+author: "Jay Harris"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/mercury-warranty-after-repower-ontario
+source_url: https://www.mercuryrepower.ca/blog/mercury-warranty-after-repower-ontario
 content_type: blog_article
 language: en-CA
 revenue_driver: repower

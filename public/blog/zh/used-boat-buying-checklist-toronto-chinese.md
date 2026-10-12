@@ -13,7 +13,10 @@ category: "Buying Guides"
 date_published: 2026-05-17
 date_modified: 2026-10-04
 keywords: ["二手船购买","used boat checklist","多伦多华人买二手船","船只检查清单","Mercury 二手 inspection","Harris Boat Works"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/zh/used-boat-buying-checklist-toronto-chinese
+source_url: https://www.mercuryrepower.ca/blog/zh/used-boat-buying-checklist-toronto-chinese
 content_type: blog_article
 language: zh-CN
 revenue_driver: repower

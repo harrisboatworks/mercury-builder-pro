@@ -1,3 +1,5 @@
+import { blogPostingAuthor, visibleBlogAuthorName } from '../src/lib/blogCitation.js';
+import { agentDiscoveryGuidance } from './lib/public-blog-catalog.mjs';
 // Last rebuild trigger: 2026-05-12T15:00:00Z (force prerender against current blogArticles.ts)
 /**
  * Static HTML stamping for crawler-friendly per-route HTML.
@@ -1683,7 +1685,7 @@ function agentsPageSchema() {
     },
     {
       q: "What MCP tools does Harris Boat Works expose?",
-      a: "search_motors, get_motor, estimate_trade_in, build_quote, and get_brand_rules. The full manifest is at /.well-known/mcp.json."
+      a: "search_motors, get_motor, estimate_trade_in, build_quote, submit_quote_lead, get_brand_rules, search_articles, and get_article. The full manifest is at /.well-known/mcp.json."
     },
     {
       q: "What deep-link parameters does the quote form accept?",
@@ -2838,9 +2840,7 @@ function blogArticleSchema(article) {
       "headline": sanitizeSchemaText(article.title),
       "description": description,
       ...(absoluteShareImage ? { "image": absoluteShareImage } : {}),
-      "author": /troubleshoot|alarm|wont-start|overheating|winterization|smartcraft-alarm|service-cost|electrical/.test(article.slug)
-        ? { "@type": "Organization", "name": "Harris Boat Works Service Team", "url": `${SITE_URL}/about/jay-harris`, "parentOrganization": { "@type": "Organization", "name": "Harris Boat Works", "url": "https://harrisboatworks.ca" } }
-        : { "@type": "Person", "name": "Jay Harris", "jobTitle": "Owner, Harris Boat Works", "url": `${SITE_URL}/about/jay-harris`, "worksFor": { "@type": "Organization", "name": "Harris Boat Works", "url": "https://harrisboatworks.ca" } },
+      "author": blogPostingAuthor(article.author, SITE_URL),
       "publisher": { "@type": "Organization", "name": "Harris Boat Works", "@id": `${SITE_URL}/#organization` },
       "datePublished": article.datePublished,
       "dateModified": article.dateModified,
@@ -3137,8 +3137,8 @@ function renderHeroPictureHtml(image, alt, photoSlot) {
 }
 
 function renderAuthorBylineHtml(authorName) {
-  const name = escapeHtml(authorName || 'Jay Harris');
-  const isJay = (authorName || 'Jay Harris') === 'Jay Harris';
+  const name = escapeHtml(visibleBlogAuthorName(authorName));
+  const isJay = visibleBlogAuthorName(authorName) === 'Jay Harris';
   const credentials = isJay ? 'Owner, Harris Boat Works' : '';
   const link = isJay ? ` <a href="/about/jay-harris">View bio →</a>` : '';
   return (
@@ -3298,7 +3298,7 @@ function buildTranslatedBlogRoutes(articles, langCode, dealerStripHtml, ogLocale
         "inLanguage": inLanguage,
         "datePublished": article.datePublished,
         "dateModified": article.dateModified || article.datePublished,
-        "author": { "@type": "Organization", "name": "Harris Boat Works", "@id": `${SITE_URL}/#organization` },
+        "author": blogPostingAuthor(article.author, SITE_URL, { translated: true }),
         "publisher": { "@type": "Organization", "name": "Harris Boat Works", "@id": `${SITE_URL}/#organization` },
         "mainEntityOfPage": `${SITE_URL}/blog/${langCode}/${article.slug}`
       },
@@ -5386,7 +5386,10 @@ const routes = [
           '<li><strong>search_motors</strong>: Search current Mercury outboard inventory. Returns HP, shaft length, CAD price, and availability.</li>' +
           '<li><strong>get_motor</strong>: Retrieve a single motor by ID or slug.</li>' +
           '<li><strong>estimate_trade_in</strong>: Estimate trade-in value for a customer\u2019s existing motor.</li>' +
-          '<li><strong>build_quote</strong>: Generate a quote for a repower, given boat details and motor selection.</li>' +
+          '<li><strong>build_quote</strong>: Read-only itemized CAD quote; contact is not accepted. Use submit_quote_lead to store a lead.</li>' +
+          '<li><strong>submit_quote_lead</strong>: Submit contact with consent=true. Confirm lead_captured before claiming storage; do not automatically retry uncertain writes.</li>' +
+          '<li><strong>search_articles</strong>: Search published public guides with canonical HTML citation URLs, authors and dates.</li>' +
+          '<li><strong>get_article</strong>: Read a listed guide by slug and language. Bounded Markdown, explicit truncation, no caller-selected URL. Ingest Markdown and cite the HTML URL.</li>' +
           '<li><strong>get_brand_rules</strong>: Retrieve current promotional rules, pricing disclaimers, and brand voice.</li>' +
         '</ul>' +
         '<p>See <a href="/.well-known/mcp.json">/.well-known/mcp.json</a> for the full manifest.</p>' +
@@ -7046,6 +7049,8 @@ const catalogBlogTwinSummaries = [
 ];
 
 writeMd('/catalog.md', catalogMarkdown(motorTwinSummaries, caseStudyTwinSummaries, locationTwinSummaries, catalogBlogTwinSummaries));
+const catalogDist = join(DIST, 'catalog.md');
+writeFileSync(catalogDist, readFileSync(catalogDist, 'utf8') + '\n## Blog citations and agent actions\n\n' + agentDiscoveryGuidance(SITE_URL).join('\n') + '\n');
 
 console.log(`[static-prerender] ✓ markdown twins written: ${motorTwinSummaries.length} motors, ${caseStudyTwinSummaries.length} case studies, ${locationTwinSummaries.length} locations, ${catalogBlogTwinSummaries.length} blog guide links, 1 catalog, 1 service index`);
 

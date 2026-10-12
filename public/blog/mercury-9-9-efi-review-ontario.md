@@ -13,7 +13,10 @@ category: "Mercury Buying Guides"
 date_published: 2026-05-10
 date_modified: 2026-09-23
 keywords: ["mercury 9.9 efi review","mercury 9.9 mh efi","mercury 9.9 fuel injected outboard","mercury 9.9 efi ontario","mercury 9.9 outboard price ontario","mercury 9.9 efi vs prokicker"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/mercury-9-9-efi-review-ontario
+source_url: https://www.mercuryrepower.ca/blog/mercury-9-9-efi-review-ontario
 content_type: blog_article
 language: en-CA
 revenue_driver: repower

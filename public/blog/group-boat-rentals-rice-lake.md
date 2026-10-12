@@ -13,7 +13,10 @@ category: "Boating Lifestyle"
 date_published: 2026-07-02
 date_modified: 2026-10-04
 keywords: ["group boat rental rice lake","family reunion boat rental ontario","rent multiple boats","pontoon rental for large group","fishing weekend boat rental kawarthas"]
-author: Harris Boat Works
+author: "Jay Harris"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/group-boat-rentals-rice-lake
+source_url: https://www.mercuryrepower.ca/blog/group-boat-rentals-rice-lake
 content_type: blog_article
 language: en-CA
 revenue_driver: rentals

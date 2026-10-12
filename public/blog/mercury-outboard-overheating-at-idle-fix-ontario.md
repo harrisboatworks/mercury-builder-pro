@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-overheating-at-idle-fix-ontario.md
-last_updated: 2026-09-07
+last_updated: 2026-10-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,9 +11,12 @@ title: "Mercury Overheating at Idle Fix"
 description: "Mercury outboard overheating at idle but fine at speed: diagnostic flow for water pump impeller, intake debris, thermostat, sensors."
 category: "Troubleshooting"
 date_published: 2026-05-11
-date_modified: 2026-09-07
+date_modified: 2026-10-11
 keywords: ["mercury outboard overheating","mercury overheating at idle","mercury water pump impeller","mercury tell-tale not pissing","mercury cooling system fix ontario"]
-author: Harris Boat Works
+author: "Jay Harris"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/mercury-outboard-overheating-at-idle-fix-ontario
+source_url: https://www.mercuryrepower.ca/blog/mercury-outboard-overheating-at-idle-fix-ontario
 content_type: blog_article
 language: en-CA
 revenue_driver: service
@@ -25,7 +28,7 @@ revenue_driver: service
 
 **Category:** Troubleshooting  
 **Published:** 2026-05-11  
-**Last reviewed:** 2026-09-07  
+**Last reviewed:** 2026-10-11  
 **Read time:** 7 min  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-overheating-at-idle-fix-ontario
 
@@ -50,6 +53,10 @@ Most cooling systems work by pumping water through a circuit. If the motor cools
 This is the diagnostic sequence we'd walk through for this specific symptom.
 
 ---
+
+[Interactive: how your outboard stays cool](/explainers/outboard-cooling.html)
+
+*Drag the throttle and switch on a fault to see how each one shows up. Values are illustrative.*
 
 ## Step 1: Read the Tell-Tale
 

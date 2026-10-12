@@ -13,7 +13,10 @@ category: "Buying Guide"
 date_published: 2026-02-06
 date_modified: 2026-09-11
 keywords: ["mercury avator","electric outboard motor","avator electric boat","electric boating ontario","mercury electric motor","cottage boat electric","rice lake electric outboard","avator range runtime","avator cost canada"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/mercury-avator-electric-boating-ontario
+source_url: https://www.mercuryrepower.ca/blog/mercury-avator-electric-boating-ontario
 content_type: blog_article
 language: en-CA
 revenue_driver: avator

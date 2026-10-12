@@ -13,7 +13,10 @@ category: "Buying Guides"
 date_published: 2026-05-17
 date_modified: 2026-10-04
 keywords: ["rent to buy boat","GTA 华人租到买","first boat roadmap","rental experience","HBW rentals","Mercury buying path"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/zh/gta-chinese-rent-to-buy-boat-roadmap
+source_url: https://www.mercuryrepower.ca/blog/zh/gta-chinese-rent-to-buy-boat-roadmap
 content_type: blog_article
 language: zh-CN
 revenue_driver: repower

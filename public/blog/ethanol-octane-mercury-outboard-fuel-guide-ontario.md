@@ -13,7 +13,10 @@ category: "Service"
 date_published: 2026-04-11
 date_modified: 2026-09-11
 keywords: ["Mercury outboard fuel","octane","ethanol","E10","Verado fuel","Ontario marine fuel"]
-author: Harris Boat Works
+author: "Jay Harris"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario
+source_url: https://www.mercuryrepower.ca/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario
 content_type: blog_article
 language: en-CA
 revenue_driver: service

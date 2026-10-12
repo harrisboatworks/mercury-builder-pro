@@ -13,7 +13,10 @@ category: "구매 가이드"
 date_published: 2026-06-08
 date_modified: 2026-10-06
 keywords: ["머큐리 선외기 무게","머큐리 무게표","Mercury outboard weight Korean","선외기 트랜섬 무게","머큐리 115 무게"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/ko/mercury-seonoegi-muge
+source_url: https://www.mercuryrepower.ca/blog/ko/mercury-seonoegi-muge
 content_type: blog_article
 language: ko-KR
 revenue_driver: repower

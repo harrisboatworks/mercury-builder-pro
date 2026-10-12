@@ -13,7 +13,10 @@ category: "Buying Guide"
 date_published: 2026-05-24
 date_modified: 2026-09-11
 keywords: ["mercury avator 7.5e review","avator 7.5e electric outboard","mercury electric outboard ontario","avator battery life","avator range rice lake","mercury avator price canada"]
-author: Harris Boat Works
+author: "Jay Harris"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/mercury-avator-7-5e-review
+source_url: https://www.mercuryrepower.ca/blog/mercury-avator-7-5e-review
 content_type: blog_article
 language: en-CA
 revenue_driver: avator

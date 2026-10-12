@@ -13,7 +13,10 @@ category: "Boating Lifestyle"
 date_published: 2026-07-02
 date_modified: 2026-09-11
 keywords: ["renting vs owning a boat","is buying a boat worth it ontario","boat rental vs ownership cost","should i buy a boat","cost of owning a boat ontario"]
-author: Harris Boat Works
+author: "Jay Harris"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/renting-vs-owning-boat-ontario-math
+source_url: https://www.mercuryrepower.ca/blog/renting-vs-owning-boat-ontario-math
 content_type: blog_article
 language: en-CA
 revenue_driver: rentals

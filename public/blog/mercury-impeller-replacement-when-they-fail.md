@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-impeller-replacement-when-they-fail.md
-last_updated: 2026-08-02
+last_updated: 2026-10-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,9 +11,12 @@ title: "When to Replace a Mercury Impeller: 12 Years of Shop Data"
 description: "When to replace a Mercury outboard impeller, plus 12 years of HBW parts records showing when water-pump work reaches the shop."
 category: "Service & Troubleshooting"
 date_published: 2026-06-09
-date_modified: 2026-08-02
+date_modified: 2026-10-11
 keywords: ["mercury impeller replacement","outboard impeller failure symptoms","when to replace boat impeller","weak telltale stream","overheat alarm mercury"]
-author: Harris Boat Works
+author: "Jay Harris"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/mercury-impeller-replacement-when-they-fail
+source_url: https://www.mercuryrepower.ca/blog/mercury-impeller-replacement-when-they-fail
 content_type: blog_article
 language: en-CA
 revenue_driver: service
@@ -25,7 +28,7 @@ revenue_driver: service
 
 **Category:** Service & Troubleshooting  
 **Published:** 2026-06-09  
-**Last reviewed:** 2026-08-02  
+**Last reviewed:** 2026-10-11  
 **Read time:** 7 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-impeller-replacement-when-they-fail
 
@@ -68,6 +71,10 @@ Rice Lake is shallow, warm, and famously weedy. That's good habitat and a reason
 Weeds can wrap the lower unit and restrict the intake. Sand and silt can also wear pump components. Mercury warns that operating without an adequate water supply, even briefly, can damage the impeller and overheat the engine.
 
 Use the [maintenance schedule](/blog/mercury-maintenance-intervals-20-100-300-rule) for your exact engine and serial number. Inspect sooner when overheating, reduced water pressure, or abnormal water flow appears.
+
+[Interactive: how your outboard stays cool](/explainers/outboard-cooling.html)
+
+*Drag the throttle and switch on a fault to see how each one shows up. Values are illustrative.*
 
 ## The Warning Signs, in the Order We See Them
 

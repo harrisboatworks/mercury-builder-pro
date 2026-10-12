@@ -13,7 +13,10 @@ category: "Service"
 date_published: 2026-05-15
 date_modified: 2026-09-06
 keywords: ["boat service near Toronto","Mercury service Oakville","outboard repair Burlington","boat mechanic Hamilton","Mercury service GTA","certified marine mechanic Ontario"]
-author: Harris Boat Works
+author: "Jay Harris"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/boat-service-near-toronto-hbw-reach
+source_url: https://www.mercuryrepower.ca/blog/boat-service-near-toronto-hbw-reach
 content_type: blog_article
 language: en-CA
 revenue_driver: service

@@ -13,7 +13,10 @@ category: "mandarin"
 date_published: 2026-06-12
 date_modified: 2026-10-04
 keywords: ["Rice Lake 租船","繁體 多倫多","第一次 租船 釣魚","安省 釣魚證","Harris Boat Works"]
-author: Harris Boat Works
+author: "Jay Harris"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/zh-hant/first-boat-rental-rice-lake-chinese-guide
+source_url: https://www.mercuryrepower.ca/blog/zh-hant/first-boat-rental-rice-lake-chinese-guide
 content_type: blog_article
 language: zh-Hant
 revenue_driver: rentals

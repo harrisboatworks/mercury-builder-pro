@@ -13,7 +13,10 @@ category: "Boating Lifestyle"
 date_published: 2026-03-21
 date_modified: 2026-09-11
 keywords: ["docking","wind","rice lake","boat handling","single outboard"]
-author: Harris Boat Works
+author: "Jay Harris"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/docking-boat-in-wind-rice-lake
+source_url: https://www.mercuryrepower.ca/blog/docking-boat-in-wind-rice-lake
 content_type: blog_article
 language: en-CA
 revenue_driver: rentals

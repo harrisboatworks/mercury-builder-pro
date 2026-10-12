@@ -13,7 +13,10 @@ category: "Service"
 date_published: 2026-08-11
 date_modified: 2026-09-06
 keywords: ["Mercury outboard maintenance parts list","Mercury outboard oil filter part number","Mercury 100 hour maintenance kit","Mercury 300 hour service kit","Mercury outboard impeller part number"]
-author: Harris Boat Works
+author: "Jay Harris"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/mercury-outboard-maintenance-parts-list
+source_url: https://www.mercuryrepower.ca/blog/mercury-outboard-maintenance-parts-list
 content_type: blog_article
 language: en-CA
 revenue_driver: service

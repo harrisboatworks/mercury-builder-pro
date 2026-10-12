@@ -13,7 +13,10 @@ category: "Buying Guide"
 date_published: 2026-05-24
 date_modified: 2026-09-06
 keywords: ["best time to buy boat motor","when to buy mercury outboard","year end boat motor deals","boat motor buying calendar ontario","winter boat motor pricing"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/year-end-boat-motor-buying-guide
+source_url: https://www.mercuryrepower.ca/blog/year-end-boat-motor-buying-guide
 content_type: blog_article
 language: en-CA
 revenue_driver: repower

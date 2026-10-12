@@ -13,7 +13,10 @@ category: "Buying Guide"
 date_published: 2026-05-04
 date_modified: 2026-10-06
 keywords: ["rice lake pontoon","best pontoon rice lake","legend pontoon ontario","cottage pontoon boat","kawartha pontoon"]
-author: Harris Boat Works
+author: "Jay Harris"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/best-pontoon-boats-rice-lake-cottage-use
+source_url: https://www.mercuryrepower.ca/blog/best-pontoon-boats-rice-lake-cottage-use
 content_type: blog_article
 language: en-CA
 revenue_driver: repower

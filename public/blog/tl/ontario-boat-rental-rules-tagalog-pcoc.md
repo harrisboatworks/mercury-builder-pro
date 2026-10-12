@@ -13,7 +13,10 @@ category: "Tagalog Guide"
 date_published: 2026-06-12
 date_modified: 2026-10-04
 keywords: ["paano kumuha ng boat license sa Ontario (how to get a boat license in Ontario)","kailangan ba ng boat license sa Ontario (is a boat license required in Ontario)","boat operator card Ontario paano (boat operator card Ontario how)","online boat license Ontario Tagalog (online boat license Ontario Tagalog)","PCOC exam Tagalog (PCOC exam Tagalog)"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/tl/ontario-boat-rental-rules-tagalog-pcoc
+source_url: https://www.mercuryrepower.ca/blog/tl/ontario-boat-rental-rules-tagalog-pcoc
 content_type: blog_article
 language: tl
 revenue_driver: rentals

@@ -13,7 +13,10 @@ category: "Dealer Locations"
 date_published: 2026-05-11
 date_modified: 2026-10-06
 keywords: ["mercury dealer bowmanville","mercury repower bowmanville","mercury outboard bowmanville ontario","boat motor service clarington"]
-author: Harris Boat Works
+author: "Jay Harris"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/mercury-dealer-bowmanville-ontario-hbw
+source_url: https://www.mercuryrepower.ca/blog/mercury-dealer-bowmanville-ontario-hbw
 content_type: blog_article
 language: en-CA
 revenue_driver: repower

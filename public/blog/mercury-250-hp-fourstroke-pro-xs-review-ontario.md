@@ -13,7 +13,10 @@ category: "Mercury Buying Guides"
 date_published: 2026-07-27
 date_modified: 2026-09-11
 keywords: ["mercury 250 hp review","mercury 250 fourstroke review","mercury 250 pro xs review","mercury 250 fourstroke vs pro xs","mercury 250 real world performance","mercury 250 owner reviews","mercury 250 hp ontario"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/mercury-250-hp-fourstroke-pro-xs-review-ontario
+source_url: https://www.mercuryrepower.ca/blog/mercury-250-hp-fourstroke-pro-xs-review-ontario
 content_type: blog_article
 language: en-CA
 revenue_driver: repower

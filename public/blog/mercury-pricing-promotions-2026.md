@@ -13,7 +13,10 @@ category: "Buying Guide"
 date_published: 2026-05-08
 date_modified: 2026-10-06
 keywords: ["mercury outboard price 2026","mercury promotions","mercury dealer pricing","best time buy outboard","mercury financing options"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/mercury-pricing-promotions-2026
+source_url: https://www.mercuryrepower.ca/blog/mercury-pricing-promotions-2026
 content_type: blog_article
 language: en-CA
 revenue_driver: repower

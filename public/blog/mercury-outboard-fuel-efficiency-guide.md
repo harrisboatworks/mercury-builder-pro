@@ -13,7 +13,10 @@ category: "Tips"
 date_published: 2026-03-16
 date_modified: 2026-10-03
 keywords: ["outboard fuel efficiency","mercury mpg","boat fuel economy","save fuel boating","outboard consumption"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/mercury-outboard-fuel-efficiency-guide
+source_url: https://www.mercuryrepower.ca/blog/mercury-outboard-fuel-efficiency-guide
 content_type: blog_article
 language: en-CA
 revenue_driver: repower

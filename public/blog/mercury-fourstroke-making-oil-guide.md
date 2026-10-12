@@ -13,7 +13,10 @@ category: "Maintenance"
 date_published: 2026-09-26
 date_modified: 2026-09-26
 keywords: ["Mercury four stroke making oil","outboard oil level rising","fuel in oil outboard","kicker making oil trolling","Mercury oil smells like gas"]
-author: Harris Boat Works
+author: "Jay Harris"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/mercury-fourstroke-making-oil-guide
+source_url: https://www.mercuryrepower.ca/blog/mercury-fourstroke-making-oil-guide
 content_type: blog_article
 language: en-CA
 revenue_driver: service

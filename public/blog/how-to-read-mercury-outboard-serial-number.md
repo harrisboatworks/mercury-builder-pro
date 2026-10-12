@@ -13,7 +13,10 @@ category: "Buying Guide"
 date_published: 2026-05-17
 date_modified: 2026-10-04
 keywords: ["how to read Mercury serial number","decode Mercury outboard model number","Mercury outboard year by serial number","Mercury serial number lookup Ontario","find Mercury outboard model code"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/how-to-read-mercury-outboard-serial-number
+source_url: https://www.mercuryrepower.ca/blog/how-to-read-mercury-outboard-serial-number
 content_type: blog_article
 language: en-CA
 revenue_driver: repower

@@ -13,7 +13,10 @@ category: "mandarin"
 date_published: 2026-06-12
 date_modified: 2026-10-04
 keywords: ["安省 船牌","繁體 PCOC","PCL","船隻操作員卡","釣魚證"]
-author: Harris Boat Works
+author: "Jay Harris"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/zh-hant/pcoc-pcl-fishing-licence-difference-ontario
+source_url: https://www.mercuryrepower.ca/blog/zh-hant/pcoc-pcl-fishing-licence-difference-ontario
 content_type: blog_article
 language: zh-Hant
 revenue_driver: rentals

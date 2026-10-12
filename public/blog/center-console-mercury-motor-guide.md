@@ -13,7 +13,10 @@ category: "Buying Guide"
 date_published: 2026-03-23
 date_modified: 2026-10-06
 keywords: ["center console outboard","twin mercury outboard","mercury 300 verado","offshore motor","center console motor choice"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/center-console-mercury-motor-guide
+source_url: https://www.mercuryrepower.ca/blog/center-console-mercury-motor-guide
 content_type: blog_article
 language: en-CA
 revenue_driver: repower

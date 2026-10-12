@@ -13,7 +13,10 @@ category: "Concessionnaire Mercury"
 date_published: 2026-04-12
 date_modified: 2026-10-03
 keywords: ["concessionnaire Mercury Premier Ontario","concessionnaire Mercury Gores Landing","moteur Mercury Ontario","remotorisation Mercury Ontario","prix Mercury CAD"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/fr/concessionnaire-mercury-premier-ontario
+source_url: https://www.mercuryrepower.ca/blog/fr/concessionnaire-mercury-premier-ontario
 content_type: blog_article
 language: fr-CA
 revenue_driver: repower

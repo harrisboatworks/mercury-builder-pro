@@ -13,7 +13,10 @@ category: "Guide d'achat"
 date_published: 2026-06-08
 date_modified: 2026-09-18
 keywords: ["poids moteur Mercury","tableau poids hors-bord","Mercury 115 poids","capacité tableau arrière"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/fr/poids-moteur-hors-bord-mercury
+source_url: https://www.mercuryrepower.ca/blog/fr/poids-moteur-hors-bord-mercury
 content_type: blog_article
 language: fr-CA
 revenue_driver: repower

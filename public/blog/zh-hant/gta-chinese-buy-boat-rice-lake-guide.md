@@ -13,7 +13,10 @@ category: "mandarin"
 date_published: 2026-06-12
 date_modified: 2026-09-06
 keywords: ["買船","萊斯湖","GTA 華人","繁體","Mercury"]
-author: Harris Boat Works
+author: "Jay Harris"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/zh-hant/gta-chinese-buy-boat-rice-lake-guide
+source_url: https://www.mercuryrepower.ca/blog/zh-hant/gta-chinese-buy-boat-rice-lake-guide
 content_type: blog_article
 language: zh-Hant
 revenue_driver: repower

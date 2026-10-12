@@ -13,7 +13,10 @@ category: "Lifestyle"
 date_published: 2026-02-06
 date_modified: 2026-09-11
 keywords: ["rice lake fishing","rice lake fishing guide 2026","rice lake walleye","rice lake bass fishing","rice lake muskie fishing","FMZ 17 fishing regulations","rice lake ontario fishing"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/2026-rice-lake-fishing-season-outlook
+source_url: https://www.mercuryrepower.ca/blog/2026-rice-lake-fishing-season-outlook
 content_type: blog_article
 language: en-CA
 revenue_driver: repower

@@ -13,7 +13,10 @@ category: "Buying Guides"
 date_published: 2026-05-16
 date_modified: 2026-10-06
 keywords: ["aluminum vs fiberglass boat","aluminum hull ontario","fiberglass hull ontario","boat hull material guide","legend aluminum boat","boat material comparison","rice lake boat material"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/aluminum-vs-fiberglass-hull-ontario
+source_url: https://www.mercuryrepower.ca/blog/aluminum-vs-fiberglass-hull-ontario
 content_type: blog_article
 language: en-CA
 revenue_driver: repower

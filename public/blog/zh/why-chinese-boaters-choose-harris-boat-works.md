@@ -13,7 +13,10 @@ category: "HBW 中文介绍"
 date_published: 2026-05-10
 date_modified: 2026-10-06
 keywords: ["Harris Boat Works 中文","GTA 华人船主","Mercury Dealer Ontario 中文","Rice Lake marina 中文","MercuryRepower.ca 中文"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/zh/why-chinese-boaters-choose-harris-boat-works
+source_url: https://www.mercuryrepower.ca/blog/zh/why-chinese-boaters-choose-harris-boat-works
 content_type: blog_article
 language: zh-CN
 revenue_driver: repower

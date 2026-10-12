@@ -13,7 +13,10 @@ category: "Service & Maintenance"
 date_published: 2026-05-10
 date_modified: 2026-09-26
 keywords: ["outdoor boat storage rice lake","boat shrinkwrap kawarthas","gores landing winter storage","harris boat works winter storage","boat winterization rice lake","kawartha shrinkwrap"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/outdoor-boat-storage-shrinkwrap-rice-lake
+source_url: https://www.mercuryrepower.ca/blog/outdoor-boat-storage-shrinkwrap-rice-lake
 content_type: blog_article
 language: en-CA
 revenue_driver: service

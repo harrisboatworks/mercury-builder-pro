@@ -13,7 +13,10 @@ category: "Trent-Severn / Local"
 date_published: 2026-05-28
 date_modified: 2026-10-06
 keywords: ["Trent-Severn Mercury dealer","Trent-Severn boat service","Rice Lake marina service","Trent-Severn Waterway boating","Mercury parts Kawarthas","Trent-Severn breakdown planning","Canada Strong Pass 2026","Trent-Severn transit"]
-author: Harris Boat Works
+author: "Jay Harris, Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/trent-severn-mercury-dealer-survival-guide-2026
+source_url: https://www.mercuryrepower.ca/blog/trent-severn-mercury-dealer-survival-guide-2026
 content_type: blog_article
 language: en-CA
 revenue_driver: repower

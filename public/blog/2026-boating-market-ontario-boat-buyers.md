@@ -13,7 +13,10 @@ category: "Market Insight"
 date_published: 2026-02-06
 date_modified: 2026-09-06
 keywords: ["2026 boating market","buy boat canada 2026","best time to buy boat","ontario boat buying","boat market forecast","luxury tax boats canada","boat dealer inventory","used boat market"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/2026-boating-market-ontario-boat-buyers
+source_url: https://www.mercuryrepower.ca/blog/2026-boating-market-ontario-boat-buyers
 content_type: blog_article
 language: en-CA
 revenue_driver: repower

@@ -13,7 +13,10 @@ category: "Buying Guide"
 date_published: 2026-02-17
 date_modified: 2026-10-06
 keywords: ["used boats","buying guide","ontario","red flags","marine inspection"]
-author: Harris Boat Works
+author: "Jay Harris"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/bad-used-boats-to-avoid-ontario
+source_url: https://www.mercuryrepower.ca/blog/bad-used-boats-to-avoid-ontario
 content_type: blog_article
 language: en-CA
 revenue_driver: repower

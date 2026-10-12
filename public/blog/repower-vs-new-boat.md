@@ -13,7 +13,10 @@ category: "Buying Guide"
 date_published: 2026-05-25
 date_modified: 2026-09-06
 keywords: ["repower vs new boat","mercury repower math","should i repower or buy new","repower cost ontario","hull worth repowering","transom rebuild cost"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/repower-vs-new-boat
+source_url: https://www.mercuryrepower.ca/blog/repower-vs-new-boat
 content_type: blog_article
 language: en-CA
 revenue_driver: repower

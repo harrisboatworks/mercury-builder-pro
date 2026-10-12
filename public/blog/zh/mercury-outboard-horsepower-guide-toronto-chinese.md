@@ -13,7 +13,10 @@ category: "Buying Guides"
 date_published: 2026-05-17
 date_modified: 2026-08-17
 keywords: ["Mercury 马力选择","outboard horsepower guide","9.9 vs 60 vs 115","GTA 华人选 Mercury","Rice Lake outboard","Harris Boat Works"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/zh/mercury-outboard-horsepower-guide-toronto-chinese
+source_url: https://www.mercuryrepower.ca/blog/zh/mercury-outboard-horsepower-guide-toronto-chinese
 content_type: blog_article
 language: zh-CN
 revenue_driver: repower

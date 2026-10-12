@@ -13,7 +13,10 @@ category: "Réglementation"
 date_published: 2026-04-12
 date_modified: 2026-10-06
 keywords: ["permis bateau Ontario","carte de conducteur embarcation plaisance","permis navigation Canada","CCEP Canada","boating licence Ontario"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/fr/permis-bateau-ontario-carte-conducteur-embarcation
+source_url: https://www.mercuryrepower.ca/blog/fr/permis-bateau-ontario-carte-conducteur-embarcation
 content_type: blog_article
 language: fr-CA
 revenue_driver: repower

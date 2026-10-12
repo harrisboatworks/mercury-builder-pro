@@ -13,7 +13,10 @@ category: "Regulaciones"
 date_published: 2026-04-12
 date_modified: 2026-10-04
 keywords: ["licencia navegación Ontario","PCOC Ontario","regulaciones bote Ontario","permiso de navegación Canadá","seguridad embarcación Ontario"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/es/licencia-navegacion-ontario-regulaciones
+source_url: https://www.mercuryrepower.ca/blog/es/licencia-navegacion-ontario-regulaciones
 content_type: blog_article
 language: es
 revenue_driver: repower

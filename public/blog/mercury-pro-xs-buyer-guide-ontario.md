@@ -13,7 +13,10 @@ category: "Buying Guide"
 date_published: 2026-05-17
 date_modified: 2026-09-10
 keywords: ["mercury pro xs buyer guide","mercury pro xs ontario","mercury pro xs pricing","mercury performance outboard"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/mercury-pro-xs-buyer-guide-ontario
+source_url: https://www.mercuryrepower.ca/blog/mercury-pro-xs-buyer-guide-ontario
 content_type: blog_article
 language: en-CA
 revenue_driver: repower

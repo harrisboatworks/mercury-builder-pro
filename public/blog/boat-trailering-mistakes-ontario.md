@@ -13,7 +13,10 @@ category: "Boating Lifestyle"
 date_published: 2026-02-28
 date_modified: 2026-09-06
 keywords: ["trailering","boat trailer","ontario","tow safety","launch ramp"]
-author: Harris Boat Works
+author: "Jay Harris"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/boat-trailering-mistakes-ontario
+source_url: https://www.mercuryrepower.ca/blog/boat-trailering-mistakes-ontario
 content_type: blog_article
 language: en-CA
 revenue_driver: service

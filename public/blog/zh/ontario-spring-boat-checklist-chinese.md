@@ -13,7 +13,10 @@ category: "Maintenance"
 date_published: 2026-05-17
 date_modified: 2026-10-04
 keywords: ["安省春季开船","spring boat checklist","GTA 华人船主","Rice Lake spring","Mercury 春季检查","Harris Boat Works"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/zh/ontario-spring-boat-checklist-chinese
+source_url: https://www.mercuryrepower.ca/blog/zh/ontario-spring-boat-checklist-chinese
 content_type: blog_article
 language: zh-CN
 revenue_driver: service

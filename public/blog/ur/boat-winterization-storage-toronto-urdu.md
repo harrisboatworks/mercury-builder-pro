@@ -13,7 +13,10 @@ category: "اردو گائیڈ"
 date_published: 2026-06-12
 date_modified: 2026-09-25
 keywords: ["boat winterization Toronto Urdu","کشتی کی ونٹرائزیشن کیسے ہوتی ہے (how is boat winterization done)","boat storage Mississauga ke qareeb (boat storage near Mississauga)","kashti ko sardi ke liye kaise mehfooz karein (how to protect boat for winter)"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/ur/boat-winterization-storage-toronto-urdu
+source_url: https://www.mercuryrepower.ca/blog/ur/boat-winterization-storage-toronto-urdu
 content_type: blog_article
 language: ur
 revenue_driver: service

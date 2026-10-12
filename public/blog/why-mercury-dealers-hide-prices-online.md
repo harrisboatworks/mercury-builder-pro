@@ -13,7 +13,10 @@ category: "Buying Guide"
 date_published: 2026-05-05
 date_modified: 2026-10-02
 keywords: ["mercury outboard pricing","mercury dealer transparency","boat motor prices ontario","mercury price online","harris boat works pricing"]
-author: Harris Boat Works
+author: "Jay Harris"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/why-mercury-dealers-hide-prices-online
+source_url: https://www.mercuryrepower.ca/blog/why-mercury-dealers-hide-prices-online
 content_type: blog_article
 language: en-CA
 revenue_driver: repower

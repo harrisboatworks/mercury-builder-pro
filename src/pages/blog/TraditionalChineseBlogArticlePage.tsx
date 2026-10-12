@@ -1,3 +1,5 @@
+import { formatDateOnly } from '@/lib/formatDateOnly';
+import { blogPostingAuthor, visibleBlogAuthorName } from '@/lib/blogCitation.js';
 /**
  * Traditional Chinese (zh-Hant) blog article page — pilot, NOINDEX,
  * companion to MandarinBlogArticlePage.
@@ -139,10 +141,10 @@ export default function TraditionalChineseBlogArticlePage() {
             </p>
             <div className="flex items-center justify-between flex-wrap gap-4 pt-4 border-t border-repower-navy-900/10">
               <div className="flex items-center gap-4 text-sm text-repower-navy-900/60 flex-wrap">
-                <AuthorByline name="Jay Harris" title="Harris Boat Works 負責人" byLabel="作者" bioLabel="查看作者簡介" />
+                <AuthorByline name={visibleBlogAuthorName(article.author)} authorType={visibleBlogAuthorName(article.author) === 'Jay Harris' ? 'Person' : 'Organization'} title="Harris Boat Works 負責人" byLabel="作者" bioLabel="查看作者簡介" />
                 <span className="flex items-center gap-1.5">
                   <Calendar className="h-4 w-4" />
-                  {new Date(article.datePublished).toLocaleDateString('zh-Hant', { year: 'numeric', month: 'long', day: 'numeric' })}
+                  {formatDateOnly(article.datePublished, 'zh-Hant')}
                 </span>
                 <span className="flex items-center gap-1.5">
                   <Clock className="h-4 w-4" />

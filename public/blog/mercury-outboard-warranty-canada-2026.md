@@ -13,7 +13,10 @@ category: "Buying Guide"
 date_published: 2026-05-23
 date_modified: 2026-10-05
 keywords: ["Mercury outboard warranty Canada","Mercury 3 year warranty","Mercury Product Protection MPP","Mercury corrosion warranty","Mercury warranty transfer used motor","Mercury warranty Ontario"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/mercury-outboard-warranty-canada-2026
+source_url: https://www.mercuryrepower.ca/blog/mercury-outboard-warranty-canada-2026
 content_type: blog_article
 language: en-CA
 revenue_driver: service

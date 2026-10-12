@@ -13,7 +13,10 @@ category: "Repower"
 date_published: 2026-04-29
 date_modified: 2026-09-07
 keywords: ["repower vs new boat","boat hull replacement","when to repower outboard"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/boat-hull-replacement-vs-repower-decision
+source_url: https://www.mercuryrepower.ca/blog/boat-hull-replacement-vs-repower-decision
 content_type: blog_article
 language: en-CA
 revenue_driver: repower

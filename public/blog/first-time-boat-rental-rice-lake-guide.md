@@ -13,7 +13,10 @@ category: "Boating Lifestyle"
 date_published: 2026-07-02
 date_modified: 2026-10-04
 keywords: ["first time renting a boat","how to drive a pontoon boat","first time boat rental tips","pontoon boat rental for beginners","rice lake boat rental beginners"]
-author: Harris Boat Works
+author: "Jay Harris"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/first-time-boat-rental-rice-lake-guide
+source_url: https://www.mercuryrepower.ca/blog/first-time-boat-rental-rice-lake-guide
 content_type: blog_article
 language: en-CA
 revenue_driver: rentals

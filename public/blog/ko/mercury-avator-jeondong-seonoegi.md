@@ -13,7 +13,10 @@ category: "구매 가이드"
 date_published: 2026-06-08
 date_modified: 2026-10-06
 keywords: ["머큐리 Avator","전동 선외기","전기 보트 모터","Mercury Avator Korean","라이스 레이크 전동 보트"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/ko/mercury-avator-jeondong-seonoegi
+source_url: https://www.mercuryrepower.ca/blog/ko/mercury-avator-jeondong-seonoegi
 content_type: blog_article
 language: ko-KR
 revenue_driver: avator
