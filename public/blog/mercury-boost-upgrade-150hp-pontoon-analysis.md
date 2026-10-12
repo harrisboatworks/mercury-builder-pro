@@ -13,7 +13,10 @@ category: "Performance"
 date_published: 2026-04-30
 date_modified: 2026-10-03
 keywords: ["mercury boost upgrade pontoon","mercury boost 150hp","mercury software upgrade"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/mercury-boost-upgrade-150hp-pontoon-analysis
+source_url: https://www.mercuryrepower.ca/blog/mercury-boost-upgrade-150hp-pontoon-analysis
 content_type: blog_article
 language: en-CA
 revenue_driver: service

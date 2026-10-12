@@ -13,7 +13,10 @@ category: "Service & Maintenance"
 date_published: 2026-05-12
 date_modified: 2026-09-06
 keywords: ["Mercury maintenance schedule","Mercury 100 hour service Ontario","Mercury 20 hour service requirement","Mercury 300 hour service","Mercury annual service Ontario"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/mercury-maintenance-intervals-20-100-300-rule
+source_url: https://www.mercuryrepower.ca/blog/mercury-maintenance-intervals-20-100-300-rule
 content_type: blog_article
 language: en-CA
 revenue_driver: service

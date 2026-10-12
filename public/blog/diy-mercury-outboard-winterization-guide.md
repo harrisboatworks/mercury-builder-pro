@@ -13,7 +13,10 @@ category: "Maintenance"
 date_published: 2026-04-22
 date_modified: 2026-10-11
 keywords: ["diy mercury outboard winterization","how to winterize mercury outboard","winterize 4-stroke outboard"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/diy-mercury-outboard-winterization-guide
+source_url: https://www.mercuryrepower.ca/blog/diy-mercury-outboard-winterization-guide
 content_type: blog_article
 language: en-CA
 revenue_driver: service

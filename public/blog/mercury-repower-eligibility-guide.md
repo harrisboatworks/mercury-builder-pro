@@ -13,7 +13,10 @@ category: "Repower Decision"
 date_published: 2026-05-27
 date_modified: 2026-08-02
 keywords: ["is my boat worth repowering","Mercury repower Ontario","repower eligibility","transom inspection","boat capacity plate","repower vs buy new","Ontario Mercury dealer"]
-author: Harris Boat Works
+author: "Jay Harris"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/mercury-repower-eligibility-guide
+source_url: https://www.mercuryrepower.ca/blog/mercury-repower-eligibility-guide
 content_type: blog_article
 language: en-CA
 revenue_driver: repower

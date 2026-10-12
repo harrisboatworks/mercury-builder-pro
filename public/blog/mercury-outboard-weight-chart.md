@@ -13,7 +13,10 @@ category: "Buying Guide"
 date_published: 2026-06-07
 date_modified: 2026-09-25
 keywords: ["mercury outboard weight","mercury outboard weight chart","how much does a mercury 115 weigh","outboard motor weight","transom weight capacity"]
-author: Harris Boat Works
+author: "Jay Harris"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/mercury-outboard-weight-chart
+source_url: https://www.mercuryrepower.ca/blog/mercury-outboard-weight-chart
 content_type: blog_article
 language: en-CA
 revenue_driver: repower

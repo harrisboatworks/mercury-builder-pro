@@ -13,7 +13,10 @@ category: "구매 가이드"
 date_published: 2026-06-08
 date_modified: 2026-09-06
 keywords: ["머큐리 Pro XS","머큐리 FourStroke","머큐리 Verado","Mercury motor comparison Korean","머큐리 선외기 비교"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/ko/mercury-pro-xs-fourstroke-verado
+source_url: https://www.mercuryrepower.ca/blog/ko/mercury-pro-xs-fourstroke-verado
 content_type: blog_article
 language: ko-KR
 revenue_driver: repower

@@ -13,7 +13,10 @@ category: "Guide d'achat"
 date_published: 2026-05-13
 date_modified: 2026-09-12
 keywords: ["gamme Mercury 2026","modèles hors-bord Mercury","Mercury FourStroke 2026","Mercury Verado V10","hors-bord électrique Avator","hors-bord Mercury Ontario","concessionnaire Mercury Ontario"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/fr/gamme-mercury-hors-bord-2026-ontario
+source_url: https://www.mercuryrepower.ca/blog/fr/gamme-mercury-hors-bord-2026-ontario
 content_type: blog_article
 language: fr-CA
 revenue_driver: repower

@@ -13,7 +13,10 @@ category: "Guide d'achat"
 date_published: 2026-05-13
 date_modified: 2026-10-06
 keywords: ["remotorisation Mercury GTA","remotorisation Mercury Toronto","remotorisation Mercury Mississauga","coût remotorisation bateau GTA","concessionnaire Mercury Premier Ontario"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/fr/remotorisation-mercury-gta-toronto
+source_url: https://www.mercuryrepower.ca/blog/fr/remotorisation-mercury-gta-toronto
 content_type: blog_article
 language: fr-CA
 revenue_driver: repower

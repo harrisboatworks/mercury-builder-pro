@@ -13,7 +13,10 @@ category: "Repower"
 date_published: 2026-05-05
 date_modified: 2026-09-11
 keywords: ["mercury repower process","what happens during repower","boat repower steps","mercury install process","repower timeline ontario"]
-author: Harris Boat Works
+author: "Jay Harris"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/what-happens-during-mercury-repower
+source_url: https://www.mercuryrepower.ca/blog/what-happens-during-mercury-repower
 content_type: blog_article
 language: en-CA
 revenue_driver: repower

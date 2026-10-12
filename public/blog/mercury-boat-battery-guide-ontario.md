@@ -13,7 +13,10 @@ category: "Service"
 date_published: 2026-04-01
 date_modified: 2026-09-26
 keywords: ["marine battery","mercury","winter storage","battery switch","agm"]
-author: Harris Boat Works
+author: "Jay Harris"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/mercury-boat-battery-guide-ontario
+source_url: https://www.mercuryrepower.ca/blog/mercury-boat-battery-guide-ontario
 content_type: blog_article
 language: en-CA
 revenue_driver: service

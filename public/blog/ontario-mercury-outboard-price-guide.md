@@ -13,7 +13,10 @@ category: "Mercury Outboards"
 date_published: 2026-05-08
 date_modified: 2026-10-05
 keywords: ["mercury outboard prices","ontario","cad pricing","repower","buying guide"]
-author: Harris Boat Works
+author: "Jay Harris"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/ontario-mercury-outboard-price-guide
+source_url: https://www.mercuryrepower.ca/blog/ontario-mercury-outboard-price-guide
 content_type: blog_article
 language: en-CA
 revenue_driver: repower

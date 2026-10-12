@@ -13,7 +13,10 @@ category: "mandarin"
 date_published: 2026-05-15
 date_modified: 2026-10-04
 keywords: ["多伦多 Rice Lake 一日游","GTA 华人周末出游","Rice Lake 自驾路线","安省一日游中文","Gores Landing 行程","Toronto Chinese day trip Rice Lake"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/zh/gta-chinese-rice-lake-day-trip-plan
+source_url: https://www.mercuryrepower.ca/blog/zh/gta-chinese-rice-lake-day-trip-plan
 content_type: blog_article
 language: zh-CN
 revenue_driver: rentals

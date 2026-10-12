@@ -13,7 +13,10 @@ category: "Buying Guide"
 date_published: 2026-05-25
 date_modified: 2026-08-27
 keywords: ["mercury kicker setup","mercury 9.9 prokicker","mercury avator kicker","main and kicker pairing","bow electric trolling motor","tie bar steering","kicker bracket installation"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/mercury-main-and-trolling-motor
+source_url: https://www.mercuryrepower.ca/blog/mercury-main-and-trolling-motor
 content_type: blog_article
 language: en-CA
 revenue_driver: repower

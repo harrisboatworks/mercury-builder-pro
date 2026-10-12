@@ -13,7 +13,10 @@ category: "엔진 교체"
 date_published: 2026-04-12
 date_modified: 2026-09-11
 keywords: ["선외기 교체 vs 새 보트","repower 가성비","온타리오 보트 엔진 교체","repower vs new boat Korean"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/ko/repower-vs-new-boat
+source_url: https://www.mercuryrepower.ca/blog/ko/repower-vs-new-boat
 content_type: blog_article
 language: ko-KR
 revenue_driver: repower

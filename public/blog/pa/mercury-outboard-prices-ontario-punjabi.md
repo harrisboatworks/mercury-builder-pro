@@ -13,7 +13,10 @@ category: "ਪੰਜਾਬੀ ਗਾਈਡ"
 date_published: 2026-06-12
 date_modified: 2026-09-11
 keywords: ["Mercury outboard motor di keemat Canada vich (Mercury outboard motor price in Canada)","Mercury 90hp outboard price Ontario Punjabi (Mercury 90hp outboard price Ontario Punjabi)","outboard motor dealer near Toronto Punjabi speaking (outboard motor dealer near Toronto who speaks Punjabi)","new outboard motor khareedan di guide Punjabi (guide to buying a new outboard motor in Punjabi)","Mercury vs Yamaha outboard video Punjabi (Mercury vs Yamaha outboard video in Punjabi)"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/pa/mercury-outboard-prices-ontario-punjabi
+source_url: https://www.mercuryrepower.ca/blog/pa/mercury-outboard-prices-ontario-punjabi
 content_type: blog_article
 language: pa
 revenue_driver: repower

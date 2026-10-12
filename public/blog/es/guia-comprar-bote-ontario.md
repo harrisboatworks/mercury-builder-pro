@@ -13,7 +13,10 @@ category: "Guía de compra"
 date_published: 2026-04-12
 date_modified: 2026-10-04
 keywords: ["guía comprar bote Ontario","comprar bote en Canadá","primer bote Ontario","licencia de navegación Ontario"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/es/guia-comprar-bote-ontario
+source_url: https://www.mercuryrepower.ca/blog/es/guia-comprar-bote-ontario
 content_type: blog_article
 language: es
 revenue_driver: repower

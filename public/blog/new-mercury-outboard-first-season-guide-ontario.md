@@ -13,7 +13,10 @@ category: "Maintenance"
 date_published: 2026-07-27
 date_modified: 2026-10-02
 keywords: ["new Mercury outboard first season","Mercury outboard PDI","Mercury break-in Ontario","Mercury first oil change","SmartCraft Connect app","Mercury alarm codes"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/new-mercury-outboard-first-season-guide-ontario
+source_url: https://www.mercuryrepower.ca/blog/new-mercury-outboard-first-season-guide-ontario
 content_type: blog_article
 language: en-CA
 revenue_driver: service

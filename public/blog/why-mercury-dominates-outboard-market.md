@@ -13,7 +13,10 @@ category: "Buying Guide"
 date_published: 2026-02-06
 date_modified: 2026-09-11
 keywords: ["mercury marine market share","best outboard brand","mercury vs yamaha","mercury verado v12","mercury innovation","mercury prokicker"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/why-mercury-dominates-outboard-market
+source_url: https://www.mercuryrepower.ca/blog/why-mercury-dominates-outboard-market
 content_type: blog_article
 language: en-CA
 revenue_driver: repower

@@ -13,7 +13,10 @@ category: "Avis produit"
 date_published: 2026-05-13
 date_modified: 2026-10-03
 keywords: ["revue Mercury 90 HP","Mercury 90 HP FourStroke","Mercury 90 ELPT Ontario","Mercury 90 CT Command Thrust","90 HP ponton","90 HP bateau aluminium"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/fr/revue-mercury-90-hp-fourstroke-ontario
+source_url: https://www.mercuryrepower.ca/blog/fr/revue-mercury-90-hp-fourstroke-ontario
 content_type: blog_article
 language: fr-CA
 revenue_driver: repower

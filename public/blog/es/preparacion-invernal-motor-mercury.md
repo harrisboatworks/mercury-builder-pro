@@ -13,7 +13,10 @@ category: "Mantenimiento"
 date_published: 2026-04-12
 date_modified: 2026-09-06
 keywords: ["preparar motor fuera de borda invierno Ontario","winterization motor Mercury","preparación invernal bote Ontario"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/es/preparacion-invernal-motor-mercury
+source_url: https://www.mercuryrepower.ca/blog/es/preparacion-invernal-motor-mercury
 content_type: blog_article
 language: es
 revenue_driver: service

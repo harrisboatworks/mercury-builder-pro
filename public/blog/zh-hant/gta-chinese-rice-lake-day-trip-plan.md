@@ -13,7 +13,10 @@ category: "mandarin"
 date_published: 2026-06-12
 date_modified: 2026-09-06
 keywords: ["萊斯湖","一日遊","多倫多","繁體"]
-author: Harris Boat Works
+author: "Jay Harris"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/zh-hant/gta-chinese-rice-lake-day-trip-plan
+source_url: https://www.mercuryrepower.ca/blog/zh-hant/gta-chinese-rice-lake-day-trip-plan
 content_type: blog_article
 language: zh-Hant
 revenue_driver: rentals

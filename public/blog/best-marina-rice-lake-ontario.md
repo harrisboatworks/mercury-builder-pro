@@ -13,7 +13,10 @@ category: "Rice Lake & Local"
 date_published: 2026-05-16
 date_modified: 2026-09-06
 keywords: ["best marina rice lake ontario","rice lake marina","harris boat works","gores landing marina","mercury dealer rice lake","rice lake boat slips","rice lake boat launch","rice lake winter storage"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/best-marina-rice-lake-ontario
+source_url: https://www.mercuryrepower.ca/blog/best-marina-rice-lake-ontario
 content_type: blog_article
 language: en-CA
 revenue_driver: service

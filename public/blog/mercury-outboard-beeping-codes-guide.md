@@ -13,7 +13,10 @@ category: "Service & Troubleshooting"
 date_published: 2026-05-11
 date_modified: 2026-09-11
 keywords: ["mercury outboard beeping codes","mercury warning horn beeps","mercury continuous beep","mercury four beeps every two minutes","mercury alarm ontario"]
-author: Harris Boat Works
+author: "Jay Harris"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/mercury-outboard-beeping-codes-guide
+source_url: https://www.mercuryrepower.ca/blog/mercury-outboard-beeping-codes-guide
 content_type: blog_article
 language: en-CA
 revenue_driver: service

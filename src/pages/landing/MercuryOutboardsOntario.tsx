@@ -9,6 +9,7 @@ import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { RepowerHeader } from '@/components/repower/RepowerHeader';
 import { SiteFooter } from '@/components/ui/site-footer';
+import { ONTARIO_PRO_XS_RANGE, ONTARIO_CT_LABEL, ONTARIO_RESEARCH_GUIDES } from '@/lib/mercury-ontario-facts.js';
 import {
   MercuryOutboardsOntarioSEO,
   ONTARIO_HUB_FAQ,
@@ -45,14 +46,14 @@ const LINEUP = [
   {
     icon: Zap,
     name: 'Pro XS',
-    range: '115, 250 HP',
-    body: 'Performance and tournament use, bass, ski, wake, fast bowriders. Real CAD pricing live.',
+    range: ONTARIO_PRO_XS_RANGE,
+    body: 'Mercury performance outboards. Check current HBW listings for exact models, CAD pricing and availability.',
     href: '/mercury-pro-xs',
   },
   {
     icon: Sailboat,
     name: 'Command Thrust',
-    range: '40, 150 HP',
+    range: ONTARIO_CT_LABEL,
     body: 'Pontoons and heavy hulls. Larger gearcase + prop for more push at slower speeds.',
     href: '/quote/motor-selection',
   },
@@ -74,7 +75,7 @@ const LINEUP = [
     icon: Waves,
     name: 'FourStroke V8',
     range: '250, 300 HP',
-    body: 'Naturally aspirated V8 for offshore, big bowriders, and large pontoons. Premium tier.',
+    body: 'Special-order options for large hulls. Confirm the exact model and availability with HBW.',
     href: '/quote/motor-selection',
   },
 ];
@@ -120,7 +121,7 @@ export default function MercuryOutboardsOntario() {
             Mercury Outboards in Ontario
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            The full Mercury Marine outboard lineup at Harris Boat Works, Premier Dealer on Rice Lake. Real CAD pricing online, family-owned since 1947, Mercury dealer since 1965.
+            Explore Mercury outboard families and current Harris Boat Works listings. Check exact models, CAD quotes and special-order availability with our Premier Dealer team on Rice Lake. Family-owned since 1947, Mercury dealer since 1965.
           </p>
 
           <ul className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-3 max-w-3xl mx-auto">
@@ -150,7 +151,7 @@ export default function MercuryOutboardsOntario() {
         {/* Lineup grid */}
         <section className="mb-16">
           <h2 className="text-2xl font-semibold text-foreground mb-2 text-center">
-            The Full Mercury Lineup
+            Explore Mercury Outboard Families
           </h2>
           <p className="text-sm text-muted-foreground text-center mb-6">
             Click any line to configure a quote with real CAD pricing.
@@ -172,40 +173,40 @@ export default function MercuryOutboardsOntario() {
           </div>
         </section>
 
-        {/* HP-to-CAD price table */}
+        {/* Exact-model quote links; prices are calculated from current inventory. */}
         <section className="mb-16">
           <h2 className="text-2xl font-semibold text-foreground mb-2 text-center">
-            Mercury Outboard Pricing in Ontario (2026 CAD)
+            Mercury Outboard Quotes in Ontario (CAD)
           </h2>
           <p className="text-sm text-muted-foreground text-center mb-6">
-            Starting MSRPs from current Harris Boat Works inventory. Build a fully configured quote at the motor selector.
+            Use current inventory to build an itemized CAD quote for the exact model, controls and rigging.
           </p>
           <div className="overflow-x-auto rounded-xl border border-border bg-card">
             <table className="w-full text-sm">
-              <caption className="sr-only">Starting Mercury outboard MSRP prices in CAD by horsepower at Harris Boat Works.</caption>
+              <caption className="sr-only">Mercury model examples and links to current itemized CAD quotes.</caption>
               <thead className="bg-muted/40">
                 <tr>
                   <th scope="col" className="text-left px-4 py-3 font-medium text-foreground">Mercury Model</th>
                   <th scope="col" className="text-left px-4 py-3 font-medium text-foreground">Family</th>
-                  <th scope="col" className="text-left px-4 py-3 font-medium text-foreground">Starting MSRP (CAD)</th>
+                  <th scope="col" className="text-left px-4 py-3 font-medium text-foreground">Current quote (CAD)</th>
                   <th scope="col" className="text-left px-4 py-3 font-medium text-foreground">Best For</th>
                 </tr>
               </thead>
               <tbody>
-                <tr className="border-t border-border"><td className="px-4 py-3 font-medium text-foreground">2.5 MH</td><td className="px-4 py-3 text-muted-foreground">FourStroke Portable</td><td className="px-4 py-3 text-foreground">$1,385</td><td className="px-4 py-3 text-muted-foreground">Dinghy, tender, canoe</td></tr>
-                <tr className="border-t border-border"><td className="px-4 py-3 font-medium text-foreground">6 MH</td><td className="px-4 py-3 text-muted-foreground">FourStroke Portable</td><td className="px-4 py-3 text-foreground">$2,275</td><td className="px-4 py-3 text-muted-foreground">12–14 ft aluminum</td></tr>
-                <tr className="border-t border-border"><td className="px-4 py-3 font-medium text-foreground">9.9 MH</td><td className="px-4 py-3 text-muted-foreground">FourStroke</td><td className="px-4 py-3 text-foreground">$3,875</td><td className="px-4 py-3 text-muted-foreground">10 HP-restricted lakes, kicker</td></tr>
-                <tr className="border-t border-border"><td className="px-4 py-3 font-medium text-foreground">15 MH</td><td className="px-4 py-3 text-muted-foreground">FourStroke</td><td className="px-4 py-3 text-foreground">$4,225</td><td className="px-4 py-3 text-muted-foreground">14–16 ft aluminum, ProKicker</td></tr>
-                <tr className="border-t border-border"><td className="px-4 py-3 font-medium text-foreground">20 ELH</td><td className="px-4 py-3 text-muted-foreground">FourStroke</td><td className="px-4 py-3 text-foreground">$5,005</td><td className="px-4 py-3 text-muted-foreground">16 ft aluminum fishing</td></tr>
-                <tr className="border-t border-border"><td className="px-4 py-3 font-medium text-foreground">60 ELPT CT</td><td className="px-4 py-3 text-muted-foreground">FourStroke Command Thrust</td><td className="px-4 py-3 text-foreground">~$14,170</td><td className="px-4 py-3 text-muted-foreground">Pontoon, heavier aluminum</td></tr>
-                <tr className="border-t border-border"><td className="px-4 py-3 font-medium text-foreground">115 Pro XS</td><td className="px-4 py-3 text-muted-foreground">Pro XS</td><td className="px-4 py-3 text-foreground">Configure online</td><td className="px-4 py-3 text-muted-foreground">17–18 ft fishing boat</td></tr>
-                <tr className="border-t border-border"><td className="px-4 py-3 font-medium text-foreground">150 Pro XS</td><td className="px-4 py-3 text-muted-foreground">Pro XS</td><td className="px-4 py-3 text-foreground">Configure online</td><td className="px-4 py-3 text-muted-foreground">18–20 ft aluminum (#1 seller)</td></tr>
-                <tr className="border-t border-border"><td className="px-4 py-3 font-medium text-foreground">250 L Pro XS</td><td className="px-4 py-3 text-muted-foreground">Pro XS</td><td className="px-4 py-3 text-foreground">$41,525</td><td className="px-4 py-3 text-muted-foreground">Bass, ski/wake, performance</td></tr>
+                <tr className="border-t border-border"><td className="px-4 py-3 font-medium text-foreground">2.5 MH</td><td className="px-4 py-3 text-muted-foreground">FourStroke Portable</td><td className="px-4 py-3 text-foreground"><Link to="/quote" className="text-primary underline">Configure current quote</Link></td><td className="px-4 py-3 text-muted-foreground">Dinghy, tender, canoe</td></tr>
+                <tr className="border-t border-border"><td className="px-4 py-3 font-medium text-foreground">6 MH</td><td className="px-4 py-3 text-muted-foreground">FourStroke Portable</td><td className="px-4 py-3 text-foreground"><Link to="/quote" className="text-primary underline">Configure current quote</Link></td><td className="px-4 py-3 text-muted-foreground">12–14 ft aluminum</td></tr>
+                <tr className="border-t border-border"><td className="px-4 py-3 font-medium text-foreground">9.9 MH</td><td className="px-4 py-3 text-muted-foreground">FourStroke</td><td className="px-4 py-3 text-foreground"><Link to="/quote" className="text-primary underline">Configure current quote</Link></td><td className="px-4 py-3 text-muted-foreground">10 HP-restricted lakes, kicker</td></tr>
+                <tr className="border-t border-border"><td className="px-4 py-3 font-medium text-foreground">15 MH</td><td className="px-4 py-3 text-muted-foreground">FourStroke</td><td className="px-4 py-3 text-foreground"><Link to="/quote" className="text-primary underline">Configure current quote</Link></td><td className="px-4 py-3 text-muted-foreground">14–16 ft aluminum, ProKicker</td></tr>
+                <tr className="border-t border-border"><td className="px-4 py-3 font-medium text-foreground">20 ELH</td><td className="px-4 py-3 text-muted-foreground">FourStroke</td><td className="px-4 py-3 text-foreground"><Link to="/quote" className="text-primary underline">Configure current quote</Link></td><td className="px-4 py-3 text-muted-foreground">16 ft aluminum fishing</td></tr>
+                <tr className="border-t border-border"><td className="px-4 py-3 font-medium text-foreground">60 ELPT CT</td><td className="px-4 py-3 text-muted-foreground">FourStroke Command Thrust</td><td className="px-4 py-3 text-foreground"><Link to="/quote" className="text-primary underline">Configure current quote</Link></td><td className="px-4 py-3 text-muted-foreground">Pontoon, heavier aluminum</td></tr>
+                <tr className="border-t border-border"><td className="px-4 py-3 font-medium text-foreground">115 Pro XS</td><td className="px-4 py-3 text-muted-foreground">Pro XS</td><td className="px-4 py-3 text-foreground"><Link to="/quote" className="text-primary underline">Configure current quote</Link></td><td className="px-4 py-3 text-muted-foreground">17–18 ft fishing boat</td></tr>
+                <tr className="border-t border-border"><td className="px-4 py-3 font-medium text-foreground">150 Pro XS</td><td className="px-4 py-3 text-muted-foreground">Pro XS</td><td className="px-4 py-3 text-foreground"><Link to="/quote" className="text-primary underline">Configure current quote</Link></td><td className="px-4 py-3 text-muted-foreground">18–20 ft aluminum</td></tr>
+                <tr className="border-t border-border"><td className="px-4 py-3 font-medium text-foreground">250 L Pro XS</td><td className="px-4 py-3 text-muted-foreground">Pro XS</td><td className="px-4 py-3 text-foreground"><Link to="/quote" className="text-primary underline">Configure current quote</Link></td><td className="px-4 py-3 text-muted-foreground">Bass, ski/wake, performance</td></tr>
               </tbody>
             </table>
           </div>
           <p className="text-xs text-muted-foreground text-center mt-3">
-            Current HBW inventory MSRPs (CAD), before HST and rigging.{' '}
+            Motor, propeller, controls, rigging, installation and HST are itemized in the quote. Final pricing is confirmed by Harris Boat Works.{' '}
             <Link to="/blog/cheapest-mercury-outboard-canada-2026" className="text-primary underline">Entry-level price guide</Link>{' '}·{' '}
             <Link to="/blog/mercury-repower-cost-ontario-2026-cad" className="text-primary underline">Complete repower cost guide</Link>
           </p>
@@ -240,6 +241,22 @@ export default function MercuryOutboardsOntario() {
             <Button asChild variant="outline" size="sm">
               <Link to="/mercury-dealer-gta">GTA page</Link>
             </Button>
+          </div>
+        </section>
+
+        <section className="mb-16" aria-labelledby="ontario-research-guides">
+          <h2 id="ontario-research-guides" className="text-2xl font-semibold text-foreground mb-4 text-center">
+            Research your Mercury repower
+          </h2>
+          <p className="text-muted-foreground text-center mb-6">
+            Compare options and prepare your questions with our public guides. Use the quote builder for current CAD pricing, and confirm exact-model fitment with HBW.
+          </p>
+          <div className="grid gap-3 sm:grid-cols-2">
+            {ONTARIO_RESEARCH_GUIDES.map(({ href, label }) => (
+              <Link key={href} to={href} className="rounded-xl border border-border p-4 text-foreground underline underline-offset-4 hover:text-repower-mercury-red">
+                {label}
+              </Link>
+            ))}
           </div>
         </section>
 

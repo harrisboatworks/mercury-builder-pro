@@ -13,7 +13,10 @@ category: "Repowering"
 date_published: 2024-03-05
 date_modified: 2026-10-04
 keywords: ["boat repowering","when to replace outboard","repower cost","new boat vs repower","outboard motor replacement"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/boat-repowering-guide-when-to-replace-motor
+source_url: https://www.mercuryrepower.ca/blog/boat-repowering-guide-when-to-replace-motor
 content_type: blog_article
 language: en-CA
 revenue_driver: repower

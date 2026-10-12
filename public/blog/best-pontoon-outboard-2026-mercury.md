@@ -13,7 +13,10 @@ category: "Buying Guide"
 date_published: 2026-05-25
 date_modified: 2026-10-06
 keywords: ["best pontoon outboard mercury","mercury pontoon motor","pontoon repower mercury","command thrust pontoon","mercury 90 hp pontoon","mercury 115 hp pontoon","mercury 150 hp pontoon","pro xs pontoon boost"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/best-pontoon-outboard-2026-mercury
+source_url: https://www.mercuryrepower.ca/blog/best-pontoon-outboard-2026-mercury
 content_type: blog_article
 language: en-CA
 revenue_driver: repower

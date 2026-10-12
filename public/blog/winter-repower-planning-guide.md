@@ -13,7 +13,10 @@ category: "Repowering"
 date_published: 2026-04-27
 date_modified: 2026-10-06
 keywords: ["winter repower","off season repower","plan boat repower","repower timeline","spring ready boat"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/winter-repower-planning-guide
+source_url: https://www.mercuryrepower.ca/blog/winter-repower-planning-guide
 content_type: blog_article
 language: en-CA
 revenue_driver: repower

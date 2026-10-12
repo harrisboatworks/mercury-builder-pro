@@ -13,7 +13,10 @@ category: "Comparison"
 date_published: 2026-01-26
 date_modified: 2026-09-26
 keywords: ["90 hp mercury motor","mercury 75 vs 90","mercury 90 vs 115","best mercury hp","mercury 75hp review","mercury 115 fourstroke"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/mercury-75-vs-90-vs-115-comparison
+source_url: https://www.mercuryrepower.ca/blog/mercury-75-vs-90-vs-115-comparison
 content_type: blog_article
 language: en-CA
 revenue_driver: repower

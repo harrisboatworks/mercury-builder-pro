@@ -13,7 +13,10 @@ category: "Buying Guides"
 date_published: 2026-05-17
 date_modified: 2026-08-17
 keywords: ["Mercury 报价","最低价 outboard","GTA 华人买 Mercury","Mercury Premier dealer","Harris Boat Works","outboard quote breakdown"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/zh/mercury-outboard-price-dealer-guide-toronto-chinese
+source_url: https://www.mercuryrepower.ca/blog/zh/mercury-outboard-price-dealer-guide-toronto-chinese
 content_type: blog_article
 language: zh-CN
 revenue_driver: repower

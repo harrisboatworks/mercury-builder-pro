@@ -13,7 +13,10 @@ category: "Repower"
 date_published: 2026-09-26
 date_modified: 2026-09-26
 keywords: ["aluminum boat transom inspection","aluminum transom rot signs","check transom before repower","aluminum transom repair cost","soft transom aluminum boat"]
-author: Harris Boat Works
+author: "Jay Harris"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/aluminum-boat-transom-inspection-guide
+source_url: https://www.mercuryrepower.ca/blog/aluminum-boat-transom-inspection-guide
 content_type: blog_article
 language: en-CA
 revenue_driver: repower

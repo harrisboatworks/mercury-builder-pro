@@ -235,7 +235,7 @@ Quote mode means: UCP estimates motor prices plus HST and pickup only. Installat
 Endpoint: https://www.mercuryrepower.ca/api/agents/mcp
 Transport: HTTP POST, JSON-RPC 2.0, no auth, CORS open.
 Methods: initialize, tools/list, tools/call.
-Tools: search_motors, get_motor, estimate_trade_in, build_quote, get_brand_rules.
+Tools: search_motors, get_motor, estimate_trade_in, build_quote, submit_quote_lead, get_brand_rules, search_articles, get_article.
 
 Register in Claude Desktop, Cursor, ChatGPT custom GPTs, or any MCP-compatible
 client to give it live access to current Mercury inventory and quote-building
@@ -293,3 +293,15 @@ A: Yes. HBW arranges Canadian Mercury outboard financing through DealerPlan. Req
 
 Q: Is Harris Boat Works a certified Mercury dealer?
 A: Yes. Harris Boat Works is a Mercury Marine Premier Dealer and a Mercury Certified Repower Center, and has been a Mercury dealer since 1965. HBW is also a CSI Award winner. Full credentials at https://www.mercuryrepower.ca/about.
+
+<!-- hbw-agent-blog-guidance:start -->
+## Blog citations and agent actions
+
+- Ingest blog Markdown twins, then cite the HTML citation_url and source_url with the author and publication date. Publisher is Harris Boat Works.
+- Author identity comes from the article source, not an assumed default byline. Jay Harris is named only when declared; publisher remains Harris Boat Works.
+- Markdown canonical remains the .md twin for compatibility. Twins are noindex.
+- The Traditional Chinese zh-Hant pilot is noindex and is omitted from this guide list and from search_articles.
+- Public article index: https://www.mercuryrepower.ca/agent-blog-index.json
+- MCP build_quote is read-only. A nonempty contact block is rejected. Submit a lead with submit_quote_lead and consent=true. Tool annotations are hints, not authorization. No consent receipt is issued. REST build_quote semantics are unchanged.
+- MCP article tools search_articles and get_article read only published public guides. get_article accepts a catalog slug and language, never a caller-selected URL.
+<!-- hbw-agent-blog-guidance:end -->

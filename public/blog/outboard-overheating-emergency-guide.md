@@ -13,7 +13,10 @@ category: "Troubleshooting"
 date_published: 2026-05-09
 date_modified: 2026-10-11
 keywords: ["outboard overheating what to do","Mercury outboard overheating","Mercury impeller replacement","tell-tale water stream weak","Rice Lake weed intake clog","outboard overheat alarm"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/outboard-overheating-emergency-guide
+source_url: https://www.mercuryrepower.ca/blog/outboard-overheating-emergency-guide
 content_type: blog_article
 language: en-CA
 revenue_driver: service

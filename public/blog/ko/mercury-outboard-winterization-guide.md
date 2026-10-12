@@ -13,7 +13,10 @@ category: "정비 가이드"
 date_published: 2026-04-12
 date_modified: 2026-09-06
 keywords: ["선외기 겨울 보관","Mercury 겨울 정비","온타리오 보트 윈터라이제이션","Mercury winterization guide Korean"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/ko/mercury-outboard-winterization-guide
+source_url: https://www.mercuryrepower.ca/blog/ko/mercury-outboard-winterization-guide
 content_type: blog_article
 language: ko-KR
 revenue_driver: service

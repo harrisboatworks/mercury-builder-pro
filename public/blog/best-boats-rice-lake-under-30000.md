@@ -13,7 +13,10 @@ category: "Buying Guide"
 date_published: 2026-04-25
 date_modified: 2026-10-06
 keywords: ["best boat rice lake","boats under 30000 ontario","rice lake fishing boat"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/best-boats-rice-lake-under-30000
+source_url: https://www.mercuryrepower.ca/blog/best-boats-rice-lake-under-30000
 content_type: blog_article
 language: en-CA
 revenue_driver: repower

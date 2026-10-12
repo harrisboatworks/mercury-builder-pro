@@ -13,7 +13,10 @@ category: "Buying Guide"
 date_published: 2026-05-09
 date_modified: 2026-09-07
 keywords: ["outboard trade-in value Ontario","what is my Mercury outboard worth","boat motor trade in value Canada","trade in old outboard for repower","outboard trade vs private sale"]
-author: Harris Boat Works
+author: "Jay Harris"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/outboard-trade-in-value-ontario-hbw
+source_url: https://www.mercuryrepower.ca/blog/outboard-trade-in-value-ontario-hbw
 content_type: blog_article
 language: en-CA
 revenue_driver: repower

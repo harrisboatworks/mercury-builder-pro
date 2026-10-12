@@ -13,7 +13,10 @@ category: "Repowering"
 date_published: 2026-02-02
 date_modified: 2026-09-11
 keywords: ["repower cottage boat","replace outboard motor","cottage boat motor","boat repower ontario","when to replace outboard"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/ontario-cottage-boat-motor-repower-guide
+source_url: https://www.mercuryrepower.ca/blog/ontario-cottage-boat-motor-repower-guide
 content_type: blog_article
 language: en-CA
 revenue_driver: repower

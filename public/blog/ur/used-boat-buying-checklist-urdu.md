@@ -13,7 +13,10 @@ category: "اردو گائیڈ"
 date_published: 2026-06-12
 date_modified: 2026-10-06
 keywords: ["یوزڈ بوٹ خریدتے وقت کیا دیکھیں (What to check when buying a used boat)","سیکنڈ ہینڈ کشتی کی خریدی میں دھوکہ (Scams in buying a used boat)","پرانے بوٹ انجن کی حالت کیسے چیک کریں (How to check condition of an old boat engine)","استعمال شدہ کشتی کی قیمت کا اندازہ (Estimating price of a used boat)","اونٹاریو میں یوزڈ بوٹ مارکیٹ (Used boat market Ontario)"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/ur/used-boat-buying-checklist-urdu
+source_url: https://www.mercuryrepower.ca/blog/ur/used-boat-buying-checklist-urdu
 content_type: blog_article
 language: ur
 revenue_driver: repower

@@ -13,7 +13,10 @@ category: "Boating"
 date_published: 2026-05-13
 date_modified: 2026-10-04
 keywords: ["boat insurance Ontario","marine insurance","boat insurance cost","liability coverage boats","agreed value boat insurance","Ontario boat liability","pleasure craft insurance"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/boat-insurance-ontario-guide-2026
+source_url: https://www.mercuryrepower.ca/blog/boat-insurance-ontario-guide-2026
 content_type: blog_article
 language: en-CA
 revenue_driver: repower

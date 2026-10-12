@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-overheat-high-speed.md
-last_updated: 2026-09-07
+last_updated: 2026-10-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,9 +11,12 @@ title: "Mercury Outboard Overheating at High Speed: What to Check"
 description: "Mercury overheating at high speed? Learn which cooling-system faults a technician checks, how to respond to the warning, and when to stop for service."
 category: "Service"
 date_published: 2026-06-29
-date_modified: 2026-09-07
+date_modified: 2026-10-11
 keywords: ["Mercury outboard overheating at high speed","Mercury overheat alarm high RPM","poppet valve Mercury overheating","outboard overheats at speed not idle","Mercury water pump impeller"]
-author: Harris Boat Works
+author: "Jay Harris"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/mercury-outboard-overheat-high-speed
+source_url: https://www.mercuryrepower.ca/blog/mercury-outboard-overheat-high-speed
 content_type: blog_article
 language: en-CA
 revenue_driver: service
@@ -25,7 +28,7 @@ revenue_driver: service
 
 **Category:** Service  
 **Published:** 2026-06-29  
-**Last reviewed:** 2026-09-07  
+**Last reviewed:** 2026-10-11  
 **Read time:** ~7 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-overheat-high-speed
 
@@ -55,6 +58,10 @@ If you can do so without putting yourself near the propeller or in the water, wr
 - Whether you could see any blockage at the gearcase intakes after the engine was stopped and access was safe
 
 That record helps a technician. It is not a parts identification. Do not run the boat back up to high RPM to watch the telltale or to confirm the fault.
+
+[Interactive: how your outboard stays cool](/explainers/outboard-cooling.html)
+
+*Drag the throttle and switch on a fault to see how each one shows up. Values are illustrative.*
 
 ## Possible cooling-system checks
 

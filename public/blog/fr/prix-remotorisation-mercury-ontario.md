@@ -13,7 +13,10 @@ category: "Guide d'achat"
 date_published: 2026-04-12
 date_modified: 2026-10-06
 keywords: ["prix remotorisation Mercury Ontario","remotorisation bateau coût Canada","moteur hors-bord Mercury prix","repower Mercury Ontario"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/fr/prix-remotorisation-mercury-ontario
+source_url: https://www.mercuryrepower.ca/blog/fr/prix-remotorisation-mercury-ontario
 content_type: blog_article
 language: fr-CA
 revenue_driver: repower

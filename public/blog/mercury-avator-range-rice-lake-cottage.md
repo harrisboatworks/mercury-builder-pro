@@ -13,7 +13,10 @@ category: "Electric Boating"
 date_published: 2026-05-17
 date_modified: 2026-09-11
 keywords: ["mercury avator range","avator electric outboard rice lake","mercury electric outboard ontario","avator cottage range"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/mercury-avator-range-rice-lake-cottage
+source_url: https://www.mercuryrepower.ca/blog/mercury-avator-range-rice-lake-cottage
 content_type: blog_article
 language: en-CA
 revenue_driver: avator

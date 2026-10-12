@@ -13,7 +13,10 @@ category: "mandarin"
 date_published: 2026-06-12
 date_modified: 2026-09-26
 keywords: ["冬季保养","冬储","安省","中文","winterization","Mercury"]
-author: Harris Boat Works
+author: "Jay Harris"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/zh/ontario-boat-winterization-guide-chinese
+source_url: https://www.mercuryrepower.ca/blog/zh/ontario-boat-winterization-guide-chinese
 content_type: blog_article
 language: zh-CN
 revenue_driver: service

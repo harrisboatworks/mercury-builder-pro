@@ -13,7 +13,10 @@ category: "Boating Lifestyle"
 date_published: 2026-02-12
 date_modified: 2026-09-22
 keywords: ["pontoon problems","rice lake","pontoon maintenance","mercury outboard","pontoon hp"]
-author: Harris Boat Works
+author: "Jay Harris"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/common-pontoon-boat-problems-rice-lake
+source_url: https://www.mercuryrepower.ca/blog/common-pontoon-boat-problems-rice-lake
 content_type: blog_article
 language: en-CA
 revenue_driver: service

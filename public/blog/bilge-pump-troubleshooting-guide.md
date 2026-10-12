@@ -13,7 +13,10 @@ category: "Service & Troubleshooting"
 date_published: 2026-07-03
 date_modified: 2026-10-06
 keywords: ["bilge pump troubleshooting","float switch not working","bilge pump won't turn on","how to size a bilge pump","bilge pump wiring corrosion"]
-author: Harris Boat Works
+author: "Jay Harris"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/bilge-pump-troubleshooting-guide
+source_url: https://www.mercuryrepower.ca/blog/bilge-pump-troubleshooting-guide
 content_type: blog_article
 language: en-CA
 revenue_driver: service

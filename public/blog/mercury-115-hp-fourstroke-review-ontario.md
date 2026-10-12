@@ -13,7 +13,10 @@ category: "Mercury Buying Guides"
 date_published: 2026-05-10
 date_modified: 2026-09-11
 keywords: ["mercury 115 hp review","mercury 115 fourstroke review","mercury 115 pro xs review","mercury 115 command thrust","mercury 115 standard vs pro xs","mercury 115 real world performance","mercury 115 owner reviews","mercury 115 hp ontario"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/mercury-115-hp-fourstroke-review-ontario
+source_url: https://www.mercuryrepower.ca/blog/mercury-115-hp-fourstroke-review-ontario
 content_type: blog_article
 language: en-CA
 revenue_driver: repower

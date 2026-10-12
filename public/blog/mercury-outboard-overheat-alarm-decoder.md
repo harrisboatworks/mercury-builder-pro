@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-overheat-alarm-decoder.md
-last_updated: 2026-09-07
+last_updated: 2026-10-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,9 +11,12 @@ title: "Mercury Overheat Alarm Decoder: Beep Meanings"
 description: "Mercury overheat alarm? Decode every pattern, what triggers Guardian mode vs. limp home. Ontario dealer guide to troubleshooting overheat alarms on Mercury."
 category: "Service & Troubleshooting"
 date_published: 2026-05-27
-date_modified: 2026-09-07
+date_modified: 2026-10-11
 keywords: ["mercury overheat alarm","mercury outboard overheating","mercury guardian mode","smartcraft alarm codes","mercury alarm patterns","mercury tell-tale stream","ontario mercury dealer"]
-author: Harris Boat Works
+author: "Jay Harris"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/mercury-outboard-overheat-alarm-decoder
+source_url: https://www.mercuryrepower.ca/blog/mercury-outboard-overheat-alarm-decoder
 content_type: blog_article
 language: en-CA
 revenue_driver: service
@@ -25,7 +28,7 @@ revenue_driver: service
 
 **Category:** Service & Troubleshooting  
 **Published:** 2026-05-27  
-**Last reviewed:** 2026-09-07  
+**Last reviewed:** 2026-10-11  
 **Read time:** ~9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-overheat-alarm-decoder
 
@@ -93,6 +96,10 @@ If a reliable reading appears inconsistent with the alarm, a sensor, wiring or c
 If the head reads hot: real heat. The problem is somewhere in the cooling system. The next section covers what that usually is.
 
 If you do not have diagnostic tools, use the tell-tale only to identify weak or stopped flow as an immediate shutdown signal. Strong, steady flow does not rule out overheating. Confirm the cause with the display, the operator manual and service diagnostics; an IR reading on a painted head is a sanity check, not a diagnosis.
+
+[Interactive: how your outboard stays cool](/explainers/outboard-cooling.html)
+
+*Drag the throttle and switch on a fault to see how each one shows up. Values are illustrative.*
 
 ## The Four Most Common Causes of Real Overheating
 

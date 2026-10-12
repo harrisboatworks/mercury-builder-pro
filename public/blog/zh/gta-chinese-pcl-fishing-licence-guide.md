@@ -13,7 +13,10 @@ category: "mandarin"
 date_published: 2026-05-15
 date_modified: 2026-10-06
 keywords: ["PCOC 操作员卡","PCL 船只牌照","加拿大船驾照中文","Pleasure Craft Operator Card 华人","安省钓鱼证","Ontario 钓鱼证 中文","Rice Lake 钓鱼规则","GTA Chinese boating licence"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/zh/gta-chinese-pcl-fishing-licence-guide
+source_url: https://www.mercuryrepower.ca/blog/zh/gta-chinese-pcl-fishing-licence-guide
 content_type: blog_article
 language: zh-CN
 revenue_driver: rentals

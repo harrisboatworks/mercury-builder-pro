@@ -13,7 +13,10 @@ category: "Boating Lifestyle"
 date_published: 2026-04-22
 date_modified: 2026-10-06
 keywords: ["ontario boating season","boat seasonal maintenance ontario","spring boat commissioning","fall boat layup","ontario boating tips"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/ontario-boating-season-tips
+source_url: https://www.mercuryrepower.ca/blog/ontario-boating-season-tips
 content_type: blog_article
 language: en-CA
 revenue_driver: service

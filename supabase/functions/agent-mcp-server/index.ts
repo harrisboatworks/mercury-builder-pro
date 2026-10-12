@@ -8,8 +8,11 @@
 //   - search_motors        : filter Mercury inventory by HP/family/in_stock
 //   - get_motor            : fetch one motor by id or slug
 //   - estimate_trade_in    : ballpark trade value
-//   - build_quote          : itemized CAD quote with deep-link
+//   - build_quote          : read-only itemized CAD quote with deep-link
+//   - submit_quote_lead    : explicit lead write; requires consent=true and contact
 //   - get_brand_rules      : authoritative source-of-truth (special-order Verado, CAD only, etc.)
+//   - search_articles      : published public blog guides only
+//   - get_article          : one allowlisted public Markdown twin by catalog slug
 //
 // Public, no-auth, CORS-open. Wraps the existing public-quote-api + public-motors-api
 // so external agents have one canonical MCP endpoint.
@@ -42,6 +45,7 @@ import {
   fetchActivePromotions,
 } from "../_shared/customer-knowledge-context.ts";
 import {
+  runPublicQuoteTool,
   mcpToolResult,
   mcpUpstreamErrorResult,
   parseMcpJsonRpc,
@@ -49,6 +53,10 @@ import {
   presentPublicAgentBrandRules,
   McpInvalidParamsError,
 } from "../_shared/public-agent-mcp.ts";
+import { mcpToolAnnotations } from "../_shared/mcp-tool-annotations.ts";
+import {
+  runPublicArticleTool,
+} from "../_shared/public-blog-mcp.ts";
 
 const SITE_URL = PUBLIC_SITE_URL;
 const QUOTE_API = `${Deno.env.get("SUPABASE_URL")}/functions/v1/public-quote-api`;
@@ -73,6 +81,7 @@ const TOOLS = [
         limit: { type: "number", default: 25, maximum: 100 },
       },
     },
+    annotations: mcpToolAnnotations("read"),
   },
   {
     name: "get_motor",
@@ -85,6 +94,7 @@ const TOOLS = [
         slug: { type: "string", description: "URL slug" },
       },
     },
+    annotations: mcpToolAnnotations("read"),
   },
   {
     name: "estimate_trade_in",
@@ -106,11 +116,12 @@ const TOOLS = [
       },
       required: ["brand", "year"],
     },
+    annotations: mcpToolAnnotations("read"),
   },
   {
     name: "build_quote",
     description:
-      "Build an itemized CAD quote (motor + installation + propeller + trade-in + HST + financing tier) and return a deep-link URL the customer can open. Optional contact captures a lead in the dealership CRM.",
+      "Build a read-only itemized CAD quote (motor + installation + propeller + trade-in + HST + financing tier) and return a deep-link URL the customer can open. Do not send contact details. A nonempty contact block is rejected. To store a lead, call submit_quote_lead with consent=true. Annotations are hints, not authorization.",
     inputSchema: {
       type: "object",
       properties: {
@@ -123,6 +134,30 @@ const TOOLS = [
           default: "installed",
         },
         customer_has_propeller: { type: "boolean" },
+        financing_offer_id: { type: "string" },
+        boat_info: {
+          type: "object",
+          properties: { make: { type: "string" }, model: { type: "string" } },
+        },
+        trade_in: { type: "object" },
+      },
+    },
+    annotations: mcpToolAnnotations("read"),
+  },
+  {
+    name: "submit_quote_lead",
+    description:
+      "Submit a quote lead through the existing public quote API. Requires consent=true and a contact block with name and email. consent is explicit permission to store that contact with the calculated quote. This tool does not issue a consent receipt and does not change pricing, financing, or warranty. Confirm storage only from the returned lead_captured flag. Annotations are hints, not authorization.",
+    inputSchema: {
+      type: "object",
+      properties: {
+        consent: { type: "boolean", const: true },
+        motor_id: { type: "string" },
+        horsepower: { type: "number" },
+        family: { type: "string" },
+        purchase_path: { type: "string", enum: ["installed", "loose"] },
+        customer_has_propeller: { type: "boolean" },
+        financing_offer_id: { type: "string" },
         boat_info: {
           type: "object",
           properties: { make: { type: "string" }, model: { type: "string" } },
@@ -136,21 +171,60 @@ const TOOLS = [
             phone: { type: "string" },
             referrer: { type: "string" },
           },
+          required: ["name", "email"],
         },
       },
+      required: ["consent", "contact"],
     },
+    annotations: mcpToolAnnotations("write"),
   },
   {
     name: "get_brand_rules",
     description:
       "Return Harris Boat Works' authoritative source-of-truth rules for any agent representing them: pricing currency, geography, no-Verado policy, financing minimums, deposit tiers, warranty.",
     inputSchema: { type: "object", properties: {} },
+    annotations: mcpToolAnnotations("read"),
+  },
+  {
+    name: "search_articles",
+    description:
+      "Search published public blog guides. Returns title, excerpt, canonical HTML URL, language, author, publication date, and Markdown URL. Omits hidden, draft, future, and the Traditional Chinese noindex pilot. Read-only. Does not accept a URL.",
+    inputSchema: {
+      type: "object",
+      properties: {
+        query: { type: "string", maxLength: 120 },
+        language: {
+          type: "string",
+          enum: ["en-CA", "fr-CA", "ko-KR", "zh-CN", "es", "pa", "ur", "tl", "hi"],
+        },
+        limit: { type: "integer", minimum: 1, maximum: 10, default: 5 },
+      },
+    },
+    annotations: mcpToolAnnotations("read"),
+  },
+  {
+    name: "get_article",
+    description:
+      "Fetch one published public blog guide by catalog slug and language. Reads only the allowlisted same-site Markdown twin for that catalog item. Never pass a URL. Text is bounded and truncation is explicit. Read-only.",
+    inputSchema: {
+      type: "object",
+      properties: {
+        slug: { type: "string", maxLength: 160 },
+        language: {
+          type: "string",
+          enum: ["en-CA", "fr-CA", "ko-KR", "zh-CN", "es", "pa", "ur", "tl", "hi"],
+          default: "en-CA",
+        },
+      },
+      required: ["slug"],
+    },
+    annotations: mcpToolAnnotations("read"),
   },
 ];
 
 const SERVER_INFO = {
   name: "harris-boat-works-mercury",
-  version: "1.0.0",
+  version: "2.0.0",
   description:
     "Mercury repower specialist on Rice Lake, Ontario. Family-owned since 1947. Quote, search inventory, and estimate trade-ins.",
 };
@@ -284,6 +358,12 @@ async function brandRules(supabase: any) {
 }
 
 async function handleToolCall(supabase: any, name: string, rawArgs: unknown) {
+  if (name === "search_articles" || name === "get_article") {
+    return runPublicArticleTool(name, rawArgs, fetch);
+  }
+  if (name === "build_quote" || name === "submit_quote_lead") {
+    return runPublicQuoteTool(name, rawArgs, callPublicApi);
+  }
   const args = parseMcpToolArguments(name, rawArgs);
   switch (name) {
     case "search_motors": {
@@ -297,10 +377,6 @@ async function handleToolCall(supabase: any, name: string, rawArgs: unknown) {
     }
     case "estimate_trade_in": {
       const result = await callPublicApi("estimate_trade_in", args);
-      return mcpUpstreamErrorResult(result);
-    }
-    case "build_quote": {
-      const result = await callPublicApi("build_quote", args);
       return mcpUpstreamErrorResult(result);
     }
     case "get_brand_rules": {
@@ -370,7 +446,7 @@ Deno.serve(async (req) => {
     ? rawParams.name.replace(/[^a-z0-9_-]/gi, "_")
     : null;
   const limit =
-    toolName === "build_quote" ? { maxAttempts: 40, windowMinutes: 10 } :
+    (toolName === "build_quote" || toolName === "submit_quote_lead") ? { maxAttempts: 40, windowMinutes: 10 } :
     rawMethod === "tools/call" ? { maxAttempts: 80, windowMinutes: 10 } :
     { maxAttempts: 180, windowMinutes: 10 };
   const allowed = await checkRateLimit(req, {

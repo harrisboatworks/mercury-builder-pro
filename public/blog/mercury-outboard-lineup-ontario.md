@@ -13,7 +13,10 @@ category: "Buying Guide"
 date_published: 2026-07-09
 date_modified: 2026-09-06
 keywords: ["mercury outboard lineup","mercury 2027 outboards","mercury outboard models ontario","mercury fourstroke vs pro xs","mercury dealer ontario"]
-author: Harris Boat Works
+author: "Jay Harris"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/mercury-outboard-lineup-ontario
+source_url: https://www.mercuryrepower.ca/blog/mercury-outboard-lineup-ontario
 content_type: blog_article
 language: en-CA
 revenue_driver: repower

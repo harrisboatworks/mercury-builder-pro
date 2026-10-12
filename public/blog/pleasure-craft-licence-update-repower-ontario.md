@@ -13,7 +13,10 @@ category: "Canadian Boating Regulations"
 date_published: 2026-04-15
 date_modified: 2026-10-04
 keywords: ["pleasure craft licence update","PCL repower Ontario","Transport Canada boat licence","update boat registration after repower","PCL rules 2026"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/pleasure-craft-licence-update-repower-ontario
+source_url: https://www.mercuryrepower.ca/blog/pleasure-craft-licence-update-repower-ontario
 content_type: blog_article
 language: en-CA
 revenue_driver: repower

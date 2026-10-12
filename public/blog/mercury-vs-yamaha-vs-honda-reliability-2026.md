@@ -13,7 +13,10 @@ category: "Buying Guide"
 date_published: 2026-04-24
 date_modified: 2026-10-06
 keywords: ["mercury vs yamaha vs honda","most reliable outboard 2026","outboard reliability comparison"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/mercury-vs-yamaha-vs-honda-reliability-2026
+source_url: https://www.mercuryrepower.ca/blog/mercury-vs-yamaha-vs-honda-reliability-2026
 content_type: blog_article
 language: en-CA
 revenue_driver: repower

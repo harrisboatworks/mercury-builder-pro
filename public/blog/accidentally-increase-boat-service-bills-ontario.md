@@ -13,7 +13,10 @@ category: "Service"
 date_published: 2026-06-10
 date_modified: 2026-09-06
 keywords: ["Mercury service","outboard warning signs","boat repair Ontario","Mercury alarm","outboard vibration"]
-author: Harris Boat Works
+author: "Jay Harris"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/accidentally-increase-boat-service-bills-ontario
+source_url: https://www.mercuryrepower.ca/blog/accidentally-increase-boat-service-bills-ontario
 content_type: blog_article
 language: en-CA
 revenue_driver: service

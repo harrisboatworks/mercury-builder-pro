@@ -13,7 +13,10 @@ category: "New Owner"
 date_published: 2024-02-20
 date_modified: 2026-10-12
 keywords: ["mercury motor break in","new outboard break in procedure","mercury break in period","outboard motor break in","new boat motor care"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/breaking-in-new-mercury-motor-guide
+source_url: https://www.mercuryrepower.ca/blog/breaking-in-new-mercury-motor-guide
 content_type: blog_article
 language: en-CA
 revenue_driver: service

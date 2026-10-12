@@ -13,7 +13,10 @@ category: "Buying Guide"
 date_published: 2026-03-16
 date_modified: 2026-09-06
 keywords: ["used boat inspection","buying guide","ontario","transom check","pre-purchase"]
-author: Harris Boat Works
+author: "Jay Harris"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/used-boat-walkaround-inspection-ontario
+source_url: https://www.mercuryrepower.ca/blog/used-boat-walkaround-inspection-ontario
 content_type: blog_article
 language: en-CA
 revenue_driver: service

@@ -13,7 +13,10 @@ category: "Assurance"
 date_published: 2026-05-13
 date_modified: 2026-10-04
 keywords: ["assurance bateau Ontario","assurance maritime","coût assurance bateau","couverture responsabilité bateaux","assurance bateau valeur convenue","assurance embarcation de plaisance"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/fr/guide-assurance-bateau-ontario-2026
+source_url: https://www.mercuryrepower.ca/blog/fr/guide-assurance-bateau-ontario-2026
 content_type: blog_article
 language: fr-CA
 revenue_driver: repower

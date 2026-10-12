@@ -13,7 +13,10 @@ category: "Buying Guide"
 date_published: 2026-05-18
 date_modified: 2026-10-06
 keywords: ["Mercury 9.9 vs 15 HP","Mercury tiller motor Ontario","kicker motor 9.9 vs 15","sailboat auxiliary outboard","Mercury 9.9 EFI FourStroke"]
-author: Harris Boat Works
+author: "Jay Harris"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/mercury-9-9-vs-15-hp-tiller-ontario
+source_url: https://www.mercuryrepower.ca/blog/mercury-9-9-vs-15-hp-tiller-ontario
 content_type: blog_article
 language: en-CA
 revenue_driver: repower

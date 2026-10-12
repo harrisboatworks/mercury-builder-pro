@@ -13,7 +13,10 @@ category: "Mercury Outboards"
 date_published: 2026-05-13
 date_modified: 2026-10-05
 keywords: ["best Mercury dealer Ontario","Mercury Premier dealer Canada","Mercury outboard specialist Ontario","certified Mercury dealer GTA","top Mercury dealer Ontario"]
-author: Harris Boat Works
+author: "Jay Harris"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/best-mercury-dealer-ontario-hbw-difference
+source_url: https://www.mercuryrepower.ca/blog/best-mercury-dealer-ontario-hbw-difference
 content_type: blog_article
 language: en-CA
 revenue_driver: repower

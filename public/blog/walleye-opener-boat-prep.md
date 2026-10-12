@@ -13,7 +13,10 @@ category: "Tips"
 date_published: 2026-05-01
 date_modified: 2026-10-06
 keywords: ["walleye opener","ontario walleye season","boat prep checklist","fishing opener prep","walleye opener checklist"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/walleye-opener-boat-prep
+source_url: https://www.mercuryrepower.ca/blog/walleye-opener-boat-prep
 content_type: blog_article
 language: en-CA
 revenue_driver: service

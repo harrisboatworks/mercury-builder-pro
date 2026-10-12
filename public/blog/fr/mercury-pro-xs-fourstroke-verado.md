@@ -13,7 +13,10 @@ category: "Guide d'achat"
 date_published: 2026-06-08
 date_modified: 2026-09-11
 keywords: ["Mercury Pro XS","Mercury FourStroke","Mercury Verado","comparaison moteur Mercury"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/fr/mercury-pro-xs-fourstroke-verado
+source_url: https://www.mercuryrepower.ca/blog/fr/mercury-pro-xs-fourstroke-verado
 content_type: blog_article
 language: fr-CA
 revenue_driver: repower

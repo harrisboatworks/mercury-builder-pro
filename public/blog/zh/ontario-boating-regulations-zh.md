@@ -13,7 +13,10 @@ category: "法规安全"
 date_published: 2026-04-12
 date_modified: 2026-10-06
 keywords: ["安大略省船只法规","加拿大快艇驾照","船只安全装备要求","Ontario boating regulations Chinese"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/zh/ontario-boating-regulations-zh
+source_url: https://www.mercuryrepower.ca/blog/zh/ontario-boating-regulations-zh
 content_type: blog_article
 language: zh-CN
 revenue_driver: repower

@@ -13,7 +13,10 @@ category: "Repower"
 date_published: 2026-06-06
 date_modified: 2026-10-06
 keywords: ["boat capacity plate","maximum horsepower boat","repower horsepower guide","transport canada capacity plate","mercury repower ontario"]
-author: Harris Boat Works
+author: "Jay Harris"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/repower-horsepower-capacity-plate-guide
+source_url: https://www.mercuryrepower.ca/blog/repower-horsepower-capacity-plate-guide
 content_type: blog_article
 language: en-CA
 revenue_driver: repower

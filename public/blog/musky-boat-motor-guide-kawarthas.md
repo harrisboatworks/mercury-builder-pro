@@ -13,7 +13,10 @@ category: "Buying Guide"
 date_published: 2026-04-06
 date_modified: 2026-10-06
 keywords: ["musky boat motor","kawartha musky fishing","musky boat setup","mercury for musky","musky fishing boat"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/musky-boat-motor-guide-kawarthas
+source_url: https://www.mercuryrepower.ca/blog/musky-boat-motor-guide-kawarthas
 content_type: blog_article
 language: en-CA
 revenue_driver: repower

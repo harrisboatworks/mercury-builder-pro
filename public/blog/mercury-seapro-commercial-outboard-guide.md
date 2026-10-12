@@ -13,7 +13,10 @@ category: "Buying Guide"
 date_published: 2026-04-20
 date_modified: 2026-09-11
 keywords: ["mercury seapro","commercial outboard","guide motor","heavy duty outboard","commercial boat motor","SeaPro vs FourStroke","commercial outboard motor","guide boat outboard","SeaPro maintenance schedule","charter boat motor"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/mercury-seapro-commercial-outboard-guide
+source_url: https://www.mercuryrepower.ca/blog/mercury-seapro-commercial-outboard-guide
 content_type: blog_article
 language: en-CA
 revenue_driver: commercial

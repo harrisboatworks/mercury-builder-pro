@@ -13,7 +13,10 @@ category: "mandarin"
 date_published: 2026-05-15
 date_modified: 2026-09-11
 keywords: ["Mercury 发动机保养","Mercury 维修中文","Mercruiser 服务","安省冬储","Mercury Premier 经销商","GTA 华人船保养","Mercury winterization Chinese"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/zh/gta-chinese-mercury-service-guide
+source_url: https://www.mercuryrepower.ca/blog/zh/gta-chinese-mercury-service-guide
 content_type: blog_article
 language: zh-CN
 revenue_driver: service

@@ -13,7 +13,10 @@ category: "Buying Guide"
 date_published: 2026-05-17
 date_modified: 2026-10-06
 keywords: ["mercury fourstroke buyer guide","mercury fourstroke ontario","mercury fourstroke pricing","mercury outboard buyer guide ontario"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/mercury-fourstroke-buyer-guide-ontario
+source_url: https://www.mercuryrepower.ca/blog/mercury-fourstroke-buyer-guide-ontario
 content_type: blog_article
 language: en-CA
 revenue_driver: repower

@@ -13,7 +13,10 @@ category: "Buying Guides"
 date_published: 2026-05-17
 date_modified: 2026-10-04
 keywords: ["Rice Lake","Lake Simcoe","Kawarthas","多伦多钓鱼","湖区对比","华人钓友"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/zh/toronto-fishing-rice-lake-vs-lake-simcoe-kawarthas
+source_url: https://www.mercuryrepower.ca/blog/zh/toronto-fishing-rice-lake-vs-lake-simcoe-kawarthas
 content_type: blog_article
 language: zh-CN
 revenue_driver: rentals

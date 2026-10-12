@@ -13,7 +13,10 @@ category: "Fishing"
 date_published: 2026-02-06
 date_modified: 2026-09-11
 keywords: ["Mercury 9.9 ProKicker Rice Lake","Mercury ProKicker Ontario","9.9 kicker motor walleye trolling","Mercury 9.9 ProKicker vs standard 9.9","ProKicker EFI guide","kicker motor Rice Lake"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/mercury-prokicker-rice-lake-fishing-guide
+source_url: https://www.mercuryrepower.ca/blog/mercury-prokicker-rice-lake-fishing-guide
 content_type: blog_article
 language: en-CA
 revenue_driver: repower

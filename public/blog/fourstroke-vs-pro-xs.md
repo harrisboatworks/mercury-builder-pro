@@ -13,7 +13,10 @@ category: "Mercury Motors"
 date_published: 2026-05-26
 date_modified: 2026-09-11
 keywords: ["Mercury Pro XS vs FourStroke","Mercury FourStroke vs Pro XS vs Verado","which Mercury outboard should I buy","Mercury Verado worth it","Mercury outboard families explained"]
-author: Harris Boat Works
+author: "Jay Harris"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/fourstroke-vs-pro-xs
+source_url: https://www.mercuryrepower.ca/blog/fourstroke-vs-pro-xs
 content_type: blog_article
 language: en-CA
 revenue_driver: repower

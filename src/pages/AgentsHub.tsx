@@ -74,7 +74,7 @@ export default function AgentsHub() {
                 {
                   "@type": "Question",
                   "name": "Is the Harris Boat Works MCP server free to use?",
-                  "acceptedAnswer": { "@type": "Answer", "text": "Yes. The MCP server, public REST APIs, and markdown twins are free, no-auth, and CORS-open. JSON-RPC 2.0 over HTTP. Methods: initialize, tools/list, tools/call. Tools: search_motors, get_motor, estimate_trade_in, build_quote, get_brand_rules." }
+                  "acceptedAnswer": { "@type": "Answer", "text": "Yes. The MCP server, public REST APIs, and markdown twins are free, no-auth, and CORS-open. JSON-RPC 2.0 over HTTP. Methods: initialize, tools/list, tools/call. Tools: search_motors, get_motor, estimate_trade_in, build_quote, submit_quote_lead, get_brand_rules, search_articles, get_article." }
                 },
                 {
                   "@type": "Question",
@@ -126,6 +126,14 @@ export default function AgentsHub() {
           Gores Landing, Ontario: the buyer must pick up in person with valid government photo ID, and we
           cannot release a motor to a courier, shipping company, or any other third party. The UCP endpoint declares version 2026-04-08 for quote-mode checkout and pickup fulfillment over REST and MCP transports.
         </p>
+
+        <section className="mb-10 rounded-xl border p-6" aria-labelledby="agent-blog-citations">
+          <h2 id="agent-blog-citations" className="text-2xl font-semibold mb-3">Research guides and clear action boundaries</h2>
+          <p>Use <code>search_articles</code> to find published guides and <code>get_article</code> to read a catalog item. Ingest Markdown; cite the returned HTML URL with its author, publication date and review date. Text limits and truncation are explicit.</p>
+          <p className="mt-3"><code>build_quote</code> calculates a quote without storing contact details. Migrate contact submissions to <code>submit_quote_lead</code>, with explicit buyer consent and a name/email contact block. Confirm storage only when <code>lead_captured</code> is true. Submission is not idempotent: do not automatically retry after an uncertain response. Tool annotations are hints, not authorization or a consent receipt.</p>
+          <p className="mt-3">This MCP migration leaves the existing REST quote API unchanged. Traditional Chinese pilot guides retain their noindex policy and are omitted from article-tool listings. Final quotes and sales require HBW confirmation.</p>
+          <div className="mt-3 flex flex-wrap gap-4"><a className="underline" href="/catalog.md">Public agent catalog</a><a className="underline" href="/agent-blog-index.json">Article metadata index</a><a className="underline" href="/blog">Browse our guides</a></div>
+        </section>
 
         <aside className="text-protected mb-8 rounded-lg border border-repower-navy-900/10 bg-white p-5 text-base">
           <p className="m-0 font-semibold">Routing for non-motor requests</p>
@@ -418,7 +426,7 @@ GET ${PUBLIC_QUOTE_API}?action=build_quote&motor_id=${EXAMPLE_MOTOR_ID}&format=j
           <CodeBlock language="http">{`POST ${MCP_SERVER}`}</CodeBlock>
           <p className="text-protected text-sm mt-2">
             Methods: <code>initialize</code>, <code>tools/list</code>, <code>tools/call</code>.
-            Tools: <code>search_motors</code>, <code>get_motor</code>, <code>estimate_trade_in</code>, <code>build_quote</code>, <code>get_brand_rules</code>.
+            Tools: <code>search_motors</code>, <code>get_motor</code>, <code>estimate_trade_in</code>, <code>build_quote</code>, <code>submit_quote_lead</code>, <code>get_brand_rules</code>, <code>search_articles</code>, <code>get_article</code>.
             GET the URL for the live tool catalog.
           </p>
           <CodeBlock language="bash" size="xs">{`curl -X POST ${MCP_SERVER} \\

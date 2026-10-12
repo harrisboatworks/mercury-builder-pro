@@ -13,7 +13,10 @@ category: "Mercury Buying Guides"
 date_published: 2026-05-10
 date_modified: 2026-10-06
 keywords: ["mercury 75 hp review","mercury 75 hp fourstroke","mercury 75 vs 90","mercury 75 elpt ontario","why dealers dont sell 75 hp","mercury 90 better than 75"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/mercury-75-hp-fourstroke-review-ontario
+source_url: https://www.mercuryrepower.ca/blog/mercury-75-hp-fourstroke-review-ontario
 content_type: blog_article
 language: en-CA
 revenue_driver: repower

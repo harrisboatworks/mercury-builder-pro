@@ -13,7 +13,10 @@ category: "Comparison"
 date_published: 2026-05-04
 date_modified: 2026-10-06
 keywords: ["trolling motor vs kicker","kicker motor fishing","trolling motor boat","mercury kicker","auxiliary outboard","Mercury 9.9 ProKicker","electric trolling motor vs gas","bow mount trolling motor","auxiliary outboard motor"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/electric-trolling-motor-kicker-guide
+source_url: https://www.mercuryrepower.ca/blog/electric-trolling-motor-kicker-guide
 content_type: blog_article
 language: en-CA
 revenue_driver: repower

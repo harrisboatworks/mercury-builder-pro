@@ -13,7 +13,10 @@ category: "Buying Guide"
 date_published: 2026-07-27
 date_modified: 2026-09-07
 keywords: ["Legend Boats warranty Canada","Legend WOWranty","Legend pontoon warranty","Leakproof for Life warranty","Legend boat warranty transfer"]
-author: Harris Boat Works
+author: "Jay Harris"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/legend-boats-warranty-canada-wowranty-guide-2026
+source_url: https://www.mercuryrepower.ca/blog/legend-boats-warranty-canada-wowranty-guide-2026
 content_type: blog_article
 language: en-CA
 revenue_driver: repower

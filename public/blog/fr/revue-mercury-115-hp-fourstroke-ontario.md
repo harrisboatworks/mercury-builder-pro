@@ -13,7 +13,10 @@ category: "Avis produit"
 date_published: 2026-05-13
 date_modified: 2026-09-11
 keywords: ["revue Mercury 115 HP","Mercury 115 HP FourStroke","Mercury 115 ELPT Ontario","Mercury 115 CT Command Thrust","115 HP ponton","Mercury 115 vs 150","Mercury 115 FourStroke vs Pro XS"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/fr/revue-mercury-115-hp-fourstroke-ontario
+source_url: https://www.mercuryrepower.ca/blog/fr/revue-mercury-115-hp-fourstroke-ontario
 content_type: blog_article
 language: fr-CA
 revenue_driver: repower

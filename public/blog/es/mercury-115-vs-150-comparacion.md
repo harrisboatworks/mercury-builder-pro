@@ -13,7 +13,10 @@ category: "Comparación de motores"
 date_published: 2026-04-12
 date_modified: 2026-09-06
 keywords: ["Mercury 115 vs 150","motor fuera de borda 115 o 150 HP","Mercury FourStroke comparación","remotorización Mercury Ontario"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/es/mercury-115-vs-150-comparacion
+source_url: https://www.mercuryrepower.ca/blog/es/mercury-115-vs-150-comparacion
 content_type: blog_article
 language: es
 revenue_driver: repower

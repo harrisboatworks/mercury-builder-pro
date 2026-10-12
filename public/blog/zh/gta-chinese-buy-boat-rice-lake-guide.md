@@ -13,7 +13,10 @@ category: "mandarin"
 date_published: 2026-05-15
 date_modified: 2026-10-06
 keywords: ["多伦多华人买船","GTA 华人 Rice Lake 买船","安省买船指南","Pontoon 浮筒船购买","Mercury 发动机匹配","HBW GTA 华人买家","Toronto Chinese buy boat Ontario"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/zh/gta-chinese-buy-boat-rice-lake-guide
+source_url: https://www.mercuryrepower.ca/blog/zh/gta-chinese-buy-boat-rice-lake-guide
 content_type: blog_article
 language: zh-CN
 revenue_driver: repower

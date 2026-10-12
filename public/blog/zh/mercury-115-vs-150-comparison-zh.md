@@ -13,7 +13,10 @@ category: "产品对比"
 date_published: 2026-04-12
 date_modified: 2026-09-11
 keywords: ["Mercury 115 vs 150","Mercury舷外机对比","115马力还是150马力","Mercury outboard comparison Chinese"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/zh/mercury-115-vs-150-comparison-zh
+source_url: https://www.mercuryrepower.ca/blog/zh/mercury-115-vs-150-comparison-zh
 content_type: blog_article
 language: zh-CN
 revenue_driver: repower

@@ -13,7 +13,10 @@ category: "Financing & Value"
 date_published: 2026-04-20
 date_modified: 2026-10-05
 keywords: ["mercury outboard financing Ontario","boat repower financing Ontario","finance boat motor Ontario","mercury financing rate 2026","mercury outboard monthly payment"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/mercury-outboard-financing-ontario-2026
+source_url: https://www.mercuryrepower.ca/blog/mercury-outboard-financing-ontario-2026
 content_type: blog_article
 language: en-CA
 revenue_driver: repower

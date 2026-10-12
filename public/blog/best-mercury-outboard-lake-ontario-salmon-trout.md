@@ -13,7 +13,10 @@ category: "Fishing & Local"
 date_published: 2026-04-22
 date_modified: 2026-10-06
 keywords: ["Lake Ontario salmon fishing motor","best outboard Lake Ontario","Mercury outboard salmon trolling","Lake Ontario chinook king salmon","salmon fishing boat Ontario","Mercury 150 200 salmon","Lake Ontario fishing charter motor"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/best-mercury-outboard-lake-ontario-salmon-trout
+source_url: https://www.mercuryrepower.ca/blog/best-mercury-outboard-lake-ontario-salmon-trout
 content_type: blog_article
 language: en-CA
 revenue_driver: repower

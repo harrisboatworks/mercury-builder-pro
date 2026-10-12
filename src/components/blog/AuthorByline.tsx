@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 
 interface AuthorBylineProps {
   name?: string;
+  authorType?: 'Person' | 'Organization';
   title?: string;
   className?: string;
   byLabel?: string;
@@ -19,6 +20,7 @@ const JAY_CREDENTIALS = 'Owner, Harris Boat Works';
  */
 export function AuthorByline({
   name = 'Jay Harris',
+  authorType = 'Person',
   title,
   className = '',
   byLabel = 'By',
@@ -26,7 +28,7 @@ export function AuthorByline({
   variant = 'inline',
 }: AuthorBylineProps) {
   const isJay = name === 'Jay Harris';
-  const credentials = isJay ? (title || JAY_CREDENTIALS) : title;
+  const credentials = authorType === 'Organization' ? undefined : isJay ? (title || JAY_CREDENTIALS) : title;
   const initials = name
     .split(' ')
     .map((s) => s[0])
@@ -40,7 +42,7 @@ export function AuthorByline({
       <aside
         className={`flex items-start gap-3 rounded-lg border border-repower-navy-900/10 bg-white p-4 not-prose ${className}`}
         itemScope
-        itemType="https://schema.org/Person"
+        itemType={`https://schema.org/${authorType}`}
       >
         <span
           aria-hidden="true"
@@ -75,7 +77,7 @@ export function AuthorByline({
     <span
       className={`inline-flex items-center gap-2 text-sm text-repower-navy-900/70 ${className}`}
       itemScope
-      itemType="https://schema.org/Person"
+      itemType={`https://schema.org/${authorType}`}
     >
       <span
         aria-hidden="true"

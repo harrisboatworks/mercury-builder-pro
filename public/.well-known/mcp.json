@@ -4,7 +4,7 @@
   "name": "harris-boat-works-mercury",
   "displayName": "Harris Boat Works — Mercury Repower",
   "description": "Mercury outboard motor specialist on Rice Lake, Ontario. Search live inventory, estimate trade-ins, and build itemized CAD quotes with deep-link handoff. Family-owned since 1947. Authorized Mercury Marine dealer since 1965 (60+ years). Authorized Legend Boats dealer for new pontoons/aluminum. Pickup-only at Gores Landing — we do not deliver. Verado is special-order only, not part of default inventory. Service radius ~150 km from Gores Landing (Toronto, Peterborough, Kawarthas, Cobourg, Belleville).",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "vendor": {
     "name": "Harris Boat Works Ltd.",
     "url": "https://www.mercuryrepower.ca",
@@ -24,23 +24,76 @@
   "tools": [
     {
       "name": "search_motors",
-      "description": "Search current Mercury outboard inventory by HP, family (FourStroke / Pro XS / SeaPro / Racing), or stock status. Returns CAD pricing. Default inventory excludes Verado (Verado is special-order only — contact HBW directly for a Verado quote)."
+      "description": "Search current Mercury outboard inventory at Harris Boat Works (Ontario). Filter by horsepower, family (FourStroke, Pro XS, SeaPro, Racing), or stock status. Returns CAD pricing. Excludes Verado.",
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "openWorldHint": false
+      }
     },
     {
       "name": "get_motor",
-      "description": "Fetch a single Mercury motor by id or slug, including pricing, shaft length, and deep-link URL."
+      "description": "Fetch a single Mercury motor by id or slug, including pricing, shaft length, and deep-link URL.",
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "openWorldHint": false
+      }
     },
     {
       "name": "estimate_trade_in",
-      "description": "Estimate trade-in value (CAD) for any outboard. Brand penalties apply (Mercury preferred; Yamaha/Honda neutral; Evinrude/Johnson/Force/Chrysler discounted)."
+      "description": "Estimate the trade-in value (CAD) of a customer's current outboard using the live Harris Boat Works valuation. Horsepower may be omitted when the model infers a single validated HP.",
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "openWorldHint": false
+      }
     },
     {
       "name": "build_quote",
-      "description": "Build an itemized CAD quote (motor + installation + propeller + trade-in + HST + financing tier) and return a deep-link the customer can open. The deep-link carries motor, boat_make, boat_model, trade_brand, trade_year, trade_hp, and when supplied trade_condition and trade_engine_type. Optional contact captures a lead."
+      "description": "Build a read-only itemized CAD quote (motor + installation + propeller + trade-in + HST + financing tier) and return a deep-link URL the customer can open. Do not send contact details. A nonempty contact block is rejected. To store a lead, call submit_quote_lead with consent=true. Annotations are hints, not authorization.",
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "submit_quote_lead",
+      "description": "Submit a quote lead through the existing public quote API. Requires consent=true and a contact block with name and email. consent is explicit permission to store that contact with the calculated quote. This tool does not issue a consent receipt and does not change pricing, financing, or warranty. Confirm storage only from the returned lead_captured flag. Annotations are hints, not authorization.",
+      "annotations": {
+        "readOnlyHint": false,
+        "destructiveHint": false,
+        "idempotentHint": false,
+        "openWorldHint": false
+      }
     },
     {
       "name": "get_brand_rules",
-      "description": "Authoritative source-of-truth: pricing currency, geography, Verado special-order policy, financing minimums, deposits, warranty."
+      "description": "Return Harris Boat Works' authoritative source-of-truth rules for any agent representing them: pricing currency, geography, no-Verado policy, financing minimums, deposit tiers, warranty.",
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "search_articles",
+      "description": "Search published public blog guides. Returns title, excerpt, canonical HTML URL, language, author, publication date, and Markdown URL. Omits hidden, draft, future, and the Traditional Chinese noindex pilot. Read-only. Does not accept a URL.",
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "get_article",
+      "description": "Fetch one published public blog guide by catalog slug and language. Reads only the allowlisted same-site Markdown twin for that catalog item. Never pass a URL. Text is bounded and truncation is explicit. Read-only.",
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "openWorldHint": false
+      }
     }
   ],
   "categories": [
@@ -124,7 +177,11 @@
   "httpGetQuote": {
     "description": "For assistants that can only issue HTTP GET. The same quote endpoint accepts flat query params and runs the same pricing code as the POST build_quote action, so the numbers are identical. Returns text/markdown by default; add format=json for JSON. GET never captures a lead and never writes anything: contact params are ignored and not logged. Lead capture stays POST-only; hand the customer the 'Continue this quote' deep link in the response. GET shares the same per-IP rate-limit buckets as POST.",
     "endpoint": "https://www.mercuryrepower.ca/api/agents/quote",
-    "actions": ["build_quote", "estimate_trade_in", "list_motors"],
+    "actions": [
+      "build_quote",
+      "estimate_trade_in",
+      "list_motors"
+    ],
     "example": "https://www.mercuryrepower.ca/api/agents/quote?action=build_quote&motor_id=b16ac296-e506-4357-ad69-18a0aa347cbf&purchase_path=installed&boat_make=Lund&boat_model=Pro-V&trade_brand=Mercury&trade_year=2010&trade_hp=75&trade_condition=good&trade_engine_type=4-stroke",
     "schema": "GET https://www.mercuryrepower.ca/api/agents/quote with no params returns the full schema and an errors block.",
     "errors": "https://www.mercuryrepower.ca/agents"
@@ -148,5 +205,5 @@
       "verado_status"
     ]
   },
-  "lastUpdated": "2026-09-19"
+  "lastUpdated": "2026-10-12"
 }

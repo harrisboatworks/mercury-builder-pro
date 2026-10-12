@@ -13,7 +13,10 @@ category: "ਪੰਜਾਬੀ ਗਾਈਡ"
 date_published: 2026-06-12
 date_modified: 2026-10-06
 keywords: ["Ontario vich boat license kinj banaye (how to get a boat license in Ontario)","boat operator card zaroori hai Ontario vich (is boat operator card necessary in Ontario)","PCOC course online free Punjabi (PCOC course online free in Punjabi)","boat chalan layi license di lod hai Canada ch (do you need a license to drive a boat in Canada)"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/pa/boat-licence-rental-ontario-punjabi-pcoc-faq
+source_url: https://www.mercuryrepower.ca/blog/pa/boat-licence-rental-ontario-punjabi-pcoc-faq
 content_type: blog_article
 language: pa
 revenue_driver: rentals

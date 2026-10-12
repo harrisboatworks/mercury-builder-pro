@@ -1,3 +1,5 @@
+import { formatDateOnly } from '@/lib/formatDateOnly';
+import { blogPostingAuthor, visibleBlogAuthorName } from '@/lib/blogCitation.js';
 import { useState } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { Helmet } from '@/lib/helmet';
@@ -68,7 +70,7 @@ export default function MandarinBlogArticlePage() {
         "@id": `${url}#article`,
         "headline": article.seoTitle ?? article.title,
         "description": article.description,
-        "author": { "@type": "Organization", "name": "Harris Boat Works", "@id": `${SITE_URL}/#organization` },
+        "author": blogPostingAuthor(article.author, SITE_URL, { translated: true }),
         "publisher": { "@type": "Organization", "name": "Harris Boat Works", "@id": `${SITE_URL}/#organization` },
         "datePublished": article.datePublished,
         "dateModified": article.dateModified,
@@ -168,10 +170,10 @@ export default function MandarinBlogArticlePage() {
             </p>
             <div className="flex items-center justify-between flex-wrap gap-4 pt-4 border-t border-repower-navy-900/10">
               <div className="flex items-center gap-4 text-sm text-repower-navy-900/60 flex-wrap">
-                <AuthorByline name="Jay Harris" title="Harris Boat Works 负责人" byLabel="作者" bioLabel="查看作者简介" />
+                <AuthorByline name={visibleBlogAuthorName(article.author)} authorType={visibleBlogAuthorName(article.author) === 'Jay Harris' ? 'Person' : 'Organization'} title="Harris Boat Works 负责人" byLabel="作者" bioLabel="查看作者简介" />
                 <span className="flex items-center gap-1.5">
                   <Calendar className="h-4 w-4" />
-                  {new Date(article.datePublished).toLocaleDateString('zh-CN', { year: 'numeric', month: 'long', day: 'numeric' })}
+                  {formatDateOnly(article.datePublished, 'zh-CN')}
                 </span>
                 <span className="flex items-center gap-1.5">
                   <Clock className="h-4 w-4" />
@@ -252,7 +254,7 @@ export default function MandarinBlogArticlePage() {
 
           {/* Author Byline (bottom) */}
           <div className="mt-10 pt-6 border-t border-repower-navy-900/10">
-            <AuthorByline title="Harris Boat Works 负责人" byLabel="作者" bioLabel="查看作者简介" />
+            <AuthorByline name={visibleBlogAuthorName(article.author)} authorType={visibleBlogAuthorName(article.author) === 'Jay Harris' ? 'Person' : 'Organization'} title="Harris Boat Works 负责人" byLabel="作者" bioLabel="查看作者简介" />
           </div>
 
           {/* FAQ Section */}

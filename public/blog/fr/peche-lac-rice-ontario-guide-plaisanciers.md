@@ -13,7 +13,10 @@ category: "Destination"
 date_published: 2026-04-12
 date_modified: 2026-10-06
 keywords: ["pêche lac Rice Ontario","pêche Kawarthas Ontario","meilleur lac pêche Ontario","Rice Lake fishing guide"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/fr/peche-lac-rice-ontario-guide-plaisanciers
+source_url: https://www.mercuryrepower.ca/blog/fr/peche-lac-rice-ontario-guide-plaisanciers
 content_type: blog_article
 language: fr-CA
 revenue_driver: rentals

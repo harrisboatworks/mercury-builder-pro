@@ -13,7 +13,10 @@ category: "保养与使用"
 date_published: 2026-08-24
 date_modified: 2026-10-04
 keywords: ["Mercury 船外机 加油 中文","加拿大 汽油 标号 87 91","RON AKI 换算","E10 乙醇 船外机","安省 无乙醇汽油"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/zh/mercury-fuel-octane-ethanol-chinese-guide
+source_url: https://www.mercuryrepower.ca/blog/zh/mercury-fuel-octane-ethanol-chinese-guide
 content_type: blog_article
 language: zh-CN
 revenue_driver: service

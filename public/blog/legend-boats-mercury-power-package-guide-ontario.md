@@ -13,7 +13,10 @@ category: "Buying Guide"
 date_published: 2026-05-21
 date_modified: 2026-09-25
 keywords: ["Legend Boats Mercury package Ontario","Legend XT Series 2026","Legend pontoon Mercury","Legend boats Rice Lake dealer","Legend Halo pontoon"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/legend-boats-mercury-power-package-guide-ontario
+source_url: https://www.mercuryrepower.ca/blog/legend-boats-mercury-power-package-guide-ontario
 content_type: blog_article
 language: en-CA
 revenue_driver: repower

@@ -13,7 +13,10 @@ category: "Mercury Outboards"
 date_published: 2026-05-09
 date_modified: 2026-10-06
 keywords: ["Mercury 40 vs 60 HP","Mercury 40 vs 60 HP comparison","best outboard for 16 ft aluminum boat Ontario","Mercury 40 ELPT vs 60 ELPT","Mercury 60 Command Thrust pontoon"]
-author: Harris Boat Works
+author: "Jay Harris"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/mercury-40-vs-60-hp-outboard-ontario
+source_url: https://www.mercuryrepower.ca/blog/mercury-40-vs-60-hp-outboard-ontario
 content_type: blog_article
 language: en-CA
 revenue_driver: repower

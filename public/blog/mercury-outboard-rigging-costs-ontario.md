@@ -13,7 +13,10 @@ category: "Repower"
 date_published: 2026-05-05
 date_modified: 2026-09-26
 keywords: ["mercury rigging cost","outboard rigging ontario","boat repower rigging","hydraulic steering upgrade","mercury install cost"]
-author: Harris Boat Works
+author: "Jay Harris"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/mercury-outboard-rigging-costs-ontario
+source_url: https://www.mercuryrepower.ca/blog/mercury-outboard-rigging-costs-ontario
 content_type: blog_article
 language: en-CA
 revenue_driver: repower

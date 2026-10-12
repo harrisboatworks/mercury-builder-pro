@@ -13,7 +13,10 @@ category: "Brand Comparison"
 date_published: 2026-06-06
 date_modified: 2026-10-06
 keywords: ["mercury vs suzuki","suzuki outboard reliability","ontario outboard comparison","mercury suzuki repower"]
-author: Harris Boat Works
+author: "Jay Harris"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/mercury-vs-suzuki-outboard-reliability-2026
+source_url: https://www.mercuryrepower.ca/blog/mercury-vs-suzuki-outboard-reliability-2026
 content_type: blog_article
 language: en-CA
 revenue_driver: repower

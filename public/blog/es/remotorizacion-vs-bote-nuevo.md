@@ -13,7 +13,10 @@ category: "Remotorización"
 date_published: 2026-04-12
 date_modified: 2026-10-02
 keywords: ["remotorización vs bote nuevo","repower Mercury Ontario","cambiar motor bote","costo remotorización Ontario"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/es/remotorizacion-vs-bote-nuevo
+source_url: https://www.mercuryrepower.ca/blog/es/remotorizacion-vs-bote-nuevo
 content_type: blog_article
 language: es
 revenue_driver: repower

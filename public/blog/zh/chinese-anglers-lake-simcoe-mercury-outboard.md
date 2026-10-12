@@ -13,7 +13,10 @@ category: "钓鱼指南"
 date_published: 2026-05-10
 date_modified: 2026-09-06
 keywords: ["Lake Simcoe 华人钓鱼 Mercury","Lake Simcoe Chinese anglers","Mercury kicker 中文","安省华人钓友"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/zh/chinese-anglers-lake-simcoe-mercury-outboard
+source_url: https://www.mercuryrepower.ca/blog/zh/chinese-anglers-lake-simcoe-mercury-outboard
 content_type: blog_article
 language: zh-CN
 revenue_driver: repower

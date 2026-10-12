@@ -1,3 +1,4 @@
+import { visibleBlogAuthorName } from '@/lib/blogCitation.js';
 import { useState } from 'react';
 import { useOverheatInteractions } from '@/hooks/useOverheatInteractions';
 import { useParams, Link, Navigate } from 'react-router-dom';
@@ -338,7 +339,7 @@ export default function BlogArticle() {
             </p>
             <div className="flex items-center justify-between flex-wrap gap-4 pt-4 border-t border-repower-navy-900/10">
               <div className="flex items-center gap-4 text-sm text-repower-navy-900/60 flex-wrap">
-                <AuthorByline name="Jay Harris" title="Owner, Harris Boat Works" />
+                <AuthorByline name={visibleBlogAuthorName(article.author)} authorType={visibleBlogAuthorName(article.author) === 'Jay Harris' ? 'Person' : 'Organization'} title="Owner, Harris Boat Works" />
                 {(() => {
                   const published = parseLocalDate(article.datePublished);
                   const fmt = (d: Date) => d.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });

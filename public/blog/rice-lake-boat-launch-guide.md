@@ -13,7 +13,10 @@ category: "Local Guides"
 date_published: 2026-05-10
 date_modified: 2026-10-04
 keywords: ["rice lake boat launch","gores landing boat ramp","boat launch peterborough","boat launch cobourg","kawartha boat launch","24 hour boat ramp ontario"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/rice-lake-boat-launch-guide
+source_url: https://www.mercuryrepower.ca/blog/rice-lake-boat-launch-guide
 content_type: blog_article
 language: en-CA
 revenue_driver: rentals

@@ -13,7 +13,10 @@ category: "Buying Guide"
 date_published: 2026-04-23
 date_modified: 2026-10-05
 keywords: ["cheapest mercury outboard canada","mercury 2.5hp price","small mercury outboard cad"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/cheapest-mercury-outboard-canada-2026
+source_url: https://www.mercuryrepower.ca/blog/cheapest-mercury-outboard-canada-2026
 content_type: blog_article
 language: en-CA
 revenue_driver: repower

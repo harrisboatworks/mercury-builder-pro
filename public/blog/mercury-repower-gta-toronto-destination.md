@@ -13,7 +13,10 @@ category: "Mercury Outboards"
 date_published: 2026-05-19
 date_modified: 2026-09-06
 keywords: ["Mercury repower GTA","Mercury repower Toronto","Mercury repower Mississauga","boat repower GTA cost","outboard repower process Toronto","Mercury Premier repower dealer Ontario"]
-author: Harris Boat Works
+author: "Jay Harris"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/mercury-repower-gta-toronto-destination
+source_url: https://www.mercuryrepower.ca/blog/mercury-repower-gta-toronto-destination
 content_type: blog_article
 language: en-CA
 revenue_driver: repower

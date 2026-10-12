@@ -13,7 +13,10 @@ category: "Service"
 date_published: 2026-07-02
 date_modified: 2026-08-02
 keywords: ["mercury water pump replacement cost","outboard impeller replacement cost ontario","water pump kit cost mercury","weak telltale outboard","outboard water pump service"]
-author: Harris Boat Works
+author: "Jay Harris"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/mercury-water-pump-replacement-cost-ontario
+source_url: https://www.mercuryrepower.ca/blog/mercury-water-pump-replacement-cost-ontario
 content_type: blog_article
 language: en-CA
 revenue_driver: service

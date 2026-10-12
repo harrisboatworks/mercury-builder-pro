@@ -13,7 +13,10 @@ category: "Troubleshooting"
 date_published: 2026-02-06
 date_modified: 2026-09-26
 keywords: ["mercury smartcraft alarm codes","mercury smartcraft alarm codes list","mercury smartcraft alarm codes meanings","mercury alarm code list","smartcraft fault codes mercury","mercury outboard error codes","mercury smartcraft diagnostic","mercury outboard warning lights"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/mercury-smartcraft-alarm-codes-encyclopedia
+source_url: https://www.mercuryrepower.ca/blog/mercury-smartcraft-alarm-codes-encyclopedia
 content_type: blog_article
 language: en-CA
 revenue_driver: service

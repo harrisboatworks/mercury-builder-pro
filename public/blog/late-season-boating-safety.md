@@ -13,7 +13,10 @@ category: "Tips"
 date_published: 2026-05-05
 date_modified: 2026-10-06
 keywords: ["cold water boating safety","ontario boating safety","hypothermia prevention","spring boating safety","fall boating safety","pfd cold water"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/late-season-boating-safety
+source_url: https://www.mercuryrepower.ca/blog/late-season-boating-safety
 content_type: blog_article
 language: en-CA
 revenue_driver: repower

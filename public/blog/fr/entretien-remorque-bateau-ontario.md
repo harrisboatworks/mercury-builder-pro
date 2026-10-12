@@ -13,7 +13,10 @@ category: "Entretien"
 date_published: 2026-05-13
 date_modified: 2026-10-06
 keywords: ["entretien remorque bateau","roulements remorque","remorque bateau Ontario","coût service remorque","pneus ST","freins remorque bateau"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/fr/entretien-remorque-bateau-ontario
+source_url: https://www.mercuryrepower.ca/blog/fr/entretien-remorque-bateau-ontario
 content_type: blog_article
 language: fr-CA
 revenue_driver: service

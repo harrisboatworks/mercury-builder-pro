@@ -13,7 +13,10 @@ category: "Mercury 型号比较"
 date_published: 2026-05-10
 date_modified: 2026-09-06
 keywords: ["Mercury FourStroke Pro XS Verado 中文","Mercury 船外机比较","Pro XS 中文","Verado 中文"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/zh/mercury-fourstroke-pro-xs-verado-chinese-comparison
+source_url: https://www.mercuryrepower.ca/blog/zh/mercury-fourstroke-pro-xs-verado-chinese-comparison
 content_type: blog_article
 language: zh-CN
 revenue_driver: repower

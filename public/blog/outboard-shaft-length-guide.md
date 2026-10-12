@@ -13,7 +13,10 @@ category: "Buying Guide"
 date_published: 2026-05-05
 date_modified: 2026-10-12
 keywords: ["outboard shaft length","mercury shaft length guide","20 inch shaft outboard","25 inch shaft outboard","transom height measurement"]
-author: Harris Boat Works
+author: "Jay Harris"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/outboard-shaft-length-guide
+source_url: https://www.mercuryrepower.ca/blog/outboard-shaft-length-guide
 content_type: blog_article
 language: en-CA
 revenue_driver: repower

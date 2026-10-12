@@ -13,7 +13,10 @@ category: "Dealer Locations"
 date_published: 2026-05-11
 date_modified: 2026-09-07
 keywords: ["mercury dealer whitby","mercury repower whitby","mercury outboard whitby ontario","boat motor service durham region"]
-author: Harris Boat Works
+author: "Jay Harris"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/mercury-dealer-whitby-ontario-hbw
+source_url: https://www.mercuryrepower.ca/blog/mercury-dealer-whitby-ontario-hbw
 content_type: blog_article
 language: en-CA
 revenue_driver: repower

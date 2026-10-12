@@ -13,7 +13,10 @@ category: "Repower Cost & Pricing"
 date_published: 2026-05-28
 date_modified: 2026-10-05
 keywords: ["mercury","repower","financing","ontario","monthly payment","Mercury outboard monthly payment","TD Auto Finance","Dealerplan Peterborough"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/mercury-outboard-monthly-payment-ontario-2026
+source_url: https://www.mercuryrepower.ca/blog/mercury-outboard-monthly-payment-ontario-2026
 content_type: blog_article
 language: en-CA
 revenue_driver: repower

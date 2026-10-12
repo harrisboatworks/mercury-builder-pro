@@ -13,7 +13,10 @@ category: "Buying Guides"
 date_published: 2026-05-16
 date_modified: 2026-09-11
 keywords: ["new vs used mercury outboard","used mercury outboard ontario","new mercury outboard ontario","mercury outboard buying guide","mercury premier dealer ontario","mercury product protection","used outboard inspection ontario","mercury repower vs used"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/new-vs-used-mercury-outboard-ontario
+source_url: https://www.mercuryrepower.ca/blog/new-vs-used-mercury-outboard-ontario
 content_type: blog_article
 language: en-CA
 revenue_driver: repower

@@ -13,7 +13,10 @@ category: "Technical Reference"
 date_published: 2026-05-27
 date_modified: 2026-09-07
 keywords: ["mercury propeller","mercury prop selection","wot rpm test","command thrust prop","aluminum vs stainless prop","3 blade vs 4 blade","ontario mercury dealer"]
-author: Harris Boat Works
+author: "Jay Harris"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/mercury-propeller-selection-guide
+source_url: https://www.mercuryrepower.ca/blog/mercury-propeller-selection-guide
 content_type: blog_article
 language: en-CA
 revenue_driver: service

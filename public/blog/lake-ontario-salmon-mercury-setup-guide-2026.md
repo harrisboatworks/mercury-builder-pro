@@ -13,7 +13,10 @@ category: "Fishing / Rigging"
 date_published: 2026-05-28
 date_modified: 2026-09-11
 keywords: ["Lake Ontario salmon Mercury setup","Mercury salmon trolling setup","Lake Ontario kicker install","Mercury 9.9 ProKicker","dual battery boat wiring Lake Ontario","Mercury SmartCraft Troll Control","Port Hope Mercury dealer","Cobourg Mercury dealer"]
-author: Harris Boat Works
+author: "Jay Harris, Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/lake-ontario-salmon-mercury-setup-guide-2026
+source_url: https://www.mercuryrepower.ca/blog/lake-ontario-salmon-mercury-setup-guide-2026
 content_type: blog_article
 language: en-CA
 revenue_driver: repower

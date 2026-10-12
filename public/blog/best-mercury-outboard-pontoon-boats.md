@@ -13,7 +13,10 @@ category: "Buying Guide"
 date_published: 2026-05-04
 date_modified: 2026-09-11
 keywords: ["mercury for pontoon boat","best pontoon outboard","pontoon motor hp","command thrust pontoon","mercury 115 pontoon","mercury 150 pontoon","rice lake pontoon"]
-author: Harris Boat Works
+author: "Jay Harris"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/best-mercury-outboard-pontoon-boats
+source_url: https://www.mercuryrepower.ca/blog/best-mercury-outboard-pontoon-boats
 content_type: blog_article
 language: en-CA
 revenue_driver: repower

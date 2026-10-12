@@ -13,7 +13,10 @@ category: "Warranty & Protection"
 date_published: 2026-05-13
 date_modified: 2026-09-06
 keywords: ["Mercury extended warranty","Mercury Product Protection","Platinum warranty","Mercury warranty Ontario","extended motor warranty","Mercury Platinum coverage","outboard warranty cost"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/mercury-extended-warranty-platinum-ontario
+source_url: https://www.mercuryrepower.ca/blog/mercury-extended-warranty-platinum-ontario
 content_type: blog_article
 language: en-CA
 revenue_driver: product-protection

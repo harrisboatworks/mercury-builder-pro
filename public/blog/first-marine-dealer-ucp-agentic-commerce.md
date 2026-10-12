@@ -13,7 +13,10 @@ category: "Mercury Technology"
 date_published: 2026-06-11
 date_modified: 2026-10-06
 keywords: ["universal commerce protocol","UCP marine dealer","AI agent Mercury quote","agentic commerce Ontario","ChatGPT buy outboard","Shopify ucp-cli","Harris Boat Works UCP"]
-author: Harris Boat Works
+author: "Jay Harris"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/first-marine-dealer-ucp-agentic-commerce
+source_url: https://www.mercuryrepower.ca/blog/first-marine-dealer-ucp-agentic-commerce
 content_type: blog_article
 language: en-CA
 revenue_driver: repower

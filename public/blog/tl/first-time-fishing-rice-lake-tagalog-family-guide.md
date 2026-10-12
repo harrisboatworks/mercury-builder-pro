@@ -13,7 +13,10 @@ category: "Tagalog Guide"
 date_published: 2026-06-12
 date_modified: 2026-10-04
 keywords: ["bangkang mura sa Ontario (cheap boat in Ontario)","paano bumili ng bangka sa Canada (how to buy a boat in Canada)","magkano ang bangka sa Toronto (how much is a boat in Toronto)","tips sa pagbili ng unang bangka (tips for buying first boat)","fishing license Ontario paano kumuha (fishing license Ontario how to get)","saan mangisda malapit sa Toronto (where to fish near Toronto)","Ontario fishing rules Tagalog (Ontario fishing rules Tagalog)","panahon ng pangingisda sa Ontario (fishing season in Ontario)","magkano fishing license sa Ontario (how much fishing license in Ontario)","pangingisda sa Rice Lake Ontario (fishing at Rice Lake Ontario)"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/tl/first-time-fishing-rice-lake-tagalog-family-guide
+source_url: https://www.mercuryrepower.ca/blog/tl/first-time-fishing-rice-lake-tagalog-family-guide
 content_type: blog_article
 language: tl
 revenue_driver: rentals

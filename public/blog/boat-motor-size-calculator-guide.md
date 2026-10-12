@@ -13,7 +13,10 @@ category: "Buying Guide"
 date_published: 2026-05-11
 date_modified: 2026-09-18
 keywords: ["boat motor size","outboard motor calculator","hp for boat weight","motor sizing guide","boat horsepower"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/boat-motor-size-calculator-guide
+source_url: https://www.mercuryrepower.ca/blog/boat-motor-size-calculator-guide
 content_type: blog_article
 language: en-CA
 revenue_driver: repower

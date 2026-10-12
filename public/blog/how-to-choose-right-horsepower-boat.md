@@ -13,7 +13,10 @@ category: "Buying Guide"
 date_published: 2024-06-15
 date_modified: 2026-10-06
 keywords: ["boat motor horsepower","how to choose outboard motor","mercury motor sizing","boat hp guide","outboard motor selection"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/how-to-choose-right-horsepower-boat
+source_url: https://www.mercuryrepower.ca/blog/how-to-choose-right-horsepower-boat
 content_type: blog_article
 language: en-CA
 revenue_driver: repower

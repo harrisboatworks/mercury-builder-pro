@@ -13,7 +13,10 @@ category: "Maintenance"
 date_published: 2026-09-26
 date_modified: 2026-09-26
 keywords: ["what battery does my Mercury outboard need","Mercury outboard battery size","battery for 90 hp Mercury outboard","50 hp Mercury outboard battery size","Mercury lithium cranking battery"]
-author: Harris Boat Works
+author: "Jay Harris"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/mercury-outboard-battery-size-guide
+source_url: https://www.mercuryrepower.ca/blog/mercury-outboard-battery-size-guide
 content_type: blog_article
 language: en-CA
 revenue_driver: service

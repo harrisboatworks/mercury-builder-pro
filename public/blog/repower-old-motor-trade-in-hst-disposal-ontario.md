@@ -13,7 +13,10 @@ category: "Repower"
 date_published: 2026-06-06
 date_modified: 2026-09-11
 keywords: ["repower trade-in ontario","old outboard trade in","hst credit boat motor","outboard disposal ontario","mercury repower harris boat works"]
-author: Harris Boat Works
+author: "Jay Harris"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/repower-old-motor-trade-in-hst-disposal-ontario
+source_url: https://www.mercuryrepower.ca/blog/repower-old-motor-trade-in-hst-disposal-ontario
 content_type: blog_article
 language: en-CA
 revenue_driver: repower

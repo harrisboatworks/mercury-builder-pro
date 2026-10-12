@@ -13,7 +13,10 @@ category: "Buying Guide"
 date_published: 2026-02-09
 date_modified: 2026-09-11
 keywords: ["best mercury outboard rice lake","rice lake fishing boat setup","mercury 9.9 prokicker walleye","rice lake repower","outboard and kicker setup","rice lake fishing motor"]
-author: Harris Boat Works
+author: "Harris Boat Works"
+publisher: "Harris Boat Works"
+citation_url: https://www.mercuryrepower.ca/blog/best-mercury-outboard-rice-lake-fishing
+source_url: https://www.mercuryrepower.ca/blog/best-mercury-outboard-rice-lake-fishing
 content_type: blog_article
 language: en-CA
 revenue_driver: repower
