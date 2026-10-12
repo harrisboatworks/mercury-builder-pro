@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/fourstroke-75hp-75-elpt-fourstroke
-last_updated: 2026-10-12
+last_updated: 2026-10-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
