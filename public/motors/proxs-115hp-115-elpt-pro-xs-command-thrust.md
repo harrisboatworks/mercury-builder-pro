@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/proxs-115hp-115-elpt-pro-xs-command-thrust
-last_updated: 2026-10-06
+last_updated: 2026-10-12
 currency: CAD
 pickup_only: true
 delivery_offered: false

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/first-marine-dealer-ucp-agentic-commerce.md
-last_updated: 2026-09-10
+last_updated: 2026-10-06
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Quote via AI at Harris Boat Works"
 description: "Harris Boat Works is a live Universal Commerce Protocol merchant. AI assistants can now build a real CAD Mercury outboard quote."
 category: "Mercury Technology"
 date_published: 2026-06-11
-date_modified: 2026-09-10
+date_modified: 2026-10-06
 keywords: ["universal commerce protocol","UCP marine dealer","AI agent Mercury quote","agentic commerce Ontario","ChatGPT buy outboard","Shopify ucp-cli","Harris Boat Works UCP"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: repower
 
 **Category:** Mercury Technology  
 **Published:** 2026-06-11  
-**Last reviewed:** 2026-09-10  
+**Last reviewed:** 2026-10-06  
 **Read time:** 6 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/first-marine-dealer-ucp-agentic-commerce
 
@@ -94,7 +94,7 @@ There is zero hype in any of this. The page you’re reading is honest about wha
 
 ## Google just validated this direction at Google Marketing Live 2026
 
-At Google Marketing Live 2026, Google's SVP of Knowledge and Information, Nick Fox, sat down with Semafor's Ben Smith and described where Google sees search and shopping heading. Three things he said matter directly to what we built. Fox discussed the Unified Commerce Platform and the move toward frictionless discovery-to-checkout experiences, where a shopper goes from a question to a completed purchase without bouncing between sites and phone calls. He made the case that the web's lasting value is human expertise and first-hand experience, the kind of content AI summaries draw from rather than replace. And he described search itself becoming conversational, with people asking long, specific, multi-sentence questions instead of typing keywords.
+At Google Marketing Live 2026, Google's SVP of Knowledge and Information, Nick Fox, sat down with Semafor's Ben Smith and described where Google sees search and shopping heading. Three things he said matter directly to what we built. Fox discussed the Universal Commerce Protocol (UCP) and Universal Cart and the move toward frictionless discovery-to-checkout experiences, where a shopper goes from a question to a completed purchase without bouncing between sites and phone calls. He made the case that the web's lasting value is human expertise and first-hand experience, the kind of content AI summaries draw from rather than replace. And he described search itself becoming conversational, with people asking long, specific, multi-sentence questions instead of typing keywords.
 
 That is the direction we bet on. Harris Boat Works is already live on UCP, which means the frictionless quote-to-checkout flow Google described on the GML stage is not a future roadmap item here. You can [build a real Mercury repower quote online today](/blog/mercury-repower-cost-ontario-2026-cad), priced for your boat, with no phone tag. The full interview is on YouTube: [Google Marketing Live 2026 interview with Nick Fox](https://youtu.be/IG6zdqR6Xck)
 
