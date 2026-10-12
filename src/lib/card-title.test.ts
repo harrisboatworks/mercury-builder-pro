@@ -104,3 +104,68 @@ describe('resolveMotorCardTitle', () => {
     ).toBe('90 EXLPT Command Thrust FourStroke');
   });
 });
+
+
+describe('Command Thrust feature identity', () => {
+  it.each([
+    'ProKicker/Command Thrust variants available for higher-thrust trolling applications',
+    'Available with Command Thrust',
+    'Not equipped with Command Thrust',
+    'CT variants available',
+    'CT-compatible rigging',
+    'Command Thrust gearcase available as an option',
+  ])('does not rename a standard motor from generic copy: %s', (feature) => {
+    const motor = { model: '9.9MH FourStroke', features: [feature] };
+    expect(resolveMotorCardTitle(motor)).toBe(motor.model);
+  });
+
+  it('ignores generic copy in object-shaped feature titles', () => {
+    expect(resolveMotorCardTitle({
+      model: '9.9MH FourStroke',
+      features: [{ title: 'ProKicker/Command Thrust variants available for higher-thrust trolling applications' }],
+    })).toBe('9.9MH FourStroke');
+  });
+
+  it.each(['Command Thrust', ' command   thrust ', 'CT', ' ct ', 'Command Thrust gearcase', ' command  thrust gearcase '])(
+    'keeps explicit per-motor feature labels: %s', (feature) => {
+      expect(ensureCommandThrustDisplayName('115 EXLPT FourStroke', { features: [feature] }))
+        .toBe('115 EXLPT Command Thrust FourStroke');
+    },
+  );
+
+  it('keeps explicit object-shaped CT feature labels', () => {
+    expect(ensureCommandThrustDisplayName('115 EXLPT FourStroke', { features: [{ title: 'CT' }] }))
+      .toBe('115 EXLPT Command Thrust FourStroke');
+  });
+
+  it('keeps an explicit CT flag authoritative when feature copy is generic', () => {
+    expect(ensureCommandThrustDisplayName('115 EXLPT FourStroke', {
+      commandThrust: true,
+      features: ['Command Thrust variants available'],
+    })).toBe('115 EXLPT Command Thrust FourStroke');
+  });
+
+  it('reads the actual database CT flag when the display name is stale', () => {
+    expect(resolveMotorCardTitle({
+      model_display: '60 ELPT FourStroke',
+      has_command_thrust: true,
+      features: ['CT variants available'],
+    })).toBe('60 ELPT Command Thrust FourStroke');
+  });
+
+  it.each([false, null])('does not infer CT from generic copy with DB flag %s', (has_command_thrust) => {
+    expect(resolveMotorCardTitle({
+      model_display: '9.9MH FourStroke',
+      has_command_thrust,
+      features: ['ProKicker/Command Thrust variants available for higher-thrust trolling applications'],
+    })).toBe('9.9MH FourStroke');
+  });
+
+  it.each([
+    ['1F5145TJZ', '50 ELHPT Command Thrust FourStroke Tiller'],
+    ['1F60463GZ', '60 EXLPT Command Thrust FourStroke'],
+    ['1F904632D', '90 EXLPT Command Thrust FourStroke'],
+  ])('preserves verified presentation override %s', (model_number, expected) => {
+    expect(resolveMotorCardTitle({ model: 'Upstream display', model_number })).toBe(expected);
+  });
+});
