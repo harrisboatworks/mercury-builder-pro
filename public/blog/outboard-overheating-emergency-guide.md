@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/outboard-overheating-emergency-guide.md
-last_updated: 2026-09-06
+last_updated: 2026-10-11
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury Overheating Emergency Guide"
 description: "A Mercury Premier dealer's emergency-and-prevention guide for outboard overheating: what to do in 60 seconds, what to check at the dock."
 category: "Troubleshooting"
 date_published: 2026-05-09
-date_modified: 2026-09-06
+date_modified: 2026-10-11
 keywords: ["outboard overheating what to do","Mercury outboard overheating","Mercury impeller replacement","tell-tale water stream weak","Rice Lake weed intake clog","outboard overheat alarm"]
 author: Harris Boat Works
 content_type: blog_article
@@ -25,7 +25,7 @@ revenue_driver: service
 
 **Category:** Troubleshooting  
 **Published:** 2026-05-09  
-**Last reviewed:** 2026-09-06  
+**Last reviewed:** 2026-10-11  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/outboard-overheating-emergency-guide
 
@@ -83,6 +83,10 @@ If you're reading this from shore, good. The best time to learn what to do when 
 
 This is the on-water response guide and prevention overview we'd walk through with any customer at the shop. Mercury-specific, Ontario conditions, no filler.
 
+[Video: why your outboard overheats](/explainers/video-outboard-overheats.html)
+
+*Watch: the three causes of overheating we see most on Rice Lake and the Kawarthas, including the stuck-thermostat trap. 74 seconds, captions available.*
+
 ---
 
 ## On the Water Right Now: Do This in Order
@@ -119,6 +123,10 @@ Don't fight it. Call for a tow, drift to shore, or use another propulsion method
 We've seen both kinds of boats at the shop. Towing protects the motor so the shop can diagnose the cooling fault instead of a damaged powerhead.
 
 ---
+
+[Interactive: how your outboard stays cool](/explainers/outboard-cooling.html)
+
+*Drag the throttle and switch on a fault to see how each one shows up. Values are illustrative.*
 
 ## The Four Most Common Causes We See
 
