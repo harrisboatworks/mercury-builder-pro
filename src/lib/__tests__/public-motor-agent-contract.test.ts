@@ -252,6 +252,7 @@ describe("public motor agent contract", () => {
     const quoteApi = source("supabase/functions/public-quote-api/index.ts");
     const mcpServer = source("supabase/functions/agent-mcp-server/index.ts");
     const motorPage = source("src/pages/MotorPage.tsx");
+    const motorSelectionPage = source("src/pages/quote/MotorSelectionPage.tsx");
 
     expect(motorsApi).toContain("const SITE_URL = PUBLIC_SITE_URL;");
     expect(quoteApi).toContain("const SITE_URL = PUBLIC_SITE_URL;");
@@ -265,6 +266,8 @@ describe("public motor agent contract", () => {
     expect(quoteApi).toContain("const slug = motorSlug(m);");
     expect(quoteApi).toContain("const slug = motorSlug(motor);");
     expect(mcpServer).toContain("const slug = motorSlug(m);");
+    expect(motorSelectionPage).toContain("applyMotorPresentationOverrides(");
+    expect(motorSelectionPage).toContain("resolveMotorCardTitle(");
     expect(motorPage).toContain("motorSlug as publicMotorSlug");
     expect(motorPage).toContain("publicMotorSlug(candidate) === slug");
     expect(motorPage).not.toContain("function publicMotorSlug");

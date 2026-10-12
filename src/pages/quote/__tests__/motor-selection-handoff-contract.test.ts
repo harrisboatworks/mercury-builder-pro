@@ -10,6 +10,8 @@ describe('motor selection agent handoff contract', () => {
     const page = read('src/pages/quote/MotorSelectionPage.tsx');
     const handoff = read('src/lib/agent-quote-handoff.ts');
 
+    expect(page).toContain('applyMotorPresentationOverrides');
+    expect(page).toContain('resolveMotorCardTitle');
     expect(page).toContain('useAgentQuoteHandoff');
     expect(page).toContain('parseAgentQuoteHandoff');
     expect(page).toContain('UCP_CHECKOUT_REF_FLAG');
