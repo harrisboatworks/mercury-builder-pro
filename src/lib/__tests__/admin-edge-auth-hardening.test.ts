@@ -412,6 +412,8 @@ describe('admin edge auth hardening', () => {
       'motor-health-monitor',
       'sync-dropbox-folder',
       'dropbox-chooser-upload',
+      'check-expiring-promotions',
+      'sync-lightspeed-inventory',
     ]) {
       expect(config).toContain(`[functions.${slug}]\nverify_jwt = false`);
     }
