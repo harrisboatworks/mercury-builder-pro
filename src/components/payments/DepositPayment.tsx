@@ -217,7 +217,7 @@ export const DepositPayment = () => {
           <PaymentMethodBadges className="mt-2" />
 
           <div className="text-xs text-center text-muted-foreground">
-            By proceeding, you agree to our terms of service. Deposits are refundable within 30 days.
+            By proceeding, you agree to our terms of service. If the motor is in stock, the deposit is refundable. If the motor is out of stock or a special order, the deposit stays refundable until HBW confirms the exact motor, price, availability and ETA, and you approve the order in writing. Once HBW places the order after that written approval, the deposit becomes non-refundable and is credited to the final invoice.
           </div>
         </CardContent>
       </Card>

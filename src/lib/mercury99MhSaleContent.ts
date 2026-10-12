@@ -1,4 +1,5 @@
 import type { ResolvedMotorAvailability } from '@/lib/motorAvailability';
+import { DEPOSIT_POLICY_PUBLIC_SUMMARY } from '../../supabase/functions/_shared/deposit-policy';
 
 export const MERCURY_99_MH_ALTERNATE_NAMES = [
   'Mercury 9.9',
@@ -54,7 +55,7 @@ export function buildMercury99MhFaqs(
     },
     {
       question: 'Is the $100 reservation deposit refundable?',
-      answer: 'Yes. The $100 deposit is fully refundable until Harris Boat Works confirms the exact motor, price, availability and ETA, and you approve the order in writing. After written approval, the deposit becomes non-refundable and is credited to your final invoice.',
+      answer: `The $100 reservation changes the deposit amount only. ${DEPOSIT_POLICY_PUBLIC_SUMMARY}`,
     },
     {
       question: 'Is the Mercury 9.9 MH in stock?',
