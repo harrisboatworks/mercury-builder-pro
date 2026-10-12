@@ -5561,11 +5561,11 @@ Family-owned since 1947, Mercury dealer since 1965, Mercury Premier Dealer · Ri
     imageAlt: 'Concept diagram: vary throttle, avoid long steady RPM, and follow the serial-specific manual. Break-in is not the first scheduled service.',
     author: 'Harris Boat Works',
     datePublished: '2024-02-20',
-    dateModified: '2026-09-11',
+    dateModified: '2026-10-12',
     category: 'New Owner',
     readTime: '7 min read',
     keywords: ['mercury motor break in', 'new outboard break in procedure', 'mercury break in period', 'outboard motor break in', 'new boat motor care'],
-    content: `_Last updated: 2026-07-23_
+    content: `_Last updated: 2026-10-12_
 
 ---
 
