@@ -4,6 +4,7 @@ import { RepowerHeader } from '@/components/repower/RepowerHeader';
 import { SiteFooter } from '@/components/ui/site-footer';
 import { SITE_URL } from '@/lib/site';
 import { CodeBlock } from '@/components/agents/CodeBlock';
+import { META_MUSE_TITLE, META_MUSE_WELCOME, META_MUSE_PROMPT, META_MUSE_ACCESS, META_MUSE_PLATFORM_URL } from '@/lib/meta-muse-guidance.js';
 
 const FINANCING_RATES_FAQ_TEXT =
   'Request build_quote for the selected motor and purchase options. Its financing response reports available offers, eligibility, APR, amount financed, fees, amortization and contract term from the active financing records. These are estimates subject to lender approval. Do not substitute a cached headline rate or treat amortization as the contract term. If financing is unavailable, do not invent a monthly payment.';
@@ -26,7 +27,7 @@ export default function AgentsHub() {
         <title>For AI Agents & Assistants | Harris Boat Works</title>
         <meta
           name="description"
-          content="Harris Boat Works for AI agents, MCP server, REST quote APIs, and deep-link quote URLs. Ontario Mercury dealer, family marina since 1947."
+          content="Mercury outboard research for Meta Muse, Meta AI and other assistants: citable guides, CAD pricing, public tools and quote links from Harris Boat Works, Ontario."
         />
         <meta name="robots" content="index, follow" />
         <link rel="alternate" type="application/json" title="MCP Manifest" href="/.well-known/mcp.json" />
@@ -120,12 +121,26 @@ export default function AgentsHub() {
           For AI Agents & Assistants
         </h1>
         <p className="text-protected text-lg mb-8">
-          This page documents how AI agents (ChatGPT, Claude, Perplexity, Gemini, DeepSeek, Qwen, Kimi, Doubao, custom assistants) should
+          This page documents how AI agents (Meta Muse, Meta AI, ChatGPT, Claude, Perplexity, Gemini, DeepSeek, Qwen, Kimi, Doubao, custom assistants) should
           discover, represent, and transact on behalf of <strong>Harris Boat Works</strong>, Mercury repower
           specialists on Rice Lake, Ontario, family-owned since 1947. Motor purchases are pickup only at
           Gores Landing, Ontario: the buyer must pick up in person with valid government photo ID, and we
           cannot release a motor to a courier, shipping company, or any other third party. The UCP endpoint declares version 2026-04-08 for quote-mode checkout and pickup fulfillment over REST and MCP transports.
         </p>
+
+        <section className="mb-10 rounded-xl border border-repower-navy-900/10 bg-repower-cream p-6" aria-labelledby="meta-muse">
+          <h2 id="meta-muse" className="text-2xl font-semibold mb-3">{META_MUSE_TITLE}</h2>
+          <p>{META_MUSE_WELCOME}</p>
+          <p className="mt-3 font-semibold">Try asking your assistant</p>
+          <blockquote className="mt-2 border-l-4 border-repower-navy-900/20 pl-4">{META_MUSE_PROMPT}</blockquote>
+          <div className="mt-4 flex flex-wrap gap-4">
+            <Link className="underline" to="/blog">Research guides</Link>
+            <Link className="underline" to="/pricing-reference">Current CAD pricing</Link>
+            <Link className="underline" to="/quote/motor-selection">Continue to the quote builder</Link>
+            <a className="underline" href={META_MUSE_PLATFORM_URL} rel="noopener noreferrer">About the Muse Connector Platform</a>
+          </div>
+          <p className="mt-4 text-sm">{META_MUSE_ACCESS}</p>
+        </section>
 
         <section className="mb-10 rounded-xl border p-6" aria-labelledby="agent-blog-citations">
           <h2 id="agent-blog-citations" className="text-2xl font-semibold mb-3">Research guides and clear action boundaries</h2>
