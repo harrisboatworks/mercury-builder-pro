@@ -43,19 +43,9 @@ const FAQS = [
       'Reserve your motor with the deposit amount and terms shown on its summary page. The model-specific Mercury 9.9 MH offer for model 1A10201LK uses a $100 CAD deposit. It is fully refundable until Harris Boat Works confirms the exact motor, price, availability and ETA, and you approve the order in writing. After written approval, it becomes non-refundable and is credited to your final invoice. The balance is paid at pickup in Gores Landing.',
   },
   {
-    question: 'Can I get a Mercury outboard quote online in Ontario?',
-    answer:
-      'Yes. Use our online form to get a Mercury outboard quote. We serve boat owners across Ontario. You bring your boat to our marina in Gores Landing for installation.',
-  },
-  {
     question: 'Is the online quote a real price?',
     answer:
       'Yes, the online quote is a real price. It includes the motor, rigging, and installation at our marina. There are no hidden fees.',
-  },
-  {
-    question: 'Do you deliver motors or offer shipping?',
-    answer:
-      'No, we do not ship or deliver motors. You bring your boat to our Gores Landing marina on Rice Lake and we install the new Mercury outboard here.',
   },
   {
     question: 'How long does the quote process take?',
