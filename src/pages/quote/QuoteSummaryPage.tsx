@@ -508,7 +508,7 @@ export default function QuoteSummaryPage() {
     const financingAmount = frozen?.amountFinanced ?? amountToFinance;
     const financingDealerFee = frozen?.dealerFee ?? existing?.financing?.dealerFee ?? DEALERPLAN_FEE;
     const planPrice = state.warrantyConfig?.warrantyPrice || 0;
-    const canShowFinancing = paymentMethod !== 'cash_purchase' && displayPricing.total >= FINANCING_MINIMUM;
+    const canShowFinancing = paymentMethod !== 'cash_purchase' && displayPricing.subtotal >= FINANCING_MINIMUM;
     const selectedPromoValue = frozen?.selectedPromoValue
       ?? state.selectedPromoValue
       ?? getPromoDisplayValue(state.selectedPromoOption, Number(hp));
@@ -763,6 +763,7 @@ export default function QuoteSummaryPage() {
         googleReviewCount,
         promotionalFinancingAlternative: (() => {
           if (state.selectedPaymentMethod === 'special_financing') return undefined;
+          if (displayPricing.subtotal < FINANCING_MINIMUM) return undefined;
           const promotionalFinancing = getPromotionOptions()
             .find((option) => option.id === 'special_financing');
           if (
@@ -1275,7 +1276,7 @@ export default function QuoteSummaryPage() {
                       currentCoverageYears={currentCoverageYears}
                       value={state.warrantyConfig}
                       onChange={handleProductProtectionChange}
-                      financing={!isCashPurchase && displayPricing.total >= FINANCING_MINIMUM ? {
+                      financing={!isCashPurchase && displayPricing.subtotal >= FINANCING_MINIMUM ? {
                         rate: financingRate,
                         amortizationMonths: termMonths,
                       } : undefined}
@@ -1412,7 +1413,7 @@ export default function QuoteSummaryPage() {
                       {isGeneratingPDF ? 'PDF' : 'Download PDF'}
                     </span>
                   </button>
-                  {!isCashPurchase && displayPricing.total >= FINANCING_MINIMUM && (
+                  {!isCashPurchase && displayPricing.subtotal >= FINANCING_MINIMUM && (
                     <button
                       onClick={handleApplyForFinancing}
                       className="w-full rounded border border-repower-navy-900/15 bg-transparent px-6 py-4 font-sans text-[13px] font-bold uppercase tracking-[0.12em] text-repower-navy-900 transition hover:border-repower-navy-900/40"
@@ -1455,7 +1456,7 @@ export default function QuoteSummaryPage() {
                       setShowAuthSaveDialog(true);
                     }
                   }}
-                  onApplyForFinancing={!isCashPurchase && displayPricing.total >= FINANCING_MINIMUM ? handleApplyForFinancing : undefined}
+                  onApplyForFinancing={!isCashPurchase && displayPricing.subtotal >= FINANCING_MINIMUM ? handleApplyForFinancing : undefined}
                   isGeneratingPDF={isGeneratingPDF}
                   isProcessingPayment={isProcessingDeposit}
                   quoteValidUntil={quoteValidUntil}

@@ -42,12 +42,15 @@ import {
   toPublicImageUrl,
 } from "../_shared/public-motor-contract.ts";
 import { parsePublicQuoteFlags, McpInvalidParamsError } from "../_shared/public-agent-mcp.ts";
-import { applyTradeCredit } from "../_shared/trade-credit.ts";
 import {
   isPresentTradeIn,
   resolveTradeInInput,
   TradeInInputError,
 } from "../_shared/trade-in-input.ts";
+import {
+  computePublicQuotePricing,
+  resolveFactoryRebate,
+} from "../_shared/public-quote-pricing.ts";
 import { insertPublicQuoteLead } from "../_shared/public-quote-lead.ts";
 import { formatMercuryShaftMarkdown, resolveMercuryCatalogSpecs } from "../_shared/mercury-codes.ts";
 
@@ -387,6 +390,8 @@ function bodyFromQuery(params: URLSearchParams): Record<string, unknown> {
     if (hasProp !== undefined) body.customer_has_propeller = hasProp;
     const offerId = queryString(params, "financing_offer_id", 80);
     if (offerId !== undefined) body.financing_offer_id = offerId;
+    const promoOption = queryString(params, "promo_option", 40);
+    if (promoOption !== undefined) body.promo_option = promoOption;
 
     const boatMake = queryString(params, "boat_make", 80);
     const boatModel = queryString(params, "boat_model", 80);
@@ -504,6 +509,10 @@ function renderQuoteMarkdown(p: any): string {
   lines.push("## Totals");
   lines.push("");
   lines.push(`- Subtotal: ${cad(pricing.subtotal)}`);
+  if (Number(pricing.factory_rebate) > 0) {
+    const promoName = pricing.factory_rebate_promotion ? ` (${safeText(pricing.factory_rebate_promotion, 80)})` : "";
+    lines.push(`- Factory rebate${promoName}: -${cad(pricing.factory_rebate)}`);
+  }
   if (Number(pricing.trade_in_credit) > 0) {
     lines.push(`- Trade-in credit: -${cad(pricing.trade_in_credit)}`);
     lines.push(`- Adjusted subtotal: ${cad(pricing.adjusted_subtotal)}`);
@@ -853,53 +862,8 @@ async function buildQuote(supabase: any, body: any) {
   const accessoryCost = items.slice(1).reduce((s, i) => s + i.price, 0);
   const subtotal = items.reduce((s, i) => s + i.price, 0);
 
-  // Trade-in — a present object must be accepted or rejected, never dropped.
-  let tradeIn: any = null;
-  let tradeInCredit = 0;
-  if (isPresentTradeIn(body?.trade_in)) {
-    const resolved = resolveTradeInInput(body.trade_in);
-    const value = await fetchCanonicalHbwValuation({
-      brand: resolved.brand,
-      year: resolved.year,
-      hp: resolved.horsepower,
-      condition: resolved.condition,
-      stroke: resolved.engineType,
-      hours: resolved.engineHours,
-      model: resolved.model,
-    });
-    tradeInCredit = applyTradeCredit({
-      preTradeSubtotal: subtotal,
-      estimatedValue: value.wholesale,
-      hasTradeIn: true,
-    }).credit;
-    tradeIn = {
-      input: {
-        ...body.trade_in,
-        horsepower: resolved.horsepower,
-        engine_type: resolved.engineType ?? null,
-      },
-      estimate: {
-        low: value.rangeLow,
-        high: value.rangeHigh,
-        average: value.wholesale,
-        listing: value.listing,
-        hst_savings: value.hstSavings,
-        confidence: value.confidence,
-        factors: value.factors,
-      },
-      credit_applied: tradeInCredit,
-      source: "HBW Motor Valuation API (canonical)",
-      note: "Trade-in credit capped at subtotal. Final value requires in-person inspection.",
-    };
-  }
-
-  const adjustedSubtotal = subtotal - tradeInCredit;
-  const hst = round2(adjustedSubtotal * HST_RATE);
-  const finalPrice = round2(adjustedSubtotal + hst);
-  const deposit = resolvePublicQuoteDeposit(motor);
-
-  // Financing policy is loaded live. Pricing still returns if the lookup
-  // fails, but no stale hardcoded rate is substituted.
+  // Financing/promotion policy is loaded live. Pricing still returns if the
+  // lookup fails, but no stale hardcoded rate is substituted.
   let activeFinancing: Awaited<ReturnType<typeof fetchActiveFinancing>> = [];
   let activePromotions: Awaited<ReturnType<typeof fetchActivePromotions>> = [];
   try {
@@ -910,6 +874,74 @@ async function buildQuote(supabase: any, body: any) {
   } catch (error) {
     console.error("public quote financing lookup failed:", error);
   }
+
+  const requestedPromoOption = typeof body?.promo_option === "string"
+    ? body.promo_option
+    : typeof body?.selected_promo_option === "string"
+    ? body.selected_promo_option
+    : typeof body?.selectedPromoOption === "string"
+    ? body.selectedPromoOption
+    : null;
+  const rebate = resolveFactoryRebate(activePromotions, {
+    horsepower: motorHp,
+    family: motor.family,
+    modelDisplay: motor.model_display,
+    model: motor.model,
+  }, { selectedPromoOption: requestedPromoOption });
+
+  // Trade-in — a present object must be accepted or rejected, never dropped.
+  let tradeIn: any = null;
+  let tradeEstimateValue: number | null = null;
+  let tradeValuation: Awaited<ReturnType<typeof fetchCanonicalHbwValuation>> | null = null;
+  let tradeResolved: ReturnType<typeof resolveTradeInInput> | null = null;
+  if (isPresentTradeIn(body?.trade_in)) {
+    tradeResolved = resolveTradeInInput(body.trade_in);
+    tradeValuation = await fetchCanonicalHbwValuation({
+      brand: tradeResolved.brand,
+      year: tradeResolved.year,
+      hp: tradeResolved.horsepower,
+      condition: tradeResolved.condition,
+      stroke: tradeResolved.engineType,
+      hours: tradeResolved.engineHours,
+      model: tradeResolved.model,
+    });
+    tradeEstimateValue = tradeValuation.wholesale;
+  }
+
+  const pricingCalc = computePublicQuotePricing({
+    subtotal,
+    rebateAmount: rebate?.amount ?? 0,
+    tradeEstimatedValue: tradeEstimateValue,
+    hasTradeIn: tradeEstimateValue !== null,
+    hstRate: HST_RATE,
+  });
+  const tradeInCredit = pricingCalc.tradeInCredit;
+  if (tradeValuation && tradeResolved) {
+    tradeIn = {
+      input: {
+        ...body.trade_in,
+        horsepower: tradeResolved.horsepower,
+        engine_type: tradeResolved.engineType ?? null,
+      },
+      estimate: {
+        low: tradeValuation.rangeLow,
+        high: tradeValuation.rangeHigh,
+        average: tradeValuation.wholesale,
+        listing: tradeValuation.listing,
+        hst_savings: tradeValuation.hstSavings,
+        confidence: tradeValuation.confidence,
+        factors: tradeValuation.factors,
+      },
+      credit_applied: tradeInCredit,
+      source: "HBW Motor Valuation API (canonical)",
+      note: "Trade-in credit capped at post-rebate subtotal. Final value requires in-person inspection.",
+    };
+  }
+
+  const adjustedSubtotal = pricingCalc.adjustedSubtotal;
+  const hst = pricingCalc.hst;
+  const finalPrice = pricingCalc.finalPrice;
+  const deposit = resolvePublicQuoteDeposit(motor);
   const financing = buildPublicQuoteFinancing({
     beforeTaxSubtotal: adjustedSubtotal,
     finalPriceWithTax: finalPrice,
@@ -970,7 +1002,14 @@ async function buildQuote(supabase: any, body: any) {
         lead_source: "public-quote-api",
         lead_status: "new",
         notes: `Public agent quote — referrer: ${safeReferrer}`,
-        quote_data: { items, financing, trade_in: tradeIn, boat_info: body?.boat_info || null },
+        quote_data: {
+          items,
+          financing,
+          trade_in: tradeIn,
+          boat_info: body?.boat_info || null,
+          factory_rebate: pricingCalc.factoryRebate,
+          factory_rebate_promotion: pricingCalc.factoryRebate > 0 ? (rebate?.promotionName ?? null) : null,
+        },
       });
       leadCaptured = leadResult.captured;
       leadCaptureError = leadResult.error;
@@ -1000,6 +1039,9 @@ async function buildQuote(supabase: any, body: any) {
     pricing: {
       subtotal: round2(subtotal),
       accessory_cost: round2(accessoryCost),
+      factory_rebate: pricingCalc.factoryRebate,
+      factory_rebate_promotion: pricingCalc.factoryRebate > 0 ? (rebate?.promotionName ?? null) : null,
+      post_rebate_subtotal: pricingCalc.postRebateSubtotal,
       trade_in_credit: round2(tradeInCredit),
       adjusted_subtotal: round2(adjustedSubtotal),
       hst: hst,
@@ -1160,10 +1202,10 @@ function docs() {
       "Mercury Verado is special-order only and is not quoted through this public estimate.",
       "Pickup only at Gores Landing, ON. No delivery.",
       "Financing is loaded from the active Canadian financing and promotion records; no stale rate fallback is used.",
-      "Financing eligibility is tested before tax; financed principal includes HST plus the $349 DealerPlan fee.",
+      "Standing financing is tested on the before-tax subtotal (at least $5,000 before tax); promotional financing additionally needs the amount financed (after tax + $349 DealerPlan fee) to exceed the promotion minimum. Financed principal includes HST plus the $349 DealerPlan fee. Factory rebates apply before tax and before any trade-in credit.",
       "The standing offer is the default. Promotional financing is applied only when its returned offer id is explicitly selected and eligible.",
       `Financing response policy: ${PUBLIC_QUOTE_FINANCING_POLICY_VERSION}.`,
-      "Trade-in credits capped at subtotal.",
+      "Trade-in credits capped at the post-rebate subtotal.",
     ],
     lastUpdated: nowISO(),
   };

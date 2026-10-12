@@ -306,8 +306,8 @@ Create a complete quote with motor, promotions, trade-in, warranty, and accessor
 | `customer_phone` | string | No | |
 | `purchase_path` | string | No | `"loose"` (default) or `"installed"` |
 | `promo_option` | string | No | `"cash_rebate"`, `"special_financing"`, `"no_payments"`, or `null` |
-| `promo_rate` | number | No | APR for special_financing (default: 2.99) |
-| `promo_term` | number | No | Term in months for special_financing (default: 120) |
+| `promo_rate` | number | No | Ignored — APR comes from the live promotion only |
+| `promo_term` | number | No | Ignored — term comes from the live promotion only |
 | `trade_in` | object | No | `{ brand, year, horsepower, condition, model?, serial_number?, override_value?, engine_type?, engine_hours? }` |
 | `trade_in.override_value` | number | No | Override the formula estimate with an exact trade-in dollar amount. The formula estimate is still calculated and stored for reference. |
 | `warranty_years` | number | No | Desired combined Mercury coverage years, from current included coverage up to 8. The API prices only the required 1-5 year Platinum Product Protection term. |
@@ -461,7 +461,7 @@ The API applies intelligent defaults so agents don't need to specify every field
 | Situation | Default Behavior |
 |-----------|-----------------|
 | No `promo_option` specified | Auto-selects `cash_rebate` (best value for most customers) |
-| `special_financing` or `no_payments` requested but total < $5,000 | Falls back to `cash_rebate` with a warning in the response |
+| `special_financing` requested but before-tax subtotal < $5,000, or amount financed does not exceed the promotion minimum | No promotional financing is applied; a warning is returned. APR/term come from the live promotion only |
 | No `trade_in` provided | No trade-in applied |
 | No `purchase_path` specified | Defaults to `"loose"` (motor only, no installation) |
 | No `lead_status` specified | Defaults to `"new"` (customer just asked for a quote) |
@@ -494,8 +494,8 @@ The API applies intelligent defaults so agents don't need to specify every field
 ### Quote with special financing
 
 1. `list_motors` + `list_promotions`
-2. Verify the total will be ≥ $5,000 (financing minimum)
-3. `create_quote` with `promo_option: "special_financing"`, `promo_rate: 2.99`, `promo_term: 120`
+2. Verify the before-tax subtotal will be ≥ $5,000 and the amount financed (after tax + $349 fee) will exceed the promotion minimum
+3. `create_quote` with `promo_option: "special_financing"` only — do not send `promo_rate`/`promo_term`; APR and term come from the live promotion and caller values are ignored
 4. Response includes monthly payment calculation
 
 ### Check Mercury Platinum Product Protection cost
@@ -524,7 +524,7 @@ The API applies intelligent defaults so agents don't need to specify every field
 - **Never fabricate motor IDs** — they must come from `list_motors`.
 - **All quotes created by this API** are tagged with `lead_source: "ai_agent"` automatically.
 - **Email validation** is enforced — invalid emails will be rejected.
-- **Financing minimum**: $5,000. Quotes below this cannot use `special_financing` or `no_payments`.
+- **Financing minimum**: the before-tax subtotal must be ≥ $5,000 for financing; promotional financing additionally needs the amount financed (after tax + $349 fee) to exceed the promotion minimum. APR and term come from the live promotion only — caller `promo_rate`/`promo_term` are ignored.
 - **Rate limit**: 30 requests per minute. Space out bulk operations.
 - **All prices are in Canadian Dollars (CAD)**.
 - **Trade-in condition** is defined by engine hours: Excellent (0-100h), Good (100-500h), Fair (500-1000h), Poor (1000+h).

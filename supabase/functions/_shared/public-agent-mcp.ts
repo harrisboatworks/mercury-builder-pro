@@ -387,7 +387,8 @@ export function presentPublicAgentBrandRules(input: {
           contract_term_months: offer.contract_term_months,
           maximum_amortization_months: offer.maximum_amortization_months,
           minimum_before_tax_cad: offer.minimum_before_tax_cad,
-          eligibility: "Call build_quote for eligibility against the selected motor and quote subtotal.",
+          minimum_basis: offer.minimum_basis,
+          eligibility: "Compare per minimum_basis: before_tax against the before-tax subtotal (after rebates/trade); amount_financed against the amount financed (after-tax total + $349 DealerPlan fee). Promotional (amount_financed) offers also require the standing before-tax minimum. Call build_quote for eligibility.",
         })),
         note:
           "contract_term_months is the contract term. Maximum amortization is an offer limit; the applicable amortization and payment require public build_quote and human confirmation.",

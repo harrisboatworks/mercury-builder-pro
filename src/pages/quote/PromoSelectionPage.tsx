@@ -133,8 +133,9 @@ export default function PromoSelectionPage() {
     state.purchasePath,
   ]);
   const estimatedFinancingAmount = financingEstimate?.financeableAmount || 0;
-  const financingEligibilityAmount = state.frozenPricing?.total
-    ?? financingEstimate?.pricing.total
+  // Standing minimum is on the before-tax subtotal (after rebates/trade).
+  const financingEligibilityAmount = state.frozenPricing?.subtotal
+    ?? financingEstimate?.pricing.subtotal
     ?? 0;
 
   // Match the summary CTA gate: DealerPlan's fee is financed, but it does not

@@ -623,6 +623,7 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
             <PromoOptionSelector
               motorHP={quoteData.motor?.hp || 0}
               totalAmount={totalCashPrice}
+              beforeTaxAmount={subtotalBeforeTax}
               selectedOption={state.selectedPromoOption}
               onSelect={handlePromoOptionSelect}
             />
