@@ -149,7 +149,7 @@ Use the live rental rate and add the fuel you actually use. Include your travel,
 
 Rice Lake is not flat-empty water. Two specific things to know:
 
-**1. The sunken railway.** A 19th-century railway line is submerged about 4 feet below surface across the middle of the lake (between Hiawatha and Harwood). It's claimed many propellers over the decades. **The pre-departure briefing covers this**, we'll show you exactly where on the chartplotter and how to navigate around it. Newer boaters: stay on the south shore until you've crossed it once with us briefing.
+**1. The sunken railway.** A 19th-century railway line is submerged across the middle of the lake (between Hiawatha and Harwood), in places just inches below the surface depending on water levels. It's claimed many propellers over the decades. **The pre-departure briefing covers this**, we'll show you exactly where on the chartplotter and how to navigate around it. Newer boaters: stay on the south shore until you've crossed it once with us briefing.
 
 **2. Weed beds.** Mid-summer, weed beds get thick in the bays. Avoid running through them at speed, they'll wrap your prop. Easy to navigate around once you see them; the briefing covers this.
 
