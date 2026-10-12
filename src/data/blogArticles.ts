@@ -2833,7 +2833,7 @@ Use the live rental rate and add the fuel you actually use. Include your travel,
 
 Rice Lake is not flat-empty water. Two specific things to know:
 
-**1. The sunken railway.** A 19th-century railway line is submerged about 4 feet below surface across the middle of the lake (between Hiawatha and Harwood). It's claimed many propellers over the decades. **The pre-departure briefing covers this**, we'll show you exactly where on the chartplotter and how to navigate around it. Newer boaters: stay on the south shore until you've crossed it once with us briefing.
+**1. The sunken railway.** A 19th-century railway line is submerged across the middle of the lake (between Hiawatha and Harwood), in places just inches below the surface depending on water levels. It's claimed many propellers over the decades. **The pre-departure briefing covers this**, we'll show you exactly where on the chartplotter and how to navigate around it. Newer boaters: stay on the south shore until you've crossed it once with us briefing.
 
 **2. Weed beds.** Mid-summer, weed beds get thick in the bays. Avoid running through them at speed, they'll wrap your prop. Easy to navigate around once you see them; the briefing covers this.
 
@@ -7349,7 +7349,7 @@ Walleye trolling is why the [Mercury 9.9 ProKicker](/blog/mercury-prokicker-rice
 
 ## The Railway: Rice Lake's Most Expensive Tourist Attraction
 
-In the 1850s, a group of optimistic engineers decided to build a railway across the middle of Rice Lake. It sank. They reinforced it and tried again. It sank again, more slowly. The Cobourg and Peterborough Railway was eventually abandoned, and today the roadbed sits roughly **4 feet below the surface**, running through Tick Island across the widest part of the lake.
+In the 1850s, a group of optimistic engineers decided to build a railway across the middle of Rice Lake. It opened at the end of 1854, and three days later the ice started shoving it out of line. They repaired it. The ice came back. After a few winters the ice won, and the Cobourg and Peterborough Railway's lake crossing was abandoned. Today the roadbed sits **just inches below the surface** in places, depending on water levels, running through Tic Island across the widest part of the lake.
 
 It has been collecting lower units, prop blades, and the dignity of confident boat operators for roughly 170 years.
 
@@ -7519,7 +7519,7 @@ Head to **mercuryrepower.ca** for live Mercury pricing in CAD, configured for yo
       },
       {
         question: 'What is the sunken railway on Rice Lake?',
-        answer: 'The 19th-century Cobourg and Peterborough Railway roadbed sits roughly 4 feet below the surface, crossing the lake through Tick Island. It is a real navigation hazard, so mark it on your chartplotter. It is also a premier smallmouth bass area.'
+        answer: 'The 19th-century Cobourg and Peterborough Railway roadbed crosses the lake through Tic Island, in places just inches below the surface depending on water levels. It is a real navigation hazard, so mark it on your chartplotter. It is also a premier smallmouth bass area.'
       },
       {
         question: 'What horsepower do I need for a 16 ft aluminum boat on Rice Lake?',
@@ -12838,7 +12838,7 @@ Channel catfish are real here too, they grow large, and almost nobody targets th
 
 The Cobourg and Peterborough Railway crossed Rice Lake in 1854, connecting Harwood on the south shore to the north side near Hiawatha. Ice damaged the crossing badly, and by the early 1860s the Rice Lake section was finished for good.
 
-It left two structures you need to know about. The Harwood causeway runs from the south shore toward Tic Island as a solid fill, and parts of it sit above water where you can see the embankment. The deeper trestle sections north of Tic Island are the problem. They sit roughly 4 feet under the surface. The original berm was built about 4 feet above the old high-water mark, and when the Trent-Severn raised the lake in the 1920s, it went under.
+It left two structures you need to know about. The Harwood causeway runs from the south shore toward Tic Island as a solid fill, and parts of it sit above water where you can see the embankment. The deeper trestle sections north of Tic Island are the problem. Depending on water levels, parts sit just inches under the surface. The original berm was built about 4 feet above the old high-water mark, and when the Trent-Severn raised the lake in the 1920s, it went under.
 
 Local anglers know where it is. The fish know even better, because the rubble holds crayfish and baitfish, which means it holds smallmouth, walleye and muskie year round. It is some of the best structure on the lake. It is also one of the fastest ways to wreck a prop and end your day.
 
@@ -12889,7 +12889,7 @@ For ramp details, parking and conditions, see our full [Rice Lake boat launch gu
 
 ## Common Mistakes
 
-- **Running the railway blind.** The trestle north of Tic Island sits about 4 feet down and is invisible from the surface. First time through, idle until it is on your screen.
+- **Running the railway blind.** The trestle north of Tic Island can sit just inches down and is hard to see from the surface. First time through, idle until it is on your screen.
 - **Misreading the walleye slot.** The 35 to 50 cm window is a keep window. Fish under it and over it both go back. The big ones you are proud of are usually over-slot releases.
 - **Treating the Otonabee sanctuary as open on the walleye opener.** The listed stretch stays closed through Friday May 15, 2026 and reopens Saturday May 16, not May 9. Watch for posted signs.
 - **Underpowering the boat.** Rice Lake's afternoon west wind is the real test. Rig for that, not for the calm launch.
@@ -12919,7 +12919,7 @@ Rice Lake still holds walleye, but 2026 anglers should expect fewer fish and a l
 You may keep walleye only if they measure between 35 and 50 cm, roughly 14 to 20 inches. Fish under 35 cm and over 50 cm must be released. The slot is a keep window, not a release window.
 
 **Where is the sunken railway on Rice Lake?**
-The old Cobourg and Peterborough Railway crossed near Tic Island. The deeper trestle sections north of the island sit about 4 feet underwater and are invisible from the surface. Run that area at idle until you have the structure marked on your chartplotter.
+The old Cobourg and Peterborough Railway crossed near Tic Island. Depending on water levels, parts of it sit just inches below the surface and are hard to see. Run that area at idle until you have the structure marked on your chartplotter.
 
 **What size motor do I need for a Rice Lake fishing boat?**
 A 16 to 18 foot aluminum fishing boat is well matched to a Mercury 90 HP FourStroke, stepping up to 115 HP for heavier loads. A 9.9 ProKicker is worth adding for walleye trolling. Always stay within the maximum horsepower on your capacity plate.
@@ -12956,7 +12956,7 @@ Whether you are rigging a new boat for the lake or repowering the one you have, 
       { question: "When does bass season open on Rice Lake in 2026?", answer: "Bass season opens June 20, 2026, the third Saturday in June, and runs to December 15. Largemouth and smallmouth share a combined limit of 6 on a Sport licence and 2 on a Conservation licence." },
       { question: "Is Rice Lake still a good walleye lake?", answer: "Rice Lake still holds walleye, but 2026 anglers should expect fewer fish and a lot of them over the 50 cm slot. Keeper-slot fish take real effort. The lake's strongest fisheries right now are smallmouth bass, muskellunge and crappie." },
       { question: "What is the walleye slot size on Rice Lake?", answer: "You may keep walleye only if they measure between 35 and 50 cm, roughly 14 to 20 inches. Fish under 35 cm and over 50 cm must be released. The slot is a keep window, not a release window." },
-      { question: "Where is the sunken railway on Rice Lake?", answer: "The old Cobourg and Peterborough Railway crossed near Tic Island. The deeper trestle sections north of the island sit about 4 feet underwater and are invisible from the surface. Run that area at idle until you have the structure marked on your chartplotter." },
+      { question: "Where is the sunken railway on Rice Lake?", answer: "The old Cobourg and Peterborough Railway crossed near Tic Island. Depending on water levels, parts of it sit just inches below the surface and are hard to see. Run that area at idle until you have the structure marked on your chartplotter." },
       { question: "What size motor do I need for a Rice Lake fishing boat?", answer: "A 16 to 18 foot aluminum fishing boat is well matched to a Mercury 90 HP FourStroke, stepping up to 115 HP for heavier loads. A 9.9 ProKicker is worth adding for walleye trolling. Always stay within the maximum horsepower on your capacity plate." },
       { question: "Does Harris Boat Works sell fishing licences?", answer: "No. Ontario fishing licences and the Outdoors Card are sold through the province. Get yours at ontario.ca/fishing. We are happy to help with boats, motors and rigging." },
       { question: "Can I fish Rice Lake without a licence in 2026?", answer: "Canadian residents can fish Ontario without a licence on February 14 to 16 (Family Day weekend), May 9 to 10, June 20 to 21, and June 27 to July 5, 2026. Conservation limits and all size and sanctuary rules still apply on those days." }
@@ -17183,14 +17183,14 @@ Harris Boat Works has been a Mercury dealer since 1965.
     imageAlt: "Common nominal outboard shaft lengths: short 15 inches, long 20 inches, extra long 25 inches. Confirm the exact motor and hull.",
     author: 'Jay Harris',
     datePublished: '2026-05-05',
-    dateModified: '2026-10-06',
+    dateModified: '2026-10-12',
     publishDate: '2026-05-05',
     category: 'Buying Guide',
     readTime: '10 min read',
     keywords: ['outboard shaft length', 'mercury shaft length guide', '20 inch shaft outboard', '25 inch shaft outboard', 'transom height measurement'],
     content: `*Hero graphic: common nominal shaft-length labels, not installation measurements. Use the exact motor and hull instructions to confirm fit.*
 
-_Last updated: May 27, 2026_
+_Last updated: October 12, 2026_
 
 # Outboard Shaft Length Guide: Short, Long, and Extra Long, How to Get It Right
 
@@ -17198,6 +17198,12 @@ _Last updated: May 27, 2026_
 Most Ontario aluminum fishing boats need a 20-inch (long) shaft. Most pontoons over 22 feet need a 25-inch (extra long) shaft. Small tiller boats with low transoms typically take a 15-inch (short) shaft. The only correct way to confirm is to measure transom height, from the top of the transom straight down to the bottom of the hull at the centreline. Mercury's shaft code on the motor (L, XL, XXL, or no length letter for a 15-inch short shaft) tells you the rest. The full decoder and a measurement guide are below.
 
 Ready to price it? [Build your quote, shaft length is a step](/quote/motor-selection).
+
+:::explainer
+src: /explainers/video-shaft-length.html
+title: Video: outboard shaft length, get it right
+caption: Watch: where the prop should sit, what too short and too long do, how to measure your transom, and how 15, 20 and 25 inch shafts match up. 81 seconds, captions available.
+:::
 
 ## Why shaft length matters more than most people think
 
@@ -18078,7 +18084,7 @@ After any overheating event, get it checked before the next run. [Book a Mercury
     imageAlt: 'Two anglers fishing from a small aluminum boat on a calm lake at dusk, with cattails and lily pads in the foreground',
     author: 'Harris Boat Works',
     datePublished: "2026-05-10",
-    dateModified: '2026-10-06',
+    dateModified: '2026-10-12',
     publishDate: "2026-05-10",
     category: "Lifestyle",
     readTime: "11 min read",
@@ -18091,7 +18097,7 @@ Need your PCOC? Take the online course through [HBW's MyBoatCard referral link](
 
 ## Quick Answer
 
-Rice Lake is a 32-km shallow lake on the Trent-Severn, roughly 1 hour 45 minutes from central Toronto in light traffic. Water is 6 to 10 ft deep with heavy summer weeds and a sunken 19th-century railway across the middle (mark it on your chartplotter). Walleye, bass, and muskie are the main species. Check current public-launch access before towing; Harris Boat Works runs a day-fee ramp in Gores Landing that is open to the public.
+Rice Lake is a 32-km shallow lake on the Trent-Severn, roughly 1 hour 45 minutes from central Toronto in light traffic. Water is 6 to 10 ft deep with heavy summer weeds and a sunken 19th-century railway across the middle (use the buoyed channels to cross it). Walleye, bass, and muskie are the main species. Check current public-launch access before towing; Harris Boat Works runs a day-fee ramp in Gores Landing that is open to the public.
 
 ---
 
@@ -18111,7 +18117,7 @@ Harris Boat Works has been at 5369 Harris Boat Works Rd in Gores Landing on Rice
 
 **Weed beds.** Summer growth is heavy in most bays and along structure. Bring a weed-cutting tool for the prop. Plan for slower running speeds in shallow weed-choked areas.
 
-**The sunken railway.** This is the one hazard everyone has to know. There is an abandoned 19th-century railway submerged across the middle of Rice Lake. It sits roughly 4 feet below the surface. It has been wrecking lower units for over a hundred years. Chartplotters (Navionics, Garmin, C-MAP) mark the crossing clearly. Slow down across the middle of the lake until you know exactly where the structure is.
+**The sunken railway.** This is the one hazard everyone has to know. It is the remains of the 1854 Cobourg and Peterborough Railway bridge, stone-filled cribs and all, submerged across the middle of Rice Lake. Depth over it changes with the water level, and in places the old railway bed sits just inches below the surface. It has been wrecking lower units for over a hundred years. Don't trust a phone map or chartplotter basemap here. Use the buoyed channels shown on a current official chart. Slow down across the middle of the lake until you know exactly where the structure is.
 
 **The wind.** Rice Lake runs east-west, which is also the prevailing wind direction. A west wind can build chop quickly across the full 32 km fetch. Underpowered hulls and inexperienced operators can get in trouble fast on a windy afternoon. Check the forecast before you launch.
 
@@ -18183,7 +18189,7 @@ Other rental options exist around Bewdley, but availability and quality vary. Ca
 
 **Required safety equipment.** For a powered boat up to 6 m, that means a lifejacket or PFD for each person, a reboarding device, a 15 m buoyant heaving line, a sound-signalling device (whistle or horn), a bailer or manual bilge pump, a paddle or an anchor with 15 m of line, a watertight flashlight (or flares), navigation lights after dark, and a 5BC fire extinguisher if the boat has an inboard engine or a fixed fuel tank. Longer boats need more. Transport Canada publishes the full list, and CO2-charged life jackets count as PFDs.
 
-**The sunken railway.** Worth mentioning twice. Know where it is on your chartplotter. Slow down across the middle of the lake.
+**The sunken railway.** Worth mentioning twice. Use the buoyed channels. Slow down across the middle of the lake.
 
 **Wind and weather.** Check the forecast. A west wind on Rice Lake at 25+ km/h is enough to make smaller boats uncomfortable; over 35 km/h is genuinely dangerous in smaller hulls.
 
@@ -18201,7 +18207,7 @@ For Mercury service, parts, or repower questions, we're a Mercury Marine Premier
 
 ## What we see at HBW
 
-Rice Lake has its own quirks. Stumps in the central basin, weed mats in late July, and a navigable channel between the islands that catches every first-time boater. Most of our marine-tow callbacks in summer involve someone running aground on Tick Island or Black Island shoals.
+Rice Lake has its own quirks. Stumps in the central basin, weed mats in late July, and a navigable channel between the islands that catches every first-time boater. Most of our marine-tow callbacks in summer involve someone running aground on Tic Island or Black Island shoals.
 
 The good news: the lake is small enough that you can learn the hazards in a season. Slow down in the west end shallows, stay in the marked channel between islands, and pull your prop up at the Hastings end of the lock chamber. Walleye and largemouth fishing are best at sunrise and sunset.
 
@@ -18260,7 +18266,7 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     faqs: [
   {
     "question": "Where exactly is the sunken railway hazard?",
-    "answer": "It runs roughly north-south across the middle of the lake, between Hiawatha (north shore) and Harwood (south shore). Marine charts on Navionics, Garmin, C-MAP, and Fishing Hot Spots all mark it clearly. Run slowly across that section until you know the line, or use the channels locals use."
+    "answer": "It runs roughly north-south across the middle of the lake, between Hiawatha (north shore) and Harwood (south shore). Don't trust a phone map or chartplotter basemap here. Run slowly across that section until you know the line, or use the buoyed channels through the old railway crossing."
   },
   {
     "question": "What's the launch fee at Harris Boat Works?",
@@ -35243,7 +35249,7 @@ Regardless of where you watch, pack a flashlight or headlamp with fresh batterie
 Rice Lake is a legitimate multi-species fishery, and Canada Day weekend falls right in the sweet spot for walleye, bass, and muskie action.
 
 ### Walleye
-Walleye fishing is typically strong through late June and early July, especially during low-light periods. The main-lake weedlines in 8 to 14 feet of water north of Tick Island and along the edges of the deep basins near Cow Island produce well this time of year. Trolling worm harnesses with bottom bouncers or casting suspending jerkbaits over the tops of weeds in early morning both work. The walleye season is open on Rice Lake, but always check the 2026 Ontario fishing regulations summary for slot size and possession limits before you go.
+Walleye fishing is typically strong through late June and early July, especially during low-light periods. The main-lake weedlines in 8 to 14 feet of water north of Tic Island and along the edges of the deep basins near Cow Island produce well this time of year. Trolling worm harnesses with bottom bouncers or casting suspending jerkbaits over the tops of weeds in early morning both work. The walleye season is open on Rice Lake, but always check the 2026 Ontario fishing regulations summary for slot size and possession limits before you go.
 
 ### Largemouth and smallmouth bass
 Bass are either on beds or just coming off them depending on water temperature and the specific bay. Largemouth will be tight to fallen timber, docks, and the inside edges of pencil reeds in the lake's many bays. Smallmouth tend to relate to rocky points and shoals, particularly around the islands in the central lake. Soft plastics, topwaters early in the day, and square-bill crankbaits all get bites. In Fisheries Management Zone 17, the largemouth and smallmouth bass season runs from the third Saturday in June through December 15, so the regular season is open by Canada Day. Check the [current FMZ 17 regulations](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17) before fishing for current limits and any exceptions.
