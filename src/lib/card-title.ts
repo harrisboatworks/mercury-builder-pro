@@ -137,6 +137,7 @@ export type MotorCardTitleSource = {
   model_number?: string | null;
   mercury_model_no?: string | null;
   commandThrust?: boolean | null;
+  has_command_thrust?: boolean | null;
   features?: unknown;
 };
 
@@ -149,21 +150,23 @@ function featureListIncludesCommandThrust(features: unknown): boolean {
         : feature && typeof feature === 'object' && 'title' in feature
           ? String((feature as { title?: unknown }).title ?? '')
           : String(feature ?? '');
-    // Shared family copy can mention variants; only an explicit feature label is a CT hint.
-    return /^(?:command\s*thrust|ct)$/i.test(text.trim());
+    // Shared family copy can mention variants; require an explicit installed-feature label.
+    return /^(?:command\s*thrust(?:\s+gearcase)?|ct)$/i.test(text.trim());
   });
 }
 
 export function ensureCommandThrustDisplayName(
   displayName: string,
-  hints?: { commandThrust?: boolean | null; features?: unknown },
+  hints?: Pick<MotorCardTitleSource, 'commandThrust' | 'has_command_thrust' | 'features'>,
 ): string {
   const name = (displayName || '').replace(/\s+/g, ' ').trim();
   if (!name) return name;
   if (/\bcommand\s*thrust\b/i.test(name)) return name;
 
   const hinted =
-    hints?.commandThrust === true || featureListIncludesCommandThrust(hints?.features);
+    hints?.commandThrust === true ||
+    hints?.has_command_thrust === true ||
+    featureListIncludesCommandThrust(hints?.features);
   if (!hinted) return name;
 
   if (/\bFourStroke\b/i.test(name)) {
@@ -180,6 +183,7 @@ export function resolveMotorCardTitle(motor: MotorCardTitleSource | null | undef
   const presented = applyMotorPresentationOverrides(motor || {});
   return ensureCommandThrustDisplayName(presented.model_display || presented.model || '', {
     commandThrust: presented.commandThrust,
+    has_command_thrust: presented.has_command_thrust,
     features: presented.features,
   });
 }
