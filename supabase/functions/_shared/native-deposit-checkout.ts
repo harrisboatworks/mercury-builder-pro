@@ -400,7 +400,7 @@ export function projectNativeDepositCheckout(input: {
   const checkout: NativeDepositCheckout = {
     ucp: { version: "2026-04-08", capabilities: { "dev.ucp.shopping.checkout": [{ version: "2026-04-08" }] },
       payment_handlers: { [NATIVE_DEPOSIT_HANDLER_ID]: [{ id: NATIVE_DEPOSIT_HANDLER_ID, version: "2026-04-08",
-        available_instruments: [{ type: "card" }], config: { scope: "reservation_deposit", currency: "CAD", trusted_buyer_review: true } }] } },
+        available_instruments: [{ type: "card" }], config: { scope: "reservation_deposit", currency: "CAD", trusted_buyer_review: true, bank_verification_owner: "wallet" } }] } },
     links: [{ type: "terms_of_service", url: `${PUBLIC_SITE_URL}/terms` }, { type: "privacy_policy", url: `${PUBLIC_SITE_URL}/privacy` }],
     kind: NATIVE_DEPOSIT_KIND,
     id: input.intent.child_id,
@@ -438,12 +438,12 @@ export function projectNativeDepositCheckout(input: {
     ));
   } else if (input.phase === "requires_escalation") {
     checkout.messages.push(scopeMessage(
-      input.paymentStatus === 'not_started' ? 'buyer_review_required' : 'payment_reconciliation_required',
+      input.paymentStatus === 'not_started' ? 'buyer_review_required' : input.paymentStatus === 'requires_action' ? 'wallet_verification_required' : 'payment_reconciliation_required',
       'requires_buyer_review',
       input.paymentStatus === 'not_started'
         ? 'Buyer review is required before this deposit can be paid.'
         : input.paymentStatus === 'requires_action'
-          ? 'The buyer must finish secure wallet or bank verification on the site.'
+          ? 'The buyer must finish bank verification in the issuing wallet, then refresh the existing payment. Do not start another deposit.'
           : 'This payment is pending reconciliation or did not complete. Contact HBW before starting another payment.',
     ));
   }

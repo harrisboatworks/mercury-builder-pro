@@ -15,20 +15,6 @@ type Review = {
 };
 const cad = (cents: number) => new Intl.NumberFormat('en-CA', { style: 'currency', currency: 'CAD' }).format(cents / 100);
 
-type StripeClient = { handleNextAction(args: { clientSecret: string }): Promise<{ error?: { message?: string } }> };
-async function stripeClient(): Promise<StripeClient> {
-  const key = import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY;
-  if (!key || !/^pk_(test|live)_/.test(key)) throw new Error('Payment verification is unavailable. Contact HBW.');
-  const win = window as Window & { Stripe?: (key: string) => StripeClient };
-  if (!win.Stripe) await new Promise<void>((resolve, reject) => {
-    const script = document.createElement('script'); script.src = 'https://js.stripe.com/v3/'; script.async = true;
-    script.onload = () => resolve(); script.onerror = () => reject(new Error('Payment verification could not load. Try again.'));
-    document.head.appendChild(script);
-  });
-  if (!win.Stripe) throw new Error('Payment verification could not load.');
-  return win.Stripe(key);
-}
-
 export default function AgentDepositReviewPage() {
   const { childId = '' } = useParams();
   const { user } = useAuth();
@@ -105,12 +91,7 @@ function DepositReviewSession({ childId }: { childId: string }) {
             <a className="inline-block underline" href={review.document_url} target="_blank" rel="noopener noreferrer" referrerPolicy="no-referrer" onClick={() => setPdfOpened(true)}>Open the exact quote PDF</a>
             <p className="text-sm"><Link className="underline" to="/terms" target="_blank" rel="noopener noreferrer">Deposit terms</Link> · <Link className="underline" to="/privacy" target="_blank" rel="noopener noreferrer">Privacy policy</Link></p>
             {review.paid ? <p role="status" className="rounded-lg bg-green-50 p-4 text-green-900">Your {cad(review.amount_cents)} deposit is paid. HBW will confirm the next steps.</p> :
-              review.receipt_reconciliation_required ? <p role="status">Your payment reached the processor, but HBW must verify the receipt. Contact (905) 342-2153 before starting any other payment.</p> : review.payment_status === 'expired' ? <p role="status">This review expired before payment. Ask your assistant for a fresh quote or contact HBW.</p> : review.payment_status === 'requires_action' ? <Button disabled={busy} onClick={() => void perform(async () => {
-                const data = await call('step_up'); const stripe = await stripeClient();
-                if (!active.current) return;
-                const result = await stripe.handleNextAction({ clientSecret: data.client_secret });
-                if (result.error) throw new Error(result.error.message || 'Payment verification did not finish.'); await refresh();
-              })}>Verify payment securely</Button> : review.approved ? <p role="status">Deposit approved. Return to your assistant to finish securely with your wallet, then refresh this page for the receipt.</p> :
+              review.receipt_reconciliation_required ? <p role="status">Your payment reached the processor, but HBW must verify the receipt. Contact (905) 342-2153 before starting any other payment.</p> : review.payment_status === 'expired' ? <p role="status">This review expired before payment. Ask your assistant for a fresh quote or contact HBW.</p> : review.payment_status === 'requires_action' ? <p role="status">Return to the wallet that approved this deposit to finish bank verification. Then refresh this page. Your original payment remains pending; do not start another deposit.</p> : review.payment_status === 'failed' ? <p role="status">Your payment did not complete. Contact HBW to check the original payment and prepare a fresh deposit.</p> : review.approved ? <p role="status">Deposit approved. Return to your assistant to finish securely with your wallet, then refresh this page for the receipt.</p> :
                 review.nonce ? <div className="space-y-3"><label className="flex items-start gap-3"><input className="mt-1" type="checkbox" checked={accepted} onChange={e => setAccepted(e.target.checked)} />
                   <span>I reviewed the exact quote PDF and approve the {cad(review.amount_cents)} CAD deposit under these terms.</span></label>
                   <Button disabled={busy || !accepted || !pdfOpened} onClick={() => void perform(async () => {

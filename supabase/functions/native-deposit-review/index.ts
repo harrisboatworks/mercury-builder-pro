@@ -1,3 +1,4 @@
+import { nativeDepositBankAction } from '../_shared/native-deposit-bank-action.ts';
 import { nativeBuyerReviewAuthorized } from '../_shared/native-buyer-review-authorization.ts';
 import { resolveDepositStagingOrigin } from '../_shared/deposit-staging-origin.ts';
 import { corsHeaders as sharedCorsHeaders } from '../_shared/cors.ts';
@@ -56,9 +57,11 @@ Deno.serve(async req => {
         || Date.parse(approval.expires_at) <= Date.now() || Date.parse(intent.expires_at) <= Date.now()) return reply({ error: 'No buyer verification is pending.' }, 409);
       const stripe = createNativeStripePreviewClient({ secretKey: Deno.env.get('STRIPE_SECRET_KEY')!, sellerAccountId: Deno.env.get('NATIVE_STRIPE_SELLER_ACCOUNT')! });
       const pi = await stripe.retrievePaymentIntent(attempt.stripe_payment_intent_id) as Record<string, unknown>;
-      if (pi.status !== 'requires_action' || pi.livemode !== attempt.livemode || pi.amount !== intent.amount_cents || pi.currency !== 'cad')
-        return reply({ error: 'Refresh the payment status before continuing.' }, 409);
-      return reply({ client_secret: pi.client_secret }); // Ephemeral, owned UI only; never UCP/persistence/logs.
+      const action = nativeDepositBankAction(pi, { amountCents: intent.amount_cents,
+        intentId: intent.id, savedQuoteId: intent.saved_quote_id, motorId: intent.motor_id,
+        childId: intent.child_id, livemode: attempt.livemode });
+      if (!action) return reply({ error: 'Refresh the payment status before continuing.' }, 409);
+      return reply(action); // Safe wallet handoff; no PI secret or issued-token action.
     }
     if (body.action === 'approve') {
       if (body.accept_terms !== true || typeof body.nonce !== 'string' || !/^[0-9a-f]{64}$/.test(body.nonce)

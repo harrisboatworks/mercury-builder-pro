@@ -34,8 +34,12 @@ certification, AP2 mandates or unattended buyer approval is advertised.
    binds the actual PI, and seeds the existing three-audience email outbox.
    Signed PI events reconcile asynchronous results and invoke the canonical PDF
    mailer. Outbox/provider acceptance is distinct from email delivery.
-8. Required bank verification continues only in the owned UI via Stripe.js.
-   Public UCP never returns a client secret, capability, buyer identity or PDF URL.
+8. Required SPT bank verification continues in the issuing wallet. Stripe sends
+   shared_payment.issued_token.requires_action there; that wallet retrieves its
+   own issued token and uses Stripe.js handleNextAction with its hashedValue.
+   The merchant owned UI explains the handoff and keeps the existing payment
+   locked. It must not use the seller PI client secret or retrieve a foreign
+   issued token. Public UCP never returns a client secret, capability, buyer identity or PDF URL.
    Paid deposit receipt readback requires ownership and survives checkout expiry.
 
 Parent merchandise/HST totals and quote-only completion are preserved. This child
@@ -55,8 +59,8 @@ canonical PDF, paired paid record, three simulator provider IDs and replay.
 
 Staging needs NATIVE_DEPOSIT_ENABLED=true, the exact seller account pin, and an
 explicit NATIVE_DEPOSIT_REVIEW_ORIGIN backed only by the isolated project. Browser
-UI additionally needs VITE_NATIVE_DEPOSIT_ENABLED=true and Stripe's publishable
-key for bank verification. Use an owned HTTPS isolated preview for interoperable
+UI additionally needs VITE_NATIVE_DEPOSIT_ENABLED=true. The issuing wallet,
+not the merchant UI, owns its publishable key and SPT bank action. Use an owned HTTPS isolated preview for interoperable
 UCP continuation proof; localhost checks alone are not conformance evidence.
 
 Production requires an exact reviewed paired migration/Edge/frontend release
@@ -104,3 +108,11 @@ claims, preserve the funds/attempt record, and route a conflicting canonical
 binding to the accountable owner for the appropriate reconciliation/refund.
 Do not fabricate a paid receipt. This case and real signed-event request metadata
 need explicit isolated provider proof before release.
+
+
+SPT bank verification primary contract:
+https://docs.stripe.com/agentic-commerce/concepts/shared-payment-tokens?agent-seller=agent
+The native sandbox must prove requires_action -> issuer wallet's real 3DS
+challenge -> same merchant PI result -> signed event -> paired claim. A
+merchant test-helper token plus an isolated wallet simulator is provider
+acceptance of that contract, not Meta wallet certification or live activation.
