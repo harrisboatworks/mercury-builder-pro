@@ -305,9 +305,18 @@ export function hasCompleteFrozenQuoteSnapshot(frozen: unknown, snapshot: unknow
   const recorded = frozen as Record<string, unknown>;
   if (!Number.isInteger(snapshot.includedCoverageYears) || snapshot.includedCoverageYears! < 3) return false;
   if (!snapshot.validUntil) return false;
+  if (!['cash_purchase', 'standard_financing', 'special_financing'].includes(snapshot.paymentMethod || '')) return false;
+  if ((snapshot.pricing.promoValue > 0 || snapshot.includedCoverageYears! > 3)
+    && (typeof snapshot.promotion?.name !== 'string' || !snapshot.promotion.name.trim()
+      || typeof snapshot.promotion.endDate !== 'string' || !snapshot.promotion.endDate
+      || !Number.isFinite(promoEndOfDay(snapshot.promotion.endDate).getTime()))) return false;
   try {
     if (!validateQuotePdfSnapshot(snapshot).isValid) return false;
     const expected = frozenPricingFromPdfSnapshot(snapshot) as Record<string, unknown>;
+    const recordedTrade = recorded.appliedTradeCredit ?? 0;
+    if (typeof recordedTrade !== 'number' || !Number.isFinite(recordedTrade)
+      || typeof expected.appliedTradeCredit !== 'number' || !Number.isFinite(expected.appliedTradeCredit)
+      || Math.abs(recordedTrade - expected.appliedTradeCredit) > 0.02) return false;
     const prices = ['motorMSRP', 'motorDiscount', 'adminDiscount', 'promoSavings', 'subtotal', 'hst', 'total', 'savings'];
     if (snapshot.financing) prices.push('financingRate', 'financingAmortizationMonths', 'financingContractTermMonths', 'dealerFee', 'amountFinanced');
     if (!prices.every(key => typeof recorded[key] === 'number' && Number.isFinite(recorded[key])

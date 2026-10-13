@@ -28,5 +28,18 @@ describe('recorded quote readiness during promotion outage',()=>{
   expect(hasCompleteFrozenQuoteSnapshot({...frozenPricingFromPdfSnapshot(snapshot),quoteExpiryDate:'2026-11-30'},snapshot)).toBe(false);
   expect(hasCompleteFrozenQuoteSnapshot({...frozenPricingFromPdfSnapshot(snapshot),quoteExpiryDate:'2026-10-31T03:59:59.999Z'},snapshot)).toBe(true);
  });
+ it('requires payment and campaign metadata instead of treating paired omissions as complete',()=>{
+  const missing={...snapshot,promotion:undefined,paymentMethod:undefined};
+  expect(isQuotePdfSnapshot(missing)).toBe(true);
+  expect(hasCompleteFrozenQuoteSnapshot(frozenPricingFromPdfSnapshot(missing),missing)).toBe(false);
+  const noPromo={...snapshot,promotion:undefined};
+  expect(hasCompleteFrozenQuoteSnapshot(frozenPricingFromPdfSnapshot(noPromo),noPromo)).toBe(false);
+ });
+ it('requires the same recorded trade credit as the reconciled snapshot',()=>{
+  const trade={...snapshot,tradeInValue:100,pricing:{...snapshot.pricing,subtotal:2599,hst:337.87,totalCashPrice:2936.87}};
+  const frozen=frozenPricingFromPdfSnapshot(trade);
+  expect(hasCompleteFrozenQuoteSnapshot(frozen,trade)).toBe(true);
+  expect(hasCompleteFrozenQuoteSnapshot({...frozen,appliedTradeCredit:200},trade)).toBe(false);
+ });
  it('does not substitute different promotion metadata',()=>expect(hasCompleteFrozenQuoteSnapshot({...frozenPricingFromPdfSnapshot(snapshot),promotionEndDate:'2026-11-30'},snapshot)).toBe(false));
 });
