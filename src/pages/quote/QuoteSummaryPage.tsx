@@ -41,7 +41,7 @@ import { useAuth } from '@/components/auth/AuthProvider';
 import { AdminQuoteControls } from '@/components/admin/AdminQuoteControls';
 import { Bookmark, CreditCard, Download } from 'lucide-react';
 import { computeTotals, calculateMonthlyPayment, getFinancingTerm, DEALERPLAN_FEE, FINANCING_MINIMUM } from '@/lib/finance';
-import { calculateQuotePricing, getFinanceableAmount, promoEndOfDay } from '@/lib/quote-utils';
+import { calculateQuotePricing, formatPromoCalendarDate, getFinanceableAmount, resolveQuoteValidUntil } from '@/lib/quote-utils';
 import { resolveAppliedTradeValue } from '@/lib/trade-credit';
 import { calculateFinancingPurchase, FINANCING_PRICE_BASIS_ALL_IN_AFTER_TRADE } from '@/lib/financing-purchase';
 import { supabase } from '@/integrations/supabase/client';
@@ -513,12 +513,11 @@ export default function QuoteSummaryPage() {
   const { payment: monthlyPayment, termMonths, rate: financingRate } = calculateMonthlyPayment(amountToFinance, effectiveRate, effectiveTerm);
 
   const quoteValidUntil = useMemo(() => {
-    if (state.frozenPricing?.quoteExpiryDate) return new Date(state.frozenPricing.quoteExpiryDate);
-    if (state.pdfSnapshot?.validUntil) return new Date(state.pdfSnapshot.validUntil);
-    const thirtyDaysOut = new Date();
-    thirtyDaysOut.setDate(thirtyDaysOut.getDate() + 30);
-    const promotionEnd = appliedPromotion?.end_date ? promoEndOfDay(appliedPromotion.end_date) : null;
-    return promotionEnd && promotionEnd < thirtyDaysOut ? promotionEnd : thirtyDaysOut;
+    return resolveQuoteValidUntil({
+      frozenExpiry: state.frozenPricing?.quoteExpiryDate,
+      snapshotExpiry: state.pdfSnapshot?.validUntil,
+      promotionEndDate: appliedPromotion?.end_date,
+    });
   }, [appliedPromotion?.end_date, state.frozenPricing?.quoteExpiryDate, state.pdfSnapshot?.validUntil]);
 
   const pdfSnapshot = useMemo<QuotePdfSnapshot>(() => {
@@ -1245,6 +1244,9 @@ export default function QuoteSummaryPage() {
                 <div className="space-y-3">
                   <p className="text-sm font-medium text-foreground">
                     {isMotorOnlyExpress ? 'Your motor-only reservation' : 'Your configured quote'}
+                  </p>
+                  <p className="text-sm text-muted-foreground lg:hidden">
+                    Pricing valid until {formatPromoCalendarDate(quoteValidUntil)}.
                   </p>
                 </div>
 
