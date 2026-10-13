@@ -790,6 +790,12 @@ serve(async (req) => {
         sessionData.customer_email = userEmail;
       }
 
+      // Installed independently of the native rollout flag. Missing migration
+      // preserves the prior hosted-only deployment; all other storage failures
+      // fail closed before Checkout creation.
+      const rail = await supabaseService.rpc("claim_hosted_deposit_rail", { p_saved_quote_id: savedQuoteId });
+      if (rail.error && !["PGRST202", "42883"].includes(rail.error.code)) throw new Error("Deposit rail unavailable");
+      if (!rail.error && rail.data !== true) throw new Error("Saved quote already has a payment attempt");
       const session = await stripe.checkout.sessions.create(sessionData, {
         idempotencyKey: stripeCheckoutIdempotencyKey({
           savedQuoteId,

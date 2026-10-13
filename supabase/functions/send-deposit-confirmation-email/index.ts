@@ -1,3 +1,4 @@
+import { assertNativeDepositMailerBinding } from '../_shared/native-deposit-checkout.ts';
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
 import { GROK_BOT_AGENTMAIL } from "../_shared/grok-email-routing.ts";
@@ -294,6 +295,11 @@ serve(async (req) => {
 
     const quoteData = depositRecord?.quote_data as Record<string, unknown> | null;
     const savedQuoteId = depositRecord ? boundSavedQuoteIdFromDeposit(depositRecord) : "";
+    if (quoteData?.payment_channel === 'native_spt') {
+      if (stripeSessionId || typeof requestBody.nativePaymentIntentId !== 'string') throw new Error('Paid deposit record not found');
+      assertNativeDepositMailerBinding({ nativePaymentIntentId: requestBody.nativePaymentIntentId, savedQuoteId, deposit: depositRecord });
+    } else if (requestBody.nativePaymentIntentId) throw new Error('Paid deposit record not found');
+
     if (depositError || !depositRecord || !savedQuoteId) {
       throw new Error("Paid deposit record not found");
     }

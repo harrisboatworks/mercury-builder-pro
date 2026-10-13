@@ -72,6 +72,9 @@ export function usePageViewTracker() {
 
   useEffect(() => {
     const currentPath = location.pathname;
+    // The owned payment-review resource and all ephemeral credentials stay out
+    // of page activity records, including exit events.
+    if (currentPath.startsWith('/quote/agent-deposit/')) { lastPath.current = null; return; }
 
     // Send time-on-page for the PREVIOUS page when navigating away
     if (lastPath.current && lastPath.current !== currentPath) {

@@ -175,6 +175,7 @@ export function useQuoteActivityTracker() {
   }, [drainQueue]);
 
   const scheduleFlush = useCallback((event: PendingEvent) => {
+    if (event.page_path?.startsWith("/quote/agent-deposit/")) return;
     pendingEvents.current.push(event);
     if (debounceRef.current) clearTimeout(debounceRef.current);
     debounceRef.current = setTimeout(() => {

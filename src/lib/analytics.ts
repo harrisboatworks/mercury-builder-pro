@@ -246,6 +246,7 @@ function ensureClarityQueue(): ClarityFunction {
  */
 export function loadClarityAfterConsent(): boolean {
   if (typeof window === 'undefined' || typeof document === 'undefined') return false;
+  if (window.location.pathname.startsWith('/quote/agent-deposit/')) return false;
   if (getStoredConsent() !== 'granted') return false;
 
   const clarity = ensureClarityQueue();

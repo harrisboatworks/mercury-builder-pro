@@ -37,6 +37,31 @@ import {
   runMotorReservationPreparation,
 } from "../_shared/motor-reservation-intent.ts";
 
+import { nativeDepositCheckoutEnabled, isNativeDepositChildId, runNativeDepositCreate, runNativeDepositRead, runNativeDepositComplete } from '../_shared/native-deposit-checkout.ts';
+import { nativeActorFromRequest, nativeDepositIo } from '../_shared/native-deposit-io.ts';
+import { createNativeStripePreviewClient } from '../_shared/native-stripe-preview.ts';
+
+async function opNative(req: Request, supabase: any, id: string, operation: 'create' | 'read' | 'complete', caller: unknown = {}) {
+  if (!nativeDepositCheckoutEnabled(Deno.env.get('NATIVE_DEPOSIT_ENABLED')))
+    throw { status: 404, code: 'not_available', message: 'Native deposit checkout is not enabled.' };
+  const io = nativeDepositIo(supabase);
+  const actor = await nativeActorFromRequest(supabase, req);
+  const result = operation === 'create'
+    ? await runNativeDepositCreate({ caller, routeParentId: id, actor, now: new Date(), childId: 'ndc_' + crypto.randomUUID().replaceAll('-', ''), intentId: crypto.randomUUID(), io })
+    : operation === 'read' ? await runNativeDepositRead({ childId: id, actor, io })
+    : await runNativeDepositComplete({ caller, childId: id, actor, now: new Date(),
+      sellerAccountId: Deno.env.get('NATIVE_STRIPE_SELLER_ACCOUNT') || null,
+      livemode: Deno.env.get('STRIPE_SECRET_KEY')?.startsWith('sk_live_') ?? null,
+      openStripe: () => createNativeStripePreviewClient({ secretKey: Deno.env.get('STRIPE_SECRET_KEY') || '', sellerAccountId: Deno.env.get('NATIVE_STRIPE_SELLER_ACCOUNT') || '' }), io });
+  if (!result.ok) throw { status: result.status, code: result.code, message: result.message };
+  const checkout = result.checkout;
+  const reviewOrigin = Deno.env.get('NATIVE_DEPOSIT_REVIEW_ORIGIN');
+  if (checkout.continue_url && reviewOrigin && Deno.env.get('DEPOSIT_STAGING_MODE') === '1'
+    && Deno.env.get('SUPABASE_URL') === 'https://filwwwqgqtwxjxkksmxy.supabase.co')
+    checkout.continue_url = `${new URL(reviewOrigin).origin}/quote/agent-deposit/${checkout.id}`;
+  return result;
+}
+
 const UCP_VERSION = "2026-04-08";
 const SITE = PUBLIC_SITE_URL;
 const HST_RATE = 0.13;
@@ -46,7 +71,7 @@ const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Methods": "GET, POST, PUT, OPTIONS",
   "Access-Control-Allow-Headers":
-    "authorization, x-client-info, apikey, content-type, ucp-agent, idempotency-key, signature, signature-input, request-id, mcp-session-id",
+    "authorization, x-client-info, apikey, content-type, ucp-agent, idempotency-key, signature, signature-input, request-id, mcp-session-id, x-resume-token",
 };
 
 const ACTIVE_CAPABILITIES = [
@@ -516,7 +541,10 @@ async function handleMcp(req: Request, supabase: any, payload: any): Promise<Res
   }
 
   if (method === "tools/list") {
-    return json(rpcResult(id, { tools: MCP_TOOLS }));
+    return json(rpcResult(id, { tools: [...MCP_TOOLS, ...(nativeDepositCheckoutEnabled(Deno.env.get('NATIVE_DEPOSIT_ENABLED')) ? [{
+      name: 'create_deposit_checkout', description: 'Staged owned reservation-deposit child. Buyer review required before payment.',
+      inputSchema: { type: 'object', additionalProperties: false, required: ['id', 'saved_quote_id', 'operation'], properties: { id: { type: 'string' }, saved_quote_id: { type: 'string' }, operation: { const: 'motor_reservation' } } },
+    }] : [])] }));
   }
 
   if (method === "tools/call") {
@@ -528,6 +556,12 @@ async function handleMcp(req: Request, supabase: any, payload: any): Promise<Res
       return json(rpcError(id, -32000, `Platform profile validation failed (${profileCheck.reject.code}).`), profileCheck.reject.status);
     }
     try {
+      if (name === 'create_deposit_checkout' || (isNativeDepositChildId(args.id || '') && ['get_checkout', 'complete_checkout', 'update_checkout', 'cancel_checkout'].includes(name))) {
+        if (!['create_deposit_checkout', 'get_checkout', 'complete_checkout'].includes(name)) throw { status: 409, code: 'native_immutable', message: 'Deposit checkout is immutable.' };
+        const { id: nativeId, ...caller } = args;
+        const result = await opNative(req, supabase, nativeId, name === 'create_deposit_checkout' ? 'create' : name === 'get_checkout' ? 'read' : 'complete', caller);
+        return json(rpcResult(id, toolResult(result.checkout)), result.status);
+      }
       switch (name) {
         case "create_checkout": {
           const checkout = await opCreate(supabase, args.checkout || {}, profileCheck.warning, profileUrl);
@@ -621,7 +655,10 @@ Deno.serve(async (req) => {
             cancel: "POST /checkout-sessions/{id}/cancel",
             reservation_preparation: "POST /checkout-sessions/{id}/reservation-preparation",
           },
-          mcp: { methods: ["initialize", "tools/list", "tools/call"], tools: MCP_TOOLS.map((t) => t.name) },
+          mcp: { methods: ["initialize", "tools/list", "tools/call"], tools: [...MCP_TOOLS, ...(nativeDepositCheckoutEnabled(Deno.env.get('NATIVE_DEPOSIT_ENABLED')) ? [{
+      name: 'create_deposit_checkout', description: 'Staged owned reservation-deposit child. Buyer review required before payment.',
+      inputSchema: { type: 'object', additionalProperties: false, required: ['id', 'saved_quote_id', 'operation'], properties: { id: { type: 'string' }, saved_quote_id: { type: 'string' }, operation: { const: 'motor_reservation' } } },
+    }] : [])].map((t) => t.name) },
         },
         notes: [
           "Quote mode: payment is never collected via UCP. Sessions escalate to dealer confirmation via continue_url.",
@@ -659,6 +696,22 @@ Deno.serve(async (req) => {
     }
 
     const id = route[1];
+    if (route.length === 3 && route[2] === 'deposits' && req.method === 'POST') {
+      const result = await opNative(req, supabase, id, 'create', await req.json());
+      return json(result.checkout, result.status);
+    }
+    if (isNativeDepositChildId(id || '')) {
+      if (route.length === 2 && req.method === 'GET') {
+        const result = await opNative(req, supabase, id, 'read'); return json(result.checkout, result.status);
+      }
+      if (route.length === 3 && route[2] === 'complete' && req.method === 'POST') {
+        const result = await opNative(req, supabase, id, 'complete', await req.json()); return json(result.checkout, result.status);
+      }
+      // Immutable child. An in-flight or paid payment cannot be canceled by the
+      // generic quote cancellation path. Cancellation/refund needs reconciliation.
+      return err(409, 'native_immutable', 'Deposit checkout changes require buyer review or payment reconciliation.');
+    }
+
     if (route[2] === "reservation-preparation") {
       if (route.length !== 3 || req.method !== "POST") {
         return err(405, "method_not_allowed", "Reservation preparation uses POST /checkout-sessions/{id}/reservation-preparation.");

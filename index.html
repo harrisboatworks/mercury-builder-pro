@@ -20,9 +20,14 @@
         wait_for_update: 500
       });
       gtag('js', new Date());
-      gtag('config', 'G-0JNMHD89YJ');
+      if (!location.pathname.startsWith('/quote/agent-deposit/')) {
+        gtag('config', 'G-0JNMHD89YJ');
+        const gaScript = document.createElement('script'); gaScript.async = true;
+        gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-0JNMHD89YJ';
+        document.head.appendChild(gaScript);
+      }
     </script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0JNMHD89YJ"></script>
+
 
     <meta charset="UTF-8" />
     <meta name="color-scheme" content="light only" />

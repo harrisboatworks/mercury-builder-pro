@@ -1,3 +1,4 @@
+import { handleNativeDepositEvent } from '../_shared/native-deposit-webhook.ts';
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import Stripe from "https://esm.sh/stripe@18.5.0";
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
@@ -111,6 +112,10 @@ serve(async (req) => {
     }
 
     logStep("Event received", { type: event.type, id: event.id });
+
+    if (await handleNativeDepositEvent(supabase, event, { secretKey: Deno.env.get('STRIPE_SECRET_KEY') || '', sellerAccountId: Deno.env.get('NATIVE_STRIPE_SELLER_ACCOUNT') || '' })) {
+      return new Response(JSON.stringify({ received: true }), { status: 200, headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
+    }
 
     if (
       event.type === "checkout.session.completed"

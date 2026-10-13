@@ -286,3 +286,6 @@ verify_jwt = false
 
 [functions.voice-create-quote]
 verify_jwt = false
+
+[functions.native-deposit-review]
+verify_jwt = false # custom verified buyer identity plus intent-bound one-use challenge
