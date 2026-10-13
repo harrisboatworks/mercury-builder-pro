@@ -24332,12 +24332,12 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
     relatedSlugs: ['mercury-60-hp-fourstroke-review-ontario', 'how-to-choose-right-horsepower-boat', 'mercury-command-thrust-complete-guide-2026'],
     title: 'Mercury 40 vs 60 HP Ontario Guide',
     seoTitle: 'Mercury 40 vs 60 HP: Which Is Right for Your Boat?',
-    description: 'Mercury 40 vs 60 HP for Ontario boats. Real CAD prices, weight, fuel economy, Command Thrust availability, and which one your boat actually needs.',
+    description: 'Mercury 40 HP vs 60 HP outboard: loaded hole shot, weight, the cost to step up, and which one a 16 to 18 ft Ontario boat or pontoon needs.',
     image: '/lovable-uploads/blog-heroes-2026-07/batch-b/hero-mercury-40-vs-60-official-photo-comparison-2026-07.webp',
     imageAlt: 'Left, a man in a cap steadies a black Mercury outboard on an aluminum boat; right, a studio view of a Mercury 60 FourStroke',
     author: 'Jay Harris',
     datePublished: '2026-05-09',
-    dateModified: '2026-10-06',
+    dateModified: '2026-10-13',
     publishDate: '2026-05-09',
     category: 'Mercury Outboards',
     readTime: '~10 min read',
@@ -24370,16 +24370,24 @@ Ready to price it out? Build a live CAD quote for your repower online at the [Me
         answer: 'Yes if your boat is heavy for its length, has a lot of windage, or you\'re carrying loads that change a lot (pontoons, family aluminum, anything with a tower). No if you\'ve got a light 15-16 ft aluminum boat that runs near WOT most of the time. For 60 HP on a pontoon, the CT is the default pick.',
       },
       {
-        question: 'Will my old controls and gauges work with a new 40 or 60 HP?',
-        answer: 'Maybe. Mercury changed its connector standards in 2014 and again with the SmartCraft generation. Cable controls from a pre-2014 motor often need a new control box. Tach and gauges need verifying. Our Mercury controls and rigging guide walks the full compatibility matrix.',
-      },
-      {
         question: 'Do I need to update my Pleasure Craft Licence if I change motor HP?',
         answer: 'Review the information recorded on your Pleasure Craft Licence after a repower. Transport Canada requires changed licence information to be updated within 30 days, and updates are free. Check the current requirements for your boat and authorize any dealer help; do not assume that the fee for a new or renewed licence applies to an update. As checked September 5, 2026, new, transferred and renewed licences are valid for five years, and older licences have their own expiry date or transition deadline. The current fee is $24.41 for a new, transferred, renewed or duplicate licence; updates and cancellations are free. Fees may change each April 1.',
       },
       {
-        question: 'How long does a Mercury 40 or 60 last?',
-        answer: 'Both motors will run 1,500-2,500+ hours with normal Ontario seasonal use (50-150 hours per year) and proper maintenance, which is 15-25+ seasons for most cottage owners. The variables that shorten life are skipped impeller replacements, gear lube neglect, and stale ethanol fuel. Our maintenance interval guide covers the schedule.',
+        question: 'How much more does it cost to go from a 40 HP to a 60 HP on a new boat package?',
+        answer: 'It depends on the boat. On a new boat package the step-up is set by that package\'s pricing, so it is not always the same as the difference between the two loose motors. For a repower, use our [live quote builder](/quote/motor-selection) to compare the exact 40 and 60 HP configurations. Ask us to quote the same boat both ways. The 60 is usually worth it if you carry three or more people, tow a tube, or run bigger water. Build it at mercuryrepower.ca or call 905-342-2153.',
+      },
+      {
+        question: 'Is a 40 HP enough to get a loaded 16 ft boat on plane?',
+        answer: 'With two adults and normal gear, yes. A 40 planes a typical 15 to 16 ft aluminum fishing boat. Add a third adult, a full livewell, a full tank and gear, and the 40 takes noticeably longer to come up and works harder to stay there. That loaded hole shot is where the 60 earns its keep, if your capacity plate allows it. On either motor, a propeller matched to your loaded weight makes a real difference.',
+      },
+      {
+        question: 'For a family of four, is a 16 ft boat with a 60 HP better than an 18 ft boat with a 60 HP?',
+        answer: 'On a 16 ft aluminum boat rated for 60 HP, a 60 gives a family of four a lively boat with headroom. A 17 to 18 ft aluminum runabout is often rated for 75 to 90 HP, and a 60 is the minimum we would fit on it: it runs, but with four people aboard it works harder and planes slower. The 18 ft gives more room and a better ride in rough water, so if that is the boat you want, price it with the larger motor its capacity plate allows. Check both capacity plates for the person and weight limits too.',
+      },
+      {
+        question: 'How much does a Mercury 40 HP outboard weigh compared to a 60 HP?',
+        answer: 'In the lightest configuration, the Mercury 40 FourStroke is about 98 kg (216 lb) and the 60 FourStroke is about 112 kg (247 lb), so the 60 adds roughly 14 kg (31 lb) to the transom. Longer shafts, remote models and Command Thrust gearcases weigh more, so check the exact model on your quote. On a light 15 ft hull that already sits low at the transom, that difference is worth weighing.',
       },
     ],
     content: `*Last reviewed: 2026-07-09*
