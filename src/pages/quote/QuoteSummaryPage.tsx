@@ -645,8 +645,9 @@ export default function QuoteSummaryPage() {
     getPromoDisplayValue,
   ]);
 
+  const hasFrozenSnapshot = Boolean(state.frozenPricing) && isQuotePdfSnapshot(state.pdfSnapshot);
   const isQuoteExpired = () => isQuoteSnapshotExpired(pdfSnapshot);
-  const isQuoteReady = () => !isQuoteExpired() && arePromotionsCurrent() && !state.isLoading && !promoLoading && !promoError && Boolean(state.motor)
+  const isQuoteReady = () => !isQuoteExpired() && (hasFrozenSnapshot || (arePromotionsCurrent() && !promoLoading && !promoError)) && !state.isLoading && Boolean(state.motor)
     && JSON.stringify(state.pdfSnapshot) === JSON.stringify(pdfSnapshot);
 
   const quoteReady = isQuoteReady();
@@ -655,11 +656,11 @@ export default function QuoteSummaryPage() {
   useAutoSaveQuoteOnAuth(isQuoteReady);
 
   useEffect(() => {
-    if (state.isLoading || promoLoading || promoError || !state.motor) return;
+    if (state.isLoading || (!hasFrozenSnapshot && (promoLoading || promoError)) || !state.motor) return;
     if (JSON.stringify(state.pdfSnapshot) !== JSON.stringify(pdfSnapshot)) {
       dispatch({ type: 'SET_PDF_SNAPSHOT', payload: pdfSnapshot });
     }
-  }, [dispatch, pdfSnapshot, promoLoading, promoError, state.isLoading, state.motor, state.pdfSnapshot]);
+  }, [dispatch, pdfSnapshot, hasFrozenSnapshot, promoLoading, promoError, state.isLoading, state.motor, state.pdfSnapshot]);
 
   // Persist only the synchronized anonymous quote state through the atomic RPC.
   useEffect(() => {
@@ -1254,7 +1255,7 @@ export default function QuoteSummaryPage() {
       <ScrollToTop />
       <PageTransition>
         <QuoteLayout showProgress={!isMotorOnlyExpress}>
-          {promoError ? (
+          {promoError && !hasFrozenSnapshot ? (
             <div role="alert" className="mx-auto my-12 max-w-xl rounded-xl border border-destructive/30 bg-white p-6">
               <h1 className="text-xl font-semibold">Promotion pricing unavailable</h1>
               <p className="mt-3 text-muted-foreground">We could not verify current rebates and promotional coverage. Retry before saving, downloading or reserving this quote.</p>
