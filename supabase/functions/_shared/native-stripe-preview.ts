@@ -1,5 +1,6 @@
 // Pinned native Shared Payment Token client. Hosted Checkout keeps its own
 // 2025-08-27.basil Stripe client. This module never calls Stripe test helpers.
+import { nativeLiveWebhookReady } from './native-stripe-live-webhook.ts';
 
 export const NATIVE_STRIPE_API_VERSION = "2026-09-30.preview";
 export const HOSTED_CHECKOUT_STRIPE_API_VERSION = "2025-08-27.basil";
@@ -16,6 +17,7 @@ export type NativeStripePreview = {
   createConfirmedPaymentIntent(
     params: Record<string, string>,
     idempotencyKey: string,
+    beforeSubmit?: () => Promise<void>,
   ): Promise<unknown>;
   retrievePaymentIntent(id: string): Promise<unknown>;
 };
@@ -43,6 +45,7 @@ function encodeForm(params: Record<string, string>): string {
 export function createNativeStripePreviewClient(options: {
   secretKey: string;
   sellerAccountId: string;
+  liveWebhookId?: string;
   fetchImpl?: typeof fetch;
 }): NativeStripePreview {
   const secretKey = options.secretKey.trim();
@@ -95,12 +98,28 @@ export function createNativeStripePreviewClient(options: {
   }
 
   let checkedAccount = false;
-  async function stripeRequest(method: "GET" | "POST", path: string, body?: Record<string, string>, idempotencyKey?: string) {
+  async function stripeRequest(method: "GET" | "POST", path: string, body?: Record<string, string>, idempotencyKey?: string, beforeSubmit?: () => Promise<void>) {
     if (!checkedAccount) {
       const account = await rawStripeRequest("GET", "/v1/account") as { id?: string };
       if (account?.id !== sellerAccountId) throw new NativeStripeRequestError(409, "native_seller_mismatch");
       checkedAccount = true;
     }
+    if (livemode && method === 'POST') {
+      // Deployment proof is durable configuration, not a stale health cache.
+      // Recheck current admission before a new live write. GET reconciliation
+      // remains available when charges or the callback destination are paused.
+      if (!/^we_[A-Za-z0-9]+$/.test(options.liveWebhookId || ''))
+        throw new NativeStripeRequestError(409, 'native_webhook_not_ready');
+      const current = await rawStripeRequest('GET', '/v1/account') as { id?: string; charges_enabled?: boolean };
+      if (current?.id !== sellerAccountId || current.charges_enabled !== true)
+        throw new NativeStripeRequestError(409, 'native_seller_not_ready');
+      const hook = await rawStripeRequest('GET', `/v1/webhook_endpoints/${encodeURIComponent(options.liveWebhookId!)}`);
+      if (!nativeLiveWebhookReady(hook, options.liveWebhookId))
+        throw new NativeStripeRequestError(409, 'native_webhook_not_ready');
+    }
+    // Readiness must pass before the caller records a durable submission.
+    // The marker then precedes the first possible payment POST.
+    if (beforeSubmit) await beforeSubmit();
     return rawStripeRequest(method, path, body, idempotencyKey);
   }
 
@@ -112,11 +131,11 @@ export function createNativeStripePreviewClient(options: {
       if (!SPT_ID.test(tokenId)) throw new NativeStripeRequestError(400, "invalid_token");
       return stripeRequest("GET", `/v1/shared_payment/granted_tokens/${encodeURIComponent(tokenId)}`);
     },
-    createConfirmedPaymentIntent(params, idempotencyKey) {
+    createConfirmedPaymentIntent(params, idempotencyKey, beforeSubmit) {
       if (!idempotencyKey.startsWith("native-deposit-pi:")) {
         throw new NativeStripeRequestError(400, "invalid_idempotency_key");
       }
-      return stripeRequest("POST", "/v1/payment_intents", params, idempotencyKey);
+      return stripeRequest("POST", "/v1/payment_intents", params, idempotencyKey, beforeSubmit);
     },
     retrievePaymentIntent(id: string) {
       if (!PI_ID.test(id)) throw new NativeStripeRequestError(400, "invalid_payment_intent");
