@@ -1,4 +1,5 @@
 import { mcpToolAnnotations } from '../_shared/mcp-tool-annotations.ts';
+import { corsHeaders as sharedCorsHeaders } from '../_shared/cors.ts';
 // UCP (Universal Commerce Protocol) checkout service for Harris Boat Works.
 // Spec version 2026-04-08 (ucp.dev). QUOTE MODE by design:
 //   - payment is never collected (spec-sanctioned: "e.g., quote generation")
@@ -89,7 +90,7 @@ const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Methods": "GET, POST, PUT, OPTIONS",
   "Access-Control-Allow-Headers":
-    "authorization, x-client-info, apikey, content-type, ucp-agent, idempotency-key, signature, signature-input, request-id, mcp-session-id, x-resume-token",
+    sharedCorsHeaders['Access-Control-Allow-Headers'] + ", ucp-agent, idempotency-key, signature, signature-input, request-id, mcp-session-id, x-resume-token",
 };
 
 const ACTIVE_CAPABILITIES = [

@@ -1,5 +1,6 @@
 import { nativeBuyerReviewAuthorized } from '../_shared/native-buyer-review-authorization.ts';
 import { resolveDepositStagingOrigin } from '../_shared/deposit-staging-origin.ts';
+import { corsHeaders as sharedCorsHeaders } from '../_shared/cors.ts';
 // Trusted buyer UI only. UCP caller fields cannot record approval.
 import { createClient } from 'npm:@supabase/supabase-js@2.53.1';
 import { nativeDepositCheckoutEnabled, isNativeDepositChildId } from '../_shared/native-deposit-checkout.ts';
@@ -18,7 +19,7 @@ Deno.serve(async req => {
       SUPABASE_URL: Deno.env.get('SUPABASE_URL'), NATIVE_DEPOSIT_REVIEW_ORIGIN: Deno.env.get('NATIVE_DEPOSIT_REVIEW_ORIGIN') });
   const headers: Record<string, string> = { 'Content-Type': 'application/json', 'Cache-Control': 'no-store', 'Vary': 'Origin',
     'Access-Control-Allow-Methods': 'POST, OPTIONS',
-    'Access-Control-Allow-Headers': 'authorization, apikey, content-type, x-client-info, x-resume-token' };
+    'Access-Control-Allow-Headers': sharedCorsHeaders['Access-Control-Allow-Headers'] + ', x-resume-token' };
   if (allowed) headers['Access-Control-Allow-Origin'] = allowed;
   const reply = (body: unknown, status = 200) => new Response(JSON.stringify(body), { status, headers });
   if (!origin || !allowed) return reply({ error: 'Buyer review must use the trusted site.' }, 403);
