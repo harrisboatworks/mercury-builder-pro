@@ -151,7 +151,7 @@ export type NativeDepositCheckout = {
     totals: Array<{ type: "total"; amount: number }>;
   }>;
   totals: Array<{ type: "total"; amount: number; display_text: string }>;
-  payment_handler: { id: typeof NATIVE_DEPOSIT_HANDLER_ID; version: "2026-04-08"; status: "staged" };
+  payment_handler: { id: typeof NATIVE_DEPOSIT_HANDLER_ID; version: "2026-04-08"; status: "staged" | "configured" };
   messages: Array<{ type: string; code: string; severity?: string; content: string }>;
   ucp: Record<string, unknown>;
   links: Array<{ type: string; url: string }>;

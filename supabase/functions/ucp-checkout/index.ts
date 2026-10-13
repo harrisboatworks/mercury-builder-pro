@@ -41,6 +41,7 @@ import {
 import { nativeDepositCheckoutEnabled, isNativeDepositChildId, runNativeDepositCreate, runNativeDepositRead, runNativeDepositComplete } from '../_shared/native-deposit-checkout.ts';
 import { nativeActorFromRequest, nativeDepositIo } from '../_shared/native-deposit-io.ts';
 import { createNativeStripePreviewClient } from '../_shared/native-stripe-preview.ts';
+import { nativeSellerProfileId, withNativeSellerProfile } from '../_shared/native-deposit-seller-profile.ts';
 
 async function nativeRequestBody(req: Request): Promise<unknown> {
   if (Number(req.headers.get('content-length') || 0) > 32768)
@@ -55,6 +56,11 @@ async function opNative(req: Request, supabase: any, id: string, operation: 'cre
   const enabled = nativeDepositCheckoutEnabled(Deno.env.get('NATIVE_DEPOSIT_ENABLED'));
   if (!enabled && operation === 'create')
     throw { status: 404, code: 'not_available', message: 'Native deposit checkout is not enabled.' };
+  const livemode = Deno.env.get('STRIPE_SECRET_KEY')?.startsWith('sk_live_') === true;
+  const sellerProfile = Deno.env.get('NATIVE_STRIPE_SELLER_PROFILE');
+  const production = Deno.env.get('SUPABASE_URL') === 'https://eutsoqdpjurknjsshxes.supabase.co';
+  if (enabled && operation === 'create' && production && (!livemode || !nativeSellerProfileId(sellerProfile, true)))
+    throw { status: 503, code: 'not_available', message: 'Native seller wallet identity is not configured.' };
   const io = nativeDepositIo(supabase);
   const actor = await nativeActorFromRequest(supabase, req);
   if (!enabled && operation === 'complete') {
@@ -70,6 +76,7 @@ async function opNative(req: Request, supabase: any, id: string, operation: 'cre
       livemode: Deno.env.get('STRIPE_SECRET_KEY')?.startsWith('sk_live_') ?? null,
       openStripe: () => createNativeStripePreviewClient({ secretKey: Deno.env.get('STRIPE_SECRET_KEY') || '', sellerAccountId: Deno.env.get('NATIVE_STRIPE_SELLER_ACCOUNT') || '' }), io });
   if (!result.ok) throw { status: result.status, code: result.code, message: result.message };
+  result.checkout = withNativeSellerProfile(result.checkout, { profileId: sellerProfile, livemode, enabled });
   const checkout = result.checkout;
   const reviewOrigin = Deno.env.get('NATIVE_DEPOSIT_REVIEW_ORIGIN');
   if (reviewOrigin && Deno.env.get('DEPOSIT_STAGING_MODE') === '1'
@@ -561,7 +568,7 @@ async function handleMcp(req: Request, supabase: any, payload: any): Promise<Res
 
   if (method === "tools/list") {
     return json(rpcResult(id, { tools: [...MCP_TOOLS, ...(nativeDepositCheckoutEnabled(Deno.env.get('NATIVE_DEPOSIT_ENABLED')) ? [{
-      name: 'create_deposit_checkout', description: 'Staged owned reservation-deposit child. Buyer review required before payment.',
+      name: 'create_deposit_checkout', description: 'Prepare an owned reservation-deposit child. Buyer review is required before wallet payment.',
       inputSchema: { type: 'object', additionalProperties: false, required: ['id', 'saved_quote_id', 'operation'], properties: { id: { type: 'string' }, saved_quote_id: { type: 'string' }, operation: { const: 'motor_reservation' } } },
     }] : [])] }));
   }
@@ -675,13 +682,15 @@ Deno.serve(async (req) => {
             reservation_preparation: "POST /checkout-sessions/{id}/reservation-preparation",
           },
           mcp: { methods: ["initialize", "tools/list", "tools/call"], tools: [...MCP_TOOLS, ...(nativeDepositCheckoutEnabled(Deno.env.get('NATIVE_DEPOSIT_ENABLED')) ? [{
-      name: 'create_deposit_checkout', description: 'Staged owned reservation-deposit child. Buyer review required before payment.',
+      name: 'create_deposit_checkout', description: 'Prepare an owned reservation-deposit child. Buyer review is required before wallet payment.',
       inputSchema: { type: 'object', additionalProperties: false, required: ['id', 'saved_quote_id', 'operation'], properties: { id: { type: 'string' }, saved_quote_id: { type: 'string' }, operation: { const: 'motor_reservation' } } },
     }] : [])].map((t) => t.name) },
         },
         notes: [
-          "Quote mode: payment is never collected via UCP. Sessions escalate to dealer confirmation via continue_url.",
-          UCP_QUOTE_SCOPE_NOTICE,
+          nativeDepositCheckoutEnabled(Deno.env.get('NATIVE_DEPOSIT_ENABLED'))
+            ? "Parent motor quotes remain quote-only. Separate reservation-deposit children support wallet payment after trusted buyer review; final motor orders still require dealer confirmation."
+            : "Quote mode: payment is never collected via UCP. Sessions escalate to dealer confirmation via continue_url.",
+          nativeDepositCheckoutEnabled(Deno.env.get('NATIVE_DEPOSIT_ENABLED')) ? `Parent quote scope: ${UCP_QUOTE_SCOPE_NOTICE}` : UCP_QUOTE_SCOPE_NOTICE,
           "Buyer contact attempts lead capture. Only report registration when ca.mercuryrepower.lead_captured is true.",
           "Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID.",
           "Item ids are Mercury motor ids from the HBW catalog (see search_motors on the MCP server or /pricing-reference).",
