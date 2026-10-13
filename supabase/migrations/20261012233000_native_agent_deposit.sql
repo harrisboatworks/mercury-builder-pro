@@ -680,6 +680,9 @@ BEGIN
         'submitted_at', v_attempt.submitted_at
       );
     END IF;
+    IF v_attempt.observed_payment_intent_id IS NOT NULL AND v_attempt.stripe_payment_intent_id IS NULL THEN
+      RETURN jsonb_build_object('result', 'refused', 'reason', 'reconciliation_required');
+    END IF;
     -- Identical never-submitted preflight failures may retry validation.
     -- Any submitted/observed processor failure remains held without a bound PI.
     IF v_attempt.status = 'failed' AND v_attempt.stripe_payment_intent_id IS NULL

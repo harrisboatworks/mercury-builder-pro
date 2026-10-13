@@ -808,6 +808,8 @@ export async function runNativeDepositComplete(input: {
     attempt = stored;
   }
   if (!attempt) return failure(409, "attempt_conflict", "This deposit already has a payment attempt.");
+  if (attempt.observed_payment_intent_id && !attempt.stripe_payment_intent_id)
+    return failure(503, "reconciliation_required", "Payment reconciliation is pending.");
 
   const finishFromIntent = async (pi: unknown, allowCreate: boolean): Promise<NativeDepositResult> => {
     const assessed = assessNativePaymentIntent(pi, {
