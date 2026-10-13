@@ -912,13 +912,13 @@ export default function QuoteSummaryPage() {
         preTradeSubtotal: purchase.preTradeSubtotal,
         priceBasis: FINANCING_PRICE_BASIS_ALL_IN_AFTER_TRADE,
         // Include promo details for financing application
-        promoOption: state.selectedPromoOption,
-        promoRate: state.frozenPricing?.financingRate ?? state.selectedPromoRate,
-        promoTerm: state.frozenPricing?.financingAmortizationMonths ?? state.selectedPromoTerm,
-        promoValue: state.selectedPromoValue,
-        promoName: appliedPromotion?.name || null,
-        promoSavings,
-        promoCombinationMode: appliedPromotion?.promo_options?.type || null,
+        promoOption: hasFrozenSnapshot ? pdfSnapshot.promotion?.selectedOption : state.selectedPromoOption,
+        promoRate: hasFrozenSnapshot ? pdfSnapshot.financing?.rate : (state.frozenPricing?.financingRate ?? state.selectedPromoRate),
+        promoTerm: hasFrozenSnapshot ? pdfSnapshot.financing?.amortizationMonths : (state.frozenPricing?.financingAmortizationMonths ?? state.selectedPromoTerm),
+        promoValue: hasFrozenSnapshot ? pdfSnapshot.promotion?.selectedValue : state.selectedPromoValue,
+        promoName: pdfSnapshot.promotion?.name || null,
+        promoSavings: hasFrozenSnapshot ? pdfSnapshot.pricing.promoValue : promoSavings,
+        promoCombinationMode: pdfSnapshot.promotion?.combinationMode || null,
       }
     };
     
