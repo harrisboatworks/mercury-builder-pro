@@ -44,6 +44,7 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
   const [turnstileToken, setTurnstileToken] = useState('');
   const turnstileHostRef = useRef<HTMLDivElement | null>(null);
   const pdfSnapshot = isQuotePdfSnapshot(quoteData.pdfSnapshot) ? quoteData.pdfSnapshot : null;
+  const downPayment = pdfSnapshot?.financing?.downPayment ?? quoteData.financing.downPayment;
   const [quoteExpired, setQuoteExpired] = useState(false);
   const rejectExpiredQuote = () => {
     if (!pdfSnapshot || !isQuoteSnapshotExpired(pdfSnapshot)) return false;
@@ -130,9 +131,9 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
   };
 
   const calculateMonthlyPayment = () => {
-    if (pdfSnapshot?.financing?.monthlyPayment) return pdfSnapshot.financing.monthlyPayment;
+    if (pdfSnapshot?.financing) return pdfSnapshot.financing.monthlyPayment;
     if (!quoteData.motor) return 0;
-    const principal = Math.round(totalCashPrice) - quoteData.financing.downPayment;
+    const principal = Math.round(totalCashPrice) - downPayment;
     const monthlyRate = quoteData.financing.rate / 100 / 12;
     const numPayments = quoteData.financing.term;
     
@@ -211,7 +212,7 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
   const calculateTotalCost = () => {
     const monthlyPayment = calculateMonthlyPayment();
     const amortization = pdfSnapshot?.financing?.amortizationMonths ?? quoteData.financing.term;
-    return (monthlyPayment * amortization) + quoteData.financing.downPayment;
+    return (monthlyPayment * amortization) + downPayment;
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -259,8 +260,8 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
       const insertPayload = {
         base_price: totals.subtotal,
         final_price: Math.round(totalCashPrice),
-        deposit_amount: quoteData.financing.downPayment,
-        loan_amount: pdfSnapshot?.financing?.amountFinanced ?? (Math.round(totalCashPrice) - quoteData.financing.downPayment),
+        deposit_amount: downPayment,
+        loan_amount: pdfSnapshot?.financing?.amountFinanced ?? (Math.round(totalCashPrice) - downPayment),
         monthly_payment: calculateMonthlyPayment(),
         term_months: pdfSnapshot?.financing?.amortizationMonths ?? quoteData.financing.term,
         total_cost: calculateTotalCost(),
