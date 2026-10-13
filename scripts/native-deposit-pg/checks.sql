@@ -41,7 +41,7 @@ DO $$ DECLARE v_id uuid := '71717171-7171-4171-8171-717171717171'; result jsonb;
   BEGIN
     UPDATE public.native_deposit_attempts SET submitted_at=clock_timestamp() WHERE id=attempt;
     RAISE EXCEPTION 'direct first submission accepted';
-  EXCEPTION WHEN serialization_failure THEN NULL; END;
+  EXCEPTION WHEN serialization_failure OR insufficient_privilege THEN NULL; END;
   IF public.begin_native_deposit_submission(attempt,repeat('e',64),repeat('f',64),50000,'acct_other',false,now()+interval '7 days') THEN RAISE EXCEPTION 'seller drift admitted'; END IF;
   IF public.bind_native_deposit_payment_intent(attempt,NULL,'submitted') THEN RAISE EXCEPTION 'generic consent bypass'; END IF;
   IF public.begin_native_deposit_submission(attempt,repeat('e',64),repeat('f',64),50000,'acct_synthetic',false,now()+interval '8 days') THEN RAISE EXCEPTION 'unbounded token admitted'; END IF;
@@ -50,7 +50,7 @@ DO $$ DECLARE v_id uuid := '71717171-7171-4171-8171-717171717171'; result jsonb;
   BEGIN
     UPDATE public.native_deposit_attempts SET submission_token_expires_at=now()+interval '6 days' WHERE id=attempt;
     RAISE EXCEPTION 'submission audit changed';
-  EXCEPTION WHEN serialization_failure THEN NULL; END;
+  EXCEPTION WHEN serialization_failure OR insufficient_privilege THEN NULL; END;
   IF NOT public.begin_native_deposit_submission(attempt,repeat('e',64),repeat('f',64),50000,'acct_synthetic',false,now()-interval '1 day') THEN RAISE EXCEPTION 'submitted identity recovery refused'; END IF;
   IF NOT public.bind_native_deposit_payment_intent(attempt,NULL,'failed') THEN RAISE EXCEPTION 'submitted failure marker failed'; END IF;
   result := public.claim_native_deposit_attempt(v_id,repeat('e',64),repeat('f',64),50000,'acct_synthetic',false);
@@ -95,6 +95,8 @@ DO $$ BEGIN
     OR has_function_privilege('authenticated','public.claim_native_deposit_attempt(uuid,text,text,integer,text,boolean)','EXECUTE')
     OR has_function_privilege('anon','public.begin_native_deposit_submission(uuid,text,text,integer,text,boolean,timestamptz)','EXECUTE')
     OR has_function_privilege('authenticated','public.begin_native_deposit_submission(uuid,text,text,integer,text,boolean,timestamptz)','EXECUTE')
+    OR has_column_privilege('service_role','public.native_deposit_attempts','submitted_at','UPDATE')
+    OR has_column_privilege('service_role','public.native_deposit_attempts','submission_approval_id','UPDATE')
     OR has_table_privilege('authenticated','public.native_deposit_approvals','INSERT')
     OR has_table_privilege('anon','public.native_deposit_attempts','SELECT') THEN RAISE EXCEPTION 'native ACL exposed'; END IF;
 END; $$;

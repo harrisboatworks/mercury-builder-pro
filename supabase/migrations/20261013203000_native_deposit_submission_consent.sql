@@ -12,6 +12,8 @@ BEGIN
       OR NEW.submission_token_expires_at IS NOT NULL THEN
       RAISE EXCEPTION 'First native submission requires fresh buyer consent' USING ERRCODE = '40001';
     END IF;
+  ELSIF OLD.submitted_at IS NOT NULL AND NEW.submitted_at IS DISTINCT FROM OLD.submitted_at THEN
+    RAISE EXCEPTION 'Native submission timestamp is immutable' USING ERRCODE = '40001';
   ELSIF OLD.submitted_at IS NULL AND NEW.submitted_at IS NOT NULL THEN
     IF current_setting('native_deposit.submission', true) IS DISTINCT FROM NEW.id::text
       OR NEW.submission_approval_id IS NULL OR NEW.submission_token_expires_at IS NULL THEN
@@ -170,8 +172,7 @@ BEGIN
   UPDATE public.native_deposit_attempts
   SET
     stripe_payment_intent_id = COALESCE(p_payment_intent_id, stripe_payment_intent_id),
-    status = p_status,
-    submitted_at = CASE WHEN p_status = 'submitted' THEN COALESCE(submitted_at, now()) ELSE submitted_at END
+    status = p_status
   WHERE id = p_attempt_id;
 
   UPDATE public.native_deposit_intents
@@ -323,6 +324,10 @@ BEGIN
     OR v_attempt.submitted_at > v_intent.expires_at
     OR v_attempt.submitted_at > v_saved.expires_at
     OR v_attempt.submitted_at > clock_timestamp()
+    OR (v_attempt.submission_approval_id IS NOT NULL AND (
+      v_attempt.submission_approval_id IS DISTINCT FROM v_approval.id
+      OR v_attempt.submission_token_expires_at IS NULL
+      OR v_attempt.submitted_at >= v_attempt.submission_token_expires_at))
     OR v_approval.saved_quote_id IS DISTINCT FROM p_saved_quote_id
     OR v_approval.motor_id IS DISTINCT FROM p_motor_id
     OR v_approval.amount_cents IS DISTINCT FROM p_amount_cents
@@ -530,3 +535,11 @@ BEGIN
   RETURN true;
 END;
 $$;
+
+-- Service API callers may update processor outcomes, never first-submission
+-- consent or its immutable audit. The definer gate alone owns those columns.
+REVOKE UPDATE ON public.native_deposit_attempts FROM service_role;
+GRANT UPDATE(status, stripe_payment_intent_id, observed_payment_intent_id)
+  ON public.native_deposit_attempts TO service_role;
+REVOKE ALL ON FUNCTION public.approve_native_deposit_review(uuid,text,text,text) FROM PUBLIC, anon, authenticated;
+GRANT EXECUTE ON FUNCTION public.approve_native_deposit_review(uuid,text,text,text) TO service_role;
