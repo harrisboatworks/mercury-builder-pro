@@ -1,3 +1,4 @@
+import { promoEndOfDay } from '../../supabase/functions/_shared/promo-dates';
 import { buildAccessoryBreakdown, type AccessoryBreakdownItem } from '@/lib/build-accessory-breakdown';
 import { applyTradeCredit, resolveAppliedTradeValue } from '@/lib/trade-credit';
 
@@ -296,6 +297,34 @@ export function frozenPricingFromPdfSnapshot(snapshot: QuotePdfSnapshot) {
     dealerFee: snapshot.financing?.dealerFee,
     amountFinanced: snapshot.financing?.amountFinanced,
   };
+}
+
+/** Only complete corresponding recorded terms may bypass a live promotion outage. */
+export function hasCompleteFrozenQuoteSnapshot(frozen: unknown, snapshot: unknown): boolean {
+  if (!frozen || typeof frozen !== 'object' || !isQuotePdfSnapshot(snapshot)) return false;
+  const recorded = frozen as Record<string, unknown>;
+  if (!Number.isInteger(snapshot.includedCoverageYears) || snapshot.includedCoverageYears! < 3) return false;
+  if (!snapshot.validUntil) return false;
+  try {
+    if (!validateQuotePdfSnapshot(snapshot).isValid) return false;
+    const expected = frozenPricingFromPdfSnapshot(snapshot) as Record<string, unknown>;
+    const prices = ['motorMSRP', 'motorDiscount', 'adminDiscount', 'promoSavings', 'subtotal', 'hst', 'total', 'savings'];
+    if (snapshot.financing) prices.push('financingRate', 'financingAmortizationMonths', 'financingContractTermMonths', 'dealerFee', 'amountFinanced');
+    if (!prices.every(key => typeof recorded[key] === 'number' && Number.isFinite(recorded[key])
+      && typeof expected[key] === 'number' && Number.isFinite(expected[key])
+      && Math.abs(Number(recorded[key]) - Number(expected[key])) <= 0.02)) return false;
+    if (Math.abs(snapshot.pricing.motorSubtotal - (snapshot.pricing.msrp - snapshot.pricing.discount
+      - (snapshot.pricing.adminDiscount || 0) - snapshot.pricing.promoValue)) > 0.02) return false;
+    const quoteInstant = (value: string) => /^\d{4}-\d{2}-\d{2}$/.test(value)
+      ? promoEndOfDay(value).getTime() : new Date(value).getTime();
+    if (snapshot.validUntil && (typeof recorded.quoteExpiryDate !== 'string'
+      || !Number.isFinite(quoteInstant(snapshot.validUntil))
+      || quoteInstant(recorded.quoteExpiryDate) !== quoteInstant(snapshot.validUntil))) return false;
+    return ['promotionName', 'promotionEndDate', 'promotionCombinationMode', 'selectedPromoOption', 'selectedPromoValue', 'selectedPaymentMethod']
+      .every(key => recorded[key] === expected[key]);
+  } catch {
+    return false;
+  }
 }
 
 /**

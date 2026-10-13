@@ -68,6 +68,7 @@ import {
   buildQuotePdfFinancing,
   calculateProtectionMonthlyDelta,
   frozenPricingFromPdfSnapshot,
+  hasCompleteFrozenQuoteSnapshot,
   isQuotePdfSnapshot,
   QUOTE_PDF_SNAPSHOT_VERSION,
   resolveQuoteIncludedCoverageYears,
@@ -529,6 +530,7 @@ export default function QuoteSummaryPage() {
   }, [appliedPromotion?.end_date, state.frozenPricing?.quoteExpiryDate, state.pdfSnapshot?.validUntil]);
 
   const pdfSnapshot = useMemo<QuotePdfSnapshot>(() => {
+    if (hasCompleteFrozenQuoteSnapshot(state.frozenPricing, state.pdfSnapshot)) return state.pdfSnapshot!;
     const frozen = state.frozenPricing;
     const existing = state.pdfSnapshot;
     const paymentMethod = frozen?.selectedPaymentMethod ?? state.selectedPaymentMethod ?? existing?.paymentMethod;
@@ -645,8 +647,7 @@ export default function QuoteSummaryPage() {
     getPromoDisplayValue,
   ]);
 
-  const hasFrozenSnapshot = Boolean(state.frozenPricing) && isQuotePdfSnapshot(state.pdfSnapshot)
-    && Boolean(state.frozenPricing?.quoteExpiryDate || state.pdfSnapshot.validUntil || state.pdfSnapshot.promotion?.endDate);
+  const hasFrozenSnapshot = hasCompleteFrozenQuoteSnapshot(state.frozenPricing, state.pdfSnapshot);
   const isQuoteExpired = () => isQuoteSnapshotExpired(pdfSnapshot);
   const isQuoteReady = () => !isQuoteExpired() && (hasFrozenSnapshot || (arePromotionsCurrent() && !promoLoading && !promoError)) && !state.isLoading && Boolean(state.motor)
     && JSON.stringify(state.pdfSnapshot) === JSON.stringify(pdfSnapshot);
