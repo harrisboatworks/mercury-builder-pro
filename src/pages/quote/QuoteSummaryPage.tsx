@@ -145,9 +145,6 @@ export default function QuoteSummaryPage() {
     snapshotKey: string;
   } | null>(null);
   
-  // Auto-save quote when returning from Google OAuth
-  useAutoSaveQuoteOnAuth();
-
   // The session-scoped soft-lead coordinator survives page remounts and keeps
   // all anonymous snapshot writes in one ordered queue.
   const softLeadAnalyticsTrackedRef = useRef(false);
@@ -643,6 +640,12 @@ export default function QuoteSummaryPage() {
     getPromoDisplayValue,
   ]);
 
+  const quoteReady = !state.isLoading && !promoLoading && Boolean(state.motor)
+    && JSON.stringify(state.pdfSnapshot) === JSON.stringify(pdfSnapshot);
+
+  // OAuth saves must use the same settled snapshot as PDF and reservation actions.
+  useAutoSaveQuoteOnAuth(quoteReady);
+
   useEffect(() => {
     if (state.isLoading || promoLoading || !state.motor) return;
     if (JSON.stringify(state.pdfSnapshot) !== JSON.stringify(pdfSnapshot)) {
@@ -652,7 +655,7 @@ export default function QuoteSummaryPage() {
 
   // Persist only the synchronized anonymous quote state through the atomic RPC.
   useEffect(() => {
-    if (state.isLoading || !state.motor || !isQuotePdfSnapshot(state.pdfSnapshot)) return;
+    if (!quoteReady || !isQuotePdfSnapshot(state.pdfSnapshot)) return;
 
     // Wait until QuoteContext contains the exact derived snapshot rendered on
     // this page. Persisting before SET_PDF_SNAPSHOT lands can save stale totals.
@@ -696,12 +699,13 @@ export default function QuoteSummaryPage() {
     return () => {
       cancelled = true;
     };
-  }, [pdfSnapshot, state]);
+  }, [pdfSnapshot, quoteReady, state]);
 
   // CTA handlers
   const noMotorSelected = !state.motor;
 
   const handleDownloadPDF = async () => {
+    if (!quoteReady) return;
     if (noMotorSelected) {
       toast({ title: 'No motor selected', description: 'Please select a motor before downloading a PDF.', variant: 'destructive' });
       return;
@@ -916,6 +920,7 @@ export default function QuoteSummaryPage() {
   const canUseAssistantDeposit = import.meta.env.VITE_NATIVE_DEPOSIT_ENABLED === 'true'
     && typeof nativeParentRef === 'string' && /^chk_[A-Za-z0-9._-]{1,120}$/.test(nativeParentRef) && Boolean(user);
   const handleReserveDeposit = () => {
+    if (!quoteReady) return;
     setDepositRail('hosted');
     if (!depositPolicySnapshot) {
       toast({
@@ -980,6 +985,7 @@ export default function QuoteSummaryPage() {
 
   // Handle deposit after customer info is collected
   const handleDepositSubmit = async (customerInfo: DepositCustomerInfo) => {
+    if (!quoteReady) return;
     setShowDepositDialog(false);
     setIsProcessingDeposit(true);
     try {
@@ -1163,7 +1169,7 @@ export default function QuoteSummaryPage() {
     };
     window.addEventListener('initiate-deposit', handleInitiateDeposit);
     return () => window.removeEventListener('initiate-deposit', handleInitiateDeposit);
-  }, [depositAmount, user, motorName, hp, modelYear, depositPolicySnapshot]);
+  }, [depositAmount, user, motorName, hp, modelYear, depositPolicySnapshot, quoteReady]);
 
   // Plain-language inclusions for the configured quote. Product Protection is
   // presented separately and is not bundled into customer-facing package tiers.
@@ -1209,7 +1215,7 @@ export default function QuoteSummaryPage() {
       />
       {/* Deposit Info Dialog */}
       <DepositInfoDialog
-        open={showDepositDialog}
+        open={quoteReady && showDepositDialog}
         onOpenChange={setShowDepositDialog}
         onSubmit={handleDepositSubmit}
         depositAmount={depositAmount}
@@ -1240,7 +1246,7 @@ export default function QuoteSummaryPage() {
       <ScrollToTop />
       <PageTransition>
         <QuoteLayout showProgress={!isMotorOnlyExpress}>
-          {!isMounted ? (
+          {!isMounted || !quoteReady ? (
             <QuoteSummarySkeleton />
           ) : (
           <div className="bg-repower-paper">
@@ -1558,7 +1564,7 @@ export default function QuoteSummaryPage() {
           )}
           
           <SaveQuoteDialog 
-            open={showSaveDialog}
+            open={quoteReady && showSaveDialog}
             onOpenChange={setShowSaveDialog}
             quoteData={{
               ...state,
@@ -1570,7 +1576,7 @@ export default function QuoteSummaryPage() {
             finalPrice={displayPricing.total}
           />
           <SaveQuoteWithAuth
-            open={showAuthSaveDialog}
+            open={quoteReady && showAuthSaveDialog}
             onOpenChange={setShowAuthSaveDialog}
             onFallbackEmail={() => {
               setShowAuthSaveDialog(false);
