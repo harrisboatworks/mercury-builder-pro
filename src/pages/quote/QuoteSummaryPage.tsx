@@ -645,7 +645,8 @@ export default function QuoteSummaryPage() {
     getPromoDisplayValue,
   ]);
 
-  const hasFrozenSnapshot = Boolean(state.frozenPricing) && isQuotePdfSnapshot(state.pdfSnapshot);
+  const hasFrozenSnapshot = Boolean(state.frozenPricing) && isQuotePdfSnapshot(state.pdfSnapshot)
+    && Boolean(state.frozenPricing?.quoteExpiryDate || state.pdfSnapshot.validUntil || state.pdfSnapshot.promotion?.endDate);
   const isQuoteExpired = () => isQuoteSnapshotExpired(pdfSnapshot);
   const isQuoteReady = () => !isQuoteExpired() && (hasFrozenSnapshot || (arePromotionsCurrent() && !promoLoading && !promoError)) && !state.isLoading && Boolean(state.motor)
     && JSON.stringify(state.pdfSnapshot) === JSON.stringify(pdfSnapshot);
