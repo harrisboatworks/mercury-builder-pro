@@ -3,6 +3,7 @@ import { describe, expect, it, vi } from 'vitest';
 import { useActivePromotions } from './useActivePromotions';
 
 vi.mock('@/lib/quote-utils', () => ({
+  dealerToday: () => '2026-10-13',
   isPromotionLive: ({ endDate }: { endDate?: string }) => !endDate,
   promoEndOfDay: () => new Date('2026-10-31T03:59:59.999Z'),
   activePromotionDateOrFilters: () => ({ startOr: '', endOr: '' }),

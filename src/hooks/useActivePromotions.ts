@@ -5,7 +5,7 @@ import {
   getFirstPromotionRebateForHP,
   getTotalPromotionDiscount,
 } from '@/lib/promotion-discounts';
-import { activePromotionDateOrFilters, isPromotionLive, promoEndOfDay } from '@/lib/quote-utils';
+import { activePromotionDateOrFilters, dealerToday, isPromotionLive, promoEndOfDay } from '@/lib/quote-utils';
 
 export interface PromoOption {
   id: string;
@@ -39,12 +39,15 @@ export interface ActivePromotion {
 // Simple in-memory cache
 let cachedPromotions: ActivePromotion[] | null = null;
 let cacheTimestamp: number = 0;
+let cacheDealerDate = '';
 const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
 
 export function useActivePromotions(options?: { forceRefresh?: boolean; motor?: PromotionMotor | null }) {
   const forceRefresh = options?.forceRefresh ?? false;
   const [allPromotions, setPromotions] = useState<ActivePromotion[]>([]);
   const [promotionTime, setPromotionTime] = useState(Date.now);
+  const dealerDate = dealerToday(new Date(promotionTime));
+  const [loadedDealerDate, setLoadedDealerDate] = useState('');
   const hasMotorContext = Boolean(options?.motor);
   const motor = options?.motor;
   // Recheck cached rows as well as mounted quotes at the Ontario deadline.
@@ -55,7 +58,7 @@ export function useActivePromotions(options?: { forceRefresh?: boolean; motor?: 
 
   useEffect(() => {
     const refreshClock = () => setPromotionTime(Date.now());
-    const nextDeadline = Math.min(...allPromotions
+    const nextDeadline = Math.min(promoEndOfDay(dealerToday()).getTime() + 1, ...allPromotions
       .filter(p => p.end_date)
       .map(p => promoEndOfDay(p.end_date!).getTime() + 1)
       .filter(deadline => Number.isFinite(deadline) && deadline > Date.now()));
@@ -73,18 +76,22 @@ export function useActivePromotions(options?: { forceRefresh?: boolean; motor?: 
   }, [allPromotions, promotionTime]);
 
   // Action-time guard also covers a suspended tab whose timer has not run yet.
-  const arePromotionsCurrent = () => promotions.every(p => isPromotionLive({ endDate: p.end_date }));
+  const arePromotionsCurrent = () => loadedDealerDate === dealerToday() && promotions.every(p => isPromotionLive({ endDate: p.end_date }));
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
+    let cancelled = false;
     async function fetchPromotions() {
+      setLoading(true);
       try {
         const { startOr, endOr } = activePromotionDateOrFilters();
         // Check cache first (skipped when forceRefresh is true)
         const now = Date.now();
-        if (!forceRefresh && cachedPromotions && (now - cacheTimestamp) < CACHE_DURATION) {
+        if (!forceRefresh && cachedPromotions && cacheDealerDate === dealerDate && (now - cacheTimestamp) < CACHE_DURATION) {
           setPromotions(cachedPromotions);
+          setLoadedDealerDate(dealerDate);
+          setError(null);
           setLoading(false);
           return;
         }
@@ -108,6 +115,7 @@ export function useActivePromotions(options?: { forceRefresh?: boolean; motor?: 
           .or(endOr)
           .order('priority', { ascending: false });
 
+        if (cancelled) return;
         if (error) {
           console.error('Error fetching active promotions:', error);
           setError('Failed to load promotions');
@@ -119,19 +127,23 @@ export function useActivePromotions(options?: { forceRefresh?: boolean; motor?: 
         // Update cache
         cachedPromotions = activePromotions;
         cacheTimestamp = now;
+        cacheDealerDate = dealerDate;
         
         setPromotions(activePromotions);
+        setLoadedDealerDate(dealerDate);
         setError(null);
       } catch (err) {
+        if (cancelled) return;
         console.error('Unexpected error fetching promotions:', err);
         setError('An unexpected error occurred');
       } finally {
-        setLoading(false);
+        if (!cancelled) setLoading(false);
       }
     }
 
     fetchPromotions();
-  }, [forceRefresh]);
+    return () => { cancelled = true; };
+  }, [forceRefresh, dealerDate]);
 
   // Helper function to get total warranty bonus years from all applicable promotions
   const getTotalWarrantyBonusYears = () => {
@@ -190,7 +202,7 @@ export function useActivePromotions(options?: { forceRefresh?: boolean; motor?: 
 
   return {
     promotions,
-    loading,
+    loading: loading || loadedDealerDate !== dealerToday(),
     error,
     arePromotionsCurrent,
     getTotalWarrantyBonusYears,

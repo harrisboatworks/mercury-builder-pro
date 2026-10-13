@@ -42,20 +42,42 @@ describe('promotion deadline lifecycle', () => {
     const canUseDisplayedPromotion = result.current.arePromotionsCurrent;
     vi.setSystemTime(new Date('2026-10-31T04:00:00Z'));
     expect(canUseDisplayedPromotion()).toBe(false);
-    act(() => { window.dispatchEvent(new Event('focus')); });
+    await act(async () => { window.dispatchEvent(new Event('focus')); await Promise.resolve(); });
     expect(result.current.promotions).toEqual([]);
     expect(result.current.arePromotionsCurrent()).toBe(true);
   });
 
-  it('filters an expired row from the five-minute cache without waiting for another fetch', async () => {
+  it('invalidates the previous Ontario day even within the five-minute cache window', async () => {
     const first = await mount();
     first.unmount();
     vi.setSystemTime(new Date('2026-10-31T04:00:00Z'));
     const { result } = await mount(false);
-    expect(order).toHaveBeenCalledTimes(1);
+    expect(order).toHaveBeenCalledTimes(2);
     expect(result.current.loading).toBe(false);
     expect(result.current.promotions).toEqual([]);
     expect(result.current.getPromotionSavingsForMotor(9.9, 2999)).toBe(0);
+  });
+
+  it('fetches a newly started campaign in an already-open tab at Ontario midnight', async () => {
+    order.mockResolvedValueOnce({ data: [], error: null }).mockResolvedValue({ data: [{ ...offer, end_date: '2026-11-30' }], error: null });
+    const { result } = await mount();
+    expect(result.current.promotions).toEqual([]);
+    await act(async () => { vi.advanceTimersByTime(1000); await Promise.resolve(); });
+    expect(order).toHaveBeenCalledTimes(2);
+    expect(result.current.loading).toBe(false);
+    expect(result.current.arePromotionsCurrent()).toBe(true);
+    expect(result.current.getPromotionSavingsForMotor(9.9, 2999)).toBe(300);
+  });
+
+  it('blocks a suspended empty-list quote until the new dealer day has loaded', async () => {
+    order.mockResolvedValue({ data: [], error: null });
+    const { result } = await mount();
+    const ready = result.current.arePromotionsCurrent;
+    vi.setSystemTime(new Date('2026-10-31T04:00:00Z'));
+    expect(ready()).toBe(false);
+    await act(async () => { window.dispatchEvent(new Event('focus')); await Promise.resolve(); });
+    expect(order).toHaveBeenCalledTimes(2);
+    expect(result.current.loading).toBe(false);
   });
 
   it('keeps deadline-free offers available', async () => {
