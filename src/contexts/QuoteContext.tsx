@@ -252,10 +252,9 @@ export function quoteReducer(state: QuoteState, action: QuoteAction): QuoteState
         isLoading: false,
         uiFlags: {
           motorOnlyExpress: true,
-          // This express path reserves the published sale price. Any
-          // time-limited factory rebate is confirmed separately after HBW
-          // verifies ETA and delivery eligibility.
-          suppressAdditionalPromoSavings: true,
+          // Apply the same eligible live promotions as the custom quote.
+          // HBW still verifies engine eligibility and delivery timing.
+          suppressAdditionalPromoSavings: false,
         },
       };
     }
@@ -421,6 +420,11 @@ export function quoteReducer(state: QuoteState, action: QuoteAction): QuoteState
       return { 
         ...initialState,
         ...action.payload, 
+        // Retained express sessions adopt the current quoting policy. Frozen
+        // historical quotes keep the terms recorded in their snapshot.
+        uiFlags: action.payload.uiFlags?.motorOnlyExpress === true && !action.payload.frozenPricing
+          ? { ...action.payload.uiFlags, suppressAdditionalPromoSavings: false }
+          : (action.payload.uiFlags ?? initialState.uiFlags),
         isAdminQuote: action.payload.isAdminQuote ?? false,
         editingQuoteId: action.payload.editingQuoteId ?? null,
         adminDiscount: action.payload.adminDiscount ?? 0,

@@ -241,6 +241,9 @@ export function Mercury99MHSalePage({
                       Skip installation and options. Review the motor-only total, then secure this model with a ${depositAmount.toLocaleString()} reservation deposit.
                     </p>
                     <p className="mt-2 text-xs leading-relaxed text-white/80">
+                      Eligible factory rebates and promotional coverage are included in your quote, subject to dealer verification of engine eligibility and delivery timing.
+                    </p>
+                    <p className="mt-2 text-xs leading-relaxed text-white/80">
                       If the motor is in stock, the deposit is refundable. If the motor is out of stock or a special order, the deposit stays refundable until HBW confirms the exact motor, price, availability and ETA, and you approve the order in writing. Once HBW places the order after that written approval, the deposit becomes non-refundable and is credited to the final invoice.
                     </p>
                     <Link
@@ -313,7 +316,7 @@ export function Mercury99MHSalePage({
             </div>
 
             <p className="mt-6 max-w-4xl text-xs leading-relaxed text-white/50 md:text-sm">
-              Exact model 1A10201LK is {priceLabel} CAD before HST{savings ? `, saving ${formatMercury99MhCAD(savings)} from the current Mercury MSRP` : ''}. Confirm the current written quote and ETA before travelling.
+              Exact model 1A10201LK is {priceLabel} CAD before eligible factory rebates and HST{savings ? `, saving ${formatMercury99MhCAD(savings)} from the current Mercury MSRP` : ''}. Confirm the current written quote and ETA before travelling.
             </p>
           </div>
         </section>
@@ -542,6 +545,9 @@ export function Mercury99MHSalePage({
               </h2>
               <p className="mt-3 max-w-2xl text-base leading-relaxed text-white/78 md:text-lg">
                 Jump straight to a motor-only total and reserve this exact model with a ${depositAmount.toLocaleString()} deposit. HBW confirms ETA before anything is ordered.
+              </p>
+              <p className="mt-3 max-w-2xl text-sm leading-relaxed text-white/85">
+                Eligible factory rebates and promotional coverage are included in your quote, subject to dealer verification of engine eligibility and delivery timing.
               </p>
               <p className="mt-3 max-w-2xl text-sm leading-relaxed text-white/85">
                 If the motor is in stock, the deposit is refundable. If the motor is out of stock or a special order, the deposit stays refundable until HBW confirms the exact motor, price, availability and ETA, and you approve the order in writing. Once HBW places the order after that written approval, the deposit becomes non-refundable and is credited to the final invoice.

@@ -1288,7 +1288,9 @@ export default function QuoteSummaryPage() {
                           : DEPOSIT_POLICY_PUBLIC_SUMMARY}
                       </p>
                       <p className="mt-2 text-xs leading-relaxed text-repower-navy-900/55">
-                        Any additional factory rebate is confirmed separately after HBW checks eligibility and delivery timing.
+                        {suppressAdditionalPromoSavings
+                          ? 'This saved quote retains its original promotional terms. HBW confirms current eligibility and delivery timing before purchase.'
+                          : 'Eligible factory rebates and promotional coverage are included in this quote, subject to dealer verification of engine eligibility and delivery timing.'}
                       </p>
                     </div>
                   )}

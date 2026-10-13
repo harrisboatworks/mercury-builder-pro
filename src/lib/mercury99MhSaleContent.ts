@@ -31,7 +31,7 @@ export function buildMercury99MhFaqs(
   return [
     {
       question: 'How much is a new Mercury 9.9 outboard in Ontario?',
-      answer: `${priceLabel} CAD before HST for new Mercury model 1A10201LK. Installation, rigging, and optional accessories are extra. Harris Boat Works confirms the current written quote before purchase.`,
+      answer: `${priceLabel} CAD before eligible factory rebates and HST for new Mercury model 1A10201LK. Eligible factory rebates and promotional coverage are included in your quote, subject to dealer verification of engine eligibility and delivery timing. Installation, rigging, and optional accessories are extra. Harris Boat Works confirms the current written quote before purchase.`,
     },
     {
       question: 'Why is this Mercury 9.9 MH a special Ontario sale price?',

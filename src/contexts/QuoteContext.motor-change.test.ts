@@ -198,7 +198,7 @@ describe('quoteReducer START_MOTOR_ONLY_QUOTE', () => {
     expect(result.isLoading).toBe(false);
     expect(result.uiFlags).toEqual({
       motorOnlyExpress: true,
-      suppressAdditionalPromoSavings: true,
+      suppressAdditionalPromoSavings: false,
     });
   });
 });
