@@ -111,7 +111,7 @@ export default function QuoteSummaryPage() {
   const suppressAdditionalPromoSavings = state.uiFlags.suppressAdditionalPromoSavings === true;
   const { user, isAdmin } = useAuth();
   const { promo } = useActiveFinancingPromo();
-  const { promotions, loading: promoLoading, error: promoError, getTotalPromotionalSavings, getPromotionSavingsForMotor, getPromotionOptions, getRebateForHP, getSpecialFinancingRates } = useActivePromotions({ motor: state.motor });
+  const { promotions, loading: promoLoading, error: promoError, arePromotionsCurrent, getTotalPromotionalSavings, getPromotionSavingsForMotor, getPromotionOptions, getRebateForHP, getSpecialFinancingRates } = useActivePromotions({ motor: state.motor });
   const { rating: googleRating, totalReviews: googleReviewCount } = useGoogleReviewStats();
   const { toast } = useToast();
   const baseCoverageYears = 3;
@@ -641,11 +641,13 @@ export default function QuoteSummaryPage() {
     getPromoDisplayValue,
   ]);
 
-  const quoteReady = !state.isLoading && !promoLoading && !promoError && Boolean(state.motor)
+  const isQuoteReady = () => arePromotionsCurrent() && !state.isLoading && !promoLoading && !promoError && Boolean(state.motor)
     && JSON.stringify(state.pdfSnapshot) === JSON.stringify(pdfSnapshot);
 
+  const quoteReady = isQuoteReady();
+
   // OAuth saves must use the same settled snapshot as PDF and reservation actions.
-  useAutoSaveQuoteOnAuth(quoteReady);
+  useAutoSaveQuoteOnAuth(isQuoteReady);
 
   useEffect(() => {
     if (state.isLoading || promoLoading || promoError || !state.motor) return;
@@ -656,7 +658,7 @@ export default function QuoteSummaryPage() {
 
   // Persist only the synchronized anonymous quote state through the atomic RPC.
   useEffect(() => {
-    if (!quoteReady || !isQuotePdfSnapshot(state.pdfSnapshot)) return;
+    if (!isQuoteReady() || !isQuotePdfSnapshot(state.pdfSnapshot)) return;
 
     // Wait until QuoteContext contains the exact derived snapshot rendered on
     // this page. Persisting before SET_PDF_SNAPSHOT lands can save stale totals.
@@ -706,7 +708,7 @@ export default function QuoteSummaryPage() {
   const noMotorSelected = !state.motor;
 
   const handleDownloadPDF = async () => {
-    if (!quoteReady) return;
+    if (!isQuoteReady()) return;
     if (noMotorSelected) {
       toast({ title: 'No motor selected', description: 'Please select a motor before downloading a PDF.', variant: 'destructive' });
       return;
@@ -921,7 +923,7 @@ export default function QuoteSummaryPage() {
   const canUseAssistantDeposit = import.meta.env.VITE_NATIVE_DEPOSIT_ENABLED === 'true'
     && typeof nativeParentRef === 'string' && /^chk_[A-Za-z0-9._-]{1,120}$/.test(nativeParentRef) && Boolean(user);
   const handleReserveDeposit = () => {
-    if (!quoteReady) return;
+    if (!isQuoteReady()) return;
     setDepositRail('hosted');
     if (!depositPolicySnapshot) {
       toast({
@@ -986,7 +988,7 @@ export default function QuoteSummaryPage() {
 
   // Handle deposit after customer info is collected
   const handleDepositSubmit = async (customerInfo: DepositCustomerInfo) => {
-    if (!quoteReady) return;
+    if (!isQuoteReady()) return;
     setShowDepositDialog(false);
     setIsProcessingDeposit(true);
     try {

@@ -67,6 +67,14 @@ describe('useAutoSaveQuoteOnAuth writes', () => {
     expect(new URLSearchParams(window.location.search).has('auth_save')).toBe(false);
   });
 
+  it('checks live readiness at the OAuth save boundary', () => {
+    const canSave = vi.fn(() => false);
+    renderHook(() => useAutoSaveQuoteOnAuth(canSave));
+    expect(canSave).toHaveBeenCalled();
+    expect(mocks.insert).not.toHaveBeenCalled();
+    expect(new URLSearchParams(window.location.search).get('auth_save')).toBe('1');
+  });
+
   it('does not claim the quote was saved when the insert is rejected', async () => {
     mocks.insertResult = { data: null, error: { message: 'permission denied' } };
 

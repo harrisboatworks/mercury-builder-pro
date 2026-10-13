@@ -10,14 +10,14 @@ import { frozenPricingFromPdfSnapshot, isQuotePdfSnapshot } from '@/lib/quote-pd
  * When `?auth_save=1` is in the URL and the user just authenticated,
  * auto-saves the current quote state to `saved_quotes` and notifies admin.
  */
-export function useAutoSaveQuoteOnAuth(quoteReady = true) {
+export function useAutoSaveQuoteOnAuth(quoteReady: boolean | (() => boolean) = true) {
   const { user, loading: authLoading } = useAuth();
   const { state, getQuoteData } = useQuote();
   const { toast } = useToast();
   const hasFiredRef = useRef(false);
 
   useEffect(() => {
-    if (!quoteReady || authLoading || hasFiredRef.current) return;
+    if (!(typeof quoteReady === 'function' ? quoteReady() : quoteReady) || authLoading || hasFiredRef.current) return;
 
     // Only fire if returning from OAuth with the auth_save flag
     const params = new URLSearchParams(window.location.search);
