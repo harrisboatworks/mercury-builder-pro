@@ -265,14 +265,15 @@ export function PricingTable({
       )}
 
       {/* Financing Callout - Subtle and Minimal - Only show for $5,000+ non-cash quotes */}
-      {selectedPaymentMethod !== 'cash_purchase' && pricing.total >= FINANCING_MINIMUM && (
+      {selectedPaymentMethod !== 'cash_purchase' && pricing.subtotal >= FINANCING_MINIMUM && (
         <div className="mt-6 mb-4 pt-6 border-t border-repower-navy-900/20 space-y-2">
           <div className="text-sm text-repower-navy-900 font-normal">
             Flexible financing available
           </div>
           
-          <FinancingCallout 
+          <FinancingCallout
             totalPrice={pricing.total}
+            beforeTaxSubtotal={pricing.subtotal}
             onApplyForFinancing={onApplyForFinancing}
             financingTerms={financingTerms}
           />

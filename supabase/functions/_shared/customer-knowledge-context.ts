@@ -391,6 +391,38 @@ export async function fetchActiveFinancing(supabase: SupabaseLike): Promise<Fina
   return data || [];
 }
 
+export interface ActiveFinancingAndPromotionsResult {
+  financing: FinancingRecord[];
+  promotions: PromotionRecord[];
+  financingError: unknown;
+  promotionsError: unknown;
+}
+
+/**
+ * Fetch financing and promotions independently so one lookup failure never
+ * empties the other result. Callers inspect the per-lookup error fields.
+ */
+export async function fetchActiveFinancingAndPromotions(
+  supabase: SupabaseLike,
+  fetchers: {
+    fetchFinancing?: (client: SupabaseLike) => Promise<FinancingRecord[]>;
+    fetchPromotions?: (client: SupabaseLike) => Promise<PromotionRecord[]>;
+  } = {},
+): Promise<ActiveFinancingAndPromotionsResult> {
+  const fetchFinancing = fetchers.fetchFinancing ?? fetchActiveFinancing;
+  const fetchPromotions = fetchers.fetchPromotions ?? fetchActivePromotions;
+  const [financingResult, promotionsResult] = await Promise.allSettled([
+    fetchFinancing(supabase),
+    fetchPromotions(supabase),
+  ]);
+  return {
+    financing: financingResult.status === "fulfilled" ? financingResult.value : [],
+    promotions: promotionsResult.status === "fulfilled" ? promotionsResult.value : [],
+    financingError: financingResult.status === "rejected" ? financingResult.reason : null,
+    promotionsError: promotionsResult.status === "rejected" ? promotionsResult.reason : null,
+  };
+}
+
 function extractPromotionFinancing(promotions: PromotionRecord[]) {
   const offers: Array<{
     promotionName: string;

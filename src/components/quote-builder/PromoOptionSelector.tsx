@@ -14,6 +14,7 @@ export type PromoOptionType = 'no_payments' | 'special_financing' | 'cash_rebate
 interface PromoOptionSelectorProps {
   motorHP?: number;
   totalAmount?: number;
+  beforeTaxAmount?: number;
   onSelect: (option: PromoOptionType) => void;
   selectedOption?: PromoOptionType | null;
   className?: string;
@@ -22,6 +23,7 @@ interface PromoOptionSelectorProps {
 export function PromoOptionSelector({
   motorHP = 0,
   totalAmount = 0,
+  beforeTaxAmount,
   onSelect,
   selectedOption,
   className
@@ -44,8 +46,8 @@ export function PromoOptionSelector({
     return getSpecialFinancingRates() || [];
   }, [getSpecialFinancingRates]);
 
-  // Check if eligible for financing-dependent options
-  const isEligibleForFinancing = totalAmount >= FINANCING_MINIMUM;
+  // Standing minimum is on the before-tax amount when the caller supplies it.
+  const isEligibleForFinancing = (beforeTaxAmount ?? totalAmount) >= FINANCING_MINIMUM;
 
   // Determine the best option for this customer
   const recommendedOption = useMemo((): PromoOptionType => {

@@ -54,13 +54,14 @@ export function GlobalStickyQuoteBar() {
   const shouldShowBar = !isMobile && state.motor && !location.pathname.startsWith('/quote/') && !hideOnPages.some(path => location.pathname.startsWith(path));
 
   // Centralized running total (single source of truth)
-  const { total: runningTotalRaw } = useQuoteRunningTotal();
+  const { total: runningTotalRaw, subtotal: runningSubtotalRaw } = useQuoteRunningTotal();
   const runningTotal = runningTotalRaw > 0 ? runningTotalRaw : null;
+  const runningSubtotal = runningSubtotalRaw > 0 ? runningSubtotalRaw : null;
 
-  // Calculate monthly payment - only for amounts >= $5,000
+  // Standing minimum is on the before-tax subtotal; payment still uses total + fee.
   const financingEstimate = useMemo(() => {
     if (state.selectedPaymentMethod === 'cash_purchase') return null;
-    if (!runningTotal || runningTotal < FINANCING_MINIMUM) return null;
+    if (!runningTotal || !runningSubtotal || runningSubtotal < FINANCING_MINIMUM) return null;
 
     // Add Dealerplan fee
     const priceWithFee = runningTotal + DEALERPLAN_FEE;
@@ -77,14 +78,14 @@ export function GlobalStickyQuoteBar() {
       ...calculateMonthlyPayment(priceWithFee, resolved.rate, resolved.term),
       usesSpecialFinancing: resolved.usesSpecialFinancing,
     };
-  }, [runningTotal, promo, state.selectedPaymentMethod, state.selectedPromoOption, state.selectedPromoRate, state.selectedPromoTerm, getPromotionOptions]);
+  }, [runningTotal, runningSubtotal, promo, state.selectedPaymentMethod, state.selectedPromoOption, state.selectedPromoRate, state.selectedPromoTerm, getPromotionOptions]);
   const monthlyPayment = financingEstimate?.payment ?? null;
   const usesSpecialFinancing = financingEstimate?.usesSpecialFinancing === true;
 
-  // Financing unavailable when total is valid but below threshold
+  // Financing unavailable when the before-tax subtotal is valid but below threshold
   const financingUnavailable = useMemo(() => {
-    return runningTotal !== null && runningTotal > 0 && runningTotal < FINANCING_MINIMUM;
-  }, [runningTotal]);
+    return runningSubtotal !== null && runningSubtotal > 0 && runningSubtotal < FINANCING_MINIMUM;
+  }, [runningSubtotal]);
 
   // Get step label based on current path
   const stepLabel = useMemo(() => {
