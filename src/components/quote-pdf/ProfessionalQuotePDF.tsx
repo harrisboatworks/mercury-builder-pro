@@ -338,8 +338,8 @@ function formattedDate(value: string): string {
     || dateAtEndOfDay(value).toLocaleDateString('en-CA', { year: 'numeric', month: 'long', day: 'numeric' });
 }
 
-function validUntilText(quoteDate: string, validUntil?: string, promoEndDate?: string): string {
-  if (validUntil) return formattedDate(validUntil);
+export function validUntilText(quoteDate: string, validUntil?: string, promoEndDate?: string): string {
+  if (validUntil) return formatPromoCalendarDate(validUntil.includes('T') ? new Date(validUntil) : validUntil);
   const issued = new Date(quoteDate);
   const thirtyDays = new Date(issued);
   thirtyDays.setDate(thirtyDays.getDate() + 30);

@@ -5,10 +5,19 @@ import {
   mercuryFamilyLabel,
   motorMetaLine,
   quoteInspectionCaveat,
+  validUntilText,
   type QuotePDFProps,
 } from './ProfessionalQuotePDF';
 
 describe('professional quote PDF display copy', () => {
+  it('prints timestamp validity in Ontario rather than its following UTC date', () => {
+    expect(validUntilText('October 13, 2026', '2026-10-31T03:59:59.999Z')).toBe('October 30, 2026');
+    expect(validUntilText('December 13, 2026', '2027-01-01T04:59:59.999Z')).toBe('December 31, 2026');
+  });
+
+  it('preserves date-only legacy validity', () => {
+    expect(validUntilText('October 13, 2026', '2026-10-30')).toBe('October 30, 2026');
+  });
   it.each([
     ['9.9 MH FourStroke', '9.9HP', 'portable'],
     ['90 ELPT FourStroke', '90HP', 'mid-range'],
