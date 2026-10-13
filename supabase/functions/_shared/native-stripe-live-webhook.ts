@@ -1,5 +1,5 @@
 export const NATIVE_LIVE_WEBHOOK_URL = 'https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/stripe-webhook';
-export const NATIVE_LIVE_WEBHOOK_EVENTS = ['checkout.session.completed', 'payment_intent.succeeded',
+export const NATIVE_LIVE_WEBHOOK_EVENTS = ['checkout.session.completed', 'checkout.session.async_payment_succeeded', 'payment_intent.succeeded',
   'payment_intent.processing', 'payment_intent.payment_failed', 'payment_intent.canceled', 'payment_intent.requires_action'] as const;
 
 // Preserve the existing Checkout version. Native callbacks use only signed
