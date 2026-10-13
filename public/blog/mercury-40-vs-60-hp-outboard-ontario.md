@@ -223,7 +223,7 @@ Review the information recorded on your Pleasure Craft Licence after a repower. 
 
 ### How much more does it cost to go from a 40 HP to a 60 HP on a new boat package?
 
-It depends on the boat. On a new boat package the step-up is set by that package's pricing, so it is not always the same as the difference between the two loose motors. For a repower, the price gap between the 40 and the 60 is in the cost section of this guide and in our live quote builder. Ask us to quote the same boat both ways. The 60 is usually worth it if you carry three or more people, tow a tube, or run bigger water. Build it at mercuryrepower.ca or call 905-342-2153.
+It depends on the boat. On a new boat package the step-up is set by that package's pricing, so it is not always the same as the difference between the two loose motors. For a repower, use our live quote builder to compare the exact 40 and 60 HP configurations. Ask us to quote the same boat both ways. The 60 is usually worth it if you carry three or more people, tow a tube, or run bigger water. Build it at mercuryrepower.ca or call 905-342-2153.
 
 ### Is a 40 HP enough to get a loaded 16 ft boat on plane?
 
