@@ -95,6 +95,12 @@ export function nativeDepositIo(db: any): NativeCreateIo & NativeCompleteIo {
     bindAttempt: (id, pi, status) => rpc('bind_native_deposit_payment_intent', {
       p_attempt_id: id, p_payment_intent_id: pi, p_status: status,
     }),
+    beginSubmission: args => rpc('begin_native_deposit_submission', {
+      p_attempt_id: args.attemptId, p_token_fingerprint: args.tokenFingerprint,
+      p_processor_params_hash: args.processorParamsHash, p_amount_cents: args.amountCents,
+      p_seller_account_id: args.sellerAccountId, p_livemode: args.livemode,
+      p_token_expires_at: args.tokenExpiresAt,
+    }),
     async sendConfirmations(savedQuoteId, paymentIntentId) {
       const { data, error } = await db.functions.invoke('send-deposit-confirmation-email', {
         body: { savedQuoteId, nativePaymentIntentId: paymentIntentId },

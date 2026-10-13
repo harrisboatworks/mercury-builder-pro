@@ -1,8 +1,8 @@
-import { describe, expect, it, vi } from 'vitest';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import {
   assessSharedPaymentToken, inspectNativeDepositCompleteCaller, nativePaymentIntentForm,
   nativeDepositActorAuthorized, projectNativeDepositCheckout, runNativeDepositComplete,
-  NATIVE_DEPOSIT_HANDLER_ID, type NativeIntentRecord, type NativeCompleteIo,
+  MAX_NATIVE_TOKEN_LIFETIME_MS, NATIVE_DEPOSIT_HANDLER_ID, type NativeIntentRecord, type NativeCompleteIo,
 } from '../../../supabase/functions/_shared/native-deposit-checkout';
 import { createNativeStripePreviewClient, NativeStripeRequestError } from '../../../supabase/functions/_shared/native-stripe-preview';
 const now = new Date('2026-10-12T12:00:00Z');
@@ -11,10 +11,10 @@ const intent: NativeIntentRecord = { id: saved, child_id: 'ndc_' + 'a'.repeat(32
   owner_user_id: 'buyer', motor_id: motor, amount_cents: 50000, currency: 'CAD', merchandise_cents: 1400000,
   document_sha256: 'a'.repeat(64), document_path: `saved-quotes/${saved}/quote.pdf`, policy_version: 'deposit-policy/v1',
   policy_code: 'in_stock_refundable', terms_version: 'hbw-reservation-terms/2026-04-08', catalog_model_number: '90ELPT', horsepower: 90,
-  express_verified: false, status: 'approved', expires_at: '2026-10-12T13:00:00Z' };
+  express_verified: false, status: 'approved', expires_at: '2026-10-12T12:10:00Z' };
 const token = () => ({ id: 'spt_synthetic', object: 'shared_payment.granted_token', livemode: false, deactivated_at: null, deactivated_reason: null,
   usage_limits: { currency: 'cad', max_amount: 50000, expires_at: (now.getTime() + 300_000) / 1000 }, usage_details: { amount_captured: { currency: 'cad', value: 0 } } });
-const expected = { amountCents: 50000, sellerAccountId: 'acct_synthetic', livemode: false, now, approvalExpiresAt: new Date(intent.expires_at) };
+const expected = { amountCents: 50000, sellerAccountId: 'acct_synthetic', livemode: false, now };
 const payment = { instruments: [{ id: 'wallet_card', handler_id: NATIVE_DEPOSIT_HANDLER_ID, type: 'card', selected: true,
   credential: { type: 'shared_payment_token', token: 'spt_synthetic' } }] };
 function setup() {
@@ -41,6 +41,12 @@ function setup() {
     observePaymentIntent: vi.fn(async (_id, id) => { attempt.observed_payment_intent_id = id; return true; }),
     bindAttempt: async (_id, id, status) => { if (id) attempt.stripe_payment_intent_id = id; attempt.status = status;
       if (status === 'submitted') attempt.submitted_at ??= now.toISOString(); return true; },
+    beginSubmission: vi.fn(async args => {
+      if (!approval || Date.parse(approval.expires_at) <= Date.now()) return false;
+      expect(args.tokenFingerprint).toBe(attempt.token_fingerprint);
+      expect(args.processorParamsHash).toBe(attempt.processor_params_hash);
+      attempt.submitted_at = new Date().toISOString(); attempt.status = 'submitted'; return true;
+    }),
     sendConfirmations: vi.fn(async () => true),
     claimPaid: vi.fn(async () => { paid = true; return true; }),
   };
@@ -55,6 +61,8 @@ function setup() {
   return { io, stripe, submit, complete, setApproval: (v: any) => { approval = v; }, attempt: () => attempt };
 }
 describe('native deposit boundary', () => {
+  beforeEach(() => { vi.useFakeTimers(); vi.setSystemTime(now); });
+  afterEach(() => vi.useRealTimers());
   it('requires ownership, not public UUIDs', () => {
     expect(nativeDepositActorAuthorized({ savedQuoteUserId: 'buyer', savedQuoteResumeToken: 'dep_' + 'a'.repeat(24), actor: { userId: null, resumeCapability: null } })).toBe(false);
     expect(nativeDepositActorAuthorized({ savedQuoteUserId: null, savedQuoteResumeToken: 'dep_' + 'a'.repeat(24), actor: { userId: null, resumeCapability: 'dep_' + 'a'.repeat(24) } })).toBe(true);
@@ -101,11 +109,11 @@ describe('native deposit boundary', () => {
     const first = await state.complete(); expect(first.ok && first.checkout.payment_status).toBe('unknown');
     state.stripe.createConfirmedPaymentIntent.mockImplementation(original);
     const second = await state.complete({ payment }, new Date('2026-10-12T14:00:00Z'));
-    expect(second.ok && second.checkout.payment_status).toBe('paid'); expect(state.stripe.retrieveSharedPaymentToken).toHaveBeenCalledOnce();
+    expect(second.ok && second.checkout.payment_status).toBe('paid'); expect(state.stripe.retrieveSharedPaymentToken).toHaveBeenCalledTimes(2);
     const calls = state.stripe.createConfirmedPaymentIntent.mock.calls; expect(calls[0].slice(0, 2)).toEqual(calls[1].slice(0, 2));
   });
   it('keeps a different token and a lost database bind from claiming paid', async () => {
-    const state = setup(); state.io.bindAttempt = async () => false;
+    const state = setup(); state.io.beginSubmission = async () => false;
     const result = await state.complete(); expect(result.ok).toBe(false); expect(state.submit).not.toHaveBeenCalled();
     const other = structuredClone(payment); other.instruments[0].credential.token = 'spt_other';
     expect((await state.complete({ payment: other })).ok).toBe(false);
@@ -123,7 +131,7 @@ describe('native deposit boundary', () => {
     const replay = await state.complete({ payment: other });
     expect(replay.ok && replay.checkout.payment_status).toBe('paid');
     expect(state.stripe.createConfirmedPaymentIntent).toHaveBeenCalledOnce();
-    expect(state.stripe.retrieveSharedPaymentToken).toHaveBeenCalledOnce();
+    expect(state.stripe.retrieveSharedPaymentToken).toHaveBeenCalledTimes(2);
     expect(state.stripe.retrievePaymentIntent).toHaveBeenCalledOnce();
   });
   it('retains a mismatched observed PI without promoting paid authority', async () => {
@@ -170,12 +178,45 @@ describe('native deposit boundary', () => {
     { usage_limits: { currency: 'usd', max_amount: 50000, expires_at: now.getTime()/1000+300 } },
     { usage_limits: { currency: 'cad', max_amount: 100000, expires_at: now.getTime()/1000+300 } },
     { usage_limits: { currency: 'cad', max_amount: 50000, expires_at: now.getTime()/1000-1 } },
-    { usage_limits: { currency: 'cad', max_amount: 50000, expires_at: now.getTime()/1000+7200 } },
+    { usage_limits: { currency: 'cad', max_amount: 50000, expires_at: now.getTime()/1000+MAX_NATIVE_TOKEN_LIFETIME_MS/1000+1 } },
     { usage_details: { amount_captured: 1 } },
     { usage_details: { amount_captured: { currency: 'cad', value: 1 } } },
     { usage_details: { amount_captured: { currency: 'usd', value: 0 } } },
     { usage_details: { amount_captured: {} } },
   ])('rejects unusable preview tokens %j', changes => expect(assessSharedPaymentToken({ ...token(), ...changes }, expected).ok).toBe(false));
+  it('accepts a seven-day Link token while first submission still requires ten-minute approval', async () => {
+    const state = setup(); const issued = token(); issued.usage_limits.expires_at = now.getTime()/1000 + MAX_NATIVE_TOKEN_LIFETIME_MS/1000;
+    state.stripe.retrieveSharedPaymentToken.mockResolvedValue(issued);
+    expect((await state.complete()).ok).toBe(true); expect(state.submit).toHaveBeenCalledOnce();
+    expect(state.io.beginSubmission).toHaveBeenCalledOnce();
+  });
+  it('refuses a late first submission after readiness without marking or paying', async () => {
+    const state = setup(); const original = state.stripe.createConfirmedPaymentIntent.getMockImplementation()!;
+    const issued = token(); issued.usage_limits.expires_at += 86400;
+    state.stripe.retrieveSharedPaymentToken.mockResolvedValue(issued);
+    state.stripe.createConfirmedPaymentIntent.mockImplementationOnce(async (...args) => {
+      vi.setSystemTime(new Date('2026-10-12T12:10:00Z')); return original(...args);
+    });
+    const result = await state.complete(); expect(result.ok).toBe(false);
+    expect(result.ok === false && result.code).toBe('buyer_review_required');
+    expect(state.submit).not.toHaveBeenCalled(); expect(state.attempt().submitted_at).toBeNull();
+  });
+  it('rechecks revocation after readiness and never submits the revoked credential', async () => {
+    const state = setup(); state.stripe.retrieveSharedPaymentToken.mockResolvedValueOnce(token())
+      .mockResolvedValueOnce({ ...token(), deactivated_reason: 'revoked' } as any);
+    const result = await state.complete(); expect(result.ok).toBe(false);
+    expect(state.submit).not.toHaveBeenCalled(); expect(state.io.beginSubmission).not.toHaveBeenCalled();
+    expect(state.attempt().submitted_at).toBeNull();
+  });
+  it('holds an ambiguous consent-RPC response and recovers the original key after expiry', async () => {
+    const state = setup(); const begin = state.io.beginSubmission;
+    state.io.beginSubmission = async args => { await begin(args); throw new Error('response lost'); };
+    const first = await state.complete(); expect(first.ok && first.checkout.payment_status).toBe('unknown');
+    expect(state.submit).not.toHaveBeenCalled();
+    state.io.beginSubmission = begin; vi.setSystemTime(new Date('2026-10-12T12:11:00Z'));
+    expect((await state.complete({ payment }, new Date())).ok).toBe(true);
+    expect(state.submit).toHaveBeenCalledOnce(); expect(state.io.beginSubmission).toHaveBeenCalledOnce();
+  });
   it('accepts Stripe preview nullable uncaptured amount while rejecting missing counters', () => {
     expect(assessSharedPaymentToken({ ...token(), usage_details: { amount_captured: null } }, expected).ok).toBe(true);
     expect(assessSharedPaymentToken({ ...token(), usage_details: {} }, expected).ok).toBe(false);

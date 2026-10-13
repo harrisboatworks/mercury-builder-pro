@@ -322,9 +322,13 @@ export async function hashNativeProcessorParams(
 // The granted-token schema is the pinned 2026-09-30.preview schema. Seller
 // scope comes from the independently checked account owning the API credential,
 // not agent_details (which identifies the agent, not the merchant).
+// Credential lifetime is separate from buyer consent. First submission must
+// atomically consume an unexpired trusted approval, even for a Link token
+// whose issuer lifetime is longer than that ten-minute permission.
+export const MAX_NATIVE_TOKEN_LIFETIME_MS = 7 * 24 * 3600_000;
 export function assessSharedPaymentToken(token: unknown, expected: {
   amountCents: number; livemode: boolean;
-  now: Date; approvalExpiresAt: Date;
+  now: Date;
 }): { ok: true } | { ok: false; code: string } {
   if (!isPlainObject(token) || token.object !== "shared_payment.granted_token"
     || !isPlainObject(token.usage_limits)) return { ok: false, code: "token_rejected" };
@@ -336,7 +340,7 @@ export function assessSharedPaymentToken(token: unknown, expected: {
   if (limits.max_amount !== expected.amountCents) return { ok: false, code: "token_amount" };
   if (Number.isSafeInteger(limits.expires_at) && Number(limits.expires_at) * 1000 <= expected.now.getTime()) return { ok: false, code: "token_expired" };
   if (!Number.isSafeInteger(limits.expires_at)
-    || Number(limits.expires_at) * 1000 > expected.approvalExpiresAt.getTime())
+    || Number(limits.expires_at) * 1000 > expected.now.getTime() + MAX_NATIVE_TOKEN_LIFETIME_MS)
     return { ok: false, code: "token_expiry" };
   if (!isPlainObject(token.usage_details) || !("amount_captured" in token.usage_details))
     return { ok: false, code: "token_inactive" };
@@ -691,6 +695,10 @@ export type NativeCompleteIo = {
   markReceiptReconciliation: (intentId: string, attemptId: string) => Promise<void>;
   observePaymentIntent: (attemptId: string, paymentIntentId: string) => Promise<boolean>;
   bindAttempt: (attemptId: string, paymentIntentId: string | null, status: string) => Promise<boolean>;
+  beginSubmission: (args: {
+    attemptId: string; tokenFingerprint: string; processorParamsHash: string;
+    amountCents: number; sellerAccountId: string; livemode: boolean; tokenExpiresAt: string;
+  }) => Promise<boolean>;
   sendConfirmations: (savedQuoteId: string, paymentIntentId: string) => Promise<boolean>;
   claimPaid: (args: {
     intent: NativeIntentRecord;
@@ -918,7 +926,6 @@ export async function runNativeDepositComplete(input: {
       amountCents: intent.amount_cents,
       livemode: stripe.livemode,
       now: input.now,
-      approvalExpiresAt: new Date(approval.expires_at),
     });
     if (tokenDecision.ok === false) {
       const revoked = tokenDecision.code === "token_revoked" || tokenDecision.code === "token_expired";
@@ -945,6 +952,29 @@ export async function runNativeDepositComplete(input: {
     // Readiness precedes the marker; the marker precedes any external POST.
     // A preflight refusal cannot leave a never-sent attempt marked submitted.
     const created = await stripe.createConfirmedPaymentIntent(params, attempt.idempotency_key, async () => {
+      if (!attempt.submitted_at) {
+        // Run after provider readiness: neither an entry-time clock nor a
+        // preliminary claim may authorize a late first payment.
+        const currentToken = await stripe.retrieveSharedPaymentToken(tokenId!);
+        const decision = assessSharedPaymentToken(currentToken, {
+          amountCents: intent.amount_cents, livemode: stripe.livemode,
+          now: new Date(),
+        });
+        if (!decision.ok) throw new NativeStripeRequestError(409, 'native_token_not_ready');
+        submissionPhase = 'marking';
+        const accepted = await input.io.beginSubmission({
+          attemptId: attempt.id, tokenFingerprint: attempt.token_fingerprint,
+          processorParamsHash: attempt.processor_params_hash, amountCents: intent.amount_cents,
+          sellerAccountId: stripe.sellerAccountId, livemode: stripe.livemode,
+          tokenExpiresAt: new Date((currentToken as { usage_limits: { expires_at: number } }).usage_limits.expires_at * 1000).toISOString(),
+        });
+        if (!accepted) {
+          submissionPhase = 'preflight';
+          throw new NativeStripeRequestError(409, 'native_consent_not_ready');
+        }
+        submissionPhase = 'submitted';
+        return;
+      }
       submissionPhase = 'marking';
       if (!await input.io.bindAttempt(attempt.id, null, "submitted"))
         throw new NativeStripeRequestError(503, 'native_submission_not_claimed');
@@ -952,6 +982,10 @@ export async function runNativeDepositComplete(input: {
     });
     return await finishFromIntent(created, false);
   } catch (error) {
+    if (error instanceof NativeStripeRequestError && error.code === 'native_consent_not_ready')
+      return failure(409, 'buyer_review_required', 'Buyer review expired or the deposit changed. Review a fresh quote.');
+    if (error instanceof NativeStripeRequestError && error.code === 'native_token_not_ready')
+      return failure(409, 'token_unavailable', 'The wallet credential is unavailable. Refresh the existing payment before continuing.');
     if (error instanceof NativeStripeRequestError && error.code === 'native_submission_not_claimed')
       return failure(503, "reconciliation_required", "Payment reconciliation is pending.");
     if (submissionPhase === 'preflight')
