@@ -13,6 +13,11 @@ beforeEach(()=>{vi.useFakeTimers({toFake:['Date']});vi.setSystemTime(new Date('2
 afterEach(()=>{cleanup();vi.useRealTimers();});
 function form(data=quote){render(<MemoryRouter><ScheduleConsultation quoteData={data} onBack={vi.fn()}/></MemoryRouter>);fireEvent.change(screen.getByLabelText(/Full Name/),{target:{value:'Synthetic Boater'}});fireEvent.change(screen.getByLabelText(/Email Address/),{target:{value:'synthetic@example.com'}});fireEvent.change(screen.getByLabelText(/Phone Number/),{target:{value:'9055550100'}});}
 describe('consultation action-time expiry',()=>{
+ it('does not submit mutable financing terms for an authoritative cash snapshot',async()=>{
+  const cash={...quote,financing:{downPayment:500,rate:7.99,term:60},pdfSnapshot:{...quote.pdfSnapshot,paymentMethod:'cash_purchase'}};
+  form(cash);fireEvent.click(screen.getByRole('button',{name:'Send My Quote for Review'}));
+  await waitFor(()=>expect(invoke).toHaveBeenCalledWith('submit-quote-lead',expect.objectContaining({body:expect.objectContaining({deposit_amount:0,loan_amount:0,monthly_payment:0,term_months:0,total_cost:3049.87,quote_snapshot:cash.pdfSnapshot})})));
+ });
  it('uses authoritative snapshot loan and down-payment terms when mutable state differs',async()=>{
   const recorded={...quote,pdfSnapshot:{...quote.pdfSnapshot,paymentMethod:'standard_financing',financing:{rate:0,amortizationMonths:60,contractTermMonths:60,dealerFee:0,downPayment:500,amountFinanced:2549.87,monthlyPayment:42}}};
   form(recorded);fireEvent.click(screen.getByRole('button',{name:'Send My Quote for Review'}));

@@ -44,7 +44,8 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
   const [turnstileToken, setTurnstileToken] = useState('');
   const turnstileHostRef = useRef<HTMLDivElement | null>(null);
   const pdfSnapshot = isQuotePdfSnapshot(quoteData.pdfSnapshot) ? quoteData.pdfSnapshot : null;
-  const downPayment = pdfSnapshot?.financing?.downPayment ?? quoteData.financing.downPayment;
+  const isCashPurchase = pdfSnapshot?.paymentMethod === 'cash_purchase';
+  const downPayment = isCashPurchase ? 0 : (pdfSnapshot?.financing?.downPayment ?? quoteData.financing.downPayment);
   const [quoteExpired, setQuoteExpired] = useState(false);
   const rejectExpiredQuote = () => {
     if (!pdfSnapshot || !isQuoteSnapshotExpired(pdfSnapshot)) return false;
@@ -131,6 +132,7 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
   };
 
   const calculateMonthlyPayment = () => {
+    if (isCashPurchase) return 0;
     if (pdfSnapshot?.financing) return pdfSnapshot.financing.monthlyPayment;
     if (!quoteData.motor) return 0;
     const principal = Math.round(totalCashPrice) - downPayment;
@@ -210,6 +212,7 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
   };
 
   const calculateTotalCost = () => {
+    if (isCashPurchase) return totalCashPrice;
     const monthlyPayment = calculateMonthlyPayment();
     const amortization = pdfSnapshot?.financing?.amortizationMonths ?? quoteData.financing.term;
     return (monthlyPayment * amortization) + downPayment;
@@ -261,9 +264,9 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
         base_price: totals.subtotal,
         final_price: Math.round(totalCashPrice),
         deposit_amount: downPayment,
-        loan_amount: pdfSnapshot?.financing?.amountFinanced ?? (Math.round(totalCashPrice) - downPayment),
+        loan_amount: isCashPurchase ? 0 : (pdfSnapshot?.financing?.amountFinanced ?? (Math.round(totalCashPrice) - downPayment)),
         monthly_payment: calculateMonthlyPayment(),
-        term_months: pdfSnapshot?.financing?.amortizationMonths ?? quoteData.financing.term,
+        term_months: isCashPurchase ? 0 : (pdfSnapshot?.financing?.amortizationMonths ?? quoteData.financing.term),
         total_cost: calculateTotalCost(),
         customer_name: sanitizedContactInfo.name,
         customer_email: sanitizedContactInfo.email,
