@@ -46,6 +46,7 @@ import { resolveAppliedTradeValue } from '@/lib/trade-credit';
 import { calculateFinancingPurchase, FINANCING_PRICE_BASIS_ALL_IN_AFTER_TRADE } from '@/lib/financing-purchase';
 import { supabase } from '@/integrations/supabase/client';
 import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
+import { isQuoteSnapshotExpired } from '../../../supabase/functions/_shared/quote-snapshot-expiry';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { useGoogleReviewStats } from '@/hooks/useGoogleReviewStats';
 import { useToast } from '@/hooks/use-toast';
@@ -258,7 +259,10 @@ export default function QuoteSummaryPage() {
     }),
     [state.motor, state.purchasePath],
   );
-  const canReserveMotor = Boolean(depositPolicySnapshot);
+  const canReserveMotor = Boolean(depositPolicySnapshot) && !isQuoteSnapshotExpired({
+    validUntil: state.frozenPricing?.quoteExpiryDate ?? state.pdfSnapshot?.validUntil,
+    promotion: state.pdfSnapshot?.promotion,
+  });
 
   // Spec pills
   const specs = [
@@ -641,7 +645,7 @@ export default function QuoteSummaryPage() {
     getPromoDisplayValue,
   ]);
 
-  const isQuoteExpired = () => !state.frozenPricing && quoteValidUntil.getTime() < Date.now();
+  const isQuoteExpired = () => isQuoteSnapshotExpired(pdfSnapshot);
   const isQuoteReady = () => !isQuoteExpired() && arePromotionsCurrent() && !state.isLoading && !promoLoading && !promoError && Boolean(state.motor)
     && JSON.stringify(state.pdfSnapshot) === JSON.stringify(pdfSnapshot);
 
@@ -924,7 +928,7 @@ export default function QuoteSummaryPage() {
   const canUseAssistantDeposit = import.meta.env.VITE_NATIVE_DEPOSIT_ENABLED === 'true'
     && typeof nativeParentRef === 'string' && /^chk_[A-Za-z0-9._-]{1,120}$/.test(nativeParentRef) && Boolean(user);
   const handleReserveDeposit = () => {
-    if (!isQuoteReady()) return;
+    if (!isQuoteReady() || isQuoteSnapshotExpired(pdfSnapshot)) return;
     setDepositRail('hosted');
     if (!depositPolicySnapshot) {
       toast({
@@ -989,7 +993,7 @@ export default function QuoteSummaryPage() {
 
   // Handle deposit after customer info is collected
   const handleDepositSubmit = async (customerInfo: DepositCustomerInfo) => {
-    if (!isQuoteReady()) return;
+    if (!isQuoteReady() || isQuoteSnapshotExpired(pdfSnapshot)) return;
     setShowDepositDialog(false);
     setIsProcessingDeposit(true);
     try {
