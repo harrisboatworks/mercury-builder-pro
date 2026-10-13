@@ -1,3 +1,4 @@
+import { resolveDepositStagingOrigin } from '../_shared/deposit-staging-origin.ts';
 // Trusted buyer UI only. UCP caller fields cannot record approval.
 import { createClient } from 'npm:@supabase/supabase-js@2.53.1';
 import { nativeDepositActorAuthorized, nativeDepositCheckoutEnabled, isNativeDepositChildId } from '../_shared/native-deposit-checkout.ts';
@@ -11,10 +12,9 @@ Deno.serve(async req => {
   const origin = req.headers.get('origin');
   // A separately configured exact staging origin may be used only with the
   // isolated staging marker. Production retains the existing exact allowlist.
-  const staging = Deno.env.get('DEPOSIT_STAGING_MODE') === '1'
-    && Deno.env.get('SUPABASE_URL') === 'https://filwwwqgqtwxjxkksmxy.supabase.co';
   const allowed = resolveAllowedBrowserOrigin(origin)
-    || (staging && origin && origin === Deno.env.get('NATIVE_DEPOSIT_REVIEW_ORIGIN') ? origin : null);
+    || resolveDepositStagingOrigin(origin, { DEPOSIT_STAGING_MODE: Deno.env.get('DEPOSIT_STAGING_MODE'),
+      SUPABASE_URL: Deno.env.get('SUPABASE_URL'), NATIVE_DEPOSIT_REVIEW_ORIGIN: Deno.env.get('NATIVE_DEPOSIT_REVIEW_ORIGIN') });
   const headers: Record<string, string> = { 'Content-Type': 'application/json', 'Cache-Control': 'no-store', 'Vary': 'Origin',
     'Access-Control-Allow-Methods': 'POST, OPTIONS',
     'Access-Control-Allow-Headers': 'authorization, apikey, content-type, x-client-info, x-resume-token' };

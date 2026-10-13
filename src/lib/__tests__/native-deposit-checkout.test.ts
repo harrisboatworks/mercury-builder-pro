@@ -39,6 +39,7 @@ function setup() {
     },
     bindAttempt: async (_id, id, status) => { if (id) attempt.stripe_payment_intent_id = id; attempt.status = status;
       if (status === 'submitted') attempt.submitted_at ??= now.toISOString(); return true; },
+    sendConfirmations: vi.fn(async () => true),
     claimPaid: vi.fn(async () => { paid = true; return true; }),
   };
   const stripe = { apiVersion: '2026-09-30.preview' as const, livemode: false, sellerAccountId: 'acct_synthetic',
@@ -94,6 +95,13 @@ describe('native deposit boundary', () => {
     const result = await state.complete(); expect(result.ok).toBe(false); expect(state.stripe.createConfirmedPaymentIntent).not.toHaveBeenCalled();
     const other = structuredClone(payment); other.instruments[0].credential.token = 'spt_other';
     expect((await state.complete({ payment: other })).ok).toBe(false);
+  });
+  it('keeps paid authority when email fails and re-drives the same receipt without another charge', async () => {
+    const state = setup(); state.io.sendConfirmations = vi.fn().mockResolvedValueOnce(false).mockResolvedValueOnce(true);
+    const first = await state.complete(); expect(first.ok && first.checkout.payment_status).toBe('paid');
+    expect(first.ok && first.checkout.receipt_email_status).toBe('pending');
+    const replay = await state.complete({}); expect(replay.ok && replay.checkout.receipt_email_status).toBe('provider_accepted');
+    expect(state.stripe.createConfirmedPaymentIntent).toHaveBeenCalledOnce(); expect(state.io.sendConfirmations).toHaveBeenCalledTimes(2);
   });
   it('rejects client account/mode drift before a durable attempt or charge', async () => {
     const state = setup(); state.stripe.sellerAccountId = 'acct_other';

@@ -41,6 +41,15 @@ import { nativeDepositCheckoutEnabled, isNativeDepositChildId, runNativeDepositC
 import { nativeActorFromRequest, nativeDepositIo } from '../_shared/native-deposit-io.ts';
 import { createNativeStripePreviewClient } from '../_shared/native-stripe-preview.ts';
 
+async function nativeRequestBody(req: Request): Promise<unknown> {
+  if (Number(req.headers.get('content-length') || 0) > 32768)
+    throw { status: 400, code: 'invalid_request', message: 'Native checkout request is too large.' };
+  try { return await req.json(); } catch {
+    // Do not log JSON-parser messages containing credential fragments.
+    throw { status: 400, code: 'invalid_request', message: 'Body must be valid JSON.' };
+  }
+}
+
 async function opNative(req: Request, supabase: any, id: string, operation: 'create' | 'read' | 'complete', caller: unknown = {}) {
   const enabled = nativeDepositCheckoutEnabled(Deno.env.get('NATIVE_DEPOSIT_ENABLED'));
   if (!enabled && operation === 'create')
@@ -706,7 +715,7 @@ Deno.serve(async (req) => {
 
     const id = route[1];
     if (route.length === 3 && route[2] === 'deposits' && req.method === 'POST') {
-      const result = await opNative(req, supabase, id, 'create', await req.json());
+      const result = await opNative(req, supabase, id, 'create', await nativeRequestBody(req));
       return json(result.checkout, result.status);
     }
     if (isNativeDepositChildId(id || '')) {
@@ -714,7 +723,7 @@ Deno.serve(async (req) => {
         const result = await opNative(req, supabase, id, 'read'); return json(result.checkout, result.status);
       }
       if (route.length === 3 && route[2] === 'complete' && req.method === 'POST') {
-        const result = await opNative(req, supabase, id, 'complete', await req.json()); return json(result.checkout, result.status);
+        const result = await opNative(req, supabase, id, 'complete', await nativeRequestBody(req)); return json(result.checkout, result.status);
       }
       // Immutable child. An in-flight or paid payment cannot be canceled by the
       // generic quote cancellation path. Cancellation/refund needs reconciliation.

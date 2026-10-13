@@ -709,7 +709,9 @@ const AdminQuoteDetail = () => {
       const { data, error } = await supabase.functions.invoke('send-deposit-confirmation-email', {
         body: q.stripe_checkout_session_id
           ? { stripeSessionId: q.stripe_checkout_session_id }
-          : { savedQuoteId: savedQuoteDealId || q.id },
+          : (q.quote_data as Record<string, unknown> | null)?.payment_channel === 'native_spt' && q.stripe_payment_intent_id
+            ? { savedQuoteId: savedQuoteDealId || q.id, nativePaymentIntentId: q.stripe_payment_intent_id }
+            : { savedQuoteId: savedQuoteDealId || q.id },
       });
       if (error) throw error;
       const { data: deliveries, error: reloadError } = await supabase

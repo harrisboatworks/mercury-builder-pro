@@ -258,6 +258,12 @@ BEGIN
       RAISE EXCEPTION 'native deposit attempt bindings are immutable'
         USING ERRCODE = '23514';
     END IF;
+    IF OLD.submitted_at IS NOT NULL AND NEW.submitted_at IS DISTINCT FROM OLD.submitted_at THEN
+      RAISE EXCEPTION 'original native submission timestamp is immutable' USING ERRCODE = '23514';
+    END IF;
+    IF OLD.status = 'succeeded' AND NEW.status IS DISTINCT FROM 'succeeded' THEN
+      RAISE EXCEPTION 'verified native success cannot regress' USING ERRCODE = '23514';
+    END IF;
     IF OLD.stripe_payment_intent_id IS NOT NULL
       AND NEW.stripe_payment_intent_id IS DISTINCT FROM OLD.stripe_payment_intent_id
     THEN
@@ -808,6 +814,7 @@ BEGIN
     RETURN false;
   END IF;
 
+  IF p_status = 'succeeded' AND v_attempt.submitted_at IS NULL THEN RETURN false; END IF;
   IF v_attempt.status = 'succeeded' THEN RETURN true; END IF;
 
   UPDATE public.native_deposit_attempts

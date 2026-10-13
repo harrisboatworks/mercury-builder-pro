@@ -159,6 +159,7 @@ export type NativeDepositCheckout = {
   continue_url?: string;
   trusted_buyer_ui: "required";
   order?: { id: string; permalink_url: string };
+  receipt_email_status?: "provider_accepted" | "pending";
 };
 
 export type NativeDepositFailure = { ok: false; status: number; code: string; message: string };
@@ -329,13 +330,13 @@ export function assessSharedPaymentToken(token: unknown, expected: {
   if (!isPlainObject(token) || token.object !== "shared_payment.granted_token"
     || !isPlainObject(token.usage_limits)) return { ok: false, code: "token_rejected" };
   if (token.deactivated_at != null || token.deactivated_reason != null)
-    return { ok: false, code: "token_inactive" };
+    return { ok: false, code: token.deactivated_reason === 'revoked' ? 'token_revoked' : token.deactivated_reason === 'expired' ? 'token_expired' : 'token_inactive' };
   if (token.livemode !== expected.livemode) return { ok: false, code: "token_mode" };
   const limits = token.usage_limits;
   if (limits.currency !== "cad") return { ok: false, code: "token_currency" };
   if (limits.max_amount !== expected.amountCents) return { ok: false, code: "token_amount" };
+  if (Number.isSafeInteger(limits.expires_at) && Number(limits.expires_at) * 1000 <= expected.now.getTime()) return { ok: false, code: "token_expired" };
   if (!Number.isSafeInteger(limits.expires_at)
-    || Number(limits.expires_at) * 1000 <= expected.now.getTime()
     || Number(limits.expires_at) * 1000 > expected.approvalExpiresAt.getTime())
     return { ok: false, code: "token_expiry" };
   if (!isPlainObject(token.usage_details) || !("amount_captured" in token.usage_details)
@@ -444,8 +445,16 @@ export function projectNativeDepositCheckout(input: {
   return checkout;
 }
 
-function paidProjection(intent: NativeIntentRecord, httpStatus = 200): NativeDepositSuccess {
-  return { ok: true, status: httpStatus, checkout: projectNativeDepositCheckout({ intent, phase: "completed", paymentStatus: "paid" }) };
+function paidProjection(intent: NativeIntentRecord, httpStatus = 200, emailsAccepted?: boolean): NativeDepositSuccess {
+  const checkout = projectNativeDepositCheckout({ intent, phase: 'completed', paymentStatus: 'paid' });
+  if (emailsAccepted !== undefined) checkout.receipt_email_status = emailsAccepted ? 'provider_accepted' : 'pending';
+  return { ok: true, status: httpStatus, checkout };
+}
+
+async function redrivePaidConfirmations(intent: NativeIntentRecord, piId: string | null, io: NativeCompleteIo): Promise<NativeDepositSuccess> {
+  let accepted = false;
+  if (piId) try { accepted = await io.sendConfirmations(intent.saved_quote_id, piId); } catch { /* retain durable paid; outbox remains retryable */ }
+  return paidProjection(intent, 200, accepted);
 }
 
 function bindingsMatchApproval(intent: NativeIntentRecord, approval: NativeApprovalRecord, now: Date, requireUnexpired = true): boolean {
@@ -674,6 +683,7 @@ export type NativeCompleteIo = {
     livemode: boolean;
   }) => Promise<AttemptClaimResult>;
   bindAttempt: (attemptId: string, paymentIntentId: string | null, status: string) => Promise<boolean>;
+  sendConfirmations: (savedQuoteId: string, paymentIntentId: string) => Promise<boolean>;
   claimPaid: (args: {
     intent: NativeIntentRecord;
     attemptId: string;
@@ -717,7 +727,8 @@ export async function runNativeDepositComplete(input: {
   }
   if (intent.status === "paid" || quote.deposit_status === "paid") {
     if (intent.status !== "paid") return failure(409, "hosted_rail", "This saved quote is already paid.");
-    return paidProjection(intent);
+    const paidAttempt = await input.io.loadAttempt(intent.id);
+    return await redrivePaidConfirmations(intent, paidAttempt?.stripe_payment_intent_id || null, input.io);
   }
   const existingAttempt = await input.io.loadAttempt(intent.id);
   const approval = await input.io.loadApproval(intent.id);
@@ -823,7 +834,7 @@ export async function runNativeDepositComplete(input: {
           checkout: projectNativeDepositCheckout({ intent, phase: "requires_escalation", paymentStatus: "unknown" }),
         };
       }
-      return paidProjection({ ...intent, status: "paid" });
+      return await redrivePaidConfirmations({ ...intent, status: "paid" }, assessed.id, input.io);
     }
     const mapped = outcomeFromStatus(assessed.status);
     await input.io.bindAttempt(attempt.id, assessed.id, mapped.paymentStatus === "requires_action"

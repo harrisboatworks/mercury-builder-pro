@@ -34,6 +34,7 @@ DO $$ DECLARE v_id uuid := '71717171-7171-4171-8171-717171717171'; result jsonb;
     UPDATE public.saved_quotes SET quote_pdf_sha256=repeat('b',64) WHERE saved_quotes.id=v_id;
     RAISE EXCEPTION 'document mutation accepted';
   EXCEPTION WHEN serialization_failure THEN NULL; END;
+  IF public.bind_native_deposit_payment_intent(attempt,'pi_synthetic','succeeded') THEN RAISE EXCEPTION 'success bound without original submission'; END IF;
   IF NOT public.bind_native_deposit_payment_intent(attempt,NULL,'submitted') THEN RAISE EXCEPTION 'submission marker failed'; END IF;
   IF NOT public.bind_native_deposit_payment_intent(attempt,'pi_synthetic','processing') THEN RAISE EXCEPTION 'PI binding failed'; END IF;
   IF public.bind_native_deposit_payment_intent(attempt,'pi_conflict','processing') THEN RAISE EXCEPTION 'PI rebound'; END IF;

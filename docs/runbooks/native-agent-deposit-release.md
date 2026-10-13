@@ -69,3 +69,38 @@ native webhook reconciliation and cross-rail locks for existing attempts.
 Primary contracts: UCP 2026-04-08 checkout/REST and payment handlers; Stripe
 Shared Payment Tokens preview 2026-09-30. AP2 and actual Meta consumer-wallet
 interop remain separate future acceptance work.
+
+## Recovery acceptance required before production
+
+Both synchronous completion and signed events invoke the same idempotent email
+outbox. A mail failure retains paid authority with receipt_email_status pending;
+a subsequent owned complete request or the existing admin retry can re-drive it.
+Only all three provider-accepted results report provider_accepted, never delivered.
+
+Unknown outcomes keep the quote locked. Within 23 hours the original token and
+same immutable request/key may replay a lost confirmation result; do not replace
+its token, reopen hosted Checkout, or delete the attempt. After that cutoff use
+seller-side reconciliation, never a fresh automatic charge. The authorized
+operator retrieves the candidate PI with the pinned account's preview client and
+checks exact native child/intent/saved-quote/motor metadata, CAD amount, mode and
+actual status. Bind only that independently verified PI to the original attempt
+through the service-only bind RPC, with succeeded only after processor success.
+Then an owned token-free complete call uses the ordinary locked paid claim and
+outbox. An unknown or conflicting candidate stays held. Test this path with a
+synthetic lost-response attempt; no customer funds or production repair implied.
+
+A definitive card failure is retained with its real PI. To replace a card, the
+operator first independently verifies zero received/captured amount and cancels
+the failed sandbox PI through Stripe, then verifies canceled status. Keep the old
+quote/attempt immutable for audit, and prepare a fresh saved quote/child with new
+buyer review and wallet authorization. An unknown, processing, requires_action,
+or succeeded PI cannot be treated as a failure or automatically unlocked. Test
+this recovery path; it is deliberately dealer-assisted rather than a silent
+second charge. Production refund/void decisions retain their owner authority.
+
+A succeeded-but-unclaimed payment is an operational hold, not permission to
+change identity, amount, terms, PDF or PI bindings. Verify processor and database
+claims, preserve the funds/attempt record, and route a conflicting canonical
+binding to the accountable owner for the appropriate reconciliation/refund.
+Do not fabricate a paid receipt. This case and real signed-event request metadata
+need explicit isolated provider proof before release.

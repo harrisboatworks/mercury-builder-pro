@@ -1,3 +1,4 @@
+import { deliveriesIndicateFailure } from './deposit-email-deliveries.ts';
 // Service-role adapter. Public projections must never include database rows.
 import {
   type NativeActor, type NativeIntentRecord, type NativeSavedQuoteRecord,
@@ -86,6 +87,12 @@ export function nativeDepositIo(db: any): NativeCreateIo & NativeCompleteIo {
     bindAttempt: (id, pi, status) => rpc('bind_native_deposit_payment_intent', {
       p_attempt_id: id, p_payment_intent_id: pi, p_status: status,
     }),
+    async sendConfirmations(savedQuoteId, paymentIntentId) {
+      const { data, error } = await db.functions.invoke('send-deposit-confirmation-email', {
+        body: { savedQuoteId, nativePaymentIntentId: paymentIntentId },
+      });
+      return !error && data?.success === true && !deliveriesIndicateFailure(data?.deliveries);
+    },
     claimPaid: args => rpc('claim_native_motor_deposit_paid', {
       p_intent_id: args.intent.id, p_attempt_id: args.attemptId,
       p_saved_quote_id: args.intent.saved_quote_id, p_payment_intent_id: args.paymentIntentId,
