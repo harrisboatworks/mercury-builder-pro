@@ -44,14 +44,15 @@ function setup() {
     sendConfirmations: vi.fn(async () => true),
     claimPaid: vi.fn(async () => { paid = true; return true; }),
   };
+  const submit = vi.fn(async () => pi);
   const stripe = { apiVersion: '2026-09-30.preview' as const, livemode: false, sellerAccountId: 'acct_synthetic',
     retrieveSharedPaymentToken: vi.fn(async () => token()), retrievePaymentIntent: vi.fn(async () => pi),
     createConfirmedPaymentIntent: vi.fn(async (_params: Record<string, string>, _key: string, beforeSubmit?: () => Promise<void>) => {
-      await beforeSubmit?.(); expect(attempt.submitted_at).not.toBeNull(); return pi;
+      await beforeSubmit?.(); expect(attempt.submitted_at).not.toBeNull(); return submit();
     }) };
   const complete = (caller: any = { payment }, customNow = now) => runNativeDepositComplete({ caller, childId: intent.child_id,
     actor: { userId: 'buyer', resumeCapability: null }, now: customNow, sellerAccountId: 'acct_synthetic', livemode: false, openStripe: () => stripe, io });
-  return { io, stripe, complete, setApproval: (v: any) => { approval = v; }, attempt: () => attempt };
+  return { io, stripe, submit, complete, setApproval: (v: any) => { approval = v; }, attempt: () => attempt };
 }
 describe('native deposit boundary', () => {
   it('requires ownership, not public UUIDs', () => {
@@ -105,7 +106,7 @@ describe('native deposit boundary', () => {
   });
   it('keeps a different token and a lost database bind from claiming paid', async () => {
     const state = setup(); state.io.bindAttempt = async () => false;
-    const result = await state.complete(); expect(result.ok).toBe(false); expect(state.stripe.createConfirmedPaymentIntent).not.toHaveBeenCalled();
+    const result = await state.complete(); expect(result.ok).toBe(false); expect(state.submit).not.toHaveBeenCalled();
     const other = structuredClone(payment); other.instruments[0].credential.token = 'spt_other';
     expect((await state.complete({ payment: other })).ok).toBe(false);
   });
