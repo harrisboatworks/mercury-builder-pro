@@ -373,17 +373,25 @@ LANGUAGE plpgsql
 SECURITY DEFINER
 SET search_path = pg_catalog, public
 AS $$
+DECLARE
+  v_saved_quote_id uuid;
 BEGIN
-  IF NEW.saved_quote_id IS NOT NULL
+  v_saved_quote_id := NEW.saved_quote_id;
+  IF v_saved_quote_id IS NULL
+    AND COALESCE(NEW.quote_data ->> 'saved_quote_id', '') ~* '^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$'
+  THEN
+    v_saved_quote_id := (NEW.quote_data ->> 'saved_quote_id')::uuid;
+  END IF;
+  IF v_saved_quote_id IS NOT NULL
     AND NEW.lead_source = 'deposit'
-    AND NEW.stripe_checkout_session_id IS NOT NULL
-    AND public.native_deposit_attempt_blocks_quote(NEW.saved_quote_id)
+    AND (NEW.stripe_checkout_session_id IS NOT NULL OR COALESCE(NEW.quote_data ->> 'stripe_session_id', '') <> '')
+    AND public.native_deposit_attempt_blocks_quote(v_saved_quote_id)
   THEN
     RAISE EXCEPTION 'hosted checkout cannot claim a saved quote with an active native deposit'
       USING ERRCODE = '40001';
   END IF;
   IF NEW.lead_source = 'deposit'
-    AND NEW.stripe_checkout_session_id IS NOT NULL
+    AND (NEW.stripe_checkout_session_id IS NOT NULL OR COALESCE(NEW.quote_data ->> 'stripe_session_id', '') <> '')
     AND COALESCE(NEW.quote_data ->> 'payment_channel', '') = 'native_spt'
   THEN
     RAISE EXCEPTION 'native deposit cannot store a Checkout session id'
@@ -900,9 +908,9 @@ BEGIN
   IF FOUND AND (
     v_quote.stripe_checkout_session_id IS NOT NULL
     OR COALESCE(v_quote.quote_data ->> 'stripe_session_id', '') <> ''
-    OR COALESCE(v_quote.quote_data ->> 'stripe_session_id', '') <> ''
     OR (v_quote.quote_data ->> 'payment_channel') IS DISTINCT FROM 'native_spt'
     OR (v_quote.stripe_payment_intent_id IS NOT NULL AND v_quote.stripe_payment_intent_id IS DISTINCT FROM p_payment_intent_id)
+    OR (COALESCE(v_quote.quote_data ->> 'stripe_payment_intent', '') <> '' AND v_quote.quote_data ->> 'stripe_payment_intent' IS DISTINCT FROM p_payment_intent_id)
   ) THEN
     RETURN false;
   END IF;
@@ -916,6 +924,11 @@ BEGIN
     RETURN false;
   END IF;
 
+  IF NOT EXISTS (SELECT 1 FROM public.deposit_payment_rails
+    WHERE saved_quote_id = p_saved_quote_id AND rail = 'native') THEN
+    RETURN false;
+  END IF;
+
   -- A concurrent winner may insert the initially absent customer row while we
   -- wait for the saved-row lock. Refresh it without acquiring a reverse-order
   -- row lock; an idempotent paid return makes no customer-row mutation.
@@ -924,7 +937,10 @@ BEGIN
 
   IF v_quote.id IS NOT NULL AND (
     v_quote.stripe_checkout_session_id IS NOT NULL
+    OR COALESCE(v_quote.quote_data ->> 'stripe_session_id', '') <> ''
     OR (v_quote.quote_data ->> 'payment_channel') IS DISTINCT FROM 'native_spt'
+    OR (v_quote.stripe_payment_intent_id IS NOT NULL AND v_quote.stripe_payment_intent_id IS DISTINCT FROM p_payment_intent_id)
+    OR (COALESCE(v_quote.quote_data ->> 'stripe_payment_intent', '') <> '' AND v_quote.quote_data ->> 'stripe_payment_intent' IS DISTINCT FROM p_payment_intent_id)
   ) THEN RETURN false; END IF;
 
   SELECT * INTO v_intent
@@ -1124,6 +1140,7 @@ BEGIN
       AND COALESCE(quote_data ->> 'stripe_session_id', '') = ''
       AND quote_data ->> 'payment_channel' = 'native_spt'
       AND (stripe_payment_intent_id IS NULL OR stripe_payment_intent_id = p_payment_intent_id)
+      AND (COALESCE(quote_data ->> 'stripe_payment_intent', '') = '' OR quote_data ->> 'stripe_payment_intent' = p_payment_intent_id)
     RETURNING id INTO v_quote_id;
     IF v_quote_id IS NULL THEN
       -- An exception rolls back saved/attempt/intent/outbox changes too. Returning

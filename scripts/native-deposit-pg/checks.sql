@@ -41,6 +41,21 @@ DO $$ DECLARE v_id uuid := '71717171-7171-4171-8171-717171717171'; result jsonb;
   IF public.claim_native_motor_deposit_paid(v_id,attempt,v_id,'pi_synthetic',50000,repeat('a',64),'36363636-3636-4636-8636-363636363636',
     'hbw-reservation-terms/2026-04-08','deposit-policy/v1','in_stock_refundable','evt_early',now()) THEN RAISE EXCEPTION 'processing attempt paid before verified success'; END IF;
   IF NOT public.bind_native_deposit_payment_intent(attempt,'pi_synthetic','succeeded') THEN RAISE EXCEPTION 'verified success marker failed'; END IF;
+  BEGIN
+    INSERT INTO public.customer_quotes(lead_source,quote_data)
+    VALUES('deposit',jsonb_build_object('saved_quote_id',v_id,'stripe_session_id','cs_test_legacy'));
+    RAISE EXCEPTION 'legacy JSON hosted claim admitted during native attempt';
+  EXCEPTION WHEN serialization_failure THEN NULL; END;
+  INSERT INTO public.customer_quotes(saved_quote_id,lead_source,quote_data)
+    VALUES(v_id,'deposit','{"payment_channel":"native_spt","stripe_payment_intent":"pi_conflict"}'::jsonb);
+  IF public.claim_native_motor_deposit_paid(v_id,attempt,v_id,'pi_synthetic',50000,repeat('a',64),'36363636-3636-4636-8636-363636363636',
+    'hbw-reservation-terms/2026-04-08','deposit-policy/v1','in_stock_refundable','evt_json_conflict',now()) THEN
+    RAISE EXCEPTION 'legacy JSON PI conflict overwritten';
+  END IF;
+  IF (SELECT deposit_status FROM public.saved_quotes WHERE saved_quotes.id=v_id) <> 'pending' THEN
+    RAISE EXCEPTION 'conflicting claim partially paid';
+  END IF;
+  UPDATE public.customer_quotes SET quote_data='{"payment_channel":"native_spt"}'::jsonb WHERE saved_quote_id=v_id;
   ok := public.claim_native_motor_deposit_paid(v_id,attempt,v_id,'pi_synthetic',50000,repeat('b',64),'36363636-3636-4636-8636-363636363636',
     'hbw-reservation-terms/2026-04-08','deposit-policy/v1','in_stock_refundable','evt_synthetic',now());
   IF ok THEN RAISE EXCEPTION 'wrong document paid'; END IF;
