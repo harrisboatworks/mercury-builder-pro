@@ -3,7 +3,7 @@ import { createNativeStripeLivePreflight } from '../../../scripts/operations/nat
 import { NATIVE_LIVE_WEBHOOK_EVENTS } from '../../../supabase/functions/_shared/native-stripe-live-webhook';
 
 const project = 'https://eutsoqdpjurknjsshxes.supabase.co';
-const env = { SUPABASE_URL: project, SUPABASE_SERVICE_ROLE_KEY: 'operator-fixture', NATIVE_DEPOSIT_ENABLED: 'false',
+const env = { SUPABASE_URL: project, NATIVE_PREFLIGHT_OPERATOR_SHA256: '788c542df1e54b7117b40e7734c6cf6f366d76de0372d83b7c7053397cfb8042', NATIVE_DEPOSIT_ENABLED: 'false',
   STRIPE_SECRET_KEY: 'sk_live_fixture-not-a-key', STRIPE_WEBHOOK_SECRET: 'whsec_fixture-not-a-secret', NATIVE_PREFLIGHT_SPT_APPROVED: '1' };
 const account = { id: 'acct_Synthetic', charges_enabled: true, country: 'CA', email: 'private@example.invalid' };
 const hook = { id: 'we_Synthetic', url: project + '/functions/v1/stripe-webhook', status: 'enabled', livemode: true,
@@ -23,6 +23,10 @@ describe('read-only live Stripe server preflight', () => {
   it('requires exact operator authentication before upstream work', async () => {
     const { run, fetcher } = setup(); const response = await run(request('account', {}, { Authorization: 'Bearer other-fixture' }));
     expect(response.status).toBe(401); expect(fetcher).not.toHaveBeenCalled();
+  });
+  it.each(['', 'x'.repeat(64), '1'.repeat(63)])('refuses an absent or malformed operator digest', async digest => {
+    const { run, fetcher } = setup([], { ...env, NATIVE_PREFLIGHT_OPERATOR_SHA256: digest });
+    expect((await run(request())).status).toBe(401); expect(fetcher).not.toHaveBeenCalled();
   });
   it.each([{ SUPABASE_URL: 'https://wrong.example.invalid' }, { NATIVE_DEPOSIT_ENABLED: 'true' },
     { STRIPE_SECRET_KEY: 'sk_test_fixture-not-a-key' }, { STRIPE_WEBHOOK_SECRET: '' }])('rejects unsafe deployment configuration %j', async change => {

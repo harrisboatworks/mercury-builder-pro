@@ -11,9 +11,9 @@ async function hash(value: string): Promise<Uint8Array> {
   return new Uint8Array(await crypto.subtle.digest('SHA-256', new TextEncoder().encode(value)));
 }
 function hex(bytes: Uint8Array): string { return [...bytes].map(v => v.toString(16).padStart(2, '0')).join(''); }
-async function sameToken(a: string, b: string): Promise<boolean> {
-  const x = await hash(a), y = await hash(b); let difference = 0;
-  for (let i = 0; i < x.length; i++) difference |= x[i] ^ y[i];
+async function sameTokenHash(token: string, expected: string): Promise<boolean> {
+  const actual = hex(await hash(token)); let difference = 0;
+  for (let i = 0; i < actual.length; i++) difference |= actual.charCodeAt(i) ^ expected.charCodeAt(i);
   return difference === 0;
 }
 async function jsonBody(body: ReadableStream<Uint8Array> | null, maximum: number): Promise<any> {
@@ -36,7 +36,10 @@ export function createNativeStripeLivePreflight(env: Env, fetchImpl: typeof fetc
     const reply = (body: unknown, status = 200) => new Response(JSON.stringify(body), { status, headers: HEADERS });
     try {
       const token = req.headers.get('authorization')?.match(/^Bearer (\S+)$/i)?.[1];
-      if (!token || !env.SUPABASE_SERVICE_ROLE_KEY || !await sameToken(token, env.SUPABASE_SERVICE_ROLE_KEY))
+      // Management returns a fresh service-role JWT which may differ from the
+      // injected legacy JWT. Pin its digest only; gateway JWT stays enabled.
+      if (!token || !/^[0-9a-f]{64}$/.test(env.NATIVE_PREFLIGHT_OPERATOR_SHA256 || '')
+        || !await sameTokenHash(token, env.NATIVE_PREFLIGHT_OPERATOR_SHA256!))
         throw new Refusal(401, 'unauthorized');
       if (req.method !== 'POST' || req.headers.has('origin') || !req.headers.get('content-type')?.startsWith('application/json'))
         throw new Refusal(405, 'server_post_only');
