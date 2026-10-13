@@ -1,5 +1,5 @@
 import { readFileSync } from "node:fs";
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 import { resolveAllowedBrowserOrigin } from "../../../supabase/functions/_shared/browser-origin.ts";
 import { isAllowedOrigin } from "#edge-deno/origin-check";
 
@@ -80,8 +80,25 @@ describe("browser origin ownership boundary", () => {
     expect(paymentSource).toContain(
       'return resolveAllowedBrowserOrigin(req.headers.get("origin"));',
     );
-    expect(sharedSource).toContain("resolveAllowedBrowserOrigin(origin) !== null");
     expect(paymentSource).not.toContain("PAYMENT_PREVIEW_ORIGIN");
     expect(sharedSource).not.toContain("ALLOWED_PREVIEW_HOST");
+  });
+  it("limits the staged runtime exception to the isolated project and exact HTTPS origin", () => {
+    const origin = "https://mercury-builder-owned-test-hbw.vercel.app";
+    let project = "https://filwwwqgqtwxjxkksmxy.supabase.co";
+    vi.stubGlobal("Deno", { env: { get: (name: string) => ({
+      DEPOSIT_STAGING_MODE: "1", SUPABASE_URL: project, NATIVE_DEPOSIT_REVIEW_ORIGIN: origin,
+    })[name] } });
+    try {
+      expect(isAllowedOrigin(new Request("https://edge.example", { headers: { origin } }))).toBe(true);
+      expect(isAllowedOrigin(new Request("https://edge.example", {
+        headers: { origin: "https://mercury-builder-evil-hbw.vercel.app" },
+      }))).toBe(false);
+      project = "https://eutsoqdpjurknjsshxes.supabase.co";
+      expect(isAllowedOrigin(new Request("https://edge.example", { headers: { origin } }))).toBe(false);
+      expect(isAllowedOrigin(new Request("https://edge.example", {
+        headers: { origin: "https://www.mercuryrepower.ca" },
+      }))).toBe(true);
+    } finally { vi.unstubAllGlobals(); }
   });
 });
