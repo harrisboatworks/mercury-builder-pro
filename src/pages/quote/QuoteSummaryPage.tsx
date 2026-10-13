@@ -1242,7 +1242,7 @@ export default function QuoteSummaryPage() {
       />
       
       {/* Stale Quote Detection */}
-      {state.frozenPricing && (
+      {state.frozenPricing && !promoLoading && !promoError && arePromotionsCurrent() && (
         <StaleQuoteAlert
           frozenPricing={state.frozenPricing}
           liveMotorMSRP={liveMotorMSRP}
