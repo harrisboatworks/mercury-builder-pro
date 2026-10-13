@@ -307,7 +307,11 @@ export function hasCompleteFrozenQuoteSnapshot(frozen: unknown, snapshot: unknow
   if (!snapshot.validUntil) return false;
   if (!['cash_purchase', 'standard_financing', 'special_financing'].includes(snapshot.paymentMethod || '')) return false;
   if (snapshot.paymentMethod !== 'cash_purchase' && !snapshot.financing) return false;
-  if (snapshot.financing && (!Number.isFinite(snapshot.financing.downPayment) || snapshot.financing.downPayment < 0)) return false;
+  if (snapshot.financing) {
+    const { amountFinanced, amortizationMonths, contractTermMonths, rate, dealerFee, downPayment } = snapshot.financing;
+    if (![amountFinanced, amortizationMonths, contractTermMonths].every(value => Number.isFinite(value) && value > 0)
+      || ![rate, dealerFee, downPayment].every(value => Number.isFinite(value) && value >= 0)) return false;
+  }
   if ((snapshot.pricing.promoValue > 0 || snapshot.includedCoverageYears! > 3)
     && (typeof snapshot.promotion?.name !== 'string' || !snapshot.promotion.name.trim()
       || typeof snapshot.promotion.endDate !== 'string' || !snapshot.promotion.endDate

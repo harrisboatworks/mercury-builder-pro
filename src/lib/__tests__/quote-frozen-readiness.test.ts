@@ -50,4 +50,19 @@ describe('recorded quote readiness during promotion outage',()=>{
   expect(hasCompleteFrozenQuoteSnapshot(frozenPricingFromPdfSnapshot(noDown as QuotePdfSnapshot),noDown)).toBe(false);
  });
  it('does not substitute different promotion metadata',()=>expect(hasCompleteFrozenQuoteSnapshot({...frozenPricingFromPdfSnapshot(snapshot),promotionEndDate:'2026-11-30'},snapshot)).toBe(false));
+ it.each([
+  ['amountFinanced',0],['amountFinanced',-1],
+  ['amortizationMonths',0],['amortizationMonths',-1],
+  ['contractTermMonths',0],['contractTermMonths',-1],
+  ['rate',-1],['dealerFee',-1],['downPayment',-1],
+ ] as const)('rejects invalid recorded loan term %s=%s',(key,value)=>{
+  const financing=buildQuotePdfFinancing({amountFinanced:3049.87,rate:7.99,amortizationMonths:60,paymentMethod:'standard_financing',dealerFee:0,downPayment:0});
+  const invalid={...snapshot,paymentMethod:'standard_financing' as const,financing:{...financing,[key]:value}};
+  expect(hasCompleteFrozenQuoteSnapshot(frozenPricingFromPdfSnapshot(invalid),invalid)).toBe(false);
+ });
+ it('accepts a fully recorded zero APR loan',()=>{
+  const financing=buildQuotePdfFinancing({amountFinanced:3049.87,rate:0,amortizationMonths:60,paymentMethod:'standard_financing',dealerFee:0,downPayment:0});
+  const complete={...snapshot,paymentMethod:'standard_financing' as const,financing};
+  expect(hasCompleteFrozenQuoteSnapshot(frozenPricingFromPdfSnapshot(complete),complete)).toBe(true);
+ });
 });
