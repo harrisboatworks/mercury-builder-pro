@@ -12,10 +12,20 @@ function client(replies: unknown[], key = 'sk_live_fixture-not-a-key', webhook =
 describe('current live native write admission', () => {
   it('checks account and owned webhook before the only charge request', async () => {
     const { stripe, fetcher } = client([account, account, hook, { id: 'pi_Synthetic' }]);
-    await stripe.createConfirmedPaymentIntent({ amount: '50000' }, 'native-deposit-pi:Synthetic');
+    const mark = vi.fn(async () => { expect(fetcher).toHaveBeenCalledTimes(3); });
+    await stripe.createConfirmedPaymentIntent({ amount: '50000' }, 'native-deposit-pi:Synthetic', mark);
+    expect(mark).toHaveBeenCalledOnce();
     expect(fetcher.mock.calls.map(c => [c[0], c[1]?.method])).toEqual([
       ['https://api.stripe.com/v1/account', 'GET'], ['https://api.stripe.com/v1/account', 'GET'],
       ['https://api.stripe.com/v1/webhook_endpoints/we_Synthetic', 'GET'], ['https://api.stripe.com/v1/payment_intents', 'POST']]);
+  });
+  it('never records submission on a preflight refusal or posts after a marker refusal', async () => {
+    const refused = client([account, { ...account, charges_enabled: false }]); const mark = vi.fn(async () => {});
+    await expect(refused.stripe.createConfirmedPaymentIntent({}, 'native-deposit-pi:Synthetic', mark)).rejects.toThrow();
+    expect(mark).not.toHaveBeenCalled();
+    const ready = client([account, account, hook]);
+    await expect(ready.stripe.createConfirmedPaymentIntent({}, 'native-deposit-pi:Synthetic', async () => { throw Error('marker refused'); })).rejects.toThrow('marker refused');
+    expect(ready.fetcher.mock.calls.every(c => c[1]?.method === 'GET')).toBe(true);
   });
   it.each([{ ...account, charges_enabled: false }, { ...account, id: 'acct_Foreign' }])('refuses a currently disabled/foreign merchant before charging', async current => {
     const { stripe, fetcher } = client([account, current]);

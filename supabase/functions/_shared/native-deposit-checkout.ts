@@ -908,6 +908,7 @@ export async function runNativeDepositComplete(input: {
       checkout: projectNativeDepositCheckout({ intent, phase: "requires_escalation", paymentStatus: "unknown" }),
     };
   }
+  let submissionPhase: 'preflight' | 'marking' | 'submitted' = attempt.submitted_at ? 'submitted' : 'preflight';
   try {
     if (attempt.submitted_at && input.now.getTime() - Date.parse(attempt.submitted_at) >= 23 * 3600_000)
       return failure(409, "reconciliation_required", "Payment reconciliation is required before another request.");
@@ -941,13 +942,20 @@ export async function runNativeDepositComplete(input: {
       motorId: intent.motor_id,
       childId: intent.child_id,
     });
-    // Durable marker before external submission. Retries keep the same params,
-    // token fingerprint and key, even if Stripe consumed the token already.
-    if (!await input.io.bindAttempt(attempt.id, null, "submitted"))
-      return failure(503, "reconciliation_required", "Payment reconciliation is pending.");
-    const created = await stripe.createConfirmedPaymentIntent(params, attempt.idempotency_key);
+    // Readiness precedes the marker; the marker precedes any external POST.
+    // A preflight refusal cannot leave a never-sent attempt marked submitted.
+    const created = await stripe.createConfirmedPaymentIntent(params, attempt.idempotency_key, async () => {
+      submissionPhase = 'marking';
+      if (!await input.io.bindAttempt(attempt.id, null, "submitted"))
+        throw new NativeStripeRequestError(503, 'native_submission_not_claimed');
+      submissionPhase = 'submitted';
+    });
     return await finishFromIntent(created, false);
   } catch (error) {
+    if (error instanceof NativeStripeRequestError && error.code === 'native_submission_not_claimed')
+      return failure(503, "reconciliation_required", "Payment reconciliation is pending.");
+    if (submissionPhase === 'preflight')
+      return failure(503, 'native_processor_not_ready', 'Payment was not submitted. Try again when payment processing is ready.');
     if (error instanceof NativeStripeRequestError && error.paymentIntent)
       return await finishFromIntent(error.paymentIntent, false);
     await input.io.bindAttempt(attempt.id, null, stripeErrorIsUncertain(error) ? "unknown" : "failed");

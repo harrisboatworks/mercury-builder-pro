@@ -17,6 +17,7 @@ export type NativeStripePreview = {
   createConfirmedPaymentIntent(
     params: Record<string, string>,
     idempotencyKey: string,
+    beforeSubmit?: () => Promise<void>,
   ): Promise<unknown>;
   retrievePaymentIntent(id: string): Promise<unknown>;
 };
@@ -97,7 +98,7 @@ export function createNativeStripePreviewClient(options: {
   }
 
   let checkedAccount = false;
-  async function stripeRequest(method: "GET" | "POST", path: string, body?: Record<string, string>, idempotencyKey?: string) {
+  async function stripeRequest(method: "GET" | "POST", path: string, body?: Record<string, string>, idempotencyKey?: string, beforeSubmit?: () => Promise<void>) {
     if (!checkedAccount) {
       const account = await rawStripeRequest("GET", "/v1/account") as { id?: string };
       if (account?.id !== sellerAccountId) throw new NativeStripeRequestError(409, "native_seller_mismatch");
@@ -116,6 +117,9 @@ export function createNativeStripePreviewClient(options: {
       if (!nativeLiveWebhookReady(hook, options.liveWebhookId))
         throw new NativeStripeRequestError(409, 'native_webhook_not_ready');
     }
+    // Readiness must pass before the caller records a durable submission.
+    // The marker then precedes the first possible payment POST.
+    if (beforeSubmit) await beforeSubmit();
     return rawStripeRequest(method, path, body, idempotencyKey);
   }
 
@@ -127,11 +131,11 @@ export function createNativeStripePreviewClient(options: {
       if (!SPT_ID.test(tokenId)) throw new NativeStripeRequestError(400, "invalid_token");
       return stripeRequest("GET", `/v1/shared_payment/granted_tokens/${encodeURIComponent(tokenId)}`);
     },
-    createConfirmedPaymentIntent(params, idempotencyKey) {
+    createConfirmedPaymentIntent(params, idempotencyKey, beforeSubmit) {
       if (!idempotencyKey.startsWith("native-deposit-pi:")) {
         throw new NativeStripeRequestError(400, "invalid_idempotency_key");
       }
-      return stripeRequest("POST", "/v1/payment_intents", params, idempotencyKey);
+      return stripeRequest("POST", "/v1/payment_intents", params, idempotencyKey, beforeSubmit);
     },
     retrievePaymentIntent(id: string) {
       if (!PI_ID.test(id)) throw new NativeStripeRequestError(400, "invalid_payment_intent");

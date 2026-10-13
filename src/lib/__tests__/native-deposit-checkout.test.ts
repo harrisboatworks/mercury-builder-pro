@@ -46,7 +46,9 @@ function setup() {
   };
   const stripe = { apiVersion: '2026-09-30.preview' as const, livemode: false, sellerAccountId: 'acct_synthetic',
     retrieveSharedPaymentToken: vi.fn(async () => token()), retrievePaymentIntent: vi.fn(async () => pi),
-    createConfirmedPaymentIntent: vi.fn(async () => { expect(attempt.submitted_at).not.toBeNull(); return pi; }) };
+    createConfirmedPaymentIntent: vi.fn(async (_params: Record<string, string>, _key: string, beforeSubmit?: () => Promise<void>) => {
+      await beforeSubmit?.(); expect(attempt.submitted_at).not.toBeNull(); return pi;
+    }) };
   const complete = (caller: any = { payment }, customNow = now) => runNativeDepositComplete({ caller, childId: intent.child_id,
     actor: { userId: 'buyer', resumeCapability: null }, now: customNow, sellerAccountId: 'acct_synthetic', livemode: false, openStripe: () => stripe, io });
   return { io, stripe, complete, setApproval: (v: any) => { approval = v; }, attempt: () => attempt };
@@ -92,12 +94,14 @@ describe('native deposit boundary', () => {
   });
   it('preserves unknown locks and retries the same token/key after token consumption and approval expiry', async () => {
     const state = setup(); const original = state.stripe.createConfirmedPaymentIntent.getMockImplementation()!;
-    state.stripe.createConfirmedPaymentIntent.mockImplementationOnce(async () => { throw new NativeStripeRequestError(null, 'network'); });
+    state.stripe.createConfirmedPaymentIntent.mockImplementationOnce(async (_params, _key, beforeSubmit) => {
+      await beforeSubmit?.(); throw new NativeStripeRequestError(null, 'network');
+    });
     const first = await state.complete(); expect(first.ok && first.checkout.payment_status).toBe('unknown');
     state.stripe.createConfirmedPaymentIntent.mockImplementation(original);
     const second = await state.complete({ payment }, new Date('2026-10-12T14:00:00Z'));
     expect(second.ok && second.checkout.payment_status).toBe('paid'); expect(state.stripe.retrieveSharedPaymentToken).toHaveBeenCalledOnce();
-    const calls = state.stripe.createConfirmedPaymentIntent.mock.calls; expect(calls[0]).toEqual(calls[1]);
+    const calls = state.stripe.createConfirmedPaymentIntent.mock.calls; expect(calls[0].slice(0, 2)).toEqual(calls[1].slice(0, 2));
   });
   it('keeps a different token and a lost database bind from claiming paid', async () => {
     const state = setup(); state.io.bindAttempt = async () => false;
@@ -144,11 +148,21 @@ describe('native deposit boundary', () => {
   });
   it('retains and validates a PaymentIntent returned with a processor decline', async () => {
     const state = setup(); const failedPi = await state.stripe.retrievePaymentIntent();
-    state.stripe.createConfirmedPaymentIntent.mockImplementationOnce(async () => {
+    state.stripe.createConfirmedPaymentIntent.mockImplementationOnce(async (_params, _key, beforeSubmit) => {
+      await beforeSubmit?.();
       throw new NativeStripeRequestError(402, 'card_declined', { ...failedPi, status: 'requires_payment_method', amount_received: 0 });
     });
     const result = await state.complete(); expect(result.ok && result.checkout.payment_status).toBe('failed');
     expect(state.attempt().stripe_payment_intent_id).toBe('pi_synthetic'); expect(state.io.claimPaid).not.toHaveBeenCalled();
+  });
+  it('keeps a readiness refusal unsubmitted and retryable with the same immutable attempt', async () => {
+    const state = setup(); const original = state.stripe.createConfirmedPaymentIntent.getMockImplementation()!;
+    state.stripe.createConfirmedPaymentIntent.mockImplementationOnce(async () => { throw new NativeStripeRequestError(409, 'native_webhook_not_ready'); });
+    const refused = await state.complete(); expect(refused.ok).toBe(false);
+    expect(state.attempt().submitted_at).toBeNull(); expect(state.attempt().status).toBe('claimed');
+    state.stripe.createConfirmedPaymentIntent.mockImplementation(original);
+    const retry = await state.complete(); expect(retry.ok && retry.checkout.payment_status).toBe('paid');
+    const calls = state.stripe.createConfirmedPaymentIntent.mock.calls; expect(calls[0].slice(0, 2)).toEqual(calls[1].slice(0, 2));
   });
   it.each([
     { deactivated_at: 123 }, { deactivated_reason: 'consumed' }, { livemode: true },
