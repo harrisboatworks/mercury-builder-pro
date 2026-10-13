@@ -323,7 +323,7 @@ export async function hashNativeProcessorParams(
 // scope comes from the independently checked account owning the API credential,
 // not agent_details (which identifies the agent, not the merchant).
 export function assessSharedPaymentToken(token: unknown, expected: {
-  amountCents: number; sellerAccountId: string; livemode: boolean;
+  amountCents: number; livemode: boolean;
   now: Date; approvalExpiresAt: Date;
 }): { ok: true } | { ok: false; code: string } {
   if (!isPlainObject(token) || token.object !== "shared_payment.granted_token"
@@ -338,7 +338,8 @@ export function assessSharedPaymentToken(token: unknown, expected: {
     || Number(limits.expires_at) * 1000 <= expected.now.getTime()
     || Number(limits.expires_at) * 1000 > expected.approvalExpiresAt.getTime())
     return { ok: false, code: "token_expiry" };
-  if (!isPlainObject(token.usage_details) || token.usage_details.amount_captured !== 0)
+  if (!isPlainObject(token.usage_details) || !("amount_captured" in token.usage_details)
+    || (token.usage_details.amount_captured !== null && token.usage_details.amount_captured !== 0))
     return { ok: false, code: "token_inactive" };
   return { ok: true };
 }
@@ -447,7 +448,7 @@ function paidProjection(intent: NativeIntentRecord, httpStatus = 200): NativeDep
   return { ok: true, status: httpStatus, checkout: projectNativeDepositCheckout({ intent, phase: "completed", paymentStatus: "paid" }) };
 }
 
-function bindingsMatchApproval(intent: NativeIntentRecord, approval: NativeApprovalRecord, now: Date): boolean {
+function bindingsMatchApproval(intent: NativeIntentRecord, approval: NativeApprovalRecord, now: Date, requireUnexpired = true): boolean {
   return approval.intent_id === intent.id
     && approval.child_id === intent.child_id
     && approval.saved_quote_id === intent.saved_quote_id
@@ -459,10 +460,14 @@ function bindingsMatchApproval(intent: NativeIntentRecord, approval: NativeAppro
     && approval.policy_code === intent.policy_code
     && approval.terms_version === intent.terms_version
     && approval.terms_version === NATIVE_DEPOSIT_TERMS_VERSION
-    && Date.parse(approval.expires_at) > now.getTime();
+    && Number.isFinite(Date.parse(approval.expires_at))
+    && Date.parse(approval.expires_at) <= Date.parse(intent.expires_at)
+    && (!requireUnexpired || Date.parse(approval.expires_at) > now.getTime());
 }
 
 function savedQuoteStillMatches(intent: NativeIntentRecord, quote: NativeSavedQuoteRecord, documentHash: string): boolean {
+  try { parseSavedQuoteIdentity(quote); } catch { return false; }
+  if ((quote.user_id || null) !== intent.owner_user_id) return false;
   const amount = Number(quote.deposit_amount);
   return quoteMotorId(quote.quote_state) === intent.motor_id
     && documentHash === intent.document_sha256
@@ -716,7 +721,7 @@ export async function runNativeDepositComplete(input: {
   }
   const existingAttempt = await input.io.loadAttempt(intent.id);
   const approval = await input.io.loadApproval(intent.id);
-  if (!approval || (!existingAttempt?.submitted_at && !bindingsMatchApproval(intent, approval, input.now))) {
+  if (!approval || !bindingsMatchApproval(intent, approval, input.now, !existingAttempt?.submitted_at)) {
     return failure(409, "buyer_review_required", "Buyer review is required before payment.");
   }
   const documentHash = await input.io.loadDocumentHash(quote);
@@ -738,6 +743,12 @@ export async function runNativeDepositComplete(input: {
       checkout: projectNativeDepositCheckout({ intent, phase: "requires_escalation", paymentStatus: "unknown" }),
     };
   }
+
+  const stripe = input.openStripe();
+  if (!stripe || input.sellerAccountId !== stripe.sellerAccountId || input.livemode !== stripe.livemode)
+    return failure(503, 'native_configuration_mismatch', 'Native payment configuration requires reconciliation.');
+  if (existingAttempt && (existingAttempt.seller_account_id !== stripe.sellerAccountId || existingAttempt.livemode !== stripe.livemode))
+    return failure(503, 'native_configuration_mismatch', 'Native payment configuration requires reconciliation.');
 
   let attempt = existingAttempt;
   let tokenId = caller.tokenId;
@@ -766,25 +777,15 @@ export async function runNativeDepositComplete(input: {
     if (claimed.result === "conflict" || claimed.result === "refused" || !claimed.attempt_id) {
       return failure(409, claimed.reason || "attempt_conflict", "This deposit already has a payment attempt.");
     }
-    attempt = {
-      id: claimed.attempt_id,
-      intent_id: intent.id,
-      idempotency_key: claimed.idempotency_key || nativeDepositIdempotencyKey(intent.id),
-      token_fingerprint: fingerprint,
-      processor_params_hash: processorParamsHash,
-      amount_cents: intent.amount_cents,
-      currency: "CAD",
-      stripe_payment_intent_id: claimed.stripe_payment_intent_id || null,
-      status: claimed.status || "claimed",
-      seller_account_id: input.sellerAccountId,
-      livemode: input.livemode,
-      submitted_at: claimed.submitted_at || null,
-    };
+    const stored = await input.io.loadAttempt(intent.id);
+    if (!stored || stored.id !== claimed.attempt_id || stored.token_fingerprint !== fingerprint
+      || stored.processor_params_hash !== processorParamsHash || stored.idempotency_key !== nativeDepositIdempotencyKey(intent.id)
+      || stored.amount_cents !== intent.amount_cents || stored.currency !== 'CAD'
+      || stored.seller_account_id !== stripe.sellerAccountId || stored.livemode !== stripe.livemode)
+      return failure(409, 'attempt_conflict', 'The deposit attempt does not match this payment.');
+    attempt = stored;
   }
   if (!attempt) return failure(409, "attempt_conflict", "This deposit already has a payment attempt.");
-
-  const stripe = input.openStripe();
-  if (!stripe) return failure(503, "unavailable", "Native payment is not configured.");
 
   const finishFromIntent = async (pi: unknown, allowCreate: boolean): Promise<NativeDepositResult> => {
     const assessed = assessNativePaymentIntent(pi, {
@@ -804,7 +805,7 @@ export async function runNativeDepositComplete(input: {
       };
     }
     const bound = await input.io.bindAttempt(attempt.id, assessed.id,
-      assessed.status === "succeeded" ? "processing" : outcomeFromStatus(assessed.status).paymentStatus === "failed" ? "failed" : outcomeFromStatus(assessed.status).paymentStatus);
+      assessed.status === "succeeded" ? "succeeded" : outcomeFromStatus(assessed.status).paymentStatus === "failed" ? "failed" : outcomeFromStatus(assessed.status).paymentStatus);
     if (!bound) return failure(503, "reconciliation_required", "Payment reconciliation is pending.");
     if (assessed.status === "succeeded") {
       const paid = await input.io.claimPaid({
@@ -887,7 +888,6 @@ export async function runNativeDepositComplete(input: {
     const token = await stripe.retrieveSharedPaymentToken(tokenId);
     const tokenDecision = assessSharedPaymentToken(token, {
       amountCents: intent.amount_cents,
-      sellerAccountId: stripe.sellerAccountId,
       livemode: stripe.livemode,
       now: input.now,
       approvalExpiresAt: new Date(approval.expires_at),
@@ -921,6 +921,8 @@ export async function runNativeDepositComplete(input: {
     const created = await stripe.createConfirmedPaymentIntent(params, attempt.idempotency_key);
     return await finishFromIntent(created, false);
   } catch (error) {
+    if (error instanceof NativeStripeRequestError && error.paymentIntent)
+      return await finishFromIntent(error.paymentIntent, false);
     await input.io.bindAttempt(attempt.id, null, stripeErrorIsUncertain(error) ? "unknown" : "failed");
     return {
       ok: true,

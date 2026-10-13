@@ -42,10 +42,16 @@ import { nativeActorFromRequest, nativeDepositIo } from '../_shared/native-depos
 import { createNativeStripePreviewClient } from '../_shared/native-stripe-preview.ts';
 
 async function opNative(req: Request, supabase: any, id: string, operation: 'create' | 'read' | 'complete', caller: unknown = {}) {
-  if (!nativeDepositCheckoutEnabled(Deno.env.get('NATIVE_DEPOSIT_ENABLED')))
+  const enabled = nativeDepositCheckoutEnabled(Deno.env.get('NATIVE_DEPOSIT_ENABLED'));
+  if (!enabled && operation === 'create')
     throw { status: 404, code: 'not_available', message: 'Native deposit checkout is not enabled.' };
   const io = nativeDepositIo(supabase);
   const actor = await nativeActorFromRequest(supabase, req);
+  if (!enabled && operation === 'complete') {
+    const existing = await io.loadIntentByChild(id);
+    const attempt = existing ? await io.loadAttempt(existing.id) : null;
+    if (existing?.status !== 'paid' && !attempt?.submitted_at) throw { status: 404, code: 'not_available', message: 'New native payments are disabled.' };
+  }
   const result = operation === 'create'
     ? await runNativeDepositCreate({ caller, routeParentId: id, actor, now: new Date(), childId: 'ndc_' + crypto.randomUUID().replaceAll('-', ''), intentId: crypto.randomUUID(), io })
     : operation === 'read' ? await runNativeDepositRead({ childId: id, actor, io })
@@ -56,9 +62,12 @@ async function opNative(req: Request, supabase: any, id: string, operation: 'cre
   if (!result.ok) throw { status: result.status, code: result.code, message: result.message };
   const checkout = result.checkout;
   const reviewOrigin = Deno.env.get('NATIVE_DEPOSIT_REVIEW_ORIGIN');
-  if (checkout.continue_url && reviewOrigin && Deno.env.get('DEPOSIT_STAGING_MODE') === '1'
-    && Deno.env.get('SUPABASE_URL') === 'https://filwwwqgqtwxjxkksmxy.supabase.co')
-    checkout.continue_url = `${new URL(reviewOrigin).origin}/quote/agent-deposit/${checkout.id}`;
+  if (reviewOrigin && Deno.env.get('DEPOSIT_STAGING_MODE') === '1'
+    && Deno.env.get('SUPABASE_URL') === 'https://filwwwqgqtwxjxkksmxy.supabase.co') {
+    const ownedReviewUrl = `${new URL(reviewOrigin).origin}/quote/agent-deposit/${checkout.id}`;
+    if (checkout.continue_url) checkout.continue_url = ownedReviewUrl;
+    if (checkout.order) checkout.order.permalink_url = ownedReviewUrl;
+  }
   return result;
 }
 

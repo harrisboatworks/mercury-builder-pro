@@ -38,7 +38,6 @@ export default function AgentDepositReviewPage() {
   const [review, setReview] = useState<Review | null>(null);
   const [accepted, setAccepted] = useState(false); const [pdfOpened, setPdfOpened] = useState(false);
   const [busy, setBusy] = useState(false); const [error, setError] = useState('');
-  const enabled = import.meta.env.VITE_NATIVE_DEPOSIT_ENABLED === 'true';
 
   async function call(action: string, extra: Record<string, unknown> = {}) {
     const { data, error: failed } = await supabase.functions.invoke('native-deposit-review', {
@@ -64,7 +63,7 @@ export default function AgentDepositReviewPage() {
   return <main className="mx-auto max-w-2xl px-4 py-10" data-clarity-mask="true">
     <Card><CardHeader><CardTitle>Review your reservation deposit</CardTitle></CardHeader><CardContent className="space-y-6">
       <p>Your assistant can prepare this deposit. You review the exact quote and terms here before your wallet can pay.</p>
-      {!enabled ? <p>Assistant deposit checkout is not available here yet. <Link className="underline" to="/quote/motor-selection">Build a quote</Link> or call <a className="underline" href="tel:+19053422153">(905) 342-2153</a>.</p> : !user ?
+      {!user ?
         <form className="space-y-3" onSubmit={e => { e.preventDefault(); void perform(async () => {
           const { error: failed } = await signIn(email, password); setPassword(''); if (failed) throw new Error('Sign-in failed. Check your email and password.');
         }); }}>
@@ -88,7 +87,7 @@ export default function AgentDepositReviewPage() {
             <a className="inline-block underline" href={review.document_url} target="_blank" rel="noopener noreferrer" referrerPolicy="no-referrer" onClick={() => setPdfOpened(true)}>Open the exact quote PDF</a>
             <p className="text-sm"><Link className="underline" to="/terms" target="_blank" rel="noopener noreferrer">Deposit terms</Link> · <Link className="underline" to="/privacy" target="_blank" rel="noopener noreferrer">Privacy policy</Link></p>
             {review.paid ? <p role="status" className="rounded-lg bg-green-50 p-4 text-green-900">Your {cad(review.amount_cents)} deposit is paid. HBW will confirm the next steps.</p> :
-              review.payment_status === 'requires_action' ? <Button disabled={busy} onClick={() => void perform(async () => {
+              review.payment_status === 'expired' ? <p role="status">This review expired before payment. Ask your assistant for a fresh quote or contact HBW.</p> : review.payment_status === 'requires_action' ? <Button disabled={busy} onClick={() => void perform(async () => {
                 const data = await call('step_up'); const stripe = await stripeClient();
                 const result = await stripe.handleNextAction({ clientSecret: data.client_secret });
                 if (result.error) throw new Error(result.error.message || 'Payment verification did not finish.'); await refresh();

@@ -26,7 +26,9 @@ function setup() {
   const io: NativeCompleteIo = {
     loadIntentByChild: async () => ({ ...intent, status: paid ? 'paid' : intent.status }),
     loadSavedQuote: async () => ({ id: saved, user_id: 'buyer', quote_state: { motor: { id: motor } }, quote_pdf_path: intent.document_path, deposit_amount: 500,
-      deposit_status: paid ? 'paid' : 'pending' }), loadDocumentHash: async () => intent.document_sha256,
+      deposit_status: paid ? 'paid' : 'pending', email: 'synthetic@example.invalid', customer_full_name: 'Synthetic Buyer',
+      customer_phone: '6135550100', customer_address_line1: '1 Example Invalid Road', customer_city: 'Exampleville',
+      customer_region: 'ON', customer_postal_code: 'K0K0A0', customer_country: 'CA' }), loadDocumentHash: async () => intent.document_sha256,
     loadApproval: async () => approval, validateFreshIntent: async () => true, loadAttempt: async () => attempt, hostedRailActive: async () => false,
     claimAttempt: async a => {
       if (attempt && attempt.token_fingerprint !== a.tokenFingerprint) return { result: 'conflict' };
@@ -93,6 +95,19 @@ describe('native deposit boundary', () => {
     const other = structuredClone(payment); other.instruments[0].credential.token = 'spt_other';
     expect((await state.complete({ payment: other })).ok).toBe(false);
   });
+  it('rejects client account/mode drift before a durable attempt or charge', async () => {
+    const state = setup(); state.stripe.sellerAccountId = 'acct_other';
+    expect((await state.complete()).ok).toBe(false); expect(state.attempt()).toBeNull();
+    expect(state.stripe.createConfirmedPaymentIntent).not.toHaveBeenCalled();
+  });
+  it('retains and validates a PaymentIntent returned with a processor decline', async () => {
+    const state = setup(); const failedPi = await state.stripe.retrievePaymentIntent();
+    state.stripe.createConfirmedPaymentIntent.mockImplementationOnce(async () => {
+      throw new NativeStripeRequestError(402, 'card_declined', { ...failedPi, status: 'requires_payment_method', amount_received: 0 });
+    });
+    const result = await state.complete(); expect(result.ok && result.checkout.payment_status).toBe('failed');
+    expect(state.attempt().stripe_payment_intent_id).toBe('pi_synthetic'); expect(state.io.claimPaid).not.toHaveBeenCalled();
+  });
   it.each([
     { deactivated_at: 123 }, { deactivated_reason: 'consumed' }, { livemode: true },
     { usage_limits: { currency: 'usd', max_amount: 50000, expires_at: now.getTime()/1000+300 } },
@@ -101,6 +116,10 @@ describe('native deposit boundary', () => {
     { usage_limits: { currency: 'cad', max_amount: 50000, expires_at: now.getTime()/1000+7200 } },
     { usage_details: { amount_captured: 1 } },
   ])('rejects unusable preview tokens %j', changes => expect(assessSharedPaymentToken({ ...token(), ...changes }, expected).ok).toBe(false));
+  it('accepts Stripe preview nullable uncaptured amount while rejecting missing counters', () => {
+    expect(assessSharedPaymentToken({ ...token(), usage_details: { amount_captured: null } }, expected).ok).toBe(true);
+    expect(assessSharedPaymentToken({ ...token(), usage_details: {} }, expected).ok).toBe(false);
+  });
   it('accepts the checked preview schema without confusing the agent identity with seller scope', () => expect(assessSharedPaymentToken(token(), expected).ok).toBe(true));
   it('checks the credential account before token reads or payment calls', async () => {
     const fetchImpl = vi.fn(async () => new Response(JSON.stringify({ id: 'acct_other' }), { status: 200 }));

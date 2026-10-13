@@ -30,7 +30,7 @@ export async function handleNativeDepositEvent(db: any, event: any, env: { secre
     return true;
   }
   if ((pi as any).amount_received !== intent.amount_cents) throw new Error('native_event_amount');
-  if (!await io.bindAttempt(attempt.id, assessed.id, 'processing')) throw new Error('native_event_bind');
+  if (!await io.bindAttempt(attempt.id, assessed.id, 'succeeded')) throw new Error('native_event_bind');
   if (!await io.claimPaid({ intent, attemptId: attempt.id, paymentIntentId: assessed.id,
     notificationEventId: event.id, paidAt: new Date().toISOString() })) throw new Error('native_event_claim');
   // Existing three-audience outbox owns idempotency, frozen contact and PDF.

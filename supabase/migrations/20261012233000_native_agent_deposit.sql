@@ -70,7 +70,7 @@ CREATE TABLE public.native_deposit_attempts (
   id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
   intent_id uuid NOT NULL UNIQUE REFERENCES public.native_deposit_intents (id),
   idempotency_key text NOT NULL UNIQUE CHECK (idempotency_key ~ '^native-deposit-pi:[0-9a-f-]{36}$'),
-  token_fingerprint text NOT NULL CHECK (token_fingerprint ~ '^[0-9a-f]{64}$'),
+  token_fingerprint text NOT NULL UNIQUE CHECK (token_fingerprint ~ '^[0-9a-f]{64}$'),
   processor_params_hash text NOT NULL CHECK (processor_params_hash ~ '^[0-9a-f]{64}$'),
   amount_cents integer NOT NULL,
   currency text NOT NULL CHECK (currency = 'CAD'),
@@ -124,6 +124,22 @@ SET search_path = pg_catalog, public
 AS $$
 BEGIN
   IF TG_OP = 'INSERT' THEN
+    PERFORM 1 FROM public.saved_quotes AS sq WHERE sq.id = NEW.saved_quote_id
+      AND sq.user_id IS NOT DISTINCT FROM NEW.owner_user_id
+      AND sq.quote_pdf_path = NEW.document_path AND sq.quote_pdf_sha256 = NEW.document_sha256
+      AND sq.deposit_amount * 100 = NEW.amount_cents AND sq.deposit_status = 'pending'
+      AND sq.quote_state -> 'motor' ->> 'id' = NEW.motor_id::text
+      AND sq.is_soft_lead IS NOT TRUE AND sq.expires_at > now()
+      AND NULLIF(btrim(sq.email),'') IS NOT NULL
+      AND NULLIF(btrim(sq.customer_full_name),'') IS NOT NULL
+      AND NULLIF(btrim(sq.customer_phone),'') IS NOT NULL
+      AND NULLIF(btrim(sq.customer_address_line1),'') IS NOT NULL
+      AND NULLIF(btrim(sq.customer_city),'') IS NOT NULL
+      AND NULLIF(btrim(sq.customer_region),'') IS NOT NULL
+      AND NULLIF(btrim(sq.customer_postal_code),'') IS NOT NULL
+      AND NULLIF(btrim(sq.customer_country),'') IS NOT NULL
+      FOR UPDATE;
+    IF NOT FOUND THEN RAISE EXCEPTION 'native canonical quote binding mismatch' USING ERRCODE = '23514'; END IF;
     IF NEW.status IS DISTINCT FROM 'requires_escalation' THEN
       RAISE EXCEPTION 'native deposit intents start without approval'
         USING ERRCODE = '42501';
@@ -310,7 +326,7 @@ BEGIN
   IF TG_OP <> 'UPDATE' THEN
     RETURN NEW;
   END IF;
-  IF NOT public.native_deposit_attempt_blocks_quote(NEW.id) THEN
+  IF NOT EXISTS (SELECT 1 FROM public.native_deposit_intents WHERE saved_quote_id = NEW.id) THEN
     RETURN NEW;
   END IF;
   IF NEW.quote_pdf_path IS DISTINCT FROM OLD.quote_pdf_path
@@ -550,6 +566,8 @@ DECLARE
   v_saved_soft boolean;
   v_hosted text;
   v_hosted_paid text;
+  v_saved public.saved_quotes%ROWTYPE;
+  v_channel text;
   v_key text;
   v_rail text;
 BEGIN
@@ -567,13 +585,13 @@ BEGIN
     AND cq.lead_source = 'deposit'
   FOR UPDATE;
 
-  SELECT cq.stripe_checkout_session_id, cq.payment_status
-  INTO v_hosted, v_hosted_paid
+  SELECT cq.stripe_checkout_session_id, cq.payment_status, cq.quote_data ->> 'payment_channel'
+  INTO v_hosted, v_hosted_paid, v_channel
   FROM public.customer_quotes AS cq
   WHERE cq.saved_quote_id = v_saved_quote_id
     AND cq.lead_source = 'deposit';
 
-  IF v_hosted IS NOT NULL OR v_hosted_paid = 'paid' THEN
+  IF FOUND AND (v_hosted IS NOT NULL OR v_hosted_paid = 'paid' OR v_channel IS DISTINCT FROM 'native_spt') THEN
     RETURN jsonb_build_object('result', 'refused', 'reason', 'hosted_rail');
   END IF;
 
@@ -594,6 +612,8 @@ BEGIN
   FROM public.saved_quotes AS sq
   WHERE sq.id = v_saved_quote_id
   FOR UPDATE;
+
+  SELECT * INTO v_saved FROM public.saved_quotes WHERE id = v_saved_quote_id;
 
   SELECT * INTO v_intent
   FROM public.native_deposit_intents
@@ -673,7 +693,17 @@ BEGIN
     );
   END IF;
 
-  IF v_approval.id IS NULL
+  IF v_saved.user_id IS DISTINCT FROM v_intent.owner_user_id
+    OR v_saved.quote_pdf_path IS DISTINCT FROM v_intent.document_path
+    OR NULLIF(btrim(v_saved.email),'') IS NULL
+    OR NULLIF(btrim(v_saved.customer_full_name),'') IS NULL
+    OR NULLIF(btrim(v_saved.customer_phone),'') IS NULL
+    OR NULLIF(btrim(v_saved.customer_address_line1),'') IS NULL
+    OR NULLIF(btrim(v_saved.customer_city),'') IS NULL
+    OR NULLIF(btrim(v_saved.customer_region),'') IS NULL
+    OR NULLIF(btrim(v_saved.customer_postal_code),'') IS NULL
+    OR NULLIF(btrim(v_saved.customer_country),'') IS NULL
+    OR v_approval.id IS NULL
     OR v_intent.status IS DISTINCT FROM 'approved'
     OR v_approval.expires_at <= pg_catalog.now()
     OR v_intent.expires_at <= pg_catalog.now()
@@ -906,7 +936,13 @@ BEGIN
     OR v_attempt.amount_cents IS DISTINCT FROM p_amount_cents
     OR v_attempt.currency IS DISTINCT FROM 'CAD'
     OR v_attempt.stripe_payment_intent_id IS DISTINCT FROM p_payment_intent_id
-    OR v_attempt.status NOT IN ('claimed', 'submitted', 'requires_action', 'failed', 'processing', 'unknown', 'succeeded')
+    OR v_attempt.status IS DISTINCT FROM 'succeeded'
+    OR v_attempt.submitted_at IS NULL
+    OR v_attempt.submitted_at < v_approval.approved_at
+    OR v_attempt.submitted_at > v_approval.expires_at
+    OR v_attempt.submitted_at > v_intent.expires_at
+    OR v_attempt.submitted_at > v_saved.expires_at
+    OR v_attempt.submitted_at > now()
     OR v_approval.saved_quote_id IS DISTINCT FROM p_saved_quote_id
     OR v_approval.motor_id IS DISTINCT FROM p_motor_id
     OR v_approval.amount_cents IS DISTINCT FROM p_amount_cents
@@ -926,6 +962,11 @@ BEGIN
     OR btrim(v_saved.email) = ''
     OR v_saved.customer_full_name IS NULL
     OR btrim(v_saved.customer_full_name) = ''
+    OR NULLIF(btrim(v_saved.customer_address_line1),'') IS NULL
+    OR NULLIF(btrim(v_saved.customer_city),'') IS NULL
+    OR NULLIF(btrim(v_saved.customer_region),'') IS NULL
+    OR NULLIF(btrim(v_saved.customer_postal_code),'') IS NULL
+    OR NULLIF(btrim(v_saved.customer_country),'') IS NULL
     OR v_saved.customer_phone IS NULL
     OR btrim(v_saved.customer_phone) = ''
     OR v_saved.deposit_status NOT IN ('pending', 'paid')

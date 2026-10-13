@@ -23,7 +23,7 @@ Deno.serve(async req => {
   if (!origin || !allowed) return reply({ error: 'Buyer review must use the trusted site.' }, 403);
   if (req.method === 'OPTIONS') return new Response(null, { status: 204, headers });
   if (req.method !== 'POST') return reply({ error: 'Method not allowed' }, 405);
-  if (!nativeDepositCheckoutEnabled(Deno.env.get('NATIVE_DEPOSIT_ENABLED'))) return reply({ error: 'Agent deposit review is unavailable.' }, 404);
+  const enabled = nativeDepositCheckoutEnabled(Deno.env.get('NATIVE_DEPOSIT_ENABLED'));
   try {
     const db = createClient(Deno.env.get('SUPABASE_URL')!, Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!, { auth: { persistSession: false } });
     const token = req.headers.get('authorization')?.match(/^Bearer\s+(\S+)$/i)?.[1];
@@ -44,12 +44,14 @@ Deno.serve(async req => {
       : quote.email?.trim().toLowerCase() === user.email?.trim().toLowerCase()
         && nativeDepositActorAuthorized({ savedQuoteUserId: quote.user_id, savedQuoteResumeToken: quote.resume_token, actor });
     if (!owns) return reply({ error: 'Quote unavailable.' }, 404);
-    const fingerprint = await sha256Hex(new TextEncoder().encode(`buyer:${user.id}`));
+    if (!enabled && body.action === 'approve') return reply({ error: 'New native payments are paused.' }, 409);
+    const fingerprint = await sha256Hex(new TextEncoder().encode(`buyer-session:${user.id}:${token}`));
     if (await io.loadDocumentHash(quote) !== intent.document_sha256) return reply({ error: 'The quote document changed. Review a fresh quote.' }, 409);
     const approval = await io.loadApproval(intent.id);
     if (body.action === 'step_up') {
       const attempt = await io.loadAttempt(intent.id);
-      if (!attempt?.stripe_payment_intent_id || !approval) return reply({ error: 'No buyer verification is pending.' }, 409);
+      if (!attempt?.stripe_payment_intent_id || !approval || intent.status !== 'requires_action' || attempt.status !== 'requires_action'
+        || Date.parse(approval.expires_at) <= Date.now() || Date.parse(intent.expires_at) <= Date.now()) return reply({ error: 'No buyer verification is pending.' }, 409);
       const stripe = createNativeStripePreviewClient({ secretKey: Deno.env.get('STRIPE_SECRET_KEY')!, sellerAccountId: Deno.env.get('NATIVE_STRIPE_SELLER_ACCOUNT')! });
       const pi = await stripe.retrievePaymentIntent(attempt.stripe_payment_intent_id) as Record<string, unknown>;
       if (pi.status !== 'requires_action' || pi.livemode !== attempt.livemode || pi.amount !== intent.amount_cents || pi.currency !== 'cad')
@@ -74,7 +76,7 @@ Deno.serve(async req => {
       intent.document_sha256, intent.policy_version, intent.policy_code, intent.terms_version, intent.expires_at,
     ])));
     let nonce: string | null = null;
-    if (!approval && intent.status === 'requires_escalation') {
+    if (enabled && !approval && intent.status === 'requires_escalation') {
       nonce = Array.from(crypto.getRandomValues(new Uint8Array(32)), b => b.toString(16).padStart(2, '0')).join('');
       const { error } = await db.from('native_deposit_review_challenges').insert({ nonce_hash: await sha256Hex(new TextEncoder().encode(nonce)),
         intent_id: intent.id, actor_fingerprint: fingerprint, review_digest: digest,
@@ -84,8 +86,8 @@ Deno.serve(async req => {
     return reply({ motor: `Mercury ${intent.horsepower} HP — ${intent.catalog_model_number}`, amount_cents: intent.amount_cents,
       merchandise_cents: intent.merchandise_cents, currency: 'CAD', document_url: signed.signedUrl,
       terms: intent.policy_code === 'in_stock_refundable' ? DEPOSIT_POLICY_IN_STOCK_TEXT : DEPOSIT_POLICY_SPECIAL_ORDER_TEXT,
-      approved: Boolean(intent.status === "approved" && approval && Date.parse(approval.expires_at) > Date.now()), paid: intent.status === 'paid',
-      payment_status: intent.status, nonce, review_digest: digest });
+      approved: Boolean(enabled && intent.status === "approved" && approval && Date.parse(approval.expires_at) > Date.now()), paid: intent.status === 'paid',
+      payment_status: approval && Date.parse(approval.expires_at) <= Date.now() && intent.status === 'approved' ? 'expired' : intent.status, nonce, review_digest: digest });
   } catch {
     return reply({ error: 'Deposit review is temporarily unavailable.' }, 503);
   }

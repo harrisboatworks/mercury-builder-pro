@@ -23,12 +23,14 @@ export type NativeStripePreview = {
 export class NativeStripeRequestError extends Error {
   status: number | null;
   code: string;
+  paymentIntent: unknown;
 
-  constructor(status: number | null, code: string) {
+  constructor(status: number | null, code: string, paymentIntent: unknown = null) {
     super(code);
     this.name = "NativeStripeRequestError";
     this.status = status;
     this.code = code;
+    this.paymentIntent = paymentIntent;
   }
 }
 
@@ -85,9 +87,9 @@ export function createNativeStripePreviewClient(options: {
       payload = null;
     }
     if (!response.ok) {
-      const record = payload && typeof payload === "object" ? payload as { error?: { code?: string } } : {};
+      const record = payload && typeof payload === "object" ? payload as { error?: { code?: string; payment_intent?: unknown } } : {};
       const code = typeof record.error?.code === "string" ? record.error.code : "stripe_error";
-      throw new NativeStripeRequestError(response.status, code);
+      throw new NativeStripeRequestError(response.status, code, record.error?.payment_intent ?? null);
     }
     return payload;
   }
