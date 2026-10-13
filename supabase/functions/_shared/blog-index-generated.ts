@@ -3773,7 +3773,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
   {
     "slug": "mercury-40-vs-60-hp-outboard-ontario",
     "title": "Mercury 40 vs 60 HP Ontario Guide",
-    "description": "Mercury 40 vs 60 HP for Ontario boats. Real CAD prices, weight, fuel economy, Command Thrust availability, and which one your boat actually needs.",
+    "description": "Mercury 40 HP vs 60 HP outboard: loaded hole shot, weight, the cost to step up, and which one a 16 to 18 ft Ontario boat or pontoon needs.",
     "category": "Mercury Outboards",
     "publishDate": "2026-05-09",
     "keywords": [
