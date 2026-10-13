@@ -641,7 +641,8 @@ export default function QuoteSummaryPage() {
     getPromoDisplayValue,
   ]);
 
-  const isQuoteReady = () => arePromotionsCurrent() && !state.isLoading && !promoLoading && !promoError && Boolean(state.motor)
+  const isQuoteExpired = () => !state.frozenPricing && quoteValidUntil.getTime() < Date.now();
+  const isQuoteReady = () => !isQuoteExpired() && arePromotionsCurrent() && !state.isLoading && !promoLoading && !promoError && Boolean(state.motor)
     && JSON.stringify(state.pdfSnapshot) === JSON.stringify(pdfSnapshot);
 
   const quoteReady = isQuoteReady();
@@ -1257,6 +1258,14 @@ export default function QuoteSummaryPage() {
                 Retry promotion pricing
               </button>
             </div>
+          ) : isQuoteExpired() ? (
+            <div role="alert" className="mx-auto my-12 max-w-xl rounded-xl border border-repower-mercury-red/30 bg-white p-6">
+              <h1 className="text-xl font-semibold">Quote pricing has expired</h1>
+              <p className="mt-3 text-muted-foreground">Start a new quote to verify current pricing, rebates and promotional coverage.</p>
+              <button type="button" onClick={() => { dispatch({ type: 'RESET_QUOTE' }); navigate('/quote/motor-selection'); }} className="mt-5 rounded bg-repower-mercury-red px-5 py-3 font-semibold text-white">
+                Start a new quote
+              </button>
+            </div>
           ) : !isMounted || !quoteReady ? (
             <QuoteSummarySkeleton />
           ) : (
@@ -1577,6 +1586,7 @@ export default function QuoteSummaryPage() {
           <SaveQuoteDialog 
             open={quoteReady && showSaveDialog}
             onOpenChange={setShowSaveDialog}
+            canSave={isQuoteReady}
             quoteData={{
               ...state,
               frozenPricing: frozenPricingFromPdfSnapshot(pdfSnapshot),

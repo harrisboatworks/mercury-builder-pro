@@ -20,6 +20,7 @@ interface SaveQuoteDialogProps {
   quoteData: any;
   motorModel?: string;
   finalPrice?: number;
+  canSave?: () => boolean;
 }
 
 export function SaveQuoteDialog({ 
@@ -27,7 +28,8 @@ export function SaveQuoteDialog({
   onOpenChange, 
   quoteData,
   motorModel,
-  finalPrice 
+  finalPrice,
+  canSave
 }: SaveQuoteDialogProps) {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
@@ -43,6 +45,10 @@ export function SaveQuoteDialog({
   const [phoneError, setPhoneError] = useState("");
 
   const handleSave = async () => {
+    if (canSave && !canSave()) {
+      toast({ title: "Quote pricing changed", description: "Please refresh the quote before saving.", variant: "destructive" });
+      return;
+    }
     // Block save if no motor selected
     if (!quoteData?.selectedMotor && !quoteData?.motor) {
       toast({
