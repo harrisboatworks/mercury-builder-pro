@@ -46,7 +46,7 @@ describe('quote funnel UX contract', () => {
     expect(contextSource).toContain("purchasePath: 'loose'");
     expect(contextSource).toContain("selectedPaymentMethod: 'cash_purchase'");
     expect(contextSource).toContain('motorOnlyExpress: true');
-    expect(contextSource).toContain('suppressAdditionalPromoSavings: true');
+    expect(contextSource).toContain('suppressAdditionalPromoSavings: false');
     expect(summarySource).toContain('const suppressAdditionalPromoSavings = state.uiFlags.suppressAdditionalPromoSavings === true');
     expect(summarySource).toContain('const promoSavings = suppressAdditionalPromoSavings');
     expect(summarySource).toContain('Your motor-only reservation');

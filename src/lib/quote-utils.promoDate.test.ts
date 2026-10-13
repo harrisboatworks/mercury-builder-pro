@@ -7,7 +7,36 @@ import {
   promoEndOfDay as sharedPromoEndOfDay,
   promoStartOfDay,
 } from '../../supabase/functions/_shared/promo-dates';
-import { daysUntil, formatExpiry, isPromotionLive as reexportedLive, promoEndOfDay } from './quote-utils';
+import { daysUntil, formatExpiry, isPromotionLive as reexportedLive, promoEndOfDay, resolveQuoteValidUntil } from './quote-utils';
+
+describe('quote promotion validity', () => {
+  const now = new Date('2026-10-13T15:00:00Z');
+  it('preserves Ontario calendar semantics for legacy date-only snapshot and frozen expiry', () => {
+    expect(resolveQuoteValidUntil({ snapshotExpiry: '2026-10-30', now }).toISOString()).toBe('2026-10-31T03:59:59.999Z');
+    expect(resolveQuoteValidUntil({ frozenExpiry: '2026-12-31', now }).toISOString()).toBe('2027-01-01T04:59:59.999Z');
+  });
+  it('caps a snapshot created before promotions loaded at the Ontario deadline', () => {
+    const snapshotExpiry = resolveQuoteValidUntil({ now }).toISOString();
+    expect(resolveQuoteValidUntil({ snapshotExpiry, promotionEndDate: '2026-10-30', now }).toISOString())
+      .toBe('2026-10-31T03:59:59.999Z');
+  });
+  it('does not extend a snapshot that already expires sooner', () => {
+    expect(resolveQuoteValidUntil({ snapshotExpiry: '2026-10-20T15:00:00Z', promotionEndDate: '2026-10-30', now }).toISOString())
+      .toBe('2026-10-20T15:00:00.000Z');
+  });
+  it('preserves frozen historical validity despite current promotions', () => {
+    expect(resolveQuoteValidUntil({ frozenExpiry: '2026-11-12T15:00:00Z', promotionEndDate: '2026-10-30', now }).toISOString())
+      .toBe('2026-11-12T15:00:00.000Z');
+  });
+  it('retains ordinary validity without a promotion', () => {
+    const localNow = new Date(2026, 9, 13, 11);
+    expect(resolveQuoteValidUntil({ now: localNow }).getTime()).toBe(new Date(2026, 10, 12, 11).getTime());
+  });
+  it('ends eligibility at Ontario midnight after October 30', () => {
+    expect(isPromotionLive({ endDate: '2026-10-30', now: new Date('2026-10-31T03:59:59.999Z') })).toBe(true);
+    expect(isPromotionLive({ endDate: '2026-10-30', now: new Date('2026-10-31T04:00:00.000Z') })).toBe(false);
+  });
+});
 
 describe('promo date convention (America/Toronto)', () => {
   afterEach(() => {

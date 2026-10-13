@@ -77,6 +77,17 @@ describe('SaveQuoteDialog', () => {
     mocks.signInWithOtp.mockResolvedValue({ error: null });
   });
 
+  it('blocks an open save form when pricing expires before submission', async () => {
+    let current = true;
+    render(<SaveQuoteDialog open onOpenChange={vi.fn()} canSave={() => current}
+      quoteData={{ selectedMotor: { id: 'motor-1', hp: 9.9, msrp: 3860 } }} finalPrice={3049.87} />);
+    current = false;
+    await fillAndSubmitSaveForm();
+    expect(mocks.saveLead).not.toHaveBeenCalled();
+    expect(mocks.savedQuoteInsert).not.toHaveBeenCalled();
+    expect(mocks.toast).toHaveBeenCalledWith(expect.objectContaining({ title: 'Quote pricing changed' }));
+  });
+
   it('fails closed and clears a stale binding when resumable storage returns an error', async () => {
     mocks.savedQuoteInsert.mockResolvedValue({ error: storageError });
     localStorage.setItem('current_saved_quote_id', STALE_SAVED_QUOTE_ID);

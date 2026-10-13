@@ -41,11 +41,12 @@ import { useAuth } from '@/components/auth/AuthProvider';
 import { AdminQuoteControls } from '@/components/admin/AdminQuoteControls';
 import { Bookmark, CreditCard, Download } from 'lucide-react';
 import { computeTotals, calculateMonthlyPayment, getFinancingTerm, DEALERPLAN_FEE, FINANCING_MINIMUM } from '@/lib/finance';
-import { calculateQuotePricing, getFinanceableAmount, promoEndOfDay } from '@/lib/quote-utils';
+import { calculateQuotePricing, formatPromoCalendarDate, getFinanceableAmount, resolveQuoteValidUntil } from '@/lib/quote-utils';
 import { resolveAppliedTradeValue } from '@/lib/trade-credit';
 import { calculateFinancingPurchase, FINANCING_PRICE_BASIS_ALL_IN_AFTER_TRADE } from '@/lib/financing-purchase';
 import { supabase } from '@/integrations/supabase/client';
 import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
+import { isQuoteSnapshotExpired } from '../../../supabase/functions/_shared/quote-snapshot-expiry';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { useGoogleReviewStats } from '@/hooks/useGoogleReviewStats';
 import { useToast } from '@/hooks/use-toast';
@@ -67,8 +68,10 @@ import {
   buildQuotePdfFinancing,
   calculateProtectionMonthlyDelta,
   frozenPricingFromPdfSnapshot,
+  hasCompleteFrozenQuoteSnapshot,
   isQuotePdfSnapshot,
   QUOTE_PDF_SNAPSHOT_VERSION,
+  resolveQuoteIncludedCoverageYears,
   resolveQuoteMotorImage,
   type QuotePdfSnapshot,
 } from '@/lib/quote-pdf-data';
@@ -110,17 +113,22 @@ export default function QuoteSummaryPage() {
   const suppressAdditionalPromoSavings = state.uiFlags.suppressAdditionalPromoSavings === true;
   const { user, isAdmin } = useAuth();
   const { promo } = useActiveFinancingPromo();
-  const { promotions, loading: promoLoading, getTotalPromotionalSavings, getPromotionSavingsForMotor, getPromotionOptions, getRebateForHP, getSpecialFinancingRates } = useActivePromotions({ motor: state.motor });
+  const { promotions, loading: promoLoading, error: promoError, arePromotionsCurrent, getTotalPromotionalSavings, getPromotionSavingsForMotor, getPromotionOptions, getRebateForHP, getSpecialFinancingRates } = useActivePromotions({ motor: state.motor });
   const { rating: googleRating, totalReviews: googleReviewCount } = useGoogleReviewStats();
   const { toast } = useToast();
   const baseCoverageYears = 3;
   const currentPromotion = getAppliedPromotion(promotions);
   const appliedPromotion = suppressAdditionalPromoSavings ? null : currentPromotion;
-  const promoYears = getAppliedWarrantyExtraYears(appliedPromotion);
   const currentCoverageYears = useMemo(
-    () => Math.min(baseCoverageYears + promoYears, 8),
-    [promoYears],
+    () => resolveQuoteIncludedCoverageYears({
+      frozen: Boolean(state.frozenPricing),
+      snapshotYears: state.pdfSnapshot?.includedCoverageYears,
+      warrantyConfig: state.warrantyConfig,
+      liveYears: Math.min(baseCoverageYears + getAppliedWarrantyExtraYears(appliedPromotion), 8),
+    }),
+    [appliedPromotion, state.frozenPricing, state.pdfSnapshot?.includedCoverageYears, state.warrantyConfig],
   );
+  const promoYears = Math.max(0, currentCoverageYears - baseCoverageYears);
   const [isGeneratingPDF, setIsGeneratingPDF] = useState<boolean>(false);
   const isMounted = true; // Render immediately, no artificial delay
   const [showSaveDialog, setShowSaveDialog] = useState(false);
@@ -139,9 +147,6 @@ export default function QuoteSummaryPage() {
     snapshotKey: string;
   } | null>(null);
   
-  // Auto-save quote when returning from Google OAuth
-  useAutoSaveQuoteOnAuth();
-
   // The session-scoped soft-lead coordinator survives page remounts and keeps
   // all anonymous snapshot writes in one ordered queue.
   const softLeadAnalyticsTrackedRef = useRef(false);
@@ -214,7 +219,7 @@ export default function QuoteSummaryPage() {
   // years and the selected motor's exact rate band. Frozen shared quotes retain
   // their original snapshot until the customer explicitly changes the plan.
   useEffect(() => {
-    if (state.isLoading || promoLoading || !state.motor || state.frozenPricing) return;
+    if (state.isLoading || promoLoading || promoError || !state.motor || state.frozenPricing) return;
 
     const reconciled = reconcileWarrantyConfig(
       Number(hp),
@@ -236,6 +241,7 @@ export default function QuoteSummaryPage() {
     dispatch,
     hp,
     promoLoading,
+    promoError,
     state.frozenPricing,
     state.isLoading,
     state.motor,
@@ -254,7 +260,10 @@ export default function QuoteSummaryPage() {
     }),
     [state.motor, state.purchasePath],
   );
-  const canReserveMotor = Boolean(depositPolicySnapshot);
+  const canReserveMotor = Boolean(depositPolicySnapshot) && !isQuoteSnapshotExpired({
+    validUntil: state.frozenPricing?.quoteExpiryDate ?? state.pdfSnapshot?.validUntil,
+    promotion: state.pdfSnapshot?.promotion,
+  });
 
   // Spec pills
   const specs = [
@@ -513,15 +522,15 @@ export default function QuoteSummaryPage() {
   const { payment: monthlyPayment, termMonths, rate: financingRate } = calculateMonthlyPayment(amountToFinance, effectiveRate, effectiveTerm);
 
   const quoteValidUntil = useMemo(() => {
-    if (state.frozenPricing?.quoteExpiryDate) return new Date(state.frozenPricing.quoteExpiryDate);
-    if (state.pdfSnapshot?.validUntil) return new Date(state.pdfSnapshot.validUntil);
-    const thirtyDaysOut = new Date();
-    thirtyDaysOut.setDate(thirtyDaysOut.getDate() + 30);
-    const promotionEnd = appliedPromotion?.end_date ? promoEndOfDay(appliedPromotion.end_date) : null;
-    return promotionEnd && promotionEnd < thirtyDaysOut ? promotionEnd : thirtyDaysOut;
+    return resolveQuoteValidUntil({
+      frozenExpiry: state.frozenPricing?.quoteExpiryDate,
+      snapshotExpiry: state.pdfSnapshot?.validUntil,
+      promotionEndDate: appliedPromotion?.end_date,
+    });
   }, [appliedPromotion?.end_date, state.frozenPricing?.quoteExpiryDate, state.pdfSnapshot?.validUntil]);
 
   const pdfSnapshot = useMemo<QuotePdfSnapshot>(() => {
+    if (hasCompleteFrozenQuoteSnapshot(state.frozenPricing, state.pdfSnapshot)) return state.pdfSnapshot!;
     const frozen = state.frozenPricing;
     const existing = state.pdfSnapshot;
     const paymentMethod = frozen?.selectedPaymentMethod ?? state.selectedPaymentMethod ?? existing?.paymentMethod;
@@ -597,9 +606,9 @@ export default function QuoteSummaryPage() {
       } : {}),
       paymentMethod,
       promotion: {
-        name: appliedPromotion ? (frozen ? frozen.promotionName : (appliedPromotion.name ?? existing?.promotion?.name)) : undefined,
-        endDate: appliedPromotion ? (frozen ? frozen.promotionEndDate : (appliedPromotion.end_date ?? existing?.promotion?.endDate)) : undefined,
-        combinationMode: appliedPromotion ? (frozen?.promotionCombinationMode ?? appliedPromotion.promo_options?.type ?? existing?.promotion?.combinationMode) : undefined,
+        name: frozen ? (frozen.promotionName ?? existing?.promotion?.name) : appliedPromotion?.name,
+        endDate: frozen ? (frozen.promotionEndDate ?? existing?.promotion?.endDate) : (appliedPromotion?.end_date ?? undefined),
+        combinationMode: frozen ? (frozen.promotionCombinationMode ?? existing?.promotion?.combinationMode) : appliedPromotion?.promo_options?.type,
         selectedOption: frozen?.selectedPromoOption ?? state.selectedPromoOption,
         selectedValue: selectedPromoValue,
       },
@@ -638,15 +647,26 @@ export default function QuoteSummaryPage() {
     getPromoDisplayValue,
   ]);
 
+  const hasFrozenSnapshot = hasCompleteFrozenQuoteSnapshot(state.frozenPricing, state.pdfSnapshot);
+  const isQuoteExpired = () => isQuoteSnapshotExpired(pdfSnapshot);
+  const isQuoteReady = () => !isQuoteExpired() && (hasFrozenSnapshot || (arePromotionsCurrent() && !promoLoading && !promoError)) && !state.isLoading && Boolean(state.motor)
+    && JSON.stringify(state.pdfSnapshot) === JSON.stringify(pdfSnapshot);
+
+  const quoteReady = isQuoteReady();
+
+  // OAuth saves must use the same settled snapshot as PDF and reservation actions.
+  useAutoSaveQuoteOnAuth(isQuoteReady);
+
   useEffect(() => {
+    if (state.isLoading || (!hasFrozenSnapshot && (promoLoading || promoError)) || !state.motor) return;
     if (JSON.stringify(state.pdfSnapshot) !== JSON.stringify(pdfSnapshot)) {
       dispatch({ type: 'SET_PDF_SNAPSHOT', payload: pdfSnapshot });
     }
-  }, [dispatch, pdfSnapshot, state.pdfSnapshot]);
+  }, [dispatch, pdfSnapshot, hasFrozenSnapshot, promoLoading, promoError, state.isLoading, state.motor, state.pdfSnapshot]);
 
   // Persist only the synchronized anonymous quote state through the atomic RPC.
   useEffect(() => {
-    if (state.isLoading || !state.motor || !isQuotePdfSnapshot(state.pdfSnapshot)) return;
+    if (!isQuoteReady() || !isQuotePdfSnapshot(state.pdfSnapshot)) return;
 
     // Wait until QuoteContext contains the exact derived snapshot rendered on
     // this page. Persisting before SET_PDF_SNAPSHOT lands can save stale totals.
@@ -690,12 +710,13 @@ export default function QuoteSummaryPage() {
     return () => {
       cancelled = true;
     };
-  }, [pdfSnapshot, state]);
+  }, [pdfSnapshot, quoteReady, state]);
 
   // CTA handlers
   const noMotorSelected = !state.motor;
 
   const handleDownloadPDF = async () => {
+    if (!isQuoteReady()) return;
     if (noMotorSelected) {
       toast({ title: 'No motor selected', description: 'Please select a motor before downloading a PDF.', variant: 'destructive' });
       return;
@@ -868,6 +889,7 @@ export default function QuoteSummaryPage() {
   };
 
   const handleApplyForFinancing = () => {
+    if (!isQuoteReady() || isQuoteSnapshotExpired(pdfSnapshot)) return;
     const purchase = calculateFinancingPurchase({
       afterTradeSubtotal: displayPricing.subtotal,
       preTradeSubtotal: displayPricing.subtotal + (displayPricing.appliedTradeCredit ?? 0),
@@ -878,6 +900,12 @@ export default function QuoteSummaryPage() {
     });
     const financingData = {
       ...state,
+      ...(hasFrozenSnapshot ? {
+        selectedPromoOption: pdfSnapshot.promotion?.selectedOption ?? null,
+        selectedPromoValue: pdfSnapshot.promotion?.selectedValue ?? null,
+        promotionName: pdfSnapshot.promotion?.name ?? null,
+        promotionCombinationMode: pdfSnapshot.promotion?.combinationMode ?? null,
+      } : {}),
       financingAmount: {
         packageSubtotal: displayPricing.subtotal,
         hst: purchase.tax,
@@ -890,13 +918,13 @@ export default function QuoteSummaryPage() {
         preTradeSubtotal: purchase.preTradeSubtotal,
         priceBasis: FINANCING_PRICE_BASIS_ALL_IN_AFTER_TRADE,
         // Include promo details for financing application
-        promoOption: state.selectedPromoOption,
-        promoRate: state.frozenPricing?.financingRate ?? state.selectedPromoRate,
-        promoTerm: state.frozenPricing?.financingAmortizationMonths ?? state.selectedPromoTerm,
-        promoValue: state.selectedPromoValue,
-        promoName: appliedPromotion?.name || null,
-        promoSavings,
-        promoCombinationMode: appliedPromotion?.promo_options?.type || null,
+        promoOption: hasFrozenSnapshot ? pdfSnapshot.promotion?.selectedOption : state.selectedPromoOption,
+        promoRate: hasFrozenSnapshot ? pdfSnapshot.financing?.rate : (state.frozenPricing?.financingRate ?? state.selectedPromoRate),
+        promoTerm: hasFrozenSnapshot ? pdfSnapshot.financing?.amortizationMonths : (state.frozenPricing?.financingAmortizationMonths ?? state.selectedPromoTerm),
+        promoValue: hasFrozenSnapshot ? pdfSnapshot.promotion?.selectedValue : state.selectedPromoValue,
+        promoName: pdfSnapshot.promotion?.name || null,
+        promoSavings: hasFrozenSnapshot ? pdfSnapshot.pricing.promoValue : promoSavings,
+        promoCombinationMode: pdfSnapshot.promotion?.combinationMode || null,
       }
     };
     
@@ -910,6 +938,7 @@ export default function QuoteSummaryPage() {
   const canUseAssistantDeposit = import.meta.env.VITE_NATIVE_DEPOSIT_ENABLED === 'true'
     && typeof nativeParentRef === 'string' && /^chk_[A-Za-z0-9._-]{1,120}$/.test(nativeParentRef) && Boolean(user);
   const handleReserveDeposit = () => {
+    if (!isQuoteReady() || isQuoteSnapshotExpired(pdfSnapshot)) return;
     setDepositRail('hosted');
     if (!depositPolicySnapshot) {
       toast({
@@ -974,6 +1003,7 @@ export default function QuoteSummaryPage() {
 
   // Handle deposit after customer info is collected
   const handleDepositSubmit = async (customerInfo: DepositCustomerInfo) => {
+    if (!isQuoteReady() || isQuoteSnapshotExpired(pdfSnapshot)) return;
     setShowDepositDialog(false);
     setIsProcessingDeposit(true);
     try {
@@ -1157,7 +1187,7 @@ export default function QuoteSummaryPage() {
     };
     window.addEventListener('initiate-deposit', handleInitiateDeposit);
     return () => window.removeEventListener('initiate-deposit', handleInitiateDeposit);
-  }, [depositAmount, user, motorName, hp, modelYear, depositPolicySnapshot]);
+  }, [depositAmount, user, motorName, hp, modelYear, depositPolicySnapshot, quoteReady]);
 
   // Plain-language inclusions for the configured quote. Product Protection is
   // presented separately and is not bundled into customer-facing package tiers.
@@ -1203,7 +1233,7 @@ export default function QuoteSummaryPage() {
       />
       {/* Deposit Info Dialog */}
       <DepositInfoDialog
-        open={showDepositDialog}
+        open={quoteReady && showDepositDialog}
         onOpenChange={setShowDepositDialog}
         onSubmit={handleDepositSubmit}
         depositAmount={depositAmount}
@@ -1219,7 +1249,7 @@ export default function QuoteSummaryPage() {
       />
       
       {/* Stale Quote Detection */}
-      {state.frozenPricing && (
+      {state.frozenPricing && !promoLoading && !promoError && arePromotionsCurrent() && (
         <StaleQuoteAlert
           frozenPricing={state.frozenPricing}
           liveMotorMSRP={liveMotorMSRP}
@@ -1234,7 +1264,23 @@ export default function QuoteSummaryPage() {
       <ScrollToTop />
       <PageTransition>
         <QuoteLayout showProgress={!isMotorOnlyExpress}>
-          {!isMounted ? (
+          {promoError && !hasFrozenSnapshot ? (
+            <div role="alert" className="mx-auto my-12 max-w-xl rounded-xl border border-destructive/30 bg-white p-6">
+              <h1 className="text-xl font-semibold">Promotion pricing unavailable</h1>
+              <p className="mt-3 text-muted-foreground">We could not verify current rebates and promotional coverage. Retry before saving, downloading or reserving this quote.</p>
+              <button type="button" onClick={() => window.location.reload()} className="mt-5 rounded bg-repower-mercury-red px-5 py-3 font-semibold text-white">
+                Retry promotion pricing
+              </button>
+            </div>
+          ) : isQuoteExpired() ? (
+            <div role="alert" className="mx-auto my-12 max-w-xl rounded-xl border border-repower-mercury-red/30 bg-white p-6">
+              <h1 className="text-xl font-semibold">Quote pricing has expired</h1>
+              <p className="mt-3 text-muted-foreground">Start a new quote to verify current pricing, rebates and promotional coverage.</p>
+              <button type="button" onClick={() => { dispatch({ type: 'RESET_QUOTE' }); navigate('/quote/motor-selection'); }} className="mt-5 rounded bg-repower-mercury-red px-5 py-3 font-semibold text-white">
+                Start a new quote
+              </button>
+            </div>
+          ) : !isMounted || !quoteReady ? (
             <QuoteSummarySkeleton />
           ) : (
           <div className="bg-repower-paper">
@@ -1245,6 +1291,9 @@ export default function QuoteSummaryPage() {
                 <div className="space-y-3">
                   <p className="text-sm font-medium text-foreground">
                     {isMotorOnlyExpress ? 'Your motor-only reservation' : 'Your configured quote'}
+                  </p>
+                  <p className="text-sm text-muted-foreground lg:hidden">
+                    Pricing valid until {formatPromoCalendarDate(quoteValidUntil)}.
                   </p>
                 </div>
 
@@ -1288,7 +1337,9 @@ export default function QuoteSummaryPage() {
                           : DEPOSIT_POLICY_PUBLIC_SUMMARY}
                       </p>
                       <p className="mt-2 text-xs leading-relaxed text-repower-navy-900/55">
-                        Any additional factory rebate is confirmed separately after HBW checks eligibility and delivery timing.
+                        {suppressAdditionalPromoSavings
+                          ? 'This saved quote retains its original promotional terms. HBW confirms current eligibility and delivery timing before purchase.'
+                          : 'Eligible factory rebates and promotional coverage are included in this quote, subject to dealer verification of engine eligibility and delivery timing.'}
                       </p>
                     </div>
                   )}
@@ -1547,8 +1598,9 @@ export default function QuoteSummaryPage() {
           )}
           
           <SaveQuoteDialog 
-            open={showSaveDialog}
+            open={quoteReady && showSaveDialog}
             onOpenChange={setShowSaveDialog}
+            canSave={isQuoteReady}
             quoteData={{
               ...state,
               frozenPricing: frozenPricingFromPdfSnapshot(pdfSnapshot),
@@ -1559,7 +1611,7 @@ export default function QuoteSummaryPage() {
             finalPrice={displayPricing.total}
           />
           <SaveQuoteWithAuth
-            open={showAuthSaveDialog}
+            open={quoteReady && showAuthSaveDialog}
             onOpenChange={setShowAuthSaveDialog}
             onFallbackEmail={() => {
               setShowAuthSaveDialog(false);

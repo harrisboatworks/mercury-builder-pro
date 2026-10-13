@@ -1,3 +1,4 @@
+import { isQuoteSnapshotExpired } from '../../../supabase/functions/_shared/quote-snapshot-expiry';
 import { RequiredMark } from "@/components/ui/required-mark";
 import { useState, useEffect, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
@@ -43,6 +44,14 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
   const [turnstileToken, setTurnstileToken] = useState('');
   const turnstileHostRef = useRef<HTMLDivElement | null>(null);
   const pdfSnapshot = isQuotePdfSnapshot(quoteData.pdfSnapshot) ? quoteData.pdfSnapshot : null;
+  const isCashPurchase = pdfSnapshot?.paymentMethod === 'cash_purchase';
+  const downPayment = isCashPurchase ? 0 : (pdfSnapshot?.financing?.downPayment ?? quoteData.financing.downPayment);
+  const [quoteExpired, setQuoteExpired] = useState(false);
+  const rejectExpiredQuote = () => {
+    if (!pdfSnapshot || !isQuoteSnapshotExpired(pdfSnapshot)) return false;
+    setQuoteExpired(true);
+    return true;
+  };
   const isLoosePickup = (purchasePath || quoteData.purchasePath) === 'loose';
   const turnstileSiteKey = getTurnstileSiteKey();
 
@@ -123,9 +132,10 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
   };
 
   const calculateMonthlyPayment = () => {
-    if (pdfSnapshot?.financing?.monthlyPayment) return pdfSnapshot.financing.monthlyPayment;
+    if (isCashPurchase) return 0;
+    if (pdfSnapshot?.financing) return pdfSnapshot.financing.monthlyPayment;
     if (!quoteData.motor) return 0;
-    const principal = Math.round(totalCashPrice) - quoteData.financing.downPayment;
+    const principal = Math.round(totalCashPrice) - downPayment;
     const monthlyRate = quoteData.financing.rate / 100 / 12;
     const numPayments = quoteData.financing.term;
     
@@ -202,13 +212,15 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
   };
 
   const calculateTotalCost = () => {
+    if (isCashPurchase) return totalCashPrice;
     const monthlyPayment = calculateMonthlyPayment();
     const amortization = pdfSnapshot?.financing?.amortizationMonths ?? quoteData.financing.term;
-    return (monthlyPayment * amortization) + quoteData.financing.downPayment;
+    return (monthlyPayment * amortization) + downPayment;
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (rejectExpiredQuote()) return;
     
     if (!validateForm()) {
       // Validation errors shown inline
@@ -251,10 +263,10 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
       const insertPayload = {
         base_price: totals.subtotal,
         final_price: Math.round(totalCashPrice),
-        deposit_amount: quoteData.financing.downPayment,
-        loan_amount: pdfSnapshot?.financing?.amountFinanced ?? (Math.round(totalCashPrice) - quoteData.financing.downPayment),
+        deposit_amount: downPayment,
+        loan_amount: isCashPurchase ? 0 : (pdfSnapshot?.financing?.amountFinanced ?? (Math.round(totalCashPrice) - downPayment)),
         monthly_payment: calculateMonthlyPayment(),
-        term_months: pdfSnapshot?.financing?.amortizationMonths ?? quoteData.financing.term,
+        term_months: isCashPurchase ? 0 : (pdfSnapshot?.financing?.amortizationMonths ?? quoteData.financing.term),
         total_cost: calculateTotalCost(),
         customer_name: sanitizedContactInfo.name,
         customer_email: sanitizedContactInfo.email,
@@ -359,6 +371,7 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
   };
 
   const generatePDF = async () => {
+    if (rejectExpiredQuote()) return;
     if (!quoteData.motor) {
       // Silent - button shouldn't be available without motor
       return;
@@ -394,6 +407,14 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
       });
     }
   };
+
+  if (quoteExpired || (pdfSnapshot && isQuoteSnapshotExpired(pdfSnapshot))) {
+    return <Alert>
+      <h2 className="text-xl font-semibold">Quote pricing has expired</h2>
+      <AlertDescription className="mt-3">Return to your quote to verify current pricing, rebates and promotional coverage before sending it for review.</AlertDescription>
+      <Button type="button" onClick={onBack} className="mt-5">Return to quote</Button>
+    </Alert>;
+  }
 
   return (
     <div className="max-w-6xl mx-auto space-y-8">

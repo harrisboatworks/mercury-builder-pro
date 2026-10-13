@@ -55,6 +55,26 @@ describe('useAutoSaveQuoteOnAuth writes', () => {
     window.history.replaceState({}, '', '/quote/summary?auth_save=1');
   });
 
+  it('retains the OAuth save request until promotion pricing is ready', async () => {
+    mocks.insertResult = { data: null, error: { message: 'permission denied' } };
+    const { rerender } = renderHook(({ ready }) => useAutoSaveQuoteOnAuth(ready), {
+      initialProps: { ready: false },
+    });
+    expect(mocks.insert).not.toHaveBeenCalled();
+    expect(new URLSearchParams(window.location.search).get('auth_save')).toBe('1');
+    rerender({ ready: true });
+    await waitFor(() => expect(mocks.insert).toHaveBeenCalledTimes(1));
+    expect(new URLSearchParams(window.location.search).has('auth_save')).toBe(false);
+  });
+
+  it('checks live readiness at the OAuth save boundary', () => {
+    const canSave = vi.fn(() => false);
+    renderHook(() => useAutoSaveQuoteOnAuth(canSave));
+    expect(canSave).toHaveBeenCalled();
+    expect(mocks.insert).not.toHaveBeenCalled();
+    expect(new URLSearchParams(window.location.search).get('auth_save')).toBe('1');
+  });
+
   it('does not claim the quote was saved when the insert is rejected', async () => {
     mocks.insertResult = { data: null, error: { message: 'permission denied' } };
 

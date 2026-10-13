@@ -27,6 +27,26 @@ export {
   promoStartOfDay,
 };
 
+/** Cap an unfrozen quote's validity when promotion data arrives after its snapshot. */
+export function resolveQuoteValidUntil({
+  frozenExpiry,
+  snapshotExpiry,
+  promotionEndDate,
+  now = new Date(),
+}: {
+  frozenExpiry?: string;
+  snapshotExpiry?: string;
+  promotionEndDate?: string | null;
+  now?: Date;
+}): Date {
+  const expiryDate = (value: string) => /^\d{4}-\d{2}-\d{2}$/.test(value) ? promoEndOfDay(value) : new Date(value);
+  if (frozenExpiry) return expiryDate(frozenExpiry);
+  const standardExpiry = snapshotExpiry ? expiryDate(snapshotExpiry) : new Date(now);
+  if (!snapshotExpiry) standardExpiry.setDate(standardExpiry.getDate() + 30);
+  const promotionExpiry = promotionEndDate ? promoEndOfDay(promotionEndDate) : null;
+  return promotionExpiry && promotionExpiry < standardExpiry ? promotionExpiry : standardExpiry;
+}
+
 export interface PricingBreakdown {
   msrp: number;
   discount: number;

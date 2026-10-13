@@ -1,8 +1,27 @@
+import { promoEndOfDay } from '../../supabase/functions/_shared/promo-dates';
 import { buildAccessoryBreakdown, type AccessoryBreakdownItem } from '@/lib/build-accessory-breakdown';
 import { applyTradeCredit, resolveAppliedTradeValue } from '@/lib/trade-credit';
 
 export const QUOTE_PDF_SNAPSHOT_VERSION = 1 as const;
 export const FINANCING_CONTRACT_TERM_MONTHS = 60;
+
+export function resolveQuoteIncludedCoverageYears({
+  frozen,
+  snapshotYears,
+  warrantyConfig,
+  liveYears,
+}: {
+  frozen: boolean;
+  snapshotYears?: number;
+  warrantyConfig?: { totalYears: number; extendedYears: number } | null;
+  liveYears: number;
+}): number {
+  if (!frozen) return liveYears;
+  if (typeof snapshotYears === 'number' && Number.isFinite(snapshotYears)) return snapshotYears;
+  // Legacy frozen quotes may only record the combined target and paid extension.
+  if (warrantyConfig) return warrantyConfig.totalYears - warrantyConfig.extendedYears;
+  return liveYears;
+}
 
 export type QuotePaymentMethod = 'cash_purchase' | 'standard_financing' | 'special_financing';
 export type QuotePromoOption = 'no_payments' | 'special_financing' | 'cash_rebate';
@@ -278,6 +297,50 @@ export function frozenPricingFromPdfSnapshot(snapshot: QuotePdfSnapshot) {
     dealerFee: snapshot.financing?.dealerFee,
     amountFinanced: snapshot.financing?.amountFinanced,
   };
+}
+
+/** Only complete corresponding recorded terms may bypass a live promotion outage. */
+export function hasCompleteFrozenQuoteSnapshot(frozen: unknown, snapshot: unknown): boolean {
+  if (!frozen || typeof frozen !== 'object' || !isQuotePdfSnapshot(snapshot)) return false;
+  const recorded = frozen as Record<string, unknown>;
+  if (!Number.isInteger(snapshot.includedCoverageYears) || snapshot.includedCoverageYears! < 3) return false;
+  if (!snapshot.validUntil) return false;
+  if (!['cash_purchase', 'standard_financing', 'special_financing'].includes(snapshot.paymentMethod || '')) return false;
+  if (snapshot.paymentMethod !== 'cash_purchase' && !snapshot.financing) return false;
+  if (snapshot.financing) {
+    const { amountFinanced, amortizationMonths, contractTermMonths, rate, dealerFee, downPayment } = snapshot.financing;
+    if (![amountFinanced, amortizationMonths, contractTermMonths].every(value => Number.isFinite(value) && value > 0)
+      || ![rate, dealerFee, downPayment].every(value => Number.isFinite(value) && value >= 0)) return false;
+    if (Math.abs(amountFinanced - (snapshot.pricing.totalCashPrice + dealerFee - downPayment!)) > 0.02) return false;
+  }
+  if ((snapshot.pricing.promoValue > 0 || snapshot.includedCoverageYears! > 3)
+    && (typeof snapshot.promotion?.name !== 'string' || !snapshot.promotion.name.trim()
+      || typeof snapshot.promotion.endDate !== 'string' || !snapshot.promotion.endDate
+      || !Number.isFinite(promoEndOfDay(snapshot.promotion.endDate).getTime()))) return false;
+  try {
+    if (!validateQuotePdfSnapshot(snapshot).isValid) return false;
+    const expected = frozenPricingFromPdfSnapshot(snapshot) as Record<string, unknown>;
+    const recordedTrade = recorded.appliedTradeCredit ?? 0;
+    if (typeof recordedTrade !== 'number' || !Number.isFinite(recordedTrade)
+      || typeof expected.appliedTradeCredit !== 'number' || !Number.isFinite(expected.appliedTradeCredit)
+      || Math.abs(recordedTrade - expected.appliedTradeCredit) > 0.02) return false;
+    const prices = ['motorMSRP', 'motorDiscount', 'adminDiscount', 'promoSavings', 'subtotal', 'hst', 'total', 'savings'];
+    if (snapshot.financing) prices.push('financingRate', 'financingAmortizationMonths', 'financingContractTermMonths', 'dealerFee', 'amountFinanced');
+    if (!prices.every(key => typeof recorded[key] === 'number' && Number.isFinite(recorded[key])
+      && typeof expected[key] === 'number' && Number.isFinite(expected[key])
+      && Math.abs(Number(recorded[key]) - Number(expected[key])) <= 0.02)) return false;
+    if (Math.abs(snapshot.pricing.motorSubtotal - (snapshot.pricing.msrp - snapshot.pricing.discount
+      - (snapshot.pricing.adminDiscount || 0) - snapshot.pricing.promoValue)) > 0.02) return false;
+    const quoteInstant = (value: string) => /^\d{4}-\d{2}-\d{2}$/.test(value)
+      ? promoEndOfDay(value).getTime() : new Date(value).getTime();
+    if (snapshot.validUntil && (typeof recorded.quoteExpiryDate !== 'string'
+      || !Number.isFinite(quoteInstant(snapshot.validUntil))
+      || quoteInstant(recorded.quoteExpiryDate) !== quoteInstant(snapshot.validUntil))) return false;
+    return ['promotionName', 'promotionEndDate', 'promotionCombinationMode', 'selectedPromoOption', 'selectedPromoValue', 'selectedPaymentMethod']
+      .every(key => recorded[key] === expected[key]);
+  } catch {
+    return false;
+  }
 }
 
 /**
