@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useAuth } from '@/components/auth/AuthProvider';
 import { useNoIndex } from '@/hooks/useNoIndex';
@@ -30,14 +30,22 @@ async function stripeClient(): Promise<StripeClient> {
 }
 
 export default function AgentDepositReviewPage() {
+  const { childId = '' } = useParams();
+  const { user } = useAuth();
+  // Remount the private review whenever its quote or authenticated owner changes.
+  return <DepositReviewSession key={`${user?.id ?? 'signed-out'}:${childId}`} childId={childId} />;
+}
+
+function DepositReviewSession({ childId }: { childId: string }) {
   useNoIndex();
   useEffect(() => {
     const previous = document.title;
     document.title = 'Review your reservation deposit | MercuryRepower';
     return () => { document.title = previous; };
   }, []);
-  const { childId = '' } = useParams();
   const { user, signIn } = useAuth();
+  const active = useRef(true);
+  useEffect(() => { active.current = true; return () => { active.current = false; }; }, []);
   const [email, setEmail] = useState(''); const [password, setPassword] = useState('');
   const [capability, setCapability] = useState('');
   const [review, setReview] = useState<Review | null>(null);
@@ -45,9 +53,13 @@ export default function AgentDepositReviewPage() {
   const [busy, setBusy] = useState(false); const [error, setError] = useState('');
 
   async function call(action: string, extra: Record<string, unknown> = {}) {
+    if (!active.current) throw new Error('Deposit review context changed.');
     const { data, error: failed } = await supabase.functions.invoke('native-deposit-review', {
       body: { action, child_id: childId, ...extra }, headers: capability ? { 'x-resume-token': capability } : {},
     });
+    // A response for an unmounted account/quote must not restore its private data
+    // or launch its bank verification in the new context.
+    if (!active.current) throw new Error('Deposit review context changed.');
     if (failed) {
       let message = 'Deposit review is unavailable. Refresh or contact HBW.';
       try { const body = await failed.context?.json(); if (typeof body?.error === 'string') message = body.error; } catch { /* safe fixed fallback */ }
@@ -58,11 +70,11 @@ export default function AgentDepositReviewPage() {
   }
   async function perform(task: () => Promise<void>) {
     setBusy(true); setError('');
-    try { await task(); } catch (e) { setError(e instanceof Error ? e.message : 'Please try again.'); }
-    finally { setBusy(false); }
+    try { await task(); } catch (e) { if (active.current) setError(e instanceof Error ? e.message : 'Please try again.'); }
+    finally { if (active.current) setBusy(false); }
   }
   async function refresh() {
-    const data = await call('review'); setReview(data); setAccepted(false); setPdfOpened(false);
+    const data = await call('review'); if (!active.current) return; setReview(data); setAccepted(false); setPdfOpened(false);
   }
 
   return <main className="mx-auto max-w-2xl px-4 py-10" data-clarity-mask="true">
@@ -95,6 +107,7 @@ export default function AgentDepositReviewPage() {
             {review.paid ? <p role="status" className="rounded-lg bg-green-50 p-4 text-green-900">Your {cad(review.amount_cents)} deposit is paid. HBW will confirm the next steps.</p> :
               review.receipt_reconciliation_required ? <p role="status">Your payment reached the processor, but HBW must verify the receipt. Contact (905) 342-2153 before starting any other payment.</p> : review.payment_status === 'expired' ? <p role="status">This review expired before payment. Ask your assistant for a fresh quote or contact HBW.</p> : review.payment_status === 'requires_action' ? <Button disabled={busy} onClick={() => void perform(async () => {
                 const data = await call('step_up'); const stripe = await stripeClient();
+                if (!active.current) return;
                 const result = await stripe.handleNextAction({ clientSecret: data.client_secret });
                 if (result.error) throw new Error(result.error.message || 'Payment verification did not finish.'); await refresh();
               })}>Verify payment securely</Button> : review.approved ? <p role="status">Deposit approved. Return to your assistant to finish securely with your wallet, then refresh this page for the receipt.</p> :
