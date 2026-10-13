@@ -69,7 +69,8 @@ Deno.serve(async req => {
       if (error || data !== true) return reply({ error: 'Review expired or already used. Refresh this page.' }, 409);
       return reply({ approved: true, amount_cents: intent.amount_cents, currency: 'CAD' });
     }
-    if (intent.status !== 'paid' && !await io.validateFreshIntent(intent, quote)) return reply({ error: 'The quote changed or expired. Review a fresh quote.' }, 409);
+    const existingAttempt = await io.loadAttempt(intent.id);
+    if (intent.status !== 'paid' && !existingAttempt?.submitted_at && !await io.validateFreshIntent(intent, quote)) return reply({ error: 'The quote changed or expired. Review a fresh quote.' }, 409);
     const { data: signed, error: pdfError } = await db.storage.from('quotes').createSignedUrl(intent.document_path, 120);
     if (pdfError || !signed?.signedUrl) return reply({ error: 'Quote document unavailable.' }, 503);
     const digest = await sha256Hex(new TextEncoder().encode(JSON.stringify([
@@ -88,6 +89,7 @@ Deno.serve(async req => {
       merchandise_cents: intent.merchandise_cents, currency: 'CAD', document_url: signed.signedUrl,
       terms: intent.policy_code === 'in_stock_refundable' ? DEPOSIT_POLICY_IN_STOCK_TEXT : DEPOSIT_POLICY_SPECIAL_ORDER_TEXT,
       approved: Boolean(enabled && intent.status === "approved" && approval && Date.parse(approval.expires_at) > Date.now()), paid: intent.status === 'paid',
+      receipt_reconciliation_required: intent.receipt_reconciliation_required === true,
       test_mode: Deno.env.get('STRIPE_SECRET_KEY')?.startsWith('sk_test_') === true,
       payment_status: approval && Date.parse(approval.expires_at) <= Date.now() && intent.status === 'approved' ? 'expired' : intent.status, nonce, review_digest: digest });
   } catch {

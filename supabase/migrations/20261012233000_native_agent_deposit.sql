@@ -38,6 +38,7 @@ CREATE TABLE public.native_deposit_intents (
     'paid',
     'canceled'
   )),
+  receipt_reconciliation_required boolean NOT NULL DEFAULT false,
   expires_at timestamptz NOT NULL,
   created_at timestamptz NOT NULL DEFAULT now(),
   updated_at timestamptz NOT NULL DEFAULT now()
@@ -899,7 +900,9 @@ BEGIN
   IF FOUND AND (
     v_quote.stripe_checkout_session_id IS NOT NULL
     OR COALESCE(v_quote.quote_data ->> 'stripe_session_id', '') <> ''
+    OR COALESCE(v_quote.quote_data ->> 'stripe_session_id', '') <> ''
     OR (v_quote.quote_data ->> 'payment_channel') IS DISTINCT FROM 'native_spt'
+    OR (v_quote.stripe_payment_intent_id IS NOT NULL AND v_quote.stripe_payment_intent_id IS DISTINCT FROM p_payment_intent_id)
   ) THEN
     RETURN false;
   END IF;
@@ -1117,8 +1120,16 @@ BEGIN
       quote_data = v_quote_data
     WHERE id = v_quote.id
       AND lead_source = 'deposit'
-      AND stripe_checkout_session_id IS NULL;
-    v_quote_id := v_quote.id;
+      AND stripe_checkout_session_id IS NULL
+      AND COALESCE(quote_data ->> 'stripe_session_id', '') = ''
+      AND quote_data ->> 'payment_channel' = 'native_spt'
+      AND (stripe_payment_intent_id IS NULL OR stripe_payment_intent_id = p_payment_intent_id)
+    RETURNING id INTO v_quote_id;
+    IF v_quote_id IS NULL THEN
+      -- An exception rolls back saved/attempt/intent/outbox changes too. Returning
+      -- false here would commit a partially paid pair.
+      RAISE EXCEPTION 'native customer paid claim lost ownership' USING ERRCODE = '40001';
+    END IF;
   END IF;
 
   UPDATE public.native_deposit_attempts
@@ -1126,7 +1137,7 @@ BEGIN
   WHERE id = p_attempt_id;
 
   UPDATE public.native_deposit_intents
-  SET status = 'paid'
+  SET status = 'paid', receipt_reconciliation_required = false
   WHERE id = p_intent_id;
 
   INSERT INTO public.deposit_email_deliveries (customer_quote_id, saved_quote_id, audience)

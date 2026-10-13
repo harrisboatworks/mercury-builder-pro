@@ -37,6 +37,7 @@ function setup() {
         seller_account_id: 'acct_synthetic', livemode: false, submitted_at: null };
       return { ...attempt, result: 'claimed', attempt_id: attempt.id };
     },
+    markReceiptReconciliation: vi.fn(async () => {}),
     observePaymentIntent: vi.fn(async () => true),
     bindAttempt: async (_id, id, status) => { if (id) attempt.stripe_payment_intent_id = id; attempt.status = status;
       if (status === 'submitted') attempt.submitted_at ??= now.toISOString(); return true; },
@@ -96,6 +97,12 @@ describe('native deposit boundary', () => {
     const result = await state.complete(); expect(result.ok).toBe(false); expect(state.stripe.createConfirmedPaymentIntent).not.toHaveBeenCalled();
     const other = structuredClone(payment); other.instruments[0].credential.token = 'spt_other';
     expect((await state.complete({ payment: other })).ok).toBe(false);
+  });
+  it('flags captured-but-unclaimed funds for operators without clearing success or recharging', async () => {
+    const state = setup(); state.io.claimPaid = vi.fn(async () => false);
+    const result = await state.complete(); expect(result.ok && result.checkout.payment_status).toBe('unknown');
+    expect(state.io.markReceiptReconciliation).toHaveBeenCalledWith(intent.id,'attempt');
+    expect(state.stripe.createConfirmedPaymentIntent).toHaveBeenCalledOnce();
   });
   it('retains a mismatched observed PI without promoting paid authority', async () => {
     const state = setup(); const wrong = await state.stripe.retrievePaymentIntent();

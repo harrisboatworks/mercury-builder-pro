@@ -84,6 +84,13 @@ export function nativeDepositIo(db: any): NativeCreateIo & NativeCompleteIo {
       p_processor_params_hash: args.processorParamsHash, p_amount_cents: args.amountCents,
       p_seller_account_id: args.sellerAccountId, p_livemode: args.livemode,
     }),
+    async markReceiptReconciliation(intentId, attemptId) {
+      const attempt = await one('native_deposit_attempts', 'id', attemptId);
+      if (attempt?.intent_id !== intentId || attempt.status !== 'succeeded') return;
+      const { error } = await db.from('native_deposit_intents').update({ receipt_reconciliation_required: true })
+        .eq('id', intentId).neq('status', 'paid');
+      if (error) throw new Error('native_receipt_reconciliation_unavailable');
+    },
     observePaymentIntent: (id, pi) => rpc('observe_native_deposit_payment_intent', { p_attempt_id: id, p_payment_intent_id: pi }),
     bindAttempt: (id, pi, status) => rpc('bind_native_deposit_payment_intent', {
       p_attempt_id: id, p_payment_intent_id: pi, p_status: status,

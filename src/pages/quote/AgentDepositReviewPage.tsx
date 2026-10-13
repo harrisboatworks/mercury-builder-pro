@@ -11,7 +11,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 type Review = {
   motor: string; amount_cents: number; merchandise_cents: number; currency: 'CAD';
   document_url: string; terms: string; approved: boolean; paid: boolean;
-  payment_status: string; test_mode?: boolean; nonce: string | null; review_digest: string;
+  payment_status: string; receipt_reconciliation_required?: boolean; test_mode?: boolean; nonce: string | null; review_digest: string;
 };
 const cad = (cents: number) => new Intl.NumberFormat('en-CA', { style: 'currency', currency: 'CAD' }).format(cents / 100);
 
@@ -88,7 +88,7 @@ export default function AgentDepositReviewPage() {
             <a className="inline-block underline" href={review.document_url} target="_blank" rel="noopener noreferrer" referrerPolicy="no-referrer" onClick={() => setPdfOpened(true)}>Open the exact quote PDF</a>
             <p className="text-sm"><Link className="underline" to="/terms" target="_blank" rel="noopener noreferrer">Deposit terms</Link> · <Link className="underline" to="/privacy" target="_blank" rel="noopener noreferrer">Privacy policy</Link></p>
             {review.paid ? <p role="status" className="rounded-lg bg-green-50 p-4 text-green-900">Your {cad(review.amount_cents)} deposit is paid. HBW will confirm the next steps.</p> :
-              review.payment_status === 'expired' ? <p role="status">This review expired before payment. Ask your assistant for a fresh quote or contact HBW.</p> : review.payment_status === 'requires_action' ? <Button disabled={busy} onClick={() => void perform(async () => {
+              review.receipt_reconciliation_required ? <p role="status">Your payment reached the processor, but HBW must verify the receipt. Contact (905) 342-2153 before starting any other payment.</p> : review.payment_status === 'expired' ? <p role="status">This review expired before payment. Ask your assistant for a fresh quote or contact HBW.</p> : review.payment_status === 'requires_action' ? <Button disabled={busy} onClick={() => void perform(async () => {
                 const data = await call('step_up'); const stripe = await stripeClient();
                 const result = await stripe.handleNextAction({ clientSecret: data.client_secret });
                 if (result.error) throw new Error(result.error.message || 'Payment verification did not finish.'); await refresh();

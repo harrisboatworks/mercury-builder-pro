@@ -103,6 +103,7 @@ export type NativeIntentRecord = {
   horsepower: number;
   express_verified: boolean;
   status: string;
+  receipt_reconciliation_required?: boolean;
   expires_at: string;
 };
 
@@ -687,6 +688,7 @@ export type NativeCompleteIo = {
     sellerAccountId: string;
     livemode: boolean;
   }) => Promise<AttemptClaimResult>;
+  markReceiptReconciliation: (intentId: string, attemptId: string) => Promise<void>;
   observePaymentIntent: (attemptId: string, paymentIntentId: string) => Promise<boolean>;
   bindAttempt: (attemptId: string, paymentIntentId: string | null, status: string) => Promise<boolean>;
   sendConfirmations: (savedQuoteId: string, paymentIntentId: string) => Promise<boolean>;
@@ -827,14 +829,16 @@ export async function runNativeDepositComplete(input: {
       assessed.status === "succeeded" ? "succeeded" : outcomeFromStatus(assessed.status).paymentStatus === "failed" ? "failed" : outcomeFromStatus(assessed.status).paymentStatus);
     if (!bound) return failure(503, "reconciliation_required", "Payment reconciliation is pending.");
     if (assessed.status === "succeeded") {
-      const paid = await input.io.claimPaid({
+      let paid = false;
+      try { paid = await input.io.claimPaid({
         intent,
         attemptId: attempt.id,
         paymentIntentId: assessed.id,
         notificationEventId: `native_complete:${attempt.id}`,
         paidAt: input.now.toISOString(),
-      });
+      }); } catch { /* hold verified processor funds until paired receipt is reconciled */ }
       if (!paid) {
+        await input.io.markReceiptReconciliation(intent.id, attempt.id);
         await input.io.bindAttempt(attempt.id, assessed.id, "unknown");
         return {
           ok: true,

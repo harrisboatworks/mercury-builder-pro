@@ -31,8 +31,10 @@ export async function handleNativeDepositEvent(db: any, event: any, env: { secre
   }
   if ((pi as any).amount_received !== intent.amount_cents) throw new Error('native_event_amount');
   if (!await io.bindAttempt(attempt.id, assessed.id, 'succeeded')) throw new Error('native_event_bind');
-  if (!await io.claimPaid({ intent, attemptId: attempt.id, paymentIntentId: assessed.id,
-    notificationEventId: event.id, paidAt: new Date().toISOString() })) throw new Error('native_event_claim');
+  let paid = false;
+  try { paid = await io.claimPaid({ intent, attemptId: attempt.id, paymentIntentId: assessed.id,
+    notificationEventId: event.id, paidAt: new Date().toISOString() }); } catch { /* preserve processor success */ }
+  if (!paid) { await io.markReceiptReconciliation(intent.id, attempt.id); throw new Error('native_event_claim'); }
   // Existing three-audience outbox owns idempotency, frozen contact and PDF.
   const { data, error } = await db.functions.invoke('send-deposit-confirmation-email', {
     body: { savedQuoteId: intent.saved_quote_id, nativePaymentIntentId: assessed.id },
