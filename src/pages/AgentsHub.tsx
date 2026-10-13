@@ -441,9 +441,18 @@ GET ${PUBLIC_QUOTE_API}?action=build_quote&motor_id=${EXAMPLE_MOTOR_ID}&format=j
           <CodeBlock language="bash" size="xs">{`npx -y @shopify/ucp-cli discover www.mercuryrepower.ca`}</CodeBlock>
           <p className="text-protected">
             <strong>Quote mode means:</strong> agents estimate motor prices plus HST and pickup. Installation, propellers and trade-in credits are excluded, and the dealer completes every sale with the buyer in person at Gores
-            Landing with valid government photo ID. Payment is never collected over UCP. This is the
+            Landing with valid government photo ID. Parent quote sessions do not collect payment. This is the
             spec-sanctioned quote-generation use case. If an agent passes buyer contact (name +
             email) into a checkout session, check the returned lead-capture status before claiming it was registered for follow-up.
+          </p>
+          <p className="text-protected">
+            <strong>Buyer-approved reservation deposits:</strong> Meta Muse and other assistants can inspect the
+            live REST/MCP tool catalog for <code>create_deposit_checkout</code>. When available, it prepares a separate
+            deposit child for an owned saved quote. The buyer must sign in, review the exact amount and terms, and
+            approve on the website. A compatible issuer wallet supplies a capped, expiring Stripe Shared Payment
+            Token and handles bank verification; <code>get_checkout</code> and <code>complete_checkout</code> use the
+            returned child ID. Agents cannot approve for the buyer. Hosted Stripe Checkout with Link remains
+            available when eligible. A paid deposit does not complete the motor purchase or reserve stock.
           </p>
           <p className="text-protected">
             UCP-aligned capabilities at HBW also surface via MCP: catalog search via{' '}
