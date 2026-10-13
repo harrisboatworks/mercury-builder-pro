@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { frozenPricingFromPdfSnapshot, hasCompleteFrozenQuoteSnapshot, isQuotePdfSnapshot, type QuotePdfSnapshot } from '../quote-pdf-data';
+import { buildQuotePdfFinancing, frozenPricingFromPdfSnapshot, hasCompleteFrozenQuoteSnapshot, isQuotePdfSnapshot, type QuotePdfSnapshot } from '../quote-pdf-data';
 const snapshot: QuotePdfSnapshot = {
  version:1,createdAt:'2026-10-13T12:00:00Z',validUntil:'2026-10-30',
  motor:{model:'9.9 MH FourStroke',hp:9.9,msrp:3860,modelYear:2026,category:'FourStroke'},
@@ -40,6 +40,14 @@ describe('recorded quote readiness during promotion outage',()=>{
   const frozen=frozenPricingFromPdfSnapshot(trade);
   expect(hasCompleteFrozenQuoteSnapshot(frozen,trade)).toBe(true);
   expect(hasCompleteFrozenQuoteSnapshot({...frozen,appliedTradeCredit:200},trade)).toBe(false);
+ });
+ it.each(['standard_financing','special_financing'] as const)('requires complete financing terms for %s',paymentMethod=>{
+  const missing={...snapshot,paymentMethod};
+  expect(hasCompleteFrozenQuoteSnapshot(frozenPricingFromPdfSnapshot(missing),missing)).toBe(false);
+  const complete={...missing,financing:buildQuotePdfFinancing({amountFinanced:3049.87,rate:7.99,amortizationMonths:60,paymentMethod,dealerFee:0,downPayment:0})};
+  expect(hasCompleteFrozenQuoteSnapshot(frozenPricingFromPdfSnapshot(complete),complete)).toBe(true);
+  const noDown={...complete,financing:{...complete.financing,downPayment:undefined}};
+  expect(hasCompleteFrozenQuoteSnapshot(frozenPricingFromPdfSnapshot(noDown as QuotePdfSnapshot),noDown)).toBe(false);
  });
  it('does not substitute different promotion metadata',()=>expect(hasCompleteFrozenQuoteSnapshot({...frozenPricingFromPdfSnapshot(snapshot),promotionEndDate:'2026-11-30'},snapshot)).toBe(false));
 });
