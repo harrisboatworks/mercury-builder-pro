@@ -1,4 +1,5 @@
 import { mcpToolAnnotations } from '../_shared/mcp-tool-annotations.ts';
+import { corsHeaders as sharedCorsHeaders } from '../_shared/cors.ts';
 // UCP (Universal Commerce Protocol) checkout service for Harris Boat Works.
 // Spec version 2026-04-08 (ucp.dev). QUOTE MODE by design:
 //   - payment is never collected (spec-sanctioned: "e.g., quote generation")
@@ -13,7 +14,8 @@ import { mcpToolAnnotations } from '../_shared/mcp-tool-annotations.ts';
 // TWO TRANSPORTS on this endpoint:
 //   REST: POST/GET/PUT /checkout-sessions[, /{id}, /{id}/complete, /{id}/cancel]
 //   MCP (JSON-RPC 2.0 POST to bare endpoint): initialize | tools/list | tools/call
-//     tools: create_checkout, get_checkout, update_checkout, complete_checkout, cancel_checkout
+//     tools: create_checkout, get_checkout, update_checkout, complete_checkout,
+//            cancel_checkout, prepare_motor_reservation (read-only custom result)
 
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2.45.0";
 import { sanitizeAgentNote } from "../_shared/sanitize.ts";
@@ -31,6 +33,53 @@ import {
   UCP_QUOTE_SCOPE_NOTICE,
   UcpClientError,
 } from "../_shared/ucp-checkout-contract.ts";
+import {
+  MOTOR_RESERVATION_PREPARATION_OUTPUT_SCHEMA,
+  runMotorReservationPreparation,
+} from "../_shared/motor-reservation-intent.ts";
+
+import { nativeDepositCheckoutEnabled, isNativeDepositChildId, runNativeDepositCreate, runNativeDepositRead, runNativeDepositComplete } from '../_shared/native-deposit-checkout.ts';
+import { nativeActorFromRequest, nativeDepositIo } from '../_shared/native-deposit-io.ts';
+import { createNativeStripePreviewClient } from '../_shared/native-stripe-preview.ts';
+
+async function nativeRequestBody(req: Request): Promise<unknown> {
+  if (Number(req.headers.get('content-length') || 0) > 32768)
+    throw { status: 400, code: 'invalid_request', message: 'Native checkout request is too large.' };
+  try { return await req.json(); } catch {
+    // Do not log JSON-parser messages containing credential fragments.
+    throw { status: 400, code: 'invalid_request', message: 'Body must be valid JSON.' };
+  }
+}
+
+async function opNative(req: Request, supabase: any, id: string, operation: 'create' | 'read' | 'complete', caller: unknown = {}) {
+  const enabled = nativeDepositCheckoutEnabled(Deno.env.get('NATIVE_DEPOSIT_ENABLED'));
+  if (!enabled && operation === 'create')
+    throw { status: 404, code: 'not_available', message: 'Native deposit checkout is not enabled.' };
+  const io = nativeDepositIo(supabase);
+  const actor = await nativeActorFromRequest(supabase, req);
+  if (!enabled && operation === 'complete') {
+    const existing = await io.loadIntentByChild(id);
+    const attempt = existing ? await io.loadAttempt(existing.id) : null;
+    if (existing?.status !== 'paid' && !attempt?.submitted_at) throw { status: 404, code: 'not_available', message: 'New native payments are disabled.' };
+  }
+  const result = operation === 'create'
+    ? await runNativeDepositCreate({ caller, routeParentId: id, actor, now: new Date(), childId: 'ndc_' + crypto.randomUUID().replaceAll('-', ''), intentId: crypto.randomUUID(), io })
+    : operation === 'read' ? await runNativeDepositRead({ childId: id, actor, io })
+    : await runNativeDepositComplete({ caller, childId: id, actor, now: new Date(),
+      sellerAccountId: Deno.env.get('NATIVE_STRIPE_SELLER_ACCOUNT') || null,
+      livemode: Deno.env.get('STRIPE_SECRET_KEY')?.startsWith('sk_live_') ?? null,
+      openStripe: () => createNativeStripePreviewClient({ secretKey: Deno.env.get('STRIPE_SECRET_KEY') || '', sellerAccountId: Deno.env.get('NATIVE_STRIPE_SELLER_ACCOUNT') || '' }), io });
+  if (!result.ok) throw { status: result.status, code: result.code, message: result.message };
+  const checkout = result.checkout;
+  const reviewOrigin = Deno.env.get('NATIVE_DEPOSIT_REVIEW_ORIGIN');
+  if (reviewOrigin && Deno.env.get('DEPOSIT_STAGING_MODE') === '1'
+    && Deno.env.get('SUPABASE_URL') === 'https://filwwwqgqtwxjxkksmxy.supabase.co') {
+    const ownedReviewUrl = `${new URL(reviewOrigin).origin}/quote/agent-deposit/${checkout.id}`;
+    if (checkout.continue_url) checkout.continue_url = ownedReviewUrl;
+    if (checkout.order) checkout.order.permalink_url = ownedReviewUrl;
+  }
+  return result;
+}
 
 const UCP_VERSION = "2026-04-08";
 const SITE = PUBLIC_SITE_URL;
@@ -41,7 +90,7 @@ const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Methods": "GET, POST, PUT, OPTIONS",
   "Access-Control-Allow-Headers":
-    "authorization, x-client-info, apikey, content-type, ucp-agent, idempotency-key, signature, signature-input, request-id, mcp-session-id",
+    sharedCorsHeaders['Access-Control-Allow-Headers'] + ", ucp-agent, idempotency-key, signature, signature-input, request-id, mcp-session-id, x-resume-token",
 };
 
 const ACTIVE_CAPABILITIES = [
@@ -370,6 +419,36 @@ async function opCancel(supabase: any, existing: any, profileUrl: string | null)
   return existing;
 }
 
+async function loadReservationMotor(supabase: any, motorId: string) {
+  const { data, error } = await supabase
+    .from("motor_models")
+    .select("id, model, model_display, model_number, mercury_model_no, family, horsepower, msrp, sale_price, dealer_price, base_price, manual_overrides, availability, in_stock, stock_quantity")
+    .eq("id", motorId)
+    .or(PUBLIC_CATALOG_AVAILABILITY_OR)
+    .limit(1);
+  if (error) {
+    throw { status: 503, code: "catalog_unavailable", message: "Motor catalog is temporarily unavailable. Retry later." };
+  }
+  return data?.[0] ?? null;
+}
+
+async function opPrepareReservation(supabase: any, caller: unknown, routeSessionId?: string | null) {
+  return await runMotorReservationPreparation({
+    caller,
+    routeSessionId,
+    io: {
+      loadSession: async (sessionId) => {
+        const { data, error } = await supabase.from("ucp_checkout_sessions")
+          .select("id, status, payload, expires_at").eq("id", sessionId).limit(1);
+        if (error) throw { status: 503, code: "session_unavailable", message: "Checkout session is temporarily unavailable." };
+        const row = data?.[0];
+        return row ? { ...row.payload, id: row.id, status: row.status, expires_at: row.expires_at } : null;
+      },
+      loadMotor: (motorId) => loadReservationMotor(supabase, motorId),
+    },
+  });
+}
+
 // ---------- MCP layer ----------
 const MCP_TOOLS = [
   {
@@ -433,6 +512,22 @@ const MCP_TOOLS = [
     inputSchema: { type: "object", properties: { meta: { type: "object" }, id: { type: "string" } }, required: ["id"] },
     outputSchema: { $ref: `https://ucp.dev/${UCP_VERSION}/schemas/shopping/checkout.json` },
   },
+  {
+    name: "prepare_motor_reservation",
+    annotations: mcpToolAnnotations("read"),
+    description: "Read-only preparation for one explicit motor_reservation deposit estimate on an existing UCP quote session. Accepts only the session reference and operation. Returns a custom preparation result in CAD cents. Does not collect payment, reserve stock, capture a lead, save the session, or complete checkout.",
+    inputSchema: {
+      type: "object",
+      additionalProperties: false,
+      properties: {
+        id: { type: "string", description: "Existing UCP checkout session reference." },
+        operation: { const: "motor_reservation" },
+        meta: { type: "object" },
+      },
+      required: ["id", "operation"],
+    },
+    outputSchema: MOTOR_RESERVATION_PREPARATION_OUTPUT_SCHEMA,
+  },
 ];
 
 function rpcResult(id: any, result: unknown) {
@@ -465,7 +560,10 @@ async function handleMcp(req: Request, supabase: any, payload: any): Promise<Res
   }
 
   if (method === "tools/list") {
-    return json(rpcResult(id, { tools: MCP_TOOLS }));
+    return json(rpcResult(id, { tools: [...MCP_TOOLS, ...(nativeDepositCheckoutEnabled(Deno.env.get('NATIVE_DEPOSIT_ENABLED')) ? [{
+      name: 'create_deposit_checkout', description: 'Staged owned reservation-deposit child. Buyer review required before payment.',
+      inputSchema: { type: 'object', additionalProperties: false, required: ['id', 'saved_quote_id', 'operation'], properties: { id: { type: 'string' }, saved_quote_id: { type: 'string' }, operation: { const: 'motor_reservation' } } },
+    }] : [])] }));
   }
 
   if (method === "tools/call") {
@@ -477,6 +575,12 @@ async function handleMcp(req: Request, supabase: any, payload: any): Promise<Res
       return json(rpcError(id, -32000, `Platform profile validation failed (${profileCheck.reject.code}).`), profileCheck.reject.status);
     }
     try {
+      if (name === 'create_deposit_checkout' || (isNativeDepositChildId(args.id || '') && ['get_checkout', 'complete_checkout', 'update_checkout', 'cancel_checkout'].includes(name))) {
+        if (!['create_deposit_checkout', 'get_checkout', 'complete_checkout'].includes(name)) throw { status: 409, code: 'native_immutable', message: 'Deposit checkout is immutable.' };
+        const { id: nativeId, ...caller } = args;
+        const result = await opNative(req, supabase, nativeId, name === 'create_deposit_checkout' ? 'create' : name === 'get_checkout' ? 'read' : 'complete', caller);
+        return json(rpcResult(id, toolResult(result.checkout)), result.status);
+      }
       switch (name) {
         case "create_checkout": {
           const checkout = await opCreate(supabase, args.checkout || {}, profileCheck.warning, profileUrl);
@@ -504,6 +608,14 @@ async function handleMcp(req: Request, supabase: any, payload: any): Promise<Res
           if (!existing) return json(rpcError(id, -32004, `No checkout session ${args.id}.`), 404);
           const checkout = await opCancel(supabase, existing, profileUrl);
           return json(rpcResult(id, toolResult(checkout)));
+        }
+        case "prepare_motor_reservation": {
+          const prepared = await opPrepareReservation(supabase, args);
+          if (prepared.ok === false) {
+            const rpcCode = prepared.status === 404 ? -32004 : -32000;
+            return json(rpcError(id, rpcCode, `${prepared.code}: ${prepared.message}`), prepared.status);
+          }
+          return json(rpcResult(id, toolResult(prepared.preparation)));
         }
         default:
           return json(rpcError(id, -32601, `Unknown tool: ${name}`), 404);
@@ -560,8 +672,12 @@ Deno.serve(async (req) => {
             update: "PUT /checkout-sessions/{id}",
             complete: "POST /checkout-sessions/{id}/complete",
             cancel: "POST /checkout-sessions/{id}/cancel",
+            reservation_preparation: "POST /checkout-sessions/{id}/reservation-preparation",
           },
-          mcp: { methods: ["initialize", "tools/list", "tools/call"], tools: MCP_TOOLS.map((t) => t.name) },
+          mcp: { methods: ["initialize", "tools/list", "tools/call"], tools: [...MCP_TOOLS, ...(nativeDepositCheckoutEnabled(Deno.env.get('NATIVE_DEPOSIT_ENABLED')) ? [{
+      name: 'create_deposit_checkout', description: 'Staged owned reservation-deposit child. Buyer review required before payment.',
+      inputSchema: { type: 'object', additionalProperties: false, required: ['id', 'saved_quote_id', 'operation'], properties: { id: { type: 'string' }, saved_quote_id: { type: 'string' }, operation: { const: 'motor_reservation' } } },
+    }] : [])].map((t) => t.name) },
         },
         notes: [
           "Quote mode: payment is never collected via UCP. Sessions escalate to dealer confirmation via continue_url.",
@@ -569,6 +685,7 @@ Deno.serve(async (req) => {
           "Buyer contact attempts lead capture. Only report registration when ca.mercuryrepower.lead_captured is true.",
           "Pickup only at Gores Landing, ON, by the buyer in person with valid government photo ID.",
           "Item ids are Mercury motor ids from the HBW catalog (see search_motors on the MCP server or /pricing-reference).",
+          "prepare_motor_reservation and POST /checkout-sessions/{id}/reservation-preparation are read-only. They return a deposit estimate for buyer review and do not collect payment or reserve stock.",
         ],
         docs: `${SITE}/agents`,
       });
@@ -598,6 +715,34 @@ Deno.serve(async (req) => {
     }
 
     const id = route[1];
+    if (route.length === 3 && route[2] === 'deposits' && req.method === 'POST') {
+      const result = await opNative(req, supabase, id, 'create', await nativeRequestBody(req));
+      return json(result.checkout, result.status);
+    }
+    if (isNativeDepositChildId(id || '')) {
+      if (route.length === 2 && req.method === 'GET') {
+        const result = await opNative(req, supabase, id, 'read'); return json(result.checkout, result.status);
+      }
+      if (route.length === 3 && route[2] === 'complete' && req.method === 'POST') {
+        const result = await opNative(req, supabase, id, 'complete', await nativeRequestBody(req)); return json(result.checkout, result.status);
+      }
+      // Immutable child. An in-flight or paid payment cannot be canceled by the
+      // generic quote cancellation path. Cancellation/refund needs reconciliation.
+      return err(409, 'native_immutable', 'Deposit checkout changes require buyer review or payment reconciliation.');
+    }
+
+    if (route[2] === "reservation-preparation") {
+      if (route.length !== 3 || req.method !== "POST") {
+        return err(405, "method_not_allowed", "Reservation preparation uses POST /checkout-sessions/{id}/reservation-preparation.");
+      }
+      if (!id) return err(400, "invalid_request", "Missing checkout session id.");
+      let body: unknown;
+      try { body = await req.json(); } catch { return err(400, "invalid_request", "Body must be JSON."); }
+      const prepared = await opPrepareReservation(supabase, body, id);
+      if (prepared.ok === false) return err(prepared.status, prepared.code, prepared.message);
+      return json(prepared.preparation);
+    }
+
     if (!id) return err(400, "invalid_request", "Missing checkout session id.");
     const existing = await loadSession(supabase, id);
     if (!existing) return err(404, "not_found", `No checkout session ${id}.`);

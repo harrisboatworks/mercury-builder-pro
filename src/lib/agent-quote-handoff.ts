@@ -65,6 +65,7 @@ export interface ParsedAgentQuoteHandoff {
   tradeCondition?: TradeInHandoffCondition;
   tradeEngineType?: TradeInHandoffEngineType;
   ucpCheckoutRef?: string;
+  reservationPlanning?: true;
 }
 
 export interface AgentQuoteHandoffApplyOptions {
@@ -143,6 +144,15 @@ export function parseTradeEngineTypeParam(raw: string | null): TradeInHandoffEng
   return TRADE_IN_HANDOFF_ENGINE_TYPES.find((engineType) => engineType === trimmed);
 }
 
+export function parseReservationHandoffFlag(raw: string | null): true | undefined {
+  if (raw !== '1') return undefined;
+  return true;
+}
+
+export function isReservationPlanningHandoff(handoff: ParsedAgentQuoteHandoff): boolean {
+  return handoff.reservationPlanning === true && typeof handoff.ucpCheckoutRef === 'string' && UCP_REF_RE.test(handoff.ucpCheckoutRef);
+}
+
 export function parseAgentQuoteHandoff(
   searchParams: URLSearchParams,
   currentYear = new Date().getFullYear(),
@@ -168,6 +178,7 @@ export function parseAgentQuoteHandoff(
   const trustedUcp = ucpCheckoutRef && UCP_REF_RE.test(ucpCheckoutRef)
     ? ucpCheckoutRef
     : undefined;
+  const reservationPlanning = parseReservationHandoffFlag(searchParams.get('reservation'));
 
   const parsed: ParsedAgentQuoteHandoff = {};
   if (motorId) parsed.motorId = motorId;
@@ -179,6 +190,7 @@ export function parseAgentQuoteHandoff(
   if (tradeCondition) parsed.tradeCondition = tradeCondition;
   if (tradeEngineType) parsed.tradeEngineType = tradeEngineType;
   if (trustedUcp) parsed.ucpCheckoutRef = trustedUcp;
+  if (reservationPlanning && trustedUcp) parsed.reservationPlanning = reservationPlanning;
   return parsed;
 }
 

@@ -1,10 +1,19 @@
+import { resolveDepositStagingOrigin } from './deposit-staging-origin.ts';
 // Shared CORS boundary for browser-callable edge functions. This is not
 // authentication: non-browser clients can forge Origin and Referer headers.
 import { resolveAllowedBrowserOrigin } from "./browser-origin.ts";
+import { corsHeaders as sharedCorsAllowList } from "./cors.ts";
+
+function allowedRuntimeOrigin(raw: string | null | undefined): string | null {
+  const ordinary = resolveAllowedBrowserOrigin(raw);
+  if (ordinary || typeof Deno === 'undefined') return ordinary;
+  return resolveDepositStagingOrigin(raw, { DEPOSIT_STAGING_MODE: Deno.env.get('DEPOSIT_STAGING_MODE'),
+    SUPABASE_URL: Deno.env.get('SUPABASE_URL'), NATIVE_DEPOSIT_REVIEW_ORIGIN: Deno.env.get('NATIVE_DEPOSIT_REVIEW_ORIGIN') });
+}
 
 export function isAllowedOrigin(req: Request): boolean {
   const origin = req.headers.get('origin') || req.headers.get('referer') || '';
-  return resolveAllowedBrowserOrigin(origin) !== null;
+  return allowedRuntimeOrigin(origin) !== null;
 }
 
 export function forbiddenOriginResponse(corsHeaders: Record<string, string>) {
@@ -12,6 +21,26 @@ export function forbiddenOriginResponse(corsHeaders: Record<string, string>) {
     JSON.stringify({ error: 'Forbidden origin' }),
     { status: 403, headers: { ...corsHeaders, 'Content-Type': 'application/json' } },
   );
+}
+
+export function authenticatedBrowserCors(req: Request): {
+  allowedOrigin: string | null;
+  headers: Record<string, string>;
+  forbiddenOrigin: boolean;
+} {
+  const rawOrigin = req.headers.get("origin");
+  const allowedOrigin = allowedRuntimeOrigin(rawOrigin);
+  const forbiddenOrigin = Boolean(rawOrigin) && !allowedOrigin;
+  const headers: Record<string, string> = {
+    "Access-Control-Allow-Headers": sharedCorsAllowList["Access-Control-Allow-Headers"],
+    "Access-Control-Allow-Methods": "POST, OPTIONS",
+    Vary: "Origin",
+    "Content-Type": "application/json",
+  };
+  if (allowedOrigin) {
+    headers["Access-Control-Allow-Origin"] = allowedOrigin;
+  }
+  return { allowedOrigin, headers, forbiddenOrigin };
 }
 
 // Server-to-server callers (ElevenLabs MCP) send no Origin. A service-role

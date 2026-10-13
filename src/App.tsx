@@ -55,6 +55,7 @@ const QuoteSummaryPage = lazy(() => import("@/pages/quote/QuoteSummaryPage"));
 const SchedulePage = lazy(() => import("@/pages/quote/SchedulePage"));
 const SavedQuotePage = lazy(() => import("@/pages/quote/SavedQuotePage"));
 const QuoteSuccessPage = lazy(() => import("@/pages/quote/QuoteSuccessPage"));
+const AgentDepositReviewPage = lazy(() => import("@/pages/quote/AgentDepositReviewPage"));
 const QuoteConsultationDocumentPage = lazy(() => import("@/pages/quote/QuoteConsultationDocumentPage"));
 const PromoSelectionPage = lazy(() => import("@/pages/quote/PromoSelectionPage"));
 const MyQuotes = lazy(() => import("@/pages/account/MyQuotesPage"));
@@ -91,7 +92,6 @@ const AdminQuoteActivity = lazy(() => import("./pages/AdminQuoteActivity"));
 const UpdateMotorImages = lazy(() => import("./components/motors/UpdateMotorImages"));
 
 // Payment pages
-const Deposits = lazy(() => import("./pages/Deposits"));
 const PaymentSuccess = lazy(() => import("./pages/PaymentSuccess"));
 const PaymentCanceled = lazy(() => import("./pages/PaymentCanceled"));
 
@@ -282,6 +282,7 @@ function AnimatedRoutes() {
         <Route path="/quote/summary" element={<QuoteSummaryPage />} />
         <Route path="/quote/schedule" element={<SchedulePage />} />
         <Route path="/quote/success" element={<QuoteSuccessPage />} />
+        <Route path="/quote/agent-deposit/:childId" element={<AgentDepositReviewPage />} />
         <Route path="/quote/document" element={<QuoteConsultationDocumentPage />} />
         <Route path="/quote/saved/:quoteId" element={<SavedQuotePage />} />
         
@@ -515,7 +516,7 @@ function AnimatedRoutes() {
         />
         
         {/* Payment Routes */}
-        <Route path="/deposits" element={<Deposits />} />
+        <Route path="/deposits" element={<Navigate to="/quote" replace />} />
         <Route path="/payment-success" element={<PaymentSuccess />} />
         <Route path="/payment-canceled" element={<PaymentCanceled />} />
         

@@ -241,7 +241,7 @@ export function Mercury99MHSalePage({
                       Skip installation and options. Review the motor-only total, then secure this model with a ${depositAmount.toLocaleString()} reservation deposit.
                     </p>
                     <p className="mt-2 text-xs leading-relaxed text-white/80">
-                      Fully refundable until HBW confirms the exact motor, price, availability and ETA, and you approve the order in writing. After written approval, the deposit becomes non-refundable and is credited to your final invoice.
+                      If the motor is in stock, the deposit is refundable. If the motor is out of stock or a special order, the deposit stays refundable until HBW confirms the exact motor, price, availability and ETA, and you approve the order in writing. Once HBW places the order after that written approval, the deposit becomes non-refundable and is credited to the final invoice.
                     </p>
                     <Link
                       to={quoteUrl}
@@ -544,7 +544,7 @@ export function Mercury99MHSalePage({
                 Jump straight to a motor-only total and reserve this exact model with a ${depositAmount.toLocaleString()} deposit. HBW confirms ETA before anything is ordered.
               </p>
               <p className="mt-3 max-w-2xl text-sm leading-relaxed text-white/85">
-                The ${depositAmount.toLocaleString()} deposit is fully refundable until HBW confirms the exact motor, price, availability and ETA, and you approve the order in writing. After written approval, it becomes non-refundable and is credited to your final invoice.
+                If the motor is in stock, the deposit is refundable. If the motor is out of stock or a special order, the deposit stays refundable until HBW confirms the exact motor, price, availability and ETA, and you approve the order in writing. Once HBW places the order after that written approval, the deposit becomes non-refundable and is credited to the final invoice.
               </p>
             </div>
             <div className="flex flex-col gap-3 sm:flex-row md:flex-col">

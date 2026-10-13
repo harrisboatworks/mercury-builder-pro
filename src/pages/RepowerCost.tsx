@@ -89,7 +89,7 @@ export default function RepowerCost() {
         {
           question: 'Are there financing options for a Mercury repower?',
           answer:
-            "Yes. Harris Boat Works arranges financing OAC through Dealerplan Peterborough and participating Canadian lenders. Current rates and your estimated monthly payment are posted live in the quote builder. Deposits are $200 for portable motors, $500 for mid-range HP, and $1,000 for big-block, Pro XS, or Verado. Call (905) 342-2153 to start an application.",
+            "Yes. Harris Boat Works arranges financing OAC through Dealerplan Peterborough and participating Canadian lenders. Current rates and your estimated monthly payment are posted live in the quote builder. Deposits are $200 up to 25 HP, $500 over 25 through 115 HP, and $1,000 over 115 HP. The model-specific Mercury 9.9 MH offer for model 1A10201LK uses a $100 deposit. Call (905) 342-2153 to start an application.",
         },
         {
           question: 'Can I get a written quote before I drive out?',

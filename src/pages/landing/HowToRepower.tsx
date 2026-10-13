@@ -26,7 +26,7 @@ const steps = [
   {
     icon: CreditCard,
     title: 'Place Your Deposit',
-    body: 'Secure your motor with a refundable deposit ($200–$1,000 depending on HP) paid online. This locks in the price, holds your spot in the install queue, and starts the order if the motor isn\'t already in stock.'
+    body: 'Pay the deposit shown on your quote online ($200 to $1,000 depending on HP, or $100 for the model-specific 9.9 MH offer). The deposit holds the quoted price. It does not start a factory order. If the motor is in stock, the deposit is refundable. If the motor is out of stock or a special order, the deposit stays refundable until HBW confirms the exact motor, price, availability and ETA, and you approve the order in writing. Once HBW places the order after that written approval, the deposit becomes non-refundable and is credited to the final invoice.'
   },
   {
     icon: CalendarDays,
