@@ -1857,6 +1857,10 @@
       "destination": "/index.html"
     },
     {
+      "source": "/quote/agent-deposit/:childId",
+      "destination": "/index.html"
+    },
+    {
       "source": "/quote/saved/:quoteId",
       "destination": "/index.html"
     },
@@ -2476,6 +2480,19 @@
         {
           "key": "Cache-Control",
           "value": "no-store"
+        }
+      ]
+    },
+    {
+      "source": "/quote/agent-deposit/:childId",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "private, no-store"
         }
       ]
     }

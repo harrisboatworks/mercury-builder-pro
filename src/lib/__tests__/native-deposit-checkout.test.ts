@@ -70,6 +70,7 @@ describe('native deposit boundary', () => {
     expect(inspectNativeDepositCompleteCaller({ payment: { ...payment, approved: true } }).ok).toBe(false);
     const form = nativePaymentIntentForm({ amountCents: 50000, tokenId: 'spt_synthetic', intentId: intent.id, savedQuoteId: saved, motorId: motor, childId: intent.child_id });
     expect(form['payment_method_data[shared_payment_granted_token]']).toBe('spt_synthetic'); expect(form.shared_payment_granted_token).toBeUndefined();
+    expect(form['payment_method_types[0]']).toBeUndefined();
   });
   it('projects only the deposit, with no token, buyer or fake Checkout identity', () => {
     const result = projectNativeDepositCheckout({ intent, phase: 'requires_escalation', paymentStatus: 'not_started' });

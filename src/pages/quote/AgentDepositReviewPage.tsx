@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useAuth } from '@/components/auth/AuthProvider';
 import { useNoIndex } from '@/hooks/useNoIndex';
@@ -31,6 +31,11 @@ async function stripeClient(): Promise<StripeClient> {
 
 export default function AgentDepositReviewPage() {
   useNoIndex();
+  useEffect(() => {
+    const previous = document.title;
+    document.title = 'Review your reservation deposit | MercuryRepower';
+    return () => { document.title = previous; };
+  }, []);
   const { childId = '' } = useParams();
   const { user, signIn } = useAuth();
   const [email, setEmail] = useState(''); const [password, setPassword] = useState('');

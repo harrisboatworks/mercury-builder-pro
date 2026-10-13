@@ -299,7 +299,6 @@ export function nativePaymentIntentForm(input: {
     amount: String(input.amountCents),
     currency: "cad",
     confirm: "true",
-    "payment_method_types[0]": "card",
     "payment_method_data[shared_payment_granted_token]": input.tokenId,
     "metadata[payment_channel]": NATIVE_DEPOSIT_CHANNEL,
     "metadata[payment_type]": "motor_deposit",
