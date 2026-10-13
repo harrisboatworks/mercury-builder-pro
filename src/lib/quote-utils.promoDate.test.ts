@@ -11,6 +11,10 @@ import { daysUntil, formatExpiry, isPromotionLive as reexportedLive, promoEndOfD
 
 describe('quote promotion validity', () => {
   const now = new Date('2026-10-13T15:00:00Z');
+  it('preserves Ontario calendar semantics for legacy date-only snapshot and frozen expiry', () => {
+    expect(resolveQuoteValidUntil({ snapshotExpiry: '2026-10-30', now }).toISOString()).toBe('2026-10-31T03:59:59.999Z');
+    expect(resolveQuoteValidUntil({ frozenExpiry: '2026-12-31', now }).toISOString()).toBe('2027-01-01T04:59:59.999Z');
+  });
   it('caps a snapshot created before promotions loaded at the Ontario deadline', () => {
     const snapshotExpiry = resolveQuoteValidUntil({ now }).toISOString();
     expect(resolveQuoteValidUntil({ snapshotExpiry, promotionEndDate: '2026-10-30', now }).toISOString())

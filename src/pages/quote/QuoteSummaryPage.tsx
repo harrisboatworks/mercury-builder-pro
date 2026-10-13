@@ -69,6 +69,7 @@ import {
   frozenPricingFromPdfSnapshot,
   isQuotePdfSnapshot,
   QUOTE_PDF_SNAPSHOT_VERSION,
+  resolveQuoteIncludedCoverageYears,
   resolveQuoteMotorImage,
   type QuotePdfSnapshot,
 } from '@/lib/quote-pdf-data';
@@ -116,11 +117,16 @@ export default function QuoteSummaryPage() {
   const baseCoverageYears = 3;
   const currentPromotion = getAppliedPromotion(promotions);
   const appliedPromotion = suppressAdditionalPromoSavings ? null : currentPromotion;
-  const promoYears = getAppliedWarrantyExtraYears(appliedPromotion);
   const currentCoverageYears = useMemo(
-    () => Math.min(baseCoverageYears + promoYears, 8),
-    [promoYears],
+    () => resolveQuoteIncludedCoverageYears({
+      frozen: Boolean(state.frozenPricing),
+      snapshotYears: state.pdfSnapshot?.includedCoverageYears,
+      warrantyConfig: state.warrantyConfig,
+      liveYears: Math.min(baseCoverageYears + getAppliedWarrantyExtraYears(appliedPromotion), 8),
+    }),
+    [appliedPromotion, state.frozenPricing, state.pdfSnapshot?.includedCoverageYears, state.warrantyConfig],
   );
+  const promoYears = Math.max(0, currentCoverageYears - baseCoverageYears);
   const [isGeneratingPDF, setIsGeneratingPDF] = useState<boolean>(false);
   const isMounted = true; // Render immediately, no artificial delay
   const [showSaveDialog, setShowSaveDialog] = useState(false);
@@ -596,9 +602,9 @@ export default function QuoteSummaryPage() {
       } : {}),
       paymentMethod,
       promotion: {
-        name: appliedPromotion ? (frozen ? frozen.promotionName : (appliedPromotion.name ?? existing?.promotion?.name)) : undefined,
-        endDate: appliedPromotion ? (frozen ? frozen.promotionEndDate : (appliedPromotion.end_date ?? existing?.promotion?.endDate)) : undefined,
-        combinationMode: appliedPromotion ? (frozen?.promotionCombinationMode ?? appliedPromotion.promo_options?.type ?? existing?.promotion?.combinationMode) : undefined,
+        name: frozen ? (frozen.promotionName ?? existing?.promotion?.name) : appliedPromotion?.name,
+        endDate: frozen ? (frozen.promotionEndDate ?? existing?.promotion?.endDate) : (appliedPromotion?.end_date ?? undefined),
+        combinationMode: frozen ? (frozen.promotionCombinationMode ?? existing?.promotion?.combinationMode) : appliedPromotion?.promo_options?.type,
         selectedOption: frozen?.selectedPromoOption ?? state.selectedPromoOption,
         selectedValue: selectedPromoValue,
       },
@@ -638,10 +644,11 @@ export default function QuoteSummaryPage() {
   ]);
 
   useEffect(() => {
+    if (state.isLoading || promoLoading || !state.motor) return;
     if (JSON.stringify(state.pdfSnapshot) !== JSON.stringify(pdfSnapshot)) {
       dispatch({ type: 'SET_PDF_SNAPSHOT', payload: pdfSnapshot });
     }
-  }, [dispatch, pdfSnapshot, state.pdfSnapshot]);
+  }, [dispatch, pdfSnapshot, promoLoading, state.isLoading, state.motor, state.pdfSnapshot]);
 
   // Persist only the synchronized anonymous quote state through the atomic RPC.
   useEffect(() => {

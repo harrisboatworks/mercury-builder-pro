@@ -39,8 +39,9 @@ export function resolveQuoteValidUntil({
   promotionEndDate?: string | null;
   now?: Date;
 }): Date {
-  if (frozenExpiry) return new Date(frozenExpiry);
-  const standardExpiry = snapshotExpiry ? new Date(snapshotExpiry) : new Date(now);
+  const expiryDate = (value: string) => /^\d{4}-\d{2}-\d{2}$/.test(value) ? promoEndOfDay(value) : new Date(value);
+  if (frozenExpiry) return expiryDate(frozenExpiry);
+  const standardExpiry = snapshotExpiry ? expiryDate(snapshotExpiry) : new Date(now);
   if (!snapshotExpiry) standardExpiry.setDate(standardExpiry.getDate() + 30);
   const promotionExpiry = promotionEndDate ? promoEndOfDay(promotionEndDate) : null;
   return promotionExpiry && promotionExpiry < standardExpiry ? promotionExpiry : standardExpiry;

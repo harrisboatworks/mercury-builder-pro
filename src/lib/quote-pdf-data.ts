@@ -4,6 +4,24 @@ import { applyTradeCredit, resolveAppliedTradeValue } from '@/lib/trade-credit';
 export const QUOTE_PDF_SNAPSHOT_VERSION = 1 as const;
 export const FINANCING_CONTRACT_TERM_MONTHS = 60;
 
+export function resolveQuoteIncludedCoverageYears({
+  frozen,
+  snapshotYears,
+  warrantyConfig,
+  liveYears,
+}: {
+  frozen: boolean;
+  snapshotYears?: number;
+  warrantyConfig?: { totalYears: number; extendedYears: number } | null;
+  liveYears: number;
+}): number {
+  if (!frozen) return liveYears;
+  if (typeof snapshotYears === 'number' && Number.isFinite(snapshotYears)) return snapshotYears;
+  // Legacy frozen quotes may only record the combined target and paid extension.
+  if (warrantyConfig) return warrantyConfig.totalYears - warrantyConfig.extendedYears;
+  return liveYears;
+}
+
 export type QuotePaymentMethod = 'cash_purchase' | 'standard_financing' | 'special_financing';
 export type QuotePromoOption = 'no_payments' | 'special_financing' | 'cash_rebate';
 
