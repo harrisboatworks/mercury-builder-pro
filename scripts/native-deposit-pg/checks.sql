@@ -38,6 +38,11 @@ DO $$ DECLARE v_id uuid := '71717171-7171-4171-8171-717171717171'; result jsonb;
   IF NOT public.bind_native_deposit_payment_intent(attempt,NULL,'failed') THEN RAISE EXCEPTION 'preflight failure marker failed'; END IF;
   result := public.claim_native_deposit_attempt(v_id,repeat('e',64),repeat('f',64),50000,'acct_synthetic',false);
   IF result->>'result' <> 'retry' THEN RAISE EXCEPTION 'identical never-submitted preflight retry refused'; END IF;
+  IF NOT public.bind_native_deposit_payment_intent(attempt,NULL,'unknown') THEN RAISE EXCEPTION 'ambiguous consent marker failed'; END IF;
+  IF (SELECT submitted_at FROM public.native_deposit_attempts WHERE id=attempt) IS NOT NULL THEN RAISE EXCEPTION 'uncommitted consent marked submitted'; END IF;
+  IF (SELECT status FROM public.native_deposit_intents WHERE id=v_id) <> 'unknown' THEN RAISE EXCEPTION 'ambiguous intent not held'; END IF;
+  result := public.claim_native_deposit_attempt(v_id,repeat('e',64),repeat('f',64),50000,'acct_synthetic',false);
+  IF result->>'result' <> 'retry' THEN RAISE EXCEPTION 'identical ambiguous never-submitted retry refused'; END IF;
   BEGIN
     UPDATE public.native_deposit_attempts SET submitted_at=clock_timestamp() WHERE id=attempt;
     RAISE EXCEPTION 'direct first submission accepted';

@@ -22,13 +22,15 @@ try {
   sql(['-f', resolve('scripts/native-deposit-pg/shape.sql')]);
   sql(['-f', resolve('supabase/migrations/20261012233000_native_agent_deposit.sql')]);
   sql(['-f', resolve('supabase/migrations/20261013203000_native_deposit_submission_consent.sql')]);
+  sql(['-f', resolve('supabase/migrations/20261013213000_native_deposit_unsubmitted_recovery.sql')]);
   console.log(sql(['-f', resolve('scripts/native-deposit-pg/checks.sql')]));
   // Begin before consent expiry, block on the saved-quote lock, then release
   // after expiry. The first-submission gate must use the post-lock clock.
   const expiryId = '73737373-7373-4373-8373-737373737373';
   sql(['-c', `SET ROLE service_role;
     SELECT public.record_native_deposit_buyer_approval('${expiryId}','ndc_73737373737343738373737373737373','${expiryId}','36363636-3636-4636-8636-363636363636',50000,repeat('a',64),'deposit-policy/v1','in_stock_refundable','hbw-reservation-terms/2026-04-08',now()+interval '4 seconds');
-    SELECT public.claim_native_deposit_attempt('${expiryId}',repeat('3',64),repeat('4',64),50000,'acct_synthetic',false);`]);
+    SELECT public.claim_native_deposit_attempt('${expiryId}',repeat('3',64),repeat('4',64),50000,'acct_synthetic',false);
+    SELECT public.bind_native_deposit_payment_intent(id,NULL,'unknown') FROM public.native_deposit_attempts WHERE intent_id='${expiryId}';`]);
   const expiryOwner = spawn(join(bin,'psql'), ['-X','-v','ON_ERROR_STOP=1','-q','-t','-A'], {env:{...env,PGAPPNAME:'native_expiry_owner'},stdio:['pipe','pipe','pipe']});
   let expiryOwnerText=''; expiryOwner.stdout.on('data',b=>expiryOwnerText+=b.toString());
   expiryOwner.stdin.write(`BEGIN; SELECT id FROM public.saved_quotes WHERE id='${expiryId}' FOR UPDATE; SELECT 'expiry_owner_ready';\n`);

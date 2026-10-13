@@ -208,6 +208,17 @@ describe('native deposit boundary', () => {
     expect(state.submit).not.toHaveBeenCalled(); expect(state.io.beginSubmission).not.toHaveBeenCalled();
     expect(state.attempt().submitted_at).toBeNull();
   });
+  it('retries a consent-RPC failure before commit with fresh approval and the original key', async () => {
+    const state = setup(); const begin = state.io.beginSubmission;
+    state.io.beginSubmission = async () => { throw new Error('transaction did not commit'); };
+    const first = await state.complete(); expect(first.ok && first.checkout.payment_status).toBe('unknown');
+    expect(state.attempt().status).toBe('unknown'); expect(state.attempt().submitted_at).toBeNull();
+    expect(state.submit).not.toHaveBeenCalled();
+    state.io.beginSubmission = begin;
+    expect((await state.complete()).ok).toBe(true); expect(state.submit).toHaveBeenCalledOnce();
+    expect(state.stripe.createConfirmedPaymentIntent.mock.calls.map(call => call[1]))
+      .toEqual([`native-deposit-pi:${intent.id}`, `native-deposit-pi:${intent.id}`]);
+  });
   it('holds an ambiguous consent-RPC response and recovers the original key after expiry', async () => {
     const state = setup(); const begin = state.io.beginSubmission;
     state.io.beginSubmission = async args => { await begin(args); throw new Error('response lost'); };
@@ -216,6 +227,15 @@ describe('native deposit boundary', () => {
     state.io.beginSubmission = begin; vi.setSystemTime(new Date('2026-10-12T12:11:00Z'));
     expect((await state.complete({ payment }, new Date())).ok).toBe(true);
     expect(state.submit).toHaveBeenCalledOnce(); expect(state.io.beginSubmission).toHaveBeenCalledOnce();
+  });
+  it('refuses a never-committed unknown attempt after buyer approval expires', async () => {
+    const state = setup(); const begin = state.io.beginSubmission;
+    state.io.beginSubmission = async () => { throw new Error('transaction did not commit'); };
+    await state.complete(); expect(state.attempt().submitted_at).toBeNull();
+    state.io.beginSubmission = begin; vi.setSystemTime(new Date('2026-10-12T12:11:00Z'));
+    const result = await state.complete({ payment }, new Date());
+    expect(result.ok === false && result.code).toBe('buyer_review_required');
+    expect(state.submit).not.toHaveBeenCalled(); expect(state.attempt().submitted_at).toBeNull();
   });
   it('accepts Stripe preview nullable uncaptured amount while rejecting missing counters', () => {
     expect(assessSharedPaymentToken({ ...token(), usage_details: { amount_captured: null } }, expected).ok).toBe(true);
