@@ -71,6 +71,13 @@ describe('read-only live Stripe server preflight', () => {
     expect(result.event).toEqual({ id: event.id, type: event.type, created: event.created, native: false }); expect(JSON.stringify(result)).not.toContain('private');
     const none = setup([{ body: account }, { body: { data: [native] } }]); expect((await none.run(request('event_candidate'))).status).toBe(404);
   });
+  it('allows an existing signed no-op customer event but excludes both Checkout payment branches', async () => {
+    const events = ['checkout.session.completed', 'checkout.session.async_payment_succeeded', 'customer.updated'].map((type, i) => ({
+      ...event, id: 'evt_Synthetic' + i, type, data: { object: { object: 'customer', email: 'private@example.invalid' } } }));
+    const { run, fetcher } = setup([{ body: account }, { body: { data: events } }]);
+    const result = await (await run(request('event_candidate'))).json(); expect(result.event.type).toBe('customer.updated');
+    expect(JSON.stringify(result)).not.toContain('private'); expect(fetcher.mock.calls[1][0]).toBe('https://api.stripe.com/v1/events?limit=10');
+  });
   it('requires live terms approval before touching the SPT API', async () => {
     const { run, fetcher } = setup([{ body: account }], { ...env, NATIVE_PREFLIGHT_SPT_APPROVED: '' });
     expect((await run(request('spt_access'))).status).toBe(403); expect(fetcher).toHaveBeenCalledTimes(1);

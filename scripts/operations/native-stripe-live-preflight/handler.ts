@@ -6,6 +6,8 @@ const PROJECT = 'https://eutsoqdpjurknjsshxes.supabase.co';
 const VERSION = '2026-09-30.preview';
 const HEADERS = { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' };
 const CODES = new Set(['resource_missing', 'api_key_expired', 'invalid_api_key', 'permission_denied', 'account_invalid', 'rate_limit']);
+const NOOP_EVENTS = new Set(['payment_intent.succeeded', 'payment_intent.created', 'charge.succeeded',
+  'customer.created', 'customer.updated', 'account.updated', 'product.created', 'product.updated', 'price.created']);
 class Refusal extends Error { constructor(public status: number, public code: string) { super(code); } }
 async function hash(value: string): Promise<Uint8Array> {
   return new Uint8Array(await crypto.subtle.digest('SHA-256', new TextEncoder().encode(value)));
@@ -79,10 +81,10 @@ export function createNativeStripeLivePreflight(env: Env, fetchImpl: typeof fetc
           livemode: true, api_version: hook.api_version, enabled_events: hook.enabled_events } });
       }
       if (input.operation === 'event_candidate') {
-        const result = await stripe('/v1/events?type=payment_intent.succeeded&limit=10');
+        const result = await stripe('/v1/events?limit=10');
         if (!result.ok || !Array.isArray(result.data.data)) throw new Refusal(502, 'events_unavailable');
-        const event = result.data.data.slice(0, 10).find((e: any) => e.livemode === true && e.type === 'payment_intent.succeeded'
-          && /^evt_[A-Za-z0-9]+$/.test(e.id) && e.data?.object?.object === 'payment_intent'
+        const event = result.data.data.slice(0, 10).find((e: any) => e.livemode === true && NOOP_EVENTS.has(e.type)
+          && /^evt_[A-Za-z0-9]+$/.test(e.id) && e.data?.object && typeof e.data.object === 'object'
           && e.data.object.metadata?.payment_channel !== 'native_spt' && e.data.object.metadata?.payment_type !== 'motor_deposit'
           && Number.isInteger(e.created));
         if (!event) throw new Refusal(404, 'no_safe_event');
