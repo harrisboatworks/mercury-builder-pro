@@ -3,7 +3,7 @@ INSERT INTO public.saved_quotes(id,user_id,email,resume_token,quote_state,deposi
 SELECT id, '33333333-3333-4333-8333-333333333333', 'synthetic@example.invalid', 'dep_' || left(replace(id::text,'-',''),24),
   '{"motor":{"id":"36363636-3636-4636-8636-363636363636","model":"90HP"},"depositPolicySnapshot":{"schema":"deposit-policy/v1","motorId":"36363636-3636-4636-8636-363636363636","stockClassification":"in_stock","policyCode":"in_stock_refundable","purchasePath":"motor_only"}}'::jsonb,
   'pending', 500, 'saved-quotes/' || id || '/quote.pdf', repeat('a',64), 'Synthetic Buyer', '6135550100', '1 Example Invalid Road', 'Exampleville', 'ON', 'K0K0A0', 'CA'
-FROM (VALUES ('71717171-7171-4171-8171-717171717171'::uuid), ('72727272-7272-4272-8272-727272727272'::uuid), ('73737373-7373-4373-8373-737373737373'::uuid)) x(id);
+FROM (VALUES ('71717171-7171-4171-8171-717171717171'::uuid), ('72727272-7272-4272-8272-727272727272'::uuid), ('73737373-7373-4373-8373-737373737373'::uuid), ('74747474-7474-4474-8474-747474747474'::uuid)) x(id);
 INSERT INTO public.native_deposit_intents(id,child_id,parent_session_id,saved_quote_id,owner_user_id,motor_id,
   amount_cents,currency,merchandise_cents,document_sha256,document_path,policy_version,policy_code,terms_version,
   catalog_model_number,horsepower,status,expires_at)

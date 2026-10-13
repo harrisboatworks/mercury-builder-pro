@@ -1,7 +1,8 @@
+import { nativeBuyerReviewAuthorized } from '../_shared/native-buyer-review-authorization.ts';
 import { resolveDepositStagingOrigin } from '../_shared/deposit-staging-origin.ts';
 // Trusted buyer UI only. UCP caller fields cannot record approval.
 import { createClient } from 'npm:@supabase/supabase-js@2.53.1';
-import { nativeDepositActorAuthorized, nativeDepositCheckoutEnabled, isNativeDepositChildId } from '../_shared/native-deposit-checkout.ts';
+import { nativeDepositCheckoutEnabled, isNativeDepositChildId } from '../_shared/native-deposit-checkout.ts';
 import { nativeActorFromRequest, nativeDepositIo } from '../_shared/native-deposit-io.ts';
 import { sha256Hex } from '../_shared/quote-document-policy.ts';
 import { DEPOSIT_POLICY_IN_STOCK_TEXT, DEPOSIT_POLICY_SPECIAL_ORDER_TEXT } from '../_shared/deposit-policy.ts';
@@ -39,10 +40,10 @@ Deno.serve(async req => {
     const intent = await io.loadIntentByChild(body.child_id);
     const quote = intent ? await io.loadSavedQuote(intent.saved_quote_id) : null;
     if (!intent || !quote) return reply({ error: 'Quote unavailable.' }, 404);
+    if (quote.deposit_status === 'paid' && intent.status !== 'paid') return reply({ error: 'This quote was paid through hosted checkout. Open its existing receipt.' }, 409);
     const actor = await nativeActorFromRequest(db, req);
-    const owns = quote.user_id ? quote.user_id === user.id
-      : quote.email?.trim().toLowerCase() === user.email?.trim().toLowerCase()
-        && nativeDepositActorAuthorized({ savedQuoteUserId: quote.user_id, savedQuoteResumeToken: quote.resume_token, actor });
+    const owns = body.action === 'review' && intent.status === 'paid' && quote.user_id === user.id
+      || nativeBuyerReviewAuthorized(quote, user, actor);
     if (!owns) return reply({ error: 'Quote unavailable.' }, 404);
     if (!enabled && body.action === 'approve') return reply({ error: 'New native payments are paused.' }, 409);
     const fingerprint = await sha256Hex(new TextEncoder().encode(`buyer-session:${user.id}:${token}`));
@@ -87,6 +88,7 @@ Deno.serve(async req => {
       merchandise_cents: intent.merchandise_cents, currency: 'CAD', document_url: signed.signedUrl,
       terms: intent.policy_code === 'in_stock_refundable' ? DEPOSIT_POLICY_IN_STOCK_TEXT : DEPOSIT_POLICY_SPECIAL_ORDER_TEXT,
       approved: Boolean(enabled && intent.status === "approved" && approval && Date.parse(approval.expires_at) > Date.now()), paid: intent.status === 'paid',
+      test_mode: Deno.env.get('STRIPE_SECRET_KEY')?.startsWith('sk_test_') === true,
       payment_status: approval && Date.parse(approval.expires_at) <= Date.now() && intent.status === 'approved' ? 'expired' : intent.status, nonce, review_digest: digest });
   } catch {
     return reply({ error: 'Deposit review is temporarily unavailable.' }, 503);

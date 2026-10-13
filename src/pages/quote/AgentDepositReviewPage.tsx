@@ -11,7 +11,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 type Review = {
   motor: string; amount_cents: number; merchandise_cents: number; currency: 'CAD';
   document_url: string; terms: string; approved: boolean; paid: boolean;
-  payment_status: string; nonce: string | null; review_digest: string;
+  payment_status: string; test_mode?: boolean; nonce: string | null; review_digest: string;
 };
 const cad = (cents: number) => new Intl.NumberFormat('en-CA', { style: 'currency', currency: 'CAD' }).format(cents / 100);
 
@@ -79,6 +79,7 @@ export default function AgentDepositReviewPage() {
             <Button disabled={busy} onClick={() => void perform(refresh)}>Open my deposit review</Button>
           </div>}
           {review && <div className="space-y-5">
+            {review.test_mode && <p className="rounded border border-blue-200 bg-blue-50 p-3 text-blue-900">Sandbox test — no real money is charged.</p>}
             <p className="text-lg font-medium">{review.motor}</p>
             <div className="rounded-lg bg-muted p-4"><p>Reservation deposit</p><p className="text-3xl font-semibold">{cad(review.amount_cents)}</p>
               <p className="mt-2 text-sm">Motor merchandise estimate: {cad(review.merchandise_cents)} before tax. This payment is the deposit only.</p></div>

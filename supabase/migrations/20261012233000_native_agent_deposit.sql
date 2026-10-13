@@ -76,6 +76,7 @@ CREATE TABLE public.native_deposit_attempts (
   currency text NOT NULL CHECK (currency = 'CAD'),
   seller_account_id text NOT NULL CHECK (seller_account_id ~ '^acct_[A-Za-z0-9]+$'),
   livemode boolean NOT NULL,
+  observed_payment_intent_id text CHECK (observed_payment_intent_id IS NULL OR observed_payment_intent_id ~ '^pi_(test_|live_)?[A-Za-z0-9]+$'),
   stripe_payment_intent_id text UNIQUE CHECK (
     stripe_payment_intent_id IS NULL
     OR stripe_payment_intent_id ~ '^pi_(test_|live_)?[A-Za-z0-9]+$'
@@ -912,6 +913,17 @@ BEGIN
     RETURN false;
   END IF;
 
+  -- A concurrent winner may insert the initially absent customer row while we
+  -- wait for the saved-row lock. Refresh it without acquiring a reverse-order
+  -- row lock; an idempotent paid return makes no customer-row mutation.
+  SELECT * INTO v_quote FROM public.customer_quotes AS cq
+    WHERE cq.saved_quote_id = p_saved_quote_id AND cq.lead_source = 'deposit';
+
+  IF v_quote.id IS NOT NULL AND (
+    v_quote.stripe_checkout_session_id IS NOT NULL
+    OR (v_quote.quote_data ->> 'payment_channel') IS DISTINCT FROM 'native_spt'
+  ) THEN RETURN false; END IF;
+
   SELECT * INTO v_intent
   FROM public.native_deposit_intents
   WHERE id = p_intent_id
@@ -1125,6 +1137,20 @@ BEGIN
   RETURN true;
 END;
 $$;
+
+-- Diagnostic observation never authorizes payment or changes the verified PI.
+CREATE FUNCTION public.observe_native_deposit_payment_intent(p_attempt_id uuid, p_payment_intent_id text)
+RETURNS boolean LANGUAGE plpgsql SECURITY INVOKER SET search_path = pg_catalog, public AS $$
+BEGIN
+  IF p_payment_intent_id IS NULL OR p_payment_intent_id !~ '^pi_(test_|live_)?[A-Za-z0-9]+$' THEN RETURN false; END IF;
+  UPDATE public.native_deposit_attempts SET observed_payment_intent_id = COALESCE(observed_payment_intent_id, p_payment_intent_id)
+  WHERE id = p_attempt_id AND submitted_at IS NOT NULL
+    AND (observed_payment_intent_id IS NULL OR observed_payment_intent_id = p_payment_intent_id);
+  RETURN FOUND;
+END;
+$$;
+REVOKE ALL ON FUNCTION public.observe_native_deposit_payment_intent(uuid,text) FROM PUBLIC,anon,authenticated;
+GRANT EXECUTE ON FUNCTION public.observe_native_deposit_payment_intent(uuid,text) TO service_role;
 
 REVOKE ALL ON FUNCTION public.enforce_native_deposit_intent_bindings() FROM PUBLIC, anon, authenticated, service_role;
 REVOKE ALL ON FUNCTION public.enforce_native_deposit_approval_writer() FROM PUBLIC, anon, authenticated, service_role;

@@ -129,6 +129,7 @@ export type NativeAttemptRecord = {
   amount_cents: number;
   currency: string;
   stripe_payment_intent_id: string | null;
+  observed_payment_intent_id?: string | null;
   status: string;
   seller_account_id: string;
   livemode: boolean;
@@ -231,7 +232,7 @@ export function nativeDepositActorAuthorized(options: {
   } catch {
     capability = false;
   }
-  if (options.actor.resumeCapability && options.actor.userId) return owner && capability;
+  if (options.savedQuoteUserId && options.actor.resumeCapability && options.actor.userId) return owner && capability;
   return owner || capability;
 }
 
@@ -436,9 +437,13 @@ export function projectNativeDepositCheckout(input: {
     ));
   } else if (input.phase === "requires_escalation") {
     checkout.messages.push(scopeMessage(
-      "buyer_review_required",
-      "requires_buyer_review",
-      "This deposit is not approved and is not a completed reservation.",
+      input.paymentStatus === 'not_started' ? 'buyer_review_required' : 'payment_reconciliation_required',
+      'requires_buyer_review',
+      input.paymentStatus === 'not_started'
+        ? 'Buyer review is required before this deposit can be paid.'
+        : input.paymentStatus === 'requires_action'
+          ? 'The buyer must finish secure wallet or bank verification on the site.'
+          : 'This payment is pending reconciliation or did not complete. Contact HBW before starting another payment.',
     ));
   }
   if (input.includeContinuation || input.phase === "requires_escalation") checkout.continue_url = nativeDepositContinuationUrl(input.intent.child_id);
@@ -682,6 +687,7 @@ export type NativeCompleteIo = {
     sellerAccountId: string;
     livemode: boolean;
   }) => Promise<AttemptClaimResult>;
+  observePaymentIntent: (attemptId: string, paymentIntentId: string) => Promise<boolean>;
   bindAttempt: (attemptId: string, paymentIntentId: string | null, status: string) => Promise<boolean>;
   sendConfirmations: (savedQuoteId: string, paymentIntentId: string) => Promise<boolean>;
   claimPaid: (args: {
@@ -808,6 +814,8 @@ export async function runNativeDepositComplete(input: {
       livemode: stripe.livemode,
     });
     if (assessed.ok === false) {
+      if (isPlainObject(pi) && typeof pi.id === 'string' && PI_ID.test(pi.id))
+        await input.io.observePaymentIntent(attempt.id, pi.id);
       await input.io.bindAttempt(attempt.id, null, "unknown");
       return {
         ok: true,

@@ -37,6 +37,7 @@ function setup() {
         seller_account_id: 'acct_synthetic', livemode: false, submitted_at: null };
       return { ...attempt, result: 'claimed', attempt_id: attempt.id };
     },
+    observePaymentIntent: vi.fn(async () => true),
     bindAttempt: async (_id, id, status) => { if (id) attempt.stripe_payment_intent_id = id; attempt.status = status;
       if (status === 'submitted') attempt.submitted_at ??= now.toISOString(); return true; },
     sendConfirmations: vi.fn(async () => true),
@@ -95,6 +96,13 @@ describe('native deposit boundary', () => {
     const result = await state.complete(); expect(result.ok).toBe(false); expect(state.stripe.createConfirmedPaymentIntent).not.toHaveBeenCalled();
     const other = structuredClone(payment); other.instruments[0].credential.token = 'spt_other';
     expect((await state.complete({ payment: other })).ok).toBe(false);
+  });
+  it('retains a mismatched observed PI without promoting paid authority', async () => {
+    const state = setup(); const wrong = await state.stripe.retrievePaymentIntent();
+    state.stripe.createConfirmedPaymentIntent.mockResolvedValueOnce({ ...wrong, amount: 51000 });
+    const result = await state.complete(); expect(result.ok && result.checkout.payment_status).toBe('unknown');
+    expect(state.io.observePaymentIntent).toHaveBeenCalledWith('attempt','pi_synthetic');
+    expect(state.attempt().stripe_payment_intent_id).toBeNull(); expect(state.io.claimPaid).not.toHaveBeenCalled();
   });
   it('keeps paid authority when email fails and re-drives the same receipt without another charge', async () => {
     const state = setup(); state.io.sendConfirmations = vi.fn().mockResolvedValueOnce(false).mockResolvedValueOnce(true);

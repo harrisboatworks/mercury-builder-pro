@@ -22,7 +22,7 @@ export async function handleNativeDepositEvent(db: any, event: any, env: { secre
   const pi = await stripe.retrievePaymentIntent(piId);
   const assessed = assessNativePaymentIntent(pi, { amountCents: intent.amount_cents, intentId: intent.id,
     savedQuoteId: intent.saved_quote_id, motorId: intent.motor_id, childId: intent.child_id, livemode: attempt.livemode });
-  if (!assessed.ok) throw new Error('native_event_binding');
+  if (!assessed.ok) { await io.observePaymentIntent(attempt.id, piId); throw new Error('native_event_binding'); }
   if (assessed.status !== 'succeeded') {
     const status = assessed.status === 'processing' ? 'processing' : assessed.status === 'requires_action' ? 'requires_action'
       : ['canceled', 'requires_payment_method'].includes(assessed.status) ? 'failed' : 'unknown';
