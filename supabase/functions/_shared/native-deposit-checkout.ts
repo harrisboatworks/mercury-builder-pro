@@ -219,7 +219,6 @@ export function nativeDepositActorAuthorized(options: {
   savedQuoteResumeToken: string | null | undefined;
   actor: NativeActor;
 }): boolean {
-  if (options.actor.resumeCapability === "invalid") return false;
   const owner = Boolean(
     options.actor.userId
     && options.savedQuoteUserId
@@ -233,7 +232,6 @@ export function nativeDepositActorAuthorized(options: {
   } catch {
     capability = false;
   }
-  if (options.savedQuoteUserId && options.actor.resumeCapability && options.actor.userId) return owner && capability;
   return owner || capability;
 }
 
@@ -771,7 +769,9 @@ export async function runNativeDepositComplete(input: {
 
   let attempt = existingAttempt;
   let tokenId = caller.tokenId;
-  if (tokenId) {
+  // A bound PI is the sole existing payment authority. A regenerated wallet
+  // credential must not block reconciliation or start a competing charge.
+  if (tokenId && !attempt?.stripe_payment_intent_id) {
     if (input.sellerAccountId == null || input.livemode == null) {
       return failure(503, "unavailable", "Native payment is not configured.");
     }

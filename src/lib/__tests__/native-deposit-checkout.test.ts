@@ -56,6 +56,12 @@ describe('native deposit boundary', () => {
     expect(nativeDepositActorAuthorized({ savedQuoteUserId: 'buyer', savedQuoteResumeToken: 'dep_' + 'a'.repeat(24), actor: { userId: null, resumeCapability: null } })).toBe(false);
     expect(nativeDepositActorAuthorized({ savedQuoteUserId: null, savedQuoteResumeToken: 'dep_' + 'a'.repeat(24), actor: { userId: null, resumeCapability: 'dep_' + 'a'.repeat(24) } })).toBe(true);
   });
+  it('preserves independent owner and resume capability authorization when both are supplied', () => {
+    const cap = 'dep_' + 'a'.repeat(24);
+    expect(nativeDepositActorAuthorized({ savedQuoteUserId: 'buyer', savedQuoteResumeToken: cap, actor: { userId: 'other', resumeCapability: cap } })).toBe(true);
+    expect(nativeDepositActorAuthorized({ savedQuoteUserId: 'buyer', savedQuoteResumeToken: cap, actor: { userId: 'buyer', resumeCapability: 'invalid' } })).toBe(true);
+    expect(nativeDepositActorAuthorized({ savedQuoteUserId: 'buyer', savedQuoteResumeToken: cap, actor: { userId: 'other', resumeCapability: 'invalid' } })).toBe(false);
+  });
   it.each(['approved', 'amount', 'motor', 'buyer', 'document_path', 'client_secret'])('rejects caller %s before payment', async field => {
     const state = setup(); expect((await state.complete({ payment, [field]: true })).ok).toBe(false); expect(state.stripe.createConfirmedPaymentIntent).not.toHaveBeenCalled();
   });
@@ -103,6 +109,16 @@ describe('native deposit boundary', () => {
     const result = await state.complete(); expect(result.ok && result.checkout.payment_status).toBe('unknown');
     expect(state.io.markReceiptReconciliation).toHaveBeenCalledWith(intent.id,'attempt');
     expect(state.stripe.createConfirmedPaymentIntent).toHaveBeenCalledOnce();
+  });
+  it('reconciles a bound successful PI when a wallet supplies a regenerated token', async () => {
+    const state = setup(); state.io.claimPaid = vi.fn().mockResolvedValueOnce(false).mockResolvedValueOnce(true);
+    await state.complete();
+    const other = structuredClone(payment); other.instruments[0].credential.token = 'spt_regenerated';
+    const replay = await state.complete({ payment: other });
+    expect(replay.ok && replay.checkout.payment_status).toBe('paid');
+    expect(state.stripe.createConfirmedPaymentIntent).toHaveBeenCalledOnce();
+    expect(state.stripe.retrieveSharedPaymentToken).toHaveBeenCalledOnce();
+    expect(state.stripe.retrievePaymentIntent).toHaveBeenCalledOnce();
   });
   it('retains a mismatched observed PI without promoting paid authority', async () => {
     const state = setup(); const wrong = await state.stripe.retrievePaymentIntent();
