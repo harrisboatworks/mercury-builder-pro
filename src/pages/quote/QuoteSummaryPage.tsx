@@ -111,7 +111,7 @@ export default function QuoteSummaryPage() {
   const suppressAdditionalPromoSavings = state.uiFlags.suppressAdditionalPromoSavings === true;
   const { user, isAdmin } = useAuth();
   const { promo } = useActiveFinancingPromo();
-  const { promotions, loading: promoLoading, getTotalPromotionalSavings, getPromotionSavingsForMotor, getPromotionOptions, getRebateForHP, getSpecialFinancingRates } = useActivePromotions({ motor: state.motor });
+  const { promotions, loading: promoLoading, error: promoError, getTotalPromotionalSavings, getPromotionSavingsForMotor, getPromotionOptions, getRebateForHP, getSpecialFinancingRates } = useActivePromotions({ motor: state.motor });
   const { rating: googleRating, totalReviews: googleReviewCount } = useGoogleReviewStats();
   const { toast } = useToast();
   const baseCoverageYears = 3;
@@ -217,7 +217,7 @@ export default function QuoteSummaryPage() {
   // years and the selected motor's exact rate band. Frozen shared quotes retain
   // their original snapshot until the customer explicitly changes the plan.
   useEffect(() => {
-    if (state.isLoading || promoLoading || !state.motor || state.frozenPricing) return;
+    if (state.isLoading || promoLoading || promoError || !state.motor || state.frozenPricing) return;
 
     const reconciled = reconcileWarrantyConfig(
       Number(hp),
@@ -239,6 +239,7 @@ export default function QuoteSummaryPage() {
     dispatch,
     hp,
     promoLoading,
+    promoError,
     state.frozenPricing,
     state.isLoading,
     state.motor,
@@ -640,18 +641,18 @@ export default function QuoteSummaryPage() {
     getPromoDisplayValue,
   ]);
 
-  const quoteReady = !state.isLoading && !promoLoading && Boolean(state.motor)
+  const quoteReady = !state.isLoading && !promoLoading && !promoError && Boolean(state.motor)
     && JSON.stringify(state.pdfSnapshot) === JSON.stringify(pdfSnapshot);
 
   // OAuth saves must use the same settled snapshot as PDF and reservation actions.
   useAutoSaveQuoteOnAuth(quoteReady);
 
   useEffect(() => {
-    if (state.isLoading || promoLoading || !state.motor) return;
+    if (state.isLoading || promoLoading || promoError || !state.motor) return;
     if (JSON.stringify(state.pdfSnapshot) !== JSON.stringify(pdfSnapshot)) {
       dispatch({ type: 'SET_PDF_SNAPSHOT', payload: pdfSnapshot });
     }
-  }, [dispatch, pdfSnapshot, promoLoading, state.isLoading, state.motor, state.pdfSnapshot]);
+  }, [dispatch, pdfSnapshot, promoLoading, promoError, state.isLoading, state.motor, state.pdfSnapshot]);
 
   // Persist only the synchronized anonymous quote state through the atomic RPC.
   useEffect(() => {
@@ -1246,7 +1247,15 @@ export default function QuoteSummaryPage() {
       <ScrollToTop />
       <PageTransition>
         <QuoteLayout showProgress={!isMotorOnlyExpress}>
-          {!isMounted || !quoteReady ? (
+          {promoError ? (
+            <div role="alert" className="mx-auto my-12 max-w-xl rounded-xl border border-destructive/30 bg-white p-6">
+              <h1 className="text-xl font-semibold">Promotion pricing unavailable</h1>
+              <p className="mt-3 text-muted-foreground">We could not verify current rebates and promotional coverage. Retry before saving, downloading or reserving this quote.</p>
+              <button type="button" onClick={() => window.location.reload()} className="mt-5 rounded bg-repower-mercury-red px-5 py-3 font-semibold text-white">
+                Retry promotion pricing
+              </button>
+            </div>
+          ) : !isMounted || !quoteReady ? (
             <QuoteSummarySkeleton />
           ) : (
           <div className="bg-repower-paper">
