@@ -1,5 +1,5 @@
 import { cleanup, renderHook, waitFor } from '@testing-library/react';
-import { afterEach, describe, expect, it, vi } from 'vitest';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { useActivePromotions } from './useActivePromotions';
 import { getAppliedPromotion, getAppliedWarrantyExtraYears } from '@/lib/warranty-display';
 import { buildProfessionalQuotePdfData } from '@/lib/react-pdf-generator';
@@ -22,7 +22,8 @@ vi.mock('@/integrations/supabase/client', () => ({ supabase: { from: () => {
   return query;
 } } }));
 
-afterEach(cleanup);
+beforeEach(() => { vi.useFakeTimers({ toFake: ['Date'] }); vi.setSystemTime(new Date('2026-09-29T12:00:00Z')); });
+afterEach(() => { cleanup(); vi.useRealTimers(); });
 
 describe('stock-independent promotion flow', () => {
   it.each([
