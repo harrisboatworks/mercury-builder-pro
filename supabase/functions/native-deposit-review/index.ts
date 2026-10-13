@@ -1,4 +1,5 @@
 import { nativeDepositBankAction } from '../_shared/native-deposit-bank-action.ts';
+import { nativeLiveSellerVerified } from '../_shared/native-deposit-live-config.ts';
 import { nativeBuyerReviewAuthorized } from '../_shared/native-buyer-review-authorization.ts';
 import { resolveDepositStagingOrigin } from '../_shared/deposit-staging-origin.ts';
 import { corsHeaders as sharedCorsHeaders } from '../_shared/cors.ts';
@@ -27,6 +28,14 @@ Deno.serve(async req => {
   if (req.method === 'OPTIONS') return new Response(null, { status: 204, headers });
   if (req.method !== 'POST') return reply({ error: 'Method not allowed' }, 405);
   const enabled = nativeDepositCheckoutEnabled(Deno.env.get('NATIVE_DEPOSIT_ENABLED'));
+  const production = Deno.env.get('SUPABASE_URL') === 'https://eutsoqdpjurknjsshxes.supabase.co';
+  const sellerVerified = !production || await nativeLiveSellerVerified({
+    SUPABASE_URL: Deno.env.get('SUPABASE_URL'), STRIPE_SECRET_KEY: Deno.env.get('STRIPE_SECRET_KEY'),
+    STRIPE_WEBHOOK_SECRET: Deno.env.get('STRIPE_WEBHOOK_SECRET'),
+    NATIVE_STRIPE_SELLER_ACCOUNT: Deno.env.get('NATIVE_STRIPE_SELLER_ACCOUNT'),
+    NATIVE_STRIPE_SELLER_PROFILE: Deno.env.get('NATIVE_STRIPE_SELLER_PROFILE'),
+    NATIVE_DEPOSIT_LIVE_ATTESTATION: Deno.env.get('NATIVE_DEPOSIT_LIVE_ATTESTATION'),
+  });
   try {
     const db = createClient(Deno.env.get('SUPABASE_URL')!, Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!, { auth: { persistSession: false } });
     const token = req.headers.get('authorization')?.match(/^Bearer\s+(\S+)$/i)?.[1];
@@ -47,7 +56,7 @@ Deno.serve(async req => {
     const owns = body.action === 'review' && intent.status === 'paid' && quote.user_id === user.id
       || nativeBuyerReviewAuthorized(quote, user, actor);
     if (!owns) return reply({ error: 'Quote unavailable.' }, 404);
-    if (!enabled && body.action === 'approve') return reply({ error: 'New native payments are paused.' }, 409);
+    if ((!enabled || !sellerVerified) && body.action === 'approve') return reply({ error: 'New native payments are paused.' }, 409);
     const fingerprint = await sha256Hex(new TextEncoder().encode(`buyer-session:${user.id}:${token}`));
     if (await io.loadDocumentHash(quote) !== intent.document_sha256) return reply({ error: 'The quote document changed. Review a fresh quote.' }, 409);
     const approval = await io.loadApproval(intent.id);

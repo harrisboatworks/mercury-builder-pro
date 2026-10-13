@@ -10,8 +10,13 @@ export function nativeSellerProfileId(value: unknown, livemode: boolean): string
 }
 
 export function withNativeSellerProfile(checkout: NativeDepositCheckout, options: {
-  profileId: unknown; livemode: boolean; enabled: boolean;
+  profileId: unknown; livemode: boolean; enabled: boolean; verified: boolean; nowMs?: number;
 }): NativeDepositCheckout {
+  // This is issuer guidance for a new approved payment, not authority to pay.
+  // Submitted/terminal/paused/expired checkouts retain their original attempt.
+  if (!options.enabled || !options.verified || checkout.status !== 'ready_for_complete'
+    || checkout.payment_status !== 'not_started'
+    || !(Date.parse(checkout.expires_at) > (options.nowMs ?? Date.now()))) return checkout;
   const profile = nativeSellerProfileId(options.profileId, options.livemode);
   if (!profile) return checkout;
   const handlers = checkout.ucp.payment_handlers as Record<string, Array<{ config: Record<string, unknown> }>>;
@@ -21,7 +26,7 @@ export function withNativeSellerProfile(checkout: NativeDepositCheckout, options
   }
   return {
     ...checkout,
-    payment_handler: { ...checkout.payment_handler, status: options.enabled ? 'configured' : checkout.payment_handler.status },
+    payment_handler: { ...checkout.payment_handler, status: 'configured' },
     ucp: { ...checkout.ucp, payment_handlers: { ...handlers, [NATIVE_DEPOSIT_HANDLER_ID]: [{
       ...entries[0], config: { ...entries[0].config, seller_details: { network_business_profile: profile } },
     }] } },
