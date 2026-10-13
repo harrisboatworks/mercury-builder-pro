@@ -889,6 +889,7 @@ export default function QuoteSummaryPage() {
   };
 
   const handleApplyForFinancing = () => {
+    if (!isQuoteReady() || isQuoteSnapshotExpired(pdfSnapshot)) return;
     const purchase = calculateFinancingPurchase({
       afterTradeSubtotal: displayPricing.subtotal,
       preTradeSubtotal: displayPricing.subtotal + (displayPricing.appliedTradeCredit ?? 0),
