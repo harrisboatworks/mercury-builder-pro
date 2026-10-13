@@ -35,7 +35,13 @@ DO $$ DECLARE v_id uuid := '71717171-7171-4171-8171-717171717171'; result jsonb;
     RAISE EXCEPTION 'document mutation accepted';
   EXCEPTION WHEN serialization_failure THEN NULL; END;
   IF public.bind_native_deposit_payment_intent(attempt,'pi_synthetic','succeeded') THEN RAISE EXCEPTION 'success bound without original submission'; END IF;
+  IF NOT public.bind_native_deposit_payment_intent(attempt,NULL,'failed') THEN RAISE EXCEPTION 'preflight failure marker failed'; END IF;
+  result := public.claim_native_deposit_attempt(v_id,repeat('e',64),repeat('f',64),50000,'acct_synthetic',false);
+  IF result->>'result' <> 'retry' THEN RAISE EXCEPTION 'identical never-submitted preflight retry refused'; END IF;
   IF NOT public.bind_native_deposit_payment_intent(attempt,NULL,'submitted') THEN RAISE EXCEPTION 'submission marker failed'; END IF;
+  IF NOT public.bind_native_deposit_payment_intent(attempt,NULL,'failed') THEN RAISE EXCEPTION 'submitted failure marker failed'; END IF;
+  result := public.claim_native_deposit_attempt(v_id,repeat('e',64),repeat('f',64),50000,'acct_synthetic',false);
+  IF result->>'result' <> 'refused' THEN RAISE EXCEPTION 'submitted failed attempt retried without reconciliation'; END IF;
   IF NOT public.bind_native_deposit_payment_intent(attempt,'pi_synthetic','processing') THEN RAISE EXCEPTION 'PI binding failed'; END IF;
   IF public.bind_native_deposit_payment_intent(attempt,'pi_conflict','processing') THEN RAISE EXCEPTION 'PI rebound'; END IF;
   IF public.claim_native_motor_deposit_paid(v_id,attempt,v_id,'pi_synthetic',50000,repeat('a',64),'36363636-3636-4636-8636-363636363636',

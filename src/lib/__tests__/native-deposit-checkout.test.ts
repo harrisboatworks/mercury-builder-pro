@@ -13,7 +13,7 @@ const intent: NativeIntentRecord = { id: saved, child_id: 'ndc_' + 'a'.repeat(32
   policy_code: 'in_stock_refundable', terms_version: 'hbw-reservation-terms/2026-04-08', catalog_model_number: '90ELPT', horsepower: 90,
   express_verified: false, status: 'approved', expires_at: '2026-10-12T13:00:00Z' };
 const token = () => ({ id: 'spt_synthetic', object: 'shared_payment.granted_token', livemode: false, deactivated_at: null, deactivated_reason: null,
-  usage_limits: { currency: 'cad', max_amount: 50000, expires_at: (now.getTime() + 300_000) / 1000 }, usage_details: { amount_captured: 0 } });
+  usage_limits: { currency: 'cad', max_amount: 50000, expires_at: (now.getTime() + 300_000) / 1000 }, usage_details: { amount_captured: { currency: 'cad', value: 0 } } });
 const expected = { amountCents: 50000, sellerAccountId: 'acct_synthetic', livemode: false, now, approvalExpiresAt: new Date(intent.expires_at) };
 const payment = { instruments: [{ id: 'wallet_card', handler_id: NATIVE_DEPOSIT_HANDLER_ID, type: 'card', selected: true,
   credential: { type: 'shared_payment_token', token: 'spt_synthetic' } }] };
@@ -154,6 +154,9 @@ describe('native deposit boundary', () => {
     { usage_limits: { currency: 'cad', max_amount: 50000, expires_at: now.getTime()/1000-1 } },
     { usage_limits: { currency: 'cad', max_amount: 50000, expires_at: now.getTime()/1000+7200 } },
     { usage_details: { amount_captured: 1 } },
+    { usage_details: { amount_captured: { currency: 'cad', value: 1 } } },
+    { usage_details: { amount_captured: { currency: 'usd', value: 0 } } },
+    { usage_details: { amount_captured: {} } },
   ])('rejects unusable preview tokens %j', changes => expect(assessSharedPaymentToken({ ...token(), ...changes }, expected).ok).toBe(false));
   it('accepts Stripe preview nullable uncaptured amount while rejecting missing counters', () => {
     expect(assessSharedPaymentToken({ ...token(), usage_details: { amount_captured: null } }, expected).ok).toBe(true);

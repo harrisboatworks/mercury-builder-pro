@@ -339,8 +339,11 @@ export function assessSharedPaymentToken(token: unknown, expected: {
   if (!Number.isSafeInteger(limits.expires_at)
     || Number(limits.expires_at) * 1000 > expected.approvalExpiresAt.getTime())
     return { ok: false, code: "token_expiry" };
-  if (!isPlainObject(token.usage_details) || !("amount_captured" in token.usage_details)
-    || (token.usage_details.amount_captured !== null && token.usage_details.amount_captured !== 0))
+  if (!isPlainObject(token.usage_details) || !("amount_captured" in token.usage_details))
+    return { ok: false, code: "token_inactive" };
+  const captured = token.usage_details.amount_captured;
+  // Stripe returns null before use, then a currency/value Money object on read.
+  if (captured !== null && (!isPlainObject(captured) || captured.currency !== limits.currency || captured.value !== 0))
     return { ok: false, code: "token_inactive" };
   return { ok: true };
 }
