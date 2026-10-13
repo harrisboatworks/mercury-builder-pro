@@ -65,4 +65,11 @@ describe('recorded quote readiness during promotion outage',()=>{
   const complete={...snapshot,paymentMethod:'standard_financing' as const,financing};
   expect(hasCompleteFrozenQuoteSnapshot(frozenPricingFromPdfSnapshot(complete),complete)).toBe(true);
  });
+ it('reconciles the loan principal with cash total, fee and down payment',()=>{
+  const financing=buildQuotePdfFinancing({amountFinanced:2898.87,rate:7.99,amortizationMonths:60,paymentMethod:'standard_financing',dealerFee:349,downPayment:500});
+  const complete={...snapshot,paymentMethod:'standard_financing' as const,financing};
+  expect(hasCompleteFrozenQuoteSnapshot(frozenPricingFromPdfSnapshot(complete),complete)).toBe(true);
+  const contradictory={...complete,financing:buildQuotePdfFinancing({...financing,amountFinanced:100,paymentMethod:'standard_financing'})};
+  expect(hasCompleteFrozenQuoteSnapshot(frozenPricingFromPdfSnapshot(contradictory),contradictory)).toBe(false);
+ });
 });

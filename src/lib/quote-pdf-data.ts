@@ -311,6 +311,7 @@ export function hasCompleteFrozenQuoteSnapshot(frozen: unknown, snapshot: unknow
     const { amountFinanced, amortizationMonths, contractTermMonths, rate, dealerFee, downPayment } = snapshot.financing;
     if (![amountFinanced, amortizationMonths, contractTermMonths].every(value => Number.isFinite(value) && value > 0)
       || ![rate, dealerFee, downPayment].every(value => Number.isFinite(value) && value >= 0)) return false;
+    if (Math.abs(amountFinanced - (snapshot.pricing.totalCashPrice + dealerFee - downPayment!)) > 0.02) return false;
   }
   if ((snapshot.pricing.promoValue > 0 || snapshot.includedCoverageYears! > 3)
     && (typeof snapshot.promotion?.name !== 'string' || !snapshot.promotion.name.trim()

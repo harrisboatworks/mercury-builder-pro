@@ -900,6 +900,12 @@ export default function QuoteSummaryPage() {
     });
     const financingData = {
       ...state,
+      ...(hasFrozenSnapshot ? {
+        selectedPromoOption: pdfSnapshot.promotion?.selectedOption ?? null,
+        selectedPromoValue: pdfSnapshot.promotion?.selectedValue ?? null,
+        promotionName: pdfSnapshot.promotion?.name ?? null,
+        promotionCombinationMode: pdfSnapshot.promotion?.combinationMode ?? null,
+      } : {}),
       financingAmount: {
         packageSubtotal: displayPricing.subtotal,
         hst: purchase.tax,
