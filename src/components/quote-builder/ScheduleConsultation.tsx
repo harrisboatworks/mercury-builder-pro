@@ -1,3 +1,4 @@
+import { isQuoteSnapshotExpired } from '../../../supabase/functions/_shared/quote-snapshot-expiry';
 import { RequiredMark } from "@/components/ui/required-mark";
 import { useState, useEffect, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
@@ -43,6 +44,12 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
   const [turnstileToken, setTurnstileToken] = useState('');
   const turnstileHostRef = useRef<HTMLDivElement | null>(null);
   const pdfSnapshot = isQuotePdfSnapshot(quoteData.pdfSnapshot) ? quoteData.pdfSnapshot : null;
+  const [quoteExpired, setQuoteExpired] = useState(false);
+  const rejectExpiredQuote = () => {
+    if (!pdfSnapshot || !isQuoteSnapshotExpired(pdfSnapshot)) return false;
+    setQuoteExpired(true);
+    return true;
+  };
   const isLoosePickup = (purchasePath || quoteData.purchasePath) === 'loose';
   const turnstileSiteKey = getTurnstileSiteKey();
 
@@ -209,6 +216,7 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (rejectExpiredQuote()) return;
     
     if (!validateForm()) {
       // Validation errors shown inline
@@ -359,6 +367,7 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
   };
 
   const generatePDF = async () => {
+    if (rejectExpiredQuote()) return;
     if (!quoteData.motor) {
       // Silent - button shouldn't be available without motor
       return;
@@ -394,6 +403,14 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
       });
     }
   };
+
+  if (quoteExpired || (pdfSnapshot && isQuoteSnapshotExpired(pdfSnapshot))) {
+    return <Alert>
+      <h2 className="text-xl font-semibold">Quote pricing has expired</h2>
+      <AlertDescription className="mt-3">Return to your quote to verify current pricing, rebates and promotional coverage before sending it for review.</AlertDescription>
+      <Button type="button" onClick={onBack} className="mt-5">Return to quote</Button>
+    </Alert>;
+  }
 
   return (
     <div className="max-w-6xl mx-auto space-y-8">

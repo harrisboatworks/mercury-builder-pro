@@ -4,6 +4,7 @@
 //
 // Phase 2: Turnstile-gated, submit-bound customer confirmation from the
 // inserted row. No caller PDF/document, no customer SMS.
+import { isQuoteSnapshotExpired } from "../_shared/quote-snapshot-expiry.ts";
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
 import { Resend } from "npm:resend@2.0.0";
@@ -199,6 +200,9 @@ serve(async (req) => {
             motorModel,
           }),
         };
+        if (isQuoteSnapshotExpired(quoteDetails)) {
+          throw new ConsultationDocumentRequestError("Quote pricing has expired. Refresh your quote.");
+        }
         hasAuthoritativeQuoteSnapshot = true;
       } catch (snapshotError) {
         const message = snapshotError instanceof ConsultationDocumentRequestError
