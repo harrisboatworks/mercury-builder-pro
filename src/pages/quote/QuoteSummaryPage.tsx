@@ -11,6 +11,7 @@ import { PageTransition } from '@/components/ui/page-transition';
 import { QuoteSummarySkeleton } from '@/components/quote-builder/QuoteSummarySkeleton';
 import StickySummary from '@/components/quote-builder/StickySummary';
 import { StaleQuoteAlert } from '@/components/quote-builder/StaleQuoteAlert';
+import { UCP_CHECKOUT_REF_FLAG } from '@/lib/agent-quote-handoff';
 import { getExpressReservationDeposit, getRecommendedDeposit } from '@/lib/deposit';
 import {
   formatDepositAddress,
@@ -903,7 +904,12 @@ export default function QuoteSummaryPage() {
   };
 
   // Open the deposit info dialog (replaces direct payment flow)
+  const [depositRail, setDepositRail] = useState<'hosted' | 'assistant'>('hosted');
+  const nativeParentRef = state.uiFlags?.[UCP_CHECKOUT_REF_FLAG];
+  const canUseAssistantDeposit = import.meta.env.VITE_NATIVE_DEPOSIT_ENABLED === 'true'
+    && typeof nativeParentRef === 'string' && /^chk_[A-Za-z0-9._-]{1,120}$/.test(nativeParentRef) && Boolean(user);
   const handleReserveDeposit = () => {
+    setDepositRail('hosted');
     if (!depositPolicySnapshot) {
       toast({
         title: 'Reservation terms unavailable',
@@ -1042,6 +1048,18 @@ export default function QuoteSummaryPage() {
       );
       if (quoteDocumentError || quoteDocument?.success !== true) {
         throw new Error('Could not securely store this quote. Please try again.');
+      }
+
+      if (depositRail === 'assistant') {
+        if (!canUseAssistantDeposit) throw new Error('Sign in and reopen the quote from your assistant before continuing.');
+        const { data: child, error: childError } = await supabase.functions.invoke(
+          `ucp-checkout/checkout-sessions/${encodeURIComponent(nativeParentRef)}/deposits`, {
+            body: { operation: 'motor_reservation', saved_quote_id: savedQuoteId },
+          });
+        if (childError || !child?.id || !/^ndc_[0-9a-f]{32}$/.test(child.id))
+          throw new Error('Your assistant quote changed or expired. Ask for a fresh quote before making a payment.');
+        window.location.assign(`/quote/agent-deposit/${child.id}`);
+        return;
       }
 
       // Build full quote snapshot for persistence
@@ -1441,6 +1459,12 @@ export default function QuoteSummaryPage() {
                       )}
                     </span>
                   </button>
+                  {canUseAssistantDeposit && <button
+                    type="button" disabled={isProcessingDeposit || noMotorSelected || !canReserveMotor}
+                    className="w-full rounded border px-6 py-3 text-sm font-medium disabled:opacity-50"
+                    onClick={() => { setDepositRail('assistant'); setShowDepositDialog(true); }}>
+                    Review this deposit with my assistant
+                  </button>}
                   <p className="px-2 text-center font-sans text-[12px] leading-relaxed text-repower-navy-900/60">
                     Secure Stripe checkout. HBW confirms the motor and quote details before anything is ordered.
                   </p>
