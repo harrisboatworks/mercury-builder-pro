@@ -24,6 +24,8 @@ export async function nativeLiveSellerVerified(env: NativeLiveConfigEnv): Promis
       || proof.account_id !== account || proof.profile_id !== profile
       || proof.api_version !== NATIVE_STRIPE_API_VERSION
       || proof.spt_access_verified !== true || proof.signed_callback_verified !== true
+      || proof.charges_enabled !== true || proof.native_webhook_verified !== true
+      || !/^we_[A-Za-z0-9]+$/.test(env.NATIVE_STRIPE_WEBHOOK_ID || '') || proof.webhook_id !== env.NATIVE_STRIPE_WEBHOOK_ID
       || !/^evt_[A-Za-z0-9]+$/.test(proof.callback_event_id || '')
       || !Number.isFinite(Date.parse(proof.terms_accepted_at))
       || Date.parse(proof.terms_accepted_at) > Date.now()

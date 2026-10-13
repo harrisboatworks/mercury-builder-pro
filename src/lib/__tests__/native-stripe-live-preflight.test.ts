@@ -1,12 +1,13 @@
 import { describe, expect, it, vi } from 'vitest';
 import { createNativeStripeLivePreflight } from '../../../scripts/operations/native-stripe-live-preflight/handler';
+import { NATIVE_LIVE_WEBHOOK_EVENTS } from '../../../supabase/functions/_shared/native-stripe-live-webhook';
 
 const project = 'https://eutsoqdpjurknjsshxes.supabase.co';
 const env = { SUPABASE_URL: project, SUPABASE_SERVICE_ROLE_KEY: 'operator-fixture', NATIVE_DEPOSIT_ENABLED: 'false',
   STRIPE_SECRET_KEY: 'sk_live_fixture-not-a-key', STRIPE_WEBHOOK_SECRET: 'whsec_fixture-not-a-secret', NATIVE_PREFLIGHT_SPT_APPROVED: '1' };
 const account = { id: 'acct_Synthetic', charges_enabled: true, country: 'CA', email: 'private@example.invalid' };
 const hook = { id: 'we_Synthetic', url: project + '/functions/v1/stripe-webhook', status: 'enabled', livemode: true,
-  api_version: '2022-11-15', enabled_events: ['checkout.session.completed'], secret: 'private-secret' };
+  api_version: '2022-11-15', enabled_events: [...NATIVE_LIVE_WEBHOOK_EVENTS], secret: 'private-secret' };
 const event = { id: 'evt_Synthetic', type: 'payment_intent.succeeded', livemode: true, created: 123,
   data: { object: { object: 'payment_intent', metadata: {}, customer: 'private-customer' } } };
 function request(operation = 'account', extra: Record<string, unknown> = {}, headers: Record<string, string> = {}) {
@@ -55,7 +56,9 @@ describe('read-only live Stripe server preflight', () => {
     expect(JSON.stringify(result)).not.toMatch(/private|unrelated/);
   });
   it.each([{ has_more: true, data: [hook] }, { has_more: false, data: [] }, { has_more: false, data: [hook, hook] },
-    { has_more: false, data: [{ ...hook, status: 'disabled' }] }, { has_more: false, data: [{ ...hook, livemode: false }] }])('fails closed on ambiguous/inactive webhook configuration', async data => {
+    { has_more: false, data: [{ ...hook, status: 'disabled' }] }, { has_more: false, data: [{ ...hook, livemode: false }] },
+    { has_more: false, data: [{ ...hook, enabled_events: ['checkout.session.completed'] }] },
+    { has_more: false, data: [{ ...hook, api_version: '2020-01-01' }] }])('fails closed on ambiguous/inactive webhook configuration', async data => {
     const { run } = setup([{ body: account }, { body: data }]); expect((await run(request('webhooks'))).ok).toBe(false);
   });
   it('selects a non-native event without exposing payment/customer data', async () => {

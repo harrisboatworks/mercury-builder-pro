@@ -7,10 +7,11 @@ async function digest(value: string) {
 async function config() {
   const env = { SUPABASE_URL: 'https://eutsoqdpjurknjsshxes.supabase.co', STRIPE_SECRET_KEY: 'sk_live_fixture-not-a-key',
     STRIPE_WEBHOOK_SECRET: 'whsec_fixture-not-a-secret', NATIVE_STRIPE_SELLER_ACCOUNT: 'acct_Synthetic',
-    NATIVE_STRIPE_SELLER_PROFILE: 'profile_Synthetic', NATIVE_DEPOSIT_LIVE_ATTESTATION: '' };
+    NATIVE_STRIPE_SELLER_PROFILE: 'profile_Synthetic', NATIVE_STRIPE_WEBHOOK_ID: 'we_Synthetic', NATIVE_DEPOSIT_LIVE_ATTESTATION: '' };
   const proof = { account_id: env.NATIVE_STRIPE_SELLER_ACCOUNT, profile_id: env.NATIVE_STRIPE_SELLER_PROFILE,
     api_version: '2026-09-30.preview', spt_access_verified: true, signed_callback_verified: true,
     callback_event_id: 'evt_Synthetic', terms_accepted_at: '2026-01-01T00:00:00Z', verified_at: '2026-01-01T00:00:00Z',
+    webhook_id: 'we_Synthetic', charges_enabled: true, native_webhook_verified: true,
     key_sha256: await digest(env.STRIPE_SECRET_KEY), signing_sha256: await digest(env.STRIPE_WEBHOOK_SECRET) };
   env.NATIVE_DEPOSIT_LIVE_ATTESTATION = JSON.stringify(proof);
   return { env, proof };
@@ -19,14 +20,14 @@ describe('controller native activation proof', () => {
   it('accepts only the current account/profile/key/signing binding', async () => {
     const { env } = await config(); expect(await nativeLiveSellerVerified(env)).toBe(true);
   });
-  it.each(['STRIPE_SECRET_KEY', 'STRIPE_WEBHOOK_SECRET', 'NATIVE_STRIPE_SELLER_ACCOUNT', 'NATIVE_STRIPE_SELLER_PROFILE'])('rejects drift in %s', async field => {
+  it.each(['STRIPE_SECRET_KEY', 'STRIPE_WEBHOOK_SECRET', 'NATIVE_STRIPE_SELLER_ACCOUNT', 'NATIVE_STRIPE_SELLER_PROFILE', 'NATIVE_STRIPE_WEBHOOK_ID'])('rejects drift in %s', async field => {
     const { env } = await config(); env[field] += 'Changed'; expect(await nativeLiveSellerVerified(env)).toBe(false);
   });
   it.each(['account_id', 'profile_id', 'api_version', 'key_sha256', 'signing_sha256', 'callback_event_id'])('rejects incorrect proof field %s', async field => {
     const { env, proof } = await config(); proof[field] = 'incorrect'; env.NATIVE_DEPOSIT_LIVE_ATTESTATION = JSON.stringify(proof);
     expect(await nativeLiveSellerVerified(env)).toBe(false);
   });
-  it.each(['spt_access_verified', 'signed_callback_verified'])('requires completed %s evidence', async field => {
+  it.each(['spt_access_verified', 'signed_callback_verified', 'charges_enabled', 'native_webhook_verified'])('requires completed %s evidence', async field => {
     const { env, proof } = await config(); proof[field] = false; env.NATIVE_DEPOSIT_LIVE_ATTESTATION = JSON.stringify(proof);
     expect(await nativeLiveSellerVerified(env)).toBe(false);
   });

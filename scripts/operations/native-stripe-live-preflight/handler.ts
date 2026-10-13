@@ -1,5 +1,6 @@
 // Temporary, server-only verifier. All upstream calls are GET; no payments,
 // database writes, customer notifications or credential exports are possible.
+import { nativeLiveWebhookReady } from '../../../supabase/functions/_shared/native-stripe-live-webhook.ts';
 type Env = Record<string, string | undefined>;
 const PROJECT = 'https://eutsoqdpjurknjsshxes.supabase.co';
 const VERSION = '2026-09-30.preview';
@@ -69,9 +70,7 @@ export function createNativeStripeLivePreflight(env: Env, fetchImpl: typeof fetc
         if (!result.ok || !Array.isArray(result.data.data) || result.data.has_more !== false) throw new Refusal(502, 'webhooks_unavailable');
         const matches = result.data.data.filter((x: any) => x.url === PROJECT + '/functions/v1/stripe-webhook');
         const hook = matches[0];
-        if (matches.length !== 1 || !hook || hook.status !== 'enabled' || hook.livemode !== true || !/^we_[A-Za-z0-9]+$/.test(hook.id)
-          || !Array.isArray(hook.enabled_events) || !hook.enabled_events.every((s: unknown) => typeof s === 'string' && /^(\*|[a-z0-9_.]+)$/.test(s))
-          || typeof hook.api_version !== 'string' || !/^\d{4}-\d{2}-\d{2}(\.[a-z0-9]+)?$/.test(hook.api_version))
+        if (matches.length !== 1 || !nativeLiveWebhookReady(hook))
           throw new Refusal(409, 'owned_webhook_not_ready');
         return reply({ ...base, webhook: { id: hook.id, url: hook.url, status: hook.status,
           livemode: true, api_version: hook.api_version, enabled_events: hook.enabled_events } });

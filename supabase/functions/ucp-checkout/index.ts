@@ -57,21 +57,23 @@ async function opNative(req: Request, supabase: any, id: string, operation: 'cre
   const enabled = nativeDepositCheckoutEnabled(Deno.env.get('NATIVE_DEPOSIT_ENABLED'));
   if (!enabled && operation === 'create')
     throw { status: 404, code: 'not_available', message: 'Native deposit checkout is not enabled.' };
-  const livemode = Deno.env.get('STRIPE_SECRET_KEY')?.startsWith('sk_live_') === true;
+  const livemode = Deno.env.get('STRIPE_SECRET_KEY')?.trim().startsWith('sk_live_') === true;
   const sellerProfile = Deno.env.get('NATIVE_STRIPE_SELLER_PROFILE');
   const production = Deno.env.get('SUPABASE_URL') === 'https://eutsoqdpjurknjsshxes.supabase.co';
-  const sellerVerified = production ? await nativeLiveSellerVerified({
+  const liveActivationRequired = production || livemode;
+  const sellerVerified = liveActivationRequired ? await nativeLiveSellerVerified({
     SUPABASE_URL: Deno.env.get('SUPABASE_URL'), STRIPE_SECRET_KEY: Deno.env.get('STRIPE_SECRET_KEY'),
     STRIPE_WEBHOOK_SECRET: Deno.env.get('STRIPE_WEBHOOK_SECRET'),
     NATIVE_STRIPE_SELLER_ACCOUNT: Deno.env.get('NATIVE_STRIPE_SELLER_ACCOUNT'),
     NATIVE_STRIPE_SELLER_PROFILE: sellerProfile,
     NATIVE_DEPOSIT_LIVE_ATTESTATION: Deno.env.get('NATIVE_DEPOSIT_LIVE_ATTESTATION'),
+    NATIVE_STRIPE_WEBHOOK_ID: Deno.env.get('NATIVE_STRIPE_WEBHOOK_ID'),
   }) : !livemode && nativeSellerProfileId(sellerProfile, false) !== null;
-  if (enabled && operation === 'create' && production && !sellerVerified)
+  if (enabled && operation === 'create' && liveActivationRequired && !sellerVerified)
     throw { status: 503, code: 'not_available', message: 'Native seller wallet identity is not configured.' };
   const io = nativeDepositIo(supabase);
   const actor = await nativeActorFromRequest(supabase, req);
-  if ((!enabled || (production && !sellerVerified)) && operation === 'complete') {
+  if ((!enabled || (liveActivationRequired && !sellerVerified)) && operation === 'complete') {
     const existing = await io.loadIntentByChild(id);
     const attempt = existing ? await io.loadAttempt(existing.id) : null;
     if (existing?.status !== 'paid' && !attempt?.submitted_at) throw { status: 404, code: 'not_available', message: 'New native payments are disabled.' };
@@ -81,8 +83,8 @@ async function opNative(req: Request, supabase: any, id: string, operation: 'cre
     : operation === 'read' ? await runNativeDepositRead({ childId: id, actor, io })
     : await runNativeDepositComplete({ caller, childId: id, actor, now: new Date(),
       sellerAccountId: Deno.env.get('NATIVE_STRIPE_SELLER_ACCOUNT') || null,
-      livemode: Deno.env.get('STRIPE_SECRET_KEY')?.startsWith('sk_live_') ?? null,
-      openStripe: () => createNativeStripePreviewClient({ secretKey: Deno.env.get('STRIPE_SECRET_KEY') || '', sellerAccountId: Deno.env.get('NATIVE_STRIPE_SELLER_ACCOUNT') || '' }), io });
+      livemode: Deno.env.get('STRIPE_SECRET_KEY')?.trim().startsWith('sk_live_') ?? null,
+      openStripe: () => createNativeStripePreviewClient({ secretKey: Deno.env.get('STRIPE_SECRET_KEY') || '', sellerAccountId: Deno.env.get('NATIVE_STRIPE_SELLER_ACCOUNT') || '', liveWebhookId: Deno.env.get('NATIVE_STRIPE_WEBHOOK_ID') }), io });
   if (!result.ok) throw { status: result.status, code: result.code, message: result.message };
   result.checkout = withNativeSellerProfile(result.checkout, { profileId: sellerProfile, livemode, enabled, verified: sellerVerified });
   const checkout = result.checkout;

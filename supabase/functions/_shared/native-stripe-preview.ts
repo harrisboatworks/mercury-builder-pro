@@ -1,5 +1,6 @@
 // Pinned native Shared Payment Token client. Hosted Checkout keeps its own
 // 2025-08-27.basil Stripe client. This module never calls Stripe test helpers.
+import { nativeLiveWebhookReady } from './native-stripe-live-webhook.ts';
 
 export const NATIVE_STRIPE_API_VERSION = "2026-09-30.preview";
 export const HOSTED_CHECKOUT_STRIPE_API_VERSION = "2025-08-27.basil";
@@ -43,6 +44,7 @@ function encodeForm(params: Record<string, string>): string {
 export function createNativeStripePreviewClient(options: {
   secretKey: string;
   sellerAccountId: string;
+  liveWebhookId?: string;
   fetchImpl?: typeof fetch;
 }): NativeStripePreview {
   const secretKey = options.secretKey.trim();
@@ -100,6 +102,19 @@ export function createNativeStripePreviewClient(options: {
       const account = await rawStripeRequest("GET", "/v1/account") as { id?: string };
       if (account?.id !== sellerAccountId) throw new NativeStripeRequestError(409, "native_seller_mismatch");
       checkedAccount = true;
+    }
+    if (livemode && method === 'POST') {
+      // Deployment proof is durable configuration, not a stale health cache.
+      // Recheck current admission before a new live write. GET reconciliation
+      // remains available when charges or the callback destination are paused.
+      if (!/^we_[A-Za-z0-9]+$/.test(options.liveWebhookId || ''))
+        throw new NativeStripeRequestError(409, 'native_webhook_not_ready');
+      const current = await rawStripeRequest('GET', '/v1/account') as { id?: string; charges_enabled?: boolean };
+      if (current?.id !== sellerAccountId || current.charges_enabled !== true)
+        throw new NativeStripeRequestError(409, 'native_seller_not_ready');
+      const hook = await rawStripeRequest('GET', `/v1/webhook_endpoints/${encodeURIComponent(options.liveWebhookId!)}`);
+      if (!nativeLiveWebhookReady(hook, options.liveWebhookId))
+        throw new NativeStripeRequestError(409, 'native_webhook_not_ready');
     }
     return rawStripeRequest(method, path, body, idempotencyKey);
   }

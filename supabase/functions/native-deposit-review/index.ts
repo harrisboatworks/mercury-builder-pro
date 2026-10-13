@@ -29,12 +29,14 @@ Deno.serve(async req => {
   if (req.method !== 'POST') return reply({ error: 'Method not allowed' }, 405);
   const enabled = nativeDepositCheckoutEnabled(Deno.env.get('NATIVE_DEPOSIT_ENABLED'));
   const production = Deno.env.get('SUPABASE_URL') === 'https://eutsoqdpjurknjsshxes.supabase.co';
-  const sellerVerified = !production || await nativeLiveSellerVerified({
+  const liveActivationRequired = production || Deno.env.get('STRIPE_SECRET_KEY')?.trim().startsWith('sk_live_') === true;
+  const sellerVerified = !liveActivationRequired || await nativeLiveSellerVerified({
     SUPABASE_URL: Deno.env.get('SUPABASE_URL'), STRIPE_SECRET_KEY: Deno.env.get('STRIPE_SECRET_KEY'),
     STRIPE_WEBHOOK_SECRET: Deno.env.get('STRIPE_WEBHOOK_SECRET'),
     NATIVE_STRIPE_SELLER_ACCOUNT: Deno.env.get('NATIVE_STRIPE_SELLER_ACCOUNT'),
     NATIVE_STRIPE_SELLER_PROFILE: Deno.env.get('NATIVE_STRIPE_SELLER_PROFILE'),
     NATIVE_DEPOSIT_LIVE_ATTESTATION: Deno.env.get('NATIVE_DEPOSIT_LIVE_ATTESTATION'),
+    NATIVE_STRIPE_WEBHOOK_ID: Deno.env.get('NATIVE_STRIPE_WEBHOOK_ID'),
   });
   try {
     const db = createClient(Deno.env.get('SUPABASE_URL')!, Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!, { auth: { persistSession: false } });
