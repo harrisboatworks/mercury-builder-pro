@@ -1,8 +1,10 @@
 #!/usr/bin/env node
 /**
  * Synchronize machine-facing business facts from their canonical sources:
- * - Google Business Profile cache: coordinates and public opening hours
+ * - Google Business Profile cache: coordinates
  * - finance-policy.json: active headline offer and post-promo standard tiers
+ * Live shop hours are not copied from the Places cache. Agent-facing files
+ * point at /contact, which renders the Google Business Profile hours.
  */
 import { readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
@@ -48,11 +50,8 @@ brand.standards = [
 ];
 brand.geography.headquarters.lat = latitude;
 brand.geography.headquarters.lng = longitude;
-brand.contact.hours.note = 'In-season (April 1 - November 30). Marina closed for winter December 1 - April 1.';
-const monday = places.openingHoursSpecification?.find((item) => item.dayOfWeek === 'Monday');
-const sunday = places.openingHoursSpecification?.find((item) => item.dayOfWeek === 'Sunday');
-if (monday) brand.contact.hours.monSat = `${monday.opens}-${monday.closes}`;
-if (sunday) brand.contact.hours.sun = `${sunday.opens}-${sunday.closes}`;
+const CONTACT_HOURS_POINTER = 'Current hours: see https://www.mercuryrepower.ca/contact (from our Google Business Profile).';
+brand.contact.hours = { note: CONTACT_HOURS_POINTER };
 brand.lastUpdated = today;
 writeJson('public/.well-known/brand.json', brand);
 
@@ -90,8 +89,8 @@ llms = replaceRequired(
 );
 llms = replaceRequired(
   llms,
-  /^- Hours \(in-season,[^\n]*$/m,
-  `- Hours (in-season, April 1-November 30): Monday-Saturday ${monday?.opens || '08:00'}-${monday?.closes || '17:00'}, Sunday ${sunday?.opens || '09:00'}-${sunday?.closes || '16:00'}. Closed for winter December 1-April 1.`,
+  /^- Hours[^\n]*$/m,
+  `- Hours: see https://www.mercuryrepower.ca/contact (from our Google Business Profile).`,
   'llms.txt hours',
 );
 llms = synchronizeAgentContractDocs(llms, readFileSync(join(ROOT, 'supabase/functions/ucp-checkout/index.ts'), 'utf8'), readFileSync(join(ROOT, 'supabase/functions/agent-mcp-server/index.ts'), 'utf8'));
@@ -101,8 +100,8 @@ const aiPath = join(ROOT, 'public/.well-known/ai.txt');
 let ai = readFileSync(aiPath, 'utf8');
 ai = replaceRequired(
   ai,
-  /^- In-season hours \([^\n]*$/m,
-  '- In-season hours (April 1-November 30): Monday-Saturday 8am-5pm, Sunday 9am-4pm. Marina closed for winter December 1-April 1.',
+  /^- (?:In-season hours|Current hours)[^\n]*$/m,
+  `- ${CONTACT_HOURS_POINTER}`,
   'ai.txt hours',
 );
 writeFileSync(aiPath, ai, 'utf8');
