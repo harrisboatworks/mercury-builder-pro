@@ -22,7 +22,11 @@ export function resolveAgentAttribution(
   const rawSurface = params.get('src');
   const surface = SURFACES.find(value => value === rawSurface);
   const explicit = params.get('ref') || params.get('utm_source');
-  if (explicit) return { source: ALIASES[normalize(explicit)] ?? (referrer ? 'referral' : 'direct'), ...(surface ? { surface } : {}) };
+  if (explicit) {
+    const key = normalize(explicit);
+    const source = Object.prototype.hasOwnProperty.call(ALIASES, key) ? ALIASES[key] : undefined;
+    return { source: source ?? (referrer ? 'referral' : 'direct'), ...(surface ? { surface } : {}) };
+  }
   if (surface) return { source: surface, surface };
   // Workflow references identify a UCP journey, not a wallet authorization.
   if (/^chk_[A-Za-z0-9._-]{1,124}$/.test(params.get('ucp') ?? '')) return { source: 'agent_ucp', surface: 'agent_ucp' };

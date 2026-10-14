@@ -42,7 +42,8 @@ describe('quote funnel UX contract', () => {
     expect(saleSource).toContain('secure this model with a ${depositAmount.toLocaleString()} reservation deposit');
     expect(motorSelectionSource).toContain("searchParams.get('intent') === 'motor-only'");
     expect(motorSelectionSource).toContain('motorId === MERCURY_99_MH_EXPRESS_MOTOR_ID');
-    expect(motorSelectionSource).toContain("type: 'START_MOTOR_ONLY_QUOTE'");
+    expect(motorSelectionSource).toContain('buildExpressQuoteHandoffActions(state, searchParams, targetMotor)');
+    expect(read('src/lib/agent-quote-handoff.ts')).toContain("type: 'START_MOTOR_ONLY_QUOTE'");
     expect(contextSource).toContain("purchasePath: 'loose'");
     expect(contextSource).toContain("selectedPaymentMethod: 'cash_purchase'");
     expect(contextSource).toContain('motorOnlyExpress: true');

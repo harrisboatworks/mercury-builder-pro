@@ -17,7 +17,8 @@ describe('motor selection agent handoff contract', () => {
     expect(page).toContain('UCP_CHECKOUT_REF_FLAG');
     expect(page).toContain("searchParams.get('intent') === 'motor-only'");
     expect(page).toContain('motorId === MERCURY_99_MH_EXPRESS_MOTOR_ID');
-    expect(page).toContain("type: 'START_MOTOR_ONLY_QUOTE'");
+    expect(page).toContain('buildExpressQuoteHandoffActions(state, searchParams, targetMotor)');
+    expect(handoff).toContain("type: 'START_MOTOR_ONLY_QUOTE'");
     expect(page).toContain('groupedMotors.find');
     expect(page).toContain('setShowConfigurator(true)');
     expect(page).toContain("if (!motorId || processedMotors.length === 0) return");

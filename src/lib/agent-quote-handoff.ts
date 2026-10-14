@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 import { captureAgentAttribution } from './agent-attribution';
 import type { Motor, BoatInfo } from '@/components/QuoteBuilder';
 import type { QuoteAction, QuoteState } from '@/contexts/QuoteContext';
@@ -11,6 +11,7 @@ export const AGENT_QUOTE_HANDOFF_MOTOR_ID_MAX = 80;
 export const AGENT_QUOTE_HANDOFF_UCP_MAX = 128;
 export const AGENT_QUOTE_HANDOFF_HP_MAX = 600;
 export const UCP_CHECKOUT_REF_FLAG = 'ucpCheckoutRef';
+export const AGENT_UCP_PENDING_HANDOFF_FLAG = 'agentUcpHandoff';
 export const AGENT_UCP_MOTOR_ID_FLAG = 'ucpHandoffMotorId';
 export const AGENT_PROPELLER_HANDOFF_FLAG = 'agentPropellerHandoff';
 
@@ -269,12 +270,12 @@ export function mergeBoatInfoFromHandoff(
   existing: BoatInfo | null | undefined,
   handoff: ParsedAgentQuoteHandoff,
 ): { next: BoatInfo; changed: boolean } | null {
-  const hasBoatFields = Boolean(handoff.boatMake || handoff.boatModel || handoff.customerHasPropeller !== undefined);
+  const hasBoatFields = Boolean(handoff.boatMake || handoff.boatModel);
   const hasTradeMirror = Boolean(
     handoff.tradeBrand || handoff.tradeYear !== undefined || handoff.tradeHp !== undefined,
   );
   if (!hasBoatFields && !hasTradeMirror && !existing) return null;
-  if (!hasBoatFields && !hasTradeMirror) return null;
+  if (!hasBoatFields && !hasTradeMirror && !(existing && handoff.customerHasPropeller !== undefined)) return null;
 
   const next: BoatInfo = existing ? { ...existing } : blankBoatInfo();
   let changed = false;
@@ -392,6 +393,11 @@ export function stripConsumedAgentQuoteHandoffParams(
   if (options.declined) {
     next.delete('ucp');
     next.delete('reservation');
+    if (isMotorOnlyExpressHandoff(next)) {
+      next.delete('motor');
+      next.delete('select');
+      next.delete('intent');
+    }
   }
   return next;
 }
@@ -402,6 +408,14 @@ function pendingPropellerHandoff(state: QuoteState): { motorId: string; customer
   const record = value as Record<string, unknown>;
   if (typeof record.motorId !== 'string' || sanitizeBuyerText(record.motorId, AGENT_QUOTE_HANDOFF_MOTOR_ID_MAX) !== record.motorId || typeof record.customerHasPropeller !== 'boolean') return undefined;
   return { motorId: record.motorId, customerHasPropeller: record.customerHasPropeller };
+}
+
+function pendingUcpHandoff(state: QuoteState): { motorId: string; ucpRef: string } | undefined {
+  const value = state.uiFlags?.[AGENT_UCP_PENDING_HANDOFF_FLAG];
+  if (!value || typeof value !== 'object' || Array.isArray(value)) return undefined;
+  const record = value as Record<string, unknown>;
+  if (typeof record.motorId !== 'string' || sanitizeBuyerText(record.motorId, AGENT_QUOTE_HANDOFF_MOTOR_ID_MAX) !== record.motorId || typeof record.ucpRef !== 'string' || record.ucpRef.length > AGENT_QUOTE_HANDOFF_UCP_MAX || !UCP_REF_RE.test(record.ucpRef)) return undefined;
+  return { motorId: record.motorId, ucpRef: record.ucpRef };
 }
 
 export function buildAgentQuoteHandoffActions(
@@ -441,19 +455,29 @@ export function buildAgentQuoteHandoffActions(
     }
   }
 
-  if (
-    handoff.ucpCheckoutRef
-    && state.uiFlags?.[UCP_CHECKOUT_REF_FLAG] !== handoff.ucpCheckoutRef
-  ) {
-    actions.push({
-      type: 'SET_UI_FLAG',
-      payload: { key: UCP_CHECKOUT_REF_FLAG, value: handoff.ucpCheckoutRef },
-    });
+  if (handoff.ucpCheckoutRef) {
+    if (handoff.motorId && handoff.motorId !== state.motor?.id) {
+      const pending = pendingUcpHandoff(state);
+      if (pending?.motorId !== handoff.motorId || pending?.ucpRef !== handoff.ucpCheckoutRef) {
+        actions.push({ type: 'SET_UI_FLAG', payload: { key: AGENT_UCP_PENDING_HANDOFF_FLAG, value: { motorId: handoff.motorId, ucpRef: handoff.ucpCheckoutRef } } });
+      }
+    } else {
+      if (state.uiFlags?.[UCP_CHECKOUT_REF_FLAG] !== handoff.ucpCheckoutRef) {
+        actions.push({ type: 'SET_UI_FLAG', payload: { key: UCP_CHECKOUT_REF_FLAG, value: handoff.ucpCheckoutRef } });
+      }
+      if (handoff.motorId && state.uiFlags?.[AGENT_UCP_MOTOR_ID_FLAG] !== handoff.motorId) {
+        actions.push({ type: 'SET_UI_FLAG', payload: { key: AGENT_UCP_MOTOR_ID_FLAG, value: handoff.motorId } });
+      }
+    }
   }
+  return actions;
+}
 
-  if (handoff.ucpCheckoutRef && handoff.motorId && state.uiFlags?.[AGENT_UCP_MOTOR_ID_FLAG] !== handoff.motorId) {
-    actions.push({ type: 'SET_UI_FLAG', payload: { key: AGENT_UCP_MOTOR_ID_FLAG, value: handoff.motorId } });
-  }
+export function buildExpressQuoteHandoffActions(state: QuoteState, params: URLSearchParams, motor: Motor): QuoteAction[] {
+  if (state.isLoading || isProtectedQuoteHandoff(state) || !isMotorOnlyExpressHandoff(params) || motor.id !== EXPRESS_MOTOR_ID) return [];
+  const actions: QuoteAction[] = [{ type: 'START_MOTOR_ONLY_QUOTE', payload: motor }];
+  const { ucpCheckoutRef } = parseAgentQuoteHandoff(params);
+  if (ucpCheckoutRef) actions.push({ type: 'SET_UI_FLAG', payload: { key: UCP_CHECKOUT_REF_FLAG, value: ucpCheckoutRef } });
   return actions;
 }
 
@@ -466,12 +490,24 @@ export function buildAgentMotorSelectionActions(
   const select: QuoteAction = { type: 'SET_MOTOR', payload: motor };
   const next = reduce(state, select);
   const actions: QuoteAction[] = [select];
-  const ucpRef = state.uiFlags?.[UCP_CHECKOUT_REF_FLAG];
-  if (state.uiFlags?.[AGENT_UCP_MOTOR_ID_FLAG] === motor.id && typeof ucpRef === 'string' && UCP_REF_RE.test(ucpRef) && ucpRef.length <= AGENT_QUOTE_HANDOFF_UCP_MAX) {
+  const pendingUcp = pendingUcpHandoff(state);
+  const scopedMotorId = state.uiFlags?.[AGENT_UCP_MOTOR_ID_FLAG];
+  const attachedUcpRef = state.uiFlags?.[UCP_CHECKOUT_REF_FLAG];
+  const ucpRef = pendingUcp?.motorId === motor.id ? pendingUcp.ucpRef
+    : scopedMotorId === motor.id && typeof attachedUcpRef === 'string' ? attachedUcpRef : undefined;
+  if (ucpRef && UCP_REF_RE.test(ucpRef) && ucpRef.length <= AGENT_QUOTE_HANDOFF_UCP_MAX) {
     if (next.uiFlags?.[UCP_CHECKOUT_REF_FLAG] !== ucpRef) {
       actions.push({ type: 'SET_UI_FLAG', payload: { key: UCP_CHECKOUT_REF_FLAG, value: ucpRef } });
+    }
+    if (next.uiFlags?.[AGENT_UCP_MOTOR_ID_FLAG] !== motor.id) {
       actions.push({ type: 'SET_UI_FLAG', payload: { key: AGENT_UCP_MOTOR_ID_FLAG, value: motor.id } });
     }
+  } else if (typeof scopedMotorId === 'string' && scopedMotorId !== motor.id && next.uiFlags?.[UCP_CHECKOUT_REF_FLAG]) {
+    actions.push({ type: 'SET_UI_FLAG', payload: { key: UCP_CHECKOUT_REF_FLAG, value: null } });
+    actions.push({ type: 'SET_UI_FLAG', payload: { key: AGENT_UCP_MOTOR_ID_FLAG, value: null } });
+  }
+  if (pendingUcp && next.uiFlags?.[AGENT_UCP_PENDING_HANDOFF_FLAG]) {
+    actions.push({ type: 'SET_UI_FLAG', payload: { key: AGENT_UCP_PENDING_HANDOFF_FLAG, value: null } });
   }
   const pending = pendingPropellerHandoff(state);
   if (pending && pending.motorId === motor.id && typeof pending.customerHasPropeller === 'boolean') {
@@ -497,8 +533,13 @@ export function useAgentQuoteHandoff({
   setSearchParams,
   state,
   dispatch,
-}: AgentQuoteHandoffApplyInput): void {
+}: AgentQuoteHandoffApplyInput): (params: URLSearchParams) => URLSearchParams {
   const appliedRef = useRef(false);
+  const cleanupRef = useRef<{ handoff: ParsedAgentQuoteHandoff; options: AgentQuoteHandoffApplyOptions } | null>(null);
+  const cleanup = useCallback((params: URLSearchParams) => {
+    const consumed = cleanupRef.current;
+    return consumed ? stripConsumedAgentQuoteHandoffParams(params, consumed.handoff, consumed.options) : params;
+  }, []);
 
   useEffect(() => {
     if (appliedRef.current || state.isLoading) return;
@@ -508,19 +549,16 @@ export function useAgentQuoteHandoff({
     const protectedQuote = isProtectedQuoteHandoff(state);
     const skipBoatAndTrade = isMotorOnlyExpressHandoff(searchParams);
     const handoff = parseAgentQuoteHandoff(searchParams);
+    cleanupRef.current = { handoff, options: { skipBoatAndTrade, declined: protectedQuote } };
     const actions = buildAgentQuoteHandoffActions(state, handoff, { skipBoatAndTrade });
     for (const action of actions) {
       dispatch(action);
     }
 
-    // Clean the current URL, rather than a snapshot another effect may have updated.
-    // A declined saved-quote handoff must never reapply after the buyer edits it.
-    setSearchParams((current) => {
-      const nextParams = stripConsumedAgentQuoteHandoffParams(current, handoff, {
-        skipBoatAndTrade,
-        declined: protectedQuote,
-      });
-      return nextParams;
-    }, { replace: true });
-  }, [dispatch, searchParams, setSearchParams, state]);
+    // All URL writers share the consumed-field cleanup, including router snapshots.
+    if (cleanup(searchParams).toString() !== searchParams.toString()) {
+      setSearchParams(cleanup, { replace: true });
+    }
+  }, [cleanup, dispatch, searchParams, setSearchParams, state]);
+  return cleanup;
 }

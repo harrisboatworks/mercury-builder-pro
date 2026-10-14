@@ -89,6 +89,7 @@ import {
 import {
   isReservationPlanningHandoff,
   buildAgentMotorSelectionActions,
+  buildExpressQuoteHandoffActions,
   stripConsumedAgentQuoteHandoffParams,
   isProtectedQuoteHandoff,
   parseAgentQuoteHandoff,
@@ -488,7 +489,7 @@ function MotorSelectionContent() {
   }
   const initialUrlState = initialUrlStateRef.current;
   const { state, dispatch } = useQuote();
-  useAgentQuoteHandoff({
+  const cleanupHandoffParams = useAgentQuoteHandoff({
     searchParams,
     setSearchParams,
     state,
@@ -586,11 +587,11 @@ function MotorSelectionContent() {
     setConfigFiltersState(nextState.configFilters);
     if (!options.keepBoatFit) setBoatFit(null);
 
-    const nextParams = writeMotorSelectionUrlState(searchParams, nextState);
+    const nextParams = cleanupHandoffParams(writeMotorSelectionUrlState(searchParams, nextState));
     if (nextParams.toString() !== searchParams.toString()) {
-      setSearchParams(nextParams, { replace: options.replace ?? false });
+      setSearchParams(current => cleanupHandoffParams(writeMotorSelectionUrlState(current, nextState)), { replace: options.replace ?? false });
     }
-  }, [searchParams, setSearchParams]);
+  }, [cleanupHandoffParams, searchParams, setSearchParams]);
 
 
   useEffect(() => {
@@ -603,11 +604,11 @@ function MotorSelectionContent() {
       setConfigFiltersState(urlState.configFilters);
     }
 
-    const canonicalParams = writeMotorSelectionUrlState(searchParams, urlState);
+    const canonicalParams = cleanupHandoffParams(writeMotorSelectionUrlState(searchParams, urlState));
     if (canonicalParams.toString() !== searchParams.toString()) {
-      setSearchParams(canonicalParams, { replace: true });
+      setSearchParams(current => cleanupHandoffParams(writeMotorSelectionUrlState(current, urlState)), { replace: true });
     }
-  }, [configFilters, hpRange, searchParams, searchQuery, setSearchParams]);
+  }, [cleanupHandoffParams, configFilters, hpRange, searchParams, searchQuery, setSearchParams]);
   
   // Voice show motor state (handled after processedMotors defined)
   const [voiceShowMotorId, setVoiceShowMotorId] = useState<string | null>(null);
@@ -1165,6 +1166,11 @@ if (event.type === 'filter_motors') {
       const targetMotor = processedMotors.find(m => m.id === motorId);
 
       if (isMotorOnlyExpress) {
+        if (state.isLoading) return false;
+        if (isProtectedQuoteHandoff(state)) {
+          setSearchParams(current => stripConsumedAgentQuoteHandoffParams(current, parseAgentQuoteHandoff(current), { declined: true }), { replace: true });
+          return true;
+        }
         if (!targetMotor) return false;
 
         trackClarityMotorSelection({
@@ -1178,13 +1184,8 @@ if (event.type === 'filter_motors') {
           motor_hp: targetMotor.hp,
           source: 'mercury_9_9_mh_sale',
         });
-        dispatch({ type: 'START_MOTOR_ONLY_QUOTE', payload: targetMotor });
-        const { ucpCheckoutRef } = parseAgentQuoteHandoff(searchParams);
-        if (ucpCheckoutRef) {
-          dispatch({
-            type: 'SET_UI_FLAG',
-            payload: { key: UCP_CHECKOUT_REF_FLAG, value: ucpCheckoutRef },
-          });
+        for (const action of buildExpressQuoteHandoffActions(state, searchParams, targetMotor)) {
+          dispatch(action);
         }
         navigate('/quote/summary?intent=motor-only', { replace: true });
         return true;

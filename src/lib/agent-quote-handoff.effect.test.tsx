@@ -45,6 +45,7 @@ function HandoffHarness({
       data-make={state.boatInfo?.make ?? ''}
       data-trade-brand={state.tradeInInfo?.brand ?? ''}
       data-ucp={String(state.uiFlags[UCP_CHECKOUT_REF_FLAG] ?? '')}
+      data-pending-ucp={JSON.stringify(state.uiFlags.agentUcpHandoff ?? null)}
       data-path={state.purchasePath ?? ''}
       data-prop={String(state.boatInfo?.hasCompatibleProp ?? '')}
       data-hours={String(state.tradeInInfo?.engineHours ?? '')}
@@ -71,6 +72,12 @@ describe('useAgentQuoteHandoff', () => {
     expect(getByTestId('handoff-state')).toHaveAttribute('data-path', 'installed');
     expect(getByTestId('handoff-state')).toHaveAttribute('data-ucp', '');
     expect(getByTestId('handoff-state')).toHaveAttribute('data-params', '');
+  });
+  it('consumes a declined protected express link without replacing its quote', async () => {
+    const { getByTestId } = render(<HandoffHarness params="motor=e920cfdf-223a-408a-850b-6f112e15c4d7&intent=motor-only&ucp=chk_express&src=agent_ucp" initial={{ ...initialState, restoredReferenceNumber: 'HBW-SYNTHETIC', purchasePath: 'installed' }} />);
+    await waitFor(() => expect(getByTestId('handoff-state')).toHaveAttribute('data-params', 'src=agent_ucp'));
+    expect(getByTestId('handoff-state')).toHaveAttribute('data-path', 'installed');
+    expect(getByTestId('handoff-state')).toHaveAttribute('data-ucp', '');
   });
   it('waits for quote loading, then applies documented fields once', async () => {
     const params = 'boat_make=Lund&boat_model=Pro-V&trade_brand=Mercury&trade_year=2010&trade_hp=75&motor=abc&utm_source=agent';
@@ -133,7 +140,7 @@ describe('useAgentQuoteHandoff', () => {
     );
 
     await waitFor(() => {
-      expect(getByTestId('handoff-state')).toHaveAttribute('data-ucp', 'chk_express');
+      expect(getByTestId('handoff-state')).toHaveAttribute('data-pending-ucp', JSON.stringify({motorId:'e920cfdf-223a-408a-850b-6f112e15c4d7',ucpRef:'chk_express'}));
     });
     expect(getByTestId('handoff-state')).toHaveAttribute('data-make', '');
     expect(getByTestId('handoff-state')).toHaveAttribute('data-trade-brand', '');

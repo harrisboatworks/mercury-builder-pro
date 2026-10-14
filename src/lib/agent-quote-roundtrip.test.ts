@@ -1,7 +1,7 @@
 import { describe, expect, it, vi } from 'vitest';
 import { buildAgentQuoteLink, attributeMcpQuotePayload } from '../../supabase/functions/_shared/agent-quote-link';
 import { runPublicQuoteTool } from '../../supabase/functions/_shared/public-agent-mcp';
-import { applyAgentQuoteHandoff, buildAgentQuoteHandoffActions, parseAgentQuoteHandoff, buildAgentMotorSelectionActions, stripConsumedAgentQuoteHandoffParams } from './agent-quote-handoff';
+import { applyAgentQuoteHandoff, buildExpressQuoteHandoffActions, buildAgentQuoteHandoffActions, parseAgentQuoteHandoff, buildAgentMotorSelectionActions, stripConsumedAgentQuoteHandoffParams } from './agent-quote-handoff';
 import { initialState, quoteReducer } from '@/contexts/QuoteContext';
 import { resolvePropellerDecision } from './propeller-selection';
 import { resolveAgentAttribution } from './agent-attribution';
@@ -35,7 +35,7 @@ describe('public quote handoff roundtrip', () => {
     const params = new URL(buildAgentQuoteLink(id, { ucp: 'chk_synthetic', purchase_path: 'loose' }, 'agent_ucp')).searchParams;
     const state = applyAgentQuoteHandoff(initialState, quoteReducer, parseAgentQuoteHandoff(params));
     expect(state.purchasePath).toBe('loose');
-    expect(state.uiFlags).toEqual({ ucpCheckoutRef: 'chk_synthetic', ucpHandoffMotorId: id });
+    expect(state.uiFlags).toEqual({ agentUcpHandoff: { motorId: id, ucpRef: 'chk_synthetic' } });
     expect(state.completedSteps).toEqual([]);
     expect(state.motor).toBeNull();
   });
@@ -80,14 +80,32 @@ describe('public quote handoff roundtrip', () => {
     const reloaded = JSON.parse(JSON.stringify(pending));
     const selected = buildAgentMotorSelectionActions(reloaded, motor, quoteReducer).reduce(quoteReducer, reloaded);
     expect(selected.installConfig.propellerDecision).toBe('reuse_existing');
-    expect(selected.boatInfo.hasCompatibleProp).toBe(true);
+    expect(selected.boatInfo).toBeNull();
     const edited = quoteReducer(selected, { type: 'SET_INSTALL_CONFIG', payload: { propellerDecision: 'include_allowance' } });
     expect(buildAgentMotorSelectionActions(edited, motor, quoteReducer).reduce(quoteReducer, edited).installConfig.propellerDecision).toBe('include_allowance');
   });
-  it('retains UCP context only for the linked motor when a prior motor is replaced', () => {
-    const state = applyAgentQuoteHandoff({ ...initialState, motor: { ...motor, id: 'old' } }, quoteReducer, { motorId: id, ucpCheckoutRef: 'chk_synthetic' });
+  it.each([null, { ...motor, id: 'old' }])('retains UCP context only for its linked motor with prior motor %s', prior => {
+    const state = applyAgentQuoteHandoff({ ...initialState, motor: prior }, quoteReducer, { motorId: id, ucpCheckoutRef: 'chk_synthetic' });
+    expect(state.uiFlags.ucpCheckoutRef).toBeUndefined();
     expect(buildAgentMotorSelectionActions(state, motor, quoteReducer).reduce(quoteReducer, state).uiFlags.ucpCheckoutRef).toBe('chk_synthetic');
     expect(buildAgentMotorSelectionActions(state, { ...motor, id: 'other' }, quoteReducer).reduce(quoteReducer, state).uiFlags.ucpCheckoutRef).toBeUndefined();
+  });
+  it('protects saved quotes from express replacement and preserves a fresh express UCP handoff', () => {
+    const express = { ...motor, id: 'e920cfdf-223a-408a-850b-6f112e15c4d7' };
+    const params = new URLSearchParams({ motor: express.id, intent: 'motor-only', ucp: 'chk_synthetic' });
+    const protectedState = { ...initialState, isLoading: false, restoredReferenceNumber: 'HBW-SYNTHETIC' };
+    expect(buildExpressQuoteHandoffActions(protectedState, params, express)).toEqual([]);
+    expect(stripConsumedAgentQuoteHandoffParams(params, parseAgentQuoteHandoff(params), { declined: true }).toString()).toBe('');
+    const fresh = { ...initialState, isLoading: false };
+    const next = buildExpressQuoteHandoffActions(fresh, params, express).reduce(quoteReducer, fresh);
+    expect(next.purchasePath).toBe('loose');
+    expect(next.uiFlags.ucpCheckoutRef).toBe('chk_synthetic');
+  });
+  it('updates a stale UCP motor scope even when the pending parent reference matches the attached string', () => {
+    const state = { ...initialState, uiFlags: { ucpCheckoutRef: 'chk_synthetic', ucpHandoffMotorId: 'other', agentUcpHandoff: { motorId: id, ucpRef: 'chk_synthetic' } } };
+    const selected = buildAgentMotorSelectionActions(state, motor, quoteReducer).reduce(quoteReducer, state);
+    expect(selected.uiFlags.ucpHandoffMotorId).toBe(id);
+    expect(selected.uiFlags.agentUcpHandoff).toBeNull();
   });
   it('does not serialize null or empty optional boat fields as buyer answers', () => {
     const params = new URL(buildAgentQuoteLink(id, { boat_make: 'Lund', boat_model: null, trade_year: undefined, trade_brand: '' })).searchParams;
