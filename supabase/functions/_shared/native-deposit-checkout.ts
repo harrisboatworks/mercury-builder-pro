@@ -702,17 +702,19 @@ export async function runNativeDepositCreate(input: {
 // Called only after the trusted endpoint authenticates the buyer. SQL is the
 // final retirement authority; readiness errors must precede any mutation.
 export async function runNativeDepositRestart(input: {
-  intent: NativeIntentRecord; quote: NativeSavedQuoteRecord; enabled: boolean; sellerVerified: boolean;
+  intent: NativeIntentRecord; quote: NativeSavedQuoteRecord; enabled: boolean; sellerVerified: boolean; mode: 'recreate' | 'cancel';
   actor: NativeActor; now: Date; childId: string; intentId: string; io: NativeCreateIo & NativeCompleteIo;
 }): Promise<{ ok: true; new_child_id?: string; canceled?: true; saved_quote_id?: string; message?: string } | NativeDepositFailure> {
   const attempt = await input.io.loadAttempt(input.intent.id);
   const recovering = Boolean(attempt?.submitted_at || attempt?.stripe_payment_intent_id || attempt?.observed_payment_intent_id || input.intent.status === 'paid');
   let recreate = false;
-  if (input.enabled && input.sellerVerified && !recovering && !input.intent.retired_at) {
+  if (input.mode === 'recreate') {
+    if (!input.enabled || !input.sellerVerified || recovering || input.intent.retired_at) return failure(409, 'restart_unavailable', 'A fresh native review is unavailable. Your existing review has been kept. Refresh for the cancellation option.');
     const document = await input.io.loadDocumentHash(input.quote);
     const ready = await input.io.validateFreshIntent(input.intent, input.quote);
     if (document === null || ready === null) return failure(503, 'review_unavailable', 'The quote is temporarily unavailable. Your existing review has been kept; refresh to retry.');
-    recreate = document === input.intent.document_sha256 && ready;
+    if (document !== input.intent.document_sha256 || !ready) return failure(409, 'stale_binding', 'This quote needs a fresh preparation. Your existing review has been kept; refresh to cancel it or reopen your saved quote.');
+    recreate = true;
   }
   if (!await input.io.retireIntent(input.intent.id, false)) return failure(409, 'reconciliation_required', 'This payment was submitted. Refresh its original status or contact HBW; a new payment cannot be started.');
   if (recreate) {

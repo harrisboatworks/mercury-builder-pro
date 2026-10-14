@@ -126,7 +126,7 @@ describe('native deposit boundary', () => {
     const state = setup();
     if (kind === 'document') state.io.loadDocumentHash = async () => null; else state.io.validateFreshIntent = async () => null;
     const retireIntent = vi.fn(async () => true);
-    const result = await runNativeDepositRestart({ intent, quote: (await state.io.loadSavedQuote(saved))!, enabled: true, sellerVerified: true,
+    const result = await runNativeDepositRestart({ intent, quote: (await state.io.loadSavedQuote(saved))!, enabled: true, sellerVerified: true, mode: 'recreate',
       actor: { userId: 'buyer', resumeCapability: null }, now, childId: 'ndc_'+'b'.repeat(32), intentId: 'fresh',
       io: { ...state.io, loadIntentBySavedQuote: async () => null, loadParent: async () => null, loadMotor: async () => null, insertIntent: async () => null, retireIntent } });
     expect(result).toMatchObject({ ok: false, status: 503, code: 'review_unavailable' }); expect(retireIntent).not.toHaveBeenCalled();
@@ -134,7 +134,7 @@ describe('native deposit boundary', () => {
   it('permits retire-only cancellation while native payments are paused, without a new checkout', async () => {
     const state = setup(); state.io.loadDocumentHash = vi.fn(async () => null);
     const retireIntent = vi.fn(async () => true), insertIntent = vi.fn(async () => null);
-    const result = await runNativeDepositRestart({ intent, quote: (await state.io.loadSavedQuote(saved))!, enabled: false, sellerVerified: false,
+    const result = await runNativeDepositRestart({ intent, quote: (await state.io.loadSavedQuote(saved))!, enabled: false, sellerVerified: false, mode: 'cancel',
       actor: { userId: 'buyer', resumeCapability: null }, now, childId: 'ndc_'+'b'.repeat(32), intentId: 'fresh',
       io: { ...state.io, loadIntentBySavedQuote: async () => null, loadParent: async () => null, loadMotor: async () => null, insertIntent, retireIntent } });
     expect(result).toMatchObject({ ok: true, canceled: true }); expect(retireIntent).toHaveBeenCalledWith(intent.id, false);
@@ -148,6 +148,13 @@ describe('native deposit boundary', () => {
   it('distinguishes invalid canonical PDF admission from a storage outage', async () => {
     const state = setup(); state.io.loadDocumentHash = async () => ({ invalid: true });
     expect(await state.complete()).toMatchObject({ ok: false, status: 409, code: 'stale_binding' }); expect(state.attempt()).toBeNull();
+  });
+  it('preserves consent if native payments become paused after a recreate button was shown', async () => {
+    const state = setup(); const retireIntent = vi.fn(async () => true);
+    const result = await runNativeDepositRestart({ intent, quote: (await state.io.loadSavedQuote(saved))!, enabled: false, sellerVerified: false, mode: 'recreate',
+      actor: { userId: 'buyer', resumeCapability: null }, now, childId: 'ndc_'+'b'.repeat(32), intentId: 'fresh',
+      io: { ...state.io, loadIntentBySavedQuote: async () => null, loadParent: async () => null, loadMotor: async () => null, insertIntent: async () => null, retireIntent } });
+    expect(result).toMatchObject({ ok: false, status: 409, code: 'restart_unavailable' }); expect(retireIntent).not.toHaveBeenCalled();
   });
   it('requires ownership, not public UUIDs', () => {
     expect(nativeDepositActorAuthorized({ savedQuoteUserId: 'buyer', savedQuoteResumeToken: 'dep_' + 'a'.repeat(24), actor: { userId: null, resumeCapability: null } })).toBe(false);

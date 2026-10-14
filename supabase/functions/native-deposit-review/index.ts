@@ -46,14 +46,14 @@ Deno.serve(async req => {
     if (authError || !user || !user.email_confirmed_at) return reply({ error: 'Sign in with the account that owns this quote.' }, 401);
     const body = await req.json();
     if (!body || typeof body !== 'object' || Array.isArray(body)
-      || Object.keys(body).some(k => !['action', 'child_id', 'nonce', 'review_digest', 'accept_terms'].includes(k))
+      || Object.keys(body).some(k => !['action', 'child_id', 'nonce', 'review_digest', 'accept_terms', 'mode'].includes(k))
       || !['review', 'approve', 'step_up', 'restart'].includes(body.action) || !isNativeDepositChildId(body.child_id || ''))
       return reply({ error: 'Invalid review request.' }, 400);
     const io = nativeDepositIo(db);
     let intent = await io.loadIntentByChild(body.child_id);
     const quote = intent ? await io.loadSavedQuote(intent.saved_quote_id) : null;
     if (!intent || !quote) return reply({ error: 'Quote unavailable.' }, 404);
-    if (quote.deposit_status === 'paid' && intent.status !== 'paid') return reply({ error: 'This quote was paid through hosted checkout. Open its existing receipt.' }, 409);
+    if (quote.deposit_status === 'paid' && intent.status !== 'paid' && !intent.retired_at) return reply({ error: 'This quote was paid through hosted checkout. Open its existing receipt.' }, 409);
     const actor = await nativeActorFromRequest(db, req);
     const owns = body.action === 'review' && intent.status === 'paid' && quote.user_id === user.id
       || nativeBuyerReviewAuthorized(quote, user, actor);
@@ -63,7 +63,8 @@ Deno.serve(async req => {
     const existingAttempt = await io.loadAttempt(intent.id);
     const recovering = Boolean(existingAttempt?.submitted_at || existingAttempt?.stripe_payment_intent_id || existingAttempt?.observed_payment_intent_id || intent.status === 'paid');
     if (body.action === 'restart') {
-      const next = await runNativeDepositRestart({ intent, quote, enabled, sellerVerified, actor, now: new Date(),
+      if (!['recreate','cancel'].includes(body.mode)) return reply({ error: 'Choose whether to start a fresh review or cancel this unsubmitted review.' }, 400);
+      const next = await runNativeDepositRestart({ intent, quote, enabled, sellerVerified, mode: body.mode, actor, now: new Date(),
         childId: 'ndc_' + crypto.randomUUID().replaceAll('-', ''), intentId: crypto.randomUUID(), io });
       if (!next.ok) return reply({ error: next.message }, next.status);
       return reply(next);
@@ -129,16 +130,19 @@ Deno.serve(async req => {
     }
     return reply({ motor: `Mercury ${intent.horsepower} HP — ${intent.catalog_model_number}`, amount_cents: intent.amount_cents,
       merchandise_cents: intent.merchandise_cents, currency: 'CAD', document_url: documentUrl,
-      can_restart: !recovering && !intent.retired_at && (!enabled || !sellerVerified || !temporarilyUnavailable),
-      restart_creates_review: enabled && sellerVerified && fresh,
+      can_restart: !recovering && !intent.retired_at,
+      can_recreate: !temporarilyUnavailable && fresh && enabled && sellerVerified,
+      restart_creates_review: enabled && sellerVerified && fresh && Boolean(documentUrl),
       recovering,
       saved_quote_id: quote.id,
       terms: intent.policy_code === 'in_stock_refundable' ? DEPOSIT_POLICY_IN_STOCK_TEXT : DEPOSIT_POLICY_SPECIAL_ORDER_TEXT,
       approved: Boolean(readiness !== false && enabled && intent.status === "approved" && approval && Date.parse(approval.expires_at) > Date.now()), paid: intent.status === 'paid',
       receipt_reconciliation_required: intent.receipt_reconciliation_required === true,
       test_mode: Deno.env.get('STRIPE_SECRET_KEY')?.startsWith('sk_test_') === true,
-      payment_status: !recovering && !intent.retired_at && (Date.parse(intent.expires_at) <= Date.now() || approval && Date.parse(approval.expires_at) <= Date.now()) ? 'expired'
-        : !recovering && !intent.retired_at && temporarilyUnavailable && !approval ? 'unavailable' : intent.status, nonce, review_digest: digest });
+      payment_status: !recovering && !intent.retired_at && (!enabled || !sellerVerified) ? 'paused'
+        : !recovering && !intent.retired_at && (Date.parse(intent.expires_at) <= Date.now() || approval && Date.parse(approval.expires_at) <= Date.now()) ? 'expired'
+        : !recovering && !intent.retired_at && (temporarilyUnavailable || exactDocument && !documentUrl) ? 'unavailable'
+        : !recovering && !intent.retired_at && (!exactDocument || readiness === false) ? 'stale' : intent.status, nonce, review_digest: digest });
   } catch {
     return reply({ error: 'Deposit review is temporarily unavailable.' }, 503);
   }

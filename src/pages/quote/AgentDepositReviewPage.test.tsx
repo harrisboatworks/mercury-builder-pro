@@ -242,11 +242,31 @@ describe('AgentDepositReviewPage recovery', () => {
   it('lets a buyer retire a never-submitted expired approval without accepting terms', async () => {
     mocks.invoke.mockResolvedValueOnce(result(review('a', { payment_status: 'expired', nonce: null, can_restart: true })))
       .mockResolvedValueOnce(result({ canceled: true }))
-      .mockResolvedValueOnce(result(review('a', { payment_status: 'canceled', nonce: null, can_restart: true })));
+      .mockResolvedValueOnce(result(review('a', { payment_status: 'canceled', nonce: null, can_restart: false })));
     render(page()); openReview(); await screen.findByText(/Start a fresh deposit review to approve again for up to ten minutes/);
     fireEvent.click(screen.getByRole('button', { name: 'Start a fresh deposit review' }));
     await screen.findByText(/This unsubmitted review was canceled/);
-    expect(mocks.invoke).toHaveBeenNthCalledWith(2, 'native-deposit-review', { body: { action: 'restart', child_id: mocks.childId }, headers: {} });
+    expect(mocks.invoke).toHaveBeenNthCalledWith(2, 'native-deposit-review', { body: { action: 'restart', child_id: mocks.childId, mode: 'recreate' }, headers: {} });
     expect(screen.queryByRole('checkbox')).not.toBeInTheDocument();
+  });
+});
+
+
+describe('AgentDepositReviewPage truthful unsubmitted states', () => {
+  it.each(['paused','stale','unavailable'])('shows %s without claiming payment reconciliation', async state => {
+    mocks.invoke.mockResolvedValueOnce(result(review('a', { payment_status: state, nonce: null, can_restart: true, restart_creates_review: false, recovering: false })));
+    render(page()); openReview(); await screen.findByText('Synthetic motor a');
+    expect(screen.queryByText(/Payment reconciliation is pending/)).not.toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Cancel unsubmitted review' })).toBeInTheDocument();
+  });
+  it('renders the cancellation message and stops offering to restart a retired review', async () => {
+    mocks.invoke.mockResolvedValueOnce(result(review('a', { payment_status: 'paused', nonce: null, can_restart: true, restart_creates_review: false })))
+      .mockResolvedValueOnce(result({ canceled: true, message: 'Reopen your saved quote to use website checkout.' }))
+      .mockResolvedValueOnce(result(review('a', { payment_status: 'canceled', nonce: null, can_restart: false, restart_creates_review: false })));
+    render(page()); openReview(); await screen.findByText('Synthetic motor a');
+    fireEvent.click(screen.getByRole('button', { name: 'Cancel unsubmitted review' }));
+    await screen.findByText('Reopen your saved quote to use website checkout.');
+    expect(screen.queryByRole('button', { name: 'Cancel unsubmitted review' })).not.toBeInTheDocument();
+    expect(mocks.invoke).toHaveBeenNthCalledWith(2, 'native-deposit-review', { body: { action: 'restart', child_id: mocks.childId, mode: 'cancel' }, headers: {} });
   });
 });

@@ -210,6 +210,7 @@ DECLARE
   v_channel text;
   v_key text;
   v_rail text;
+  v_constraint text;
 BEGIN
   SELECT saved_quote_id INTO v_saved_quote_id
   FROM public.native_deposit_intents
@@ -405,6 +406,8 @@ BEGIN
   )
   RETURNING * INTO v_attempt;
   EXCEPTION WHEN unique_violation THEN
+    GET STACKED DIAGNOSTICS v_constraint = CONSTRAINT_NAME;
+    IF v_constraint IS DISTINCT FROM 'native_deposit_attempts_token_fingerprint_key' THEN RAISE; END IF;
     RETURN jsonb_build_object('result','refused','reason','token_already_bound');
   END;
 
