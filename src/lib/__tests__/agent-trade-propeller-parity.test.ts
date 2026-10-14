@@ -7,7 +7,7 @@ import { computePublicQuotePricing } from '../../../supabase/functions/_shared/p
 import { buildAccessoryBreakdown } from '../build-accessory-breakdown';
 import { resolvePropellerDecision } from '../propeller-selection';
 import { calculateQuotePricing } from '../quote-utils';
-import { applyAgentQuoteHandoff, buildAgentMotorSelectionActions, parseAgentQuoteHandoff, stripConsumedAgentQuoteHandoffParams } from '../agent-quote-handoff';
+import { applyAgentQuoteHandoff, buildAgentMotorSelectionActions, parseAgentQuoteHandoff, stripConsumedAgentQuoteHandoffParams, AGENT_PROPELLER_HANDOFF_FLAG } from '../agent-quote-handoff';
 import { initialState, quoteReducer } from '@/contexts/QuoteContext';
 import type { CanonicalHbwValuationPayload } from '../../../supabase/functions/_shared/hbw-valuation-response';
 
@@ -68,18 +68,26 @@ describe('canonical trade input continuity', () => {
     const original = { ...initialState, motor: { ...motor, id: 'old' }, installConfig: { propellerDecision: 'reuse_existing' as const }, boatInfo: { hasCompatibleProp: true } as any };
     const waiting = applyAgentQuoteHandoff(original, quoteReducer, parseAgentQuoteHandoff(params));
     expect(waiting.installConfig?.propellerDecision).toBe('reuse_existing');
+    expect(waiting.uiFlags?.[AGENT_PROPELLER_HANDOFF_FLAG]).toEqual({ motorId: motor.id, customerHasPropeller: 'default' });
     const selected = buildAgentMotorSelectionActions(waiting, motor, quoteReducer).reduce(quoteReducer, waiting);
     expect(selected.installConfig?.propellerDecision).toBeUndefined();
     expect(selected.boatInfo?.hasCompatibleProp).toBe(false);
+    expect(selected.uiFlags?.[AGENT_PROPELLER_HANDOFF_FLAG]).toBeUndefined();
+    const empty = { ...original, motor: null };
+    const deferred = applyAgentQuoteHandoff(empty, quoteReducer, parseAgentQuoteHandoff(params));
+    const applied = buildAgentMotorSelectionActions(deferred, motor, quoteReducer).reduce(quoteReducer, deferred);
+    expect(applied.installConfig?.propellerDecision).toBeUndefined();
+    expect(applied.boatInfo?.hasCompatibleProp).toBe(false);
+    expect(applied.uiFlags?.[AGENT_PROPELLER_HANDOFF_FLAG]).toBeUndefined();
     expect(buildAccessoryBreakdown({ motor, installConfig: selected.installConfig, boatInfo: selected.boatInfo }).find(x => /Propeller/.test(x.name))?.price).toBe(350);
   });
 
   it('clears stale trades only for an explicit complete API no-trade handoff', () => {
-    const previous = { ...initialState, tradeInInfo: { hasTradeIn: true, brand: 'Mercury', year: 2010, horsepower: 90, estimatedValue: 4000 } as any };
+    const previous = { ...initialState, tradeInInfo: { hasTradeIn: true, brand: 'Mercury', year: 2010, horsepower: 90, estimatedValue: 4000, serialNumber: 'synthetic-buyer-serial' } as any };
     const handoff = parseAgentQuoteHandoff(new URL(buildAgentQuoteLink('synthetic-motor', buildTradeInHandoffFields(null, null))).searchParams);
     expect(handoff.clearTradeIn).toBe(true);
     const next = applyAgentQuoteHandoff(previous, quoteReducer, handoff);
-    expect(next.tradeInInfo).toMatchObject({ hasTradeIn: false, estimatedValue: 0, brand: '' });
+    expect(next.tradeInInfo).toMatchObject({ hasTradeIn: false, estimatedValue: 0, brand: 'Mercury', serialNumber: 'synthetic-buyer-serial' });
     expect(applyAgentQuoteHandoff(previous, quoteReducer, {})).toBe(previous);
     expect(applyAgentQuoteHandoff({ ...previous, pdfSnapshot: {} as any }, quoteReducer, handoff)).toEqual({ ...previous, pdfSnapshot: {} });
   });

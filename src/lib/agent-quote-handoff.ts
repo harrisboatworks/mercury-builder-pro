@@ -140,7 +140,7 @@ export function parseTradeHpParam(raw: string | null): number | undefined {
   if (!trimmed) return undefined;
   if (!TRADE_HP_RE.test(trimmed)) return undefined;
   const horsepower = parseMotorHorsepowerInput(trimmed);
-  if (horsepower <= 0 || horsepower > AGENT_QUOTE_HANDOFF_HP_MAX) return undefined;
+  if (horsepower < 1 || horsepower > AGENT_QUOTE_HANDOFF_HP_MAX) return undefined;
   return horsepower;
 }
 
@@ -309,15 +309,15 @@ export function mergeBoatInfoFromHandoff(
     next.model = handoff.boatModel;
     changed = true;
   }
-  if (handoff.tradeBrand && (handoff.replaceTradeIn || !hasExistingText(next.currentMotorBrand)) && next.currentMotorBrand !== toBoatCurrentMotorBrand(handoff.tradeBrand)) {
+  if (handoff.tradeBrand && !hasExistingText(next.currentMotorBrand)) {
     next.currentMotorBrand = toBoatCurrentMotorBrand(handoff.tradeBrand);
     changed = true;
   }
-  if (handoff.tradeYear !== undefined && (handoff.replaceTradeIn || !next.currentMotorYear) && next.currentMotorYear !== handoff.tradeYear) {
+  if (handoff.tradeYear !== undefined && !next.currentMotorYear) {
     next.currentMotorYear = handoff.tradeYear;
     changed = true;
   }
-  if (handoff.tradeHp !== undefined && (handoff.replaceTradeIn || !next.currentHp) && next.currentHp !== handoff.tradeHp) {
+  if (handoff.tradeHp !== undefined && !next.currentHp) {
     next.currentHp = handoff.tradeHp;
     changed = true;
   }
@@ -332,8 +332,8 @@ export function mergeTradeInInfoFromHandoff(
   handoff: ParsedAgentQuoteHandoff,
 ): { next: Partial<TradeInInfo>; changed: boolean } | null {
   if (handoff.clearTradeIn) {
-    if (!existing?.hasTradeIn && !existing?.estimatedValue && !existing?.brand) return null;
-    return { next: clearTradeInValuation(blankTradeInInfo() as TradeInInfo), changed: true };
+    if (!existing || (!existing.hasTradeIn && !existing.estimatedValue)) return null;
+    return { next: clearTradeInValuation(existing as TradeInInfo, { hasTradeIn: false }), changed: true };
   }
   const hasTradeFields = Boolean(
     handoff.tradeBrand
