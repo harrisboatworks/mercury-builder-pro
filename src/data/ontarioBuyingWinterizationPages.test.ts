@@ -90,15 +90,13 @@ describe('Ontario buying-price and winterization page holds', () => {
     }
   });
 
-  it('records a no-safe-justified-change disposition for pricing-reference after #727 authorization', () => {
-    // Jay authorized existing-page SEO/content investigation in #727. This is
-    // not an SEO-excluded or copy-locked gate. Codex live evidence on Oct 14
-    // already showed one H1, both CAD tables, a correct canonical, and no
-    // load-error text. #117 remains an open Codex-owned Clarity hold
-    // (evidence-gathering; latest owner comment 2026-10-01) that forbids
-    // speculative pricing/copy/instrumentation changes without a repeated
-    // misleading or broken target. Leaving the page unchanged is the
-    // supported finding, not a rank promise.
+  it('records that pricing-reference already answers the Ontario dealer-price question from live CAD sources', () => {
+    // #727 authorized existing-page SEO/content work, including Ontario search
+    // metadata. #117 is not a blanket ban on that: it covers only speculative
+    // affordance/copy fixes from Clarity aggregates and instrumentation /
+    // provider receipt. These asserts record current on-page buyer-answer
+    // behavior. They do not pin the Canada document title/description as a
+    // missing-approval gate and they do not promise rank gains.
     expect(pricingPage).toContain('Mercury Outboard Prices in Ontario (CAD): Live HBW Dealer Pricing');
     expect(pricingPage).toContain('fetch("/pricing-reference.md"');
     expect(pricingPage).toContain('Jump to current prices');
@@ -121,7 +119,9 @@ describe('Ontario buying-price and winterization page holds', () => {
     expect(prerenderWindow).toContain('extraNoscript');
   });
 
-  it('leaves Codex-owned pricing-reference Clarity holds in place', () => {
+  it('leaves Codex-owned pricing-reference Clarity affordances in place', () => {
+    // #117 owns jump/details/table-wrapper/quote-anchor affordances and any
+    // Clarity-derived instrumentation. It does not block Ontario metadata work.
     expect(pricingPage).toContain("href=\"#current-prices\"");
     expect(pricingPage).toContain('pricing-reference-details');
     expect(pricingPage).toContain('pricing-table-scroll');
