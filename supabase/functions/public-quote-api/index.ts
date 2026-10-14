@@ -962,8 +962,8 @@ async function buildQuote(supabase: any, body: any) {
   // Deep-link prefilled URL for the customer
   const slug = motorSlug(motor);
   const deepLink = buildAgentQuoteLink(motor.id, {
-    purchase_path: purchasePath,
-    customer_has_propeller: customerHasProp,
+    purchase_path: purchasePathRequested ? purchasePath : undefined,
+    customer_has_propeller: quoteFlags.customer_has_propeller,
     boat_make: body?.boat_info?.make,
     boat_model: body?.boat_info?.model,
     trade_brand: body?.trade_in?.brand,

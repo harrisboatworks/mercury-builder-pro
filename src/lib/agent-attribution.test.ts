@@ -9,7 +9,7 @@ describe('agent attribution', () => {
   ])('recognizes the exact provider alias %s', (ref, source) => {
     expect(resolveAgentAttribution(new URLSearchParams({ ref })).source).toBe(source);
   });
-  it.each(['email', 'gmail', 'mail', 'chair', 'paid_social', 'claude-unrelated', 'ai'.repeat(40)])('does not infer an AI provider from %s', ref => {
+  it.each(['email', 'gmail', 'mail', 'chair', 'paid_social', 'meta', 'facebook', 'google', 'claude-unrelated', 'ai'.repeat(40)])('does not infer an AI provider from %s', ref => {
     expect(resolveAgentAttribution(new URLSearchParams({ ref })).source).toBe('direct');
   });
   it('stores only bounded labels through navigation and reload, and replaces them on a new handoff', () => {

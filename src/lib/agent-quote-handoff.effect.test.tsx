@@ -28,8 +28,8 @@ function HandoffHarness({
     setState((current) => quoteReducer(current, action));
   };
 
-  const setSearchParams = (next: URLSearchParams) => {
-    setSearchParamsState(new URLSearchParams(next));
+  const setSearchParams = (next: URLSearchParams | ((current: URLSearchParams) => URLSearchParams)) => {
+    setSearchParamsState(current => new URLSearchParams(typeof next === 'function' ? next(current) : next));
   };
 
   useAgentQuoteHandoff({
@@ -60,17 +60,17 @@ describe('useAgentQuoteHandoff', () => {
     expect(getByTestId('handoff-state')).toHaveAttribute('data-path', '');
     rerender(<HandoffHarness params={params} />);
     await waitFor(() => expect(getByTestId('handoff-state')).toHaveAttribute('data-path', 'loose'));
-    expect(getByTestId('handoff-state')).toHaveAttribute('data-prop', 'false');
+    expect(getByTestId('handoff-state')).toHaveAttribute('data-prop', '');
     expect(getByTestId('handoff-state')).toHaveAttribute('data-hours', '0');
     expect(getByTestId('handoff-state')).toHaveAttribute('data-params', 'motor=abc&src=agent_rest');
   });
-  it('leaves a restored quote and its URL untouched', async () => {
+  it('protects a restored quote and consumes the declined URL so it cannot reapply', async () => {
     const params = 'purchase_path=loose&customer_has_propeller=false&trade_engine_hours=200&ucp=chk_other';
     const { getByTestId } = render(<HandoffHarness params={params} initial={{ ...initialState, restoredReferenceNumber: 'HBW-SYNTHETIC', purchasePath: 'installed' }} />);
     await act(async () => { await Promise.resolve(); });
     expect(getByTestId('handoff-state')).toHaveAttribute('data-path', 'installed');
     expect(getByTestId('handoff-state')).toHaveAttribute('data-ucp', '');
-    expect(getByTestId('handoff-state')).toHaveAttribute('data-params', params);
+    expect(getByTestId('handoff-state')).toHaveAttribute('data-params', '');
   });
   it('waits for quote loading, then applies documented fields once', async () => {
     const params = 'boat_make=Lund&boat_model=Pro-V&trade_brand=Mercury&trade_year=2010&trade_hp=75&motor=abc&utm_source=agent';

@@ -88,7 +88,8 @@ import {
 } from '@/lib/motor-selection-url-state';
 import {
   isReservationPlanningHandoff,
-  selectedMotorPropellerHandoffActions,
+  buildAgentMotorSelectionActions,
+  stripConsumedAgentQuoteHandoffParams,
   isProtectedQuoteHandoff,
   parseAgentQuoteHandoff,
   useAgentQuoteHandoff,
@@ -487,8 +488,6 @@ function MotorSelectionContent() {
   }
   const initialUrlState = initialUrlStateRef.current;
   const { state, dispatch } = useQuote();
-  const initialAgentHandoffRef = useRef(parseAgentQuoteHandoff(searchParams));
-  const selectedAgentMotorRef = useRef(false);
   useAgentQuoteHandoff({
     searchParams,
     setSearchParams,
@@ -1221,9 +1220,12 @@ if (event.type === 'filter_motors') {
       setDeepLinkedMotorId(motorId);
       setShowConfigurator(true);
       // Clear the param so refresh doesn't re-trigger
-      searchParams.delete('motor');
-      searchParams.delete('select');
-      setSearchParams(searchParams, { replace: true });
+      setSearchParams(current => {
+        const next = stripConsumedAgentQuoteHandoffParams(current, parseAgentQuoteHandoff(current), { declined: isProtectedQuoteHandoff(state) });
+        next.delete('motor');
+        next.delete('select');
+        return next;
+      }, { replace: true });
       return true;
     };
     
@@ -1236,7 +1238,7 @@ if (event.type === 'filter_motors') {
     }, 150);
     
     return () => clearTimeout(timer);
-  }, [processedMotors, groupedMotors, searchParams, setSearchParams, dispatch, navigate]);
+  }, [processedMotors, groupedMotors, searchParams, setSearchParams, dispatch, navigate, state]);
   
   // Handle voice:show-motor when processedMotors and groupedMotors are available
   useEffect(() => {
@@ -1325,16 +1327,8 @@ if (event.type === 'filter_motors') {
     });
 
     // Add motor to quote context
-    const motorAction = { type: 'SET_MOTOR' as const, payload: motor };
-    dispatch(motorAction);
-    if (!selectedAgentMotorRef.current) {
-      selectedAgentMotorRef.current = true;
-      if (!isProtectedQuoteHandoff(state)) {
-        const selectedState = quoteReducer(state, motorAction);
-        for (const action of selectedMotorPropellerHandoffActions(selectedState, initialAgentHandoffRef.current)) {
-          dispatch(action);
-        }
-      }
+    for (const action of buildAgentMotorSelectionActions(state, motor, quoteReducer)) {
+      dispatch(action);
     }
     const ucpCheckoutRef = parseAgentQuoteHandoff(searchParams).ucpCheckoutRef ?? state.uiFlags?.[UCP_CHECKOUT_REF_FLAG];
     if (typeof ucpCheckoutRef === 'string') {

@@ -1,8 +1,8 @@
 import { useEffect, useRef } from 'react';
 import { captureAgentAttribution } from './agent-attribution';
-import type { BoatInfo } from '@/components/QuoteBuilder';
+import type { Motor, BoatInfo } from '@/components/QuoteBuilder';
 import type { QuoteAction, QuoteState } from '@/contexts/QuoteContext';
-import { isSupportedTradeInYear, parseMotorHorsepowerInput } from '@/lib/trade-in-state';
+import { clearTradeInValuation, isSupportedTradeInYear, parseMotorHorsepowerInput } from '@/lib/trade-in-state';
 import { EXPRESS_MOTOR_ID } from '../../supabase/functions/_shared/deposit-policy';
 import type { TradeInInfo } from '@/lib/trade-valuation';
 
@@ -11,6 +11,7 @@ export const AGENT_QUOTE_HANDOFF_MOTOR_ID_MAX = 80;
 export const AGENT_QUOTE_HANDOFF_UCP_MAX = 128;
 export const AGENT_QUOTE_HANDOFF_HP_MAX = 600;
 export const UCP_CHECKOUT_REF_FLAG = 'ucpCheckoutRef';
+export const AGENT_PROPELLER_HANDOFF_FLAG = 'agentPropellerHandoff';
 
 export const AGENT_QUOTE_HANDOFF_CONSUMABLE_PARAMS = [
   'boat_make',
@@ -77,11 +78,12 @@ export interface ParsedAgentQuoteHandoff {
 
 export interface AgentQuoteHandoffApplyOptions {
   skipBoatAndTrade?: boolean;
+  declined?: boolean;
 }
 
 export interface AgentQuoteHandoffApplyInput {
   searchParams: URLSearchParams;
-  setSearchParams: (params: URLSearchParams, options?: { replace?: boolean }) => void;
+  setSearchParams: (params: URLSearchParams | ((current: URLSearchParams) => URLSearchParams), options?: { replace?: boolean }) => void;
   state: QuoteState;
   dispatch: (action: QuoteAction) => void;
 }
@@ -348,7 +350,7 @@ export function mergeTradeInInfoFromHandoff(
     changed = true;
   }
   if (changed) {
-    Object.assign(next, { estimatedValue: 0, confidenceLevel: undefined, rangePrePenaltyLow: undefined, rangePrePenaltyHigh: undefined, rangeFinalLow: undefined, rangeFinalHigh: undefined, tradeinValuePrePenalty: undefined, tradeinValueFinal: undefined, penaltyApplied: undefined, penaltyFactor: undefined, valuationReportUrl: undefined });
+    Object.assign(next, clearTradeInValuation(next as TradeInInfo));
   }
   if (!next.hasTradeIn) {
     next.hasTradeIn = true;
@@ -362,7 +364,7 @@ export function consumedAgentQuoteHandoffParams(
   handoff: ParsedAgentQuoteHandoff,
   options: AgentQuoteHandoffApplyOptions = {},
 ): string[] {
-  if (options.skipBoatAndTrade) return [];
+  if (options.skipBoatAndTrade && !options.declined) return [];
   const consumed: string[] = [];
   if (handoff.boatMake) consumed.push('boat_make');
   if (handoff.boatModel) consumed.push('boat_model');
@@ -386,7 +388,19 @@ export function stripConsumedAgentQuoteHandoffParams(
   for (const key of consumedAgentQuoteHandoffParams(handoff, options)) {
     next.delete(key);
   }
+  if (options.declined) {
+    next.delete('ucp');
+    next.delete('reservation');
+  }
   return next;
+}
+
+function pendingPropellerHandoff(state: QuoteState): { motorId: string; customerHasPropeller: boolean } | undefined {
+  const value = state.uiFlags?.[AGENT_PROPELLER_HANDOFF_FLAG];
+  if (!value || typeof value !== 'object' || Array.isArray(value)) return undefined;
+  const record = value as Record<string, unknown>;
+  if (typeof record.motorId !== 'string' || sanitizeBuyerText(record.motorId, AGENT_QUOTE_HANDOFF_MOTOR_ID_MAX) !== record.motorId || typeof record.customerHasPropeller !== 'boolean') return undefined;
+  return { motorId: record.motorId, customerHasPropeller: record.customerHasPropeller };
 }
 
 export function buildAgentQuoteHandoffActions(
@@ -398,16 +412,24 @@ export function buildAgentQuoteHandoffActions(
   if (isProtectedQuoteHandoff(state)) return actions;
 
   if (!options.skipBoatAndTrade) {
+    const canApplyPropeller = !handoff.motorId || handoff.motorId === state.motor?.id;
+    if (handoff.motorId && handoff.customerHasPropeller !== undefined && !canApplyPropeller) {
+      const pending = pendingPropellerHandoff(state);
+      if (pending?.motorId !== handoff.motorId || pending?.customerHasPropeller !== handoff.customerHasPropeller) {
+        actions.push({ type: 'SET_UI_FLAG', payload: { key: AGENT_PROPELLER_HANDOFF_FLAG, value: { motorId: handoff.motorId, customerHasPropeller: handoff.customerHasPropeller } } });
+      }
+    }
+    const buyerHandoff = canApplyPropeller ? handoff : { ...handoff, customerHasPropeller: undefined };
     if (handoff.purchasePath && state.purchasePath !== handoff.purchasePath) {
       actions.push({ type: 'SET_PURCHASE_PATH', payload: handoff.purchasePath });
     }
-    if (handoff.customerHasPropeller !== undefined) {
+    if (canApplyPropeller && handoff.customerHasPropeller !== undefined) {
       const decision = handoff.customerHasPropeller ? 'reuse_existing' : 'include_allowance';
       if (state.installConfig?.propellerDecision !== decision) {
         actions.push({ type: 'SET_INSTALL_CONFIG', payload: { ...state.installConfig, propellerDecision: decision } });
       }
     }
-    const boat = mergeBoatInfoFromHandoff(state.boatInfo, handoff);
+    const boat = mergeBoatInfoFromHandoff(state.boatInfo, buyerHandoff);
     if (boat?.changed) {
       actions.push({ type: 'SET_BOAT_INFO', payload: boat.next });
     }
@@ -431,12 +453,23 @@ export function buildAgentQuoteHandoffActions(
   return actions;
 }
 
-export function selectedMotorPropellerHandoffActions(
-  stateAfterSelection: QuoteState,
-  handoff: ParsedAgentQuoteHandoff,
+/** Select the motor first, then consume its deferred propeller answer exactly once. */
+export function buildAgentMotorSelectionActions(
+  state: QuoteState,
+  motor: Motor,
+  reduce: (state: QuoteState, action: QuoteAction) => QuoteState,
 ): QuoteAction[] {
-  if (handoff.motorId !== stateAfterSelection.motor?.id || handoff.customerHasPropeller === undefined) return [];
-  return buildAgentQuoteHandoffActions(stateAfterSelection, { customerHasPropeller: handoff.customerHasPropeller });
+  const select: QuoteAction = { type: 'SET_MOTOR', payload: motor };
+  const next = reduce(state, select);
+  const actions: QuoteAction[] = [select];
+  const pending = pendingPropellerHandoff(state);
+  if (pending && pending.motorId === motor.id && typeof pending.customerHasPropeller === 'boolean') {
+    actions.push(...buildAgentQuoteHandoffActions(next, { customerHasPropeller: pending.customerHasPropeller }));
+  }
+  if (pending && next.uiFlags?.[AGENT_PROPELLER_HANDOFF_FLAG]) {
+    actions.push({ type: 'SET_UI_FLAG', payload: { key: AGENT_PROPELLER_HANDOFF_FLAG, value: null } });
+  }
+  return actions;
 }
 
 export function applyAgentQuoteHandoff(
@@ -461,7 +494,7 @@ export function useAgentQuoteHandoff({
 
     appliedRef.current = true;
     captureAgentAttribution();
-    if (isProtectedQuoteHandoff(state)) return;
+    const protectedQuote = isProtectedQuoteHandoff(state);
     const skipBoatAndTrade = isMotorOnlyExpressHandoff(searchParams);
     const handoff = parseAgentQuoteHandoff(searchParams);
     const actions = buildAgentQuoteHandoffActions(state, handoff, { skipBoatAndTrade });
@@ -469,11 +502,14 @@ export function useAgentQuoteHandoff({
       dispatch(action);
     }
 
-    const nextParams = stripConsumedAgentQuoteHandoffParams(searchParams, handoff, {
-      skipBoatAndTrade,
-    });
-    if (nextParams.toString() !== searchParams.toString()) {
-      setSearchParams(nextParams, { replace: true });
-    }
+    // Clean the current URL, rather than a snapshot another effect may have updated.
+    // A declined saved-quote handoff must never reapply after the buyer edits it.
+    setSearchParams((current) => {
+      const nextParams = stripConsumedAgentQuoteHandoffParams(current, handoff, {
+        skipBoatAndTrade,
+        declined: protectedQuote,
+      });
+      return nextParams;
+    }, { replace: true });
   }, [dispatch, searchParams, setSearchParams, state]);
 }

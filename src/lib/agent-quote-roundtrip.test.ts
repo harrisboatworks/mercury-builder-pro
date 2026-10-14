@@ -1,7 +1,7 @@
 import { describe, expect, it, vi } from 'vitest';
 import { buildAgentQuoteLink, attributeMcpQuotePayload } from '../../supabase/functions/_shared/agent-quote-link';
 import { runPublicQuoteTool } from '../../supabase/functions/_shared/public-agent-mcp';
-import { applyAgentQuoteHandoff, buildAgentQuoteHandoffActions, parseAgentQuoteHandoff, selectedMotorPropellerHandoffActions, stripConsumedAgentQuoteHandoffParams } from './agent-quote-handoff';
+import { applyAgentQuoteHandoff, buildAgentQuoteHandoffActions, parseAgentQuoteHandoff, buildAgentMotorSelectionActions, stripConsumedAgentQuoteHandoffParams } from './agent-quote-handoff';
 import { initialState, quoteReducer } from '@/contexts/QuoteContext';
 import { resolvePropellerDecision } from './propeller-selection';
 import { resolveAgentAttribution } from './agent-attribution';
@@ -19,8 +19,9 @@ describe('public quote handoff roundtrip', () => {
     const parsed = parseAgentQuoteHandoff(params, 2026);
     let state = applyAgentQuoteHandoff(initialState, quoteReducer, parsed);
     // A different previously selected motor clears motor-relative selections.
-    state = quoteReducer({ ...state, motor: { ...motor, id: 'old' } }, { type: 'SET_MOTOR', payload: motor });
-    state = selectedMotorPropellerHandoffActions(state, parsed).reduce(quoteReducer, state);
+    expect(state.installConfig).toBeNull();
+    const existing = { ...state, motor: { ...motor, id: 'old' } };
+    state = buildAgentMotorSelectionActions(existing, motor, quoteReducer).reduce(quoteReducer, existing);
     expect(state.purchasePath).toBe('installed');
     expect(state.boatInfo).toMatchObject({ make: 'Lund', hasCompatibleProp: false });
     expect(state.tradeInInfo.engineHours).toBe(0);
@@ -60,7 +61,11 @@ describe('public quote handoff roundtrip', () => {
     expect(applyAgentQuoteHandoff(state, quoteReducer, parseAgentQuoteHandoff(new URLSearchParams('purchase_path=loose&customer_has_propeller=true&boat_make=Lund&trade_engine_hours=200&ucp=chk_other')))).toBe(state);
   });
   it('does not restore a linked propeller choice for another selected motor', () => {
-    expect(selectedMotorPropellerHandoffActions({ ...initialState, motor }, { motorId: 'other', customerHasPropeller: true })).toEqual([]);
+    const handoffState = applyAgentQuoteHandoff(initialState, quoteReducer, { motorId: 'other', customerHasPropeller: true });
+    const selected = buildAgentMotorSelectionActions(handoffState, motor, quoteReducer).reduce(quoteReducer, handoffState);
+    expect(selected.installConfig).toBeNull();
+    expect(selected.boatInfo?.hasCompatibleProp).not.toBe(true);
+    expect(selected.uiFlags.agentPropellerHandoff).toBeNull();
   });
   it('preserves express intent and supports editable ordinary prefills', () => {
     const parsed = parseAgentQuoteHandoff(new URLSearchParams('purchase_path=installed&customer_has_propeller=true&trade_engine_hours=20'));
@@ -68,6 +73,16 @@ describe('public quote handoff roundtrip', () => {
     const state = applyAgentQuoteHandoff(initialState, quoteReducer, parsed);
     expect(state.installConfig.propellerDecision).toBe('reuse_existing');
     expect(quoteReducer(state, { type: 'SET_PURCHASE_PATH', payload: 'loose' }).purchasePath).toBe('loose');
+  });
+  it.each([null, { ...motor, id: 'old' }])('keeps a deferred answer scoped across reload with prior motor %s', prior => {
+    const parsed = parseAgentQuoteHandoff(new URLSearchParams({ motor: id, customer_has_propeller: 'true' }));
+    const pending = applyAgentQuoteHandoff({ ...initialState, motor: prior }, quoteReducer, parsed);
+    const reloaded = JSON.parse(JSON.stringify(pending));
+    const selected = buildAgentMotorSelectionActions(reloaded, motor, quoteReducer).reduce(quoteReducer, reloaded);
+    expect(selected.installConfig.propellerDecision).toBe('reuse_existing');
+    expect(selected.boatInfo.hasCompatibleProp).toBe(true);
+    const edited = quoteReducer(selected, { type: 'SET_INSTALL_CONFIG', payload: { propellerDecision: 'include_allowance' } });
+    expect(buildAgentMotorSelectionActions(edited, motor, quoteReducer).reduce(quoteReducer, edited).installConfig.propellerDecision).toBe('include_allowance');
   });
   it('leaves unrelated upstream links and errors untouched', () => {
     for (const payload of [{ deep_link: 'https://example.invalid/quote/motor-selection' }, { error: 'not available' }, { deep_link: 'not-url' }]) expect(attributeMcpQuotePayload(payload)).toBe(payload);

@@ -7,9 +7,9 @@ const ALIASES: Record<string, AgentSource> = {
   chatgpt: 'chatgpt', openai: 'chatgpt', 'chatgpt.com': 'chatgpt',
   perplexity: 'perplexity', 'perplexity.ai': 'perplexity',
   claude: 'claude', anthropic: 'claude', 'claude.ai': 'claude',
-  gemini: 'google', google: 'google', 'gemini.google.com': 'google',
+  gemini: 'google', 'gemini.google.com': 'google',
   muse: 'meta_muse', meta_muse: 'meta_muse', muse_code: 'meta_muse', meta_muse_code: 'meta_muse', 'muse.ai': 'meta_muse',
-  meta: 'meta_ai', meta_ai: 'meta_ai', 'meta.ai': 'meta_ai',
+  meta_ai: 'meta_ai', 'meta.ai': 'meta_ai',
   ai: 'ai', agent: 'ai', agent_rest: 'agent_rest', agent_mcp: 'agent_mcp', agent_ucp: 'agent_ucp',
 };
 const SOURCES = new Set<AgentSource>([...Object.values(ALIASES), 'referral', 'direct']);
