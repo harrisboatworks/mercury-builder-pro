@@ -7271,7 +7271,7 @@ if (locations.length > 0) {
   verifyAuxRoute({
     routePath: `/locations/${sample.slug}`,
     expectedTitleSnippet: sample.title.slice(0, 30),
-    expectedSchemaType: 'LocalBusiness',
+    expectedSchemaType: 'Service',
     label: 'Sample location',
   });
 }
