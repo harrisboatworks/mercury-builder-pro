@@ -134,7 +134,7 @@ export function resolveTradeInInput(
     ? overrideRaw
     : undefined;
 
-  const serialRaw = value.serial_number ?? value.serialNumber;
+  const serialRaw = value.serial_number ?? value.serialNumber ?? undefined;
   if (serialRaw !== undefined && (typeof serialRaw !== "string" || serialRaw.length > 64 || /[\u0000-\u001f\u007f-\u009f\u202a-\u202e\u2066-\u2069]/.test(serialRaw))) throw new TradeInInputError("trade_in.serial_number must be at most 64 characters with no control characters");
   return {
     brand,
