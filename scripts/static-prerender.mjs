@@ -25,7 +25,6 @@ import { fileURLToPath } from 'url';
 import { execSync } from 'child_process';
 import { marked } from 'marked';
 import { normalizeAuthoritativeDate, renderSitemapLastmod } from './lib/sitemap-lastmod.mjs';
-import { MERCURY_OUTBOARDS_ONTARIO_PRODUCTS } from '../src/data/mercuryOutboardsOffers.js';
 import { getHarrisBoatWorksBrandPagePrerender } from '../src/data/harrisBoatWorksBrandPage.js';
 import { buildMercuryProXSOffers } from '../src/data/mercuryProXSOffers.js';
 import { buildMotorProductGroup } from '../src/data/motorProductGroups.js';
@@ -2618,7 +2617,6 @@ function mercuryOutboardsOntarioSchema() {
         ],
         "serviceType": "Mercury outboard sales and repower"
       },
-      ...MERCURY_OUTBOARDS_ONTARIO_PRODUCTS,
       {
         "@type": "FAQPage",
         "@id": `${SITE_URL}/mercury-outboards-ontario#faqpage`,

@@ -1,12 +1,7 @@
 import { BUSINESS_ENTITY_ID } from '../lib/business-identity.js';
-// Shared source of truth for the makesOffer array on /mercury-outboards-ontario.
-// Imported by BOTH:
-//   - src/components/seo/MercuryOutboardsOntarioSEO.tsx (client React SEO head)
-//   - scripts/static-prerender.mjs (build-time prerendered JSON-LD)
-// Edit here only.
-//
-// Each Product has nested `offers` so Google's Product snippet validator
-// passes in addition to the canonical shop makesOffer graph.
+// Legacy category-offer data retained without changing its price values.
+// The Ontario hub no longer emits these fixed family prices: use the live
+// exact-model catalog and quote builder. Reverify before reusing this markup.
 
 export const MERCURY_OUTBOARDS_ONTARIO_OFFERS = [
   {
@@ -190,6 +185,3 @@ export const MERCURY_OUTBOARDS_ONTARIO_OFFERS = [
     }
   }
 ];
-
-// Same existing Product/Offer objects, emitted directly for rich-result readers.
-export const MERCURY_OUTBOARDS_ONTARIO_PRODUCTS = MERCURY_OUTBOARDS_ONTARIO_OFFERS.map(offer => offer.itemOffered);
