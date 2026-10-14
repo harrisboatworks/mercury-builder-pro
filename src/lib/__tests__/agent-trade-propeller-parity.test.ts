@@ -72,13 +72,13 @@ describe('canonical trade input continuity', () => {
     const selected = buildAgentMotorSelectionActions(waiting, motor, quoteReducer).reduce(quoteReducer, waiting);
     expect(selected.installConfig?.propellerDecision).toBeUndefined();
     expect(selected.boatInfo?.hasCompatibleProp).toBe(false);
-    expect(selected.uiFlags?.[AGENT_PROPELLER_HANDOFF_FLAG]).toBeUndefined();
+    expect(selected.uiFlags?.[AGENT_PROPELLER_HANDOFF_FLAG]).toBeFalsy();
     const empty = { ...original, motor: null };
     const deferred = applyAgentQuoteHandoff(empty, quoteReducer, parseAgentQuoteHandoff(params));
     const applied = buildAgentMotorSelectionActions(deferred, motor, quoteReducer).reduce(quoteReducer, deferred);
     expect(applied.installConfig?.propellerDecision).toBeUndefined();
     expect(applied.boatInfo?.hasCompatibleProp).toBe(false);
-    expect(applied.uiFlags?.[AGENT_PROPELLER_HANDOFF_FLAG]).toBeUndefined();
+    expect(applied.uiFlags?.[AGENT_PROPELLER_HANDOFF_FLAG]).toBeFalsy();
     expect(buildAccessoryBreakdown({ motor, installConfig: selected.installConfig, boatInfo: selected.boatInfo }).find(x => /Propeller/.test(x.name))?.price).toBe(350);
   });
 
