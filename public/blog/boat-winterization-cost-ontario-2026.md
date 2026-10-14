@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-winterization-cost-ontario-2026.md
-last_updated: 2026-09-06
+last_updated: 2026-10-14
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Boat Winterization Cost Ontario 2026"
 description: "Ontario winterization quotes follow the current HBW rate card plus the engine, systems, and storage scope for your boat. No generic package price."
 category: "Maintenance"
 date_published: 2026-04-21
-date_modified: 2026-09-06
+date_modified: 2026-10-14
 keywords: ["boat winterization cost ontario","mercury outboard winterization price","harris boat works winter storage"]
 author: "Harris Boat Works"
 publisher: "Harris Boat Works"
@@ -28,7 +28,7 @@ revenue_driver: service
 
 **Category:** Maintenance  
 **Published:** 2026-04-21  
-**Last reviewed:** 2026-09-06  
+**Last reviewed:** 2026-10-14  
 **Read time:** 12 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-winterization-cost-ontario-2026
 
@@ -36,13 +36,101 @@ revenue_driver: service
 
 The physical marina is closed December 1 through April 1. There is no on-site service, inspection, commissioning, installation, or customer access during that period. We can generally arrange boat pickup. Ask us about availability for your boat and location. You can also complete hbwservice.ca, then drop off anytime, including after hours.
 
-*HBW operating scope and pricing references verified August 27, 2026. All amounts are CAD before HST unless stated otherwise.*
+*HBW operating scope and pricing references verified October 14, 2026 against the published 2026-27 HBW rate card. All amounts are CAD before HST unless stated otherwise.*
 
 ## What Does Boat Winterization Cost in Ontario?
 
-The honest answer is: **it depends on the written scope for the boat in front of the technician**.
+The honest answer is: **it depends on the written scope for the boat in front of the technician**. Harris Boat Works publishes its current 2026–27 winterization and storage rates on the [HBW rate card](https://www.harrisboatworks.ca/winter-storage). Those published CAD bands are shown on this page. The boat-specific quote still depends on the exact engine and serial number, maintenance due, condition found, onboard systems, engine count, and whether shrinkwrap or outdoor winter storage is included.
 
 Older generic ranges and individual line-item estimates were not an approved HBW price list and have been removed. They should not be used to budget or compare a current job.
+
+## Published HBW 2026-27 winterization and storage rates
+
+Source: the current public [HBW 2026-27 winterization and storage rate card](https://www.harrisboatworks.ca/winter-storage). The figures below are copied from that page and are not a new HBW price list.
+
+All prices are in Canadian dollars. HST and shop supplies are additional. Your work order confirms the services requested. These are published 2026-27 rate-card bands, not a serial-number quote and not a generic package price.
+
+Keep these scopes separate unless the current written quote lists them together:
+
+- Winterization only
+- Outdoor winter storage with shrink wrap
+- Outdoor uncovered storage
+- Shrink wrap only
+- Maintenance or repairs found during the job
+- Spring commissioning
+
+Storage is outdoors. We do not offer indoor or heated boat storage. We also do not offer climate-controlled, summer, or year-round storage. "Done inside" and "done outside" refer only to where we apply shrink wrap.
+
+### Outboard winterization
+
+| Engine | Price |
+|---|---|
+| 0 to 30 HP 2-Stroke | $191.06 |
+| 40 to 200 HP 2-Stroke | $230.80 |
+| 0 to 20 HP FourStroke | $280.84 |
+| 25 to 30 HP FourStroke | $311.58 |
+| 40 to 60 HP FourStroke | $355.94 |
+| 75 to 115 HP FourStroke | $444.49 |
+| 150 HP FourStroke | $498.56 |
+| 175 to 300 HP FourStroke | $512.88 |
+| OptiMax / E-Tec | $265.12 |
+
+HBW does not publish a more specific engine-serial winterization price than these boat-engine bands. If the engine is not on this table, ask for the current quote at [hbwservice.ca](https://hbwservice.ca) instead of inventing a number.
+
+Personal watercraft, including Sea-Doo, are not listed here. Use the current [HBW rate card](https://www.harrisboatworks.ca/winter-storage) and a written work order for that scope.
+
+### Sterndrive and inboard winterization
+
+| Engine | Winterize | With oil and filter |
+|---|---|---|
+| Inline 4 and inline 6 | $366.80 | $529.16 |
+| V6 and V8 | $389.30 | $563.66 |
+| Bravo | $471.21 | $621.07 |
+| 4.5 L MerCruiser | $403.75 | $576.04 |
+| Inboard | $391.43 | $514.79 |
+
+For engine repairs, we only service Mercury and MerCruiser. Winterization is different: we winterize all brands of outboards, sterndrives, inboards and PWCs when the requested scope is accepted.
+
+### Outdoor winter storage with shrink wrap
+
+| Boat and trailer | Price |
+|---|---|
+| With trailer, up to 21 ft | $36 / ft |
+| With trailer, 22 to 28 ft | $38 / ft |
+| No trailer, up to 21 ft | $39 / ft |
+| No trailer, 22 to 28 ft | $42 / ft |
+
+Includes haul out where required, shrink wrap, battery charging, spring launch on request, spring check and trailer storage the following summer. Maximum boat length for winter storage is 30 ft. Include 29 to 30 ft boats and unusual haul-out situations in your service request so we can confirm the exact price.
+
+### Outdoor winter storage uncovered
+
+| Boat and trailer | Price |
+|---|---|
+| With trailer, up to 21 ft | $28 / ft |
+| With trailer, 22 to 28 ft | $30 / ft |
+| No trailer, up to 21 ft | $31 / ft |
+| No trailer, 22 to 28 ft | $33 / ft |
+
+### Shrink wrap only
+
+| Option | Price |
+|---|---|
+| Shrink wrap only (done inside) | $22 / ft |
+| Shrink wrap only (done outside) | $27 / ft |
+
+### Published 18 ft example from the rate card
+
+The rate card shows one worked example: an 18 ft boat on its own trailer, 90 HP FourStroke, winterized and stored outdoors under shrink wrap. Spring check, spring launch on request, and next summer's trailer storage are included.
+
+| Line item | Amount |
+|---|---|
+| 75 to 115 HP FourStroke winterization | $444.49 |
+| 18 ft storage with shrink wrap | $648.00 |
+| Service subtotal | $1,092.49 |
+
+Before HST, shop supplies and miscellaneous charges. Effective September 2026 on the source rate card. This is that published example, not a generic package price for every boat.
+
+The source rate card also states the spring check is $99 on its own as of July 2026 and included for winter-storage customers.
 
 Instead, ask whether the quote identifies each cost driver:
 
@@ -173,6 +261,7 @@ Submit the boat, engine, trailer, storage, and requested-work details at [hbwser
 
 ## Official Sources
 
+- [Harris Boat Works: 2026-27 winterization and storage rates](https://www.harrisboatworks.ca/winter-storage)
 - [Mercury Marine: How to Winterize Your Outboard](https://www.mercurymarine.com/eu/en/lifestyle/Dockline/how-to-winterize-your-outboard)
 - [Mercury Marine: Marine Battery Maintenance](https://www.mercurymarine.com/us/en/service-and-support/owners-resources/maintenance-made-easy/battery-basics)
 
@@ -180,7 +269,7 @@ Submit the boat, engine, trailer, storage, and requested-work details at [hbwser
 
 ### What does boat winterization cost at Harris Boat Works?
 
-HBW publishes its current 2026–27 winterization and storage rates on the HBW rate card. The boat-specific quote depends on the exact engine and serial number, maintenance due, condition found, onboard systems, engine count, and any approved shrinkwrap or outdoor-storage scope. Submit the details at hbwservice.ca.
+HBW publishes its current 2026–27 winterization and storage rates on the HBW rate card and on this page. Amounts are CAD before HST and shop supplies. The boat-specific quote still depends on the exact engine and serial number, maintenance due, condition found, onboard systems, engine count, and any approved shrinkwrap or outdoor-storage scope. Submit the details at hbwservice.ca.
 
 ### What does a proper Mercury winterization include?
 

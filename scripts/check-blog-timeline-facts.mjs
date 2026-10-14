@@ -564,8 +564,44 @@ const ARTICLE_CONTRACTS = {
         rx: /Plan pickup or launch only after HBW confirms the authorized work is complete/i,
         rule: 'no-ready-to-launch-promise',
       },
+      {
+        rx: /https:\/\/www\.harrisboatworks\.ca\/winter-storage/,
+        rule: 'published-rate-card-source-link',
+      },
+      {
+        rx: /All prices are in Canadian dollars\. HST and shop supplies are additional/,
+        rule: 'published-rate-card-cad-hst',
+      },
+      {
+        rx: /0 to 30 HP 2-Stroke \| \$191\.06/,
+        rule: 'published-outboard-winterization-band',
+      },
+      {
+        rx: /75 to 115 HP FourStroke \| \$444\.49/,
+        rule: 'published-midrange-winterization-band',
+      },
+      {
+        rx: /With trailer, up to 21 ft \| \$36 \/ ft/,
+        rule: 'published-shrinkwrapped-storage-band',
+      },
+      {
+        rx: /Shrink wrap only \(done inside\) \| \$22 \/ ft/,
+        rule: 'published-wrap-only-band',
+      },
+      {
+        rx: /Service subtotal \| \$1,092\.49/,
+        rule: 'published-rate-card-example',
+      },
+      {
+        rx: /Personal watercraft, including Sea-Doo, are not listed here[\s\S]{0,220}written work order/,
+        rule: 'pwc-rate-card-work-order-route',
+      },
     ],
     forbidden: [
+      {
+        rx: /\$371\.15|\$291\.49/,
+        rule: 'no-disputed-seadoo-pwc-amount',
+      },
       {
         rx: /\$250\s*(?:to|[-–])\s*\$400|\$30\s*(?:to|[-–])\s*\$50|\$50\s*(?:to|[-–])\s*\$80|\$50\s*(?:to|[-–])\s*\$90|\$40\s*(?:to|[-–])\s*\$70|\$25\s*(?:to|[-–])\s*\$50/i,
         rule: 'no-rejected-winterization-ranges',

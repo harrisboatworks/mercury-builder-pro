@@ -2348,7 +2348,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "What does boat winterization cost at Harris Boat Works?",
-        "a": "HBW publishes its current 2026–27 winterization and storage rates on the HBW rate card. The boat-specific quote depends on the exact engine and serial number, maintenance due, condition found, onboard systems, engine count, and any approved shrinkwrap or outdoor-storage scope. Submit the details at hbwservice.ca."
+        "a": "HBW publishes its current 2026–27 winterization and storage rates on the HBW rate card and on this page. Amounts are CAD before HST and shop supplies. The boat-specific quote still depends on the exact engine and serial number, maintenance due, condition found, onboard systems, engine count, and any approved shrinkwra…"
       },
       {
         "q": "What does a proper Mercury winterization include?",
