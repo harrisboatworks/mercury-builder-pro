@@ -3,13 +3,13 @@
  * Synchronize machine-facing business facts from their canonical sources:
  * - Google Business Profile cache: coordinates
  * - finance-policy.json: active headline offer and post-promo standard tiers
- * Live shop hours are not copied from the Places cache. Agent-facing files
- * point at /contact, which renders the Google Business Profile hours.
+ * - src/lib/shopHours.js: confirmed seasonal Sunday hours (not the Places cache)
  */
 import { readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { synchronizeAgentContractDocs } from './lib/agent-contract-docs.mjs';
+import { SHOP_HOURS_AGENT_LINE } from '../src/lib/shopHours.js';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const readJson = (relativePath) => JSON.parse(readFileSync(join(ROOT, relativePath), 'utf8'));
@@ -50,8 +50,10 @@ brand.standards = [
 ];
 brand.geography.headquarters.lat = latitude;
 brand.geography.headquarters.lng = longitude;
-const CONTACT_HOURS_POINTER = 'Current hours: see https://www.mercuryrepower.ca/contact (from our Google Business Profile).';
-brand.contact.hours = { note: CONTACT_HOURS_POINTER };
+brand.contact.hours = {
+  note: SHOP_HOURS_AGENT_LINE,
+  monSat: '08:00-17:00',
+};
 brand.lastUpdated = today;
 writeJson('public/.well-known/brand.json', brand);
 
@@ -90,7 +92,7 @@ llms = replaceRequired(
 llms = replaceRequired(
   llms,
   /^- Hours[^\n]*$/m,
-  `- Hours: see https://www.mercuryrepower.ca/contact (from our Google Business Profile).`,
+  `- Hours: ${SHOP_HOURS_AGENT_LINE}`,
   'llms.txt hours',
 );
 llms = synchronizeAgentContractDocs(llms, readFileSync(join(ROOT, 'supabase/functions/ucp-checkout/index.ts'), 'utf8'), readFileSync(join(ROOT, 'supabase/functions/agent-mcp-server/index.ts'), 'utf8'));
@@ -100,8 +102,8 @@ const aiPath = join(ROOT, 'public/.well-known/ai.txt');
 let ai = readFileSync(aiPath, 'utf8');
 ai = replaceRequired(
   ai,
-  /^- (?:In-season hours|Current hours)[^\n]*$/m,
-  `- ${CONTACT_HOURS_POINTER}`,
+  /^- (?:In-season hours|Current hours|Hours:)[^\n]*$/m,
+  `- Hours: ${SHOP_HOURS_AGENT_LINE}`,
   'ai.txt hours',
 );
 writeFileSync(aiPath, ai, 'utf8');

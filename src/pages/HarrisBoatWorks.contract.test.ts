@@ -99,6 +99,7 @@ describe('Harris Boat Works brand-search landing page', () => {
     expect(read('src/pages/HarrisBoatWorks.tsx')).toContain('useGooglePlaceData');
     expect(read('src/pages/HarrisBoatWorks.tsx')).toContain('OpeningHoursDisplay');
     expect(globalSeo).toContain("from '@/data/google-places-cache.json'");
+    expect(globalSeo).toContain('withSeasonalSundayHours');
     expect(globalSeo).toContain('"openingHoursSpecification": LIVE_OPENING_HOURS');
     expect(data).toContain(HISTORY);
     expect(data).toContain('/quote/motor-selection');
@@ -111,6 +112,8 @@ describe('Harris Boat Works brand-search landing page', () => {
 
     expect(llms).toContain(`](${CANONICAL})`);
     expect(llms).toMatch(/## Pages[\s\S]*harris-boat-works/);
+    expect(llms).toContain('Sunday 09:00-16:00 from May through Canadian Thanksgiving');
+    expect(llms).not.toContain('April 1-November 30');
     expect(brand).toContain(`"brandPage": "${CANONICAL}"`);
     expect(brand).not.toContain('Heritage, short version');
     expect(llms).not.toContain('Heritage, short version');

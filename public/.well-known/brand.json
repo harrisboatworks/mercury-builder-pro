@@ -124,7 +124,8 @@
     "phoneDisplay": "(905) 342-2153",
     "email": "info@harrisboatworks.ca",
     "hours": {
-      "note": "Current hours: see https://www.mercuryrepower.ca/contact (from our Google Business Profile)."
+      "note": "Monday-Saturday 08:00-17:00. Sunday 09:00-16:00 from May through Canadian Thanksgiving; closed Thanksgiving weekend and all other Sundays.",
+      "monSat": "08:00-17:00"
     }
   },
   "currency": "CAD",

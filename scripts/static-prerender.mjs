@@ -44,6 +44,7 @@ import { WARRANTY_AGENT_NOTE, WARRANTY_AGENT_NOTE_BOLD, WARRANTY_POLICY_SENTENCE
 import { escHtml, renderYouTubeEmbedLinkHtml } from './lib/youtube-embed-html.mjs';
 import { agentFinancingGuidance } from './lib/agent-contract-docs.mjs';
 import { ONTARIO_BUYING_ANSWER, ONTARIO_LINEUP_ANSWER, ONTARIO_PRICING_ANSWER, ONTARIO_RESEARCH_GUIDES } from '../src/lib/mercury-ontario-facts.js';
+import { withSeasonalSundayHours } from '../src/lib/shopHours.js';
 
 // Public anonymous key used by the browser client. This read-only fallback
 // keeps prerendering available when the public motor edge function is down.
@@ -83,9 +84,11 @@ try {
 } catch (err) {
   console.warn('[static-prerender] google-places-cache.json missing, using fallback location/hours.');
 }
-const LIVE_OPENING_HOURS = Array.isArray(GOOGLE_PLACES_CACHE.openingHoursSpecification)
-  ? GOOGLE_PLACES_CACHE.openingHoursSpecification
-  : [];
+const LIVE_OPENING_HOURS = withSeasonalSundayHours(
+  Array.isArray(GOOGLE_PLACES_CACHE.openingHoursSpecification)
+    ? GOOGLE_PLACES_CACHE.openingHoursSpecification
+    : [],
+);
 const LIVE_BUSINESS_GEO = {
   latitude: Number(GOOGLE_PLACES_CACHE.location?.latitude) || 44.121684,
   longitude: Number(GOOGLE_PLACES_CACHE.location?.longitude) || -78.241502,
