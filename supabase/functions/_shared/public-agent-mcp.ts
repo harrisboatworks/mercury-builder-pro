@@ -9,6 +9,7 @@ import {
   getMotorReservationDeposit,
 } from "./deposit-policy.ts";
 import { PUBLIC_SITE_URL, PUBLIC_VERADO_POLICY } from "./public-motor-contract.ts";
+import { attributeMcpQuotePayload } from "./agent-quote-link.ts";
 import { inferValidatedTradeInHorsepower } from "./trade-in-input.ts";
 
 export const MCP_MAX_STRING = 200;
@@ -295,7 +296,7 @@ export async function runPublicQuoteTool(
   callApi: (action: string, args: Record<string, unknown>) => Promise<unknown>,
 ) {
   const args = parseMcpToolArguments(name, rawArgs);
-  const payload = await callApi("build_quote", args);
+  const payload = attributeMcpQuotePayload(await callApi("build_quote", args));
   return name === "submit_quote_lead" ? mcpQuoteLeadResult(payload) : mcpUpstreamErrorResult(payload);
 }
 

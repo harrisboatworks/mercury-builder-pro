@@ -1,3 +1,4 @@
+import { captureAgentAttribution } from './lib/agent-attribution';
 import { createRoot } from 'react-dom/client'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { ThemeProvider } from 'next-themes'
@@ -69,6 +70,7 @@ try {
   }
 
   console.log('✅ Root element found, creating React root...');
+  captureAgentAttribution();
   const root = createRoot(rootElement);
   
   console.log('✅ React root created, rendering App...');

@@ -2,7 +2,7 @@ import { resolvePublicSellingPrice } from '../../../supabase/functions/_shared/p
 import { useEffect, useState, useMemo, useCallback, useRef } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 
-import { useQuote } from '@/contexts/QuoteContext';
+import { quoteReducer, useQuote } from '@/contexts/QuoteContext';
 import { Motor } from '@/components/QuoteBuilder';
 import { FinancingProvider } from '@/contexts/FinancingContext';
 import { MotorViewProvider } from '@/contexts/MotorViewContext';
@@ -43,6 +43,7 @@ import { ComparisonFloatingBar } from '@/components/motors/ComparisonFloatingBar
 import { SearchOverlay } from '@/components/ui/SearchOverlay';
 // ComparisonFloatingPill removed - comparison now integrated into UnifiedMobileBar
 import { Button } from '@/components/ui/button';
+import { AlertDialog, AlertDialogContent, AlertDialogHeader, AlertDialogTitle, AlertDialogDescription, AlertDialogFooter, AlertDialogAction, AlertDialogCancel } from '@/components/ui/alert-dialog';
 import { RepowerLayout } from '@/components/repower/RepowerLayout';
 import { MotorSelectionSEO } from '@/components/seo/MotorSelectionSEO';
 import { PageTransition } from '@/components/ui/page-transition';
@@ -88,6 +89,10 @@ import {
 } from '@/lib/motor-selection-url-state';
 import {
   isReservationPlanningHandoff,
+  buildAgentMotorSelectionActions,
+  buildExpressQuoteHandoffActions,
+  stripConsumedAgentQuoteHandoffParams,
+  isProtectedQuoteHandoff,
   parseAgentQuoteHandoff,
   useAgentQuoteHandoff,
   UCP_CHECKOUT_REF_FLAG,
@@ -485,7 +490,21 @@ function MotorSelectionContent() {
   }
   const initialUrlState = initialUrlStateRef.current;
   const { state, dispatch } = useQuote();
-  useAgentQuoteHandoff({
+  const [pendingExpressQuote, setPendingExpressQuote] = useState<{ motor: Motor; params: URLSearchParams } | null>(null);
+  const expressDecisionHandledRef = useRef(false);
+  const keepCurrentExpressQuote = () => {
+    expressDecisionHandledRef.current = true;
+    setPendingExpressQuote(null);
+    setSearchParams(current => stripConsumedAgentQuoteHandoffParams(current, parseAgentQuoteHandoff(current), { declined: true }), { replace: true });
+  };
+  const startNewExpressQuote = () => {
+    if (!pendingExpressQuote) return;
+    expressDecisionHandledRef.current = true;
+    for (const action of buildExpressQuoteHandoffActions(state, pendingExpressQuote.params, pendingExpressQuote.motor, true)) dispatch(action);
+    setPendingExpressQuote(null);
+    navigate('/quote/summary?intent=motor-only', { replace: true });
+  };
+  const cleanupHandoffParams = useAgentQuoteHandoff({
     searchParams,
     setSearchParams,
     state,
@@ -583,11 +602,11 @@ function MotorSelectionContent() {
     setConfigFiltersState(nextState.configFilters);
     if (!options.keepBoatFit) setBoatFit(null);
 
-    const nextParams = writeMotorSelectionUrlState(searchParams, nextState);
+    const nextParams = cleanupHandoffParams(writeMotorSelectionUrlState(searchParams, nextState));
     if (nextParams.toString() !== searchParams.toString()) {
-      setSearchParams(nextParams, { replace: options.replace ?? false });
+      setSearchParams(current => cleanupHandoffParams(writeMotorSelectionUrlState(current, nextState)), { replace: options.replace ?? false });
     }
-  }, [searchParams, setSearchParams]);
+  }, [cleanupHandoffParams, searchParams, setSearchParams]);
 
 
   useEffect(() => {
@@ -600,11 +619,11 @@ function MotorSelectionContent() {
       setConfigFiltersState(urlState.configFilters);
     }
 
-    const canonicalParams = writeMotorSelectionUrlState(searchParams, urlState);
+    const canonicalParams = cleanupHandoffParams(writeMotorSelectionUrlState(searchParams, urlState));
     if (canonicalParams.toString() !== searchParams.toString()) {
-      setSearchParams(canonicalParams, { replace: true });
+      setSearchParams(current => cleanupHandoffParams(writeMotorSelectionUrlState(current, urlState)), { replace: true });
     }
-  }, [configFilters, hpRange, searchParams, searchQuery, setSearchParams]);
+  }, [cleanupHandoffParams, configFilters, hpRange, searchParams, searchQuery, setSearchParams]);
   
   // Voice show motor state (handled after processedMotors defined)
   const [voiceShowMotorId, setVoiceShowMotorId] = useState<string | null>(null);
@@ -1162,7 +1181,17 @@ if (event.type === 'filter_motors') {
       const targetMotor = processedMotors.find(m => m.id === motorId);
 
       if (isMotorOnlyExpress) {
+        if (state.isLoading) return false;
         if (!targetMotor) return false;
+        if (isProtectedQuoteHandoff(state)) {
+          if (state.uiFlags?.motorOnlyExpress === true && state.motor?.id === MERCURY_99_MH_EXPRESS_MOTOR_ID) {
+            navigate('/quote/summary?intent=motor-only', { replace: true });
+          } else {
+            expressDecisionHandledRef.current = false;
+            setPendingExpressQuote(current => current ?? { motor: targetMotor, params: new URLSearchParams(searchParams) });
+          }
+          return true;
+        }
 
         trackClarityMotorSelection({
           model: targetMotor.model,
@@ -1175,13 +1204,8 @@ if (event.type === 'filter_motors') {
           motor_hp: targetMotor.hp,
           source: 'mercury_9_9_mh_sale',
         });
-        dispatch({ type: 'START_MOTOR_ONLY_QUOTE', payload: targetMotor });
-        const { ucpCheckoutRef } = parseAgentQuoteHandoff(searchParams);
-        if (ucpCheckoutRef) {
-          dispatch({
-            type: 'SET_UI_FLAG',
-            payload: { key: UCP_CHECKOUT_REF_FLAG, value: ucpCheckoutRef },
-          });
+        for (const action of buildExpressQuoteHandoffActions(state, searchParams, targetMotor)) {
+          dispatch(action);
         }
         navigate('/quote/summary?intent=motor-only', { replace: true });
         return true;
@@ -1217,9 +1241,12 @@ if (event.type === 'filter_motors') {
       setDeepLinkedMotorId(motorId);
       setShowConfigurator(true);
       // Clear the param so refresh doesn't re-trigger
-      searchParams.delete('motor');
-      searchParams.delete('select');
-      setSearchParams(searchParams, { replace: true });
+      setSearchParams(current => {
+        const next = stripConsumedAgentQuoteHandoffParams(current, parseAgentQuoteHandoff(current), { declined: isProtectedQuoteHandoff(state) });
+        next.delete('motor');
+        next.delete('select');
+        return next;
+      }, { replace: true });
       return true;
     };
     
@@ -1232,7 +1259,7 @@ if (event.type === 'filter_motors') {
     }, 150);
     
     return () => clearTimeout(timer);
-  }, [processedMotors, groupedMotors, searchParams, setSearchParams, dispatch, navigate]);
+  }, [processedMotors, groupedMotors, searchParams, setSearchParams, dispatch, navigate, state]);
   
   // Handle voice:show-motor when processedMotors and groupedMotors are available
   useEffect(() => {
@@ -1321,12 +1348,9 @@ if (event.type === 'filter_motors') {
     });
 
     // Add motor to quote context
-    dispatch({ type: 'SET_MOTOR', payload: motor });
-    const ucpCheckoutRef = parseAgentQuoteHandoff(searchParams).ucpCheckoutRef ?? state.uiFlags?.[UCP_CHECKOUT_REF_FLAG];
-    if (typeof ucpCheckoutRef === 'string') {
-      dispatch({ type: 'SET_UI_FLAG', payload: { key: UCP_CHECKOUT_REF_FLAG, value: ucpCheckoutRef } });
+    for (const action of buildAgentMotorSelectionActions(state, motor, quoteReducer)) {
+      dispatch(action);
     }
-    
     // Auto-navigate to options step
     setTimeout(() => {
       navigate('/quote/options');
@@ -1528,6 +1552,19 @@ if (event.type === 'filter_motors') {
       />
       <FinancingProvider>
         <RepowerLayout>
+      <AlertDialog open={pendingExpressQuote !== null} onOpenChange={open => { if (!open && !expressDecisionHandledRef.current) keepCurrentExpressQuote(); }}>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>Start a new 9.9 motor-only quote?</AlertDialogTitle>
+            <AlertDialogDescription>This replaces the quote currently open in this browser. Your existing saved quotes will not be edited.</AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogCancel onClick={keepCurrentExpressQuote}>Keep current quote</AlertDialogCancel>
+            <AlertDialogAction onClick={startNewExpressQuote}>Start new quote</AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
+
           <div className="bg-repower-paper pt-[64px] lg:pt-[72px]">
             <PromoBannerConditional />
             <main>

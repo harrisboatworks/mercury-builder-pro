@@ -10,6 +10,7 @@
 // All responses include `priceValidUntil` (24h) and a disclaimer.
 
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+import { buildAgentQuoteLink } from "../_shared/agent-quote-link.ts";
 import { z } from "npm:zod@3.22.4";
 import { checkRateLimit, rateLimitedResponse } from "../_shared/rate-limit.ts";
 import { sanitizeAgentNote } from "../_shared/sanitize.ts";
@@ -245,14 +246,6 @@ function isTillerMotor(modelDisplay: string): boolean {
   return /\b(\d+\.?\d*)?\s*[ME]X{0,2}L?H(?:PT)?[A-Z]*\b/i.test(u);
 }
 
-
-function quoteUrl(motorId: string, opts: Record<string, string | number | undefined>) {
-  const params = new URLSearchParams({ motor: motorId });
-  for (const [k, v] of Object.entries(opts)) {
-    if (v != null && v !== "") params.set(k, String(v));
-  }
-  return `${SITE_URL}/quote/motor-selection?${params.toString()}`;
-}
 
 const DEEP_LINK_TRADE_CONDITIONS = new Set(["excellent", "good", "fair", "poor"]);
 
@@ -968,7 +961,9 @@ async function buildQuote(supabase: any, body: any) {
 
   // Deep-link prefilled URL for the customer
   const slug = motorSlug(motor);
-  const deepLink = quoteUrl(motor.id, {
+  const deepLink = buildAgentQuoteLink(motor.id, {
+    purchase_path: purchasePathRequested ? purchasePath : undefined,
+    customer_has_propeller: quoteFlags.customer_has_propeller,
     boat_make: body?.boat_info?.make,
     boat_model: body?.boat_info?.model,
     trade_brand: body?.trade_in?.brand,

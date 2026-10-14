@@ -1,3 +1,4 @@
+import { buildAgentQuoteLink } from "../_shared/agent-quote-link.ts";
 import { mcpToolAnnotations } from '../_shared/mcp-tool-annotations.ts';
 import { corsHeaders as sharedCorsHeaders } from '../_shared/cors.ts';
 // UCP (Universal Commerce Protocol) checkout service for Harris Boat Works.
@@ -250,8 +251,11 @@ function buildCheckout(id: string, line_items: any[], problems: any[], buyer: an
   if (profileWarning) messages.push(profileWarning);
 
   const status = line_items.length === 0 ? "incomplete" : "requires_escalation";
-  const motorParam = line_items.length === 1 ? `&motor=${line_items[0].item.id}` : "";
-  const continue_url = `${SITE}/quote/motor-selection?ucp=${id}${motorParam}`;
+  const continue_url = buildAgentQuoteLink(
+    line_items.length === 1 ? line_items[0].item.id : undefined,
+    { ucp: id, purchase_path: "loose" },
+    "agent_ucp",
+  );
 
   const checkout: any = {
     ucp: ucpEnvelope(),

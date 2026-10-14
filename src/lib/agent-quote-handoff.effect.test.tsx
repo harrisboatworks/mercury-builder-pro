@@ -11,12 +11,14 @@ import {
 function HandoffHarness({
   params,
   isLoading = false,
+  initial = initialState,
 }: {
   params: string;
   isLoading?: boolean;
+  initial?: QuoteState;
 }) {
   const [searchParams, setSearchParamsState] = useState(() => new URLSearchParams(params));
-  const [state, setState] = useState<QuoteState>({ ...initialState, isLoading: false });
+  const [state, setState] = useState<QuoteState>({ ...initial, isLoading: false });
 
   useEffect(() => {
     setSearchParamsState(new URLSearchParams(params));
@@ -26,8 +28,8 @@ function HandoffHarness({
     setState((current) => quoteReducer(current, action));
   };
 
-  const setSearchParams = (next: URLSearchParams) => {
-    setSearchParamsState(new URLSearchParams(next));
+  const setSearchParams = (next: URLSearchParams | ((current: URLSearchParams) => URLSearchParams)) => {
+    setSearchParamsState(current => new URLSearchParams(typeof next === 'function' ? next(current) : next));
   };
 
   useAgentQuoteHandoff({
@@ -43,12 +45,42 @@ function HandoffHarness({
       data-make={state.boatInfo?.make ?? ''}
       data-trade-brand={state.tradeInInfo?.brand ?? ''}
       data-ucp={String(state.uiFlags[UCP_CHECKOUT_REF_FLAG] ?? '')}
+      data-pending-ucp={JSON.stringify(state.uiFlags.agentUcpHandoff ?? null)}
+      data-path={state.purchasePath ?? ''}
+      data-prop={String(state.boatInfo?.hasCompatibleProp ?? '')}
+      data-hours={String(state.tradeInInfo?.engineHours ?? '')}
       data-params={searchParams.toString()}
     />
   );
 }
 
 describe('useAgentQuoteHandoff', () => {
+  it('applies false propeller and zero hours after persisted state loads and keeps provenance', async () => {
+    const params = 'motor=abc&purchase_path=loose&customer_has_propeller=false&trade_engine_hours=0&src=agent_rest';
+    const { rerender, getByTestId } = render(<HandoffHarness params={params} isLoading />);
+    expect(getByTestId('handoff-state')).toHaveAttribute('data-path', '');
+    rerender(<HandoffHarness params={params} />);
+    await waitFor(() => expect(getByTestId('handoff-state')).toHaveAttribute('data-path', 'loose'));
+    expect(getByTestId('handoff-state')).toHaveAttribute('data-prop', '');
+    expect(getByTestId('handoff-state')).toHaveAttribute('data-hours', '0');
+    expect(getByTestId('handoff-state')).toHaveAttribute('data-params', 'motor=abc&src=agent_rest');
+  });
+  it('protects a restored quote and consumes the declined URL so it cannot reapply', async () => {
+    const params = 'purchase_path=loose&customer_has_propeller=false&trade_engine_hours=200&ucp=chk_other';
+    const { getByTestId } = render(<HandoffHarness params={params} initial={{ ...initialState, restoredReferenceNumber: 'HBW-SYNTHETIC', purchasePath: 'installed' }} />);
+    await act(async () => { await Promise.resolve(); });
+    expect(getByTestId('handoff-state')).toHaveAttribute('data-path', 'installed');
+    expect(getByTestId('handoff-state')).toHaveAttribute('data-ucp', '');
+    expect(getByTestId('handoff-state')).toHaveAttribute('data-params', '');
+  });
+  it('retains protected express intent for an explicit buyer choice instead of silently consuming it', async () => {
+    const params = "motor=e920cfdf-223a-408a-850b-6f112e15c4d7&intent=motor-only&ucp=chk_express&src=agent_ucp";
+    const { getByTestId } = render(<HandoffHarness params={params} initial={{ ...initialState, restoredReferenceNumber: 'HBW-SYNTHETIC', purchasePath: 'installed' }} />);
+    await act(async () => { await Promise.resolve(); });
+    expect(getByTestId('handoff-state')).toHaveAttribute('data-params', params);
+    expect(getByTestId('handoff-state')).toHaveAttribute('data-path', 'installed');
+    expect(getByTestId('handoff-state')).toHaveAttribute('data-ucp', '');
+  });
   it('waits for quote loading, then applies documented fields once', async () => {
     const params = 'boat_make=Lund&boat_model=Pro-V&trade_brand=Mercury&trade_year=2010&trade_hp=75&motor=abc&utm_source=agent';
     const { rerender, getByTestId } = render(
@@ -110,7 +142,7 @@ describe('useAgentQuoteHandoff', () => {
     );
 
     await waitFor(() => {
-      expect(getByTestId('handoff-state')).toHaveAttribute('data-ucp', 'chk_express');
+      expect(getByTestId('handoff-state')).toHaveAttribute('data-pending-ucp', JSON.stringify({motorId:'e920cfdf-223a-408a-850b-6f112e15c4d7',ucpRef:'chk_express'}));
     });
     expect(getByTestId('handoff-state')).toHaveAttribute('data-make', '');
     expect(getByTestId('handoff-state')).toHaveAttribute('data-trade-brand', '');

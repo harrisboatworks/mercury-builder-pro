@@ -61,9 +61,10 @@ export default function PurchasePathPage() {
     pathSelectedOnThisPage.current = true;
     dispatch({ type: 'SET_PURCHASE_PATH', payload: path });
 
-    // Clear installation config when selecting loose motor (no installation)
+    // Clear rigging choices while retaining the buyer's motor-specific propeller answer.
     if (path === 'loose') {
-      dispatch({ type: 'SET_INSTALL_CONFIG', payload: null });
+      const propellerDecision = state.installConfig?.propellerDecision;
+      dispatch({ type: 'SET_INSTALL_CONFIG', payload: propellerDecision ? { propellerDecision } : null });
     }
 
     dispatch({ type: 'COMPLETE_STEP', payload: 2 });
