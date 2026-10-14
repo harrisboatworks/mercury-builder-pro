@@ -5,7 +5,7 @@ import { resolveDepositStagingOrigin } from '../_shared/deposit-staging-origin.t
 import { corsHeaders as sharedCorsHeaders } from '../_shared/cors.ts';
 // Trusted buyer UI only. UCP caller fields cannot record approval.
 import { createClient } from 'npm:@supabase/supabase-js@2.53.1';
-import { nativeDepositCheckoutEnabled, isNativeDepositChildId, runNativeDepositCreate, runNativeDepositComplete } from '../_shared/native-deposit-checkout.ts';
+import { nativeDepositCheckoutEnabled, isNativeDepositChildId, runNativeDepositRestart, runNativeDepositComplete } from '../_shared/native-deposit-checkout.ts';
 import { nativeActorFromRequest, nativeDepositIo } from '../_shared/native-deposit-io.ts';
 import { sha256Hex } from '../_shared/quote-document-policy.ts';
 import { DEPOSIT_POLICY_IN_STOCK_TEXT, DEPOSIT_POLICY_SPECIAL_ORDER_TEXT } from '../_shared/deposit-policy.ts';
@@ -58,16 +58,15 @@ Deno.serve(async req => {
     const owns = body.action === 'review' && intent.status === 'paid' && quote.user_id === user.id
       || nativeBuyerReviewAuthorized(quote, user, actor);
     if (!owns) return reply({ error: 'Quote unavailable.' }, 404);
-    if ((!enabled || !sellerVerified) && ['approve','restart'].includes(body.action)) return reply({ error: 'New native payments are paused.' }, 409);
+    if ((!enabled || !sellerVerified) && body.action === 'approve') return reply({ error: 'New native payments are paused.' }, 409);
     const fingerprint = await sha256Hex(new TextEncoder().encode(`buyer-session:${user.id}:${token}`));
     const existingAttempt = await io.loadAttempt(intent.id);
     const recovering = Boolean(existingAttempt?.submitted_at || existingAttempt?.stripe_payment_intent_id || existingAttempt?.observed_payment_intent_id || intent.status === 'paid');
     if (body.action === 'restart') {
-      if (!await io.retireIntent(intent.id, false)) return reply({ error: 'This payment was submitted. Refresh its original status or contact HBW; a new payment cannot be started.' }, 409);
-      const next = await runNativeDepositCreate({ caller: { operation: 'motor_reservation', saved_quote_id: quote.id },
-        routeParentId: intent.parent_session_id, actor, now: new Date(), intentId: crypto.randomUUID(),
-        childId: 'ndc_' + crypto.randomUUID().replaceAll('-', ''), io });
-      return reply(next.ok ? { new_child_id: next.checkout.id } : { canceled: true, saved_quote_id: quote.id, message: 'The unsubmitted review was canceled. Reopen your saved quote to prepare a fresh deposit.' });
+      const next = await runNativeDepositRestart({ intent, quote, enabled, sellerVerified, actor, now: new Date(),
+        childId: 'ndc_' + crypto.randomUUID().replaceAll('-', ''), intentId: crypto.randomUUID(), io });
+      if (!next.ok) return reply({ error: next.message }, next.status);
+      return reply(next);
     }
     const approval = await io.loadApproval(intent.id);
     if (body.action === 'step_up') {
@@ -93,7 +92,9 @@ Deno.serve(async req => {
       if (body.accept_terms !== true || typeof body.nonce !== 'string' || !/^[0-9a-f]{64}$/.test(body.nonce)
         || typeof body.review_digest !== 'string' || !/^[0-9a-f]{64}$/.test(body.review_digest))
         return reply({ error: 'Review the quote and accept the deposit terms.' }, 400);
-      if (!await io.validateFreshIntent(intent, quote)) return reply({ error: 'The quote changed or expired. Review a fresh quote.' }, 409);
+      const ready = await io.validateFreshIntent(intent, quote);
+      if (ready === null) return reply({ error: 'Payment readiness is temporarily unavailable. Your review has been kept; refresh to retry.' }, 503);
+      if (!ready) return reply({ error: 'The quote changed or expired. Review a fresh quote.' }, 409);
       const { data, error } = await db.rpc('approve_native_deposit_review', { p_intent_id: intent.id,
         p_nonce_hash: await sha256Hex(new TextEncoder().encode(body.nonce)), p_actor_fingerprint: fingerprint, p_review_digest: body.review_digest });
       if (error || data !== true) return reply({ error: 'Review expired or already used. Refresh this page.' }, 409);
@@ -101,13 +102,15 @@ Deno.serve(async req => {
     }
     if (recovering) {
       // A buyer refresh reconciles the existing PI only. No credential/new POST.
-      await runNativeDepositComplete({ caller: {}, childId: intent.child_id, actor, now: new Date(),
+      try { await runNativeDepositComplete({ caller: {}, childId: intent.child_id, actor, now: new Date(),
         sellerAccountId: Deno.env.get('NATIVE_STRIPE_SELLER_ACCOUNT') || null,
         livemode: Deno.env.get('STRIPE_SECRET_KEY')?.trim().startsWith('sk_live_') === true,
-        openStripe: () => createNativeStripePreviewClient({ secretKey: Deno.env.get('STRIPE_SECRET_KEY') || '', sellerAccountId: Deno.env.get('NATIVE_STRIPE_SELLER_ACCOUNT') || '' }), io });
+        openStripe: () => createNativeStripePreviewClient({ secretKey: Deno.env.get('STRIPE_SECRET_KEY') || '', sellerAccountId: Deno.env.get('NATIVE_STRIPE_SELLER_ACCOUNT') || '' }), io }); } catch { /* retain readable stored authority during configuration/provider outages */ }
       intent = await io.loadIntentByChild(body.child_id) || intent;
     }
-    const fresh = exactDocument && !recovering && !intent.retired_at && await io.validateFreshIntent(intent, quote);
+    const readiness = !recovering && !intent.retired_at ? await io.validateFreshIntent(intent, quote) : false;
+    const temporarilyUnavailable = documentHash === null || readiness === null;
+    const fresh = exactDocument && readiness === true;
     if (exactDocument) {
       const { data: signed, error: pdfError } = await db.storage.from('quotes').createSignedUrl(intent.document_path, 120);
       if (!pdfError && signed?.signedUrl) documentUrl = signed.signedUrl;
@@ -126,13 +129,16 @@ Deno.serve(async req => {
     }
     return reply({ motor: `Mercury ${intent.horsepower} HP — ${intent.catalog_model_number}`, amount_cents: intent.amount_cents,
       merchandise_cents: intent.merchandise_cents, currency: 'CAD', document_url: documentUrl,
-      can_restart: !recovering && intent.status !== 'paid',
+      can_restart: !recovering && !intent.retired_at && (!enabled || !sellerVerified || !temporarilyUnavailable),
+      restart_creates_review: enabled && sellerVerified && fresh,
+      recovering,
       saved_quote_id: quote.id,
       terms: intent.policy_code === 'in_stock_refundable' ? DEPOSIT_POLICY_IN_STOCK_TEXT : DEPOSIT_POLICY_SPECIAL_ORDER_TEXT,
-      approved: Boolean(fresh && enabled && intent.status === "approved" && approval && Date.parse(approval.expires_at) > Date.now()), paid: intent.status === 'paid',
+      approved: Boolean(readiness !== false && enabled && intent.status === "approved" && approval && Date.parse(approval.expires_at) > Date.now()), paid: intent.status === 'paid',
       receipt_reconciliation_required: intent.receipt_reconciliation_required === true,
       test_mode: Deno.env.get('STRIPE_SECRET_KEY')?.startsWith('sk_test_') === true,
-      payment_status: !recovering && (approval && Date.parse(approval.expires_at) <= Date.now() || !fresh) && !intent.retired_at ? 'expired' : intent.status, nonce, review_digest: digest });
+      payment_status: !recovering && !intent.retired_at && (Date.parse(intent.expires_at) <= Date.now() || approval && Date.parse(approval.expires_at) <= Date.now()) ? 'expired'
+        : !recovering && !intent.retired_at && temporarilyUnavailable && !approval ? 'unavailable' : intent.status, nonce, review_digest: digest });
   } catch {
     return reply({ error: 'Deposit review is temporarily unavailable.' }, 503);
   }

@@ -52,6 +52,8 @@ try {
   if(expiryText.trim()!=='f') throw new Error('Consent expired during lock wait but submission was authorized');
   if(sql(['-t','-A','-c', `SELECT submitted_at IS NULL FROM public.native_deposit_attempts WHERE intent_id='${expiryId}';`]).trim()!=='t') throw new Error('Expired consent left submission marker');
   console.log('Consent expired during a real row-lock wait: first submission refused, marker absent.');
+  if(sql(['-t','-A','-c',`SET ROLE service_role; SELECT public.claim_hosted_deposit_rail('${expiryId}');`]).trim()!=='t') throw new Error('Expired unsubmitted native attempt trapped hosted fallback');
+  if(sql(['-t','-A','-c',`SELECT retired_at IS NOT NULL FROM public.native_deposit_intents WHERE id='${expiryId}';`]).trim()!=='t') throw new Error('Hosted fallback did not retain a retired audit');
   // Reproduce an absent-customer-row complete/webhook race using real locks.
   const raceId = '74747474-7474-4474-8474-747474747474';
   sql(['-f', resolve('scripts/native-deposit-pg/race-seed.sql')]);
@@ -108,6 +110,7 @@ try {
     `SELECT CASE WHEN public.bind_native_deposit_payment_intent(${attempt},NULL,'unknown') THEN false ELSE true END;`,
     `SELECT public.bind_native_deposit_payment_intent(${attempt},'pi_staterace','requires_action');`);
   if(sql(['-t','-A','-c',`SELECT status FROM public.native_deposit_attempts WHERE intent_id='${submitId}';`]).trim()!=='requires_action') throw new Error('Concurrent uncertainty destroyed bank action');
+  await lockedRace('native_hosted_vs_submit',submitId,`SELECT public.bind_native_deposit_payment_intent(${attempt},'pi_staterace','processing');`, `SELECT public.claim_hosted_deposit_rail('${submitId}');`);
   console.log('Real lock races: cancel versus submit in both orders, cross-rail recovery, and null uncertainty versus bound bank action passed.');
   console.log('Native deposit PostgreSQL acceptance passed. Synthetic local data only.');
 } catch (error) {

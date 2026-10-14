@@ -547,7 +547,7 @@ export type NativeCreateIo = {
   loadParent: (id: string) => Promise<unknown | null>;
   loadMotor: (id: string) => Promise<ServerLoadedReservationMotor | null>;
   loadSavedQuote: (id: string) => Promise<NativeSavedQuoteRecord | null>;
-  loadDocumentHash: (quote: NativeSavedQuoteRecord) => Promise<string | null>;
+  loadDocumentHash: (quote: NativeSavedQuoteRecord) => Promise<string | null | { invalid: true }>;
   loadIntentBySavedQuote: (savedQuoteId: string) => Promise<NativeIntentRecord | null>;
   hostedRailActive: (savedQuoteId: string) => Promise<boolean>;
   insertIntent: (row: NativeIntentRecord) => Promise<NativeIntentRecord | null>;
@@ -633,7 +633,7 @@ export async function runNativeDepositCreate(input: {
   const documentHash = await input.io.loadDocumentHash(quote);
   const documentPath = canonicalQuoteDocumentPath(quote.id);
   if (!documentHash) return failure(503, 'document_unavailable', 'The quote document is temporarily unavailable. Try again.');
-  if (!documentHash || quote.quote_pdf_path !== documentPath || quote.quote_pdf_sha256 !== documentHash) {
+  if (typeof documentHash !== 'string' || quote.quote_pdf_path !== documentPath || quote.quote_pdf_sha256 !== documentHash) {
     return failure(409, "stale_document", "Canonical quote document does not match.");
   }
   if (await input.io.hostedRailActive(quote.id)) {
@@ -671,7 +671,9 @@ export async function runNativeDepositCreate(input: {
     return failure(409, "stale_motor", "Catalog motor identity is incomplete.");
   }
   if (existing) {
-    const same = existing.parent_session_id === intent.parent_session_id
+    const same = existing.owner_user_id === intent.owner_user_id
+      && existing.document_path === intent.document_path && existing.policy_version === intent.policy_version
+      && existing.parent_session_id === intent.parent_session_id
       && existing.motor_id === intent.motor_id
       && existing.amount_cents === intent.amount_cents
       && existing.document_sha256 === intent.document_sha256
@@ -693,18 +695,44 @@ export async function runNativeDepositCreate(input: {
   return {
     ok: true,
     status: 201,
-    checkout: projectNativeDepositCheckout({ intent: inserted, phase: "requires_escalation", paymentStatus: "not_started" }),
+    checkout: projectStoredNativeDeposit(inserted, await input.io.loadApproval(inserted.id), await input.io.loadAttempt(inserted.id), input.now),
   };
+}
+
+// Called only after the trusted endpoint authenticates the buyer. SQL is the
+// final retirement authority; readiness errors must precede any mutation.
+export async function runNativeDepositRestart(input: {
+  intent: NativeIntentRecord; quote: NativeSavedQuoteRecord; enabled: boolean; sellerVerified: boolean;
+  actor: NativeActor; now: Date; childId: string; intentId: string; io: NativeCreateIo & NativeCompleteIo;
+}): Promise<{ ok: true; new_child_id?: string; canceled?: true; saved_quote_id?: string; message?: string } | NativeDepositFailure> {
+  const attempt = await input.io.loadAttempt(input.intent.id);
+  const recovering = Boolean(attempt?.submitted_at || attempt?.stripe_payment_intent_id || attempt?.observed_payment_intent_id || input.intent.status === 'paid');
+  let recreate = false;
+  if (input.enabled && input.sellerVerified && !recovering && !input.intent.retired_at) {
+    const document = await input.io.loadDocumentHash(input.quote);
+    const ready = await input.io.validateFreshIntent(input.intent, input.quote);
+    if (document === null || ready === null) return failure(503, 'review_unavailable', 'The quote is temporarily unavailable. Your existing review has been kept; refresh to retry.');
+    recreate = document === input.intent.document_sha256 && ready;
+  }
+  if (!await input.io.retireIntent(input.intent.id, false)) return failure(409, 'reconciliation_required', 'This payment was submitted. Refresh its original status or contact HBW; a new payment cannot be started.');
+  if (recreate) {
+    try {
+      const next = await runNativeDepositCreate({ caller: { operation: 'motor_reservation', saved_quote_id: input.quote.id }, routeParentId: input.intent.parent_session_id,
+        actor: input.actor, now: input.now, intentId: input.intentId, childId: input.childId, io: input.io });
+      if (next.ok) return { ok: true, new_child_id: next.checkout.id };
+    } catch { /* a concurrent outage after retirement leaves an explicit canceled review */ }
+  }
+  return { ok: true, canceled: true, saved_quote_id: input.quote.id, message: 'The unsubmitted review was canceled. Reopen your saved quote to prepare a fresh deposit or use website checkout.' };
 }
 
 export type NativeCompleteIo = {
   loadIntentByChild: (childId: string) => Promise<NativeIntentRecord | null>;
   loadSavedQuote: (id: string) => Promise<NativeSavedQuoteRecord | null>;
-  validateFreshIntent: (intent: NativeIntentRecord, quote: NativeSavedQuoteRecord) => Promise<boolean>;
+  validateFreshIntent: (intent: NativeIntentRecord, quote: NativeSavedQuoteRecord) => Promise<boolean | null>;
   loadApproval: (intentId: string) => Promise<NativeApprovalRecord | null>;
   loadAttempt: (intentId: string) => Promise<NativeAttemptRecord | null>;
   hostedRailActive: (savedQuoteId: string) => Promise<boolean>;
-  loadDocumentHash: (quote: NativeSavedQuoteRecord) => Promise<string | null>;
+  loadDocumentHash: (quote: NativeSavedQuoteRecord) => Promise<string | null | { invalid: true }>;
   claimAttempt: (args: {
     intentId: string;
     tokenFingerprint: string;
@@ -777,13 +805,15 @@ export async function runNativeDepositComplete(input: {
   if (!recovering) {
   const documentHash = await input.io.loadDocumentHash(quote);
   if (!documentHash) return failure(503, 'document_unavailable', 'The quote document is temporarily unavailable. Payment was not submitted.');
-  if (!savedQuoteStillMatches(intent, quote, documentHash)) {
+  if (typeof documentHash !== 'string' || !savedQuoteStillMatches(intent, quote, documentHash)) {
     return failure(409, "stale_binding", "The approved deposit no longer matches the saved quote.");
   }
   if (await input.io.hostedRailActive(quote.id)) {
     return failure(409, "hosted_rail", "This saved quote already uses hosted Checkout.");
   }
-  if (!await input.io.validateFreshIntent(intent, quote))
+  const fresh = await input.io.validateFreshIntent(intent, quote);
+  if (fresh === null) return failure(503, 'catalog_unavailable', 'Payment readiness is temporarily unavailable. Payment was not submitted.');
+  if (!fresh)
     return failure(409, "stale_binding", "The reviewed motor, price or terms changed. Review a fresh quote.");
   }
   if (!caller.tokenId && !existingAttempt) {
@@ -830,7 +860,7 @@ export async function runNativeDepositComplete(input: {
       livemode: input.livemode,
     });
     if (claimed.result === "conflict" || claimed.result === "refused" || !claimed.attempt_id) {
-      return failure(409, claimed.reason || "attempt_conflict", "This deposit already has a payment attempt.");
+      return failure(409, claimed.reason || 'attempt_conflict', claimed.reason === 'token_already_bound' ? 'Request a new wallet credential for this fresh deposit review.' : 'This deposit already has a payment attempt.');
     }
     const stored = await input.io.loadAttempt(intent.id);
     if (!stored || stored.id !== claimed.attempt_id || stored.token_fingerprint !== fingerprint

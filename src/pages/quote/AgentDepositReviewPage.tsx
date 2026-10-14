@@ -10,7 +10,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 type Review = {
   motor: string; amount_cents: number; merchandise_cents: number; currency: 'CAD';
-  document_url: string | null; can_restart?: boolean; saved_quote_id?: string; terms: string; approved: boolean; paid: boolean;
+  document_url: string | null; can_restart?: boolean; saved_quote_id?: string; restart_creates_review?: boolean; recovering?: boolean; terms: string; approved: boolean; paid: boolean;
   payment_status: string; receipt_reconciliation_required?: boolean; test_mode?: boolean; nonce: string | null; review_digest: string;
 };
 const cad = (cents: number) => new Intl.NumberFormat('en-CA', { style: 'currency', currency: 'CAD' }).format(cents / 100);
@@ -37,7 +37,7 @@ function DepositReviewSession({ childId }: { childId: string }) {
   const [capability, setCapability] = useState('');
   const [review, setReview] = useState<Review | null>(null);
   const [accepted, setAccepted] = useState(false); const [pdfOpened, setPdfOpened] = useState(false);
-  const [busy, setBusy] = useState(false); const [error, setError] = useState('');
+  const [busy, setBusy] = useState(false); const [error, setError] = useState(''); const [notice, setNotice] = useState('');
 
   async function call(action: string, extra: Record<string, unknown> = {}) {
     if (!active.current) throw new Error('Deposit review context changed.');
@@ -89,10 +89,10 @@ function DepositReviewSession({ childId }: { childId: string }) {
               <p className="mt-2 text-sm">Motor merchandise estimate: {cad(review.merchandise_cents)} before tax. This payment is the deposit only.</p></div>
             <p>{review.terms}</p>
             <p className="text-sm">HBW still confirms the motor, fit, availability and any installation or pickup arrangements. This deposit does not place the final motor order or guarantee stock.</p>
-            {review.document_url ? <a className="inline-block underline" href={review.document_url} target="_blank" rel="noopener noreferrer" referrerPolicy="no-referrer" onClick={() => setPdfOpened(true)}>Open the exact quote PDF</a> : <p role="status">The exact quote PDF is temporarily unavailable. Your existing payment status remains available; refresh to retry the document.</p>}
+            {review.document_url ? <a className="inline-block underline" href={review.document_url} target="_blank" rel="noopener noreferrer" referrerPolicy="no-referrer" onClick={() => setPdfOpened(true)}>Open the exact quote PDF</a> : <p role="status">The exact quote PDF is temporarily unavailable. {review.recovering !== false ? 'Your existing payment status remains available; refresh to retry the document.' : 'Refresh to retry. A new approval requires the exact document.'}</p>}
             <p className="text-sm"><Link className="underline" to="/terms" target="_blank" rel="noopener noreferrer">Deposit terms</Link> · <Link className="underline" to="/privacy" target="_blank" rel="noopener noreferrer">Privacy policy</Link></p>
             {review.paid ? <p role="status" className="rounded-lg bg-green-50 p-4 text-green-900">Your {cad(review.amount_cents)} deposit is paid. HBW will confirm the next steps.</p> :
-              review.receipt_reconciliation_required ? <p role="status">Your payment reached the processor, but HBW must verify the receipt. Contact (905) 342-2153 before starting any other payment.</p> : review.payment_status === 'canceled' ? <p role="status">This unsubmitted review was canceled. No payment was started.</p> : review.payment_status === 'expired' ? <p role="status">This review expired before payment. Start a fresh deposit review to approve again for up to ten minutes.</p> : review.payment_status === 'requires_action' ? <p role="status">Return to the wallet that approved this deposit to finish bank verification. Then refresh this page. Your original payment remains pending; do not start another deposit.</p> : review.payment_status === 'failed' ? <p role="status">Your payment did not complete. Contact HBW to check the original payment and prepare a fresh deposit.</p> : review.approved ? <p role="status">Deposit approved. Return to your assistant to finish securely with your wallet, then refresh this page for the receipt.</p> :
+              review.receipt_reconciliation_required ? <p role="status">Your payment reached the processor, but HBW must verify the receipt. Contact (905) 342-2153 before starting any other payment.</p> : review.payment_status === 'unavailable' ? <p role="status">Payment readiness is temporarily unavailable. Refresh to retry your existing review.</p> : review.payment_status === 'canceled' ? <p role="status">This unsubmitted review was canceled. No payment was started.</p> : review.payment_status === 'expired' ? <p role="status">This review expired before payment. Start a fresh deposit review to approve again for up to ten minutes.</p> : review.payment_status === 'requires_action' ? <p role="status">Return to the wallet that approved this deposit to finish bank verification. Then refresh this page. Your original payment remains pending; do not start another deposit.</p> : review.payment_status === 'failed' ? <p role="status">Your payment did not complete. Contact HBW to check the original payment and prepare a fresh deposit.</p> : review.approved ? <p role="status">Deposit approved. Return to your assistant to finish securely with your wallet, then refresh this page for the receipt.</p> :
                 review.nonce ? <div className="space-y-3"><label className="flex items-start gap-3"><input className="mt-1" type="checkbox" checked={accepted} onChange={e => setAccepted(e.target.checked)} />
                   <span>I reviewed the exact quote PDF and approve the {cad(review.amount_cents)} CAD deposit under these terms.</span></label>
                   <Button disabled={busy || !accepted || !pdfOpened} onClick={() => void perform(async () => {
@@ -100,14 +100,15 @@ function DepositReviewSession({ childId }: { childId: string }) {
                   })}>Approve {cad(review.amount_cents)} deposit</Button>
                   {!pdfOpened && <p className="text-sm text-muted-foreground">Open the quote PDF before approving.</p>}
                 </div> : <p role="status">Payment reconciliation is pending. Refresh for the latest status or contact HBW before trying another payment.</p>}
-            {review.can_restart && <div className="space-y-2"><p className="text-sm">No payment was submitted. Starting a fresh review cancels this approval and requires you to review the exact quote and terms again.</p>
+            {review.can_restart && <div className="space-y-2"><p className="text-sm">No payment was submitted. {review.restart_creates_review === false ? 'Cancel this review to return to your saved quote or use website checkout.' : 'Starting a fresh review cancels this approval and requires you to review the exact quote and terms again.'}</p>
               <Button variant="outline" disabled={busy} onClick={() => void perform(async () => {
                 const next = await call('restart');
                 if (typeof next.new_child_id === 'string' && /^ndc_[0-9a-f]{32}$/.test(next.new_child_id)) navigate(`/quote/agent-deposit/${next.new_child_id}`);
-                else await refresh();
-              })}>Start a fresh deposit review</Button>
-              {review.saved_quote_id && <p><Link className="underline" to={`/quote/saved/${review.saved_quote_id}`}>Return to my saved quote</Link></p>}
+                else { await refresh(); if (typeof next.message === 'string') setNotice(next.message); }
+              })}>{review.restart_creates_review === false ? 'Cancel unsubmitted review' : 'Start a fresh deposit review'}</Button>
             </div>}
+            {review.saved_quote_id && <p><Link className="underline" to={`/quote/saved/${review.saved_quote_id}`}>Return to my saved quote</Link></p>}
+            {notice && <p role="status">{notice}</p>}
             <Button variant="outline" disabled={busy} onClick={() => void perform(refresh)}>Refresh payment status</Button>
           </div>}
         </>}

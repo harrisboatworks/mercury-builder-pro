@@ -5,7 +5,7 @@ import {
   type NativeCompleteIo, type NativeCreateIo,
   NATIVE_DEPOSIT_TERMS_VERSION, NATIVE_DEPOSIT_POLICY_VERSION,
 } from './native-deposit-checkout.ts';
-import { canonicalQuoteDocumentPath, sha256Hex } from './quote-document-policy.ts';
+import { canonicalQuoteDocumentPath, sha256Hex, validateQuotePdf, MAX_QUOTE_DOCUMENT_BYTES } from './quote-document-policy.ts';
 import { assertDepositPolicyReadyForCheckout } from './deposit-policy.ts';
 import { prepareMotorReservationIntent } from './motor-reservation-intent.ts';
 import { PUBLIC_CATALOG_AVAILABILITY_OR } from './public-motor-contract.ts';
@@ -54,10 +54,13 @@ export function nativeDepositIo(db: any): NativeCreateIo & NativeCompleteIo {
     loadAttempt: id => one('native_deposit_attempts', 'intent_id', id),
     async loadDocumentHash(quote: NativeSavedQuoteRecord) {
       const path = canonicalQuoteDocumentPath(quote.id);
-      if (path !== quote.quote_pdf_path) return null;
+      if (path !== quote.quote_pdf_path) return { invalid: true as const };
       const { data, error } = await db.storage.from('quotes').download(path);
-      if (error || !data || data.size > 10 * 1024 * 1024) return null;
-      return sha256Hex(new Uint8Array(await data.arrayBuffer()));
+      if (error || !data) return null;
+      if (data.size > MAX_QUOTE_DOCUMENT_BYTES) return { invalid: true as const };
+      const bytes = new Uint8Array(await data.arrayBuffer());
+      try { validateQuotePdf(bytes, data.type); } catch { return { invalid: true as const }; }
+      return sha256Hex(bytes);
     },
     async hostedRailActive(id: string) {
       const row = await one('deposit_payment_rails', 'saved_quote_id', id);
@@ -69,12 +72,16 @@ export function nativeDepositIo(db: any): NativeCreateIo & NativeCompleteIo {
     },
     async insertIntent(row: NativeIntentRecord) {
       const { data, error } = await db.from('native_deposit_intents').insert(row).select('*').single();
+      if (error?.code === '23505') {
+        const { data: winner, error: failed } = await db.from('native_deposit_intents').select('*').eq('saved_quote_id', row.saved_quote_id).is('retired_at', null).maybeSingle();
+        if (!failed && winner && ['parent_session_id','owner_user_id','motor_id','amount_cents','document_sha256','document_path','policy_version','policy_code','terms_version','merchandise_cents'].every(k => winner[k] === (row as any)[k])) return winner;
+      }
       if (error) throw new Error('native_storage_unavailable');
       return data;
     },
     async validateFreshIntent(intent, quote) {
       try {
-        if (intent.terms_version !== NATIVE_DEPOSIT_TERMS_VERSION || intent.policy_version !== NATIVE_DEPOSIT_POLICY_VERSION) return false;
+        if ((quote.user_id || null) !== intent.owner_user_id || intent.terms_version !== NATIVE_DEPOSIT_TERMS_VERSION || intent.policy_version !== NATIVE_DEPOSIT_POLICY_VERSION) return false;
         const parent = await loadParent(intent.parent_session_id);
         const motor = await loadMotor(intent.motor_id);
         const priced = prepareMotorReservationIntent({ persistedSession: parent, serverLoadedMotor: motor,
@@ -82,7 +89,10 @@ export function nativeDepositIo(db: any): NativeCreateIo & NativeCompleteIo {
         if (!priced.ok || priced.preparation.amount_cents !== intent.amount_cents || priced.preparation.motor_id !== intent.motor_id) return false;
         const policy = assertDepositPolicyReadyForCheckout({ savedMotorId: intent.motor_id, motorRow: motor, quoteState: quote.quote_state });
         return policy.policyCode === intent.policy_code && Date.parse(intent.expires_at) > Date.now();
-      } catch { return false; }
+      } catch (error) {
+        if (error instanceof Error && ['native_storage_unavailable','native_catalog_unavailable'].includes(error.message)) return null;
+        return false;
+      }
     },
     claimAttempt: args => rpc('claim_native_deposit_attempt', {
       p_intent_id: args.intentId, p_token_fingerprint: args.tokenFingerprint,

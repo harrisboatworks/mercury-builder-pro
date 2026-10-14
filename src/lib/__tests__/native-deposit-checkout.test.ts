@@ -1,7 +1,7 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import {
   assessSharedPaymentToken, inspectNativeDepositCompleteCaller, nativePaymentIntentForm,
-  nativeDepositActorAuthorized, projectNativeDepositCheckout, projectStoredNativeDeposit, runNativeDepositComplete, runNativeDepositCreate, runNativeDepositRead,
+  nativeDepositActorAuthorized, projectNativeDepositCheckout, projectStoredNativeDeposit, runNativeDepositComplete, runNativeDepositCreate, runNativeDepositRead, runNativeDepositRestart,
   MAX_NATIVE_TOKEN_LIFETIME_MS, NATIVE_DEPOSIT_HANDLER_ID, type NativeIntentRecord, type NativeCompleteIo,
 } from '../../../supabase/functions/_shared/native-deposit-checkout';
 import { createNativeStripePreviewClient, NativeStripeRequestError } from '../../../supabase/functions/_shared/native-stripe-preview';
@@ -121,6 +121,33 @@ describe('native deposit boundary', () => {
     expect(nativeDepositBankRecoveryAllowed(expiredParent, { ...state.attempt(), submitted_at: null }, expired)).toBe(false);
     expect(nativeDepositBankRecoveryAllowed(expiredParent, state.attempt(), { ...expired, amount_cents: 20000 })).toBe(false);
     expect(nativeDepositBankRecoveryAllowed({ ...expiredParent, retired_at: now.toISOString() }, state.attempt(), expired)).toBe(false);
+  });
+  it.each(['document','catalog'] as const)('preserves a fresh review during a transient %s outage on restart', async kind => {
+    const state = setup();
+    if (kind === 'document') state.io.loadDocumentHash = async () => null; else state.io.validateFreshIntent = async () => null;
+    const retireIntent = vi.fn(async () => true);
+    const result = await runNativeDepositRestart({ intent, quote: (await state.io.loadSavedQuote(saved))!, enabled: true, sellerVerified: true,
+      actor: { userId: 'buyer', resumeCapability: null }, now, childId: 'ndc_'+'b'.repeat(32), intentId: 'fresh',
+      io: { ...state.io, loadIntentBySavedQuote: async () => null, loadParent: async () => null, loadMotor: async () => null, insertIntent: async () => null, retireIntent } });
+    expect(result).toMatchObject({ ok: false, status: 503, code: 'review_unavailable' }); expect(retireIntent).not.toHaveBeenCalled();
+  });
+  it('permits retire-only cancellation while native payments are paused, without a new checkout', async () => {
+    const state = setup(); state.io.loadDocumentHash = vi.fn(async () => null);
+    const retireIntent = vi.fn(async () => true), insertIntent = vi.fn(async () => null);
+    const result = await runNativeDepositRestart({ intent, quote: (await state.io.loadSavedQuote(saved))!, enabled: false, sellerVerified: false,
+      actor: { userId: 'buyer', resumeCapability: null }, now, childId: 'ndc_'+'b'.repeat(32), intentId: 'fresh',
+      io: { ...state.io, loadIntentBySavedQuote: async () => null, loadParent: async () => null, loadMotor: async () => null, insertIntent, retireIntent } });
+    expect(result).toMatchObject({ ok: true, canceled: true }); expect(retireIntent).toHaveBeenCalledWith(intent.id, false);
+    expect(state.io.loadDocumentHash).not.toHaveBeenCalled(); expect(insertIntent).not.toHaveBeenCalled();
+  });
+  it('gives a clear new-wallet-credential error for a retired token fingerprint', async () => {
+    const state = setup(); state.io.claimAttempt = async () => ({ result: 'refused', reason: 'token_already_bound' });
+    expect(await state.complete()).toMatchObject({ ok: false, status: 409, code: 'token_already_bound', message: 'Request a new wallet credential for this fresh deposit review.' });
+    expect(state.stripe.createConfirmedPaymentIntent).not.toHaveBeenCalled();
+  });
+  it('distinguishes invalid canonical PDF admission from a storage outage', async () => {
+    const state = setup(); state.io.loadDocumentHash = async () => ({ invalid: true });
+    expect(await state.complete()).toMatchObject({ ok: false, status: 409, code: 'stale_binding' }); expect(state.attempt()).toBeNull();
   });
   it('requires ownership, not public UUIDs', () => {
     expect(nativeDepositActorAuthorized({ savedQuoteUserId: 'buyer', savedQuoteResumeToken: 'dep_' + 'a'.repeat(24), actor: { userId: null, resumeCapability: null } })).toBe(false);

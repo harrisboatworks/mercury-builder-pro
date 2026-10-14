@@ -146,7 +146,7 @@ BEGIN
     OR v_attempt.observed_payment_intent_id IS NOT NULL OR v_attempt.status='succeeded'
     OR v_quote.stripe_payment_intent_id IS NOT NULL OR NULLIF(v_quote.quote_data->>'stripe_payment_intent','') IS NOT NULL
     OR v_quote.payment_status='paid'
-    OR p_if_consent_expired AND v_approval.expires_at > clock_timestamp() THEN RETURN false; END IF;
+    OR p_if_consent_expired AND COALESCE(v_approval.expires_at > clock_timestamp(),false) THEN RETURN false; END IF;
   PERFORM set_config('native_deposit.retire',p_intent_id::text,true);
   UPDATE public.native_deposit_intents SET status='canceled',retired_at=clock_timestamp() WHERE id=p_intent_id;
   PERFORM set_config('native_deposit.retire','',true);
@@ -373,6 +373,11 @@ BEGIN
     RETURN jsonb_build_object('result', 'refused', 'reason', 'binding');
   END IF;
 
+  IF EXISTS(SELECT 1 FROM public.native_deposit_attempts WHERE token_fingerprint=p_token_fingerprint) THEN
+    RETURN jsonb_build_object('result','refused','reason','token_already_bound');
+  END IF;
+
+  BEGIN
   INSERT INTO public.deposit_payment_rails(saved_quote_id, rail) VALUES(v_saved_quote_id, 'native') ON CONFLICT DO NOTHING;
   SELECT rail INTO v_rail FROM public.deposit_payment_rails WHERE saved_quote_id = v_saved_quote_id;
   IF v_rail IS DISTINCT FROM 'native' THEN RETURN jsonb_build_object('result', 'refused', 'reason', 'hosted_rail'); END IF;
@@ -399,6 +404,9 @@ BEGIN
     'claimed'
   )
   RETURNING * INTO v_attempt;
+  EXCEPTION WHEN unique_violation THEN
+    RETURN jsonb_build_object('result','refused','reason','token_already_bound');
+  END;
 
   UPDATE public.native_deposit_intents
   SET status = 'attempt_claimed'
@@ -580,4 +588,145 @@ BEGIN
   RETURN true;
 END;
 $$;
+CREATE OR REPLACE FUNCTION public.record_native_deposit_buyer_approval(
+  p_intent_id uuid,
+  p_child_id text,
+  p_saved_quote_id uuid,
+  p_motor_id uuid,
+  p_amount_cents integer,
+  p_document_sha256 text,
+  p_policy_version text,
+  p_policy_code text,
+  p_terms_version text,
+  p_expires_at timestamptz
+)
+RETURNS boolean
+LANGUAGE plpgsql
+VOLATILE
+SECURITY DEFINER
+SET search_path = pg_catalog, public
+AS $$
+DECLARE
+  v_intent public.native_deposit_intents%ROWTYPE;
+  v_saved_hash text;
+  v_saved_amount numeric;
+  v_saved_motor text;
+  v_saved_status text;
+  v_saved_expires timestamptz;
+  v_saved_soft boolean;
+  v_saved_owner uuid;
+BEGIN
+  IF p_expires_at IS NULL OR p_expires_at <= pg_catalog.now() OR p_expires_at > pg_catalog.now() + interval '10 minutes' THEN
+    RETURN false;
+  END IF;
+
+  PERFORM 1 FROM public.saved_quotes WHERE id = p_saved_quote_id FOR UPDATE;
+
+  SELECT * INTO v_intent
+  FROM public.native_deposit_intents
+  WHERE id = p_intent_id
+  FOR UPDATE;
+
+  IF NOT FOUND
+    OR v_intent.retired_at IS NOT NULL
+    OR v_intent.status IS DISTINCT FROM 'requires_escalation'
+    OR v_intent.child_id IS DISTINCT FROM p_child_id
+    OR v_intent.saved_quote_id IS DISTINCT FROM p_saved_quote_id
+    OR v_intent.motor_id IS DISTINCT FROM p_motor_id
+    OR v_intent.amount_cents IS DISTINCT FROM p_amount_cents
+    OR v_intent.document_sha256 IS DISTINCT FROM p_document_sha256
+    OR v_intent.policy_version IS DISTINCT FROM p_policy_version
+    OR v_intent.policy_code IS DISTINCT FROM p_policy_code
+    OR v_intent.terms_version IS DISTINCT FROM p_terms_version
+    OR p_expires_at > v_intent.expires_at
+    OR v_intent.expires_at <= pg_catalog.now()
+  THEN
+    RETURN false;
+  END IF;
+
+  SELECT
+    sq.quote_pdf_sha256,
+    sq.deposit_amount,
+    sq.quote_state -> 'motor' ->> 'id',
+    sq.deposit_status,
+    sq.expires_at,
+    sq.is_soft_lead, sq.user_id
+  INTO
+    v_saved_hash,
+    v_saved_amount,
+    v_saved_motor,
+    v_saved_status,
+    v_saved_expires,
+    v_saved_soft, v_saved_owner
+  FROM public.saved_quotes AS sq
+  WHERE sq.id = p_saved_quote_id
+  FOR UPDATE;
+
+  IF NOT FOUND
+    OR v_saved_owner IS DISTINCT FROM v_intent.owner_user_id
+    OR v_saved_soft IS TRUE
+    OR v_saved_status IS DISTINCT FROM 'pending'
+    OR v_saved_expires IS NULL
+    OR v_saved_expires <= pg_catalog.now()
+    OR v_saved_hash IS DISTINCT FROM p_document_sha256
+    OR v_saved_motor IS DISTINCT FROM p_motor_id::text
+    OR v_saved_amount IS NULL
+    OR v_saved_amount * 100 IS DISTINCT FROM p_amount_cents::numeric
+  THEN
+    RETURN false;
+  END IF;
+
+  PERFORM pg_catalog.set_config('native_deposit.approval', 'on', true);
+
+  INSERT INTO public.native_deposit_approvals (
+    intent_id,
+    child_id,
+    saved_quote_id,
+    motor_id,
+    amount_cents,
+    currency,
+    document_sha256,
+    policy_version,
+    policy_code,
+    terms_version,
+    expires_at
+  ) VALUES (
+    p_intent_id,
+    p_child_id,
+    p_saved_quote_id,
+    p_motor_id,
+    p_amount_cents,
+    'CAD',
+    p_document_sha256,
+    p_policy_version,
+    p_policy_code,
+    p_terms_version,
+    p_expires_at
+  );
+
+  UPDATE public.native_deposit_intents
+  SET status = 'approved'
+  WHERE id = p_intent_id
+    AND status = 'requires_escalation';
+
+  RETURN true;
+END;
+$$;
+
+CREATE OR REPLACE FUNCTION public.claim_hosted_deposit_rail(p_saved_quote_id uuid) RETURNS boolean
+LANGUAGE plpgsql SECURITY DEFINER SET search_path=pg_catalog,public AS $$
+DECLARE v_rail text; v_intent_id uuid;
+BEGIN
+  -- Match native retirement/begin ordering, including an existing customer row.
+  PERFORM 1 FROM public.customer_quotes WHERE saved_quote_id=p_saved_quote_id AND lead_source='deposit' FOR UPDATE;
+  PERFORM 1 FROM public.saved_quotes WHERE id=p_saved_quote_id AND deposit_status='pending' FOR UPDATE;
+  IF NOT FOUND THEN RETURN false; END IF;
+  SELECT id INTO v_intent_id FROM public.native_deposit_intents WHERE saved_quote_id=p_saved_quote_id AND retired_at IS NULL;
+  IF v_intent_id IS NOT NULL THEN PERFORM public.retire_unsubmitted_native_deposit(v_intent_id,true); END IF;
+  IF public.native_deposit_attempt_blocks_quote(p_saved_quote_id) THEN RETURN false; END IF;
+  INSERT INTO public.deposit_payment_rails(saved_quote_id,rail) VALUES(p_saved_quote_id,'hosted') ON CONFLICT DO NOTHING;
+  SELECT rail INTO v_rail FROM public.deposit_payment_rails WHERE saved_quote_id=p_saved_quote_id;
+  RETURN v_rail='hosted';
+END; $$;
+
 COMMIT;

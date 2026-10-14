@@ -35,6 +35,8 @@ SELECT '76767676-7676-4676-8676-767676767676','ndc_76767676767646768676767676767
 SET ROLE service_role;
 DO $$ DECLARE new_id uuid:='76767676-7676-4676-8676-767676767676'; saved_id uuid:='75757575-7575-4575-8575-757575757575'; attempt uuid; BEGIN
  IF NOT public.record_native_deposit_buyer_approval(new_id,'ndc_76767676767646768676767676767676',saved_id,'36363636-3636-4636-8636-363636363636',50000,repeat('a',64),'deposit-policy/v1','in_stock_refundable','hbw-reservation-terms/2026-04-08',now()+interval '10 minutes') THEN RAISE EXCEPTION 'fresh superseding review refused'; END IF;
+ IF public.claim_native_deposit_attempt(new_id,repeat('5',64),repeat('6',64),50000,'acct_synthetic',false)->>'reason' IS DISTINCT FROM 'token_already_bound' THEN RAISE EXCEPTION 'retired token did not get explicit refusal'; END IF;
+ IF EXISTS(SELECT 1 FROM public.deposit_payment_rails WHERE saved_quote_id=saved_id) THEN RAISE EXCEPTION 'token refusal left a rail claim'; END IF;
  PERFORM public.claim_native_deposit_attempt(new_id,repeat('7',64),repeat('8',64),50000,'acct_synthetic',false);
  SELECT id INTO attempt FROM public.native_deposit_attempts WHERE intent_id=new_id;
  IF NOT public.begin_native_deposit_submission(attempt,repeat('7',64),repeat('8',64),50000,'acct_synthetic',false,now()+interval '7 days') THEN RAISE EXCEPTION 'fresh submission failed'; END IF;
