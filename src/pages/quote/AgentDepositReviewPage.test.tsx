@@ -227,3 +227,26 @@ describe('AgentDepositReviewPage payment handoff and pending approvals', () => {
     expect(mocks.invoke).toHaveBeenCalledTimes(3);
   });
 });
+
+
+describe('AgentDepositReviewPage recovery', () => {
+  it('shows existing payment status while the canonical PDF is unavailable', async () => {
+    mocks.invoke.mockResolvedValueOnce(result(review('a', { document_url: null, payment_status: 'requires_action', nonce: null, can_restart: false })));
+    render(page()); openReview();
+    await screen.findByText(/Your existing payment status remains available/);
+    expect(screen.queryByRole('link', { name: 'Open the exact quote PDF' })).not.toBeInTheDocument();
+    expect(screen.getByText(/Return to the wallet that approved this deposit/)).toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: 'Start a fresh deposit review' })).not.toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: /Approve .* deposit/ })).not.toBeInTheDocument();
+  });
+  it('lets a buyer retire a never-submitted expired approval without accepting terms', async () => {
+    mocks.invoke.mockResolvedValueOnce(result(review('a', { payment_status: 'expired', nonce: null, can_restart: true })))
+      .mockResolvedValueOnce(result({ canceled: true }))
+      .mockResolvedValueOnce(result(review('a', { payment_status: 'canceled', nonce: null, can_restart: true })));
+    render(page()); openReview(); await screen.findByText(/Start a fresh deposit review to approve again for up to ten minutes/);
+    fireEvent.click(screen.getByRole('button', { name: 'Start a fresh deposit review' }));
+    await screen.findByText(/This unsubmitted review was canceled/);
+    expect(mocks.invoke).toHaveBeenNthCalledWith(2, 'native-deposit-review', { body: { action: 'restart', child_id: mocks.childId }, headers: {} });
+    expect(screen.queryByRole('checkbox')).not.toBeInTheDocument();
+  });
+});

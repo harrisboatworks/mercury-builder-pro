@@ -23,6 +23,7 @@ try {
   sql(['-f', resolve('supabase/migrations/20261012233000_native_agent_deposit.sql')]);
   sql(['-f', resolve('supabase/migrations/20261013203000_native_deposit_submission_consent.sql')]);
   sql(['-f', resolve('supabase/migrations/20261013213000_native_deposit_unsubmitted_recovery.sql')]);
+  sql(['-f', resolve('supabase/migrations/20261014150000_native_deposit_recovery_lifecycle.sql')]);
   console.log(sql(['-f', resolve('scripts/native-deposit-pg/checks.sql')]));
   // Begin before consent expiry, block on the saved-quote lock, then release
   // after expiry. The first-submission gate must use the post-lock clock.
@@ -74,6 +75,40 @@ try {
   await finished;
   if (loserText.trim()!=='t') throw new Error('Concurrent paid claim incorrectly returned false: '+loserText);
   console.log('Concurrent complete/webhook absent-row claim returns paid for both participants.');
+  console.log(sql(['-f', resolve('scripts/native-deposit-pg/recovery-checks.sql')]));
+  sql(['-f', resolve('scripts/native-deposit-pg/recovery-race-seed.sql')]);
+  async function lockedRace(label, savedId, winnerSql, loserSql, preSql = '') {
+    const owner = spawn(join(bin,'psql'), ['-X','-v','ON_ERROR_STOP=1','-q','-t','-A'], { env: {...env,PGAPPNAME:label+'_owner'}, stdio:['pipe','pipe','pipe'] });
+    let ownerText='', ownerError=''; owner.stdout.on('data',b=>ownerText+=b); owner.stderr.on('data',b=>ownerError+=b);
+    const ownerDone = new Promise((done,reject)=>owner.on('exit',c=>c===0?done():reject(new Error(ownerError))));
+    owner.stdin.write(`BEGIN; SET ROLE service_role; SELECT id FROM public.saved_quotes WHERE id='${savedId}' FOR UPDATE; ${preSql} SELECT 'ready';\n`);
+    const deadline=Date.now()+10000;
+    while(!ownerText.includes('ready') && Date.now()<deadline) await new Promise(r=>setTimeout(r,20));
+    if(!ownerText.includes('ready')) { owner.kill(); throw new Error(label+' owner failed'); }
+    const loser=spawn(join(bin,'psql'), ['-X','-v','ON_ERROR_STOP=1','-q','-t','-A','-c','SET ROLE service_role; '+loserSql], {env:{...env,PGAPPNAME:label+'_loser'},stdio:['ignore','pipe','pipe']});
+    let loserText='', loserError=''; loser.stdout.on('data',b=>loserText+=b); loser.stderr.on('data',b=>loserError+=b);
+    const loserDone=new Promise((done,reject)=>loser.on('exit',c=>c===0?done():reject(new Error(loserError))));
+    let waiting=false;
+    while(!waiting && Date.now()<deadline) {
+      waiting=sql(['-t','-A','-c',`SELECT EXISTS(SELECT 1 FROM pg_stat_activity WHERE application_name='${label}_loser' AND wait_event_type='Lock');`]).trim()==='t';
+      if(!waiting) await new Promise(r=>setTimeout(r,20));
+    }
+    if(!waiting) { owner.kill(); loser.kill(); throw new Error(label+' did not contend on a real row lock'); }
+    owner.stdin.end(winnerSql+' COMMIT;\n'); await Promise.all([ownerDone,loserDone]);
+    if(loserText.trim()!=='f') throw new Error(label+' loser was admitted: '+loserText);
+  }
+  const cancelId='77777777-7777-4777-8777-777777777777', submitId='78787878-7878-4878-8878-787878787878';
+  const begin = (id, fp) => `SELECT public.begin_native_deposit_submission(id,repeat('${fp}',64),repeat('0',64),50000,'acct_synthetic',false,now()+interval '7 days') FROM public.native_deposit_attempts WHERE intent_id='${id}';`;
+  await lockedRace('native_cancel_first',cancelId,`SELECT public.retire_unsubmitted_native_deposit('${cancelId}',false);`,begin(cancelId,'9'));
+  if(sql(['-t','-A','-c',`SET ROLE service_role; SELECT public.claim_hosted_deposit_rail('${cancelId}');`]).trim()!=='t') throw new Error('Canceled rail not released');
+  await lockedRace('native_submit_first',submitId,begin(submitId,'b'),`SELECT public.retire_unsubmitted_native_deposit('${submitId}',false);`);
+  if(sql(['-t','-A','-c',`SET ROLE service_role; SELECT public.claim_hosted_deposit_rail('${submitId}');`]).trim()!=='f') throw new Error('Submitted payment crossed hosted rail');
+  const attempt = `(SELECT id FROM public.native_deposit_attempts WHERE intent_id='${submitId}')`;
+  await lockedRace('native_bound_state',submitId,'',
+    `SELECT CASE WHEN public.bind_native_deposit_payment_intent(${attempt},NULL,'unknown') THEN false ELSE true END;`,
+    `SELECT public.bind_native_deposit_payment_intent(${attempt},'pi_staterace','requires_action');`);
+  if(sql(['-t','-A','-c',`SELECT status FROM public.native_deposit_attempts WHERE intent_id='${submitId}';`]).trim()!=='requires_action') throw new Error('Concurrent uncertainty destroyed bank action');
+  console.log('Real lock races: cancel versus submit in both orders, cross-rail recovery, and null uncertainty versus bound bank action passed.');
   console.log('Native deposit PostgreSQL acceptance passed. Synthetic local data only.');
 } catch (error) {
   console.error(error.stderr?.toString() || error.message); process.exitCode = 1;

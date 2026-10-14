@@ -44,7 +44,12 @@ export function nativeDepositIo(db: any): NativeCreateIo & NativeCompleteIo {
     loadParent, loadMotor,
     loadSavedQuote: id => one('saved_quotes', 'id', id),
     loadIntentByChild: id => one('native_deposit_intents', 'child_id', id),
-    loadIntentBySavedQuote: id => one('native_deposit_intents', 'saved_quote_id', id),
+    async loadIntentBySavedQuote(id) {
+      const { data, error } = await db.from('native_deposit_intents').select('*').eq('saved_quote_id', id).is('retired_at', null).maybeSingle();
+      if (error) throw new Error('native_storage_unavailable');
+      return data;
+    },
+    retireIntent: (id, onlyExpired) => rpc('retire_unsubmitted_native_deposit', { p_intent_id: id, p_if_consent_expired: onlyExpired }),
     loadApproval: id => one('native_deposit_approvals', 'intent_id', id),
     loadAttempt: id => one('native_deposit_attempts', 'intent_id', id),
     async loadDocumentHash(quote: NativeSavedQuoteRecord) {
