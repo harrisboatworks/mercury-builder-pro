@@ -96,6 +96,9 @@ describe('public quote handoff roundtrip', () => {
     const protectedState = { ...initialState, isLoading: false, restoredReferenceNumber: 'HBW-SYNTHETIC' };
     expect(buildExpressQuoteHandoffActions(protectedState, params, express)).toEqual([]);
     expect(stripConsumedAgentQuoteHandoffParams(params, parseAgentQuoteHandoff(params), { declined: true }).toString()).toBe('');
+    const replaced = buildExpressQuoteHandoffActions(protectedState, params, express, true).reduce(quoteReducer, protectedState);
+    expect(replaced.motor?.id).toBe(express.id);
+    expect(replaced.restoredReferenceNumber).toBeUndefined();
     const fresh = { ...initialState, isLoading: false };
     const next = buildExpressQuoteHandoffActions(fresh, params, express).reduce(quoteReducer, fresh);
     expect(next.purchasePath).toBe('loose');
@@ -106,6 +109,11 @@ describe('public quote handoff roundtrip', () => {
     const selected = buildAgentMotorSelectionActions(state, motor, quoteReducer).reduce(quoteReducer, state);
     expect(selected.uiFlags.ucpHandoffMotorId).toBe(id);
     expect(selected.uiFlags.agentUcpHandoff).toBeNull();
+  });
+  it('keeps motorless legacy UCP references as planning hints without attaching them to a different selected motor', () => {
+    const state = { ...initialState, motor: { ...motor, id: 'other' } };
+    const parsed = parseAgentQuoteHandoff(new URLSearchParams('ucp=chk_synthetic&src=agent_ucp'));
+    expect(applyAgentQuoteHandoff(state, quoteReducer, parsed)).toBe(state);
   });
   it('does not serialize null or empty optional boat fields as buyer answers', () => {
     const params = new URL(buildAgentQuoteLink(id, { boat_make: 'Lund', boat_model: null, trade_year: undefined, trade_brand: '' })).searchParams;

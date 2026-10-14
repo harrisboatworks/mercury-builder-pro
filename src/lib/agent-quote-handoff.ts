@@ -455,7 +455,7 @@ export function buildAgentQuoteHandoffActions(
     }
   }
 
-  if (handoff.ucpCheckoutRef) {
+  if (handoff.ucpCheckoutRef && handoff.motorId) {
     if (handoff.motorId && handoff.motorId !== state.motor?.id) {
       const pending = pendingUcpHandoff(state);
       if (pending?.motorId !== handoff.motorId || pending?.ucpRef !== handoff.ucpCheckoutRef) {
@@ -473,8 +473,8 @@ export function buildAgentQuoteHandoffActions(
   return actions;
 }
 
-export function buildExpressQuoteHandoffActions(state: QuoteState, params: URLSearchParams, motor: Motor): QuoteAction[] {
-  if (state.isLoading || isProtectedQuoteHandoff(state) || !isMotorOnlyExpressHandoff(params) || motor.id !== EXPRESS_MOTOR_ID) return [];
+export function buildExpressQuoteHandoffActions(state: QuoteState, params: URLSearchParams, motor: Motor, buyerChoseReplacement = false): QuoteAction[] {
+  if (state.isLoading || (!buyerChoseReplacement && isProtectedQuoteHandoff(state)) || !isMotorOnlyExpressHandoff(params) || motor.id !== EXPRESS_MOTOR_ID) return [];
   const actions: QuoteAction[] = [{ type: 'START_MOTOR_ONLY_QUOTE', payload: motor }];
   const { ucpCheckoutRef } = parseAgentQuoteHandoff(params);
   if (ucpCheckoutRef) actions.push({ type: 'SET_UI_FLAG', payload: { key: UCP_CHECKOUT_REF_FLAG, value: ucpCheckoutRef } });
@@ -549,7 +549,7 @@ export function useAgentQuoteHandoff({
     const protectedQuote = isProtectedQuoteHandoff(state);
     const skipBoatAndTrade = isMotorOnlyExpressHandoff(searchParams);
     const handoff = parseAgentQuoteHandoff(searchParams);
-    cleanupRef.current = { handoff, options: { skipBoatAndTrade, declined: protectedQuote } };
+    cleanupRef.current = { handoff, options: { skipBoatAndTrade, declined: protectedQuote && !skipBoatAndTrade } };
     const actions = buildAgentQuoteHandoffActions(state, handoff, { skipBoatAndTrade });
     for (const action of actions) {
       dispatch(action);

@@ -192,9 +192,9 @@ describe('applyAgentQuoteHandoff reducer', () => {
     expect(next.hasTradein).toBe(true);
     expect(next.completedSteps).toEqual([]);
     expect(next.frozenPricing).toBeUndefined();
-    expect(next.uiFlags[UCP_CHECKOUT_REF_FLAG]).toBe('session_opaque_1');
+    expect(next.uiFlags[UCP_CHECKOUT_REF_FLAG]).toBeUndefined();
     expect(buildAgentQuoteHandoffActions(initialState, handoff).map((action) => action.type))
-      .toEqual(['SET_BOAT_INFO', 'PROMOTE_TRADE_IN', 'SET_UI_FLAG']);
+      .toEqual(['SET_BOAT_INFO', 'PROMOTE_TRADE_IN']);
   });
 
   it('preserves existing entered values when a parameter is absent', () => {
@@ -260,7 +260,7 @@ describe('applyAgentQuoteHandoff reducer', () => {
 
     expect(next.boatInfo).toBeNull();
     expect(next.tradeInInfo).toBeNull();
-    expect(next.uiFlags[UCP_CHECKOUT_REF_FLAG]).toBe('ucp_express_1');
+    expect(next.uiFlags[UCP_CHECKOUT_REF_FLAG]).toBeUndefined();
   });
 
   it('does not select a motor or invent trusted pricing from the URL', () => {

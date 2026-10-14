@@ -73,9 +73,11 @@ describe('useAgentQuoteHandoff', () => {
     expect(getByTestId('handoff-state')).toHaveAttribute('data-ucp', '');
     expect(getByTestId('handoff-state')).toHaveAttribute('data-params', '');
   });
-  it('consumes a declined protected express link without replacing its quote', async () => {
-    const { getByTestId } = render(<HandoffHarness params="motor=e920cfdf-223a-408a-850b-6f112e15c4d7&intent=motor-only&ucp=chk_express&src=agent_ucp" initial={{ ...initialState, restoredReferenceNumber: 'HBW-SYNTHETIC', purchasePath: 'installed' }} />);
-    await waitFor(() => expect(getByTestId('handoff-state')).toHaveAttribute('data-params', 'src=agent_ucp'));
+  it('retains protected express intent for an explicit buyer choice instead of silently consuming it', async () => {
+    const params = "motor=e920cfdf-223a-408a-850b-6f112e15c4d7&intent=motor-only&ucp=chk_express&src=agent_ucp";
+    const { getByTestId } = render(<HandoffHarness params={params} initial={{ ...initialState, restoredReferenceNumber: 'HBW-SYNTHETIC', purchasePath: 'installed' }} />);
+    await act(async () => { await Promise.resolve(); });
+    expect(getByTestId('handoff-state')).toHaveAttribute('data-params', params);
     expect(getByTestId('handoff-state')).toHaveAttribute('data-path', 'installed');
     expect(getByTestId('handoff-state')).toHaveAttribute('data-ucp', '');
   });

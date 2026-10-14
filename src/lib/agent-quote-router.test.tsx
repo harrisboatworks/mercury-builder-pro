@@ -13,7 +13,7 @@ function RouterHandoffHarness() {
     const normalized = cleanup(writeMotorSelectionUrlState(params, readMotorSelectionUrlState(params)));
     if (normalized.toString() !== params.toString()) setParams(current => cleanup(writeMotorSelectionUrlState(current, readMotorSelectionUrlState(current))), { replace: true });
   }, [params, setParams, cleanup]);
-  return <div data-testid="state" data-path={state.purchasePath} data-hours={state.tradeInInfo?.engineHours} data-params={params.toString()} />;
+  return <div data-testid="state" data-path={state.purchasePath} data-hours={state.tradeInInfo?.engineHours} data-ucp={String(state.uiFlags.ucpCheckoutRef ?? '')} data-params={params.toString()} />;
 }
 describe('handoff with actual router snapshots', () => {
   it('does not revive consumed answers when another effect canonicalizes the same render without a motor parameter', async () => {
@@ -22,6 +22,13 @@ describe('handoff with actual router snapshots', () => {
     expect(getByTestId('state')).toHaveAttribute('data-hours', '125');
     expect(getByTestId('state').getAttribute('data-params')).not.toMatch(/purchase_path|trade_engine_hours|stock=/);
     expect(getByTestId('state').getAttribute('data-params')).toContain('src=agent_rest');
+  });
+  it('does not revive a motorless UCP reference on a router remount after Back navigation', async () => {
+    const { getByTestId, unmount } = render(<MemoryRouter initialEntries={['/quote/motor-selection?ucp=chk_synthetic&src=agent_ucp']}><RouterHandoffHarness /></MemoryRouter>);
+    await waitFor(() => expect(getByTestId('state')).toHaveAttribute('data-params', 'ucp=chk_synthetic&src=agent_ucp'));
+    unmount();
+    const again = render(<MemoryRouter initialEntries={['/quote/motor-selection?ucp=chk_synthetic&src=agent_ucp']}><RouterHandoffHarness /></MemoryRouter>);
+    expect(again.getByTestId('state')).toHaveAttribute('data-ucp', '');
   });
   it('does not replace the URL when no handoff values were consumed', () => {
     const setParams = vi.fn();
