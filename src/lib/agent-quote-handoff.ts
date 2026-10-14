@@ -53,7 +53,7 @@ export const BOAT_CURRENT_MOTOR_BRANDS = [
   'Other',
 ] as const;
 
-const CONTROL_CHAR_RE = /[\u0000-\u001F\u007F]/;
+const CONTROL_CHAR_RE = /[\u0000-\u001F\u007F-\u009F\u202A-\u202E\u2066-\u2069]/;
 const TRADE_HP_RE = /^\d+(?:\.\d+)?$/;
 const TRADE_YEAR_RE = /^\d{4}$/;
 const UCP_REF_RE = /^[A-Za-z0-9._-]+$/;
@@ -220,9 +220,16 @@ export function parseAgentQuoteHandoff(
   if (tradeYear !== undefined) parsed.tradeYear = tradeYear;
   if (tradeHp !== undefined) parsed.tradeHp = tradeHp;
   if (tradeModel) parsed.tradeModel = tradeModel;
-  if (searchParams.get('trade_replace') === '1' && tradeBrand && tradeYear !== undefined && tradeHp !== undefined && tradeCondition) parsed.replaceTradeIn = true;
+  if (searchParams.get('trade_replace') === '1' && tradeBrand && tradeYear !== undefined && tradeHp !== undefined && tradeCondition
+    && (!searchParams.has('trade_model') || Boolean(tradeModel))
+    && (!searchParams.has('trade_engine_type') || Boolean(tradeEngineType))
+    && (!searchParams.has('trade_engine_hours') || tradeEngineHours !== undefined)) parsed.replaceTradeIn = true;
   if (tradeCondition) parsed.tradeCondition = tradeCondition;
   if (tradeEngineType) parsed.tradeEngineType = tradeEngineType;
+  if (searchParams.get('trade_replace') === '1' && !parsed.replaceTradeIn) {
+    // Never partially combine a complete API trade with stale draft facts.
+    for (const key of ['tradeBrand', 'tradeYear', 'tradeHp', 'tradeModel', 'tradeCondition', 'tradeEngineType', 'tradeEngineHours'] as const) delete parsed[key];
+  }
   if (trustedUcp) parsed.ucpCheckoutRef = trustedUcp;
   if (reservationPlanning && trustedUcp) parsed.reservationPlanning = reservationPlanning;
   return parsed;
@@ -340,6 +347,7 @@ export function mergeTradeInInfoFromHandoff(
     for (const [key, value] of Object.entries({ model: handoff.tradeModel ?? '', engineType: handoff.tradeEngineType, engineHours: handoff.tradeEngineHours })) {
       if (next[key as keyof TradeInInfo] !== value) changed = true;
     }
+    if (next.startType) { next.startType = undefined; changed = true; }
     next.model = handoff.tradeModel ?? '';
     next.engineType = handoff.tradeEngineType;
     next.engineHours = handoff.tradeEngineHours;
@@ -412,6 +420,9 @@ export function stripConsumedAgentQuoteHandoffParams(
   options: AgentQuoteHandoffApplyOptions = {},
 ): URLSearchParams {
   const next = new URLSearchParams(searchParams);
+  if (searchParams.get('trade_replace') === '1') {
+    for (const key of AGENT_QUOTE_HANDOFF_CONSUMABLE_PARAMS) if (key.startsWith('trade_')) next.delete(key);
+  }
   for (const key of consumedAgentQuoteHandoffParams(handoff, options)) {
     next.delete(key);
   }

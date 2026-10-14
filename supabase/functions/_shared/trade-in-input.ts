@@ -98,8 +98,8 @@ export function resolveTradeInInput(
   });
   const condition = String(value.condition || "good").trim().toLowerCase();
 
-  if (!brand || brand.length > 64 || /[\u0000-\u001f\u007f]/.test(brand)) throw new TradeInInputError("trade_in.brand is required (max 64 characters, no control characters)");
-  if (model && (model.length > 120 || /[\u0000-\u001f\u007f]/.test(model))) throw new TradeInInputError("trade_in.model must be at most 120 characters with no control characters");
+  if (!brand || brand.length > 64 || /[\u0000-\u001f\u007f-\u009f\u202a-\u202e\u2066-\u2069]/.test(brand)) throw new TradeInInputError("trade_in.brand is required (max 64 characters, no control characters)");
+  if (model && (model.length > 120 || /[\u0000-\u001f\u007f-\u009f\u202a-\u202e\u2066-\u2069]/.test(model))) throw new TradeInInputError("trade_in.model must be at most 120 characters with no control characters");
   if (!Number.isInteger(year) || year < 1950 || year > new Date().getFullYear()) {
     throw new TradeInInputError("trade_in.year must be a supported whole year");
   }

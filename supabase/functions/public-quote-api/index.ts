@@ -19,7 +19,6 @@ import { sanitizeAgentNote } from "../_shared/sanitize.ts";
 import {
   fetchCanonicalHbwValuation,
   HbwValuationError,
-  normalizeHbwStroke,
 } from "../_shared/hbw-valuation.ts";
 import {
   fetchActiveFinancingAndPromotions,
@@ -264,12 +263,13 @@ function safeText(value: unknown, maxLen = 80): string {
     .slice(0, maxLen);
 }
 
-function queryString(params: URLSearchParams, key: string, maxLen = 200): string | undefined {
+function queryString(params: URLSearchParams, key: string, maxLen = 200, exact = false): string | undefined {
   const raw = params.get(key);
   if (raw == null) return undefined;
   // Assistants often copy a URL out of a sentence and keep the sentence's closing
   // punctuation ("...engine_type=4-stroke."). Strip it so the value still validates.
-  const trimmed = raw.trim().replace(/[.,;:!?)\]]+$/, "").trim();
+  const trimmed = exact ? raw.trim() : raw.trim().replace(/[.,;:!?)\]]+$/, "").trim();
+  if (exact && trimmed.length > maxLen) throw new McpInvalidParamsError(`${key} exceeds the ${maxLen}-character limit.`);
   if (!trimmed) return undefined;
   return trimmed.slice(0, maxLen);
 }
@@ -345,13 +345,13 @@ function bodyFromQuery(params: URLSearchParams): Record<string, unknown> {
       body.boat_info = { make: boatMake ?? null, model: boatModel ?? null };
     }
 
-    const tradeBrand = queryString(params, "trade_brand", 60);
+    const tradeBrand = queryString(params, "trade_brand", 64, true);
     const tradeYear = queryNumber(params, "trade_year");
     const tradeHp = queryNumber(params, "trade_hp");
     const tradeCondition = queryString(params, "trade_condition", 20);
     const tradeEngineType = queryString(params, "trade_engine_type", 20);
     const tradeEngineHours = queryNumber(params, "trade_engine_hours");
-    const tradeModel = queryString(params, "trade_model", 120);
+    const tradeModel = queryString(params, "trade_model", 120, true);
     if (
       tradeBrand !== undefined || tradeYear !== undefined || tradeHp !== undefined ||
       tradeCondition !== undefined || tradeEngineType !== undefined || tradeEngineHours !== undefined || tradeModel !== undefined
@@ -869,6 +869,7 @@ async function buildQuote(supabase: any, body: any) {
     hstRate: HST_RATE,
   });
   const tradeInCredit = pricingCalc.tradeInCredit;
+  const tradeHandoffFields = buildTradeInHandoffFields(tradeResolved, tradeValuation);
   if (tradeValuation && tradeResolved) {
     tradeIn = {
       input: {
@@ -877,7 +878,7 @@ async function buildQuote(supabase: any, body: any) {
         horsepower: tradeResolved.horsepower,
         condition: tradeResolved.condition,
         model: tradeResolved.model ?? null,
-        engine_type: tradeResolved.engineType ?? tradeValuation.effectiveInputs?.stroke ?? null,
+        engine_type: tradeHandoffFields.trade_engine_type ?? null,
         engine_hours: tradeResolved.engineHours ?? null,
       },
       estimate: {
@@ -917,10 +918,11 @@ async function buildQuote(supabase: any, body: any) {
   const slug = motorSlug(motor);
   const deepLink = buildAgentQuoteLink(motor.id, {
     purchase_path: purchasePathRequested ? purchasePath : undefined,
-    customer_has_propeller: quoteFlags.customer_has_propeller,
+    // Carry the quoted decision, so an older unfinished draft cannot override it.
+    customer_has_propeller: propeller.handoffCustomerHasPropeller,
     boat_make: body?.boat_info?.make,
     boat_model: body?.boat_info?.model,
-    ...buildTradeInHandoffFields(tradeResolved, tradeValuation),
+    ...tradeHandoffFields,
   });
 
   // Optional lead capture (only if contact provided)
@@ -962,7 +964,8 @@ async function buildQuote(supabase: any, body: any) {
         quote_data: {
           items,
           financing,
-          trade_in: tradeIn,
+          // Keep an explicitly supplied serial in the private consented lead only.
+          trade_in: tradeIn && tradeResolved?.serialNumber ? { ...tradeIn, input: { ...tradeIn.input, serial_number: tradeResolved.serialNumber } } : tradeIn,
           boat_info: body?.boat_info || null,
           factory_rebate: pricingCalc.factoryRebate,
           factory_rebate_promotion: pricingCalc.factoryRebate > 0 ? (rebate?.promotionName ?? null) : null,

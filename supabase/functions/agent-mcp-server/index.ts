@@ -62,6 +62,20 @@ const SITE_URL = PUBLIC_SITE_URL;
 const QUOTE_API = `${Deno.env.get("SUPABASE_URL")}/functions/v1/public-quote-api`;
 const MOTORS_API = `${Deno.env.get("SUPABASE_URL")}/functions/v1/public-motors-api`;
 
+const TRADE_IN_SCHEMA = {
+  type: "object",
+  required: ["brand", "year"],
+  properties: {
+    brand: { type: "string", maxLength: 64 },
+    year: { type: "integer", minimum: 1950 },
+    horsepower: { type: "number", exclusiveMinimum: 0, maximum: 1000, description: "Required unless model infers a single HP." },
+    model: { type: "string", maxLength: 120 },
+    condition: { type: "string", enum: ["excellent", "good", "fair", "poor"], default: "good" },
+    engine_type: { type: "string", enum: ["4-stroke", "2-stroke", "optimax", "proxs", "etec"] },
+    engine_hours: { type: "number", minimum: 0, maximum: 100000 },
+  },
+};
+
 const TOOLS = [
   {
     name: "search_motors",
@@ -139,7 +153,7 @@ const TOOLS = [
           type: "object",
           properties: { make: { type: "string" }, model: { type: "string" } },
         },
-        trade_in: { type: "object" },
+        trade_in: TRADE_IN_SCHEMA,
       },
     },
     annotations: mcpToolAnnotations("read"),
@@ -162,7 +176,7 @@ const TOOLS = [
           type: "object",
           properties: { make: { type: "string" }, model: { type: "string" } },
         },
-        trade_in: { type: "object" },
+        trade_in: TRADE_IN_SCHEMA,
         contact: {
           type: "object",
           properties: {
