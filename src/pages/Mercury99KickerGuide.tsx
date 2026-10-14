@@ -1,3 +1,4 @@
+import { BUSINESS_ENTITY_ID } from '@/lib/business-identity.js';
 import { Award, Users, MapPin, Wrench } from 'lucide-react';
 import { HubPage } from '@/components/hub/HubPage';
 import { SITE_URL } from '@/lib/site';
@@ -45,19 +46,7 @@ const serviceSchema = {
   '@id': `${SITE_URL}${PATH}#service`,
   name: 'Mercury 9.9 HP Outboard Sales',
   serviceType: 'Outboard Motor Sales',
-  provider: {
-    '@type': 'LocalBusiness',
-    name: 'Harris Boat Works',
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: '5369 Harris Boat Works Rd',
-      addressLocality: 'Gores Landing',
-      addressRegion: 'ON',
-      postalCode: 'K0K 2E0',
-      addressCountry: 'CA',
-    },
-    telephone: '(905) 342-2153',
-  },
+  provider: { '@id': BUSINESS_ENTITY_ID },
   areaServed: ['Rice Lake', 'Kawarthas', 'Peterborough', 'Northumberland County', 'Ontario'],
   description:
     'Mercury 9.9 HP outboards at Harris Boat Works: tiller, electric start, Command Thrust, and ProKicker variants in stock and available for pickup at Gores Landing, Ontario. Real CAD pricing from a Mercury Premier Dealer since 1965.',

@@ -1,3 +1,4 @@
+import { BUSINESS_ENTITY_ID } from '@/lib/business-identity.js';
 import { Award, Users, MapPin, Wrench, Phone, MessageSquare, Mail } from 'lucide-react';
 import { HubPage } from '@/components/hub/HubPage';
 import { SITE_URL } from '@/lib/site';
@@ -41,19 +42,7 @@ const serviceSchema = {
   '@id': `${SITE_URL}${PATH}#service`,
   name: 'Mercury Avator Electric Outboards',
   serviceType: 'Electric Outboard Motor Sales',
-  provider: {
-    '@type': 'LocalBusiness',
-    name: 'Harris Boat Works',
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: '5369 Harris Boat Works Rd',
-      addressLocality: 'Gores Landing',
-      addressRegion: 'ON',
-      postalCode: 'K0K 2E0',
-      addressCountry: 'CA',
-    },
-    telephone: '(905) 342-2153',
-  },
+  provider: { '@id': BUSINESS_ENTITY_ID },
   areaServed: ['Rice Lake', 'Kawarthas', 'Peterborough', 'Northumberland County', 'Ontario'],
   description:
     'Mercury Avator electric outboard motors at Harris Boat Works: portable and remote-steer electric outboards rated in kilowatts of output power and thrust. Built to order through Mercury Canada. Pickup only at Gores Landing, Ontario.',

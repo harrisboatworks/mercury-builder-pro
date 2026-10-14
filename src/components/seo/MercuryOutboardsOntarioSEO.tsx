@@ -2,7 +2,7 @@ import { ONTARIO_BUYING_ANSWER, ONTARIO_LINEUP_ANSWER, ONTARIO_PRICING_ANSWER } 
 import { Helmet } from '@/lib/helmet';
 import { SITE_URL } from '@/lib/site';
 import { BUSINESS_ENTITY_ID } from '@/lib/business-identity.js';
-import { MERCURY_OUTBOARDS_ONTARIO_OFFERS } from '@/data/mercuryOutboardsOffers.js';
+import { MERCURY_OUTBOARDS_ONTARIO_PRODUCTS } from '@/data/mercuryOutboardsOffers.js';
 import { getMercuryFinancingFaqAnswer } from '@/components/promotions/TDAlwaysOnOffer';
 
 export const ONTARIO_HUB_FAQ = [
@@ -92,7 +92,7 @@ export function MercuryOutboardsOntarioSEO() {
         ],
         "serviceType": "Mercury outboard sales and repower"
       },
-      { "@id": BUSINESS_ENTITY_ID, "makesOffer": MERCURY_OUTBOARDS_ONTARIO_OFFERS },
+      ...MERCURY_OUTBOARDS_ONTARIO_PRODUCTS,
       {
         "@type": "FAQPage",
         "@id": `${SITE_URL}/mercury-outboards-ontario#faqpage`,

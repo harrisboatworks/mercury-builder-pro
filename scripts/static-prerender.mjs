@@ -25,7 +25,7 @@ import { fileURLToPath } from 'url';
 import { execSync } from 'child_process';
 import { marked } from 'marked';
 import { normalizeAuthoritativeDate, renderSitemapLastmod } from './lib/sitemap-lastmod.mjs';
-import { MERCURY_OUTBOARDS_ONTARIO_OFFERS } from '../src/data/mercuryOutboardsOffers.js';
+import { MERCURY_OUTBOARDS_ONTARIO_PRODUCTS } from '../src/data/mercuryOutboardsOffers.js';
 import { getHarrisBoatWorksBrandPagePrerender } from '../src/data/harrisBoatWorksBrandPage.js';
 import { buildMercuryProXSOffers } from '../src/data/mercuryProXSOffers.js';
 import { buildMotorProductGroup } from '../src/data/motorProductGroups.js';
@@ -2618,7 +2618,7 @@ function mercuryOutboardsOntarioSchema() {
         ],
         "serviceType": "Mercury outboard sales and repower"
       },
-      { "@id": BUSINESS_ENTITY_ID, "makesOffer": MERCURY_OUTBOARDS_ONTARIO_OFFERS },
+      ...MERCURY_OUTBOARDS_ONTARIO_PRODUCTS,
       {
         "@type": "FAQPage",
         "@id": `${SITE_URL}/mercury-outboards-ontario#faqpage`,
@@ -3984,6 +3984,7 @@ function hubSchemas({ path, metaTitle, metaDescription, h1, breadcrumbName, faqs
   return [{
     "@context": "https://schema.org",
     "@graph": [
+      canonicalShopSchema(),
       {
         "@type": "WebPage",
         "@id": `${url}#webpage`,
@@ -4398,19 +4399,7 @@ const HUB_DEFS = [
         '@id': `${SITE_URL}/electric/mercury-avator#service`,
         name: 'Mercury Avator Electric Outboards',
         serviceType: 'Electric Outboard Motor Sales',
-        provider: {
-          '@type': 'LocalBusiness',
-          name: 'Harris Boat Works',
-          address: {
-            '@type': 'PostalAddress',
-            streetAddress: '5369 Harris Boat Works Rd',
-            addressLocality: 'Gores Landing',
-            addressRegion: 'ON',
-            postalCode: 'K0K 2E0',
-            addressCountry: 'CA',
-          },
-          telephone: '(905) 342-2153',
-        },
+        provider: { '@id': BUSINESS_ENTITY_ID },
         areaServed: ['Rice Lake', 'Kawarthas', 'Peterborough', 'Northumberland County', 'Ontario'],
         description: 'Mercury Avator electric outboard motors at Harris Boat Works: portable and remote-steer electric outboards rated in kilowatts of output power and thrust. Built to order through Mercury Canada. Pickup only at Gores Landing, Ontario.',
         brand: { '@type': 'Brand', name: 'Mercury Marine' },
@@ -4470,19 +4459,7 @@ const HUB_DEFS = [
         '@id': `${SITE_URL}/motors/mercury-9-9-tiller-kicker-guide#service`,
         name: 'Mercury 9.9 HP Outboard Sales',
         serviceType: 'Outboard Motor Sales',
-        provider: {
-          '@type': 'LocalBusiness',
-          name: 'Harris Boat Works',
-          address: {
-            '@type': 'PostalAddress',
-            streetAddress: '5369 Harris Boat Works Rd',
-            addressLocality: 'Gores Landing',
-            addressRegion: 'ON',
-            postalCode: 'K0K 2E0',
-            addressCountry: 'CA',
-          },
-          telephone: '(905) 342-2153',
-        },
+        provider: { '@id': BUSINESS_ENTITY_ID },
         areaServed: ['Rice Lake', 'Kawarthas', 'Peterborough', 'Northumberland County', 'Ontario'],
         description: 'Mercury 9.9 HP outboards at Harris Boat Works: tiller, electric start, Command Thrust, and ProKicker variants in stock and available for pickup at Gores Landing, Ontario. Real CAD pricing from a Mercury Premier Dealer since 1965.',
         brand: { '@type': 'Brand', name: 'Mercury Marine' },

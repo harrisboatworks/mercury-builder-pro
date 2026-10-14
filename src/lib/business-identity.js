@@ -28,7 +28,7 @@ export function buildBusinessIdentity({ geo, openingHoursSpecification = [], sam
             "@id": "https://www.mercuryrepower.ca/#rice-lake-ontario",
             "name": "Rice Lake, Ontario",
             "alternateName": ["Rice Lake (Ontario)", "Rice Lake, Kawartha Lakes"],
-            "description": "Freshwater lake in the Kawartha Lakes region, southern Ontario, Canada. Approximately 90 minutes east of Toronto. Distinct from Rice Lake, Wisconsin and Rice Lake, Minnesota.",
+            "description": "Freshwater lake in the Kawartha Lakes region, southern Ontario, Canada. Located approximately 90 minutes east of Toronto. Distinct from Rice Lake, Wisconsin and Rice Lake, Minnesota.",
             "geo": { "@type": "GeoCoordinates", "latitude": 44.1614, "longitude": -78.0369 },
             "containedInPlace": [
               { "@type": "AdministrativeArea", "name": "Kawartha Lakes" },

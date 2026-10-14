@@ -190,3 +190,6 @@ export const MERCURY_OUTBOARDS_ONTARIO_OFFERS = [
     }
   }
 ];
+
+// Same existing Product/Offer objects, emitted directly for rich-result readers.
+export const MERCURY_OUTBOARDS_ONTARIO_PRODUCTS = MERCURY_OUTBOARDS_ONTARIO_OFFERS.map(offer => offer.itemOffered);

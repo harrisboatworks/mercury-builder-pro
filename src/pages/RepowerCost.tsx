@@ -1,3 +1,4 @@
+import { BUSINESS_ENTITY_ID } from '@/lib/business-identity.js';
 import { Link } from 'react-router-dom';
 import { DollarSign, Award, Wrench, MapPin } from 'lucide-react';
 import { HubPage } from '@/components/hub/HubPage';
@@ -108,19 +109,7 @@ export default function RepowerCost() {
           '@id': 'https://www.mercuryrepower.ca/repower/cost#service',
           name: 'Mercury Outboard Repower Pricing',
           serviceType: 'Boat Motor Replacement',
-          provider: {
-            '@type': 'LocalBusiness',
-            name: 'Harris Boat Works',
-            telephone: '(905) 342-2153',
-            address: {
-              '@type': 'PostalAddress',
-              streetAddress: '5369 Harris Boat Works Rd',
-              addressLocality: 'Gores Landing',
-              addressRegion: 'ON',
-              postalCode: 'K0K 2E0',
-              addressCountry: 'CA',
-            },
-          },
+          provider: { '@id': BUSINESS_ENTITY_ID },
           areaServed: ['Ontario'],
           offers: {
             '@type': 'Offer',
