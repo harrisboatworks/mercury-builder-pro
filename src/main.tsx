@@ -70,9 +70,8 @@ try {
   }
 
   console.log('✅ Root element found, creating React root...');
-  const root = captureAgentAttribution();
-
-createRoot(rootElement);
+  captureAgentAttribution();
+  const root = createRoot(rootElement);
   
   console.log('✅ React root created, rendering App...');
   root.render(

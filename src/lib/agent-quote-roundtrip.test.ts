@@ -35,7 +35,7 @@ describe('public quote handoff roundtrip', () => {
     const params = new URL(buildAgentQuoteLink(id, { ucp: 'chk_synthetic', purchase_path: 'loose' }, 'agent_ucp')).searchParams;
     const state = applyAgentQuoteHandoff(initialState, quoteReducer, parseAgentQuoteHandoff(params));
     expect(state.purchasePath).toBe('loose');
-    expect(state.uiFlags).toEqual({ ucpCheckoutRef: 'chk_synthetic' });
+    expect(state.uiFlags).toEqual({ ucpCheckoutRef: 'chk_synthetic', ucpHandoffMotorId: id });
     expect(state.completedSteps).toEqual([]);
     expect(state.motor).toBeNull();
   });
@@ -83,6 +83,18 @@ describe('public quote handoff roundtrip', () => {
     expect(selected.boatInfo.hasCompatibleProp).toBe(true);
     const edited = quoteReducer(selected, { type: 'SET_INSTALL_CONFIG', payload: { propellerDecision: 'include_allowance' } });
     expect(buildAgentMotorSelectionActions(edited, motor, quoteReducer).reduce(quoteReducer, edited).installConfig.propellerDecision).toBe('include_allowance');
+  });
+  it('retains UCP context only for the linked motor when a prior motor is replaced', () => {
+    const state = applyAgentQuoteHandoff({ ...initialState, motor: { ...motor, id: 'old' } }, quoteReducer, { motorId: id, ucpCheckoutRef: 'chk_synthetic' });
+    expect(buildAgentMotorSelectionActions(state, motor, quoteReducer).reduce(quoteReducer, state).uiFlags.ucpCheckoutRef).toBe('chk_synthetic');
+    expect(buildAgentMotorSelectionActions(state, { ...motor, id: 'other' }, quoteReducer).reduce(quoteReducer, state).uiFlags.ucpCheckoutRef).toBeUndefined();
+  });
+  it('does not serialize null or empty optional boat fields as buyer answers', () => {
+    const params = new URL(buildAgentQuoteLink(id, { boat_make: 'Lund', boat_model: null, trade_year: undefined, trade_brand: '' })).searchParams;
+    expect(params.has('boat_model')).toBe(false);
+    expect(params.has('trade_year')).toBe(false);
+    expect(params.has('trade_brand')).toBe(false);
+    expect(params.get('boat_make')).toBe('Lund');
   });
   it('leaves unrelated upstream links and errors untouched', () => {
     for (const payload of [{ deep_link: 'https://example.invalid/quote/motor-selection' }, { error: 'not available' }, { deep_link: 'not-url' }]) expect(attributeMcpQuotePayload(payload)).toBe(payload);

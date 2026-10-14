@@ -1330,11 +1330,6 @@ if (event.type === 'filter_motors') {
     for (const action of buildAgentMotorSelectionActions(state, motor, quoteReducer)) {
       dispatch(action);
     }
-    const ucpCheckoutRef = parseAgentQuoteHandoff(searchParams).ucpCheckoutRef ?? state.uiFlags?.[UCP_CHECKOUT_REF_FLAG];
-    if (typeof ucpCheckoutRef === 'string') {
-      dispatch({ type: 'SET_UI_FLAG', payload: { key: UCP_CHECKOUT_REF_FLAG, value: ucpCheckoutRef } });
-    }
-    
     // Auto-navigate to options step
     setTimeout(() => {
       navigate('/quote/options');

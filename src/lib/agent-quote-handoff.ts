@@ -11,6 +11,7 @@ export const AGENT_QUOTE_HANDOFF_MOTOR_ID_MAX = 80;
 export const AGENT_QUOTE_HANDOFF_UCP_MAX = 128;
 export const AGENT_QUOTE_HANDOFF_HP_MAX = 600;
 export const UCP_CHECKOUT_REF_FLAG = 'ucpCheckoutRef';
+export const AGENT_UCP_MOTOR_ID_FLAG = 'ucpHandoffMotorId';
 export const AGENT_PROPELLER_HANDOFF_FLAG = 'agentPropellerHandoff';
 
 export const AGENT_QUOTE_HANDOFF_CONSUMABLE_PARAMS = [
@@ -450,6 +451,9 @@ export function buildAgentQuoteHandoffActions(
     });
   }
 
+  if (handoff.ucpCheckoutRef && handoff.motorId && state.uiFlags?.[AGENT_UCP_MOTOR_ID_FLAG] !== handoff.motorId) {
+    actions.push({ type: 'SET_UI_FLAG', payload: { key: AGENT_UCP_MOTOR_ID_FLAG, value: handoff.motorId } });
+  }
   return actions;
 }
 
@@ -462,6 +466,13 @@ export function buildAgentMotorSelectionActions(
   const select: QuoteAction = { type: 'SET_MOTOR', payload: motor };
   const next = reduce(state, select);
   const actions: QuoteAction[] = [select];
+  const ucpRef = state.uiFlags?.[UCP_CHECKOUT_REF_FLAG];
+  if (state.uiFlags?.[AGENT_UCP_MOTOR_ID_FLAG] === motor.id && typeof ucpRef === 'string' && UCP_REF_RE.test(ucpRef) && ucpRef.length <= AGENT_QUOTE_HANDOFF_UCP_MAX) {
+    if (next.uiFlags?.[UCP_CHECKOUT_REF_FLAG] !== ucpRef) {
+      actions.push({ type: 'SET_UI_FLAG', payload: { key: UCP_CHECKOUT_REF_FLAG, value: ucpRef } });
+      actions.push({ type: 'SET_UI_FLAG', payload: { key: AGENT_UCP_MOTOR_ID_FLAG, value: motor.id } });
+    }
+  }
   const pending = pendingPropellerHandoff(state);
   if (pending && pending.motorId === motor.id && typeof pending.customerHasPropeller === 'boolean') {
     actions.push(...buildAgentQuoteHandoffActions(next, { customerHasPropeller: pending.customerHasPropeller }));

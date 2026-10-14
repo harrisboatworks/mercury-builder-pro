@@ -5,13 +5,13 @@ export type AgentQuoteSurface = "agent_rest" | "agent_mcp" | "agent_ucp";
 /** Public, non-identifying provenance. Never a consent or payment authority. */
 export function buildAgentQuoteLink(
   motorId: string | undefined,
-  fields: Record<string, string | number | boolean | undefined> = {},
+  fields: Record<string, string | number | boolean | null | undefined> = {},
   surface: AgentQuoteSurface = "agent_rest",
 ): string {
   const url = new URL("/quote/motor-selection", PUBLIC_SITE_URL);
   if (motorId) url.searchParams.set("motor", motorId);
   for (const [key, value] of Object.entries(fields)) {
-    if (value !== undefined && value !== "") url.searchParams.set(key, String(value));
+    if (value != null && value !== "") url.searchParams.set(key, String(value));
   }
   url.searchParams.set("src", surface);
   return url.toString();
