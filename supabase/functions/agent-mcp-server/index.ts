@@ -133,7 +133,7 @@ const TOOLS = [
           enum: ["installed", "loose"],
           default: "installed",
         },
-        customer_has_propeller: { type: "boolean" },
+        customer_has_propeller: { type: "boolean", description: "True: reuse, subject to fit checks. False: include allowance. Omitted: reuse for same-HP Mercury trade, otherwise allowance. Standard propeller included below 25 HP." },
         financing_offer_id: { type: "string" },
         boat_info: {
           type: "object",
@@ -156,7 +156,7 @@ const TOOLS = [
         horsepower: { type: "number" },
         family: { type: "string" },
         purchase_path: { type: "string", enum: ["installed", "loose"] },
-        customer_has_propeller: { type: "boolean" },
+        customer_has_propeller: { type: "boolean", description: "True: reuse, subject to fit checks. False: include allowance. Omitted: reuse for same-HP Mercury trade, otherwise allowance. Standard propeller included below 25 HP." },
         financing_offer_id: { type: "string" },
         boat_info: {
           type: "object",

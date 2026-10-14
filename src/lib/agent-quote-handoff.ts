@@ -9,7 +9,7 @@ import type { TradeInInfo } from '@/lib/trade-valuation';
 export const AGENT_QUOTE_HANDOFF_TEXT_MAX = 80;
 export const AGENT_QUOTE_HANDOFF_MOTOR_ID_MAX = 80;
 export const AGENT_QUOTE_HANDOFF_UCP_MAX = 128;
-export const AGENT_QUOTE_HANDOFF_HP_MAX = 600;
+export const AGENT_QUOTE_HANDOFF_HP_MAX = 1000;
 export const UCP_CHECKOUT_REF_FLAG = 'ucpCheckoutRef';
 export const AGENT_UCP_PENDING_HANDOFF_FLAG = 'agentUcpHandoff';
 export const AGENT_UCP_MOTOR_ID_FLAG = 'ucpHandoffMotorId';
@@ -21,6 +21,8 @@ export const AGENT_QUOTE_HANDOFF_CONSUMABLE_PARAMS = [
   'trade_brand',
   'trade_year',
   'trade_hp',
+  'trade_model',
+  'trade_replace',
   'trade_condition',
   'trade_engine_type',
   'trade_engine_hours',
@@ -69,6 +71,8 @@ export interface ParsedAgentQuoteHandoff {
   tradeBrand?: string;
   tradeYear?: number;
   tradeHp?: number;
+  tradeModel?: string;
+  replaceTradeIn?: true;
   tradeCondition?: TradeInHandoffCondition;
   tradeEngineType?: TradeInHandoffEngineType;
   tradeEngineHours?: number;
@@ -187,12 +191,13 @@ export function parseAgentQuoteHandoff(
   const tradeEngineHours = parseTradeEngineHoursParam(searchParams.get('trade_engine_hours'));
   const boatMake = sanitizeBuyerText(searchParams.get('boat_make'));
   const boatModel = sanitizeBuyerText(searchParams.get('boat_model'));
-  const rawTradeBrand = sanitizeBuyerText(searchParams.get('trade_brand'));
+  const rawTradeBrand = sanitizeBuyerText(searchParams.get('trade_brand'), 64);
   const tradeBrand = rawTradeBrand
-    ? canonicalizeBrand(rawTradeBrand, TRADE_IN_FORM_BRANDS)
+    ? canonicalizeBrand(rawTradeBrand, TRADE_IN_FORM_BRANDS) ?? rawTradeBrand
     : undefined;
   const tradeYear = parseTradeYearParam(searchParams.get('trade_year'), currentYear);
   const tradeHp = parseTradeHpParam(searchParams.get('trade_hp'));
+  const tradeModel = sanitizeBuyerText(searchParams.get('trade_model'), 120);
   const tradeCondition = parseTradeConditionParam(searchParams.get('trade_condition'));
   const tradeEngineType = parseTradeEngineTypeParam(searchParams.get('trade_engine_type'));
   const ucpCheckoutRef = sanitizeBuyerText(
@@ -214,6 +219,8 @@ export function parseAgentQuoteHandoff(
   if (tradeBrand) parsed.tradeBrand = tradeBrand;
   if (tradeYear !== undefined) parsed.tradeYear = tradeYear;
   if (tradeHp !== undefined) parsed.tradeHp = tradeHp;
+  if (tradeModel) parsed.tradeModel = tradeModel;
+  if (searchParams.get('trade_replace') === '1' && tradeBrand && tradeYear !== undefined && tradeHp !== undefined && tradeCondition) parsed.replaceTradeIn = true;
   if (tradeCondition) parsed.tradeCondition = tradeCondition;
   if (tradeEngineType) parsed.tradeEngineType = tradeEngineType;
   if (trustedUcp) parsed.ucpCheckoutRef = trustedUcp;
@@ -318,6 +325,7 @@ export function mergeTradeInInfoFromHandoff(
     handoff.tradeBrand
     || handoff.tradeYear !== undefined
     || handoff.tradeHp !== undefined
+    || handoff.tradeModel
     || handoff.tradeCondition
     || handoff.tradeEngineType
     || handoff.tradeEngineHours !== undefined,
@@ -326,6 +334,17 @@ export function mergeTradeInInfoFromHandoff(
 
   const next: Partial<TradeInInfo> = existing ? { ...existing } : blankTradeInInfo();
   let changed = false;
+  // A full API trade represents all quoted facts. Missing optional inputs mean
+  // omitted, not values inherited from a different unfinished draft.
+  if (handoff.replaceTradeIn) {
+    for (const [key, value] of Object.entries({ model: handoff.tradeModel ?? '', engineType: handoff.tradeEngineType, engineHours: handoff.tradeEngineHours })) {
+      if (next[key as keyof TradeInInfo] !== value) changed = true;
+    }
+    next.model = handoff.tradeModel ?? '';
+    next.engineType = handoff.tradeEngineType;
+    next.engineHours = handoff.tradeEngineHours;
+    if (next.serialNumber) { next.serialNumber = ''; changed = true; }
+  }
 
   if (handoff.tradeBrand && next.brand !== handoff.tradeBrand) {
     next.brand = handoff.tradeBrand;
@@ -337,6 +356,10 @@ export function mergeTradeInInfoFromHandoff(
   }
   if (handoff.tradeHp !== undefined && next.horsepower !== handoff.tradeHp) {
     next.horsepower = handoff.tradeHp;
+    changed = true;
+  }
+  if (handoff.tradeModel && next.model !== handoff.tradeModel) {
+    next.model = handoff.tradeModel;
     changed = true;
   }
   if (handoff.tradeCondition && next.condition !== handoff.tradeCondition) {
@@ -373,6 +396,8 @@ export function consumedAgentQuoteHandoffParams(
   if (handoff.tradeBrand) consumed.push('trade_brand');
   if (handoff.tradeYear !== undefined) consumed.push('trade_year');
   if (handoff.tradeHp !== undefined) consumed.push('trade_hp');
+  if (handoff.tradeModel) consumed.push('trade_model');
+  if (handoff.replaceTradeIn) consumed.push('trade_replace');
   if (handoff.tradeCondition) consumed.push('trade_condition');
   if (handoff.tradeEngineType) consumed.push('trade_engine_type');
   if (handoff.tradeEngineHours !== undefined) consumed.push('trade_engine_hours');

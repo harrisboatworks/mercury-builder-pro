@@ -96,9 +96,10 @@ export function resolveTradeInInput(
     horsepower: value.horsepower ?? value.hp,
     model,
   });
-  const condition = String(value.condition || "good").toLowerCase();
+  const condition = String(value.condition || "good").trim().toLowerCase();
 
-  if (!brand) throw new TradeInInputError("trade_in.brand is required");
+  if (!brand || brand.length > 64 || /[\u0000-\u001f\u007f]/.test(brand)) throw new TradeInInputError("trade_in.brand is required (max 64 characters, no control characters)");
+  if (model && (model.length > 120 || /[\u0000-\u001f\u007f]/.test(model))) throw new TradeInInputError("trade_in.model must be at most 120 characters with no control characters");
   if (!Number.isInteger(year) || year < 1950 || year > new Date().getFullYear()) {
     throw new TradeInInputError("trade_in.year must be a supported whole year");
   }
