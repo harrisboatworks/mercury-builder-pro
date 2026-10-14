@@ -124,9 +124,8 @@
     "phoneDisplay": "(905) 342-2153",
     "email": "info@harrisboatworks.ca",
     "hours": {
-      "note": "In-season (April 1 - November 30). Marina closed for winter December 1 - April 1.",
-      "monSat": "08:00-17:00",
-      "sun": "09:00-16:00"
+      "note": "Monday-Saturday 08:00-17:00. Sunday 09:00-16:00 from May through Canadian Thanksgiving; closed Thanksgiving weekend and all other Sundays.",
+      "monSat": "08:00-17:00"
     }
   },
   "currency": "CAD",

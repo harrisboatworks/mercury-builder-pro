@@ -1,10 +1,13 @@
 import { Helmet } from '@/lib/helmet';
 import { BUSINESS_GEO, BUSINESS_SAME_AS } from '@/lib/companyInfo';
 import googlePlaces from '@/data/google-places-cache.json';
+import { withSeasonalSundayHours } from '@/lib/shopHours.js';
 
-const LIVE_OPENING_HOURS = Array.isArray(googlePlaces.openingHoursSpecification)
-  ? googlePlaces.openingHoursSpecification
-  : [];
+const LIVE_OPENING_HOURS = withSeasonalSundayHours(
+  Array.isArray(googlePlaces.openingHoursSpecification)
+    ? googlePlaces.openingHoursSpecification
+    : [],
+);
 
 export function GlobalSEO() {
   // Site-wide JSON-LD only. Page-level nodes (WebPage, Service, FAQPage, etc.)

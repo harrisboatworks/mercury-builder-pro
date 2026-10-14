@@ -4,6 +4,7 @@ import { SITE_URL } from '@/lib/site';
 import { RepowerHeader } from '@/components/repower/RepowerHeader';
 import { SiteFooter } from '@/components/ui/site-footer';
 import { COMPANY_INFO, BUSINESS_SAME_AS } from '@/lib/companyInfo';
+import { seasonalSundayOpeningHours } from '@/lib/shopHours.js';
 import { getLocationBySlug } from '@/data/locations';
 import { substituteLiveRateTokens } from '@/lib/finance';
 import { Button } from '@/components/ui/button';
@@ -181,14 +182,7 @@ export default function LocationDetail() {
             validFrom: '2026-04-01',
             validThrough: '2026-11-30',
           },
-          {
-            '@type': 'OpeningHoursSpecification',
-            dayOfWeek: 'Sunday',
-            opens: '09:00',
-            closes: '16:00',
-            validFrom: '2026-04-01',
-            validThrough: '2026-11-30',
-          },
+          ...seasonalSundayOpeningHours(),
         ],
         // Sales catchment only, represents where customers travel from to pick up at Gores Landing.
         // Sales catchment only. All work happens at Gores Landing.
