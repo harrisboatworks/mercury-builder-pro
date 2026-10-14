@@ -2,7 +2,7 @@ import { resolvePublicSellingPrice } from '../../../supabase/functions/_shared/p
 import { useEffect, useState, useMemo, useCallback, useRef } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 
-import { useQuote } from '@/contexts/QuoteContext';
+import { quoteReducer, useQuote } from '@/contexts/QuoteContext';
 import { Motor } from '@/components/QuoteBuilder';
 import { FinancingProvider } from '@/contexts/FinancingContext';
 import { MotorViewProvider } from '@/contexts/MotorViewContext';
@@ -88,6 +88,8 @@ import {
 } from '@/lib/motor-selection-url-state';
 import {
   isReservationPlanningHandoff,
+  selectedMotorPropellerHandoffActions,
+  isProtectedQuoteHandoff,
   parseAgentQuoteHandoff,
   useAgentQuoteHandoff,
   UCP_CHECKOUT_REF_FLAG,
@@ -485,6 +487,8 @@ function MotorSelectionContent() {
   }
   const initialUrlState = initialUrlStateRef.current;
   const { state, dispatch } = useQuote();
+  const initialAgentHandoffRef = useRef(parseAgentQuoteHandoff(searchParams));
+  const selectedAgentMotorRef = useRef(false);
   useAgentQuoteHandoff({
     searchParams,
     setSearchParams,
@@ -1321,7 +1325,17 @@ if (event.type === 'filter_motors') {
     });
 
     // Add motor to quote context
-    dispatch({ type: 'SET_MOTOR', payload: motor });
+    const motorAction = { type: 'SET_MOTOR' as const, payload: motor };
+    dispatch(motorAction);
+    if (!selectedAgentMotorRef.current) {
+      selectedAgentMotorRef.current = true;
+      if (!isProtectedQuoteHandoff(state)) {
+        const selectedState = quoteReducer(state, motorAction);
+        for (const action of selectedMotorPropellerHandoffActions(selectedState, initialAgentHandoffRef.current)) {
+          dispatch(action);
+        }
+      }
+    }
     const ucpCheckoutRef = parseAgentQuoteHandoff(searchParams).ucpCheckoutRef ?? state.uiFlags?.[UCP_CHECKOUT_REF_FLAG];
     if (typeof ucpCheckoutRef === 'string') {
       dispatch({ type: 'SET_UI_FLAG', payload: { key: UCP_CHECKOUT_REF_FLAG, value: ucpCheckoutRef } });

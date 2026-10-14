@@ -11,12 +11,14 @@ import {
 function HandoffHarness({
   params,
   isLoading = false,
+  initial = initialState,
 }: {
   params: string;
   isLoading?: boolean;
+  initial?: QuoteState;
 }) {
   const [searchParams, setSearchParamsState] = useState(() => new URLSearchParams(params));
-  const [state, setState] = useState<QuoteState>({ ...initialState, isLoading: false });
+  const [state, setState] = useState<QuoteState>({ ...initial, isLoading: false });
 
   useEffect(() => {
     setSearchParamsState(new URLSearchParams(params));
@@ -43,12 +45,33 @@ function HandoffHarness({
       data-make={state.boatInfo?.make ?? ''}
       data-trade-brand={state.tradeInInfo?.brand ?? ''}
       data-ucp={String(state.uiFlags[UCP_CHECKOUT_REF_FLAG] ?? '')}
+      data-path={state.purchasePath ?? ''}
+      data-prop={String(state.boatInfo?.hasCompatibleProp ?? '')}
+      data-hours={String(state.tradeInInfo?.engineHours ?? '')}
       data-params={searchParams.toString()}
     />
   );
 }
 
 describe('useAgentQuoteHandoff', () => {
+  it('applies false propeller and zero hours after persisted state loads and keeps provenance', async () => {
+    const params = 'motor=abc&purchase_path=loose&customer_has_propeller=false&trade_engine_hours=0&src=agent_rest';
+    const { rerender, getByTestId } = render(<HandoffHarness params={params} isLoading />);
+    expect(getByTestId('handoff-state')).toHaveAttribute('data-path', '');
+    rerender(<HandoffHarness params={params} />);
+    await waitFor(() => expect(getByTestId('handoff-state')).toHaveAttribute('data-path', 'loose'));
+    expect(getByTestId('handoff-state')).toHaveAttribute('data-prop', 'false');
+    expect(getByTestId('handoff-state')).toHaveAttribute('data-hours', '0');
+    expect(getByTestId('handoff-state')).toHaveAttribute('data-params', 'motor=abc&src=agent_rest');
+  });
+  it('leaves a restored quote and its URL untouched', async () => {
+    const params = 'purchase_path=loose&customer_has_propeller=false&trade_engine_hours=200&ucp=chk_other';
+    const { getByTestId } = render(<HandoffHarness params={params} initial={{ ...initialState, restoredReferenceNumber: 'HBW-SYNTHETIC', purchasePath: 'installed' }} />);
+    await act(async () => { await Promise.resolve(); });
+    expect(getByTestId('handoff-state')).toHaveAttribute('data-path', 'installed');
+    expect(getByTestId('handoff-state')).toHaveAttribute('data-ucp', '');
+    expect(getByTestId('handoff-state')).toHaveAttribute('data-params', params);
+  });
   it('waits for quote loading, then applies documented fields once', async () => {
     const params = 'boat_make=Lund&boat_model=Pro-V&trade_brand=Mercury&trade_year=2010&trade_hp=75&motor=abc&utm_source=agent';
     const { rerender, getByTestId } = render(

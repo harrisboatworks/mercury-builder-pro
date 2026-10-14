@@ -1,3 +1,4 @@
+import { captureAgentAttribution } from './agent-attribution';
 import { supabase } from '@/integrations/supabase/client';
 
 type AgentEventInput = {
@@ -17,32 +18,21 @@ function getSessionId() {
   return localStorage.getItem(SESSION_KEY) || sessionStorage.getItem(SESSION_KEY) || null;
 }
 
-function detectSource() {
-  if (typeof window === 'undefined') return 'direct';
-  const params = new URLSearchParams(window.location.search);
-  const ref = (params.get('ref') || params.get('utm_source') || '').toLowerCase();
-  if (ref.includes('chatgpt') || ref.includes('openai')) return 'chatgpt';
-  if (ref.includes('perplexity')) return 'perplexity';
-  if (ref.includes('claude') || ref.includes('anthropic')) return 'claude';
-  if (ref.includes('gemini') || ref.includes('google')) return 'google';
-  if (ref.includes('ai')) return 'ai';
-  return document.referrer ? 'referral' : 'direct';
-}
-
 export async function trackAgentEvent(input: AgentEventInput) {
   try {
+    const attribution = captureAgentAttribution();
     const { data: { user } } = await supabase.auth.getUser();
     await supabase.from('agent_events').insert({
       event_type: input.event_type,
       session_id: getSessionId(),
       user_id: user?.id ?? null,
       page_path: typeof window !== 'undefined' ? window.location.pathname : null,
-      source: input.source ?? detectSource(),
+      source: input.source ?? attribution.source,
       motor_id: input.motor_id ?? null,
       motor_hp: input.motor_hp ?? null,
       motor_model: input.motor_model ?? null,
       quote_value: input.quote_value ?? null,
-      metadata: input.metadata ?? {},
+      metadata: { ...input.metadata, ...(attribution.surface ? { agent_surface: attribution.surface } : {}) },
     });
   } catch {
     // never break UX for analytics

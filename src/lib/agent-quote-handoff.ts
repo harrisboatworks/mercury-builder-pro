@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { captureAgentAttribution } from './agent-attribution';
 import type { BoatInfo } from '@/components/QuoteBuilder';
 import type { QuoteAction, QuoteState } from '@/contexts/QuoteContext';
 import { isSupportedTradeInYear, parseMotorHorsepowerInput } from '@/lib/trade-in-state';
@@ -19,6 +20,9 @@ export const AGENT_QUOTE_HANDOFF_CONSUMABLE_PARAMS = [
   'trade_hp',
   'trade_condition',
   'trade_engine_type',
+  'trade_engine_hours',
+  'purchase_path',
+  'customer_has_propeller',
 ] as const;
 
 export const TRADE_IN_FORM_BRANDS = [
@@ -64,6 +68,9 @@ export interface ParsedAgentQuoteHandoff {
   tradeHp?: number;
   tradeCondition?: TradeInHandoffCondition;
   tradeEngineType?: TradeInHandoffEngineType;
+  tradeEngineHours?: number;
+  purchasePath?: 'installed' | 'loose';
+  customerHasPropeller?: boolean;
   ucpCheckoutRef?: string;
   reservationPlanning?: true;
 }
@@ -153,6 +160,16 @@ export function isReservationPlanningHandoff(handoff: ParsedAgentQuoteHandoff): 
   return handoff.reservationPlanning === true && typeof handoff.ucpCheckoutRef === 'string' && UCP_REF_RE.test(handoff.ucpCheckoutRef);
 }
 
+export function parseTradeEngineHoursParam(raw: string | null): number | undefined {
+  if (raw === null || !/^\d+(?:\.\d+)?$/.test(raw)) return undefined;
+  const hours = Number(raw);
+  return Number.isFinite(hours) && hours >= 0 && hours <= 100000 ? hours : undefined;
+}
+
+export function isProtectedQuoteHandoff(state: QuoteState): boolean {
+  return Boolean(state.frozenPricing || state.pdfSnapshot || state.editingQuoteId || state.restoredReferenceNumber || state.isAdminQuote);
+}
+
 export function parseAgentQuoteHandoff(
   searchParams: URLSearchParams,
   currentYear = new Date().getFullYear(),
@@ -161,6 +178,9 @@ export function parseAgentQuoteHandoff(
     searchParams.get('motor') ?? searchParams.get('select'),
     AGENT_QUOTE_HANDOFF_MOTOR_ID_MAX,
   );
+  const purchasePath = searchParams.get('purchase_path');
+  const propeller = searchParams.get('customer_has_propeller');
+  const tradeEngineHours = parseTradeEngineHoursParam(searchParams.get('trade_engine_hours'));
   const boatMake = sanitizeBuyerText(searchParams.get('boat_make'));
   const boatModel = sanitizeBuyerText(searchParams.get('boat_model'));
   const rawTradeBrand = sanitizeBuyerText(searchParams.get('trade_brand'));
@@ -182,6 +202,9 @@ export function parseAgentQuoteHandoff(
 
   const parsed: ParsedAgentQuoteHandoff = {};
   if (motorId) parsed.motorId = motorId;
+  if (purchasePath === 'installed' || purchasePath === 'loose') parsed.purchasePath = purchasePath;
+  if (propeller === 'true' || propeller === 'false') parsed.customerHasPropeller = propeller === 'true';
+  if (tradeEngineHours !== undefined) parsed.tradeEngineHours = tradeEngineHours;
   if (boatMake) parsed.boatMake = boatMake;
   if (boatModel) parsed.boatModel = boatModel;
   if (tradeBrand) parsed.tradeBrand = tradeBrand;
@@ -243,7 +266,7 @@ export function mergeBoatInfoFromHandoff(
   existing: BoatInfo | null | undefined,
   handoff: ParsedAgentQuoteHandoff,
 ): { next: BoatInfo; changed: boolean } | null {
-  const hasBoatFields = Boolean(handoff.boatMake || handoff.boatModel);
+  const hasBoatFields = Boolean(handoff.boatMake || handoff.boatModel || handoff.customerHasPropeller !== undefined);
   const hasTradeMirror = Boolean(
     handoff.tradeBrand || handoff.tradeYear !== undefined || handoff.tradeHp !== undefined,
   );
@@ -253,6 +276,10 @@ export function mergeBoatInfoFromHandoff(
   const next: BoatInfo = existing ? { ...existing } : blankBoatInfo();
   let changed = false;
 
+  if (handoff.customerHasPropeller !== undefined && next.hasCompatibleProp !== handoff.customerHasPropeller) {
+    next.hasCompatibleProp = handoff.customerHasPropeller;
+    changed = true;
+  }
   if (handoff.boatMake && next.make !== handoff.boatMake) {
     next.make = handoff.boatMake;
     changed = true;
@@ -288,7 +315,8 @@ export function mergeTradeInInfoFromHandoff(
     || handoff.tradeYear !== undefined
     || handoff.tradeHp !== undefined
     || handoff.tradeCondition
-    || handoff.tradeEngineType,
+    || handoff.tradeEngineType
+    || handoff.tradeEngineHours !== undefined,
   );
   if (!hasTradeFields) return null;
 
@@ -315,6 +343,10 @@ export function mergeTradeInInfoFromHandoff(
     next.engineType = handoff.tradeEngineType;
     changed = true;
   }
+  if (handoff.tradeEngineHours !== undefined && next.engineHours !== handoff.tradeEngineHours) {
+    next.engineHours = handoff.tradeEngineHours;
+    changed = true;
+  }
   if (changed) {
     Object.assign(next, { estimatedValue: 0, confidenceLevel: undefined, rangePrePenaltyLow: undefined, rangePrePenaltyHigh: undefined, rangeFinalLow: undefined, rangeFinalHigh: undefined, tradeinValuePrePenalty: undefined, tradeinValueFinal: undefined, penaltyApplied: undefined, penaltyFactor: undefined, valuationReportUrl: undefined });
   }
@@ -339,6 +371,9 @@ export function consumedAgentQuoteHandoffParams(
   if (handoff.tradeHp !== undefined) consumed.push('trade_hp');
   if (handoff.tradeCondition) consumed.push('trade_condition');
   if (handoff.tradeEngineType) consumed.push('trade_engine_type');
+  if (handoff.tradeEngineHours !== undefined) consumed.push('trade_engine_hours');
+  if (handoff.purchasePath) consumed.push('purchase_path');
+  if (handoff.customerHasPropeller !== undefined) consumed.push('customer_has_propeller');
   return consumed;
 }
 
@@ -360,8 +395,18 @@ export function buildAgentQuoteHandoffActions(
   options: AgentQuoteHandoffApplyOptions = {},
 ): QuoteAction[] {
   const actions: QuoteAction[] = [];
+  if (isProtectedQuoteHandoff(state)) return actions;
 
   if (!options.skipBoatAndTrade) {
+    if (handoff.purchasePath && state.purchasePath !== handoff.purchasePath) {
+      actions.push({ type: 'SET_PURCHASE_PATH', payload: handoff.purchasePath });
+    }
+    if (handoff.customerHasPropeller !== undefined) {
+      const decision = handoff.customerHasPropeller ? 'reuse_existing' : 'include_allowance';
+      if (state.installConfig?.propellerDecision !== decision) {
+        actions.push({ type: 'SET_INSTALL_CONFIG', payload: { ...state.installConfig, propellerDecision: decision } });
+      }
+    }
     const boat = mergeBoatInfoFromHandoff(state.boatInfo, handoff);
     if (boat?.changed) {
       actions.push({ type: 'SET_BOAT_INFO', payload: boat.next });
@@ -386,6 +431,14 @@ export function buildAgentQuoteHandoffActions(
   return actions;
 }
 
+export function selectedMotorPropellerHandoffActions(
+  stateAfterSelection: QuoteState,
+  handoff: ParsedAgentQuoteHandoff,
+): QuoteAction[] {
+  if (handoff.motorId !== stateAfterSelection.motor?.id || handoff.customerHasPropeller === undefined) return [];
+  return buildAgentQuoteHandoffActions(stateAfterSelection, { customerHasPropeller: handoff.customerHasPropeller });
+}
+
 export function applyAgentQuoteHandoff(
   state: QuoteState,
   reduce: (state: QuoteState, action: QuoteAction) => QuoteState,
@@ -407,6 +460,8 @@ export function useAgentQuoteHandoff({
     if (appliedRef.current || state.isLoading) return;
 
     appliedRef.current = true;
+    captureAgentAttribution();
+    if (isProtectedQuoteHandoff(state)) return;
     const skipBoatAndTrade = isMotorOnlyExpressHandoff(searchParams);
     const handoff = parseAgentQuoteHandoff(searchParams);
     const actions = buildAgentQuoteHandoffActions(state, handoff, { skipBoatAndTrade });
