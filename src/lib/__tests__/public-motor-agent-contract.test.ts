@@ -265,25 +265,22 @@ describe("public motor agent contract", () => {
     expect(motorsApi).toContain("const slug = motorSlug(m);");
     expect(quoteApi).toContain("const slug = motorSlug(m);");
     expect(quoteApi).toContain("const slug = motorSlug(motor);");
-    expect(mcpServer).toContain("const slug = motorSlug(m);");
+    expect(mcpServer).toContain('getMcpMotor(supabase, args)');
+    expect(source('supabase/functions/_shared/public-mcp-motors.ts')).toContain('presentPublicCatalogMotor(source)');
     expect(motorSelectionPage).toContain("applyMotorPresentationOverrides(");
     expect(motorSelectionPage).toContain("resolveMotorCardTitle(");
     expect(motorPage).toContain("motorSlug as publicMotorSlug");
     expect(motorPage).toContain("publicMotorSlug(candidate) === slug");
     expect(motorPage).not.toContain("function publicMotorSlug");
-    expect(mcpServer).toContain("${SITE_URL}/motors/${slug}");
-    expect(mcpServer).not.toContain(
-      "url: `${SITE_URL}/quote/motor-selection?motor=${m.id}`",
-    );
-    expect(mcpServer).not.toContain('.neq("availability", "Exclude")');
-    expect(mcpServer.match(/\.or\(PUBLIC_CATALOG_AVAILABILITY_OR\)/g)).toHaveLength(2);
-    expect(motorsApi).toContain("resolvePublicSellingPrice(");
-    expect(quoteApi).toContain("resolvePublicSellingPrice(");
-    expect(mcpServer).toContain("resolvePublicSellingPrice(");
-    expect(mcpServer).toContain(".limit(500)");
-    expect(mcpServer).toContain(".slice(0, resultLimit)");
+    const mcpMotors = source('supabase/functions/_shared/public-mcp-motors.ts');
+    const catalogContract = source('supabase/functions/_shared/public-motor-contract.ts');
+    expect(catalogContract).toContain('${PUBLIC_SITE_URL}/motors/${slug}');
+    expect(mcpMotors.match(/\.or\(PUBLIC_CATALOG_AVAILABILITY_OR\)/g)).toHaveLength(2);
+    expect(mcpMotors).toContain('.limit(500)');
+    expect(mcpMotors).toContain('motor.inStock');
+    expect(mcpMotors).not.toContain('.eq("in_stock", true)');
 
-    for (const handler of [motorsApi, quoteApi, mcpServer]) {
+    for (const handler of [motorsApi, quoteApi]) {
       expect(handler).toContain("applyMotorPresentationOverrides(");
       const motorSelects = Array.from(
         handler.matchAll(
@@ -296,11 +293,11 @@ describe("public motor agent contract", () => {
         expect(selection.split(/,\s*/)).toContain("model_number");
       }
     }
-
+    expect(mcpMotors).toContain('model_number');
     expect(motorsApi).not.toContain("function slugify");
     expect(quoteApi).not.toContain("function slugify");
 
-    for (const handler of [motorsApi, quoteApi, mcpServer]) {
+    for (const handler of [motorsApi, quoteApi, catalogContract]) {
       expect(handler).toContain("toPublicImageUrl(");
     }
   });

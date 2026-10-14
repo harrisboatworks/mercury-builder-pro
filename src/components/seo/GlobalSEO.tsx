@@ -1,5 +1,6 @@
 import { Helmet } from '@/lib/helmet';
 import { BUSINESS_GEO, BUSINESS_SAME_AS } from '@/lib/companyInfo';
+import { buildBusinessIdentity } from '@/lib/business-identity.js';
 import googlePlaces from '@/data/google-places-cache.json';
 import { withSeasonalSundayHours } from '@/lib/shopHours.js';
 
@@ -53,28 +54,7 @@ export function GlobalSEO() {
         "sameAs": BUSINESS_SAME_AS
       },
       {
-        "@type": ["LocalBusiness", "Store", "AutoRepair"],
-        "@id": "https://www.mercuryrepower.ca/#localbusiness",
-        "name": "Harris Boat Works",
-        "image": "https://www.mercuryrepower.ca/pwa-512x512.png",
-        "url": "https://www.harrisboatworks.ca/",
-        "telephone": "+1-905-342-2153",
-        "email": "info@harrisboatworks.ca",
-        "parentOrganization": { "@id": "https://www.mercuryrepower.ca/#organization" },
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "5369 Harris Boat Works Rd",
-          "addressLocality": "Gores Landing",
-          "addressRegion": "ON",
-          "postalCode": "K0K 2E0",
-          "addressCountry": "CA"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": BUSINESS_GEO.latitude,
-          "longitude": BUSINESS_GEO.longitude
-        },
-        "openingHoursSpecification": LIVE_OPENING_HOURS,
+        ...buildBusinessIdentity({ geo: BUSINESS_GEO, openingHoursSpecification: LIVE_OPENING_HOURS, sameAs: BUSINESS_SAME_AS }),
         "areaServed": [
           {
             "@type": "Place",

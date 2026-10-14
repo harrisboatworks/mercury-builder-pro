@@ -3,8 +3,8 @@ import { Helmet } from '@/lib/helmet';
 import { SITE_URL } from '@/lib/site';
 import { RepowerHeader } from '@/components/repower/RepowerHeader';
 import { SiteFooter } from '@/components/ui/site-footer';
-import { COMPANY_INFO, BUSINESS_SAME_AS } from '@/lib/companyInfo';
-import { seasonalSundayOpeningHours } from '@/lib/shopHours.js';
+import { COMPANY_INFO } from '@/lib/companyInfo';
+import { BUSINESS_ENTITY_ID, buildPickupAreaNodes } from '@/lib/business-identity.js';
 import { getLocationBySlug } from '@/data/locations';
 import { substituteLiveRateTokens } from '@/lib/finance';
 import { Button } from '@/components/ui/button';
@@ -141,6 +141,8 @@ export default function LocationDetail() {
         name: pageTitle,
         description: metaDesc,
         inLanguage: 'en-CA',
+        about: { '@id': BUSINESS_ENTITY_ID },
+        mainEntity: { '@id': `${url}#service` },
       },
       {
         '@type': 'BreadcrumbList',
@@ -150,67 +152,7 @@ export default function LocationDetail() {
           { '@type': 'ListItem', position: 3, name: pageTitle, item: url },
         ],
       },
-      {
-        '@type': location.slug === 'rice-lake-mercury-repower'
-          ? ['LocalBusiness', 'BoatDealer']
-          : 'LocalBusiness',
-        '@id': `${url}#localbusiness`,
-        name: COMPANY_INFO.name,
-        url,
-        telephone: COMPANY_INFO.contact.phone,
-        email: COMPANY_INFO.contact.email,
-        priceRange: '$$',
-        
-        address: {
-          '@type': 'PostalAddress',
-          streetAddress: COMPANY_INFO.address.street,
-          addressLocality: COMPANY_INFO.address.city,
-          addressRegion: COMPANY_INFO.address.province,
-          postalCode: COMPANY_INFO.address.postal,
-          addressCountry: 'CA',
-        },
-        ...(lf && typeof lf.lat === 'number' && typeof lf.lng === 'number'
-          ? { geo: { '@type': 'GeoCoordinates', latitude: lf.lat, longitude: lf.lng } }
-          : {}),
-
-        openingHoursSpecification: [
-          {
-            '@type': 'OpeningHoursSpecification',
-            dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-            opens: '08:00',
-            closes: '17:00',
-            validFrom: '2026-04-01',
-            validThrough: '2026-11-30',
-          },
-          ...seasonalSundayOpeningHours(),
-        ],
-        // Sales catchment only, represents where customers travel from to pick up at Gores Landing.
-        // Sales catchment only. All work happens at Gores Landing.
-        areaServed: location.slug === 'rice-lake-mercury-repower'
-          ? ['Rice Lake', 'Kawarthas', 'Northumberland'].map((n) => ({
-              '@type': 'AdministrativeArea',
-              name: n,
-            }))
-          : location.slug === 'peterborough-mercury-dealer'
-          ? ['Peterborough', 'Kawartha Lakes', 'Otonabee Region', 'Rice Lake'].map((n) => ({
-              '@type': 'AdministrativeArea',
-              name: n,
-            }))
-          : {
-              '@type': 'AdministrativeArea',
-              name: location.region,
-              description:
-                'Sales catchment only, customers from this area travel to Gores Landing for pickup. No mobile service, no delivery.',
-            },
-        sameAs: BUSINESS_SAME_AS,
-      },
-
-      {
-        '@type': 'Place',
-        '@id': `${url}#place`,
-        name: location.region,
-        containedInPlace: { '@type': 'AdministrativeArea', name: 'Ontario, Canada' },
-      },
+      ...buildPickupAreaNodes({ url, region: location.region, latitude: lf?.lat, longitude: lf?.lng }),
       {
         '@type': 'FAQPage',
         '@id': `${url}#faq`,

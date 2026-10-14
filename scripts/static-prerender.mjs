@@ -44,6 +44,7 @@ import { WARRANTY_AGENT_NOTE, WARRANTY_AGENT_NOTE_BOLD, WARRANTY_POLICY_SENTENCE
 import { escHtml, renderYouTubeEmbedLinkHtml } from './lib/youtube-embed-html.mjs';
 import { agentFinancingGuidance } from './lib/agent-contract-docs.mjs';
 import { ONTARIO_BUYING_ANSWER, ONTARIO_LINEUP_ANSWER, ONTARIO_PRICING_ANSWER, ONTARIO_RESEARCH_GUIDES } from '../src/lib/mercury-ontario-facts.js';
+import { BUSINESS_ENTITY_ID, buildBusinessIdentity, buildPickupAreaNodes } from '../src/lib/business-identity.js';
 import { withSeasonalSundayHours } from '../src/lib/shopHours.js';
 
 // Public anonymous key used by the browser client. This read-only fallback
@@ -93,6 +94,10 @@ const LIVE_BUSINESS_GEO = {
   latitude: Number(GOOGLE_PLACES_CACHE.location?.latitude) || 44.121684,
   longitude: Number(GOOGLE_PLACES_CACHE.location?.longitude) || -78.241502,
 };
+
+const canonicalShopSchema = () => buildBusinessIdentity({
+  geo: LIVE_BUSINESS_GEO, openingHoursSpecification: LIVE_OPENING_HOURS, sameAs: BUSINESS_SAME_AS,
+});
 
 const MERCURY_PRODUCT_PROTECTION_RATE_CARD = JSON.parse(
   readFileSync(new URL('../src/data/mercuryProductProtectionRates.json', import.meta.url), 'utf8')
@@ -1413,32 +1418,13 @@ function repowerSchema() {
   return {
     "@context": "https://schema.org",
     "@graph": [
-      {
-        "@type": "LocalBusiness",
-        "@id": `${SITE_URL}/#business`,
-        "name": "Harris Boat Works",
-        "description": "Mercury Certified Repower Center serving Ontario boaters since 1947. Pickup only at Gores Landing.",
-        "url": SITE_URL,
-        "telephone": "(905) 342-2153",
-        "email": "info@harrisboatworks.ca",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "5369 Harris Boat Works Rd",
-          "addressLocality": "Gores Landing",
-          "addressRegion": "ON",
-          "postalCode": "K0K 2E0",
-          "addressCountry": "CA"
-        },
-        "geo": { "@type": "GeoCoordinates", "latitude": LIVE_BUSINESS_GEO.latitude, "longitude": LIVE_BUSINESS_GEO.longitude },
-        "foundingDate": "1947",
-        "sameAs": BUSINESS_SAME_AS
-      },
+      canonicalShopSchema(),
       {
         "@type": "Service",
         "@id": `${SITE_URL}/repower#service`,
         "name": "Mercury Outboard Repower Service",
         "serviceType": "Boat Motor Replacement",
-        "provider": { "@id": `${SITE_URL}/#business` },
+        "provider": { "@id": BUSINESS_ENTITY_ID },
         "areaServed": ["Rice Lake", "Kawarthas", "Peterborough", "GTA", "Toronto", "Ontario"],
         "description": "Professional Mercury outboard motor repower service. 70% of the benefit of a new boat for 30% of the cost.",
         "offers": {
@@ -2590,6 +2576,7 @@ function mercuryOutboardsOntarioSchema() {
   return {
     "@context": "https://schema.org",
     "@graph": [
+      canonicalShopSchema(),
       {
         "@type": "WebPage",
         "@id": `${SITE_URL}/mercury-outboards-ontario#webpage`,
@@ -2600,7 +2587,7 @@ function mercuryOutboardsOntarioSchema() {
         "about": { "@id": `${SITE_URL}/#organization` },
         "inLanguage": "en-CA",
         "breadcrumb": { "@id": `${SITE_URL}/mercury-outboards-ontario#breadcrumb` },
-        "mainEntity": { "@id": `${SITE_URL}/mercury-outboards-ontario#localbusiness` }
+        "mainEntity": { "@id": `${SITE_URL}/mercury-outboards-ontario#service` }
       },
       {
         "@type": "BreadcrumbList",
@@ -2611,23 +2598,11 @@ function mercuryOutboardsOntarioSchema() {
         ]
       },
       {
-        "@type": ["LocalBusiness", "AutomotiveBusiness"],
-        "@id": `${SITE_URL}/mercury-outboards-ontario#localbusiness`,
-        "name": "Harris Boat Works: Mercury Premier Dealer",
-        "description": "Mercury Marine Premier Dealer serving Ontario. Full Mercury outboard lineup, real CAD pricing online, repower specialists. Family-owned since 1947, Mercury dealer since 1965.",
-        "url": `${SITE_URL}/mercury-outboards-ontario`,
-        "telephone": "+1-905-342-2153",
-        "email": "info@harrisboatworks.ca",
-        "image": `${SITE_URL}/lovable-uploads/logo-dark.png`,
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "5369 Harris Boat Works Rd",
-          "addressLocality": "Gores Landing",
-          "addressRegion": "ON",
-          "postalCode": "K0K 2E0",
-          "addressCountry": "CA"
-        },
-        "geo": { "@type": "GeoCoordinates", "latitude": LIVE_BUSINESS_GEO.latitude, "longitude": LIVE_BUSINESS_GEO.longitude },
+        "@type": "Service",
+        "@id": `${SITE_URL}/mercury-outboards-ontario#service`,
+        "name": "Mercury outboard sales and repower for Ontario buyers",
+        "provider": { "@id": BUSINESS_ENTITY_ID },
+        "description": "Mercury outboard sales and repower at Harris Boat Works in Gores Landing. Ontario buyers travel to the shop for pickup; no shipping or mobile service.",
         "areaServed": [
           { "@type": "AdministrativeArea", "name": "Ontario, Canada" },
           { "@type": "Place", "name": "Greater Toronto Area" },
@@ -2640,22 +2615,7 @@ function mercuryOutboardsOntarioSchema() {
           { "@type": "Place", "name": "Lake Scugog" },
           { "@type": "Place", "name": "Rice Lake" }
         ],
-        "award": [
-          "Mercury Marine Premier Dealer",
-          "Authorized Legend Boats Dealer"
-        ],
-        "knowsAbout": [
-          "Mercury FourStroke outboards",
-          "Mercury Pro XS outboards",
-          "Mercury Command Thrust",
-          "Mercury SeaPro commercial outboards",
-          "Mercury ProKicker trolling motors",
-          "Mercury FourStroke V8",
-          "Marine repower"
-        ],
-        // Sourced from src/data/mercuryOutboardsOffers.js — shared with MercuryOutboardsOntarioSEO.tsx
-        "makesOffer": MERCURY_OUTBOARDS_ONTARIO_OFFERS,
-        "sameAs": BUSINESS_SAME_AS
+        "offers": MERCURY_OUTBOARDS_ONTARIO_OFFERS
       },
       {
         "@type": "FAQPage",
@@ -2935,30 +2895,15 @@ function blogArticleSchema(article) {
     });
   }
 
-  // LocalBusiness node for dealer landing blog posts: mercury-dealer-{city}(-ontario)?-hbw
   const dealerMatch = article.slug.match(/^mercury-dealer-(.+?)(?:-ontario)?-hbw$/);
   if (dealerMatch) {
     const dealerCity = dealerMatch[1].split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
-    graph.push({
-      "@type": "LocalBusiness",
-      "@id": `${url}#localbusiness`,
-      "name": "Harris Boat Works",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "5369 Harris Boat Works Rd",
-        "addressLocality": "Gores Landing",
-        "addressRegion": "ON",
-        "postalCode": "K0K 2E0",
-        "addressCountry": "CA"
-      },
-      "telephone": "+1-905-342-2153",
-      "url": SITE_URL,
-      "geo": { "@type": "GeoCoordinates", "latitude": 44.1614, "longitude": -78.0369 },
-      "areaServed": [
-        { "@type": "City", "name": `${dealerCity}, Ontario` },
-        { "@type": "Place", "name": "Greater Toronto Area" }
-      ],
-      "sameAs": BUSINESS_SAME_AS
+    graph.push(canonicalShopSchema(), ...buildPickupAreaNodes({ url, region: dealerCity }));
+  }
+  if (article.slug === 'best-marina-rice-lake-ontario') {
+    graph.push(canonicalShopSchema(), {
+      '@type': 'Service', '@id': `${url}#marina`, name: 'Marina services on Rice Lake',
+      provider: { '@id': BUSINESS_ENTITY_ID }, areaServed: { '@id': `${SITE_URL}/#rice-lake-ontario` },
     });
   }
 
@@ -3882,14 +3827,6 @@ function locationsIndexSchema() {
 function locationDetailSchema(loc) {
   const url = `${SITE_URL}/locations/${loc.slug}`;
   const description = loc.metaDescription || loc.intro;
-  const address = {
-    "@type": "PostalAddress",
-    streetAddress: "5369 Harris Boat Works Rd",
-    addressLocality: "Gores Landing",
-    addressRegion: "ON",
-    postalCode: "K0K 2E0",
-    addressCountry: "CA",
-  };
   return {
     "@context": "https://schema.org",
     "@graph": [
@@ -3900,33 +3837,12 @@ function locationDetailSchema(loc) {
         name: loc.title,
         description,
         isPartOf: { "@id": `${SITE_URL}/#website` },
-        about: { "@id": `${url}#localbusiness` },
+        about: { "@id": BUSINESS_ENTITY_ID },
+        mainEntity: { "@id": `${url}#service` },
         inLanguage: "en-CA",
       },
-      {
-        "@type": "LocalBusiness",
-        "@id": `${url}#localbusiness`,
-        name: "Harris Boat Works",
-        parentOrganization: { "@id": `${SITE_URL}/#organization` },
-        url,
-        telephone: "+1-905-342-2153",
-        email: "info@harrisboatworks.ca",
-        address,
-        // Sales catchment / buyer catchment ONLY. NOT mobile service coverage.
-        // All work happens on-site at Gores Landing.
-        areaServed: {
-          "@type": "AdministrativeArea",
-          name: loc.region,
-          description: "Sales catchment only, customers from this area travel to Gores Landing for pickup. No mobile service, no delivery.",
-        },
-        sameAs: BUSINESS_SAME_AS,
-      },
-      {
-        "@type": "Place",
-        "@id": `${url}#place`,
-        name: loc.region,
-        containedInPlace: { "@type": "AdministrativeArea", name: "Ontario, Canada" },
-      },
+      canonicalShopSchema(),
+      ...buildPickupAreaNodes({ url, region: loc.region, latitude: loc.longForm?.lat, longitude: loc.longForm?.lng }),
       {
         "@type": "FAQPage",
         "@id": `${url}#faq`,

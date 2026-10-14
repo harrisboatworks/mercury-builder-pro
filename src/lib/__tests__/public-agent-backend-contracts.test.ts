@@ -400,10 +400,13 @@ describe("authorized transport wiring", () => {
     const ucp = source("supabase/functions/ucp-checkout/index.ts");
     const markdown = source("supabase/functions/motors-md/index.ts");
 
-    for (const handler of [motorsApi, quoteApi, mcp, markdown]) {
+    for (const handler of [motorsApi, quoteApi, markdown]) {
       expect(handler).toContain("resolvePublicSellingPrice(");
       expect(handler).toContain("PUBLIC_CATALOG_AVAILABILITY_OR");
     }
+    expect(mcp).toContain('searchMcpMotors(supabase, args)');
+    expect(mcp).toContain('getMcpMotor(supabase, args)');
+    expect(source('supabase/functions/_shared/public-mcp-motors.ts')).toContain('presentPublicCatalogMotor(source)');
     expect(ucp).toContain("resolveUcpPricedItem(");
     expect(ucp).toContain("parseUcpCheckoutLineItems(");
     expect(ucp).toContain("UCP_QUOTE_SCOPE_NOTICE");

@@ -24,22 +24,11 @@ const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
   "Access-Control-Allow-Headers":
-    "authorization, x-client-info, apikey, content-type, mcp-session-id",
+    "authorization, x-client-info, apikey, content-type, mcp-session-id, mcp-protocol-version",
 };
 
-import {
-  applyMotorPresentationOverrides,
-  familyKey,
-  motorSlug,
-} from "../_shared/motor-slug.ts";
-import {
-  isPublicCatalogMotor,
-  PUBLIC_CATALOG_AVAILABILITY_OR,
-  PUBLIC_SITE_URL,
-  resolvePublicSellingPrice,
-  toPublicImageUrl,
-  publicAvailabilityLabel,
-} from "../_shared/public-motor-contract.ts";
+import { PUBLIC_SITE_URL } from "../_shared/public-motor-contract.ts";
+import { searchMcpMotors, getMcpMotor } from "../_shared/public-mcp-motors.ts";
 import {
   fetchActiveFinancing,
   fetchActivePromotions,
@@ -100,7 +89,7 @@ const TOOLS = [
   {
     name: "get_motor",
     description:
-      "Fetch a single Mercury motor by id or slug, including pricing, shaft length, and deep-link URL.",
+      "Fetch a single Mercury motor by id or slug, including pricing, decoded shaft/control/start facts, their source, normalized stock, and deep-link URL. Model-code fitment must be confirmed against the buyer’s transom before ordering; null means not stated.",
     inputSchema: {
       type: "object",
       properties: {
@@ -263,97 +252,6 @@ async function callPublicApi(action: string, params: Record<string, unknown>) {
   return payload;
 }
 
-async function searchMotors(supabase: any, args: any) {
-  const resultLimit = Math.min(args.limit ?? 25, 100);
-  const wantFamilyKey = args.family ? familyKey(args.family) : null;
-  let q = supabase
-    .from("motor_models")
-    .select(
-      "id, model, model_display, model_number, family, horsepower, shaft_code, control_type, msrp, sale_price, dealer_price, base_price, manual_overrides, availability, in_stock, stock_quantity, hero_image_url, image_url"
-    )
-    .or(PUBLIC_CATALOG_AVAILABILITY_OR)
-    .order("horsepower", { ascending: true })
-    .limit(500);
-
-  if (args.horsepower) q = q.eq("horsepower", args.horsepower);
-  if (args.min_hp) q = q.gte("horsepower", args.min_hp);
-  if (args.max_hp) q = q.lte("horsepower", args.max_hp);
-  if (args.in_stock_only) q = q.eq("in_stock", true);
-
-  const { data, error } = await q;
-  if (error) throw new Error(error.message);
-
-  return (data || [])
-    .map((sourceMotor: any) => applyMotorPresentationOverrides(sourceMotor))
-    .filter((m: any) => isPublicCatalogMotor(m))
-    .filter((m: any) =>
-      wantFamilyKey ? familyKey(m.family) === wantFamilyKey : true
-    )
-    .slice(0, resultLimit)
-    .map((m: any) => {
-      const slug = motorSlug(m);
-      return {
-        id: m.id,
-        slug,
-        modelDisplay: m.model_display || m.model,
-        family: m.family || "FourStroke",
-        horsepower: m.horsepower,
-        shaftLength: m.shaft_code,
-        sellingPrice: resolvePublicSellingPrice(m),
-        currency: "CAD",
-        availability: publicAvailabilityLabel(m.availability, Boolean(m.in_stock)),
-        imageUrl: toPublicImageUrl(m.hero_image_url || m.image_url),
-        url: slug ? `${SITE_URL}/motors/${slug}` : null,
-        quoteUrl: `${SITE_URL}/quote/motor-selection?motor=${m.id}`,
-      };
-    });
-}
-
-async function getMotor(supabase: any, args: any) {
-  if (!args.id && !args.slug) throw new Error("id or slug required");
-  let q = supabase
-    .from("motor_models")
-    .select(
-      "id, model, model_display, model_number, family, motor_type, horsepower, shaft_code, control_type, msrp, sale_price, dealer_price, base_price, manual_overrides, availability, in_stock, stock_quantity, hero_image_url, image_url, description, features"
-    )
-    .or(PUBLIC_CATALOG_AVAILABILITY_OR);
-  if (args.id) q = q.eq("id", args.id).limit(1);
-  const { data, error } = await q;
-  if (error) throw new Error(error.message);
-  let m: any = null;
-  if (args.id) {
-    m = data?.[0] ?? null;
-  } else if (args.slug) {
-    const wanted = String(args.slug).toLowerCase();
-    m = (data || [])
-      .map((r: any) => applyMotorPresentationOverrides(r))
-      .find((r: any) => isPublicCatalogMotor(r) && motorSlug(r) === wanted) ?? null;
-  }
-  if (!m) return null;
-  m = applyMotorPresentationOverrides(m);
-  if (!isPublicCatalogMotor(m)) return null;
-
-  const slug = motorSlug(m);
-  return {
-    id: m.id,
-    slug,
-    modelDisplay: m.model_display || m.model,
-    family: m.family || "FourStroke",
-    horsepower: m.horsepower,
-    shaftLength: m.shaft_code,
-    controlType: m.control_type,
-    sellingPrice: resolvePublicSellingPrice(m),
-    msrp: m.msrp,
-    currency: "CAD",
-    availability: publicAvailabilityLabel(m.availability, Boolean(m.in_stock)),
-    imageUrl: toPublicImageUrl(m.hero_image_url || m.image_url),
-    description: m.description,
-    features: m.features,
-    url: slug ? `${SITE_URL}/motors/${slug}` : null,
-    quoteUrl: `${SITE_URL}/quote/motor-selection?motor=${m.id}`,
-  };
-}
-
 async function brandRules(supabase: any) {
   try {
     const [financing, promotions] = await Promise.all([
@@ -381,11 +279,11 @@ async function handleToolCall(supabase: any, name: string, rawArgs: unknown) {
   const args = parseMcpToolArguments(name, rawArgs);
   switch (name) {
     case "search_motors": {
-      const motors = await searchMotors(supabase, args);
+      const motors = await searchMcpMotors(supabase, args);
       return mcpToolResult({ count: motors.length, motors });
     }
     case "get_motor": {
-      const motor = await getMotor(supabase, args);
+      const motor = await getMcpMotor(supabase, args);
       if (!motor) return mcpToolResult({ error: "Motor not found" }, true);
       return mcpToolResult(motor);
     }
@@ -406,7 +304,10 @@ Deno.serve(async (req) => {
     return new Response(null, { headers: corsHeaders });
   }
 
-  // GET → human-readable docs
+  // This stateless server has no unsolicited SSE stream. Keep browser docs.
+  if (req.method === "GET" && req.headers.get("accept")?.includes("text/event-stream")) {
+    return new Response(null, { status: 405, headers: { ...corsHeaders, Allow: "POST, OPTIONS" } });
+  }
   if (req.method === "GET") {
     return new Response(
       JSON.stringify(
@@ -469,12 +370,7 @@ Deno.serve(async (req) => {
   });
   if (!allowed) return rateLimitedResponse(corsHeaders, 60);
 
-  const supabase = createClient(
-    Deno.env.get("SUPABASE_URL")!,
-    Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!
-  );
-
-  let envelope: { id: string | number | null; method: string; params: Record<string, unknown> };
+  let envelope: ReturnType<typeof parseMcpJsonRpc>;
   try {
     envelope = parseMcpJsonRpc(payload);
   } catch (err: any) {
@@ -482,6 +378,13 @@ Deno.serve(async (req) => {
     return jsonResp(rpcError(null, code, err?.message || "Invalid Request"), 400);
   }
   const { id, method, params } = envelope;
+  const isNotification = !Object.prototype.hasOwnProperty.call(payload, "id");
+  // Notifications have no response and must never dispatch a tool/write.
+  if (isNotification) return new Response(null, { status: 202, headers: corsHeaders });
+  const supabase = createClient(
+    Deno.env.get("SUPABASE_URL")!,
+    Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!,
+  );
 
   try {
     if (method === "initialize") {
@@ -493,6 +396,8 @@ Deno.serve(async (req) => {
         })
       );
     }
+
+    if (method === "ping") return jsonResp(rpcResult(id, {}));
 
     if (method === "tools/list") {
       return jsonResp(rpcResult(id, { tools: TOOLS }));
