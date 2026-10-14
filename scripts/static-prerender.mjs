@@ -5342,7 +5342,7 @@ const routes = [
       } catch (err) {
         console.warn('[static-prerender] pricing-reference.schema.json read failed:', err?.message);
       }
-      return [genericPageSchema('/pricing-reference', 'Mercury Outboard Prices in Ontario (CAD): Live HBW Dealer Pricing', 'Live Mercury outboard prices in CAD, listed FourStroke and Pro XS models, 2.5-300 HP. MSRP vs dealer price, drop-off at our Gores Landing shop.')];
+      return [genericPageSchema('/pricing-reference', 'Mercury Outboard Prices in Ontario (CAD): Live HBW Dealer Pricing', SEO_PAGE_METADATA.pricingReference.description)];
     })(),
     extraHead:
       '<link rel="alternate" type="text/markdown" href="https://www.mercuryrepower.ca/pricing-reference.md" />',
@@ -6963,7 +6963,7 @@ function catalogMarkdown(motorTwins, caseStudyTwins, locationTwins, blogTwins = 
     '',
     '## Pricing reference',
     '',
-    `- [Curated Mercury pricing reference (CAD)](${SITE_URL}/pricing-reference.md), listed motors only, generated from the same data source as the quote builder.`,
+    `- [${SEO_PAGE_METADATA.pricingReference.title}](${SITE_URL}/pricing-reference.md), listed motors only, generated from the same data source as the quote builder.`,
     `- [Mercury Platinum Product Protection rate card (CAD)](${SITE_URL}/mercury-product-protection.md), one- through five-year plan pricing by horsepower band. JSON: ${SITE_URL}/mercury-product-protection.json.`,
     '',
     '## MCP discovery',

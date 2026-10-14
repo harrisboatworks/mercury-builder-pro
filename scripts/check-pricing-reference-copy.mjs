@@ -59,7 +59,7 @@ function checkRef(file, label, actual, key) {
     errors.push(`${file}: could not locate ${label}`);
     return;
   }
-  const ok = new RegExp(`^(?:PAGE_SEO|SEO_PAGE_METADATA\\.pricingReference|seoPageMetadata\\.pricingReference)\\.${key}$`).test(actual.trim());
+  const ok = new RegExp(`^(?:PAGE_SEO|PRICING_REFERENCE_SEO|SEO_PAGE_METADATA\\.pricingReference|seoPageMetadata\\.pricingReference)\\.${key}$`).test(actual.trim());
   if (!ok) {
     errors.push(
       `${file} ${label} must read seoPageMetadata.pricingReference.${key}.\n  actual:   ${JSON.stringify(actual)}`
@@ -134,6 +134,93 @@ if (!existsSync(prerenderPath)) {
     checkRef('static-prerender.mjs', 'title', titleMatch?.[1], 'title');
     checkRef('static-prerender.mjs', 'description', descMatch?.[1], 'description');
     check('static-prerender.mjs', 'h1', h1Match?.[1], EXPECTED.h1);
+    const catalogTitleMatch = window.match(/\[\$\{(SEO_PAGE_METADATA\.pricingReference\.title)\}\]/)
+      || src.match(/\[\$\{(SEO_PAGE_METADATA\.pricingReference\.title)\}\]/);
+    checkRef('static-prerender.mjs', 'catalog title', catalogTitleMatch?.[1], 'title');
+  }
+}
+
+function unquoteYamlScalar(value) {
+  const trimmed = String(value ?? '').trim();
+  if ((trimmed.startsWith('"') && trimmed.endsWith('"')) || (trimmed.startsWith("'") && trimmed.endsWith("'"))) {
+    return JSON.parse(trimmed.startsWith('"') ? trimmed : `"${trimmed.slice(1, -1).replace(/"/g, '\\"')}"`);
+  }
+  return trimmed;
+}
+
+// --- 3) public/pricing-reference.md frontmatter ---
+const mdPath = join(ROOT, 'public/pricing-reference.md');
+if (!existsSync(mdPath)) {
+  errors.push(`Missing file: ${mdPath}`);
+} else {
+  const src = readFileSync(mdPath, 'utf8');
+  const fm = src.match(/^---\n([\s\S]*?)\n---/);
+  const titleMatch = fm?.[1]?.match(/^title:\s*(.+)$/m);
+  const descMatch = fm?.[1]?.match(/^description:\s*(.+)$/m);
+  check('pricing-reference.md', 'frontmatter title', titleMatch ? unquoteYamlScalar(titleMatch[1]) : null, EXPECTED.title);
+  check('pricing-reference.md', 'frontmatter description', descMatch ? unquoteYamlScalar(descMatch[1]) : null, EXPECTED.description);
+}
+
+// --- 4) public/pricing-reference.schema.json WebPage ---
+const schemaPath = join(ROOT, 'public/pricing-reference.schema.json');
+if (!existsSync(schemaPath)) {
+  errors.push(`Missing file: ${schemaPath}`);
+} else {
+  const schema = JSON.parse(readFileSync(schemaPath, 'utf8'));
+  const webpage = (schema['@graph'] || []).find((node) => node['@type'] === 'WebPage');
+  check('pricing-reference.schema.json', 'WebPage name', webpage?.name ?? null, EXPECTED.title);
+  check('pricing-reference.schema.json', 'WebPage description', webpage?.description ?? null, EXPECTED.description);
+}
+
+// --- 5) generate-markdown-twins.mjs must read seoPageMetadata ---
+const twinsPath = join(ROOT, 'scripts/generate-markdown-twins.mjs');
+if (!existsSync(twinsPath)) {
+  errors.push(`Missing file: ${twinsPath}`);
+} else {
+  const src = readFileSync(twinsPath, 'utf8');
+  if (!/const\s+PRICING_REFERENCE_SEO\s*=\s*SEO_PAGE_METADATA\.pricingReference/.test(src)) {
+    errors.push('generate-markdown-twins.mjs: PRICING_REFERENCE_SEO must be SEO_PAGE_METADATA.pricingReference');
+  }
+  const titleExtra = src.match(/title:\s*\$\{JSON\.stringify\((PRICING_REFERENCE_SEO\.title)\)\}/);
+  const descExtra = src.match(/description:\s*\$\{JSON\.stringify\((PRICING_REFERENCE_SEO\.description)\)\}/);
+  const schemaName = src.match(/name:\s*(PRICING_REFERENCE_SEO\.title)/);
+  const schemaDesc = src.match(/description:\s*(PRICING_REFERENCE_SEO\.description)/);
+  const catalogTitle = src.match(/\[\$\{(PRICING_REFERENCE_SEO\.title)\}\]/);
+  checkRef('generate-markdown-twins.mjs', 'markdown title', titleExtra?.[1], 'title');
+  checkRef('generate-markdown-twins.mjs', 'markdown description', descExtra?.[1], 'description');
+  checkRef('generate-markdown-twins.mjs', 'schema name', schemaName?.[1], 'title');
+  checkRef('generate-markdown-twins.mjs', 'schema description', schemaDesc?.[1], 'description');
+  checkRef('generate-markdown-twins.mjs', 'catalog title', catalogTitle?.[1], 'title');
+}
+
+// --- 6) agent indexes ---
+const catalogPath = join(ROOT, 'public/catalog.md');
+if (!existsSync(catalogPath)) {
+  errors.push(`Missing file: ${catalogPath}`);
+} else {
+  const src = readFileSync(catalogPath, 'utf8');
+  if (!src.includes(`](${'https://www.mercuryrepower.ca/pricing-reference.md'})`)) {
+    errors.push('catalog.md: missing pricing-reference.md link');
+  }
+  if (!src.includes(`[${EXPECTED.title}](https://www.mercuryrepower.ca/pricing-reference.md)`)) {
+    errors.push(`catalog.md: pricing-reference link text must be the document title\n  expected: ${JSON.stringify(EXPECTED.title)}`);
+  } else {
+    checked.push('catalog.md pricing-reference title');
+  }
+}
+
+const llmsPath = join(ROOT, 'public/llms.txt');
+if (!existsSync(llmsPath)) {
+  errors.push(`Missing file: ${llmsPath}`);
+} else {
+  const src = readFileSync(llmsPath, 'utf8');
+  if (!src.includes('https://www.mercuryrepower.ca/pricing-reference.md')) {
+    errors.push('llms.txt: missing pricing-reference.md URL');
+  }
+  if (!/Ontario Mercury dealer/.test(src) || !/Quote or buy from Harris Boat Works on Rice Lake/.test(src)) {
+    errors.push('llms.txt: pricing-reference entries must signal Ontario dealer pricing and quote/buy intent');
+  } else {
+    checked.push('llms.txt Ontario dealer + quote/buy');
   }
 }
 

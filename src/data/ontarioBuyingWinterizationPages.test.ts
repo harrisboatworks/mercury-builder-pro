@@ -95,8 +95,7 @@ describe('Ontario buying-price and winterization page holds', () => {
     // metadata. #117 is not a blanket ban on that: it covers only speculative
     // affordance/copy fixes from Clarity aggregates and instrumentation /
     // provider receipt. These asserts record current on-page buyer-answer
-    // behavior. They do not pin the Canada document title/description as a
-    // missing-approval gate and they do not promise rank gains.
+    // behavior. They do not promise rank gains.
     expect(pricingPage).toContain('Mercury Outboard Prices in Ontario (CAD): Live HBW Dealer Pricing');
     expect(pricingPage).toContain('fetch("/pricing-reference.md"');
     expect(pricingPage).toContain('Jump to current prices');
@@ -107,6 +106,22 @@ describe('Ontario buying-price and winterization page holds', () => {
     expect(pricingMarkdown).toMatch(/\$\d{1,3}(?:,\d{3})+/);
     expect(pricingPrerender).toContain("path: '/pricing-reference'");
     expect(pricingPrerender).toContain('Mercury Outboard Prices in Ontario (CAD): Live HBW Dealer Pricing');
+  });
+
+  it('aligns the pricing-reference document title and description with Ontario dealer and buyer intent', () => {
+    const seo = JSON.parse(read('src/data/seoPageMetadata.json')).pricingReference;
+    expect(seo.title).toBe('Mercury Outboard Prices in Ontario, Canada | Current CAD');
+    expect(seo.description).toBe(
+      'Live CAD prices for Mercury outboards at Harris Boat Works on Rice Lake, Ontario. Current dealer pricing. Build a quote to buy.',
+    );
+    expect(seo.title).not.toContain('Every HP');
+    expect(seo.description).not.toContain('2.5 to 600');
+    expect(pricingMarkdown).toContain(`title: ${JSON.stringify(seo.title)}`);
+    expect(pricingMarkdown).toContain(`description: ${JSON.stringify(seo.description)}`);
+    expect(pricingPage).toContain('PAGE_SEO.title');
+    expect(pricingPage).toContain('PAGE_SEO.description');
+    expect(pricingPrerender).toContain('SEO_PAGE_METADATA.pricingReference.title');
+    expect(pricingPrerender).toContain('SEO_PAGE_METADATA.pricingReference.description');
   });
 
   it('does not add a second H1 or move crawler HTML out of noscript', () => {

@@ -46,7 +46,7 @@ See any motor twin for an example body.
 
 ## Pricing reference
 
-- [Curated Mercury pricing reference (CAD)](https://www.mercuryrepower.ca/pricing-reference.md), listed motors only, generated from the same data source as the quote builder.
+- [Mercury Outboard Prices in Ontario, Canada | Current CAD](https://www.mercuryrepower.ca/pricing-reference.md), listed motors only, generated from the same data source as the quote builder.
 - [Mercury Platinum Product Protection rate card (CAD)](https://www.mercuryrepower.ca/mercury-product-protection.md), one- through five-year plan pricing by horsepower band. JSON: https://www.mercuryrepower.ca/mercury-product-protection.json.
 
 ## MCP discovery

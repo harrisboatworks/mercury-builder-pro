@@ -7,6 +7,8 @@ delivery_offered: false
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 location: Gores Landing, ON, Canada
+title: "Mercury Outboard Prices in Ontario, Canada | Current CAD"
+description: "Live CAD prices for Mercury outboards at Harris Boat Works on Rice Lake, Ontario. Current dealer pricing. Build a quote to buy."
 index_type: pricing_reference
 data_source: motor_models (same selection rules as /quote/motor-selection)
 motor_count: 101
