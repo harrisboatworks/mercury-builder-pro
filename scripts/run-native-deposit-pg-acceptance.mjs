@@ -119,9 +119,9 @@ try {
   const freshId='85858585-8585-4585-8585-858585858585', lateId='86868686-8686-4686-8686-868686868686';
   await lockedRace('native_unsubmitted_hosted',freshId,begin(freshId,'d'),`SELECT public.claim_hosted_deposit_rail('${freshId}');`,
     `SELECT public.claim_native_deposit_attempt('${freshId}',repeat('d',64),repeat('0',64),50000,'acct_synthetic',false);`);
-  sql(['-c',`SET ROLE service_role; SELECT public.record_native_deposit_buyer_approval(id,child_id,saved_quote_id,motor_id,amount_cents,document_sha256,policy_version,policy_code,terms_version,now()+interval '4 seconds') FROM public.native_deposit_intents WHERE id='${lateId}';`]);
+  sql(['-c',`SET ROLE service_role; SELECT public.record_native_deposit_buyer_approval(id,child_id,saved_quote_id,motor_id,amount_cents,document_sha256,policy_version,policy_code,terms_version,now()+interval '4 seconds') FROM public.native_deposit_intents WHERE id='${lateId}'; SELECT public.claim_native_deposit_attempt('${lateId}',repeat('f',64),repeat('0',64),50000,'acct_synthetic',false);`]);
   await lockedRace('native_expired_hosted',lateId,`SELECT public.claim_hosted_deposit_rail('${lateId}');`,begin(lateId,'f'),
-    `SELECT public.claim_native_deposit_attempt('${lateId}',repeat('f',64),repeat('0',64),50000,'acct_synthetic',false);`,{expiryIntentId:lateId});
+    '',{expiryIntentId:lateId});
   sql(['-c', `SET ROLE service_role;
     DO $$ BEGIN
       IF NOT public.claim_hosted_deposit_rail('83838383-8383-4383-8383-838383838383') THEN RAISE EXCEPTION 'no-approval hosted claim refused'; END IF;
