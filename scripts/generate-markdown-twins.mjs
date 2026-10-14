@@ -30,6 +30,10 @@ const PUBLIC_QUOTE_API = 'https://www.mercuryrepower.ca/api/agents/quote';
 const PUBLIC_MOTORS_API = 'https://www.mercuryrepower.ca/api/agents/motors';
 const AGENT_MCP_SERVER = 'https://www.mercuryrepower.ca/api/agents/mcp';
 const TWIN_DATE = new Date().toISOString().split('T')[0];
+const SEO_PAGE_METADATA = JSON.parse(
+  readFileSync(join(ROOT, 'src/data/seoPageMetadata.json'), 'utf8'),
+);
+const PRICING_REFERENCE_SEO = SEO_PAGE_METADATA.pricingReference;
 const BUILD_FETCH_TIMEOUT_MS = Number(process.env.BUILD_FETCH_TIMEOUT_MS || 8000);
 // Localized corpus loading resolves Vite asset imports across nine languages.
 // A cold CI filesystem can legitimately take longer than 30 seconds.
@@ -1093,7 +1097,7 @@ function catalogMarkdown(motorTwins, caseStudyTwins, locationTwins, blogTwins = 
     '',
     '## Pricing reference',
     '',
-    `- [Curated Mercury pricing reference (CAD)](${SITE_URL}/pricing-reference.md), listed motors only, generated from the same data source as the quote builder.`,
+    `- [${PRICING_REFERENCE_SEO.title}](${SITE_URL}/pricing-reference.md), listed motors only, generated from the same data source as the quote builder.`,
     `- [Mercury Platinum Product Protection rate card (CAD)](${SITE_URL}/mercury-product-protection.md), one- through five-year plan pricing by horsepower band. JSON: ${SITE_URL}/mercury-product-protection.json.`,
     '',
     '## MCP discovery',
@@ -1589,6 +1593,8 @@ function pricingReferenceMarkdown(motorRecords) {
   }
 
   const front = mdFrontmatter('/pricing-reference.md', [
+    `title: ${JSON.stringify(PRICING_REFERENCE_SEO.title)}`,
+    `description: ${JSON.stringify(PRICING_REFERENCE_SEO.description)}`,
     'index_type: pricing_reference',
     'data_source: motor_models (same selection rules as /quote/motor-selection)',
     `motor_count: ${rows.length}`,
@@ -1737,8 +1743,8 @@ function pricingReferenceSchema(motorRecords) {
         '@type': 'WebPage',
         '@id': 'https://www.mercuryrepower.ca/pricing-reference#webpage',
         url: 'https://www.mercuryrepower.ca/pricing-reference',
-        name: 'Mercury Outboard Prices in Ontario (CAD, 2027)',
-        description: 'Live Mercury outboard prices in CAD, listed FourStroke and Pro XS models, 2.5-300 HP. MSRP vs dealer price, Gores Landing pickup only.',
+        name: PRICING_REFERENCE_SEO.title,
+        description: PRICING_REFERENCE_SEO.description,
         isPartOf: { '@id': 'https://www.mercuryrepower.ca/#website' },
         about: { '@id': 'https://www.mercuryrepower.ca/#organization' },
         inLanguage: 'en-CA',
