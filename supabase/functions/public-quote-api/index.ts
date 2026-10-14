@@ -10,6 +10,8 @@
 // All responses include `priceValidUntil` (24h) and a disclaimer.
 
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+import { buildPublicQuotePropeller } from "../_shared/public-quote-propeller.ts";
+import { buildTradeInHandoffFields } from "../_shared/trade-in-handoff.ts";
 import { buildAgentQuoteLink } from "../_shared/agent-quote-link.ts";
 import { z } from "npm:zod@3.22.4";
 import { checkRateLimit, rateLimitedResponse } from "../_shared/rate-limit.ts";
@@ -17,7 +19,6 @@ import { sanitizeAgentNote } from "../_shared/sanitize.ts";
 import {
   fetchCanonicalHbwValuation,
   HbwValuationError,
-  normalizeHbwStroke,
 } from "../_shared/hbw-valuation.ts";
 import {
   fetchActiveFinancingAndPromotions,
@@ -220,22 +221,6 @@ function round2(n: number) {
   return Math.round(n * 100) / 100;
 }
 
-function getPropellerAllowance(hp: number) {
-  if (hp < 25) return null;
-  if (hp <= 115) {
-    return {
-      name: "Propeller Allowance (Aluminum)",
-      price: 350,
-      description: "Standard aluminum propeller — final selection after water test",
-    };
-  }
-  return {
-    name: "Propeller Allowance (Stainless Steel)",
-    price: 1200,
-    description: "Stainless steel propeller — final selection after water test",
-  };
-}
-
 function isTillerMotor(modelDisplay: string): boolean {
   if (!modelDisplay) return false;
   const u = modelDisplay.toUpperCase().trim();
@@ -246,38 +231,6 @@ function isTillerMotor(modelDisplay: string): boolean {
   return /\b(\d+\.?\d*)?\s*[ME]X{0,2}L?H(?:PT)?[A-Z]*\b/i.test(u);
 }
 
-
-const DEEP_LINK_TRADE_CONDITIONS = new Set(["excellent", "good", "fair", "poor"]);
-
-function deepLinkTradeCondition(trade: unknown): string | undefined {
-  if (!trade || typeof trade !== "object") return undefined;
-  const raw = (trade as Record<string, unknown>).condition;
-  if (raw == null || raw === "") return undefined;
-  const value = String(raw).trim().toLowerCase();
-  return DEEP_LINK_TRADE_CONDITIONS.has(value) ? value : undefined;
-}
-
-function deepLinkTradeEngineType(trade: unknown): string | undefined {
-  if (!trade || typeof trade !== "object") return undefined;
-  const record = trade as Record<string, unknown>;
-  const raw = record.engine_type ?? record.engineType;
-  if (raw == null || raw === "") return undefined;
-  try {
-    return normalizeHbwStroke(raw);
-  } catch {
-    return undefined;
-  }
-}
-
-function deepLinkTradeEngineHours(trade: unknown): number | undefined {
-  if (!trade || typeof trade !== "object") return undefined;
-  const record = trade as Record<string, unknown>;
-  const raw = record.engine_hours ?? record.engineHours ?? record.hours;
-  if (raw == null || raw === "") return undefined;
-  const hours = typeof raw === "number" || typeof raw === "string" ? Number(raw) : NaN;
-  if (!Number.isFinite(hours) || hours < 0 || hours > 100000) return undefined;
-  return hours;
-}
 
 // ── GET support ─────────────────────────────────────────
 // GET is a read-only front door for assistants that can only issue HTTP GET
@@ -310,12 +263,13 @@ function safeText(value: unknown, maxLen = 80): string {
     .slice(0, maxLen);
 }
 
-function queryString(params: URLSearchParams, key: string, maxLen = 200): string | undefined {
+function queryString(params: URLSearchParams, key: string, maxLen = 200, exact = false): string | undefined {
   const raw = params.get(key);
   if (raw == null) return undefined;
   // Assistants often copy a URL out of a sentence and keep the sentence's closing
   // punctuation ("...engine_type=4-stroke."). Strip it so the value still validates.
-  const trimmed = raw.trim().replace(/[.,;:!?)\]]+$/, "").trim();
+  const trimmed = exact ? raw.trim() : raw.trim().replace(/[.,;:!?)\]]+$/, "").trim();
+  if (exact && trimmed.length > maxLen) throw new McpInvalidParamsError(`${key} exceeds the ${maxLen}-character limit.`);
   if (!trimmed) return undefined;
   return trimmed.slice(0, maxLen);
 }
@@ -356,7 +310,7 @@ function bodyFromQuery(params: URLSearchParams): Record<string, unknown> {
   }
 
   if (action === "estimate_trade_in") {
-    body.brand = queryString(params, "brand", 60);
+    body.brand = queryString(params, "brand", 64, true);
     body.year = queryNumber(params, "year");
     body.horsepower = queryNumber(params, "horsepower");
     body.condition = queryString(params, "condition", 20);
@@ -364,7 +318,7 @@ function bodyFromQuery(params: URLSearchParams): Record<string, unknown> {
     if (engineType !== undefined) body.engine_type = engineType;
     const engineHours = queryNumber(params, "engine_hours");
     if (engineHours !== undefined) body.engine_hours = engineHours;
-    const model = queryString(params, "model", 100);
+    const model = queryString(params, "model", 120, true);
     if (model !== undefined) body.model = model;
     return body;
   }
@@ -391,15 +345,16 @@ function bodyFromQuery(params: URLSearchParams): Record<string, unknown> {
       body.boat_info = { make: boatMake ?? null, model: boatModel ?? null };
     }
 
-    const tradeBrand = queryString(params, "trade_brand", 60);
+    const tradeBrand = queryString(params, "trade_brand", 64, true);
     const tradeYear = queryNumber(params, "trade_year");
     const tradeHp = queryNumber(params, "trade_hp");
     const tradeCondition = queryString(params, "trade_condition", 20);
     const tradeEngineType = queryString(params, "trade_engine_type", 20);
     const tradeEngineHours = queryNumber(params, "trade_engine_hours");
+    const tradeModel = queryString(params, "trade_model", 120, true);
     if (
       tradeBrand !== undefined || tradeYear !== undefined || tradeHp !== undefined ||
-      tradeCondition !== undefined || tradeEngineType !== undefined || tradeEngineHours !== undefined
+      tradeCondition !== undefined || tradeEngineType !== undefined || tradeEngineHours !== undefined || tradeModel !== undefined
     ) {
       const tradeIn: Record<string, unknown> = {};
       if (tradeBrand !== undefined) tradeIn.brand = tradeBrand;
@@ -408,6 +363,7 @@ function bodyFromQuery(params: URLSearchParams): Record<string, unknown> {
       if (tradeCondition !== undefined) tradeIn.condition = tradeCondition;
       if (tradeEngineType !== undefined) tradeIn.engine_type = tradeEngineType;
       if (tradeEngineHours !== undefined) tradeIn.engine_hours = tradeEngineHours;
+      if (tradeModel !== undefined) tradeIn.model = tradeModel;
       body.trade_in = tradeIn;
     }
     return body;
@@ -826,9 +782,13 @@ async function buildQuote(supabase: any, body: any) {
     ? "loose"
     : quoteFlags.purchase_path === "installed" ? "installed" : null;
   const purchasePathNote = isTiller && purchasePathRequested !== "loose"
-    ? "Tiller-handle motors are quoted as a loose motor for pickup at Gores Landing, so no remote-rigging installation or propeller allowance lines apply. If the customer wants Harris Boat Works to mount it, tiller mounting options are chosen in the online quote builder (the Continue this quote link) or by calling (905) 342-2153."
+    ? "Tiller-handle motors are quoted as a loose motor for pickup at Gores Landing, so no remote-rigging installation line applies. Propellers follow the same rules as the online quote: included below 25 HP; otherwise an allowance unless an existing propeller is selected or a same-HP Mercury trade defaults to reuse, subject to fit checks. If the customer wants Harris Boat Works to mount it, tiller mounting options are chosen in the online quote builder (the Continue this quote link) or by calling (905) 342-2153."
     : null;
-  const customerHasProp = quoteFlags.customer_has_propeller === true;
+  // Resolve trade facts before choosing the propeller default, including HP inferred from model.
+  const tradeResolved = isPresentTradeIn(body?.trade_in) ? resolveTradeInInput(body.trade_in) : null;
+  const propeller = buildPublicQuotePropeller({
+    hp: motorHp, customerHasPropeller: quoteFlags.customer_has_propeller, tradeIn: tradeResolved,
+  });
 
   // Build line items
   const items: { name: string; price: number; description?: string }[] = [
@@ -847,18 +807,7 @@ async function buildQuote(supabase: any, body: any) {
     });
   }
 
-  const propAllowance = getPropellerAllowance(motorHp);
-  if (propAllowance) {
-    if (customerHasProp) {
-      items.push({
-        name: "Use of Customer Propeller",
-        price: 0,
-        description: "If a different prop is required, additional cost applies",
-      });
-    } else {
-      items.push(propAllowance);
-    }
-  }
+  items.push(propeller.item);
 
   const accessoryCost = items.slice(1).reduce((s, i) => s + i.price, 0);
   const subtotal = items.reduce((s, i) => s + i.price, 0);
@@ -899,9 +848,7 @@ async function buildQuote(supabase: any, body: any) {
   let tradeIn: any = null;
   let tradeEstimateValue: number | null = null;
   let tradeValuation: Awaited<ReturnType<typeof fetchCanonicalHbwValuation>> | null = null;
-  let tradeResolved: ReturnType<typeof resolveTradeInInput> | null = null;
-  if (isPresentTradeIn(body?.trade_in)) {
-    tradeResolved = resolveTradeInInput(body.trade_in);
+  if (tradeResolved) {
     tradeValuation = await fetchCanonicalHbwValuation({
       brand: tradeResolved.brand,
       year: tradeResolved.year,
@@ -922,12 +869,17 @@ async function buildQuote(supabase: any, body: any) {
     hstRate: HST_RATE,
   });
   const tradeInCredit = pricingCalc.tradeInCredit;
+  const tradeHandoffFields = buildTradeInHandoffFields(tradeResolved, tradeValuation);
   if (tradeValuation && tradeResolved) {
     tradeIn = {
       input: {
-        ...body.trade_in,
+        brand: tradeResolved.brand,
+        year: tradeResolved.year,
         horsepower: tradeResolved.horsepower,
-        engine_type: tradeResolved.engineType ?? null,
+        condition: tradeResolved.condition,
+        model: tradeResolved.model ?? null,
+        engine_type: tradeHandoffFields.trade_engine_type ?? null,
+        engine_hours: tradeResolved.engineHours ?? null,
       },
       estimate: {
         low: tradeValuation.rangeLow,
@@ -937,6 +889,9 @@ async function buildQuote(supabase: any, body: any) {
         hst_savings: tradeValuation.hstSavings,
         confidence: tradeValuation.confidence,
         factors: tradeValuation.factors,
+        engine_version: tradeValuation.engineVersion ?? null,
+        reference_version: tradeValuation.referenceVersion ?? null,
+        effective_inputs: tradeValuation.effectiveInputs ?? null,
       },
       credit_applied: tradeInCredit,
       source: "HBW Motor Valuation API (canonical)",
@@ -963,15 +918,11 @@ async function buildQuote(supabase: any, body: any) {
   const slug = motorSlug(motor);
   const deepLink = buildAgentQuoteLink(motor.id, {
     purchase_path: purchasePathRequested ? purchasePath : undefined,
-    customer_has_propeller: quoteFlags.customer_has_propeller,
+    // Carry the quoted decision, so an older unfinished draft cannot override it.
+    customer_has_propeller: propeller.handoffCustomerHasPropeller,
     boat_make: body?.boat_info?.make,
     boat_model: body?.boat_info?.model,
-    trade_brand: body?.trade_in?.brand,
-    trade_year: body?.trade_in?.year,
-    trade_hp: body?.trade_in?.horsepower,
-    trade_condition: deepLinkTradeCondition(body?.trade_in),
-    trade_engine_type: deepLinkTradeEngineType(body?.trade_in),
-    trade_engine_hours: deepLinkTradeEngineHours(body?.trade_in),
+    ...tradeHandoffFields,
   });
 
   // Optional lead capture (only if contact provided)
@@ -1013,7 +964,8 @@ async function buildQuote(supabase: any, body: any) {
         quote_data: {
           items,
           financing,
-          trade_in: tradeIn,
+          // Keep an explicitly supplied serial in the private consented lead only.
+          trade_in: tradeIn && tradeResolved?.serialNumber ? { ...tradeIn, input: { ...tradeIn.input, serial_number: tradeResolved.serialNumber } } : tradeIn,
           boat_info: body?.boat_info || null,
           factory_rebate: pricingCalc.factoryRebate,
           factory_rebate_promotion: pricingCalc.factoryRebate > 0 ? (rebate?.promotionName ?? null) : null,
@@ -1043,6 +995,7 @@ async function buildQuote(supabase: any, body: any) {
     purchase_path: purchasePath,
     purchase_path_requested: purchasePathRequested,
     purchase_path_note: purchasePathNote,
+    propeller_decision: propeller.decision,
     line_items: items,
     pricing: {
       subtotal: round2(subtotal),
@@ -1100,7 +1053,7 @@ function docs() {
       build_quote_params: [
         "motor_id OR (horsepower + family)",
         "purchase_path (installed | loose)",
-        "customer_has_propeller (true | false)",
+        "customer_has_propeller (true | false): true reuses an existing propeller; false includes the standard allowance. Omit to use the site default: reuse for a same-HP Mercury trade, otherwise include the allowance. Fit and performance must be checked. Below 25 HP the standard propeller is included.",
         "financing_offer_id",
         "boat_make",
         "boat_model",
@@ -1110,11 +1063,12 @@ function docs() {
         "trade_condition",
         "trade_engine_type",
         "trade_engine_hours",
+        "trade_model (optional model description, max 120 characters)",
       ],
       motor_specs:
         "list_motors rows include shaftLength (S | L | XL | XXL), shaftInches (15 | 20 | 25 | 30), controlType (Tiller | Remote), startType, powerTrim, commandThrust and specSource (database | model_code). Values decoded from the Mercury model code must be confirmed against the customer's transom before ordering; null means the model code does not state it.",
       tiller_motors:
-        "Tiller-handle motors are always quoted as purchase_path loose (no remote-rigging installation or propeller allowance lines), even when installed was requested. The response carries purchase_path_requested and purchase_path_note explaining this.",
+        "Tiller-handle motors are always quoted as purchase_path loose (no remote-rigging installation line), even when installed was requested. The response carries purchase_path_requested and purchase_path_note explaining this.",
       lead_capture:
         "Lead capture is POST-only. On GET, hand the customer the 'Continue this quote' deep link in the response, or (905) 342-2153.",
     },

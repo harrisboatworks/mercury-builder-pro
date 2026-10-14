@@ -52,3 +52,10 @@ describe('resolveTradeInInput', () => {
     expect(resolved.overrideValue).toBe(9999);
   });
 });
+
+
+describe('optional serial null compatibility', () => {
+  it.each([{ serial_number: null }, { serialNumber: null }, { serial_number: null, serialNumber: null }])('treats unset aliases as absent: %j', serial => {
+    expect(resolveTradeInInput({ brand: 'Mercury', year: 2010, horsepower: 90, ...serial }).serialNumber).toBeUndefined();
+  });
+});

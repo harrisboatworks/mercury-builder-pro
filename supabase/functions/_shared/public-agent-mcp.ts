@@ -164,7 +164,7 @@ function parseTradeIn(value: unknown, field: string) {
   if (engineType && !ENGINE_TYPES.has(engineType)) {
     throw new McpInvalidParamsError(`${field}.engine_type must be 4-stroke, 2-stroke, proxs, optimax, or etec.`);
   }
-  const model = optionalBoundedString(value.model, MCP_MAX_STRING, `${field}.model`);
+  const model = optionalBoundedString(value.model, 120, `${field}.model`);
   const horsepower = value.horsepower == null
     ? inferValidatedTradeInHorsepower(model)
     : finiteNumber(value.horsepower, `${field}.horsepower`);
@@ -175,11 +175,11 @@ function parseTradeIn(value: unknown, field: string) {
   }
   const year = finiteNumber(value.year, `${field}.year`);
   if (!Number.isInteger(year) || year < 1950 || year > new Date().getFullYear()) throw new McpInvalidParamsError(`${field}.year must be a supported whole year.`);
-  if (horsepower <= 0 || horsepower > 1000) throw new McpInvalidParamsError(`${field}.horsepower must be greater than 0 and no more than 1000.`);
+  if (horsepower < 1 || horsepower > 1000) throw new McpInvalidParamsError(`${field}.horsepower must be from 1 to 1000.`);
   const hours = optionalFiniteNumber(value.engine_hours, `${field}.engine_hours`);
   if (hours !== undefined && (hours < 0 || hours > 100000)) throw new McpInvalidParamsError(`${field}.engine_hours must be from 0 to 100000.`);
   return {
-    brand: boundedString(value.brand, MCP_MAX_STRING, `${field}.brand`),
+    brand: boundedString(value.brand, 64, `${field}.brand`),
     year,
     horsepower,
     condition,

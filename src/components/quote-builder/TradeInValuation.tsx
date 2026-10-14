@@ -205,6 +205,9 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
     'Mercury', 'Yamaha', 'Honda', 'Suzuki', 'Tohatsu', 'Evinrude', 'Johnson', 'OMC', 'Mariner', 'Force', 'Other'
   ];
 
+  // Preserve a validated agent-supplied brand rather than silently valuing it as Other.
+  if (tradeInInfo.brand && !brandOptions.includes(tradeInInfo.brand)) brandOptions.push(tradeInInfo.brand);
+
   const conditionOptions = [
     { value: 'excellent', label: 'Excellent', description: 'Like new, 0–100 hours, no issues' },
     { value: 'good', label: 'Good', description: '100–500 hours, well maintained' },

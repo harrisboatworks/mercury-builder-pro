@@ -84,7 +84,8 @@ describe('parseAgentQuoteHandoff', () => {
     expect(parseTradeHpParam('75abc')).toBeUndefined();
     expect(parseTradeHpParam('-10')).toBeUndefined();
     expect(parseTradeHpParam('1e2')).toBeUndefined();
-    expect(parseTradeHpParam('900')).toBeUndefined();
+    expect(parseTradeHpParam('1001')).toBeUndefined();
+    expect(parseTradeHpParam('900')).toBe(900);
 
     expect(parseAgentQuoteHandoff(new URLSearchParams({
       trade_year: '2010.5',
@@ -302,12 +303,12 @@ describe('stripConsumedAgentQuoteHandoffParams', () => {
 
     expect(handoff.boatMake).toBe('Lund');
     expect(handoff.tradeHp).toBe(75);
-    expect(handoff.tradeBrand).toBeUndefined();
+    expect(handoff.tradeBrand).toBe('NotABrand');
     expect(handoff.tradeYear).toBeUndefined();
     expect(stripped.get('motor')).toBe('motor-123');
     expect(stripped.get('boat_make')).toBeNull();
     expect(stripped.get('boat_model')).toBe('');
-    expect(stripped.get('trade_brand')).toBe('NotABrand');
+    expect(stripped.get('trade_brand')).toBeNull();
     expect(stripped.get('trade_year')).toBe('2010.5');
     expect(stripped.get('trade_hp')).toBeNull();
     expect(stripped.get('trade_condition')).toBe('mint');
