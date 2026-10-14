@@ -90,8 +90,9 @@ export function MercuryOutboardsOntarioSEO() {
           { "@type": "Place", "name": "Lake Scugog" },
           { "@type": "Place", "name": "Rice Lake" }
         ],
-        "offers": MERCURY_OUTBOARDS_ONTARIO_OFFERS
+        "serviceType": "Mercury outboard sales and repower"
       },
+      { "@id": BUSINESS_ENTITY_ID, "makesOffer": MERCURY_OUTBOARDS_ONTARIO_OFFERS },
       {
         "@type": "FAQPage",
         "@id": `${SITE_URL}/mercury-outboards-ontario#faqpage`,

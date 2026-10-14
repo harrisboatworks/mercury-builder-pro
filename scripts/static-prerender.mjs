@@ -1426,11 +1426,12 @@ function repowerSchema() {
         "serviceType": "Boat Motor Replacement",
         "provider": { "@id": BUSINESS_ENTITY_ID },
         "areaServed": ["Rice Lake", "Kawarthas", "Peterborough", "GTA", "Toronto", "Ontario"],
-        "description": "Professional Mercury outboard motor repower service. 70% of the benefit of a new boat for 30% of the cost.",
+        "description": "Professional Mercury outboard motor repower service. 70% of the benefit of a new boat for 30% of the cost. Pickup only at Gores Landing, no shipping. Valid government-issued photo ID required.",
         "offers": {
           "@type": "Offer",
           "priceRange": "$8,000 - $18,000",
-          "priceCurrency": "CAD"
+          "priceCurrency": "CAD",
+          "availableDeliveryMethod": "http://purl.org/goodrelations/v1#DeliveryModePickUp"
         }
       },
       {
@@ -2615,8 +2616,9 @@ function mercuryOutboardsOntarioSchema() {
           { "@type": "Place", "name": "Lake Scugog" },
           { "@type": "Place", "name": "Rice Lake" }
         ],
-        "offers": MERCURY_OUTBOARDS_ONTARIO_OFFERS
+        "serviceType": "Mercury outboard sales and repower"
       },
+      { "@id": BUSINESS_ENTITY_ID, "makesOffer": MERCURY_OUTBOARDS_ONTARIO_OFFERS },
       {
         "@type": "FAQPage",
         "@id": `${SITE_URL}/mercury-outboards-ontario#faqpage`,
@@ -4111,19 +4113,7 @@ const HUB_DEFS = [
       "@id": `${SITE_URL}/repower#service`,
       "name": "Mercury Outboard Repower Service",
       "serviceType": "Boat Motor Replacement",
-      "provider": {
-        "@type": "LocalBusiness",
-        "name": "Harris Boat Works",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "5369 Harris Boat Works Rd",
-          "addressLocality": "Gores Landing",
-          "addressRegion": "ON",
-          "postalCode": "K0K 2E0",
-          "addressCountry": "CA",
-        },
-        "telephone": "(905) 342-2153",
-      },
+      "provider": { "@id": BUSINESS_ENTITY_ID },
       "areaServed": ["Rice Lake", "Kawarthas", "Peterborough", "Northumberland County", "GTA", "Toronto", "Ontario"],
       "description": "Full Mercury outboard repower service: removal, rigging, controls, prop, fuel connection, and water test on Rice Lake. Pickup only at Gores Landing, Ontario.",
       "offers": {

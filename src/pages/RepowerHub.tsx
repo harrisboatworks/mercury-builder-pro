@@ -1,3 +1,4 @@
+import { BUSINESS_ENTITY_ID } from '@/lib/business-identity.js';
 import { Link } from 'react-router-dom';
 import { Award, Users, MapPin, Wrench } from 'lucide-react';
 import { HubPage } from '@/components/hub/HubPage';
@@ -199,19 +200,7 @@ export default function RepowerHub() {
           '@id': `${SITE}/repower#service`,
           name: 'Mercury Outboard Repower Service',
           serviceType: 'Boat Motor Replacement',
-          provider: {
-            '@type': 'LocalBusiness',
-            name: 'Harris Boat Works',
-            address: {
-              '@type': 'PostalAddress',
-              streetAddress: '5369 Harris Boat Works Rd',
-              addressLocality: 'Gores Landing',
-              addressRegion: 'ON',
-              postalCode: 'K0K 2E0',
-              addressCountry: 'CA',
-            },
-            telephone: '(905) 342-2153',
-          },
+          provider: { '@id': BUSINESS_ENTITY_ID },
           areaServed: ['Rice Lake', 'Kawarthas', 'Peterborough', 'Northumberland County', 'GTA', 'Toronto', 'Ontario'],
           description:
             'Full Mercury outboard repower service: removal, rigging, controls, prop, fuel connection, and water test on Rice Lake. Pickup only at Gores Landing, Ontario.',

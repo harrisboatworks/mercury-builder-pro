@@ -23,25 +23,26 @@ export function presentMcpMotor(source: PublicMotorRow) {
 // before the caller limit; the DB boolean alone is not the public stock rule.
 export async function searchMcpMotors(supabase: any, args: any) {
   let q = supabase.from("motor_models").select(MOTOR_FIELDS)
-    .or(PUBLIC_CATALOG_AVAILABILITY_OR).order("horsepower", { ascending: true }).limit(500);
+    .or(PUBLIC_CATALOG_AVAILABILITY_OR).order("horsepower", { ascending: true }).order("id", { ascending: true }).limit(501);
   if (args.horsepower) q = q.eq("horsepower", args.horsepower);
   if (args.min_hp) q = q.gte("horsepower", args.min_hp);
   if (args.max_hp) q = q.lte("horsepower", args.max_hp);
   const { data, error } = await q;
   if (error) throw new Error(error.message);
   const wantedFamily = args.family ? familyKey(args.family) : null;
-  return (data || []).map(presentMcpMotor)
+  const motors = (data || []).slice(0, 500).map(presentMcpMotor)
     .filter((motor: ReturnType<typeof presentMcpMotor>): motor is NonNullable<typeof motor> => Boolean(motor))
     .filter((motor: NonNullable<ReturnType<typeof presentMcpMotor>>) => !args.in_stock_only || motor.inStock)
     .filter((motor: NonNullable<ReturnType<typeof presentMcpMotor>>) => !wantedFamily || familyKey(motor.family) === wantedFamily)
     .slice(0, Math.min(args.limit ?? 25, 100));
+  return { motors, candidateLimit: 500, candidatePageTruncated: (data || []).length > 500 };
 }
 
 export async function getMcpMotor(supabase: any, args: any) {
   if (!args.id && !args.slug) throw new Error("id or slug required");
   let q = supabase.from("motor_models").select(`${MOTOR_FIELDS}, description, features`).or(PUBLIC_CATALOG_AVAILABILITY_OR);
   if (args.id) q = q.eq("id", args.id).limit(1);
-  else q = q.limit(500);
+  else q = q.order("horsepower", { ascending: true }).order("id", { ascending: true });
   const { data, error } = await q;
   if (error) throw new Error(error.message);
   for (const row of data || []) {

@@ -1,3 +1,4 @@
+import { BUSINESS_ENTITY_ID } from '../lib/business-identity.js';
 // Shared source of truth for the makesOffer array on /mercury-outboards-ontario.
 // Imported by BOTH:
 //   - src/components/seo/MercuryOutboardsOntarioSEO.tsx (client React SEO head)
@@ -5,7 +6,7 @@
 // Edit here only.
 //
 // Each Product has nested `offers` so Google's Product snippet validator
-// passes in addition to the LocalBusiness.makesOffer graph.
+// passes in addition to the canonical shop makesOffer graph.
 
 export const MERCURY_OUTBOARDS_ONTARIO_OFFERS = [
   {
@@ -17,7 +18,7 @@ export const MERCURY_OUTBOARDS_ONTARIO_OFFERS = [
     "itemCondition": "https://schema.org/NewCondition",
     "hasMerchantReturnPolicy": { "@type": "MerchantReturnPolicy", "applicableCountry": "CA", "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted" },
     "url": "https://www.mercuryrepower.ca/quote/motor-selection",
-    "seller": { "@id": "https://www.mercuryrepower.ca/mercury-outboards-ontario#localbusiness" },
+    "seller": { "@id": BUSINESS_ENTITY_ID },
     "itemOffered": {
       "@type": "Product",
       "name": "Mercury Portable FourStroke 2.5 - 20 HP",
@@ -34,7 +35,7 @@ export const MERCURY_OUTBOARDS_ONTARIO_OFFERS = [
         "itemCondition": "https://schema.org/NewCondition",
         "hasMerchantReturnPolicy": { "@type": "MerchantReturnPolicy", "applicableCountry": "CA", "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted" },
         "url": "https://www.mercuryrepower.ca/quote/motor-selection",
-        "seller": { "@id": "https://www.mercuryrepower.ca/mercury-outboards-ontario#localbusiness" }
+        "seller": { "@id": BUSINESS_ENTITY_ID }
       }
     }
   },
@@ -47,7 +48,7 @@ export const MERCURY_OUTBOARDS_ONTARIO_OFFERS = [
     "itemCondition": "https://schema.org/NewCondition",
     "hasMerchantReturnPolicy": { "@type": "MerchantReturnPolicy", "applicableCountry": "CA", "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted" },
     "url": "https://www.mercuryrepower.ca/quote/motor-selection",
-    "seller": { "@id": "https://www.mercuryrepower.ca/mercury-outboards-ontario#localbusiness" },
+    "seller": { "@id": BUSINESS_ENTITY_ID },
     "itemOffered": {
       "@type": "Product",
       "name": "Mercury Mid-Range FourStroke 25 - 115 HP",
@@ -64,7 +65,7 @@ export const MERCURY_OUTBOARDS_ONTARIO_OFFERS = [
         "itemCondition": "https://schema.org/NewCondition",
         "hasMerchantReturnPolicy": { "@type": "MerchantReturnPolicy", "applicableCountry": "CA", "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted" },
         "url": "https://www.mercuryrepower.ca/quote/motor-selection",
-        "seller": { "@id": "https://www.mercuryrepower.ca/mercury-outboards-ontario#localbusiness" }
+        "seller": { "@id": BUSINESS_ENTITY_ID }
       }
     }
   },
@@ -77,7 +78,7 @@ export const MERCURY_OUTBOARDS_ONTARIO_OFFERS = [
     "itemCondition": "https://schema.org/NewCondition",
     "hasMerchantReturnPolicy": { "@type": "MerchantReturnPolicy", "applicableCountry": "CA", "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted" },
     "url": "https://www.mercuryrepower.ca/mercury-pro-xs",
-    "seller": { "@id": "https://www.mercuryrepower.ca/mercury-outboards-ontario#localbusiness" },
+    "seller": { "@id": BUSINESS_ENTITY_ID },
     "itemOffered": {
       "@type": "Product",
       "name": "Mercury Pro XS 115 - 300 HP",
@@ -94,7 +95,7 @@ export const MERCURY_OUTBOARDS_ONTARIO_OFFERS = [
         "itemCondition": "https://schema.org/NewCondition",
         "hasMerchantReturnPolicy": { "@type": "MerchantReturnPolicy", "applicableCountry": "CA", "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted" },
         "url": "https://www.mercuryrepower.ca/mercury-pro-xs",
-        "seller": { "@id": "https://www.mercuryrepower.ca/mercury-outboards-ontario#localbusiness" }
+        "seller": { "@id": BUSINESS_ENTITY_ID }
       }
     }
   },
@@ -107,7 +108,7 @@ export const MERCURY_OUTBOARDS_ONTARIO_OFFERS = [
     "itemCondition": "https://schema.org/NewCondition",
     "hasMerchantReturnPolicy": { "@type": "MerchantReturnPolicy", "applicableCountry": "CA", "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted" },
     "url": "https://www.mercuryrepower.ca/quote/motor-selection",
-    "seller": { "@id": "https://www.mercuryrepower.ca/mercury-outboards-ontario#localbusiness" },
+    "seller": { "@id": BUSINESS_ENTITY_ID },
     "itemOffered": {
       "@type": "Product",
       "name": "Mercury Command Thrust 40 - 150 HP",
@@ -124,7 +125,7 @@ export const MERCURY_OUTBOARDS_ONTARIO_OFFERS = [
         "itemCondition": "https://schema.org/NewCondition",
         "hasMerchantReturnPolicy": { "@type": "MerchantReturnPolicy", "applicableCountry": "CA", "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted" },
         "url": "https://www.mercuryrepower.ca/quote/motor-selection",
-        "seller": { "@id": "https://www.mercuryrepower.ca/mercury-outboards-ontario#localbusiness" }
+        "seller": { "@id": BUSINESS_ENTITY_ID }
       }
     }
   },
@@ -137,7 +138,7 @@ export const MERCURY_OUTBOARDS_ONTARIO_OFFERS = [
     "itemCondition": "https://schema.org/NewCondition",
     "hasMerchantReturnPolicy": { "@type": "MerchantReturnPolicy", "applicableCountry": "CA", "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted" },
     "url": "https://www.mercuryrepower.ca/quote/motor-selection",
-    "seller": { "@id": "https://www.mercuryrepower.ca/mercury-outboards-ontario#localbusiness" },
+    "seller": { "@id": BUSINESS_ENTITY_ID },
     "itemOffered": {
       "@type": "Product",
       "name": "Mercury ProKicker 9.9 / 15 HP",
@@ -154,7 +155,7 @@ export const MERCURY_OUTBOARDS_ONTARIO_OFFERS = [
         "itemCondition": "https://schema.org/NewCondition",
         "hasMerchantReturnPolicy": { "@type": "MerchantReturnPolicy", "applicableCountry": "CA", "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted" },
         "url": "https://www.mercuryrepower.ca/quote/motor-selection",
-        "seller": { "@id": "https://www.mercuryrepower.ca/mercury-outboards-ontario#localbusiness" }
+        "seller": { "@id": BUSINESS_ENTITY_ID }
       }
     }
   },
@@ -167,7 +168,7 @@ export const MERCURY_OUTBOARDS_ONTARIO_OFFERS = [
     "itemCondition": "https://schema.org/NewCondition",
     "hasMerchantReturnPolicy": { "@type": "MerchantReturnPolicy", "applicableCountry": "CA", "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted" },
     "url": "https://www.mercuryrepower.ca/quote/motor-selection",
-    "seller": { "@id": "https://www.mercuryrepower.ca/mercury-outboards-ontario#localbusiness" },
+    "seller": { "@id": BUSINESS_ENTITY_ID },
     "itemOffered": {
       "@type": "Product",
       "name": "Mercury FourStroke V8 200 - 300 HP",
@@ -184,7 +185,7 @@ export const MERCURY_OUTBOARDS_ONTARIO_OFFERS = [
         "itemCondition": "https://schema.org/NewCondition",
         "hasMerchantReturnPolicy": { "@type": "MerchantReturnPolicy", "applicableCountry": "CA", "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted" },
         "url": "https://www.mercuryrepower.ca/quote/motor-selection",
-        "seller": { "@id": "https://www.mercuryrepower.ca/mercury-outboards-ontario#localbusiness" }
+        "seller": { "@id": BUSINESS_ENTITY_ID }
       }
     }
   }

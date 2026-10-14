@@ -9,7 +9,7 @@ function database(rows: object[]) {
   const q: any = {
     select: (...args: unknown[]) => { calls.push(['select', ...args]); return q; },
     or: (...args: unknown[]) => { calls.push(['or', ...args]); return q; },
-    order: () => q,
+    order: (...args: unknown[]) => { calls.push(['order', ...args]); return q; },
     limit: (...args: unknown[]) => { calls.push(['limit', ...args]); return q; },
     eq: (...args: unknown[]) => { calls.push(['eq', ...args]); return q; },
     gte: () => q, lte: () => q,
@@ -48,8 +48,8 @@ describe('MCP public motor facts', () => {
       { ...row, id: 'verado', family: 'Verado', stock_quantity: 2 },
       { ...row, id: 'late-stock', stock_quantity: 1, in_stock: false },
     ]);
-    expect((await searchMcpMotors(db.client, { in_stock_only: true, limit: 1 })).map((m: any) => m.id)).toEqual(['late-stock']);
-    expect(db.calls).toContainEqual(['limit', 500]);
+    expect((await searchMcpMotors(db.client, { in_stock_only: true, limit: 1 })).motors.map((m: any) => m.id)).toEqual(['late-stock']);
+    expect(db.calls).toContainEqual(['limit', 501]);
     expect(db.calls).not.toContainEqual(['eq', 'in_stock', true]);
   });
   it('get-by-id and slug return the same corrected facts as search', async () => {
@@ -60,8 +60,16 @@ describe('MCP public motor facts', () => {
     const bySlug = await getMcpMotor(db.client, { slug: expected.slug });
     expect(byId).toEqual(bySlug);
     expect(byId).toMatchObject({ ...expected, commandThrust: true, description: 'Synthetic' });
-    expect(await searchMcpMotors(db.client, { family: 'FourStroke' })).toEqual([expected]);
+    expect((await searchMcpMotors(db.client, { family: 'FourStroke' })).motors).toEqual([expected]);
     expect(String(db.calls.find(c => c[0] === 'select')?.[1])).toContain('shaft, shaft_code, control_type');
+  });
+  it('flags a truncated candidate window and keeps deterministic query ordering', async () => {
+    const db = database(Array.from({ length: 501 }, (_, i) => ({ ...row, id: String(i) })));
+    const result = await searchMcpMotors(db.client, { limit: 1 });
+    expect(result).toMatchObject({ candidateLimit: 500, candidatePageTruncated: true });
+    expect(result.motors).toHaveLength(1);
+    expect(db.calls.filter(c => c[0] === 'order').map(c => c[1])).toEqual(['horsepower', 'id']);
+    expect((await searchMcpMotors(database([row]).client, {})).candidatePageTruncated).toBe(false);
   });
   it.each([{ availability: 'Exclude' }, { family: 'Verado' }])('does not expose excluded motors %s', async (fields) => {
     expect(await getMcpMotor(database([{ ...row, ...fields }]).client, { id: row.id })).toBeNull();

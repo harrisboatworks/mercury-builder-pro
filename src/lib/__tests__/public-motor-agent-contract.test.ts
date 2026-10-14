@@ -276,7 +276,7 @@ describe("public motor agent contract", () => {
     const catalogContract = source('supabase/functions/_shared/public-motor-contract.ts');
     expect(catalogContract).toContain('${PUBLIC_SITE_URL}/motors/${slug}');
     expect(mcpMotors.match(/\.or\(PUBLIC_CATALOG_AVAILABILITY_OR\)/g)).toHaveLength(2);
-    expect(mcpMotors).toContain('.limit(500)');
+    expect(mcpMotors).toContain('.limit(501)');
     expect(mcpMotors).toContain('motor.inStock');
     expect(mcpMotors).not.toContain('.eq("in_stock", true)');
 

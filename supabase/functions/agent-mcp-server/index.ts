@@ -69,7 +69,7 @@ const TOOLS = [
   {
     name: "search_motors",
     description:
-      "Search current Mercury outboard inventory at Harris Boat Works (Ontario). Filter by horsepower, family (FourStroke, Pro XS, SeaPro, Racing), or stock status. Returns CAD pricing. Excludes Verado.",
+      "Search current Mercury outboard inventory at Harris Boat Works (Ontario). Filter by horsepower, family (FourStroke, Pro XS, SeaPro, Racing), or stock status. Returns CAD pricing. Excludes Verado. inStock/stockQuantity are the normalized stock signal; availability is the catalog label. candidatePageTruncated warns when more than 500 candidates match: narrow horsepower filters. Decoded fitment needs transom confirmation; specSource flags database rigging presence, and other fields may still be model-code decoded.",
     inputSchema: {
       type: "object",
       properties: {
@@ -89,7 +89,7 @@ const TOOLS = [
   {
     name: "get_motor",
     description:
-      "Fetch a single Mercury motor by id or slug, including pricing, decoded shaft/control/start facts, their source, normalized stock, and deep-link URL. Model-code fitment must be confirmed against the buyer’s transom before ordering; null means not stated.",
+      "Fetch a single Mercury motor by id or slug, including pricing, decoded shaft/control/start facts, a specSource summary, normalized stock, and deep-link URL. Model-code fitment must be confirmed against the buyer’s transom before ordering; null means not stated. specSource flags database rigging presence; individual fields may still be model-code decoded. inStock/stockQuantity are the normalized stock signal; availability is the catalog label.",
     inputSchema: {
       type: "object",
       properties: {
@@ -279,8 +279,8 @@ async function handleToolCall(supabase: any, name: string, rawArgs: unknown) {
   const args = parseMcpToolArguments(name, rawArgs);
   switch (name) {
     case "search_motors": {
-      const motors = await searchMcpMotors(supabase, args);
-      return mcpToolResult({ count: motors.length, motors });
+      const result = await searchMcpMotors(supabase, args);
+      return mcpToolResult({ count: result.motors.length, ...result });
     }
     case "get_motor": {
       const motor = await getMcpMotor(supabase, args);
@@ -315,7 +315,7 @@ Deno.serve(async (req) => {
           server: SERVER_INFO,
           protocol: "Model Context Protocol (JSON-RPC 2.0)",
           transport: "HTTP POST",
-          methods: ["initialize", "tools/list", "tools/call"],
+          methods: ["initialize", "ping", "tools/list", "tools/call"],
           tools: TOOLS.map((t) => ({ name: t.name, description: t.description })),
           example: {
             request: {

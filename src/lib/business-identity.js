@@ -22,6 +22,41 @@ export function buildBusinessIdentity({ geo, openingHoursSpecification = [], sam
     },
     geo: { '@type': 'GeoCoordinates', ...geo },
     openingHoursSpecification,
+        "areaServed": [
+          {
+            "@type": "Place",
+            "@id": "https://www.mercuryrepower.ca/#rice-lake-ontario",
+            "name": "Rice Lake, Ontario",
+            "alternateName": ["Rice Lake (Ontario)", "Rice Lake, Kawartha Lakes"],
+            "description": "Freshwater lake in the Kawartha Lakes region, southern Ontario, Canada. Approximately 90 minutes east of Toronto. Distinct from Rice Lake, Wisconsin and Rice Lake, Minnesota.",
+            "geo": { "@type": "GeoCoordinates", "latitude": 44.1614, "longitude": -78.0369 },
+            "containedInPlace": [
+              { "@type": "AdministrativeArea", "name": "Kawartha Lakes" },
+              { "@type": "AdministrativeArea", "name": "Ontario" },
+              { "@type": "Country", "name": "Canada" }
+            ],
+            "sameAs": [
+              "https://en.wikipedia.org/wiki/Rice_Lake_(Ontario)",
+              "https://www.wikidata.org/wiki/Q1543290"
+            ]
+          },
+          { "@type": "AdministrativeArea", "name": "Kawartha Lakes" },
+          { "@type": "State", "name": "Ontario" },
+          { "@type": "Country", "name": "Canada" }
+        ],
+        "makesOffer": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mercury outboard repower" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mercury & MerCruiser marine repair" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Winterization and spring launch" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Outdoor boat storage with professional shrinkwrap" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "New Legend boat sales" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Boat rentals" } }
+        ],
+        "brand": [
+          { "@type": "Brand", "name": "Mercury Marine" },
+          { "@type": "Brand", "name": "Legend Boats" }
+        ],
+        "award": "Mercury Marine Premier Dealer",
     sameAs,
   };
 }
