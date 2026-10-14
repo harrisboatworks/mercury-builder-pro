@@ -5,8 +5,9 @@ import { resolveTradeInInput } from '../../../supabase/functions/_shared/trade-i
 import { buildAgentQuoteLink } from '../../../supabase/functions/_shared/agent-quote-link';
 import { computePublicQuotePricing } from '../../../supabase/functions/_shared/public-quote-pricing';
 import { buildAccessoryBreakdown } from '../build-accessory-breakdown';
+import { resolvePropellerDecision } from '../propeller-selection';
 import { calculateQuotePricing } from '../quote-utils';
-import { applyAgentQuoteHandoff, parseAgentQuoteHandoff, stripConsumedAgentQuoteHandoffParams } from '../agent-quote-handoff';
+import { applyAgentQuoteHandoff, buildAgentMotorSelectionActions, parseAgentQuoteHandoff, stripConsumedAgentQuoteHandoffParams } from '../agent-quote-handoff';
 import { initialState, quoteReducer } from '@/contexts/QuoteContext';
 import type { CanonicalHbwValuationPayload } from '../../../supabase/functions/_shared/hbw-valuation-response';
 
@@ -39,12 +40,48 @@ describe('canonical trade input continuity', () => {
   it('overrides stale draft propeller defaults with the actual quoted decision', () => {
     for (const prior of ['include_allowance', 'reuse_existing'] as const) for (const trade of [null, { brand: 'Mercury', horsepower: 90 }]) {
       const quote = buildPublicQuotePropeller({ hp: 90, tradeIn: trade });
-      const params = new URL(buildAgentQuoteLink('synthetic-motor', { customer_has_propeller: quote.handoffCustomerHasPropeller })).searchParams;
+      const params = new URL(buildAgentQuoteLink('synthetic-motor', { customer_has_propeller: quote.handoffCustomerHasPropeller, ...buildTradeInHandoffFields(trade ? resolveTradeInInput({ ...trade, year: 2010, engine_type: '4-stroke' }) : null, valuation) })).searchParams;
       const base = { ...initialState, motor: { id: 'synthetic-motor', model: '90 ELPT FourStroke', hp: 90 } as any, installConfig: { propellerDecision: prior }, boatInfo: { hasCompatibleProp: true } as any };
       const next = applyAgentQuoteHandoff(base, quoteReducer, parseAgentQuoteHandoff(params));
-      expect(next.installConfig?.propellerDecision).toBe(quote.decision);
+      expect(next.installConfig?.propellerDecision).toBeUndefined();
+      expect(next.boatInfo?.hasCompatibleProp).toBe(false);
+      expect(resolvePropellerDecision({ hp: 90, installConfig: next.installConfig, boatInfo: next.boatInfo, tradeInInfo: next.tradeInInfo })).toBe(quote.decision);
     }
     expect(buildPublicQuotePropeller({ hp: 20, customerHasPropeller: true })).toMatchObject({ decision: 'included', handoffCustomerHasPropeller: undefined, item: { price: 0 } });
+  });
+
+  it('recalculates loose-path defaults after trade edits but preserves explicit answers', () => {
+    const motor = { id: 'synthetic-motor', model: '90 ELPT FourStroke', hp: 90 } as any;
+    for (const callerFlag of [undefined, true, false]) {
+      const quote = buildPublicQuotePropeller({ hp: 90, customerHasPropeller: callerFlag, tradeIn: { brand: 'Mercury', horsepower: 90 } });
+      const params = new URL(buildAgentQuoteLink(motor.id, { customer_has_propeller: quote.handoffCustomerHasPropeller, purchase_path: 'loose', ...buildTradeInHandoffFields(resolveTradeInInput({ brand: 'Mercury', year: 2010, horsepower: 90, engine_type: '4-stroke' }), valuation) })).searchParams;
+      const state = applyAgentQuoteHandoff({ ...initialState, motor }, quoteReducer, parseAgentQuoteHandoff(params));
+      const changed = quoteReducer(state, { type: 'SET_TRADE_IN_INFO', payload: { ...state.tradeInInfo, hasTradeIn: false, estimatedValue: 0 } });
+      const prop = buildAccessoryBreakdown({ motor, purchasePath: 'loose', installConfig: changed.installConfig, boatInfo: changed.boatInfo, tradeInInfo: changed.tradeInInfo }).find(x => /Propeller/.test(x.name));
+      expect(prop?.price).toBe(callerFlag === true ? 0 : 350);
+    }
+  });
+
+  it('defers a dynamic default until its target motor is selected', () => {
+    const motor = { id: 'target', model: '90 ELPT FourStroke', hp: 90 } as any;
+    const params = new URL(buildAgentQuoteLink(motor.id, { customer_has_propeller: 'default', ...buildTradeInHandoffFields(null, null) })).searchParams;
+    const original = { ...initialState, motor: { ...motor, id: 'old' }, installConfig: { propellerDecision: 'reuse_existing' as const }, boatInfo: { hasCompatibleProp: true } as any };
+    const waiting = applyAgentQuoteHandoff(original, quoteReducer, parseAgentQuoteHandoff(params));
+    expect(waiting.installConfig?.propellerDecision).toBe('reuse_existing');
+    const selected = buildAgentMotorSelectionActions(waiting, motor, quoteReducer).reduce(quoteReducer, waiting);
+    expect(selected.installConfig?.propellerDecision).toBeUndefined();
+    expect(selected.boatInfo?.hasCompatibleProp).toBe(false);
+    expect(buildAccessoryBreakdown({ motor, installConfig: selected.installConfig, boatInfo: selected.boatInfo }).find(x => /Propeller/.test(x.name))?.price).toBe(350);
+  });
+
+  it('clears stale trades only for an explicit complete API no-trade handoff', () => {
+    const previous = { ...initialState, tradeInInfo: { hasTradeIn: true, brand: 'Mercury', year: 2010, horsepower: 90, estimatedValue: 4000 } as any };
+    const handoff = parseAgentQuoteHandoff(new URL(buildAgentQuoteLink('synthetic-motor', buildTradeInHandoffFields(null, null))).searchParams);
+    expect(handoff.clearTradeIn).toBe(true);
+    const next = applyAgentQuoteHandoff(previous, quoteReducer, handoff);
+    expect(next.tradeInInfo).toMatchObject({ hasTradeIn: false, estimatedValue: 0, brand: '' });
+    expect(applyAgentQuoteHandoff(previous, quoteReducer, {})).toBe(previous);
+    expect(applyAgentQuoteHandoff({ ...previous, pdfSnapshot: {} as any }, quoteReducer, handoff)).toEqual({ ...previous, pdfSnapshot: {} });
   });
 
   it('drops incomplete replacement trades as a whole and consumes their URL fields', () => {
@@ -95,6 +132,8 @@ describe('canonical trade input continuity', () => {
     expect(parseAgentQuoteHandoff(new URLSearchParams({ trade_model: 'X'.repeat(121) })).tradeModel).toBeUndefined();
     expect(parseAgentQuoteHandoff(new URLSearchParams({ trade_model: '90\nFourStroke' })).tradeModel).toBeUndefined();
     expect(() => resolveTradeInInput({ brand: 'Mercury', year: 2010, horsepower: 90, model: 'X'.repeat(121) })).toThrow(/120/);
+    expect(() => resolveTradeInInput({ brand: 'Mercury', year: 2010, horsepower: 0.5 })).toThrow();
+    expect(() => resolveTradeInInput({ brand: 'Mercury', year: 2010, horsepower: 90, engine_hours: 1e-7 })).toThrow();
     expect(parseAgentQuoteHandoff(new URLSearchParams({ trade_brand: 'Mer\u202ecur y', trade_model: '90\u0085FourStroke' }))).toEqual({});
   });
 });

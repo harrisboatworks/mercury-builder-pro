@@ -68,7 +68,7 @@ const TRADE_IN_SCHEMA = {
   properties: {
     brand: { type: "string", maxLength: 64 },
     year: { type: "integer", minimum: 1950 },
-    horsepower: { type: "number", exclusiveMinimum: 0, maximum: 1000, description: "Required unless model infers a single HP." },
+    horsepower: { type: "number", minimum: 1, maximum: 1000, description: "Required unless model infers a single HP." },
     model: { type: "string", maxLength: 120 },
     condition: { type: "string", enum: ["excellent", "good", "fair", "poor"], default: "good" },
     engine_type: { type: "string", enum: ["4-stroke", "2-stroke", "optimax", "proxs", "etec"] },

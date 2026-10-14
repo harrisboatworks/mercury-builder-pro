@@ -71,7 +71,7 @@ export function resolveTradeInHorsepower(input: {
 }): number | null {
   if (input.horsepower !== undefined && input.horsepower !== null && input.horsepower !== '') {
     const hp = typeof input.horsepower === 'number' || typeof input.horsepower === 'string' ? Number(input.horsepower) : NaN;
-    return Number.isFinite(hp) && hp > 0 && hp <= 1000 ? hp : null;
+    return Number.isFinite(hp) && hp >= 1 && hp <= 1000 ? hp : null;
   }
   if (typeof input.model === "string") {
     return inferValidatedTradeInHorsepower(input.model);
@@ -124,7 +124,7 @@ export function resolveTradeInInput(
   const hoursRaw = value.engine_hours ?? value.engineHours ?? value.hours;
   const engineHours = hoursRaw === undefined || hoursRaw === null || hoursRaw === '' ? undefined
     : typeof hoursRaw === 'number' || typeof hoursRaw === 'string' ? Number(hoursRaw) : NaN;
-  if (engineHours !== undefined && (!Number.isFinite(engineHours) || engineHours < 0 || engineHours > 100000)) throw new TradeInInputError('trade_in.engine_hours must be between 0 and 100000');
+  if (engineHours !== undefined && (!Number.isFinite(engineHours) || engineHours < 0 || engineHours > 100000 || /e/i.test(String(engineHours)))) throw new TradeInInputError('trade_in.engine_hours must be between 0 and 100000');
 
   const overrideRaw = value.override_value ?? value.overrideValue;
   const overrideValue = options.allowOverride &&
@@ -134,6 +134,8 @@ export function resolveTradeInInput(
     ? overrideRaw
     : undefined;
 
+  const serialRaw = value.serial_number ?? value.serialNumber;
+  if (serialRaw !== undefined && (typeof serialRaw !== "string" || serialRaw.length > 64 || /[\u0000-\u001f\u007f-\u009f\u202a-\u202e\u2066-\u2069]/.test(serialRaw))) throw new TradeInInputError("trade_in.serial_number must be at most 64 characters with no control characters");
   return {
     brand,
     year,

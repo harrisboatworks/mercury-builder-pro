@@ -73,11 +73,12 @@ export interface ParsedAgentQuoteHandoff {
   tradeHp?: number;
   tradeModel?: string;
   replaceTradeIn?: true;
+  clearTradeIn?: true;
   tradeCondition?: TradeInHandoffCondition;
   tradeEngineType?: TradeInHandoffEngineType;
   tradeEngineHours?: number;
   purchasePath?: 'installed' | 'loose';
-  customerHasPropeller?: boolean;
+  customerHasPropeller?: boolean | 'default';
   ucpCheckoutRef?: string;
   reservationPlanning?: true;
 }
@@ -212,6 +213,7 @@ export function parseAgentQuoteHandoff(
   const parsed: ParsedAgentQuoteHandoff = {};
   if (motorId) parsed.motorId = motorId;
   if (purchasePath === 'installed' || purchasePath === 'loose') parsed.purchasePath = purchasePath;
+  if (propeller === 'default') parsed.customerHasPropeller = 'default';
   if (propeller === 'true' || propeller === 'false') parsed.customerHasPropeller = propeller === 'true';
   if (tradeEngineHours !== undefined) parsed.tradeEngineHours = tradeEngineHours;
   if (boatMake) parsed.boatMake = boatMake;
@@ -226,7 +228,8 @@ export function parseAgentQuoteHandoff(
     && (!searchParams.has('trade_engine_hours') || tradeEngineHours !== undefined)) parsed.replaceTradeIn = true;
   if (tradeCondition) parsed.tradeCondition = tradeCondition;
   if (tradeEngineType) parsed.tradeEngineType = tradeEngineType;
-  if (searchParams.get('trade_replace') === '1' && !parsed.replaceTradeIn) {
+  if (searchParams.get('trade_replace') === 'none') parsed.clearTradeIn = true;
+  if ((searchParams.get('trade_replace') === '1' && !parsed.replaceTradeIn) || parsed.clearTradeIn) {
     // Never partially combine a complete API trade with stale draft facts.
     for (const key of ['tradeBrand', 'tradeYear', 'tradeHp', 'tradeModel', 'tradeCondition', 'tradeEngineType', 'tradeEngineHours'] as const) delete parsed[key];
   }
@@ -294,8 +297,8 @@ export function mergeBoatInfoFromHandoff(
   const next: BoatInfo = existing ? { ...existing } : blankBoatInfo();
   let changed = false;
 
-  if (handoff.customerHasPropeller !== undefined && next.hasCompatibleProp !== handoff.customerHasPropeller) {
-    next.hasCompatibleProp = handoff.customerHasPropeller;
+  if (handoff.customerHasPropeller !== undefined && next.hasCompatibleProp !== (handoff.customerHasPropeller === true)) {
+    next.hasCompatibleProp = handoff.customerHasPropeller === true;
     changed = true;
   }
   if (handoff.boatMake && next.make !== handoff.boatMake) {
@@ -306,15 +309,15 @@ export function mergeBoatInfoFromHandoff(
     next.model = handoff.boatModel;
     changed = true;
   }
-  if (handoff.tradeBrand && !hasExistingText(next.currentMotorBrand)) {
+  if (handoff.tradeBrand && (handoff.replaceTradeIn || !hasExistingText(next.currentMotorBrand)) && next.currentMotorBrand !== toBoatCurrentMotorBrand(handoff.tradeBrand)) {
     next.currentMotorBrand = toBoatCurrentMotorBrand(handoff.tradeBrand);
     changed = true;
   }
-  if (handoff.tradeYear !== undefined && !next.currentMotorYear) {
+  if (handoff.tradeYear !== undefined && (handoff.replaceTradeIn || !next.currentMotorYear) && next.currentMotorYear !== handoff.tradeYear) {
     next.currentMotorYear = handoff.tradeYear;
     changed = true;
   }
-  if (handoff.tradeHp !== undefined && !next.currentHp) {
+  if (handoff.tradeHp !== undefined && (handoff.replaceTradeIn || !next.currentHp) && next.currentHp !== handoff.tradeHp) {
     next.currentHp = handoff.tradeHp;
     changed = true;
   }
@@ -328,6 +331,10 @@ export function mergeTradeInInfoFromHandoff(
   existing: Partial<TradeInInfo> | null | undefined,
   handoff: ParsedAgentQuoteHandoff,
 ): { next: Partial<TradeInInfo>; changed: boolean } | null {
+  if (handoff.clearTradeIn) {
+    if (!existing?.hasTradeIn && !existing?.estimatedValue && !existing?.brand) return null;
+    return { next: clearTradeInValuation(blankTradeInInfo() as TradeInInfo), changed: true };
+  }
   const hasTradeFields = Boolean(
     handoff.tradeBrand
     || handoff.tradeYear !== undefined
@@ -405,7 +412,7 @@ export function consumedAgentQuoteHandoffParams(
   if (handoff.tradeYear !== undefined) consumed.push('trade_year');
   if (handoff.tradeHp !== undefined) consumed.push('trade_hp');
   if (handoff.tradeModel) consumed.push('trade_model');
-  if (handoff.replaceTradeIn) consumed.push('trade_replace');
+  if (handoff.replaceTradeIn || handoff.clearTradeIn) consumed.push('trade_replace');
   if (handoff.tradeCondition) consumed.push('trade_condition');
   if (handoff.tradeEngineType) consumed.push('trade_engine_type');
   if (handoff.tradeEngineHours !== undefined) consumed.push('trade_engine_hours');
@@ -420,7 +427,7 @@ export function stripConsumedAgentQuoteHandoffParams(
   options: AgentQuoteHandoffApplyOptions = {},
 ): URLSearchParams {
   const next = new URLSearchParams(searchParams);
-  if (searchParams.get('trade_replace') === '1') {
+  if (searchParams.has('trade_replace')) {
     for (const key of AGENT_QUOTE_HANDOFF_CONSUMABLE_PARAMS) if (key.startsWith('trade_')) next.delete(key);
   }
   for (const key of consumedAgentQuoteHandoffParams(handoff, options)) {
@@ -438,11 +445,11 @@ export function stripConsumedAgentQuoteHandoffParams(
   return next;
 }
 
-function pendingPropellerHandoff(state: QuoteState): { motorId: string; customerHasPropeller: boolean } | undefined {
+function pendingPropellerHandoff(state: QuoteState): { motorId: string; customerHasPropeller: boolean | 'default' } | undefined {
   const value = state.uiFlags?.[AGENT_PROPELLER_HANDOFF_FLAG];
   if (!value || typeof value !== 'object' || Array.isArray(value)) return undefined;
   const record = value as Record<string, unknown>;
-  if (typeof record.motorId !== 'string' || sanitizeBuyerText(record.motorId, AGENT_QUOTE_HANDOFF_MOTOR_ID_MAX) !== record.motorId || typeof record.customerHasPropeller !== 'boolean') return undefined;
+  if (typeof record.motorId !== 'string' || sanitizeBuyerText(record.motorId, AGENT_QUOTE_HANDOFF_MOTOR_ID_MAX) !== record.motorId || (typeof record.customerHasPropeller !== 'boolean' && record.customerHasPropeller !== 'default')) return undefined;
   return { motorId: record.motorId, customerHasPropeller: record.customerHasPropeller };
 }
 
@@ -475,7 +482,7 @@ export function buildAgentQuoteHandoffActions(
       actions.push({ type: 'SET_PURCHASE_PATH', payload: handoff.purchasePath });
     }
     if (canApplyPropeller && handoff.customerHasPropeller !== undefined) {
-      const decision = handoff.customerHasPropeller ? 'reuse_existing' : 'include_allowance';
+      const decision = handoff.customerHasPropeller === 'default' ? undefined : handoff.customerHasPropeller ? 'reuse_existing' : 'include_allowance';
       if (state.installConfig?.propellerDecision !== decision) {
         actions.push({ type: 'SET_INSTALL_CONFIG', payload: { ...state.installConfig, propellerDecision: decision } });
       }
@@ -487,7 +494,7 @@ export function buildAgentQuoteHandoffActions(
 
     const trade = mergeTradeInInfoFromHandoff(state.tradeInInfo, handoff);
     if (trade?.changed) {
-      actions.push({ type: 'PROMOTE_TRADE_IN', payload: trade.next });
+      actions.push({ type: handoff.clearTradeIn ? 'SET_TRADE_IN_INFO' : 'PROMOTE_TRADE_IN', payload: trade.next });
     }
   }
 
@@ -546,7 +553,7 @@ export function buildAgentMotorSelectionActions(
     actions.push({ type: 'SET_UI_FLAG', payload: { key: AGENT_UCP_PENDING_HANDOFF_FLAG, value: null } });
   }
   const pending = pendingPropellerHandoff(state);
-  if (pending && pending.motorId === motor.id && typeof pending.customerHasPropeller === 'boolean') {
+  if (pending && pending.motorId === motor.id) {
     actions.push(...buildAgentQuoteHandoffActions(next, { customerHasPropeller: pending.customerHasPropeller }));
   }
   if (pending && next.uiFlags?.[AGENT_PROPELLER_HANDOFF_FLAG]) {

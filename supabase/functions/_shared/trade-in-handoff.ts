@@ -3,7 +3,7 @@ import type { ResolvedTradeInInput } from "./trade-in-input.ts";
 
 /** Carry facts and resolved defaults, never a client-trusted valuation or serial number. */
 export function buildTradeInHandoffFields(trade: ResolvedTradeInInput | null, valuation: CanonicalHbwValuationPayload | null) {
-  if (!trade) return {};
+  if (!trade) return { trade_replace: "none" };
   let engineType = trade.engineType;
   if (!engineType) {
     try { engineType = normalizeHbwStroke(valuation?.effectiveInputs?.stroke); } catch { /* Buyer must confirm architecture. */ }

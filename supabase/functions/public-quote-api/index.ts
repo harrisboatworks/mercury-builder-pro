@@ -310,7 +310,7 @@ function bodyFromQuery(params: URLSearchParams): Record<string, unknown> {
   }
 
   if (action === "estimate_trade_in") {
-    body.brand = queryString(params, "brand", 60);
+    body.brand = queryString(params, "brand", 64, true);
     body.year = queryNumber(params, "year");
     body.horsepower = queryNumber(params, "horsepower");
     body.condition = queryString(params, "condition", 20);
@@ -318,7 +318,7 @@ function bodyFromQuery(params: URLSearchParams): Record<string, unknown> {
     if (engineType !== undefined) body.engine_type = engineType;
     const engineHours = queryNumber(params, "engine_hours");
     if (engineHours !== undefined) body.engine_hours = engineHours;
-    const model = queryString(params, "model", 100);
+    const model = queryString(params, "model", 120, true);
     if (model !== undefined) body.model = model;
     return body;
   }
