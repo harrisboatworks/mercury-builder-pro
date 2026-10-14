@@ -103,6 +103,7 @@ export type NativeIntentRecord = {
   horsepower: number;
   express_verified: boolean;
   status: string;
+  retired_at?: string | null;
   receipt_reconciliation_required?: boolean;
   expires_at: string;
 };
@@ -387,7 +388,7 @@ export function assessNativePaymentIntent(value: unknown, expected: {
 export function stripeErrorIsUncertain(error: unknown): boolean {
   if (!(error instanceof NativeStripeRequestError)) return true;
   if (error.status == null) return true;
-  return error.status === 408 || error.status === 409 || error.status >= 500;
+  return [401, 403, 408, 409, 429].includes(error.status) || error.status >= 500;
 }
 
 function scopeMessage(code: string, severity: string, content: string) {
@@ -453,6 +454,18 @@ export function projectNativeDepositCheckout(input: {
   }
   if (input.includeContinuation || input.phase === "requires_escalation") checkout.continue_url = nativeDepositContinuationUrl(input.intent.child_id);
   return checkout;
+}
+
+export function projectStoredNativeDeposit(intent: NativeIntentRecord, approval: NativeApprovalRecord | null, attempt: NativeAttemptRecord | null, now = new Date()): NativeDepositCheckout {
+  if (intent.status === 'paid') return projectNativeDepositCheckout({ intent, phase: 'completed', paymentStatus: 'paid' });
+  if (intent.retired_at || intent.status === 'canceled') return projectNativeDepositCheckout({ intent, phase: 'canceled', paymentStatus: 'revoked' });
+  const approved = !attempt && intent.status === 'approved' && Boolean(approval && bindingsMatchApproval(intent, approval, now));
+  const state = attempt?.status || intent.status;
+  const paymentStatus = state === 'requires_action' ? 'requires_action' : state === 'processing' ? 'processing'
+    : state === 'failed' ? 'failed' : attempt || state === 'unknown' ? 'unknown'
+    : approval && Date.parse(approval.expires_at) <= now.getTime() || Date.parse(intent.expires_at) <= now.getTime() ? 'expired'
+    : 'not_started';
+  return projectNativeDepositCheckout({ intent, phase: approved ? 'ready_for_complete' : 'requires_escalation', paymentStatus });
 }
 
 function paidProjection(intent: NativeIntentRecord, httpStatus = 200, emailsAccepted?: boolean): NativeDepositSuccess {
@@ -534,10 +547,13 @@ export type NativeCreateIo = {
   loadParent: (id: string) => Promise<unknown | null>;
   loadMotor: (id: string) => Promise<ServerLoadedReservationMotor | null>;
   loadSavedQuote: (id: string) => Promise<NativeSavedQuoteRecord | null>;
-  loadDocumentHash: (quote: NativeSavedQuoteRecord) => Promise<string | null>;
+  loadDocumentHash: (quote: NativeSavedQuoteRecord) => Promise<string | null | { invalid: true }>;
   loadIntentBySavedQuote: (savedQuoteId: string) => Promise<NativeIntentRecord | null>;
   hostedRailActive: (savedQuoteId: string) => Promise<boolean>;
   insertIntent: (row: NativeIntentRecord) => Promise<NativeIntentRecord | null>;
+  loadApproval: NativeCompleteIo['loadApproval'];
+  loadAttempt: NativeCompleteIo['loadAttempt'];
+  retireIntent: (intentId: string, onlyExpired: boolean) => Promise<boolean>;
 };
 
 export async function runNativeDepositCreate(input: {
@@ -553,6 +569,22 @@ export async function runNativeDepositCreate(input: {
   if (caller.ok === false) return caller;
   if (!PARENT_ID.test(input.routeParentId) || !CHILD_ID.test(input.childId)) {
     return failure(400, "invalid_request", "Checkout reference is invalid.");
+  }
+  const quote = await input.io.loadSavedQuote(caller.savedQuoteId);
+  if (!quote || quote.id !== caller.savedQuoteId) return failure(404, "not_found", "Saved quote is not available.");
+  if (!nativeDepositActorAuthorized({
+    savedQuoteUserId: quote.user_id,
+    savedQuoteResumeToken: quote.resume_token,
+    actor: input.actor,
+  })) {
+    return failure(401, "unauthorized", "Saved quote authorization is required.");
+  }
+  let existing = await input.io.loadIntentBySavedQuote(quote.id);
+  if (existing) {
+    const attempt = await input.io.loadAttempt(existing.id);
+    if (existing.status === 'paid' || attempt?.submitted_at || attempt?.stripe_payment_intent_id || attempt?.observed_payment_intent_id) {
+      return { ok: true, status: 200, checkout: projectStoredNativeDeposit(existing, await input.io.loadApproval(existing.id), attempt, input.now) };
+    }
   }
   const parent = await input.io.loadParent(input.routeParentId);
   if (!parent) return failure(404, "not_found", "No checkout session.");
@@ -571,15 +603,6 @@ export async function runNativeDepositCreate(input: {
     now: input.now,
   });
   if (priced.ok === false) return failure(priced.status, priced.code, priced.message);
-  const quote = await input.io.loadSavedQuote(caller.savedQuoteId);
-  if (!quote || quote.id !== caller.savedQuoteId) return failure(404, "not_found", "Saved quote is not available.");
-  if (!nativeDepositActorAuthorized({
-    savedQuoteUserId: quote.user_id,
-    savedQuoteResumeToken: quote.resume_token,
-    actor: input.actor,
-  })) {
-    return failure(401, "unauthorized", "Saved quote authorization is required.");
-  }
   if (quote.is_soft_lead === true || quote.deposit_status !== "pending") return failure(409, "quote_unavailable", "A pending saved quote is required.");
   try {
     parseSavedQuoteIdentity(quote);
@@ -609,7 +632,8 @@ export async function runNativeDepositCreate(input: {
   }
   const documentHash = await input.io.loadDocumentHash(quote);
   const documentPath = canonicalQuoteDocumentPath(quote.id);
-  if (!documentHash || quote.quote_pdf_path !== documentPath || quote.quote_pdf_sha256 !== documentHash) {
+  if (!documentHash) return failure(503, 'document_unavailable', 'The quote document is temporarily unavailable. Try again.');
+  if (typeof documentHash !== 'string' || quote.quote_pdf_path !== documentPath || quote.quote_pdf_sha256 !== documentHash) {
     return failure(409, "stale_document", "Canonical quote document does not match.");
   }
   if (await input.io.hostedRailActive(quote.id)) {
@@ -646,44 +670,71 @@ export async function runNativeDepositCreate(input: {
   if (!intent.catalog_model_number || !Number.isFinite(intent.horsepower) || !intent.expires_at) {
     return failure(409, "stale_motor", "Catalog motor identity is incomplete.");
   }
-  const existing = await input.io.loadIntentBySavedQuote(quote.id);
   if (existing) {
-    const same = existing.parent_session_id === intent.parent_session_id
+    const same = existing.owner_user_id === intent.owner_user_id
+      && existing.document_path === intent.document_path && existing.policy_version === intent.policy_version
+      && existing.parent_session_id === intent.parent_session_id
       && existing.motor_id === intent.motor_id
       && existing.amount_cents === intent.amount_cents
       && existing.document_sha256 === intent.document_sha256
       && existing.terms_version === intent.terms_version
       && existing.policy_code === intent.policy_code
       && existing.merchandise_cents === intent.merchandise_cents;
-    if (!same) return failure(409, "stale_binding", "The saved native deposit no longer matches this quote.");
-    if (existing.status === "paid") return paidProjection(existing);
-    return {
-      ok: true,
-      status: 200,
-      checkout: projectNativeDepositCheckout({
-        intent: existing,
-        phase: existing.status === "approved" ? "ready_for_complete" : "requires_escalation",
-        paymentStatus: "not_started",
-      }),
-    };
+    const approval = await input.io.loadApproval(existing.id);
+    if (!same || Date.parse(existing.expires_at) <= input.now.getTime() || approval && Date.parse(approval.expires_at) <= input.now.getTime()) {
+      // Automatic rollover never invalidates fresh consent. The SQL lock gate
+      // also refuses a concurrent first submission; old audit records remain.
+      if (!await input.io.retireIntent(existing.id, true)) return failure(409, 'stale_binding', 'The existing deposit requires buyer cancellation or payment reconciliation.');
+      existing = null;
+    } else {
+      return { ok: true, status: 200, checkout: projectStoredNativeDeposit(existing, approval, await input.io.loadAttempt(existing.id), input.now) };
+    }
   }
   const inserted = await input.io.insertIntent(intent);
   if (!inserted) return failure(503, "unavailable", "Native deposit could not be saved.");
   return {
     ok: true,
     status: 201,
-    checkout: projectNativeDepositCheckout({ intent: inserted, phase: "requires_escalation", paymentStatus: "not_started" }),
+    checkout: projectStoredNativeDeposit(inserted, await input.io.loadApproval(inserted.id), await input.io.loadAttempt(inserted.id), input.now),
   };
+}
+
+// Called only after the trusted endpoint authenticates the buyer. SQL is the
+// final retirement authority; readiness errors must precede any mutation.
+export async function runNativeDepositRestart(input: {
+  intent: NativeIntentRecord; quote: NativeSavedQuoteRecord; enabled: boolean; sellerVerified: boolean; mode: 'recreate' | 'cancel';
+  actor: NativeActor; now: Date; childId: string; intentId: string; io: NativeCreateIo & NativeCompleteIo;
+}): Promise<{ ok: true; new_child_id?: string; canceled?: true; saved_quote_id?: string; message?: string } | NativeDepositFailure> {
+  const attempt = await input.io.loadAttempt(input.intent.id);
+  const recovering = Boolean(attempt?.submitted_at || attempt?.stripe_payment_intent_id || attempt?.observed_payment_intent_id || input.intent.status === 'paid');
+  let recreate = false;
+  if (input.mode === 'recreate') {
+    if (!input.enabled || !input.sellerVerified || recovering || input.intent.retired_at) return failure(409, 'restart_unavailable', 'A fresh native review is unavailable. Your existing review has been kept. Refresh for the cancellation option.');
+    const document = await input.io.loadDocumentHash(input.quote);
+    const ready = await input.io.validateFreshIntent(input.intent, input.quote);
+    if (document === null || ready === null) return failure(503, 'review_unavailable', 'The quote is temporarily unavailable. Your existing review has been kept; refresh to retry.');
+    if (document !== input.intent.document_sha256 || !ready) return failure(409, 'stale_binding', 'This quote needs a fresh preparation. Your existing review has been kept; refresh to cancel it or reopen your saved quote.');
+    recreate = true;
+  }
+  if (!await input.io.retireIntent(input.intent.id, false)) return failure(409, 'reconciliation_required', 'This payment was submitted. Refresh its original status or contact HBW; a new payment cannot be started.');
+  if (recreate) {
+    try {
+      const next = await runNativeDepositCreate({ caller: { operation: 'motor_reservation', saved_quote_id: input.quote.id }, routeParentId: input.intent.parent_session_id,
+        actor: input.actor, now: input.now, intentId: input.intentId, childId: input.childId, io: input.io });
+      if (next.ok) return { ok: true, new_child_id: next.checkout.id };
+    } catch { /* a concurrent outage after retirement leaves an explicit canceled review */ }
+  }
+  return { ok: true, canceled: true, saved_quote_id: input.quote.id, message: 'The unsubmitted review was canceled. Reopen your saved quote to prepare a fresh deposit or use website checkout.' };
 }
 
 export type NativeCompleteIo = {
   loadIntentByChild: (childId: string) => Promise<NativeIntentRecord | null>;
   loadSavedQuote: (id: string) => Promise<NativeSavedQuoteRecord | null>;
-  validateFreshIntent: (intent: NativeIntentRecord, quote: NativeSavedQuoteRecord) => Promise<boolean>;
+  validateFreshIntent: (intent: NativeIntentRecord, quote: NativeSavedQuoteRecord) => Promise<boolean | null>;
   loadApproval: (intentId: string) => Promise<NativeApprovalRecord | null>;
   loadAttempt: (intentId: string) => Promise<NativeAttemptRecord | null>;
   hostedRailActive: (savedQuoteId: string) => Promise<boolean>;
-  loadDocumentHash: (quote: NativeSavedQuoteRecord) => Promise<string | null>;
+  loadDocumentHash: (quote: NativeSavedQuoteRecord) => Promise<string | null | { invalid: true }>;
   claimAttempt: (args: {
     intentId: string;
     tokenFingerprint: string;
@@ -741,6 +792,7 @@ export async function runNativeDepositComplete(input: {
   })) {
     return failure(401, "unauthorized", "Saved quote authorization is required.");
   }
+  if (intent.retired_at || intent.status === 'canceled') return failure(409, 'deposit_canceled', 'This review was canceled. Prepare a fresh deposit review.');
   if (intent.status === "paid" || quote.deposit_status === "paid") {
     if (intent.status !== "paid") return failure(409, "hosted_rail", "This saved quote is already paid.");
     const paidAttempt = await input.io.loadAttempt(intent.id);
@@ -748,18 +800,24 @@ export async function runNativeDepositComplete(input: {
   }
   const existingAttempt = await input.io.loadAttempt(intent.id);
   const approval = await input.io.loadApproval(intent.id);
-  if (!approval || !bindingsMatchApproval(intent, approval, input.now, !existingAttempt?.submitted_at)) {
+  const recovering = Boolean(existingAttempt?.submitted_at || existingAttempt?.stripe_payment_intent_id || existingAttempt?.observed_payment_intent_id);
+  if (!approval || !bindingsMatchApproval(intent, approval, input.now, !recovering)) {
     return failure(409, "buyer_review_required", "Buyer review is required before payment.");
   }
+  if (!recovering) {
   const documentHash = await input.io.loadDocumentHash(quote);
-  if (!documentHash || !savedQuoteStillMatches(intent, quote, documentHash)) {
+  if (!documentHash) return failure(503, 'document_unavailable', 'The quote document is temporarily unavailable. Payment was not submitted.');
+  if (typeof documentHash !== 'string' || !savedQuoteStillMatches(intent, quote, documentHash)) {
     return failure(409, "stale_binding", "The approved deposit no longer matches the saved quote.");
   }
   if (await input.io.hostedRailActive(quote.id)) {
     return failure(409, "hosted_rail", "This saved quote already uses hosted Checkout.");
   }
-  if (!existingAttempt?.submitted_at && !await input.io.validateFreshIntent(intent, quote))
+  const fresh = await input.io.validateFreshIntent(intent, quote);
+  if (fresh === null) return failure(503, 'catalog_unavailable', 'Payment readiness is temporarily unavailable. Payment was not submitted.');
+  if (!fresh)
     return failure(409, "stale_binding", "The reviewed motor, price or terms changed. Review a fresh quote.");
+  }
   if (!caller.tokenId && !existingAttempt) {
     return failure(400, "token_required", "A shared payment token is required.");
   }
@@ -804,7 +862,7 @@ export async function runNativeDepositComplete(input: {
       livemode: input.livemode,
     });
     if (claimed.result === "conflict" || claimed.result === "refused" || !claimed.attempt_id) {
-      return failure(409, claimed.reason || "attempt_conflict", "This deposit already has a payment attempt.");
+      return failure(409, claimed.reason || 'attempt_conflict', claimed.reason === 'token_already_bound' ? 'Request a new wallet credential for this fresh deposit review.' : 'This deposit already has a payment attempt.');
     }
     const stored = await input.io.loadAttempt(intent.id);
     if (!stored || stored.id !== claimed.attempt_id || stored.token_fingerprint !== fingerprint
@@ -860,25 +918,9 @@ export async function runNativeDepositComplete(input: {
       }
       return await redrivePaidConfirmations({ ...intent, status: "paid" }, assessed.id, input.io);
     }
-    const mapped = outcomeFromStatus(assessed.status);
-    await input.io.bindAttempt(attempt.id, assessed.id, mapped.paymentStatus === "requires_action"
-      ? "requires_action"
-      : mapped.paymentStatus === "processing"
-        ? "processing"
-        : mapped.paymentStatus === "failed"
-          ? "failed"
-          : "unknown");
-    if (!allowCreate || assessed.status !== "requires_confirmation") {
-      return {
-        ok: true,
-        status: 200,
-        checkout: projectNativeDepositCheckout({
-          intent,
-          phase: mapped.phase,
-          paymentStatus: mapped.paymentStatus,
-          includeContinuation: mapped.continuation,
-        }),
-      };
+    if (!allowCreate || assessed.status !== 'requires_confirmation') {
+      const current = await input.io.loadAttempt(intent.id);
+      return { ok: true, status: 200, checkout: projectStoredNativeDeposit(intent, approval, current || attempt, input.now) };
     }
     return {
       ok: true,
@@ -891,21 +933,13 @@ export async function runNativeDepositComplete(input: {
     try {
       const pi = await stripe.retrievePaymentIntent(attempt.stripe_payment_intent_id);
       return await finishFromIntent(pi, false);
-    } catch (error) {
-      if (!stripeErrorIsUncertain(error)) {
-        await input.io.bindAttempt(attempt.id, attempt.stripe_payment_intent_id, "failed");
-        return {
-          ok: true,
-          status: 200,
-          checkout: projectNativeDepositCheckout({ intent, phase: "requires_escalation", paymentStatus: "failed" }),
-        };
-      }
-      await input.io.bindAttempt(attempt.id, attempt.stripe_payment_intent_id, "unknown");
-      return {
-        ok: true,
-        status: 200,
-        checkout: projectNativeDepositCheckout({ intent, phase: "requires_escalation", paymentStatus: "unknown" }),
-      };
+    } catch {
+      // A failed GET provides no evidence that this payment failed. Retain the
+      // durable last observation, including bank action, and retry this PI only.
+      const current = await input.io.loadAttempt(intent.id);
+      const checkout = projectStoredNativeDeposit(intent, approval, current || attempt, input.now);
+      checkout.messages.push(scopeMessage('processor_status_unavailable', 'info', 'The processor status is temporarily unavailable. Refresh the original payment; do not start another deposit.'));
+      return { ok: true, status: 200, checkout };
     }
   }
 
@@ -993,22 +1027,15 @@ export async function runNativeDepositComplete(input: {
     if (error instanceof NativeStripeRequestError && error.paymentIntent)
       return await finishFromIntent(error.paymentIntent, false);
     await input.io.bindAttempt(attempt.id, null, stripeErrorIsUncertain(error) ? "unknown" : "failed");
-    return {
-      ok: true,
-      status: 200,
-      checkout: projectNativeDepositCheckout({
-        intent,
-        phase: "requires_escalation",
-        paymentStatus: stripeErrorIsUncertain(error) ? "unknown" : "failed",
-      }),
-    };
+    const current = await input.io.loadAttempt(intent.id);
+    return { ok: true, status: 200, checkout: projectStoredNativeDeposit(intent, approval, current || attempt, input.now) };
   }
 }
 
 export async function runNativeDepositRead(input: {
   childId: string;
   actor: NativeActor;
-  io: { loadIntentByChild: NativeCompleteIo["loadIntentByChild"]; loadSavedQuote: NativeCompleteIo["loadSavedQuote"]; loadApproval: NativeCompleteIo["loadApproval"] };
+  io: Pick<NativeCompleteIo, "loadIntentByChild" | "loadSavedQuote" | "loadApproval" | "loadAttempt">;
 }): Promise<NativeDepositResult> {
   if (!isNativeDepositChildId(input.childId)) return failure(404, "not_found", "No checkout session.");
   const intent = await input.io.loadIntentByChild(input.childId);
@@ -1023,33 +1050,5 @@ export async function runNativeDepositRead(input: {
   }
   if (intent.status === "paid") return paidProjection(intent);
   const approval = await input.io.loadApproval(intent.id);
-  const approved = intent.status === "approved" && Boolean(approval && bindingsMatchApproval(intent, approval, new Date()));
-  const paymentStatus = intent.status === "requires_action"
-    ? "requires_action"
-    : intent.status === "processing"
-      ? "processing"
-      : intent.status === "failed"
-        ? "failed"
-        : intent.status === "unknown"
-          ? "unknown"
-          : intent.status === "expired"
-            ? "expired"
-            : intent.status === "revoked"
-              ? "revoked"
-              : "not_started";
-  return {
-    ok: true,
-    status: 200,
-    checkout: projectNativeDepositCheckout({
-      intent,
-      phase: intent.status === "requires_action"
-        ? "requires_escalation"
-        : approved
-          ? "ready_for_complete"
-          : "requires_escalation",
-      paymentStatus,
-      includeContinuation: intent.status === "requires_action",
-    }),
-  };
+  return { ok: true, status: 200, checkout: projectStoredNativeDeposit(intent, approval, await input.io.loadAttempt(intent.id)) };
 }
-

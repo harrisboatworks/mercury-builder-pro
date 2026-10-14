@@ -1,10 +1,11 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import {
   assessSharedPaymentToken, inspectNativeDepositCompleteCaller, nativePaymentIntentForm,
-  nativeDepositActorAuthorized, projectNativeDepositCheckout, runNativeDepositComplete,
+  nativeDepositActorAuthorized, projectNativeDepositCheckout, projectStoredNativeDeposit, runNativeDepositComplete, runNativeDepositCreate, runNativeDepositRead, runNativeDepositRestart,
   MAX_NATIVE_TOKEN_LIFETIME_MS, NATIVE_DEPOSIT_HANDLER_ID, type NativeIntentRecord, type NativeCompleteIo,
 } from '../../../supabase/functions/_shared/native-deposit-checkout';
 import { createNativeStripePreviewClient, NativeStripeRequestError } from '../../../supabase/functions/_shared/native-stripe-preview';
+import { nativeDepositBankRecoveryAllowed } from '../../../supabase/functions/_shared/native-deposit-bank-action';
 const now = new Date('2026-10-12T12:00:00Z');
 const saved = '71717171-7171-4171-8171-717171717171'; const motor = '36363636-3636-4636-8636-363636363636';
 const intent: NativeIntentRecord = { id: saved, child_id: 'ndc_' + 'a'.repeat(32), parent_session_id: 'chk_synthetic', saved_quote_id: saved,
@@ -63,6 +64,98 @@ function setup() {
 describe('native deposit boundary', () => {
   beforeEach(() => { vi.useFakeTimers(); vi.setSystemTime(now); });
   afterEach(() => vi.useRealTimers());
+  it('reconciles captured funds without downloading an unavailable or changed PDF', async () => {
+    const state = setup(); state.io.claimPaid = vi.fn().mockResolvedValueOnce(false).mockResolvedValueOnce(true);
+    await state.complete();
+    state.io.loadDocumentHash = vi.fn(async () => null); state.io.validateFreshIntent = vi.fn(async () => false);
+    const replay = await state.complete({}, new Date('2026-10-13T12:00:00Z'));
+    expect(replay.ok && replay.checkout.payment_status).toBe('paid');
+    expect(state.io.loadDocumentHash).not.toHaveBeenCalled(); expect(state.io.validateFreshIntent).not.toHaveBeenCalled();
+    expect(state.stripe.retrievePaymentIntent).toHaveBeenCalledOnce(); expect(state.stripe.createConfirmedPaymentIntent).toHaveBeenCalledOnce();
+  });
+  it.each([401,403,404,429,500])('retains the known bank action when PI retrieval fails with %s', async status => {
+    const state = setup(); const pi = await state.stripe.retrievePaymentIntent();
+    state.submit.mockResolvedValueOnce({ ...pi, amount_received: 0, status: 'requires_action' });
+    await state.complete(); state.stripe.retrievePaymentIntent.mockRejectedValueOnce(new NativeStripeRequestError(status, 'retrieve_error'));
+    const result = await state.complete({}, new Date('2026-10-12T13:00:00Z'));
+    expect(result.ok && result.checkout.payment_status).toBe('requires_action');
+    expect(result.ok && result.checkout.messages.some(m => m.code === 'processor_status_unavailable')).toBe(true);
+    expect(state.attempt().status).toBe('requires_action'); expect(state.stripe.createConfirmedPaymentIntent).toHaveBeenCalledOnce();
+  });
+  it('distinguishes new-submission PDF unavailability from a changed document', async () => {
+    const state = setup(); state.io.loadDocumentHash = async () => null;
+    expect(await state.complete()).toMatchObject({ ok: false, status: 503, code: 'document_unavailable' });
+    state.io.loadDocumentHash = async () => 'b'.repeat(64);
+    expect(await state.complete()).toMatchObject({ ok: false, status: 409, code: 'stale_binding' });
+    expect(state.attempt()).toBeNull(); expect(state.stripe.createConfirmedPaymentIntent).not.toHaveBeenCalled();
+  });
+  it('rejects retired review IDs before any processor call', async () => {
+    const state = setup(); state.io.loadIntentByChild = async () => ({ ...intent, status: 'canceled', retired_at: now.toISOString() });
+    expect(await state.complete()).toMatchObject({ ok: false, code: 'deposit_canceled' });
+    expect(state.stripe.retrieveSharedPaymentToken).not.toHaveBeenCalled(); expect(state.stripe.createConfirmedPaymentIntent).not.toHaveBeenCalled();
+  });
+  it('projects the real attempt for read and create-existing without storage or parent expiry gates', async () => {
+    const state = setup(); const pi = await state.stripe.retrievePaymentIntent();
+    state.submit.mockResolvedValueOnce({ ...pi, amount_received: 0, status: 'requires_action' }); await state.complete();
+    const read = await runNativeDepositRead({ childId: intent.child_id, actor: { userId: 'buyer', resumeCapability: null }, io: state.io });
+    expect(read.ok && read.checkout.payment_status).toBe('requires_action');
+    const forbidden = vi.fn(async () => { throw new Error('not a new submission'); });
+    const create = await runNativeDepositCreate({ caller: { operation: 'motor_reservation', saved_quote_id: saved }, routeParentId: 'chk_new',
+      actor: { userId: 'buyer', resumeCapability: null }, now, childId: 'ndc_'+'b'.repeat(32), intentId: 'fresh',
+      io: { ...state.io, loadIntentBySavedQuote: state.io.loadIntentByChild, loadParent: forbidden, loadMotor: forbidden, insertIntent: forbidden, retireIntent: forbidden } });
+    expect(create.ok && create.checkout.id).toBe(intent.child_id); expect(create.ok && create.checkout.payment_status).toBe('requires_action');
+    expect(forbidden).not.toHaveBeenCalled();
+  });
+  it('never projects a claimed or submitted attempt as not started', async () => {
+    const state = setup(); state.io.beginSubmission = async () => false; await state.complete();
+    expect(projectStoredNativeDeposit(intent, null, state.attempt(), now).payment_status).toBe('unknown');
+    expect(projectStoredNativeDeposit({ ...intent, retired_at: now.toISOString() }, null, state.attempt(), now).status).toBe('canceled');
+  });
+  it('permits bank verification of the same submitted PI after first-payment consent expires', async () => {
+    const state = setup(); const pi = await state.stripe.retrievePaymentIntent();
+    state.submit.mockResolvedValueOnce({ ...pi, amount_received: 0, status: 'requires_action' }); await state.complete();
+    const expired = { ...intent, intent_id: intent.id, expires_at: '2026-10-12T12:01:00Z' };
+    const expiredParent = { ...intent, status: 'requires_action', expires_at: '2026-10-12T12:02:00Z' };
+    vi.setSystemTime(new Date('2026-10-12T13:00:00Z'));
+    expect(nativeDepositBankRecoveryAllowed(expiredParent, state.attempt(), expired)).toBe(true);
+    expect(nativeDepositBankRecoveryAllowed(expiredParent, { ...state.attempt(), submitted_at: null }, expired)).toBe(false);
+    expect(nativeDepositBankRecoveryAllowed(expiredParent, state.attempt(), { ...expired, amount_cents: 20000 })).toBe(false);
+    expect(nativeDepositBankRecoveryAllowed({ ...expiredParent, retired_at: now.toISOString() }, state.attempt(), expired)).toBe(false);
+  });
+  it.each(['document','catalog'] as const)('preserves a fresh review during a transient %s outage on restart', async kind => {
+    const state = setup();
+    if (kind === 'document') state.io.loadDocumentHash = async () => null; else state.io.validateFreshIntent = async () => null;
+    const retireIntent = vi.fn(async () => true);
+    const result = await runNativeDepositRestart({ intent, quote: (await state.io.loadSavedQuote(saved))!, enabled: true, sellerVerified: true, mode: 'recreate',
+      actor: { userId: 'buyer', resumeCapability: null }, now, childId: 'ndc_'+'b'.repeat(32), intentId: 'fresh',
+      io: { ...state.io, loadIntentBySavedQuote: async () => null, loadParent: async () => null, loadMotor: async () => null, insertIntent: async () => null, retireIntent } });
+    expect(result).toMatchObject({ ok: false, status: 503, code: 'review_unavailable' }); expect(retireIntent).not.toHaveBeenCalled();
+  });
+  it('permits retire-only cancellation while native payments are paused, without a new checkout', async () => {
+    const state = setup(); state.io.loadDocumentHash = vi.fn(async () => null);
+    const retireIntent = vi.fn(async () => true), insertIntent = vi.fn(async () => null);
+    const result = await runNativeDepositRestart({ intent, quote: (await state.io.loadSavedQuote(saved))!, enabled: false, sellerVerified: false, mode: 'cancel',
+      actor: { userId: 'buyer', resumeCapability: null }, now, childId: 'ndc_'+'b'.repeat(32), intentId: 'fresh',
+      io: { ...state.io, loadIntentBySavedQuote: async () => null, loadParent: async () => null, loadMotor: async () => null, insertIntent, retireIntent } });
+    expect(result).toMatchObject({ ok: true, canceled: true }); expect(retireIntent).toHaveBeenCalledWith(intent.id, false);
+    expect(state.io.loadDocumentHash).not.toHaveBeenCalled(); expect(insertIntent).not.toHaveBeenCalled();
+  });
+  it('gives a clear new-wallet-credential error for a retired token fingerprint', async () => {
+    const state = setup(); state.io.claimAttempt = async () => ({ result: 'refused', reason: 'token_already_bound' });
+    expect(await state.complete()).toMatchObject({ ok: false, status: 409, code: 'token_already_bound', message: 'Request a new wallet credential for this fresh deposit review.' });
+    expect(state.stripe.createConfirmedPaymentIntent).not.toHaveBeenCalled();
+  });
+  it('distinguishes invalid canonical PDF admission from a storage outage', async () => {
+    const state = setup(); state.io.loadDocumentHash = async () => ({ invalid: true });
+    expect(await state.complete()).toMatchObject({ ok: false, status: 409, code: 'stale_binding' }); expect(state.attempt()).toBeNull();
+  });
+  it('preserves consent if native payments become paused after a recreate button was shown', async () => {
+    const state = setup(); const retireIntent = vi.fn(async () => true);
+    const result = await runNativeDepositRestart({ intent, quote: (await state.io.loadSavedQuote(saved))!, enabled: false, sellerVerified: false, mode: 'recreate',
+      actor: { userId: 'buyer', resumeCapability: null }, now, childId: 'ndc_'+'b'.repeat(32), intentId: 'fresh',
+      io: { ...state.io, loadIntentBySavedQuote: async () => null, loadParent: async () => null, loadMotor: async () => null, insertIntent: async () => null, retireIntent } });
+    expect(result).toMatchObject({ ok: false, status: 409, code: 'restart_unavailable' }); expect(retireIntent).not.toHaveBeenCalled();
+  });
   it('requires ownership, not public UUIDs', () => {
     expect(nativeDepositActorAuthorized({ savedQuoteUserId: 'buyer', savedQuoteResumeToken: 'dep_' + 'a'.repeat(24), actor: { userId: null, resumeCapability: null } })).toBe(false);
     expect(nativeDepositActorAuthorized({ savedQuoteUserId: null, savedQuoteResumeToken: 'dep_' + 'a'.repeat(24), actor: { userId: null, resumeCapability: 'dep_' + 'a'.repeat(24) } })).toBe(true);

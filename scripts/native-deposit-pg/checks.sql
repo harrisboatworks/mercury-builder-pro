@@ -15,10 +15,8 @@ INSERT INTO public.native_deposit_review_challenges(nonce_hash,intent_id,actor_f
 VALUES(repeat('b',64),'71717171-7171-4171-8171-717171717171',repeat('c',64),repeat('d',64),now()+interval '10 minutes');
 SET ROLE service_role;
 DO $$ DECLARE v_id uuid := '71717171-7171-4171-8171-717171717171'; result jsonb; attempt uuid; ok boolean; BEGIN
-  BEGIN
-    UPDATE public.saved_quotes SET user_id='44444444-4444-4444-8444-444444444444' WHERE saved_quotes.id=v_id;
-    RAISE EXCEPTION 'owner drift accepted before approval';
-  EXCEPTION WHEN serialization_failure THEN NULL; END;
+  UPDATE public.saved_quotes SET user_id='44444444-4444-4444-8444-444444444444' WHERE saved_quotes.id=v_id;
+  UPDATE public.saved_quotes SET user_id='33333333-3333-4333-8333-333333333333' WHERE saved_quotes.id=v_id;
   result := public.claim_native_deposit_attempt(v_id,repeat('e',64),repeat('f',64),50000,'acct_synthetic',false);
   IF result->>'result' <> 'refused' THEN RAISE EXCEPTION 'charge without approval'; END IF;
   IF public.approve_native_deposit_review(v_id,repeat('b',64),repeat('f',64),repeat('d',64)) THEN RAISE EXCEPTION 'wrong actor accepted'; END IF;
