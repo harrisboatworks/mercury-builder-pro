@@ -14425,7 +14425,7 @@ Harris Boat Works | Mercury Marine Premier Dealer | Family-owned since 1947 | Me
 
 The physical marina is closed December 1 through April 1. There is no on-site service, inspection, commissioning, installation, or customer access during that period. We can generally arrange boat pickup. Ask us about availability for your boat and location. You can also complete hbwservice.ca, then drop off anytime, including after hours.
 
-*HBW operating scope and pricing references verified October 14, 2026 against the published 2026-27 HBW rate card. All amounts are CAD before HST unless stated otherwise.*
+*Published 2026-27 rate-card figures on this page were copied October 14, 2026 from the current public [HBW winterization and storage rate card](https://www.harrisboatworks.ca/winter-storage). All amounts are CAD before HST unless stated otherwise.*
 
 ## What Does Boat Winterization Cost in Ontario?
 
@@ -14448,7 +14448,7 @@ Keep these scopes separate unless the current written quote lists them together:
 - Maintenance or repairs found during the job
 - Spring commissioning
 
-Storage is outdoors. We do not offer indoor or heated boat storage. We also do not offer climate-controlled, summer, or year-round storage. "Done inside" and "done outside" refer only to where we apply shrink wrap.
+Storage is outdoors. We do not offer indoor or heated boat storage. "Done inside" and "done outside" refer only to where we apply shrink wrap.
 
 ### Outboard winterization
 
@@ -14521,7 +14521,7 @@ Before HST, shop supplies and miscellaneous charges. Effective September 2026 on
 
 The source rate card also states the spring check is $99 on its own as of July 2026 and included for winter-storage customers.
 
-Instead, ask whether the quote identifies each cost driver:
+The written quote should also identify its cost drivers:
 
 | Cost driver | What must be confirmed |
 |---|---|
@@ -14601,7 +14601,7 @@ That is why the service request asks for the actual boat and engine details befo
 
 ## Shrinkwrap and Outdoor Winter Storage at HBW
 
-HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. We also do not offer climate-controlled, summer, or year-round storage.
+HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage.
 
 Winterization, shrinkwrap, storage, trailer work, and repairs are distinct items. Whether they appear together on a quote depends on what the customer requests and HBW accepts. Do not assume a bundle discount or that a service is included unless it is written on the current quote.
 
@@ -14685,7 +14685,7 @@ Submit the boat, engine, trailer, storage, and requested-work details at [hbwser
       },
       {
         question: 'What storage does HBW offer?',
-        answer: 'HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage. We also do not offer climate-controlled, summer, or year-round storage.',
+        answer: 'HBW offers outdoor storage with professional shrink wrap, outdoor uncovered storage, and shrink-wrap-only service. We do not offer indoor or heated boat storage.',
       },
       {
         question: 'What does spring commissioning cost?',

@@ -545,7 +545,7 @@ const ARTICLE_CONTRACTS = {
         rule: 'no-delivery-or-mobile',
       },
       {
-        rx: /outdoor storage with professional shrink wrap[\s\S]{0,240}do not offer indoor or heated boat storage[\s\S]{0,80}do not offer climate-controlled, summer, or year-round storage/i,
+        rx: /outdoor storage with professional shrink wrap[\s\S]{0,240}do not offer indoor or heated boat storage/,
         rule: 'storage-outdoor-only',
       },
       {
@@ -598,6 +598,18 @@ const ARTICLE_CONTRACTS = {
       },
     ],
     forbidden: [
+      {
+        rx: /climate-controlled, summer, or year-round storage/,
+        rule: 'no-unsourced-storage-exclusions',
+      },
+      {
+        rx: /HBW operating scope and pricing references verified/,
+        rule: 'no-broad-freshness-claim',
+      },
+      {
+        rx: /Instead, ask whether the quote identifies each cost driver/,
+        rule: 'no-orphaned-cost-driver-transition',
+      },
       {
         rx: /\$371\.15|\$291\.49/,
         rule: 'no-disputed-seadoo-pwc-amount',

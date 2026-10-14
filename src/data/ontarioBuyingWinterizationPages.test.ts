@@ -49,6 +49,12 @@ describe('Ontario buying-price and winterization page holds', () => {
       expect(surface).toMatch(/publishes its current 2026[–-]27 winterization and storage rates/);
       expect(surface).toContain('not a generic package price');
       expect(surface).toContain('hbwservice.ca');
+      expect(surface).toContain('Published 2026-27 rate-card figures on this page were copied October 14, 2026');
+      expect(surface).not.toContain('HBW operating scope and pricing references verified');
+      expect(surface).toContain('The written quote should also identify its cost drivers');
+      expect(surface).not.toContain('Instead, ask whether the quote identifies each cost driver');
+      expect(surface).toContain('We do not offer indoor or heated boat storage');
+      expect(surface).not.toContain('climate-controlled, summer, or year-round storage');
     }
   });
 
@@ -84,7 +90,15 @@ describe('Ontario buying-price and winterization page holds', () => {
     }
   });
 
-  it('keeps pricing-reference answering the Ontario dealer price question from live CAD sources', () => {
+  it('records a no-safe-justified-change disposition for pricing-reference after #727 authorization', () => {
+    // Jay authorized existing-page SEO/content investigation in #727. This is
+    // not an SEO-excluded or copy-locked gate. Codex live evidence on Oct 14
+    // already showed one H1, both CAD tables, a correct canonical, and no
+    // load-error text. #117 remains an open Codex-owned Clarity hold
+    // (evidence-gathering; latest owner comment 2026-10-01) that forbids
+    // speculative pricing/copy/instrumentation changes without a repeated
+    // misleading or broken target. Leaving the page unchanged is the
+    // supported finding, not a rank promise.
     expect(pricingPage).toContain('Mercury Outboard Prices in Ontario (CAD): Live HBW Dealer Pricing');
     expect(pricingPage).toContain('fetch("/pricing-reference.md"');
     expect(pricingPage).toContain('Jump to current prices');
