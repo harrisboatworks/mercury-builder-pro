@@ -100,7 +100,7 @@ describe('Harris Boat Works brand-search landing page', () => {
     expect(read('src/pages/HarrisBoatWorks.tsx')).toContain('OpeningHoursDisplay');
     expect(globalSeo).toContain("from '@/data/google-places-cache.json'");
     expect(globalSeo).toContain('withSeasonalSundayHours');
-    expect(globalSeo).toContain('"openingHoursSpecification": LIVE_OPENING_HOURS');
+    expect(globalSeo).toContain('buildBusinessIdentity({ geo: BUSINESS_GEO, openingHoursSpecification: LIVE_OPENING_HOURS');
     expect(data).toContain(HISTORY);
     expect(data).toContain('/quote/motor-selection');
     expect(data).toContain('https://hbwservice.ca');

@@ -1,3 +1,4 @@
+import { BUSINESS_ENTITY_ID, buildPickupAreaNodes } from '@/lib/business-identity.js';
 import { blogPostingAuthor } from '@/lib/blogCitation.js';
 import { Helmet } from '@/lib/helmet';
 import { BlogArticle } from '@/data/blogArticles';
@@ -202,52 +203,14 @@ export function BlogSEO({ article }: BlogSEOProps) {
           }
         }
       ] : []),
-      ...(dealerCity ? [{
-        "@type": "LocalBusiness",
-        "@id": `${url}#localbusiness`,
-        "name": "Harris Boat Works",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "5369 Harris Boat Works Rd",
-          "addressLocality": "Gores Landing",
-          "addressRegion": "ON",
-          "postalCode": "K0K 2E0",
-          "addressCountry": "CA"
-        },
-        "telephone": "+1-905-342-2153",
-        "url": SITE_URL,
-        "geo": { "@type": "GeoCoordinates", "latitude": 44.1614, "longitude": -78.0369 },
-        "areaServed": [
-          { "@type": "City", "name": `${dealerCity}, Ontario` },
-          { "@type": "Place", "name": "Greater Toronto Area" }
-        ]
-      }] : []),
+      ...(dealerCity ? buildPickupAreaNodes({ url, region: dealerCity }) : []),
       ...(article.slug === 'best-marina-rice-lake-ontario' ? [{
-        "@type": ["LocalBusiness", "BoatDealer"],
-        "@id": `${url}#localbusiness`,
-        "name": "Harris Boat Works",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "5369 Harris Boat Works Rd",
-          "addressLocality": "Gores Landing",
-          "addressRegion": "ON",
-          "postalCode": "K0K 2E0",
-          "addressCountry": "CA"
-        },
-        "telephone": "+1-905-342-2153",
-        "url": SITE_URL,
-        "geo": { "@type": "GeoCoordinates", "latitude": 44.1614, "longitude": -78.0369 },
-        "areaServed": [
-          { "@type": "Place", "name": "Rice Lake" },
-          { "@type": "Place", "name": "Kawarthas" },
-          { "@type": "Place", "name": "Northumberland" }
-        ],
-        "sameAs": [
-          "https://g.page/harrisboatworks",
-          "https://www.facebook.com/harrisboatworks",
-          "https://www.instagram.com/harrisboatworks"
-        ]
-      }] : [])
+        '@type': 'Service',
+        '@id': `${url}#marina`,
+        name: 'Marina services on Rice Lake',
+        provider: { '@id': BUSINESS_ENTITY_ID },
+        areaServed: { '@id': riceLakePlaceId },
+      }] : []),
     ]
   };
 

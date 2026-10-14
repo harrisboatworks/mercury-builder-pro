@@ -1,8 +1,7 @@
 import { ONTARIO_BUYING_ANSWER, ONTARIO_LINEUP_ANSWER, ONTARIO_PRICING_ANSWER } from '@/lib/mercury-ontario-facts.js';
 import { Helmet } from '@/lib/helmet';
 import { SITE_URL } from '@/lib/site';
-import { BUSINESS_GEO, BUSINESS_SAME_AS } from '@/lib/companyInfo';
-import { MERCURY_OUTBOARDS_ONTARIO_OFFERS } from '@/data/mercuryOutboardsOffers.js';
+import { BUSINESS_ENTITY_ID } from '@/lib/business-identity.js';
 import { getMercuryFinancingFaqAnswer } from '@/components/promotions/TDAlwaysOnOffer';
 
 export const ONTARIO_HUB_FAQ = [
@@ -62,7 +61,7 @@ export function MercuryOutboardsOntarioSEO() {
         "about": { "@id": `${SITE_URL}/#organization` },
         "inLanguage": "en-CA",
         "breadcrumb": { "@id": `${SITE_URL}/mercury-outboards-ontario#breadcrumb` },
-        "mainEntity": { "@id": `${SITE_URL}/mercury-outboards-ontario#localbusiness` }
+        "mainEntity": { "@id": `${SITE_URL}/mercury-outboards-ontario#service` }
       },
       {
         "@type": "BreadcrumbList",
@@ -73,23 +72,11 @@ export function MercuryOutboardsOntarioSEO() {
         ]
       },
       {
-        "@type": ["LocalBusiness", "AutomotiveBusiness"],
-        "@id": `${SITE_URL}/mercury-outboards-ontario#localbusiness`,
-        "name": "Harris Boat Works, Mercury Premier Dealer",
-        "description": "Mercury Marine Premier Dealer serving Ontario. Current HBW listings, CAD quotes and dealer-confirmed special orders. Family-owned since 1947, Mercury dealer since 1965.",
-        "url": `${SITE_URL}/mercury-outboards-ontario`,
-        "telephone": "+1-905-342-2153",
-        "email": "info@harrisboatworks.ca",
-        "image": `${SITE_URL}/lovable-uploads/logo-dark.png`,
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "5369 Harris Boat Works Rd",
-          "addressLocality": "Gores Landing",
-          "addressRegion": "ON",
-          "postalCode": "K0K 2E0",
-          "addressCountry": "CA"
-        },
-        "geo": { "@type": "GeoCoordinates", "latitude": BUSINESS_GEO.latitude, "longitude": BUSINESS_GEO.longitude },
+        "@type": "Service",
+        "@id": `${SITE_URL}/mercury-outboards-ontario#service`,
+        "name": "Mercury outboard sales and repower for Ontario buyers",
+        "provider": { "@id": BUSINESS_ENTITY_ID },
+        "description": "Mercury outboard sales and repower at Harris Boat Works in Gores Landing. Ontario buyers travel to the shop for pickup; no shipping or mobile service.",
         "areaServed": [
           { "@type": "AdministrativeArea", "name": "Ontario, Canada" },
           { "@type": "Place", "name": "Greater Toronto Area" },
@@ -102,20 +89,7 @@ export function MercuryOutboardsOntarioSEO() {
           { "@type": "Place", "name": "Lake Scugog" },
           { "@type": "Place", "name": "Rice Lake" }
         ],
-        "award": [
-          "Mercury Marine Premier Dealer",
-          "Authorized Legend Boats Dealer"
-        ],
-        "knowsAbout": [
-          "Mercury FourStroke outboards",
-          "Mercury Pro XS outboards",
-          "Mercury Command Thrust",
-          "Mercury SeaPro commercial outboards",
-          "Mercury ProKicker trolling motors",
-          "Marine repower"
-        ],
-        "makesOffer": MERCURY_OUTBOARDS_ONTARIO_OFFERS,
-        "sameAs": BUSINESS_SAME_AS
+        "serviceType": "Mercury outboard sales and repower"
       },
       {
         "@type": "FAQPage",

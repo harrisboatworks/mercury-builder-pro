@@ -1,5 +1,6 @@
 import { Helmet } from '@/lib/helmet';
 import { BUSINESS_GEO, BUSINESS_SAME_AS } from '@/lib/companyInfo';
+import { buildBusinessIdentity } from '@/lib/business-identity.js';
 import googlePlaces from '@/data/google-places-cache.json';
 import { withSeasonalSundayHours } from '@/lib/shopHours.js';
 
@@ -53,64 +54,7 @@ export function GlobalSEO() {
         "sameAs": BUSINESS_SAME_AS
       },
       {
-        "@type": ["LocalBusiness", "Store", "AutoRepair"],
-        "@id": "https://www.mercuryrepower.ca/#localbusiness",
-        "name": "Harris Boat Works",
-        "image": "https://www.mercuryrepower.ca/pwa-512x512.png",
-        "url": "https://www.harrisboatworks.ca/",
-        "telephone": "+1-905-342-2153",
-        "email": "info@harrisboatworks.ca",
-        "parentOrganization": { "@id": "https://www.mercuryrepower.ca/#organization" },
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "5369 Harris Boat Works Rd",
-          "addressLocality": "Gores Landing",
-          "addressRegion": "ON",
-          "postalCode": "K0K 2E0",
-          "addressCountry": "CA"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": BUSINESS_GEO.latitude,
-          "longitude": BUSINESS_GEO.longitude
-        },
-        "openingHoursSpecification": LIVE_OPENING_HOURS,
-        "areaServed": [
-          {
-            "@type": "Place",
-            "@id": "https://www.mercuryrepower.ca/#rice-lake-ontario",
-            "name": "Rice Lake, Ontario",
-            "alternateName": ["Rice Lake (Ontario)", "Rice Lake, Kawartha Lakes"],
-            "description": "Freshwater lake in the Kawartha Lakes region, southern Ontario, Canada. Approximately 90 minutes east of Toronto. Distinct from Rice Lake, Wisconsin and Rice Lake, Minnesota.",
-            "geo": { "@type": "GeoCoordinates", "latitude": 44.1614, "longitude": -78.0369 },
-            "containedInPlace": [
-              { "@type": "AdministrativeArea", "name": "Kawartha Lakes" },
-              { "@type": "AdministrativeArea", "name": "Ontario" },
-              { "@type": "Country", "name": "Canada" }
-            ],
-            "sameAs": [
-              "https://en.wikipedia.org/wiki/Rice_Lake_(Ontario)",
-              "https://www.wikidata.org/wiki/Q1543290"
-            ]
-          },
-          { "@type": "AdministrativeArea", "name": "Kawartha Lakes" },
-          { "@type": "State", "name": "Ontario" },
-          { "@type": "Country", "name": "Canada" }
-        ],
-        "makesOffer": [
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mercury outboard repower" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mercury & MerCruiser marine repair" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Winterization and spring launch" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Outdoor boat storage with professional shrinkwrap" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "New Legend boat sales" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Boat rentals" } }
-        ],
-        "brand": [
-          { "@type": "Brand", "name": "Mercury Marine" },
-          { "@type": "Brand", "name": "Legend Boats" }
-        ],
-        "award": "Mercury Marine Premier Dealer",
-        "sameAs": BUSINESS_SAME_AS
+        ...buildBusinessIdentity({ geo: BUSINESS_GEO, openingHoursSpecification: LIVE_OPENING_HOURS, sameAs: BUSINESS_SAME_AS }),
       }
     ]
   };

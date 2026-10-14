@@ -1,5 +1,5 @@
 import { Helmet } from '@/lib/helmet';
-import { BUSINESS_GEO, BUSINESS_SAME_AS } from '@/lib/companyInfo';
+import { BUSINESS_ENTITY_ID } from '@/lib/business-identity.js';
 import { getAllFAQItems } from '@/data/faqData';
 import { getCurrentMercuryFinancingRate } from '@/components/promotions/TDAlwaysOnOffer';
 
@@ -24,35 +24,11 @@ export function RepowerPageSEO() {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "LocalBusiness",
-        "@id": "https://www.mercuryrepower.ca/#business",
-        "name": "Harris Boat Works",
-        "description": "Mercury Certified Repower Center serving Ontario boaters since 1947. Expert outboard motor repowering on Rice Lake. Pickup only at Gores Landing, no shipping. Valid government-issued photo ID required at pickup.",
-        "url": "https://www.mercuryrepower.ca",
-        "telephone": "(905) 342-2153",
-        "email": "info@harrisboatworks.ca",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "5369 Harris Boat Works Rd",
-          "addressLocality": "Gores Landing",
-          "addressRegion": "ON",
-          "postalCode": "K0K 2E0",
-          "addressCountry": "CA"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": BUSINESS_GEO.latitude,
-          "longitude": BUSINESS_GEO.longitude
-        },
-        "foundingDate": "1947",
-        "sameAs": BUSINESS_SAME_AS
-      },
-      {
         "@type": "Service",
         "@id": "https://www.mercuryrepower.ca/repower#service",
         "name": "Mercury Outboard Repower Service",
         "serviceType": "Boat Motor Replacement",
-        "provider": { "@id": "https://www.mercuryrepower.ca/#business" },
+        "provider": { "@id": BUSINESS_ENTITY_ID },
         "areaServed": ["Rice Lake", "Kawarthas", "Peterborough", "GTA", "Toronto", "Ontario"],
         "description": "Professional Mercury outboard motor repower service. Get 70% of the benefit of a new boat for 30% of the cost. Includes professional installation and lake testing. Pickup only at Gores Landing, no shipping. Valid government-issued photo ID required.",
         "offers": {
