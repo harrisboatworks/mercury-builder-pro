@@ -78,7 +78,7 @@ export interface SubmitQuoteLeadDeps {
   forbiddenOriginResponse: (headers: Record<string, string>) => Response;
   createClient: (url: string, key: string, options?: Record<string, unknown>) => Loose;
   Resend: new (apiKey: string) => Loose;
-  checkRateLimit: (req: Request, options: Record<string, unknown>) => Promise<boolean>;
+  checkRateLimit: (req: Request, options: { action: string; maxAttempts: number; windowMinutes: number; identifier?: string; failClosed?: boolean }) => Promise<boolean>;
   rateLimitedResponse: (headers: Record<string, string>, retryAfterSeconds?: number) => Response;
   getClientIdentifier: (req: Request) => string;
   getEnv: (name: string) => string | undefined;
