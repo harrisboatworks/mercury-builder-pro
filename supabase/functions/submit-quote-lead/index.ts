@@ -55,7 +55,10 @@ const payloadSchema = z.object({
   anonymous_session_id: z.string().min(8).max(128).nullable().optional(),
   customer_name: z.string().trim().min(1).max(150),
   customer_email: z.string().trim().email().max(255),
-  customer_phone: z.string().trim().min(7).max(32),
+  // Optional when the customer asks for an email reply; required for phone/text (see refine below).
+  customer_phone: z.string().trim().max(32).optional().nullable()
+    .transform((v) => (v ? v : null))
+    .refine((v) => v === null || v.length >= 7, { message: "Phone number is too short" }),
   contact_method: z.string().trim().max(32).optional(),
   notes: z.string().max(2000).optional().nullable(),
   motor_model: z.string().max(200).optional().nullable(),
@@ -74,6 +77,10 @@ const payloadSchema = z.object({
   quote_snapshot: z.unknown().optional(),
   turnstileToken: z.string().min(20).max(2048).optional(),
   website: z.string().max(500).optional().nullable(),
+}).superRefine((p, ctx) => {
+  if ((p.contact_method || "email") !== "email" && !p.customer_phone) {
+    ctx.addIssue({ code: z.ZodIssueCode.custom, path: ["customer_phone"], message: "Required for phone or text replies" });
+  }
 });
 
 function newSessionId(): string {
