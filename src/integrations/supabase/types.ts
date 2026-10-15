@@ -161,6 +161,24 @@ export type Database = {
         }
         Relationships: []
       }
+      board_blank_name_alerts: {
+        Row: {
+          alerted_at: string
+          customer_id: number
+          ro_no: string
+        }
+        Insert: {
+          alerted_at?: string
+          customer_id: number
+          ro_no: string
+        }
+        Update: {
+          alerted_at?: string
+          customer_id?: number
+          ro_no?: string
+        }
+        Relationships: []
+      }
       board_customer_comms: {
         Row: {
           awaiting_customer: boolean
@@ -206,6 +224,27 @@ export type Database = {
           recording_url?: string | null
           ro_no?: string | null
           updated_at?: string
+        }
+        Relationships: []
+      }
+      board_customer_name_overrides: {
+        Row: {
+          created_at: string
+          customer_id: number
+          display_name: string
+          reason: string | null
+        }
+        Insert: {
+          created_at?: string
+          customer_id: number
+          display_name: string
+          reason?: string | null
+        }
+        Update: {
+          created_at?: string
+          customer_id?: number
+          display_name?: string
+          reason?: string | null
         }
         Relationships: []
       }
@@ -809,10 +848,16 @@ export type Database = {
           contact_attempts: number | null
           created_at: string | null
           created_by_admin: string | null
+          customer_address_line1: string | null
+          customer_address_line2: string | null
+          customer_city: string | null
+          customer_country: string | null
           customer_email: string
           customer_name: string
           customer_notes: string | null
           customer_phone: string | null
+          customer_postal_code: string | null
+          customer_region: string | null
           deposit_amount: number
           discount_amount: number | null
           final_price: number
@@ -829,12 +874,18 @@ export type Database = {
           monthly_payment: number
           motor_model_id: string | null
           notes: string | null
+          payment_paid_at: string | null
+          payment_status: string | null
           penalty_applied: boolean
           penalty_factor: number | null
           penalty_reason: string | null
           promotion_id: string | null
           quote_data: Json | null
+          saved_quote_id: string | null
           share_token: string | null
+          stripe_billing_address: Json | null
+          stripe_checkout_session_id: string | null
+          stripe_payment_intent_id: string | null
           term_months: number
           total_cost: number
           tradein_value_final: number | null
@@ -849,10 +900,16 @@ export type Database = {
           contact_attempts?: number | null
           created_at?: string | null
           created_by_admin?: string | null
+          customer_address_line1?: string | null
+          customer_address_line2?: string | null
+          customer_city?: string | null
+          customer_country?: string | null
           customer_email: string
           customer_name: string
           customer_notes?: string | null
           customer_phone?: string | null
+          customer_postal_code?: string | null
+          customer_region?: string | null
           deposit_amount: number
           discount_amount?: number | null
           final_price: number
@@ -869,12 +926,18 @@ export type Database = {
           monthly_payment: number
           motor_model_id?: string | null
           notes?: string | null
+          payment_paid_at?: string | null
+          payment_status?: string | null
           penalty_applied?: boolean
           penalty_factor?: number | null
           penalty_reason?: string | null
           promotion_id?: string | null
           quote_data?: Json | null
+          saved_quote_id?: string | null
           share_token?: string | null
+          stripe_billing_address?: Json | null
+          stripe_checkout_session_id?: string | null
+          stripe_payment_intent_id?: string | null
           term_months: number
           total_cost: number
           tradein_value_final?: number | null
@@ -889,10 +952,16 @@ export type Database = {
           contact_attempts?: number | null
           created_at?: string | null
           created_by_admin?: string | null
+          customer_address_line1?: string | null
+          customer_address_line2?: string | null
+          customer_city?: string | null
+          customer_country?: string | null
           customer_email?: string
           customer_name?: string
           customer_notes?: string | null
           customer_phone?: string | null
+          customer_postal_code?: string | null
+          customer_region?: string | null
           deposit_amount?: number
           discount_amount?: number | null
           final_price?: number
@@ -909,12 +978,18 @@ export type Database = {
           monthly_payment?: number
           motor_model_id?: string | null
           notes?: string | null
+          payment_paid_at?: string | null
+          payment_status?: string | null
           penalty_applied?: boolean
           penalty_factor?: number | null
           penalty_reason?: string | null
           promotion_id?: string | null
           quote_data?: Json | null
+          saved_quote_id?: string | null
           share_token?: string | null
+          stripe_billing_address?: Json | null
+          stripe_checkout_session_id?: string | null
+          stripe_payment_intent_id?: string | null
           term_months?: number
           total_cost?: number
           tradein_value_final?: number | null
@@ -934,6 +1009,13 @@ export type Database = {
             columns: ["promotion_id"]
             isOneToOne: false
             referencedRelation: "promotions"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "customer_quotes_saved_quote_id_fkey"
+            columns: ["saved_quote_id"]
+            isOneToOne: false
+            referencedRelation: "saved_quotes"
             referencedColumns: ["id"]
           },
         ]
@@ -997,6 +1079,98 @@ export type Database = {
           updated_at?: string
         }
         Relationships: []
+      }
+      deposit_email_deliveries: {
+        Row: {
+          attempt_count: number
+          audience: string
+          claim_expires_at: string | null
+          claim_token: string | null
+          created_at: string
+          customer_quote_id: string
+          id: string
+          last_attempted_at: string | null
+          last_error: string | null
+          provider_id: string | null
+          saved_quote_id: string
+          sent_at: string | null
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          attempt_count?: number
+          audience: string
+          claim_expires_at?: string | null
+          claim_token?: string | null
+          created_at?: string
+          customer_quote_id: string
+          id?: string
+          last_attempted_at?: string | null
+          last_error?: string | null
+          provider_id?: string | null
+          saved_quote_id: string
+          sent_at?: string | null
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          attempt_count?: number
+          audience?: string
+          claim_expires_at?: string | null
+          claim_token?: string | null
+          created_at?: string
+          customer_quote_id?: string
+          id?: string
+          last_attempted_at?: string | null
+          last_error?: string | null
+          provider_id?: string | null
+          saved_quote_id?: string
+          sent_at?: string | null
+          status?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "deposit_email_deliveries_customer_quote_id_fkey"
+            columns: ["customer_quote_id"]
+            isOneToOne: false
+            referencedRelation: "customer_quotes"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "deposit_email_deliveries_saved_quote_id_fkey"
+            columns: ["saved_quote_id"]
+            isOneToOne: false
+            referencedRelation: "saved_quotes"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      deposit_payment_rails: {
+        Row: {
+          created_at: string
+          rail: string
+          saved_quote_id: string
+        }
+        Insert: {
+          created_at?: string
+          rail: string
+          saved_quote_id: string
+        }
+        Update: {
+          created_at?: string
+          rail?: string
+          saved_quote_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "deposit_payment_rails_saved_quote_id_fkey"
+            columns: ["saved_quote_id"]
+            isOneToOne: true
+            referencedRelation: "saved_quotes"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       diagnostic_brief_versions: {
         Row: {
@@ -2163,6 +2337,27 @@ export type Database = {
         }
         Relationships: []
       }
+      hbw_excluded_customers: {
+        Row: {
+          added_at: string
+          customer_id: number
+          label: string
+          reason: string
+        }
+        Insert: {
+          added_at?: string
+          customer_id: number
+          label: string
+          reason: string
+        }
+        Update: {
+          added_at?: string
+          customer_id?: number
+          label?: string
+          reason?: string
+        }
+        Relationships: []
+      }
       hbw_knowledge: {
         Row: {
           active: boolean | null
@@ -3254,6 +3449,258 @@ export type Database = {
         }
         Relationships: []
       }
+      native_deposit_approvals: {
+        Row: {
+          amount_cents: number
+          approved_at: string
+          child_id: string
+          currency: string
+          document_sha256: string
+          expires_at: string
+          id: string
+          intent_id: string
+          motor_id: string
+          policy_code: string
+          policy_version: string
+          saved_quote_id: string
+          terms_version: string
+        }
+        Insert: {
+          amount_cents: number
+          approved_at?: string
+          child_id: string
+          currency: string
+          document_sha256: string
+          expires_at: string
+          id?: string
+          intent_id: string
+          motor_id: string
+          policy_code: string
+          policy_version: string
+          saved_quote_id: string
+          terms_version: string
+        }
+        Update: {
+          amount_cents?: number
+          approved_at?: string
+          child_id?: string
+          currency?: string
+          document_sha256?: string
+          expires_at?: string
+          id?: string
+          intent_id?: string
+          motor_id?: string
+          policy_code?: string
+          policy_version?: string
+          saved_quote_id?: string
+          terms_version?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "native_deposit_approvals_intent_id_fkey"
+            columns: ["intent_id"]
+            isOneToOne: true
+            referencedRelation: "native_deposit_intents"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      native_deposit_attempts: {
+        Row: {
+          amount_cents: number
+          created_at: string
+          currency: string
+          id: string
+          idempotency_key: string
+          intent_id: string
+          livemode: boolean
+          observed_payment_intent_id: string | null
+          processor_params_hash: string
+          seller_account_id: string
+          status: string
+          stripe_payment_intent_id: string | null
+          submission_approval_id: string | null
+          submission_token_expires_at: string | null
+          submitted_at: string | null
+          token_fingerprint: string
+          updated_at: string
+        }
+        Insert: {
+          amount_cents: number
+          created_at?: string
+          currency: string
+          id?: string
+          idempotency_key: string
+          intent_id: string
+          livemode: boolean
+          observed_payment_intent_id?: string | null
+          processor_params_hash: string
+          seller_account_id: string
+          status: string
+          stripe_payment_intent_id?: string | null
+          submission_approval_id?: string | null
+          submission_token_expires_at?: string | null
+          submitted_at?: string | null
+          token_fingerprint: string
+          updated_at?: string
+        }
+        Update: {
+          amount_cents?: number
+          created_at?: string
+          currency?: string
+          id?: string
+          idempotency_key?: string
+          intent_id?: string
+          livemode?: boolean
+          observed_payment_intent_id?: string | null
+          processor_params_hash?: string
+          seller_account_id?: string
+          status?: string
+          stripe_payment_intent_id?: string | null
+          submission_approval_id?: string | null
+          submission_token_expires_at?: string | null
+          submitted_at?: string | null
+          token_fingerprint?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "native_deposit_attempts_intent_id_fkey"
+            columns: ["intent_id"]
+            isOneToOne: true
+            referencedRelation: "native_deposit_intents"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "native_deposit_attempts_submission_approval_id_fkey"
+            columns: ["submission_approval_id"]
+            isOneToOne: false
+            referencedRelation: "native_deposit_approvals"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      native_deposit_intents: {
+        Row: {
+          amount_cents: number
+          catalog_model_number: string
+          child_id: string
+          created_at: string
+          currency: string
+          document_path: string
+          document_sha256: string
+          expires_at: string
+          express_verified: boolean
+          horsepower: number
+          id: string
+          merchandise_cents: number
+          motor_id: string
+          owner_user_id: string | null
+          parent_session_id: string
+          policy_code: string
+          policy_version: string
+          receipt_reconciliation_required: boolean
+          retired_at: string | null
+          saved_quote_id: string
+          status: string
+          terms_version: string
+          updated_at: string
+        }
+        Insert: {
+          amount_cents: number
+          catalog_model_number: string
+          child_id: string
+          created_at?: string
+          currency: string
+          document_path: string
+          document_sha256: string
+          expires_at: string
+          express_verified?: boolean
+          horsepower: number
+          id?: string
+          merchandise_cents: number
+          motor_id: string
+          owner_user_id?: string | null
+          parent_session_id: string
+          policy_code: string
+          policy_version: string
+          receipt_reconciliation_required?: boolean
+          retired_at?: string | null
+          saved_quote_id: string
+          status: string
+          terms_version: string
+          updated_at?: string
+        }
+        Update: {
+          amount_cents?: number
+          catalog_model_number?: string
+          child_id?: string
+          created_at?: string
+          currency?: string
+          document_path?: string
+          document_sha256?: string
+          expires_at?: string
+          express_verified?: boolean
+          horsepower?: number
+          id?: string
+          merchandise_cents?: number
+          motor_id?: string
+          owner_user_id?: string | null
+          parent_session_id?: string
+          policy_code?: string
+          policy_version?: string
+          receipt_reconciliation_required?: boolean
+          retired_at?: string | null
+          saved_quote_id?: string
+          status?: string
+          terms_version?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "native_deposit_intents_saved_quote_id_fkey"
+            columns: ["saved_quote_id"]
+            isOneToOne: false
+            referencedRelation: "saved_quotes"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      native_deposit_review_challenges: {
+        Row: {
+          actor_fingerprint: string
+          consumed_at: string | null
+          expires_at: string
+          intent_id: string
+          nonce_hash: string
+          review_digest: string
+        }
+        Insert: {
+          actor_fingerprint: string
+          consumed_at?: string | null
+          expires_at: string
+          intent_id: string
+          nonce_hash: string
+          review_digest: string
+        }
+        Update: {
+          actor_fingerprint?: string
+          consumed_at?: string | null
+          expires_at?: string
+          intent_id?: string
+          nonce_hash?: string
+          review_digest?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "native_deposit_review_challenges_intent_id_fkey"
+            columns: ["intent_id"]
+            isOneToOne: false
+            referencedRelation: "native_deposit_intents"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       notifications: {
         Row: {
           channel: string | null
@@ -4277,6 +4724,14 @@ export type Database = {
           access_count: number | null
           converted_to_quote_id: string | null
           created_at: string | null
+          customer_address_line1: string | null
+          customer_address_line2: string | null
+          customer_city: string | null
+          customer_country: string | null
+          customer_full_name: string | null
+          customer_phone: string | null
+          customer_postal_code: string | null
+          customer_region: string | null
           deposit_amount: number | null
           deposit_paid_at: string | null
           deposit_pdf_path: string | null
@@ -4300,6 +4755,14 @@ export type Database = {
           access_count?: number | null
           converted_to_quote_id?: string | null
           created_at?: string | null
+          customer_address_line1?: string | null
+          customer_address_line2?: string | null
+          customer_city?: string | null
+          customer_country?: string | null
+          customer_full_name?: string | null
+          customer_phone?: string | null
+          customer_postal_code?: string | null
+          customer_region?: string | null
           deposit_amount?: number | null
           deposit_paid_at?: string | null
           deposit_pdf_path?: string | null
@@ -4323,6 +4786,14 @@ export type Database = {
           access_count?: number | null
           converted_to_quote_id?: string | null
           created_at?: string | null
+          customer_address_line1?: string | null
+          customer_address_line2?: string | null
+          customer_city?: string | null
+          customer_country?: string | null
+          customer_full_name?: string | null
+          customer_phone?: string | null
+          customer_postal_code?: string | null
+          customer_region?: string | null
           deposit_amount?: number | null
           deposit_paid_at?: string | null
           deposit_pdf_path?: string | null
@@ -4497,6 +4968,7 @@ export type Database = {
           id: string
           issue_description: string
           motor_description: string | null
+          new_customer_answer: string | null
           notes: string | null
           pickup_requested_date: string | null
           preferred_date: string | null
@@ -4523,6 +4995,7 @@ export type Database = {
           id?: string
           issue_description: string
           motor_description?: string | null
+          new_customer_answer?: string | null
           notes?: string | null
           pickup_requested_date?: string | null
           preferred_date?: string | null
@@ -4549,6 +5022,7 @@ export type Database = {
           id?: string
           issue_description?: string
           motor_description?: string | null
+          new_customer_answer?: string | null
           notes?: string | null
           pickup_requested_date?: string | null
           preferred_date?: string | null
@@ -5555,6 +6029,27 @@ export type Database = {
           source?: string
           status?: string
           wholesale_value?: number | null
+        }
+        Relationships: []
+      }
+      tv_season_stats_cache: {
+        Row: {
+          compute_ms: number | null
+          computed_at: string
+          id: number
+          payload: Json
+        }
+        Insert: {
+          compute_ms?: number | null
+          computed_at?: string
+          id?: number
+          payload: Json
+        }
+        Update: {
+          compute_ms?: number | null
+          computed_at?: string
+          id?: number
+          payload?: Json
         }
         Relationships: []
       }
@@ -6768,6 +7263,7 @@ export type Database = {
           stage_label: string | null
           status: string | null
           summary_raw: string | null
+          winter_storage: string | null
         }
         Relationships: []
       }
@@ -6927,6 +7423,15 @@ export type Database = {
           use_in_staff_brief: boolean
         }[]
       }
+      approve_native_deposit_review: {
+        Args: {
+          p_actor_fingerprint: string
+          p_intent_id: string
+          p_nonce_hash: string
+          p_review_digest: string
+        }
+        Returns: boolean
+      }
       archive_customer_memory: {
         Args: {
           p_actor?: string
@@ -6944,6 +7449,26 @@ export type Database = {
           record_count: number
           table_name: string
         }[]
+      }
+      begin_native_deposit_submission: {
+        Args: {
+          p_amount_cents: number
+          p_attempt_id: string
+          p_livemode: boolean
+          p_processor_params_hash: string
+          p_seller_account_id: string
+          p_token_expires_at: string
+          p_token_fingerprint: string
+        }
+        Returns: boolean
+      }
+      bind_native_deposit_payment_intent: {
+        Args: {
+          p_attempt_id: string
+          p_payment_intent_id: string
+          p_status: string
+        }
+        Returns: boolean
       }
       board_service_lane: { Args: { p_status: string }; Returns: string }
       bulk_upsert_deals: { Args: { payload: Json }; Returns: number }
@@ -7007,6 +7532,36 @@ export type Database = {
         }
         Returns: boolean
       }
+      claim_deposit_email_delivery: {
+        Args: {
+          p_audience: string
+          p_claim_token: string
+          p_customer_quote_id: string
+          p_lease_seconds?: number
+        }
+        Returns: {
+          attempt_count: number
+          audience: string
+          claim_expires_at: string | null
+          claim_token: string | null
+          created_at: string
+          customer_quote_id: string
+          id: string
+          last_attempted_at: string | null
+          last_error: string | null
+          provider_id: string | null
+          saved_quote_id: string
+          sent_at: string | null
+          status: string
+          updated_at: string
+        }
+        SetofOptions: {
+          from: "*"
+          to: "deposit_email_deliveries"
+          isOneToOne: true
+          isSetofReturn: false
+        }
+      }
       claim_due_hbw_bot_reminders: {
         Args: {
           p_gateway_secret: string
@@ -7035,6 +7590,38 @@ export type Database = {
           _resource_ids: string[]
         }
         Returns: Json
+      }
+      claim_hosted_deposit_rail: {
+        Args: { p_saved_quote_id: string }
+        Returns: boolean
+      }
+      claim_native_deposit_attempt: {
+        Args: {
+          p_amount_cents: number
+          p_intent_id: string
+          p_livemode: boolean
+          p_processor_params_hash: string
+          p_seller_account_id: string
+          p_token_fingerprint: string
+        }
+        Returns: Json
+      }
+      claim_native_motor_deposit_paid: {
+        Args: {
+          p_amount_cents: number
+          p_attempt_id: string
+          p_deposit_paid_at: string
+          p_document_sha256: string
+          p_intent_id: string
+          p_motor_id: string
+          p_notification_event_id: string
+          p_payment_intent_id: string
+          p_policy_code: string
+          p_policy_version: string
+          p_saved_quote_id: string
+          p_terms_version: string
+        }
+        Returns: boolean
       }
       claim_openclaw_slack_fallback_jobs: {
         Args: {
@@ -7127,6 +7714,36 @@ export type Database = {
           deleted_failed_or_dead: number
           deleted_succeeded: number
         }[]
+      }
+      complete_deposit_email_delivery: {
+        Args: {
+          p_audience: string
+          p_claim_token: string
+          p_customer_quote_id: string
+          p_provider_id: string
+        }
+        Returns: {
+          attempt_count: number
+          audience: string
+          claim_expires_at: string | null
+          claim_token: string | null
+          created_at: string
+          customer_quote_id: string
+          id: string
+          last_attempted_at: string | null
+          last_error: string | null
+          provider_id: string | null
+          saved_quote_id: string
+          sent_at: string | null
+          status: string
+          updated_at: string
+        }
+        SetofOptions: {
+          from: "*"
+          to: "deposit_email_deliveries"
+          isOneToOne: true
+          isSetofReturn: false
+        }
       }
       complete_hbw_bot_reminder: {
         Args: { p_gateway_secret: string; p_id: string }
@@ -7478,8 +8095,13 @@ export type Database = {
         }[]
       }
       decrypt_sin: { Args: { sin_encrypted: string }; Returns: string }
+      deposit_authority_caller: { Args: never; Returns: boolean }
       deposit_checkout_binding_authority_ready: {
         Args: never
+        Returns: boolean
+      }
+      deposit_quote_data_authority_changed: {
+        Args: { new_data: Json; old_data: Json }
         Returns: boolean
       }
       dispatch_agent_artifact_rebuild: { Args: never; Returns: boolean }
@@ -7497,6 +8119,36 @@ export type Database = {
           id: string
           status: string
         }[]
+      }
+      fail_deposit_email_delivery: {
+        Args: {
+          p_audience: string
+          p_claim_token: string
+          p_customer_quote_id: string
+          p_last_error: string
+        }
+        Returns: {
+          attempt_count: number
+          audience: string
+          claim_expires_at: string | null
+          claim_token: string | null
+          created_at: string
+          customer_quote_id: string
+          id: string
+          last_attempted_at: string | null
+          last_error: string | null
+          provider_id: string | null
+          saved_quote_id: string
+          sent_at: string | null
+          status: string
+          updated_at: string
+        }
+        SetofOptions: {
+          from: "*"
+          to: "deposit_email_deliveries"
+          isOneToOne: true
+          isSetofReturn: false
+        }
       }
       fail_hbw_bot_reminder: {
         Args: {
@@ -7791,9 +8443,28 @@ export type Database = {
       hbw_mercury_product_prices_v1: { Args: never; Returns: Json }
       hbw_mercury_purchase_feed_v1: { Args: never; Returns: Json }
       hbw_normalize_phone_e164: { Args: { p_phone: string }; Returns: string }
+      hbw_open_winter_ros: {
+        Args: never
+        Returns: {
+          date_in: string
+          has_bio: boolean
+          has_k: boolean
+          has_pw: boolean
+          has_s: boolean
+          has_w: boolean
+          ro_no: string
+          synced_at: string
+        }[]
+      }
       hbw_phone_digits_match: {
         Args: { p_phone: string; p_query_digits: string }
         Returns: boolean
+      }
+      hbw_ro_winter_storage_state: { Args: { p_units: Json }; Returns: string }
+      hbw_storage_line_vessels: { Args: { p_title: string }; Returns: number }
+      hbw_tv_display_label: {
+        Args: { p_max?: number; p_text: string }
+        Returns: string
       }
       hbw_twilio_board_awaiting_customer: {
         Args: { p_body: string; p_direction: string }
@@ -7821,6 +8492,10 @@ export type Database = {
       hbw_twilio_sms_is_low_value_notice: {
         Args: { p_body: string; p_direction: string }
         Returns: boolean
+      }
+      hbw_winter_job_class: {
+        Args: { t: string }
+        Returns: Record<string, unknown>
       }
       increment_saved_quote_access: {
         Args: { p_quote_id: string }
@@ -7902,7 +8577,19 @@ export type Database = {
           new_svc_status: string
         }[]
       }
+      native_deposit_attempt_blocks_quote: {
+        Args: { p_saved_quote_id: string }
+        Returns: boolean
+      }
+      native_deposit_blocks_hosted_checkout: {
+        Args: { p_saved_quote_id: string }
+        Returns: boolean
+      }
       normalize_phone: { Args: { p: string }; Returns: string }
+      observe_native_deposit_payment_intent: {
+        Args: { p_attempt_id: string; p_payment_intent_id: string }
+        Returns: boolean
+      }
       open_ro_brief: {
         Args: { p_limit?: number; p_mode?: string }
         Returns: {
@@ -8087,6 +8774,20 @@ export type Database = {
         Returns: Json
       }
       read_service_board_watchdog: { Args: never; Returns: Json }
+      read_tv_season_stats: { Args: never; Returns: Json }
+      read_tv_season_stats_live: { Args: never; Returns: Json }
+      read_tv_service_request_events: {
+        Args: { p_after_at?: string; p_after_id?: string; p_limit?: number }
+        Returns: Json
+      }
+      read_winter_services_report: {
+        Args: { p_through?: string }
+        Returns: Json
+      }
+      reconcile_deposit_notification_status: {
+        Args: { p_customer_quote_id: string }
+        Returns: string
+      }
       reconcile_hbw_call_transcription_links: {
         Args: { p_gateway_secret: string; p_limit?: number }
         Returns: {
@@ -8151,6 +8852,21 @@ export type Database = {
         }
         Returns: string
       }
+      record_native_deposit_buyer_approval: {
+        Args: {
+          p_amount_cents: number
+          p_child_id: string
+          p_document_sha256: string
+          p_expires_at: string
+          p_intent_id: string
+          p_motor_id: string
+          p_policy_code: string
+          p_policy_version: string
+          p_saved_quote_id: string
+          p_terms_version: string
+        }
+        Returns: boolean
+      }
       record_openclaw_worker_heartbeat: {
         Args: {
           p_metadata?: Json
@@ -8160,6 +8876,7 @@ export type Database = {
         }
         Returns: undefined
       }
+      refresh_tv_season_stats_cache: { Args: never; Returns: undefined }
       register_staff_file: {
         Args: {
           p_binding_id?: string
@@ -8183,6 +8900,10 @@ export type Database = {
           p_staff_id: string
         }
         Returns: Json
+      }
+      retire_unsubmitted_native_deposit: {
+        Args: { p_if_consent_expired?: boolean; p_intent_id: string }
+        Returns: boolean
       }
       search_knowledge: {
         Args: { match_count?: number; query_text: string }
