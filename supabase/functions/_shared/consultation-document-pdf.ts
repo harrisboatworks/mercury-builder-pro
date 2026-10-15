@@ -120,7 +120,7 @@ export function buildConsultationQuotePdfLines(input: {
     quoteNumber,
     snapshot.customerName,
     snapshot.customerEmail,
-    snapshot.customerPhone,
+    ...(snapshot.customerPhone ? [snapshot.customerPhone] : []),
     snapshot.motorModel,
     `Total ${snapshot.totalPrice} CAD`,
   ];

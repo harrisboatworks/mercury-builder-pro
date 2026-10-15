@@ -74,7 +74,7 @@ describe('submit-bound consultation customer email', () => {
   });
 
   it('verifies Turnstile before insert and emails the persisted customer_email', () => {
-    const submit = read('supabase/functions/submit-quote-lead/index.ts');
+    const submit = read('supabase/functions/submit-quote-lead/handler.ts');
     const schedule = read('src/components/quote-builder/ScheduleConsultation.tsx');
 
     const turnstileAt = submit.indexOf('verifyTurnstileToken');
