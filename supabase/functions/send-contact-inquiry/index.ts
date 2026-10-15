@@ -25,7 +25,11 @@ const contactInquirySchema = z.object({
   inquiry_type: z.enum(['general', 'sales', 'service', 'parts', 'quote', 'warranty', 'other']),
   message: z.string().trim().min(10, "Message must be at least 10 characters").max(2000, "Message too long"),
   preferred_contact_method: z.enum(['email', 'phone', 'sms']),
-  urgency_level: z.enum(['low', 'medium', 'high', 'urgent']),
+  // Older cached clients send the UI value "normal"; store it as "medium".
+  urgency_level: z.preprocess(
+    (v) => (v === 'normal' ? 'medium' : v),
+    z.enum(['low', 'medium', 'high', 'urgent']),
+  ),
   user_id: z.string().uuid().optional(),
 });
 

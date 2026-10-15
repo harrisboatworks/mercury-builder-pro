@@ -102,8 +102,10 @@ export default function Contact() {
     setIsSubmitting(true);
 
     try {
+      // The server accepts low/medium/high/urgent; the UI's default "normal" maps to "medium".
+      const body = { ...data, urgency_level: data.urgency_level === 'normal' ? 'medium' : data.urgency_level };
       const { data: result, error } = await supabase.functions.invoke('send-contact-inquiry', {
-        body: data
+        body
       });
 
       if (error) throw error;
