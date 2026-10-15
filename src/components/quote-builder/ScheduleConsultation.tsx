@@ -260,7 +260,7 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
         total_cost: calculateTotalCost(),
         customer_name: sanitizedContactInfo.name,
         customer_email: sanitizedContactInfo.email,
-        customer_phone: sanitizedContactInfo.phone,
+        customer_phone: sanitizedContactInfo.phone || null,
         // Lead tracking fields
         lead_status: 'scheduled',
         lead_source: 'consultation',
