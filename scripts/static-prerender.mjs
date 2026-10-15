@@ -27,6 +27,7 @@ import { marked } from 'marked';
 import { normalizeAuthoritativeDate, renderSitemapLastmod } from './lib/sitemap-lastmod.mjs';
 import { getHarrisBoatWorksBrandPagePrerender } from '../src/data/harrisBoatWorksBrandPage.js';
 import { buildMercuryProXSOffers } from '../src/data/mercuryProXSOffers.js';
+import { applyCanonicalInventoryToVariants } from '../src/data/landing/apply-canonical-inventory.js';
 import { buildMotorProductGroup } from '../src/data/motorProductGroups.js';
 import { cleanBlogContent } from '../src/lib/cleanBlogContent.js';
 import { filterToOneBlogCredibilityAnchor } from '../src/lib/blogCredibilityAnchorPolicy.js';
@@ -2319,13 +2320,13 @@ const LINEUP_LANDING_CONFIGS = [
     tableNote: 'Prices in CAD, current as of May 2026, confirm in the quote builder. Pickup at Gores Landing, Ontario. Taxes, rigging, installation labour, and a starting battery are not included.',
     configColLabel: 'Shaft and gearcase',
     variants: [
-      { name: '40 ELPT FourStroke', hp: '40', config: '20-inch remote', msrp: 10830, hbwPrice: 9532, availability: 'InStock', availabilityLabel: 'In stock' },
-      { name: '40 ELPT Command Thrust FourStroke', hp: '40', config: '20-inch remote, Command Thrust', msrp: 11250, hbwPrice: 9900, availability: 'InStock', availabilityLabel: 'In stock' },
-      { name: '50 ELPT FourStroke', hp: '50', config: '20-inch remote', msrp: 12165, hbwPrice: 10703, availability: 'BackOrder', availabilityLabel: 'To order' },
-      { name: '50 ELPT Command Thrust FourStroke', hp: '50', config: '20-inch remote, Command Thrust', msrp: 12645, hbwPrice: 11127, availability: 'BackOrder', availabilityLabel: 'To order' },
-      { name: '60 ELPT FourStroke', hp: '60', config: '20-inch remote', msrp: 13820, hbwPrice: 12161, availability: 'InStock', availabilityLabel: 'In stock' },
-      { name: '60 ELPT Command Thrust FourStroke', hp: '60', config: '20-inch remote, Command Thrust', msrp: 14170, hbwPrice: 12469, availability: 'InStock', availabilityLabel: 'In stock' },
-      { name: '60 EXLPT FourStroke', hp: '60', config: '25-inch remote', msrp: 14565, hbwPrice: 12815, availability: 'BackOrder', availabilityLabel: 'To order' },
+      { name: '40 ELPT FourStroke', hp: '40', config: '20-inch remote', msrp: 10830, hbwPrice: 9532, availability: 'InStock', availabilityLabel: 'In stock', sku: '1F40413GZ' },
+      { name: '40 ELPT Command Thrust FourStroke', hp: '40', config: '20-inch remote, Command Thrust', msrp: 11250, hbwPrice: 9900, availability: 'InStock', availabilityLabel: 'In stock', sku: '1F41453GZ' },
+      { name: '50 ELPT FourStroke', hp: '50', config: '20-inch remote', msrp: 12165, hbwPrice: 10703, availability: 'BackOrder', availabilityLabel: 'To order', sku: '1F51413GZ' },
+      { name: '50 ELPT Command Thrust FourStroke', hp: '50', config: '20-inch remote, Command Thrust', msrp: 12645, hbwPrice: 11127, availability: 'BackOrder', availabilityLabel: 'To order', sku: '1F51453GZ' },
+      { name: '60 ELPT FourStroke', hp: '60', config: '20-inch remote', msrp: 13820, hbwPrice: 12161, availability: 'InStock', availabilityLabel: 'In stock', sku: '1F60413GZ' },
+      { name: '60 ELPT Command Thrust FourStroke', hp: '60', config: '20-inch remote, Command Thrust', msrp: 14170, hbwPrice: 12469, availability: 'InStock', availabilityLabel: 'In stock', sku: '1F60453GZ' },
+      { name: '60 EXLPT FourStroke', hp: '60', config: '25-inch remote', msrp: 14565, hbwPrice: 12815, availability: 'BackOrder', availabilityLabel: 'To order', sku: '1F60463GZ' },
     ],
     whichOne: [
       'The 40 to 60 HP band fits 16 to 18-foot aluminum fishing boats, tiller or console, small fibreglass bowriders, and lighter pontoons. For most customers the choice is HP and whether to add Command Thrust.',
@@ -2336,7 +2337,7 @@ const LINEUP_LANDING_CONFIGS = [
       { question: 'What does a Mercury 60 HP outboard cost in Canada?', answer: 'At Harris Boat Works, a 60 ELPT FourStroke is $12,161 CAD, and the 60 Command Thrust is $12,469 CAD. The 40 HP starts at $9,532 and the 50 HP at $10,703. Prices are CAD, as of May 2026.' },
       { question: 'Do I need Command Thrust on a 40 to 60 HP motor?', answer: 'You need it if the boat is heavy or carries a lot, especially a pontoon. Command Thrust adds a bigger gearcase and prop for better low-speed grip. On a light fishing boat, the standard gearcase is fine and saves you money.' },
       { question: 'Will a 40 to 60 HP Mercury fit my boat?', answer: 'It fits most 16 to 18-foot fishing boats, small bowriders, and lighter pontoons, but the right HP depends on hull weight and your boat\u2019s capacity plate. Send us the boat details and we will size it properly.' },
-      { question: 'Are these in stock?', answer: 'Several 40 and 60 HP FourStrokes are in stock at Gores Landing; 50 HP and the 25-inch 60 we bring in to order. Confirm current availability in the quote builder.' },
+      { question: 'Are these in stock?', answer: 'Each row in the table lists current availability for that exact model. Confirm the latest quantity or ETA in the quote builder before travelling to Gores Landing.' },
       { question: 'How long does a repower take?', answer: "Your boat is with us for 2 to 5 days, drop-off to pickup. If your motor is on our shelf, you book a drop-off date. Special orders wait at Mercury (the wait depends on the model and current Mercury availability), and your boat stays with you until the motor lands. Spring books up fast, plan ahead." },
     ],
     finalCtaHeading: 'Build your 40 to 60 HP Mercury quote in two minutes',
@@ -2440,6 +2441,18 @@ const LINEUP_LANDING_CONFIGS = [
     finalCtaHeading: 'Build your 115 Pro XS quote in two minutes',
   },
 ];
+
+// Drive mid-range 40–60 HP names and availability from the same inventory
+// snapshot the motors feed uses. Prices stay on the hardcoded rows.
+const MID_RANGE_40_60_PATH = '/mercury/mid-range-40-60hp';
+const midRangeLandingInventory = [
+  ...motorRecords,
+  ...canonicalPricingSkus,
+];
+for (const cfg of LINEUP_LANDING_CONFIGS) {
+  if (cfg.path !== MID_RANGE_40_60_PATH) continue;
+  cfg.variants = applyCanonicalInventoryToVariants(cfg.variants, midRangeLandingInventory);
+}
 
 function lineupLandingSchemas(cfg) {
   const canonical = `${SITE_URL}${cfg.path}`;

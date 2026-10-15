@@ -4,6 +4,7 @@
 
 import { CANONICAL_SKUS } from '../canonical-pricing.generated';
 import seoPageMetadata from '../seoPageMetadata.json';
+import { applyCanonicalInventoryToVariants } from './apply-canonical-inventory.js';
 
 // Titles and meta descriptions are owned by src/data/seoPageMetadata.json so the
 // React page, the prerenderer and the SEO audit all read one value per route.
@@ -159,18 +160,21 @@ export const MID_RANGE_40_60HP: LandingConfig = {
 
   tableTitle: 'Mercury 40 to 60 HP prices: standard and Command Thrust FourStrokes',
   tableNote:
-    'Prices in CAD, current pricing, confirm in the quote builder. 60 HP FourStrokes in stock at Gores Landing; the 40 HP, 50 HP, and 25-inch 60 we bring in to order. Pickup at Gores Landing, Ontario. Taxes, rigging, installation labour, and a starting battery are not included.',
+    'Prices in CAD, current pricing, confirm in the quote builder. Availability is listed per model and can change. Pickup at Gores Landing, Ontario. Taxes, rigging, installation labour, and a starting battery are not included.',
   modelColLabel: 'Model',
   configColLabel: 'Shaft and gearcase',
-  variants: [
-    { name: '40 ELPT FourStroke', hp: '40', config: '20-inch remote', msrp: 10515, hbwPrice: 9438, availability: 'BackOrder', availabilityLabel: 'To order', sku: '1F40413GZ' },
-    { name: '40 ELPT Command Thrust FourStroke', hp: '40', config: '20-inch remote, Command Thrust', msrp: 10920, hbwPrice: 9801, availability: 'BackOrder', availabilityLabel: 'To order', sku: '1F41453GZ' },
-    { name: '50 ELPT FourStroke', hp: '50', config: '20-inch remote', msrp: 11805, hbwPrice: 10599, availability: 'BackOrder', availabilityLabel: 'To order', sku: '1F51413GZ' },
-    { name: '50 ELPT Command Thrust FourStroke', hp: '50', config: '20-inch remote, Command Thrust', msrp: 12275, hbwPrice: 11017, availability: 'BackOrder', availabilityLabel: 'To order', sku: '1F51453GZ' },
-    { name: '60 ELPT FourStroke', hp: '60', config: '20-inch remote', msrp: 13415, hbwPrice: 12040, availability: 'InStock', availabilityLabel: 'In stock', sku: '1F60413GZ' },
-    { name: '60 ELPT Command Thrust FourStroke', hp: '60', config: '20-inch remote, Command Thrust', msrp: 13750, hbwPrice: 12342, availability: 'InStock', availabilityLabel: 'In stock', sku: '1F60453GZ' },
-    { name: '60 EXLPT FourStroke', hp: '60', config: '25-inch remote', msrp: 14135, hbwPrice: 12689, availability: 'BackOrder', availabilityLabel: 'To order', sku: '1F60463GZ' },
-  ],
+  variants: applyCanonicalInventoryToVariants(
+    [
+      { name: '40 ELPT FourStroke', hp: '40', config: '20-inch remote', msrp: 10515, hbwPrice: 9438, availability: 'BackOrder', availabilityLabel: 'To order', sku: '1F40413GZ' },
+      { name: '40 ELPT Command Thrust FourStroke', hp: '40', config: '20-inch remote, Command Thrust', msrp: 10920, hbwPrice: 9801, availability: 'BackOrder', availabilityLabel: 'To order', sku: '1F41453GZ' },
+      { name: '50 ELPT FourStroke', hp: '50', config: '20-inch remote', msrp: 11805, hbwPrice: 10599, availability: 'BackOrder', availabilityLabel: 'To order', sku: '1F51413GZ' },
+      { name: '50 ELPT Command Thrust FourStroke', hp: '50', config: '20-inch remote, Command Thrust', msrp: 12275, hbwPrice: 11017, availability: 'BackOrder', availabilityLabel: 'To order', sku: '1F51453GZ' },
+      { name: '60 ELPT FourStroke', hp: '60', config: '20-inch remote', msrp: 13415, hbwPrice: 12040, availability: 'InStock', availabilityLabel: 'In stock', sku: '1F60413GZ' },
+      { name: '60 ELPT Command Thrust FourStroke', hp: '60', config: '20-inch remote, Command Thrust', msrp: 13750, hbwPrice: 12342, availability: 'InStock', availabilityLabel: 'In stock', sku: '1F60453GZ' },
+      { name: '60 EXLPT FourStroke', hp: '60', config: '25-inch remote', msrp: 14135, hbwPrice: 12689, availability: 'BackOrder', availabilityLabel: 'To order', sku: '1F60463GZ' },
+    ],
+    CANONICAL_SKUS,
+  ),
 
   includedTitle: 'What is included in the price',
   includedItems: [
@@ -197,7 +201,7 @@ export const MID_RANGE_40_60HP: LandingConfig = {
     { question: 'What does a Mercury 60 HP outboard cost in Canada?', answer: 'At Harris Boat Works, a 60 ELPT FourStroke is $12,040 CAD, and the 60 Command Thrust is $12,342 CAD. The 40 HP starts at $9,438 and the 50 HP at $10,599. Prices are CAD, current pricing, confirm in the quote builder.' },
     { question: 'Do I need Command Thrust on a 40 to 60 HP motor?', answer: 'You need it if the boat is heavy or carries a lot, especially a pontoon. Command Thrust adds a bigger gearcase and prop for better low-speed grip. On a light fishing boat, the standard gearcase is fine and saves you money.' },
     { question: 'Will a 40 to 60 HP Mercury fit my boat?', answer: 'It fits most 16 to 18-foot fishing boats, small bowriders, and lighter pontoons, but the right HP depends on hull weight and your boat\u2019s capacity plate. Send us the boat details and we will size it properly.' },
-    { question: 'Are these in stock?', answer: '60 HP FourStrokes are in stock at Gores Landing; 40 HP, 50 HP, and the 25-inch 60 we bring in to order. Confirm current availability in the quote builder.' },
+    { question: 'Are these in stock?', answer: 'Each row in the table lists current availability for that exact model. Confirm the latest quantity or ETA in the quote builder before travelling to Gores Landing.' },
     { question: 'How long does a repower take?', answer: "Your boat is with us for 2 to 5 days, drop-off to pickup. If your motor is on our shelf, you book a drop-off date. Special orders wait at Mercury (the wait depends on the model and current Mercury availability), and your boat stays with you until the motor lands. Spring books up fast, plan ahead." },
   ],
 
