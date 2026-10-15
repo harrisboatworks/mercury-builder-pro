@@ -45,7 +45,7 @@ export interface AdminConsultationCapabilityInsert {
   token_hash: string;
   purpose: "send_email";
   bound_email: string;
-  bound_phone: string;
+  bound_phone: string | null;
   expires_at: string;
 }
 

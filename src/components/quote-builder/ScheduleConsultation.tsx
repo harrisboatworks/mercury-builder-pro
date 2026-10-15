@@ -446,7 +446,7 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="phone" className="font-sans text-[11px] font-bold uppercase tracking-[0.14em] text-repower-navy-900/70">Phone Number <RequiredMark /></Label>
+              <Label htmlFor="phone" className="font-sans text-[11px] font-bold uppercase tracking-[0.14em] text-repower-navy-900/70">Phone Number {contactInfo.contactMethod !== 'email' && <RequiredMark />}</Label>
               <Input
                 id="phone"
                 type="tel"
@@ -455,7 +455,7 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
                 placeholder="(705) 555-1234"
                 className={`min-h-12 rounded-sm border-repower-navy-900/10 bg-repower-cream font-sans transition-colors duration-300 focus:border-repower-gold ${errors.phone ? 'border-destructive' : ''}`}
                 maxLength={14}
-                aria-required="true"
+                aria-required={contactInfo.contactMethod !== 'email'}
                 aria-invalid={Boolean(errors.phone)}
                 aria-describedby={errors.phone ? 'phone-error phone-help' : 'phone-help'}
               />

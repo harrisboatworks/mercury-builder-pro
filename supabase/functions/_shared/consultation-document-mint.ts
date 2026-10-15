@@ -29,7 +29,7 @@ export interface ConsultationCapabilityInsert {
   token_hash: string;
   purpose: "submit";
   bound_email: string;
-  bound_phone: string;
+  bound_phone: string | null;
   expires_at: string;
 }
 
