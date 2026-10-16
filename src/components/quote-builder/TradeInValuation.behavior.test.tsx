@@ -11,6 +11,24 @@ const info={hasTradeIn:true,brand:'Mercury',year:2020,horsepower:9.9,model:'9.9 
 const success={ok:true as const,value:{low:4250,high:5750,average:5000,confidence:'high' as const,source:'fixture',factors:[],listingValue:6500,hstSavings:650,fromHBW:true}};
 afterEach(()=>{cleanup();vi.resetAllMocks()});
 describe('customer trade behavior',()=>{
+ it('shows a disabled estimate action and missing-input guidance before the form is complete',()=>{
+  const view=render(<TradeInValuation standalone tradeInInfo={{...info,brand:'',year:0,horsepower:0,model:'',engineType:undefined}} onTradeInChange={vi.fn()}/>);
+  const button=screen.getByRole('button',{name:'Get My Estimate'});
+  expect(button).toBeDisabled();
+  expect(button).toHaveAccessibleDescription('To get your estimate, add: brand, valid year, model or horsepower.');
+  fireEvent.click(button);
+  expect(fetchHBWValuation).not.toHaveBeenCalled();
+  view.rerender(<TradeInValuation standalone tradeInInfo={info} onTradeInChange={vi.fn()}/>);
+  expect(screen.getByRole('button',{name:'Get My Estimate'})).toBeEnabled();
+  expect(fetchHBWValuation).not.toHaveBeenCalled();
+ });
+ it('keeps the visible estimate action disabled until ambiguous engine architecture is confirmed',()=>{
+  render(<TradeInValuation standalone tradeInInfo={{...info,model:'9.9 ELPT',engineType:undefined}} onTradeInChange={vi.fn()}/>);
+  const button=screen.getByRole('button',{name:'Get My Estimate'});
+  expect(button).toBeDisabled();
+  expect(button).toHaveAccessibleDescription('To get your estimate, add: confirmed engine type.');
+  expect(fetchHBWValuation).not.toHaveBeenCalled();
+ });
  it.each(['unavailable','rate_limited','input_rejected'] as const)('continues without fabricated money after %s',async reason=>{
   vi.mocked(fetchHBWValuation).mockResolvedValue({ok:false,reason});const changed=vi.fn(),advance=vi.fn();render(<TradeInValuation tradeInInfo={info} onTradeInChange={changed} onAutoAdvance={advance}/>);
   await act(async()=>fireEvent.click(screen.getByRole('button',{name:'Get My Estimate'})));

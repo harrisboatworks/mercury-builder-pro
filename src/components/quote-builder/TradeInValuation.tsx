@@ -188,6 +188,13 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
     ? strokeToEngineType(decodeOverride.stroke)
     : tradeInInfo.engineType || strokeToEngineType(effectiveDecodedStroke);
   const requiresStrokeConfirmation = hasModelOrHp && !effectiveEngineType;
+  const estimateMissingDetails = [
+    missingFields.brand && 'brand',
+    missingFields.year && 'valid year',
+    missingFields.horsepower && 'model or horsepower',
+    missingFields.condition && 'condition',
+    requiresStrokeConfirmation && 'confirmed engine type',
+  ].filter(Boolean).join(', ');
 
   const valuationInputKey = JSON.stringify([tradeInInfo.hasTradeIn, tradeInInfo.brand, tradeInInfo.year, tradeInInfo.horsepower, tradeInInfo.model, tradeInInfo.condition, effectiveEngineType, tradeInInfo.engineHours]);
   const inputKeyRef = useRef(valuationInputKey);
@@ -943,15 +950,24 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
               )}
 
               {/* Get Estimate button */}
-              {!estimate && !isLoading && !hasMissingFields && !requiresStrokeConfirmation && (
-                <Button
-                  type="button"
-                  onClick={handleGetEstimate}
-                  className="mt-2 min-h-[52px] w-full gap-2 rounded-sm bg-repower-mercury-red font-sans text-[13px] font-bold uppercase tracking-[0.14em] text-repower-cream transition-colors hover:bg-repower-mercury-red-deep active:scale-[0.98]"
-                >
-                  <DollarSign className="w-5 h-5" />
-                  Get My Estimate
-                </Button>
+              {!estimate && !isLoading && !apiUnavailable && (
+                <div>
+                  <Button
+                    type="button"
+                    onClick={handleGetEstimate}
+                    disabled={hasMissingFields || requiresStrokeConfirmation}
+                    aria-describedby={estimateMissingDetails ? 'trade-estimate-guidance' : undefined}
+                    className="mt-2 min-h-[52px] w-full gap-2 rounded-sm bg-repower-mercury-red font-sans text-[13px] font-bold uppercase tracking-[0.14em] text-repower-cream transition-colors hover:bg-repower-mercury-red-deep active:scale-[0.98]"
+                  >
+                    <DollarSign className="w-5 h-5" />
+                    Get My Estimate
+                  </Button>
+                  {estimateMissingDetails && (
+                    <p id="trade-estimate-guidance" className="mt-2 font-sans text-sm text-repower-navy-900/70">
+                      To get your estimate, add: {estimateMissingDetails}.
+                    </p>
+                  )}
+                </div>
               )}
 
               {/* Loading indicator */}

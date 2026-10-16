@@ -54,6 +54,7 @@ import {
 } from "../_shared/public-quote-pricing.ts";
 import { insertPublicQuoteLead } from "../_shared/public-quote-lead.ts";
 import { formatMercuryShaftMarkdown, resolveMercuryCatalogSpecs } from "../_shared/mercury-codes.ts";
+import { HorsepowerFilterError, parseHorsepowerFilter } from "../_shared/public-horsepower-filter.ts";
 
 // Rate-limit identifier from x-forwarded-for (first hop), used to key the
 // stricter fail-closed limiter on the write path (build_quote).
@@ -172,7 +173,7 @@ Deno.serve(async (req) => {
     return await renderGetResponse(response, actionKey, getFormat);
   } catch (err: any) {
     console.error("public-quote-api error:", err);
-    if (err instanceof McpInvalidParamsError || err instanceof TradeInInputError) {
+    if (err instanceof McpInvalidParamsError || err instanceof TradeInInputError || err instanceof HorsepowerFilterError) {
       return withGetHeaders(json({ error: err.message }, 400), isGet);
     }
     if (err instanceof HbwValuationError) {
@@ -302,8 +303,7 @@ function bodyFromQuery(params: URLSearchParams): Record<string, unknown> {
     };
     assign("search", queryString(params, "search", 100));
     assign("family", queryString(params, "family", 40));
-    assign("min_hp", queryNumber(params, "min_hp"));
-    assign("max_hp", queryNumber(params, "max_hp"));
+    Object.assign(body, parseHorsepowerFilter(params));
     assign("limit", queryNumber(params, "limit"));
     assign("in_stock_only", queryBool(params, "in_stock_only"));
     return body;
@@ -559,6 +559,7 @@ function renderMotorsMarkdown(p: any): string {
     "",
     `Generated: ${p.lastUpdated}`,
     `Count: ${p.count}`,
+    `HP filter: ${p.filters_applied?.min_hp ?? 'no minimum'} to ${p.filters_applied?.max_hp ?? 'no maximum'}`,
     "",
     "| Model | HP | Shaft | Controls | Start | Price (CAD) | Availability | Quote link |",
     "| --- | --- | --- | --- | --- | --- | --- | --- |",
@@ -587,8 +588,9 @@ async function listMotors(supabase: any, body: any) {
   const textSearch =
     search && Number.isNaN(hpSearch) ? search.toLowerCase() : "";
   const family = String(body?.family || "").trim();
-  const minHp = Number(body?.min_hp) || 0;
-  const maxHp = Number(body?.max_hp) || 9999;
+  const hpFilter = parseHorsepowerFilter(body);
+  const minHp = hpFilter.min_hp ?? 0;
+  const maxHp = hpFilter.max_hp ?? 9999;
   const inStockOnly = body?.in_stock_only === true;
 
   let q = supabase
@@ -657,6 +659,7 @@ async function listMotors(supabase: any, body: any) {
     site: SITE,
     currency: "CAD",
     count: motors.length,
+    filters_applied: hpFilter,
     lastUpdated: nowISO(),
     priceValidUntil: validUntilISO(),
     disclaimer: DISCLAIMER,
@@ -1114,8 +1117,9 @@ function docs() {
           action: "list_motors",
           search: "(optional) string or HP number",
           family: "(optional) FourStroke | ProXS | SeaPro | Racing",
-          min_hp: "(optional) number",
-          max_hp: "(optional) number",
+          horsepower: "(optional) exact positive HP; alias for equal min_hp/max_hp",
+          min_hp: "(optional) non-negative number; must not exceed max_hp",
+          max_hp: "(optional) positive number; must not conflict with horsepower",
           limit: "(optional) max 200",
           in_stock_only: "(optional) boolean; default catalog includes available-to-order motors",
         },
