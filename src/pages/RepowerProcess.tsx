@@ -33,7 +33,7 @@ const steps = [
   {
     name: 'Pickup at Gores Landing',
     text:
-      'Walk-through of every button, gauge, and kill switch. Pickup only, no shipping, no delivery. Buyer must be present in person with valid government photo ID.',
+      'Walk-through of every button, gauge, and kill switch. Pickup only, no shipping, no delivery. We can generally arrange boat pickup. Buyer must be present in person with valid government photo ID.',
   },
 ];
 
@@ -62,7 +62,7 @@ export default function RepowerProcess() {
       lastReviewedISO="2026-07-09"
       lastReviewedLabel="July 2026"
       h1="Mercury Repower Process: Quote to Water-Tested Pickup, Usually Under a Week"
-      subhead="Most Mercury repowers at Harris Boat Works go from first contact to a water-tested pickup in under a week. We stock the motors, we control the bay, and the same techs quote and rig the job. Special orders take longer, and we tell you upfront. Pickup only at Gores Landing, ON."
+      subhead="Most Mercury repowers at Harris Boat Works go from first contact to a water-tested pickup in under a week. We stock the motors, we control the bay, and the same techs quote and rig the job. Special orders take longer, and we tell you upfront. Pickup only at Gores Landing, ON. Motors are never shipped. We can generally arrange boat pickup."
       primaryCTA={{ label: 'Start Your Quote', to: '/quote/motor-selection' }}
       phoneNumber="(905) 342-2153"
       directAnswer={
@@ -126,7 +126,7 @@ export default function RepowerProcess() {
         {
           question: 'Do you ship the motor to me?',
           answer:
-            'No. Pickup only at 5369 Harris Boat Works Rd, Gores Landing, ON. The water test is here. The final tune is here. You come and get it, in person with government photo ID.',
+            'No. Pickup only at 5369 Harris Boat Works Rd, Gores Landing, ON. The water test is here. The final tune is here. You come and get it, in person with government photo ID. We can generally arrange boat pickup.',
         },
         {
           question: 'When should I book for spring?',

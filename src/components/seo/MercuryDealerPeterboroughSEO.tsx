@@ -9,7 +9,7 @@ const PETERBOROUGH_FAQ = [
   },
   {
     question: "Do you serve Peterborough customers for Mercury repower and service?",
-    answer: "Yes. We regularly repower boats from Peterborough, Lakefield, Bridgenorth, Buckhorn, and the wider Kawartha Lakes region. Customers tow boats down to Gores Landing, or pick up loose motors for self-installation. Pickup only, no delivery or shipping."
+    answer: "Yes. We regularly repower boats from Peterborough, Lakefield, Bridgenorth, Buckhorn, and the wider Kawartha Lakes region. Customers tow boats down to Gores Landing, or pick up loose motors for self-installation. Pickup only, no delivery or shipping. We can generally arrange boat pickup."
   },
   {
     question: "How far is Harris Boat Works from downtown Peterborough?",

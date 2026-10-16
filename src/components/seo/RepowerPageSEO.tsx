@@ -30,7 +30,7 @@ export function RepowerPageSEO() {
         "serviceType": "Boat Motor Replacement",
         "provider": { "@id": BUSINESS_ENTITY_ID },
         "areaServed": ["Rice Lake", "Kawarthas", "Peterborough", "GTA", "Toronto", "Ontario"],
-        "description": "Professional Mercury outboard motor repower service. Get 70% of the benefit of a new boat for 30% of the cost. Includes professional installation and lake testing. Pickup only at Gores Landing, no shipping. Valid government-issued photo ID required.",
+        "description": "Professional Mercury outboard motor repower service. Get 70% of the benefit of a new boat for 30% of the cost. Includes professional installation and lake testing. Pickup only at Gores Landing, no shipping. We can generally arrange boat pickup. Valid government-issued photo ID required.",
         "offers": {
           "@type": "Offer",
           "priceRange": "$8,000 - $18,000",

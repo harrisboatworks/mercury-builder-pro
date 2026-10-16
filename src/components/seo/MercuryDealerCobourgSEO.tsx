@@ -12,7 +12,7 @@ const COBOURG_FAQ = [
   },
   {
     question: "Do you serve Northumberland County for Mercury repower?",
-    answer: "Yes, we regularly repower boats from Cobourg, Port Hope, Grafton, Brighton, and the wider Northumberland region. Bring your boat down for full installation, or pick up a loose Mercury for self-install. Pickup only at Gores Landing."
+    answer: "Yes, we regularly repower boats from Cobourg, Port Hope, Grafton, Brighton, and the wider Northumberland region. Bring your boat down for full installation, or pick up a loose Mercury for self-install. Pickup only at Gores Landing, and motors are never shipped. We can generally arrange boat pickup."
   },
   {
     question: "Can I get a Mercury quote online from Cobourg?",
