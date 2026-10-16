@@ -72,7 +72,7 @@ function jsonResponse(status: number, body: Record<string, unknown>): Response {
 const leadDataSchema = z.object({
   customerName: z.string().max(100).optional(),
   customerEmail: z.string().email().max(255).optional(),
-  customerPhone: z.string().max(20).optional(),
+  customerPhone: z.string().max(20).nullable().optional(),
   contactMethod: z.string().max(50).optional(),
   leadScore: z.number().min(0).max(100).optional(),
   quoteId: z.string().uuid().optional(),

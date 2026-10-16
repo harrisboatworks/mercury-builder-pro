@@ -63,7 +63,7 @@ describe('consultation rate-limit call-site contract', () => {
     const api = read('supabase/functions/consultation-document-api/index.ts');
     const mailer = read('supabase/functions/send-quote-email/index.ts');
     const sms = read('supabase/functions/send-sms/index.ts');
-    const submit = read('supabase/functions/submit-quote-lead/index.ts');
+    const submit = read('supabase/functions/submit-quote-lead/handler.ts');
     const retention = read('supabase/functions/consultation-document-retention/index.ts');
     const rateLimit = read('supabase/functions/_shared/rate-limit.ts');
 

@@ -2,3 +2,6 @@
 declare module "npm:@supabase/supabase-js@2.53.1" {
   export type { SupabaseClient } from "@supabase/supabase-js";
 }
+declare module "npm:zod@3.22.4" {
+  export { z } from "zod";
+}

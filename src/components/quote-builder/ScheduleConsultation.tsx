@@ -118,8 +118,10 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
       newErrors.email = 'Please enter a valid email address';
     }
     
+    // Phone is required only when the customer wants a call or text back.
+    const phoneRequired = contactInfo.contactMethod !== 'email';
     if (!contactInfo.phone.trim()) {
-      newErrors.phone = 'Phone number is required';
+      if (phoneRequired) newErrors.phone = 'Phone number is required';
     } else {
       const cleanPhone = contactInfo.phone.replace(/\D/g, '');
       if (cleanPhone.length !== 10) {
@@ -250,7 +252,7 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
 
     try {
       const cleanPhone = contactInfo.phone.replace(/\D/g, '');
-      const formattedPhone = `+1${cleanPhone}`;
+      const formattedPhone = cleanPhone ? `+1${cleanPhone}` : '';
 
       const sanitizedContactInfo = {
         name: sanitizeInput(contactInfo.name),
@@ -270,7 +272,7 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
         total_cost: calculateTotalCost(),
         customer_name: sanitizedContactInfo.name,
         customer_email: sanitizedContactInfo.email,
-        customer_phone: sanitizedContactInfo.phone,
+        customer_phone: sanitizedContactInfo.phone || null,
         // Lead tracking fields
         lead_status: 'scheduled',
         lead_source: 'consultation',
@@ -465,7 +467,7 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="phone" className="font-sans text-[11px] font-bold uppercase tracking-[0.14em] text-repower-navy-900/70">Phone Number <RequiredMark /></Label>
+              <Label htmlFor="phone" className="font-sans text-[11px] font-bold uppercase tracking-[0.14em] text-repower-navy-900/70">Phone Number {contactInfo.contactMethod !== 'email' && <RequiredMark />}</Label>
               <Input
                 id="phone"
                 type="tel"
@@ -474,7 +476,7 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
                 placeholder="(705) 555-1234"
                 className={`min-h-12 rounded-sm border-repower-navy-900/10 bg-repower-cream font-sans transition-colors duration-300 focus:border-repower-gold ${errors.phone ? 'border-destructive' : ''}`}
                 maxLength={14}
-                aria-required="true"
+                aria-required={contactInfo.contactMethod !== 'email'}
                 aria-invalid={Boolean(errors.phone)}
                 aria-describedby={errors.phone ? 'phone-error phone-help' : 'phone-help'}
               />
