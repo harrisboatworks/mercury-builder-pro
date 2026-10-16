@@ -22,7 +22,7 @@ describe('new quote action expiry', () => {
     expect(isQuoteSnapshotExpired({})).toBe(false);
   });
   it('enforces the parsed snapshot deadline before any lead insert or document/email delivery', () => {
-    const source = readFileSync('supabase/functions/submit-quote-lead/index.ts','utf8');
+    const source = readFileSync('supabase/functions/submit-quote-lead/handler.ts','utf8');
     const guard=source.indexOf('if (isQuoteSnapshotExpired(quoteDetails))');
     expect(guard).toBeGreaterThan(source.indexOf('...parseConsultationCallerQuoteSnapshot('));
     expect(guard).toBeLessThan(source.indexOf('.from("customer_quotes")'));

@@ -293,7 +293,9 @@ describe('quote funnel UX contract', () => {
 
     expect(scheduleSource).toContain('We use your details to review this quote and contact you about it.');
     expect(scheduleSource).toContain('to="/privacy"');
-    expect(scheduleSource.match(/aria-required="true"/g)).toHaveLength(3);
+    // Name and email are always required; phone is required only for call/text replies.
+    expect(scheduleSource.match(/aria-required="true"/g)).toHaveLength(2);
+    expect(scheduleSource).toContain("aria-required={contactInfo.contactMethod !== 'email'}");
     expect(scheduleSource.match(/aria-invalid=/g)).toHaveLength(4);
     expect(scheduleSource).toContain('role="alert"');
     expect(reminderSource).toContain('This signs you up for price and promotion updates for this motor.');
