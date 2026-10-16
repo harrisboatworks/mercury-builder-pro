@@ -136,7 +136,7 @@ export default function MercuryLineupLanding({ config }: { config: LandingConfig
                   {config.variants.map((v) => {
                     const save = v.msrp - v.hbwPrice;
                     return (
-                      <tr key={v.name} className="hover:bg-muted/30">
+                      <tr key={v.sku ?? v.name} className="hover:bg-muted/30">
                         <td className="px-4 py-3 font-medium text-foreground">{v.name}</td>
                         <td className="px-4 py-3 text-muted-foreground">{v.hp}</td>
                         <td className="px-4 py-3 text-muted-foreground">{v.config}</td>

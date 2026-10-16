@@ -27,6 +27,15 @@ import { marked } from 'marked';
 import { normalizeAuthoritativeDate, renderSitemapLastmod } from './lib/sitemap-lastmod.mjs';
 import { getHarrisBoatWorksBrandPagePrerender } from '../src/data/harrisBoatWorksBrandPage.js';
 import { buildMercuryProXSOffers } from '../src/data/mercuryProXSOffers.js';
+import {
+  MID_RANGE_40_60_PATH,
+  MID_RANGE_40_60_VARIANT_SPECS,
+  applyMidRangeInventorySnapshot,
+} from '../src/data/landing/mid-range-40-60-snapshot.js';
+import {
+  buildLineupLandingNoscriptHtml,
+  buildLineupLandingSchemas,
+} from '../src/data/landing/lineup-landing-prerender.js';
 import { buildMotorProductGroup } from '../src/data/motorProductGroups.js';
 import { cleanBlogContent } from '../src/lib/cleanBlogContent.js';
 import { filterToOneBlogCredibilityAnchor } from '../src/lib/blogCredibilityAnchorPolicy.js';
@@ -2311,32 +2320,24 @@ const LINEUP_LANDING_CONFIGS = [
     title: MERCURY_FAMILY_SEO['/mercury/mid-range-40-60hp'].title,
     description: MERCURY_FAMILY_SEO['/mercury/mid-range-40-60hp'].description,
     h1: 'Mercury 40 to 60 HP Outboard Prices in Canada',
-    intro: 'The mid-range FourStroke is the Rice Lake workhorse: enough power for a real fishing boat or a small bowrider, light enough to be easy on the transom and the fuel bill. Mercury 40 to 60 HP from $9,532 CAD at Harris Boat Works.',
+    intro: 'The mid-range FourStroke is the Rice Lake workhorse: enough power for a real fishing boat or a small bowrider, light enough to be easy on the transom and the fuel bill. Mercury 40 to 60 HP from {fromPrice} CAD at Harris Boat Works.',
     ogImage: 'https://mercuryrepower.ca/asset-gap-heroes/60-elpt-fourstroke.jpg',
     productName: 'Mercury 40 to 60 HP FourStroke Outboards',
     productDescription: 'Mercury 40, 50, and 60 HP electric-start, power-trim FourStroke outboards in standard and Command Thrust gearcases. Sold by Mercury Premier Dealer Harris Boat Works on Rice Lake, Ontario.',
-    tableCaption: 'Mercury 40 to 60 HP prices: standard and Command Thrust FourStrokes (CAD, May 2026)',
-    tableNote: 'Prices in CAD, current as of May 2026, confirm in the quote builder. Pickup at Gores Landing, Ontario. Taxes, rigging, installation labour, and a starting battery are not included.',
+    tableCaption: 'Mercury 40 to 60 HP prices: standard and Command Thrust FourStrokes (CAD)',
+    tableNote: 'Prices in CAD, current pricing, confirm in the quote builder. Availability is listed per model and can change. Pickup at Gores Landing, Ontario. Taxes, rigging, installation labour, and a starting battery are not included.',
     configColLabel: 'Shaft and gearcase',
-    variants: [
-      { name: '40 ELPT FourStroke', hp: '40', config: '20-inch remote', msrp: 10830, hbwPrice: 9532, availability: 'InStock', availabilityLabel: 'In stock' },
-      { name: '40 ELPT Command Thrust FourStroke', hp: '40', config: '20-inch remote, Command Thrust', msrp: 11250, hbwPrice: 9900, availability: 'InStock', availabilityLabel: 'In stock' },
-      { name: '50 ELPT FourStroke', hp: '50', config: '20-inch remote', msrp: 12165, hbwPrice: 10703, availability: 'BackOrder', availabilityLabel: 'To order' },
-      { name: '50 ELPT Command Thrust FourStroke', hp: '50', config: '20-inch remote, Command Thrust', msrp: 12645, hbwPrice: 11127, availability: 'BackOrder', availabilityLabel: 'To order' },
-      { name: '60 ELPT FourStroke', hp: '60', config: '20-inch remote', msrp: 13820, hbwPrice: 12161, availability: 'InStock', availabilityLabel: 'In stock' },
-      { name: '60 ELPT Command Thrust FourStroke', hp: '60', config: '20-inch remote, Command Thrust', msrp: 14170, hbwPrice: 12469, availability: 'InStock', availabilityLabel: 'In stock' },
-      { name: '60 EXLPT FourStroke', hp: '60', config: '25-inch remote', msrp: 14565, hbwPrice: 12815, availability: 'BackOrder', availabilityLabel: 'To order' },
-    ],
+    variants: MID_RANGE_40_60_VARIANT_SPECS.map((row) => ({ ...row })),
     whichOne: [
       'The 40 to 60 HP band fits 16 to 18-foot aluminum fishing boats, tiller or console, small fibreglass bowriders, and lighter pontoons. For most customers the choice is HP and whether to add Command Thrust.',
       'Standard gearcase or Command Thrust? Command Thrust runs a larger gearcase and a bigger prop, which means more grip and better load-carrying at low speed. On a pontoon or a heavy, gear-loaded aluminum boat it is worth the small premium. On a light fishing boat the standard gearcase is the right call.',
       'Shaft length: 20-inch suits most transoms; choose the 25-inch (EXLPT) if your transom measures tall or your old motor was a 25-inch.',
     ],
     faq: [
-      { question: 'What does a Mercury 60 HP outboard cost in Canada?', answer: 'At Harris Boat Works, a 60 ELPT FourStroke is $12,161 CAD, and the 60 Command Thrust is $12,469 CAD. The 40 HP starts at $9,532 and the 50 HP at $10,703. Prices are CAD, as of May 2026.' },
+      { question: 'What does a Mercury 60 HP outboard cost in Canada?', answer: '' },
       { question: 'Do I need Command Thrust on a 40 to 60 HP motor?', answer: 'You need it if the boat is heavy or carries a lot, especially a pontoon. Command Thrust adds a bigger gearcase and prop for better low-speed grip. On a light fishing boat, the standard gearcase is fine and saves you money.' },
       { question: 'Will a 40 to 60 HP Mercury fit my boat?', answer: 'It fits most 16 to 18-foot fishing boats, small bowriders, and lighter pontoons, but the right HP depends on hull weight and your boat\u2019s capacity plate. Send us the boat details and we will size it properly.' },
-      { question: 'Are these in stock?', answer: 'Several 40 and 60 HP FourStrokes are in stock at Gores Landing; 50 HP and the 25-inch 60 we bring in to order. Confirm current availability in the quote builder.' },
+      { question: 'Are these in stock?', answer: 'Each row in the table lists current availability for that exact model. Confirm the latest quantity or ETA in the quote builder before travelling to Gores Landing.' },
       { question: 'How long does a repower take?', answer: "Your boat is with us for 2 to 5 days, drop-off to pickup. If your motor is on our shelf, you book a drop-off date. Special orders wait at Mercury (the wait depends on the model and current Mercury availability), and your boat stays with you until the motor lands. Spring books up fast, plan ahead." },
     ],
     finalCtaHeading: 'Build your 40 to 60 HP Mercury quote in two minutes',
@@ -2441,70 +2442,26 @@ const LINEUP_LANDING_CONFIGS = [
   },
 ];
 
+// Drive mid-range 40–60 HP names, prices, and availability from the same
+// inventory snapshot the motors feed and React table use. Do not type catalog amounts.
+const midRangeLandingInventory = [
+  ...motorRecords,
+  ...canonicalPricingSkus,
+];
+for (const [index, cfg] of LINEUP_LANDING_CONFIGS.entries()) {
+  if (cfg.path !== MID_RANGE_40_60_PATH) continue;
+  LINEUP_LANDING_CONFIGS[index] = applyMidRangeInventorySnapshot(cfg, midRangeLandingInventory);
+}
+
 function lineupLandingSchemas(cfg) {
-  const canonical = `${SITE_URL}${cfg.path}`;
-  const productSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'Product',
-    name: cfg.productName,
-    description: cfg.productDescription,
-    brand: { '@type': 'Brand', name: 'Mercury Marine' },
-    category: 'Outboard Motor',
-    image: cfg.ogImage,
-    offers: cfg.variants.map(v => ({
-      '@type': 'Offer',
-      name: v.name,
-      price: String(v.hbwPrice),
-      priceCurrency: 'CAD',
-      availability: `https://schema.org/InStoreOnly`,
-      itemCondition: "https://schema.org/NewCondition",
-      hasMerchantReturnPolicy: { "@type": "MerchantReturnPolicy", applicableCountry: "CA", returnPolicyCategory: "https://schema.org/MerchantReturnNotPermitted" },
-      url: canonical,
-      seller: {
-        '@type': 'AutoDealer',
-        name: 'Harris Boat Works',
-        url: 'https://www.harrisboatworks.ca',
-      },
-    })),
-  };
-  const faqSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: cfg.faq.map(f => ({
-      '@type': 'Question',
-      name: f.question,
-      acceptedAnswer: { '@type': 'Answer', text: f.answer },
-    })),
-  };
-  return [productSchema, faqSchema];
+  return buildLineupLandingSchemas(cfg, SITE_URL);
 }
 
 function lineupLandingNoscriptHtml(cfg) {
-  const fmt = n => '$' + n.toLocaleString('en-CA');
-  const rows = cfg.variants.map(v =>
-    `<tr><th scope="row">${escapeHtml(v.name)}</th><td>${escapeHtml(v.hp)}</td><td>${escapeHtml(v.config)}</td><td>${fmt(v.msrp)}</td><td><strong>${fmt(v.hbwPrice)}</strong></td><td>${fmt(v.msrp - v.hbwPrice)}</td><td>${escapeHtml(v.availabilityLabel)}</td></tr>`
-  ).join('');
-  return (
-    '<p><a href="/quote/motor-selection">Build Your Quote</a> &nbsp; <a href="tel:+19053422153">Call 905-342-2153</a></p>' +
-    `<h2>${escapeHtml(cfg.tableCaption)}</h2>` +
-    `<table><caption>${escapeHtml(cfg.tableCaption)}</caption>` +
-    `<thead><tr><th scope="col">Model</th><th scope="col">HP</th><th scope="col">${escapeHtml(cfg.configColLabel)}</th><th scope="col">MSRP</th><th scope="col">HBW Price</th><th scope="col">You Save</th><th scope="col">Availability</th></tr></thead>` +
-    `<tbody>${rows}</tbody></table>` +
-    `<p><small>${escapeHtml(cfg.tableNote)}</small></p>` +
-    '<h2>Which one for which boat?</h2>' +
-    cfg.whichOne.map(p => `<p>${escapeHtml(p)}</p>`).join('') +
-    '<h2>Why buy your Mercury from Harris Boat Works</h2>' +
-    '<p>Mercury dealer since 1965, Mercury Premier tier today, third-generation family business on the same Rice Lake dock since 1947. We sell, rig, water-test, and service the motor every season after. And the price you see here is the price the sales desk sees.</p>' +
-    '<h2>Frequently asked questions</h2>' +
-    '<dl>' +
-    cfg.faq.map(i =>
-      `<dt><strong>${escapeHtml(i.question)}</strong></dt><dd>${escapeHtml(i.answer)}</dd>`
-    ).join('') +
-    '</dl>' +
-    mercurySegmentCrossLinksHtml(cfg.path) +
-    `<h2>${escapeHtml(cfg.finalCtaHeading)}</h2>` +
-    '<p>Real price, in writing. Pickup at Gores Landing. <a href="/quote/motor-selection">Build Your Quote</a> or call <a href="tel:+19053422153">905-342-2153</a>.</p>'
-  );
+  return buildLineupLandingNoscriptHtml(cfg, {
+    escapeHtml,
+    crossLinksHtml: mercurySegmentCrossLinksHtml(cfg.path),
+  });
 }
 
 function mercuryProXSSchema() {
