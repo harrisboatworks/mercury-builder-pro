@@ -215,10 +215,16 @@ describe('quote funnel UX contract', () => {
     expect(installationSource).not.toContain('playCelebration');
   });
 
-  it('puts call and text before review and deposit on the quote summary', () => {
+  it('puts review beside the total before extras, preserving the express contact and deposit path', () => {
     const summarySource = read('src/pages/quote/QuoteSummaryPage.tsx');
     const stickySource = read('src/components/quote-builder/StickySummary.tsx');
 
+    expect(summarySource.indexOf('<PricingTable')).toBeLessThan(summarySource.indexOf('<QuoteReviewAction'));
+    expect(summarySource.indexOf('<QuoteReviewAction')).toBeLessThan(summarySource.indexOf('<PlatinumProtectionSelector'));
+    expect(summarySource.indexOf('<QuoteReviewAction')).toBeLessThan(summarySource.indexOf('<BonusOffers'));
+    expect(summarySource).toContain('reviewFirst={!isMotorOnlyExpress}');
+    expect(stickySource.indexOf('<QuoteReviewAction')).toBeLessThan(stickySource.indexOf('Call (905) 342-2153'));
+    // Express quotes keep their existing lower-priority review alternative.
     for (const source of [summarySource, stickySource]) {
       expect(source.indexOf('Call (905) 342-2153')).toBeLessThan(source.indexOf('Text This Quote to HBW'));
       expect(source.indexOf('Text This Quote to HBW')).toBeLessThan(source.indexOf('Have HBW Review My Quote'));

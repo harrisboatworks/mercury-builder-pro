@@ -27,7 +27,7 @@ import { PlatinumProtectionSelector } from '@/components/quote-builder/PlatinumP
 
 
 import { SaveQuoteDialog } from '@/components/quote-builder/SaveQuoteDialog';
-import { SaveQuoteWithAuth } from '@/components/quote-builder/SaveQuoteWithAuth';
+import { QuoteReviewAction } from '@/components/quote-builder/QuoteReviewAction';
 import { PhoneCapture } from '@/components/quote-builder/PhoneCapture';
 import { useAutoSaveQuoteOnAuth } from '@/hooks/useAutoSaveQuoteOnAuth';
 import { isTillerMotor, requiresMercuryControls, includesPropeller, canAddExternalFuelTank } from '@/lib/motor-helpers';
@@ -132,7 +132,6 @@ export default function QuoteSummaryPage() {
   const [isGeneratingPDF, setIsGeneratingPDF] = useState<boolean>(false);
   const isMounted = true; // Render immediately, no artificial delay
   const [showSaveDialog, setShowSaveDialog] = useState(false);
-  const [showAuthSaveDialog, setShowAuthSaveDialog] = useState(false);
   const [showPhoneCapture, setShowPhoneCapture] = useState(false);
   const [phoneCaptureQuoteId, setPhoneCaptureQuoteId] = useState<string | undefined>();
   const [sessionReferenceNumber, setSessionReferenceNumber] = useState<string | null>(null);
@@ -1380,6 +1379,12 @@ export default function QuoteSummaryPage() {
                 </motion.div>
 
                 {!isMotorOnlyExpress && (
+                  <div className="lg:hidden">
+                    <QuoteReviewAction onReview={handleStepComplete} />
+                  </div>
+                )}
+
+                {!isMotorOnlyExpress && (
                   <motion.div
                     initial="hidden"
                     animate="visible"
@@ -1479,15 +1484,17 @@ export default function QuoteSummaryPage() {
                       <span aria-hidden className="transition-transform duration-200 group-hover:translate-x-1">→</span>
                     </span>
                   </a>
-                  <button
-                    onClick={handleStepComplete}
-                    className="group w-full rounded border border-repower-navy-900 bg-transparent px-6 py-4 font-sans text-[13px] font-bold uppercase tracking-[0.12em] text-repower-navy-900 transition hover:bg-repower-navy-900 hover:text-repower-cream"
-                  >
-                    <span className="inline-flex items-center justify-center gap-2">
-                      Have HBW Review My Quote
-                      <span aria-hidden className="transition-transform duration-200 group-hover:translate-x-1">→</span>
-                    </span>
-                  </button>
+                  {isMotorOnlyExpress && (
+                    <button
+                      onClick={handleStepComplete}
+                      className="group w-full rounded border border-repower-navy-900 bg-transparent px-6 py-4 font-sans text-[13px] font-bold uppercase tracking-[0.12em] text-repower-navy-900 transition hover:bg-repower-navy-900 hover:text-repower-cream"
+                    >
+                      <span className="inline-flex items-center justify-center gap-2">
+                        Have HBW Review My Quote
+                        <span aria-hidden className="transition-transform duration-200 group-hover:translate-x-1">→</span>
+                      </span>
+                    </button>
+                  )}
                   <div className="flex items-center gap-3 py-1" aria-hidden>
                     <span className="h-px flex-1 bg-repower-navy-900/10" />
                     <span className="font-sans text-[10px] font-semibold uppercase tracking-[0.14em] text-repower-navy-900/45">
@@ -1521,7 +1528,7 @@ export default function QuoteSummaryPage() {
                     Secure Stripe checkout. HBW confirms the motor and quote details before anything is ordered.
                   </p>
                   <button
-                    onClick={() => user ? setShowSaveDialog(true) : setShowAuthSaveDialog(true)}
+                    onClick={() => setShowSaveDialog(true)}
                     disabled={noMotorSelected}
                     title={noMotorSelected ? 'Select a motor first' : undefined}
                     className="w-full rounded border border-repower-navy-900/15 bg-transparent px-6 py-4 font-sans text-[13px] font-bold uppercase tracking-[0.12em] text-repower-navy-900 transition hover:border-repower-navy-900/40 disabled:opacity-50"
@@ -1569,6 +1576,7 @@ export default function QuoteSummaryPage() {
                   bullets={selectedPackageFeatures}
                   onReserve={handleReserveDeposit}
                   onReview={handleStepComplete}
+                  reviewFirst={!isMotorOnlyExpress}
                   callHref={callHref}
                   smsHref={smsHref}
                   quoteReference={canonicalReferenceNumber}
@@ -1578,13 +1586,7 @@ export default function QuoteSummaryPage() {
                   coverageYears={selectedPackageCoverageYears}
                   promoWarrantyYears={promoYears > 0 ? promoYears : undefined}
                   onDownloadPDF={handleDownloadPDF}
-                  onSaveForLater={() => {
-                    if (user) {
-                      setShowSaveDialog(true);
-                    } else {
-                      setShowAuthSaveDialog(true);
-                    }
-                  }}
+                  onSaveForLater={() => setShowSaveDialog(true)}
                   onApplyForFinancing={!isCashPurchase && displayPricing.subtotal >= FINANCING_MINIMUM ? handleApplyForFinancing : undefined}
                   isGeneratingPDF={isGeneratingPDF}
                   reserveDisabled={!canReserveMotor || noMotorSelected}
@@ -1609,14 +1611,6 @@ export default function QuoteSummaryPage() {
             }}
             motorModel={motorName}
             finalPrice={displayPricing.total}
-          />
-          <SaveQuoteWithAuth
-            open={quoteReady && showAuthSaveDialog}
-            onOpenChange={setShowAuthSaveDialog}
-            onFallbackEmail={() => {
-              setShowAuthSaveDialog(false);
-              setShowSaveDialog(true);
-            }}
           />
           <PhoneCapture
             open={showPhoneCapture}

@@ -4,6 +4,7 @@ import { moneyWithCents as money, money as wholeDollarMoney } from "@/lib/money"
 import { formatFinancingEstimateLine } from "@/lib/finance";
 import { Download, CreditCard, Bookmark } from "lucide-react";
 import { PaymentMethodBadges } from "@/components/payments/PaymentMethodBadges";
+import { QuoteReviewAction } from './QuoteReviewAction';
 import { useAuth } from '@/components/auth/AuthProvider';
 
 type StickySummaryProps = {
@@ -17,6 +18,7 @@ type StickySummaryProps = {
   bullets?: string[];
   onReserve: () => void;
   onReview?: () => void;
+  reviewFirst?: boolean;
   callHref: string;
   smsHref: string;
   quoteReference: string | null;
@@ -47,6 +49,7 @@ export default function StickySummary({
   bullets = [],
   onReserve,
   onReview,
+  reviewFirst = true,
   callHref,
   smsHref,
   quoteReference,
@@ -91,6 +94,12 @@ export default function StickySummary({
         {totalWithTax != null && (
           <div className="mt-2 font-sans text-[13px] text-repower-navy-900/55">
             Before tax: {money(yourPriceBeforeTax)}
+          </div>
+        )}
+
+        {onReview && reviewFirst && (
+          <div className="mt-5">
+            <QuoteReviewAction onReview={onReview} />
           </div>
         )}
 
@@ -175,7 +184,7 @@ export default function StickySummary({
             </span>
           </a>
 
-          {onReview && (
+          {onReview && !reviewFirst && (
             <button
               onClick={onReview}
               className="group w-full rounded border border-repower-navy-900 bg-transparent px-6 py-4 font-sans text-[13px] font-bold uppercase tracking-[0.12em] text-repower-navy-900 transition hover:bg-repower-navy-900 hover:text-repower-cream focus:outline-none focus-visible:ring-2 focus-visible:ring-repower-gold/40"
