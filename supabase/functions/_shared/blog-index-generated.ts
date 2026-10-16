@@ -2747,7 +2747,7 @@ export const BLOG_INDEX: BlogIndexEntry[] = [
     "faqs": [
       {
         "q": "What shaft length do I need for a pontoon boat?",
-        "a": "Most pontoons run 20-inch (long) or 25-inch (extra long), depending on the transom depth. Measure from the bottom of the motor well to the top of the transom. Pontoon transoms vary by manufacturer and model year, do not assume."
+        "a": "Pontoons can require a 20-inch (long) or 25-inch (extra long) shaft, depending on the exact hull and transom design. Confirm the measuring reference, shaft configuration and mounting position with the boat manufacturer and the exact engine installation instructions. Measure; do not choose from overall boat length."
       },
       {
         "q": "What is the most common outboard shaft length in Ontario?",
