@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import {
   getStoredConsent,
+  loadGoogleAdsAfterConsent,
   pushConsentDefault,
   pushConsentUpdate,
   setConsent,
@@ -21,6 +22,7 @@ export function ConsentBanner() {
     if (stored) {
       pushConsentUpdate(stored);
       syncClarityConsent(stored);
+      if (stored === 'granted') loadGoogleAdsAfterConsent();
     } else {
       pushConsentDefault();
       setOpen(true);

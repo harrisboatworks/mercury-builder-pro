@@ -5,6 +5,8 @@
  * NEVER push PII: no email, no full phone, no full name, no full postal code.
  */
 
+import { GOOGLE_ADS_CONVERSION_LABELS, GOOGLE_ADS_ID, type LeadConversionType } from '@/config/googleAds';
+
 declare global {
   interface Window {
     dataLayer: Array<Record<string, any>>;
