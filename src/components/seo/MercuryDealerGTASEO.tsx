@@ -8,7 +8,7 @@ const GTA_FAQ = [
   },
   {
     question: "How do GTA customers handle pickup?",
-    answer: "Two ways: bring your boat down to Gores Landing for full installation, or pick up a loose Mercury motor and install it yourself (or with your local mechanic). We do not ship motors and we do not deliver, pickup only at our Rice Lake location, which keeps pricing transparent and warranty registration clean."
+    answer: "Two ways: bring your boat down to Gores Landing for full installation, or pick up a loose Mercury motor and install it yourself (or with your local mechanic). We do not ship motors and we do not deliver, pickup only at our Rice Lake location, which keeps pricing transparent and warranty registration clean. We can generally arrange boat pickup."
   },
   {
     question: "Is it worth driving from Toronto for a Mercury outboard?",

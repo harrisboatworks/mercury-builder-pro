@@ -132,7 +132,7 @@ export default function InstallationPage() {
               Pickup only at Gores Landing
             </p>
             <p className="font-sans text-[14px] text-repower-navy-900/70 leading-relaxed">
-              Every motor is rigged, water-tested on Rice Lake, and ready when you arrive. Pickup is at our shop in Gores Landing, about 90 minutes from downtown Toronto.
+              Every motor is rigged, water-tested on Rice Lake, and ready when you arrive. Pickup is at our shop in Gores Landing, about 90 minutes from downtown Toronto. Motors are never shipped. We can generally arrange boat pickup.
             </p>
           </div>
           <InstallationConfig

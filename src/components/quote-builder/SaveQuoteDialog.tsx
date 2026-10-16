@@ -8,6 +8,7 @@ import { Label } from "@/components/ui/label";
 import { Loader2, CheckCircle, Mail } from "lucide-react";
 import { saveLead } from "@/lib/leadCapture";
 import { trackAgentEvent } from "@/lib/agentEvents";
+import { trackLeadConversion } from "@/lib/analytics";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import { generateSocialProofMessage } from "@/lib/activityGenerator";
@@ -218,6 +219,9 @@ export function SaveQuoteDialog({
       } catch (notifyError) {
         console.error('Admin notification error (non-blocking):', notifyError);
       }
+
+      // Insert confirmed above with an email address.
+      trackLeadConversion('quote_saved_email', savedQuoteId);
 
       // Show success state
       setIsSaved(true);

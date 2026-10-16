@@ -130,7 +130,7 @@ export default function Privacy() {
 
             <h2>8. Cookies</h2>
             <p>
-              Our website uses cookies and similar technologies to maintain your session, remember preferences, and improve your experience. You can control cookie settings through your browser. Disabling cookies may affect the functionality of certain features.
+              Our website uses cookies and similar technologies to maintain your session, remember preferences, and improve your experience. You can control cookie settings through your browser. Disabling cookies may affect the functionality of certain features. If you accept analytics and advertising cookies in our cookie banner, we also use Google Ads conversion measurement to learn which ads lead to quote requests. Google Ads only loads after you accept, and declining keeps advertising cookies off.
             </p>
             <hr />
 

@@ -19,6 +19,7 @@ import { computeTotals } from '@/lib/finance';
 import { z } from 'zod';
 import { isQuotePdfSnapshot } from '@/lib/quote-pdf-data';
 import { useQuote } from '@/contexts/QuoteContext';
+import { trackLeadConversion } from '@/lib/analytics';
 import { getTurnstileSiteKey, loadTurnstileScript } from '@/lib/turnstile-client';
 
 interface ScheduleConsultationProps {
@@ -323,6 +324,7 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
       // Mark the final step only after the lead record has been persisted.
       // useQuoteActivityTracker converts this confirmed state change into quote_submitted.
       dispatch({ type: 'COMPLETE_STEP', payload: 7 });
+      trackLeadConversion('quote_review', quoteNumber);
 
       try {
         const { triggerHotLeadWebhooks } = await import('@/lib/webhooks');

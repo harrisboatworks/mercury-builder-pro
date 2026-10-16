@@ -44,7 +44,7 @@ export const PRO_XS_FAQ = [
   },
   {
     question: "How do I take delivery of a Pro XS from Harris Boat Works?",
-    answer: "Pickup only at our Gores Landing location on Rice Lake. Two paths: (1) bring your boat for full installation including controls, prop, and lake test, or (2) pick up the loose motor for self-install. We do not ship motors. Pickup ensures every customer gets a personal walk-through and clean Mercury warranty registration."
+    answer: "Pickup only at our Gores Landing location on Rice Lake. Two paths: (1) bring your boat for full installation including controls, prop, and lake test, or (2) pick up the loose motor for self-install. We do not ship motors. We can generally arrange boat pickup. Pickup ensures every customer gets a personal walk-through and clean Mercury warranty registration."
   },
   {
     question: "Where can I see current Pro XS inventory and pricing?",
