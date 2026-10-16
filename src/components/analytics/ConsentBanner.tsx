@@ -45,7 +45,7 @@ export function ConsentBanner() {
     >
       <div className="mx-auto flex max-w-[1400px] flex-row items-center justify-between gap-2 px-3 py-2 md:gap-6 md:px-8 md:py-4">
         <p className="m-0 block text-[13px] leading-none text-[#20384d] whitespace-nowrap md:hidden">
-          We use analytics cookies.{' '}
+          We use analytics and advertising cookies.{' '}
           <a
             href="/privacy"
             className="underline decoration-[#20384d]/40 underline-offset-2 hover:decoration-[#20384d]"
@@ -55,7 +55,7 @@ export function ConsentBanner() {
         </p>
         <p className="m-0 hidden text-sm leading-snug text-[#20384d] md:block">
           We use cookies to understand site traffic and improve mercuryrepower.ca.
-          You can accept or decline analytics cookies.{' '}
+          You can accept or decline analytics and advertising cookies.{' '}
           <a
             href="/privacy"
             className="underline decoration-[#20384d]/40 underline-offset-2 hover:decoration-[#20384d]"
@@ -80,7 +80,7 @@ export function ConsentBanner() {
           </button>
           <button
             type="button"
-            aria-label="Dismiss cookie banner (declines analytics cookies)"
+            aria-label="Dismiss cookie banner (declines analytics and advertising cookies)"
             onClick={() => choose('denied')}
             className="ml-1 hidden rounded-md p-2 text-lg leading-none text-[#20384d]/60 transition-colors hover:bg-[#20384d]/5 hover:text-[#20384d] md:inline-flex"
           >
