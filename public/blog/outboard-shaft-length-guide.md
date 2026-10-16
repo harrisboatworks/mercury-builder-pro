@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/outboard-shaft-length-guide.md
-last_updated: 2026-10-12
+last_updated: 2026-10-16
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Outboard Shaft Length Guide: 15, 20, 25 Inch (2026)"
 description: "Outboard shaft length chart for 15, 20, and 25 inch shafts. Measure transom height, match the Mercury shaft code, and avoid cavitation. Ontario dealer guide."
 category: "Buying Guide"
 date_published: 2026-05-05
-date_modified: 2026-10-12
+date_modified: 2026-10-16
 keywords: ["outboard shaft length","mercury shaft length guide","20 inch shaft outboard","25 inch shaft outboard","transom height measurement"]
 author: "Jay Harris"
 publisher: "Harris Boat Works"
@@ -28,7 +28,7 @@ revenue_driver: repower
 
 **Category:** Buying Guide  
 **Published:** 2026-05-05  
-**Last reviewed:** 2026-10-12  
+**Last reviewed:** 2026-10-16  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/outboard-shaft-length-guide
 
@@ -37,7 +37,7 @@ revenue_driver: repower
 ## Outboard Shaft Length Guide: Short, Long, and Extra Long, How to Get It Right
 
 ## Quick answer
-Most Ontario aluminum fishing boats need a 20-inch (long) shaft. Most pontoons over 22 feet need a 25-inch (extra long) shaft. Small tiller boats with low transoms typically take a 15-inch (short) shaft. The only correct way to confirm is to measure transom height, from the top of the transom straight down to the bottom of the hull at the centreline. Mercury's shaft code on the motor (L, XL, XXL, or no length letter for a 15-inch short shaft) tells you the rest. The full decoder and a measurement guide are below.
+Most Ontario aluminum fishing boats need a 20-inch (long) shaft. Pontoons can require a 20-inch (long) or 25-inch (extra long) shaft, depending on the exact hull and transom design. Overall boat length does not determine the correct shaft. Small tiller boats with low transoms typically take a 15-inch (short) shaft. For a conventional hull, measure vertically from the top of the transom where the motor bracket sits to the bottom of the hull at the transom centreline. For a pontoon, confirm the measuring reference and shaft configuration with the boat manufacturer and the exact engine installation instructions. Mercury's shaft code on the motor (L, XL, XXL, or no length letter for a 15-inch short shaft) tells you the rest. The full decoder and a measurement guide are below.
 
 Ready to price it? [Build your quote, shaft length is a step](/quote/motor-selection).
 
@@ -64,30 +64,32 @@ Get the measurement right before you order. It takes five minutes.
 - Less common than it used to be. Most modern aluminum boats are built taller than this.
 
 ### Long shaft, 20 inch (Code: L)
-- Best for: Most aluminum console fishing boats, open runabouts, smaller pontoons, typically 14 to 19 ft
+- Applications include aluminum console fishing boats and open runabouts. Some pontoons require a 20-inch shaft; confirm the exact hull and transom design rather than choosing by overall boat length.
 - Choose the exact model listed with a 20-inch shaft in its specification. Read the complete model suffix and confirm it against the model’s specification sheet; an XL designation belongs to the 25-inch category.
 - Transom height to match: ~20 inches
 - This is the most common shaft length on Ontario freshwater boats. If you own a standard aluminum fishing boat on Rice Lake, this is probably what you need, but measure first.
 
 ### Extra long shaft, 25 inch (Code: XL)
-- Best for: Larger pontoons, deep-V hulls, sailboat auxiliaries, some center-console applications, typically 18 ft+ or boats with deep transoms
+- Applications include deep-transom hulls, sailboat auxiliaries and some center-console boats. Some pontoons require a 25-inch shaft; confirm the exact hull and transom design rather than choosing by overall boat length.
 - Common Mercury models: 90 EXLPT, 115 EXLPT, 150 EXLPT, plus extra-long options on many 9.9 ProKicker, 15, 25, 200, 250, 300 HP, and Verado lines. Confirm the exact current SKU.
 - Transom height to match: ~25 inches
-- Pontoon boats vary, some 22-ft pontoons run 20-inch, some run 25-inch depending on model year and transom design. Measure; do not assume.
+- Pontoons can require a 20-inch or 25-inch shaft, depending on the exact hull and transom design. Follow the boat manufacturer and exact engine installation instructions. Measure; do not assume.
 
 ### Ultra long shaft, 30 inch (Code: XXL)
 - Best for: Sailboat auxiliaries and deep-transom commercial applications
 - Less common in Ontario freshwater. Special order on most models.
 
-**Confirm the measurement before choosing a motor.** Use the installation instructions for the exact engine and the boat manufacturer's guidance. Have a qualified installer confirm the transom measurement, shaft configuration and mounting position. A generic illustration is not an installation specification.
+**Confirm the measurement before choosing a motor.** Use the installation instructions for the exact engine and the boat manufacturer's guidance. Have a qualified installer confirm the transom measurement, shaft configuration and mounting position. A generic illustration is not an installation specification. Find the correct engine instructions through [Mercury's official owner manual lookup](https://www.mercurymarine.com/us/en/service-and-support/owners-resources/owners-manual).
 
 ## How to measure your transom height
 
-You need a tape measure and five minutes:
+For a conventional hull, use these reference points with the boat level. For a pontoon or other hull with a separate motor pod, first confirm the measuring reference with the boat manufacturer and exact engine installation instructions. Do not substitute a generic motor-well measurement.
+
+You need a tape measure:
 
 1. With the boat level, find the top of the transom where the motor mounting bracket sits.
 2. Measure straight down to the bottom of the hull at the transom (the keel line).
-3. That measurement is your transom height. Match it to the chart below.
+3. Use that transom height as a starting point for the nominal shaft-length chart below. Confirm the exact hull, engine and mounting instructions before ordering.
 
 | Transom Height | Shaft Length Needed | Mercury Code |
 |---|---|---|
@@ -97,6 +99,8 @@ You need a tape measure and five minutes:
 | 29 to 31 inches | Ultra Long | XXL (30") |
 
 Between chart sizes, do not apply a universal round-down rule. Shaft length depends on the exact hull, transom, setback, motor, and mounting height. Measure, then confirm the boat- and engine-specific mounting guidance before you order.
+
+Use our [Shaft Length Picker](/tools#shaft-length) as a starting point, then confirm the exact hull and engine requirements.
 
 ## Five things that change the answer
 
@@ -172,7 +176,7 @@ Sizing a 9.9 to your transom? Our [Mercury 9.9 tiller, kicker, and ProKicker gui
 
 The single most common rigging mistake we see on used-boat purchases: wrong shaft length on a repower. Owner pulled a 15-inch short-shaft, ordered a 20-inch long-shaft expecting "more boat coverage", and the prop is now too deep to plane efficiently.
 
-Always measure the transom from the top edge to the cavitation plate centerline before ordering. 15" for most tinnies, 20" for bowriders and pontoons, 25" for offshore-style hulls.
+For a conventional hull, measure vertically from the top of the transom where the motor bracket sits to the bottom of the hull at the transom centreline. Pontoons can require a 20-inch or 25-inch shaft; use the boat manufacturer and exact engine installation instructions to confirm the measuring reference, shaft configuration and mounting position. Do not choose from overall boat length.
 
 ---
 
@@ -180,7 +184,7 @@ Always measure the transom from the top edge to the cavitation plate centerline 
 
 ### What shaft length do I need for a pontoon boat?
 
-Most pontoons run 20-inch (long) or 25-inch (extra long), depending on the transom depth. Measure from the bottom of the motor well to the top of the transom. Pontoon transoms vary by manufacturer and model year, do not assume.
+Pontoons can require a 20-inch (long) or 25-inch (extra long) shaft, depending on the exact hull and transom design. Confirm the measuring reference, shaft configuration and mounting position with the boat manufacturer and the exact engine installation instructions. Measure; do not choose from overall boat length.
 
 ### What is the most common outboard shaft length in Ontario?
 
@@ -212,7 +216,7 @@ Measure your transom height, then match it: 15 to 16 inches takes a short shaft 
 
 ### How do I measure transom height for outboard shaft length?
 
-With the boat level, measure from the top of the transom where the motor mounting bracket sits straight down to the bottom of the hull at the transom (the keel line). That measurement is your transom height. It takes five minutes with a tape measure.
+For a conventional hull, with the boat level, measure vertically from the top of the transom where the motor bracket sits to the bottom of the hull at the transom centreline. For a pontoon or separate motor pod, confirm the measuring reference with the boat manufacturer and exact engine installation instructions. Confirm the shaft configuration and mounting position before ordering.
 
 ### What shaft length do I need for a 25 inch transom?
 
