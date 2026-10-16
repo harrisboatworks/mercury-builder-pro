@@ -17353,7 +17353,7 @@ You need a tape measure:
 
 Between chart sizes, do not apply a universal round-down rule. Shaft length depends on the exact hull, transom, setback, motor, and mounting height. Measure, then confirm the boat- and engine-specific mounting guidance before you order.
 
-Use our [Shaft Length Picker](/tools#shaft-length) as a starting point, then confirm the exact hull and engine requirements.
+For a conventional hull, our [Shaft Length Picker](/tools#shaft-length) is a starting point only. It does not account for pontoon motor pods. Pontoon owners should confirm the measuring reference and shaft configuration with the boat manufacturer and exact engine installation instructions.
 
 ## Five things that change the answer
 
@@ -17423,7 +17423,7 @@ Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca). The configu
 
 
 
-> **Need a quick shaft-length check?** Try our [Shaft Length Picker](/tools#shaft-length). Punch in your transom height and we will tell you if you want a 15", 20", 25", or 30" shaft.
+> **Checking a conventional hull?** Our [Shaft Length Picker](/tools#shaft-length) offers a nominal starting point. It does not account for pontoon motor pods or replace the exact hull and engine installation instructions. Pontoon owners should confirm the measuring reference and shaft configuration with the boat manufacturer and installer.
 
 Sizing a 9.9 to your transom? Our [Mercury 9.9 tiller, kicker, and ProKicker guide](/motors/mercury-9-9-tiller-kicker-guide) lists shaft length for every 9.9 variant.
 
