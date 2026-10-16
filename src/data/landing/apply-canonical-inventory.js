@@ -1,5 +1,6 @@
-// Overlay landing-table names and availability from the published inventory
-// snapshot (CANONICAL_SKUS / live motors feed). Never rewrite prices.
+// Overlay landing-table names, availability, and published dealer/MSRP from
+// the inventory snapshot (CANONICAL_SKUS / live motors feed). Do not invent
+// prices: copy them from the snapshot when present.
 
 import { applyMotorPresentationOverrides } from '../motorPresentationOverrides.js';
 
@@ -23,6 +24,30 @@ export function inventoryInStock(item) {
     .toLowerCase()
     .replace(/_/g, ' ');
   return /^in stock\b/.test(status);
+}
+
+function finitePositiveNumber(value) {
+  if (typeof value === 'number') {
+    return Number.isFinite(value) && value > 0 ? value : null;
+  }
+  if (value == null || value === '') return null;
+  const parsed = Number(String(value).replace(/[$,]/g, ''));
+  return Number.isFinite(parsed) && parsed > 0 ? parsed : null;
+}
+
+export function inventoryDealerPrice(item) {
+  return (
+    finitePositiveNumber(item?.dealer) ??
+    finitePositiveNumber(item?.sellingPrice) ??
+    finitePositiveNumber(item?._resolvedSellingPrice) ??
+    finitePositiveNumber(item?.dealer_price) ??
+    finitePositiveNumber(item?.sale_price) ??
+    finitePositiveNumber(item?.salePrice)
+  );
+}
+
+export function inventoryMsrp(item) {
+  return finitePositiveNumber(item?.msrp);
 }
 
 export function landingAvailabilityFromInventory(item) {
@@ -89,13 +114,29 @@ function withCommandThrustConfig(config, displayName) {
   return current ? `${current}, Command Thrust` : 'Command Thrust';
 }
 
+function fillInventoryGaps(primary, fallback) {
+  const dealer = inventoryDealerPrice(primary) ?? inventoryDealerPrice(fallback);
+  const msrp = inventoryMsrp(primary) ?? inventoryMsrp(fallback);
+  return {
+    ...fallback,
+    ...primary,
+    ...(dealer != null ? { dealer } : {}),
+    ...(msrp != null ? { msrp } : {}),
+  };
+}
+
 export function indexInventoryByPartNo(records) {
   const byPartNo = new Map();
   const list = Array.isArray(records) ? records : [];
   for (const item of list) {
     const partNo = factPartNo(item);
-    if (!partNo || byPartNo.has(partNo)) continue;
-    byPartNo.set(partNo, item);
+    if (!partNo) continue;
+    const existing = byPartNo.get(partNo);
+    if (!existing) {
+      byPartNo.set(partNo, item);
+      continue;
+    }
+    byPartNo.set(partNo, fillInventoryGaps(existing, item));
   }
   return byPartNo;
 }
@@ -110,12 +151,16 @@ export function applyCanonicalInventoryToVariant(variant, inventoryByPartNo) {
 
   const name = landingDisplayNameFromInventory({ ...item, partNo: sku });
   const { availability, availabilityLabel } = landingAvailabilityFromInventory(item);
+  const dealer = inventoryDealerPrice(item);
+  const msrp = inventoryMsrp(item);
   return {
     ...variant,
     name,
     config: withCommandThrustConfig(variant.config, name),
     availability,
     availabilityLabel,
+    ...(dealer != null ? { hbwPrice: dealer } : {}),
+    ...(msrp != null ? { msrp } : {}),
   };
 }
 

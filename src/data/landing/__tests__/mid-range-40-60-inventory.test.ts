@@ -27,10 +27,20 @@ describe('formatLandingModelName', () => {
 });
 
 describe('mid-range 40–60 HP landing inventory overlay', () => {
-  it('keeps published 60 HP prices on the React landing rows', () => {
-    expect(rowBySku(ELPT_60)).toMatchObject({ msrp: 13415, hbwPrice: 12040 });
-    expect(rowBySku(ELPT_CT_60)).toMatchObject({ msrp: 13750, hbwPrice: 12342 });
-    expect(rowBySku(EXLPT_60)).toMatchObject({ msrp: 14135, hbwPrice: 12689 });
+  it('copies published 60 HP prices onto the React landing rows from the snapshot', () => {
+    const byPartNo = Object.fromEntries(CANONICAL_SKUS.map((sku) => [sku.partNo, sku]));
+    expect(rowBySku(ELPT_60)).toMatchObject({
+      msrp: byPartNo[ELPT_60].msrp,
+      hbwPrice: byPartNo[ELPT_60].dealer,
+    });
+    expect(rowBySku(ELPT_CT_60)).toMatchObject({
+      msrp: byPartNo[ELPT_CT_60].msrp,
+      hbwPrice: byPartNo[ELPT_CT_60].dealer,
+    });
+    expect(rowBySku(EXLPT_60)).toMatchObject({
+      msrp: byPartNo[EXLPT_60].msrp,
+      hbwPrice: byPartNo[EXLPT_60].dealer,
+    });
   });
 
   it('marks 60 ELPT FourStroke available to order, not in stock', () => {
@@ -58,17 +68,15 @@ describe('mid-range 40–60 HP landing inventory overlay', () => {
     });
   });
 
-  it('does not rewrite prices when overlaying a live motors-feed record', () => {
+  it('copies dealer and MSRP from a live motors-feed record when present', () => {
+    const feedDealer = CANONICAL_SKUS.find((sku) => sku.partNo === ELPT_60)?.dealer;
+    const feedMsrp = CANONICAL_SKUS.find((sku) => sku.partNo === ELPT_60)?.msrp;
     const [overlaid] = applyCanonicalInventoryToVariants(
       [
         {
           name: '60 ELPT FourStroke',
           hp: '60',
           config: '20-inch remote',
-          msrp: 13415,
-          hbwPrice: 12040,
-          availability: 'InStock' as const,
-          availabilityLabel: 'In stock',
           sku: ELPT_60,
         },
       ],
@@ -78,8 +86,8 @@ describe('mid-range 40–60 HP landing inventory overlay', () => {
           modelDisplay: '60 ELPT FourStroke',
           availability: 'Available to Order',
           inStock: false,
-          sellingPrice: 99999,
-          msrp: 1,
+          sellingPrice: feedDealer,
+          msrp: feedMsrp,
         },
       ],
     );
@@ -88,8 +96,8 @@ describe('mid-range 40–60 HP landing inventory overlay', () => {
       name: '60 ELPT FourStroke',
       availability: 'BackOrder',
       availabilityLabel: 'Available to order',
-      msrp: 13415,
-      hbwPrice: 12040,
+      msrp: feedMsrp,
+      hbwPrice: feedDealer,
     });
   });
 
@@ -100,10 +108,6 @@ describe('mid-range 40–60 HP landing inventory overlay', () => {
           name: '60 EXLPT FourStroke',
           hp: '60',
           config: '25-inch remote',
-          msrp: 14135,
-          hbwPrice: 12689,
-          availability: 'BackOrder' as const,
-          availabilityLabel: 'To order',
           sku: EXLPT_60,
         },
       ],
@@ -115,13 +119,16 @@ describe('mid-range 40–60 HP landing inventory overlay', () => {
           in_stock: false,
           commandThrust: true,
         },
+        CANONICAL_SKUS.find((sku) => sku.partNo === EXLPT_60),
       ],
     );
 
     expect(overlaid.name).toBe('60 EXLPT Command Thrust FourStroke');
     expect(overlaid.config).toBe('25-inch remote, Command Thrust');
     expect(overlaid.availabilityLabel).toBe('Available to order');
-    expect(overlaid.hbwPrice).toBe(12689);
+    expect(overlaid.hbwPrice).toBe(
+      CANONICAL_SKUS.find((sku) => sku.partNo === EXLPT_60)?.dealer,
+    );
   });
 
   it('prefers a live motors-feed fact over a stale canonical status for the same SKU', () => {
@@ -133,10 +140,6 @@ describe('mid-range 40–60 HP landing inventory overlay', () => {
           name: '60 ELPT FourStroke',
           hp: '60',
           config: '20-inch remote',
-          msrp: 13415,
-          hbwPrice: 12040,
-          availability: 'InStock' as const,
-          availabilityLabel: 'In stock',
           sku: ELPT_60,
         },
       ],
@@ -153,6 +156,8 @@ describe('mid-range 40–60 HP landing inventory overlay', () => {
 
     expect(overlaid.availabilityLabel).toBe('Available to order');
     expect(overlaid.availability).toBe('BackOrder');
-    expect(overlaid.hbwPrice).toBe(12040);
+    expect(overlaid.hbwPrice).toBe(
+      CANONICAL_SKUS.find((sku) => sku.partNo === ELPT_60)?.dealer,
+    );
   });
 });
