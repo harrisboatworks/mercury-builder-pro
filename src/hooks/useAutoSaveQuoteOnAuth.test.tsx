@@ -4,6 +4,7 @@ import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 const mocks = vi.hoisted(() => ({
   toast: vi.fn(),
+  trackLeadConversion: vi.fn(),
   insert: vi.fn(),
   insertResult: { data: null as { id: string } | null, error: null as { message: string } | null },
   user: { id: 'user-1', email: 'boater@example.com', user_metadata: { full_name: 'Pat' } } as
@@ -11,6 +12,8 @@ const mocks = vi.hoisted(() => ({
     | null,
   motor: { model: '115 ELPT', hp: 115, price: 14000 } as { model: string; hp: number; price: number } | null,
 }));
+
+vi.mock('@/lib/analytics', () => ({ trackLeadConversion: mocks.trackLeadConversion }));
 
 vi.mock('@/hooks/use-toast', () => ({
   useToast: () => ({ toast: mocks.toast }),
@@ -42,7 +45,7 @@ vi.mock('@/integrations/supabase/client', () => ({
         },
       };
     },
-    functions: { invoke: vi.fn() },
+    functions: { invoke: vi.fn().mockResolvedValue({ error: null }) },
   },
 }));
 
@@ -52,6 +55,8 @@ describe('useAutoSaveQuoteOnAuth writes', () => {
   beforeEach(() => {
     vi.clearAllMocks();
     mocks.insertResult = { data: null, error: null };
+    mocks.user = { id: 'user-1', email: 'boater@example.com', user_metadata: { full_name: 'Pat' } };
+    localStorage.clear();
     window.history.replaceState({}, '', '/quote/summary?auth_save=1');
   });
 
@@ -91,5 +96,25 @@ describe('useAutoSaveQuoteOnAuth writes', () => {
     expect(mocks.toast).not.toHaveBeenCalledWith(expect.objectContaining({
       title: '✓ Quote saved to your account',
     }));
+    expect(mocks.trackLeadConversion).not.toHaveBeenCalled();
   });
+
+  it('tracks an authenticated email save once, using only the confirmed saved ID', async () => {
+    mocks.insertResult = { data: { id: 'saved-quote-1' }, error: null };
+    const { rerender } = renderHook(() => useAutoSaveQuoteOnAuth());
+    await waitFor(() => expect(mocks.trackLeadConversion).toHaveBeenCalledWith('quote_saved_email', 'saved-quote-1'));
+    rerender();
+    expect(mocks.trackLeadConversion).toHaveBeenCalledTimes(1);
+  });
+
+  it('does not count an authenticated save without an email address', async () => {
+    mocks.user!.email = '';
+    mocks.insertResult = { data: { id: 'saved-quote-1' }, error: null };
+    renderHook(() => useAutoSaveQuoteOnAuth());
+    await waitFor(() => expect(mocks.toast).toHaveBeenCalledWith(expect.objectContaining({
+      title: '✓ Quote saved to your account',
+    })));
+    expect(mocks.trackLeadConversion).not.toHaveBeenCalled();
+  });
+
 });

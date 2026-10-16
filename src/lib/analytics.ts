@@ -5,7 +5,7 @@
  * NEVER push PII: no email, no full phone, no full name, no full postal code.
  */
 
-import { GOOGLE_ADS_CONVERSION_LABELS, GOOGLE_ADS_ID, type LeadConversionType } from '@/config/googleAds';
+import { GOOGLE_ADS_CONVERSION_LABELS, GOOGLE_ADS_ID, isGoogleAdsProductionOrigin, type LeadConversionType } from '@/config/googleAds';
 
 declare global {
   interface Window {
@@ -229,6 +229,7 @@ let googleAdsConfigured = false;
 /** Configure the Google Ads tag only after an explicit Accept. */
 export function loadGoogleAdsAfterConsent(): boolean {
   if (typeof window === 'undefined') return false;
+  if (!isGoogleAdsProductionOrigin()) return false;
   if (getStoredConsent() !== 'granted') return false;
   if (typeof window.gtag !== 'function') return false;
   if (googleAdsConfigured) return true;
@@ -269,7 +270,7 @@ export function trackLeadConversion(type: LeadConversionType, reference: string)
   loadGoogleAdsAfterConsent();
   window.gtag('event', 'generate_lead', { lead_type: type });
   const label = GOOGLE_ADS_CONVERSION_LABELS[type];
-  if (label) {
+  if (label && isGoogleAdsProductionOrigin()) {
     window.gtag('event', 'conversion', {
       send_to: `${GOOGLE_ADS_ID}/${label}`,
       transaction_id: reference,
