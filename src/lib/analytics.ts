@@ -199,10 +199,17 @@ export function pushConsentDefault(): void {
   trackEvent('consent_default', { ...DENIED_STATE });
 }
 
+const GRANTED_STATE = {
+  ad_storage: 'granted',
+  analytics_storage: 'granted',
+  ad_user_data: 'granted',
+  ad_personalization: 'granted',
+} as const;
+
 export function pushConsentUpdate(value: ConsentValue): void {
-  // The banner only asks about analytics cookies, so a grant enables
-  // analytics_storage only; ad signals stay denied either way.
-  const state = value === 'granted' ? { ...DENIED_STATE, analytics_storage: 'granted' } : { ...DENIED_STATE };
+  // The banner covers analytics and advertising cookies: Accept grants all
+  // four Consent Mode v2 signals, Decline keeps all of them denied.
+  const state = value === 'granted' ? { ...GRANTED_STATE } : { ...DENIED_STATE };
   gtagConsent('update', state);
   trackEvent('consent_update', state);
 }
@@ -210,6 +217,68 @@ export function pushConsentUpdate(value: ConsentValue): void {
 export function setConsent(value: ConsentValue): void {
   persistConsent(value);
   pushConsentUpdate(value);
+  if (value === 'granted') loadGoogleAdsAfterConsent();
+}
+
+/* ---------------- Google Ads (consent-gated) ---------------- */
+
+let googleAdsConfigured = false;
+
+/** Configure the Google Ads tag only after an explicit Accept. */
+export function loadGoogleAdsAfterConsent(): boolean {
+  if (typeof window === 'undefined') return false;
+  if (getStoredConsent() !== 'granted') return false;
+  if (typeof window.gtag !== 'function') return false;
+  if (googleAdsConfigured) return true;
+  (window.gtag as (...args: unknown[]) => void)('config', GOOGLE_ADS_ID);
+  googleAdsConfigured = true;
+  return true;
+}
+
+const LEAD_CONVERSION_KEY = 'mr_lead_conversions';
+
+function readSentConversions(): string[] {
+  try {
+    const raw = localStorage.getItem(LEAD_CONVERSION_KEY);
+    const parsed = raw ? JSON.parse(raw) : [];
+    return Array.isArray(parsed) ? parsed.filter((v) => typeof v === 'string') : [];
+  } catch {
+    return [];
+  }
+}
+
+/**
+ * Fire a lead conversion once per (type, reference), only after the server has
+ * confirmed success and only when the visitor accepted cookies. Returns true
+ * when events were sent.
+ */
+export function trackLeadConversion(type: LeadConversionType, reference: string): boolean {
+  if (typeof window === 'undefined' || !reference) return false;
+  if (getStoredConsent() !== 'granted') return false;
+  if (typeof window.gtag !== 'function') return false;
+
+  const key = `${type}:${reference}`;
+  const sent = readSentConversions();
+  if (sent.includes(key)) return false;
+  try {
+    localStorage.setItem(LEAD_CONVERSION_KEY, JSON.stringify([...sent, key].slice(-50)));
+  } catch { /* noop */ }
+
+  loadGoogleAdsAfterConsent();
+  window.gtag('event', 'generate_lead', { lead_type: type });
+  const label = GOOGLE_ADS_CONVERSION_LABELS[type];
+  if (label) {
+    window.gtag('event', 'conversion', {
+      send_to: `${GOOGLE_ADS_ID}/${label}`,
+      transaction_id: reference,
+    });
+  }
+  return true;
+}
+
+/** Test-only reset. */
+export function __resetGoogleAdsForTests(): void {
+  googleAdsConfigured = false;
 }
 
 /* ---------------- Microsoft Clarity consent gate ---------------- */
