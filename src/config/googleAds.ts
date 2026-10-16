@@ -5,8 +5,8 @@
 export const GOOGLE_ADS_ID = 'AW-881387895';
 
 export const GOOGLE_ADS_CONVERSION_LABELS = {
-  quote_review: '',
-  quote_saved_email: '',
+  quote_review: 'iKP2CM_U5Z4dEPfSo6QD',
+  quote_saved_email: 'cSAFCMrV5Z4dEPfSo6QD',
 } as const;
 
 export type LeadConversionType = keyof typeof GOOGLE_ADS_CONVERSION_LABELS;

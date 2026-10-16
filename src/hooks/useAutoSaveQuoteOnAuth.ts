@@ -3,6 +3,7 @@ import { useAuth } from '@/components/auth/AuthProvider';
 import { useQuote } from '@/contexts/QuoteContext';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
+import { trackLeadConversion } from '@/lib/analytics';
 import { frozenPricingFromPdfSnapshot, isQuotePdfSnapshot } from '@/lib/quote-pdf-data';
 
 /**
@@ -76,6 +77,9 @@ export function useAutoSaveQuoteOnAuth(quoteReady: boolean | (() => boolean) = t
         // Store ID for other features (QR, PDF, etc.)
         if (savedQuote?.id) {
           localStorage.setItem('current_saved_quote_id', savedQuote.id);
+          if (user.email) {
+            trackLeadConversion('quote_saved_email', savedQuote.id);
+          }
         }
 
         toast({
