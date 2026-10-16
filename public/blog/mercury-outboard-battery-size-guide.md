@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-battery-size-guide.md
-last_updated: 2026-09-26
+last_updated: 2026-10-16
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "What Battery Does My Mercury Outboard Need? MCA, Group Size and Lithium 
 description: "The right battery for your Mercury outboard starts with the MCA spec in your owner's manual. Cranking specs by model, group sizes, and Mercury's lithium rules."
 category: "Maintenance"
 date_published: 2026-09-26
-date_modified: 2026-09-26
+date_modified: 2026-10-16
 keywords: ["what battery does my Mercury outboard need","Mercury outboard battery size","battery for 90 hp Mercury outboard","50 hp Mercury outboard battery size","Mercury lithium cranking battery"]
 author: "Jay Harris"
 publisher: "Harris Boat Works"
@@ -28,11 +28,11 @@ revenue_driver: service
 
 **Category:** Maintenance  
 **Published:** 2026-09-26  
-**Last reviewed:** 2026-09-26  
+**Last reviewed:** 2026-10-16  
 **Read time:** ~6 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-battery-size-guide
 
-> **Quick answer:** Your owner's manual sets the battery spec, and the number that matters is the cranking rating. A current Mercury 150 FourStroke calls for at least **1,000 MCA (800 CCA) and 180 Ah**. Smaller motors need less, and older Mercury guidance roughly doubles the requirement for cold-weather starts on mid-range motors. Lithium cranking batteries are allowed, but only on Mercury's approved engine list and only if the battery meets Mercury's published spec.
+> **Quick answer:** Your owner's manual sets the battery spec, and the number that matters is the cranking rating. The 2013 Mercury 150 FourStroke manual lists **1,000 MCA, 800 CCA or 180 Ah**, and a battery that meets any one of those meets the rating. Smaller motors need less, and older Mercury guidance roughly doubles the requirement for cold-weather starts on mid-range motors. Lithium cranking batteries are allowed, but only on Mercury's approved engine list and only if the battery meets Mercury's published spec.
 
 ## Why the manual number wins
 
@@ -51,11 +51,11 @@ Our [boat battery guide](/blog/mercury-boat-battery-guide-ontario) covers chemis
 | **Ah** (amp-hours) | Stored energy | Runs electronics with the engine off. |
 | **RC** (reserve capacity) | Minutes the battery can supply 25 amps | Another way of expressing stored energy. |
 
-If the manual gives both MCA and CCA, meet both. A battery rated 1,000 MCA / 800 CCA covers the 150 FourStroke on both counts.
+Read how your manual words it. The 2013 150 FourStroke manual gives 1,000 MCA, 800 CCA or 180 Ah as alternatives, so one of them is enough. If your manual joins the ratings with "and," meet each one.
 
 ## Battery specs by Mercury model
 
-The 150 FourStroke line comes from Mercury's current owner's manual. The smaller-motor lines come from an older Mercury electrical FAQ that's widely quoted by owners. Treat those as a starting point and **confirm against the manual for your serial number**, because specs have changed over the years.
+The 150 FourStroke line comes from Mercury's 2013 150 FourStroke owner's manual (90-8M0078339). The smaller-motor lines come from an older Mercury electrical FAQ that's widely quoted by owners. Treat those as a starting point and **confirm against the manual for your serial number**, because specs have changed over the years.
 
 | Mercury engine | Minimum cranking spec |
 |---|---|
@@ -63,7 +63,7 @@ The 150 FourStroke line comes from Mercury's current owner's manual. The smaller
 | 30 to 50 hp FourStroke | 465 MCA / 350 CCA above freezing; 1,000 MCA / 750 CCA below freezing |
 | 75 / 90 hp FourStroke | 465 MCA / 350 CCA above freezing; 1,000 MCA / 750 CCA below freezing |
 | OptiMax 2.5 / 3.0 L | 1,000 MCA / 750 CCA |
-| 150 FourStroke (current manual) | **1,000 MCA / 800 CCA / 180 Ah** |
+| 150 FourStroke (2013 manual) | **1,000 MCA or 800 CCA or 180 Ah** |
 
 The cold-weather column is the one that surprises people: below freezing, the mid-range requirement more than doubles. In Ontario we launch onto water that was ice a few weeks earlier, so the cold column is the one to buy for.
 
@@ -124,7 +124,7 @@ Not sure which side of the line your motor is on? Ask us through the [service fo
 
 ## Sources
 
-- [Mercury 150 FourStroke owner's manual (battery specification)](https://dmna.ny.gov/nynm/manuals/Mercury_150_FourStroke_Manual.pdf)
+- [Mercury 150 FourStroke owner's manual, 2013 edition (battery specification)](https://dmna.ny.gov/nynm/manuals/Mercury_150_FourStroke_Manual.pdf)
 - [Mercury service bulletin on lithium-ion cranking batteries (via West Marine)](https://www.westmarine.com/on/demandware.static/-/Sites-wm-master-catalog/default/dwde8853e8/images/legacy-pdf/MER_4324_Relion_IBEX_SerivceBulletin.pdf)
 - [RELiON RB100-HP product page](https://www.relionbattery.com/products/lithium/rb100-hp)
 - [Older Mercury electrical FAQ battery table, as quoted by owners on Bass Boat Magazine](https://www.bassboatmagazine.com/threads/the-correct-battery-for-a-mercury-outboard-motor.7105/)
