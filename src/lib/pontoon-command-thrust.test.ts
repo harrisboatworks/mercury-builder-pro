@@ -29,6 +29,13 @@ describe('pontoonShouldUseCommandThrust', () => {
   it('does not flag sizes with no CT variant', () => {
     expect(pontoonShouldUseCommandThrust('pontoon', 25, { model: '25ELPT FourStroke' })).toBe(false);
     expect(pontoonShouldUseCommandThrust('pontoon', 150, { model: '150L FourStroke' })).toBe(false);
+    expect(pontoonShouldUseCommandThrust('pontoon', 75, { model: '75ELPT FourStroke' })).toBe(false);
+  });
+
+  it('flags every catalogued CT size', () => {
+    for (const hp of [40, 50, 60, 90, 115]) {
+      expect(pontoonShouldUseCommandThrust('pontoon', hp, { model: `${hp}ELPT FourStroke` })).toBe(true);
+    }
   });
 
   it('only applies to pontoons', () => {

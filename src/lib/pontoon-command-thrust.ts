@@ -2,13 +2,13 @@
  * Pontoon fit-check helper for the boat-information step.
  *
  * Pontoons push a lot of hull at low speed, so HBW recommends the Command
- * Thrust gearcase wherever Mercury offers one. In HBW's catalogue Command
- * Thrust remote/tiller variants exist from 40 to 115 HP; below and above that
- * band there is no CT version to steer the buyer toward.
+ * Thrust gearcase wherever Mercury offers one. HBW's catalogue (see
+ * public/pricing-reference.md) has pontoon-size Command Thrust variants only
+ * at these horsepowers; there is no 75 HP CT, nor any CT at 25/30 or 150+,
+ * so those sizes get no CT steer.
  */
 
-export const COMMAND_THRUST_MIN_HP = 40;
-export const COMMAND_THRUST_MAX_HP = 115;
+export const COMMAND_THRUST_HP_VALUES: ReadonlySet<number> = new Set([40, 50, 60, 90, 115]);
 
 type CommandThrustSource = {
   model?: string | null;
@@ -40,7 +40,6 @@ export function pontoonShouldUseCommandThrust(
   motor: CommandThrustSource | null | undefined,
 ): boolean {
   if (boatTypeId !== 'pontoon') return false;
-  if (!Number.isFinite(motorHP)) return false;
-  if (motorHP < COMMAND_THRUST_MIN_HP || motorHP > COMMAND_THRUST_MAX_HP) return false;
+  if (!COMMAND_THRUST_HP_VALUES.has(motorHP)) return false;
   return !isCommandThrustMotor(motor);
 }
