@@ -8,6 +8,7 @@ import {
   motorSlug,
 } from '../_shared/motor-slug.ts';
 import { resolveMercuryCatalogSpecs } from '../_shared/mercury-codes.ts';
+import { HorsepowerFilterError, parseHorsepowerFilter } from '../_shared/public-horsepower-filter.ts';
 import {
   isPublicCatalogMotor,
   isPublicMotorInStock,
@@ -41,20 +42,25 @@ Deno.serve(async (req) => {
   }
 
   try {
+    const url = new URL(req.url);
+    const hpFilter = parseHorsepowerFilter(url.searchParams);
     const supabase = createClient(
       Deno.env.get('SUPABASE_URL')!,
       Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!
     );
 
     // Fetch active, non-Verado motors
-    const { data, error } = await supabase
+    let query = supabase
       .from('motor_models')
       .select(
         'id, model, model_display, model_number, family, horsepower, shaft, shaft_code, control_type, motor_type, msrp, sale_price, dealer_price, base_price, manual_overrides, availability, in_stock, stock_quantity, image_url, hero_image_url, is_brochure'
       )
       // PostgreSQL comparisons do not match NULL. Treat NULL as an active,
       // orderable record while still excluding the explicit Exclude status.
-      .or(PUBLIC_CATALOG_AVAILABILITY_OR)
+      .or(PUBLIC_CATALOG_AVAILABILITY_OR);
+    if (hpFilter.min_hp !== null) query = query.gte('horsepower', hpFilter.min_hp);
+    if (hpFilter.max_hp !== null) query = query.lte('horsepower', hpFilter.max_hp);
+    const { data, error } = await query
       .order('horsepower', { ascending: true })
       .limit(500);
 
@@ -66,7 +72,6 @@ Deno.serve(async (req) => {
       });
     }
 
-    const url = new URL(req.url);
     const inStockOnly = parseOptionalBooleanFlag(url.searchParams.get('in_stock_only'));
     const now = new Date();
     const validUntil = new Date(now.getTime() + 24 * 60 * 60 * 1000);
@@ -120,6 +125,7 @@ Deno.serve(async (req) => {
       lastUpdated: now.toISOString(),
       priceValidUntil: validUntil.toISOString(),
       count: motors.length,
+      filters_applied: hpFilter,
       docs: `${SITE_URL}/agents`,
       brand: `${SITE_URL}/.well-known/brand.json`,
       notice:
@@ -136,6 +142,12 @@ Deno.serve(async (req) => {
       },
     });
   } catch (err) {
+    if (err instanceof HorsepowerFilterError) {
+      return new Response(JSON.stringify({ error: err.message }), {
+        status: 400,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
+    }
     console.error('[public-motors-api] Unexpected error:', err);
     return new Response(JSON.stringify({ error: 'Internal server error' }), {
       status: 500,

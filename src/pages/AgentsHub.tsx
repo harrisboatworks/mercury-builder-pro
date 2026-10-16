@@ -317,6 +317,7 @@ export default function AgentsHub() {
           </p>
           <CodeBlock language="http">{`POST ${PUBLIC_QUOTE_API}`}</CodeBlock>
           <p className="text-protected text-sm mt-2">Three actions: <code>list_motors</code>, <code>estimate_trade_in</code>, <code>build_quote</code>. GET the URL for the full schema.</p>
+          <p className="text-protected text-sm mt-2">For <code>list_motors</code> and <code>/api/agents/motors</code>, use <code>horsepower=60</code> for an exact match or <code>min_hp=40&amp;max_hp=60</code> for a range. JSON responses echo the effective bounds in <code>filters_applied</code>; invalid or conflicting bounds return HTTP 400. With no HP filter, the existing catalog and result limits apply.</p>
           <p className="text-protected text-sm mt-4 font-medium">Example, build a quote for a 90 HP FourStroke with a trade-in:</p>
           <CodeBlock language="bash" size="xs">{`curl -X POST ${PUBLIC_QUOTE_API} \\
   -H "Content-Type: application/json" \\
