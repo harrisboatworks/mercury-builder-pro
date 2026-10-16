@@ -11,8 +11,10 @@ import { trackAgentEvent } from "@/lib/agentEvents";
 import { trackLeadConversion } from "@/lib/analytics";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
-import { generateSocialProofMessage } from "@/lib/activityGenerator";
 import { useAuth } from "@/components/auth/AuthProvider";
+import { GoogleSignInButton } from '@/components/auth/GoogleSignInButton';
+import { SITE_URL } from '@/lib/site';
+import { Link } from 'react-router-dom';
 import { useIsMobile } from "@/hooks/use-mobile";
 
 interface SaveQuoteDialogProps {
@@ -37,6 +39,10 @@ export function SaveQuoteDialog({
   const [phone, setPhone] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [isSaved, setIsSaved] = useState(false);
+  const [emailSent, setEmailSent] = useState(false);
+  const [accountLinkSent, setAccountLinkSent] = useState(false);
+  const [savedQuoteUrl, setSavedQuoteUrl] = useState('');
+  const [authError, setAuthError] = useState('');
   const { toast } = useToast();
   const { user } = useAuth();
   const isMobile = useIsMobile();
@@ -72,20 +78,22 @@ export function SaveQuoteDialog({
       hasError = true;
     }
 
-    if (!email) {
+    if (!email.trim()) {
       setEmailError("Email address is required");
       hasError = true;
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) {
       setEmailError("Please enter a valid email address");
       hasError = true;
     }
 
-    if (!phone.trim()) {
-      setPhoneError("Phone number is required");
+    const phoneDigits = phone.replace(/\D/g, '');
+    if (phone.trim() && (!/^[+()\d\s.-]+$/.test(phone.trim()) || !/^1?\d{10}$/.test(phoneDigits))) {
+      setPhoneError("Please enter a 10-digit phone number, optionally starting with 1");
       hasError = true;
     }
 
     if (hasError) return;
+    const contactPhone = phoneDigits ? `+${phoneDigits.length === 10 ? '1' : ''}${phoneDigits}` : undefined;
 
     setIsLoading(true);
 
@@ -96,9 +104,9 @@ export function SaveQuoteDialog({
         motor_hp: quoteData.selectedMotor?.hp,
         base_price: quoteData.selectedMotor?.msrp,
         final_price: finalPrice,
-        customer_name: name || undefined,
-        customer_email: email,
-        customer_phone: phone || undefined,
+        customer_name: name.trim(),
+        customer_email: email.trim(),
+        customer_phone: contactPhone,
         lead_status: "downloaded",
         lead_source: "pdf_download",
         quote_data: quoteData,
@@ -121,7 +129,7 @@ export function SaveQuoteDialog({
         .from('saved_quotes')
         .insert({
           id: savedQuoteId,
-          email: email,
+          email: email.trim(),
           resume_token: resumeToken,
           quote_state: quoteData, // Full QuoteContext state
           user_id: user?.id || null, // Link to user if logged in
@@ -135,7 +143,7 @@ export function SaveQuoteDialog({
 
       // Store saved quote ID for QR code generation
       localStorage.setItem('current_saved_quote_id', savedQuoteId);
-      console.log('Saved quote ID for QR code:', savedQuoteId);
+      setSavedQuoteUrl(`/quote/saved/${savedQuoteId}`);
 
       // Analytics: quote_saved + lead_submitted
       trackAgentEvent({
@@ -151,16 +159,17 @@ export function SaveQuoteDialog({
         metadata: { source: 'save_quote_dialog' },
       });
 
-      // If user is not logged in, send magic link for account creation
+      // Account access is optional; the saved quote link works without sign-in.
+      let didSendAccountLink = false;
       if (!user) {
         const siteUrl = window.location.origin;
         const { error: otpError } = await supabase.auth.signInWithOtp({
-          email: email,
+          email: email.trim(),
           options: {
             emailRedirectTo: `${siteUrl}/my-quotes`,
             data: {
               full_name: name || undefined,
-              phone: phone || undefined,
+              phone: contactPhone,
             }
           }
         });
@@ -168,26 +177,37 @@ export function SaveQuoteDialog({
         if (otpError) {
           console.error('Error sending magic link:', otpError);
           // Don't fail the save if magic link fails
+        } else {
+          didSendAccountLink = true;
         }
       }
+      setAccountLinkSent(didSendAccountLink);
 
-      // Send email with quote link
-      const { error: emailError } = await supabase.functions.invoke('send-saved-quote-email', {
-        body: {
-          customerEmail: email,
-          customerName: name || 'Valued Customer',
-          quoteId: leadRecord.id,
-          savedQuoteId: savedQuoteId,
-          resumeToken: resumeToken,
-          motorModel: motorModel || 'Mercury Motor',
-          finalPrice: finalPrice || 0,
-          quoteData: quoteData,
-          includeAccountInfo: !user, // Flag to include account access info
+      // Email delivery must not discard a successfully saved quote.
+      try {
+        const { data: emailResult, error: emailError } = await supabase.functions.invoke('send-saved-quote-email', {
+          body: {
+            customerEmail: email.trim(),
+            customerName: name.trim(),
+            quoteId: leadRecord.id,
+            savedQuoteId: savedQuoteId,
+            resumeToken: resumeToken,
+            motorModel: motorModel || 'Mercury Motor',
+            finalPrice: finalPrice || 0,
+            quoteData: quoteData,
+            includeAccountInfo: didSendAccountLink,
+          }
+        });
+
+        // The provider can return a failure inside a successful HTTP response.
+        const deliveryError = emailError || emailResult?.error;
+        setEmailSent(!deliveryError && Boolean(emailResult?.data?.id));
+        if (deliveryError) {
+          console.error('Error sending saved quote email:', deliveryError);
         }
-      });
-
-      if (emailError) {
-        console.error('Error sending email:', emailError);
+      } catch (deliveryError) {
+        setEmailSent(false);
+        console.error('Error sending saved quote email:', deliveryError);
       }
 
       // Notify admin about new saved quote (email + SMS)
@@ -195,8 +215,8 @@ export function SaveQuoteDialog({
         await supabase.functions.invoke('send-quote-email', {
           body: {
             customerName: name,
-            customerEmail: email,
-            customerPhone: phone,
+            customerEmail: email.trim(),
+            customerPhone: contactPhone || null,
             quoteNumber: quoteData.reference_number || leadRecord.id?.slice(0, 8)?.toUpperCase() || 'NEW',
             motorModel: motorModel || 'Mercury Motor',
             totalPrice: finalPrice || 0,
@@ -212,7 +232,7 @@ export function SaveQuoteDialog({
         await supabase.functions.invoke('send-sms', {
           body: {
             to: 'admin',
-            message: `📋 NEW SAVED QUOTE!\n\nName: ${name}\nPhone: ${phone}\nEmail: ${email}\nMotor: ${motorModel || 'Not specified'}\nPrice: $${(finalPrice || 0).toLocaleString()}\n\nAction: Follow up ASAP!\n\n- Harris Boat Works`,
+            message: `📋 NEW SAVED QUOTE!\n\nName: ${name}\nPhone: ${phone.trim() || 'Not provided'}\nEmail: ${email}\nMotor: ${motorModel || 'Not specified'}\nPrice: $${(finalPrice || 0).toLocaleString()}\n\nAction: Follow up ASAP!\n\n- Harris Boat Works`,
             messageType: 'saved_quote_alert',
           }
         });
@@ -242,6 +262,10 @@ export function SaveQuoteDialog({
     // Reset state after dialog closes
     setTimeout(() => {
       setIsSaved(false);
+      setEmailSent(false);
+      setAccountLinkSent(false);
+      setSavedQuoteUrl('');
+      setAuthError('');
       setEmail("");
       setName("");
       setPhone("");
@@ -256,8 +280,15 @@ export function SaveQuoteDialog({
       </div>
       <div className="text-xl font-semibold">Quote Saved!</div>
       <div className="space-y-3 text-muted-foreground">
-        <p>We've saved your configuration and sent details to <strong className="text-foreground">{email}</strong>.</p>
-        {!user && (
+        {emailSent ? (
+          <p>We've saved your configuration and sent details to <strong className="text-foreground">{email.trim()}</strong>.</p>
+        ) : (
+          <div role="status" className="space-y-2">
+            <p>Your quote is saved, but we couldn't email the link. Open it below and bookmark it so you can return later.</p>
+            <Button asChild variant="outline"><Link to={savedQuoteUrl}>Open saved quote</Link></Button>
+          </div>
+        )}
+        {accountLinkSent && (
           <div className="bg-muted/50 rounded-lg p-4 mt-4 text-left">
             <div className="flex items-start gap-3">
               <Mail className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
@@ -282,31 +313,10 @@ export function SaveQuoteDialog({
     <div className="grid gap-4 py-4">
       
       <div className="grid gap-2">
-        <Label htmlFor="name">Name <RequiredMark /></Label>
-        <Input
-          id="name"
-          type="text"
-          placeholder="John Smith"
-          value={name}
-          onChange={(e) => {
-            setName(e.target.value);
-            setNameError("");
-          }}
-          disabled={isLoading}
-          aria-required="true"
-          aria-invalid={Boolean(nameError)}
-          aria-describedby={nameError ? "save-quote-name-error" : undefined}
-          className={nameError ? "border-destructive" : ""}
-        />
-        {nameError && (
-          <p id="save-quote-name-error" role="alert" className="text-sm text-destructive">{nameError}</p>
-        )}
-      </div>
-      
-      <div className="grid gap-2">
         <Label htmlFor="email">Email <RequiredMark /></Label>
         <Input
           id="email"
+          autoComplete="email"
           type="email"
           placeholder="your.email@example.com"
           value={email}
@@ -326,7 +336,30 @@ export function SaveQuoteDialog({
       </div>
       
       <div className="grid gap-2">
-        <Label htmlFor="phone">Phone <RequiredMark /></Label>
+        <Label htmlFor="name">Name <RequiredMark /></Label>
+        <Input
+          id="name"
+          autoComplete="name"
+          type="text"
+          placeholder="John Smith"
+          value={name}
+          onChange={(e) => {
+            setName(e.target.value);
+            setNameError("");
+          }}
+          disabled={isLoading}
+          aria-required="true"
+          aria-invalid={Boolean(nameError)}
+          aria-describedby={nameError ? "save-quote-name-error" : undefined}
+          className={nameError ? "border-destructive" : ""}
+        />
+        {nameError && (
+          <p id="save-quote-name-error" role="alert" className="text-sm text-destructive">{nameError}</p>
+        )}
+      </div>
+
+      <div className="grid gap-2">
+        <Label htmlFor="phone">Phone (optional)</Label>
         <Input
           id="phone"
           type="tel"
@@ -337,7 +370,7 @@ export function SaveQuoteDialog({
             setPhoneError("");
           }}
           disabled={isLoading}
-          aria-required="true"
+          autoComplete="tel"
           aria-invalid={Boolean(phoneError)}
           aria-describedby={phoneError ? "save-quote-phone-error" : undefined}
           className={phoneError ? "border-destructive" : ""}
@@ -347,8 +380,8 @@ export function SaveQuoteDialog({
         )}
       </div>
       
-      <p className="text-sm text-muted-foreground">
-        {generateSocialProofMessage()}
+      <p className="text-xs text-muted-foreground">
+        We'll email a link to this quote. No Google account required. <Link to="/privacy" className="underline">Privacy policy</Link>
       </p>
     </div>
   );
@@ -376,15 +409,27 @@ export function SaveQuoteDialog({
     </>
   );
 
+  const googleOption = !user && (
+    <fieldset disabled={isLoading} className="mt-4 border-t pt-4 space-y-2">
+      <p className="text-center text-xs text-muted-foreground">Or save with your Google account</p>
+      <GoogleSignInButton
+        redirectTo={`${SITE_URL}/quote/summary?auth_save=1`}
+        variant="outline"
+        onError={(error) => setAuthError(error.message)}
+      />
+      {authError && <p role="alert" className="text-sm text-destructive">{authError}</p>}
+    </fieldset>
+  );
+
   // Mobile: Use Drawer (slides up from bottom)
   if (isMobile) {
     if (isSaved) {
       return (
         <Drawer open={open} onOpenChange={handleClose}>
-          <DrawerContent className="px-4 pb-8">
+          <DrawerContent className="max-h-[90dvh] overflow-y-auto px-4 pb-8">
             <DrawerTitle className="sr-only">Quote saved</DrawerTitle>
             <DrawerDescription className="sr-only">
-              We've saved your configuration and sent details to {email}.
+              Your configuration is saved. See the delivery status below.
             </DrawerDescription>
             {successContent}
           </DrawerContent>
@@ -394,17 +439,18 @@ export function SaveQuoteDialog({
 
     return (
       <Drawer open={open} onOpenChange={onOpenChange}>
-        <DrawerContent className="px-4 pb-8">
+        <DrawerContent className="max-h-[90dvh] overflow-y-auto px-4 pb-8">
           <DrawerHeader className="text-left">
             <DrawerTitle>Save Your Quote</DrawerTitle>
             <DrawerDescription>
-              Enter your details to save this configuration. We'll send you a link so you can return anytime.
+              Save by email. We'll send a link so you can return to this quote.
             </DrawerDescription>
           </DrawerHeader>
           {formContent}
           <DrawerFooter className="flex-row gap-2 pt-2">
             {footerButtons}
           </DrawerFooter>
+          {googleOption}
         </DrawerContent>
       </Drawer>
     );
@@ -414,10 +460,10 @@ export function SaveQuoteDialog({
   if (isSaved) {
     return (
       <Dialog open={open} onOpenChange={handleClose}>
-        <DialogContent className="sm:max-w-[425px]">
+        <DialogContent className="max-h-[90dvh] overflow-y-auto sm:max-w-[425px]">
           <DialogTitle className="sr-only">Quote saved</DialogTitle>
           <DialogDescription className="sr-only">
-            We've saved your configuration and sent details to {email}.
+            Your configuration is saved. See the delivery status below.
           </DialogDescription>
           {successContent}
         </DialogContent>
@@ -427,17 +473,18 @@ export function SaveQuoteDialog({
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-[425px]">
+      <DialogContent className="max-h-[90dvh] overflow-y-auto sm:max-w-[425px]">
         <DialogHeader>
           <DialogTitle>Save Your Quote</DialogTitle>
           <DialogDescription>
-            Enter your details to save this configuration. We'll send you a link so you can return anytime.
+            Save by email. We'll send a link so you can return to this quote.
           </DialogDescription>
         </DialogHeader>
         {formContent}
         <DialogFooter>
           {footerButtons}
         </DialogFooter>
+        {googleOption}
       </DialogContent>
     </Dialog>
   );
