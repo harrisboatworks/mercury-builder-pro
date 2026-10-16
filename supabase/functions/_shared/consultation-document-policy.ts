@@ -156,7 +156,8 @@ export interface ConsultationQuotePromotion {
 export interface ConsultationDeliverySnapshot {
   customerName: string;
   customerEmail: string;
-  customerPhone: string;
+  /** Null when the customer asked for an email reply and left phone blank. */
+  customerPhone: string | null;
   motorModel: string;
   totalPrice: number;
   createdAt?: string;
@@ -180,7 +181,7 @@ export interface ConsultationUploadMeta {
   quoteNumber: string;
   customerName: string;
   customerEmail: string;
-  customerPhone: string;
+  customerPhone: string | null;
   motorModel: string;
   totalPrice: number;
   customerQuoteId: string | null;
@@ -191,7 +192,7 @@ export interface ConsultationCapability {
   tokenHash: string;
   purpose: ConsultationFlow;
   boundEmail: string;
-  boundPhone: string;
+  boundPhone: string | null;
   expiresAt: string;
   revokedAt: string | null;
 }
@@ -259,6 +260,20 @@ export function normalizeConsultationPhone(value: unknown): string {
   throw new ConsultationDocumentRequestError("Customer phone is invalid");
 }
 
+function isBlankPhone(value: unknown): boolean {
+  return value == null || (typeof value === "string" && value.trim() === "");
+}
+
+/** Null/blank means "no phone given"; anything else must be a valid E.164 number. */
+export function parseOptionalConsultationPhone(value: unknown): string | null {
+  return isBlankPhone(value) ? null : parseConsultationPhone(value);
+}
+
+/** Null/blank means "no phone given"; anything else must normalize to a valid number. */
+export function normalizeOptionalConsultationPhone(value: unknown): string | null {
+  return isBlankPhone(value) ? null : normalizeConsultationPhone(value);
+}
+
 export function consultationSubmitDeliverySnapshot(input: {
   customerName: unknown;
   customerEmail: unknown;
@@ -269,7 +284,7 @@ export function consultationSubmitDeliverySnapshot(input: {
   return {
     customerName: parseConsultationName(input.customerName),
     customerEmail: parseConsultationEmail(input.customerEmail),
-    customerPhone: normalizeConsultationPhone(input.customerPhone),
+    customerPhone: normalizeOptionalConsultationPhone(input.customerPhone),
     motorModel: parseConsultationMotorModel(input.motorModel),
     totalPrice: parseConsultationTotalPrice(input.totalPrice),
   };
@@ -319,12 +334,16 @@ export function parseConsultationUploadMeta(value: unknown): ConsultationUploadM
   }
 
   const flow = parseConsultationFlow(value.flow);
+  // SMS delivery needs a destination number; email flows may omit it.
+  const customerPhone = flow === "send_sms"
+    ? parseConsultationPhone(value.customerPhone)
+    : parseOptionalConsultationPhone(value.customerPhone);
   return {
     flow,
     quoteNumber: parseConsultationQuoteNumber(value.quoteNumber),
     customerName: parseConsultationName(value.customerName),
     customerEmail: parseConsultationEmail(value.customerEmail),
-    customerPhone: parseConsultationPhone(value.customerPhone),
+    customerPhone,
     motorModel: parseConsultationMotorModel(value.motorModel),
     totalPrice: parseConsultationTotalPrice(value.totalPrice),
     customerQuoteId: parseOptionalCustomerQuoteId(value.customerQuoteId, flow),

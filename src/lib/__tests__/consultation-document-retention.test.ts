@@ -186,7 +186,7 @@ describe('consultation document retention', () => {
   it('keeps the retention executor internal-only and off the consultation upload API', () => {
     const retention = read('supabase/functions/consultation-document-retention/index.ts');
     const api = read('supabase/functions/consultation-document-api/index.ts');
-    const submit = read('supabase/functions/submit-quote-lead/index.ts');
+    const submit = read('supabase/functions/submit-quote-lead/handler.ts');
     const migration = read('supabase/migrations/20260825010000_consultation_document_jobs_and_retention.sql');
     const config = read('supabase/config.toml');
 
