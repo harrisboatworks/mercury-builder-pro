@@ -16,7 +16,6 @@ import { useRecentlyViewed } from '@/hooks/useRecentlyViewed';
 import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
 import {
-  daysUntil,
   DEALERPLAN_FEE,
   FINANCING_CONTRACT_TERM_MONTHS,
   FINANCING_MAXIMUM_AMORTIZATION_MONTHS,
@@ -25,6 +24,7 @@ import {
   MERCURY_PROMO_APR,
 } from '@/lib/finance';
 import { formatPromoCalendarDate } from '@/lib/quote-utils';
+import { formatStandingTdExpiry } from '@/lib/motor-selection-financing';
 import { Clock } from 'lucide-react';
 import { X } from 'lucide-react';
 // useScrollDirection removed - search bar scrolls naturally now
@@ -538,6 +538,7 @@ function MotorSelectionContent() {
     : isMercuryPromoActive()
       ? formatFinancingRate(MERCURY_PROMO_APR)
       : 'the applicable tiered APR';
+  const standingTdExpiryLabel = formatStandingTdExpiry(financingPromo);
   const [showComparison, setShowComparison] = useState(false);
 
   // Shared data object for motor cards, avoids per-card hook instantiation
@@ -1865,15 +1866,12 @@ if (event.type === 'filter_motors') {
                 * Monthly payment estimates use the recommended amortization at {financingRateLabel} with $0 down,
                 including 13% HST and the ${DEALERPLAN_FEE} DealerPlan fee. Contract term up to {FINANCING_CONTRACT_TERM_MONTHS} months;
                 amortization up to {FINANCING_MAXIMUM_AMORTIZATION_MONTHS} months may leave a balance due at maturity. Terms vary by purchase amount. OAC.
-                {financingPromo?.promo_end_date && (() => {
-                  const left = daysUntil(financingPromo.promo_end_date);
-                  return (
-                    <span className="ml-2 inline-flex items-center gap-1 text-repower-gold font-medium">
-                      <Clock className="h-3 w-3" />
-                      Promo rate {left === 0 ? 'ends today' : `ends in ${left} days`}
-                    </span>
-                  );
-                })()}
+                {standingTdExpiryLabel && (
+                  <span className="ml-2 inline-flex max-w-full items-start gap-1 text-repower-gold font-medium">
+                    <Clock className="mt-0.5 h-3 w-3 shrink-0" aria-hidden="true" />
+                    <span>{standingTdExpiryLabel}</span>
+                  </span>
+                )}
               </p>
             </div>
           )}
@@ -1959,3 +1957,4 @@ export default function MotorSelectionPage() {
     </MotorViewProvider>
   );
 }
+
