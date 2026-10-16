@@ -8,6 +8,15 @@ import {
   trackLeadConversion,
 } from './analytics';
 
+const context = vi.hoisted(() => ({ origin: 'https://www.mercuryrepower.ca' }));
+
+// Exercise the real origin predicate with each address without changing jsdom's
+// non-configurable Location or sending any request to those sites.
+vi.mock('@/config/googleAds', async (importOriginal) => {
+  const actual = await importOriginal<typeof import('@/config/googleAds')>();
+  return { ...actual, isGoogleAdsProductionOrigin: () => actual.isGoogleAdsProductionOrigin(context.origin) };
+});
+
 const labels = GOOGLE_ADS_CONVERSION_LABELS as Record<string, string>;
 
 function adsCalls(gtag: ReturnType<typeof vi.fn>) {
@@ -19,6 +28,7 @@ function adsCalls(gtag: ReturnType<typeof vi.fn>) {
 describe('Google Ads consent gating', () => {
   let gtag: ReturnType<typeof vi.fn>;
   beforeEach(() => {
+    context.origin = 'https://www.mercuryrepower.ca';
     document.cookie = 'mr_consent=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/';
     localStorage.clear();
     __resetGoogleAdsForTests();
@@ -74,5 +84,37 @@ describe('Google Ads consent gating', () => {
     trackLeadConversion('quote_saved_email', 'abc');
     expect(gtag.mock.calls.filter((c) => c[1] === 'conversion')).toHaveLength(0);
     expect(gtag.mock.calls.filter((c) => c[1] === 'generate_lead')).toHaveLength(1);
+  });
+
+  it.each(['https://www.mercuryrepower.ca', 'https://mercuryrepower.ca'])(
+    'allows consented Ads conversions on %s', (origin) => {
+      context.origin = origin;
+      labels.quote_review = 'LBL';
+      setConsent('granted');
+      expect(loadGoogleAdsAfterConsent()).toBe(true);
+      trackLeadConversion('quote_review', 'HBW-1');
+      expect(gtag).toHaveBeenCalledWith('event', 'conversion', {
+        send_to: `${GOOGLE_ADS_ID}/LBL`, transaction_id: 'HBW-1',
+      });
+    },
+  );
+
+  it.each([
+    'http://localhost:5178',
+    'http://127.0.0.1:4179',
+    'https://mercury-builder-pro-git-codex-labels-hbw.vercel.app',
+    'https://www.mercuryrepower.ca.example.test',
+    'http://www.mercuryrepower.ca',
+    'https://mercuryrepower.ca:8443',
+    'https://quote.harrisboatworks.ca',
+  ])('keeps production Ads destinations disabled on %s even after consent', (origin) => {
+    context.origin = origin;
+    labels.quote_review = 'LBL';
+    setConsent('granted');
+    expect(loadGoogleAdsAfterConsent()).toBe(false);
+    trackLeadConversion('quote_review', 'HBW-1');
+    expect(gtag.mock.calls.filter((c) => c[0] === 'config' && c[1] === GOOGLE_ADS_ID)).toHaveLength(0);
+    expect(gtag.mock.calls.filter((c) => c[1] === 'conversion')).toHaveLength(0);
+    expect(gtag).toHaveBeenCalledWith('event', 'generate_lead', { lead_type: 'quote_review' });
   });
 });

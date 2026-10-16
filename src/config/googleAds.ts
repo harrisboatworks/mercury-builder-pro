@@ -4,6 +4,14 @@
  */
 export const GOOGLE_ADS_ID = 'AW-881387895';
 
+// Preview builds also use production mode. Match the exact live origins so
+// local and preview quote tests cannot enter the production Ads actions.
+export function isGoogleAdsProductionOrigin(
+  origin = typeof window === 'undefined' ? '' : window.location.origin,
+): boolean {
+  return origin === 'https://www.mercuryrepower.ca' || origin === 'https://mercuryrepower.ca';
+}
+
 export const GOOGLE_ADS_CONVERSION_LABELS = {
   quote_review: 'iKP2CM_U5Z4dEPfSo6QD',
   quote_saved_email: 'cSAFCMrV5Z4dEPfSo6QD',
