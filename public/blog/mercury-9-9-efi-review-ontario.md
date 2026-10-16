@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-9-9-efi-review-ontario.md
-last_updated: 2026-09-23
+last_updated: 2026-10-16
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Mercury 9.9 EFI Review Ontario"
 description: "What the Mercury 9.9 EFI outboard actually is: FourStroke power, dry weight, shaft length, model codes, and which boats it suits. An Ontario buying guide."
 category: "Mercury Buying Guides"
 date_published: 2026-05-10
-date_modified: 2026-09-23
+date_modified: 2026-10-16
 keywords: ["mercury 9.9 efi review","mercury 9.9 mh efi","mercury 9.9 fuel injected outboard","mercury 9.9 efi ontario","mercury 9.9 outboard price ontario","mercury 9.9 efi vs prokicker"]
 author: "Harris Boat Works"
 publisher: "Harris Boat Works"
@@ -28,7 +28,7 @@ revenue_driver: repower
 
 **Category:** Mercury Buying Guides  
 **Published:** 2026-05-10  
-**Last reviewed:** 2026-09-23  
+**Last reviewed:** 2026-10-16  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-9-9-efi-review-ontario
 
@@ -101,11 +101,9 @@ Mercury's 9.9 EFI ProKicker is built for trolling: high-thrust four-blade prop, 
 
 ---
 
-## The Price, What HBW Has Published
+## Current Price: Check the Live Reference
 
 Compare the current price for the exact 9.9 MH EFI configuration and confirm tax, preparation, tank, hose, and any other inclusions in the written offer.
-
-_Prices here are planning figures as of September 2026. For live Mercury motor pricing, see the [Mercury pricing reference](/pricing-reference)._
 
 **Verify current pricing on the [live pricing reference](/pricing-reference), then [build a configured quote](/quote/motor-selection).** Prices change with model years and availability.
 
@@ -143,9 +141,9 @@ It is not for everyone. Check your transom height, check your boat's capacity pl
 
 ## What we see at HBW
 
-The 9.9 EFI is the workhorse kicker in our service bay. We see them on every musky boat in the Kawarthas, every salmon rig on Lake Ontario, and as primary power on small tinnies for cottage runs. The EFI version is the upgrade everyone wants over the carbureted 9.9.
+The 9.9 EFI is the workhorse kicker in our service bay. We see them on musky boats across the Kawarthas, on salmon rigs on Lake Ontario, and as primary power on small tinnies for cottage runs. The EFI version is the upgrade everyone wants over the carbureted 9.9.
 
-The 5-amp alternator option is the one upgrade we always recommend -- charges the boat's house battery while trolling. Mounted right, a 9.9 EFI lasts 15-20 years with basic maintenance.
+If you want the motor to top up a battery while you troll, ask us which charging options fit your exact 9.9 configuration. Mounted right and maintained on schedule, a 9.9 EFI gives many seasons of service.
 
 ---
 
