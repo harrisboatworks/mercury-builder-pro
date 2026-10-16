@@ -16,6 +16,7 @@ import { Progress } from '@/components/ui/progress';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import { isTillerMotor } from '@/lib/utils';
+import { pontoonShouldUseCommandThrust } from '@/lib/pontoon-command-thrust';
 import { TransomHeightCalculator } from '@/components/motors/TransomHeightCalculator';
 import { parseMotorHorsepowerInput, TRADE_IN_MIN_YEAR } from '@/lib/trade-in-state';
 
@@ -296,6 +297,14 @@ export const BoatInformation = ({
     if (!hpRange) return null;
     const motorHP = hp;
     if (motorHP >= hpRange.min && motorHP <= hpRange.max) {
+      if (pontoonShouldUseCommandThrust(boatType.id, motorHP, selectedMotor)) {
+        return {
+          type: 'needs-command-thrust' as const,
+          message: `⚠️ ${motorHP}HP suits your ${boatType.label}, but this isn't the Command Thrust version. Pontoons need the Command Thrust gearcase at this size: pick the ${motorHP}HP Command Thrust, or we'll confirm it when we review your quote.`,
+          motorHP,
+          recommendedRange: boatType.recommendedHP
+        };
+      }
       return {
         type: 'perfect' as const,
         message: `✓ Perfect match for your ${boatType.label}`,

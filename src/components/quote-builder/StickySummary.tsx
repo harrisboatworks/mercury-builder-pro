@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { moneyWithCents as money, money as wholeDollarMoney } from "@/lib/money";
 import { formatFinancingEstimateLine } from "@/lib/finance";
+import { formatPromoCalendarDate } from "@/lib/quote-utils";
 import { Download, CreditCard, Bookmark } from "lucide-react";
 import { PaymentMethodBadges } from "@/components/payments/PaymentMethodBadges";
 import { useAuth } from '@/components/auth/AuthProvider';
@@ -126,7 +127,9 @@ export default function StickySummary({
             {(() => {
               const now = new Date();
               const diffDays = Math.ceil((quoteValidUntil.getTime() - now.getTime()) / (1000 * 60 * 60 * 24));
-              const formatted = quoteValidUntil.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+              // Ontario calendar date, same as the summary body and PDF; the viewer's
+              // timezone must not shift an end-of-day expiry onto the next date.
+              const formatted = formatPromoCalendarDate(quoteValidUntil);
               if (diffDays <= 0) return <span className="text-destructive font-medium">Quote pricing has expired</span>;
               if (diffDays <= 7) return <span className="text-repower-mercury-red font-medium">Pricing expires in {diffDays} day{diffDays !== 1 ? 's' : ''}, {formatted}</span>;
               return <>Pricing valid until {formatted}</>;
