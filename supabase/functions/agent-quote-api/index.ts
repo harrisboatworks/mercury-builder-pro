@@ -12,6 +12,7 @@ import {
   TradeInInputError,
 } from "../_shared/trade-in-input.ts";
 import { activePromotionDateOrFilters, dealerToday } from "../_shared/promo-dates.ts";
+import { resolveAgentFinancing } from "./financing.ts";
 
 const DEALERPLAN_FEE = 349;
 const HST_RATE = 0.13;
@@ -729,7 +730,7 @@ async function createQuote(supabase: any, body: any) {
     // Fetch active promo
     const { data: promos, error: promotionsError } = await supabase
       .from("promotions")
-      .select("id, name, promo_options, warranty_extra_years, end_date")
+      .select("id, name, promo_options, warranty_extra_years, start_date, end_date, is_active")
       .eq("is_active", true)
       .or(startOr)
       .or(endOr)
@@ -881,8 +882,15 @@ async function createQuote(supabase: any, body: any) {
   // Build financing data if applicable
   let financingData: any = null;
   if (promoOption === "special_financing" && pricing.finalPrice >= FINANCING_MINIMUM) {
-    const rate = body.promo_rate || 2.99;
-    const term = body.promo_term || 120;
+    const { rate, term, promotional } = resolveAgentFinancing({
+      promotion: promoData,
+      amount: pricing.finalPrice,
+      requestedRate: body.promo_rate,
+      requestedTerm: body.promo_term,
+    });
+    if (!promotional) {
+      promoWarnings.push("Requested special financing is unavailable. Standard financing applied.");
+    }
     const monthlyRate = rate / 100 / 12;
     const monthlyPayment = monthlyRate > 0
       ? (pricing.finalPrice * monthlyRate) / (1 - Math.pow(1 + monthlyRate, -term))

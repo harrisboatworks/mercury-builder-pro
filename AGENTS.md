@@ -9,3 +9,5 @@
 - Treat GitHub `main` as authoritative and HBW Vercel as the production release path. Do not rely on unverified editor synchronization.
 - Blog interactive figures use the `:::explainer` directive and ExplainerFigure, restricted to same-origin `/explainers/*.html` paths with load/resize height measurement, so raw arbitrary iframe HTML remains disallowed.
 - Lovable preview installs use the npm LifecycleScript in `.lovable/` with lifecycle scripts disabled, because Bun's npm-alias migration and nested override handling do not preserve this repository's npm-only dependency contract.
+- Google tag loading lives in the consent-gated analytics helper; the HTML queue also gates legacy direct calls so unaccepted events cannot be replayed later.
+- Agent financing resolution stays in the agent function directory; standard-tier constants must pass parity tests against the canonical finance policy because Edge deployments cannot import frontend source files.

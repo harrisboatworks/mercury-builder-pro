@@ -94,7 +94,8 @@ export function uuidv4(): string {
 
 /** Send an analytics event. Safe no-op on server. */
 export function trackEvent(name: string, params?: Record<string, any>): void {
-  if (typeof window === 'undefined') return;
+  if (typeof window === 'undefined' || getStoredConsent() !== 'granted') return;
+  loadGoogleAnalyticsAfterConsent();
   const eventParams = params || {};
   if (typeof window.gtag === 'function') {
     window.gtag('event', name, eventParams);
@@ -213,6 +214,7 @@ export function pushConsentUpdate(value: ConsentValue): void {
   // four Consent Mode v2 signals, Decline keeps all of them denied.
   const state = value === 'granted' ? { ...GRANTED_STATE } : { ...DENIED_STATE };
   gtagConsent('update', state);
+  if (value === 'granted') loadGoogleAnalyticsAfterConsent();
   trackEvent('consent_update', state);
 }
 
@@ -222,7 +224,29 @@ export function setConsent(value: ConsentValue): void {
   if (value === 'granted') loadGoogleAdsAfterConsent();
 }
 
-/* ---------------- Google Ads (consent-gated) ---------------- */
+/* ---------------- Google Analytics and Ads (consent-gated) ---------------- */
+
+export const GOOGLE_ANALYTICS_ID = 'G-0JNMHD89YJ';
+let googleAnalyticsConfigured = false;
+
+/** No script, config or page-view ping is created before accepted consent. */
+export function loadGoogleAnalyticsAfterConsent(): boolean {
+  if (typeof window === 'undefined' || getStoredConsent() !== 'granted') return false;
+  if (typeof window.gtag !== 'function') return false;
+  if (googleAnalyticsConfigured) return true;
+  const gtag = window.gtag as (...args: unknown[]) => void;
+  gtag('js', new Date());
+  gtag('config', GOOGLE_ANALYTICS_ID);
+  if (!document.querySelector('script[data-google-analytics]')) {
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ANALYTICS_ID}`;
+    script.dataset.googleAnalytics = GOOGLE_ANALYTICS_ID;
+    document.head.appendChild(script);
+  }
+  googleAnalyticsConfigured = true;
+  return true;
+}
 
 let googleAdsConfigured = false;
 
@@ -231,6 +255,7 @@ export function loadGoogleAdsAfterConsent(): boolean {
   if (typeof window === 'undefined') return false;
   if (getStoredConsent() !== 'granted') return false;
   if (typeof window.gtag !== 'function') return false;
+  loadGoogleAnalyticsAfterConsent();
   if (googleAdsConfigured) return true;
   (window.gtag as (...args: unknown[]) => void)('config', GOOGLE_ADS_ID);
   googleAdsConfigured = true;
@@ -281,6 +306,7 @@ export function trackLeadConversion(type: LeadConversionType, reference: string)
 /** Test-only reset. */
 export function __resetGoogleAdsForTests(): void {
   googleAdsConfigured = false;
+  googleAnalyticsConfigured = false;
 }
 
 /* ---------------- Microsoft Clarity consent gate ---------------- */
