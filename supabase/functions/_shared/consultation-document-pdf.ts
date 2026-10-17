@@ -206,8 +206,19 @@ export function buildConsultationQuotePdfLines(input: {
   }
   if (snapshot.productProtection) {
     lines.push(
-      `${snapshot.productProtection.planYears} additional years of Platinum Product Protection`,
+      snapshot.productProtection.planYears > 0
+        ? `${snapshot.productProtection.planYears} additional years of Platinum Product Protection`
+        : 'Platinum upgrade of included Gold years (no additional years)',
     );
+    if (snapshot.productProtection.goldUpgradePrice != null) {
+      lines.push(`Factory 3 years + Platinum ${Math.max(0, (coverageTotal ?? 3) - 3)} years = ${coverageTotal} years total`);
+      if (snapshot.productProtection.goldUpgradePrice > 0) {
+        lines.push(`Gold upgrade (${snapshot.productProtection.goldUpgradeYears ?? snapshot.productProtection.promoGoldYears ?? 0} yr): ${formatConsultationCad(snapshot.productProtection.goldUpgradePrice)} before HST`);
+      }
+      if ((snapshot.productProtection.platinumExtensionPrice ?? 0) > 0) {
+        lines.push(`Platinum extension (${snapshot.productProtection.platinumExtensionYears ?? snapshot.productProtection.planYears} yr): ${formatConsultationCad(snapshot.productProtection.platinumExtensionPrice!)} before HST`);
+      }
+    }
     lines.push(`${formatConsultationCad(snapshot.productProtection.priceBeforeTax)} before HST`);
     if (snapshot.productProtection.monthlyDelta) {
       lines.push(

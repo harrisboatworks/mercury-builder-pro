@@ -248,3 +248,16 @@ describe('consultation quote PDF renderer', () => {
     expect(text).toContain('18459');
   });
 });
+
+
+describe('consultation PDF Platinum conversion details', () => {
+  it.each([0,3])('prints the Gold upgrade separately with %i added years', (extra) => {
+    const extension=extra===0?0:1921;
+    const snapshot={...COMPLETE,includedCoverageYears:5,productProtection:{planYears:extra,totalCoverageYears:5+extra,priceBeforeTax:325+extension,promoGoldYears:2,goldUpgradeYears:2,goldUpgradePrice:325,platinumExtensionYears:extra,platinumExtensionPrice:extension}};
+    const text=buildConsultationQuotePdfLines({quoteNumber:'HBW-123456',snapshot}).join('\n');
+    expect(text).toContain('Gold upgrade (2 yr): $325.00 before HST');
+    if(extra===3) expect(text).toContain('Platinum extension (3 yr): $1,921.00 before HST');
+    else expect(text).toContain('Platinum upgrade of included Gold years (no additional years)');
+    expect(text).toContain(`Factory 3 years + Platinum ${2+extra} years = ${5+extra} years total`);
+  });
+});

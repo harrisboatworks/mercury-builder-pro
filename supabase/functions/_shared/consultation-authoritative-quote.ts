@@ -229,11 +229,23 @@ function parseProductProtection(value: unknown): ConsultationQuoteProductProtect
   if (planYears == null || priceBeforeTax == null) {
     throw new ConsultationDocumentRequestError("Quote snapshot protection is invalid");
   }
+  const goldUpgradePrice = optionalFiniteNumber(value.goldUpgradePrice, 0, 2_000_000);
+  const platinumExtensionPrice = optionalFiniteNumber(value.platinumExtensionPrice, 0, 2_000_000);
+  if ((goldUpgradePrice != null || platinumExtensionPrice != null)
+    && (goldUpgradePrice == null || platinumExtensionPrice == null
+      || Math.abs(goldUpgradePrice + platinumExtensionPrice - priceBeforeTax) > 0.02)) {
+    throw new ConsultationDocumentRequestError("Quote snapshot protection breakdown does not match its price");
+  }
   return {
     planYears,
     totalCoverageYears: optionalPositiveInt(value.totalCoverageYears, 20),
     priceBeforeTax,
     monthlyDelta: optionalFiniteNumber(value.monthlyDelta, 0, 10_000),
+    promoGoldYears: optionalPositiveInt(value.promoGoldYears, 5),
+    goldUpgradeYears: optionalPositiveInt(value.goldUpgradeYears, 5),
+    goldUpgradePrice,
+    platinumExtensionYears: optionalPositiveInt(value.platinumExtensionYears, 5),
+    platinumExtensionPrice,
   };
 }
 
@@ -665,20 +677,7 @@ export function consultationSnapshotFromAuthoritativeQuote(input: {
     motorModel: motor,
     totalPrice: pricing ?? input.fallbackTotal,
   });
-  const protection = isRecord(state.productProtection)
-    && typeof state.productProtection.planYears === "number"
-    && typeof state.productProtection.priceBeforeTax === "number"
-    ? {
-      planYears: state.productProtection.planYears,
-      totalCoverageYears: typeof state.productProtection.totalCoverageYears === "number"
-        ? state.productProtection.totalCoverageYears
-        : undefined,
-      priceBeforeTax: state.productProtection.priceBeforeTax,
-      monthlyDelta: typeof state.productProtection.monthlyDelta === "number"
-        ? state.productProtection.monthlyDelta
-        : undefined,
-    }
-    : undefined;
+  const protection = state.productProtection == null ? undefined : parseProductProtection(state.productProtection);
   const paymentMethod = state.paymentMethod === "cash_purchase"
     || state.paymentMethod === "standard_financing"
     || state.paymentMethod === "special_financing"

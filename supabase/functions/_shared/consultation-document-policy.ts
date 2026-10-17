@@ -139,6 +139,11 @@ export interface ConsultationQuoteFinancing {
 }
 
 export interface ConsultationQuoteProductProtection {
+  promoGoldYears?: number;
+  goldUpgradeYears?: number;
+  goldUpgradePrice?: number;
+  platinumExtensionYears?: number;
+  platinumExtensionPrice?: number;
   planYears: number;
   totalCoverageYears?: number;
   priceBeforeTax: number;

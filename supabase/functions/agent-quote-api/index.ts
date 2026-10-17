@@ -14,6 +14,7 @@ import {
 import { activePromotionDateOrFilters, dealerToday } from "../_shared/promo-dates.ts";
 import { resolveFactoryRebate } from "../_shared/public-quote-pricing.ts";
 import { buildAgentFinancing, resolveAgentPromoFallback } from "../_shared/agent-quote-financing.ts";
+import { getAppliedPromotionWarrantyYears } from "../_shared/promotion-warranty.ts";
 import type { PromotionRecord } from "../_shared/promotion-context.ts";
 import { calculateMercuryPlatinumCoverageCost, findMercuryPlatinumRateBand } from "../_shared/mercury-platinum-coverage.ts";
 
@@ -476,7 +477,8 @@ async function getWarrantyPricing(supabase: any, body: any) {
     .select("warranty_extra_years")
     .eq("is_active", true)
     .or(startOr)
-    .or(endOr);
+    .or(endOr)
+    .order("priority", { ascending: false });
   if (promotionsError) throw new Error(`active promotion lookup failed: ${promotionsError.message}`);
   const band = findMercuryPlatinumRateBand(Number(hp));
   if (!band) {
@@ -486,10 +488,7 @@ async function getWarrantyPricing(supabase: any, body: any) {
       message: `No warranty pricing found for ${hp}HP. The base warranty (3 years) is included free.`,
     });
   }
-  const promotionalWarrantyYears = (activePromotions || []).reduce(
-    (sum: number, promotion: any) => sum + Number(promotion.warranty_extra_years || 0),
-    0,
-  );
+  const promotionalWarrantyYears = getAppliedPromotionWarrantyYears(activePromotions || []);
   const includedCoverageYears = Math.min(3 + promotionalWarrantyYears, 8);
   const promoGoldYears = Math.max(0, includedCoverageYears - 3);
   const extensionCosts: Record<string, number> = {};
@@ -752,10 +751,7 @@ async function createQuote(supabase: any, body: any) {
 
     livePromotions = (promos || []) as PromotionRecord[];
     const activePromo = (promos || [])[0];
-    totalPromoWarrantyYears = (promos || []).reduce(
-      (sum: number, promotion: any) => sum + Number(promotion.warranty_extra_years || 0),
-      0,
-    );
+    totalPromoWarrantyYears = getAppliedPromotionWarrantyYears(promos || []);
     if (!activePromo) {
       promoWarnings.push("No active promotions currently available. Standard 3-year warranty applies.");
     }

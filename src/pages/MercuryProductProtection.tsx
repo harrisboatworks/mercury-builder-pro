@@ -18,6 +18,7 @@ import {
 import { Helmet } from '@/lib/helmet';
 import { RepowerHeader } from '@/components/repower/RepowerHeader';
 import { SiteFooter } from '@/components/ui/site-footer';
+import { getAppliedPromotion, getAppliedWarrantyExtraYears } from '@/lib/warranty-display';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
 import {
   MERCURY_PLATINUM_BASE_COVERAGE_YEARS,
@@ -165,8 +166,7 @@ function ProductProtectionSEO() {
 
 export default function MercuryProductProtection() {
   const {
-    getTotalWarrantyBonusYears,
-    getWarrantyPromotions,
+    promotions,
     loading: promotionsLoading,
     error: promotionsError,
   } = useActivePromotions();
@@ -174,9 +174,8 @@ export default function MercuryProductProtection() {
   const [planYears, setPlanYears] = useState<number>(4);
 
   const promotionsVerified = !promotionsLoading && !promotionsError;
-  const promoYears = promotionsVerified
-    ? Math.max(0, getTotalWarrantyBonusYears?.() ?? 0)
-    : 0;
+  const appliedPromotion = getAppliedPromotion(promotions);
+  const promoYears = promotionsVerified ? getAppliedWarrantyExtraYears(appliedPromotion) : 0;
   const includedCoverageYears = Math.min(
     MERCURY_PLATINUM_BASE_COVERAGE_YEARS + promoYears,
     MERCURY_PLATINUM_MAX_TOTAL_YEARS,
@@ -184,7 +183,7 @@ export default function MercuryProductProtection() {
   const maxPlanYears = promotionsVerified
     ? getMaximumPlatinumPlanYears(includedCoverageYears)
     : 5;
-  const warrantyPromotions = promotionsVerified ? (getWarrantyPromotions?.() ?? []) : [];
+  const warrantyPromotions = promotionsVerified && promoYears > 0 && appliedPromotion ? [appliedPromotion] : [];
 
   useEffect(() => {
     if (promotionsVerified && planYears > maxPlanYears) {

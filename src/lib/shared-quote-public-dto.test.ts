@@ -380,3 +380,17 @@ describe('shared quote boundary source contract', () => {
     expect(migration).toContain('GRANT EXECUTE ON FUNCTION public.increment_saved_quote_access(uuid) TO service_role');
   });
 });
+
+
+describe('public Product Protection breakdown', () => {
+  it('preserves Gold conversion and extension in both restored state and the saved PDF', () => {
+    const protection = {planYears:3,totalCoverageYears:8,priceBeforeTax:1057,promoGoldYears:2,goldUpgradeYears:2,goldUpgradePrice:153,platinumExtensionYears:3,platinumExtensionPrice:904};
+    const result=buildPublicQuoteData({
+      warrantyConfig:{extendedYears:3,totalYears:8,warrantyPrice:1057,...protection,dealerCost:1},
+      pdfSnapshot:{version:1,productProtection:{...protection,dealerCost:1}},
+    });
+    expect(result.warrantyConfig).toMatchObject({warrantyPrice:1057,goldUpgradePrice:153,platinumExtensionPrice:904});
+    expect((result.pdfSnapshot as Record<string,unknown>).productProtection).toEqual(protection);
+    expect(result.warrantyConfig).not.toHaveProperty('dealerCost');
+  });
+});
