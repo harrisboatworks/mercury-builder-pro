@@ -6,14 +6,14 @@ import {
 } from './analytics';
 
 describe('GA4 accepted-consent gate', () => {
-  let gtag: ReturnType<typeof vi.fn>;
+  let gtag: ReturnType<typeof vi.fn<(...args: unknown[]) => void>>;
   beforeEach(() => {
     document.cookie = 'mr_consent=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/';
     localStorage.clear();
     document.querySelectorAll('script[data-google-analytics]').forEach((s) => s.remove());
     window.dataLayer = [];
     __resetGoogleAdsForTests();
-    gtag = vi.fn();
+    gtag = vi.fn<(...args: unknown[]) => void>();
     window.gtag = gtag;
   });
   it('does not load or queue analytics events before a choice', () => {

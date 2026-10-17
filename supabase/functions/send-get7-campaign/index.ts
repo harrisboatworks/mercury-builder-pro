@@ -244,7 +244,7 @@ Reply STOP to unsubscribe`;
 
     if (queryError) {
       console.error("Query error:", queryError);
-      throw new Error(`Failed to fetch customers: ${queryError.message}`);
+      throw new Error(`Failed to fetch customers: ${queryError?.message}`);
     }
 
     console.log(`Found ${customers?.length || 0} customers to contact`);
