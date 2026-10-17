@@ -8,8 +8,12 @@ describe('Product Protection package pricing safety', () => {
       premium: 2077,
     });
     expect(getProductProtectionPackagePrices(115, 5, true)).toEqual({
-      complete: 971,
-      premium: 1376,
+      complete: 1204,
+      premium: 1609,
+    });
+    expect(getProductProtectionPackagePrices(60, 5, true)).toEqual({
+      complete: 792,
+      premium: 1057,
     });
   });
 
@@ -20,12 +24,19 @@ describe('Product Protection package pricing safety', () => {
     });
   });
 
-  it('does not offer a target below included coverage', () => {
+  it('offers upgrade-only at an included target and nothing below it', () => {
     expect(getProductProtectionPackagePrices(115, 7, true)).toEqual({
-      complete: null,
-      premium: 539,
+      complete: 420,
+      premium: 959,
     });
     expect(getProductProtectionPackagePrices(115, 8, true)).toEqual({
+      complete: null,
+      premium: 498,
+    });
+  });
+
+  it('fails closed for an unsupported promo upgrade', () => {
+    expect(getProductProtectionPackagePrices(500, 5, true)).toEqual({
       complete: null,
       premium: null,
     });

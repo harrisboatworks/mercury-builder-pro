@@ -3,7 +3,7 @@ title: Mercury Product Protection Platinum Plans and Prices Canada
 canonical: https://www.mercuryrepower.ca/mercury-product-protection
 currency: CAD
 prices_exclude_tax: true
-last_verified: 2026-07-17
+last_verified: 2026-10-17
 source: Harris Boat Works
 ---
 
@@ -33,9 +33,29 @@ Mercury Platinum Product Protection at Harris Boat Works currently starts at $76
 
 Each column is the purchased Product Protection term, not the combined warranty total. Plans are available in one- through five-year terms, subject to Mercury eligibility, with up to 8 years of combined factory limited warranty and Product Protection.
 
+## Gold-to-Platinum upgrade rates (CAD before HST)
+
+All promotional Product Protection years are Gold. The table below is the verified Canadian MSRP to upgrade that many included Gold years to Platinum (one engine, 1-12 months since registered), verified 2026-10-17 in the MercNet calculator.
+
+| Horsepower | 1 Gold year | 2 Gold years | 3 Gold years | 4 Gold years | 5 Gold years |
+|---|---:|---:|---:|---:|---:|
+| 2.5-14.9 HP | $19 | $33 | $47 | $59 | $70 |
+| 15-39.9 HP | $42 | $77 | $110 | $138 | $164 |
+| 40-74.9 HP | $85 | $153 | $218 | $275 | $328 |
+| 75-149.9 HP | $129 | $233 | $330 | $420 | $498 |
+| 150-199.9 HP | $181 | $325 | $461 | $585 | $696 |
+| 200-299.9 HP | $434 | $782 | $1,107 | $1,406 | $1,671 |
+| 300-399.9 HP | $619 | $1,115 | $1,580 | $2,007 | $2,384 |
+| 400 HP | $862 | $1,553 | $2,198 | $2,794 | $3,320 |
+| 425 HP | $903 | $1,624 | $2,301 | $2,925 | $3,475 |
+| 500 HP | Not quoted | Not quoted | Not quoted | Not quoted | Not quoted |
+| 600 HP | Not quoted | Not quoted | Not quoted | Not quoted | Not quoted |
+
+500 HP and 600 HP have no Gold upgrade row in the calculator, so HBW does not quote a promotional Platinum upgrade for those horsepower bands.
+
 ## Promotion-aware quote calculation
 
-When an applicable Mercury promotion changes the included warranty period, the HBW quote builder counts that coverage before calculating a paid Platinum term. It then prices only the remaining one- through five-year plan needed to reach the selected combined total, never above Mercury's 8-year maximum. HBW confirms current coverage from the motor serial record; current promotional terms always defer to https://www.mercuryrepower.ca/promotions.
+When an applicable Mercury promotion adds Gold years, the included baseline is factory warranty (3 years) plus those Gold years. To reach a combined total as Platinum, HBW first charges the Gold-to-Platinum upgrade for all included Gold years, then adds only the cumulative Platinum price for the extra years beyond that baseline. An upgrade-only choice at the included total charges only the Gold upgrade. Choosing no paid plan keeps factory-plus-Gold coverage at $0. Combined coverage never exceeds Mercury's 8-year maximum, described as factory 3 years plus up to 5 Platinum years, with the factory period counted separately. HBW confirms current coverage from the motor serial record; current promotional terms always defer to https://www.mercuryrepower.ca/promotions. Final eligibility is confirmed by serial number.
 
 ## Eligibility snapshot
 
@@ -53,4 +73,4 @@ When an applicable Mercury promotion changes the included warranty period, the H
 - Official Canadian Platinum plan benefits and provisions: https://www.mercurymarine.com/content/dam/mercury-marine/us_en/parts-and-services/service-and-support/warranty-coverage/product-protection/8M0236695%20Canada%20Platinum%20Plan%20Current%20upd%203-17-25.pdf.coredownload.pdf
 - Harris Boat Works: (905) 342-2153, Gores Landing, Ontario
 
-Pricing last verified 2026-07-17. Eligibility, exclusions, maintenance requirements, transfer rules and the actual Mercury Product Protection contract govern. Final eligibility, term and price are confirmed by motor serial number before registration.
+Pricing last verified 2026-10-17. Eligibility, exclusions, maintenance requirements, transfer rules and the actual Mercury Product Protection contract govern. Final eligibility, term and price are confirmed by motor serial number before registration.

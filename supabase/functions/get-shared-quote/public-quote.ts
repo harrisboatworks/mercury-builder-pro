@@ -136,7 +136,7 @@ function sanitizeFinancing(value: unknown): JsonRecord | undefined {
 
 function sanitizeWarranty(value: unknown): JsonRecord | undefined {
   if (!isRecord(value)) return undefined;
-  return copyPrimitives(value, ["extendedYears", "warrantyPrice", "totalYears"]);
+  return copyPrimitives(value, ["extendedYears", "warrantyPrice", "totalYears", "promoGoldYears", "includedCoverageYears", "goldUpgradeYears", "goldUpgradePrice", "platinumExtensionYears", "platinumExtensionPrice", "hasExplicitBreakdown"]);
 }
 
 function sanitizeSelectedPackage(value: unknown): JsonRecord | undefined {

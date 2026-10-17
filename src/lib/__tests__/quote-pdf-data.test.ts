@@ -203,6 +203,20 @@ describe('quote PDF data', () => {
     ]));
   });
 
+  it('carries Gold upgrade breakdown and upgrade-only into a legacy PDF snapshot without repricing frozen totals', () => {
+    const snapshot = buildLegacyQuotePdfSnapshot({
+      motor: { model: '60 ELPT FourStroke', hp: 60, msrp: 11000, year: 2026 },
+      frozenPricing: { motorMSRP: 11000, motorDiscount: 0, adminDiscount: 0, promoSavings: 0, subtotal: 11153, hst: 1450, total: 12603, savings: 0 },
+      warrantyConfig: { extendedYears: 0, warrantyPrice: 153, totalYears: 5, promoGoldYears: 2, goldUpgradeYears: 2, goldUpgradePrice: 153, platinumExtensionYears: 0, platinumExtensionPrice: 0 },
+      accessoryBreakdown: [{ name: 'Mercury Platinum Product Protection (Gold upgrade only)', price: 153 }],
+    });
+    expect(snapshot?.productProtection).toMatchObject({ planYears: 0, totalCoverageYears: 5, priceBeforeTax: 153, goldUpgradePrice: 153, platinumExtensionPrice: 0 });
+    expect(snapshot?.pricing.totalCashPrice).toBe(12603);
+    // Financing delta uses the same summed-once price.
+    expect(calculateProtectionMonthlyDelta({ priceBeforeTax: 1057, annualRate: 5.48, amortizationMonths: 60 }))
+      .toBe(calculateProtectionMonthlyDelta({ priceBeforeTax: 153 + 904, annualRate: 5.48, amortizationMonths: 60 }));
+  });
+
   it('rejects non-numeric persisted line-item prices', () => {
     const result = validateQuotePdfSnapshot({
       version: QUOTE_PDF_SNAPSHOT_VERSION,

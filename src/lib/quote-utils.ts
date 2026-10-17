@@ -3,7 +3,7 @@
  * Calculations and formatting for the enhanced quote summary experience
  */
 
-import { calculateMercuryPlatinumExtensionCost } from '@/data/mercuryProductProtection';
+import { calculateMercuryPlatinumCoverageCost } from '@/data/mercuryProductProtection';
 import { applyTradeCredit } from '@/lib/trade-credit';
 import {
   activePromotionDateOrFilters,
@@ -227,7 +227,16 @@ export function calculateWarrantyExtensionCost(
   currentYears: number,
   targetYears: number
 ): number | null {
-  return calculateMercuryPlatinumExtensionCost(motorHP, currentYears, targetYears);
+  return calculateMercuryPlatinumCoverageCost(motorHP, currentYears, targetYears)?.totalPrice ?? null;
+}
+
+/** Full promotional Platinum cost: Gold upgrade for included promo years + extension only. */
+export function calculateWarrantyCoverageCost(
+  motorHP: number,
+  currentYears: number,
+  targetYears: number,
+) {
+  return calculateMercuryPlatinumCoverageCost(motorHP, currentYears, targetYears);
 }
 
 /**

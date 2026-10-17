@@ -11,6 +11,7 @@ import { useAuth } from '@/components/auth/AuthProvider';
 import { supabase } from '@/integrations/supabase/client';
 import { calculateQuotePricing, getFinanceableAmount } from '@/lib/quote-utils';
 import { calculateMonthlyPayment, DEALERPLAN_FEE } from '@/lib/finance';
+import { requiresCustomProtectionReview } from '@/lib/quote-product-protection';
 import { useToast } from '@/hooks/use-toast';
 
 import { SITE_URL } from '@/lib/site';
@@ -76,6 +77,10 @@ export function AdminQuoteControls({ onSave, className = '' }: AdminQuoteControl
   }, [adminDiscount, adminNotes, customerNotes, customItems, dispatch]);
 
   const handleSaveQuote = async () => {
+    if (!state.frozenPricing && requiresCustomProtectionReview(state.warrantyConfig, customItems)) {
+      toast({ title: 'Review Product Protection pricing', description: 'Review custom items for an existing protection charge, then choose the current Platinum plan before saving.', variant: 'destructive' });
+      return;
+    }
     if (!state.motor) {
       toast({
         title: 'No motor selected',

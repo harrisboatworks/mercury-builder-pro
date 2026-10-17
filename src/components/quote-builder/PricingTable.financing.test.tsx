@@ -89,4 +89,12 @@ describe('PricingTable financing terms', () => {
     expect(screen.getByText('No financing is included.')).toBeInTheDocument();
     expect(screen.queryByText(/rebate remains applied/i)).not.toBeInTheDocument();
   });
+  it('separates included factory plus Gold from a paid eight-year target', () => {
+    render(<PricingTable pricing={{msrp:10000,discount:0,adminDiscount:0,promoValue:0,subtotal:11057,tax:1437.41,total:12494.41,savings:0}}
+      warrantyPromoYears={2} totalCoverageYears={8} />);
+    expect(screen.getByText('5 Years of Mercury Coverage Included')).toBeInTheDocument();
+    expect(screen.queryByText('8 Years of Mercury Coverage Included')).not.toBeInTheDocument();
+    expect(screen.getByText(/2 yr promotional Gold coverage/i)).toBeInTheDocument();
+  });
+
 });

@@ -61,6 +61,7 @@ import { getSoftLeadReference } from '@/lib/soft-lead-reference';
 import { COMPANY_INFO } from '@/lib/companyInfo';
 import {
   reconcileWarrantyConfig,
+  requiresCustomProtectionReview,
   type QuoteWarrantyConfig,
 } from '@/lib/quote-product-protection';
 import { getAppliedPromotion, getAppliedWarrantyExtraYears } from '@/lib/warranty-display';
@@ -225,12 +226,16 @@ export default function QuoteSummaryPage() {
       Number(hp),
       currentCoverageYears,
       state.warrantyConfig,
+      state.adminCustomItems,
     );
     const current = state.warrantyConfig;
     if (
       current?.extendedYears === reconciled.extendedYears &&
       current?.warrantyPrice === reconciled.warrantyPrice &&
-      current?.totalYears === reconciled.totalYears
+      current?.totalYears === reconciled.totalYears &&
+      current?.goldUpgradePrice === reconciled.goldUpgradePrice &&
+      current?.platinumExtensionPrice === reconciled.platinumExtensionPrice &&
+      current?.promoGoldYears === reconciled.promoGoldYears
     ) {
       return;
     }
@@ -246,6 +251,7 @@ export default function QuoteSummaryPage() {
     state.isLoading,
     state.motor,
     state.warrantyConfig,
+    state.adminCustomItems,
   ]);
   
   // Auto-calculated deposit based on motor HP (no user selection)
@@ -579,11 +585,16 @@ export default function QuoteSummaryPage() {
         },
       } : {}),
       includedCoverageYears: currentCoverageYears,
-      ...(state.warrantyConfig && state.warrantyConfig.extendedYears > 0 && planPrice > 0 ? {
+      ...(state.warrantyConfig && planPrice > 0 && (state.warrantyConfig.extendedYears > 0 || (state.warrantyConfig.goldUpgradePrice || 0) > 0) ? {
         productProtection: {
           planYears: state.warrantyConfig.extendedYears,
           totalCoverageYears: state.warrantyConfig.totalYears,
           priceBeforeTax: planPrice,
+          promoGoldYears: state.warrantyConfig.promoGoldYears,
+          goldUpgradeYears: state.warrantyConfig.goldUpgradeYears,
+          goldUpgradePrice: state.warrantyConfig.goldUpgradePrice,
+          platinumExtensionYears: state.warrantyConfig.platinumExtensionYears ?? state.warrantyConfig.extendedYears,
+          platinumExtensionPrice: state.warrantyConfig.platinumExtensionPrice,
           ...(canShowFinancing ? {
             monthlyDelta: calculateProtectionMonthlyDelta({
               priceBeforeTax: planPrice,
@@ -650,6 +661,7 @@ export default function QuoteSummaryPage() {
   const hasFrozenSnapshot = hasCompleteFrozenQuoteSnapshot(state.frozenPricing, state.pdfSnapshot);
   const isQuoteExpired = () => isQuoteSnapshotExpired(pdfSnapshot);
   const isQuoteReady = () => !isQuoteExpired() && (hasFrozenSnapshot || (arePromotionsCurrent() && !promoLoading && !promoError)) && !state.isLoading && Boolean(state.motor)
+    && (hasFrozenSnapshot || !requiresCustomProtectionReview(state.warrantyConfig, state.adminCustomItems))
     && JSON.stringify(state.pdfSnapshot) === JSON.stringify(pdfSnapshot);
 
   const quoteReady = isQuoteReady();
@@ -1397,6 +1409,8 @@ export default function QuoteSummaryPage() {
                     <PlatinumProtectionSelector
                       horsepower={Number(hp)}
                       currentCoverageYears={currentCoverageYears}
+                      customPricingReview={requiresCustomProtectionReview(state.warrantyConfig, state.adminCustomItems)
+                        ? (state.isAdminQuote ? 'staff' : 'customer') : undefined}
                       value={state.warrantyConfig}
                       onChange={handleProductProtectionChange}
                       financing={!isCashPurchase && displayPricing.subtotal >= FINANCING_MINIMUM ? {

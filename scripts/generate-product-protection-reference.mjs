@@ -12,6 +12,11 @@ const money = (value) => `$${Number(value).toLocaleString('en-CA')}`;
 const rows = rateCard.rates.map((band) =>
   `| ${band.label} | ${money(band.prices['1'])} | ${money(band.prices['2'])} | ${money(band.prices['3'])} | ${money(band.prices['4'])} | ${money(band.prices['5'])} |`,
 );
+const goldRows = rateCard.rates.map((band) =>
+  band.goldUpgradePrices
+    ? `| ${band.label} | ${money(band.goldUpgradePrices['1'])} | ${money(band.goldUpgradePrices['2'])} | ${money(band.goldUpgradePrices['3'])} | ${money(band.goldUpgradePrices['4'])} | ${money(band.goldUpgradePrices['5'])} |`
+    : `| ${band.label} | Not quoted | Not quoted | Not quoted | Not quoted | Not quoted |`,
+);
 
 const markdown = `---
 title: Mercury Product Protection Platinum Plans and Prices Canada
@@ -38,9 +43,19 @@ ${rows.join('\n')}
 
 Each column is the purchased Product Protection term, not the combined warranty total. Plans are available in one- through five-year terms, subject to Mercury eligibility, with up to ${rateCard.maximumCombinedYears} years of combined factory limited warranty and Product Protection.
 
+## Gold-to-Platinum upgrade rates (CAD before HST)
+
+All promotional Product Protection years are Gold. The table below is the verified Canadian MSRP to upgrade that many included Gold years to Platinum (one engine, 1-12 months since registered), verified ${rateCard.goldUpgradeLastVerified} in the MercNet calculator.
+
+| Horsepower | 1 Gold year | 2 Gold years | 3 Gold years | 4 Gold years | 5 Gold years |
+|---|---:|---:|---:|---:|---:|
+${goldRows.join('\n')}
+
+500 HP and 600 HP have no Gold upgrade row in the calculator, so HBW does not quote a promotional Platinum upgrade for those horsepower bands.
+
 ## Promotion-aware quote calculation
 
-When an applicable Mercury promotion changes the included warranty period, the HBW quote builder counts that coverage before calculating a paid Platinum term. It then prices only the remaining one- through five-year plan needed to reach the selected combined total, never above Mercury's ${rateCard.maximumCombinedYears}-year maximum. HBW confirms current coverage from the motor serial record; current promotional terms always defer to ${SITE_URL}/promotions.
+When an applicable Mercury promotion adds Gold years, the included baseline is factory warranty (3 years) plus those Gold years. To reach a combined total as Platinum, HBW first charges the Gold-to-Platinum upgrade for all included Gold years, then adds only the cumulative Platinum price for the extra years beyond that baseline. An upgrade-only choice at the included total charges only the Gold upgrade. Choosing no paid plan keeps factory-plus-Gold coverage at $0. Combined coverage never exceeds Mercury's ${rateCard.maximumCombinedYears}-year maximum, described as factory 3 years plus up to 5 Platinum years, with the factory period counted separately. HBW confirms current coverage from the motor serial record; current promotional terms always defer to ${SITE_URL}/promotions. Final eligibility is confirmed by serial number.
 
 ## Eligibility snapshot
 

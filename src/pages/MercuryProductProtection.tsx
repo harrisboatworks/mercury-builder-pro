@@ -26,7 +26,9 @@ import {
   MERCURY_PLATINUM_RATES,
   MERCURY_PRODUCT_PROTECTION_CANADA_PLAN_TERMS_URL,
   MERCURY_PRODUCT_PROTECTION_OFFICIAL_OVERVIEW_URL,
+  calculateMercuryPlatinumCoverageCost,
   getMaximumPlatinumPlanYears,
+  getMercuryGoldUpgradePrice,
   type PlatinumPlanYears,
 } from '@/data/mercuryProductProtection';
 import mercury115Reference from '@/assets/product-protection/mercury-product-protection-platinum-hero.webp';
@@ -65,7 +67,7 @@ const FAQS = [
   },
   {
     question: 'Do promotions change the price shown in a motor quote?',
-    answer: 'If an applicable Mercury promotion changes the included warranty period, it can change how many paid Product Protection years are needed. HBW confirms the motor’s current coverage, respects the eight-year combined maximum, and prices the remaining Platinum term. The serial record and current promotion terms govern.',
+    answer: 'Promotional years are Gold. To reach a combined total as Platinum, HBW first charges the verified Gold-to-Platinum upgrade for all included Gold years, then adds only the cumulative Platinum price for extra years beyond the factory-plus-promo baseline. No paid plan keeps Gold at $0. HBW confirms coverage by serial number and respects the eight-year combined maximum.',
   },
 ];
 
@@ -191,17 +193,22 @@ export default function MercuryProductProtection() {
   }, [maxPlanYears, planYears, promotionsVerified]);
 
   const selectedBand = MERCURY_PLATINUM_RATES[bandIndex];
-  const selectedPrice = planYears > 0
-    ? selectedBand.prices[planYears as PlatinumPlanYears]
-    : 0;
+  const promoGoldYears = Math.max(0, includedCoverageYears - MERCURY_PLATINUM_BASE_COVERAGE_YEARS);
+  const goldUpgradeUnavailable = promoGoldYears > 0 && getMercuryGoldUpgradePrice(selectedBand.hpMin, promoGoldYears) == null;
+  const representativeHp = selectedBand.hpMin;
+  const coverageCost = promotionsVerified && !goldUpgradeUnavailable
+    ? calculateMercuryPlatinumCoverageCost(representativeHp, includedCoverageYears, Math.min(includedCoverageYears + planYears, MERCURY_PLATINUM_MAX_TOTAL_YEARS))
+    : null;
+  const purePlanPrice = planYears > 0 ? selectedBand.prices[planYears as PlatinumPlanYears] : 0;
+  const selectedPrice = promoGoldYears > 0 ? (coverageCost?.totalPrice ?? 0) : purePlanPrice;
   const combinedCoverageYears = Math.min(
     includedCoverageYears + planYears,
     MERCURY_PLATINUM_MAX_TOTAL_YEARS,
   );
 
   const planButtons = useMemo(
-    () => Array.from({ length: maxPlanYears }, (_, index) => index + 1),
-    [maxPlanYears],
+    () => [...(promoGoldYears > 0 && promotionsVerified ? [0] : []), ...Array.from({ length: maxPlanYears }, (_, index) => index + 1)],
+    [maxPlanYears, promoGoldYears, promotionsVerified],
   );
 
   return (
@@ -312,14 +319,14 @@ export default function MercuryProductProtection() {
                 <h2 className="mt-4 font-display text-4xl font-bold uppercase leading-none tracking-[0.03em] md:text-5xl">Price your Platinum plan.</h2>
                 <div className="mt-5 h-1 w-28 bg-[#ed1c28]" aria-hidden="true" />
                 <p className="mt-6 max-w-xl text-base leading-7 text-black/65">
-                  Choose the horsepower band and paid plan term. When an applicable Mercury promotion changes the included warranty period, we count that coverage first so the quote never exceeds Mercury’s eight-year combined maximum.
+                  Choose the horsepower band and paid plan term. Promotional years are Gold: a paid Platinum total first upgrades all included Gold years, then adds only the extra Platinum years, so the quote never exceeds Mercury’s eight-year combined maximum (factory 3 years + up to 5 Platinum years).
                 </p>
 
                 {promoYears > 0 && (
                   <div className="mt-6 border-l-4 border-[#003a50] bg-white px-5 py-4 shadow-sm">
                     <p className="text-sm font-bold uppercase tracking-[0.12em]">Applicable warranty promotion detected</p>
                     <p className="mt-2 text-sm leading-6 text-black/65">
-                      {promoYears} promotional year{promoYears === 1 ? '' : 's'} counted before Platinum pricing after current coverage is confirmed
+                      {promoYears} promotional Gold year{promoYears === 1 ? '' : 's'} counted before Platinum pricing after current coverage is confirmed. Paid Platinum upgrades those Gold years first
                       {warrantyPromotions.length > 0 ? `: ${warrantyPromotions.map((promotion) => promotion.name).join(', ')}` : '.'}
                     </p>
                   </div>
@@ -363,11 +370,11 @@ export default function MercuryProductProtection() {
                             key={year}
                             type="button"
                             onClick={() => setPlanYears(year)}
-                            disabled={!promotionsVerified}
+                            disabled={!promotionsVerified || goldUpgradeUnavailable}
                             aria-pressed={planYears === year}
                             className={`h-14 border-2 text-sm font-bold transition-colors disabled:cursor-not-allowed disabled:opacity-50 ${planYears === year ? 'border-black bg-black text-white' : 'border-black/20 bg-white text-black hover:border-black'}`}
                           >
-                            {year} yr
+                            {year === 0 ? 'Upgrade only' : `${year} yr`}
                           </button>
                         ))}
                       </div>
@@ -382,20 +389,29 @@ export default function MercuryProductProtection() {
                     <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#b5b8be]">
                       {promotionsVerified ? 'Estimated plan price' : 'Published plan price · verification required'}
                     </p>
-                    <p className="mt-2 font-display text-5xl font-bold tracking-tight md:text-6xl">{money(selectedPrice)}</p>
-                    <p className="mt-2 text-sm text-white/55">CAD before HST · one-time plan price</p>
+                    <p className="mt-2 font-display text-5xl font-bold tracking-tight md:text-6xl">{goldUpgradeUnavailable ? 'Confirm price' : money(selectedPrice)}</p>
+                    <p className="mt-2 text-sm text-white/55">{goldUpgradeUnavailable ? 'Contact HBW for a serial-number-confirmed quote' : 'CAD before HST · one-time plan price'}</p>
+                    {promoGoldYears > 0 && coverageCost ? (
+                      <p className="mt-2 text-sm text-white/70">Gold upgrade ({coverageCost.goldUpgradeYears} yr): {money(coverageCost.goldUpgradePrice)} + Platinum extension ({coverageCost.extensionYears} yr): {money(coverageCost.platinumExtensionPrice)} = {money(coverageCost.totalPrice)} before HST</p>
+                    ) : promoGoldYears > 0 ? (
+                      <p className="mt-2 text-sm text-white/70">A complete Platinum price cannot be quoted online for these promotional Gold years. Contact HBW to confirm coverage and pricing.</p>
+                    ) : null}
                   </div>
                   <div className="border-t border-white/15 p-6 sm:min-w-[220px] sm:border-l sm:border-t-0 sm:p-8">
                     <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#b5b8be]">Coverage picture</p>
                     <p className="mt-2 text-2xl font-bold">
-                      {promotionsLoading
+                      {goldUpgradeUnavailable
+                        ? 'Confirm by serial number'
+                        : promotionsLoading
                         ? 'Checking current coverage…'
                         : promotionsError
                           ? 'Confirm by serial number'
                           : `${includedCoverageYears} + ${planYears} = ${combinedCoverageYears} years`}
                     </p>
                     <p className="mt-2 text-xs leading-5 text-white/55">
-                      {promotionsVerified ? 'Included coverage + paid Platinum term' : 'Published plan price shown separately'}
+                      {goldUpgradeUnavailable ? 'Promotional Gold remains Gold until an eligible Platinum upgrade is confirmed.' : promotionsVerified && promoGoldYears > 0
+                        ? `Factory 3 years + Platinum ${Math.max(0, combinedCoverageYears - 3)} years (upgraded Gold ${promoGoldYears} yr + extension ${planYears} yr)`
+                        : promotionsVerified ? 'Included coverage + paid Platinum term' : 'Published plan price shown separately'}
                     </p>
                   </div>
                 </div>
