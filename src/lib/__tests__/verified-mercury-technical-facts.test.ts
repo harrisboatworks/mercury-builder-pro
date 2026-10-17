@@ -90,6 +90,50 @@ describe("verified Mercury technical facts", () => {
       .toBe("unsupported_technical");
   });
 
+  it.each([
+    "What size battery do I need for a Mercury outboard?",
+    "Can I use lithium batteries with my Mercury?",
+    "How many CCA does a 150 FourStroke need?",
+  ])("links the battery guide without bypassing the manual guard: %s", (message) => {
+    const answer = buildVerifiedMercuryTechnicalAnswer(message, { model: "150 FourStroke" });
+
+    expect(answer).toContain("I won't guess");
+    expect(answer).toContain("https://www.mercurymarine.com/ca/en/service-and-support/owners-resources");
+    expect(answer).toContain("photo of the serial-number label");
+    expect(answer).toContain("[HBW's Mercury outboard battery-size guide](https://www.mercuryrepower.ca/blog/mercury-outboard-battery-size-guide)");
+    expect(answer).not.toMatch(/\b\d+\s*(?:MCA|CCA|Ah)\b/);
+  });
+
+  it("keeps the unidentified-motor fallback and unrelated technical handoffs", () => {
+    const battery = buildVerifiedMercuryTechnicalAnswer("What battery do I need?");
+    const oil = buildVerifiedMercuryTechnicalAnswer("How much oil does a 150 FourStroke take?");
+    const unsupported = buildVerifiedMercuryTechnicalAnswer("What does this motor weigh?", standard115ProXs);
+
+    expect(battery).toContain("for the exact motor");
+    expect(battery).toContain("/blog/mercury-outboard-battery-size-guide");
+    for (const answer of [oil, unsupported]) {
+      expect(answer).toContain("I won't guess");
+      expect(answer).not.toContain("battery-size-guide");
+    }
+    expect(buildVerifiedMercuryTechnicalAnswer("What are your opening hours?")).toBeNull();
+  });
+
+  it.each([{ voice: true }, { includeLinks: false }, { voice: true, includeLinks: false }])(
+    "preserves link-free battery handoffs for %j",
+    (options) => {
+      expect(buildVerifiedMercuryTechnicalAnswer("What battery do I need?", null, options))
+        .toBe("That value can change by model family, year, gearcase and serial number. I don't have a verified manual-backed answer loaded for the exact motor, so I won't guess. Check Mercury's serial-number owner's manual, or send Harris Boat Works in Gores Landing a photo of the serial-number label.");
+    },
+  );
+
+  it("preserves the verified 115 Pro XS battery answer and manual citation", () => {
+    const answer = buildVerifiedMercuryTechnicalAnswer("What battery do I need?", standard115ProXs);
+    expect(answer).toContain("1000 MCA, 800 CCA or 65 Ah");
+    expect(answer).toContain("[Mercury manual 8M0145552]");
+    expect(answer).not.toContain("I won't guess");
+    expect(answer).not.toContain("battery-size-guide");
+  });
+
   it("uses the model-specific break-in and service schedules", () => {
     const breakIn = buildVerifiedMercuryTechnicalAnswer(
       "What is the break-in schedule?",
