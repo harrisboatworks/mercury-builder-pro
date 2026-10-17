@@ -29,7 +29,7 @@ describe('GA4 accepted-consent gate', () => {
     trackEvent('page_view');
     expect(document.querySelector('script[data-google-analytics]')).toBeNull();
     expect(gtag.mock.calls.filter((c) => c[0] !== 'consent')).toEqual([]);
-    expect(gtag.mock.calls[0][2].analytics_storage).toBe('denied');
+    expect(gtag.mock.calls[0][2]).toMatchObject({ analytics_storage: 'denied' });
     expect(window.dataLayer).toEqual([]);
   });
   it('loads once after Accept and discards earlier events', () => {
