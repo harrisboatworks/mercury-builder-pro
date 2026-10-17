@@ -20,7 +20,7 @@ describe('Product Protection quote breakdown', () => {
       {
         name: 'Mercury Platinum Product Protection (4 additional years)',
         price: 1748,
-        description: 'Combined coverage: 7 years. Factory 3 years + Platinum 4 years',
+        description: 'Combined coverage: 7 years',
         category: 'protection',
       },
     ]);
