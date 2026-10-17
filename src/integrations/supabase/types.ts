@@ -2337,6 +2337,382 @@ export type Database = {
         }
         Relationships: []
       }
+      hbw_customer_note_events: {
+        Row: {
+          author_db_role: string
+          created_at: string
+          event_type: string
+          id: string
+          note_id: string
+          reason: string
+          request_id: string
+        }
+        Insert: {
+          author_db_role?: string
+          created_at?: string
+          event_type?: string
+          id?: string
+          note_id: string
+          reason: string
+          request_id: string
+        }
+        Update: {
+          author_db_role?: string
+          created_at?: string
+          event_type?: string
+          id?: string
+          note_id?: string
+          reason?: string
+          request_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "hbw_customer_note_events_note_id_fkey"
+            columns: ["note_id"]
+            isOneToOne: true
+            referencedRelation: "hbw_customer_notes"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      hbw_customer_notes: {
+        Row: {
+          author_agent: string | null
+          author_db_role: string
+          created_at: string
+          customer_id: string
+          id: string
+          note: string
+          observed_on: string | null
+          request_id: string
+          source_ref: string
+          visibility: string
+        }
+        Insert: {
+          author_agent?: string | null
+          author_db_role?: string
+          created_at?: string
+          customer_id: string
+          id?: string
+          note: string
+          observed_on?: string | null
+          request_id: string
+          source_ref: string
+          visibility?: string
+        }
+        Update: {
+          author_agent?: string | null
+          author_db_role?: string
+          created_at?: string
+          customer_id?: string
+          id?: string
+          note?: string
+          observed_on?: string | null
+          request_id?: string
+          source_ref?: string
+          visibility?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "hbw_customer_notes_customer_id_fkey"
+            columns: ["customer_id"]
+            isOneToOne: false
+            referencedRelation: "hbw_customer_profiles"
+            referencedColumns: ["customer_id"]
+          },
+        ]
+      }
+      hbw_customer_profiles: {
+        Row: {
+          content_sha256: string
+          customer_id: string
+          generated_at: string
+          profile_data: Json
+          profile_version: string
+        }
+        Insert: {
+          content_sha256: string
+          customer_id: string
+          generated_at?: string
+          profile_data: Json
+          profile_version?: string
+        }
+        Update: {
+          content_sha256?: string
+          customer_id?: string
+          generated_at?: string
+          profile_data?: Json
+          profile_version?: string
+        }
+        Relationships: []
+      }
+      hbw_customer_refresh_catalog: {
+        Row: {
+          checked_at: string
+          current_feed_health: Json
+          eligible_count: number
+          feed_health: Json
+          profile_count: number
+          refreshed_at: string
+          singleton: boolean
+          source_signature: string
+        }
+        Insert: {
+          checked_at?: string
+          current_feed_health?: Json
+          eligible_count: number
+          feed_health: Json
+          profile_count: number
+          refreshed_at: string
+          singleton?: boolean
+          source_signature: string
+        }
+        Update: {
+          checked_at?: string
+          current_feed_health?: Json
+          eligible_count?: number
+          feed_health?: Json
+          profile_count?: number
+          refreshed_at?: string
+          singleton?: boolean
+          source_signature?: string
+        }
+        Relationships: []
+      }
+      hbw_customer_refresh_queue: {
+        Row: {
+          customer_id: string
+          first_requested_at: string
+          next_attempt_at: string
+          priority: number
+          reason: string
+          requested_at: string
+        }
+        Insert: {
+          customer_id: string
+          first_requested_at?: string
+          next_attempt_at?: string
+          priority?: number
+          reason: string
+          requested_at?: string
+        }
+        Update: {
+          customer_id?: string
+          first_requested_at?: string
+          next_attempt_at?: string
+          priority?: number
+          reason?: string
+          requested_at?: string
+        }
+        Relationships: []
+      }
+      hbw_customer_refresh_runs: {
+        Row: {
+          attempted: number
+          completed: number
+          failed: number
+          finished_at: string | null
+          id: string
+          partial: number
+          source_version: string
+          started_at: string
+          status: string
+        }
+        Insert: {
+          attempted?: number
+          completed?: number
+          failed?: number
+          finished_at?: string | null
+          id?: string
+          partial?: number
+          source_version?: string
+          started_at?: string
+          status: string
+        }
+        Update: {
+          attempted?: number
+          completed?: number
+          failed?: number
+          finished_at?: string | null
+          id?: string
+          partial?: number
+          source_version?: string
+          started_at?: string
+          status?: string
+        }
+        Relationships: []
+      }
+      hbw_customer_refresh_signals: {
+        Row: {
+          customer_id: string
+          id: number
+          priority: number
+          reason: string
+          signaled_at: string
+        }
+        Insert: {
+          customer_id: string
+          id?: never
+          priority?: number
+          reason: string
+          signaled_at?: string
+        }
+        Update: {
+          customer_id?: string
+          id?: never
+          priority?: number
+          reason?: string
+          signaled_at?: string
+        }
+        Relationships: []
+      }
+      hbw_customer_refresh_state: {
+        Row: {
+          components: Json
+          customer_id: string
+          enabled: boolean
+          last_attempt_at: string | null
+          last_completed_at: string | null
+          last_result: string
+          updated_at: string
+        }
+        Insert: {
+          components?: Json
+          customer_id: string
+          enabled?: boolean
+          last_attempt_at?: string | null
+          last_completed_at?: string | null
+          last_result?: string
+          updated_at?: string
+        }
+        Update: {
+          components?: Json
+          customer_id?: string
+          enabled?: boolean
+          last_attempt_at?: string | null
+          last_completed_at?: string | null
+          last_result?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "hbw_customer_refresh_state_customer_id_fkey"
+            columns: ["customer_id"]
+            isOneToOne: true
+            referencedRelation: "hbw_customer_profiles"
+            referencedColumns: ["customer_id"]
+          },
+        ]
+      }
+      hbw_customer_source_check_retractions: {
+        Row: {
+          reason: string
+          recorded_by_db_role: string
+          request_id: string
+          retracted_at: string
+          source_check_id: string
+        }
+        Insert: {
+          reason: string
+          recorded_by_db_role?: string
+          request_id: string
+          retracted_at?: string
+          source_check_id: string
+        }
+        Update: {
+          reason?: string
+          recorded_by_db_role?: string
+          request_id?: string
+          retracted_at?: string
+          source_check_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "hbw_customer_source_check_retractions_source_check_id_fkey"
+            columns: ["source_check_id"]
+            isOneToOne: true
+            referencedRelation: "hbw_customer_source_checks"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      hbw_customer_source_checks: {
+        Row: {
+          blocked_reason: string | null
+          channel: string
+          check_sequence: number
+          customer_id: string
+          eligible_count: number | null
+          end_before: string
+          findings: Json
+          has_more: boolean
+          id: string
+          issue_count: number | null
+          issue_query: string | null
+          limitation: string
+          outcome: string
+          recorded_at: string
+          recorded_by_db_role: string
+          request_id: string
+          source_limit: number
+          source_read_at: string
+          source_route: string
+          start_at: string
+        }
+        Insert: {
+          blocked_reason?: string | null
+          channel: string
+          check_sequence?: never
+          customer_id: string
+          eligible_count?: number | null
+          end_before: string
+          findings: Json
+          has_more: boolean
+          id?: string
+          issue_count?: number | null
+          issue_query?: string | null
+          limitation: string
+          outcome: string
+          recorded_at?: string
+          recorded_by_db_role?: string
+          request_id: string
+          source_limit: number
+          source_read_at: string
+          source_route: string
+          start_at: string
+        }
+        Update: {
+          blocked_reason?: string | null
+          channel?: string
+          check_sequence?: never
+          customer_id?: string
+          eligible_count?: number | null
+          end_before?: string
+          findings?: Json
+          has_more?: boolean
+          id?: string
+          issue_count?: number | null
+          issue_query?: string | null
+          limitation?: string
+          outcome?: string
+          recorded_at?: string
+          recorded_by_db_role?: string
+          request_id?: string
+          source_limit?: number
+          source_read_at?: string
+          source_route?: string
+          start_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "hbw_customer_source_checks_customer_id_fkey"
+            columns: ["customer_id"]
+            isOneToOne: false
+            referencedRelation: "hbw_customer_profiles"
+            referencedColumns: ["customer_id"]
+          },
+        ]
+      }
       hbw_excluded_customers: {
         Row: {
           added_at: string
@@ -6837,6 +7213,54 @@ export type Database = {
         }
         Relationships: []
       }
+      hbw_customer_identity_source: {
+        Row: {
+          cell_phone: string | null
+          city: string | null
+          company_name: string | null
+          customer_id: number | null
+          customer_name: string | null
+          customer_type: string | null
+          email: string | null
+          first_name: string | null
+          home_phone: string | null
+          last_name: string | null
+          phone: string | null
+          province: string | null
+          work_phone: string | null
+        }
+        Insert: {
+          cell_phone?: string | null
+          city?: string | null
+          company_name?: string | null
+          customer_id?: number | null
+          customer_name?: string | null
+          customer_type?: string | null
+          email?: string | null
+          first_name?: string | null
+          home_phone?: string | null
+          last_name?: string | null
+          phone?: string | null
+          province?: string | null
+          work_phone?: string | null
+        }
+        Update: {
+          cell_phone?: string | null
+          city?: string | null
+          company_name?: string | null
+          customer_id?: number | null
+          customer_name?: string | null
+          customer_type?: string | null
+          email?: string | null
+          first_name?: string | null
+          home_phone?: string | null
+          last_name?: string | null
+          phone?: string | null
+          province?: string | null
+          work_phone?: string | null
+        }
+        Relationships: []
+      }
       invoice_lines: {
         Row: {
           cashier_name: string | null
@@ -8300,6 +8724,16 @@ export type Database = {
         }
         Returns: boolean
       }
+      hbw_agent_call_summary_search: {
+        Args: {
+          p_customer_id: string
+          p_end_before: string
+          p_issue_query: string
+          p_limit?: number
+          p_start_at: string
+        }
+        Returns: Json
+      }
       hbw_bot_admin_status: {
         Args: never
         Returns: {
@@ -8435,6 +8869,125 @@ export type Database = {
         }
         Returns: string
       }
+      hbw_customer_contact_digits: { Args: { p_text: string }; Returns: string }
+      hbw_customer_note_add: {
+        Args: {
+          p_customer_id: string
+          p_note: string
+          p_observed_on?: string
+          p_request_id: string
+          p_source_ref: string
+        }
+        Returns: Json
+      }
+      hbw_customer_note_append: {
+        Args: {
+          p_agent: string
+          p_customer_id: string
+          p_note: string
+          p_observed_on?: string
+          p_request_id: string
+          p_source_ref: string
+        }
+        Returns: Json
+      }
+      hbw_customer_note_archive: {
+        Args: { p_note_id: string; p_reason: string; p_request_id: string }
+        Returns: Json
+      }
+      hbw_customer_notes_search: {
+        Args: {
+          p_before_note_id?: string
+          p_before_recorded_at?: string
+          p_customer_id: string
+          p_limit?: number
+          p_query?: string
+        }
+        Returns: Json
+      }
+      hbw_customer_observation_cache_save: {
+        Args: {
+          p_blocked?: string
+          p_channel: string
+          p_customer_id: string
+          p_eligible?: number
+          p_end: string
+          p_findings: Json
+          p_issue?: string
+          p_issue_count?: number
+          p_limit: number
+          p_limitation: string
+          p_more: boolean
+          p_read_at: string
+          p_route: string
+          p_start: string
+        }
+        Returns: Json
+      }
+      hbw_customer_observation_excerpt: {
+        Args: { p_text: string }
+        Returns: string
+      }
+      hbw_customer_profile_read: {
+        Args: { p_customer_id: string; p_note_limit?: number }
+        Returns: Json
+      }
+      hbw_customer_record_get: {
+        Args: { p_customer_id: string; p_note_limit?: number }
+        Returns: Json
+      }
+      hbw_customer_record_id: {
+        Args: { p_customer_id: string }
+        Returns: number
+      }
+      hbw_customer_record_read_guard: { Args: never; Returns: undefined }
+      hbw_customer_record_refresh: {
+        Args: { p_customer_id: string }
+        Returns: Json
+      }
+      hbw_customer_record_refresh_automatic: {
+        Args: { p_customer_id: string }
+        Returns: Json
+      }
+      hbw_customer_record_source_check_add: {
+        Args: {
+          p_blocked_reason?: string
+          p_channel: string
+          p_customer_id: string
+          p_eligible_count?: number
+          p_end_before: string
+          p_findings: Json
+          p_has_more: boolean
+          p_issue_count?: number
+          p_issue_query?: string
+          p_limit: number
+          p_limitation: string
+          p_outcome?: string
+          p_request_id: string
+          p_source_read_at?: string
+          p_source_route?: string
+          p_start_at: string
+        }
+        Returns: Json
+      }
+      hbw_customer_record_update_status: {
+        Args: { p_customer_id: string }
+        Returns: Json
+      }
+      hbw_customer_records_search: {
+        Args: { p_limit?: number; p_query: string }
+        Returns: Json
+      }
+      hbw_customer_refresh_feed_health: { Args: never; Returns: Json }
+      hbw_customer_source_check_retract: {
+        Args: {
+          p_reason: string
+          p_request_id: string
+          p_source_check_id: string
+        }
+        Returns: Json
+      }
+      hbw_customer_sync_meta: { Args: { p_metadata: Json }; Returns: Json }
       hbw_mercury_communication_evidence_v1: {
         Args: { p_customer_id: string }
         Returns: Json
@@ -8461,6 +9014,10 @@ export type Database = {
         Returns: boolean
       }
       hbw_ro_winter_storage_state: { Args: { p_units: Json }; Returns: string }
+      hbw_source_observation_text_safe: {
+        Args: { p_max: number; p_text: string }
+        Returns: boolean
+      }
       hbw_storage_line_vessels: { Args: { p_title: string }; Returns: number }
       hbw_tv_display_label: {
         Args: { p_max?: number; p_text: string }
