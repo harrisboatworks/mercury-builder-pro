@@ -16,6 +16,7 @@ create table contact_inquiries(id int,created_at timestamptz,status text,email t
 create table chat_conversations(id int,created_at timestamptz,context jsonb,customer_phone text);
 create table saved_quotes(id int,created_at timestamptz,deposit_paid_at timestamptz,deposit_status text,deposit_amount numeric,email text,quote_state jsonb);
 \ir ../migrations/20260921160000_weekly_report_v2.sql
+\ir ../migrations/20260922120000_weekly_report_v2_followup.sql
 insert into quote_activity_events select i,'session-'||i,'2026-09-15T12:00Z','page_view','{}','/blog/example', 'mobile',null,null,null from generate_series(1,1501) i;
 insert into quote_activity_events values
  (2000,'builder','2026-09-15T12:00Z','page_view','{}','/blog/first','desktop',null,'https://www.google.com/search?q=private',null),
@@ -32,6 +33,10 @@ insert into customer_quotes values
  (3,'2026-09-15T12:00Z','{}','person@customer.invalid',null,'public-quote-api',false,null,30000),
  (4,'2026-09-15T12:00Z','{}','person@customer.invalid',null,'website',true,null,40000),
  (5,'2026-09-15T12:00Z','{}','pdf-download@placeholder.com',null,'pdf_download',false,null,50000);
+insert into customer_quotes values
+ (6,'2026-09-15T12:00Z','{}','guide@customer.invalid',null,'repower_guide',false,null,60000),
+ (7,'2026-09-15T12:00Z','{}','chat@customer.invalid',null,'ai_chat',false,null,70000),
+ (8,'2026-09-15T12:00Z','{}','test@example.com',null,'repower_guide',false,null,80000);
 insert into trade_valuation_leads values(1,'2026-09-19T12:00Z','new','person@customer.invalid',null,'{}');
 -- Old saved quote, paid this week: must count by paid date.
 insert into saved_quotes values(1,'2026-08-01T12:00Z','2026-09-19T12:00Z','paid',500,'person@customer.invalid','{}'),
@@ -44,6 +49,9 @@ do $$ declare r jsonb; w jsonb; begin
  assert (w->>'fast_builder_sessions')::int=1, 'fast sessions remain included';
  assert (w->>'excluded_sessions')::int=1;
  assert (w->>'contactable_quote_records')::int=1 and (w->>'quote_value')::numeric=10000;
+ assert (w->>'customer_quote_records')::int=2, 'guide/chat leads excluded even with contact and value';
+ assert (w->>'guide_leads')::int=1 and (w->>'chat_leads')::int=1, 'non-quote leads visible separately; tests excluded';
+ assert jsonb_array_length(w->'quote_sources')=1 and w->'quote_sources'->0->>'source'='website';
  assert (w->>'api_quote_records')::int=2 and (w->>'api_test_records')::int=1, 'API is not synonymous with test';
  assert w->'top_motors'->0->>'model'='115 Pro XS', 'items motor fallback';
  assert (w->>'paid_deposits')::int=1 and (w->>'paid_deposit_amount')::numeric=500, 'paid timestamp, not creation or pending amounts';
@@ -57,5 +65,15 @@ do $$ declare r jsonb; w jsonb; begin
  assert not has_function_privilege('authenticated','public.weekly_report_v2(timestamptz)','execute');
  assert has_function_privilege('service_role','public.weekly_report_v2(timestamptz)','execute');
  raise notice 'Weekly report SQL regression checks passed';
+end $$;
+-- Returning builder: selection before blog, then two later selections count once.
+insert into quote_activity_events values
+ (2010,'builder','2026-09-15T12:03Z','motor_selected','{}','/quote/motor-selection',null,null,null,'115 Pro XS'),
+ (2011,'builder','2026-09-15T12:04Z','motor_selected','{}','/quote/motor-selection',null,null,null,'115 Pro XS'),
+ (2012,'builder','2026-09-15T12:05Z','page_view','{}','/blog/no-later-selection',null,null,null,null);
+do $$ declare w jsonb; begin
+ w:=weekly_report_v2('2026-09-21T07:00Z')->'weeks'->0;
+ assert exists(select 1 from jsonb_array_elements(w->'blogs') b where b->>'path'='/blog/after' and b->>'quote_starts'='1'), 'later selection credits returning builder once';
+ assert exists(select 1 from jsonb_array_elements(w->'blogs') b where b->>'path'='/blog/no-later-selection' and b->>'quote_starts'='0'), 'no credit without later selection';
 end $$;
 rollback;

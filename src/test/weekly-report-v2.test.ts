@@ -6,7 +6,7 @@ const week: Week = {
  start:'2026-09-14T07:00:00Z',end:'2026-09-21T07:00:00Z',events:9909,raw_events:9909,sessions:4082,excluded_sessions:0,unlinked_events:0,
  quote_starts:53,saw_price:40,summary_sessions:40,submitted_sessions:0,phone_clicks:1,sms_clicks:1,fast_builder_sessions:21,
  customer_quote_records:0,contactable_quote_records:0,quote_value:0,api_quote_records:46,api_test_records:22,test_quote_records:22,admin_quote_records:0,
- quote_sources:[],top_motors:[],viewed_motors:[],traffic:[],devices:{},blogs:[],trade_valuations:1,trade_pending:1,contact_inquiries:0,contact_pending:0,
+ guide_leads:2,chat_leads:3,quote_sources:[],top_motors:[],viewed_motors:[],traffic:[],devices:{},blogs:[],trade_valuations:1,trade_pending:1,contact_inquiries:0,contact_pending:0,
  chats:0,chats_with_phone:0,paid_deposits:0,paid_deposit_amount:0,saved_snapshots:66,anonymous_pdf_snapshots:4,
 };
 const fixture = (): Report => ({version:2,weeks:[0,1,2,3].map(i=>({...week,start:new Date(Date.parse(week.start)-i*604800000).toISOString(),end:new Date(Date.parse(week.end)-i*604800000).toISOString()}))});
@@ -54,6 +54,9 @@ describe('weekly report v2',()=>{
   expect(r.html).not.toContain('&amp;lt;');
   expect(r.sms).toContain('4,082 tracked sessions');expect(r.sms).toContain('46 public API');
   expect(r.sms).toContain('not confirmed contacts or downloads');expect(r.sms).not.toContain('BIGGEST DROP');
+  expect(r.html).toContain('Guide download leads: 2; captured chat leads: 3');
+  expect(r.html).toContain('Quote-summary sessions with phone clicks: 1; with text clicks: 1');
+  expect(r.sms).toContain('quote-summary sessions with phone/text clicks: 1/1 (not site-wide)');
   expect(r.sms.length).toBeLessThan(1500);
  });
  it('uses a stable half-open Monday reporting period despite schedule jitter',()=>{
