@@ -158,6 +158,15 @@ const handler = async (req: Request): Promise<Response> => {
   const authResult = await requireAdmin(req, corsHeaders);
   if (authResult instanceof Response) return authResult;
 
+  // GET7's fixed March offer expired. Block every send path, including test
+  // mode, until a separately reviewed live-offer campaign replaces it.
+  return new Response(JSON.stringify({
+    error: "GET7 campaign disabled: the offer has expired. No messages were sent.",
+    code: "campaign_expired",
+    emailsSent: 0,
+    smsSent: 0,
+  }), { status: 410, headers: { ...corsHeaders, "Content-Type": "application/json" } });
+
   try {
     const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
     const supabaseKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
