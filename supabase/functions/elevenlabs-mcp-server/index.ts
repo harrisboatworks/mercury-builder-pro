@@ -1137,7 +1137,7 @@ ${motor1.horsepower > motor2.horsepower ? `The ${motor1.model_display} has more 
           return { 
             content: [{ 
               type: "text", 
-              text: `A ${years}-year Mercury Platinum Product Protection plan for your ${hp}HP motor is $${price.toLocaleString()} CAD before HST. Product Protection is an extended service contract, not an extension of the standard product warranty. Final eligibility and price are confirmed by serial number. Want me to include it in your quote?`
+              text: `A ${years}-year Mercury Platinum Product Protection plan for your ${hp}HP motor is $${price.toLocaleString()} CAD before HST. Product Protection is an extended service contract, not an extension of the standard product warranty. Promotional Gold years require a separate upgrade charge to become Platinum. The full quote adds that upgrade before extra Platinum years. Final eligibility and price are confirmed by serial number. Want me to include it in your quote?`
             }] 
           };
         }
@@ -1153,7 +1153,7 @@ ${motor1.horsepower > motor2.horsepower ? `The ${motor1.model_display} has more 
       return { 
         content: [{ 
           type: "text", 
-          text: `Mercury Platinum Product Protection plan prices for your ${hp}HP motor, in CAD before HST:\n\n${allPricing}\n\nEach figure is the purchased plan term. Final eligibility and price are confirmed by serial number. Which term would you like to review?`
+          text: `Mercury Platinum Product Protection plan prices for your ${hp}HP motor, in CAD before HST:\n\n${allPricing}\n\nEach figure is the purchased plan term; promotional Gold years require a separate upgrade charge before added Platinum years. Final eligibility and price are confirmed by serial number. Which term would you like to review?`
         }]
       };
     }

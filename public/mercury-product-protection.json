@@ -10,16 +10,19 @@
     "name": "Harris Boat Works",
     "url": "https://www.mercuryrepower.ca"
   },
-  "dateModified": "2026-07-17",
+  "dateModified": "2026-10-17",
   "currency": "CAD",
   "pricesExcludeTax": true,
   "baseCoverageYears": 3,
   "maximumCombinedYears": 8,
   "maximumPlanYears": 5,
-  "lastVerified": "2026-07-17",
+  "lastVerified": "2026-10-17",
   "sourceLabel": "Harris Boat Works Mercury Platinum Product Protection retail rate card",
   "officialOverviewUrl": "https://www.mercurymarine.com/ca/en/service-and-support/warranty-coverage-and-product-protection/mercury-product-protection",
   "officialCanadaPlanTermsUrl": "https://www.mercurymarine.com/content/dam/mercury-marine/us_en/parts-and-services/service-and-support/warranty-coverage/product-protection/8M0236695%20Canada%20Platinum%20Plan%20Current%20upd%203-17-25.pdf.coredownload.pdf",
+  "goldUpgradeLastVerified": "2026-10-17",
+  "goldUpgradeSourceLabel": "MercNet Mercury Product Protection calculator, Canadian MSRP Gold-to-Platinum upgrade (1-12 months since registered, one engine)",
+  "goldUpgradeSourceUrl": "https://mercnet.mercurymarine.com/us/en/mercury-product-protection.html",
   "rates": [
     {
       "hpMin": 2.5,
@@ -31,6 +34,13 @@
         "3": 194,
         "4": 247,
         "5": 293
+      },
+      "goldUpgradePrices": {
+        "1": 19,
+        "2": 33,
+        "3": 47,
+        "4": 59,
+        "5": 70
       }
     },
     {
@@ -43,6 +53,13 @@
         "3": 454,
         "4": 576,
         "5": 684
+      },
+      "goldUpgradePrices": {
+        "1": 42,
+        "2": 77,
+        "3": 110,
+        "4": 138,
+        "5": 164
       }
     },
     {
@@ -55,6 +72,13 @@
         "3": 904,
         "4": 1149,
         "5": 1365
+      },
+      "goldUpgradePrices": {
+        "1": 85,
+        "2": 153,
+        "3": 218,
+        "4": 275,
+        "5": 328
       }
     },
     {
@@ -67,6 +91,13 @@
         "3": 1376,
         "4": 1748,
         "5": 2077
+      },
+      "goldUpgradePrices": {
+        "1": 129,
+        "2": 233,
+        "3": 330,
+        "4": 420,
+        "5": 498
       }
     },
     {
@@ -79,6 +110,13 @@
         "3": 1921,
         "4": 2442,
         "5": 2900
+      },
+      "goldUpgradePrices": {
+        "1": 181,
+        "2": 325,
+        "3": 461,
+        "4": 585,
+        "5": 696
       }
     },
     {
@@ -91,6 +129,13 @@
         "3": 4612,
         "4": 5861,
         "5": 6964
+      },
+      "goldUpgradePrices": {
+        "1": 434,
+        "2": 782,
+        "3": 1107,
+        "4": 1406,
+        "5": 1671
       }
     },
     {
@@ -103,6 +148,13 @@
         "3": 6579,
         "4": 8358,
         "5": 9932
+      },
+      "goldUpgradePrices": {
+        "1": 619,
+        "2": 1115,
+        "3": 1580,
+        "4": 2007,
+        "5": 2384
       }
     },
     {
@@ -115,6 +167,13 @@
         "3": 9162,
         "4": 11642,
         "5": 13833
+      },
+      "goldUpgradePrices": {
+        "1": 862,
+        "2": 1553,
+        "3": 2198,
+        "4": 2794,
+        "5": 3320
       }
     },
     {
@@ -127,6 +186,13 @@
         "3": 9589,
         "4": 12183,
         "5": 14478
+      },
+      "goldUpgradePrices": {
+        "1": 903,
+        "2": 1624,
+        "3": 2301,
+        "4": 2925,
+        "5": 3475
       }
     },
     {
@@ -139,7 +205,8 @@
         "3": 12417,
         "4": 15777,
         "5": 18748
-      }
+      },
+      "goldUpgradePrices": null
     },
     {
       "hpMin": 600,
@@ -151,7 +218,8 @@
         "3": 14881,
         "4": 18908,
         "5": 22469
-      }
+      },
+      "goldUpgradePrices": null
     }
   ]
 }

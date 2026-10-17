@@ -144,6 +144,13 @@ export interface QuoteData {
     extendedYears: number;
     warrantyPrice: number;
     totalYears: number;
+    promoGoldYears?: number;
+    includedCoverageYears?: number;
+    goldUpgradeYears?: number;
+    goldUpgradePrice?: number;
+    platinumExtensionYears?: number;
+    platinumExtensionPrice?: number;
+    hasExplicitBreakdown?: boolean;
   } | null;
   hasTradein: boolean;
   purchasePath?: 'loose' | 'installed' | null;

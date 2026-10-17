@@ -19,8 +19,10 @@ import { resolveAppliedTradeValue } from '@/lib/trade-credit';
 import {
   COMPLETE_COVERAGE_TARGET_YEARS,
   PREMIUM_COVERAGE_TARGET_YEARS,
+  getProductProtectionPackageBreakdown,
   getProductProtectionPackagePrices,
 } from '@/lib/product-protection-packages';
+import { buildWarrantyConfigFromCost, createBaselineWarrantyConfig, requiresCustomProtectionReview } from '@/lib/quote-product-protection';
 import { isTillerMotor, requiresMercuryControls, includesPropeller, canAddExternalFuelTank } from '@/lib/motor-helpers';
 import { getPackageRecommendation, getRecommendationExplanation } from '@/lib/package-recommendation';
 import { getPropellerAllowance } from '@/lib/propeller-allowance';
@@ -182,6 +184,9 @@ export default function PackageSelectionPage() {
   );
   const completeWarrantyCost = productProtectionPrices.complete;
   const premiumWarrantyCost = productProtectionPrices.premium;
+  const completeBreakdown = useMemo(() => getProductProtectionPackageBreakdown(motorHP, currentCoverageYears, COMPLETE_TARGET_YEARS), [motorHP, currentCoverageYears]);
+  const premiumBreakdown = useMemo(() => getProductProtectionPackageBreakdown(motorHP, currentCoverageYears, PREMIUM_TARGET_YEARS), [motorHP, currentCoverageYears]);
+  const breakdownText = (b: typeof completeBreakdown) => !b ? '' : b.goldUpgradePrice > 0 ? ` (Gold upgrade $${b.goldUpgradePrice.toLocaleString('en-CA')} + Platinum extension $${b.platinumExtensionPrice.toLocaleString('en-CA')})` : ` (Platinum extension $${b.platinumExtensionPrice.toLocaleString('en-CA')})`;
 
   // Pricing totals
   const totals = calculateQuotePricing({
@@ -248,7 +253,7 @@ export default function PackageSelectionPage() {
         "Everything in Essential",
         ...(batteryCost > 0 ? ["Marine starting battery ($180 value)"] : []), 
         `Extended to ${COMPLETE_TARGET_YEARS} years total coverage`,
-        (completeWarrantyCost ?? 0) > 0 ? `Platinum protection: $${completeWarrantyCost!.toLocaleString('en-CA')}` : `Already includes ${COMPLETE_TARGET_YEARS}yr coverage`,
+        (completeWarrantyCost ?? 0) > 0 ? `Platinum protection: $${completeWarrantyCost!.toLocaleString('en-CA')}${breakdownText(completeBreakdown)}` : `Already includes ${COMPLETE_TARGET_YEARS}yr coverage`,
         ...(isInstalled ? ["Priority installation"] : []),
         "🧢 FREE Mercury Hat ($35)"
       ].filter(Boolean),
@@ -265,7 +270,7 @@ export default function PackageSelectionPage() {
       features: [
         "Everything in Complete",
         `Maximum ${PREMIUM_TARGET_YEARS} years total coverage`,
-        (premiumWarrantyCost ?? 0) > 0 ? `Platinum protection: $${premiumWarrantyCost!.toLocaleString('en-CA')}` : `Already includes ${PREMIUM_TARGET_YEARS}yr coverage`,
+        (premiumWarrantyCost ?? 0) > 0 ? `Platinum protection: $${premiumWarrantyCost!.toLocaleString('en-CA')}${breakdownText(premiumBreakdown)}` : `Already includes ${PREMIUM_TARGET_YEARS}yr coverage`,
         canAddFuelTank ? "12L external fuel tank & hose ($199 value)" : null,
         ...(isInstalled ? ["White-glove installation"] : []),
         "🧢👕 FREE Hat + Shirt ($75)"
@@ -279,7 +284,7 @@ export default function PackageSelectionPage() {
     if (pkg.id === 'better') return completeWarrantyCost !== null;
     if (pkg.id === 'best') return premiumWarrantyCost !== null;
     return true;
-  }), [baseSubtotal, tillerInstallCost, totals.savings, isManualTiller, currentCoverageYears, isManualStart, batteryCost, completeWarrantyCost, premiumWarrantyCost, includesProp, canAddFuelTank, recommendation, isInstalled, looseMotorBatteryCost, propCost, propFeatureText]);
+  }), [baseSubtotal, tillerInstallCost, totals.savings, isManualTiller, currentCoverageYears, isManualStart, batteryCost, completeWarrantyCost, premiumWarrantyCost, completeBreakdown, premiumBreakdown, includesProp, canAddFuelTank, recommendation, isInstalled, looseMotorBatteryCost, propCost, propFeatureText]);
 
   const hasCompletePackage = packages.some((pkg) => pkg.id === 'better');
   const hasPremiumPackage = packages.some((pkg) => pkg.id === 'best');
@@ -291,17 +296,18 @@ export default function PackageSelectionPage() {
     : 'Current included coverage already meets the recommended level, or a paid plan is not available online for this horsepower.';
 
   useEffect(() => {
+    if (requiresCustomProtectionReview(state.warrantyConfig, state.adminCustomItems)) return;
     if (selectedPackage && !packages.some((pkg) => pkg.id === selectedPackage)) {
       setSelectedPackage(null);
       dispatch({ type: 'SET_SELECTED_PACKAGE', payload: null });
       if (promotionsReady) {
         dispatch({
           type: 'SET_WARRANTY_CONFIG',
-          payload: { totalYears: currentCoverageYears, extendedYears: 0, warrantyPrice: 0 },
+          payload: createBaselineWarrantyConfig(currentCoverageYears),
         });
       }
     }
-  }, [currentCoverageYears, dispatch, packages, promotionsReady, selectedPackage]);
+  }, [currentCoverageYears, dispatch, packages, promotionsReady, selectedPackage, state.warrantyConfig, state.adminCustomItems]);
 
   // Calculate monthly payments for upgrade nudges
   const essentialPackage = packages.find(p => p.id === 'good') || packages[0];
@@ -347,6 +353,10 @@ export default function PackageSelectionPage() {
   const coverageGainToPremium = (premiumPackage.coverageYears || PREMIUM_TARGET_YEARS) - (completePackage.coverageYears || COMPLETE_TARGET_YEARS);
 
   const handlePackageSelect = (packageId: string) => {
+    if (requiresCustomProtectionReview(state.warrantyConfig, state.adminCustomItems)) {
+      navigate('/quote/summary');
+      return;
+    }
     const selectedPkg = packages.find(p => p.id === packageId);
     if (!promotionsReady || !selectedPkg) return;
 
@@ -356,19 +366,17 @@ export default function PackageSelectionPage() {
     // Auto-reset after 5 seconds
     setTimeout(() => setHasJustSelected(false), 5000);
 
-    // Update warranty config and dispatch to context immediately
     if (selectedPkg) {
       const totalYears = Math.max(currentCoverageYears, selectedPkg.coverageYears || currentCoverageYears);
-      const extendedYears = Math.max(0, totalYears - currentCoverageYears);
-      
-      let warrantyPrice = 0;
-      if (packageId === 'better') warrantyPrice = completeWarrantyCost ?? 0;
-      else if (packageId === 'best') warrantyPrice = premiumWarrantyCost ?? 0;
-      
-      dispatch({
-        type: 'SET_WARRANTY_CONFIG',
-        payload: { totalYears, extendedYears, warrantyPrice }
-      });
+      if (packageId === 'good') {
+        dispatch({ type: 'SET_WARRANTY_CONFIG', payload: createBaselineWarrantyConfig(currentCoverageYears) });
+      } else {
+        const cost = getProductProtectionPackageBreakdown(motorHP, currentCoverageYears, totalYears);
+        dispatch({
+          type: 'SET_WARRANTY_CONFIG',
+          payload: cost ? buildWarrantyConfigFromCost(cost) : createBaselineWarrantyConfig(currentCoverageYears),
+        });
+      }
       
       // Dispatch package selection immediately so UnifiedMobileBar can detect it
       dispatch({ 

@@ -181,7 +181,7 @@ describe('PromoSelectionPage — warranty copy + saved-quote contract', () => {
       .filter((a: any) => a?.type === 'SET_WARRANTY_CONFIG');
     expect(warrantyDispatches.length).toBeGreaterThan(0);
     const last = warrantyDispatches[warrantyDispatches.length - 1];
-    expect(last.payload).toEqual({
+    expect(last.payload).toMatchObject({
       extendedYears: 0,
       warrantyPrice: 0,
       totalYears: 5,
@@ -233,9 +233,11 @@ describe('PromoSelectionPage — warranty copy + saved-quote contract', () => {
     const warrantyDispatches = dispatchMock.mock.calls
       .map((call) => call[0])
       .filter((action: any) => action?.type === 'SET_WARRANTY_CONFIG');
-    expect(warrantyDispatches.at(-1)?.payload).toEqual({
+    expect(warrantyDispatches.at(-1)?.payload).toMatchObject({
       extendedYears: 3,
-      warrantyPrice: 1376,
+      warrantyPrice: 1609,
+      goldUpgradePrice: 233,
+      platinumExtensionPrice: 1376,
       totalYears: 8,
     });
   });

@@ -68,7 +68,7 @@ describe('cash purchase routed navigation', () => {
     await act(async () => { resolveSummary({ default: Summary }); });
     expect(await screen.findByTestId('summary')).toBeInTheDocument();
     expect(screen.getByTestId('route')).toHaveTextContent('/quote/summary');
-    expect(JSON.parse(screen.getByTestId('summary').textContent!)).toEqual({
+    expect(JSON.parse(screen.getByTestId('summary').textContent!)).toMatchObject({
       payment: 'cash_purchase', trade,
       warranty: { extendedYears: 0, warrantyPrice: 0, totalYears: 3 },
     });

@@ -14,7 +14,9 @@ import {
 import { activePromotionDateOrFilters, dealerToday } from "../_shared/promo-dates.ts";
 import { resolveFactoryRebate } from "../_shared/public-quote-pricing.ts";
 import { buildAgentFinancing, resolveAgentPromoFallback } from "../_shared/agent-quote-financing.ts";
+import { getAppliedPromotionWarrantyYears } from "../_shared/promotion-warranty.ts";
 import type { PromotionRecord } from "../_shared/promotion-context.ts";
+import { calculateMercuryPlatinumCoverageCost, findMercuryPlatinumRateBand } from "../_shared/mercury-platinum-coverage.ts";
 
 const DEALERPLAN_FEE = 349;
 const HST_RATE = 0.13;
@@ -264,11 +266,14 @@ function buildAgentAccessoryBreakdown(opts: {
   warrantyCost: number;
   warrantyYearsExtra: number;
   totalBaseWarranty: number;
+  goldUpgradePrice?: number;
+  goldUpgradeYears?: number;
+  platinumExtensionPrice?: number;
   customItems: any[];
   packageTier: string;
   customerHasProp?: boolean;
 }): { items: any[]; totalCost: number } {
-  const { hp, modelDisplay, purchasePath, selectedOptions, warrantyCost, warrantyYearsExtra, totalBaseWarranty, customItems, packageTier, customerHasProp } = opts;
+  const { hp, modelDisplay, purchasePath, selectedOptions, warrantyCost, warrantyYearsExtra, totalBaseWarranty, customItems, packageTier, customerHasProp, goldUpgradePrice = 0, goldUpgradeYears = 0, platinumExtensionPrice = 0 } = opts;
   const items: any[] = [];
   const isTiller = isTillerMotor(modelDisplay);
 
@@ -292,13 +297,16 @@ function buildAgentAccessoryBreakdown(opts: {
     }
   }
 
-  // Mercury Platinum Product Protection
-  if (warrantyCost > 0 && warrantyYearsExtra > 0) {
+  if (warrantyCost > 0 && (warrantyYearsExtra > 0 || goldUpgradePrice > 0)) {
     const totalYears = totalBaseWarranty + warrantyYearsExtra;
+    const components = [
+      goldUpgradePrice > 0 ? `Gold upgrade (${goldUpgradeYears} yr): $${goldUpgradePrice.toLocaleString("en-CA")}` : null,
+      warrantyYearsExtra > 0 ? `Platinum extension (${warrantyYearsExtra} yr): $${(platinumExtensionPrice || warrantyCost - goldUpgradePrice).toLocaleString("en-CA")}` : null,
+    ].filter(Boolean).join(" + ");
     items.push({
-      name: `Mercury Platinum Product Protection (${warrantyYearsExtra} additional year${warrantyYearsExtra > 1 ? "s" : ""})`,
+      name: warrantyYearsExtra > 0 ? `Mercury Platinum Product Protection (${warrantyYearsExtra} additional year${warrantyYearsExtra > 1 ? "s" : ""})` : "Mercury Platinum Product Protection (Gold upgrade only)",
       price: warrantyCost,
-      description: `Combined coverage: ${totalYears} years`,
+      description: `Combined coverage: ${totalYears} years${components ? `; ${components}` : ""}. Factory 3 years + Platinum ${Math.max(0, totalYears - 3)} years`,
     });
   }
 
@@ -463,70 +471,67 @@ async function estimateTradeIn(_supabase: any, body: any) {
 async function getWarrantyPricing(supabase: any, body: any) {
   const hp = body.horsepower;
   if (!hp) throw new Error("horsepower is required");
-
   const { startOr, endOr } = activePromotionDateOrFilters();
-  const [{ data, error }, { data: activePromotions, error: promotionsError }] = await Promise.all([
-    supabase
-      .from("warranty_pricing")
-      .select("*")
-      .lte("hp_min", hp)
-      .gte("hp_max", hp),
-    supabase
-      .from("promotions")
-      .select("warranty_extra_years")
-      .eq("is_active", true)
-      .or(startOr)
-      .or(endOr),
-  ]);
-
-  if (error) throw new Error(`get_warranty_pricing failed: ${error.message}`);
+  const { data: activePromotions, error: promotionsError } = await supabase
+    .from("promotions")
+    .select("warranty_extra_years")
+    .eq("is_active", true)
+    .or(startOr)
+    .or(endOr)
+    .order("priority", { ascending: false });
   if (promotionsError) throw new Error(`active promotion lookup failed: ${promotionsError.message}`);
-
-  const row = (data || [])[0];
-  if (!row) {
+  const band = findMercuryPlatinumRateBand(Number(hp));
+  if (!band) {
     return json({
       ok: true,
       warranty_pricing: null,
       message: `No warranty pricing found for ${hp}HP. The base warranty (3 years) is included free.`,
     });
   }
-
-  const promotionalWarrantyYears = (activePromotions || []).reduce(
-    (sum: number, promotion: any) => sum + Number(promotion.warranty_extra_years || 0),
-    0,
-  );
+  const promotionalWarrantyYears = getAppliedPromotionWarrantyYears(activePromotions || []);
   const includedCoverageYears = Math.min(3 + promotionalWarrantyYears, 8);
-  const planPrices = [row.year_1_price, row.year_2_price, row.year_3_price, row.year_4_price, row.year_5_price];
+  const promoGoldYears = Math.max(0, includedCoverageYears - 3);
   const extensionCosts: Record<string, number> = {};
-
-  for (let targetYear = 4; targetYear <= 8; targetYear++) {
-    const paidPlanYears = Math.max(0, targetYear - includedCoverageYears);
-    extensionCosts[`year_${targetYear}`] = paidPlanYears === 0
-      ? 0
-      : Number(planPrices[paidPlanYears - 1]);
+  const extensionBreakdowns: Record<string, any> = {};
+  for (let targetYear = 3; targetYear <= 8; targetYear++) {
+    if (targetYear < includedCoverageYears) continue;
+    if (targetYear === includedCoverageYears && promoGoldYears === 0) { extensionCosts[`year_${targetYear}`] = 0; continue; }
+    const cost = calculateMercuryPlatinumCoverageCost(Number(hp), includedCoverageYears, targetYear);
+    if (!cost) continue;
+    extensionCosts[`year_${targetYear}`] = cost.totalPrice;
+    extensionBreakdowns[`year_${targetYear}`] = {
+      total_price: cost.totalPrice,
+      gold_upgrade_years: cost.goldUpgradeYears,
+      gold_upgrade_price: cost.goldUpgradePrice,
+      platinum_extension_years: cost.extensionYears,
+      platinum_extension_price: cost.platinumExtensionPrice,
+      is_upgrade_only: cost.extensionYears === 0,
+    };
   }
-
-  // Keep the legacy total-year mapping for API compatibility, but calculate
-  // it from today's included promotional coverage. Also expose the underlying
-  // purchased-plan terms explicitly so agents do not sum cumulative columns.
+  const unsupportedPromoUpgrade = promoGoldYears > 0 && !calculateMercuryPlatinumCoverageCost(Number(hp), includedCoverageYears, includedCoverageYears);
   return json({
     ok: true,
     warranty_pricing: {
-      hp_range: `${row.hp_min}-${row.hp_max}`,
+      hp_range: `${band.hpMin}-${band.hpMax}`,
       base_warranty_years: 3,
       promotional_warranty_years: promotionalWarrantyYears,
+      promotional_gold_years: promoGoldYears,
       included_coverage_years: includedCoverageYears,
       extension_costs: extensionCosts,
+      extension_breakdowns: extensionBreakdowns,
       platinum_plan_prices: {
-        one_year: row.year_1_price,
-        two_year: row.year_2_price,
-        three_year: row.year_3_price,
-        four_year: row.year_4_price,
-        five_year: row.year_5_price,
+        one_year: band.prices[0],
+        two_year: band.prices[1],
+        three_year: band.prices[2],
+        four_year: band.prices[3],
+        five_year: band.prices[4],
       },
       currency: "CAD",
       prices_exclude_tax: true,
-      note: "Each value is the cumulative price of the purchased 1-5 year Platinum plan. Base coverage is 3 years. Active promotional years are counted first and reduce the paid plan term; combined coverage cannot exceed 8 years.",
+      unsupported_promo_upgrade: unsupportedPromoUpgrade,
+      note: unsupportedPromoUpgrade
+        ? "Promotional Gold years cannot be upgraded to Platinum at a verified rate for this horsepower, so Platinum through promotional coverage is not quoted. Final eligibility is confirmed by serial number."
+        : "Platinum through a combined target first upgrades all included promotional Gold years to Platinum, then adds only the cumulative Platinum price for extra years beyond factory+promo baseline. No paid plan keeps Gold at $0. Combined coverage cannot exceed 8 years (factory 3 + Platinum 5). Final eligibility is confirmed by serial number.",
     },
   });
 }
@@ -746,10 +751,7 @@ async function createQuote(supabase: any, body: any) {
 
     livePromotions = (promos || []) as PromotionRecord[];
     const activePromo = (promos || [])[0];
-    totalPromoWarrantyYears = (promos || []).reduce(
-      (sum: number, promotion: any) => sum + Number(promotion.warranty_extra_years || 0),
-      0,
-    );
+    totalPromoWarrantyYears = getAppliedPromotionWarrantyYears(promos || []);
     if (!activePromo) {
       promoWarnings.push("No active promotions currently available. Standard 3-year warranty applies.");
     }
@@ -785,55 +787,29 @@ async function createQuote(supabase: any, body: any) {
   // --- Warranty handling ---
   let warrantyCost = 0;
   let warrantyYearsExtra = 0;
+  let warrantyBreakdown: ReturnType<typeof calculateMercuryPlatinumCoverageCost> = null;
   const baseWarrantyYears = 3;
   const promoWarrantyYears = totalPromoWarrantyYears;
-  const totalBaseWarranty = Math.min(baseWarrantyYears + promoWarrantyYears, 8); // never exceed Mercury's combined maximum
-
+  const totalBaseWarranty = Math.min(baseWarrantyYears + promoWarrantyYears, 8);
   const requestedWarrantyYears = body.warranty_years == null
     ? totalBaseWarranty
     : Number(body.warranty_years);
-
   if (!Number.isInteger(requestedWarrantyYears) || requestedWarrantyYears < 0) {
     throw new Error("warranty_years must be a non-negative whole number of combined coverage years");
   }
-
   if (requestedWarrantyYears > 8) {
     throw new Error("Mercury Product Protection cannot exceed 8 years of combined coverage");
   }
-
-  if (requestedWarrantyYears > totalBaseWarranty) {
-    warrantyYearsExtra = requestedWarrantyYears - totalBaseWarranty;
-    if (warrantyYearsExtra > 5) {
-      throw new Error("Mercury Platinum Product Protection plans are available in 1-5 year terms");
+  const wantsPlatinumUpgradeOnly = body.platinum_upgrade === true || body.warranty_platinum_upgrade === true || body.gold_upgrade_to_platinum === true;
+  const wantsPaidPlatinum = requestedWarrantyYears > totalBaseWarranty || (wantsPlatinumUpgradeOnly && requestedWarrantyYears === totalBaseWarranty && totalBaseWarranty > baseWarrantyYears);
+  if (wantsPaidPlatinum) {
+    if (!motor.horsepower) throw new Error("Motor horsepower is required to price Mercury Platinum Product Protection");
+    warrantyBreakdown = calculateMercuryPlatinumCoverageCost(Number(motor.horsepower), totalBaseWarranty, Math.max(requestedWarrantyYears, totalBaseWarranty));
+    if (!warrantyBreakdown) {
+      throw new Error(`Mercury Platinum Product Protection pricing is unavailable for ${motor.horsepower}HP with ${Math.max(0, totalBaseWarranty - 3)} promotional Gold years`);
     }
-    if (motor.horsepower) {
-      const { data: wpRows, error: warrantyPricingError } = await supabase
-        .from("warranty_pricing")
-        .select("*")
-        .lte("hp_min", motor.horsepower)
-        .gte("hp_max", motor.horsepower);
-
-      if (warrantyPricingError) {
-        throw new Error(`Mercury Platinum Product Protection pricing lookup failed: ${warrantyPricingError.message}`);
-      }
-
-      const wp = (wpRows || [])[0];
-      if (wp) {
-        // These are cumulative prices for the purchased 1-5 year Platinum
-        // plan. Promotional coverage has already reduced warrantyYearsExtra;
-        // summing cumulative columns would overcharge the customer.
-        const yearPrices = [wp.year_1_price, wp.year_2_price, wp.year_3_price, wp.year_4_price, wp.year_5_price];
-        const selectedPrice = Number(yearPrices[warrantyYearsExtra - 1]);
-        if (!Number.isFinite(selectedPrice) || selectedPrice <= 0) {
-          throw new Error(`Mercury Platinum Product Protection pricing is incomplete for ${motor.horsepower}HP and a ${warrantyYearsExtra}-year plan`);
-        }
-        warrantyCost = selectedPrice;
-      } else {
-        throw new Error(`No Mercury Platinum Product Protection pricing found for ${motor.horsepower}HP`);
-      }
-    } else {
-      throw new Error("Motor horsepower is required to price Mercury Platinum Product Protection");
-    }
+    warrantyCost = warrantyBreakdown.totalPrice;
+    warrantyYearsExtra = warrantyBreakdown.extensionYears;
   }
 
   // --- Build accessory breakdown ---
@@ -850,6 +826,9 @@ async function createQuote(supabase: any, body: any) {
     customItems,
     packageTier,
     customerHasProp,
+    goldUpgradePrice: warrantyBreakdown?.goldUpgradePrice ?? 0,
+    goldUpgradeYears: warrantyBreakdown?.goldUpgradeYears ?? 0,
+    platinumExtensionPrice: warrantyBreakdown?.platinumExtensionPrice ?? 0,
   });
 
   // accessoryCost = installation + propeller (excludes selected options, warranty, custom items which are already in their own params)
@@ -948,6 +927,13 @@ async function createQuote(supabase: any, body: any) {
     totalYears: totalWarrantyYears,
     extendedYears: warrantyYearsExtra,
     warrantyPrice: warrantyCost,
+    promoGoldYears: Math.max(0, totalBaseWarranty - 3),
+    includedCoverageYears: totalBaseWarranty,
+    goldUpgradeYears: warrantyBreakdown?.goldUpgradeYears ?? 0,
+    goldUpgradePrice: warrantyBreakdown?.goldUpgradePrice ?? 0,
+    platinumExtensionYears: warrantyBreakdown?.extensionYears ?? warrantyYearsExtra,
+    platinumExtensionPrice: warrantyBreakdown?.platinumExtensionPrice ?? (warrantyCost - (warrantyBreakdown?.goldUpgradePrice ?? 0)),
+    hasExplicitBreakdown: true,
   };
 
   const quoteData = {
@@ -1154,7 +1140,16 @@ async function createQuote(supabase: any, body: any) {
     pricing,
     promo_applied: promoOption ? { option: promoOption, rebate_amount: rebateAmount, promo_name: appliedPromoName } : null,
     trade_in_applied: tradeInData ? { value: tradeInValue, brand: tradeInData.brand, condition: tradeInData.condition } : null,
-    warranty: { total_years: totalWarrantyYears, extra_cost: warrantyCost },
+    warranty: {
+      total_years: totalWarrantyYears,
+      extra_cost: warrantyCost,
+      promo_gold_years: Math.max(0, totalBaseWarranty - 3),
+      gold_upgrade_years: warrantyBreakdown?.goldUpgradeYears ?? 0,
+      gold_upgrade_cost: warrantyBreakdown?.goldUpgradePrice ?? 0,
+      platinum_extension_years: warrantyBreakdown?.extensionYears ?? warrantyYearsExtra,
+      platinum_extension_cost: warrantyBreakdown?.platinumExtensionPrice ?? 0,
+      is_upgrade_only: !!warrantyBreakdown && warrantyBreakdown.extensionYears === 0 && warrantyBreakdown.totalPrice > 0,
+    },
   };
 
   if (financingData) response.financing = financingData;
@@ -1270,9 +1265,12 @@ async function updateQuote(supabase: any, body: any) {
     selectedOptions: quoteData.selectedOptions || [],
     warrantyCost,
     warrantyYearsExtra: quoteData.warrantyYearsExtra || 0,
-    totalBaseWarranty: quoteData.warrantyConfig?.totalYears || 7,
+    totalBaseWarranty: (quoteData.warrantyConfig?.totalYears || 7) - (quoteData.warrantyYearsExtra || 0),
     customItems,
     packageTier: quoteData.package || "good",
+    goldUpgradePrice: quoteData.warrantyConfig?.goldUpgradePrice ?? 0,
+    goldUpgradeYears: quoteData.warrantyConfig?.goldUpgradeYears ?? 0,
+    platinumExtensionPrice: quoteData.warrantyConfig?.platinumExtensionPrice ?? 0,
   });
 
   updates.admin_discount = adminDiscount;
@@ -1352,6 +1350,11 @@ async function getQuote(supabase: any, body: any) {
       trade_in: qd.tradeIn || null,
       warranty_years: qd.warrantyYears || null,
       warranty_cost: qd.warrantyCost || 0,
+      warranty_breakdown: qd.warrantyConfig ? {
+        promo_gold_years: qd.warrantyConfig.promoGoldYears ?? null,
+        gold_upgrade_price: qd.warrantyConfig.goldUpgradePrice ?? null,
+        platinum_extension_price: qd.warrantyConfig.platinumExtensionPrice ?? null,
+      } : null,
       package: qd.package || null,
       financing: qd.financing || null,
     },

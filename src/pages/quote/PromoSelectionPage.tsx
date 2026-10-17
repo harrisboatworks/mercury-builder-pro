@@ -304,6 +304,7 @@ export default function PromoSelectionPage() {
         Number(motorHP),
         productProtectionIncludedYears,
         state.warrantyConfig,
+        state.adminCustomItems,
       ),
     });
     navigate('/quote/summary');

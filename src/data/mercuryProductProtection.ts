@@ -18,12 +18,14 @@ export const MERCURY_PRODUCT_PROTECTION_OFFICIAL_OVERVIEW_URL = rateCard.officia
 export const MERCURY_PRODUCT_PROTECTION_CANADA_PLAN_TERMS_URL = rateCard.officialCanadaPlanTermsUrl;
 
 export type PlatinumPlanYears = 1 | 2 | 3 | 4 | 5;
+export type GoldUpgradeYears = 1 | 2 | 3 | 4 | 5;
 
 export interface MercuryPlatinumRateBand {
   hpMin: number;
   hpMax: number;
   label: string;
   prices: Record<PlatinumPlanYears, number>;
+  goldUpgradePrices: Record<GoldUpgradeYears, number> | null;
 }
 
 export const MERCURY_PLATINUM_RATES = rateCard.rates as MercuryPlatinumRateBand[];
@@ -59,6 +61,8 @@ export function getMaximumPlatinumPlanYears(currentCoverageYears: number): numbe
 }
 
 /**
+ * Return only the Platinum extension component, excluding any Gold upgrade.
+ * Quote totals must use calculateMercuryPlatinumCoverageCost instead.
  * Return the exact Platinum plan price needed to move from the currently
  * included coverage to a requested combined total. Promotional years are
  * represented in currentCoverageYears, so they naturally reduce the paid plan
@@ -78,4 +82,78 @@ export function calculateMercuryPlatinumExtensionCost(
   }
 
   return getMercuryPlatinumPlanPrice(horsepower, planYears);
+}
+
+export const MERCURY_GOLD_UPGRADE_LAST_VERIFIED = rateCard.goldUpgradeLastVerified;
+export const MERCURY_GOLD_UPGRADE_SOURCE_URL = rateCard.goldUpgradeSourceUrl;
+
+function isValidPrice(value: unknown): value is number {
+  return typeof value === 'number' && Number.isFinite(value) && Number.isInteger(value) && value >= 0;
+}
+
+/** Exact retail MSRP to upgrade `promoGoldYears` included Gold years to Platinum. Null fails closed. */
+export function getMercuryGoldUpgradePrice(
+  horsepower: number,
+  promoGoldYears: number,
+): number | null {
+  if (!Number.isInteger(promoGoldYears) || promoGoldYears < 1 || promoGoldYears > 5) return null;
+  const band = getMercuryPlatinumRateBand(horsepower);
+  if (!band || !band.goldUpgradePrices) return null;
+  const price = band.goldUpgradePrices[promoGoldYears as GoldUpgradeYears];
+  return isValidPrice(price) && price > 0 ? price : null;
+}
+
+export function hasMercuryGoldUpgradePrice(horsepower: number, promoGoldYears: number): boolean {
+  return getMercuryGoldUpgradePrice(horsepower, promoGoldYears) != null;
+}
+
+export interface MercuryPlatinumCoverageCost {
+  includedCoverageYears: number;
+  promoGoldYears: number;
+  targetTotalYears: number;
+  /** Chronological years added beyond the included baseline. Distinct from Gold conversion. */
+  extensionYears: number;
+  goldUpgradeYears: number;
+  goldUpgradePrice: number;
+  platinumExtensionPrice: number;
+  totalPrice: number;
+}
+
+/**
+ * Full paid cost to reach a combined target as Platinum beyond factory cover.
+ * All promotional Gold years are first upgraded to Platinum, then only the
+ * extra chronological years beyond factory+promo baseline are priced as a
+ * cumulative Platinum extension. No-promo quotes pay extension only.
+ */
+export function calculateMercuryPlatinumCoverageCost(
+  horsepower: number,
+  currentCoverageYears: number,
+  targetTotalYears: number,
+): MercuryPlatinumCoverageCost | null {
+  if (!Number.isInteger(currentCoverageYears) || !Number.isInteger(targetTotalYears)) return null;
+  if (currentCoverageYears < MERCURY_PLATINUM_BASE_COVERAGE_YEARS || currentCoverageYears > MERCURY_PLATINUM_MAX_TOTAL_YEARS) return null;
+  if (targetTotalYears < currentCoverageYears || targetTotalYears > MERCURY_PLATINUM_MAX_TOTAL_YEARS) return null;
+  const promoGoldYears = currentCoverageYears - MERCURY_PLATINUM_BASE_COVERAGE_YEARS;
+  if (promoGoldYears < 0 || promoGoldYears > 5) return null;
+  const extensionYears = targetTotalYears - currentCoverageYears;
+  if (extensionYears < 0 || extensionYears > MERCURY_PLATINUM_MAX_PLAN_YEARS) return null;
+  if (!getMercuryPlatinumRateBand(horsepower)) return null;
+
+  const goldUpgradePrice = promoGoldYears === 0 ? 0 : getMercuryGoldUpgradePrice(horsepower, promoGoldYears);
+  if (goldUpgradePrice == null) return null;
+  const platinumExtensionPrice = extensionYears === 0 ? 0 : getMercuryPlatinumPlanPrice(horsepower, extensionYears);
+  if (platinumExtensionPrice == null) return null;
+  if (!isValidPrice(goldUpgradePrice) || !isValidPrice(platinumExtensionPrice)) return null;
+  const totalPrice = goldUpgradePrice + platinumExtensionPrice;
+  if (!isValidPrice(totalPrice)) return null;
+  return {
+    includedCoverageYears: currentCoverageYears,
+    promoGoldYears,
+    targetTotalYears,
+    extensionYears,
+    goldUpgradeYears: promoGoldYears,
+    goldUpgradePrice,
+    platinumExtensionPrice,
+    totalPrice,
+  };
 }

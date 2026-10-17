@@ -293,3 +293,31 @@ describe('authoritative consultation saved quote', () => {
     });
   });
 });
+
+
+describe('consultation promotional Gold breakdown round trip', () => {
+  const protection = {planYears:3,totalCoverageYears:8,priceBeforeTax:2246,promoGoldYears:2,goldUpgradeYears:2,goldUpgradePrice:325,platinumExtensionYears:3,platinumExtensionPrice:1921};
+  function callerFor(plan=protection) {
+    const subtotal=16550+125+450+plan.priceBeforeTax-790;
+    const hst=subtotal*.13;
+    return {...COMPLETE_CALLER_SNAPSHOT,includedCoverageYears:5,productProtection:plan,
+      accessoryBreakdown:[...COMPLETE_CALLER_SNAPSHOT.accessoryBreakdown,{name:'Mercury Product Protection',price:plan.priceBeforeTax,category:'protection'}],
+      pricing:{...COMPLETE_CALLER_SNAPSHOT.pricing,subtotal,hst,totalCashPrice:subtotal+hst},financing:undefined,paymentMethod:'cash_purchase'};
+  }
+  it('retains the separate Gold and extension prices through parse, save and remint', () => {
+    const caller=callerFor();
+    const parsed = parseConsultationCallerQuoteSnapshot(caller,{total:caller.pricing.totalCashPrice,motorModel:MOTOR_MODEL});
+    expect(parsed.productProtection).toMatchObject(protection);
+    const identity=consultationSubmitDeliverySnapshot({customerName:'Synthetic customer',customerEmail:'example@example.com',customerPhone:'',motorModel:MOTOR_MODEL,totalPrice:caller.pricing.totalCashPrice});
+    const complete=mergeConsultationDeliverySnapshot(identity,parsed);
+    const state=buildConsultationSavedQuoteState({quoteNumber:'HBW-123456',quoteId:QUOTE_ID,snapshot:complete});
+    const restored=consultationSnapshotFromAuthoritativeQuote({persistedName:'Synthetic customer',persistedEmail:'example@example.com',persistedPhone:'',quoteState:state,fallbackMotor:MOTOR_MODEL,fallbackTotal:caller.pricing.totalCashPrice});
+    expect(restored.productProtection).toMatchObject(protection);
+  });
+  it('preserves upgrade-only and rejects a split that does not add up', () => {
+    const caller=callerFor({...protection,planYears:0,totalCoverageYears:5,priceBeforeTax:325,platinumExtensionYears:0,platinumExtensionPrice:0});
+    const expected={total:caller.pricing.totalCashPrice,motorModel:MOTOR_MODEL};
+    expect(parseConsultationCallerQuoteSnapshot(caller,expected).productProtection).toMatchObject({planYears:0,goldUpgradePrice:325,platinumExtensionPrice:0});
+    expect(()=>parseConsultationCallerQuoteSnapshot({...caller,productProtection:{...caller.productProtection,goldUpgradePrice:0}},expected)).toThrow(/breakdown does not match/);
+  });
+});

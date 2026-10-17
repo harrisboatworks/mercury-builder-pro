@@ -301,7 +301,7 @@ export interface QuotePDFProps {
     customerNotes?: string;
     promoEndDate?: string;
     includedCoverageYears?: number;
-    productProtection?: { planYears: number; totalCoverageYears: number; priceBeforeTax: number; monthlyDelta?: number };
+    productProtection?: { planYears: number; totalCoverageYears: number; priceBeforeTax: number; monthlyDelta?: number; promoGoldYears?: number; goldUpgradeYears?: number; goldUpgradePrice?: number; platinumExtensionYears?: number; platinumExtensionPrice?: number };
     selectedPackage?: { id: string; label: string; coverageYears: number; features: string[] };
     monthlyPayment?: number;
     financingTerm?: number;
@@ -502,6 +502,8 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
     || Boolean(quoteData.customerNotes)
     || Boolean(quoteData.depositInfo);
   const spaciousLayout = !compactRows;
+  // Itemized Gold conversion and extension details need the compact second-page spacing.
+  const spaciousPageTwo = spaciousLayout && !quoteData.productProtection;
   const firstPageRowStyle = [styles.row, compactRows ? styles.rowCompact : styles.rowSpacious];
   const firstPagePrimaryStyle = [styles.rowPrimary, spaciousLayout ? styles.rowPrimarySpacious : {}];
   const firstPageDescriptionStyle = [styles.rowDescription, spaciousLayout ? styles.rowDescriptionSpacious : {}];
@@ -699,93 +701,96 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
           <View style={styles.waterTestBand}>
             <Text style={styles.waterTestBandText}>{quoteData.includesInstallation
               ? 'Standard installed-repower handoff includes an on-water test on Rice Lake before pickup when safe seasonal conditions allow.'
-              : 'Every loose motor is prepared, test-run and commissioned before pickup.'}</Text>
+              : 'Every loose motor is prepared and test-run before pickup.'}</Text>
           </View>
         ) : null}
 
         <View style={styles.footerRule} />
-        <Text style={styles.footerText}>{footerAddress}</Text>
-        <Text style={styles.footerPage}>Page 1 of 2</Text>
+        <Text fixed style={styles.footerText}>{footerAddress}</Text>
+        <Text fixed style={styles.footerPage} render={({ pageNumber, totalPages }: { pageNumber: number; totalPages: number }) => `Page ${pageNumber} of ${totalPages}`} />
       </Page>
 
       <Page size="LETTER" style={styles.pageTwo}>
-        <Text style={[styles.pageTwoTitle, spaciousLayout ? styles.pageTwoTitleSpacious : {}]}>Coverage, Payment &amp; Next Steps</Text>
+        <Text style={[styles.pageTwoTitle, spaciousPageTwo ? styles.pageTwoTitleSpacious : {}]}>Coverage, Payment &amp; Next Steps</Text>
 
-        <View style={[styles.twoUp, spaciousLayout ? styles.twoUpSpacious : {}]}>
-          <View style={[styles.featureCard, spaciousLayout ? styles.featureCardSpacious : {}]}>
-            <Text style={[styles.cardEyebrow, spaciousLayout ? styles.cardEyebrowSpacious : {}]}>MERCURY COVERAGE</Text>
-            <Text style={[styles.cardLead, spaciousLayout ? styles.cardLeadSpacious : {}]}>{coverageTotal} years total</Text>
-            <Text style={[styles.cardBody, spaciousLayout ? styles.cardBodySpacious : {}]}>{includedCoverage} years of combined Mercury factory and applicable promotional coverage are included.</Text>
+        <View style={[styles.twoUp, spaciousPageTwo ? styles.twoUpSpacious : {}]}>
+          <View style={[styles.featureCard, spaciousPageTwo ? styles.featureCardSpacious : {}]}>
+            <Text style={[styles.cardEyebrow, spaciousPageTwo ? styles.cardEyebrowSpacious : {}]}>MERCURY COVERAGE</Text>
+            <Text style={[styles.cardLead, spaciousPageTwo ? styles.cardLeadSpacious : {}]}>{coverageTotal} years total</Text>
+            <Text style={[styles.cardBody, spaciousPageTwo ? styles.cardBodySpacious : {}]}>{includedCoverage} years included: 3 years factory warranty{includedCoverage > 3 ? ` plus ${includedCoverage - 3} years promotional Gold` : ''}.</Text>
             {quoteData.productProtection ? (
               <>
-                <Text style={[styles.cardBody, spaciousLayout ? styles.cardBodySpacious : {}, { color: colors.ink, fontWeight: 'bold', marginTop: 3 }]}>{quoteData.productProtection.planYears} additional years of Platinum Product Protection</Text>
-                <Text style={[styles.cardBody, spaciousLayout ? styles.cardBodySpacious : {}]}>${money(quoteData.productProtection.priceBeforeTax)} before HST</Text>
-                {hasFinancing && quoteData.productProtection.monthlyDelta ? <Text style={[styles.promoFinance, spaciousLayout ? styles.promoFinanceSpacious : {}]}>Approximately +${quoteData.productProtection.monthlyDelta}/month with this financing estimate</Text> : null}
+                <Text style={[styles.cardBody, spaciousPageTwo ? styles.cardBodySpacious : {}, { color: colors.ink, fontWeight: 'bold', marginTop: 3 }]}>{quoteData.productProtection.planYears > 0 ? `${quoteData.productProtection.planYears} additional years of Platinum Product Protection` : 'Platinum upgrade of included Gold years (no additional years)'}</Text>
+                {typeof quoteData.productProtection.goldUpgradePrice === 'number' ? <Text style={[styles.cardBody, spaciousPageTwo ? styles.cardBodySpacious : {}]}>Factory 3 years + Platinum {Math.max(0, coverageTotal - 3)} years = {coverageTotal} years total</Text> : null}
+                {(quoteData.productProtection.goldUpgradePrice ?? 0) > 0 ? <Text style={[styles.cardBody, spaciousPageTwo ? styles.cardBodySpacious : {}]}>Gold upgrade ({quoteData.productProtection.goldUpgradeYears ?? quoteData.productProtection.promoGoldYears ?? (includedCoverage - 3)} yr): ${money(quoteData.productProtection.goldUpgradePrice)} before HST</Text> : null}
+                {(quoteData.productProtection.platinumExtensionPrice ?? 0) > 0 || quoteData.productProtection.planYears > 0 ? <Text style={[styles.cardBody, spaciousPageTwo ? styles.cardBodySpacious : {}]}>Platinum extension ({quoteData.productProtection.platinumExtensionYears ?? quoteData.productProtection.planYears} yr): ${money(quoteData.productProtection.platinumExtensionPrice ?? quoteData.productProtection.priceBeforeTax - (quoteData.productProtection.goldUpgradePrice || 0))} before HST</Text> : null}
+                <Text style={[styles.cardBody, spaciousPageTwo ? styles.cardBodySpacious : {}]}>${money(quoteData.productProtection.priceBeforeTax)} before HST</Text>
+                {hasFinancing && quoteData.productProtection.monthlyDelta ? <Text style={[styles.promoFinance, spaciousPageTwo ? styles.promoFinanceSpacious : {}]}>Approximately +${quoteData.productProtection.monthlyDelta}/month with this financing estimate</Text> : null}
               </>
-            ) : <Text style={[styles.cardBody, spaciousLayout ? styles.cardBodySpacious : {}]}>No additional paid Product Protection plan selected.</Text>}
-            <Text style={[styles.cardBody, spaciousLayout ? styles.cardBodySpacious : {}, { marginTop: 3 }]}>Final eligibility and coverage dates are confirmed using the engine serial number.</Text>
+            ) : <Text style={[styles.cardBody, spaciousPageTwo ? styles.cardBodySpacious : {}]}>No additional paid Product Protection plan selected.</Text>}
+            <Text style={[styles.cardBody, spaciousPageTwo ? styles.cardBodySpacious : {}, { marginTop: 3 }]}>Final eligibility and coverage dates are confirmed using the engine serial number.</Text>
           </View>
 
-          <View style={[styles.featureCard, styles.featureCardRed, spaciousLayout ? styles.featureCardSpacious : {}]}>
-            <Text style={[styles.cardEyebrow, spaciousLayout ? styles.cardEyebrowSpacious : {}]}>{hasFinancing ? 'FINANCING ESTIMATE' : 'PURCHASE METHOD'}</Text>
+          <View style={[styles.featureCard, styles.featureCardRed, spaciousPageTwo ? styles.featureCardSpacious : {}]}>
+            <Text style={[styles.cardEyebrow, spaciousPageTwo ? styles.cardEyebrowSpacious : {}]}>{hasFinancing ? 'FINANCING ESTIMATE' : 'PURCHASE METHOD'}</Text>
             {hasFinancing ? (
               <>
-                <Text style={[styles.cardLead, spaciousLayout ? styles.cardLeadSpacious : {}]}>{formatFinancingEstimateLine({
+                <Text style={[styles.cardLead, spaciousPageTwo ? styles.cardLeadSpacious : {}]}>{formatFinancingEstimateLine({
                   payment: Math.round(Number(quoteData.monthlyPayment)),
                   termMonths: quoteData.financingTerm!,
                   rate: quoteData.financingRate!,
                 })}</Text>
-                <Text style={[styles.cardBody, spaciousLayout ? styles.cardBodySpacious : {}]}>{financingTermsLine(
+                <Text style={[styles.cardBody, spaciousPageTwo ? styles.cardBodySpacious : {}]}>{financingTermsLine(
                   quoteData.financingRate!,
                   financingContractTerm,
                   quoteData.financingTerm!,
                   financingContractTermIsOfferSpecific,
                 )}</Text>
-                {quoteData.financingAmount ? <Text style={[styles.cardBody, spaciousLayout ? styles.cardBodySpacious : {}]}>Amount financed: ${money(quoteData.financingAmount)} CAD</Text> : null}
-                {quoteData.dealerFee ? <Text style={[styles.cardBody, spaciousLayout ? styles.cardBodySpacious : {}]}>Includes ${money(quoteData.dealerFee)} DealerPlan administration fee</Text> : null}
-                <Text style={[styles.cardBody, spaciousLayout ? styles.cardBodySpacious : {}]}>{(quoteData.financingTerm || 0) > financingContractTerm
+                {quoteData.financingAmount ? <Text style={[styles.cardBody, spaciousPageTwo ? styles.cardBodySpacious : {}]}>Amount financed: ${money(quoteData.financingAmount)} CAD</Text> : null}
+                {quoteData.dealerFee ? <Text style={[styles.cardBody, spaciousPageTwo ? styles.cardBodySpacious : {}]}>Includes ${money(quoteData.dealerFee)} DealerPlan administration fee</Text> : null}
+                <Text style={[styles.cardBody, spaciousPageTwo ? styles.cardBodySpacious : {}]}>{(quoteData.financingTerm || 0) > financingContractTerm
                   ? 'A balance may remain at contract end and may need to be paid or refinanced. On approved credit.'
                   : 'On approved credit.'}</Text>
-                <Text style={[styles.cardBody, spaciousLayout ? styles.cardBodySpacious : {}, { marginTop: 3 }]}>{FINANCING_ESTIMATE_DISCLAIMER}</Text>
+                <Text style={[styles.cardBody, spaciousPageTwo ? styles.cardBodySpacious : {}, { marginTop: 3 }]}>{FINANCING_ESTIMATE_DISCLAIMER}</Text>
               </>
             ) : (
               <>
-                <Text style={[styles.cardLead, spaciousLayout ? styles.cardLeadSpacious : {}]}>{quoteData.selectedPaymentMethod === 'cash_purchase' ? 'Cash purchase' : 'Financing not shown'}</Text>
-                <Text style={[styles.cardBody, spaciousLayout ? styles.cardBodySpacious : {}]}>{quoteData.selectedPaymentMethod === 'cash_purchase' ? 'No financing fee or monthly-payment estimate is included in this quote.' : 'Ask us for current Canadian marine financing options if you would like a payment estimate.'}</Text>
+                <Text style={[styles.cardLead, spaciousPageTwo ? styles.cardLeadSpacious : {}]}>{quoteData.selectedPaymentMethod === 'cash_purchase' ? 'Cash purchase' : 'Financing not shown'}</Text>
+                <Text style={[styles.cardBody, spaciousPageTwo ? styles.cardBodySpacious : {}]}>{quoteData.selectedPaymentMethod === 'cash_purchase' ? 'No financing fee or monthly-payment estimate is included in this quote.' : 'Ask us for current Canadian marine financing options if you would like a payment estimate.'}</Text>
               </>
             )}
-            {showAlternatePromotion && alternatePromotion ? <Text style={[styles.promoFinance, spaciousLayout ? styles.promoFinanceSpacious : {}]}>Promotional {alternatePromotion.rate}% APR for {alternatePromotion.termMonths} months may also be available on approved credit - ask us.</Text> : null}
+            {showAlternatePromotion && alternatePromotion ? <Text style={[styles.promoFinance, spaciousPageTwo ? styles.promoFinanceSpacious : {}]}>Promotional {alternatePromotion.rate}% APR for {alternatePromotion.termMonths} months may also be available on approved credit - ask us.</Text> : null}
           </View>
         </View>
 
-        <Text style={[styles.stepsHeader, spaciousLayout ? styles.stepsHeaderSpacious : {}]}>WHAT HAPPENS NEXT</Text>
-        <View style={[styles.steps, spaciousLayout ? styles.stepsSpacious : {}]}>
-          <StepCard number="1" title="Reserve" spacious={spaciousLayout}>{`Your $${money(recommendedDeposit).replace('.00', '')} CAD deposit. ${depositPolicyText}`}</StepCard>
+        <Text style={[styles.stepsHeader, spaciousPageTwo ? styles.stepsHeaderSpacious : {}]}>WHAT HAPPENS NEXT</Text>
+        <View style={[styles.steps, spaciousPageTwo ? styles.stepsSpacious : {}]}>
+          <StepCard number="1" title="Reserve" spacious={spaciousPageTwo}>{`Your $${money(recommendedDeposit).replace('.00', '')} CAD deposit. ${depositPolicyText}`}</StepCard>
           {quoteData.includesInstallation ? (
-            <StepCard number="2" title="We rig and water-test" spacious={spaciousLayout}>Installed, commissioned, and run on Rice Lake. Prop setup is checked and adjusted as needed.</StepCard>
+            <StepCard number="2" title="We rig and water-test" spacious={spaciousPageTwo}>Installed, set up, and run on Rice Lake. Prop setup is checked and adjusted as needed.</StepCard>
           ) : (
-            <StepCard number="2" title="We prep and test-run" spacious={spaciousLayout}>Your motor is prepared, test-run, and commissioned before pickup.</StepCard>
+            <StepCard number="2" title="We prep and test-run" spacious={spaciousPageTwo}>Your motor is prepared and test-run before pickup.</StepCard>
           )}
-          <StepCard number="3" title={quoteData.includesInstallation ? 'Pick up and go boating' : 'Pick up your motor'} spacious={spaciousLayout}>{quoteData.includesInstallation ? 'Get a complete walkthrough of your new Mercury at our Gores Landing shop, about 90 minutes from Toronto.' : 'Review the motor, included equipment, and commissioning details with our team before leaving.'}</StepCard>
+          <StepCard number="3" title={quoteData.includesInstallation ? 'Pick up and go boating' : 'Pick up your motor'} spacious={spaciousPageTwo}>{quoteData.includesInstallation ? 'Get a complete walkthrough of your new Mercury at our Gores Landing shop, about 90 minutes from Toronto.' : 'Review the motor, included equipment, and setup and operation with our team before leaving.'}</StepCard>
         </View>
 
-        <View style={[styles.trust, spaciousLayout ? styles.trustSpacious : {}]}>
-          <TrustItem lead="1947" label="FAMILY-OWNED SINCE" spacious={spaciousLayout} />
-          <TrustItem lead="1965" label="MERCURY DEALER SINCE" bordered spacious={spaciousLayout} />
-          <TrustItem lead="Premier" label="MERCURY MARINE DEALER" bordered spacious={spaciousLayout} />
-          <TrustItem lead={quoteData.includesInstallation ? 'Rice Lake' : 'Tested'} label={quoteData.includesInstallation ? 'INSTALLED REPOWERS WATER-TESTED' : 'PRE-DELIVERY MOTOR CHECK'} bordered spacious={spaciousLayout} />
-          <TrustItem lead="300+" label="GOOGLE REVIEWS" bordered spacious={spaciousLayout} />
+        <View style={[styles.trust, spaciousPageTwo ? styles.trustSpacious : {}]}>
+          <TrustItem lead="1947" label="FAMILY-OWNED SINCE" spacious={spaciousPageTwo} />
+          <TrustItem lead="1965" label="MERCURY DEALER SINCE" bordered spacious={spaciousPageTwo} />
+          <TrustItem lead="Premier" label="MERCURY MARINE DEALER" bordered spacious={spaciousPageTwo} />
+          <TrustItem lead={quoteData.includesInstallation ? 'Rice Lake' : 'Tested'} label={quoteData.includesInstallation ? 'INSTALLED REPOWERS WATER-TESTED' : 'PRE-DELIVERY MOTOR CHECK'} bordered spacious={spaciousPageTwo} />
+          <TrustItem lead="300+" label="GOOGLE REVIEWS" bordered spacious={spaciousPageTwo} />
         </View>
 
-        <View style={[styles.reviewQuote, spaciousLayout ? styles.reviewQuoteSpacious : {}]}>
-          <Text style={[styles.reviewText, spaciousLayout ? styles.reviewTextSpacious : {}]}>"Great service. Great price on a new outboard. Called from out of town and organized purchase and pickup, very easy. Had all the new features explained to me when I picked it up."</Text>
-          <Text style={[styles.reviewAttribution, spaciousLayout ? styles.reviewAttributionSpacious : {}]}>- Erik F. | Google review</Text>
+        <View style={[styles.reviewQuote, spaciousPageTwo ? styles.reviewQuoteSpacious : {}]}>
+          <Text style={[styles.reviewText, spaciousPageTwo ? styles.reviewTextSpacious : {}]}>"Great service. Great price on a new outboard. Called from out of town and organized purchase and pickup, very easy. Had all the new features explained to me when I picked it up."</Text>
+          <Text style={[styles.reviewAttribution, spaciousPageTwo ? styles.reviewAttributionSpacious : {}]}>- Erik F. | Google review</Text>
         </View>
 
-        <View style={[styles.closeout, spaciousLayout ? styles.closeoutSpacious : {}, hasFollowingPageTwoContent ? styles.closeoutWithFollowingContent : {}]}>
-          <Text style={[styles.closeoutTitle, spaciousLayout ? styles.closeoutTitleSpacious : {}]}>Straight answers, complete pricing</Text>
-          <Text style={[styles.closeoutText, spaciousLayout ? styles.closeoutTextSpacious : {}]}>This quote is built from the motor, equipment, promotion, trade-in and installation choices shown here. If anything about your boat changes, call or text us and we will update the configuration before you commit.</Text>
-          {inspectionCaveat ? <Text style={[styles.closeoutCaveat, spaciousLayout ? styles.closeoutCaveatSpacious : {}]}>{inspectionCaveat}</Text> : null}
+        <View style={[styles.closeout, spaciousPageTwo ? styles.closeoutSpacious : {}, hasFollowingPageTwoContent ? styles.closeoutWithFollowingContent : {}]}>
+          <Text style={[styles.closeoutTitle, spaciousPageTwo ? styles.closeoutTitleSpacious : {}]}>Straight answers, complete pricing</Text>
+          <Text style={[styles.closeoutText, spaciousPageTwo ? styles.closeoutTextSpacious : {}]}>This quote is built from the motor, equipment, promotion, trade-in and installation choices shown here. If anything about your boat changes, call or text us and we will update the configuration before you commit.</Text>
+          {inspectionCaveat ? <Text style={[styles.closeoutCaveat, spaciousPageTwo ? styles.closeoutCaveatSpacious : {}]}>{inspectionCaveat}</Text> : null}
         </View>
 
         {quoteData.customerNotes ? (
@@ -805,8 +810,8 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
         ) : null}
 
         <View style={styles.footerRule} />
-        <Text style={styles.pageTwoFooterText}>Harris Boat Works | Call 905-342-2153 | Text 647-952-2153 | mercuryrepower.ca</Text>
-        <Text style={styles.pageTwoFooterPage}>Page 2 of 2</Text>
+        <Text fixed style={styles.pageTwoFooterText}>Harris Boat Works | Call 905-342-2153 | Text 647-952-2153 | mercuryrepower.ca</Text>
+        <Text fixed style={styles.pageTwoFooterPage} render={({ pageNumber, totalPages }: { pageNumber: number; totalPages: number }) => `Page ${pageNumber} of ${totalPages}`} />
       </Page>
     </Document>
   );

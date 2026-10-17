@@ -1,3 +1,4 @@
+import { getAppliedPromotionWarrantyYears } from '../../supabase/functions/_shared/promotion-warranty';
 import { isPromotionMotorEligible, type PromotionEligibility, type PromotionMotor } from '@/lib/promotion-eligibility';
 import { useState, useEffect, useMemo } from 'react';
 import { supabase } from '@/integrations/supabase/client';
@@ -145,12 +146,8 @@ export function useActivePromotions(options?: { forceRefresh?: boolean; motor?: 
     return () => { cancelled = true; };
   }, [forceRefresh, dealerDate]);
 
-  // Helper function to get total warranty bonus years from all applicable promotions
-  const getTotalWarrantyBonusYears = () => {
-    return promotions.reduce((total, promo) => {
-      return total + (promo.warranty_extra_years || 0);
-    }, 0);
-  };
+  // Legacy method name retained; only the applied first offer supplies Gold years.
+  const getTotalWarrantyBonusYears = () => getAppliedPromotionWarrantyYears(promotions);
 
   // Helper function to get promotions that include warranty bonuses
   const getWarrantyPromotions = () => {

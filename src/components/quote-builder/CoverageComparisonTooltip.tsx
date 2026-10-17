@@ -2,57 +2,38 @@
 import { useQuote } from "@/contexts/QuoteContext";
 import { useActivePromotions } from "@/hooks/useActivePromotions";
 import { money } from "@/lib/money";
-import { calculateMonthlyPayment } from "@/lib/finance";
 import { getAppliedPromotion, getAppliedWarrantyExtraYears } from "@/lib/warranty-display";
+import { buildWarrantyConfigFromCost, getPlatinumQuoteOptions, hasExplicitWarrantyBreakdown, requiresCustomProtectionReview } from "@/lib/quote-product-protection";
+import { resolveQuoteIncludedCoverageYears } from "@/lib/quote-pdf-data";
+import { calculateMercuryPlatinumCoverageCost } from "@/data/mercuryProductProtection";
 
 const BASE_YEARS = 3;
 const MAX_YEARS = 8;
 
 export default function CoverageComparisonTooltip() {
   const { state, dispatch } = useQuote();
-  const { promotions } = useActivePromotions({ motor: state.motor });
+  const { promotions, loading, error } = useActivePromotions({ motor: state.motor });
 
   const promo = getAppliedWarrantyExtraYears(getAppliedPromotion(promotions));
-  const selectedTotal = state?.warrantyConfig?.totalYears ?? (BASE_YEARS + promo);
-  const extended = Math.max(0, selectedTotal - (BASE_YEARS + promo));
+  const included = resolveQuoteIncludedCoverageYears({ frozen: !!state.frozenPricing,
+    snapshotYears: state.pdfSnapshot?.includedCoverageYears, warrantyConfig: state.warrantyConfig, liveYears: BASE_YEARS + promo });
+  const needsReview = requiresCustomProtectionReview(state.warrantyConfig, state.adminCustomItems);
+  const pricingReady = !!state.frozenPricing || (!loading && !error);
+  const selectedTotal = state?.warrantyConfig?.totalYears ?? included;
+  const extended = Math.max(0, selectedTotal - included);
+  const hp = Number((state.motor as any)?.hp ?? (state.motor as any)?.horsepower ?? 0);
 
-  // Options are PRECOMPUTED by your engine and stored in state
-  // Fallback to mock data if warrantyOptions not in state yet
-  const rawOpts: Array<{ years: number; price: number; monthly?: number }> = 
-    (state as any)?.warrantyOptions ?? [
-      { years: 6, price: 899, monthly: 15 },
-      { years: 7, price: 1199, monthly: 20 },
-      { years: 8, price: 1499, monthly: 25 },
-    ];
-
-  // Find a target for 8y (or the highest available > current), to power the CTA
-  const currentTotal = Math.min(selectedTotal, MAX_YEARS);
-  const maxTarget =
-    rawOpts.find(o => o.years === MAX_YEARS) ??
-    rawOpts
-      .filter(o => o.years > currentTotal && o.years <= MAX_YEARS)
-      .sort((a, b) => b.years - a.years)[0];
+  const options = pricingReady && !needsReview ? getPlatinumQuoteOptions(hp, included) : [];
+  const maxTarget = options.filter((o) => o.totalYears <= MAX_YEARS).sort((a, b) => b.totalYears - a.totalYears)[0];
 
   const onMaxOut = () => {
-    if (!maxTarget) return;
-    const targetYears = maxTarget.years;
-    const extendedYears = Math.max(0, targetYears - (BASE_YEARS + promo));
-    // Mirror WarrantySelector dispatch; NO new pricing logic
-    dispatch({
-      type: "SET_WARRANTY_CONFIG",
-      payload: {
-        extendedYears,
-        warrantyPrice: maxTarget.price ?? 0,
-        totalYears: targetYears,
-      },
-    });
+    if (!maxTarget || needsReview) return;
+    const cost = calculateMercuryPlatinumCoverageCost(hp, included, maxTarget.totalYears);
+    if (!cost) return;
+    if (state.frozenPricing) dispatch({ type: "SET_FROZEN_PRICING", payload: undefined });
+    dispatch({ type: "SET_WARRANTY_CONFIG", payload: buildWarrantyConfigFromCost(cost) });
   };
 
-  // Calculate monthly delta between current and target warranty costs
-  const currentOption = rawOpts.find(o => o.years === currentTotal);
-  const currentMonthly = currentOption ? calculateMonthlyPayment(currentOption.price).payment : 0;
-  const targetMonthly = maxTarget ? calculateMonthlyPayment(maxTarget.price).payment : 0;
-  const monthlyDelta = Math.max(0, targetMonthly - currentMonthly);
 
   return (
     <div className="inline-flex items-center gap-2">
@@ -68,37 +49,28 @@ export default function CoverageComparisonTooltip() {
         <div className="invisible absolute left-1/2 z-40 mt-2 w-72 -translate-x-1/2 rounded-lg border border-repower-navy-900/10 bg-white p-3 text-sm text-repower-navy-900 shadow-lg opacity-0 transition group-hover:visible group-hover:opacity-100">
           <div className="mb-2 font-semibold">How we get your total</div>
           <ul className="space-y-1.5">
-            <li className="flex justify-between">
-              <span>Base warranty:</span>
-              <span className="font-medium">{BASE_YEARS} years</span>
-            </li>
-            <li className="flex justify-between">
-              <span>Promo bonus:</span>
-              <span className="font-medium">+{promo} years</span>
-            </li>
-            <li className="flex justify-between">
-              <span>Extended add-on:</span>
-              <span className="font-medium">+{extended} years</span>
-            </li>
+            <li className="flex justify-between"><span>Factory warranty:</span><span className="font-medium">{BASE_YEARS} years</span></li>
+            <li className="flex justify-between"><span>Promo Gold:</span><span className="font-medium">+{promo} years</span></li>
+            <li className="flex justify-between"><span>Paid Platinum extension:</span><span className="font-medium">+{extended} years</span></li>
+            {promo > 0 && hasExplicitWarrantyBreakdown(state.warrantyConfig) && (state.warrantyConfig?.goldUpgradePrice ?? 0) > 0 ? (
+              <li className="flex justify-between"><span>Gold upgraded to Platinum:</span><span className="font-medium">{promo} years</span></li>
+            ) : null}
           </ul>
           <div className="mt-3 flex justify-between border-t border-repower-navy-900/10 pt-2 font-semibold text-repower-navy-900">
-            <span>Total coverage:</span>
-            <span>{selectedTotal} years</span>
+            <span>Total coverage:</span><span>{selectedTotal} years</span>
           </div>
-
-          {/* CTA: only show if a target exists and we're not already at it */}
-          {maxTarget && selectedTotal < maxTarget.years && (
-            <button
-              onClick={onMaxOut}
-              className="mt-3 w-full rounded-lg bg-primary px-3 py-2.5 text-center text-sm font-semibold text-primary-foreground transition hover:scale-[1.01] hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
-            >
-              Upgrade to {maxTarget.years}y max • +{money(Math.round(monthlyDelta))}/mo
+          <p className="mt-2 text-xs text-repower-navy-900/60">Promotional years are Gold. A Platinum quote includes upgrading those Gold years before adding any extra Platinum years.</p>
+          {maxTarget && selectedTotal < maxTarget.totalYears && (
+            <button onClick={onMaxOut} className="mt-3 w-full rounded-lg bg-primary px-3 py-2.5 text-center text-sm font-semibold text-primary-foreground transition hover:scale-[1.01] hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50">
+              Change to {maxTarget.totalYears} years • Platinum price {money(maxTarget.price)} before HST
             </button>
           )}
-
-          <div className="mt-2 text-xs text-repower-navy-900/400">
-            Monthly shown is an estimate OAC. Final terms at checkout.
-          </div>
+          {maxTarget && selectedTotal >= maxTarget.totalYears && state?.warrantyConfig?.warrantyPrice === 0 && promo > 0 && (
+            <button onClick={onMaxOut} className="mt-3 w-full rounded-lg bg-primary px-3 py-2.5 text-center text-sm font-semibold text-primary-foreground transition hover:scale-[1.01] hover:bg-primary/90">
+              Upgrade Gold to Platinum • {money(maxTarget.price)}
+            </button>
+          )}
+          <div className="mt-2 text-xs text-repower-navy-900/400">Final eligibility and price are confirmed by serial number.</div>
         </div>
       </div>
     </div>

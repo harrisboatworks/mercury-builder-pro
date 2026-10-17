@@ -86,6 +86,11 @@ export interface QuotePdfProductProtection {
   totalCoverageYears: number;
   priceBeforeTax: number;
   monthlyDelta?: number;
+  promoGoldYears?: number;
+  goldUpgradeYears?: number;
+  goldUpgradePrice?: number;
+  platinumExtensionYears?: number;
+  platinumExtensionPrice?: number;
 }
 
 export interface QuotePdfSnapshot {
@@ -430,11 +435,16 @@ export function buildLegacyQuotePdfSnapshot(state: any, createdAt?: string): Quo
       },
     } : {}),
     includedCoverageYears,
-    ...(state?.warrantyConfig?.extendedYears > 0 && state.warrantyConfig.warrantyPrice > 0 ? {
+    ...((state?.warrantyConfig?.warrantyPrice || 0) > 0 && ((state?.warrantyConfig?.extendedYears || 0) > 0 || (state?.warrantyConfig?.goldUpgradePrice || 0) > 0) ? {
       productProtection: {
         planYears: Number(state.warrantyConfig.extendedYears),
         totalCoverageYears: Number(state.warrantyConfig.totalYears),
         priceBeforeTax: Number(state.warrantyConfig.warrantyPrice),
+        promoGoldYears: state.warrantyConfig.promoGoldYears,
+        goldUpgradeYears: state.warrantyConfig.goldUpgradeYears,
+        goldUpgradePrice: state.warrantyConfig.goldUpgradePrice,
+        platinumExtensionYears: state.warrantyConfig.platinumExtensionYears ?? Number(state.warrantyConfig.extendedYears),
+        platinumExtensionPrice: state.warrantyConfig.platinumExtensionPrice,
         ...(financingComplete ? {
           monthlyDelta: calculateProtectionMonthlyDelta({
             priceBeforeTax: Number(state.warrantyConfig.warrantyPrice),

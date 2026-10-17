@@ -1,3 +1,4 @@
+import { getPromotionWarrantyYears } from '../../supabase/functions/_shared/promotion-warranty';
 export const STANDARD_WARRANTY_YEARS = 3;
 
 export type AppliedWarrantyPromotion = {
@@ -21,8 +22,7 @@ export function getAppliedPromotion<T>(promotions: readonly T[]): T | null {
 export function getAppliedWarrantyExtraYears(
   appliedPromotion: AppliedWarrantyPromotion | null | undefined,
 ): number {
-  if (!appliedPromotion) return 0;
-  return Math.max(0, Math.floor(Number(appliedPromotion.warranty_extra_years) || 0));
+  return getPromotionWarrantyYears(appliedPromotion);
 }
 
 export function getWarrantyDisplay(extraYears: number) {

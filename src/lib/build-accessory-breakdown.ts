@@ -23,7 +23,7 @@ export interface BuildAccessoryBreakdownParams {
   looseMotorBattery?: { wantsBattery?: boolean; batteryCost?: number };
   selectedPackage?: string; // 'good' | 'better' | 'best'
   adminCustomItems?: Array<{ name: string; price: number }>;
-  warrantyConfig?: { extendedYears?: number; warrantyPrice?: number; totalYears?: number } | null;
+  warrantyConfig?: { extendedYears?: number; warrantyPrice?: number; totalYears?: number; promoGoldYears?: number; goldUpgradeYears?: number; goldUpgradePrice?: number; platinumExtensionYears?: number; platinumExtensionPrice?: number } | null;
   tradeInInfo?: { brand?: string; horsepower?: number | string; hasTradeIn?: boolean; estimatedValue?: number };
 }
 
@@ -226,12 +226,25 @@ export function buildAccessoryBreakdown(params: BuildAccessoryBreakdownParams): 
   // Mercury Platinum Product Protection. Use the persisted quote state as the
   // only source here so summary, saved quote, admin view and PDF cannot
   // independently re-price or double-add the same plan.
-  if ((warrantyConfig?.extendedYears || 0) > 0 && (warrantyConfig?.warrantyPrice || 0) > 0) {
-    const extensionYears = warrantyConfig!.extendedYears!;
+  if ((warrantyConfig?.warrantyPrice || 0) > 0 && ((warrantyConfig?.extendedYears || 0) > 0 || (warrantyConfig?.goldUpgradePrice || 0) > 0)) {
+    const extensionYears = warrantyConfig!.extendedYears || 0;
+    const goldYears = warrantyConfig!.goldUpgradeYears ?? warrantyConfig!.promoGoldYears ?? 0;
+    const upgradePrice = warrantyConfig!.goldUpgradePrice;
+    const extensionPrice = warrantyConfig!.platinumExtensionPrice;
+    const hasBreakdown = typeof upgradePrice === 'number' || typeof extensionPrice === 'number';
+    const componentText = hasBreakdown
+      ? [
+          goldYears > 0 && (upgradePrice ?? 0) > 0 ? `Gold upgrade (${goldYears} yr): $${(upgradePrice as number).toLocaleString('en-CA')}` : null,
+          extensionYears > 0 ? `Platinum extension (${extensionYears} yr): $${(extensionPrice ?? Math.max(0, (warrantyConfig!.warrantyPrice || 0) - (upgradePrice || 0))).toLocaleString('en-CA')}` : null,
+        ].filter(Boolean).join(' + ')
+      : '';
+    const name = extensionYears > 0
+      ? `Mercury Platinum Product Protection (${extensionYears} additional year${extensionYears > 1 ? 's' : ''})`
+      : 'Mercury Platinum Product Protection (Gold upgrade only)';
     breakdown.push({
-      name: `Mercury Platinum Product Protection (${extensionYears} additional year${extensionYears > 1 ? 's' : ''})`,
+      name,
       price: warrantyConfig!.warrantyPrice!,
-      description: `Combined coverage: ${warrantyConfig!.totalYears || 'confirmed at registration'} years`,
+      description: `Combined coverage: ${warrantyConfig!.totalYears || 'confirmed at registration'} years${componentText ? `; ${componentText}` : ''}${hasBreakdown ? `. Factory 3 years + Platinum ${Math.max(0, (warrantyConfig!.totalYears || 3) - 3)} years` : ''}`,
       category: 'protection',
     });
   }
